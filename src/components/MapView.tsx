@@ -3,15 +3,13 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { Country } from "../types";
 import HoverCard from "./HoverCard";
-import FlightRoutes from "./FlightRoutes";
 
 type Props = {
   countries: Country[];
-  allCountries: Country[];
   onSelect: (c: Country) => void;
   highlightedNames?: string[];
   visitedNames?: Set<string>;
-  selectedCountry?: Country | null;
+  onMapReady?: (map: maplibregl.Map | null) => void;
 };
 
 const MAP_STYLE = "https://tiles.openfreemap.org/styles/liberty";
@@ -20,11 +18,10 @@ type HoverState = { country: Country; x: number; y: number } | null;
 
 export default function MapView({
   countries,
-  allCountries,
   onSelect,
   highlightedNames = [],
   visitedNames = new Set(),
-  selectedCountry = null,
+  onMapReady,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
@@ -33,7 +30,6 @@ export default function MapView({
   useEffect(() => { onSelectRef.current = onSelect; }, [onSelect]);
 
   const [hovered, setHovered] = useState<HoverState>(null);
-  const [mapInstance, setMapInstance] = useState<maplibregl.Map | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -45,9 +41,24 @@ export default function MapView({
     });
     map.addControl(new maplibregl.NavigationControl(), "bottom-right");
     map.on("movestart", () => setHovered(null));
+
+    // Remove any cinematic GeoJSON sources left behind by a previous session
+    const purgeCinematicSources = () => {
+      const EMPTY = { type: "FeatureCollection" as const, features: [] };
+      ["cinematic-route-done", "cinematic-route-current"].forEach((id) => {
+        try {
+          if (map.getSource(id)) (map.getSource(id) as maplibregl.GeoJSONSource).setData(EMPTY);
+          if (map.getLayer(id)) map.removeLayer(id);
+          if (map.getSource(id)) map.removeSource(id);
+        } catch { /* already removed */ }
+      });
+    };
+    if (map.isStyleLoaded()) purgeCinematicSources();
+    else map.once("load", purgeCinematicSources);
+
     mapRef.current = map;
-    setMapInstance(map);
-    return () => { map.remove(); mapRef.current = null; setMapInstance(null); };
+    onMapReady?.(map);
+    return () => { map.remove(); mapRef.current = null; onMapReady?.(null); };
   }, []);
 
   useEffect(() => {
@@ -106,11 +117,6 @@ export default function MapView({
           isVisited={visitedNames.has(hovered.country.name)}
         />
       )}
-      <FlightRoutes
-        map={mapInstance}
-        selectedCountry={selectedCountry}
-        allCountries={allCountries}
-      />
     </div>
   );
 }

@@ -1,8 +1,15 @@
 import { useState, useEffect } from "react";
+import type { RefObject } from "react";
+import type maplibregl from "maplibre-gl";
 import type { Country, PlanStyle } from "../types";
 import { STYLE_META, PLAN_STYLE_META, PLAN_STYLES } from "../utils/travelStyles";
 import { generateTripPlan } from "../utils/tripPlans";
+import type { TripPlan } from "../utils/tripPlans";
+import { ITINERARY_RULES } from "../data/itineraryRules";
+import { usePanelDrag } from "../hooks/usePanelDrag";
 import Tooltip from "./Tooltip";
+import ItineraryCinematic from "./ItineraryCinematic";
+import ItineraryModal from "./ItineraryModal";
 
 type Props = {
   country: Country | null;
@@ -16,7 +23,11 @@ type Props = {
   onEdit: () => void;
   onDelete: () => void;
   onUpdateNotes: (notes: string) => void;
+  homeCountry: string;
+  mainMapRef?: RefObject<maplibregl.Map | null>;
+  allCountries?: Country[];
 };
+
 
 export default function CountryPanel({
   country, onClose,
@@ -24,17 +35,25 @@ export default function CountryPanel({
   isVisited, onToggleVisited,
   onFilterExperience, activeExperiences,
   onEdit, onDelete, onUpdateNotes,
+  homeCountry,
+  mainMapRef,
+  allCountries,
 }: Props) {
-  const [activeStyle, setActiveStyle] = useState<PlanStyle | null>(null);
+  const { panelWidth, startPanelDrag }    = usePanelDrag(320, 320);
+  const [activeStyle, setActiveStyle]     = useState<PlanStyle | null>(null);
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
-  const [customDays, setCustomDays] = useState(7);
-  const [notes, setNotes] = useState(country?.notes ?? "");
+  const [customDays, setCustomDays]       = useState(7);
+  const [notes, setNotes]                 = useState(country?.notes ?? "");
+  const [cinematicPlan, setCinematicPlan] = useState<TripPlan | null>(null);
+  const [modalPlan, setModalPlan]         = useState<TripPlan | null>(null);
 
   useEffect(() => {
     setActiveStyle(null);
     setSelectedCities([]);
     setCustomDays(7);
     setNotes(country?.notes ?? "");
+    setCinematicPlan(null);
+    setModalPlan(null);
   }, [country?.name]);
 
   function toggleCity(name: string) {
@@ -42,9 +61,26 @@ export default function CountryPanel({
   }
 
   return (
-    <div className={`absolute top-0 right-0 h-full w-80 bg-white shadow-2xl z-20 flex flex-col overflow-hidden transition-transform duration-300 ease-out ${
-      country ? "translate-x-0" : "translate-x-full"
-    }`}>
+    <div
+      className={`absolute top-0 right-0 h-full bg-white shadow-2xl z-20 flex flex-col overflow-hidden transition-transform duration-300 ease-out ${
+        country && !cinematicPlan ? "translate-x-0" : "translate-x-full"
+      }`}
+      style={{ width: panelWidth }}
+    >
+      {/* Drag handle — left edge, above all panel content */}
+      <div
+        className="absolute top-0 left-0 bottom-0 z-30 cursor-col-resize select-none group"
+        style={{ width: 12 }}
+        onPointerDown={startPanelDrag}
+      >
+        <div className="absolute inset-y-0 left-[5px] w-[2px] bg-gray-200 group-hover:bg-blue-400/60 transition-colors" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[5px]">
+          {[0,1,2,3].map((i) => (
+            <div key={i} className="w-[3px] h-[3px] rounded-full bg-gray-300 group-hover:bg-blue-400/80 transition-colors" />
+          ))}
+        </div>
+      </div>
+
       {country && (
         <>
           {/* Header */}
@@ -52,7 +88,7 @@ export default function CountryPanel({
             <div className="flex items-start justify-between gap-2">
               <div>
                 <h2 className="text-xl font-bold text-gray-900 leading-tight">{country.name}</h2>
-                <p className="text-xs text-gray-400 mt-0.5 font-medium">{country.budget} · from India</p>
+                <p className="text-xs text-gray-400 mt-0.5 font-medium">{country.budget} · from {homeCountry}</p>
               </div>
               <div className="flex items-center gap-1 shrink-0">
                 <button onClick={onToggleFavorite}
@@ -107,7 +143,14 @@ export default function CountryPanel({
                   return (
                     <button
                       key={s}
-                      onClick={() => setActiveStyle(on ? null : s)}
+                      onClick={() => {
+                        if (on) { setActiveStyle(null); setSelectedCities([]); }
+                        else {
+                          setActiveStyle(s);
+                          const defaults = ITINERARY_RULES[country.name]?.styleDefaults?.[s] ?? [];
+                          setSelectedCities(defaults);
+                        }
+                      }}
                       className={`flex flex-col items-center gap-0.5 py-2 rounded-xl text-[10px] font-bold border-2 transition-all ${
                         on ? meta.activeForm : "border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:bg-gray-50"
                       }`}
@@ -171,11 +214,14 @@ export default function CountryPanel({
               )}
 
               {activeStyle && (
-                <TripPlanCard
+                <PlanPreview
+                  key={`${activeStyle}-${[...selectedCities].sort().join(",")}-${customDays}`}
                   country={country}
                   style={activeStyle}
                   selectedCities={selectedCities}
                   customDays={customDays}
+                  onCinematic={setCinematicPlan}
+                  onItinerary={setModalPlan}
                 />
               )}
             </Section>
@@ -302,54 +348,97 @@ export default function CountryPanel({
           </div>
         </>
       )}
+
+      {cinematicPlan && country && (
+        <ItineraryCinematic
+          plan={cinematicPlan}
+          country={country}
+          homeCountry={homeCountry}
+          mainMapRef={mainMapRef}
+          comboCountries={country.combo
+            ?.map((name) => allCountries?.find((c) => c.name === name))
+            .filter((c): c is Country => !!c)
+            .map(({ name, lat, lng }) => ({ name, lat, lng }))}
+          onClose={() => setCinematicPlan(null)}
+        />
+      )}
+      {modalPlan && country && (
+        <ItineraryModal
+          plan={modalPlan}
+          country={country}
+          onClose={() => setModalPlan(null)}
+        />
+      )}
     </div>
   );
 }
 
-function TripPlanCard({ country, style, selectedCities, customDays }: {
+function PlanPreview({ country, style, selectedCities, customDays, onCinematic, onItinerary }: {
   country: Country;
   style: PlanStyle;
   selectedCities: string[];
   customDays: number;
+  onCinematic: (plan: TripPlan) => void;
+  onItinerary: (plan: TripPlan) => void;
 }) {
   const plan = generateTripPlan(country, style, selectedCities, customDays);
   const meta = PLAN_STYLE_META[style];
+  const hasRuleData = !!ITINERARY_RULES[country.name];
+
+  // Unique ordered cities from plan (for route preview)
+  const planCities: string[] = [];
+  for (const day of plan.days) {
+    const m = day.label.match(/—\s*(.+)$/);
+    const city = m ? m[1].trim() : "";
+    if (city && planCities[planCities.length - 1] !== city) planCities.push(city);
+  }
 
   return (
-    <div className="rounded-xl overflow-hidden border border-gray-200">
-      {/* Cost header */}
+    <div className="itinerary-card rounded-xl overflow-hidden border border-gray-200 bg-white">
+      {/* Summary bar */}
       <div className={`flex items-center justify-between px-3 py-2.5 ${meta.badge}`}>
         <span className="text-xs font-bold">{meta.icon} {plan.duration}</span>
         <span className="text-xs font-bold">{plan.costPerPerson} / person</span>
       </div>
 
-      {/* Warning */}
       {plan.warning && (
         <div className="px-3 py-2 bg-amber-50 border-b border-amber-100">
           <p className="text-[11px] text-amber-700 leading-snug">{plan.warning}</p>
         </div>
       )}
 
-      {/* Days */}
-      <div className="px-3 py-3 space-y-3.5 bg-white">
-        {plan.days.map((day, i) => (
-          <div key={i}>
-            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">{day.label}</p>
-            <ul className="space-y-1">
-              {day.activities.map((a, j) => (
-                <li key={j} className="text-[11px] text-gray-600 flex gap-1.5 leading-snug">
-                  <span className="text-gray-300 shrink-0 mt-0.5">›</span>
-                  {a}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      {/* City route preview */}
+      {planCities.length > 1 && (
+        <div className="px-3 py-2 border-b border-gray-100 flex flex-wrap items-center gap-1">
+          {planCities.map((city, i) => (
+            <span key={city} className="flex items-center gap-1">
+              <span className="text-[10px] font-semibold text-gray-600">{city}</span>
+              {i < planCities.length - 1 && <span className="text-gray-300 text-[10px]">→</span>}
+            </span>
+          ))}
+        </div>
+      )}
 
-        {/* Note */}
-        <p className="text-[10px] text-gray-400 italic leading-snug border-t border-gray-100 pt-2.5">
-          {plan.note}
-        </p>
+      {/* Action buttons */}
+      <div className={`p-2.5 grid gap-2 ${hasRuleData ? "grid-cols-2" : "grid-cols-1"}`}>
+        {hasRuleData && (
+          <button
+            onClick={() => onCinematic(plan)}
+            className="flex flex-col items-center gap-1 py-3.5 rounded-xl bg-gray-950 text-white hover:bg-gray-800 active:scale-[0.97] transition-all"
+          >
+            <span className="text-xl leading-none">🎬</span>
+            <span className="text-[10px] font-black tracking-wide mt-0.5">Cinematic</span>
+            <span className="text-[9px] text-gray-400 leading-none">animated journey</span>
+          </button>
+        )}
+        <button
+          onClick={() => onItinerary(plan)}
+          className="flex flex-col items-center gap-1 py-3.5 rounded-xl bg-blue-50 text-blue-700 hover:bg-blue-100 active:scale-[0.97] transition-all border border-blue-100"
+        >
+          <span className="text-xl leading-none">📋</span>
+          <span className="text-[10px] font-black tracking-wide mt-0.5">Itinerary</span>
+          <span className="text-[9px] text-blue-400 leading-none">day-by-day plan</span>
+        </button>
       </div>
     </div>
   );

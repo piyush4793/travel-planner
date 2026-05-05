@@ -58,6 +58,26 @@ html, body, #root {
   animation: cardAppear 0.15s ease-out forwards;
 }
 
+/* Itinerary card entrance */
+@keyframes itinerary-card-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.itinerary-card {
+  animation: itinerary-card-in 0.25s ease-out forwards;
+}
+
+/* Day row stagger — delay set via inline style */
+@keyframes itinerary-day-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.itinerary-day {
+  animation: itinerary-day-in 0.35s ease-out both;
+}
+
 /* Hide scrollbar but keep scroll */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }

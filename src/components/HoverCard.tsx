@@ -34,6 +34,7 @@ export default function HoverCard({ country, x, y, isVisited }: Props) {
             src={imgSrc}
             alt={country.name}
             className="w-full h-full object-cover"
+            onError={() => setImgSrc(null)}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">

@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import type maplibregl from "maplibre-gl";
 import seedData from "../data/countries.json";
 import type { Country, VisitedFilter } from "./types";
 import MapView from "./components/MapView";
@@ -13,6 +14,59 @@ import { loadLS, saveLS } from "./utils/storage";
 const SEED = seedData as Country[];
 
 type AppView = "map" | "calendar" | "list";
+
+function getViewFromHash(): AppView {
+  const h = window.location.hash.slice(1);
+  if (h === "calendar" || h === "list") return h;
+  return "map";
+}
+
+const HOME_COUNTRIES = [
+  "India", "United States", "United Kingdom", "Germany", "France",
+  "Australia", "Canada", "Singapore", "UAE", "Japan", "South Korea",
+  "Netherlands", "Italy", "Spain", "Brazil", "South Africa",
+];
+
+function HomeCountrySelector({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handle = (e: MouseEvent) => {
+      if (!ref.current?.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handle);
+    return () => document.removeEventListener("mousedown", handle);
+  }, [open]);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="flex items-center gap-1 px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-full text-xs font-semibold transition-colors border border-white/20 text-white"
+      >
+        📍 {value}
+        <span className={`text-white/60 text-[10px] transition-transform inline-block ${open ? "rotate-180" : ""}`}>▾</span>
+      </button>
+      {open && (
+        <div className="absolute right-0 top-full mt-1 bg-white rounded-xl shadow-xl border border-gray-200 z-50 py-1 min-w-44 max-h-60 overflow-y-auto">
+          {HOME_COUNTRIES.map((c) => (
+            <button
+              key={c}
+              onClick={() => { onChange(c); setOpen(false); }}
+              className={`w-full text-left px-3 py-1.5 text-xs transition-colors ${
+                c === value ? "text-blue-600 font-bold bg-blue-50" : "text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              {c === value ? "✓ " : "  "}{c}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 function buildCountryList(customs: Country[], deleted: string[]): Country[] {
   const overrides = new Map(customs.map((c) => [c.name, c]));
@@ -29,22 +83,38 @@ export default function App() {
   const [visited, setVisited] = useState<Set<string>>(() => new Set(loadLS<string[]>("tp_visited", [])));
   const [favorites, setFavorites] = useState<Set<string>>(() => new Set(loadLS<string[]>("tp_favorites", [])));
 
-  const [view, setView] = useState<AppView>("map");
+  const [view, setView] = useState<AppView>(getViewFromHash);
+  const [homeCountry, setHomeCountry] = useState<string>(() => loadLS("tp_home_country", "India"));
   const [selectedMonth, setSelectedMonth] = useState<string[]>([]);
   const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
   const [visitedFilter, setVisitedFilter] = useState<VisitedFilter>("all");
   const [budgetFilter, setBudgetFilter] = useState<BudgetTier>("all");
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [formTarget, setFormTarget] = useState<Country | "new" | null>(null);
+  const mainMapRef = useRef<maplibregl.Map | null>(null);
 
   useEffect(() => { saveLS("tp_customs", customs); }, [customs]);
   useEffect(() => { saveLS("tp_deleted", deleted); }, [deleted]);
   useEffect(() => { saveLS("tp_visited", [...visited]); }, [visited]);
   useEffect(() => { saveLS("tp_favorites", [...favorites]); }, [favorites]);
+  useEffect(() => { saveLS("tp_home_country", homeCountry); }, [homeCountry]);
+
+  // URL hash routing — sync view → hash
+  useEffect(() => {
+    const hash = `#${view}`;
+    if (window.location.hash !== hash) window.history.pushState(null, "", hash);
+  }, [view]);
+
+  // URL hash routing — browser back/forward → sync hash → view
+  useEffect(() => {
+    const handle = () => setView(getViewFromHash());
+    window.addEventListener("popstate", handle);
+    return () => window.removeEventListener("popstate", handle);
+  }, []);
 
   const allCountries = useMemo(() => buildCountryList(customs, deleted), [customs, deleted]);
   const filtered = useMemo(
-    () => applyFilters(allCountries, selectedMonth, selectedExperiences, visited, visitedFilter, budgetFilter, []),
+    () => applyFilters(allCountries, selectedMonth, selectedExperiences, visited, visitedFilter, budgetFilter),
     [allCountries, selectedMonth, selectedExperiences, visited, visitedFilter, budgetFilter]
   );
   const allExperiences = useMemo(() => allUniqueExperiences(allCountries), [allCountries]);
@@ -120,6 +190,7 @@ export default function App() {
 
         {/* Right actions */}
         <div className="flex items-center gap-2.5">
+          <HomeCountrySelector value={homeCountry} onChange={setHomeCountry} />
           {favorites.size > 0 && <span className="text-yellow-300 text-sm font-semibold">★ {favorites.size}</span>}
           {visited.size > 0 && <span className="text-emerald-300 text-sm font-semibold">✓ {visited.size}</span>}
           <button onClick={() => setFormTarget("new")}
@@ -145,11 +216,10 @@ export default function App() {
         {view === "map" ? (
           <MapView
             countries={filtered}
-            allCountries={allCountries}
             onSelect={setSelectedCountry}
             highlightedNames={comboNames}
             visitedNames={visited}
-            selectedCountry={selectedCountry}
+            onMapReady={(m) => { mainMapRef.current = m; }}
           />
         ) : view === "calendar" ? (
           <CalendarView
@@ -186,6 +256,9 @@ export default function App() {
           onEdit={() => selectedCountry && setFormTarget(selectedCountry)}
           onDelete={() => selectedCountry && handleDelete(selectedCountry)}
           onUpdateNotes={handleUpdateNotes}
+          homeCountry={homeCountry}
+          mainMapRef={mainMapRef}
+          allCountries={allCountries}
         />
       </div>
 

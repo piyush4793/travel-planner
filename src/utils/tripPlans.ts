@@ -1,8 +1,11 @@
 import type { Country, CityEntry, PlanStyle } from "../types";
+import { ITINERARY_RULES } from "../data/itineraryRules";
 
 export type DayEntry = {
   label: string;
   activities: string[];
+  theme?: string;
+  hotels?: string[];
 };
 
 export type TripPlan = {
@@ -114,12 +117,129 @@ function cityBasedPlan(
   };
 }
 
+function getRuledItinerary(
+  country: Country,
+  style: PlanStyle,
+  selectedCities: string[],
+  customDays: number,
+): TripPlan | null {
+  const rule = ITINERARY_RULES[country.name];
+  if (!rule) return null;
+
+  // Determine which cities to visit
+  const citiesToVisit =
+    selectedCities.length > 0
+      ? rule.cityOrder.filter((c) => selectedCities.includes(c))
+      : (rule.styleDefaults[style] ?? rule.cityOrder.slice(0, 3));
+
+  const cityRules = citiesToVisit
+    .map((n) => rule.cities[n])
+    .filter((c): c is NonNullable<typeof c> => c !== undefined);
+
+  if (!cityRules.length) return null;
+
+  // Total days: sum of recDays for fixed styles, customDays for custom
+  const recTotal = cityRules.reduce((s, c) => s + c.recDays, 0);
+  const totalDays = style === "custom" ? customDays : recTotal;
+
+  // Allocate days per city proportionally, clamped to min/max
+  let allocs = cityRules.map((c) =>
+    Math.max(c.minDays, Math.min(c.maxDays, Math.round(totalDays * (c.recDays / recTotal))))
+  );
+
+  // Fix rounding drift
+  let allocated = allocs.reduce((a, b) => a + b, 0);
+  let passes = 0;
+  while (allocated !== totalDays && passes++ < 20) {
+    if (allocated < totalDays) {
+      const i = allocs.findIndex((a, idx) => a < cityRules[idx].maxDays);
+      if (i === -1) break;
+      allocs[i]++;
+    } else {
+      let i = allocs.length - 1;
+      while (i >= 0 && allocs[i] <= cityRules[i].minDays) i--;
+      if (i === -1) break;
+      allocs[i]--;
+    }
+    allocated = allocs.reduce((a, b) => a + b, 0);
+  }
+
+  // Build DayEntry array — one entry per calendar day
+  const days: DayEntry[] = [];
+  let dayIdx = 1;
+
+  cityRules.forEach((city, ci) => {
+    const numDays = allocs[ci];
+    for (let d = 0; d < numDays; d++) {
+      const rulePlan = city.days[d] ?? city.days[city.days.length - 1];
+      const dayNum = dayIdx + d;
+      days.push({
+        label: `Day ${dayNum} — ${city.name}`,
+        theme: rulePlan.theme,
+        activities: rulePlan.activities
+          .slice(0, 5)
+          .map((a) => (a.cost ? `${a.name} (${a.cost})` : a.name)),
+        hotels: rulePlan.hotels?.slice(0, 2).map((h) => `${h.name} — ${h.budget}`),
+      });
+    }
+    dayIdx += numDays;
+  });
+
+  // Cost
+  const [baseLow, baseHigh] = parseCostRange(country.budget);
+  let scaleFactor: number;
+  if (style === "touch-and-go") scaleFactor = 0.45;
+  else if (style === "explorer") scaleFactor = 1.0;
+  else if (style === "month-long") scaleFactor = 2.0;
+  else scaleFactor = Math.max(0.3, totalDays / 10);
+  const costLow = Math.round(baseLow * scaleFactor);
+  const costHigh = Math.round(baseHigh * scaleFactor);
+
+  // Warning if days are tight
+  const minTotal = cityRules.reduce((s, c) => s + c.minDays, 0);
+  const warning =
+    totalDays < minTotal
+      ? `⚠️ ${totalDays} days is tight for ${cityRules.length} cities — consider at least ${minTotal} days.`
+      : undefined;
+
+  // Note: key connections + practical tips
+  const connParts: string[] = [];
+  for (let i = 0; i < citiesToVisit.length - 1; i++) {
+    const conn = rule.connections.find(
+      (c) => c.from === citiesToVisit[i] && c.to === citiesToVisit[i + 1]
+    );
+    if (conn) {
+      const from = citiesToVisit[i].split(" ")[0];
+      const to = citiesToVisit[i + 1].split(" ")[0];
+      connParts.push(`${from} → ${to}: ${conn.method}${conn.cost ? ` (${conn.cost})` : ""}`);
+    }
+  }
+  const tips = [
+    rule.sim ? `SIM: ${rule.sim}` : "",
+    rule.apps?.length ? rule.apps.slice(0, 3).join(" · ") : "",
+    rule.extras?.length ? `Extras: ${rule.extras.slice(0, 3).join(", ")}` : "",
+  ].filter(Boolean);
+
+  const note = [...connParts.slice(0, 3), ...tips].join(" | ");
+
+  return {
+    duration: `${totalDays} day${totalDays !== 1 ? "s" : ""}`,
+    costPerPerson: costRange(costLow, costHigh),
+    days,
+    note,
+    warning,
+  };
+}
+
 export function generateTripPlan(
   country: Country,
   style: PlanStyle,
   selectedCities: string[] = [],
   customDays = 7,
 ): TripPlan {
+  const ruled = getRuledItinerary(country, style, selectedCities, customDays);
+  if (ruled) return ruled;
+
   const exps = country.experiences;
   const cities = country.cities ?? [];
   const [baseLow, baseHigh] = parseCostRange(country.budget);

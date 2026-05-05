@@ -1,7 +1,5 @@
-import type { Country, TravelStyle, VisitedFilter } from "../types";
+import type { Country, VisitedFilter } from "../types";
 import { expandMonth } from "./months";
-
-export { expandMonth };
 
 export function filterByMonth(countries: Country[], months: string[]): Country[] {
   if (months.length === 0) return countries;
@@ -47,11 +45,6 @@ export function filterByBudget(countries: Country[], tier: BudgetTier): Country[
   return countries.filter((c) => getBudgetTier(c.budget) === tier);
 }
 
-export function filterByTravelStyle(countries: Country[], styles: TravelStyle[]): Country[] {
-  if (styles.length === 0) return countries;
-  return countries.filter((c) => styles.some((s) => c.travelStyle?.includes(s)));
-}
-
 export function applyFilters(
   countries: Country[],
   month: string[],
@@ -59,18 +52,14 @@ export function applyFilters(
   visited: Set<string>,
   visitedFilter: VisitedFilter,
   budget: BudgetTier,
-  travelStyles: TravelStyle[]
 ): Country[] {
-  return filterByTravelStyle(
-    filterByBudget(
-      filterByVisited(
-        filterByExperiences(filterByMonth(countries, month), experiences),
-        visited,
-        visitedFilter
-      ),
-      budget
+  return filterByBudget(
+    filterByVisited(
+      filterByExperiences(filterByMonth(countries, month), experiences),
+      visited,
+      visitedFilter
     ),
-    travelStyles
+    budget
   );
 }
 
