@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom map marker */
+.travel-marker {
+  width: 32px;
+  height: 32px;
+  border-radius: 50% 50% 50% 0;
+  background: #2563eb;
+  transform: rotate(-45deg);
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.travel-marker:hover {
+  background: #1d4ed8;
+  transform: rotate(-45deg) scale(1.15);
+}
+
+.travel-marker--combo {
+  background: #7c3aed;
+  border-color: #ede9fe;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25), 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.travel-marker--combo:hover {
+  background: #6d28d9;
+}
+
+.travel-marker--visited {
+  background: #16a34a;
+  border-color: #dcfce7;
+}
+
+.travel-marker--visited:hover {
+  background: #15803d;
+}
+
+/* Hover card pop-up animation */
+@keyframes cardAppear {
+  from { opacity: 0; transform: translate(-50%, calc(-100% - 40px)) scale(0.85); }
+  to   { opacity: 1; transform: translate(-50%, calc(-100% - 52px)) scale(1); }
+}
+
+.hover-card {
+  animation: cardAppear 0.15s ease-out forwards;
+}
+
+/* Hide scrollbar but keep scroll */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Form inputs */
+.input {
+  @apply w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+}
+
+.travel-marker span {
+  transform: rotate(45deg);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
