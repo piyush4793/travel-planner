@@ -247,7 +247,8 @@
     "combo": [
       "Turkey",
       "Italy",
-      "Croatia"
+      "Croatia",
+      "Albania"
     ],
     "landmark": "Santorini",
     "travelStyle": [
@@ -317,7 +318,8 @@
     "combo": [
       "Norway",
       "Denmark",
-      "Greenland"
+      "Greenland",
+      "Scotland"
     ],
     "landmark": "Skógafoss",
     "travelStyle": [
@@ -2322,7 +2324,9 @@
     ],
     "combo": [
       "UK",
-      "Ireland"
+      "Ireland",
+      "Iceland",
+      "Greenland"
     ],
     "landmark": "Isle of Skye",
     "travelStyle": [
@@ -2528,7 +2532,8 @@
     ],
     "combo": [
       "Denmark",
-      "Iceland"
+      "Iceland",
+      "Scotland"
     ],
     "landmark": "Ilulissat Icefjord",
     "travelStyle": [

@@ -12,8 +12,9 @@ A personal, map-based travel planner pre-loaded with 50+ destinations. Filter by
 | **Map** | Interactive world map with color-coded pins. Click any pin to open the detail panel. Combo destinations highlight in purple when a country is selected. |
 | **Calendar** | Heatmap grid — rows are destinations, columns are months. Emerald = best time to visit, red = avoid, blue column = current month. |
 | **List** | Paginated table with search, sort by name / budget / visited, and inline visited/favorite toggles. |
+| **Trips** | Shows all countries organized into optimal trip combinations (max 3 per trip). Each trip has a main destination plus add-on countries. Summary shows total trips needed, combo vs solo breakdown, and visited progress. Click any country chip to open its detail panel. |
 
-View selection persists in the URL hash (`#map`, `#calendar`, `#list`) — refreshing the page returns you to the same view.
+View selection persists in the URL hash (`#map`, `#calendar`, `#list`, `#trips`) — refreshing the page returns you to the same view.
 
 ---
 
@@ -310,6 +311,8 @@ Deploy the `dist/` folder to Netlify, Vercel, or GitHub Pages (free tier — no 
 **Itinerary animations** — `itinerary-card` uses a CSS `@keyframes` entrance animation. Each `itinerary-day` row has the same animation with an `animation-delay` set via inline style (`i * 75ms`), creating a stagger effect. The `TripPlanCard` is keyed by `${style}-${cities}-${days}` so switching any input remounts the card and replays all animations.
 
 **Shared utilities** — `src/utils/transport.ts` exports `TransportType`, `TRANSPORT_EMOJI`, and `detectTransport()` used by both `ItineraryCinematic` and `ItineraryModal`. `src/hooks/usePanelDrag.ts` provides the resizable panel behaviour shared by `CountryPanel` and `ItineraryCinematic`.
+
+**Trips view grouping** — `TripsView` uses curated trip groups from `src/data/tripGroups.ts` (max 3 countries per trip). Each group has a main destination and up to 2 add-on countries. All seed countries are assigned to exactly one trip. Countries added by the user that aren't in any curated group become solo trips automatically.
 
 ---
 

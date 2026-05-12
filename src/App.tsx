@@ -8,16 +8,17 @@ import ListView from "./components/ListView";
 import Filters from "./components/Filters";
 import CountryPanel from "./components/CountryPanel";
 import CountryForm from "./components/CountryForm";
+import TripsView from "./components/TripsView";
 import { applyFilters, allUniqueExperiences, type BudgetTier } from "./utils/filterLogic";
 import { loadLS, saveLS } from "./utils/storage";
 
 const SEED = seedData as Country[];
 
-type AppView = "map" | "calendar" | "list";
+type AppView = "map" | "calendar" | "list" | "trips";
 
 function getViewFromHash(): AppView {
   const h = window.location.hash.slice(1);
-  if (h === "calendar" || h === "list") return h;
+  if (h === "calendar" || h === "list" || h === "trips") return h;
   return "map";
 }
 
@@ -178,12 +179,12 @@ export default function App() {
 
         {/* View toggle */}
         <div className="flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto">
-          {(["map", "calendar", "list"] as AppView[]).map((v) => (
+          {(["map", "calendar", "list", "trips"] as AppView[]).map((v) => (
             <button key={v} onClick={() => setView(v)}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
               }`}>
-              {v === "map" ? "🗺 Map" : v === "calendar" ? "📅 Calendar" : "☰ List"}
+              {v === "map" ? "🗺 Map" : v === "calendar" ? "📅 Calendar" : v === "list" ? "☰ List" : "✈ Trips"}
             </button>
           ))}
         </div>
@@ -228,7 +229,7 @@ export default function App() {
             visitedNames={visited}
             selectedCountry={selectedCountry}
           />
-        ) : (
+        ) : view === "list" ? (
           <ListView
             countries={filtered}
             visitedNames={visited}
@@ -239,6 +240,13 @@ export default function App() {
             onDelete={handleDelete}
             onSelect={setSelectedCountry}
             selectedCountry={selectedCountry}
+          />
+        ) : (
+          <TripsView
+            countries={allCountries}
+            visitedNames={visited}
+            favorites={favorites}
+            onSelect={setSelectedCountry}
           />
         )}
 
