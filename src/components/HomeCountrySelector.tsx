@@ -4,13 +4,6 @@ import type { CatalogEntry } from "../types";
 import { isEnabled } from "../utils/featureFlags";
 
 const CATALOG = catalogData as CatalogEntry[];
-
-const LEGACY_HOME_COUNTRIES = [
-  "India", "United States", "United Kingdom", "Germany", "France",
-  "Australia", "Canada", "Singapore", "UAE", "Japan", "South Korea",
-  "Netherlands", "Italy", "Spain", "Brazil", "South Africa",
-];
-
 const MAX_VISIBLE = 10;
 
 type Props = { value: string; onChange: (v: string) => void };
@@ -21,38 +14,10 @@ export default function HomeCountrySelector({ value, onChange }: Props) {
   if (searchable) {
     return <SearchableSelector value={value} onChange={onChange} />;
   }
-  return <LegacySelector value={value} onChange={onChange} />;
-}
-
-function LegacySelector({ value, onChange }: Props) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    const handle = (e: MouseEvent) => {
-      if (!ref.current?.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener("mousedown", handle);
-    return () => document.removeEventListener("mousedown", handle);
-  }, [open]);
-
   return (
-    <div ref={ref} className="relative">
-      <TriggerButton value={value} open={open} onClick={() => setOpen((o) => !o)} />
-      {open && (
-        <div className="absolute right-0 top-full mt-1 bg-white rounded-xl shadow-xl border border-gray-200 z-50 py-1 min-w-44 max-h-60 overflow-y-auto">
-          {LEGACY_HOME_COUNTRIES.map((c) => (
-            <CountryOption
-              key={c}
-              name={c}
-              selected={c === value}
-              onClick={() => { onChange(c); setOpen(false); }}
-            />
-          ))}
-        </div>
-      )}
-    </div>
+    <span className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-white">
+      📍 India
+    </span>
   );
 }
 
