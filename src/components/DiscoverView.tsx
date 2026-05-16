@@ -14,7 +14,7 @@ type ListFilter = "all" | "in-list" | "not-in-list";
 export default function DiscoverView({ catalog, myListNames, onAddToList, onRemoveFromList }: Props) {
   const [search, setSearch] = useState("");
   const [region, setRegion] = useState("All");
-  const [listFilter, setListFilter] = useState<ListFilter>("all");
+  const [listFilter, setListFilter] = useState<ListFilter>("in-list");
 
   const filtered = useMemo(() => {
     let result = catalog;
@@ -25,7 +25,13 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
       const q = search.toLowerCase();
       result = result.filter((c) => c.name.toLowerCase().includes(q));
     }
-    return result;
+    // Listed countries sort to top when showing "all"
+    return [...result].sort((a, b) => {
+      const aIn = myListNames.has(a.name) ? 0 : 1;
+      const bIn = myListNames.has(b.name) ? 0 : 1;
+      if (aIn !== bIn) return aIn - bIn;
+      return a.name.localeCompare(b.name);
+    });
   }, [catalog, region, listFilter, search, myListNames]);
 
   const inListCount = catalog.filter((c) => myListNames.has(c.name)).length;
