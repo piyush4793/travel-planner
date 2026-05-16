@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import type { CatalogEntry } from "../types";
+import PillGroup from "./PillGroup";
 
 type Props = {
   catalog: CatalogEntry[];
@@ -68,45 +69,23 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
 
         <div className="h-5 w-px bg-gray-200 shrink-0" />
 
-        {/* Region pills */}
-        <div className="flex items-center gap-0.5 bg-gray-100 rounded-full p-0.5 shrink-0">
-          {REGIONS.map((r) => (
-            <button
-              key={r}
-              onClick={() => setRegion(r)}
-              className={`px-2.5 py-1 rounded-full text-[10px] font-semibold transition-all whitespace-nowrap ${
-                region === r
-                  ? "bg-white text-blue-700 shadow-sm"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
-            >
-              {r === "All" ? "🌍 All" : r}
-            </button>
-          ))}
-        </div>
+        <PillGroup
+          options={REGIONS.map((r) => ({ key: r, label: r === "All" ? "🌍 All" : r }))}
+          value={region}
+          onChange={setRegion}
+        />
 
         <div className="h-5 w-px bg-gray-200 shrink-0" />
 
-        {/* List status pills */}
-        <div className="flex items-center gap-0.5 bg-gray-100 rounded-full p-0.5 shrink-0">
-          {([
+        <PillGroup
+          options={[
             { key: "all", label: "Any" },
             { key: "in-list", label: "In My List" },
             { key: "not-in-list", label: "Not Added" },
-          ] as const).map((o) => (
-            <button
-              key={o.key}
-              onClick={() => setListFilter(o.key)}
-              className={`px-2.5 py-1 rounded-full text-[10px] font-semibold transition-all whitespace-nowrap ${
-                listFilter === o.key
-                  ? "bg-white text-blue-700 shadow-sm"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
-            >
-              {o.label}
-            </button>
-          ))}
-        </div>
+          ]}
+          value={listFilter}
+          onChange={(v) => setListFilter(v as ListFilter)}
+        />
 
         {(search || region !== "All" || listFilter !== "all") && (
           <button
