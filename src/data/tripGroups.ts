@@ -37,3 +37,39 @@ export const TRIP_GROUPS: TripGroupDef[] = [
 ];
 
 export const ALL_REGIONS: Region[] = ["Asia", "Europe", "Middle East", "Africa", "Americas", "Oceania"];
+
+/** Merge seed trip groups with user overrides + tombstones */
+export function buildMergedTripGroups(
+  customs: TripGroupDef[],
+  deleted: string[],
+  allCountryNames: string[],
+): TripGroupDef[] {
+  const deletedSet = new Set(deleted);
+  const customByMain = new Map(customs.map((g) => [g.main, g]));
+  const nameSet = new Set(allCountryNames);
+
+  const merged: TripGroupDef[] = [];
+  for (const seed of TRIP_GROUPS) {
+    if (deletedSet.has(seed.main)) continue;
+    const group = customByMain.get(seed.main) ?? seed;
+    customByMain.delete(seed.main);
+    merged.push(sanitizeGroup(group, nameSet));
+  }
+
+  // User-created groups (main not in seed)
+  for (const custom of customByMain.values()) {
+    if (deletedSet.has(custom.main)) continue;
+    merged.push(sanitizeGroup(custom, nameSet));
+  }
+
+  return merged;
+}
+
+function sanitizeGroup(g: TripGroupDef, validNames: Set<string>): TripGroupDef {
+  const addOns = g.addOns
+    .filter((n) => validNames.has(n) && n !== g.main)
+    .filter((n, i, arr) => arr.indexOf(n) === i)
+    .slice(0, 2);
+  const region = ALL_REGIONS.includes(g.region) ? g.region : "Asia";
+  return { main: g.main, addOns, region };
+}

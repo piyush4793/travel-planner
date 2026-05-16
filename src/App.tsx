@@ -11,6 +11,7 @@ import CountryForm from "./components/CountryForm";
 import TripsView from "./components/TripsView";
 import { applyFilters, allUniqueExperiences, type BudgetTier } from "./utils/filterLogic";
 import { loadLS, saveLS } from "./utils/storage";
+import { TRIP_GROUPS, buildMergedTripGroups, type TripGroupDef } from "./data/tripGroups";
 
 const SEED = seedData as Country[];
 
@@ -84,6 +85,9 @@ export default function App() {
   const [visited, setVisited] = useState<Set<string>>(() => new Set(loadLS<string[]>("tp_visited", [])));
   const [favorites, setFavorites] = useState<Set<string>>(() => new Set(loadLS<string[]>("tp_favorites", [])));
 
+  const [tripCustoms, setTripCustoms] = useState<TripGroupDef[]>(() => loadLS("tp_trip_customs", []));
+  const [tripDeleted, setTripDeleted] = useState<string[]>(() => loadLS("tp_trip_deleted", []));
+
   const [view, setView] = useState<AppView>(getViewFromHash);
   const [homeCountry, setHomeCountry] = useState<string>(() => loadLS("tp_home_country", "India"));
   const [selectedMonth, setSelectedMonth] = useState<string[]>([]);
@@ -99,6 +103,8 @@ export default function App() {
   useEffect(() => { saveLS("tp_visited", [...visited]); }, [visited]);
   useEffect(() => { saveLS("tp_favorites", [...favorites]); }, [favorites]);
   useEffect(() => { saveLS("tp_home_country", homeCountry); }, [homeCountry]);
+  useEffect(() => { saveLS("tp_trip_customs", tripCustoms); }, [tripCustoms]);
+  useEffect(() => { saveLS("tp_trip_deleted", tripDeleted); }, [tripDeleted]);
 
   // URL hash routing — sync view → hash
   useEffect(() => {
@@ -120,6 +126,10 @@ export default function App() {
   );
   const allExperiences = useMemo(() => allUniqueExperiences(allCountries), [allCountries]);
   const allNames = useMemo(() => allCountries.map((c) => c.name), [allCountries]);
+  const mergedTripGroups = useMemo(
+    () => buildMergedTripGroups(tripCustoms, tripDeleted, allNames),
+    [tripCustoms, tripDeleted, allNames],
+  );
   const comboNames = selectedCountry?.combo ?? [];
 
   const handleSave = useCallback((country: Country) => {
@@ -159,6 +169,25 @@ export default function App() {
       setCustoms((prev) => [...prev.filter((c) => c.name !== updated.name), updated]);
       return updated;
     });
+  }, []);
+
+  const handleSaveTrip = useCallback((originalMain: string | null, group: TripGroupDef) => {
+    if (originalMain && originalMain !== group.main) {
+      // Main changed — tombstone old seed entry if it was a seed
+      if (TRIP_GROUPS.some((s) => s.main === originalMain)) {
+        setTripDeleted((prev) => [...prev.filter((m) => m !== originalMain), originalMain]);
+      }
+      setTripCustoms((prev) => [...prev.filter((g) => g.main !== originalMain && g.main !== group.main), group]);
+    } else {
+      setTripCustoms((prev) => [...prev.filter((g) => g.main !== group.main), group]);
+    }
+  }, []);
+
+  const handleDeleteTrip = useCallback((main: string) => {
+    if (TRIP_GROUPS.some((s) => s.main === main)) {
+      setTripDeleted((prev) => [...prev.filter((m) => m !== main), main]);
+    }
+    setTripCustoms((prev) => prev.filter((g) => g.main !== main));
   }, []);
 
   const hasActiveFilters = selectedMonth.length > 0 || selectedExperiences.length > 0 || visitedFilter !== "all" || budgetFilter !== "all";
@@ -247,6 +276,9 @@ export default function App() {
             visitedNames={visited}
             favorites={favorites}
             onSelect={setSelectedCountry}
+            tripGroups={mergedTripGroups}
+            onSaveTrip={handleSaveTrip}
+            onDeleteTrip={handleDeleteTrip}
           />
         )}
 

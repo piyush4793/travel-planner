@@ -1,12 +1,15 @@
 import { useMemo, useState } from "react";
 import type { Country } from "../types";
-import { TRIP_GROUPS, ALL_REGIONS, type Region } from "../data/tripGroups";
+import { ALL_REGIONS, type Region, type TripGroupDef } from "../data/tripGroups";
 
 type Props = {
   countries: Country[];
   visitedNames: Set<string>;
   favorites: Set<string>;
   onSelect: (c: Country) => void;
+  tripGroups: TripGroupDef[];
+  onSaveTrip: (originalMain: string | null, group: TripGroupDef) => void;
+  onDeleteTrip: (main: string) => void;
 };
 
 type Trip = {
@@ -19,6 +22,7 @@ type Trip = {
   noneVisited: boolean;
   isFavorited: boolean;
   region: Region;
+  source: "group" | "solo";
 };
 
 type ViewMode = "all" | "combo" | "solo";
@@ -26,6 +30,7 @@ type VisitedMode = "all" | "completed" | "in-progress" | "not-started";
 
 function buildTrips(
   allCountries: Country[],
+  tripGroups: TripGroupDef[],
   visitedNames: Set<string>,
   favorites: Set<string>,
 ): Trip[] {
@@ -34,7 +39,7 @@ function buildTrips(
   const trips: Trip[] = [];
   let nextId = 0;
 
-  for (const group of TRIP_GROUPS) {
+  for (const group of tripGroups) {
     const main = byName.get(group.main);
     if (!main) continue;
 
@@ -54,6 +59,7 @@ function buildTrips(
       noneVisited: vCount === 0,
       isFavorited: all.some((c) => favorites.has(c.name)),
       region: group.region,
+      source: "group",
     });
     for (const c of all) assigned.add(c.name);
   }
@@ -71,39 +77,56 @@ function buildTrips(
       noneVisited: !isV,
       isFavorited: favorites.has(c.name),
       region: "Asia",
+      source: "solo",
     });
   }
 
   return trips;
 }
 
-export default function TripsView({ countries, visitedNames, favorites, onSelect }: Props) {
+export default function TripsView({
+  countries,
+  visitedNames,
+  favorites,
+  onSelect,
+  tripGroups,
+  onSaveTrip,
+  onDeleteTrip,
+}: Props) {
   const [viewMode, setViewMode] = useState<ViewMode>("all");
   const [visitedMode, setVisitedMode] = useState<VisitedMode>("all");
   const [regionFilter, setRegionFilter] = useState<Region | "all">("all");
   const [search, setSearch] = useState("");
+  const [editingMain, setEditingMain] = useState<string | null>(null);
+  const [creatingNew, setCreatingNew] = useState(false);
 
   const trips = useMemo(
-    () => buildTrips(countries, visitedNames, favorites),
-    [countries, visitedNames, favorites],
+    () => buildTrips(countries, tripGroups, visitedNames, favorites),
+    [countries, tripGroups, visitedNames, favorites],
   );
+
+  // Countries already assigned to a trip group (for the editor exclusion list)
+  const assignedNames = useMemo(() => {
+    const s = new Set<string>();
+    for (const g of tripGroups) {
+      s.add(g.main);
+      for (const a of g.addOns) s.add(a);
+    }
+    return s;
+  }, [tripGroups]);
 
   const filtered = useMemo(() => {
     let result = trips;
 
-    // Type filter
     if (viewMode === "combo") result = result.filter((t) => t.addOns.length > 0);
     if (viewMode === "solo") result = result.filter((t) => t.addOns.length === 0);
 
-    // Visited filter
     if (visitedMode === "completed") result = result.filter((t) => t.allVisited);
     if (visitedMode === "in-progress") result = result.filter((t) => !t.allVisited && !t.noneVisited);
     if (visitedMode === "not-started") result = result.filter((t) => t.noneVisited);
 
-    // Region filter
     if (regionFilter !== "all") result = result.filter((t) => t.region === regionFilter);
 
-    // Search
     if (search.trim()) {
       const q = search.toLowerCase();
       result = result.filter((t) =>
@@ -120,6 +143,17 @@ export default function TripsView({ countries, visitedNames, favorites, onSelect
   const totalVisited = trips.reduce((s, t) => s + t.visitedCount, 0);
   const tripsCompleted = trips.filter((t) => t.allVisited).length;
 
+  const handleSave = (originalMain: string | null, group: TripGroupDef) => {
+    onSaveTrip(originalMain, group);
+    setEditingMain(null);
+    setCreatingNew(false);
+  };
+
+  const handleDelete = (main: string) => {
+    onDeleteTrip(main);
+    setEditingMain(null);
+  };
+
   return (
     <div className="h-full flex flex-col bg-white overflow-hidden">
       {/* Summary bar */}
@@ -133,11 +167,16 @@ export default function TripsView({ countries, visitedNames, favorites, onSelect
           <Stat value={totalVisited} label="visited" color="text-green-600" />
           <Stat value={tripsCompleted} label={`of ${trips.length} complete`} color="text-green-600" />
         </div>
+        <button
+          onClick={() => { setCreatingNew(true); setEditingMain(null); }}
+          className="shrink-0 flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+        >
+          + New Trip
+        </button>
       </div>
 
       {/* Filter bar */}
       <div className="flex items-center gap-3 px-5 py-2 border-b bg-white shrink-0 overflow-x-auto">
-        {/* Search */}
         <input
           type="text"
           value={search}
@@ -148,7 +187,6 @@ export default function TripsView({ countries, visitedNames, favorites, onSelect
 
         <div className="h-5 w-px bg-gray-200 shrink-0" />
 
-        {/* Type toggle */}
         <PillGroup
           options={[
             { key: "all", label: "All" },
@@ -161,7 +199,6 @@ export default function TripsView({ countries, visitedNames, favorites, onSelect
 
         <div className="h-5 w-px bg-gray-200 shrink-0" />
 
-        {/* Visited toggle */}
         <PillGroup
           options={[
             { key: "all", label: "Any" },
@@ -175,7 +212,6 @@ export default function TripsView({ countries, visitedNames, favorites, onSelect
 
         <div className="h-5 w-px bg-gray-200 shrink-0" />
 
-        {/* Region filter */}
         <PillGroup
           options={[
             { key: "all", label: "🌍 All" },
@@ -185,7 +221,6 @@ export default function TripsView({ countries, visitedNames, favorites, onSelect
           onChange={(v) => setRegionFilter(v as Region | "all")}
         />
 
-        {/* Active filter count */}
         {(search || viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all") && (
           <button
             onClick={() => { setSearch(""); setViewMode("all"); setVisitedMode("all"); setRegionFilter("all"); }}
@@ -198,32 +233,260 @@ export default function TripsView({ countries, visitedNames, favorites, onSelect
 
       {/* Trip cards */}
       <div className="flex-1 overflow-y-auto px-5 py-4">
-        {filtered.length > 0 && (
-          <p className="text-[10px] text-gray-400 mb-3 max-w-5xl mx-auto">
-            Showing {filtered.length} of {trips.length} trips
-          </p>
-        )}
-        <div className="grid gap-3 max-w-5xl mx-auto">
-          {filtered.map((trip) => (
-            <TripRow
-              key={trip.id}
-              trip={trip}
-              visitedNames={visitedNames}
-              favorites={favorites}
-              onSelect={onSelect}
-            />
-          ))}
-
-          {filtered.length === 0 && (
-            <div className="text-center py-16 text-gray-400 text-sm">
-              No trips match your filters.
+        <div className="max-w-5xl mx-auto">
+          {/* Create new trip form — above filtered list */}
+          {creatingNew && (
+            <div className="mb-4">
+              <TripEditor
+                initial={null}
+                allCountryNames={countries.map((c) => c.name)}
+                assignedNames={assignedNames}
+                currentTripNames={[]}
+                onSave={(group) => handleSave(null, group)}
+                onCancel={() => setCreatingNew(false)}
+                onDelete={null}
+              />
             </div>
+          )}
+
+          {filtered.length > 0 && (
+            <p className="text-[10px] text-gray-400 mb-3">
+              Showing {filtered.length} of {trips.length} trips
+            </p>
+          )}
+          <div className="grid gap-3">
+            {filtered.map((trip) =>
+              editingMain === trip.main.name ? (
+                <TripEditor
+                  key={trip.id}
+                  initial={{
+                    main: trip.main.name,
+                    addOns: trip.addOns.map((c) => c.name),
+                    region: trip.region,
+                  }}
+                  allCountryNames={countries.map((c) => c.name)}
+                  assignedNames={assignedNames}
+                  currentTripNames={trip.allCountries.map((c) => c.name)}
+                  onSave={(group) => handleSave(trip.main.name, group)}
+                  onCancel={() => setEditingMain(null)}
+                  onDelete={() => handleDelete(trip.main.name)}
+                />
+              ) : (
+                <TripRow
+                  key={trip.id}
+                  trip={trip}
+                  visitedNames={visitedNames}
+                  favorites={favorites}
+                  onSelect={onSelect}
+                  onEdit={trip.source === "group" ? () => { setEditingMain(trip.main.name); setCreatingNew(false); } : undefined}
+                />
+              ),
+            )}
+
+            {filtered.length === 0 && !creatingNew && (
+              <div className="text-center py-16 text-gray-400 text-sm">
+                No trips match your filters.
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── Inline Trip Editor ─────────────────────────────────────────────── */
+
+function TripEditor({
+  initial,
+  allCountryNames,
+  assignedNames,
+  currentTripNames,
+  onSave,
+  onCancel,
+  onDelete,
+}: {
+  initial: TripGroupDef | null;
+  allCountryNames: string[];
+  assignedNames: Set<string>;
+  currentTripNames: string[];
+  onSave: (group: TripGroupDef) => void;
+  onCancel: () => void;
+  onDelete: (() => void) | null;
+}) {
+  const [main, setMain] = useState(initial?.main ?? "");
+  const [addOns, setAddOns] = useState<string[]>(initial?.addOns ?? []);
+  const [region, setRegion] = useState<Region>(initial?.region ?? "Asia");
+  const [addOnSearch, setAddOnSearch] = useState("");
+
+  const currentSet = new Set(currentTripNames);
+  const sorted = [...allCountryNames].sort();
+
+  // Available for main: not assigned elsewhere (allow current trip's countries)
+  const availableMain = sorted.filter(
+    (n) => !assignedNames.has(n) || currentSet.has(n) || n === main
+  );
+
+  // Available for add-ons: not assigned elsewhere and not the current main
+  const availableAddOns = sorted.filter(
+    (n) => n !== main && (!assignedNames.has(n) || currentSet.has(n) || addOns.includes(n))
+  );
+
+  const filteredAddOns = addOnSearch.trim()
+    ? availableAddOns.filter((n) => n.toLowerCase().includes(addOnSearch.toLowerCase()))
+    : availableAddOns;
+
+  const toggleAddOn = (name: string) => {
+    setAddOns((prev) =>
+      prev.includes(name) ? prev.filter((n) => n !== name) : prev.length < 2 ? [...prev, name] : prev
+    );
+  };
+
+  const canSave = main.trim() !== "";
+
+  // If main is changed and was an add-on, remove it
+  const handleMainChange = (newMain: string) => {
+    setMain(newMain);
+    setAddOns((prev) => prev.filter((n) => n !== newMain));
+  };
+
+  return (
+    <div className="rounded-xl border-2 border-blue-300 bg-blue-50/50 p-4 space-y-3">
+      <div className="flex items-center justify-between">
+        <span className="text-xs font-bold text-blue-700">
+          {initial ? "Edit Trip" : "New Trip"}
+        </span>
+        <div className="flex items-center gap-2">
+          {onDelete && (
+            <button
+              onClick={onDelete}
+              className="text-[10px] font-medium text-red-500 hover:text-red-700 px-2 py-1 rounded hover:bg-red-50 transition-colors"
+            >
+              🗑 Delete
+            </button>
+          )}
+          <button
+            onClick={onCancel}
+            className="text-[10px] font-medium text-gray-500 hover:text-gray-700 px-2 py-1 rounded hover:bg-gray-100 transition-colors"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={() => canSave && onSave({ main, addOns, region })}
+            disabled={!canSave}
+            className={`text-[10px] font-semibold px-3 py-1 rounded-lg transition-colors ${
+              canSave
+                ? "bg-blue-600 text-white hover:bg-blue-700"
+                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+            }`}
+          >
+            Save
+          </button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-[1fr_1fr_auto] gap-3">
+        {/* Main country */}
+        <div>
+          <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+            Main Country
+          </label>
+          <select
+            value={main}
+            onChange={(e) => handleMainChange(e.target.value)}
+            className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-gray-200 bg-white focus:border-blue-300 focus:outline-none"
+          >
+            <option value="">Select…</option>
+            {availableMain.map((n) => (
+              <option key={n} value={n}>{n}</option>
+            ))}
+          </select>
+        </div>
+
+        {/* Region */}
+        <div>
+          <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+            Region
+          </label>
+          <select
+            value={region}
+            onChange={(e) => setRegion(e.target.value as Region)}
+            className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-gray-200 bg-white focus:border-blue-300 focus:outline-none"
+          >
+            {ALL_REGIONS.map((r) => (
+              <option key={r} value={r}>{r}</option>
+            ))}
+          </select>
+        </div>
+
+        {/* Add-on count badge */}
+        <div className="flex items-end pb-0.5">
+          <span className="text-[10px] font-medium text-gray-400">
+            {addOns.length}/2 add-ons
+          </span>
+        </div>
+      </div>
+
+      {/* Add-on selector */}
+      <div>
+        <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+          Add-on Countries (max 2)
+        </label>
+
+        {/* Selected add-ons as removable chips */}
+        {addOns.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mb-2">
+            {addOns.map((n) => (
+              <button
+                key={n}
+                onClick={() => toggleAddOn(n)}
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-blue-100 text-blue-700 hover:bg-blue-200 transition-colors"
+              >
+                {n}
+                <span className="text-blue-400 text-[10px]">✕</span>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Search + scrollable list */}
+        <input
+          type="text"
+          value={addOnSearch}
+          onChange={(e) => setAddOnSearch(e.target.value)}
+          placeholder="Search countries to add…"
+          className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-gray-200 bg-white focus:border-blue-300 focus:outline-none mb-1.5"
+        />
+        <div className="max-h-32 overflow-y-auto rounded-lg border border-gray-100 bg-white">
+          {filteredAddOns.length > 0 ? filteredAddOns.map((n) => {
+            const isSelected = addOns.includes(n);
+            const isDisabled = !isSelected && addOns.length >= 2;
+            return (
+              <button
+                key={n}
+                onClick={() => !isDisabled && toggleAddOn(n)}
+                disabled={isDisabled}
+                className={`w-full text-left px-3 py-1.5 text-xs border-b border-gray-50 last:border-0 transition-colors ${
+                  isSelected
+                    ? "bg-blue-50 text-blue-700 font-semibold"
+                    : isDisabled
+                      ? "text-gray-300 cursor-not-allowed"
+                      : "text-gray-600 hover:bg-gray-50"
+                }`}
+              >
+                {isSelected ? "✓ " : "  "}{n}
+              </button>
+            );
+          }) : (
+            <div className="px-3 py-2 text-xs text-gray-400">No matching countries</div>
           )}
         </div>
       </div>
     </div>
   );
 }
+
+/* ── Shared sub-components ──────────────────────────────────────────── */
 
 function PillGroup({
   options,
@@ -267,11 +530,13 @@ function TripRow({
   visitedNames,
   favorites,
   onSelect,
+  onEdit,
 }: {
   trip: Trip;
   visitedNames: Set<string>;
   favorites: Set<string>;
   onSelect: (c: Country) => void;
+  onEdit?: () => void;
 }) {
   const isCombo = trip.addOns.length > 0;
   const progress = trip.allCountries.length > 0
@@ -280,7 +545,7 @@ function TripRow({
 
   return (
     <div
-      className={`rounded-xl border p-4 transition-all ${
+      className={`rounded-xl border p-4 transition-all group ${
         trip.allVisited
           ? "bg-emerald-50/60 border-emerald-200"
           : "bg-white border-gray-200 hover:border-blue-200 hover:shadow-sm"
@@ -314,6 +579,15 @@ function TripRow({
         </div>
 
         <div className="flex items-center gap-2 shrink-0">
+          {onEdit && (
+            <button
+              onClick={onEdit}
+              className="opacity-0 group-hover:opacity-100 text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-0.5 rounded hover:bg-blue-50 transition-all"
+              title="Edit trip"
+            >
+              ✏️
+            </button>
+          )}
           <span className="text-[10px] text-gray-400 font-medium">
             {trip.visitedCount}/{trip.allCountries.length}
           </span>
