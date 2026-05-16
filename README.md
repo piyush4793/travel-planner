@@ -99,7 +99,18 @@ Full-screen animated experience for rule-based countries:
 ### Home Country
 📍 button in header — changes budget "from X" labels. Persists in localStorage.
 
-Supported: India, US, UK, Germany, France, Australia, Canada, Singapore, UAE, Japan, South Korea, Netherlands, Italy, Spain, Brazil, South Africa.
+Default: 16 curated countries. With `searchableHomeCountry` feature flag enabled: searchable dropdown with all 197 countries (max 10 visible, scroll-enabled).
+
+### Feature Flags
+Stored in `tp_features` localStorage key. Toggle via browser console:
+```js
+localStorage.setItem('tp_features', JSON.stringify({ searchableHomeCountry: true }));
+location.reload();
+```
+
+| Flag | Default | Description |
+|---|---|---|
+| `searchableHomeCountry` | `false` | Searchable dropdown with all 197 countries for home country selection |
 
 ---
 
@@ -165,6 +176,7 @@ src/
 │   ├── transport.ts           # TransportType, emoji, detection
 │   ├── wikiImages.ts          # Wikipedia image fetch + cache
 │   ├── months.ts              # Month constants
+│   ├── featureFlags.ts        # Feature gate system (tp_features localStorage)
 │   └── storage.ts             # localStorage read/write helpers
 ├── App.tsx                    # Root layout + view orchestration
 ├── types.ts                   # Shared TypeScript types
@@ -245,6 +257,7 @@ type TripGroupDef = {
 | `tp_home_country` | Departure country (default: "India") |
 | `tp_trip_customs` | User-edited/created trip groups |
 | `tp_trip_deleted` | Tombstoned seed trip group mains |
+| `tp_features` | Feature flag overrides (`{ searchableHomeCountry: true }`) |
 
 ---
 
