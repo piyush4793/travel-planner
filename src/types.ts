@@ -10,6 +10,13 @@ export type CityEntry = {
   notes?: string;
 };
 
+export type CatalogEntry = {
+  name: string;
+  lat: number;
+  lng: number;
+  region: string;
+};
+
 export type Country = {
   name: string;
   lat: number;

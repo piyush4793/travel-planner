@@ -1,10 +1,12 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import type maplibregl from "maplibre-gl";
 import seedData from "../data/countries.json";
-import type { Country, VisitedFilter } from "./types";
+import catalogData from "../data/worldCatalog.json";
+import type { Country, CatalogEntry, VisitedFilter } from "./types";
 import MapView from "./components/MapView";
 import CalendarView from "./components/CalendarView";
 import ListView from "./components/ListView";
+import DiscoverView from "./components/DiscoverView";
 import Filters from "./components/Filters";
 import CountryPanel from "./components/CountryPanel";
 import CountryForm from "./components/CountryForm";
@@ -14,12 +16,13 @@ import { loadLS, saveLS } from "./utils/storage";
 import { TRIP_GROUPS, buildMergedTripGroups, type TripGroupDef } from "./data/tripGroups";
 
 const SEED = seedData as Country[];
+const CATALOG = catalogData as CatalogEntry[];
 
-type AppView = "map" | "calendar" | "list" | "trips";
+type AppView = "map" | "calendar" | "list" | "trips" | "discover";
 
 function getViewFromHash(): AppView {
   const h = window.location.hash.slice(1);
-  if (h === "calendar" || h === "list" || h === "trips") return h;
+  if (h === "calendar" || h === "list" || h === "trips" || h === "discover") return h;
   return "map";
 }
 
@@ -85,6 +88,16 @@ export default function App() {
   const [visited, setVisited] = useState<Set<string>>(() => new Set(loadLS<string[]>("tp_visited", [])));
   const [favorites, setFavorites] = useState<Set<string>>(() => new Set(loadLS<string[]>("tp_favorites", [])));
 
+  // My List — initialized with seed + existing custom country names on first use
+  const [myList, setMyList] = useState<Set<string>>(() => {
+    const stored = loadLS<string[] | null>("tp_my_list", null);
+    if (stored !== null) return new Set(stored);
+    const customNames = loadLS<Country[]>("tp_customs", []).map((c) => c.name);
+    const deletedNames = loadLS<string[]>("tp_deleted", []);
+    const seedNames = SEED.map((c) => c.name).filter((n) => !deletedNames.includes(n));
+    return new Set([...seedNames, ...customNames]);
+  });
+
   const [tripCustoms, setTripCustoms] = useState<TripGroupDef[]>(() => loadLS("tp_trip_customs", []));
   const [tripDeleted, setTripDeleted] = useState<string[]>(() => loadLS("tp_trip_deleted", []));
 
@@ -103,6 +116,7 @@ export default function App() {
   useEffect(() => { saveLS("tp_visited", [...visited]); }, [visited]);
   useEffect(() => { saveLS("tp_favorites", [...favorites]); }, [favorites]);
   useEffect(() => { saveLS("tp_home_country", homeCountry); }, [homeCountry]);
+  useEffect(() => { saveLS("tp_my_list", [...myList]); }, [myList]);
   useEffect(() => { saveLS("tp_trip_customs", tripCustoms); }, [tripCustoms]);
   useEffect(() => { saveLS("tp_trip_deleted", tripDeleted); }, [tripDeleted]);
 
@@ -120,20 +134,33 @@ export default function App() {
   }, []);
 
   const allCountries = useMemo(() => buildCountryList(customs, deleted), [customs, deleted]);
+
+  // Only countries in My List, with favorites sorted to top
+  const myListCountries = useMemo(() => {
+    const inList = allCountries.filter((c) => myList.has(c.name));
+    return inList.sort((a, b) => {
+      const aFav = favorites.has(a.name) ? 0 : 1;
+      const bFav = favorites.has(b.name) ? 0 : 1;
+      if (aFav !== bFav) return aFav - bFav;
+      return a.name.localeCompare(b.name);
+    });
+  }, [allCountries, myList, favorites]);
+
   const filtered = useMemo(
-    () => applyFilters(allCountries, selectedMonth, selectedExperiences, visited, visitedFilter, budgetFilter),
-    [allCountries, selectedMonth, selectedExperiences, visited, visitedFilter, budgetFilter]
+    () => applyFilters(myListCountries, selectedMonth, selectedExperiences, visited, visitedFilter, budgetFilter),
+    [myListCountries, selectedMonth, selectedExperiences, visited, visitedFilter, budgetFilter]
   );
-  const allExperiences = useMemo(() => allUniqueExperiences(allCountries), [allCountries]);
-  const allNames = useMemo(() => allCountries.map((c) => c.name), [allCountries]);
+  const allExperiences = useMemo(() => allUniqueExperiences(myListCountries), [myListCountries]);
+  const myListNames = useMemo(() => myListCountries.map((c) => c.name), [myListCountries]);
   const mergedTripGroups = useMemo(
-    () => buildMergedTripGroups(tripCustoms, tripDeleted, allNames),
-    [tripCustoms, tripDeleted, allNames],
+    () => buildMergedTripGroups(tripCustoms, tripDeleted, myListNames),
+    [tripCustoms, tripDeleted, myListNames],
   );
   const comboNames = selectedCountry?.combo ?? [];
 
   const handleSave = useCallback((country: Country) => {
     setCustoms((prev) => [...prev.filter((c) => c.name !== country.name), country]);
+    setMyList((prev) => new Set(prev).add(country.name));
     setFormTarget(null);
     setSelectedCountry(country);
   }, []);
@@ -190,6 +217,34 @@ export default function App() {
     setTripCustoms((prev) => prev.filter((g) => g.main !== main));
   }, []);
 
+  const handleAddToList = useCallback((name: string) => {
+    setMyList((prev) => new Set(prev).add(name));
+    // If it's a seed country, un-delete it; if not in seed or customs, create a minimal entry from catalog
+    const inSeed = SEED.find((s) => s.name === name);
+    if (inSeed) {
+      setDeleted((prev) => prev.filter((n) => n !== name));
+    } else {
+      setCustoms((prev) => {
+        if (prev.some((c) => c.name === name)) return prev;
+        const cat = CATALOG.find((c) => c.name === name);
+        if (!cat) return prev;
+        const minimal: Country = {
+          name: cat.name, lat: cat.lat, lng: cat.lng,
+          bestMonths: [], budget: "", experiences: [],
+        };
+        return [...prev, minimal];
+      });
+    }
+  }, []);
+
+  const handleRemoveFromList = useCallback((name: string) => {
+    setMyList((prev) => {
+      const next = new Set(prev);
+      next.delete(name);
+      return next;
+    });
+  }, []);
+
   const hasActiveFilters = selectedMonth.length > 0 || selectedExperiences.length > 0 || visitedFilter !== "all" || budgetFilter !== "all";
 
   return (
@@ -208,12 +263,12 @@ export default function App() {
 
         {/* View toggle */}
         <div className="flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto">
-          {(["map", "calendar", "list", "trips"] as AppView[]).map((v) => (
+          {(["map", "calendar", "list", "trips", "discover"] as AppView[]).map((v) => (
             <button key={v} onClick={() => setView(v)}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
               }`}>
-              {v === "map" ? "🗺 Map" : v === "calendar" ? "📅 Calendar" : v === "list" ? "☰ List" : "✈ Trips"}
+              {v === "map" ? "🗺 Map" : v === "calendar" ? "📅 Calendar" : v === "list" ? "☰ List" : v === "trips" ? "✈ Trips" : "🌍 Discover"}
             </button>
           ))}
         </div>
@@ -223,6 +278,7 @@ export default function App() {
           <HomeCountrySelector value={homeCountry} onChange={setHomeCountry} />
           {favorites.size > 0 && <span className="text-yellow-300 text-sm font-semibold">★ {favorites.size}</span>}
           {visited.size > 0 && <span className="text-emerald-300 text-sm font-semibold">✓ {visited.size}</span>}
+          <span className="text-white/60 text-xs font-medium">{myList.size} 📋</span>
           <button onClick={() => setFormTarget("new")}
             className="flex items-center gap-1 px-3 py-1.5 bg-white/15 hover:bg-white/25 rounded-full text-xs font-semibold transition-colors border border-white/20">
             + Add
@@ -230,17 +286,19 @@ export default function App() {
         </div>
       </header>
 
-      <Filters
-        selectedMonth={selectedMonth}
-        setMonth={setSelectedMonth}
-        activeExperiences={selectedExperiences}
-        allExperiences={allExperiences}
-        setExperiences={setSelectedExperiences}
-        visitedFilter={visitedFilter}
-        setVisitedFilter={setVisitedFilter}
-        budgetFilter={budgetFilter}
-        setBudgetFilter={setBudgetFilter}
-      />
+      {view !== "discover" && (
+        <Filters
+          selectedMonth={selectedMonth}
+          setMonth={setSelectedMonth}
+          activeExperiences={selectedExperiences}
+          allExperiences={allExperiences}
+          setExperiences={setSelectedExperiences}
+          visitedFilter={visitedFilter}
+          setVisitedFilter={setVisitedFilter}
+          budgetFilter={budgetFilter}
+          setBudgetFilter={setBudgetFilter}
+        />
+      )}
 
       <div className="flex-1 relative overflow-hidden">
         {view === "map" ? (
@@ -270,15 +328,22 @@ export default function App() {
             onSelect={setSelectedCountry}
             selectedCountry={selectedCountry}
           />
-        ) : (
+        ) : view === "trips" ? (
           <TripsView
-            countries={allCountries}
+            countries={myListCountries}
             visitedNames={visited}
             favorites={favorites}
             onSelect={setSelectedCountry}
             tripGroups={mergedTripGroups}
             onSaveTrip={handleSaveTrip}
             onDeleteTrip={handleDeleteTrip}
+          />
+        ) : (
+          <DiscoverView
+            catalog={CATALOG}
+            myListNames={myList}
+            onAddToList={handleAddToList}
+            onRemoveFromList={handleRemoveFromList}
           />
         )}
 
@@ -298,14 +363,14 @@ export default function App() {
           onUpdateNotes={handleUpdateNotes}
           homeCountry={homeCountry}
           mainMapRef={mainMapRef}
-          allCountries={allCountries}
+          allCountries={myListCountries}
         />
       </div>
 
       {formTarget !== null && (
         <CountryForm
           initial={formTarget === "new" ? undefined : formTarget}
-          existingNames={allNames}
+          existingNames={myListNames}
           onSave={handleSave}
           onClose={() => setFormTarget(null)}
         />

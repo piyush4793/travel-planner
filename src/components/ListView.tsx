@@ -47,6 +47,11 @@ export default function ListView({
     const q = search.toLowerCase();
     const base = countries.filter((c) => c.name.toLowerCase().includes(q));
     return [...base].sort((a, b) => {
+      // Favorites always float to top
+      const aFav = favorites.has(a.name) ? 0 : 1;
+      const bFav = favorites.has(b.name) ? 0 : 1;
+      if (aFav !== bFav) return aFav - bFav;
+
       let cmp = 0;
       if (sortKey === "name") cmp = a.name.localeCompare(b.name);
       else if (sortKey === "budget")
@@ -55,7 +60,7 @@ export default function ListView({
         cmp = Number(visitedNames.has(b.name)) - Number(visitedNames.has(a.name));
       return sortDir === "asc" ? cmp : -cmp;
     });
-  }, [countries, search, sortKey, sortDir, visitedNames]);
+  }, [countries, search, sortKey, sortDir, visitedNames, favorites]);
 
   const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
   const safePage = Math.min(page, totalPages);

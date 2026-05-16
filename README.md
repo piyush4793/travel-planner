@@ -11,10 +11,21 @@ A personal, map-based travel planner pre-loaded with 50+ destinations. Filter by
 |---|---|
 | **Map** | Interactive world map with color-coded pins. Click any pin to open the detail panel. Combo destinations highlight in purple when a country is selected. |
 | **Calendar** | Heatmap grid — rows are destinations, columns are months. Emerald = best time to visit, red = avoid, blue column = current month. |
-| **List** | Paginated table with search, sort by name / budget / visited, and inline visited/favorite toggles. |
-| **Trips** | Shows all countries organized into optimal trip combinations (max 3 per trip). Each trip has a main destination plus add-on countries. Summary shows total trips needed, combo vs solo breakdown, and visited progress. Click any country chip to open its detail panel. |
+| **List** | Paginated table with search, sort by name / budget / visited, and inline visited/favorite toggles. Favorites always sort to the top. |
+| **Trips** | Shows all countries organized into optimal trip combinations (max 3 per trip). Each trip has a main destination plus add-on countries. Inline editing, create, and delete for trip groups. Summary shows total trips needed, combo vs solo breakdown, and visited progress. |
+| **Discover** | Browse all 197 world countries. Filter by region and list status (in my list / not added). Add countries to your list or remove them. |
 
-View selection persists in the URL hash (`#map`, `#calendar`, `#list`, `#trips`) — refreshing the page returns you to the same view.
+View selection persists in the URL hash (`#map`, `#calendar`, `#list`, `#trips`, `#discover`) — refreshing the page returns you to the same view.
+
+---
+
+### My List & Discover
+- **197 countries** available in the world catalog, organized by region
+- **44 curated seed countries** with rich data (budget, best months, experiences, cities) are pre-added to your list
+- Only countries in **My List** appear on Map, Calendar, List, and Trips views
+- Add any country from the Discover tab — new additions start with basic data and can be enriched via the edit form
+- Remove countries from your list without losing custom data — re-add anytime
+- **Favorites always sort to the top** across all views for quick access
 
 ---
 
@@ -164,6 +175,9 @@ Supported: India, United States, United Kingdom, Germany, France, Australia, Can
 | `tp_customs` | Added/edited countries |
 | `tp_deleted` | Tombstone list for deleted seed entries |
 | `tp_home_country` | Selected departure country (default: "India") |
+| `tp_my_list` | Country names in the user's active list (initialized from seed + customs) |
+| `tp_trip_customs` | User-edited/created trip groups |
+| `tp_trip_deleted` | Tombstone list for deleted seed trip groups |
 
 ---
 
