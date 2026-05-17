@@ -118,7 +118,7 @@ class ClaudeProvider implements LLMProvider {
 
 /* ── Gemini (Google) ──────────────────────────────────────────────────────────── */
 
-const DEFAULT_GEMINI_MODEL = "gemini-2.0-flash";
+const DEFAULT_GEMINI_MODEL = "gemini-2.5-flash";
 
 class GeminiProvider implements LLMProvider {
   name: LLMProviderType = "gemini";
@@ -168,10 +168,10 @@ class GeminiProvider implements LLMProvider {
       const errBody = await res.text().catch(() => "");
       if (res.status === 400 && errBody.includes("API_KEY_INVALID"))
         throw new Error("Invalid API key. Check your Gemini key in Settings.");
-      if (res.status === 429) throw new Error("Rate limit exceeded. Wait a moment and try again.");
+      if (res.status === 429) throw new Error("Gemini rate limit exceeded. Wait a moment and try again.");
       if (res.status === 403)
-        throw new Error("Access denied. Ensure the Generative Language API is enabled for your key.");
-      throw new Error(`Gemini error ${res.status}: ${errBody.slice(0, 200)}`);
+        throw new Error("Access denied. Ensure the Generative Language API is enabled for your Google Cloud project.");
+      throw new Error(`Gemini error ${res.status}: ${errBody.slice(0, 300)}`);
     }
 
     const json = await res.json();
@@ -212,6 +212,9 @@ export async function validateKey(type: LLMProviderType, apiKey: string): Promis
     );
     return { ok: true };
   } catch (e) {
+    if (e instanceof TypeError && e.message === "Failed to fetch") {
+      return { ok: false, error: `Network error — ${PROVIDER_LABELS[type]} may not be reachable from this browser. Check your internet connection or try again.` };
+    }
     return { ok: false, error: e instanceof Error ? e.message : "Unknown error" };
   }
 }
