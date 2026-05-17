@@ -66,11 +66,29 @@ In-panel trip planner with 4 travel styles:
 
 **Rule-based countries** (Vietnam, Norway) have per-day itineraries with real costs, hotel picks, and city-by-city routing.
 
+**Two planning modes:**
+| Mode | Trigger | Description |
+|---|---|---|
+| 📋 Offline | Style buttons in panel | Static rule engine + generic algorithm — instant, no API needed |
+| ✨ AI-Powered | "Plan with AI" in header | Chat with OpenAI to build a plan conversationally, then view as itinerary |
+
 **Two viewing modes:**
 | Mode | Availability | Description |
 |---|---|---|
 | 🎬 Cinematic | Rule-based only | Full-screen animated journey with map flyovers and city photo slideshows |
-| 📋 Itinerary | All countries | Scrollable modal with day cards, activities, costs, transport |
+| 📋 Itinerary | All countries (offline + AI) | Scrollable modal with day cards, activities, costs, transport |
+
+---
+
+### AI Trip Planner (✨)
+Bring-your-own-key integration with OpenAI. Chat with an AI assistant to plan trips for any destination.
+
+- **Central chat modal** — describe your trip in natural language ("Plan 10 days in Japan for 2, mid-range budget")
+- **Smart defaults** — origin from home country, 2 travelers, 7 days, mid-range budget when not specified
+- **Context condensation** — maintains a structured trip brief + recent messages to save tokens
+- **Finish & Generate** — extracts a structured JSON plan from the conversation and displays it in the standard itinerary modal
+- **Settings modal** — API key entry with validation, security notice, setup guide (gear icon in header)
+- **Feature-gated** — behind `llmPlanning` feature flag (enabled by default)
 
 ---
 
@@ -144,46 +162,60 @@ location.reload();
 ```
 src/
 ├── hooks/
-│   ├── useCountryStore.ts     # Country CRUD, My List, seed+overrides merging
-│   ├── useTripStore.ts        # Trip group CRUD + seed merging
-│   ├── usePersistedSet.ts     # DRY Set<string> + localStorage persistence
-│   ├── useHashView.ts         # Hash-based routing (no router library)
-│   └── usePanelDrag.ts        # Resizable panel drag behavior
+│   ├── useCountryStore.ts       # Country CRUD, My List, seed+overrides merging
+│   ├── useTripStore.ts          # Trip group CRUD + seed merging
+│   ├── usePersistedSet.ts       # DRY Set<string> + localStorage persistence
+│   ├── useHashView.ts           # Hash-based routing (no router library)
+│   ├── usePanelDrag.ts          # Resizable panel drag behavior
+│   └── useChatSession.ts        # AI chat state, send/finish/clear
 ├── components/
-│   ├── MapView.tsx            # MapLibre map, markers, hover card
-│   ├── CalendarView.tsx       # Month heatmap grid
-│   ├── ListView.tsx           # Paginated sortable table
-│   ├── TripsView.tsx          # Trip cards + inline editor
-│   ├── DiscoverView.tsx       # 197-country catalog browser
-│   ├── CountryPanel.tsx       # Right-side detail + itinerary planner
-│   ├── CountryForm.tsx        # Add/edit modal form
-│   ├── Filters.tsx            # Global filter bar
-│   ├── PillGroup.tsx          # Shared segmented pill toggle
-│   ├── HomeCountrySelector.tsx # Home country dropdown
-│   ├── ItineraryCinematic.tsx # Full-screen animated journey
-│   ├── ItineraryModal.tsx     # Scrollable itinerary modal
-│   ├── FilterChip.tsx         # Reusable portal dropdown chip
-│   ├── ExperienceDropdown.tsx # Experience tag multi-select
-│   ├── HoverCard.tsx          # Wikipedia photo card on map hover
-│   └── Tooltip.tsx            # Portal-based info tooltip
+│   ├── views/                   # Top-level view components
+│   │   ├── MapView.tsx          # MapLibre map, markers, hover card
+│   │   ├── CalendarView.tsx     # Month heatmap grid
+│   │   ├── ListView.tsx         # Paginated sortable table
+│   │   ├── TripsView.tsx        # Trip cards + inline editor
+│   │   └── DiscoverView.tsx     # 197-country catalog browser
+│   ├── country/                 # Country-specific components
+│   │   ├── CountryPanel.tsx     # Right-side detail + itinerary planner
+│   │   ├── CountryForm.tsx      # Add/edit modal form
+│   │   ├── ItineraryCinematic.tsx # Full-screen animated journey
+│   │   └── ItineraryModal.tsx   # Scrollable itinerary modal
+│   ├── ai/                      # AI/LLM integration
+│   │   ├── ChatModal.tsx        # Central chat modal for AI trip planning
+│   │   ├── AiItineraryModal.tsx # AI-generated itinerary display
+│   │   └── SettingsModal.tsx    # API key management + security
+│   ├── map/                     # Map-related components
+│   │   ├── FlightRoutes.tsx     # Animated flight arcs
+│   │   └── HoverCard.tsx        # Wikipedia photo card on map hover
+│   └── shared/                  # Reusable UI components
+│       ├── Filters.tsx          # Global filter bar
+│       ├── PillGroup.tsx        # Segmented pill toggle
+│       ├── FilterChip.tsx       # Portal-based dropdown chip
+│       ├── ExperienceDropdown.tsx # Experience tag multi-select
+│       ├── HomeCountrySelector.tsx # Home country dropdown
+│       └── Tooltip.tsx          # Portal-based info tooltip
 ├── data/
-│   ├── itineraryRules.ts      # Per-country/city/day rule data
-│   └── tripGroups.ts          # Trip group definitions + merge logic
+│   ├── itineraryRules.ts        # Per-country/city/day rule data
+│   └── tripGroups.ts            # Trip group definitions + merge logic
 ├── utils/
-│   ├── tripPlans.ts           # Itinerary generation (rule engine + generic)
-│   ├── travelStyles.ts        # STYLE_META (icons, colors, classes)
-│   ├── filterLogic.ts         # Pure filter functions
-│   ├── transport.ts           # TransportType, emoji, detection
-│   ├── wikiImages.ts          # Wikipedia image fetch + cache
-│   ├── months.ts              # Month constants
-│   ├── featureFlags.ts        # Feature gate system (tp_features localStorage)
-│   └── storage.ts             # localStorage read/write helpers
-├── App.tsx                    # Root layout + view orchestration
-├── types.ts                   # Shared TypeScript types
-└── index.css                  # Tailwind + keyframe animations
+│   ├── ai/                      # LLM integration utilities
+│   │   ├── llmProvider.ts       # Provider abstraction (OpenAI, extensible)
+│   │   ├── llmPrompts.ts        # System prompts, TripBrief, context condensation
+│   │   └── llmTransform.ts      # LLM JSON → TripPlan extraction + validation
+│   ├── tripPlans.ts             # Itinerary generation (rule engine + generic)
+│   ├── travelStyles.ts          # STYLE_META (icons, colors, classes)
+│   ├── filterLogic.ts           # Pure filter functions
+│   ├── transport.ts             # TransportType, emoji, detection
+│   ├── wikiImages.ts            # Wikipedia image fetch + cache
+│   ├── months.ts                # Month constants
+│   ├── featureFlags.ts          # Feature gate system (tp_features localStorage)
+│   └── storage.ts               # localStorage read/write helpers
+├── App.tsx                      # Root layout + view orchestration
+├── types.ts                     # Shared TypeScript types
+└── index.css                    # Tailwind + keyframe animations
 data/
-├── countries.json             # 44 curated seed destinations
-└── worldCatalog.json          # 197 world countries (name, lat, lng, region)
+├── countries.json               # 44 curated seed destinations
+└── worldCatalog.json            # 197 world countries (name, lat, lng, region)
 ```
 
 ### Key Design Patterns
@@ -257,7 +289,8 @@ type TripGroupDef = {
 | `tp_home_country` | Departure country (default: "India") |
 | `tp_trip_customs` | User-edited/created trip groups |
 | `tp_trip_deleted` | Tombstoned seed trip group mains |
-| `tp_features` | Feature flag overrides (`{ searchableHomeCountry: true }`) |
+| `tp_features` | Feature flag overrides (`{ searchableHomeCountry: true, llmPlanning: true }`) |
+| `tp_llm_keys` | LLM API keys (`{ openai?: string }`) — stored locally, never sent to any server except the provider |
 
 ---
 
@@ -282,6 +315,8 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 - [ ] Day-level detail expansion — tap a day row for full tips, map coords, booking links
 - [ ] Budget currency toggle — convert ₹ to USD / EUR / AUD with approximate rates
 - [ ] Drag-and-drop reorder for trip group add-ons
+- [ ] Home country as trip origin — use the selected home country as the starting point for itineraries, show it as origin on maps, and factor it into flight/budget suggestions
+- [ ] First run experience — onboarding walkthrough for new users (highlight key views, filters, and how to add countries)
 
 ### Medium-term
 - [ ] Multi-country trip builder — string countries into a single trip with total cost/days
@@ -290,9 +325,37 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 - [ ] Visited stats page — continents, total days, spend, heatmap timeline
 - [ ] PWA / offline mode — installable, works without internet
 - [ ] Bulk add to My List from Discover (select multiple + add)
+- [ ] Animated itinerary showcase — globe zoom into country, then 15–30s animated day-wise itinerary transitions with transport mode icons showing movement on map (start with Norway, keep extensible)
+- [ ] "Learn about country" section — historical facts, modern culture, safety tips, best/worst travel months, combinable nearby countries with budget/visa implications
 
 ### Longer-term
 - [ ] Community itineraries — import/export rule data for sharing
-- [ ] AI itinerary refinement — feed plans to an LLM for follow-up questions
 - [ ] Real-time pricing — flights/hotels API integration
 - [ ] Social layer — follow friends, see where they've been
+
+### LLM Integration (longer-term, multi-phase)
+
+Bring-your-own-key architecture — users supply their own API keys for OpenAI, Claude, or other providers. The app stays free with no backend.
+
+**Phase 1 — Key management & extensible provider layer** ✅
+- [x] Settings modal for adding/removing API keys (stored in localStorage, never transmitted elsewhere)
+- [x] Provider abstraction — pluggable interface so adding a new LLM provider is a single adapter file
+- [x] Walkthrough guide in settings explaining how to obtain and add an API key
+
+**Phase 2 — AI-powered trip planning** ✅
+- [x] Central chat modal with natural language conversation
+- [x] System prompt engineering with smart defaults and structured output
+- [x] Context condensation via TripBrief to save tokens
+- [x] Finalization flow — extracts structured JSON plan from conversation
+
+**Phase 3 — Rich AI itinerary response** ✅
+- [x] LLM response transformation — parse structured LLM output into the existing `TripPlan` UI format
+- [x] Dedicated AI itinerary modal with city grouping, transport, hotel suggestions, day-by-day cards
+- [x] Hybrid mode — static rule engine as fallback when no API key is configured; LLM results when available
+
+**Phase 4 — Enhancements (future)**
+- [ ] Additional LLM providers — Claude, Gemini (provider abstraction is ready)
+- [ ] Per-person cost breakdown: flights, hotels (budget/mid/luxury × 2 each), excursions, internal transfers
+- [ ] Booking suggestions — Klook / Viator high-rated tours with budget, local transport options
+- [ ] Save AI-generated plans to My List as custom countries
+- [ ] Pre-seed chat with selected country context from CountryPanel

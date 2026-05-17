@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
-import type { Country, PlanStyle } from "../types";
-import { STYLE_META, PLAN_STYLE_META, PLAN_STYLES } from "../utils/travelStyles";
-import { generateTripPlan } from "../utils/tripPlans";
-import type { TripPlan } from "../utils/tripPlans";
-import { ITINERARY_RULES } from "../data/itineraryRules";
-import { usePanelDrag } from "../hooks/usePanelDrag";
-import Tooltip from "./Tooltip";
+import type { Country, PlanStyle } from "../../types";
+import { STYLE_META, PLAN_STYLE_META, PLAN_STYLES } from "../../utils/travelStyles";
+import { generateTripPlan } from "../../utils/tripPlans";
+import type { TripPlan } from "../../utils/tripPlans";
+import { ITINERARY_RULES } from "../../data/itineraryRules";
+import { usePanelDrag } from "../../hooks/usePanelDrag";
+import Tooltip from "../shared/Tooltip";
 import ItineraryCinematic from "./ItineraryCinematic";
 import ItineraryModal from "./ItineraryModal";
 

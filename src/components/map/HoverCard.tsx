@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import type { Country } from "../types";
-import { getWikiImage } from "../utils/wikiImages";
+import type { Country } from "../../types";
+import { getWikiImage } from "../../utils/wikiImages";
 
 type Props = {
   country: Country;

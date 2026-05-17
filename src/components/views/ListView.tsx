@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
-import type { Country } from "../types";
-import { getBudgetTier } from "../utils/filterLogic";
+import type { Country } from "../../types";
+import { getBudgetTier } from "../../utils/filterLogic";
 
 const PAGE_SIZE = 10;
 type SortKey = "name" | "budget" | "visited";

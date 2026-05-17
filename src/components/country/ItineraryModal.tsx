@@ -1,8 +1,8 @@
 import { createPortal } from "react-dom";
-import type { Country } from "../types";
-import type { TripPlan, DayEntry } from "../utils/tripPlans";
-import { ITINERARY_RULES } from "../data/itineraryRules";
-import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../utils/transport";
+import type { Country } from "../../types";
+import type { TripPlan, DayEntry } from "../../utils/tripPlans";
+import { ITINERARY_RULES } from "../../data/itineraryRules";
+import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../utils/transport";
 
 // ─── Day grouping ─────────────────────────────────────────────────────────────
 

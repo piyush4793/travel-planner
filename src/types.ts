@@ -17,6 +17,30 @@ export type CatalogEntry = {
   region: string;
 };
 
+/* ── LLM chat types ── */
+
+export type ChatMessage = {
+  role: "system" | "user" | "assistant";
+  content: string;
+};
+
+export type LLMProviderType = "openai";
+
+export type LLMKeys = Partial<Record<LLMProviderType, string>>;
+
+export type TripBrief = {
+  originCountry: string;
+  destinations: string[];
+  travelers: number;
+  durationDays: number;
+  budget: "budget" | "mid-range" | "luxury";
+  mandatoryCities: string[];
+  preferences: string[];
+  exclusions: string[];
+};
+
+/* ── Data types ── */
+
 export type Country = {
   name: string;
   lat: number;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import maplibregl from "maplibre-gl";
-import type { Country } from "../types";
+import type { Country } from "../../types";
 
 const INDIA: [number, number] = [77.209, 28.614]; // New Delhi
 

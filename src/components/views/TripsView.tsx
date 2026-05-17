@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import type { Country } from "../types";
-import { ALL_REGIONS, type Region, type TripGroupDef } from "../data/tripGroups";
-import PillGroup from "./PillGroup";
+import type { Country } from "../../types";
+import { ALL_REGIONS, type Region, type TripGroupDef } from "../../data/tripGroups";
+import PillGroup from "../shared/PillGroup";
 
 type Props = {
   countries: Country[];

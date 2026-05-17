@@ -6,10 +6,12 @@ import { loadLS, saveLS } from "./storage";
  */
 export type FeatureFlags = {
   searchableHomeCountry: boolean;
+  llmPlanning: boolean;
 };
 
 const DEFAULTS: FeatureFlags = {
   searchableHomeCountry: false,
+  llmPlanning: true,
 };
 
 let _cache: FeatureFlags | null = null;

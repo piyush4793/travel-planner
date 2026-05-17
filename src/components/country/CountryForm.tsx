@@ -1,7 +1,7 @@
 import { useState, useRef, type KeyboardEvent } from "react";
-import type { Country, TravelStyle } from "../types";
-import { STYLE_META, TRAVEL_STYLES } from "../utils/travelStyles";
-import Tooltip from "./Tooltip";
+import type { Country, TravelStyle } from "../../types";
+import { STYLE_META, TRAVEL_STYLES } from "../../utils/travelStyles";
+import Tooltip from "../shared/Tooltip";
 
 const ALL_MONTHS = [
   "January","February","March","April","May","June",

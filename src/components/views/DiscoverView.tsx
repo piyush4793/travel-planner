@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import type { CatalogEntry } from "../types";
-import PillGroup from "./PillGroup";
+import type { CatalogEntry } from "../../types";
+import PillGroup from "../shared/PillGroup";
 
 type Props = {
   catalog: CatalogEntry[];

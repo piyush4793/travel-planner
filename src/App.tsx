@@ -1,20 +1,25 @@
 import { useState, useCallback, useMemo, useRef } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country, VisitedFilter } from "./types";
-import MapView from "./components/MapView";
-import CalendarView from "./components/CalendarView";
-import ListView from "./components/ListView";
-import DiscoverView from "./components/DiscoverView";
-import Filters from "./components/Filters";
-import CountryPanel from "./components/CountryPanel";
-import CountryForm from "./components/CountryForm";
-import TripsView from "./components/TripsView";
-import HomeCountrySelector from "./components/HomeCountrySelector";
+import MapView from "./components/views/MapView";
+import CalendarView from "./components/views/CalendarView";
+import ListView from "./components/views/ListView";
+import DiscoverView from "./components/views/DiscoverView";
+import TripsView from "./components/views/TripsView";
+import Filters from "./components/shared/Filters";
+import HomeCountrySelector from "./components/shared/HomeCountrySelector";
+import CountryPanel from "./components/country/CountryPanel";
+import CountryForm from "./components/country/CountryForm";
+import SettingsModal from "./components/ai/SettingsModal";
+import ChatModal from "./components/ai/ChatModal";
+import AiItineraryModal from "./components/ai/AiItineraryModal";
+import type { LLMTripPlanResult } from "./utils/ai/llmTransform";
 import { applyFilters, allUniqueExperiences, type BudgetTier } from "./utils/filterLogic";
 import { loadLS, saveLS } from "./utils/storage";
 import { useHashView, type AppView } from "./hooks/useHashView";
 import { useCountryStore } from "./hooks/useCountryStore";
 import { useTripStore } from "./hooks/useTripStore";
+import { isEnabled } from "./utils/featureFlags";
 import { useEffect } from "react";
 
 const VIEW_LABELS: Record<AppView, string> = {
@@ -32,6 +37,9 @@ export default function App() {
   const [budgetFilter, setBudgetFilter] = useState<BudgetTier>("all");
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [formTarget, setFormTarget] = useState<Country | "new" | null>(null);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
+  const [aiPlanResult, setAiPlanResult] = useState<LLMTripPlanResult | null>(null);
   const mainMapRef = useRef<maplibregl.Map | null>(null);
 
   useEffect(() => { saveLS("tp_home_country", homeCountry); }, [homeCountry]);
@@ -66,6 +74,10 @@ export default function App() {
 
   const toggleExperience = useCallback((tag: string) => {
     setSelectedExperiences((p) => p.includes(tag) ? p.filter((t) => t !== tag) : [...p, tag]);
+  }, []);
+
+  const handleAiPlanReady = useCallback((result: LLMTripPlanResult) => {
+    setAiPlanResult(result);
   }, []);
 
   const hasActiveFilters = selectedMonth.length > 0 || selectedExperiences.length > 0 || visitedFilter !== "all" || budgetFilter !== "all";
@@ -103,6 +115,19 @@ export default function App() {
             className="flex items-center gap-1 px-3 py-1.5 bg-white/15 hover:bg-white/25 rounded-full text-xs font-semibold transition-colors border border-white/20">
             + Add
           </button>
+          {isEnabled("llmPlanning") && (
+            <>
+              <button onClick={() => setChatOpen(true)}
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500/20 hover:bg-emerald-500/30 rounded-full text-xs font-semibold transition-colors border border-emerald-400/30 text-emerald-300">
+                ✨ Plan with AI
+              </button>
+              <button onClick={() => setSettingsOpen(true)}
+                className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15"
+                title="AI Settings">
+                ⚙️
+              </button>
+            </>
+          )}
         </div>
       </header>
 
@@ -191,6 +216,20 @@ export default function App() {
           existingNames={store.myListNames}
           onSave={handleSave}
           onClose={() => setFormTarget(null)}
+        />
+      )}
+
+      <SettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} />
+      <ChatModal
+        open={chatOpen}
+        onClose={() => setChatOpen(false)}
+        homeCountry={homeCountry}
+        onPlanReady={handleAiPlanReady}
+      />
+      {aiPlanResult && (
+        <AiItineraryModal
+          result={aiPlanResult}
+          onClose={() => setAiPlanResult(null)}
         />
       )}
     </div>
