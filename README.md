@@ -368,6 +368,9 @@ Bring-your-own-key architecture — users supply their own API keys for OpenAI, 
 - [x] Pre-seed chat from CountryPanel with "Plan with AI" button
 
 **Phase 5 — Future enhancements**
-- [ ] Save full AI-generated itinerary (not just destination) for later viewing
+- [ ] Save up to 4 AI-generated itineraries per country — persistent in localStorage, with replace/delete
+- [ ] Comparison view — side-by-side or tabbed: static rule-engine plan vs AI plan(s), highlighting differences (cities, days, costs, coverage)
+- [ ] Enriched AI response schema — best/worst months, things to avoid, visa tips, combo countries, lat/lng per city, transport type per leg (enables cinematic animation for AI plans)
+- [ ] Cinematic mode for AI plans — reuse ItineraryCinematic with AI-provided city coordinates and transport types
 - [ ] Export AI plans as PDF / shareable link
 - [ ] Voice input for chat

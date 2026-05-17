@@ -64,9 +64,9 @@ const PROVIDER_HELP: Record<LLMProviderType, { placeholder: string; steps: strin
   },
 };
 
-type Props = { open: boolean; onClose: () => void };
+type Props = { open: boolean; onClose: () => void; onOpenChat?: () => void };
 
-export default function SettingsModal({ open, onClose }: Props) {
+export default function SettingsModal({ open, onClose, onOpenChat }: Props) {
   const [keys, setKeys] = useState<LLMKeys>(getLLMKeys);
   const [draft, setDraft] = useState("");
   const [provider, setProvider] = useState<LLMProviderType>(getActiveProvider);
@@ -204,6 +204,16 @@ export default function SettingsModal({ open, onClose }: Props) {
           <p className={`text-xs ${status.ok ? "text-emerald-400" : "text-red-400"}`}>
             {status.msg}
           </p>
+        )}
+
+        {/* CTA to open chat — always visible when active provider has a key */}
+        {currentKey && onOpenChat && (
+          <button
+            onClick={() => { onClose(); onOpenChat(); }}
+            className="w-full flex items-center justify-center gap-2 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition-colors"
+          >
+            ✨ Start Planning with AI
+          </button>
         )}
 
         {/* Security notice */}

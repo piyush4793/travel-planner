@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useChatSession } from "../../hooks/useChatSession";
 import type { LLMTripPlanResult } from "../../utils/ai/llmTransform";
-import { getLLMKeys } from "./SettingsModal";
+import { getLLMKeys, getActiveProvider } from "./SettingsModal";
 
 type Props = {
   open: boolean;
@@ -25,14 +25,15 @@ Include any of these for better results:
 • Any preferences or things to avoid`;
 
 export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onOpenSettings, initialPrompt }: Props) {
-  const { messages, loading, error, finalResult, finished, sendMessage, finishChat, clearChat, clearError, activeProviderLabel } = useChatSession(homeCountry);
+  const { messages, loading, error, finalResult, finished, sendMessage, finishChat, clearChat, clearError, activeProviderLabel, usageWarning } = useChatSession(homeCountry);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const autoSentRef = useRef<string | null>(null);
 
   const keys = getLLMKeys();
-  const hasApiKey = Object.values(keys).some((k) => !!k);
+  const activeProvider = getActiveProvider();
+  const hasApiKey = !!keys[activeProvider];
 
   // Auto-scroll on new messages
   useEffect(() => {
@@ -233,7 +234,12 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
                 Send
               </button>
             </div>
-            <p className="text-[10px] text-white/20 mt-1.5">Shift+Enter for new line · Enter to send</p>
+            <div className="flex items-center gap-3 mt-1.5">
+              <p className="text-[10px] text-white/20 flex-1">Shift+Enter for new line · Enter to send</p>
+              {usageWarning && (
+                <p className="text-[10px] text-amber-400/70 font-medium">{usageWarning}</p>
+              )}
+            </div>
           </div>
         )}
 

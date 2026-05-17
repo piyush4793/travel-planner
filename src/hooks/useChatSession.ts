@@ -11,6 +11,10 @@ import {
 import { extractTripPlanResult, type LLMTripPlanResult } from "../utils/ai/llmTransform";
 import { PROVIDER_LABELS } from "../utils/ai/llmProvider";
 
+// Guardrails to prevent accidental overspend
+const MAX_MESSAGES_PER_SESSION = 20;
+const MESSAGE_WARNING_THRESHOLD = 16;
+
 type ChatState = {
   messages: ChatMessage[];
   loading: boolean;
@@ -18,6 +22,7 @@ type ChatState = {
   brief: TripBrief;
   finalResult: LLMTripPlanResult | null;
   finished: boolean;
+  usageWarning: string | null;
 };
 
 function getProviderAndKey() {
@@ -40,6 +45,7 @@ export function useChatSession(homeCountry: string) {
     brief: defaultBrief(homeCountry),
     finalResult: null,
     finished: false,
+    usageWarning: null,
   }));
 
   const fullHistory = useRef<ChatMessage[]>([]);
@@ -48,6 +54,16 @@ export function useChatSession(homeCountry: string) {
     const resolved = getProviderAndKey();
     if (!resolved) {
       setState((s) => ({ ...s, error: "No API key configured. Open Settings to add one." }));
+      return;
+    }
+
+    // Guardrail: limit messages per session
+    const userMsgCount = state.messages.filter((m) => m.role === "user").length;
+    if (userMsgCount >= MAX_MESSAGES_PER_SESSION) {
+      setState((s) => ({
+        ...s,
+        error: `Message limit reached (${MAX_MESSAGES_PER_SESSION} messages). Click "Finish & Generate Plan" to get your itinerary, or close and start a new chat.`,
+      }));
       return;
     }
 
@@ -61,17 +77,24 @@ export function useChatSession(homeCountry: string) {
 
     fullHistory.current.push(userMsg);
 
+    // Usage warning as user approaches limit
+    const remaining = MAX_MESSAGES_PER_SESSION - (userMsgCount + 1);
+    const usageWarning = remaining <= (MAX_MESSAGES_PER_SESSION - MESSAGE_WARNING_THRESHOLD)
+      ? `${remaining} message${remaining !== 1 ? "s" : ""} remaining in this session`
+      : null;
+
     setState((s) => ({
       ...s,
       messages: [...s.messages, userMsg],
       loading: true,
       error: null,
+      usageWarning,
     }));
 
     try {
       const provider = createProvider(resolved.provider, resolved.key);
       const condensed = condenseMessages(fullHistory.current, state.brief);
-      const response = await provider.chat(condensed);
+      const response = await provider.chat(condensed, { maxTokens: 16384 });
 
       const assistantMsg: ChatMessage = { role: "assistant", content: response };
       fullHistory.current.push(assistantMsg);
@@ -102,7 +125,7 @@ export function useChatSession(homeCountry: string) {
     try {
       const provider = createProvider(resolved.provider, resolved.key);
       const condensed = condenseMessages(fullHistory.current, state.brief);
-      const response = await provider.chat(condensed, { maxTokens: 8192, temperature: 0.3 });
+      const response = await provider.chat(condensed, { maxTokens: 16384, temperature: 0.3 });
 
       const { result, error } = extractTripPlanResult(response);
 
@@ -138,6 +161,7 @@ export function useChatSession(homeCountry: string) {
       brief: defaultBrief(homeCountry),
       finalResult: null,
       finished: false,
+      usageWarning: null,
     });
   }, [homeCountry]);
 
@@ -154,6 +178,7 @@ export function useChatSession(homeCountry: string) {
     finalResult: state.finalResult,
     finished: state.finished,
     activeProviderLabel: activeLabel,
+    usageWarning: state.usageWarning,
     sendMessage,
     finishChat,
     clearChat,

@@ -35,7 +35,7 @@ class OpenAIProvider implements LLMProvider {
         model: config?.model ?? DEFAULT_OPENAI_MODEL,
         messages,
         temperature: config?.temperature ?? 0.7,
-        max_tokens: config?.maxTokens ?? 2048,
+        max_tokens: config?.maxTokens ?? 16384,
       }),
     });
 
@@ -95,7 +95,7 @@ class ClaudeProvider implements LLMProvider {
         system: systemParts.join("\n\n") || undefined,
         messages: apiMessages,
         temperature: config?.temperature ?? 0.7,
-        max_tokens: config?.maxTokens ?? 2048,
+        max_tokens: config?.maxTokens ?? 16384,
       }),
     });
 
@@ -151,7 +151,7 @@ class GeminiProvider implements LLMProvider {
       contents,
       generationConfig: {
         temperature: config?.temperature ?? 0.7,
-        maxOutputTokens: config?.maxTokens ?? 2048,
+        maxOutputTokens: config?.maxTokens ?? 16384,
       },
     };
     if (systemParts.length) {

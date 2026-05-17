@@ -231,7 +231,7 @@ export default function App() {
         />
       )}
 
-      <SettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} />
+      <SettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} onOpenChat={() => { setChatInitialPrompt(undefined); setChatOpen(true); }} />
       <ChatModal
         open={chatOpen}
         onClose={() => { setChatOpen(false); setChatInitialPrompt(undefined); }}
