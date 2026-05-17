@@ -32,7 +32,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
   const autoSentRef = useRef<string | null>(null);
 
   const keys = getLLMKeys();
-  const hasApiKey = !!(keys.openai || keys.claude);
+  const hasApiKey = Object.values(keys).some((k) => !!k);
 
   // Auto-scroll on new messages
   useEffect(() => {
