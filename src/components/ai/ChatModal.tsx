@@ -10,6 +10,7 @@ type Props = {
   homeCountry: string;
   onPlanReady: (result: LLMTripPlanResult) => void;
   onOpenSettings: () => void;
+  initialPrompt?: string;
 };
 
 const PLACEHOLDER = `Describe your trip — for example:
@@ -23,13 +24,15 @@ Include any of these for better results:
 • Mandatory cities to cover
 • Any preferences or things to avoid`;
 
-export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onOpenSettings }: Props) {
-  const { messages, loading, error, finalResult, finished, sendMessage, finishChat, clearChat, clearError } = useChatSession(homeCountry);
+export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onOpenSettings, initialPrompt }: Props) {
+  const { messages, loading, error, finalResult, finished, sendMessage, finishChat, clearChat, clearError, activeProviderLabel } = useChatSession(homeCountry);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const autoSentRef = useRef<string | null>(null);
 
-  const hasApiKey = !!getLLMKeys().openai;
+  const keys = getLLMKeys();
+  const hasApiKey = !!(keys.openai || keys.claude);
 
   // Auto-scroll on new messages
   useEffect(() => {
@@ -37,6 +40,14 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages, loading]);
+
+  // Auto-send initial prompt (guarded against duplicates)
+  useEffect(() => {
+    if (open && initialPrompt && hasApiKey && messages.length === 0 && !loading && autoSentRef.current !== initialPrompt) {
+      autoSentRef.current = initialPrompt;
+      sendMessage(initialPrompt);
+    }
+  }, [open, initialPrompt, hasApiKey, messages.length, loading, sendMessage]);
 
   // Focus input on open
   useEffect(() => {
@@ -70,6 +81,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
 
   function handleClose() {
     clearChat();
+    autoSentRef.current = null;
     onClose();
   }
 
@@ -91,7 +103,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
             <span className="text-lg">✈️</span>
             <div>
               <h2 className="text-sm font-semibold text-white">AI Trip Planner</h2>
-              <p className="text-[10px] text-white/40">Powered by OpenAI · your key, your tokens</p>
+              <p className="text-[10px] text-white/40">Powered by {activeProviderLabel} · your key, your tokens</p>
             </div>
           </div>
           <div className="flex items-center gap-2">

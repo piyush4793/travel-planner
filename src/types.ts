@@ -24,7 +24,7 @@ export type ChatMessage = {
   content: string;
 };
 
-export type LLMProviderType = "openai";
+export type LLMProviderType = "openai" | "claude" | "gemini";
 
 export type LLMKeys = Partial<Record<LLMProviderType, string>>;
 

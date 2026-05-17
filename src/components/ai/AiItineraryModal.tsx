@@ -1,15 +1,14 @@
 import { createPortal } from "react-dom";
-import type { DayEntry } from "../../utils/tripPlans";
-import type { LLMTripPlanResult } from "../../utils/ai/llmTransform";
+import type { LLMTripPlanResult, LLMDayEntry } from "../../utils/ai/llmTransform";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../utils/transport";
 
 type CityGroup = {
   name: string;
-  days: DayEntry[];
+  days: LLMDayEntry[];
   transport?: { type: TransportType; label: string };
 };
 
-function groupDays(days: DayEntry[]): CityGroup[] {
+function groupDays(days: LLMDayEntry[]): CityGroup[] {
   const groups: CityGroup[] = [];
   for (const day of days) {
     const m = day.label.match(/—\s*(.+)$/);
@@ -39,9 +38,10 @@ function groupDays(days: DayEntry[]): CityGroup[] {
 interface Props {
   result: LLMTripPlanResult;
   onClose: () => void;
+  onSaveToList?: (destinationName: string) => void;
 }
 
-export default function AiItineraryModal({ result, onClose }: Props) {
+export default function AiItineraryModal({ result, onClose, onSaveToList }: Props) {
   const { plan } = result;
   const groups = groupDays(plan.days);
 
@@ -193,6 +193,44 @@ export default function AiItineraryModal({ result, onClose }: Props) {
                           ))}
                         </div>
                       )}
+
+                      {/* Cost breakdown */}
+                      {day.costBreakdown && Object.keys(day.costBreakdown).length > 0 && (
+                        <div className="mt-3 pt-2.5 border-t border-slate-100">
+                          <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Cost Estimate</p>
+                          <div className="flex flex-wrap gap-x-4 gap-y-1">
+                            {day.costBreakdown.flights && (
+                              <span className="text-[10px] text-slate-500">✈️ {day.costBreakdown.flights}</span>
+                            )}
+                            {day.costBreakdown.hotels && (
+                              <span className="text-[10px] text-slate-500">🏨 {day.costBreakdown.hotels}</span>
+                            )}
+                            {day.costBreakdown.excursions && (
+                              <span className="text-[10px] text-slate-500">🎯 {day.costBreakdown.excursions}</span>
+                            )}
+                            {day.costBreakdown.transfers && (
+                              <span className="text-[10px] text-slate-500">🚌 {day.costBreakdown.transfers}</span>
+                            )}
+                            {day.costBreakdown.total && (
+                              <span className="text-[10px] font-semibold text-slate-700">Total: {day.costBreakdown.total}</span>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Booking suggestions */}
+                      {day.bookingSuggestions && day.bookingSuggestions.length > 0 && (
+                        <div className="mt-3 pt-2.5 border-t border-slate-100">
+                          <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Recommended Tours</p>
+                          <div className="space-y-1">
+                            {day.bookingSuggestions.map((s, si) => (
+                              <p key={si} className="text-[10px] text-blue-600 bg-blue-50 px-2.5 py-1 rounded-lg">
+                                🎟️ {s}
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -204,8 +242,20 @@ export default function AiItineraryModal({ result, onClose }: Props) {
 
         {/* Footer */}
         <div className="px-6 py-4 bg-slate-50 border-t border-slate-100 shrink-0">
-          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Practical Notes</p>
-          <p className="text-xs text-slate-500 leading-relaxed">{plan.note}</p>
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex-1">
+              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Practical Notes</p>
+              <p className="text-xs text-slate-500 leading-relaxed">{plan.note}</p>
+            </div>
+            {onSaveToList && (
+              <button
+                onClick={() => onSaveToList(result.destinationName)}
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-semibold rounded-lg transition-colors shrink-0"
+              >
+                📋 Save to My List
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>,

@@ -1,5 +1,24 @@
 import type { DayEntry, TripPlan } from "../tripPlans";
 
+/* ── LLM-specific enriched types ── */
+
+export type LLMDailyCostBreakdown = {
+  flights?: string;
+  hotels?: string;
+  excursions?: string;
+  transfers?: string;
+  total?: string;
+};
+
+export type LLMDayEntry = DayEntry & {
+  costBreakdown?: LLMDailyCostBreakdown;
+  bookingSuggestions?: string[];
+};
+
+export type LLMTripPlan = Omit<TripPlan, "days"> & {
+  days: LLMDayEntry[];
+};
+
 export type LLMTripPlanResult = {
   destinationName: string;
   originCountry: string;
@@ -7,24 +26,27 @@ export type LLMTripPlanResult = {
   durationDays: number;
   budgetLevel: "budget" | "mid-range" | "luxury";
   assumptions: string[];
-  plan: TripPlan;
+  plan: LLMTripPlan;
 };
 
 function isStringArray(v: unknown): v is string[] {
   return Array.isArray(v) && v.every((x) => typeof x === "string");
 }
 
-function isValidDay(d: unknown): d is DayEntry {
+function isValidDay(d: unknown): d is LLMDayEntry {
   if (!d || typeof d !== "object") return false;
   const obj = d as Record<string, unknown>;
   if (typeof obj.label !== "string" || !obj.label) return false;
   if (!isStringArray(obj.activities) || obj.activities.length === 0) return false;
   if (obj.theme !== undefined && typeof obj.theme !== "string") return false;
   if (obj.hotels !== undefined && !isStringArray(obj.hotels)) return false;
+  if (obj.bookingSuggestions !== undefined && !isStringArray(obj.bookingSuggestions)) return false;
+  // costBreakdown is loosely validated — all fields are optional strings
+  if (obj.costBreakdown !== undefined && (typeof obj.costBreakdown !== "object" || obj.costBreakdown === null)) return false;
   return true;
 }
 
-function isValidPlan(p: unknown): p is TripPlan {
+function isValidPlan(p: unknown): p is LLMTripPlan {
   if (!p || typeof p !== "object") return false;
   const obj = p as Record<string, unknown>;
   if (typeof obj.duration !== "string") return false;

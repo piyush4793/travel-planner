@@ -26,6 +26,7 @@ type Props = {
   homeCountry: string;
   mainMapRef?: RefObject<maplibregl.Map | null>;
   allCountries?: Country[];
+  onPlanWithAi?: (countryName: string) => void;
 };
 
 
@@ -38,6 +39,7 @@ export default function CountryPanel({
   homeCountry,
   mainMapRef,
   allCountries,
+  onPlanWithAi,
 }: Props) {
   const { panelWidth, startPanelDrag }    = usePanelDrag(320, 320);
   const [activeStyle, setActiveStyle]     = useState<PlanStyle | null>(null);
@@ -161,6 +163,17 @@ export default function CountryPanel({
                   );
                 })}
               </div>
+
+              {/* AI plan button */}
+              {onPlanWithAi && (
+                <button
+                  onClick={() => onPlanWithAi(country.name)}
+                  className="w-full mb-3 flex items-center justify-center gap-2 py-2.5 rounded-xl text-[11px] font-bold border-2 border-emerald-200 bg-emerald-50 text-emerald-700 hover:border-emerald-300 hover:bg-emerald-100 transition-all"
+                >
+                  <span className="text-sm">✨</span>
+                  Plan with AI
+                </button>
+              )}
 
               {/* Custom days input */}
               {activeStyle === "custom" && (

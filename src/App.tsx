@@ -39,6 +39,7 @@ export default function App() {
   const [formTarget, setFormTarget] = useState<Country | "new" | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
+  const [chatInitialPrompt, setChatInitialPrompt] = useState<string | undefined>();
   const [aiPlanResult, setAiPlanResult] = useState<LLMTripPlanResult | null>(null);
   const mainMapRef = useRef<maplibregl.Map | null>(null);
 
@@ -80,6 +81,16 @@ export default function App() {
     setAiPlanResult(result);
   }, []);
 
+  const handlePlanWithAi = useCallback((countryName: string) => {
+    setChatInitialPrompt(`Plan a trip to ${countryName}`);
+    setChatOpen(true);
+  }, []);
+
+  const handleSaveAiToList = useCallback((destinationName: string) => {
+    if (store.myList.set.has(destinationName)) return;
+    store.addToList(destinationName);
+  }, [store]);
+
   const hasActiveFilters = selectedMonth.length > 0 || selectedExperiences.length > 0 || visitedFilter !== "all" || budgetFilter !== "all";
 
   return (
@@ -117,7 +128,7 @@ export default function App() {
           </button>
           {isEnabled("llmPlanning") && (
             <>
-              <button onClick={() => setChatOpen(true)}
+              <button onClick={() => { setChatInitialPrompt(undefined); setChatOpen(true); }}
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500/20 hover:bg-emerald-500/30 rounded-full text-xs font-semibold transition-colors border border-emerald-400/30 text-emerald-300">
                 ✨ Plan with AI
               </button>
@@ -207,6 +218,7 @@ export default function App() {
           homeCountry={homeCountry}
           mainMapRef={mainMapRef}
           allCountries={store.myListCountries}
+          onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
         />
       </div>
 
@@ -222,15 +234,17 @@ export default function App() {
       <SettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} />
       <ChatModal
         open={chatOpen}
-        onClose={() => setChatOpen(false)}
+        onClose={() => { setChatOpen(false); setChatInitialPrompt(undefined); }}
         homeCountry={homeCountry}
         onPlanReady={handleAiPlanReady}
         onOpenSettings={() => setSettingsOpen(true)}
+        initialPrompt={chatInitialPrompt}
       />
       {aiPlanResult && (
         <AiItineraryModal
           result={aiPlanResult}
           onClose={() => setAiPlanResult(null)}
+          onSaveToList={handleSaveAiToList}
         />
       )}
     </div>

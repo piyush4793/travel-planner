@@ -81,13 +81,18 @@ In-panel trip planner with 4 travel styles:
 ---
 
 ### AI Trip Planner (✨)
-Bring-your-own-key integration with OpenAI. Chat with an AI assistant to plan trips for any destination.
+Bring-your-own-key integration with OpenAI and Claude. Chat with an AI assistant to plan trips for any destination.
 
+- **Multi-provider support** — OpenAI, Claude (Anthropic), and Gemini (Google), switchable in Settings with per-provider keys
 - **Central chat modal** — describe your trip in natural language ("Plan 10 days in Japan for 2, mid-range budget")
+- **Pre-seed from country panel** — click "✨ Plan with AI" on any country to start a chat pre-filled with that destination
 - **Smart defaults** — origin from home country, 2 travelers, 7 days, mid-range budget when not specified
 - **Context condensation** — maintains a structured trip brief + recent messages to save tokens
-- **Finish & Generate** — extracts a structured JSON plan from the conversation and displays it in the standard itinerary modal
-- **Settings modal** — API key entry with validation, security notice, setup guide (gear icon in header)
+- **Finish & Generate** — extracts a structured JSON plan from the conversation and displays it in the AI itinerary modal
+- **Cost breakdowns** — per-day cost estimates for flights, hotels, excursions, and transfers
+- **Booking suggestions** — Klook/Viator-style tour recommendations with price, duration, and ratings
+- **Save to My List** — save AI-generated destinations to your list directly from the itinerary modal
+- **Settings modal** — provider selector, API key management with validation, security notice, setup guides
 - **Feature-gated** — behind `llmPlanning` feature flag (enabled by default)
 
 ---
@@ -290,7 +295,8 @@ type TripGroupDef = {
 | `tp_trip_customs` | User-edited/created trip groups |
 | `tp_trip_deleted` | Tombstoned seed trip group mains |
 | `tp_features` | Feature flag overrides (`{ searchableHomeCountry: true, llmPlanning: true }`) |
-| `tp_llm_keys` | LLM API keys (`{ openai?: string }`) — stored locally, never sent to any server except the provider |
+| `tp_llm_keys` | LLM API keys (`{ openai?: string, claude?: string, gemini?: string }`) — stored locally, never sent to any server except the provider |
+| `tp_llm_provider` | Active LLM provider (`"openai"` or `"claude"`) |
 
 ---
 
@@ -353,9 +359,14 @@ Bring-your-own-key architecture — users supply their own API keys for OpenAI, 
 - [x] Dedicated AI itinerary modal with city grouping, transport, hotel suggestions, day-by-day cards
 - [x] Hybrid mode — static rule engine as fallback when no API key is configured; LLM results when available
 
-**Phase 4 — Enhancements (future)**
-- [ ] Additional LLM providers — Claude, Gemini (provider abstraction is ready)
-- [ ] Per-person cost breakdown: flights, hotels (budget/mid/luxury × 2 each), excursions, internal transfers
-- [ ] Booking suggestions — Klook / Viator high-rated tours with budget, local transport options
-- [ ] Save AI-generated plans to My List as custom countries
-- [ ] Pre-seed chat with selected country context from CountryPanel
+**Phase 4 — Enhancements** ✅
+- [x] Multi-provider support — OpenAI + Claude + Gemini with provider selector and per-provider keys
+- [x] Per-day cost breakdowns: flights, hotels, excursions, transfers with totals
+- [x] Booking suggestions — Klook/Viator-style tour recommendations with price, duration, ratings
+- [x] Save AI-generated destinations to My List (resolves against seed/catalog)
+- [x] Pre-seed chat from CountryPanel with "Plan with AI" button
+
+**Phase 5 — Future enhancements**
+- [ ] Save full AI-generated itinerary (not just destination) for later viewing
+- [ ] Export AI plans as PDF / shareable link
+- [ ] Voice input for chat

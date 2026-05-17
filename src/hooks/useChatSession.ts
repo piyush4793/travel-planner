@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef } from "react";
 import type { ChatMessage, TripBrief } from "../types";
 import { createProvider } from "../utils/ai/llmProvider";
-import { getLLMKeys } from "../components/ai/SettingsModal";
+import { getLLMKeys, getActiveProvider } from "../components/ai/SettingsModal";
 import {
   buildSystemPrompt,
   condenseMessages,
@@ -9,6 +9,7 @@ import {
   defaultBrief,
 } from "../utils/ai/llmPrompts";
 import { extractTripPlanResult, type LLMTripPlanResult } from "../utils/ai/llmTransform";
+import { PROVIDER_LABELS } from "../utils/ai/llmProvider";
 
 type ChatState = {
   messages: ChatMessage[];
@@ -18,6 +19,18 @@ type ChatState = {
   finalResult: LLMTripPlanResult | null;
   finished: boolean;
 };
+
+function getProviderAndKey() {
+  const keys = getLLMKeys();
+  const active = getActiveProvider();
+  const key = keys[active];
+  if (key) return { provider: active, key };
+  // Fallback: try the other provider
+  for (const [p, k] of Object.entries(keys)) {
+    if (k) return { provider: p as typeof active, key: k };
+  }
+  return null;
+}
 
 export function useChatSession(homeCountry: string) {
   const [state, setState] = useState<ChatState>(() => ({
@@ -29,20 +42,17 @@ export function useChatSession(homeCountry: string) {
     finished: false,
   }));
 
-  // Track full message history separately from condensed messages sent to LLM
   const fullHistory = useRef<ChatMessage[]>([]);
 
   const sendMessage = useCallback(async (userText: string) => {
-    const keys = getLLMKeys();
-    const apiKey = keys.openai;
-    if (!apiKey) {
+    const resolved = getProviderAndKey();
+    if (!resolved) {
       setState((s) => ({ ...s, error: "No API key configured. Open Settings to add one." }));
       return;
     }
 
     const userMsg: ChatMessage = { role: "user", content: userText };
 
-    // Build system message on first call
     const isFirst = fullHistory.current.length === 0;
     if (isFirst) {
       const sysMsg: ChatMessage = { role: "system", content: buildSystemPrompt(homeCountry) };
@@ -59,7 +69,7 @@ export function useChatSession(homeCountry: string) {
     }));
 
     try {
-      const provider = createProvider("openai", apiKey);
+      const provider = createProvider(resolved.provider, resolved.key);
       const condensed = condenseMessages(fullHistory.current, state.brief);
       const response = await provider.chat(condensed);
 
@@ -81,9 +91,8 @@ export function useChatSession(homeCountry: string) {
   }, [homeCountry, state.brief]);
 
   const finishChat = useCallback(async () => {
-    const keys = getLLMKeys();
-    const apiKey = keys.openai;
-    if (!apiKey) return;
+    const resolved = getProviderAndKey();
+    if (!resolved) return;
 
     const finMsg: ChatMessage = { role: "user", content: buildFinalizationPrompt() };
     fullHistory.current.push(finMsg);
@@ -91,9 +100,9 @@ export function useChatSession(homeCountry: string) {
     setState((s) => ({ ...s, loading: true, error: null }));
 
     try {
-      const provider = createProvider("openai", apiKey);
+      const provider = createProvider(resolved.provider, resolved.key);
       const condensed = condenseMessages(fullHistory.current, state.brief);
-      const response = await provider.chat(condensed, { maxTokens: 4096, temperature: 0.3 });
+      const response = await provider.chat(condensed, { maxTokens: 8192, temperature: 0.3 });
 
       const { result, error } = extractTripPlanResult(response);
 
@@ -136,12 +145,15 @@ export function useChatSession(homeCountry: string) {
     setState((s) => ({ ...s, error: null }));
   }, []);
 
+  const activeLabel = PROVIDER_LABELS[getActiveProvider()];
+
   return {
     messages: state.messages,
     loading: state.loading,
     error: state.error,
     finalResult: state.finalResult,
     finished: state.finished,
+    activeProviderLabel: activeLabel,
     sendMessage,
     finishChat,
     clearChat,

@@ -21,6 +21,7 @@ CONVERSATION GUIDELINES:
 - Be concise but informative — use bullet points for day plans
 - When showing costs, use ₹ (INR) as the base currency
 - Mention best transport options between cities (flight, train, bus, ferry, etc.)
+- Suggest popular tours/excursions (Klook, Viator, or local operators) with approximate costs
 
 When the user is satisfied and you receive a FINALIZATION request, output ONLY a valid JSON object (no markdown, no backticks, no explanation) matching this exact schema:
 
@@ -41,7 +42,18 @@ When the user is satisfied and you receive a FINALIZATION request, output ONLY a
         "label": "Day 1 — CityName",
         "activities": ["Activity 1", "Activity 2", "Activity 3"],
         "theme": "Arrival & Exploration",
-        "hotels": ["Budget: Hotel A (~₹2K/night)", "Mid: Hotel B (~₹5K/night)", "Luxury: Hotel C (~₹12K/night)"]
+        "hotels": ["Budget: Hotel A (~₹2K/night)", "Mid: Hotel B (~₹5K/night)", "Luxury: Hotel C (~₹12K/night)"],
+        "costBreakdown": {
+          "flights": "₹15K (Delhi → Oslo, Norwegian Air)",
+          "hotels": "₹2K–₹12K/night depending on tier",
+          "excursions": "₹3K (city walking tour)",
+          "transfers": "₹500 (airport express train)",
+          "total": "₹20K–₹30K"
+        },
+        "bookingSuggestions": [
+          "Oslo Fjord Cruise — Viator ~₹4K, 3hrs, 4.6★",
+          "Viking Ship Museum Tour — Klook ~₹1.5K, 2hrs, 4.4★"
+        ]
       }
     ]
   }
@@ -50,9 +62,12 @@ When the user is satisfied and you receive a FINALIZATION request, output ONLY a
 IMPORTANT for the JSON:
 - "label" MUST follow the format "Day N — CityName" (use em dash —)
 - Each day should have 3-5 activities
-- Include 2-3 hotel suggestions per city (budget/mid/luxury) in the first day of each city
-- The "note" should be a brief trip highlight
-- "costPerPerson" should be a range in ₹ format (₹XK – ₹YL)`;
+- Include hotel suggestions ONLY on the first day in each new city (budget/mid/luxury tiers, 2 suggestions per tier)
+- "costBreakdown" should appear on days with significant costs (arrival, city changes, excursion days)
+- "bookingSuggestions" — max 2 per day, include platform, price, duration, and rating
+- "flights" in costBreakdown only on travel/arrival days
+- "costPerPerson" should be a range in ₹ format (₹XK – ₹YL)
+- "note" should be a brief trip highlight`;
 }
 
 export function buildBriefSummary(brief: TripBrief): string {
