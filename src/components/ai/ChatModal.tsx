@@ -2,12 +2,14 @@ import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useChatSession } from "../../hooks/useChatSession";
 import type { LLMTripPlanResult } from "../../utils/ai/llmTransform";
+import { getLLMKeys } from "./SettingsModal";
 
 type Props = {
   open: boolean;
   onClose: () => void;
   homeCountry: string;
   onPlanReady: (result: LLMTripPlanResult) => void;
+  onOpenSettings: () => void;
 };
 
 const PLACEHOLDER = `Describe your trip — for example:
@@ -21,11 +23,13 @@ Include any of these for better results:
 • Mandatory cities to cover
 • Any preferences or things to avoid`;
 
-export default function ChatModal({ open, onClose, homeCountry, onPlanReady }: Props) {
-  const { messages, loading, error, finalResult, finished, sendMessage, finishChat, clearChat } = useChatSession(homeCountry);
+export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onOpenSettings }: Props) {
+  const { messages, loading, error, finalResult, finished, sendMessage, finishChat, clearChat, clearError } = useChatSession(homeCountry);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  const hasApiKey = !!getLLMKeys().openai;
 
   // Auto-scroll on new messages
   useEffect(() => {
@@ -106,7 +110,25 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady }: P
 
         {/* Messages */}
         <div ref={scrollRef} className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
-          {messages.length === 0 && !loading && (
+          {!hasApiKey && (
+            <div className="flex items-center justify-center h-full">
+              <div className="text-center space-y-4 max-w-sm">
+                <span className="text-4xl">🔑</span>
+                <p className="text-sm text-white/70 font-medium">API key required</p>
+                <p className="text-[11px] text-white/35 leading-relaxed">
+                  Add your OpenAI API key in Settings to start using the AI trip planner. Your key stays local and is never shared.
+                </p>
+                <button
+                  onClick={() => { onClose(); onOpenSettings(); }}
+                  className="px-5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition-colors"
+                >
+                  Open Settings →
+                </button>
+              </div>
+            </div>
+          )}
+
+          {hasApiKey && messages.length === 0 && !loading && (
             <div className="flex items-center justify-center h-full">
               <div className="text-center space-y-3 max-w-md">
                 <span className="text-4xl">🌍</span>
@@ -143,14 +165,41 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady }: P
           )}
 
           {error && (
-            <div className="bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-2.5">
+            <div className="bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3 space-y-2">
               <p className="text-xs text-red-400">{error}</p>
+              <div className="flex gap-2">
+                {error.includes("API key") || error.includes("Invalid") ? (
+                  <button
+                    onClick={() => { onClose(); onOpenSettings(); }}
+                    className="text-[11px] text-emerald-400 hover:text-emerald-300 font-medium"
+                  >
+                    Open Settings →
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      const lastUserMsg = [...messages].reverse().find(m => m.role === "user");
+                      if (lastUserMsg) sendMessage(lastUserMsg.content);
+                    }}
+                    className="text-[11px] text-blue-400 hover:text-blue-300 font-medium"
+                    disabled={loading}
+                  >
+                    ↻ Retry
+                  </button>
+                )}
+                <button
+                  onClick={() => clearError()}
+                  className="text-[11px] text-white/30 hover:text-white/50 font-medium"
+                >
+                  Dismiss
+                </button>
+              </div>
             </div>
           )}
         </div>
 
         {/* Input */}
-        {!finished && (
+        {!finished && hasApiKey && (
           <div className="px-5 py-3.5 border-t border-white/10 shrink-0">
             <div className="flex gap-2.5 items-end">
               <textarea

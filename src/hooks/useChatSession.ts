@@ -132,6 +132,10 @@ export function useChatSession(homeCountry: string) {
     });
   }, [homeCountry]);
 
+  const clearError = useCallback(() => {
+    setState((s) => ({ ...s, error: null }));
+  }, []);
+
   return {
     messages: state.messages,
     loading: state.loading,
@@ -141,5 +145,6 @@ export function useChatSession(homeCountry: string) {
     sendMessage,
     finishChat,
     clearChat,
+    clearError,
   };
 }

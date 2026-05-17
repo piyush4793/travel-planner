@@ -225,6 +225,7 @@ export default function App() {
         onClose={() => setChatOpen(false)}
         homeCountry={homeCountry}
         onPlanReady={handleAiPlanReady}
+        onOpenSettings={() => setSettingsOpen(true)}
       />
       {aiPlanResult && (
         <AiItineraryModal
