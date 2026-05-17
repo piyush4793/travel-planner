@@ -305,6 +305,7 @@ type TripGroupDef = {
 ```bash
 npm install
 npm run dev      # http://localhost:5173
+npm test         # run all tests (vitest)
 npm run build    # static output → dist/
 npm run preview  # preview the build
 ```
