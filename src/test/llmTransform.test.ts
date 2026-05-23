@@ -8,6 +8,18 @@ const VALID_PLAN = {
   durationDays: 7,
   budgetLevel: "mid-range",
   assumptions: ["Traveling in September"],
+  cities: [
+    { name: "Oslo", lat: 59.91, lng: 10.75, nights: 2, transportToNext: { type: "train", label: "Bergen Railway", cost: "₹3K" } },
+    { name: "Bergen", lat: 60.39, lng: 5.32, nights: 3 },
+  ],
+  meta: {
+    bestMonths: ["June", "July", "August"],
+    worstMonths: ["November", "December"],
+    thingsToAvoid: ["Mountain roads in winter"],
+    visaTips: "Schengen visa required",
+    comboCountries: ["Sweden", "Denmark"],
+    highlights: ["Fjords", "Northern Lights"],
+  },
   plan: {
     duration: "7 days / 6 nights",
     costPerPerson: "₹1.2L – ₹1.8L",
@@ -154,5 +166,45 @@ describe("llmTransform — P0", () => {
     };
     const { result } = extractTripPlanResult(JSON.stringify(tooMany));
     expect(result).toBeNull();
+  });
+
+  it("parses cities with coordinates and transport", () => {
+    const { result } = extractTripPlanResult(JSON.stringify(VALID_PLAN));
+    expect(result).not.toBeNull();
+    expect(result!.cities).toHaveLength(2);
+    expect(result!.cities[0].name).toBe("Oslo");
+    expect(result!.cities[0].lat).toBe(59.91);
+    expect(result!.cities[0].transportToNext?.type).toBe("train");
+    expect(result!.cities[1].transportToNext).toBeUndefined();
+  });
+
+  it("parses meta with bestMonths, worstMonths, thingsToAvoid", () => {
+    const { result } = extractTripPlanResult(JSON.stringify(VALID_PLAN));
+    expect(result).not.toBeNull();
+    expect(result!.meta.bestMonths).toContain("June");
+    expect(result!.meta.worstMonths).toContain("November");
+    expect(result!.meta.thingsToAvoid).toHaveLength(1);
+    expect(result!.meta.visaTips).toBe("Schengen visa required");
+    expect(result!.meta.comboCountries).toContain("Sweden");
+    expect(result!.meta.highlights).toContain("Fjords");
+  });
+
+  it("defaults cities and meta when missing", () => {
+    const minimal = {
+      destinationName: "Japan",
+      plan: {
+        duration: "5 days",
+        costPerPerson: "₹1L",
+        note: "Quick trip",
+        days: [{ label: "Day 1 — Tokyo", activities: ["Visit shrine"] }],
+      },
+    };
+    const { result } = extractTripPlanResult(JSON.stringify(minimal));
+    expect(result).not.toBeNull();
+    expect(result!.cities).toEqual([]);
+    expect(result!.meta.bestMonths).toEqual([]);
+    expect(result!.meta.worstMonths).toEqual([]);
+    expect(result!.meta.thingsToAvoid).toEqual([]);
+    expect(result!.meta.highlights).toEqual([]);
   });
 });

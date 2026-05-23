@@ -27,6 +27,9 @@ type Props = {
   mainMapRef?: RefObject<maplibregl.Map | null>;
   allCountries?: Country[];
   onPlanWithAi?: (countryName: string) => void;
+  savedAiPlans?: { id: string; savedAt: string; label: string }[];
+  onViewAiPlan?: (planId: string) => void;
+  onDeleteAiPlan?: (planId: string) => void;
 };
 
 
@@ -40,6 +43,9 @@ export default function CountryPanel({
   mainMapRef,
   allCountries,
   onPlanWithAi,
+  savedAiPlans = [],
+  onViewAiPlan,
+  onDeleteAiPlan,
 }: Props) {
   const { panelWidth, startPanelDrag }    = usePanelDrag(320, 320);
   const [activeStyle, setActiveStyle]     = useState<PlanStyle | null>(null);
@@ -173,6 +179,36 @@ export default function CountryPanel({
                   <span className="text-sm">✨</span>
                   Plan with AI
                 </button>
+              )}
+
+              {/* Saved AI plans */}
+              {savedAiPlans.length > 0 && (
+                <div className="mb-3 space-y-1.5">
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    Saved AI Plans ({savedAiPlans.length})
+                  </p>
+                  {savedAiPlans.map((sp) => (
+                    <div key={sp.id} className="flex items-center gap-2 px-3 py-2 bg-indigo-50 rounded-lg border border-indigo-100">
+                      <p className="flex-1 text-[11px] text-indigo-700 truncate">{sp.label}</p>
+                      {onViewAiPlan && (
+                        <button
+                          onClick={() => onViewAiPlan(sp.id)}
+                          className="text-[10px] text-indigo-600 hover:text-indigo-800 font-semibold shrink-0"
+                        >
+                          View
+                        </button>
+                      )}
+                      {onDeleteAiPlan && (
+                        <button
+                          onClick={() => onDeleteAiPlan(sp.id)}
+                          className="text-[10px] text-red-400 hover:text-red-600 font-semibold shrink-0"
+                        >
+                          ✕
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
               )}
 
               {/* Custom days input */}

@@ -36,6 +36,33 @@ When the user is satisfied and you receive a FINALIZATION request, output ONLY a
   "durationDays": 7,
   "budgetLevel": "budget" | "mid-range" | "luxury",
   "assumptions": ["list of assumptions you made"],
+  "cities": [
+    {
+      "name": "Oslo",
+      "lat": 59.9139,
+      "lng": 10.7522,
+      "nights": 2,
+      "transportToNext": {
+        "type": "train",
+        "label": "Bergen Railway (scenic, 7hrs)",
+        "cost": "₹3K"
+      }
+    },
+    {
+      "name": "Bergen",
+      "lat": 60.3913,
+      "lng": 5.3221,
+      "nights": 3
+    }
+  ],
+  "meta": {
+    "bestMonths": ["June", "July", "August", "September"],
+    "worstMonths": ["November", "December", "January"],
+    "thingsToAvoid": ["Driving on mountain roads in winter", "Visiting fjords without rain gear"],
+    "visaTips": "Schengen visa required for Indian passport holders. Apply 3-4 weeks in advance.",
+    "comboCountries": ["Sweden", "Denmark", "Finland"],
+    "highlights": ["Fjord cruises", "Northern Lights", "Midnight sun in summer"]
+  },
   "plan": {
     "duration": "7 days / 6 nights",
     "costPerPerson": "₹80K – ₹1.2L",
@@ -43,7 +70,7 @@ When the user is satisfied and you receive a FINALIZATION request, output ONLY a
     "warning": "Optional caveat or tip",
     "days": [
       {
-        "label": "Day 1 — CityName",
+        "label": "Day 1 — Oslo",
         "activities": ["Activity 1", "Activity 2", "Activity 3"],
         "theme": "Arrival & Exploration",
         "hotels": ["Budget: Hotel A (~₹2K/night)", "Mid: Hotel B (~₹5K/night)", "Luxury: Hotel C (~₹12K/night)"],
@@ -64,6 +91,8 @@ When the user is satisfied and you receive a FINALIZATION request, output ONLY a
 }
 
 IMPORTANT for the JSON:
+- "cities" array: include real lat/lng coordinates, number of nights, and transport to the next city (type must be one of: flight, train, ferry, bus, cable-car, drive). Last city has no transportToNext.
+- "meta": always include bestMonths, worstMonths, thingsToAvoid, comboCountries, highlights. Include visaTips when relevant.
 - "label" MUST follow the format "Day N — CityName" (use em dash —)
 - Each day should have 3-5 activities
 - Include hotel suggestions ONLY on the first day in each new city (budget/mid/luxury tiers, 2 suggestions per tier)

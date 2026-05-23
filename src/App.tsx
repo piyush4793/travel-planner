@@ -19,6 +19,8 @@ import { loadLS, saveLS } from "./utils/storage";
 import { useHashView, type AppView } from "./hooks/useHashView";
 import { useCountryStore } from "./hooks/useCountryStore";
 import { useTripStore } from "./hooks/useTripStore";
+import { useAiPlanStore } from "./hooks/useAiPlanStore";
+import { formatPlanLabel } from "./utils/planDiff";
 import { isEnabled } from "./utils/featureFlags";
 import { useEffect } from "react";
 
@@ -27,8 +29,12 @@ const VIEW_LABELS: Record<AppView, string> = {
   trips: "✈ Trips", discover: "🌍 Discover",
 };
 
+const PRIMARY_VIEWS: AppView[] = ["map", "trips"];
+const SECONDARY_VIEWS: AppView[] = ["calendar", "list", "discover"];
+
 export default function App() {
   const store = useCountryStore();
+  const aiPlanStore = useAiPlanStore();
   const [view, setView] = useHashView();
   const [homeCountry, setHomeCountry] = useState(() => loadLS("tp_home_country", "India"));
   const [selectedMonth, setSelectedMonth] = useState<string[]>([]);
@@ -41,9 +47,23 @@ export default function App() {
   const [chatOpen, setChatOpen] = useState(false);
   const [chatInitialPrompt, setChatInitialPrompt] = useState<string | undefined>();
   const [aiPlanResult, setAiPlanResult] = useState<LLMTripPlanResult | null>(null);
+  const [navMenuOpen, setNavMenuOpen] = useState(false);
   const mainMapRef = useRef<maplibregl.Map | null>(null);
+  const navMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => { saveLS("tp_home_country", homeCountry); }, [homeCountry]);
+
+  // Close nav menu on outside click
+  useEffect(() => {
+    if (!navMenuOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (navMenuRef.current && !navMenuRef.current.contains(e.target as Node)) {
+        setNavMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [navMenuOpen]);
 
   const trips = useTripStore(store.myListNames);
 
@@ -86,9 +106,31 @@ export default function App() {
     setChatOpen(true);
   }, []);
 
-  const handleSaveAiToList = useCallback((destinationName: string) => {
-    if (store.myList.set.has(destinationName)) return;
+  const handleViewAiPlan = useCallback((planId: string) => {
+    if (!selectedCountry) return;
+    const plans = aiPlanStore.getPlans(selectedCountry.name);
+    const plan = plans.find((p) => p.id === planId);
+    if (plan) setAiPlanResult(plan.result);
+  }, [selectedCountry, aiPlanStore]);
+
+  const handleDeleteAiPlan = useCallback((planId: string) => {
+    if (!selectedCountry) return;
+    aiPlanStore.deletePlan(selectedCountry.name, planId);
+  }, [selectedCountry, aiPlanStore]);
+
+  const selectedCountryPlans = useMemo(() => {
+    if (!selectedCountry) return [];
+    return aiPlanStore.getPlans(selectedCountry.name).map((sp) => ({
+      id: sp.id,
+      savedAt: sp.savedAt,
+      label: formatPlanLabel(sp.result, sp.savedAt),
+    }));
+  }, [selectedCountry, aiPlanStore]);
+
+  const handleSaveAiToList = useCallback((destinationName: string): "saved" | "exists" => {
+    if (store.myList.set.has(destinationName)) return "exists";
     store.addToList(destinationName);
+    return "saved";
   }, [store]);
 
   const hasActiveFilters = selectedMonth.length > 0 || selectedExperiences.length > 0 || visitedFilter !== "all" || budgetFilter !== "all";
@@ -106,15 +148,45 @@ export default function App() {
           )}
         </div>
 
-        <div className="flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto">
-          {(Object.keys(VIEW_LABELS) as AppView[]).map((v) => (
-            <button key={v} onClick={() => setView(v)}
-              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
-              }`}>
-              {VIEW_LABELS[v]}
+        <div className="flex items-center gap-1 mx-auto relative" ref={navMenuRef}>
+          {/* Primary views — always visible */}
+          <div className="flex items-center gap-0.5 bg-black/20 rounded-full p-0.5">
+            {PRIMARY_VIEWS.map((v) => (
+              <button key={v} onClick={() => { setView(v); setNavMenuOpen(false); }}
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                  view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
+                }`}>
+                {VIEW_LABELS[v]}
+              </button>
+            ))}
+
+            {/* Hamburger for secondary views */}
+            <button
+              onClick={() => setNavMenuOpen((p) => !p)}
+              className={`flex items-center justify-center w-8 h-8 rounded-full text-sm transition-all ${
+                navMenuOpen || SECONDARY_VIEWS.includes(view)
+                  ? "bg-white text-blue-700 shadow-sm"
+                  : "text-white/80 hover:text-white"
+              }`}
+              title="More views"
+            >
+              {SECONDARY_VIEWS.includes(view) ? VIEW_LABELS[view].split(" ")[0] : "☰"}
             </button>
-          ))}
+          </div>
+
+          {/* Dropdown menu */}
+          {navMenuOpen && (
+            <div className="absolute top-full mt-1.5 right-0 bg-white rounded-xl shadow-xl border border-slate-200 py-1 min-w-[160px] z-50">
+              {SECONDARY_VIEWS.map((v) => (
+                <button key={v} onClick={() => { setView(v); setNavMenuOpen(false); }}
+                  className={`w-full text-left px-4 py-2.5 text-xs font-semibold transition-colors flex items-center gap-2 ${
+                    view === v ? "bg-blue-50 text-blue-700" : "text-slate-600 hover:bg-slate-50"
+                  }`}>
+                  {VIEW_LABELS[v]}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="flex items-center gap-2.5">
@@ -219,6 +291,9 @@ export default function App() {
           mainMapRef={mainMapRef}
           allCountries={store.myListCountries}
           onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
+          savedAiPlans={isEnabled("llmPlanning") ? selectedCountryPlans : undefined}
+          onViewAiPlan={isEnabled("llmPlanning") ? handleViewAiPlan : undefined}
+          onDeleteAiPlan={isEnabled("llmPlanning") ? handleDeleteAiPlan : undefined}
         />
       </div>
 
@@ -245,6 +320,11 @@ export default function App() {
           result={aiPlanResult}
           onClose={() => setAiPlanResult(null)}
           onSaveToList={handleSaveAiToList}
+          existingPlans={aiPlanStore.getPlans(aiPlanResult.destinationName)}
+          canAddNew={aiPlanStore.canAddNew(aiPlanResult.destinationName)}
+          maxPlans={aiPlanStore.maxPlans}
+          onSavePlan={() => aiPlanResult && aiPlanStore.savePlan(aiPlanResult)}
+          onReplacePlan={(id) => aiPlanResult && aiPlanStore.replacePlan(id, aiPlanResult)}
         />
       )}
     </div>

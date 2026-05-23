@@ -18,6 +18,7 @@ const MESSAGE_WARNING_THRESHOLD = 16;
 type ChatState = {
   messages: ChatMessage[];
   loading: boolean;
+  finalizing: boolean;
   error: string | null;
   brief: TripBrief;
   finalResult: LLMTripPlanResult | null;
@@ -41,6 +42,7 @@ export function useChatSession(homeCountry: string) {
   const [state, setState] = useState<ChatState>(() => ({
     messages: [],
     loading: false,
+    finalizing: false,
     error: null,
     brief: defaultBrief(homeCountry),
     finalResult: null,
@@ -120,7 +122,7 @@ export function useChatSession(homeCountry: string) {
     const finMsg: ChatMessage = { role: "user", content: buildFinalizationPrompt() };
     fullHistory.current.push(finMsg);
 
-    setState((s) => ({ ...s, loading: true, error: null }));
+    setState((s) => ({ ...s, loading: true, finalizing: true, error: null }));
 
     try {
       const provider = createProvider(resolved.provider, resolved.key);
@@ -133,6 +135,7 @@ export function useChatSession(homeCountry: string) {
         setState((s) => ({
           ...s,
           loading: false,
+          finalizing: false,
           finalResult: result,
           finished: true,
         }));
@@ -140,6 +143,7 @@ export function useChatSession(homeCountry: string) {
         setState((s) => ({
           ...s,
           loading: false,
+          finalizing: false,
           error: error ?? "Could not parse the plan. Try asking the AI to refine it, then finish again.",
         }));
       }
@@ -147,6 +151,7 @@ export function useChatSession(homeCountry: string) {
       setState((s) => ({
         ...s,
         loading: false,
+        finalizing: false,
         error: e instanceof Error ? e.message : "Failed to finalize the plan.",
       }));
     }
@@ -157,6 +162,7 @@ export function useChatSession(homeCountry: string) {
     setState({
       messages: [],
       loading: false,
+      finalizing: false,
       error: null,
       brief: defaultBrief(homeCountry),
       finalResult: null,
@@ -174,6 +180,7 @@ export function useChatSession(homeCountry: string) {
   return {
     messages: state.messages,
     loading: state.loading,
+    finalizing: state.finalizing,
     error: state.error,
     finalResult: state.finalResult,
     finished: state.finished,
