@@ -46,6 +46,7 @@ export default function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
   const [chatInitialPrompt, setChatInitialPrompt] = useState<string | undefined>();
+  const [chatAutoSend, setChatAutoSend] = useState(true);
   const [aiPlanResult, setAiPlanResult] = useState<LLMTripPlanResult | null>(null);
   const [navMenuOpen, setNavMenuOpen] = useState(false);
   const mainMapRef = useRef<maplibregl.Map | null>(null);
@@ -102,9 +103,19 @@ export default function App() {
   }, []);
 
   const handlePlanWithAi = useCallback((countryName: string) => {
-    setChatInitialPrompt(`Plan a trip to ${countryName}`);
+    const c = store.myListCountries.find((x) => x.name === countryName);
+    const parts = [`Plan a trip to ${countryName}`];
+    if (c) {
+      if (c.budget) parts.push(`Budget: ${c.budget}`);
+      if (c.bestMonths?.length) parts.push(`Best months: ${c.bestMonths.join(", ")}`);
+      if (c.cities?.length) parts.push(`Cities to consider: ${c.cities.map((x) => x.name).join(", ")}`);
+      if (c.experiences?.length) parts.push(`Experiences: ${c.experiences.slice(0, 5).join(", ")}`);
+      if (c.combo?.length) parts.push(`Can combine with: ${c.combo.join(", ")}`);
+    }
+    setChatInitialPrompt(parts.join(". "));
+    setChatAutoSend(false);
     setChatOpen(true);
-  }, []);
+  }, [store.myListCountries]);
 
   const handleViewAiPlan = useCallback((planId: string) => {
     if (!selectedCountry) return;
@@ -309,11 +320,12 @@ export default function App() {
       <SettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} onOpenChat={() => { setChatInitialPrompt(undefined); setChatOpen(true); }} />
       <ChatModal
         open={chatOpen}
-        onClose={() => { setChatOpen(false); setChatInitialPrompt(undefined); }}
+        onClose={() => { setChatOpen(false); setChatInitialPrompt(undefined); setChatAutoSend(true); }}
         homeCountry={homeCountry}
         onPlanReady={handleAiPlanReady}
         onOpenSettings={() => setSettingsOpen(true)}
         initialPrompt={chatInitialPrompt}
+        autoSend={chatAutoSend}
       />
       {aiPlanResult && (
         <AiItineraryModal

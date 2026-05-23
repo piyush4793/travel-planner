@@ -28,6 +28,17 @@ export type LLMProviderType = "openai" | "claude" | "gemini";
 
 export type LLMKeys = Partial<Record<LLMProviderType, string>>;
 
+export type TokenUsage = {
+  inputTokens: number;
+  outputTokens: number;
+  totalTokens: number;
+};
+
+export type LLMChatResult = {
+  content: string;
+  usage?: TokenUsage;
+};
+
 export type TripBrief = {
   originCountry: string;
   destinations: string[];
