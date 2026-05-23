@@ -1,4 +1,4 @@
-import type { ChatMessage, LLMProviderType } from "../../types";
+import type { ChatMessage, LLMProviderType, LLMChatResult, TokenUsage } from "../../types";
 
 export type LLMConfig = {
   model?: string;
@@ -8,7 +8,7 @@ export type LLMConfig = {
 
 export interface LLMProvider {
   name: LLMProviderType;
-  chat(messages: ChatMessage[], config?: LLMConfig): Promise<string>;
+  chat(messages: ChatMessage[], config?: LLMConfig): Promise<LLMChatResult>;
 }
 
 /* ── OpenAI ──────────────────────────────────────────────────────────────────── */
@@ -24,7 +24,7 @@ class OpenAIProvider implements LLMProvider {
     this.apiKey = apiKey;
   }
 
-  async chat(messages: ChatMessage[], config?: LLMConfig): Promise<string> {
+  async chat(messages: ChatMessage[], config?: LLMConfig): Promise<LLMChatResult> {
     const res = await fetch(OPENAI_URL, {
       method: "POST",
       headers: {
@@ -42,16 +42,22 @@ class OpenAIProvider implements LLMProvider {
     if (!res.ok) {
       const body = await res.text().catch(() => "");
       if (res.status === 401) throw new Error("Invalid API key. Check your key in Settings.");
-      if (res.status === 429) throw new Error("Rate limit exceeded. Wait a moment and try again.");
+      if (res.status === 429) {
+        if (body.includes("insufficient_quota"))
+          throw new Error("OpenAI quota exceeded. Check your billing at platform.openai.com/account/billing.");
+        throw new Error("Rate limit exceeded. Wait a moment and try again.");
+      }
       if (res.status === 402 || res.status === 403)
-        throw new Error("API key quota exceeded or access denied. Check your OpenAI billing.");
+        throw new Error("API key quota exceeded or access denied. Check your OpenAI billing at platform.openai.com/account/billing.");
       throw new Error(`OpenAI error ${res.status}: ${body.slice(0, 200)}`);
     }
 
     const json = await res.json();
     const content = json.choices?.[0]?.message?.content;
     if (typeof content !== "string") throw new Error("Unexpected response from OpenAI.");
-    return content;
+
+    const usage = parseUsage(json.usage?.prompt_tokens, json.usage?.completion_tokens);
+    return { content, usage };
   }
 }
 
@@ -69,7 +75,7 @@ class ClaudeProvider implements LLMProvider {
     this.apiKey = apiKey;
   }
 
-  async chat(messages: ChatMessage[], config?: LLMConfig): Promise<string> {
+  async chat(messages: ChatMessage[], config?: LLMConfig): Promise<LLMChatResult> {
     // Claude uses system as a top-level field, not as a message role
     const systemParts: string[] = [];
     const apiMessages: { role: "user" | "assistant"; content: string }[] = [];
@@ -102,7 +108,11 @@ class ClaudeProvider implements LLMProvider {
     if (!res.ok) {
       const body = await res.text().catch(() => "");
       if (res.status === 401) throw new Error("Invalid API key. Check your Claude key in Settings.");
-      if (res.status === 429) throw new Error("Rate limit exceeded. Wait a moment and try again.");
+      if (res.status === 429) {
+        if (body.includes("credit") || body.includes("billing"))
+          throw new Error("Claude credit exhausted. Add billing at console.anthropic.com.");
+        throw new Error("Rate limit exceeded. Wait a moment and try again.");
+      }
       if (res.status === 403)
         throw new Error("Access denied. Ensure your Anthropic key has browser access enabled.");
       throw new Error(`Claude error ${res.status}: ${body.slice(0, 200)}`);
@@ -112,7 +122,9 @@ class ClaudeProvider implements LLMProvider {
     const textBlock = json.content?.find((b: { type: string }) => b.type === "text");
     if (!textBlock?.text || typeof textBlock.text !== "string")
       throw new Error("Unexpected response from Claude.");
-    return textBlock.text;
+
+    const usage = parseUsage(json.usage?.input_tokens, json.usage?.output_tokens);
+    return { content: textBlock.text, usage };
   }
 }
 
@@ -128,7 +140,7 @@ class GeminiProvider implements LLMProvider {
     this.apiKey = apiKey;
   }
 
-  async chat(messages: ChatMessage[], config?: LLMConfig): Promise<string> {
+  async chat(messages: ChatMessage[], config?: LLMConfig): Promise<LLMChatResult> {
     const model = config?.model ?? DEFAULT_GEMINI_MODEL;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${this.apiKey}`;
 
@@ -168,7 +180,7 @@ class GeminiProvider implements LLMProvider {
       const errBody = await res.text().catch(() => "");
       if (res.status === 400 && errBody.includes("API_KEY_INVALID"))
         throw new Error("Invalid API key. Check your Gemini key in Settings.");
-      if (res.status === 429) throw new Error("Gemini rate limit exceeded. Wait a moment and try again.");
+      if (res.status === 429) throw new Error("Gemini rate limit exceeded. Wait a moment and try again. Free tier: 15 requests/min.");
       if (res.status === 403)
         throw new Error("Access denied. Ensure the Generative Language API is enabled for your Google Cloud project.");
       throw new Error(`Gemini error ${res.status}: ${errBody.slice(0, 300)}`);
@@ -177,8 +189,18 @@ class GeminiProvider implements LLMProvider {
     const json = await res.json();
     const text = json.candidates?.[0]?.content?.parts?.[0]?.text;
     if (typeof text !== "string") throw new Error("Unexpected response from Gemini.");
-    return text;
+
+    const meta = json.usageMetadata;
+    const usage = parseUsage(meta?.promptTokenCount, meta?.candidatesTokenCount);
+    return { content: text, usage };
   }
+}
+
+/* ── Helpers ──────────────────────────────────────────────────────────────────── */
+
+function parseUsage(input?: number, output?: number): TokenUsage | undefined {
+  if (typeof input !== "number" || typeof output !== "number") return undefined;
+  return { inputTokens: input, outputTokens: output, totalTokens: input + output };
 }
 
 /* ── Factory ─────────────────────────────────────────────────────────────────── */

@@ -25,7 +25,7 @@ Include any of these for better results:
 • Any preferences or things to avoid`;
 
 export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onOpenSettings, initialPrompt }: Props) {
-  const { messages, loading, error, finalizing, finalResult, finished, sendMessage, finishChat, clearChat, clearError, activeProviderLabel, usageWarning } = useChatSession(homeCountry);
+  const { messages, loading, error, finalizing, finalResult, finished, sendMessage, finishChat, clearChat, clearError, activeProviderLabel, usageWarning, tokenUsage } = useChatSession(homeCountry);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -237,6 +237,9 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
             </div>
             <div className="flex items-center gap-3 mt-1.5">
               <p className="text-[10px] text-white/20 flex-1">Shift+Enter for new line · Enter to send</p>
+              {tokenUsage.totalTokens > 0 && (
+                <TokenBadge tokens={tokenUsage.totalTokens} />
+              )}
               {usageWarning && (
                 <p className="text-[10px] text-amber-400/70 font-medium">{usageWarning}</p>
               )}
@@ -253,6 +256,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
                 <p className="text-sm text-emerald-400 font-medium">Plan generated!</p>
                 <p className="text-[11px] text-white/40">
                   {finalResult?.destinationName} · {finalResult?.durationDays} days · {finalResult?.budgetLevel}
+                  {tokenUsage.totalTokens > 0 && ` · ${formatTokens(tokenUsage.totalTokens)} tokens`}
                 </p>
               </div>
               <button
@@ -366,5 +370,19 @@ function FinalizingSplash() {
         </div>
       </div>
     </div>
+  );
+}
+
+function formatTokens(n: number): string {
+  if (n >= 1000) return `${(n / 1000).toFixed(1)}K`;
+  return String(n);
+}
+
+function TokenBadge({ tokens }: { tokens: number }) {
+  const color = tokens < 4000 ? "text-emerald-400/60" : tokens < 12000 ? "text-amber-400/60" : "text-red-400/60";
+  return (
+    <span className={`text-[10px] font-medium ${color}`}>
+      ~{formatTokens(tokens)} tokens
+    </span>
   );
 }

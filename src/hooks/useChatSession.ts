@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef } from "react";
-import type { ChatMessage, TripBrief } from "../types";
+import type { ChatMessage, TripBrief, TokenUsage } from "../types";
 import { createProvider } from "../utils/ai/llmProvider";
 import { getLLMKeys, getActiveProvider } from "../components/ai/SettingsModal";
 import {
@@ -15,6 +15,15 @@ import { PROVIDER_LABELS } from "../utils/ai/llmProvider";
 const MAX_MESSAGES_PER_SESSION = 20;
 const MESSAGE_WARNING_THRESHOLD = 16;
 
+function addUsage(prev: TokenUsage, next?: TokenUsage): TokenUsage {
+  if (!next) return prev;
+  return {
+    inputTokens: prev.inputTokens + next.inputTokens,
+    outputTokens: prev.outputTokens + next.outputTokens,
+    totalTokens: prev.totalTokens + next.totalTokens,
+  };
+}
+
 type ChatState = {
   messages: ChatMessage[];
   loading: boolean;
@@ -24,6 +33,7 @@ type ChatState = {
   finalResult: LLMTripPlanResult | null;
   finished: boolean;
   usageWarning: string | null;
+  tokenUsage: TokenUsage;
 };
 
 function getProviderAndKey() {
@@ -48,6 +58,7 @@ export function useChatSession(homeCountry: string) {
     finalResult: null,
     finished: false,
     usageWarning: null,
+    tokenUsage: { inputTokens: 0, outputTokens: 0, totalTokens: 0 },
   }));
 
   const fullHistory = useRef<ChatMessage[]>([]);
@@ -96,15 +107,16 @@ export function useChatSession(homeCountry: string) {
     try {
       const provider = createProvider(resolved.provider, resolved.key);
       const condensed = condenseMessages(fullHistory.current, state.brief);
-      const response = await provider.chat(condensed, { maxTokens: 16384 });
+      const { content, usage } = await provider.chat(condensed, { maxTokens: 16384 });
 
-      const assistantMsg: ChatMessage = { role: "assistant", content: response };
+      const assistantMsg: ChatMessage = { role: "assistant", content };
       fullHistory.current.push(assistantMsg);
 
       setState((s) => ({
         ...s,
         messages: [...s.messages, assistantMsg],
         loading: false,
+        tokenUsage: addUsage(s.tokenUsage, usage),
       }));
     } catch (e) {
       setState((s) => ({
@@ -127,9 +139,9 @@ export function useChatSession(homeCountry: string) {
     try {
       const provider = createProvider(resolved.provider, resolved.key);
       const condensed = condenseMessages(fullHistory.current, state.brief);
-      const response = await provider.chat(condensed, { maxTokens: 16384, temperature: 0.3 });
+      const { content, usage } = await provider.chat(condensed, { maxTokens: 16384, temperature: 0.3 });
 
-      const { result, error } = extractTripPlanResult(response);
+      const { result, error } = extractTripPlanResult(content);
 
       if (result) {
         setState((s) => ({
@@ -138,6 +150,7 @@ export function useChatSession(homeCountry: string) {
           finalizing: false,
           finalResult: result,
           finished: true,
+          tokenUsage: addUsage(s.tokenUsage, usage),
         }));
       } else {
         setState((s) => ({
@@ -145,6 +158,7 @@ export function useChatSession(homeCountry: string) {
           loading: false,
           finalizing: false,
           error: error ?? "Could not parse the plan. Try asking the AI to refine it, then finish again.",
+          tokenUsage: addUsage(s.tokenUsage, usage),
         }));
       }
     } catch (e) {
@@ -168,6 +182,7 @@ export function useChatSession(homeCountry: string) {
       finalResult: null,
       finished: false,
       usageWarning: null,
+      tokenUsage: { inputTokens: 0, outputTokens: 0, totalTokens: 0 },
     });
   }, [homeCountry]);
 
@@ -186,6 +201,7 @@ export function useChatSession(homeCountry: string) {
     finished: state.finished,
     activeProviderLabel: activeLabel,
     usageWarning: state.usageWarning,
+    tokenUsage: state.tokenUsage,
     sendMessage,
     finishChat,
     clearChat,
