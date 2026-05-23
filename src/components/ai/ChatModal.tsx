@@ -25,7 +25,7 @@ Include any of these for better results:
 • Any preferences or things to avoid`;
 
 export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onOpenSettings, initialPrompt }: Props) {
-  const { messages, loading, error, finalResult, finished, sendMessage, finishChat, clearChat, clearError, activeProviderLabel, usageWarning } = useChatSession(homeCountry);
+  const { messages, loading, error, finalizing, finalResult, finished, sendMessage, finishChat, clearChat, clearError, activeProviderLabel, usageWarning } = useChatSession(homeCountry);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -57,12 +57,10 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
     }
   }, [open]);
 
-  // When plan is finalized, notify parent
-  useEffect(() => {
-    if (finished && finalResult) {
-      onPlanReady(finalResult);
-    }
-  }, [finished, finalResult, onPlanReady]);
+  function handleViewItinerary() {
+    if (finalResult) onPlanReady(finalResult);
+    handleClose();
+  }
 
   if (!open) return null;
 
@@ -91,7 +89,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
   return createPortal(
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm"
-      onClick={handleClose}
+      onClick={finalizing ? undefined : handleClose}
     >
       <div
         className="bg-[#1a1a2e] border border-white/10 rounded-2xl shadow-2xl w-full max-w-2xl mx-4 flex flex-col"
@@ -108,7 +106,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
             </div>
           </div>
           <div className="flex items-center gap-2">
-            {hasConversation && !finished && (
+            {hasConversation && !finished && !finalizing && (
               <button
                 onClick={finishChat}
                 disabled={loading}
@@ -117,7 +115,8 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
                 ✓ Finish & Generate Plan
               </button>
             )}
-            <button onClick={handleClose} className="text-white/40 hover:text-white text-lg leading-none p-1">✕</button>
+            <button onClick={handleClose} disabled={finalizing}
+              className={`text-lg leading-none p-1 ${finalizing ? "text-white/10 cursor-not-allowed" : "text-white/40 hover:text-white"}`}>✕</button>
           </div>
         </div>
 
@@ -165,7 +164,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
             </div>
           ))}
 
-          {loading && (
+          {loading && !finalizing && (
             <div className="flex justify-start">
               <div className="bg-white/8 border border-white/8 rounded-2xl rounded-bl-md px-4 py-3">
                 <div className="flex gap-1.5">
@@ -176,6 +175,8 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
               </div>
             </div>
           )}
+
+          {finalizing && <FinalizingSplash />}
 
           {error && (
             <div className="bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3 space-y-2">
@@ -212,7 +213,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
         </div>
 
         {/* Input */}
-        {!finished && hasApiKey && (
+        {!finished && !finalizing && hasApiKey && (
           <div className="px-5 py-3.5 border-t border-white/10 shrink-0">
             <div className="flex gap-2.5 items-end">
               <textarea
@@ -255,7 +256,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
                 </p>
               </div>
               <button
-                onClick={handleClose}
+                onClick={handleViewItinerary}
                 className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition-colors"
               >
                 View Itinerary
@@ -323,4 +324,47 @@ function renderInline(text: string) {
     }
     return <span key={i}>{part}</span>;
   });
+}
+
+const SPLASH_STEPS = [
+  { emoji: "🧠", text: "Analyzing your preferences…" },
+  { emoji: "🗺️", text: "Mapping the best route…" },
+  { emoji: "📅", text: "Building day-by-day itinerary…" },
+  { emoji: "💰", text: "Estimating costs…" },
+  { emoji: "🏨", text: "Finding accommodation options…" },
+  { emoji: "✨", text: "Polishing your trip plan…" },
+];
+
+function FinalizingSplash() {
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setStep((s) => (s + 1) % SPLASH_STEPS.length);
+    }, 2500);
+    return () => clearInterval(id);
+  }, []);
+
+  const current = SPLASH_STEPS[step];
+
+  return (
+    <div className="flex items-center justify-center py-12">
+      <div className="text-center space-y-5 animate-pulse">
+        <span className="text-5xl block" key={step} style={{ animation: "fadeInUp 0.4s ease-out" }}>
+          {current.emoji}
+        </span>
+        <p className="text-sm text-white/70 font-medium" key={`t-${step}`} style={{ animation: "fadeInUp 0.4s ease-out" }}>
+          {current.text}
+        </p>
+        <div className="flex justify-center gap-1.5 pt-2">
+          {SPLASH_STEPS.map((_, i) => (
+            <span
+              key={i}
+              className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${i === step ? "bg-emerald-400" : "bg-white/15"}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
