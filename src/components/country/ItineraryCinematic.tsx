@@ -92,6 +92,37 @@ const HOME_CITY: Record<string, string> = {
 
 // ─── Bezier helper ────────────────────────────────────────────────────────────
 
+// Easing: smooth-step (ease-in-out) for natural arc motion
+function easeInOut(t: number): number {
+  return t * t * (3 - 2 * t);
+}
+
+// Styled transport marker — emoji stays upright, never rotated
+function createTransportEl(emoji: string): HTMLDivElement {
+  const el = document.createElement("div");
+  el.style.cssText = [
+    "width:44px;height:44px",
+    "display:flex;align-items:center;justify-content:center",
+    "font-size:22px;line-height:1",
+    "background:white",
+    "border-radius:50%",
+    "border:2.5px solid rgba(59,130,246,0.5)",
+    "box-shadow:0 2px 12px rgba(59,130,246,0.35),0 0 0 3px rgba(59,130,246,0.12)",
+    "pointer-events:none",
+    "transform:scale(0)",
+    "transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.2s ease",
+  ].join(";");
+  el.textContent = emoji;
+  requestAnimationFrame(() => { el.style.transform = "scale(1)"; });
+  return el;
+}
+
+function removeTransportMarker(marker: maplibregl.Marker) {
+  const el = marker.getElement();
+  el.style.transform = "scale(0)";
+  setTimeout(() => marker.remove(), 300);
+}
+
 function bezierPt(p0: [number, number], p1: [number, number], p2: [number, number], t: number): [number, number] {
   return [
     (1 - t) ** 2 * p0[0] + 2 * (1 - t) * t * p1[0] + t ** 2 * p2[0],
@@ -205,13 +236,16 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         if (!map.getSource(SRC_DONE)) {
           map.addSource(SRC_DONE, { type: "geojson", data: EMPTY_FC });
           map.addLayer({ id: LYR_DONE, type: "line", source: SRC_DONE,
-            paint: { "line-color": "#94a3b8", "line-width": 2, "line-opacity": 0.6, "line-dasharray": [4, 3] } });
+            paint: { "line-color": "#94a3b8", "line-width": 2.5, "line-opacity": 0.5, "line-dasharray": [4, 3] } });
         } else {
-          // Clear any stale data left by a previous session that didn't clean up
           (map.getSource(SRC_DONE) as maplibregl.GeoJSONSource).setData(EMPTY_FC);
         }
         if (!map.getSource(SRC_CURRENT)) {
           map.addSource(SRC_CURRENT, { type: "geojson", data: EMPTY_FC });
+          // Glow halo layer (wider, semi-transparent)
+          map.addLayer({ id: LYR_CURRENT + "-glow", type: "line", source: SRC_CURRENT,
+            paint: { "line-color": "#3b82f6", "line-width": 8, "line-opacity": 0.15, "line-blur": 4 } });
+          // Main route line
           map.addLayer({ id: LYR_CURRENT, type: "line", source: SRC_CURRENT,
             paint: { "line-color": "#60a5fa", "line-width": 3, "line-opacity": 1 } });
         } else {
@@ -221,15 +255,17 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
     }
     function removeMapLayers() {
       [
-        { lyr: LYR_CURRENT, src: SRC_CURRENT },
-        { lyr: LYR_DONE,    src: SRC_DONE    },
-      ].forEach(({ lyr, src }) => {
+        { lyr: LYR_CURRENT, src: "" },
+        { lyr: LYR_CURRENT + "-glow", src: "" },
+        { lyr: LYR_DONE, src: "" },
+      ].forEach(({ lyr }) => {
+        try { if (map.getLayer(lyr)) map.removeLayer(lyr); } catch { /* already removed */ }
+      });
+      [SRC_CURRENT, SRC_DONE].forEach((src) => {
         try {
-          // Clear data first so lines vanish visually even if removeSource throws
           if (map.getSource(src)) (map.getSource(src) as maplibregl.GeoJSONSource).setData(EMPTY_FC);
-          if (map.getLayer(lyr)) map.removeLayer(lyr);
           if (map.getSource(src)) map.removeSource(src);
-        } catch { /* map already removed */ }
+        } catch { /* already removed */ }
       });
     }
 
@@ -245,9 +281,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       const dist = Math.sqrt((to[0] - from[0]) ** 2 + (to[1] - from[1]) ** 2);
       const ctrl: [number, number] = [mx, my + dist * 0.42];
 
-      const txEl = document.createElement("div");
-      txEl.style.cssText = "font-size:28px;line-height:1;pointer-events:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.65));transform:translate(-50%,-50%);";
-      txEl.textContent = emojiChar;
+      const txEl = createTransportEl(emojiChar);
       const txMarker = new maplibregl.Marker({ element: txEl, anchor: "center" }).setLngLat(from).addTo(map);
       allMarkers.push(txMarker);
 
@@ -256,14 +290,14 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       for (let s = 1; s <= STEPS; s++) {
         if (cancelled) { txMarker.remove(); return seg; }
         await untilUnpaused();
-        const t = s / STEPS;
+        const t = easeInOut(s / STEPS);
         const pt = bezierPt(from, ctrl, to, t);
         seg.push(pt);
         txMarker.setLngLat(pt);
         onTick(seg);
         await sleep(30);
       }
-      txMarker.remove();
+      removeTransportMarker(txMarker);
       return seg;
     }
 
@@ -365,10 +399,10 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
 
         const stop = cityStops[i];
 
-        // Activate city dot
+        // Activate city dot with pulse
         const dotEl = allMarkers[i]?.getElement();
         if (dotEl) {
-          dotEl.style.cssText = "width:16px;height:16px;background:#3b82f6;border:3px solid white;border-radius:50%;box-shadow:0 0 0 4px rgba(59,130,246,0.35);transition:all 0.5s ease;box-sizing:border-box;pointer-events:none;";
+          dotEl.style.cssText = "width:16px;height:16px;background:#3b82f6;border:3px solid white;border-radius:50%;box-shadow:0 0 0 4px rgba(59,130,246,0.35);transition:all 0.5s ease;box-sizing:border-box;pointer-events:none;animation:cityPulse 0.6s ease-out;";
         }
 
         // Transit between cities (i > 0)
@@ -395,9 +429,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
           const dist = Math.sqrt((to[0] - from[0]) ** 2 + (to[1] - from[1]) ** 2);
           const ctrl: [number, number] = isFlight ? [mx, my + dist * 0.42] : [mx, my];
 
-          const txEl = document.createElement("div");
-          txEl.style.cssText = "font-size:28px;line-height:1;pointer-events:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.65));transform:translate(-50%,-50%);";
-          txEl.textContent = TRANSPORT_EMOJI[ttype];
+          const txEl = createTransportEl(TRANSPORT_EMOJI[ttype]);
           const txMarker = new maplibregl.Marker({ element: txEl, anchor: "center" }).setLngLat(from).addTo(map);
           allMarkers.push(txMarker);
 
@@ -406,7 +438,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
           for (let s = 1; s <= STEPS; s++) {
             if (cancelled) { txMarker.remove(); return; }
             await untilUnpaused();
-            const t = s / STEPS;
+            const t = easeInOut(s / STEPS);
             const pt: [number, number] = isFlight
               ? bezierPt(from, ctrl, to, t)
               : [from[0] + (to[0] - from[0]) * t, from[1] + (to[1] - from[1]) * t];
@@ -415,7 +447,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
             setRouteCurrent(seg);
             await sleep(35);
           }
-          txMarker.remove();
+          removeTransportMarker(txMarker);
           completedCoords.push(...seg.slice(1));
           setRouteDone(completedCoords);
           setRouteCurrent([]);
