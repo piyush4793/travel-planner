@@ -97,30 +97,22 @@ function easeInOut(t: number): number {
   return t * t * (3 - 2 * t);
 }
 
-// Compute bearing angle in degrees between two lng/lat points
-function bearing(from: [number, number], to: [number, number]): number {
-  const dx = to[0] - from[0];
-  const dy = to[1] - from[1];
-  return Math.atan2(dx, dy) * (180 / Math.PI);
-}
-
-// Styled transport marker element (replaces flat emoji)
+// Styled transport marker — emoji stays upright, never rotated
 function createTransportEl(emoji: string): HTMLDivElement {
   const el = document.createElement("div");
   el.style.cssText = [
-    "width:40px;height:40px",
+    "width:44px;height:44px",
     "display:flex;align-items:center;justify-content:center",
-    "font-size:20px;line-height:1",
+    "font-size:22px;line-height:1",
     "background:white",
     "border-radius:50%",
-    "border:2px solid rgba(59,130,246,0.5)",
+    "border:2.5px solid rgba(59,130,246,0.5)",
     "box-shadow:0 2px 12px rgba(59,130,246,0.35),0 0 0 3px rgba(59,130,246,0.12)",
     "pointer-events:none",
     "transform:scale(0)",
-    "transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1)",
+    "transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.2s ease",
   ].join(";");
   el.textContent = emoji;
-  // Trigger scale-in on next frame
   requestAnimationFrame(() => { el.style.transform = "scale(1)"; });
   return el;
 }
@@ -295,7 +287,6 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
 
       const STEPS = 80;
       const seg: [number, number][] = [from];
-      let prevPt = from;
       for (let s = 1; s <= STEPS; s++) {
         if (cancelled) { txMarker.remove(); return seg; }
         await untilUnpaused();
@@ -303,10 +294,6 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         const pt = bezierPt(from, ctrl, to, t);
         seg.push(pt);
         txMarker.setLngLat(pt);
-        // Rotate marker in direction of travel
-        const angle = bearing(prevPt, pt);
-        txEl.style.transform = `scale(1) rotate(${angle}deg)`;
-        prevPt = pt;
         onTick(seg);
         await sleep(38);
       }
@@ -447,7 +434,6 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
 
           const STEPS = 60;
           const seg: [number, number][] = [from];
-          let prevPt = from;
           for (let s = 1; s <= STEPS; s++) {
             if (cancelled) { txMarker.remove(); return; }
             await untilUnpaused();
@@ -457,9 +443,6 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
               : [from[0] + (to[0] - from[0]) * t, from[1] + (to[1] - from[1]) * t];
             seg.push(pt);
             txMarker.setLngLat(pt);
-            const angle = bearing(prevPt, pt);
-            txEl.style.transform = `scale(1) rotate(${angle}deg)`;
-            prevPt = pt;
             setRouteCurrent(seg);
             await sleep(45);
           }
