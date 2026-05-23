@@ -20,6 +20,7 @@ import { useHashView, type AppView } from "./hooks/useHashView";
 import { useCountryStore } from "./hooks/useCountryStore";
 import { useTripStore } from "./hooks/useTripStore";
 import { useAiPlanStore } from "./hooks/useAiPlanStore";
+import { formatPlanLabel } from "./utils/planDiff";
 import { isEnabled } from "./utils/featureFlags";
 import { useEffect } from "react";
 
@@ -104,6 +105,27 @@ export default function App() {
     setChatInitialPrompt(`Plan a trip to ${countryName}`);
     setChatOpen(true);
   }, []);
+
+  const handleViewAiPlan = useCallback((planId: string) => {
+    if (!selectedCountry) return;
+    const plans = aiPlanStore.getPlans(selectedCountry.name);
+    const plan = plans.find((p) => p.id === planId);
+    if (plan) setAiPlanResult(plan.result);
+  }, [selectedCountry, aiPlanStore]);
+
+  const handleDeleteAiPlan = useCallback((planId: string) => {
+    if (!selectedCountry) return;
+    aiPlanStore.deletePlan(selectedCountry.name, planId);
+  }, [selectedCountry, aiPlanStore]);
+
+  const selectedCountryPlans = useMemo(() => {
+    if (!selectedCountry) return [];
+    return aiPlanStore.getPlans(selectedCountry.name).map((sp) => ({
+      id: sp.id,
+      savedAt: sp.savedAt,
+      label: formatPlanLabel(sp.result, sp.savedAt),
+    }));
+  }, [selectedCountry, aiPlanStore]);
 
   const handleSaveAiToList = useCallback((destinationName: string): "saved" | "exists" => {
     if (store.myList.set.has(destinationName)) return "exists";
@@ -269,6 +291,9 @@ export default function App() {
           mainMapRef={mainMapRef}
           allCountries={store.myListCountries}
           onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
+          savedAiPlans={isEnabled("llmPlanning") ? selectedCountryPlans : undefined}
+          onViewAiPlan={isEnabled("llmPlanning") ? handleViewAiPlan : undefined}
+          onDeleteAiPlan={isEnabled("llmPlanning") ? handleDeleteAiPlan : undefined}
         />
       </div>
 
