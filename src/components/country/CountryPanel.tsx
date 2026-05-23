@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country, PlanStyle } from "../../types";
@@ -94,15 +94,22 @@ export default function CountryPanel({
           {/* Header */}
           <div className="px-5 py-4 border-b bg-gradient-to-br from-slate-50 to-white shrink-0">
             <div className="flex items-start justify-between gap-2">
-              <div>
+              <div className="flex-1 min-w-0">
                 <h2 className="text-xl font-bold text-gray-900 leading-tight">{country.name}</h2>
                 <p className="text-xs text-gray-400 mt-0.5 font-medium">{country.budget} · from {homeCountry}</p>
               </div>
-              <div className="flex items-center gap-1 shrink-0">
+              <div className="flex items-center gap-0.5 shrink-0">
+                <button onClick={onToggleVisited}
+                  className={`px-2 py-1 rounded-lg text-[10px] font-bold transition-all ${
+                    isVisited ? "bg-emerald-100 text-emerald-700" : "text-gray-400 hover:bg-gray-100"
+                  }`}>
+                  {isVisited ? "✓ Visited" : "○ Visited"}
+                </button>
                 <button onClick={onToggleFavorite}
-                  className={`text-xl p-1 rounded-lg transition-colors ${isFavorite ? "text-yellow-400 bg-yellow-50" : "text-gray-300 hover:text-yellow-300"}`}>
+                  className={`text-lg p-1 rounded-lg transition-colors ${isFavorite ? "text-yellow-400" : "text-gray-300 hover:text-yellow-300"}`}>
                   {isFavorite ? "★" : "☆"}
                 </button>
+                <OverflowMenu onEdit={onEdit} onDelete={onDelete} />
                 <button onClick={onClose}
                   className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 text-lg leading-none p-1 rounded-lg transition-colors">
                   ✕
@@ -124,18 +131,6 @@ export default function CountryPanel({
                 })}
               </div>
             )}
-
-            {/* Actions */}
-            <div className="flex items-center gap-2 mt-3">
-              <button onClick={onToggleVisited}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  isVisited ? "bg-emerald-100 text-emerald-700 ring-1 ring-emerald-300" : "bg-gray-100 text-gray-500 hover:bg-gray-200"
-                }`}>
-                {isVisited ? "✓ Visited" : "○ Mark visited"}
-              </button>
-              <button onClick={onEdit} className="px-3 py-1.5 rounded-full text-xs font-bold bg-gray-100 text-gray-600 hover:bg-gray-200">Edit</button>
-              <button onClick={onDelete} className="px-3 py-1.5 rounded-full text-xs font-bold bg-red-50 text-red-500 hover:bg-red-100">Delete</button>
-            </div>
           </div>
 
           {/* Body */}
@@ -275,25 +270,25 @@ export default function CountryPanel({
               )}
             </Section>
 
-            <Section label="Best months">
-              <div className="flex flex-wrap gap-1.5">
+            {/* ── When to go (merged best + avoid months) ── */}
+            <Section label="When to go">
+              <div className="flex flex-wrap items-center gap-1.5">
                 {country.bestMonths.map((m) => (
                   <span key={m} className="px-2.5 py-1 bg-emerald-100 text-emerald-800 text-xs rounded-full font-semibold">{m}</span>
                 ))}
+                {country.worstMonths && country.worstMonths.length > 0 && (
+                  <>
+                    <span className="text-gray-300 mx-1">·</span>
+                    <span className="text-[10px] text-red-400 font-bold mr-0.5">avoid</span>
+                    {country.worstMonths.map((m) => (
+                      <span key={m} className="px-2.5 py-1 bg-red-100 text-red-700 text-xs rounded-full font-semibold">{m}</span>
+                    ))}
+                  </>
+                )}
               </div>
             </Section>
 
-            {country.worstMonths && country.worstMonths.length > 0 && (
-              <Section label="Avoid months">
-                <div className="flex flex-wrap gap-1.5">
-                  {country.worstMonths.map((m) => (
-                    <span key={m} className="px-2.5 py-1 bg-red-100 text-red-700 text-xs rounded-full font-semibold">{m}</span>
-                  ))}
-                </div>
-              </Section>
-            )}
-
-            <Section label="Experiences — tap to filter">
+            <CollapsibleSection label="Experiences — tap to filter" count={country.experiences.length}>
               <div className="flex flex-wrap gap-1.5">
                 {country.experiences.map((e) => {
                   const active = activeExperiences.includes(e);
@@ -307,10 +302,10 @@ export default function CountryPanel({
                   );
                 })}
               </div>
-            </Section>
+            </CollapsibleSection>
 
             {country.cities && country.cities.length > 0 && (
-              <Section label="Cities to visit">
+              <CollapsibleSection label="Cities to visit" count={country.cities.length}>
                 <div className="space-y-2.5">
                   {country.cities.map((city) => (
                     <div key={city.name} className="bg-slate-50 rounded-xl px-3 py-2.5">
@@ -328,19 +323,19 @@ export default function CountryPanel({
                     </div>
                   ))}
                 </div>
-              </Section>
+              </CollapsibleSection>
             )}
 
             {country.stopoverNote && (
-              <Section label="Stopover tip ✈️">
+              <CollapsibleSection label="Stopover tip ✈️">
                 <div className="bg-blue-50 rounded-xl px-3 py-2.5">
                   <p className="text-xs text-blue-800 leading-relaxed">{country.stopoverNote}</p>
                 </div>
-              </Section>
+              </CollapsibleSection>
             )}
 
             {country.avoid && country.avoid.length > 0 && (
-              <Section label="Watch out for">
+              <CollapsibleSection label="Watch out for" count={country.avoid.length}>
                 <ul className="space-y-1.5">
                   {country.avoid.map((a) => (
                     <li key={a} className="text-sm text-gray-600 flex gap-2 leading-snug">
@@ -348,22 +343,22 @@ export default function CountryPanel({
                     </li>
                   ))}
                 </ul>
-              </Section>
+              </CollapsibleSection>
             )}
 
             {country.combo && country.combo.length > 0 && (
-              <Section label="Combine with">
+              <CollapsibleSection label="Combine with" count={country.combo.length}>
                 <div className="flex flex-wrap gap-1.5">
                   {country.combo.map((c) => (
                     <span key={c} className="px-2.5 py-1 bg-purple-50 text-purple-700 text-xs rounded-full font-semibold border border-purple-200">{c}</span>
                   ))}
                 </div>
                 <p className="text-[10px] text-gray-400 mt-1.5">Highlighted in purple on the map</p>
-              </Section>
+              </CollapsibleSection>
             )}
 
             {country.links && country.links.length > 0 && (
-              <Section label="Useful links">
+              <CollapsibleSection label="Useful links" count={country.links.length}>
                 <div className="space-y-2">
                   {country.links.map((link) => (
                     <a
@@ -381,10 +376,10 @@ export default function CountryPanel({
                     </a>
                   ))}
                 </div>
-              </Section>
+              </CollapsibleSection>
             )}
 
-            <Section label="My notes">
+            <CollapsibleSection label="My notes">
               <textarea
                 className="w-full text-sm text-gray-700 bg-amber-50 rounded-xl px-3 py-2.5 resize-none outline-none border border-transparent focus:border-amber-300 placeholder:text-gray-400 leading-relaxed transition-colors"
                 rows={4}
@@ -393,7 +388,7 @@ export default function CountryPanel({
                 onChange={(e) => setNotes(e.target.value)}
                 onBlur={() => onUpdateNotes(notes)}
               />
-            </Section>
+            </CollapsibleSection>
           </div>
         </>
       )}
@@ -498,6 +493,74 @@ function Section({ label, children }: { label: string; children: React.ReactNode
     <div>
       <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">{label}</p>
       {children}
+    </div>
+  );
+}
+
+function CollapsibleSection({ label, count, defaultOpen = false, children }: {
+  label: string;
+  count?: number;
+  defaultOpen?: boolean;
+  children: React.ReactNode;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div>
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="flex items-center gap-1.5 w-full text-left group"
+      >
+        <span className={`text-[9px] text-gray-400 transition-transform duration-200 ${open ? "rotate-90" : ""}`}>▸</span>
+        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider flex-1">
+          {label}{count !== undefined ? ` (${count})` : ""}
+        </span>
+      </button>
+      <div className={`grid transition-all duration-200 ease-out ${open ? "grid-rows-[1fr] opacity-100 mt-2" : "grid-rows-[0fr] opacity-0"}`}>
+        <div className="overflow-hidden">
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function OverflowMenu({ onEdit, onDelete }: { onEdit: () => void; onDelete: () => void }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [open]);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 text-lg leading-none p-1 rounded-lg transition-colors"
+      >
+        ⋯
+      </button>
+      {open && (
+        <div className="absolute right-0 top-full mt-1 bg-white rounded-xl shadow-xl border border-slate-200 py-1 min-w-[120px] z-50">
+          <button
+            onClick={() => { onEdit(); setOpen(false); }}
+            className="w-full text-left px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50"
+          >
+            ✏️ Edit
+          </button>
+          <button
+            onClick={() => { onDelete(); setOpen(false); }}
+            className="w-full text-left px-4 py-2 text-xs font-semibold text-red-500 hover:bg-red-50"
+          >
+            🗑 Delete
+          </button>
+        </div>
+      )}
     </div>
   );
 }
