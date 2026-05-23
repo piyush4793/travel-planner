@@ -87,7 +87,7 @@ Bring-your-own-key integration with OpenAI and Claude. Chat with an AI assistant
 
 - **Multi-provider support** — OpenAI, Claude (Anthropic), and Gemini (Google), switchable in Settings with per-provider keys
 - **Central chat modal** — describe your trip in natural language ("Plan 10 days in Japan for 2, mid-range budget")
-- **Pre-seed from country panel** — click "✨ Plan with AI" on any country to start a chat pre-filled with that destination
+- **Pre-seed from country panel** — click "✨ Plan with AI" on any country to pre-fill a rich prompt with budget, best months, cities, experiences, and combo destinations (editable before sending — no auto-send, no wasted tokens)
 - **Smart defaults** — origin from home country, 2 travelers, 7 days, mid-range budget when not specified
 - **Context condensation** — maintains a structured trip brief + recent messages to save tokens
 - **Finish & Generate** — extracts a structured JSON plan from the conversation; engaging splash screen with rotating progress messages during generation
@@ -96,6 +96,8 @@ Bring-your-own-key integration with OpenAI and Claude. Chat with an AI assistant
 - **Save to My List** — save AI-generated destinations to your list with instant feedback (saved / already exists)
 - **Save AI plans** — persist up to 4 AI-generated itineraries per destination in localStorage with compare-and-replace flow
 - **Plan comparison** — when saving, view existing plans side-by-side with diff summary (duration, budget, cities, cost) and choose to add or replace
+- **Token usage tracking** — running token counter in chat footer (color-coded: green <4K, amber 4K-12K, red >12K), session total shown on plan completion
+- **Quota-aware error handling** — provider-specific error messages for rate limits, billing exhaustion, and free tier caps with links to billing pages
 - **Settings modal** — provider selector, API key management with validation, security notice, setup guides
 - **Feature-gated** — behind `llmPlanning` feature flag (enabled by default)
 
@@ -236,7 +238,7 @@ State is organized into domain-specific hooks rather than a monolithic App compo
 - `useTripStore` — trip group management
 - `useAiPlanStore` — AI-generated plan persistence (save, replace, compare)
 - `usePersistedSet` — reusable Set<string> with auto-persistence (DRY)
-- `useChatSession` — AI chat state machine (messages, finalize, clear)
+- `useChatSession` — AI chat state machine (messages, finalize, clear, token accumulation)
 - `useHashView` — URL routing
 
 **Seed + Overrides pattern**
@@ -375,7 +377,13 @@ Bring-your-own-key architecture — users supply their own API keys for OpenAI, 
 - [x] Save AI-generated destinations to My List (resolves against seed/catalog)
 - [x] Pre-seed chat from CountryPanel with "Plan with AI" button
 
-**Phase 5 — Future enhancements**
+**Phase 5 — Token awareness & UX polish** ✅
+- [x] Token usage tracking — parse from all 3 providers, accumulate per session, display in chat
+- [x] Color-coded token counter (green/amber/red thresholds)
+- [x] Quota-aware error messages with billing page links
+- [x] Rich prompt prefill from country context (no auto-send)
+
+**Phase 6 — Future enhancements**
 - [ ] Enriched AI response schema — best/worst months, things to avoid, visa tips, combo countries, lat/lng per city, transport type per leg (enables cinematic animation for AI plans)
 - [ ] Cinematic mode for AI plans — reuse ItineraryCinematic with AI-provided city coordinates and transport types
 - [ ] Export AI plans as PDF / shareable link
