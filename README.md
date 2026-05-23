@@ -17,6 +17,8 @@ A personal, map-based travel planner with a catalog of 197 world countries, 44 c
 
 View persists in the URL hash (`#map`, `#calendar`, `#list`, `#trips`, `#discover`) — refresh returns to the same view.
 
+**Navigation:** Map and Trips are primary nav items always visible in the header. Calendar, List, and Discover are accessible via the ☰ hamburger menu for a cleaner top bar.
+
 ---
 
 ### My List & Discover
@@ -88,10 +90,12 @@ Bring-your-own-key integration with OpenAI and Claude. Chat with an AI assistant
 - **Pre-seed from country panel** — click "✨ Plan with AI" on any country to start a chat pre-filled with that destination
 - **Smart defaults** — origin from home country, 2 travelers, 7 days, mid-range budget when not specified
 - **Context condensation** — maintains a structured trip brief + recent messages to save tokens
-- **Finish & Generate** — extracts a structured JSON plan from the conversation and displays it in the AI itinerary modal
+- **Finish & Generate** — extracts a structured JSON plan from the conversation; engaging splash screen with rotating progress messages during generation
 - **Cost breakdowns** — per-day cost estimates for flights, hotels, excursions, and transfers
 - **Booking suggestions** — Klook/Viator-style tour recommendations with price, duration, and ratings
-- **Save to My List** — save AI-generated destinations to your list directly from the itinerary modal
+- **Save to My List** — save AI-generated destinations to your list with instant feedback (saved / already exists)
+- **Save AI plans** — persist up to 4 AI-generated itineraries per destination in localStorage with compare-and-replace flow
+- **Plan comparison** — when saving, view existing plans side-by-side with diff summary (duration, budget, cities, cost) and choose to add or replace
 - **Settings modal** — provider selector, API key management with validation, security notice, setup guides
 - **Feature-gated** — behind `llmPlanning` feature flag (enabled by default)
 
@@ -172,7 +176,8 @@ src/
 │   ├── usePersistedSet.ts       # DRY Set<string> + localStorage persistence
 │   ├── useHashView.ts           # Hash-based routing (no router library)
 │   ├── usePanelDrag.ts          # Resizable panel drag behavior
-│   └── useChatSession.ts        # AI chat state, send/finish/clear
+│   ├── useChatSession.ts        # AI chat state, send/finish/clear
+│   └── useAiPlanStore.ts        # AI plan persistence (save/replace/compare, max 4 per dest)
 ├── components/
 │   ├── views/                   # Top-level view components
 │   │   ├── MapView.tsx          # MapLibre map, markers, hover card
@@ -229,7 +234,9 @@ data/
 State is organized into domain-specific hooks rather than a monolithic App component:
 - `useCountryStore` — all country data, CRUD, My List, favorites, visited
 - `useTripStore` — trip group management
+- `useAiPlanStore` — AI-generated plan persistence (save, replace, compare)
 - `usePersistedSet` — reusable Set<string> with auto-persistence (DRY)
+- `useChatSession` — AI chat state machine (messages, finalize, clear)
 - `useHashView` — URL routing
 
 **Seed + Overrides pattern**
@@ -297,6 +304,7 @@ type TripGroupDef = {
 | `tp_features` | Feature flag overrides (`{ searchableHomeCountry: true, llmPlanning: true }`) |
 | `tp_llm_keys` | LLM API keys (`{ openai?: string, claude?: string, gemini?: string }`) — stored locally, never sent to any server except the provider |
 | `tp_llm_provider` | Active LLM provider (`"openai"` or `"claude"`) |
+| `tp_ai_plans` | Saved AI-generated itineraries (`Record<destinationKey, SavedAiPlan[]>`), max 4 per destination |
 
 ---
 
@@ -368,8 +376,6 @@ Bring-your-own-key architecture — users supply their own API keys for OpenAI, 
 - [x] Pre-seed chat from CountryPanel with "Plan with AI" button
 
 **Phase 5 — Future enhancements**
-- [ ] Save up to 4 AI-generated itineraries per country — persistent in localStorage, with replace/delete
-- [ ] Comparison view — side-by-side or tabbed: static rule-engine plan vs AI plan(s), highlighting differences (cities, days, costs, coverage)
 - [ ] Enriched AI response schema — best/worst months, things to avoid, visa tips, combo countries, lat/lng per city, transport type per leg (enables cinematic animation for AI plans)
 - [ ] Cinematic mode for AI plans — reuse ItineraryCinematic with AI-provided city coordinates and transport types
 - [ ] Export AI plans as PDF / shareable link
