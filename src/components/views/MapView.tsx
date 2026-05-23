@@ -12,7 +12,9 @@ type Props = {
   onMapReady?: (map: maplibregl.Map | null) => void;
 };
 
-const MAP_STYLE = "https://tiles.openfreemap.org/styles/liberty";
+// Carto Voyager — free, no API key, reliable CORS
+// OpenFreeMap (tiles.openfreemap.org) was primary but has intermittent CORS/403 issues
+const MAP_STYLE = "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json";
 
 type HoverState = { country: Country; x: number; y: number } | null;
 
