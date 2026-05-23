@@ -11,6 +11,7 @@ type Props = {
   onPlanReady: (result: LLMTripPlanResult) => void;
   onOpenSettings: () => void;
   initialPrompt?: string;
+  autoSend?: boolean;
 };
 
 const PLACEHOLDER = `Describe your trip — for example:
@@ -24,7 +25,7 @@ Include any of these for better results:
 • Mandatory cities to cover
 • Any preferences or things to avoid`;
 
-export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onOpenSettings, initialPrompt }: Props) {
+export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onOpenSettings, initialPrompt, autoSend = true }: Props) {
   const { messages, loading, error, finalizing, finalResult, finished, sendMessage, finishChat, clearChat, clearError, activeProviderLabel, usageWarning, tokenUsage } = useChatSession(homeCountry);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -42,13 +43,17 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
     }
   }, [messages, loading]);
 
-  // Auto-send initial prompt (guarded against duplicates)
+  // Auto-send or prefill initial prompt
   useEffect(() => {
-    if (open && initialPrompt && hasApiKey && messages.length === 0 && !loading && autoSentRef.current !== initialPrompt) {
-      autoSentRef.current = initialPrompt;
+    if (!open || !initialPrompt || !hasApiKey || messages.length > 0 || loading) return;
+    if (autoSentRef.current === initialPrompt) return;
+    autoSentRef.current = initialPrompt;
+    if (autoSend) {
       sendMessage(initialPrompt);
+    } else {
+      setInput(initialPrompt);
     }
-  }, [open, initialPrompt, hasApiKey, messages.length, loading, sendMessage]);
+  }, [open, initialPrompt, hasApiKey, messages.length, loading, sendMessage, autoSend]);
 
   // Focus input on open
   useEffect(() => {
