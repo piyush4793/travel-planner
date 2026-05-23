@@ -251,7 +251,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       const txMarker = new maplibregl.Marker({ element: txEl, anchor: "center" }).setLngLat(from).addTo(map);
       allMarkers.push(txMarker);
 
-      const STEPS = 80;
+      const STEPS = 50;
       const seg: [number, number][] = [from];
       for (let s = 1; s <= STEPS; s++) {
         if (cancelled) { txMarker.remove(); return seg; }
@@ -261,7 +261,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         seg.push(pt);
         txMarker.setLngLat(pt);
         onTick(seg);
-        await sleep(38);
+        await sleep(30);
       }
       txMarker.remove();
       return seg;
@@ -310,31 +310,32 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         : "";
       setStatusMsg(`${plan.duration} · ${plan.costPerPerson} pp${comboLine}`);
 
-      // Pre-fetch city images during overview hold (sequential → no rate limit)
+      // Pre-fetch city images during overview hold (parallel for speed)
       const rule = ITINERARY_RULES[country.name];
       const cityImgKeys = rule?.cityImages ?? {};
       const fetchedPhotos: Record<string, string[]> = {};
-      for (const [cityName, articles] of Object.entries(cityImgKeys)) {
-        if (cancelled) return;
-        const valid: string[] = [];
-        for (const article of articles) {
-          if (cancelled) return;
-          const raw = await getWikiImage(article);
-          if (raw) valid.push(raw);
-          await sleep(120); // small gap between Wikipedia requests
-        }
+
+      const photoPromises = Object.entries(cityImgKeys).map(async ([cityName, articles]) => {
+        const results = await Promise.allSettled(
+          articles.map((article) => getWikiImage(article)),
+        );
+        const valid = results
+          .filter((r): r is PromiseFulfilledResult<string | null> => r.status === "fulfilled")
+          .map((r) => r.value)
+          .filter((v): v is string => !!v);
         if (valid.length > 0) fetchedPhotos[cityName] = valid;
-      }
+      });
+      await Promise.allSettled(photoPromises);
       if (cancelled) return;
-      setCityPhotoMap(fetchedPhotos); // triggers re-render so photos are ready before city phase
-      await sleep(1200); // brief hold after photos ready
+      setCityPhotoMap(fetchedPhotos);
+      await sleep(400);
       if (cancelled) return;
 
       // ── Fly into home country ──────────────────────────────────────────────
       setStatusMsg(`Starting in ${homeCity}…`);
       await flyAndWait({ center: homeCoords, zoom: 4, duration: 1600 });
       if (cancelled) return;
-      await sleep(700);
+      await sleep(300);
 
       // ── Departure arc: home → first city ──────────────────────────────────
       const completedCoords: [number, number][] = [homeCoords];
@@ -347,7 +348,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         duration: 1200,
         essential: true,
       });
-      await sleep(1400);
+      await sleep(800);
       if (cancelled) return;
 
       const departureSeg = await drawArc(homeCoords, firstStop.coords, "✈️", (seg) => setRouteCurrent(seg));
@@ -385,7 +386,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
               center: [(from[0] + to[0]) / 2, (from[1] + to[1]) / 2],
               zoom: 4.5, duration: 1000, essential: true,
             });
-            await sleep(1200);
+            await sleep(800);
             if (cancelled) return;
           }
 
@@ -400,7 +401,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
           const txMarker = new maplibregl.Marker({ element: txEl, anchor: "center" }).setLngLat(from).addTo(map);
           allMarkers.push(txMarker);
 
-          const STEPS = 60;
+          const STEPS = 40;
           const seg: [number, number][] = [from];
           for (let s = 1; s <= STEPS; s++) {
             if (cancelled) { txMarker.remove(); return; }
@@ -412,7 +413,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
             seg.push(pt);
             txMarker.setLngLat(pt);
             setRouteCurrent(seg);
-            await sleep(45);
+            await sleep(35);
           }
           txMarker.remove();
           completedCoords.push(...seg.slice(1));
@@ -463,7 +464,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
 
         // Hide card before leaving
         setShowCard(false);
-        await sleep(700);
+        await sleep(400);
         if (cancelled) return;
 
         // Zoom out for transit (if more cities remain)
@@ -473,7 +474,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
             center: [(stop.coords[0] + next[0]) / 2, (stop.coords[1] + next[1]) / 2],
             zoom: 5, duration: 1300, essential: true,
           });
-          await sleep(1500);
+          await sleep(1000);
           if (cancelled) return;
         }
       }
@@ -487,7 +488,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         center: [(lastStop.coords[0] + homeCoords[0]) / 2, (lastStop.coords[1] + homeCoords[1]) / 2],
         zoom: 1.8, duration: 1200, essential: true,
       });
-      await sleep(1400);
+      await sleep(800);
       if (cancelled) return;
 
       const returnSeg = await drawArc(lastStop.coords, homeCoords, "✈️", (seg) => setRouteCurrent(seg));
@@ -501,7 +502,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       setStatusMsg(`Welcome back to ${homeCity}!`);
       await flyAndWait({ center: homeCoords, zoom: 5, duration: 2000 });
       if (cancelled) return;
-      await sleep(800);
+      await sleep(500);
 
       setStatusMsg("Trip complete!");
       setPhase("done");
