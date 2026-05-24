@@ -2662,6 +2662,56 @@
           "September"
         ],
         "notes": "UNESCO fjord, Seven Sisters waterfall, Eagle Road hairpins and 4–5 hr cruise"
+      },
+      {
+        "name": "Gudvangen",
+        "lat": 60.87,
+        "lng": 6.85,
+        "bestMonths": [
+          "May",
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "notes": "Viking village Njardarheimr at the end of Nærøyfjord. Gateway from Flam ferry."
+      },
+      {
+        "name": "Loen",
+        "lat": 61.87,
+        "lng": 6.85,
+        "bestMonths": [
+          "May",
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "notes": "Nordfjord base — Loen Skylift, Briksdal glacier, turquoise lake Lovatnet."
+      },
+      {
+        "name": "Trollstigen",
+        "lat": 62.46,
+        "lng": 7.67,
+        "bestMonths": [
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "notes": "11-hairpin mountain pass with dramatic viewpoint platform. Road closed Oct–May."
+      },
+      {
+        "name": "Lofoten",
+        "lat": 68.23,
+        "lng": 14.56,
+        "bestMonths": [
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "notes": "Arctic archipelago — dramatic peaks, fishing villages, midnight sun, and early aurora. Reine, Henningsvær, Å."
       }
     ]
   },
