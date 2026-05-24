@@ -332,9 +332,9 @@ export default function TripsView({
             </p>
           )}
 
-          {/* ⭐ Bucket List */}
+          {/* ⭐ Favorites */}
           {bucketList.length > 0 && (
-            <PaginatedTripSection icon="⭐" label="Bucket List" count={bucketList.length} color="text-yellow-600"
+            <PaginatedTripSection icon="⭐" label="Favorites" count={bucketList.length} color="text-yellow-600"
               trips={bucketList} renderCards={renderTripCards} pageSize={layout === "grid" ? 6 : 5} />
           )}
 
