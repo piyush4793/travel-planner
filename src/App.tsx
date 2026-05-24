@@ -62,6 +62,11 @@ export default function App() {
     () => applyFilters(store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter),
     [store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter],
   );
+  // For Trips: apply all filters EXCEPT visited (Trips filters at trip-card level)
+  const filteredForTrips = useMemo(
+    () => applyFilters(store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, "all", budgetFilter),
+    [store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, budgetFilter],
+  );
   const allExperiences = useMemo(() => allUniqueExperiences(store.myListCountries), [store.myListCountries]);
   const comboNames = selectedCountry?.combo ?? [];
 
@@ -216,9 +221,10 @@ export default function App() {
 
         {view === "trips" ? (
           <TripsView
-            countries={store.myListCountries}
+            countries={filteredForTrips}
             visitedNames={store.visited.set}
             favorites={store.favorites.set}
+            visitedFilter={visitedFilter}
             onSelect={setSelectedCountry}
             tripGroups={trips.mergedTripGroups}
             onSaveTrip={trips.saveTrip}

@@ -16,6 +16,13 @@ All notable changes to Travel Planner are documented here. Format follows [Keep 
 - **Custom-only planner** — removed 3 preset styles, single days slider with recommended/max limits
 - **Travel style badges** — research-backed single badge per country (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive); "Month Long" renamed to "Immersive"
 - **Trips sorting** — favorites pinned to top, visited pushed to bottom
+- **Trips dashboard** — progress ring (% complete), quick stats (countries, visited, regions), "Next trip" highlight
+- **Trip card image collages** — up to 3 Wikipedia images per card (landmark/travel photos, lazy loaded, cached)
+- **Grouped trip sections** — ⭐ Favorites → 📋 Planning → ✅ Completed with section headers and counts
+- **List/grid toggle** — ☰ list (1 column) / ▦ grid (3 columns) with compact card layout in grid mode
+- **Paginated sections** — "Show more (N remaining)" per section (5/page list, 6/page grid)
+- **Clickable trip cards** — click anywhere on card to open country panel; inner buttons use stopPropagation
+- **Empty state** — welcoming CTA when no trips exist
 - **Token usage tracking** — running counter in chat footer, quota-aware error messages
 - **Rich prompt prefill** — "Plan with AI" builds context-aware prompt without auto-sending
 - **Chat modal light theme** — matches app theme, larger input area
@@ -25,6 +32,10 @@ All notable changes to Travel Planner are documented here. Format follows [Keep 
 - Default view is `#trips` (was `#map`)
 - `paidFeatures` defaults to `false` — AI and PDF hidden until payment
 - MapView hidden by default, shown only during Cinematic mode
+- Visited filter: two buttons → single dropdown (All / Not Visited / ✓ Visited)
+- Visited filter on Trips works at trip-card level (shows card if ANY country matches)
+- Default Trips layout is grid (3 columns)
+- Collapsible filter panel on Trips — only search + 🔍 Filters button visible by default
 
 ### Removed
 - Map and List from navigation (components kept for Cinematic/future use)

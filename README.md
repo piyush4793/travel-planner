@@ -9,7 +9,7 @@ A personal, map-based travel planner with a catalog of 197 world countries, 44 c
 ### Views
 | View | What it does |
 |---|---|
-| **✈ Trips** (home) | Countries organized into trip combinations. Favorites pinned to top, visited at bottom. Inline edit/create/delete for trip groups. |
+| **✈ Trips** (home) | Dashboard with progress ring, stats, and "Next trip" highlight. Trip cards with image collages, budget, best months. Grouped sections: ⭐ Favorites → 📋 Planning → ✅ Completed. List/grid toggle, paginated. Click any card to open country detail. |
 | **📅 Calendar** | Heatmap grid — rows are destinations, columns are months. Emerald = best, red = avoid, blue = current month. |
 | **🌍 Discover** | Browse all 197 world countries. Filter by region and list status. Add countries to your list or remove them. |
 
@@ -35,7 +35,7 @@ All filters combine with AND logic:
 | **Month** | Multi-select — shows countries with best-time overlap |
 | **Budget** | ₹ Budget (< ₹1.5L) / ₹₹ Mid (₹1.5L–₹3L) / ₹₹₹ Premium (₹3L+) |
 | **Experiences** | Multi-select tag picker — AND logic |
-| **Bucket list / Visited** | Show only unvisited or only visited |
+| **Visited** | Dropdown: All Countries / Not Visited / ✓ Visited — on Trips, filters at trip-card level (shows card if any country matches) |
 
 ---
 
