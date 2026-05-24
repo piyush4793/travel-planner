@@ -1,7 +1,6 @@
 
 Features:
 1. We should have capability to select host country
-2. Remember which page I was on using routing, refreshing the page looses the page and redirect me to map again.
 3. Maybe we can use something to show zoom into globe, to zoom into country and then show 15-30s transitions for day-wise itinerary, Add animations to how day wise itenary would look like (Make this a wow factor). Try it for Norway but keep the code extensible. Animation should include different best ways of transports, use proper icons to show movement on map maybe.
 4. Allow users to add their API keys for OpenAI, Claude and others to be able to get real time planning
 4.1 This should be an extensible design, we should support current static replies but if we have api, we receive reponse from LLM models, transform it to our UI and show it to user

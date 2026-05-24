@@ -158,8 +158,8 @@ export default function TripsView({
 
   const comboTrips = trips.filter((t) => t.addOns.length > 0);
   const soloTrips = trips.filter((t) => t.addOns.length === 0);
-  const totalCountries = trips.reduce((s, t) => s + t.allCountries.length, 0);
-  const totalVisited = trips.reduce((s, t) => s + t.visitedCount, 0);
+  const uniqueCountries = new Set(trips.flatMap((t) => t.allCountries.map((c) => c.name))).size;
+  const totalVisited = new Set(trips.flatMap((t) => t.allCountries.filter((c) => visitedNames.has(c.name)).map((c) => c.name))).size;
   const tripsCompleted = trips.filter((t) => t.allVisited).length;
   const completionPct = trips.length > 0 ? Math.round((tripsCompleted / trips.length) * 100) : 0;
 
@@ -205,7 +205,7 @@ export default function TripsView({
 
           {/* Quick stats */}
           <div className="flex items-center gap-5 flex-1 flex-wrap">
-            <DashStat value={totalCountries} label="countries" icon="🌍" />
+            <DashStat value={uniqueCountries} label="destinations" icon="🌍" />
             <DashStat value={totalVisited} label="visited" icon="✅" />
             <DashStat value={continentsVisited} label="regions" icon="🗺" />
             <DashStat value={comboTrips.length} label="combo trips" icon="🔗" />
