@@ -22,7 +22,7 @@ const PAID_FLAGS: ReadonlySet<keyof FeatureFlags> = new Set(["llmPlanning"]);
 const DEFAULTS: FeatureFlags = {
   searchableHomeCountry: false,
   llmPlanning: true,
-  paidFeatures: true,
+  paidFeatures: false,
 };
 
 let _cache: FeatureFlags | null = null;

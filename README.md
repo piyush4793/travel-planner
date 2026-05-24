@@ -127,15 +127,20 @@ Full-screen animated experience for rule-based countries:
 Default: 16 curated countries. With `searchableHomeCountry` feature flag enabled: searchable dropdown with all 197 countries (max 10 visible, scroll-enabled).
 
 ### Feature Flags
-Stored in `tp_features` localStorage key. Toggle via browser console:
-```js
-localStorage.setItem('tp_features', JSON.stringify({ searchableHomeCountry: true }));
-location.reload();
-```
+Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel in the header to toggle flags live.
 
-| Flag | Default | Description |
-|---|---|---|
-| `searchableHomeCountry` | `false` | Searchable dropdown with all 197 countries for home country selection |
+**Two-tier gating:**
+- `paidFeatures` — master gate for premium features (default: `false`)
+- Individual flags — fine-grained control within each tier
+- A paid feature requires BOTH `paidFeatures=true` AND its own flag enabled
+
+| Flag | Default | Tier | Description |
+|---|---|---|---|
+| `paidFeatures` | `false` | system | Master gate — enables all premium features. Set to `true` after payment. |
+| `llmPlanning` | `true` | paid | AI trip planning (chat, itinerary generation, save plans). Hidden unless `paidFeatures=true`. |
+| `searchableHomeCountry` | `false` | free | Searchable dropdown with all 197 countries for home country selection |
+
+**Payment flow (future):** A payment page will set `paidFeatures=true` in localStorage upon successful purchase, unlocking all premium features for the user.
 
 ---
 

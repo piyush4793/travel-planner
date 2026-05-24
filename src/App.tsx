@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo, useRef } from "react";
+import { useState, useCallback, useMemo, useRef, useEffect } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country, VisitedFilter } from "./types";
 import MapView from "./components/views/MapView";
@@ -8,6 +8,7 @@ import DiscoverView from "./components/views/DiscoverView";
 import TripsView from "./components/views/TripsView";
 import Filters from "./components/shared/Filters";
 import HomeCountrySelector from "./components/shared/HomeCountrySelector";
+import DevFlagPanel from "./components/shared/DevFlagPanel";
 import CountryPanel from "./components/country/CountryPanel";
 import CountryForm from "./components/country/CountryForm";
 import SettingsModal from "./components/ai/SettingsModal";
@@ -22,7 +23,6 @@ import { useTripStore } from "./hooks/useTripStore";
 import { useAiPlanStore } from "./hooks/useAiPlanStore";
 import { formatPlanLabel } from "./utils/planDiff";
 import { isEnabled } from "./utils/featureFlags";
-import { useEffect } from "react";
 
 const VIEW_LABELS: Record<AppView, string> = {
   map: "🗺 Map", calendar: "📅 Calendar", list: "☰ List",
@@ -53,6 +53,14 @@ export default function App() {
   const navMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => { saveLS("tp_home_country", homeCountry); }, [homeCountry]);
+
+  // Re-render when dev flag panel toggles a feature
+  const [, forceUpdate] = useState(0);
+  useEffect(() => {
+    const handler = () => forceUpdate((n) => n + 1);
+    window.addEventListener("featureflag-change", handler);
+    return () => window.removeEventListener("featureflag-change", handler);
+  }, []);
 
   // Close nav menu on outside click
   useEffect(() => {
@@ -222,6 +230,7 @@ export default function App() {
               </button>
             </>
           )}
+          <DevFlagPanel />
         </div>
       </header>
 
