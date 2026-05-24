@@ -10,11 +10,13 @@ describe("featureFlags — P0", () => {
     const flags = getFeatureFlags();
     expect(flags).toHaveProperty("searchableHomeCountry");
     expect(flags).toHaveProperty("llmPlanning");
+    expect(flags).toHaveProperty("pdfExport");
     expect(flags).toHaveProperty("paidFeatures");
   });
 
-  it("isEnabled returns false for llmPlanning by default (paidFeatures gate)", () => {
+  it("isEnabled returns false for paid flags by default (paidFeatures gate)", () => {
     expect(isEnabled("llmPlanning")).toBe(false);
+    expect(isEnabled("pdfExport")).toBe(false);
   });
 
   it("setFeatureFlag persists to localStorage", () => {

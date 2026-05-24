@@ -7,13 +7,31 @@ All notable changes to Travel Planner are documented here. Format follows [Keep 
 ## [Unreleased]
 
 ### Added
-- **Token usage tracking** — LLM providers now return token counts; running counter shown in chat footer (color-coded: green <4K, amber 4K-12K, red >12K) with session total on plan completion
-- **Rich prompt prefill** — "Plan with AI" from country panel builds a detailed prompt with budget, best months, cities, experiences, and combo destinations; user can review/edit before sending (no auto-send, no wasted tokens)
-- **Quota-aware error messages** — provider-specific messages for rate limits, billing exhaustion, and free tier caps with links to billing pages (OpenAI, Claude, Gemini)
-- **Token usage tests** — 6 new tests covering TokenUsage type, LLMChatResult shape, and accumulation logic
+- **Navigation simplified** — 5 views → 3 (Trips home, Calendar, Discover). Map removed from nav, kept for Cinematic. List removed.
+- **PDF export** — export any itinerary as PDF via browser print dialog (zero dependencies, paid feature gated)
+- **Two-tier feature gating** — `paidFeatures` master gate for premium features; individual flags for fine-grained control
+- **Dev flag panel** — localhost-only 🛠 panel with dependency tree UI for toggling feature flags
+- **Norway expanded** — 11 cities: Gudvangen (Viking village), Loen (Skylift), Trollstigen, Lofoten (Arctic islands + aurora)
+- **Smart city selection** — algorithm picks best city subset when days < total available; prioritizes by importance
+- **Custom-only planner** — removed 3 preset styles, single days slider with recommended/max limits
+- **Travel style badges** — research-backed single badge per country (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive); "Month Long" renamed to "Immersive"
+- **Trips sorting** — favorites pinned to top, visited pushed to bottom
+- **Token usage tracking** — running counter in chat footer, quota-aware error messages
+- **Rich prompt prefill** — "Plan with AI" builds context-aware prompt without auto-sending
+- **Chat modal light theme** — matches app theme, larger input area
 
 ### Changed
-- `LLMProvider.chat()` return type from `string` to `LLMChatResult { content, usage? }` — enables token visibility across all providers
+- `LLMProvider.chat()` returns `LLMChatResult { content, usage? }` instead of plain string
+- Default view is `#trips` (was `#map`)
+- `paidFeatures` defaults to `false` — AI and PDF hidden until payment
+- MapView hidden by default, shown only during Cinematic mode
+
+### Removed
+- Map and List from navigation (components kept for Cinematic/future use)
+- Preset travel styles (touch-and-go/explorer/month-long) from plan generation
+- `styleDefaults` from rule engine data
+- `PLAN_STYLE_META`, `PLAN_STYLES` exports
+- Hamburger menu (3 views fit as flat pills)
 
 ---
 
