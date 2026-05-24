@@ -1,7 +1,6 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { renderHook, act } from "@testing-library/react";
 
-// useHashView reads/writes window.location.hash — mock it
 const hashHistory: string[] = [];
 
 beforeEach(() => {
@@ -13,19 +12,17 @@ beforeEach(() => {
   });
 });
 
-// Dynamic import so the module picks up our mocked location
 async function importHook() {
-  // Clear module cache to get fresh module per test
   const mod = await import("../hooks/useHashView");
   return mod;
 }
 
 describe("useHashView — P1", () => {
-  it("defaults to 'map' when hash is empty", async () => {
+  it("defaults to 'trips' when hash is empty", async () => {
     window.location.hash = "";
     const { useHashView } = await importHook();
     const { result } = renderHook(() => useHashView());
-    expect(result.current[0]).toBe("map");
+    expect(result.current[0]).toBe("trips");
   });
 
   it("parses valid hash into view", async () => {
@@ -35,11 +32,20 @@ describe("useHashView — P1", () => {
     expect(result.current[0]).toBe("calendar");
   });
 
-  it("falls back to 'map' for invalid hash", async () => {
+  it("falls back to 'trips' for invalid hash", async () => {
     window.location.hash = "#invalid-view";
     const { useHashView } = await importHook();
     const { result } = renderHook(() => useHashView());
-    expect(result.current[0]).toBe("map");
+    expect(result.current[0]).toBe("trips");
+  });
+
+  it("falls back to 'trips' for removed views (map, list)", async () => {
+    for (const removed of ["map", "list"]) {
+      window.location.hash = `#${removed}`;
+      const { useHashView } = await importHook();
+      const { result } = renderHook(() => useHashView());
+      expect(result.current[0]).toBe("trips");
+    }
   });
 
   it("setView updates the current view", async () => {
@@ -47,12 +53,12 @@ describe("useHashView — P1", () => {
     const { useHashView } = await importHook();
     const { result } = renderHook(() => useHashView());
 
-    act(() => { result.current[1]("trips"); });
-    expect(result.current[0]).toBe("trips");
+    act(() => { result.current[1]("discover"); });
+    expect(result.current[0]).toBe("discover");
   });
 
-  it("recognizes all 5 valid views", async () => {
-    const views = ["map", "calendar", "list", "trips", "discover"];
+  it("recognizes all 3 valid views", async () => {
+    const views = ["trips", "calendar", "discover"];
     const { useHashView } = await importHook();
 
     for (const v of views) {

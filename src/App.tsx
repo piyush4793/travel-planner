@@ -3,7 +3,6 @@ import type maplibregl from "maplibre-gl";
 import type { Country, VisitedFilter } from "./types";
 import MapView from "./components/views/MapView";
 import CalendarView from "./components/views/CalendarView";
-import ListView from "./components/views/ListView";
 import DiscoverView from "./components/views/DiscoverView";
 import TripsView from "./components/views/TripsView";
 import Filters from "./components/shared/Filters";
@@ -25,12 +24,8 @@ import { formatPlanLabel } from "./utils/planDiff";
 import { isEnabled } from "./utils/featureFlags";
 
 const VIEW_LABELS: Record<AppView, string> = {
-  map: "🗺 Map", calendar: "📅 Calendar", list: "☰ List",
-  trips: "✈ Trips", discover: "🌍 Discover",
+  trips: "✈ Trips", calendar: "📅 Calendar", discover: "🌍 Discover",
 };
-
-const PRIMARY_VIEWS: AppView[] = ["map", "trips"];
-const SECONDARY_VIEWS: AppView[] = ["calendar", "list", "discover"];
 
 export default function App() {
   const store = useCountryStore();
@@ -48,9 +43,8 @@ export default function App() {
   const [chatInitialPrompt, setChatInitialPrompt] = useState<string | undefined>();
   const [chatAutoSend, setChatAutoSend] = useState(true);
   const [aiPlanResult, setAiPlanResult] = useState<LLMTripPlanResult | null>(null);
-  const [navMenuOpen, setNavMenuOpen] = useState(false);
+  const [cinematicActive, setCinematicActive] = useState(false);
   const mainMapRef = useRef<maplibregl.Map | null>(null);
-  const navMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => { saveLS("tp_home_country", homeCountry); }, [homeCountry]);
 
@@ -61,18 +55,6 @@ export default function App() {
     window.addEventListener("featureflag-change", handler);
     return () => window.removeEventListener("featureflag-change", handler);
   }, []);
-
-  // Close nav menu on outside click
-  useEffect(() => {
-    if (!navMenuOpen) return;
-    const handler = (e: MouseEvent) => {
-      if (navMenuRef.current && !navMenuRef.current.contains(e.target as Node)) {
-        setNavMenuOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [navMenuOpen]);
 
   const trips = useTripStore(store.myListNames);
 
@@ -167,45 +149,15 @@ export default function App() {
           )}
         </div>
 
-        <div className="flex items-center gap-1 mx-auto relative" ref={navMenuRef}>
-          {/* Primary views — always visible */}
-          <div className="flex items-center gap-0.5 bg-black/20 rounded-full p-0.5">
-            {PRIMARY_VIEWS.map((v) => (
-              <button key={v} onClick={() => { setView(v); setNavMenuOpen(false); }}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                  view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
-                }`}>
-                {VIEW_LABELS[v]}
-              </button>
-            ))}
-
-            {/* Hamburger for secondary views */}
-            <button
-              onClick={() => setNavMenuOpen((p) => !p)}
-              className={`flex items-center justify-center w-8 h-8 rounded-full text-sm transition-all ${
-                navMenuOpen || SECONDARY_VIEWS.includes(view)
-                  ? "bg-white text-blue-700 shadow-sm"
-                  : "text-white/80 hover:text-white"
-              }`}
-              title="More views"
-            >
-              {SECONDARY_VIEWS.includes(view) ? VIEW_LABELS[view].split(" ")[0] : "☰"}
+        <div className="flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto">
+          {(Object.keys(VIEW_LABELS) as AppView[]).map((v) => (
+            <button key={v} onClick={() => setView(v)}
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
+              }`}>
+              {VIEW_LABELS[v]}
             </button>
-          </div>
-
-          {/* Dropdown menu */}
-          {navMenuOpen && (
-            <div className="absolute top-full mt-1.5 right-0 bg-white rounded-xl shadow-xl border border-slate-200 py-1 min-w-[160px] z-50">
-              {SECONDARY_VIEWS.map((v) => (
-                <button key={v} onClick={() => { setView(v); setNavMenuOpen(false); }}
-                  className={`w-full text-left px-4 py-2.5 text-xs font-semibold transition-colors flex items-center gap-2 ${
-                    view === v ? "bg-blue-50 text-blue-700" : "text-slate-600 hover:bg-slate-50"
-                  }`}>
-                  {VIEW_LABELS[v]}
-                </button>
-              ))}
-            </div>
-          )}
+          ))}
         </div>
 
         <div className="flex items-center gap-2.5">
@@ -249,7 +201,10 @@ export default function App() {
       )}
 
       <div className="flex-1 relative overflow-hidden">
-        {view === "map" ? (
+        {/* MapView — hidden by default, shown during Cinematic mode */}
+        <div className={`absolute inset-0 transition-opacity duration-300 ${
+          cinematicActive ? "z-10 opacity-100" : "-z-10 opacity-0 pointer-events-none"
+        }`}>
           <MapView
             countries={filtered}
             onSelect={setSelectedCountry}
@@ -257,26 +212,9 @@ export default function App() {
             visitedNames={store.visited.set}
             onMapReady={(m) => { mainMapRef.current = m; }}
           />
-        ) : view === "calendar" ? (
-          <CalendarView
-            countries={filtered}
-            onSelect={setSelectedCountry}
-            visitedNames={store.visited.set}
-            selectedCountry={selectedCountry}
-          />
-        ) : view === "list" ? (
-          <ListView
-            countries={filtered}
-            visitedNames={store.visited.set}
-            favorites={store.favorites.set}
-            onToggleVisited={store.visited.toggle}
-            onToggleFavorite={store.favorites.toggle}
-            onEdit={(c) => setFormTarget(c)}
-            onDelete={handleDelete}
-            onSelect={setSelectedCountry}
-            selectedCountry={selectedCountry}
-          />
-        ) : view === "trips" ? (
+        </div>
+
+        {view === "trips" ? (
           <TripsView
             countries={store.myListCountries}
             visitedNames={store.visited.set}
@@ -285,6 +223,13 @@ export default function App() {
             tripGroups={trips.mergedTripGroups}
             onSaveTrip={trips.saveTrip}
             onDeleteTrip={trips.deleteTrip}
+          />
+        ) : view === "calendar" ? (
+          <CalendarView
+            countries={filtered}
+            onSelect={setSelectedCountry}
+            visitedNames={store.visited.set}
+            selectedCountry={selectedCountry}
           />
         ) : (
           <DiscoverView
@@ -314,6 +259,7 @@ export default function App() {
           savedAiPlans={isEnabled("llmPlanning") ? selectedCountryPlans : undefined}
           onViewAiPlan={isEnabled("llmPlanning") ? handleViewAiPlan : undefined}
           onDeleteAiPlan={isEnabled("llmPlanning") ? handleDeleteAiPlan : undefined}
+          onCinematicChange={setCinematicActive}
         />
       </div>
 
