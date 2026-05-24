@@ -25,7 +25,6 @@ export type CountryRule = {
   apps?: string[];
   cityOrder: string[];
   cities: Record<string, CityRule>;
-  styleDefaults: Record<string, string[]>;
   connections: { from: string; to: string; method: string; cost?: string }[];
   extras?: string[];
   cityImages?: Record<string, string[]>;
@@ -36,12 +35,6 @@ export const ITINERARY_RULES: Record<string, CountryRule> = {
     sim: "Viettel",
     apps: ["Grab (cabs)", "Klook (tickets)", "Happy Cow (veg food)", "12go.asia (trains)"],
     cityOrder: ["Ho Chi Minh City", "Da Nang", "Hoi An", "Hanoi", "Ninh Binh", "Ha Long Bay", "Sapa"],
-    styleDefaults: {
-      "touch-and-go": ["Ho Chi Minh City", "Da Nang"],
-      "explorer":     ["Ho Chi Minh City", "Da Nang", "Hanoi", "Ninh Binh", "Ha Long Bay"],
-      "month-long":   ["Ho Chi Minh City", "Da Nang", "Hoi An", "Hanoi", "Ninh Binh", "Ha Long Bay", "Sapa"],
-      "custom":       ["Ho Chi Minh City", "Da Nang", "Hanoi"],
-    },
     cities: {
       "Ho Chi Minh City": {
         name: "Ho Chi Minh City",
@@ -315,13 +308,7 @@ export const ITINERARY_RULES: Record<string, CountryRule> = {
   Norway: {
     sim: "Telenor or Telia — buy at Oslo Airport (Gardermoen)",
     apps: ["Entur (book all buses & trains)", "Yr (Norway weather — far more accurate than Google)", "Vy (train tickets)", "FRAM (Møre og Romsdal buses)", "Aurora Alerts + Hello Aurora (KP index for Northern Lights)"],
-    cityOrder: ["Oslo", "Bergen", "Flam", "Voss", "Alesund", "Geirangerfjord", "Tromso"],
-    styleDefaults: {
-      "touch-and-go": ["Oslo", "Bergen", "Flam"],
-      "explorer":     ["Oslo", "Bergen", "Flam", "Alesund", "Tromso"],
-      "month-long":   ["Oslo", "Bergen", "Flam", "Voss", "Alesund", "Geirangerfjord", "Tromso"],
-      "custom":       ["Oslo", "Bergen", "Tromso"],
-    },
+    cityOrder: ["Oslo", "Flam", "Gudvangen", "Bergen", "Loen", "Trollstigen", "Geirangerfjord", "Alesund", "Lofoten", "Tromso"],
     cities: {
       "Oslo": {
         name: "Oslo",
@@ -439,6 +426,136 @@ export const ITINERARY_RULES: Record<string, CountryRule> = {
         ],
       },
 
+      "Gudvangen": {
+        name: "Gudvangen",
+        minDays: 1,
+        recDays: 1,
+        maxDays: 1,
+        note: "Arrive by Nærøyfjord ferry from Flam. The Viking village Njardarheimr is the main attraction — a living reconstruction of a Viking-era settlement. Half-day stop before continuing to Bergen via Voss.",
+        days: [
+          {
+            theme: "Viking Village & Nærøyfjord",
+            activities: [
+              { name: "Njardarheimr Viking Village — living Viking settlement with costumed inhabitants, axe throwing, archery, mead tasting, and craftsman workshops", cost: "₹2,500 pp", tip: "Open May–Sept. Allow 2–3 hrs. Book at vikingvalley.no" },
+              { name: "Nærøyfjord arrival — UNESCO's narrowest fjord, sheer 1,700m cliffs on both sides, arrive by electric ferry from Flam" },
+              { name: "Gudvangen village walk — small fjord-head settlement beneath dramatic peaks, quiet after cruise ships leave" },
+              { name: "Stalheimskleiva scenic road to Voss — 13 hairpin bends down a dramatic gorge (summer only, one-way downhill)" },
+            ],
+            hotels: [
+              { name: "Gudvangen Fjordtell (fjord-head budget)", budget: "₹8,000–14,000/night" },
+              { name: "Stay in Voss instead (30 min drive) for more options", budget: "₹10,000–16,000/night" },
+            ],
+          },
+        ],
+      },
+
+      "Loen": {
+        name: "Loen",
+        minDays: 1,
+        recDays: 2,
+        maxDays: 2,
+        note: "Nordfjord gem between Bergen and Alesund. Loen Skylift is one of Norway's most spectacular cable cars. Drive from Bergen (4 hrs) or Alesund (2.5 hrs). Briksdal Glacier arm is an easy walk. Lake Lovatnet is surreally turquoise in summer.",
+        days: [
+          {
+            theme: "Loen Skylift & Lake Lovatnet",
+            activities: [
+              { name: "Loen Skylift to Mt Hoven (1,011m) — 5-min cable car ride to panoramic fjord & glacier views, Via Ferrata option at summit", cost: "₹4,500 pp RT", tip: "Book at loenskylift.no. Go early morning for clearest views. Restaurant Hoven at top." },
+              { name: "Lake Lovatnet drive — surreal turquoise glacial lake framed by green peaks; stop at multiple viewpoints along the road" },
+              { name: "Sande viewpoint — classic Nordfjord panorama, free roadside stop" },
+              { name: "Loen village walk — tiny fjordside settlement with wooden houses and mountain backdrop" },
+            ],
+            hotels: [
+              { name: "Hotel Loenfjord (waterfront, scenic)", budget: "₹18,000–28,000/night" },
+              { name: "Hotel Alexandra (classic, pool)", budget: "₹22,000–36,000/night" },
+            ],
+          },
+          {
+            theme: "Briksdal Glacier & Olden Valley",
+            activities: [
+              { name: "Briksdal Glacier (Briksdalsbreen) — arm of Jostedalsbreen, Europe's largest mainland glacier; 45-min walk from car park to glacier face", cost: "Free (trolley car ₹1,500 pp RT if preferred)", tip: "Wear good shoes. Glacier retreating fast — still impressive but go soon." },
+              { name: "Olden village — charming fjord-head settlement, cruise ship port in summer, quiet in Sept" },
+              { name: "Kjenndalen glacier valley hike — less crowded alternative to Briksdal (2 hrs RT)" },
+              { name: "Drive to Trollstigen or Alesund (2.5 hrs via Rv15 + E136)" },
+            ],
+          },
+        ],
+      },
+
+      "Trollstigen": {
+        name: "Trollstigen",
+        minDays: 1,
+        recDays: 1,
+        maxDays: 1,
+        note: "The Troll's Ladder — 11 hairpin bends climbing 858m with a dramatic cantilevered viewpoint platform. Road open late May–Oct only (check vegvesen.no). Best as a day stop between Loen/Geirangerfjord and Alesund. Drive self or join a bus tour.",
+        days: [
+          {
+            theme: "Troll Road & Viewpoints",
+            activities: [
+              { name: "Trollstigen mountain pass — drive 11 hairpin bends with 10% gradient; stop at Stigfossen waterfall (320m drop right beside the road)" },
+              { name: "Trollstigen Visitor Centre — award-winning cantilevered glass platform overlooking the serpentine road and valley below (free)" },
+              { name: "Trollveggen (Troll Wall) — Europe's tallest vertical rock face (1,100m); viewpoint 15-min detour on Rv63 heading toward Åndalsnes" },
+              { name: "Gudbrandsjuvet gorge — narrow canyon with walkways and cascading rapids, 30-min drive south on Rv63 (free)" },
+            ],
+            hotels: [
+              { name: "Grand Hotel Bellevue Åndalsnes (nearby town)", budget: "₹12,000–20,000/night" },
+              { name: "Drive through — best as a transit stop between Geirangerfjord and Alesund", budget: "N/A (transit)" },
+            ],
+          },
+        ],
+      },
+
+      "Lofoten": {
+        name: "Lofoten",
+        minDays: 2,
+        recDays: 3,
+        maxDays: 4,
+        note: "Arctic archipelago 200km north of the Arctic Circle. Fly to Leknes (LKN) or Svolvær (SVJ) from Tromsø or Oslo. Rent a car — essential for island-hopping. Sept: dark enough for aurora, still mild (5–10°C), fall colors. Traditional rorbuer (fisherman cabins) are the quintessential stay. Book 2–3 months ahead for Sept.",
+        days: [
+          {
+            theme: "Svolvær & Henningsvær – Art & Arctic Harbour",
+            activities: [
+              { name: "Svolvær harbour walk — gateway to Lofoten, dramatic Svolværgeita peak backdrop, galleries & cafés" },
+              { name: "Magic Ice gallery — Lofoten ice sculpture exhibition inside a frozen chamber", cost: "₹1,500 pp" },
+              { name: "Henningsvær (30-min drive) — 'Venice of Lofoten', fishing village on tiny islands connected by bridges; famous football pitch" },
+              { name: "Henningsvær galleries & Kaviar Factory — contemporary art in former fish factory" },
+              { name: "Evening aurora hunt from Svolvær beach — KP 2+ sufficient, dark from 9 PM in Sept" },
+            ],
+            hotels: [
+              { name: "Svinøya Rorbuer Svolvær (historic, waterfront cabins)", budget: "₹14,000–26,000/night" },
+              { name: "Thon Hotel Lofoten Svolvær", budget: "₹12,000–20,000/night" },
+            ],
+          },
+          {
+            theme: "Reine, Å & Southern Lofoten Drive",
+            activities: [
+              { name: "Drive E10 south — one of the world's most scenic roads; mountains, beaches, bridges between islands" },
+              { name: "Reine — postcard-perfect red rorbuer beneath Reinebringen peak; photograph from the bridge" },
+              { name: "Reinebringen hike — 1,560 stone steps to 448m with jaw-dropping panorama of Reine and islands (2 hrs RT)", tip: "Start early. Steep but well-maintained Sherpa steps." },
+              { name: "Å (pronounced 'Oh') — end of the road; Stockfish Museum + traditional fishing village preserved from 1800s", cost: "₹800 pp museum" },
+              { name: "Hamnøy fishing village — tiny bridge-connected village, classic photo spot at sunrise/sunset" },
+            ],
+          },
+          {
+            theme: "Beaches, Viking Museum & Aurora",
+            activities: [
+              { name: "Ramberg or Haukland Beach — white sand, turquoise Arctic water, dramatic mountain backdrop (free)" },
+              { name: "Lofotr Viking Museum at Borg — full-size reconstructed Viking chieftain's longhouse (83m), boat rides, period activities", cost: "₹2,000 pp", tip: "Allow 2–3 hrs. 15-min drive from Leknes." },
+              { name: "Nusfjord fishing village — UNESCO-listed, one of Norway's best-preserved fishing villages, charming harbour", cost: "₹600 pp entry" },
+              { name: "Northern Lights from Uttakleiv Beach or Haukland — iconic aurora reflections in shallow tidal water, KP 2+ in Sept" },
+            ],
+          },
+          {
+            theme: "Whale Watching & Departure",
+            activities: [
+              { name: "Sea eagle RIB safari from Svolvær — white-tailed eagles swoop for fish beside the boat (2–3 hrs)", cost: "₹8,000–12,000 pp" },
+              { name: "Trollfjorden boat trip — narrow 2km fjord with sheer 1,100m walls, only accessible by boat", cost: "₹6,000–9,000 pp" },
+              { name: "Kabelvåg — old trading post, Lofoten Cathedral (wooden, 1898), quiet harbour walk" },
+              { name: "Flight to Tromsø from Svolvær or Leknes (45 min)", cost: "₹4,000–8,000 pp" },
+            ],
+          },
+        ],
+      },
+
       "Voss": {
         name: "Voss",
         minDays: 1,
@@ -512,7 +629,7 @@ export const ITINERARY_RULES: Record<string, CountryRule> = {
         minDays: 1,
         recDays: 1,
         maxDays: 2,
-        note: "Best May–Sept. All approach roads (Eagle Road, Trollstigen, Rv63) close Oct–May. Recommended as an overnight from Alesund for month-long trips. Cruise season peaks June–Aug; kayak season May–Sept.",
+        note: "Best May–Sept. All approach roads (Eagle Road, Trollstigen, Rv63) close Oct–May. Recommended as an overnight from Alesund for longer trips. Cruise season peaks June–Aug; kayak season May–Sept.",
         days: [
           {
             theme: "UNESCO Fjord Cruise & Viewpoints",
@@ -594,21 +711,34 @@ export const ITINERARY_RULES: Record<string, CountryRule> = {
     },
 
     connections: [
-      { from: "Oslo",           to: "Bergen",       method: "Bergen Line scenic train (7 hrs)",                    cost: "₹1,500–5,000 pp (book vy.no 90 days out)" },
-      { from: "Bergen",         to: "Flam",         method: "Train to Myrdal + Flåm Railway descent (3 hrs)",      cost: "₹2,000–3,500 pp" },
-      { from: "Bergen",         to: "Voss",         method: "Train direct Bergen Line (1.5 hrs)",                   cost: "₹1,000–1,500 pp" },
-      { from: "Bergen",         to: "Alesund",      method: "Express bus Nor-Way (4 hrs) or flight (45 min)",       cost: "₹2,000–6,000 pp" },
-      { from: "Flam",           to: "Voss",         method: "Ferry Nærøyfjord to Gudvangen + Bus 950 to Voss",      cost: "₹6,100–7,400 pp combined" },
-      { from: "Flam",           to: "Tromso",       method: "Flight via Bergen (connect at BGO, ~5 hrs total)",     cost: "₹10,000–14,000 pp" },
-      { from: "Voss",           to: "Alesund",      method: "Bus or drive via E16 + Rv13 (~3.5 hrs)",               cost: "₹1,000–2,000 pp" },
-      { from: "Alesund",        to: "Geirangerfjord", method: "Drive via Eagle Road (90 min, summer only)",         cost: "₹500 car toll" },
-      { from: "Alesund",        to: "Tromso",       method: "Flight direct (1 hr, Vigra Airport)",                  cost: "₹5,000–10,000 pp" },
-      { from: "Geirangerfjord", to: "Tromso",       method: "Flight via Ålesund or Oslo (5–7 hrs total)",           cost: "₹10,000–16,000 pp" },
-      { from: "Tromso",         to: "Oslo",         method: "Flight direct (2 hrs)",                                cost: "₹5,000–9,000 pp" },
-      { from: "Oslo",           to: "Tromso",       method: "Flight direct (2 hrs)",                                cost: "₹6,000–10,000 pp" },
+      { from: "Oslo",           to: "Bergen",         method: "Bergen Line scenic train (7 hrs)",                    cost: "₹1,500–5,000 pp (book vy.no 90 days out)" },
+      { from: "Oslo",           to: "Flam",           method: "Train to Myrdal + Flåm Railway descent (5.5 hrs)",   cost: "₹3,000–5,000 pp" },
+      { from: "Flam",           to: "Gudvangen",      method: "Nærøyfjord electric ferry (2 hrs, UNESCO fjord)",    cost: "₹5,000–6,300 pp one-way" },
+      { from: "Gudvangen",      to: "Bergen",         method: "Bus to Voss (1 hr) + train to Bergen (1.5 hrs)",     cost: "₹2,100–2,500 pp" },
+      { from: "Gudvangen",      to: "Voss",           method: "Bus 950 via Stalheimskleiva gorge (1 hr)",           cost: "₹1,100 pp" },
+      { from: "Bergen",         to: "Flam",           method: "Train to Myrdal + Flåm Railway descent (3 hrs)",     cost: "₹2,000–3,500 pp" },
+      { from: "Bergen",         to: "Voss",           method: "Train direct Bergen Line (1.5 hrs)",                  cost: "₹1,000–1,500 pp" },
+      { from: "Bergen",         to: "Loen",           method: "Drive via E39 + Rv15 (4 hrs) or bus with change",    cost: "₹2,000–3,000 pp (bus) or ₹1,500 fuel" },
+      { from: "Bergen",         to: "Alesund",        method: "Express bus Nor-Way (4 hrs) or flight (45 min)",      cost: "₹2,000–6,000 pp" },
+      { from: "Loen",           to: "Trollstigen",    method: "Drive via Rv15 + E136 (2.5 hrs)",                    cost: "₹1,000 fuel" },
+      { from: "Loen",           to: "Alesund",        method: "Drive via Rv15 + E39 (2.5 hrs)",                     cost: "₹1,000 fuel" },
+      { from: "Trollstigen",    to: "Geirangerfjord", method: "Drive Rv63 via Ørnesvingen Eagle Road (1.5 hrs)",    cost: "₹500 toll" },
+      { from: "Trollstigen",    to: "Alesund",        method: "Drive via Åndalsnes + E136 (1.5 hrs)",               cost: "₹800 fuel" },
+      { from: "Geirangerfjord", to: "Alesund",        method: "Ferry Geiranger→Hellesylt + drive (2.5 hrs)",        cost: "₹1,000–1,500 pp" },
+      { from: "Alesund",        to: "Geirangerfjord", method: "Drive via Eagle Road (90 min, summer only)",          cost: "₹500 car toll" },
+      { from: "Alesund",        to: "Lofoten",        method: "Flight via Bodø or Tromsø (3–5 hrs with change)",    cost: "₹6,000–12,000 pp" },
+      { from: "Alesund",        to: "Tromso",         method: "Flight direct (1 hr, Vigra Airport)",                 cost: "₹5,000–10,000 pp" },
+      { from: "Lofoten",        to: "Tromso",         method: "Flight Svolvær/Leknes to Tromsø (45 min)",           cost: "₹4,000–8,000 pp" },
+      { from: "Tromso",         to: "Lofoten",        method: "Flight to Svolvær or Leknes (45 min)",               cost: "₹4,000–8,000 pp" },
+      { from: "Tromso",         to: "Oslo",           method: "Flight direct (2 hrs)",                               cost: "₹5,000–9,000 pp" },
+      { from: "Oslo",           to: "Tromso",         method: "Flight direct (2 hrs)",                               cost: "₹6,000–10,000 pp" },
+      { from: "Oslo",           to: "Lofoten",        method: "Flight to Leknes via Bodø (4 hrs with change)",      cost: "₹6,000–14,000 pp" },
+      { from: "Flam",           to: "Voss",           method: "Ferry Nærøyfjord to Gudvangen + Bus 950 to Voss",    cost: "₹6,100–7,400 pp combined" },
+      { from: "Voss",           to: "Alesund",        method: "Bus or drive via E16 + Rv13 (~3.5 hrs)",              cost: "₹1,000–2,000 pp" },
+      { from: "Geirangerfjord", to: "Tromso",         method: "Flight via Ålesund or Oslo (5–7 hrs total)",          cost: "₹10,000–16,000 pp" },
     ],
 
-    extras: ["Lofoten Islands", "Honningsvåg (Nordkapp)", "Stavanger + Preikestolen", "Trolltunga (hike)", "Lillehammer (skiing)", "Svalbard (polar bears)"],
+    extras: ["Stavanger + Preikestolen", "Trolltunga (hike)", "Lillehammer (skiing)", "Svalbard (polar bears)", "Honningsvåg (Nordkapp)", "Senja Island"],
 
     cityImages: {
       "Oslo":           ["Oslo City Hall Norway waterfront", "Vigeland Park sculptures Oslo", "Aker Brygge Oslo harbor"],
@@ -618,6 +748,10 @@ export const ITINERARY_RULES: Record<string, CountryRule> = {
       "Alesund":        ["Alesund art nouveau Norway coast panorama", "Alesund colorful buildings Norway", "Alesund Norway islands sunset"],
       "Geirangerfjord": ["Geirangerfjord Norway cruise UNESCO", "Seven Sisters waterfall Geirangerfjord Norway", "Geirangerfjord green water Norway"],
       "Tromso":         ["Northern Lights Norway aurora borealis Tromso", "Arctic Cathedral Tromso Norway", "Tromso Norway winter snow"],
+      "Gudvangen":      ["Njardarheimr Viking village Gudvangen Norway", "Naeroyfjord Gudvangen Norway fjord", "Gudvangen Viking Valley Norway"],
+      "Loen":           ["Loen Skylift Norway fjord view", "Lovatnet turquoise lake Norway Loen", "Briksdal Glacier Norway Jostedalsbreen"],
+      "Trollstigen":    ["Trollstigen road Norway hairpin bends", "Trollstigen viewpoint platform Norway", "Trollveggen Troll Wall Norway vertical"],
+      "Lofoten":        ["Reine Lofoten Norway red cabins", "Haukland Beach Lofoten Norway Arctic", "Northern Lights Lofoten Norway aurora"],
     },
   },
 };

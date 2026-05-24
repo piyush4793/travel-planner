@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
-import type { Country, PlanStyle } from "../../types";
-import { STYLE_META, PLAN_STYLE_META, PLAN_STYLES } from "../../utils/travelStyles";
-import { generateTripPlan } from "../../utils/tripPlans";
+import type { Country } from "../../types";
+import { STYLE_META } from "../../utils/travelStyles";
+import { generateTripPlan, getMaxRuleDays, getRecRuleDays } from "../../utils/tripPlans";
 import type { TripPlan } from "../../utils/tripPlans";
 import { ITINERARY_RULES } from "../../data/itineraryRules";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
@@ -48,21 +48,24 @@ export default function CountryPanel({
   onDeleteAiPlan,
 }: Props) {
   const { panelWidth, startPanelDrag }    = usePanelDrag(320, 320);
-  const [activeStyle, setActiveStyle]     = useState<PlanStyle | null>(null);
+  const [planActive, setPlanActive]       = useState(false);
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
   const [customDays, setCustomDays]       = useState(7);
   const [notes, setNotes]                 = useState(country?.notes ?? "");
   const [cinematicPlan, setCinematicPlan] = useState<TripPlan | null>(null);
   const [modalPlan, setModalPlan]         = useState<TripPlan | null>(null);
 
+  const maxDays = country ? (getMaxRuleDays(country.name) ?? 30) : 30;
+  const recDays = country ? (getRecRuleDays(country.name) ?? 7) : 7;
+
   useEffect(() => {
-    setActiveStyle(null);
+    setPlanActive(false);
     setSelectedCities([]);
-    setCustomDays(7);
+    setCustomDays(recDays);
     setNotes(country?.notes ?? "");
     setCinematicPlan(null);
     setModalPlan(null);
-  }, [country?.name]);
+  }, [country?.name, recDays]);
 
   function toggleCity(name: string) {
     setSelectedCities(prev => prev.includes(name) ? prev.filter(c => c !== name) : [...prev, name]);
@@ -122,6 +125,7 @@ export default function CountryPanel({
               <div className="flex flex-wrap gap-1.5 mt-2.5">
                 {country.travelStyle.map((s) => {
                   const m = STYLE_META[s];
+                  if (!m) return null;
                   return (
                     <span key={s} className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold ${m.badge}`}>
                       {m.icon} {m.label}
@@ -138,43 +142,48 @@ export default function CountryPanel({
 
             {/* ── Trip Planner ── */}
             <Section label="Plan your trip">
-              {/* Style buttons */}
-              <div className="grid grid-cols-4 gap-1.5 mb-3">
-                {PLAN_STYLES.map((s) => {
-                  const meta = PLAN_STYLE_META[s];
-                  const on = activeStyle === s;
-                  return (
-                    <button
-                      key={s}
-                      onClick={() => {
-                        if (on) { setActiveStyle(null); setSelectedCities([]); }
-                        else {
-                          setActiveStyle(s);
-                          const defaults = ITINERARY_RULES[country.name]?.styleDefaults?.[s] ?? [];
-                          setSelectedCities(defaults);
-                        }
-                      }}
-                      className={`flex flex-col items-center gap-0.5 py-2 rounded-xl text-[10px] font-bold border-2 transition-all ${
-                        on ? meta.activeForm : "border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:bg-gray-50"
-                      }`}
-                    >
-                      <span className="text-base leading-none">{meta.icon}</span>
-                      {meta.label}
-                    </button>
-                  );
-                })}
+              {/* Days selector */}
+              <div className="mb-3 space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-2xl font-black text-slate-800">{customDays}</span>
+                    <span className="text-xs text-slate-400 font-semibold">day{customDays !== 1 ? "s" : ""}</span>
+                  </div>
+                  <span className="text-[10px] text-slate-400">
+                    Recommended: <span className="font-bold text-blue-600">{recDays} days</span>
+                  </span>
+                </div>
+                <input
+                  type="range"
+                  min={1}
+                  max={maxDays}
+                  value={customDays}
+                  onChange={(e) => setCustomDays(parseInt(e.target.value))}
+                  className="w-full h-1.5 bg-slate-200 rounded-full appearance-none cursor-pointer accent-blue-600"
+                />
+                <div className="flex items-center justify-between">
+                  <span className="text-[9px] text-slate-400">1 day</span>
+                  <span className="text-[9px] text-slate-400">{maxDays} days</span>
+                </div>
               </div>
 
-              {/* AI plan button */}
-              {onPlanWithAi && (
+              {/* Action buttons */}
+              <div className="flex gap-2 mb-3">
                 <button
-                  onClick={() => onPlanWithAi(country.name)}
-                  className="w-full mb-3 flex items-center justify-center gap-2 py-2.5 rounded-xl text-[11px] font-bold border-2 border-emerald-200 bg-emerald-50 text-emerald-700 hover:border-emerald-300 hover:bg-emerald-100 transition-all"
+                  onClick={() => setPlanActive(true)}
+                  className="flex-1 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-bold rounded-xl transition-colors"
                 >
-                  <span className="text-sm">✨</span>
-                  Plan with AI
+                  📅 Generate Plan
                 </button>
-              )}
+                {onPlanWithAi && (
+                  <button
+                    onClick={() => onPlanWithAi(country.name)}
+                    className="flex-1 py-2.5 border-2 border-emerald-200 bg-emerald-50 text-emerald-700 hover:border-emerald-300 hover:bg-emerald-100 text-[11px] font-bold rounded-xl transition-all"
+                  >
+                    ✨ Plan with AI
+                  </button>
+                )}
+              </div>
 
               {/* Saved AI plans */}
               {savedAiPlans.length > 0 && (
@@ -206,27 +215,11 @@ export default function CountryPanel({
                 </div>
               )}
 
-              {/* Custom days input */}
-              {activeStyle === "custom" && (
-                <div className="flex items-center gap-2 mb-3 px-3 py-2 bg-violet-50 rounded-xl border border-violet-200">
-                  <span className="text-xs text-violet-700 font-semibold shrink-0">Days to travel:</span>
-                  <input
-                    type="number"
-                    min={1}
-                    max={90}
-                    value={customDays}
-                    onChange={(e) => setCustomDays(Math.max(1, parseInt(e.target.value) || 1))}
-                    className="w-16 text-sm font-bold text-center bg-white border border-violet-300 rounded-lg px-2 py-1 outline-none focus:border-violet-500"
-                  />
-                  <span className="text-xs text-violet-500">day{customDays !== 1 ? "s" : ""}</span>
-                </div>
-              )}
-
-              {/* City selection */}
-              {activeStyle && country.cities && country.cities.length > 0 && (
+              {/* City selection (optional override) */}
+              {country.cities && country.cities.length > 0 && (
                 <div className="mb-3">
                   <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
-                    Select cities to visit
+                    Cities to visit <span className="font-normal">(optional — auto-selected if blank)</span>
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {country.cities.map((city) => {
@@ -257,11 +250,10 @@ export default function CountryPanel({
                 </div>
               )}
 
-              {activeStyle && (
+              {planActive && (
                 <PlanPreview
-                  key={`${activeStyle}-${[...selectedCities].sort().join(",")}-${customDays}`}
+                  key={`custom-${[...selectedCities].sort().join(",")}-${customDays}`}
                   country={country}
-                  style={activeStyle}
                   selectedCities={selectedCities}
                   customDays={customDays}
                   onCinematic={setCinematicPlan}
@@ -417,16 +409,14 @@ export default function CountryPanel({
   );
 }
 
-function PlanPreview({ country, style, selectedCities, customDays, onCinematic, onItinerary }: {
+function PlanPreview({ country, selectedCities, customDays, onCinematic, onItinerary }: {
   country: Country;
-  style: PlanStyle;
   selectedCities: string[];
   customDays: number;
   onCinematic: (plan: TripPlan) => void;
   onItinerary: (plan: TripPlan) => void;
 }) {
-  const plan = generateTripPlan(country, style, selectedCities, customDays);
-  const meta = PLAN_STYLE_META[style];
+  const plan = generateTripPlan(country, "custom", selectedCities, customDays);
   const hasRuleData = !!ITINERARY_RULES[country.name];
 
   // Unique ordered cities from plan (for route preview)
@@ -440,8 +430,8 @@ function PlanPreview({ country, style, selectedCities, customDays, onCinematic, 
   return (
     <div className="itinerary-card rounded-xl overflow-hidden border border-gray-200 bg-white">
       {/* Summary bar */}
-      <div className={`flex items-center justify-between px-3 py-2.5 ${meta.badge}`}>
-        <span className="text-xs font-bold">{meta.icon} {plan.duration}</span>
+      <div className="flex items-center justify-between px-3 py-2.5 bg-blue-100 text-blue-800">
+        <span className="text-xs font-bold">📅 {plan.duration}</span>
         <span className="text-xs font-bold">{plan.costPerPerson} / person</span>
       </div>
 

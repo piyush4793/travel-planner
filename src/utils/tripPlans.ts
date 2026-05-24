@@ -1,5 +1,6 @@
 import type { Country, CityEntry, PlanStyle } from "../types";
 import { ITINERARY_RULES } from "../data/itineraryRules";
+import type { CountryRule } from "../data/itineraryRules";
 
 export type DayEntry = {
   label: string;
@@ -117,20 +118,70 @@ function cityBasedPlan(
   };
 }
 
+/**
+ * Smart city selection: given N available days, pick the best subset of cities
+ * that fits. Prioritizes by recDays (higher = more important), drops lowest-priority
+ * cities first until the trip fits within the day budget.
+ */
+function selectCitiesForDays(rule: CountryRule, days: number): string[] {
+  const allCities = rule.cityOrder.filter((c) => rule.cities[c]);
+  const minTotal = allCities.reduce((s, c) => s + rule.cities[c].minDays, 0);
+
+  // If days can fit all cities at their minimum, include all
+  if (days >= minTotal) return allCities;
+
+  // Otherwise, greedily add cities in order until budget exhausted
+  // Priority: cities with higher recDays are more important to keep
+  const sorted = [...allCities].sort((a, b) => rule.cities[b].recDays - rule.cities[a].recDays);
+  const selected: string[] = [];
+  let remaining = days;
+
+  for (const city of sorted) {
+    const minDays = rule.cities[city].minDays;
+    if (remaining >= minDays) {
+      selected.push(city);
+      remaining -= minDays;
+    }
+  }
+
+  // Restore original route order
+  return rule.cityOrder.filter((c) => selected.includes(c));
+}
+
+/** Calculate the max useful days for a country's rule data */
+export function getMaxRuleDays(countryName: string): number | null {
+  const rule = ITINERARY_RULES[countryName];
+  if (!rule) return null;
+  return rule.cityOrder
+    .filter((c) => rule.cities[c])
+    .reduce((s, c) => s + rule.cities[c].maxDays, 0);
+}
+
+/** Calculate the recommended days for a country's rule data */
+export function getRecRuleDays(countryName: string): number | null {
+  const rule = ITINERARY_RULES[countryName];
+  if (!rule) return null;
+  return rule.cityOrder
+    .filter((c) => rule.cities[c])
+    .reduce((s, c) => s + rule.cities[c].recDays, 0);
+}
+
 function getRuledItinerary(
   country: Country,
-  style: PlanStyle,
+  _style: PlanStyle,
   selectedCities: string[],
   customDays: number,
 ): TripPlan | null {
   const rule = ITINERARY_RULES[country.name];
   if (!rule) return null;
 
-  // Determine which cities to visit
-  const citiesToVisit =
-    selectedCities.length > 0
-      ? rule.cityOrder.filter((c) => selectedCities.includes(c))
-      : (rule.styleDefaults[style] ?? rule.cityOrder.slice(0, 3));
+  // Determine which cities to visit — user selection or smart auto-selection
+  let citiesToVisit: string[];
+  if (selectedCities.length > 0) {
+    citiesToVisit = rule.cityOrder.filter((c) => selectedCities.includes(c));
+  } else {
+    citiesToVisit = selectCitiesForDays(rule, customDays);
+  }
 
   const cityRules = citiesToVisit
     .map((n) => rule.cities[n])
@@ -138,11 +189,10 @@ function getRuledItinerary(
 
   if (!cityRules.length) return null;
 
-  // Total days: sum of recDays for fixed styles, customDays for custom
-  const recTotal = cityRules.reduce((s, c) => s + c.recDays, 0);
-  const totalDays = style === "custom" ? customDays : recTotal;
-
   // Allocate days per city proportionally, clamped to min/max
+  const recTotal = cityRules.reduce((s, c) => s + c.recDays, 0);
+  const totalDays = customDays;
+
   let allocs = cityRules.map((c) =>
     Math.max(c.minDays, Math.min(c.maxDays, Math.round(totalDays * (c.recDays / recTotal))))
   );
@@ -185,13 +235,9 @@ function getRuledItinerary(
     dayIdx += numDays;
   });
 
-  // Cost
+  // Cost — scale proportionally to trip length
   const [baseLow, baseHigh] = parseCostRange(country.budget);
-  let scaleFactor: number;
-  if (style === "touch-and-go") scaleFactor = 0.45;
-  else if (style === "explorer") scaleFactor = 1.0;
-  else if (style === "month-long") scaleFactor = 2.0;
-  else scaleFactor = Math.max(0.3, totalDays / 10);
+  const scaleFactor = Math.max(0.3, totalDays / 10);
   const costLow = Math.round(baseLow * scaleFactor);
   const costHigh = Math.round(baseHigh * scaleFactor);
 

@@ -1,5 +1,5 @@
-export type TravelStyle = "touch-and-go" | "explorer" | "month-long";
-export type PlanStyle = TravelStyle | "custom";
+export type TravelStyle = "touch-and-go" | "explorer" | "immersive";
+export type PlanStyle = "custom";
 export type VisitedFilter = "all" | "visited" | "unvisited";
 
 export type CityEntry = {
