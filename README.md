@@ -9,15 +9,11 @@ A personal, map-based travel planner with a catalog of 197 world countries, 44 c
 ### Views
 | View | What it does |
 |---|---|
-| **🗺 Map** | Interactive world map with color-coded pins. Click any pin to open the detail panel. Combo destinations highlight in purple. |
+| **✈ Trips** (home) | Countries organized into trip combinations. Favorites pinned to top, visited at bottom. Inline edit/create/delete for trip groups. |
 | **📅 Calendar** | Heatmap grid — rows are destinations, columns are months. Emerald = best, red = avoid, blue = current month. |
-| **☰ List** | Paginated table with search, sort by name / budget / visited, inline toggles. Favorites always sort to the top. |
-| **✈ Trips** | Countries organized into trip combinations (max 3 per trip). Inline edit/create/delete for trip groups. Progress tracking per trip. |
-| **🌍 Discover** | Browse all 197 world countries. Filter by region and list status. Add countries to your list or remove them. Listed countries appear first by default. |
+| **🌍 Discover** | Browse all 197 world countries. Filter by region and list status. Add countries to your list or remove them. |
 
-View persists in the URL hash (`#map`, `#calendar`, `#list`, `#trips`, `#discover`) — refresh returns to the same view.
-
-**Navigation:** Map and Trips are primary nav items always visible in the header. Calendar, List, and Discover are accessible via the ☰ hamburger menu for a cleaner top bar.
+View persists in the URL hash (`#trips`, `#calendar`, `#discover`) — refresh returns to the same view. Trips is the default home view.
 
 ---
 
@@ -75,6 +71,7 @@ Custom trip planner with a days slider — set your duration and the engine buil
 |---|---|---|
 | 🎬 Cinematic | Rule-based only | Full-screen animated journey with styled transport markers, easing, city pulse, route glow |
 | 📋 Itinerary | All countries (offline + AI) | Scrollable modal with day cards, activities, costs, transport |
+| 📄 PDF Export | All countries (paid) | Browser print dialog → Save as PDF with clean formatted layout |
 
 ---
 
@@ -138,6 +135,7 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 |---|---|---|---|
 | `paidFeatures` | `false` | system | Master gate — enables all premium features. Set to `true` after payment. |
 | `llmPlanning` | `true` | paid | AI trip planning (chat, itinerary generation, save plans). Hidden unless `paidFeatures=true`. |
+| `pdfExport` | `true` | paid | Export itineraries as PDF from country panel. Hidden unless `paidFeatures=true`. |
 | `searchableHomeCountry` | `false` | free | Searchable dropdown with all 197 countries for home country selection |
 
 **Payment flow (future):** A payment page will set `paidFeatures=true` in localStorage upon successful purchase, unlocking all premium features for the user.
@@ -183,11 +181,10 @@ src/
 │   └── useAiPlanStore.ts        # AI plan persistence (save/replace/compare, max 4 per dest)
 ├── components/
 │   ├── views/                   # Top-level view components
-│   │   ├── MapView.tsx          # MapLibre map, markers, hover card
+│   │   ├── TripsView.tsx        # Trip cards + inline editor (home view)
 │   │   ├── CalendarView.tsx     # Month heatmap grid
-│   │   ├── ListView.tsx         # Paginated sortable table
-│   │   ├── TripsView.tsx        # Trip cards + inline editor
-│   │   └── DiscoverView.tsx     # 197-country catalog browser
+│   │   ├── DiscoverView.tsx     # 197-country catalog browser
+│   │   └── MapView.tsx          # MapLibre map (hidden, used for Cinematic)
 │   ├── country/                 # Country-specific components
 │   │   ├── CountryPanel.tsx     # Right-side detail + itinerary planner
 │   │   ├── CountryForm.tsx      # Add/edit modal form
@@ -219,9 +216,11 @@ src/
 │   ├── travelStyles.ts          # STYLE_META (icons, colors, classes)
 │   ├── filterLogic.ts           # Pure filter functions
 │   ├── transport.ts             # TransportType, emoji, detection
+│   ├── pdfExport.ts             # Print-to-PDF via hidden iframe (zero deps)
+│   ├── planDiff.ts              # Plan summary + diff labels
 │   ├── wikiImages.ts            # Wikipedia image fetch + cache
 │   ├── months.ts                # Month constants
-│   ├── featureFlags.ts          # Feature gate system (tp_features localStorage)
+│   ├── featureFlags.ts          # Two-tier feature gate (free + paid)
 │   └── storage.ts               # localStorage read/write helpers
 ├── App.tsx                      # Root layout + view orchestration
 ├── types.ts                     # Shared TypeScript types
@@ -330,7 +329,6 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 | Priority | Feature | Category | Description |
 |----------|---------|----------|-------------|
 | 🔴 P0 | More rule-based countries | Content | Thailand, Japan, New Zealand, Iceland — per-day itineraries with costs |
-| 🔴 P0 | Itinerary export | Core | PDF / shareable link for planned trips |
 | 🔴 P0 | Enriched AI response schema | AI | lat/lng per city, transport type per leg — enables cinematic for AI plans |
 | 🟠 P1 | Day-level detail expansion | UX | Tap a day row for full tips, map coords, booking links |
 | 🟠 P1 | Cinematic mode for AI plans | AI | Reuse ItineraryCinematic with AI-provided coordinates |
@@ -339,7 +337,6 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 | 🟡 P2 | Multi-country trip builder | Core | String countries into a single trip with total cost/days |
 | 🟡 P2 | First run experience | UX | Onboarding walkthrough for new users |
 | 🟡 P2 | Calendar sync | Export | Export itinerary as `.ics` file |
-| 🟡 P2 | Export AI plans as PDF | AI | Save AI-generated plans for offline sharing |
 | 🟡 P2 | Provider cost reference table | AI | Show token pricing per provider in Settings |
 | 🟢 P3 | Visited stats page | Analytics | Continents, total days, spend, heatmap timeline |
 | 🟢 P3 | PWA / offline mode | Infra | Installable, works without internet |
