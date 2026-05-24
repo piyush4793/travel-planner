@@ -10,11 +10,12 @@ type FlagMeta = { label: string; description: string };
 const FLAG_META: Record<keyof FeatureFlags, FlagMeta> = {
   paidFeatures:          { label: "Paid Features", description: "Master gate — unlocks all premium features" },
   llmPlanning:           { label: "AI Trip Planning", description: "Chat, itinerary generation, save plans" },
+  pdfExport:             { label: "PDF Export", description: "Export itineraries as PDF from country panel" },
   searchableHomeCountry: { label: "Searchable Home Country", description: "Dropdown with all 197 countries" },
 };
 
 // Tree structure: paid flags are children of paidFeatures
-const PAID_CHILDREN: (keyof FeatureFlags)[] = ["llmPlanning"];
+const PAID_CHILDREN: (keyof FeatureFlags)[] = ["llmPlanning", "pdfExport"];
 const FREE_FLAGS: (keyof FeatureFlags)[] = ["searchableHomeCountry"];
 
 export default function DevFlagPanel() {

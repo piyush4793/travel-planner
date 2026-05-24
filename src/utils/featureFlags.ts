@@ -13,15 +13,17 @@ import { loadLS, saveLS } from "./storage";
 export type FeatureFlags = {
   searchableHomeCountry: boolean;
   llmPlanning: boolean;
+  pdfExport: boolean;
   paidFeatures: boolean;
 };
 
 // Which individual flags require paidFeatures to be true
-const PAID_FLAGS: ReadonlySet<keyof FeatureFlags> = new Set(["llmPlanning"]);
+const PAID_FLAGS: ReadonlySet<keyof FeatureFlags> = new Set(["llmPlanning", "pdfExport"]);
 
 const DEFAULTS: FeatureFlags = {
   searchableHomeCountry: false,
   llmPlanning: true,
+  pdfExport: true,
   paidFeatures: false,
 };
 
