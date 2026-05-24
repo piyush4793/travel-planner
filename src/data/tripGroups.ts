@@ -42,13 +42,14 @@ const TRIP_GROUP_SEEDS: TripGroupSeed[] = [
   // Middle East & Caucasus
   { main: "Turkey", region: "Middle East" },
   { main: "Egypt", region: "Middle East" },
+  { main: "United Arab Emirates", region: "Middle East" },
   // Africa
   { main: "South Africa", region: "Africa" },
   // Americas
   { main: "Argentina", region: "Americas" },
+  { main: "United States", region: "Americas" },
   // Oceania
   { main: "Australia", region: "Oceania" },
-  { main: "Hawaii", region: "Oceania" },
 ];
 
 /** Resolve seed → TripGroupDef by deriving addOns from combo data */

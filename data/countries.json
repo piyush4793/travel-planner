@@ -1157,7 +1157,7 @@
     ],
     "combo": [
       "Turkey",
-      "Dubai"
+      "United Arab Emirates"
     ],
     "landmark": "Pyramids of Giza",
     "travelStyle": [
@@ -1199,71 +1199,6 @@
         "lat": 27.9158,
         "lng": 34.33,
         "notes": "World-class coral reefs at Ras Mohammed and Tiran island"
-      }
-    ]
-  },
-  {
-    "name": "Dubai",
-    "lat": 25.2048,
-    "lng": 55.2708,
-    "bestMonths": [
-      "November",
-      "December",
-      "January",
-      "February",
-      "March"
-    ],
-    "worstMonths": [
-      "June",
-      "July",
-      "August",
-      "September"
-    ],
-    "budget": "₹2L–₹3.5L",
-    "experiences": [
-      "Burj Khalifa",
-      "Desert Safari",
-      "Shopping",
-      "Luxury Hotels",
-      "Skydiving"
-    ],
-    "avoid": [
-      "Summer heat (45°C+)",
-      "Ramadan restrictions"
-    ],
-    "combo": [
-      "Egypt",
-      "Jordan"
-    ],
-    "landmark": "Burj Khalifa",
-    "travelStyle": [
-      "touch-and-go"
-    ],
-    "stopoverNote": "Emirates hub (DXB) — free Dubai stopover on connecting Emirates flights. 4-hour direct flights from most Indian cities. World-class airport for long layovers.",
-    "cities": [
-      {
-        "name": "Dubai City",
-        "lat": 25.2048,
-        "lng": 55.2708,
-        "notes": "Burj Khalifa, Dubai Mall, Gold Souk, desert safari and Miracle Garden"
-      },
-      {
-        "name": "Abu Dhabi",
-        "lat": 24.4539,
-        "lng": 54.3773,
-        "notes": "Sheikh Zayed Grand Mosque, Louvre Abu Dhabi and Ferrari World"
-      },
-      {
-        "name": "Sharjah",
-        "lat": 25.3463,
-        "lng": 55.4209,
-        "notes": "UNESCO World Book Capital, Heritage Area and blue-tiled mosque"
-      },
-      {
-        "name": "Fujairah",
-        "lat": 25.1288,
-        "lng": 56.3265,
-        "notes": "East coast beaches, Al Hayl Castle and snorkeling in the Indian Ocean"
       }
     ]
   },
@@ -2228,74 +2163,6 @@
     ]
   },
   {
-    "name": "Scotland",
-    "lat": 56.4907,
-    "lng": -4.2026,
-    "bestMonths": [
-      "May",
-      "June",
-      "July",
-      "August",
-      "September"
-    ],
-    "worstMonths": [
-      "November",
-      "December",
-      "January"
-    ],
-    "budget": "₹3.5L–₹5L",
-    "experiences": [
-      "Edinburgh Castle",
-      "Isle of Skye",
-      "Highlands",
-      "Whisky Distilleries",
-      "Loch Ness"
-    ],
-    "avoid": [
-      "Midges (tiny biting insects) in July-August highlands — bring repellent"
-    ],
-    "combo": [
-      "UK",
-      "Ireland"
-    ],
-    "landmark": "Isle of Skye",
-    "travelStyle": [
-      "explorer"
-    ],
-    "cities": [
-      {
-        "name": "Edinburgh",
-        "lat": 55.9533,
-        "lng": -3.1883,
-        "notes": "Edinburgh Castle, Royal Mile, Arthur's Seat hike and Fringe Festival"
-      },
-      {
-        "name": "Glasgow",
-        "lat": 55.8642,
-        "lng": -4.2518,
-        "notes": "Mackintosh architecture, Kelvingrove museum, vibrant music scene"
-      },
-      {
-        "name": "Inverness",
-        "lat": 57.4778,
-        "lng": -4.2247,
-        "notes": "Gateway to Loch Ness, Culloden Battlefield and Highland drives"
-      },
-      {
-        "name": "Isle of Skye",
-        "lat": 57.2736,
-        "lng": -6.2154,
-        "notes": "Old Man of Storr, Fairy Pools and Dunvegan Castle landscapes"
-      },
-      {
-        "name": "St Andrews",
-        "lat": 56.3398,
-        "lng": -2.7967,
-        "notes": "Home of golf, medieval cathedral ruins and seaside cliff walks"
-      }
-    ]
-  },
-  {
     "name": "UK",
     "lat": 55.3781,
     "lng": -3.436,
@@ -2316,13 +2183,18 @@
       "Stonehenge",
       "Lake District",
       "Yorkshire Dales",
-      "Harry Potter Studios"
+      "Harry Potter Studios",
+      "Edinburgh Castle",
+      "Isle of Skye",
+      "Highlands",
+      "Whisky Distilleries",
+      "Loch Ness"
     ],
     "avoid": [
       "Rain (always) — pack layers"
     ],
     "combo": [
-      "Scotland",
+      "Ireland",
       "France"
     ],
     "landmark": "Big Ben",
@@ -2365,6 +2237,36 @@
         "lat": 51.1789,
         "lng": -1.8262,
         "notes": "Prehistoric megalith monument on Salisbury Plain, 5000 years old"
+      },
+      {
+        "name": "Edinburgh",
+        "lat": 55.9533,
+        "lng": -3.1883,
+        "notes": "Edinburgh Castle, Royal Mile, Arthur's Seat hike and Fringe Festival"
+      },
+      {
+        "name": "Glasgow",
+        "lat": 55.8642,
+        "lng": -4.2518,
+        "notes": "Mackintosh architecture, Kelvingrove museum, vibrant music scene"
+      },
+      {
+        "name": "Inverness",
+        "lat": 57.4778,
+        "lng": -4.2247,
+        "notes": "Gateway to Loch Ness, Culloden Battlefield and Highland drives"
+      },
+      {
+        "name": "Isle of Skye",
+        "lat": 57.2736,
+        "lng": -6.2154,
+        "notes": "Old Man of Storr, Fairy Pools and Dunvegan Castle landscapes"
+      },
+      {
+        "name": "St Andrews",
+        "lat": 56.3398,
+        "lng": -2.7967,
+        "notes": "Home of golf, medieval cathedral ruins and seaside cliff walks"
       }
     ]
   },
@@ -3069,9 +2971,9 @@
     ]
   },
   {
-    "name": "Hawaii",
-    "lat": 20.7984,
-    "lng": -156.3319,
+    "name": "United States",
+    "lat": 38.0,
+    "lng": -97.0,
     "bestMonths": [
       "April",
       "May",
@@ -3079,29 +2981,54 @@
       "September",
       "October"
     ],
-    "worstMonths": [],
-    "budget": "₹4.5L–₹7L",
+    "budget": "₹4L–₹7L",
     "experiences": [
+      "Statue of Liberty",
+      "Grand Canyon",
+      "Times Square",
+      "Hollywood",
+      "Yellowstone",
       "Volcanoes",
       "Beaches",
-      "Snorkeling",
       "Surfing",
       "Pearl Harbor",
       "Na Pali Coast"
     ],
-    "avoid": [
-      "Winter north shore waves (dangerous for swimming)",
-      "Peak Christmas — very expensive"
-    ],
-    "combo": [
-      "Japan",
-      "Australia"
-    ],
-    "landmark": "Waimea Canyon",
-    "travelStyle": [
-      "explorer"
-    ],
     "cities": [
+      {
+        "name": "New York",
+        "lat": 40.71,
+        "lng": -74.01,
+        "bestMonths": [
+          "April",
+          "May",
+          "September",
+          "October"
+        ],
+        "notes": "Statue of Liberty, Central Park, Times Square, Broadway"
+      },
+      {
+        "name": "Los Angeles",
+        "lat": 34.05,
+        "lng": -118.24,
+        "bestMonths": [
+          "March",
+          "April",
+          "October",
+          "November"
+        ],
+        "notes": "Hollywood, Santa Monica, Griffith Observatory"
+      },
+      {
+        "name": "San Francisco",
+        "lat": 37.77,
+        "lng": -122.42,
+        "bestMonths": [
+          "September",
+          "October"
+        ],
+        "notes": "Golden Gate Bridge, Alcatraz, cable cars"
+      },
       {
         "name": "Honolulu",
         "lat": 21.3069,
@@ -3132,6 +3059,68 @@
         "lng": -156.937,
         "notes": "Secluded island with Munro Trail, Hulopoe Bay snorkeling and rock gardens"
       }
+    ],
+    "combo": [
+      "Canada",
+      "Mexico"
+    ],
+    "travelStyle": [
+      "immersive"
+    ]
+  },
+  {
+    "name": "United Arab Emirates",
+    "lat": 24.0,
+    "lng": 54.0,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "budget": "₹2L–₹3.5L",
+    "experiences": [
+      "Burj Khalifa",
+      "Desert Safari",
+      "Shopping",
+      "Luxury Hotels",
+      "Skydiving",
+      "Abu Dhabi Grand Mosque",
+      "Louvre Abu Dhabi"
+    ],
+    "cities": [
+      {
+        "name": "Dubai City",
+        "lat": 25.2048,
+        "lng": 55.2708,
+        "notes": "Burj Khalifa, Dubai Mall, Gold Souk, desert safari and Miracle Garden"
+      },
+      {
+        "name": "Abu Dhabi",
+        "lat": 24.4539,
+        "lng": 54.3773,
+        "notes": "Sheikh Zayed Grand Mosque, Louvre Abu Dhabi and Ferrari World"
+      },
+      {
+        "name": "Sharjah",
+        "lat": 25.3463,
+        "lng": 55.4209,
+        "notes": "UNESCO World Book Capital, Heritage Area and blue-tiled mosque"
+      },
+      {
+        "name": "Fujairah",
+        "lat": 25.1288,
+        "lng": 56.3265,
+        "notes": "East coast beaches, Al Hayl Castle and snorkeling in the Indian Ocean"
+      }
+    ],
+    "combo": [
+      "Egypt",
+      "Jordan"
+    ],
+    "travelStyle": [
+      "touch-and-go"
     ]
   }
 ]
