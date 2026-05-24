@@ -19,7 +19,7 @@ View persists in the URL hash (`#trips`, `#calendar`, `#discover`) — refresh r
 
 ### My List & Discover
 - **197 countries** in the world catalog (`data/worldCatalog.json`), organized by 6 regions
-- **44 curated seed countries** with rich data (budget, best months, experiences, cities) pre-added to your list
+- **44 curated seed destinations** with rich data (budget, best months, experiences, cities) pre-added to your list — includes 4 non-sovereign destinations (Hawaii, Scotland, Dubai, Antarctica)
 - Only countries in **My List** appear on Map, Calendar, List, and Trips views
 - Add from Discover → creates a minimal Country entry that can be enriched via edit
 - Remove from list without losing custom data — re-add anytime
