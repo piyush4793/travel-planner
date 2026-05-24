@@ -101,7 +101,7 @@ export default function TripsView({
   const [search, setSearch] = useState("");
   const [editingMain, setEditingMain] = useState<string | null>(null);
   const [creatingNew, setCreatingNew] = useState(false);
-  const [layout, setLayout] = useState<"list" | "grid">("list");
+  const [layout, setLayout] = useState<"list" | "grid">("grid");
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   const hasFilters = viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all";

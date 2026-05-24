@@ -109,26 +109,21 @@ export default function Filters({
 
         <div className="w-px h-5 bg-gray-200 shrink-0 mx-0.5" />
 
-        <button
-          onClick={() => setVisitedFilter(visitedFilter === "unvisited" ? "all" : "unvisited")}
-          className={`px-3 py-1.5 rounded-full text-[11px] font-semibold whitespace-nowrap transition-all border ${
-            visitedFilter === "unvisited"
-              ? "bg-orange-500 text-white border-orange-500 shadow-sm"
-              : "bg-white text-gray-600 border-gray-200 hover:border-gray-300 hover:bg-gray-50"
-          }`}
-        >
-          Not Visited
-        </button>
-        <button
-          onClick={() => setVisitedFilter(visitedFilter === "visited" ? "all" : "visited")}
-          className={`px-3 py-1.5 rounded-full text-[11px] font-semibold whitespace-nowrap transition-all border ${
-            visitedFilter === "visited"
-              ? "bg-emerald-600 text-white border-emerald-600 shadow-sm"
-              : "bg-white text-gray-600 border-gray-200 hover:border-gray-300 hover:bg-gray-50"
-          }`}
-        >
-          ✓ Visited
-        </button>
+        <div className="flex items-center gap-0.5 bg-gray-100 rounded-full p-0.5">
+          {([["all", "All"], ["unvisited", "Not Visited"], ["visited", "✓ Visited"]] as const).map(([key, label]) => (
+            <button
+              key={key}
+              onClick={() => setVisitedFilter(key)}
+              className={`px-2.5 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap transition-all ${
+                visitedFilter === key
+                  ? "bg-white text-blue-700 shadow-sm"
+                  : "text-gray-500 hover:text-gray-700"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
