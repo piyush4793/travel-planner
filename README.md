@@ -9,7 +9,7 @@ A personal, map-based travel planner with a catalog of 197 world countries, 44 c
 ### Views
 | View | What it does |
 |---|---|
-| **✈ Trips** (home) | Countries organized into trip combinations. Favorites pinned to top, visited at bottom. Inline edit/create/delete for trip groups. |
+| **✈ Trips** (home) | Dashboard with progress ring, stats, and "Next trip" highlight. Trip cards with image collages, budget, best months. Grouped sections: ⭐ Bucket List → 📋 Planning → ✅ Completed. List/grid toggle, paginated. Click any card to open country detail. |
 | **📅 Calendar** | Heatmap grid — rows are destinations, columns are months. Emerald = best, red = avoid, blue = current month. |
 | **🌍 Discover** | Browse all 197 world countries. Filter by region and list status. Add countries to your list or remove them. |
 
