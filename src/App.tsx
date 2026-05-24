@@ -216,7 +216,7 @@ export default function App() {
 
         {view === "trips" ? (
           <TripsView
-            countries={store.myListCountries}
+            countries={filtered}
             visitedNames={store.visited.set}
             favorites={store.favorites.set}
             onSelect={setSelectedCountry}
