@@ -1,8 +1,8 @@
 import { useState, useCallback } from "react";
 import type { LLMTripPlanResult } from "../utils/ai/llmTransform";
 import { loadLS, saveLS } from "../utils/storage";
+import { LS_KEYS } from "../utils/lsKeys";
 
-const LS_KEY = "tp_ai_plans";
 const MAX_PLANS_PER_DESTINATION = 4;
 const SCHEMA_VERSION = 1;
 
@@ -26,7 +26,7 @@ function generateId(): string {
 }
 
 function loadStore(): PlanStore {
-  const raw = loadLS<PlanStore>(LS_KEY, {});
+  const raw = loadLS<PlanStore>(LS_KEYS.AI_PLANS, {});
   // Defensive: filter out malformed entries
   const clean: PlanStore = {};
   for (const [key, plans] of Object.entries(raw)) {
@@ -44,7 +44,7 @@ export function useAiPlanStore() {
   const persistUpdate = useCallback((updater: (prev: PlanStore) => PlanStore) => {
     setStore((prev) => {
       const next = updater(prev);
-      saveLS(LS_KEY, next);
+      saveLS(LS_KEYS.AI_PLANS, next);
       return next;
     });
   }, []);

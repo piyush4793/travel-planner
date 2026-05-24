@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { getFeatureFlags, setFeatureFlag, type FeatureFlags } from "../../utils/featureFlags";
+import { getFeatureFlags, setFeatureFlag, PAID_FLAGS, type FeatureFlags } from "../../utils/featureFlags";
 
 const IS_DEV = typeof window !== "undefined" &&
   (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
@@ -14,9 +14,9 @@ const FLAG_META: Record<keyof FeatureFlags, FlagMeta> = {
   searchableHomeCountry: { label: "Searchable Home Country", description: "Dropdown with all 197 countries" },
 };
 
-// Tree structure: paid flags are children of paidFeatures
-const PAID_CHILDREN: (keyof FeatureFlags)[] = ["llmPlanning", "pdfExport"];
-const FREE_FLAGS: (keyof FeatureFlags)[] = ["searchableHomeCountry"];
+// Derived from PAID_FLAGS — single source of truth in featureFlags.ts
+const PAID_CHILDREN = (Object.keys(FLAG_META) as (keyof FeatureFlags)[]).filter((k) => PAID_FLAGS.has(k));
+const FREE_FLAGS = (Object.keys(FLAG_META) as (keyof FeatureFlags)[]).filter((k) => k !== "paidFeatures" && !PAID_FLAGS.has(k));
 
 export default function DevFlagPanel() {
   const [open, setOpen] = useState(false);
