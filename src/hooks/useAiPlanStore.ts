@@ -3,7 +3,7 @@ import type { LLMTripPlanResult } from "../utils/ai/llmTransform";
 import { loadLS, saveLS } from "../utils/storage";
 import { LS_KEYS } from "../utils/lsKeys";
 
-const MAX_PLANS_PER_DESTINATION = 4;
+const MAX_CUSTOM_PLANS = 3;
 const SCHEMA_VERSION = 1;
 
 export type SavedAiPlan = {
@@ -70,7 +70,7 @@ export function useAiPlanStore() {
       };
       persistUpdate((prev) => {
         const existing = prev[key] ?? [];
-        const updated = [...existing, plan].slice(-MAX_PLANS_PER_DESTINATION);
+        const updated = [...existing, plan].slice(-MAX_CUSTOM_PLANS);
         return { ...prev, [key]: updated };
       });
       return plan;
@@ -123,10 +123,10 @@ export function useAiPlanStore() {
 
   const canAddNew = useCallback(
     (destinationName: string): boolean => {
-      return getPlans(destinationName).length < MAX_PLANS_PER_DESTINATION;
+      return getPlans(destinationName).length < MAX_CUSTOM_PLANS;
     },
     [getPlans],
   );
 
-  return { getPlans, savePlan, replacePlan, deletePlan, getAllDestinations, canAddNew, maxPlans: MAX_PLANS_PER_DESTINATION };
+  return { getPlans, savePlan, replacePlan, deletePlan, getAllDestinations, canAddNew, maxPlans: MAX_CUSTOM_PLANS };
 }
