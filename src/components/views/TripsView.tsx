@@ -135,6 +135,13 @@ export default function TripsView({
       );
     }
 
+    // Sort: favorites first → unvisited middle → visited last
+    result = [...result].sort((a, b) => {
+      if (a.isFavorited !== b.isFavorited) return a.isFavorited ? -1 : 1;
+      if (a.allVisited !== b.allVisited) return a.allVisited ? 1 : -1;
+      return 0;
+    });
+
     return result;
   }, [trips, viewMode, visitedMode, regionFilter, search]);
 
