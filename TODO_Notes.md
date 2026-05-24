@@ -18,6 +18,6 @@ This would include anything we are updating in local storage or user list of cou
 Make app UI responsive, it should work for ipad, monitors, TVs, mobiles
 
 
-Link parsing is poor, make it work
+Link parsing is poor, make it work better
 - Update readme, tests, clean up code
 

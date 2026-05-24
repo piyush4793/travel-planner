@@ -235,6 +235,23 @@ function analyzeGaps(
 
 const CORS_PROXY = "https://api.codetabs.com/v1/proxy/?quest=";
 
+/** Clean ChatGPT HTML artifacts: unescape JSON, remove entity/image/cite markers */
+function cleanChatGPTText(html: string): string {
+  return html
+    .replace(/\\n/g, "\n")
+    .replace(/\\t/g, " ")
+    .replace(/\\"/g, '"')
+    .replace(/\\\\/g, "\\")
+    // Remove ChatGPT entity markers: entity["type","name","desc"]
+    .replace(/entity\["[^"]*","([^"]*)"(?:,"[^"]*")?\]/g, "$1")
+    // Remove image_group{...} blocks
+    .replace(/image_group\{[^}]*\}/g, "")
+    // Remove cite markers: citeturn0search1 etc
+    .replace(/citeturn\d+search\d+/g, "")
+    // Clean up multiple blank lines
+    .replace(/\n{3,}/g, "\n\n");
+}
+
 /**
  * Fetch a shared ChatGPT/Claude conversation link and extract text.
  * Uses a CORS proxy since browsers can't fetch these directly.
@@ -269,26 +286,27 @@ export async function fetchChatLink(url: string): Promise<{ text: string } | { e
       } catch { /* JSON parse failed, try raw extraction */ }
     }
 
-    // Fallback: extract text blocks between Day N markers from escaped JSON strings in raw HTML
-    // Match from "Day N" to the next "Day N" or end of quoted string
-    const fullText = html
-      .replace(/\\n/g, "\n")
-      .replace(/\\t/g, " ")
-      .replace(/\\"/g, '"')
-      .replace(/\\\\/g, "\\");
+    // Unescape the HTML (content lives in escaped JSON strings inside script tags)
+    const fullText = cleanChatGPTText(html);
 
-    const blockPattern = /(?:^|\n)\s*(?:\*{0,2})(?:Day|###\s*Day)\s+\d+[\s\S]*?(?=(?:\n\s*(?:\*{0,2})(?:Day|###\s*Day)\s+\d+)|\n---|\n#[^#]|"[,}\]]|$)/gi;
-    const blockMatches = [...fullText.matchAll(blockPattern)];
-    if (blockMatches.length >= 2) {
-      const rawText = blockMatches.map((m) => m[0].trim()).join("\n\n");
-      return { text: rawText };
+    // Strategy A: Find a compact itinerary summary (Day 1-2: City format)
+    const summaryPattern = /(?:\*{0,2})Day\s+\d+(?:\s*[-–—]\s*\d+)?(?:\*{0,2})\s*[:*]*\s*[^\n]{5,80}\n/gi;
+    const summaryMatches = [...fullText.matchAll(summaryPattern)];
+    if (summaryMatches.length >= 4) {
+      return { text: summaryMatches.map((m) => m[0].trim()).join("\n") };
     }
 
-    // Simpler fallback: find all Day references with surrounding context
-    const simpleMatches = [...fullText.matchAll(/(?:Day\s+\d+[^\n"]{0,1000})/gi)];
+    // Strategy B: Find detailed day blocks
+    const dayBlockPattern = /(?:^|\n)\s*(?:#{1,3}\s*)?(?:\*{0,2})(?:📍\s*)?Day\s+\d+[^\n]*\n(?:[^\n]*\n){0,15}/gi;
+    const blockMatches = [...fullText.matchAll(dayBlockPattern)];
+    if (blockMatches.length >= 2) {
+      return { text: blockMatches.map((m) => m[0].trim()).join("\n\n") };
+    }
+
+    // Strategy C: Just grab all Day lines with context
+    const simpleMatches = [...fullText.matchAll(/Day\s+\d+[^\n]{0,500}/gi)];
     if (simpleMatches.length >= 2) {
-      const rawText = simpleMatches.map((m) => m[0].trim()).join("\n");
-      return { text: rawText };
+      return { text: simpleMatches.map((m) => m[0].trim()).join("\n") };
     }
 
     // Last resort: strip HTML tags and extract visible text
