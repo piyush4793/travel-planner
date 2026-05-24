@@ -109,21 +109,20 @@ export default function Filters({
 
         <div className="w-px h-5 bg-gray-200 shrink-0 mx-0.5" />
 
-        <div className="flex items-center gap-0.5 bg-gray-100 rounded-full p-0.5">
-          {([["all", "All"], ["unvisited", "Not Visited"], ["visited", "✓ Visited"]] as const).map(([key, label]) => (
-            <button
-              key={key}
-              onClick={() => setVisitedFilter(key)}
-              className={`px-2.5 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap transition-all ${
-                visitedFilter === key
-                  ? "bg-white text-blue-700 shadow-sm"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
+        <select
+          value={visitedFilter}
+          onChange={(e) => setVisitedFilter(e.target.value as VisitedFilter)}
+          className={`px-2.5 py-1.5 rounded-lg text-[11px] font-semibold border transition-colors appearance-none cursor-pointer pr-6 bg-[length:12px] bg-[right_6px_center] bg-no-repeat ${
+            visitedFilter !== "all"
+              ? "bg-blue-50 text-blue-700 border-blue-200"
+              : "bg-white text-gray-600 border-gray-200 hover:border-gray-300"
+          }`}
+          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")` }}
+        >
+          <option value="all">All Countries</option>
+          <option value="unvisited">Not Visited</option>
+          <option value="visited">✓ Visited</option>
+        </select>
       </div>
     </div>
   );
