@@ -593,7 +593,7 @@ function ImportView({ mode, pasteText, setPasteText, linkUrl, setLinkUrl, linkLo
         ) : (
           <div className="flex gap-2">
             <button onClick={onBack} className="flex-1 py-2.5 border border-slate-200 text-slate-600 text-sm font-semibold rounded-xl hover:bg-slate-50">← Edit</button>
-            <button onClick={onAccept} className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-xl transition-colors">💾 Save Plan</button>
+            <button onClick={onAccept} className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-xl transition-colors">✨ Review & Save</button>
           </div>
         )}
       </div>

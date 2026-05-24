@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../types";
+import type { SavedAiPlan } from "../../hooks/useAiPlanStore";
 import { STYLE_META } from "../../utils/travelStyles";
 import { generateTripPlan, getMaxRuleDays, getRecRuleDays } from "../../utils/tripPlans";
 import type { TripPlan } from "../../utils/tripPlans";
@@ -12,6 +13,7 @@ import { exportItineraryAsPdf } from "../../utils/pdfExport";
 import Tooltip from "../shared/Tooltip";
 import ItineraryCinematic from "./ItineraryCinematic";
 import ItineraryModal from "./ItineraryModal";
+import PlanCompareModal from "./PlanCompareModal";
 
 type Props = {
   country: Country | null;
@@ -29,8 +31,7 @@ type Props = {
   mainMapRef?: RefObject<maplibregl.Map | null>;
   allCountries?: Country[];
   onPlanWithAi?: (countryName: string) => void;
-  savedAiPlans?: { id: string; savedAt: string; label: string }[];
-  onViewAiPlan?: (planId: string) => void;
+  aiPlans?: SavedAiPlan[];
   onDeleteAiPlan?: (planId: string) => void;
   onCinematicChange?: (active: boolean) => void;
 };
@@ -46,35 +47,61 @@ export default function CountryPanel({
   mainMapRef,
   allCountries,
   onPlanWithAi,
-  savedAiPlans = [],
-  onViewAiPlan,
+  aiPlans = [],
   onDeleteAiPlan,
   onCinematicChange,
 }: Props) {
   const { panelWidth, startPanelDrag }    = usePanelDrag(320, 320);
-  const [planActive, setPlanActive]       = useState(false);
+  const [activePlanId, setActivePlanId]   = useState("default");
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
   const [customDays, setCustomDays]       = useState(7);
   const [notes, setNotes]                 = useState(country?.notes ?? "");
   const [cinematicPlan, setCinematicPlan] = useState<TripPlan | null>(null);
   const [modalPlan, setModalPlan]         = useState<TripPlan | null>(null);
+  const [compareOpen, setCompareOpen]     = useState(false);
 
   const maxDays = country ? (getMaxRuleDays(country.name) ?? 30) : 30;
   const recDays = country ? (getRecRuleDays(country.name) ?? 7) : 7;
 
   useEffect(() => {
-    setPlanActive(false);
+    setActivePlanId("default");
     setSelectedCities([]);
     setCustomDays(recDays);
     setNotes(country?.notes ?? "");
     setCinematicPlan(null);
     setModalPlan(null);
+    setCompareOpen(false);
   }, [country?.name, recDays]);
+
+  // Reset to default if active AI plan is deleted
+  useEffect(() => {
+    if (activePlanId !== "default" && !aiPlans.find((p) => p.id === activePlanId)) {
+      setActivePlanId("default");
+    }
+  }, [activePlanId, aiPlans]);
 
   // Notify parent when cinematic mode changes
   useEffect(() => {
     onCinematicChange?.(cinematicPlan !== null);
   }, [cinematicPlan, onCinematicChange]);
+
+  // Build plan options for pill selector and compare
+  const planOptions = useMemo(() => {
+    const opts: { id: string; label: string; plan: TripPlan }[] = [];
+    if (country) {
+      const defaultPlan = generateTripPlan(country, "custom", selectedCities, customDays);
+      opts.push({ id: "default", label: "📅 Default", plan: defaultPlan });
+      for (let i = 0; i < aiPlans.length; i++) {
+        const sp = aiPlans[i];
+        const dayCount = sp.result.plan.days.length;
+        opts.push({ id: sp.id, label: `✨ AI ${i + 1} · ${dayCount}d`, plan: sp.result.plan });
+      }
+    }
+    return opts;
+  }, [country, selectedCities, customDays, aiPlans]);
+
+  const activePlan = planOptions.find((o) => o.id === activePlanId) ?? planOptions[0];
+  const isDefaultActive = activePlanId === "default";
 
   function toggleCity(name: string) {
     setSelectedCities(prev => prev.includes(name) ? prev.filter(c => c !== name) : [...prev, name]);
@@ -151,40 +178,113 @@ export default function CountryPanel({
 
             {/* ── Trip Planner ── */}
             <Section label="Plan your trip">
-              {/* Days selector */}
-              <div className="mb-3 space-y-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-2xl font-black text-slate-800">{customDays}</span>
-                    <span className="text-xs text-slate-400 font-semibold">day{customDays !== 1 ? "s" : ""}</span>
+              {/* Plan selector dropdown */}
+              {planOptions.length > 1 && (
+                <div className="mb-3 flex items-center gap-2">
+                  <select
+                    value={activePlanId}
+                    onChange={(e) => setActivePlanId(e.target.value)}
+                    className="flex-1 min-w-0 text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg px-3 py-2 outline-none focus:border-blue-400 transition-colors truncate"
+                  >
+                    {planOptions.map((o) => (
+                      <option key={o.id} value={o.id}>{o.label}</option>
+                    ))}
+                  </select>
+                  <button
+                    onClick={() => setCompareOpen(true)}
+                    className="text-[10px] font-bold text-indigo-600 hover:text-indigo-800 px-2.5 py-2 rounded-lg hover:bg-indigo-50 border border-indigo-100 transition-colors shrink-0"
+                  >
+                    ⚖ Compare
+                  </button>
+                </div>
+              )}
+
+              {/* Default plan controls — days slider + city selection */}
+              {isDefaultActive && (
+                <>
+                  {/* Days selector */}
+                  <div className="mb-3 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-2xl font-black text-slate-800">{customDays}</span>
+                        <span className="text-xs text-slate-400 font-semibold">day{customDays !== 1 ? "s" : ""}</span>
+                      </div>
+                      <span className="text-[10px] text-slate-400">
+                        Recommended: <span className="font-bold text-blue-600">{recDays} days</span>
+                      </span>
+                    </div>
+                    <input
+                      type="range"
+                      min={1}
+                      max={maxDays}
+                      value={customDays}
+                      onChange={(e) => setCustomDays(parseInt(e.target.value))}
+                      className="w-full h-1.5 bg-slate-200 rounded-full appearance-none cursor-pointer accent-blue-600"
+                    />
+                    <div className="flex items-center justify-between">
+                      <span className="text-[9px] text-slate-400">1 day</span>
+                      <span className="text-[9px] text-slate-400">{maxDays} days</span>
+                    </div>
                   </div>
-                  <span className="text-[10px] text-slate-400">
-                    Recommended: <span className="font-bold text-blue-600">{recDays} days</span>
-                  </span>
+
+                  {/* City selection (optional override) */}
+                  {country.cities && country.cities.length > 0 && (
+                    <div className="mb-3">
+                      <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
+                        Cities to visit <span className="font-normal">(optional — auto-selected if blank)</span>
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {country.cities.map((city) => {
+                          const on = selectedCities.includes(city.name);
+                          return (
+                            <button
+                              key={city.name}
+                              onClick={() => toggleCity(city.name)}
+                              className={`px-2.5 py-1 rounded-full text-xs font-semibold border transition-all ${
+                                on
+                                  ? "bg-slate-700 text-white border-slate-700"
+                                  : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
+                              }`}
+                            >
+                              {city.name}
+                            </button>
+                          );
+                        })}
+                      </div>
+                      {selectedCities.length > 0 && (
+                        <button
+                          onClick={() => setSelectedCities([])}
+                          className="text-[10px] text-gray-400 hover:text-gray-600 mt-1"
+                        >
+                          Clear selection
+                        </button>
+                      )}
+                    </div>
+                  )}
+                </>
+              )}
+
+              {/* AI plan info bar (when an AI plan is selected) */}
+              {!isDefaultActive && activePlan && (
+                <div className="mb-3 bg-indigo-50 rounded-xl px-3 py-2.5 border border-indigo-100 flex items-center justify-between gap-2">
+                  <div className="min-w-0">
+                    <p className="text-[11px] font-bold text-indigo-700 truncate">{activePlan.label}</p>
+                    <p className="text-[10px] text-indigo-500">{activePlan.plan.days.length} days · {activePlan.plan.costPerPerson}</p>
+                  </div>
+                  {onDeleteAiPlan && (
+                    <button
+                      onClick={() => onDeleteAiPlan(activePlanId)}
+                      className="text-[10px] text-red-400 hover:text-red-600 font-semibold shrink-0"
+                    >
+                      🗑 Delete
+                    </button>
+                  )}
                 </div>
-                <input
-                  type="range"
-                  min={1}
-                  max={maxDays}
-                  value={customDays}
-                  onChange={(e) => setCustomDays(parseInt(e.target.value))}
-                  className="w-full h-1.5 bg-slate-200 rounded-full appearance-none cursor-pointer accent-blue-600"
-                />
-                <div className="flex items-center justify-between">
-                  <span className="text-[9px] text-slate-400">1 day</span>
-                  <span className="text-[9px] text-slate-400">{maxDays} days</span>
-                </div>
-              </div>
+              )}
 
               {/* Action buttons */}
               <div className="flex gap-2 mb-3">
-                <button
-                  onClick={() => setPlanActive(true)}
-                  className="flex-1 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-bold rounded-xl transition-colors"
-                >
-                  📅 Generate
-                </button>
-                {onPlanWithAi && (
+                {isDefaultActive && onPlanWithAi && (
                   <button
                     onClick={() => onPlanWithAi(country.name)}
                     className="flex-1 py-2.5 border-2 border-emerald-200 bg-emerald-50 text-emerald-700 hover:border-emerald-300 hover:bg-emerald-100 text-[11px] font-bold rounded-xl transition-all"
@@ -194,80 +294,16 @@ export default function CountryPanel({
                 )}
               </div>
 
-              {/* Saved AI plans */}
-              {savedAiPlans.length > 0 && (
-                <div className="mb-3 space-y-1.5">
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                    Saved AI Plans ({savedAiPlans.length})
-                  </p>
-                  {savedAiPlans.map((sp) => (
-                    <div key={sp.id} className="flex items-center gap-2 px-3 py-2 bg-indigo-50 rounded-lg border border-indigo-100">
-                      <p className="flex-1 text-[11px] text-indigo-700 truncate">{sp.label}</p>
-                      {onViewAiPlan && (
-                        <button
-                          onClick={() => onViewAiPlan(sp.id)}
-                          className="text-[10px] text-indigo-600 hover:text-indigo-800 font-semibold shrink-0"
-                        >
-                          View
-                        </button>
-                      )}
-                      {onDeleteAiPlan && (
-                        <button
-                          onClick={() => onDeleteAiPlan(sp.id)}
-                          className="text-[10px] text-red-400 hover:text-red-600 font-semibold shrink-0"
-                        >
-                          ✕
-                        </button>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* City selection (optional override) */}
-              {country.cities && country.cities.length > 0 && (
-                <div className="mb-3">
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
-                    Cities to visit <span className="font-normal">(optional — auto-selected if blank)</span>
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {country.cities.map((city) => {
-                      const on = selectedCities.includes(city.name);
-                      return (
-                        <button
-                          key={city.name}
-                          onClick={() => toggleCity(city.name)}
-                          className={`px-2.5 py-1 rounded-full text-xs font-semibold border transition-all ${
-                            on
-                              ? "bg-slate-700 text-white border-slate-700"
-                              : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
-                          }`}
-                        >
-                          {city.name}
-                        </button>
-                      );
-                    })}
-                  </div>
-                  {selectedCities.length > 0 && (
-                    <button
-                      onClick={() => setSelectedCities([])}
-                      className="text-[10px] text-gray-400 hover:text-gray-600 mt-1"
-                    >
-                      Clear selection
-                    </button>
-                  )}
-                </div>
-              )}
-
-              {planActive && (
+              {/* Plan preview — shows for whatever plan is active */}
+              {activePlan && (
                 <PlanPreview
-                  key={`custom-${[...selectedCities].sort().join(",")}-${customDays}`}
+                  key={`${activePlanId}-${isDefaultActive ? [...selectedCities].sort().join(",") : ""}-${isDefaultActive ? customDays : activePlan.plan.days.length}`}
                   country={country}
-                  selectedCities={selectedCities}
-                  customDays={customDays}
+                  plan={activePlan.plan}
                   homeCountry={homeCountry}
                   onCinematic={setCinematicPlan}
                   onItinerary={setModalPlan}
+                  isAiPlan={!isDefaultActive}
                 />
               )}
             </Section>
@@ -415,38 +451,49 @@ export default function CountryPanel({
           onClose={() => setModalPlan(null)}
         />
       )}
+      {compareOpen && planOptions.length >= 2 && (
+        <PlanCompareModal
+          options={planOptions}
+          onClose={() => setCompareOpen(false)}
+        />
+      )}
     </div>
   );
 }
 
-function PlanPreview({ country, selectedCities, customDays, homeCountry, onCinematic, onItinerary }: {
+function PlanPreview({ country, plan, homeCountry, onCinematic, onItinerary, isAiPlan }: {
   country: Country;
-  selectedCities: string[];
-  customDays: number;
+  plan: TripPlan;
   homeCountry: string;
   onCinematic: (plan: TripPlan) => void;
   onItinerary: (plan: TripPlan) => void;
+  isAiPlan?: boolean;
 }) {
-  const plan = generateTripPlan(country, "custom", selectedCities, customDays);
   const hasRuleData = !!ITINERARY_RULES[country.name];
-  const canExportPdf = isEnabled("pdfExport");
 
   // Unique ordered cities from plan (for route preview)
   const planCities: string[] = [];
   for (const day of plan.days) {
-    const m = day.label.match(/—\s*(.+)$/);
+    const m = day.label.match(/[—\-–]\s*(.+)$/);
     const city = m ? m[1].trim() : "";
     if (city && planCities[planCities.length - 1] !== city) planCities.push(city);
   }
 
-  const buttonCount = (hasRuleData ? 1 : 0) + 1 + (canExportPdf ? 1 : 0);
+  // Cinematic requires rule data AND at least 2 plan cities with known coordinates
+  const knownCityNames = new Set((country.cities ?? []).map((c) => c.name));
+  const matchedCities = planCities.filter((c) => knownCityNames.has(c));
+  const canCinematic = hasRuleData && matchedCities.length >= 2;
+
+  const canExportPdf = isEnabled("pdfExport");
+
+  const buttonCount = 1 + 1 + (canExportPdf ? 1 : 0);
   const gridCols = buttonCount >= 3 ? "grid-cols-3" : buttonCount === 2 ? "grid-cols-2" : "grid-cols-1";
 
   return (
     <div className="itinerary-card rounded-xl overflow-hidden border border-gray-200 bg-white">
       {/* Summary bar */}
       <div className="flex items-center justify-between px-3 py-2.5 bg-blue-100 text-blue-800">
-        <span className="text-xs font-bold">📅 {plan.duration}</span>
+        <span className="text-xs font-bold">{isAiPlan ? "✨" : "📅"} {plan.duration}</span>
         <span className="text-xs font-bold">{plan.costPerPerson} / person</span>
       </div>
 
@@ -470,16 +517,22 @@ function PlanPreview({ country, selectedCities, customDays, homeCountry, onCinem
 
       {/* Action buttons */}
       <div className={`p-2.5 grid gap-2 ${gridCols}`}>
-        {hasRuleData && (
-          <button
-            onClick={() => onCinematic(plan)}
-            className="flex flex-col items-center gap-1 py-3.5 rounded-xl bg-gray-950 text-white hover:bg-gray-800 active:scale-[0.97] transition-all"
-          >
-            <span className="text-xl leading-none">🎬</span>
-            <span className="text-[10px] font-black tracking-wide mt-0.5">Cinematic</span>
-            <span className="text-[9px] text-gray-400 leading-none">animated journey</span>
-          </button>
-        )}
+        <button
+          onClick={() => canCinematic && onCinematic(plan)}
+          disabled={!canCinematic}
+          className={`flex flex-col items-center gap-1 py-3.5 rounded-xl active:scale-[0.97] transition-all ${
+            canCinematic
+              ? "bg-gray-950 text-white hover:bg-gray-800 cursor-pointer"
+              : "bg-gray-200 text-gray-400 cursor-not-allowed"
+          }`}
+          title={canCinematic ? "Watch animated journey" : "Cinematic not available for this country"}
+        >
+          <span className="text-xl leading-none">🎬</span>
+          <span className="text-[10px] font-black tracking-wide mt-0.5">Cinematic</span>
+          <span className={`text-[9px] leading-none ${canCinematic ? "text-gray-400" : "text-gray-300"}`}>
+            {canCinematic ? "animated journey" : "not available"}
+          </span>
+        </button>
         <button
           onClick={() => onItinerary(plan)}
           className="flex flex-col items-center gap-1 py-3.5 rounded-xl bg-blue-50 text-blue-700 hover:bg-blue-100 active:scale-[0.97] transition-all border border-blue-100"

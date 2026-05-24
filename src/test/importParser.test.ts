@@ -63,4 +63,62 @@ describe("importParser — P1", () => {
     expect(r.plan.costPerPerson).toBe("Not specified");
     expect(r.promptSuggestions.some((s) => s.toLowerCase().includes("budget"))).toBe(true);
   });
+
+  it("cleans ARRIVE IN / RETURN from city names", () => {
+    const text = [
+      "Day 1 — ARRIVE IN OSLO",
+      "Karl Johans Gate, Oslo Opera House",
+      "Day 2 — OSLO",
+      "Viking Museum, Holmenkollen",
+      "Day 3 — BERGEN",
+      "Bryggen Wharf, Fish Market",
+      "Day 4 — RETURN",
+      "Fly back home",
+    ].join("\n");
+    const r = parseImportedText(text);
+    expect("error" in r).toBe(false);
+    if ("error" in r) return;
+    // "ARRIVE IN OSLO" should become "OSLO", "RETURN" should be skipped
+    expect(r.cities).not.toContain("ARRIVE IN OSLO");
+    expect(r.cities).not.toContain("RETURN");
+    expect(r.cities).toContain("OSLO");
+    expect(r.cities).toContain("BERGEN");
+  });
+
+  it("filters noise lines like Stay:, Activities:, Time required:", () => {
+    const text = [
+      "Day 1 — Oslo",
+      "Stay: Grand Hotel Oslo",
+      "Activities:",
+      "Oslo Opera House",
+      "Karl Johans Gate",
+      "Time required: Half day",
+      "Day 2 — Bergen",
+      "Stay: Bergen Bors Hotel",
+      "Bryggen Wharf",
+      "Floyen funicular",
+    ].join("\n");
+    const r = parseImportedText(text);
+    expect("error" in r).toBe(false);
+    if ("error" in r) return;
+    const allActivities = r.plan.days.flatMap((d) => d.activities);
+    expect(allActivities).not.toContain("Stay: Grand Hotel Oslo");
+    expect(allActivities).not.toContain("Activities:");
+    expect(allActivities).not.toContain("Time required: Half day");
+    expect(allActivities).toContain("Oslo Opera House");
+    expect(allActivities).toContain("Bryggen Wharf");
+  });
+
+  it("derives destination name from trip context", () => {
+    const text = [
+      "Here is your 5-day trip to Norway itinerary:",
+      "Day 1 — Oslo: Visit Vigeland Park",
+      "Day 2 — Bergen: Bryggen Wharf",
+      "Day 3 — Flam: Flam Railway",
+    ].join("\n");
+    const r = parseImportedText(text);
+    expect("error" in r).toBe(false);
+    if ("error" in r) return;
+    expect(r.destinationName.toLowerCase()).toContain("norway");
+  });
 });

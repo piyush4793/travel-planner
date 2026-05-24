@@ -97,6 +97,11 @@ function tryStructuredParse(text: string): ImportResult | null {
   const days: DayEntry[] = [];
   const citySet = new Set<string>();
 
+  // Noise patterns: lines that are section headers, not real activities
+  const noiseRe = /^(?:stay\s*:|time\s*required\s*:|activities?\s*:|tip\s*:|note\s*:|transport\s*:|budget\s*:|hotel\s*:|accommodation\s*:|cost\s*:|estimated\s*cost|overview\s*:|travel\s*:|getting\s*there|---)/i;
+  // Labels to strip from city names
+  const cityPrefixRe = /^(?:arrive\s+(?:in|at)\s+|depart(?:ure)?\s*(?:from\s+)?|travel\s+to\s+|fly\s+to\s+|return\s*(?:to\s+)?|head\s+to\s+|move\s+to\s+)/i;
+
   for (let i = 0; i < dayStarts.length; i++) {
     const start = dayStarts[i].startIdx;
     const end = i + 1 < dayStarts.length ? dayStarts[i + 1].startIdx : text.length;
@@ -123,13 +128,26 @@ function tryStructuredParse(text: string): ImportResult | null {
       const nextLine = block.split("\n")[1]?.trim() ?? "";
       if (nextLine && /^[A-Z]/.test(nextLine) && nextLine.length < 30) city = nextLine;
     }
+
+    // Clean city name: remove "ARRIVE IN", "RETURN", "DEPART FROM" etc.
+    city = city.replace(cityPrefixRe, "").trim();
+    // Skip non-city labels like "RETURN", "DEPARTURE", etc.
+    if (/^(?:return|departure|depart|fly\s*back|travel\s*day|transit)$/i.test(city)) city = "";
+
     if (city) citySet.add(city);
 
-    // Rest of the block = activities (skip first line, or extract from first line after city)
+    // Rest of the block = activities (skip first line)
     const bodyLines = block.split("\n").slice(1);
     let activities = bodyLines
       .map((l) => l.replace(/^\s*[-•*\d.)\s]+/, "").trim())
-      .filter((l) => l.length > 3 && !l.startsWith("#") && !l.startsWith("---"))
+      .filter((l) =>
+        l.length > 3 &&
+        !l.startsWith("#") &&
+        !l.startsWith("---") &&
+        !noiseRe.test(l) &&
+        // Filter out "Stay:" lines (hotel info, not activities)
+        !/^stay\s*:/i.test(l)
+      )
       .slice(0, 8);
 
     // If no body lines, extract activities from the first line (after city: activities,...)
@@ -150,8 +168,10 @@ function tryStructuredParse(text: string): ImportResult | null {
   if (days.length === 0) return null;
 
   const cities = [...citySet];
-  const destination = cities[0] ?? "Trip";
   const totalDays = days.length;
+
+  // Derive destination from the text — look for country/region name first
+  const destination = deriveDestination(text, cities);
 
   // Try to extract cost from text
   const costMatch = text.match(/(?:₹|Rs\.?|USD|\$|€|£)\s?[\d,.]+(?:\s?[KkLl])?(?:\s?[-–]\s?(?:₹|Rs\.?|USD|\$|€|£)\s?[\d,.]+(?:\s?[KkLl])?)?/);
@@ -166,6 +186,26 @@ function tryStructuredParse(text: string): ImportResult | null {
 
   const { warnings, promptSuggestions } = analyzeGaps(plan, cities, undefined, cost);
   return { plan, destinationName: destination, durationDays: totalDays, cities, warnings, promptSuggestions };
+}
+
+/** Try to derive a country/region name from the text, falling back to first city */
+function deriveDestination(text: string, cities: string[]): string {
+  // Common patterns: "trip to Norway", "Norway itinerary", "15 days in Japan"
+  const patterns = [
+    /(?:trip|travel|itinerary|plan|guide|vacation|holiday)\s+(?:to|in|for|across)\s+([A-Z][a-zA-Zà-ÿ\s]{2,25})/i,
+    /([A-Z][a-zA-Zà-ÿ\s]{2,25})\s+(?:trip|travel|itinerary|plan|guide|vacation|holiday)/i,
+    /\d+\s*days?\s+in\s+([A-Z][a-zA-Zà-ÿ\s]{2,25})/i,
+    /exploring\s+([A-Z][a-zA-Zà-ÿ\s]{2,25})/i,
+  ];
+  for (const p of patterns) {
+    const m = text.match(p);
+    if (m) {
+      const name = m[1].trim();
+      // Skip if the extracted name looks like a city header or day label
+      if (!/^day\s/i.test(name) && name.length >= 3) return name;
+    }
+  }
+  return cities[0] ?? "Trip";
 }
 
 // ── Strategy 3: Extract from full chat ────────────────────────────────────

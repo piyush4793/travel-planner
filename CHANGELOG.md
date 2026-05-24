@@ -8,6 +8,10 @@ All notable changes to Travel Planner are documented here. Format follows [Keep 
 
 ### Added
 - **Navigation simplified** — 5 views → 3 (Trips home, Calendar, Discover). Map removed from nav, kept for Cinematic. List removed.
+- **Multi-plan view & selector** — PillGroup tabs to switch between Default and saved AI plans with full day-wise itinerary for each
+- **Side-by-side plan comparison** — modal comparing any two plans with dropdowns, stat diffs (days, cities, cost), and independent scrolling columns
+- **Per-plan cinematic check** — cinematic button always visible but disabled/greyed when plan lacks matching city coordinates
+- **Import parser improvements** — better destination name derivation (looks for "trip to Norway" patterns), city name cleaning (strips "ARRIVE IN", "RETURN"), activity noise filtering ("Stay:", "Activities:", "Time required:")
 - **PDF export** — export any itinerary as PDF via browser print dialog (zero dependencies, paid feature gated)
 - **Two-tier feature gating** — `paidFeatures` master gate for premium features; individual flags for fine-grained control
 - **Dev flag panel** — localhost-only 🛠 panel with dependency tree UI for toggling feature flags
