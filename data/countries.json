@@ -27,7 +27,6 @@
     ],
     "combo": [
       "South Korea",
-      "Taiwan",
       "China"
     ],
     "landmark": "Mount Fuji",
@@ -101,7 +100,6 @@
     ],
     "combo": [
       "Japan",
-      "Taiwan",
       "China"
     ],
     "landmark": "Gyeongbokgung Palace",
@@ -170,8 +168,7 @@
     ],
     "combo": [
       "Japan",
-      "South Korea",
-      "Taiwan"
+      "South Korea"
     ],
     "landmark": "Great Wall of China",
     "travelStyle": [
@@ -243,9 +240,7 @@
     ],
     "combo": [
       "Turkey",
-      "Italy",
-      "Croatia",
-      "Albania"
+      "Italy"
     ],
     "landmark": "Santorini",
     "travelStyle": [
@@ -313,9 +308,7 @@
     ],
     "combo": [
       "Norway",
-      "Denmark",
-      "Greenland",
-      "Scotland"
+      "Greenland"
     ],
     "landmark": "Skógafoss",
     "travelStyle": [
@@ -383,10 +376,8 @@
       "Monsoon season May-Oct"
     ],
     "combo": [
-      "Malaysia",
-      "Singapore",
       "Cambodia",
-      "Vietnam"
+      "Malaysia"
     ],
     "landmark": "Wat Phra Kaew",
     "travelStyle": [
@@ -462,7 +453,6 @@
     ],
     "combo": [
       "Singapore",
-      "Thailand",
       "Indonesia"
     ],
     "landmark": "Petronas Twin Towers",
@@ -536,7 +526,6 @@
     ],
     "combo": [
       "Malaysia",
-      "Thailand",
       "Indonesia"
     ],
     "landmark": "Marina Bay Sands",
@@ -1167,7 +1156,6 @@
       "Ramadan for nightlife"
     ],
     "combo": [
-      "Jordan",
       "Turkey",
       "Dubai"
     ],
@@ -1244,7 +1232,6 @@
       "Ramadan restrictions"
     ],
     "combo": [
-      "Abu Dhabi",
       "Egypt",
       "Jordan"
     ],
@@ -1307,9 +1294,8 @@
       "Peak summer heat in interior"
     ],
     "combo": [
-      "Georgia",
       "Greece",
-      "Egypt"
+      "Georgia"
     ],
     "landmark": "Hagia Sophia",
     "travelStyle": [
@@ -1382,8 +1368,7 @@
     ],
     "combo": [
       "Turkey",
-      "Armenia",
-      "Azerbaijan"
+      "Armenia"
     ],
     "landmark": "Vardzia",
     "travelStyle": [
@@ -1452,8 +1437,7 @@
     ],
     "combo": [
       "Belarus",
-      "Georgia",
-      "Finland"
+      "Georgia"
     ],
     "landmark": "Saint Basil's Cathedral",
     "travelStyle": [
@@ -1547,8 +1531,7 @@
     ],
     "combo": [
       "Russia",
-      "Poland",
-      "Ukraine"
+      "Poland"
     ],
     "landmark": "Mir Castle",
     "travelStyle": [
@@ -1607,9 +1590,7 @@
     "avoid": [],
     "combo": [
       "Czech Republic",
-      "Germany",
-      "Hungary",
-      "Belarus"
+      "Germany"
     ],
     "landmark": "Wawel Castle",
     "travelStyle": [
@@ -1673,9 +1654,7 @@
     ],
     "combo": [
       "Austria",
-      "Germany",
-      "Poland",
-      "Hungary"
+      "Poland"
     ],
     "landmark": "Charles Bridge",
     "travelStyle": [
@@ -1731,9 +1710,7 @@
     "avoid": [],
     "combo": [
       "Austria",
-      "Czech Republic",
-      "Romania",
-      "Serbia"
+      "Czech Republic"
     ],
     "landmark": "Hungarian Parliament Building",
     "travelStyle": [
@@ -1792,9 +1769,7 @@
     "avoid": [],
     "combo": [
       "Hungary",
-      "Bulgaria",
-      "Serbia",
-      "Moldova"
+      "Bulgaria"
     ],
     "landmark": "Bran Castle",
     "travelStyle": [
@@ -1859,9 +1834,7 @@
     ],
     "combo": [
       "Germany",
-      "Switzerland",
-      "Hungary",
-      "Czech Republic"
+      "Switzerland"
     ],
     "landmark": "Hallstatt",
     "travelStyle": [
@@ -1925,9 +1898,7 @@
     ],
     "combo": [
       "Austria",
-      "Netherlands",
-      "Switzerland",
-      "France"
+      "Switzerland"
     ],
     "landmark": "Neuschwanstein Castle",
     "travelStyle": [
@@ -1997,10 +1968,8 @@
       "Budget carefully — most expensive country in Europe"
     ],
     "combo": [
-      "France",
       "Germany",
-      "Austria",
-      "Italy"
+      "Austria"
     ],
     "landmark": "Matterhorn",
     "travelStyle": [
@@ -2074,9 +2043,7 @@
     ],
     "combo": [
       "Spain",
-      "Italy",
-      "Switzerland",
-      "Belgium"
+      "Italy"
     ],
     "landmark": "Eiffel Tower",
     "travelStyle": [
@@ -2221,8 +2188,7 @@
     ],
     "combo": [
       "Germany",
-      "Belgium",
-      "France"
+      "Belgium"
     ],
     "landmark": "Keukenhof Gardens",
     "travelStyle": [
@@ -2290,9 +2256,7 @@
     ],
     "combo": [
       "UK",
-      "Ireland",
-      "Iceland",
-      "Greenland"
+      "Ireland"
     ],
     "landmark": "Isle of Skye",
     "travelStyle": [
@@ -2359,7 +2323,6 @@
     ],
     "combo": [
       "Scotland",
-      "Ireland",
       "France"
     ],
     "landmark": "Big Ben",
@@ -2431,7 +2394,6 @@
       "Budget carefully — expensive Scandinavian prices"
     ],
     "combo": [
-      "Greenland",
       "Norway",
       "Sweden"
     ],
@@ -2494,9 +2456,8 @@
       "Inaccessible in harsh winter without expedition-level prep"
     ],
     "combo": [
-      "Denmark",
       "Iceland",
-      "Scotland"
+      "Denmark"
     ],
     "landmark": "Ilulissat Icefjord",
     "travelStyle": [
@@ -2562,8 +2523,7 @@
     ],
     "combo": [
       "Iceland",
-      "Denmark",
-      "Sweden"
+      "Denmark"
     ],
     "landmark": "Trolltunga",
     "travelStyle": [
@@ -2705,9 +2665,8 @@
       "August crowds and heat"
     ],
     "combo": [
-      "France",
       "Greece",
-      "Croatia"
+      "France"
     ],
     "landmark": "Colosseum",
     "travelStyle": [
@@ -2784,8 +2743,7 @@
     ],
     "combo": [
       "Zimbabwe",
-      "Botswana",
-      "Namibia"
+      "Botswana"
     ],
     "landmark": "Table Mountain",
     "travelStyle": [
@@ -2857,9 +2815,7 @@
     ],
     "combo": [
       "Antarctica",
-      "Chile",
-      "Uruguay",
-      "Peru"
+      "Chile"
     ],
     "landmark": "Perito Moreno Glacier",
     "travelStyle": [
@@ -2991,8 +2947,7 @@
     ],
     "combo": [
       "New Zealand",
-      "Fiji",
-      "Singapore"
+      "Fiji"
     ],
     "landmark": "Sydney Opera House",
     "travelStyle": [
