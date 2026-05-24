@@ -12,3 +12,12 @@ Features:
 
 First run experience
 
+Create a way to link excel/google spreadsheet linked for backing up data and changes made by user
+This would include anything we are updating in local storage or user list of countries, visited/not visited, Notes, and any other edits etc.
+
+Make app UI responsive, it should work for ipad, monitors, TVs, mobiles
+
+
+Link parsing is poor, make it work
+- Update readme, tests, clean up code
+

@@ -176,17 +176,11 @@ export default function App() {
             + Add
           </button>
           {isEnabled("llmPlanning") && (
-            <>
-              <button onClick={() => { setChatInitialPrompt(undefined); setChatOpen(true); }}
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500/20 hover:bg-emerald-500/30 rounded-full text-xs font-semibold transition-colors border border-emerald-400/30 text-emerald-300">
-                ✨ Plan with AI
-              </button>
-              <button onClick={() => setSettingsOpen(true)}
-                className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15"
-                title="AI Settings">
-                ⚙️
-              </button>
-            </>
+            <button onClick={() => setSettingsOpen(true)}
+              className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15"
+              title="AI Settings">
+              ⚙️
+            </button>
           )}
           <DevFlagPanel />
         </div>

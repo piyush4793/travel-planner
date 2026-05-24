@@ -59,19 +59,19 @@ describe("useAiPlanStore — P1", () => {
     const { result } = renderHook(() => useAiPlanStore());
 
     act(() => {
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 5; i++) {
         result.current.savePlan(makePlan());
       }
     });
 
-    expect(result.current.getPlans("Norway")).toHaveLength(4);
+    expect(result.current.getPlans("Norway")).toHaveLength(3);
   });
 
   it("canAddNew returns false at max capacity", () => {
     const { result } = renderHook(() => useAiPlanStore());
 
     act(() => {
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 3; i++) {
         result.current.savePlan(makePlan());
       }
     });
@@ -166,6 +166,6 @@ describe("useAiPlanStore — P1", () => {
 
   it("maxPlans constant is 4", () => {
     const { result } = renderHook(() => useAiPlanStore());
-    expect(result.current.maxPlans).toBe(4);
+    expect(result.current.maxPlans).toBe(3);
   });
 });

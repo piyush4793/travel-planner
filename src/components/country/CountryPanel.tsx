@@ -182,7 +182,7 @@ export default function CountryPanel({
                   onClick={() => setPlanActive(true)}
                   className="flex-1 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-bold rounded-xl transition-colors"
                 >
-                  📅 Generate Plan
+                  📅 Generate
                 </button>
                 {onPlanWithAi && (
                   <button

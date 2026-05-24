@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { useChatSession } from "../../hooks/useChatSession";
 import type { LLMTripPlanResult } from "../../utils/ai/llmTransform";
 import { getLLMKeys, getActiveProvider } from "./SettingsModal";
+import { parseImportedText, fetchChatLink, importResultToLLM, type ImportResult } from "../../utils/importParser";
 
 type Props = {
   open: boolean;
@@ -31,6 +32,13 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const autoSentRef = useRef<string | null>(null);
+  const [pasteMode, setPasteMode] = useState(false);
+  const [linkMode, setLinkMode] = useState(false);
+  const [linkUrl, setLinkUrl] = useState("");
+  const [linkLoading, setLinkLoading] = useState(false);
+  const [pasteText, setPasteText] = useState("");
+  const [importResult, setImportResult] = useState<ImportResult | null>(null);
+  const [importError, setImportError] = useState<string | null>(null);
 
   const keys = getLLMKeys();
   const activeProvider = getActiveProvider();
@@ -86,6 +94,8 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
   function handleClose() {
     clearChat();
     autoSentRef.current = null;
+    setPasteMode(false); setLinkMode(false); setLinkUrl(""); setLinkLoading(false);
+    setPasteText(""); setImportResult(null); setImportError(null);
     onClose();
   }
 
@@ -110,14 +120,26 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
               <p className="text-[10px] text-slate-400">Powered by {activeProviderLabel} · your key, your tokens</p>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            {hasConversation && !finished && !finalizing && (
+          <div className="flex items-center gap-1.5">
+            {!pasteMode && !linkMode && !finished && !finalizing && (
+              <>
+                <button onClick={() => setPasteMode(true)}
+                  className="px-2.5 py-1.5 border border-violet-200 bg-violet-50 text-violet-700 hover:bg-violet-100 text-[10px] font-semibold rounded-lg transition-colors">
+                  📋 Paste
+                </button>
+                <button onClick={() => setLinkMode(true)}
+                  className="px-2.5 py-1.5 border border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 text-[10px] font-semibold rounded-lg transition-colors">
+                  🔗 Link
+                </button>
+              </>
+            )}
+            {hasConversation && !finished && !finalizing && !pasteMode && !linkMode && (
               <button
                 onClick={finishChat}
                 disabled={loading}
                 className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-100 disabled:text-slate-300 text-white text-[11px] font-semibold rounded-lg transition-colors"
               >
-                ✓ Finish & Generate Plan
+                ✓ Finish & Generate
               </button>
             )}
             <button onClick={handleClose} disabled={finalizing}
@@ -125,21 +147,73 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
           </div>
         </div>
 
-        {/* Messages */}
+        {/* Import modes OR regular chat */}
+        {(pasteMode || linkMode) ? (
+          <ImportView
+            mode={pasteMode ? "paste" : "link"}
+            pasteText={pasteText} setPasteText={setPasteText}
+            linkUrl={linkUrl} setLinkUrl={setLinkUrl}
+            linkLoading={linkLoading}
+            importResult={importResult} importError={importError}
+            onBack={() => { setPasteMode(false); setLinkMode(false); setImportResult(null); setImportError(null); }}
+            onParse={() => {
+              const parsed = parseImportedText(pasteText);
+              if ("error" in parsed) { setImportError(parsed.error); setImportResult(null); }
+              else { setImportResult(parsed); setImportError(null); }
+            }}
+            onFetchLink={async () => {
+              setLinkLoading(true); setImportError(null);
+              const fetched = await fetchChatLink(linkUrl);
+              setLinkLoading(false);
+              if ("error" in fetched) { setImportError(fetched.error); return; }
+              const parsed = parseImportedText(fetched.text);
+              if ("error" in parsed) { setImportError(parsed.error); return; }
+              setImportResult(parsed);
+            }}
+            onAccept={() => {
+              if (importResult) {
+                const llmResult = importResultToLLM(importResult, homeCountry);
+                onPlanReady(llmResult);
+                handleClose();
+              }
+            }}
+            onSwitchToPaste={() => { setLinkMode(false); setPasteMode(true); setImportError(null); }}
+          />
+        ) : (
         <div ref={scrollRef} className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
-          {!hasApiKey && (
+          {!hasApiKey && messages.length === 0 && (
             <div className="flex items-center justify-center h-full">
-              <div className="text-center space-y-4 max-w-sm">
-                <span className="text-4xl">🔑</span>
-                <p className="text-sm text-slate-600 font-medium">API key required</p>
-                <p className="text-[11px] text-slate-400 leading-relaxed">
-                  Add your OpenAI API key in Settings to start using the AI trip planner. Your key stays local and is never shared.
-                </p>
-                <button
-                  onClick={() => { onClose(); onOpenSettings(); }}
-                  className="px-5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition-colors"
-                >
-                  Open Settings →
+              <div className="max-w-md space-y-4">
+                <p className="text-sm font-bold text-slate-700 text-center">Choose how to plan your trip</p>
+                <button onClick={() => { onClose(); onOpenSettings(); }}
+                  className="w-full border border-slate-200 rounded-xl p-4 hover:border-blue-300 hover:bg-blue-50/30 transition-colors text-left">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl">🔑</span>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-700">Setup API key</p>
+                      <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">Add your OpenAI / Claude / Gemini key. Your key stays local. Be mindful of token costs.</p>
+                    </div>
+                  </div>
+                </button>
+                <button onClick={() => setPasteMode(true)}
+                  className="w-full border border-slate-200 rounded-xl p-4 hover:border-violet-300 hover:bg-violet-50/30 transition-colors text-left">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl">📋</span>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-700">Paste AI conversation</p>
+                      <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">Paste the full conversation from ChatGPT, Claude, or Gemini. Free, no key needed.</p>
+                    </div>
+                  </div>
+                </button>
+                <button onClick={() => setLinkMode(true)}
+                  className="w-full border border-slate-200 rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50/30 transition-colors text-left">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl">🔗</span>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-700">Paste chat link</p>
+                      <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">Share a ChatGPT or Claude conversation link and we'll parse it automatically.</p>
+                    </div>
+                  </div>
                 </button>
               </div>
             </div>
@@ -216,9 +290,10 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
             </div>
           )}
         </div>
+        )}
 
-        {/* Input */}
-        {!finished && !finalizing && hasApiKey && (
+        {/* Input — only in regular chat mode */}
+        {!pasteMode && !linkMode && !finished && !finalizing && hasApiKey && (
           <div className="px-5 py-3.5 border-t border-slate-200 shrink-0">
             <div className="flex gap-2.5 items-end">
               <textarea
@@ -389,5 +464,131 @@ function TokenBadge({ tokens }: { tokens: number }) {
     <span className={`text-[10px] font-medium ${color}`}>
       ~{formatTokens(tokens)} tokens
     </span>
+  );
+}
+
+function PromptSuggestions({ suggestions }: { suggestions: string[] }) {
+  const [copied, setCopied] = useState(false);
+  function copyAll() {
+    const text = suggestions
+      .map((s) => s.replace(/^Ask:\s*/i, "").replace(/^['"]|['"]$/g, ""))
+      .join("\n");
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  }
+  return (
+    <div className="bg-blue-50 border border-blue-200 rounded-xl p-3">
+      <div className="flex items-center justify-between mb-2">
+        <p className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">Improve Your Prompt</p>
+        <button onClick={copyAll}
+          className={`text-[10px] font-semibold px-2.5 py-1 rounded-md transition-all ${
+            copied ? "bg-emerald-100 text-emerald-700" : "bg-blue-100 text-blue-600 hover:bg-blue-200"
+          }`}>
+          {copied ? "✓ Copied" : "📋 Copy All"}
+        </button>
+      </div>
+      {suggestions.map((s, i) => (
+        <p key={i} className="text-[11px] text-blue-700 mb-1 last:mb-0">💡 {s}</p>
+      ))}
+    </div>
+  );
+}
+
+function ImportView({ mode, pasteText, setPasteText, linkUrl, setLinkUrl, linkLoading, importResult, importError, onBack, onParse, onFetchLink, onAccept, onSwitchToPaste }: {
+  mode: "paste" | "link";
+  pasteText: string; setPasteText: (t: string) => void;
+  linkUrl: string; setLinkUrl: (u: string) => void;
+  linkLoading: boolean;
+  importResult: ImportResult | null; importError: string | null;
+  onBack: () => void; onParse: () => void; onFetchLink: () => void; onAccept: () => void; onSwitchToPaste: () => void;
+}) {
+  return (
+    <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3">
+        {!importResult ? (
+          <>
+            <div className="flex items-center gap-2">
+              <button onClick={onBack} className="text-xs text-slate-400 hover:text-slate-600">← Back</button>
+              <p className="text-sm font-bold text-slate-700">
+                {mode === "paste" ? "Paste your AI conversation" : "Paste a chat share link"}
+              </p>
+            </div>
+            <p className="text-[11px] text-slate-400 leading-relaxed">
+              {mode === "paste"
+                ? "Copy the full chat from ChatGPT, Claude, or Gemini and paste it below."
+                : "Paste a ChatGPT or Claude share link below. We'll fetch and parse it."}
+            </p>
+            {mode === "paste" ? (
+              <textarea value={pasteText} onChange={(e) => setPasteText(e.target.value)}
+                placeholder={"Paste conversation here...\n\nExample:\nDay 1 — Oslo: Vigeland Park, Opera House\nDay 2 — Bergen: Bryggen Wharf, Fløyen\n..."}
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-violet-400 resize-none"
+                style={{ minHeight: 200 }} />
+            ) : (
+              <input type="url" value={linkUrl} onChange={(e) => setLinkUrl(e.target.value)}
+                placeholder="https://chatgpt.com/share/..."
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-amber-400" />
+            )}
+            {linkLoading && <p className="text-xs text-slate-500 flex items-center gap-2"><span className="animate-spin">⏳</span>Fetching conversation...</p>}
+            {importError && (
+              <div className="text-xs text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2 space-y-1">
+                <p>{importError}</p>
+                {mode === "link" && (
+                  <button onClick={onSwitchToPaste} className="text-[11px] text-violet-600 hover:text-violet-700 font-semibold">
+                    → Paste conversation text manually instead
+                  </button>
+                )}
+              </div>
+            )}
+          </>
+        ) : (
+          <>
+            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+              <p className="text-sm font-bold text-emerald-800">{importResult.destinationName}</p>
+              <div className="flex items-center gap-3 mt-1">
+                <span className="text-xs text-emerald-600">📅 {importResult.plan.duration}</span>
+                <span className="text-xs text-emerald-600">💰 {importResult.plan.costPerPerson}</span>
+                <span className="text-xs text-emerald-600">🏙 {importResult.cities.length} cities</span>
+              </div>
+              {importResult.cities.length > 0 && (
+                <p className="text-[11px] text-emerald-600 mt-1">{importResult.cities.join(" → ")}</p>
+              )}
+            </div>
+            {importResult.promptSuggestions.length > 0 && (
+              <PromptSuggestions suggestions={importResult.promptSuggestions} />
+            )}
+            {importResult.plan.days.map((day, i) => (
+              <div key={i} className="border border-slate-150 rounded-lg overflow-hidden">
+                <div className="px-3 py-1.5 bg-slate-50 border-b border-slate-100">
+                  <p className="text-[10px] font-bold text-slate-500 uppercase">{day.label}</p>
+                </div>
+                <ul className="px-3 py-2 space-y-1">
+                  {day.activities.map((a, j) => (
+                    <li key={j} className="text-xs text-slate-600 flex gap-2"><span className="text-slate-300">›</span>{a}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </>
+        )}
+      </div>
+      <div className="px-5 py-4 border-t border-slate-100 shrink-0">
+        {!importResult ? (
+          <button
+            onClick={mode === "paste" ? onParse : onFetchLink}
+            disabled={mode === "paste" ? !pasteText.trim() : !linkUrl.trim() || linkLoading}
+            className={`w-full py-2.5 text-white text-sm font-semibold rounded-xl transition-colors disabled:bg-slate-200 disabled:text-slate-400 ${
+              mode === "paste" ? "bg-violet-600 hover:bg-violet-500" : "bg-amber-600 hover:bg-amber-500"
+            }`}>
+            {mode === "link" && linkLoading ? "Fetching..." : mode === "paste" ? "Parse Conversation" : "Fetch & Parse"}
+          </button>
+        ) : (
+          <div className="flex gap-2">
+            <button onClick={onBack} className="flex-1 py-2.5 border border-slate-200 text-slate-600 text-sm font-semibold rounded-xl hover:bg-slate-50">← Edit</button>
+            <button onClick={onAccept} className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-xl transition-colors">✓ Accept Plan</button>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
