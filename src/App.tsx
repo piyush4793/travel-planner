@@ -21,7 +21,6 @@ import { useHashView, type AppView } from "./hooks/useHashView";
 import { useCountryStore } from "./hooks/useCountryStore";
 import { useTripStore } from "./hooks/useTripStore";
 import { useAiPlanStore } from "./hooks/useAiPlanStore";
-import { formatPlanLabel } from "./utils/planDiff";
 import { isEnabled } from "./utils/featureFlags";
 
 const VIEW_LABELS: Record<AppView, string> = {
@@ -113,25 +112,14 @@ export default function App() {
     setChatOpen(true);
   }, [store.myListCountries]);
 
-  const handleViewAiPlan = useCallback((planId: string) => {
-    if (!selectedCountry) return;
-    const plans = aiPlanStore.getPlans(selectedCountry.name);
-    const plan = plans.find((p) => p.id === planId);
-    if (plan) setAiPlanResult(plan.result);
-  }, [selectedCountry, aiPlanStore]);
-
   const handleDeleteAiPlan = useCallback((planId: string) => {
     if (!selectedCountry) return;
     aiPlanStore.deletePlan(selectedCountry.name, planId);
   }, [selectedCountry, aiPlanStore]);
 
-  const selectedCountryPlans = useMemo(() => {
+  const selectedCountryAiPlans = useMemo(() => {
     if (!selectedCountry) return [];
-    return aiPlanStore.getPlans(selectedCountry.name).map((sp) => ({
-      id: sp.id,
-      savedAt: sp.savedAt,
-      label: formatPlanLabel(sp.result, sp.savedAt),
-    }));
+    return aiPlanStore.getPlans(selectedCountry.name);
   }, [selectedCountry, aiPlanStore]);
 
   const handleSaveAiToList = useCallback((destinationName: string): "saved" | "exists" => {
@@ -257,8 +245,7 @@ export default function App() {
           mainMapRef={mainMapRef}
           allCountries={store.myListCountries}
           onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
-          savedAiPlans={isEnabled("llmPlanning") ? selectedCountryPlans : undefined}
-          onViewAiPlan={isEnabled("llmPlanning") ? handleViewAiPlan : undefined}
+          aiPlans={isEnabled("llmPlanning") ? selectedCountryAiPlans : undefined}
           onDeleteAiPlan={isEnabled("llmPlanning") ? handleDeleteAiPlan : undefined}
           onCinematicChange={setCinematicActive}
         />
@@ -282,13 +269,17 @@ export default function App() {
         onOpenSettings={() => setSettingsOpen(true)}
         initialPrompt={chatInitialPrompt}
         autoSend={chatAutoSend}
-        onSaveImportedPlan={(result) => aiPlanStore.savePlan(result)}
+        onSaveImportedPlan={(result) => { setAiPlanResult(result); setChatOpen(false); }}
       />
       {aiPlanResult && (
         <AiItineraryModal
           result={aiPlanResult}
           onClose={() => setAiPlanResult(null)}
-          onSaveToList={handleSaveAiToList}
+          onSaveToList={
+            store.myList.set.has(aiPlanResult.destinationName) ||
+            store.myListNames.some((n) => n.toLowerCase() === aiPlanResult.destinationName.toLowerCase())
+              ? undefined : handleSaveAiToList
+          }
           existingPlans={aiPlanStore.getPlans(aiPlanResult.destinationName)}
           canAddNew={aiPlanStore.canAddNew(aiPlanResult.destinationName)}
           maxPlans={aiPlanStore.maxPlans}

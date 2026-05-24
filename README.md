@@ -46,7 +46,9 @@ Slides in from the right with a compact, decluttered layout:
 - **Collapsible sections** — Experiences, Cities, Stopover tips, Watch out for, Combine with, Links, Notes collapse by default with item counts
 - **"When to go"** — best + avoid months merged in one row
 - **Trip planner** — days slider with smart city selection + Generate/AI buttons
-- **Saved AI plans** — view/delete previously saved AI itineraries
+- **Multi-plan selector** — dropdown to switch between Default and saved AI plans, with full day-wise itinerary for each
+- **Plan comparison** — side-by-side modal comparing any two plans (default or AI) with duration, cost, cities, and day-by-day diff
+- **Cinematic for any plan** — saved AI plans can also run cinematic mode; button disabled per-plan when city coordinates don't match
 
 ---
 
@@ -87,7 +89,7 @@ Bring-your-own-key integration with OpenAI and Claude. Chat with an AI assistant
 - **Cost breakdowns** — per-day cost estimates for flights, hotels, excursions, and transfers
 - **Booking suggestions** — Klook/Viator-style tour recommendations with price, duration, and ratings
 - **Save to My List** — save AI-generated destinations to your list with instant feedback (saved / already exists)
-- **Save AI plans** — persist up to 4 AI-generated itineraries per destination in localStorage with compare-and-replace flow
+- **Save AI plans** — persist up to 3 AI-generated itineraries per destination in localStorage with compare-and-replace flow
 - **Plan comparison** — when saving, view existing plans side-by-side with diff summary (duration, budget, cities, cost) and choose to add or replace
 - **Token usage tracking** — running token counter in chat footer (color-coded: green <4K, amber 4K-12K, red >12K), session total shown on plan completion
 - **Quota-aware error handling** — provider-specific error messages for rate limits, billing exhaustion, and free tier caps with links to billing pages
@@ -178,7 +180,7 @@ src/
 │   ├── useHashView.ts           # Hash-based routing (no router library)
 │   ├── usePanelDrag.ts          # Resizable panel drag behavior
 │   ├── useChatSession.ts        # AI chat state, send/finish/clear
-│   └── useAiPlanStore.ts        # AI plan persistence (save/replace/compare, max 4 per dest)
+│   └── useAiPlanStore.ts        # AI plan persistence (save/replace/compare, max 3 per dest)
 ├── components/
 │   ├── views/                   # Top-level view components
 │   │   ├── TripsView.tsx        # Trip cards + inline editor (home view)
@@ -186,10 +188,11 @@ src/
 │   │   ├── DiscoverView.tsx     # 197-country catalog browser
 │   │   └── MapView.tsx          # MapLibre map (hidden, used for Cinematic)
 │   ├── country/                 # Country-specific components
-│   │   ├── CountryPanel.tsx     # Right-side detail + itinerary planner
+│   │   ├── CountryPanel.tsx     # Right-side detail + multi-plan selector + itinerary planner
 │   │   ├── CountryForm.tsx      # Add/edit modal form
 │   │   ├── ItineraryCinematic.tsx # Full-screen animated journey
-│   │   └── ItineraryModal.tsx   # Scrollable itinerary modal
+│   │   ├── ItineraryModal.tsx   # Scrollable itinerary modal
+│   │   └── PlanCompareModal.tsx # Side-by-side plan comparison modal
 │   ├── ai/                      # AI/LLM integration
 │   │   ├── ChatModal.tsx        # Central chat modal for AI trip planning
 │   │   ├── AiItineraryModal.tsx # AI-generated itinerary display
@@ -333,7 +336,6 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 | 🔴 P0 | More rule-based countries | Content | Thailand, Japan, New Zealand, Iceland — per-day itineraries with costs |
 | 🔴 P0 | Enriched AI response schema | AI | lat/lng per city, transport type per leg — enables cinematic for AI plans |
 | 🟠 P1 | Day-level detail expansion | UX | Tap a day row for full tips, map coords, booking links |
-| 🟠 P1 | Cinematic mode for AI plans | AI | Reuse ItineraryCinematic with AI-provided coordinates |
 | 🟠 P1 | Budget currency toggle | UX | Convert ₹ to USD / EUR / AUD |
 | 🟠 P1 | Pre-finalization cost estimate | AI | Warn user about token cost before generating plan |
 | 🟡 P2 | Multi-country trip builder | Core | String countries into a single trip with total cost/days |
