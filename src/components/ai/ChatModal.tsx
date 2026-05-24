@@ -13,6 +13,7 @@ type Props = {
   onOpenSettings: () => void;
   initialPrompt?: string;
   autoSend?: boolean;
+  onSaveImportedPlan?: (result: LLMTripPlanResult) => void;
 };
 
 const PLACEHOLDER = `Describe your trip — for example:
@@ -26,7 +27,7 @@ Include any of these for better results:
 • Mandatory cities to cover
 • Any preferences or things to avoid`;
 
-export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onOpenSettings, initialPrompt, autoSend = true }: Props) {
+export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onOpenSettings, initialPrompt, autoSend = true, onSaveImportedPlan }: Props) {
   const { messages, loading, error, finalizing, finalResult, finished, sendMessage, finishChat, clearChat, clearError, activeProviderLabel, usageWarning, tokenUsage } = useChatSession(homeCountry);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -39,6 +40,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
   const [pasteText, setPasteText] = useState("");
   const [importResult, setImportResult] = useState<ImportResult | null>(null);
   const [importError, setImportError] = useState<string | null>(null);
+  const [importSaved, setImportSaved] = useState(false);
 
   const keys = getLLMKeys();
   const activeProvider = getActiveProvider();
@@ -95,7 +97,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
     clearChat();
     autoSentRef.current = null;
     setPasteMode(false); setLinkMode(false); setLinkUrl(""); setLinkLoading(false);
-    setPasteText(""); setImportResult(null); setImportError(null);
+    setPasteText(""); setImportResult(null); setImportError(null); setImportSaved(false);
     onClose();
   }
 
@@ -155,6 +157,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
             linkUrl={linkUrl} setLinkUrl={setLinkUrl}
             linkLoading={linkLoading}
             importResult={importResult} importError={importError}
+            saved={importSaved}
             onBack={() => { setPasteMode(false); setLinkMode(false); setImportResult(null); setImportError(null); }}
             onParse={() => {
               const parsed = parseImportedText(pasteText);
@@ -171,10 +174,10 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
               setImportResult(parsed);
             }}
             onAccept={() => {
-              if (importResult) {
+              if (importResult && onSaveImportedPlan) {
                 const llmResult = importResultToLLM(importResult, homeCountry);
-                onPlanReady(llmResult);
-                handleClose();
+                onSaveImportedPlan(llmResult);
+                setImportSaved(true);
               }
             }}
             onSwitchToPaste={() => { setLinkMode(false); setPasteMode(true); setImportError(null); }}
@@ -495,12 +498,12 @@ function PromptSuggestions({ suggestions }: { suggestions: string[] }) {
   );
 }
 
-function ImportView({ mode, pasteText, setPasteText, linkUrl, setLinkUrl, linkLoading, importResult, importError, onBack, onParse, onFetchLink, onAccept, onSwitchToPaste }: {
+function ImportView({ mode, pasteText, setPasteText, linkUrl, setLinkUrl, linkLoading, importResult, importError, saved, onBack, onParse, onFetchLink, onAccept, onSwitchToPaste }: {
   mode: "paste" | "link";
   pasteText: string; setPasteText: (t: string) => void;
   linkUrl: string; setLinkUrl: (u: string) => void;
   linkLoading: boolean;
-  importResult: ImportResult | null; importError: string | null;
+  importResult: ImportResult | null; importError: string | null; saved: boolean;
   onBack: () => void; onParse: () => void; onFetchLink: () => void; onAccept: () => void; onSwitchToPaste: () => void;
 }) {
   return (
@@ -582,10 +585,15 @@ function ImportView({ mode, pasteText, setPasteText, linkUrl, setLinkUrl, linkLo
             }`}>
             {mode === "link" && linkLoading ? "Fetching..." : mode === "paste" ? "Parse Conversation" : "Fetch & Parse"}
           </button>
+        ) : saved ? (
+          <div className="flex items-center gap-3">
+            <span className="text-emerald-600 text-sm font-semibold flex items-center gap-1.5">✅ Plan saved!</span>
+            <button onClick={onBack} className="flex-1 py-2.5 border border-slate-200 text-slate-600 text-sm font-semibold rounded-xl hover:bg-slate-50">Import Another</button>
+          </div>
         ) : (
           <div className="flex gap-2">
             <button onClick={onBack} className="flex-1 py-2.5 border border-slate-200 text-slate-600 text-sm font-semibold rounded-xl hover:bg-slate-50">← Edit</button>
-            <button onClick={onAccept} className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-xl transition-colors">✓ Accept Plan</button>
+            <button onClick={onAccept} className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-xl transition-colors">💾 Save Plan</button>
           </div>
         )}
       </div>

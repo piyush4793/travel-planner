@@ -282,6 +282,7 @@ export default function App() {
         onOpenSettings={() => setSettingsOpen(true)}
         initialPrompt={chatInitialPrompt}
         autoSend={chatAutoSend}
+        onSaveImportedPlan={(result) => aiPlanStore.savePlan(result)}
       />
       {aiPlanResult && (
         <AiItineraryModal
