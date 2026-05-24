@@ -203,10 +203,11 @@ src/
 │       ├── FilterChip.tsx       # Portal-based dropdown chip
 │       ├── ExperienceDropdown.tsx # Experience tag multi-select
 │       ├── HomeCountrySelector.tsx # Home country dropdown
+│       ├── DevFlagPanel.tsx     # Dev-only (localhost) feature flag tree panel
 │       └── Tooltip.tsx          # Portal-based info tooltip
 ├── data/
 │   ├── itineraryRules.ts        # Per-country/city/day rule data
-│   └── tripGroups.ts            # Trip group definitions + merge logic
+│   └── tripGroups.ts            # Trip group seeds (addOns derived from combo at runtime)
 ├── utils/
 │   ├── ai/                      # LLM integration utilities
 │   │   ├── llmProvider.ts       # Provider abstraction (OpenAI, extensible)
@@ -220,6 +221,7 @@ src/
 │   ├── planDiff.ts              # Plan summary + diff labels
 │   ├── wikiImages.ts            # Wikipedia image fetch + cache
 │   ├── months.ts                # Month constants
+│   ├── lsKeys.ts                # Centralized localStorage key constants (DRY)
 │   ├── featureFlags.ts          # Two-tier feature gate (free + paid)
 │   └── storage.ts               # localStorage read/write helpers
 ├── App.tsx                      # Root layout + view orchestration

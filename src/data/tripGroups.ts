@@ -1,7 +1,9 @@
 /**
  * Curated trip groups — every seed country assigned to exactly one trip.
- * Max 3 countries per trip. First country is the "main" destination.
- * Inspired by the "stack countries" concept for optimal travel combinations.
+ * addOns are derived at runtime from the country's `combo` field in
+ * countries.json (single source of truth). Seed only defines main + region.
+ *
+ * User-edited groups (tp_trip_customs) store full TripGroupDef with addOns.
  */
 
 export type Region = "Asia" | "Europe" | "Middle East" | "Africa" | "Americas" | "Oceania";
@@ -12,29 +14,50 @@ export type TripGroupDef = {
   region: Region;
 };
 
-export const TRIP_GROUPS: TripGroupDef[] = [
-  { main: "Vietnam", addOns: ["Cambodia", "Laos"], region: "Asia" },
-  { main: "Thailand", addOns: ["Malaysia", "Singapore"], region: "Asia" },
-  { main: "Japan", addOns: ["South Korea"], region: "Asia" },
-  { main: "China", addOns: [], region: "Asia" },
-  { main: "Indonesia", addOns: ["Philippines"], region: "Asia" },
-  { main: "Nepal", addOns: ["Bhutan"], region: "Asia" },
-  { main: "Maldives", addOns: [], region: "Asia" },
-  { main: "Iceland", addOns: ["Greenland"], region: "Europe" },
-  { main: "Norway", addOns: ["Denmark", "Scotland"], region: "Europe" },
-  { main: "UK", addOns: ["Netherlands"], region: "Europe" },
-  { main: "France", addOns: ["Spain"], region: "Europe" },
-  { main: "Italy", addOns: ["Greece"], region: "Europe" },
-  { main: "Germany", addOns: ["Austria", "Switzerland"], region: "Europe" },
-  { main: "Czech Republic", addOns: ["Poland", "Hungary"], region: "Europe" },
-  { main: "Romania", addOns: [], region: "Europe" },
-  { main: "Turkey", addOns: ["Egypt", "Dubai"], region: "Middle East" },
-  { main: "Georgia", addOns: ["Russia", "Belarus"], region: "Europe" },
-  { main: "South Africa", addOns: [], region: "Africa" },
-  { main: "Argentina", addOns: ["Antarctica"], region: "Americas" },
-  { main: "Australia", addOns: ["New Zealand"], region: "Oceania" },
-  { main: "Hawaii", addOns: [], region: "Oceania" },
+type TripGroupSeed = { main: string; region: Region };
+
+const TRIP_GROUP_SEEDS: TripGroupSeed[] = [
+  // Southeast Asia
+  { main: "Vietnam", region: "Asia" },
+  { main: "Thailand", region: "Asia" },
+  { main: "Cambodia", region: "Asia" },
+  // East Asia
+  { main: "Japan", region: "Asia" },
+  { main: "China", region: "Asia" },
+  // South & Southeast Islands
+  { main: "Indonesia", region: "Asia" },
+  { main: "Nepal", region: "Asia" },
+  { main: "Maldives", region: "Asia" },
+  // Scandinavia
+  { main: "Norway", region: "Europe" },
+  { main: "Iceland", region: "Europe" },
+  // Western Europe
+  { main: "UK", region: "Europe" },
+  { main: "France", region: "Europe" },
+  { main: "Italy", region: "Europe" },
+  { main: "Germany", region: "Europe" },
+  // Central/Eastern Europe
+  { main: "Czech Republic", region: "Europe" },
+  { main: "Romania", region: "Europe" },
+  // Middle East & Caucasus
+  { main: "Turkey", region: "Middle East" },
+  { main: "Egypt", region: "Middle East" },
+  // Africa
+  { main: "South Africa", region: "Africa" },
+  // Americas
+  { main: "Argentina", region: "Americas" },
+  // Oceania
+  { main: "Australia", region: "Oceania" },
+  { main: "Hawaii", region: "Oceania" },
 ];
+
+/** Resolve seed → TripGroupDef by deriving addOns from combo data */
+function resolveSeed(seed: TripGroupSeed, comboMap: Map<string, string[]>, myListNames: Set<string>): TripGroupDef {
+  const combo = comboMap.get(seed.main) ?? [];
+  // Pick first 2 combo countries that are in the user's My List
+  const addOns = combo.filter((c) => myListNames.has(c)).slice(0, 2);
+  return { main: seed.main, addOns, region: seed.region };
+}
 
 export const ALL_REGIONS: Region[] = ["Asia", "Europe", "Middle East", "Africa", "Americas", "Oceania"];
 
@@ -43,15 +66,17 @@ export function buildMergedTripGroups(
   customs: TripGroupDef[],
   deleted: string[],
   allCountryNames: string[],
+  comboMap: Map<string, string[]>,
 ): TripGroupDef[] {
   const deletedSet = new Set(deleted);
   const customByMain = new Map(customs.map((g) => [g.main, g]));
   const nameSet = new Set(allCountryNames);
 
   const merged: TripGroupDef[] = [];
-  for (const seed of TRIP_GROUPS) {
+  for (const seed of TRIP_GROUP_SEEDS) {
     if (deletedSet.has(seed.main)) continue;
-    const group = customByMain.get(seed.main) ?? seed;
+    // User override takes priority; otherwise derive from combo
+    const group = customByMain.get(seed.main) ?? resolveSeed(seed, comboMap, nameSet);
     customByMain.delete(seed.main);
     merged.push(sanitizeGroup(group, nameSet));
   }
