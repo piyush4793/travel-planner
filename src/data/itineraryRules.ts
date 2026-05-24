@@ -25,7 +25,6 @@ export type CountryRule = {
   apps?: string[];
   cityOrder: string[];
   cities: Record<string, CityRule>;
-  styleDefaults: Record<string, string[]>;
   connections: { from: string; to: string; method: string; cost?: string }[];
   extras?: string[];
   cityImages?: Record<string, string[]>;
@@ -36,12 +35,6 @@ export const ITINERARY_RULES: Record<string, CountryRule> = {
     sim: "Viettel",
     apps: ["Grab (cabs)", "Klook (tickets)", "Happy Cow (veg food)", "12go.asia (trains)"],
     cityOrder: ["Ho Chi Minh City", "Da Nang", "Hoi An", "Hanoi", "Ninh Binh", "Ha Long Bay", "Sapa"],
-    styleDefaults: {
-      "touch-and-go": ["Ho Chi Minh City", "Da Nang"],
-      "explorer":     ["Ho Chi Minh City", "Da Nang", "Hanoi", "Ninh Binh", "Ha Long Bay"],
-      "month-long":   ["Ho Chi Minh City", "Da Nang", "Hoi An", "Hanoi", "Ninh Binh", "Ha Long Bay", "Sapa"],
-      "custom":       ["Ho Chi Minh City", "Da Nang", "Hanoi"],
-    },
     cities: {
       "Ho Chi Minh City": {
         name: "Ho Chi Minh City",
@@ -316,12 +309,6 @@ export const ITINERARY_RULES: Record<string, CountryRule> = {
     sim: "Telenor or Telia — buy at Oslo Airport (Gardermoen)",
     apps: ["Entur (book all buses & trains)", "Yr (Norway weather — far more accurate than Google)", "Vy (train tickets)", "FRAM (Møre og Romsdal buses)", "Aurora Alerts + Hello Aurora (KP index for Northern Lights)"],
     cityOrder: ["Oslo", "Flam", "Gudvangen", "Bergen", "Loen", "Trollstigen", "Geirangerfjord", "Alesund", "Lofoten", "Tromso"],
-    styleDefaults: {
-      "touch-and-go": ["Oslo", "Flam", "Bergen", "Tromso"],
-      "explorer":     ["Oslo", "Flam", "Gudvangen", "Bergen", "Alesund", "Geirangerfjord", "Tromso"],
-      "month-long":   ["Oslo", "Flam", "Gudvangen", "Bergen", "Loen", "Trollstigen", "Geirangerfjord", "Alesund", "Lofoten", "Tromso"],
-      "custom":       ["Oslo", "Flam", "Bergen", "Loen", "Alesund", "Tromso"],
-    },
     cities: {
       "Oslo": {
         name: "Oslo",
@@ -642,7 +629,7 @@ export const ITINERARY_RULES: Record<string, CountryRule> = {
         minDays: 1,
         recDays: 1,
         maxDays: 2,
-        note: "Best May–Sept. All approach roads (Eagle Road, Trollstigen, Rv63) close Oct–May. Recommended as an overnight from Alesund for month-long trips. Cruise season peaks June–Aug; kayak season May–Sept.",
+        note: "Best May–Sept. All approach roads (Eagle Road, Trollstigen, Rv63) close Oct–May. Recommended as an overnight from Alesund for longer trips. Cruise season peaks June–Aug; kayak season May–Sept.",
         days: [
           {
             theme: "UNESCO Fjord Cruise & Viewpoints",

@@ -1,4 +1,4 @@
-import type { TravelStyle, PlanStyle } from "../types";
+import type { TravelStyle } from "../types";
 
 export type StyleMeta = {
   icon: string;
@@ -23,26 +23,13 @@ export const STYLE_META: Record<TravelStyle, StyleMeta> = {
     badge:      "bg-indigo-100 text-indigo-700",
     activeForm: "border-indigo-400 bg-indigo-50 text-indigo-700",
   },
-  "month-long": {
+  "immersive": {
     icon: "🌿",
-    label: "Month Long",
-    description: "Long-duration travellers who love slow travel — living like a local and going deep into the culture.",
+    label: "Immersive",
+    description: "Deep travel — stay longer, live like a local, and fully absorb the culture, landscapes, and hidden corners.",
     badge:      "bg-emerald-100 text-emerald-700",
     activeForm: "border-emerald-400 bg-emerald-50 text-emerald-700",
   },
 };
 
-export const TRAVEL_STYLES: TravelStyle[] = ["touch-and-go", "explorer", "month-long"];
-
-export const PLAN_STYLE_META: Record<PlanStyle, StyleMeta> = {
-  ...STYLE_META,
-  "custom": {
-    icon: "✏️",
-    label: "Custom",
-    description: "Set your own number of days and we'll build a city-by-city itinerary around your timeline.",
-    badge:      "bg-violet-100 text-violet-700",
-    activeForm: "border-violet-400 bg-violet-50 text-violet-700",
-  },
-};
-
-export const PLAN_STYLES: PlanStyle[] = ["touch-and-go", "explorer", "month-long", "custom"];
+export const TRAVEL_STYLES: TravelStyle[] = ["touch-and-go", "explorer", "immersive"];
