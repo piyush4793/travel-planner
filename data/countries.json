@@ -32,8 +32,7 @@
     ],
     "landmark": "Mount Fuji",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "explorer"
     ],
     "cities": [
       {
@@ -107,8 +106,7 @@
     ],
     "landmark": "Gyeongbokgung Palace",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "cities": [
       {
@@ -177,8 +175,7 @@
     ],
     "landmark": "Great Wall of China",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "immersive"
     ],
     "cities": [
       {
@@ -252,8 +249,7 @@
     ],
     "landmark": "Santorini",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "cities": [
       {
@@ -394,8 +390,7 @@
     ],
     "landmark": "Wat Phra Kaew",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "explorer"
     ],
     "cities": [
       {
@@ -472,8 +467,7 @@
     ],
     "landmark": "Petronas Twin Towers",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "explorer"
     ],
     "stopoverNote": "Kuala Lumpur (KLIA) is an AirAsia hub — excellent for cheap SE Asia connections.",
     "cities": [
@@ -547,8 +541,7 @@
     ],
     "landmark": "Marina Bay Sands",
     "travelStyle": [
-      "touch-and-go",
-      "explorer"
+      "touch-and-go"
     ],
     "stopoverNote": "Changi Airport — consistently world #1. Singapore Airlines Suites Class available. 96-hour free stopover visa. Perfect hub for India ↔ Australia/NZ/Japan routes.",
     "cities": [
@@ -615,8 +608,7 @@
     ],
     "landmark": "Angkor Wat",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "cities": [
       {
@@ -680,8 +672,7 @@
     ],
     "landmark": "Kuang Si Falls",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "explorer"
     ],
     "cities": [
       {
@@ -741,8 +732,7 @@
     ],
     "landmark": "Ha Long Bay",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "explorer"
     ],
     "cities": [
       {
@@ -841,8 +831,7 @@
     ],
     "landmark": "Mount Everest",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "explorer"
     ],
     "cities": [
       {
@@ -905,8 +894,7 @@
     ],
     "landmark": "Tiger's Nest",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "cities": [
       {
@@ -969,8 +957,7 @@
     ],
     "landmark": "Borobudur",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "immersive"
     ],
     "cities": [
       {
@@ -1047,8 +1034,7 @@
     ],
     "landmark": "Chocolate Hills",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "immersive"
     ],
     "cities": [
       {
@@ -1124,7 +1110,6 @@
     ],
     "landmark": "Maldives",
     "travelStyle": [
-      "explorer",
       "touch-and-go"
     ],
     "cities": [
@@ -1191,8 +1176,7 @@
     ],
     "landmark": "Pyramids of Giza",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "cities": [
       {
@@ -1269,8 +1253,7 @@
     ],
     "landmark": "Burj Khalifa",
     "travelStyle": [
-      "touch-and-go",
-      "explorer"
+      "touch-and-go"
     ],
     "stopoverNote": "Emirates hub (DXB) — free Dubai stopover on connecting Emirates flights. 4-hour direct flights from most Indian cities. World-class airport for long layovers.",
     "cities": [
@@ -1333,8 +1316,7 @@
     ],
     "landmark": "Hagia Sophia",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "stopoverNote": "Istanbul (IST) — Turkish Airlines hub with cheapest Europe connections from India. Free Turkish Airlines hotel on long layovers. Excellent for India ↔ Europe stopovers.",
     "cities": [
@@ -1408,8 +1390,7 @@
     ],
     "landmark": "Vardzia",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "cities": [
       {
@@ -1479,8 +1460,7 @@
     ],
     "landmark": "Saint Basil's Cathedral",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "immersive"
     ],
     "cities": [
       {
@@ -1575,7 +1555,6 @@
     ],
     "landmark": "Mir Castle",
     "travelStyle": [
-      "explorer",
       "touch-and-go"
     ],
     "cities": [
@@ -1637,8 +1616,7 @@
     ],
     "landmark": "Wawel Castle",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "cities": [
       {
@@ -1704,8 +1682,7 @@
     ],
     "landmark": "Charles Bridge",
     "travelStyle": [
-      "touch-and-go",
-      "explorer"
+      "touch-and-go"
     ],
     "cities": [
       {
@@ -1763,8 +1740,7 @@
     ],
     "landmark": "Hungarian Parliament Building",
     "travelStyle": [
-      "touch-and-go",
-      "explorer"
+      "touch-and-go"
     ],
     "cities": [
       {
@@ -1825,8 +1801,7 @@
     ],
     "landmark": "Bran Castle",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "cities": [
       {
@@ -1893,7 +1868,6 @@
     ],
     "landmark": "Hallstatt",
     "travelStyle": [
-      "touch-and-go",
       "explorer"
     ],
     "cities": [
@@ -1960,8 +1934,7 @@
     ],
     "landmark": "Neuschwanstein Castle",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "cities": [
       {
@@ -2034,8 +2007,7 @@
     ],
     "landmark": "Matterhorn",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "cities": [
       {
@@ -2111,8 +2083,7 @@
     ],
     "landmark": "Eiffel Tower",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "explorer"
     ],
     "cities": [
       {
@@ -2185,8 +2156,7 @@
     ],
     "landmark": "Sagrada Familia",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "explorer"
     ],
     "cities": [
       {
@@ -2259,8 +2229,7 @@
     ],
     "landmark": "Keukenhof Gardens",
     "travelStyle": [
-      "touch-and-go",
-      "explorer"
+      "touch-and-go"
     ],
     "cities": [
       {
@@ -2330,8 +2299,7 @@
     ],
     "landmark": "Isle of Skye",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "cities": [
       {
@@ -2399,8 +2367,7 @@
     ],
     "landmark": "Big Ben",
     "travelStyle": [
-      "explorer",
-      "touch-and-go"
+      "explorer"
     ],
     "cities": [
       {
@@ -2473,8 +2440,7 @@
     ],
     "landmark": "Nyhavn",
     "travelStyle": [
-      "touch-and-go",
-      "explorer"
+      "touch-and-go"
     ],
     "cities": [
       {
@@ -2748,8 +2714,7 @@
     ],
     "landmark": "Colosseum",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "explorer"
     ],
     "cities": [
       {
@@ -2827,8 +2792,7 @@
     ],
     "landmark": "Table Mountain",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "explorer"
     ],
     "cities": [
       {
@@ -2902,8 +2866,7 @@
     ],
     "landmark": "Perito Moreno Glacier",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "immersive"
     ],
     "cities": [
       {
@@ -3036,8 +2999,7 @@
     ],
     "landmark": "Sydney Opera House",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "immersive"
     ],
     "cities": [
       {
@@ -3107,7 +3069,7 @@
     ],
     "landmark": "Milford Sound",
     "travelStyle": [
-      "explorer"
+      "immersive"
     ],
     "links": [
       {
@@ -3185,8 +3147,7 @@
     ],
     "landmark": "Waimea Canyon",
     "travelStyle": [
-      "explorer",
-      "month-long"
+      "explorer"
     ],
     "cities": [
       {
