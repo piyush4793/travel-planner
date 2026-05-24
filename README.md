@@ -331,23 +331,28 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 
 ## Future Scope
 
-| Priority | Feature | Category | Description |
-|----------|---------|----------|-------------|
-| 🔴 P0 | More rule-based countries | Content | Thailand, Japan, New Zealand, Iceland — per-day itineraries with costs |
-| 🔴 P0 | Enriched AI response schema | AI | lat/lng per city, transport type per leg — enables cinematic for AI plans |
-| 🟠 P1 | Day-level detail expansion | UX | Tap a day row for full tips, map coords, booking links |
-| 🟠 P1 | Budget currency toggle | UX | Convert ₹ to USD / EUR / AUD |
-| 🟠 P1 | Pre-finalization cost estimate | AI | Warn user about token cost before generating plan |
-| 🟡 P2 | Multi-country trip builder | Core | String countries into a single trip with total cost/days |
-| 🟡 P2 | First run experience | UX | Onboarding walkthrough for new users |
-| 🟡 P2 | Calendar sync | Export | Export itinerary as `.ics` file |
-| 🟡 P2 | Provider cost reference table | AI | Show token pricing per provider in Settings |
-| 🟢 P3 | Visited stats page | Analytics | Continents, total days, spend, heatmap timeline |
-| 🟢 P3 | PWA / offline mode | Infra | Installable, works without internet |
-| 🟢 P3 | Seasonal flight cost hints | Data | Rough fare ranges from public sources |
-| 🟢 P3 | "Learn about country" section | Content | Historical facts, culture, safety tips, visa implications |
-| 🟢 P3 | Voice input for chat | AI | Speak trip requests instead of typing |
-| 🟢 P3 | Drag-and-drop trip reorder | UX | Reorder trip group add-ons |
-| 🔵 P4 | Community itineraries | Social | Import/export rule data for sharing |
-| 🔵 P4 | Real-time pricing | Integration | Flights/hotels API integration |
-| 🔵 P4 | Social layer | Social | Follow friends, see where they've been |
+| Duration | Wow Factor | Feature | Category | Description |
+|----------|-----------|---------|----------|-------------|
+| 🟢 Short | ⭐⭐⭐⭐ | Plan comparison summary | UX | Quick-glance summary at top of compare modal — cost, duration, cities, highlights diff |
+| 🟢 Short | ⭐⭐⭐ | Cinematic for AI plans | AI | Fuzzy city name matching + AI lat/lng fallback so cinematic works for imported plans |
+| 🟢 Short | ⭐⭐ | Token cost estimate | AI | Warn user about estimated cost before "Finish & Generate" |
+| 🟢 Short | ⭐⭐ | Cost tooltip + provider table | AI | Token badge tooltip, provider pricing reference in Settings |
+| 🟢 Short | ⭐⭐ | Budget currency toggle | UX | Convert ₹ to USD / EUR / AUD |
+| 🟢 Short | ⭐ | Day-level detail expansion | UX | Tap a day row for full tips, map coords, booking links |
+| 🟡 Medium | ⭐⭐⭐⭐⭐ | Responsive UI | UX | Mobile, tablet, desktop, TV — full-screen drawers, adaptive grids, touch targets |
+| 🟡 Medium | ⭐⭐⭐⭐ | First run experience | UX | Guided onboarding tour highlighting key features (tooltip-based, one-time) |
+| 🟡 Medium | ⭐⭐⭐⭐ | More rule-based countries | Content | Thailand, Japan, New Zealand, Iceland — per-day itineraries with costs |
+| 🟡 Medium | ⭐⭐⭐ | Import parser quality | AI | Better ChatGPT link extraction, React Router stream data, entity cleanup |
+| 🟡 Medium | ⭐⭐⭐ | Data backup — Spreadsheet sync | Export | Google Sheets / CSV export & import of all user data (My List, notes, AI plans) |
+| 🟡 Medium | ⭐⭐⭐ | Multi-country trip builder | Core | String countries into a single trip with total cost/days |
+| 🟡 Medium | ⭐⭐ | Calendar sync | Export | Export itinerary as `.ics` file |
+| 🟡 Medium | ⭐⭐ | Enriched AI response schema | AI | lat/lng per city, transport type per leg in LLM output |
+| 🔴 Long | ⭐⭐⭐⭐ | Visited stats page | Analytics | Continents, total days, spend, heatmap timeline |
+| 🔴 Long | ⭐⭐⭐⭐ | PWA / offline mode | Infra | Installable, works without internet |
+| 🔴 Long | ⭐⭐⭐ | "Learn about country" section | Content | Historical facts, culture, safety tips, visa implications |
+| 🔴 Long | ⭐⭐⭐ | Community itineraries | Social | Import/export rule data for sharing |
+| 🔴 Long | ⭐⭐ | Seasonal flight cost hints | Data | Rough fare ranges from public sources |
+| 🔴 Long | ⭐⭐ | Voice input for chat | AI | Speak trip requests instead of typing |
+| 🔴 Long | ⭐⭐ | Drag-and-drop trip reorder | UX | Reorder trip group add-ons |
+| 🔴 Long | ⭐ | Real-time pricing | Integration | Flights/hotels API integration |
+| 🔴 Long | ⭐ | Social layer | Social | Follow friends, see where they've been |
