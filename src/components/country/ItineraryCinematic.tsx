@@ -54,13 +54,14 @@ function buildCityStops(plan: TripPlan, country: Country): CityStop[] {
 const HOME_COORDS: Record<string, [number, number]> = {
   "India":          [77.10,   28.56],   // New Delhi (IGI Airport)
   "United States":  [-73.78,  40.64],   // New York (JFK)
+  "USA":            [-73.78,  40.64],   // New York (JFK) — alias
   "United Kingdom": [-0.46,   51.47],   // London (Heathrow)
   "Germany":        [8.57,    50.03],   // Frankfurt Airport
   "France":         [2.55,    49.01],   // Paris (CDG)
   "Australia":      [151.18, -33.94],   // Sydney (Kingsford Smith)
   "Canada":         [-79.63,  43.68],   // Toronto (Pearson)
   "Singapore":      [103.99,   1.36],   // Singapore (Changi)
-  "UAE":            [55.36,   25.25],   // Dubai (DXB)
+  "United Arab Emirates": [55.36, 25.25], // Dubai (DXB)
   "Japan":          [139.78,  35.55],   // Tokyo (Narita)
   "South Korea":    [126.45,  37.46],   // Seoul (Incheon)
   "Netherlands":    [4.76,    52.31],   // Amsterdam (Schiphol)
@@ -74,13 +75,14 @@ const HOME_COORDS: Record<string, [number, number]> = {
 const HOME_CITY: Record<string, string> = {
   "India":          "New Delhi",
   "United States":  "New York",
+  "USA":            "New York",
   "United Kingdom": "London",
   "Germany":        "Frankfurt",
   "France":         "Paris",
   "Australia":      "Sydney",
   "Canada":         "Toronto",
   "Singapore":      "Singapore",
-  "UAE":            "Dubai",
+  "United Arab Emirates": "Dubai",
   "Japan":          "Tokyo",
   "South Korea":    "Seoul",
   "Netherlands":    "Amsterdam",
