@@ -602,7 +602,6 @@
       "Beware of landmines in rural areas away from tourist zones"
     ],
     "combo": [
-      "Vietnam",
       "Laos",
       "Thailand"
     ],
@@ -667,7 +666,6 @@
     ],
     "combo": [
       "Thailand",
-      "Vietnam",
       "Cambodia"
     ],
     "landmark": "Kuang Si Falls",
@@ -727,8 +725,7 @@
     ],
     "combo": [
       "Cambodia",
-      "Thailand",
-      "Laos"
+      "Thailand"
     ],
     "landmark": "Ha Long Bay",
     "travelStyle": [
