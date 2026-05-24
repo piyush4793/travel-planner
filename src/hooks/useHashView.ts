@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-export type AppView = "map" | "calendar" | "list" | "trips" | "discover";
+export type AppView = "trips" | "calendar" | "discover";
 
-const VALID_VIEWS: AppView[] = ["calendar", "list", "trips", "discover"];
+const VALID_VIEWS: AppView[] = ["trips", "calendar", "discover"];
 
 function parseHash(): AppView {
   const h = window.location.hash.slice(1);
-  return VALID_VIEWS.includes(h as AppView) ? (h as AppView) : "map";
+  return VALID_VIEWS.includes(h as AppView) ? (h as AppView) : "trips";
 }
 
 export function useHashView() {

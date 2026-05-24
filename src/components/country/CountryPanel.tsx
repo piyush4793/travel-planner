@@ -30,6 +30,7 @@ type Props = {
   savedAiPlans?: { id: string; savedAt: string; label: string }[];
   onViewAiPlan?: (planId: string) => void;
   onDeleteAiPlan?: (planId: string) => void;
+  onCinematicChange?: (active: boolean) => void;
 };
 
 
@@ -46,6 +47,7 @@ export default function CountryPanel({
   savedAiPlans = [],
   onViewAiPlan,
   onDeleteAiPlan,
+  onCinematicChange,
 }: Props) {
   const { panelWidth, startPanelDrag }    = usePanelDrag(320, 320);
   const [planActive, setPlanActive]       = useState(false);
@@ -66,6 +68,11 @@ export default function CountryPanel({
     setCinematicPlan(null);
     setModalPlan(null);
   }, [country?.name, recDays]);
+
+  // Notify parent when cinematic mode changes
+  useEffect(() => {
+    onCinematicChange?.(cinematicPlan !== null);
+  }, [cinematicPlan, onCinematicChange]);
 
   function toggleCity(name: string) {
     setSelectedCities(prev => prev.includes(name) ? prev.filter(c => c !== name) : [...prev, name]);
