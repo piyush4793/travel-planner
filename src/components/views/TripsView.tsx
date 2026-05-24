@@ -164,7 +164,7 @@ export default function TripsView({
   const completionPct = trips.length > 0 ? Math.round((tripsCompleted / trips.length) * 100) : 0;
 
   // Group filtered trips into sections
-  const bucketList = filtered.filter((t) => t.isFavorited && !t.allVisited);
+  const favoriteTrips = filtered.filter((t) => t.isFavorited && !t.allVisited);
   const planning = filtered.filter((t) => !t.isFavorited && !t.allVisited);
   const completed = filtered.filter((t) => t.allVisited);
 
@@ -339,9 +339,9 @@ export default function TripsView({
           )}
 
           {/* ⭐ Favorites */}
-          {bucketList.length > 0 && (
-            <PaginatedTripSection icon="⭐" label="Favorites" count={bucketList.length} color="text-yellow-600"
-              trips={bucketList} renderCards={renderTripCards} pageSize={layout === "grid" ? 6 : 5} />
+          {favoriteTrips.length > 0 && (
+            <PaginatedTripSection icon="⭐" label="Favorites" count={favoriteTrips.length} color="text-yellow-600"
+              trips={favoriteTrips} renderCards={renderTripCards} pageSize={layout === "grid" ? 6 : 5} />
           )}
 
           {/* 📋 Planning */}
