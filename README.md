@@ -127,15 +127,20 @@ Full-screen animated experience for rule-based countries:
 Default: 16 curated countries. With `searchableHomeCountry` feature flag enabled: searchable dropdown with all 197 countries (max 10 visible, scroll-enabled).
 
 ### Feature Flags
-Stored in `tp_features` localStorage key. Toggle via browser console:
-```js
-localStorage.setItem('tp_features', JSON.stringify({ searchableHomeCountry: true }));
-location.reload();
-```
+Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel in the header to toggle flags live.
 
-| Flag | Default | Description |
-|---|---|---|
-| `searchableHomeCountry` | `false` | Searchable dropdown with all 197 countries for home country selection |
+**Two-tier gating:**
+- `paidFeatures` — master gate for premium features (default: `false`)
+- Individual flags — fine-grained control within each tier
+- A paid feature requires BOTH `paidFeatures=true` AND its own flag enabled
+
+| Flag | Default | Tier | Description |
+|---|---|---|---|
+| `paidFeatures` | `false` | system | Master gate — enables all premium features. Set to `true` after payment. |
+| `llmPlanning` | `true` | paid | AI trip planning (chat, itinerary generation, save plans). Hidden unless `paidFeatures=true`. |
+| `searchableHomeCountry` | `false` | free | Searchable dropdown with all 197 countries for home country selection |
+
+**Payment flow (future):** A payment page will set `paidFeatures=true` in localStorage upon successful purchase, unlocking all premium features for the user.
 
 ---
 
@@ -322,65 +327,26 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 
 ## Future Scope
 
-### Near-term
-- [ ] More rule-based countries — Thailand, Japan, New Zealand, Iceland
-- [ ] Itinerary export — PDF / shareable link for a planned trip
-- [ ] Day-level detail expansion — tap a day row for full tips, map coords, booking links
-- [ ] Budget currency toggle — convert ₹ to USD / EUR / AUD with approximate rates
-- [ ] Drag-and-drop reorder for trip group add-ons
-- [ ] Home country as trip origin — use the selected home country as the starting point for itineraries, show it as origin on maps, and factor it into flight/budget suggestions
-- [ ] First run experience — onboarding walkthrough for new users (highlight key views, filters, and how to add countries)
-
-### Medium-term
-- [ ] Multi-country trip builder — string countries into a single trip with total cost/days
-- [ ] Calendar sync — export itinerary as `.ics` file
-- [ ] Seasonal flight cost hints — rough fare ranges from public sources
-- [ ] Visited stats page — continents, total days, spend, heatmap timeline
-- [ ] PWA / offline mode — installable, works without internet
-- [ ] Bulk add to My List from Discover (select multiple + add)
-- [ ] Animated itinerary showcase — globe zoom into country, then 15–30s animated day-wise itinerary transitions with transport mode icons showing movement on map (start with Norway, keep extensible)
-- [ ] "Learn about country" section — historical facts, modern culture, safety tips, best/worst travel months, combinable nearby countries with budget/visa implications
-
-### Longer-term
-- [ ] Community itineraries — import/export rule data for sharing
-- [ ] Real-time pricing — flights/hotels API integration
-- [ ] Social layer — follow friends, see where they've been
-
-### LLM Integration (longer-term, multi-phase)
-
-Bring-your-own-key architecture — users supply their own API keys for OpenAI, Claude, or other providers. The app stays free with no backend.
-
-**Phase 1 — Key management & extensible provider layer** ✅
-- [x] Settings modal for adding/removing API keys (stored in localStorage, never transmitted elsewhere)
-- [x] Provider abstraction — pluggable interface so adding a new LLM provider is a single adapter file
-- [x] Walkthrough guide in settings explaining how to obtain and add an API key
-
-**Phase 2 — AI-powered trip planning** ✅
-- [x] Central chat modal with natural language conversation
-- [x] System prompt engineering with smart defaults and structured output
-- [x] Context condensation via TripBrief to save tokens
-- [x] Finalization flow — extracts structured JSON plan from conversation
-
-**Phase 3 — Rich AI itinerary response** ✅
-- [x] LLM response transformation — parse structured LLM output into the existing `TripPlan` UI format
-- [x] Dedicated AI itinerary modal with city grouping, transport, hotel suggestions, day-by-day cards
-- [x] Hybrid mode — static rule engine as fallback when no API key is configured; LLM results when available
-
-**Phase 4 — Enhancements** ✅
-- [x] Multi-provider support — OpenAI + Claude + Gemini with provider selector and per-provider keys
-- [x] Per-day cost breakdowns: flights, hotels, excursions, transfers with totals
-- [x] Booking suggestions — Klook/Viator-style tour recommendations with price, duration, ratings
-- [x] Save AI-generated destinations to My List (resolves against seed/catalog)
-- [x] Pre-seed chat from CountryPanel with "Plan with AI" button
-
-**Phase 5 — Token awareness & UX polish** ✅
-- [x] Token usage tracking — parse from all 3 providers, accumulate per session, display in chat
-- [x] Color-coded token counter (green/amber/red thresholds)
-- [x] Quota-aware error messages with billing page links
-- [x] Rich prompt prefill from country context (no auto-send)
-
-**Phase 6 — Future enhancements**
-- [ ] Enriched AI response schema — best/worst months, things to avoid, visa tips, combo countries, lat/lng per city, transport type per leg (enables cinematic animation for AI plans)
-- [ ] Cinematic mode for AI plans — reuse ItineraryCinematic with AI-provided city coordinates and transport types
-- [ ] Export AI plans as PDF / shareable link
-- [ ] Voice input for chat
+| Priority | Feature | Category | Description |
+|----------|---------|----------|-------------|
+| 🔴 P0 | More rule-based countries | Content | Thailand, Japan, New Zealand, Iceland — per-day itineraries with costs |
+| 🔴 P0 | Itinerary export | Core | PDF / shareable link for planned trips |
+| 🔴 P0 | Enriched AI response schema | AI | lat/lng per city, transport type per leg — enables cinematic for AI plans |
+| 🟠 P1 | Day-level detail expansion | UX | Tap a day row for full tips, map coords, booking links |
+| 🟠 P1 | Cinematic mode for AI plans | AI | Reuse ItineraryCinematic with AI-provided coordinates |
+| 🟠 P1 | Budget currency toggle | UX | Convert ₹ to USD / EUR / AUD |
+| 🟠 P1 | Pre-finalization cost estimate | AI | Warn user about token cost before generating plan |
+| 🟡 P2 | Multi-country trip builder | Core | String countries into a single trip with total cost/days |
+| 🟡 P2 | First run experience | UX | Onboarding walkthrough for new users |
+| 🟡 P2 | Calendar sync | Export | Export itinerary as `.ics` file |
+| 🟡 P2 | Export AI plans as PDF | AI | Save AI-generated plans for offline sharing |
+| 🟡 P2 | Provider cost reference table | AI | Show token pricing per provider in Settings |
+| 🟢 P3 | Visited stats page | Analytics | Continents, total days, spend, heatmap timeline |
+| 🟢 P3 | PWA / offline mode | Infra | Installable, works without internet |
+| 🟢 P3 | Seasonal flight cost hints | Data | Rough fare ranges from public sources |
+| 🟢 P3 | "Learn about country" section | Content | Historical facts, culture, safety tips, visa implications |
+| 🟢 P3 | Voice input for chat | AI | Speak trip requests instead of typing |
+| 🟢 P3 | Drag-and-drop trip reorder | UX | Reorder trip group add-ons |
+| 🔵 P4 | Community itineraries | Social | Import/export rule data for sharing |
+| 🔵 P4 | Real-time pricing | Integration | Flights/hotels API integration |
+| 🔵 P4 | Social layer | Social | Follow friends, see where they've been |
