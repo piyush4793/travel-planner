@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect } from "react";
-import type { Country } from "../../types";
+import type { Country, VisitedFilter } from "../../types";
 import { ALL_REGIONS, type Region, type TripGroupDef } from "../../data/tripGroups";
 import { getWikiImage } from "../../utils/wikiImages";
 import PillGroup from "../shared/PillGroup";
@@ -8,6 +8,7 @@ type Props = {
   countries: Country[];
   visitedNames: Set<string>;
   favorites: Set<string>;
+  visitedFilter?: VisitedFilter;
   onSelect: (c: Country) => void;
   tripGroups: TripGroupDef[];
   onSaveTrip: (originalMain: string | null, group: TripGroupDef) => void;
@@ -90,6 +91,7 @@ export default function TripsView({
   countries,
   visitedNames,
   favorites,
+  visitedFilter = "all",
   onSelect,
   tripGroups,
   onSaveTrip,
@@ -131,6 +133,10 @@ export default function TripsView({
     if (visitedMode === "in-progress") result = result.filter((t) => !t.allVisited && !t.noneVisited);
     if (visitedMode === "not-started") result = result.filter((t) => t.noneVisited);
 
+    // Global visited filter — show trip if ANY country in it matches
+    if (visitedFilter === "visited") result = result.filter((t) => t.allCountries.some((c) => visitedNames.has(c.name)));
+    if (visitedFilter === "unvisited") result = result.filter((t) => t.allCountries.some((c) => !visitedNames.has(c.name)));
+
     if (regionFilter !== "all") result = result.filter((t) => t.region === regionFilter);
 
     if (search.trim()) {
@@ -148,7 +154,7 @@ export default function TripsView({
     });
 
     return result;
-  }, [trips, viewMode, visitedMode, regionFilter, search]);
+  }, [trips, viewMode, visitedMode, visitedFilter, visitedNames, regionFilter, search]);
 
   const comboTrips = trips.filter((t) => t.addOns.length > 0);
   const soloTrips = trips.filter((t) => t.addOns.length === 0);
