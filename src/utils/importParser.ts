@@ -106,16 +106,39 @@ function tryStructuredParse(text: string): ImportResult | null {
 
     // First line has the header — extract city from it
     const firstLine = block.split("\n")[0];
-    const cityMatch = firstLine.match(/(?:day|día)\s*\d+(?:\s*[-–—:to]\s*\d+)?\s*[-–—:→.\s]+([A-Z][a-zA-Zà-ÿ\s/]+?)(?:\s*[-–—:(]|$)/i);
-    const city = cityMatch ? cityMatch[1].trim().split(/[→/]/).pop()?.trim() ?? "" : "";
+    // Try multiple city extraction patterns
+    const cityPatterns = [
+      /→\s*([A-Z][a-zA-Zà-ÿ\s]+?)(?:\s*[→:(]|$)/,       // Day 3 → Oslo → Flam
+      /[-–—]\s*([A-Z][a-zA-Zà-ÿ\s]+?)(?:\s*[:→(]|$)/,    // Day 1 — Oslo: ...
+      /:\s*([A-Z][a-zA-Zà-ÿ\s]+?)(?:\s*[-–(]|$)/,        // Day 3: Oslo
+      /\d+\)?[-–—:.\s]+([A-Z][a-zA-Zà-ÿ\s]+?)(?:\s*[-–:(]|$)/, // Day 1) Oslo
+    ];
+    let city = "";
+    for (const p of cityPatterns) {
+      const m = firstLine.match(p);
+      if (m) { city = m[1].trim().split(/[→/]/).pop()?.trim() ?? ""; break; }
+    }
+    // Fallback: if header is just "### Day 1" check the next line for city name
+    if (!city) {
+      const nextLine = block.split("\n")[1]?.trim() ?? "";
+      if (nextLine && /^[A-Z]/.test(nextLine) && nextLine.length < 30) city = nextLine;
+    }
     if (city) citySet.add(city);
 
-    // Rest of the block = activities (skip first line)
+    // Rest of the block = activities (skip first line, or extract from first line after city)
     const bodyLines = block.split("\n").slice(1);
-    const activities = bodyLines
+    let activities = bodyLines
       .map((l) => l.replace(/^\s*[-•*\d.)\s]+/, "").trim())
       .filter((l) => l.length > 3 && !l.startsWith("#") && !l.startsWith("---"))
-      .slice(0, 8); // cap at 8 activities per day
+      .slice(0, 8);
+
+    // If no body lines, extract activities from the first line (after city: activities,...)
+    if (activities.length === 0) {
+      const afterCity = firstLine.replace(/.*?:\s*/, "");
+      if (afterCity && afterCity !== firstLine) {
+        activities = afterCity.split(/[,;]/).map((a) => a.trim()).filter((a) => a.length > 3);
+      }
+    }
 
     const label = dayStart === dayEnd
       ? `Day ${dayStart}${city ? ` — ${city}` : ""}`
@@ -242,12 +265,15 @@ function cleanChatGPTText(html: string): string {
     .replace(/\\t/g, " ")
     .replace(/\\"/g, '"')
     .replace(/\\\\/g, "\\")
-    // Remove ChatGPT entity markers: entity["type","name","desc"]
+    // Remove ChatGPT entity markers (both escaped and unescaped variants)
+    .replace(/entity\[\\?"[^"]*\\?",\\?"([^"\\]*)\\?"(?:,\\?"[^"\\]*\\?")?\]/g, "$1")
     .replace(/entity\["[^"]*","([^"]*)"(?:,"[^"]*")?\]/g, "$1")
     // Remove image_group{...} blocks
     .replace(/image_group\{[^}]*\}/g, "")
     // Remove cite markers: citeturn0search1 etc
-    .replace(/citeturn\d+search\d+/g, "")
+    .replace(/citeturn\d+\w*/g, "")
+    // Clean up trailing backslashes from line endings
+    .replace(/\\\s*\n/g, "\n")
     // Clean up multiple blank lines
     .replace(/\n{3,}/g, "\n\n");
 }
@@ -289,21 +315,26 @@ export async function fetchChatLink(url: string): Promise<{ text: string } | { e
     // Unescape the HTML (content lives in escaped JSON strings inside script tags)
     const fullText = cleanChatGPTText(html);
 
-    // Strategy A: Find a compact itinerary summary (Day 1-2: City format)
-    const summaryPattern = /(?:\*{0,2})Day\s+\d+(?:\s*[-–—]\s*\d+)?(?:\*{0,2})\s*[:*]*\s*[^\n]{5,80}\n/gi;
-    const summaryMatches = [...fullText.matchAll(summaryPattern)];
-    if (summaryMatches.length >= 4) {
-      return { text: summaryMatches.map((m) => m[0].trim()).join("\n") };
+    // Strategy A: Find ### Day blocks with activities (richest content)
+    const hashDayBlocks = [...fullText.matchAll(/###\s*Day\s+\d+[^\n]*\n(?:[-•*][^\n]*\n){1,10}/gi)];
+    if (hashDayBlocks.length >= 3) {
+      return { text: hashDayBlocks.map((m) => m[0].trim()).join("\n\n") };
     }
 
-    // Strategy B: Find detailed day blocks
+    // Strategy B: Find **Day N:** compact summary lines
+    const boldDayLines = [...fullText.matchAll(/\*\*Day\s+\d+(?:\s*[-–—]\s*\d+)?\s*:\*\*\s*[^\n]{3,80}/gi)];
+    if (boldDayLines.length >= 4) {
+      return { text: boldDayLines.map((m) => m[0].replace(/\*\*/g, "").trim()).join("\n") };
+    }
+
+    // Strategy C: Find detailed day blocks (Day N → City with following lines)
     const dayBlockPattern = /(?:^|\n)\s*(?:#{1,3}\s*)?(?:\*{0,2})(?:📍\s*)?Day\s+\d+[^\n]*\n(?:[^\n]*\n){0,15}/gi;
     const blockMatches = [...fullText.matchAll(dayBlockPattern)];
     if (blockMatches.length >= 2) {
       return { text: blockMatches.map((m) => m[0].trim()).join("\n\n") };
     }
 
-    // Strategy C: Just grab all Day lines with context
+    // Strategy D: Just grab all Day lines
     const simpleMatches = [...fullText.matchAll(/Day\s+\d+[^\n]{0,500}/gi)];
     if (simpleMatches.length >= 2) {
       return { text: simpleMatches.map((m) => m[0].trim()).join("\n") };
