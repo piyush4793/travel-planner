@@ -7,6 +7,8 @@ import { generateTripPlan, getMaxRuleDays, getRecRuleDays } from "../../utils/tr
 import type { TripPlan } from "../../utils/tripPlans";
 import { ITINERARY_RULES } from "../../data/itineraryRules";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
+import { isEnabled } from "../../utils/featureFlags";
+import { exportItineraryAsPdf } from "../../utils/pdfExport";
 import Tooltip from "../shared/Tooltip";
 import ItineraryCinematic from "./ItineraryCinematic";
 import ItineraryModal from "./ItineraryModal";
@@ -263,6 +265,7 @@ export default function CountryPanel({
                   country={country}
                   selectedCities={selectedCities}
                   customDays={customDays}
+                  homeCountry={homeCountry}
                   onCinematic={setCinematicPlan}
                   onItinerary={setModalPlan}
                 />
@@ -416,15 +419,17 @@ export default function CountryPanel({
   );
 }
 
-function PlanPreview({ country, selectedCities, customDays, onCinematic, onItinerary }: {
+function PlanPreview({ country, selectedCities, customDays, homeCountry, onCinematic, onItinerary }: {
   country: Country;
   selectedCities: string[];
   customDays: number;
+  homeCountry: string;
   onCinematic: (plan: TripPlan) => void;
   onItinerary: (plan: TripPlan) => void;
 }) {
   const plan = generateTripPlan(country, "custom", selectedCities, customDays);
   const hasRuleData = !!ITINERARY_RULES[country.name];
+  const canExportPdf = isEnabled("pdfExport");
 
   // Unique ordered cities from plan (for route preview)
   const planCities: string[] = [];
@@ -433,6 +438,9 @@ function PlanPreview({ country, selectedCities, customDays, onCinematic, onItine
     const city = m ? m[1].trim() : "";
     if (city && planCities[planCities.length - 1] !== city) planCities.push(city);
   }
+
+  const buttonCount = (hasRuleData ? 1 : 0) + 1 + (canExportPdf ? 1 : 0);
+  const gridCols = buttonCount >= 3 ? "grid-cols-3" : buttonCount === 2 ? "grid-cols-2" : "grid-cols-1";
 
   return (
     <div className="itinerary-card rounded-xl overflow-hidden border border-gray-200 bg-white">
@@ -461,7 +469,7 @@ function PlanPreview({ country, selectedCities, customDays, onCinematic, onItine
       )}
 
       {/* Action buttons */}
-      <div className={`p-2.5 grid gap-2 ${hasRuleData ? "grid-cols-2" : "grid-cols-1"}`}>
+      <div className={`p-2.5 grid gap-2 ${gridCols}`}>
         {hasRuleData && (
           <button
             onClick={() => onCinematic(plan)}
@@ -480,6 +488,16 @@ function PlanPreview({ country, selectedCities, customDays, onCinematic, onItine
           <span className="text-[10px] font-black tracking-wide mt-0.5">Itinerary</span>
           <span className="text-[9px] text-blue-400 leading-none">day-by-day plan</span>
         </button>
+        {canExportPdf && (
+          <button
+            onClick={() => exportItineraryAsPdf(plan, country, homeCountry)}
+            className="flex flex-col items-center gap-1 py-3.5 rounded-xl bg-rose-50 text-rose-700 hover:bg-rose-100 active:scale-[0.97] transition-all border border-rose-100"
+          >
+            <span className="text-xl leading-none">📄</span>
+            <span className="text-[10px] font-black tracking-wide mt-0.5">Export PDF</span>
+            <span className="text-[9px] text-rose-400 leading-none">save & share</span>
+          </button>
+        )}
       </div>
     </div>
   );
