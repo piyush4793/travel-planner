@@ -44,40 +44,36 @@ All filters combine with AND logic:
 ---
 
 ### Country Detail Panel
-Slides in from the right. Contains:
-- Budget estimate from configurable home country
-- Travel style recommendation badges
-- Best months and months to avoid
-- Experience tags (click to filter)
-- City breakdown with per-city seasons and highlights
-- Stopover tips, combo suggestions (purple map highlights)
-- Useful links, visited/favorite toggles, edit/delete
-- Personal notes (auto-saved)
+Slides in from the right with a compact, decluttered layout:
+- **Compact header** — country name, visited toggle, favorite ★, overflow menu (⋯ for Edit/Delete), close
+- **Travel style badge** — single research-backed recommendation per country (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive)
+- **Collapsible sections** — Experiences, Cities, Stopover tips, Watch out for, Combine with, Links, Notes collapse by default with item counts
+- **"When to go"** — best + avoid months merged in one row
+- **Trip planner** — days slider with smart city selection + Generate/AI buttons
+- **Saved AI plans** — view/delete previously saved AI itineraries
 
 ---
 
 ### Day-by-Day Itinerary Planner
-In-panel trip planner with 4 travel styles:
+Custom trip planner with a days slider — set your duration and the engine builds the best itinerary:
 
-| Style | Days | Description |
-|---|---|---|
-| 🏃 Touch & Go | 3–4 | Quick stopover |
-| 🔭 Explorer | 7–12 | Full holiday |
-| 🌿 Month Long | 30 | Slow travel |
-| ✏️ Custom | 1–90 | Any duration |
+- **Range slider** from 1 to max available days (based on rule data)
+- **Recommended days** shown for guidance (e.g. "Recommended: 12 days")
+- **Smart city selection** — when days are fewer than total cities, the algorithm prioritizes by importance (recDays) and drops lowest-priority cities first
+- **Optional city override** — manually pick which cities to include
 
-**Rule-based countries** (Vietnam, Norway) have per-day itineraries with real costs, hotel picks, and city-by-city routing.
+**Rule-based countries** (Vietnam, Norway) have per-day itineraries with real costs, hotel picks, and city-by-city routing. Norway covers 11 cities including Lofoten, Gudvangen Viking village, Trollstigen, and Loen.
 
 **Two planning modes:**
 | Mode | Trigger | Description |
 |---|---|---|
-| 📋 Offline | Style buttons in panel | Static rule engine + generic algorithm — instant, no API needed |
-| ✨ AI-Powered | "Plan with AI" in header | Chat with OpenAI to build a plan conversationally, then view as itinerary |
+| 📅 Offline | Generate Plan button | Static rule engine + generic algorithm — instant, no API needed |
+| ✨ AI-Powered | Plan with AI button | Chat with LLM to build a plan conversationally, then view as itinerary |
 
 **Two viewing modes:**
 | Mode | Availability | Description |
 |---|---|---|
-| 🎬 Cinematic | Rule-based only | Full-screen animated journey with map flyovers and city photo slideshows |
+| 🎬 Cinematic | Rule-based only | Full-screen animated journey with styled transport markers, easing, city pulse, route glow |
 | 📋 Itinerary | All countries (offline + AI) | Scrollable modal with day cards, activities, costs, transport |
 
 ---
@@ -157,7 +153,7 @@ location.reload();
 | UI | **React 18 + TypeScript** | Component model + type safety |
 | Styling | **Tailwind CSS** | Utility-first, zero runtime |
 | Map | **MapLibre GL JS** | Free OSM fork, no token |
-| Tiles | **OpenFreeMap** (`liberty`) | Free vector tiles, no API key |
+| Tiles | **Carto Voyager** | Free vector tiles, no API key, reliable CORS |
 | Images | **Wikimedia Commons API** | Free, CORS-enabled |
 | State | **Custom hooks + localStorage** | No external state library |
 | Routing | **URL hash** | Zero deps, back/forward works |
