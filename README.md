@@ -322,31 +322,26 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 
 ## Future Scope
 
-### Near-term
-- [ ] More rule-based countries — Thailand, Japan, New Zealand, Iceland
-- [ ] Itinerary export — PDF / shareable link
-- [ ] Day-level detail expansion — tap a day row for full tips, map coords, booking links
-- [ ] Budget currency toggle — convert ₹ to USD / EUR / AUD
-- [ ] Drag-and-drop reorder for trip group add-ons
-- [ ] First run experience — onboarding walkthrough for new users
-
-### Medium-term
-- [ ] Multi-country trip builder — string countries into a single trip with total cost/days
-- [ ] Calendar sync — export itinerary as `.ics` file
-- [ ] Seasonal flight cost hints — rough fare ranges from public sources
-- [ ] Visited stats page — continents, total days, spend, heatmap timeline
-- [ ] PWA / offline mode — installable, works without internet
-- [ ] "Learn about country" section — historical facts, culture, safety tips, visa implications
-
-### AI Enhancements
-- [ ] Enriched AI response schema — lat/lng per city, transport type per leg (enables cinematic for AI plans)
-- [ ] Cinematic mode for AI plans — reuse ItineraryCinematic with AI-provided coordinates
-- [ ] Export AI plans as PDF / shareable link
-- [ ] Voice input for chat
-- [ ] Pre-finalization cost estimate warning
-- [ ] Provider cost reference table in Settings
-
-### Longer-term
-- [ ] Community itineraries — import/export rule data for sharing
-- [ ] Real-time pricing — flights/hotels API integration
-- [ ] Social layer — follow friends, see where they've been
+| Priority | Feature | Category | Description |
+|----------|---------|----------|-------------|
+| 🔴 P0 | More rule-based countries | Content | Thailand, Japan, New Zealand, Iceland — per-day itineraries with costs |
+| 🔴 P0 | Itinerary export | Core | PDF / shareable link for planned trips |
+| 🔴 P0 | Enriched AI response schema | AI | lat/lng per city, transport type per leg — enables cinematic for AI plans |
+| 🟠 P1 | Day-level detail expansion | UX | Tap a day row for full tips, map coords, booking links |
+| 🟠 P1 | Cinematic mode for AI plans | AI | Reuse ItineraryCinematic with AI-provided coordinates |
+| 🟠 P1 | Budget currency toggle | UX | Convert ₹ to USD / EUR / AUD |
+| 🟠 P1 | Pre-finalization cost estimate | AI | Warn user about token cost before generating plan |
+| 🟡 P2 | Multi-country trip builder | Core | String countries into a single trip with total cost/days |
+| 🟡 P2 | First run experience | UX | Onboarding walkthrough for new users |
+| 🟡 P2 | Calendar sync | Export | Export itinerary as `.ics` file |
+| 🟡 P2 | Export AI plans as PDF | AI | Save AI-generated plans for offline sharing |
+| 🟡 P2 | Provider cost reference table | AI | Show token pricing per provider in Settings |
+| 🟢 P3 | Visited stats page | Analytics | Continents, total days, spend, heatmap timeline |
+| 🟢 P3 | PWA / offline mode | Infra | Installable, works without internet |
+| 🟢 P3 | Seasonal flight cost hints | Data | Rough fare ranges from public sources |
+| 🟢 P3 | "Learn about country" section | Content | Historical facts, culture, safety tips, visa implications |
+| 🟢 P3 | Voice input for chat | AI | Speak trip requests instead of typing |
+| 🟢 P3 | Drag-and-drop trip reorder | UX | Reorder trip group add-ons |
+| 🔵 P4 | Community itineraries | Social | Import/export rule data for sharing |
+| 🔵 P4 | Real-time pricing | Integration | Flights/hotels API integration |
+| 🔵 P4 | Social layer | Social | Follow friends, see where they've been |
