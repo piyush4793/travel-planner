@@ -117,7 +117,7 @@ export default function Filters({
               : "bg-white text-gray-600 border-gray-200 hover:border-gray-300 hover:bg-gray-50"
           }`}
         >
-          Bucket list
+          Not Visited
         </button>
         <button
           onClick={() => setVisitedFilter(visitedFilter === "visited" ? "all" : "visited")}
