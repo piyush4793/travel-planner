@@ -3,6 +3,7 @@ import seedData from "../../data/countries.json";
 import catalogData from "../../data/worldCatalog.json";
 import type { Country, CatalogEntry } from "../types";
 import { loadLS, saveLS } from "../utils/storage";
+import { LS_KEYS } from "../utils/lsKeys";
 import { usePersistedSet } from "./usePersistedSet";
 
 const SEED = seedData as Country[];
@@ -18,24 +19,24 @@ function buildCountryList(customs: Country[], deleted: string[]): Country[] {
 }
 
 function initMyList(): Set<string> {
-  const stored = loadLS<string[] | null>("tp_my_list", null);
+  const stored = loadLS<string[] | null>(LS_KEYS.MY_LIST, null);
   if (stored !== null) return new Set(stored);
-  const customNames = loadLS<Country[]>("tp_customs", []).map((c) => c.name);
-  const deletedNames = loadLS<string[]>("tp_deleted", []);
+  const customNames = loadLS<Country[]>(LS_KEYS.CUSTOMS, []).map((c) => c.name);
+  const deletedNames = loadLS<string[]>(LS_KEYS.DELETED, []);
   const seedNames = SEED.map((c) => c.name).filter((n) => !deletedNames.includes(n));
   return new Set([...seedNames, ...customNames]);
 }
 
 export function useCountryStore() {
-  const [customs, setCustoms] = useState<Country[]>(() => loadLS("tp_customs", []));
-  const [deleted, setDeleted] = useState<string[]>(() => loadLS("tp_deleted", []));
+  const [customs, setCustoms] = useState<Country[]>(() => loadLS(LS_KEYS.CUSTOMS, []));
+  const [deleted, setDeleted] = useState<string[]>(() => loadLS(LS_KEYS.DELETED, []));
 
-  useEffect(() => { saveLS("tp_customs", customs); }, [customs]);
-  useEffect(() => { saveLS("tp_deleted", deleted); }, [deleted]);
+  useEffect(() => { saveLS(LS_KEYS.CUSTOMS, customs); }, [customs]);
+  useEffect(() => { saveLS(LS_KEYS.DELETED, deleted); }, [deleted]);
 
-  const visited = usePersistedSet("tp_visited", () => new Set(loadLS<string[]>("tp_visited", [])));
-  const favorites = usePersistedSet("tp_favorites", () => new Set(loadLS<string[]>("tp_favorites", [])));
-  const myList = usePersistedSet("tp_my_list", initMyList);
+  const visited = usePersistedSet(LS_KEYS.VISITED, () => new Set(loadLS<string[]>(LS_KEYS.VISITED, [])));
+  const favorites = usePersistedSet(LS_KEYS.FAVORITES, () => new Set(loadLS<string[]>(LS_KEYS.FAVORITES, [])));
+  const myList = usePersistedSet(LS_KEYS.MY_LIST, initMyList);
 
   const allCountries = useMemo(() => buildCountryList(customs, deleted), [customs, deleted]);
 

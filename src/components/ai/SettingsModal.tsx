@@ -2,25 +2,23 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import type { LLMProviderType, LLMKeys } from "../../types";
 import { loadLS, saveLS } from "../../utils/storage";
+import { LS_KEYS } from "../../utils/lsKeys";
 import { validateKey, PROVIDER_LABELS } from "../../utils/ai/llmProvider";
 
-const LS_KEY = "tp_llm_keys";
-const LS_PROVIDER = "tp_llm_provider";
-
 export function getLLMKeys(): LLMKeys {
-  return loadLS<LLMKeys>(LS_KEY, {});
+  return loadLS<LLMKeys>(LS_KEYS.LLM_KEYS, {});
 }
 
 export function getActiveProvider(): LLMProviderType {
-  return loadLS<LLMProviderType>(LS_PROVIDER, "openai");
+  return loadLS<LLMProviderType>(LS_KEYS.LLM_PROVIDER, "openai");
 }
 
 function saveLLMKeys(keys: LLMKeys) {
-  saveLS(LS_KEY, keys);
+  saveLS(LS_KEYS.LLM_KEYS, keys);
 }
 
 function saveActiveProvider(p: LLMProviderType) {
-  saveLS(LS_PROVIDER, p);
+  saveLS(LS_KEYS.LLM_PROVIDER, p);
 }
 
 const PROVIDERS: LLMProviderType[] = ["openai", "claude", "gemini"];

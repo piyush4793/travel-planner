@@ -1,4 +1,5 @@
 import { loadLS, saveLS } from "./storage";
+import { LS_KEYS } from "./lsKeys";
 
 /**
  * Feature gates — opt-in flags stored in localStorage.
@@ -18,7 +19,7 @@ export type FeatureFlags = {
 };
 
 // Which individual flags require paidFeatures to be true
-const PAID_FLAGS: ReadonlySet<keyof FeatureFlags> = new Set(["llmPlanning", "pdfExport"]);
+export const PAID_FLAGS: ReadonlySet<keyof FeatureFlags> = new Set(["llmPlanning", "pdfExport"]);
 
 const DEFAULTS: FeatureFlags = {
   searchableHomeCountry: false,
@@ -31,7 +32,7 @@ let _cache: FeatureFlags | null = null;
 
 export function getFeatureFlags(): FeatureFlags {
   if (_cache) return _cache;
-  const stored = loadLS<Partial<FeatureFlags>>("tp_features", {});
+  const stored = loadLS<Partial<FeatureFlags>>(LS_KEYS.FEATURES, {});
   _cache = { ...DEFAULTS, ...stored };
   return _cache;
 }
@@ -40,7 +41,7 @@ export function setFeatureFlag<K extends keyof FeatureFlags>(key: K, value: Feat
   const flags = getFeatureFlags();
   flags[key] = value;
   _cache = flags;
-  saveLS("tp_features", flags);
+  saveLS(LS_KEYS.FEATURES, flags);
 }
 
 /** Check if a feature is enabled. Paid features also require paidFeatures=true. */

@@ -16,6 +16,7 @@ import AiItineraryModal from "./components/ai/AiItineraryModal";
 import type { LLMTripPlanResult } from "./utils/ai/llmTransform";
 import { applyFilters, allUniqueExperiences, type BudgetTier } from "./utils/filterLogic";
 import { loadLS, saveLS } from "./utils/storage";
+import { LS_KEYS } from "./utils/lsKeys";
 import { useHashView, type AppView } from "./hooks/useHashView";
 import { useCountryStore } from "./hooks/useCountryStore";
 import { useTripStore } from "./hooks/useTripStore";
@@ -31,7 +32,7 @@ export default function App() {
   const store = useCountryStore();
   const aiPlanStore = useAiPlanStore();
   const [view, setView] = useHashView();
-  const [homeCountry, setHomeCountry] = useState(() => loadLS("tp_home_country", "India"));
+  const [homeCountry, setHomeCountry] = useState(() => loadLS(LS_KEYS.HOME_COUNTRY, "India"));
   const [selectedMonth, setSelectedMonth] = useState<string[]>([]);
   const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
   const [visitedFilter, setVisitedFilter] = useState<VisitedFilter>("all");
@@ -46,7 +47,7 @@ export default function App() {
   const [cinematicActive, setCinematicActive] = useState(false);
   const mainMapRef = useRef<maplibregl.Map | null>(null);
 
-  useEffect(() => { saveLS("tp_home_country", homeCountry); }, [homeCountry]);
+  useEffect(() => { saveLS(LS_KEYS.HOME_COUNTRY, homeCountry); }, [homeCountry]);
 
   // Re-render when dev flag panel toggles a feature
   const [, forceUpdate] = useState(0);
@@ -56,7 +57,7 @@ export default function App() {
     return () => window.removeEventListener("featureflag-change", handler);
   }, []);
 
-  const trips = useTripStore(store.myListNames);
+  const trips = useTripStore(store.myListNames, store.myListCountries);
 
   const filtered = useMemo(
     () => applyFilters(store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter),
