@@ -106,5 +106,803 @@
       "notes": "Secluded island with Munro Trail, Hulopoe Bay snorkeling and rock gardens"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "T-Mobile Tourist SIM or Airalo USA eSIM — about ₹1,428–₹2,520 for 10GB to unlimited data across the mainland and Hawaii; buy before your first domestic leg so inter-island transfers stay connected.",
+    "apps": [
+      "Google Maps",
+      "Uber",
+      "Lyft",
+      "Transit",
+      "MTA TrainTime",
+      "TheBus",
+      "Recreation.gov",
+      "Yelp",
+      "OpenTable",
+      "Booking.com",
+      "Hopper",
+      "Google Flights"
+    ],
+    "cityOrder": [
+      "New York",
+      "Los Angeles",
+      "San Francisco",
+      "Honolulu",
+      "Maui",
+      "Big Island",
+      "Kauai",
+      "Lanai"
+    ],
+    "cities": {
+      "New York": {
+        "name": "New York",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Start in Midtown or Lower Manhattan; book Statue of Liberty, observation decks, and Broadway as early as possible.",
+        "days": [
+          {
+            "theme": "Arrival, Midtown Icons & Central Park",
+            "activities": [
+              {
+                "name": "JFK AirTrain plus subway or LIRR into Manhattan",
+                "cost": "₹777–₹1,764 pp"
+              },
+              {
+                "name": "Times Square and Bryant Park orientation walk"
+              },
+              {
+                "name": "Empire State Building 86th-floor entry",
+                "cost": "₹3,696 pp"
+              },
+              {
+                "name": "Fifth Avenue, St. Patrick's Cathedral, and Rockefeller Center stroll"
+              },
+              {
+                "name": "Central Park sunset walk via Bethesda Terrace and Bow Bridge"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pod 39 Hotel",
+                "budget": "₹12,000–₹17,000/night"
+              },
+              {
+                "name": "Arlo Midtown",
+                "budget": "₹18,000–₹27,000/night"
+              }
+            ],
+            "meals": [
+              "Saravanaa Bhavan",
+              "Joe's Pizza",
+              "Los Tacos No. 1"
+            ]
+          },
+          {
+            "theme": "Statue Cruises, Lower Manhattan & Brooklyn Views",
+            "activities": [
+              {
+                "name": "Statue of Liberty and Ellis Island ferry",
+                "cost": "₹2,688 pp"
+              },
+              {
+                "name": "9/11 Memorial and Museum",
+                "cost": "₹2,772 pp"
+              },
+              {
+                "name": "One World Observatory",
+                "cost": "₹3,696 pp"
+              },
+              {
+                "name": "Brooklyn Bridge walk into DUMBO"
+              },
+              {
+                "name": "Brooklyn Heights Promenade skyline stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pod 39 Hotel",
+                "budget": "₹12,000–₹17,000/night"
+              },
+              {
+                "name": "Arlo Midtown",
+                "budget": "₹18,000–₹27,000/night"
+              }
+            ],
+            "meals": [
+              "Peacefood Cafe",
+              "Grimaldi's Pizzeria",
+              "Katz's Delicatessen"
+            ]
+          },
+          {
+            "theme": "Museums, The High Line & Broadway Finale",
+            "activities": [
+              {
+                "name": "Metropolitan Museum of Art",
+                "cost": "₹2,520 pp"
+              },
+              {
+                "name": "Museum of Modern Art",
+                "cost": "₹2,520 pp"
+              },
+              {
+                "name": "The High Line and Chelsea Market"
+              },
+              {
+                "name": "Top of the Rock observation deck",
+                "cost": "₹3,360 pp"
+              },
+              {
+                "name": "Broadway evening show via TKTS or advance booking",
+                "cost": "₹6,720–₹16,800 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pod 39 Hotel",
+                "budget": "₹12,000–₹17,000/night"
+              },
+              {
+                "name": "Arlo Midtown",
+                "budget": "₹18,000–₹27,000/night"
+              }
+            ],
+            "meals": [
+              "Vatan",
+              "Mamoun's Falafel",
+              "Levain Bakery"
+            ]
+          }
+        ]
+      },
+      "Los Angeles": {
+        "name": "Los Angeles",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "A rental car or heavy Uber use makes LA far smoother; cluster sights by neighborhood to avoid traffic-heavy cross-town hops.",
+        "days": [
+          {
+            "theme": "Hollywood Legends & Griffith Views",
+            "activities": [
+              {
+                "name": "Hollywood Walk of Fame and TCL Chinese Theatre"
+              },
+              {
+                "name": "Griffith Observatory and city panorama",
+                "cost": "₹0–₹840"
+              },
+              {
+                "name": "Hollywood Sign viewpoint hike"
+              },
+              {
+                "name": "Warner Bros. Studio Tour Hollywood",
+                "cost": "₹6,100–₹7,200 pp"
+              },
+              {
+                "name": "Sunset Strip evening drive or walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "citizenM Los Angeles Downtown",
+                "budget": "₹14,000–₹20,000/night"
+              },
+              {
+                "name": "Loews Hollywood Hotel",
+                "budget": "₹24,000–₹34,000/night"
+              }
+            ],
+            "meals": [
+              "Café Gratitude",
+              "Bottega Louie",
+              "Crossroads Kitchen"
+            ]
+          },
+          {
+            "theme": "Getty, Santa Monica & Venice Coastline",
+            "activities": [
+              {
+                "name": "The Getty Center",
+                "cost": "₹0–₹2,100"
+              },
+              {
+                "name": "Santa Monica Pier and beach promenade"
+              },
+              {
+                "name": "Venice Beach Boardwalk and canals"
+              },
+              {
+                "name": "Abbot Kinney Boulevard coffee and boutiques"
+              },
+              {
+                "name": "Universal Studios Hollywood or Beverly Hills swap",
+                "cost": "₹9,156–₹14,280 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "citizenM Los Angeles Downtown",
+                "budget": "₹14,000–₹20,000/night"
+              },
+              {
+                "name": "Loews Hollywood Hotel",
+                "budget": "₹24,000–₹34,000/night"
+              }
+            ],
+            "meals": [
+              "Gracias Madre",
+              "Gjelina",
+              "In-N-Out Burger"
+            ]
+          }
+        ]
+      },
+      "San Francisco": {
+        "name": "San Francisco",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Reserve Alcatraz and Muir Woods ahead; layer clothing because wind and fog can change temperatures fast.",
+        "days": [
+          {
+            "theme": "Alcatraz, Cable Cars & Bay Icons",
+            "activities": [
+              {
+                "name": "BART from SFO into downtown",
+                "cost": "₹886 pp"
+              },
+              {
+                "name": "Alcatraz Island ferry and audio tour",
+                "cost": "₹3,973 pp"
+              },
+              {
+                "name": "Fisherman's Wharf and Pier 39 sea lions"
+              },
+              {
+                "name": "Cable car ride on the Powell-Hyde line",
+                "cost": "₹672 pp"
+              },
+              {
+                "name": "Ghirardelli Square and waterfront sunset"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Zephyr San Francisco",
+                "budget": "₹16,000–₹24,000/night"
+              },
+              {
+                "name": "Hotel Nikko San Francisco",
+                "budget": "₹22,000–₹32,000/night"
+              }
+            ],
+            "meals": [
+              "Greens Restaurant",
+              "Boudin Bistro",
+              "The Plant Café Organic"
+            ]
+          },
+          {
+            "theme": "Golden Gate, Neighborhoods & Redwoods",
+            "activities": [
+              {
+                "name": "Golden Gate Bridge walk or bike rental",
+                "cost": "₹0–₹2,520"
+              },
+              {
+                "name": "Chinatown and North Beach morning walk"
+              },
+              {
+                "name": "Mission District murals and Dolores Park"
+              },
+              {
+                "name": "Muir Woods National Monument shuttle and entry",
+                "cost": "₹1,260–₹2,100 pp"
+              },
+              {
+                "name": "Lombard Street and Russian Hill viewpoints"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Zephyr San Francisco",
+                "budget": "₹16,000–₹24,000/night"
+              },
+              {
+                "name": "Hotel Nikko San Francisco",
+                "budget": "₹22,000–₹32,000/night"
+              }
+            ],
+            "meals": [
+              "Burma Superstar",
+              "Cha-Ya",
+              "Tartine Bakery"
+            ]
+          }
+        ]
+      },
+      "Honolulu": {
+        "name": "Honolulu",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Base yourself in Waikiki, use TheBus for central sights, and book Pearl Harbor plus Hanauma Bay reservations before arriving in Hawaii.",
+        "days": [
+          {
+            "theme": "Pearl Harbor, Royal Honolulu & Waikiki",
+            "activities": [
+              {
+                "name": "Pearl Harbor USS Arizona Memorial reservation",
+                "cost": "₹84 pp"
+              },
+              {
+                "name": "Battleship Missouri Memorial",
+                "cost": "₹3,359 pp"
+              },
+              {
+                "name": "ʻIolani Palace guided tour",
+                "cost": "₹1,848 pp"
+              },
+              {
+                "name": "Waikiki Beach and Kalakaua Avenue sunset walk"
+              },
+              {
+                "name": "TheBus day pass for local hops",
+                "cost": "₹630 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vive Hotel Waikiki",
+                "budget": "₹16,000–₹22,000/night"
+              },
+              {
+                "name": "OUTRIGGER Waikiki Beach Resort",
+                "budget": "₹28,000–₹38,000/night"
+              }
+            ],
+            "meals": [
+              "Helena's Hawaiian Food",
+              "Govinda's Vegetarian Buffet",
+              "House Without A Key"
+            ]
+          },
+          {
+            "theme": "Diamond Head, Hanauma Bay & North Shore",
+            "activities": [
+              {
+                "name": "Diamond Head State Monument hike",
+                "cost": "₹420 pp"
+              },
+              {
+                "name": "Hanauma Bay snorkeling reservation",
+                "cost": "₹2,184 pp"
+              },
+              {
+                "name": "Halona Blowhole and Makapu'u Lookout drive"
+              },
+              {
+                "name": "North Shore loop via Haleiwa and Waimea Bay"
+              },
+              {
+                "name": "Waikiki luau or beachfront hula show",
+                "cost": "₹7,140–₹12,600 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vive Hotel Waikiki",
+                "budget": "₹16,000–₹22,000/night"
+              },
+              {
+                "name": "OUTRIGGER Waikiki Beach Resort",
+                "budget": "₹28,000–₹38,000/night"
+              }
+            ],
+            "meals": [
+              "The Pig & The Lady",
+              "Leonard's Bakery",
+              "Marukame Udon Waikiki"
+            ]
+          }
+        ]
+      },
+      "Maui": {
+        "name": "Maui",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Maui works best with a rental car; confirm current Road to Hana and Haleakalā reservation rules close to travel dates.",
+        "days": [
+          {
+            "theme": "Road to Hana Waterfalls & Black Sand Coast",
+            "activities": [
+              {
+                "name": "Rental car pickup in Kahului",
+                "cost": "₹5,500–₹8,500/day"
+              },
+              {
+                "name": "Road to Hana scenic drive with Twin Falls and Ke'anae stops"
+              },
+              {
+                "name": "Waianapanapa State Park reservation",
+                "cost": "₹420–₹840 pp"
+              },
+              {
+                "name": "Pua'a Ka'a State Wayside waterfall pause"
+              },
+              {
+                "name": "Ho'okipa Beach Park sea turtles at sunset"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maui Coast Hotel",
+                "budget": "₹22,000–₹31,000/night"
+              },
+              {
+                "name": "The Westin Maui Resort & Spa, Ka'anapali",
+                "budget": "₹38,000–₹58,000/night"
+              }
+            ],
+            "meals": [
+              "Tin Roof Maui",
+              "Paia Fish Market",
+              "Monkeypod Kitchen by Merriman"
+            ]
+          },
+          {
+            "theme": "Haleakalā Sunrise, Upcountry & West Maui Beach Time",
+            "activities": [
+              {
+                "name": "Haleakalā National Park summit drive",
+                "cost": "₹2,520 per vehicle"
+              },
+              {
+                "name": "Sunrise reservation for Haleakalā",
+                "cost": "₹84 per vehicle"
+              },
+              {
+                "name": "Makawao and Upcountry Maui coffee stop"
+              },
+              {
+                "name": "Ka'anapali Beach swim and boardwalk"
+              },
+              {
+                "name": "Molokini snorkel cruise swap if you prefer water over the summit",
+                "cost": "₹14,000–₹19,000 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maui Coast Hotel",
+                "budget": "₹22,000–₹31,000/night"
+              },
+              {
+                "name": "The Westin Maui Resort & Spa, Ka'anapali",
+                "budget": "₹38,000–₹58,000/night"
+              }
+            ],
+            "meals": [
+              "Mama's Fish House",
+              "Kihei Caffe",
+              "Leoda's Kitchen and Pie Shop"
+            ]
+          }
+        ]
+      },
+      "Big Island": {
+        "name": "Big Island",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Split time between Kona and Hawaiʻi Volcanoes National Park only if you have extra days; with two days, keep one volcano day and one Kona-coast day.",
+        "days": [
+          {
+            "theme": "Volcanoes National Park & Punaluʻu Coast",
+            "activities": [
+              {
+                "name": "Hawaiʻi Volcanoes National Park entry",
+                "cost": "₹2,520 per vehicle"
+              },
+              {
+                "name": "Kīlauea Visitor Center and Steam Vents"
+              },
+              {
+                "name": "Chain of Craters Road viewpoints"
+              },
+              {
+                "name": "Thurston Lava Tube",
+                "cost": "₹0"
+              },
+              {
+                "name": "Punaluʻu Black Sand Beach turtle stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "SCP Hilo Hotel",
+                "budget": "₹17,000–₹23,000/night"
+              },
+              {
+                "name": "Royal Kona Resort",
+                "budget": "₹20,000–₹30,000/night"
+              }
+            ],
+            "meals": [
+              "Pineapples Island Fresh Cuisine",
+              "Café Pesto Hilo Bay",
+              "Herbivores"
+            ]
+          },
+          {
+            "theme": "Kona Coast, Manta Rays & High-Altitude Views",
+            "activities": [
+              {
+                "name": "Kealakekua Bay Captain Cook lookout or snorkel cruise",
+                "cost": "₹8,400–₹12,600 pp"
+              },
+              {
+                "name": "Pu'uhonua o Hōnaunau National Historical Park",
+                "cost": "₹1,680 pp"
+              },
+              {
+                "name": "Kona coffee farm tasting stop"
+              },
+              {
+                "name": "Manta ray night snorkel or boat trip",
+                "cost": "₹11,760–₹15,960 pp"
+              },
+              {
+                "name": "Mauna Kea sunset and stargazing tour",
+                "cost": "₹16,800–₹23,500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "SCP Hilo Hotel",
+                "budget": "₹17,000–₹23,000/night"
+              },
+              {
+                "name": "Royal Kona Resort",
+                "budget": "₹20,000–₹30,000/night"
+              }
+            ],
+            "meals": [
+              "Umekes Fishmarket Bar & Grill",
+              "Merriman's Waimea",
+              "Journey Café"
+            ]
+          }
+        ]
+      },
+      "Kauai": {
+        "name": "Kauai",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "The Garden Isle is about scenery, not rushing; weather can shift quickly, so keep one beach day and one boat-or-canyon day flexible.",
+        "days": [
+          {
+            "theme": "Waimea Canyon, Poipu & South Shore Sunsets",
+            "activities": [
+              {
+                "name": "Waimea Canyon scenic drive and lookouts"
+              },
+              {
+                "name": "Kōkeʻe State Park trails and Kalalau overlook",
+                "cost": "₹0–₹420"
+              },
+              {
+                "name": "Spouting Horn blowhole"
+              },
+              {
+                "name": "Poipu Beach sea turtle spotting"
+              },
+              {
+                "name": "Allerton or McBryde Garden tour",
+                "cost": "₹2,940–₹4,620 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kauai Shores Hotel",
+                "budget": "₹20,000–₹29,000/night"
+              },
+              {
+                "name": "Koloa Landing Resort at Poipu",
+                "budget": "₹36,000–₹55,000/night"
+              }
+            ],
+            "meals": [
+              "Eating House 1849",
+              "Kiawe Roots",
+              "Japanese Grandma's Cafe"
+            ]
+          },
+          {
+            "theme": "Nā Pali Coast, Hanalei & Wailua River",
+            "activities": [
+              {
+                "name": "Nā Pali Coast boat cruise or raft trip",
+                "cost": "₹15,120–₹22,000 pp"
+              },
+              {
+                "name": "Hanalei Bay and north shore overlooks"
+              },
+              {
+                "name": "Kīlauea Point National Wildlife Refuge",
+                "cost": "₹840 pp"
+              },
+              {
+                "name": "Wailua River kayak and Secret Falls hike",
+                "cost": "₹7,500–₹10,900 pp"
+              },
+              {
+                "name": "Kalapaki Beach evening walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kauai Shores Hotel",
+                "budget": "₹20,000–₹29,000/night"
+              },
+              {
+                "name": "Koloa Landing Resort at Poipu",
+                "budget": "₹36,000–₹55,000/night"
+              }
+            ],
+            "meals": [
+              "Bar Acuda",
+              "Porky's Kauai",
+              "The Dolphin"
+            ]
+          }
+        ]
+      },
+      "Lanai": {
+        "name": "Lanai",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Lanai is best treated as a splurge detour or a calm reset; stay overnight if you want Hulopoe Bay without day-tripper timing pressure.",
+        "days": [
+          {
+            "theme": "Hulopoe Bay, Lanai City & Remote Landscapes",
+            "activities": [
+              {
+                "name": "Flight from Honolulu or ferry from Maui to Lanai",
+                "cost": "₹5,040–₹14,280 pp"
+              },
+              {
+                "name": "Hulopoe Bay snorkeling and tide pools"
+              },
+              {
+                "name": "Garden of the Gods (Keahiakawelo) by jeep",
+                "cost": "₹12,000–₹18,000 per jeep day"
+              },
+              {
+                "name": "Lanai Cat Sanctuary visit",
+                "cost": "₹0–₹840 donation"
+              },
+              {
+                "name": "Lanai City plantation-era square and sunset drinks"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Lanai",
+                "budget": "₹26,000–₹34,000/night"
+              },
+              {
+                "name": "Four Seasons Resort Lanai",
+                "budget": "₹95,000–₹1,45,000/night"
+              }
+            ],
+            "meals": [
+              "Lanai City Bar & Grille",
+              "Blue Ginger Café",
+              "Nobu Lanai"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "New York",
+        "to": "Los Angeles",
+        "method": "Flight",
+        "cost": "₹15,120–₹27,720"
+      },
+      {
+        "from": "Los Angeles",
+        "to": "San Francisco",
+        "method": "Flight or Coast Starlight train",
+        "cost": "₹4,620–₹12,600"
+      },
+      {
+        "from": "San Francisco",
+        "to": "Honolulu",
+        "method": "Flight",
+        "cost": "₹23,520–₹37,800"
+      },
+      {
+        "from": "Honolulu",
+        "to": "Maui",
+        "method": "Inter-island flight",
+        "cost": "₹5,040–₹10,080"
+      },
+      {
+        "from": "Maui",
+        "to": "Big Island",
+        "method": "Inter-island flight",
+        "cost": "₹6,720–₹12,600"
+      },
+      {
+        "from": "Big Island",
+        "to": "Kauai",
+        "method": "Inter-island flight via Honolulu on many dates",
+        "cost": "₹8,400–₹15,120"
+      },
+      {
+        "from": "Kauai",
+        "to": "Lanai",
+        "method": "Flight via Honolulu",
+        "cost": "₹10,920–₹20,160"
+      }
+    ],
+    "extras": [
+      "Best overall timing is April to May or September to October for the mainland; Hawaii works year-round, but book inter-island flights and rental cars early during school holidays.",
+      "US prices usually exclude sales tax and tips, so add roughly 25% over menu prices for tax plus the standard 18–22% restaurant tip.",
+      "Indian passport holders need a valid US B1/B2 visa; ESTA does not apply.",
+      "Reserve Alcatraz, Pearl Harbor, Hanauma Bay, Haleakalā sunrise, and popular Nā Pali cruises well before departure because those slots sell out first.",
+      "Mainland public transit is strong in New York and usable in San Francisco and Honolulu, but Los Angeles and most Hawaiian islands are far easier with rideshares or a rental car.",
+      "Pack layers for New York and San Francisco evenings, plus reef-safe sunscreen and water shoes for Hawaii beaches and boat trips."
+    ],
+    "cityImages": {
+      "New York": [
+        "Manhattan skyline Times Square night aerial",
+        "Statue of Liberty New York Harbor",
+        "Central Park aerial view New York"
+      ],
+      "Los Angeles": [
+        "Hollywood Sign Griffith Park Los Angeles",
+        "Santa Monica Pier beach California sunset",
+        "Los Angeles downtown skyline night"
+      ],
+      "San Francisco": [
+        "Golden Gate Bridge San Francisco Bay",
+        "Alcatraz Island San Francisco Bay aerial",
+        "Fishermans Wharf San Francisco pier"
+      ],
+      "Honolulu": [
+        "Waikiki Beach Diamond Head Honolulu Hawaii",
+        "Pearl Harbor USS Arizona Memorial Hawaii",
+        "Diamond Head crater hike Oahu Hawaii"
+      ],
+      "Maui": [
+        "Road to Hana Maui waterfall coastal drive",
+        "Haleakala sunrise Maui summit clouds",
+        "Ka'anapali Beach Maui sunset"
+      ],
+      "Big Island": [
+        "Hawaii Volcanoes National Park Kilauea crater",
+        "Punaluu black sand beach sea turtles",
+        "Kona coast manta ray sunset Hawaii"
+      ],
+      "Kauai": [
+        "Na Pali Coast Kauai cliffs aerial",
+        "Waimea Canyon Kauai lookout",
+        "Hanalei Bay Kauai mountains"
+      ],
+      "Lanai": [
+        "Hulopoe Bay Lanai clear water",
+        "Garden of the Gods Lanai rock formations",
+        "Lanai City Hawaii plantation square"
+      ]
+    }
+  }
 }

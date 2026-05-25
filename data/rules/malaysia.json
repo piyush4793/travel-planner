@@ -81,5 +81,639 @@
       "notes": "Cool hill station with tea plantations, strawberry farms and jungle treks"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Digi, Maxis, Celcom, and U Mobile tourist SIMs all work well for this route; expect about ₹475–₹570 for 7–10 day airport packs at KLIA, with Digi and Maxis the easiest for first-time visitors.",
+    "apps": [
+      "Grab",
+      "Google Maps",
+      "KTM Beli",
+      "AirAsia MOVE",
+      "Agoda",
+      "Booking.com",
+      "Klook",
+      "XE Currency",
+      "WhatsApp",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Kuala Lumpur",
+      "Malacca",
+      "Cameron Highlands",
+      "Penang",
+      "Langkawi",
+      "Kota Kinabalu"
+    ],
+    "cities": {
+      "Kuala Lumpur": {
+        "name": "Kuala Lumpur",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Modern skyline, towers, and Bukit Bintang lights",
+            "activities": [
+              {
+                "name": "Petronas Twin Towers Sky Bridge and Observation Deck",
+                "cost": "₹1,708"
+              },
+              {
+                "name": "KLCC Park stroll and evening fountain show",
+                "cost": "₹0"
+              },
+              {
+                "name": "KL Tower Observation Deck",
+                "cost": "₹988"
+              },
+              {
+                "name": "Pavilion Kuala Lumpur browse and Bukit Bintang walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Jalan Alor street-food dinner crawl",
+                "cost": "₹380–₹570"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Pudu Hostel",
+                "budget": "₹1,330–₹1,710/night"
+              },
+              {
+                "name": "Berjaya Times Square Hotel",
+                "budget": "₹3,800–₹5,320/night"
+              }
+            ],
+            "meals": [
+              "Annalakshmi Restaurant",
+              "Sangeetha Vegetarian Restaurant",
+              "Jalan Alor Hawker Stalls"
+            ]
+          },
+          {
+            "theme": "Temple circuit, independence landmarks, and museum stops",
+            "activities": [
+              {
+                "name": "Batu Caves morning visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Grab ride to Batu Caves from central Kuala Lumpur",
+                "cost": "₹380"
+              },
+              {
+                "name": "Sri Mahamariamman Temple and Chinatown stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Merdeka Square and Sultan Abdul Samad Building walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Islamic Arts Museum Malaysia",
+                "cost": "₹380"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Pudu Hostel",
+                "budget": "₹1,330–₹1,710/night"
+              },
+              {
+                "name": "Berjaya Times Square Hotel",
+                "budget": "₹3,800–₹5,320/night"
+              }
+            ],
+            "meals": [
+              "Annalakshmi Restaurant",
+              "Sangeetha Vegetarian Restaurant",
+              "Jalan Alor Hawker Stalls"
+            ]
+          },
+          {
+            "theme": "Markets, gardens, and easy culture hits before moving on",
+            "activities": [
+              {
+                "name": "Central Market handicrafts and batik shopping",
+                "cost": "₹0"
+              },
+              {
+                "name": "Petaling Street bargain walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "KL Bird Park",
+                "cost": "₹1,273"
+              },
+              {
+                "name": "Orchid and Hibiscus Gardens",
+                "cost": "₹19"
+              },
+              {
+                "name": "KL Craft Cultural Complex",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Pudu Hostel",
+                "budget": "₹1,330–₹1,710/night"
+              },
+              {
+                "name": "Berjaya Times Square Hotel",
+                "budget": "₹3,800–₹5,320/night"
+              }
+            ],
+            "meals": [
+              "Annalakshmi Restaurant",
+              "Sangeetha Vegetarian Restaurant",
+              "Jalan Alor Hawker Stalls"
+            ]
+          }
+        ]
+      },
+      "Malacca": {
+        "name": "Malacca",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "UNESCO lanes, Dutch Square, and Peranakan heritage",
+            "activities": [
+              {
+                "name": "Dutch Square and Christ Church Melaka",
+                "cost": "₹0"
+              },
+              {
+                "name": "A Famosa Gate and St Paul's Hill",
+                "cost": "₹0"
+              },
+              {
+                "name": "Baba Nyonya Heritage Museum guided tour",
+                "cost": "₹304"
+              },
+              {
+                "name": "Harmony Street temple-mosque walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Melaka River Cruise",
+                "cost": "₹570"
+              },
+              {
+                "name": "Jonker Walk evening market stroll",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Fenix Inn",
+                "budget": "₹1,520–₹1,900/night"
+              },
+              {
+                "name": "Casa del Rio Melaka",
+                "budget": "₹6,650–₹8,550/night"
+              }
+            ],
+            "meals": [
+              "Sri Lakshmi Vilas Restaurant",
+              "Selvam Restaurant",
+              "Donald and Lily’s Nyonya Restaurant"
+            ]
+          }
+        ]
+      },
+      "Cameron Highlands": {
+        "name": "Cameron Highlands",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Tea plantations, misty forests, and cool-weather viewpoints",
+            "activities": [
+              {
+                "name": "BOH Sungei Palas Tea Plantation and factory visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Cameron Bharat Tea Plantation",
+                "cost": "₹76"
+              },
+              {
+                "name": "Mossy Forest walk near Gunung Brinchang",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sam Poh Buddhist Temple",
+                "cost": "₹0"
+              },
+              {
+                "name": "Brinchang Butterfly and Insect Garden",
+                "cost": "₹95"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Heritage Hotel Tanah Rata",
+                "budget": "₹1,900–₹2,850/night"
+              },
+              {
+                "name": "Copthorne Hotel Cameron Highlands",
+                "budget": "₹3,420–₹4,750/night"
+              }
+            ],
+            "meals": [
+              "Sri Brinchang Restaurant",
+              "Restoran Bunga Suria",
+              "Kuntum Restaurant"
+            ]
+          },
+          {
+            "theme": "Strawberry farms, jungle trails, and local produce markets",
+            "activities": [
+              {
+                "name": "Kok Lim Strawberry Farm pick-your-own session",
+                "cost": "₹285–₹380"
+              },
+              {
+                "name": "Trail 3 or Trail 6 jungle trek",
+                "cost": "₹0"
+              },
+              {
+                "name": "Time Tunnel local memorabilia museum",
+                "cost": "₹95"
+              },
+              {
+                "name": "Kea Farm Market produce stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "MARDI Agro-technology Park",
+                "cost": "₹95"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Heritage Hotel Tanah Rata",
+                "budget": "₹1,900–₹2,850/night"
+              },
+              {
+                "name": "Copthorne Hotel Cameron Highlands",
+                "budget": "₹3,420–₹4,750/night"
+              }
+            ],
+            "meals": [
+              "Sri Brinchang Restaurant",
+              "Restoran Bunga Suria",
+              "Kuntum Restaurant"
+            ]
+          }
+        ]
+      },
+      "Penang": {
+        "name": "Penang",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "George Town murals, clan houses, and Little India streets",
+            "activities": [
+              {
+                "name": "Armenian Street street-art walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Khoo Kongsi Clan Temple",
+                "cost": "₹190"
+              },
+              {
+                "name": "Pitt Street Street of Harmony walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Little India browse around Queen Street and Market Street",
+                "cost": "₹0"
+              },
+              {
+                "name": "Fort Cornwallis",
+                "cost": "₹380"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "23 Love Lane Heritage Boutique Hotel",
+                "budget": "₹2,280–₹3,420/night"
+              },
+              {
+                "name": "Cheong Fatt Tze Mansion",
+                "budget": "₹7,220–₹8,550/night"
+              }
+            ],
+            "meals": [
+              "Sri Ananda Bhavan",
+              "Hameediyah Restaurant",
+              "Gurney Drive Hawker Stalls"
+            ]
+          },
+          {
+            "theme": "Hill views, temple panoramas, gardens, and beach time",
+            "activities": [
+              {
+                "name": "Penang Hill funicular railway and summit",
+                "cost": "₹570"
+              },
+              {
+                "name": "Kek Lok Si Temple and Kuan Yin pagoda lift",
+                "cost": "₹0–₹38"
+              },
+              {
+                "name": "Gurney Drive Hawker Centre tasting stop",
+                "cost": "₹285–₹570"
+              },
+              {
+                "name": "Batu Ferringhi Beach sunset time",
+                "cost": "₹0"
+              },
+              {
+                "name": "Penang Botanic Gardens",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "23 Love Lane Heritage Boutique Hotel",
+                "budget": "₹2,280–₹3,420/night"
+              },
+              {
+                "name": "Cheong Fatt Tze Mansion",
+                "budget": "₹7,220–₹8,550/night"
+              }
+            ],
+            "meals": [
+              "Sri Ananda Bhavan",
+              "Hameediyah Restaurant",
+              "Gurney Drive Hawker Stalls"
+            ]
+          }
+        ]
+      },
+      "Langkawi": {
+        "name": "Langkawi",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Cable cars, waterfalls, and duty-free island icons",
+            "activities": [
+              {
+                "name": "Panorama Langkawi SkyCab and Sky Bridge combo",
+                "cost": "₹1,615"
+              },
+              {
+                "name": "Telaga Tujuh Seven Wells Waterfalls",
+                "cost": "₹0"
+              },
+              {
+                "name": "Eagle Square evening stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Underwater World Langkawi",
+                "cost": "₹1,007"
+              },
+              {
+                "name": "Kuah duty-free shopping run",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "AB Motel Cenang Beach",
+                "budget": "₹1,425–₹1,900/night"
+              },
+              {
+                "name": "Meritus Pelangi Beach Resort & Spa",
+                "budget": "₹6,650–₹10,450/night"
+              }
+            ],
+            "meals": [
+              "Babylon Restaurant",
+              "Orkid Ria Restaurant",
+              "Fat Cucumber Café"
+            ]
+          },
+          {
+            "theme": "Mangroves, island hopping, and a final beach sunset",
+            "activities": [
+              {
+                "name": "Island hopping tour to Dayang Bunting, Singa Besar, and Beras Basah",
+                "cost": "₹855–₹1,045"
+              },
+              {
+                "name": "Kilim Karst Mangrove River Tour",
+                "cost": "₹1,045–₹1,425"
+              },
+              {
+                "name": "Laman Padi Rice Garden",
+                "cost": "₹0"
+              },
+              {
+                "name": "Taman Lagenda",
+                "cost": "₹95"
+              },
+              {
+                "name": "Pantai Cenang Beach sunset and scooter rental option",
+                "cost": "₹0–₹760"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "AB Motel Cenang Beach",
+                "budget": "₹1,425–₹1,900/night"
+              },
+              {
+                "name": "Meritus Pelangi Beach Resort & Spa",
+                "budget": "₹6,650–₹10,450/night"
+              }
+            ],
+            "meals": [
+              "Babylon Restaurant",
+              "Orkid Ria Restaurant",
+              "Fat Cucumber Café"
+            ]
+          }
+        ]
+      },
+      "Kota Kinabalu": {
+        "name": "Kota Kinabalu",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Marine park islands, waterfront walks, and mosque views",
+            "activities": [
+              {
+                "name": "Tunku Abdul Rahman Marine Park boat and entry for Manukan Island",
+                "cost": "₹627"
+              },
+              {
+                "name": "Jesselton Point Waterfront stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Kota Kinabalu City Mosque",
+                "cost": "₹95"
+              },
+              {
+                "name": "Grab ride to the floating mosque",
+                "cost": "₹152"
+              },
+              {
+                "name": "Filipino Handicraft Market souvenir stop",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Sixty3",
+                "budget": "₹1,520–₹2,280/night"
+              },
+              {
+                "name": "Le Méridien Kota Kinabalu",
+                "budget": "₹5,320–₹7,220/night"
+              }
+            ],
+            "meals": [
+              "Kohinoor Indian Restaurant",
+              "Welcome Seafood Restaurant",
+              "Centre Point Food Court"
+            ]
+          },
+          {
+            "theme": "Sabahan culture, museum time, and Tanjung Aru sunset",
+            "activities": [
+              {
+                "name": "Mari Mari Cultural Village",
+                "cost": "₹2,470"
+              },
+              {
+                "name": "Mari Mari Cultural Village with transport via Klook",
+                "cost": "₹3,420"
+              },
+              {
+                "name": "Atkinson Clock Tower and Signal Hill Observatory",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sabah State Museum",
+                "cost": "₹285"
+              },
+              {
+                "name": "Tanjung Aru Beach sunset",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Sixty3",
+                "budget": "₹1,520–₹2,280/night"
+              },
+              {
+                "name": "Le Méridien Kota Kinabalu",
+                "budget": "₹5,320–₹7,220/night"
+              }
+            ],
+            "meals": [
+              "Kohinoor Indian Restaurant",
+              "Welcome Seafood Restaurant",
+              "Centre Point Food Court"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Kuala Lumpur",
+        "to": "Malacca",
+        "method": "TBS express bus to Melaka Sentral (about 2h30m) plus Grab or local bus into the heritage core",
+        "cost": "₹238–₹285"
+      },
+      {
+        "from": "Malacca",
+        "to": "Cameron Highlands",
+        "method": "Bus back to Kuala Lumpur TBS, then onward bus to Tanah Rata; shared taxi is the faster backup",
+        "cost": "₹1,197–₹3,800"
+      },
+      {
+        "from": "Cameron Highlands",
+        "to": "Penang",
+        "method": "Unititi Express bus from Tanah Rata to George Town or Penang transfer via Ipoh and Butterworth",
+        "cost": "₹912"
+      },
+      {
+        "from": "Penang",
+        "to": "Langkawi",
+        "method": "Budget route via Kuala Perlis ferry or fast direct flight from Penang airport",
+        "cost": "₹1,140–₹2,850"
+      },
+      {
+        "from": "Langkawi",
+        "to": "Kuala Lumpur",
+        "method": "Direct flight from Langkawi to Kuala Lumpur",
+        "cost": "₹1,520–₹4,750"
+      },
+      {
+        "from": "Kuala Lumpur",
+        "to": "Kota Kinabalu",
+        "method": "Direct AirAsia or Malaysia Airlines flight to Sabah for the Borneo extension",
+        "cost": "₹2,850–₹7,600"
+      }
+    ],
+    "extras": [
+      "Indian passport holders can currently visit Malaysia visa-free for short leisure trips; still complete the latest digital arrival form before departure.",
+      "Grab is the single most useful Malaysia app for airport rides, city hops, and even food delivery across Kuala Lumpur, Penang, Langkawi, and Kota Kinabalu.",
+      "Kuala Lumpur and Penang are especially easy for vegetarian Indian travelers thanks to Brickfields and Little India restaurant clusters.",
+      "Jonker Walk is best on Friday to Sunday evenings in Malacca, while many nearby shops feel quieter on Tuesdays.",
+      "Langkawi is duty-free, so chocolates, perfumes, and alcohol are often cheapest there rather than in Kuala Lumpur or Penang.",
+      "This route stays easiest on Malaysia’s west coast; northeast monsoon affects the east coast more, while September–October can still feel hazy in cities."
+    ],
+    "cityImages": {
+      "Kuala Lumpur": [
+        "Petronas Twin Towers night illumination",
+        "Batu Caves golden Lord Murugan statue",
+        "Kuala Lumpur skyline Merdeka 118"
+      ],
+      "Malacca": [
+        "Christ Church Melaka Dutch Square red building",
+        "Jonker Street Malacca night market",
+        "A Famosa Porta de Santiago fort Malacca"
+      ],
+      "Cameron Highlands": [
+        "Cameron Highlands BOH tea plantation Sungei Palas",
+        "Tanah Rata Cameron Highlands town Malaysia",
+        "Cameron Highlands mossy forest trail"
+      ],
+      "Penang": [
+        "Armenian Street George Town Penang street art Ernest Zacharevic",
+        "Kek Lok Si temple Penang Air Itam",
+        "Penang Hill funicular railway panorama"
+      ],
+      "Langkawi": [
+        "Langkawi Sky Bridge cable car panorama Gunung Machinchang",
+        "Pantai Cenang beach Langkawi resort",
+        "Seven Wells waterfall Telaga Tujuh Langkawi"
+      ],
+      "Kota Kinabalu": [
+        "Kota Kinabalu City Mosque floating Likas Bay",
+        "Tunku Abdul Rahman Marine Park island snorkeling",
+        "Mount Kinabalu Sabah Borneo sunrise"
+      ]
+    }
+  }
 }
