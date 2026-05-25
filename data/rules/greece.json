@@ -77,5 +77,744 @@
       "notes": "Minoan Palace of Knossos, Samaria Gorge hike and pristine Elafonissi beach"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Cosmote Tourist SIM at Athens Airport for the best mainland-plus-island coverage, or Airalo eSIM before departure if you want data the moment you land.",
+    "apps": [
+      "Ferryhopper",
+      "Google Maps",
+      "OASA Telematics",
+      "Beat",
+      "Google Translate",
+      "XE Currency",
+      "Booking.com",
+      "AccuWeather"
+    ],
+    "cityOrder": [
+      "Athens",
+      "Santorini",
+      "Crete",
+      "Mykonos",
+      "Rhodes",
+      "Thessaloniki"
+    ],
+    "cities": {
+      "Athens": {
+        "name": "Athens",
+        "minDays": 2,
+        "recDays": 4,
+        "maxDays": 5,
+        "days": [
+          {
+            "theme": "Arrival & Neighbourhood Immersion",
+            "activities": [
+              {
+                "name": "Athens Airport Metro M3 to Syntagma",
+                "cost": "₹828"
+              },
+              {
+                "name": "Syntagma Square and Hellenic Parliament guard change",
+                "cost": "₹0"
+              },
+              {
+                "name": "Monastiraki Flea Market and Plaka walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Anafiotika lanes and Filopappou Hill sunset",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Phaedra",
+                "budget": "₹5,520–₹7,820/night"
+              },
+              {
+                "name": "Athens Studios",
+                "budget": "₹5,060–₹6,900/night"
+              }
+            ],
+            "meals": [
+              "Kosta's Souvlaki",
+              "Tzitzikas & Mermigas",
+              "Avocado"
+            ]
+          },
+          {
+            "theme": "Acropolis, Agora & Classical Athens",
+            "activities": [
+              {
+                "name": "Acropolis timed entry",
+                "cost": "₹2,760"
+              },
+              {
+                "name": "Acropolis Museum",
+                "cost": "₹1,840"
+              },
+              {
+                "name": "Ancient Agora and Stoa of Attalos",
+                "cost": "₹1,840"
+              },
+              {
+                "name": "Temple of Olympian Zeus and Arch of Hadrian",
+                "cost": "₹920"
+              },
+              {
+                "name": "Pnyx Hill democracy viewpoint",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Phaedra",
+                "budget": "₹5,520–₹7,820/night"
+              },
+              {
+                "name": "Athens Studios",
+                "budget": "₹5,060–₹6,900/night"
+              }
+            ],
+            "meals": [
+              "Strofi",
+              "Tzitzikas & Mermigas",
+              "Lukumades"
+            ]
+          },
+          {
+            "theme": "Delphi Oracle Day Trip",
+            "activities": [
+              {
+                "name": "KTEL bus Athens to Delphi round trip",
+                "cost": "₹2,778"
+              },
+              {
+                "name": "Delphi Archaeological Site and Museum",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Castalian Spring and Delphi village stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Optional Polytropon ceramics workshop",
+                "cost": "₹920–₹1,840"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Phaedra",
+                "budget": "₹5,520–₹7,820/night"
+              },
+              {
+                "name": "Athens Studios",
+                "budget": "₹5,060–₹6,900/night"
+              }
+            ],
+            "meals": [
+              "Astra Cafe & Restaurant",
+              "Tzitzikas & Mermigas",
+              "Ta Karamanlidika tou Fani"
+            ]
+          },
+          {
+            "theme": "Meteora Sky Monasteries Day Trip",
+            "activities": [
+              {
+                "name": "KTEL bus Athens to Kalambaka round trip",
+                "cost": "₹3,680"
+              },
+              {
+                "name": "Meteora local bus day pass",
+                "cost": "₹506"
+              },
+              {
+                "name": "Great Meteoron, Varlaam and Holy Trinity monastery entries",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Kastraki village viewpoint walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Phaedra",
+                "budget": "₹5,520–₹7,820/night"
+              },
+              {
+                "name": "Athens Studios",
+                "budget": "₹5,060–₹6,900/night"
+              }
+            ],
+            "meals": [
+              "Taverna Gardenia",
+              "Restaurant Meteoron",
+              "Ta Karamanlidika tou Fani"
+            ]
+          }
+        ]
+      },
+      "Santorini": {
+        "name": "Santorini",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Fira Arrival & Oia Caldera Sunset",
+            "activities": [
+              {
+                "name": "Athens to Santorini flight or high-speed ferry",
+                "cost": "₹4,600–₹9,200"
+              },
+              {
+                "name": "Fira caldera edge walk and cathedral quarter",
+                "cost": "₹0"
+              },
+              {
+                "name": "Fira to Oia caldera hike",
+                "cost": "₹0"
+              },
+              {
+                "name": "Santo Wines tasting flight",
+                "cost": "₹1,380–₹2,300"
+              },
+              {
+                "name": "Oia to Fira KTEL bus",
+                "cost": "₹212"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Villa Ilias",
+                "budget": "₹7,360–₹11,960/night"
+              },
+              {
+                "name": "Astra Suites",
+                "budget": "₹25,760–₹46,000/night"
+              }
+            ],
+            "meals": [
+              "Pelican Restaurant",
+              "Lucky's Souvlakis",
+              "Metaxy Mas"
+            ]
+          },
+          {
+            "theme": "Akrotiri, Red Beach & Black Sand Coast",
+            "activities": [
+              {
+                "name": "Ancient Akrotiri entry",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Fira to Akrotiri bus return",
+                "cost": "₹478"
+              },
+              {
+                "name": "Red Beach stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Kamari Beach sunbeds and umbrella",
+                "cost": "₹1,380–₹1,840"
+              },
+              {
+                "name": "Ancient Thera entry",
+                "cost": "₹920"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Villa Ilias",
+                "budget": "₹7,360–₹11,960/night"
+              },
+              {
+                "name": "Astra Suites",
+                "budget": "₹25,760–₹46,000/night"
+              }
+            ],
+            "meals": [
+              "Metaxy Mas",
+              "To Psaraki",
+              "Lucky's Souvlakis"
+            ]
+          },
+          {
+            "theme": "Volcano Cruise & Hilltop Villages",
+            "activities": [
+              {
+                "name": "Caldera boat tour to Nea Kameni, hot springs and Thirassia",
+                "cost": "₹2,760–₹3,680"
+              },
+              {
+                "name": "Museum of Prehistoric Thera",
+                "cost": "₹552"
+              },
+              {
+                "name": "Archaeological Museum of Thera",
+                "cost": "₹552"
+              },
+              {
+                "name": "Pyrgos village and Profitis Ilias viewpoints",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Villa Ilias",
+                "budget": "₹7,360–₹11,960/night"
+              },
+              {
+                "name": "Astra Suites",
+                "budget": "₹25,760–₹46,000/night"
+              }
+            ],
+            "meals": [
+              "Lucky's Souvlakis",
+              "Pelican Restaurant",
+              "Argo Restaurant"
+            ]
+          }
+        ]
+      },
+      "Crete": {
+        "name": "Crete",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Heraklion Old Town & Venetian Harbour",
+            "activities": [
+              {
+                "name": "Santorini to Heraklion fast ferry",
+                "cost": "₹3,220–₹5,060"
+              },
+              {
+                "name": "Koules Fortress entry",
+                "cost": "₹368"
+              },
+              {
+                "name": "Venetian Walls and Martinengo Bastion walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Morosini Fountain, Loggia and St. Titus Church",
+                "cost": "₹0"
+              },
+              {
+                "name": "Heraklion Central Market browsing",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kronos Hotel",
+                "budget": "₹5,980–₹7,820/night"
+              },
+              {
+                "name": "Lato Boutique Hotel",
+                "budget": "₹9,200–₹14,720/night"
+              }
+            ],
+            "meals": [
+              "Peskesi",
+              "O Kafenes tou Kagiampi",
+              "Umami Homemade Organic & Vegan Restaurant"
+            ]
+          },
+          {
+            "theme": "Knossos & Minoan Civilisation",
+            "activities": [
+              {
+                "name": "Bus Line 2 to Knossos round trip",
+                "cost": "₹368"
+              },
+              {
+                "name": "Palace of Knossos entry",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Heraklion Archaeological Museum",
+                "cost": "₹1,840"
+              },
+              {
+                "name": "Historical Museum of Crete",
+                "cost": "₹690"
+              },
+              {
+                "name": "Natural History Museum of Crete optional stop",
+                "cost": "₹690"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kronos Hotel",
+                "budget": "₹5,980–₹7,820/night"
+              },
+              {
+                "name": "Lato Boutique Hotel",
+                "budget": "₹9,200–₹14,720/night"
+              }
+            ],
+            "meals": [
+              "Umami Homemade Organic & Vegan Restaurant",
+              "Peskesi",
+              "O Kafenes tou Kagiampi"
+            ]
+          }
+        ]
+      },
+      "Mykonos": {
+        "name": "Mykonos",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Chora Lanes, Windmills & Little Venice",
+            "activities": [
+              {
+                "name": "Crete to Mykonos flight via Athens or seasonal ferry",
+                "cost": "₹3,220–₹13,800"
+              },
+              {
+                "name": "SeaBus from Mykonos New Port to Chora",
+                "cost": "₹184"
+              },
+              {
+                "name": "Mykonos Town whitewashed lanes exploration",
+                "cost": "₹0"
+              },
+              {
+                "name": "Panagia Paraportiani church visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Kato Mili windmills and Little Venice sunset drinks",
+                "cost": "₹920–₹1,840"
+              },
+              {
+                "name": "Aegean Maritime Museum",
+                "cost": "₹460"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Zorzis",
+                "budget": "₹7,360–₹11,960/night"
+              },
+              {
+                "name": "Manoulas Beach Hotel",
+                "budget": "₹9,200–₹14,720/night"
+              }
+            ],
+            "meals": [
+              "Nikos Taverna",
+              "Nice n Easy",
+              "Kounelas Fish Tavern"
+            ]
+          },
+          {
+            "theme": "Sacred Delos & South Coast Beaches",
+            "activities": [
+              {
+                "name": "Delos return boat from old port",
+                "cost": "₹1,840–₹2,300"
+              },
+              {
+                "name": "Delos Archaeological Site",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Platys Gialos bus return",
+                "cost": "₹368"
+              },
+              {
+                "name": "Paradise Beach boat transfer",
+                "cost": "₹460–₹644"
+              },
+              {
+                "name": "Archaeological Museum of Mykonos",
+                "cost": "₹460"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Zorzis",
+                "budget": "₹7,360–₹11,960/night"
+              },
+              {
+                "name": "Manoulas Beach Hotel",
+                "budget": "₹9,200–₹14,720/night"
+              }
+            ],
+            "meals": [
+              "Nice n Easy",
+              "Nikos Taverna",
+              "Kounelas Fish Tavern"
+            ]
+          }
+        ]
+      },
+      "Rhodes": {
+        "name": "Rhodes",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Medieval Old Town & Harbour Walls",
+            "activities": [
+              {
+                "name": "Flight from Mykonos to Rhodes via Athens",
+                "cost": "₹8,000–₹15,000"
+              },
+              {
+                "name": "Palace of the Grand Master entry",
+                "cost": "₹1,104"
+              },
+              {
+                "name": "Street of the Knights and Old Town walls walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Archaeological Museum of Rhodes",
+                "cost": "₹736"
+              },
+              {
+                "name": "Mandraki Harbour and deer statues promenade",
+                "cost": "₹0"
+              },
+              {
+                "name": "Roloi Clock Tower viewpoint",
+                "cost": "₹460"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "10GR Boutique Hotel & Wine Bar",
+                "budget": "₹9,200–₹15,640/night"
+              },
+              {
+                "name": "Mitsis La Vita Beach Hotel",
+                "budget": "₹8,280–₹13,800/night"
+              }
+            ],
+            "meals": [
+              "Tamam",
+              "Marco Polo Cafe",
+              "Nireas"
+            ]
+          },
+          {
+            "theme": "Lindos Acropolis & East Coast Swim Stops",
+            "activities": [
+              {
+                "name": "Rhodes Town to Lindos bus return",
+                "cost": "₹552"
+              },
+              {
+                "name": "Lindos Acropolis entry",
+                "cost": "₹1,840"
+              },
+              {
+                "name": "St. Paul's Bay swim stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Anthony Quinn Bay or Elli Beach downtime",
+                "cost": "₹0"
+              },
+              {
+                "name": "Monte Smith hill sunset over the Temple of Apollo",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "10GR Boutique Hotel & Wine Bar",
+                "budget": "₹9,200–₹15,640/night"
+              },
+              {
+                "name": "Mitsis La Vita Beach Hotel",
+                "budget": "₹8,280–₹13,800/night"
+              }
+            ],
+            "meals": [
+              "Tamam",
+              "Marco Polo Cafe",
+              "Mavrikos"
+            ]
+          }
+        ]
+      },
+      "Thessaloniki": {
+        "name": "Thessaloniki",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Roman Rotunda, White Tower & Waterfront",
+            "activities": [
+              {
+                "name": "Flight from Rhodes to Thessaloniki",
+                "cost": "₹5,500–₹10,500"
+              },
+              {
+                "name": "White Tower Museum",
+                "cost": "₹736"
+              },
+              {
+                "name": "Arch of Galerius and Rotunda complex",
+                "cost": "₹552"
+              },
+              {
+                "name": "Aristotelous Square and Nea Paralia promenade",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ladadika evening walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Caravan B&B",
+                "budget": "₹7,820–₹11,960/night"
+              },
+              {
+                "name": "Electra Palace Thessaloniki",
+                "budget": "₹14,720–₹23,000/night"
+              }
+            ],
+            "meals": [
+              "Full tou Meze",
+              "Bougatsa Giannis",
+              "ERGON Agora East"
+            ]
+          },
+          {
+            "theme": "Byzantine Heritage & Market Streets",
+            "activities": [
+              {
+                "name": "Museum of Byzantine Culture",
+                "cost": "₹736"
+              },
+              {
+                "name": "Ano Poli and Heptapyrgion walls walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ataturk Museum",
+                "cost": "₹0"
+              },
+              {
+                "name": "Modiano Market and Kapani Market tasting loop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Thermaic Gulf boat ride with onboard drink",
+                "cost": "₹460"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Caravan B&B",
+                "budget": "₹7,820–₹11,960/night"
+              },
+              {
+                "name": "Electra Palace Thessaloniki",
+                "budget": "₹14,720–₹23,000/night"
+              }
+            ],
+            "meals": [
+              "Mourga",
+              "ERGON Agora East",
+              "Bougatsa Giannis"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Athens",
+        "to": "Santorini",
+        "method": "Aegean, Volotea or Sky Express flight from ATH, or Seajets high-speed ferry from Piraeus",
+        "cost": "₹4,600–₹9,200"
+      },
+      {
+        "from": "Santorini",
+        "to": "Crete",
+        "method": "Seajets or Hellenic Seaways ferry from Athinios to Heraklion",
+        "cost": "₹3,220–₹5,060"
+      },
+      {
+        "from": "Crete",
+        "to": "Mykonos",
+        "method": "Aegean flight via Athens, or a seasonal fast ferry from Heraklion when schedules align",
+        "cost": "₹3,220–₹13,800"
+      },
+      {
+        "from": "Mykonos",
+        "to": "Rhodes",
+        "method": "Short domestic flight via Athens; much faster than stitching ferries",
+        "cost": "₹8,000–₹15,000"
+      },
+      {
+        "from": "Rhodes",
+        "to": "Thessaloniki",
+        "method": "Seasonal direct flight or quick one-stop flight via Athens",
+        "cost": "₹5,500–₹10,500"
+      },
+      {
+        "from": "Thessaloniki",
+        "to": "Athens",
+        "method": "High-speed train or 50-minute domestic flight if you want to position for an India departure",
+        "cost": "₹1,840–₹6,440"
+      }
+    ],
+    "extras": [
+      "Delphi is the strongest classic-history add-on from Athens if you want one deep mainland excursion without changing hotels.",
+      "Meteora deserves an overnight if you want sunrise monastery views instead of a long same-day return from Athens.",
+      "Paros or Naxos are calmer swaps for Mykonos if you prefer beaches and tavernas over nightlife.",
+      "Rhodes and Thessaloniki are easiest to stitch into an island trip with short domestic flights rather than long ferry chains.",
+      "Book Acropolis timed entry, Santorini ferries and Delos boats a few days ahead in May to October."
+    ],
+    "cityImages": {
+      "Athens": [
+        "Parthenon Athens Acropolis",
+        "Monastiraki Square Athens flea market",
+        "Syntagma Square Athens Greek Parliament"
+      ],
+      "Santorini": [
+        "Oia village Santorini caldera sunset",
+        "Santorini blue dome church Fira",
+        "Akrotiri Bronze Age ruins Santorini"
+      ],
+      "Crete": [
+        "Knossos Palace Minoan Crete",
+        "Heraklion Venetian harbour Crete",
+        "Elafonissi beach Crete"
+      ],
+      "Mykonos": [
+        "Mykonos windmills Kato Mili",
+        "Little Venice Mykonos Chora",
+        "Panagia Paraportiani church Mykonos"
+      ],
+      "Rhodes": [
+        "Rhodes Old Town Street of the Knights",
+        "Palace of the Grand Master Rhodes",
+        "Lindos Acropolis Rhodes"
+      ],
+      "Thessaloniki": [
+        "White Tower Thessaloniki waterfront",
+        "Rotunda Thessaloniki Greece",
+        "Ano Poli Thessaloniki city view"
+      ]
+    }
+  }
 }

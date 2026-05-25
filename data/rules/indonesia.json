@@ -80,5 +80,687 @@
       "notes": "Earth's most biodiverse marine ecosystem with 1500+ fish species"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Telkomsel Tourist SIM — best nationwide coverage, including Flores/Komodo; expect ₹520–₹1,040 for 30-day packs, with XL Axiata as the cheaper Bali/Java backup.",
+    "apps": [
+      "Gojek",
+      "Grab",
+      "Traveloka",
+      "tiket.com",
+      "Google Maps",
+      "XE Currency",
+      "WhatsApp",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Bali",
+      "Yogyakarta",
+      "Jakarta",
+      "Lombok",
+      "Komodo",
+      "Raja Ampat"
+    ],
+    "cities": {
+      "Bali": {
+        "name": "Bali",
+        "minDays": 3,
+        "recDays": 5,
+        "maxDays": 6,
+        "days": [
+          {
+            "theme": "Arrival, Saraswati Temple & Ubud Palace",
+            "activities": [
+              {
+                "name": "Ngurah Rai Airport to Ubud prepaid taxi or driver transfer",
+                "cost": "₹1,040–₹1,560"
+              },
+              {
+                "name": "Puri Saren Agung (Ubud Palace) orientation walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Pura Taman Saraswati lotus temple",
+                "cost": "₹312"
+              },
+              {
+                "name": "Evening Kecak or Legong dance at Ubud Palace",
+                "cost": "₹520–₹780"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Swasti Eco Cottages",
+                "budget": "₹1,820–₹2,600/night"
+              },
+              {
+                "name": "Bisma Eight",
+                "budget": "₹9,360–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Café Lotus",
+              "Moksa Restaurant",
+              "Kafe Batan Waru"
+            ]
+          },
+          {
+            "theme": "Rice Terraces, Monkey Forest & Balinese Art",
+            "activities": [
+              {
+                "name": "Campuhan Ridge Walk at sunrise",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tegallalang Rice Terraces",
+                "cost": "₹78–₹156"
+              },
+              {
+                "name": "Sacred Monkey Forest Sanctuary",
+                "cost": "₹416"
+              },
+              {
+                "name": "ARMA Museum",
+                "cost": "₹780"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Swasti Eco Cottages",
+                "budget": "₹1,820–₹2,600/night"
+              },
+              {
+                "name": "Bisma Eight",
+                "budget": "₹9,360–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Warung Ibu Rai",
+              "Locavore",
+              "Moksa Restaurant"
+            ]
+          },
+          {
+            "theme": "Holy Springs, Royal Tombs & Cooking Class",
+            "activities": [
+              {
+                "name": "Goa Gajah (Elephant Cave)",
+                "cost": "₹260"
+              },
+              {
+                "name": "Tirta Empul temple purification springs",
+                "cost": "₹260"
+              },
+              {
+                "name": "Gunung Kawi royal tomb complex",
+                "cost": "₹260"
+              },
+              {
+                "name": "Balinese cooking class with market visit",
+                "cost": "₹2,080–₹3,120"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Swasti Eco Cottages",
+                "budget": "₹1,820–₹2,600/night"
+              },
+              {
+                "name": "Bisma Eight",
+                "budget": "₹9,360–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Kafe Batan Waru",
+              "Moksa Restaurant",
+              "Café Lotus"
+            ]
+          },
+          {
+            "theme": "Tanah Lot, Petitenget & Seminyak Sunset",
+            "activities": [
+              {
+                "name": "Private driver from Ubud to Seminyak via Tanah Lot",
+                "cost": "₹1,820–₹2,600"
+              },
+              {
+                "name": "Tanah Lot sea temple",
+                "cost": "₹312"
+              },
+              {
+                "name": "Pura Petitenget coastal temple",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunset drinks at Potato Head Beach Club",
+                "cost": "₹624–₹1,248"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Layar Seminyak",
+                "budget": "₹4,160–₹7,800/night"
+              },
+              {
+                "name": "Katamama Hotel",
+                "budget": "₹10,400–₹15,600/night"
+              }
+            ],
+            "meals": [
+              "La Lucciola",
+              "Sisterfields Café",
+              "Motel Mexicola"
+            ]
+          },
+          {
+            "theme": "Kuta Surf, Spa & Double-Six Beach",
+            "activities": [
+              {
+                "name": "Kuta Beach beginner surf lesson",
+                "cost": "₹780–₹1,300"
+              },
+              {
+                "name": "Kuta Square and Beachwalk Mall browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Seminyak spa treatment at Sundari Day Spa or similar",
+                "cost": "₹1,040–₹2,080"
+              },
+              {
+                "name": "Sunset at Double-Six Beach",
+                "cost": "₹156–₹520"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Layar Seminyak",
+                "budget": "₹4,160–₹7,800/night"
+              },
+              {
+                "name": "Katamama Hotel",
+                "budget": "₹10,400–₹15,600/night"
+              }
+            ],
+            "meals": [
+              "Sisterfields Café",
+              "La Lucciola",
+              "Motel Mexicola"
+            ]
+          }
+        ]
+      },
+      "Yogyakarta": {
+        "name": "Yogyakarta",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Kraton, Water Castle & Malioboro",
+            "activities": [
+              {
+                "name": "Kraton Ngayogyakarta (Sultan's Palace)",
+                "cost": "₹78–₹130"
+              },
+              {
+                "name": "Taman Sari Water Castle",
+                "cost": "₹78–₹130"
+              },
+              {
+                "name": "Batik workshop in Kampung Taman Sari",
+                "cost": "₹416–₹780"
+              },
+              {
+                "name": "Wayang Kulit performance at Sono-Budoyo Museum or Kraton hall",
+                "cost": "₹104–₹260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dafam Fortuna Malioboro",
+                "budget": "₹2,080–₹3,640/night"
+              },
+              {
+                "name": "Hyatt Regency Yogyakarta",
+                "budget": "₹7,800–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Milas Vegetarian Restaurant",
+              "Via Via Café",
+              "Bale Raos"
+            ]
+          },
+          {
+            "theme": "Borobudur Sunrise, Prambanan & Ramayana Ballet",
+            "activities": [
+              {
+                "name": "Borobudur sunrise access and upper temple circuit",
+                "cost": "₹2,340"
+              },
+              {
+                "name": "Prambanan Temple Complex",
+                "cost": "₹2,340"
+              },
+              {
+                "name": "Ramayana Ballet at Prambanan",
+                "cost": "₹780–₹1,820"
+              },
+              {
+                "name": "Private driver for Borobudur + Prambanan day",
+                "cost": "₹2,600–₹3,640"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dafam Fortuna Malioboro",
+                "budget": "₹2,080–₹3,640/night"
+              },
+              {
+                "name": "Hyatt Regency Yogyakarta",
+                "budget": "₹7,800–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Milas Vegetarian Restaurant",
+              "Via Via Café",
+              "Bale Raos"
+            ]
+          }
+        ]
+      },
+      "Jakarta": {
+        "name": "Jakarta",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Kota Tua, Sunda Kelapa & MONAS",
+            "activities": [
+              {
+                "name": "Kota Tua museums around Fatahillah Square",
+                "cost": "₹26–₹104"
+              },
+              {
+                "name": "Sunda Kelapa harbour walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "MONAS observation deck and monument museum",
+                "cost": "₹104–₹234"
+              },
+              {
+                "name": "MRT Jakarta rides across the central corridor",
+                "cost": "₹16–₹73"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Artotel Thamrin",
+                "budget": "₹2,600–₹4,160/night"
+              },
+              {
+                "name": "Fairfield by Marriott Jakarta",
+                "budget": "₹5,200–₹8,400/night"
+              }
+            ],
+            "meals": [
+              "Café Batavia",
+              "Lara Djonggrang",
+              "Sate Khas Senayan"
+            ]
+          }
+        ]
+      },
+      "Lombok": {
+        "name": "Lombok",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Gili Trawangan Arrival, Turtles & Sunset Hill",
+            "activities": [
+              {
+                "name": "Flight into Lombok plus taxi to Bangsal and public boat to Gili Trawangan",
+                "cost": "₹3,640–₹7,280"
+              },
+              {
+                "name": "Bicycle rental for a Gili Trawangan loop",
+                "cost": "₹260–₹416"
+              },
+              {
+                "name": "Turtle Sanctuary visit and donation",
+                "cost": "₹260"
+              },
+              {
+                "name": "Sunset from the Gili Trawangan hill viewpoint",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Villa Almarik",
+                "budget": "₹1,560–₹3,120/night"
+              },
+              {
+                "name": "Desa Dunia Beda Beach Resort",
+                "budget": "₹5,200–₹9,360/night"
+              }
+            ],
+            "meals": [
+              "Scallywags Beach Club",
+              "Warung Bule",
+              "Karma Kayak"
+            ]
+          },
+          {
+            "theme": "Reef Snorkeling, Island Cycling & Easy Beach Time",
+            "activities": [
+              {
+                "name": "Half-day snorkeling trip to Turtle Point, Shark Point and Coral Fan Garden",
+                "cost": "₹520–₹780"
+              },
+              {
+                "name": "Cidomo horse cart ride for luggage or village transfer",
+                "cost": "₹104–₹260"
+              },
+              {
+                "name": "Optional fun dive around Gili reefs",
+                "cost": "₹2,548"
+              },
+              {
+                "name": "Fast boat or Bangsal transfer onward from Gili Trawangan",
+                "cost": "₹1,560–₹2,340"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Villa Almarik",
+                "budget": "₹1,560–₹3,120/night"
+              },
+              {
+                "name": "Desa Dunia Beda Beach Resort",
+                "budget": "₹5,200–₹9,360/night"
+              }
+            ],
+            "meals": [
+              "Scallywags Beach Club",
+              "Warung Bule",
+              "Karma Kayak"
+            ]
+          }
+        ]
+      },
+      "Komodo": {
+        "name": "Komodo",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Labuan Bajo Arrival & Harbour Sunset",
+            "activities": [
+              {
+                "name": "Labuan Bajo airport transfer or short taxi into town",
+                "cost": "₹312"
+              },
+              {
+                "name": "Puncak Waringin viewpoint at sunset",
+                "cost": "₹0"
+              },
+              {
+                "name": "Kalong Island bat spectacle boat trip",
+                "cost": "₹520–₹1,040"
+              },
+              {
+                "name": "Compare and reserve next-day shared Komodo boat tour",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Golo Hilltop Hotel",
+                "budget": "₹1,560–₹2,600/night"
+              },
+              {
+                "name": "Sudamala Suites & Villas Labuan Bajo",
+                "budget": "₹5,200–₹9,360/night"
+              }
+            ],
+            "meals": [
+              "Bajo Beach Bar",
+              "La Cecile Restaurant",
+              "Warung Mama"
+            ]
+          },
+          {
+            "theme": "Komodo Dragons, Padar & Pink Beach",
+            "activities": [
+              {
+                "name": "Shared day boat across Komodo National Park",
+                "cost": "₹1,950–₹3,640"
+              },
+              {
+                "name": "Komodo National Park pass",
+                "cost": "₹1,260"
+              },
+              {
+                "name": "Rinca Island ranger-guided dragon walk",
+                "cost": "₹962"
+              },
+              {
+                "name": "Snorkeling gear for Pink Beach or Manta Point",
+                "cost": "₹260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Golo Hilltop Hotel",
+                "budget": "₹1,560–₹2,600/night"
+              },
+              {
+                "name": "Sudamala Suites & Villas Labuan Bajo",
+                "budget": "₹5,200–₹9,360/night"
+              }
+            ],
+            "meals": [
+              "Bajo Beach Bar",
+              "La Cecile Restaurant",
+              "Warung Mama"
+            ]
+          }
+        ]
+      },
+      "Raja Ampat": {
+        "name": "Raja Ampat",
+        "minDays": 3,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Waisai Arrival, Jetty Snorkel & Easy Sunset",
+            "activities": [
+              {
+                "name": "Sorong to Waisai public ferry",
+                "cost": "₹520–₹780"
+              },
+              {
+                "name": "Raja Ampat marine park / conservation permit",
+                "cost": "₹3,640"
+              },
+              {
+                "name": "Waisai jetty snorkeling or beach swim",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunset harbour walk around Waisai",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Meridian Adventure Marina Club & Resort",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Vogelkopf Resort",
+                "budget": "₹5,500–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Rumah Makan Sederhana",
+              "Logband Cozy Resto & Bakery",
+              "Rumah Makan Pondok Lesehan"
+            ]
+          },
+          {
+            "theme": "Piaynemo, Star Lagoon & Pasir Timbul",
+            "activities": [
+              {
+                "name": "Shared longboat day trip to Piaynemo karst viewpoint",
+                "cost": "₹3,000–₹5,500"
+              },
+              {
+                "name": "Piaynemo staircase climb and viewpoint circuit",
+                "cost": "₹0 (included in tour)"
+              },
+              {
+                "name": "Star Lagoon photo stop and swim",
+                "cost": "₹0 (included in tour)"
+              },
+              {
+                "name": "Pasir Timbul sandbank stop",
+                "cost": "₹0 (included in tour)"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Meridian Adventure Marina Club & Resort",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Vogelkopf Resort",
+                "budget": "₹5,500–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Rumah Makan Sederhana",
+              "Warung Cahaya Bone",
+              "Logband Cozy Resto & Bakery"
+            ]
+          },
+          {
+            "theme": "Arborek, Yenbuba Reef & Village Life",
+            "activities": [
+              {
+                "name": "Arborek Village stop with house-reef snorkeling",
+                "cost": "₹0 (included in tour)"
+              },
+              {
+                "name": "Yenbuba jetty coral garden snorkel",
+                "cost": "₹0 (included in tour)"
+              },
+              {
+                "name": "Snorkel gear rental for the day",
+                "cost": "₹1,300–₹2,080"
+              },
+              {
+                "name": "Cape Kri or resort jetty sunset snorkel extension",
+                "cost": "₹520–₹1,040"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Meridian Adventure Marina Club & Resort",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Vogelkopf Resort",
+                "budget": "₹5,500–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Rumah Makan Pondok Lesehan",
+              "Rumah Makan Sederhana",
+              "Warung Cahaya Bone"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bali",
+        "to": "Yogyakarta",
+        "method": "Domestic flight DPS → YIA (about 1h20m) + airport train or Damri bus",
+        "cost": "₹2,210–₹4,420"
+      },
+      {
+        "from": "Yogyakarta",
+        "to": "Jakarta",
+        "method": "Domestic flight YIA → CGK/HLP (about 55m) or overnight executive train",
+        "cost": "₹1,352–₹3,640"
+      },
+      {
+        "from": "Jakarta",
+        "to": "Lombok",
+        "method": "Direct flight CGK → LOP (about 2h) + taxi/boat onward to Gili base",
+        "cost": "₹2,600–₹5,720"
+      },
+      {
+        "from": "Lombok",
+        "to": "Komodo",
+        "method": "Fast boat back to Bali or Lombok airport transfer + flight to Labuan Bajo via Bali",
+        "cost": "₹3,900–₹8,500"
+      },
+      {
+        "from": "Komodo",
+        "to": "Raja Ampat",
+        "method": "Flight Labuan Bajo → Sorong via Makassar/Bali + public ferry Sorong → Waisai",
+        "cost": "₹9,500–₹18,000"
+      }
+    ],
+    "extras": [
+      "Indian passport holders can use Indonesia's e-VOA; budget about ₹2,940 and apply online before landing to skip airport queues.",
+      "April–June and August–October are the easiest windows for this route; Bali/Java are wettest in December–February.",
+      "Exchange INR to USD in India first, then convert to IDR locally for better rates; UPI is not widely usable in Indonesia.",
+      "Carry temple-friendly clothing in Bali and Yogyakarta, and watch for canang sari offerings on the ground in Bali.",
+      "Pre-book Komodo shared boats in high season because Labuan Bajo departures fill quickly from July to September.",
+      "Raja Ampat and Gili days are weather-dependent, so keep one flex half-day if snorkeling visibility matters to you."
+    ],
+    "cityImages": {
+      "Bali": [
+        "Tegallalang Rice Terraces Bali",
+        "Pura Taman Saraswati Ubud lotus pond",
+        "Seminyak Beach sunset Bali"
+      ],
+      "Yogyakarta": [
+        "Borobudur temple sunrise Java",
+        "Prambanan Hindu temple UNESCO",
+        "Kraton Yogyakarta Hamengkubuwono palace"
+      ],
+      "Jakarta": [
+        "Monas National Monument Jakarta",
+        "Fatahillah Square Kota Tua Batavia",
+        "Sunda Kelapa harbour Bugis pinisi schooners"
+      ],
+      "Lombok": [
+        "Gili Trawangan beach Lombok Indonesia",
+        "Sea turtle snorkeling Gili Islands reef",
+        "Gili Trawangan sunset hill Lombok"
+      ],
+      "Komodo": [
+        "Komodo dragon Varanus komodoensis",
+        "Padar Island pink beach aerial Komodo",
+        "Manta ray Komodo National Park snorkel"
+      ],
+      "Raja Ampat": [
+        "Piaynemo Raja Ampat karst viewpoint",
+        "Arborek Village Raja Ampat snorkeling",
+        "Yenbuba jetty Raja Ampat coral reef"
+      ]
+    }
+  }
 }

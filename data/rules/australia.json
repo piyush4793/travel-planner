@@ -80,5 +80,622 @@
       "notes": "Sacred Anangu red rock monolith at sunset and sunrise in the Red Centre"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Telstra Prepaid",
+    "apps": [
+      "Google Maps",
+      "Opal Travel",
+      "PTV",
+      "MyTranslink",
+      "Uber",
+      "DiDi",
+      "Booking.com",
+      "Klook",
+      "Skyscanner",
+      "Bureau of Meteorology",
+      "HappyCow",
+      "Emergency+"
+    ],
+    "cityOrder": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane",
+      "Cairns",
+      "Uluru",
+      "Perth"
+    ],
+    "cities": {
+      "Sydney": {
+        "name": "Sydney",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Harbour Icons & Botanic Views",
+            "activities": [
+              {
+                "name": "Airport train into the CBD on the T8 line",
+                "cost": "₹308"
+              },
+              {
+                "name": "Sydney Opera House guided tour",
+                "cost": "₹2,420"
+              },
+              {
+                "name": "Royal Botanic Garden and Mrs Macquarie's Chair walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Circular Quay ferry ride for Harbour Bridge views",
+                "cost": "₹308"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Sydney World Square",
+                "budget": "₹9,900–₹11,550/night"
+              },
+              {
+                "name": "QT Sydney",
+                "budget": "₹17,050–₹20,900/night"
+              }
+            ],
+            "meals": [
+              "Govinda's",
+              "Mamak",
+              "Chat Thai"
+            ]
+          },
+          {
+            "theme": "Bridge, Rocks & Darling Harbour",
+            "activities": [
+              {
+                "name": "BridgeClimb Sydney on the Harbour Bridge",
+                "cost": "₹9,570–₹15,070"
+              },
+              {
+                "name": "The Rocks self-guided heritage walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "SEA LIFE Sydney Aquarium",
+                "cost": "₹2,475"
+              },
+              {
+                "name": "Darling Harbour evening promenade",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Sydney World Square",
+                "budget": "₹9,900–₹11,550/night"
+              },
+              {
+                "name": "QT Sydney",
+                "budget": "₹17,050–₹20,900/night"
+              }
+            ],
+            "meals": [
+              "Opera Bar",
+              "Mamak",
+              "Chat Thai"
+            ]
+          },
+          {
+            "theme": "Bondi Coastline & Blue Mountains Option",
+            "activities": [
+              {
+                "name": "Bondi Beach morning swim and Bondi to Coogee coastal walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Manly ferry return for harbour scenery",
+                "cost": "₹308"
+              },
+              {
+                "name": "Blue Mountains train to Katoomba",
+                "cost": "₹550–₹660"
+              },
+              {
+                "name": "Scenic World pass in the Blue Mountains",
+                "cost": "₹3,025"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Sydney World Square",
+                "budget": "₹9,900–₹11,550/night"
+              },
+              {
+                "name": "QT Sydney",
+                "budget": "₹17,050–₹20,900/night"
+              }
+            ],
+            "meals": [
+              "Icebergs Dining Room and Bar",
+              "Govinda's",
+              "Chat Thai"
+            ]
+          }
+        ]
+      },
+      "Melbourne": {
+        "name": "Melbourne",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Laneways, Coffee & Galleries",
+            "activities": [
+              {
+                "name": "Hosier Lane street art walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Federation Square and Yarra promenade",
+                "cost": "₹0"
+              },
+              {
+                "name": "National Gallery of Victoria permanent collection",
+                "cost": "₹0"
+              },
+              {
+                "name": "Pellegrini's Espresso Bar coffee stop",
+                "cost": "₹275–₹440"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Melbourne Hotel and Apartments",
+                "budget": "₹7,700–₹9,625/night"
+              },
+              {
+                "name": "Crown Metropol Melbourne",
+                "budget": "₹14,850–₹19,250/night"
+              }
+            ],
+            "meals": [
+              "Pellegrini's Espresso Bar",
+              "Vegie Bar",
+              "Stalactites"
+            ]
+          },
+          {
+            "theme": "Markets, Gardens & St Kilda",
+            "activities": [
+              {
+                "name": "Queen Victoria Market browsing and street food",
+                "cost": "₹550–₹1,100"
+              },
+              {
+                "name": "Royal Botanic Gardens Melbourne",
+                "cost": "₹0"
+              },
+              {
+                "name": "St Kilda Beach and Luna Park exterior stroll",
+                "cost": "₹0–₹550"
+              },
+              {
+                "name": "Eureka Skydeck 88",
+                "cost": "₹1,650"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Melbourne Hotel and Apartments",
+                "budget": "₹7,700–₹9,625/night"
+              },
+              {
+                "name": "Crown Metropol Melbourne",
+                "budget": "₹14,850–₹19,250/night"
+              }
+            ],
+            "meals": [
+              "Lentil as Anything",
+              "Vegie Bar",
+              "Chin Chin"
+            ]
+          },
+          {
+            "theme": "Great Ocean Road Day Run",
+            "activities": [
+              {
+                "name": "Great Ocean Road coach tour from Melbourne",
+                "cost": "₹4,400–₹7,150"
+              },
+              {
+                "name": "Twelve Apostles viewpoints",
+                "cost": "₹0"
+              },
+              {
+                "name": "Loch Ard Gorge coastal stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Port Campbell lunch stop",
+                "cost": "₹825–₹1,375"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Melbourne Hotel and Apartments",
+                "budget": "₹7,700–₹9,625/night"
+              },
+              {
+                "name": "Crown Metropol Melbourne",
+                "budget": "₹14,850–₹19,250/night"
+              }
+            ],
+            "meals": [
+              "Hardware Société",
+              "Port Campbell Hotel Craypot Bistro",
+              "Stalactites"
+            ]
+          }
+        ]
+      },
+      "Brisbane": {
+        "name": "Brisbane",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Riverfront Brisbane & South Bank",
+            "activities": [
+              {
+                "name": "South Bank Parklands and Streets Beach",
+                "cost": "₹0"
+              },
+              {
+                "name": "Queensland Art Gallery and Gallery of Modern Art",
+                "cost": "₹0"
+              },
+              {
+                "name": "CityCat ferry ride on the Brisbane River",
+                "cost": "₹220–₹440"
+              },
+              {
+                "name": "Story Bridge twilight lookout walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibis Styles Brisbane Elizabeth Street",
+                "budget": "₹7,150–₹9,900/night"
+              },
+              {
+                "name": "W Brisbane",
+                "budget": "₹17,050–₹23,100/night"
+              }
+            ],
+            "meals": [
+              "Julius Pizzeria",
+              "Felons Brewing Co.",
+              "Govinda's"
+            ]
+          },
+          {
+            "theme": "Wildlife & Gold Coast Escape",
+            "activities": [
+              {
+                "name": "Lone Pine Koala Sanctuary entry",
+                "cost": "₹2,310"
+              },
+              {
+                "name": "Surfers Paradise beach time on a Gold Coast day trip",
+                "cost": "₹550–₹1,100"
+              },
+              {
+                "name": "SkyPoint Observation Deck at Q1",
+                "cost": "₹1,650"
+              },
+              {
+                "name": "Return Queensland Rail or coach between Brisbane and Gold Coast",
+                "cost": "₹660–₹1,320"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibis Styles Brisbane Elizabeth Street",
+                "budget": "₹7,150–₹9,900/night"
+              },
+              {
+                "name": "W Brisbane",
+                "budget": "₹17,050–₹23,100/night"
+              }
+            ],
+            "meals": [
+              "Ginger Indian Restaurant",
+              "Govinda's",
+              "Honto"
+            ]
+          }
+        ]
+      },
+      "Cairns": {
+        "name": "Cairns",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Great Barrier Reef Day Cruise",
+            "activities": [
+              {
+                "name": "Full-day Great Barrier Reef snorkel cruise from Cairns Marina",
+                "cost": "₹8,525–₹12,375"
+              },
+              {
+                "name": "Introductory scuba dive add-on",
+                "cost": "₹3,300–₹4,400"
+              },
+              {
+                "name": "Glass-bottom boat viewing included on many reef tours",
+                "cost": "₹0"
+              },
+              {
+                "name": "Cairns Night Markets dinner wander",
+                "cost": "₹440–₹825"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pullman Cairns International",
+                "budget": "₹12,100–₹15,950/night"
+              },
+              {
+                "name": "Ibis Styles Cairns",
+                "budget": "₹6,600–₹8,800/night"
+              }
+            ],
+            "meals": [
+              "Ochre Restaurant",
+              "The Raw Prawn",
+              "Cairns Night Markets"
+            ]
+          },
+          {
+            "theme": "Daintree Rainforest & Indigenous Culture",
+            "activities": [
+              {
+                "name": "Daintree Rainforest day tour with river cruise",
+                "cost": "₹7,150–₹9,900"
+              },
+              {
+                "name": "Skyrail Rainforest Cableway to Kuranda",
+                "cost": "₹3,300–₹4,950"
+              },
+              {
+                "name": "Tjapukai Aboriginal Cultural Park",
+                "cost": "₹2,475"
+              },
+              {
+                "name": "Cairns Esplanade Lagoon swim",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pullman Cairns International",
+                "budget": "₹12,100–₹15,950/night"
+              },
+              {
+                "name": "Ibis Styles Cairns",
+                "budget": "₹6,600–₹8,800/night"
+              }
+            ],
+            "meals": [
+              "Ochre Restaurant",
+              "Dundee's at the Cairns Aquarium",
+              "The Raw Prawn"
+            ]
+          }
+        ]
+      },
+      "Uluru": {
+        "name": "Uluru",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Sacred Red Centre Sunrise & Sunset",
+            "activities": [
+              {
+                "name": "Uluṟu-Kata Tjuṯa National Park 3-day pass",
+                "cost": "₹2,090"
+              },
+              {
+                "name": "Uluru sunrise viewing platform",
+                "cost": "₹0"
+              },
+              {
+                "name": "Uluru Base Walk and Mala Walk with ranger",
+                "cost": "₹0"
+              },
+              {
+                "name": "Kata Tjuṯa Valley of the Winds walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Maruku Arts dot painting workshop",
+                "cost": "₹2,200–₹3,300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sails in the Desert",
+                "budget": "₹17,600–₹24,750/night"
+              },
+              {
+                "name": "The Lost Camel Hotel",
+                "budget": "₹13,750–₹17,600/night"
+              }
+            ],
+            "meals": [
+              "Ilkari Restaurant",
+              "Gecko's Cafe",
+              "Kulata Academy Cafe"
+            ]
+          }
+        ]
+      },
+      "Perth": {
+        "name": "Perth",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Kings Park, Quays & Fremantle",
+            "activities": [
+              {
+                "name": "Kings Park and Botanic Garden viewpoints",
+                "cost": "₹0"
+              },
+              {
+                "name": "Elizabeth Quay riverfront walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Fremantle Prison guided tour",
+                "cost": "₹1,595–₹1,980"
+              },
+              {
+                "name": "Little Creatures Brewery harbour stop",
+                "cost": "₹825–₹1,650"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Alex Hotel",
+                "budget": "₹9,350–₹12,650/night"
+              },
+              {
+                "name": "DoubleTree by Hilton Perth Waterfront",
+                "budget": "₹13,200–₹18,150/night"
+              }
+            ],
+            "meals": [
+              "Little Creatures Fremantle Brewery",
+              "C Restaurant in the Sky",
+              "Toastface Grillah"
+            ]
+          },
+          {
+            "theme": "Rottnest Island & Swan Valley",
+            "activities": [
+              {
+                "name": "Rottnest Island ferry from Fremantle",
+                "cost": "₹2,750–₹4,125"
+              },
+              {
+                "name": "Bike hire on Rottnest Island for quokka beaches",
+                "cost": "₹1,375–₹1,925"
+              },
+              {
+                "name": "Swan Valley tasting drive or tour",
+                "cost": "₹1,650–₹3,300"
+              },
+              {
+                "name": "Cottesloe Beach sunset",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Alex Hotel",
+                "budget": "₹9,350–₹12,650/night"
+              },
+              {
+                "name": "DoubleTree by Hilton Perth Waterfront",
+                "budget": "₹13,200–₹18,150/night"
+              }
+            ],
+            "meals": [
+              "Wildflower",
+              "Balthazar",
+              "Manuka Woodfire Kitchen"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Sydney",
+        "to": "Melbourne",
+        "method": "Flight",
+        "cost": "₹4,400–₹8,800"
+      },
+      {
+        "from": "Melbourne",
+        "to": "Brisbane",
+        "method": "Flight",
+        "cost": "₹4,950–₹9,350"
+      },
+      {
+        "from": "Brisbane",
+        "to": "Cairns",
+        "method": "Flight",
+        "cost": "₹4,400–₹8,250"
+      },
+      {
+        "from": "Cairns",
+        "to": "Uluru",
+        "method": "Flight",
+        "cost": "₹9,900–₹17,600"
+      },
+      {
+        "from": "Uluru",
+        "to": "Perth",
+        "method": "Flight via Alice Springs or Sydney",
+        "cost": "₹14,300–₹24,200"
+      }
+    ],
+    "extras": [
+      "Best overall timing is April to June or September to November; northern Queensland is wettest from December to February.",
+      "Buy a Telstra or Airalo eSIM before regional legs because Uluru and outback coverage is noticeably better on Telstra.",
+      "Australia is heavily card-first, but keep a little cash for markets, regional buses, and park shuttles.",
+      "SPF 50+, refillable water bottles, and wide-brim sun protection are essential even on mild days.",
+      "Uluru climbing is permanently banned; use the base walk, ranger walks, and sunrise or sunset viewing areas instead."
+    ],
+    "cityImages": {
+      "Sydney": [
+        "Sydney Opera House harbour bridge dusk",
+        "Bondi Beach aerial photography",
+        "Sydney CBD northeast skyline 2023"
+      ],
+      "Melbourne": [
+        "Melbourne Federation Square night",
+        "Hosier Lane street art graffiti",
+        "Melbourne skyline Yarra River sunset"
+      ],
+      "Brisbane": [
+        "Brisbane South Bank skyline night",
+        "Story Bridge Brisbane river aerial",
+        "Brisbane city botanic gardens river"
+      ],
+      "Cairns": [
+        "Great Barrier Reef aerial coral Queensland",
+        "Cairns Esplanade lagoon Queensland",
+        "Daintree Rainforest river cruise Queensland"
+      ],
+      "Uluru": [
+        "Uluru sunrise Northern Territory Australia",
+        "Kata Tjuta Valley of the Winds monolith",
+        "Uluru aerial Ayers Rock sandstone"
+      ],
+      "Perth": [
+        "Perth skyline Swan River sunset",
+        "Rottnest Island quokka beach",
+        "Fremantle harbour Western Australia"
+      ]
+    }
+  }
 }

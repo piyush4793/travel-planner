@@ -76,5 +76,638 @@
       "notes": "Bear Park, rose garden, medieval arcaded Lauben streets and clock tower"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Airalo \"Swiss\" eSIM — 30 days, 3GB–20GB, about ₹750–₹2,340; easiest option before departure from India.",
+    "apps": [
+      "SBB Mobile",
+      "SwitzerlandMobility",
+      "Jungfrau Railways",
+      "Google Maps",
+      "XE Currency",
+      "TripAdvisor",
+      "Wise",
+      "Zermatt Guide"
+    ],
+    "cityOrder": [
+      "Zurich",
+      "Lucerne",
+      "Interlaken",
+      "Zermatt",
+      "Geneva",
+      "Bern"
+    ],
+    "cities": {
+      "Zurich": {
+        "name": "Zurich",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Banking City Meets Medieval Soul",
+            "activities": [
+              {
+                "name": "Altstadt walk through Niederdorf and Lindenhof Hill",
+                "cost": "₹0"
+              },
+              {
+                "name": "Fraumünster Church stained-glass windows",
+                "cost": "₹0"
+              },
+              {
+                "name": "Grossmünster tower climb",
+                "cost": "₹475"
+              },
+              {
+                "name": "Swiss National Museum",
+                "cost": "₹0 with Swiss Travel Pass"
+              },
+              {
+                "name": "Lake Zürich promenade and short ZSG boat ride",
+                "cost": "₹760"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Schweizerhof Zürich",
+                "budget": "₹20,900–₹26,600/night"
+              },
+              {
+                "name": "25hours Hotel Langstrasse",
+                "budget": "₹18,050–₹24,700/night"
+              },
+              {
+                "name": "MEININGER Hotel Zürich",
+                "budget": "₹9,500–₹13,300/night"
+              }
+            ],
+            "meals": [
+              "Hiltl",
+              "Zeughauskeller",
+              "Café Schober"
+            ]
+          },
+          {
+            "theme": "Art, Design & Nightlife Quarter",
+            "activities": [
+              {
+                "name": "Kunsthaus Zürich",
+                "cost": "₹2,470"
+              },
+              {
+                "name": "Cabaret Voltaire",
+                "cost": "₹760"
+              },
+              {
+                "name": "Zürich West and Im Viadukt market arches",
+                "cost": "₹0"
+              },
+              {
+                "name": "Letten Flussbad river swim",
+                "cost": "₹760"
+              },
+              {
+                "name": "Uetliberg or Zürichberg sunset viewpoint",
+                "cost": "₹437"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "25hours Hotel Langstrasse",
+                "budget": "₹18,050–₹24,700/night"
+              },
+              {
+                "name": "Hotel Schweizerhof Zürich",
+                "budget": "₹20,900–₹26,600/night"
+              }
+            ],
+            "meals": [
+              "Hiltl",
+              "Café Schober",
+              "Zeughauskeller"
+            ]
+          }
+        ]
+      },
+      "Lucerne": {
+        "name": "Lucerne",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Medieval Bridges & Mountain Vibes",
+            "activities": [
+              {
+                "name": "Kapellbrücke and Water Tower",
+                "cost": "₹0"
+              },
+              {
+                "name": "Spreuerbrücke",
+                "cost": "₹0"
+              },
+              {
+                "name": "Museggmauer ramparts",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lion Monument",
+                "cost": "₹0"
+              },
+              {
+                "name": "KKL Luzern concert or cultural stop",
+                "cost": "₹1,900–₹7,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Schweizerhof Luzern",
+                "budget": "₹33,250–₹47,500/night"
+              },
+              {
+                "name": "Hotel Astoria Lucerne",
+                "budget": "₹17,100–₹22,800/night"
+              },
+              {
+                "name": "Backpackers Lucerne",
+                "budget": "₹8,075–₹11,400/night"
+              }
+            ],
+            "meals": [
+              "Waldstätterhof Restaurant",
+              "Bodu",
+              "Bäckerei Heini"
+            ]
+          },
+          {
+            "theme": "Top of the Dragon Mountain",
+            "activities": [
+              {
+                "name": "Mount Pilatus Golden Round Trip",
+                "cost": "₹10,640"
+              },
+              {
+                "name": "Sammlung Rosengart Museum",
+                "cost": "₹1,710"
+              },
+              {
+                "name": "Swiss Museum of Transport",
+                "cost": "₹2,850"
+              },
+              {
+                "name": "Inseli Park lakeshore sunset",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Astoria Lucerne",
+                "budget": "₹17,100–₹22,800/night"
+              },
+              {
+                "name": "Backpackers Lucerne",
+                "budget": "₹8,075–₹11,400/night"
+              }
+            ],
+            "meals": [
+              "Bodu",
+              "Waldstätterhof Restaurant",
+              "Bäckerei Heini"
+            ]
+          }
+        ]
+      },
+      "Interlaken": {
+        "name": "Interlaken",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Gateway to the Alps",
+            "activities": [
+              {
+                "name": "Harder Kulm funicular and viewpoint",
+                "cost": "₹3,420"
+              },
+              {
+                "name": "Lauterbrunnen Valley train excursion",
+                "cost": "₹1,140"
+              },
+              {
+                "name": "Staubbachfall waterfall stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Höheweg promenade between the lakes",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Victoria-Jungfrau Grand Hotel & Spa",
+                "budget": "₹42,750–₹66,500/night"
+              },
+              {
+                "name": "Hotel Krebs",
+                "budget": "₹13,300–₹19,000/night"
+              },
+              {
+                "name": "Backpackers Villa Sonnenhof",
+                "budget": "₹7,125–₹11,400/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Schuh",
+              "El Azteca",
+              "Goldener Anker"
+            ]
+          },
+          {
+            "theme": "Top of Europe — Jungfraujoch",
+            "activities": [
+              {
+                "name": "Eiger Express from Grindelwald Terminal",
+                "cost": "₹0 (included in Jungfraujoch ticket)"
+              },
+              {
+                "name": "Jungfraujoch — Top of Europe",
+                "cost": "₹11,362"
+              },
+              {
+                "name": "Ice Palace",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sphinx Terrace and Aletsch Glacier viewpoint",
+                "cost": "₹0"
+              },
+              {
+                "name": "Alpine Sensation multimedia tour",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Krebs",
+                "budget": "₹13,300–₹19,000/night"
+              },
+              {
+                "name": "Backpackers Villa Sonnenhof",
+                "budget": "₹7,125–₹11,400/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Schuh",
+              "Goldener Anker"
+            ]
+          },
+          {
+            "theme": "Thrill Seeker's Paradise",
+            "activities": [
+              {
+                "name": "Tandem paragliding over Interlaken",
+                "cost": "₹15,200–₹17,100"
+              },
+              {
+                "name": "Grindelwald First Cliff Walk gondola",
+                "cost": "₹2,850"
+              },
+              {
+                "name": "Bachalpsee lake hike",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lütschine River rafting",
+                "cost": "₹9,025"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Backpackers Villa Sonnenhof",
+                "budget": "₹7,125–₹11,400/night"
+              },
+              {
+                "name": "Hotel Krebs",
+                "budget": "₹13,300–₹19,000/night"
+              }
+            ],
+            "meals": [
+              "El Azteca",
+              "Restaurant Schuh",
+              "Goldener Anker"
+            ]
+          }
+        ]
+      },
+      "Zermatt": {
+        "name": "Zermatt",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Matterhorn Up Close",
+            "activities": [
+              {
+                "name": "Matterhorn Glacier Paradise cable car",
+                "cost": "₹11,875"
+              },
+              {
+                "name": "Glacial Ice Palace",
+                "cost": "₹0"
+              },
+              {
+                "name": "Matterhorn Museum Zermatlantis",
+                "cost": "₹950"
+              },
+              {
+                "name": "St. Mauritius Church and climbers' memorial",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunnegga Paradise funicular",
+                "cost": "₹2,565"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Omnia Zermatt",
+                "budget": "₹47,500–₹85,500/night"
+              },
+              {
+                "name": "Hotel Romantica",
+                "budget": "₹15,200–₹20,900/night"
+              },
+              {
+                "name": "Matterhorn Hostel",
+                "budget": "₹6,175–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Snowboat",
+              "Restaurant Whymper-Stube",
+              "Papperia Pub"
+            ]
+          },
+          {
+            "theme": "Gornergrat Railway & Glacier Hike",
+            "activities": [
+              {
+                "name": "Gornergrat Railway round trip",
+                "cost": "₹9,025"
+              },
+              {
+                "name": "Gornergletscher panorama hike",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bahnhofstrasse cheese shops and village market",
+                "cost": "₹0"
+              },
+              {
+                "name": "Five Lakes Trail via Sunnegga",
+                "cost": "₹2,565"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Romantica",
+                "budget": "₹15,200–₹20,900/night"
+              },
+              {
+                "name": "Matterhorn Hostel",
+                "budget": "₹6,175–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Snowboat",
+              "Papperia Pub",
+              "Restaurant Whymper-Stube"
+            ]
+          }
+        ]
+      },
+      "Geneva": {
+        "name": "Geneva",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "International City of Peace",
+            "activities": [
+              {
+                "name": "Jet d'Eau lakeside stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Cathédrale St-Pierre tower visit",
+                "cost": "₹475"
+              },
+              {
+                "name": "International Red Cross and Red Crescent Museum",
+                "cost": "₹1,425"
+              },
+              {
+                "name": "CERN guided visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Carouge neighborhood walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Beau Rivage Geneva",
+                "budget": "₹42,750–₹76,000/night"
+              },
+              {
+                "name": "Les Armures Hotel",
+                "budget": "₹23,750–₹36,100/night"
+              },
+              {
+                "name": "City Hostel Geneva",
+                "budget": "₹6,650–₹10,450/night"
+              }
+            ],
+            "meals": [
+              "Café de Paris",
+              "Chez Ma Cousine",
+              "Omnivore"
+            ]
+          },
+          {
+            "theme": "UN & Lake Geneva Cruise",
+            "activities": [
+              {
+                "name": "Palais des Nations guided tour",
+                "cost": "₹1,615"
+              },
+              {
+                "name": "CGN Lake Geneva cruise",
+                "cost": "₹2,660"
+              },
+              {
+                "name": "Rue du Rhône and Swiss chocolate shopping walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "St-Pierre concert or old-town art stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mont Salève cable car",
+                "cost": "₹1,900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Les Armures Hotel",
+                "budget": "₹23,750–₹36,100/night"
+              },
+              {
+                "name": "Hotel Central Geneva",
+                "budget": "₹12,350–₹18,050/night"
+              }
+            ],
+            "meals": [
+              "Omnivore",
+              "Chez Ma Cousine",
+              "Café de Paris"
+            ]
+          }
+        ]
+      },
+      "Bern": {
+        "name": "Bern",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Bear City: Switzerland's Hidden Capital",
+            "activities": [
+              {
+                "name": "Bern Altstadt UNESCO walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Zytglogge Clock Tower",
+                "cost": "₹570"
+              },
+              {
+                "name": "Bern Minster tower climb",
+                "cost": "₹475"
+              },
+              {
+                "name": "Zentrum Paul Klee",
+                "cost": "₹2,090"
+              },
+              {
+                "name": "BärenPark and Rosengarten",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bundeshaus guided tour",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Innere Enge",
+                "budget": "₹26,600–₹39,900/night"
+              },
+              {
+                "name": "Bären am Bundesplatz",
+                "budget": "₹17,100–₹24,700/night"
+              },
+              {
+                "name": "Hotel Landhaus",
+                "budget": "₹10,450–₹15,200/night"
+              }
+            ],
+            "meals": [
+              "Klötzlikeller",
+              "Café 65",
+              "Restaurant Lötschberg"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Zurich",
+        "to": "Lucerne",
+        "method": "SBB train",
+        "cost": "₹2,185"
+      },
+      {
+        "from": "Lucerne",
+        "to": "Interlaken",
+        "method": "BLS train via Brienz",
+        "cost": "₹3,515"
+      },
+      {
+        "from": "Interlaken",
+        "to": "Zermatt",
+        "method": "SBB + Matterhorn Gotthard Bahn via Visp",
+        "cost": "₹6,650"
+      },
+      {
+        "from": "Zermatt",
+        "to": "Geneva",
+        "method": "SBB train via Visp and Lausanne",
+        "cost": "₹9,025"
+      },
+      {
+        "from": "Geneva",
+        "to": "Bern",
+        "method": "SBB InterCity train",
+        "cost": "₹3,990"
+      }
+    ],
+    "extras": [
+      "The 15-day Swiss Travel Pass is the easiest fit for this route at about ₹45,410 and covers most intercity trains, city transport, lake boats and many museums.",
+      "SBB sometimes shows half-fare pricing by default; switch to 'No discount' to see the real public fare before booking.",
+      "Zermatt is car-free, so arrive by train or park at Täsch and take the shuttle onward.",
+      "Book Jungfraujoch and CERN slots early, especially in summer, because the best morning departures and tours go first.",
+      "Vegetarian travel is easy in Switzerland — fondue, raclette, rösti and dedicated spots like Hiltl make meal planning simple.",
+      "Indian travelers need a Schengen visa; budget about ₹8,600 per person and apply 6–8 weeks before departure."
+    ],
+    "cityImages": {
+      "Zurich": [
+        "Zürich Fraumünster Limmat River",
+        "Zurich Old Town aerial view",
+        "Kunsthaus Zürich museum"
+      ],
+      "Lucerne": [
+        "Kapellbrücke Lucerne covered bridge",
+        "Lion Monument Lucerne rock carving",
+        "Mount Pilatus Lucerne cogwheel railway"
+      ],
+      "Interlaken": [
+        "Jungfraujoch Top of Europe Sphinx Observatory",
+        "Interlaken Eiger Mönch Jungfrau panorama",
+        "Lauterbrunnen waterfall valley Switzerland"
+      ],
+      "Zermatt": [
+        "Matterhorn Zermatt pyramid peak",
+        "Gornergrat railway Matterhorn view",
+        "Zermatt village car-free alpine street"
+      ],
+      "Geneva": [
+        "Jet d'Eau Geneva Lake fountain",
+        "Geneva Old Town Cathédrale St-Pierre",
+        "United Nations Palais des Nations Geneva"
+      ],
+      "Bern": [
+        "Bern Zytglogge clock tower medieval",
+        "Bern Aare river peninsula aerial",
+        "Bern Münster Gothic cathedral spire"
+      ]
+    }
+  }
 }
