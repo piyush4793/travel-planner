@@ -72,7 +72,7 @@ Custom trip planner with a days slider — set your duration and the engine buil
 | Mode | Availability | Description |
 |---|---|---|
 | 🎬 Cinematic | Rule-based only | Full-screen animated journey with styled transport markers, easing, city pulse, route glow |
-| 📋 Itinerary | All countries (offline + AI) | Scrollable modal with day cards, activities, costs, transport |
+| 📋 Itinerary | All countries (offline + AI) | Scrollable modal with expandable day cards, activities with cost highlighting, quick links (📍 Maps, 🔍 Search), meal recommendations, hotel booking links |
 | 📄 PDF Export | All countries (paid) | Browser print dialog → Save as PDF with clean formatted layout |
 
 ---
@@ -181,7 +181,6 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 |----------|-----------|---------|----------|-------------|
 | 🟢 Short | ⭐⭐⭐ | Cinematic for AI plans | AI | Fuzzy city name matching + AI lat/lng fallback so cinematic works for imported plans |
 | 🟢 Short | ⭐⭐ | Budget currency toggle | UX | Convert ₹ to USD / EUR / AUD |
-| 🟢 Short | ⭐ | Day-level detail expansion | UX | Tap a day row for full tips, map coords, booking links |
 | 🟡 Medium | ⭐⭐⭐⭐⭐ | Responsive UI | UX | Mobile, tablet, desktop, TV — full-screen drawers, adaptive grids, touch targets |
 | 🟡 Medium | ⭐⭐⭐⭐ | First run experience | UX | Guided onboarding tour highlighting key features (tooltip-based, one-time) |
 | 🟡 Medium | ⭐⭐⭐⭐ | More rule-based countries | Content | Thailand, Japan, New Zealand, Iceland — per-day itineraries with costs |
