@@ -67,5 +67,382 @@
       "notes": "International gateway with musk ox country and ice sheet access"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Tusass prepaid SIM — buy in Nuuk or Kangerlussuaq; Greenland is outside EU roaming and coverage is strongest in major towns.",
+    "apps": [
+      "Air Greenland",
+      "Visit Greenland",
+      "Tusass",
+      "yr.no",
+      "Aurora Forecast",
+      "Maps.me",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Nuuk",
+      "Kangerlussuaq",
+      "Sisimiut",
+      "Ilulissat"
+    ],
+    "cities": {
+      "Nuuk": {
+        "name": "Nuuk",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Nuuk for flight recovery, museums, and one fjord day before heading deeper into Greenland; weather delays are common, so this is the best city for your first two nights.",
+        "days": [
+          {
+            "theme": "Colonial Harbour, Museums & City Icons",
+            "activities": [
+              {
+                "name": "Colonial Harbour walk covering Hans Egede's House, the Mother of the Sea statue, Nuuk Cathedral, and the old waterfront boardwalk",
+                "cost": "Free"
+              },
+              {
+                "name": "Greenland National Museum for the Qilakitsoq mummies and Inuit cultural collections",
+                "cost": "₹370 pp"
+              },
+              {
+                "name": "Katuaq Cultural Centre architecture stop and exhibition browse",
+                "cost": "Free"
+              },
+              {
+                "name": "Self-guided Nuuk Art Walk through the compact city centre",
+                "cost": "Free"
+              },
+              {
+                "name": "Evening stroll by Nuuk Fjord and Circus Lake for Sermitsiaq views",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Hans Egede",
+                "budget": "₹19,700–₹29,600/night"
+              },
+              {
+                "name": "Hotel Nordbo",
+                "budget": "₹11,000–₹17,300/night"
+              }
+            ],
+            "meals": [
+              "Sarfalik",
+              "Café Esmeralda",
+              "Charoen Porn"
+            ]
+          },
+          {
+            "theme": "Nuuk Fjord Adventure & Seasonal Aurora Window",
+            "activities": [
+              {
+                "name": "Nuuk Fjord boat tour past iceberg passages and abandoned settlements",
+                "cost": "₹7,400–₹11,700 pp",
+                "tip": "This is Nuuk's signature excursion; keep it on the clearest weather window."
+              },
+              {
+                "name": "Quassussuaq (Lille Malene) hike for panoramic city and fjord views",
+                "cost": "Free"
+              },
+              {
+                "name": "Kittat Economusée to watch Greenlandic national costume craftsmanship",
+                "cost": "Free"
+              },
+              {
+                "name": "Guided paddleboarding among icebergs in sheltered harbour waters",
+                "cost": "₹6,200–₹9,300 pp"
+              },
+              {
+                "name": "Northern Lights drive or boat outing in winter months",
+                "cost": "₹4,900–₹8,000 pp",
+                "tip": "Best from February to March when skies are dark but flights are still operating reliably."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Hans Egede",
+                "budget": "₹19,700–₹29,600/night"
+              },
+              {
+                "name": "Hotel Søma Nuuk",
+                "budget": "₹13,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Sarfalik",
+              "Brugseni Café",
+              "Charoen Porn"
+            ]
+          }
+        ]
+      },
+      "Kangerlussuaq": {
+        "name": "Kangerlussuaq",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Greenland's classic inland air hub is the easiest place to touch the ice sheet and spot musk oxen; one well-planned night is enough for most first-time trips.",
+        "days": [
+          {
+            "theme": "Russell Glacier, Ice Sheet Access & Tundra Wildlife",
+            "activities": [
+              {
+                "name": "Russell Glacier outing for a close look at the Greenland Ice Sheet edge",
+                "cost": "₹6,800 pp guided / Free self-guided",
+                "tip": "A guided transfer is easiest unless you are prepared for the long gravel-road approach."
+              },
+              {
+                "name": "Musk ox and caribou tundra safari around Lake Ferguson and Black Ridge",
+                "cost": "₹6,800 pp"
+              },
+              {
+                "name": "Kangerlussuaq Museum for aviation, WWII, and settlement history",
+                "cost": "₹200–₹300 pp"
+              },
+              {
+                "name": "Northern Lights watch in winter or dog-sled / snowmobile add-on when snow conditions allow",
+                "cost": "₹4,900–₹14,800 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Albatros Arctic Circle",
+                "budget": "₹11,100–₹17,300/night"
+              },
+              {
+                "name": "Polar Bear Inn",
+                "budget": "₹7,400–₹11,100/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Roklubben",
+              "Airport Restaurant",
+              "Pilersuisoq Market Counter"
+            ]
+          }
+        ]
+      },
+      "Sisimiut": {
+        "name": "Sisimiut",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Sisimiut adds Greenlandic small-town life, Arctic Circle Trail scenery, and a strong culture stop without needing a long detour; it works best as a one-night pause between inland and Disko Bay sectors.",
+        "days": [
+          {
+            "theme": "Arctic Circle Trail Gateway & Inuit Heritage",
+            "activities": [
+              {
+                "name": "Sisimiut Museum for Inuit history, colonial buildings, and traditional kayak displays",
+                "cost": "₹400–₹500 pp"
+              },
+              {
+                "name": "Tele Island (Sallinnguit) walk for archaeology, harbour views, and an easy taste of the Arctic Circle Trail landscape",
+                "cost": "Free"
+              },
+              {
+                "name": "Taseralik Cultural Centre exhibitions and lakefront coffee stop",
+                "cost": "Free–₹300 pp"
+              },
+              {
+                "name": "Hotel Sisimiut Arctic Spa & sauna or a short summer boat safari from the harbour",
+                "cost": "₹3,000–₹9,500 pp",
+                "tip": "Pick the spa in shoulder seasons and the boat safari in July–August for the best value."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Sisimiut",
+                "budget": "₹13,000–₹20,000/night"
+              },
+              {
+                "name": "Hotel SØMA Sisimiut",
+                "budget": "₹11,000–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Nasaasaaq",
+              "Café Taseralik",
+              "Café & Restaurant SØMA"
+            ]
+          }
+        ]
+      },
+      "Ilulissat": {
+        "name": "Ilulissat",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Ilulissat is the star stop of a Greenland first trip; give it three nights so you can keep one full day flexible for weather-sensitive whale, boat, or helicopter excursions.",
+        "days": [
+          {
+            "theme": "Icefjord Arrival, Sermermiut & Town Landmarks",
+            "activities": [
+              {
+                "name": "Ilulissat Icefjord Centre for climate and glacier exhibits in the landmark waterfront building",
+                "cost": "₹1,850 pp"
+              },
+              {
+                "name": "Sermermiut boardwalk and viewpoint walk through the ancient settlement valley",
+                "cost": "Free"
+              },
+              {
+                "name": "Zion's Church waterfront stop and harbour photography session",
+                "cost": "Free"
+              },
+              {
+                "name": "Knud Rasmussen Museum for polar exploration history",
+                "cost": "₹430 pp"
+              },
+              {
+                "name": "Short guided city walk to learn sled-dog culture and local history",
+                "cost": "₹1,850–₹3,100 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Arctic",
+                "budget": "₹22,200–₹30,800/night"
+              },
+              {
+                "name": "Hotel Icefjord",
+                "budget": "₹14,800–₹22,200/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Ulo",
+              "Café Ferdinand",
+              "Restaurant Hvide Falk"
+            ]
+          },
+          {
+            "theme": "Disko Bay Boat Day, Whales & Icebergs",
+            "activities": [
+              {
+                "name": "Whale-watching cruise in Disko Bay for humpback, fin, and minke sightings",
+                "cost": "₹5,500–₹8,700 pp",
+                "tip": "July and August are the best months for humpback activity."
+              },
+              {
+                "name": "Iceberg safari by boat among giant calved blocks from Sermeq Kujalleq",
+                "cost": "₹4,300–₹7,400 pp"
+              },
+              {
+                "name": "Kaffemik cultural visit with coffee, cake, and Greenlandic hospitality",
+                "cost": "₹2,500–₹4,300 pp"
+              },
+              {
+                "name": "Guided sea kayaking in the icefjord with dry suit and safety gear",
+                "cost": "₹8,000–₹11,100 pp"
+              },
+              {
+                "name": "Ilulissat Art Museum quick stop if weather closes in",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Arctic",
+                "budget": "₹22,200–₹30,800/night"
+              },
+              {
+                "name": "Best Western Plus Hotel Ilulissat",
+                "budget": "₹16,000–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Ulo",
+              "Mamáq Restaurant",
+              "Café Ferdinand"
+            ]
+          },
+          {
+            "theme": "Midnight Sun / Aurora Flex Day & Scenic Flight Options",
+            "activities": [
+              {
+                "name": "Northern Lights outing in winter or a midnight-sun hike along the icefjord rim in summer",
+                "cost": "₹4,900–₹7,400 pp / Free hiking"
+              },
+              {
+                "name": "Traditional dog-sled tour on frozen terrain in winter months",
+                "cost": "₹8,600–₹18,500 pp"
+              },
+              {
+                "name": "Helicopter scenic flight over the glacier front and calving ice",
+                "cost": "₹18,500–₹36,900 pp"
+              },
+              {
+                "name": "Dog-feeding hour for an easy culture stop before departure day",
+                "cost": "₹1,850 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Arctic",
+                "budget": "₹22,200–₹30,800/night"
+              },
+              {
+                "name": "Hotel Icefjord",
+                "budget": "₹14,800–₹22,200/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Hvide Falk",
+              "Hong Kong Café",
+              "Café Iluliaq"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Nuuk",
+        "to": "Kangerlussuaq",
+        "method": "Air Greenland Dash-8 domestic flight (about 45–60 min)",
+        "cost": "₹18,500–₹24,600"
+      },
+      {
+        "from": "Kangerlussuaq",
+        "to": "Sisimiut",
+        "method": "Air Greenland domestic flight, usually about 45 min",
+        "cost": "₹14,000–₹19,000"
+      },
+      {
+        "from": "Sisimiut",
+        "to": "Ilulissat",
+        "method": "Air Greenland coastal flight, often nonstop or with a short operational stop",
+        "cost": "₹18,000–₹25,000"
+      }
+    ],
+    "extras": [
+      "Book Air Greenland sectors 4–6 months ahead; summer seats and the best through-fares sell out early.",
+      "Keep at least one buffer half-day because fog and wind regularly delay domestic flights across Greenland.",
+      "Vegetarian food is limited outside Nuuk and Ilulissat, so request meals with hotels in advance and carry trail snacks.",
+      "Cards work in most towns, but carry some Danish kroner for kiosks, small cafés, and weather-disruption days.",
+      "June to August is best for boats, hiking, and whales; February to March is best for dog sledding and Northern Lights."
+    ],
+    "cityImages": {
+      "Nuuk": [
+        "Nuuk Greenland colonial harbour",
+        "Katuaq Cultural Centre Nuuk",
+        "Nuuk fjord Sermitsiaq"
+      ],
+      "Kangerlussuaq": [
+        "Russell Glacier Kangerlussuaq Greenland",
+        "Kangerlussuaq airport Greenland",
+        "Musk ox Greenland tundra"
+      ],
+      "Sisimiut": [
+        "Sisimiut Greenland colourful harbour",
+        "Arctic Circle Trail Sisimiut",
+        "Taseralik Cultural Centre Sisimiut"
+      ],
+      "Ilulissat": [
+        "Ilulissat Icefjord UNESCO Greenland",
+        "Sermeq Kujalleq Disko Bay",
+        "Hotel Arctic Ilulissat icebergs"
+      ]
+    }
+  }
 }

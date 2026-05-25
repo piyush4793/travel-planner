@@ -63,5 +63,337 @@
       "notes": "East coast beaches, Al Hayl Castle and snorkeling in the Indian Ocean"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "du Tourist SIM — about ₹1,495 for an airport-friendly tourist pack with enough data for maps, Careem, and attraction bookings across Dubai and Abu Dhabi.",
+    "apps": [
+      "RTA Dubai",
+      "Careem",
+      "Klook",
+      "HappyCow"
+    ],
+    "cityOrder": [
+      "Dubai City",
+      "Sharjah",
+      "Abu Dhabi"
+    ],
+    "cities": {
+      "Dubai City": {
+        "name": "Dubai City",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Base yourself in central Dubai for the first half of the trip; Sharjah works best as a day trip before moving to Abu Dhabi.",
+        "days": [
+          {
+            "theme": "Downtown icons, skyline views, and an easy first-night Dubai reset",
+            "activities": [
+              {
+                "name": "Burj Khalifa At The Top entry",
+                "cost": "₹3,427"
+              },
+              {
+                "name": "Dubai Mall browse and aquarium-facing promenade walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Dubai Fountain and Burj Lake boardwalk",
+                "cost": "Free"
+              },
+              {
+                "name": "Dubai Frame sunset slot",
+                "cost": "₹1,150"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Rove Downtown",
+                "budget": "₹6,900–₹10,350/night"
+              },
+              {
+                "name": "ibis One Central",
+                "budget": "₹4,600–₹6,900/night"
+              }
+            ],
+            "meals": [
+              "Saravana Bhavan",
+              "Ravi Restaurant",
+              "Govinda's"
+            ]
+          },
+          {
+            "theme": "Old Dubai lanes, creekside markets, and classic neighborhoods",
+            "activities": [
+              {
+                "name": "Al Fahidi Historical Neighbourhood walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Al Seef creekfront stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Gold Souk and Spice Souk browsing",
+                "cost": "Free"
+              },
+              {
+                "name": "Jumeirah Beach or Dubai Marina evening walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Rove Downtown",
+                "budget": "₹6,900–₹10,350/night"
+              },
+              {
+                "name": "ibis One Central",
+                "budget": "₹4,600–₹6,900/night"
+              }
+            ],
+            "meals": [
+              "Saravana Bhavan",
+              "Ravi Restaurant",
+              "Govinda's"
+            ]
+          },
+          {
+            "theme": "Desert safari thrills with a softer Palm and marina finish",
+            "activities": [
+              {
+                "name": "Half-day or evening desert safari with dune bashing and dinner",
+                "cost": "₹4,600–₹5,750"
+              },
+              {
+                "name": "Palm Jumeirah boardwalk or The Pointe views",
+                "cost": "Free"
+              },
+              {
+                "name": "Madinat Jumeirah and Burj Al Arab photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Bluewaters or Dubai Marina after-dark walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Rove Downtown",
+                "budget": "₹6,900–₹10,350/night"
+              },
+              {
+                "name": "ibis One Central",
+                "budget": "₹4,600–₹6,900/night"
+              }
+            ],
+            "meals": [
+              "Saravana Bhavan",
+              "Ravi Restaurant",
+              "Govinda's"
+            ]
+          }
+        ]
+      },
+      "Sharjah": {
+        "name": "Sharjah",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Treat Sharjah as a day trip from Dubai, then return to the same Dubai hotel before moving onward.",
+        "days": [
+          {
+            "theme": "Heritage museums, Blue Souk browsing, and a lower-key emirate contrast to Dubai",
+            "activities": [
+              {
+                "name": "Dubai to Sharjah intercity bus or shared cab",
+                "cost": "₹230"
+              },
+              {
+                "name": "Sharjah Museum of Islamic Civilization",
+                "cost": "₹230"
+              },
+              {
+                "name": "Blue Souk and Corniche walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Heart of Sharjah heritage district",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Rove Downtown",
+                "budget": "₹6,900–₹10,350/night"
+              },
+              {
+                "name": "ibis One Central",
+                "budget": "₹4,600–₹6,900/night"
+              }
+            ],
+            "meals": [
+              "Saravana Bhavan",
+              "Ravi Restaurant",
+              "Govinda's"
+            ]
+          }
+        ]
+      },
+      "Abu Dhabi": {
+        "name": "Abu Dhabi",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 3,
+        "note": "Plan two full Abu Dhabi city days plus one Al Ain day trip so the route lands at a complete 7-day UAE circuit.",
+        "days": [
+          {
+            "theme": "Grand mosque calm, cultural stops, and the capital’s cleaner waterfront pace",
+            "activities": [
+              {
+                "name": "Dubai to Abu Dhabi intercity bus",
+                "cost": "₹575"
+              },
+              {
+                "name": "Sheikh Zayed Grand Mosque",
+                "cost": "Free"
+              },
+              {
+                "name": "Louvre Abu Dhabi",
+                "cost": "₹1,449"
+              },
+              {
+                "name": "Corniche and Etihad Towers viewpoint area walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Premier Inn Abu Dhabi Capital Centre",
+                "budget": "₹5,750–₹8,625/night"
+              },
+              {
+                "name": "ibis Abu Dhabi Gate",
+                "budget": "₹4,600–₹6,900/night"
+              }
+            ],
+            "meals": [
+              "Saravana Bhavan",
+              "Ravi Restaurant",
+              "Govinda's"
+            ]
+          },
+          {
+            "theme": "Yas Island headline attractions and a bigger-spend adventure day",
+            "activities": [
+              {
+                "name": "Ferrari World Abu Dhabi",
+                "cost": "₹9,085"
+              },
+              {
+                "name": "Yas Bay Waterfront stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Yas Marina Circuit and marina area walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Saadiyat or Corniche sunset stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Premier Inn Abu Dhabi Capital Centre",
+                "budget": "₹5,750–₹8,625/night"
+              },
+              {
+                "name": "ibis Abu Dhabi Gate",
+                "budget": "₹4,600–₹6,900/night"
+              }
+            ],
+            "meals": [
+              "Saravana Bhavan",
+              "Ravi Restaurant",
+              "Govinda's"
+            ]
+          },
+          {
+            "theme": "Al Ain day trip for oasis greenery, forts, and Jebel Hafeet views",
+            "activities": [
+              {
+                "name": "Abu Dhabi to Al Ain day trip by coach, taxi, or self-drive",
+                "cost": "Book separately"
+              },
+              {
+                "name": "Al Ain Oasis",
+                "cost": "₹69"
+              },
+              {
+                "name": "Jebel Hafeet viewpoints and mountain drive",
+                "cost": "Free"
+              },
+              {
+                "name": "Al Jahili Fort and garden precinct",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Premier Inn Abu Dhabi Capital Centre",
+                "budget": "₹5,750–₹8,625/night"
+              },
+              {
+                "name": "ibis Abu Dhabi Gate",
+                "budget": "₹4,600–₹6,900/night"
+              }
+            ],
+            "meals": [
+              "Saravana Bhavan",
+              "Ravi Restaurant",
+              "Govinda's"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Dubai City",
+        "to": "Sharjah",
+        "method": "Intercity bus or short shared cab for the museum-and-souk day trip",
+        "cost": "₹230"
+      },
+      {
+        "from": "Sharjah",
+        "to": "Abu Dhabi",
+        "method": "Return through Dubai, then continue by intercity bus to Abu Dhabi for the capital stay",
+        "cost": "₹575"
+      }
+    ],
+    "extras": [
+      "This route is easiest as a 7-day UAE sampler: 3 nights in Dubai, a Sharjah day trip, then 3 nights in Abu Dhabi with Al Ain as the long day excursion.",
+      "Hotel pricing usually lands between ₹4,600 and ₹11,500 per night in reliable chain stays like Rove Downtown, ibis, and Premier Inn, with weekends and big events pushing rates up.",
+      "Careem is the simplest backup when metro and buses slow down, especially for late desert safari returns or Al Ain day-trip logistics.",
+      "HappyCow is useful if you want vegetarian-friendly planning around Saravana Bhavan and Govinda's, while Ravi Restaurant stays one of the easiest casual Pakistani/Indian meal stops in Dubai.",
+      "Book Burj Khalifa sunset slots, desert safaris, Ferrari World, and Louvre Abu Dhabi ahead on Klook or official sites during winter because November to March is peak season."
+    ],
+    "cityImages": {
+      "Dubai City": [
+        "Burj Khalifa downtown Dubai skyline",
+        "Dubai Frame Zabeel Park golden frame",
+        "Dubai desert safari red dunes"
+      ],
+      "Sharjah": [
+        "Sharjah Blue Souk waterfront",
+        "Sharjah Museum of Islamic Civilization exterior",
+        "Heart of Sharjah heritage district"
+      ],
+      "Abu Dhabi": [
+        "Sheikh Zayed Mosque white domes reflection",
+        "Louvre Abu Dhabi dome sea view",
+        "Jebel Hafeet mountain road Al Ain"
+      ]
+    }
+  }
 }

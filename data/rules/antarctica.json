@@ -61,5 +61,251 @@
       "notes": "Main research hub with Dry Valleys and Scott's Discovery Hut nearby"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": null,
+    "apps": [
+      "PolarView (ice charts)",
+      "iNaturalist (wildlife ID)",
+      "Maps.me (offline maps)"
+    ],
+    "cityOrder": [
+      "Ushuaia",
+      "Drake Passage",
+      "Antarctic Peninsula"
+    ],
+    "cities": {
+      "Ushuaia": {
+        "name": "Ushuaia",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Gateway city — most expeditions depart from here",
+        "days": [
+          {
+            "theme": "Gateway to Antarctica",
+            "activities": [
+              {
+                "name": "Tierra del Fuego National Park — end of the world trail",
+                "cost": "₹3,000"
+              },
+              {
+                "name": "Beagle Channel boat tour — sea lions, penguins, lighthouse",
+                "cost": "₹5,000"
+              },
+              {
+                "name": "Maritime Museum & Prison Museum (Museo Marítimo)",
+                "cost": "₹1,500"
+              },
+              {
+                "name": "Expedition briefing & gear check at cruise terminal"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Arakur Ushuaia Resort & Spa",
+                "budget": "₹15,000–₹25,000/night"
+              },
+              {
+                "name": "Los Cauquenes Resort + Spa",
+                "budget": "₹12,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Kaupé Restaurant — king crab, lamb",
+              "Ramos Generales — historic general store café"
+            ]
+          }
+        ]
+      },
+      "Drake Passage": {
+        "name": "Drake Passage",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "2 days crossing each way — lectures, wildlife spotting from deck",
+        "days": [
+          {
+            "theme": "Drake Passage Crossing — Southbound",
+            "activities": [
+              {
+                "name": "Expert lectures on Antarctic wildlife, geology, history"
+              },
+              {
+                "name": "Albatross & petrel spotting from observation deck"
+              },
+              {
+                "name": "IAATO environmental briefing & biosecurity preparation"
+              },
+              {
+                "name": "Photography workshops with expedition team"
+              }
+            ]
+          },
+          {
+            "theme": "Drake Passage — Approaching Antarctica",
+            "activities": [
+              {
+                "name": "First iceberg sightings"
+              },
+              {
+                "name": "Zodiac landing preparation & gear fitting"
+              },
+              {
+                "name": "Citizen science programs — whale & bird counting"
+              },
+              {
+                "name": "Evening recap & route planning with expedition leader"
+              }
+            ]
+          }
+        ]
+      },
+      "Antarctic Peninsula": {
+        "name": "Antarctic Peninsula",
+        "minDays": 3,
+        "recDays": 5,
+        "maxDays": 7,
+        "note": "Zodiac landings twice daily, weather permitting. Flexible itinerary based on ice conditions.",
+        "days": [
+          {
+            "theme": "First Landing — Penguin Colonies",
+            "activities": [
+              {
+                "name": "Zodiac landing at Neko Harbour or Paradise Bay — gentoo penguin colonies"
+              },
+              {
+                "name": "Continental landing — set foot on the 7th continent"
+              },
+              {
+                "name": "Glacier calving observation from Zodiac"
+              },
+              {
+                "name": "Kayaking among icebergs (optional add-on)",
+                "cost": "₹40,000–₹60,000 for trip"
+              }
+            ]
+          },
+          {
+            "theme": "Deception Island & Whaling History",
+            "activities": [
+              {
+                "name": "Deception Island — volcanic caldera, hot springs beach swim"
+              },
+              {
+                "name": "Whaler's Bay abandoned whaling station walk"
+              },
+              {
+                "name": "Chinstrap penguin colony visit"
+              },
+              {
+                "name": "Polar plunge — swim in Antarctic waters (optional, free)"
+              }
+            ]
+          },
+          {
+            "theme": "Lemaire Channel & Port Lockroy",
+            "activities": [
+              {
+                "name": "Lemaire Channel cruise — 'Kodak Gap', towering ice cliffs"
+              },
+              {
+                "name": "Port Lockroy — British base museum, world's southernmost post office"
+              },
+              {
+                "name": "Humpback whale watching from deck"
+              },
+              {
+                "name": "Zodiac cruise among blue icebergs & leopard seals"
+              }
+            ]
+          },
+          {
+            "theme": "Wildlife & Science Stations",
+            "activities": [
+              {
+                "name": "Visit active research station (by invitation/schedule)"
+              },
+              {
+                "name": "Weddell seal & elephant seal observation"
+              },
+              {
+                "name": "Orne Harbour chinstrap penguin rookery hike"
+              },
+              {
+                "name": "Evening photography — midnight sun & ice reflections"
+              }
+            ]
+          },
+          {
+            "theme": "Final Landing & Return",
+            "activities": [
+              {
+                "name": "Last Zodiac excursion — farewell landing"
+              },
+              {
+                "name": "Captain's farewell dinner & expedition recap"
+              },
+              {
+                "name": "Begin Drake Passage return crossing"
+              },
+              {
+                "name": "Wildlife documentary screening"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Ushuaia",
+        "to": "Drake Passage",
+        "method": "Expedition ship (embark evening Day 1)",
+        "cost": "Included in expedition package"
+      },
+      {
+        "from": "Drake Passage",
+        "to": "Antarctic Peninsula",
+        "method": "Expedition ship (2 days crossing)",
+        "cost": "Included"
+      },
+      {
+        "from": "Antarctic Peninsula",
+        "to": "Drake Passage",
+        "method": "Return crossing (2 days)",
+        "cost": "Included"
+      },
+      {
+        "from": "Drake Passage",
+        "to": "Ushuaia",
+        "method": "Disembark morning",
+        "cost": "Included"
+      }
+    ],
+    "extras": [
+      "Full expedition costs: ₹5L–₹15L pp for 10-12 day voyage (all-inclusive on ship)",
+      "Book 12-18 months ahead — ships sell out",
+      "Operators: Quark Expeditions, Hurtigruten, Ponant, G Adventures",
+      "Season: November–March only",
+      "No visa required for Antarctica — governed by Antarctic Treaty",
+      "Fly-cruise option via Punta Arenas saves 2 Drake days (₹8L–₹20L pp)"
+    ],
+    "cityImages": {
+      "Ushuaia": [
+        "Ushuaia city Beagle Channel Tierra del Fuego",
+        "Ushuaia port cruise ships mountains",
+        "End of the World sign Ushuaia Argentina"
+      ],
+      "Drake Passage": [
+        "Drake Passage Southern Ocean waves ship",
+        "Albatross Drake Passage flight",
+        "Antarctic convergence zone ocean"
+      ],
+      "Antarctic Peninsula": [
+        "Antarctic Peninsula icebergs blue ice",
+        "Gentoo penguin colony Antarctica",
+        "Lemaire Channel Antarctica ice cliffs"
+      ]
+    }
+  }
 }
