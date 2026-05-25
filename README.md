@@ -91,7 +91,9 @@ Bring-your-own-key integration with OpenAI and Claude. Chat with an AI assistant
 - **Save to My List** — save AI-generated destinations to your list with instant feedback (saved / already exists)
 - **Save AI plans** — persist up to 3 AI-generated itineraries per destination in localStorage with compare-and-replace flow
 - **Plan comparison** — when saving, view existing plans side-by-side with diff summary (duration, budget, cities, cost) and choose to add or replace
-- **Token usage tracking** — running token counter in chat footer (color-coded: green <4K, amber 4K-12K, red >12K), session total shown on plan completion
+- **Token usage tracking** — running token counter with cost estimate in chat footer (color-coded: green <4K, amber 4K-12K, red >12K); hover for detailed breakdown (input/output tokens, per-provider pricing, estimated USD cost)
+- **Pre-finalization cost estimate** — "Finish & Generate" button shows estimated cost before generating; tooltip with expected additional token usage
+- **Provider pricing reference** — collapsible pricing table in Settings showing per-model input/output rates for all providers
 - **Quota-aware error handling** — provider-specific error messages for rate limits, billing exhaustion, and free tier caps with links to billing pages
 - **Settings modal** — provider selector, API key management with validation, security notice, setup guides
 - **Feature-gated** — behind `llmPlanning` feature flag (enabled by default)
@@ -177,8 +179,6 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 | Duration | Wow Factor | Feature | Category | Description |
 |----------|-----------|---------|----------|-------------|
 | 🟢 Short | ⭐⭐⭐ | Cinematic for AI plans | AI | Fuzzy city name matching + AI lat/lng fallback so cinematic works for imported plans |
-| 🟢 Short | ⭐⭐ | Token cost estimate | AI | Warn user about estimated cost before "Finish & Generate" |
-| 🟢 Short | ⭐⭐ | Cost tooltip + provider table | AI | Token badge tooltip, provider pricing reference in Settings |
 | 🟢 Short | ⭐⭐ | Budget currency toggle | UX | Convert ₹ to USD / EUR / AUD |
 | 🟢 Short | ⭐ | Day-level detail expansion | UX | Tap a day row for full tips, map coords, booking links |
 | 🟡 Medium | ⭐⭐⭐⭐⭐ | Responsive UI | UX | Mobile, tablet, desktop, TV — full-screen drawers, adaptive grids, touch targets |
