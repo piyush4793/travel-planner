@@ -47,7 +47,7 @@ Slides in from the right with a compact, decluttered layout:
 - **"When to go"** — best + avoid months merged in one row
 - **Trip planner** — days slider with smart city selection + Generate/AI buttons
 - **Multi-plan selector** — dropdown to switch between Default and saved AI plans, with full day-wise itinerary for each
-- **Plan comparison** — side-by-side modal comparing any two plans (default or AI) with duration, cost, cities, and day-by-day diff
+- **Plan comparison** — side-by-side modal with summary cards (duration, cost, cities, activities/day, hotels), city overlap analysis (shared/unique badges), and independent day-by-day scroll
 - **Cinematic for any plan** — saved AI plans can also run cinematic mode; button disabled per-plan when city coordinates don't match
 
 ---
@@ -176,7 +176,6 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 
 | Duration | Wow Factor | Feature | Category | Description |
 |----------|-----------|---------|----------|-------------|
-| 🟢 Short | ⭐⭐⭐⭐ | Plan comparison summary | UX | Quick-glance summary at top of compare modal — cost, duration, cities, highlights diff |
 | 🟢 Short | ⭐⭐⭐ | Cinematic for AI plans | AI | Fuzzy city name matching + AI lat/lng fallback so cinematic works for imported plans |
 | 🟢 Short | ⭐⭐ | Token cost estimate | AI | Warn user about estimated cost before "Finish & Generate" |
 | 🟢 Short | ⭐⭐ | Cost tooltip + provider table | AI | Token badge tooltip, provider pricing reference in Settings |
