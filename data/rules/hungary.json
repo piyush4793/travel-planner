@@ -61,5 +61,440 @@
       "notes": "Hungary's Calvinist capital with Great Reformed Church and thermal baths"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Yettel tourist SIMs at Budapest Airport start around ₹688 for 30 days with about 10 GB; Vodafone Hungary starter packs usually land around ₹690–₹1,150 depending on data.",
+    "apps": [
+      "Budapest GO",
+      "MÁV",
+      "Volánbusz",
+      "Bolt",
+      "Google Maps",
+      "Google Translate",
+      "Wise",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Budapest",
+      "Eger",
+      "Debrecen",
+      "Pecs"
+    ],
+    "cities": {
+      "Budapest": {
+        "name": "Budapest",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Keep Budapest as the longest stop; add a fourth day if you want Szentendre or a second thermal-bath session.",
+        "days": [
+          {
+            "theme": "Castle Hill classics, Danube panoramas and first-night lights",
+            "activities": [
+              {
+                "name": "Buda Castle grounds and Castle Hill orientation walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Matthias Church entry",
+                "cost": "₹575 pp"
+              },
+              {
+                "name": "Fisherman's Bastion upper terrace",
+                "cost": "₹230 pp"
+              },
+              {
+                "name": "Széchenyi Chain Bridge and Danube promenade sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Rum Budapest",
+                "budget": "₹5,750–₹8,050/night"
+              },
+              {
+                "name": "Casati Budapest Hotel",
+                "budget": "₹3,450–₹5,175/night"
+              }
+            ],
+            "meals": [
+              "Govinda Budapest",
+              "Menza Restaurant",
+              "Gerbeaud Café"
+            ]
+          },
+          {
+            "theme": "Parliament interiors, basilica views and Jewish Quarter energy",
+            "activities": [
+              {
+                "name": "Hungarian Parliament Building guided tour",
+                "cost": "₹1,196 pp"
+              },
+              {
+                "name": "St. Stephen's Basilica tower panorama",
+                "cost": "₹115 pp"
+              },
+              {
+                "name": "Dohány Street Synagogue and museum",
+                "cost": "₹1,265 pp"
+              },
+              {
+                "name": "Great Market Hall browse and Váci Street walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Moments Budapest",
+                "budget": "₹6,900–₹9,200/night"
+              },
+              {
+                "name": "K+K Hotel Opera",
+                "budget": "₹7,500–₹9,200/night"
+              }
+            ],
+            "meals": [
+              "Hummus Bar Andrássy",
+              "Bors GasztroBar",
+              "Kispiac Bisztró"
+            ]
+          },
+          {
+            "theme": "Heroes’ Square monuments, museum halls and thermal-bath downtime",
+            "activities": [
+              {
+                "name": "Heroes’ Square and Millennium Monument",
+                "cost": "Free"
+              },
+              {
+                "name": "Vajdahunyad Castle exterior and City Park walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Széchenyi Thermal Bath day ticket",
+                "cost": "₹1,426 pp"
+              },
+              {
+                "name": "Museum of Fine Arts or Kunsthalle visit",
+                "cost": "₹828 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maverick City Lodge",
+                "budget": "₹1,840–₹4,000/night"
+              },
+              {
+                "name": "Hotel Clark Budapest",
+                "budget": "₹9,200–₹13,800/night"
+              }
+            ],
+            "meals": [
+              "Bagolyvár Restaurant",
+              "Gundel Café Patisserie Restaurant",
+              "Bestia"
+            ]
+          }
+        ]
+      },
+      "Eger": {
+        "name": "Eger",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Weekdays are best if you want lunch at Govinda Vegetarian Restaurant Eger.",
+        "days": [
+          {
+            "theme": "Budapest transfer, castle ramparts and baroque old town",
+            "activities": [
+              {
+                "name": "Train from Budapest Keleti to Eger",
+                "cost": "₹874 pp"
+              },
+              {
+                "name": "Castle of Eger entry",
+                "cost": "₹391 pp"
+              },
+              {
+                "name": "Eger Minaret climb",
+                "cost": "₹69 pp"
+              },
+              {
+                "name": "Lyceum Observatory and Baroque Library",
+                "cost": "₹184 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Senator Ház Hotel",
+                "budget": "₹2,760–₹4,600/night"
+              },
+              {
+                "name": "Imola Udvarház Hotel",
+                "budget": "₹3,450–₹5,750/night"
+              }
+            ],
+            "meals": [
+              "Govinda Vegetarian Restaurant Eger",
+              "Palacsintavár",
+              "Macok Bisztró"
+            ]
+          },
+          {
+            "theme": "Wine-cellar lanes, thermal pools and easy baroque wandering",
+            "activities": [
+              {
+                "name": "Valley of Beautiful Women tasting stop",
+                "cost": "₹104–₹276 pp"
+              },
+              {
+                "name": "Eger Thermal Bath entry",
+                "cost": "₹506 pp"
+              },
+              {
+                "name": "Town Under the Town cellar visit",
+                "cost": "₹219 pp"
+              },
+              {
+                "name": "Serbian Orthodox Church visit",
+                "cost": "₹92 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Romantik Hotel",
+                "budget": "₹2,300–₹3,450/night"
+              },
+              {
+                "name": "Villa Völgy",
+                "budget": "₹2,300–₹3,680/night"
+              }
+            ],
+            "meals": [
+              "Senator Ház Restaurant",
+              "Fehérszarvas Vadásztanya",
+              "Palacsintavár"
+            ]
+          }
+        ]
+      },
+      "Debrecen": {
+        "name": "Debrecen",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Stay near the center for the church and museum day, then shift toward Great Forest if you want spa time.",
+        "days": [
+          {
+            "theme": "East Hungary rail hop, civic landmarks and museum time",
+            "activities": [
+              {
+                "name": "Eger to Debrecen bus or rail connection",
+                "cost": "₹575–₹920 pp"
+              },
+              {
+                "name": "Great Reformed Church entry and tower view",
+                "cost": "₹230 pp"
+              },
+              {
+                "name": "Déri Museum visit",
+                "cost": "₹690 pp"
+              },
+              {
+                "name": "Kossuth Square and Piac Street walking circuit",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mercure Debrecen",
+                "budget": "₹11,500–₹13,200/night"
+              },
+              {
+                "name": "Centrum Hotel",
+                "budget": "₹9,500–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "IKON Restaurant",
+              "Csokonai Restaurant",
+              "Black Sheep Micro Roastery"
+            ]
+          },
+          {
+            "theme": "Great Forest parkland, thermal pools and easy family attractions",
+            "activities": [
+              {
+                "name": "Great Forest Park and University of Debrecen stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Aquaticum Debrecen thermal and wellness day pass",
+                "cost": "₹1,495 pp"
+              },
+              {
+                "name": "Debrecen Zoo and Amusement Park",
+                "cost": "₹805 pp"
+              },
+              {
+                "name": "Local tram rides between center and Nagyerdő",
+                "cost": "₹104–₹230 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Divinus",
+                "budget": "₹15,000–₹17,500/night"
+              },
+              {
+                "name": "Hilton Garden Inn Debrecen City Centre",
+                "budget": "₹11,800–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Belga Restaurant and Brewery",
+              "Régi Posta Restaurant",
+              "Sky Bar at Hilton Garden Inn"
+            ]
+          }
+        ]
+      },
+      "Pecs": {
+        "name": "Pecs",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Pecs is compact in the core, but use Bolt or a taxi if you add Bagolyvár or the TV Tower hillside viewpoints.",
+        "days": [
+          {
+            "theme": "Long cross-country transfer, Ottoman square and UNESCO tombs",
+            "activities": [
+              {
+                "name": "InterCity rail from Debrecen to Pecs via Budapest",
+                "cost": "₹1,380–₹1,840 pp"
+              },
+              {
+                "name": "Széchenyi Square and Mosque of Pasha Qasim exterior",
+                "cost": "Free"
+              },
+              {
+                "name": "Early Christian Necropolis entry",
+                "cost": "₹437 pp"
+              },
+              {
+                "name": "Király Street evening café walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Adele Boutique Hotel",
+                "budget": "₹8,300–₹12,000/night"
+              },
+              {
+                "name": "Palatinus Grand Hotel",
+                "budget": "₹9,200–₹12,900/night"
+              }
+            ],
+            "meals": [
+              "Reggeli",
+              "Jókai Bisztró",
+              "Balkan Bisztró"
+            ]
+          },
+          {
+            "theme": "Cathedral hill, Zsolnay ceramics and hilltop panorama",
+            "activities": [
+              {
+                "name": "Pécs Cathedral entry and tower climb",
+                "cost": "₹345 pp"
+              },
+              {
+                "name": "Zsolnay Cultural Quarter full pass",
+                "cost": "₹690 pp"
+              },
+              {
+                "name": "Pécs TV Tower viewpoint",
+                "cost": "₹575 pp"
+              },
+              {
+                "name": "Tettye ruins and limestone trail walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Boutique Hotel Sopianae",
+                "budget": "₹6,900–₹9,200/night"
+              },
+              {
+                "name": "Hotel Palatinus City Center",
+                "budget": "₹7,400–₹10,600/night"
+              }
+            ],
+            "meals": [
+              "Bagolyvár Restaurant",
+              "Tüke Borház",
+              "Cellárium Étterem"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Budapest",
+        "to": "Eger",
+        "method": "Direct train from Keleti station in about 2h 20m",
+        "cost": "₹874 pp"
+      },
+      {
+        "from": "Eger",
+        "to": "Debrecen",
+        "method": "Bus or rail connection via Füzesabony in about 2h 15m to 2h 45m",
+        "cost": "₹575–₹920 pp"
+      },
+      {
+        "from": "Debrecen",
+        "to": "Pecs",
+        "method": "InterCity train via Budapest in about 5h 30m to 6h 15m",
+        "cost": "₹1,380–₹1,840 pp"
+      },
+      {
+        "from": "Pecs",
+        "to": "Budapest",
+        "method": "Direct InterCity train back to Budapest in about 2h 45m to 3h",
+        "cost": "₹805–₹1,150 pp"
+      }
+    ],
+    "extras": [
+      "Hungary is in the Schengen zone, so Indian travellers should budget roughly ₹7,500–₹9,500 for visa plus VFS handling and apply at least 3–4 weeks early.",
+      "For Budapest, the 72-hour public transport pass at about ₹1,265 is usually better value than buying single tickets at ₹115 each.",
+      "Vegetarians should save Govinda Budapest, Govinda Vegetarian Restaurant Eger, Hummus Bar Andrássy and Reggeli before landing because meat-heavy menus are still common outside Budapest.",
+      "Cards work almost everywhere, but keep a small HUF cash buffer of roughly ₹1,500–₹2,500 equivalent for markets, smaller cafés and regional taxis.",
+      "Parliament tours and thermal-bath slots can sell out on busy weekends, so lock those Budapest tickets before finalising the rail legs."
+    ],
+    "cityImages": {
+      "Budapest": [
+        "Hungarian Parliament Building Danube",
+        "Fisherman's Bastion Budapest sunrise",
+        "Széchenyi Chain Bridge Budapest night"
+      ],
+      "Eger": [
+        "Castle of Eger Hungary",
+        "Eger minaret baroque town",
+        "Valley of Beautiful Women Hungary wine cellars"
+      ],
+      "Debrecen": [
+        "Great Reformed Church Debrecen",
+        "Déri Museum Debrecen square",
+        "Nagyerdei Park Debrecen"
+      ],
+      "Pecs": [
+        "Pécs Cathedral Hungary aerial",
+        "Széchenyi Square Pécs mosque",
+        "Zsolnay Cultural Quarter Pécs"
+      ]
+    }
+  }
 }

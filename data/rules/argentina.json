@@ -77,5 +77,642 @@
       "notes": "Colonial churches, Cachi and Salinas Grandes salt flat day trips"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Personal prepago is the easiest airport SIM in Buenos Aires at about ₹1,260 for 10GB; Movistar is the safer backup if you are continuing deeper into Patagonia. Download offline maps before heading south because coverage drops around glacier routes and national parks.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "Aerolíneas Argentinas",
+      "Cabify",
+      "Booking.com",
+      "GetYourGuide",
+      "Google Translate",
+      "XE Currency",
+      "BA Cómo Llego",
+      "Moovit"
+    ],
+    "cityOrder": [
+      "Buenos Aires",
+      "Iguazu Falls",
+      "Salta",
+      "Mendoza",
+      "Bariloche",
+      "Patagonia"
+    ],
+    "cities": {
+      "Buenos Aires": {
+        "name": "Buenos Aires",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Base yourself in Palermo or Recoleta, use Cabify after dark, and pre-book any paid tango show or football tour at least a few days ahead.",
+        "days": [
+          {
+            "theme": "Centro, Plaza de Mayo & San Telmo",
+            "activities": [
+              {
+                "name": "Tienda León shuttle or airport transfer from EZE into the city",
+                "cost": "₹1,260–₹1,680"
+              },
+              {
+                "name": "Walk Avenida 9 de Julio, the Obelisco, Plaza de Mayo, and Casa Rosada exterior"
+              },
+              {
+                "name": "San Telmo market lanes, murals, and Plaza Dorrego street tango"
+              },
+              {
+                "name": "Palacio Barolo guided sunset or evening visit",
+                "cost": "₹1,100–₹1,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dazzler by Wyndham Buenos Aires Palermo",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Portal del Sur Hostel",
+                "budget": "₹3,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "El Federal",
+              "Chori",
+              "La Popular San Telmo"
+            ]
+          },
+          {
+            "theme": "Recoleta, Museums & Palermo",
+            "activities": [
+              {
+                "name": "Recoleta Cemetery and surrounding French-style avenues"
+              },
+              {
+                "name": "Museo Nacional de Bellas Artes"
+              },
+              {
+                "name": "MALBA museum",
+                "cost": "₹900–₹1,200"
+              },
+              {
+                "name": "Palermo Soho and Palermo Hollywood cafe, design, and street-art walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dazzler by Wyndham Buenos Aires Palermo",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Portal del Sur Hostel",
+                "budget": "₹3,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "La Cabrera",
+              "La Mar",
+              "Hierbabuena"
+            ]
+          },
+          {
+            "theme": "La Boca Icons & Tigre Delta Escape",
+            "activities": [
+              {
+                "name": "Caminito and La Boca street-art strip"
+              },
+              {
+                "name": "La Bombonera museum or stadium tour",
+                "cost": "₹1,000–₹1,500"
+              },
+              {
+                "name": "Train to Tigre and Paraná Delta boat ride",
+                "cost": "₹1,100–₹1,900"
+              },
+              {
+                "name": "Optional classic tango show in the evening",
+                "cost": "₹5,800–₹8,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mine Hotel Boutique Palermo",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Portal del Sur Hostel",
+                "budget": "₹3,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "El Preferido de Palermo",
+              "Café Tortoni",
+              "El Cuartito"
+            ]
+          }
+        ]
+      },
+      "Iguazu Falls": {
+        "name": "Iguazu Falls",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay in Puerto Iguazú, carry a dry bag for the boat ride, and keep passport plus Brazil visa status ready if you plan to cross for the panoramic side.",
+        "days": [
+          {
+            "theme": "Argentina Side & Devil’s Throat",
+            "activities": [
+              {
+                "name": "Iguazú National Park entry",
+                "cost": "₹2,500–₹3,200"
+              },
+              {
+                "name": "Garganta del Diablo boardwalk and upper circuit viewpoints"
+              },
+              {
+                "name": "Gran Aventura boat ride under the falls",
+                "cost": "₹1,700–₹2,300"
+              },
+              {
+                "name": "Lower circuit at golden hour for wide waterfall views"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Loi Suites Iguazú Hotel",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "Hotel Saint George",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "La Rueda 1975",
+              "Aqva Restaurant",
+              "El Quincho del Tío Querido"
+            ]
+          },
+          {
+            "theme": "Brazil Panorama & Birdlife",
+            "activities": [
+              {
+                "name": "Cross to Iguaçu National Park on the Brazil side for the classic panorama",
+                "cost": "₹1,200–₹1,600"
+              },
+              {
+                "name": "Parque das Aves bird park",
+                "cost": "₹1,000–₹1,400"
+              },
+              {
+                "name": "Optional helicopter flight above the falls",
+                "cost": "₹7,500–₹9,500"
+              },
+              {
+                "name": "Hito Tres Fronteras viewpoint back in Puerto Iguazú"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Loi Suites Iguazú Hotel",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "Hotel Saint George",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "The Argentine Experience Iguazú",
+              "Color Parrilla y Pizza",
+              "De La Fonte"
+            ]
+          }
+        ]
+      },
+      "Salta": {
+        "name": "Salta",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Salta works best as a northern Argentina detour; nights are cooler than Buenos Aires, and a guided day trip helps if you want salt flats or Quebrada scenery without driving.",
+        "days": [
+          {
+            "theme": "Colonial Center & Hilltop Views",
+            "activities": [
+              {
+                "name": "Plaza 9 de Julio, Salta Cathedral, and Cabildo Museo Histórico del Norte"
+              },
+              {
+                "name": "MAAM archaeology museum with Inca child mummies",
+                "cost": "₹800–₹1,100"
+              },
+              {
+                "name": "Teleférico San Bernardo for sunset over the valley",
+                "cost": "₹500–₹800"
+              },
+              {
+                "name": "Balcarce peña district for folk music after dinner"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Legado Mítico Salta",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Hotel Almería",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Doña Salta",
+              "El Solar del Convento",
+              "Ma Cuisine Resto"
+            ]
+          },
+          {
+            "theme": "Salt Flats or Quebrada Day Trip",
+            "activities": [
+              {
+                "name": "Full-day guided trip to Salinas Grandes via Cuesta del Lipán",
+                "cost": "₹4,500–₹6,500"
+              },
+              {
+                "name": "Purmamarca stop for Cerro de los Siete Colores viewpoints"
+              },
+              {
+                "name": "Optional Cachi route alternative through Los Cardones National Park",
+                "cost": "₹4,000–₹5,800"
+              },
+              {
+                "name": "Return to Salta for a relaxed evening coffee in the old town"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Legado Mítico Salta",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Hotel Almería",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Casa Moderna",
+              "El Charrúa",
+              "Van Gogh Café"
+            ]
+          }
+        ]
+      },
+      "Mendoza": {
+        "name": "Mendoza",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Mendoza city as a sleep base and split time between Maipú or Luján de Cuyo wineries and one Andes landscape day.",
+        "days": [
+          {
+            "theme": "Maipú Bodegas & Malbec Tastings",
+            "activities": [
+              {
+                "name": "Bike rental through Maipú wine country",
+                "cost": "₹700–₹1,100"
+              },
+              {
+                "name": "Bodega Tempus Alba tasting",
+                "cost": "₹900–₹1,400"
+              },
+              {
+                "name": "Bodega Carinae or Familia di Tommaso lunch stop",
+                "cost": "₹1,700–₹3,400"
+              },
+              {
+                "name": "Evening around Plaza Independencia and Avenida Sarmiento"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Park Hyatt Mendoza",
+                "budget": "₹20,000–₹32,000/night"
+              },
+              {
+                "name": "Hotel Nutibara",
+                "budget": "₹5,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Azafrán",
+              "Anna Bistró",
+              "Fuente y Fonda"
+            ]
+          },
+          {
+            "theme": "Andes Views & Aconcagua Corridor",
+            "activities": [
+              {
+                "name": "Aconcagua Provincial Park day trip",
+                "cost": "₹2,200–₹3,200"
+              },
+              {
+                "name": "Puente del Inca scenic stop"
+              },
+              {
+                "name": "Parque General San Martín and Cerro de la Gloria"
+              },
+              {
+                "name": "Optional Potrerillos rafting",
+                "cost": "₹3,500–₹5,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Park Hyatt Mendoza",
+                "budget": "₹20,000–₹32,000/night"
+              },
+              {
+                "name": "Hotel Nutibara",
+                "budget": "₹5,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "1884 Restaurante Francis Mallmann",
+              "Francesco Barbera",
+              "Mercado Central de Mendoza"
+            ]
+          }
+        ]
+      },
+      "Bariloche": {
+        "name": "Bariloche",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Bariloche is best in shoulder-season summer or autumn; keep one day flexible for lake weather and mountain visibility.",
+        "days": [
+          {
+            "theme": "Circuito Chico & Classic Viewpoints",
+            "activities": [
+              {
+                "name": "Circuito Chico bus or self-drive around Nahuel Huapi",
+                "cost": "₹300–₹700"
+              },
+              {
+                "name": "Cerro Campanario chairlift",
+                "cost": "₹800–₹1,100"
+              },
+              {
+                "name": "Llao Llao viewpoint and lakeside photo stops"
+              },
+              {
+                "name": "Chocolate tasting along Mitre street",
+                "cost": "₹500–₹1,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Design Suites Bariloche",
+                "budget": "₹11,000–₹16,500/night"
+              },
+              {
+                "name": "1004 Bariloche Hostel",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "El Patacón",
+              "Rapa Nui",
+              "Cassis"
+            ]
+          },
+          {
+            "theme": "Lakes, Gondolas & Outdoor Day",
+            "activities": [
+              {
+                "name": "Cerro Catedral gondola or summer mountain trails",
+                "cost": "₹1,800–₹2,600"
+              },
+              {
+                "name": "Boat trip to Isla Victoria and Bosque de Arrayanes",
+                "cost": "₹2,600–₹3,800"
+              },
+              {
+                "name": "Optional Lago Gutiérrez kayaking",
+                "cost": "₹2,200–₹3,000"
+              },
+              {
+                "name": "Cerro Otto cable car for late-day views",
+                "cost": "₹1,300–₹1,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Design Suites Bariloche",
+                "budget": "₹11,000–₹16,500/night"
+              },
+              {
+                "name": "1004 Bariloche Hostel",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Alto el Fuego",
+              "La Fonda del Tío",
+              "Cervecería Patagonia"
+            ]
+          }
+        ]
+      },
+      "Patagonia": {
+        "name": "Patagonia",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Treat Patagonia here as the El Calafate plus Ushuaia combo: one glacier-heavy section and one end-of-the-world finale. Book flights early and keep buffer time for wind delays.",
+        "days": [
+          {
+            "theme": "El Calafate & Perito Moreno Glacier",
+            "activities": [
+              {
+                "name": "Return bus from El Calafate to Los Glaciares National Park",
+                "cost": "₹2,100–₹2,700"
+              },
+              {
+                "name": "Perito Moreno glacier boardwalks and viewpoints",
+                "cost": "₹3,400–₹4,000"
+              },
+              {
+                "name": "Safari Náutico or glacier-front boat ride",
+                "cost": "₹4,200–₹5,500"
+              },
+              {
+                "name": "Optional Minitrekking on the glacier",
+                "cost": "₹6,800–₹8,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mirador del Lago Hotel",
+                "budget": "₹11,000–₹16,000/night"
+              },
+              {
+                "name": "América del Sur Hostel El Calafate",
+                "budget": "₹2,500–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "La Zaina",
+              "Isabel Cocina al Disco",
+              "Pizzería La Lechuza"
+            ]
+          },
+          {
+            "theme": "Patagonian Wildlife & Museum Day",
+            "activities": [
+              {
+                "name": "Laguna Nimez bird reserve",
+                "cost": "₹400–₹700"
+              },
+              {
+                "name": "Glaciarium museum and ice bar",
+                "cost": "₹1,500–₹2,400"
+              },
+              {
+                "name": "Optional estancia lunch and gaucho experience",
+                "cost": "₹5,000–₹8,400"
+              },
+              {
+                "name": "Evening transfer or flight onward for Ushuaia segment",
+                "cost": "₹6,700–₹12,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mirador del Lago Hotel",
+                "budget": "₹11,000–₹16,000/night"
+              },
+              {
+                "name": "América del Sur Hostel El Calafate",
+                "budget": "₹2,500–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "Mi Rancho",
+              "Bourbon Smokehouse",
+              "Viva La Pepa Creppes"
+            ]
+          },
+          {
+            "theme": "Ushuaia, Beagle Channel & Tierra del Fuego",
+            "activities": [
+              {
+                "name": "Tierra del Fuego National Park entry",
+                "cost": "₹1,200–₹1,600"
+              },
+              {
+                "name": "Beagle Channel catamaran cruise",
+                "cost": "₹2,600–₹4,200"
+              },
+              {
+                "name": "Tren del Fin del Mundo",
+                "cost": "₹2,100–₹3,100"
+              },
+              {
+                "name": "Museo Marítimo y del Presidio or Martial Glacier lookout",
+                "cost": "₹1,000–₹1,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Los Cauquenes Resort + Spa",
+                "budget": "₹21,000–₹33,000/night"
+              },
+              {
+                "name": "Yakush Hostel",
+                "budget": "₹2,000–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Tante Sara",
+              "Volver",
+              "Kalma Resto"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Buenos Aires",
+        "to": "Iguazu Falls",
+        "method": "Flight from Aeroparque (AEP) or Ezeiza to Puerto Iguazú (IGR), about 1 hr 45 min",
+        "cost": "₹6,700–₹12,600"
+      },
+      {
+        "from": "Iguazu Falls",
+        "to": "Salta",
+        "method": "Usually a connecting domestic flight via Buenos Aires; fastest same-day option is 4–6 hrs total",
+        "cost": "₹9,500–₹17,500"
+      },
+      {
+        "from": "Salta",
+        "to": "Mendoza",
+        "method": "Domestic flight, often via Buenos Aires or Córdoba; buses exist but are much longer",
+        "cost": "₹8,500–₹15,500"
+      },
+      {
+        "from": "Mendoza",
+        "to": "Bariloche",
+        "method": "Direct flight when available or seasonal service; overnight cama bus is the budget fallback",
+        "cost": "₹8,400–₹13,500"
+      },
+      {
+        "from": "Bariloche",
+        "to": "Patagonia",
+        "method": "Flight to El Calafate for glacier stops, then onward flight to Ushuaia for the southern finale",
+        "cost": "₹16,800–₹29,400"
+      }
+    ],
+    "extras": [
+      "Argentina changes prices quickly, so lock in domestic flights and high-demand Patagonia hotels as early as possible.",
+      "Carry some cash for smaller cafés, taxis, and tips, but use cards for bigger bookings to avoid exchange surprises.",
+      "For Brazil-side Iguazu access, Indian travellers should verify current visa requirements before finalising the route.",
+      "Vegetarian food is easiest in Buenos Aires and Mendoza; in Patagonia, look for pasta, risotto, soups, and café plates rather than classic parrillas.",
+      "If you have fewer days, keep Buenos Aires, Iguazu Falls, Mendoza, and Patagonia as the core four and treat Salta plus Bariloche as add-ons.",
+      "Use the Aerolíneas Argentinas Visit Argentina pass if available outside the country, because multiple flight legs are often cheaper when bundled."
+    ],
+    "cityImages": {
+      "Buenos Aires": [
+        "Casa Rosada Buenos Aires",
+        "Recoleta Cemetery Buenos Aires",
+        "La Boca Caminito Buenos Aires"
+      ],
+      "Iguazu Falls": [
+        "Iguazu Falls Argentina aerial view",
+        "Devils Throat Iguazu Falls",
+        "Iguazu National Park walkway"
+      ],
+      "Salta": [
+        "Salta Cathedral Plaza 9 de Julio",
+        "Cerro San Bernardo Salta",
+        "Salinas Grandes Jujuy Argentina"
+      ],
+      "Mendoza": [
+        "Mendoza Argentina Plaza Independencia",
+        "Aconcagua mountain Argentina",
+        "Mendoza vineyards Andes"
+      ],
+      "Bariloche": [
+        "Bariloche Argentina Nahuel Huapi lake",
+        "Llao Llao Hotel Bariloche",
+        "Cerro Campanario Bariloche panorama"
+      ],
+      "Patagonia": [
+        "Perito Moreno Glacier Argentina",
+        "Ushuaia Beagle Channel Argentina",
+        "Tierra del Fuego National Park Ushuaia"
+      ]
+    }
+  }
 }

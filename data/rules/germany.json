@@ -75,5 +75,647 @@
       "notes": "Twin-spired Gothic cathedral, Roman history and vibrant Carnival"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Vodafone CallYa or Congstar prepaid SIMs are the safest picks for Germany — expect about ₹1,840 for 10–15GB, while Airalo's Germany eSIM is an easy no-store backup at about ₹1,748 for 10GB.",
+    "apps": [
+      "DB Navigator",
+      "BVG Tickets",
+      "MVGO",
+      "HVV",
+      "Google Maps",
+      "Google Translate",
+      "Booking.com",
+      "Omio",
+      "Airalo",
+      "Wise"
+    ],
+    "cityOrder": [
+      "Cologne",
+      "Heidelberg",
+      "Munich",
+      "Dresden",
+      "Berlin",
+      "Hamburg"
+    ],
+    "cities": {
+      "Cologne": {
+        "name": "Cologne",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "A strong west-Germany entry point with fast rail links onward; December adds some of Germany's best Christmas markets.",
+        "days": [
+          {
+            "theme": "Cathedral Quarter & Old Town",
+            "activities": [
+              {
+                "name": "Cologne Cathedral south tower climb",
+                "cost": "₹736"
+              },
+              {
+                "name": "Hohenzollern Bridge walk for Rhine views and love locks"
+              },
+              {
+                "name": "Alter Markt and Old Town lanes around the Rathaus"
+              },
+              {
+                "name": "Museum Ludwig modern art collection",
+                "cost": "₹1,472"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "URBAN LOFT Cologne",
+                "budget": "₹8,280–₹11,960/night"
+              },
+              {
+                "name": "Hotel Domstern",
+                "budget": "₹9,200–₹12,880/night"
+              }
+            ],
+            "meals": [
+              "Früh am Dom",
+              "Peters Brauhaus",
+              "Café Reichard"
+            ]
+          },
+          {
+            "theme": "Rhine Museums & Local Neighborhoods",
+            "activities": [
+              {
+                "name": "Chocolate Museum Cologne",
+                "cost": "₹1,472"
+              },
+              {
+                "name": "KD Rhine panorama cruise from Altstadt",
+                "cost": "₹1,656–₹2,392"
+              },
+              {
+                "name": "Cologne Cable Car and Rheinpark viewpoints",
+                "cost": "₹828–₹1,012"
+              },
+              {
+                "name": "Belgisches Viertel evening stroll for bars, boutiques, and café hopping"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "URBAN LOFT Cologne",
+                "budget": "₹8,280–₹11,960/night"
+              },
+              {
+                "name": "Hotel Domstern",
+                "budget": "₹9,200–₹12,880/night"
+              }
+            ],
+            "meals": [
+              "NENI Köln",
+              "Bei Oma Kleinmann",
+              "Café Buur"
+            ]
+          }
+        ]
+      },
+      "Heidelberg": {
+        "name": "Heidelberg",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Romantic and compact, so one night works; a second day lets you slow down for river views, university history, and castle time.",
+        "days": [
+          {
+            "theme": "Castle, Bridge & Baroque Core",
+            "activities": [
+              {
+                "name": "Heidelberg Castle with funicular included",
+                "cost": "₹828"
+              },
+              {
+                "name": "Karl Theodor Bridge and monkey statue photo stop"
+              },
+              {
+                "name": "Hauptstraße old town walk with church and bakery stops"
+              },
+              {
+                "name": "Student Prison museum at Heidelberg University",
+                "cost": "₹552"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Villa Marstall",
+                "budget": "₹10,120–₹13,800/night"
+              },
+              {
+                "name": "Arthotel Heidelberg",
+                "budget": "₹11,040–₹15,640/night"
+              }
+            ],
+            "meals": [
+              "Schnitzelbank",
+              "Mahmoud's",
+              "Café Knösel"
+            ]
+          },
+          {
+            "theme": "Philosophers' Walk & Neckar Views",
+            "activities": [
+              {
+                "name": "Philosophers' Walk hillside trail for classic city panoramas"
+              },
+              {
+                "name": "Kurpfälzisches Museum",
+                "cost": "₹276"
+              },
+              {
+                "name": "Neckar river sightseeing cruise",
+                "cost": "₹1,472–₹2,024"
+              },
+              {
+                "name": "Thingstätte hilltop amphitheater hike for a quieter final stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Villa Marstall",
+                "budget": "₹10,120–₹13,800/night"
+              },
+              {
+                "name": "Arthotel Heidelberg",
+                "budget": "₹11,040–₹15,640/night"
+              }
+            ],
+            "meals": [
+              "Vetter's Alt Heidelberger Brauhaus",
+              "unter Freunden",
+              "Nomad Heidelberg"
+            ]
+          }
+        ]
+      },
+      "Munich": {
+        "name": "Munich",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Munich works best as a 3-night base for royal sights, museums, and a Neuschwanstein day trip; avoid underbooking during Oktoberfest.",
+        "days": [
+          {
+            "theme": "Altstadt & Bavarian Icons",
+            "activities": [
+              {
+                "name": "Marienplatz and Neues Rathaus Glockenspiel"
+              },
+              {
+                "name": "Frauenkirche with optional crypt visit",
+                "cost": "₹276"
+              },
+              {
+                "name": "Viktualienmarkt tasting stops",
+                "cost": "₹460–₹1,380"
+              },
+              {
+                "name": "Deutsches Museum",
+                "cost": "₹1,288"
+              },
+              {
+                "name": "Hofbräuhaus evening hall for classic Bavarian atmosphere",
+                "cost": "₹920–₹1,840"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "H+ Hotel München City Centre",
+                "budget": "₹8,740–₹12,880/night"
+              },
+              {
+                "name": "Hotel Laimer Hof",
+                "budget": "₹10,120–₹14,720/night"
+              }
+            ],
+            "meals": [
+              "Gratitude",
+              "Prinz Myshkin",
+              "Augustiner Bräustuben"
+            ]
+          },
+          {
+            "theme": "Palaces, Parks & Museums",
+            "activities": [
+              {
+                "name": "Nymphenburg Palace and park",
+                "cost": "₹736"
+              },
+              {
+                "name": "English Garden with Eisbach surfer stop"
+              },
+              {
+                "name": "BMW Museum",
+                "cost": "₹920"
+              },
+              {
+                "name": "Munich Residenz",
+                "cost": "₹828"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "H+ Hotel München City Centre",
+                "budget": "₹8,740–₹12,880/night"
+              },
+              {
+                "name": "Hotel Laimer Hof",
+                "budget": "₹10,120–₹14,720/night"
+              }
+            ],
+            "meals": [
+              "Café Frischhut",
+              "Zum Franziskaner",
+              "Brenner"
+            ]
+          },
+          {
+            "theme": "Neuschwanstein Day Trip from Munich",
+            "activities": [
+              {
+                "name": "Regional train from Munich to Füssen return",
+                "cost": "₹2,300–₹2,760"
+              },
+              {
+                "name": "Neuschwanstein Castle timed entry",
+                "cost": "₹1,610"
+              },
+              {
+                "name": "Marienbrücke viewpoint for the classic castle panorama"
+              },
+              {
+                "name": "Füssen old town and Hohes Schloss walk before returning"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "H+ Hotel München City Centre",
+                "budget": "₹8,740–₹12,880/night"
+              },
+              {
+                "name": "Hotel Laimer Hof",
+                "budget": "₹10,120–₹14,720/night"
+              }
+            ],
+            "meals": [
+              "Café Bistro am Schloss",
+              "Gasthof Zur Post Füssen",
+              "Augustiner-Keller"
+            ]
+          }
+        ]
+      },
+      "Dresden": {
+        "name": "Dresden",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Dresden is compact enough for one night, but two days gives you room for museum time plus a Bastei or Saxon Switzerland outing.",
+        "days": [
+          {
+            "theme": "Baroque Old Town",
+            "activities": [
+              {
+                "name": "Frauenkirche dome climb",
+                "cost": "₹920"
+              },
+              {
+                "name": "Brühl's Terrace and Elbe river panorama"
+              },
+              {
+                "name": "Semperoper guided tour",
+                "cost": "₹1,288"
+              },
+              {
+                "name": "Neumarkt and Fürstenzug porcelain mural walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Motel One Dresden am Zwinger",
+                "budget": "₹8,280–₹11,960/night"
+              },
+              {
+                "name": "Townhouse Dresden",
+                "budget": "₹11,960–₹16,560/night"
+              }
+            ],
+            "meals": [
+              "Pulverturm an der Frauenkirche",
+              "BrennNessel",
+              "Kastenmeiers"
+            ]
+          },
+          {
+            "theme": "Zwinger Treasures & Saxon Switzerland Option",
+            "activities": [
+              {
+                "name": "Zwinger palace courtyards and fountains"
+              },
+              {
+                "name": "Old Masters Picture Gallery",
+                "cost": "₹1,472"
+              },
+              {
+                "name": "Green Vault treasury",
+                "cost": "₹1,472–₹1,840"
+              },
+              {
+                "name": "Bastei Bridge day trip by S-Bahn and bus",
+                "cost": "₹920–₹1,472"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Motel One Dresden am Zwinger",
+                "budget": "₹8,280–₹11,960/night"
+              },
+              {
+                "name": "Townhouse Dresden",
+                "budget": "₹11,960–₹16,560/night"
+              }
+            ],
+            "meals": [
+              "Sophienkeller im Taschenbergpalais",
+              "Lila Soße",
+              "Café Toscana"
+            ]
+          }
+        ]
+      },
+      "Berlin": {
+        "name": "Berlin",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days covers the historical core, East Berlin, and Museum Island; add a fourth only if you want Potsdam or slower museum pacing.",
+        "days": [
+          {
+            "theme": "Mitte & Historical Core",
+            "activities": [
+              {
+                "name": "Brandenburg Gate and Pariser Platz"
+              },
+              {
+                "name": "Reichstag dome reservation",
+                "cost": "Free"
+              },
+              {
+                "name": "Memorial to the Murdered Jews of Europe"
+              },
+              {
+                "name": "Tiergarten and Victory Column",
+                "cost": "₹368"
+              },
+              {
+                "name": "Gendarmenmarkt evening walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Motel One Berlin-Hackescher Markt",
+                "budget": "₹8,188–₹11,960/night"
+              },
+              {
+                "name": "Generator Berlin Mitte",
+                "budget": "₹7,820–₹11,040/night"
+              }
+            ],
+            "meals": [
+              "Zur letzten Instanz",
+              "The Bowl",
+              "Mustafa's Gemüse Kebap"
+            ]
+          },
+          {
+            "theme": "Cold War Berlin & Skyline Views",
+            "activities": [
+              {
+                "name": "East Side Gallery"
+              },
+              {
+                "name": "Checkpoint Charlie Museum",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Topography of Terror"
+              },
+              {
+                "name": "Berlin TV Tower observation deck",
+                "cost": "₹2,024–₹2,760"
+              },
+              {
+                "name": "Alexanderplatz and World Clock"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Motel One Berlin-Hackescher Markt",
+                "budget": "₹8,188–₹11,960/night"
+              },
+              {
+                "name": "Generator Berlin Mitte",
+                "budget": "₹7,820–₹11,040/night"
+              }
+            ],
+            "meals": [
+              "Govinda's",
+              "Zenkichi",
+              "Mustafa's Gemüse Kebap"
+            ]
+          },
+          {
+            "theme": "Museum Island & Palace Day",
+            "activities": [
+              {
+                "name": "Museum Island pass",
+                "cost": "₹2,668"
+              },
+              {
+                "name": "Berlin Cathedral",
+                "cost": "₹828"
+              },
+              {
+                "name": "Charlottenburg Palace",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Hackesche Höfe and Prenzlauer Berg stroll"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Motel One Berlin-Hackescher Markt",
+                "budget": "₹8,188–₹11,960/night"
+              },
+              {
+                "name": "Generator Berlin Mitte",
+                "budget": "₹7,820–₹11,040/night"
+              }
+            ],
+            "meals": [
+              "House of Small Wonder Berlin",
+              "Katz Orange",
+              "Rüyam Gemüse Kebab"
+            ]
+          }
+        ]
+      },
+      "Hamburg": {
+        "name": "Hamburg",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is ideal for warehouse-district sights, Miniatur Wunderland, and a harbor-heavy finale before flying out.",
+        "days": [
+          {
+            "theme": "Speicherstadt & Harbor Highlights",
+            "activities": [
+              {
+                "name": "Speicherstadt canal walks"
+              },
+              {
+                "name": "Elbphilharmonie Plaza timed visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Hamburg Rathaus guided tour",
+                "cost": "₹460"
+              },
+              {
+                "name": "St. Pauli Landungsbrücken and Old Elbe Tunnel"
+              },
+              {
+                "name": "HafenCity architecture walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Henri Hotel Hamburg Downtown",
+                "budget": "₹8,740–₹13,800/night"
+              },
+              {
+                "name": "25hours Hotel Hamburg HafenCity",
+                "budget": "₹11,040–₹16,560/night"
+              }
+            ],
+            "meals": [
+              "Café Paris",
+              "NENI Hamburg",
+              "Restaurant Himali"
+            ]
+          },
+          {
+            "theme": "Miniatures, Markets & Lakeside Finish",
+            "activities": [
+              {
+                "name": "Miniatur Wunderland",
+                "cost": "₹1,840"
+              },
+              {
+                "name": "Hamburger Kunsthalle",
+                "cost": "₹1,288"
+              },
+              {
+                "name": "Alster Lakes promenade"
+              },
+              {
+                "name": "Reeperbahn or Sunday Fischmarkt depending on your departure day"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Henri Hotel Hamburg Downtown",
+                "budget": "₹8,740–₹13,800/night"
+              },
+              {
+                "name": "25hours Hotel Hamburg HafenCity",
+                "budget": "₹11,040–₹16,560/night"
+              }
+            ],
+            "meals": [
+              "Happenpappen",
+              "Fischereihafen Restaurant",
+              "Herr Max"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Cologne",
+        "to": "Heidelberg",
+        "method": "ICE from Köln Hbf to Heidelberg Hbf via Mannheim or Frankfurt (about 2–2.5 hrs)",
+        "cost": "₹2,760–₹5,520"
+      },
+      {
+        "from": "Heidelberg",
+        "to": "Munich",
+        "method": "ICE from Heidelberg via Mannheim or Stuttgart to München Hbf (about 3–3.5 hrs)",
+        "cost": "₹4,140–₹6,900"
+      },
+      {
+        "from": "Munich",
+        "to": "Dresden",
+        "method": "ICE or EC from München Hbf to Dresden Hbf (about 4.5–5.5 hrs)",
+        "cost": "₹3,680–₹8,280"
+      },
+      {
+        "from": "Dresden",
+        "to": "Berlin",
+        "method": "EC or ICE from Dresden Hbf to Berlin Hbf (about 2 hrs)",
+        "cost": "₹1,840–₹4,600"
+      },
+      {
+        "from": "Berlin",
+        "to": "Hamburg",
+        "method": "ICE from Berlin Hbf to Hamburg Hbf (about 1 hr 40 min)",
+        "cost": "₹2,668–₹7,268"
+      }
+    ],
+    "extras": [
+      "Book ICE trains on bahn.de 6–8 weeks ahead for Sparpreis fares; these routes get noticeably pricier close to departure.",
+      "Reserve the Reichstag dome, Elbphilharmonie Plaza, and Neuschwanstein timed entries in advance — all three can sell out before you arrive.",
+      "If your Munich stay overlaps with Oktoberfest, hotel rates can jump sharply; lock in stays months ahead or shift to weekdays.",
+      "DB Navigator plus the city transit apps (BVG, MVGO, HVV) cover almost every ticket you'll need, so you can stay fully cash-light on transport."
+    ],
+    "cityImages": {
+      "Cologne": [
+        "Cologne Cathedral riverfront",
+        "Hohenzollern Bridge Cologne sunset",
+        "Cologne Old Town Rhine"
+      ],
+      "Heidelberg": [
+        "Heidelberg Castle ruins",
+        "Philosophers Walk Heidelberg",
+        "Karl Theodor Bridge Heidelberg"
+      ],
+      "Munich": [
+        "Marienplatz Neues Rathaus Munich",
+        "Nymphenburg Palace Munich",
+        "English Garden Munich Eisbach"
+      ],
+      "Dresden": [
+        "Frauenkirche Dresden Neumarkt",
+        "Zwinger Palace Dresden courtyard",
+        "Bastei Bridge Saxon Switzerland"
+      ],
+      "Berlin": [
+        "Brandenburg Gate Berlin night",
+        "East Side Gallery Berlin",
+        "Museum Island Berlin Spree"
+      ],
+      "Hamburg": [
+        "Speicherstadt Hamburg canal",
+        "Elbphilharmonie Hamburg",
+        "Hamburg Alster lake panorama"
+      ]
+    }
+  }
 }

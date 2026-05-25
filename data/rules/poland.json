@@ -70,5 +70,481 @@
       "notes": "Tatra mountain resort with oscypek cheese, hiking and Kasprowy Wierch"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Orange Poland or Play tourist SIM — about ₹630–₹1,260 for 20–50GB; easiest to buy at Warsaw Chopin Airport, major train stations, or any Żabka convenience store.",
+    "apps": [
+      "PKP Intercity",
+      "Jakdojade",
+      "Bolt",
+      "Google Maps",
+      "Google Translate",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Warsaw",
+      "Krakow",
+      "Wroclaw",
+      "Gdansk"
+    ],
+    "cities": {
+      "Warsaw": {
+        "name": "Warsaw",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days covers the rebuilt Old Town, Warsaw Uprising history, and the Royal Route well; add a fourth day only if you want more museums or a Wilanów-and-Praga split day.",
+        "days": [
+          {
+            "theme": "Old Town, Castle Square & the Vistula",
+            "activities": [
+              {
+                "name": "Castle Square, Sigismund’s Column, and the rebuilt Old Town lanes",
+                "cost": "Free",
+                "tip": "Go early for quieter photos before day-trip crowds arrive."
+              },
+              {
+                "name": "Royal Castle state rooms",
+                "cost": "₹945",
+                "tip": "Book a timed slot online if you are visiting on a weekend."
+              },
+              {
+                "name": "Warsaw Barbican to New Town walking route",
+                "cost": "Free"
+              },
+              {
+                "name": "Vistula Boulevards sunset walk or short river cruise",
+                "cost": "₹420–₹945"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Oki Doki OLD TOWN Hostel",
+                "budget": "₹2,520–₹4,200/night"
+              },
+              {
+                "name": "Motel One Warsaw-Chopin",
+                "budget": "₹7,560–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Zapiecek",
+              "Specjały Regionalne",
+              "Cafe Bristol"
+            ]
+          },
+          {
+            "theme": "WW2 Heritage & Jewish Warsaw",
+            "activities": [
+              {
+                "name": "Warsaw Uprising Museum",
+                "cost": "₹735",
+                "tip": "Allow at least 2.5 hours; the museum is large and emotionally heavy."
+              },
+              {
+                "name": "POLIN Museum of the History of Polish Jews",
+                "cost": "₹945"
+              },
+              {
+                "name": "Monument to the Ghetto Heroes and nearby memorial trail",
+                "cost": "Free"
+              },
+              {
+                "name": "Grzybowski Square and Nożyk Synagogue area walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Oki Doki OLD TOWN Hostel",
+                "budget": "₹2,520–₹4,200/night"
+              },
+              {
+                "name": "PURO Warszawa Centrum",
+                "budget": "₹8,820–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "Soul Kitchen",
+              "Charlotte Menora",
+              "Kieliszki na Próżnej"
+            ]
+          },
+          {
+            "theme": "Royal Route, Łazienki & Wilanów",
+            "activities": [
+              {
+                "name": "Royal Route walk from Nowy Świat to Krakowskie Przedmieście",
+                "cost": "Free"
+              },
+              {
+                "name": "Łazienki Park and Palace on the Isle",
+                "cost": "₹420",
+                "tip": "Sunday Chopin concerts in summer make this area especially rewarding."
+              },
+              {
+                "name": "Wilanów Palace museum and gardens",
+                "cost": "₹1,050"
+              },
+              {
+                "name": "Palace of Culture observation deck",
+                "cost": "₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Motel One Warsaw-Chopin",
+                "budget": "₹7,560–₹10,500/night"
+              },
+              {
+                "name": "PURO Warszawa Centrum",
+                "budget": "₹8,820–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "Manekin",
+              "Soul Kitchen",
+              "AiOLI inspired by MINI"
+            ]
+          }
+        ]
+      },
+      "Krakow": {
+        "name": "Krakow",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Use the core three days for Krakow itself and add a fourth day if you want to do Auschwitz-Birkenau properly without rushing Kazimierz or Schindler’s Factory.",
+        "days": [
+          {
+            "theme": "Wawel Hill & Riverside Krakow",
+            "activities": [
+              {
+                "name": "Wawel Cathedral and Sigismund Bell",
+                "cost": "₹420"
+              },
+              {
+                "name": "Wawel Royal Castle State Rooms",
+                "cost": "₹735",
+                "tip": "Reserve castle rooms in advance in summer; daily quotas can sell out."
+              },
+              {
+                "name": "Dragon’s Den and Vistula riverbank walk",
+                "cost": "₹315"
+              },
+              {
+                "name": "Evening stroll through Planty Park",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Wyspiański",
+                "budget": "₹5,040–₹7,560/night"
+              },
+              {
+                "name": "PURO Kraków Kazimierz",
+                "budget": "₹9,450–₹13,230/night"
+              }
+            ],
+            "meals": [
+              "Morskie Oko",
+              "Milkbar Tomasza",
+              "Pod Wawelem Kompania Kuflowa"
+            ]
+          },
+          {
+            "theme": "Main Market Square & Old Town Icons",
+            "activities": [
+              {
+                "name": "Rynek Główny, Cloth Hall, and St. Mary’s Basilica",
+                "cost": "₹315–₹525"
+              },
+              {
+                "name": "Town Hall Tower viewpoint",
+                "cost": "₹315"
+              },
+              {
+                "name": "Collegium Maius courtyard and Jagiellonian Quarter walk",
+                "cost": "₹315"
+              },
+              {
+                "name": "Floriańska Street to St. Florian’s Gate and the Barbican",
+                "cost": "₹315"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Wyspiański",
+                "budget": "₹5,040–₹7,560/night"
+              },
+              {
+                "name": "Hotel Saski Krakow, Curio Collection by Hilton",
+                "budget": "₹13,650–₹18,900/night"
+              }
+            ],
+            "meals": [
+              "Cafe Camelot",
+              "Pierogarnia Krakowiacy",
+              "Szara Gęś"
+            ]
+          },
+          {
+            "theme": "Kazimierz, Podgórze & Schindler Legacy",
+            "activities": [
+              {
+                "name": "Kazimierz walking trail covering Szeroka Street, Old Synagogue area, and street art lanes",
+                "cost": "Free"
+              },
+              {
+                "name": "Schindler’s Factory Museum",
+                "cost": "₹588",
+                "tip": "Timed tickets often sell out a few days ahead, so book this first."
+              },
+              {
+                "name": "Ghetto Heroes Square and the Eagle Pharmacy exterior stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Galicia Jewish Museum",
+                "cost": "₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Columbus",
+                "budget": "₹6,300–₹8,820/night"
+              },
+              {
+                "name": "PURO Kraków Kazimierz",
+                "budget": "₹9,450–₹13,230/night"
+              }
+            ],
+            "meals": [
+              "Starka",
+              "Hamsa",
+              "HEVRE"
+            ]
+          }
+        ]
+      },
+      "Wroclaw": {
+        "name": "Wroclaw",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "One day is enough for Market Square and Ostrów Tumski, but two days lets you add Panorama Racławicka and a slower riverside museum day.",
+        "days": [
+          {
+            "theme": "Market Square, Dwarfs & Old Town",
+            "activities": [
+              {
+                "name": "Rynek Market Square, Town Hall exterior, and dwarf hunt through the centre",
+                "cost": "Free"
+              },
+              {
+                "name": "St. Elizabeth’s Church tower viewpoint",
+                "cost": "₹252"
+              },
+              {
+                "name": "University of Wroclaw and Leopoldina Hall",
+                "cost": "₹525"
+              },
+              {
+                "name": "Riverside walk across Tumski Bridge at sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Traffic Wrocław",
+                "budget": "₹3,780–₹5,460/night"
+              },
+              {
+                "name": "PURO Wrocław Stare Miasto",
+                "budget": "₹7,980–₹11,340/night"
+              }
+            ],
+            "meals": [
+              "Konspira",
+              "Bernard",
+              "Dinette"
+            ]
+          },
+          {
+            "theme": "Panorama Racławicka, Cathedral Island & Museums",
+            "activities": [
+              {
+                "name": "Panorama Racławicka",
+                "cost": "₹1,050",
+                "tip": "Reserve a timed entry because the panorama admits visitors in fixed batches."
+              },
+              {
+                "name": "National Museum in Wroclaw",
+                "cost": "₹420"
+              },
+              {
+                "name": "Ostrów Tumski and Cathedral Island churches",
+                "cost": "Free"
+              },
+              {
+                "name": "Hydropolis or Centennial Hall precinct",
+                "cost": "₹525–₹735"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Traffic Wrocław",
+                "budget": "₹3,780–₹5,460/night"
+              },
+              {
+                "name": "The Granary - La Suite Hotel",
+                "budget": "₹9,450–₹13,650/night"
+              }
+            ],
+            "meals": [
+              "Konspira",
+              "Jadka",
+              "Młoda Polska Bistro & Pianino"
+            ]
+          }
+        ]
+      },
+      "Gdansk": {
+        "name": "Gdansk",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the Royal Way and Solidarity history well; add a third only if you want a relaxed Sopot add-on or a slower WWII Museum visit.",
+        "days": [
+          {
+            "theme": "Royal Way, Crane & Hanseatic Core",
+            "activities": [
+              {
+                "name": "Golden Gate through Long Market to the Neptune Fountain",
+                "cost": "Free"
+              },
+              {
+                "name": "St. Mary’s Basilica with tower climb",
+                "cost": "₹315"
+              },
+              {
+                "name": "Amber Museum or Uphagen House",
+                "cost": "₹420–₹525"
+              },
+              {
+                "name": "Motława waterfront walk past the medieval Crane",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Moon Hostel Gdańsk",
+                "budget": "₹2,940–₹4,620/night"
+              },
+              {
+                "name": "IBB Hotel Gdańsk",
+                "budget": "₹7,140–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Pierogarnia Stary Młyn",
+              "Goldwasser",
+              "Mandu Centrum"
+            ]
+          },
+          {
+            "theme": "Solidarity, WWII Memory & Westerplatte",
+            "activities": [
+              {
+                "name": "European Solidarity Centre",
+                "cost": "₹735"
+              },
+              {
+                "name": "Monument to the Fallen Shipyard Workers and former shipyard gates",
+                "cost": "Free"
+              },
+              {
+                "name": "Museum of the Second World War",
+                "cost": "₹630"
+              },
+              {
+                "name": "Westerplatte memorial peninsula by seasonal boat or city bus",
+                "cost": "₹315–₹840"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Moon Hostel Gdańsk",
+                "budget": "₹2,940–₹4,620/night"
+              },
+              {
+                "name": "PURO Gdańsk Stare Miasto",
+                "budget": "₹8,400–₹12,180/night"
+              }
+            ],
+            "meals": [
+              "Bar Turystyczny",
+              "Fino Restaurant",
+              "Brovarnia Gdańsk"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Warsaw",
+        "to": "Krakow",
+        "method": "PKP Intercity EIP high-speed train from Warszawa Centralna to Kraków Główny (about 2h 15m)",
+        "cost": "₹1,659–₹3,360"
+      },
+      {
+        "from": "Krakow",
+        "to": "Wroclaw",
+        "method": "PKP Intercity IC train from Kraków Główny to Wrocław Główny (about 3h)",
+        "cost": "₹1,575–₹2,730"
+      },
+      {
+        "from": "Wroclaw",
+        "to": "Gdansk",
+        "method": "PKP Intercity train from Wrocław Główny to Gdańsk Główny, usually via Poznań (about 4h 20m–5h 10m)",
+        "cost": "₹1,680–₹2,940"
+      },
+      {
+        "from": "Gdansk",
+        "to": "Warsaw",
+        "method": "PKP Intercity EIP train from Gdańsk Główny to Warszawa Centralna (about 2h 40m–3h)",
+        "cost": "₹1,785–₹3,150"
+      }
+    ],
+    "extras": [
+      "Auschwitz-Birkenau works best as a full day trip from Krakow: memorial entry is free, official educator-led tours are about ₹3,150, and train or bus transport to Oświęcim is usually another ₹315–₹525 each way.",
+      "Reserve Auschwitz, Schindler’s Factory, and Warsaw Uprising Museum slots in advance in peak season; all three can sell out several days ahead.",
+      "Jakdojade is the most reliable app for trams, buses, and metro in Warsaw, Krakow, Wroclaw, and Gdansk; Bolt is usually cheaper than airport taxis for late arrivals.",
+      "Most larger stores stay closed on many Sundays, so use Żabka convenience shops or station retail if you need groceries on arrival.",
+      "If you want a mountain add-on, use Krakow as the jump-off for Zakopane by bus or train in about 2.5–3 hours, but keep it outside this core city route."
+    ],
+    "cityImages": {
+      "Warsaw": [
+        "Warsaw Old Town Market Square Poland",
+        "Warsaw Royal Route Nowy Świat",
+        "Warsaw Uprising Museum exterior"
+      ],
+      "Krakow": [
+        "Wawel Castle Krakow aerial view",
+        "Rynek Główny Krakow Cloth Hall",
+        "Kazimierz Krakow street cafes"
+      ],
+      "Wroclaw": [
+        "Wroclaw Market Square town hall",
+        "Panorama Racławicka Wroclaw museum",
+        "Ostrów Tumski Wroclaw cathedral island"
+      ],
+      "Gdansk": [
+        "Long Market Gdansk colorful facades",
+        "European Solidarity Centre Gdansk",
+        "Gdansk Crane Motława waterfront"
+      ]
+    }
+  }
 }

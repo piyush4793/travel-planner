@@ -63,5 +63,417 @@
       "notes": "Belle Epoque colonnades, hot spring drinking and film festival"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Vodafone CZ, O2, or T-Mobile prepaid SIMs are easy to buy in Prague; expect about ₹720–₹1,800 for 5–15GB. For a short trip, airport pickup in Prague is the simplest option.",
+    "apps": [
+      "PID Lítačka",
+      "IDOS",
+      "Mapy.cz",
+      "RegioJet",
+      "Můj vlak",
+      "Uber",
+      "Bolt",
+      "Google Translate",
+      "XE Currency",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Prague",
+      "Karlovy Vary",
+      "Cesky Krumlov",
+      "Brno"
+    ],
+    "cities": {
+      "Prague": {
+        "name": "Prague",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Old Town Squares, Charles Bridge & First Prague Views",
+            "activities": [
+              {
+                "name": "Old Town Square, Týn Church exterior, and Jan Hus Memorial walk"
+              },
+              {
+                "name": "Astronomical Clock hourly show"
+              },
+              {
+                "name": "Old Town Hall Tower viewpoint",
+                "cost": "₹900"
+              },
+              {
+                "name": "Charles Bridge sunset walk"
+              },
+              {
+                "name": "Wenceslas Square evening stroll"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mosaic House Design Hotel",
+                "budget": "₹10,080–₹12,600/night"
+              },
+              {
+                "name": "Czech Inn",
+                "budget": "₹4,320–₹6,480/night"
+              }
+            ],
+            "meals": [
+              "Lehká Hlava",
+              "Lokál Dlouhááá",
+              "Restaurace U Provaznice"
+            ]
+          },
+          {
+            "theme": "Prague Castle, Lesser Town & Vltava River",
+            "activities": [
+              {
+                "name": "Prague Castle complex and courtyards"
+              },
+              {
+                "name": "St. Vitus Cathedral tower",
+                "cost": "₹540"
+              },
+              {
+                "name": "Short Circuit ticket for Old Royal Palace, St. George’s Basilica, and Golden Lane",
+                "cost": "₹900"
+              },
+              {
+                "name": "Malá Strana cobbled lane walk"
+              },
+              {
+                "name": "Vltava sightseeing cruise",
+                "cost": "₹1,260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mosaic House Design Hotel",
+                "budget": "₹10,080–₹12,600/night"
+              },
+              {
+                "name": "Czech Inn",
+                "budget": "₹4,320–₹6,480/night"
+              }
+            ],
+            "meals": [
+              "Lehká Hlava",
+              "Lokál Dlouhááá",
+              "Restaurace U Provaznice"
+            ]
+          },
+          {
+            "theme": "Jewish Quarter, Museums & Petřín Hill",
+            "activities": [
+              {
+                "name": "Jewish Quarter combined ticket with Old Jewish Cemetery and synagogues",
+                "cost": "₹1,800"
+              },
+              {
+                "name": "Municipal House guided tour",
+                "cost": "₹1,152"
+              },
+              {
+                "name": "Franz Kafka Museum",
+                "cost": "₹900"
+              },
+              {
+                "name": "Petřín Hill walk and observation tower",
+                "cost": "₹756"
+              },
+              {
+                "name": "National Museum",
+                "cost": "₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mosaic House Design Hotel",
+                "budget": "₹10,080–₹12,600/night"
+              },
+              {
+                "name": "Czech Inn",
+                "budget": "₹4,320–₹6,480/night"
+              }
+            ],
+            "meals": [
+              "Lehká Hlava",
+              "Lokál Dlouhááá",
+              "Restaurace U Provaznice"
+            ]
+          }
+        ]
+      },
+      "Karlovy Vary": {
+        "name": "Karlovy Vary",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Spa Colonnades, Crystal Craft & Hilltop Views",
+            "activities": [
+              {
+                "name": "Mill Colonnade, Market Colonnade, and Hot Spring Colonnade walk with tasting cups"
+              },
+              {
+                "name": "Diana funicular and observation tower",
+                "cost": "₹360"
+              },
+              {
+                "name": "Moser Glass Museum guided tour",
+                "cost": "₹900"
+              },
+              {
+                "name": "Jan Becher Museum tasting tour",
+                "cost": "₹630"
+              },
+              {
+                "name": "Teplá River promenade past Grandhotel Pupp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Romance",
+                "budget": "₹8,100–₹11,700/night"
+              },
+              {
+                "name": "Grandhotel Pupp",
+                "budget": "₹16,200–₹28,800/night"
+              }
+            ],
+            "meals": [
+              "Restaurace U Švejka",
+              "Le Marché",
+              "Café Elefant"
+            ]
+          }
+        ]
+      },
+      "Cesky Krumlov": {
+        "name": "Cesky Krumlov",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Castle Arrival, Tower Views & UNESCO Old Town",
+            "activities": [
+              {
+                "name": "Latrán street arrival walk and old town check-in"
+              },
+              {
+                "name": "Český Krumlov State Castle courtyards and bear moat"
+              },
+              {
+                "name": "Castle Tower viewpoint",
+                "cost": "₹180"
+              },
+              {
+                "name": "Castle Museum and interior guided tour",
+                "cost": "₹720"
+              },
+              {
+                "name": "Náměstí Svornosti evening stroll"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pension Danny",
+                "budget": "₹3,204–₹4,284/night"
+              },
+              {
+                "name": "Hotel Ruže",
+                "budget": "₹13,680–₹23,760/night"
+              }
+            ],
+            "meals": [
+              "Laibon",
+              "U Dvou Maryi",
+              "Na Louži"
+            ]
+          },
+          {
+            "theme": "Vltava River Float, Baroque Theatre & Art Stops",
+            "activities": [
+              {
+                "name": "Vltava river rafting or canoe rental through town",
+                "cost": "₹1,260"
+              },
+              {
+                "name": "Château Garden and revolving theatre grounds"
+              },
+              {
+                "name": "Baroque Castle Theatre guided visit",
+                "cost": "₹900"
+              },
+              {
+                "name": "Egon Schiele Art Centrum",
+                "cost": "₹648"
+              },
+              {
+                "name": "Cross Mountain chapel viewpoint walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pension Danny",
+                "budget": "₹3,204–₹4,284/night"
+              },
+              {
+                "name": "Hotel Ruže",
+                "budget": "₹13,680–₹23,760/night"
+              }
+            ],
+            "meals": [
+              "Laibon",
+              "U Dvou Maryi",
+              "Na Louži"
+            ]
+          }
+        ]
+      },
+      "Brno": {
+        "name": "Brno",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Špilberk Castle, Petrov Hill & Old Town Legends",
+            "activities": [
+              {
+                "name": "Freedom Square and historic centre arrival walk"
+              },
+              {
+                "name": "Špilberk Castle exhibitions and casemates",
+                "cost": "₹684"
+              },
+              {
+                "name": "Cathedral of St. Peter and Paul"
+              },
+              {
+                "name": "Old Town Hall with the Brno Dragon"
+              },
+              {
+                "name": "Jakubské náměstí evening café stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Grandezza Hotel Luxury Palace",
+                "budget": "₹10,800–₹18,000/night"
+              },
+              {
+                "name": "Hotel Slavia",
+                "budget": "₹6,480–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Oaza",
+              "VEGALITE",
+              "Cattani"
+            ]
+          },
+          {
+            "theme": "Underground Brno, Mendel Heritage & Modernist Design",
+            "activities": [
+              {
+                "name": "Labyrinth under Zelný trh",
+                "cost": "₹648"
+              },
+              {
+                "name": "Capuchin Monastery Crypt",
+                "cost": "₹432"
+              },
+              {
+                "name": "Mendel Museum",
+                "cost": "₹216"
+              },
+              {
+                "name": "Villa Tugendhat guided tour",
+                "cost": "₹1,080"
+              },
+              {
+                "name": "Denis Gardens farewell walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Grandezza Hotel Luxury Palace",
+                "budget": "₹10,800–₹18,000/night"
+              },
+              {
+                "name": "Hotel Slavia",
+                "budget": "₹6,480–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Oaza",
+              "VEGALITE",
+              "Cattani"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Prague",
+        "to": "Karlovy Vary",
+        "method": "RegioJet or FlixBus from Prague Florenc to Karlovy Vary Tržnice (about 2 hr 15 min)",
+        "cost": "₹684–₹792"
+      },
+      {
+        "from": "Karlovy Vary",
+        "to": "Cesky Krumlov",
+        "method": "Bus or train connection via Prague or České Budějovice; plan for a long transfer of about 5.5–6.5 hours",
+        "cost": "₹1,872–₹2,340"
+      },
+      {
+        "from": "Cesky Krumlov",
+        "to": "Brno",
+        "method": "Bus to České Budějovice, then train onward to Brno (about 4 hours total)",
+        "cost": "₹1,375"
+      },
+      {
+        "from": "Brno",
+        "to": "Prague",
+        "method": "RegioJet or České dráhy intercity train from Brno hlavní nádraží to Praha hl.n. (about 2.5 hours)",
+        "cost": "₹428–₹1,296"
+      }
+    ],
+    "extras": [
+      "Use the PID Lítačka app in Prague for the cheapest digital tram and metro tickets; the 24-hour pass is about ₹540 and the 72-hour pass is about ₹1,260.",
+      "Mapy.cz is more reliable than generic map apps for Czech hiking paths, castle approaches, and offline navigation in smaller towns.",
+      "Kutná Hora works well as an optional Prague day trip if you want Sedlec Ossuary and St. Barbara’s Cathedral without changing hotels.",
+      "Avoid Euronet ATMs and use bank ATMs instead; cards are widely accepted, but carrying 500–1,000 CZK in cash helps in smaller towns.",
+      "Book Villa Tugendhat tours, Prague Castle interiors, and Český Krumlov theatre slots ahead in summer because same-week inventory can vanish quickly.",
+      "Vegetarian travelers should bookmark Lehká Hlava in Prague, Laibon in Cesky Krumlov, and VEGALITE in Brno before arrival."
+    ],
+    "cityImages": {
+      "Prague": [
+        "Prague Old Town Square astronomical clock",
+        "Charles Bridge Prague Vltava River",
+        "Prague Castle St Vitus Cathedral aerial view"
+      ],
+      "Karlovy Vary": [
+        "Mill Colonnade Karlovy Vary",
+        "Diana Observation Tower Karlovy Vary",
+        "Grandhotel Pupp Karlovy Vary"
+      ],
+      "Cesky Krumlov": [
+        "Cesky Krumlov Castle aerial Vltava bend",
+        "Cesky Krumlov old town square Baroque",
+        "Vltava River rafting Cesky Krumlov"
+      ],
+      "Brno": [
+        "Spilberk Castle Brno panorama Moravia",
+        "Cathedral St Peter and Paul Brno Petrov hill",
+        "Villa Tugendhat Brno UNESCO"
+      ]
+    }
+  }
 }
