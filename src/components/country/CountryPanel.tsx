@@ -4,7 +4,7 @@ import type maplibregl from "maplibre-gl";
 import type { Country } from "../../types";
 import type { SavedAiPlan } from "../../hooks/useAiPlanStore";
 import { STYLE_META } from "../../utils/travelStyles";
-import { generateTripPlan, getMaxRuleDays, getRecRuleDays } from "../../utils/tripPlans";
+import { generateTripPlan, getMaxRuleDays, getRecRuleDays, extractPlanCities } from "../../utils/tripPlans";
 import type { TripPlan } from "../../utils/tripPlans";
 import { ITINERARY_RULES } from "../../data/itineraryRules";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
@@ -472,12 +472,7 @@ function PlanPreview({ country, plan, homeCountry, onCinematic, onItinerary, isA
   const hasRuleData = !!ITINERARY_RULES[country.name];
 
   // Unique ordered cities from plan (for route preview)
-  const planCities: string[] = [];
-  for (const day of plan.days) {
-    const m = day.label.match(/[—\-–]\s*(.+)$/);
-    const city = m ? m[1].trim() : "";
-    if (city && planCities[planCities.length - 1] !== city) planCities.push(city);
-  }
+  const planCities = extractPlanCities(plan.days);
 
   // Cinematic requires rule data AND at least 2 plan cities with known coordinates
   const knownCityNames = new Set((country.cities ?? []).map((c) => c.name));

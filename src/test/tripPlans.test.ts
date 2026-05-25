@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { generateTripPlan, getMaxRuleDays, getRecRuleDays } from "../utils/tripPlans";
+import { generateTripPlan, getMaxRuleDays, getRecRuleDays, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../utils/tripPlans";
 import type { Country } from "../types";
 
 const COUNTRY_WITH_CITIES: Country = {
@@ -126,6 +126,60 @@ describe("tripPlans — P0", () => {
       // With only 4 days, can't visit all 7 cities
       expect(unique.length).toBeLessThan(7);
       expect(unique.length).toBeGreaterThanOrEqual(1);
+    });
+  });
+
+  describe("extractCityFromLabel", () => {
+    it("extracts city from em-dash label", () => {
+      expect(extractCityFromLabel("Day 1 — Oslo")).toBe("Oslo");
+    });
+    it("extracts city from en-dash label", () => {
+      expect(extractCityFromLabel("Day 3 – Bergen")).toBe("Bergen");
+    });
+    it("extracts city from hyphen label", () => {
+      expect(extractCityFromLabel("Day 2 - Hanoi")).toBe("Hanoi");
+    });
+    it("returns empty for label without city", () => {
+      expect(extractCityFromLabel("Day 5")).toBe("");
+    });
+  });
+
+  describe("extractPlanCities", () => {
+    it("extracts unique ordered cities", () => {
+      const days = [
+        { label: "Day 1 — Oslo", activities: [] },
+        { label: "Day 2 — Oslo", activities: [] },
+        { label: "Day 3 — Bergen", activities: [] },
+        { label: "Day 4 — Flam", activities: [] },
+      ];
+      expect(extractPlanCities(days)).toEqual(["Oslo", "Bergen", "Flam"]);
+    });
+    it("returns empty for no city labels", () => {
+      expect(extractPlanCities([{ label: "Day 1", activities: [] }])).toEqual([]);
+    });
+  });
+
+  describe("isRealCity", () => {
+    it("accepts normal city names", () => {
+      expect(isRealCity("Oslo")).toBe(true);
+      expect(isRealCity("Ho Chi Minh City")).toBe(true);
+    });
+    it("rejects noise entries", () => {
+      expect(isRealCity("Stay: Bergen")).toBe(false);
+      expect(isRealCity("RETURN")).toBe(false);
+      expect(isRealCity("Entry costs:")).toBe(false);
+      expect(isRealCity("Recommended hotels:")).toBe(false);
+      expect(isRealCity("Mostly free")).toBe(false);
+    });
+  });
+
+  describe("normalizeCityName", () => {
+    it("lowercases and trims", () => {
+      expect(normalizeCityName("OSLO")).toBe("oslo");
+      expect(normalizeCityName("  Bergen  ")).toBe("bergen");
+    });
+    it("strips Stay: prefix", () => {
+      expect(normalizeCityName("Stay: Flåm")).toBe("flåm");
     });
   });
 });

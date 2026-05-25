@@ -71,7 +71,7 @@ src/
 │   │   ├── llmProvider.ts       # Provider abstraction (OpenAI, extensible)
 │   │   ├── llmPrompts.ts        # System prompts, TripBrief, context condensation
 │   │   └── llmTransform.ts      # LLM JSON → TripPlan extraction + validation
-│   ├── tripPlans.ts             # Itinerary generation (rule engine + generic)
+│   ├── tripPlans.ts             # Itinerary generation (rule engine + generic) + city extraction utils
 │   ├── travelStyles.ts          # STYLE_META (icons, colors, classes)
 │   ├── filterLogic.ts           # Pure filter functions
 │   ├── transport.ts             # TransportType, emoji, detection

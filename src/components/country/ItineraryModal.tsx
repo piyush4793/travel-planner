@@ -1,6 +1,7 @@
 import { createPortal } from "react-dom";
 import type { Country } from "../../types";
 import type { TripPlan, DayEntry } from "../../utils/tripPlans";
+import { extractCityFromLabel } from "../../utils/tripPlans";
 import { ITINERARY_RULES } from "../../data/itineraryRules";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../utils/transport";
 
@@ -15,8 +16,7 @@ type CityGroup = {
 function groupDays(days: DayEntry[], country: Country): CityGroup[] {
   const groups: CityGroup[] = [];
   for (const day of days) {
-    const m = day.label.match(/—\s*(.+)$/);
-    const city = m ? m[1].trim() : "";
+    const city = extractCityFromLabel(day.label);
     if (!city) continue;
     const last = groups[groups.length - 1];
     if (last && last.name === city) {

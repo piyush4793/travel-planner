@@ -17,6 +17,35 @@ export type TripPlan = {
   warning?: string;
 };
 
+/** Extract city name from a day label like "Day 1 — Oslo" */
+export function extractCityFromLabel(label: string): string {
+  const m = label.match(/[—\-–]\s*(.+)$/);
+  return m ? m[1].trim() : "";
+}
+
+/** Extract unique ordered city route from plan days */
+export function extractPlanCities(days: DayEntry[]): string[] {
+  const cities: string[] = [];
+  for (const day of days) {
+    const city = extractCityFromLabel(day.label);
+    if (city && cities[cities.length - 1] !== city) cities.push(city);
+  }
+  return cities;
+}
+
+/** Filter out noise entries that aren't real cities (import artifacts) */
+export function isRealCity(name: string): boolean {
+  return (
+    name.length >= 2 &&
+    !/^(?:stay:\s|return|departure|depart|transit|arrive|entry costs|recommended hotels|mostly free|fly\s*back)/i.test(name)
+  );
+}
+
+/** Normalize city name for case-insensitive comparison */
+export function normalizeCityName(name: string): string {
+  return name.replace(/^stay:\s*/i, "").trim().toLowerCase();
+}
+
 function parseCostRange(budget: string): [number, number] {
   const m = budget.match(/₹([\d.]+)([KL])[–\-]₹([\d.]+)([KL])/);
   if (!m) return [100000, 200000];
