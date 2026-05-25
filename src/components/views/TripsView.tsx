@@ -714,7 +714,18 @@ function TripRow({
             </span>
           </div>
           {isCombo && (
-            <p className="text-[10px] text-gray-500 mb-1.5 truncate">+ {trip.addOns.map((c) => c.name).join(", ")}</p>
+            <div className="flex items-center gap-1 mb-1.5 flex-wrap">
+              <span className="text-gray-300 text-[10px]">+</span>
+              {trip.addOns.map((c) => (
+                <button
+                  key={c.name}
+                  onClick={(e) => { e.stopPropagation(); onSelect(c); }}
+                  className="text-[10px] font-medium text-gray-600 bg-gray-100 hover:bg-blue-50 hover:text-blue-700 px-2 py-0.5 rounded-full transition-colors"
+                >
+                  {c.name}
+                </button>
+              ))}
+            </div>
           )}
           <div className="flex items-center gap-2">
             <span className="text-[10px] text-gray-400 font-medium">{trip.visitedCount}/{trip.allCountries.length}</span>
