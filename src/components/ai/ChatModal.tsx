@@ -68,9 +68,9 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
 
   // Focus input on open
   useEffect(() => {
-    if (open && inputRef.current) {
-      setTimeout(() => inputRef.current?.focus(), 100);
-    }
+    if (!open) return;
+    const id = setTimeout(() => inputRef.current?.focus(), 100);
+    return () => clearTimeout(id);
   }, [open]);
 
   function handleViewItinerary() {
@@ -139,7 +139,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
             {hasConversation && !finished && !finalizing && !pasteMode && !linkMode && (
               <FinishButton tokens={tokenUsage.totalTokens} loading={loading} onClick={finishChat} />
             )}
-            <button onClick={handleClose} disabled={finalizing}
+            <button onClick={handleClose} disabled={finalizing} aria-label="Close chat"
               className={`text-lg leading-none p-1 ${finalizing ? "text-slate-200 cursor-not-allowed" : "text-slate-400 hover:text-slate-700"}`}>✕</button>
           </div>
         </div>
@@ -508,14 +508,17 @@ function TokenBadge({ tokens, inputTokens, outputTokens }: { tokens: number; inp
 
 function PromptSuggestions({ suggestions }: { suggestions: string[] }) {
   const [copied, setCopied] = useState(false);
+  const copyTimerRef = useRef<ReturnType<typeof setTimeout>>();
   function copyAll() {
     const text = suggestions
       .map((s) => s.replace(/^Ask:\s*/i, "").replace(/^['"]|['"]$/g, ""))
       .join("\n");
     navigator.clipboard.writeText(text);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    clearTimeout(copyTimerRef.current);
+    copyTimerRef.current = setTimeout(() => setCopied(false), 1500);
   }
+  useEffect(() => () => clearTimeout(copyTimerRef.current), []);
   return (
     <div className="bg-blue-50 border border-blue-200 rounded-xl p-3">
       <div className="flex items-center justify-between mb-2">

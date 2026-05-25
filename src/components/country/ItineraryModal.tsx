@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import type { Country } from "../../types";
 import type { TripPlan, DayEntry } from "../../utils/tripPlans";
@@ -54,8 +54,16 @@ interface Props {
 export default function ItineraryModal({ plan, country, onClose }: Props) {
   const groups = groupDays(plan.days, country);
 
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, [onClose]);
+
   return createPortal(
     <div
+      role="dialog"
+      aria-modal="true"
       className="fixed inset-0 z-[200] flex items-center justify-center p-0 md:p-4 bg-black/60 backdrop-blur-sm"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
@@ -98,6 +106,7 @@ export default function ItineraryModal({ plan, country, onClose }: Props) {
           <button
             onClick={onClose}
             className="text-slate-400 hover:text-white hover:bg-white/10 p-2 rounded-xl transition-colors text-base leading-none shrink-0 mt-0.5"
+            aria-label="Close"
           >
             ✕
           </button>

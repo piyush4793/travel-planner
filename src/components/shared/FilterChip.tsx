@@ -38,6 +38,7 @@ export default function FilterChip({ label, active, children }: Props) {
       <button
         ref={btnRef}
         onClick={toggle}
+        aria-expanded={open}
         className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold whitespace-nowrap transition-all border ${
           active
             ? "bg-blue-600 text-white border-blue-600 shadow-sm"

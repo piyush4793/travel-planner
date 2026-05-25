@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import type { TripPlan } from "../../utils/tripPlans";
 import { extractPlanCities, isRealCity, normalizeCityName } from "../../utils/tripPlans";
@@ -157,10 +157,18 @@ export default function PlanCompareModal({ options, onClose }: Props) {
   const leftPlan = options.find((o) => o.id === leftId);
   const rightPlan = options.find((o) => o.id === rightId);
 
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, [onClose]);
+
   if (options.length < 2) return null;
 
   return createPortal(
     <div
+      role="dialog"
+      aria-modal="true"
       className="fixed inset-0 z-[200] flex items-center justify-center p-0 md:p-4 bg-black/60 backdrop-blur-sm"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
@@ -171,7 +179,7 @@ export default function PlanCompareModal({ options, onClose }: Props) {
             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5">Compare Plans</p>
             <p className="text-lg font-black">Side-by-Side Comparison</p>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-white hover:bg-white/10 p-2 rounded-xl transition-colors text-base leading-none">
+          <button onClick={onClose} className="text-slate-400 hover:text-white hover:bg-white/10 p-2 rounded-xl transition-colors text-base leading-none" aria-label="Close">
             ✕
           </button>
         </div>

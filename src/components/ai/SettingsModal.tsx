@@ -127,7 +127,7 @@ export default function SettingsModal({ open, onClose, onOpenChat }: Props) {
           <h2 className="text-base font-semibold text-white flex items-center gap-2">
             <span className="text-lg">⚙️</span> AI Settings
           </h2>
-          <button onClick={onClose} className="text-white/40 hover:text-white text-lg leading-none">✕</button>
+          <button onClick={onClose} className="text-white/40 hover:text-white text-lg leading-none" aria-label="Close settings">✕</button>
         </div>
 
         {/* Provider selector */}

@@ -76,7 +76,7 @@ export default function CountryForm({ initial, existingNames, onSave, onClose }:
           <h2 className="text-lg font-bold text-gray-900">
             {isEdit ? `Edit — ${initial?.name}` : "Add Country"}
           </h2>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-2xl leading-none">×</button>
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-2xl leading-none" aria-label="Close">×</button>
         </div>
 
         <div className="flex-1 overflow-y-auto px-6 py-4 space-y-5">
