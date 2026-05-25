@@ -1,0 +1,646 @@
+{
+  "name": "Vietnam",
+  "lat": 14.0583,
+  "lng": 108.2772,
+  "region": "Asia",
+  "bestMonths": [
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹50K–₹80K",
+    "couple": "₹80K–₹1.5L",
+    "family4": "₹1.8L–₹3L"
+  },
+  "experiences": [
+    "Ha Long Bay",
+    "Street Food",
+    "History",
+    "Hoi An",
+    "Motorbikes"
+  ],
+  "avoid": [
+    "Typhoon season in central regions"
+  ],
+  "combo": [
+    "Cambodia",
+    "Thailand"
+  ],
+  "landmark": "Ha Long Bay",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Hanoi",
+      "lat": 21.0285,
+      "lng": 105.8542,
+      "notes": "Old Quarter 36 streets, Hoan Kiem Lake, egg coffee and pho"
+    },
+    {
+      "name": "Ho Chi Minh City",
+      "lat": 10.8231,
+      "lng": 106.6297,
+      "notes": "War Remnants Museum, Cu Chi Tunnels and Ben Thanh Market energy"
+    },
+    {
+      "name": "Hoi An",
+      "lat": 15.8801,
+      "lng": 108.338,
+      "notes": "Lantern-lit ancient town, tailor shops and An Bang beach cycling"
+    },
+    {
+      "name": "Ha Long Bay",
+      "lat": 20.9101,
+      "lng": 107.1839,
+      "notes": "3000 limestone karsts, emerald waters and overnight cruise junks"
+    },
+    {
+      "name": "Hue",
+      "lat": 16.4637,
+      "lng": 107.5909,
+      "notes": "Imperial Citadel, royal tombs by boat and fiery bun bo Hue noodles"
+    },
+    {
+      "name": "Da Nang",
+      "lat": 16.0544,
+      "lng": 108.2022,
+      "notes": "Marble Mountains, Dragon Bridge fire show and My Khe beach"
+    },
+    {
+      "name": "Ninh Binh",
+      "lat": 20.2541,
+      "lng": 105.9745,
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "notes": "Mua Cave viewpoint, Trang An boating through limestone caves"
+    },
+    {
+      "name": "Sapa",
+      "lat": 22.3364,
+      "lng": 103.8438,
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "notes": "Fansipan peak cable car, Muong Hoa rice terraces and H'mong village treks"
+    }
+  ],
+  "itinerary": {
+    "sim": "Viettel",
+    "apps": [
+      "Grab (cabs)",
+      "Klook (tickets)",
+      "Happy Cow (veg food)",
+      "12go.asia (trains)"
+    ],
+    "cityOrder": [
+      "Ho Chi Minh City",
+      "Da Nang",
+      "Hoi An",
+      "Hanoi",
+      "Ninh Binh",
+      "Ha Long Bay",
+      "Sapa"
+    ],
+    "cities": {
+      "Ho Chi Minh City": {
+        "name": "Ho Chi Minh City",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Add +1 day if you need rest after a long flight",
+        "days": [
+          {
+            "theme": "History & City Life",
+            "activities": [
+              {
+                "name": "War Remnants Museum",
+                "cost": "₹136 (4k VND)"
+              },
+              {
+                "name": "Independence Palace",
+                "cost": "~₹200"
+              },
+              {
+                "name": "Central Post Office — free entry, French colonial gem"
+              },
+              {
+                "name": "Ben Thanh Market — evening street food & souvenirs"
+              },
+              {
+                "name": "Bui Vien Street — nightlife & live music"
+              }
+            ],
+            "meals": [
+              "Shambhalla",
+              "Namaste India",
+              "Saigon International"
+            ],
+            "hotels": [
+              {
+                "name": "Vân Anh Luxury (Hong Vina)",
+                "budget": "under ₹2,500/night"
+              },
+              {
+                "name": "Cicilia Saigon Hotels & Spa",
+                "budget": "under ₹4,000/night"
+              }
+            ]
+          },
+          {
+            "theme": "Cu Chi & Mekong Excursions",
+            "activities": [
+              {
+                "name": "Cu Chi Tunnel + Mekong Delta tour",
+                "cost": "₹4–4.5k pp (combined)",
+                "tip": "Book via Viator or Klook"
+              },
+              {
+                "name": "Cu Chi Tunnel only (shorter option)",
+                "cost": "₹1.5–2k pp"
+              },
+              {
+                "name": "Mekong boat ride & local village stops"
+              },
+              {
+                "name": "Air Saigon rooftop bar — city views at sunset"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vân Anh Luxury (Hong Vina)",
+                "budget": "under ₹2,500/night"
+              }
+            ]
+          },
+          {
+            "theme": "Rest & Hidden Gems",
+            "activities": [
+              {
+                "name": "District 1 cafés & leisurely brunch"
+              },
+              {
+                "name": "Saigon Zoo and Botanical Gardens"
+              },
+              {
+                "name": "Nguyen Hue Walking Street"
+              }
+            ]
+          }
+        ]
+      },
+      "Da Nang": {
+        "name": "Da Nang",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Beach & Dragon Bridge",
+            "activities": [
+              {
+                "name": "My Khe Beach — morning swim & fresh coconut"
+              },
+              {
+                "name": "Dragon Bridge fire & water show",
+                "tip": "Sat & Sun only at 9 PM"
+              },
+              {
+                "name": "Marble Mountain + Hoa Nghiem Cave"
+              },
+              {
+                "name": "Han Market seafood dinner"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Grand Gold Hotel",
+                "budget": "under ₹3,000/night"
+              },
+              {
+                "name": "Sandy Beach Non Nuoc Resort",
+                "budget": "under ₹3,500/night"
+              },
+              {
+                "name": "Haian Beach Hotel",
+                "budget": "under ₹4,000/night"
+              }
+            ]
+          },
+          {
+            "theme": "Bana Hills Full Day",
+            "activities": [
+              {
+                "name": "Bana Hills — Golden Bridge & French Village",
+                "cost": "₹3.5k pp entry"
+              },
+              {
+                "name": "Cable car — one of the longest in the world"
+              },
+              {
+                "name": "Fantasy Park roller coaster"
+              },
+              {
+                "name": "Round-trip transfer from Da Nang",
+                "cost": "~₹500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Grand Sunrise Boutique Hotel",
+                "budget": "under ₹3,000/night"
+              },
+              {
+                "name": "Halina Hotel and Apartments",
+                "budget": "under ₹3,500/night"
+              }
+            ]
+          },
+          {
+            "theme": "Hoi An Ancient Town",
+            "activities": [
+              {
+                "name": "Hoi An Old Town & lantern-lit streets",
+                "tip": "45 min cab from Da Nang, ~₹800 pp"
+              },
+              {
+                "name": "Japanese Covered Bridge & Thu Bon riverside"
+              },
+              {
+                "name": "Son Tra Peninsula & Lady Buddha Statue"
+              },
+              {
+                "name": "Lantern boat on Thu Bon River (evening)"
+              }
+            ]
+          },
+          {
+            "theme": "My Son Sanctuary",
+            "activities": [
+              {
+                "name": "My Son Sanctuary — ancient Cham ruins",
+                "cost": "~₹500 entry"
+              },
+              {
+                "name": "Marble Mountain (if not done Day 1)"
+              },
+              {
+                "name": "Final Da Nang seafood feast"
+              }
+            ]
+          }
+        ]
+      },
+      "Hoi An": {
+        "name": "Hoi An",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Ancient Town & Lanterns",
+            "activities": [
+              {
+                "name": "Hoi An Old Town UNESCO Heritage streets"
+              },
+              {
+                "name": "Japanese Covered Bridge & Tan Ky Ancient House"
+              },
+              {
+                "name": "Lantern boat ride on Thu Bon River (evening)"
+              },
+              {
+                "name": "Night market & bánh mì for dinner"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hoi An Historic Hotel",
+                "budget": "under ₹3,000/night"
+              }
+            ]
+          },
+          {
+            "theme": "Tailor, Beach & Temples",
+            "activities": [
+              {
+                "name": "An Bang Beach — cycling distance from Old Town"
+              },
+              {
+                "name": "Custom tailor shop — get clothes made overnight"
+              },
+              {
+                "name": "My Son Sanctuary (45 min)",
+                "cost": "~₹500 entry"
+              },
+              {
+                "name": "Cooking class with local market visit"
+              }
+            ]
+          }
+        ]
+      },
+      "Hanoi": {
+        "name": "Hanoi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Base for Ninh Binh & Ha Long Bay day trips",
+        "days": [
+          {
+            "theme": "Old Quarter & Lakes",
+            "activities": [
+              {
+                "name": "Hoan Kiem Lake & Ngoc Son Temple"
+              },
+              {
+                "name": "Old Quarter — 36 ancient trade streets walk"
+              },
+              {
+                "name": "St Joseph's Cathedral"
+              },
+              {
+                "name": "Train Street"
+              },
+              {
+                "name": "Thang Long Water Puppet Theater (evening)"
+              }
+            ],
+            "meals": [
+              "Bun Cha Huong Lien (Obama's visit spot!)",
+              "Banh Mi 25"
+            ],
+            "hotels": [
+              {
+                "name": "Hanoi Anise Hotel and Spa",
+                "budget": "under ₹2,500/night"
+              },
+              {
+                "name": "Diamond Legend Hotel",
+                "budget": "under ₹3,200/night"
+              },
+              {
+                "name": "Vision Premier Hotel and Spa",
+                "budget": "under ₹3,500/night"
+              }
+            ]
+          },
+          {
+            "theme": "Temples & Museums",
+            "activities": [
+              {
+                "name": "Ho Chi Minh Mausoleum & Museum"
+              },
+              {
+                "name": "Temple of Literature"
+              },
+              {
+                "name": "Vietnam Museum of Ethnology"
+              },
+              {
+                "name": "West Lake (Hồ Tây) promenade & local cafés"
+              }
+            ]
+          }
+        ]
+      },
+      "Ninh Binh": {
+        "name": "Ninh Binh",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Day trip from Hanoi (1–1.5 hr). Leave luggage at Hanoi bus station locker.",
+        "days": [
+          {
+            "theme": "Caves, Boats & Karst Peaks",
+            "activities": [
+              {
+                "name": "Mua Cave viewpoint — 500-step climb, panoramic vista",
+                "cost": "~₹400 pp"
+              },
+              {
+                "name": "Trang An Boating — Route 3 through cave system",
+                "cost": "~₹1,000 pp",
+                "tip": "3–4 hrs, most scenic route"
+              },
+              {
+                "name": "Bich Dong Pagoda (free)"
+              },
+              {
+                "name": "Return to Hanoi by evening bus"
+              }
+            ]
+          }
+        ]
+      },
+      "Ha Long Bay": {
+        "name": "Ha Long Bay",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Day trip from Hanoi. Shuttle bus or public bus (~3–4 hrs each way).",
+        "days": [
+          {
+            "theme": "Cruise the Emerald Waters",
+            "activities": [
+              {
+                "name": "Sung Sot (Surprise) Cave — largest in Ha Long"
+              },
+              {
+                "name": "Kayaking through limestone karsts"
+              },
+              {
+                "name": "Bamboo or Coconut boat ride"
+              },
+              {
+                "name": "Beach stop & swimming"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "La Regina Royal Cruise",
+                "budget": "₹19,261 pp"
+              },
+              {
+                "name": "Santa Maria Cruise Halong",
+                "budget": "₹20,794 pp"
+              },
+              {
+                "name": "Doris Cruise",
+                "budget": "₹23,885 pp"
+              }
+            ]
+          }
+        ]
+      },
+      "Sapa": {
+        "name": "Sapa",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Overnight train from Hanoi (~8 hrs, ₹2,500 pp via 12go.asia)",
+        "days": [
+          {
+            "theme": "Peaks & Village Culture",
+            "activities": [
+              {
+                "name": "Fansipan cable car — Indochina's highest peak",
+                "cost": "₹3,000 pp",
+                "tip": "30 min wait monorail, 60 min cable car — book early"
+              },
+              {
+                "name": "Swing Sapa",
+                "cost": "₹300 pp"
+              },
+              {
+                "name": "Cat Cat Village walk"
+              },
+              {
+                "name": "Sapa Museum"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sapa Village Hotel",
+                "budget": "under ₹3,000/night"
+              },
+              {
+                "name": "Sapa Center Hotel",
+                "budget": "under ₹3,500/night"
+              }
+            ]
+          },
+          {
+            "theme": "Rice Terraces & Nature",
+            "activities": [
+              {
+                "name": "Muong Hoa Valley — terraced rice fields & H'mong villages"
+              },
+              {
+                "name": "Hoang Lien National Park trek"
+              },
+              {
+                "name": "Silver Waterfall & Love Waterfall"
+              },
+              {
+                "name": "Notre Dame Cathedral (Sapa Church)"
+              }
+            ]
+          },
+          {
+            "theme": "Off the Beaten Path",
+            "activities": [
+              {
+                "name": "Village homestay with local family"
+              },
+              {
+                "name": "Ta Phin Village — Red Dao embroidery"
+              },
+              {
+                "name": "Y Linh Ho & Lao Chai minority villages"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Ho Chi Minh City",
+        "to": "Da Nang",
+        "method": "Flight (morning)",
+        "cost": "₹6,000 pp incl. baggage"
+      },
+      {
+        "from": "Da Nang",
+        "to": "Hanoi",
+        "method": "Flight (morning)",
+        "cost": "₹6,000 pp"
+      },
+      {
+        "from": "Hanoi",
+        "to": "Ninh Binh",
+        "method": "Bus or hired cab",
+        "cost": "~₹200 pp (1–1.5 hr)"
+      },
+      {
+        "from": "Hanoi",
+        "to": "Ha Long Bay",
+        "method": "Shuttle bus (~3–4 hrs)",
+        "cost": "under ₹1,500 pp"
+      },
+      {
+        "from": "Hanoi",
+        "to": "Sapa",
+        "method": "Overnight train (8 hrs)",
+        "cost": "₹2,500 pp via 12go.asia"
+      },
+      {
+        "from": "Sapa",
+        "to": "Hanoi",
+        "method": "Overnight train (return)",
+        "cost": "₹2,500 pp"
+      }
+    ],
+    "extras": [
+      "Phu Quoc Island",
+      "Da Lat",
+      "Nha Trang",
+      "Cat Ba Island",
+      "Ha Giang Loop",
+      "Phong Nha Cave"
+    ],
+    "cityImages": {
+      "Ho Chi Minh City": [
+        "Ho Chi Minh City skyline Vietnam",
+        "Ben Thanh Market Saigon",
+        "Mekong Delta Vietnam boat"
+      ],
+      "Da Nang": [
+        "Da Nang beach Vietnam coastline",
+        "Dragon Bridge Da Nang Vietnam",
+        "Marble Mountains Da Nang"
+      ],
+      "Hoi An": [
+        "Hoi An Ancient Town lantern night",
+        "Hoi An yellow buildings riverside",
+        "Hoi An old quarter Vietnam"
+      ],
+      "Hanoi": [
+        "Hoan Kiem Lake Hanoi",
+        "Hanoi Old Quarter street Vietnam",
+        "Temple of Literature Hanoi Vietnam"
+      ],
+      "Ninh Binh": [
+        "Trang An Ninh Binh boat Vietnam",
+        "Ninh Binh rice paddy karst",
+        "Tam Coc Ninh Binh Vietnam"
+      ],
+      "Ha Long Bay": [
+        "Ha Long Bay limestone karst Vietnam",
+        "Halong Bay sunrise boat",
+        "Ha Long Bay emerald water"
+      ],
+      "Sapa": [
+        "Sapa rice terraces Vietnam mountain",
+        "Fansipan peak Sapa Vietnam",
+        "Muong Hoa Valley Sapa"
+      ]
+    }
+  }
+}
