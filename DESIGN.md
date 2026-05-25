@@ -29,12 +29,13 @@ For features, setup, and user-facing docs, see [README.md](./README.md).
 ```
 src/
 ├── hooks/
-│   ├── useCountryStore.ts       # Country CRUD, My List, seed+overrides merging
+│   ├── useCountryStore.ts       # Country CRUD, My List, manifest-based seed + lazy enrichment
 │   ├── useTripStore.ts          # Trip group CRUD + seed merging
 │   ├── usePersistedSet.ts       # DRY Set<string> + localStorage persistence
 │   ├── useHashView.ts           # Hash-based routing (no router library)
 │   ├── usePanelDrag.ts          # Resizable panel drag behavior
 │   ├── useBreakpoint.ts         # Reactive breakpoint hook (mobile/tablet/desktop)
+│   ├── useCountryRule.ts        # Async per-country JSON loader with cache
 │   ├── useChatSession.ts        # AI chat state, send/finish/clear
 │   └── useAiPlanStore.ts        # AI plan persistence (save/replace/compare, max 3 per dest)
 ├── components/
@@ -88,8 +89,12 @@ src/
 ├── types.ts                     # Shared TypeScript types
 └── index.css                    # Tailwind + keyframe animations
 data/
-├── countries.json               # 43 curated seed destinations
-└── worldCatalog.json            # 197 world countries (name, lat, lng, region)
+├── rules/
+│   ├── index.json               # Manifest: 198 countries (name, lat, lng, region, recDays, maxDays)
+│   ├── japan.json               # Per-country consolidated data + itinerary (lazy-loaded)
+│   ├── norway.json              # ... (43 seed countries, each with full day-by-day itinerary)
+│   └── ...                      # One file per country, loaded on demand via import.meta.glob
+└── worldCatalog.json            # 197 world countries (name, lat, lng, region) — used by Discover
 ```
 
 ---
@@ -110,10 +115,13 @@ User edits stored as full objects in `tp_customs`. On load, seed entries are ove
 
 ### Rule engine flow
 ```
-generateTripPlan() in tripPlans.ts
-  └─ getRuledItinerary()  ← checks ITINERARY_RULES[country.name]
-       ├─ found → per-day plan from rule data
-       └─ not found → generic algorithm from experience tags
+useCountryRule(countryName)
+  └─ import.meta.glob → data/rules/{country}.json (lazy-loaded, cached)
+       └─ returns { data: ConsolidatedCountry, rule: CountryRule | null }
+
+generateTripPlan(country, style, cities, days, rule)
+  ├─ rule provided → getRuledItinerary() with per-day activities, costs, hotels
+  └─ no rule → generic algorithm from experience tags
 ```
 
 ### Portal pattern
@@ -141,10 +149,10 @@ City name cleaning strips prefixes ("ARRIVE IN", "RETURN"). Noise filtering remo
 ### Two-tier country system
 
 **Tier 1: World Catalog** (`data/worldCatalog.json`)
-197 countries with basic data: `{ name, lat, lng, region }`. Regions: Asia, Europe, Middle East, Africa, Americas, Oceania. Used by the Discover view.
+197 countries with basic data: `{ name, lat, lng, region }`. Used by the Discover view.
 
-**Tier 2: Rich Seed** (`data/countries.json`)
-43 curated countries with full data. Pre-added to user's My List.
+**Tier 2: Per-Country JSON** (`data/rules/*.json`)
+43 seed countries with full consolidated data: coordinates, region, bestMonths, budget (solo/couple/family4), experiences, cities, AND day-by-day itinerary rules. Lazy-loaded via `useCountryRule` hook. Each file is the single source of truth for that country.
 
 4 special non-sovereign destinations exist in seed only: Antarctica (standalone), Scotland/Hawaii/Dubai merged into UK/US/UAE as cities.
 
