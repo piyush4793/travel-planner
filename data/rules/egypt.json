@@ -1,0 +1,86 @@
+{
+  "name": "Egypt",
+  "seed": true,
+  "lat": 26.8206,
+  "lng": 30.8025,
+  "region": "Middle East",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹60K–₹1L",
+    "couple": "₹1L–₹1.8L",
+    "family4": "₹2L–₹3.5L"
+  },
+  "experiences": [
+    "Pyramids of Giza",
+    "Nile Cruise",
+    "Luxor Temples",
+    "Red Sea Diving",
+    "Cairo Museum"
+  ],
+  "avoid": [
+    "Extreme summer heat (40°C+)",
+    "Ramadan for nightlife"
+  ],
+  "combo": [
+    "Turkey",
+    "United Arab Emirates"
+  ],
+  "landmark": "Pyramids of Giza",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Cairo",
+      "lat": 30.0444,
+      "lng": 31.2357,
+      "notes": "Pyramids of Giza, Sphinx, Egyptian Museum and Khan el-Khalili bazaar"
+    },
+    {
+      "name": "Luxor",
+      "lat": 25.6872,
+      "lng": 32.6396,
+      "notes": "Valley of the Kings, Karnak temple complex and hot air balloon sunrise"
+    },
+    {
+      "name": "Aswan",
+      "lat": 24.0889,
+      "lng": 32.8998,
+      "notes": "Philae temple, Nubian villages and Abu Simbel day trip by flight"
+    },
+    {
+      "name": "Alexandria",
+      "lat": 31.2001,
+      "lng": 29.9187,
+      "notes": "Bibliotheca Alexandrina, Pompey's Pillar and Mediterranean seafood"
+    },
+    {
+      "name": "Hurghada",
+      "lat": 27.2579,
+      "lng": 33.8116,
+      "notes": "Red Sea diving and snorkeling with dolphins and coral reefs"
+    },
+    {
+      "name": "Sharm el-Sheikh",
+      "lat": 27.9158,
+      "lng": 34.33,
+      "notes": "World-class coral reefs at Ras Mohammed and Tiran island"
+    }
+  ],
+  "itinerary": null
+}

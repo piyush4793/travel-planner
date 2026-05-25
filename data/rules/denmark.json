@@ -1,0 +1,69 @@
+{
+  "name": "Denmark",
+  "seed": true,
+  "lat": 56.2639,
+  "lng": 9.5018,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August"
+  ],
+  "worstMonths": [
+    "December",
+    "January"
+  ],
+  "budget": {
+    "solo": "₹2L–₹3.5L",
+    "couple": "₹3.5L–₹6L",
+    "family4": "₹7L–₹12L"
+  },
+  "experiences": [
+    "Copenhagen",
+    "Nyhavn",
+    "Viking History",
+    "Design Culture",
+    "Legoland"
+  ],
+  "avoid": [
+    "Budget carefully — expensive Scandinavian prices"
+  ],
+  "combo": [
+    "Norway",
+    "Sweden"
+  ],
+  "landmark": "Nyhavn",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Copenhagen",
+      "lat": 55.6761,
+      "lng": 12.5683,
+      "notes": "Nyhavn canal, Tivoli Gardens, Little Mermaid and New Nordic dining"
+    },
+    {
+      "name": "Aarhus",
+      "lat": 56.1629,
+      "lng": 10.2039,
+      "notes": "ARoS Art Museum rainbow panorama and Den Gamle By open-air museum"
+    },
+    {
+      "name": "Odense",
+      "lat": 55.4038,
+      "lng": 10.4024,
+      "notes": "Hans Christian Andersen birthplace museum and Funen Village"
+    },
+    {
+      "name": "Aalborg",
+      "lat": 57.0488,
+      "lng": 9.9217,
+      "notes": "Viking burial site at Lindholm Hoje and waterfront Utzon Center"
+    }
+  ],
+  "itinerary": null
+}

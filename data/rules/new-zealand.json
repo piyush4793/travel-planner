@@ -1,0 +1,84 @@
+{
+  "name": "New Zealand",
+  "seed": true,
+  "lat": -40.9006,
+  "lng": 174.886,
+  "region": "Oceania",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "June",
+    "July"
+  ],
+  "budget": {
+    "solo": "₹2L–₹3.5L",
+    "couple": "₹3.5L–₹6L",
+    "family4": "₹7L–₹12L"
+  },
+  "experiences": [
+    "Fjords (Milford Sound)",
+    "Hobbiton",
+    "Bungee Jumping",
+    "Lord of the Rings",
+    "Wine"
+  ],
+  "avoid": [],
+  "combo": [
+    "Australia",
+    "Fiji"
+  ],
+  "landmark": "Milford Sound",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [
+    {
+      "label": "Book Hobbiton Movie Set Tour",
+      "url": "https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Auckland",
+      "lat": -36.8485,
+      "lng": 174.7633,
+      "notes": "Sky Tower, Waiheke Island wine, Rangitoto volcano and America's Cup harbour"
+    },
+    {
+      "name": "Queenstown",
+      "lat": -45.0312,
+      "lng": 168.6626,
+      "notes": "Bungee jumping birthplace, Milford Sound day trip and Remarkables skiing"
+    },
+    {
+      "name": "Wellington",
+      "lat": -41.2865,
+      "lng": 174.7762,
+      "notes": "Te Papa national museum, Weta Workshop tour and Cuba Street cafe culture"
+    },
+    {
+      "name": "Rotorua",
+      "lat": -38.1368,
+      "lng": 176.2497,
+      "notes": "Geothermal geysers, Wai-O-Tapu colour pools and Maori haka performance"
+    },
+    {
+      "name": "Christchurch",
+      "lat": -43.5321,
+      "lng": 172.6362,
+      "notes": "Rebuilt Cardboard Cathedral, Hagley Park and Antarctic Centre gateway"
+    },
+    {
+      "name": "Fiordland",
+      "lat": -45.4164,
+      "lng": 167.7196,
+      "notes": "Milford Sound and Doubtful Sound by boat through ancient glacier fiords"
+    }
+  ],
+  "itinerary": null
+}

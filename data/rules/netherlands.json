@@ -1,0 +1,75 @@
+{
+  "name": "Netherlands",
+  "seed": true,
+  "lat": 52.1326,
+  "lng": 5.2913,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January"
+  ],
+  "budget": {
+    "solo": "₹1.5L–₹2.5L",
+    "couple": "₹2.5L–₹4L",
+    "family4": "₹5L–₹8L"
+  },
+  "experiences": [
+    "Tulip Fields",
+    "Amsterdam Canals",
+    "Van Gogh Museum",
+    "Windmills",
+    "Cycling"
+  ],
+  "avoid": [
+    "King's Day (April) — crowded but fun"
+  ],
+  "combo": [
+    "Germany",
+    "Belgium"
+  ],
+  "landmark": "Keukenhof Gardens",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Amsterdam",
+      "lat": 52.3676,
+      "lng": 4.9041,
+      "notes": "Canals by bike, Rijksmuseum, Van Gogh Museum and Anne Frank House"
+    },
+    {
+      "name": "Rotterdam",
+      "lat": 51.9225,
+      "lng": 4.4792,
+      "notes": "Cube houses, Erasmus Bridge, Markthal food hall and Fenix warehouse"
+    },
+    {
+      "name": "Delft",
+      "lat": 52.0116,
+      "lng": 4.3571,
+      "notes": "Blue and white Delftware pottery, Vermeer birthplace and canal walks"
+    },
+    {
+      "name": "Utrecht",
+      "lat": 52.0907,
+      "lng": 5.1214,
+      "notes": "Dom Tower views, wharf-level cafe terraces along the Oudegracht"
+    },
+    {
+      "name": "Haarlem",
+      "lat": 52.3874,
+      "lng": 4.6462,
+      "notes": "Medieval Grote Kerk, tulip bulb fields nearby and Frans Hals Museum"
+    }
+  ],
+  "itinerary": null
+}

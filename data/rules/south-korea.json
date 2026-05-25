@@ -1,0 +1,76 @@
+{
+  "name": "South Korea",
+  "seed": true,
+  "lat": 37.5665,
+  "lng": 126.978,
+  "region": "Asia",
+  "bestMonths": [
+    "April",
+    "May",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1L–₹1.8L",
+    "couple": "₹1.8L–₹3L",
+    "family4": "₹3.5L–₹6L"
+  },
+  "experiences": [
+    "K-Pop",
+    "Food",
+    "Temples",
+    "Hiking",
+    "Palaces",
+    "DMZ"
+  ],
+  "avoid": [
+    "Monsoon July-August"
+  ],
+  "combo": [
+    "Japan",
+    "China"
+  ],
+  "landmark": "Gyeongbokgung Palace",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Seoul",
+      "lat": 37.5665,
+      "lng": 126.978,
+      "notes": "Gyeongbokgung Palace, Hongdae nightlife, K-pop and street food"
+    },
+    {
+      "name": "Busan",
+      "lat": 35.1796,
+      "lng": 129.0756,
+      "notes": "Jagalchi fish market, Gamcheon village and Haeundae beach"
+    },
+    {
+      "name": "Jeju",
+      "lat": 33.4996,
+      "lng": 126.5312,
+      "notes": "Volcanic island with Hallasan hike, waterfalls and black lava beaches"
+    },
+    {
+      "name": "Gyeongju",
+      "lat": 35.8562,
+      "lng": 129.2243,
+      "notes": "Open-air museum with Silla dynasty royal tombs and Bulguksa temple"
+    },
+    {
+      "name": "Incheon",
+      "lat": 37.4563,
+      "lng": 126.7052,
+      "notes": "Colorful Chinatown, Songdo smart city and gateway to the archipelago"
+    }
+  ],
+  "itinerary": null
+}

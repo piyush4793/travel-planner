@@ -1,0 +1,74 @@
+{
+  "name": "Cambodia",
+  "seed": true,
+  "lat": 11.5564,
+  "lng": 104.9282,
+  "region": "Asia",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹40K–₹70K",
+    "couple": "₹70K–₹1.2L",
+    "family4": "₹1.5L–₹2.5L"
+  },
+  "experiences": [
+    "Angkor Wat",
+    "Temples",
+    "History",
+    "Street Food",
+    "River Life"
+  ],
+  "avoid": [
+    "Monsoon season",
+    "Beware of landmines in rural areas away from tourist zones"
+  ],
+  "combo": [
+    "Laos",
+    "Thailand"
+  ],
+  "landmark": "Angkor Wat",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Siem Reap",
+      "lat": 13.3671,
+      "lng": 103.8448,
+      "notes": "Gateway to Angkor Wat, Ta Prohm jungle temple and Pub Street"
+    },
+    {
+      "name": "Phnom Penh",
+      "lat": 11.5564,
+      "lng": 104.9282,
+      "notes": "Royal Palace, Tuol Sleng Genocide Museum and Mekong riverside"
+    },
+    {
+      "name": "Sihanoukville",
+      "lat": 10.61,
+      "lng": 103.523,
+      "notes": "Beach resort base for Koh Rong and Koh Rong Sanloem islands"
+    },
+    {
+      "name": "Kampot",
+      "lat": 10.6111,
+      "lng": 104.1812,
+      "notes": "Charming riverside town famous for Kampot pepper and Bokor Hill Station"
+    }
+  ],
+  "itinerary": null
+}

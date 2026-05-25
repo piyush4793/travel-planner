@@ -1,0 +1,707 @@
+{
+  "name": "Italy",
+  "seed": true,
+  "lat": 41.8719,
+  "lng": 12.5674,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.5L–₹2.5L",
+    "couple": "₹2.5L–₹4.5L",
+    "family4": "₹5L–₹9L"
+  },
+  "experiences": [
+    "Food",
+    "Art",
+    "History",
+    "Amalfi Coast",
+    "Venice",
+    "Colosseum"
+  ],
+  "avoid": [
+    "August crowds and heat"
+  ],
+  "combo": [
+    "Greece",
+    "France"
+  ],
+  "landmark": "Colosseum",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Rome",
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "notes": "Colosseum, Vatican and Sistine Chapel, Trevi Fountain and Campo de' Fiori"
+    },
+    {
+      "name": "Florence",
+      "lat": 43.7696,
+      "lng": 11.2558,
+      "notes": "Uffizi Gallery, Brunelleschi's Duomo, Ponte Vecchio and Chianti hills"
+    },
+    {
+      "name": "Venice",
+      "lat": 45.4408,
+      "lng": 12.3155,
+      "notes": "Grand Canal gondola, St Mark's Basilica, Doge's Palace and Rialto market"
+    },
+    {
+      "name": "Milan",
+      "lat": 45.4654,
+      "lng": 9.1866,
+      "notes": "Last Supper fresco, Galleria Vittorio Emanuele II and fashion district"
+    },
+    {
+      "name": "Naples",
+      "lat": 40.8518,
+      "lng": 14.2681,
+      "notes": "Pizza margherita birthplace, Pompeii day trip and Capri island ferry"
+    },
+    {
+      "name": "Cinque Terre",
+      "lat": 44.1213,
+      "lng": 9.72,
+      "notes": "Five cliff-hugging fishing villages linked by coastal hiking trail"
+    },
+    {
+      "name": "Amalfi",
+      "lat": 40.634,
+      "lng": 14.6028,
+      "notes": "Dramatic coastal drive, lemon groves, limoncello and Villa Rufolo"
+    }
+  ],
+  "itinerary": {
+    "sim": "TIM 'Welcome Italy' tourist SIM — about ₹2,760 for 30 days with 30GB; Airalo eSIM is the easiest backup if your phone supports it.",
+    "apps": [
+      "Trenitalia",
+      "Italo",
+      "Google Maps",
+      "Google Translate",
+      "Moovit",
+      "Rome2Rio",
+      "GetYourGuide",
+      "Booking.com",
+      "XE Currency",
+      "Venezia Unica"
+    ],
+    "cityOrder": [
+      "Rome",
+      "Naples",
+      "Amalfi",
+      "Florence",
+      "Cinque Terre",
+      "Venice",
+      "Milan"
+    ],
+    "cities": {
+      "Rome": {
+        "name": "Rome",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Add a fourth day for Borghese Gallery, Appian Way, or an easier recovery day after your long-haul flight.",
+        "days": [
+          {
+            "theme": "Arrival & Baroque Orientation",
+            "activities": [
+              {
+                "name": "Leonardo Express from FCO to Roma Termini",
+                "cost": "₹1,288"
+              },
+              {
+                "name": "Trevi Fountain — best early morning for photos and lighter crowds"
+              },
+              {
+                "name": "Spanish Steps and Piazza di Spagna"
+              },
+              {
+                "name": "Piazza Navona with Bernini fountains and street performers"
+              },
+              {
+                "name": "Trastevere evening walk for aperitivo lanes and lively piazzas"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Artemide",
+                "budget": "₹11,040–₹14,720/night"
+              },
+              {
+                "name": "Hotel Lancelot",
+                "budget": "₹8,280–₹11,960/night"
+              }
+            ],
+            "meals": [
+              "Da Enzo al 29",
+              "Tonnarello",
+              "Forno Campo de' Fiori"
+            ]
+          },
+          {
+            "theme": "Ancient Rome",
+            "activities": [
+              {
+                "name": "Colosseum skip-the-line entry",
+                "cost": "₹1,656–₹1,840"
+              },
+              {
+                "name": "Roman Forum — included with Colosseum ticket"
+              },
+              {
+                "name": "Palatine Hill — included with Colosseum ticket"
+              },
+              {
+                "name": "Capitoline Museums",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Circus Maximus exterior walk and sunset photos"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Artemide",
+                "budget": "₹11,040–₹14,720/night"
+              },
+              {
+                "name": "Hotel Lancelot",
+                "budget": "₹8,280–₹11,960/night"
+              }
+            ],
+            "meals": [
+              "Osteria dell'Angelo",
+              "Il Sorpasso",
+              "Supplì Roma"
+            ]
+          },
+          {
+            "theme": "Vatican & Papal Rome",
+            "activities": [
+              {
+                "name": "Vatican Museums and Sistine Chapel timed entry",
+                "cost": "₹1,564–₹1,840"
+              },
+              {
+                "name": "St. Peter's Basilica — free basilica entry; dome climb optional",
+                "cost": "₹736–₹920"
+              },
+              {
+                "name": "Castel Sant'Angelo",
+                "cost": "₹1,288"
+              },
+              {
+                "name": "Pantheon",
+                "cost": "₹460"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Artemide",
+                "budget": "₹11,040–₹14,720/night"
+              },
+              {
+                "name": "Hotel Lancelot",
+                "budget": "₹8,280–₹11,960/night"
+              }
+            ],
+            "meals": [
+              "Pizzarium Bonci",
+              "Osteria dell'Antiquario",
+              "Caffè Sant'Eustachio"
+            ]
+          }
+        ]
+      },
+      "Naples": {
+        "name": "Naples",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Best as a one-night pizza-and-archaeology stop between Rome and Amalfi; add a second day for Pompeii or Capri.",
+        "days": [
+          {
+            "theme": "Historic Core & Pizza Pilgrimage",
+            "activities": [
+              {
+                "name": "Naples National Archaeological Museum",
+                "cost": "₹2,024"
+              },
+              {
+                "name": "Spaccanapoli walk through the UNESCO-listed historic center"
+              },
+              {
+                "name": "Naples Underground guided route",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Duomo di Napoli and the San Gennaro chapel"
+              },
+              {
+                "name": "Castel Nuovo and Lungomare Caracciolo sunset promenade"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Piazza Bellini",
+                "budget": "₹8,280–₹11,960/night"
+              },
+              {
+                "name": "Decumani Hotel De Charme",
+                "budget": "₹9,200–₹13,800/night"
+              }
+            ],
+            "meals": [
+              "L'Antica Pizzeria da Michele",
+              "Gino e Toto Sorbillo",
+              "Tandem Ragù"
+            ]
+          }
+        ]
+      },
+      "Amalfi": {
+        "name": "Amalfi",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay in Amalfi Town for easier ferries, or use Sorrento as a cheaper base if you do not mind extra transfers.",
+        "days": [
+          {
+            "theme": "Coastal Arrival & Positano Views",
+            "activities": [
+              {
+                "name": "SITA or Travelmar coastal transfer into Amalfi/Positano corridor",
+                "cost": "₹736–₹1,840"
+              },
+              {
+                "name": "Positano lanes and Spiaggia Grande"
+              },
+              {
+                "name": "Villa Comunale viewpoint in Sorrento"
+              },
+              {
+                "name": "Valley of the Mills viewpoint"
+              },
+              {
+                "name": "Sunset aperitivo over the Gulf of Naples"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Marina Riviera",
+                "budget": "₹16,560–₹25,760/night"
+              },
+              {
+                "name": "Hotel Fontana",
+                "budget": "₹10,120–₹14,720/night"
+              }
+            ],
+            "meals": [
+              "Ristorante Marina Grande",
+              "Da Gemma",
+              "Sensi Restaurant"
+            ]
+          },
+          {
+            "theme": "Amalfi Town & Ravello",
+            "activities": [
+              {
+                "name": "Amalfi Cathedral and Cloister of Paradise",
+                "cost": "₹276"
+              },
+              {
+                "name": "Museo della Carta",
+                "cost": "₹414"
+              },
+              {
+                "name": "Ferry or bus to Ravello",
+                "cost": "₹736–₹920"
+              },
+              {
+                "name": "Villa Rufolo",
+                "cost": "₹644"
+              },
+              {
+                "name": "Villa Cimbrone and Terrace of Infinity",
+                "cost": "₹644"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Marina Riviera",
+                "budget": "₹16,560–₹25,760/night"
+              },
+              {
+                "name": "Hotel Fontana",
+                "budget": "₹10,120–₹14,720/night"
+              }
+            ],
+            "meals": [
+              "Da Gemma",
+              "Ristorante Pizzeria Donna Rosa",
+              "Bar San Domenico"
+            ]
+          }
+        ]
+      },
+      "Florence": {
+        "name": "Florence",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Florence works well as a compact walking city; add a third day only if you want Tuscan day trips or slower museum time.",
+        "days": [
+          {
+            "theme": "Renaissance Icons",
+            "activities": [
+              {
+                "name": "Florence Cathedral complex; dome climb optional",
+                "cost": "₹1,656–₹2,760"
+              },
+              {
+                "name": "Uffizi Gallery",
+                "cost": "₹3,680"
+              },
+              {
+                "name": "Ponte Vecchio at sunset"
+              },
+              {
+                "name": "Piazza della Signoria sculpture walk"
+              },
+              {
+                "name": "Piazzale Michelangelo panoramic viewpoint"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Davanzati",
+                "budget": "₹9,200–₹13,800/night"
+              },
+              {
+                "name": "Soprarno Suites",
+                "budget": "₹11,960–₹16,560/night"
+              }
+            ],
+            "meals": [
+              "Trattoria Mario",
+              "Il Latini",
+              "Gelateria dei Neri"
+            ]
+          },
+          {
+            "theme": "Medici Palaces & Oltrarno",
+            "activities": [
+              {
+                "name": "Galleria dell'Accademia",
+                "cost": "₹1,104–₹1,472"
+              },
+              {
+                "name": "Basilica di San Lorenzo and Medici Chapels",
+                "cost": "₹828"
+              },
+              {
+                "name": "Palazzo Pitti and Boboli Gardens",
+                "cost": "₹1,472"
+              },
+              {
+                "name": "Giardino Bardini",
+                "cost": "₹460"
+              },
+              {
+                "name": "Oltrarno artisan quarter walk for leather, paper, and goldsmith workshops"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Davanzati",
+                "budget": "₹9,200–₹13,800/night"
+              },
+              {
+                "name": "Soprarno Suites",
+                "budget": "₹11,960–₹16,560/night"
+              }
+            ],
+            "meals": [
+              "Buca dell'Orafo",
+              "Buca Mario",
+              "All'Antico Vinaio"
+            ]
+          }
+        ]
+      },
+      "Cinque Terre": {
+        "name": "Cinque Terre",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Works best as a long Florence day trip; stay overnight only if you want sunrise, sunset, or slower hiking between villages.",
+        "days": [
+          {
+            "theme": "Villages, Trails & Ligurian Sea Views",
+            "activities": [
+              {
+                "name": "Regional train from Florence to La Spezia",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Riomaggiore harbor stroll"
+              },
+              {
+                "name": "Via dell’Amore or alternate coastal path section",
+                "cost": "₹690–₹1,674"
+              },
+              {
+                "name": "Manarola viewpoints and Vernazza old harbor"
+              },
+              {
+                "name": "Monterosso beach break and monastery hillside walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Marina Piccola",
+                "budget": "₹10,120–₹16,560/night"
+              },
+              {
+                "name": "Hotel Porto Roca",
+                "budget": "₹18,400–₹27,600/night"
+              }
+            ],
+            "meals": [
+              "Cantina de Mananan",
+              "Il Pirata delle Cinque Terre",
+              "La Cantina dello Zio Bramante"
+            ]
+          }
+        ]
+      },
+      "Venice": {
+        "name": "Venice",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Overnight guests are exempt from the Venice day-access fee, so register your stay details with your hotel.",
+        "days": [
+          {
+            "theme": "San Marco & Grand Canal Classics",
+            "activities": [
+              {
+                "name": "Piazza San Marco early-morning wander"
+              },
+              {
+                "name": "Basilica di San Marco with treasury or museum add-on",
+                "cost": "₹276–₹644"
+              },
+              {
+                "name": "Campanile di San Marco",
+                "cost": "₹920"
+              },
+              {
+                "name": "Doge's Palace",
+                "cost": "₹1,288"
+              },
+              {
+                "name": "Shared gondola ride or private gondola split with friends",
+                "cost": "₹1,840–₹7,360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Canal Grande",
+                "budget": "₹14,720–₹23,000/night"
+              },
+              {
+                "name": "Hotel Bernardi",
+                "budget": "₹7,360–₹11,040/night"
+              }
+            ],
+            "meals": [
+              "Osteria Bancogiro",
+              "Trattoria alla Madonna",
+              "Cantinone già Schiavi"
+            ]
+          },
+          {
+            "theme": "Murano, Burano & Venetian Art",
+            "activities": [
+              {
+                "name": "Vaporetto Line 1 ride down the Grand Canal",
+                "cost": "₹874–₹2,300"
+              },
+              {
+                "name": "Murano glassblowing workshops"
+              },
+              {
+                "name": "Burano lace island and colorful canal lanes"
+              },
+              {
+                "name": "Gallerie dell'Accademia",
+                "cost": "₹1,104"
+              },
+              {
+                "name": "Peggy Guggenheim Collection",
+                "cost": "₹1,472"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Canal Grande",
+                "budget": "₹14,720–₹23,000/night"
+              },
+              {
+                "name": "Hotel Bernardi",
+                "budget": "₹7,360–₹11,040/night"
+              }
+            ],
+            "meals": [
+              "Osteria alle Testiere",
+              "Ae Oche",
+              "Rosa Salva"
+            ]
+          }
+        ]
+      },
+      "Milan": {
+        "name": "Milan",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Keep Milan for your departure city and design-heavy finale; add a second day for Brera or Lake Como.",
+        "days": [
+          {
+            "theme": "Fashion, Gothic Milan & da Vinci",
+            "activities": [
+              {
+                "name": "Duomo di Milano combo with rooftop terraces",
+                "cost": "₹2,392"
+              },
+              {
+                "name": "Galleria Vittorio Emanuele II arcade stroll"
+              },
+              {
+                "name": "The Last Supper timed entry",
+                "cost": "₹1,564"
+              },
+              {
+                "name": "Castello Sforzesco courtyards and museums",
+                "cost": "₹460"
+              },
+              {
+                "name": "Naviglio Grande aperitivo walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel dei Cavalieri",
+                "budget": "₹11,040–₹16,560/night"
+              },
+              {
+                "name": "Hotel Sempione",
+                "budget": "₹8,280–₹11,960/night"
+              }
+            ],
+            "meals": [
+              "Luini",
+              "Trattoria Masuelli San Marco",
+              "Camparino in Galleria"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Rome",
+        "to": "Naples",
+        "method": "Frecciarossa from Roma Termini to Napoli Centrale (about 1 hr 10 min)",
+        "cost": "₹1,831–₹4,048"
+      },
+      {
+        "from": "Naples",
+        "to": "Amalfi",
+        "method": "Campania Express or Circumvesuviana to Sorrento plus SITA/Travelmar onward to Amalfi (about 2–2.5 hrs)",
+        "cost": "₹736–₹1,840"
+      },
+      {
+        "from": "Amalfi",
+        "to": "Florence",
+        "method": "Travelmar or SITA to Salerno/Naples, then Frecciarossa to Firenze Santa Maria Novella (about 4.5–5.5 hrs)",
+        "cost": "₹3,404–₹6,440"
+      },
+      {
+        "from": "Florence",
+        "to": "Cinque Terre",
+        "method": "Regional train via La Spezia for a day trip or overnight stay (about 2.5 hrs)",
+        "cost": "₹1,380–₹1,674"
+      },
+      {
+        "from": "Cinque Terre",
+        "to": "Venice",
+        "method": "Regional train back via La Spezia/Florence, then Frecciarossa to Venezia Santa Lucia (about 5–6 hrs total)",
+        "cost": "₹4,140–₹6,900"
+      },
+      {
+        "from": "Venice",
+        "to": "Milan",
+        "method": "Frecciarossa from Venezia Santa Lucia to Milano Centrale (about 2.5 hrs)",
+        "cost": "₹1,831–₹4,600"
+      }
+    ],
+    "extras": [
+      "Book Vatican Museums at least 2 weeks ahead and The Last Supper 2–3 months ahead — both sell out fastest.",
+      "Book Frecciarossa/Italo 4–6 weeks ahead for the lowest fares; regional trains are fine to buy close to travel day.",
+      "April–June and September–October are the sweet spots; July and August bring the worst heat, cruise crowds, and price spikes.",
+      "Carry cash for smaller trattorias, church dress codes, and Amalfi ferries/buses where card acceptance can be inconsistent."
+    ],
+    "cityImages": {
+      "Rome": [
+        "Colosseum Rome Italy",
+        "Trevi Fountain Rome",
+        "St Peters Basilica Vatican"
+      ],
+      "Naples": [
+        "Spaccanapoli Naples historic center",
+        "Naples National Archaeological Museum",
+        "Lungomare Caracciolo Naples sunset"
+      ],
+      "Amalfi": [
+        "Positano Amalfi Coast aerial view",
+        "Amalfi Cathedral piazza",
+        "Ravello Villa Cimbrone terrace infinity"
+      ],
+      "Florence": [
+        "Florence Cathedral Brunelleschi dome",
+        "Ponte Vecchio Florence sunset",
+        "Piazzale Michelangelo Florence panorama"
+      ],
+      "Cinque Terre": [
+        "Vernazza Cinque Terre harbor",
+        "Manarola Cinque Terre night reflection",
+        "Via dell Amore Cinque Terre path"
+      ],
+      "Venice": [
+        "Piazza San Marco Venice gondolas",
+        "Rialto Bridge Grand Canal Venice",
+        "Burano island colorful houses Venice"
+      ],
+      "Milan": [
+        "Milan Cathedral Duomo spires",
+        "Galleria Vittorio Emanuele II interior",
+        "Leonardo Last Supper Milan"
+      ]
+    }
+  }
+}

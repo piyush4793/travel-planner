@@ -1,0 +1,85 @@
+{
+  "name": "Malaysia",
+  "seed": true,
+  "lat": 3.139,
+  "lng": 101.6869,
+  "region": "Asia",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December"
+  ],
+  "budget": {
+    "solo": "₹50K–₹80K",
+    "couple": "₹80K–₹1.5L",
+    "family4": "₹1.5L–₹3L"
+  },
+  "experiences": [
+    "Food",
+    "Rainforests",
+    "Islands",
+    "Culture",
+    "Borneo Wildlife"
+  ],
+  "avoid": [
+    "Northeast monsoon Nov-Jan on east coast"
+  ],
+  "combo": [
+    "Singapore",
+    "Indonesia"
+  ],
+  "landmark": "Petronas Twin Towers",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Kuala Lumpur (KLIA) is an AirAsia hub — excellent for cheap SE Asia connections.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Kuala Lumpur",
+      "lat": 3.139,
+      "lng": 101.6869,
+      "notes": "Petronas Towers, Batu Caves, Jalan Alor food street and rooftop bars"
+    },
+    {
+      "name": "Penang",
+      "lat": 5.4164,
+      "lng": 100.3327,
+      "notes": "George Town street art, Peranakan food and Clan Jetties over the sea"
+    },
+    {
+      "name": "Langkawi",
+      "lat": 6.35,
+      "lng": 99.8,
+      "notes": "Duty-free island with rainforest cable car, mangroves and powder beaches"
+    },
+    {
+      "name": "Malacca",
+      "lat": 2.1896,
+      "lng": 102.2501,
+      "notes": "UNESCO heritage town with Dutch Stadthuys, Christ Church and Jonker Street"
+    },
+    {
+      "name": "Kota Kinabalu",
+      "lat": 5.9804,
+      "lng": 116.0735,
+      "notes": "Gateway to Mt Kinabalu climb and Borneo orangutan wildlife"
+    },
+    {
+      "name": "Cameron Highlands",
+      "lat": 4.4712,
+      "lng": 101.38,
+      "notes": "Cool hill station with tea plantations, strawberry farms and jungle treks"
+    }
+  ],
+  "itinerary": null
+}

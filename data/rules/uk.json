@@ -1,0 +1,117 @@
+{
+  "name": "UK",
+  "seed": true,
+  "lat": 55.3781,
+  "lng": -3.436,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "December"
+  ],
+  "budget": {
+    "solo": "₹2L–₹3.5L",
+    "couple": "₹3.5L–₹6L",
+    "family4": "₹7L–₹12L"
+  },
+  "experiences": [
+    "London",
+    "Stonehenge",
+    "Lake District",
+    "Yorkshire Dales",
+    "Harry Potter Studios",
+    "Edinburgh Castle",
+    "Isle of Skye",
+    "Highlands",
+    "Whisky Distilleries",
+    "Loch Ness"
+  ],
+  "avoid": [
+    "Rain (always) — pack layers"
+  ],
+  "combo": [
+    "Ireland",
+    "France"
+  ],
+  "landmark": "Big Ben",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "London",
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "notes": "Big Ben, British Museum, Tower of London, West End theatre and markets"
+    },
+    {
+      "name": "Oxford",
+      "lat": 51.752,
+      "lng": -1.2577,
+      "notes": "Dreaming spires, Bodleian Library, punting on the Cherwell and Ashmolean"
+    },
+    {
+      "name": "Cambridge",
+      "lat": 52.2053,
+      "lng": 0.1218,
+      "notes": "King's College Chapel, punting on the Cam and Mathematical Bridge"
+    },
+    {
+      "name": "Bath",
+      "lat": 51.3811,
+      "lng": -2.359,
+      "notes": "Roman Baths, Georgian Royal Crescent and Thermae Bath Spa"
+    },
+    {
+      "name": "York",
+      "lat": 53.96,
+      "lng": -1.0873,
+      "notes": "Viking Jorvik museum, York Minster and 13th-century city walls walk"
+    },
+    {
+      "name": "Stonehenge",
+      "lat": 51.1789,
+      "lng": -1.8262,
+      "notes": "Prehistoric megalith monument on Salisbury Plain, 5000 years old"
+    },
+    {
+      "name": "Edinburgh",
+      "lat": 55.9533,
+      "lng": -3.1883,
+      "notes": "Edinburgh Castle, Royal Mile, Arthur's Seat hike and Fringe Festival"
+    },
+    {
+      "name": "Glasgow",
+      "lat": 55.8642,
+      "lng": -4.2518,
+      "notes": "Mackintosh architecture, Kelvingrove museum, vibrant music scene"
+    },
+    {
+      "name": "Inverness",
+      "lat": 57.4778,
+      "lng": -4.2247,
+      "notes": "Gateway to Loch Ness, Culloden Battlefield and Highland drives"
+    },
+    {
+      "name": "Isle of Skye",
+      "lat": 57.2736,
+      "lng": -6.2154,
+      "notes": "Old Man of Storr, Fairy Pools and Dunvegan Castle landscapes"
+    },
+    {
+      "name": "St Andrews",
+      "lat": 56.3398,
+      "lng": -2.7967,
+      "notes": "Home of golf, medieval cathedral ruins and seaside cliff walks"
+    }
+  ],
+  "itinerary": null
+}

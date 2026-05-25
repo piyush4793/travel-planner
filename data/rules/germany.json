@@ -1,0 +1,79 @@
+{
+  "name": "Germany",
+  "seed": true,
+  "lat": 51.1657,
+  "lng": 10.4515,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "September",
+    "October",
+    "December"
+  ],
+  "worstMonths": [],
+  "budget": {
+    "solo": "₹1.5L–₹2.5L",
+    "couple": "₹2.5L–₹4L",
+    "family4": "₹5L–₹8L"
+  },
+  "experiences": [
+    "Berlin",
+    "Neuschwanstein Castle",
+    "Oktoberfest",
+    "Rhine Valley",
+    "Christmas Markets"
+  ],
+  "avoid": [
+    "Oktoberfest if avoiding crowds (or embrace it!)"
+  ],
+  "combo": [
+    "Austria",
+    "Switzerland"
+  ],
+  "landmark": "Neuschwanstein Castle",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Berlin",
+      "lat": 52.52,
+      "lng": 13.405,
+      "notes": "Brandenburg Gate, Museum Island, Berlin Wall and legendary club scene"
+    },
+    {
+      "name": "Munich",
+      "lat": 48.1351,
+      "lng": 11.582,
+      "notes": "Marienplatz Glockenspiel, English Garden, BMW Museum and Oktoberfest"
+    },
+    {
+      "name": "Hamburg",
+      "lat": 53.5753,
+      "lng": 10.0153,
+      "notes": "Speicherstadt warehouse district, Miniatur Wunderland and fish market"
+    },
+    {
+      "name": "Dresden",
+      "lat": 51.0504,
+      "lng": 13.7373,
+      "notes": "Baroque Frauenkirche, Zwinger palace and Elbe valley vineyard views"
+    },
+    {
+      "name": "Heidelberg",
+      "lat": 49.3988,
+      "lng": 8.6724,
+      "notes": "Romantic castle ruins above the Neckar with Germany's oldest university"
+    },
+    {
+      "name": "Cologne",
+      "lat": 50.9333,
+      "lng": 6.95,
+      "notes": "Twin-spired Gothic cathedral, Roman history and vibrant Carnival"
+    }
+  ],
+  "itinerary": null
+}

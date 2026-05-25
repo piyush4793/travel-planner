@@ -1,0 +1,67 @@
+{
+  "name": "Czech Republic",
+  "seed": true,
+  "lat": 49.8175,
+  "lng": 15.473,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "worstMonths": [],
+  "budget": {
+    "solo": "₹1L–₹1.8L",
+    "couple": "₹1.8L–₹3L",
+    "family4": "₹3.5L–₹6L"
+  },
+  "experiences": [
+    "Prague Castle",
+    "Český Krumlov",
+    "Beer Culture",
+    "Architecture",
+    "Karlovy Vary"
+  ],
+  "avoid": [
+    "Prague tourist traps — explore beyond the centre"
+  ],
+  "combo": [
+    "Austria",
+    "Poland"
+  ],
+  "landmark": "Charles Bridge",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Prague",
+      "lat": 50.0755,
+      "lng": 14.4378,
+      "notes": "Charles Bridge at dawn, Prague Castle, Astronomical Clock and craft beer"
+    },
+    {
+      "name": "Cesky Krumlov",
+      "lat": 48.8127,
+      "lng": 14.3175,
+      "notes": "Perfectly preserved medieval town on a Vltava river bend"
+    },
+    {
+      "name": "Brno",
+      "lat": 49.1951,
+      "lng": 16.6068,
+      "notes": "Student city with Ossuary bone church and modernist Villa Tugendhat"
+    },
+    {
+      "name": "Karlovy Vary",
+      "lat": 50.2317,
+      "lng": 12.8716,
+      "notes": "Belle Epoque colonnades, hot spring drinking and film festival"
+    }
+  ],
+  "itinerary": null
+}

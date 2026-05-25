@@ -1,0 +1,73 @@
+{
+  "name": "Maldives",
+  "seed": true,
+  "lat": 3.2028,
+  "lng": 73.2207,
+  "region": "Asia",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹1.5L–₹3L",
+    "couple": "₹2.5L–₹5L",
+    "family4": "₹5L–₹10L"
+  },
+  "experiences": [
+    "Overwater Bungalows",
+    "Beaches",
+    "Snorkeling",
+    "Diving",
+    "Luxury"
+  ],
+  "avoid": [
+    "Monsoon season (May–Oct)"
+  ],
+  "combo": [
+    "India"
+  ],
+  "landmark": "Maldives",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Male",
+      "lat": 4.1755,
+      "lng": 73.5093,
+      "notes": "Colorful Fish Market, Friday Mosque and Grand Friday Mosque"
+    },
+    {
+      "name": "Maafushi",
+      "lat": 3.9381,
+      "lng": 73.4813,
+      "notes": "Budget local island with guesthouses, sandbank excursions and diving"
+    },
+    {
+      "name": "Baa Atoll",
+      "lat": 5.1333,
+      "lng": 72.9833,
+      "notes": "UNESCO Biosphere Reserve with manta ray aggregations and whale sharks"
+    },
+    {
+      "name": "Ari Atoll",
+      "lat": 3.8333,
+      "lng": 72.8333,
+      "notes": "Luxury resort strip, nurse sharks and hammerhead cleaning stations"
+    }
+  ],
+  "itinerary": null
+}

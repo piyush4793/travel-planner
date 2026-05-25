@@ -1,0 +1,74 @@
+{
+  "name": "Austria",
+  "seed": true,
+  "lat": 47.5162,
+  "lng": 14.5501,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "September",
+    "October",
+    "December"
+  ],
+  "worstMonths": [],
+  "budget": {
+    "solo": "₹1.5L–₹2.5L",
+    "couple": "₹2.5L–₹4.5L",
+    "family4": "₹5L–₹9L"
+  },
+  "experiences": [
+    "Vienna",
+    "Hallstatt",
+    "Salzburg",
+    "Alps Skiing",
+    "Christmas Markets",
+    "Mozart"
+  ],
+  "avoid": [
+    "Crowds at Hallstatt in peak summer"
+  ],
+  "combo": [
+    "Germany",
+    "Switzerland"
+  ],
+  "landmark": "Hallstatt",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Vienna",
+      "lat": 48.2082,
+      "lng": 16.3738,
+      "notes": "Schonbrunn Palace, Kunsthistorisches Museum, coffee house culture and opera"
+    },
+    {
+      "name": "Salzburg",
+      "lat": 47.8095,
+      "lng": 13.055,
+      "notes": "Mozart's birthplace, Hohensalzburg fortress and Sound of Music scenery"
+    },
+    {
+      "name": "Innsbruck",
+      "lat": 47.2682,
+      "lng": 11.3923,
+      "notes": "Golden Roof, Nordkette cable car and gateway to Tyrolean ski resorts"
+    },
+    {
+      "name": "Hallstatt",
+      "lat": 47.5622,
+      "lng": 13.6493,
+      "notes": "Postcard lakeside village with salt mine and Dachstein ice cave"
+    },
+    {
+      "name": "Graz",
+      "lat": 47.0707,
+      "lng": 15.4395,
+      "notes": "Schlossberg clock tower, Kunsthaus bubble and Styrian pumpkin oil"
+    }
+  ],
+  "itinerary": null
+}

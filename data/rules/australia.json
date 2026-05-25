@@ -1,0 +1,84 @@
+{
+  "name": "Australia",
+  "seed": true,
+  "lat": -25.2744,
+  "lng": 133.7751,
+  "region": "Oceania",
+  "bestMonths": [
+    "September",
+    "October",
+    "November",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "December",
+    "January"
+  ],
+  "budget": {
+    "solo": "₹2L–₹3.5L",
+    "couple": "₹3.5L–₹6L",
+    "family4": "₹7L–₹12L"
+  },
+  "experiences": [
+    "Great Barrier Reef",
+    "Sydney Opera House",
+    "Uluru",
+    "Melbourne Food",
+    "Gold Coast"
+  ],
+  "avoid": [
+    "December-February in the north (cyclone/wet season)",
+    "Bushfire season Dec-Feb in south"
+  ],
+  "combo": [
+    "New Zealand",
+    "Fiji"
+  ],
+  "landmark": "Sydney Opera House",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Sydney",
+      "lat": -33.8688,
+      "lng": 151.2093,
+      "notes": "Opera House, Bondi Beach, Harbour Bridge climb and Blue Mountains"
+    },
+    {
+      "name": "Melbourne",
+      "lat": -37.8136,
+      "lng": 144.9631,
+      "notes": "Coffee culture, Hosier Lane street art, Great Ocean Road and galleries"
+    },
+    {
+      "name": "Cairns",
+      "lat": -16.9186,
+      "lng": 145.7781,
+      "notes": "Great Barrier Reef snorkeling, Daintree Rainforest and Cape Tribulation"
+    },
+    {
+      "name": "Brisbane",
+      "lat": -27.4698,
+      "lng": 153.0251,
+      "notes": "South Bank beach, Lone Pine koala sanctuary and gateway to Gold Coast"
+    },
+    {
+      "name": "Perth",
+      "lat": -31.9505,
+      "lng": 115.8605,
+      "notes": "Fremantle port, Rottnest Island quokkas and Swan Valley wine region"
+    },
+    {
+      "name": "Uluru",
+      "lat": -25.3444,
+      "lng": 131.0369,
+      "notes": "Sacred Anangu red rock monolith at sunset and sunrise in the Red Centre"
+    }
+  ],
+  "itinerary": null
+}

@@ -1,0 +1,104 @@
+{
+  "name": "Russia",
+  "seed": true,
+  "lat": 61.524,
+  "lng": 105.3188,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹1L–₹2L",
+    "couple": "₹1.8L–₹3.5L",
+    "family4": "₹3.5L–₹7L"
+  },
+  "experiences": [
+    "Red Square",
+    "Hermitage Museum",
+    "Trans-Siberian Railway",
+    "White Nights",
+    "Black Sea"
+  ],
+  "avoid": [
+    "Check current travel advisories",
+    "Winter unless Northern Lights (Murmansk)"
+  ],
+  "combo": [
+    "Belarus",
+    "Georgia"
+  ],
+  "landmark": "Saint Basil's Cathedral",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Moscow",
+      "lat": 55.7558,
+      "lng": 37.6176,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Red Square, Kremlin, world-class metro art, Bolshoi Theatre"
+    },
+    {
+      "name": "St Petersburg",
+      "lat": 59.9311,
+      "lng": 30.3609,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "notes": "Hermitage Museum, White Nights festival (Jun–Jul), canal walks"
+    },
+    {
+      "name": "Sochi",
+      "lat": 43.6028,
+      "lng": 39.7342,
+      "bestMonths": [
+        "August",
+        "September"
+      ],
+      "notes": "Black Sea resort town, beaches, Olympic Park, Caucasus mountains nearby"
+    },
+    {
+      "name": "Krasnodar",
+      "lat": 45.0355,
+      "lng": 38.9753,
+      "bestMonths": [
+        "August",
+        "September"
+      ],
+      "notes": "Gateway to Krasnodar Krai, Russian vineyards, local culture hub"
+    },
+    {
+      "name": "Murmansk",
+      "lat": 68.9585,
+      "lng": 33.0827,
+      "bestMonths": [
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Above Arctic Circle — best Northern Lights in Russia, polar bears, nuclear icebreaker tours"
+    }
+  ],
+  "itinerary": null
+}

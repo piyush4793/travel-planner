@@ -1,0 +1,69 @@
+{
+  "name": "Singapore",
+  "seed": true,
+  "lat": 1.3521,
+  "lng": 103.8198,
+  "region": "Asia",
+  "bestMonths": [
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August"
+  ],
+  "worstMonths": [],
+  "budget": {
+    "solo": "₹80K–₹1.5L",
+    "couple": "₹1.5L–₹2.5L",
+    "family4": "₹3L–₹5L"
+  },
+  "experiences": [
+    "Food",
+    "Gardens by the Bay",
+    "Marina Bay",
+    "Culture",
+    "Shopping"
+  ],
+  "avoid": [
+    "Singapore F1 Grand Prix week (Sep) — prices spike"
+  ],
+  "combo": [
+    "Malaysia",
+    "Indonesia"
+  ],
+  "landmark": "Marina Bay Sands",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": "Changi Airport — consistently world #1. Singapore Airlines Suites Class available. 96-hour free stopover visa. Perfect hub for India ↔ Australia/NZ/Japan routes.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Marina Bay",
+      "lat": 1.2834,
+      "lng": 103.8607,
+      "notes": "Marina Bay Sands, Gardens by the Bay supertrees and light show"
+    },
+    {
+      "name": "Chinatown",
+      "lat": 1.2836,
+      "lng": 103.8445,
+      "notes": "Sri Mariamman Temple, hawker stalls and Buddha Tooth Relic Temple"
+    },
+    {
+      "name": "Sentosa",
+      "lat": 1.2494,
+      "lng": 103.8303,
+      "notes": "Universal Studios, Siloso Beach, cable car and S.E.A. Aquarium"
+    },
+    {
+      "name": "Little India",
+      "lat": 1.3066,
+      "lng": 103.8518,
+      "notes": "Mustafa Centre, Sri Veeramakaliamman Temple and 24-hour street food"
+    }
+  ],
+  "itinerary": null
+}

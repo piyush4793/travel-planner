@@ -1,5 +1,6 @@
 {
   "name": "Norway",
+  "seed": true,
   "lat": 60.472,
   "lng": 8.4689,
   "region": "Europe",

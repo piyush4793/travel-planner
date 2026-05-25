@@ -1,0 +1,494 @@
+{
+  "name": "France",
+  "seed": true,
+  "lat": 46.2276,
+  "lng": 2.2137,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.5L–₹2.5L",
+    "couple": "₹2.5L–₹4.5L",
+    "family4": "₹5L–₹9L"
+  },
+  "experiences": [
+    "Eiffel Tower",
+    "Louvre",
+    "French Riviera",
+    "Normandy",
+    "Loire Valley",
+    "Food & Wine"
+  ],
+  "avoid": [
+    "August (Parisians leave, but tourists flood in)"
+  ],
+  "combo": [
+    "Spain",
+    "Italy"
+  ],
+  "landmark": "Eiffel Tower",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Paris",
+      "lat": 48.8566,
+      "lng": 2.3522,
+      "notes": "Eiffel Tower, Louvre, Notre-Dame, Montmartre and world's finest cuisine"
+    },
+    {
+      "name": "Nice",
+      "lat": 43.7102,
+      "lng": 7.262,
+      "notes": "Promenade des Anglais, Vieux-Nice old town and Riviera coastal hikes"
+    },
+    {
+      "name": "Lyon",
+      "lat": 45.764,
+      "lng": 4.8357,
+      "notes": "Gastronomic capital with bouchon bistros, traboules and Roman amphitheatre"
+    },
+    {
+      "name": "Bordeaux",
+      "lat": 44.8378,
+      "lng": -0.5792,
+      "notes": "Wine capital with chateau tours, Miroir d'eau and CIVB wine bar"
+    },
+    {
+      "name": "Strasbourg",
+      "lat": 48.5734,
+      "lng": 7.7521,
+      "notes": "Half-timbered Alsatian Petite France and European Parliament hub"
+    },
+    {
+      "name": "Marseille",
+      "lat": 43.2965,
+      "lng": 5.3698,
+      "notes": "Vieux-Port fish market, Calanques national park and bouillabaisse"
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange Holiday 50GB tourist SIM at Paris CDG arrivals — about ₹3,680 with EU roaming.",
+    "apps": [
+      "SNCF Connect",
+      "Trainline",
+      "Citymapper",
+      "Google Maps",
+      "Google Translate",
+      "Île-de-France Mobilités"
+    ],
+    "cityOrder": [
+      "Paris",
+      "Lyon",
+      "Nice"
+    ],
+    "cities": {
+      "Paris": {
+        "name": "Paris",
+        "minDays": 4,
+        "recDays": 6,
+        "maxDays": 6,
+        "note": "Base yourself in Paris and use two full days for Versailles and Mont Saint-Michel day trips.",
+        "days": [
+          {
+            "theme": "Arrival & First Impressions",
+            "activities": [
+              {
+                "name": "Airport transfer from CDG to central Paris on RER B",
+                "cost": "₹1,196 pp",
+                "tip": "Châtelet-Les-Halles is the most convenient interchange for many central stays."
+              },
+              {
+                "name": "Evening walk from Arc de Triomphe down the Champs-Élysées to Place de la Concorde"
+              },
+              {
+                "name": "Bateaux Parisiens Seine evening cruise with Eiffel Tower views",
+                "cost": "₹1,564 pp",
+                "tip": "Book a post-sunset slot for the best tower lighting."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel du Champ de Mars",
+                "budget": "₹9,200–12,880/night"
+              },
+              {
+                "name": "Hôtel Caron de Beaumarchais",
+                "budget": "₹12,880–17,020/night"
+              }
+            ],
+            "meals": [
+              "Café de Flore",
+              "Bouillon Chartier"
+            ]
+          },
+          {
+            "theme": "Iconic Paris — Eiffel Tower & Seine",
+            "activities": [
+              {
+                "name": "Eiffel Tower second-floor visit",
+                "cost": "₹1,730 pp",
+                "tip": "Reserve online early; summit upgrade is around ₹2,705 pp."
+              },
+              {
+                "name": "Picnic or photo stop at Champ de Mars"
+              },
+              {
+                "name": "Musée du Quai Branly – Jacques Chirac",
+                "cost": "₹1,288 pp"
+              },
+              {
+                "name": "Sunset viewpoints from Pont Alexandre III and Trocadéro Gardens"
+              }
+            ],
+            "meals": [
+              "L'As du Fallafel",
+              "Café de Flore"
+            ]
+          },
+          {
+            "theme": "Art & Grand Museums",
+            "activities": [
+              {
+                "name": "Musée du Louvre timed entry",
+                "cost": "₹2,024 pp",
+                "tip": "Choose an early slot to avoid the longest security queues."
+              },
+              {
+                "name": "Palais Royal Gardens and Buren columns"
+              },
+              {
+                "name": "Musée d'Orsay impressionist collection",
+                "cost": "₹1,472 pp"
+              },
+              {
+                "name": "Sainte-Chapelle stained glass chapel",
+                "cost": "₹1,196 pp"
+              }
+            ],
+            "meals": [
+              "Bouillon Chartier",
+              "Café de Flore"
+            ]
+          },
+          {
+            "theme": "Versailles Day Trip",
+            "activities": [
+              {
+                "name": "RER C return trip from Paris to Versailles Château Rive Gauche",
+                "cost": "₹654 pp",
+                "tip": "Arrive by 9 AM to beat tour groups and palace entry lines."
+              },
+              {
+                "name": "Palace of Versailles Passport Ticket",
+                "cost": "₹1,978 pp",
+                "tip": "Covers palace interiors, Trianons and Marie Antoinette estate."
+              },
+              {
+                "name": "Les Grandes Eaux Musicales fountain show",
+                "cost": "₹920 pp",
+                "tip": "Runs on select Apr–Oct dates, so check the calendar before planning."
+              },
+              {
+                "name": "Gardens of Versailles and Hameau de la Reine walk"
+              }
+            ],
+            "meals": [
+              "Café de Flore",
+              "Bouillon Chartier"
+            ]
+          },
+          {
+            "theme": "Mont Saint-Michel Day Trip",
+            "activities": [
+              {
+                "name": "TGV Paris Montparnasse to Rennes plus Keolis coach to Mont Saint-Michel",
+                "cost": "₹3,928–6,228 pp",
+                "tip": "Leave Paris around 7:30 AM and book the TGV early for the lowest fares."
+              },
+              {
+                "name": "Abbey of Mont Saint-Michel",
+                "cost": "₹1,472 pp"
+              },
+              {
+                "name": "Abbey audio guide",
+                "cost": "₹368 pp"
+              },
+              {
+                "name": "Medieval rampart walk and Grande Rue stroll"
+              }
+            ],
+            "meals": [
+              "Bouillon Chartier",
+              "L'As du Fallafel"
+            ]
+          },
+          {
+            "theme": "Bohemian Paris — Montmartre & Le Marais",
+            "activities": [
+              {
+                "name": "Sacré-Cœur Basilica and Montmartre hilltop viewpoints",
+                "tip": "The basilica is free; dome climb is about ₹736 pp if you want a higher panorama."
+              },
+              {
+                "name": "Place du Tertre artist square and nearby lanes"
+              },
+              {
+                "name": "Musée de Montmartre",
+                "cost": "₹1,380 pp"
+              },
+              {
+                "name": "Le Marais walk via Place des Vosges and Jewish Quarter"
+              },
+              {
+                "name": "Paris Catacombs optional timed entry",
+                "cost": "₹2,668 pp",
+                "tip": "Skip this if you prefer a lighter final day before the train south."
+              }
+            ],
+            "meals": [
+              "L'As du Fallafel",
+              "Café de Flore"
+            ]
+          }
+        ]
+      },
+      "Lyon": {
+        "name": "Lyon",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Best for food-led city breaks; keep Lyon as a compact two-day stop between Paris and the Riviera.",
+        "days": [
+          {
+            "theme": "Arrival + Old Lyon History",
+            "activities": [
+              {
+                "name": "TGV from Paris Gare de Lyon to Lyon Part-Dieu",
+                "cost": "₹3,220–6,440 pp",
+                "tip": "Book 2–3 months ahead for the best TGV fares."
+              },
+              {
+                "name": "Fourvière funicular ride and Basilica of Notre-Dame de Fourvière",
+                "cost": "₹175 pp each way"
+              },
+              {
+                "name": "Musée Gallo-Romain de Fourvière",
+                "cost": "₹736 pp"
+              },
+              {
+                "name": "Roman Theatres of Fourvière and Vieux Lyon traboules walk"
+              },
+              {
+                "name": "Cathédrale Saint-Jean-Baptiste"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Globe et Cecil",
+                "budget": "₹8,740–12,420/night"
+              },
+              {
+                "name": "Fourvière Hôtel",
+                "budget": "₹14,720–20,240/night"
+              }
+            ],
+            "meals": [
+              "Café des Fédérations",
+              "Le Musée"
+            ]
+          },
+          {
+            "theme": "Gastronomy, Culture & Silk History",
+            "activities": [
+              {
+                "name": "Les Halles Paul Bocuse gourmet market tasting circuit"
+              },
+              {
+                "name": "Institut Lumière",
+                "cost": "₹736 pp"
+              },
+              {
+                "name": "Musée des Confluences",
+                "cost": "₹828 pp"
+              },
+              {
+                "name": "Croix-Rousse silk-worker traboules and neighborhood walk"
+              },
+              {
+                "name": "Parc de la Tête d'Or"
+              }
+            ],
+            "meals": [
+              "Boulangerie Reynon",
+              "Café des Fédérations"
+            ]
+          }
+        ]
+      },
+      "Nice": {
+        "name": "Nice",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 3,
+        "note": "Use Nice as your Riviera base and fit the Riviera highlights into a focused three-day stay.",
+        "days": [
+          {
+            "theme": "Arrival on the French Riviera",
+            "activities": [
+              {
+                "name": "TGV from Lyon Part-Dieu to Nice-Ville",
+                "cost": "₹3,220–7,360 pp",
+                "tip": "Direct or one-change services via Marseille are both common."
+              },
+              {
+                "name": "Promenade des Anglais sunset stroll"
+              },
+              {
+                "name": "Vieux Nice lanes and Cours Saleya market"
+              },
+              {
+                "name": "Fenocchio ice cream stop",
+                "cost": "₹230–368 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Windsor",
+                "budget": "₹9,200–14,260/night"
+              },
+              {
+                "name": "Hôtel Ibis Nice Centre",
+                "budget": "₹6,900–10,120/night"
+              }
+            ],
+            "meals": [
+              "Chez Pipo",
+              "Acchiardo"
+            ]
+          },
+          {
+            "theme": "Azure Coast & Museum Day",
+            "activities": [
+              {
+                "name": "Musée Marc Chagall",
+                "cost": "₹736 pp"
+              },
+              {
+                "name": "MAMAC rooftop and modern art collection",
+                "cost": "₹920 pp"
+              },
+              {
+                "name": "Colline du Château viewpoints and waterfall"
+              },
+              {
+                "name": "Musée Matisse in Cimiez",
+                "cost": "₹920 pp"
+              },
+              {
+                "name": "Nice museum pass alternative covering multiple museums",
+                "cost": "₹1,380 pp",
+                "tip": "Worth it if you plan to enter three or more Nice museums."
+              }
+            ],
+            "meals": [
+              "Le Comptoir du Marché",
+              "Chez Pipo"
+            ]
+          },
+          {
+            "theme": "Èze & Monaco Day Trip",
+            "activities": [
+              {
+                "name": "Bus from Nice to Èze Village",
+                "cost": "₹156 pp"
+              },
+              {
+                "name": "Jardin Exotique d'Èze",
+                "cost": "₹552 pp"
+              },
+              {
+                "name": "Fragonard Perfume Factory guided visit"
+              },
+              {
+                "name": "Bus from Èze to Monaco",
+                "cost": "₹156 pp"
+              },
+              {
+                "name": "Prince's Palace of Monaco",
+                "cost": "₹1,196 pp"
+              },
+              {
+                "name": "Monte Carlo Casino exterior or interior entry after 2 PM",
+                "cost": "₹1,564 pp",
+                "tip": "If you skip the casino, spend more time around Port Hercule and the old town."
+              },
+              {
+                "name": "Regional train back from Monaco to Nice",
+                "cost": "₹515 pp"
+              }
+            ],
+            "meals": [
+              "Le Comptoir du Marché",
+              "Acchiardo"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Paris",
+        "to": "Lyon",
+        "method": "TGV from Paris Gare de Lyon to Lyon Part-Dieu (about 2 hrs)",
+        "cost": "₹3,220–6,440 pp"
+      },
+      {
+        "from": "Lyon",
+        "to": "Nice",
+        "method": "TGV from Lyon Part-Dieu to Nice-Ville via Marseille (about 3–4 hrs)",
+        "cost": "₹3,220–7,360 pp"
+      },
+      {
+        "from": "Paris",
+        "to": "Nice",
+        "method": "Direct TGV alternative if you skip Lyon (about 5.5 hrs)",
+        "cost": "₹4,600–8,280 pp"
+      }
+    ],
+    "extras": [
+      "Bordeaux wine bars and Médoc day trips",
+      "Strasbourg Christmas markets and Petite France",
+      "Marseille with Calanques National Park"
+    ],
+    "cityImages": {
+      "Paris": [
+        "Eiffel Tower Paris Seine river",
+        "Louvre Museum glass pyramid",
+        "Notre-Dame Cathedral Paris 2024"
+      ],
+      "Lyon": [
+        "Basilica Notre-Dame Fourvière Lyon night",
+        "Vieux Lyon Renaissance traboules",
+        "Place Bellecour Lyon Bartholdi fountain"
+      ],
+      "Nice": [
+        "Promenade des Anglais Nice Baie des Anges",
+        "Vieux Nice old town colorful facades",
+        "Colline du Château Nice harbor view"
+      ]
+    }
+  }
+}

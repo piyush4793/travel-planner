@@ -425,9 +425,9 @@
     "lng": 2.21,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 11,
+    "maxDays": 11
   },
   {
     "name": "Spain",

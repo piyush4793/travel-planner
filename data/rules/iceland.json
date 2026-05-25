@@ -1,0 +1,71 @@
+{
+  "name": "Iceland",
+  "seed": true,
+  "lat": 64.9631,
+  "lng": -19.0208,
+  "region": "Europe",
+  "bestMonths": [
+    "June",
+    "July",
+    "February"
+  ],
+  "worstMonths": [],
+  "budget": {
+    "solo": "₹2.5L–₹4L",
+    "couple": "₹4L–₹7L",
+    "family4": "₹8L–₹14L"
+  },
+  "experiences": [
+    "Northern Lights",
+    "Waterfalls",
+    "Glaciers",
+    "Hot Springs",
+    "Midnight Sun"
+  ],
+  "avoid": [
+    "Driving in winter without experience"
+  ],
+  "combo": [
+    "Norway",
+    "Greenland"
+  ],
+  "landmark": "Skógafoss",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Reykjavik",
+      "lat": 64.1466,
+      "lng": -21.9426,
+      "notes": "Hallgrimskirkja church, Blue Lagoon nearby and aurora viewing base"
+    },
+    {
+      "name": "Akureyri",
+      "lat": 65.6885,
+      "lng": -18.1262,
+      "notes": "North Iceland hub with Godafoss waterfall and whale watching"
+    },
+    {
+      "name": "Vik",
+      "lat": 63.4185,
+      "lng": -18.9999,
+      "notes": "Black sand Reynisfjara beach and dramatic basalt sea stacks"
+    },
+    {
+      "name": "Jokulsarlon",
+      "lat": 64.0784,
+      "lng": -16.2306,
+      "notes": "Glacier lagoon filled with floating icebergs calving from Vatnajokull"
+    },
+    {
+      "name": "Husavik",
+      "lat": 65.9562,
+      "lng": -17.3389,
+      "notes": "Whale watching capital — humpbacks almost guaranteed in summer"
+    }
+  ],
+  "itinerary": null
+}

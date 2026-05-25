@@ -1,0 +1,71 @@
+{
+  "name": "Belarus",
+  "seed": true,
+  "lat": 53.9045,
+  "lng": 27.5615,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹60K–₹1L",
+    "couple": "₹1L–₹1.8L",
+    "family4": "₹2L–₹3.5L"
+  },
+  "experiences": [
+    "Minsk Architecture",
+    "Mir Castle",
+    "Forests",
+    "Soviet Heritage",
+    "Nesvizh Palace"
+  ],
+  "avoid": [
+    "Check visa requirements — may need special permissions"
+  ],
+  "combo": [
+    "Russia",
+    "Poland"
+  ],
+  "landmark": "Mir Castle",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Minsk",
+      "lat": 53.9045,
+      "lng": 27.5615,
+      "notes": "Soviet-era grand boulevards, Stalin architecture and vibrant nightlife"
+    },
+    {
+      "name": "Mir",
+      "lat": 53.45,
+      "lng": 26.4667,
+      "notes": "Fairy-tale Mir Castle Complex, UNESCO World Heritage Site"
+    },
+    {
+      "name": "Nesvizh",
+      "lat": 53.2217,
+      "lng": 26.6931,
+      "notes": "Radziwill palace and castle complex surrounded by ornamental parks"
+    },
+    {
+      "name": "Brest",
+      "lat": 52.0979,
+      "lng": 23.6844,
+      "notes": "Brest Fortress WWII memorial and charming pedestrian Sovetskaya street"
+    }
+  ],
+  "itinerary": null
+}

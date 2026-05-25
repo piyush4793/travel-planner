@@ -1,0 +1,75 @@
+{
+  "name": "Georgia",
+  "seed": true,
+  "lat": 42.3154,
+  "lng": 43.3569,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹50K–₹80K",
+    "couple": "₹80K–₹1.5L",
+    "family4": "₹1.5L–₹3L"
+  },
+  "experiences": [
+    "Tbilisi Old Town",
+    "Wine Culture",
+    "Kazbegi Mountains",
+    "Batumi",
+    "Monasteries"
+  ],
+  "avoid": [
+    "Mountain roads in winter"
+  ],
+  "combo": [
+    "Turkey",
+    "Armenia"
+  ],
+  "landmark": "Vardzia",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Tbilisi",
+      "lat": 41.7151,
+      "lng": 44.8271,
+      "notes": "Old Town sulfur baths, Narikala fortress, natural wine and bridge of peace"
+    },
+    {
+      "name": "Batumi",
+      "lat": 41.6168,
+      "lng": 41.6367,
+      "notes": "Black Sea promenade, Alphabet Tower, botanical garden and beach clubs"
+    },
+    {
+      "name": "Kazbegi",
+      "lat": 42.6553,
+      "lng": 44.6329,
+      "notes": "Dramatic Gergeti Trinity Church above clouds with Caucasus peak backdrop"
+    },
+    {
+      "name": "Kutaisi",
+      "lat": 42.2679,
+      "lng": 42.6946,
+      "notes": "Gelati monastery UNESCO site, Prometheus stalactite cave and Okatse canyon"
+    },
+    {
+      "name": "Sighnaghi",
+      "lat": 41.6213,
+      "lng": 45.9218,
+      "notes": "Walled town in Kakheti wine country with Alazani Valley views"
+    }
+  ],
+  "itinerary": null
+}

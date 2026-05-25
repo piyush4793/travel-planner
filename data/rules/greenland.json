@@ -1,0 +1,71 @@
+{
+  "name": "Greenland",
+  "seed": true,
+  "lat": 71.7069,
+  "lng": -42.6043,
+  "region": "Europe",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "October",
+    "November",
+    "December"
+  ],
+  "budget": {
+    "solo": "₹5L–₹8L",
+    "couple": "₹8L–₹15L",
+    "family4": "₹15L–₹28L"
+  },
+  "experiences": [
+    "Arctic Wilderness",
+    "Northern Lights",
+    "Icebergs",
+    "Dog Sledding",
+    "Midnight Sun"
+  ],
+  "avoid": [
+    "Inaccessible in harsh winter without expedition-level prep"
+  ],
+  "combo": [
+    "Iceland",
+    "Denmark"
+  ],
+  "landmark": "Ilulissat Icefjord",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Nuuk",
+      "lat": 64.1836,
+      "lng": -51.7214,
+      "notes": "Colorful colonial harbour, Greenland National Museum and Inuit culture"
+    },
+    {
+      "name": "Ilulissat",
+      "lat": 69.2198,
+      "lng": -51.0986,
+      "notes": "UNESCO Icefjord with massive calving glacier and midnight sun hikes"
+    },
+    {
+      "name": "Sisimiut",
+      "lat": 66.9397,
+      "lng": -53.6733,
+      "notes": "Gateway to the Arctic Circle Trail 160km multi-day wilderness trek"
+    },
+    {
+      "name": "Kangerlussuaq",
+      "lat": 67.0065,
+      "lng": -50.689,
+      "notes": "International gateway with musk ox country and ice sheet access"
+    }
+  ],
+  "itinerary": null
+}

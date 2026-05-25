@@ -1,5 +1,6 @@
 {
   "name": "Vietnam",
+  "seed": true,
   "lat": 14.0583,
   "lng": 108.2772,
   "region": "Asia",

@@ -1,0 +1,65 @@
+{
+  "name": "Hungary",
+  "seed": true,
+  "lat": 47.1625,
+  "lng": 19.5033,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "worstMonths": [],
+  "budget": {
+    "solo": "₹80K–₹1.5L",
+    "couple": "₹1.5L–₹2.5L",
+    "family4": "₹3L–₹5L"
+  },
+  "experiences": [
+    "Budapest",
+    "Thermal Baths",
+    "Ruin Bars",
+    "Lake Balaton",
+    "Danube Bend"
+  ],
+  "avoid": [],
+  "combo": [
+    "Austria",
+    "Czech Republic"
+  ],
+  "landmark": "Hungarian Parliament Building",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Budapest",
+      "lat": 47.4979,
+      "lng": 19.0402,
+      "notes": "Parliament building at dusk, Szechenyi thermal bath and ruin bar scene"
+    },
+    {
+      "name": "Eger",
+      "lat": 47.9025,
+      "lng": 20.3772,
+      "notes": "Valley of Beautiful Women wine cellars and Ottoman minaret"
+    },
+    {
+      "name": "Pecs",
+      "lat": 46.0727,
+      "lng": 18.2328,
+      "notes": "Southern city with Mediterranean feel and Ottoman mosque-turned-church"
+    },
+    {
+      "name": "Debrecen",
+      "lat": 47.5316,
+      "lng": 21.6273,
+      "notes": "Hungary's Calvinist capital with Great Reformed Church and thermal baths"
+    }
+  ],
+  "itinerary": null
+}

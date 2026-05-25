@@ -1,0 +1,80 @@
+{
+  "name": "Switzerland",
+  "seed": true,
+  "lat": 46.8182,
+  "lng": 8.2275,
+  "region": "Europe",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "December",
+    "January",
+    "February"
+  ],
+  "worstMonths": [],
+  "budget": {
+    "solo": "₹2.5L–₹4L",
+    "couple": "₹4L–₹7L",
+    "family4": "₹8L–₹14L"
+  },
+  "experiences": [
+    "Swiss Alps",
+    "Interlaken",
+    "Zermatt / Matterhorn",
+    "Zurich",
+    "Chocolate & Cheese"
+  ],
+  "avoid": [
+    "Budget carefully — most expensive country in Europe"
+  ],
+  "combo": [
+    "Germany",
+    "Austria"
+  ],
+  "landmark": "Matterhorn",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Zurich",
+      "lat": 47.3769,
+      "lng": 8.5417,
+      "notes": "Old Town Lindenhugel, Lake Zurich promenade and world-class museums"
+    },
+    {
+      "name": "Geneva",
+      "lat": 46.2044,
+      "lng": 6.1432,
+      "notes": "Jet d'Eau fountain, UN Palais des Nations and Vieille-Ville old town"
+    },
+    {
+      "name": "Interlaken",
+      "lat": 46.6863,
+      "lng": 7.8632,
+      "notes": "Paragliding, skydiving, Jungfrau railway and two alpine lake views"
+    },
+    {
+      "name": "Lucerne",
+      "lat": 47.0502,
+      "lng": 8.3093,
+      "notes": "Kapellbrucke wooden bridge, Lion Monument and Mt Pilatus cog railway"
+    },
+    {
+      "name": "Zermatt",
+      "lat": 46.0207,
+      "lng": 7.7491,
+      "notes": "Car-free village at the foot of the iconic Matterhorn peak"
+    },
+    {
+      "name": "Bern",
+      "lat": 46.948,
+      "lng": 7.4474,
+      "notes": "Bear Park, rose garden, medieval arcaded Lauben streets and clock tower"
+    }
+  ],
+  "itinerary": null
+}

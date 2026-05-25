@@ -1,0 +1,83 @@
+{
+  "name": "China",
+  "seed": true,
+  "lat": 35.8617,
+  "lng": 104.1954,
+  "region": "Asia",
+  "bestMonths": [
+    "April",
+    "May",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1L–₹2L",
+    "couple": "₹1.8L–₹3.5L",
+    "family4": "₹3.5L–₹7L"
+  },
+  "experiences": [
+    "Great Wall",
+    "Food",
+    "History",
+    "Temples",
+    "Nature",
+    "Shanghai Skyline"
+  ],
+  "avoid": [
+    "National Golden Week (Oct 1-7)",
+    "Chinese New Year travel chaos"
+  ],
+  "combo": [
+    "Japan",
+    "South Korea"
+  ],
+  "landmark": "Great Wall of China",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Beijing",
+      "lat": 39.9042,
+      "lng": 116.4074,
+      "notes": "Forbidden City, Great Wall day trip, Temple of Heaven and Hutong lanes"
+    },
+    {
+      "name": "Shanghai",
+      "lat": 31.2304,
+      "lng": 121.4737,
+      "notes": "Bund waterfront skyline, French Concession and Yu Garden bazaar"
+    },
+    {
+      "name": "Xi'an",
+      "lat": 34.3416,
+      "lng": 108.9398,
+      "notes": "Terracotta Army, Ancient City Walls cycling and Muslim Quarter night market"
+    },
+    {
+      "name": "Chengdu",
+      "lat": 30.5728,
+      "lng": 104.0668,
+      "notes": "Giant Panda Research Base, mahjong culture and fiery Sichuan hot pot"
+    },
+    {
+      "name": "Guilin",
+      "lat": 25.2736,
+      "lng": 110.2907,
+      "notes": "Karst limestone peaks, Li River bamboo raft and Yangshuo rice paddies"
+    },
+    {
+      "name": "Hangzhou",
+      "lat": 30.2741,
+      "lng": 120.1551,
+      "notes": "West Lake gardens, Longjing tea plantations and Song Dynasty Town"
+    }
+  ],
+  "itinerary": null
+}

@@ -4,6 +4,7 @@ import type { CountryRule } from "../data/itineraryRules";
 /** Consolidated country data from data/rules/*.json */
 export type ConsolidatedCountry = {
   name: string;
+  seed: boolean;
   lat: number;
   lng: number;
   region: string;

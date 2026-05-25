@@ -1,0 +1,110 @@
+{
+  "name": "United States",
+  "seed": true,
+  "lat": 38,
+  "lng": -97,
+  "region": "Americas",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "worstMonths": [],
+  "budget": {
+    "solo": "₹2L–₹3.5L",
+    "couple": "₹3.5L–₹6L",
+    "family4": "₹7L–₹12L"
+  },
+  "experiences": [
+    "Statue of Liberty",
+    "Grand Canyon",
+    "Times Square",
+    "Hollywood",
+    "Yellowstone",
+    "Volcanoes",
+    "Beaches",
+    "Surfing",
+    "Pearl Harbor",
+    "Na Pali Coast"
+  ],
+  "avoid": [],
+  "combo": [
+    "Canada",
+    "Mexico"
+  ],
+  "landmark": null,
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "New York",
+      "lat": 40.71,
+      "lng": -74.01,
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "notes": "Statue of Liberty, Central Park, Times Square, Broadway"
+    },
+    {
+      "name": "Los Angeles",
+      "lat": 34.05,
+      "lng": -118.24,
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "notes": "Hollywood, Santa Monica, Griffith Observatory"
+    },
+    {
+      "name": "San Francisco",
+      "lat": 37.77,
+      "lng": -122.42,
+      "bestMonths": [
+        "September",
+        "October"
+      ],
+      "notes": "Golden Gate Bridge, Alcatraz, cable cars"
+    },
+    {
+      "name": "Honolulu",
+      "lat": 21.3069,
+      "lng": -157.8583,
+      "notes": "Waikiki Beach, Diamond Head crater hike, Pearl Harbor and Iolani Palace"
+    },
+    {
+      "name": "Maui",
+      "lat": 20.7984,
+      "lng": -156.3319,
+      "notes": "Haleakala volcano sunrise, Road to Hana waterfalls and whale watching"
+    },
+    {
+      "name": "Big Island",
+      "lat": 19.8968,
+      "lng": -155.5828,
+      "notes": "Active Kilauea lava flows, manta ray night dive and Waipio black sand valley"
+    },
+    {
+      "name": "Kauai",
+      "lat": 22.0964,
+      "lng": -159.5261,
+      "notes": "Na Pali Coast sea cliffs, Waimea Canyon and Hanalei Bay sunset beach"
+    },
+    {
+      "name": "Lanai",
+      "lat": 20.8281,
+      "lng": -156.937,
+      "notes": "Secluded island with Munro Trail, Hulopoe Bay snorkeling and rock gardens"
+    }
+  ],
+  "itinerary": null
+}

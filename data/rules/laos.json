@@ -1,0 +1,72 @@
+{
+  "name": "Laos",
+  "seed": true,
+  "lat": 17.9757,
+  "lng": 102.6331,
+  "region": "Asia",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹35K–₹60K",
+    "couple": "₹60K–₹1L",
+    "family4": "₹1.2L–₹2L"
+  },
+  "experiences": [
+    "Luang Prabang",
+    "Mekong River",
+    "Waterfalls",
+    "Temples",
+    "Slow Travel"
+  ],
+  "avoid": [
+    "Monsoon (May-Oct) makes roads difficult"
+  ],
+  "combo": [
+    "Thailand",
+    "Cambodia"
+  ],
+  "landmark": "Kuang Si Falls",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Vientiane",
+      "lat": 17.9757,
+      "lng": 102.6331,
+      "notes": "Patuxai victory arch, Pha That Luang stupa and slow Mekong evenings"
+    },
+    {
+      "name": "Luang Prabang",
+      "lat": 19.8833,
+      "lng": 102.1347,
+      "notes": "UNESCO old town with alms-giving monks at dawn and Kuang Si Falls"
+    },
+    {
+      "name": "Vang Vieng",
+      "lat": 18.924,
+      "lng": 102.4508,
+      "notes": "Karst mountain backdrop, Nam Song River tubing and hot air balloons"
+    },
+    {
+      "name": "Pakse",
+      "lat": 15.1203,
+      "lng": 105.7999,
+      "notes": "Gateway to 4000 Islands and Bolaven Plateau coffee country"
+    }
+  ],
+  "itinerary": null
+}

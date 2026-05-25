@@ -1,0 +1,84 @@
+{
+  "name": "Indonesia",
+  "seed": true,
+  "lat": -2.5489,
+  "lng": 118.0149,
+  "region": "Asia",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹50K–₹80K",
+    "couple": "₹80K–₹1.5L",
+    "family4": "₹1.5L–₹3L"
+  },
+  "experiences": [
+    "Komodo Dragons",
+    "Raja Ampat Diving",
+    "Java Temples",
+    "Volcanoes",
+    "Orangutans (Borneo)"
+  ],
+  "avoid": [
+    "Monsoon season in most regions"
+  ],
+  "combo": [
+    "Malaysia",
+    "Philippines"
+  ],
+  "landmark": "Borobudur",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Bali",
+      "lat": -8.3405,
+      "lng": 115.092,
+      "notes": "Ubud rice terraces, Tanah Lot sunset temple and surf at Uluwatu"
+    },
+    {
+      "name": "Yogyakarta",
+      "lat": -7.7972,
+      "lng": 110.3688,
+      "notes": "Borobudur at sunrise, Prambanan temple complex and batik workshops"
+    },
+    {
+      "name": "Jakarta",
+      "lat": -6.2088,
+      "lng": 106.8456,
+      "notes": "National Museum, Kota Tua Dutch colonial quarter and diverse food scene"
+    },
+    {
+      "name": "Lombok",
+      "lat": -8.65,
+      "lng": 116.324,
+      "notes": "Gili Islands snorkeling, Rinjani volcano trek and quieter beaches"
+    },
+    {
+      "name": "Komodo",
+      "lat": -8.55,
+      "lng": 119.5,
+      "notes": "Komodo dragon encounters, Pink Beach and world-class diving"
+    },
+    {
+      "name": "Raja Ampat",
+      "lat": -0.5,
+      "lng": 130.5,
+      "notes": "Earth's most biodiverse marine ecosystem with 1500+ fish species"
+    }
+  ],
+  "itinerary": null
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Nepal",
+  "seed": true,
+  "lat": 27.7172,
+  "lng": 85.324,
+  "region": "Asia",
+  "bestMonths": [
+    "October",
+    "November",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹30K–₹50K",
+    "couple": "₹50K–₹80K",
+    "family4": "₹1L–₹1.5L"
+  },
+  "experiences": [
+    "Everest Base Camp",
+    "Annapurna Trek",
+    "Kathmandu",
+    "Pokhara",
+    "Himalayan Views"
+  ],
+  "avoid": [
+    "Monsoon season — trails become dangerous"
+  ],
+  "combo": [
+    "Bhutan",
+    "India"
+  ],
+  "landmark": "Mount Everest",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Kathmandu",
+      "lat": 27.7172,
+      "lng": 85.324,
+      "notes": "Pashupatinath temple, Boudhanath stupa and chaotic Thamel trekking hub"
+    },
+    {
+      "name": "Pokhara",
+      "lat": 28.2096,
+      "lng": 83.9856,
+      "notes": "Phewa Lake, Annapurna panorama and base for Poon Hill sunrise trek"
+    },
+    {
+      "name": "Chitwan",
+      "lat": 27.5291,
+      "lng": 84.3542,
+      "notes": "Jungle safari for one-horned rhinos, tigers and elephant grass walks"
+    },
+    {
+      "name": "Lumbini",
+      "lat": 27.4833,
+      "lng": 83.276,
+      "notes": "Birthplace of Siddhartha Gautama with ancient Ashokan pillar"
+    }
+  ],
+  "itinerary": null
+}

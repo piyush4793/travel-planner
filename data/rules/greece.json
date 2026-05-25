@@ -1,0 +1,81 @@
+{
+  "name": "Greece",
+  "seed": true,
+  "lat": 39.0742,
+  "lng": 21.8243,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.2L–₹2L",
+    "couple": "₹2L–₹3.5L",
+    "family4": "₹4L–₹7L"
+  },
+  "experiences": [
+    "Islands",
+    "Beaches",
+    "History",
+    "Food",
+    "Sunsets"
+  ],
+  "avoid": [
+    "Peak summer crowds in Santorini",
+    "High prices in August"
+  ],
+  "combo": [
+    "Turkey",
+    "Italy"
+  ],
+  "landmark": "Santorini",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Athens",
+      "lat": 37.9838,
+      "lng": 23.7275,
+      "notes": "Acropolis and Parthenon, Monastiraki flea market and vibrant Plaka"
+    },
+    {
+      "name": "Santorini",
+      "lat": 36.3932,
+      "lng": 25.4615,
+      "notes": "Iconic blue-domed churches, caldera sunset views and volcanic beaches"
+    },
+    {
+      "name": "Mykonos",
+      "lat": 37.4467,
+      "lng": 25.3289,
+      "notes": "Cosmopolitan party island with windmills, Little Venice and beaches"
+    },
+    {
+      "name": "Thessaloniki",
+      "lat": 40.6401,
+      "lng": 22.9444,
+      "notes": "Byzantine walls, Roman rotunda and the best bougatsa in Greece"
+    },
+    {
+      "name": "Rhodes",
+      "lat": 36.4341,
+      "lng": 28.2176,
+      "notes": "UNESCO medieval old town, Palace of the Grand Master and Lindos acropolis"
+    },
+    {
+      "name": "Crete",
+      "lat": 35.2401,
+      "lng": 24.8093,
+      "notes": "Minoan Palace of Knossos, Samaria Gorge hike and pristine Elafonissi beach"
+    }
+  ],
+  "itinerary": null
+}

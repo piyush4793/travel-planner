@@ -1,0 +1,80 @@
+{
+  "name": "South Africa",
+  "seed": true,
+  "lat": -29,
+  "lng": 25,
+  "region": "Africa",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [],
+  "budget": {
+    "solo": "₹1.2L–₹2L",
+    "couple": "₹2L–₹3.5L",
+    "family4": "₹4L–₹7L"
+  },
+  "experiences": [
+    "Kruger National Park Safari",
+    "Cape Town",
+    "Table Mountain",
+    "Garden Route",
+    "Winelands"
+  ],
+  "avoid": [
+    "High crime areas — research neighbourhoods",
+    "Winter in Cape Town (Jun-Aug) is wet"
+  ],
+  "combo": [
+    "Zimbabwe",
+    "Botswana"
+  ],
+  "landmark": "Table Mountain",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Cape Town",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "notes": "Table Mountain cable car, Cape Point, Boulders penguin beach and Winelands"
+    },
+    {
+      "name": "Johannesburg",
+      "lat": -26.2041,
+      "lng": 28.0473,
+      "notes": "Apartheid Museum, Soweto tour, Mandela House and Maboneng arts precinct"
+    },
+    {
+      "name": "Durban",
+      "lat": -29.8587,
+      "lng": 31.0218,
+      "notes": "Golden Mile beach, Umhlanga Rocks and spicy bunny chow street food"
+    },
+    {
+      "name": "Stellenbosch",
+      "lat": -33.9321,
+      "lng": 18.8602,
+      "notes": "Cape Dutch architecture, wine estate tours and Jonkershoek hiking"
+    },
+    {
+      "name": "Kruger National Park",
+      "lat": -23.9884,
+      "lng": 31.5547,
+      "notes": "Africa's premier Big Five game reserve with self-drive or guided safaris"
+    },
+    {
+      "name": "Garden Route",
+      "lat": -33.98,
+      "lng": 22.46,
+      "notes": "Scenic coastal road with Tsitsikamma forest, bungee bridge and whale watching"
+    }
+  ],
+  "itinerary": null
+}

@@ -57,7 +57,7 @@ export default function CountryPanelV2({
   const { panelWidth, startPanelDrag }    = usePanelDrag(320, 320);
   const bp = useBreakpoint();
   const isMobile = bp === "mobile";
-  const { rule, loading: ruleLoading } = useCountryRule(country?.name);
+  const { data: consolidated, rule, loading: ruleLoading } = useCountryRule(country?.name);
   const [activePlanId, setActivePlanId]   = useState("default");
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
   const [customDays, setCustomDays]       = useState(7);
@@ -154,7 +154,21 @@ export default function CountryPanelV2({
                   {getBudgetDisplay(country.budget)} · from {homeCountry}
                   {ruleLoading && <span className="text-[9px] text-blue-400 ml-2">Loading itinerary…</span>}
                 </p>
-              </div>
+               {/* V2 budget breakdown */}
+               {consolidated && (
+                 <div className="flex items-center gap-2 mt-1.5 flex-wrap">
+                   <span className="text-[9px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
+                     👤 {consolidated.budget.solo}
+                   </span>
+                   <span className="text-[9px] font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">
+                     👫 {consolidated.budget.couple}
+                   </span>
+                   <span className="text-[9px] font-semibold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">
+                     👨‍👩‍👧‍👦 {consolidated.budget.family4}
+                   </span>
+                 </div>
+               )}
+             </div>
               <div className="flex items-center gap-0.5 shrink-0">
                 <button onClick={onToggleVisited}
                   className={`px-2 py-1 rounded-lg text-[10px] font-bold transition-all ${

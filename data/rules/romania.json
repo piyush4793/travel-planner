@@ -1,0 +1,74 @@
+{
+  "name": "Romania",
+  "seed": true,
+  "lat": 45.9432,
+  "lng": 24.9668,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January"
+  ],
+  "budget": {
+    "solo": "₹70K–₹1.2L",
+    "couple": "₹1.2L–₹2L",
+    "family4": "₹2.5L–₹4L"
+  },
+  "experiences": [
+    "Transylvania",
+    "Bran Castle",
+    "Painted Monasteries",
+    "Bucovina",
+    "Carpathians"
+  ],
+  "avoid": [],
+  "combo": [
+    "Hungary",
+    "Bulgaria"
+  ],
+  "landmark": "Bran Castle",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Bucharest",
+      "lat": 44.4268,
+      "lng": 26.1025,
+      "notes": "Palace of Parliament, Strada Franceza cafe culture and vibrant art scene"
+    },
+    {
+      "name": "Brasov",
+      "lat": 45.6569,
+      "lng": 25.6112,
+      "notes": "Gothic Black Church, medieval walls and gateway to Dracula's Bran Castle"
+    },
+    {
+      "name": "Cluj-Napoca",
+      "lat": 46.7712,
+      "lng": 23.6236,
+      "notes": "University city with UNTOLD festival, St Michael's Church and nightlife"
+    },
+    {
+      "name": "Sibiu",
+      "lat": 45.7983,
+      "lng": 24.1256,
+      "notes": "Beautifully preserved medieval Saxon town with Brukenthal museum"
+    },
+    {
+      "name": "Timisoara",
+      "lat": 45.7489,
+      "lng": 21.2087,
+      "notes": "First European city with public electric lighting and 1989 revolution start"
+    }
+  ],
+  "itinerary": null
+}

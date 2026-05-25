@@ -1,0 +1,74 @@
+{
+  "name": "Poland",
+  "seed": true,
+  "lat": 51.9194,
+  "lng": 19.1451,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January"
+  ],
+  "budget": {
+    "solo": "₹80K–₹1.5L",
+    "couple": "₹1.5L–₹2.5L",
+    "family4": "₹3L–₹5L"
+  },
+  "experiences": [
+    "Krakow Old Town",
+    "Auschwitz Memorial",
+    "Warsaw",
+    "Tatras Mountains",
+    "Gdansk"
+  ],
+  "avoid": [],
+  "combo": [
+    "Czech Republic",
+    "Germany"
+  ],
+  "landmark": "Wawel Castle",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Warsaw",
+      "lat": 52.2297,
+      "lng": 21.0122,
+      "notes": "Meticulously rebuilt Royal Castle, WWII uprising museum and Neon Museum"
+    },
+    {
+      "name": "Krakow",
+      "lat": 50.0647,
+      "lng": 19.945,
+      "notes": "Wawel Castle, Kazimierz Jewish quarter, Auschwitz day trip and pierogi"
+    },
+    {
+      "name": "Gdansk",
+      "lat": 54.352,
+      "lng": 18.6466,
+      "notes": "Colorful Hanseatic merchant houses, amber jewellery and old shipyard"
+    },
+    {
+      "name": "Wroclaw",
+      "lat": 51.1079,
+      "lng": 17.0385,
+      "notes": "Island city with 100+ bridges, Market Square dwarfs and nightlife"
+    },
+    {
+      "name": "Zakopane",
+      "lat": 49.2992,
+      "lng": 19.9496,
+      "notes": "Tatra mountain resort with oscypek cheese, hiking and Kasprowy Wierch"
+    }
+  ],
+  "itinerary": null
+}

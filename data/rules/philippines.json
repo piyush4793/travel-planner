@@ -1,0 +1,86 @@
+{
+  "name": "Philippines",
+  "seed": true,
+  "lat": 12.8797,
+  "lng": 121.774,
+  "region": "Asia",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹40K–₹70K",
+    "couple": "₹70K–₹1.2L",
+    "family4": "₹1.5L–₹2.5L"
+  },
+  "experiences": [
+    "Palawan Beaches",
+    "Diving",
+    "Island Hopping",
+    "Chocolate Hills",
+    "Siargao Surfing"
+  ],
+  "avoid": [
+    "Typhoon season June-Oct"
+  ],
+  "combo": [
+    "Indonesia",
+    "Malaysia"
+  ],
+  "landmark": "Chocolate Hills",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Manila",
+      "lat": 14.5995,
+      "lng": 120.9842,
+      "notes": "Intramuros walled city, Rizal Park and chaotic street food culture"
+    },
+    {
+      "name": "Palawan",
+      "lat": 9.8349,
+      "lng": 118.7384,
+      "notes": "El Nido lagoons, Puerto Princesa underground river and Coron shipwrecks"
+    },
+    {
+      "name": "Cebu",
+      "lat": 10.3157,
+      "lng": 123.8854,
+      "notes": "Magellan's Cross, whale shark swimming in Oslob and Chocolate Hills day trip"
+    },
+    {
+      "name": "Boracay",
+      "lat": 11.9674,
+      "lng": 121.9248,
+      "notes": "White Beach sunset walks, parasailing and Willy's Rock"
+    },
+    {
+      "name": "Siargao",
+      "lat": 9.8482,
+      "lng": 126.0455,
+      "notes": "Cloud 9 surf break, Sugba Lagoon and island-hopping with rock pools"
+    },
+    {
+      "name": "Bohol",
+      "lat": 9.67,
+      "lng": 124.0641,
+      "notes": "Chocolate Hills, Philippine tarsier sanctuary and Loboc River cruise"
+    }
+  ],
+  "itinerary": null
+}

@@ -1,0 +1,775 @@
+{
+  "name": "Thailand",
+  "seed": true,
+  "lat": 15.87,
+  "lng": 100.9925,
+  "region": "Asia",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹40K–₹70K",
+    "couple": "₹70K–₹1.2L",
+    "family4": "₹1.5L–₹2.5L"
+  },
+  "experiences": [
+    "Beaches",
+    "Street Food",
+    "Temples",
+    "Islands",
+    "Nightlife"
+  ],
+  "avoid": [
+    "Monsoon season May-Oct"
+  ],
+  "combo": [
+    "Cambodia",
+    "Malaysia"
+  ],
+  "landmark": "Wat Phra Kaew",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Bangkok",
+      "lat": 13.7563,
+      "lng": 100.5018,
+      "notes": "Grand Palace, Wat Pho, Khao San Road and legendary Pad Thai"
+    },
+    {
+      "name": "Chiang Mai",
+      "lat": 18.7883,
+      "lng": 98.9853,
+      "notes": "300 temples, Sunday Night Market, elephant sanctuaries and doi hiking"
+    },
+    {
+      "name": "Phuket",
+      "lat": 7.8804,
+      "lng": 98.3923,
+      "notes": "Patong Beach, Phi Phi Island day trips and vibrant nightlife"
+    },
+    {
+      "name": "Koh Samui",
+      "lat": 9.512,
+      "lng": 100.0136,
+      "notes": "Coconut palm beaches, Big Buddha Temple and Na Muang waterfalls"
+    },
+    {
+      "name": "Ayutthaya",
+      "lat": 14.3692,
+      "lng": 100.5877,
+      "notes": "Ancient capital ruins with headless Buddha statues at sunset"
+    },
+    {
+      "name": "Pai",
+      "lat": 19.3583,
+      "lng": 98.4393,
+      "notes": "Misty mountain valley with hot springs, canyon views and bohemian cafes"
+    }
+  ],
+  "itinerary": {
+    "sim": "AIS Tourist SIM — buy at Bangkok Suvarnabhumi Airport after immigration",
+    "apps": [
+      "Grab",
+      "Google Maps (offline)",
+      "Google Translate (Thai offline)",
+      "12Go.Asia",
+      "Klook",
+      "Agoda / Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Bangkok",
+      "Ayutthaya",
+      "Chiang Mai",
+      "Pai",
+      "Phuket",
+      "Koh Samui"
+    ],
+    "cities": {
+      "Bangkok": {
+        "name": "Bangkok",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Keep one weekend day here if you want Chatuchak at its liveliest.",
+        "days": [
+          {
+            "theme": "Arrival + Sacred Bangkok",
+            "activities": [
+              {
+                "name": "Grand Palace + Wat Phra Kaew",
+                "cost": "₹1,250",
+                "tip": "Dress code is strict: shoulders and knees covered."
+              },
+              {
+                "name": "Wat Pho",
+                "cost": "₹500",
+                "tip": "Go right after the palace before the queues build up."
+              },
+              {
+                "name": "Chao Phraya Express Boat ride to Wat Arun",
+                "cost": "₹38–₹75",
+                "tip": "Sit on the river side for the best temple views."
+              },
+              {
+                "name": "Wat Arun",
+                "cost": "₹250",
+                "tip": "Late afternoon light is best for photos."
+              },
+              {
+                "name": "Pak Khlong Talat flower market",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "NapPark Hostel @ Banglamphu",
+                "budget": "₹1,800–₹2,800/night"
+              },
+              {
+                "name": "Ibis Bangkok Riverside",
+                "budget": "₹4,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Krua Apsorn",
+              "Pad Thai Thip Samai",
+              "Khao San Road street stalls"
+            ]
+          },
+          {
+            "theme": "Markets, Canals & Skyline",
+            "activities": [
+              {
+                "name": "Chatuchak Weekend Market",
+                "cost": "Free",
+                "tip": "Best on Saturday or Sunday mornings."
+              },
+              {
+                "name": "Damnoen Saduak Floating Market boat ride",
+                "cost": "₹750–₹2,000",
+                "tip": "Join a shared tour if you want to reduce boat cost."
+              },
+              {
+                "name": "BTS Skytrain rides across Sukhumvit and Silom",
+                "cost": "₹38–₹138"
+              },
+              {
+                "name": "Lumphini Park",
+                "cost": "Free"
+              },
+              {
+                "name": "Lebua State Tower SkyBar sunset drink",
+                "cost": "₹1,500",
+                "tip": "Smart casual dress works better than beachwear."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lub.d Bangkok Silom",
+                "budget": "₹2,500–₹4,000/night"
+              },
+              {
+                "name": "Hua Chang Heritage Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Or Tor Kor Market",
+              "Sukhumvit Soi 38 Night Market",
+              "Supanniga Eating Room"
+            ]
+          },
+          {
+            "theme": "Chinatown, Jim Thompson & Riverside Night",
+            "activities": [
+              {
+                "name": "Yaowarat Road walking trail",
+                "cost": "Free",
+                "tip": "Start with dim sum in the morning or come back at dusk for neon food lanes."
+              },
+              {
+                "name": "Jim Thompson House Museum",
+                "cost": "₹500"
+              },
+              {
+                "name": "Siam Square and MBK shopping walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Erawan Shrine",
+                "cost": "Free"
+              },
+              {
+                "name": "Asiatique The Riverfront",
+                "cost": "₹75–₹105",
+                "tip": "Boat fare is small; the market itself is free to enter."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lub.d Bangkok Silom",
+                "budget": "₹2,500–₹4,000/night"
+              },
+              {
+                "name": "Ibis Bangkok Riverside",
+                "budget": "₹4,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "T&K Seafood",
+              "MBK Food Island",
+              "Mandarin Oriental The Authors’ Lounge"
+            ]
+          }
+        ]
+      },
+      "Ayutthaya": {
+        "name": "Ayutthaya",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Works well as a Bangkok day trip, but an overnight stay gives you the best sunset at the ruins.",
+        "days": [
+          {
+            "theme": "Ancient Capital Ruins & River Sunset",
+            "activities": [
+              {
+                "name": "Ayutthaya Historical Park",
+                "cost": "₹125–₹250",
+                "tip": "Rent a bicycle or tuk-tuk early to beat the heat."
+              },
+              {
+                "name": "Wat Mahathat",
+                "cost": "₹125",
+                "tip": "Look for the famous Buddha head in the tree roots."
+              },
+              {
+                "name": "Wat Phra Si Sanphet",
+                "cost": "₹125"
+              },
+              {
+                "name": "Wat Chaiwatthanaram at sunset",
+                "cost": "₹125",
+                "tip": "Golden hour makes this the most photogenic temple in the city."
+              },
+              {
+                "name": "Chao Sam Phraya National Museum",
+                "cost": "₹250"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Baan Are Gong Riverside Homestay",
+                "budget": "₹1,500–₹2,500/night"
+              },
+              {
+                "name": "Sala Ayutthaya",
+                "budget": "₹7,500–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Malakor Kitchen and Cafe",
+              "Coffee Old City",
+              "Roti Sai Mai stalls"
+            ]
+          }
+        ]
+      },
+      "Chiang Mai": {
+        "name": "Chiang Mai",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Book Elephant Nature Park and any cooking class a few weeks ahead in peak season.",
+        "days": [
+          {
+            "theme": "Ancient Lanna Temples & Night Bazaar",
+            "activities": [
+              {
+                "name": "Tha Phae Gate and old walled city walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Wat Phra Singh",
+                "cost": "₹125"
+              },
+              {
+                "name": "Wat Chedi Luang",
+                "cost": "₹125"
+              },
+              {
+                "name": "Wat Chiang Man",
+                "cost": "₹75"
+              },
+              {
+                "name": "Chiang Mai Night Bazaar",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Deejai Backpackers",
+                "budget": "₹1,500–₹2,500/night"
+              },
+              {
+                "name": "Bodhi Serene Hotel",
+                "budget": "₹3,000–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Huen Phen Restaurant",
+              "Chang Phuak Gate Food Stalls",
+              "Tha Phae Gate Sunday Walking Street"
+            ]
+          },
+          {
+            "theme": "Doi Suthep & Ethical Elephant Day",
+            "activities": [
+              {
+                "name": "Wat Phra That Doi Suthep",
+                "cost": "₹125",
+                "tip": "Add ₹250–₹375 for a shared songthaew round trip."
+              },
+              {
+                "name": "Elephant Nature Park full-day visit",
+                "cost": "₹6,250",
+                "tip": "Choose no-riding ethical visits only."
+              },
+              {
+                "name": "Doi Suthep-Doi Pui National Park extension",
+                "cost": "₹500"
+              },
+              {
+                "name": "Bua Tong Sticky Waterfalls",
+                "cost": "Free",
+                "tip": "Good swap-in if you skip the national park add-on."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Deejai Backpackers",
+                "budget": "₹1,500–₹2,500/night"
+              },
+              {
+                "name": "Bodhi Serene Hotel",
+                "budget": "₹3,000–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Khao Soi Khun Yai",
+              "Elephant Nature Park lunch",
+              "Nimmanhaemin Road cafes"
+            ]
+          },
+          {
+            "theme": "Cooking Class, Crafts & Massage",
+            "activities": [
+              {
+                "name": "Thai cooking class with market visit",
+                "cost": "₹2,500–₹3,750"
+              },
+              {
+                "name": "Bo Sang Umbrella Village",
+                "cost": "Free"
+              },
+              {
+                "name": "San Kamphaeng Hot Springs",
+                "cost": "₹250–₹500"
+              },
+              {
+                "name": "Wualai Road Silver Street night market",
+                "cost": "Free"
+              },
+              {
+                "name": "Traditional Thai massage",
+                "cost": "₹500–₹750"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Deejai Backpackers",
+                "budget": "₹1,500–₹2,500/night"
+              },
+              {
+                "name": "Bodhi Serene Hotel",
+                "budget": "₹3,000–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Dash! Restaurant",
+              "Chiang Mai Gate Food Market",
+              "Ristr8to Coffee Lab"
+            ]
+          }
+        ]
+      },
+      "Pai": {
+        "name": "Pai",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "The Chiang Mai road has 700+ bends, so carry motion-sickness tablets if needed.",
+        "days": [
+          {
+            "theme": "Canyon Views, Hot Springs & Walking Street",
+            "activities": [
+              {
+                "name": "Pai Canyon",
+                "cost": "Free",
+                "tip": "Sunset is the classic time slot, but start before dark for the ridgeline walk."
+              },
+              {
+                "name": "Tha Pai Hot Spring",
+                "cost": "₹500"
+              },
+              {
+                "name": "Wat Phra That Mae Yen (White Buddha)",
+                "cost": "Free"
+              },
+              {
+                "name": "Pai Bamboo Bridge",
+                "cost": "₹75–₹125"
+              },
+              {
+                "name": "Pai Walking Street night market",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pai Village Boutique Resort",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Reverie Siam Resort",
+                "budget": "₹7,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Na’s Kitchen",
+              "The Witching Well",
+              "Pai Walking Street stalls"
+            ]
+          },
+          {
+            "theme": "Sunrise Viewpoints & Laid-Back Valley Loop",
+            "activities": [
+              {
+                "name": "Yun Lai Viewpoint sunrise",
+                "cost": "₹50–₹75"
+              },
+              {
+                "name": "Mo Paeng Waterfall",
+                "cost": "₹125"
+              },
+              {
+                "name": "Land Split",
+                "cost": "Free",
+                "tip": "Most visitors leave a small donation for snacks and juice."
+              },
+              {
+                "name": "Pam Bok Waterfall",
+                "cost": "₹125"
+              },
+              {
+                "name": "Scooter loop through rice fields and cafes",
+                "cost": "₹375–₹750",
+                "tip": "Only ride if you are comfortable on mountain roads."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pai Village Boutique Resort",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Reverie Siam Resort",
+                "budget": "₹7,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Om Garden Cafe",
+              "Earth Tone",
+              "Pen’s Kitchen"
+            ]
+          }
+        ]
+      },
+      "Phuket": {
+        "name": "Phuket",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Phuket as your Andaman base for both heritage walks and island-hopping tours.",
+        "days": [
+          {
+            "theme": "Old Town, Big Buddha & Patong Nightlife",
+            "activities": [
+              {
+                "name": "Phuket Old Town heritage walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Big Buddha",
+                "cost": "Free",
+                "tip": "Carry small cash if you want to leave a donation."
+              },
+              {
+                "name": "Wat Chalong",
+                "cost": "Free"
+              },
+              {
+                "name": "Patong Beach",
+                "cost": "Free"
+              },
+              {
+                "name": "Bangla Road evening walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibis Phuket Kata",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Merlin Beach Resort Phuket",
+                "budget": "₹7,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Suay Restaurant",
+              "Kan Eang @ Pier",
+              "Baan Rim Pa"
+            ]
+          },
+          {
+            "theme": "James Bond Island & Phang Nga Bay",
+            "activities": [
+              {
+                "name": "Phang Nga Bay + James Bond Island day tour",
+                "cost": "₹3,750–₹6,250"
+              },
+              {
+                "name": "Ko Panyi floating village stop",
+                "cost": "Included",
+                "tip": "Most full-day tours include lunch here."
+              },
+              {
+                "name": "Sea kayaking through caves and mangroves",
+                "cost": "₹1,250–₹2,000"
+              },
+              {
+                "name": "Karon Viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Muay Thai show in Patong",
+                "cost": "₹2,500–₹3,750"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibis Phuket Kata",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Merlin Beach Resort Phuket",
+                "budget": "₹7,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Ko Panyi floating village lunch",
+              "Kata Mama’s Restaurant",
+              "Phuket Town Night Market"
+            ]
+          }
+        ]
+      },
+      "Koh Samui": {
+        "name": "Koh Samui",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 4,
+        "note": "Leave some flexibility here because ferry and boat trips change with Gulf weather.",
+        "days": [
+          {
+            "theme": "Temple Circuit, Beaches & Fisherman’s Village",
+            "activities": [
+              {
+                "name": "Big Buddha Temple",
+                "cost": "Free"
+              },
+              {
+                "name": "Wat Plai Laem",
+                "cost": "Free"
+              },
+              {
+                "name": "Chaweng Beach swim and cafe break",
+                "cost": "Free"
+              },
+              {
+                "name": "Fisherman’s Village evening walk",
+                "cost": "Free",
+                "tip": "Friday market nights are the liveliest."
+              },
+              {
+                "name": "Thai massage by the beach",
+                "cost": "₹500–₹750"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lub d Koh Samui Chaweng Beach",
+                "budget": "₹3,500–₹6,000/night"
+              },
+              {
+                "name": "Casa De Mar",
+                "budget": "₹6,500–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Coco Tam’s",
+              "The Jungle Club",
+              "Fisherman’s Village night market"
+            ]
+          },
+          {
+            "theme": "Marine Park, Waterfalls & Samui Viewpoints",
+            "activities": [
+              {
+                "name": "Ang Thong Marine Park day trip",
+                "cost": "₹3,500–₹5,500",
+                "tip": "Book a speedboat only if seas are calm."
+              },
+              {
+                "name": "Na Muang Waterfalls",
+                "cost": "Free"
+              },
+              {
+                "name": "Hin Ta & Hin Yai Rocks",
+                "cost": "Free"
+              },
+              {
+                "name": "Secret Buddha Garden",
+                "cost": "₹250–₹500"
+              },
+              {
+                "name": "Sunset at Lad Koh Viewpoint",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lub d Koh Samui Chaweng Beach",
+                "budget": "₹3,500–₹6,000/night"
+              },
+              {
+                "name": "Casa De Mar",
+                "budget": "₹6,500–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Sabeinglae Restaurant",
+              "Tree Tops Sky Dining",
+              "Coco Tam’s"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bangkok",
+        "to": "Ayutthaya",
+        "method": "Train",
+        "cost": "₹125–₹375"
+      },
+      {
+        "from": "Ayutthaya",
+        "to": "Chiang Mai",
+        "method": "Overnight sleeper train",
+        "cost": "₹1,900–₹2,600"
+      },
+      {
+        "from": "Chiang Mai",
+        "to": "Pai",
+        "method": "Minivan",
+        "cost": "₹375–₹625"
+      },
+      {
+        "from": "Pai",
+        "to": "Phuket",
+        "method": "Minivan to Chiang Mai + flight",
+        "cost": "₹4,500–₹9,500"
+      },
+      {
+        "from": "Phuket",
+        "to": "Koh Samui",
+        "method": "Flight",
+        "cost": "₹4,500–₹9,000"
+      },
+      {
+        "from": "Koh Samui",
+        "to": "Bangkok",
+        "method": "Flight",
+        "cost": "₹5,000–₹10,000"
+      }
+    ],
+    "extras": [
+      "Complete the Thai Digital Arrival Card (TDAC) online at least 3 days before arrival.",
+      "November to February is the easiest weather window for this route.",
+      "Chatuchak is best on weekends; shift Bangkok days if that market matters to you.",
+      "Avoid elephant riding venues and stick to ethical sanctuaries only.",
+      "Bargain in markets, but not in malls or fixed-price restaurants.",
+      "Carry temple-appropriate clothing for Bangkok, Ayutthaya and Chiang Mai."
+    ],
+    "cityImages": {
+      "Bangkok": [
+        "Grand Palace Bangkok",
+        "Wat Arun Bangkok",
+        "Chatuchak Weekend Market Bangkok"
+      ],
+      "Ayutthaya": [
+        "Wat Mahathat Ayutthaya",
+        "Wat Chaiwatthanaram Ayutthaya",
+        "Ayutthaya Historical Park"
+      ],
+      "Chiang Mai": [
+        "Doi Suthep Chiang Mai",
+        "Wat Phra Singh Chiang Mai",
+        "Elephant Nature Park Chiang Mai"
+      ],
+      "Pai": [
+        "Pai Canyon Thailand",
+        "Yun Lai Viewpoint Pai",
+        "Tha Pai Hot Spring"
+      ],
+      "Phuket": [
+        "Patong Beach Phuket Thailand",
+        "Phang Nga Bay James Bond Island",
+        "Phuket Old Town Sino-Portuguese"
+      ],
+      "Koh Samui": [
+        "Big Buddha Temple Koh Samui",
+        "Na Muang Waterfall Koh Samui",
+        "Fisherman's Village Bophut"
+      ]
+    }
+  }
+}

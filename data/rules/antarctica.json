@@ -1,0 +1,65 @@
+{
+  "name": "Antarctica",
+  "seed": true,
+  "lat": -74,
+  "lng": -25,
+  "region": "Unknown",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹8L–₹15L",
+    "couple": "₹15L–₹28L",
+    "family4": "₹30L–₹55L"
+  },
+  "experiences": [
+    "Penguin Colonies",
+    "Iceberg Scenery",
+    "Polar Night",
+    "Zodiac Expeditions",
+    "Drake Passage"
+  ],
+  "avoid": [
+    "Outside Nov-Mar — ice-locked and inaccessible"
+  ],
+  "combo": [
+    "Argentina"
+  ],
+  "landmark": "Antarctica",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Depart from Ushuaia, Argentina (world's southernmost city). Plan Argentina trip first, then continue south. Expedition cruise season: Nov–Mar only.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Antarctic Peninsula",
+      "lat": -64.2347,
+      "lng": -57.6658,
+      "notes": "Best access point — Zodiac landings with penguins and leopard seals"
+    },
+    {
+      "name": "South Georgia",
+      "lat": -54.4295,
+      "lng": -36.584,
+      "notes": "King penguin colonies by the millions and Shackleton's grave at Grytviken"
+    },
+    {
+      "name": "McMurdo Station",
+      "lat": -77.8419,
+      "lng": 166.6863,
+      "notes": "Main research hub with Dry Valleys and Scott's Discovery Hut nearby"
+    }
+  ],
+  "itinerary": null
+}

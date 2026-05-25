@@ -1,0 +1,72 @@
+{
+  "name": "Bhutan",
+  "seed": true,
+  "lat": 27.4728,
+  "lng": 89.6393,
+  "region": "Asia",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹80K–₹1.5L",
+    "couple": "₹1.5L–₹2.5L",
+    "family4": "₹3L–₹5L"
+  },
+  "experiences": [
+    "Tiger's Nest Monastery",
+    "Himalayas",
+    "Culture",
+    "Dzongs",
+    "Archery"
+  ],
+  "avoid": [
+    "Monsoon season",
+    "Note: Sustainable Development Fee of ~$100/day applies"
+  ],
+  "combo": [
+    "Nepal",
+    "India"
+  ],
+  "landmark": "Tiger's Nest",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Thimphu",
+      "lat": 27.4712,
+      "lng": 89.6339,
+      "notes": "Tashichho Dzong, Memorial Chorten and weekend vegetable market"
+    },
+    {
+      "name": "Paro",
+      "lat": 27.4287,
+      "lng": 89.4164,
+      "notes": "Tiger's Nest Monastery cliff hike, Rinpung Dzong and apple orchards"
+    },
+    {
+      "name": "Punakha",
+      "lat": 27.6101,
+      "lng": 89.8731,
+      "notes": "Punakha Dzong at the confluence of two rivers and suspension bridge"
+    },
+    {
+      "name": "Bumthang",
+      "lat": 27.5496,
+      "lng": 90.7289,
+      "notes": "Spiritual heartland with Jakar Dzong, ancient temples and yak cheese"
+    }
+  ],
+  "itinerary": null
+}

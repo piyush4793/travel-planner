@@ -1,0 +1,676 @@
+{
+  "name": "Japan",
+  "seed": true,
+  "lat": 36.2048,
+  "lng": 138.2529,
+  "region": "Asia",
+  "bestMonths": [
+    "March",
+    "April",
+    "November"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.5L–₹3L",
+    "couple": "₹2.5L–₹5L",
+    "family4": "₹5L–₹10L"
+  },
+  "experiences": [
+    "Cherry Blossoms",
+    "Food",
+    "Culture",
+    "Temples",
+    "Anime",
+    "Bullet Train"
+  ],
+  "avoid": [
+    "Golden Week (late April–early May)",
+    "Obon festival crowds (mid-August)"
+  ],
+  "combo": [
+    "South Korea",
+    "China"
+  ],
+  "landmark": "Mount Fuji",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Tokyo",
+      "lat": 35.6762,
+      "lng": 139.6503,
+      "notes": "Shibuya crossing, Asakusa temple, Akihabara and world-class ramen"
+    },
+    {
+      "name": "Kyoto",
+      "lat": 35.0116,
+      "lng": 135.7681,
+      "notes": "Arashiyama bamboo grove, Fushimi Inari, Gion geisha district"
+    },
+    {
+      "name": "Osaka",
+      "lat": 34.6937,
+      "lng": 135.5023,
+      "notes": "Dotonbori food street, Osaka Castle, takoyaki capital of Japan"
+    },
+    {
+      "name": "Hiroshima",
+      "lat": 34.3853,
+      "lng": 132.4553,
+      "notes": "Peace Memorial Park, A-Bomb Dome and Miyajima floating torii gate"
+    },
+    {
+      "name": "Nara",
+      "lat": 34.6851,
+      "lng": 135.8048,
+      "notes": "Free-roaming deer and the giant Todai-ji Buddha"
+    },
+    {
+      "name": "Hakone",
+      "lat": 35.2321,
+      "lng": 139.1069,
+      "notes": "Volcanic hot springs and clear views of Mt Fuji across the lake"
+    }
+  ],
+  "itinerary": {
+    "sim": "IIJmio Tourist SIM — about ₹1,232 for 15 days with 15GB; Airalo Japan eSIM is the easiest backup for eSIM-compatible phones.",
+    "apps": [
+      "Google Maps",
+      "Japan Official Travel App (JNTO)",
+      "Suica",
+      "HyperDia",
+      "Google Translate",
+      "Tabelog",
+      "Klook"
+    ],
+    "cityOrder": [
+      "Tokyo",
+      "Hakone",
+      "Kyoto",
+      "Osaka",
+      "Nara",
+      "Hiroshima"
+    ],
+    "cities": {
+      "Tokyo": {
+        "name": "Tokyo",
+        "minDays": 2,
+        "recDays": 4,
+        "maxDays": 5,
+        "note": "Tokyo comfortably fills four full days; add a fifth for Disney, Nikko, or a slower shopping day.",
+        "days": [
+          {
+            "theme": "Arrival & Neon Shinjuku",
+            "activities": [
+              {
+                "name": "Narita Express / airport transfer into central Tokyo",
+                "cost": "₹1,719 pp"
+              },
+              {
+                "name": "Tokyo Metropolitan Government Building — free skyline views"
+              },
+              {
+                "name": "Kabukicho evening walk and Golden Gai bar lanes"
+              },
+              {
+                "name": "Omoide Yokocho for lantern-lit yakitori alleys"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Gracery Shinjuku",
+                "budget": "₹10,000–₹13,000/night"
+              },
+              {
+                "name": "Dormy Inn Shinjuku",
+                "budget": "₹6,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "T's TanTan",
+              "Fuunji",
+              "Nabezo Shinjuku Sanchome"
+            ]
+          },
+          {
+            "theme": "Old Tokyo — Temples, Museums & Akihabara",
+            "activities": [
+              {
+                "name": "Senso-ji Temple and Nakamise Shopping Street"
+              },
+              {
+                "name": "Tokyo Skytree Tembo Deck",
+                "cost": "₹1,176 pp"
+              },
+              {
+                "name": "Ueno Park and Tokyo National Museum",
+                "cost": "₹560 pp"
+              },
+              {
+                "name": "Akihabara Electric Town evening walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kaminarimon Ryokan",
+                "budget": "₹12,500–₹15,500/night"
+              },
+              {
+                "name": "Remm Akihabara",
+                "budget": "₹7,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Pelican Bakery",
+              "Asakusa Imahan",
+              "Ain Soph Ripple"
+            ]
+          },
+          {
+            "theme": "Harajuku, Meiji Shrine & Shibuya",
+            "activities": [
+              {
+                "name": "Meiji Jingu Shrine and forested approach"
+              },
+              {
+                "name": "Harajuku Takeshita Street fashion walk"
+              },
+              {
+                "name": "Shibuya Crossing and Shibuya Sky",
+                "cost": "₹1,120 pp"
+              },
+              {
+                "name": "Omotesando architecture and flagship stores"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Millennials Shibuya",
+                "budget": "₹5,000–₹6,500/night"
+              },
+              {
+                "name": "Cerulean Tower Tokyu Hotel",
+                "budget": "₹20,000–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Eggs \"n Things Harajuku",
+              "Gonpachi Nishi-Azabu",
+              "Ichiran Ramen"
+            ]
+          },
+          {
+            "theme": "Digital Art, Markets & Tokyo Bay",
+            "activities": [
+              {
+                "name": "teamLab Planets Tokyo",
+                "cost": "₹1,792 pp"
+              },
+              {
+                "name": "Odaiba waterfront, Unicorn Gundam and Rainbow Bridge views"
+              },
+              {
+                "name": "Tsukiji Outer Market breakfast crawl"
+              },
+              {
+                "name": "Ginza evening stroll for flagship stores and dessert stops"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Gracery Shinjuku",
+                "budget": "₹10,000–₹13,000/night"
+              },
+              {
+                "name": "Dormy Inn Shinjuku",
+                "budget": "₹6,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Tsukiji Itadori Bekkan",
+              "Sushi Zanmai",
+              "Tofu-ya Ukai"
+            ]
+          }
+        ]
+      },
+      "Hakone": {
+        "name": "Hakone",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Best as a scenic onsen stop between Tokyo and Kyoto; stay overnight if you want sunrise Fuji views.",
+        "days": [
+          {
+            "theme": "Mt. Fuji Views, Ropeways & Onsen",
+            "activities": [
+              {
+                "name": "Hakone Tozan Railway up to Gora"
+              },
+              {
+                "name": "Hakone Ropeway via Owakudani volcanic valley"
+              },
+              {
+                "name": "Lake Ashi Pirate Ship Cruise"
+              },
+              {
+                "name": "Hakone Shrine torii at Lake Ashi"
+              },
+              {
+                "name": "Open-air onsen soak at your ryokan or Tenzan",
+                "cost": "₹728 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hakone Kowakien Ten-yu",
+                "budget": "₹22,000–₹27,000/night"
+              },
+              {
+                "name": "Fuji-Hakone Guest House",
+                "budget": "₹4,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Hyatt Regency Hakone Dining Room",
+              "Kappa Tengoku",
+              "Itoh Dining by NOBU"
+            ]
+          }
+        ]
+      },
+      "Kyoto": {
+        "name": "Kyoto",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days covers the classic east, west, and central Kyoto circuit; add another if you want tea ceremonies or Uji.",
+        "days": [
+          {
+            "theme": "Arrival, Nishiki Market & Gion Evenings",
+            "activities": [
+              {
+                "name": "Shinkansen from Odawara to Kyoto",
+                "cost": "₹7,700 pp"
+              },
+              {
+                "name": "Nishiki Market tasting walk"
+              },
+              {
+                "name": "Gion and Hanamikoji Street at dusk"
+              },
+              {
+                "name": "Pontocho Alley for lantern-lit dining by the Kamo River"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Thousand Kyoto",
+                "budget": "₹17,000–₹20,000/night"
+              },
+              {
+                "name": "Dormy Inn Premium Kyoto Ekimae",
+                "budget": "₹7,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Aisani Coffee Roaster",
+              "Misoka-An Kawamichiya",
+              "Pontocho Kappa Zushi"
+            ]
+          },
+          {
+            "theme": "Fushimi Inari & Eastern Kyoto Classics",
+            "activities": [
+              {
+                "name": "Fushimi Inari Shrine sunrise walk through thousands of torii gates"
+              },
+              {
+                "name": "Kiyomizudera Temple",
+                "cost": "₹280 pp"
+              },
+              {
+                "name": "Higashiyama lanes via Sannenzaka and Ninenzaka"
+              },
+              {
+                "name": "Kodaiji Temple evening illumination",
+                "cost": "₹336 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Thousand Kyoto",
+                "budget": "₹17,000–₹20,000/night"
+              },
+              {
+                "name": "Dormy Inn Premium Kyoto Ekimae",
+                "budget": "₹7,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Kasagiya",
+              "Nishiki Warai",
+              "Gion Tanto"
+            ]
+          },
+          {
+            "theme": "Arashiyama, Golden Pavilion & Zen Gardens",
+            "activities": [
+              {
+                "name": "Arashiyama Bamboo Grove early walk"
+              },
+              {
+                "name": "Tenryuji Temple Garden",
+                "cost": "₹280 pp"
+              },
+              {
+                "name": "Kinkakuji (Golden Pavilion)",
+                "cost": "₹280 pp"
+              },
+              {
+                "name": "Ryoanji Temple rock garden",
+                "cost": "₹336 pp"
+              },
+              {
+                "name": "Nijo Castle",
+                "cost": "₹448 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Thousand Kyoto",
+                "budget": "₹17,000–₹20,000/night"
+              },
+              {
+                "name": "Dormy Inn Premium Kyoto Ekimae",
+                "budget": "₹7,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Shigetsu",
+              "Gion Nanba",
+              "Inoda Coffee Honten"
+            ]
+          }
+        ]
+      },
+      "Osaka": {
+        "name": "Osaka",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Osaka is best for food and nightlife; many travelers keep it as the base for a Nara day trip.",
+        "days": [
+          {
+            "theme": "Castle, Markets & Dotonbori Neon",
+            "activities": [
+              {
+                "name": "Osaka Castle museum and donjon",
+                "cost": "₹336 pp"
+              },
+              {
+                "name": "Kuromon Ichiba Market snack crawl"
+              },
+              {
+                "name": "Dotonbori canal walk and Glico sign"
+              },
+              {
+                "name": "Shinsekai and Tsutenkaku Tower",
+                "cost": "₹560 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cross Hotel Osaka",
+                "budget": "₹7,500–₹9,500/night"
+              },
+              {
+                "name": "APA Hotel Namba Shinsaibashi",
+                "budget": "₹5,000–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Kuromon Sanpei",
+              "Ganko Dotonbori",
+              "Ichiban Horumon Dotonbori"
+            ]
+          },
+          {
+            "theme": "Skyline Views & Everyday Osaka",
+            "activities": [
+              {
+                "name": "Umeda Sky Building Floating Garden",
+                "cost": "₹840 pp"
+              },
+              {
+                "name": "Sumiyoshi Taisha Grand Shrine"
+              },
+              {
+                "name": "Shinsaibashi Shopping Arcade"
+              },
+              {
+                "name": "Don Quijote Namba late-night shopping"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cross Hotel Osaka",
+                "budget": "₹7,500–₹9,500/night"
+              },
+              {
+                "name": "APA Hotel Namba Shinsaibashi",
+                "budget": "₹5,000–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Coffee Salon Shochikuen",
+              "Ajinoya",
+              "Mizuno"
+            ]
+          }
+        ]
+      },
+      "Nara": {
+        "name": "Nara",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Usually done as a full day trip from Osaka; if you stay overnight, it is one of Japan's most atmospheric heritage cities.",
+        "days": [
+          {
+            "theme": "Sacred Deer & Ancient Capital Highlights",
+            "activities": [
+              {
+                "name": "Nara Park and deer feeding with shika senbei"
+              },
+              {
+                "name": "Todaiji Temple Great Buddha Hall",
+                "cost": "₹336 pp"
+              },
+              {
+                "name": "Kasuga Taisha shrine approach and lantern halls",
+                "cost": "₹280 pp"
+              },
+              {
+                "name": "Isuien Garden",
+                "cost": "₹672 pp"
+              },
+              {
+                "name": "Naramachi merchant quarter walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nara Hotel",
+                "budget": "₹11,000–₹15,000/night"
+              },
+              {
+                "name": "Onyado Nono Nara Natural Hot Spring",
+                "budget": "₹7,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Kasugano",
+              "Harishin",
+              "Nakatanidou"
+            ]
+          }
+        ]
+      },
+      "Hiroshima": {
+        "name": "Hiroshima",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Two days lets you pair Hiroshima's peace memorial sites with a proper Miyajima island visit.",
+        "days": [
+          {
+            "theme": "Peace Memorials & City History",
+            "activities": [
+              {
+                "name": "Hiroshima Peace Memorial Park and A-Bomb Dome"
+              },
+              {
+                "name": "Hiroshima Peace Memorial Museum",
+                "cost": "₹112 pp"
+              },
+              {
+                "name": "Hiroshima Castle",
+                "cost": "₹207 pp"
+              },
+              {
+                "name": "Okonomimura for Hiroshima-style okonomiyaki"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "HOTEL CLA-SS HIROSHIMA TOKAICHI",
+                "budget": "₹9,000–₹11,500/night"
+              },
+              {
+                "name": "LAZULI Hiroshima Hotel and Lounge",
+                "budget": "₹4,000–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Okonomimura Hassho",
+              "Nagataya",
+              "Kakifuku"
+            ]
+          },
+          {
+            "theme": "Miyajima Island & Floating Torii",
+            "activities": [
+              {
+                "name": "JR ferry to Miyajima and Itsukushima Shrine",
+                "cost": "₹168 pp"
+              },
+              {
+                "name": "Daisho-in Temple"
+              },
+              {
+                "name": "Mount Misen ropeway and summit trail",
+                "cost": "₹1,120 pp"
+              },
+              {
+                "name": "Miyajima Omotesando street for momiji-manju and sea views"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Itsumoya Ryokan",
+                "budget": "₹8,000–₹10,000/night"
+              },
+              {
+                "name": "Oyado Tsukiusagi",
+                "budget": "₹6,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Kakiya",
+              "Momijido Main Store",
+              "Kishibe-ya"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Tokyo",
+        "to": "Hakone",
+        "method": "JR Tokaido Shinkansen to Odawara + Hakone Tozan Railway (1h25m)",
+        "cost": "₹851 pp"
+      },
+      {
+        "from": "Hakone",
+        "to": "Kyoto",
+        "method": "JR Hikari Shinkansen from Odawara (1h45m)",
+        "cost": "₹7,700 pp"
+      },
+      {
+        "from": "Kyoto",
+        "to": "Osaka",
+        "method": "JR Special Rapid from Kyoto Station (28 min)",
+        "cost": "₹319 pp"
+      },
+      {
+        "from": "Osaka",
+        "to": "Nara",
+        "method": "JR Yamatoji Rapid day trip from Osaka (about 50 min)",
+        "cost": "₹560 pp round trip"
+      },
+      {
+        "from": "Nara",
+        "to": "Hiroshima",
+        "method": "JR to Shin-Osaka + Sanyo Shinkansen to Hiroshima (about 2.5 hr)",
+        "cost": "₹6,650 pp"
+      }
+    ],
+    "extras": [
+      "14-day JR Pass now costs about ₹44,800; it is only worth it if you use the long-distance Tokyo–Hakone–Kyoto–Hiroshima legs.",
+      "Hakone Free Pass is about ₹3,416 for 2 days and covers the ropeway, pirate ship, buses and mountain railway.",
+      "Load a Suica or Pasmo card with ₹560–₹1,120 for metros, buses and convenience-store purchases.",
+      "Carry cash for temples, local eateries and rural transit because card acceptance is still patchy.",
+      "Vegetarians should pre-save T's TanTan, Ain Soph Ripple, Shigetsu and Harishin before landing."
+    ],
+    "cityImages": {
+      "Tokyo": [
+        "Shibuya crossing Tokyo aerial night",
+        "Senso-ji Temple Asakusa Tokyo",
+        "Tokyo Skytree skyline"
+      ],
+      "Hakone": [
+        "Lake Ashi Hakone Mount Fuji pirate ship",
+        "Owakudani volcanic valley Hakone ropeway",
+        "Hakone Shrine torii Lake Ashi"
+      ],
+      "Kyoto": [
+        "Fushimi Inari torii gates Kyoto",
+        "Kinkakuji Golden Pavilion Kyoto",
+        "Arashiyama bamboo grove Kyoto"
+      ],
+      "Osaka": [
+        "Dotonbori canal neon night Osaka",
+        "Osaka Castle spring view",
+        "Umeda Sky Building observatory Osaka"
+      ],
+      "Nara": [
+        "Todaiji Temple Great Buddha Nara",
+        "Nara Park deer",
+        "Kasuga Taisha lanterns Nara"
+      ],
+      "Hiroshima": [
+        "Hiroshima A-Bomb Dome UNESCO",
+        "Hiroshima Peace Memorial Park",
+        "Itsukushima Shrine floating torii Miyajima"
+      ]
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "name": "Argentina",
+  "seed": true,
+  "lat": -38.4161,
+  "lng": -63.6167,
+  "region": "Americas",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "March"
+  ],
+  "worstMonths": [
+    "June",
+    "July"
+  ],
+  "budget": {
+    "solo": "₹1.5L–₹2.5L",
+    "couple": "₹2.5L–₹4.5L",
+    "family4": "₹5L–₹9L"
+  },
+  "experiences": [
+    "Patagonia",
+    "Buenos Aires",
+    "Iguazu Falls",
+    "Tango",
+    "Wine (Mendoza)"
+  ],
+  "avoid": [
+    "Argentine summer (Dec-Feb) is hot in Buenos Aires"
+  ],
+  "combo": [
+    "Antarctica",
+    "Chile"
+  ],
+  "landmark": "Perito Moreno Glacier",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Buenos Aires",
+      "lat": -34.6037,
+      "lng": -58.3816,
+      "notes": "Tango in La Boca, asado steaks, Palermo parks and Casa Rosada pink palace"
+    },
+    {
+      "name": "Patagonia",
+      "lat": -49.3167,
+      "lng": -72.3167,
+      "notes": "Torres del Paine trekking, Perito Moreno glacier walk and end-of-world drama"
+    },
+    {
+      "name": "Mendoza",
+      "lat": -32.8895,
+      "lng": -68.8458,
+      "notes": "Malbec wine country at the foot of the Andes with bodega tours"
+    },
+    {
+      "name": "Iguazu Falls",
+      "lat": -25.6953,
+      "lng": -54.4367,
+      "notes": "World's largest waterfall system — 275 falls wider than Niagara"
+    },
+    {
+      "name": "Bariloche",
+      "lat": -41.1335,
+      "lng": -71.3103,
+      "notes": "Patagonian lake district with Swiss-style chocolate shops and ski slopes"
+    },
+    {
+      "name": "Salta",
+      "lat": -24.7859,
+      "lng": -65.4117,
+      "notes": "Colonial churches, Cachi and Salinas Grandes salt flat day trips"
+    }
+  ],
+  "itinerary": null
+}

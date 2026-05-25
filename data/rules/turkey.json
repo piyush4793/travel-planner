@@ -1,0 +1,82 @@
+{
+  "name": "Turkey",
+  "seed": true,
+  "lat": 38.9637,
+  "lng": 35.2433,
+  "region": "Middle East",
+  "bestMonths": [
+    "April",
+    "May",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹80K–₹1.5L",
+    "couple": "₹1.5L–₹2.5L",
+    "family4": "₹3L–₹5L"
+  },
+  "experiences": [
+    "Cappadocia",
+    "Istanbul",
+    "Beaches",
+    "History",
+    "Hammams",
+    "Bazaars"
+  ],
+  "avoid": [
+    "Peak summer heat in interior"
+  ],
+  "combo": [
+    "Greece",
+    "Georgia"
+  ],
+  "landmark": "Hagia Sophia",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Istanbul (IST) — Turkish Airlines hub with cheapest Europe connections from India. Free Turkish Airlines hotel on long layovers. Excellent for India ↔ Europe stopovers.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Istanbul",
+      "lat": 41.0082,
+      "lng": 28.9784,
+      "notes": "Hagia Sophia, Grand Bazaar, Bosphorus cruise and spice market"
+    },
+    {
+      "name": "Cappadocia",
+      "lat": 38.6431,
+      "lng": 34.8289,
+      "notes": "Hot air balloon at sunrise over fairy chimneys and cave hotel stay"
+    },
+    {
+      "name": "Pamukkale",
+      "lat": 37.9333,
+      "lng": 29.1167,
+      "notes": "White travertine calcium terraces and ancient Hierapolis spa city"
+    },
+    {
+      "name": "Ephesus",
+      "lat": 37.9395,
+      "lng": 27.3421,
+      "notes": "Remarkably preserved 2000-year-old Roman city with Library of Celsus"
+    },
+    {
+      "name": "Bodrum",
+      "lat": 37.0342,
+      "lng": 27.4305,
+      "notes": "Crusader castle, Blue Voyage gulet charters and beach clubs"
+    },
+    {
+      "name": "Antalya",
+      "lat": 36.8969,
+      "lng": 30.7133,
+      "notes": "Turkish Riviera old harbour, Roman Hadrian's Gate and waterfall coast"
+    }
+  ],
+  "itinerary": null
+}

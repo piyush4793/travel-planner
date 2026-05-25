@@ -69,7 +69,7 @@ Custom trip planner with a days slider — set your duration and the engine buil
 - **Smart city selection** — when days are fewer than total cities, the algorithm prioritizes by importance (recDays) and drops lowest-priority cities first
 - **Optional city override** — manually pick which cities to include
 
-**Rule-based countries** (Vietnam, Norway) have per-day itineraries with real costs, hotel picks, and city-by-city routing. Norway covers 11 cities including Lofoten, Gudvangen Viking village, Trollstigen, and Loen.
+**Rule-based data** now includes France, Italy, Spain, and Japan in the lazy-loaded country JSON set. Italy covers a Rome → Naples → Amalfi → Florence → Cinque Terre → Venice → Milan journey with INR-priced attractions, hotel picks, transport legs, and meal recommendations; France keeps its Paris → Lyon → Nice route with Paris-based Versailles / Mont Saint-Michel day trips; Spain spans Barcelona, Valencia, Madrid, Seville, Granada, and San Sebastian with real hotels, restaurants, and rail/flight connections; and Japan now covers Tokyo, Hakone, Kyoto, Osaka, Nara, and Hiroshima with JR-friendly transport legs, hotel picks, real restaurant suggestions, and a Miyajima add-on day. The itinerary planner also includes detailed rule coverage for Vietnam, Norway, and Thailand. Thailand covers Bangkok, Ayutthaya, Chiang Mai, Pai, Phuket, and Koh Samui, while Norway spans 11 cities including Lofoten, Gudvangen Viking village, Trollstigen, and Loen.
 
 **Two planning modes:**
 | Mode | Trigger | Description |
@@ -164,7 +164,7 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 
 ## Tech Stack
 
-Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre. No routing library, no state management library. Static site — deploy to Netlify/Vercel free tier.
+Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre. No routing library, no state management library. Static site — deploy to Netlify/Vercel free tier. Rule-based itinerary content is stored in lazy-loaded per-country JSON files under `data/rules/`, so research-heavy destination updates can ship without touching core UI logic.
 
 For detailed architecture, code structure, design patterns, and data model, see [DESIGN.md](./DESIGN.md).
 
@@ -191,7 +191,7 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 | 🟢 Short | ⭐⭐⭐ | Cinematic for AI plans | AI | Fuzzy city name matching + AI lat/lng fallback so cinematic works for imported plans |
 | 🟢 Short | ⭐⭐ | Budget currency toggle | UX | Convert ₹ to USD / EUR / AUD |
 | 🟡 Medium | ⭐⭐⭐⭐ | First run experience | UX | Guided onboarding tour highlighting key features (tooltip-based, one-time) |
-| 🟡 Medium | ⭐⭐⭐⭐ | More rule-based countries | Content | Thailand, Japan, New Zealand, Iceland — per-day itineraries with costs |
+| 🟡 Medium | ⭐⭐⭐⭐ | More rule-based countries | Content | New Zealand, Iceland — per-day itineraries with costs |
 | 🟡 Medium | ⭐⭐⭐ | Import parser quality | AI | Better ChatGPT link extraction, React Router stream data, entity cleanup |
 | 🟡 Medium | ⭐⭐⭐ | Data backup — Spreadsheet sync | Export | Google Sheets / CSV export & import of all user data (My List, notes, AI plans) |
 | 🟡 Medium | ⭐⭐⭐ | Multi-country trip builder | Core | String countries into a single trip with total cost/days |
