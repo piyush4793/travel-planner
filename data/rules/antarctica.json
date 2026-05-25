@@ -43,6 +43,29 @@
   "links": [],
   "cities": [
     {
+      "name": "Drake Passage",
+      "lat": -58.0,
+      "lng": -65.0,
+      "bestMonths": [
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "2-day sea crossing between South America and Antarctica"
+    },
+    {
+      "name": "Ushuaia",
+      "lat": -54.8019,
+      "lng": -68.303,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Gateway city in Argentina — departure point for all Antarctic expeditions"
+    },
+    {
       "name": "Antarctic Peninsula",
       "lat": -64.2347,
       "lng": -57.6658,
