@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createPortal } from "react-dom";
 import type { Country } from "../../types";
 import type { TripPlan, DayEntry } from "../../utils/tripPlans";
@@ -72,14 +73,17 @@ export default function ItineraryModal({ plan, country, onClose }: Props) {
               <span className="text-[11px] text-slate-400">per person</span>
             </div>
 
-            {/* City route summary */}
+            {/* City route summary — clickable to jump */}
             {groups.length > 1 && (
               <div className="flex flex-wrap items-center gap-1.5 mt-3">
                 {groups.map((g, i) => (
                   <span key={g.name} className="flex items-center gap-1.5">
-                    <span className="text-[11px] font-semibold text-slate-300 bg-white/10 px-2 py-0.5 rounded-full">
+                    <button
+                      onClick={() => document.getElementById(`city-${g.name}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}
+                      className="text-[11px] font-semibold text-slate-300 bg-white/10 px-2 py-0.5 rounded-full hover:bg-white/20 hover:text-white transition-colors cursor-pointer"
+                    >
                       {g.name}
-                    </span>
+                    </button>
                     {i < groups.length - 1 && g.transport && (
                       <span className="text-sm opacity-60">{TRANSPORT_EMOJI[g.transport.type]}</span>
                     )}
@@ -132,7 +136,7 @@ export default function ItineraryModal({ plan, country, onClose }: Props) {
               )}
 
               {/* City header */}
-              <div className="px-6 pt-5 pb-2 flex items-center gap-3">
+              <div id={`city-${group.name}`} className="px-6 pt-5 pb-2 flex items-center gap-3 scroll-mt-2">
                 <h3 className="text-base font-black text-slate-900">{group.name}</h3>
                 <span className="text-[11px] text-slate-400 font-semibold bg-slate-100 px-2 py-0.5 rounded-full">
                   {group.days.length} day{group.days.length !== 1 ? "s" : ""}
@@ -142,56 +146,7 @@ export default function ItineraryModal({ plan, country, onClose }: Props) {
               {/* Day cards */}
               <div className="px-6 pb-2 space-y-3">
                 {group.days.map((day, di) => (
-                  <div key={di} className="border border-slate-150 rounded-xl overflow-hidden shadow-sm">
-
-                    {/* Day label bar */}
-                    <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border-b border-slate-100">
-                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide flex-1">
-                        {day.label}
-                      </p>
-                      {day.theme && (
-                        <span className="text-[9px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full shrink-0">
-                          {day.theme}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Activities */}
-                    <div className="px-4 py-3">
-                      <ul className="space-y-2">
-                        {day.activities.map((a, ai) => {
-                          // Split activity into name and cost hint
-                          const [main, ...rest] = a.split(" — ");
-                          const detail = rest.join(" — ");
-                          return (
-                            <li key={ai} className="flex gap-2.5 leading-snug">
-                              <span className="text-slate-300 shrink-0 mt-0.5 text-sm">›</span>
-                              <span className="text-sm text-slate-700 flex-1">
-                                {main}
-                                {detail && (
-                                  <span className="text-slate-400 text-xs font-medium ml-1.5">{detail}</span>
-                                )}
-                              </span>
-                            </li>
-                          );
-                        })}
-                      </ul>
-
-                      {/* Hotels */}
-                      {day.hotels && day.hotels.length > 0 && (
-                        <div className="flex flex-wrap gap-1.5 mt-3 pt-2.5 border-t border-slate-100">
-                          {day.hotels.map((h) => (
-                            <span
-                              key={h}
-                              className="text-[10px] text-slate-500 bg-slate-50 border border-slate-200 px-2 py-0.5 rounded-full"
-                            >
-                              🏨 {h}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                  <DayCard key={di} day={day} city={group.name} country={country} />
                 ))}
               </div>
             </div>
@@ -207,5 +162,114 @@ export default function ItineraryModal({ plan, country, onClose }: Props) {
       </div>
     </div>,
     document.body
+  );
+}
+
+/** Parse activity string into name and cost/detail parts */
+function parseActivity(a: string): { name: string; cost?: string; detail?: string } {
+  const costMatch = a.match(/^(.+?)\s*\(([₹$€£][\d,.]+[^)]*)\)\s*$/);
+  if (costMatch) return { name: costMatch[1].trim(), cost: costMatch[2] };
+  const dashIdx = a.indexOf(" — ");
+  if (dashIdx > 0) return { name: a.slice(0, dashIdx), detail: a.slice(dashIdx + 3) };
+  return { name: a };
+}
+
+function searchUrl(query: string, city: string): string {
+  return `https://www.google.com/search?q=${encodeURIComponent(`${query} ${city}`)}`;
+}
+
+function mapsUrl(query: string, city: string): string {
+  return `https://www.google.com/maps/search/${encodeURIComponent(`${query}, ${city}`)}`;
+}
+
+function DayCard({ day, city, country }: { day: DayEntry; city: string; country: Country }) {
+  const [expanded, setExpanded] = useState(true);
+
+  const rule = ITINERARY_RULES[country.name];
+  const cityRule = rule?.cities[city];
+  const ruleDay = day.theme && cityRule
+    ? cityRule.days.find((d) => d.theme === day.theme)
+    : undefined;
+
+  return (
+    <div className="border border-slate-150 rounded-xl overflow-hidden shadow-sm">
+      <button
+        onClick={() => setExpanded((e) => !e)}
+        className="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border-b border-slate-100 w-full text-left hover:bg-slate-100 transition-colors"
+      >
+        <span className={`text-[9px] text-slate-400 transition-transform duration-200 ${expanded ? "rotate-90" : ""}`}>▸</span>
+        <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide flex-1">
+          {day.label}
+        </p>
+        {!expanded && (
+          <span className="text-[9px] text-slate-400 font-medium shrink-0">
+            {day.activities.length} activities
+          </span>
+        )}
+        {day.theme && (
+          <span className="text-[9px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full shrink-0">
+            {day.theme}
+          </span>
+        )}
+      </button>
+
+      <div className={`grid transition-all duration-200 ease-out ${expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+        <div className="overflow-hidden">
+          <div className="px-4 py-3">
+            <ul className="space-y-2">
+              {day.activities.map((a, ai) => {
+                const parsed = parseActivity(a);
+                return (
+                  <li key={ai} className="flex gap-2.5 leading-snug group">
+                    <span className="text-slate-300 shrink-0 mt-0.5 text-sm">›</span>
+                    <span className="text-sm text-slate-700 flex-1">
+                      {parsed.name}
+                      {parsed.cost && (
+                        <span className="text-emerald-600 text-xs font-semibold ml-1.5">({parsed.cost})</span>
+                      )}
+                      {parsed.detail && (
+                        <span className="text-slate-400 text-xs font-medium ml-1.5">{parsed.detail}</span>
+                      )}
+                    </span>
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 shrink-0">
+                      <a href={mapsUrl(parsed.name, city)} target="_blank" rel="noopener noreferrer"
+                        className="text-[9px] text-blue-400 hover:text-blue-600 px-1" title="View on Google Maps">📍</a>
+                      <a href={searchUrl(parsed.name, city)} target="_blank" rel="noopener noreferrer"
+                        className="text-[9px] text-blue-400 hover:text-blue-600 px-1" title="Search for booking/info">🔍</a>
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+
+            {ruleDay && ruleDay.meals && ruleDay.meals.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mt-3 pt-2.5 border-t border-slate-100">
+                <span className="text-[10px] text-slate-400 font-bold uppercase mr-1">🍽 Eat:</span>
+                {ruleDay.meals.map((m) => (
+                  <a key={m} href={mapsUrl(m, city)} target="_blank" rel="noopener noreferrer"
+                    className="text-[10px] text-orange-600 bg-orange-50 border border-orange-200 px-2 py-0.5 rounded-full hover:bg-orange-100 transition-colors">
+                    {m}
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {day.hotels && day.hotels.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mt-3 pt-2.5 border-t border-slate-100">
+                {day.hotels.map((h) => {
+                  const hotelName = h.split(" — ")[0];
+                  return (
+                    <a key={h} href={searchUrl(`${hotelName} hotel booking`, city)} target="_blank" rel="noopener noreferrer"
+                      className="text-[10px] text-slate-500 bg-slate-50 border border-slate-200 px-2 py-0.5 rounded-full hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 transition-colors">
+                      🏨 {h}
+                    </a>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
