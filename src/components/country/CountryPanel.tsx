@@ -8,6 +8,7 @@ import { generateTripPlan, getMaxRuleDays, getRecRuleDays, extractPlanCities } f
 import type { TripPlan } from "../../utils/tripPlans";
 import { ITINERARY_RULES } from "../../data/itineraryRules";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { isEnabled } from "../../utils/featureFlags";
 import { exportItineraryAsPdf } from "../../utils/pdfExport";
 import Tooltip from "../shared/Tooltip";
@@ -52,6 +53,8 @@ export default function CountryPanel({
   onCinematicChange,
 }: Props) {
   const { panelWidth, startPanelDrag }    = usePanelDrag(320, 320);
+  const bp = useBreakpoint();
+  const isMobile = bp === "mobile";
   const [activePlanId, setActivePlanId]   = useState("default");
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
   const [customDays, setCustomDays]       = useState(7);
@@ -109,24 +112,30 @@ export default function CountryPanel({
 
   return (
     <div
-      className={`absolute top-0 right-0 h-full bg-white shadow-2xl z-20 flex flex-col overflow-hidden transition-transform duration-300 ease-out ${
+      className={`${
+        isMobile
+          ? "fixed inset-0 z-30 bg-white flex flex-col overflow-hidden transition-transform duration-300 ease-out"
+          : "absolute top-0 right-0 h-full bg-white shadow-2xl z-20 flex flex-col overflow-hidden transition-transform duration-300 ease-out"
+      } ${
         country && !cinematicPlan ? "translate-x-0" : "translate-x-full"
       }`}
-      style={{ width: panelWidth }}
+      style={isMobile ? undefined : { width: panelWidth }}
     >
-      {/* Drag handle — left edge, above all panel content */}
-      <div
-        className="absolute top-0 left-0 bottom-0 z-30 cursor-col-resize select-none group"
-        style={{ width: 12 }}
-        onPointerDown={startPanelDrag}
-      >
-        <div className="absolute inset-y-0 left-[5px] w-[2px] bg-gray-200 group-hover:bg-blue-400/60 transition-colors" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[5px]">
-          {[0,1,2,3].map((i) => (
-            <div key={i} className="w-[3px] h-[3px] rounded-full bg-gray-300 group-hover:bg-blue-400/80 transition-colors" />
-          ))}
+      {/* Drag handle — desktop only */}
+      {!isMobile && (
+        <div
+          className="absolute top-0 left-0 bottom-0 z-30 cursor-col-resize select-none group"
+          style={{ width: 12 }}
+          onPointerDown={startPanelDrag}
+        >
+          <div className="absolute inset-y-0 left-[5px] w-[2px] bg-gray-200 group-hover:bg-blue-400/60 transition-colors" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[5px]">
+            {[0,1,2,3].map((i) => (
+              <div key={i} className="w-[3px] h-[3px] rounded-full bg-gray-300 group-hover:bg-blue-400/80 transition-colors" />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {country && (
         <>

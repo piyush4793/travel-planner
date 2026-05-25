@@ -5,6 +5,7 @@ import maplibregl from "maplibre-gl";
 import type { Country } from "../../types";
 import type { TripPlan, DayEntry } from "../../utils/tripPlans";
 import { extractCityFromLabel } from "../../utils/tripPlans";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { ITINERARY_RULES } from "../../data/itineraryRules";
 import { getWikiImage } from "../../utils/wikiImages";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../utils/transport";
@@ -159,6 +160,8 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
   const [cityPhotoMap, setCityPhotoMap] = useState<Record<string, string[]>>({});
   const [brokenImgs,  setBrokenImgs]    = useState<Set<string>>(() => new Set());
   const { panelWidth, startPanelDrag }  = usePanelDrag(300, 300);
+  const bp = useBreakpoint();
+  const isMobile = bp === "mobile";
 
   const [cityStops]      = useState<CityStop[]>(() => buildCityStops(plan, country));
   const [phase, setPhase]                 = useState<Phase>("intro");
@@ -569,7 +572,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
     <div className="fixed inset-0 z-[200]" style={{ fontFamily: "inherit" }}>
 
       {/* ── Left area — transparent, main map shows through ─────────────────── */}
-      <div className="absolute top-0 left-0 bottom-0" style={{ right: panelWidth }}>
+      <div className="absolute top-0 left-0 bottom-0" style={{ right: isMobile ? 0 : panelWidth }}>
 
         {/* Subtle dim during transit/intro */}
         <div
@@ -678,39 +681,57 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         )}
       </div>
 
-      {/* ── Drag handle — sits at the boundary, z above everything ─────────── */}
-      <div
-        className="absolute top-0 bottom-0 z-[210] cursor-col-resize select-none group"
-        style={{ right: panelWidth - 6, width: 12 }}
-        onPointerDown={startPanelDrag}
-      >
-        <div className="absolute inset-y-0 left-[5px] w-[2px] bg-white/10 group-hover:bg-blue-400/50 transition-colors" />
-        {/* Grip dots in the vertical centre */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[5px]">
-          {[0,1,2,3].map((i) => (
-            <div key={i} className="w-[3px] h-[3px] rounded-full bg-white/30 group-hover:bg-blue-400/70 transition-colors" />
-          ))}
+      {/* ── Drag handle — desktop only ─────────── */}
+      {!isMobile && (
+        <div
+          className="absolute top-0 bottom-0 z-[210] cursor-col-resize select-none group"
+          style={{ right: panelWidth - 6, width: 12 }}
+          onPointerDown={startPanelDrag}
+        >
+          <div className="absolute inset-y-0 left-[5px] w-[2px] bg-white/10 group-hover:bg-blue-400/50 transition-colors" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[5px]">
+            {[0,1,2,3].map((i) => (
+              <div key={i} className="w-[3px] h-[3px] rounded-full bg-white/30 group-hover:bg-blue-400/70 transition-colors" />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
-      {/* ── Right panel ──────────────────────────────────────────────────────── */}
+      {/* ── Right panel (desktop) / Bottom sheet (mobile) ──────────────────── */}
       <div
-        className="absolute top-0 right-0 bottom-0 bg-gray-950 text-white flex flex-col"
-        style={{ width: panelWidth }}
+        className={isMobile
+          ? "absolute bottom-0 left-0 right-0 bg-gray-950/95 backdrop-blur-md text-white flex flex-col max-h-[40dvh] rounded-t-2xl z-[205] shadow-[0_-4px_20px_rgba(0,0,0,0.3)]"
+          : "absolute top-0 right-0 bottom-0 bg-gray-950 text-white flex flex-col"
+        }
+        style={isMobile ? undefined : { width: panelWidth }}
       >
+        {/* Mobile drag handle indicator */}
+        {isMobile && (
+          <div className="flex justify-center py-2 shrink-0">
+            <div className="w-10 h-1 rounded-full bg-white/30" />
+          </div>
+        )}
 
         {/* Header */}
-        <div className="px-5 pt-5 pb-4 border-b border-white/10 shrink-0">
-          <div className="flex items-start justify-between gap-2 mb-3">
-            <div>
-              <p className="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-1">Cinematic Journey</p>
-              <h2 className="text-xl font-black">{country.name}</h2>
-              <p className="text-xs text-gray-400 mt-0.5">{plan.duration} · {plan.costPerPerson} pp</p>
+        <div className={`${isMobile ? "px-4 pt-0 pb-2" : "px-5 pt-5 pb-4"} border-b border-white/10 shrink-0`}>
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2">
+                <h2 className={`${isMobile ? "text-base" : "text-xl"} font-black truncate`}>{country.name}</h2>
+                <span className="text-[10px] text-gray-400 shrink-0">{plan.duration}</span>
+              </div>
             </div>
-            <button
-              onClick={onClose}
-              className="text-gray-500 hover:text-white hover:bg-white/10 p-1.5 rounded-xl transition-colors text-base leading-none shrink-0"
-            >✕</button>
+            <div className="flex items-center gap-1.5 shrink-0">
+              <button
+                onClick={() => { pausedRef.current = !pausedRef.current; }}
+                className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm"
+                title="Pause / Resume"
+              >⏯</button>
+              <button
+                onClick={onClose}
+                className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm"
+              >✕</button>
+            </div>
           </div>
 
           {/* Route progress trail */}

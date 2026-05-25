@@ -43,7 +43,7 @@ export default function Filters({
 
   return (
     <div className="bg-white border-b border-gray-100 shrink-0 z-10 relative">
-      <div className="flex items-center gap-2 px-4 py-2.5 overflow-x-auto scrollbar-hide">
+      <div className="flex items-center gap-2 px-3 md:px-4 py-2 md:py-2.5 flex-wrap md:flex-nowrap md:overflow-x-auto scrollbar-hide">
 
         <FilterChip label={monthLabel} active={selectedMonth.length > 0}>
           {() => (

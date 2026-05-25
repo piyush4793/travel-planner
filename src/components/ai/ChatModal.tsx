@@ -110,8 +110,8 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
       onClick={finalizing ? undefined : handleClose}
     >
       <div
-        className="bg-white border border-slate-200 rounded-2xl shadow-2xl w-full max-w-2xl mx-4 flex flex-col"
-        style={{ height: "min(80vh, 700px)" }}
+        className="bg-white border border-slate-200 md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-2xl md:mx-4 flex flex-col h-dvh md:h-auto"
+        style={{ maxHeight: "min(100dvh, 700px)" }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
