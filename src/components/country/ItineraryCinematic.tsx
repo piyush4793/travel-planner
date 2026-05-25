@@ -6,7 +6,7 @@ import type { Country } from "../../types";
 import type { TripPlan, DayEntry } from "../../utils/tripPlans";
 import { extractCityFromLabel } from "../../utils/tripPlans";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
-import { ITINERARY_RULES } from "../../data/itineraryRules";
+import type { CountryRule } from "../../data/itineraryRules";
 import { getWikiImage } from "../../utils/wikiImages";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../utils/transport";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
@@ -20,7 +20,7 @@ type CityStop = {
   transportToNext?: { type: TransportType; label: string };
 };
 
-function buildCityStops(plan: TripPlan, country: Country): CityStop[] {
+function buildCityStops(plan: TripPlan, country: Country, rule?: CountryRule | null): CityStop[] {
   const coordsMap = new Map<string, [number, number]>();
   (country.cities ?? []).forEach((c) => coordsMap.set(c.name, [c.lng, c.lat]));
 
@@ -33,7 +33,7 @@ function buildCityStops(plan: TripPlan, country: Country): CityStop[] {
     else groups.push({ name: city, days: [day] });
   }
 
-  const rule = ITINERARY_RULES[country.name];
+  // rule passed as prop
   return groups
     .filter((g) => coordsMap.has(g.name))
     .map((g, i, arr) => {
@@ -147,13 +147,14 @@ interface Props {
   country: Country;
   homeCountry: string;
   mainMapRef?: RefObject<maplibregl.Map | null>;
+  rule?: CountryRule | null;
   comboCountries?: Array<{ name: string; lat: number; lng: number }>;
   onClose: () => void;
 }
 
 type Phase = "intro" | "city" | "done";
 
-export default function ItineraryCinematic({ plan, country, homeCountry, mainMapRef, comboCountries, onClose }: Props) {
+export default function ItineraryCinematic({ plan, country, homeCountry, mainMapRef, rule, comboCountries, onClose }: Props) {
   const pausedRef = useRef(false);
 
   // useState (not useRef) so React re-renders when photos arrive
@@ -163,7 +164,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
   const bp = useBreakpoint();
   const isMobile = bp === "mobile";
 
-  const [cityStops]      = useState<CityStop[]>(() => buildCityStops(plan, country));
+  const [cityStops]      = useState<CityStop[]>(() => buildCityStops(plan, country, rule));
   const [phase, setPhase]                 = useState<Phase>("intro");
   const [activeCityIdx, setActiveCityIdx] = useState(-1);
   const [activeDayIdx, setActiveDayIdx]   = useState(0);
@@ -350,7 +351,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       setStatusMsg(`${plan.duration} · ${plan.costPerPerson} pp${comboLine}`);
 
       // Pre-fetch city images during overview hold (parallel for speed)
-      const rule = ITINERARY_RULES[country.name];
+      // rule passed as prop
       const cityImgKeys = rule?.cityImages ?? {};
       const fetchedPhotos: Record<string, string[]> = {};
 

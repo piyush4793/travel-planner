@@ -1,7 +1,7 @@
 /**
  * Curated trip groups — every seed country assigned to exactly one trip.
  * addOns are derived at runtime from the country's `combo` field in
- * countries.json (single source of truth). Seed only defines main + region.
+ * data/rules/*.json (single source of truth). Seed only defines main + region.
  *
  * User-edited groups (tp_trip_customs) store full TripGroupDef with addOns.
  */

@@ -14,7 +14,6 @@ const FLAG_META: Record<keyof FeatureFlags, FlagMeta> = {
   llmPlanning:           { label: "AI Trip Planning", description: "Chat, itinerary generation, save plans" },
   pdfExport:             { label: "PDF Export", description: "Export itineraries as PDF from country panel" },
   searchableHomeCountry: { label: "Searchable Home Country", description: "Dropdown with all 197 countries" },
-  v2CountryPanel:        { label: "V2 Country Panel", description: "New data architecture — lazy-loaded per-country JSON" },
 };
 
 // Derived from PAID_FLAGS — single source of truth in featureFlags.ts

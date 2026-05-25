@@ -1,5 +1,4 @@
 import type { Country, CityEntry, PlanStyle } from "../types";
-import { ITINERARY_RULES } from "../data/itineraryRules";
 import type { CountryRule } from "../data/itineraryRules";
 
 export type DayEntry = {
@@ -178,22 +177,16 @@ function selectCitiesForDays(rule: CountryRule, days: number): string[] {
   return rule.cityOrder.filter((c) => selected.includes(c));
 }
 
-/** Calculate the max useful days for a country's rule data */
-export function getMaxRuleDays(countryName: string): number | null;
-export function getMaxRuleDays(rule: CountryRule | null | undefined): number | null;
-export function getMaxRuleDays(arg: string | CountryRule | null | undefined): number | null {
-  const rule = typeof arg === "string" ? ITINERARY_RULES[arg] : arg;
+/** Calculate the max useful days from a loaded rule */
+export function getMaxRuleDays(rule: CountryRule | null | undefined): number | null {
   if (!rule) return null;
   return rule.cityOrder
     .filter((c) => rule.cities[c])
     .reduce((s, c) => s + rule.cities[c].maxDays, 0);
 }
 
-/** Calculate the recommended days for a country's rule data */
-export function getRecRuleDays(countryName: string): number | null;
-export function getRecRuleDays(rule: CountryRule | null | undefined): number | null;
-export function getRecRuleDays(arg: string | CountryRule | null | undefined): number | null {
-  const rule = typeof arg === "string" ? ITINERARY_RULES[arg] : arg;
+/** Calculate the recommended days from a loaded rule */
+export function getRecRuleDays(rule: CountryRule | null | undefined): number | null {
   if (!rule) return null;
   return rule.cityOrder
     .filter((c) => rule.cities[c])
@@ -207,7 +200,7 @@ function getRuledItinerary(
   customDays: number,
   rule?: CountryRule,
 ): TripPlan | null {
-  const effectiveRule = rule ?? ITINERARY_RULES[country.name];
+  const effectiveRule = rule;
   if (!effectiveRule) return null;
 
   // Determine which cities to visit — user selection or smart auto-selection
@@ -319,8 +312,8 @@ export function generateTripPlan(
   customDays = 7,
   externalRule?: CountryRule | null,
 ): TripPlan {
-  // Use explicit rule if provided, else try ITINERARY_RULES (V1 path)
-  const rule = externalRule ?? ITINERARY_RULES[country.name];
+  // Use explicit rule if provided
+  const rule = externalRule;
   if (rule) {
     const ruled = getRuledItinerary(country, style, selectedCities, customDays, rule);
     if (ruled) return ruled;
