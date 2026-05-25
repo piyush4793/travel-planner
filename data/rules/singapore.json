@@ -65,5 +65,319 @@
       "notes": "Mustafa Centre, Sri Veeramakaliamman Temple and 24-hour street food"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Singtel or StarHub tourist SIM/eSIM from Changi Airport or 7-Eleven is the easiest option; expect about ₹945–₹1,575 for a 7–10 day pack with enough data for maps, ride-hailing, and ticketing.",
+    "apps": [
+      "MyTransport.SG",
+      "Google Maps",
+      "Grab",
+      "Klook",
+      "GetYourGuide",
+      "Eatbook",
+      "WhatsApp",
+      "NEA myENV"
+    ],
+    "cityOrder": [
+      "Marina Bay",
+      "Sentosa",
+      "Chinatown",
+      "Little India"
+    ],
+    "cities": {
+      "Marina Bay": {
+        "name": "Marina Bay",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Skyline icons, waterfront walks, and classic first-day Singapore views",
+            "activities": [
+              {
+                "name": "Merlion Park and Marina Bay promenade walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "ArtScience Museum Future World",
+                "cost": "₹1,071"
+              },
+              {
+                "name": "Marina Bay Sands SkyPark Observation Deck",
+                "cost": "₹1,638"
+              },
+              {
+                "name": "Helix Bridge and The Shoppes browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Spectra light and water show",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Park Regis by Prince Singapore",
+                "budget": "₹8,190–₹12,600/night"
+              },
+              {
+                "name": "Marina Bay Sands",
+                "budget": "₹34,650–₹53,550/night"
+              }
+            ],
+            "meals": [
+              "Lau Pa Sat Festival Market",
+              "Rasapura Masters",
+              "Satay by the Bay"
+            ]
+          },
+          {
+            "theme": "Gardens by the Bay, cooled conservatories, and Singapore’s garden-city side",
+            "activities": [
+              {
+                "name": "Singapore Botanic Gardens morning walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "National Orchid Garden",
+                "cost": "₹945"
+              },
+              {
+                "name": "Gardens by the Bay Flower Dome + Cloud Forest combo",
+                "cost": "₹2,016"
+              },
+              {
+                "name": "OCBC Skyway at Supertree Grove",
+                "cost": "₹882"
+              },
+              {
+                "name": "Garden Rhapsody light show",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Park Regis by Prince Singapore",
+                "budget": "₹8,190–₹12,600/night"
+              },
+              {
+                "name": "Marina Bay Sands",
+                "budget": "₹34,650–₹53,550/night"
+              }
+            ],
+            "meals": [
+              "Casa Verde",
+              "Pollen",
+              "Satay by the Bay"
+            ]
+          }
+        ]
+      },
+      "Sentosa": {
+        "name": "Sentosa",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Theme-park thrills, beach time, and a big Sentosa finish",
+            "activities": [
+              {
+                "name": "Sentosa Express from HarbourFront or free boardwalk entry",
+                "cost": "₹0–₹252"
+              },
+              {
+                "name": "Universal Studios Singapore or S.E.A. Aquarium",
+                "cost": "₹2,709–₹5,166"
+              },
+              {
+                "name": "Siloso Beach and Palawan Beach stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Skyline Luge Sentosa (2 rides)",
+                "cost": "₹1,386"
+              },
+              {
+                "name": "Wings of Time night show",
+                "cost": "₹1,134–₹1,449"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Village Hotel Sentosa",
+                "budget": "₹11,340–₹16,380/night"
+              },
+              {
+                "name": "Hard Rock Hotel Singapore",
+                "budget": "₹15,750–₹23,940/night"
+              }
+            ],
+            "meals": [
+              "Malaysian Food Street",
+              "Coastes",
+              "The Cliff"
+            ]
+          }
+        ]
+      },
+      "Chinatown": {
+        "name": "Chinatown",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "days": [
+          {
+            "theme": "Temples, heritage lanes, and hawker-centre classics",
+            "activities": [
+              {
+                "name": "Buddha Tooth Relic Temple and Museum",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sri Mariamman Temple",
+                "cost": "₹0"
+              },
+              {
+                "name": "Chinatown Heritage Centre",
+                "cost": "₹630"
+              },
+              {
+                "name": "Pagoda Street and restored shophouse walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Maxwell Food Centre tasting stop",
+                "cost": "₹252–₹504"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Mono",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "The Scarlet Singapore",
+                "budget": "₹12,600–₹17,640/night"
+              }
+            ],
+            "meals": [
+              "Maxwell Food Centre",
+              "Chinatown Complex Food Centre",
+              "Tong Heng"
+            ]
+          }
+        ]
+      },
+      "Little India": {
+        "name": "Little India",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "days": [
+          {
+            "theme": "Tamil heritage, temple visits, market energy, and comfort food from home",
+            "activities": [
+              {
+                "name": "Sri Veeramakaliamman Temple",
+                "cost": "₹0"
+              },
+              {
+                "name": "Serangoon Road and Little India Arcade walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tekka Centre breakfast or lunch crawl",
+                "cost": "₹252–₹504"
+              },
+              {
+                "name": "Mustafa Centre browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Indian Heritage Centre",
+                "cost": "₹630"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Great Madras",
+                "budget": "₹6,500–₹10,000/night"
+              },
+              {
+                "name": "One Farrer Hotel",
+                "budget": "₹12,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Komala Vilas",
+              "Saravana Bhavan",
+              "Madras New Woodlands"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Changi Airport",
+        "to": "Marina Bay",
+        "method": "MRT via East-West Line with a city interchange to reach Bayfront, Marina Bay, or Raffles Place; taxi is faster but far pricier.",
+        "cost": "₹113–₹189"
+      },
+      {
+        "from": "Marina Bay",
+        "to": "Sentosa",
+        "method": "Downtown or North-South Line to HarbourFront, then Sentosa Express monorail or the free Sentosa Boardwalk.",
+        "cost": "₹63–₹252"
+      },
+      {
+        "from": "Sentosa",
+        "to": "Chinatown",
+        "method": "Return to HarbourFront and continue by North East Line to Chinatown; outbound Sentosa monorail is free if you entered by train.",
+        "cost": "₹63–₹158"
+      },
+      {
+        "from": "Chinatown",
+        "to": "Little India",
+        "method": "Direct Downtown or North East Line hop between the two heritage districts.",
+        "cost": "₹63–₹95"
+      },
+      {
+        "from": "Little India",
+        "to": "Changi Airport",
+        "method": "Downtown Line or North East Line connection into the East-West airport branch; Grab is the late-night fallback.",
+        "cost": "₹126–₹189"
+      }
+    ],
+    "extras": [
+      "Visa and Mastercard contactless cards work directly on MRT gates and buses, so you can skip EZ-Link unless you prefer a separate transit balance.",
+      "Pre-book Marina Bay Sands SkyPark, Gardens by the Bay conservatories, and Sentosa attractions on Klook because timed slots and discounted inventory disappear on weekends and school holidays.",
+      "Lau Pa Sat, Maxwell Food Centre, Tekka Centre, and Satay by the Bay keep many meals in the ₹250–₹600 range, which is the easiest way to keep Singapore costs under control.",
+      "Use NEA myENV before outdoor blocks like Sentosa beaches, Botanic Gardens, or Supertree Grove because short tropical rain bursts can force same-day reordering.",
+      "Little India is the easiest district for pure-vegetarian and Jain-friendly food; ask for no onion and no garlic when needed because staff hear that request often.",
+      "If you want to save on Sentosa access, walk in via the boardwalk and only pay for attractions inside the island."
+    ],
+    "cityImages": {
+      "Marina Bay": [
+        "Marina Bay Sands Singapore skyline",
+        "Gardens by the Bay Supertree Grove night",
+        "Merlion Park Singapore waterfront"
+      ],
+      "Sentosa": [
+        "Universal Studios Singapore globe Sentosa",
+        "Siloso Beach Sentosa sunset",
+        "Wings of Time Sentosa night show"
+      ],
+      "Chinatown": [
+        "Buddha Tooth Relic Temple Chinatown Singapore",
+        "Pagoda Street Chinatown Singapore shophouses",
+        "Sri Mariamman Temple Singapore gopuram"
+      ],
+      "Little India": [
+        "Little India Singapore Serangoon Road",
+        "Sri Veeramakaliamman Temple Singapore",
+        "Tekka Centre Little India Singapore"
+      ]
+    }
+  }
 }

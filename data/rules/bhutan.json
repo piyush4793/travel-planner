@@ -68,5 +68,477 @@
       "notes": "Spiritual heartland with Jakar Dzong, ancient temples and yak cheese"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "B-Mobile tourist SIM — easiest pickup at Paro Airport or Bhutan Telecom shops in Thimphu",
+    "apps": [
+      "Google Maps (offline Bhutan)",
+      "Maps.me / iOverlander",
+      "Drukair",
+      "XE Currency",
+      "WhatsApp",
+      "AccuWeather"
+    ],
+    "cityOrder": [
+      "Thimphu",
+      "Punakha",
+      "Paro",
+      "Bumthang"
+    ],
+    "cities": {
+      "Thimphu": {
+        "name": "Thimphu",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Thimphu as the acclimatization stop after landing in Paro and keep one full day for culture-heavy sightseeing.",
+        "days": [
+          {
+            "theme": "Arrival via Paro + Capital Orientation",
+            "activities": [
+              {
+                "name": "Scenic transfer from Paro Airport to Thimphu via the Wang Chhu valley",
+                "cost": "₹0–₹500",
+                "tip": "Most operators include this drive; keep the window seat for the first river-valley views."
+              },
+              {
+                "name": "National Memorial Chorten",
+                "cost": "₹0",
+                "tip": "A small donation of about ₹50 is appreciated if you linger inside the prayer circuit."
+              },
+              {
+                "name": "Tashichho Dzong evening exterior and courtyard visit",
+                "cost": "₹100",
+                "tip": "Late afternoon is best once government offices close and the light softens over the dzong."
+              },
+              {
+                "name": "Clock Tower Square and handicraft market stroll",
+                "cost": "₹0",
+                "tip": "Weekend evenings are the liveliest for people-watching and casual shopping."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kisa Villa",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "CityHotel Thimphu",
+                "budget": "₹5,500–₹8,000/night"
+              },
+              {
+                "name": "Norkhil Boutique Hotel & Spa",
+                "budget": "₹14,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Ambient Cafe",
+              "The Zone",
+              "Folk Heritage Museum Restaurant"
+            ]
+          },
+          {
+            "theme": "Buddha Views, Museums & Bhutanese Everyday Life",
+            "activities": [
+              {
+                "name": "Buddha Dordenma",
+                "cost": "₹0",
+                "tip": "Go in the morning before haze builds up across the valley."
+              },
+              {
+                "name": "Folk Heritage Museum",
+                "cost": "₹250–₹350",
+                "tip": "Pair it with lunch nearby for a good introduction to farmhouse life."
+              },
+              {
+                "name": "Motithang Takin Preserve",
+                "cost": "₹150–₹250",
+                "tip": "Bhutan’s national animal is easiest to spot in the cooler hours."
+              },
+              {
+                "name": "Changlimithang Archery Ground",
+                "cost": "₹0",
+                "tip": "Stand well back and watch for the singing-and-dancing celebrations after each hit."
+              },
+              {
+                "name": "National Textile Museum",
+                "cost": "₹250–₹350",
+                "tip": "Worth adding if you want context before shopping for handwoven pieces."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kisa Villa",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "CityHotel Thimphu",
+                "budget": "₹5,500–₹8,000/night"
+              },
+              {
+                "name": "Le Meridien Thimphu",
+                "budget": "₹42,000–₹55,000/night"
+              }
+            ],
+            "meals": [
+              "Babesa Village Restaurant",
+              "Karma’s Coffee",
+              "Seasons Restaurant"
+            ]
+          }
+        ]
+      },
+      "Punakha": {
+        "name": "Punakha",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Punakha works best after Thimphu because the descent via Dochula Pass naturally breaks the journey and keeps the route efficient.",
+        "days": [
+          {
+            "theme": "Dochula Pass Crossing + Punakha Dzong",
+            "activities": [
+              {
+                "name": "Dochula Pass and the 108 Druk Wangyal Chortens",
+                "cost": "₹0",
+                "tip": "Aim to cross before 10 AM for the clearest Himalayan views."
+              },
+              {
+                "name": "Druk Wangyal Lhakhang",
+                "cost": "₹100",
+                "tip": "The murals here are unusually modern and worth the short stop."
+              },
+              {
+                "name": "Punakha Dzong",
+                "cost": "₹500",
+                "tip": "Spring jacaranda bloom makes this one of Bhutan’s prettiest dzong visits."
+              },
+              {
+                "name": "Punakha Suspension Bridge",
+                "cost": "₹0",
+                "tip": "Visit close to sunset when the valley light is softer and winds are calmer."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Spirit Village Lodge",
+                "budget": "₹4,400–₹6,500/night"
+              },
+              {
+                "name": "Wangdue Ecolodge",
+                "budget": "₹7,500–₹10,000/night"
+              },
+              {
+                "name": "Dhensa Boutique Resort",
+                "budget": "₹35,000–₹45,000/night"
+              }
+            ],
+            "meals": [
+              "Punakha Resort Restaurant",
+              "Lobesa Village Restaurant",
+              "Spirit Village Lodge Dining"
+            ]
+          },
+          {
+            "theme": "Valley Hikes, Fertility Temple & Village Life",
+            "activities": [
+              {
+                "name": "Chimi Lhakhang",
+                "cost": "₹100",
+                "tip": "The temple is reached by an easy paddy-field walk, so carry sun protection rather than hiking gear."
+              },
+              {
+                "name": "Khamsum Yulley Namgyal Chorten hike",
+                "cost": "₹0",
+                "tip": "Go early or late to avoid the hottest valley hours on the exposed trail."
+              },
+              {
+                "name": "Talo village cultural walk",
+                "cost": "₹0",
+                "tip": "Ask your guide to include a farmhouse tea stop if you want a local interaction."
+              },
+              {
+                "name": "Mo Chhu white-water rafting",
+                "cost": "₹2,500–₹4,000",
+                "tip": "This is a good optional swap for travelers wanting a more active second day."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mendrelgang Homestay",
+                "budget": "₹2,600–₹3,800/night"
+              },
+              {
+                "name": "Spirit Village Lodge",
+                "budget": "₹4,400–₹6,500/night"
+              },
+              {
+                "name": "Dhensa Boutique Resort",
+                "budget": "₹35,000–₹45,000/night"
+              }
+            ],
+            "meals": [
+              "Damchoe Karpo",
+              "Zangdo Pelri Hotel Restaurant",
+              "Mendrelgang Homestay dinner"
+            ]
+          }
+        ]
+      },
+      "Paro": {
+        "name": "Paro",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Keep two nights here so Tiger’s Nest gets a full dedicated hiking day instead of being rushed around arrival or departure.",
+        "days": [
+          {
+            "theme": "Ancient Temples, Dzong Views & Paro Town",
+            "activities": [
+              {
+                "name": "Kyichu Lhakhang",
+                "cost": "₹100",
+                "tip": "Go around dusk if you want a quieter, more atmospheric temple visit."
+              },
+              {
+                "name": "Drugyel Dzong viewpoint",
+                "cost": "₹0",
+                "tip": "Clear mornings give you the best chance of seeing Chomolhari behind the ruins."
+              },
+              {
+                "name": "Paro town heritage walk and handicraft browsing",
+                "cost": "₹0",
+                "tip": "Bhutan Post’s stamp counter is a nice stop for compact souvenirs."
+              },
+              {
+                "name": "Rinpung Dzong riverside approach and cantilever bridge",
+                "cost": "₹300",
+                "tip": "The bridge and dzong together are most photogenic in late afternoon."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Olathang Hotel",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "Tenzinling Resort",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "Zhiwa Ling Heritage",
+                "budget": "₹28,000–₹40,000/night"
+              }
+            ],
+            "meals": [
+              "Sonam Trophel Restaurant",
+              "Tshering Restaurant",
+              "My Kind of Place"
+            ]
+          },
+          {
+            "theme": "Tiger’s Nest Pilgrimage + Paro Culture",
+            "activities": [
+              {
+                "name": "Paro Taktsang (Tiger’s Nest) hike",
+                "cost": "₹1,000",
+                "tip": "Start by 7–8 AM, carry at least 1.5L of water, and expect a full 5–6 hour outing."
+              },
+              {
+                "name": "Horse ride to the midway cafe (optional)",
+                "cost": "₹500–₹800",
+                "tip": "Horses only go to the halfway point, not all the way to the monastery."
+              },
+              {
+                "name": "Tiger’s Nest cafeteria tea stop",
+                "cost": "₹150–₹300",
+                "tip": "This is the classic viewpoint for a rest before the final staircase section."
+              },
+              {
+                "name": "National Museum of Bhutan (Ta Dzong)",
+                "cost": "₹300",
+                "tip": "A strong backup if clouds or fatigue shorten your post-hike plans."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Olathang Hotel",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "Tenzinling Resort",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "Zhiwa Ling Heritage",
+                "budget": "₹28,000–₹40,000/night"
+              }
+            ],
+            "meals": [
+              "Tiger’s Nest Cafeteria",
+              "Ngawang Restaurant",
+              "Bukhari at Zhiwa Ling"
+            ]
+          }
+        ]
+      },
+      "Bumthang": {
+        "name": "Bumthang",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Bumthang is the spiritual extension for travelers who want quieter valleys and older temple history beyond western Bhutan.",
+        "days": [
+          {
+            "theme": "Domestic Flight + Jakar Valley Introduction",
+            "activities": [
+              {
+                "name": "Drukair flight from Paro to Bumthang",
+                "cost": "₹5,000–₹8,500",
+                "tip": "Seats are limited, so ask your operator to secure this sector 4–6 weeks ahead."
+              },
+              {
+                "name": "Jakar Dzong",
+                "cost": "₹100",
+                "tip": "This is an easy first stop after landing because it offers a fast overview of the valley."
+              },
+              {
+                "name": "Kurje Lhakhang",
+                "cost": "₹100",
+                "tip": "Dress modestly and take time inside the oldest temple linked to Guru Padmasambhava."
+              },
+              {
+                "name": "Swiss Guest House farm stop for local cheese and Red Panda beer",
+                "cost": "₹400–₹700",
+                "tip": "Good place to sample buckwheat dishes if you want something region-specific."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Swiss Guest House Bumthang",
+                "budget": "₹5,500–₹8,000/night"
+              },
+              {
+                "name": "Jakar Village Lodge",
+                "budget": "₹7,000–₹10,000/night"
+              },
+              {
+                "name": "Wangdicholing Resort",
+                "budget": "₹9,000–₹14,000/night"
+              }
+            ],
+            "meals": [
+              "Swiss Guest House Restaurant",
+              "Cafe Peling",
+              "Wangdicholing Resort Dining"
+            ]
+          },
+          {
+            "theme": "Sacred Valley Circuit",
+            "activities": [
+              {
+                "name": "Jambay Lhakhang",
+                "cost": "₹100",
+                "tip": "Go early if you want the oldest temple stop before tour groups arrive."
+              },
+              {
+                "name": "Tamshing Lhakhang",
+                "cost": "₹100",
+                "tip": "This is the best stop for travelers who enjoy mural-heavy temple interiors."
+              },
+              {
+                "name": "Membartsho (Burning Lake)",
+                "cost": "₹0",
+                "tip": "Treat this as a sacred site rather than a picnic stop; the gorge is narrow and quiet."
+              },
+              {
+                "name": "Ura Valley excursion",
+                "cost": "₹0–₹500",
+                "tip": "Add this only if you are staying a second night and want a slower village-focused finish."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Swiss Guest House Bumthang",
+                "budget": "₹5,500–₹8,000/night"
+              },
+              {
+                "name": "Jakar Village Lodge",
+                "budget": "₹7,000–₹10,000/night"
+              },
+              {
+                "name": "Wangdicholing Resort",
+                "budget": "₹9,000–₹14,000/night"
+              }
+            ],
+            "meals": [
+              "Jakar Dzong Cafe",
+              "Mountain Lodge Restaurant",
+              "Swiss Guest House Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Paro",
+        "to": "Thimphu",
+        "method": "Private transfer via the Wang Chhu valley (about 1.5 hrs)",
+        "cost": "₹0–₹500"
+      },
+      {
+        "from": "Thimphu",
+        "to": "Punakha",
+        "method": "Private transfer via Dochula Pass (about 2–2.5 hrs)",
+        "cost": "₹3,000–₹5,000 per vehicle/day"
+      },
+      {
+        "from": "Punakha",
+        "to": "Paro",
+        "method": "Private transfer via Thimphu bypass (about 3.5 hrs)",
+        "cost": "₹3,500–₹5,500 per vehicle/day"
+      },
+      {
+        "from": "Paro",
+        "to": "Bumthang",
+        "method": "Drukair domestic flight to Bathpalathang Airport (about 35 min)",
+        "cost": "₹5,000–₹8,500"
+      },
+      {
+        "from": "Bumthang",
+        "to": "Paro",
+        "method": "Drukair domestic flight or full-day road return via Trongsa",
+        "cost": "₹5,000–₹8,500 by flight"
+      }
+    ],
+    "extras": [
+      "Indian travelers do not need a visa, but you must carry a valid passport or voter ID and travel through a registered Bhutanese operator for permits.",
+      "Budget around ₹8,400 per person per day for the Sustainable Development Fee; this is the biggest fixed cost in Bhutan.",
+      "Spring (March–May) and autumn (September–November) are the easiest seasons for Tiger’s Nest, Dochula views, and clearer domestic flight operations.",
+      "Dress modestly for dzongs and temples: covered shoulders, covered knees, and no photography inside shrine rooms unless explicitly allowed.",
+      "Bhutan is largely cash-light in hotels but smaller cafes and roadside stalls may still prefer cash, so keep some INR or BTN handy."
+    ],
+    "cityImages": {
+      "Thimphu": [
+        "Tashichho Dzong Thimphu",
+        "Buddha Dordenma statue Bhutan",
+        "Thimphu valley aerial view"
+      ],
+      "Paro": [
+        "Paro Taktsang Tiger's Nest monastery",
+        "Rinpung Dzong Paro Bhutan",
+        "Paro valley Bhutan aerial"
+      ],
+      "Punakha": [
+        "Punakha Dzong Mo Chhu river",
+        "Punakha suspension bridge",
+        "Chimi Lhakhang Punakha fertility temple"
+      ],
+      "Bumthang": [
+        "Jakar Dzong Bumthang",
+        "Kurje Lhakhang Bumthang",
+        "Jambay Lhakhang Bumthang Bhutan"
+      ]
+    }
+  }
 }

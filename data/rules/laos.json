@@ -68,5 +68,497 @@
       "notes": "Gateway to 4000 Islands and Bolaven Plateau coffee country"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Unitel or BEST (BCEL ONE)",
+    "apps": [
+      "Loca (ride-hailing)",
+      "LCR Ticket App (Laos-China Railway tickets)",
+      "Google Maps offline",
+      "XE Currency",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Vientiane",
+      "Vang Vieng",
+      "Luang Prabang",
+      "Pakse"
+    ],
+    "cities": {
+      "Vientiane": {
+        "name": "Vientiane",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the capital well; add a third only if you want a slower arrival or more café time by the Mekong.",
+        "days": [
+          {
+            "theme": "Sacred Vientiane & National Symbols",
+            "activities": [
+              {
+                "name": "Pha That Luang",
+                "cost": "₹40",
+                "tip": "Go early for softer light and cooler temple grounds."
+              },
+              {
+                "name": "Wat Si Saket",
+                "cost": "₹40–₹60"
+              },
+              {
+                "name": "Haw Pha Kaew",
+                "cost": "₹40"
+              },
+              {
+                "name": "Patuxai Victory Gate",
+                "cost": "₹20",
+                "tip": "Climb for the Lane Xang Boulevard view before sunset haze."
+              },
+              {
+                "name": "Lane Xang Boulevard evening walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Day Inn Hotel Vientiane",
+                "budget": "₹2,100–₹3,360/night"
+              },
+              {
+                "name": "Mixay Paradise Hotel",
+                "budget": "₹1,260–₹1,680/night"
+              }
+            ],
+            "meals": [
+              "PVO Vietnamese Restaurant",
+              "Makphet Restaurant",
+              "Talat Sao Morning Market noodle stalls"
+            ]
+          },
+          {
+            "theme": "Riverside Life, Markets & Easy Day Sights",
+            "activities": [
+              {
+                "name": "Mekong Riverside Promenade",
+                "cost": "Free"
+              },
+              {
+                "name": "Talat Sao Morning Market",
+                "cost": "Free"
+              },
+              {
+                "name": "COPE Visitor Centre",
+                "cost": "Free",
+                "tip": "Leave a small donation if the exhibit resonates with you."
+              },
+              {
+                "name": "Wat Si Muang",
+                "cost": "Free"
+              },
+              {
+                "name": "Buddha Park (Xieng Khuan)",
+                "cost": "₹356",
+                "tip": "Budget about ₹336 for a shared tuk-tuk plus ₹20 entry."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Day Inn Hotel Vientiane",
+                "budget": "₹2,100–₹3,360/night"
+              },
+              {
+                "name": "Mixay Paradise Hotel",
+                "budget": "₹1,260–₹1,680/night"
+              }
+            ],
+            "meals": [
+              "Lao Kitchen",
+              "Just For Fun Restaurant",
+              "Nam Phu Fountain night market stalls"
+            ]
+          }
+        ]
+      },
+      "Vang Vieng": {
+        "name": "Vang Vieng",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Keep two full days for the lagoons and river activities; a third day only helps if weather delays ballooning or kayaking.",
+        "days": [
+          {
+            "theme": "Blue Lagoons, Caves & Karst Viewpoints",
+            "activities": [
+              {
+                "name": "Tham Poukham (Blue Lagoon 1)",
+                "cost": "₹40",
+                "tip": "Carry cash for the lagoon entry and a torch if you plan to continue into the cave."
+              },
+              {
+                "name": "Torch rental for Tham Poukham cave",
+                "cost": "₹40"
+              },
+              {
+                "name": "Pha Ngeun Peak / Sunset Hill",
+                "cost": "₹40"
+              },
+              {
+                "name": "Tham Nam Water Cave",
+                "cost": "₹80",
+                "tip": "This usually covers the cave tube and bridge fee together."
+              },
+              {
+                "name": "Bicycle rental through the rice fields",
+                "cost": "₹240"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Elephant Crossing Hotel",
+                "budget": "₹2,520–₹4,200/night"
+              },
+              {
+                "name": "Nam Song Garden Guesthouse",
+                "budget": "₹320–₹504/night"
+              }
+            ],
+            "meals": [
+              "Vang Vieng Food Court",
+              "Pan's Place Restaurant",
+              "Sae Lao Organic Garden Restaurant"
+            ]
+          },
+          {
+            "theme": "Nam Song Adventure & Scenic Sunset",
+            "activities": [
+              {
+                "name": "River tubing on the Nam Song",
+                "cost": "₹220",
+                "tip": "Expect a refundable tube deposit of about ₹240 on top."
+              },
+              {
+                "name": "Hot air balloon over the karst valley",
+                "cost": "₹5,040–₹8,400",
+                "tip": "Book the day before and choose sunrise if the wind forecast looks better."
+              },
+              {
+                "name": "Kayaking tour on the Nam Song",
+                "cost": "₹1,680–₹2,520"
+              },
+              {
+                "name": "SAE Lao Organic Farm visit",
+                "cost": "₹0–₹500",
+                "tip": "The farm visit is free; pay only if you stay for lunch."
+              },
+              {
+                "name": "Sunset by the river bridges",
+                "cost": "Free",
+                "tip": "Avoid homemade spirits or “happy” drinks and stick to sealed beverages only."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Elephant Crossing Hotel",
+                "budget": "₹2,520–₹4,200/night"
+              },
+              {
+                "name": "Nam Song Garden Guesthouse",
+                "budget": "₹320–₹504/night"
+              }
+            ],
+            "meals": [
+              "Hom Coffee and Eatery",
+              "Kiwi Kitchen",
+              "Street pancake and sandwich stalls"
+            ]
+          }
+        ]
+      },
+      "Luang Prabang": {
+        "name": "Luang Prabang",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days is the sweet spot; add a fourth only if you want a slow-boat arrival, more cafés, or another waterfall day.",
+        "days": [
+          {
+            "theme": "Royal Temples, Alms Ceremony & Phou Si Sunset",
+            "activities": [
+              {
+                "name": "Tak Bat / Sai Bat alms ceremony",
+                "cost": "Free",
+                "tip": "Observe respectfully from a distance unless you have arranged proper offerings."
+              },
+              {
+                "name": "Royal Palace National Museum",
+                "cost": "₹120"
+              },
+              {
+                "name": "Wat Xieng Thong",
+                "cost": "₹120"
+              },
+              {
+                "name": "Phou Si Hill",
+                "cost": "₹80",
+                "tip": "Go at sunset; after the ticket booth closes, access may be effectively free."
+              },
+              {
+                "name": "Royal Ballet Theatre",
+                "cost": "₹800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Manichan Guesthouse",
+                "budget": "₹1,008–₹2,520/night"
+              },
+              {
+                "name": "Phasith Guesthouse",
+                "budget": "₹1,680–₹2,520/night"
+              }
+            ],
+            "meals": [
+              "Nisha Restaurant",
+              "Tamarind Restaurant",
+              "Luang Prabang Night Market food stalls"
+            ]
+          },
+          {
+            "theme": "Kuang Si Falls, Bears & Craft Traditions",
+            "activities": [
+              {
+                "name": "Kuang Si Falls",
+                "cost": "₹240",
+                "tip": "Add roughly ₹180–₹504 for transport depending on whether you take the green bus or a shared tuk-tuk."
+              },
+              {
+                "name": "Bear Rescue Centre at Kuang Si",
+                "cost": "Free"
+              },
+              {
+                "name": "Kuang Si treetop walk or zipline",
+                "cost": "₹120–₹2,100"
+              },
+              {
+                "name": "Ock Pop Tok Living Craft Centre",
+                "cost": "Free–₹1,680",
+                "tip": "The basic visit is free; workshops cost extra."
+              },
+              {
+                "name": "Lao Red Cross sauna and massage",
+                "cost": "₹100–₹600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Manichan Guesthouse",
+                "budget": "₹1,008–₹2,520/night"
+              },
+              {
+                "name": "Phasith Guesthouse",
+                "budget": "₹1,680–₹2,520/night"
+              }
+            ],
+            "meals": [
+              "Green Jungle Restaurant",
+              "Bamboo Garden Restaurant",
+              "Joma Bakery Café"
+            ]
+          },
+          {
+            "theme": "Pak Ou Caves, Markets & Lao Culture",
+            "activities": [
+              {
+                "name": "Pak Ou Caves shared boat trip",
+                "cost": "₹920–₹1,760",
+                "tip": "This usually bundles the boat and cave entry; confirm if your operator also stops at Ban Xang Hai."
+              },
+              {
+                "name": "Traditional Arts & Ethnology Centre (TAEC)",
+                "cost": "₹120"
+              },
+              {
+                "name": "Morning Market (Talat Dala)",
+                "cost": "Free"
+              },
+              {
+                "name": "Luang Prabang Night Market",
+                "cost": "Free"
+              },
+              {
+                "name": "Lao cooking class",
+                "cost": "₹1,680–₹3,024"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Manichan Guesthouse",
+                "budget": "₹1,008–₹2,520/night"
+              },
+              {
+                "name": "Phasith Guesthouse",
+                "budget": "₹1,680–₹2,520/night"
+              }
+            ],
+            "meals": [
+              "Le Banneton",
+              "Saffron Caffè",
+              "L'Éléphant Restaurant"
+            ]
+          }
+        ]
+      },
+      "Pakse": {
+        "name": "Pakse",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Pakse as your southern Laos hub; if Si Phan Don matters more than waterfalls, swap the second day for a Don Det extension and overnight farther south.",
+        "days": [
+          {
+            "theme": "Wat Phou Heritage & Pakse Riverside",
+            "activities": [
+              {
+                "name": "Wat Phou day trip",
+                "cost": "₹200",
+                "tip": "Add about ₹1,200–₹1,600 for a taxi or shared tour from Pakse if you are not renting a motorbike."
+              },
+              {
+                "name": "Champasak riverside stop for lunch",
+                "cost": "₹200–₹500"
+              },
+              {
+                "name": "Phou Salao Golden Buddha viewpoint",
+                "cost": "Free–₹200",
+                "tip": "The hilltop view is best at sunset; the extra spend is only for a tuk-tuk or taxi ride."
+              },
+              {
+                "name": "Pakse Xe Don and Mekong riverside walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Le Panorama sunset drink",
+                "cost": "₹100–₹250"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pakse Hotel & Restaurant",
+                "budget": "₹1,800–₹3,000/night"
+              },
+              {
+                "name": "Athena Hotel",
+                "budget": "₹2,500–₹4,000/night"
+              },
+              {
+                "name": "Champasak Grand Hotel",
+                "budget": "₹3,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Sabaidee Pakse Restaurant",
+              "Le Panorama Rooftop Bar",
+              "124 Thaluang Coffee"
+            ]
+          },
+          {
+            "theme": "Bolaven Plateau Waterfalls & Coffee Route",
+            "activities": [
+              {
+                "name": "Bolaven Plateau day tour (Tad Fane, Tad Yuang, coffee estates)",
+                "cost": "₹1,000–₹1,600",
+                "tip": "This is the easiest way to cover the waterfalls and coffee tastings in one day."
+              },
+              {
+                "name": "Motorbike loop alternative",
+                "cost": "₹325–₹500",
+                "tip": "Rent only if you are comfortable with wet roads and village traffic."
+              },
+              {
+                "name": "Sinouk or Dao Coffee tasting stop",
+                "cost": "₹100–₹250"
+              },
+              {
+                "name": "Pakse market browse",
+                "cost": "Free"
+              },
+              {
+                "name": "Optional Don Det swap via Ban Nakasang boat connection",
+                "cost": "₹332–₹580",
+                "tip": "This covers the Pakse minibus and the short boat; withdraw cash first because Don Det has no ATM."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pakse Hotel & Restaurant",
+                "budget": "₹1,800–₹3,000/night"
+              },
+              {
+                "name": "Athena Hotel",
+                "budget": "₹2,500–₹4,000/night"
+              },
+              {
+                "name": "Champasak Grand Hotel",
+                "budget": "₹3,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Dao Coffee",
+              "Sabaidee Pakse Restaurant",
+              "Sinouk Coffee"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Vientiane",
+        "to": "Vang Vieng",
+        "method": "Laos-China high-speed train",
+        "cost": "₹840–₹1,260"
+      },
+      {
+        "from": "Vang Vieng",
+        "to": "Luang Prabang",
+        "method": "Laos-China high-speed train",
+        "cost": "₹672–₹1,008"
+      },
+      {
+        "from": "Luang Prabang",
+        "to": "Pakse",
+        "method": "Lao Airlines flight",
+        "cost": "₹4,200–₹8,400"
+      }
+    ],
+    "extras": [
+      "Indian passport holders should budget about ₹3,360 for an e-Visa or visa on arrival and complete the Laos online arrival form before landing.",
+      "November to February is the easiest weather window for this route; roads and river conditions become less predictable in the monsoon.",
+      "LCR train seats can sell out fast; if the app will not register with your number, book through a guesthouse or agent for roughly ₹336 extra.",
+      "Use Loca for airport and station rides in the north, but download offline maps before southern legs because coverage weakens around Don Det.",
+      "Ask for “bo sai sin” for no meat and “bo sai pa daek” for no fermented fish when ordering vegetarian Lao dishes.",
+      "Avoid homemade spirits and any “happy” food or drinks in Vang Vieng; stick to sealed commercial beverages only.",
+      "Do not plan around Irrawaddy dolphin sightings in Laos; the Laos population died out in 2022 and many older itineraries are outdated."
+    ],
+    "cityImages": {
+      "Vientiane": [
+        "Pha That Luang Vientiane",
+        "Patuxai victory monument Vientiane",
+        "Wat Si Saket Vientiane temple"
+      ],
+      "Vang Vieng": [
+        "Vang Vieng karst landscape Nam Song River",
+        "Tham Poukham Blue Lagoon Vang Vieng",
+        "Vang Vieng hot air balloon Laos"
+      ],
+      "Luang Prabang": [
+        "Luang Prabang alms giving ceremony monks",
+        "Kuang Si Falls turquoise pools Laos",
+        "Wat Xieng Thong temple Luang Prabang"
+      ],
+      "Pakse": [
+        "Wat Phou Champasak Laos",
+        "Bolaven Plateau Tad Fane waterfall Laos",
+        "Pakse Mekong Xe Don riverside"
+      ]
+    }
+  }
 }
