@@ -6,11 +6,13 @@ import type { SavedAiPlan } from "../../hooks/useAiPlanStore";
 import { STYLE_META } from "../../utils/travelStyles";
 import { generateTripPlan, getMaxRuleDays, getRecRuleDays, extractPlanCities } from "../../utils/tripPlans";
 import type { TripPlan } from "../../utils/tripPlans";
-import { ITINERARY_RULES } from "../../data/itineraryRules";
+import type { CountryRule } from "../../data/itineraryRules";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
+import { useCountryRule } from "../../hooks/useCountryRule";
 import { isEnabled } from "../../utils/featureFlags";
 import { exportItineraryAsPdf } from "../../utils/pdfExport";
+import { getBudgetDisplay } from "../../types";
 import Tooltip from "../shared/Tooltip";
 import ItineraryCinematic from "./ItineraryCinematic";
 import ItineraryModal from "./ItineraryModal";
@@ -55,6 +57,7 @@ export default function CountryPanel({
   const { panelWidth, startPanelDrag }    = usePanelDrag(320, 320);
   const bp = useBreakpoint();
   const isMobile = bp === "mobile";
+  const { data: consolidated, rule, loading: ruleLoading } = useCountryRule(country?.name);
   const [activePlanId, setActivePlanId]   = useState("default");
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
   const [customDays, setCustomDays]       = useState(7);
@@ -63,8 +66,8 @@ export default function CountryPanel({
   const [modalPlan, setModalPlan]         = useState<TripPlan | null>(null);
   const [compareOpen, setCompareOpen]     = useState(false);
 
-  const maxDays = country ? (getMaxRuleDays(country.name) ?? 30) : 30;
-  const recDays = country ? (getRecRuleDays(country.name) ?? 7) : 7;
+  const maxDays = getMaxRuleDays(rule) ?? 30;
+  const recDays = getRecRuleDays(rule) ?? 7;
 
   useEffect(() => {
     setActivePlanId("default");
@@ -92,7 +95,7 @@ export default function CountryPanel({
   const planOptions = useMemo(() => {
     const opts: { id: string; label: string; plan: TripPlan }[] = [];
     if (country) {
-      const defaultPlan = generateTripPlan(country, "custom", selectedCities, customDays);
+      const defaultPlan = generateTripPlan(country, "custom", selectedCities, customDays, rule);
       opts.push({ id: "default", label: "📅 Default", plan: defaultPlan });
       for (let i = 0; i < aiPlans.length; i++) {
         const sp = aiPlans[i];
@@ -101,7 +104,7 @@ export default function CountryPanel({
       }
     }
     return opts;
-  }, [country, selectedCities, customDays, aiPlans]);
+  }, [country, selectedCities, customDays, aiPlans, rule]);
 
   const activePlan = planOptions.find((o) => o.id === activePlanId) ?? planOptions[0];
   const isDefaultActive = activePlanId === "default";
@@ -143,9 +146,28 @@ export default function CountryPanel({
           <div className="px-5 py-4 border-b bg-gradient-to-br from-slate-50 to-white shrink-0">
             <div className="flex items-start justify-between gap-2">
               <div className="flex-1 min-w-0">
-                <h2 className="text-xl font-bold text-gray-900 leading-tight">{country.name}</h2>
-                <p className="text-xs text-gray-400 mt-0.5 font-medium">{country.budget} · from {homeCountry}</p>
-              </div>
+                <h2 className="text-xl font-bold text-gray-900 leading-tight">
+                  {country.name}
+                </h2>
+                <p className="text-xs text-gray-400 mt-0.5 font-medium">
+                  {getBudgetDisplay(country.budget)} · from {homeCountry}
+                  {ruleLoading && <span className="text-[9px] text-blue-400 ml-2">Loading itinerary…</span>}
+                </p>
+               {/* V2 budget breakdown */}
+               {consolidated && (
+                 <div className="flex items-center gap-2 mt-1.5 flex-wrap">
+                   <span className="text-[9px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
+                     👤 {consolidated.budget.solo}
+                   </span>
+                   <span className="text-[9px] font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">
+                     👫 {consolidated.budget.couple}
+                   </span>
+                   <span className="text-[9px] font-semibold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">
+                     👨‍👩‍👧‍👦 {consolidated.budget.family4}
+                   </span>
+                 </div>
+               )}
+             </div>
               <div className="flex items-center gap-0.5 shrink-0">
                 <button onClick={onToggleVisited}
                   className={`px-2 py-1 rounded-lg text-[10px] font-bold transition-all ${
@@ -312,6 +334,7 @@ export default function CountryPanel({
                   onCinematic={setCinematicPlan}
                   onItinerary={setModalPlan}
                   isAiPlan={!isDefaultActive}
+                  rule={rule}
                 />
               )}
             </Section>
@@ -445,6 +468,7 @@ export default function CountryPanel({
           country={country}
           homeCountry={homeCountry}
           mainMapRef={mainMapRef}
+          rule={rule}
           comboCountries={country.combo
             ?.map((name) => allCountries?.find((c) => c.name === name))
             .filter((c): c is Country => !!c)
@@ -456,6 +480,7 @@ export default function CountryPanel({
         <ItineraryModal
           plan={modalPlan}
           country={country}
+          rule={rule}
           onClose={() => setModalPlan(null)}
         />
       )}
@@ -469,15 +494,16 @@ export default function CountryPanel({
   );
 }
 
-function PlanPreview({ country, plan, homeCountry, onCinematic, onItinerary, isAiPlan }: {
+function PlanPreview({ country, plan, homeCountry, onCinematic, onItinerary, isAiPlan, rule }: {
   country: Country;
   plan: TripPlan;
   homeCountry: string;
   onCinematic: (plan: TripPlan) => void;
   onItinerary: (plan: TripPlan) => void;
   isAiPlan?: boolean;
+  rule?: CountryRule | null;
 }) {
-  const hasRuleData = !!ITINERARY_RULES[country.name];
+  const hasRuleData = !!rule;
 
   // Unique ordered cities from plan (for route preview)
   const planCities = extractPlanCities(plan.days);

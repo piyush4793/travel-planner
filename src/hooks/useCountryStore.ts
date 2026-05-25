@@ -1,20 +1,57 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-import seedData from "../../data/countries.json";
+import manifestData from "../../data/rules/index.json";
 import catalogData from "../../data/worldCatalog.json";
 import type { Country, CatalogEntry } from "../types";
 import { loadLS, saveLS } from "../utils/storage";
 import { LS_KEYS } from "../utils/lsKeys";
 import { usePersistedSet } from "./usePersistedSet";
+import { loadConsolidatedCountry } from "./useCountryRule";
 
-const SEED = seedData as Country[];
+type ManifestEntry = { name: string; lat: number; lng: number; region: string; inSeed: boolean; hasItinerary: boolean; recDays: number | null; maxDays: number | null };
+
+const MANIFEST = manifestData as ManifestEntry[];
 const CATALOG = catalogData as CatalogEntry[];
 
-function buildCountryList(customs: Country[], deleted: string[]): Country[] {
+// Seed country names from manifest
+const SEED_NAMES = new Set(MANIFEST.filter((m) => m.inSeed).map((m) => m.name));
+
+// Build minimal Country objects from manifest for seed countries (sync, instant)
+function buildSeedCountry(m: ManifestEntry): Country {
+  return {
+    name: m.name, lat: m.lat, lng: m.lng, region: m.region,
+    bestMonths: [], budget: "", experiences: [],
+  };
+}
+
+// Cache for enriched country data loaded from per-country JSON
+const enrichedCache = new Map<string, Country>();
+
+async function enrichCountry(name: string): Promise<Country | null> {
+  if (enrichedCache.has(name)) return enrichedCache.get(name)!;
+  const data = await loadConsolidatedCountry(name);
+  if (!data) return null;
+  const country: Country = {
+    name: data.name, lat: data.lat, lng: data.lng, region: data.region,
+    bestMonths: data.bestMonths, worstMonths: data.worstMonths,
+    budget: typeof data.budget === "object" ? data.budget.couple : data.budget,
+    experiences: data.experiences, avoid: data.avoid, combo: data.combo,
+    landmark: data.landmark ?? undefined, travelStyle: data.travelStyle as Country["travelStyle"],
+    cities: data.cities, stopoverNote: data.stopoverNote ?? undefined,
+    links: data.links,
+  };
+  enrichedCache.set(name, country);
+  return country;
+}
+
+function buildCountryList(customs: Country[], deleted: string[], enriched: Map<string, Country>): Country[] {
   const overrides = new Map(customs.map((c) => [c.name, c]));
-  const base = SEED
-    .filter((c) => !deleted.includes(c.name))
-    .map((c) => overrides.get(c.name) ?? c);
-  const added = customs.filter((c) => !SEED.find((s) => s.name === c.name));
+  const seedEntries = MANIFEST.filter((m) => m.inSeed && !deleted.includes(m.name));
+  const base = seedEntries.map((m) => {
+    if (overrides.has(m.name)) return overrides.get(m.name)!;
+    if (enriched.has(m.name)) return enriched.get(m.name)!;
+    return buildSeedCountry(m);
+  });
+  const added = customs.filter((c) => !SEED_NAMES.has(c.name));
   return [...base, ...added];
 }
 
@@ -23,22 +60,36 @@ function initMyList(): Set<string> {
   if (stored !== null) return new Set(stored);
   const customNames = loadLS<Country[]>(LS_KEYS.CUSTOMS, []).map((c) => c.name);
   const deletedNames = loadLS<string[]>(LS_KEYS.DELETED, []);
-  const seedNames = SEED.map((c) => c.name).filter((n) => !deletedNames.includes(n));
+  const seedNames = [...SEED_NAMES].filter((n) => !deletedNames.includes(n));
   return new Set([...seedNames, ...customNames]);
 }
 
 export function useCountryStore() {
   const [customs, setCustoms] = useState<Country[]>(() => loadLS(LS_KEYS.CUSTOMS, []));
   const [deleted, setDeleted] = useState<string[]>(() => loadLS(LS_KEYS.DELETED, []));
+  const [enriched, setEnriched] = useState<Map<string, Country>>(() => new Map());
 
   useEffect(() => { saveLS(LS_KEYS.CUSTOMS, customs); }, [customs]);
   useEffect(() => { saveLS(LS_KEYS.DELETED, deleted); }, [deleted]);
+
+  // Eagerly enrich all seed countries from per-country JSON files
+  useEffect(() => {
+    const names = [...SEED_NAMES];
+    let cancelled = false;
+    Promise.all(names.map(enrichCountry)).then((results) => {
+      if (cancelled) return;
+      const map = new Map<string, Country>();
+      for (const c of results) { if (c) map.set(c.name, c); }
+      setEnriched(map);
+    });
+    return () => { cancelled = true; };
+  }, []);
 
   const visited = usePersistedSet(LS_KEYS.VISITED, () => new Set(loadLS<string[]>(LS_KEYS.VISITED, [])));
   const favorites = usePersistedSet(LS_KEYS.FAVORITES, () => new Set(loadLS<string[]>(LS_KEYS.FAVORITES, [])));
   const myList = usePersistedSet(LS_KEYS.MY_LIST, initMyList);
 
-  const allCountries = useMemo(() => buildCountryList(customs, deleted), [customs, deleted]);
+  const allCountries = useMemo(() => buildCountryList(customs, deleted, enriched), [customs, deleted, enriched]);
 
   const myListCountries = useMemo(() => {
     const inList = allCountries.filter((c) => myList.set.has(c.name));
@@ -59,7 +110,7 @@ export function useCountryStore() {
 
   const deleteCountry = useCallback((country: Country) => {
     setCustoms((prev) => prev.filter((c) => c.name !== country.name));
-    if (SEED.find((s) => s.name === country.name)) {
+    if (SEED_NAMES.has(country.name)) {
       setDeleted((prev) => [...prev, country.name]);
     }
   }, []);
@@ -75,8 +126,7 @@ export function useCountryStore() {
 
   const addToList = useCallback((name: string) => {
     myList.add(name);
-    const inSeed = SEED.find((s) => s.name === name);
-    if (inSeed) {
+    if (SEED_NAMES.has(name)) {
       setDeleted((prev) => prev.filter((n) => n !== name));
     } else {
       setCustoms((prev) => {

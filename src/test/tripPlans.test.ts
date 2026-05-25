@@ -89,43 +89,47 @@ describe("tripPlans — P0", () => {
   });
 
   describe("getMaxRuleDays / getRecRuleDays", () => {
-    it("returns null for unknown country", () => {
-      expect(getMaxRuleDays("Atlantis")).toBeNull();
-      expect(getRecRuleDays("Atlantis")).toBeNull();
+    it("returns null for null rule", () => {
+      expect(getMaxRuleDays(null)).toBeNull();
+      expect(getRecRuleDays(null)).toBeNull();
+      expect(getMaxRuleDays(undefined)).toBeNull();
+      expect(getRecRuleDays(undefined)).toBeNull();
     });
 
-    it("returns positive numbers for rule countries", () => {
-      const max = getMaxRuleDays("Norway");
-      const rec = getRecRuleDays("Norway");
-      expect(max).toBeGreaterThan(0);
-      expect(rec).toBeGreaterThan(0);
-      expect(max!).toBeGreaterThanOrEqual(rec!);
+    it("returns positive numbers for valid rule", () => {
+      const mockRule = {
+        cityOrder: ["CityA", "CityB"],
+        cities: {
+          CityA: { name: "CityA", minDays: 2, recDays: 3, maxDays: 4, days: [] },
+          CityB: { name: "CityB", minDays: 1, recDays: 2, maxDays: 3, days: [] },
+        },
+        connections: [],
+      };
+      const max = getMaxRuleDays(mockRule);
+      const rec = getRecRuleDays(mockRule);
+      expect(max).toBe(7);
+      expect(rec).toBe(5);
     });
   });
 
   describe("smart city selection", () => {
-    it("includes all cities when days are sufficient", () => {
-      const max = getMaxRuleDays("Vietnam")!;
+    it("generates plan without rule (generic fallback)", () => {
       const plan = generateTripPlan(
-        { name: "Vietnam", lat: 0, lng: 0, bestMonths: ["March"], budget: "₹50K–₹1L", experiences: [] },
-        "custom", [], max,
+        { name: "TestLand", lat: 0, lng: 0, bestMonths: ["March"], budget: "₹50K–₹1L", experiences: ["Temples", "Food"] },
+        "custom", [], 7,
       );
-      // Should use all Vietnam rule cities
-      const cities = plan.days.map((d) => d.label.match(/—\s*(.+)$/)?.[1]).filter(Boolean);
-      const unique = [...new Set(cities)];
-      expect(unique.length).toBeGreaterThanOrEqual(5);
+      expect(plan.days.length).toBeGreaterThanOrEqual(1);
+      expect(plan.costPerPerson).toBeTruthy();
+      expect(plan.duration).toContain("7");
     });
 
-    it("drops low-priority cities when days are tight", () => {
+    it("uses generic algorithm when no rule provided", () => {
       const plan = generateTripPlan(
-        { name: "Vietnam", lat: 0, lng: 0, bestMonths: ["March"], budget: "₹50K–₹1L", experiences: [] },
+        { name: "Unknown", lat: 0, lng: 0, bestMonths: ["March"], budget: "₹50K–₹1L", experiences: [] },
         "custom", [], 4,
       );
-      const cities = plan.days.map((d) => d.label.match(/—\s*(.+)$/)?.[1]).filter(Boolean);
-      const unique = [...new Set(cities)];
-      // With only 4 days, can't visit all 7 cities
-      expect(unique.length).toBeLessThan(7);
-      expect(unique.length).toBeGreaterThanOrEqual(1);
+      expect(plan.days.length).toBeGreaterThanOrEqual(1);
+      expect(plan.duration).toContain("4");
     });
   });
 

@@ -9,7 +9,6 @@ import Filters from "./components/shared/Filters";
 import HomeCountrySelector from "./components/shared/HomeCountrySelector";
 import DevFlagPanel from "./components/shared/DevFlagPanel";
 import CountryPanel from "./components/country/CountryPanel";
-import CountryPanelV2 from "./components/country/CountryPanelV2";
 import CountryForm from "./components/country/CountryForm";
 import SettingsModal from "./components/ai/SettingsModal";
 import ChatModal from "./components/ai/ChatModal";
@@ -281,49 +280,26 @@ export default function App() {
           />
         )}
 
-        {isEnabled("v2CountryPanel") ? (
-          <CountryPanelV2
-            country={selectedCountry}
-            onClose={() => setSelectedCountry(null)}
-            isFavorite={selectedCountry ? store.favorites.set.has(selectedCountry.name) : false}
-            onToggleFavorite={() => selectedCountry && store.favorites.toggle(selectedCountry.name)}
-            isVisited={selectedCountry ? store.visited.set.has(selectedCountry.name) : false}
-            onToggleVisited={() => selectedCountry && store.visited.toggle(selectedCountry.name)}
-            onFilterExperience={toggleExperience}
-            activeExperiences={selectedExperiences}
-            onEdit={() => selectedCountry && setFormTarget(selectedCountry)}
-            onDelete={() => selectedCountry && handleDelete(selectedCountry)}
-            onUpdateNotes={handleUpdateNotes}
-            homeCountry={homeCountry}
-            mainMapRef={mainMapRef}
-            allCountries={store.myListCountries}
-            onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
-            aiPlans={isEnabled("llmPlanning") ? selectedCountryAiPlans : undefined}
-            onDeleteAiPlan={isEnabled("llmPlanning") ? handleDeleteAiPlan : undefined}
-            onCinematicChange={setCinematicActive}
-          />
-        ) : (
-          <CountryPanel
-            country={selectedCountry}
-            onClose={() => setSelectedCountry(null)}
-            isFavorite={selectedCountry ? store.favorites.set.has(selectedCountry.name) : false}
-            onToggleFavorite={() => selectedCountry && store.favorites.toggle(selectedCountry.name)}
-            isVisited={selectedCountry ? store.visited.set.has(selectedCountry.name) : false}
-            onToggleVisited={() => selectedCountry && store.visited.toggle(selectedCountry.name)}
-            onFilterExperience={toggleExperience}
-            activeExperiences={selectedExperiences}
-            onEdit={() => selectedCountry && setFormTarget(selectedCountry)}
-            onDelete={() => selectedCountry && handleDelete(selectedCountry)}
-            onUpdateNotes={handleUpdateNotes}
-            homeCountry={homeCountry}
-            mainMapRef={mainMapRef}
-            allCountries={store.myListCountries}
-            onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
-            aiPlans={isEnabled("llmPlanning") ? selectedCountryAiPlans : undefined}
-            onDeleteAiPlan={isEnabled("llmPlanning") ? handleDeleteAiPlan : undefined}
-            onCinematicChange={setCinematicActive}
-          />
-        )}
+        <CountryPanel
+          country={selectedCountry}
+          onClose={() => setSelectedCountry(null)}
+          isFavorite={selectedCountry ? store.favorites.set.has(selectedCountry.name) : false}
+          onToggleFavorite={() => selectedCountry && store.favorites.toggle(selectedCountry.name)}
+          isVisited={selectedCountry ? store.visited.set.has(selectedCountry.name) : false}
+          onToggleVisited={() => selectedCountry && store.visited.toggle(selectedCountry.name)}
+          onFilterExperience={toggleExperience}
+          activeExperiences={selectedExperiences}
+          onEdit={() => selectedCountry && setFormTarget(selectedCountry)}
+          onDelete={() => selectedCountry && handleDelete(selectedCountry)}
+          onUpdateNotes={handleUpdateNotes}
+          homeCountry={homeCountry}
+          mainMapRef={mainMapRef}
+          allCountries={store.myListCountries}
+          onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
+          aiPlans={isEnabled("llmPlanning") ? selectedCountryAiPlans : undefined}
+          onDeleteAiPlan={isEnabled("llmPlanning") ? handleDeleteAiPlan : undefined}
+          onCinematicChange={setCinematicActive}
+        />
       </div>
 
       {formTarget !== null && (

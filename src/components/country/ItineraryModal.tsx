@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import type { Country } from "../../types";
 import type { TripPlan, DayEntry } from "../../utils/tripPlans";
 import { extractCityFromLabel } from "../../utils/tripPlans";
-import { ITINERARY_RULES } from "../../data/itineraryRules";
+import type { CountryRule } from "../../data/itineraryRules";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../utils/transport";
 
 // ─── Day grouping ─────────────────────────────────────────────────────────────
@@ -14,7 +14,7 @@ type CityGroup = {
   transport?: { type: TransportType; label: string; cost?: string };
 };
 
-function groupDays(days: DayEntry[], country: Country): CityGroup[] {
+function groupDays(days: DayEntry[], rule?: CountryRule | null): CityGroup[] {
   const groups: CityGroup[] = [];
   for (const day of days) {
     const city = extractCityFromLabel(day.label);
@@ -27,7 +27,6 @@ function groupDays(days: DayEntry[], country: Country): CityGroup[] {
     }
   }
 
-  const rule = ITINERARY_RULES[country.name];
   if (rule) {
     groups.forEach((g, i) => {
       if (i === 0) return;
@@ -48,11 +47,12 @@ function groupDays(days: DayEntry[], country: Country): CityGroup[] {
 interface Props {
   plan: TripPlan;
   country: Country;
+  rule?: CountryRule | null;
   onClose: () => void;
 }
 
-export default function ItineraryModal({ plan, country, onClose }: Props) {
-  const groups = groupDays(plan.days, country);
+export default function ItineraryModal({ plan, country, rule, onClose }: Props) {
+  const groups = groupDays(plan.days, rule);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
@@ -155,7 +155,7 @@ export default function ItineraryModal({ plan, country, onClose }: Props) {
               {/* Day cards */}
               <div className="px-6 pb-2 space-y-3">
                 {group.days.map((day, di) => (
-                  <DayCard key={di} day={day} city={group.name} country={country} />
+                  <DayCard key={di} day={day} city={group.name} rule={rule} />
                 ))}
               </div>
             </div>
@@ -191,10 +191,9 @@ function mapsUrl(query: string, city: string): string {
   return `https://www.google.com/maps/search/${encodeURIComponent(`${query}, ${city}`)}`;
 }
 
-function DayCard({ day, city, country }: { day: DayEntry; city: string; country: Country }) {
+function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: CountryRule | null }) {
   const [expanded, setExpanded] = useState(true);
 
-  const rule = ITINERARY_RULES[country.name];
   const cityRule = rule?.cities[city];
   const ruleDay = day.theme && cityRule
     ? cityRule.days.find((d) => d.theme === day.theme)
