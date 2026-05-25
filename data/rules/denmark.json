@@ -65,5 +65,287 @@
       "notes": "Viking burial site at Lindholm Hoje and waterfront Utzon Center"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "3 (Three) Tourist SIM is the simplest tourist option in Denmark — about ₹1,833 for short stays with enough data for maps, ticket apps, and hotspot backup.",
+    "apps": [
+      "DSB",
+      "Rejseplanen",
+      "DOT Tickets",
+      "MobilePay",
+      "Google Maps",
+      "Google Translate",
+      "XE Currency",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Copenhagen",
+      "Aarhus",
+      "Odense"
+    ],
+    "cities": {
+      "Copenhagen": {
+        "name": "Copenhagen",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days gives you two full city days plus a Roskilde day trip; add a fourth day only if you want a slower museum-and-cafe pace.",
+        "days": [
+          {
+            "theme": "Nyhavn, Strøget & Historic Centre",
+            "activities": [
+              {
+                "name": "Nyhavn harbour walk and canal-front photo stops"
+              },
+              {
+                "name": "Strøget shopping street and side-lane design stores"
+              },
+              {
+                "name": "Rundetårn (Round Tower) for city views"
+              },
+              {
+                "name": "Torvehallerne Market snack crawl for lunch or fika"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Wakeup Copenhagen Borgergade",
+                "budget": "₹7,000–₹10,000/night"
+              },
+              {
+                "name": "Hotel Bethel",
+                "budget": "₹15,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Grød",
+              "Torvehallerne Market",
+              "Riz Raz"
+            ]
+          },
+          {
+            "theme": "Royal Copenhagen, Museums & Tivoli",
+            "activities": [
+              {
+                "name": "Christiania walk for alternative Copenhagen culture"
+              },
+              {
+                "name": "National Museum of Denmark"
+              },
+              {
+                "name": "Amalienborg Palace square and guard change timing"
+              },
+              {
+                "name": "Rosenborg Castle exterior and King’s Garden walk"
+              },
+              {
+                "name": "Tivoli Gardens in the evening"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Wakeup Copenhagen Borgergade",
+                "budget": "₹7,000–₹10,000/night"
+              },
+              {
+                "name": "Hotel Bethel",
+                "budget": "₹15,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Riz Raz",
+              "Grød",
+              "Torvehallerne Market"
+            ]
+          },
+          {
+            "theme": "Roskilde Day Trip & Tivoli Finish",
+            "activities": [
+              {
+                "name": "Morning DSB regional train to Roskilde for an easy day trip from Copenhagen"
+              },
+              {
+                "name": "Roskilde Cathedral",
+                "cost": "₹738"
+              },
+              {
+                "name": "Viking Ship Museum",
+                "cost": "₹1,415"
+              },
+              {
+                "name": "Back to Copenhagen for a relaxed Nyhavn or Tivoli evening"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Wakeup Copenhagen Borgergade",
+                "budget": "₹7,000–₹10,000/night"
+              },
+              {
+                "name": "Hotel Bethel",
+                "budget": "₹15,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Torvehallerne Market",
+              "Riz Raz",
+              "Grød"
+            ]
+          }
+        ]
+      },
+      "Aarhus": {
+        "name": "Aarhus",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Use Aarhus for a compact two-day culture stop with most sights reachable on foot or a short bus ride from the centre.",
+        "days": [
+          {
+            "theme": "ARoS, Latin Quarter & Old Town",
+            "activities": [
+              {
+                "name": "ARoS Aarhus Art Museum and Your rainbow panorama rooftop",
+                "cost": "₹2,337"
+              },
+              {
+                "name": "Latin Quarter walk for boutiques, cafes, and cobbled lanes"
+              },
+              {
+                "name": "Den Gamle By open-air museum",
+                "cost": "₹2,337"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "CABINN Aarhus",
+                "budget": "₹7,500–₹10,500/night"
+              },
+              {
+                "name": "Hotel Oasia Aarhus",
+                "budget": "₹12,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Aarhus Street Food",
+              "Mefisto",
+              "Raadhuus Kafeen"
+            ]
+          },
+          {
+            "theme": "Moesgaard Museum & Waterfront",
+            "activities": [
+              {
+                "name": "Moesgaard Museum",
+                "cost": "₹2,214"
+              },
+              {
+                "name": "Dokk1 and Aarhus waterfront walk"
+              },
+              {
+                "name": "Relaxed evening back in the Latin Quarter"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "CABINN Aarhus",
+                "budget": "₹7,500–₹10,500/night"
+              },
+              {
+                "name": "Hotel Oasia Aarhus",
+                "budget": "₹12,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Aarhus Street Food",
+              "Mefisto",
+              "Restaurant ET"
+            ]
+          }
+        ]
+      },
+      "Odense": {
+        "name": "Odense",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Odense works well as a one-night stop focused on Hans Christian Andersen heritage and a gentle old-town pace.",
+        "days": [
+          {
+            "theme": "Hans Christian Andersen Trail & Funen History",
+            "activities": [
+              {
+                "name": "Hans Christian Andersen Museum",
+                "cost": "₹1,599"
+              },
+              {
+                "name": "St Knud's Cathedral",
+                "cost": "Free"
+              },
+              {
+                "name": "Funen Village",
+                "cost": "₹1,353"
+              },
+              {
+                "name": "Old town walk around central Odense"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "City Hotel Nattergalen",
+                "budget": "₹8,000–₹11,000/night"
+              },
+              {
+                "name": "Comwell H.C. Andersen Odense",
+                "budget": "₹13,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Storms Pakhus",
+              "Gringas",
+              "Gastroteket"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Copenhagen",
+        "to": "Aarhus",
+        "method": "DSB intercity train (Orange fares available) from København H to Aarhus H, about 3 hours",
+        "cost": "₹1,833"
+      },
+      {
+        "from": "Aarhus",
+        "to": "Odense",
+        "method": "DSB intercity train from Aarhus H to Odense, about 1.5 hours",
+        "cost": "₹1,464"
+      }
+    ],
+    "extras": [
+      "Expect mid-range Denmark stays to fall roughly in the ₹7,000–₹20,000/night range; book early in Copenhagen for the best value.",
+      "Use DOT Tickets for Copenhagen buses, metro, and harbour-area transfers, while Rejseplanen is the best planner for nationwide trains and buses.",
+      "Orange train fares on DSB are the cheapest option for Copenhagen → Aarhus and Aarhus → Odense, but they are limited and tied to a specific departure.",
+      "MobilePay is useful for local merchants, but international cards are not always fully supported, so keep a backup credit card ready.",
+      "Roskilde is the easiest high-value day trip from Copenhagen if you want Viking history without adding another hotel check-in.",
+      "Vegetarian travelers should bookmark Riz Raz, use Torvehallerne Market for flexible food stalls, and keep Grød in mind for quick breakfast or porridge bowls."
+    ],
+    "cityImages": {
+      "Copenhagen": [
+        "Nyhavn Copenhagen colorful harbour",
+        "Amalienborg Palace Copenhagen square",
+        "Tivoli Gardens Copenhagen night"
+      ],
+      "Aarhus": [
+        "ARoS Aarhus rainbow panorama",
+        "Latin Quarter Aarhus Denmark street",
+        "Moesgaard Museum Aarhus grass roof"
+      ],
+      "Odense": [
+        "Hans Christian Andersen Museum Odense",
+        "St Knud's Cathedral Odense",
+        "Funen Village Odense open air museum"
+      ]
+    }
+  }
 }

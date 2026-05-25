@@ -71,5 +71,483 @@
       "notes": "Walled town in Kakheti wine country with Alazani Valley views"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Magti (best coverage) or Silknet — buy at Tbilisi airport arrivals or city shops",
+    "apps": [
+      "Bolt (taxis in Tbilisi, Kutaisi, Batumi)",
+      "Yandex Maps (better local transit + marshrutka guidance)",
+      "Maps.me (offline maps for Kazbegi trails)",
+      "Georgian Railways / tkt.ge (train tickets)",
+      "Google Translate (Georgian script support)"
+    ],
+    "cityOrder": [
+      "Tbilisi",
+      "Sighnaghi",
+      "Kazbegi",
+      "Kutaisi",
+      "Batumi"
+    ],
+    "cities": {
+      "Tbilisi": {
+        "name": "Tbilisi",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Best first base for transit, cash exchange, museums, and the Mtskheta side trip.",
+        "days": [
+          {
+            "theme": "Old Town, Sulphur Baths & Riverfront Icons",
+            "activities": [
+              {
+                "name": "Narikala Fortress and Old Town walk through Kala district for classic balcony-house views",
+                "cost": "Free"
+              },
+              {
+                "name": "Abanotubani sulphur baths session on Bath Street",
+                "cost": "₹300–₹6,000 depending on public vs private bath",
+                "tip": "Book a private room in the evening if you want a cleaner, quieter soak."
+              },
+              {
+                "name": "Metekhi Church and Anchiskhati Basilica walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Peace Bridge and Rike Park at dusk",
+                "cost": "Free"
+              },
+              {
+                "name": "Fabrika courtyard for cafés, bars, and people-watching",
+                "cost": "₹150–₹900 depending on food and drinks"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Envoy Hostel, Old Town",
+                "budget": "₹600–₹3,600/night"
+              },
+              {
+                "name": "Rooms Hotel Tbilisi",
+                "budget": "₹4,500–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Racha Restaurant — pkhali, lobio, khachapuri · ₹300–₹750 pp",
+              "Family Kitchen — canteen-style Georgian plates with veg choices · ₹240–₹600 pp",
+              "Kiwi Vegan Café — fully vegan, great for a lighter dinner · ₹120–₹210 pp"
+            ]
+          },
+          {
+            "theme": "Museums, Rustaveli Avenue & Mtatsminda Views",
+            "activities": [
+              {
+                "name": "Simon Janashia Museum of Georgia including the Museum of Soviet Occupation",
+                "cost": "₹210 pp"
+              },
+              {
+                "name": "National Gallery on Rustaveli Avenue",
+                "cost": "₹210 pp"
+              },
+              {
+                "name": "Rustaveli Avenue architectural stroll past the Opera House and Parliament",
+                "cost": "Free"
+              },
+              {
+                "name": "Mtatsminda funicular for panoramic city views",
+                "cost": "₹300–₹600 round trip"
+              },
+              {
+                "name": "Dry Bridge flea market for Soviet antiques and local crafts",
+                "cost": "Free entry"
+              }
+            ],
+            "meals": [
+              "Cafe Gabriadze — artsy Georgian bistro near the puppet theatre · ₹600–₹1,500 pp",
+              "Ninia's Garden — strong vegetarian Georgian spread · ₹750–₹1,350 pp",
+              "Cafe Leila — vegan-friendly stop in the old center · ₹300–₹360 pp"
+            ]
+          },
+          {
+            "theme": "Mtskheta UNESCO Day Trip + Tbilisi Market Evening",
+            "activities": [
+              {
+                "name": "Marshrutka from Didube to Mtskheta and back",
+                "cost": "₹120 return"
+              },
+              {
+                "name": "Svetitskhoveli Cathedral, Georgia’s former royal-spiritual center",
+                "cost": "Free"
+              },
+              {
+                "name": "Jvari Monastery cliff-top lookout over the Aragvi–Mtkvari confluence",
+                "cost": "₹150 shuttle or ₹450 taxi return"
+              },
+              {
+                "name": "Samtavro Monastery and Bebris Tsikhe fortress ruins",
+                "cost": "Free"
+              },
+              {
+                "name": "Back in Tbilisi for Dezerter Bazaar snacks and wine shopping",
+                "cost": "₹90–₹600 depending on tastings/snacks"
+              }
+            ],
+            "meals": [
+              "Cafe Guga, Mtskheta — homestyle Georgian lunch · ₹300–₹600 pp",
+              "Salobie, near Mtskheta — famous bean dishes and breads · ₹300–₹600 pp",
+              "Churchkhela + market snack crawl at Dezerter Bazaar · ₹30–₹180 pp"
+            ]
+          }
+        ]
+      },
+      "Sighnaghi": {
+        "name": "Sighnaghi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Compact Kakheti wine-country stop with valley views, town walls, and easy monastery access.",
+        "days": [
+          {
+            "theme": "Kakheti Views, Old Town Walls & Wine Country Slow Travel",
+            "activities": [
+              {
+                "name": "Tbilisi to Sighnaghi marshrutka or shared taxi via Kakheti",
+                "cost": "₹180–₹300 pp"
+              },
+              {
+                "name": "Sighnaghi old town wall walk and Alazani Valley viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Bodbe Monastery visit just outside town",
+                "cost": "Free; ₹150–₹300 taxi if you do not walk"
+              },
+              {
+                "name": "Pheasant’s Tears wine cellar or tasting room experience",
+                "cost": "₹600–₹1,200 depending on tasting"
+              },
+              {
+                "name": "Evening café-hopping around the main square and pastel lanes",
+                "cost": "₹150–₹450"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kabadoni Boutique Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Guesthouse Art Gallery",
+                "budget": "₹1,800–₹3,000/night"
+              }
+            ],
+            "meals": [
+              "Pheasant’s Tears — traditional Kakheti menu with seasonal veg dishes · ₹600–₹1,500 pp",
+              "The Terrace Signagi — hill-view restaurant with mushroom, eggplant, and bread dishes · ₹450–₹1,200 pp",
+              "OKRO'S Wine Restaurant — salads, breads, local cheese, and wine flights · ₹450–₹1,200 pp"
+            ]
+          }
+        ]
+      },
+      "Kazbegi": {
+        "name": "Kazbegi",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Bring cash before arrival — coverage and ATMs are limited once you reach the valley.",
+        "days": [
+          {
+            "theme": "Georgian Military Highway Arrival & Gergeti Views",
+            "activities": [
+              {
+                "name": "Tbilisi or Kakheti transit to Stepantsminda via shared transfer / marshrutka",
+                "cost": "₹300–₹1,800 pp depending on route"
+              },
+              {
+                "name": "Walk or taxi up to Gergeti Trinity Church",
+                "cost": "Free hike or ₹1,200 return by taxi"
+              },
+              {
+                "name": "Town square and Terek River evening walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Optional stop at Ananuri or the Friendship Monument on the way",
+                "cost": "₹450–₹900 pp on shared transfer"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Anano's Guesthouse",
+                "budget": "₹1,200/person with breakfast and dinner"
+              },
+              {
+                "name": "Ketino's Guesthouse",
+                "budget": "₹450–₹750/person/night"
+              }
+            ],
+            "meals": [
+              "Cozy Corner — vegetable BBQ skewers and simple Georgian plates · ₹300–₹750 pp",
+              "Lunch at Maia — home-style daily menu, easy for vegetarians · ₹330–₹400 pp",
+              "Guesthouse supra dinner — home-cooked beans, salads, bread, and mains · ₹600–₹900 pp"
+            ]
+          },
+          {
+            "theme": "Full Mountain Day in the Caucasus",
+            "activities": [
+              {
+                "name": "Gergeti Glacier hike or longer valley trail beyond the church",
+                "cost": "Free"
+              },
+              {
+                "name": "Half-day meadow and mountain-photography walk around Stepantsminda",
+                "cost": "Free"
+              },
+              {
+                "name": "Optional 4x4 or taxi assistance for higher viewpoints",
+                "cost": "₹1,500–₹3,000 per vehicle"
+              },
+              {
+                "name": "Sunset return to town for a slow dinner with Mount Kazbek views",
+                "cost": "₹300–₹900 pp"
+              }
+            ],
+            "meals": [
+              "Rooms Hotel Kazbegi restaurant — best splurge view meal in town · ₹1,200–₹2,400 pp",
+              "Shorena's Bar — relaxed local plates and drinks · ₹450–₹900 pp",
+              "Guesthouse breakfast spread before hiking · usually included"
+            ]
+          }
+        ]
+      },
+      "Kutaisi": {
+        "name": "Kutaisi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Good western-Georgia stop for UNESCO monasteries, river walks, and a lower-cost city break.",
+        "days": [
+          {
+            "theme": "UNESCO Monasteries, River Bridges & Old Kutaisi",
+            "activities": [
+              {
+                "name": "Bagrati Cathedral hilltop walk for city views",
+                "cost": "Free"
+              },
+              {
+                "name": "Gelati Monastery excursion by bus or taxi",
+                "cost": "Free entry; ₹30 bus or ₹450–₹900 taxi"
+              },
+              {
+                "name": "Motsameta Monastery gorge stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Sataplia Nature Reserve with cave and dinosaur footprints",
+                "cost": "₹510 pp"
+              },
+              {
+                "name": "White Bridge and Central Garden evening stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Best Western Kutaisi",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hostel Kutaisi",
+                "budget": "₹600–₹900/night"
+              }
+            ],
+            "meals": [
+              "Kartuli — authentic Georgian home-style cooking · ₹450–₹900 pp",
+              "Tea House Foe-Foe — soups, salads, and café bites · ₹150–₹450 pp",
+              "Palaty — polished Georgian dinner with wine list · ₹600–₹1,500 pp"
+            ]
+          }
+        ]
+      },
+      "Batumi": {
+        "name": "Batumi",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Batumi to slow down at the end of the trip — beach, boulevard, cable car, and botanical garden.",
+        "days": [
+          {
+            "theme": "Boulevard Arrival, Old Town Squares & Night Lights",
+            "activities": [
+              {
+                "name": "Kutaisi to Batumi marshrutka or train transfer",
+                "cost": "₹450–₹900 pp"
+              },
+              {
+                "name": "Batumi Boulevard and beach promenade walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Piazza Square, Medea Statue, and old town lanes",
+                "cost": "Free"
+              },
+              {
+                "name": "Dancing Fountains night show",
+                "cost": "Free"
+              },
+              {
+                "name": "Optional panoramic wheel near the port",
+                "cost": "₹300 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Ritsa",
+                "budget": "₹1,800–₹3,000/night"
+              },
+              {
+                "name": "Sputnik Boutique Hotel",
+                "budget": "₹2,100/night"
+              }
+            ],
+            "meals": [
+              "Kozlovichi — homemade Georgian food and beer · ₹450–₹900 pp",
+              "Maspindzeli — Adjarian classics incl. bean dishes · ₹600–₹1,200 pp",
+              "Lobiani from street bakeries — cheap vegan snack fix · ₹36–₹45 each"
+            ]
+          },
+          {
+            "theme": "Botanical Garden, Cable Car & Batumi Panorama",
+            "activities": [
+              {
+                "name": "Batumi Botanical Garden cliff-side trails over the Black Sea",
+                "cost": "₹600 pp"
+              },
+              {
+                "name": "Argo Cable Car for the best full-city panorama",
+                "cost": "₹900 pp"
+              },
+              {
+                "name": "Adjara Art Museum",
+                "cost": "₹30 pp"
+              },
+              {
+                "name": "Adjarian khachapuri tasting session",
+                "cost": "₹270–₹450 pp"
+              },
+              {
+                "name": "Sunset return to the seafront for final promenade time",
+                "cost": "Free"
+              }
+            ],
+            "meals": [
+              "Heart of Batumi — cozy, reliable Georgian dinner stop · ₹600–₹1,350 pp",
+              "Old Boulevard — seaside meal with broader menu choice · ₹750–₹1,800 pp",
+              "Coffee + dessert break on Rustaveli / Gorgasali streets · ₹180–₹450 pp"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Tbilisi",
+        "to": "Sighnaghi",
+        "method": "Marshrutka or shared taxi via Kakheti (about 2 hrs)",
+        "cost": "₹180–₹300 pp"
+      },
+      {
+        "from": "Sighnaghi",
+        "to": "Tbilisi",
+        "method": "Shared taxi or marshrutka back to Samgori / Isani",
+        "cost": "₹180–₹300 pp"
+      },
+      {
+        "from": "Tbilisi",
+        "to": "Kazbegi",
+        "method": "Didube marshrutka or shared taxi via the Georgian Military Highway (2.75–3 hrs)",
+        "cost": "₹300–₹450 pp"
+      },
+      {
+        "from": "Sighnaghi",
+        "to": "Kazbegi",
+        "method": "Private transfer or return to Tbilisi and continue north by marshrutka (5.5–7 hrs total)",
+        "cost": "₹900–₹1,800 pp"
+      },
+      {
+        "from": "Kazbegi",
+        "to": "Kutaisi",
+        "method": "Marshrutka back to Tbilisi + onward marshrutka or train to Kutaisi",
+        "cost": "₹600–₹900 pp"
+      },
+      {
+        "from": "Tbilisi",
+        "to": "Kutaisi",
+        "method": "Direct marshrutka from Didube or train to Rioni/Kutaisi",
+        "cost": "₹270–₹300 pp"
+      },
+      {
+        "from": "Sighnaghi",
+        "to": "Kutaisi",
+        "method": "Shared transfer via Tbilisi or private cross-country taxi",
+        "cost": "₹1,200–₹3,000 pp"
+      },
+      {
+        "from": "Kutaisi",
+        "to": "Batumi",
+        "method": "Marshrutka from Kutaisi central station or train toward the coast (2–2.5 hrs)",
+        "cost": "₹450–₹900 pp"
+      },
+      {
+        "from": "Tbilisi",
+        "to": "Batumi",
+        "method": "Fast day train (about 5 hrs) or longer marshrutka",
+        "cost": "₹690–₹1,200 pp"
+      },
+      {
+        "from": "Kazbegi",
+        "to": "Batumi",
+        "method": "Return to Tbilisi first, then connect by train or marshrutka to Batumi",
+        "cost": "₹990–₹1,650 pp"
+      },
+      {
+        "from": "Batumi",
+        "to": "Tbilisi",
+        "method": "Fast train back to the capital",
+        "cost": "₹690–₹1,200 pp"
+      }
+    ],
+    "extras": [
+      "Prometheus Cave from Kutaisi",
+      "Makhuntseti Waterfall from Batumi",
+      "Vardzia cave monastery detour",
+      "Telavi and Kakheti winery day trip",
+      "Longer Gergeti Glacier hike from Kazbegi"
+    ],
+    "cityImages": {
+      "Tbilisi": [
+        "Narikala Fortress Tbilisi Georgia",
+        "Old Tbilisi balcony houses Kura River",
+        "Peace Bridge Tbilisi night"
+      ],
+      "Sighnaghi": [
+        "Sighnaghi old town Kakheti Georgia",
+        "Sighnaghi wall Alazani Valley view",
+        "Bodbe Monastery Sighnaghi Georgia"
+      ],
+      "Kazbegi": [
+        "Gergeti Trinity Church Kazbegi Georgia",
+        "Stepantsminda village Mount Kazbek",
+        "Georgian Military Highway Kazbegi viewpoint"
+      ],
+      "Kutaisi": [
+        "Bagrati Cathedral Kutaisi Georgia",
+        "Gelati Monastery Kutaisi mosaic",
+        "White Bridge Kutaisi Rioni River"
+      ],
+      "Batumi": [
+        "Batumi Boulevard Black Sea promenade",
+        "Batumi Botanical Garden cliff Georgia",
+        "Batumi skyline Medea square night"
+      ]
+    }
+  }
 }
