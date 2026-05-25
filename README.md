@@ -15,6 +15,15 @@ A personal, map-based travel planner with a catalog of 197 world countries, 43 c
 
 View persists in the URL hash (`#trips`, `#calendar`, `#discover`) — refresh returns to the same view. Trips is the default home view.
 
+### Responsive Design
+Mobile-first responsive layout — works on phones (375px+), tablets (768px+), and desktops (1024px+):
+- **Header**: hamburger menu on mobile with slide-down drawer for settings/actions; full pill nav on tablet+
+- **Country detail panel**: full-screen overlay on mobile; resizable side panel on desktop
+- **All modals**: full-screen on mobile (no rounded corners, full height); centered cards on desktop
+- **Trip cards grid**: 1 col mobile → 2 col tablet → 3 col desktop
+- **Plan comparison**: stacked columns on mobile; side-by-side on desktop
+- **Touch targets**: minimum 44px on all interactive elements
+
 ---
 
 ### My List & Discover
@@ -181,7 +190,6 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 |----------|-----------|---------|----------|-------------|
 | 🟢 Short | ⭐⭐⭐ | Cinematic for AI plans | AI | Fuzzy city name matching + AI lat/lng fallback so cinematic works for imported plans |
 | 🟢 Short | ⭐⭐ | Budget currency toggle | UX | Convert ₹ to USD / EUR / AUD |
-| 🟡 Medium | ⭐⭐⭐⭐⭐ | Responsive UI | UX | Mobile, tablet, desktop, TV — full-screen drawers, adaptive grids, touch targets |
 | 🟡 Medium | ⭐⭐⭐⭐ | First run experience | UX | Guided onboarding tour highlighting key features (tooltip-based, one-time) |
 | 🟡 Medium | ⭐⭐⭐⭐ | More rule-based countries | Content | Thailand, Japan, New Zealand, Iceland — per-day itineraries with costs |
 | 🟡 Medium | ⭐⭐⭐ | Import parser quality | AI | Better ChatGPT link extraction, React Router stream data, entity cleanup |

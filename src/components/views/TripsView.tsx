@@ -188,63 +188,68 @@ export default function TripsView({
   return (
     <div className="h-full flex flex-col bg-slate-50 overflow-hidden">
       {/* Dashboard stats */}
-      <div className="px-5 py-4 bg-white border-b shrink-0">
-        <div className="max-w-5xl mx-auto flex items-center gap-6">
-          {/* Progress ring */}
-          <div className="relative w-16 h-16 shrink-0">
-            <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
-              <circle cx="18" cy="18" r="15.5" fill="none" stroke="#e2e8f0" strokeWidth="3" />
-              <circle cx="18" cy="18" r="15.5" fill="none" stroke="#3b82f6" strokeWidth="3"
-                strokeDasharray={`${completionPct} ${100 - completionPct}`}
-                strokeLinecap="round" className="transition-all duration-500" />
-            </svg>
-            <span className="absolute inset-0 flex items-center justify-center text-sm font-black text-slate-700">
-              {completionPct}%
-            </span>
-          </div>
-
-          {/* Quick stats */}
-          <div className="flex items-center gap-5 flex-1 flex-wrap">
-            <DashStat value={uniqueCountries} label="destinations" icon="🌍" />
-            <DashStat value={totalVisited} label="visited" icon="✅" />
-            <DashStat value={continentsVisited} label="regions" icon="🗺" />
-            <DashStat value={comboTrips.length} label="combo trips" icon="🔗" />
-            <DashStat value={soloTrips.length} label="solo" icon="📍" />
-          </div>
-
-          {/* Next trip highlight */}
-          {nextTrip && (
-            <div className="shrink-0 hidden sm:flex items-center gap-2.5 px-4 py-2.5 bg-blue-50 rounded-xl border border-blue-100">
-              <span className="text-lg">🎯</span>
-              <div>
-                <p className="text-[9px] font-bold text-blue-500 uppercase tracking-wider">Next trip</p>
-                <p className="text-xs font-bold text-slate-700">{nextTrip.main.name}</p>
-              </div>
+      <div className="px-3 md:px-5 py-3 md:py-4 bg-white border-b shrink-0">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
+          {/* Top row: ring + stats */}
+          <div className="flex items-center gap-4 md:gap-6">
+            {/* Progress ring */}
+            <div className="relative w-12 h-12 md:w-16 md:h-16 shrink-0">
+              <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
+                <circle cx="18" cy="18" r="15.5" fill="none" stroke="#e2e8f0" strokeWidth="3" />
+                <circle cx="18" cy="18" r="15.5" fill="none" stroke="#3b82f6" strokeWidth="3"
+                  strokeDasharray={`${completionPct} ${100 - completionPct}`}
+                  strokeLinecap="round" className="transition-all duration-500" />
+              </svg>
+              <span className="absolute inset-0 flex items-center justify-center text-xs md:text-sm font-black text-slate-700">
+                {completionPct}%
+              </span>
             </div>
-          )}
 
-          <button
-            onClick={() => { setCreatingNew(true); setEditingMain(null); }}
-            className="shrink-0 flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
-          >
-            + New Trip
-          </button>
+            {/* Quick stats — wrap on mobile */}
+            <div className="flex items-center gap-3 md:gap-5 flex-1 flex-wrap">
+              <DashStat value={uniqueCountries} label="destinations" icon="🌍" />
+              <DashStat value={totalVisited} label="visited" icon="✅" />
+              <DashStat value={continentsVisited} label="regions" icon="🗺" />
+              <DashStat value={comboTrips.length} label="combo" icon="🔗" />
+              <DashStat value={soloTrips.length} label="solo" icon="📍" />
+            </div>
+          </div>
+
+          {/* Actions row */}
+          <div className="flex items-center gap-2 md:gap-3">
+            {/* Next trip highlight */}
+            {nextTrip && (
+              <div className="hidden sm:flex shrink-0 items-center gap-2.5 px-4 py-2.5 bg-blue-50 rounded-xl border border-blue-100">
+                <span className="text-lg">🎯</span>
+                <div>
+                  <p className="text-[9px] font-bold text-blue-500 uppercase tracking-wider">Next trip</p>
+                  <p className="text-xs font-bold text-slate-700">{nextTrip.main.name}</p>
+                </div>
+              </div>
+            )}
+            <button
+              onClick={() => { setCreatingNew(true); setEditingMain(null); }}
+              className="shrink-0 flex items-center gap-1 px-3 py-2 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors min-h-[44px]"
+            >
+              + New Trip
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Filter bar — compact: search + filter toggle + layout */}
-      <div className="flex items-center gap-2 px-5 py-2 border-b bg-white shrink-0">
+      <div className="flex items-center gap-2 px-3 md:px-5 py-2 border-b bg-white shrink-0 flex-wrap md:flex-nowrap">
         <input
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search countries…"
-          className="w-44 px-3 py-1.5 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors"
+          className="w-full sm:w-44 px-3 py-2 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors min-h-[44px]"
         />
 
         <button
           onClick={() => setFiltersOpen((o) => !o)}
-          className={`flex items-center gap-1 px-2.5 py-1.5 text-[11px] font-semibold rounded-lg transition-colors ${
+          className={`flex items-center gap-1 px-3 py-2 text-[11px] font-semibold rounded-lg transition-colors min-h-[44px] shrink-0 ${
             filtersOpen || hasFilters
               ? "bg-blue-50 text-blue-700 border border-blue-200"
               : "text-gray-500 hover:bg-gray-100 border border-gray-200"
@@ -379,7 +384,7 @@ export default function TripsView({
 
   function renderTripCards(tripList: Trip[]) {
     return (
-      <div className={layout === "grid" ? "grid grid-cols-3 gap-3" : "grid gap-3"}>
+      <div className={layout === "grid" ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" : "grid gap-3"}>
         {tripList.map((trip) =>
           editingMain === trip.main.name ? (
             <TripEditor

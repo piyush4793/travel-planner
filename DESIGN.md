@@ -34,6 +34,7 @@ src/
 │   ├── usePersistedSet.ts       # DRY Set<string> + localStorage persistence
 │   ├── useHashView.ts           # Hash-based routing (no router library)
 │   ├── usePanelDrag.ts          # Resizable panel drag behavior
+│   ├── useBreakpoint.ts         # Reactive breakpoint hook (mobile/tablet/desktop)
 │   ├── useChatSession.ts        # AI chat state, send/finish/clear
 │   └── useAiPlanStore.ts        # AI plan persistence (save/replace/compare, max 3 per dest)
 ├── components/

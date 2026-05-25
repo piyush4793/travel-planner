@@ -24,6 +24,7 @@ function hasHotels(plan: TripPlan): boolean {
 }
 
 function SummaryCard({ leftPlan, rightPlan }: { leftPlan: PlanOption; rightPlan: PlanOption }) {
+  const [open, setOpen] = useState(true);
   const l = leftPlan.plan;
   const r = rightPlan.plan;
   const lCitiesRaw = extractPlanCities(l.days).filter(isRealCity);
@@ -31,71 +32,93 @@ function SummaryCard({ leftPlan, rightPlan }: { leftPlan: PlanOption; rightPlan:
   const lAvg = avgActivities(l);
   const rAvg = avgActivities(r);
 
-  // Case-insensitive city comparison
   const rNormSet = new Set(rCitiesRaw.map(normalizeCityName));
   const lNormSet = new Set(lCitiesRaw.map(normalizeCityName));
   const shared = lCitiesRaw.filter((c) => rNormSet.has(normalizeCityName(c)));
   const uniqueToLeft = lCitiesRaw.filter((c) => !rNormSet.has(normalizeCityName(c)));
   const uniqueToRight = rCitiesRaw.filter((c) => !lNormSet.has(normalizeCityName(c)));
 
-  const stats: { icon: string; label: string; left: string; right: string; leftWins: boolean | null }[] = [
+  const rows: { icon: string; label: string; left: string; right: string; leftWins: boolean | null }[] = [
     { icon: "📅", label: "Duration", left: `${l.days.length}d`, right: `${r.days.length}d`, leftWins: l.days.length > r.days.length ? true : l.days.length < r.days.length ? false : null },
     { icon: "💰", label: "Cost", left: l.costPerPerson, right: r.costPerPerson, leftWins: null },
     { icon: "📍", label: "Cities", left: `${lCitiesRaw.length}`, right: `${rCitiesRaw.length}`, leftWins: lCitiesRaw.length > rCitiesRaw.length ? true : lCitiesRaw.length < rCitiesRaw.length ? false : null },
-    { icon: "⚡", label: "Activities/day", left: `${lAvg}`, right: `${rAvg}`, leftWins: lAvg > rAvg ? true : lAvg < rAvg ? false : null },
+    { icon: "⚡", label: "Act/day", left: `${lAvg}`, right: `${rAvg}`, leftWins: lAvg > rAvg ? true : lAvg < rAvg ? false : null },
     { icon: "🏨", label: "Hotels", left: hasHotels(l) ? "Yes" : "No", right: hasHotels(r) ? "Yes" : "No", leftWins: hasHotels(l) && !hasHotels(r) ? true : !hasHotels(l) && hasHotels(r) ? false : null },
   ];
 
   return (
-    <div className="px-6 py-4 border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white shrink-0 space-y-4">
-      {/* Stat cards row */}
-      <div className="grid grid-cols-5 gap-2">
-        {stats.map((s) => (
-          <div key={s.label} className="bg-white border border-slate-100 rounded-xl px-3 py-2.5 text-center">
-            <span className="text-base">{s.icon}</span>
-            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mt-1">{s.label}</p>
-            <div className="flex items-center justify-center gap-2 mt-1.5">
-              <span className={`text-xs font-black ${s.leftWins === true ? "text-emerald-600" : s.leftWins === false ? "text-slate-400" : "text-slate-700"}`}>
-                {s.left}
-              </span>
-              <span className="text-[9px] text-slate-300">vs</span>
-              <span className={`text-xs font-black ${s.leftWins === false ? "text-emerald-600" : s.leftWins === true ? "text-slate-400" : "text-slate-700"}`}>
-                {s.right}
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="border-b border-slate-200 shrink-0">
+      {/* Collapsible header */}
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="w-full flex items-center gap-2 px-4 md:px-6 py-2.5 bg-slate-50 hover:bg-slate-100 transition-colors text-left"
+      >
+        <span className={`text-[9px] text-slate-400 transition-transform duration-200 ${open ? "rotate-90" : ""}`}>▸</span>
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider flex-1">Quick Summary</span>
+        {!open && (
+          <span className="text-[10px] text-slate-400">
+            {l.days.length}d vs {r.days.length}d · {lCitiesRaw.length} vs {rCitiesRaw.length} cities
+          </span>
+        )}
+      </button>
 
-      {/* City overlap — compact rows */}
-      {(shared.length > 0 || uniqueToLeft.length > 0 || uniqueToRight.length > 0) && (
-        <div className="space-y-1.5">
-          {shared.length > 0 && (
-            <div className="flex items-center gap-1.5 flex-wrap">
-              <span className="text-[9px] font-bold text-emerald-500 uppercase w-16 shrink-0">Shared</span>
-              {shared.map((c) => (
-                <span key={c} className="text-[9px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">{c}</span>
-              ))}
-            </div>
-          )}
-          {uniqueToLeft.length > 0 && (
-            <div className="flex items-center gap-1.5 flex-wrap">
-              <span className="text-[9px] font-bold text-blue-400 uppercase w-16 shrink-0">Left only</span>
-              {uniqueToLeft.map((c) => (
-                <span key={c} className="text-[9px] font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200">{c}</span>
-              ))}
-            </div>
-          )}
-          {uniqueToRight.length > 0 && (
-            <div className="flex items-center gap-1.5 flex-wrap">
-              <span className="text-[9px] font-bold text-indigo-400 uppercase w-16 shrink-0">Right only</span>
-              {uniqueToRight.map((c) => (
-                <span key={c} className="text-[9px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-200">{c}</span>
-              ))}
-            </div>
-          )}
+      <div className={`grid transition-all duration-200 ease-out ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+        <div className="overflow-hidden">
+          <div className="px-4 md:px-6 py-3 space-y-3">
+            {/* Comparison table — works on all sizes */}
+            <table className="w-full text-[11px]">
+              <thead>
+                <tr className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">
+                  <th className="text-left py-1 w-8"></th>
+                  <th className="text-left py-1">Metric</th>
+                  <th className="text-right py-1 text-blue-500">{leftPlan.label}</th>
+                  <th className="text-right py-1 text-indigo-500">{rightPlan.label}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((row) => (
+                  <tr key={row.label} className="border-t border-slate-100">
+                    <td className="py-1.5 text-center">{row.icon}</td>
+                    <td className="py-1.5 font-medium text-slate-500">{row.label}</td>
+                    <td className={`py-1.5 text-right font-bold ${row.leftWins === true ? "text-emerald-600" : row.leftWins === false ? "text-slate-400" : "text-slate-700"}`}>{row.left}</td>
+                    <td className={`py-1.5 text-right font-bold ${row.leftWins === false ? "text-emerald-600" : row.leftWins === true ? "text-slate-400" : "text-slate-700"}`}>{row.right}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            {/* City overlap */}
+            {(shared.length > 0 || uniqueToLeft.length > 0 || uniqueToRight.length > 0) && (
+              <div className="space-y-1.5">
+                {shared.length > 0 && (
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="text-[9px] font-bold text-emerald-500 uppercase w-14 shrink-0">Shared</span>
+                    {shared.map((c) => (
+                      <span key={c} className="text-[9px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">{c}</span>
+                    ))}
+                  </div>
+                )}
+                {uniqueToLeft.length > 0 && (
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="text-[9px] font-bold text-blue-400 uppercase w-14 shrink-0">Left</span>
+                    {uniqueToLeft.map((c) => (
+                      <span key={c} className="text-[9px] font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200">{c}</span>
+                    ))}
+                  </div>
+                )}
+                {uniqueToRight.length > 0 && (
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="text-[9px] font-bold text-indigo-400 uppercase w-14 shrink-0">Right</span>
+                    {uniqueToRight.map((c) => (
+                      <span key={c} className="text-[9px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-200">{c}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -138,7 +161,7 @@ export default function PlanCompareModal({ options, onClose }: Props) {
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      className="fixed inset-0 z-[200] flex items-center justify-center p-0 md:p-4 bg-black/60 backdrop-blur-sm"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-[1100px] max-h-[88vh] flex flex-col overflow-hidden">
@@ -154,7 +177,7 @@ export default function PlanCompareModal({ options, onClose }: Props) {
         </div>
 
         {/* Selectors */}
-        <div className="px-6 py-3 border-b border-slate-200 bg-slate-50 grid grid-cols-2 gap-4 shrink-0">
+        <div className="px-6 py-3 border-b border-slate-200 bg-slate-50 grid grid-cols-1 md:grid-cols-2 gap-4 shrink-0">
           <div>
             <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Left</label>
             <select
@@ -199,7 +222,7 @@ export default function PlanCompareModal({ options, onClose }: Props) {
         )}
 
         {/* Columns */}
-        <div className="flex-1 flex divide-x divide-slate-200 overflow-hidden min-h-0">
+        <div className="flex-1 flex flex-col md:flex-row md:divide-x divide-slate-200 overflow-hidden min-h-0">
           {leftPlan && <PlanColumn plan={leftPlan.plan} />}
           {rightPlan && <PlanColumn plan={rightPlan.plan} />}
         </div>

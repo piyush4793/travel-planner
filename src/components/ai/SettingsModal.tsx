@@ -119,7 +119,7 @@ export default function SettingsModal({ open, onClose, onOpenChat }: Props) {
       onClick={onClose}
     >
       <div
-        className="bg-[#1e1e2e] border border-white/10 rounded-2xl shadow-2xl w-full max-w-md mx-4 p-6 space-y-5"
+        className="bg-[#1e1e2e] border border-white/10 md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-md md:mx-4 p-5 md:p-6 space-y-5 h-dvh md:h-auto overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}

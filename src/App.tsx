@@ -21,6 +21,7 @@ import { useHashView, type AppView } from "./hooks/useHashView";
 import { useCountryStore } from "./hooks/useCountryStore";
 import { useTripStore } from "./hooks/useTripStore";
 import { useAiPlanStore } from "./hooks/useAiPlanStore";
+import { useBreakpoint } from "./hooks/useBreakpoint";
 import { isEnabled } from "./utils/featureFlags";
 
 const VIEW_LABELS: Record<AppView, string> = {
@@ -30,6 +31,8 @@ const VIEW_LABELS: Record<AppView, string> = {
 export default function App() {
   const store = useCountryStore();
   const aiPlanStore = useAiPlanStore();
+  const bp = useBreakpoint();
+  const isMobile = bp === "mobile";
   const [view, setView] = useHashView();
   const [homeCountry, setHomeCountry] = useState(() => loadLS(LS_KEYS.HOME_COUNTRY, "India"));
   const [selectedMonth, setSelectedMonth] = useState<string[]>([]);
@@ -44,6 +47,7 @@ export default function App() {
   const [chatAutoSend, setChatAutoSend] = useState(true);
   const [aiPlanResult, setAiPlanResult] = useState<LLMTripPlanResult | null>(null);
   const [cinematicActive, setCinematicActive] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const mainMapRef = useRef<maplibregl.Map | null>(null);
 
   useEffect(() => { saveLS(LS_KEYS.HOME_COUNTRY, homeCountry); }, [homeCountry]);
@@ -131,19 +135,20 @@ export default function App() {
   const hasActiveFilters = selectedMonth.length > 0 || selectedExperiences.length > 0 || visitedFilter !== "all" || budgetFilter !== "all";
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden bg-slate-50">
+    <div className="flex flex-col h-dvh overflow-hidden bg-slate-50">
       {/* Header */}
-      <header className="flex items-center gap-3 px-4 py-2.5 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 text-white shrink-0 shadow-md">
-        <div className="flex items-center gap-2">
-          <span className="text-lg font-black tracking-tight">Travel Planner</span>
+      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 text-white shrink-0 shadow-md">
+        <div className="flex items-center gap-2 shrink-0">
+          <span className="text-base md:text-lg font-black tracking-tight">Travel Planner</span>
           {hasActiveFilters && (
-            <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full font-medium">
+            <span className="text-[10px] md:text-xs bg-white/20 px-2 py-0.5 rounded-full font-medium hidden sm:inline">
               {filtered.length} shown
             </span>
           )}
         </div>
 
-        <div className="flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto">
+        {/* Desktop nav pills */}
+        <div className="hidden md:flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto">
           {(Object.keys(VIEW_LABELS) as AppView[]).map((v) => (
             <button key={v} onClick={() => setView(v)}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
@@ -154,7 +159,20 @@ export default function App() {
           ))}
         </div>
 
-        <div className="flex items-center gap-2.5">
+        {/* Mobile nav pills — compact */}
+        <div className="flex md:hidden items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto">
+          {(Object.keys(VIEW_LABELS) as AppView[]).map((v) => (
+            <button key={v} onClick={() => setView(v)}
+              className={`px-2.5 py-1.5 rounded-full text-[11px] font-semibold transition-all min-h-[36px] ${
+                view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
+              }`}>
+              {VIEW_LABELS[v]}
+            </button>
+          ))}
+        </div>
+
+        {/* Desktop actions */}
+        <div className="hidden md:flex items-center gap-2.5 shrink-0">
           <HomeCountrySelector value={homeCountry} onChange={setHomeCountry} />
           {store.favorites.set.size > 0 && <span className="text-yellow-300 text-sm font-semibold">★ {store.favorites.set.size}</span>}
           {store.visited.set.size > 0 && <span className="text-emerald-300 text-sm font-semibold">✓ {store.visited.set.size}</span>}
@@ -172,7 +190,40 @@ export default function App() {
           )}
           <DevFlagPanel />
         </div>
+
+        {/* Mobile hamburger */}
+        <button
+          onClick={() => setMenuOpen((o) => !o)}
+          className="md:hidden flex items-center justify-center w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-base transition-colors shrink-0"
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
       </header>
+
+      {/* Mobile menu slide-down */}
+      {menuOpen && isMobile && (
+        <div className="md:hidden bg-gradient-to-b from-indigo-600 to-indigo-700 text-white px-4 py-3 space-y-3 shrink-0 shadow-lg">
+          <div className="flex items-center gap-2 flex-wrap">
+            <HomeCountrySelector value={homeCountry} onChange={(v) => { setHomeCountry(v); }} />
+            <span className="text-white/60 text-xs">{store.myList.set.size} 📋</span>
+            {store.favorites.set.size > 0 && <span className="text-yellow-300 text-xs font-semibold">★ {store.favorites.set.size}</span>}
+            {store.visited.set.size > 0 && <span className="text-emerald-300 text-xs font-semibold">✓ {store.visited.set.size}</span>}
+          </div>
+          <div className="flex gap-2">
+            <button onClick={() => { setFormTarget("new"); setMenuOpen(false); }}
+              className="flex-1 py-2.5 bg-white/15 hover:bg-white/25 rounded-xl text-xs font-semibold transition-colors border border-white/20 min-h-[44px]">
+              + Add Destination
+            </button>
+            {isEnabled("llmPlanning") && (
+              <button onClick={() => { setSettingsOpen(true); setMenuOpen(false); }}
+                className="py-2.5 px-4 bg-white/10 hover:bg-white/20 rounded-xl text-xs font-semibold transition-colors border border-white/15 min-h-[44px]">
+                ⚙️ AI Settings
+              </button>
+            )}
+          </div>
+          <DevFlagPanel />
+        </div>
+      )}
 
       {view !== "discover" && (
         <Filters
