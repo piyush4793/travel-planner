@@ -1,0 +1,694 @@
+{
+  "name": "Philippines",
+  "seed": true,
+  "lat": 12.8797,
+  "lng": 121.774,
+  "region": "Asia",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹40K–₹70K",
+    "couple": "₹70K–₹1.2L",
+    "family4": "₹1.5L–₹2.5L"
+  },
+  "experiences": [
+    "Palawan Beaches",
+    "Diving",
+    "Island Hopping",
+    "Chocolate Hills",
+    "Siargao Surfing"
+  ],
+  "avoid": [
+    "Typhoon season June-Oct"
+  ],
+  "combo": [
+    "Indonesia",
+    "Malaysia"
+  ],
+  "landmark": "Chocolate Hills",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Manila",
+      "lat": 14.5995,
+      "lng": 120.9842,
+      "notes": "Intramuros walled city, Rizal Park and chaotic street food culture"
+    },
+    {
+      "name": "Palawan",
+      "lat": 9.8349,
+      "lng": 118.7384,
+      "notes": "El Nido lagoons, Puerto Princesa underground river and Coron shipwrecks"
+    },
+    {
+      "name": "Cebu",
+      "lat": 10.3157,
+      "lng": 123.8854,
+      "notes": "Magellan's Cross, whale shark swimming in Oslob and Chocolate Hills day trip"
+    },
+    {
+      "name": "Boracay",
+      "lat": 11.9674,
+      "lng": 121.9248,
+      "notes": "White Beach sunset walks, parasailing and Willy's Rock"
+    },
+    {
+      "name": "Siargao",
+      "lat": 9.8482,
+      "lng": 126.0455,
+      "notes": "Cloud 9 surf break, Sugba Lagoon and island-hopping with rock pools"
+    },
+    {
+      "name": "Bohol",
+      "lat": 9.67,
+      "lng": 124.0641,
+      "notes": "Chocolate Hills, Philippine tarsier sanctuary and Loboc River cruise"
+    }
+  ],
+  "itinerary": {
+    "sim": "Smart Prepaid tourist SIM is the easiest pickup at NAIA; Globe Prepaid works well as the backup across Cebu, Boracay and Bohol.",
+    "apps": [
+      "Grab",
+      "12Go Asia",
+      "Cebu Pacific",
+      "Klook",
+      "Google Maps offline",
+      "WeatherPH",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Manila",
+      "Palawan",
+      "Cebu",
+      "Bohol",
+      "Boracay",
+      "Siargao"
+    ],
+    "cities": {
+      "Manila": {
+        "name": "Manila",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Manila to shake off the flight and cover Intramuros, museums and Binondo before hopping to the islands.",
+        "days": [
+          {
+            "theme": "Intramuros, Fort Santiago & Sunset Heritage Walk",
+            "activities": [
+              {
+                "name": "Fort Santiago and Rizal Shrine",
+                "cost": "₹113 pp",
+                "tip": "Start here before Intramuros tour groups fill the ramparts."
+              },
+              {
+                "name": "San Agustin Church and museum",
+                "cost": "Free–₹150 pp"
+              },
+              {
+                "name": "Manila Cathedral plaza walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Bahay Tsinoy Museum",
+                "cost": "₹150 pp"
+              },
+              {
+                "name": "Rizal Park at sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Microtel by Wyndham Intramuros",
+                "budget": "₹4,200–₹6,000/night"
+              },
+              {
+                "name": "The Bayleaf Hotel",
+                "budget": "₹8,250–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Ilustrado",
+              "Aristocrat Restaurant",
+              "Barbara's Heritage Restaurant"
+            ]
+          },
+          {
+            "theme": "Binondo Food Trail, National Museums & Modern Manila",
+            "activities": [
+              {
+                "name": "Binondo Chinatown food walk",
+                "cost": "₹300–₹450 pp",
+                "tip": "Go hungry and carry cash for hop-on snacks."
+              },
+              {
+                "name": "National Museum of Fine Arts",
+                "cost": "Free"
+              },
+              {
+                "name": "National Museum of Natural History",
+                "cost": "Free"
+              },
+              {
+                "name": "Bonifacio Global City art walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Manila Ocean Park",
+                "cost": "₹825 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Z Hostel",
+                "budget": "₹1,800–₹2,700/night"
+              },
+              {
+                "name": "Seda BGC",
+                "budget": "₹6,750–₹9,750/night"
+              }
+            ],
+            "meals": [
+              "Carlos & Charlie's Bistro",
+              "Sarsa Kitchen + Bar",
+              "The Curator Coffee & Cocktails"
+            ]
+          }
+        ]
+      },
+      "Palawan": {
+        "name": "Palawan",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "These days are designed around El Nido; if flights into El Nido are pricey, fly to Puerto Princesa and continue by shared van.",
+        "days": [
+          {
+            "theme": "Arrival in El Nido, Town Orientation & Las Cabanas Sunset",
+            "activities": [
+              {
+                "name": "Shared van from Puerto Princesa to El Nido",
+                "cost": "₹900–₹1,350 pp",
+                "tip": "Reserve the last daylight departure only if your incoming flight is on time."
+              },
+              {
+                "name": "El Nido town beach and booking walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Las Cabanas Beach sunset",
+                "cost": "₹150 tricycle"
+              },
+              {
+                "name": "Nacpan Beach side trip",
+                "cost": "₹600 tricycle",
+                "tip": "Best added only if you land before lunch."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Outpost Beach Hostel",
+                "budget": "₹2,700–₹3,750/night"
+              },
+              {
+                "name": "Sai El Nido Boutique Hotel",
+                "budget": "₹5,250–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Art Cafe",
+              "Botanica Cafe",
+              "Aplaya Restaurant"
+            ]
+          },
+          {
+            "theme": "Big Lagoon, Small Lagoon & Bacuit Bay Island Hopping",
+            "activities": [
+              {
+                "name": "Tour A island hopping",
+                "cost": "₹2,100–₹2,550 pp",
+                "tip": "This usually covers Big Lagoon, Small Lagoon and 7 Commandos Beach."
+              },
+              {
+                "name": "Big Lagoon kayak add-on",
+                "cost": "₹300 pp"
+              },
+              {
+                "name": "Shimizu Island snorkelling stop",
+                "cost": "Included"
+              },
+              {
+                "name": "7 Commandos Beach lunch stop",
+                "cost": "Included"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maremegmeg Beach Club Cottages",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "Cadlao Resort & Restaurant",
+                "budget": "₹12,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "The Alternative",
+              "Art Cafe",
+              "Botanica Cafe"
+            ]
+          },
+          {
+            "theme": "Secret Beaches, Matinloc Shrine & Cultural Add-on",
+            "activities": [
+              {
+                "name": "Tour C island hopping",
+                "cost": "₹1,950–₹2,550 pp",
+                "tip": "Good fit for Secret Beach, Hidden Beach and Helicopter Island."
+              },
+              {
+                "name": "Matinloc Shrine stop",
+                "cost": "Included"
+              },
+              {
+                "name": "The Philippine Experience cultural tour",
+                "cost": "₹2,850 pp",
+                "tip": "Swap this in if you want a break from back-to-back boat days."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sai El Nido Boutique Hotel",
+                "budget": "₹5,250–₹7,500/night"
+              },
+              {
+                "name": "Cadlao Resort & Restaurant",
+                "budget": "₹12,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "The Alternative",
+              "Aplaya Restaurant",
+              "Ka Inato"
+            ]
+          }
+        ]
+      },
+      "Cebu": {
+        "name": "Cebu",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Cebu works best as one city day plus one excursion day; keep Oslob weather and ethics in mind before locking it in.",
+        "days": [
+          {
+            "theme": "Spanish Cebu, Fort San Pedro & Downtown Heritage",
+            "activities": [
+              {
+                "name": "Magellan's Cross",
+                "cost": "Free"
+              },
+              {
+                "name": "Basilica Minore del Santo Niño",
+                "cost": "Free"
+              },
+              {
+                "name": "Fort San Pedro",
+                "cost": "₹45 pp"
+              },
+              {
+                "name": "Heritage of Cebu Monument",
+                "cost": "Free"
+              },
+              {
+                "name": "Carbon Market and IT Park evening food crawl",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Harolds Mansion",
+                "budget": "₹1,800–₹3,000/night"
+              },
+              {
+                "name": "Cebu Parklane International",
+                "budget": "₹4,500–₹6,750/night"
+              }
+            ],
+            "meals": [
+              "Cafe Laguna",
+              "Golden Cowrie Native Restaurant",
+              "Sugbo Mercado"
+            ]
+          },
+          {
+            "theme": "Oslob Whale Sharks, Tumalog Falls or Kawasan Swap",
+            "activities": [
+              {
+                "name": "Bus to Oslob and whale shark swim",
+                "cost": "₹1,900–₹2,100 pp",
+                "tip": "This includes the swim plus typical round-trip bus cost; book early slots only."
+              },
+              {
+                "name": "Tumalog Falls",
+                "cost": "₹300 pp"
+              },
+              {
+                "name": "Kawasan Falls canyoneering alternative",
+                "cost": "₹1,500 pp",
+                "tip": "Use this instead of Oslob if you want a lower-impact adventure day."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Go Hotels Cebu",
+                "budget": "₹3,000–₹4,200/night"
+              },
+              {
+                "name": "Radisson Blu Cebu",
+                "budget": "₹8,250–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "STK ta Bay!",
+              "Anzani",
+              "House of Lechon"
+            ]
+          }
+        ]
+      },
+      "Bohol": {
+        "name": "Bohol",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay near Alona Beach so the countryside loop and Balicasag boats are both easy to access.",
+        "days": [
+          {
+            "theme": "Chocolate Hills, Tarsiers & Loboc Countryside Circuit",
+            "activities": [
+              {
+                "name": "Philippine Tarsier Sanctuary",
+                "cost": "₹150 pp"
+              },
+              {
+                "name": "Chocolate Hills Complex",
+                "cost": "₹150 pp"
+              },
+              {
+                "name": "Loboc River cruise with buffet lunch",
+                "cost": "₹675–₹825 pp"
+              },
+              {
+                "name": "Bilar Mahogany Forest drive-through",
+                "cost": "Free"
+              },
+              {
+                "name": "Baclayon Church stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bohol Bee Farm Resort",
+                "budget": "₹5,250–₹8,250/night"
+              },
+              {
+                "name": "Henann Alona Beach Resort",
+                "budget": "₹7,500–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Buzzz Cafe",
+              "Trudi's",
+              "Hera Greek Taverna"
+            ]
+          },
+          {
+            "theme": "Balicasag Diving, Alona Beach & Cave Swim",
+            "activities": [
+              {
+                "name": "Balicasag Island scuba or snorkel trip",
+                "cost": "₹1,800–₹2,700 pp",
+                "tip": "Reserve with a Panglao dive shop a day ahead for calmer morning departures."
+              },
+              {
+                "name": "Pamilacan or Virgin Island boat hop",
+                "cost": "₹1,800–₹3,000 per boat"
+              },
+              {
+                "name": "Hinagdanan Cave",
+                "cost": "₹75 pp"
+              },
+              {
+                "name": "Beach massage on Alona",
+                "cost": "₹525"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Alona Tropical Beach Resort",
+                "budget": "₹1,800–₹3,000/night"
+              },
+              {
+                "name": "Amorita Resort",
+                "budget": "₹10,500–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Buzzz Cafe",
+              "Pyramid Bar & Restaurant",
+              "Baybayon Grill"
+            ]
+          }
+        ]
+      },
+      "Boracay": {
+        "name": "Boracay",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Pre-book your accredited hotel before arrival because the island still checks booking proof at the jetty.",
+        "days": [
+          {
+            "theme": "White Beach, Parasailing & Station-to-Station Sunset",
+            "activities": [
+              {
+                "name": "White Beach walk across Stations 1–3",
+                "cost": "Free"
+              },
+              {
+                "name": "Parasailing",
+                "cost": "₹2,700–₹3,750 pp"
+              },
+              {
+                "name": "Puka Beach visit",
+                "cost": "₹225 tricycle"
+              },
+              {
+                "name": "Bulabog Beach kitesurfing lesson",
+                "cost": "₹5,250–₹7,500 pp"
+              },
+              {
+                "name": "Snorkelling off Boracay reefs",
+                "cost": "₹750–₹1,200 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Orchid Boracay Hotel",
+                "budget": "₹3,000–₹4,500/night"
+              },
+              {
+                "name": "Movenpick Resort Boracay",
+                "budget": "₹12,000–₹21,000/night"
+              }
+            ],
+            "meals": [
+              "The Sunny Side Cafe",
+              "Aria",
+              "Jonah's Fruit Shake & Snack Bar"
+            ]
+          },
+          {
+            "theme": "Paraw Sailing, Island Hopping & D'Mall Night",
+            "activities": [
+              {
+                "name": "Paraw sunset sail",
+                "cost": "₹2,250–₹3,000 per boat",
+                "tip": "Split the boat with 3–4 people to keep it good value."
+              },
+              {
+                "name": "Island hopping to Crystal Cove and Crocodile Island",
+                "cost": "₹1,500–₹2,250 pp"
+              },
+              {
+                "name": "Diniwid Beach",
+                "cost": "Free"
+              },
+              {
+                "name": "D'Mall shopping walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Alta Vista de Boracay",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "Shangri-La Boracay",
+                "budget": "₹22,500–₹37,500/night"
+              }
+            ],
+            "meals": [
+              "Real Coffee & Tea Cafe",
+              "Dos Mestizos",
+              "Aria"
+            ]
+          }
+        ]
+      },
+      "Siargao": {
+        "name": "Siargao",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 3,
+        "note": "A one-day sampler works, but add extra nights if you want both surf sessions and the full lagoon-island loop at a relaxed pace.",
+        "days": [
+          {
+            "theme": "Cloud 9 Surf, Sugba Lagoon & General Luna Cafe Crawl",
+            "activities": [
+              {
+                "name": "Cloud 9 surfboard rental and lesson",
+                "cost": "₹1,050–₹1,650 pp",
+                "tip": "That range combines a day board rental with a beginner lesson."
+              },
+              {
+                "name": "Sugba Lagoon boat trip",
+                "cost": "₹750 pp"
+              },
+              {
+                "name": "Naked, Daku and Guyam island hop",
+                "cost": "₹2,250–₹3,000 per boat"
+              },
+              {
+                "name": "Magpupungko Rock Pools",
+                "cost": "₹75 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kermit Surf Resort",
+                "budget": "₹2,250–₹3,750/night"
+              },
+              {
+                "name": "Harana Surf Resort",
+                "budget": "₹9,000–₹15,000/night"
+              }
+            ],
+            "meals": [
+              "Kermit Siargao",
+              "Bravo Siargao",
+              "Shaka Siargao"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Manila",
+        "to": "Palawan",
+        "method": "Flight to Puerto Princesa + shared van to El Nido, or direct AirSwift flight to El Nido",
+        "cost": "₹2,700–₹8,250"
+      },
+      {
+        "from": "Palawan",
+        "to": "Cebu",
+        "method": "Direct AirSwift flight or Puerto Princesa connection",
+        "cost": "₹2,400–₹8,250"
+      },
+      {
+        "from": "Cebu",
+        "to": "Bohol",
+        "method": "OceanJet fast ferry + Alona Beach tricycle",
+        "cost": "₹1,050–₹1,650"
+      },
+      {
+        "from": "Bohol",
+        "to": "Boracay",
+        "method": "Panglao to Caticlan flight + banca transfer",
+        "cost": "₹2,100–₹4,050"
+      },
+      {
+        "from": "Boracay",
+        "to": "Siargao",
+        "method": "Flight via Cebu or Manila",
+        "cost": "₹4,500–₹8,500"
+      },
+      {
+        "from": "Siargao",
+        "to": "Manila",
+        "method": "Flight, often via Cebu",
+        "cost": "₹3,000–₹6,000"
+      }
+    ],
+    "extras": [
+      "Indian passport holders need a pre-arranged 9(a) tourist visa; current processing is roughly ₹2,500–₹3,500 plus insurance.",
+      "November to April is the sweet spot; keep island-hopping days flexible because coast guard and WeatherPH advisories can cancel boats.",
+      "Pre-book AirSwift sectors, Boracay hotel vouchers and holiday-period ferries well ahead for the best routing.",
+      "Grab is the safest default for Manila and Cebu airport transfers, but cash is still useful for tricycles, vans and smaller island eateries.",
+      "Oslob whale-shark tours are controversial; switch that Cebu day to Kawasan Falls or Moalboal if you want a lower-impact plan."
+    ],
+    "cityImages": {
+      "Manila": [
+        "Intramuros Manila walled city",
+        "Fort Santiago Manila",
+        "Binondo Manila Chinatown"
+      ],
+      "Palawan": [
+        "Big Lagoon El Nido Palawan",
+        "Bacuit Bay El Nido limestone islands",
+        "Nacpan Beach El Nido"
+      ],
+      "Cebu": [
+        "Magellan's Cross Cebu City",
+        "Basilica Minore del Santo Nino Cebu",
+        "Oslob whale shark Cebu"
+      ],
+      "Bohol": [
+        "Chocolate Hills Bohol",
+        "Philippine tarsier Bohol",
+        "Alona Beach Panglao"
+      ],
+      "Boracay": [
+        "White Beach Boracay",
+        "Puka Beach Boracay",
+        "Bulabog Beach Boracay kitesurfing"
+      ],
+      "Siargao": [
+        "Cloud 9 Siargao",
+        "Sugba Lagoon Siargao",
+        "Naked Island Siargao"
+      ]
+    }
+  }
+}

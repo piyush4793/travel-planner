@@ -1,0 +1,643 @@
+{
+  "name": "Turkey",
+  "seed": true,
+  "lat": 38.9637,
+  "lng": 35.2433,
+  "region": "Middle East",
+  "bestMonths": [
+    "April",
+    "May",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹80K–₹1.5L",
+    "couple": "₹1.5L–₹2.5L",
+    "family4": "₹3L–₹5L"
+  },
+  "experiences": [
+    "Cappadocia",
+    "Istanbul",
+    "Beaches",
+    "History",
+    "Hammams",
+    "Bazaars"
+  ],
+  "avoid": [
+    "Peak summer heat in interior"
+  ],
+  "combo": [
+    "Greece",
+    "Georgia"
+  ],
+  "landmark": "Hagia Sophia",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Istanbul (IST) — Turkish Airlines hub with cheapest Europe connections from India. Free Turkish Airlines hotel on long layovers. Excellent for India ↔ Europe stopovers.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Istanbul",
+      "lat": 41.0082,
+      "lng": 28.9784,
+      "notes": "Hagia Sophia, Grand Bazaar, Bosphorus cruise and spice market"
+    },
+    {
+      "name": "Cappadocia",
+      "lat": 38.6431,
+      "lng": 34.8289,
+      "notes": "Hot air balloon at sunrise over fairy chimneys and cave hotel stay"
+    },
+    {
+      "name": "Pamukkale",
+      "lat": 37.9333,
+      "lng": 29.1167,
+      "notes": "White travertine calcium terraces and ancient Hierapolis spa city"
+    },
+    {
+      "name": "Ephesus",
+      "lat": 37.9395,
+      "lng": 27.3421,
+      "notes": "Remarkably preserved 2000-year-old Roman city with Library of Celsus"
+    },
+    {
+      "name": "Bodrum",
+      "lat": 37.0342,
+      "lng": 27.4305,
+      "notes": "Crusader castle, Blue Voyage gulet charters and beach clubs"
+    },
+    {
+      "name": "Antalya",
+      "lat": 36.8969,
+      "lng": 30.7133,
+      "notes": "Turkish Riviera old harbour, Roman Hadrian's Gate and waterfall coast"
+    }
+  ],
+  "itinerary": {
+    "sim": "Turkcell Tourist SIM costs about ₹4,680 for 50GB/30 days, Vodafone Turkey tourist SIM is about ₹3,900 for 30GB, and Airalo eSIM is about ₹1,848 for 15GB if you want to activate before landing.",
+    "apps": [
+      "BiTaksi",
+      "Moovit",
+      "İstanbulkart App",
+      "Pegasus Airlines",
+      "Turkish Airlines",
+      "Obilet",
+      "Google Translate",
+      "XE Currency",
+      "Google Maps",
+      "muze.gov.tr",
+      "TripAdvisor"
+    ],
+    "cityOrder": [
+      "Istanbul",
+      "Cappadocia",
+      "Pamukkale",
+      "Antalya",
+      "Ephesus",
+      "Bodrum"
+    ],
+    "cities": {
+      "Istanbul": {
+        "name": "Istanbul",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Arrival & Byzantine Highlights",
+            "activities": [
+              {
+                "name": "Hagia Sophia Grand Mosque (Ayasofya)",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sultanahmet Square & Blue Mosque",
+                "cost": "₹0"
+              },
+              {
+                "name": "Basilica Cistern",
+                "cost": "₹1,690"
+              },
+              {
+                "name": "Hippodrome of Constantinople",
+                "cost": "₹0"
+              },
+              {
+                "name": "Galata Bridge waterfront stroll",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Nomade Istanbul",
+                "budget": "₹6,500/night"
+              },
+              {
+                "name": "Agora Life Hotel",
+                "budget": "₹3,120/night"
+              }
+            ],
+            "meals": [
+              "Hafız Mustafa 1864",
+              "Tarihi Sultanahmet Köftecisi",
+              "Hamdi Restaurant"
+            ]
+          },
+          {
+            "theme": "Ottoman Icons, Bazaar Lanes & Hammam",
+            "activities": [
+              {
+                "name": "Topkapi Palace",
+                "cost": "₹2,340"
+              },
+              {
+                "name": "Grand Bazaar",
+                "cost": "₹0"
+              },
+              {
+                "name": "Spice Bazaar",
+                "cost": "₹0"
+              },
+              {
+                "name": "Çemberlitaş Hamamı",
+                "cost": "₹3,120"
+              },
+              {
+                "name": "Istanbul Archaeology Museums",
+                "cost": "₹1,170"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibrahim Pasha Hotel",
+                "budget": "₹7,800/night"
+              },
+              {
+                "name": "Cheers Hostel",
+                "budget": "₹1,560/night"
+              }
+            ],
+            "meals": [
+              "Çiya Sofrası",
+              "Karaköy Güllüoğlu",
+              "Balıkçı Sabahattin"
+            ]
+          },
+          {
+            "theme": "Galata, Bosphorus & Modern Istanbul",
+            "activities": [
+              {
+                "name": "Galata Tower",
+                "cost": "₹910"
+              },
+              {
+                "name": "İstiklal Avenue",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bosphorus public ferry cruise",
+                "cost": "₹156"
+              },
+              {
+                "name": "Dolmabahçe Palace",
+                "cost": "₹2,325"
+              },
+              {
+                "name": "Ortaköy Square & Mosque",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pera Palace Hotel",
+                "budget": "₹31,200/night"
+              },
+              {
+                "name": "Istanbul Mia Hostel",
+                "budget": "₹2,080/night"
+              }
+            ],
+            "meals": [
+              "Zübeyir Ocakbaşı",
+              "Mikla Restaurant",
+              "Van Kahvaltı Evi"
+            ]
+          }
+        ]
+      },
+      "Cappadocia": {
+        "name": "Cappadocia",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Göreme Churches, Valleys & Sunset Viewpoints",
+            "activities": [
+              {
+                "name": "Göreme Open Air Museum",
+                "cost": "₹2,600"
+              },
+              {
+                "name": "Rose Valley hike",
+                "cost": "₹0"
+              },
+              {
+                "name": "Uçhisar Castle",
+                "cost": "₹520"
+              },
+              {
+                "name": "Pigeon Valley walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Love Valley sunset viewpoint",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kelebek Special Cave Hotel",
+                "budget": "₹9,100/night"
+              },
+              {
+                "name": "Shoestring Cave Hotel",
+                "budget": "₹3,120/night"
+              }
+            ],
+            "meals": [
+              "Ziggy's Restaurant Göreme",
+              "Topdeck Cave Restaurant"
+            ]
+          },
+          {
+            "theme": "Balloon Flight & Underground Cities",
+            "activities": [
+              {
+                "name": "Hot air balloon sunrise flight",
+                "cost": "₹13,950"
+              },
+              {
+                "name": "Derinkuyu Underground City",
+                "cost": "₹1,300"
+              },
+              {
+                "name": "Kaymakli Underground City",
+                "cost": "₹1,300"
+              },
+              {
+                "name": "Avanos pottery workshop",
+                "cost": "₹1,300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sultan Cave Suites",
+                "budget": "₹14,300/night"
+              },
+              {
+                "name": "Travellers Cave Pension",
+                "budget": "₹2,340/night"
+              }
+            ],
+            "meals": [
+              "Seten Restaurant",
+              "Nazar Börek"
+            ]
+          },
+          {
+            "theme": "Paşabağı, Zelve & Overnight Transfer South",
+            "activities": [
+              {
+                "name": "Paşabağı Valley (Monks Valley)",
+                "cost": "₹0"
+              },
+              {
+                "name": "Zelve Open Air Museum",
+                "cost": "₹1,560"
+              },
+              {
+                "name": "Devrent Valley",
+                "cost": "₹0"
+              },
+              {
+                "name": "Overnight bus toward Pamukkale",
+                "cost": "₹1,560–₹2,080"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kelebek Special Cave Hotel",
+                "budget": "₹9,100/night"
+              },
+              {
+                "name": "Shoestring Cave Hotel",
+                "budget": "₹3,120/night"
+              }
+            ],
+            "meals": [
+              "Local Gözleme Makers",
+              "Dibek Restaurant",
+              "Pumpkin Göreme"
+            ]
+          }
+        ]
+      },
+      "Pamukkale": {
+        "name": "Pamukkale",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Travertine Terraces, Hierapolis & Thermal Soak",
+            "activities": [
+              {
+                "name": "Pamukkale Travertine Terraces",
+                "cost": "₹3,534"
+              },
+              {
+                "name": "Hierapolis Ancient City",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hierapolis Archaeology Museum",
+                "cost": "₹0"
+              },
+              {
+                "name": "Cleopatra’s Antique Pool",
+                "cost": "₹1,820"
+              },
+              {
+                "name": "Hierapolis Roman Theatre",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hal-Tur Hotel",
+                "budget": "₹4,680/night"
+              },
+              {
+                "name": "Melrose Viewpoint Hotel",
+                "budget": "₹2,600/night"
+              }
+            ],
+            "meals": [
+              "Karay Restaurant",
+              "Mehmet's Heaven Restaurant"
+            ]
+          }
+        ]
+      },
+      "Antalya": {
+        "name": "Antalya",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Kaleiçi, Roman Gates & Museum Day",
+            "activities": [
+              {
+                "name": "Kaleiçi old town exploration",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hadrian's Gate",
+                "cost": "₹0"
+              },
+              {
+                "name": "Antalya Archaeological Museum",
+                "cost": "₹260"
+              },
+              {
+                "name": "Düden Waterfalls",
+                "cost": "₹0"
+              },
+              {
+                "name": "Old Harbour sunset walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tuvana Hotel",
+                "budget": "₹9,100/night"
+              },
+              {
+                "name": "White Garden Pension",
+                "budget": "₹2,860/night"
+              }
+            ],
+            "meals": [
+              "7 Mehmet Restaurant",
+              "Vanilla Restaurant",
+              "Dönerci Şahin Usta"
+            ]
+          },
+          {
+            "theme": "Perge, Aspendos & Canyon Adventure",
+            "activities": [
+              {
+                "name": "Perge Ancient City",
+                "cost": "₹1,040"
+              },
+              {
+                "name": "Aspendos Theatre",
+                "cost": "₹780"
+              },
+              {
+                "name": "Köprülü Canyon organized tour",
+                "cost": "₹2,600–₹4,200"
+              },
+              {
+                "name": "Antalya Aquarium",
+                "cost": "₹1,820"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tuvana Hotel",
+                "budget": "₹9,100/night"
+              },
+              {
+                "name": "White Garden Pension",
+                "budget": "₹2,860/night"
+              }
+            ],
+            "meals": [
+              "Seraser Fine Dining Restaurant",
+              "Dem Cafe & Restaurant",
+              "7 Mehmet Restaurant"
+            ]
+          }
+        ]
+      },
+      "Ephesus": {
+        "name": "Ephesus",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Ancient Rome in Selçuk",
+            "activities": [
+              {
+                "name": "Ephesus main site",
+                "cost": "₹1,820"
+              },
+              {
+                "name": "Terrace Houses",
+                "cost": "₹832"
+              },
+              {
+                "name": "Selçuk Museum",
+                "cost": "₹390"
+              },
+              {
+                "name": "Isa Bey Mosque",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Naz Han Hotel",
+                "budget": "₹4,680/night"
+              },
+              {
+                "name": "Homeros Pension",
+                "budget": "₹2,080/night"
+              }
+            ],
+            "meals": [
+              "Ejder Restaurant",
+              "Wallabies Aqua Bar & Restaurant"
+            ]
+          }
+        ]
+      },
+      "Bodrum": {
+        "name": "Bodrum",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Castle Museums, Marina Walks & Aegean Sunset",
+            "activities": [
+              {
+                "name": "Bodrum Castle & Museum of Underwater Archaeology",
+                "cost": "₹2,139"
+              },
+              {
+                "name": "Mausoleum of Halicarnassus",
+                "cost": "₹279"
+              },
+              {
+                "name": "Bodrum Windmills sunset viewpoint",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bodrum Marina & Bazaar",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "La Jolla Boutique Hotel",
+                "budget": "₹7,280/night"
+              },
+              {
+                "name": "Sevin Pension",
+                "budget": "₹2,340/night"
+              }
+            ],
+            "meals": [
+              "Nazik Ana",
+              "Kosta Restaurant",
+              "Limon Café"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Istanbul",
+        "to": "Cappadocia",
+        "method": "Flight (IST/SAW to Kayseri or Nevşehir)",
+        "cost": "₹3,000–₹8,500"
+      },
+      {
+        "from": "Cappadocia",
+        "to": "Pamukkale",
+        "method": "Overnight bus via Denizli",
+        "cost": "₹1,300–₹2,080"
+      },
+      {
+        "from": "Pamukkale",
+        "to": "Antalya",
+        "method": "Bus from Denizli otogar",
+        "cost": "₹780–₹1,300"
+      },
+      {
+        "from": "Antalya",
+        "to": "Ephesus",
+        "method": "Flight to Izmir plus train/dolmuş to Selçuk",
+        "cost": "₹2,600–₹7,200"
+      },
+      {
+        "from": "Ephesus",
+        "to": "Bodrum",
+        "method": "Train or bus via Izmir",
+        "cost": "₹600–₹1,200"
+      }
+    ],
+    "extras": [
+      "Visa: Turkish e-Visa is about ₹4,285 at evisa.gov.tr; keep a printout with your passport.",
+      "Museum Pass Istanbul is about ₹3,640 for 5 days and pays off quickly if you are doing Topkapi and the archaeology museums.",
+      "Museum Pass Cappadocia is about ₹5,200 for 3 days and covers Göreme and Zelve area sites.",
+      "Pick up an İstanbulkart on day 1 (about ₹260 deposit) for cheaper metro, tram, and ferry rides.",
+      "Vegetarian staples that are easy to find: mercimek çorbası, gözleme, simit, imam bayıldı, meze plates, and peynirli pide.",
+      "Use Garanti BBVA or İş Bankası ATMs for better exchange rates and avoid airport currency counters when possible."
+    ],
+    "cityImages": {
+      "Istanbul": [
+        "Hagia Sophia Istanbul exterior",
+        "Blue Mosque Sultanahmet Square",
+        "Bosphorus Galata Bridge sunset"
+      ],
+      "Cappadocia": [
+        "Cappadocia hot air balloons Göreme",
+        "Love Valley Cappadocia fairy chimneys",
+        "Uçhisar Castle Cappadocia sunset"
+      ],
+      "Pamukkale": [
+        "Pamukkale travertine terraces Turkey",
+        "Hierapolis theatre Pamukkale",
+        "Cleopatra antique pool Pamukkale"
+      ],
+      "Antalya": [
+        "Antalya Kaleiçi old harbour",
+        "Hadrian's Gate Antalya",
+        "Perge ancient city Antalya"
+      ],
+      "Ephesus": [
+        "Library of Celsus Ephesus",
+        "Ephesus Terrace Houses",
+        "Isa Bey Mosque Selçuk"
+      ],
+      "Bodrum": [
+        "Bodrum Castle marina",
+        "Mausoleum at Halicarnassus Bodrum",
+        "Bodrum windmills sunset"
+      ]
+    }
+  }
+}

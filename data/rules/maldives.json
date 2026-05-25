@@ -1,0 +1,500 @@
+{
+  "name": "Maldives",
+  "seed": true,
+  "lat": 3.2028,
+  "lng": 73.2207,
+  "region": "Asia",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹1.5L–₹3L",
+    "couple": "₹2.5L–₹5L",
+    "family4": "₹5L–₹10L"
+  },
+  "experiences": [
+    "Overwater Bungalows",
+    "Beaches",
+    "Snorkeling",
+    "Diving",
+    "Luxury"
+  ],
+  "avoid": [
+    "Monsoon season (May–Oct)"
+  ],
+  "combo": [
+    "India"
+  ],
+  "landmark": "Maldives",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Male",
+      "lat": 4.1755,
+      "lng": 73.5093,
+      "notes": "Colorful Fish Market, Friday Mosque and Grand Friday Mosque"
+    },
+    {
+      "name": "Maafushi",
+      "lat": 3.9381,
+      "lng": 73.4813,
+      "notes": "Budget local island with guesthouses, sandbank excursions and diving"
+    },
+    {
+      "name": "Baa Atoll",
+      "lat": 5.1333,
+      "lng": 72.9833,
+      "notes": "UNESCO Biosphere Reserve with manta ray aggregations and whale sharks"
+    },
+    {
+      "name": "Ari Atoll",
+      "lat": 3.8333,
+      "lng": 72.8333,
+      "notes": "Luxury resort strip, nurse sharks and hammerhead cleaning stations"
+    }
+  ],
+  "itinerary": {
+    "sim": "Dhiraagu Tourist SIM is the safest airport pickup for 4G coverage across Malé, Maafushi, Baa Atoll and Ari Atoll; Ooredoo Maldives is the closest backup and is similarly priced.",
+    "apps": [
+      "Avas Ride",
+      "Raajje Transport Link (RTL)",
+      "Atoll Transfer",
+      "Booking.com",
+      "Google Maps offline",
+      "WhatsApp",
+      "XE Currency",
+      "PADI"
+    ],
+    "cityOrder": [
+      "Male",
+      "Ari Atoll",
+      "Baa Atoll",
+      "Maafushi"
+    ],
+    "cities": {
+      "Male": {
+        "name": "Male",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Use Male as the cultural gateway and buffer night if your incoming flight lands too late for a same-day seaplane transfer.",
+        "days": [
+          {
+            "theme": "Old Mosque, Markets and a Soft Landing into the Maldives",
+            "activities": [
+              {
+                "name": "Airport ferry from Velana Airport to Male",
+                "cost": "₹55 pp",
+                "tip": "Runs every 10–15 minutes and is far cheaper than taking a taxi via Hulhumalé."
+              },
+              {
+                "name": "Hukuru Miskiy (Friday Mosque)",
+                "cost": "Free",
+                "tip": "Visit outside prayer hours and carry clothing that covers shoulders and knees."
+              },
+              {
+                "name": "Sultan Park and National Museum",
+                "cost": "₹252 pp"
+              },
+              {
+                "name": "Islamic Centre and Grand Friday Mosque exterior stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Fish Market and Local Market waterfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Whale Submarine coral-viewing ride",
+                "cost": "₹4,620–₹5,040 pp",
+                "tip": "Skip Monday and Friday because departures are limited or closed."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Luckyhiya Hotel",
+                "budget": "₹3,360–₹4,200/night"
+              },
+              {
+                "name": "Mookai Hotel",
+                "budget": "₹10,080–₹15,120/night"
+              },
+              {
+                "name": "Hulhule Island Hotel",
+                "budget": "₹16,800–₹21,000/night"
+              }
+            ],
+            "meals": [
+              "FoodBank",
+              "Seagull Cafe & Gelataria",
+              "Breakwater Cafe"
+            ]
+          }
+        ]
+      },
+      "Ari Atoll": {
+        "name": "Ari Atoll",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "This block is optimized for South Ari bases such as Dhigurah, Vilamendhoo or LUX* so you can combine whale-shark water time with one proper dive or lagoon day.",
+        "days": [
+          {
+            "theme": "Arrival in Whale Shark Territory, House Reef and Dolphin Sunset",
+            "activities": [
+              {
+                "name": "Transfer from Male to South Ari Atoll by domestic flight or seaplane",
+                "cost": "₹8,400–₹33,600 pp",
+                "tip": "Domestic flight to Maamigili plus speedboat is the budget-friendly option; seaplane is faster and more scenic but daytime only."
+              },
+              {
+                "name": "House reef snorkel after check-in",
+                "cost": "Free–₹1,680 pp"
+              },
+              {
+                "name": "Whale shark encounter near Maamigili",
+                "cost": "₹2,520–₹4,200 pp",
+                "tip": "Keep a rash guard ready and expect operators to limit swim time in small guided batches."
+              },
+              {
+                "name": "Sandbank picnic by speedboat",
+                "cost": "₹2,100–₹4,200 pp"
+              },
+              {
+                "name": "Sunset dolphin cruise on a dhoni",
+                "cost": "₹2,520–₹4,200 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Simple Earth Eco Resort",
+                "budget": "₹4,200–₹6,720/night"
+              },
+              {
+                "name": "Vilamendhoo Island Resort",
+                "budget": "₹16,800–₹29,400/night"
+              },
+              {
+                "name": "LUX* South Ari Atoll",
+                "budget": "₹33,600–₹67,200/night"
+              }
+            ],
+            "meals": [
+              "Hermit’s",
+              "Absolute Thai",
+              "East Market at LUX* South Ari Atoll"
+            ]
+          },
+          {
+            "theme": "Drift Dive, Local Island Culture and Night Fishing",
+            "activities": [
+              {
+                "name": "Scuba dive at Broken Rock or Rangali Channel",
+                "cost": "₹8,400–₹12,600 pp",
+                "tip": "Reserve the dive the previous evening because tide windows decide which channel runs best."
+              },
+              {
+                "name": "Mahibadhoo local island visit",
+                "cost": "₹840–₹1,680 pp"
+              },
+              {
+                "name": "Kayaking or stand-up paddleboarding in the lagoon",
+                "cost": "₹840–₹2,520 pp"
+              },
+              {
+                "name": "Traditional night fishing trip",
+                "cost": "₹2,520–₹4,200 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Boutique Beach All Inclusive Diving Hotel",
+                "budget": "₹9,500–₹16,000/night"
+              },
+              {
+                "name": "Whaleshark Beach",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "NH Maldives Kuda Rah Resort",
+                "budget": "₹28,000–₹55,000/night"
+              }
+            ],
+            "meals": [
+              "Malaveli Restaurant",
+              "Beach Fresh Restaurant Dhigurah",
+              "The Ramora Restaurant & Rooftop"
+            ]
+          }
+        ]
+      },
+      "Baa Atoll": {
+        "name": "Baa Atoll",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Baa Atoll works best as a Dharavandhoo-based UNESCO biosphere stay, with Hanifaru Bay as the anchor experience and one flex day for reef or island-hopping weather windows.",
+        "days": [
+          {
+            "theme": "UNESCO Biosphere Arrival, Lacquer Crafts and Reef Snorkeling",
+            "activities": [
+              {
+                "name": "Transfer from Ari Atoll to Baa Atoll via Male and Dharavandhoo",
+                "cost": "₹16,800–₹25,200 pp",
+                "tip": "If you are staying at a resort, ask for a through-ticket or seaplane bundle so luggage is checked across both flights."
+              },
+              {
+                "name": "Thulhaadhoo island craft visit for lacquerware shopping",
+                "cost": "₹840–₹1,680 pp"
+              },
+              {
+                "name": "Evening reef snorkel from Dharavandhoo or resort house reef",
+                "cost": "Free–₹1,680 pp"
+              },
+              {
+                "name": "Sunset dolphin safari",
+                "cost": "₹3,360–₹5,040 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hanifaru Stay",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Kiha Beach Hotel",
+                "budget": "₹10,500–₹18,000/night"
+              },
+              {
+                "name": "Reethi Beach Resort",
+                "budget": "₹25,200–₹42,000/night"
+              }
+            ],
+            "meals": [
+              "Hiyaali Cafe",
+              "Blue World Dharavandhoo Restaurant",
+              "Rehendhi Restaurant at Reethi Beach Resort"
+            ]
+          },
+          {
+            "theme": "Hanifaru Bay Mantas, Channel Diving and a Slow Sunset",
+            "activities": [
+              {
+                "name": "Hanifaru Bay guided snorkeling session",
+                "cost": "₹6,720–₹10,080 pp",
+                "tip": "Peak manta action is usually strongest from June to October, but tours run whenever marine conditions and sightings allow."
+              },
+              {
+                "name": "Scuba dive at Nelivaru Haa or Dhonfanu Kandu",
+                "cost": "₹8,400–₹12,600 pp"
+              },
+              {
+                "name": "Fulhadhoo island beach escape",
+                "cost": "₹840–₹1,680 pp"
+              },
+              {
+                "name": "Marine biology talk or coral session",
+                "cost": "Free–₹2,520 pp"
+              },
+              {
+                "name": "Traditional dhoni sunset cruise",
+                "cost": "₹2,520–₹4,200 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Biosphere Inn",
+                "budget": "₹5,000–₹8,500/night"
+              },
+              {
+                "name": "Aveyla Manta Village",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Four Seasons Resort Maldives at Landaa Giraavaru",
+                "budget": "₹84,000–₹168,000/night"
+              }
+            ],
+            "meals": [
+              "White House Restaurant",
+              "Cafe Isla",
+              "Blu Beach Club at Four Seasons Landaa Giraavaru"
+            ]
+          }
+        ]
+      },
+      "Maafushi": {
+        "name": "Maafushi",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Finish on Maafushi if you want one affordable local-island stay with easy speedboat access back to Male for departure day.",
+        "days": [
+          {
+            "theme": "Bikini Beach, Nurse Sharks and Local Island Energy",
+            "activities": [
+              {
+                "name": "Transfer from Baa Atoll to Maafushi via Male",
+                "cost": "₹13,020–₹17,220 pp",
+                "tip": "Book the Dharavandhoo flight and Male–Maafushi speedboat on the same ticketing day because afternoon seats can sell out."
+              },
+              {
+                "name": "Bikini Beach swim and relax block",
+                "cost": "Free"
+              },
+              {
+                "name": "Nurse shark snorkeling in Maafushi lagoon",
+                "cost": "₹2,100–₹3,360 pp"
+              },
+              {
+                "name": "Island hopping trip to Gulhi, sandbank and coral garden",
+                "cost": "₹3,360–₹5,040 pp"
+              },
+              {
+                "name": "Jet ski, parasailing or other watersports",
+                "cost": "₹4,200–₹10,080 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bikini View Maldives Guesthouse",
+                "budget": "₹3,360–₹5,040/night"
+              },
+              {
+                "name": "Reveries Diving Village",
+                "budget": "₹5,040–₹7,560/night"
+              },
+              {
+                "name": "Kaani Grand Seaview Hotel",
+                "budget": "₹8,400–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "Mia Beach Restaurant",
+              "Sun Restaurant",
+              "Kaani Restaurant"
+            ]
+          },
+          {
+            "theme": "Final Snorkel, Male Supermarket Stop and Departure",
+            "activities": [
+              {
+                "name": "Early morning local reef snorkel",
+                "cost": "₹840–₹1,680 pp"
+              },
+              {
+                "name": "Traditional mas huni breakfast on the island",
+                "cost": "₹252–₹336 pp"
+              },
+              {
+                "name": "Shared speedboat from Maafushi back to Male",
+                "cost": "₹2,100 pp"
+              },
+              {
+                "name": "STO People’s Choice Supermart snack and souvenir stop in Male",
+                "cost": "₹500–₹2,000"
+              },
+              {
+                "name": "Airport ferry from Male to Velana Airport",
+                "cost": "₹55 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Arena Beach Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Kaani Palm Beach",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Coffee House Maafushi",
+              "Hot Bite",
+              "Fine Bake by Suzy"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Velana Airport",
+        "to": "Male",
+        "method": "Public airport ferry every 10–15 minutes; taxi via Hulhumalé is the late-night fallback.",
+        "cost": "₹55–₹168"
+      },
+      {
+        "from": "Male",
+        "to": "Ari Atoll",
+        "method": "Domestic flight to Maamigili plus resort or guesthouse speedboat, or direct seaplane transfer to resort islands.",
+        "cost": "₹8,400–₹33,600"
+      },
+      {
+        "from": "Ari Atoll",
+        "to": "Baa Atoll",
+        "method": "Most practical routing is via Male with a domestic flight to Dharavandhoo, then a short speedboat hop onward.",
+        "cost": "₹16,800–₹25,200"
+      },
+      {
+        "from": "Baa Atoll",
+        "to": "Maafushi",
+        "method": "Domestic flight Dharavandhoo to Male followed by a shared speedboat from Male Jetty to Maafushi.",
+        "cost": "₹13,020–₹17,220"
+      },
+      {
+        "from": "Maafushi",
+        "to": "Velana Airport",
+        "method": "Shared speedboat to Male and quick airport ferry connection for the final airport run.",
+        "cost": "₹2,155"
+      }
+    ],
+    "extras": [
+      "Indian passport holders receive a free 30-day visa on arrival, but you should still carry confirmed hotel bookings and proof of onward travel.",
+      "Alcohol is not served in Male or on local islands such as Maafushi and Dharavandhoo; only resort islands and Hulhule Island Hotel legally serve it.",
+      "Dress conservatively on local islands and switch to swimwear only on designated bikini beaches or resort islands.",
+      "Most big-ticket Maldives pricing is quoted in USD even when you pay locally, so carry some USD cash and keep XE handy for INR checks.",
+      "Seaplanes operate only in daylight, so late-arriving international flights often require a first night in Male or Hulhule before the atoll transfer.",
+      "Hanifaru Bay is seasonal and protected, so treat that Baa Atoll day as weather-and-marine-life dependent rather than guaranteed."
+    ],
+    "cityImages": {
+      "Male": [
+        "Male Maldives aerial skyline",
+        "Hukuru Miskiy Friday Mosque Maldives",
+        "Republic Square Jumhooree Maidhaan Male"
+      ],
+      "Ari Atoll": [
+        "Alifu Dhaalu Atoll Maldives aerial",
+        "Whale shark Ari Atoll Maldives snorkeling",
+        "LUX South Ari Atoll overwater villas"
+      ],
+      "Baa Atoll": [
+        "Hanifaru Bay manta ray aggregation Maldives",
+        "Baa Atoll UNESCO Biosphere Reserve Maldives",
+        "Four Seasons Landaa Giraavaru Maldives"
+      ],
+      "Maafushi": [
+        "Maafushi island Kaafu Atoll Maldives",
+        "Nurse shark Maldives snorkeling lagoon",
+        "Maldives local island bikini beach guesthouse"
+      ]
+    }
+  }
+}

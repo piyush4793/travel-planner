@@ -1,0 +1,458 @@
+{
+  "name": "Netherlands",
+  "seed": true,
+  "lat": 52.1326,
+  "lng": 5.2913,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January"
+  ],
+  "budget": {
+    "solo": "₹1.5L–₹2.5L",
+    "couple": "₹2.5L–₹4L",
+    "family4": "₹5L–₹8L"
+  },
+  "experiences": [
+    "Tulip Fields",
+    "Amsterdam Canals",
+    "Van Gogh Museum",
+    "Windmills",
+    "Cycling"
+  ],
+  "avoid": [
+    "King's Day (April) — crowded but fun"
+  ],
+  "combo": [
+    "Germany",
+    "Belgium"
+  ],
+  "landmark": "Keukenhof Gardens",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Amsterdam",
+      "lat": 52.3676,
+      "lng": 4.9041,
+      "notes": "Canals by bike, Rijksmuseum, Van Gogh Museum and Anne Frank House"
+    },
+    {
+      "name": "Rotterdam",
+      "lat": 51.9225,
+      "lng": 4.4792,
+      "notes": "Cube houses, Erasmus Bridge, Markthal food hall and Fenix warehouse"
+    },
+    {
+      "name": "Delft",
+      "lat": 52.0116,
+      "lng": 4.3571,
+      "notes": "Blue and white Delftware pottery, Vermeer birthplace and canal walks"
+    },
+    {
+      "name": "Utrecht",
+      "lat": 52.0907,
+      "lng": 5.1214,
+      "notes": "Dom Tower views, wharf-level cafe terraces along the Oudegracht"
+    },
+    {
+      "name": "Haarlem",
+      "lat": 52.3874,
+      "lng": 4.6462,
+      "notes": "Medieval Grote Kerk, tulip bulb fields nearby and Frans Hals Museum"
+    }
+  ],
+  "itinerary": {
+    "sim": "KPN Tourist SIM at Schiphol or Lebara NL from Albert Heijn — about ₹1,380 for 10–20GB; KPN is the safest pick if you are heading to Keukenhof and the bulb fields.",
+    "apps": [
+      "9292",
+      "NS App",
+      "GVB App",
+      "OVpay",
+      "Google Maps",
+      "Keukenhof App",
+      "I Amsterdam",
+      "Thuisbezorgd",
+      "XE Currency",
+      "Google Translate",
+      "Uber",
+      "Bolt"
+    ],
+    "cityOrder": [
+      "Amsterdam",
+      "Haarlem",
+      "Rotterdam",
+      "Delft",
+      "Utrecht"
+    ],
+    "cities": {
+      "Amsterdam": {
+        "name": "Amsterdam",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Pre-book Anne Frank House and Van Gogh Museum well ahead; add a fourth day for Zaanse Schans or a slower canal-and-cafe day.",
+        "days": [
+          {
+            "theme": "Arrival, Canal Belt & Dam Square",
+            "activities": [
+              {
+                "name": "Walk the UNESCO Canal Belt across Herengracht, Keizersgracht, and Prinsengracht"
+              },
+              {
+                "name": "Dam Square and Royal Palace exterior"
+              },
+              {
+                "name": "Begijnhof courtyard and the Bloemenmarkt flower market"
+              },
+              {
+                "name": "Sunset canal cruise from central Amsterdam",
+                "cost": "₹1,472"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Generator Amsterdam",
+                "budget": "₹7,360–₹9,200/night"
+              },
+              {
+                "name": "citizenM Amsterdam Centraal",
+                "budget": "₹9,200–₹11,960/night"
+              }
+            ],
+            "meals": [
+              "Maoz Falafel",
+              "Foodhallen",
+              "The Avocado Show"
+            ]
+          },
+          {
+            "theme": "Museumplein & De Pijp",
+            "activities": [
+              {
+                "name": "Rijksmuseum",
+                "cost": "₹2,300"
+              },
+              {
+                "name": "Van Gogh Museum",
+                "cost": "₹2,208"
+              },
+              {
+                "name": "Stedelijk Museum",
+                "cost": "₹2,070"
+              },
+              {
+                "name": "Vondelpark stroll and Albert Cuyp Market snack stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Generator Amsterdam",
+                "budget": "₹7,360–₹9,200/night"
+              },
+              {
+                "name": "citizenM Amsterdam Centraal",
+                "budget": "₹9,200–₹11,960/night"
+              }
+            ],
+            "meals": [
+              "Wok to Walk",
+              "Blue Pepper",
+              "Momo Amsterdam"
+            ]
+          },
+          {
+            "theme": "Anne Frank, Jordaan & Amsterdam-Noord",
+            "activities": [
+              {
+                "name": "Anne Frank House timed entry",
+                "cost": "₹1,472"
+              },
+              {
+                "name": "Jordaan neighbourhood walk with Westerkerk and canal lanes"
+              },
+              {
+                "name": "Free IJ ferry to Amsterdam-Noord and EYE Film Institute",
+                "cost": "₹1,012"
+              },
+              {
+                "name": "Hortus Botanicus",
+                "cost": "₹1,150"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Generator Amsterdam",
+                "budget": "₹7,360–₹9,200/night"
+              },
+              {
+                "name": "citizenM Amsterdam Centraal",
+                "budget": "₹9,200–₹11,960/night"
+              }
+            ],
+            "meals": [
+              "Shiv Shakti",
+              "Pllek",
+              "Café de Reiger"
+            ]
+          }
+        ]
+      },
+      "Haarlem": {
+        "name": "Haarlem",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Best as a spring add-on: swap in Keukenhof and the Bollenstreek bulb fields when visiting from mid-March to early May.",
+        "days": [
+          {
+            "theme": "Medieval Haarlem & Tulip Corridor",
+            "activities": [
+              {
+                "name": "Grote Markt and St. Bavo Church exterior walk"
+              },
+              {
+                "name": "Frans Hals Museum"
+              },
+              {
+                "name": "Windmill De Adriaan and canal-side old town walk"
+              },
+              {
+                "name": "Seasonal Keukenhof combi-ticket from Haarlem",
+                "cost": "₹3,082"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Boutiquehotel Staats",
+                "budget": "₹10,120–₹13,800/night"
+              },
+              {
+                "name": "Hotel Lion d’Or",
+                "budget": "₹8,280–₹11,960/night"
+              }
+            ],
+            "meals": [
+              "Ratatouille Food & Wine",
+              "Jopenkerk",
+              "Bistrobar Indonesia"
+            ]
+          }
+        ]
+      },
+      "Rotterdam": {
+        "name": "Rotterdam",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Stay a second day if you want to add a quick Den Haag / Scheveningen side trip without changing hotels.",
+        "days": [
+          {
+            "theme": "Modern Architecture & Waterfront",
+            "activities": [
+              {
+                "name": "Markthal food hall and ceiling artwork"
+              },
+              {
+                "name": "Kubuswoningen (Kijk-Kubus)",
+                "cost": "₹322"
+              },
+              {
+                "name": "Walk across Erasmusbrug and continue along the Nieuwe Maas"
+              },
+              {
+                "name": "Euromast observation tower",
+                "cost": "₹1,518"
+              },
+              {
+                "name": "Delfshaven historic harbour quarter"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Rotterdam City Centre",
+                "budget": "₹6,440–₹9,200/night"
+              },
+              {
+                "name": "citizenM Rotterdam",
+                "budget": "₹8,280–₹11,960/night"
+              }
+            ],
+            "meals": [
+              "Markthal food stalls",
+              "Het Nieuwe Café",
+              "Dewi Sri"
+            ]
+          }
+        ]
+      },
+      "Delft": {
+        "name": "Delft",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Delft works well as a slow overnight between Rotterdam and Utrecht, especially if you want pottery workshops and quieter canals.",
+        "days": [
+          {
+            "theme": "Delft Blue, Vermeer & Canal Town",
+            "activities": [
+              {
+                "name": "Markt Square, Nieuwe Kerk exterior, and canal walk through the old centre"
+              },
+              {
+                "name": "Vermeer Centrum Delft",
+                "cost": "₹1,242"
+              },
+              {
+                "name": "Royal Delft Museum and pottery workshop",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Oostpoort and Oude Delft evening stroll"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hampshire Hotel Delft Centre",
+                "budget": "₹8,280–₹11,960/night"
+              },
+              {
+                "name": "Hotel Royal Bridges",
+                "budget": "₹7,360–₹10,120/night"
+              }
+            ],
+            "meals": [
+              "HANNO Groots Café",
+              "Stads-Koffyhuis",
+              "Bistro Mes Amis"
+            ]
+          }
+        ]
+      },
+      "Utrecht": {
+        "name": "Utrecht",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Add a second day for the Railway Museum, Miffy Museum, or a slower cafe-heavy Oudegracht day.",
+        "days": [
+          {
+            "theme": "Dom Tower & Wharf Cellars",
+            "activities": [
+              {
+                "name": "Dom Tower climb",
+                "cost": "₹828"
+              },
+              {
+                "name": "Oudegracht canal walk and wharf-cellar terraces"
+              },
+              {
+                "name": "DOMunder archaeological tour",
+                "cost": "₹1,012"
+              },
+              {
+                "name": "Rietveld Schröder House",
+                "cost": "₹1,426"
+              },
+              {
+                "name": "Museum Speelklok",
+                "cost": "₹1,288"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Utrecht Centre",
+                "budget": "₹6,900–₹9,200/night"
+              },
+              {
+                "name": "Mother Goose Hotel",
+                "budget": "₹9,200–₹13,800/night"
+              }
+            ],
+            "meals": [
+              "Stadskasteel Oudaen",
+              "Café Olivier",
+              "Blauw"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Amsterdam",
+        "to": "Haarlem",
+        "method": "NS Sprinter or Intercity from Amsterdam Centraal to Haarlem (about 15–20 min)",
+        "cost": "₹460–₹552"
+      },
+      {
+        "from": "Haarlem",
+        "to": "Rotterdam",
+        "method": "NS Intercity from Haarlem to Rotterdam Centraal via Schiphol or Leiden (about 55–70 min)",
+        "cost": "₹1,564–₹1,840"
+      },
+      {
+        "from": "Rotterdam",
+        "to": "Delft",
+        "method": "NS Intercity or Sprinter from Rotterdam Centraal to Delft (about 13–15 min)",
+        "cost": "₹276–₹368"
+      },
+      {
+        "from": "Delft",
+        "to": "Utrecht",
+        "method": "NS Intercity via Rotterdam or Gouda to Utrecht Centraal (about 55–65 min)",
+        "cost": "₹1,196–₹1,380"
+      },
+      {
+        "from": "Utrecht",
+        "to": "Amsterdam",
+        "method": "NS Intercity from Utrecht Centraal to Amsterdam Centraal (about 28–35 min)",
+        "cost": "₹828–₹920"
+      }
+    ],
+    "extras": [
+      "Use a contactless Visa or Mastercard with OVpay and always tap in and out on every train, tram, metro, or bus ride.",
+      "Anne Frank House needs mandatory advance booking 6–8 weeks out; Van Gogh Museum is best booked 2–4 weeks ahead.",
+      "The I Amsterdam City Card 48-hour option is about ₹8,280 and covers GVB transit, Rijksmuseum, Stedelijk, and a canal cruise, but not the Van Gogh Museum.",
+      "Keukenhof is seasonal only from mid-March to early May; if you are travelling then, use the Haarlem day for tulip fields and the combi-ticket instead of a standard city day.",
+      "Museumkaart is about ₹6,900 and starts paying off fast if you are stacking Amsterdam and Utrecht museums, but it does not cover Van Gogh Museum or Keukenhof.",
+      "If you want one more heavyweight art stop, use Rotterdam as a base for a 25-minute Den Haag day trip covering Mauritshuis, Escher in Het Paleis, and Scheveningen."
+    ],
+    "cityImages": {
+      "Amsterdam": [
+        "Keizersgracht Reguliersgracht Amsterdam canal intersection",
+        "Rijksmuseum Amsterdam Museumplein",
+        "Amsterdam canals aerial view"
+      ],
+      "Haarlem": [
+        "Grote Markt Haarlem Netherlands",
+        "Windmill De Adriaan Haarlem",
+        "Frans Hals Museum Haarlem"
+      ],
+      "Rotterdam": [
+        "Erasmusbrug Rotterdam night",
+        "Kubuswoningen Rotterdam Blaak",
+        "Markthal Rotterdam interior"
+      ],
+      "Delft": [
+        "Nieuwe Kerk Delft Markt square",
+        "Royal Delft pottery factory",
+        "Oude Delft canal Netherlands"
+      ],
+      "Utrecht": [
+        "Domtoren Utrecht Oudegracht",
+        "Rietveld Schroder House Utrecht",
+        "Oudegracht Utrecht wharf cellars"
+      ]
+    }
+  }
+}

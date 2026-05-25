@@ -1,0 +1,543 @@
+{
+  "name": "Nepal",
+  "seed": true,
+  "lat": 27.7172,
+  "lng": 85.324,
+  "region": "Asia",
+  "bestMonths": [
+    "October",
+    "November",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹30K–₹50K",
+    "couple": "₹50K–₹80K",
+    "family4": "₹1L–₹1.5L"
+  },
+  "experiences": [
+    "Everest Base Camp",
+    "Annapurna Trek",
+    "Kathmandu",
+    "Pokhara",
+    "Himalayan Views"
+  ],
+  "avoid": [
+    "Monsoon season — trails become dangerous"
+  ],
+  "combo": [
+    "Bhutan",
+    "India"
+  ],
+  "landmark": "Mount Everest",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Kathmandu",
+      "lat": 27.7172,
+      "lng": 85.324,
+      "notes": "Pashupatinath temple, Boudhanath stupa and chaotic Thamel trekking hub"
+    },
+    {
+      "name": "Pokhara",
+      "lat": 28.2096,
+      "lng": 83.9856,
+      "notes": "Phewa Lake, Annapurna panorama and base for Poon Hill sunrise trek"
+    },
+    {
+      "name": "Chitwan",
+      "lat": 27.5291,
+      "lng": 84.3542,
+      "notes": "Jungle safari for one-horned rhinos, tigers and elephant grass walks"
+    },
+    {
+      "name": "Lumbini",
+      "lat": 27.4833,
+      "lng": 83.276,
+      "notes": "Birthplace of Siddhartha Gautama with ancient Ashokan pillar"
+    }
+  ],
+  "itinerary": {
+    "sim": "Ncell tourist SIM is the easiest airport pickup at Tribhuvan; expect about ₹78 for the SIM and roughly ₹364 for a 25GB data pack. NTC works as the backup in hill areas.",
+    "apps": [
+      "Google Maps offline",
+      "InDrive",
+      "Pathao",
+      "XE Currency",
+      "Google Translate",
+      "Klook",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Kathmandu",
+      "Pokhara",
+      "Chitwan",
+      "Lumbini"
+    ],
+    "cities": {
+      "Kathmandu": {
+        "name": "Kathmandu",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three full days cover Kathmandu's sacred circuit plus the best Newari heritage day trip loop through Bhaktapur and Patan.",
+        "days": [
+          {
+            "theme": "Arrival, Thamel Lanes & Easy Heritage Stops",
+            "activities": [
+              {
+                "name": "Tribhuvan International Airport prepaid taxi into Thamel",
+                "cost": "₹470–₹520 per cab",
+                "tip": "Use the airport prepaid booth to avoid haggling after arrival."
+              },
+              {
+                "name": "Thamel orientation walk for trekking shops, prayer flags and cafés",
+                "cost": "Free"
+              },
+              {
+                "name": "Garden of Dreams",
+                "cost": "₹208 pp"
+              },
+              {
+                "name": "Freak Street and old bazaar stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Evening momo and sel roti crawl in Thamel",
+                "cost": "₹100–₹200 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Alobar1000",
+                "budget": "₹1,300–₹2,200/night"
+              },
+              {
+                "name": "Kantipur Temple House",
+                "budget": "₹5,000–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Thakali Kitchen",
+              "OR2K",
+              "Bhojan Griha"
+            ]
+          },
+          {
+            "theme": "Pashupatinath, Boudhanath & Swayambhunath",
+            "activities": [
+              {
+                "name": "Pashupatinath Temple and Bagmati ghats",
+                "cost": "Free for Hindu Indians / ₹520 pp for non-Hindus"
+              },
+              {
+                "name": "Boudhanath Stupa kora and rooftop café views",
+                "cost": "₹208 pp"
+              },
+              {
+                "name": "Swayambhunath (Monkey Temple)",
+                "cost": "₹104 pp"
+              },
+              {
+                "name": "Kathmandu cooking class for momo, dal bhat and sel roti",
+                "cost": "₹1,300–₹1,820 pp"
+              },
+              {
+                "name": "Tridevi Marg thangka galleries",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Alobar1000",
+                "budget": "₹1,300–₹2,200/night"
+              },
+              {
+                "name": "Kantipur Temple House",
+                "budget": "₹5,000–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "OR2K",
+              "Bhojan Griha",
+              "Thakali Kitchen"
+            ]
+          },
+          {
+            "theme": "Bhaktapur & Patan Newari Kingdoms",
+            "activities": [
+              {
+                "name": "Taxi to Bhaktapur and back",
+                "cost": "₹780–₹1,040 per cab"
+              },
+              {
+                "name": "Bhaktapur Durbar Square, Nyatapola Temple and pottery lanes",
+                "cost": "₹780 pp"
+              },
+              {
+                "name": "Patan Durbar Square and Patan Museum",
+                "cost": "₹520 pp + ₹365 pp museum"
+              },
+              {
+                "name": "Hiranyavarna Mahavihar (Golden Temple)",
+                "cost": "₹104 pp"
+              },
+              {
+                "name": "Thamel currency exchange and bus prep for Pokhara",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Alobar1000",
+                "budget": "₹1,300–₹2,200/night"
+              },
+              {
+                "name": "Kantipur Temple House",
+                "budget": "₹5,000–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Bhojan Griha",
+              "Thakali Kitchen",
+              "OR2K"
+            ]
+          }
+        ]
+      },
+      "Pokhara": {
+        "name": "Pokhara",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days balance slow Lakeside time with the Sarangkot adventure day and Pokhara's lake-and-stupa highlights.",
+        "days": [
+          {
+            "theme": "Kathmandu Transfer & Phewa Lake Sunset",
+            "activities": [
+              {
+                "name": "Tourist bus from Kathmandu to Pokhara",
+                "cost": "₹780–₹1,680 pp",
+                "tip": "Upgrade to Greenline if you want the most comfortable ride and lunch included."
+              },
+              {
+                "name": "Phewa Lake wooden boat ride",
+                "cost": "₹312–₹416 per boat"
+              },
+              {
+                "name": "Barahi Temple on the lake island",
+                "cost": "₹52 pp boat surcharge"
+              },
+              {
+                "name": "Lakeside market walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Busy Bee Café live-music evening",
+                "cost": "₹200–₹500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Middle Path Hotel & Garden",
+                "budget": "₹1,500–₹2,600/night"
+              },
+              {
+                "name": "Temple Tree Resort & Spa",
+                "budget": "₹5,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Pokhara Thakali Kitchen",
+              "Moondance Restaurant",
+              "German Bakery"
+            ]
+          },
+          {
+            "theme": "Sarangkot Sunrise, Paragliding & Pokhara Icons",
+            "activities": [
+              {
+                "name": "Sarangkot sunrise viewpoint taxi",
+                "cost": "₹780–₹1,040 per cab"
+              },
+              {
+                "name": "Sarangkot Cable Car",
+                "cost": "₹344 one-way / ₹616 return pp"
+              },
+              {
+                "name": "Paragliding tandem flight from Sarangkot",
+                "cost": "₹6,240–₹7,800 pp"
+              },
+              {
+                "name": "Devi's Falls",
+                "cost": "₹13–₹26 pp"
+              },
+              {
+                "name": "Gupteshwor Cave",
+                "cost": "₹105 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Middle Path Hotel & Garden",
+                "budget": "₹1,500–₹2,600/night"
+              },
+              {
+                "name": "Temple Tree Resort & Spa",
+                "budget": "₹5,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Moondance Restaurant",
+              "Pokhara Thakali Kitchen",
+              "German Bakery"
+            ]
+          },
+          {
+            "theme": "Peace Pagoda, Museum & Tibetan Craft Stops",
+            "activities": [
+              {
+                "name": "World Peace Pagoda and lake overlook",
+                "cost": "Free + ₹520–₹780 local taxi if not hiking"
+              },
+              {
+                "name": "International Mountain Museum",
+                "cost": "₹52 pp"
+              },
+              {
+                "name": "Bindhyabasini Temple",
+                "cost": "Free"
+              },
+              {
+                "name": "Tibetan Refugee Settlement and monastery",
+                "cost": "Free"
+              },
+              {
+                "name": "Lakeside north promenade sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Middle Path Hotel & Garden",
+                "budget": "₹1,500–₹2,600/night"
+              },
+              {
+                "name": "Temple Tree Resort & Spa",
+                "budget": "₹5,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Pokhara Thakali Kitchen",
+              "German Bakery",
+              "Moondance Restaurant"
+            ]
+          }
+        ]
+      },
+      "Chitwan": {
+        "name": "Chitwan",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days in Sauraha give you the classic canoe-and-culture arrival plus one full wildlife safari day inside Chitwan National Park.",
+        "days": [
+          {
+            "theme": "Pokhara Transfer, Rapti Canoe & Tharu Evening",
+            "activities": [
+              {
+                "name": "Tourist bus from Pokhara to Sauraha",
+                "cost": "₹390–₹520 pp"
+              },
+              {
+                "name": "Chitwan National Park permit",
+                "cost": "₹1,040 pp"
+              },
+              {
+                "name": "Rapti River dugout canoe safari",
+                "cost": "₹416–₹780 pp"
+              },
+              {
+                "name": "Elephant Breeding Center",
+                "cost": "₹104–₹208 pp"
+              },
+              {
+                "name": "Tharu cultural dance show",
+                "cost": "₹260–₹520 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Machan Wildlife Camp",
+                "budget": "₹1,560–₹2,600/night"
+              },
+              {
+                "name": "Wildlife Camp Eco Resort",
+                "budget": "₹4,680–₹7,800/night"
+              }
+            ],
+            "meals": [
+              "KC Restaurant",
+              "Jungle View Restaurant",
+              "Tharu Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Jeep Safari, Jungle Walk & Buffer-Zone Cycling",
+            "activities": [
+              {
+                "name": "Morning jeep safari into Chitwan National Park core zone",
+                "cost": "₹780–₹1,040 pp"
+              },
+              {
+                "name": "Guided jungle walk",
+                "cost": "₹780–₹1,040 pp"
+              },
+              {
+                "name": "Gharial Breeding Center",
+                "cost": "₹52–₹104 pp"
+              },
+              {
+                "name": "Sunset bird walk",
+                "cost": "Included with guide in most safari packages"
+              },
+              {
+                "name": "Village bicycle ride in the buffer zone",
+                "cost": "₹156 per cycle"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Machan Wildlife Camp",
+                "budget": "₹1,560–₹2,600/night"
+              },
+              {
+                "name": "Wildlife Camp Eco Resort",
+                "budget": "₹4,680–₹7,800/night"
+              }
+            ],
+            "meals": [
+              "KC Restaurant",
+              "Tharu Lodge Restaurant",
+              "Jungle View Restaurant"
+            ]
+          }
+        ]
+      },
+      "Lumbini": {
+        "name": "Lumbini",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day is enough for the sacred garden, Ashokan pillar and a cycle loop through the international monastery zone.",
+        "days": [
+          {
+            "theme": "Maya Devi Temple, Monastery Circuit & Peace Pagoda",
+            "activities": [
+              {
+                "name": "Road transfer from Chitwan to Lumbini",
+                "cost": "₹260–₹4,680 depending on bus or jeep"
+              },
+              {
+                "name": "Maya Devi Temple and Sacred Garden",
+                "cost": "₹208 pp"
+              },
+              {
+                "name": "Ashoka Pillar",
+                "cost": "Included with Sacred Garden ticket"
+              },
+              {
+                "name": "Monastic Zone bicycle circuit",
+                "cost": "₹52 cycle rental"
+              },
+              {
+                "name": "World Peace Pagoda and Lumbini Museum",
+                "cost": "Free pagoda + ₹104 pp museum"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lumbini Garden Lodge",
+                "budget": "₹416–₹624/night"
+              },
+              {
+                "name": "Hotel Peace Palace Lumbini",
+                "budget": "₹1,560–₹3,120/night"
+              }
+            ],
+            "meals": [
+              "3 Foxes Rooftop Restaurant",
+              "Dharma Restaurant",
+              "Hotel Peace Palace Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Kathmandu",
+        "to": "Pokhara",
+        "method": "Tourist bus via Prithvi Highway (7–8 hr) or 40-minute Buddha Air / Yeti Airlines flight",
+        "cost": "₹780–₹9,240 pp"
+      },
+      {
+        "from": "Pokhara",
+        "to": "Chitwan",
+        "method": "Tourist bus to Sauraha (4–5 hr) or private jeep",
+        "cost": "₹390–₹6,000"
+      },
+      {
+        "from": "Chitwan",
+        "to": "Lumbini",
+        "method": "Tourist bus via Butwal (3–4 hr) or private jeep",
+        "cost": "₹260–₹4,680"
+      },
+      {
+        "from": "Lumbini",
+        "to": "Kathmandu",
+        "method": "Domestic flight from Gautam Buddha Airport or overnight tourist bus",
+        "cost": "₹520–₹7,800 pp"
+      }
+    ],
+    "extras": [
+      "Indian travellers do not need a visa for Nepal; carry either a passport or voter ID and keep several photocopies for hotel and transport counters.",
+      "Indian ₹200, ₹500 and ₹2,000 notes are generally not accepted in Nepal, so exchange into NPR or carry ₹100-and-below notes for border-town and small-shop payments.",
+      "Most major heritage sites offer SAARC pricing, so always mention Indian nationality when buying tickets.",
+      "The Kathmandu–Pokhara highway upgrade can slow bus journeys to 8–10 hours in peak traffic; fly if you are prone to motion sickness.",
+      "Vegetarian food is easy throughout Nepal; dal bhat, Thakali thalis and Tibetan breads are the safest recurring staples across all four stops."
+    ],
+    "cityImages": {
+      "Kathmandu": [
+        "Kathmandu Durbar Square Hanuman Dhoka",
+        "Boudhanath Stupa aerial view",
+        "Pashupatinath Temple ghats Bagmati River"
+      ],
+      "Pokhara": [
+        "Phewa Lake Pokhara Annapurna reflection",
+        "Sarangkot sunrise Himalaya paragliding Nepal",
+        "Pokhara Shanti Stupa World Peace Pagoda"
+      ],
+      "Chitwan": [
+        "Chitwan National Park one-horned rhinoceros jeep safari",
+        "Bengal tiger Chitwan Nepal wildlife",
+        "Tharu cultural dance Sauraha Nepal"
+      ],
+      "Lumbini": [
+        "Maya Devi Temple Lumbini sacred garden",
+        "Ashoka Pillar Lumbini inscription 249 BC",
+        "Lumbini World Peace Pagoda Japan Buddhist"
+      ]
+    }
+  }
+}

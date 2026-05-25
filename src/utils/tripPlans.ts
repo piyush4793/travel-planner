@@ -46,8 +46,9 @@ export function normalizeCityName(name: string): string {
   return name.replace(/^stay:\s*/i, "").trim().toLowerCase();
 }
 
-function parseCostRange(budget: string): [number, number] {
-  const m = budget.match(/₹([\d.]+)([KL])[–\-]₹([\d.]+)([KL])/);
+function parseCostRange(budget: string | { solo: string; couple: string; family4: string }): [number, number] {
+  const str = typeof budget === "string" ? budget : budget.couple;
+  const m = str.match(/₹([\d.]+)([KL])[–\-]₹([\d.]+)([KL])/);
   if (!m) return [100000, 200000];
   const toNum = (n: string, u: string) => {
     const v = parseFloat(n);
@@ -178,8 +179,10 @@ function selectCitiesForDays(rule: CountryRule, days: number): string[] {
 }
 
 /** Calculate the max useful days for a country's rule data */
-export function getMaxRuleDays(countryName: string): number | null {
-  const rule = ITINERARY_RULES[countryName];
+export function getMaxRuleDays(countryName: string): number | null;
+export function getMaxRuleDays(rule: CountryRule | null | undefined): number | null;
+export function getMaxRuleDays(arg: string | CountryRule | null | undefined): number | null {
+  const rule = typeof arg === "string" ? ITINERARY_RULES[arg] : arg;
   if (!rule) return null;
   return rule.cityOrder
     .filter((c) => rule.cities[c])
@@ -187,8 +190,10 @@ export function getMaxRuleDays(countryName: string): number | null {
 }
 
 /** Calculate the recommended days for a country's rule data */
-export function getRecRuleDays(countryName: string): number | null {
-  const rule = ITINERARY_RULES[countryName];
+export function getRecRuleDays(countryName: string): number | null;
+export function getRecRuleDays(rule: CountryRule | null | undefined): number | null;
+export function getRecRuleDays(arg: string | CountryRule | null | undefined): number | null {
+  const rule = typeof arg === "string" ? ITINERARY_RULES[arg] : arg;
   if (!rule) return null;
   return rule.cityOrder
     .filter((c) => rule.cities[c])
@@ -200,20 +205,21 @@ function getRuledItinerary(
   _style: PlanStyle,
   selectedCities: string[],
   customDays: number,
+  rule?: CountryRule,
 ): TripPlan | null {
-  const rule = ITINERARY_RULES[country.name];
-  if (!rule) return null;
+  const effectiveRule = rule ?? ITINERARY_RULES[country.name];
+  if (!effectiveRule) return null;
 
   // Determine which cities to visit — user selection or smart auto-selection
   let citiesToVisit: string[];
   if (selectedCities.length > 0) {
-    citiesToVisit = rule.cityOrder.filter((c) => selectedCities.includes(c));
+    citiesToVisit = effectiveRule.cityOrder.filter((c) => selectedCities.includes(c));
   } else {
-    citiesToVisit = selectCitiesForDays(rule, customDays);
+    citiesToVisit = selectCitiesForDays(effectiveRule, customDays);
   }
 
   const cityRules = citiesToVisit
-    .map((n) => rule.cities[n])
+    .map((n) => effectiveRule.cities[n])
     .filter((c): c is NonNullable<typeof c> => c !== undefined);
 
   if (!cityRules.length) return null;
@@ -280,7 +286,7 @@ function getRuledItinerary(
   // Note: key connections + practical tips
   const connParts: string[] = [];
   for (let i = 0; i < citiesToVisit.length - 1; i++) {
-    const conn = rule.connections.find(
+    const conn = effectiveRule.connections.find(
       (c) => c.from === citiesToVisit[i] && c.to === citiesToVisit[i + 1]
     );
     if (conn) {
@@ -290,9 +296,9 @@ function getRuledItinerary(
     }
   }
   const tips = [
-    rule.sim ? `SIM: ${rule.sim}` : "",
-    rule.apps?.length ? rule.apps.slice(0, 3).join(" · ") : "",
-    rule.extras?.length ? `Extras: ${rule.extras.slice(0, 3).join(", ")}` : "",
+    effectiveRule.sim ? `SIM: ${effectiveRule.sim}` : "",
+    effectiveRule.apps?.length ? effectiveRule.apps.slice(0, 3).join(" · ") : "",
+    effectiveRule.extras?.length ? `Extras: ${effectiveRule.extras.slice(0, 3).join(", ")}` : "",
   ].filter(Boolean);
 
   const note = [...connParts.slice(0, 3), ...tips].join(" | ");
@@ -311,9 +317,14 @@ export function generateTripPlan(
   style: PlanStyle,
   selectedCities: string[] = [],
   customDays = 7,
+  externalRule?: CountryRule | null,
 ): TripPlan {
-  const ruled = getRuledItinerary(country, style, selectedCities, customDays);
-  if (ruled) return ruled;
+  // Use explicit rule if provided, else try ITINERARY_RULES (V1 path)
+  const rule = externalRule ?? ITINERARY_RULES[country.name];
+  if (rule) {
+    const ruled = getRuledItinerary(country, style, selectedCities, customDays, rule);
+    if (ruled) return ruled;
+  }
 
   const exps = country.experiences;
   const cities = country.cities ?? [];

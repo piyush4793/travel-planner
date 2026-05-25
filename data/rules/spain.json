@@ -1,0 +1,754 @@
+{
+  "name": "Spain",
+  "seed": true,
+  "lat": 40.4637,
+  "lng": -3.7492,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.2L–₹2L",
+    "couple": "₹2L–₹3.5L",
+    "family4": "₹4L–₹7L"
+  },
+  "experiences": [
+    "Barcelona",
+    "Sagrada Familia",
+    "Alhambra",
+    "Camino de Santiago",
+    "Flamenco",
+    "Tapas"
+  ],
+  "avoid": [
+    "Peak summer heat in Seville/inland (40°C+)"
+  ],
+  "combo": [
+    "France"
+  ],
+  "landmark": "Sagrada Familia",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Madrid",
+      "lat": 40.4168,
+      "lng": -3.7038,
+      "notes": "Prado museum, Retiro park, Puerta del Sol and churros at San Gines"
+    },
+    {
+      "name": "Barcelona",
+      "lat": 41.3851,
+      "lng": 2.1734,
+      "notes": "Gaudi's Sagrada Familia, Park Guell, La Boqueria and Barceloneta beach"
+    },
+    {
+      "name": "Seville",
+      "lat": 37.3891,
+      "lng": -5.9845,
+      "notes": "Alcazar palace, Giralda tower, flamenco shows and Semana Santa"
+    },
+    {
+      "name": "Granada",
+      "lat": 37.1773,
+      "lng": -3.5986,
+      "notes": "Alhambra fortress, Albaicin Moorish quarter and Sacromonte cave flamenco"
+    },
+    {
+      "name": "Valencia",
+      "lat": 39.4699,
+      "lng": -0.3763,
+      "notes": "City of Arts and Sciences, paella birthplace and La Tomatina festival"
+    },
+    {
+      "name": "San Sebastian",
+      "lat": 43.3183,
+      "lng": -1.9812,
+      "notes": "Most Michelin stars per capita, La Concha bay beach and pintxos bars"
+    }
+  ],
+  "itinerary": {
+    "sim": "Holafly or Airalo Europe eSIM — about ₹2,392–₹2,668 for 10GB to unlimited data across Spain; Orange Holiday physical SIM at BCN or MAD is the easiest airport fallback.",
+    "apps": [
+      "Renfe",
+      "Alsa",
+      "TMB",
+      "Metro de Madrid",
+      "Google Maps",
+      "Google Translate",
+      "GetYourGuide",
+      "Booking.com",
+      "Airalo"
+    ],
+    "cityOrder": [
+      "Barcelona",
+      "Valencia",
+      "Madrid",
+      "Seville",
+      "Granada",
+      "San Sebastian"
+    ],
+    "cities": {
+      "Barcelona": {
+        "name": "Barcelona",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Book Sagrada Familia and Casa Batllo well ahead; add a fourth day for Montserrat or a slower beach day.",
+        "days": [
+          {
+            "theme": "Gothic Quarter & First Tapas",
+            "activities": [
+              {
+                "name": "Barri Gotic walking loop via Placa Reial, Carrer del Bisbe, and Roman walls"
+              },
+              {
+                "name": "Barcelona Cathedral rooftop visit",
+                "cost": "₹644"
+              },
+              {
+                "name": "La Boqueria Market tasting walk"
+              },
+              {
+                "name": "Las Ramblas stroll to the Columbus Monument"
+              },
+              {
+                "name": "El Born evening wander around Santa Maria del Mar"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Praktik Rambla",
+                "budget": "₹8,280–₹11,960/night"
+              },
+              {
+                "name": "Hotel 1898",
+                "budget": "₹14,720–₹22,080/night"
+              }
+            ],
+            "meals": [
+              "Bar del Pla",
+              "Teresa Carles",
+              "Quimet & Quimet"
+            ]
+          },
+          {
+            "theme": "Gaudi Masterpieces",
+            "activities": [
+              {
+                "name": "Sagrada Familia timed entry with audio guide",
+                "cost": "₹3,312"
+              },
+              {
+                "name": "Park Guell Monumental Zone",
+                "cost": "₹920"
+              },
+              {
+                "name": "Gaudi House Museum",
+                "cost": "₹506"
+              },
+              {
+                "name": "Palau de la Musica Catalana guided tour",
+                "cost": "₹2,024"
+              },
+              {
+                "name": "Passeig de Gracia facade walk past Casa Batllo and Casa Amatller"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Catalonia Passeig de Gracia",
+                "budget": "₹9,200–₹14,260/night"
+              },
+              {
+                "name": "Hotel Bagues",
+                "budget": "₹16,560–₹23,920/night"
+              }
+            ],
+            "meals": [
+              "La Pepita",
+              "Cerveceria Catalana",
+              "Honest Greens"
+            ]
+          },
+          {
+            "theme": "Modernisme, Montjuic & Sea",
+            "activities": [
+              {
+                "name": "Casa Batllo interior visit",
+                "cost": "₹3,404–₹5,060"
+              },
+              {
+                "name": "MNAC museum and terrace views",
+                "cost": "₹1,104"
+              },
+              {
+                "name": "Montjuic Cable Car return ride",
+                "cost": "₹1,702"
+              },
+              {
+                "name": "Barceloneta Beach sunset break"
+              },
+              {
+                "name": "El Xampanyet cava stop in El Born"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Catalonia Passeig de Gracia",
+                "budget": "₹9,200–₹14,260/night"
+              },
+              {
+                "name": "Hotel 1898",
+                "budget": "₹14,720–₹22,080/night"
+              }
+            ],
+            "meals": [
+              "7 Portes",
+              "El Xampanyet",
+              "La Mar Salada"
+            ]
+          }
+        ]
+      },
+      "Valencia": {
+        "name": "Valencia",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Valencia works best between Barcelona and Madrid; add a third day if you want a full Albufera nature outing.",
+        "days": [
+          {
+            "theme": "Arts, Science & Turia Gardens",
+            "activities": [
+              {
+                "name": "City of Arts and Sciences exterior circuit via Hemisferic and Umbracle"
+              },
+              {
+                "name": "Oceanografic aquarium",
+                "cost": "₹3,128"
+              },
+              {
+                "name": "Museu de les Ciencies Princep Felipe",
+                "cost": "₹828"
+              },
+              {
+                "name": "Turia Gardens bike or walking stretch"
+              },
+              {
+                "name": "Ruzafa neighbourhood evening cafe and tapas hop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Only YOU Hotel Valencia",
+                "budget": "₹13,800–₹20,240/night"
+              },
+              {
+                "name": "Vincci Lys",
+                "budget": "₹8,280–₹12,880/night"
+              }
+            ],
+            "meals": [
+              "Central Bar",
+              "Canalla Bistro",
+              "Restaurante Navarro"
+            ]
+          },
+          {
+            "theme": "Old Town, Silk Exchange & Paella Coast",
+            "activities": [
+              {
+                "name": "Valencia Cathedral and Holy Grail chapel",
+                "cost": "₹828"
+              },
+              {
+                "name": "El Miguelete tower climb",
+                "cost": "₹276"
+              },
+              {
+                "name": "La Lonja de la Seda",
+                "cost": "₹184"
+              },
+              {
+                "name": "Mercat Central tasting stop"
+              },
+              {
+                "name": "Albufera sunset boat ride or Malvarrosa beach evening",
+                "cost": "₹736"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "SH Valencia Palace",
+                "budget": "₹9,660–₹14,720/night"
+              },
+              {
+                "name": "Vincci Lys",
+                "budget": "₹8,280–₹12,880/night"
+              }
+            ],
+            "meals": [
+              "Casa Carmela",
+              "La Pepica",
+              "Restaurante Navarro"
+            ]
+          }
+        ]
+      },
+      "Madrid": {
+        "name": "Madrid",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Keep Madrid as your central rail hub; day three is best used for Toledo before heading south.",
+        "days": [
+          {
+            "theme": "Prado, Retiro & Central Madrid",
+            "activities": [
+              {
+                "name": "Museo del Prado timed entry",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Paseo del Prado UNESCO boulevard walk"
+              },
+              {
+                "name": "Retiro Park and Crystal Palace"
+              },
+              {
+                "name": "Puerta del Sol and Km 0 marker"
+              },
+              {
+                "name": "Mercado de San Miguel tapas crawl"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vincci Capitol",
+                "budget": "₹7,820–₹11,960/night"
+              },
+              {
+                "name": "Room Mate Alicia",
+                "budget": "₹7,360–₹11,040/night"
+              }
+            ],
+            "meals": [
+              "Mercado de San Miguel",
+              "Casa Lucio",
+              "La Barraca"
+            ]
+          },
+          {
+            "theme": "Royal Madrid & Masterpieces",
+            "activities": [
+              {
+                "name": "Royal Palace of Madrid",
+                "cost": "₹1,288"
+              },
+              {
+                "name": "Almudena Cathedral"
+              },
+              {
+                "name": "Reina Sofia Museum for Guernica",
+                "cost": "₹1,104"
+              },
+              {
+                "name": "Thyssen-Bornemisza Museum",
+                "cost": "₹1,196"
+              },
+              {
+                "name": "Gran Via to Plaza Mayor evening walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ME Madrid Reina Victoria",
+                "budget": "₹13,800–₹21,160/night"
+              },
+              {
+                "name": "Vincci Capitol",
+                "budget": "₹7,820–₹11,960/night"
+              }
+            ],
+            "meals": [
+              "Sobrino de Botin",
+              "Taberna La Bola",
+              "Bar Cerveceria Cervantes"
+            ]
+          },
+          {
+            "theme": "Toledo Day Trip",
+            "activities": [
+              {
+                "name": "Renfe AVANT return to Toledo",
+                "cost": "₹1,233"
+              },
+              {
+                "name": "Toledo Cathedral",
+                "cost": "₹920"
+              },
+              {
+                "name": "Alcazar of Toledo",
+                "cost": "₹460"
+              },
+              {
+                "name": "Monastery of San Juan de los Reyes",
+                "cost": "₹276"
+              },
+              {
+                "name": "Mirador del Valle panorama stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Room Mate Alicia",
+                "budget": "₹7,360–₹11,040/night"
+              },
+              {
+                "name": "Only YOU Boutique Hotel Madrid",
+                "budget": "₹16,560–₹25,760/night"
+              }
+            ],
+            "meals": [
+              "Restaurante Adolfo",
+              "La Orza",
+              "Chocolateria San Gines"
+            ]
+          }
+        ]
+      },
+      "Seville": {
+        "name": "Seville",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Avoid the hottest summer afternoons here; early starts make the Alcazar and Cathedral far more enjoyable.",
+        "days": [
+          {
+            "theme": "Triana, Riverfront & Flamenco",
+            "activities": [
+              {
+                "name": "Torre del Oro",
+                "cost": "₹276"
+              },
+              {
+                "name": "Triana neighbourhood ceramics and bridge walk"
+              },
+              {
+                "name": "Metropol Parasol rooftop",
+                "cost": "₹460"
+              },
+              {
+                "name": "Santa Cruz or Calle Mateos Gago tapas lane"
+              },
+              {
+                "name": "Tablao El Arenal flamenco show",
+                "cost": "₹4,140–₹5,060"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Casa 1800 Sevilla",
+                "budget": "₹9,200–₹14,720/night"
+              },
+              {
+                "name": "Vincci La Rabida",
+                "budget": "₹6,440–₹10,120/night"
+              }
+            ],
+            "meals": [
+              "El Rinconcillo",
+              "Bar Alfalfa",
+              "La Azotea"
+            ]
+          },
+          {
+            "theme": "UNESCO Seville",
+            "activities": [
+              {
+                "name": "Seville Cathedral and Giralda Tower",
+                "cost": "₹1,104"
+              },
+              {
+                "name": "Real Alcazar of Seville",
+                "cost": "₹1,242"
+              },
+              {
+                "name": "Archive of the Indies"
+              },
+              {
+                "name": "Plaza de Espana"
+              },
+              {
+                "name": "Maria Luisa Park"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Casa 1800 Sevilla",
+                "budget": "₹9,200–₹14,720/night"
+              },
+              {
+                "name": "Vincci La Rabida",
+                "budget": "₹6,440–₹10,120/night"
+              }
+            ],
+            "meals": [
+              "Eslava",
+              "Vineria San Telmo",
+              "Bodega Santa Cruz"
+            ]
+          }
+        ]
+      },
+      "Granada": {
+        "name": "Granada",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Alhambra timing controls the whole city plan, so lock that ticket first and build everything else around it.",
+        "days": [
+          {
+            "theme": "Albaicin, Miradors & Cave Flamenco",
+            "activities": [
+              {
+                "name": "Albaicin quarter maze walk"
+              },
+              {
+                "name": "Mirador de San Nicolas at sunset"
+              },
+              {
+                "name": "Sacromonte cave district"
+              },
+              {
+                "name": "Cave flamenco at Cueva de la Rocio or Casa del Arte Flamenco",
+                "cost": "₹1,840–₹2,576"
+              },
+              {
+                "name": "Granada Cathedral and Royal Chapel",
+                "cost": "₹460–₹828"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Alhambra Palace",
+                "budget": "₹9,200–₹16,560/night"
+              },
+              {
+                "name": "Casa Morisca Hotel",
+                "budget": "₹6,440–₹11,040/night"
+              }
+            ],
+            "meals": [
+              "Arrayanes",
+              "Bodegas Castaneda",
+              "La Milagrosa"
+            ]
+          },
+          {
+            "theme": "Alhambra Full Immersion",
+            "activities": [
+              {
+                "name": "Alhambra general ticket with Nasrid Palaces",
+                "cost": "₹1,748"
+              },
+              {
+                "name": "Generalife Gardens"
+              },
+              {
+                "name": "Alcazaba fortress"
+              },
+              {
+                "name": "Palace of Charles V",
+                "cost": "₹736"
+              },
+              {
+                "name": "Caldereria Nueva tea houses"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Parador de Granada",
+                "budget": "₹20,240–₹36,800/night"
+              },
+              {
+                "name": "Hotel Carmen de la Alcubilla del Caracol",
+                "budget": "₹8,280–₹13,800/night"
+              }
+            ],
+            "meals": [
+              "Parador de Granada",
+              "Ruta del Azafran",
+              "Los Diamantes II"
+            ]
+          }
+        ]
+      },
+      "San Sebastian": {
+        "name": "San Sebastian",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Come here for pintxos and sea views; book tables early if you want the marquee bars in Parte Vieja.",
+        "days": [
+          {
+            "theme": "La Concha & Parte Vieja Pintxos",
+            "activities": [
+              {
+                "name": "La Concha promenade and beach walk"
+              },
+              {
+                "name": "Parte Vieja pintxos crawl"
+              },
+              {
+                "name": "San Telmo Museoa",
+                "cost": "₹920"
+              },
+              {
+                "name": "Monte Urgull viewpoints and Castillo de la Mota walk"
+              },
+              {
+                "name": "Kursaal and Zurriola sunset stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel de Londres y de Inglaterra",
+                "budget": "₹13,800–₹23,000/night"
+              },
+              {
+                "name": "Lasala Plaza Hotel",
+                "budget": "₹16,560–₹25,760/night"
+              }
+            ],
+            "meals": [
+              "Ganbara",
+              "Bar Nestor",
+              "La Vina"
+            ]
+          },
+          {
+            "theme": "Igueldo, Wind Comb & Bay Views",
+            "activities": [
+              {
+                "name": "Monte Igueldo funicular",
+                "cost": "₹368"
+              },
+              {
+                "name": "Peine del Viento sculptures"
+              },
+              {
+                "name": "San Sebastian Aquarium",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Santa Clara Island boat or Ondarreta Beach break",
+                "cost": "₹552"
+              },
+              {
+                "name": "Miramar Palace gardens"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lasala Plaza Hotel",
+                "budget": "₹16,560–₹25,760/night"
+              },
+              {
+                "name": "Hotel Zenit San Sebastian",
+                "budget": "₹9,200–₹13,800/night"
+              }
+            ],
+            "meals": [
+              "Bodega Donostiarra",
+              "Narru",
+              "Atari Gastroleku"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Barcelona",
+        "to": "Valencia",
+        "method": "Euromed train (2hr 45min)",
+        "cost": "₹1,840–₹4,140"
+      },
+      {
+        "from": "Valencia",
+        "to": "Madrid",
+        "method": "AVE high-speed train (1hr 50min)",
+        "cost": "₹1,840–₹4,600"
+      },
+      {
+        "from": "Madrid",
+        "to": "Seville",
+        "method": "AVE high-speed train (2hr 20min)",
+        "cost": "₹4,508–₹7,820"
+      },
+      {
+        "from": "Seville",
+        "to": "Granada",
+        "method": "ALSA coach or train (3hr)",
+        "cost": "₹1,840–₹2,760"
+      },
+      {
+        "from": "Granada",
+        "to": "San Sebastian",
+        "method": "Flight via Madrid or Bilbao connection (4–5hr total)",
+        "cost": "₹6,440–₹12,880"
+      }
+    ],
+    "extras": [
+      "Book Sagrada Familia, Alhambra, and AVE tickets as early as possible; those three sell out or spike fastest.",
+      "Lunch usually starts after 2 PM and dinner after 8:30 PM, so keep a snack buffer if you are used to earlier Indian timings.",
+      "Pickpocketing is most common on Las Ramblas, in Barcelona Metro, and around major Madrid tourist zones.",
+      "For vegetarian travellers, look for patatas bravas, tortilla espanola, espinacas con garbanzos, salmorejo, and paella de verduras."
+    ],
+    "cityImages": {
+      "Barcelona": [
+        "Sagrada Familia Barcelona",
+        "Park Guell Barcelona Gaudi",
+        "La Rambla Barcelona"
+      ],
+      "Valencia": [
+        "City of Arts and Sciences Valencia",
+        "Valencia Cathedral Miguelete",
+        "Malvarrosa Beach Valencia"
+      ],
+      "Madrid": [
+        "Royal Palace Madrid",
+        "Prado Museum Madrid",
+        "Plaza Mayor Madrid"
+      ],
+      "Seville": [
+        "Seville Cathedral Giralda",
+        "Real Alcazar Seville",
+        "Plaza de Espana Seville"
+      ],
+      "Granada": [
+        "Alhambra Granada",
+        "Generalife Gardens Granada",
+        "Albaicin Granada"
+      ],
+      "San Sebastian": [
+        "La Concha San Sebastian",
+        "Parte Vieja San Sebastian pintxos",
+        "Peine del Viento San Sebastian"
+      ]
+    }
+  }
+}

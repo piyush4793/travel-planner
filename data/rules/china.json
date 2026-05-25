@@ -1,0 +1,695 @@
+{
+  "name": "China",
+  "seed": true,
+  "lat": 35.8617,
+  "lng": 104.1954,
+  "region": "Asia",
+  "bestMonths": [
+    "April",
+    "May",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1L–₹2L",
+    "couple": "₹1.8L–₹3.5L",
+    "family4": "₹3.5L–₹7L"
+  },
+  "experiences": [
+    "Great Wall",
+    "Food",
+    "History",
+    "Temples",
+    "Nature",
+    "Shanghai Skyline"
+  ],
+  "avoid": [
+    "National Golden Week (Oct 1-7)",
+    "Chinese New Year travel chaos"
+  ],
+  "combo": [
+    "Japan",
+    "South Korea"
+  ],
+  "landmark": "Great Wall of China",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Beijing",
+      "lat": 39.9042,
+      "lng": 116.4074,
+      "notes": "Forbidden City, Great Wall day trip, Temple of Heaven and Hutong lanes"
+    },
+    {
+      "name": "Shanghai",
+      "lat": 31.2304,
+      "lng": 121.4737,
+      "notes": "Bund waterfront skyline, French Concession and Yu Garden bazaar"
+    },
+    {
+      "name": "Xi'an",
+      "lat": 34.3416,
+      "lng": 108.9398,
+      "notes": "Terracotta Army, Ancient City Walls cycling and Muslim Quarter night market"
+    },
+    {
+      "name": "Chengdu",
+      "lat": 30.5728,
+      "lng": 104.0668,
+      "notes": "Giant Panda Research Base, mahjong culture and fiery Sichuan hot pot"
+    },
+    {
+      "name": "Guilin",
+      "lat": 25.2736,
+      "lng": 110.2907,
+      "notes": "Karst limestone peaks, Li River bamboo raft and Yangshuo rice paddies"
+    },
+    {
+      "name": "Hangzhou",
+      "lat": 30.2741,
+      "lng": 120.1551,
+      "notes": "West Lake gardens, Longjing tea plantations and Song Dynasty Town"
+    }
+  ],
+  "itinerary": {
+    "sim": "China Unicom tourist SIM works best for most travelers at about ₹1,725–₹2,300 for 30 days; pair it with a VPN like ExpressVPN or Astrill configured before departure.",
+    "apps": [
+      "WeChat",
+      "Alipay",
+      "Trip.com",
+      "12306",
+      "Amap",
+      "Didi",
+      "Pleco",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Beijing",
+      "Xi'an",
+      "Chengdu",
+      "Guilin",
+      "Hangzhou",
+      "Shanghai"
+    ],
+    "cities": {
+      "Beijing": {
+        "name": "Beijing",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days covers imperial Beijing well with one full Great Wall day and one slower temple-and-garden day.",
+        "days": [
+          {
+            "theme": "Imperial Axis & Old Beijing",
+            "activities": [
+              {
+                "name": "Tiananmen Square sunrise walk and Gate of Heavenly Peace photo stop"
+              },
+              {
+                "name": "Forbidden City (Palace Museum)",
+                "cost": "₹690 pp"
+              },
+              {
+                "name": "Jingshan Park panorama over the Forbidden City",
+                "cost": "₹23 pp"
+              },
+              {
+                "name": "Beihai Park lakefront stroll",
+                "cost": "₹115 pp"
+              },
+              {
+                "name": "Wangfujing pedestrian street and evening snack walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Leo Hostel",
+                "budget": "₹2,300–₹3,220/night"
+              },
+              {
+                "name": "Courtyard by Marriott Beijing Wangfujing",
+                "budget": "₹8,050–₹12,650/night"
+              }
+            ],
+            "meals": [
+              "Gongdelin",
+              "Da Dong Roast Duck",
+              "Jujube Tree"
+            ]
+          },
+          {
+            "theme": "Great Wall & Hutong Evenings",
+            "activities": [
+              {
+                "name": "Mutianyu Great Wall with cable car up and toboggan down",
+                "cost": "₹2,588 pp"
+              },
+              {
+                "name": "Wall-side local lunch near Mutianyu",
+                "cost": "₹690–₹920 pp"
+              },
+              {
+                "name": "Nanluoguxiang hutong cycling and courtyard-lane walk",
+                "cost": "₹1,150–₹1,725 pp"
+              },
+              {
+                "name": "Drum Tower and Bell Tower combo visit",
+                "cost": "₹575 pp"
+              },
+              {
+                "name": "Houhai Lake sunset promenade"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Orchid Hotel",
+                "budget": "₹7,500–₹10,500/night"
+              },
+              {
+                "name": "New World Beijing Hotel",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Siji Minfu Peking Duck",
+              "Yaoji Chaogan",
+              "Dali Courtyard"
+            ]
+          },
+          {
+            "theme": "Temple Trails, Art & Gardens",
+            "activities": [
+              {
+                "name": "Yonghe Lama Temple morning visit",
+                "cost": "₹288 pp"
+              },
+              {
+                "name": "Temple of Heaven park and Hall of Prayer",
+                "cost": "₹518 pp"
+              },
+              {
+                "name": "798 Art Zone galleries and design stores"
+              },
+              {
+                "name": "Summer Palace lakeside circuit",
+                "cost": "₹575 pp"
+              },
+              {
+                "name": "National Museum of China reserved-entry visit"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kelly's Courtyard Hotel",
+                "budget": "₹5,500–₹7,500/night"
+              },
+              {
+                "name": "Sunworld Dynasty Hotel Beijing Wangfujing",
+                "budget": "₹8,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Yushan Vegetarian",
+              "Liqun Roast Duck",
+              "Namaste India Beijing"
+            ]
+          }
+        ]
+      },
+      "Xi'an": {
+        "name": "Xi'an",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is ideal for the Terracotta Army, the old walls and the Tang-era core without rushing.",
+        "days": [
+          {
+            "theme": "Terracotta Army & Muslim Quarter",
+            "activities": [
+              {
+                "name": "Terracotta Warriors Museum with Pit 1, 2 and 3",
+                "cost": "₹1,380 pp"
+              },
+              {
+                "name": "Huaqing Palace hot springs stop",
+                "cost": "₹1,380 pp"
+              },
+              {
+                "name": "Muslim Quarter street-food crawl",
+                "cost": "₹345–₹920 pp"
+              },
+              {
+                "name": "Drum Tower evening visit",
+                "cost": "₹345 pp"
+              },
+              {
+                "name": "Bell Tower night view combo",
+                "cost": "₹575 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Han Tang Inn Youth Hostel",
+                "budget": "₹2,070–₹2,990/night"
+              },
+              {
+                "name": "Sofitel Xi'an on Renmin Square",
+                "budget": "₹8,625–₹13,800/night"
+              }
+            ],
+            "meals": [
+              "Fang Yuan Su Shi",
+              "Lao Sun Jia",
+              "Laomiao Niangao"
+            ]
+          },
+          {
+            "theme": "Ancient Walls & Tang Splendour",
+            "activities": [
+              {
+                "name": "Xi'an City Wall cycle around the 14 km circuit",
+                "cost": "₹1,138 pp"
+              },
+              {
+                "name": "Shaanxi History Museum",
+                "cost": "₹828 pp"
+              },
+              {
+                "name": "Big Wild Goose Pagoda and Da Ci'en Temple",
+                "cost": "₹575 pp"
+              },
+              {
+                "name": "Tang Paradise afternoon visit",
+                "cost": "₹1,035–₹1,380 pp"
+              },
+              {
+                "name": "Tang Dynasty Music and Dance Show",
+                "cost": "₹2,070–₹4,577 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Eastern House Boutique Hotel",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Grand Mercure Xi'an on Renmin Square",
+                "budget": "₹7,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "De Fa Chang",
+              "Tongshengxiang",
+              "Cao Jia Pao Mo"
+            ]
+          }
+        ]
+      },
+      "Chengdu": {
+        "name": "Chengdu",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives you pandas, Sichuan culture and a solid mix of Buddhist and local food stops.",
+        "days": [
+          {
+            "theme": "Pandas, Wuhou Shrine & Lantern Streets",
+            "activities": [
+              {
+                "name": "Chengdu Research Base of Giant Panda Breeding",
+                "cost": "₹1,150 pp"
+              },
+              {
+                "name": "Wuhou Shrine",
+                "cost": "₹690 pp"
+              },
+              {
+                "name": "Jinli Ancient Street snack and crafts walk"
+              },
+              {
+                "name": "Kuanzhai Alley heritage lanes"
+              },
+              {
+                "name": "Sichuan Opera face-changing show at Shufengyayun",
+                "cost": "₹3,220–₹4,370 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Traffic Hotel Chengdu",
+                "budget": "₹1,725–₹3,220/night"
+              },
+              {
+                "name": "The Temple House",
+                "budget": "₹9,200–₹17,250/night"
+              }
+            ],
+            "meals": [
+              "Wenshu Temple Vegetarian Restaurant",
+              "Long Chaoshou",
+              "Mao Cai"
+            ]
+          },
+          {
+            "theme": "Temples, Archaeology & Tea Houses",
+            "activities": [
+              {
+                "name": "Wenshu Monastery morning prayers"
+              },
+              {
+                "name": "Qingyang Taoist Temple",
+                "cost": "₹115 pp"
+              },
+              {
+                "name": "Jinsha Site Museum",
+                "cost": "₹759 pp"
+              },
+              {
+                "name": "People's Park tea break and Tianfu Square walk",
+                "cost": "₹230–₹345 pp"
+              },
+              {
+                "name": "Sanxingdui Museum optional add-on",
+                "cost": "₹1,380 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dorsett Chengdu",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Grand ParcVue Hotel Residence Chengdu",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Qingyang Temple Vegetarian Canteen",
+              "Huangcheng Mazi Hotpot",
+              "Chen Mapo Tofu"
+            ]
+          }
+        ]
+      },
+      "Guilin": {
+        "name": "Guilin",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days works well for the classic Li River cruise plus a slower Yangshuo countryside day before heading east.",
+        "days": [
+          {
+            "theme": "Li River Cruise to Yangshuo",
+            "activities": [
+              {
+                "name": "Official Li River cruise from Guilin to Yangshuo",
+                "cost": "₹2,415–₹3,680 pp"
+              },
+              {
+                "name": "Xingping Ancient Town and 20-yuan-note viewpoint"
+              },
+              {
+                "name": "Yangshuo West Street afternoon walk"
+              },
+              {
+                "name": "Impression Liu Sanjie river light show",
+                "cost": "₹3,220–₹7,820 pp"
+              },
+              {
+                "name": "Yangshuo night market snack stop",
+                "cost": "₹230–₹575 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Yangshuo Village Inn",
+                "budget": "₹2,300–₹4,025/night"
+              },
+              {
+                "name": "Yangshuo Mountain Retreat",
+                "budget": "₹6,900–₹10,350/night"
+              }
+            ],
+            "meals": [
+              "Cafe Too Yangshuo",
+              "Yangshuo Impressions Restaurant",
+              "Buffalo Bar"
+            ]
+          },
+          {
+            "theme": "Karst Villages, Bamboo Rafts & Guilin Lights",
+            "activities": [
+              {
+                "name": "Yulong River bamboo raft ride",
+                "cost": "₹1,150–₹1,725 pp"
+              },
+              {
+                "name": "Countryside bicycle ride past Moon Hill",
+                "cost": "₹230–₹345 pp"
+              },
+              {
+                "name": "Moon Hill short hike",
+                "cost": "₹184 pp"
+              },
+              {
+                "name": "Reed Flute Cave",
+                "cost": "₹1,150 pp"
+              },
+              {
+                "name": "Sun and Moon Pagodas evening visit",
+                "cost": "₹403 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Riverside Hostel Guilin",
+                "budget": "₹2,500–₹3,800/night"
+              },
+              {
+                "name": "Shangri-La Guilin",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Wooden Elephant Restaurant",
+              "Chunji Roasted Goose",
+              "Guilin rice noodles (Su Fen)"
+            ]
+          }
+        ]
+      },
+      "Hangzhou": {
+        "name": "Hangzhou",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Hangzhou works perfectly as a one-day West Lake and tea-culture stop before Shanghai.",
+        "days": [
+          {
+            "theme": "West Lake, Tea Villages & Temple Calm",
+            "activities": [
+              {
+                "name": "West Lake causeway walk and short boat ride",
+                "cost": "₹345–₹575 pp"
+              },
+              {
+                "name": "Lingyin Temple and Feilai Feng grottoes",
+                "cost": "₹860 pp"
+              },
+              {
+                "name": "Longjing tea village tasting session",
+                "cost": "₹575–₹1,150 pp"
+              },
+              {
+                "name": "Qinghefang Historic Street and southern Song lanes"
+              },
+              {
+                "name": "West Lake musical fountain or lakeside night walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "East King Business Hotel Hangzhou",
+                "budget": "₹5,500–₹7,500/night"
+              },
+              {
+                "name": "Midtown Shangri-La Hangzhou",
+                "budget": "₹13,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Green Tea Restaurant",
+              "Zhiweiguan",
+              "Grandma's Home"
+            ]
+          }
+        ]
+      },
+      "Shanghai": {
+        "name": "Shanghai",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is enough for the skyline, museums, old-city landmarks and one flexible water-town-or-concession day.",
+        "days": [
+          {
+            "theme": "The Bund, Pudong & Old Shanghai",
+            "activities": [
+              {
+                "name": "The Bund early-morning promenade"
+              },
+              {
+                "name": "Shanghai Tower observation deck",
+                "cost": "₹2,070 pp"
+              },
+              {
+                "name": "Xintiandi shikumen quarter for lunch and design shops"
+              },
+              {
+                "name": "Yu Garden and Old City bazaar",
+                "cost": "₹345 pp"
+              },
+              {
+                "name": "Huangpu River cruise after dark",
+                "cost": "₹402–₹1,380 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mingtown Hiker International Youth Hostel",
+                "budget": "₹2,070–₹3,220/night"
+              },
+              {
+                "name": "The Sukhothai Shanghai",
+                "budget": "₹10,350–₹18,400/night"
+              }
+            ],
+            "meals": [
+              "Gongdelin Shanghai",
+              "Din Tai Fung IFC Mall",
+              "Lost Heaven"
+            ]
+          },
+          {
+            "theme": "French Concession, Temples & Water Towns",
+            "activities": [
+              {
+                "name": "French Concession walk via Fuxing Park and Tianzifang"
+              },
+              {
+                "name": "Jade Buddha Temple",
+                "cost": "₹575 pp"
+              },
+              {
+                "name": "Shanghai Museum reserved-entry visit"
+              },
+              {
+                "name": "Zhujiajiao Water Town half-day trip",
+                "cost": "₹920 pp"
+              },
+              {
+                "name": "Jing'an Temple at dusk",
+                "cost": "₹575 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Campanile Shanghai Bund Hotel",
+                "budget": "₹5,500–₹8,000/night"
+              },
+              {
+                "name": "JW Marriott Shanghai at Tomorrow Square",
+                "budget": "₹11,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Vegetarian Lifestyle",
+              "Jade Buddha Temple Canteen",
+              "Jujube Tree"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Beijing",
+        "to": "Xi'an",
+        "method": "G-series high-speed train from Beijing West to Xi'an North (about 4h 45m)",
+        "cost": "₹5,923 pp"
+      },
+      {
+        "from": "Xi'an",
+        "to": "Chengdu",
+        "method": "G-series high-speed train from Xi'an North to Chengdu East (about 4h)",
+        "cost": "₹4,577 pp"
+      },
+      {
+        "from": "Chengdu",
+        "to": "Guilin",
+        "method": "D-series train from Chengdu East to Guilin North (about 7h)",
+        "cost": "₹3,622 pp"
+      },
+      {
+        "from": "Guilin",
+        "to": "Hangzhou",
+        "method": "Direct flight from Guilin Liangjiang to Hangzhou Xiaoshan (about 2h) or a much longer rail routing",
+        "cost": "₹6,000–₹9,000 pp"
+      },
+      {
+        "from": "Hangzhou",
+        "to": "Shanghai",
+        "method": "High-speed rail from Hangzhou East to Shanghai Hongqiao (45–60 min)",
+        "cost": "₹450–₹920 pp"
+      }
+    ],
+    "extras": [
+      "Indians need a mainland China tourist visa; budget about ₹6,000–₹8,000 and keep hotel plus transport bookings handy for the application.",
+      "Download and test your VPN before you land because Google, WhatsApp, Instagram and many western sites are blocked by the Great Firewall.",
+      "WeChat and Alipay should be set up with an international Visa or Mastercard before departure; UPI is not accepted in China.",
+      "Vegetarians should save temple restaurants and use the phrase 我是素食者 (I am vegetarian) when ordering.",
+      "Avoid National Day Golden Week and Chinese New Year travel peaks; April–May and September–October are the easiest shoulder seasons.",
+      "Book long-distance trains and Li River cruises 2–3 weeks ahead on Trip.com or 12306, especially for Beijing–Xi'an and Xi'an–Chengdu sectors."
+    ],
+    "cityImages": {
+      "Beijing": [
+        "Forbidden City Beijing aerial",
+        "Great Wall of China Mutianyu",
+        "Temple of Heaven Beijing"
+      ],
+      "Xi'an": [
+        "Terracotta Army Xi'an",
+        "Xi'an City Wall night",
+        "Muslim Quarter Xi'an"
+      ],
+      "Chengdu": [
+        "Chengdu Giant Panda Research Base",
+        "Jinli Ancient Street Chengdu night",
+        "Wenshu Monastery Chengdu"
+      ],
+      "Guilin": [
+        "Li River Guilin karst mountains",
+        "Yangshuo Yulong River bamboo raft",
+        "Reed Flute Cave Guilin"
+      ],
+      "Hangzhou": [
+        "West Lake Hangzhou sunrise",
+        "Lingyin Temple Hangzhou",
+        "Longjing tea village Hangzhou"
+      ],
+      "Shanghai": [
+        "Shanghai Bund skyline night",
+        "Yu Garden Shanghai",
+        "French Concession Shanghai"
+      ]
+    }
+  }
+}

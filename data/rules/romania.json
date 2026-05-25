@@ -1,0 +1,539 @@
+{
+  "name": "Romania",
+  "seed": true,
+  "lat": 45.9432,
+  "lng": 24.9668,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January"
+  ],
+  "budget": {
+    "solo": "₹70K–₹1.2L",
+    "couple": "₹1.2L–₹2L",
+    "family4": "₹2.5L–₹4L"
+  },
+  "experiences": [
+    "Transylvania",
+    "Bran Castle",
+    "Painted Monasteries",
+    "Bucovina",
+    "Carpathians"
+  ],
+  "avoid": [],
+  "combo": [
+    "Hungary",
+    "Bulgaria"
+  ],
+  "landmark": "Bran Castle",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Bucharest",
+      "lat": 44.4268,
+      "lng": 26.1025,
+      "notes": "Palace of Parliament, Strada Franceza cafe culture and vibrant art scene"
+    },
+    {
+      "name": "Brasov",
+      "lat": 45.6569,
+      "lng": 25.6112,
+      "notes": "Gothic Black Church, medieval walls and gateway to Dracula's Bran Castle"
+    },
+    {
+      "name": "Cluj-Napoca",
+      "lat": 46.7712,
+      "lng": 23.6236,
+      "notes": "University city with UNTOLD festival, St Michael's Church and nightlife"
+    },
+    {
+      "name": "Sibiu",
+      "lat": 45.7983,
+      "lng": 24.1256,
+      "notes": "Beautifully preserved medieval Saxon town with Brukenthal museum"
+    },
+    {
+      "name": "Timisoara",
+      "lat": 45.7489,
+      "lng": 21.2087,
+      "notes": "First European city with public electric lighting and 1989 revolution start"
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange Romania or Vodafone Romania tourist SIMs are the easiest pick on arrival, with 15–20GB plans usually around ₹900–₹1,260; Digi is the budget option at about ₹630–₹900 if you want cheaper data in the big cities.",
+    "apps": [
+      "CFR Călători",
+      "Bolt",
+      "Uber",
+      "Autogari.ro",
+      "Google Maps",
+      "Google Translate",
+      "Booking.com",
+      "Revolut"
+    ],
+    "cityOrder": [
+      "Bucharest",
+      "Brasov",
+      "Sibiu",
+      "Cluj-Napoca"
+    ],
+    "cities": {
+      "Bucharest": {
+        "name": "Bucharest",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives you the essential Communist-era landmarks, Belle Époque boulevards, and Old Town museum circuit without making the city feel rushed.",
+        "days": [
+          {
+            "theme": "Communist Grandeur & Belle Époque Boulevards",
+            "activities": [
+              {
+                "name": "Palace of Parliament guided tour",
+                "cost": "₹810",
+                "tip": "Book ahead in peak season and carry passport ID for entry checks."
+              },
+              {
+                "name": "National Cathedral visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Calea Victoriei walk past CEC Palace, the Military Club, and Cantacuzino Palace",
+                "cost": "Free"
+              },
+              {
+                "name": "National Art Museum of Romania",
+                "cost": "₹630"
+              },
+              {
+                "name": "Romanian Athenaeum interior visit",
+                "cost": "₹360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Ibis Bucharest Palatul Parlamentului",
+                "budget": "₹4,500–₹5,760/night"
+              },
+              {
+                "name": "Grand Hotel Continental",
+                "budget": "₹8,640–₹11,700/night"
+              }
+            ],
+            "meals": [
+              "Samsara Foodhouse",
+              "Caru' cu Bere",
+              "Lacrimi și Sfinți"
+            ]
+          },
+          {
+            "theme": "Old Town, Revolution Squares & Folk Heritage",
+            "activities": [
+              {
+                "name": "Lipscani Old Town and Stavropoleos Church walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Museum of the Romanian Peasant",
+                "cost": "₹360"
+              },
+              {
+                "name": "Piața Revoluției memorial area",
+                "cost": "Free"
+              },
+              {
+                "name": "Arcul de Triumf climb",
+                "cost": "₹90"
+              },
+              {
+                "name": "Ride the Bucharest Metro for a quick Communist-era station hop",
+                "cost": "₹81"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Ibis Bucharest Palatul Parlamentului",
+                "budget": "₹4,500–₹5,760/night"
+              },
+              {
+                "name": "Grand Hotel Continental",
+                "budget": "₹8,640–₹11,700/night"
+              }
+            ],
+            "meals": [
+              "Samsara Foodhouse",
+              "Caru' cu Bere",
+              "Lacrimi și Sfinți"
+            ]
+          }
+        ]
+      },
+      "Brasov": {
+        "name": "Brasov",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days lets you cover Brașov properly and still do Bran Castle as a comfortable day trip instead of a rushed transfer stop.",
+        "days": [
+          {
+            "theme": "Council Square, Gothic Landmarks & Medieval Lanes",
+            "activities": [
+              {
+                "name": "Council Square wander through the colorful medieval core",
+                "cost": "Free"
+              },
+              {
+                "name": "Black Church",
+                "cost": "₹270"
+              },
+              {
+                "name": "Brașov History Museum in the Old Town Hall",
+                "cost": "₹126"
+              },
+              {
+                "name": "Rope Street walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Weavers’ Bastion Museum",
+                "cost": "₹180"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Coroana Brașov",
+                "budget": "₹3,960–₹5,760/night"
+              },
+              {
+                "name": "Hotel Kronwell",
+                "budget": "₹6,300–₹8,640/night"
+              }
+            ],
+            "meals": [
+              "Sergiana",
+              "Restaurant Gustav",
+              "Casa Românească"
+            ]
+          },
+          {
+            "theme": "Fortified Views, Cable Cars & Saxon Heritage",
+            "activities": [
+              {
+                "name": "Tâmpa Mountain cable car for the Old Town panorama",
+                "cost": "₹450"
+              },
+              {
+                "name": "Catherine’s Gate exterior stop",
+                "cost": "Free"
+              },
+              {
+                "name": "St. Nicholas Church and First Romanian School Museum",
+                "cost": "₹144"
+              },
+              {
+                "name": "White Tower viewpoint",
+                "cost": "₹180"
+              },
+              {
+                "name": "Black Tower viewpoint",
+                "cost": "₹180"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Coroana Brașov",
+                "budget": "₹3,960–₹5,760/night"
+              },
+              {
+                "name": "Hotel Kronwell",
+                "budget": "₹6,300–₹8,640/night"
+              }
+            ],
+            "meals": [
+              "Sergiana",
+              "Restaurant Gustav",
+              "Casa Românească"
+            ]
+          },
+          {
+            "theme": "Bran Castle Day Trip & Mountain Village Detour",
+            "activities": [
+              {
+                "name": "Bus from Brașov to Bran and back",
+                "cost": "₹360–₹504",
+                "tip": "Use Autogara Bartolomeu or Livada Poștei departures and start early to beat castle queues."
+              },
+              {
+                "name": "Bran Castle",
+                "cost": "₹900"
+              },
+              {
+                "name": "Open-air Village Museum at the base of Bran Castle",
+                "cost": "Free"
+              },
+              {
+                "name": "Râșnov Fortress detour",
+                "cost": "₹360"
+              },
+              {
+                "name": "Bran village handicraft market browse",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Coroana Brașov",
+                "budget": "₹3,960–₹5,760/night"
+              },
+              {
+                "name": "Hotel Kronwell",
+                "budget": "₹6,300–₹8,640/night"
+              }
+            ],
+            "meals": [
+              "Sergiana",
+              "Restaurant Gustav",
+              "Casa Românească"
+            ]
+          }
+        ]
+      },
+      "Sibiu": {
+        "name": "Sibiu",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is the sweet spot for Sibiu: one day for the Upper Town highlights and one for the excellent ASTRA museum and medieval wall walk.",
+        "days": [
+          {
+            "theme": "Piata Mare, Council Tower & the Town with Eyes",
+            "activities": [
+              {
+                "name": "Piața Mare and Upper Town squares walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Brukenthal National Museum",
+                "cost": "₹630"
+              },
+              {
+                "name": "Council Tower",
+                "cost": "₹180"
+              },
+              {
+                "name": "Bridge of Lies",
+                "cost": "Free"
+              },
+              {
+                "name": "Evangelical Cathedral tower visit",
+                "cost": "₹90"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Luxemburg",
+                "budget": "₹3,600–₹5,400/night"
+              },
+              {
+                "name": "Hotel Am Ring Sibiu",
+                "budget": "₹5,760–₹8,100/night"
+              }
+            ],
+            "meals": [
+              "Crama Sibiul Vechi",
+              "Restaurant Butoiul de Aur",
+              "ASTRA Museum Restaurant"
+            ]
+          },
+          {
+            "theme": "ASTRA Open-Air Museum & Medieval Wall Walks",
+            "activities": [
+              {
+                "name": "ASTRA Open-Air Museum",
+                "cost": "₹720",
+                "tip": "Set aside at least half a day; the grounds are huge and bus 13 is the simplest ride from the center."
+              },
+              {
+                "name": "Stairs Passage between the Upper and Lower Town",
+                "cost": "Free"
+              },
+              {
+                "name": "Pharmacy History Museum",
+                "cost": "₹270"
+              },
+              {
+                "name": "Sibiu Towers and medieval wall walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Emil Sigerus Museum of Saxon Ethnography",
+                "cost": "₹180"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Luxemburg",
+                "budget": "₹3,600–₹5,400/night"
+              },
+              {
+                "name": "Hotel Am Ring Sibiu",
+                "budget": "₹5,760–₹8,100/night"
+              }
+            ],
+            "meals": [
+              "Crama Sibiul Vechi",
+              "Restaurant Butoiul de Aur",
+              "ASTRA Museum Restaurant"
+            ]
+          }
+        ]
+      },
+      "Cluj-Napoca": {
+        "name": "Cluj-Napoca",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days works well here: spend one day in central Cluj and use the second for Turda Salt Mine plus an easy evening back in the city.",
+        "days": [
+          {
+            "theme": "Union Square, Gothic Cluj & Baroque Museums",
+            "activities": [
+              {
+                "name": "Piața Unirii and the Matthias Corvinus statue zone",
+                "cost": "Free"
+              },
+              {
+                "name": "St. Michael’s Church",
+                "cost": "Free"
+              },
+              {
+                "name": "Banffy Palace – Cluj Art Museum",
+                "cost": "₹360"
+              },
+              {
+                "name": "Alexandru Borza Botanical Garden",
+                "cost": "₹270"
+              },
+              {
+                "name": "Free walking tour from Union Square",
+                "cost": "₹360–₹900 tip"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Retro Hostel",
+                "budget": "₹1,260–₹3,600/night"
+              },
+              {
+                "name": "Hotel Continental Cluj-Napoca",
+                "budget": "₹5,040–₹7,200/night"
+              }
+            ],
+            "meals": [
+              "Roata",
+              "Camino",
+              "Somewhere"
+            ]
+          },
+          {
+            "theme": "Turda Salt Mine & Easy Cluj Evenings",
+            "activities": [
+              {
+                "name": "Turda Salt Mine",
+                "cost": "₹1,080",
+                "tip": "Leave early from Cluj for the best light in the mine and carry a layer because it feels cool underground."
+              },
+              {
+                "name": "Romulus Vuia Ethnography Park",
+                "cost": "₹270"
+              },
+              {
+                "name": "Central Park lakeside stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Hoia-Baciu Forest edge walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Retro Hostel",
+                "budget": "₹1,260–₹3,600/night"
+              },
+              {
+                "name": "Hotel Continental Cluj-Napoca",
+                "budget": "₹5,040–₹7,200/night"
+              }
+            ],
+            "meals": [
+              "Roata",
+              "Camino",
+              "Somewhere"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bucharest",
+        "to": "Brasov",
+        "method": "CFR InterCity train from Bucharest Nord to Brașov (about 2h 30m)",
+        "cost": "₹1,260–₹1,530"
+      },
+      {
+        "from": "Brasov",
+        "to": "Sibiu",
+        "method": "Direct bus booked via Autogari.ro from Brașov to Sibiu (about 2h–2h 30m)",
+        "cost": "₹720–₹990"
+      },
+      {
+        "from": "Sibiu",
+        "to": "Cluj-Napoca",
+        "method": "CFR train or bus via a Sighișoara stopover, usually splitting into Sibiu to Sighișoara and onward to Cluj-Napoca (about 4h 30m–5h 30m total travel)",
+        "cost": "₹1,260–₹1,890"
+      }
+    ],
+    "extras": [
+      "Bran Castle is best treated as a Brasov day trip rather than a luggage-hauling transfer stop; buses are cheap and frequent enough for a relaxed out-and-back day.",
+      "If you want to use the research-backed Sighișoara stop, break the Sibiu to Cluj-Napoca journey there for the Clock Tower, Vlad Dracul House, and Citadel Square before continuing north.",
+      "Vegetarian travelers should look for fasting-menu or “post” dishes: mămăligă with cheese, mushroom stews, zacuscă, vegetable ciorbă, and cheese pastries are easy wins across Romania.",
+      "Use Bolt or Uber instead of hailing street taxis in Bucharest, and keep around ₹3,600–₹5,400 worth of RON cash for small museums, bus tickets, and village stops.",
+      "May–June and September are the easiest months for this route, with milder weather and lower crowd pressure around Bran Castle and the Brasov-Sibiu corridor."
+    ],
+    "cityImages": {
+      "Bucharest": [
+        "Palace of Parliament Bucharest exterior",
+        "Romanian Athenaeum Bucharest interior",
+        "Lipscani Old Town Bucharest evening"
+      ],
+      "Brasov": [
+        "Council Square Brasov colorful buildings",
+        "Black Church Brasov exterior",
+        "Tampa Mountain Brasov sign view"
+      ],
+      "Sibiu": [
+        "Piata Mare Sibiu panoramic view",
+        "Bridge of Lies Sibiu",
+        "ASTRA Open Air Museum Sibiu"
+      ],
+      "Cluj-Napoca": [
+        "Piata Unirii Cluj-Napoca St Michael Church",
+        "Banffy Palace Cluj-Napoca",
+        "Turda Salt Mine Romania underground wheel"
+      ]
+    }
+  }
+}

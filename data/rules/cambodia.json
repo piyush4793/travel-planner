@@ -1,0 +1,551 @@
+{
+  "name": "Cambodia",
+  "seed": true,
+  "lat": 11.5564,
+  "lng": 104.9282,
+  "region": "Asia",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹40K–₹70K",
+    "couple": "₹70K–₹1.2L",
+    "family4": "₹1.5L–₹2.5L"
+  },
+  "experiences": [
+    "Angkor Wat",
+    "Temples",
+    "History",
+    "Street Food",
+    "River Life"
+  ],
+  "avoid": [
+    "Monsoon season",
+    "Beware of landmines in rural areas away from tourist zones"
+  ],
+  "combo": [
+    "Laos",
+    "Thailand"
+  ],
+  "landmark": "Angkor Wat",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Siem Reap",
+      "lat": 13.3671,
+      "lng": 103.8448,
+      "notes": "Gateway to Angkor Wat, Ta Prohm jungle temple and Pub Street"
+    },
+    {
+      "name": "Phnom Penh",
+      "lat": 11.5564,
+      "lng": 104.9282,
+      "notes": "Royal Palace, Tuol Sleng Genocide Museum and Mekong riverside"
+    },
+    {
+      "name": "Sihanoukville",
+      "lat": 10.61,
+      "lng": 103.523,
+      "notes": "Beach resort base for Koh Rong and Koh Rong Sanloem islands"
+    },
+    {
+      "name": "Kampot",
+      "lat": 10.6111,
+      "lng": 104.1812,
+      "notes": "Charming riverside town famous for Kampot pepper and Bokor Hill Station"
+    }
+  ],
+  "itinerary": {
+    "sim": "Smart Tourist SIM — buy at Siem Reap-Angkor International Airport or Phnom Penh airport; 30GB packs usually cost about ₹420–₹504 and work reliably across Siem Reap, Phnom Penh, Kampot, and the coast.",
+    "apps": [
+      "Grab",
+      "PassApp",
+      "BookMeBus",
+      "12Go.Asia",
+      "Google Maps (offline)",
+      "Google Translate (Khmer offline)",
+      "XE Currency",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Siem Reap",
+      "Phnom Penh",
+      "Kampot",
+      "Sihanoukville"
+    ],
+    "cities": {
+      "Siem Reap": {
+        "name": "Siem Reap",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Keep all three recommended days if Angkor Wat, Banteay Srey, and the museums matter to you; the new airport is far from town, so arrival and departure days feel longer than they look on paper.",
+        "days": [
+          {
+            "theme": "Arrival, Old Market Lanes & Apsara Evening",
+            "activities": [
+              {
+                "name": "Siem Reap-Angkor Airport shuttle or minibus into town",
+                "cost": "₹672",
+                "tip": "The new airport is about 50 km from town, so pre-booking saves time after immigration."
+              },
+              {
+                "name": "Psar Chaa (Old Market) and riverside orientation walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Pub Street and The Lane evening stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Apsara dance dinner show at Temple Club or Apsara Theatre",
+                "cost": "₹1,680–₹2,100"
+              },
+              {
+                "name": "Evening tuk-tuk ride around the old quarter",
+                "cost": "₹336–₹504"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Two Dragons Guesthouse",
+                "budget": "₹1,008–₹1,512/night"
+              },
+              {
+                "name": "Viroth’s Hotel",
+                "budget": "₹3,780–₹5,040/night"
+              }
+            ],
+            "meals": [
+              "Amok Restaurant",
+              "Butterflies Garden Restaurant",
+              "Chanrey Tree"
+            ]
+          },
+          {
+            "theme": "Angkor Sunrise, Bayon Faces & Ta Prohm Roots",
+            "activities": [
+              {
+                "name": "Angkor 3-day temple pass",
+                "cost": "₹5,208",
+                "tip": "This is the best-value pass and stays valid across any 10-day window."
+              },
+              {
+                "name": "Sunrise at Angkor Wat with full temple exploration",
+                "cost": "Included in pass"
+              },
+              {
+                "name": "Bayon Temple at Angkor Thom",
+                "cost": "Included in pass"
+              },
+              {
+                "name": "Ta Prohm jungle temple",
+                "cost": "Included in pass"
+              },
+              {
+                "name": "Full-day Angkor tuk-tuk hire",
+                "cost": "₹1,680–₹2,100"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Two Dragons Guesthouse",
+                "budget": "₹1,008–₹1,512/night"
+              },
+              {
+                "name": "Viroth’s Hotel",
+                "budget": "₹3,780–₹5,040/night"
+              }
+            ],
+            "meals": [
+              "Angkor Café",
+              "Marum",
+              "Haven"
+            ]
+          },
+          {
+            "theme": "Banteay Srey, Preah Khan & Cambodia’s Modern History",
+            "activities": [
+              {
+                "name": "Preah Khan temple complex",
+                "cost": "Included in pass"
+              },
+              {
+                "name": "Banteay Srey pink sandstone temple",
+                "cost": "Included in pass",
+                "tip": "Budget another ₹840–₹1,008 if your tuk-tuk driver charges extra for the longer outer-circuit run."
+              },
+              {
+                "name": "Angkor National Museum",
+                "cost": "₹1,008"
+              },
+              {
+                "name": "APOPO Visitor Centre",
+                "cost": "₹84"
+              },
+              {
+                "name": "Cambodia Landmine Museum",
+                "cost": "₹504"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Two Dragons Guesthouse",
+                "budget": "₹1,008–₹1,512/night"
+              },
+              {
+                "name": "Viroth’s Hotel",
+                "budget": "₹3,780–₹5,040/night"
+              }
+            ],
+            "meals": [
+              "Cuisine Wat Damnak",
+              "The Sugar Palm",
+              "Khmer Kitchen Restaurant"
+            ]
+          }
+        ]
+      },
+      "Phnom Penh": {
+        "name": "Phnom Penh",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "The capital works best as a two-day contrast to Siem Reap: one slower riverside day and one heavier history-focused day.",
+        "days": [
+          {
+            "theme": "Riverside Arrival, Markets & Khmer Art",
+            "activities": [
+              {
+                "name": "Sisowath Quay riverside walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Wat Phnom hilltop pagoda",
+                "cost": "₹84"
+              },
+              {
+                "name": "Central Market (Psar Thmei)",
+                "cost": "Free"
+              },
+              {
+                "name": "National Museum of Cambodia",
+                "cost": "₹840"
+              },
+              {
+                "name": "Phnom Penh Night Market dinner stop",
+                "cost": "₹168–₹336"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mad Monkey Hostel Phnom Penh",
+                "budget": "₹1,512–₹2,100/night"
+              },
+              {
+                "name": "Blue Lime Hotel",
+                "budget": "₹3,780–₹5,880/night"
+              }
+            ],
+            "meals": [
+              "Friends the Restaurant",
+              "Romdeng",
+              "Malis Phnom Penh"
+            ]
+          },
+          {
+            "theme": "Khmer Rouge History, Royal Palace & Temple Quarter",
+            "activities": [
+              {
+                "name": "Tuol Sleng Genocide Museum (S-21)",
+                "cost": "₹420",
+                "tip": "Add the audio guide if you want context; it makes the visit much more understandable."
+              },
+              {
+                "name": "Choeung Ek Killing Fields",
+                "cost": "₹504"
+              },
+              {
+                "name": "Return tuk-tuk to Choeung Ek",
+                "cost": "₹504–₹672"
+              },
+              {
+                "name": "Royal Palace and Silver Pagoda",
+                "cost": "₹840"
+              },
+              {
+                "name": "Wat Ounalom riverside monastery",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mad Monkey Hostel Phnom Penh",
+                "budget": "₹1,512–₹2,100/night"
+              },
+              {
+                "name": "Blue Lime Hotel",
+                "budget": "₹3,780–₹5,880/night"
+              }
+            ],
+            "meals": [
+              "Romdeng",
+              "Khmer Surin Restaurant",
+              "FCC Phnom Penh"
+            ]
+          }
+        ]
+      },
+      "Kampot": {
+        "name": "Kampot",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Kampot as the slower river-and-countryside stop between Phnom Penh and the beaches; it is best when you keep one afternoon completely unhurried.",
+        "days": [
+          {
+            "theme": "Colonial Kampot, Riverside Cafés & Sunset Cruise",
+            "activities": [
+              {
+                "name": "Kampot Old Market and French colonial core walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Durian Roundabout and riverside promenade",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset river cruise on the Praek Tuek Chhu",
+                "cost": "₹420–₹504"
+              },
+              {
+                "name": "Firefly night cruise or kayak rental",
+                "cost": "₹504–₹672"
+              },
+              {
+                "name": "Tuk-tuk circuit around town cafés and craft shops",
+                "cost": "₹168–₹336"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mea Culpa Kampot",
+                "budget": "₹2,940–₹4,620/night"
+              },
+              {
+                "name": "The Columns",
+                "budget": "₹6,720–₹9,240/night"
+              }
+            ],
+            "meals": [
+              "Simple Things",
+              "Auberge du Soleil",
+              "Rusty Keyhole"
+            ]
+          },
+          {
+            "theme": "Pepper Country, Secret Lake & Bokor Heights",
+            "activities": [
+              {
+                "name": "La Plantation pepper farm guided tasting tour",
+                "cost": "Free",
+                "tip": "Tours are free, but keep ₹672–₹840 aside for the tuk-tuk from town."
+              },
+              {
+                "name": "Secret Lake photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Bokor National Park and Bokor Hill Station day trip",
+                "cost": "₹1,680–₹2,520"
+              },
+              {
+                "name": "Popokvil Waterfall viewpoint",
+                "cost": "Included in Bokor day trip"
+              },
+              {
+                "name": "Phnom Chhngok Cave Temple",
+                "cost": "₹168"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mea Culpa Kampot",
+                "budget": "₹2,940–₹4,620/night"
+              },
+              {
+                "name": "The Columns",
+                "budget": "₹6,720–₹9,240/night"
+              }
+            ],
+            "meals": [
+              "La Plantation Restaurant",
+              "Café Espresso Roastery",
+              "Rikitikitavi"
+            ]
+          }
+        ]
+      },
+      "Sihanoukville": {
+        "name": "Sihanoukville",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Treat Sihanoukville as the mainland gateway to Koh Rong: many travelers sleep one night on the island, but the ferry hub, cash machines, and onward transport all run through town.",
+        "days": [
+          {
+            "theme": "Coastal Arrival, Ferry Across & Koh Rong Sunset",
+            "activities": [
+              {
+                "name": "Sokha Beach or Otres Beach swim stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Buva Sea or Speed Ferry Cambodia boat to Koh Rong",
+                "cost": "₹840–₹1,260"
+              },
+              {
+                "name": "Koh Tuch beachfront walk on arrival",
+                "cost": "Free"
+              },
+              {
+                "name": "Bioluminescent plankton night swim on Koh Rong",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset cocktail on the beach",
+                "cost": "₹336–₹504"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "White Boutique Hotel & Residences",
+                "budget": "₹4,620–₹7,560/night"
+              },
+              {
+                "name": "High Season Pool Villa & Spa",
+                "budget": "₹8,400–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "Sandan",
+              "Chill Inn Bar & Restaurant",
+              "White Rose Restaurant"
+            ]
+          },
+          {
+            "theme": "Long Set Beach, Snorkeling & Return to Mainland",
+            "activities": [
+              {
+                "name": "Long Set Beach or Sok San Beach half-day",
+                "cost": "Free"
+              },
+              {
+                "name": "Snorkeling gear rental",
+                "cost": "₹420–₹672"
+              },
+              {
+                "name": "Boat ride to quieter Koh Rong beaches",
+                "cost": "₹1,680–₹2,100"
+              },
+              {
+                "name": "Intro dive or two-tank dive",
+                "cost": "₹3,360–₹5,040"
+              },
+              {
+                "name": "Ferry back to Sihanoukville",
+                "cost": "₹840–₹1,260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "White Boutique Hotel & Residences",
+                "budget": "₹4,620–₹7,560/night"
+              },
+              {
+                "name": "High Season Pool Villa & Spa",
+                "budget": "₹8,400–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "Sandan",
+              "Olive & Olive Mediterranean Restaurant",
+              "Chill Inn Bar & Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Siem Reap",
+        "to": "Phnom Penh",
+        "method": "Giant Ibis or VET Air Bus coach (about 5.5–6.5 hours) or a short domestic flight",
+        "cost": "₹1,008–₹7,500"
+      },
+      {
+        "from": "Phnom Penh",
+        "to": "Kampot",
+        "method": "Cambodia Royal Railway train or intercity bus/minivan (about 3–4 hours)",
+        "cost": "₹420–₹1,008"
+      },
+      {
+        "from": "Kampot",
+        "to": "Sihanoukville",
+        "method": "Virak Buntham-style minivan or private taxi down to the coast (about 2–2.5 hours)",
+        "cost": "₹420–₹2,520"
+      },
+      {
+        "from": "Sihanoukville",
+        "to": "Phnom Penh",
+        "method": "Giant Ibis coach or Royal Railway train for your outbound transfer",
+        "cost": "₹588–₹1,260"
+      }
+    ],
+    "extras": [
+      "Cambodia uses USD almost everywhere, with riel given back as change; keep plenty of small notes for tuk-tuks, snacks, and tips.",
+      "The official Angkor 3-day pass costs ₹5,208 and is the sweet spot for most first trips; buy it only from the official Angkor Ticket Centre.",
+      "Download offline Google Maps before heading to Bokor or Koh Rong, and keep PassApp or Grab ready for airport and city rides.",
+      "Withdraw enough cash before taking the Koh Rong ferry because island ATMs are unreliable to non-existent compared with mainland Cambodia.",
+      "Cover shoulders and knees at Angkor temples, the Royal Palace, and Phnom Penh pagodas; lightweight linen works better than denim in the heat.",
+      "If you were thinking of combining Thailand overland, re-check current border rules before leaving because land-border access can change faster than flight schedules."
+    ],
+    "cityImages": {
+      "Siem Reap": [
+        "Angkor Wat sunrise reflection pool",
+        "Ta Prohm temple giant tree roots",
+        "Bayon temple stone faces"
+      ],
+      "Phnom Penh": [
+        "Royal Palace Phnom Penh golden spires",
+        "Tuol Sleng Genocide Museum Phnom Penh",
+        "Sisowath Quay Phnom Penh sunset"
+      ],
+      "Kampot": [
+        "Kampot riverside promenade Cambodia",
+        "La Plantation Kampot pepper farm",
+        "Bokor Hill Station Kampot"
+      ],
+      "Sihanoukville": [
+        "Koh Rong island Cambodia beach",
+        "bioluminescent plankton Koh Rong Cambodia",
+        "Sokha Beach Sihanoukville"
+      ]
+    }
+  }
+}

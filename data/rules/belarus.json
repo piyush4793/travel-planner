@@ -1,0 +1,468 @@
+{
+  "name": "Belarus",
+  "seed": true,
+  "lat": 53.9045,
+  "lng": 27.5615,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹60K–₹1L",
+    "couple": "₹1L–₹1.8L",
+    "family4": "₹2L–₹3.5L"
+  },
+  "experiences": [
+    "Minsk Architecture",
+    "Mir Castle",
+    "Forests",
+    "Soviet Heritage",
+    "Nesvizh Palace"
+  ],
+  "avoid": [
+    "Check visa requirements — may need special permissions"
+  ],
+  "combo": [
+    "Russia",
+    "Poland"
+  ],
+  "landmark": "Mir Castle",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Minsk",
+      "lat": 53.9045,
+      "lng": 27.5615,
+      "notes": "Soviet-era grand boulevards, Stalin architecture and vibrant nightlife"
+    },
+    {
+      "name": "Mir",
+      "lat": 53.45,
+      "lng": 26.4667,
+      "notes": "Fairy-tale Mir Castle Complex, UNESCO World Heritage Site"
+    },
+    {
+      "name": "Nesvizh",
+      "lat": 53.2217,
+      "lng": 26.6931,
+      "notes": "Radziwill palace and castle complex surrounded by ornamental parks"
+    },
+    {
+      "name": "Brest",
+      "lat": 52.0979,
+      "lng": 23.6844,
+      "notes": "Brest Fortress WWII memorial and charming pedestrian Sovetskaya street"
+    }
+  ],
+  "itinerary": {
+    "sim": "A1 has the best all-round coverage for this route; airport tourist SIMs usually cost about ₹390 for 5GB, while MTS and life:) budget packs are roughly ₹260 and ₹208 respectively. Carry your passport for SIM registration and keep some USD or EUR cash as backup in case Indian cards fail on sanctioned payment rails.",
+    "apps": [
+      "Yandex Maps",
+      "Yandex Go",
+      "RW.by",
+      "Minsktrans",
+      "Google Translate",
+      "Booking.com",
+      "Revolut"
+    ],
+    "cityOrder": [
+      "Minsk",
+      "Mir",
+      "Nesvizh",
+      "Brest"
+    ],
+    "cities": {
+      "Minsk": {
+        "name": "Minsk",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days lets you cover Minsk's Stalinist avenues, museums, and cultural stops before using the city as the practical gateway for the Mir-Nesvizh castle belt.",
+        "days": [
+          {
+            "theme": "Arrival, Stalinist Grandeur & Skyline Views",
+            "activities": [
+              {
+                "name": "Walk Independence Avenue from October Square through Minsk's monumental Stalinist core",
+                "cost": "Free",
+                "tip": "Late afternoon light works best for the avenue facades and Victory Square photos."
+              },
+              {
+                "name": "Victory Square obelisk and eternal flame",
+                "cost": "Free"
+              },
+              {
+                "name": "St Simon and St Helena Church (Red Church)",
+                "cost": "Free"
+              },
+              {
+                "name": "Holy Spirit Cathedral in Upper Town",
+                "cost": "Free"
+              },
+              {
+                "name": "National Library of Belarus observation deck",
+                "cost": "₹91"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Belarus",
+                "budget": "₹2,730/night"
+              },
+              {
+                "name": "Hampton by Hilton Minsk City Centre",
+                "budget": "₹3,900/night"
+              }
+            ],
+            "meals": [
+              "Draniki",
+              "Vasilki",
+              "Zerno Café"
+            ]
+          },
+          {
+            "theme": "War Memory, Museums & Trinity Suburb",
+            "activities": [
+              {
+                "name": "Belarusian Great Patriotic War Museum",
+                "cost": "₹208",
+                "tip": "Give yourself at least two hours; it is one of the strongest WWII museums in the region."
+              },
+              {
+                "name": "Belarusian National Arts Museum",
+                "cost": "₹208"
+              },
+              {
+                "name": "Upper Town, Trinity Suburb, and Isle of Tears walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Church of Saints Peter and Paul",
+                "cost": "Free"
+              },
+              {
+                "name": "Belarusian National History Museum",
+                "cost": "₹182"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Belarus",
+                "budget": "₹2,730/night"
+              },
+              {
+                "name": "Hampton by Hilton Minsk City Centre",
+                "budget": "₹3,900/night"
+              }
+            ],
+            "meals": [
+              "Kuchmistr",
+              "Green+Go",
+              "MonkeyFood"
+            ]
+          },
+          {
+            "theme": "Fortifications, Parks & Minsk Culture Night",
+            "activities": [
+              {
+                "name": "Stalin's Line Historical Complex",
+                "cost": "₹364",
+                "tip": "Closed on Mondays; pair it with a taxi or rideshare because public transport is slow."
+              },
+              {
+                "name": "Botanical Garden or Gorky Park depending on weather",
+                "cost": "₹208 or Free"
+              },
+              {
+                "name": "Yanka Kupala National Theatre evening show",
+                "cost": "₹156–₹572"
+              },
+              {
+                "name": "Lianok, GUM, or Vialiki Dziakuj souvenir stop",
+                "cost": "Varies"
+              },
+              {
+                "name": "Alivaria Brewery tour or Zybitskaya evening walk",
+                "cost": "₹364 or Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Belarus",
+                "budget": "₹2,730/night"
+              },
+              {
+                "name": "Hampton by Hilton Minsk City Centre",
+                "budget": "₹3,900/night"
+              }
+            ],
+            "meals": [
+              "Simple",
+              "Grand Café",
+              "Tiflis"
+            ]
+          }
+        ]
+      },
+      "Mir": {
+        "name": "Mir",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Mir works best as a focused castle day with an optional overnight stay inside the UNESCO complex if you want the village at its quietest.",
+        "days": [
+          {
+            "theme": "UNESCO Castle Towers, Courtyard & Lakeside Walks",
+            "activities": [
+              {
+                "name": "Mir Castle Complex museum and tower route",
+                "cost": "₹390–₹468",
+                "tip": "Take the early bus or marshrutka from Minsk to avoid mid-morning tour groups."
+              },
+              {
+                "name": "Castle courtyard and palace wing walk",
+                "cost": "Included above"
+              },
+              {
+                "name": "Chapel-mausoleum of the Sviatopolk-Mirsky family",
+                "cost": "Included above"
+              },
+              {
+                "name": "Lakeside perimeter walk for exterior reflections of Mir Castle",
+                "cost": "Free"
+              },
+              {
+                "name": "Mir village center stroll before heading onward to Nesvizh",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mir Castle Hotel",
+                "budget": "₹6,240–₹8,840/night"
+              },
+              {
+                "name": "Mirskiy Posad",
+                "budget": "₹3,640–₹5,460/night"
+              }
+            ],
+            "meals": [
+              "Mir Castle Restaurant",
+              "Karchma U Zamka",
+              "Cafe Mirum"
+            ]
+          }
+        ]
+      },
+      "Nesvizh": {
+        "name": "Nesvizh",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "One day covers the Radziwiłł residence, the historic center, and the lake-ringed parklands without making Nesvizh feel like a rushed photo stop.",
+        "days": [
+          {
+            "theme": "Radziwiłł Palace Interiors, Parkland & Old Town",
+            "activities": [
+              {
+                "name": "Nesvizh Castle interiors and Radziwiłł portrait gallery",
+                "cost": "₹390–₹520",
+                "tip": "If you are self-driving or using a hired taxi, keep 3 hours for the palace and grounds alone."
+              },
+              {
+                "name": "Corpus Christi Church",
+                "cost": "Free"
+              },
+              {
+                "name": "Nesvizh market square and historic town walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Castle park and interconnected lakes circuit",
+                "cost": "Free"
+              },
+              {
+                "name": "Former monastery quarter and town gate area",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nesvizh Castle Hotel",
+                "budget": "₹5,720–₹8,320/night"
+              },
+              {
+                "name": "Hotel Nesvizh",
+                "budget": "₹3,380–₹5,200/night"
+              }
+            ],
+            "meals": [
+              "Nesvizh Cafe",
+              "Restoran Zamkovy",
+              "Restaurant U Zamka"
+            ]
+          }
+        ]
+      },
+      "Brest": {
+        "name": "Brest",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is the sweet spot for Brest: one for the fortress and Soviet memorial core, and one for Belovezhskaya Pushcha plus the city's evening lamplighter ritual.",
+        "days": [
+          {
+            "theme": "Brest Fortress, Rail Heritage & Sovietskaya Street",
+            "activities": [
+              {
+                "name": "Brest Fortress memorial complex and Defense of Brest Museum",
+                "cost": "₹130",
+                "tip": "Allow three hours; the memorial grounds are large even before the museum add-ons."
+              },
+              {
+                "name": "Berestye Archaeological Museum",
+                "cost": "₹104"
+              },
+              {
+                "name": "Outdoor Railway Museum",
+                "cost": "₹69"
+              },
+              {
+                "name": "Sovetskaya pedestrian street and evening lamplighter ceremony",
+                "cost": "Free"
+              },
+              {
+                "name": "Lenin Square and 1000 Years of Brest monument",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hermitage Hotel",
+                "budget": "₹3,250/night"
+              },
+              {
+                "name": "Hotel Molodezhnaya",
+                "budget": "₹1,690–₹2,028/night"
+              }
+            ],
+            "meals": [
+              "Jules Verne",
+              "Venezia",
+              "Restaurant Hermitage"
+            ]
+          },
+          {
+            "theme": "Belovezhskaya Pushcha & Borderland Museums",
+            "activities": [
+              {
+                "name": "Belovezhskaya Pushcha National Park with European bison reserve",
+                "cost": "₹598–₹780",
+                "tip": "That range combines the Brest bus and basic park entry; guided add-ons push the total toward the upper end."
+              },
+              {
+                "name": "Museum of Rescued Art Treasures",
+                "cost": "₹78–₹104"
+              },
+              {
+                "name": "Brest Regional Museum of Local Lore",
+                "cost": "₹104"
+              },
+              {
+                "name": "Mukhavets riverfront stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Optional Ice Palace skating session",
+                "cost": "₹104"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hermitage Hotel",
+                "budget": "₹3,250/night"
+              },
+              {
+                "name": "Hotel Molodezhnaya",
+                "budget": "₹1,690–₹2,028/night"
+              }
+            ],
+            "meals": [
+              "U Ozera",
+              "Brestsky Dvorik",
+              "Times Cafe"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Minsk",
+        "to": "Mir",
+        "method": "Bus from Minsk Central Bus Terminal to Mir village or a marshrutka shuttle (about 1.5-2h)",
+        "cost": "₹104–₹130"
+      },
+      {
+        "from": "Mir",
+        "to": "Nesvizh",
+        "method": "Shared taxi or pre-booked private transfer between the two UNESCO castle towns (about 40m)",
+        "cost": "₹390–₹520"
+      },
+      {
+        "from": "Nesvizh",
+        "to": "Brest",
+        "method": "Taxi or bus to Haradzieja or Baranavichy and onward Belarus Railway train to Brest (about 4.5-5.5h total)",
+        "cost": "₹1,170–₹2,340"
+      },
+      {
+        "from": "Brest",
+        "to": "Minsk",
+        "method": "Belarus Railway intercity train from Brest to Minsk Passenger Station (about 3.5-4h)",
+        "cost": "₹208–₹312"
+      }
+    ],
+    "extras": [
+      "If you are short on time, Mir and Nesvizh can be collapsed into one long castle day from Minsk with a hired driver for roughly ₹3,900–₹5,200 for the full loop.",
+      "Indian travelers should verify visa rules before booking: Belarus has periodically adjusted airport-only visa-free access, and hotel registration within five days is essential if you are not staying with a registered property every night.",
+      "Do not photograph the KGB headquarters, military sites, or border infrastructure; Belarus takes security enforcement seriously and this is an easy way to invite police attention.",
+      "Vegetarian travelers are best served in Minsk and at Georgian restaurants such as Tiflis; in Brest and the smaller castle towns, use “bez myasa” for without meat and lean on potato, mushroom, and cheese dishes.",
+      "Carry some cash in EUR or USD terms even if you plan to use cards, because sanctions can make some Indian bank cards unreliable in Belarus."
+    ],
+    "cityImages": {
+      "Minsk": [
+        "Victory Square Minsk obelisk",
+        "Independence Avenue Minsk Stalinist architecture",
+        "Holy Spirit Cathedral Minsk Upper Town"
+      ],
+      "Mir": [
+        "Mir Castle Complex Belarus UNESCO",
+        "Mirski zamak courtyard Belarus",
+        "Mir Castle lake reflection Belarus"
+      ],
+      "Nesvizh": [
+        "Nesvizh Castle lake Belarus",
+        "Corpus Christi Church Nesvizh",
+        "Radziwill castle Nesvizh UNESCO"
+      ],
+      "Brest": [
+        "Brest Fortress Kholm Gate Belarus",
+        "Brest Hero Fortress Courage monument",
+        "Sovetskaya Street Brest lamplighter"
+      ]
+    }
+  }
+}

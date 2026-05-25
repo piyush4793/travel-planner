@@ -52,10 +52,17 @@ export type TripBrief = {
 
 /* ── Data types ── */
 
+export type BudgetBreakdown = {
+  solo: string;
+  couple: string;
+  family4: string;
+};
+
 export type Country = {
   name: string;
   lat: number;
   lng: number;
+  region?: string;
   bestMonths: string[];
   worstMonths?: string[];
   budget: string;
@@ -69,3 +76,11 @@ export type Country = {
   links?: { label: string; url: string }[];
   notes?: string;
 };
+
+/** Get display string from budget (handles both string and breakdown) */
+export function getBudgetDisplay(budget: string | BudgetBreakdown, travelers = 2): string {
+  if (typeof budget === "string") return budget;
+  if (travelers >= 4) return budget.family4;
+  if (travelers >= 2) return budget.couple;
+  return budget.solo;
+}

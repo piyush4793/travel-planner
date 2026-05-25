@@ -1,0 +1,561 @@
+{
+  "name": "Austria",
+  "seed": true,
+  "lat": 47.5162,
+  "lng": 14.5501,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "September",
+    "October",
+    "December"
+  ],
+  "worstMonths": [],
+  "budget": {
+    "solo": "₹1.5L–₹2.5L",
+    "couple": "₹2.5L–₹4.5L",
+    "family4": "₹5L–₹9L"
+  },
+  "experiences": [
+    "Vienna",
+    "Hallstatt",
+    "Salzburg",
+    "Alps Skiing",
+    "Christmas Markets",
+    "Mozart"
+  ],
+  "avoid": [
+    "Crowds at Hallstatt in peak summer"
+  ],
+  "combo": [
+    "Germany",
+    "Switzerland"
+  ],
+  "landmark": "Hallstatt",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Vienna",
+      "lat": 48.2082,
+      "lng": 16.3738,
+      "notes": "Schonbrunn Palace, Kunsthistorisches Museum, coffee house culture and opera"
+    },
+    {
+      "name": "Salzburg",
+      "lat": 47.8095,
+      "lng": 13.055,
+      "notes": "Mozart's birthplace, Hohensalzburg fortress and Sound of Music scenery"
+    },
+    {
+      "name": "Innsbruck",
+      "lat": 47.2682,
+      "lng": 11.3923,
+      "notes": "Golden Roof, Nordkette cable car and gateway to Tyrolean ski resorts"
+    },
+    {
+      "name": "Hallstatt",
+      "lat": 47.5622,
+      "lng": 13.6493,
+      "notes": "Postcard lakeside village with salt mine and Dachstein ice cave"
+    },
+    {
+      "name": "Graz",
+      "lat": 47.0707,
+      "lng": 15.4395,
+      "notes": "Schlossberg clock tower, Kunsthaus bubble and Styrian pumpkin oil"
+    }
+  ],
+  "itinerary": {
+    "sim": "Airalo Europe eSIM (10GB / 30 days) is the easiest pick at about ₹1,380; Vienna Airport's A1 Tourist SIM is a good local fallback at about ₹1,840 for 10GB.",
+    "apps": [
+      "ÖBB",
+      "Wiener Linien",
+      "Salzburg Verkehr",
+      "IVB Innsbruck",
+      "GrazMobil",
+      "Google Maps",
+      "Google Translate",
+      "XE Currency",
+      "HappyCow",
+      "Wise"
+    ],
+    "cityOrder": [
+      "Vienna",
+      "Graz",
+      "Salzburg",
+      "Hallstatt",
+      "Innsbruck"
+    ],
+    "cities": {
+      "Vienna": {
+        "name": "Vienna",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Plan at least 3 days to cover the imperial core properly; a fourth day works well for an opera evening or a slower museum day.",
+        "days": [
+          {
+            "theme": "Imperial Vienna: Palaces & the Ring Road",
+            "activities": [
+              {
+                "name": "Schönbrunn Palace Grand Tour with audio guide",
+                "cost": "₹1,564"
+              },
+              {
+                "name": "Schönbrunn Palace Gardens and Gloriette hill walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Naschmarkt stroll for snacks and market browsing",
+                "cost": "₹0–₹460"
+              },
+              {
+                "name": "Kunsthistorisches Museum",
+                "cost": "₹1,932"
+              },
+              {
+                "name": "Evening Ringstraße walk past the Opera, Parliament, and Rathaus",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Josefshof",
+                "budget": "₹8,280–₹11,500/night"
+              },
+              {
+                "name": "Wombats City Hostel Vienna The Naschmarkt",
+                "budget": "₹2,300–₹3,680/night"
+              }
+            ],
+            "meals": [
+              "Café Landtmann",
+              "Wrenkh",
+              "Zum Wohl"
+            ]
+          },
+          {
+            "theme": "Old Town Vienna: Hofburg, Belvedere & Court Life",
+            "activities": [
+              {
+                "name": "Hofburg Palace Imperial Apartments and Sisi Museum",
+                "cost": "₹1,656"
+              },
+              {
+                "name": "Austrian National Library State Hall",
+                "cost": "₹736"
+              },
+              {
+                "name": "St. Stephen's Cathedral with optional South Tower climb",
+                "cost": "₹0–₹506"
+              },
+              {
+                "name": "Upper Belvedere Palace and Klimt's The Kiss",
+                "cost": "₹1,472"
+              },
+              {
+                "name": "Vienna State Opera guided tour or standing-ticket show",
+                "cost": "₹828–₹1,380+"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Josefshof",
+                "budget": "₹8,280–₹11,500/night"
+              },
+              {
+                "name": "Wombats City Hostel Vienna The Naschmarkt",
+                "budget": "₹2,300–₹3,680/night"
+              }
+            ],
+            "meals": [
+              "Figlmüller Bäckerstraße",
+              "Café Central",
+              "Huth Gastwirtschaft"
+            ]
+          },
+          {
+            "theme": "MuseumsQuartier, Prater & Modern Vienna",
+            "activities": [
+              {
+                "name": "Leopold Museum in MuseumsQuartier",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Naschmarkt breakfast",
+                "cost": "₹736–₹1,104"
+              },
+              {
+                "name": "Prater and Giant Ferris Wheel",
+                "cost": "₹1,242"
+              },
+              {
+                "name": "Hundertwasserhaus exterior stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "24-hour Vienna Card for unlimited city transport and discounts",
+                "cost": "₹1,564"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Josefshof",
+                "budget": "₹8,280–₹11,500/night"
+              },
+              {
+                "name": "Wombats City Hostel Vienna The Naschmarkt",
+                "budget": "₹2,300–₹3,680/night"
+              }
+            ],
+            "meals": [
+              "Tian Restaurant",
+              "Hollerei",
+              "Café Schwarzenberg"
+            ]
+          }
+        ]
+      },
+      "Graz": {
+        "name": "Graz",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Use Graz as a one-night Styrian stop between Vienna and Salzburg, or stretch it with a second day for slower museum time and cafés.",
+        "days": [
+          {
+            "theme": "Medieval Hill Town & Avant-Garde Architecture",
+            "activities": [
+              {
+                "name": "Schlossberg Clock Tower and gardens",
+                "cost": "₹0–₹184"
+              },
+              {
+                "name": "Eggenberg Palace",
+                "cost": "₹1,196"
+              },
+              {
+                "name": "Kunsthaus Graz",
+                "cost": "₹920"
+              },
+              {
+                "name": "Hauptplatz, Herrengasse, and Glockenspiel walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Styrian Armoury",
+                "cost": "₹736"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Zum Dom",
+                "budget": "₹10,120–₹14,720/night"
+              },
+              {
+                "name": "A&O Graz Hauptbahnhof",
+                "budget": "₹2,300–₹4,140/night"
+              }
+            ],
+            "meals": [
+              "Aiola Upstairs",
+              "Speisesalon",
+              "Tribeka"
+            ]
+          }
+        ]
+      },
+      "Salzburg": {
+        "name": "Salzburg",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the baroque core plus either Hellbrunn or a Sound of Music outing; add a third day for Salzkammergut side trips.",
+        "days": [
+          {
+            "theme": "Fortress, Mozart & Baroque Altstadt",
+            "activities": [
+              {
+                "name": "Hohensalzburg Fortress with funicular",
+                "cost": "₹1,251"
+              },
+              {
+                "name": "Salzburg Cathedral with optional crypt visit",
+                "cost": "₹0–₹460"
+              },
+              {
+                "name": "Getreidegasse and Mozart's Birthplace",
+                "cost": "₹920"
+              },
+              {
+                "name": "St. Peter's Cemetery and catacombs",
+                "cost": "₹184"
+              },
+              {
+                "name": "Mirabell Palace and Gardens",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Schwarzes Rössl",
+                "budget": "₹9,200–₹12,880/night"
+              },
+              {
+                "name": "YoHo International Youth Hostel",
+                "budget": "₹2,300–₹3,680/night"
+              }
+            ],
+            "meals": [
+              "Stiftskeller St. Peter",
+              "Bio-Wirtshaus Kaffee Alchemiste",
+              "Carpe Diem Finest Fingerfood"
+            ]
+          },
+          {
+            "theme": "Hellbrunn, Kapuzinerberg & Sound of Music",
+            "activities": [
+              {
+                "name": "Schloss Hellbrunn and Trick Fountains",
+                "cost": "₹1,242"
+              },
+              {
+                "name": "Kapuzinerberg hill hike",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sound of Music Original Tour",
+                "cost": "₹4,140"
+              },
+              {
+                "name": "Salzburg Museum",
+                "cost": "₹782"
+              },
+              {
+                "name": "Evening concert at Hohensalzburg Fortress",
+                "cost": "₹3,220–₹5,060"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Schwarzes Rössl",
+                "budget": "₹9,200–₹12,880/night"
+              },
+              {
+                "name": "YoHo International Youth Hostel",
+                "budget": "₹2,300–₹3,680/night"
+              }
+            ],
+            "meals": [
+              "Zum Fidelen Affen",
+              "Café Tomaselli",
+              "Green Garden Restaurant"
+            ]
+          }
+        ]
+      },
+      "Hallstatt": {
+        "name": "Hallstatt",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Best handled as an early-start day trip from Salzburg unless you want sunrise photos and a quieter overnight in the village.",
+        "days": [
+          {
+            "theme": "Salt Mines, Skywalk & Lakeside Village",
+            "activities": [
+              {
+                "name": "Hallstatt Lakeside Viewpoint at the north end of the village",
+                "cost": "₹0"
+              },
+              {
+                "name": "Salzwelten Hallstatt salt mine with funicular",
+                "cost": "₹3,680"
+              },
+              {
+                "name": "Hallstatt Skywalk viewing platform",
+                "cost": "₹0 extra"
+              },
+              {
+                "name": "Hallstatt Museum",
+                "cost": "₹920"
+              },
+              {
+                "name": "Beinhaus ossuary",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pension Sarstein",
+                "budget": "₹9,200–₹13,800/night"
+              },
+              {
+                "name": "Hallstatt Hostel",
+                "budget": "₹3,680–₹5,520/night"
+              }
+            ],
+            "meals": [
+              "Café Derbl",
+              "Café Bäckerei Konditorei Maislinger",
+              "Restaurant am See"
+            ]
+          }
+        ]
+      },
+      "Innsbruck": {
+        "name": "Innsbruck",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives you one historic-core day and one Alps-and-castles day; add a third for nearby Tyrolean valleys or ski lifts.",
+        "days": [
+          {
+            "theme": "Golden Roof, Nordkette & Imperial Innsbruck",
+            "activities": [
+              {
+                "name": "Golden Roof and Old Town walk with optional museum",
+                "cost": "₹0–₹460"
+              },
+              {
+                "name": "Nordkette cable railway to Hafelekar summit",
+                "cost": "₹3,680"
+              },
+              {
+                "name": "Hofburg Imperial Palace",
+                "cost": "₹874"
+              },
+              {
+                "name": "Hofkirche and Emperor Maximilian I tomb",
+                "cost": "₹276"
+              },
+              {
+                "name": "City Tower panorama viewpoint",
+                "cost": "₹368"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Weißes Rössl",
+                "budget": "₹10,580–₹14,720/night"
+              },
+              {
+                "name": "Meininger Hostel Innsbruck",
+                "budget": "₹2,760–₹4,600/night"
+              }
+            ],
+            "meals": [
+              "Lichtblick Restaurant",
+              "Thai-Li",
+              "Café Katzung"
+            ]
+          },
+          {
+            "theme": "Ambras Castle, Bergisel & Tyrolean Farewell",
+            "activities": [
+              {
+                "name": "Ambras Castle",
+                "cost": "₹920"
+              },
+              {
+                "name": "Bergisel Ski Jump Tower and café viewpoint",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tyrolean Folk Art Museum",
+                "cost": "₹736"
+              },
+              {
+                "name": "Swarovski Crystal Worlds in Wattens",
+                "cost": "₹2,024"
+              },
+              {
+                "name": "Triumphpforte and Annasäule walk on Maria-Theresien-Straße",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Weißes Rössl",
+                "budget": "₹10,580–₹14,720/night"
+              },
+              {
+                "name": "Meininger Hostel Innsbruck",
+                "budget": "₹2,760–₹4,600/night"
+              }
+            ],
+            "meals": [
+              "Ottoburg",
+              "Löwenhaus",
+              "Café Sacher Innsbruck"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Vienna",
+        "to": "Graz",
+        "method": "ÖBB Railjet from Wien Hbf to Graz Hbf (about 2 hr 40 min)",
+        "cost": "₹828–₹1,748"
+      },
+      {
+        "from": "Graz",
+        "to": "Salzburg",
+        "method": "ÖBB IC via Bruck an der Mur and Selzthal from Graz Hbf to Salzburg Hbf (about 4 hr 10 min)",
+        "cost": "₹1,748–₹2,668"
+      },
+      {
+        "from": "Salzburg",
+        "to": "Hallstatt",
+        "method": "Regional train to Hallstatt Bahnhof plus the village ferry (about 2.5 hrs total)",
+        "cost": "₹1,472–₹2,024"
+      },
+      {
+        "from": "Hallstatt",
+        "to": "Innsbruck",
+        "method": "Ferry back to Hallstatt Bahnhof, then ÖBB regional and Railjet connections via Attnang-Puchheim or Salzburg to Innsbruck Hbf (about 4.5–5 hrs)",
+        "cost": "₹1,840–₹3,220"
+      }
+    ],
+    "extras": [
+      "Book ÖBB Sparschiene tickets 4–6 weeks ahead on oebb.at for the best long-distance fares; prices rise fast close to departure.",
+      "If you plan to sleep in Hallstatt, reserve the stay 6+ months ahead — it is the tightest hotel market in the route.",
+      "Austria is very vegetarian-friendly in big cities; HappyCow helps, and Käsespätzle is the easiest meat-free classic to look for on menus.",
+      "Carry a little euro cash for smaller cafés and Hallstatt stops, but rely on tap water, contactless cards, and transit apps in Vienna, Graz, Salzburg, and Innsbruck."
+    ],
+    "cityImages": {
+      "Vienna": [
+        "Schönbrunn Palace Vienna Austria",
+        "Vienna Ringstrasse Kunsthistorisches Museum",
+        "St. Stephen's Cathedral Vienna Stephansdom interior"
+      ],
+      "Graz": [
+        "Graz Schlossberg Uhrturm clock tower aerial",
+        "Kunsthaus Graz Biofabrik architecture night",
+        "Eggenberg Palace Graz UNESCO World Heritage"
+      ],
+      "Salzburg": [
+        "Salzburg Hohensalzburg Fortress old town aerial",
+        "Mirabell Palace Gardens Salzburg roses",
+        "Salzburg Cathedral Residenzplatz baroque"
+      ],
+      "Hallstatt": [
+        "Hallstatt village lake reflection Alps Austria",
+        "Hallstatt salt mine prehistoric world oldest",
+        "Hallstatt Ossuary bone house skulls decorated"
+      ],
+      "Innsbruck": [
+        "Innsbruck Golden Roof Goldenes Dachl Old Town",
+        "Nordkette cable car Innsbruck Alps panorama",
+        "Ambras Castle Innsbruck Renaissance museum"
+      ]
+    }
+  }
+}

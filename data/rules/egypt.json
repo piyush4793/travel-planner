@@ -1,0 +1,645 @@
+{
+  "name": "Egypt",
+  "seed": true,
+  "lat": 26.8206,
+  "lng": 30.8025,
+  "region": "Middle East",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹60K–₹1L",
+    "couple": "₹1L–₹1.8L",
+    "family4": "₹2L–₹3.5L"
+  },
+  "experiences": [
+    "Pyramids of Giza",
+    "Nile Cruise",
+    "Luxor Temples",
+    "Red Sea Diving",
+    "Cairo Museum"
+  ],
+  "avoid": [
+    "Extreme summer heat (40°C+)",
+    "Ramadan for nightlife"
+  ],
+  "combo": [
+    "Turkey",
+    "United Arab Emirates"
+  ],
+  "landmark": "Pyramids of Giza",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Cairo",
+      "lat": 30.0444,
+      "lng": 31.2357,
+      "notes": "Pyramids of Giza, Sphinx, Egyptian Museum and Khan el-Khalili bazaar"
+    },
+    {
+      "name": "Luxor",
+      "lat": 25.6872,
+      "lng": 32.6396,
+      "notes": "Valley of the Kings, Karnak temple complex and hot air balloon sunrise"
+    },
+    {
+      "name": "Aswan",
+      "lat": 24.0889,
+      "lng": 32.8998,
+      "notes": "Philae temple, Nubian villages and Abu Simbel day trip by flight"
+    },
+    {
+      "name": "Alexandria",
+      "lat": 31.2001,
+      "lng": 29.9187,
+      "notes": "Bibliotheca Alexandrina, Pompey's Pillar and Mediterranean seafood"
+    },
+    {
+      "name": "Hurghada",
+      "lat": 27.2579,
+      "lng": 33.8116,
+      "notes": "Red Sea diving and snorkeling with dolphins and coral reefs"
+    },
+    {
+      "name": "Sharm el-Sheikh",
+      "lat": 27.9158,
+      "lng": 34.33,
+      "notes": "World-class coral reefs at Ras Mohammed and Tiran island"
+    }
+  ],
+  "itinerary": {
+    "sim": "Vodafone Egypt Tourist SIM — buy at Cairo Airport arrivals; 12 GB + local calls for about ₹425",
+    "apps": [
+      "Uber",
+      "Careem",
+      "InDrive",
+      "Google Maps (offline Egypt maps)",
+      "Google Translate (Arabic offline)",
+      "XE Currency",
+      "Booking.com / Agoda",
+      "WhatsApp",
+      "ENR / enr.gov.eg",
+      "Egypt e-Visa Portal"
+    ],
+    "cityOrder": [
+      "Cairo",
+      "Alexandria",
+      "Luxor",
+      "Aswan",
+      "Hurghada"
+    ],
+    "cities": {
+      "Cairo": {
+        "name": "Cairo",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Ancient wonders of Giza and the new Grand Egyptian Museum",
+            "activities": [
+              {
+                "name": "Giza Pyramids Complex",
+                "cost": "₹1,156"
+              },
+              {
+                "name": "Great Pyramid Interior",
+                "cost": "₹2,550"
+              },
+              {
+                "name": "Grand Egyptian Museum",
+                "cost": "₹2,550"
+              },
+              {
+                "name": "Giza Sound & Light Show",
+                "cost": "₹595"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Marriott Mena House",
+                "budget": "₹5,950–₹8,500/night"
+              },
+              {
+                "name": "Pyramids View Inn",
+                "budget": "₹1,360–₹2,040/night"
+              }
+            ],
+            "meals": [
+              "Andrea El Mariouteya",
+              "Khufu's Restaurant",
+              "Abou El Sid"
+            ]
+          },
+          {
+            "theme": "Museum treasures, citadel views and medieval Cairo",
+            "activities": [
+              {
+                "name": "Egyptian Museum (Tahrir)",
+                "cost": "₹510"
+              },
+              {
+                "name": "Cairo Citadel and Mohammed Ali Mosque",
+                "cost": "₹782"
+              },
+              {
+                "name": "Qalawun Complex",
+                "cost": "₹306"
+              },
+              {
+                "name": "Sultan Hassan Mosque",
+                "cost": "₹306"
+              },
+              {
+                "name": "Khan el-Khalili Bazaar",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Marriott Mena House",
+                "budget": "₹5,950–₹8,500/night"
+              },
+              {
+                "name": "Pyramids View Inn",
+                "budget": "₹1,360–₹2,040/night"
+              }
+            ],
+            "meals": [
+              "Koshary Abou Tarek",
+              "Naguib Mahfouz Café",
+              "Zooba"
+            ]
+          },
+          {
+            "theme": "Coptic Cairo, Al-Muizz street and an Old Cairo finale",
+            "activities": [
+              {
+                "name": "Hanging Church",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ben Ezra Synagogue",
+                "cost": "₹170"
+              },
+              {
+                "name": "Al-Azhar Mosque",
+                "cost": "₹0"
+              },
+              {
+                "name": "Al-Muizz Street walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Café El-Fishawi tea stop",
+                "cost": "₹51"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Marriott Mena House",
+                "budget": "₹5,950–₹8,500/night"
+              },
+              {
+                "name": "Pyramids View Inn",
+                "budget": "₹1,360–₹2,040/night"
+              }
+            ],
+            "meals": [
+              "Naguib Mahfouz Café",
+              "Café El-Fishawi",
+              "Koshary Abou Tarek"
+            ]
+          }
+        ]
+      },
+      "Alexandria": {
+        "name": "Alexandria",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Greco-Roman Alexandria on the Mediterranean",
+            "activities": [
+              {
+                "name": "Bibliotheca Alexandrina",
+                "cost": "₹170–₹340"
+              },
+              {
+                "name": "Citadel of Qaitbay",
+                "cost": "₹255"
+              },
+              {
+                "name": "Catacombs of Kom el Shoqafa",
+                "cost": "₹255"
+              },
+              {
+                "name": "Pompey's Pillar",
+                "cost": "₹255"
+              },
+              {
+                "name": "Alexandria Corniche stroll",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sofitel Cecil Hotel",
+                "budget": "₹5,100–₹7,650/night"
+              },
+              {
+                "name": "Ibis Alexandria Sidi Bishr",
+                "budget": "₹1,530–₹2,380/night"
+              }
+            ],
+            "meals": [
+              "Fish Market",
+              "Kadoura",
+              "Taverna"
+            ]
+          }
+        ]
+      },
+      "Luxor": {
+        "name": "Luxor",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "East Bank temples and a Nile sunset",
+            "activities": [
+              {
+                "name": "Karnak Temple Complex",
+                "cost": "₹765"
+              },
+              {
+                "name": "Avenue of Sphinxes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Luxor Temple",
+                "cost": "₹680"
+              },
+              {
+                "name": "Luxor Museum",
+                "cost": "₹578"
+              },
+              {
+                "name": "Felucca sunset cruise on the Nile",
+                "cost": "₹255–₹340"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sofitel Winter Palace Luxor",
+                "budget": "₹5,950–₹8,500/night"
+              },
+              {
+                "name": "Nefertiti Hotel",
+                "budget": "₹1,360–₹2,550/night"
+              }
+            ],
+            "meals": [
+              "Sofra Restaurant",
+              "A Taste of India",
+              "Jamboree Restaurant"
+            ]
+          },
+          {
+            "theme": "Royal tombs and mortuary temples on the West Bank",
+            "activities": [
+              {
+                "name": "Valley of the Kings",
+                "cost": "₹1,275"
+              },
+              {
+                "name": "Temple of Hatshepsut",
+                "cost": "₹952"
+              },
+              {
+                "name": "Colossi of Memnon",
+                "cost": "₹0"
+              },
+              {
+                "name": "Medinet Habu Temple",
+                "cost": "₹374"
+              },
+              {
+                "name": "Valley of the Queens",
+                "cost": "₹510"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sofitel Winter Palace Luxor",
+                "budget": "₹5,950–₹8,500/night"
+              },
+              {
+                "name": "Nefertiti Hotel",
+                "budget": "₹1,360–₹2,550/night"
+              }
+            ],
+            "meals": [
+              "Al-Sahaby Lane",
+              "Sofra Restaurant",
+              "A Taste of India"
+            ]
+          }
+        ]
+      },
+      "Aswan": {
+        "name": "Aswan",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Philae Temple, Nubian color and a softer Nile mood",
+            "activities": [
+              {
+                "name": "Philae Temple",
+                "cost": "₹850"
+              },
+              {
+                "name": "Boat to Agilkia Island",
+                "cost": "₹255/boat"
+              },
+              {
+                "name": "Philae Sound & Light Show",
+                "cost": "₹680"
+              },
+              {
+                "name": "Nubian Village on Elephantine Island",
+                "cost": "₹179"
+              },
+              {
+                "name": "Sharia as-Souq and Corniche walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sofitel Legend Old Cataract Aswan",
+                "budget": "₹13,600–₹20,400/night"
+              },
+              {
+                "name": "Keylany Hotel",
+                "budget": "₹680–₹1,190/night"
+              }
+            ],
+            "meals": [
+              "Panorama",
+              "Nubian House",
+              "Aswan Moon"
+            ]
+          },
+          {
+            "theme": "Nubian history, engineering icons and island gardens",
+            "activities": [
+              {
+                "name": "Nubian Museum",
+                "cost": "₹680"
+              },
+              {
+                "name": "Aswan High Dam",
+                "cost": "₹136"
+              },
+              {
+                "name": "Unfinished Obelisk",
+                "cost": "₹374"
+              },
+              {
+                "name": "Aswan Botanical Gardens",
+                "cost": "₹34"
+              },
+              {
+                "name": "Motorboat to Kitchener’s Island",
+                "cost": "₹170–₹340"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sofitel Legend Old Cataract Aswan",
+                "budget": "₹13,600–₹20,400/night"
+              },
+              {
+                "name": "Keylany Hotel",
+                "budget": "₹680–₹1,190/night"
+              }
+            ],
+            "meals": [
+              "Al-Masry Restaurant",
+              "King Jamaica Restaurant & Café",
+              "Nubian House"
+            ]
+          },
+          {
+            "theme": "Abu Simbel sunrise pilgrimage from Aswan",
+            "activities": [
+              {
+                "name": "Hotel-organized Abu Simbel convoy",
+                "cost": "₹255–₹595"
+              },
+              {
+                "name": "Great Temple of Ramesses II and Small Temple of Nefertari",
+                "cost": "₹1,397"
+              },
+              {
+                "name": "Behind the Mountain relocation dome walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lake Nasser viewpoint",
+                "cost": "₹0"
+              },
+              {
+                "name": "Return to Aswan Corniche",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sofitel Legend Old Cataract Aswan",
+                "budget": "₹13,600–₹20,400/night"
+              },
+              {
+                "name": "Keylany Hotel",
+                "budget": "₹680–₹1,190/night"
+              }
+            ],
+            "meals": [
+              "Panorama",
+              "Aswan Moon",
+              "Al-Masry Restaurant"
+            ]
+          }
+        ]
+      },
+      "Hurghada": {
+        "name": "Hurghada",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Red Sea reefs, snorkeling and marina evenings",
+            "activities": [
+              {
+                "name": "Giftun Island National Park snorkeling trip",
+                "cost": "₹595–₹1,020"
+              },
+              {
+                "name": "Discover Scuba Diving",
+                "cost": "₹2,040–₹3,400"
+              },
+              {
+                "name": "Orange Bay or Mahmya Island beach day",
+                "cost": "₹1,360–₹2,040"
+              },
+              {
+                "name": "Hurghada Marina walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Steigenberger Al Dau Beach Hotel",
+                "budget": "₹6,800–₹11,050/night"
+              },
+              {
+                "name": "Jasmine Palace Resort & Spa",
+                "budget": "₹3,400–₹5,950/night"
+              }
+            ],
+            "meals": [
+              "Felfela Restaurant",
+              "Papas Bar & Restaurant",
+              "Little Buddha"
+            ]
+          },
+          {
+            "theme": "Resort downtime, aquarium stop and a desert finale",
+            "activities": [
+              {
+                "name": "Morning snorkeling trip",
+                "cost": "₹340–₹680"
+              },
+              {
+                "name": "Pool or private beach day",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hurghada Grand Aquarium",
+                "cost": "₹170"
+              },
+              {
+                "name": "Bedouin Safari with dinner and stargazing",
+                "cost": "₹1,360–₹2,550"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Steigenberger Al Dau Beach Hotel",
+                "budget": "₹6,800–₹11,050/night"
+              },
+              {
+                "name": "Jasmine Palace Resort & Spa",
+                "budget": "₹3,400–₹5,950/night"
+              }
+            ],
+            "meals": [
+              "Felfela Restaurant",
+              "Papas Bar & Restaurant",
+              "Little Buddha"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Cairo",
+        "to": "Alexandria",
+        "method": "Express train",
+        "cost": "₹2,975"
+      },
+      {
+        "from": "Alexandria",
+        "to": "Luxor",
+        "method": "Train back to Cairo + domestic flight",
+        "cost": "₹6,375–₹8,925"
+      },
+      {
+        "from": "Luxor",
+        "to": "Aswan",
+        "method": "Express train",
+        "cost": "₹170–₹340"
+      },
+      {
+        "from": "Aswan",
+        "to": "Hurghada",
+        "method": "Flight via Cairo",
+        "cost": "₹4,590–₹7,650"
+      },
+      {
+        "from": "Hurghada",
+        "to": "Cairo",
+        "method": "Domestic flight",
+        "cost": "₹2,040–₹3,400"
+      }
+    ],
+    "extras": [
+      "October to February is the easiest weather window for this route; March and April are still workable before the desert heat spikes.",
+      "India passport holders should apply on visa2egypt.gov.eg; the single-entry Egypt e-Visa is about ₹2,100.",
+      "Most major archaeological sites are now effectively card-first or card-only, but keep cash for taxis, tips and small restaurants.",
+      "Bargaining is expected in bazaars, and small baksheesh notes help with porters, boatmen and informal services.",
+      "A 4-night Nile cruise between Luxor and Aswan can replace separate hotel stays for about ₹13,440–₹50,400 per person depending on comfort level.",
+      "If diving is the priority, swap Hurghada for Sharm el-Sheikh to focus on Ras Mohammed and Tiran Island reefs.",
+      "Plan Abu Simbel around February 21–22 or October 21–22 if you want the famous sun-alignment festival in the inner sanctuary."
+    ],
+    "cityImages": {
+      "Cairo": [
+        "Great Pyramid of Giza aerial",
+        "Khan el-Khalili bazaar night",
+        "Muhammad Ali Mosque Citadel Cairo"
+      ],
+      "Alexandria": [
+        "Bibliotheca Alexandrina exterior modern",
+        "Citadel Qaitbay Alexandria harbour aerial",
+        "Alexandria Corniche waterfront Egypt"
+      ],
+      "Luxor": [
+        "Karnak Temple Hypostyle Hall Egypt",
+        "Valley of the Kings aerial Luxor",
+        "Luxor Temple night illuminated Avenue Sphinxes"
+      ],
+      "Aswan": [
+        "Philae Temple Isis Agilkia Island Aswan",
+        "Nubian Museum Aswan Aga Khan Award",
+        "Aswan Nile felucca Elephantine Island"
+      ],
+      "Hurghada": [
+        "Giftun Island Hurghada Red Sea coral reef",
+        "Hurghada marina Egypt resort",
+        "Red Sea coral reef Egypt underwater diving"
+      ]
+    }
+  }
+}

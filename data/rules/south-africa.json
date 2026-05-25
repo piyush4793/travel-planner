@@ -1,0 +1,710 @@
+{
+  "name": "South Africa",
+  "seed": true,
+  "lat": -29,
+  "lng": 25,
+  "region": "Africa",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [],
+  "budget": {
+    "solo": "₹1.2L–₹2L",
+    "couple": "₹2L–₹3.5L",
+    "family4": "₹4L–₹7L"
+  },
+  "experiences": [
+    "Kruger National Park Safari",
+    "Cape Town",
+    "Table Mountain",
+    "Garden Route",
+    "Winelands"
+  ],
+  "avoid": [
+    "High crime areas — research neighbourhoods",
+    "Winter in Cape Town (Jun-Aug) is wet"
+  ],
+  "combo": [
+    "Zimbabwe",
+    "Botswana"
+  ],
+  "landmark": "Table Mountain",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Cape Town",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "notes": "Table Mountain cable car, Cape Point, Boulders penguin beach and Winelands"
+    },
+    {
+      "name": "Johannesburg",
+      "lat": -26.2041,
+      "lng": 28.0473,
+      "notes": "Apartheid Museum, Soweto tour, Mandela House and Maboneng arts precinct"
+    },
+    {
+      "name": "Durban",
+      "lat": -29.8587,
+      "lng": 31.0218,
+      "notes": "Golden Mile beach, Umhlanga Rocks and spicy bunny chow street food"
+    },
+    {
+      "name": "Stellenbosch",
+      "lat": -33.9321,
+      "lng": 18.8602,
+      "notes": "Cape Dutch architecture, wine estate tours and Jonkershoek hiking"
+    },
+    {
+      "name": "Kruger National Park",
+      "lat": -23.9884,
+      "lng": 31.5547,
+      "notes": "Africa's premier Big Five game reserve with self-drive or guided safaris"
+    },
+    {
+      "name": "Garden Route",
+      "lat": -33.98,
+      "lng": 22.46,
+      "notes": "Scenic coastal road with Tsitsikamma forest, bungee bridge and whale watching"
+    }
+  ],
+  "itinerary": {
+    "sim": "Vodacom and MTN are the safest airport SIM picks for this route; expect roughly ₹455–₹685 for starter packs with 1GB data, with Vodacom strongest once you head toward Kruger National Park.",
+    "apps": [
+      "Uber",
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "Airbnb",
+      "SANParks",
+      "iER",
+      "Flightsite",
+      "XE Currency",
+      "Agoda"
+    ],
+    "cityOrder": [
+      "Cape Town",
+      "Stellenbosch",
+      "Garden Route",
+      "Kruger National Park",
+      "Johannesburg",
+      "Durban"
+    ],
+    "cities": {
+      "Cape Town": {
+        "name": "Cape Town",
+        "minDays": 3,
+        "recDays": 4,
+        "maxDays": 5,
+        "days": [
+          {
+            "theme": "Waterfront arrival, harbor views, and an easy first evening",
+            "activities": [
+              {
+                "name": "Check in around City Bowl or the V&A Waterfront and reset after the India connection",
+                "cost": "₹0"
+              },
+              {
+                "name": "V&A Waterfront promenade and Nobel Square walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Two Oceans Aquarium",
+                "cost": "₹920"
+              },
+              {
+                "name": "Sunset harbor cruise from the Waterfront",
+                "cost": "₹828"
+              },
+              {
+                "name": "Optional Zeitz MOCAA contemporary art stop",
+                "cost": "₹920"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Pepper Club Hotel & Spa",
+                "budget": "₹11,500–₹18,400/night"
+              },
+              {
+                "name": "Daddy Long Legs Boutique Hotel",
+                "budget": "₹6,440–₹10,120/night"
+              }
+            ],
+            "meals": [
+              "Societi Bistro",
+              "Plant",
+              "Bo-Kaap Kombuis"
+            ]
+          },
+          {
+            "theme": "Table Mountain views, Bo-Kaap color, and gardens below the cliffs",
+            "activities": [
+              {
+                "name": "Table Mountain Aerial Cableway return ticket",
+                "cost": "₹1,748"
+              },
+              {
+                "name": "Platteklip Gorge hike alternative if the cableway closes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bo-Kaap self-guided walk and photo stops",
+                "cost": "₹0"
+              },
+              {
+                "name": "Cape Malay cooking class in Bo-Kaap",
+                "cost": "₹2,990"
+              },
+              {
+                "name": "Kirstenbosch National Botanical Garden and Boomslang walkway",
+                "cost": "₹1,058"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Pepper Club Hotel & Spa",
+                "budget": "₹11,500–₹18,400/night"
+              },
+              {
+                "name": "POD Camps Bay",
+                "budget": "₹16,100–₹27,600/night"
+              }
+            ],
+            "meals": [
+              "La Mouette",
+              "Plant",
+              "Kleinsky’s"
+            ]
+          },
+          {
+            "theme": "Cape Peninsula road trip with penguins, cliffs, and ocean viewpoints",
+            "activities": [
+              {
+                "name": "Boulders Beach African penguin colony",
+                "cost": "₹1,067"
+              },
+              {
+                "name": "Cape Point and Cape of Good Hope reserve entry",
+                "cost": "₹1,624"
+              },
+              {
+                "name": "Chapman’s Peak Drive toll and viewpoints",
+                "cost": "₹239"
+              },
+              {
+                "name": "Hout Bay seal boat or harbor cruise",
+                "cost": "₹598"
+              },
+              {
+                "name": "Rental car for the full peninsula loop",
+                "cost": "₹2,300–₹3,220"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Pepper Club Hotel & Spa",
+                "budget": "₹11,500–₹18,400/night"
+              },
+              {
+                "name": "Daddy Long Legs Boutique Hotel",
+                "budget": "₹6,440–₹10,120/night"
+              }
+            ],
+            "meals": [
+              "Olympia Café",
+              "La Mouette",
+              "Chefs Warehouse & Canteen"
+            ]
+          },
+          {
+            "theme": "Robben Island history, city museums, and one more Cape Town night out",
+            "activities": [
+              {
+                "name": "Robben Island ferry and guided prison tour",
+                "cost": "₹3,588"
+              },
+              {
+                "name": "District Six and Company’s Garden walk between museum stops",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lion’s Head sunrise or sunset hike",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hop-on hop-off Cape Town sightseeing bus",
+                "cost": "₹966"
+              },
+              {
+                "name": "Optional Groot Constantia wine tasting on the way back",
+                "cost": "₹690"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cape Grace Hotel",
+                "budget": "₹23,000–₹41,400/night"
+              },
+              {
+                "name": "Daddy Long Legs Boutique Hotel",
+                "budget": "₹6,440–₹10,120/night"
+              }
+            ],
+            "meals": [
+              "Bo-Kaap Kombuis",
+              "Societi Bistro",
+              "Chefs Warehouse & Canteen"
+            ]
+          }
+        ]
+      },
+      "Stellenbosch": {
+        "name": "Stellenbosch",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Cape Dutch streets, wine estates, and a gourmet Winelands day",
+            "activities": [
+              {
+                "name": "Walk Dorp Street and Stellenbosch old town",
+                "cost": "₹0"
+              },
+              {
+                "name": "Spier Wine Farm tasting flight",
+                "cost": "₹828"
+              },
+              {
+                "name": "Warwick Estate picnic or tasting",
+                "cost": "₹2,300"
+              },
+              {
+                "name": "Franschhoek Wine Tram day pass",
+                "cost": "₹1,518"
+              },
+              {
+                "name": "Rupert Museum art stop",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lanzerac Hotel & Spa",
+                "budget": "₹23,000–₹41,400/night"
+              },
+              {
+                "name": "Summerwood Guest House",
+                "budget": "₹8,280–₹13,800/night"
+              }
+            ],
+            "meals": [
+              "Spier Wine Farm Restaurant",
+              "The Winelands Table",
+              "Terroir"
+            ]
+          }
+        ]
+      },
+      "Garden Route": {
+        "name": "Garden Route",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Wilderness beaches, Knysna lagoon, and the classic coastal drive",
+            "activities": [
+              {
+                "name": "Drive or Baz Bus from the Winelands toward Knysna",
+                "cost": "₹2,990–₹3,910"
+              },
+              {
+                "name": "Wilderness National Park boardwalk or short trail pass",
+                "cost": "₹267"
+              },
+              {
+                "name": "Knysna Heads viewpoint and lagoon lookouts",
+                "cost": "₹0"
+              },
+              {
+                "name": "Knysna Waterfront oyster and craft stop",
+                "cost": "₹0–₹920"
+              },
+              {
+                "name": "Knysna lagoon sunset cruise",
+                "cost": "₹1,380"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Turbine Boutique Hotel & Spa",
+                "budget": "₹11,500–₹20,700/night"
+              },
+              {
+                "name": "Pezula Resort Hotel & Spa",
+                "budget": "₹23,000–₹41,400/night"
+              }
+            ],
+            "meals": [
+              "Île de Pain",
+              "34° South",
+              "The Carriage"
+            ]
+          },
+          {
+            "theme": "Tsitsikamma adventure day with bridges, forest, and optional bungee",
+            "activities": [
+              {
+                "name": "Plettenberg Bay beach stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tsitsikamma National Park entry",
+                "cost": "₹1,067"
+              },
+              {
+                "name": "Storms River suspension bridge walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sea kayaking or adventure add-on in Tsitsikamma",
+                "cost": "₹2,070"
+              },
+              {
+                "name": "Bloukrans Bridge bungee jump or skywalk",
+                "cost": "₹897–₹5,037"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tsitsikamma Lodge & Spa",
+                "budget": "₹9,200–₹16,100/night"
+              },
+              {
+                "name": "Anlin Beach House",
+                "budget": "₹4,600–₹9,200/night"
+              }
+            ],
+            "meals": [
+              "Tsitsikamma Lodge Restaurant",
+              "Emily’s",
+              "Île de Pain"
+            ]
+          }
+        ]
+      },
+      "Kruger National Park": {
+        "name": "Kruger National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Arrival safari, sunset bush time, and the first Big Five search",
+            "activities": [
+              {
+                "name": "Flight or transfer into Hoedspruit or Nelspruit and drive to the gate",
+                "cost": "₹4,140–₹9,200"
+              },
+              {
+                "name": "Kruger conservation fee for one day",
+                "cost": "₹1,067"
+              },
+              {
+                "name": "Self-drive afternoon game loop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunset guided bush walk with ranger",
+                "cost": "₹2,300–₹3,220"
+              },
+              {
+                "name": "Night safari or spotlight game drive",
+                "cost": "₹2,070–₹2,760"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Protea Hotel by Marriott Kruger Gate",
+                "budget": "₹11,500–₹20,700/night"
+              },
+              {
+                "name": "SANParks Skukuza Rest Camp",
+                "budget": "₹5,520–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Skukuza Camp Restaurant",
+              "Cattle Baron Hazyview",
+              "Summerfields Kitchen"
+            ]
+          },
+          {
+            "theme": "Pre-dawn safari, picnic stops, and a full wildlife-heavy park day",
+            "activities": [
+              {
+                "name": "Open-vehicle sunrise game drive",
+                "cost": "₹3,220–₹4,600"
+              },
+              {
+                "name": "Kruger conservation fee for the second day",
+                "cost": "₹1,067"
+              },
+              {
+                "name": "Self-drive on Skukuza wildlife corridors",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bush breakfast or picnic supplies",
+                "cost": "₹920"
+              },
+              {
+                "name": "Afternoon guided game drive focused on big cats",
+                "cost": "₹2,760–₹4,140"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Protea Hotel by Marriott Kruger Gate",
+                "budget": "₹11,500–₹20,700/night"
+              },
+              {
+                "name": "SANParks Berg-en-Dal Camp",
+                "budget": "₹4,600–₹10,120/night"
+              }
+            ],
+            "meals": [
+              "Skukuza Camp Restaurant",
+              "Summerfields Kitchen",
+              "Packed picnic from camp shop"
+            ]
+          }
+        ]
+      },
+      "Johannesburg": {
+        "name": "Johannesburg",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Apartheid history, Soweto stories, and essential context for the country",
+            "activities": [
+              {
+                "name": "Apartheid Museum visit",
+                "cost": "₹1,012"
+              },
+              {
+                "name": "Half-day Soweto guided tour",
+                "cost": "₹3,450"
+              },
+              {
+                "name": "Mandela House Museum",
+                "cost": "₹322"
+              },
+              {
+                "name": "Constitution Hill guided visit",
+                "cost": "₹598"
+              },
+              {
+                "name": "Ride-share between Rosebank, Soweto, and Newtown",
+                "cost": "₹920–₹1,610"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Peech Hotel",
+                "budget": "₹11,500–₹20,700/night"
+              },
+              {
+                "name": "Protea Hotel Fire & Ice! by Marriott Johannesburg Melrose Arch",
+                "budget": "₹6,900–₹12,880/night"
+              }
+            ],
+            "meals": [
+              "Marble",
+              "Sakhumzi Restaurant",
+              "Ghaleb’s"
+            ]
+          },
+          {
+            "theme": "Sandton polish, Maboneng street art, and gold-rush-era entertainment",
+            "activities": [
+              {
+                "name": "Nelson Mandela Square and Sandton browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Maboneng Precinct street art and market stop",
+                "cost": "₹0–₹230"
+              },
+              {
+                "name": "Gold Reef City entry",
+                "cost": "₹1,150"
+              },
+              {
+                "name": "Neighbourgoods Market or Rosebank Sunday market snack run",
+                "cost": "₹0"
+              },
+              {
+                "name": "Johannesburg to Durban evening flight",
+                "cost": "₹3,220–₹8,280"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Southern Sun Hyde Park",
+                "budget": "₹5,520–₹10,120/night"
+              },
+              {
+                "name": "The Peech Hotel",
+                "budget": "₹11,500–₹20,700/night"
+              }
+            ],
+            "meals": [
+              "Salvation Café",
+              "Ghaleb’s",
+              "Kubu"
+            ]
+          }
+        ]
+      },
+      "Durban": {
+        "name": "Durban",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Golden Mile promenade, Indian market stops, and a seafood-and-curry finale",
+            "activities": [
+              {
+                "name": "uShaka Marine World Sea World ticket",
+                "cost": "₹1,610"
+              },
+              {
+                "name": "Optional Wet’n Wild water park add-on",
+                "cost": "₹1,196"
+              },
+              {
+                "name": "Golden Mile beachfront and Moses Mabhida Stadium arch walk",
+                "cost": "₹989"
+              },
+              {
+                "name": "Victoria Street Market spice and craft browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Durban Botanical Gardens or Phansi Museum stop",
+                "cost": "₹0–₹230"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Oyster Box",
+                "budget": "₹27,600–₹55,200/night"
+              },
+              {
+                "name": "Southern Sun Elangeni & Maharani",
+                "budget": "₹8,280–₹14,720/night"
+              }
+            ],
+            "meals": [
+              "Raj’s Vegetarian",
+              "Spice Route",
+              "Moyo"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Cape Town",
+        "to": "Stellenbosch",
+        "method": "Rental car, Uber, or guided Winelands day tour via the N1/N2 corridor",
+        "cost": "₹1,150–₹4,600"
+      },
+      {
+        "from": "Stellenbosch",
+        "to": "Garden Route",
+        "method": "Drive the N2 to Knysna or use the Baz Bus toward Knysna and Plettenberg Bay",
+        "cost": "₹2,990–₹4,485"
+      },
+      {
+        "from": "Garden Route",
+        "to": "Kruger National Park",
+        "method": "Drive to George Airport, then fly to Hoedspruit or Nelspruit and transfer to your lodge or camp",
+        "cost": "₹8,280–₹18,400"
+      },
+      {
+        "from": "Kruger National Park",
+        "to": "Johannesburg",
+        "method": "Drive to Nelspruit or Hoedspruit airport and take the short domestic flight to OR Tambo",
+        "cost": "₹3,680–₹8,280"
+      },
+      {
+        "from": "Johannesburg",
+        "to": "Durban",
+        "method": "Direct domestic flight to King Shaka International; bus is cheaper but much slower",
+        "cost": "₹3,220–₹8,280"
+      },
+      {
+        "from": "Durban",
+        "to": "Johannesburg",
+        "method": "Short flight back to OR Tambo for the India connection",
+        "cost": "₹3,220–₹8,280"
+      }
+    ],
+    "extras": [
+      "June to September works especially well for this route: Cape Town stays cool but clear enough for scenery, while Kruger’s dry season usually improves wildlife spotting around water sources.",
+      "Robben Island ferries often sell out well in advance, so book that slot before finalizing the rest of your Cape Town days.",
+      "Vodacom is the most dependable SIM choice if Kruger is a priority; city speeds are good, but mobile data becomes patchier once you are deep inside the park.",
+      "Baz Bus is useful if you want the Garden Route without self-driving, but a rental car gives you far more flexibility for Cape Peninsula viewpoints and Tsitsikamma stops.",
+      "Durban is the easiest South African stop for vegetarian Indian travelers thanks to Raj’s Vegetarian, curry houses, and Victoria Street Market food stalls.",
+      "Keep big-city nights simple: stay in well-rated tourist districts such as City Bowl, Sandton, Rosebank, or Umhlanga and use ride-hailing instead of long late walks."
+    ],
+    "cityImages": {
+      "Cape Town": [
+        "Table Mountain cableway Cape Town panorama",
+        "Bo-Kaap colorful houses Cape Town",
+        "Boulders Beach penguins Simon’s Town"
+      ],
+      "Stellenbosch": [
+        "Stellenbosch vineyard Cape Winelands",
+        "Franschhoek Wine Tram South Africa",
+        "Cape Dutch architecture Stellenbosch"
+      ],
+      "Garden Route": [
+        "Knysna Heads South Africa lagoon",
+        "Tsitsikamma Storms River suspension bridge",
+        "Plettenberg Bay beach Garden Route"
+      ],
+      "Kruger National Park": [
+        "Kruger National Park elephant herd safari",
+        "Kruger leopard on tree branch",
+        "Skukuza Rest Camp South Africa"
+      ],
+      "Johannesburg": [
+        "Apartheid Museum Johannesburg entrance",
+        "Soweto Vilakazi Street Johannesburg",
+        "Johannesburg skyline Hillbrow Tower"
+      ],
+      "Durban": [
+        "uShaka Marine World Durban",
+        "Golden Mile promenade Durban",
+        "Moses Mabhida Stadium Durban arch"
+      ]
+    }
+  }
+}

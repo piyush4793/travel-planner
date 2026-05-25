@@ -1,0 +1,704 @@
+{
+  "name": "New Zealand",
+  "seed": true,
+  "lat": -40.9006,
+  "lng": 174.886,
+  "region": "Oceania",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "June",
+    "July"
+  ],
+  "budget": {
+    "solo": "₹2L–₹3.5L",
+    "couple": "₹3.5L–₹6L",
+    "family4": "₹7L–₹12L"
+  },
+  "experiences": [
+    "Fjords (Milford Sound)",
+    "Hobbiton",
+    "Bungee Jumping",
+    "Lord of the Rings",
+    "Wine"
+  ],
+  "avoid": [],
+  "combo": [
+    "Australia",
+    "Fiji"
+  ],
+  "landmark": "Milford Sound",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [
+    {
+      "label": "Book Hobbiton Movie Set Tour",
+      "url": "https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Auckland",
+      "lat": -36.8485,
+      "lng": 174.7633,
+      "notes": "Sky Tower, Waiheke Island wine, Rangitoto volcano and America's Cup harbour"
+    },
+    {
+      "name": "Queenstown",
+      "lat": -45.0312,
+      "lng": 168.6626,
+      "notes": "Bungee jumping birthplace, Milford Sound day trip and Remarkables skiing"
+    },
+    {
+      "name": "Wellington",
+      "lat": -41.2865,
+      "lng": 174.7762,
+      "notes": "Te Papa national museum, Weta Workshop tour and Cuba Street cafe culture"
+    },
+    {
+      "name": "Rotorua",
+      "lat": -38.1368,
+      "lng": 176.2497,
+      "notes": "Geothermal geysers, Wai-O-Tapu colour pools and Maori haka performance"
+    },
+    {
+      "name": "Christchurch",
+      "lat": -43.5321,
+      "lng": 172.6362,
+      "notes": "Rebuilt Cardboard Cathedral, Hagley Park and Antarctic Centre gateway"
+    },
+    {
+      "name": "Fiordland",
+      "lat": -45.4164,
+      "lng": 167.7196,
+      "notes": "Milford Sound and Doubtful Sound by boat through ancient glacier fiords"
+    }
+  ],
+  "itinerary": {
+    "sim": "Skinny Mobile or 2degrees — buy at Auckland Airport arrivals; starter packs begin around ₹1,500 with ample data for a 2-week trip.",
+    "apps": [
+      "HappyCow (veg-friendly restaurant finder across major NZ cities)",
+      "MetService NZ (more reliable than generic weather apps for fast-changing conditions)",
+      "InterCity (book long-distance buses between North Island cities)",
+      "Uber (works well in Auckland, Wellington, Christchurch, and Queenstown)",
+      "Klook (pre-book gondola, Hobbiton, and adventure activities)",
+      "NZTA Waka Kotahi (road closures and Milford Road alerts)",
+      "Booking.com (best mix of refundable NZ hotel inventory)"
+    ],
+    "cityOrder": [
+      "Auckland",
+      "Rotorua",
+      "Wellington",
+      "Christchurch",
+      "Queenstown",
+      "Fiordland"
+    ],
+    "cities": {
+      "Auckland": {
+        "name": "Auckland",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "City of Sails — Harbour Icons & Volcanic Views",
+            "activities": [
+              {
+                "name": "Sky Tower observation deck for skyline and harbour panoramas",
+                "cost": "₹1,600 pp"
+              },
+              {
+                "name": "Auckland War Memorial Museum for Māori and Pacific collections",
+                "cost": "₹1,400 pp"
+              },
+              {
+                "name": "Rangitoto Island return ferry and volcanic summit walk",
+                "cost": "₹1,800 pp"
+              },
+              {
+                "name": "Devonport ferry and Mount Victoria viewpoint",
+                "cost": "₹700 pp"
+              },
+              {
+                "name": "Evening stroll around Viaduct Harbour and Wynyard Quarter",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "M Social Auckland",
+                "budget": "₹11,000–18,000/night"
+              },
+              {
+                "name": "Cordis Auckland",
+                "budget": "₹15,000–22,000/night"
+              }
+            ],
+            "meals": [
+              "Swagat Indian Cuisine",
+              "Federal Delicatessen",
+              "Giapo"
+            ]
+          },
+          {
+            "theme": "Waiheke Island — Vineyards, Beaches & Easy Island Hopping",
+            "activities": [
+              {
+                "name": "Fullers360 return ferry to Waiheke Island",
+                "cost": "₹2,500 pp"
+              },
+              {
+                "name": "Mudbrick Vineyard tasting with Hauraki Gulf views",
+                "cost": "₹1,500 pp"
+              },
+              {
+                "name": "Onetangi Beach swim and coastal walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Stonyridge Vineyard tasting flight",
+                "cost": "₹2,000 pp"
+              },
+              {
+                "name": "Sunset walk along Queen Street back in the CBD",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mercure Auckland Queen Street",
+                "budget": "₹10,000–15,000/night"
+              },
+              {
+                "name": "voco Auckland City Centre",
+                "budget": "₹13,000–19,000/night"
+              }
+            ],
+            "meals": [
+              "Amano",
+              "Little India",
+              "The Heke Kitchen & Brewery"
+            ]
+          }
+        ]
+      },
+      "Rotorua": {
+        "name": "Rotorua",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Geothermal Wonderland — Geysers, Mud Pools & Māori Culture",
+            "activities": [
+              {
+                "name": "Wai-O-Tapu Thermal Wonderland and Lady Knox Geyser",
+                "cost": "₹2,000 pp"
+              },
+              {
+                "name": "Te Puia with Pohutu Geyser and Māori Arts & Crafts Institute",
+                "cost": "₹2,950 pp"
+              },
+              {
+                "name": "Kuirau Park thermal footbaths in the city centre",
+                "cost": "₹0"
+              },
+              {
+                "name": "Government Gardens lakefront walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tamaki Māori Village hāngī dinner and cultural performance",
+                "cost": "₹7,500–9,000 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Quest Rotorua Central",
+                "budget": "₹8,000–12,000/night"
+              },
+              {
+                "name": "Novotel Rotorua Lakeside",
+                "budget": "₹12,000–16,000/night"
+              }
+            ],
+            "meals": [
+              "Abracadabra Cafe and Bar",
+              "Capers Epicurean",
+              "Fat Dog Cafe & Bar"
+            ]
+          },
+          {
+            "theme": "Redwoods, Farm Fun & Scenic Lakes",
+            "activities": [
+              {
+                "name": "Agrodome Farm Show and National Kiwi Hatchery combo",
+                "cost": "₹3,250 pp"
+              },
+              {
+                "name": "Whakarewarewa Forest walking trails among the redwoods",
+                "cost": "₹0"
+              },
+              {
+                "name": "Buried Village of Te Wairoa museum",
+                "cost": "₹1,250 pp"
+              },
+              {
+                "name": "Blue and Green Lakes scenic drive",
+                "cost": "₹0"
+              },
+              {
+                "name": "Skyline Rotorua gondola and luge combo",
+                "cost": "₹4,500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Distinction Rotorua Hotel",
+                "budget": "₹10,000–14,000/night"
+              },
+              {
+                "name": "Pullman Rotorua",
+                "budget": "₹13,000–18,000/night"
+              }
+            ],
+            "meals": [
+              "Relish Cafe",
+              "Urbano Bistro",
+              "Atticus Finch"
+            ]
+          }
+        ]
+      },
+      "Wellington": {
+        "name": "Wellington",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Capital Highlights — Te Papa, Cable Car & Cuba Street",
+            "activities": [
+              {
+                "name": "Te Papa Tongarewa national museum",
+                "cost": "₹0"
+              },
+              {
+                "name": "Wellington Cable Car return ride from Lambton Quay",
+                "cost": "₹350 pp"
+              },
+              {
+                "name": "Botanic Garden walk from the cable car top station",
+                "cost": "₹0"
+              },
+              {
+                "name": "Cuba Street and Bucket Fountain food-and-shopping walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mount Victoria Lookout for dusk harbour views",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Wellington",
+                "budget": "₹8,500–12,500/night"
+              },
+              {
+                "name": "QT Wellington",
+                "budget": "₹13,500–22,000/night"
+              }
+            ],
+            "meals": [
+              "Aunty Mena's Vegetarian Restaurant",
+              "Kisa",
+              "Prefab Eatery"
+            ]
+          },
+          {
+            "theme": "Weta, Wildlife & Waterfront Neighbourhoods",
+            "activities": [
+              {
+                "name": "Weta Workshop Cave tour in Miramar",
+                "cost": "₹2,300 pp"
+              },
+              {
+                "name": "Zealandia ecosanctuary general admission",
+                "cost": "₹1,750 pp"
+              },
+              {
+                "name": "Beehive and Parliament guided tour",
+                "cost": "₹0"
+              },
+              {
+                "name": "Oriental Bay promenade and beach stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Evening craft-beer stop around Courtenay Place",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Rydges Wellington",
+                "budget": "₹12,000–18,000/night"
+              },
+              {
+                "name": "Naumi Studio Wellington",
+                "budget": "₹9,500–14,000/night"
+              }
+            ],
+            "meals": [
+              "The Botanist",
+              "Southern Cross Garden Bar Restaurant",
+              "Beach Babylon"
+            ]
+          }
+        ]
+      },
+      "Christchurch": {
+        "name": "Christchurch",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Garden City Reborn — Cathedral, Avon River & Central Art",
+            "activities": [
+              {
+                "name": "ChristChurch Cathedral Reinstatement Project and Cathedral Square walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Botanic Gardens and Hagley Park",
+                "cost": "₹0"
+              },
+              {
+                "name": "Punt on the Avon River",
+                "cost": "₹1,750 pp"
+              },
+              {
+                "name": "Christchurch Art Gallery Te Puna o Waiwhetū",
+                "cost": "₹0"
+              },
+              {
+                "name": "New Regent Street and Riverside Market evening wander",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibis Christchurch",
+                "budget": "₹7,500–10,500/night"
+              },
+              {
+                "name": "Crowne Plaza Christchurch",
+                "budget": "₹12,000–17,000/night"
+              }
+            ],
+            "meals": [
+              "Lotus-Heart Vegetarian Restaurant",
+              "Strange & Saints",
+              "Riverside Kitchen"
+            ]
+          },
+          {
+            "theme": "Antarctic Gateway — Port Hills, TranzAlpine & Coastal Detours",
+            "activities": [
+              {
+                "name": "International Antarctic Centre",
+                "cost": "₹2,750 pp"
+              },
+              {
+                "name": "Christchurch Gondola for Port Hills and Canterbury Plains views",
+                "cost": "₹1,600 pp"
+              },
+              {
+                "name": "TranzAlpine scenic train return to Greymouth",
+                "cost": "₹7,950 pp"
+              },
+              {
+                "name": "Sumner Beach walk and cave views",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lyttelton Harbour village visit",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Observatory Hotel",
+                "budget": "₹18,000–26,000/night"
+              },
+              {
+                "name": "Novotel Christchurch Cathedral Square",
+                "budget": "₹11,000–16,000/night"
+              }
+            ],
+            "meals": [
+              "Hello Sunday",
+              "Fiddlesticks Restaurant & Bar",
+              "SUPER"
+            ]
+          }
+        ]
+      },
+      "Queenstown": {
+        "name": "Queenstown",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Arrival on Lake Wakatipu — Gondola, Gardens & Historic Steamer",
+            "activities": [
+              {
+                "name": "Skyline Queenstown gondola to Bob's Peak",
+                "cost": "₹1,950 pp"
+              },
+              {
+                "name": "Luge rides from the Skyline complex",
+                "cost": "₹2,750 pp"
+              },
+              {
+                "name": "TSS Earnslaw vintage steamship cruise on Lake Wakatipu",
+                "cost": "₹3,950 pp"
+              },
+              {
+                "name": "Queenstown Gardens lakeside walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunset around Marine Parade and Steamer Wharf",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Heritage Queenstown",
+                "budget": "₹12,000–18,000/night"
+              },
+              {
+                "name": "Novotel Queenstown Lakeside",
+                "budget": "₹16,000–24,000/night"
+              }
+            ],
+            "meals": [
+              "Vudu Cafe & Larder",
+              "The Cow",
+              "Bespoke Kitchen"
+            ]
+          },
+          {
+            "theme": "Adrenaline Capital — Bungy, Jet Boat & Hot Pools",
+            "activities": [
+              {
+                "name": "Kawarau Bridge Bungy with AJ Hackett",
+                "cost": "₹10,250 pp"
+              },
+              {
+                "name": "Shotover Jet canyon ride",
+                "cost": "₹6,450 pp"
+              },
+              {
+                "name": "NZone Skydive from 15,000 ft",
+                "cost": "₹15,000–17,500 pp"
+              },
+              {
+                "name": "Onsen Hot Pools private soak above the Shotover River",
+                "cost": "₹5,000 per couple"
+              },
+              {
+                "name": "Lakefront recovery stroll and cookie stop in town",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hilton Queenstown Resort & Spa",
+                "budget": "₹18,000–28,000/night"
+              },
+              {
+                "name": "Copthorne Hotel & Apartments Queenstown Lakeview",
+                "budget": "₹10,000–15,000/night"
+              }
+            ],
+            "meals": [
+              "Sherwood",
+              "Rata",
+              "Fergburger"
+            ]
+          },
+          {
+            "theme": "Arrowtown & Gibbston Valley — Gold-Rush Heritage and Pinot Noir",
+            "activities": [
+              {
+                "name": "Arrowtown Chinese Settlement and gold-rush main street",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lakes District Museum in Arrowtown",
+                "cost": "₹500 pp"
+              },
+              {
+                "name": "Gibbston Valley Winery cave tour and tasting",
+                "cost": "₹2,000 pp"
+              },
+              {
+                "name": "Crown Range drive toward Cardrona lookout",
+                "cost": "₹0"
+              },
+              {
+                "name": "Queenstown Hill Time Walk hike",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kamana Lakehouse",
+                "budget": "₹14,000–20,000/night"
+              },
+              {
+                "name": "Mi-pad Queenstown",
+                "budget": "₹11,000–16,000/night"
+              }
+            ],
+            "meals": [
+              "Fishbone Bar & Grill",
+              "Blue Kanu",
+              "Yonder"
+            ]
+          }
+        ]
+      },
+      "Fiordland": {
+        "name": "Fiordland",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Fiordland National Park — Milford Sound Cruise, Waterfalls & Alpine Road Stops",
+            "activities": [
+              {
+                "name": "Coach day tour from Queenstown via Te Anau, Mirror Lakes and Homer Tunnel",
+                "cost": "₹7,500–10,000 pp"
+              },
+              {
+                "name": "Milford Sound scenic cruise past Mitre Peak and Stirling Falls",
+                "cost": "₹3,500–8,750 pp"
+              },
+              {
+                "name": "Milford Sound kayaking add-on with a guided operator",
+                "cost": "₹8,500 pp"
+              },
+              {
+                "name": "Milford Deep Underwater Observatory add-on",
+                "cost": "₹1,800 pp"
+              },
+              {
+                "name": "The Chasm and other Milford Road scenic stops on the return",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Fiordland Lakeview Motel and Apartments, Te Anau",
+                "budget": "₹8,500–13,500/night"
+              },
+              {
+                "name": "Distinction Luxmore Hotel, Te Anau",
+                "budget": "₹9,000–14,000/night"
+              }
+            ],
+            "meals": [
+              "Redcliff Restaurant & Bar",
+              "Sandfly Cafe",
+              "Miles Better Pies"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Auckland",
+        "to": "Rotorua",
+        "method": "InterCity bus via SH1/SH5",
+        "cost": "₹1,500–2,500 pp"
+      },
+      {
+        "from": "Rotorua",
+        "to": "Wellington",
+        "method": "InterCity bus or self-drive via Taupo",
+        "cost": "₹2,500–4,000 pp"
+      },
+      {
+        "from": "Wellington",
+        "to": "Christchurch",
+        "method": "Air New Zealand or Jetstar flight",
+        "cost": "₹3,500–7,500 pp"
+      },
+      {
+        "from": "Christchurch",
+        "to": "Queenstown",
+        "method": "Air New Zealand or Jetstar flight",
+        "cost": "₹4,500–8,500 pp"
+      },
+      {
+        "from": "Queenstown",
+        "to": "Fiordland",
+        "method": "GreatSights or RealNZ coach-and-cruise day tour",
+        "cost": "₹7,500–10,000 pp"
+      }
+    ],
+    "extras": [
+      "Hobbiton Movie Set day trip from Auckland or Rotorua",
+      "Aoraki / Mount Cook National Park for alpine scenery and starry skies",
+      "Lake Tekapo Dark Sky Reserve and Church of the Good Shepherd",
+      "Franz Josef Glacier heli-hike extension",
+      "Abel Tasman National Park for kayaking and coastal walks"
+    ],
+    "cityImages": {
+      "Auckland": [
+        "Auckland Sky Tower harbour New Zealand",
+        "Waiheke Island vineyard Hauraki Gulf",
+        "Rangitoto Island volcanic cone Auckland"
+      ],
+      "Rotorua": [
+        "Pohutu Geyser eruption Rotorua New Zealand",
+        "Wai-O-Tapu Champagne Pool New Zealand",
+        "Rotorua Maori cultural performance haka"
+      ],
+      "Wellington": [
+        "Wellington cable car red New Zealand",
+        "Te Papa museum waterfront Wellington",
+        "Mount Victoria lookout Wellington harbour"
+      ],
+      "Christchurch": [
+        "Christchurch Cardboard Cathedral New Zealand",
+        "Christchurch Botanic Gardens Avon River",
+        "Port Hills gondola Christchurch Canterbury Plains"
+      ],
+      "Queenstown": [
+        "Queenstown Remarkables Lake Wakatipu aerial",
+        "Queenstown Skyline Gondola New Zealand",
+        "Kawarau Bridge bungy jump Queenstown"
+      ],
+      "Fiordland": [
+        "Milford Sound Mitre Peak New Zealand fiord",
+        "Fiordland National Park mirror lakes road",
+        "Milford Sound cruise waterfalls Stirling"
+      ]
+    }
+  }
+}
