@@ -224,6 +224,26 @@ export const PROVIDER_LABELS: Record<LLMProviderType, string> = {
   gemini: "Gemini",
 };
 
+/** Per-1M-token pricing (USD) — approximate, for cost estimation only */
+export const PROVIDER_PRICING: Record<LLMProviderType, { model: string; inputPer1M: number; outputPer1M: number }> = {
+  openai:  { model: "GPT-4o mini",         inputPer1M: 0.15,  outputPer1M: 0.60 },
+  claude:  { model: "Claude 3.5 Haiku",    inputPer1M: 0.80,  outputPer1M: 4.00 },
+  gemini:  { model: "Gemini 2.0 Flash",    inputPer1M: 0.10,  outputPer1M: 0.40 },
+};
+
+/** Estimate cost in USD from token counts */
+export function estimateCost(provider: LLMProviderType, inputTokens: number, outputTokens: number): number {
+  const p = PROVIDER_PRICING[provider];
+  return (inputTokens / 1_000_000) * p.inputPer1M + (outputTokens / 1_000_000) * p.outputPer1M;
+}
+
+/** Format cost as human-readable string */
+export function formatCost(usd: number): string {
+  if (usd < 0.001) return "<$0.001";
+  if (usd < 0.01) return `~$${usd.toFixed(3)}`;
+  return `~$${usd.toFixed(2)}`;
+}
+
 /** Quick connectivity check — sends a tiny request to validate the key */
 export async function validateKey(type: LLMProviderType, apiKey: string): Promise<{ ok: boolean; error?: string }> {
   try {

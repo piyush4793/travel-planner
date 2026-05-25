@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import type { LLMProviderType, LLMKeys } from "../../types";
 import { loadLS, saveLS } from "../../utils/storage";
 import { LS_KEYS } from "../../utils/lsKeys";
-import { validateKey, PROVIDER_LABELS } from "../../utils/ai/llmProvider";
+import { validateKey, PROVIDER_LABELS, PROVIDER_PRICING } from "../../utils/ai/llmProvider";
 
 export function getLLMKeys(): LLMKeys {
   return loadLS<LLMKeys>(LS_KEYS.LLM_KEYS, {});
@@ -213,6 +213,37 @@ export default function SettingsModal({ open, onClose, onOpenChat }: Props) {
             ✨ Start Planning with AI
           </button>
         )}
+
+        {/* Pricing reference */}
+        <details className="text-[11px] text-white/50 cursor-pointer">
+          <summary className="hover:text-white/70 font-medium">💰 Token pricing reference</summary>
+          <div className="mt-2 rounded-lg overflow-hidden border border-white/10">
+            <table className="w-full text-[10px]">
+              <thead>
+                <tr className="bg-white/5 text-white/60">
+                  <th className="px-3 py-1.5 text-left font-bold">Provider</th>
+                  <th className="px-3 py-1.5 text-left font-bold">Model</th>
+                  <th className="px-3 py-1.5 text-right font-bold">Input $/1M</th>
+                  <th className="px-3 py-1.5 text-right font-bold">Output $/1M</th>
+                </tr>
+              </thead>
+              <tbody>
+                {PROVIDERS.map((p) => {
+                  const pr = PROVIDER_PRICING[p];
+                  return (
+                    <tr key={p} className={`border-t border-white/5 ${p === provider ? "bg-blue-500/10 text-white/80" : "text-white/40"}`}>
+                      <td className="px-3 py-1.5">{PROVIDER_ICONS[p]} {PROVIDER_LABELS[p]}</td>
+                      <td className="px-3 py-1.5">{pr.model}</td>
+                      <td className="px-3 py-1.5 text-right font-mono">${pr.inputPer1M}</td>
+                      <td className="px-3 py-1.5 text-right font-mono">${pr.outputPer1M}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-[9px] text-white/30 mt-1">Approximate pricing — check provider dashboards for exact rates</p>
+        </details>
 
         {/* Security notice */}
         <div className="bg-amber-500/10 border border-amber-500/20 rounded-lg px-3 py-2.5 space-y-1">

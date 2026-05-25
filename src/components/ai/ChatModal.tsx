@@ -4,6 +4,7 @@ import { useChatSession } from "../../hooks/useChatSession";
 import type { LLMTripPlanResult } from "../../utils/ai/llmTransform";
 import { getLLMKeys, getActiveProvider } from "./SettingsModal";
 import { parseImportedText, fetchChatLink, importResultToLLM, type ImportResult } from "../../utils/importParser";
+import { estimateCost, formatCost, PROVIDER_PRICING } from "../../utils/ai/llmProvider";
 
 type Props = {
   open: boolean;
@@ -136,13 +137,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
               </>
             )}
             {hasConversation && !finished && !finalizing && !pasteMode && !linkMode && (
-              <button
-                onClick={finishChat}
-                disabled={loading}
-                className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-100 disabled:text-slate-300 text-white text-[11px] font-semibold rounded-lg transition-colors"
-              >
-                ✓ Finish & Generate
-              </button>
+              <FinishButton tokens={tokenUsage.totalTokens} loading={loading} onClick={finishChat} />
             )}
             <button onClick={handleClose} disabled={finalizing}
               className={`text-lg leading-none p-1 ${finalizing ? "text-slate-200 cursor-not-allowed" : "text-slate-400 hover:text-slate-700"}`}>✕</button>
@@ -321,7 +316,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
             <div className="flex items-center gap-3 mt-1.5">
               <p className="text-[10px] text-slate-400 flex-1">Shift+Enter for new line · Enter to send</p>
               {tokenUsage.totalTokens > 0 && (
-                <TokenBadge tokens={tokenUsage.totalTokens} />
+                <TokenBadge tokens={tokenUsage.totalTokens} inputTokens={tokenUsage.inputTokens} outputTokens={tokenUsage.outputTokens} />
               )}
               {usageWarning && (
                 <p className="text-[10px] text-amber-600 font-medium">{usageWarning}</p>
@@ -461,11 +456,52 @@ function formatTokens(n: number): string {
   return String(n);
 }
 
-function TokenBadge({ tokens }: { tokens: number }) {
-  const color = tokens < 4000 ? "text-emerald-600" : tokens < 12000 ? "text-amber-600" : "text-red-600";
+function FinishButton({ tokens, loading, onClick }: { tokens: number; loading: boolean; onClick: () => void }) {
+  const provider = getActiveProvider();
+  // Estimate: "Finish" will send ~2x current tokens (re-sends context + generation prompt + response)
+  const estExtraTokens = Math.max(tokens, 2000);
+  const estCost = estimateCost(provider, Math.round(estExtraTokens * 0.6), Math.round(estExtraTokens * 0.4));
+  const costLabel = tokens > 0 ? ` (${formatCost(estCost)} est.)` : "";
+
   return (
-    <span className={`text-[10px] font-medium ${color}`}>
-      ~{formatTokens(tokens)} tokens
+    <button
+      onClick={onClick}
+      disabled={loading}
+      className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-100 disabled:text-slate-300 text-white text-[11px] font-semibold rounded-lg transition-colors"
+      title={tokens > 0 ? `This will use ~${formatTokens(estExtraTokens)} additional tokens (${formatCost(estCost)})` : undefined}
+    >
+      ✓ Finish & Generate{costLabel}
+    </button>
+  );
+}
+
+function TokenBadge({ tokens, inputTokens, outputTokens }: { tokens: number; inputTokens?: number; outputTokens?: number }) {
+  const [showTip, setShowTip] = useState(false);
+  const color = tokens < 4000 ? "text-emerald-600" : tokens < 12000 ? "text-amber-600" : "text-red-600";
+  const provider = getActiveProvider();
+  const cost = estimateCost(provider, inputTokens ?? Math.round(tokens * 0.6), outputTokens ?? Math.round(tokens * 0.4));
+  const pricing = PROVIDER_PRICING[provider];
+
+  return (
+    <span
+      className={`text-[10px] font-medium ${color} cursor-help relative`}
+      onMouseEnter={() => setShowTip(true)}
+      onMouseLeave={() => setShowTip(false)}
+    >
+      ~{formatTokens(tokens)} tokens · {formatCost(cost)}
+      {showTip && (
+        <span className="absolute bottom-full right-0 mb-1.5 bg-slate-900 text-white text-[10px] font-normal rounded-lg px-3 py-2 shadow-lg whitespace-nowrap z-50 leading-relaxed">
+          <span className="block font-bold mb-1">{pricing.model} pricing</span>
+          <span className="block">Input: ${pricing.inputPer1M}/1M tokens</span>
+          <span className="block">Output: ${pricing.outputPer1M}/1M tokens</span>
+          {inputTokens !== undefined && outputTokens !== undefined && (
+            <>
+              <span className="block mt-1 border-t border-white/20 pt-1">In: {formatTokens(inputTokens)} · Out: {formatTokens(outputTokens)}</span>
+            </>
+          )}
+          <span className="block mt-0.5 font-semibold text-emerald-400">Est. cost: {formatCost(cost)}</span>
+        </span>
+      )}
     </span>
   );
 }
