@@ -22,9 +22,9 @@ export type ConsolidatedCountry = {
   itinerary: CountryRule | null;
 };
 
-// Dynamic importers discovered at build time
+// Dynamic importers discovered at build time (exclude index.json only)
 const ruleModules = import.meta.glob<ConsolidatedCountry>(
-  "../../data/rules/[!i]*.json",
+  ["../../data/rules/*.json", "!../../data/rules/index.json"],
   { import: "default" },
 );
 
