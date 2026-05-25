@@ -159,7 +159,8 @@ export default function CountryPanel({
                 </button>
                 <OverflowMenu onEdit={onEdit} onDelete={onDelete} />
                 <button onClick={onClose}
-                  className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 text-lg leading-none p-1 rounded-lg transition-colors">
+                  className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 text-lg leading-none p-1 rounded-lg transition-colors"
+                  aria-label="Close panel">
                   ✕
                 </button>
               </div>
@@ -614,6 +615,8 @@ function OverflowMenu({ onEdit, onDelete }: { onEdit: () => void; onDelete: () =
       <button
         onClick={() => setOpen((o) => !o)}
         className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 text-lg leading-none p-1 rounded-lg transition-colors"
+        aria-label="More options"
+        aria-expanded={open}
       >
         ⋯
       </button>

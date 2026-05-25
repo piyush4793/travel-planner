@@ -3,7 +3,9 @@ import { createPortal } from "react-dom";
 import { getFeatureFlags, setFeatureFlag, PAID_FLAGS, type FeatureFlags } from "../../utils/featureFlags";
 
 const IS_DEV = typeof window !== "undefined" &&
-  (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
+  (window.location.hostname === "localhost" ||
+   window.location.hostname === "127.0.0.1" ||
+   new URLSearchParams(window.location.search).has("dev"));
 
 type FlagMeta = { label: string; description: string };
 
