@@ -72,5 +72,562 @@
       "notes": "Colorful Chinatown, Songdo smart city and gateway to the archipelago"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "KT Olleh airport tourist SIM costs about ₹2,640 for 10 days of unlimited data; SK Telecom is a close backup at about ₹2,520.",
+    "apps": [
+      "Naver Map",
+      "Kakao T",
+      "Papago",
+      "Korail Talk",
+      "VisitKorea",
+      "Klook"
+    ],
+    "cityOrder": [
+      "Incheon",
+      "Seoul",
+      "Busan",
+      "Gyeongju",
+      "Jeju"
+    ],
+    "cities": {
+      "Incheon": {
+        "name": "Incheon",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Airport landing, Chinatown lanes & Songdo waterfront",
+            "activities": [
+              {
+                "name": "AREX from Incheon Airport into town or Seoul",
+                "cost": "₹285 pp"
+              },
+              {
+                "name": "Incheon Chinatown snack walk and Jjajangmyeon Museum",
+                "cost": "₹60 pp"
+              },
+              {
+                "name": "Songwol-dong Fairy Tale Village photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Songdo Central Park canal walk or water taxi",
+                "cost": "₹180 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Grand Hyatt Incheon",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "Holiday Inn Incheon Songdo",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Sinseung Banjum",
+              "Arabesque",
+              "Cafe Value Songdo"
+            ]
+          }
+        ]
+      },
+      "Seoul": {
+        "name": "Seoul",
+        "minDays": 2,
+        "recDays": 4,
+        "maxDays": 5,
+        "days": [
+          {
+            "theme": "Arrival ease, Myeongdong streets & Han River lights",
+            "activities": [
+              {
+                "name": "AREX all-stop train from Incheon to Seoul Station",
+                "cost": "₹285 pp"
+              },
+              {
+                "name": "Myeongdong street-food and shopping walk",
+                "cost": "₹300–₹600 pp"
+              },
+              {
+                "name": "Cheonggyecheon Stream evening stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Banpo Hangang Park Moonlight Rainbow Fountain",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibis Styles Ambassador Seoul Myeongdong",
+                "budget": "₹6,000–₹8,400/night"
+              },
+              {
+                "name": "Tmark Grand Hotel Myeongdong",
+                "budget": "₹9,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Kimbap Nara Myeongdong",
+              "Plant Cafe & Kitchen",
+              "Myeongdong Kyoja"
+            ]
+          },
+          {
+            "theme": "Joseon palaces, hanok alleys & Insadong tea houses",
+            "activities": [
+              {
+                "name": "Gyeongbokgung Palace entry",
+                "cost": "₹180 pp"
+              },
+              {
+                "name": "National Folk Museum visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Bukchon Hanok Village walking circuit",
+                "cost": "Free"
+              },
+              {
+                "name": "Changdeokgung and Secret Garden",
+                "cost": "₹180 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nine Tree Premier Hotel Insadong",
+                "budget": "₹8,500–₹11,500/night"
+              },
+              {
+                "name": "Orakai Insadong Suites",
+                "budget": "₹11,000–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "Sanchon",
+              "Insadong Suyeon Sanbang",
+              "Balwoo Gongyang"
+            ]
+          },
+          {
+            "theme": "Gangnam gloss, K-pop stops & skyline viewpoints",
+            "activities": [
+              {
+                "name": "Gangnam and COEX K-pop culture walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Namsan Cable Car round trip",
+                "cost": "₹570 pp"
+              },
+              {
+                "name": "N Seoul Tower observatory",
+                "cost": "₹960 pp"
+              },
+              {
+                "name": "Lotte World Tower Seoul Sky",
+                "cost": "₹1,620 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "L7 Gangnam",
+                "budget": "₹9,500–₹13,500/night"
+              },
+              {
+                "name": "GLAD Gangnam COEX Center",
+                "budget": "₹8,500–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Gogung Gangnam",
+              "Cafe Bora Insadong",
+              "Gyerangnara"
+            ]
+          },
+          {
+            "theme": "DMZ history day trip",
+            "activities": [
+              {
+                "name": "Organized DMZ full-day tour from Seoul",
+                "cost": "₹4,200–₹6,000 pp"
+              },
+              {
+                "name": "Third Infiltration Tunnel stop",
+                "cost": "Included"
+              },
+              {
+                "name": "Dora Observatory and Dorasan Station",
+                "cost": "Included"
+              },
+              {
+                "name": "Imjingak Peace Park",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "L7 Myeongdong",
+                "budget": "₹9,000–₹12,500/night"
+              },
+              {
+                "name": "ENA Suite Hotel Namdaemun",
+                "budget": "₹9,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Vegan Table",
+              "Noodle Box Myeongdong",
+              "Maple Tree House Itaewon"
+            ]
+          }
+        ]
+      },
+      "Busan": {
+        "name": "Busan",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Haeundae coast, Dongbaek trails & beach lights",
+            "activities": [
+              {
+                "name": "KTX from Seoul to Busan",
+                "cost": "₹3,588 pp"
+              },
+              {
+                "name": "Haeundae Beach sunset walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Dongbaek Island coastal stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Gwangalli Beach and PoFo Street evening",
+                "cost": "₹180–₹600 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Haeundae Atti Guesthouse",
+                "budget": "₹3,000–₹4,200/night"
+              },
+              {
+                "name": "The Westin Josun Busan",
+                "budget": "₹16,800–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Milmyeon Jip Seomyeon",
+              "Gukje Market stalls",
+              "OPS Haeundae"
+            ]
+          },
+          {
+            "theme": "Sea cliffs, temple views & market classics",
+            "activities": [
+              {
+                "name": "Haedong Yonggungsa Temple visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Busan Museum of Art",
+                "cost": "₹60–₹120 pp"
+              },
+              {
+                "name": "Jagalchi Fish Market browse",
+                "cost": "Free"
+              },
+              {
+                "name": "Busan Tower observatory",
+                "cost": "₹720 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "L7 Haeundae",
+                "budget": "₹8,500–₹11,500/night"
+              },
+              {
+                "name": "Shilla Stay Haeundae",
+                "budget": "₹7,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Beomeosa Temple Vegetarian Restaurant",
+              "Halmae Gukbap",
+              "Ssiat Hotteok stall"
+            ]
+          },
+          {
+            "theme": "Gamcheon murals, forest temple & shopping districts",
+            "activities": [
+              {
+                "name": "Gamcheon Culture Village map and alley walk",
+                "cost": "₹120 pp"
+              },
+              {
+                "name": "Taejongdae Danubi train or shuttle",
+                "cost": "₹42 pp"
+              },
+              {
+                "name": "Beomeosa Temple visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Centum City and Seomyeon shopping crawl",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Toyoko Inn Busan Haeundae 2",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Park Hyatt Busan",
+                "budget": "₹18,000–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Nampodong BIFF stalls",
+              "O'Khamburger Seomyeon",
+              "Jangnim Sikdang"
+            ]
+          }
+        ]
+      },
+      "Gyeongju": {
+        "name": "Gyeongju",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Silla capital tombs, museum halls & lit-up pond",
+            "activities": [
+              {
+                "name": "Intercity bus from Busan to Gyeongju",
+                "cost": "₹252 pp"
+              },
+              {
+                "name": "Daereungwon Royal Tumuli Park",
+                "cost": "₹180 pp"
+              },
+              {
+                "name": "Donggung Palace and Wolji Pond",
+                "cost": "₹180 pp"
+              },
+              {
+                "name": "Bike rental around the historic core",
+                "cost": "₹420 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Gyeongju Bliss Hotel",
+                "budget": "₹4,800–₹7,200/night"
+              },
+              {
+                "name": "Hilton Gyeongju",
+                "budget": "₹15,000–₹22,800/night"
+              }
+            ],
+            "meals": [
+              "Gyochon Bopssam",
+              "Hwangnam Bread Shop",
+              "Dosol Maeul"
+            ]
+          },
+          {
+            "theme": "UNESCO temple day in the mountain foothills",
+            "activities": [
+              {
+                "name": "Bulguksa Temple",
+                "cost": "Free"
+              },
+              {
+                "name": "Seokguram Grotto",
+                "cost": "Free"
+              },
+              {
+                "name": "Namsan Mountain trail walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Return bus to Busan for onward flight",
+                "cost": "₹252 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "141 Mini Hotel",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Lahan Select Gyeongju",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Golgulsa Temple Cafe",
+              "Venzamas",
+              "Hwanglidan-gil cafes"
+            ]
+          }
+        ]
+      },
+      "Jeju": {
+        "name": "Jeju",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Sunrise Peak, lava tubes & east-coast nature",
+            "activities": [
+              {
+                "name": "Flight from Busan to Jeju",
+                "cost": "₹2,700–₹6,000 pp"
+              },
+              {
+                "name": "Seongsan Ilchulbong Sunrise Peak",
+                "cost": "₹300 pp"
+              },
+              {
+                "name": "Udo Island ferry round trip",
+                "cost": "₹1,236 pp"
+              },
+              {
+                "name": "Manjanggul Lava Tube",
+                "cost": "₹240 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maison Glad Jeju",
+                "budget": "₹9,000–₹13,200/night"
+              },
+              {
+                "name": "LOTTE City Hotel Jeju",
+                "budget": "₹8,000–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Rajmahal Indian Restaurant",
+              "Haenyeo Seafood Restaurant",
+              "Baghdad Cafe"
+            ]
+          },
+          {
+            "theme": "Hallasan trails, basalt cliffs & market finale",
+            "activities": [
+              {
+                "name": "Hallasan National Park hike",
+                "cost": "Free"
+              },
+              {
+                "name": "Jeju Olle Trail Course 7-1",
+                "cost": "Free"
+              },
+              {
+                "name": "Jungmun Daepo Jusangjeolli Cliff",
+                "cost": "₹120 pp"
+              },
+              {
+                "name": "Jeju Folk Village Museum",
+                "cost": "₹660 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Parnas Hotel Jeju",
+                "budget": "₹18,000–₹28,000/night"
+              },
+              {
+                "name": "Shilla Hotel Jeju",
+                "budget": "₹24,000–₹39,000/night"
+              }
+            ],
+            "meals": [
+              "Healing Kitchen",
+              "Samsunghyeol",
+              "Dongmun Traditional Market stalls"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Incheon",
+        "to": "Seoul",
+        "method": "AREX airport train (about 53 min)",
+        "cost": "₹285 pp"
+      },
+      {
+        "from": "Seoul",
+        "to": "Busan",
+        "method": "KTX from Seoul Station (about 2h 30m)",
+        "cost": "₹3,588 pp"
+      },
+      {
+        "from": "Busan",
+        "to": "Gyeongju",
+        "method": "Intercity bus from Nopo Terminal (about 1 hr)",
+        "cost": "₹252 pp"
+      },
+      {
+        "from": "Gyeongju",
+        "to": "Jeju",
+        "method": "Bus back to Busan + nonstop flight from Gimhae to Jeju",
+        "cost": "₹3,252–₹6,252 pp"
+      },
+      {
+        "from": "Jeju",
+        "to": "Incheon",
+        "method": "Direct domestic flight to Seoul/Incheon area (60–75 min)",
+        "cost": "₹2,400–₹6,000 pp"
+      }
+    ],
+    "extras": [
+      "Indian travellers need a C-3 short-term tourist visa; budget about ₹3,360 and apply at least 4 weeks before departure.",
+      "Load a T-money card with at least ₹600–₹1,500 for subways, buses and convenience stores.",
+      "DMZ access changes frequently, so re-check tour operators before locking the Seoul segment.",
+      "Vegetarians should save Sanchon, Plant Cafe & Kitchen, Vegan Table, Beomeosa Temple Vegetarian Restaurant and Healing Kitchen before landing.",
+      "Jeju is easiest with a taxi charter or rental car for east-coast and Hallasan-heavy days."
+    ],
+    "cityImages": {
+      "Incheon": [
+        "Incheon Chinatown gate street",
+        "Songdo Central Park Incheon skyline",
+        "Incheon Airport terminal interior"
+      ],
+      "Seoul": [
+        "Gyeongbokgung Palace Seoul night",
+        "Bukchon Hanok Village Seoul aerial",
+        "N Seoul Tower Namsan mountain"
+      ],
+      "Busan": [
+        "Haeundae Beach Busan summer",
+        "Gamcheon Culture Village colorful houses",
+        "Haedong Yonggungsa Temple cliff sea"
+      ],
+      "Gyeongju": [
+        "Bulguksa Temple UNESCO Korea pagoda",
+        "Daerungwon Royal Burial Mounds Gyeongju",
+        "Cheomseongdae Observatory Silla Kingdom"
+      ],
+      "Jeju": [
+        "Seongsan Ilchulbong tuff cone crater Jeju",
+        "Hallasan National Park volcanic crater Korea",
+        "Manjanggul lava tube cave Jeju UNESCO"
+      ]
+    }
+  }
 }

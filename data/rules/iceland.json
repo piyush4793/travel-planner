@@ -67,5 +67,397 @@
       "notes": "Whale watching capital — humpbacks almost guaranteed in summer"
     }
   ],
-  "itinerary": null
+  "itinerary": {
+    "sim": "Síminn Tourist SIM",
+    "apps": [
+      "112 Iceland",
+      "Veðurstofa (vedur.is)",
+      "Aurora Forecast",
+      "Maps.me",
+      "Guide to Iceland"
+    ],
+    "cityOrder": [
+      "Reykjavik",
+      "Vik",
+      "Jokulsarlon",
+      "Akureyri"
+    ],
+    "cities": {
+      "Reykjavik": {
+        "name": "Reykjavik",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 3,
+        "note": "Base yourself here for arrival logistics, an easy Golden Circle loop, and one weather-dependent Northern Lights night.",
+        "days": [
+          {
+            "theme": "Arrival + Reykjavik Icons",
+            "activities": [
+              {
+                "name": "Hallgrímskirkja tower and church visit",
+                "cost": "₹732",
+                "tip": "Go up first for the cleanest city views before tour groups arrive."
+              },
+              {
+                "name": "Harpa Concert Hall waterfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Sun Voyager + Old Harbour stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Laugavegur shopping street and rainbow road",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Center Hotels Plaza",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "Fosshotel Reykjavik",
+                "budget": "₹18,000–₹30,000/night"
+              }
+            ],
+            "meals": [
+              "Brauð & Co",
+              "Messinn",
+              "Icelandic Street Food"
+            ]
+          },
+          {
+            "theme": "Golden Circle Day Trip",
+            "activities": [
+              {
+                "name": "Thingvellir National Park rift walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Strokkur Geyser erupting geothermal field",
+                "cost": "Free"
+              },
+              {
+                "name": "Gullfoss waterfall viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Kerið Crater",
+                "cost": "₹427"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Frón",
+                "budget": "₹13,000–₹20,000/night"
+              },
+              {
+                "name": "Sand Hotel by Keahotels",
+                "budget": "₹20,000–₹30,000/night"
+              }
+            ],
+            "meals": [
+              "Friðheimar Tomato Farm",
+              "Café Loki",
+              "Skál!"
+            ]
+          },
+          {
+            "theme": "Geothermal Reset + Aurora Night",
+            "activities": [
+              {
+                "name": "Sky Lagoon seven-step ritual",
+                "cost": "₹5,789",
+                "tip": "Reserve a late-afternoon slot so you finish around sunset."
+              },
+              {
+                "name": "Perlan observation deck and exhibits",
+                "cost": "₹3,355"
+              },
+              {
+                "name": "Northern Lights tour",
+                "cost": "₹6,094",
+                "tip": "Keep this on your clearest forecast night and wear thermal layers."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Alda Hotel Reykjavik",
+                "budget": "₹17,000–₹26,000/night"
+              },
+              {
+                "name": "Grandi by Center Hotels",
+                "budget": "₹16,000–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Reykjavik Fish",
+              "Sandholt Bakery",
+              "Bæjarins Beztu Pylsur"
+            ]
+          }
+        ]
+      },
+      "Vik": {
+        "name": "Vik",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Drive this stretch in daylight so the waterfalls and black-sand coastline become part of the itinerary, not just the transfer.",
+        "days": [
+          {
+            "theme": "South Coast Waterfalls to Vik",
+            "activities": [
+              {
+                "name": "Seljalandsfoss waterfall",
+                "cost": "Free"
+              },
+              {
+                "name": "Skógafoss waterfall",
+                "cost": "Free"
+              },
+              {
+                "name": "Dyrhólaey cliff viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Vík í Mýrdal church sunset stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Kría",
+                "budget": "₹18,000–₹28,000/night"
+              },
+              {
+                "name": "Hótel Vík í Mýrdal",
+                "budget": "₹16,000–₹25,000/night"
+              }
+            ],
+            "meals": [
+              "The Soup Company",
+              "Smidjan Brugghús",
+              "Black Crust Pizzeria"
+            ]
+          },
+          {
+            "theme": "Black Sand + Glacier Adventure",
+            "activities": [
+              {
+                "name": "Reynisfjara Black Beach",
+                "cost": "Free",
+                "tip": "Stay well back from the sneaker waves; this is one of Iceland’s most dangerous beaches."
+              },
+              {
+                "name": "Sólheimajökull glacier hike",
+                "cost": "₹6,039"
+              },
+              {
+                "name": "Reynisdrangar sea stacks viewpoint",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Katla by Keahotels",
+                "budget": "₹15,000–₹23,000/night"
+              },
+              {
+                "name": "Black Beach Suites",
+                "budget": "₹20,000–₹30,000/night"
+              }
+            ],
+            "meals": [
+              "Halldórskaffi",
+              "Lava Cafe",
+              "Ströndin Bistro & Bar"
+            ]
+          }
+        ]
+      },
+      "Jokulsarlon": {
+        "name": "Jokulsarlon",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Stay close to the lagoon or in Höfn so you can catch the icebergs at both golden hour and the next morning if weather is clear.",
+        "days": [
+          {
+            "theme": "Ice Lagoon Highlights",
+            "activities": [
+              {
+                "name": "Jökulsárlón Glacier Lagoon viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Glacier lagoon amphibian boat tour",
+                "cost": "₹5,795"
+              },
+              {
+                "name": "Diamond Beach walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Fjallsárlón detour for quieter glacier views",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Fosshotel Glacier Lagoon",
+                "budget": "₹22,000–₹30,000/night"
+              },
+              {
+                "name": "Hali Country Hotel",
+                "budget": "₹14,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Glacier Goodies",
+              "Pakkhús Restaurant",
+              "Z Bistro"
+            ]
+          }
+        ]
+      },
+      "Akureyri": {
+        "name": "Akureyri",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Akureyri works best as a North Iceland base with one waterfall day and one Mývatn geothermal loop.",
+        "days": [
+          {
+            "theme": "North Iceland Arrival + Goðafoss",
+            "activities": [
+              {
+                "name": "Goðafoss waterfall stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Akureyrarkirkja hilltop church",
+                "cost": "Free"
+              },
+              {
+                "name": "Akureyri Botanical Garden",
+                "cost": "Free"
+              },
+              {
+                "name": "Eyjafjörður harbour walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Kea by Keahotels",
+                "budget": "₹16,000–₹24,000/night"
+              },
+              {
+                "name": "Centrum Hotel Akureyri",
+                "budget": "₹12,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Strikið",
+              "Rub23",
+              "Kaffi Ilmur"
+            ]
+          },
+          {
+            "theme": "Lake Mývatn Geothermal Circuit",
+            "activities": [
+              {
+                "name": "Lake Mývatn viewpoints and pseudo-craters",
+                "cost": "Free"
+              },
+              {
+                "name": "Hverir geothermal field",
+                "cost": "Free"
+              },
+              {
+                "name": "Dimmuborgir lava formations",
+                "cost": "Free"
+              },
+              {
+                "name": "Mývatn Nature Baths",
+                "cost": "₹3,599"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Norðurland",
+                "budget": "₹10,000–₹15,000/night"
+              },
+              {
+                "name": "Berjaya Akureyri Hotel",
+                "budget": "₹15,000–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Bautinn",
+              "Greifinn",
+              "Akureyri Fish & Chips"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Reykjavik",
+        "to": "Vik",
+        "method": "Self-drive Ring Road (Route 1) via Seljalandsfoss and Skógafoss",
+        "cost": "₹12,000–₹20,000/day including compact rental share + fuel"
+      },
+      {
+        "from": "Vik",
+        "to": "Jokulsarlon",
+        "method": "Self-drive Ring Road eastbound (about 2.5 hours)",
+        "cost": "₹10,000–₹18,000/day including rental share + fuel"
+      },
+      {
+        "from": "Jokulsarlon",
+        "to": "Akureyri",
+        "method": "Self-drive Ring Road northbound (long 8–9 hour transfer, best split if weather is poor)",
+        "cost": "₹12,000–₹22,000/day including rental share + fuel"
+      },
+      {
+        "from": "Reykjavik",
+        "to": "Akureyri",
+        "method": "Domestic flight (optional shortcut instead of the full northbound drive)",
+        "cost": "₹7,320–₹12,200"
+      }
+    ],
+    "extras": [
+      "June to September is the easiest self-drive window; winter requires storm flexibility and comfort with snow driving.",
+      "Check vedur.is before every long drive and move glacier or aurora activities to the clearest weather window.",
+      "Fuel, food and parking add up fast in Iceland, so a shared rental car makes this route much better value than private day tours.",
+      "Carry waterproof outer layers, gloves and a dry bag even in summer — waterfalls and wind can soak you quickly.",
+      "If you want whale watching, add Husavik as a half-day detour from Akureyri rather than squeezing it into the core 8-day route."
+    ],
+    "cityImages": {
+      "Reykjavik": [
+        "Hallgrímskirkja Reykjavik",
+        "Harpa Concert Hall Reykjavik",
+        "Sky Lagoon Iceland"
+      ],
+      "Vik": [
+        "Reynisfjara Black Sand Beach Iceland",
+        "Skógafoss Iceland",
+        "Seljalandsfoss Iceland"
+      ],
+      "Jokulsarlon": [
+        "Jökulsárlón Glacier Lagoon Iceland",
+        "Diamond Beach Iceland",
+        "Jökulsárlón boat tour"
+      ],
+      "Akureyri": [
+        "Goðafoss Iceland",
+        "Lake Mývatn Iceland",
+        "Akureyri harbour Iceland"
+      ]
+    }
+  }
 }
