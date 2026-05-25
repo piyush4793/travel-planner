@@ -244,7 +244,7 @@ CountryPanel builds planOptions[] (default + saved AI plans)
 
 ```bash
 npx tsc --noEmit    # type check
-npm test            # run all tests (vitest, 142 tests across 15 files)
+npm test            # run all tests (vitest, 160 tests across 15 files)
 npm run build       # production build (tsc + vite)
 ```
 

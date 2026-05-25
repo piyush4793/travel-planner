@@ -89,6 +89,7 @@ Bring-your-own-key integration with OpenAI and Claude. Chat with an AI assistant
 - **Cost breakdowns** — per-day cost estimates for flights, hotels, excursions, and transfers
 - **Booking suggestions** — Klook/Viator-style tour recommendations with price, duration, and ratings
 - **Save to My List** — save AI-generated destinations to your list with instant feedback (saved / already exists)
+- **Import plans from external AI** — paste a ChatGPT/Claude conversation or share link; multi-strategy parser extracts day-by-day itinerary with prompt improvement suggestions
 - **Save AI plans** — persist up to 3 AI-generated itineraries per destination in localStorage with compare-and-replace flow
 - **Plan comparison** — when saving, view existing plans side-by-side with diff summary (duration, budget, cities, cost) and choose to add or replace
 - **Token usage tracking** — running token counter with cost estimate in chat footer (color-coded: green <4K, amber 4K-12K, red >12K); hover for detailed breakdown (input/output tokens, per-provider pricing, estimated USD cost)
