@@ -1,0 +1,451 @@
+{
+  "name": "Solomon Islands",
+  "seed": false,
+  "lat": -9.43,
+  "lng": 160.03,
+  "region": "Oceania",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "budget": {
+    "solo": "₹1.75L–₹2.95L",
+    "couple": "₹3.25L–₹5.1L",
+    "family4": "₹6.4L–₹8.9L"
+  },
+  "experiences": [
+    "WWII History",
+    "Wreck Diving",
+    "Lagoon Canoeing",
+    "Melanesian Culture",
+    "Remote Island Lodges",
+    "Coral Reefs"
+  ],
+  "avoid": [
+    "November–March is wetter and more cyclone-prone, so Solomon Airlines schedules, boat crossings, and lagoon visibility are less reliable than in the April–October dry season.",
+    "Cash matters outside Honiara because kastom fees, village boat transfers, roadside food, and many island guesthouses do not reliably take cards.",
+    "Inter-island travel is the bottleneck: keep a same-day buffer before your international flight because domestic aviation and open-boat transfers shift with weather and loading."
+  ],
+  "combo": [
+    "Australia",
+    "Papua New Guinea",
+    "Vanuatu"
+  ],
+  "landmark": "Marovo Lagoon",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 6 days, base in Honiara and add only one Western Province or Marovo extension; trying to squeeze Guadalcanal history, Munda/Gizo, and Seghe transfers into one short trip makes the routing too boat-and-flight heavy.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Honiara",
+      "lat": -9.428,
+      "lng": 159.9729,
+      "notes": "The capital is the practical entry point for Our Telekom SIMs, cash, taxis, war-memorial viewpoints, and the shortest transfer out to Guadalcanal's Bonegi wrecks and west-coast battlefields."
+    },
+    {
+      "name": "Guadalcanal",
+      "lat": -9.5773,
+      "lng": 160.1456,
+      "notes": "Guadalcanal is the history-and-diving block for Bonegi I and II, Vilu War Museum, Bloody Ridge, Red Beach, and memorial stops linked to the island's WWII campaign."
+    },
+    {
+      "name": "Western Province (Munda/Gizo)",
+      "lat": -8.3279,
+      "lng": 157.2691,
+      "notes": "Munda and Gizo are the easy Western Province pair for Solomon Airlines hops, Skull Island visits, Kennedy Island boat trips, Peter Joseph's WWII collection, and resort-based snorkeling or diving."
+    },
+    {
+      "name": "Marovo Lagoon",
+      "lat": -8.492,
+      "lng": 158.103,
+      "notes": "Marovo Lagoon is the remote finale for Seghe boat transfers, village canoe outings, Uepi reefs, and low-key eco-lodges around one of the world's largest saltwater lagoons."
+    }
+  ],
+  "itinerary": {
+    "sim": "Our Telekom prepaid is the safest tourist SIM for Honiara, Munda, Gizo, and Seghe-area travel, while bmobile is the backup in the capital; buy and top up in Honiara before you head out to Western Province or Marovo Lagoon.",
+    "apps": [
+      "Solomon Airlines",
+      "Google Maps offline",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency",
+      "Maps.me"
+    ],
+    "cityOrder": [
+      "Honiara",
+      "Guadalcanal",
+      "Western Province (Munda/Gizo)",
+      "Marovo Lagoon"
+    ],
+    "cities": {
+      "Honiara": {
+        "name": "Honiara",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Keep Honiara as the logistics-and-orientation block: one city day for memorials and market rhythm, then one buffer day before you commit to Guadalcanal drives or outer-island flights.",
+        "days": [
+          {
+            "theme": "Memorial Hilltops, Market Time and a Simple Capital Arrival",
+            "activities": [
+              {
+                "name": "Taxi rides between Henderson Airport, central Honiara, and memorial stops",
+                "cost": "₹300–₹700 pp",
+                "tip": "Short Honiara taxi hops commonly land around 30–70 SBD, so carry small notes rather than relying on card payments."
+              },
+              {
+                "name": "Guadalcanal American Memorial and Skyline Ridge viewpoints",
+                "cost": "Free",
+                "tip": "Go near sunset for the best city-and-harbour views, then continue down into town for dinner."
+              },
+              {
+                "name": "Solomon Islands National Museum and Cultural Centre",
+                "cost": "₹500–₹1,000 pp",
+                "tip": "Entry is typically modest and is the easiest first-stop primer on local history, carvings, and shell money before you head into the field."
+              },
+              {
+                "name": "Honiara Central Market walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "King Solomon Hotel",
+                "budget": "₹9,500–₹16,500/night"
+              },
+              {
+                "name": "Solomon Kitano Mendana Hotel",
+                "budget": "₹13,500–₹21,500/night"
+              },
+              {
+                "name": "Heritage Park Hotel",
+                "budget": "₹23,500–₹32,500/night"
+              }
+            ],
+            "meals": [
+              "GG's Restaurant",
+              "Splash Bar & Grill",
+              "Hakubai Japanese Restaurant"
+            ]
+          },
+          {
+            "theme": "Peace Park, Seafront Dining and a Flexible Pre-Island Buffer",
+            "activities": [
+              {
+                "name": "Solomon Peace Memorial Park",
+                "cost": "Free"
+              },
+              {
+                "name": "Waterfront taxi loop via Point Cruz and Mendana Avenue",
+                "cost": "₹300–₹600 pp",
+                "tip": "This is the easiest low-effort way to orient yourself before an early Solomon Airlines departure the next morning."
+              },
+              {
+                "name": "Our Telekom SIM and top-up in town",
+                "cost": "₹150–₹600",
+                "tip": "SIMs are cheap, but add a decent data pack in Honiara because coverage and recharge options get thinner once you leave the capital."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Coral Sea Resort & Casino",
+                "budget": "₹17,500–₹26,500/night"
+              },
+              {
+                "name": "Heritage Park Hotel",
+                "budget": "₹23,500–₹32,500/night"
+              },
+              {
+                "name": "Solomon Kitano Mendana Hotel",
+                "budget": "₹13,500–₹21,500/night"
+              }
+            ],
+            "meals": [
+              "The Terrace Restaurant",
+              "Boardwalk",
+              "Monarch Bar & Grill"
+            ]
+          }
+        ]
+      },
+      "Guadalcanal": {
+        "name": "Guadalcanal",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Treat Guadalcanal as a guided day-trip or overnight extension from Honiara: the best version pairs one WWII circuit with one Bonegi wreck day rather than trying to cover every battlefield marker.",
+        "days": [
+          {
+            "theme": "Bonegi Wrecks, West-Coast History and Beach Access",
+            "activities": [
+              {
+                "name": "Taxi or private driver from Honiara to Bonegi Beach",
+                "cost": "₹1,500–₹3,500 per vehicle",
+                "tip": "Bonegi sits roughly 30 minutes west of Honiara, so this works best with a half-day driver who can also continue to Vilu."
+              },
+              {
+                "name": "Bonegi I & II beach access fee",
+                "cost": "₹500 pp",
+                "tip": "The local access fee is commonly 50 SBD per person and is paid directly to caretakers or landowners at the site."
+              },
+              {
+                "name": "Guided Bonegi shore dive with tanks and weights",
+                "cost": "₹10,500–₹11,500 pp",
+                "tip": "Operator-led shore dives to the Mbonege wrecks are far pricier than simple beach access but include guide support and gear logistics."
+              },
+              {
+                "name": "Vilu War Museum entry",
+                "cost": "₹1,000 pp",
+                "tip": "The open-air relic museum usually charges about 100 SBD, and it pairs naturally with Bonegi on the same west-coast run."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "King Solomon Hotel",
+                "budget": "₹9,500–₹16,500/night"
+              },
+              {
+                "name": "Coral Sea Resort & Casino",
+                "budget": "₹17,500–₹26,500/night"
+              },
+              {
+                "name": "Heritage Park Hotel",
+                "budget": "₹23,500–₹32,500/night"
+              }
+            ],
+            "meals": [
+              "Splash Bar & Grill",
+              "Boardwalk",
+              "Dynasty"
+            ]
+          },
+          {
+            "theme": "Bloody Ridge, Red Beach and a Full Guadalcanal WWII Circuit",
+            "activities": [
+              {
+                "name": "Guided Guadalcanal WWII full-day tour including Bloody Ridge and Red Beach",
+                "cost": "₹9,500 pp",
+                "tip": "Organized battlefield circuits commonly land near 950 SBD per person and normally need at least two travellers to run smoothly."
+              },
+              {
+                "name": "Bloody Ridge battlefield stop on a driver-led circuit",
+                "cost": "₹2,000–₹4,000 pp",
+                "tip": "If you skip the full package, many drivers price Bloody Ridge as part of a custom west- or east-side history loop instead of a standalone ticket."
+              },
+              {
+                "name": "Guadalcanal American Memorial revisit or sunset stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Solomon Kitano Mendana Hotel",
+                "budget": "₹13,500–₹21,500/night"
+              },
+              {
+                "name": "Heritage Park Hotel",
+                "budget": "₹23,500–₹32,500/night"
+              },
+              {
+                "name": "Coral Sea Resort & Casino",
+                "budget": "₹17,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "Hakubai Japanese Restaurant",
+              "Palm Sugar Cafeteria",
+              "GG's Restaurant"
+            ]
+          }
+        ]
+      },
+      "Western Province (Munda/Gizo)": {
+        "name": "Western Province (Munda/Gizo)",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 4,
+        "note": "Use either Munda or Gizo as the main sleep base, then day-trip the other side by boat; the sweet spot is one history-or-snorkel day and one Skull Island or Kennedy Island outing.",
+        "days": [
+          {
+            "theme": "Solomon Airlines Hop, Roviana Lagoon Views and WWII Collections",
+            "activities": [
+              {
+                "name": "Solomon Airlines flight from Honiara to Munda or Gizo",
+                "cost": "₹9,000–₹13,000 pp",
+                "tip": "One-way domestic fares on the western routes usually sit around 900–1,300 SBD, with the best availability when booked well ahead in dry season."
+              },
+              {
+                "name": "Boat or taxi transfer between airstrip, lodge, and nearby reef stops",
+                "cost": "₹500–₹2,500 pp",
+                "tip": "Short harbour transfers are often cash-only and may be folded into your lodge bill if you prearrange them."
+              },
+              {
+                "name": "Peter Joseph WWII Museum",
+                "cost": "₹500–₹1,000 pp",
+                "tip": "The privately built Munda museum is usually donation-based or modestly ticketed, and it makes the best first-stop primer before you head to larger battle sites."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Agnes Gateway Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Fatboys Resort",
+                "budget": "₹10,500–₹18,500/night"
+              },
+              {
+                "name": "Sanbis Resort",
+                "budget": "₹12,500–₹22,500/night"
+              }
+            ],
+            "meals": [
+              "Roviana Restaurant",
+              "Fatboys Restaurant",
+              "PT-109"
+            ]
+          },
+          {
+            "theme": "Skull Island Kastom Visit and a Kennedy Island Boat Day",
+            "activities": [
+              {
+                "name": "Skull Island day tour from Munda or Gizo",
+                "cost": "₹5,000–₹8,000 pp",
+                "tip": "Most lodge-arranged boat days bundle fuel, guide time, and at least one snorkel stop, so always ask whether lunch is included."
+              },
+              {
+                "name": "Skull Island kastom fee",
+                "cost": "₹500–₹1,000 pp",
+                "tip": "A separate community fee of roughly 50–100 SBD is commonly paid to the island custodians even when the boat itself is prepaid."
+              },
+              {
+                "name": "Kennedy Island boat excursion",
+                "cost": "₹3,000–₹6,000 pp",
+                "tip": "This is an easy add-on from Gizo and is usually combined with reef swims or a longer island-hopping loop."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Gizo Hotel",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Fatboys Resort",
+                "budget": "₹10,500–₹18,500/night"
+              },
+              {
+                "name": "Sanbis Resort",
+                "budget": "₹12,500–₹22,500/night"
+              }
+            ],
+            "meals": [
+              "PT-109",
+              "Fatboys Restaurant",
+              "Gizo Hotel Restaurant"
+            ]
+          }
+        ]
+      },
+      "Marovo Lagoon": {
+        "name": "Marovo Lagoon",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Marovo works best as the slowest block of the trip: one transfer day with a short paddle or snorkel, then one full canoe-and-village day before you route back toward Seghe.",
+        "days": [
+          {
+            "theme": "Seghe Transfer, Uepi Reefs and a Lagoon Arrival",
+            "activities": [
+              {
+                "name": "Domestic flight to Seghe or routed boat transfer into Marovo Lagoon",
+                "cost": "₹9,000–₹13,000 pp",
+                "tip": "If you route via Honiara, Seghe fares are usually comparable to the main western domestic sectors; lodge-arranged boats from Seghe are priced separately."
+              },
+              {
+                "name": "Boat transfer from Seghe to your lodge",
+                "cost": "₹2,000–₹5,000 pp",
+                "tip": "Transfer pricing depends on fuel and distance, so confirm whether your lodge quotes per person or per boat."
+              },
+              {
+                "name": "House-reef snorkel at Uepi or nearby lagoon edge",
+                "cost": "Free–₹1,500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Uepi Island Resort",
+                "budget": "₹18,500–₹31,500/night"
+              },
+              {
+                "name": "Marovo Sea Lodge",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Pepele Eco Lodge",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Uepi Island Resort Restaurant",
+              "Marovo Sea Lodge Dining",
+              "Pepele Eco Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Canoes, Village Visits and a Full Marovo Lagoon Day",
+            "activities": [
+              {
+                "name": "Marovo Lagoon guided canoe and snorkel day trip",
+                "cost": "₹5,000–₹10,000 pp",
+                "tip": "Local canoe-and-snorkel outings commonly land around 50–100 USD per person once fuel, guide time, and lunch are included."
+              },
+              {
+                "name": "Village visit or shell-money craft stop",
+                "cost": "₹500–₹1,500 pp",
+                "tip": "Many lodges treat this as a small kastom contribution rather than a formal attraction ticket."
+              },
+              {
+                "name": "Kayak or outrigger canoe hire",
+                "cost": "₹1,000–₹2,500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Uepi Island Resort",
+                "budget": "₹18,500–₹31,500/night"
+              },
+              {
+                "name": "Evis Resort at Nggatirana Island",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Marovo Sea Lodge",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Uepi Island Resort Restaurant",
+              "Marovo Sea Lodge Dining",
+              "Evis Resort Restaurant"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

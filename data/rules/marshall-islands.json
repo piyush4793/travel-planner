@@ -1,0 +1,369 @@
+{
+  "name": "Marshall Islands",
+  "seed": false,
+  "lat": 7.13,
+  "lng": 171.18,
+  "region": "Oceania",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.45L–₹6.2L",
+    "couple": "₹2.7L–₹11.9L",
+    "family4": "₹5.2L–₹18.5L"
+  },
+  "experiences": [
+    "WWII Wreck Diving",
+    "Remote Atolls",
+    "Museum Visits",
+    "Lagoon Boats",
+    "Quiet Beaches",
+    "Micronesian Culture"
+  ],
+  "avoid": [
+    "May through November is wetter and more humid, so outer-atoll boats, light-aircraft schedules, and simple beach plans are more disruption-prone than in the drier December-April window.",
+    "Air Marshall Islands schedules can change at short notice, so never plan same-day outer-island connections without a buffer night in Majuro or Kwajalein.",
+    "Bikini Atoll only makes sense for qualified technical wreck divers; if you are not trimix or CCR certified, keep the trip to Majuro plus Arno instead of forcing a costly extension."
+  ],
+  "combo": [
+    "Palau",
+    "Japan",
+    "Fiji"
+  ],
+  "landmark": "Bikini Lagoon",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 6 days, keep the route to Majuro plus Arno Atoll. Treat Bikini Atoll as a specialist extension only if you can absorb the separate liveaboard budget and technical-diving requirement.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Majuro",
+      "lat": 7.0897,
+      "lng": 171.3803,
+      "notes": "Majuro is the practical arrival hub for museum time, market eats, shared-taxi hops along the atoll road, and boat departures to Laura and nearby outer-lagoon islands."
+    },
+    {
+      "name": "Bikini Atoll",
+      "lat": 11.6075,
+      "lng": 165.3767,
+      "notes": "Bikini Atoll is a remote UNESCO-listed wreck-diving destination where serious divers join long technical liveaboards for USS Saratoga, Nagato, and other Operation Crossroads relics."
+    },
+    {
+      "name": "Arno Atoll",
+      "lat": 7.0629,
+      "lng": 171.5541,
+      "notes": "Arno Atoll is the easy barefoot escape from Majuro, reached by local boat for white-sand beaches, quiet lagoon swims, and simple lodge stays."
+    }
+  ],
+  "itinerary": {
+    "sim": "Buy an NTA or MINTA prepaid SIM in Majuro, then download offline maps and boat contacts before leaving the capital because Arno service is patchier and Bikini trips spend long stretches beyond normal coverage.",
+    "apps": [
+      "United Airlines",
+      "Booking.com",
+      "Google Maps offline",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Majuro",
+      "Arno Atoll",
+      "Bikini Atoll"
+    ],
+    "cities": {
+      "Majuro": {
+        "name": "Majuro",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Majuro as the logistics base: one day for culture and food, then one drier-day outing west to Laura or out across the lagoon before any outer-atoll connections.",
+        "days": [
+          {
+            "theme": "Museum Intro, Market Snacks and Shared-Taxi Orientation",
+            "activities": [
+              {
+                "name": "Alele Museum, Library and National Archives",
+                "cost": "₹166 pp",
+                "tip": "Adult entry is commonly US$2, making it the best low-cost primer on Marshallese navigation, culture, and nuclear-era history."
+              },
+              {
+                "name": "MISCO Market sashimi and grocery stop",
+                "cost": "₹415–₹1,245 pp",
+                "tip": "Fresh tuna snacks and takeaway bowls are one of Majuro's easiest cheap-eat stops before you stock up for Arno."
+              },
+              {
+                "name": "Shared taxi rides along the Delap-Uliga-Djarrit strip",
+                "cost": "₹83–₹415 pp",
+                "tip": "Local shared taxis often run about US$1 within town, while longer airport or cross-island hops rise toward US$5."
+              },
+              {
+                "name": "Cathedral of the Assumption and waterfront walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Robert Reimers",
+                "budget": "₹12,500–₹18,500/night"
+              },
+              {
+                "name": "Marshall Islands Resort",
+                "budget": "₹13,500–₹20,500/night"
+              },
+              {
+                "name": "Uliga Inn",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Tide Table Restaurant",
+              "Marshall Islands Resort Restaurant",
+              "Island Cafe"
+            ]
+          },
+          {
+            "theme": "Laura Beach Day and a Lagoon-Edge Reset",
+            "activities": [
+              {
+                "name": "Laura Beach park entry",
+                "cost": "₹166 pp",
+                "tip": "Recent visitors most often report a US$2 per-person maintenance fee collected at the beach entrance."
+              },
+              {
+                "name": "Robert Reimers Enterprises Eneko Island round-trip boat",
+                "cost": "₹2,490 pp",
+                "tip": "Return transfers are usually around US$30 from the RRE dock; bring your own drinks and picnic supplies because the island has no shops."
+              },
+              {
+                "name": "Cross-island taxi from Majuro town to Laura",
+                "cost": "₹415–₹830 pp",
+                "tip": "Budget roughly US$5–10 depending on whether you share the ride or charter a taxi for the long west-end run."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lesley's Cool Hotel",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Majuro Apartels",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Tide Table Restaurant",
+              "Toeak Bar & Grill",
+              "Marshall S7-Icy Bubble"
+            ]
+          }
+        ]
+      },
+      "Arno Atoll": {
+        "name": "Arno Atoll",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Arno works best as one or two easy nights: go with groceries, expect simple lodge facilities, and let the lagoon and village pace be the main activity.",
+        "days": [
+          {
+            "theme": "Boat from Majuro, White-Sand Check-In and an Empty-Lagoon Sunset",
+            "activities": [
+              {
+                "name": "Majuro to Arno local boat from the Robert Reimers dock",
+                "cost": "₹1,245 pp",
+                "tip": "The Monday-Wednesday-Friday boat is commonly US$15 each way and usually departs around 10am, so show up with cash and light luggage."
+              },
+              {
+                "name": "Arno Beachcomber Lodge stay",
+                "cost": "₹4,150/night",
+                "tip": "Standard rooms are often quoted around US$50 a night, and self-catering is smart because food choices on Arno are extremely limited."
+              },
+              {
+                "name": "Beachcomber lagoon snorkel or swim",
+                "cost": "Free–₹830 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Arno Beachcomber Lodge",
+                "budget": "₹4,150–₹5,810/night"
+              }
+            ],
+            "meals": [
+              "Arno Beachcomber Lodge dining",
+              "Tide Table Restaurant",
+              "Island Cafe"
+            ]
+          },
+          {
+            "theme": "Lagoon Boat, Village Road Walks and the Return to Majuro",
+            "activities": [
+              {
+                "name": "Guesthouse-arranged lagoon boat or fishing outing",
+                "cost": "₹1,660–₹3,320 pp",
+                "tip": "Simple small-boat outings usually depend on fuel, weather, and how many other guests split the cost."
+              },
+              {
+                "name": "Village road and beach walk around Arno's dockside settlements",
+                "cost": "Free"
+              },
+              {
+                "name": "Arno to Majuro return boat",
+                "cost": "₹1,245 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Arno Beachcomber Lodge",
+                "budget": "₹4,150–₹5,810/night"
+              }
+            ],
+            "meals": [
+              "Arno Beachcomber Lodge dining",
+              "Tide Table Restaurant"
+            ]
+          }
+        ]
+      },
+      "Bikini Atoll": {
+        "name": "Bikini Atoll",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 4,
+        "note": "Keep Bikini optional inside the planner: in real life it is a high-cost, technical-diving extension that usually departs via Kwajalein or Ebeye rather than a casual short hop from Majuro.",
+        "days": [
+          {
+            "theme": "Kwajalein Positioning and Liveaboard Embarkation",
+            "activities": [
+              {
+                "name": "Air Marshall Islands or United one-way hop from Majuro to Kwajalein",
+                "cost": "₹24,153–₹24,900 pp",
+                "tip": "Recent published fares most often land around US$291-300 one way, and you should protect the booking with at least one transit night."
+              },
+              {
+                "name": "Ebeye transfer boat for Bikini liveaboard embarkation",
+                "cost": "₹415–₹830 pp",
+                "tip": "Budget roughly US$5-10 for the short local transfer between the airport side and the dive-boat embarkation point."
+              },
+              {
+                "name": "Pacific Master 10-night Bikini Lagoon expedition with local permits",
+                "cost": "₹4.94L pp",
+                "tip": "Around US$5,950 per diver is the common entry price, and that base fare usually bundles accommodation, meals, and the local Bikini permissions."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pacific Master",
+                "budget": "₹4.94L/10-night expedition"
+              },
+              {
+                "name": "Hotel Robert Reimers",
+                "budget": "₹12,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Pacific Master dining room",
+              "Tide Table Restaurant",
+              "Marshall Islands Resort Restaurant"
+            ]
+          },
+          {
+            "theme": "USS Saratoga, Nagato and Deep WWII Wreck Profiles",
+            "activities": [
+              {
+                "name": "USS Saratoga technical wreck dive day",
+                "cost": "Included in ₹4.94L expedition fare",
+                "tip": "Serious operators expect deep-wreck experience and technical certification before letting you dive Saratoga's 1946 test-site remains."
+              },
+              {
+                "name": "Nagato and auxiliary wreck dives in Bikini Lagoon",
+                "cost": "Included in ₹4.94L expedition fare",
+                "tip": "Gas planning, deco discipline, and operator sign-off matter because most headline Bikini wrecks sit far deeper than normal recreational limits."
+              },
+              {
+                "name": "Bikini Atoll World Heritage lagoon access and briefing",
+                "cost": "Included in ₹4.94L expedition fare"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pacific Master",
+                "budget": "₹4.94L/10-night expedition"
+              }
+            ],
+            "meals": [
+              "Pacific Master dining room"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Majuro Airport",
+        "to": "Majuro",
+        "method": "Shared taxi or negotiated airport taxi into Delap-Uliga-Djarrit hotels.",
+        "cost": "₹415–₹830"
+      },
+      {
+        "from": "Majuro",
+        "to": "Arno Atoll",
+        "method": "Local boat from the Robert Reimers dock, usually on Monday, Wednesday, and Friday sailings.",
+        "cost": "₹1,245"
+      },
+      {
+        "from": "Arno Atoll",
+        "to": "Majuro",
+        "method": "Return local boat back into Majuro's Robert Reimers dock.",
+        "cost": "₹1,245"
+      },
+      {
+        "from": "Majuro",
+        "to": "Bikini Atoll",
+        "method": "Air Marshall Islands or United to Kwajalein, then local water transfer for liveaboard embarkation bound for Bikini Lagoon.",
+        "cost": "₹24,568–₹25,730"
+      },
+      {
+        "from": "Bikini Atoll",
+        "to": "Majuro",
+        "method": "Reverse the dive-expedition routing via Kwajalein or Ebeye, then continue by air back to Majuro.",
+        "cost": "₹24,568–₹25,730"
+      }
+    ],
+    "extras": [
+      "Carry more small USD cash than you think you need because museum fees, beach entrances, taxis, and local boats still run on cash-first habits around Majuro and Arno.",
+      "Pack reef-safe sunscreen, a dry bag, and your own snacks before leaving Majuro; outer-atoll supply options are thin and Arno is most comfortable when you self-cater a little.",
+      "Treat Air Marshall Islands timings as soft until you physically reconfirm them in Majuro because weather, maintenance, and runway issues can all reshuffle the week.",
+      "If Bikini is the goal, line up your technical certification, insurance, and logged deep-wreck experience before you book flights because operators screen this seriously."
+    ],
+    "cityImages": {
+      "Majuro": [
+        "Alele Museum Majuro",
+        "Laura Beach Majuro",
+        "Hotel Robert Reimers Marshall Islands"
+      ],
+      "Arno Atoll": [
+        "Arno Atoll Marshall Islands beach",
+        "Arno Beachcomber Lodge Marshall Islands",
+        "Arno Atoll lagoon Marshall Islands"
+      ],
+      "Bikini Atoll": [
+        "Bikini Lagoon Marshall Islands",
+        "USS Saratoga Bikini Atoll dive",
+        "Pacific Master Bikini Atoll"
+      ]
+    }
+  }
+}

@@ -1,0 +1,394 @@
+{
+  "name": "Micronesia",
+  "seed": false,
+  "lat": 7.43,
+  "lng": 150.55,
+  "region": "Oceania",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.9L–₹3.2L",
+    "couple": "₹3.4L–₹5.9L",
+    "family4": "₹6.9L–₹10.8L"
+  },
+  "experiences": [
+    "Ancient Ruins",
+    "Wreck Diving",
+    "Manta Rays",
+    "Island Flights",
+    "Village Culture",
+    "Snorkeling"
+  ],
+  "avoid": [
+    "May–November is wetter across the FSM, so visibility, hiking comfort, and small-boat reliability are weaker than the drier December–April window.",
+    "United's inter-island schedule is infrequent and delays ripple quickly across the Islands Hopper network, so keep buffer time before any long-haul connection.",
+    "Cards work at some hotels, but entrance gates, village guides, taxis, and boat skippers often expect cash in US dollars."
+  ],
+  "combo": [
+    "Guam",
+    "Palau",
+    "Marshall Islands"
+  ],
+  "landmark": "Nan Madol",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 6 days, pick Pohnpei plus either Chuuk for diving or Yap for culture; trying all three islands becomes flight-heavy.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Pohnpei",
+      "lat": 6.8541,
+      "lng": 158.2624,
+      "notes": "Pohnpei is Micronesia's lush historical anchor, mixing Kolonia's practical base with Nan Madol, waterfalls, reef outings, and easy United island-hopper access."
+    },
+    {
+      "name": "Chuuk",
+      "lat": 7.4465,
+      "lng": 151.843,
+      "notes": "Chuuk revolves around Truk Lagoon: world-class WWII wreck diving, Weno-based resort logistics, and short boat rides to both wrecks and cultural stops."
+    },
+    {
+      "name": "Yap",
+      "lat": 9.5167,
+      "lng": 138.1167,
+      "notes": "Yap balances stone money villages, manta-ray channels, and a slower cultural rhythm than the rest of the FSM, with Colonia as the main practical base."
+    }
+  ],
+  "itinerary": {
+    "sim": "FSMTC is the closest thing to a local prepaid option, but coverage and top-ups are patchy; assume hotel Wi-Fi plus offline maps and downloaded boarding passes.",
+    "apps": [
+      "United Airlines",
+      "Google Maps offline",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Pohnpei",
+      "Chuuk",
+      "Yap"
+    ],
+    "cities": {
+      "Pohnpei": {
+        "name": "Pohnpei",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Pohnpei works best as the history-and-nature start: give Nan Madol its own daylight block, then use a second day for waterfalls or a reef boat outing.",
+        "days": [
+          {
+            "theme": "Kolonia Arrival, Nan Madol and a Waterfall Detour",
+            "activities": [
+              {
+                "name": "Nan Madol ruins visit",
+                "cost": "₹415–₹830 pp",
+                "tip": "Recent visitor reports usually place entry around US$5–10 per person; carry cash and go with a driver-guide if you want the Saudeleur history explained well."
+              },
+              {
+                "name": "Kepirohi Waterfall stop",
+                "cost": "₹250–₹415 pp",
+                "tip": "The local gate fee is typically about US$3–5 and is easiest to pay in small notes."
+              },
+              {
+                "name": "Spanish Wall and Kolonia waterfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Taxi or driver hire for Nan Madol circuit",
+                "cost": "₹2,490–₹4,980 per car"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Joy Hotel",
+                "budget": "₹5,800–₹10,000/night"
+              },
+              {
+                "name": "Mangrove Bay Hotel",
+                "budget": "₹6,600–₹11,600/night"
+              },
+              {
+                "name": "Ocean View Plaza Hotel",
+                "budget": "₹5,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Joy Hotel Restaurant",
+              "Fusion Restaurant",
+              "Mangrove Bay Sushi Bar"
+            ]
+          },
+          {
+            "theme": "Reef Day to Ant Atoll or a Slower Rainforest Loop",
+            "activities": [
+              {
+                "name": "Ant Atoll snorkel or dive boat trip",
+                "cost": "₹7,470–₹12,450 pp",
+                "tip": "Day-boat pricing commonly starts near US$90 and rises with gear, lunch, and diver/non-diver mix."
+              },
+              {
+                "name": "Sokehs Ridge or local rainforest guide",
+                "cost": "₹2,490–₹4,980 pp"
+              },
+              {
+                "name": "Kolonia market fruit and snack stop",
+                "cost": "₹415–₹1,245 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Yvonne's Hotel",
+                "budget": "₹5,400–₹8,700/night"
+              },
+              {
+                "name": "7 Stars Inn",
+                "budget": "₹4,600–₹7,900/night"
+              }
+            ],
+            "meals": [
+              "Arnold's Family Restaurant",
+              "Ninsei Restaurant",
+              "Kaselehlie Diner"
+            ]
+          }
+        ]
+      },
+      "Chuuk": {
+        "name": "Chuuk",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Chuuk rewards divers with at least one full wreck day and one lighter topside or second-dive day; non-divers should still use boat time to see the lagoon from the water.",
+        "days": [
+          {
+            "theme": "Weno Arrival, Lagoon Orientation and WWII Stories",
+            "activities": [
+              {
+                "name": "Weno and Tonowas WWII land tour",
+                "cost": "₹4,150–₹6,640 pp",
+                "tip": "Half-day hotel-arranged land tours usually land around US$50–80 with a driver and local guide."
+              },
+              {
+                "name": "Truk Lagoon shoreline snorkel or kayak session",
+                "cost": "₹1,660–₹4,150 pp"
+              },
+              {
+                "name": "Sunset drinks at Blue Lagoon or Truk Stop",
+                "cost": "₹830–₹2,075 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "L5 Hotel",
+                "budget": "₹9,100–₹14,100/night"
+              },
+              {
+                "name": "Truk Stop Hotel",
+                "budget": "₹10,800–₹17,400/night"
+              },
+              {
+                "name": "Truk Blue Lagoon Resort",
+                "budget": "₹12,500–₹20,800/night"
+              }
+            ],
+            "meals": [
+              "Truk Stop Restaurant",
+              "Blue Lagoon Resort Restaurant",
+              "High Tide Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Full Wreck-Dive Day in Truk Lagoon",
+            "activities": [
+              {
+                "name": "Two-tank Truk Lagoon wreck diving day",
+                "cost": "₹14,110–₹18,260 pp",
+                "tip": "Most resort operators quote roughly US$170–220 for a two-tank day; deeper wrecks often require advanced certification, logged experience, and extra gas charges."
+              },
+              {
+                "name": "Equipment rental add-on",
+                "cost": "₹2,075–₹3,320 pp"
+              },
+              {
+                "name": "Non-diver lagoon boat or shallow wreck snorkel",
+                "cost": "₹6,640–₹9,960 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "High Tide Hotel",
+                "budget": "₹8,300–₹12,500/night"
+              },
+              {
+                "name": "Truk Blue Lagoon Resort",
+                "budget": "₹12,500–₹20,800/night"
+              }
+            ],
+            "meals": [
+              "High Tide Hotel Restaurant",
+              "Blue Lagoon Resort Restaurant",
+              "Truk Stop Restaurant"
+            ]
+          }
+        ]
+      },
+      "Yap": {
+        "name": "Yap",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Yap is strongest when split between one cultural land-and-boat day and one manta-focused dive or snorkel day instead of rushing around multiple villages in one afternoon.",
+        "days": [
+          {
+            "theme": "Stone Money Banks, Village Trails and Rumung Views",
+            "activities": [
+              {
+                "name": "Stone money bank and village land tour",
+                "cost": "₹4,150–₹7,470 pp",
+                "tip": "Hotel-arranged half-day cultural tours commonly price near US$50–90 with guide, vehicle, and refreshments included."
+              },
+              {
+                "name": "Rumung Island boat-and-walk tour",
+                "cost": "₹6,640–₹10,790 pp",
+                "tip": "The short boat ride is usually bundled into a pre-arranged community tour; ask your hotel to confirm if lunch or coconut service is included."
+              },
+              {
+                "name": "Bechiyal Cultural Center or Colonia sunset stop",
+                "cost": "₹415–₹1,660 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Oceania Hotel",
+                "budget": "₹7,500–₹11,600/night"
+              },
+              {
+                "name": "ESA Bay View Hotel",
+                "budget": "₹8,300–₹12,500/night"
+              },
+              {
+                "name": "Manta Ray Bay Resort",
+                "budget": "₹13,300–₹21,600/night"
+              }
+            ],
+            "meals": [
+              "Mnuw Restaurant & Bar",
+              "Oceania Hotel Restaurant",
+              "ESA Bay View Restaurant"
+            ]
+          },
+          {
+            "theme": "Mi'il Channel Mantas and a Slower Colonia Evening",
+            "activities": [
+              {
+                "name": "Two-tank manta ray diving in Yap",
+                "cost": "₹12,450–₹17,430 pp",
+                "tip": "Expect around US$150–210 for a two-tank boat trip depending on operator and gear; December to April usually offers the most reliable manta encounters."
+              },
+              {
+                "name": "Single-tank or introductory reef dive",
+                "cost": "₹7,470–₹9,130 pp"
+              },
+              {
+                "name": "Tamilyog Trail or guided nature walk",
+                "cost": "₹2,490–₹4,980 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Village View Resort",
+                "budget": "₹6,600–₹10,000/night"
+              },
+              {
+                "name": "Manta Ray Bay Resort",
+                "budget": "₹13,300–₹21,600/night"
+              }
+            ],
+            "meals": [
+              "Mnuw Restaurant & Bar",
+              "Oceania Hotel Restaurant",
+              "ESA Bay View Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Pohnpei Airport",
+        "to": "Kolonia / Pohnpei hotels",
+        "method": "Short taxi ride or pre-arranged hotel transfer from the airport into Kolonia-side stays.",
+        "cost": "₹830–₹1,660"
+      },
+      {
+        "from": "Pohnpei",
+        "to": "Nan Madol / Ant Atoll",
+        "method": "Road transfer to Nan Madol by taxi or hired driver; Ant Atoll requires a pre-booked speedboat or snorkel charter.",
+        "cost": "₹2,490–₹12,450"
+      },
+      {
+        "from": "Pohnpei",
+        "to": "Chuuk",
+        "method": "United Island Hopper flight between the two islands; book early because seats are limited and weather delays can cascade across the route.",
+        "cost": "₹16,600–₹29,050"
+      },
+      {
+        "from": "Chuuk",
+        "to": "Truk Lagoon wreck sites",
+        "method": "Resort dive boats handle almost all lagoon access, with departures from Weno-side docks or resort jetties.",
+        "cost": "₹6,640–₹18,260"
+      },
+      {
+        "from": "Chuuk",
+        "to": "Yap",
+        "method": "United routing via Guam is the most common link; same-day through itineraries exist on some schedules, but buffers help because missed connections are costly here.",
+        "cost": "₹29,050–₹49,800"
+      },
+      {
+        "from": "Yap",
+        "to": "Rumung and dive channels",
+        "method": "Hotel-arranged boats or dive skiffs cover Rumung, Mi'il Channel, and other water-based day trips from Colonia.",
+        "cost": "₹6,640–₹17,430"
+      }
+    ],
+    "extras": [
+      "Micronesia uses the US dollar, so all prices here are converted at roughly ₹83 per US$1 and work best as planning ranges rather than guaranteed walk-up rates.",
+      "Because United's island-hopper flights may operate only a few times each week on some links, keep at least one spare day before any international flight home.",
+      "Many historic, village, and dive activities are easiest to book through your hotel rather than online because local operators often confirm by phone, WhatsApp, or email.",
+      "Carry reef shoes, mosquito repellent, and a dry bag: Nan Madol paths can be muddy, rain showers are common even in the drier months, and most boat transfers stay wet."
+    ],
+    "cityImages": {
+      "Pohnpei": [
+        "Nan Madol Pohnpei",
+        "Kepirohi Waterfall Pohnpei",
+        "Kolonia waterfront Pohnpei"
+      ],
+      "Chuuk": [
+        "Truk Lagoon wreck diving Chuuk",
+        "Weno waterfront Chuuk",
+        "Truk Blue Lagoon Resort Chuuk"
+      ],
+      "Yap": [
+        "Yap stone money bank",
+        "Manta Ray Bay Resort Yap",
+        "Mi'il Channel manta ray Yap"
+      ]
+    }
+  }
+}

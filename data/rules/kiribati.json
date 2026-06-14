@@ -1,0 +1,419 @@
+{
+  "name": "Kiribati",
+  "seed": false,
+  "lat": 1.87,
+  "lng": -157.36,
+  "region": "Oceania",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "budget": {
+    "solo": "₹2.2L–₹3.65L",
+    "couple": "₹4.1L–₹6.4L",
+    "family4": "₹8.2L–₹11.8L"
+  },
+  "experiences": [
+    "WWII History",
+    "Bonefishing",
+    "Bird Watching",
+    "Remote Atolls",
+    "Lagoon Swimming",
+    "Village Life"
+  ],
+  "avoid": [
+    "November–March is wetter and more humid, and squalls can disrupt boats, light-aircraft timing, and lagoon visibility on both Tarawa and Kiritimati.",
+    "Kiritimati sits far from South Tarawa, so trying to combine both island groups on a very short trip makes the route flight-heavy and expensive.",
+    "Cash, fuel, and fresh produce availability are less predictable outside South Tarawa, so confirm boat departures, guide pickups, and meal arrangements ahead of time."
+  ],
+  "combo": [
+    "Fiji",
+    "Hawaii",
+    "Samoa"
+  ],
+  "landmark": "World War II Relics of Betio",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 6 days, keep the plan to South Tarawa plus Abaiang, or do a dedicated Kiritimati fishing break; trying to cover both island groups in one short holiday burns too much time on flights.",
+  "links": [],
+  "cities": [
+    {
+      "name": "South Tarawa",
+      "lat": 1.451,
+      "lng": 172.971,
+      "notes": "South Tarawa is the practical base for Betio battlefield history, maneaba culture, minibus-linked village hops, and the main transport connections into the outer atolls."
+    },
+    {
+      "name": "Christmas Island (Kiritimati)",
+      "lat": 1.987,
+      "lng": -157.477,
+      "notes": "Kiritimati is Kiribati's remote Line Islands showpiece for world-class bonefishing, huge seabird colonies around the lagoon, and long, empty beaches near London and Paris Peninsula."
+    },
+    {
+      "name": "Abaiang",
+      "lat": 1.79,
+      "lng": 173.04,
+      "notes": "Abaiang is the softer, slower atoll add-on for canoe rides, easy lagoon swims, beach cycling, and guesthouse-led village life just north of Tarawa."
+    }
+  ],
+  "itinerary": {
+    "sim": "Vodafone Kiribati is the safest prepaid pick for South Tarawa and the easiest place to top up before you continue to Abaiang or Kiritimati; coverage drops on the outer atolls, so download maps and flight or boat confirmations early.",
+    "apps": [
+      "Air Kiribati",
+      "Google Maps offline",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "South Tarawa",
+      "Abaiang",
+      "Christmas Island (Kiritimati)"
+    ],
+    "cities": {
+      "South Tarawa": {
+        "name": "South Tarawa",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use South Tarawa for the history-and-logistics part of the trip: one proper Betio day plus one lighter culture-and-lagoon day is the sweet spot.",
+        "days": [
+          {
+            "theme": "Betio Battlefield History, Market Stops and a First Lagoon Sunset",
+            "activities": [
+              {
+                "name": "Molly's Tours or Terau Travel Betio WWII relics circuit",
+                "cost": "₹1,080–₹2,700 pp",
+                "tip": "Published and quoted Tarawa battlefield tours commonly land around AUD 20–50 per person for Red Beach, gun positions, bunkers, and war stories around Betio."
+              },
+              {
+                "name": "Betio War Memorial and Japanese gun emplacements",
+                "cost": "Free",
+                "tip": "Most relics are in public areas, so you can explore independently if you already know the sites, but a local guide adds useful context."
+              },
+              {
+                "name": "Betio Market coconut-and-snack stop",
+                "cost": "₹270–₹810 pp"
+              },
+              {
+                "name": "Sunset walk along the Betio seawall",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dreamers Guest House",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Mary's Motel",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Betio Lodge",
+                "budget": "₹5,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Mary's Restaurant & Bloody Mary Bar",
+              "Ocean Family Seafood",
+              "Koakoa's Corner"
+            ]
+          },
+          {
+            "theme": "Bairiki Culture, Causeway Hops and an Easy Lagoon Swim",
+            "activities": [
+              {
+                "name": "Shared minibus rides between Ambo, Bairiki and Betio",
+                "cost": "₹55–₹165 pp",
+                "tip": "Tarawa's minibuses are the normal way to hop the causeway, and short village sectors are usually well under AUD 3 each."
+              },
+              {
+                "name": "Te Umanibong cultural centre and Bairiki maneaba walk",
+                "cost": "Free–₹270 pp",
+                "tip": "Budget a small donation or local guide tip if exhibitions are open or a community host offers context."
+              },
+              {
+                "name": "Ambo lagoon swim",
+                "cost": "Free"
+              },
+              {
+                "name": "Parliament precinct and waterfront stroll in Bairiki",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Utirerei Motel",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Dreamers Guest House",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Chatterbox Cafe",
+              "Mary's Restaurant & Bloody Mary Bar",
+              "Koakoa's Corner"
+            ]
+          }
+        ]
+      },
+      "Abaiang": {
+        "name": "Abaiang",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Abaiang works best as Kiribati's slower atoll pause: one transfer-and-swim day and one birding-or-canoe day make the guesthouse stay worthwhile.",
+        "days": [
+          {
+            "theme": "Boat North, Tanaea Lagoon and a Beach-Bungalow Arrival",
+            "activities": [
+              {
+                "name": "KNSL ferry or local boat from Betio Wharf to Abaiang",
+                "cost": "₹432–₹1,080 pp",
+                "tip": "Public boat fares for the 1.5–2 hour crossing are usually quoted in the rough AUD 8–20 range, but schedules can shift with weather and cargo loads."
+              },
+              {
+                "name": "Tanaea lagoon swim and snorkel by local fisherman boat",
+                "cost": "₹810–₹1,080 pp",
+                "tip": "Recent traveler reports describe short lagoon boat runs to Tanaea at about the US$10 mark, with the dry season giving the clearest water."
+              },
+              {
+                "name": "Tabontebike beach cycling",
+                "cost": "₹405–₹540 pp",
+                "tip": "Budget about the equivalent of US$5 for a simple bike hire from a guesthouse or village contact."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Terau Beach Bungalow",
+                "budget": "₹4,500–₹8,500/night"
+              },
+              {
+                "name": "Ocean Breeze Bungalows",
+                "budget": "₹4,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Terau Beach Bungalow café",
+              "Ocean Breeze Bungalows dining"
+            ]
+          },
+          {
+            "theme": "Bird-Watching Canoes, Village Skills and a Quiet Lagoon Afternoon",
+            "activities": [
+              {
+                "name": "Guesthouse-arranged bird-watching canoe on the lagoon and mangroves",
+                "cost": "₹810–₹2,160 pp",
+                "tip": "Abaiang hosts commonly quote around AUD 15–40 per person for birding or lagoon tours, depending on the canoe distance and whether lunch is included."
+              },
+              {
+                "name": "Buota weaving and fishing-technique village visit",
+                "cost": "₹540–₹1,080 pp",
+                "tip": "A small host-family contribution is normal when a guesthouse sets up a hands-on cultural visit."
+              },
+              {
+                "name": "Te Rau n Te Mwekaia tomb site stop",
+                "cost": "Free–₹270 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Terau Beach Bungalow",
+                "budget": "₹4,500–₹8,500/night"
+              },
+              {
+                "name": "Ocean Breeze Bungalows",
+                "budget": "₹4,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Terau Beach Bungalow café",
+              "Ocean Breeze Bungalows dining"
+            ]
+          }
+        ]
+      },
+      "Christmas Island (Kiritimati)": {
+        "name": "Christmas Island (Kiritimati)",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Kiritimati pays off only if you slow down a little: one flats day, one full guided fishing day, and one birding-or-beach day is the most balanced version.",
+        "days": [
+          {
+            "theme": "Cassidy Arrival, London Flats and an Ocean-Side Evening",
+            "activities": [
+              {
+                "name": "Air Kiribati arrival into Cassidy and lodge transfer",
+                "cost": "₹54,000–₹1.02L pp",
+                "tip": "Tarawa–Kiritimati air pricing is highly variable, but recent one-way fares generally start around the equivalent of US$676 and can rise sharply on the limited schedule."
+              },
+              {
+                "name": "London village lagoon-edge walk and wade",
+                "cost": "Free"
+              },
+              {
+                "name": "Captain Cook beach sunset or Paris Peninsula drive-out",
+                "cost": "₹1,620–₹4,320 pp",
+                "tip": "Most lodges charge a vehicle-and-driver fee rather than a site entrance fee for the longer beach run toward Paris Peninsula."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Captain Cook Hotel",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Lagoon View Resort",
+                "budget": "₹11,500–₹19,500/night"
+              },
+              {
+                "name": "The Villages",
+                "budget": "₹28,500–₹38,500/night"
+              }
+            ],
+            "meals": [
+              "Captain Cook Hotel Restaurant",
+              "Frigate Bar",
+              "Lagoon View Resort Restaurant"
+            ]
+          },
+          {
+            "theme": "Famous Kiritimati Bonefish Flats",
+            "activities": [
+              {
+                "name": "Guided bonefishing day with The Villages, Ikari House or Christmas Island Lodge",
+                "cost": "₹30,500–₹46,500 pp/day equivalent",
+                "tip": "The Villages publishes week packages from about AUD 3,700 with 6.5 fishing days included, while premium Kiritimati lodges run higher, so the usable day-equivalent lands around this range."
+              },
+              {
+                "name": "Lagoon skiff or wading-flat session for trevally and triggerfish",
+                "cost": "Included–₹8,100 pp",
+                "tip": "Some lodges bundle bluewater or skiff access into premium weeks, while others charge a weather-dependent add-on."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Christmas Island Lodge",
+                "budget": "₹42,500–₹62,500/night"
+              },
+              {
+                "name": "The Villages",
+                "budget": "₹28,500–₹38,500/night"
+              },
+              {
+                "name": "Lagoon View Resort",
+                "budget": "₹11,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "The Villages restaurant",
+              "Captain Cook Hotel Restaurant",
+              "Bistro de Myrko"
+            ]
+          },
+          {
+            "theme": "Cook Islet Birds, Paris Peninsula and a Final Lagoon Swim",
+            "activities": [
+              {
+                "name": "Lodge-arranged Cook Islet or lagoon-islet bird-watching outing",
+                "cost": "₹4,050–₹8,100 pp",
+                "tip": "Bird-focused guide supplements on Kiritimati are commonly quoted around the equivalent of US$50–100 a day when booked through a fishing lodge or local host."
+              },
+              {
+                "name": "Paris Peninsula lagoon swim",
+                "cost": "Free–₹1,620 pp",
+                "tip": "The swim itself is free, but remote beach transfers normally need a driver or boat arrangement."
+              },
+              {
+                "name": "Kiritimati Bakery snack stop in London",
+                "cost": "₹270–₹810 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Captain Cook Hotel",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Lagoon View Resort",
+                "budget": "₹11,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Kiritimati Bakery",
+              "Mum's Kitchen",
+              "Captain Cook Hotel Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bonriki International Airport",
+        "to": "South Tarawa",
+        "method": "Short taxi ride or shared minibus into Ambo, Bairiki, or Betio-side stays along the causeway.",
+        "cost": "₹270–₹1,620"
+      },
+      {
+        "from": "South Tarawa",
+        "to": "Abaiang",
+        "method": "KNSL ferry or a locally arranged boat from Betio Wharf; light bags and schedule flexibility help on this atoll crossing.",
+        "cost": "₹432–₹1,080"
+      },
+      {
+        "from": "Abaiang",
+        "to": "Christmas Island (Kiritimati)",
+        "method": "Return to Tarawa by boat or the short Air Kiribati Abaiang hop, then continue on the limited Tarawa–Kiritimati air schedule when it is operating.",
+        "cost": "₹54,500–₹1.03L"
+      },
+      {
+        "from": "Christmas Island (Kiritimati)",
+        "to": "Cassidy Airport",
+        "method": "Your lodge or hotel transfer handles the final airport run; confirm the pickup the night before because flights are infrequent.",
+        "cost": "Usually included"
+      }
+    ],
+    "extras": [
+      "Kiribati works far better with cash than cards outside the larger hotels, so keep small notes for minibus fares, boat tickets, guesthouse meals, and guide tips.",
+      "On Abaiang and Kiritimati, many outings are arranged informally through your host rather than a central desk, so reconfirm departures the evening before and stay flexible with weather.",
+      "Reef shoes, a dry bag, and binoculars are especially useful here because the best days combine boat landings, shallow-lagoon walking, and seabird viewing.",
+      "Sunday is quieter across Kiribati, with fewer transport options and more village time, so buy snacks and confirm transfers before the weekend where possible."
+    ],
+    "cityImages": {
+      "South Tarawa": [
+        "Betio war relics Kiribati",
+        "South Tarawa causeway",
+        "Marys Motel Tarawa"
+      ],
+      "Abaiang": [
+        "Abaiang lagoon Kiribati",
+        "Terau Beach Bungalow",
+        "Abaiang beach cycling"
+      ],
+      "Christmas Island (Kiritimati)": [
+        "Kiritimati lagoon aerial",
+        "Christmas Island bonefishing flats",
+        "Paris Peninsula Kiribati"
+      ]
+    }
+  }
+}

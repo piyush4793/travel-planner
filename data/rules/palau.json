@@ -1,0 +1,362 @@
+{
+  "name": "Palau",
+  "seed": false,
+  "lat": 7.51,
+  "lng": 134.58,
+  "region": "Oceania",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1.55L–₹2.55L",
+    "couple": "₹2.85L–₹4.65L",
+    "family4": "₹5.7L–₹9.1L"
+  },
+  "experiences": [
+    "Rock Islands Boat Days",
+    "Snorkeling",
+    "World-Class Diving",
+    "WWII History",
+    "Island Resorts",
+    "Limestone Lagoons"
+  ],
+  "avoid": [
+    "June–October is wetter and more humid, so visibility, jellyfish-lake conditions, and boat schedules are less predictable than the November–May dry season.",
+    "Rock Islands permits, Jellyfish Lake access, and Blue Corner dive boats add up quickly, so Palau is rarely a bargain destination even on a short trip.",
+    "Jellyfish Lake openings and jellyfish numbers can fluctuate with climate cycles, so confirm current access before locking your day-by-day plan."
+  ],
+  "combo": [
+    "Guam",
+    "Philippines",
+    "Taiwan"
+  ],
+  "landmark": "Rock Islands Southern Lagoon",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 5 days, base yourself in Koror and keep Peleliu as a single long day or skip it; once you add multiple boat days, Palau feels expensive and transfer-heavy very quickly.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Koror",
+      "lat": 7.3419,
+      "lng": 134.4798,
+      "notes": "Koror is Palau's practical base for museums, marinas, dive shops, hotel choices, and taxi-linked access to nearly every shared boat trip into the Rock Islands."
+    },
+    {
+      "name": "Rock Islands (Jellyfish Lake)",
+      "lat": 7.1622,
+      "lng": 134.3625,
+      "notes": "The Rock Islands are Palau's signature limestone-lagoon playground for Jellyfish Lake, Long Beach, the Milky Way, German Channel, and the boat-heavy snorkeling days that justify the trip."
+    },
+    {
+      "name": "Peleliu",
+      "lat": 7.0029,
+      "lng": 134.2433,
+      "notes": "Peleliu adds the most important WWII battlefield landscapes in Palau, plus a quieter island stay if you want one more night beyond Koror's marina-and-tour rhythm."
+    }
+  ],
+  "itinerary": {
+    "sim": "PalauCel is the simplest prepaid choice around Koror and the main tourism corridor, while PNCC is the usual backup; download offline maps and operator vouchers before you leave the marina because boat days can go off-grid fast.",
+    "apps": [
+      "Google Maps offline",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency",
+      "United Airlines",
+      "Maps.me"
+    ],
+    "cityOrder": [
+      "Koror",
+      "Rock Islands (Jellyfish Lake)",
+      "Peleliu"
+    ],
+    "cities": {
+      "Koror": {
+        "name": "Koror",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Koror as the sleep-easy base for taxis, marina departures, museum time, and your big Blue Corner or Rock Islands days.",
+        "days": [
+          {
+            "theme": "Museum Stops, Marina Bearings and a Gentle Koror Landing",
+            "activities": [
+              {
+                "name": "Belau National Museum",
+                "cost": "₹1,245 pp",
+                "tip": "Adult non-resident admission is US$15 and is the best first stop for Palauan history before you spend money on permits and reef days."
+              },
+              {
+                "name": "Etpison Museum",
+                "cost": "₹830 pp",
+                "tip": "General admission is US$10, making it an easy second museum for contemporary Palauan art, storytelling, and carved cultural objects."
+              },
+              {
+                "name": "Taxi transfer around Koror and Malakal marinas",
+                "cost": "₹830–₹1,660 per taxi",
+                "tip": "Koror taxis are not metered; short in-town hops are usually negotiated, while airport transfers often land closer to ₹1,660–₹2,490 per vehicle."
+              },
+              {
+                "name": "Ngermalk Trail or Malakal waterfront sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Palasia Hotel Palau",
+                "budget": "₹13,500–₹18,500/night"
+              },
+              {
+                "name": "Cove Resort Palau",
+                "budget": "₹20,000–₹32,000/night"
+              },
+              {
+                "name": "Palau Royal Resort",
+                "budget": "₹18,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "Kramers Cafe",
+              "Drop Off Bar & Grill",
+              "The Taj"
+            ]
+          },
+          {
+            "theme": "Blue Corner Diving or an Easy Marina Reset Day",
+            "activities": [
+              {
+                "name": "Blue Corner 2-tank dive with Blue Marlin or a similar Koror dive operator",
+                "cost": "₹14,600–₹15,800 pp",
+                "tip": "A typical 2-tank outer-reef dive runs about US$176 before permits; add the Rock Islands permit unless you already hold the Jellyfish Lake permit."
+              },
+              {
+                "name": "Koror State Rock Islands permit",
+                "cost": "₹4,150 pp",
+                "tip": "The standard 5-day permit is US$50 and covers diving, snorkeling, and sightseeing in the Rock Islands Southern Lagoon, but not Jellyfish Lake."
+              },
+              {
+                "name": "Dolphins Pacific visit or marina-side coffee break",
+                "cost": "₹2,500–₹6,500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Garden Palace Downtown Koror",
+                "budget": "₹11,500–₹17,500/night"
+              },
+              {
+                "name": "Palau Pacific Resort",
+                "budget": "₹25,000–₹42,000/night"
+              }
+            ],
+            "meals": [
+              "Elilai Seaside Dining",
+              "Canoe House",
+              "Mingles Tototo"
+            ]
+          }
+        ]
+      },
+      "Rock Islands (Jellyfish Lake)": {
+        "name": "Rock Islands (Jellyfish Lake)",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Give the Rock Islands two full days if you can: one permit-heavy Jellyfish Lake day and one slower Long Beach or German Channel snorkel loop.",
+        "days": [
+          {
+            "theme": "Jellyfish Lake, Milky Way and the Classic Permit-Heavy First Boat Day",
+            "activities": [
+              {
+                "name": "Koror State Jellyfish Lake permit",
+                "cost": "₹8,300 pp",
+                "tip": "The 5-day Jellyfish Lake permit is US$100 and already includes Rock Islands access, so do not buy the US$50 Rock Islands permit separately if the lake is on your plan."
+              },
+              {
+                "name": "Shared Rock Islands boat tour covering Jellyfish Lake and Milky Way",
+                "cost": "₹9,500–₹12,500 pp",
+                "tip": "Most full-day shared trips from Koror are about US$115–150 excluding permits, usually with lunch, hotel pickup, and snorkel gear."
+              },
+              {
+                "name": "Jellyfish Lake snorkel",
+                "cost": "Included with permit and tour",
+                "tip": "Check current lake health before booking because access or jellyfish density can change after warmer climate cycles."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Palau Pacific Resort",
+                "budget": "₹25,000–₹42,000/night"
+              },
+              {
+                "name": "Carp Island Resort",
+                "budget": "₹18,500–₹28,500/night"
+              },
+              {
+                "name": "Cove Resort Palau",
+                "budget": "₹20,000–₹32,000/night"
+              }
+            ],
+            "meals": [
+              "Carp Island Resort Restaurant",
+              "Elilai Seaside Dining",
+              "Kramers Cafe"
+            ]
+          },
+          {
+            "theme": "Long Beach, German Channel and a Slower Snorkeling Day",
+            "activities": [
+              {
+                "name": "Long Beach and Rock Islands full-day snorkeling tour",
+                "cost": "₹8,300–₹10,400 pp",
+                "tip": "Shared full-day Long Beach tours typically run US$100–125 before permits and usually include lunch, gear, and Koror hotel pickup."
+              },
+              {
+                "name": "German Channel snorkel stop",
+                "cost": "Included on many shared tours"
+              },
+              {
+                "name": "Kayak or SUP add-on in sheltered Rock Islands lagoons",
+                "cost": "₹9,400–₹9,800 pp",
+                "tip": "Guided kayak-and-snorkel outings often price near US$114–118 with equipment and transfers bundled."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Palau Royal Resort",
+                "budget": "₹18,500–₹26,500/night"
+              },
+              {
+                "name": "Palasia Hotel Palau",
+                "budget": "₹13,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Drop Off Bar & Grill",
+              "Canoe House",
+              "Hungry Marlin"
+            ]
+          }
+        ]
+      },
+      "Peleliu": {
+        "name": "Peleliu",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Peleliu is best as a focused WWII-history add-on: either a long guided day trip from Koror or one quiet overnight that lets the battlefield stops breathe.",
+        "days": [
+          {
+            "theme": "Battlefield History, Orange Beach and a Quiet Island Night",
+            "activities": [
+              {
+                "name": "Peleliu Island Historical Tour",
+                "cost": "₹12,100–₹12,800 pp",
+                "tip": "Full-day guided tours from Koror usually price around US$146–154 and commonly include round-trip boat transfer, land transport, lunch, museum access, and the Peleliu permit."
+              },
+              {
+                "name": "Peleliu WWII Museum and Orange Beach independent stop",
+                "cost": "₹1,245–₹1,660 pp",
+                "tip": "If you arrange your own transport, budget about US$15–20 for the Peleliu land permit, with museum access often included or only a very small extra fee."
+              },
+              {
+                "name": "Storyboard reef-edge swim or sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Storyboard Beach Resort",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Peleliu Guest Lodge",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Storyboard Beach Resort Restaurant",
+              "Peleliu Guest Lodge dining room"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Roman Tmetuchl International Airport",
+        "to": "Koror",
+        "method": "Pre-booked hotel shuttle or a negotiated taxi into central Koror or Malakal; taxis are the default because Palau has no broad public-airport bus network.",
+        "cost": "₹1,660–₹2,490 per taxi"
+      },
+      {
+        "from": "Koror",
+        "to": "Rock Islands (Jellyfish Lake)",
+        "method": "Shared speedboat day tour from a Koror or Malakal marina; boats are essential because there is no land access into the lagoon system.",
+        "cost": "₹8,300–₹12,500"
+      },
+      {
+        "from": "Koror",
+        "to": "Peleliu",
+        "method": "Public ferry or passenger boat for the slower budget route, or a PMA scheduled domestic flight / air taxi if you want to skip the long sea crossing.",
+        "cost": "₹1,245–₹8,300"
+      },
+      {
+        "from": "Rock Islands (Jellyfish Lake)",
+        "to": "Peleliu",
+        "method": "Most travelers route back through Koror before continuing south; direct charters are possible but shared-boat logistics are far simpler from the main marinas.",
+        "cost": "₹2,500–₹12,500"
+      },
+      {
+        "from": "Peleliu",
+        "to": "Koror",
+        "method": "Return by public boat/ferry or by PMA's scheduled service when seats are available; flights are much faster but boats remain the normal traveler choice.",
+        "cost": "₹1,245–₹8,300"
+      },
+      {
+        "from": "Koror",
+        "to": "Outlying states",
+        "method": "PMA domestic flights or air taxis connect Koror with places such as Angaur and occasionally Peleliu when schedules line up; confirm availability directly before planning onward stays.",
+        "cost": "₹8,300 pp or ₹33,200 per charter plane"
+      }
+    ],
+    "extras": [
+      "Palau uses US dollars on the ground, so most operators quote permits and tours in USD first; card acceptance is decent in Koror hotels and dive shops, but keep cash for ferries, taxis, and small island purchases.",
+      "Boats are the backbone of a Palau trip: even world-famous stops such as Jellyfish Lake, Long Beach, German Channel, and Blue Corner depend on sea conditions and operator routing each day.",
+      "Koror taxis are negotiated rather than metered, so settle the fare before you get in—especially for airport runs, late dinners on Malakal, or dawn departures to the marina.",
+      "If you want to extend beyond the classic Koror-Rock Islands-Peleliu loop, PMA flights to outlying states can save a lot of time, but schedules are thin enough that you should treat them as pre-booked logistics, not spontaneous hops."
+    ],
+    "cityImages": {
+      "Koror": [
+        "Belau National Museum Koror",
+        "Palasia Hotel Palau Koror",
+        "Malakal Harbor Palau"
+      ],
+      "Rock Islands (Jellyfish Lake)": [
+        "Jellyfish Lake Palau",
+        "Long Beach Palau sandbar",
+        "Rock Islands Southern Lagoon Palau"
+      ],
+      "Peleliu": [
+        "Orange Beach Peleliu",
+        "Peleliu WWII Museum",
+        "Storyboard Beach Resort Peleliu"
+      ]
+    }
+  }
+}

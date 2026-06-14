@@ -1905,9 +1905,9 @@
     "lng": 160.16,
     "region": "Oceania",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 11
   },
   {
     "name": "Micronesia",
@@ -1915,9 +1915,9 @@
     "lng": 150.55,
     "region": "Oceania",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 9
   },
   {
     "name": "Kiribati",
@@ -1925,9 +1925,9 @@
     "lng": -168.73,
     "region": "Oceania",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 10
   },
   {
     "name": "Marshall Islands",
@@ -1935,9 +1935,9 @@
     "lng": 171.18,
     "region": "Oceania",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 10
   },
   {
     "name": "Palau",
@@ -1945,9 +1945,9 @@
     "lng": 134.58,
     "region": "Oceania",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Tuvalu",
