@@ -1,0 +1,520 @@
+{
+  "name": "Afghanistan",
+  "seed": false,
+  "lat": 33.94,
+  "lng": 67.71,
+  "region": "Asia",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.1L–₹1.9L",
+    "couple": "₹2L–₹3.3L",
+    "family4": "₹4L–₹6.2L"
+  },
+  "experiences": [
+    "Kabul museum and Babur garden circuit with secure hotel-based transfers",
+    "Bamyan Valley's Buddha niches and a 4x4 day into Band-e-Amir's blue lakes",
+    "Timurid-era Herat Citadel, Friday Mosque tiles, and old-city bazaars",
+    "Mazar-i-Sharif's Blue Mosque courtyard and a shared-taxi side trip to ancient Balkh"
+  ],
+  "avoid": [
+    "Strong safety advisory: Afghanistan remains an active-conflict destination under Taliban governance, with ISIS-K attacks, arbitrary detention risk, weak consular support, and multiple governments advising against all travel.",
+    "Do not plan independent overland movement after dark; use hotel-arranged airport transfers, daylight-only shared taxis, or trusted 4x4 drivers, and expect checkpoints, sudden route closures, and last-minute flight changes.",
+    "Women face severe Taliban restrictions, including dress-code enforcement and possible denial of entry to parks such as Band-e-Amir; verify current local rules before every excursion."
+  ],
+  "combo": [
+    "Uzbekistan",
+    "Iran"
+  ],
+  "landmark": "Band-e-Amir",
+  "travelStyle": [
+    "explorer",
+    "history"
+  ],
+  "stopoverNote": "Kabul is the practical logistics base for SIMs, cash, flight changes, and driver coordination; keep a buffer night there before long road legs or any international departure.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Kabul",
+      "lat": 34.5553,
+      "lng": 69.2075,
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "notes": "National Museum of Afghanistan, Babur's Gardens, Darul Aman axis, Shahr-e Naw hotels, and the main Kam Air hub for domestic flights."
+    },
+    {
+      "name": "Bamyan",
+      "lat": 34.8216,
+      "lng": 67.8273,
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "notes": "Bamyan Buddha niches, Shahr-e Gholghola viewpoints, and the 4x4 route to Band-e-Amir National Park."
+    },
+    {
+      "name": "Herat",
+      "lat": 34.3529,
+      "lng": 62.204,
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "notes": "Herat Citadel, Friday Mosque, Musalla minarets, and Persian-influenced food around the old city."
+    },
+    {
+      "name": "Mazar-i-Sharif",
+      "lat": 36.709,
+      "lng": 67.11,
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "notes": "Blue Mosque / Shrine of Hazrat Ali, bazaar lanes, and the classic Balkh day trip by shared taxi."
+    }
+  ],
+  "itinerary": {
+    "sim": "Roshan, AWCC, and Etisalat are the easiest Kabul airport/city options; budget roughly ₹120–₹240 for the SIM and ₹600–₹1,200 for a usable short-stay data top-up, with weaker coverage once you leave Kabul.",
+    "apps": [
+      "Google Maps offline",
+      "Organic Maps",
+      "WhatsApp",
+      "XE Currency",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Kabul",
+      "Bamyan",
+      "Herat",
+      "Mazar-i-Sharif"
+    ],
+    "cities": {
+      "Kabul": {
+        "name": "Kabul",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Use Kabul mainly for museum time, secure compounds, and onward logistics; keep sightseeing compact and daylight-only.",
+        "days": [
+          {
+            "theme": "Arrival logistics, Kabul Museum, and Darul Aman axis with vetted transfers",
+            "activities": [
+              {
+                "name": "Hotel-arranged airport transfer from Hamid Karzai International Airport",
+                "cost": "₹1,200–₹2,400",
+                "tip": "Do not improvise airport taxis; have the hotel or fixer confirm the driver's plate before landing."
+              },
+              {
+                "name": "National Museum of Afghanistan entry",
+                "cost": "₹120–₹360 pp",
+                "tip": "Recent visitor reports place admission around 100–300 AFN; carry small cash and dress conservatively."
+              },
+              {
+                "name": "Darul Aman Palace exterior stop and photo break",
+                "cost": "Free"
+              },
+              {
+                "name": "Babur's Gardens entry",
+                "cost": "₹120–₹240 pp"
+              },
+              {
+                "name": "Trusted driver for museum-garden-hotel circuit",
+                "cost": "₹1,200–₹2,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kabul Serena Hotel",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "Park Star Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Atlas Hotel",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Serena Restaurant",
+              "Sufi Mahal",
+              "Bukhara Restaurant"
+            ]
+          },
+          {
+            "theme": "Shahr-e Naw, Chicken Street, and a conservative buffer day before the next leg",
+            "activities": [
+              {
+                "name": "Chicken Street and Shahr-e Naw daylight walk with local guide",
+                "cost": "₹600–₹1,200 pp"
+              },
+              {
+                "name": "Shah-Do Shamshira Mosque exterior stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Sakhi Shrine visit or donation",
+                "cost": "₹0–₹120 pp"
+              },
+              {
+                "name": "Driver-assisted cash / SIM / ticket reconfirmation loop",
+                "cost": "₹900–₹1,800"
+              },
+              {
+                "name": "Early night in secure compound before the Bamyan road leg",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kabul Serena Hotel",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "Park Star Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Amani Hotel",
+                "budget": "₹4,800–₹7,200/night"
+              }
+            ],
+            "meals": [
+              "Le Bistro Kabul",
+              "Ziyafat",
+              "The Cafeteria"
+            ]
+          }
+        ]
+      },
+      "Bamyan": {
+        "name": "Bamyan",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days cover the Buddha cliff, Gholghola, and a full Band-e-Amir outing; add a third only if you want more weather buffer.",
+        "days": [
+          {
+            "theme": "Kabul to Bamyan by shared taxi or 4x4, Buddha niches, and sunset over Shahr-e Gholghola",
+            "activities": [
+              {
+                "name": "Shared taxi seat or private 4x4 from Kabul to Bamyan",
+                "cost": "₹1,200–₹2,400/seat or ₹12,600–₹16,800 per 4x4",
+                "tip": "A shared seat is cheapest, but most foreign travelers use a full vehicle with a trusted driver because checkpoints and road conditions change quickly."
+              },
+              {
+                "name": "Bamiyan Buddha niches and cliff complex ticket",
+                "cost": "₹360–₹600 pp",
+                "tip": "Recent foreigner pricing is commonly quoted around USD 3–5 equivalent; the caves and empty niches are the draw, not reconstructed statues."
+              },
+              {
+                "name": "Shahr-e Gholghola (City of Screams) access / local upkeep fee",
+                "cost": "₹120–₹240 pp"
+              },
+              {
+                "name": "Town taxi between hotel, Buddha cliff, and Gholghola",
+                "cost": "₹600–₹1,200"
+              },
+              {
+                "name": "Dinner and tea in Bamyan center",
+                "cost": "₹360–₹720 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bamyan Royal Hotel",
+                "budget": "₹2,400–₹3,600/night"
+              },
+              {
+                "name": "Highland Hotel",
+                "budget": "₹3,000–₹4,500/night"
+              },
+              {
+                "name": "Norban Qala Guest House",
+                "budget": "₹2,000–₹3,200/night"
+              }
+            ],
+            "meals": [
+              "Highland Hotel Restaurant",
+              "Silk Road Hotel Restaurant",
+              "Bamyan Royal Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Band-e-Amir lakes by 4x4 with shrine viewpoints and a long daylight return",
+            "activities": [
+              {
+                "name": "Private 4x4 or shared local taxi to Band-e-Amir National Park",
+                "cost": "₹720–₹1,200/seat or ₹6,000–₹8,400 per 4x4",
+                "tip": "Expect a 2–3 hour run each way; a full-day vehicle is the most reliable format for the rough road."
+              },
+              {
+                "name": "Band-e-Amir National Park / blue lakes entry fee",
+                "cost": "₹420–₹900 pp",
+                "tip": "Recent foreigner pricing is usually around USD 5–10 equivalent, paid in cash at the gate or local checkpoint."
+              },
+              {
+                "name": "Boat or pedal-boat hire when operating",
+                "cost": "₹240–₹480 pp"
+              },
+              {
+                "name": "Shrine ridge tea stop and snacks",
+                "cost": "₹180–₹360 pp"
+              },
+              {
+                "name": "Evening hotel-arranged reconfirmation for Kabul / Herat onward leg",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bamyan Royal Hotel",
+                "budget": "₹2,400–₹3,600/night"
+              },
+              {
+                "name": "Highland Hotel",
+                "budget": "₹3,000–₹4,500/night"
+              },
+              {
+                "name": "Gholghola Hotel",
+                "budget": "₹2,200–₹3,400/night"
+              }
+            ],
+            "meals": [
+              "Band-e-Amir lakeside tea stalls",
+              "Highland Hotel Restaurant",
+              "Silk Road Hotel Restaurant"
+            ]
+          }
+        ]
+      },
+      "Herat": {
+        "name": "Herat",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One focused day is enough for the citadel, Friday Mosque, and an old-city food circuit if flights cooperate.",
+        "days": [
+          {
+            "theme": "Kam Air arrival, Herat Citadel, Friday Mosque, and Timurid-era landmarks",
+            "activities": [
+              {
+                "name": "Bamyan to Kabul by road, then Kam Air flight onward to Herat",
+                "cost": "₹18,000–₹32,000 pp",
+                "tip": "There is no dependable Bamyan-Herat shortcut; build in a Kabul transit buffer rather than gambling on same-day recovery if the road slips."
+              },
+              {
+                "name": "Herat Citadel (Qala Ikhtyaruddin) entry",
+                "cost": "₹360–₹600 pp",
+                "tip": "Recent foreign visitor reports usually place entry around 300–500 AFN."
+              },
+              {
+                "name": "Great Mosque of Herat / Friday Mosque donation",
+                "cost": "₹0–₹120 pp"
+              },
+              {
+                "name": "Musalla minarets and Gawhar Shad Mausoleum taxi loop",
+                "cost": "₹600–₹1,200"
+              },
+              {
+                "name": "Old bazaar saffron, carpet, and tea stop",
+                "cost": "₹240–₹720 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tejarat International Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "ARG Hotel",
+                "budget": "₹6,000–₹9,500/night"
+              },
+              {
+                "name": "Sadaf International Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Khaima Restaurant",
+              "Fifty Fifty Restaurant",
+              "Naweed Restaurant"
+            ]
+          }
+        ]
+      },
+      "Mazar-i-Sharif": {
+        "name": "Mazar-i-Sharif",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Two days cover the Blue Mosque plus the easy Balkh excursion; use flights instead of long overland hops whenever possible.",
+        "days": [
+          {
+            "theme": "Flight into Mazar, Blue Mosque courtyard, and bazaar lanes around the shrine",
+            "activities": [
+              {
+                "name": "Kam Air domestic connection from Herat via Kabul into Mazar-i-Sharif",
+                "cost": "₹14,000–₹28,000 pp",
+                "tip": "Domestic schedules change fast; reconfirm the night before and again on the day of travel."
+              },
+              {
+                "name": "Blue Mosque / Shrine of Hazrat Ali entry",
+                "cost": "Free",
+                "tip": "There is normally no admission fee; carry a small note only if you want to make a donation and dress conservatively."
+              },
+              {
+                "name": "Rawza courtyard pigeon-feeding and tilework circuit",
+                "cost": "Free"
+              },
+              {
+                "name": "City taxi hops between airport, hotel, and shrine district",
+                "cost": "₹120–₹360"
+              },
+              {
+                "name": "Evening qabili palau and kebab dinner",
+                "cost": "₹300–₹720 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Barat Hotel",
+                "budget": "₹2,800–₹4,200/night"
+              },
+              {
+                "name": "Rahat Hotel",
+                "budget": "₹2,400–₹3,800/night"
+              },
+              {
+                "name": "Kefayat Hotel",
+                "budget": "₹3,200–₹4,800/night"
+              }
+            ],
+            "meals": [
+              "Pars Restaurant",
+              "Nazargah Guesthouse & Restaurant",
+              "Rahat Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Shared taxi to ancient Balkh with Green Mosque and No Gombad ruins",
+            "activities": [
+              {
+                "name": "Shared taxi or private cab to Balkh and back",
+                "cost": "₹360–₹1,200 pp"
+              },
+              {
+                "name": "Green Mosque of Balkh donation",
+                "cost": "₹0–₹120 pp"
+              },
+              {
+                "name": "No Gombad / Haji Piyada Mosque site visit",
+                "cost": "₹120–₹240 pp"
+              },
+              {
+                "name": "Balkh bazaar tea and bread stop",
+                "cost": "₹120–₹240 pp"
+              },
+              {
+                "name": "Return to Mazar for airport buffer or extra shrine time",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Barat Hotel",
+                "budget": "₹2,800–₹4,200/night"
+              },
+              {
+                "name": "Rahat Hotel",
+                "budget": "₹2,400–₹3,800/night"
+              },
+              {
+                "name": "Arsalan Guest House",
+                "budget": "₹2,000–₹3,200/night"
+              }
+            ],
+            "meals": [
+              "Pars Restaurant",
+              "Barat Hotel Restaurant",
+              "Nazargah Guesthouse & Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Kabul",
+        "to": "Bamyan",
+        "method": "Shared taxi via the Bamyan highway or a hotel-arranged 4x4; leave at dawn, keep it daylight-only, and avoid assuming the road will stay open in bad weather.",
+        "cost": "₹1,200–₹2,400/seat or ₹12,600–₹16,800 per 4x4"
+      },
+      {
+        "from": "Bamyan",
+        "to": "Herat",
+        "method": "Return by 4x4/shared taxi to Kabul first, then use a Kam Air or Ariana domestic flight onward to Herat; this is slow but far safer than forcing an improvised westbound road run.",
+        "cost": "₹18,000–₹32,000 pp"
+      },
+      {
+        "from": "Herat",
+        "to": "Mazar-i-Sharif",
+        "method": "Domestic flight via Kabul is the practical option; overland only makes sense for essential travel with current local security advice and much more time.",
+        "cost": "₹14,000–₹28,000 pp"
+      }
+    ],
+    "extras": [
+      "April to June and September to October are the workable windows: mountain roads around Bamyan are clearer, Kabul is less icy, and Herat/Mazar avoid the worst midsummer heat.",
+      "Afghanistan is not a casual backpacking add-on in 2026. Re-check live travel advisories before booking and again before every intercity leg because Taliban rules, checkpoint conditions, and flight operations can change without notice.",
+      "Kam Air is the most useful domestic carrier for Kabul-Herat and Kabul-Mazar sectors, but keep printed or screenshot copies of tickets and leave at least one buffer night before any international departure.",
+      "Cash is king: ATMs can fail, cards are unreliable, and foreign travelers usually need a mix of AFN for daily use plus emergency USD kept separately.",
+      "Women travelers should plan conservatively with local guidance, full-coverage clothing, and the expectation that some leisure sites or parks may deny entry under current Taliban policies."
+    ],
+    "cityImages": {
+      "Kabul": [
+        "National Museum of Afghanistan Kabul",
+        "Babur Gardens Kabul",
+        "Darul Aman Palace Kabul"
+      ],
+      "Bamyan": [
+        "Bamiyan Buddha niches Afghanistan",
+        "Band-e-Amir National Park blue lakes",
+        "Shahr-e Gholghola Bamyan"
+      ],
+      "Herat": [
+        "Herat Citadel Qala Ikhtyaruddin",
+        "Great Mosque of Herat",
+        "Musalla minarets Herat"
+      ],
+      "Mazar-i-Sharif": [
+        "Blue Mosque Mazar-i-Sharif",
+        "Balkh Green Mosque",
+        "Mazar-i-Sharif bazaar"
+      ]
+    }
+  }
+}

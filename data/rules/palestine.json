@@ -1,0 +1,455 @@
+{
+  "name": "Palestine",
+  "seed": false,
+  "lat": 31.95,
+  "lng": 35.23,
+  "region": "Middle East",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹55K–₹90K",
+    "couple": "₹95K–₹1.45L",
+    "family4": "₹1.8L–₹2.7L"
+  },
+  "experiences": [
+    "Church of the Nativity and Bethlehem's Star Street",
+    "Banksy murals and The Walled Off Hotel museum",
+    "Ramallah café culture and museum stops",
+    "Jericho's Mount of Temptation cable car and Hisham's Palace",
+    "Hebron Old City lanes and the Ibrahimi Mosque"
+  ],
+  "avoid": [
+    "Jericho gets intensely hot from June to August, especially from late morning onward.",
+    "Safety advisory: checkpoint timings, protest-related closures, and access rules in the West Bank can change quickly, so recheck live government advisories, local hotel guidance, and same-day road conditions before every intercity leg.",
+    "Friday prayer hours, Sunday church traffic, and religious holidays can shorten opening hours around Bethlehem and Hebron, so start Old City visits early."
+  ],
+  "combo": [
+    "Jordan",
+    "Israel",
+    "Egypt"
+  ],
+  "landmark": "Church of the Nativity",
+  "travelStyle": [
+    "explorer",
+    "culture"
+  ],
+  "stopoverNote": "A compact 4- to 5-day Bethlehem + Hebron + Ramallah + Jericho loop works well when checkpoints are calm; use 6 to 7 days only if you want slower café time in Ramallah or an extra Jericho desert day.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Bethlehem",
+      "lat": 31.7054,
+      "lng": 35.2024,
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "Manger Square base for the Church of the Nativity, Star Street, Banksy wall art, traditional guesthouses and easy walking between most core sights"
+    },
+    {
+      "name": "Ramallah",
+      "lat": 31.9038,
+      "lng": 35.2034,
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "The West Bank's easiest urban base for cafés, cultural venues, central hotels and onward shared taxis to other cities"
+    },
+    {
+      "name": "Jericho",
+      "lat": 31.8611,
+      "lng": 35.4618,
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "Low-lying oasis city for the Mount of Temptation, Hisham's Palace, archaeological sites and quick palm-lined road trips"
+    },
+    {
+      "name": "Hebron",
+      "lat": 31.5326,
+      "lng": 35.0998,
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "Historic Al-Khalil for the Ibrahimi Mosque, old souq lanes, ceramic and glass workshops, and one of the West Bank's most layered old cities"
+    }
+  ],
+  "itinerary": {
+    "sim": "Jawwal or Ooredoo Palestine prepaid SIMs usually land around ₹460–₹1,380 depending on data size, which is enough for offline maps, WhatsApp calls, and booking short taxi hops when shared service taxis are not practical.",
+    "apps": [
+      "Google Maps (offline West Bank maps)",
+      "Moovit",
+      "Booking.com",
+      "WhatsApp",
+      "Google Translate",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Bethlehem",
+      "Hebron",
+      "Ramallah",
+      "Jericho"
+    ],
+    "cities": {
+      "Bethlehem": {
+        "name": "Bethlehem",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Stay near Manger Square or Beit Sahour so the Church of the Nativity, Star Street, the old market and the wall-art circuit are all walkable without depending on taxis.",
+        "days": [
+          {
+            "theme": "Cover Bethlehem's pilgrimage core first, then slow down for cafés and the evening atmosphere around the square",
+            "activities": [
+              {
+                "name": "Church of the Nativity and St. Catherine's Church",
+                "cost": "₹0"
+              },
+              {
+                "name": "Manger Square and Star Street walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Milk Grotto",
+                "cost": "₹0"
+              },
+              {
+                "name": "Afteem Restaurant lunch stop",
+                "cost": "₹460–₹920"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dar Sitti Aziza Boutique Hotel",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Bethlehem Hotel",
+                "budget": "₹9,000–₹14,000/night"
+              }
+            ],
+            "meals": [
+              "Afteem Restaurant",
+              "Singer Café",
+              "Fawda Restaurant & Cafe"
+            ]
+          },
+          {
+            "theme": "Use the second day for Banksy-focused Bethlehem and a more contemporary read on the city beyond the church quarter",
+            "activities": [
+              {
+                "name": "Banksy murals along the separation wall",
+                "cost": "₹0"
+              },
+              {
+                "name": "The Walled Off Hotel museum",
+                "cost": "₹460"
+              },
+              {
+                "name": "International Nativity Museum",
+                "cost": "₹230–₹460 approx"
+              },
+              {
+                "name": "Old market and local sweets stop",
+                "cost": "₹230–₹575"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Walled Off Hotel",
+                "budget": "₹6,500–₹11,000/night"
+              },
+              {
+                "name": "Dar Sitti Aziza Boutique Hotel",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "The Walled Off Hotel",
+              "Singer Café",
+              "Al Safura Restaurant"
+            ]
+          }
+        ]
+      },
+      "Hebron": {
+        "name": "Hebron",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Hebron works best as a focused daytime visit with an early arrival; keep your passport handy, dress conservatively, and leave buffer time for checkpoints or security screening near the old city.",
+        "days": [
+          {
+            "theme": "Give Hebron a full old-city day for religious history, market lanes and working craft traditions",
+            "activities": [
+              {
+                "name": "Ibrahimi Mosque / Cave of the Patriarchs",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hebron Old City and souq walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hirbawi keffiyeh factory shop visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hebron Glass & Ceramics Factory",
+                "cost": "₹0–₹230 depending on workshop access"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lamar Guesthouse",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Hebron Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Qander Restaurant",
+              "Abu Mazen Restaurant",
+              "Al Khalil Old City Restaurant"
+            ]
+          }
+        ]
+      },
+      "Ramallah": {
+        "name": "Ramallah",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Ramallah is the easiest place to recover between religious-history days: most sights are short taxi hops apart, and central hotels make evening food and café crawls simple on foot.",
+        "days": [
+          {
+            "theme": "Switch to a more contemporary urban day with museums, public squares and Ramallah's strong café culture",
+            "activities": [
+              {
+                "name": "Al-Manara Square and central Ramallah walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Yasser Arafat Museum and mausoleum grounds",
+                "cost": "₹0–₹230 depending on exhibition"
+              },
+              {
+                "name": "Dar Zahran Heritage Building",
+                "cost": "₹230 approx"
+              },
+              {
+                "name": "Evening café hop around Rukab Street",
+                "cost": "₹345–₹920"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Royal Court Suites Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Mövenpick Hotel Ramallah",
+                "budget": "₹14,000–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Pronto Resto-Café",
+              "Orjuwan Lounge",
+              "Zamn Café"
+            ]
+          },
+          {
+            "theme": "Add a second Ramallah day only if you want a slower culture day or a nearby village side trip rather than another big Old City",
+            "activities": [
+              {
+                "name": "The Palestinian Museum in Birzeit",
+                "cost": "₹460 approx"
+              },
+              {
+                "name": "Khalil Sakakini Cultural Center",
+                "cost": "₹0–₹230 depending on exhibition"
+              },
+              {
+                "name": "Taybeh village outing for church lanes and local tastings",
+                "cost": "Transport and tasting extra"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Royal Court Suites Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Grand Park Hotel",
+                "budget": "₹11,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Darna Restaurant",
+              "Pronto Resto-Café",
+              "Azkadenya"
+            ]
+          }
+        ]
+      },
+      "Jericho": {
+        "name": "Jericho",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Start early in Jericho because the valley heat rises fast; use walking only for the compact center and rely on short taxis or service rides for Mount of Temptation and Hisham's Palace.",
+        "days": [
+          {
+            "theme": "Do Jericho's headline sites in one efficient day by starting with the cable car before the worst of the heat",
+            "activities": [
+              {
+                "name": "Mount of Temptation cable car (round trip)",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Monastery lookout above Jericho",
+                "cost": "Included with cable car"
+              },
+              {
+                "name": "Hisham's Palace",
+                "cost": "₹230"
+              },
+              {
+                "name": "Jericho city center and Zacchaeus Tree stop",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberg Inn",
+                "budget": "₹4,000–₹6,500/night"
+              },
+              {
+                "name": "Jericho Resort Village",
+                "budget": "₹7,500–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Temptations Restaurant",
+              "Qasr al Salam",
+              "Mount of Temptation Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep a second Jericho day only if you want a slower oasis pace, pool time or more archaeology",
+            "activities": [
+              {
+                "name": "Tell es-Sultan / Ancient Jericho",
+                "cost": "₹230 approx"
+              },
+              {
+                "name": "Ain es-Sultan spring area walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Jericho resort pool or spa day-use",
+                "cost": "₹690–₹1,380 depending on hotel"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jericho Resort Village",
+                "budget": "₹7,500–₹12,000/night"
+              },
+              {
+                "name": "Sami Youth Hostel",
+                "budget": "₹2,000–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Qasr al Salam",
+              "Green Valley Restaurant",
+              "Auberg Inn"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bethlehem",
+        "to": "Hebron",
+        "method": "Shared service taxi (servees) or local bus, then walking inside the old city",
+        "cost": "₹345–₹575"
+      },
+      {
+        "from": "Hebron",
+        "to": "Ramallah",
+        "method": "Shared service taxi via Bethlehem or direct service when available",
+        "cost": "₹575–₹920"
+      },
+      {
+        "from": "Ramallah",
+        "to": "Jericho",
+        "method": "Shared service taxi or bus from Ramallah/Al-Bireh transport hub",
+        "cost": "₹345–₹690"
+      }
+    ],
+    "extras": [
+      "Safety advisory: checkpoint wait times, protest-related road closures, and access restrictions can change with little notice, so confirm the latest local situation before departure and avoid demonstrations altogether.",
+      "Carry ILS cash for service taxis, museum tickets and small eateries because cards are still hit-or-miss outside larger hotels in Bethlehem and Ramallah.",
+      "Church of the Nativity and the Ibrahimi Mosque are free to enter, but modest dress and extra security screening time are both sensible.",
+      "The Walled Off Hotel museum is about 20 ILS (~₹460), Hisham's Palace about 10 ILS (~₹230), and the Mount of Temptation cable car about 60 ILS round trip (~₹1,380).",
+      "Walking works well in Manger Square, central Ramallah and parts of Hebron Old City, but Jericho is much easier with short taxi hops because distances and heat add up quickly."
+    ],
+    "cityImages": {
+      "Bethlehem": [
+        "Church of the Nativity Bethlehem",
+        "Manger Square Bethlehem",
+        "Walled Off Hotel Bethlehem"
+      ],
+      "Hebron": [
+        "Ibrahimi Mosque Hebron",
+        "Hebron Old City souq",
+        "Hirbawi factory Hebron"
+      ],
+      "Ramallah": [
+        "Al Manara Square Ramallah",
+        "Yasser Arafat Museum Ramallah",
+        "Ramallah cafe street"
+      ],
+      "Jericho": [
+        "Mount of Temptation cable car Jericho",
+        "Hisham's Palace Jericho",
+        "Jericho oasis Palestine"
+      ]
+    }
+  }
+}

@@ -1,0 +1,445 @@
+{
+  "name": "Sudan",
+  "seed": false,
+  "lat": 12.86,
+  "lng": 30.22,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "worstMonths": [
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1.15L–₹1.95L",
+    "couple": "₹2L–₹3.35L",
+    "family4": "₹3.85L–₹5.95L"
+  },
+  "experiences": [
+    "Blue and White Nile confluence views, museums, and old-city history in Khartoum and Omdurman.",
+    "Sunrise and sunset visits to the royal necropolis at the Meroë Pyramids.",
+    "Red Sea seafood, corniche walks, and diving logistics from Port Sudan.",
+    "Coral-stone Ottoman ruins and ferry-port heritage around Suakin Old Town.",
+    "Classic north-and-east overland arc mixing archaeology, Nile desert scenery, and Red Sea coast."
+  ],
+  "avoid": [
+    "Safety advisory: Sudan remains affected by ongoing armed conflict, airport disruption, fuel shortages, and fast-changing security conditions; avoid non-essential travel and only consider this route if you have same-week official clearance, a trusted local fixer, and a daily evacuation plan.",
+    "Khartoum, intercity roads, and even Port Sudan logistics can change abruptly with checkpoints, telecom outages, or closures, so keep extra cash, offline maps, backup power, and transport arranged directly with vetted operators.",
+    "November to February is the weather sweet spot, but cooler dry months do not remove conflict risk; confirm hotel operations, Badr Airlines schedules, museum openings, and road permissions right before every move."
+  ],
+  "combo": [
+    "Egypt",
+    "Eritrea"
+  ],
+  "landmark": "Meroë Pyramids",
+  "travelStyle": [
+    "history",
+    "explorer"
+  ],
+  "stopoverNote": "In stable periods the classic route is Khartoum for the Nile confluence, north to Meroë, then east to Port Sudan and Suakin; during the current conflict, Port Sudan is the more practical aviation gateway when flights operate, while Khartoum and long road legs require much tighter risk checks.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Khartoum",
+      "lat": 15.5007,
+      "lng": 32.5599,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Capital base for the Blue/White Nile confluence, National Museum, Omdurman side trips, cash logistics, and the most important same-day security checks before moving onward."
+    },
+    {
+      "name": "Meroë Pyramids",
+      "lat": 16.9377,
+      "lng": 33.7516,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Royal Necropolis desert site usually visited with an overnight at Meroe Tented Camp or from the Karima side, best timed for sunrise and sunset light."
+    },
+    {
+      "name": "Port Sudan",
+      "lat": 19.6158,
+      "lng": 37.2164,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Red Sea gateway for seafood, corniche evenings, domestic flight links when Badr Airlines is operating, and dive boats heading to reefs off the Sudanese coast."
+    },
+    {
+      "name": "Suakin",
+      "lat": 19.1059,
+      "lng": 37.3321,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Historic coral-port ghost town south of Port Sudan, usually handled as a half- or full-day heritage outing with a local guide and transport arranged from the coast."
+    }
+  ],
+  "itinerary": {
+    "sim": "Zain Sudan and MTN Sudan are the usual SIM choices when shops are functioning; buy and top up in Port Sudan or Khartoum, then assume weak or no data on long road legs to Meroë and around Suakin's ruins.",
+    "apps": [
+      "Google Maps offline",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency",
+      "Maps.me"
+    ],
+    "cityOrder": [
+      "Khartoum",
+      "Meroë Pyramids",
+      "Port Sudan",
+      "Suakin"
+    ],
+    "cities": {
+      "Khartoum": {
+        "name": "Khartoum",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Keep Khartoum compact and daytime-focused: use the first day for the Nile confluence and museum stops, then reserve the second for Omdurman or buffer time in case local conditions change.",
+        "days": [
+          {
+            "theme": "Blue and White Nile confluence, museum time, and cautious city orientation",
+            "activities": [
+              {
+                "name": "Mogran Family Park / Blue and White Nile confluence access",
+                "cost": "₹0–₹420",
+                "tip": "The riverfront itself is often free, but fenced park or café seating areas can charge a small local entry or table fee."
+              },
+              {
+                "name": "National Museum of Sudan entry",
+                "cost": "₹280–₹560"
+              },
+              {
+                "name": "Taxi hops between Khartoum, Tuti-facing viewpoints, and the museum district",
+                "cost": "₹420–₹1,120"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Acropole Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Corinthia Hotel Khartoum",
+                "budget": "₹16,500–₹26,000/night"
+              },
+              {
+                "name": "Al Salam Hotel Khartoum",
+                "budget": "₹13,500–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Assaha Restaurant",
+              "Ozone Café",
+              "Acropole Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Omdurman history, souq energy, and a buffer day for route or permit checks",
+            "activities": [
+              {
+                "name": "Khalifa House Museum entry in Omdurman",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Souq Omdurman guided walk or driver wait-time",
+                "cost": "₹840–₹2,100"
+              },
+              {
+                "name": "River or cross-city taxi back to Khartoum hotels",
+                "cost": "₹560–₹1,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Acropole Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Corinthia Hotel Khartoum",
+                "budget": "₹16,500–₹26,000/night"
+              },
+              {
+                "name": "Al Salam Hotel Khartoum",
+                "budget": "₹13,500–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Assaha Restaurant",
+              "Ozone Café",
+              "Al Salam Hotel Restaurant"
+            ]
+          }
+        ]
+      },
+      "Meroë Pyramids": {
+        "name": "Meroë Pyramids",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "An overnight near the site is worth it because the pyramids are at their best around sunrise and sunset, and the road north from Khartoum is too long for a relaxed same-day out-and-back.",
+        "days": [
+          {
+            "theme": "Royal Necropolis dunes, pyramid entry, and sunset in the desert",
+            "activities": [
+              {
+                "name": "Meroë Pyramids archaeological site entry",
+                "cost": "₹420–₹840",
+                "tip": "Published traveler reports usually place the entry around USD 5–10 equivalent, with payment requested in cash."
+              },
+              {
+                "name": "Camel ride or local 4x4 around the dunes at sunset",
+                "cost": "₹1,700–₹4,200"
+              },
+              {
+                "name": "Site guide or driver standby for the Royal Necropolis and nearby viewpoints",
+                "cost": "₹1,400–₹3,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Meroe Tented Camp",
+                "budget": "₹14,000–₹24,000/night"
+              },
+              {
+                "name": "Nubian Rest House",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Meroe Tented Camp Restaurant",
+              "Nubian Rest House Restaurant"
+            ]
+          },
+          {
+            "theme": "Sunrise return, Nuri/Karima extension, and a slower archaeology morning",
+            "activities": [
+              {
+                "name": "Second dawn visit to the Meroë Pyramids",
+                "cost": "₹0–₹420",
+                "tip": "Some drivers reuse the previous ticket window for an early return, but plan for a small re-entry or caretaker fee in cash."
+              },
+              {
+                "name": "Transfer toward Karima or Jebel Barkal extension",
+                "cost": "₹2,800–₹7,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Meroe Tented Camp",
+                "budget": "₹14,000–₹24,000/night"
+              },
+              {
+                "name": "Nubian Rest House",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Meroe Tented Camp Restaurant",
+              "Nubian Rest House Restaurant"
+            ]
+          }
+        ]
+      },
+      "Port Sudan": {
+        "name": "Port Sudan",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Port Sudan is the Red Sea logistics base: use one day for diving or a reef boat and another for seafood, rest, or a light city day before Suakin.",
+        "days": [
+          {
+            "theme": "Red Sea diving and corniche seafood on Sudan's coast",
+            "activities": [
+              {
+                "name": "Two-dive Port Sudan Red Sea boat trip",
+                "cost": "₹5,000–₹8,300",
+                "tip": "Typical operator quotes are around USD 60–100 for two dives, with boat and tanks included when tourism operations are active."
+              },
+              {
+                "name": "Full dive-gear rental",
+                "cost": "₹1,250–₹2,100"
+              },
+              {
+                "name": "Airport or corniche taxi within Port Sudan",
+                "cost": "₹280–₹840"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Coral Port Sudan Hotel",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Hotel Marina Port Sudan",
+                "budget": "₹7,500–₹13,000/night"
+              },
+              {
+                "name": "Mirak Hotel Suites",
+                "budget": "₹6,000–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Dream Restaurant",
+              "Sea Side Restaurant & Cafe",
+              "The Dock"
+            ]
+          },
+          {
+            "theme": "Low-key harbour day, fish market, and flex time for flight or road changes",
+            "activities": [
+              {
+                "name": "Port Sudan fish market and corniche walk",
+                "cost": "₹0–₹280"
+              },
+              {
+                "name": "Snorkeling or boat ride without scuba gear",
+                "cost": "₹2,500–₹5,000"
+              },
+              {
+                "name": "Domestic Badr Airlines sector hold or airport transfer when schedules are operating",
+                "cost": "₹6,500–₹14,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Coral Port Sudan Hotel",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Hotel Marina Port Sudan",
+                "budget": "₹7,500–₹13,000/night"
+              },
+              {
+                "name": "Mirak Hotel Suites",
+                "budget": "₹6,000–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Bashaer Sea Food",
+              "Harvest Restaurant",
+              "Jaber's Pizza & Waffle"
+            ]
+          }
+        ]
+      },
+      "Suakin": {
+        "name": "Suakin",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Most travelers sleep in Port Sudan and visit Suakin as a day trip, but the heritage stop still merits a full half-day for the ruins, harbour, and slow photography walks.",
+        "days": [
+          {
+            "theme": "Ghost-town coral architecture, harbour views, and a guided ruins walk",
+            "activities": [
+              {
+                "name": "Suakin Old Town / ghost town access donation",
+                "cost": "₹170–₹700",
+                "tip": "There is usually no formal ticket booth, but caretaker or guide donations are common at the ruins."
+              },
+              {
+                "name": "Local guide for Suakin Old Town and Prince Osman Digna House area",
+                "cost": "₹1,700–₹3,500"
+              },
+              {
+                "name": "Taxi or private car from Port Sudan to Suakin and back",
+                "cost": "₹1,700–₹4,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Suakin Rest House",
+                "budget": "₹2,800–₹5,000/night"
+              },
+              {
+                "name": "Red Sea Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Coral Port Sudan Hotel",
+                "budget": "₹8,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Al-Hamra Restaurant",
+              "Red Sea Seafood Restaurant",
+              "Coral Hotel Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Khartoum",
+        "to": "Meroë Pyramids",
+        "method": "Private driver or long-distance bus north via Shendi is the standard archaeology move; only use it when same-day road checks say the route is open and your fixer is comfortable with conditions.",
+        "cost": "₹2,100–₹9,800"
+      },
+      {
+        "from": "Meroë Pyramids",
+        "to": "Port Sudan",
+        "method": "Most travelers continue by road via Atbara; when domestic links are functioning, some prefer returning to Khartoum or Atbara-side hubs and taking a Badr Airlines sector toward Port Sudan.",
+        "cost": "₹3,500–₹14,000"
+      },
+      {
+        "from": "Port Sudan",
+        "to": "Suakin",
+        "method": "Shared taxi, hired car, or minibus south along the Red Sea coast; road time is roughly an hour each way in normal conditions.",
+        "cost": "₹280–₹4,200"
+      }
+    ],
+    "extras": [
+      "November to February gives Sudan its most comfortable sightseeing weather: cooler Khartoum mornings, clearer light at Meroë, and the best diving conditions off Port Sudan.",
+      "Cash is essential across this route because cards, ATMs, and online hotel confirmations can fail without warning; many site fees and guide tips are still handled in small local cash payments.",
+      "Even if the weather is ideal, do not assume tourism infrastructure is running normally: museum hours, camp staffing, road clearances, and Badr Airlines schedules can all change with the conflict."
+    ],
+    "cityImages": {
+      "Khartoum": [
+        "Blue and White Nile confluence Khartoum",
+        "National Museum of Sudan Khartoum",
+        "Corinthia Hotel Khartoum"
+      ],
+      "Meroë Pyramids": [
+        "Meroe Pyramids Sudan",
+        "Meroe Tented Camp Sudan",
+        "Royal Necropolis Meroe"
+      ],
+      "Port Sudan": [
+        "Port Sudan corniche",
+        "Port Sudan Red Sea diving",
+        "Coral Port Sudan Hotel"
+      ],
+      "Suakin": [
+        "Suakin Old Town Sudan",
+        "Suakin coral ruins",
+        "Prince Osman Digna House Suakin"
+      ]
+    }
+  }
+}

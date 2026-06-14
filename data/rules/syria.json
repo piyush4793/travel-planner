@@ -1,0 +1,465 @@
+{
+  "name": "Syria",
+  "seed": false,
+  "lat": 34.8,
+  "lng": 38.99,
+  "region": "Middle East",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹95K–₹1.55L",
+    "couple": "₹1.7L–₹2.6L",
+    "family4": "₹3.2L–₹4.9L"
+  },
+  "experiences": [
+    "Umayyad Mosque and Al-Hamidiyah Souq inside Old Damascus",
+    "Aleppo Citadel with revived souk and Jdeideh quarter walks",
+    "Palmyra's desert colonnades and tomb valleys",
+    "Krak des Chevaliers fortress circuit and valley views",
+    "Classic Levantine food stops in Damascus and Aleppo"
+  ],
+  "avoid": [
+    "Strong safety advisory: Syria remains a post-conflict destination with checkpoints, rebuilding damage, sudden district-level restrictions, and uneven services; only travel after checking current government advisories, using a vetted local operator or fixer, and keeping every leg flexible.",
+    "Do not improvise border crossings, independent night transfers, or remote detours around Aleppo, Palmyra, Homs, or the western valleys because road conditions and access rules can change with little notice.",
+    "Card acceptance, ATMs, medical support, and hotel reopening status can all be inconsistent, so carry enough cash, keep offline maps and document copies, and reconfirm every hotel and transport booking directly."
+  ],
+  "combo": [
+    "Lebanon",
+    "Jordan",
+    "Turkey"
+  ],
+  "landmark": "Umayyad Mosque",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "A 5- to 6-day Syria loop works only if you keep it tight around Damascus, Aleppo, Palmyra, and Krak des Chevaliers with pre-arranged daylight transport and enough slack for checkpoint or closure delays.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Damascus",
+      "lat": 33.5138,
+      "lng": 36.2765,
+      "notes": "Old Damascus, the Umayyad Mosque, Al-Hamidiyah Souq, Azm Palace, and Christian Quarter lanes make this the essential arrival base."
+    },
+    {
+      "name": "Aleppo",
+      "lat": 36.2021,
+      "lng": 37.1343,
+      "notes": "Aleppo Citadel, Al-Madina Souq, Jdeideh heritage lanes, and some of Syria's strongest food traditions anchor the north."
+    },
+    {
+      "name": "Palmyra",
+      "lat": 34.5481,
+      "lng": 38.2741,
+      "notes": "Tadmur is the base for Palmyra's Roman-era ruins, desert viewpoints, and guide-led archaeological visits."
+    },
+    {
+      "name": "Krak des Chevaliers",
+      "lat": 34.756,
+      "lng": 36.2947,
+      "notes": "The crusader castle above Al-Husn is Syria's most dramatic fortress stop and works best as a western-valley day trip or overnight."
+    }
+  ],
+  "itinerary": {
+    "sim": "Syriatel or MTN Syria prepaid SIMs usually land around ₹300–₹900 for enough data for WhatsApp, offline maps, and hotel coordination, but coverage and eSIM support are inconsistent outside the main city cores.",
+    "apps": [
+      "Google Maps (offline Syria maps)",
+      "Organic Maps",
+      "Booking.com",
+      "WhatsApp",
+      "Google Translate",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Damascus",
+      "Aleppo",
+      "Palmyra",
+      "Krak des Chevaliers"
+    ],
+    "cities": {
+      "Damascus": {
+        "name": "Damascus",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Damascus to settle SIM, cash, and local guidance first; the Old City is the easiest place to sightsee on foot, while longer transfers should stay daylight-only.",
+        "days": [
+          {
+            "theme": "Walk the UNESCO core through Syria's best-known mosque, market lanes, and classic Old City tables",
+            "activities": [
+              {
+                "name": "Umayyad Mosque Damascus",
+                "cost": "₹315–₹395 approx for foreign visitors",
+                "tip": "Dress modestly and avoid main prayer windows; tourist entry is usually priced separately from local worship access."
+              },
+              {
+                "name": "Old City of Damascus and Al-Hamidiyah Souq walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mausoleum of Saladin",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bakdash ice cream or early mezze stop",
+                "cost": "₹250–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Beit Al Wali Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Old Vine Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Beit Al-Mamlouka",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Naranj",
+              "Al Khawali",
+              "Bakdash"
+            ]
+          },
+          {
+            "theme": "Add Ottoman-house museums, Christian Quarter streets, and a second slow-food Damascus day",
+            "activities": [
+              {
+                "name": "Azm Palace",
+                "cost": "₹6–₹13 approx (about SYP 1,000–2,000)"
+              },
+              {
+                "name": "Straight Street and Bab Sharqi walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Khan As'ad Pasha exterior and nearby souq lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Courtyard meal at Beit Jabri",
+                "cost": "₹500–₹1,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Beit Al Wali Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Old Vine Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Beit Al-Mamlouka",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Beit Jabri",
+              "Naranj",
+              "Leila's Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep a third Damascus day only for lighter heritage stops and buffer time before the northbound transfer",
+            "activities": [
+              {
+                "name": "National Museum of Damascus",
+                "cost": "₹13–₹25 approx (about SYP 2,000–4,000, when open)"
+              },
+              {
+                "name": "Tekkiyeh Suleimaniyah handicrafts market",
+                "cost": "₹0"
+              },
+              {
+                "name": "Short taxi to Mount Qasioun overlook",
+                "cost": "₹400–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Beit Al Wali Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Old Vine Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Al Khawali",
+              "Beit Jabri",
+              "Bakdash"
+            ]
+          }
+        ]
+      },
+      "Aleppo": {
+        "name": "Aleppo",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Only head north with current local advice; the historic core is the goal, and you should avoid improvising late-evening arrivals or extra district hopping.",
+        "days": [
+          {
+            "theme": "Focus on the citadel, souk spine, and Aleppo's classic mansion restaurants in one concentrated heritage day",
+            "activities": [
+              {
+                "name": "Aleppo Citadel",
+                "cost": "₹3–₹6 approx (about SYP 500–1,000)",
+                "tip": "Some sections can be closed for restoration, so buy the ticket only after confirming same-day access."
+              },
+              {
+                "name": "Al-Madina Souq walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Great Mosque of Aleppo courtyard and old market lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Dinner at Sissi House Restaurant",
+                "cost": "₹600–₹1,300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aleppo Palace Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Baron Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Sissi House Restaurant",
+              "Beit Wakil",
+              "Qasr Al-Wali"
+            ]
+          },
+          {
+            "theme": "Add a second Aleppo day for museum time, Jdeideh, and slower café pacing",
+            "activities": [
+              {
+                "name": "Aleppo National Museum",
+                "cost": "₹6–₹13 approx (about SYP 1,000–2,000, if open)"
+              },
+              {
+                "name": "Jdeideh quarter walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tea or coffee at Baron Hotel",
+                "cost": "₹250–₹500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aleppo Palace Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Baron Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Beit Wakil",
+              "Sissi House Restaurant",
+              "Qasr Al-Wali"
+            ]
+          }
+        ]
+      },
+      "Palmyra": {
+        "name": "Palmyra",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Treat Palmyra as a guide-led daylight archaeology leg from Tadmur; access, restoration zones, and where you can actually stay can all change fast.",
+        "days": [
+          {
+            "theme": "See the famous desert ruins with time for the colonnade, monumental remains, and a cautious sunset return",
+            "activities": [
+              {
+                "name": "Palmyra ruins main archaeological site",
+                "cost": "₹9–₹19 approx (about SYP 1,500–3,000)",
+                "tip": "Sections can be partially closed for restoration or security, so expect the exact walking loop to vary."
+              },
+              {
+                "name": "Great Colonnade and Monumental Arch area",
+                "cost": "Included with Palmyra site entry"
+              },
+              {
+                "name": "Temple of Bel precinct exterior viewpoints",
+                "cost": "Included with Palmyra site entry if accessible"
+              },
+              {
+                "name": "Hotel dinner in Tadmur",
+                "cost": "₹500–₹1,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Zenobia Cham Palace",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Dedeman Palmyra Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Zenobia Cham Palace Restaurant",
+              "Palmyra Restaurant",
+              "Ishtar Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep a second Palmyra day only for extra viewpoints, a local guide buffer, and museum-status-dependent stops",
+            "activities": [
+              {
+                "name": "Qalaat Ibn Maan viewpoint by shared taxi or driver",
+                "cost": "₹300–₹700"
+              },
+              {
+                "name": "Valley of the Tombs area viewpoints",
+                "cost": "₹0–₹9 depending on current access control"
+              },
+              {
+                "name": "Local guide contribution for archaeology context",
+                "cost": "₹600–₹1,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Zenobia Cham Palace",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Dedeman Palmyra Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Zenobia Cham Palace Restaurant",
+              "Palmyra Restaurant",
+              "Ishtar Restaurant"
+            ]
+          }
+        ]
+      },
+      "Krak des Chevaliers": {
+        "name": "Krak des Chevaliers",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "This western-valley stop works best with a driver or carefully timed shared taxi because onward public transport thins out fast after lunch.",
+        "days": [
+          {
+            "theme": "Give Syria's headline crusader fortress a full daylight block with nearby village views and a proper lunch stop",
+            "activities": [
+              {
+                "name": "Krak des Chevaliers",
+                "cost": "₹9–₹19 approx (about SYP 1,500–3,000)",
+                "tip": "Carry small cash because ticketing is usually simple and card payment should not be expected."
+              },
+              {
+                "name": "Ramparts, chapel, and inner halls circuit",
+                "cost": "Included with Krak des Chevaliers entry"
+              },
+              {
+                "name": "Al-Husn village and valley viewpoint walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lunch or coffee at Al Wadi Hotel",
+                "cost": "₹500–₹1,100"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Al Wadi Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Al Wadi Hotel Restaurant",
+              "Marmarita Restaurant",
+              "Beitna Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Damascus",
+        "to": "Aleppo",
+        "method": "Domestic bus or shared taxi by day; private driver is the easiest fallback if schedules shift",
+        "cost": "₹700–₹2,200"
+      },
+      {
+        "from": "Aleppo",
+        "to": "Palmyra",
+        "method": "Domestic bus or shared taxi, usually split via Homs if no direct seat is running",
+        "cost": "₹1,600–₹3,800"
+      },
+      {
+        "from": "Palmyra",
+        "to": "Krak des Chevaliers",
+        "method": "Domestic bus or shared taxi via Homs, with a private car as the more reliable same-day option",
+        "cost": "₹1,800–₹4,500"
+      }
+    ],
+    "extras": [
+      "Travel advisory: Syria is still a post-conflict destination. Recheck official advisories before departure and again before every overland leg because checkpoints, local permissions, and site access can change faster than hotel listings update.",
+      "Umayyad Mosque is the main foreign-visitor-priced heritage ticket in this route, while Aleppo Citadel, Palmyra, and Krak des Chevaliers are usually inexpensive SYP-denominated entries, which is why their INR equivalents look unusually low.",
+      "Domestic buses and shared taxis are the default public-transport backbone, but they are cash-first, daylight-oriented, and sometimes leave only when full; never plan a tight evening connection.",
+      "Aleppo, Palmyra, and western-valley hotel inventory can be fluid after years of disruption, so treat every named stay as a real reference point but reconfirm current operating status directly before paying."
+    ],
+    "cityImages": {
+      "Damascus": [
+        "Umayyad Mosque Damascus",
+        "Old City of Damascus",
+        "Al-Hamidiyah Souq Damascus"
+      ],
+      "Aleppo": [
+        "Aleppo Citadel",
+        "Al-Madina Souq Aleppo",
+        "Jdeideh Aleppo"
+      ],
+      "Palmyra": [
+        "Palmyra ruins Syria",
+        "Great Colonnade Palmyra",
+        "Temple of Bel Palmyra"
+      ],
+      "Krak des Chevaliers": [
+        "Krak des Chevaliers Syria",
+        "Krak des Chevaliers interior",
+        "Wadi al-Nasara Syria"
+      ]
+    }
+  }
+}

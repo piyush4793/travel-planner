@@ -1,0 +1,390 @@
+{
+  "name": "South Sudan",
+  "seed": false,
+  "lat": 6.88,
+  "lng": 31.31,
+  "region": "Africa",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹3.3L–₹5.8L",
+    "couple": "₹5.9L–₹9.8L",
+    "family4": "₹10.8L–₹17.8L"
+  },
+  "experiences": [
+    "White Nile sunset cruise below Juba Bridge, paired with Konyo Konyo Market and the John Garang memorial.",
+    "Nimule National Park wildlife drives for elephants, hippos, buffalo, baboons, and dramatic granite rapids on the Nile.",
+    "Boma National Park dry-season migration country, where white-eared kob, tiang, and Mongalla gazelle move across one of Africa's least-visited savannahs.",
+    "Jebel Kujur viewpoints and low-key city orientation in Juba before committing to long overland park sectors.",
+    "Remote camp-based travel using boats, convoy-style 4x4s, and charter-style aviation rather than casual independent hopping."
+  ],
+  "avoid": [
+    "Strong safety advisory: South Sudan is the world's youngest nation and remains affected by active conflict, armed checkpoints, and abrupt security changes; only attempt a fully arranged trip with current local clearance, daylight-only movements, and embassy-level contingency planning.",
+    "A high-clearance 4x4 with a vetted driver is essential for Nimule and effectively mandatory for Boma logistics; roads deteriorate fast outside the Dec-Mar dry season and self-drive is a poor idea.",
+    "Do not plan your trip around published domestic schedules from South Supreme Airlines: service is irregular at best, charters are often the only workable air option, and cash, fuel, and medical support thin out quickly once you leave Juba."
+  ],
+  "combo": [
+    "Uganda",
+    "Ethiopia"
+  ],
+  "landmark": "Boma National Park",
+  "travelStyle": [
+    "explorer",
+    "wildlife"
+  ],
+  "stopoverNote": "Use Juba as the only serious logistics base for cash, permits, SIMs, and security checks, then treat Nimule as a long day or one-night 4x4 leg and Boma as a pre-arranged expedition; if anyone mentions South Supreme Airlines, verify on the ground and still keep a Juba buffer night because charters and road convoys remain the dependable fallback.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Juba",
+      "lat": 4.8594,
+      "lng": 31.5713,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Capital gateway for White Nile views, hotel compounds, money exchange, and the only realistic starting point for both Nimule road trips and Boma expedition planning."
+    },
+    {
+      "name": "Nimule",
+      "lat": 3.5981,
+      "lng": 32.0518,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Uganda-border park town where Nimule National Park, Nile rapids, and elephant country are the main draw, usually reached by a long escorted drive from Juba."
+    },
+    {
+      "name": "Boma National Park",
+      "lat": 7.95,
+      "lng": 34.3,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Extremely remote migration landscape in the Greater Pibor area, best tackled as a camp-based safari using African Parks-linked logistics, local guides, and either a hard overland convoy or ad-hoc charter access."
+    }
+  ],
+  "itinerary": {
+    "sim": "MTN South Sudan and Zain South Sudan are the practical Juba SIM choices; expect roughly ₹650–₹1,950 for a starter top-up, then assume weak or no useful data in Nimule's deeper park zones and across Boma, so keep offline maps and WhatsApp checkpoints downloaded before leaving the capital.",
+    "apps": [
+      "Google Maps",
+      "Organic Maps",
+      "Booking.com",
+      "WhatsApp",
+      "Tripadvisor",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Juba",
+      "Nimule",
+      "Boma National Park"
+    ],
+    "cities": {
+      "Juba": {
+        "name": "Juba",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Settle into the capital, sort practical logistics, and use the White Nile for the least stressful first look at South Sudan.",
+            "activities": [
+              {
+                "name": "Hotel-arranged airport transfer from Juba International Airport",
+                "cost": "₹1,700–₹3,300"
+              },
+              {
+                "name": "John Garang Mausoleum and independence-quarter stop",
+                "cost": "₹0–₹420"
+              },
+              {
+                "name": "Konyo Konyo Market taxi loop with a trusted local driver",
+                "cost": "₹830–₹1,660"
+              },
+              {
+                "name": "Afex White Nile / Juba Bridge cruise (60–90 minutes)",
+                "cost": "₹4,150"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Radisson Blu Hotel, Juba",
+                "budget": "₹19,000–₹28,000/night"
+              },
+              {
+                "name": "Pyramid Continental Hotel",
+                "budget": "₹13,500–₹21,000/night"
+              },
+              {
+                "name": "Royal Palace Hotel",
+                "budget": "₹11,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Bertarelli Ristorante",
+              "Notos Lounge Bar & Grill",
+              "Juba Bridge Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Use a buffer day for security checks, city viewpoints, and locking the transport that makes the rest of the trip possible.",
+            "activities": [
+              {
+                "name": "Jebel Kujur hill drive or short guided hike for city views",
+                "cost": "₹1,250–₹2,500"
+              },
+              {
+                "name": "All Saints Cathedral and central Juba taxi hops",
+                "cost": "₹620–₹1,250"
+              },
+              {
+                "name": "4x4 hire confirmation for Nimule or Boma sectors",
+                "cost": "₹14,500–₹24,500/day"
+              },
+              {
+                "name": "Domestic-air desk check for South Supreme Airlines or charter alternatives",
+                "cost": "₹0–₹830"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Palm Africa Hotel Juba",
+                "budget": "₹12,500–₹18,500/night"
+              },
+              {
+                "name": "Crown Hotel Juba",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Da Vinci",
+              "Fire Tree Restaurant & Residence",
+              "The Riverside Restaurant – AFEX"
+            ]
+          }
+        ]
+      },
+      "Nimule": {
+        "name": "Nimule",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "A dry-season park day for Nile scenery, elephant country, and the easiest wildlife access South Sudan currently offers.",
+            "activities": [
+              {
+                "name": "Private escorted 4x4 from Juba to Nimule and park circuit",
+                "cost": "₹16,500–₹28,000"
+              },
+              {
+                "name": "Nimule National Park foreign visitor entry",
+                "cost": "₹2,075–₹4,150"
+              },
+              {
+                "name": "Ranger-guided wildlife drive for elephants, buffalo, hippos, and baboons",
+                "cost": "₹2,500–₹5,000"
+              },
+              {
+                "name": "White Nile / rapid-side boat or river-view stop near Nimule",
+                "cost": "₹1,660–₹4,150"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nimule Paradise",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Arra Fishing Lodge",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ]
+          },
+          {
+            "theme": "Keep a second day only if the border road is slow or you want more time for viewpoints and a safer daylight return to Juba.",
+            "activities": [
+              {
+                "name": "Second park-entry day or local ranger extension",
+                "cost": "₹2,075–₹4,150"
+              },
+              {
+                "name": "Granite-rapid photography stops and short guided walks",
+                "cost": "₹830–₹2,075"
+              },
+              {
+                "name": "Return 4x4 from Nimule to Juba",
+                "cost": "₹14,500–₹24,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Arra Fishing Lodge",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Nimule Paradise",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ]
+          }
+        ]
+      },
+      "Boma National Park": {
+        "name": "Boma National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "This is expedition travel: reach camp, get briefed by local guides, and use the first afternoon to read the scale of the migration plains.",
+            "activities": [
+              {
+                "name": "Convoy-style 4x4 transfer from Juba via the Greater Pibor corridor or equivalent expedition logistics",
+                "cost": "₹38,000–₹74,000"
+              },
+              {
+                "name": "Boma National Park foreign visitor entry",
+                "cost": "₹830–₹1,660"
+              },
+              {
+                "name": "Local migration guide and vehicle game-viewing fee",
+                "cost": "₹4,150–₹8,300"
+              },
+              {
+                "name": "Park-side sundowner and briefing at camp",
+                "cost": "₹830–₹1,660"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nyat Research Camp",
+                "budget": "₹20,500–₹32,000/night"
+              },
+              {
+                "name": "Maruwa Hills Tourist Camp",
+                "budget": "₹9,500–₹16,500/night"
+              }
+            ]
+          },
+          {
+            "theme": "Use a full dry-season day to look for the white-eared kob, tiang, and Mongalla gazelle movement that makes Boma globally significant.",
+            "activities": [
+              {
+                "name": "Full-day migration tracking drive across Boma plains",
+                "cost": "₹4,150–₹8,300"
+              },
+              {
+                "name": "Short guided walk around camp or nearby village zone where security conditions allow",
+                "cost": "₹1,660–₹3,300"
+              },
+              {
+                "name": "Camp meals and logistics contribution",
+                "cost": "₹2,500–₹4,150"
+              },
+              {
+                "name": "Boat or wetland-edge access where seasonal channels are navigable",
+                "cost": "₹2,075–₹4,150"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nyat Research Camp",
+                "budget": "₹20,500–₹32,000/night"
+              },
+              {
+                "name": "Maruwa Hills Tourist Camp",
+                "budget": "₹9,500–₹16,500/night"
+              }
+            ]
+          },
+          {
+            "theme": "Keep a final day only if you need more wildlife time or weather and security have already stretched the approach leg.",
+            "activities": [
+              {
+                "name": "Charter-style extraction or long 4x4 return toward Juba",
+                "cost": "₹33,000–₹1.1L"
+              },
+              {
+                "name": "Second game drive focusing on open-grassland antelope movement",
+                "cost": "₹4,150–₹8,300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maruwa Hills Tourist Camp",
+                "budget": "₹9,500–₹16,500/night"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Juba",
+        "to": "Nimule",
+        "method": "Use a vetted 4x4 and driver for the 5-6 hour dry-season run; public transport exists in theory but is not the right safety or comfort choice for a travel-planner itinerary.",
+        "cost": "₹16,500–₹28,000"
+      },
+      {
+        "from": "Nimule",
+        "to": "Boma National Park",
+        "method": "Return through Juba, then continue only on a pre-arranged expedition plan: either a hard overland convoy via Greater Pibor or an ad-hoc charter because South Supreme Airlines schedules are too unreliable to anchor a connection.",
+        "cost": "₹42,000–₹1.35L"
+      },
+      {
+        "from": "Boma National Park",
+        "to": "Juba",
+        "method": "Exit with the same operator you entered with; long 4x4 convoys are more common than dependable domestic seats, so leave a capital buffer night before any international flight.",
+        "cost": "₹33,000–₹1.1L"
+      }
+    ],
+    "extras": [
+      "December to March is the real travel window: roads dry out, Nimule game viewing is easier, and Boma's migration plains are far more practical than in the long rains.",
+      "Treat South Sudan as a high-risk destination rather than a casual add-on: use trusted fixers, keep movements daylight-only, and expect same-week itinerary changes if security deteriorates.",
+      "Juba is the only place where hotel choice, reliable meals, cash, and SIM setup are easy; once you leave it, infrastructure drops sharply and camp logistics dominate the budget.",
+      "If a domestic air option is offered under the South Supreme Airlines name, confirm it locally and still keep charter and 4x4 backup plans because cancellations or route changes are common.",
+      "Carry fresh USD cash, malaria protection, yellow-fever proof, and offline maps; medical evacuation capability matters much more here than in a typical East Africa circuit."
+    ],
+    "cityImages": {
+      "Juba": [
+        "John Garang Mausoleum Juba",
+        "White Nile Juba Bridge",
+        "Jebel Kujur Juba"
+      ],
+      "Nimule": [
+        "Nimule National Park South Sudan",
+        "White Nile rapids Nimule",
+        "Elephants Nimule National Park"
+      ],
+      "Boma National Park": [
+        "White-eared kob migration Boma National Park",
+        "Nyat Research Camp South Sudan",
+        "Boma National Park South Sudan plains"
+      ]
+    }
+  }
+}

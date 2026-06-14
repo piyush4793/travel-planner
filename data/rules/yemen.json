@@ -1,0 +1,590 @@
+{
+  "name": "Yemen",
+  "seed": false,
+  "lat": 15.55,
+  "lng": 48.52,
+  "region": "Middle East",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹2L–₹3.1L",
+    "couple": "₹3.6L–₹5.6L",
+    "family4": "₹6.8L–₹9.5L"
+  },
+  "experiences": [
+    "Old City of Sana'a tower houses, Bab al-Yemen, and Souk al-Milh when local conditions permit access",
+    "Dar al-Hajar rock palace above Wadi Dhahr with a low official entry fee and a half-day 4x4 outing",
+    "Shibam's mud-brick skyscrapers and old-city lanes in Wadi Hadramawt, often paired with a Seiyun base",
+    "Aden's Crater district, Sira Fortress viewpoints, and Gold Mohur seafront on a tightly planned daylight stop",
+    "Socotra's dragon's blood tree plateau, white-sand lagoons, and 4x4-led eco-tour loops from Hadibo"
+  ],
+  "avoid": [
+    "Strong safety advisory: Yemen remains an active-conflict destination and most governments advise against all travel; only consider travel with a vetted fixer or operator, keep every mainland move in daylight, and expect abrupt closures, checkpoints, or cancellations.",
+    "Do not improvise independent overland travel between cities; flights, hotel transfers, 4x4 hires, and shared taxis arranged through trusted local contacts are safer than ad-hoc road moves.",
+    "ATMs, mobile data, healthcare, and card acceptance are unreliable; carry sufficient cash, re-check airport status before every flight, and leave buffer nights around any Yemenia connection."
+  ],
+  "combo": [
+    "Oman",
+    "Jordan"
+  ],
+  "landmark": "Dragon's Blood Trees",
+  "travelStyle": [
+    "explorer",
+    "heritage"
+  ],
+  "stopoverNote": "Socotra is the comparatively more realistic Yemen add-on because tours bundle 4x4s, guides, meals, and airport handling; mainland Sana'a, Shibam, and Aden only make sense with current local security guidance and generous schedule slack.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Sana'a",
+      "lat": 15.3694,
+      "lng": 44.191,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "UNESCO old city lanes, Bab al-Yemen, Souk al-Milh, and Dar al-Hajar excursions, but only with same-week security checks and hotel-arranged transport."
+    },
+    {
+      "name": "Socotra Island",
+      "lat": 12.4634,
+      "lng": 53.8237,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Hadibo-based eco-travel for Diksam dragon's blood trees, Qalansiyah, Detwah, Homhil and beach camps, usually run as guided 4x4 packages."
+    },
+    {
+      "name": "Shibam",
+      "lat": 15.9236,
+      "lng": 48.6267,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "The Manhattan of the Desert: mud-brick tower blocks, skyline viewpoints, and easy pairing with Seiyun hotels and drivers."
+    },
+    {
+      "name": "Aden",
+      "lat": 12.7855,
+      "lng": 45.0187,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Crater and Tawahi seafront stops work best as a short daylight logistics base before or after Yemenia flights."
+    }
+  ],
+  "itinerary": {
+    "sim": "YOU, Sabafon, and Yemen Mobile are the names to ask for, but service quality changes sharply by governorate; expect roughly ₹500–₹1,500 for a starter data top-up and treat offline maps as essential because signal and recharges can disappear outside the main city cores.",
+    "apps": [
+      "Yemenia",
+      "Google Maps",
+      "Organic Maps",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Sana'a",
+      "Shibam",
+      "Aden",
+      "Socotra Island"
+    ],
+    "cities": {
+      "Sana'a": {
+        "name": "Sana'a",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Treat Sana'a as a fixer-led heritage stop, not a free-roaming city break; keep hotels inside known compounds or established Old City properties and avoid night movement.",
+        "days": [
+          {
+            "theme": "Bab al-Yemen, UNESCO lanes, and a careful first read of Old Sana'a with a local fixer",
+            "activities": [
+              {
+                "name": "Old City of Sana'a and Bab al-Yemen walking circuit",
+                "cost": "Free"
+              },
+              {
+                "name": "Souk al-Milh browsing and tea stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Hotel-arranged fixer or local guide for controlled Old City access",
+                "cost": "₹830–₹1,660"
+              },
+              {
+                "name": "Great Mosque of Sana'a exterior/photo stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Burj al Salam Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Arabia Felix Hotel",
+                "budget": "₹4,800–₹8,200/night"
+              },
+              {
+                "name": "Sheba Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Al-Shaibani Restaurant",
+              "Alkhaleej Restaurant",
+              "Al Shamiri Restaurant"
+            ]
+          },
+          {
+            "theme": "Dar al-Hajar and a daylight-only look at Sana'a's broader historic setting",
+            "activities": [
+              {
+                "name": "Dar al-Hajar (Rock Palace) entry",
+                "cost": "₹165–₹330"
+              },
+              {
+                "name": "Private 4x4 or trusted taxi to Wadi Dhahr and Dar al-Hajar",
+                "cost": "₹3,500–₹6,500"
+              },
+              {
+                "name": "Al Saleh Mosque exterior stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Return to hotel before dark",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Burj al Salam Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Arabia Felix Hotel",
+                "budget": "₹4,800–₹8,200/night"
+              },
+              {
+                "name": "Sheba Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Al-Fanarah Restaurant",
+              "Al-Shaibani Restaurant",
+              "Arabia Felix Hotel restaurant"
+            ]
+          },
+          {
+            "theme": "Use the extra Sana'a day only if advisories, checkpoints, and your fixer all stay favorable",
+            "activities": [
+              {
+                "name": "National Museum of Yemen or alternate museum stop if open",
+                "cost": "₹165–₹330"
+              },
+              {
+                "name": "Old City rooftop tea and photo session",
+                "cost": "₹165–₹500"
+              },
+              {
+                "name": "Buffer time for permit checks, airport reconfirmations, or schedule slips",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Burj al Salam Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Arabia Felix Hotel",
+                "budget": "₹4,800–₹8,200/night"
+              },
+              {
+                "name": "Sheba Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Alkhaleej Restaurant",
+              "Al Shamiri Restaurant",
+              "Burj al Salam Hotel restaurant"
+            ]
+          }
+        ]
+      },
+      "Shibam": {
+        "name": "Shibam",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Most travelers sleep in Seiyun and visit Shibam by arranged car; the old city itself is small, but the skyline and nearby wadis reward a full daylight block.",
+        "days": [
+          {
+            "theme": "Mud-skyscraper skyline, old lanes, and a heritage day in Wadi Hadramawt",
+            "activities": [
+              {
+                "name": "Shibam old city entry and skyline walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Shibam Museum or local heritage room if open",
+                "cost": "₹165–₹330"
+              },
+              {
+                "name": "Seiyun to Shibam return by trusted taxi or hotel car",
+                "cost": "₹2,500–₹4,200"
+              },
+              {
+                "name": "Town-square tea stop with skyline views",
+                "cost": "₹80–₹165"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Shibam Guest House",
+                "budget": "₹2,800–₹4,800/night"
+              },
+              {
+                "name": "Al Hawta Palace Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Al Ahqaf Hotel",
+                "budget": "₹4,800–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Al Hawta Palace Hotel Restaurant",
+              "Ataieb Restaurant",
+              "Al Ahqaf Hotel restaurant"
+            ]
+          },
+          {
+            "theme": "Add a second Hadramawt day for Seiyun context and a slower architectural loop",
+            "activities": [
+              {
+                "name": "Sunrise or late-afternoon Shibam exterior viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Seiyun Palace Museum exterior or paired Seiyun stop",
+                "cost": "₹165–₹330"
+              },
+              {
+                "name": "Private driver for a wider Hadramawt half-day loop",
+                "cost": "₹4,200–₹6,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Shibam Guest House",
+                "budget": "₹2,800–₹4,800/night"
+              },
+              {
+                "name": "Al Hawta Palace Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Al Ahqaf Hotel",
+                "budget": "₹4,800–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Ataieb Restaurant",
+              "Al Hawta Palace Hotel Restaurant",
+              "Shibam Guest House kitchen"
+            ]
+          }
+        ]
+      },
+      "Aden": {
+        "name": "Aden",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Keep Aden functional: sleep near your airport or onward meeting point, move only in daylight, and use it as a short transition before Socotra or departure.",
+        "days": [
+          {
+            "theme": "Crater district viewpoints, seafront air, and logistics before the next flight",
+            "activities": [
+              {
+                "name": "Sira Fortress exterior and harbor viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Tawila Tanks and Crater district walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Gold Mohur Beach stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Registered taxi between airport, hotel, and Crater/Tawahi",
+                "cost": "₹1,000–₹2,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Gold Mohur Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Mercure Aden Hotel",
+                "budget": "₹9,000–₹15,000/night"
+              },
+              {
+                "name": "Oasis Hotel Aden",
+                "budget": "₹5,500–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Al-Burj Restaurant",
+              "Al-Shaibani Restaurant",
+              "Gold Mohur Hotel restaurant"
+            ]
+          }
+        ]
+      },
+      "Socotra Island": {
+        "name": "Socotra Island",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Socotra works best as an operator-run 4x4 circuit from Hadibo; most real costs are bundled into packages covering airport handling, camping, meals, and guide support.",
+        "days": [
+          {
+            "theme": "Hadibo arrival, airport handling, and an easy first-night island reset",
+            "activities": [
+              {
+                "name": "Yemenia arrival handling and Hadibo hotel transfer",
+                "cost": "Usually included"
+              },
+              {
+                "name": "Hadibo corniche or local market walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Delisha or nearby beach sunset stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Summer Land Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Taj Socotra Hotel",
+                "budget": "₹4,800–₹8,200/night"
+              },
+              {
+                "name": "Socotra Eco-Lodge",
+                "budget": "₹7,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Summer Land Hotel Restaurant",
+              "Taj Socotra Restaurant",
+              "Modern Shabwa Restaurant"
+            ]
+          },
+          {
+            "theme": "Diksam Plateau, Firmihin, and the dragon's blood tree landscapes that define Socotra",
+            "activities": [
+              {
+                "name": "Diksam Plateau and Firmihin dragon's blood tree 4x4 day tour with local guide",
+                "cost": "₹2,500–₹4,200"
+              },
+              {
+                "name": "Dragon's Blood Trees protected area access",
+                "cost": "Included in tour"
+              },
+              {
+                "name": "Wadi Dirhur picnic or canyon viewpoints",
+                "cost": "Usually included"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Summer Land Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Taj Socotra Hotel",
+                "budget": "₹4,800–₹8,200/night"
+              },
+              {
+                "name": "Socotra Eco-Lodge",
+                "budget": "₹7,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Mat'am Socotray Al-Siyaha",
+              "Summer Land Hotel Restaurant",
+              "Taj Socotra Restaurant"
+            ]
+          },
+          {
+            "theme": "Qalansiyah, Detwah Lagoon, and Socotra's best-known west-coast color palette",
+            "activities": [
+              {
+                "name": "Qalansiyah and Detwah Lagoon 4x4 day trip",
+                "cost": "₹2,500–₹4,200"
+              },
+              {
+                "name": "Boat or beach time if sea conditions cooperate",
+                "cost": "₹830–₹1,660"
+              },
+              {
+                "name": "Protected-coast local guide or ranger tip",
+                "cost": "₹165–₹330"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Summer Land Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Taj Socotra Hotel",
+                "budget": "₹4,800–₹8,200/night"
+              },
+              {
+                "name": "Socotra Eco-Lodge",
+                "budget": "₹7,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Modern Shabwa Restaurant",
+              "Silsilat Mataam Shabwa",
+              "Summer Land Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Use the extra island day for Homhil, Arher, or a package beach camp before flying out",
+            "activities": [
+              {
+                "name": "Homhil or Arher 4x4 extension with driver-guide",
+                "cost": "₹2,900–₹4,600"
+              },
+              {
+                "name": "Beach camp or eco-camp supplement if not already bundled",
+                "cost": "₹1,700–₹3,300"
+              },
+              {
+                "name": "Final Hadibo resupply and airport buffer",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Summer Land Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Taj Socotra Hotel",
+                "budget": "₹4,800–₹8,200/night"
+              },
+              {
+                "name": "Socotra Eco-Lodge",
+                "budget": "₹7,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Taj Socotra Restaurant",
+              "Mat'am Socotray Al-Siyaha",
+              "Modern Shabwa Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Sana'a",
+        "to": "Shibam",
+        "method": "Yemenia or another currently operating domestic connection to Seiyun is the least-friction option; overland shared taxis exist but should only be considered with same-day local security clearance.",
+        "cost": "₹12,000–₹24,000 by flight / about ₹5,000–₹8,500 per shared-taxi seat"
+      },
+      {
+        "from": "Shibam",
+        "to": "Aden",
+        "method": "Return to Seiyun for a domestic flight when available; otherwise use a fixer-arranged shared taxi or private 4x4 with buffer time and daylight-only movement.",
+        "cost": "₹10,000–₹22,000 by flight / ₹5,000–₹8,500 per shared-taxi seat / ₹5,800–₹10,000 for private 4x4 day hire"
+      },
+      {
+        "from": "Aden",
+        "to": "Socotra Island",
+        "method": "Yemenia domestic flight is the standard link; most travelers roll the ticket into a Socotra package and let the island operator handle airport pickup.",
+        "cost": "₹16,500–₹45,500 one way"
+      }
+    ],
+    "extras": [
+      "October to March is the safest weather window for combining mainland Yemen and Socotra: mainland heat is less punishing, and Socotra sits outside its rough June-to-September monsoon pattern.",
+      "Travel advisory: Yemen remains affected by active conflict, airstrike risk, kidnappings, mines, and abrupt checkpoint controls. Re-check live government advisories before booking and again before every intercity leg.",
+      "Old City of Sana'a and Bab al-Yemen are generally public/free if accessible at all; Dar al-Hajar is one of the few mainstream heritage stops with a small paid ticket, usually about 500–1,000 YER (roughly ₹165–₹330).",
+      "Shibam's streets can be walked without a formal gate ticket, but the museum or heritage-room stop usually carries a modest 500–1,000 YER fee and is best paired with a Seiyun-based driver.",
+      "Socotra's dragon's blood tree areas usually do not sell a separate standalone ticket; the real cost is the bundled 4x4 day-tour or multi-day package that covers the driver, guide, and route permissions.",
+      "Shared taxis are common on Yemeni corridors, but for foreign travelers they are a last-resort logistics tool rather than a sightseeing experience; hotel or fixer-booked transport is the safer planning default."
+    ],
+    "cityImages": {
+      "Sana'a": [
+        "Old City of Sana'a tower houses",
+        "Bab al-Yemen Sana'a",
+        "Dar al-Hajar Yemen"
+      ],
+      "Shibam": [
+        "Shibam Hadramawt skyline",
+        "Shibam mud skyscrapers Yemen",
+        "Shibam old city lanes"
+      ],
+      "Aden": [
+        "Sira Fortress Aden",
+        "Gold Mohur Beach Aden",
+        "Crater district Aden Yemen"
+      ],
+      "Socotra Island": [
+        "Dragon's Blood Trees Socotra",
+        "Detwah Lagoon Socotra",
+        "Diksam Plateau Socotra"
+      ]
+    }
+  }
+}

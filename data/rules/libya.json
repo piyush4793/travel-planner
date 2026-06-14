@@ -1,0 +1,415 @@
+{
+  "name": "Libya",
+  "seed": false,
+  "lat": 26.34,
+  "lng": 17.23,
+  "region": "Africa",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹1.4L–₹2.25L",
+    "couple": "₹2.45L–₹3.85L",
+    "family4": "₹4.7L–₹6.9L"
+  },
+  "experiences": [
+    "Leptis Magna's Severan-era Roman ruins",
+    "Sabratha's monumental Roman theatre",
+    "Tripoli medina lanes and Assaraya Alhamra",
+    "Ghadames old town's covered Berber streets",
+    "Saharan dune runs by 4x4 outside Ghadames"
+  ],
+  "avoid": [
+    "Strong safety advisory: Libya remains politically unstable and many governments advise against travel; only consider a trip with a vetted local operator, fixed hotel transfers, and enough slack for abrupt closures or permit changes.",
+    "Do not self-drive between cities or move after dark: checkpoints, militia activity, and changing local control can turn a routine coast or desert leg into a same-day cancellation.",
+    "Most major sites, especially Ghadames and the big Roman ruins, work best with cash, a guide, and printed passport copies because card payments, posted tariffs, and opening hours can all be unreliable."
+  ],
+  "combo": [
+    "Tunisia",
+    "Egypt"
+  ],
+  "landmark": "Leptis Magna",
+  "travelStyle": [
+    "explorer",
+    "history",
+    "desert"
+  ],
+  "stopoverNote": "Tripoli is the only sensible logistics base for most foreign visitors: land there, keep the coast-ruin days as daylight returns, and treat Ghadames as a separate block reached by a pre-arranged domestic flight or a fully organized long road transfer.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Tripoli",
+      "lat": 32.8872,
+      "lng": 13.1913,
+      "notes": "Libya's gateway city for the medina, Martyrs' Square, the Red Castle/Assaraya Alhamra, and all the operator, SIM, cash, and permit logistics before heading out."
+    },
+    {
+      "name": "Leptis Magna",
+      "lat": 32.6397,
+      "lng": 14.2939,
+      "notes": "UNESCO-listed Roman port city east of Tripoli with the Severan forum, Hadrianic baths, basilica, amphitheatre, and one of North Africa's most complete archaeological spreads."
+    },
+    {
+      "name": "Sabratha",
+      "lat": 32.7937,
+      "lng": 12.4853,
+      "notes": "Mediterranean UNESCO site west of Tripoli famed for its three-storey Roman theatre, forum temples, basilica remains, and compact site museum."
+    },
+    {
+      "name": "Ghadames",
+      "lat": 30.1337,
+      "lng": 9.5007,
+      "notes": "Remote oasis near the Algeria-Tunisia frontier with a UNESCO old town of roof-linked white houses, palm gardens, and desert 4x4 excursions to high dunes."
+    }
+  ],
+  "itinerary": {
+    "sim": "Libyana Mobile Phone and Almadar are the two practical prepaid options in Tripoli; budget roughly ₹850–₹2,550 for a tourist top-up with enough data for WhatsApp, maps, and operator calls, then expect patchy service once you are out near Ghadames.",
+    "apps": [
+      "Afriqiyah Airways",
+      "Libyan Wings",
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Tripoli",
+      "Sabratha",
+      "Leptis Magna",
+      "Ghadames"
+    ],
+    "cities": {
+      "Tripoli": {
+        "name": "Tripoli",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Assaraya Alhamra, Martyrs' Square & First Steps in the Medina",
+            "activities": [
+              {
+                "name": "Red Castle / Assaraya Alhamra Museum entry",
+                "cost": "₹170–₹255",
+                "tip": "Recent traveler reports place foreigner entry around 10–15 LYD, but closures and security checks can change access on short notice."
+              },
+              {
+                "name": "Martyrs' Square and seafront orientation walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Arch of Marcus Aurelius and medina lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Souq tea and snack stop in the old city",
+                "cost": "₹170–₹425"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Corinthia Tripoli",
+                "budget": "₹18,000–₹28,000/night"
+              },
+              {
+                "name": "Radisson Blu Al Mahary Hotel",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "Al Waddan Hotel",
+                "budget": "₹11,000–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "Diwan Al Amir Business Restaurant",
+              "Storico Ristorante Italiano dal 1927",
+              "Veranda Cafe & Restaurant"
+            ]
+          },
+          {
+            "theme": "Daylight-Only City Logistics, Karamanli Quarter & Secure Driver Prep",
+            "activities": [
+              {
+                "name": "Hotel-arranged airport transfer or secure city taxi hops",
+                "cost": "₹850–₹1,700"
+              },
+              {
+                "name": "Gurgi Mosque exterior and Karamanli quarter walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Medina shopping and cash run before the coast or desert",
+                "cost": "₹0–₹850"
+              },
+              {
+                "name": "Guide, permit, and daylight-transfer briefing for Sabratha, Leptis Magna, or Ghadames",
+                "cost": "₹1,700–₹4,250"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Radisson Blu Al Mahary Hotel",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "Awal Hotel",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Al-Athar",
+              "Fattoush Lebanese Restaurant",
+              "Cafe Di Roma"
+            ]
+          }
+        ]
+      },
+      "Sabratha": {
+        "name": "Sabratha",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Roman Theatre, Forum Temples & a West-Coast Daylight Run",
+            "activities": [
+              {
+                "name": "Sabratha archaeological site entry",
+                "cost": "₹170",
+                "tip": "Recent traveler reports put the main site ticket at about 10 LYD per person."
+              },
+              {
+                "name": "Roman theatre and stage-building circuit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Adjacent Sabratha museum",
+                "cost": "₹85",
+                "tip": "When the small museum is open, reports suggest a separate fee of roughly 5 LYD."
+              },
+              {
+                "name": "Private taxi or driver from Tripoli on the coastal road",
+                "cost": "₹2,500–₹5,100"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jawhara Sabratha Tourist Village",
+                "budget": "₹4,200–₹6,800/night"
+              },
+              {
+                "name": "Al Maghreb Al Arabi Hotel",
+                "budget": "₹3,400–₹5,900/night"
+              },
+              {
+                "name": "Sabratha Youth Hostel",
+                "budget": "₹1,700–₹3,400/night"
+              }
+            ],
+            "meals": [
+              "Marina Seafood Restaurant",
+              "Rialto Cafe & Pizza Restaurant",
+              "Al-Saraya Café"
+            ]
+          }
+        ]
+      },
+      "Leptis Magna": {
+        "name": "Leptis Magna",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Severan Forum, Basilica & North Africa's Grandest Roman Day",
+            "activities": [
+              {
+                "name": "Leptis Magna archaeological site foreigner entry",
+                "cost": "₹850–₹1,700",
+                "tip": "Recent operator quotes cluster around 50–100 LYD for foreigners, although many tours bundle the ticket and gate procedures into the day rate."
+              },
+              {
+                "name": "Septimius Severus arch, basilica, and forum circuit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Leptis Magna museum or small-site add-on",
+                "cost": "₹0–₹255",
+                "tip": "Museum access is often included; if separated, expect only a small extra cash charge."
+              },
+              {
+                "name": "Taxi or pre-arranged driver from Tripoli or Al Khums",
+                "cost": "₹1,700–₹5,100"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Leptis Hotel Funduq Lebda",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Severus Hotel",
+                "budget": "₹5,100–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Café Sulphium",
+              "Mat'am Athar Lebda",
+              "Leptis Hotel Funduq Lebda restaurant"
+            ]
+          }
+        ]
+      },
+      "Ghadames": {
+        "name": "Ghadames",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "UNESCO Old Town, Covered Alleys & Mint Tea in the Desert Oasis",
+            "activities": [
+              {
+                "name": "Licensed guide for Ghadames old town",
+                "cost": "₹850–₹1,700/group",
+                "tip": "The old town itself is generally treated as free to enter, but foreign visitors are typically expected to hire an authorized local guide costing about 50–100 LYD per group."
+              },
+              {
+                "name": "Courtyard tea stop in the old town",
+                "cost": "₹85–₹170"
+              },
+              {
+                "name": "Traditional home lunch in the old quarter",
+                "cost": "₹850–₹1,360",
+                "tip": "Recent local operator guidance puts a hosted old-town meal at around 50–80 LYD."
+              },
+              {
+                "name": "Ras al Gule Roman-fortress viewpoint drive",
+                "cost": "₹340–₹850"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dar Al Ghadames",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Ben Yedder Hotel",
+                "budget": "₹2,800–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Pizza Abbas",
+              "Al-Tih Sandwich Café",
+              "Akmed's restaurant"
+            ]
+          },
+          {
+            "theme": "Palm Gardens, Saharan Dunes & 4x4 Desert Running",
+            "activities": [
+              {
+                "name": "4x4 dunes excursion outside Ghadames",
+                "cost": "₹4,250–₹8,500"
+              },
+              {
+                "name": "Taguella sand-bread or desert picnic stop",
+                "cost": "₹510–₹1,020"
+              },
+              {
+                "name": "Palm-grove walk and sunset on the desert edge",
+                "cost": "₹0"
+              },
+              {
+                "name": "Driver transfer to Ghadames airport or onward road checkpoint",
+                "cost": "₹850–₹1,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dar Al Ghadames",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Ben Yedder Hotel",
+                "budget": "₹2,800–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Pizza Abbas",
+              "Al-Tih Sandwich Café",
+              "Akmed's restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Tripoli",
+        "to": "Sabratha",
+        "method": "Private taxi or hotel-arranged driver on the coastal road; keep it strictly daylight because the westbound leg is security-sensitive after dark.",
+        "cost": "₹2,500–₹5,100"
+      },
+      {
+        "from": "Sabratha",
+        "to": "Leptis Magna",
+        "method": "Most travelers route back through Tripoli, then continue east by the same driver or a fresh private taxi toward Al Khums and Leptis Magna.",
+        "cost": "₹5,100–₹9,400"
+      },
+      {
+        "from": "Leptis Magna",
+        "to": "Ghadames",
+        "method": "Return to Tripoli for a domestic flight when schedules operate; otherwise use a fully pre-arranged long-haul 4x4 or driver convoy to the oasis.",
+        "cost": "₹8,500–₹25,500"
+      },
+      {
+        "from": "Ghadames",
+        "to": "Tripoli",
+        "method": "Domestic flight is the cleanest exit when operating; road returns are long and should only run with current local security clearance and a vetted driver.",
+        "cost": "₹8,500–₹21,000"
+      }
+    ],
+    "extras": [
+      "Best months are October to March: the coast is pleasant, Roman sites are easier to walk, and Ghadames desert days are far more comfortable than the furnace-like late spring and summer.",
+      "Treat Libya as a high-risk destination rather than a casual Mediterranean add-on. Political instability, fragmented authority, and sudden local closures mean you should re-check advisories before departure and before every intercity leg.",
+      "Red Castle, Leptis Magna, and Sabratha fees can still be paid in cash on site, but foreigner procedures are sometimes handled by a guide first, so carry enough Libyan dinars and do not rely on cards.",
+      "Domestic flights inside Libya can appear, vanish, or retime with little notice; build in a Tripoli buffer night before any international departure.",
+      "Ghadames sightseeing usually pairs an old-town guide with tourist-police coordination and a 4x4 for the dunes, so it works best as an organized overnight rather than an improvised same-day dash."
+    ],
+    "cityImages": {
+      "Tripoli": [
+        "Assaraya Alhamra Red Castle Tripoli",
+        "Martyrs' Square Tripoli",
+        "Arch of Marcus Aurelius Tripoli"
+      ],
+      "Sabratha": [
+        "Roman theatre of Sabratha",
+        "Sabratha forum ruins Libya",
+        "Sabratha archaeological museum"
+      ],
+      "Leptis Magna": [
+        "Leptis Magna Severan forum",
+        "Arch of Septimius Severus Leptis Magna",
+        "Leptis Magna theatre and basilica"
+      ],
+      "Ghadames": [
+        "Ghadames old town covered alleys",
+        "Ghadames oasis and palm gardens",
+        "Saharan dunes near Ghadames"
+      ]
+    }
+  }
+}

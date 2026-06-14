@@ -215,9 +215,9 @@
     "lng": 127.51,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Taiwan",
@@ -875,9 +875,9 @@
     "lng": 43.68,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 9
   },
   {
     "name": "Iran",
@@ -895,9 +895,9 @@
     "lng": 38.99,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 8
   },
   {
     "name": "Yemen",
@@ -905,9 +905,9 @@
     "lng": 48.52,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 10
   },
   {
     "name": "Oman",
@@ -955,9 +955,9 @@
     "lng": 35.23,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "South Africa",
@@ -1005,9 +1005,9 @@
     "lng": 17.23,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 9
   },
   {
     "name": "Nigeria",
@@ -1235,9 +1235,9 @@
     "lng": 46.2,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 6
   },
   {
     "name": "Sudan",
@@ -1245,9 +1245,9 @@
     "lng": 30.22,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "South Sudan",
@@ -1255,9 +1255,9 @@
     "lng": 31.31,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Mali",

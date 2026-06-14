@@ -1,0 +1,432 @@
+{
+  "name": "North Korea",
+  "seed": false,
+  "lat": 40.34,
+  "lng": 127.51,
+  "region": "Asia",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "January",
+    "February",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.65L–₹2.75L",
+    "couple": "₹3.1L–₹5L",
+    "family4": "₹6.2L–₹9L"
+  },
+  "experiences": [
+    "Guided state tour",
+    "Pyongyang monuments",
+    "DMZ from the North side",
+    "Kaesong history",
+    "East coast scenery",
+    "Mount Kumgang"
+  ],
+  "avoid": [
+    "Independent travel is not allowed — all sightseeing, meals and transfers must be arranged through a state-approved tour company with guides.",
+    "North Korea is currently closed to most tourists, so treat this as reference planning until your operator confirms active departures for your nationality.",
+    "July–August bring humid rain and occasional typhoon disruption on the east coast around Wonsan and Mount Kumgang."
+  ],
+  "combo": [
+    "China",
+    "Russia"
+  ],
+  "landmark": "Juche Tower",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Most classic DPRK trips run 5–7 days from Beijing, Dandong or Vladivostok and stay fully escorted from arrival to departure.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Pyongyang",
+      "lat": 39.0392,
+      "lng": 125.7625,
+      "notes": "Capital showpiece for Juche Tower, grand monuments, the metro and the tightly choreographed core of most licensed tours."
+    },
+    {
+      "name": "Kaesong",
+      "lat": 37.9708,
+      "lng": 126.5544,
+      "notes": "Historic Koryo-era city paired with Panmunjom visits, Confucian academy buildings and old-gate streets near the DMZ."
+    },
+    {
+      "name": "Mount Kumgang",
+      "lat": 38.6606,
+      "lng": 128.0416,
+      "notes": "Scenic east-coast mountain zone with guided valley walks, Samilpo Lake and the former inter-Korean tourist village."
+    },
+    {
+      "name": "Wonsan",
+      "lat": 39.1528,
+      "lng": 127.4461,
+      "notes": "A controlled east-coast stop for waterfront drives, state beaches, Songdowon camp visits and onward travel to Mount Kumgang."
+    }
+  ],
+  "itinerary": {
+    "sim": "Koryolink tourist SIMs have historically been arranged in Pyongyang for about ₹4,500–₹7,200 plus top-up, but availability is inconsistent and may be suspended while the country remains closed to most tourists.",
+    "apps": [
+      "Maps.me",
+      "Google Translate",
+      "XE Currency",
+      "WeChat",
+      "WhatsApp"
+    ],
+    "cityOrder": [
+      "Pyongyang",
+      "Kaesong",
+      "Wonsan",
+      "Mount Kumgang"
+    ],
+    "cities": {
+      "Pyongyang": {
+        "name": "Pyongyang",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the core monuments and formal visits; use a third only for slower museum time or a performance/cruise add-on.",
+        "days": [
+          {
+            "theme": "Arrival monuments, Juche Tower and the formal city core",
+            "activities": [
+              {
+                "name": "Air Koryo arrival from Beijing or Vladivostok arranged by your operator",
+                "cost": "₹27,000–₹45,000 pp one way"
+              },
+              {
+                "name": "Juche Tower observation deck lift",
+                "cost": "₹450 pp"
+              },
+              {
+                "name": "Kim Il Sung Square and Grand People’s Study House exterior circuit",
+                "cost": "Free"
+              },
+              {
+                "name": "Mansudae Grand Monument bouquet stop",
+                "cost": "₹270–₹450 per bouquet"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Yanggakdo International Hotel",
+                "budget": "₹9,000–₹13,500/night"
+              },
+              {
+                "name": "Koryo Hotel",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Okryu-gwan",
+              "Chongryu Restaurant",
+              "Yanggakdo Hotel Revolving Restaurant"
+            ]
+          },
+          {
+            "theme": "Kumsusan protocol, war museum and metro ride",
+            "activities": [
+              {
+                "name": "Kumsusan Palace of the Sun guided visit",
+                "cost": "Included in licensed tour; no standalone public ticket"
+              },
+              {
+                "name": "Victorious Fatherland Liberation War Museum",
+                "cost": "₹270 pp"
+              },
+              {
+                "name": "Pyongyang Metro two-stop ride",
+                "cost": "₹45–₹90 pp"
+              },
+              {
+                "name": "Mangyongdae Schoolchildren’s Palace performance",
+                "cost": "₹1,800 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Yanggakdo International Hotel",
+                "budget": "₹9,000–₹13,500/night"
+              },
+              {
+                "name": "Koryo Hotel",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Koryo Hotel Restaurant",
+              "Pyongyang Duck Barbecue Restaurant",
+              "Moran Restaurant"
+            ]
+          },
+          {
+            "theme": "Optional river cruise, gallery time and buffer for state schedule changes",
+            "activities": [
+              {
+                "name": "Taedong River dinner cruise or boat restaurant supplement",
+                "cost": "₹1,800 pp"
+              },
+              {
+                "name": "Arch of Triumph and Moran Hill walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Korean Art Gallery or stamp shop stop",
+                "cost": "₹180–₹450 pp where ticketed"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Yanggakdo International Hotel",
+                "budget": "₹9,000–₹13,500/night"
+              },
+              {
+                "name": "Koryo Hotel",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Taedonggang Diplomatic Club Restaurant",
+              "Yanggakdo Hotel Restaurant",
+              "Okryu-gwan"
+            ]
+          }
+        ]
+      },
+      "Kaesong": {
+        "name": "Kaesong",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Kaesong is usually a long escorted day or one-night stop built around Panmunjom and Koryo-era heritage.",
+        "days": [
+          {
+            "theme": "DMZ/JSA protocol day and Koryo-era history",
+            "activities": [
+              {
+                "name": "State tour coach from Pyongyang to Kaesong",
+                "cost": "Included in package"
+              },
+              {
+                "name": "Panmunjom / DMZ / JSA permit from the North side",
+                "cost": "₹3,150–₹4,500 pp"
+              },
+              {
+                "name": "Koryo Museum in the old Songgyungwan academy",
+                "cost": "₹450 pp"
+              },
+              {
+                "name": "Kaesong historic district and Nam Gate guided walk",
+                "cost": "Included with museum stop"
+              },
+              {
+                "name": "Tomb of King Kongmin",
+                "cost": "₹180–₹270 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Minsok Folk Hotel",
+                "budget": "₹6,500–₹9,000/night"
+              },
+              {
+                "name": "Janamsan Hotel",
+                "budget": "₹5,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Kaesong Minsok Folk Hotel Restaurant",
+              "Janamsan Hotel Restaurant",
+              "Tongil Restaurant"
+            ]
+          }
+        ]
+      },
+      "Wonsan": {
+        "name": "Wonsan",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Wonsan works best as a controlled overnight on the east-coast drive between Pyongyang/Kaesong and Mount Kumgang.",
+        "days": [
+          {
+            "theme": "East-coast transit, Songdowon visit and waterfront stops",
+            "activities": [
+              {
+                "name": "State tour coach from Kaesong or Pyongyang corridor to Wonsan",
+                "cost": "Included in package"
+              },
+              {
+                "name": "Songdowon International Children’s Camp guided visit",
+                "cost": "₹270–₹450 pp when open to foreign groups"
+              },
+              {
+                "name": "Jangdok Islet and Wonsan waterfront drive",
+                "cost": "Free"
+              },
+              {
+                "name": "Kalma coastal promenade photo stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dongmyong Hotel",
+                "budget": "₹7,000–₹10,000/night"
+              },
+              {
+                "name": "Songdowon Hotel",
+                "budget": "₹6,000–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Kalmaegi Restaurant",
+              "Dongmyong Hotel Restaurant",
+              "Songdowon Hotel Restaurant"
+            ]
+          }
+        ]
+      },
+      "Mount Kumgang": {
+        "name": "Mount Kumgang",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One day gives you the classic valley highlights; keep a second only for a cable-car day or slower mountain walks.",
+        "days": [
+          {
+            "theme": "Tourist village arrival, Inner Kumgang scenery and lake circuit",
+            "activities": [
+              {
+                "name": "State tour coach from Wonsan to the Mount Kumgang Tourist Region",
+                "cost": "Included in package"
+              },
+              {
+                "name": "Inner Kumgang guided hike",
+                "cost": "Included in licensed tour"
+              },
+              {
+                "name": "Samilpo Lake and tourist village circuit",
+                "cost": "₹270 pp"
+              },
+              {
+                "name": "Daehwa Peak cable car",
+                "cost": "₹2,520 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kumgangsan Hotel",
+                "budget": "₹9,500–₹13,500/night"
+              },
+              {
+                "name": "Oikumgang Hotel",
+                "budget": "₹8,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Sujongbong Restaurant",
+              "Pyolkumgang Restaurant",
+              "Kumgangsan Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Optional hot-spring or extra mountain day",
+            "activities": [
+              {
+                "name": "Onjong-ri hot spa or cultural performance supplement",
+                "cost": "₹900–₹1,800 pp"
+              },
+              {
+                "name": "Extra valley walk with state guides",
+                "cost": "Included in licensed tour"
+              },
+              {
+                "name": "Return coach toward Pyongyang via Wonsan",
+                "cost": "Included in package"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kumgangsan Hotel",
+                "budget": "₹9,500–₹13,500/night"
+              },
+              {
+                "name": "Oikumgang Hotel",
+                "budget": "₹8,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Sujongbong Restaurant",
+              "Pyolkumgang Restaurant",
+              "Kumgangsan Hotel Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Pyongyang",
+        "to": "Kaesong",
+        "method": "State tour coach arranged by KITC-partner operators (about 2.5–3 hrs)",
+        "cost": "Included in package"
+      },
+      {
+        "from": "Kaesong",
+        "to": "Wonsan",
+        "method": "Escorted coach via Pyongyang corridor (about 6–7 hrs with stops)",
+        "cost": "Included in package"
+      },
+      {
+        "from": "Wonsan",
+        "to": "Mount Kumgang",
+        "method": "Escorted coach along the east coast (about 3 hrs)",
+        "cost": "Included in package"
+      },
+      {
+        "from": "Mount Kumgang",
+        "to": "Pyongyang",
+        "method": "State tour coach return via Wonsan (full day drive)",
+        "cost": "Included in package"
+      }
+    ],
+    "extras": [
+      "Tour prices are usually quoted in EUR by Koryo Tours, Young Pioneer Tours or KITC partner departures; budget roughly ₹1.5L–₹2.5L pp for a 5–7 day land package before China/Russia positioning flights.",
+      "Independent roaming is not permitted: guides accompany you from arrival to departure, and even hotel-area walks can be limited by local security rules.",
+      "Kumsusan requires formal clothes (jacket, collared shirt, long trousers or below-knee skirt) and may close without notice for state events.",
+      "North Korea remains closed to most tourists as of this planning note; confirm reopening status and nationality eligibility before paying for visas or flights.",
+      "Photography rules, phone declarations and checked reading material can change quickly, so follow your guides and tour operator instructions exactly."
+    ],
+    "cityImages": {
+      "Pyongyang": [
+        "Juche Tower Pyongyang night skyline",
+        "Kim Il Sung Square Pyongyang wide avenue",
+        "Yanggakdo Hotel Taedong River view"
+      ],
+      "Kaesong": [
+        "Panmunjom blue conference huts North Korea side",
+        "Kaesong Koryo Museum Songgyungwan courtyard",
+        "Kaesong Nam Gate old city walls"
+      ],
+      "Wonsan": [
+        "Wonsan waterfront harbor coastline",
+        "Songdowon beach and pine grove Wonsan",
+        "Jangdok Islet Wonsan bay viewpoint"
+      ],
+      "Mount Kumgang": [
+        "Mount Kumgang granite peaks and forest",
+        "Kumgangsan Hotel tourist region exterior",
+        "Samilpo Lake Mount Kumgang shoreline"
+      ]
+    }
+  }
+}

@@ -1,0 +1,481 @@
+{
+  "name": "Iraq",
+  "seed": false,
+  "lat": 33.22,
+  "lng": 43.68,
+  "region": "Middle East",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹95K–₹1.55L",
+    "couple": "₹1.65L–₹2.75L",
+    "family4": "₹3.2L–₹5.1L"
+  },
+  "experiences": [
+    "Baghdad's museum core, Abbasid streets and riverfront promenades",
+    "UNESCO-listed Babylon ruins and the Lion of Babylon outside Hillah",
+    "Najaf and Karbala's major shrine precincts with deep Shia pilgrimage history",
+    "Erbil Citadel, bazaars and the easier self-planned feel of the Kurdistan Region",
+    "Optional deep-south extension to the Ziggurat of Ur and a mashhoof boat ride in the Mesopotamian Marshes"
+  ],
+  "avoid": [
+    "June to September is extremely hot and dusty across Baghdad and southern Iraq, so long outdoor site days become punishing.",
+    "Security conditions can change quickly; Kurdistan Region around Erbil is usually the easiest and safest independent base, while Baghdad and the south need more conservative transport choices and daylight movement.",
+    "Arbaeen, Ashura and major religious dates bring enormous pilgrimage crowds and hotel pressure in Najaf and Karbala, so book far ahead or choose quieter weeks."
+  ],
+  "combo": [
+    "Jordan",
+    "Turkey"
+  ],
+  "landmark": "Ancient City of Babylon",
+  "travelStyle": [
+    "explorer",
+    "history",
+    "pilgrimage"
+  ],
+  "stopoverNote": "If this is your first Iraq trip, keep Baghdad for core museums, use pre-booked taxis for Babylon and the shrine corridor, and treat Erbil as the softest final stop because the Kurdistan Region is usually the most straightforward independent base.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Baghdad",
+      "lat": 33.3152,
+      "lng": 44.3661,
+      "notes": "Best for the Iraq Museum, old book-market streets, river walks and practical flight connections before heading south or north."
+    },
+    {
+      "name": "Erbil (Kurdistan)",
+      "lat": 36.1911,
+      "lng": 44.0092,
+      "notes": "The most relaxed independent stop in this plan, with the UNESCO citadel, bazaars, parks and easy hotel infrastructure."
+    },
+    {
+      "name": "Babylon",
+      "lat": 32.5364,
+      "lng": 44.42,
+      "notes": "Hillah-based heritage stop for Babylon's archaeological zone, the Lion of Babylon and Iraq's flagship Mesopotamian ruins."
+    },
+    {
+      "name": "Najaf/Karbala",
+      "lat": 31.9951,
+      "lng": 44.314,
+      "notes": "Twin-city pilgrimage corridor anchored by Najaf airport, major shrines, conservative dress norms and the best launchpad here for a longer south-Iraq extension."
+    }
+  ],
+  "itinerary": {
+    "sim": "Asiacell is the easiest one-SIM choice across Baghdad, Babylon, Najaf and Erbil, with Korek strongest in Kurdistan; plan roughly ₹630–₹1,575 for a prepaid SIM or eSIM bundle with enough data for maps, WhatsApp and airline updates.",
+    "apps": [
+      "Iraqi Airways",
+      "Fly Erbil",
+      "Booking.com",
+      "Google Maps (offline Iraq maps)",
+      "Google Translate",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Baghdad",
+      "Babylon",
+      "Najaf/Karbala",
+      "Erbil (Kurdistan)"
+    ],
+    "cities": {
+      "Baghdad": {
+        "name": "Baghdad",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Baghdad rewards an early start, hotel-arranged or trusted taxis, and enough buffer for museum security checks and Friday hour changes.",
+        "days": [
+          {
+            "theme": "National treasures, the old book market and the central Tigris core",
+            "activities": [
+              {
+                "name": "National Museum of Iraq (The Iraq Museum)",
+                "cost": "₹1,575",
+                "tip": "Recent foreigner ticket reports cluster around 25,000 IQD."
+              },
+              {
+                "name": "Al-Mutanabbi Street",
+                "cost": "₹0"
+              },
+              {
+                "name": "Shabandar Cafe",
+                "cost": "₹0"
+              },
+              {
+                "name": "Qushla Clock Tower courtyard",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Babylon Rotana Hotel",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "Coral Baghdad Hotel",
+                "budget": "₹9,000–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Samad Restaurant",
+              "Saj Alreef Baghdad",
+              "Naranj Restaurant"
+            ]
+          },
+          {
+            "theme": "Monuments, Abbasid-era traces and a slower riverside evening",
+            "activities": [
+              {
+                "name": "Abbasid Palace",
+                "cost": "₹0"
+              },
+              {
+                "name": "Al-Shaheed Monument",
+                "cost": "₹0"
+              },
+              {
+                "name": "Abu Nawas Corniche",
+                "cost": "₹0"
+              },
+              {
+                "name": "Baghdad Tower exterior and park zone",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Babylon Rotana Hotel",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "Al Mansour Hotel",
+                "budget": "₹8,000–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Huqqabaz Mansour",
+              "Abu Nawas Restaurant",
+              "Baghdad Tower Restaurant"
+            ]
+          }
+        ]
+      },
+      "Babylon": {
+        "name": "Babylon",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Most travelers visit from Baghdad or continue onward to Karbala/Najaf; start early because exposed ruins get harsh in midday heat.",
+        "days": [
+          {
+            "theme": "UNESCO ruins, processional reconstructions and Mesopotamian iconography",
+            "activities": [
+              {
+                "name": "Ancient City of Babylon archaeological site",
+                "cost": "₹1,575",
+                "tip": "Recent foreigner admission reports usually quote about 25,000 IQD."
+              },
+              {
+                "name": "Lion of Babylon",
+                "cost": "₹0"
+              },
+              {
+                "name": "Processional Way and reconstructed Ishtar Gate area",
+                "cost": "₹0"
+              },
+              {
+                "name": "Saddam Hussein's Babylon Palace hilltop viewpoint",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Baybinawa",
+                "budget": "₹3,800–₹6,000/night"
+              },
+              {
+                "name": "The Baron Karbala",
+                "budget": "₹10,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Kentucky house Babylon",
+              "Khan Mandi Restaurant (Babil Branch)",
+              "Sumer Restaurant"
+            ]
+          }
+        ]
+      },
+      "Najaf/Karbala": {
+        "name": "Najaf/Karbala",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Dress modestly, expect heavier security near the shrines, and treat the south-Iraq extension to Ur and the Marshes as a very long guided day or an overnight add-on.",
+        "days": [
+          {
+            "theme": "Najaf's shrine heart, cemetery history and classic pilgrimage meals",
+            "activities": [
+              {
+                "name": "Imam Ali Holy Shrine",
+                "cost": "₹0"
+              },
+              {
+                "name": "Wadi Al-Salam Cemetery",
+                "cost": "₹0"
+              },
+              {
+                "name": "House of Imam Ali",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Qasr AlDur Hotel",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Nassim Al Najaf Hotel",
+                "budget": "₹4,200–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Haidar Shawakeh Restaurant",
+              "Mandi Sana’a El Yemen",
+              "Sirwan Restaurant"
+            ]
+          },
+          {
+            "theme": "Karbala's twin-shrine axis and the ceremonial spine between them",
+            "activities": [
+              {
+                "name": "Imam Husayn Holy Shrine",
+                "cost": "₹0"
+              },
+              {
+                "name": "Al-Abbas Holy Shrine",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bayn al-Haramayn",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Baron Karbala",
+                "budget": "₹10,500–₹17,500/night"
+              },
+              {
+                "name": "Karbala Rayhaan Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Naz Restaurant",
+              "TURATH Restaurant",
+              "Al-Baron Restaurant"
+            ]
+          },
+          {
+            "theme": "Long south-Iraq extension for Sumerian ruins and marshland boating",
+            "activities": [
+              {
+                "name": "Ziggurat of Ur",
+                "cost": "₹315",
+                "tip": "Recent visitor reports place entry below 5,000 IQD and it is occasionally waived."
+              },
+              {
+                "name": "Mesopotamian Marshes boat ride from Chibayish",
+                "cost": "₹1,260–₹2,520",
+                "tip": "Typical 1–2 hour mashhoof hire runs about 20,000–40,000 IQD per boat, so sharing helps."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Baron Karbala",
+                "budget": "₹10,500–₹17,500/night"
+              },
+              {
+                "name": "Qasr AlDur Hotel",
+                "budget": "₹5,500–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Naz Restaurant",
+              "Haidar Shawakeh Restaurant",
+              "Mandi Sana’a El Yemen"
+            ]
+          }
+        ]
+      },
+      "Erbil (Kurdistan)": {
+        "name": "Erbil (Kurdistan)",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Erbil is usually the easiest self-managed stop in Iraq; shared taxis from the main garages are the normal way to add Shaqlawa, Sulaymaniyah or Duhok side trips beyond this core plan.",
+        "days": [
+          {
+            "theme": "UNESCO citadel lanes, museum stop and the bazaar below",
+            "activities": [
+              {
+                "name": "Erbil Citadel outer lanes and main square",
+                "cost": "₹0",
+                "tip": "The UNESCO citadel itself is generally free to walk; only some interior museums or exhibits charge separately."
+              },
+              {
+                "name": "Erbil Citadel Archaeological Museum",
+                "cost": "₹160–₹315",
+                "tip": "Recent museum entry reports usually land around 2,500–5,000 IQD."
+              },
+              {
+                "name": "Qaysari Bazaar",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Divan Erbil Hotel",
+                "budget": "₹12,500–₹20,000/night"
+              },
+              {
+                "name": "Erbil Rotana",
+                "budget": "₹10,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Naranj",
+              "Abu Shahab City",
+              "Basilico"
+            ]
+          },
+          {
+            "theme": "Mosque architecture, major city parks and a calmer Kurdish evening",
+            "activities": [
+              {
+                "name": "Jalil Khayat Mosque",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sami Abdulrahman Park",
+                "cost": "₹0"
+              },
+              {
+                "name": "Shanidar Park",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Radisson Hotel & Residences Erbil",
+                "budget": "₹10,500–₹17,500/night"
+              },
+              {
+                "name": "Ankawa Royal Hotel & Spa",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "The Grill",
+              "Onyx Restaurant Erbil",
+              "Samad Restaurant"
+            ]
+          },
+          {
+            "theme": "Optional Kurdish soft day with cafés, shopping and easy logistics",
+            "activities": [
+              {
+                "name": "Family Mall Erbil",
+                "cost": "₹0"
+              },
+              {
+                "name": "Minaret Park",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Divan Erbil Hotel",
+                "budget": "₹12,500–₹20,000/night"
+              },
+              {
+                "name": "Tangram Hotel Erbil",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Twenty Nine 29",
+              "Dune Cafe",
+              "Guvenc Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Baghdad",
+        "to": "Babylon",
+        "method": "Pre-booked taxi or private driver via Hillah",
+        "cost": "₹2,200–₹4,100"
+      },
+      {
+        "from": "Babylon",
+        "to": "Najaf/Karbala",
+        "method": "Taxi or private car between Hillah, Karbala and Najaf",
+        "cost": "₹1,250–₹2,850"
+      },
+      {
+        "from": "Najaf/Karbala",
+        "to": "Erbil (Kurdistan)",
+        "method": "Domestic flight from Najaf (or Baghdad fallback) to Erbil, plus airport taxi",
+        "cost": "₹5,500–₹11,000"
+      }
+    ],
+    "extras": [
+      "Kurdistan Region is usually the calmest independent base in Iraq; if you want a gentler first stop, you can reverse this route and begin in Erbil before doing Baghdad and the south.",
+      "Between Iraqi cities outside Kurdistan, pre-arranged taxis or drivers are more practical than trying to improvise bus links; inside Kurdistan, shared taxis from formal garages are the everyday budget transport norm.",
+      "National Museum of Iraq and Babylon both commonly quote foreigner pricing that converts to about ₹1,575, while Erbil Citadel's main lanes are free and only the small museum ticket is charged separately.",
+      "For Najaf and Karbala, modest dress is essential and shrine security can be strict; carry socks, avoid shorts, and expect bag checks at each major entrance.",
+      "The Ur plus Marshes excursion is the least convenient piece of this four-city plan, so upgrade to a guided long day or overnight if those southern sites are your main priority rather than forcing them into a rushed shrine-city schedule."
+    ],
+    "cityImages": {
+      "Baghdad": [
+        "National Museum of Iraq Baghdad",
+        "Al-Mutanabbi Street Baghdad",
+        "Al-Shaheed Monument Baghdad"
+      ],
+      "Babylon": [
+        "Ancient City of Babylon Iraq",
+        "Lion of Babylon Iraq",
+        "Babylon Ishtar Gate reconstruction Iraq"
+      ],
+      "Najaf/Karbala": [
+        "Imam Ali Shrine Najaf",
+        "Imam Husayn Shrine Karbala",
+        "Mesopotamian Marshes Chibayish Iraq"
+      ],
+      "Erbil (Kurdistan)": [
+        "Erbil Citadel Iraq",
+        "Qaysari Bazaar Erbil",
+        "Jalil Khayat Mosque Erbil"
+      ]
+    }
+  }
+}

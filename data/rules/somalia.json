@@ -1,0 +1,359 @@
+{
+  "name": "Somalia",
+  "seed": false,
+  "lat": 5.15,
+  "lng": 46.2,
+  "region": "Africa",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.25L–₹2.05L",
+    "couple": "₹2.2L–₹3.4L",
+    "family4": "₹4.4L–₹6.4L"
+  },
+  "experiences": [
+    "Laas Geel rock-art day from Hargeisa with permit, guide, and mandatory escort",
+    "Berbera's Ottoman-era old town, corniche, and Red Sea beach time",
+    "Hargeisa's War Memorial, Cultural Centre, and market streets",
+    "Mogadishu's Liido Beach and cathedral ruins only on tightly managed security-led visits"
+  ],
+  "avoid": [
+    "Strong safety advisory: for tourism, Somaliland is the only realistic recommendation in this file; Mogadishu should be treated as essential-only travel with pre-arranged security, fixed hotel transfers, and no independent movement after dark.",
+    "Jilaal from December to March is the best dry-season window; April to May and October to November are hotter, dustier, or rain-disrupted enough to make road days and beach plans less reliable.",
+    "Do not assume Somaliland and Mogadishu logistics are interchangeable: flight routings, immigration handling, and airline transit rules can change quickly, so book through hotels or trusted agents and keep buffer days."
+  ],
+  "combo": [
+    "Djibouti",
+    "Ethiopia",
+    "United Arab Emirates"
+  ],
+  "landmark": "Laas Geel cave paintings",
+  "travelStyle": [
+    "Best approached as a Somaliland-first trip focused on Hargeisa, Laas Geel, and Berbera, with Mogadishu added only if you already have trusted local security support.",
+    "Good fit for history-and-overland travelers who can tolerate simple logistics, cash payments, and guide-led movement rather than independent city wandering."
+  ],
+  "stopoverNote": "Hargeisa is the easiest practical tourism base: sort SIM, cash, permits, and 4x4/escort arrangements there, continue overland to Berbera, and treat Mogadishu as a separate high-security segment rather than a casual add-on.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Mogadishu",
+      "lat": 2.0469,
+      "lng": 45.3182,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "High-security capital stop for Liido Beach, the cathedral ruins, and short guided drives between hotel compounds; not the recommended leisure base compared with Somaliland."
+    },
+    {
+      "name": "Hargeisa",
+      "lat": 9.5624,
+      "lng": 44.077,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Somaliland's main air gateway and the practical base for Laas Geel permits, the War Memorial, Hargeisa Cultural Centre, and onward road trips to Berbera."
+    },
+    {
+      "name": "Berbera",
+      "lat": 10.4396,
+      "lng": 45.0143,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Historic Red Sea port for Berbera old town, waterfront fish meals, easier beach time than Mogadishu, and the most relaxed stop in a Somaliland-first trip."
+    }
+  ],
+  "itinerary": {
+    "sim": "Telesom is the easiest default in Hargeisa and Berbera, while Hormuud is stronger in Mogadishu; starter packs and top-ups usually work out to about ₹300–₹900, but buy and activate in the city where you land because Somaliland and south-central Somalia run on different vendor networks.",
+    "apps": [
+      "Google Maps offline",
+      "Organic Maps",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Hargeisa",
+      "Berbera",
+      "Mogadishu"
+    ],
+    "cities": {
+      "Hargeisa": {
+        "name": "Hargeisa",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Base yourself in Hargeisa for permits, money exchange, and the easiest hotel choice, then treat Laas Geel as a planned daytime excursion rather than an improvised half-day hop.",
+        "days": [
+          {
+            "theme": "War Memorial, Cultural Centre, and market streets to settle into Somaliland's most straightforward visitor base",
+            "activities": [
+              {
+                "name": "War Memorial (MiG Jet Monument) stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Hargeisa Cultural Centre entry or event donation",
+                "cost": "₹150–₹450"
+              },
+              {
+                "name": "Waaheen Market and central-city taxi hops",
+                "cost": "₹450–₹1,200"
+              },
+              {
+                "name": "Hotel-arranged airport transfer",
+                "cost": "₹850–₹1,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Serene Sarovar Premiere Hargeisa",
+                "budget": "₹10,000–₹14,500/night"
+              },
+              {
+                "name": "Damal Hotel Hargeisa",
+                "budget": "₹6,800–₹10,500/night"
+              },
+              {
+                "name": "Oriental Hotel",
+                "budget": "₹1,300–₹2,500/night"
+              }
+            ],
+            "meals": [
+              "Cafe Laasgeel",
+              "Hiddo Dhawr",
+              "Al Yemen Al Saeed Restaurant"
+            ]
+          },
+          {
+            "theme": "Laas Geel rock-art day with permit, guide, and the mandatory out-of-town escort",
+            "activities": [
+              {
+                "name": "Laas Geel cave paintings permit",
+                "cost": "₹2,100–₹2,500 pp"
+              },
+              {
+                "name": "Shared 4x4, driver-guide, and SPU escort for the Laas Geel run",
+                "cost": "₹6,500–₹9,500 pp",
+                "tip": "Solo travelers often pay much more because the vehicle and escort cost are spread across fewer people."
+              },
+              {
+                "name": "Tea stop or camel-market detour on the return into Hargeisa",
+                "cost": "₹150–₹450"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Damal Hotel Hargeisa",
+                "budget": "₹6,800–₹10,500/night"
+              },
+              {
+                "name": "Ambassador Hotel Hargeisa",
+                "budget": "₹6,000–₹11,000/night"
+              },
+              {
+                "name": "Maan-Soor Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Damal Restaurant",
+              "Nomad Cafe",
+              "Creams Gelato"
+            ]
+          }
+        ]
+      },
+      "Berbera": {
+        "name": "Berbera",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Berbera is the most relaxed segment of the trip, but it still works best with a prearranged car from Hargeisa, daylight-only movement, and hotels that can help if plans shift.",
+        "days": [
+          {
+            "theme": "Ottoman-era lanes, corniche time, and a slow walk through the old port city",
+            "activities": [
+              {
+                "name": "Berbera old town self-guided walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Optional local guide for the Ottoman and colonial quarter",
+                "cost": "₹850–₹1,700"
+              },
+              {
+                "name": "Taxi between hotel, old town, and seafront",
+                "cost": "₹300–₹900"
+              },
+              {
+                "name": "Batalaale / Berbera beach stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Damal Hotel Berbera",
+                "budget": "₹5,000–₹8,500/night"
+              },
+              {
+                "name": "Esco Hotel",
+                "budget": "₹3,500–₹6,000/night"
+              },
+              {
+                "name": "Al Hayat Hotel",
+                "budget": "₹3,000–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Al Xayaat Restaurant",
+              "Damal Restaurant Berbera",
+              "Al Hayat Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Fresh seafood, Gulf of Aden light, and a second day that keeps Berbera worthwhile instead of a rushed transit stop",
+            "activities": [
+              {
+                "name": "Berbera fish market and harbor-front wander",
+                "cost": "Free"
+              },
+              {
+                "name": "Private car or 4x4 half-day for out-of-town beach viewpoints",
+                "cost": "₹2,500–₹5,000"
+              },
+              {
+                "name": "Beach chair, tea, or simple waterfront café spend",
+                "cost": "₹150–₹600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Damal Hotel Berbera",
+                "budget": "₹5,000–₹8,500/night"
+              },
+              {
+                "name": "Mansoor Hotel Berbera",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Esco Hotel",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Al Xayaat Restaurant",
+              "Mansoor Hotel Restaurant",
+              "Damal Restaurant Berbera"
+            ]
+          }
+        ]
+      },
+      "Mogadishu": {
+        "name": "Mogadishu",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Keep Mogadishu to a single tightly managed day inside vetted hotel and driver networks; for leisure travel, Somaliland is the stronger and safer recommendation.",
+        "days": [
+          {
+            "theme": "Liido Beach, cathedral ruins, and a brief look at the capital only with hotel-arranged security",
+            "activities": [
+              {
+                "name": "Liido Beach access",
+                "cost": "Free"
+              },
+              {
+                "name": "Liido Beach chair, tea, or seafood café spend",
+                "cost": "₹150–₹600"
+              },
+              {
+                "name": "Mogadishu Cathedral ruins visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Vetted driver or security-led city circuit covering Liido, the cathedral ruins, and Hamar Weyne",
+                "cost": "₹4,200–₹12,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jazeera Palace Hotel",
+                "budget": "₹10,000–₹15,500/night"
+              },
+              {
+                "name": "Decale Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Peace Hotel",
+                "budget": "₹3,000–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "The Village Restaurant",
+              "The Villas Restaurant & Coffee Shop",
+              "Indian Ocean Star Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Hargeisa",
+        "to": "Berbera",
+        "method": "Taxi or hired 4x4 is the common tourist move; buses exist, but most foreign visitors use a private vehicle, especially if combining Laas Geel or needing flexible escort stops",
+        "cost": "₹8,500–₹11,000 per taxi; ₹10,500–₹14,500 for a 4x4 with detours; buses roughly ₹400–₹850 pp"
+      },
+      {
+        "from": "Berbera",
+        "to": "Mogadishu",
+        "method": "Most visitors return overland to Hargeisa and then use a domestic air segment on Jubba Airways or another Somali carrier when schedules line up; do not assume same-day seamless transits because Somaliland/Somalia handling can change quickly",
+        "cost": "₹8,500–₹11,000 back to Hargeisa by taxi plus about ₹8,500–₹15,500 airfare"
+      }
+    ],
+    "extras": [
+      "For leisure travelers, plan Somaliland only if you want the safest version of this destination; Mogadishu belongs in the trip only when you already have trusted security and fully pre-booked movements.",
+      "Laas Geel has no serious onsite food infrastructure, so carry water, sun protection, and exact cash for guide tips, tea stops, or unplanned checkpoint waits.",
+      "Liido Beach, Mogadishu Cathedral ruins, and Berbera old town are all effectively free to enter, but the real cost difference is transport and security rather than ticketing.",
+      "December to March is the sweet spot because Jilaal keeps Somaliland roads drier, Berbera beach weather clearer, and long daylight drives easier to manage."
+    ],
+    "cityImages": {
+      "Mogadishu": [
+        "Liido Beach Mogadishu",
+        "Mogadishu Cathedral ruins",
+        "Hamar Weyne Mogadishu"
+      ],
+      "Hargeisa": [
+        "Laas Geel Somaliland",
+        "Hargeisa War Memorial MiG",
+        "Hargeisa Cultural Centre"
+      ],
+      "Berbera": [
+        "Berbera old town Somaliland",
+        "Berbera beach Somaliland",
+        "Berbera port corniche"
+      ]
+    }
+  }
+}
