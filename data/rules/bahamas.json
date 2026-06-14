@@ -1,0 +1,564 @@
+{
+  "name": "Bahamas",
+  "seed": false,
+  "lat": 25.03,
+  "lng": -77.4,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.6L–₹2.5L",
+    "couple": "₹2.9L–₹4.5L",
+    "family4": "₹5.8L–₹8.6L"
+  },
+  "experiences": [
+    "Beaches",
+    "Island Hopping",
+    "Snorkeling",
+    "Blue Holes",
+    "Water Parks",
+    "Pig Beach"
+  ],
+  "avoid": [
+    "June–November is hurricane season, with the highest risk of flight disruptions, rough seas, and closed water activities.",
+    "Christmas, New Year, and US spring-break weeks make Nassau and Paradise Island noticeably pricier than the Out Islands.",
+    "Inter-island ferries and small-aircraft schedules thin out on some Sundays and can shift quickly in windy weather, so do not leave transfers to the last minute."
+  ],
+  "combo": [
+    "United States",
+    "Cuba",
+    "Turks and Caicos"
+  ],
+  "landmark": "Exuma Cays",
+  "travelStyle": [
+    "touch-and-go",
+    "explorer"
+  ],
+  "stopoverNote": "For trips under 6 days, most travelers should stay on New Providence (Nassau + Paradise Island) and add only one Out Island such as Eleuthera or Exuma.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Nassau",
+      "lat": 25.047984,
+      "lng": -77.355413,
+      "notes": "Historic arrival hub on New Providence for forts, museums, Fish Fry dinners, and easy jitney access to beaches and downtown sights."
+    },
+    {
+      "name": "Paradise Island",
+      "lat": 25.0846,
+      "lng": -77.3186,
+      "notes": "Best for Atlantis, Aquaventure, Cabbage Beach, and a polished resort day only minutes from downtown Nassau by water taxi or bridge."
+    },
+    {
+      "name": "Eleuthera",
+      "lat": 25.1943,
+      "lng": -76.2439,
+      "notes": "Long pink-sand island best known for Glass Window Bridge, Queen's Bath, Governor's Harbour beaches, and blue-hole excursions."
+    },
+    {
+      "name": "Exuma",
+      "lat": 23.5167,
+      "lng": -75.786,
+      "notes": "George Town and Great Exuma are the practical base for Pig Beach tours, Thunderball Grotto, Stocking Island, and clear-water sandbars."
+    },
+    {
+      "name": "Grand Bahama",
+      "lat": 26.5333,
+      "lng": -78.6967,
+      "notes": "Freeport and Port Lucaya combine caves, national-park boardwalks, easier hotel pricing, and a straightforward flight finish from Grand Bahama International."
+    }
+  ],
+  "itinerary": {
+    "sim": "ALIV is the easiest prepaid pickup on arrival and usually the strongest bet across Nassau, Paradise Island, Exuma, and Freeport; budget roughly ₹1,000–₹3,800 for a short-stay SIM or weekly data pack, with BTC as the backup option.",
+    "apps": [
+      "Bahamasair",
+      "Bahamas Ferries",
+      "Google Maps offline",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Nassau",
+      "Paradise Island",
+      "Eleuthera",
+      "Exuma",
+      "Grand Bahama"
+    ],
+    "cities": {
+      "Nassau": {
+        "name": "Nassau",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Nassau as your arrival buffer and cultural day; jitneys are cheapest inside town, but taxis are still the practical airport transfer after dark.",
+        "days": [
+          {
+            "theme": "Queen's Staircase, Downtown Museums and Fish Fry Night",
+            "activities": [
+              {
+                "name": "Queen's Staircase and Fort Fincastle",
+                "cost": "Queen's Staircase free; Fort Fincastle about ₹840 pp",
+                "tip": "Go before 10 AM if cruise ships are in port so the staircase waterfall corner is quieter."
+              },
+              {
+                "name": "Pirates of Nassau Museum",
+                "cost": "₹1,176 pp"
+              },
+              {
+                "name": "National Art Gallery of The Bahamas",
+                "cost": "₹840 pp"
+              },
+              {
+                "name": "Arawak Cay Fish Fry dinner run by jitney",
+                "cost": "₹105 pp each way by jitney"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Colony Club Inn & Suites",
+                "budget": "₹11,500–₹16,500/night"
+              },
+              {
+                "name": "Towne Hotel",
+                "budget": "₹12,500–₹18,500/night"
+              },
+              {
+                "name": "Holiday Inn Express & Suites Nassau",
+                "budget": "₹16,500–₹23,500/night"
+              }
+            ],
+            "meals": [
+              "Oh Andros",
+              "Twin Brothers",
+              "Café Matisse"
+            ]
+          },
+          {
+            "theme": "Flamingos, Forts and a Relaxed Cable Beach Finish",
+            "activities": [
+              {
+                "name": "Ardastra Gardens & Wildlife Conservation Centre",
+                "cost": "₹2,940 pp"
+              },
+              {
+                "name": "Fort Charlotte",
+                "cost": "₹420 pp"
+              },
+              {
+                "name": "Junkanoo Beach or Cable Beach swim block",
+                "cost": "Free"
+              },
+              {
+                "name": "John Watling's Distillery courtyard stop",
+                "cost": "Free–₹1,260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Courtyard Nassau Downtown/Junkanoo Beach",
+                "budget": "₹16,000–₹22,500/night"
+              },
+              {
+                "name": "Orange Hill Beach Inn",
+                "budget": "₹12,000–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Social House Sushi & Grill",
+              "The Poop Deck at Sandyport",
+              "Goldie's Conch House"
+            ]
+          }
+        ]
+      },
+      "Paradise Island": {
+        "name": "Paradise Island",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Paradise Island works best as a single full resort-and-beach day unless you are staying on-site at Atlantis for multiple park sessions.",
+        "days": [
+          {
+            "theme": "Atlantis Aquaventure, Cabbage Beach and Harbor Views",
+            "activities": [
+              {
+                "name": "Nassau to Paradise Island water taxi",
+                "cost": "₹588 pp each way"
+              },
+              {
+                "name": "Atlantis Aquaventure day pass",
+                "cost": "₹16,380–₹21,000 pp",
+                "tip": "Book ahead for December–April because capacity caps are common and walk-up availability is unreliable."
+              },
+              {
+                "name": "Versailles Gardens and Cloisters",
+                "cost": "Free"
+              },
+              {
+                "name": "Cabbage Beach sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bay View Suites Paradise Island",
+                "budget": "₹13,500–₹20,500/night"
+              },
+              {
+                "name": "Comfort Suites Paradise Island",
+                "budget": "₹18,000–₹27,000/night"
+              },
+              {
+                "name": "Sunrise Beach Clubs and Villas",
+                "budget": "₹16,500–₹24,500/night"
+              }
+            ],
+            "meals": [
+              "Anthony's Seafood & Ribs",
+              "Viola's Bar & Grill",
+              "Carmine's at Atlantis"
+            ]
+          }
+        ]
+      },
+      "Eleuthera": {
+        "name": "Eleuthera",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Base around Governor's Harbour if you want easier food choices, or around Gregory Town/North Eleuthera if Sapphire Blue Hole and Harbour Island are the priority.",
+        "days": [
+          {
+            "theme": "Glass Window Bridge, Queen's Bath and Pink-Sand Driving Day",
+            "activities": [
+              {
+                "name": "Glass Window Bridge viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Queen's Bath tidal pools",
+                "cost": "Free",
+                "tip": "Only go in calm sea conditions; waves can make the rocks dangerous at high surf."
+              },
+              {
+                "name": "French Leave Beach or Twin Coves swim stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Harbour Island side trip by water taxi from North Eleuthera",
+                "cost": "₹2,100–₹3,360 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Rainbow Inn",
+                "budget": "₹13,000–₹18,500/night"
+              },
+              {
+                "name": "Pineapple Fields",
+                "budget": "₹15,500–₹22,000/night"
+              },
+              {
+                "name": "Unique Village Resort",
+                "budget": "₹14,000–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Tippy's Restaurant & Beachside Bar",
+              "Buccaneer Club",
+              "Bacchus Fine Foods"
+            ]
+          },
+          {
+            "theme": "Sapphire Blue Hole and Cave Adventure",
+            "activities": [
+              {
+                "name": "Sapphire Blue Hole independent visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Blue Hole and Cathedral Cave guided tour with Eleuthera Outdoor Center",
+                "cost": "₹12,180 pp",
+                "tip": "This is the simplest way to visit the blue hole safely if you do not want to self-drive rough access roads."
+              },
+              {
+                "name": "Preacher's Cave stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Leon Levy Native Plant Preserve",
+                "cost": "₹840–₹1,260 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Sunset Cove and Rainbow Room",
+                "budget": "₹17,000–₹24,000/night"
+              },
+              {
+                "name": "Sky Beach Club",
+                "budget": "₹20,000–₹29,000/night"
+              }
+            ],
+            "meals": [
+              "1648 - An Island Restaurant",
+              "Da Perk Coffee Shop",
+              "Mate & Jenny's Restaurant"
+            ]
+          }
+        ]
+      },
+      "Exuma": {
+        "name": "Exuma",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "George Town is the most practical base if you want to keep Pig Beach, Stocking Island and beach time all within easy reach without paying luxury-cay rates.",
+        "days": [
+          {
+            "theme": "Swimming Pigs, Thunderball Grotto and Sandbar Day",
+            "activities": [
+              {
+                "name": "Half-day Exuma Swimming Pigs tour from Great Exuma",
+                "cost": "₹15,960–₹21,000 pp",
+                "tip": "Shared tours usually include Pig Beach plus one or two snorkel or iguana stops, and seats sell out fast in high season."
+              },
+              {
+                "name": "Thunderball Grotto snorkel stop",
+                "cost": "Usually bundled with boat tour or ₹4,200–₹8,400 pp as a separate small-group outing"
+              },
+              {
+                "name": "Hoopers Bay turtle swim",
+                "cost": "Free"
+              },
+              {
+                "name": "George Town waterfront conch snack stop",
+                "cost": "₹840–₹1,680"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hideaways Exuma",
+                "budget": "₹16,500–₹23,500/night"
+              },
+              {
+                "name": "Augusta Bay Bahamas",
+                "budget": "₹14,500–₹21,000/night"
+              },
+              {
+                "name": "Peace & Plenty Resort",
+                "budget": "₹18,500–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Santanna's Grill Pit",
+              "Shirley's Seafood",
+              "Chat 'N' Chill"
+            ]
+          },
+          {
+            "theme": "Stocking Island, Tropic of Cancer Beach and a Slow Blue-Water Finish",
+            "activities": [
+              {
+                "name": "Stocking Island water taxi",
+                "cost": "₹1,680–₹2,520 pp return"
+              },
+              {
+                "name": "Chat 'N' Chill stingray shallows",
+                "cost": "Free"
+              },
+              {
+                "name": "Tropic of Cancer Beach drive and swim",
+                "cost": "Free"
+              },
+              {
+                "name": "Moriah Harbour Cay National Park sandbar outing",
+                "cost": "₹4,200–₹8,400 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "St. Francis Resort",
+                "budget": "₹22,000–₹32,000/night"
+              },
+              {
+                "name": "Exuma Palms Hotel",
+                "budget": "₹12,500–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Rusty Anchor",
+              "Peace & Plenty Restaurant",
+              "Splash Bar & Grill"
+            ]
+          }
+        ]
+      },
+      "Grand Bahama": {
+        "name": "Grand Bahama",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Grand Bahama is the easiest Out Island to end on if you want gentler hotel pricing, cave walks and a direct flight finish from Freeport.",
+        "days": [
+          {
+            "theme": "Lucayan National Park, Gold Rock Beach and Port Lucaya",
+            "activities": [
+              {
+                "name": "Lucayan National Park",
+                "cost": "₹924 pp"
+              },
+              {
+                "name": "Gold Rock Beach boardwalk and low-tide beach time",
+                "cost": "Included with Lucayan National Park entry"
+              },
+              {
+                "name": "Ben's Cave and mangrove trail",
+                "cost": "Included with Lucayan National Park entry"
+              },
+              {
+                "name": "Port Lucaya Marketplace evening browse",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bell Channel Inn Hotel",
+                "budget": "₹11,000–₹15,500/night"
+              },
+              {
+                "name": "Flamingo Bay Hotel & Marina",
+                "budget": "₹10,500–₹14,500/night"
+              },
+              {
+                "name": "Pelican Bay Hotel",
+                "budget": "₹16,500–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Flying Fish GastroBar",
+              "Banana Bay",
+              "Zorba's Greek Restaurant"
+            ]
+          },
+          {
+            "theme": "Garden Walks, Reef Time and a Low-Key Freeport Day",
+            "activities": [
+              {
+                "name": "Garden of the Groves",
+                "cost": "₹1,260–₹1,680 pp"
+              },
+              {
+                "name": "Taino Beach or Smith's Point beach break",
+                "cost": "Free"
+              },
+              {
+                "name": "Peterson Cay National Park snorkel or glass-bottom boat",
+                "cost": "₹4,200–₹7,500 pp"
+              },
+              {
+                "name": "Port Lucaya marina sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ocean Reef Yacht Club & Resort",
+                "budget": "₹14,000–₹20,000/night"
+              },
+              {
+                "name": "Dolphin Cove",
+                "budget": "₹18,000–₹26,000/night"
+              }
+            ],
+            "meals": [
+              "Sabor Restaurant & Bar",
+              "La Parrilla Latina Restaurant",
+              "Archie's Flamingo Grill"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Lynden Pindling Airport",
+        "to": "Nassau",
+        "method": "Taxi or pre-booked hotel shuttle is the normal arrival move; jitneys do not directly serve the airport well for first-time visitors with luggage.",
+        "cost": "₹2,940–₹4,620"
+      },
+      {
+        "from": "Nassau",
+        "to": "Paradise Island",
+        "method": "Public water taxi from Prince George Wharf is the scenic budget option; taxis over the bridge are faster late evening.",
+        "cost": "₹588–₹2,940"
+      },
+      {
+        "from": "Paradise Island",
+        "to": "Eleuthera",
+        "method": "Water taxi back to Nassau, then Bahamas Ferries to Spanish Wells or Harbour Island, plus a short taxi or water-taxi hop onward to your Eleuthera base.",
+        "cost": "₹11,900–₹14,900"
+      },
+      {
+        "from": "Eleuthera",
+        "to": "Exuma",
+        "method": "Bahamasair via Nassau is the most practical public connection between Eleuthera and George Town on Great Exuma.",
+        "cost": "₹18,000–₹26,000"
+      },
+      {
+        "from": "Exuma",
+        "to": "Grand Bahama",
+        "method": "Bahamasair via Nassau is the realistic same-day public routing; private charters are much faster but far more expensive.",
+        "cost": "₹23,000–₹31,000"
+      }
+    ],
+    "extras": [
+      "The Bahamian dollar is pegged 1:1 with the US dollar, so USD cash works widely and the INR math stays simple at roughly ₹84 per BSD/USD.",
+      "Indian passport holders usually need a Bahamas visa unless they also hold a valid US, UK, Canada, or Schengen visa or residency document, so check the official eVisa rules before booking flights.",
+      "Jitneys are cash-only and cheap on New Providence, but they do not cover every tourist route after dark and are uncommon on the Out Islands.",
+      "If you are combining ferries with flights, keep at least half a day of buffer because wind and swell can shift boat timings with short notice.",
+      "Atlantis, Pig Beach tours, and the best-value Exuma and Eleuthera hotels all book up early for December–April, so this country rewards advance planning more than last-minute improvisation."
+    ],
+    "cityImages": {
+      "Nassau": [
+        "Queen's Staircase Nassau Bahamas",
+        "Parliament Square Nassau Bahamas",
+        "Arawak Cay Fish Fry Nassau"
+      ],
+      "Paradise Island": [
+        "Atlantis Paradise Island Bahamas",
+        "Cabbage Beach Paradise Island Bahamas",
+        "Versailles Gardens Paradise Island"
+      ],
+      "Eleuthera": [
+        "Glass Window Bridge Eleuthera",
+        "Sapphire Blue Hole Eleuthera Bahamas",
+        "French Leave Beach Eleuthera"
+      ],
+      "Exuma": [
+        "Pig Beach Exuma Bahamas",
+        "Thunderball Grotto Exuma",
+        "Stocking Island Exuma Bahamas"
+      ],
+      "Grand Bahama": [
+        "Lucayan National Park Grand Bahama",
+        "Gold Rock Beach Grand Bahama",
+        "Port Lucaya Marketplace Freeport"
+      ]
+    }
+  }
+}

@@ -1645,9 +1645,9 @@
     "lng": -77.3,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 13
   },
   {
     "name": "Haiti",
@@ -1665,9 +1665,9 @@
     "lng": -70.16,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 11,
+    "maxDays": 15
   },
   {
     "name": "Trinidad and Tobago",
@@ -1675,9 +1675,9 @@
     "lng": -61.22,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 10
   },
   {
     "name": "Costa Rica",
@@ -1755,9 +1755,9 @@
     "lng": -59.54,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 9
   },
   {
     "name": "Bahamas",
@@ -1765,9 +1765,9 @@
     "lng": -77.4,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 14
   },
   {
     "name": "Antigua and Barbuda",

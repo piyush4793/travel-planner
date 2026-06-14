@@ -1,0 +1,436 @@
+{
+  "name": "Barbados",
+  "seed": false,
+  "lat": 13.19,
+  "lng": -59.54,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.35L–₹2.25L",
+    "couple": "₹2.45L–₹3.9L",
+    "family4": "₹4.9L–₹7.2L"
+  },
+  "experiences": [
+    "Beaches",
+    "Surf",
+    "Rum Heritage",
+    "Seafood",
+    "Colonial History",
+    "Scenic Drives"
+  ],
+  "avoid": [
+    "June–November is wetter and overlaps the Atlantic storm season, so cave tours, catamaran trips, and east-coast viewpoints are more likely to be affected by passing systems.",
+    "Crop Over events from late July into early August raise south-coast rates and make Oistins, Bridgetown, and beach buses noticeably busier.",
+    "Bathsheba's Atlantic side is gorgeous but often rough for swimming, so treat it more as a surf-and-scenery stop unless conditions are clearly calm and lifeguards are present."
+  ],
+  "combo": [
+    "Saint Lucia",
+    "Grenada",
+    "Trinidad and Tobago"
+  ],
+  "landmark": "Harrison's Cave",
+  "travelStyle": [
+    "relaxed",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 6 days, most travelers stay on the south or west coast and visit Bathsheba and Speightstown as day trips instead of changing hotels repeatedly.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Bridgetown",
+      "lat": 13.0975,
+      "lng": -59.6167,
+      "notes": "Historic Bridgetown is the practical arrival base for UNESCO core sights, Carlisle Bay beaches, rum heritage, and easy island-wide bus connections."
+    },
+    {
+      "name": "Bathsheba",
+      "lat": 13.2134,
+      "lng": -59.5243,
+      "notes": "Barbados' dramatic east-coast stop for Soup Bowl surf, Bathsheba rock formations, breezy viewpoints, and a slower village feel."
+    },
+    {
+      "name": "Speightstown",
+      "lat": 13.2506,
+      "lng": -59.6433,
+      "notes": "A calmer west-coast heritage town with waterfront walks, local rum history nearby, and easier beach time than the Atlantic side."
+    },
+    {
+      "name": "Oistins",
+      "lat": 13.0671,
+      "lng": -59.5615,
+      "notes": "The south-coast favorite for Miami Beach, the famous fish fry, guesthouse-heavy stays, and quick bus access to the airport and Bridgetown."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel Barbados or FLOW prepaid data packs are the easiest local options; budget roughly ₹1,500–₹2,500 for a short-stay data plan and keep offline maps handy for east-coast drives.",
+    "apps": [
+      "Google Maps",
+      "Waze",
+      "WhatsApp",
+      "Airalo",
+      "PickUp Barbados"
+    ],
+    "cityOrder": [
+      "Bridgetown",
+      "Bathsheba",
+      "Speightstown",
+      "Oistins"
+    ],
+    "cities": {
+      "Bridgetown": {
+        "name": "Bridgetown",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Historic Bridgetown, Garrison & Carlisle Bay",
+            "activities": [
+              {
+                "name": "National Heroes Square, Parliament Buildings exterior and Broad Street walk",
+                "cost": "Free"
+              },
+              {
+                "name": "George Washington House & Museum",
+                "cost": "₹1,050 pp",
+                "tip": "Adult admission is commonly listed around BBD$25, which converts to roughly ₹1,050."
+              },
+              {
+                "name": "Barbados Museum & Historical Society",
+                "cost": "₹840 pp",
+                "tip": "Adult entry is typically about BBD$20."
+              },
+              {
+                "name": "Pebbles Beach and Carlisle Bay swim stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pirate's Inn",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Island Inn Hotel",
+                "budget": "₹16,500–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Cuz's Fish Shack",
+              "Brown Sugar Restaurant",
+              "Mustor's Restaurant"
+            ]
+          },
+          {
+            "theme": "Cave Day Trip, Rum Heritage & Harbor Stops",
+            "activities": [
+              {
+                "name": "Harrison's Cave Eco-Adventure Park Grand Cave Tour",
+                "cost": "₹2,520 pp",
+                "tip": "Adult Grand Cave Tour pricing is commonly listed around BBD$60."
+              },
+              {
+                "name": "Mount Gay Visitor Centre courtyard and gift-shop stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Chamberlain Bridge and Careenage waterfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Garrison Savannah grounds and main stand photo stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pirate's Inn",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Island Inn Hotel",
+                "budget": "₹16,500–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Harbour Lights",
+              "Lobster Alive",
+              "The Boatyard"
+            ]
+          }
+        ]
+      },
+      "Bathsheba": {
+        "name": "Bathsheba",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Soup Bowl Surf Coast & Garden Views",
+            "activities": [
+              {
+                "name": "Bathsheba Beach and Soup Bowl viewpoint walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Andromeda Botanic Gardens",
+                "cost": "₹840 pp",
+                "tip": "Adult admission is typically about BBD$20."
+              },
+              {
+                "name": "St. John Parish Church viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Bath Beach and Martin's Bay scenic drive",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sea-U Guest House",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Rest Haven Beach Cottages",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Round House Restaurant",
+              "Atlantis Restaurant",
+              "De Garage Bar & Grill"
+            ]
+          }
+        ]
+      },
+      "Speightstown": {
+        "name": "Speightstown",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "West Coast Heritage, Abbey Rum & Beach Time",
+            "activities": [
+              {
+                "name": "Speightstown Esplanade, jetty and waterfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "St. Nicholas Abbey Great House & Distillery Tour",
+                "cost": "₹2,940 pp",
+                "tip": "Official adult admission for the Great House & Distillery tour is listed at US$35, about BBD$70 or roughly ₹2,940."
+              },
+              {
+                "name": "Cherry Tree Hill viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Heywoods Beach swim stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sungold House Barbados",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Little Good Harbour",
+                "budget": "₹18,000–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Fisherman's Pub",
+              "Jumas Restaurant",
+              "Orange Street Grocer"
+            ]
+          },
+          {
+            "theme": "Museum Stops, Quiet Beaches & Sunset Dinner",
+            "activities": [
+              {
+                "name": "Arlington House Museum",
+                "cost": "₹840 pp",
+                "tip": "Admission is commonly around BBD$20 for adults."
+              },
+              {
+                "name": "Port St. Charles marina walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Mullins Beach afternoon stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Speightstown murals and Orange Street stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sungold House Barbados",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Little Good Harbour",
+                "budget": "₹18,000–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Baia",
+              "Shipwreck Bar & Grill",
+              "The Fish Pot"
+            ]
+          }
+        ]
+      },
+      "Oistins": {
+        "name": "Oistins",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Miami Beach, Parish Landmarks & Fish Fry",
+            "activities": [
+              {
+                "name": "Miami Beach / Enterprise Beach",
+                "cost": "Free"
+              },
+              {
+                "name": "Christ Church Parish Church grounds",
+                "cost": "Free"
+              },
+              {
+                "name": "Oistins Bay Gardens fish market and fish fry",
+                "cost": "Free"
+              },
+              {
+                "name": "South Point Lighthouse photo stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Golden Sands Hotel",
+                "budget": "₹11,000–₹17,000/night"
+              },
+              {
+                "name": "Butterfly Beach Hotel",
+                "budget": "₹12,500–₹19,000/night"
+              }
+            ],
+            "meals": [
+              "Pat's Place",
+              "Uncle George Fish Net Grill",
+              "Cafe Luna"
+            ]
+          },
+          {
+            "theme": "South Coast Easy Day & Beach-Hopping",
+            "activities": [
+              {
+                "name": "Welches Beach walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Freights Bay lookout",
+                "cost": "Free"
+              },
+              {
+                "name": "Surfer's Bay Beach stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset return to Oistins Bay Gardens",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Golden Sands Hotel",
+                "budget": "₹11,000–₹17,000/night"
+              },
+              {
+                "name": "Butterfly Beach Hotel",
+                "budget": "₹12,500–₹19,000/night"
+              }
+            ],
+            "meals": [
+              "Chicken Rita's",
+              "Surfer's Bay Beach Bar",
+              "Chillin' & Grillin'"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bridgetown",
+        "to": "Bathsheba",
+        "method": "Transport Board bus or ZR minibus across the island via ABC Highway / east-coast roads (about 45–60m)",
+        "cost": "₹147 pp"
+      },
+      {
+        "from": "Bathsheba",
+        "to": "Speightstown",
+        "method": "Rental car is fastest via inland roads (about 60–75m); by bus you usually connect back through Bridgetown",
+        "cost": "₹147–₹294 pp by bus; ₹5,000–₹7,500/day for a rental car"
+      },
+      {
+        "from": "Speightstown",
+        "to": "Oistins",
+        "method": "Transport Board bus, ZR minibus, or rental car down the west and south coasts (about 60–75m)",
+        "cost": "₹147 pp by bus/ZR"
+      }
+    ],
+    "extras": [
+      "Transport Board buses use a flat BBD$3.50 fare per ride, which works out to about ₹147; carry exact cash for blue government buses and ZR minibuses.",
+      "ZR minibuses are the quickest cheap option on many main routes, but they can be fast and crowded; choose blue Transport Board buses if you want more space and easier luggage handling.",
+      "Rental cars make Bathsheba, St. Nicholas Abbey, and scattered west-coast beaches much easier; Barbados drives on the left and rental agencies usually issue the local driving permit for about BBD$10 (roughly ₹420).",
+      "December through April is Barbados' most bookable stretch, so smaller guesthouses in Bathsheba and Oistins often need advance reservations several weeks out.",
+      "Use caution in Bathsheba and other east-coast surf zones: currents and shore break are stronger than on the calmer Carlisle Bay and Miami Beach sides."
+    ],
+    "cityImages": {
+      "Bridgetown": [
+        "Bridgetown Barbados Parliament Buildings",
+        "Carlisle Bay Barbados",
+        "George Washington House Barbados"
+      ],
+      "Bathsheba": [
+        "Bathsheba Barbados",
+        "Soup Bowl Bathsheba Barbados",
+        "Andromeda Botanic Gardens Barbados"
+      ],
+      "Speightstown": [
+        "Speightstown Barbados",
+        "St Nicholas Abbey Barbados",
+        "Arlington House Museum Barbados"
+      ],
+      "Oistins": [
+        "Oistins Fish Fry",
+        "Miami Beach Barbados",
+        "Christ Church Parish Church Barbados"
+      ]
+    }
+  }
+}

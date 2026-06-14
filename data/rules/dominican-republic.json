@@ -1,0 +1,780 @@
+{
+  "name": "Dominican Republic",
+  "seed": false,
+  "lat": 18.74,
+  "lng": -70.16,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1.45L–₹2.3L",
+    "couple": "₹2.7L–₹4.2L",
+    "family4": "₹5.4L–₹8.1L"
+  },
+  "experiences": [
+    "Zona Colonial History",
+    "All-Inclusive Beaches",
+    "Los Haitises Boat Days",
+    "Samaná Whale Watching",
+    "Jarabacoa Rafting",
+    "Saona Island"
+  ],
+  "avoid": [
+    "May to November is wetter and more humid, and August to October is the peak hurricane-risk window for Samaná boat tours, east-coast beach days, and mountain roads.",
+    "Christmas, New Year, Semana Santa, and long Dominican holiday weekends quickly raise resort rates in Punta Cana and Bayahibe and make Caribe Tours and Metro departures busier.",
+    "January to March is prime whale season in Samaná, so book boats and peninsula hotels early if that experience is non-negotiable."
+  ],
+  "combo": [
+    "Puerto Rico",
+    "Cuba",
+    "Jamaica"
+  ],
+  "landmark": "Zona Colonial",
+  "travelStyle": [
+    "touch-and-go",
+    "explorer"
+  ],
+  "stopoverNote": "Santo Domingo is the easiest multi-stop hub because the capital connects best to Caribe Tours and Metro long-distance buses, while most domestic flight options also route through Santo Domingo airports.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Santo Domingo",
+      "lat": 18.4861,
+      "lng": -69.9312,
+      "notes": "Historic-capital base for the Zona Colonial, early Spanish Caribbean landmarks, major museums, the Malecón, and the smoothest overland connections in the country."
+    },
+    {
+      "name": "Punta Cana",
+      "lat": 18.5601,
+      "lng": -68.3725,
+      "notes": "Resort-heavy east-coast base for Bávaro and Macao beaches, Ojos Indígenas, Scape Park, catamaran trips, and the easiest no-fuss beach finish."
+    },
+    {
+      "name": "Samaná",
+      "lat": 19.2056,
+      "lng": -69.3369,
+      "notes": "Peninsula gateway for Los Haitises mangroves, seasonal humpback whale watching, Cayo Levantado, and lush day trips to El Limón and Playa Rincón."
+    },
+    {
+      "name": "Puerto Plata",
+      "lat": 19.7902,
+      "lng": -70.6871,
+      "notes": "North-coast city for the Teleférico, Fortaleza San Felipe, colorful centro histórico lanes, Playa Dorada, and Damajagua waterfall excursions."
+    },
+    {
+      "name": "Jarabacoa",
+      "lat": 19.1167,
+      "lng": -70.6359,
+      "notes": "Cooler mountain stop for river rafting, Salto de Jimenoa, pine-forest lodges, and a break from the resort coast in the Cordillera Central."
+    },
+    {
+      "name": "La Romana",
+      "lat": 18.4273,
+      "lng": -68.9728,
+      "notes": "South-east base for Altos de Chavón, Bayahibe day boats, Saona Island excursions, and easy access to caves and beaches beyond the big resorts."
+    }
+  ],
+  "itinerary": {
+    "sim": "Claro or Altice prepaid/eSIM plans usually cost about ₹700–₹1,400 for 7–15GB. Coverage is strongest in Santo Domingo and the resort corridors, but download offline maps before Los Haitises boat days and Jarabacoa mountain drives.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "Caribe Tours",
+      "Metro",
+      "Air Century",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency",
+      "Uber",
+      "inDrive"
+    ],
+    "cityOrder": [
+      "Santo Domingo",
+      "Jarabacoa",
+      "Puerto Plata",
+      "Samaná",
+      "Punta Cana",
+      "La Romana"
+    ],
+    "cities": {
+      "Santo Domingo": {
+        "name": "Santo Domingo",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay inside or near Zona Colonial if you want the easiest walking access to museums and evening dining, but use app taxis for Faro a Colón and outer-city stops.",
+        "days": [
+          {
+            "theme": "Zona Colonial Core & First Spanish-Caribbean Landmarks",
+            "activities": [
+              {
+                "name": "Alcázar de Colón admission",
+                "cost": "₹140 pp"
+              },
+              {
+                "name": "Museo de las Casas Reales admission",
+                "cost": "₹140 pp"
+              },
+              {
+                "name": "Catedral Primada de América, Parque Colón, and Calle Las Damas walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Fortaleza Ozama admission",
+                "cost": "₹140 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hodelpa Caribe Colonial",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Gran Hotel Europa Santo Domingo",
+                "budget": "₹6,000–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Adrian Tropical",
+              "Buche Perico",
+              "Pat'e Palo European Brasserie"
+            ]
+          },
+          {
+            "theme": "Faro a Colón, Parks & the Malecón",
+            "activities": [
+              {
+                "name": "Faro a Colón admission",
+                "cost": "₹140 pp"
+              },
+              {
+                "name": "Jardín Botánico Nacional entry",
+                "cost": "₹210 pp"
+              },
+              {
+                "name": "Parque Independencia and Calle El Conde stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Malecón sunset at Plaza Juan Barón",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Boutique Hotel Palacio",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Hodelpa Caribe Colonial",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Maraca",
+              "El Mesón de la Cava",
+              "Jalao"
+            ]
+          },
+          {
+            "theme": "Lakes, Caves & Local Museums",
+            "activities": [
+              {
+                "name": "Los Tres Ojos National Park entry",
+                "cost": "₹280 pp"
+              },
+              {
+                "name": "Museo del Hombre Dominicano admission",
+                "cost": "₹140 pp"
+              },
+              {
+                "name": "National Pantheon and Plaza de España revisit",
+                "cost": "Free"
+              },
+              {
+                "name": "Evening rum and music back in Zona Colonial",
+                "cost": "₹700–₹1,400 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Catalonia Santo Domingo",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Gran Hotel Europa Santo Domingo",
+                "budget": "₹6,000–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Mamey Librería Café",
+              "Ajualä",
+              "Pizzarelli Zona Colonial"
+            ]
+          }
+        ]
+      },
+      "Jarabacoa": {
+        "name": "Jarabacoa",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Jarabacoa works best as a one- or two-night weather break; pack light rain gear and closed shoes because waterfall trails stay slippery even in dry season.",
+        "days": [
+          {
+            "theme": "Salto de Jimenoa & Yaque del Norte Adventure",
+            "activities": [
+              {
+                "name": "Salto de Jimenoa waterfall entry",
+                "cost": "₹140 pp"
+              },
+              {
+                "name": "Yaque del Norte white-water rafting",
+                "cost": "₹8,400–₹12,600 pp"
+              },
+              {
+                "name": "La Confluencia river stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Helados Ivon town-center stop",
+                "cost": "₹140–₹280 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Gran Jimenoa",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Hotel Pinar Dorado",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Aroma de la Montaña",
+              "Jamaca de Dios Restaurant",
+              "Cafe Colao"
+            ]
+          },
+          {
+            "theme": "Waterfalls, Ranches & Mountain Views",
+            "activities": [
+              {
+                "name": "Salto Baiguate guided hike",
+                "cost": "₹700–₹1,400 pp"
+              },
+              {
+                "name": "Rancho Baiguate horseback ride or canyoning",
+                "cost": "₹2,800–₹5,600 pp"
+              },
+              {
+                "name": "Jarabacoa central park coffee break",
+                "cost": "₹280–₹560 pp"
+              },
+              {
+                "name": "Sunset lookout at Jamaca de Dios",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jarabacoa River Club",
+                "budget": "₹5,500–₹8,000/night"
+              },
+              {
+                "name": "Hotel Gran Jimenoa",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "La Tinaja",
+              "Jamaca de Dios Restaurant",
+              "Aroma de la Montaña"
+            ]
+          }
+        ]
+      },
+      "Puerto Plata": {
+        "name": "Puerto Plata",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Base in central Puerto Plata or Playa Dorada if you want easier Teleférico starts and less nightly traffic than all the way out in Sosúa or Cabarete.",
+        "days": [
+          {
+            "theme": "Teleférico, Fort & Historic Center",
+            "activities": [
+              {
+                "name": "Teleférico Puerto Plata round trip",
+                "cost": "₹840 pp"
+              },
+              {
+                "name": "Fortaleza San Felipe admission",
+                "cost": "₹140 pp"
+              },
+              {
+                "name": "Umbrella Street and Paseo de Doña Blanca walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Puerto Plata Malecón sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Blue JackTar",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Hotel Casa Valeria",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Le Papillon",
+              "Mares Restaurant & Lounge",
+              "Tam Tam Café"
+            ]
+          },
+          {
+            "theme": "Damajagua Waterfalls & Beach Afternoon",
+            "activities": [
+              {
+                "name": "27 Charcos de Damajagua guided circuit",
+                "cost": "₹1,800–₹3,400 pp"
+              },
+              {
+                "name": "Amber Museum Puerto Plata admission",
+                "cost": "₹140 pp"
+              },
+              {
+                "name": "Playa Dorada beach time",
+                "cost": "Free"
+              },
+              {
+                "name": "Brugal or Macorix rum tasting stop",
+                "cost": "₹560–₹1,120 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "BlueBay Villas Doradas",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Blue JackTar",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "La Carihuela",
+              "Green Jack Restaurant",
+              "Mares Restaurant & Lounge"
+            ]
+          }
+        ]
+      },
+      "Samaná": {
+        "name": "Samaná",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "January to March is peak whale-watching season; outside that window, keep Samaná for Los Haitises, El Limón, Cayo Levantado, and beach drives across the peninsula.",
+        "days": [
+          {
+            "theme": "Los Haitises Mangroves & Bay Views",
+            "activities": [
+              {
+                "name": "Los Haitises National Park boat tour from Samaná",
+                "cost": "₹6,700–₹7,200 pp"
+              },
+              {
+                "name": "Cayo Levantado boat shuttle and beach time",
+                "cost": "₹1,700–₹2,800 pp"
+              },
+              {
+                "name": "Malecón de Samaná and waterfront bridge walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Dinner with bay views in Santa Bárbara de Samaná",
+                "cost": "₹840–₹1,680 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hacienda Samana Bay Hotel",
+                "budget": "₹9,000–₹13,500/night"
+              },
+              {
+                "name": "Bahia Principe Grand Samana",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Cayena Restaurant",
+              "El Timón",
+              "La Mata Rosada"
+            ]
+          },
+          {
+            "theme": "Whales or El Limón Waterfall Day",
+            "activities": [
+              {
+                "name": "Humpback whale-watching boat (January–March)",
+                "cost": "₹4,700–₹8,400 pp",
+                "tip": "Swap for a longer Cayo Levantado or beach day outside whale season."
+              },
+              {
+                "name": "Salto El Limón hike or horseback excursion",
+                "cost": "₹2,500–₹4,200 pp"
+              },
+              {
+                "name": "Samaná town market and coconut-sweets stop",
+                "cost": "₹280–₹700 pp"
+              },
+              {
+                "name": "Sunset at the Whale Museum area waterfront",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hacienda Samana Bay Hotel",
+                "budget": "₹9,000–₹13,500/night"
+              },
+              {
+                "name": "Hotel Bannister by Mint",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Casa Azul Pizzeria",
+              "Cayena Restaurant",
+              "El Cabito"
+            ]
+          },
+          {
+            "theme": "Playa Rincón & Peninsula Road Trip",
+            "activities": [
+              {
+                "name": "Shared transfer or boat trip to Playa Rincón",
+                "cost": "₹2,100–₹4,200 pp"
+              },
+              {
+                "name": "Las Galeras village and beach stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Frontón or Madama boat add-on",
+                "cost": "₹2,800–₹5,600 pp"
+              },
+              {
+                "name": "Return seafood dinner in Samaná town",
+                "cost": "₹840–₹1,680 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bahia Principe Grand Samana",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Hotel Bannister by Mint",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "El Timón",
+              "La Mata Rosada",
+              "Cayena Restaurant"
+            ]
+          }
+        ]
+      },
+      "Punta Cana": {
+        "name": "Punta Cana",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay around Bávaro or El Cortecito for cheaper taxis, more independent dining, and easier access to Macao, Scape Park, and shared excursions than deep-resort compounds.",
+        "days": [
+          {
+            "theme": "Bávaro Beach & Ojos Indígenas",
+            "activities": [
+              {
+                "name": "Bávaro Beach swim and long beach walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Ojos Indígenas Ecological Reserve entry",
+                "cost": "₹4,200 pp"
+              },
+              {
+                "name": "Cap Cana Marina promenade",
+                "cost": "Free"
+              },
+              {
+                "name": "Juanillo or Macao Beach sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "whala!bávaro",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Karibo Punta Cana",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Noah Restaurant & Lounge",
+              "Jellyfish Restaurant",
+              "La Yola"
+            ]
+          },
+          {
+            "theme": "Scape Park, Hoyo Azul & East-Coast Nightlife",
+            "activities": [
+              {
+                "name": "Scape Park full-day pass including Hoyo Azul",
+                "cost": "₹10,900 pp"
+              },
+              {
+                "name": "BlueMall Punta Cana or local shopping stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Coco Bongo Punta Cana show",
+                "cost": "₹6,700–₹8,400 pp"
+              },
+              {
+                "name": "Evening seafood dinner in Bávaro",
+                "cost": "₹1,120–₹2,240 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "HM Bávaro Beach",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "whala!bávaro",
+                "budget": "₹7,000–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "La Palapa by Eden Roc",
+              "Noah Restaurant & Lounge",
+              "Jellyfish Restaurant"
+            ]
+          },
+          {
+            "theme": "Saona Excursion or Slow Beach Day",
+            "activities": [
+              {
+                "name": "Saona Island day trip from Punta Cana/Bayahibe",
+                "cost": "₹6,700–₹8,400 pp"
+              },
+              {
+                "name": "Macao Beach surf and food shacks",
+                "cost": "Free"
+              },
+              {
+                "name": "Indigenous craft shopping in El Cortecito",
+                "cost": "₹560–₹1,400 pp"
+              },
+              {
+                "name": "Sunset cocktails in Cap Cana",
+                "cost": "₹1,120–₹2,100 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Karibo Punta Cana",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "HM Bávaro Beach",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "La Yola",
+              "Noah Restaurant & Lounge",
+              "Playa Blanca Restaurant"
+            ]
+          }
+        ]
+      },
+      "La Romana": {
+        "name": "La Romana",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Use La Romana mainly for Altos de Chavón and Bayahibe boat access; if your focus is only Saona, sleeping closer to Bayahibe reduces early-morning transfer time.",
+        "days": [
+          {
+            "theme": "Altos de Chavón & Town Sights",
+            "activities": [
+              {
+                "name": "Altos de Chavón admission",
+                "cost": "₹2,100 pp"
+              },
+              {
+                "name": "Archaeological Museum at Altos de Chavón",
+                "cost": "Included"
+              },
+              {
+                "name": "Playa Caleta beach break",
+                "cost": "Free"
+              },
+              {
+                "name": "Santa Rosa church and downtown stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Silvestre",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Halibut Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Shish Kabab",
+              "Peperoni Marina",
+              "Captain Kidd"
+            ]
+          },
+          {
+            "theme": "Saona Island & Caves from Bayahibe",
+            "activities": [
+              {
+                "name": "Saona Island full-day boat trip from Bayahibe",
+                "cost": "₹6,700–₹7,200 pp"
+              },
+              {
+                "name": "Cueva de las Maravillas admission",
+                "cost": "₹420 pp"
+              },
+              {
+                "name": "Bayahibe public beach stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Marina Casa de Campo dinner area stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "whala!bayahibe",
+                "budget": "₹8,000–₹12,000/night"
+              },
+              {
+                "name": "Hotel Silvestre",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Peperoni Marina",
+              "Mare Nuestro",
+              "Shish Kabab"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Santo Domingo",
+        "to": "Jarabacoa",
+        "method": "Caribe Tours bus via La Vega, then short local transfer into Jarabacoa (about 2.5–3h total)",
+        "cost": "₹500 pp"
+      },
+      {
+        "from": "Jarabacoa",
+        "to": "Puerto Plata",
+        "method": "Caribe Tours or shared transfer via Santiago (about 4–5h depending on connections)",
+        "cost": "₹840–₹1,400 pp"
+      },
+      {
+        "from": "Puerto Plata",
+        "to": "Samaná",
+        "method": "Metro or Caribe Tours via Santiago/Santo Domingo, or private road transfer if you want to avoid a full bus day (about 5.5–7h)",
+        "cost": "₹1,700–₹3,500 pp"
+      },
+      {
+        "from": "Samaná",
+        "to": "Punta Cana",
+        "method": "Road transfer via Miches or Santo Domingo, with occasional domestic flights via Santo Domingo/La Isabela when schedules line up better than the road",
+        "cost": "₹2,500–₹3,900 pp by road / ₹9,200–₹16,800 pp by air"
+      },
+      {
+        "from": "Punta Cana",
+        "to": "La Romana",
+        "method": "APTPRA bus or private shuttle via Higüey and Bayahibe corridor (about 1.5–2h)",
+        "cost": "₹700–₹1,700 pp"
+      }
+    ],
+    "extras": [
+      "Carry small Dominican pesos for museum tickets, beach chairs, and intercity snacks because card acceptance drops outside big resorts and malls.",
+      "Caribe Tours and Metro are the most comfortable value bus operators, but holiday departures do fill up, so buy longer legs at least a day ahead.",
+      "Whale watching is genuinely seasonal in Samaná — aim for January to March, and do not overpay for it outside that window when the boats are not running.",
+      "For Los Haitises and Saona, check the exact pickup pier and weather the evening before because bay conditions can shift departure points.",
+      "Punta Cana and La Romana look close on the map, but resort pickup loops add time, so keep a buffer before flights or same-day island excursions."
+    ],
+    "cityImages": {
+      "Santo Domingo": [
+        "Zona Colonial Santo Domingo",
+        "Alcazar de Colon Santo Domingo",
+        "Faro a Colon"
+      ],
+      "Jarabacoa": [
+        "Salto de Jimenoa",
+        "Jarabacoa Dominican Republic",
+        "Yaque del Norte rafting"
+      ],
+      "Puerto Plata": [
+        "Teleferico Puerto Plata",
+        "Fortaleza San Felipe",
+        "Puerto Plata Umbrella Street"
+      ],
+      "Samaná": [
+        "Los Haitises National Park",
+        "Samana whale watching",
+        "Salto El Limon"
+      ],
+      "Punta Cana": [
+        "Bavaro Beach Punta Cana",
+        "Hoyo Azul Punta Cana",
+        "Ojos Indigenas ecological reserve"
+      ],
+      "La Romana": [
+        "Altos de Chavon",
+        "Saona Island Dominican Republic",
+        "Cueva de las Maravillas"
+      ]
+    }
+  }
+}

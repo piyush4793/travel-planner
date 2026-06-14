@@ -1,0 +1,569 @@
+{
+  "name": "Jamaica",
+  "seed": false,
+  "lat": 18.11,
+  "lng": -77.3,
+  "region": "Americas",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1.15L–₹1.9L",
+    "couple": "₹2.15L–₹3.3L",
+    "family4": "₹4.5L–₹6.4L"
+  },
+  "experiences": [
+    "Beaches",
+    "Waterfalls",
+    "Reggae Heritage",
+    "Jerk Food",
+    "Rafting",
+    "Nightlife"
+  ],
+  "avoid": [
+    "June–October is the wettest stretch and overlaps the Atlantic hurricane season, so north-coast boat trips and east-coast roads face the most disruption risk.",
+    "Christmas, New Year, and Easter weeks raise rates sharply in Negril, Ocho Rios, and Montego Bay and sell out Knutsford Express seats faster.",
+    "Reggae Sumfest week in July makes Montego Bay busier and pricier, especially around the Hip Strip and airport corridor."
+  ],
+  "combo": [
+    "Cuba",
+    "Mexico",
+    "Dominican Republic"
+  ],
+  "landmark": "Dunn's River Falls",
+  "travelStyle": [
+    "relaxed",
+    "immersive"
+  ],
+  "stopoverNote": "If you only have a week, keep Jamaica to Kingston plus one or two north/west coast bases and skip Port Antonio to avoid long cross-island transfer days.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Kingston",
+      "lat": 17.9712,
+      "lng": -76.7936,
+      "notes": "The capital is Jamaica's best base for reggae history, museums, New Kingston food spots, and day-one logistics before heading to the coast."
+    },
+    {
+      "name": "Port Antonio",
+      "lat": 18.1765,
+      "lng": -76.4509,
+      "notes": "Lush Portland parish base for Blue Lagoon, Frenchman's Cove, bamboo rafting, and a slower east-coast pace than the resort belt."
+    },
+    {
+      "name": "Ocho Rios",
+      "lat": 18.4079,
+      "lng": -77.1031,
+      "notes": "The classic north-coast stop for Dunn's River Falls, easy excursions, and compact town access to beaches, parks, and river activities."
+    },
+    {
+      "name": "Montego Bay",
+      "lat": 18.4762,
+      "lng": -77.8939,
+      "notes": "Best for a smoother arrival or departure via MBJ, beach time on the Hip Strip, jerk meals, and a few polished heritage sights."
+    },
+    {
+      "name": "Negril",
+      "lat": 18.2683,
+      "lng": -78.3482,
+      "notes": "Jamaica's easy beach finale for Seven Mile Beach days, cliff sunsets, relaxed dining, and simple short-hop transfers from Montego Bay."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel or Flow prepaid SIM/eSIM packs are the easiest pickup on arrival; budget roughly ₹1,500–₹2,500 for a short-stay data pack and download offline maps before east-coast drives.",
+    "apps": [
+      "Google Maps",
+      "Waze",
+      "WhatsApp",
+      "Knutsford Express",
+      "Airalo",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Kingston",
+      "Port Antonio",
+      "Ocho Rios",
+      "Montego Bay",
+      "Negril"
+    ],
+    "cities": {
+      "Kingston": {
+        "name": "Kingston",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Bob Marley, Devon House & New Kingston",
+            "activities": [
+              {
+                "name": "Bob Marley Museum guided tour",
+                "cost": "₹2,150 pp",
+                "tip": "Adult admission is about US$25 and tours run in timed guided batches, so morning slots are worth reserving ahead."
+              },
+              {
+                "name": "Devon House courtyard, shops and heritage stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Emancipation Park walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Hope Botanical Gardens late-afternoon stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Altamont Court Hotel",
+                "budget": "₹11,500–₹16,000/night"
+              },
+              {
+                "name": "R Hotel Kingston",
+                "budget": "₹15,000–₹21,000/night"
+              }
+            ],
+            "meals": [
+              "Gloria's Seafood City",
+              "Devon House Bakery",
+              "Broken Plate"
+            ]
+          },
+          {
+            "theme": "Downtown History, Art & Port Royal",
+            "activities": [
+              {
+                "name": "National Gallery of Jamaica",
+                "cost": "₹250 pp"
+              },
+              {
+                "name": "Trench Town Culture Yard Museum",
+                "cost": "₹540 pp"
+              },
+              {
+                "name": "Fort Charles, Port Royal",
+                "cost": "₹450 pp"
+              },
+              {
+                "name": "Kingston Waterfront and Kingston Creative mural walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Knutsford Court Hotel",
+                "budget": "₹12,500–₹17,500/night"
+              },
+              {
+                "name": "Altamont Court Hotel",
+                "budget": "₹11,500–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "South Avenue Grill",
+              "100 Hope Road",
+              "Gloria's Seafood City"
+            ]
+          }
+        ]
+      },
+      "Port Antonio": {
+        "name": "Port Antonio",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Blue Lagoon, Frenchman's Cove & Marina",
+            "activities": [
+              {
+                "name": "Blue Lagoon shoreline access or shared boat ride",
+                "cost": "Free shoreline access; about ₹2,200 pp for a shared boat ride",
+                "tip": "There is no fixed public-entry fee for the lagoon itself; most visitors pay local boatmen about US$20–25 for a lagoon circuit."
+              },
+              {
+                "name": "Frenchman's Cove beach time",
+                "cost": "₹1,300 pp"
+              },
+              {
+                "name": "Errol Flynn Marina and town waterfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "San San Beach photo stop",
+                "cost": "₹650 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Match Resort Hotel",
+                "budget": "₹9,500–₹13,500/night"
+              },
+              {
+                "name": "Great Huts",
+                "budget": "₹11,500–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "Boston Jerk Centre",
+              "Anna Bananas",
+              "Wilkes Cuisine Seafood Restaurant"
+            ]
+          },
+          {
+            "theme": "Reach Falls, Winnifred Beach & Rio Grande",
+            "activities": [
+              {
+                "name": "Reach Falls",
+                "cost": "₹1,300 pp"
+              },
+              {
+                "name": "Winnifred Beach",
+                "cost": "Free"
+              },
+              {
+                "name": "Rio Grande bamboo rafting",
+                "cost": "₹8,500 per raft"
+              },
+              {
+                "name": "Folly Point and Folly Ruins viewpoint",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Polish Princess Guest House",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Match Resort Hotel",
+                "budget": "₹9,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Belinda's Riverside Restaurant",
+              "Soldier Camp",
+              "Wilkes Cuisine Seafood Restaurant"
+            ]
+          }
+        ]
+      },
+      "Ocho Rios": {
+        "name": "Ocho Rios",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Dunn's River Falls & Town Highlights",
+            "activities": [
+              {
+                "name": "Dunn's River Falls and Park",
+                "cost": "₹2,150 pp",
+                "tip": "Standard nonresident adult admission is about US$25 and usually includes a licensed falls guide."
+              },
+              {
+                "name": "Turtle River Park",
+                "cost": "Free"
+              },
+              {
+                "name": "Ocho Rios Bay Beach",
+                "cost": "₹270 pp"
+              },
+              {
+                "name": "Island Village and craft-shopping stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pineapple Court Hotel",
+                "budget": "₹8,500–₹11,500/night"
+              },
+              {
+                "name": "Hibiscus Lodge Hotel",
+                "budget": "₹12,500–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Miss T's Kitchen",
+              "Evita's Italian Restaurant",
+              "Mongoose Jamaica Restaurant & Lounge"
+            ]
+          },
+          {
+            "theme": "Konoko Falls, Fern Gully & White River",
+            "activities": [
+              {
+                "name": "Konoko Falls and Park",
+                "cost": "₹1,700 pp"
+              },
+              {
+                "name": "White River tubing or river ride",
+                "cost": "₹3,000 pp"
+              },
+              {
+                "name": "Fern Gully scenic drive",
+                "cost": "Free"
+              },
+              {
+                "name": "Mahogany Beach or evening town stroll",
+                "cost": "₹540 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kaz Kreol Beach Lodge",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Hibiscus Lodge Hotel",
+                "budget": "₹12,500–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Oceans 11 Watering Hole",
+              "Miss T's Kitchen",
+              "Margaritaville Ocho Rios"
+            ]
+          }
+        ]
+      },
+      "Montego Bay": {
+        "name": "Montego Bay",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Doctor's Cave, Hip Strip & Sunset Harbour",
+            "activities": [
+              {
+                "name": "Doctor's Cave Beach Club",
+                "cost": "₹700 pp"
+              },
+              {
+                "name": "Sam Sharpe Square and Harbour Street walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Montego Bay Cultural Centre",
+                "cost": "₹320 pp"
+              },
+              {
+                "name": "Sunset stop at Pier 1 waterfront",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Toby's Resort",
+                "budget": "₹11,500–₹16,500/night"
+              },
+              {
+                "name": "Deja Resort",
+                "budget": "₹15,000–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Scotchies",
+              "The Pelican Grill",
+              "Pier 1"
+            ]
+          },
+          {
+            "theme": "Rose Hall, Dead End Beach & Jerk Night",
+            "activities": [
+              {
+                "name": "Rose Hall Great House day tour",
+                "cost": "₹2,600 pp"
+              },
+              {
+                "name": "Dead End Beach plane-spotting stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Closed Harbour Beach quick swim",
+                "cost": "₹430 pp"
+              },
+              {
+                "name": "Craft Market browsing on the Hip Strip",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Wexford Hotel",
+                "budget": "₹10,500–₹14,500/night"
+              },
+              {
+                "name": "Toby's Resort",
+                "budget": "₹11,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "The Pork Pit",
+              "Marguerite's Seafood by the Sea",
+              "Scotchies"
+            ]
+          }
+        ]
+      },
+      "Negril": {
+        "name": "Negril",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Negril works best as the final Jamaica base because it is simple to reach from Montego Bay and rewards slower beach-focused days.",
+        "days": [
+          {
+            "theme": "Seven Mile Beach & Cliff Sunset",
+            "activities": [
+              {
+                "name": "Seven Mile Beach",
+                "cost": "Free"
+              },
+              {
+                "name": "Times Square Craft Market",
+                "cost": "Free"
+              },
+              {
+                "name": "Rick's Cafe sunset and cliff-diving watch",
+                "cost": "Free"
+              },
+              {
+                "name": "West End cliff road photo stops",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Travellers Beach Resort",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "CocoLaPalm Seaside Resort",
+                "budget": "₹16,000–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Sweet Spice Restaurant",
+              "3 Dives Jerk Centre",
+              "Rick's Cafe"
+            ]
+          },
+          {
+            "theme": "Bloody Bay, Gardens & Easy Water Time",
+            "activities": [
+              {
+                "name": "Bloody Bay beach hop",
+                "cost": "Free"
+              },
+              {
+                "name": "Barney's Flower & Hummingbird Garden",
+                "cost": "₹850 pp"
+              },
+              {
+                "name": "Booby Cay boat and snorkel outing",
+                "cost": "₹1,700 pp"
+              },
+              {
+                "name": "Half Moon Beach afternoon",
+                "cost": "₹650 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Negril Tree House Resort",
+                "budget": "₹14,500–₹21,000/night"
+              },
+              {
+                "name": "Travellers Beach Resort",
+                "budget": "₹12,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Ivan's Bar & Restaurant",
+              "The Pushcart Restaurant & Rum Bar",
+              "Sweet Spice Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Kingston",
+        "to": "Port Antonio",
+        "method": "Knutsford Express coach or daytime route taxi via Annotto Bay (about 3–3.5h)",
+        "cost": "₹1,350 pp"
+      },
+      {
+        "from": "Port Antonio",
+        "to": "Ocho Rios",
+        "method": "Route taxi or minibus via Annotto Bay, or a prebooked transfer if carrying luggage (about 2.5–3h)",
+        "cost": "₹700 pp"
+      },
+      {
+        "from": "Ocho Rios",
+        "to": "Montego Bay",
+        "method": "Knutsford Express or route taxi along the north coast (about 2–2.5h)",
+        "cost": "₹920 pp"
+      },
+      {
+        "from": "Montego Bay",
+        "to": "Negril",
+        "method": "Knutsford Express, route taxi, or hotel shuttle along the west coast (about 1.5–2h)",
+        "cost": "₹1,000 pp"
+      }
+    ],
+    "extras": [
+      "Knutsford Express is the easiest long-distance option for most visitors, while route taxis with red plates are cheaper but tighter on baggage space and comfort.",
+      "Domestic flights inside Jamaica are mostly charter-based rather than frequent scheduled hops, so treat them as premium time-savers between Kingston and Montego Bay instead of a default plan.",
+      "Carry small Jamaican-dollar notes for beaches, route taxis, and small-entry sites even though many tourism businesses will quote or accept USD.",
+      "Blue Lagoon boat rides, Rio Grande rafting, and Bob Marley Museum slots are worth booking ahead in peak season because daily capacity is limited.",
+      "Road times can stretch after dark or in rain, especially on the Portland side, so keep east-coast transfer days light and avoid stacking major sightseeing after arrival."
+    ],
+    "cityImages": {
+      "Kingston": [
+        "Bob Marley Museum Kingston",
+        "Devon House Kingston",
+        "Port Royal Kingston Jamaica"
+      ],
+      "Port Antonio": [
+        "Blue Lagoon Jamaica",
+        "Frenchman's Cove Jamaica",
+        "Rio Grande rafting Jamaica"
+      ],
+      "Ocho Rios": [
+        "Dunn's River Falls Ocho Rios",
+        "Konoko Falls Jamaica",
+        "Ocho Rios Bay Beach"
+      ],
+      "Montego Bay": [
+        "Doctor's Cave Beach Montego Bay",
+        "Rose Hall Great House Jamaica",
+        "Sam Sharpe Square Montego Bay"
+      ],
+      "Negril": [
+        "Seven Mile Beach Negril",
+        "Rick's Cafe Negril",
+        "Bloody Bay Negril"
+      ]
+    }
+  }
+}
