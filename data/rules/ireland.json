@@ -1,0 +1,589 @@
+{
+  "name": "Ireland",
+  "seed": false,
+  "lat": 53.14,
+  "lng": -7.69,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹1.8L–₹3L",
+    "couple": "₹3L–₹5L",
+    "family4": "₹6L–₹9L"
+  },
+  "experiences": [
+    "Trinity College and Guinness in Dublin",
+    "Galway's Latin Quarter",
+    "Cliffs of Moher coastal views",
+    "Killarney National Park",
+    "Ring of Kerry scenic loop",
+    "Blarney Castle",
+    "Titanic Belfast"
+  ],
+  "avoid": [
+    "July-August weekends sell out fast in Galway, Killarney, and Doolin — book rooms early.",
+    "Atlantic wind and rain can disrupt west-coast day trips even in summer."
+  ],
+  "combo": [
+    "UK",
+    "Portugal"
+  ],
+  "landmark": "Cliffs of Moher",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Fly into Dublin for the easiest car-free route; Shannon is handy only if you want to start on the west coast.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Dublin",
+      "lat": 53.3498,
+      "lng": -6.2603,
+      "notes": "Trinity College, Guinness Storehouse, Georgian squares, pub culture and easy airport access"
+    },
+    {
+      "name": "Galway",
+      "lat": 53.2707,
+      "lng": -9.0568,
+      "notes": "Latin Quarter lanes, trad music pubs, Salthill promenade and west-coast base"
+    },
+    {
+      "name": "Cliffs of Moher",
+      "lat": 52.9715,
+      "lng": -9.4309,
+      "notes": "Iconic County Clare sea cliffs best paired with Doolin village and coastal walks"
+    },
+    {
+      "name": "Killarney",
+      "lat": 52.0599,
+      "lng": -9.5044,
+      "notes": "Killarney National Park, Muckross House, lakes and Ring of Kerry departures"
+    },
+    {
+      "name": "Cork",
+      "lat": 51.8985,
+      "lng": -8.4756,
+      "notes": "English Market food culture, compact centre and easy access to Blarney Castle"
+    },
+    {
+      "name": "Belfast",
+      "lat": 54.5973,
+      "lng": -5.9301,
+      "notes": "Titanic Quarter, Belfast City Hall and a straightforward rail day trip from Dublin"
+    }
+  ],
+  "itinerary": {
+    "sim": "Three Ireland or Vodafone prepay SIM from Dublin Airport or city shops costs about ₹1,800 for a 28-day data-heavy plan that is enough for maps, ticket apps, and hotspot backup.",
+    "apps": [
+      "Irish Rail",
+      "TFI Live",
+      "Dublin Bus",
+      "GoBus",
+      "Bus Éireann",
+      "Free Now",
+      "Google Maps",
+      "Booking.com",
+      "Met Éireann"
+    ],
+    "cityOrder": [
+      "Dublin",
+      "Galway",
+      "Cliffs of Moher",
+      "Killarney",
+      "Cork",
+      "Belfast"
+    ],
+    "cities": {
+      "Dublin": {
+        "name": "Dublin",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Use Dublin to settle in, cover the big-ticket sights, and keep one flexible day for neighborhoods, museums, or an early Belfast run.",
+        "days": [
+          {
+            "theme": "Trinity, Grafton Street & Georgian Core",
+            "activities": [
+              {
+                "name": "Book of Kells Experience and Old Library at Trinity College",
+                "cost": "₹1,935–₹2,340",
+                "tip": "Book a morning timed slot because the Long Room gets crowded by late morning."
+              },
+              {
+                "name": "Grafton Street buskers, Powerscourt Centre and St Stephen's Green walk",
+                "cost": "Free"
+              },
+              {
+                "name": "National Gallery of Ireland",
+                "cost": "Free"
+              },
+              {
+                "name": "Dublin Bus or Luas hops around the centre using a Leap card",
+                "cost": "₹180–₹270"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maldron Hotel Parnell Square",
+                "budget": "₹14,000–₹20,000/night"
+              },
+              {
+                "name": "Holiday Inn Express Dublin City Centre",
+                "budget": "₹15,000–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "The Woollen Mills",
+              "Queen of Tarts",
+              "The Winding Stair"
+            ]
+          },
+          {
+            "theme": "Guinness, Kilmainham & Historic Dublin",
+            "activities": [
+              {
+                "name": "Guinness Storehouse self-guided visit with Gravity Bar pint",
+                "cost": "₹1,980–₹2,700"
+              },
+              {
+                "name": "Kilmainham Gaol guided tour",
+                "cost": "₹720",
+                "tip": "Release-day tickets go fast, so reserve the exact date the moment sales open."
+              },
+              {
+                "name": "St Patrick's Cathedral",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "Temple Bar and Ha'penny Bridge evening walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maldron Hotel Parnell Square",
+                "budget": "₹14,000–₹20,000/night"
+              },
+              {
+                "name": "Holiday Inn Express Dublin City Centre",
+                "budget": "₹15,000–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "The Brazen Head",
+              "Brother Hubbard North",
+              "Gallagher's Boxty House"
+            ]
+          },
+          {
+            "theme": "Docklands, EPIC & Coastal Free Time",
+            "activities": [
+              {
+                "name": "EPIC The Irish Emigration Museum",
+                "cost": "₹1,935"
+              },
+              {
+                "name": "Jeanie Johnston tall ship tour",
+                "cost": "₹1,620"
+              },
+              {
+                "name": "DART or Dublin Bus outing to Howth for the harbour and cliff-side walk",
+                "cost": "₹360–₹720"
+              },
+              {
+                "name": "Merrion Square and Georgian doors photo walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maldron Hotel Parnell Square",
+                "budget": "₹14,000–₹20,000/night"
+              },
+              {
+                "name": "Holiday Inn Express Dublin City Centre",
+                "budget": "₹15,000–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "The Fumbally",
+              "Bunsen Wexford Street",
+              "Sole Seafood & Grill"
+            ]
+          }
+        ]
+      },
+      "Galway": {
+        "name": "Galway",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Galway is compact enough for a short stay but deserves two days if you want both city atmosphere and one worthwhile excursion.",
+        "days": [
+          {
+            "theme": "Latin Quarter, Salthill & Trad Music",
+            "activities": [
+              {
+                "name": "Latin Quarter, Quay Street and Spanish Arch wander",
+                "cost": "Free"
+              },
+              {
+                "name": "Galway City Museum",
+                "cost": "Free"
+              },
+              {
+                "name": "Salthill Promenade walk to the Blackrock diving tower",
+                "cost": "Free"
+              },
+              {
+                "name": "Evening trad session hopping around Tig Cóilí or The Crane Bar",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kinlay Hostel Galway",
+                "budget": "₹3,600–₹5,400/dorm; ₹10,800–₹14,400/private"
+              },
+              {
+                "name": "The Western Hotel",
+                "budget": "₹12,600–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Ard Bia at Nimmos",
+              "McDonagh's",
+              "Kai Restaurant"
+            ]
+          },
+          {
+            "theme": "Aran Islands Option or Slow Galway Day",
+            "activities": [
+              {
+                "name": "Aran Island Ferries return sailing to Inis Mór from Rossaveal",
+                "cost": "₹3,150",
+                "tip": "Go only with a good forecast because Atlantic swell can make crossings rough."
+              },
+              {
+                "name": "Bike or minibus around Inis Mór to Dún Aonghasa",
+                "cost": "₹1,350–₹2,250"
+              },
+              {
+                "name": "Alternative no-ferry day: Galway Cathedral, university quarter and weekend market browsing",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kinlay Hostel Galway",
+                "budget": "₹3,600–₹5,400/dorm; ₹10,800–₹14,400/private"
+              },
+              {
+                "name": "The Western Hotel",
+                "budget": "₹12,600–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Hooked",
+              "Dela Restaurant",
+              "The Quay Street Kitchen"
+            ]
+          }
+        ]
+      },
+      "Cliffs of Moher": {
+        "name": "Cliffs of Moher",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "A one-night stop in Doolin gives you a calmer Cliffs visit than a rushed day trip from Dublin and keeps you well placed for onward travel south.",
+        "days": [
+          {
+            "theme": "Doolin Base & Cliff Walk",
+            "activities": [
+              {
+                "name": "Bus Éireann Route 350 between Galway, Doolin and the cliffs",
+                "cost": "₹900–₹1,260"
+              },
+              {
+                "name": "Cliffs of Moher Experience visitor centre entry",
+                "cost": "₹1,080–₹1,260"
+              },
+              {
+                "name": "O'Brien's Tower and the marked cliff walk toward Doolin",
+                "cost": "Free"
+              },
+              {
+                "name": "Doolin village evening trad music session",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aille River Tourist Hostel & Camping Doolin",
+                "budget": "₹3,600–₹5,400/dorm; ₹10,800–₹13,500/private"
+              },
+              {
+                "name": "Hotel Doolin",
+                "budget": "₹16,200–₹22,500/night"
+              }
+            ],
+            "meals": [
+              "Gus O'Connor's Pub",
+              "The Ivy Cottage",
+              "Stone Wall Cafe & Pizzeria"
+            ]
+          }
+        ]
+      },
+      "Killarney": {
+        "name": "Killarney",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Killarney works best with two nights so you can split national-park sights from the full Ring of Kerry circuit.",
+        "days": [
+          {
+            "theme": "National Park, Lakes & Heritage Houses",
+            "activities": [
+              {
+                "name": "Muckross House and Gardens",
+                "cost": "₹855–₹1,080"
+              },
+              {
+                "name": "Muckross Abbey",
+                "cost": "Free"
+              },
+              {
+                "name": "Ross Castle guided visit",
+                "cost": "₹450"
+              },
+              {
+                "name": "Cycle or walk sections of Killarney National Park",
+                "cost": "₹900–₹1,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Killarney Court Hotel",
+                "budget": "₹11,700–₹16,200/night"
+              },
+              {
+                "name": "The Fairview Boutique Hotel",
+                "budget": "₹13,500–₹18,900/night"
+              }
+            ],
+            "meals": [
+              "The Laurels Pub & Restaurant",
+              "Bricín",
+              "Murphy Brownes"
+            ]
+          },
+          {
+            "theme": "Ring of Kerry Scenic Loop",
+            "activities": [
+              {
+                "name": "Coach-based Ring of Kerry day tour from Killarney",
+                "cost": "₹4,500–₹6,300",
+                "tip": "A guided coach avoids narrow-road stress and usually includes photo stops at Ladies View, Sneem and Waterville."
+              },
+              {
+                "name": "Torc Waterfall stop if self-driving or on selected tours",
+                "cost": "Free"
+              },
+              {
+                "name": "Evening lakefront stroll back in town",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Killarney Court Hotel",
+                "budget": "₹11,700–₹16,200/night"
+              },
+              {
+                "name": "The Fairview Boutique Hotel",
+                "budget": "₹13,500–₹18,900/night"
+              }
+            ],
+            "meals": [
+              "Cronins Restaurant",
+              "Hannigan's Bar & Restaurant",
+              "Treyvaud's"
+            ]
+          }
+        ]
+      },
+      "Cork": {
+        "name": "Cork",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day covers central Cork plus Blarney Castle; stay longer only if you want a separate Cobh or Kinsale outing.",
+        "days": [
+          {
+            "theme": "English Market & Blarney Castle",
+            "activities": [
+              {
+                "name": "English Market breakfast and produce walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Blarney Castle and Gardens entry",
+                "cost": "₹1,980"
+              },
+              {
+                "name": "Cork City Gaol",
+                "cost": "₹1,035"
+              },
+              {
+                "name": "Shandon Bells and St Anne's Church tower climb",
+                "cost": "₹720"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sheila's Hostel",
+                "budget": "₹3,150–₹4,500/dorm; ₹9,000–₹12,600/private"
+              },
+              {
+                "name": "Maldron Hotel South Mall Cork City",
+                "budget": "₹12,600–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Market Lane",
+              "Elbow Lane Brew and Smoke House",
+              "The Farmgate Cafe"
+            ]
+          }
+        ]
+      },
+      "Belfast": {
+        "name": "Belfast",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Treat Belfast as a long but manageable day trip from Dublin by Enterprise train, or stay one night if you want a slower Titanic Quarter morning.",
+        "days": [
+          {
+            "theme": "Titanic Quarter & City Centre",
+            "activities": [
+              {
+                "name": "Enterprise train day trip between Dublin Connolly and Belfast Lanyon Place",
+                "cost": "₹3,060–₹4,500"
+              },
+              {
+                "name": "Titanic Belfast self-guided experience",
+                "cost": "₹2,620"
+              },
+              {
+                "name": "Belfast City Hall exterior and Cathedral Quarter walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Black Taxi mural tour",
+                "cost": "₹1,890"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Holiday Inn Belfast City Centre",
+                "budget": "₹11,700–₹16,200/night"
+              },
+              {
+                "name": "Ramada by Wyndham Belfast City Centre",
+                "budget": "₹12,600–₹17,100/night"
+              }
+            ],
+            "meals": [
+              "Mourne Seafood Bar",
+              "Established Coffee",
+              "The Crown Liquor Saloon"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Dublin",
+        "to": "Galway",
+        "method": "Irish Rail direct from Dublin Heuston to Galway Ceannt or GoBus coach from the city/airport, about 2.5-3 hours",
+        "cost": "₹1,260–₹2,700"
+      },
+      {
+        "from": "Galway",
+        "to": "Cliffs of Moher",
+        "method": "Bus Éireann Route 350 via Lisdoonvarna and Doolin, about 2-2.5 hours",
+        "cost": "₹900–₹1,260"
+      },
+      {
+        "from": "Cliffs of Moher",
+        "to": "Killarney",
+        "method": "Bus Éireann to Ennis or Limerick, then onward rail or coach to Killarney, about 4.5-5.5 hours",
+        "cost": "₹2,250–₹3,150"
+      },
+      {
+        "from": "Killarney",
+        "to": "Cork",
+        "method": "Irish Rail direct to Cork Kent or Bus Éireann coach, about 1.5-2 hours",
+        "cost": "₹1,350–₹2,070"
+      },
+      {
+        "from": "Cork",
+        "to": "Belfast",
+        "method": "Irish Rail to Dublin, transfer across the city, then Enterprise train to Belfast, about 5.5-6.5 hours total",
+        "cost": "₹3,600–₹5,400"
+      }
+    ],
+    "extras": [
+      "A 72-hour Leap Visitor Card for Dublin Bus, Luas and DART is about ₹1,440 and is the easiest way to avoid paying single fares in central Dublin.",
+      "Belfast prices are locally charged in GBP, but the itinerary above converts them to INR for consistency.",
+      "If you do not want to change hotels for Belfast, keep your Dublin base and take the first Enterprise train out and an evening return.",
+      "Hotel Doolin, Galway, and Killarney often jump sharply on summer weekends and bank holidays, so lock those stays in first.",
+      "A car is useful for the southwest but not essential; this route is written to stay workable with Irish Rail, GoBus, Dublin Bus and Bus Éireann."
+    ],
+    "cityImages": {
+      "Dublin": [
+        "Trinity College Dublin Long Room Library",
+        "Guinness Storehouse Gravity Bar Dublin",
+        "Temple Bar Dublin evening street"
+      ],
+      "Galway": [
+        "Spanish Arch Galway",
+        "Galway Latin Quarter colorful pubs",
+        "Salthill Promenade Galway Bay"
+      ],
+      "Cliffs of Moher": [
+        "Cliffs of Moher O'Brien's Tower",
+        "Doolin Cliff Walk County Clare",
+        "Cliffs of Moher Atlantic sea stack"
+      ],
+      "Killarney": [
+        "Muckross House Killarney National Park",
+        "Ross Castle Lough Leane Killarney",
+        "Ladies View Ring of Kerry"
+      ],
+      "Cork": [
+        "English Market Cork interior",
+        "Blarney Castle battlements",
+        "Shandon Bells Cork red sandstone"
+      ],
+      "Belfast": [
+        "Titanic Belfast museum exterior",
+        "Belfast City Hall Donegall Square",
+        "Peace Wall Belfast murals"
+      ]
+    }
+  }
+}

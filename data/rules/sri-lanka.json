@@ -1,0 +1,754 @@
+{
+  "name": "Sri Lanka",
+  "seed": false,
+  "lat": 7.87,
+  "lng": 80.77,
+  "region": "Asia",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹45K–₹70K",
+    "couple": "₹75K–₹1.2L",
+    "family4": "₹1.7L–₹2.6L"
+  },
+  "experiences": [
+    "Kandy–Ella Scenic Train",
+    "Sigiriya Rock Fortress",
+    "Galle Fort",
+    "Pigeon Island Snorkeling",
+    "Temple of the Tooth"
+  ],
+  "avoid": [
+    "October–November inter-monsoon brings island-wide showers; west/south coast is wetter from May–September and east coast is roughest from October–January"
+  ],
+  "combo": [
+    "India",
+    "Maldives"
+  ],
+  "landmark": "Sigiriya Rock Fortress",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Colombo",
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Colonial fort district, temples, museums and sunset snacks at Galle Face Green"
+    },
+    {
+      "name": "Kandy",
+      "lat": 7.2906,
+      "lng": 80.6337,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Temple of the Tooth, lakefront walks and hill-country gateway for the classic train south"
+    },
+    {
+      "name": "Ella",
+      "lat": 6.8667,
+      "lng": 81.0466,
+      "bestMonths": [
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Nine Arches Bridge, Little Adam's Peak hikes and tea-country viewpoints"
+    },
+    {
+      "name": "Galle",
+      "lat": 6.0329,
+      "lng": 80.2168,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Walkable Dutch fort, cafés, ramparts and easy side trips to Unawatuna beaches"
+    },
+    {
+      "name": "Sigiriya",
+      "lat": 7.957,
+      "lng": 80.7603,
+      "bestMonths": [
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Lion Rock sunrise climbs, Pidurangala panoramas and Cultural Triangle heritage stops"
+    },
+    {
+      "name": "Trincomalee",
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "East-coast beaches, Koneswaram Temple and Pigeon Island coral snorkeling"
+    }
+  ],
+  "itinerary": {
+    "sim": "Dialog tourist SIM is the easiest airport pickup at Bandaranaike; expect about ₹260–₹390 for the SIM and roughly ₹650–₹1,040 for a 30GB tourist pack. Mobitel is the usual backup if you continue to the east coast.",
+    "apps": [
+      "PickMe",
+      "Uber",
+      "Google Maps offline",
+      "Sri Lanka Railways seat reservation",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Colombo",
+      "Kandy",
+      "Ella",
+      "Galle",
+      "Sigiriya",
+      "Trincomalee"
+    ],
+    "cities": {
+      "Colombo": {
+        "name": "Colombo",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days cover the key temples, museum circuit and a sunset food crawl without rushing your first or last night in Sri Lanka.",
+        "days": [
+          {
+            "theme": "Arrival, Fort District & Temple Circuit",
+            "activities": [
+              {
+                "name": "Bandaranaike Airport to Colombo Fort by PickMe or prepaid taxi",
+                "cost": "₹1,950–₹2,860 per cab",
+                "tip": "The airport counters quote in LKR; PickMe usually undercuts hotel-arranged cars if your roaming works."
+              },
+              {
+                "name": "Gangaramaya Temple",
+                "cost": "₹130 pp"
+              },
+              {
+                "name": "Seema Malaka on Beira Lake",
+                "cost": "₹130 pp"
+              },
+              {
+                "name": "Old Dutch Hospital precinct and Colombo Fort walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Galle Face Green street-food sunset",
+                "cost": "₹260–₹650 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "C1 Colombo Fort",
+                "budget": "₹2,200–₹3,800/night"
+              },
+              {
+                "name": "Cinnamon Red Colombo",
+                "budget": "₹6,500–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Upali's by Nawaloka",
+              "Barefoot Garden Café",
+              "Ministry of Crab"
+            ]
+          },
+          {
+            "theme": "Museums, Markets & Skyline Views",
+            "activities": [
+              {
+                "name": "Colombo National Museum",
+                "cost": "₹390 pp"
+              },
+              {
+                "name": "Pettah Market and Jami Ul-Alfar Mosque exterior stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Independence Square walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Lotus Tower observation deck",
+                "cost": "₹1,650 pp"
+              },
+              {
+                "name": "Marine Drive tuk-tuk ride for sunset cafés",
+                "cost": "₹260–₹520 per tuk-tuk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "C1 Colombo Fort",
+                "budget": "₹2,200–₹3,800/night"
+              },
+              {
+                "name": "Cinnamon Red Colombo",
+                "budget": "₹6,500–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Barefoot Garden Café",
+              "Upali's by Nawaloka",
+              "Ministry of Crab"
+            ]
+          }
+        ]
+      },
+      "Kandy": {
+        "name": "Kandy",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days let you do the sacred core plus one relaxed hill-country day before the scenic rail journey onward.",
+        "days": [
+          {
+            "theme": "Colombo Transfer, Temple of the Tooth & Lake Walk",
+            "activities": [
+              {
+                "name": "Intercity train from Colombo Fort to Kandy",
+                "cost": "₹260–₹1,040 pp",
+                "tip": "Reserve first or second class in advance if you want open windows and fixed seats."
+              },
+              {
+                "name": "Temple of the Sacred Tooth Relic",
+                "cost": "₹390 pp for SAARC / ₹520 pp standard foreigner"
+              },
+              {
+                "name": "Kandy Lake promenade",
+                "cost": "Free"
+              },
+              {
+                "name": "Kandy View Point",
+                "cost": "Free"
+              },
+              {
+                "name": "Kandyan Cultural Centre evening dance show",
+                "cost": "₹520 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sevana City Hotel",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "Hotel Thilanka",
+                "budget": "₹6,000–₹8,800/night"
+              }
+            ],
+            "meals": [
+              "Balaji Dosai",
+              "Café Secret Alley",
+              "Slightly Chilled Lounge Bar"
+            ]
+          },
+          {
+            "theme": "Botanical Gardens & Hill-Country Slow Day",
+            "activities": [
+              {
+                "name": "Royal Botanic Gardens, Peradeniya",
+                "cost": "₹780 pp"
+              },
+              {
+                "name": "Bahirawakanda Vihara Buddha statue",
+                "cost": "₹130 pp"
+              },
+              {
+                "name": "Kandy National Museum",
+                "cost": "₹160 pp"
+              },
+              {
+                "name": "Tea and spice shopping around the central market",
+                "cost": "Free"
+              },
+              {
+                "name": "Reserved train ticket pickup for the next day's Kandy–Ella ride",
+                "cost": "₹390–₹1,560 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sevana City Hotel",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "Hotel Thilanka",
+                "budget": "₹6,000–₹8,800/night"
+              }
+            ],
+            "meals": [
+              "Balaji Dosai",
+              "Café Secret Alley",
+              "Slightly Chilled Lounge Bar"
+            ]
+          }
+        ]
+      },
+      "Ella": {
+        "name": "Ella",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days are ideal for the train arrival, the bridge photo stop and one full hiking day around Ella Gap.",
+        "days": [
+          {
+            "theme": "Scenic Rail Arrival & Nine Arches Bridge",
+            "activities": [
+              {
+                "name": "Sri Lanka Railways scenic train from Kandy to Ella",
+                "cost": "₹390–₹1,560 pp",
+                "tip": "Second class reserved is the sweet spot; board early on the platform for window seats."
+              },
+              {
+                "name": "Nine Arches Bridge walk and train photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Ella town café crawl",
+                "cost": "₹260–₹650 pp"
+              },
+              {
+                "name": "Mini Adams Peak viewpoint sunset tuk-tuk",
+                "cost": "₹260–₹390 per tuk-tuk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hangover Hostels Ella",
+                "budget": "₹1,500–₹2,600/night"
+              },
+              {
+                "name": "Morning Dew Hotel",
+                "budget": "₹5,800–₹8,200/night"
+              }
+            ],
+            "meals": [
+              "Café Chill",
+              "Matey Hut",
+              "Ceylon Tea Factory Restaurant"
+            ]
+          },
+          {
+            "theme": "Little Adam's Peak, Tea Country & Ravana Falls",
+            "activities": [
+              {
+                "name": "Little Adam's Peak hike",
+                "cost": "Free"
+              },
+              {
+                "name": "Halpewatte Tea Factory tour",
+                "cost": "₹520–₹780 pp"
+              },
+              {
+                "name": "Ravana Falls roadside stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Flying Ravana Mega Zipline",
+                "cost": "₹3,100–₹3,900 pp"
+              },
+              {
+                "name": "Evening live-music dinner in Ella town",
+                "cost": "₹390–₹910 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hangover Hostels Ella",
+                "budget": "₹1,500–₹2,600/night"
+              },
+              {
+                "name": "Morning Dew Hotel",
+                "budget": "₹5,800–₹8,200/night"
+              }
+            ],
+            "meals": [
+              "Matey Hut",
+              "Café Chill",
+              "Ceylon Tea Factory Restaurant"
+            ]
+          }
+        ]
+      },
+      "Galle": {
+        "name": "Galle",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days give you the fort proper plus one beach-and-café day at the calmer south-coast pace.",
+        "days": [
+          {
+            "theme": "Ella Transfer & Galle Fort Ramparts",
+            "activities": [
+              {
+                "name": "Bus or taxi from Ella to Galle via Wellawaya/Matara",
+                "cost": "₹260–₹4,800"
+              },
+              {
+                "name": "Galle Fort ramparts, lighthouse and bastions",
+                "cost": "Free"
+              },
+              {
+                "name": "Galle Maritime Museum",
+                "cost": "₹145 pp"
+              },
+              {
+                "name": "Pedlar Street boutique and café loop",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset on Flag Rock Bastion",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Secret Garden Galle Fort",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Yara Galle Fort",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Poonie's Kitchen",
+              "Pedlar's Inn Café",
+              "A Minute by Tuk Tuk"
+            ]
+          },
+          {
+            "theme": "Museums, Unawatuna Side Trip & Easy Fort Evenings",
+            "activities": [
+              {
+                "name": "Galle National Museum",
+                "cost": "₹145 pp"
+              },
+              {
+                "name": "Tuk-tuk to Unawatuna Beach or Jungle Beach",
+                "cost": "₹260–₹520 per tuk-tuk"
+              },
+              {
+                "name": "Japanese Peace Pagoda",
+                "cost": "Free"
+              },
+              {
+                "name": "Dutch Reformed Church exterior and history walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Fort rooftop sundowners",
+                "cost": "₹390–₹1,040 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Secret Garden Galle Fort",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Yara Galle Fort",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "A Minute by Tuk Tuk",
+              "Poonie's Kitchen",
+              "Pedlar's Inn Café"
+            ]
+          }
+        ]
+      },
+      "Sigiriya": {
+        "name": "Sigiriya",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days work best for the sunrise or sunset climbs, a cultural site ticket and one village-style countryside excursion.",
+        "days": [
+          {
+            "theme": "Long Transfer & Pidurangala Sunset",
+            "activities": [
+              {
+                "name": "Private car or train-plus-bus transfer from Galle to Sigiriya",
+                "cost": "₹780–₹9,500",
+                "tip": "A private car saves almost a full day compared with changing via Colombo and Dambulla."
+              },
+              {
+                "name": "Pidurangala Rock climb",
+                "cost": "₹260 pp"
+              },
+              {
+                "name": "Village road bicycle or tuk-tuk loop",
+                "cost": "₹260–₹780"
+              },
+              {
+                "name": "Sigiriya tank sunset viewpoint",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Nature Park Villa",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "Hotel Sigiriya",
+                "budget": "₹7,000–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Rithu Restaurant",
+              "Ahinsa Restaurant",
+              "Wijesiri Family Restaurant"
+            ]
+          },
+          {
+            "theme": "Sigiriya Rock Fortress & Cultural Triangle Highlights",
+            "activities": [
+              {
+                "name": "Sigiriya Rock Fortress",
+                "cost": "₹1,650 pp for SAARC / ₹2,900 pp standard foreigner"
+              },
+              {
+                "name": "Sigiriya Museum",
+                "cost": "Included with Sigiriya Rock ticket"
+              },
+              {
+                "name": "Dambulla Cave Temple",
+                "cost": "₹780 pp"
+              },
+              {
+                "name": "Hiriwadunna village safari with catamaran and lunch",
+                "cost": "₹1,950–₹2,860 pp"
+              },
+              {
+                "name": "Ayurvedic massage back in Sigiriya village",
+                "cost": "₹1,300–₹2,600 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Nature Park Villa",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "Hotel Sigiriya",
+                "budget": "₹7,000–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Rithu Restaurant",
+              "Wijesiri Family Restaurant",
+              "Ahinsa Restaurant"
+            ]
+          }
+        ]
+      },
+      "Trincomalee": {
+        "name": "Trincomalee",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two nights are enough for one temple-and-beach day plus one full snorkelling day if you hit the east coast in season.",
+        "days": [
+          {
+            "theme": "Sigiriya Transfer, Koneswaram & Nilaveli Coast",
+            "activities": [
+              {
+                "name": "Bus or taxi from Sigiriya to Trincomalee",
+                "cost": "₹130–₹3,900"
+              },
+              {
+                "name": "Koneswaram Temple",
+                "cost": "Free"
+              },
+              {
+                "name": "Fort Frederick deer-and-cliff walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Marble Beach or Nilaveli Beach evening",
+                "cost": "Free"
+              },
+              {
+                "name": "Tuk-tuk between Trinco town and Nilaveli",
+                "cost": "₹390–₹780 per tuk-tuk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "JKAB Beach Resort",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Trinco Blu by Cinnamon",
+                "budget": "₹7,500–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "NINA Restaurant",
+              "Café on the 18th",
+              "Gaga Restaurant"
+            ]
+          },
+          {
+            "theme": "Pigeon Island Snorkeling & East-Coast Beach Day",
+            "activities": [
+              {
+                "name": "Pigeon Island National Park entry",
+                "cost": "₹1,250–₹1,650 pp for SAARC / about ₹2,900 pp standard foreigner"
+              },
+              {
+                "name": "Boat transfer and snorkel kit from Nilaveli",
+                "cost": "₹1,300–₹2,600 pp"
+              },
+              {
+                "name": "Guided snorkelling upgrade",
+                "cost": "₹260–₹520 pp"
+              },
+              {
+                "name": "Nilaveli Beach free swim time",
+                "cost": "Free"
+              },
+              {
+                "name": "Seafood dinner back in town",
+                "cost": "₹520–₹1,300 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "JKAB Beach Resort",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Trinco Blu by Cinnamon",
+                "budget": "₹7,500–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "NINA Restaurant",
+              "Gaga Restaurant",
+              "Café on the 18th"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Colombo",
+        "to": "Kandy",
+        "method": "Intercity train from Colombo Fort (2.5–3.5 hr), AC bus, or private cab via the A1 highway",
+        "cost": "₹260–₹7,800"
+      },
+      {
+        "from": "Kandy",
+        "to": "Ella",
+        "method": "Sri Lanka Railways scenic train (6.5–7.5 hr) or road transfer through Nuwara Eliya/Bandarawela",
+        "cost": "₹390–₹4,800"
+      },
+      {
+        "from": "Ella",
+        "to": "Galle",
+        "method": "Bus via Wellawaya and Matara, or private taxi direct to the south coast",
+        "cost": "₹260–₹4,800"
+      },
+      {
+        "from": "Galle",
+        "to": "Sigiriya",
+        "method": "Private taxi (5.5–6.5 hr) or train/bus via Colombo and Dambulla",
+        "cost": "₹780–₹9,500"
+      },
+      {
+        "from": "Sigiriya",
+        "to": "Trincomalee",
+        "method": "Local bus via Habarana/Kanthale or direct taxi to Nilaveli/Trinco",
+        "cost": "₹130–₹3,900"
+      },
+      {
+        "from": "Trincomalee",
+        "to": "Colombo",
+        "method": "Day train or express bus back to Colombo, or private car for a quicker airport transfer",
+        "cost": "₹390–₹8,500"
+      }
+    ],
+    "extras": [
+      "Indian passport holders still need a Sri Lanka ETA before arrival; apply online and keep the approval PDF handy because some hotel desks ask for it at check-in.",
+      "Show your passport at Sigiriya, Temple of the Tooth and wildlife counters to ask for SAARC pricing; discounts are meaningful and not always volunteered.",
+      "Carry LKR cash for cultural-site tickets, buses and tuk-tuks outside Colombo because card machines are patchy in Ella, Sigiriya and Trincomalee.",
+      "Book the Kandy–Ella train as early as possible in high season; reserved second class usually sells out first because it balances opening windows with seat certainty.",
+      "If your trip is strictly December–March, prioritize Colombo, Kandy, Ella and Galle first; Trincomalee is best added when the east coast turns calm from April to September."
+    ],
+    "cityImages": {
+      "Colombo": [
+        "Colombo Galle Face Green sunset Sri Lanka",
+        "Gangaramaya Temple Colombo Beira Lake",
+        "Colombo Lotus Tower skyline"
+      ],
+      "Kandy": [
+        "Temple of the Tooth Kandy lake",
+        "Kandy Royal Botanic Gardens Peradeniya",
+        "Kandyan cultural dance performance Sri Lanka"
+      ],
+      "Ella": [
+        "Nine Arches Bridge Ella Sri Lanka",
+        "Little Adams Peak Ella Gap viewpoint",
+        "Sri Lanka blue train Kandy to Ella"
+      ],
+      "Galle": [
+        "Galle Fort lighthouse ramparts Sri Lanka",
+        "Pedlar Street Galle Fort cafes",
+        "Unawatuna beach near Galle Sri Lanka"
+      ],
+      "Sigiriya": [
+        "Sigiriya Rock Fortress aerial view",
+        "Pidurangala Rock Sigiriya sunrise",
+        "Dambulla Cave Temple Sri Lanka"
+      ],
+      "Trincomalee": [
+        "Koneswaram Temple Trincomalee cliff",
+        "Pigeon Island National Park snorkeling Sri Lanka",
+        "Nilaveli Beach Trincomalee Sri Lanka"
+      ]
+    }
+  }
+}

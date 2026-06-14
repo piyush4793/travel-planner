@@ -1,0 +1,639 @@
+{
+  "name": "Morocco",
+  "seed": false,
+  "lat": 31.79,
+  "lng": -7.09,
+  "region": "Africa",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹90K–₹1.4L",
+    "couple": "₹1.6L–₹2.6L",
+    "family4": "₹3L–₹5L"
+  },
+  "experiences": [
+    "Medinas",
+    "Sahara",
+    "Riads",
+    "Souks",
+    "Atlantic Coast",
+    "Architecture"
+  ],
+  "avoid": [
+    "July-August heat is brutal in Marrakech and Merzouga",
+    "Unofficial guides around medinas and tanneries can be pushy",
+    "Long intercity bus days are common once you leave the train network"
+  ],
+  "combo": [
+    "Spain",
+    "Portugal"
+  ],
+  "landmark": "Hassan II Mosque",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Casablanca (CMN) is Royal Air Maroc's main hub and the easiest entry point from India; open-jaw flights into Casablanca and out of Fes or Tangier save backtracking if fares line up.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Casablanca",
+      "lat": 33.5731,
+      "lng": -7.5898,
+      "notes": "Hassan II Mosque, Art Deco boulevards, Habous quarter bakeries and Atlantic corniche evenings"
+    },
+    {
+      "name": "Marrakech",
+      "lat": 31.6295,
+      "lng": -7.9811,
+      "notes": "Bahia Palace, Majorelle Garden, Jemaa el-Fnaa and atmospheric riad stays inside the medina"
+    },
+    {
+      "name": "Essaouira",
+      "lat": 31.5085,
+      "lng": -9.7595,
+      "notes": "Windy Atlantic ramparts, blue boats in the fishing port and a compact UNESCO-listed medina"
+    },
+    {
+      "name": "Merzouga",
+      "lat": 31.0994,
+      "lng": -4.0126,
+      "notes": "Erg Chebbi dunes, camel treks, desert camps and Gnawa music in nearby Khamlia"
+    },
+    {
+      "name": "Fes",
+      "lat": 34.0181,
+      "lng": -5.0078,
+      "notes": "Bou Inania, ancient tanneries, labyrinthine souks and the deepest old medina in Morocco"
+    },
+    {
+      "name": "Chefchaouen",
+      "lat": 35.1688,
+      "lng": -5.2636,
+      "notes": "Blue-washed lanes, Kasbah gardens, Ras El Maa springs and sunset from the Spanish Mosque"
+    }
+  ],
+  "itinerary": {
+    "sim": "Maroc Telecom, Orange Maroc, and Inwi airport SIMs usually land around ₹850–₹1,700 for roughly 10–20GB; if you want to land connected, an Airalo Morocco eSIM is the easiest backup.",
+    "apps": [
+      "ONCF Voyages",
+      "CTM",
+      "Supratours",
+      "inDrive",
+      "Google Maps",
+      "MAPS.ME",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Casablanca",
+      "Marrakech",
+      "Essaouira",
+      "Merzouga",
+      "Fes",
+      "Chefchaouen"
+    ],
+    "cities": {
+      "Casablanca": {
+        "name": "Casablanca",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Atlantic Arrival, Art Deco Core & Morocco's Grand Mosque",
+            "activities": [
+              {
+                "name": "Hassan II Mosque guided tour",
+                "cost": "₹1,190"
+              },
+              {
+                "name": "Habous Quarter and olive market stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Abderrahman Slaoui Foundation Museum",
+                "cost": "₹255"
+              },
+              {
+                "name": "Museum of Moroccan Judaism",
+                "cost": "₹425"
+              },
+              {
+                "name": "La Corniche Ain Diab sunset walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Central",
+                "budget": "₹2,800–₹4,200/night"
+              },
+              {
+                "name": "Ibis Casablanca City Center",
+                "budget": "₹5,500–₹7,500/night"
+              },
+              {
+                "name": "ONOMO Hotel Casablanca City Center",
+                "budget": "₹7,500–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "La Sqala",
+              "Rick's Café",
+              "Pâtisserie Bennis Habous"
+            ]
+          }
+        ]
+      },
+      "Marrakech": {
+        "name": "Marrakech",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Palaces, Tombs & First Night in Jemaa el-Fnaa",
+            "activities": [
+              {
+                "name": "Bahia Palace",
+                "cost": "₹850"
+              },
+              {
+                "name": "Saadian Tombs",
+                "cost": "₹595"
+              },
+              {
+                "name": "El Badi Palace",
+                "cost": "₹850"
+              },
+              {
+                "name": "Koutoubia Mosque gardens",
+                "cost": "₹0"
+              },
+              {
+                "name": "Jemaa el-Fnaa evening food square",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Riad Les Trois Palmiers El Bacha",
+                "budget": "₹4,800–₹6,800/night"
+              },
+              {
+                "name": "Riad Dar Attajmil",
+                "budget": "₹6,000–₹8,500/night"
+              },
+              {
+                "name": "Riad BE Marrakech",
+                "budget": "₹8,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Nomad",
+              "Le Jardin",
+              "Café des Épices"
+            ]
+          },
+          {
+            "theme": "Majorelle Blue, Museums & Medersa Details",
+            "activities": [
+              {
+                "name": "Jardin Majorelle + Berber Museum",
+                "cost": "₹1,445"
+              },
+              {
+                "name": "Yves Saint Laurent Museum Marrakech",
+                "cost": "₹1,190"
+              },
+              {
+                "name": "Ben Youssef Madrasa",
+                "cost": "₹425"
+              },
+              {
+                "name": "Le Jardin Secret",
+                "cost": "₹850"
+              },
+              {
+                "name": "Rahba Kedima spice square wander",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Riad Les Trois Palmiers El Bacha",
+                "budget": "₹4,800–₹6,800/night"
+              },
+              {
+                "name": "Riad Dar Attajmil",
+                "budget": "₹6,000–₹8,500/night"
+              },
+              {
+                "name": "Riad BE Marrakech",
+                "budget": "₹8,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Café Clock Marrakech",
+              "Terrasse des Épices",
+              "Dar Cherifa"
+            ]
+          },
+          {
+            "theme": "Slow Medina Morning, Photography & Hammam Reset",
+            "activities": [
+              {
+                "name": "Maison de la Photographie",
+                "cost": "₹510"
+              },
+              {
+                "name": "Musée de Marrakech",
+                "cost": "₹850"
+              },
+              {
+                "name": "Menara Gardens",
+                "cost": "₹0"
+              },
+              {
+                "name": "Les Bains de Marrakech hammam",
+                "cost": "₹2,800–₹4,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Riad Les Trois Palmiers El Bacha",
+                "budget": "₹4,800–₹6,800/night"
+              },
+              {
+                "name": "Riad Dar Attajmil",
+                "budget": "₹6,000–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Amal Women's Training Center",
+              "Naranj Marrakech",
+              "Chez Lamine Hadj Mustapha"
+            ]
+          }
+        ]
+      },
+      "Essaouira": {
+        "name": "Essaouira",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Ramparts, Fishing Port & Windy Atlantic Medina",
+            "activities": [
+              {
+                "name": "Sqala du Port",
+                "cost": "₹510"
+              },
+              {
+                "name": "Sidi Mohammed Ben Abdallah Museum",
+                "cost": "₹255"
+              },
+              {
+                "name": "Essaouira fishing port and blue boats",
+                "cost": "₹0"
+              },
+              {
+                "name": "Medina ramparts and Skala de la Ville walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Essaouira beach sunset",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Atlantic Hostel",
+                "budget": "₹1,500–₹2,500/night"
+              },
+              {
+                "name": "Riad Dar El Paco",
+                "budget": "₹3,800–₹5,500/night"
+              },
+              {
+                "name": "Riad Lyon-Mogador",
+                "budget": "₹4,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Fish Corner",
+              "Triskala Café",
+              "La Table by Madada"
+            ]
+          }
+        ]
+      },
+      "Merzouga": {
+        "name": "Merzouga",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Erg Chebbi Dunes, Camel Trail & Campfire Night",
+            "activities": [
+              {
+                "name": "Erg Chebbi sunset camel trek",
+                "cost": "₹1,700–₹2,550"
+              },
+              {
+                "name": "Overnight standard desert camp",
+                "cost": "₹3,400–₹5,100"
+              },
+              {
+                "name": "Sandboarding on camp dunes",
+                "cost": "₹0–₹425"
+              },
+              {
+                "name": "Khamlia Gnawa music stop donation",
+                "cost": "₹170–₹425"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge Les Roches",
+                "budget": "₹2,500–₹4,000/night"
+              },
+              {
+                "name": "Kasbah Mohayut",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Riad Madu",
+                "budget": "₹7,500–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Cafe Fatima",
+              "Kasbah Mohayut Restaurant",
+              "Auberge Les Roches Restaurant"
+            ]
+          },
+          {
+            "theme": "Desert Circuit, Nomad Stops & Quiet Sahara Dawn",
+            "activities": [
+              {
+                "name": "4x4 Erg Chebbi circuit tour",
+                "cost": "₹4,250–₹5,950"
+              },
+              {
+                "name": "Dayet Srij seasonal salt lake",
+                "cost": "₹0"
+              },
+              {
+                "name": "Nomad family tea stop",
+                "cost": "₹170–₹340"
+              },
+              {
+                "name": "Sunrise dune climb on foot",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kasbah Mohayut",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Riad Madu",
+                "budget": "₹7,500–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Cafe Fatima",
+              "Riad Madu Restaurant",
+              "Kasbah Mohayut Restaurant"
+            ]
+          }
+        ]
+      },
+      "Fes": {
+        "name": "Fes",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Madrasas, Tanneries & Medina Craft Routes",
+            "activities": [
+              {
+                "name": "Medersa Bou Inania",
+                "cost": "₹170"
+              },
+              {
+                "name": "Al-Attarine Madrasa",
+                "cost": "₹170"
+              },
+              {
+                "name": "Chouara Tanneries rooftop tip",
+                "cost": "₹85–₹170"
+              },
+              {
+                "name": "Nejjarine Museum of Wooden Arts & Crafts",
+                "cost": "₹170"
+              },
+              {
+                "name": "Talaa Kebira and souk walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Riad Verus",
+                "budget": "₹2,000–₹3,500/night"
+              },
+              {
+                "name": "Dar Hafsa",
+                "budget": "₹4,000–₹6,000/night"
+              },
+              {
+                "name": "Riad Ibn Battouta",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "The Ruined Garden",
+              "Cafe Clock",
+              "Darori Resto"
+            ]
+          },
+          {
+            "theme": "City Views, Mellah History & Garden Pause",
+            "activities": [
+              {
+                "name": "Borj Nord Museum of Arms",
+                "cost": "₹170"
+              },
+              {
+                "name": "Royal Palace gates and Jewish Mellah walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Jnan Sbil Gardens",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bab Bou Jeloud at blue hour",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dar Hafsa",
+                "budget": "₹4,000–₹6,000/night"
+              },
+              {
+                "name": "Riad Ibn Battouta",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Nur",
+              "The Ruined Garden",
+              "Made in M"
+            ]
+          }
+        ]
+      },
+      "Chefchaouen": {
+        "name": "Chefchaouen",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Blue Medina Lanes, Kasbah Garden & Rif Sunset",
+            "activities": [
+              {
+                "name": "Kasbah Museum",
+                "cost": "₹510"
+              },
+              {
+                "name": "Place Outa el Hammam",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ras El Maa spring walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Spanish Mosque sunset hike",
+                "cost": "₹0"
+              },
+              {
+                "name": "Blue alley photo wander",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Miguel",
+                "budget": "₹3,200–₹4,800/night"
+              },
+              {
+                "name": "Riad Gharnata",
+                "budget": "₹4,800–₹6,800/night"
+              },
+              {
+                "name": "Dar Echchaouen Maison d'Hôtes & Riad",
+                "budget": "₹7,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Bab Ssour",
+              "Hamsa",
+              "Restaurant Chez Hicham"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Casablanca",
+        "to": "Marrakech",
+        "method": "ONCF train from Casa Voyageurs",
+        "cost": "₹1,020–₹1,360"
+      },
+      {
+        "from": "Marrakech",
+        "to": "Essaouira",
+        "method": "Supratours or CTM coach",
+        "cost": "₹765–₹1,020"
+      },
+      {
+        "from": "Essaouira",
+        "to": "Merzouga",
+        "method": "CTM/Supratours via Marrakech or organized transfer",
+        "cost": "₹2,800–₹3,825"
+      },
+      {
+        "from": "Merzouga",
+        "to": "Fes",
+        "method": "Supratours desert bus or shared grand taxi connections",
+        "cost": "₹1,870–₹2,550"
+      },
+      {
+        "from": "Fes",
+        "to": "Chefchaouen",
+        "method": "CTM bus or shared grand taxi",
+        "cost": "₹680–₹1,275"
+      }
+    ],
+    "extras": [
+      "Indian passport visa rules can vary by residence status and supporting visas, so verify the current Morocco e-Visa or consular process before booking flights.",
+      "ONCF trains are the smoothest way to do Casablanca and Marrakech, but Chefchaouen, Essaouira, and Merzouga rely on CTM, Supratours, or grand taxis.",
+      "Carry small cash for medina tickets, tannery tips, and bus station snacks because card acceptance drops outside bigger hotels and modern restaurants.",
+      "Friday mosque access and some monument hours shift around prayer times, and Ramadan changes food-service timing after sunset.",
+      "Merzouga gets cold after dark from November to February, so keep a fleece or light down layer even if Marrakech felt warm."
+    ],
+    "cityImages": {
+      "Casablanca": [
+        "Hassan II Mosque Casablanca exterior",
+        "Habous Quarter Casablanca arches",
+        "La Corniche Ain Diab sunset"
+      ],
+      "Marrakech": [
+        "Bahia Palace Marrakech courtyard",
+        "Jardin Majorelle Marrakech blue walls",
+        "Jemaa el-Fnaa Marrakech night"
+      ],
+      "Essaouira": [
+        "Sqala du Port Essaouira cannons",
+        "Essaouira fishing port blue boats",
+        "Essaouira medina ramparts Atlantic"
+      ],
+      "Merzouga": [
+        "Erg Chebbi Merzouga dunes sunrise",
+        "Merzouga camel caravan Sahara",
+        "Khamlia village Merzouga Gnawa"
+      ],
+      "Fes": [
+        "Bou Inania Madrasa Fez courtyard",
+        "Chouara Tanneries Fez vats",
+        "Bab Bou Jeloud Fez blue gate"
+      ],
+      "Chefchaouen": [
+        "Chefchaouen blue medina alley",
+        "Kasbah Museum Chefchaouen courtyard",
+        "Spanish Mosque Chefchaouen sunset"
+      ]
+    }
+  }
+}

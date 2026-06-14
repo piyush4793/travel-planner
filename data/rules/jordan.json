@@ -1,0 +1,682 @@
+{
+  "name": "Jordan",
+  "seed": false,
+  "lat": 30.59,
+  "lng": 36.24,
+  "region": "Middle East",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹75K–₹1.2L",
+    "couple": "₹1.35L–₹2.1L",
+    "family4": "₹2.7L–₹4.2L"
+  },
+  "experiences": [
+    "Petra canyon walk to the Treasury",
+    "Wadi Rum jeep safari and stargazing",
+    "Dead Sea float",
+    "Jerash Roman ruins",
+    "Aqaba Red Sea snorkeling"
+  ],
+  "avoid": [
+    "Midday desert heat from June to August",
+    "Driving Petra or Wadi Rum legs after dark"
+  ],
+  "combo": [
+    "Egypt",
+    "United Arab Emirates"
+  ],
+  "landmark": "Petra Treasury",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Amman",
+      "lat": 31.9539,
+      "lng": 35.9106,
+      "notes": "Amman Citadel, Roman Theatre, Rainbow Street and Jordan Museum"
+    },
+    {
+      "name": "Petra",
+      "lat": 30.3285,
+      "lng": 35.4444,
+      "notes": "The Siq, Treasury, Royal Tombs, Monastery and Little Petra from Wadi Musa"
+    },
+    {
+      "name": "Wadi Rum",
+      "lat": 29.5737,
+      "lng": 35.4211,
+      "notes": "Protected desert valley with Bedouin camps, jeep routes and dark-sky stargazing"
+    },
+    {
+      "name": "Dead Sea",
+      "lat": 31.7167,
+      "lng": 35.5833,
+      "notes": "Floating beaches near Sweimeh with easy side trips to Mount Nebo and Bethany Beyond the Jordan"
+    },
+    {
+      "name": "Aqaba",
+      "lat": 29.5321,
+      "lng": 35.0063,
+      "notes": "Red Sea snorkeling, seafood restaurants and Aqaba Castle on Jordan's southern coast"
+    },
+    {
+      "name": "Jerash",
+      "lat": 32.2744,
+      "lng": 35.8916,
+      "notes": "Roman colonnaded streets, Oval Plaza, Hadrian's Arch and the Temple of Artemis"
+    }
+  ],
+  "itinerary": {
+    "sim": "Zain Jordan Tourist SIM or eSIM costs about ₹1,770–₹2,950 for enough data for Careem, JETT bookings and offline maps; Orange Jordan is the usual airport alternative.",
+    "apps": [
+      "JETT",
+      "Careem",
+      "Google Maps (offline Jordan maps)",
+      "Booking.com",
+      "WhatsApp",
+      "Jordan Pass",
+      "Talabat",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Amman",
+      "Jerash",
+      "Dead Sea",
+      "Petra",
+      "Wadi Rum",
+      "Aqaba"
+    ],
+    "cities": {
+      "Amman": {
+        "name": "Amman",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Citadel views, downtown archaeology and a classic first taste of Amman",
+            "activities": [
+              {
+                "name": "Amman Citadel",
+                "cost": "₹0 with Jordan Pass / ₹354 without"
+              },
+              {
+                "name": "Jordan Archaeological Museum",
+                "cost": "Included with Amman Citadel"
+              },
+              {
+                "name": "Roman Theatre",
+                "cost": "₹236"
+              },
+              {
+                "name": "Hashem Restaurant falafel stop",
+                "cost": "₹236–₹472"
+              },
+              {
+                "name": "Rainbow Street evening walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nomads Hotel",
+                "budget": "₹3,200–₹5,000/night"
+              },
+              {
+                "name": "Toledo Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Hashem",
+              "Al Quds",
+              "Sufra Restaurant"
+            ]
+          },
+          {
+            "theme": "Museums, mosque architecture and leafy west Amman viewpoints",
+            "activities": [
+              {
+                "name": "Jordan Museum",
+                "cost": "₹0 with Jordan Pass / ₹590 without"
+              },
+              {
+                "name": "King Abdullah I Mosque",
+                "cost": "₹236"
+              },
+              {
+                "name": "Royal Automobile Museum",
+                "cost": "₹590"
+              },
+              {
+                "name": "Wild Jordan Center terrace and Jabal Amman stroll",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nomads Hotel",
+                "budget": "₹3,200–₹5,000/night"
+              },
+              {
+                "name": "Toledo Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Sufra Restaurant",
+              "Shawerma Reem",
+              "Fakhreldin Restaurant"
+            ]
+          },
+          {
+            "theme": "Choose a slower final Amman day for markets, cafés and low-key neighborhood wandering",
+            "activities": [
+              {
+                "name": "Darat al Funun",
+                "cost": "₹0"
+              },
+              {
+                "name": "Duke's Diwan",
+                "cost": "₹0"
+              },
+              {
+                "name": "Souk Jara or downtown souqs",
+                "cost": "₹0"
+              },
+              {
+                "name": "Jordan National Gallery of Fine Arts",
+                "cost": "₹236"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nomads Hotel",
+                "budget": "₹3,200–₹5,000/night"
+              },
+              {
+                "name": "Toledo Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Hashem",
+              "Books@Cafe",
+              "Sufra Restaurant"
+            ]
+          }
+        ]
+      },
+      "Jerash": {
+        "name": "Jerash",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Most travelers do Jerash as a day trip from Amman, but staying one night nearby makes an early ruins visit much easier.",
+        "days": [
+          {
+            "theme": "One of the Levant's best Roman cities plus a castle stop in the northern hills",
+            "activities": [
+              {
+                "name": "Jerash archaeological city",
+                "cost": "₹0 with Jordan Pass / ₹1,180 without"
+              },
+              {
+                "name": "Temple of Artemis and Oval Plaza",
+                "cost": "Included with Jerash entry"
+              },
+              {
+                "name": "Jerash Archaeological Museum",
+                "cost": "Included with Jerash entry"
+              },
+              {
+                "name": "Ajloun Castle",
+                "cost": "₹0 with Jordan Pass / ₹354 without"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hadrian's Gate Hotel",
+                "budget": "₹3,000–₹4,800/night"
+              },
+              {
+                "name": "Olive Branch Hotel",
+                "budget": "₹5,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Artemis Restaurant",
+              "Green Valley Restaurant",
+              "Lebanese House Restaurant"
+            ]
+          }
+        ]
+      },
+      "Dead Sea": {
+        "name": "Dead Sea",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "This works best as a restorative overnight between Amman and Petra, with enough time for either Bethany or Madaba/Mount Nebo.",
+        "days": [
+          {
+            "theme": "Float in the salt water, then pair the low point on earth with biblical hilltop views",
+            "activities": [
+              {
+                "name": "Amman Beach Dead Sea day access",
+                "cost": "₹2,360"
+              },
+              {
+                "name": "Mount Nebo",
+                "cost": "₹0 with Jordan Pass / ₹354 without"
+              },
+              {
+                "name": "Madaba Archaeological Park and Church of the Apostles",
+                "cost": "₹0 with Jordan Pass / ₹354 without"
+              },
+              {
+                "name": "Bethany Beyond the Jordan",
+                "cost": "₹1,416"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ramada Resort by Wyndham Dead Sea",
+                "budget": "₹8,500–₹13,000/night"
+              },
+              {
+                "name": "Dead Sea Spa Hotel",
+                "budget": "₹9,000–₹14,000/night"
+              }
+            ],
+            "meals": [
+              "Panorama Dead Sea Complex",
+              "Elements Restaurant",
+              "Ocean Restaurant & Lounge"
+            ]
+          },
+          {
+            "theme": "Keep a second Dead Sea day only if you want a full resort reset or seasonal canyoning nearby",
+            "activities": [
+              {
+                "name": "Resort beach and mud treatment time",
+                "cost": "₹0 if staying in-resort"
+              },
+              {
+                "name": "Mujib Biosphere Reserve Siq Trail",
+                "cost": "₹2,950 approx with taxes"
+              },
+              {
+                "name": "Dead Sea Panoramic Complex viewpoint",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ramada Resort by Wyndham Dead Sea",
+                "budget": "₹8,500–₹13,000/night"
+              },
+              {
+                "name": "Dead Sea Spa Hotel",
+                "budget": "₹9,000–₹14,000/night"
+              }
+            ],
+            "meals": [
+              "Panorama Dead Sea Complex",
+              "Elements Restaurant",
+              "Ocean Restaurant & Lounge"
+            ]
+          }
+        ]
+      },
+      "Petra": {
+        "name": "Petra",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Walk the Siq to the Treasury and keep going through Petra's main royal core",
+            "activities": [
+              {
+                "name": "Petra one-day entry",
+                "cost": "₹0 with Jordan Pass / ₹5,900 without"
+              },
+              {
+                "name": "Al-Khazneh (Treasury), Street of Facades and Royal Tombs",
+                "cost": "Included with Petra entry"
+              },
+              {
+                "name": "Petra Museum",
+                "cost": "₹0"
+              },
+              {
+                "name": "Petra by Night",
+                "cost": "₹2,006"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Petra Moon Hotel",
+                "budget": "₹7,000–₹11,000/night"
+              },
+              {
+                "name": "La Maison Hotel Petra",
+                "budget": "₹5,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Al-Wadi Restaurant",
+              "My Mom's Recipe Restaurant",
+              "The Cave Bar"
+            ]
+          },
+          {
+            "theme": "Take the longer Monastery hike and use the extra time for Little Petra or a high viewpoint trail",
+            "activities": [
+              {
+                "name": "Petra second day entry",
+                "cost": "₹0 with Jordan Pass Explorer/Expert / ₹6,490 for standalone 2-day ticket"
+              },
+              {
+                "name": "Ad Deir (Monastery) trail",
+                "cost": "Included with Petra entry"
+              },
+              {
+                "name": "Little Petra (Siq al-Barid)",
+                "cost": "₹0"
+              },
+              {
+                "name": "High Place of Sacrifice or Al-Khubtha viewpoint trail",
+                "cost": "Included with Petra entry"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Petra Moon Hotel",
+                "budget": "₹7,000–₹11,000/night"
+              },
+              {
+                "name": "La Maison Hotel Petra",
+                "budget": "₹5,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "The Basin Restaurant",
+              "Al-Wadi Restaurant",
+              "My Mom's Recipe Restaurant"
+            ]
+          },
+          {
+            "theme": "Add a third Petra day only if archaeology or long hiking loops are the main reason you came",
+            "activities": [
+              {
+                "name": "Petra three-day entry",
+                "cost": "₹0 with Jordan Pass Expert / ₹7,080 without"
+              },
+              {
+                "name": "Back Door Trail from Little Petra",
+                "cost": "Guide or taxi extra if arranged"
+              },
+              {
+                "name": "Byzantine Church mosaics",
+                "cost": "Included with Petra entry"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Petra Moon Hotel",
+                "budget": "₹7,000–₹11,000/night"
+              },
+              {
+                "name": "La Maison Hotel Petra",
+                "budget": "₹5,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "The Cave Bar",
+              "Al-Wadi Restaurant",
+              "Basin Restaurant"
+            ]
+          }
+        ]
+      },
+      "Wadi Rum": {
+        "name": "Wadi Rum",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "An overnight desert camp is the sweet spot; stay longer only if you want extra hiking, camel time or a dawn balloon ride.",
+        "days": [
+          {
+            "theme": "Jeep through the sandstone desert, then stay out for sunset and stars",
+            "activities": [
+              {
+                "name": "Wadi Rum Protected Area entry",
+                "cost": "₹0 with Jordan Pass / ₹590 without"
+              },
+              {
+                "name": "2- to 3-hour Bedouin jeep tour",
+                "cost": "₹2,950–₹4,130"
+              },
+              {
+                "name": "Sunset camel ride",
+                "cost": "₹1,770–₹2,360"
+              },
+              {
+                "name": "Camp dinner and stargazing",
+                "cost": "Usually included with overnight stay"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hasan Zawaideh Camp",
+                "budget": "₹4,500–₹7,500/night incl. dinner"
+              },
+              {
+                "name": "Wadi Rum Night Luxury Camp",
+                "budget": "₹8,500–₹13,000/night incl. dinner"
+              }
+            ],
+            "meals": [
+              "Wadi Rum Rest House",
+              "Rum Gate Restaurant",
+              "Hasan Zawaideh Camp dinner"
+            ]
+          },
+          {
+            "theme": "Only add a second Rum day if you want more desert mileage or a slow morning before Aqaba",
+            "activities": [
+              {
+                "name": "Um Fruth Rock Bridge and Khazali Canyon stops",
+                "cost": "Usually part of jeep tour pricing"
+              },
+              {
+                "name": "Dawn photography or optional hot air balloon",
+                "cost": "Operator dependent"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hasan Zawaideh Camp",
+                "budget": "₹4,500–₹7,500/night incl. dinner"
+              },
+              {
+                "name": "Wadi Rum Night Luxury Camp",
+                "budget": "₹8,500–₹13,000/night incl. dinner"
+              }
+            ],
+            "meals": [
+              "Wadi Rum Rest House",
+              "Rum Gate Restaurant",
+              "Camp breakfast"
+            ]
+          }
+        ]
+      },
+      "Aqaba": {
+        "name": "Aqaba",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Castle history, a laid-back waterfront and a first Red Sea snorkel day",
+            "activities": [
+              {
+                "name": "Aqaba Castle",
+                "cost": "₹0 with Jordan Pass / ₹354 without"
+              },
+              {
+                "name": "Aqaba Museum",
+                "cost": "Included with Aqaba Castle entry"
+              },
+              {
+                "name": "Glass-bottom boat or snorkeling trip",
+                "cost": "₹1,770–₹2,950"
+              },
+              {
+                "name": "Ayla Marina promenade",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "My Luxury Hotel",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Dweik Hotel 3",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Ali Baba Restaurant",
+              "Papaya Restaurant",
+              "Al Shami Restaurant"
+            ]
+          },
+          {
+            "theme": "Use a second Aqaba day for a proper beach club reset or another reef session before heading north",
+            "activities": [
+              {
+                "name": "Berenice Beach Club day pass",
+                "cost": "₹1,534"
+              },
+              {
+                "name": "South Beach snorkeling",
+                "cost": "₹0 from public beach / gear extra"
+              },
+              {
+                "name": "Aqaba bird observatory or old town market time",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "My Luxury Hotel",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Dweik Hotel 3",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Ali Baba Restaurant",
+              "Rakwet Kanaan",
+              "Papaya Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Amman",
+        "to": "Jerash",
+        "method": "Servees/minibus from North Bus Station or private taxi",
+        "cost": "₹354–₹1,416"
+      },
+      {
+        "from": "Jerash",
+        "to": "Dead Sea",
+        "method": "Rental car or private taxi via Amman and Madaba",
+        "cost": "₹4,130–₹5,900"
+      },
+      {
+        "from": "Dead Sea",
+        "to": "Petra",
+        "method": "Private taxi or rental car on the King's Highway",
+        "cost": "₹5,900–₹8,260"
+      },
+      {
+        "from": "Petra",
+        "to": "Wadi Rum",
+        "method": "JETT bus or arranged hotel transfer",
+        "cost": "₹1,770–₹4,130"
+      },
+      {
+        "from": "Wadi Rum",
+        "to": "Aqaba",
+        "method": "JETT bus or private taxi",
+        "cost": "₹1,770–₹4,130"
+      }
+    ],
+    "extras": [
+      "Buy the Jordan Pass before arrival: Wanderer ₹8,260, Explorer ₹8,850 and Expert ₹9,440. All waive the 40 JOD visa fee if you stay at least 2 nights and cover Petra, Jerash, Wadi Rum, Amman Citadel, Mount Nebo and many other sites.",
+      "JETT is the most reliable public transport for tourist corridors, but most routes run only once daily, so pre-book Petra, Wadi Rum and Aqaba legs.",
+      "Petra by Night is never included in the Jordan Pass, and Bethany Beyond the Jordan typically remains a separate paid ticket.",
+      "If you self-drive, the Desert Highway is faster while the King's Highway is more scenic via Madaba, Kerak and canyon viewpoints.",
+      "Wadi Rum camps usually bundle dinner and breakfast, but jeep tours, camel rides and star-gazing add-ons are normally cash-first.",
+      "At the Dead Sea, avoid shaving the same day, keep the water out of your eyes, and shower quickly after the float because the salt sting is real."
+    ],
+    "cityImages": {
+      "Amman": [
+        "Amman Citadel Temple of Hercules",
+        "Roman Theatre Amman Jordan",
+        "Rainbow Street Amman"
+      ],
+      "Jerash": [
+        "Jerash Oval Plaza Jordan",
+        "Temple of Artemis Jerash",
+        "Hadrian Arch Jerash"
+      ],
+      "Dead Sea": [
+        "Dead Sea Jordan shoreline",
+        "Mount Nebo Jordan memorial church",
+        "Bethany Beyond the Jordan baptism site"
+      ],
+      "Petra": [
+        "Al-Khazneh Petra Treasury",
+        "Ad Deir Monastery Petra",
+        "Petra Siq canyon Jordan"
+      ],
+      "Wadi Rum": [
+        "Wadi Rum desert sandstone mountains",
+        "Wadi Rum jeep safari Jordan",
+        "Wadi Rum camp night sky"
+      ],
+      "Aqaba": [
+        "Aqaba Castle Jordan",
+        "Aqaba South Beach coral reef",
+        "Ayla Marina Aqaba"
+      ]
+    }
+  }
+}

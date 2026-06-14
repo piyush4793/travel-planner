@@ -1,0 +1,668 @@
+{
+  "name": "Peru",
+  "seed": false,
+  "lat": -9.19,
+  "lng": -75.02,
+  "region": "Americas",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹1.1L–₹1.8L",
+    "couple": "₹1.9L–₹3.1L",
+    "family4": "₹3.8L–₹6L"
+  },
+  "experiences": [
+    "Machu Picchu",
+    "Cusco & Inca history",
+    "Sacred Valley",
+    "Arequipa & Colca Canyon",
+    "Lake Titicaca"
+  ],
+  "avoid": [
+    "January–February rains can trigger landslides and train delays around Cusco, Sacred Valley, and Machu Picchu",
+    "Do not stack heavy activity immediately after arrival in Cusco or Puno — altitude hits fast above 3,300 m"
+  ],
+  "combo": [
+    "Bolivia",
+    "Chile"
+  ],
+  "landmark": "Machu Picchu",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Lima",
+      "lat": -12.0464,
+      "lng": -77.0428,
+      "notes": "Food-first capital with Miraflores cliffs, Barranco street art, Larco Museum and easy long-haul recovery before the Andes"
+    },
+    {
+      "name": "Cusco",
+      "lat": -13.5319,
+      "lng": -71.9675,
+      "notes": "Acclimatization base for Inca walls, Plaza de Armas, San Pedro Market and the Sacsayhuamán archaeological circuit"
+    },
+    {
+      "name": "Sacred Valley",
+      "lat": -13.3047,
+      "lng": -72.1158,
+      "notes": "Urubamba-Ollantaytambo-Pisac corridor for ruins, markets, Moray terraces and Maras salt pans"
+    },
+    {
+      "name": "Machu Picchu",
+      "lat": -13.1631,
+      "lng": -72.545,
+      "notes": "Aguas Calientes gateway for the citadel, dawn entry circuits and optional Huayna Picchu hike"
+    },
+    {
+      "name": "Arequipa",
+      "lat": -16.409,
+      "lng": -71.5375,
+      "notes": "White-stone colonial city with Santa Catalina Monastery, volcano views and the classic route into Colca Canyon"
+    },
+    {
+      "name": "Lake Titicaca",
+      "lat": -15.8402,
+      "lng": -70.0219,
+      "notes": "Puno-side base for Uros floating islands, Taquile textiles and high-altitude lake culture"
+    }
+  ],
+  "itinerary": {
+    "sim": "Claro or Entel prepago/eSIM is easiest after landing in Lima; expect roughly ₹920–₹1,380 for 10–15GB. Download offline maps before heading into the Sacred Valley and on the rail segment because coverage gets patchy beyond Ollantaytambo.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "LATAM Airlines",
+      "SKY Airline",
+      "Cruz del Sur",
+      "PeruRail",
+      "IncaRail",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency",
+      "Cabify",
+      "inDrive"
+    ],
+    "cityOrder": [
+      "Lima",
+      "Cusco",
+      "Sacred Valley",
+      "Machu Picchu",
+      "Arequipa",
+      "Lake Titicaca"
+    ],
+    "cities": {
+      "Lima": {
+        "name": "Lima",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Miraflores or Barranco as your base, keep a buffer for international arrival day, and save the heaviest altitude days for after Lima.",
+        "days": [
+          {
+            "theme": "Miraflores Coastline & Barranco Food Day",
+            "activities": [
+              {
+                "name": "Walk Parque del Amor, Malecón de Miraflores and Larcomar on the Pacific cliffs"
+              },
+              {
+                "name": "Museo Larco",
+                "cost": "₹920"
+              },
+              {
+                "name": "Huaca Pucllana site museum and adobe pyramid",
+                "cost": "₹345"
+              },
+              {
+                "name": "Barranco stroll via Puente de los Suspiros and Bajada de Baños"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Andina Standard Benavides",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Pariwana Hostel Lima",
+                "budget": "₹2,000–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "Panchita",
+              "La Lucha Sanguchería",
+              "El Mercado"
+            ]
+          },
+          {
+            "theme": "Historic Center & Museum Morning",
+            "activities": [
+              {
+                "name": "Plaza Mayor, Cathedral exterior and changing of the guard zone walk"
+              },
+              {
+                "name": "Monastery of San Francisco catacombs",
+                "cost": "₹460"
+              },
+              {
+                "name": "MALI - Museo de Arte de Lima",
+                "cost": "₹345–₹460"
+              },
+              {
+                "name": "Evening domestic flight to Cusco on LATAM or SKY if you want to maximize Andes time",
+                "cost": "₹4,600–₹9,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Larco Miraflores",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "1900 Hostel",
+                "budget": "₹1,800–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Isolina",
+              "El Chinito",
+              "Tanta"
+            ]
+          }
+        ]
+      },
+      "Cusco": {
+        "name": "Cusco",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Treat day one as acclimatization, keep coca tea or hydration handy, and book Machu Picchu plus train slots before you arrive in Cusco.",
+        "days": [
+          {
+            "theme": "Acclimatization in the Historic Core",
+            "activities": [
+              {
+                "name": "Plaza de Armas, Twelve-Angled Stone and San Blas lanes"
+              },
+              {
+                "name": "Qorikancha Temple and Convent of Santo Domingo",
+                "cost": "₹460"
+              },
+              {
+                "name": "San Pedro Market snacks, coffee and light lunch"
+              },
+              {
+                "name": "Cusco Cathedral interior",
+                "cost": "₹920"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tierra Viva Cusco Centro",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Pariwana Hostel Cusco",
+                "budget": "₹2,000–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "Chicha por Gastón Acurio",
+              "Green Point",
+              "Morena Peruvian Kitchen"
+            ]
+          },
+          {
+            "theme": "Sacsayhuamán Circuit",
+            "activities": [
+              {
+                "name": "Boleto Turístico del Cusco partial circuit for Sacsayhuamán, Qenqo, Puka Pukara and Tambomachay",
+                "cost": "₹1,610"
+              },
+              {
+                "name": "Taxi or guided loop through the four archaeological sites",
+                "cost": "₹690–₹1,840"
+              },
+              {
+                "name": "Mirador desde Cristo Blanco for sunset over Cusco"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Andina Standard Cusco Plaza",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Kokopelli Hostel Cusco",
+                "budget": "₹1,800–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Cicciolina",
+              "Limo",
+              "Jack's Cafe"
+            ]
+          },
+          {
+            "theme": "Slow Morning or Extra Museum Buffer",
+            "activities": [
+              {
+                "name": "Centro de Textiles Tradicionales del Cusco or Museo Inka",
+                "cost": "₹230–₹460"
+              },
+              {
+                "name": "Pre-buy snacks and pack a light day bag for the Sacred Valley and Machu Picchu rail segment"
+              },
+              {
+                "name": "Optional massage or spa session to stay fresh before train travel",
+                "cost": "₹1,150–₹2,300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tierra Viva Cusco Centro",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Pariwana Hostel Cusco",
+                "budget": "₹2,000–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "Uchu Peruvian Steakhouse",
+              "Organika",
+              "Mercado Central de San Pedro"
+            ]
+          }
+        ]
+      },
+      "Sacred Valley": {
+        "name": "Sacred Valley",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay near Ollantaytambo or Urubamba so the train day is easier, and use the full tourist ticket if you plan multiple valley ruins.",
+        "days": [
+          {
+            "theme": "Pisac Market & Urubamba Valley",
+            "activities": [
+              {
+                "name": "Transfer from Cusco by colectivo or taxi into Pisac or Urubamba",
+                "cost": "₹460–₹2,300"
+              },
+              {
+                "name": "Boleto Turístico Integral for Cusco plus Sacred Valley sites",
+                "cost": "₹2,990"
+              },
+              {
+                "name": "Pisac archaeological park and market lanes"
+              },
+              {
+                "name": "Slow evening in Urubamba with valley views"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tierra Viva Valle Sagrado Hotel",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hospedaje Chaska Pisac",
+                "budget": "₹2,000–₹3,800/night"
+              }
+            ],
+            "meals": [
+              "Hawa Restaurant",
+              "Maña",
+              "El Huacatay"
+            ]
+          },
+          {
+            "theme": "Moray, Maras & Ollantaytambo",
+            "activities": [
+              {
+                "name": "Moray circular terraces using the tourist ticket"
+              },
+              {
+                "name": "Maras salt mines community ticket",
+                "cost": "₹460"
+              },
+              {
+                "name": "Ollantaytambo fortress and old Inca town streets"
+              },
+              {
+                "name": "Optional evening PeruRail or IncaRail departure to Aguas Calientes",
+                "cost": "₹4,600–₹9,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Sauce Ollantaytambo",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Hostal Iskay",
+                "budget": "₹2,200–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "El Albergue Restaurant",
+              "Hearts Cafe",
+              "Chuncho"
+            ]
+          }
+        ]
+      },
+      "Machu Picchu": {
+        "name": "Machu Picchu",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Book the circuit first, then train, then hotel; aim for one of the earlier entry windows and pack only the small bag allowed on the train.",
+        "days": [
+          {
+            "theme": "Aguas Calientes Arrival & Hot Springs Town",
+            "activities": [
+              {
+                "name": "PeruRail or IncaRail ride from Ollantaytambo to Aguas Calientes",
+                "cost": "₹4,600–₹9,200"
+              },
+              {
+                "name": "Mandor waterfall trail or butterfly garden if you reach early",
+                "cost": "₹345–₹575"
+              },
+              {
+                "name": "Town walk along the Urubamba river and early ticket check for the next morning"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tierra Viva Machu Picchu Hotel",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Hotel La Cabaña Machupicchu",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Indio Feliz",
+              "Mapacho Craft Beer & Peruvian Cuisine",
+              "Full House Peruvian Cuisine"
+            ]
+          },
+          {
+            "theme": "Machu Picchu Citadel at Dawn",
+            "activities": [
+              {
+                "name": "Consettur shuttle bus up and down between Aguas Calientes and the citadel",
+                "cost": "₹2,000–₹2,100"
+              },
+              {
+                "name": "Machu Picchu Llaqta entry - Circuit 2 or equivalent main circuit",
+                "cost": "₹3,950–₹4,000"
+              },
+              {
+                "name": "Optional Huayna Picchu or Machu Picchu Mountain permit when available",
+                "cost": "₹4,600"
+              },
+              {
+                "name": "Return rail to Ollantaytambo or Cusco after the visit",
+                "cost": "₹4,600–₹9,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tierra Viva Machu Picchu Hotel",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Hotel La Cabaña Machupicchu",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Café Inkaterra",
+              "Toto's House",
+              "The Tree House Restaurant"
+            ]
+          }
+        ]
+      },
+      "Arequipa": {
+        "name": "Arequipa",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Arequipa is lower than Cusco but still elevated, so keep hydration up and decide early whether you want a long Colca day trip or a proper overnight canyon stay.",
+        "days": [
+          {
+            "theme": "White City Core & Monastery",
+            "activities": [
+              {
+                "name": "Santa Catalina Monastery",
+                "cost": "₹1,035"
+              },
+              {
+                "name": "Plaza de Armas, Basilica Cathedral exterior and Claustros de la Compañía"
+              },
+              {
+                "name": "Museo Santuarios Andinos to see the Juanita exhibit",
+                "cost": "₹575"
+              },
+              {
+                "name": "Yanahuara viewpoint at sunset"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Andina Standard Arequipa",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Le Foyer Arequipa",
+                "budget": "₹1,800–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Zig Zag",
+              "Chicha Arequipa",
+              "La Nueva Palomino"
+            ]
+          },
+          {
+            "theme": "Colca Canyon Day Trip",
+            "activities": [
+              {
+                "name": "Shared Colca Canyon tour from Arequipa via Chivay and Cruz del Condor",
+                "cost": "₹1,800–₹3,200"
+              },
+              {
+                "name": "Colca Canyon tourist ticket",
+                "cost": "₹1,610"
+              },
+              {
+                "name": "Optional La Calera hot springs stop",
+                "cost": "₹345"
+              },
+              {
+                "name": "Evening bus or flight onward if you are compressing the route",
+                "cost": "₹1,600–₹8,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Corregidor",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Posada Nueva España",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Picantería La Capitana",
+              "Chelawasi Public House",
+              "Hatunpa"
+            ]
+          }
+        ]
+      },
+      "Lake Titicaca": {
+        "name": "Lake Titicaca",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Puno is cold after sunset even in the dry season, and lake trips feel better if you leave one lighter afternoon before or after a long bus ride.",
+        "days": [
+          {
+            "theme": "Uros & Taquile Islands",
+            "activities": [
+              {
+                "name": "Full-day speedboat or regular boat tour to Uros floating islands and Taquile Island",
+                "cost": "₹1,610–₹2,070"
+              },
+              {
+                "name": "Optional reed-boat ride at Uros",
+                "cost": "₹345–₹460"
+              },
+              {
+                "name": "Taquile community fee and textile demonstrations",
+                "cost": "₹230–₹345"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tierra Viva Puno Plaza",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Casona Plaza Hotel Puno",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Mojsa Restaurant",
+              "La Table del' Inca",
+              "Balcones de Puno"
+            ]
+          },
+          {
+            "theme": "Sillustani & Departure Buffer",
+            "activities": [
+              {
+                "name": "Sillustani funerary towers en route to or from Juliaca",
+                "cost": "₹345–₹575"
+              },
+              {
+                "name": "Juliaca airport transfer for LATAM or SKY flight back to Lima",
+                "cost": "₹575–₹1,150"
+              },
+              {
+                "name": "Optional evening folk show at Balcones de Puno",
+                "cost": "₹920–₹1,610"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Andina Standard Puno",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Lucky Your House",
+                "budget": "₹1,800–₹3,200/night"
+              }
+            ],
+            "meals": [
+              "Tulipan's Restaurant",
+              "Cafe Bar de la Casa del Corregidor",
+              "La Casona Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Lima",
+        "to": "Cusco",
+        "method": "LATAM or SKY domestic flight into Alejandro Velasco Astete Airport, about 1 hr 20 min",
+        "cost": "₹4,600–₹9,200"
+      },
+      {
+        "from": "Cusco",
+        "to": "Sacred Valley",
+        "method": "Taxi, private transfer, or colectivo via Pisac or Chinchero; Ollantaytambo is usually 1.5–2 hrs from Cusco",
+        "cost": "₹460–₹2,300"
+      },
+      {
+        "from": "Sacred Valley",
+        "to": "Machu Picchu",
+        "method": "PeruRail or IncaRail from Ollantaytambo to Aguas Calientes; most convenient same-day rail link",
+        "cost": "₹4,600–₹9,200"
+      },
+      {
+        "from": "Machu Picchu",
+        "to": "Arequipa",
+        "method": "Return by train to Ollantaytambo or Cusco, then continue by LATAM or SKY flight to Arequipa; overnight Cruz del Sur is the budget fallback",
+        "cost": "₹7,500–₹15,000"
+      },
+      {
+        "from": "Arequipa",
+        "to": "Lake Titicaca",
+        "method": "Cruz del Sur bus from Arequipa to Puno in roughly 6–7 hrs; private transfer is faster but pricier",
+        "cost": "₹1,600–₹3,000"
+      }
+    ],
+    "extras": [
+      "Book Machu Picchu tickets before trains and hotels, especially for May–September when the better morning circuits sell out first.",
+      "Cusco, Colca, and Puno all sit at serious altitude, so keep the first 24 hours light and avoid stacking a canyon day right after landing if you can.",
+      "Carry some cash in soles for site tickets, taxis, market snacks, and Uros add-ons because card acceptance still drops outside the bigger hotels.",
+      "PeruRail and IncaRail both enforce small-bag limits on many services, so leave heavy luggage at your Cusco or Sacred Valley hotel when possible.",
+      "If time is tight, keep Lima, Cusco, Sacred Valley, and Machu Picchu as the non-negotiable core; add Arequipa and Lake Titicaca only if you have the extra transit days."
+    ],
+    "cityImages": {
+      "Lima": [
+        "Plaza Mayor Lima",
+        "Larco Museum Lima",
+        "Barranco Bridge of Sighs Lima"
+      ],
+      "Cusco": [
+        "Plaza de Armas Cusco",
+        "Qorikancha Cusco",
+        "Sacsayhuaman Cusco"
+      ],
+      "Sacred Valley": [
+        "Ollantaytambo ruins Peru",
+        "Moray terraces Peru",
+        "Maras salt mines Peru"
+      ],
+      "Machu Picchu": [
+        "Machu Picchu citadel Peru",
+        "Huayna Picchu Peru",
+        "Aguas Calientes Peru"
+      ],
+      "Arequipa": [
+        "Santa Catalina Monastery Arequipa",
+        "Yanahuara Arequipa",
+        "Colca Canyon condor viewpoint"
+      ],
+      "Lake Titicaca": [
+        "Uros Floating Islands Lake Titicaca",
+        "Taquile Island Peru",
+        "Puno Cathedral Peru"
+      ]
+    }
+  }
+}

@@ -155,9 +155,9 @@
     "lng": 80.77,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 12,
+    "maxDays": 18
   },
   {
     "name": "Bangladesh",
@@ -535,9 +535,9 @@
     "lng": -7.69,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 12
   },
   {
     "name": "Belgium",
@@ -855,9 +855,9 @@
     "lng": 36.24,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 13
   },
   {
     "name": "Lebanon",
@@ -975,9 +975,9 @@
     "lng": -7.09,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 15
   },
   {
     "name": "Tunisia",
@@ -1545,9 +1545,9 @@
     "lng": -75.02,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 13,
+    "maxDays": 17
   },
   {
     "name": "Chile",
