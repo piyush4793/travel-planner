@@ -1,0 +1,603 @@
+{
+  "name": "Bosnia and Herzegovina",
+  "seed": false,
+  "lat": 43.92,
+  "lng": 17.68,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹70k–₹1.15L",
+    "couple": "₹1.25L–₹2L",
+    "family4": "₹2.6L–₹4.1L"
+  },
+  "experiences": [
+    "Old Towns",
+    "History",
+    "Rivers & Waterfalls",
+    "Road Trips",
+    "Coffee Culture",
+    "Wine"
+  ],
+  "avoid": [
+    "Winter fog, snow and shorter daylight can make mountain bus connections around Sarajevo and Jajce slower than summer schedules suggest",
+    "Smaller museums, monasteries and family-run konobas in Herzegovina often prefer cash, so do not rely only on cards outside Sarajevo"
+  ],
+  "combo": [
+    "Croatia",
+    "Montenegro",
+    "Serbia"
+  ],
+  "landmark": "Stari Most, Mostar",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Sarajevo",
+      "lat": 43.8563,
+      "lng": 18.4131,
+      "notes": "Layered Ottoman and Austro-Hungarian capital with poignant war history, strong cafe culture and easy hilltop viewpoints"
+    },
+    {
+      "name": "Mostar",
+      "lat": 43.3438,
+      "lng": 17.8078,
+      "notes": "Stari Most views, riverside lanes, Ottoman houses and Herzegovinian food in Bosnia's most photogenic old town"
+    },
+    {
+      "name": "Trebinje",
+      "lat": 42.7119,
+      "lng": 18.3436,
+      "notes": "Sunny stone town near the Adriatic border with monasteries, wine cellars and long plane-tree promenades"
+    },
+    {
+      "name": "Jajce",
+      "lat": 44.3422,
+      "lng": 17.2706,
+      "notes": "Fortress town split by waterfalls, catacombs and Pliva lake scenery that feels ideal for a one-night inland detour"
+    },
+    {
+      "name": "Blagaj",
+      "lat": 43.2586,
+      "lng": 17.8887,
+      "notes": "Tiny Buna spring village below limestone cliffs, best known for the dervish tekija and trout restaurants by the water"
+    }
+  ],
+  "itinerary": {
+    "sim": "BH Telecom's Tourist SIM/eSIM is the easiest local option for Bosnia, while an Airalo Eurolink eSIM works well if you want data ready as soon as you cross in from Croatia or Montenegro.",
+    "apps": [
+      "GetByBus",
+      "Centrotrans",
+      "Google Maps",
+      "Moovit",
+      "Bolt",
+      "Booking.com",
+      "XE Currency",
+      "AccuWeather"
+    ],
+    "cityOrder": [
+      "Sarajevo",
+      "Jajce",
+      "Mostar",
+      "Blagaj",
+      "Trebinje"
+    ],
+    "cities": {
+      "Sarajevo": {
+        "name": "Sarajevo",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 3,
+        "note": "Three days lets you balance the old town, siege history and a green Ilidža or museum day without rushing between hillside viewpoints.",
+        "days": [
+          {
+            "theme": "Arrival, Baščaršija & Ottoman Sarajevo",
+            "activities": [
+              {
+                "name": "Centrotrans airport bus into the old town",
+                "cost": "₹230"
+              },
+              {
+                "name": "Baščaršija, Sebilj and Kazandžiluk coppersmith lane walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Gazi Husrev-beg Mosque visitor ticket",
+                "cost": "₹230"
+              },
+              {
+                "name": "Sarajevo City Hall (Vijećnica) entry",
+                "cost": "₹460"
+              },
+              {
+                "name": "Yellow Fortress sunset lookout",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Old Town",
+                "budget": "₹7,400–₹11,500/night"
+              },
+              {
+                "name": "Garni Hotel Konak",
+                "budget": "₹6,400–₹10,200/night"
+              }
+            ],
+            "meals": [
+              "Ćevabdžinica Željo",
+              "Dveri",
+              "Inat Kuća"
+            ]
+          },
+          {
+            "theme": "Siege History & Trebević Heights",
+            "activities": [
+              {
+                "name": "Tunnel of Hope museum ticket",
+                "cost": "₹460"
+              },
+              {
+                "name": "Trebević cable car return ride",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Trebević bobsled track walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "War Childhood Museum entry",
+                "cost": "₹460"
+              },
+              {
+                "name": "Latin Bridge and Miljacka riverside evening walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Old Town",
+                "budget": "₹7,400–₹11,500/night"
+              },
+              {
+                "name": "Garni Hotel Konak",
+                "budget": "₹6,400–₹10,200/night"
+              }
+            ],
+            "meals": [
+              "Mala Kuhinja",
+              "Ćevabdžinica Petica Ferhatović",
+              "Klopa"
+            ]
+          },
+          {
+            "theme": "Museums, Markets & Ilidža Green Break",
+            "activities": [
+              {
+                "name": "Sarajevo tram and local bus rides between old town and Ilidža",
+                "cost": "₹140–₹230"
+              },
+              {
+                "name": "National Museum of Bosnia and Herzegovina entry",
+                "cost": "₹370"
+              },
+              {
+                "name": "Vrelo Bosne park walk with optional horse carriage",
+                "cost": "₹0–₹920"
+              },
+              {
+                "name": "Markale Market and Ferhadija pedestrian stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Gallery 11/07/95 entry",
+                "cost": "₹460"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Old Town",
+                "budget": "₹7,400–₹11,500/night"
+              },
+              {
+                "name": "Garni Hotel Konak",
+                "budget": "₹6,400–₹10,200/night"
+              }
+            ],
+            "meals": [
+              "Karuzo",
+              "Buregdžinica Bosna",
+              "Ministry of Ćejf"
+            ]
+          }
+        ]
+      },
+      "Jajce": {
+        "name": "Jajce",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "One night is enough for the waterfall, fortress and lakeside mills, especially if you are using Jajce as the inland leg between Sarajevo and Herzegovina.",
+        "days": [
+          {
+            "theme": "Waterfall Town, Fortress & Pliva Lakes",
+            "activities": [
+              {
+                "name": "Centrotrans bus from Sarajevo to Jajce",
+                "cost": "₹1,150–₹1,610"
+              },
+              {
+                "name": "Visit Jajce pass covering waterfall, catacombs and fortress",
+                "cost": "₹1,380"
+              },
+              {
+                "name": "Pliva Waterfall viewpoint and old town lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mlinčići watermills and Veliko Plivsko Lake walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Jajce fortress sunset ramparts",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Stari Grad",
+                "budget": "₹4,800–₹7,400/night"
+              },
+              {
+                "name": "Hotel Turist 98",
+                "budget": "₹5,900–₹8,800/night"
+              }
+            ],
+            "meals": [
+              "Konoba Slapovi",
+              "Kod Asima",
+              "Motel Plaza Restaurant"
+            ]
+          }
+        ]
+      },
+      "Mostar": {
+        "name": "Mostar",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the old town well, while a third day helps if you want a slower museum-and-cafes pace before moving on to Blagaj or Trebinje.",
+        "days": [
+          {
+            "theme": "Stari Most Classics & Ottoman Lanes",
+            "activities": [
+              {
+                "name": "Bus or rental-car drive from Jajce to Mostar",
+                "cost": "₹1,380–₹2,760"
+              },
+              {
+                "name": "Stari Most and Kujundžiluk old bazaar walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Museum of the Old Bridge ticket",
+                "cost": "₹230"
+              },
+              {
+                "name": "Koski Mehmed Pasha Mosque and minaret ticket",
+                "cost": "₹460"
+              },
+              {
+                "name": "Crooked Bridge and Neretva riverfront at dusk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel-Restaurant Kriva Ćuprija",
+                "budget": "₹7,600–₹12,600/night"
+              },
+              {
+                "name": "Hotel Emen",
+                "budget": "₹6,900–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Šadrvan",
+              "Hindin Han",
+              "Tima-Irma"
+            ]
+          },
+          {
+            "theme": "Waterfalls, Ottoman House & Viewpoints",
+            "activities": [
+              {
+                "name": "Minibus or rental-car trip to Kravica Falls",
+                "cost": "₹1,150–₹1,840"
+              },
+              {
+                "name": "Kravica Falls entry ticket",
+                "cost": "₹920"
+              },
+              {
+                "name": "Bišćevića Ćošak Ottoman house ticket",
+                "cost": "₹230"
+              },
+              {
+                "name": "Partisan Memorial Cemetery walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Fortica hill viewpoint or skywalk taxi return",
+                "cost": "₹920–₹1,380"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel-Restaurant Kriva Ćuprija",
+                "budget": "₹7,600–₹12,600/night"
+              },
+              {
+                "name": "Hotel Emen",
+                "budget": "₹6,900–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Food House Mostar",
+              "Urban Grill",
+              "Gelateria 5"
+            ]
+          },
+          {
+            "theme": "Slow Mostar Add-On Day",
+            "activities": [
+              {
+                "name": "Mostar city market and Muslibegović House ticket",
+                "cost": "₹460"
+              },
+              {
+                "name": "Zrinjevac promenade and riverside coffee stops",
+                "cost": "₹0–₹460"
+              },
+              {
+                "name": "Mostar Peace Bell Tower visit",
+                "cost": "₹230"
+              },
+              {
+                "name": "Evening bridge-diving watch from the Neretva banks",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel-Restaurant Kriva Ćuprija",
+                "budget": "₹7,600–₹12,600/night"
+              },
+              {
+                "name": "Hotel Emen",
+                "budget": "₹6,900–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Restoran Lagero",
+              "National Restaurant Cevabdzinica Tima Irma",
+              "Slastičarna Palma"
+            ]
+          }
+        ]
+      },
+      "Blagaj": {
+        "name": "Blagaj",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Blagaj works best as a one-night riverside stop so you can see the tekija early or late, after the heaviest day-trip crowds leave from Mostar.",
+        "days": [
+          {
+            "theme": "Buna Spring, Tekija & Cliffside Walks",
+            "activities": [
+              {
+                "name": "Local bus or minibus from Mostar to Blagaj",
+                "cost": "₹120–₹180"
+              },
+              {
+                "name": "Blagaj Tekija entry ticket",
+                "cost": "₹184"
+              },
+              {
+                "name": "Buna spring and riverside boardwalk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Stjepan Grad fortress hike above the village",
+                "cost": "₹0"
+              },
+              {
+                "name": "Optional boat ride at the Buna source",
+                "cost": "₹230–₹460"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Blagaj Mostar",
+                "budget": "₹7,000–₹10,400/night"
+              },
+              {
+                "name": "Villa Bunski Biser",
+                "budget": "₹6,800–₹10,200/night"
+              }
+            ],
+            "meals": [
+              "Restoran Vrelo",
+              "Villa Bunski Biser Restaurant",
+              "Restoran Tekija"
+            ]
+          }
+        ]
+      },
+      "Trebinje": {
+        "name": "Trebinje",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One day covers the old town and monastery circuit, while a second day is worthwhile if you want cellar tastings and a slower Herzegovinian finale.",
+        "days": [
+          {
+            "theme": "Old Town, Bridges & Hilltop Monastery",
+            "activities": [
+              {
+                "name": "Minibus or rental-car transfer from Blagaj to Trebinje",
+                "cost": "₹920–₹2,300"
+              },
+              {
+                "name": "Arslanagić Bridge walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hercegovačka Gračanica monastery visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Platani square and Trebinje old town stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Osman-paša Mosque donation entry",
+                "cost": "₹0–₹230"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Platani",
+                "budget": "₹6,000–₹9,400/night"
+              },
+              {
+                "name": "Hotel Central Park",
+                "budget": "₹6,900–₹10,400/night"
+              }
+            ],
+            "meals": [
+              "RAS Restaurant",
+              "Motel & Konoba Studenac",
+              "Hotel Platani Restaurant"
+            ]
+          },
+          {
+            "theme": "Wine Cellars & Monastery Loop Add-On",
+            "activities": [
+              {
+                "name": "Tvrdoš Monastery cellar tasting",
+                "cost": "₹690–₹1,150"
+              },
+              {
+                "name": "Vukoje 1982 tasting flight or lunch pairing",
+                "cost": "₹1,150–₹1,840"
+              },
+              {
+                "name": "Trebišnjica riverfront cycle or walk",
+                "cost": "₹0–₹460"
+              },
+              {
+                "name": "Green market stop for local cheese, honey and figs",
+                "cost": "₹230–₹690"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Platani",
+                "budget": "₹6,000–₹9,400/night"
+              },
+              {
+                "name": "Hotel Central Park",
+                "budget": "₹6,900–₹10,400/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Vukoje",
+              "Restaurant KOLO",
+              "Restaurant Tarana Vinogradi"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Sarajevo",
+        "to": "Jajce",
+        "method": "Centrotrans coach from Sarajevo bus station, or a rental car via Travnik if you want flexibility for the Pliva Lakes stop",
+        "cost": "₹1,150–₹2,530"
+      },
+      {
+        "from": "Jajce",
+        "to": "Mostar",
+        "method": "Direct bus when schedules line up, otherwise a minibus connection via Donji Vakuf/Prozor; a rental car is faster on this inland leg",
+        "cost": "₹1,380–₹2,760"
+      },
+      {
+        "from": "Mostar",
+        "to": "Blagaj",
+        "method": "Local bus or minibus from Mostar, with rental cars useful only if you also plan to continue to Počitelj or Kravica the same day",
+        "cost": "₹120–₹690"
+      },
+      {
+        "from": "Blagaj",
+        "to": "Trebinje",
+        "method": "Regional minibus or a short rental-car drive via Stolac and the vineyards of eastern Herzegovina",
+        "cost": "₹920–₹2,300"
+      },
+      {
+        "from": "Trebinje",
+        "to": "Sarajevo",
+        "method": "Long-distance bus back to Sarajevo, or keep the rental car for the return if you want monastery and winery stops en route",
+        "cost": "₹1,610–₹4,140"
+      }
+    ],
+    "extras": [
+      "May to September is the sweet spot: rivers are full, buses run more frequently and Herzegovina is sunny without the worst midsummer heat spikes outside July and August.",
+      "Sarajevo and Mostar are easy by bus, but a one- or two-day rental car pays off if you want to combine Jajce, Blagaj, Kravica and Trebinje without long waits between regional departures.",
+      "Carry small cash for museum tickets, monastery donations and riverside restaurants, especially in Blagaj, Jajce and Trebinje.",
+      "Mostar and Blagaj can feel very hot in mid-afternoon summer sun, so plan bridges, tekija and waterfall stops early or late in the day.",
+      "If you are flying out, Trebinje also works well as a final stop before Dubrovnik Airport, but keep border-crossing time in mind."
+    ],
+    "cityImages": {
+      "Sarajevo": [
+        "Baščaršija Sarajevo Sebilj fountain",
+        "Sarajevo City Hall Vijecnica interior",
+        "Trebević cable car Sarajevo view"
+      ],
+      "Jajce": [
+        "Jajce waterfall old town Bosnia",
+        "Jajce fortress walls Bosnia",
+        "Mlincici watermills Pliva Lakes"
+      ],
+      "Mostar": [
+        "Stari Most Mostar old bridge",
+        "Koski Mehmed Pasha Mosque Mostar view",
+        "Kujundziluk Mostar old bazaar"
+      ],
+      "Blagaj": [
+        "Blagaj Tekija Buna spring",
+        "Blagaj Buna river cliffs Bosnia",
+        "Stjepan Grad Blagaj fortress"
+      ],
+      "Trebinje": [
+        "Platani square Trebinje plane trees",
+        "Hercegovacka Gracanica Trebinje monastery",
+        "Arslanagic Bridge Trebinje"
+      ]
+    }
+  }
+}

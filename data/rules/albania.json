@@ -1,0 +1,812 @@
+{
+  "name": "Albania",
+  "seed": false,
+  "lat": 41.15,
+  "lng": 20.17,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "January",
+    "February",
+    "November",
+    "December"
+  ],
+  "budget": {
+    "solo": "₹65K–₹1.1L",
+    "couple": "₹1.1L–₹1.9L",
+    "family4": "₹2.4L–₹3.8L"
+  },
+  "experiences": [
+    "Ottoman Towns",
+    "UNESCO Sites",
+    "Albanian Riviera",
+    "Mountain Hikes",
+    "Road Trips",
+    "Guesthouses"
+  ],
+  "avoid": [
+    "July and August bring heavier Riviera traffic, pricier seafront stays and fully booked Theth guesthouses.",
+    "Furgon and interurban bus frequencies drop in the evening, so do not plan long same-day transfers on the last departure."
+  ],
+  "combo": [
+    "Montenegro",
+    "North Macedonia",
+    "Greece"
+  ],
+  "landmark": "Butrint National Archaeological Park",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Tirana",
+      "lat": 41.3275,
+      "lng": 19.8187,
+      "notes": "Colorful capital for museums, cafe culture, Blloku nightlife and the easiest jump-off point for the rest of Albania"
+    },
+    {
+      "name": "Berat",
+      "lat": 40.7058,
+      "lng": 19.9522,
+      "notes": "UNESCO hill town of white Ottoman houses, castle lanes and riverfront evenings"
+    },
+    {
+      "name": "Gjirokastër",
+      "lat": 40.0758,
+      "lng": 20.1389,
+      "notes": "Stone-roofed UNESCO city with a dramatic hilltop castle, historic houses and a compact old bazaar"
+    },
+    {
+      "name": "Sarandë",
+      "lat": 39.8756,
+      "lng": 20.0053,
+      "notes": "Sunny Ionian base for Butrint, Ksamil beaches, Blue Eye day trips and easy waterfront evenings"
+    },
+    {
+      "name": "Vlorë",
+      "lat": 40.4661,
+      "lng": 19.4914,
+      "notes": "Gateway to the Albanian Riviera with a lively lungomare, nearby lagoons and easy boat trips"
+    },
+    {
+      "name": "Theth",
+      "lat": 42.3952,
+      "lng": 19.7745,
+      "notes": "Albanian Alps village for guesthouse stays, mountain hikes, waterfalls and the famous Blue Eye trek"
+    }
+  ],
+  "itinerary": {
+    "sim": "One Albania and Vodafone Albania tourist SIM/eSIM plans are the easiest buy on arrival, with 15–25GB packs typically around ₹1,020–₹1,530; guesthouses in Theth can have patchier service so download offline maps before heading north.",
+    "apps": [
+      "Google Maps",
+      "MAPS.ME",
+      "Gjirafa Travel",
+      "eTransport Albania",
+      "Booking.com",
+      "WhatsApp",
+      "Speed Taxi",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Tirana",
+      "Berat",
+      "Gjirokastër",
+      "Sarandë",
+      "Vlorë",
+      "Theth"
+    ],
+    "cities": {
+      "Tirana": {
+        "name": "Tirana",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is enough for the capital's museums, cafe districts and a Dajti mountain ride before moving south.",
+        "days": [
+          {
+            "theme": "Skanderbeg Square, Communist-Era Museums & Blloku",
+            "activities": [
+              {
+                "name": "Luna Travel airport bus to central Tirana",
+                "cost": "₹340"
+              },
+              {
+                "name": "Skanderbeg Square and Et'hem Bey Mosque walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bunk'Art 2 museum ticket",
+                "cost": "₹765"
+              },
+              {
+                "name": "House of Leaves museum ticket",
+                "cost": "₹595"
+              },
+              {
+                "name": "Evening cafe and bar hop around Blloku",
+                "cost": "₹425–₹1,020"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Boutique Gloria",
+                "budget": "₹4,700–₹7,700/night"
+              },
+              {
+                "name": "Theranda Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Mullixhiu",
+              "Oda - Traditional Albanian Food",
+              "Era Blloku"
+            ]
+          },
+          {
+            "theme": "Dajti Views, New Bazaar & Slow Tirana",
+            "activities": [
+              {
+                "name": "Dajti Ekspres return cable-car ticket",
+                "cost": "₹1,275"
+              },
+              {
+                "name": "Mount Dajti viewpoint and short ridge walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Pazari i Ri market stroll and coffee stop",
+                "cost": "₹255–₹510"
+              },
+              {
+                "name": "Pyramid of Tirana and Grand Park walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Toptani or Blloku dinner with local wine",
+                "cost": "₹680–₹1,360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Boutique Gloria",
+                "budget": "₹4,700–₹7,700/night"
+              },
+              {
+                "name": "Theranda Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Padam Boutique Hotel & Restaurant",
+              "Oda - Traditional Albanian Food",
+              "Salt Restaurant"
+            ]
+          },
+          {
+            "theme": "Krujë or Extra Museum Add-On",
+            "activities": [
+              {
+                "name": "Interurban bus to Krujë return",
+                "cost": "₹510–₹850"
+              },
+              {
+                "name": "Krujë bazaar and castle museum stop",
+                "cost": "₹340–₹680"
+              },
+              {
+                "name": "Optional Bunk'Art 1 combo add-on if you skipped Krujë",
+                "cost": "₹1,020–₹1,105"
+              },
+              {
+                "name": "Sunset drinks back in Tirana",
+                "cost": "₹425–₹1,020"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Boutique Gloria",
+                "budget": "₹4,700–₹7,700/night"
+              },
+              {
+                "name": "Theranda Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Artigiano at Vila",
+              "Era Blloku",
+              "Komiteti - Kafe Muzeum"
+            ]
+          }
+        ]
+      },
+      "Berat": {
+        "name": "Berat",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day covers the UNESCO core well; stay a second night only if you want a slower canyon or village detour.",
+        "days": [
+          {
+            "theme": "Berat Castle, Onufri Icons & Ottoman Quarters",
+            "activities": [
+              {
+                "name": "Interurban bus Tirana to Berat",
+                "cost": "₹510–₹680"
+              },
+              {
+                "name": "Berat Castle entry",
+                "cost": "₹255"
+              },
+              {
+                "name": "Onufri Iconographic Museum ticket",
+                "cost": "₹340"
+              },
+              {
+                "name": "Mangalem Quarter, Gorica Bridge and Osum riverside walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunset climb to the Holy Trinity Church viewpoint",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Mangalemi",
+                "budget": "₹4,700–₹7,700/night"
+              },
+              {
+                "name": "Hotel Rezidenca Desaret",
+                "budget": "₹4,300–₹6,800/night"
+              }
+            ],
+            "meals": [
+              "Homemade Food Lili",
+              "Antigoni Restaurant",
+              "Mangalemi Restaurant"
+            ]
+          },
+          {
+            "theme": "Ethnographic Berat & Valley Detour",
+            "activities": [
+              {
+                "name": "Berat Ethnographic Museum ticket",
+                "cost": "₹255"
+              },
+              {
+                "name": "Lead Mosque and old bridge walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Shared taxi or driver to Bogovë Waterfall",
+                "cost": "₹1,275–₹2,125"
+              },
+              {
+                "name": "Wine tasting or long lunch in the valley",
+                "cost": "₹850–₹1,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Mangalemi",
+                "budget": "₹4,700–₹7,700/night"
+              },
+              {
+                "name": "Hotel Rezidenca Desaret",
+                "budget": "₹4,300–₹6,800/night"
+              }
+            ],
+            "meals": [
+              "Temi Albanian Food",
+              "Restaurant Klea",
+              "Antigoni Restaurant"
+            ]
+          }
+        ]
+      },
+      "Gjirokastër": {
+        "name": "Gjirokastër",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "An overnight is the minimum, but two days lets you enjoy the castle, historic tower houses and a slower bazaar evening.",
+        "days": [
+          {
+            "theme": "Stone City Arrival & Castle Ridge",
+            "activities": [
+              {
+                "name": "Interurban bus or furgon Berat to Gjirokastër",
+                "cost": "₹680–₹1,020"
+              },
+              {
+                "name": "Gjirokastër Castle ticket",
+                "cost": "₹340"
+              },
+              {
+                "name": "Old Bazaar and stone lane walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Skenduli House guided visit",
+                "cost": "₹170–₹255"
+              },
+              {
+                "name": "Sunset tea or drinks over the bazaar",
+                "cost": "₹255–₹510"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Kalemi 2",
+                "budget": "₹5,100–₹7,700/night"
+              },
+              {
+                "name": "Hotel Gjirokastra",
+                "budget": "₹4,300–₹6,400/night"
+              }
+            ],
+            "meals": [
+              "Taverna Tradicionale Kardhashi",
+              "Kujtimi",
+              "Odaja Restaurant"
+            ]
+          },
+          {
+            "theme": "Ottoman Houses, Tunnels & South Albania Flavours",
+            "activities": [
+              {
+                "name": "Zekate House ticket",
+                "cost": "₹170–₹255"
+              },
+              {
+                "name": "Cold War Tunnel guided visit",
+                "cost": "₹170–₹255"
+              },
+              {
+                "name": "Ismail Kadare House Museum ticket",
+                "cost": "₹255"
+              },
+              {
+                "name": "Taxi to Ali Pasha Bridge and short walk",
+                "cost": "₹425–₹850"
+              },
+              {
+                "name": "Slow dinner with local qifqi or lamb dishes",
+                "cost": "₹510–₹1,020"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Kalemi 2",
+                "budget": "₹5,100–₹7,700/night"
+              },
+              {
+                "name": "Hotel Gjirokastra",
+                "budget": "₹4,300–₹6,400/night"
+              }
+            ],
+            "meals": [
+              "Taverna Tradicionale Kardhashi",
+              "Kujtimi",
+              "Mapo"
+            ]
+          }
+        ]
+      },
+      "Sarandë": {
+        "name": "Sarandë",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Sarandë as the practical south-coast base: one day for Butrint and Ksamil, another for the Blue Eye or a pure beach day.",
+        "days": [
+          {
+            "theme": "Promenade, Lëkurësi Sunset & Easy Riviera Start",
+            "activities": [
+              {
+                "name": "Interurban bus Gjirokastër to Sarandë",
+                "cost": "₹425–₹680"
+              },
+              {
+                "name": "Sarandë promenade and synagogue ruins walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Local bus or taxi to Lëkurësi Castle",
+                "cost": "₹255–₹595"
+              },
+              {
+                "name": "Lëkurësi Castle sunset terrace",
+                "cost": "₹0"
+              },
+              {
+                "name": "Waterfront seafood dinner",
+                "cost": "₹850–₹1,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Piccolino",
+                "budget": "₹4,300–₹6,400/night"
+              },
+              {
+                "name": "Kaonia Hotel",
+                "budget": "₹5,100–₹7,700/night"
+              }
+            ],
+            "meals": [
+              "Haxhi",
+              "Limani",
+              "Taverna Fish Filipi"
+            ]
+          },
+          {
+            "theme": "Butrint Archaeology & Ksamil Water",
+            "activities": [
+              {
+                "name": "Bus Sarandë to Butrint return",
+                "cost": "₹255–₹425"
+              },
+              {
+                "name": "Butrint National Archaeological Park ticket",
+                "cost": "₹850"
+              },
+              {
+                "name": "Bus or taxi onward to Ksamil",
+                "cost": "₹170–₹510"
+              },
+              {
+                "name": "Ksamil beach time with optional two-sunbed set",
+                "cost": "₹0–₹1,700"
+              },
+              {
+                "name": "Lake Butrint mussel or seafood lunch",
+                "cost": "₹680–₹1,275"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Piccolino",
+                "budget": "₹4,300–₹6,400/night"
+              },
+              {
+                "name": "Kaonia Hotel",
+                "budget": "₹5,100–₹7,700/night"
+              }
+            ],
+            "meals": [
+              "Taverna Fish Filipi",
+              "Haxhi",
+              "Bar Restaurant Limani"
+            ]
+          },
+          {
+            "theme": "Blue Eye Spring Day",
+            "activities": [
+              {
+                "name": "Bus, taxi or rental-car trip to Blue Eye (Syri i Kaltër)",
+                "cost": "₹850–₹1,700"
+              },
+              {
+                "name": "Blue Eye spring entry",
+                "cost": "₹45"
+              },
+              {
+                "name": "Optional electric train or scooter from car park",
+                "cost": "₹170–₹425"
+              },
+              {
+                "name": "Late afternoon coffee back on Sarandë promenade",
+                "cost": "₹170–₹340"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Piccolino",
+                "budget": "₹4,300–₹6,400/night"
+              },
+              {
+                "name": "Kaonia Hotel",
+                "budget": "₹5,100–₹7,700/night"
+              }
+            ],
+            "meals": [
+              "Taverna Rrapo",
+              "Haxhi",
+              "Taverna Peshkatari"
+            ]
+          }
+        ]
+      },
+      "Vlorë": {
+        "name": "Vlorë",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One night is enough if you mainly want the waterfront and a break in the long south-to-north transit; add a second for the lagoon or a boat day.",
+        "days": [
+          {
+            "theme": "Lungomare, Independence History & Seafront Dinner",
+            "activities": [
+              {
+                "name": "Riviera bus or furgon Sarandë to Vlorë",
+                "cost": "₹850–₹1,275"
+              },
+              {
+                "name": "National Museum of Independence ticket",
+                "cost": "₹85–₹255"
+              },
+              {
+                "name": "Muradie Mosque and old-town walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lungomare sunset promenade",
+                "cost": "₹0"
+              },
+              {
+                "name": "Seafood dinner by the water",
+                "cost": "₹680–₹1,360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Nika",
+                "budget": "₹4,300–₹6,800/night"
+              },
+              {
+                "name": "Hotel Onorato",
+                "budget": "₹5,100–₹7,700/night"
+              }
+            ],
+            "meals": [
+              "Restorant Joni Vlore",
+              "Patio Restaurant",
+              "Tre Forchette"
+            ]
+          },
+          {
+            "theme": "Zvernec Lagoon or Karaburun Add-On",
+            "activities": [
+              {
+                "name": "Bus or taxi to Zvernec Monastery and Narta Lagoon",
+                "cost": "₹680–₹1,275"
+              },
+              {
+                "name": "Zvernec Monastery visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Orikum Archaeological Park ticket",
+                "cost": "₹170–₹340"
+              },
+              {
+                "name": "Optional Karaburun Peninsula boat trip",
+                "cost": "₹1,700–₹4,250"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Nika",
+                "budget": "₹4,300–₹6,800/night"
+              },
+              {
+                "name": "Hotel Onorato",
+                "budget": "₹5,100–₹7,700/night"
+              }
+            ],
+            "meals": [
+              "Anchor Bar",
+              "Anchor Bar",
+              "Patio Restaurant"
+            ]
+          }
+        ]
+      },
+      "Theth": {
+        "name": "Theth",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Plan at least two nights for Theth so the long approach feels worth it and you can do one proper full-day hike.",
+        "days": [
+          {
+            "theme": "Arrival in the Albanian Alps",
+            "activities": [
+              {
+                "name": "Shared transfer or self-drive from Vlorë to Theth via Tirana and Shkodër",
+                "cost": "₹2,550–₹3,825"
+              },
+              {
+                "name": "Theth Church and village walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lock-in Tower donation or local guide fee",
+                "cost": "₹170–₹255"
+              },
+              {
+                "name": "Guesthouse dinner with homemade mountain dishes",
+                "cost": "₹680–₹1,020"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Guesthouse Gjin Thana",
+                "budget": "₹2,600–₹4,300/night"
+              },
+              {
+                "name": "Molla Guest House",
+                "budget": "₹3,400–₹5,100/night"
+              }
+            ],
+            "meals": [
+              "Guesthouse Gjin Thana",
+              "Molla Guest House",
+              "Shpella Guesthouse"
+            ]
+          },
+          {
+            "theme": "Blue Eye of Theth & Grunas Waterfall",
+            "activities": [
+              {
+                "name": "Hike to Grunas Waterfall",
+                "cost": "₹0"
+              },
+              {
+                "name": "Blue Eye of Theth hike",
+                "cost": "₹0"
+              },
+              {
+                "name": "Optional 4x4 ride for the Nderlysaj section one way",
+                "cost": "₹850–₹1,700"
+              },
+              {
+                "name": "Packed lunch and mountain coffee breaks",
+                "cost": "₹425–₹680"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Guesthouse Gjin Thana",
+                "budget": "₹2,600–₹4,300/night"
+              },
+              {
+                "name": "Molla Guest House",
+                "budget": "₹3,400–₹5,100/night"
+              }
+            ],
+            "meals": [
+              "Bujtina Pllumi",
+              "Molla Guest House",
+              "Shpella Guesthouse"
+            ]
+          },
+          {
+            "theme": "Slow Valley Day Before the Return",
+            "activities": [
+              {
+                "name": "Nderlysaj riverside walk or short forest trail",
+                "cost": "₹0"
+              },
+              {
+                "name": "Optional local guide for a deeper village walk",
+                "cost": "₹1,275–₹2,550"
+              },
+              {
+                "name": "Relaxed lunch with local cheese, byrek and yogurt",
+                "cost": "₹510–₹850"
+              },
+              {
+                "name": "Evening bonfire or guesthouse terrace time",
+                "cost": "₹170–₹425"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Guesthouse Gjin Thana",
+                "budget": "₹2,600–₹4,300/night"
+              },
+              {
+                "name": "Molla Guest House",
+                "budget": "₹3,400–₹5,100/night"
+              }
+            ],
+            "meals": [
+              "Guesthouse Gjin Thana",
+              "Bujtina Terthorja",
+              "Molla Guest House"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Tirana",
+        "to": "Berat",
+        "method": "Interurban bus from Tirana's south terminal, or a rental car via SH4 if you want more flexibility on village stops.",
+        "cost": "₹510–₹680"
+      },
+      {
+        "from": "Berat",
+        "to": "Gjirokastër",
+        "method": "Direct bus or furgon when available, otherwise change in Fier on the southbound route.",
+        "cost": "₹680–₹1,020"
+      },
+      {
+        "from": "Gjirokastër",
+        "to": "Sarandë",
+        "method": "Frequent interurban bus or furgon via the SH99 mountain road.",
+        "cost": "₹425–₹680"
+      },
+      {
+        "from": "Sarandë",
+        "to": "Vlorë",
+        "method": "Coastal bus or furgon via Himarë; a rental car is faster if you want beach stops on the Riviera.",
+        "cost": "₹850–₹1,275"
+      },
+      {
+        "from": "Vlorë",
+        "to": "Theth",
+        "method": "Best done by rental car, or split the trip with interurban buses to Tirana and Shkodër plus a final seasonal furgon into Theth.",
+        "cost": "₹2,550–₹3,825"
+      },
+      {
+        "from": "Theth",
+        "to": "Tirana",
+        "method": "Seasonal shared minibus via Shkodër, or self-drive back if you rented a car for the mountain section.",
+        "cost": "₹1,700–₹2,550"
+      }
+    ],
+    "extras": [
+      "May to September is the sweet spot: June and September are the easiest months for warm sea days without peak-summer traffic and sold-out guesthouses.",
+      "Use buses and furgons for the south, but consider a rental car if you want to combine Riviera beaches with the long Vlorë-Theth jump.",
+      "Google Maps and eTransport Albania are useful for planning, but always reconfirm bus times with your hotel because last-minute changes still happen.",
+      "Carry cash for museum tickets, furgons and small-town cafes; card acceptance improves in Tirana and Sarandë but drops fast in the mountains.",
+      "Book Theth guesthouses and Sarandë waterfront rooms a few days ahead in July and August, especially around weekends."
+    ],
+    "cityImages": {
+      "Tirana": [
+        "Skanderbeg Square Tirana Albania",
+        "Pyramid of Tirana Albania",
+        "Dajti Ekspres Tirana view"
+      ],
+      "Berat": [
+        "Berat Castle Albania",
+        "Mangalem Quarter Berat Albania",
+        "Gorica Bridge Berat"
+      ],
+      "Gjirokastër": [
+        "Gjirokaster Castle Albania",
+        "Gjirokaster Bazaar stone city",
+        "Skenduli House Gjirokaster"
+      ],
+      "Sarandë": [
+        "Lekuresi Castle Sarande Albania",
+        "Butrint National Park Albania ruins",
+        "Blue Eye Sarande Albania"
+      ],
+      "Vlorë": [
+        "Vlore Lungomare sunset Albania",
+        "Zvernec Monastery Albania",
+        "Muradie Mosque Vlore"
+      ],
+      "Theth": [
+        "Theth Church Albania Alps",
+        "Grunas Waterfall Theth",
+        "Blue Eye Theth Albania"
+      ]
+    }
+  }
+}

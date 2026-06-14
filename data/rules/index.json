@@ -575,9 +575,9 @@
     "lng": 21.01,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 10
   },
   {
     "name": "Bosnia and Herzegovina",
@@ -585,9 +585,9 @@
     "lng": 17.68,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 10
   },
   {
     "name": "Montenegro",
@@ -595,9 +595,9 @@
     "lng": 19.37,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 14
   },
   {
     "name": "North Macedonia",
@@ -615,9 +615,9 @@
     "lng": 20.17,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 15
   },
   {
     "name": "Kosovo",
@@ -655,9 +655,9 @@
     "lng": 25.49,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 11,
+    "maxDays": 15
   },
   {
     "name": "Moldova",

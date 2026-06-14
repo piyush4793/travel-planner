@@ -1,0 +1,754 @@
+{
+  "name": "Montenegro",
+  "seed": false,
+  "lat": 42.71,
+  "lng": 19.37,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹90K–₹1.45L",
+    "couple": "₹1.6L–₹2.45L",
+    "family4": "₹3.1L–₹4.9L"
+  },
+  "experiences": [
+    "Bay Views",
+    "Beaches",
+    "History",
+    "Mountains",
+    "National Parks",
+    "Road Trips"
+  ],
+  "avoid": [
+    "Budva Riviera traffic, parking and hotel rates jump sharply from mid-July to late August.",
+    "Durmitor weather can flip from sun to cold rain even in summer, so keep one flexible mountain day."
+  ],
+  "combo": [
+    "Croatia",
+    "Albania",
+    "Bosnia and Herzegovina"
+  ],
+  "landmark": "Bay of Kotor",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Podgorica is the easiest air gateway, but most travellers keep the capital short and spend longer on the coast or in Durmitor.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Podgorica",
+      "lat": 42.4304,
+      "lng": 19.2594,
+      "notes": "Practical arrival hub with riverfront walks, grilled-food institutions and the easiest jump-off to Skadar Lake or the old royal capital."
+    },
+    {
+      "name": "Kotor",
+      "lat": 42.4247,
+      "lng": 18.7712,
+      "notes": "Medieval lanes, fortress climbs, church museums and easy bay boat trips make this Montenegro's classic base."
+    },
+    {
+      "name": "Budva",
+      "lat": 42.2911,
+      "lng": 18.8403,
+      "notes": "A compact walled old town paired with beach clubs, boat hops and the liveliest stretch of Adriatic promenade in Montenegro."
+    },
+    {
+      "name": "Durmitor",
+      "lat": 43.1555,
+      "lng": 19.1226,
+      "notes": "Use Zabljak as the base for Black Lake, Tara Canyon viewpoints and high-alpine road trips through Durmitor National Park."
+    },
+    {
+      "name": "Cetinje",
+      "lat": 42.3906,
+      "lng": 18.9142,
+      "notes": "Former royal capital with museums, monastery history and the best access road to Lovcen and Njegos Mausoleum."
+    },
+    {
+      "name": "Sveti Stefan",
+      "lat": 42.256,
+      "lng": 18.8955,
+      "notes": "Iconic islet viewpoints, Milocer pines and a quieter coast stay than central Budva."
+    }
+  ],
+  "itinerary": {
+    "sim": "One Montenegro Tourist prepaid data or Crnogorski Telekom works well on the coast and in towns, while an Airalo Eurolink eSIM is the easiest option if you are continuing through the Balkans.",
+    "apps": [
+      "Busticket4Me",
+      "Google Maps",
+      "Booking.com",
+      "Rome2Rio",
+      "XE Currency",
+      "AccuWeather"
+    ],
+    "cityOrder": [
+      "Podgorica",
+      "Cetinje",
+      "Kotor",
+      "Budva",
+      "Sveti Stefan",
+      "Durmitor"
+    ],
+    "cities": {
+      "Podgorica": {
+        "name": "Podgorica",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One day is enough for the capital itself; add a second only if you want a relaxed Skadar Lake detour or extra cafe time before heading coastward.",
+        "days": [
+          {
+            "theme": "Podgorica Arrival, Old Town & Morača River",
+            "activities": [
+              {
+                "name": "Stara Varos and Clock Tower walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Natural History Museum of Montenegro",
+                "cost": "₹270"
+              },
+              {
+                "name": "Millennium Bridge and Morača riverfront stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Petrovic Castle park stop",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Aurel",
+                "budget": "₹8,100–₹12,600/night"
+              },
+              {
+                "name": "Boscovich Boutique Hotel",
+                "budget": "₹9,900–₹14,400/night"
+              }
+            ],
+            "meals": [
+              "Pod Volat",
+              "Hemera Restoran",
+              "Lanterna Podgorica"
+            ]
+          },
+          {
+            "theme": "Skadar Lake Half-Day Add-On",
+            "activities": [
+              {
+                "name": "Train from Podgorica to Virpazar",
+                "cost": "₹180–₹270"
+              },
+              {
+                "name": "Virpazar shared boat cruise on Skadar Lake",
+                "cost": "₹1,350–₹1,800"
+              },
+              {
+                "name": "Pavlova Strana viewpoint taxi or organized transfer",
+                "cost": "₹1,350–₹2,250"
+              },
+              {
+                "name": "Evening craft beer at The Republic Of Good Food",
+                "cost": "₹540–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Aurel",
+                "budget": "₹8,100–₹12,600/night"
+              },
+              {
+                "name": "Boscovich Boutique Hotel",
+                "budget": "₹9,900–₹14,400/night"
+              }
+            ],
+            "meals": [
+              "Restoran Jezero",
+              "The Republic Of Good Food",
+              "Pod Volat"
+            ]
+          }
+        ]
+      },
+      "Cetinje": {
+        "name": "Cetinje",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "A full day covers the royal-capital museums and Lovcen viewpoints without needing an overnight unless you want a slow mountain stay.",
+        "days": [
+          {
+            "theme": "Royal Capital Museums & Lovcen Heights",
+            "activities": [
+              {
+                "name": "Local bus from Podgorica to Cetinje",
+                "cost": "₹360–₹540"
+              },
+              {
+                "name": "National Museum of Montenegro combined ticket",
+                "cost": "₹450–₹630"
+              },
+              {
+                "name": "Cetinje Monastery visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lovcen National Park entry",
+                "cost": "₹270–₹450"
+              },
+              {
+                "name": "Njegos Mausoleum entry",
+                "cost": "₹450–₹630"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Gradska Cetinje",
+                "budget": "₹7,200–₹11,700/night"
+              },
+              {
+                "name": "Hotel Monte Rosa",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Kole",
+              "Taverna Cetinje",
+              "Restoran Konak"
+            ]
+          }
+        ]
+      },
+      "Kotor": {
+        "name": "Kotor",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives you the old town, fortress and bay boat trip; a third day is worth it only if you want a rental-car loop around the whole bay.",
+        "days": [
+          {
+            "theme": "Kotor Old Town, Cathedral & City Walls",
+            "activities": [
+              {
+                "name": "Local bus from Cetinje to Kotor",
+                "cost": "₹450–₹630"
+              },
+              {
+                "name": "Sea Gate, St. Luke's Church and Old Town lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "St. Tryphon Cathedral",
+                "cost": "₹360"
+              },
+              {
+                "name": "Kotor City Walls and San Giovanni Fortress",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "Kotor Farmers Market stop",
+                "cost": "₹180–₹450"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Marija",
+                "budget": "₹9,900–₹15,300/night"
+              },
+              {
+                "name": "Porto In Hotel",
+                "budget": "₹11,700–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Konoba Scala Santa",
+              "Tanjga Family Restaurant",
+              "Galion"
+            ]
+          },
+          {
+            "theme": "Perast, Our Lady of the Rocks & Maritime Kotor",
+            "activities": [
+              {
+                "name": "Blue Line or local bus from Kotor to Perast",
+                "cost": "₹270–₹360"
+              },
+              {
+                "name": "Boat to Our Lady of the Rocks",
+                "cost": "₹270–₹360"
+              },
+              {
+                "name": "Our Lady of the Rocks museum",
+                "cost": "₹135"
+              },
+              {
+                "name": "Maritime Museum of Montenegro",
+                "cost": "₹360–₹450"
+              },
+              {
+                "name": "Kotor waterfront sunset walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Marija",
+                "budget": "₹9,900–₹15,300/night"
+              },
+              {
+                "name": "Porto In Hotel",
+                "budget": "₹11,700–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Konoba Scala Santa",
+              "Cesarica",
+              "Galion"
+            ]
+          },
+          {
+            "theme": "Bay of Kotor Rental-Car Loop",
+            "activities": [
+              {
+                "name": "Rental car for a full Bay of Kotor loop",
+                "cost": "₹3,150–₹4,950/day"
+              },
+              {
+                "name": "Kamenari-Lepetane ferry crossing with car",
+                "cost": "₹450"
+              },
+              {
+                "name": "Porto Montenegro marina walk in Tivat",
+                "cost": "₹0"
+              },
+              {
+                "name": "Herceg Novi old town stairway wander",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Marija",
+                "budget": "₹9,900–₹15,300/night"
+              },
+              {
+                "name": "Porto In Hotel",
+                "budget": "₹11,700–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Konoba Feral",
+              "Big Ben Herceg Novi",
+              "Bokeski Gusti"
+            ]
+          }
+        ]
+      },
+      "Budva": {
+        "name": "Budva",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "One night works if you only want the old town and beach, but two days is better if you want a proper Adriatic break before moving south or inland.",
+        "days": [
+          {
+            "theme": "Budva Old Town & Beachfront Classics",
+            "activities": [
+              {
+                "name": "Blue Line or Globtour local bus from Kotor to Budva",
+                "cost": "₹270–₹450"
+              },
+              {
+                "name": "Budva Old Town walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Budva Citadel",
+                "cost": "₹450"
+              },
+              {
+                "name": "Mogren Beach swim or coastal path",
+                "cost": "₹0"
+              },
+              {
+                "name": "Holy Trinity Church and marina promenade",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Fontana Hotel & Gastronomy",
+                "budget": "₹9,900–₹15,300/night"
+              },
+              {
+                "name": "Hotel Villa Bojana",
+                "budget": "₹7,200–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Jadran Kod Krsta",
+              "Konoba Stari Grad",
+              "Kuzina"
+            ]
+          },
+          {
+            "theme": "Budva Riviera Boat & Viewpoint Day",
+            "activities": [
+              {
+                "name": "Boat taxi to Sveti Nikola Island",
+                "cost": "₹450–₹630"
+              },
+              {
+                "name": "Mogren Fortress viewpoint walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Local bus to Jaz Beach and return",
+                "cost": "₹180–₹270"
+              },
+              {
+                "name": "Sunset drinks on the Budva marina",
+                "cost": "₹720–₹1,350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Fontana Hotel & Gastronomy",
+                "budget": "₹9,900–₹15,300/night"
+              },
+              {
+                "name": "Hotel Villa Bojana",
+                "budget": "₹7,200–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Porto",
+              "Jadran Kod Krsta",
+              "Perla Restaurant Club"
+            ]
+          },
+          {
+            "theme": "Slow Beach Club or Water Park Add-On",
+            "activities": [
+              {
+                "name": "Aqua Park Budva day ticket",
+                "cost": "₹1,800–₹2,250"
+              },
+              {
+                "name": "Slovenska Plaza beach day",
+                "cost": "₹0–₹1,350"
+              },
+              {
+                "name": "Evening old-town bars and gelato",
+                "cost": "₹630–₹1,260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Fontana Hotel & Gastronomy",
+                "budget": "₹9,900–₹15,300/night"
+              },
+              {
+                "name": "Hotel Villa Bojana",
+                "budget": "₹7,200–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Konoba Bocun",
+              "Kuzina",
+              "Jadran Kod Krsta"
+            ]
+          }
+        ]
+      },
+      "Sveti Stefan": {
+        "name": "Sveti Stefan",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "This works best as a one-night scenic coast stop focused on the viewpoints, Milocer parkland and a quieter beach mood than Budva.",
+        "days": [
+          {
+            "theme": "Sveti Stefan Viewpoints, Milocer & Monastery Walk",
+            "activities": [
+              {
+                "name": "Mediteran Express or local bus from Budva to Sveti Stefan",
+                "cost": "₹180–₹270"
+              },
+              {
+                "name": "Sveti Stefan main viewpoint and photo stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Milocer Park and King's Beach coastal walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Praskvica Monastery visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Seasonal boat or water taxi back toward Budva beaches",
+                "cost": "₹720–₹1,080"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Azimut",
+                "budget": "₹11,700–₹18,900/night"
+              },
+              {
+                "name": "Hotel Adrovic",
+                "budget": "₹8,100–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "DRAGO Restaurant",
+              "Famelja Kentera",
+              "Olive Restaurant"
+            ]
+          }
+        ]
+      },
+      "Durmitor": {
+        "name": "Durmitor",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Two days covers Black Lake and Tara viewpoints, but three is the sweet spot if you want one active day and one flexible weather buffer in the mountains.",
+        "days": [
+          {
+            "theme": "Arrival in Zabljak & Black Lake",
+            "activities": [
+              {
+                "name": "Bus from Budva or Podgorica to Zabljak",
+                "cost": "₹1,350–₹1,980"
+              },
+              {
+                "name": "Durmitor National Park / Black Lake entry",
+                "cost": "₹360"
+              },
+              {
+                "name": "Black Lake walking circuit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Town viewpoint sunset in Zabljak",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Soa",
+                "budget": "₹9,900–₹15,300/night"
+              },
+              {
+                "name": "Hotel Polar Star",
+                "budget": "₹7,200–₹11,700/night"
+              }
+            ],
+            "meals": [
+              "Konoba Luna",
+              "MB Restaurant",
+              "Hotel Soa Restaurant"
+            ]
+          },
+          {
+            "theme": "Tara Canyon & Durdevica Tara Bridge",
+            "activities": [
+              {
+                "name": "Local taxi or minibus to Durdevica Tara Bridge",
+                "cost": "₹900–₹1,350"
+              },
+              {
+                "name": "Durdevica Tara Bridge viewpoints",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tara Canyon zipline",
+                "cost": "₹1,800–₹2,700"
+              },
+              {
+                "name": "Riblje Lake or canyon picnic stop",
+                "cost": "₹180–₹450"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Soa",
+                "budget": "₹9,900–₹15,300/night"
+              },
+              {
+                "name": "Hotel Polar Star",
+                "budget": "₹7,200–₹11,700/night"
+              }
+            ],
+            "meals": [
+              "Konoba Luna",
+              "Restoran Zabljak",
+              "MB Restaurant"
+            ]
+          },
+          {
+            "theme": "Durmitor Ring Road or Hiking Day",
+            "activities": [
+              {
+                "name": "Rental car for Sedlo Pass and Durmitor Ring Road",
+                "cost": "₹3,150–₹4,950/day"
+              },
+              {
+                "name": "Sedlo Pass and mountain viewpoint stops",
+                "cost": "₹0"
+              },
+              {
+                "name": "Stecci medieval tombstones near Novakovići",
+                "cost": "₹0"
+              },
+              {
+                "name": "Traditional cheese and prsut tasting",
+                "cost": "₹450–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Soa",
+                "budget": "₹9,900–₹15,300/night"
+              },
+              {
+                "name": "Hotel Polar Star",
+                "budget": "₹7,200–₹11,700/night"
+              }
+            ],
+            "meals": [
+              "Kod Andjela",
+              "Konoba Luna",
+              "Hotel Soa Restaurant"
+            ]
+          },
+          {
+            "theme": "Rafting or Easy Extra Mountain Day",
+            "activities": [
+              {
+                "name": "Half-day Tara River rafting",
+                "cost": "₹4,500–₹7,200"
+              },
+              {
+                "name": "Easy walk to Barno Lake or nearby meadows",
+                "cost": "₹0"
+              },
+              {
+                "name": "Return bus to Podgorica",
+                "cost": "₹1,080–₹1,350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Soa",
+                "budget": "₹9,900–₹15,300/night"
+              },
+              {
+                "name": "Hotel Polar Star",
+                "budget": "₹7,200–₹11,700/night"
+              }
+            ],
+            "meals": [
+              "Restoran Zabljak",
+              "MB Restaurant",
+              "Konoba Luna"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Podgorica",
+        "to": "Cetinje",
+        "method": "Frequent local bus from Podgorica Bus Station to Cetinje Bus Station",
+        "cost": "₹360–₹540"
+      },
+      {
+        "from": "Cetinje",
+        "to": "Kotor",
+        "method": "Local bus down the Lovcen serpentines to Kotor, or a short rental-car drive if you want viewpoint stops",
+        "cost": "₹450–₹630 by bus; ₹3,150–₹4,950/day for car"
+      },
+      {
+        "from": "Kotor",
+        "to": "Budva",
+        "method": "Blue Line, Globtour or another local coast bus between the two bus stations",
+        "cost": "₹270–₹450"
+      },
+      {
+        "from": "Budva",
+        "to": "Sveti Stefan",
+        "method": "Mediteran Express or local Riviera bus along the coast road",
+        "cost": "₹180–₹270"
+      },
+      {
+        "from": "Sveti Stefan",
+        "to": "Durmitor",
+        "method": "Bus back via Budva and Podgorica/Zabljak, or a rental car if you want to stop around Lake Skadar or Niksic",
+        "cost": "₹1,350–₹1,980 by bus; ₹3,150–₹4,950/day for car"
+      },
+      {
+        "from": "Durmitor",
+        "to": "Podgorica",
+        "method": "Intercity bus from Zabljak to Podgorica for the easiest airport return",
+        "cost": "₹1,080–₹1,350"
+      }
+    ],
+    "extras": [
+      "May, June and September are the easiest months for warm coast weather, clear bay views and manageable traffic on the Budva-Kotor corridor.",
+      "If you are short on time, drop Podgorica to an arrival night and keep the extra day for Kotor or Durmitor instead.",
+      "A rental car is most useful for Lovcen and Durmitor, but buses are cheaper and easy enough on the Podgorica-Cetinje-Kotor-Budva coastal spine.",
+      "Carry a light jacket even in August if you are sleeping in Zabljak; evenings are much colder than the coast.",
+      "Book Kotor walls, boat trips and popular Budva/Sveti Stefan stays early for peak summer weekends."
+    ],
+    "cityImages": {
+      "Podgorica": [
+        "Millennium Bridge Podgorica",
+        "Stara Varos Podgorica",
+        "Skadar Lake Virpazar Montenegro"
+      ],
+      "Cetinje": [
+        "Blue Palace Cetinje",
+        "Cetinje Monastery Montenegro",
+        "Njegos Mausoleum Lovcen"
+      ],
+      "Kotor": [
+        "Kotor Old Town Montenegro",
+        "Kotor City Walls San Giovanni Fortress",
+        "Our Lady of the Rocks Perast"
+      ],
+      "Budva": [
+        "Budva Old Town Montenegro",
+        "Mogren Beach Budva",
+        "Budva Citadel"
+      ],
+      "Sveti Stefan": [
+        "Sveti Stefan Montenegro",
+        "Milocer Park Montenegro",
+        "Praskvica Monastery"
+      ],
+      "Durmitor": [
+        "Black Lake Durmitor National Park",
+        "Durdevica Tara Bridge Montenegro",
+        "Sedlo Pass Durmitor"
+      ]
+    }
+  }
+}

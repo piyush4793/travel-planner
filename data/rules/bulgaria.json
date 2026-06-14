@@ -1,0 +1,705 @@
+{
+  "name": "Bulgaria",
+  "seed": false,
+  "lat": 42.73,
+  "lng": 25.49,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "November"
+  ],
+  "budget": {
+    "solo": "₹65K–₹1.1L",
+    "couple": "₹1.1L–₹1.9L",
+    "family4": "₹2.3L–₹3.7L"
+  },
+  "experiences": [
+    "Sofia landmarks",
+    "Plovdiv Old Town",
+    "Tsarevets Fortress",
+    "Rila Monastery",
+    "Pirin skiing",
+    "Black Sea coast"
+  ],
+  "avoid": [
+    "Sunny July-August weekends bring bigger crowds and higher prices on the Black Sea coast around Sozopol.",
+    "Late October-November is the weakest all-round window: beach weather is gone, mountain trails get unpredictable and ski season has not started.",
+    "Book Bansko well ahead for late-December to February ski dates because lift-pass queues and room rates jump fast."
+  ],
+  "combo": [
+    "Romania",
+    "Greece",
+    "Turkey"
+  ],
+  "landmark": "Rila Monastery",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Sofia",
+      "lat": 42.6977,
+      "lng": 23.3219,
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "notes": "Capital for Alexander Nevsky Cathedral, Roman ruins, Boyana Church and easy access to Vitosha foothill museums."
+    },
+    {
+      "name": "Plovdiv",
+      "lat": 42.1354,
+      "lng": 24.7453,
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "notes": "Bulgaria's Roman-era cultural capital with Kapana, the Ancient Theatre and one of Europe's oldest continuously lived-in old towns."
+    },
+    {
+      "name": "Veliko Tarnovo",
+      "lat": 43.0757,
+      "lng": 25.6172,
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "notes": "Historic former capital with Tsarevets Fortress, river views and the craft street of Samovodska Charshiya."
+    },
+    {
+      "name": "Rila Monastery",
+      "lat": 42.1333,
+      "lng": 23.3405,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "UNESCO monastery in the Rila Mountains known for striped arcades, vivid frescoes and easy day-trip access from Sofia."
+    },
+    {
+      "name": "Bansko",
+      "lat": 41.838,
+      "lng": 23.4885,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Pirin Mountain base for winter skiing, mehana taverns and a compact stone-built old town."
+    },
+    {
+      "name": "Sozopol",
+      "lat": 42.4178,
+      "lng": 27.6956,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Black Sea town for wooden Revival houses, old walls, seafood and sandy beaches near Burgas."
+    }
+  ],
+  "itinerary": {
+    "sim": "A1 and Yettel prepaid SIMs are the easiest airport buys in Sofia, with roughly 15-25GB tourist packs usually landing around ₹460–₹920 depending on data and validity.",
+    "apps": [
+      "BDZ",
+      "Union Ivkoni",
+      "Biomet",
+      "Google Maps",
+      "Booking.com",
+      "Google Translate",
+      "Revolut"
+    ],
+    "cityOrder": [
+      "Sofia",
+      "Rila Monastery",
+      "Plovdiv",
+      "Veliko Tarnovo",
+      "Bansko",
+      "Sozopol"
+    ],
+    "cities": {
+      "Sofia": {
+        "name": "Sofia",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers Sofia's essential churches, Roman ruins and museum core without turning the city into a museum-only stop.",
+        "days": [
+          {
+            "theme": "Cathedral Square, Roman Layers & Central Sofia",
+            "activities": [
+              {
+                "name": "Alexander Nevsky Cathedral",
+                "cost": "₹0"
+              },
+              {
+                "name": "Alexander Nevsky Crypt Museum",
+                "cost": "₹276"
+              },
+              {
+                "name": "Saint Sofia Basilica and Tombs",
+                "cost": "₹138"
+              },
+              {
+                "name": "National Archaeological Museum",
+                "cost": "₹460"
+              },
+              {
+                "name": "St. George Rotunda and Serdica Roman ruins walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Favorit",
+                "budget": "₹3,680–₹5,060/night"
+              },
+              {
+                "name": "Rosslyn Thracia Hotel Sofia",
+                "budget": "₹6,440–₹8,280/night"
+              }
+            ],
+            "meals": [
+              "Made in Home",
+              "Raketa Rakia Bar",
+              "Shtastlivetsa Vitoshka"
+            ]
+          },
+          {
+            "theme": "Boyana Frescoes, History Museums & Vitosha Boulevard",
+            "activities": [
+              {
+                "name": "Boyana Church",
+                "cost": "₹460",
+                "tip": "Timed entry slots can fill up in summer afternoons, so go early and pair it with the National History Museum nearby."
+              },
+              {
+                "name": "National Museum of History",
+                "cost": "₹690"
+              },
+              {
+                "name": "Sofia History Museum",
+                "cost": "₹460"
+              },
+              {
+                "name": "Ivan Vazov National Theatre gardens and yellow-brick boulevard walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Central Market Hall and Women's Market snack crawl",
+                "cost": "₹230–₹460"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Favorit",
+                "budget": "₹3,680–₹5,060/night"
+              },
+              {
+                "name": "Rosslyn Thracia Hotel Sofia",
+                "budget": "₹6,440–₹8,280/night"
+              }
+            ],
+            "meals": [
+              "Made in Home",
+              "Raketa Rakia Bar",
+              "Shtastlivetsa Vitoshka"
+            ]
+          }
+        ]
+      },
+      "Rila Monastery": {
+        "name": "Rila Monastery",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "This works best as a full-day outing from Sofia; staying overnight only matters if you want long mountain walks around the monastery valley.",
+        "days": [
+          {
+            "theme": "UNESCO Monastery, Museum Rooms & Mountain Quiet",
+            "activities": [
+              {
+                "name": "Rila Monastery main church and courtyard",
+                "cost": "₹0"
+              },
+              {
+                "name": "Rila Monastery History Museum and Rafail's Cross",
+                "cost": "₹368"
+              },
+              {
+                "name": "Hrelja Tower",
+                "cost": "₹230"
+              },
+              {
+                "name": "Monastery bakery for mekitsi and local sweets",
+                "cost": "₹184–₹322"
+              },
+              {
+                "name": "Walk toward the Cave of St. Ivan Rilski trailhead",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Tzarev Vrah",
+                "budget": "₹2,760–₹4,140/night"
+              },
+              {
+                "name": "Family Hotel Gorski Kut",
+                "budget": "₹3,220–₹4,600/night"
+              }
+            ],
+            "meals": [
+              "Monastery bakery at Rila Monastery",
+              "Pri Mecho Restaurant",
+              "Gorski Kut Restaurant"
+            ]
+          }
+        ]
+      },
+      "Plovdiv": {
+        "name": "Plovdiv",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is the sweet spot for Plovdiv: one for Roman monuments and the Old Town, one for Kapana, basilicas and a slower hilltop evening.",
+        "days": [
+          {
+            "theme": "Ancient Theatre, Revival Houses & Kapana",
+            "activities": [
+              {
+                "name": "Ancient Theatre of Philippopolis",
+                "cost": "₹230"
+              },
+              {
+                "name": "Roman Stadium visitor area",
+                "cost": "₹230"
+              },
+              {
+                "name": "Regional Ethnographic Museum",
+                "cost": "₹368"
+              },
+              {
+                "name": "Balabanov House",
+                "cost": "₹230"
+              },
+              {
+                "name": "Kapana district street-art and cafe walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Villa Flavia Heritage Boutique Hotel",
+                "budget": "₹5,060–₹7,360/night"
+              },
+              {
+                "name": "Residence City Garden",
+                "budget": "₹4,600–₹6,440/night"
+              }
+            ],
+            "meals": [
+              "Pavaj",
+              "Hemingway",
+              "Rahat Tepe"
+            ]
+          },
+          {
+            "theme": "Basilicas, Hilltop Views & Creative Plovdiv",
+            "activities": [
+              {
+                "name": "Bishop's Basilica of Philippopolis",
+                "cost": "₹552"
+              },
+              {
+                "name": "Small Basilica of Philippopolis",
+                "cost": "₹368"
+              },
+              {
+                "name": "Hindliyan House",
+                "cost": "₹230"
+              },
+              {
+                "name": "Nebet Tepe hill walk for sunset",
+                "cost": "₹0"
+              },
+              {
+                "name": "Alyosha Hill and Tsar Simeon Garden stroll",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Villa Flavia Heritage Boutique Hotel",
+                "budget": "₹5,060–₹7,360/night"
+              },
+              {
+                "name": "Residence City Garden",
+                "budget": "₹4,600–₹6,440/night"
+              }
+            ],
+            "meals": [
+              "Pavaj",
+              "Hemingway",
+              "Rahat Tepe"
+            ]
+          }
+        ]
+      },
+      "Veliko Tarnovo": {
+        "name": "Veliko Tarnovo",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay two days if you want both the medieval fortresses and Tarnovo's slower craft-street atmosphere instead of a rushed fortress-only stop.",
+        "days": [
+          {
+            "theme": "Tsarevets, Monument Views & Old Craft Street",
+            "activities": [
+              {
+                "name": "Tsarevets Fortress",
+                "cost": "₹460"
+              },
+              {
+                "name": "Patriarchal Cathedral viewpoint inside Tsarevets",
+                "cost": "₹0"
+              },
+              {
+                "name": "Asenevtsi Monument and Yantra river panorama",
+                "cost": "₹0"
+              },
+              {
+                "name": "Samovodska Charshiya craft street",
+                "cost": "₹0"
+              },
+              {
+                "name": "Multimedia Visitor Centre Tsarevgrad Tarnov",
+                "cost": "₹460"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Gurko Hotel",
+                "budget": "₹3,680–₹5,520/night"
+              },
+              {
+                "name": "Yantra Grand Hotel",
+                "budget": "₹4,140–₹6,440/night"
+              }
+            ],
+            "meals": [
+              "Shtastlivetsa Veliko Tarnovo",
+              "Restaurant Asenevtsi",
+              "Ego Pizza & Grill"
+            ]
+          },
+          {
+            "theme": "Trapezitsa, Gurko Street & Tarnovo Evenings",
+            "activities": [
+              {
+                "name": "Trapezitsa Fortress",
+                "cost": "₹460"
+              },
+              {
+                "name": "Sarafkina House",
+                "cost": "₹276"
+              },
+              {
+                "name": "Gurko Street photo walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Church of Saints Peter and Paul",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sound and Light show viewpoint from Tsar Ivan Asen II square",
+                "cost": "₹0",
+                "tip": "You can watch the illuminated fortress from public viewpoints for free even when you skip the paid reserved seating."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Gurko Hotel",
+                "budget": "₹3,680–₹5,520/night"
+              },
+              {
+                "name": "Yantra Grand Hotel",
+                "budget": "₹4,140–₹6,440/night"
+              }
+            ],
+            "meals": [
+              "Shtastlivetsa Veliko Tarnovo",
+              "Restaurant Asenevtsi",
+              "Ego Pizza & Grill"
+            ]
+          }
+        ]
+      },
+      "Bansko": {
+        "name": "Bansko",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Give Bansko two days so you get one proper mountain day and one day for the old town, taverns and museums without rushing between ski lifts.",
+        "days": [
+          {
+            "theme": "Stone Old Town, House Museums & Mehana Night",
+            "activities": [
+              {
+                "name": "Velyanova House Museum",
+                "cost": "₹230"
+              },
+              {
+                "name": "Neofit Rilski House Museum",
+                "cost": "₹230"
+              },
+              {
+                "name": "Holy Trinity Church",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bansko Permanent Icon Exhibition",
+                "cost": "₹230"
+              },
+              {
+                "name": "Evening walk through Pirin Street tavern quarter",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Momini Dvori Boutique Guest House",
+                "budget": "₹3,220–₹5,060/night"
+              },
+              {
+                "name": "Hotel Lion Bansko",
+                "budget": "₹5,520–₹7,360/night"
+              }
+            ],
+            "meals": [
+              "Mehana Momini Dvori",
+              "Victoria Restaurant",
+              "The House"
+            ]
+          },
+          {
+            "theme": "Pirin National Park in Summer or Ski Zone in Winter",
+            "activities": [
+              {
+                "name": "Bansko Ski Zone one-day lift pass (winter)",
+                "cost": "₹5,060–₹5,520",
+                "tip": "For December-March trips, pre-book online and start early because gondola queues build quickly on powder mornings."
+              },
+              {
+                "name": "Bansko gondola return ticket (non-ski sightseeing)",
+                "cost": "₹1,840–₹2,300"
+              },
+              {
+                "name": "Pirin National Park marked trails from Banderishka Polyana or Vihren area",
+                "cost": "₹0"
+              },
+              {
+                "name": "Nikola Vaptsarov House-Museum",
+                "cost": "₹230"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Momini Dvori Boutique Guest House",
+                "budget": "₹3,220–₹5,060/night"
+              },
+              {
+                "name": "Hotel Lion Bansko",
+                "budget": "₹5,520–₹7,360/night"
+              }
+            ],
+            "meals": [
+              "Mehana Momini Dvori",
+              "Victoria Restaurant",
+              "The House"
+            ]
+          }
+        ]
+      },
+      "Sozopol": {
+        "name": "Sozopol",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is enough for the old town museums, coast walk and one lazy beach day without needing to move bases along the southern Black Sea.",
+        "days": [
+          {
+            "theme": "Old Town Walls, Archaeology & Harbour Streets",
+            "activities": [
+              {
+                "name": "Sozopol Archaeological Museum",
+                "cost": "₹276"
+              },
+              {
+                "name": "Southern Fortress Wall and Tower Museum",
+                "cost": "₹276"
+              },
+              {
+                "name": "Church of Saints Cyril and Methodius",
+                "cost": "₹0"
+              },
+              {
+                "name": "Old Town wooden houses and harbour walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Art Gallery Laskaridi browse",
+                "cost": "₹230"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Family Hotel Sofi",
+                "budget": "₹2,760–₹4,140/night"
+              },
+              {
+                "name": "Blu Bay Hotel Sozopol",
+                "budget": "₹6,900–₹10,120/night"
+              }
+            ],
+            "meals": [
+              "Mehana Neptune",
+              "Urania Bistro",
+              "Tangra"
+            ]
+          },
+          {
+            "theme": "Beach Day, Sea Views & Ravadinovo Side Trip",
+            "activities": [
+              {
+                "name": "Harmanite Beach or Central Beach",
+                "cost": "₹0"
+              },
+              {
+                "name": "Castle of Ravadinovo",
+                "cost": "₹1,150"
+              },
+              {
+                "name": "Kavatsi Beach afternoon",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunset drinks around the old harbour",
+                "cost": "₹460–₹920"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Family Hotel Sofi",
+                "budget": "₹2,760–₹4,140/night"
+              },
+              {
+                "name": "Blu Bay Hotel Sozopol",
+                "budget": "₹6,900–₹10,120/night"
+              }
+            ],
+            "meals": [
+              "Mehana Neptune",
+              "Urania Bistro",
+              "Tangra"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Sofia",
+        "to": "Rila Monastery",
+        "method": "Direct bus from Sofia Central Bus Station to Rila Monastery, usually the easiest day-trip option in season (about 2h 20m-2h 30m each way)",
+        "cost": "₹690–₹1,150"
+      },
+      {
+        "from": "Rila Monastery",
+        "to": "Plovdiv",
+        "method": "Return to Sofia, then take a BDZ fast train from Sofia Central Railway Station to Plovdiv (about 2h 40m-3h 10m total rail time after you get back to the capital)",
+        "cost": "₹460–₹690"
+      },
+      {
+        "from": "Plovdiv",
+        "to": "Veliko Tarnovo",
+        "method": "Union Ivkoni or Biomet coach, sometimes with a transfer, is usually simpler than stitching together BDZ regional trains on this corridor (about 4h-5h)",
+        "cost": "₹690–₹1,150"
+      },
+      {
+        "from": "Veliko Tarnovo",
+        "to": "Bansko",
+        "method": "Take a Union Ivkoni or Biomet bus via Sofia; there is no clean direct rail option, so buses are the most practical public-transport choice (about 7h-9h total)",
+        "cost": "₹1,380–₹1,840"
+      },
+      {
+        "from": "Bansko",
+        "to": "Sozopol",
+        "method": "Bus back via Sofia or Plovdiv and continue on a long-distance Union Ivkoni/Biomet service to Burgas, then finish with the local bus to Sozopol (usually 10h+ total)",
+        "cost": "₹1,840–₹2,760"
+      }
+    ],
+    "extras": [
+      "Use BDZ where it clearly saves stress, especially Sofia-Plovdiv, but do not force rail everywhere: several Bulgaria cross-country links are easier by Union Ivkoni or Biomet coach.",
+      "Rila Monastery itself is free, but carry small cash for the museum, tower ticket, bakery snacks and bus station kiosks because card acceptance is patchy away from Sofia.",
+      "For Bansko, think in two seasons: December-March for skiing and snow; May-September for hiking, mehanas and quieter mountain scenery.",
+      "Sozopol is most enjoyable in June or September if you want warm sea weather without the full July-August weekend crowd from Burgas and Sofia.",
+      "Vegetarian travelers do well with shopska salad, grilled vegetables, banitsa, bean soups and sirene dishes, all easy to find from Sofia to the coast."
+    ],
+    "cityImages": {
+      "Sofia": [
+        "Alexander Nevsky Cathedral Sofia",
+        "Boyana Church Sofia frescoes",
+        "St George Rotunda Sofia"
+      ],
+      "Rila Monastery": [
+        "Rila Monastery courtyard Bulgaria",
+        "Rila Monastery main church frescoes",
+        "Rila Monastery Hrelja Tower"
+      ],
+      "Plovdiv": [
+        "Ancient Theatre of Philippopolis Plovdiv",
+        "Kapana district Plovdiv",
+        "Old Town Plovdiv houses"
+      ],
+      "Veliko Tarnovo": [
+        "Tsarevets Fortress Veliko Tarnovo",
+        "Samovodska Charshiya Veliko Tarnovo",
+        "Asenevtsi Monument Veliko Tarnovo"
+      ],
+      "Bansko": [
+        "Bansko old town Bulgaria",
+        "Bansko Ski Zone gondola",
+        "Pirin National Park Bansko"
+      ],
+      "Sozopol": [
+        "Sozopol Old Town Bulgaria",
+        "Southern Fortress Wall Sozopol",
+        "Sozopol harbour sunset"
+      ]
+    }
+  }
+}

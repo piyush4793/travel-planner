@@ -1,0 +1,464 @@
+{
+  "name": "Serbia",
+  "seed": false,
+  "lat": 44.02,
+  "lng": 21.01,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "December"
+  ],
+  "worstMonths": [
+    "January",
+    "February",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹65K–₹1.15L",
+    "couple": "₹1.15L–₹1.9L",
+    "family4": "₹2.4L–₹3.8L"
+  },
+  "experiences": [
+    "Belgrade",
+    "Petrovaradin Fortress",
+    "Niš History",
+    "Zlatibor Mountains",
+    "Art Nouveau Subotica"
+  ],
+  "avoid": [],
+  "combo": [
+    "Hungary",
+    "Bosnia and Herzegovina"
+  ],
+  "landmark": "Belgrade Fortress",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Belgrade works well as a 2–3 night city break or a longer Serbia loop with Novi Sad, Niš and Zlatibor.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Belgrade",
+      "lat": 44.7866,
+      "lng": 20.4489,
+      "notes": "Big-city base for Kalemegdan, Saint Sava Temple, riverfront neighborhoods and Serbia's best museum mix"
+    },
+    {
+      "name": "Novi Sad",
+      "lat": 45.2671,
+      "lng": 19.8335,
+      "notes": "Relaxed Danube city with Petrovaradin Fortress, museums and easy day-trip potential toward Fruška Gora"
+    },
+    {
+      "name": "Niš",
+      "lat": 43.3209,
+      "lng": 21.8958,
+      "notes": "Southern Serbia stop for Roman ruins, Ottoman walls and sobering WWII and uprising-era memorials"
+    },
+    {
+      "name": "Zlatibor",
+      "lat": 43.7296,
+      "lng": 19.6987,
+      "notes": "Mountain resort base for gondola rides, village museums and cave stops in western Serbia"
+    },
+    {
+      "name": "Subotica",
+      "lat": 46.1,
+      "lng": 19.6651,
+      "notes": "Elegant northern city known for Hungarian Secession architecture, the synagogue and Palić side trips"
+    }
+  ],
+  "itinerary": {
+    "sim": "Yettel tourist SIMs usually land around ₹770 for 30 days with 50 GB; mts Tourist Max is about ₹460 for 14 days with 10 GB if you want the cheaper walk-in option.",
+    "apps": [
+      "Srbija Voz",
+      "Polazak.rs",
+      "Google Maps",
+      "Google Translate",
+      "Booking.com",
+      "CarGo",
+      "Wise"
+    ],
+    "cityOrder": [
+      "Belgrade",
+      "Novi Sad",
+      "Subotica",
+      "Niš",
+      "Zlatibor"
+    ],
+    "cities": {
+      "Belgrade": {
+        "name": "Belgrade",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two full days cover the essentials; keep a third if you want a slower Zemun afternoon or a museum-heavy Sunday when the National Museum is free.",
+        "days": [
+          {
+            "theme": "Kalemegdan views, republic-square museums and old-town energy",
+            "activities": [
+              {
+                "name": "Belgrade Fortress and Kalemegdan Park walk",
+                "cost": "Free"
+              },
+              {
+                "name": "National Museum of Serbia combined ticket",
+                "cost": "₹462 pp"
+              },
+              {
+                "name": "Knez Mihailova pedestrian street and Republic Square wander",
+                "cost": "Free"
+              },
+              {
+                "name": "Skadarlija evening stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Balkan Hotel Garni",
+                "budget": "₹3,540–₹5,850/night"
+              },
+              {
+                "name": "Kings Palace Suites",
+                "budget": "₹2,695–₹4,045/night"
+              }
+            ],
+            "meals": [
+              "Manufaktura",
+              "Tri Šešira",
+              "Franš"
+            ]
+          },
+          {
+            "theme": "Tesla exhibits, Saint Sava interiors and Yugoslav history",
+            "activities": [
+              {
+                "name": "Nikola Tesla Museum English guided tour",
+                "cost": "₹616 pp",
+                "tip": "Carry cash in dinars because museum payment policies can change faster than card terminals."
+              },
+              {
+                "name": "Saint Sava Temple visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Museum of Yugoslavia and House of Flowers",
+                "cost": "₹308 pp"
+              },
+              {
+                "name": "Zemun quay and Gardoš area sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Balkan Hotel Garni",
+                "budget": "₹3,540–₹5,850/night"
+              },
+              {
+                "name": "Kings Palace Suites",
+                "budget": "₹2,695–₹4,045/night"
+              }
+            ],
+            "meals": [
+              "Ambar",
+              "Restoran Franš",
+              "Manufaktura"
+            ]
+          }
+        ]
+      },
+      "Novi Sad": {
+        "name": "Novi Sad",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A single day works well on the high-speed rail from Belgrade, but add a second if you want a fortress tunnel tour plus a slower Danube evening or Fruška Gora detour.",
+        "days": [
+          {
+            "theme": "Soko rail hop, Petrovaradin ramparts and Vojvodina art",
+            "activities": [
+              {
+                "name": "Srbija Voz Soko train from Belgrade to Novi Sad",
+                "cost": "₹255–₹693 pp"
+              },
+              {
+                "name": "Petrovaradin Fortress ramparts and viewpoint walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Novi Sad City Museum underground-galleries tour",
+                "cost": "₹231 pp"
+              },
+              {
+                "name": "Gallery of Matica Srpska",
+                "cost": "₹231 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sole Mio Wellness & Spa",
+                "budget": "₹3,540–₹6,700/night"
+              },
+              {
+                "name": "Garni Hotel Centar",
+                "budget": "₹7,240–₹9,010/night"
+              }
+            ],
+            "meals": [
+              "Project 72 Wine & Deli",
+              "Aqua Doria",
+              "Piknik"
+            ]
+          }
+        ]
+      },
+      "Subotica": {
+        "name": "Subotica",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Subotica is compact enough for a focused old-town day, especially if you stay central and book the midday City Hall tour.",
+        "days": [
+          {
+            "theme": "Regional train north, Art Nouveau landmarks and synagogue interiors",
+            "activities": [
+              {
+                "name": "Srbija Voz train from Novi Sad to Subotica",
+                "cost": "₹385–₹578 pp"
+              },
+              {
+                "name": "Subotica Synagogue entry",
+                "cost": "₹308 pp"
+              },
+              {
+                "name": "Subotica City Hall and tower guided tour",
+                "cost": "₹308 pp"
+              },
+              {
+                "name": "Raichle Palace / Modern Art Gallery",
+                "cost": "₹154–₹308 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Galleria",
+                "budget": "₹5,390–₹8,085/night"
+              },
+              {
+                "name": "Hotel Villa Majur",
+                "budget": "₹3,540–₹5,390/night"
+              }
+            ],
+            "meals": [
+              "Boss Caffe",
+              "Bates",
+              "Stara Picerija"
+            ]
+          }
+        ]
+      },
+      "Niš": {
+        "name": "Niš",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Niš can be seen quickly, but the city lands better with an extra night if you want Mediana, the Red Cross memorial and an unhurried dinner in Tinkers Alley.",
+        "days": [
+          {
+            "theme": "Cross-country rail day, Roman ruins and Serbia's hardest history stop",
+            "activities": [
+              {
+                "name": "Srbija Voz connection from Subotica to Niš via Novi Sad and Belgrade",
+                "cost": "₹1,385–₹1,848 pp"
+              },
+              {
+                "name": "Archaeological Park Mediana",
+                "cost": "₹385 pp"
+              },
+              {
+                "name": "Skull Tower (Ćele Kula)",
+                "cost": "₹231 pp"
+              },
+              {
+                "name": "Red Cross Nazi Concentration Camp memorial museum",
+                "cost": "₹231 pp"
+              },
+              {
+                "name": "Niš Fortress evening walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ArtLoft Hotel",
+                "budget": "₹3,540–₹5,850/night"
+              },
+              {
+                "name": "Sole Hotel",
+                "budget": "₹2,695–₹4,930/night"
+              }
+            ],
+            "meals": [
+              "Stambolijski",
+              "Kod Rajka",
+              "Gurmanova Tajna"
+            ]
+          }
+        ]
+      },
+      "Zlatibor": {
+        "name": "Zlatibor",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Use Zlatibor as the nature reset at the end of the route; two nights are ideal because the Gold Gondola, cave and village museum are weather-dependent and spread out.",
+        "days": [
+          {
+            "theme": "Niš Ekspres bus, lakefront strolls and the long Gold Gondola ride",
+            "activities": [
+              {
+                "name": "Niš Ekspres or Lasta bus from Niš to Zlatibor",
+                "cost": "₹1,386–₹1,925 pp"
+              },
+              {
+                "name": "Gold Gondola Zlatibor return ride",
+                "cost": "₹1,155 pp"
+              },
+              {
+                "name": "Lake Zlatibor promenade and central park walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Dino Park Zlatibor",
+                "cost": "₹462 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vila Barović & Spa",
+                "budget": "₹4,470–₹6,315/night"
+              },
+              {
+                "name": "Hotel Mons",
+                "budget": "₹7,240–₹9,010/night"
+              }
+            ],
+            "meals": [
+              "Bajka",
+              "Restoran Perun",
+              "Zlatni Bor"
+            ]
+          },
+          {
+            "theme": "Karst cave stop, old-village museum and a slower mountain day",
+            "activities": [
+              {
+                "name": "Stopića Cave",
+                "cost": "₹193 pp"
+              },
+              {
+                "name": "Sirogojno Open-Air Museum",
+                "cost": "₹116 pp"
+              },
+              {
+                "name": "Tornik viewpoint or meadow walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Zlatibor market and dairy-shopping stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vila Barović & Spa",
+                "budget": "₹4,470–₹6,315/night"
+              },
+              {
+                "name": "Hotel Mons",
+                "budget": "₹7,240–₹9,010/night"
+              }
+            ],
+            "meals": [
+              "Bajka",
+              "Restoran Perun",
+              "Zlatni Bor"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Belgrade",
+        "to": "Novi Sad",
+        "method": "Direct Srbija Voz Soko high-speed train in about 36–55 minutes",
+        "cost": "₹255–₹693 pp"
+      },
+      {
+        "from": "Novi Sad",
+        "to": "Subotica",
+        "method": "Regional Srbija Voz train in about 1h 50m to 2h 20m",
+        "cost": "₹385–₹578 pp"
+      },
+      {
+        "from": "Subotica",
+        "to": "Niš",
+        "method": "Srbija Voz rail connection via Novi Sad and Belgrade in about 6h 30m to 7h 30m",
+        "cost": "₹1,385–₹1,848 pp"
+      },
+      {
+        "from": "Niš",
+        "to": "Zlatibor",
+        "method": "Niš Ekspres or Lasta bus in about 4h 30m to 6h",
+        "cost": "₹1,386–₹1,925 pp"
+      },
+      {
+        "from": "Zlatibor",
+        "to": "Belgrade",
+        "method": "Lasta or other direct intercity bus in about 4h to 4h 30m",
+        "cost": "₹1,540–₹1,848 pp"
+      }
+    ],
+    "extras": [
+      "National Museum of Serbia is usually free on Sundays, so line up Belgrade museum time there if your dates fit.",
+      "Keep ₹1,500–₹2,500 equivalent in cash for museum kiosks, buses and smaller kafanas because card acceptance is less reliable once you leave central Belgrade and Novi Sad.",
+      "Book the Belgrade–Novi Sad Soko train ahead on weekends and around EXIT Festival because the fastest departures can sell out.",
+      "December works best for Belgrade and Subotica Christmas-market atmosphere, but mountain weather can interrupt the Gold Gondola, so keep Zlatibor flexible.",
+      "If you only have 5–6 days, cut Subotica first; if you have more than a week, add a second Niš or Novi Sad night instead of overpacking Belgrade."
+    ],
+    "cityImages": {
+      "Belgrade": [
+        "Belgrade Fortress Kalemegdan",
+        "Saint Sava Temple Belgrade",
+        "Knez Mihailova Belgrade"
+      ],
+      "Novi Sad": [
+        "Petrovaradin Fortress Novi Sad",
+        "Liberty Square Novi Sad",
+        "Gallery of Matica Srpska"
+      ],
+      "Subotica": [
+        "Subotica Synagogue",
+        "Subotica City Hall",
+        "Raichle Palace Subotica"
+      ],
+      "Niš": [
+        "Niš Fortress",
+        "Skull Tower Niš",
+        "Mediana archaeological site"
+      ],
+      "Zlatibor": [
+        "Gold Gondola Zlatibor",
+        "Stopića Cave",
+        "Sirogojno Open-Air Museum"
+      ]
+    }
+  }
+}
