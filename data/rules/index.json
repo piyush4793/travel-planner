@@ -285,9 +285,9 @@
     "lng": 71.28,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 14
   },
   {
     "name": "Turkmenistan",
@@ -605,9 +605,9 @@
     "lng": 21.75,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 10
   },
   {
     "name": "Albania",
@@ -675,9 +675,9 @@
     "lng": 31.17,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Lithuania",
@@ -1575,9 +1575,9 @@
     "lng": -63.59,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 13
   },
   {
     "name": "Venezuela",
@@ -1605,9 +1605,9 @@
     "lng": -55.77,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 11
   },
   {
     "name": "Guyana",

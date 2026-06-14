@@ -1,0 +1,574 @@
+{
+  "name": "Ukraine",
+  "seed": false,
+  "lat": 48.38,
+  "lng": 31.17,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "budget": {
+    "solo": "₹85K–₹1.4L",
+    "couple": "₹1.5L–₹2.4L",
+    "family4": "₹2.8L–₹4.6L"
+  },
+  "experiences": [
+    "Saint Sophia Cathedral",
+    "Kyiv Pechersk Lavra",
+    "Lviv Old Town",
+    "Odesa seafront",
+    "Kamianets-Podilskyi Castle"
+  ],
+  "avoid": [
+    "Ongoing conflict means advisories, curfews, and access rules can change quickly — travel only after checking current government guidance and local alerts.",
+    "Frontline and recently targeted eastern or southern areas outside this west-and-central route."
+  ],
+  "combo": [
+    "Poland",
+    "Romania",
+    "Moldova"
+  ],
+  "landmark": "Saint Sophia Cathedral",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "A short Kyiv + Lviv split can work, but this country currently needs extra buffer for alerts, curfews, and transport changes rather than a rushed stopover.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Kyiv",
+      "lat": 50.4501,
+      "lng": 30.5234,
+      "notes": "Saint Sophia Cathedral, Lavra, Maidan, river viewpoints and one of Europe’s great metro systems"
+    },
+    {
+      "name": "Lviv",
+      "lat": 49.8397,
+      "lng": 24.0297,
+      "notes": "UNESCO old town, coffee houses, opera, Armenian quarter and easy westbound rail links"
+    },
+    {
+      "name": "Odesa",
+      "lat": 46.4825,
+      "lng": 30.7233,
+      "notes": "Black Sea port city with Potemkin Stairs, opera architecture and long promenades"
+    },
+    {
+      "name": "Chernivtsi",
+      "lat": 48.2915,
+      "lng": 25.9403,
+      "notes": "Austro-Hungarian facades, university complex and relaxed Bukovyna café culture"
+    },
+    {
+      "name": "Kamianets-Podilskyi",
+      "lat": 48.674,
+      "lng": 26.585,
+      "notes": "Dramatic canyon setting, fortress walls and one of Ukraine’s best preserved old towns"
+    }
+  ],
+  "itinerary": {
+    "sim": "Kyivstar or Vodafone Ukraine tourist/eSIM packs usually land around ₹500–₹1,000 for enough data for UZ tickets, maps, and air-alert apps; activate before any long train day if possible.",
+    "apps": [
+      "Ukrzaliznytsia",
+      "Kyiv Digital",
+      "Uklon",
+      "Google Maps",
+      "Booking.com",
+      "Повітряна тривога (Air Alert)",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Kyiv",
+      "Odesa",
+      "Lviv",
+      "Chernivtsi",
+      "Kamianets-Podilskyi"
+    ],
+    "cities": {
+      "Kyiv": {
+        "name": "Kyiv",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days covers the headline religious sites, central walks and metro-based neighborhoods well; keep a fourth day only as an alert buffer or for extra museums.",
+        "days": [
+          {
+            "theme": "UNESCO Kyiv, Golden Domes & the Upper Town",
+            "activities": [
+              {
+                "name": "Saint Sophia Cathedral museum complex",
+                "cost": "₹300",
+                "tip": "Add the Bell Tower for another ₹100 if the weather is clear; morning visits are usually calmest."
+              },
+              {
+                "name": "Golden Gate of Kyiv museum",
+                "cost": "₹200"
+              },
+              {
+                "name": "St. Michael’s Golden-Domed Monastery and square",
+                "cost": "Free"
+              },
+              {
+                "name": "Andriyivskyy Descent walk to Podil",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Kyiv Railway Station",
+                "budget": "₹4,800–₹7,200/night"
+              },
+              {
+                "name": "Bursa Hotel Kyiv",
+                "budget": "₹9,000–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Kanapa",
+              "Musafir",
+              "Milk Bar"
+            ]
+          },
+          {
+            "theme": "Lavra, Memorial Kyiv & the Dnipro Hills",
+            "activities": [
+              {
+                "name": "Kyiv Pechersk Lavra combined self-guided ticket",
+                "cost": "₹260",
+                "tip": "This is the best-value Lavra ticket because it bundles the territory, exhibitions and bell tower access."
+              },
+              {
+                "name": "National Museum of the History of Ukraine in the Second World War",
+                "cost": "₹200"
+              },
+              {
+                "name": "Motherland Monument exterior and viewpoint precinct",
+                "cost": "Free"
+              },
+              {
+                "name": "Mariinskyi Park to Arsenalna hillside walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Kyiv Railway Station",
+                "budget": "₹4,800–₹7,200/night"
+              },
+              {
+                "name": "11 Mirrors Design Hotel",
+                "budget": "₹14,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Ostannya Barykada",
+              "100 Rokiv Tomu Vpered",
+              "Honey"
+            ]
+          },
+          {
+            "theme": "Maidan, Metro Hops & Podil Evenings",
+            "activities": [
+              {
+                "name": "Maidan Nezalezhnosti and Khreshchatyk walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Kyiv Metro station-hopping pass and short rides",
+                "cost": "₹50",
+                "tip": "The metro is both the fastest way to cross the city and a practical shelter option during alerts."
+              },
+              {
+                "name": "National Art Museum of Ukraine",
+                "cost": "₹300"
+              },
+              {
+                "name": "Podil riverside evening around Poshtova Square",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dream House Hostel Kyiv",
+                "budget": "₹1,800–₹3,000/night"
+              },
+              {
+                "name": "Bursa Hotel Kyiv",
+                "budget": "₹9,000–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Puzata Hata",
+              "Fish Fetish",
+              "O'Panas"
+            ]
+          }
+        ]
+      },
+      "Odesa": {
+        "name": "Odesa",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is enough for the historic center, opera area and seafront; keep a third only if Black Sea weather and local conditions are stable enough for slower museum time.",
+        "days": [
+          {
+            "theme": "Historic Core, Opera District & Potemkin Steps",
+            "activities": [
+              {
+                "name": "Potemkin Stairs and Primorsky Boulevard",
+                "cost": "Free"
+              },
+              {
+                "name": "Odesa National Academic Opera and Ballet Theatre guided visit",
+                "cost": "₹300"
+              },
+              {
+                "name": "Deribasivska Street and City Garden",
+                "cost": "Free"
+              },
+              {
+                "name": "Odesa Passage arcade",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "UNO Design Hotel",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Hotel Bristol Odesa",
+                "budget": "₹10,000–₹15,000/night"
+              }
+            ],
+            "meals": [
+              "Kompot",
+              "Dizyngoff",
+              "Bernardazzi"
+            ]
+          },
+          {
+            "theme": "Seafront Walks, Archaeology & Local Odesa",
+            "activities": [
+              {
+                "name": "Odesa Archaeological Museum",
+                "cost": "₹300"
+              },
+              {
+                "name": "Lanzheron Beach promenade and Shevchenko Park walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Odesa Fine Arts Museum",
+                "cost": "₹200"
+              },
+              {
+                "name": "Vorontsov Colonnade sunset stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mezzanine Hotel",
+                "budget": "₹3,800–₹5,600/night"
+              },
+              {
+                "name": "Hotel California Odesa",
+                "budget": "₹7,000–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Kotelok",
+              "Tavernetta",
+              "Maman"
+            ]
+          }
+        ]
+      },
+      "Lviv": {
+        "name": "Lviv",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days handles the old town, viewpoints and classic cafés well; use the third day only for a long Tunnel of Love excursion or a deeper museum day.",
+        "days": [
+          {
+            "theme": "Rynok Square, Cathedrals & Opera House",
+            "activities": [
+              {
+                "name": "Rynok Square and Latin Cathedral quarter",
+                "cost": "Free"
+              },
+              {
+                "name": "Lviv Opera House guided tour",
+                "cost": "₹300",
+                "tip": "Performance tickets often run higher, but the daytime guided tour is the easiest fixed-cost visit."
+              },
+              {
+                "name": "Armenian Cathedral courtyard and lanes",
+                "cost": "Free"
+              },
+              {
+                "name": "High Castle Hill viewpoint",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibis Styles Lviv Center",
+                "budget": "₹4,800–₹7,500/night"
+              },
+              {
+                "name": "BANKHOTEL",
+                "budget": "₹10,000–₹15,000/night"
+              }
+            ],
+            "meals": [
+              "Baczewski Restaurant",
+              "Kryivka",
+              "Lviv Croissants"
+            ]
+          },
+          {
+            "theme": "Lviv History, Coffee Culture & Cemetery Heritage",
+            "activities": [
+              {
+                "name": "Lychakiv Cemetery",
+                "cost": "₹200"
+              },
+              {
+                "name": "Pharmacy Museum",
+                "cost": "₹160"
+              },
+              {
+                "name": "Potocki Palace",
+                "cost": "₹200"
+              },
+              {
+                "name": "Coffee Mining Manufacture experience",
+                "cost": "₹200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "George Hotel",
+                "budget": "₹3,800–₹5,800/night"
+              },
+              {
+                "name": "BANKHOTEL",
+                "budget": "₹10,000–₹15,000/night"
+              }
+            ],
+            "meals": [
+              "The Most Expensive Galician Restaurant",
+              "Cukor RED",
+              "Pravda Beer Theatre"
+            ]
+          },
+          {
+            "theme": "Optional Tunnel of Love Day Trip via Rivne",
+            "activities": [
+              {
+                "name": "UZ train from Lviv to Rivne and local transfer onward to Klevan",
+                "cost": "₹900–₹1,600",
+                "tip": "Start early; marshrutkas or taxis cover the last few kilometers from Rivne to the tunnel."
+              },
+              {
+                "name": "Tunnel of Love boardwalk and photo walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Klevan station area and return to Lviv",
+                "cost": "₹300–₹600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibis Styles Lviv Center",
+                "budget": "₹4,800–₹7,500/night"
+              },
+              {
+                "name": "BANKHOTEL",
+                "budget": "₹10,000–₹15,000/night"
+              }
+            ],
+            "meals": [
+              "Baczewski Restaurant",
+              "Lviv Croissants",
+              "Kumpel"
+            ]
+          }
+        ]
+      },
+      "Chernivtsi": {
+        "name": "Chernivtsi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day is enough for the university complex and elegant center; add a second only if you want a slower Bukovyna café-and-museum rhythm.",
+        "days": [
+          {
+            "theme": "Bukovyna University & Austro-Hungarian Core",
+            "activities": [
+              {
+                "name": "Chernivtsi National University residence complex tour",
+                "cost": "₹300"
+              },
+              {
+                "name": "Olha Kobylianska Street walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Chernivtsi Art Museum",
+                "cost": "₹160"
+              },
+              {
+                "name": "Turkish Square and the flower clock area",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Yard Hostel & Coffee",
+                "budget": "₹1,500–₹2,800/night"
+              },
+              {
+                "name": "AllureInn Hotel and Spa",
+                "budget": "₹6,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Panska Huralnya",
+              "Knaus",
+              "Terrasa"
+            ]
+          }
+        ]
+      },
+      "Kamianets-Podilskyi": {
+        "name": "Kamianets-Podilskyi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "This works best as a single full day focused on the fortress and canyon viewpoints, with a second day only if you want a slower old-town stay.",
+        "days": [
+          {
+            "theme": "Fortress Walls, Canyon Views & Old Town",
+            "activities": [
+              {
+                "name": "Kamianets-Podilskyi Castle",
+                "cost": "₹200"
+              },
+              {
+                "name": "Turkish Bastions and fortress viewpoints",
+                "cost": "₹100"
+              },
+              {
+                "name": "Smotrych Canyon and Novoplanivskyi Bridge walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Saints Peter and Paul Cathedral exterior and old-town lanes",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Reikartz Kamianets-Podilskyi",
+                "budget": "₹4,000–₹6,200/night"
+              },
+              {
+                "name": "7 Days City Hotel",
+                "budget": "₹5,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Kavyarnya na Zarvanskiy",
+              "Hetman",
+              "Primavera"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Kyiv",
+        "to": "Odesa",
+        "method": "UZ Intercity or overnight sleeper from Kyiv-Pasazhyrskyi to Odesa-Holovna (about 7–10h depending on train)",
+        "cost": "₹1,000–₹2,400"
+      },
+      {
+        "from": "Odesa",
+        "to": "Lviv",
+        "method": "UZ overnight train from Odesa-Holovna to Lviv (about 11–13h)",
+        "cost": "₹1,200–₹2,600"
+      },
+      {
+        "from": "Lviv",
+        "to": "Chernivtsi",
+        "method": "UZ regional or night train from Lviv to Chernivtsi (about 5–6.5h)",
+        "cost": "₹500–₹1,200"
+      },
+      {
+        "from": "Chernivtsi",
+        "to": "Kamianets-Podilskyi",
+        "method": "Marshrutka or regional bus via Khotyn/Khmelnytskyi corridor (about 2–3h)",
+        "cost": "₹300–₹700"
+      },
+      {
+        "from": "Kamianets-Podilskyi",
+        "to": "Kyiv",
+        "method": "Direct overnight UZ train when available, or marshrutka to Khmelnytskyi plus onward rail to Kyiv (about 7–10h total)",
+        "cost": "₹900–₹2,000"
+      }
+    ],
+    "extras": [
+      "Travel advisory: Ukraine remains affected by ongoing conflict. Curfews, checkpoint rules, museum closures, and rail schedules can change with little notice, so check official advisories and local alerts right before every intercity move.",
+      "UZ railways are the backbone of this route and usually the most dependable long-distance option; buy tickets in the official Ukrzaliznytsia app as soon as your dates are firm.",
+      "Kyiv Metro is excellent for day-to-day city transport and also functions as a familiar shelter network during air alerts.",
+      "Use marshrutkas for the last-mile legs where rail is thin, especially around Kamianets-Podilskyi and Klevan/Tunnel of Love connections.",
+      "Keep some schedule slack in every city because alerts or power issues can shorten museum hours, and avoid late unplanned road transfers if local security conditions deteriorate."
+    ],
+    "cityImages": {
+      "Kyiv": [
+        "Saint Sophia Cathedral Kyiv bell tower",
+        "Kyiv Pechersk Lavra monastery complex",
+        "Maidan Nezalezhnosti Kyiv skyline"
+      ],
+      "Odesa": [
+        "Potemkin Stairs Odesa",
+        "Odesa Opera House interior",
+        "Primorsky Boulevard Odesa sunset"
+      ],
+      "Lviv": [
+        "Rynok Square Lviv colorful facades",
+        "Lviv Opera House exterior",
+        "High Castle Hill Lviv panorama"
+      ],
+      "Chernivtsi": [
+        "Chernivtsi National University UNESCO complex",
+        "Olha Kobylianska Street Chernivtsi",
+        "Turkish Square Chernivtsi"
+      ],
+      "Kamianets-Podilskyi": [
+        "Kamianets Podilskyi Castle aerial",
+        "Smotrych Canyon Kamianets viewpoint",
+        "Kamianets Podilskyi old town bridge"
+      ]
+    }
+  }
+}

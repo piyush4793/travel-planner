@@ -1,0 +1,608 @@
+{
+  "name": "North Macedonia",
+  "seed": false,
+  "lat": 41.51,
+  "lng": 21.75,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹58K–₹98K",
+    "couple": "₹1.02L–₹1.68L",
+    "family4": "₹2.2L–₹3.35L"
+  },
+  "experiences": [
+    "Lake Towns",
+    "Orthodox Monasteries",
+    "Ottoman Bazaars",
+    "Mountain Drives",
+    "Canyon Boat Rides",
+    "Cafe Streets"
+  ],
+  "avoid": [
+    "July and August are busiest around Lake Ohrid, so lakefront rooms and St. Naum boats need advance booking.",
+    "Winter fog and snow can slow mountain transfers to Mavrovo, while train coverage stays limited across the country year-round."
+  ],
+  "combo": [
+    "Albania",
+    "Kosovo",
+    "Greece"
+  ],
+  "landmark": "Lake Ohrid",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Skopje is the simplest flight gateway, but North Macedonia is best enjoyed as a loop of Skopje, Ohrid and one mountain stop rather than a single-city break.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Skopje",
+      "lat": 41.9981,
+      "lng": 21.4254,
+      "notes": "Capital base for Ottoman bazaar lanes, big civic monuments, fortress views and the easiest onward buses across the country."
+    },
+    {
+      "name": "Matka Canyon",
+      "lat": 41.9506,
+      "lng": 21.2978,
+      "notes": "Near-Skopje canyon stop for the boat ride to Vrelo Cave, monastery terraces and a quick nature reset from the capital."
+    },
+    {
+      "name": "Mavrovo National Park",
+      "lat": 41.6556,
+      "lng": 20.7336,
+      "notes": "Mountain-lake stop for forest drives, easy hikes and cooler summer air around Mavrovo village and the national park."
+    },
+    {
+      "name": "Ohrid",
+      "lat": 41.1172,
+      "lng": 20.8016,
+      "notes": "UNESCO lake town with church-dotted lanes, fortress views, St. Naum day trips and the country's strongest slow-travel base."
+    },
+    {
+      "name": "Bitola",
+      "lat": 41.0314,
+      "lng": 21.3347,
+      "notes": "Elegant southern city for Shirok Sokak cafe culture, Ottoman facades and the nearby ruins of Heraclea Lyncestis."
+    }
+  ],
+  "itinerary": {
+    "sim": "A1 Macedonia or Makedonski Telekom prepaid SIMs are the most practical for this route; coverage is strong in Skopje and Ohrid, but download offline maps before heading into Mavrovo's higher roads.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "GetByBus",
+      "Rome2Rio",
+      "Waze",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Skopje",
+      "Matka Canyon",
+      "Mavrovo National Park",
+      "Ohrid",
+      "Bitola"
+    ],
+    "cities": {
+      "Skopje": {
+        "name": "Skopje",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the capital's core sights well; take a third only if you want a slower museum day or extra Vodno viewpoints.",
+        "days": [
+          {
+            "theme": "Old Bazaar, Kale Fortress & Macedonian History",
+            "activities": [
+              {
+                "name": "Stone Bridge, Macedonia Square and Old Bazaar walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Skopje Fortress (Kale) entry",
+                "cost": "₹0"
+              },
+              {
+                "name": "Museum of the Macedonian Struggle ticket",
+                "cost": "₹450"
+              },
+              {
+                "name": "Mustafa Pasha Mosque and bazaar tea stop",
+                "cost": "₹150–₹300"
+              },
+              {
+                "name": "Evening dinner in Debar Maalo or the Old Bazaar",
+                "cost": "₹900–₹1,650"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Solun",
+                "budget": "₹8,000–₹12,500/night"
+              },
+              {
+                "name": "Hotel Bushi Resort & SPA",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Destan",
+              "Pelister",
+              "Old House"
+            ]
+          },
+          {
+            "theme": "Modern Skopje, Memorials & Riverfront Cafes",
+            "activities": [
+              {
+                "name": "Memorial House of Mother Teresa entry",
+                "cost": "₹0"
+              },
+              {
+                "name": "Museum of Contemporary Art Skopje entry",
+                "cost": "₹0"
+              },
+              {
+                "name": "City Park and Vardar riverfront stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Short taxi hops across central Skopje if needed",
+                "cost": "₹150–₹300"
+              },
+              {
+                "name": "Coffee, drinks or dessert around Macedonia Square",
+                "cost": "₹450–₹1,050"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Solun",
+                "budget": "₹8,000–₹12,500/night"
+              },
+              {
+                "name": "Hotel Bushi Resort & SPA",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Skopski Merak",
+              "Pelister",
+              "Old House"
+            ]
+          },
+          {
+            "theme": "Vodno Viewpoints Optional Add-On",
+            "activities": [
+              {
+                "name": "Bus or taxi to Sredno Vodno",
+                "cost": "₹150–₹450"
+              },
+              {
+                "name": "Millennium Cross cable car return",
+                "cost": "₹300"
+              },
+              {
+                "name": "Short ridge walk or coffee with city views",
+                "cost": "₹150–₹300"
+              },
+              {
+                "name": "Museum of the City of Skopje ticket",
+                "cost": "₹150"
+              },
+              {
+                "name": "Late dinner back in the center",
+                "cost": "₹900–₹1,650"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Solun",
+                "budget": "₹8,000–₹12,500/night"
+              },
+              {
+                "name": "Hotel Bushi Resort & SPA",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Vodenica Mulino",
+              "Destan",
+              "Pelister"
+            ]
+          }
+        ]
+      },
+      "Matka Canyon": {
+        "name": "Matka Canyon",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Treat Matka as a focused nature day from Skopje or one slow overnight at the canyon hotel.",
+        "days": [
+          {
+            "theme": "Vrelo Cave Boat Ride & Canyon Walks",
+            "activities": [
+              {
+                "name": "Bus 60 from Skopje or taxi to Matka Canyon",
+                "cost": "₹120–₹900"
+              },
+              {
+                "name": "Shared boat ride to Vrelo Cave",
+                "cost": "₹750"
+              },
+              {
+                "name": "St. Andrew Monastery stop and canyon path walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Kayak rental or terrace coffee by the water",
+                "cost": "₹300–₹1,050"
+              },
+              {
+                "name": "Taxi back to Skopje if you miss the return bus",
+                "cost": "₹600–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Canyon Matka",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Canyon View Lodge - Matka",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Canyon Matka",
+              "Treska Restaurant",
+              "Old House"
+            ]
+          }
+        ]
+      },
+      "Mavrovo National Park": {
+        "name": "Mavrovo National Park",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One night gives you the lake and one easy walk; add a second only for a longer scenic drive or the Bigorski monastery detour.",
+        "days": [
+          {
+            "theme": "Lake Mavrovo, Village Church & Alpine Air",
+            "activities": [
+              {
+                "name": "Bus from Skopje to Mavrovo / Mavrovi Anovi",
+                "cost": "₹600–₹900"
+              },
+              {
+                "name": "Taxi from the main road or Gostivar into the lake area",
+                "cost": "₹450–₹900"
+              },
+              {
+                "name": "Sunken Church of St. Nicholas viewpoint and lakeside walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Easy forest trail or national park lakeshore walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mountain dinner with trout or grilled meats",
+                "cost": "₹750–₹1,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Radika Resort",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Hotel Bistra",
+                "budget": "₹5,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Radika Restaurant",
+              "Hotel Korab Trnica",
+              "The House of the Mijaks"
+            ]
+          },
+          {
+            "theme": "Bigorski Monastery & Western Macedonia Drive",
+            "activities": [
+              {
+                "name": "Taxi or arranged transfer to St. Jovan Bigorski Monastery",
+                "cost": "₹750–₹1,500"
+              },
+              {
+                "name": "St. Jovan Bigorski Monastery visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Scenic photo stops toward Rostuše or Debar",
+                "cost": "₹0"
+              },
+              {
+                "name": "Return local bus or taxi segment to your hotel",
+                "cost": "₹450–₹1,050"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Radika Resort",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Hotel Bistra",
+                "budget": "₹5,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "The House of the Mijaks",
+              "Radika Restaurant",
+              "Hotel Korab Trnica"
+            ]
+          }
+        ]
+      },
+      "Ohrid": {
+        "name": "Ohrid",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 3,
+        "note": "Ohrid rewards a slower base: two days is workable, but three lets you cover the old town, St. Naum and one relaxed lake day properly.",
+        "days": [
+          {
+            "theme": "UNESCO Old Town, Fortress Views & Lakeside Sunset",
+            "activities": [
+              {
+                "name": "Ohrid Old Town lanes and church quarter walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Samuel's Fortress ticket",
+                "cost": "₹225"
+              },
+              {
+                "name": "Church of Saint Sophia ticket",
+                "cost": "₹150"
+              },
+              {
+                "name": "Church of St. John at Kaneo and boardwalk stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lakefront dinner with Ohrid trout",
+                "cost": "₹900–₹1,650"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Tino",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Hotel Villa Mal Sveti Kliment",
+                "budget": "₹4,800–₹8,200/night"
+              }
+            ],
+            "meals": [
+              "Kaneo Restaurant",
+              "Via Sacra",
+              "Belvedere"
+            ]
+          },
+          {
+            "theme": "St. Naum Monastery & Springs Day",
+            "activities": [
+              {
+                "name": "Public bus or ferry from Ohrid to St. Naum return",
+                "cost": "₹360–₹1,050"
+              },
+              {
+                "name": "St. Naum Monastery ticket",
+                "cost": "₹180"
+              },
+              {
+                "name": "Rowing boat over the Black Drim springs",
+                "cost": "₹450"
+              },
+              {
+                "name": "Monastery grounds, peacocks and lakefront walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Late lunch or dinner back in Ohrid",
+                "cost": "₹900–₹1,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Tino",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Hotel Villa Mal Sveti Kliment",
+                "budget": "₹4,800–₹8,200/night"
+              }
+            ],
+            "meals": [
+              "Belvedere",
+              "Kaneo Restaurant",
+              "Dalga Restaurant"
+            ]
+          },
+          {
+            "theme": "Plaošnik, Ancient Theatre & Harbor Time",
+            "activities": [
+              {
+                "name": "Plaošnik archaeological site ticket",
+                "cost": "₹150"
+              },
+              {
+                "name": "Ancient Theatre of Ohrid walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Short Lake Ohrid harbor cruise or Kaneo boat hop",
+                "cost": "₹600–₹900"
+              },
+              {
+                "name": "Chinar Tree area coffee and bazaar wander",
+                "cost": "₹150–₹300"
+              },
+              {
+                "name": "Sunset drinks by the promenade",
+                "cost": "₹450–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Tino",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Hotel Villa Mal Sveti Kliment",
+                "budget": "₹4,800–₹8,200/night"
+              }
+            ],
+            "meals": [
+              "Via Sacra",
+              "Dalga Restaurant",
+              "Belvedere"
+            ]
+          }
+        ]
+      },
+      "Bitola": {
+        "name": "Bitola",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "One full day is enough for Bitola's elegant center and Heraclea Lyncestis before returning north.",
+        "days": [
+          {
+            "theme": "Shirok Sokak, Heraclea Lyncestis & Bitola Cafes",
+            "activities": [
+              {
+                "name": "Intercity bus from Ohrid to Bitola",
+                "cost": "₹450–₹750"
+              },
+              {
+                "name": "Shirok Sokak promenade and cafe stop",
+                "cost": "₹150–₹300"
+              },
+              {
+                "name": "Heraclea Lyncestis ticket",
+                "cost": "₹180"
+              },
+              {
+                "name": "NI Institute and Museum Bitola ticket",
+                "cost": "₹150"
+              },
+              {
+                "name": "Evening dinner or rakija tasting",
+                "cost": "₹600–₹1,350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Theatre",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Hotel Epinal",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Gradska Kefeana",
+              "Jagoda Meze Bar",
+              "Kus Kus"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Skopje",
+        "to": "Matka Canyon",
+        "method": "Use city bus 60 if timing works, or take a metered taxi from central Skopje for the simplest half-day move.",
+        "cost": "₹120–₹900"
+      },
+      {
+        "from": "Matka Canyon",
+        "to": "Mavrovo National Park",
+        "method": "Return to Skopje first, then continue by intercity bus toward Mavrovo or Gostivar; a private transfer is fastest if you want the move in one shot.",
+        "cost": "₹900–₹2,400"
+      },
+      {
+        "from": "Mavrovo National Park",
+        "to": "Ohrid",
+        "method": "Seasonal/local buses via Debar are the cheapest option, while a taxi to Debar or Struga saves time if schedules are thin.",
+        "cost": "₹900–₹2,100"
+      },
+      {
+        "from": "Ohrid",
+        "to": "Bitola",
+        "method": "Direct intercity bus is the normal choice; a taxi only makes sense if you are splitting the fare with a group.",
+        "cost": "₹450–₹900"
+      },
+      {
+        "from": "Bitola",
+        "to": "Skopje",
+        "method": "Direct buses are simplest; there is also limited train service via Veles, but it is slower and departures are fewer.",
+        "cost": "₹600–₹1,050"
+      }
+    ],
+    "extras": [
+      "May to September is the sweet spot: June and September give the best mix of warm lake weather, greener mountain views and fewer Ohrid crowds than peak August.",
+      "Intercity buses are the backbone for this route, while trains are limited and best treated as optional rather than primary transport planning.",
+      "Keep some cash for museum tickets, canyon boats, small-town cafes and taxis because card acceptance drops outside central Skopje and bigger Ohrid hotels.",
+      "Ohrid lakefront rooms and St. Naum ferries book out fastest on summer weekends, so reserve at least a few days ahead in July and August.",
+      "Use taxis for first- and last-mile gaps in Mavrovo and Matka, where public transport exists but is much less predictable than on major city-to-city bus corridors."
+    ],
+    "cityImages": {
+      "Skopje": [
+        "Stone Bridge Skopje North Macedonia",
+        "Old Bazaar Skopje",
+        "Skopje Fortress Kale"
+      ],
+      "Matka Canyon": [
+        "Matka Canyon North Macedonia boat",
+        "Vrelo Cave Matka",
+        "Hotel Canyon Matka lake"
+      ],
+      "Mavrovo National Park": [
+        "Lake Mavrovo North Macedonia",
+        "Sunken Church Mavrovo",
+        "St Jovan Bigorski Monastery"
+      ],
+      "Ohrid": [
+        "Ohrid Old Town North Macedonia",
+        "Samuel Fortress Ohrid",
+        "St John at Kaneo Ohrid"
+      ],
+      "Bitola": [
+        "Shirok Sokak Bitola",
+        "Heraclea Lyncestis Bitola",
+        "Bitola clock tower"
+      ]
+    }
+  }
+}

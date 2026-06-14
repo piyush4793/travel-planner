@@ -1,0 +1,633 @@
+{
+  "name": "Tajikistan",
+  "seed": false,
+  "lat": 38.86,
+  "lng": 71.28,
+  "region": "Asia",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹95K–₹1.6L",
+    "couple": "₹1.8L–₹3L",
+    "family4": "₹3.5L–₹5.8L"
+  },
+  "experiences": [
+    "Pamir Highway road trip",
+    "Rokhat Teahouse & Dushanbe museums",
+    "Seven Lakes and Fann Mountains hikes",
+    "Panjshanbe Bazaar in Khujand",
+    "Ancient Penjikent & Sarazm"
+  ],
+  "avoid": [
+    "October–May for the Pamir Highway unless you are prepared for snow, landslides and sudden road closures",
+    "Starting long shared-taxi days after lunch — mountain roads are safer and smoother in daylight",
+    "Leaving GBAO paperwork to the last minute if you want Khorog or the wider Pamir route"
+  ],
+  "combo": [
+    "Uzbekistan",
+    "Kyrgyzstan"
+  ],
+  "landmark": "Pamir Highway",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Dushanbe",
+      "lat": 38.5598,
+      "lng": 68.787,
+      "notes": "Main arrival city for museums, visa errands, Hissar Fortress and the easiest place to sort SIMs, cash and Pamir permits before heading out"
+    },
+    {
+      "name": "Pamir Highway (Khorog)",
+      "lat": 37.4999,
+      "lng": 71.5531,
+      "notes": "Use Khorog as the Pamir base for the botanical garden, bazaar, Gunt River walks and onward 4x4 trips deeper into GBAO"
+    },
+    {
+      "name": "Iskanderkul Lake",
+      "lat": 39.0786,
+      "lng": 68.3804,
+      "notes": "Classic alpine stop for lakeshore views, Fann Niagara and a simple homestay night in Sarytag or by the water"
+    },
+    {
+      "name": "Penjikent",
+      "lat": 39.4952,
+      "lng": 67.6093,
+      "notes": "Best cultural base for Ancient Penjikent, Sarazm and Seven Lakes or Camp Artuch outings in the Fann Mountains"
+    },
+    {
+      "name": "Khujand",
+      "lat": 40.2833,
+      "lng": 69.6333,
+      "notes": "Sughd-region city on the Syr Darya known for Panjshanbe Bazaar, the cable car and a softer Silk Road finale"
+    }
+  ],
+  "itinerary": {
+    "sim": "Tcell or MegaFon tourist SIMs are easiest in Dushanbe; expect roughly ₹300–₹700 for enough data for a 7–10 day trip, and download offline maps before the Pamir Highway.",
+    "apps": [
+      "Yandex Go",
+      "2GIS",
+      "Maps.me",
+      "Booking.com",
+      "Google Translate",
+      "Tajik Air"
+    ],
+    "cityOrder": [
+      "Dushanbe",
+      "Pamir Highway (Khorog)",
+      "Iskanderkul Lake",
+      "Penjikent",
+      "Khujand"
+    ],
+    "cities": {
+      "Dushanbe": {
+        "name": "Dushanbe",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the city highlights plus Hissar Fortress; keep a third only for permit buffer, galleries or a slower pre-Pamir reset.",
+        "days": [
+          {
+            "theme": "Rudaki Park, National Museum & Classic Dushanbe",
+            "activities": [
+              {
+                "name": "Rudaki Park, Ismoil Somoni Monument and flagpole walk",
+                "cost": "Free"
+              },
+              {
+                "name": "National Museum of Tajikistan",
+                "cost": "₹230–₹380 pp"
+              },
+              {
+                "name": "Mehrgon or Green Bazaar snack-and-fruit stop",
+                "cost": "₹150–₹380 pp"
+              },
+              {
+                "name": "Yandex Go taxi hops around the centre",
+                "cost": "₹75–₹190 per ride"
+              },
+              {
+                "name": "Dinner at Rokhat Teahouse or Traktir",
+                "cost": "₹380–₹950 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Green House Hostel",
+                "budget": "₹1,300–₹2,200/night"
+              },
+              {
+                "name": "Atlas Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Dushanbe Serena Hotel",
+                "budget": "₹12,500–₹19,000/night"
+              }
+            ],
+            "meals": [
+              "Rokhat Teahouse",
+              "Traktir",
+              "Segafredo"
+            ]
+          },
+          {
+            "theme": "Hissar Fortress & Permit Prep Day",
+            "activities": [
+              {
+                "name": "Shared taxi or arranged cab to Hissar Fortress and old madrasa complex",
+                "cost": "₹760–₹1,520 pp"
+              },
+              {
+                "name": "Hissar Fortress entry",
+                "cost": "₹75 pp",
+                "tip": "Official entry is 10 TJS, so keep a few small somoni notes handy."
+              },
+              {
+                "name": "Noor Art Gallery or Botanical Garden back in Dushanbe",
+                "cost": "₹75–₹230 pp"
+              },
+              {
+                "name": "GBAO permit printing / visa admin before the Pamir leg",
+                "cost": "₹1,670–₹2,500 pp",
+                "tip": "The standard GBAO permit is about $20 online; carry multiple printed copies for checkpoints."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Green House Hostel",
+                "budget": "₹1,300–₹2,200/night"
+              },
+              {
+                "name": "Atlas Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Al Sham Restaurant",
+              "Rokhat Teahouse",
+              "Segafredo"
+            ]
+          },
+          {
+            "theme": "Optional Buffer Before a Flight or Shared Taxi",
+            "activities": [
+              {
+                "name": "Hotel rest, laundry and ATM run before the Pamir or northbound road leg",
+                "cost": "₹380–₹1,140 pp"
+              },
+              {
+                "name": "Early airport transfer for a Tajik Air domestic flight or dawn shared taxi departure",
+                "cost": "₹190–₹475 per cab"
+              }
+            ]
+          }
+        ]
+      },
+      "Pamir Highway (Khorog)": {
+        "name": "Pamir Highway (Khorog)",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 5,
+        "note": "Three days gives Khorog a proper look plus one long 4x4 outing; add days only if you want to continue toward the Wakhan or Bulunkul lakes.",
+        "days": [
+          {
+            "theme": "Arrival in Khorog & Gunt River Strolls",
+            "activities": [
+              {
+                "name": "Tajik Air domestic flight from Dushanbe to Khorog when weather and schedule permit",
+                "cost": "₹4,500–₹7,500 pp",
+                "tip": "If flights are cancelled, fall back to a shared jeep or private 4x4 on the Pamir Highway."
+              },
+              {
+                "name": "Khorog City Park and bazaar walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Dinner at Lal Hotel Restaurant or your guesthouse",
+                "cost": "₹380–₹950 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pamir Lodge",
+                "budget": "₹1,500–₹2,700/night"
+              },
+              {
+                "name": "Lal Hotel",
+                "budget": "₹5,300–₹8,300/night"
+              },
+              {
+                "name": "Pamir Palace",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Lal Hotel Restaurant",
+              "Pamir Lodge",
+              "Parinen Inn"
+            ]
+          },
+          {
+            "theme": "Botanical Garden & Pamiri Culture",
+            "activities": [
+              {
+                "name": "Khorog Botanical Garden",
+                "cost": "₹150–₹230 pp"
+              },
+              {
+                "name": "Regional Museum of Khorog",
+                "cost": "₹75–₹150 pp"
+              },
+              {
+                "name": "Shared taxi up to the botanical garden ridge and back",
+                "cost": "₹190–₹380 pp"
+              },
+              {
+                "name": "Afghan Market or bazaar snacks if your dates line up",
+                "cost": "₹150–₹380 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pamir Lodge",
+                "budget": "₹1,500–₹2,700/night"
+              },
+              {
+                "name": "Lal Hotel",
+                "budget": "₹5,300–₹8,300/night"
+              }
+            ],
+            "meals": [
+              "Lal Hotel Restaurant",
+              "Markaz Guest House",
+              "Pamir Lodge"
+            ]
+          },
+          {
+            "theme": "Pamir Highway 4x4 Day into GBAO",
+            "activities": [
+              {
+                "name": "Shared 4x4 hire from Khorog toward the Wakhan Valley or Jelondy hot springs corridor",
+                "cost": "₹4,500–₹9,500 pp"
+              },
+              {
+                "name": "Checkpoint copies for GBAO permit",
+                "cost": "Included",
+                "tip": "Most drivers expect you to hand over photocopies at checkpoints, so keep spares from Dushanbe."
+              },
+              {
+                "name": "Picnic lunch and tea stops in village chaikhanas",
+                "cost": "₹230–₹570 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pamir Lodge",
+                "budget": "₹1,500–₹2,700/night"
+              },
+              {
+                "name": "Lal Hotel",
+                "budget": "₹5,300–₹8,300/night"
+              }
+            ],
+            "meals": [
+              "Village chaikhana",
+              "Lal Hotel Restaurant",
+              "Pamir Lodge"
+            ]
+          },
+          {
+            "theme": "Extra Day for Bulunkul, Wakhan or Weather",
+            "activities": [
+              {
+                "name": "Reserve this day if flights are delayed or you want to keep driving farther along the Pamir Highway",
+                "cost": "₹0–₹9,500 pp"
+              }
+            ]
+          },
+          {
+            "theme": "Second Deep-Pamir Buffer",
+            "activities": [
+              {
+                "name": "Optional overnight jeep extension or a recovery day back in Khorog",
+                "cost": "₹0–₹11,500 pp"
+              }
+            ]
+          }
+        ]
+      },
+      "Iskanderkul Lake": {
+        "name": "Iskanderkul Lake",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One night is enough for lake views and a short waterfall walk; only add a second if you want a slower Sarytag hike or a weather cushion.",
+        "days": [
+          {
+            "theme": "Lakeshore Walks & Fann Niagara",
+            "activities": [
+              {
+                "name": "Shared taxi arrival via Varzob and the Anzob route",
+                "cost": "₹760–₹1,520 pp"
+              },
+              {
+                "name": "Iskanderkul lakeshore trail and viewpoint stops",
+                "cost": "Free"
+              },
+              {
+                "name": "Short hike to Fann Niagara waterfall",
+                "cost": "Free"
+              },
+              {
+                "name": "Guesthouse set dinner by the lake",
+                "cost": "₹380–₹760 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dilovar's Homestay",
+                "budget": "₹1,500–₹2,700/night"
+              },
+              {
+                "name": "Iskandarkul Guest House",
+                "budget": "₹2,700–₹4,500/night"
+              },
+              {
+                "name": "Iskanderkul Cottage",
+                "budget": "₹3,400–₹5,700/night"
+              }
+            ],
+            "meals": [
+              "Dilovar's Homestay",
+              "Iskandarkul Guest House",
+              "Turbaza restaurant"
+            ]
+          },
+          {
+            "theme": "Optional Sarytag Village Morning",
+            "activities": [
+              {
+                "name": "Short village walk or easy valley hike from Sarytag before moving on",
+                "cost": "Free"
+              },
+              {
+                "name": "Shared taxi onward toward Ayni or Penjikent",
+                "cost": "₹570–₹1,140 pp"
+              }
+            ]
+          }
+        ]
+      },
+      "Penjikent": {
+        "name": "Penjikent",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days works well for one history day and one Fann Mountains outing; keep a third only for Sarazm plus Panjrud or a slower trek start.",
+        "days": [
+          {
+            "theme": "Ancient Penjikent, Rudaki & Sarazm",
+            "activities": [
+              {
+                "name": "Ancient Penjikent ruins",
+                "cost": "₹75–₹150 pp"
+              },
+              {
+                "name": "Rudaki Museum",
+                "cost": "₹75–₹150 pp"
+              },
+              {
+                "name": "Sarazm Archaeological Site and museum shelter area",
+                "cost": "₹75–₹150 pp"
+              },
+              {
+                "name": "Panjakent Bazaar tea-and-bread stop",
+                "cost": "₹150–₹380 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Rudaki",
+                "budget": "₹2,300–₹3,800/night"
+              },
+              {
+                "name": "Panjakent Plaza",
+                "budget": "₹4,500–₹6,800/night"
+              },
+              {
+                "name": "Sarazm Plaza",
+                "budget": "₹4,900–₹7,200/night"
+              }
+            ],
+            "meals": [
+              "Cafe Rudaki",
+              "Panjakent Plaza Restaurant",
+              "Hotel Rudaki Restaurant"
+            ]
+          },
+          {
+            "theme": "Seven Lakes / Fann Mountains Day",
+            "activities": [
+              {
+                "name": "Shared taxi to Haft-Kul (Seven Lakes) or Camp Artuch trailhead",
+                "cost": "₹760–₹1,900 pp"
+              },
+              {
+                "name": "Fann Mountains trekking access / campsite fee at Camp Artuch or village guest stop",
+                "cost": "₹150–₹380 pp",
+                "tip": "There is no formal government trekking permit for the main Fann routes; this is the usual local camp or trailhead fee travelers actually pay."
+              },
+              {
+                "name": "Simple lakeside lunch or camp tea",
+                "cost": "₹230–₹570 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Rudaki",
+                "budget": "₹2,300–₹3,800/night"
+              },
+              {
+                "name": "Panjakent Plaza",
+                "budget": "₹4,500–₹6,800/night"
+              }
+            ],
+            "meals": [
+              "Cafe Rudaki",
+              "Camp Artuch",
+              "Panjakent Plaza Restaurant"
+            ]
+          },
+          {
+            "theme": "Optional Rudaki Mausoleum Extension",
+            "activities": [
+              {
+                "name": "Drive to Panjrud for the Rudaki Mausoleum if you want an extra literary stop",
+                "cost": "₹760–₹1,520 pp"
+              }
+            ]
+          }
+        ]
+      },
+      "Khujand": {
+        "name": "Khujand",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "One day gets the fortress, bazaar and cable car done; a second day helps if you want Arbob Palace and a more relaxed Syr Darya evening.",
+        "days": [
+          {
+            "theme": "Fortress, Panjshanbe Bazaar & Cable Car",
+            "activities": [
+              {
+                "name": "Khujand Fortress and Local History Museum",
+                "cost": "₹115–₹230 pp"
+              },
+              {
+                "name": "Panjshanbe Bazaar food walk",
+                "cost": "₹150–₹380 pp"
+              },
+              {
+                "name": "Khujand cable car round trip over the Syr Darya",
+                "cost": "₹190 pp",
+                "tip": "Round-trip fare is about 25 TJS; one-way tickets are cheaper if you plan to walk back."
+              },
+              {
+                "name": "Kamoli Khujandi Park sunset stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hostel Sharq 21",
+                "budget": "₹1,200–₹1,900/night"
+              },
+              {
+                "name": "Sugdiyon Hotel",
+                "budget": "₹3,400–₹5,700/night"
+              },
+              {
+                "name": "Parliament Palace Hotel",
+                "budget": "₹5,700–₹8,900/night"
+              }
+            ],
+            "meals": [
+              "Omar Khayam",
+              "Saray Cafe",
+              "Sadbarg"
+            ]
+          },
+          {
+            "theme": "Arbob Palace & Easy Riverfront Day",
+            "activities": [
+              {
+                "name": "Arbob Cultural Palace",
+                "cost": "₹75–₹150 pp"
+              },
+              {
+                "name": "Somoni Park and riverside pause",
+                "cost": "Free"
+              },
+              {
+                "name": "Taxi back to the station or airport for departure",
+                "cost": "₹190–₹380 per cab"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sugdiyon Hotel",
+                "budget": "₹3,400–₹5,700/night"
+              },
+              {
+                "name": "Parliament Palace Hotel",
+                "budget": "₹5,700–₹8,900/night"
+              }
+            ],
+            "meals": [
+              "Parliament Palace Restaurant",
+              "Zaytun",
+              "Saray Cafe"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Dushanbe",
+        "to": "Pamir Highway (Khorog)",
+        "method": "Tajik Air domestic flight when it operates; otherwise take a shared jeep or pre-booked 4x4 hire via Kalaikhum on the Pamir Highway (14–16 hr by road)",
+        "cost": "₹4,500–₹7,500 pp by air; ₹15,000–₹28,000 pp by shared 4x4"
+      },
+      {
+        "from": "Pamir Highway (Khorog)",
+        "to": "Iskanderkul Lake",
+        "method": "Most travelers return to Dushanbe by 4x4 and continue north the next morning by shared taxi to Sarytag or the lake area",
+        "cost": "₹16,000–₹30,000 pp total over 2 travel days"
+      },
+      {
+        "from": "Iskanderkul Lake",
+        "to": "Penjikent",
+        "method": "Shared taxi via Ayni or onward seat in a northbound car through the Fann corridor (about 2.5–3.5 hr)",
+        "cost": "₹570–₹1,140 pp"
+      },
+      {
+        "from": "Penjikent",
+        "to": "Khujand",
+        "method": "Shared taxi along the Zarafshon valley road (about 5–6 hr)",
+        "cost": "₹950–₹1,900 pp"
+      }
+    ],
+    "extras": [
+      "Best weather is usually June–September; this is when the Pamir Highway, Iskanderkul and Seven Lakes are easiest to combine in one loop.",
+      "Shared taxis are the default transport across Tajikistan and usually leave only when full, so start early and keep your day flexible.",
+      "Carry enough cash before the Pamir leg — cards and ATMs are unreliable outside Dushanbe and major Khujand hotels.",
+      "If the Tajik Air Khorog flight is cancelled, a driver + 4x4 hire is the normal fallback; do not count on same-day rebooking.",
+      "For a shorter 7-day trip, keep Dushanbe, Iskanderkul, Penjikent and Khujand and save the Pamir Highway for a dedicated return trip."
+    ],
+    "cityImages": {
+      "Dushanbe": [
+        "Rudaki Park Dushanbe",
+        "National Museum of Tajikistan",
+        "Hissar Fortress"
+      ],
+      "Pamir Highway (Khorog)": [
+        "Khorog Botanical Garden",
+        "Khorog Central Park",
+        "Pamir Highway Khorog"
+      ],
+      "Iskanderkul Lake": [
+        "Iskanderkul Lake",
+        "Fann Niagara",
+        "Sarytag village"
+      ],
+      "Penjikent": [
+        "Ancient Penjikent",
+        "Sarazm",
+        "Seven Lakes Tajikistan"
+      ],
+      "Khujand": [
+        "Panjshanbe Bazaar",
+        "Khujand Fortress",
+        "Khujand Cable Car"
+      ]
+    }
+  }
+}

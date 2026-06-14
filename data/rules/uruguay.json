@@ -1,0 +1,477 @@
+{
+  "name": "Uruguay",
+  "seed": false,
+  "lat": -32.52,
+  "lng": -55.77,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.2L–₹1.9L",
+    "couple": "₹2L–₹3.3L",
+    "family4": "₹4.2L–₹6.2L"
+  },
+  "experiences": [
+    "Ciudad Vieja & Mercado del Puerto",
+    "Colonia del Sacramento UNESCO quarter",
+    "Punta del Este beaches & Casapueblo",
+    "Cabo Polonio dunes and sea lions",
+    "Salto thermal springs"
+  ],
+  "avoid": [
+    "January is peak beach season, so Punta del Este and Cabo Polonio prices spike fast.",
+    "Winter (June-August) is quieter but windy, and many coastal businesses reduce hours."
+  ],
+  "combo": [
+    "Argentina",
+    "Brazil"
+  ],
+  "landmark": "Casapueblo",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Pairs naturally with Buenos Aires via the Buquebus ferry to Colonia del Sacramento.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Montevideo",
+      "lat": -34.9011,
+      "lng": -56.1645,
+      "notes": "Historic Ciudad Vieja, long Rambla sunsets, parrillas, and Uruguay's most useful transit hub."
+    },
+    {
+      "name": "Colonia del Sacramento",
+      "lat": -34.4707,
+      "lng": -57.8442,
+      "notes": "Cobblestone UNESCO quarter with river views and the easiest ferry link from Buenos Aires."
+    },
+    {
+      "name": "Punta del Este",
+      "lat": -34.9689,
+      "lng": -54.95,
+      "notes": "Classic South Atlantic resort base for beaches, port strolls, and the Casapueblo sunset."
+    },
+    {
+      "name": "Cabo Polonio",
+      "lat": -34.3992,
+      "lng": -53.782,
+      "notes": "Remote dune-backed fishing hamlet with 4x4-only access, a lighthouse, and sea lion colony."
+    },
+    {
+      "name": "Salto",
+      "lat": -31.3833,
+      "lng": -57.9667,
+      "notes": "Thermal-springs stop in northwest Uruguay, best for a slower inland break after the coast."
+    }
+  ],
+  "itinerary": {
+    "sim": "Antel prepago is the easiest local option; expect about ₹700–₹1,400 for a useful tourist-sized data pack. Coverage is solid in Montevideo, Colonia, Punta del Este, and Salto, but download maps before Cabo Polonio because signal can be patchy inside the dunes village.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "Buquebus",
+      "Moovit",
+      "Booking.com",
+      "Cabify",
+      "Google Translate",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Colonia del Sacramento",
+      "Montevideo",
+      "Punta del Este",
+      "Cabo Polonio",
+      "Salto"
+    ],
+    "cities": {
+      "Colonia del Sacramento": {
+        "name": "Colonia del Sacramento",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "This is Uruguay's easiest soft landing from Buenos Aires. Stay inside or beside the Barrio Histórico so you can walk the quarter before and after day-trippers thin out.",
+        "days": [
+          {
+            "theme": "UNESCO Quarter, Lighthouse & Riverfront Sunset",
+            "activities": [
+              {
+                "name": "Walk the Barrio Histórico lanes around Calle de los Suspiros, Portón de Campo, and Plaza Mayor",
+                "cost": "Free entry"
+              },
+              {
+                "name": "Faro de Colonia climb plus the small municipal museum circuit",
+                "cost": "₹100–₹400"
+              },
+              {
+                "name": "Basílica del Santísimo Sacramento and Bastión de San Miguel viewpoints"
+              },
+              {
+                "name": "Sunset along the old city wall and Rambla de Colonia"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Charco Hotel",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "Costa Colonia Riverside Boutique Hotel",
+                "budget": "₹8,000–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "El Buen Suspiro",
+              "Lentas Maravillas",
+              "Mesón de la Plaza"
+            ]
+          }
+        ]
+      },
+      "Montevideo": {
+        "name": "Montevideo",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Split your time between Ciudad Vieja and the east-side waterfront districts. Mercado del Puerto is best for lunch; evenings are ideal for the Rambla and Pocitos.",
+        "days": [
+          {
+            "theme": "Ciudad Vieja, Plaza Independencia & Mercado del Puerto",
+            "activities": [
+              {
+                "name": "Mercado del Puerto food-hall stroll and grill lunch at the old iron market",
+                "cost": "Free entry; meals usually ₹1,200–₹2,800"
+              },
+              {
+                "name": "Plaza Independencia, Puerta de la Ciudadela, and Palacio Salvo exterior walk"
+              },
+              {
+                "name": "Teatro Solís guided visit",
+                "cost": "₹500–₹700"
+              },
+              {
+                "name": "Museo Andes 1972",
+                "cost": "₹800–₹1,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Alma Histórica Boutique Hotel",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Don Boutique Hotel Montevideo",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "El Palenque",
+              "Jacinto",
+              "Café Brasilero"
+            ]
+          },
+          {
+            "theme": "Rambla, Parque Rodó & Carrasco-side Food and Wine",
+            "activities": [
+              {
+                "name": "Morning walk through Parque Rodó and the Rambla from Punta Carretas toward Pocitos"
+              },
+              {
+                "name": "Museo Nacional de Artes Visuales",
+                "cost": "Free entry"
+              },
+              {
+                "name": "Bodega Bouza winery visit with tasting or lunch",
+                "cost": "₹4,600–₹7,200"
+              },
+              {
+                "name": "Sunset at Carrasco beach or Plaza Virgilio lookout"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sofitel Montevideo Casino Carrasco & Spa",
+                "budget": "₹16,000–₹27,000/night"
+              },
+              {
+                "name": "Hotel Ciudadano Suites",
+                "budget": "₹6,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Es Mercat",
+              "La Pulpería",
+              "Manzanar"
+            ]
+          }
+        ]
+      },
+      "Punta del Este": {
+        "name": "Punta del Este",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Base near Playa Mansa or the peninsula if you want easy access to the port, beaches, and Punta Ballena for Casapueblo at sunset.",
+        "days": [
+          {
+            "theme": "Peninsula Highlights, Port & Casapueblo",
+            "activities": [
+              {
+                "name": "La Mano sculpture, Playa Brava photo stop, and peninsula walk"
+              },
+              {
+                "name": "Puerto de Punta del Este marina and sea lion lookout"
+              },
+              {
+                "name": "Casapueblo museum visit in Punta Ballena",
+                "cost": "₹1,100–₹1,300"
+              },
+              {
+                "name": "Sunset ceremony at Casapueblo terrace"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Grand Hotel Punta del Este",
+                "budget": "₹18,000–₹30,000/night"
+              },
+              {
+                "name": "Awa Boutique + Design Hotel",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Lo de Tere",
+              "Virazón",
+              "La Bourgogne"
+            ]
+          },
+          {
+            "theme": "Beach Day, Isla Gorriti or Museum Option",
+            "activities": [
+              {
+                "name": "Playa Mansa or Bikini Beach morning depending on your base"
+              },
+              {
+                "name": "Boat out to Isla Gorriti from the port when the weather is calm",
+                "cost": "₹1,600–₹2,400"
+              },
+              {
+                "name": "Museo Ralli as the art-focused backup if beach weather turns",
+                "cost": "Free entry"
+              },
+              {
+                "name": "Evening shopping and café stop around Avenida Gorlero"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Enjoy Punta del Este",
+                "budget": "₹14,000–₹25,000/night"
+              },
+              {
+                "name": "Awa Boutique + Design Hotel",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "El Secreto",
+              "Moby Dick",
+              "Ándele Taquería"
+            ]
+          }
+        ]
+      },
+      "Cabo Polonio": {
+        "name": "Cabo Polonio",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Travel light because access is by official park truck over sand. Book simple lodging ahead in summer and carry cash plus a power bank because services are basic.",
+        "days": [
+          {
+            "theme": "Dunes, Lighthouse & Sea Lion Colony",
+            "activities": [
+              {
+                "name": "Official 4x4 truck transfer between the national-park access gate and the village",
+                "cost": "₹1,200–₹1,600 round trip"
+              },
+              {
+                "name": "Cabo Polonio lighthouse climb and viewpoint",
+                "cost": "₹100–₹150"
+              },
+              {
+                "name": "Walk the giant dunes and the sea lion colony on the rocky coast"
+              },
+              {
+                "name": "Beach time at Playa Sur before the last truck back or an overnight stay"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Posada La Perla",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "La Posada de Los Corvinos",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "La Golosa",
+              "Mariemar",
+              "Comipaso"
+            ]
+          }
+        ]
+      },
+      "Salto": {
+        "name": "Salto",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Salto works best as a slow thermal reset. Stay by Daymán if hot springs are your priority, or in town if you want restaurants and easy riverfront access.",
+        "days": [
+          {
+            "theme": "Termas del Daymán & Thermal Park Relaxation",
+            "activities": [
+              {
+                "name": "Termas del Daymán thermal complex day pass",
+                "cost": "₹900–₹1,200"
+              },
+              {
+                "name": "Acuamanía water park if you want slides instead of a pure spa day",
+                "cost": "₹1,200–₹1,600"
+              },
+              {
+                "name": "Evening soak and casual riverside dinner"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Horacio Quiroga",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Salto Hotel & Casino",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "La Trattoria",
+              "La Calandria",
+              "El Rancho"
+            ]
+          },
+          {
+            "theme": "Salto Grande, Museums & Costanera",
+            "activities": [
+              {
+                "name": "Parque del Lago and Salto Grande dam viewpoint"
+              },
+              {
+                "name": "Museo del Hombre y la Tecnología",
+                "cost": "₹200–₹400"
+              },
+              {
+                "name": "Costanera Norte walk for river views and mate culture"
+              },
+              {
+                "name": "Optional second thermal stop at Daymán or Arapey depending on your transport"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Arapey Thermal Resort & Spa",
+                "budget": "₹18,000–₹30,000/night"
+              },
+              {
+                "name": "Salto Hotel & Casino",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "La Trattoria",
+              "El Rancho",
+              "La Calandria"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Colonia del Sacramento",
+        "to": "Montevideo",
+        "method": "COT intercity bus takes about 2 hr 30 min; rental car is similarly quick if you want flexibility",
+        "cost": "₹900–₹1,400"
+      },
+      {
+        "from": "Montevideo",
+        "to": "Punta del Este",
+        "method": "COPSA intercity bus from Tres Cruces is the standard 2–2.5 hr coastal hop; rental car is easy on Ruta Interbalnearia",
+        "cost": "₹900–₹1,400"
+      },
+      {
+        "from": "Punta del Este",
+        "to": "Cabo Polonio",
+        "method": "Take a COPSA or COT-style coastal bus toward Castillos/Valizas access, then the official park truck into Cabo Polonio",
+        "cost": "₹1,800–₹2,800"
+      },
+      {
+        "from": "Cabo Polonio",
+        "to": "Salto",
+        "method": "Rental car is the cleanest same-day move at roughly 7–8 hrs; by public transport expect the park truck out plus long intercity bus connections via the coast or Montevideo",
+        "cost": "₹4,500–₹9,000"
+      },
+      {
+        "from": "Buenos Aires",
+        "to": "Colonia del Sacramento",
+        "method": "Buquebus ferry is the classic Río de la Plata crossing and makes Colonia the easiest international entry point",
+        "cost": "₹3,600–₹7,000"
+      }
+    ],
+    "extras": [
+      "December to March is the sweet spot for beaches and long daylight, but book Punta del Este and Cabo Polonio beds early for late December through January.",
+      "Mercado del Puerto is best treated as a lunch stop rather than a quick snack break because tables and parrillas are the whole point of the visit.",
+      "If you are short on time, keep Colonia, Montevideo, and Punta del Este as the core route and treat Cabo Polonio plus Salto as rewarding extensions.",
+      "COPSA and COT cover the most useful tourist corridors, but a rental car becomes much more convenient once you add Cabo Polonio access and inland Salto to the same trip.",
+      "Carry some cash for rural stops and simple beach lodgings even though cards are widely accepted in Montevideo, Colonia, and Punta del Este."
+    ],
+    "cityImages": {
+      "Colonia del Sacramento": [
+        "Colonia del Sacramento Calle de los Suspiros",
+        "Faro de Colonia Uruguay",
+        "Colonia del Sacramento riverfront sunset"
+      ],
+      "Montevideo": [
+        "Mercado del Puerto Montevideo",
+        "Plaza Independencia Montevideo",
+        "Montevideo Rambla sunset"
+      ],
+      "Punta del Este": [
+        "La Mano Punta del Este",
+        "Casapueblo Punta Ballena Uruguay",
+        "Punta del Este port sea lions"
+      ],
+      "Cabo Polonio": [
+        "Cabo Polonio lighthouse Uruguay",
+        "Cabo Polonio dunes",
+        "Cabo Polonio sea lion colony"
+      ],
+      "Salto": [
+        "Termas del Dayman Uruguay",
+        "Salto Grande dam Uruguay",
+        "Salto Uruguay costanera"
+      ]
+    }
+  }
+}

@@ -1,0 +1,517 @@
+{
+  "name": "Bolivia",
+  "seed": false,
+  "lat": -16.29,
+  "lng": -63.59,
+  "region": "Americas",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹85,000–₹1.45L",
+    "couple": "₹1.55L–₹2.55L",
+    "family4": "₹3.1L–₹4.95L"
+  },
+  "experiences": [
+    "Salar de Uyuni",
+    "La Paz & Tiwanaku",
+    "Sucre colonial core",
+    "Lake Titicaca at Copacabana",
+    "Potosí silver history"
+  ],
+  "avoid": [
+    "January–March rains can flood sections of Salar de Uyuni, muddy desert tracks, and cause landslides on long road journeys.",
+    "Altitude is immediate in La Paz, Copacabana and Potosí, so keep the first 24 hours light and hydrate before adding Cerro Rico or Tiwanaku day trips.",
+    "Road blockades and strike-related transport disruptions are not rare in Bolivia; keep buffers before domestic flights and international connections."
+  ],
+  "combo": [
+    "Peru",
+    "Chile"
+  ],
+  "landmark": "Salar de Uyuni",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "La Paz",
+      "lat": -16.4897,
+      "lng": -68.1193,
+      "notes": "High-altitude capital for cable car views, Witches' Market lanes, lunar badlands at Valle de la Luna and Tiwanaku day trips."
+    },
+    {
+      "name": "Uyuni",
+      "lat": -20.4607,
+      "lng": -66.825,
+      "notes": "Gateway to Salar de Uyuni for the train cemetery, Colchani salt processing, cactus islands and mirror-season photography."
+    },
+    {
+      "name": "Sucre",
+      "lat": -19.0479,
+      "lng": -65.2595,
+      "notes": "Whitewashed constitutional capital with convent viewpoints, Bolivian independence history and a slower pace than La Paz."
+    },
+    {
+      "name": "Copacabana",
+      "lat": -16.167,
+      "lng": -69.087,
+      "notes": "Lake Titicaca base for the basilica, Cerro Calvario sunsets and day boats to Isla del Sol."
+    },
+    {
+      "name": "Potosí",
+      "lat": -19.5887,
+      "lng": -65.7531,
+      "notes": "UNESCO silver-boom city for Casa Nacional de la Moneda, colonial churches and Cerro Rico mine history."
+    }
+  ],
+  "itinerary": {
+    "sim": "Entel or Tigo prepaid SIMs are the easiest pickup in La Paz; expect roughly ₹720–₹1,440 for 5–10GB. Download offline maps before Uyuni and Copacabana because coverage drops outside town and across the salt flats.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "BoA",
+      "Amaszonas",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency",
+      "TicketsBolivia"
+    ],
+    "cityOrder": [
+      "La Paz",
+      "Copacabana",
+      "Sucre",
+      "Potosí",
+      "Uyuni"
+    ],
+    "cities": {
+      "La Paz": {
+        "name": "La Paz",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Sleep centrally in Sopocachi or near the cable cars, keep day one lighter for altitude, and slot Tiwanaku on a separate early start if you want the archaeology without rushing.",
+        "days": [
+          {
+            "theme": "Historic Center, Cable Cars & Valle de la Luna",
+            "activities": [
+              {
+                "name": "Plaza Murillo, San Francisco Basilica exterior and Witches' Market walk"
+              },
+              {
+                "name": "Mi Teleférico ride across central La Paz and El Alto viewpoints",
+                "cost": "₹36–₹72"
+              },
+              {
+                "name": "Valle de la Luna entrance",
+                "cost": "₹240"
+              },
+              {
+                "name": "Moon Valley taxi or shared transfer from Sopocachi / Centro",
+                "cost": "₹360–₹960"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Stannum Boutique Hotel & Spa",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hotel Rosario La Paz",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Gustu",
+              "Popular Cocina Boliviana",
+              "Ali Pacha"
+            ]
+          },
+          {
+            "theme": "Tiwanaku Day Trip",
+            "activities": [
+              {
+                "name": "Tiwanaku archaeological complex and museums entry",
+                "cost": "₹1,200"
+              },
+              {
+                "name": "Shared Tiwanaku day tour or return transport from La Paz",
+                "cost": "₹1,800–₹3,000"
+              },
+              {
+                "name": "Calle Jaén museums or a slow café stop back in La Paz"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mitru Express",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Selina La Paz",
+                "budget": "₹1,800–₹4,200/night"
+              }
+            ],
+            "meals": [
+              "Ancestral",
+              "Typica Café Tostaduría",
+              "Mercado Lanza food stalls"
+            ]
+          }
+        ]
+      },
+      "Copacabana": {
+        "name": "Copacabana",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Copacabana is best as a slower lake break between big transit legs, and it also works well if you plan to continue onward to Peru after Bolivia.",
+        "days": [
+          {
+            "theme": "Basilica, Cerro Calvario & Lakefront",
+            "activities": [
+              {
+                "name": "Basilica of Our Lady of Copacabana and town square"
+              },
+              {
+                "name": "Cerro Calvario sunset walk above the bay"
+              },
+              {
+                "name": "Pedalo or short boat ride on the Copacabana waterfront",
+                "cost": "₹120–₹360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel La Cupula",
+                "budget": "₹4,500–₹8,000/night"
+              },
+              {
+                "name": "Hotel Rosario Lago Titicaca",
+                "budget": "₹6,000–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "La Orilla",
+              "La Cupula Restaurant",
+              "Restaurant Gourmet Ali"
+            ]
+          },
+          {
+            "theme": "Isla del Sol Day Trip",
+            "activities": [
+              {
+                "name": "Round-trip public boat to Isla del Sol",
+                "cost": "₹600–₹840"
+              },
+              {
+                "name": "Isla del Sol community / trail fee",
+                "cost": "₹120–₹180"
+              },
+              {
+                "name": "Pilkokaina ruins and Yumani stairways walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hostal Las Olas",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Hotel Wendy Mar",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "El Condor & The Eagle Café",
+              "Pit Stop",
+              "Coffee Restaurant Baguette About It"
+            ]
+          }
+        ]
+      },
+      "Sucre": {
+        "name": "Sucre",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Sucre is gentler for acclimatization than La Paz or Potosí, so it works well as a reset city for longer café mornings and museum-heavy afternoons.",
+        "days": [
+          {
+            "theme": "Colonial Core & Independence History",
+            "activities": [
+              {
+                "name": "Plaza 25 de Mayo, Metropolitan Cathedral exterior and Casa de la Libertad",
+                "cost": "₹180"
+              },
+              {
+                "name": "La Recoleta viewpoint and monastery area"
+              },
+              {
+                "name": "ASUR Indigenous Art Museum",
+                "cost": "₹360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Parador Santa Maria La Real",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Hotel de Su Merced",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Nativa Restaurante",
+              "Café Condor",
+              "Cosmo Café Restaurant"
+            ]
+          },
+          {
+            "theme": "Market Morning & Slow White City Afternoon",
+            "activities": [
+              {
+                "name": "Mercado Central breakfast and salteñas"
+              },
+              {
+                "name": "Cal Orck'o dinosaur park or Museo del Tesoro",
+                "cost": "₹240–₹360"
+              },
+              {
+                "name": "Sunset drinks on a rooftop terrace in the old town"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mi Pueblo Samary Hotel Boutique",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Villa Antigua",
+                "budget": "₹4,000–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "El Huerto",
+              "La Taverne",
+              "Bienmesabe"
+            ]
+          }
+        ]
+      },
+      "Potosí": {
+        "name": "Potosí",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Potosí is colder and higher than Sucre, so layer up for morning mine tours and book a reputable operator that includes proper helmets, boots and masks for Cerro Rico.",
+        "days": [
+          {
+            "theme": "Casa de la Moneda & Colonial Potosí",
+            "activities": [
+              {
+                "name": "Casa Nacional de la Moneda guided entry",
+                "cost": "₹480"
+              },
+              {
+                "name": "Plaza 10 de Noviembre and San Lorenzo church façade walk"
+              },
+              {
+                "name": "Santa Teresa Convent Museum or Torre de la Compañía viewpoint",
+                "cost": "₹180–₹300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hostal Colonial Potosi",
+                "budget": "₹3,000–₹5,500/night"
+              },
+              {
+                "name": "Hotel Coloso Potosi",
+                "budget": "₹5,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "El Fogon",
+              "4060",
+              "Café de la Plata"
+            ]
+          },
+          {
+            "theme": "Cerro Rico Mine Tour",
+            "activities": [
+              {
+                "name": "Cerro Rico guided mine tour with gear and miner gifts",
+                "cost": "₹2,160–₹4,680"
+              },
+              {
+                "name": "Mineral market stop before entering the mine"
+              },
+              {
+                "name": "Warm café recovery back in the center after the tour"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Santa Teresa",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Virreyes Hotel",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "La Taverne",
+              "Cherry's Salon de Té",
+              "Mercado Central de Potosí"
+            ]
+          }
+        ]
+      },
+      "Uyuni": {
+        "name": "Uyuni",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Lock your Uyuni tour operator, vehicle condition and English-guide needs before arrival, and pack sun protection because the salt glare is intense even in cool dry-season weather.",
+        "days": [
+          {
+            "theme": "Train Cemetery & Salar de Uyuni Classic Circuit",
+            "activities": [
+              {
+                "name": "Shared full-day 4x4 Salar de Uyuni tour covering Train Cemetery, Colchani, salt flats and sunset",
+                "cost": "₹5,400–₹8,400"
+              },
+              {
+                "name": "Incahuasi Island entry during the classic circuit",
+                "cost": "₹360"
+              },
+              {
+                "name": "Perspective-photo stop and Dakar monument"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Jardines de Uyuni",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Hotel Casa de Sal",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Tika",
+              "Minuteman Revolutionary Pizza",
+              "Llama Café"
+            ]
+          },
+          {
+            "theme": "Southwest Circuit Extension",
+            "activities": [
+              {
+                "name": "Shared 3-day Salar de Uyuni and southwest lagoons tour with basic lodging",
+                "cost": "₹18,000–₹26,400"
+              },
+              {
+                "name": "Eduardo Avaroa reserve and laguna fees usually paid separately",
+                "cost": "₹2,520"
+              },
+              {
+                "name": "Upgrade to a private room or English-speaking guide if you do not want the standard shared setup",
+                "cost": "₹1,800–₹6,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel de Sal Luna Salada",
+                "budget": "₹12,500–₹20,000/night"
+              },
+              {
+                "name": "Hotel Palacio de Sal",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Donna Isabella",
+              "Restaurant 16 de Julio",
+              "The Hot Spot The New Religion"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "La Paz",
+        "to": "Copacabana",
+        "method": "Bus or shared taxi via the Tiquina crossing; the direct ride is usually 3.5–4 hrs and easy to arrange the day before",
+        "cost": "₹360–₹1,200"
+      },
+      {
+        "from": "Copacabana",
+        "to": "Sucre",
+        "method": "Return to La Paz by bus or shared taxi, then continue on a BOA or Amaszonas domestic flight to Sucre if you want to save a full transit day; overnight buses are the cheaper fallback",
+        "cost": "₹4,200–₹8,500"
+      },
+      {
+        "from": "Sucre",
+        "to": "Potosí",
+        "method": "Frequent Flota bus services and shared taxis connect Sucre to Potosí in roughly 3 hrs",
+        "cost": "₹300–₹900"
+      },
+      {
+        "from": "Potosí",
+        "to": "Uyuni",
+        "method": "Flota bus or shared taxi over the Altiplano; allow 4–5 hrs and keep warm layers handy for early departures",
+        "cost": "₹420–₹1,080"
+      }
+    ],
+    "extras": [
+      "Dry season from May to October gives the simplest logistics for Uyuni, Potosí and road transfers, while January to March is better only if you specifically want mirror-effect photos and can tolerate weather disruption.",
+      "Carry cash in bolivianos for museum tickets, mine tours, island fees and rural food stops because card acceptance is patchy outside better hotels in La Paz and Sucre.",
+      "Bolivia rewards slow acclimatization: start in La Paz with lighter sightseeing, then do Tiwanaku, Cerro Rico and long overland hops after you feel settled.",
+      "If you only have a week, keep La Paz, Uyuni and either Sucre or Copacabana as your core; add both Potosí and Copacabana only when you have the extra transit time.",
+      "For onward travel, Copacabana links naturally with Peru's Lake Titicaca side, while Uyuni fits well with overland connections into Chile's Atacama region."
+    ],
+    "cityImages": {
+      "La Paz": [
+        "Plaza Murillo La Paz",
+        "Mi Teleferico La Paz",
+        "Valle de la Luna La Paz"
+      ],
+      "Copacabana": [
+        "Copacabana Bolivia waterfront",
+        "Basilica of Our Lady of Copacabana Bolivia",
+        "Isla del Sol Lake Titicaca"
+      ],
+      "Sucre": [
+        "Plaza 25 de Mayo Sucre",
+        "La Recoleta Sucre",
+        "Casa de la Libertad Sucre"
+      ],
+      "Potosí": [
+        "Casa Nacional de la Moneda Potosi",
+        "Cerro Rico Potosi",
+        "San Lorenzo Church Potosi"
+      ],
+      "Uyuni": [
+        "Salar de Uyuni Bolivia",
+        "Train Cemetery Uyuni",
+        "Incahuasi Island Bolivia"
+      ]
+    }
+  }
+}
