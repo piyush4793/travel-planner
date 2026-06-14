@@ -1,0 +1,566 @@
+{
+  "name": "Zambia",
+  "seed": false,
+  "lat": -13.13,
+  "lng": 28.28,
+  "region": "Africa",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹2.1L–₹3.5L",
+    "couple": "₹4L–₹6.2L",
+    "family4": "₹7.8L–₹11.6L"
+  },
+  "experiences": [
+    "Victoria Falls rainforest walk",
+    "South Luangwa walking safari",
+    "Lower Zambezi canoe safari",
+    "Livingstone sunset cruise",
+    "Lake Kariba houseboat and fishing trips"
+  ],
+  "avoid": [
+    "November to April is wetter and greener, but safari roads get slower, Victoria Falls spray can limit viewpoints, and walking safari logistics are less predictable",
+    "Proflight Zambia seats to Mfuwe, Jeki, and Livingstone can sell out quickly in the dry season, so lock flights before lodging if you want the smoothest route",
+    "Night driving between Lusaka, Livingstone, Siavonga, and the park access roads is best avoided because of potholes, livestock, and limited roadside lighting"
+  ],
+  "combo": [
+    "Zimbabwe",
+    "Botswana",
+    "Malawi"
+  ],
+  "landmark": "Victoria Falls",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Lusaka is the practical gateway for almost every Zambia itinerary from India. Proflight Zambia is the cleanest way to link Livingstone, Mfuwe, and the Lower Zambezi airstrips, while Siavonga and Lake Kariba fit best as a final road trip from Lusaka.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Lusaka",
+      "lat": -15.3875,
+      "lng": 28.3228,
+      "notes": "Capital reset for museums, craft shopping, and the key Proflight Zambia connections before the safari sectors begin"
+    },
+    {
+      "name": "Livingstone",
+      "lat": -17.8419,
+      "lng": 25.8543,
+      "notes": "Base for the Zambian side of Victoria Falls, Zambezi cruises, museum stops, and easy access to Mosi-oa-Tunya"
+    },
+    {
+      "name": "South Luangwa National Park",
+      "lat": -13.1094,
+      "lng": 31.7867,
+      "notes": "Mfuwe-based safari country known for classic walking safaris, leopard-rich night drives, and some of Zambia's best-value bush camps"
+    },
+    {
+      "name": "Lower Zambezi",
+      "lat": -15.75,
+      "lng": 29.33,
+      "notes": "River-and-escarpment wilderness where canoeing, boat safaris, walking, and tiger fishing define the experience"
+    },
+    {
+      "name": "Lake Kariba",
+      "lat": -16.5382,
+      "lng": 28.7087,
+      "notes": "Siavonga-side lake escape for dam views, houseboat sunsets, fishing, and a softer final day after bush flights and game drives"
+    }
+  ],
+  "itinerary": {
+    "sim": "Airtel Zambia is the safest all-round SIM for this loop, with MTN Zambia also workable in Lusaka and Livingstone. Budget about ₹310–₹1,240 for a starter SIM or eSIM with enough data for maps, WhatsApp, and airline confirmations, but expect patchier service inside South Luangwa and the Lower Zambezi camps.",
+    "apps": [
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "Proflight Zambia",
+      "SafariBookings",
+      "Tracks4Africa",
+      "Waze",
+      "XE Currency",
+      "Zambia Tourism"
+    ],
+    "cityOrder": [
+      "Lusaka",
+      "Livingstone",
+      "South Luangwa National Park",
+      "Lower Zambezi",
+      "Lake Kariba"
+    ],
+    "cities": {
+      "Lusaka": {
+        "name": "Lusaka",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Arrival reset, capital errands, and setting up the first domestic hop or long bus leg",
+            "activities": [
+              {
+                "name": "Lusaka National Museum entry",
+                "cost": "₹155–₹310"
+              },
+              {
+                "name": "Kabwata Cultural Village craft browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lilayi Elephant Nursery visit or donation-based stop",
+                "cost": "₹620–₹1,240"
+              },
+              {
+                "name": "Proflight Zambia one-way flight from Lusaka to Livingstone",
+                "cost": "₹3,410–₹5,580"
+              },
+              {
+                "name": "Mazhandu Family Bus Services or Shalom Bus Services coach from Lusaka to Livingstone",
+                "cost": "₹620–₹930"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Latitude 15°",
+                "budget": "₹13,500–₹22,500/night"
+              },
+              {
+                "name": "Taj Pamodzi Lusaka",
+                "budget": "₹10,500–₹18,500/night"
+              },
+              {
+                "name": "Radisson Blu Hotel Lusaka",
+                "budget": "₹11,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "The Deli at Latitude 15°",
+              "Steaks 'n' Grills",
+              "Chuma Grill Restaurant & Bar"
+            ]
+          }
+        ]
+      },
+      "Livingstone": {
+        "name": "Livingstone",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Victoria Falls viewpoints, local history, and the classic first sunset on the Zambezi",
+            "activities": [
+              {
+                "name": "Mosi-oa-Tunya National Park / Victoria Falls entry on the Zambian side",
+                "cost": "₹930"
+              },
+              {
+                "name": "Knife-Edge Bridge and main rainforest viewpoints walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Livingstone Museum entry",
+                "cost": "₹155–₹310"
+              },
+              {
+                "name": "Lady Livingstone sunset cruise on the Zambezi",
+                "cost": "₹2,170–₹3,100"
+              },
+              {
+                "name": "Mukuni Park Curio Market browse",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Avani Victoria Falls Resort",
+                "budget": "₹16,500–₹28,500/night"
+              },
+              {
+                "name": "Royal Livingstone Hotel by Anantara",
+                "budget": "₹31,000–₹55,000/night"
+              },
+              {
+                "name": "Radisson Blu Mosi-oa-Tunya Livingstone Resort",
+                "budget": "₹18,500–₹32,500/night"
+              }
+            ],
+            "meals": [
+              "The Old Drift Restaurant",
+              "Kalai Restaurant",
+              "Cafe Zambezi"
+            ]
+          },
+          {
+            "theme": "Adrenaline or wildlife add-ons before turning the trip fully toward safari country",
+            "activities": [
+              {
+                "name": "Batoka Sky helicopter or microlight flight over Victoria Falls",
+                "cost": "₹5,580–₹10,850"
+              },
+              {
+                "name": "Mukuni Village guided cultural visit",
+                "cost": "₹620–₹1,240"
+              },
+              {
+                "name": "Mosi-oa-Tunya game drive or white rhino walk",
+                "cost": "₹1,860–₹3,410"
+              },
+              {
+                "name": "Royal Livingstone Express dining excursion",
+                "cost": "₹3,720–₹5,890"
+              },
+              {
+                "name": "Rental car pickup for a Zambia road segment if you prefer not to fly every leg",
+                "cost": "₹4,650–₹7,750/day"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The David Livingstone Safari Lodge & Spa",
+                "budget": "₹14,500–₹24,500/night"
+              },
+              {
+                "name": "Avani Victoria Falls Resort",
+                "budget": "₹16,500–₹28,500/night"
+              },
+              {
+                "name": "Royal Chundu Island Lodge",
+                "budget": "₹38,000–₹68,000/night"
+              }
+            ],
+            "meals": [
+              "The Lookout Cafe",
+              "Cafe Zambezi",
+              "Golden Leaf"
+            ]
+          }
+        ]
+      },
+      "South Luangwa National Park": {
+        "name": "South Luangwa National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Fly into Mfuwe, settle into the Luangwa Valley, and start with the classic sunset safari rhythm",
+            "activities": [
+              {
+                "name": "Proflight Zambia one-way flight from Lusaka to Mfuwe",
+                "cost": "₹6,820–₹8,990"
+              },
+              {
+                "name": "South Luangwa National Park entry fee for international visitors",
+                "cost": "₹775"
+              },
+              {
+                "name": "Shared sunset game drive from Mfuwe Lodge, Kafunta River Lodge, or Flatdogs Camp",
+                "cost": "₹3,100–₹4,960"
+              },
+              {
+                "name": "Leopard-focused night drive with lodge guide and scout",
+                "cost": "₹3,720–₹5,580"
+              },
+              {
+                "name": "Airstrip or lodge road transfer around Mfuwe",
+                "cost": "₹620–₹1,550"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mfuwe Lodge",
+                "budget": "₹28,000–₹48,000/night"
+              },
+              {
+                "name": "Flatdogs Camp",
+                "budget": "₹11,500–₹19,500/night"
+              },
+              {
+                "name": "Kafunta River Lodge",
+                "budget": "₹22,500–₹37,500/night"
+              }
+            ],
+            "meals": [
+              "Mfuwe Lodge Dining Room",
+              "Flatdogs Camp Restaurant",
+              "Kafunta River Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Walking safari country, village context, and another strong wildlife day without changing camps",
+            "activities": [
+              {
+                "name": "Guided walking safari from Flatdogs Camp, Robin Pope Safaris, or Kafunta Safaris",
+                "cost": "₹2,480–₹3,720"
+              },
+              {
+                "name": "Morning game drive back toward the Luangwa River oxbows",
+                "cost": "₹3,100–₹4,960"
+              },
+              {
+                "name": "Kawaza Village cultural visit near Mfuwe",
+                "cost": "₹930–₹1,550"
+              },
+              {
+                "name": "Tribal Textiles showroom and workshop stop",
+                "cost": "₹310–₹775"
+              },
+              {
+                "name": "Optional second park day fee if your lodge bills each safari date separately",
+                "cost": "₹775"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mfuwe Lodge",
+                "budget": "₹28,000–₹48,000/night"
+              },
+              {
+                "name": "Track and Trail River Camp",
+                "budget": "₹17,500–₹31,500/night"
+              },
+              {
+                "name": "Chikunto Safari Lodge",
+                "budget": "₹26,500–₹43,500/night"
+              }
+            ],
+            "meals": [
+              "Flatdogs Camp Restaurant",
+              "Track and Trail River Camp Restaurant",
+              "Chikunto Safari Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Lower Zambezi": {
+        "name": "Lower Zambezi",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Bush flight arrival, river frontage, and the signature canoe-and-sundowner pairing",
+            "activities": [
+              {
+                "name": "Proflight Zambia one-way flight from Lusaka to Jeki or Royal airstrip",
+                "cost": "₹8,370–₹10,850"
+              },
+              {
+                "name": "Lower Zambezi National Park entry fee for international visitors",
+                "cost": "₹775"
+              },
+              {
+                "name": "Shared half-day or full-day canoe safari from Royal Zambezi Lodge, Chiawa Camp, or Chongwe River Camp",
+                "cost": "₹2,790–₹5,580"
+              },
+              {
+                "name": "Park canoeing activity fee where charged separately",
+                "cost": "₹620"
+              },
+              {
+                "name": "Sunset boat safari on the Zambezi channels",
+                "cost": "₹3,100–₹4,960"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Royal Zambezi Lodge",
+                "budget": "₹31,000–₹58,000/night"
+              },
+              {
+                "name": "Chiawa Camp",
+                "budget": "₹52,000–₹86,000/night"
+              },
+              {
+                "name": "Chongwe River Camp",
+                "budget": "₹34,500–₹62,500/night"
+              }
+            ],
+            "meals": [
+              "Royal Zambezi Lodge Restaurant",
+              "Chiawa Camp Dining Deck",
+              "Chongwe River Camp Dining Area"
+            ]
+          },
+          {
+            "theme": "Mix a land safari with river time and keep one premium experience for Zambia's most polished wilderness zone",
+            "activities": [
+              {
+                "name": "Morning game drive with guide and scout in the Lower Zambezi floodplain",
+                "cost": "₹3,100–₹5,580"
+              },
+              {
+                "name": "Guided walking safari in the lower valley concessions",
+                "cost": "₹2,480–₹4,340"
+              },
+              {
+                "name": "Tiger fishing trip on the Zambezi",
+                "cost": "₹4,650–₹7,750"
+              },
+              {
+                "name": "Boat transfer or lodge shuttle between Jeki and your riverside camp",
+                "cost": "₹1,550–₹3,100"
+              },
+              {
+                "name": "Optional second park day fee if your camp invoices by full calendar day",
+                "cost": "₹775"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Baines' River Camp",
+                "budget": "₹26,500–₹46,500/night"
+              },
+              {
+                "name": "Kasaka River Lodge",
+                "budget": "₹18,500–₹31,500/night"
+              },
+              {
+                "name": "Anabezi Camp",
+                "budget": "₹58,000–₹92,000/night"
+              }
+            ],
+            "meals": [
+              "Baines' River Camp Restaurant",
+              "Kasaka River Lodge Restaurant",
+              "Anabezi Camp Dining Tent"
+            ]
+          }
+        ]
+      },
+      "Lake Kariba": {
+        "name": "Lake Kariba",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "days": [
+          {
+            "theme": "End with Siavonga views, the lakefront, and a lighter Zambia finale after the park-heavy middle stretch",
+            "activities": [
+              {
+                "name": "Rental car from Lusaka for the Siavonga and Lake Kariba road trip",
+                "cost": "₹4,650–₹7,750/day"
+              },
+              {
+                "name": "Intercity bus from Lusaka to Siavonga",
+                "cost": "₹310–₹620"
+              },
+              {
+                "name": "Kariba Dam wall and viewpoint stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lake Kariba sunset cruise or short houseboat outing from Siavonga",
+                "cost": "₹1,550–₹3,100"
+              },
+              {
+                "name": "Fishing charter or private boat hire on the lake",
+                "cost": "₹4,650–₹9,300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lake Kariba Inns",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Manchinchi Bay Lodge",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Eagles Rest Resort",
+                "budget": "₹6,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Lake Kariba Inns Restaurant",
+              "Manchinchi Bay Lodge Restaurant",
+              "Eagles Rest Resort Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Lusaka",
+        "to": "Livingstone",
+        "method": "Proflight Zambia is the fastest link; Mazhandu and Shalom buses are the budget fallback if you can spare most of a day on the road",
+        "cost": "₹620–₹5,580"
+      },
+      {
+        "from": "Livingstone",
+        "to": "South Luangwa National Park",
+        "method": "Usually route back through Lusaka and connect onward to Mfuwe with Proflight Zambia; doing it fully overland takes too long for most short Zambia trips",
+        "cost": "₹10,230–₹14,570"
+      },
+      {
+        "from": "South Luangwa National Park",
+        "to": "Lower Zambezi",
+        "method": "Bush logistics are smoothest via Mfuwe-Lusaka and then Lusaka-Jeki or Royal on Proflight Zambia, usually on the same or next day depending on schedules",
+        "cost": "₹15,190–₹19,840"
+      },
+      {
+        "from": "Lower Zambezi",
+        "to": "Lake Kariba",
+        "method": "Most travelers fly or boat back toward Lusaka first, then continue by rental car or bus to Siavonga for the lake finish",
+        "cost": "₹8,680–₹18,600"
+      },
+      {
+        "from": "Lake Kariba",
+        "to": "Lusaka",
+        "method": "Return by self-drive rental car or intercity bus from Siavonga depending on how much flexibility you want on the final day",
+        "cost": "₹310–₹7,750"
+      }
+    ],
+    "extras": [
+      "May to October is the sweet spot for this route because wildlife gathers near water in South Luangwa and Lower Zambezi, and road conditions are much more reliable than in the rains.",
+      "Victoria Falls is at its fullest around late rainy season and early dry season, so May and June give you maximum spray, while August to October gives you drier viewpoints and stronger safari conditions deeper inland.",
+      "South Luangwa walking safaris are one of Zambia's signature experiences, but they depend on lodge guiding teams, wildlife movements, and trail conditions, so leave your schedule flexible rather than overbooking every hour.",
+      "Lower Zambezi canoeing sometimes prices the river activity separately from park entry, so confirm whether your camp includes the canoe permit before you compare operators.",
+      "If you only splurge once, spend it on a premium camp in South Luangwa or Lower Zambezi rather than on every transit leg; the safari guiding quality is where Zambia really overdelivers.",
+      "Lake Kariba works best as a decompression stop from Lusaka or on the way to Zimbabwe, not as a substitute for the main safari parks, so keep it short unless you specifically want fishing or a houseboat."
+    ],
+    "cityImages": {
+      "Lusaka": [
+        "Lusaka skyline Zambia",
+        "Kabwata Cultural Village Lusaka",
+        "Latitude 15 Lusaka Zambia"
+      ],
+      "Livingstone": [
+        "Victoria Falls Zambia viewpoints",
+        "Mosi-oa-Tunya National Park Zambia",
+        "Livingstone Zambia Zambezi sunset cruise"
+      ],
+      "South Luangwa National Park": [
+        "South Luangwa walking safari Zambia",
+        "Mfuwe Lodge South Luangwa Zambia",
+        "Luangwa River wildlife Zambia"
+      ],
+      "Lower Zambezi": [
+        "Lower Zambezi canoe safari Zambia",
+        "Chiawa Camp Lower Zambezi",
+        "Lower Zambezi river safari Zambia"
+      ],
+      "Lake Kariba": [
+        "Lake Kariba Siavonga Zambia",
+        "Kariba Dam Zambia viewpoint",
+        "Lake Kariba houseboat Zambia"
+      ]
+    }
+  }
+}

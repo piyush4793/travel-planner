@@ -1,0 +1,521 @@
+{
+  "name": "Senegal",
+  "seed": false,
+  "lat": 14.5,
+  "lng": -14.45,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹95k–₹1.65L",
+    "couple": "₹1.75L–₹3L",
+    "family4": "₹3.4L–₹5.2L"
+  },
+  "experiences": [
+    "Gorée Island history",
+    "Djoudj bird sanctuary",
+    "Petite Côte beach downtime",
+    "Casamance pirogue villages",
+    "Lac Rose dunes and salt flats"
+  ],
+  "avoid": [
+    "June to October gets wetter and more humid, with August-September the messiest stretch for Casamance roads, pirogue timing and beach days",
+    "Domestic Air Sénégal seats to Ziguinchor and holiday ferries to Casamance sell out early, so lock those before flexible hotel nights",
+    "Djoudj is best in the dry birding season; once heat rises late in spring, dawn starts matter much more and midday wildlife activity drops"
+  ],
+  "combo": [
+    "Gambia",
+    "Mauritania"
+  ],
+  "landmark": "Gorée Island",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Dakar (DSS) is the main international gateway; the cleanest loop is Dakar → Saint-Louis → Saly/Lac Rose by road and a domestic Air Sénégal hop to or from Ziguinchor for Casamance so you do not burn two full days backtracking.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Dakar",
+      "lat": 14.7167,
+      "lng": -17.4677,
+      "notes": "Atlantic capital for Gorée Island ferries, Corniche viewpoints, monumental museums, lively markets and Senegal's easiest food scene"
+    },
+    {
+      "name": "Saint-Louis",
+      "lat": 16.0326,
+      "lng": -16.4818,
+      "notes": "Old French colonial island city that pairs heritage walks and river sunsets with the classic Djoudj birding day trip"
+    },
+    {
+      "name": "Saly / Petite Côte",
+      "lat": 14.4433,
+      "lng": -17.0053,
+      "notes": "Resort-and-beach base for slow ocean days plus easy side trips to Bandia Reserve, Mbour and Joal-Fadiouth"
+    },
+    {
+      "name": "Casamance (Ziguinchor)",
+      "lat": 12.5833,
+      "lng": -16.2719,
+      "notes": "Southern river region for mangrove pirogues, Diola villages, Carabane island outings and Senegal's greenest landscapes"
+    },
+    {
+      "name": "Lac Rose",
+      "lat": 14.8347,
+      "lng": -17.234,
+      "notes": "Lake Retba's salt shorelines, dune circuits and low-key lodges make an easy final stop close to Dakar"
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange is the easiest all-round pick for Dakar, Saint-Louis and Petite Côte, while coverage is decent but patchier in Casamance; budget roughly ₹420–₹1,120 for a prepaid SIM or eSIM with enough data for maps, WhatsApp and mobile money.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "Air Sénégal",
+      "WhatsApp",
+      "Wave",
+      "Orange et Moi",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Dakar",
+      "Saint-Louis",
+      "Saly / Petite Côte",
+      "Casamance (Ziguinchor)",
+      "Lac Rose"
+    ],
+    "cities": {
+      "Dakar": {
+        "name": "Dakar",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Gorée's memorial weight, Plateau walking, and a first taste of Dakar's coast-facing rhythm",
+            "activities": [
+              {
+                "name": "Gorée Island ferry round-trip plus embarkation tax from Dakar",
+                "cost": "₹910"
+              },
+              {
+                "name": "Maison des Esclaves (House of Slaves) entry",
+                "cost": "₹210"
+              },
+              {
+                "name": "Dakar Dem Dikk city bus rides between Plateau, the terminal and Corniche",
+                "cost": "₹20–₹30"
+              },
+              {
+                "name": "Plateau and Place de l'Indépendance heritage walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Taxi ride back along the Corniche at sunset",
+                "cost": "₹280–₹560"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Le Djoloff",
+                "budget": "₹9,000–₹14,000/night"
+              },
+              {
+                "name": "Pullman Dakar Teranga",
+                "budget": "₹18,000–₹28,000/night"
+              },
+              {
+                "name": "Terrou-Bi Resort",
+                "budget": "₹20,000–₹34,000/night"
+              }
+            ],
+            "meals": [
+              "Chez Loutcha",
+              "Le Lagon 1",
+              "La Cabane du Pêcheur"
+            ]
+          },
+          {
+            "theme": "Big Dakar monuments, craft-market browsing, and one more flexible capital day before the road north",
+            "activities": [
+              {
+                "name": "African Renaissance Monument foreign adult entry",
+                "cost": "₹910"
+              },
+              {
+                "name": "Dakar Dem Dikk bus ride out toward Ouakam and the Corniche",
+                "cost": "₹20–₹30"
+              },
+              {
+                "name": "Soumbedioune craft market browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Village des Arts gallery stop",
+                "cost": "₹0–₹280"
+              },
+              {
+                "name": "Taxi hops between Ouakam, Almadies and your hotel",
+                "cost": "₹280–₹560"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Le Djoloff",
+                "budget": "₹9,000–₹14,000/night"
+              },
+              {
+                "name": "Noom Hotel Dakar Sea Plaza",
+                "budget": "₹14,500–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "La Cabane du Pêcheur",
+              "Le Lagon 1",
+              "Chez Loutcha"
+            ]
+          }
+        ]
+      },
+      "Saint-Louis": {
+        "name": "Saint-Louis",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "A northbound road transfer into Senegal's most atmospheric colonial town, with river light and old-quarter walking",
+            "activities": [
+              {
+                "name": "Sept-place taxi seat from Dakar to Saint-Louis",
+                "cost": "₹980–₹1,260"
+              },
+              {
+                "name": "Faidherbe Bridge and island quarter walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Calèche ride through the old town",
+                "cost": "₹420–₹700"
+              },
+              {
+                "name": "Guet Ndar fishing quarter walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunset pirogue on the Senegal River",
+                "cost": "₹700–₹1,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel La Residence",
+                "budget": "₹6,000–₹10,500/night"
+              },
+              {
+                "name": "Hotel de la Poste",
+                "budget": "₹7,500–₹13,000/night"
+              },
+              {
+                "name": "Siki Hotel",
+                "budget": "₹10,000–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "La Kora Chez Peggy",
+              "Restaurant de la Poste",
+              "La Crêpe Saint-Louisienne"
+            ]
+          },
+          {
+            "theme": "Dawn birding at Djoudj, marsh channels by boat, and an easy return for one more Saint-Louis evening",
+            "activities": [
+              {
+                "name": "Djoudj National Bird Sanctuary foreign entry",
+                "cost": "₹700"
+              },
+              {
+                "name": "Djoudj shared boat safari",
+                "cost": "₹560"
+              },
+              {
+                "name": "Mandatory guide share at Djoudj",
+                "cost": "₹840–₹1,680"
+              },
+              {
+                "name": "Shared taxi or driver contribution for the Saint-Louis-Djoudj return",
+                "cost": "₹700–₹2,100"
+              },
+              {
+                "name": "Djoudj visitor boardwalks and observation points",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel La Residence",
+                "budget": "₹6,000–₹10,500/night"
+              },
+              {
+                "name": "Siki Hotel",
+                "budget": "₹10,000–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "La Kora Chez Peggy",
+              "Restaurant de la Poste",
+              "La Crêpe Saint-Louisienne"
+            ]
+          }
+        ]
+      },
+      "Saly / Petite Côte": {
+        "name": "Saly / Petite Côte",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Swap the north for the coast with simple beach time, fishing-port energy and a resort reset",
+            "activities": [
+              {
+                "name": "Sept-place taxi seat from Dakar to Saly",
+                "cost": "₹350–₹560"
+              },
+              {
+                "name": "Beach chair and shade setup in Saly",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "Taxi hop to Mbour artisanal fishing quay",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Saly beach sunset walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Resort spa or pool day pass",
+                "cost": "₹1,400–₹3,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Royam Hotel",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Neptune Hotel Saly",
+                "budget": "₹10,000–₹16,000/night"
+              },
+              {
+                "name": "Lamantin Beach Resort & Spa",
+                "budget": "₹17,000–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Safari Beach",
+              "Le Petit Zing",
+              "Chez Joseph"
+            ]
+          },
+          {
+            "theme": "Choose between wildlife and soft adventure with Bandia's reserve loop and the baobab-park add-on",
+            "activities": [
+              {
+                "name": "Bandia Reserve adult entry",
+                "cost": "₹1,680"
+              },
+              {
+                "name": "Shared safari truck plus compulsory guide share at Bandia",
+                "cost": "₹700–₹980"
+              },
+              {
+                "name": "Return taxi or hotel transfer between Saly and Bandia",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Accrobaobab baobab zipline ticket",
+                "cost": "₹826"
+              },
+              {
+                "name": "Joal-Fadiouth short pirogue crossing",
+                "cost": "₹280–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Royam Hotel",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Lamantin Beach Resort & Spa",
+                "budget": "₹17,000–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Safari Beach",
+              "Le Petit Zing",
+              "Chez Joseph"
+            ]
+          }
+        ]
+      },
+      "Casamance (Ziguinchor)": {
+        "name": "Casamance (Ziguinchor)",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Fly south for river breezes, shady hotel gardens and the easiest introduction to Casamance life",
+            "activities": [
+              {
+                "name": "Air Sénégal domestic flight from Dakar to Ziguinchor",
+                "cost": "₹9,800–₹13,020"
+              },
+              {
+                "name": "Taxi from Ziguinchor airport to central hotels or the riverfront",
+                "cost": "₹280–₹560"
+              },
+              {
+                "name": "Aline Sitoe Diatta riverfront and port walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Craft shopping in the central market",
+                "cost": "₹0–₹700"
+              },
+              {
+                "name": "Sunset drink by the Kadiandoumagne jetty",
+                "cost": "₹280–₹840"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Motel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Le Perroquet",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Hotel Kadiandoumagne",
+                "budget": "₹8,500–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Hotel Kadiandoumagne Restaurant",
+              "Casa Motel Restaurant",
+              "Le Perroquet Restaurant"
+            ]
+          },
+          {
+            "theme": "Mangrove channels, Carabane island calm, and the transport mix that makes Casamance feel completely different from Dakar",
+            "activities": [
+              {
+                "name": "Shared sept-place or taxi contribution from Ziguinchor to Elinkine",
+                "cost": "₹560–₹1,120"
+              },
+              {
+                "name": "Elinkine-Carabane shared pirogue round-trip",
+                "cost": "₹560"
+              },
+              {
+                "name": "Private mangrove pirogue excursion share",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Carabane church ruins and beach walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Palm-wine or snack stop in a Diola village",
+                "cost": "₹280–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Perroquet",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Hotel Kadiandoumagne",
+                "budget": "₹8,500–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Hotel Kadiandoumagne Restaurant",
+              "Casa Motel Restaurant",
+              "Le Perroquet Restaurant"
+            ]
+          }
+        ]
+      },
+      "Lac Rose": {
+        "name": "Lac Rose",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "A close-to-Dakar finale of salt-lake floating, dune tracks and low-key lakeside lodges",
+            "activities": [
+              {
+                "name": "Shared taxi or transfer from Dakar or Saly to Lac Rose",
+                "cost": "₹420–₹980"
+              },
+              {
+                "name": "Lac Rose 4x4 dune circuit",
+                "cost": "₹1,400–₹2,100"
+              },
+              {
+                "name": "Salt harvester demonstration and tip",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "Fresh-water rinse after a lake float",
+                "cost": "₹140"
+              },
+              {
+                "name": "Camel or horse ride by the dunes",
+                "cost": "₹700–₹1,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Chez Salim Lac Rose",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel le Trarza",
+                "budget": "₹5,000–₹8,500/night"
+              },
+              {
+                "name": "Le Campement de Niaga Peul",
+                "budget": "₹5,500–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Bonaba Café",
+              "Hotel le Trarza Restaurant",
+              "Chez Salim Restaurant"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

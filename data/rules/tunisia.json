@@ -1,0 +1,543 @@
+{
+  "name": "Tunisia",
+  "seed": false,
+  "lat": 33.89,
+  "lng": 9.54,
+  "region": "Africa",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "June",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹80K–₹1.25L",
+    "couple": "₹1.45L–₹2.2L",
+    "family4": "₹2.8L–₹4.2L"
+  },
+  "experiences": [
+    "Medinas",
+    "Roman Ruins",
+    "Blue-and-White Villages",
+    "Sahara Oases",
+    "Island Beaches"
+  ],
+  "avoid": [
+    "July-August gets punishingly hot in Tozeur and the Sahara fringe even if Tunis still feels manageable.",
+    "Louages are efficient but leave only when full, so fixed-timetable planning can unravel on busy weekends.",
+    "Many archaeological sites have limited shade, so start early and carry cash, water, and sun protection."
+  ],
+  "combo": [
+    "Malta",
+    "Sicily"
+  ],
+  "landmark": "Amphitheatre of El Jem",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Tunis-Carthage Airport is the obvious gateway from India; keep the north-coast trio of Tunis, Sidi Bou Said, and Carthage together before using a Tunisair domestic hop or a long overland leg south.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Tunis",
+      "lat": 36.8065,
+      "lng": 10.1815,
+      "notes": "Bardo Museum, the old medina, French-era boulevards and easy rail day trips into Tunisia's Roman heartland."
+    },
+    {
+      "name": "Sidi Bou Said",
+      "lat": 36.8687,
+      "lng": 10.3417,
+      "notes": "Blue-and-white clifftop lanes, café terraces, art spaces and postcard Mediterranean views above the bay."
+    },
+    {
+      "name": "Carthage",
+      "lat": 36.8529,
+      "lng": 10.323,
+      "notes": "Byrsa Hill, Antonine Baths, Punic and Roman layers, and one of North Africa's most atmospheric archaeological spreads."
+    },
+    {
+      "name": "Djerba",
+      "lat": 33.8076,
+      "lng": 10.8451,
+      "notes": "Houmt Souk markets, Djerbahood street art, beaches, El Ghriba synagogue and easy-going island stays."
+    },
+    {
+      "name": "Tozeur",
+      "lat": 33.9197,
+      "lng": 8.1335,
+      "notes": "Palm oasis walks, brick medina lanes, Chott el Jerid mirages and desert excursions to Ong Jemel and Mos Espa."
+    }
+  ],
+  "itinerary": {
+    "sim": "Tunisie Telecom, Ooredoo Tunisia, and Orange Tunisia all sell airport or city-centre SIMs; expect roughly ₹650–₹1,560 for about 10–25GB, while an eSIM is the easiest backup for landing connected.",
+    "apps": [
+      "Tunisair",
+      "SNCFT",
+      "Bolt",
+      "Google Maps",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Tunis",
+      "Sidi Bou Said",
+      "Carthage",
+      "Tozeur",
+      "Djerba"
+    ],
+    "cities": {
+      "Tunis": {
+        "name": "Tunis",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Bardo Treasures, Central Tunis & Medina Rooftops",
+            "activities": [
+              {
+                "name": "Bardo National Museum",
+                "cost": "₹780"
+              },
+              {
+                "name": "Medina of Tunis and Zitouna quarter walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bab el Bhar and Avenue Habib Bourguiba stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tunis Central Market snack crawl",
+                "cost": "₹0–₹390"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Belvedere Fourati",
+                "budget": "₹6,500–₹8,500/night"
+              },
+              {
+                "name": "Hôtel La Maison Blanche Tunis",
+                "budget": "₹7,500–₹10,500/night"
+              },
+              {
+                "name": "Dar El Jeld Hotel and Spa",
+                "budget": "₹12,000–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "Dar El Jeld",
+              "El Ali",
+              "Le Comptoir de Tunis"
+            ]
+          },
+          {
+            "theme": "Roman Tunisia Day Trip to Dougga",
+            "activities": [
+              {
+                "name": "Dougga archaeological site entry",
+                "cost": "₹208"
+              },
+              {
+                "name": "Capitol, theatre and forum circuit at Dougga",
+                "cost": "₹0"
+              },
+              {
+                "name": "Teboursouk village coffee stop",
+                "cost": "₹130–₹260"
+              },
+              {
+                "name": "Sunset return to Belvedere or the medina",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Belvedere Fourati",
+                "budget": "₹6,500–₹8,500/night"
+              },
+              {
+                "name": "Dar El Jeld Hotel and Spa",
+                "budget": "₹12,000–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "Dar Slah",
+              "Fondouk El Attarine",
+              "Café Mrabet"
+            ]
+          },
+          {
+            "theme": "SNCFT Day Run to El Jem or a Slower Tunis Museum Day",
+            "activities": [
+              {
+                "name": "SNCFT train excursion to El Jem Amphitheatre",
+                "cost": "₹520"
+              },
+              {
+                "name": "Amphitheatre of El Jem arena and underground galleries",
+                "cost": "₹0"
+              },
+              {
+                "name": "Cathedral of St. Vincent de Paul exterior stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Belvedere Park evening walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel La Maison Blanche Tunis",
+                "budget": "₹7,500–₹10,500/night"
+              },
+              {
+                "name": "Dar El Jeld Hotel and Spa",
+                "budget": "₹12,000–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "Chez Slah",
+              "Mamma Mia",
+              "Café Culturel El Teatro"
+            ]
+          }
+        ]
+      },
+      "Sidi Bou Said": {
+        "name": "Sidi Bou Said",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Blue Doors, Sea Views & Café Pauses Above the Gulf",
+            "activities": [
+              {
+                "name": "Blue-and-white village lanes photo wander",
+                "cost": "₹0"
+              },
+              {
+                "name": "Café des Nattes mint tea stop",
+                "cost": "₹130–₹260"
+              },
+              {
+                "name": "Sidi Bou Said lighthouse and clifftop viewpoint",
+                "cost": "₹0"
+              },
+              {
+                "name": "Beach and marina walk below the village",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dar Said",
+                "budget": "₹10,500–₹15,000/night"
+              },
+              {
+                "name": "La Villa Bleue",
+                "budget": "₹14,000–₹20,000/night"
+              },
+              {
+                "name": "Dar Fatma",
+                "budget": "₹7,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Café des Nattes",
+              "Dar Zarrouk",
+              "Au Bon Vieux Temps"
+            ]
+          }
+        ]
+      },
+      "Carthage": {
+        "name": "Carthage",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Punic-Roman Layers from Byrsa to the Antonine Baths",
+            "activities": [
+              {
+                "name": "Carthage archaeological sites pass",
+                "cost": "₹520"
+              },
+              {
+                "name": "Byrsa Hill and Carthage National Museum",
+                "cost": "₹0"
+              },
+              {
+                "name": "Antonine Baths seafront ruins",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tophet and Roman Villas circuit",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Villa Didon Carthage",
+                "budget": "₹15,000–₹22,000/night"
+              },
+              {
+                "name": "Mövenpick Hotel Gammarth Tunis",
+                "budget": "₹14,000–₹21,000/night"
+              },
+              {
+                "name": "Golden Carthage Hotel Tunis",
+                "budget": "₹9,500–₹14,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Villa Didon",
+              "Le Golfe",
+              "Le Rest'ô"
+            ]
+          }
+        ]
+      },
+      "Tozeur": {
+        "name": "Tozeur",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Oasis Paths, Brick Medina & Chott el Jerid Light",
+            "activities": [
+              {
+                "name": "Tozeur old medina (Ouled el Hadef) walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ras El Ain oasis circuit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Dar Cherait Museum",
+                "cost": "₹260–₹390"
+              },
+              {
+                "name": "Chott el Jerid sunset stop",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Ras El Ain Tozeur",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Dar Tozeur",
+                "budget": "₹9,500–₹13,500/night"
+              },
+              {
+                "name": "Anantara Sahara-Tozeur Resort & Villas",
+                "budget": "₹24,000–₹38,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Le Palmier",
+              "Dar Deda",
+              "Restaurant de la République"
+            ]
+          },
+          {
+            "theme": "Star Wars Desert Circuit to Ong Jemel and Mos Espa",
+            "activities": [
+              {
+                "name": "Star Wars Mos Espa set access (no formal ticket; local tip/parking)",
+                "cost": "₹130–₹260"
+              },
+              {
+                "name": "Ong Jemel camel-neck rock formation stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "4x4 Sahara excursion from Tozeur",
+                "cost": "₹2,600–₹5,200"
+              },
+              {
+                "name": "Nefta basket oasis viewpoint",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dar Tozeur",
+                "budget": "₹9,500–₹13,500/night"
+              },
+              {
+                "name": "Anantara Sahara-Tozeur Resort & Villas",
+                "budget": "₹24,000–₹38,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Le Soleil",
+              "Dar Deda",
+              "Pizzeria La Fontana"
+            ]
+          }
+        ]
+      },
+      "Djerba": {
+        "name": "Djerba",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Houmt Souk, Foundouks & Harbour Seafood",
+            "activities": [
+              {
+                "name": "Houmt Souk market and fondouk walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Borj El Kebir fort exterior and harbour front",
+                "cost": "₹0–₹260"
+              },
+              {
+                "name": "Marina sunset promenade",
+                "cost": "₹0"
+              },
+              {
+                "name": "Traditional pottery and craft browsing in Guellala",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Dar Dhiafa",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Radisson Blu Palace Resort & Thalasso, Djerba",
+                "budget": "₹12,500–₹18,500/night"
+              },
+              {
+                "name": "Hasdrubal Prestige Thalassa & Spa Djerba",
+                "budget": "₹18,500–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Haroun",
+              "Restaurant Essofra",
+              "Restaurant El Fondouk"
+            ]
+          },
+          {
+            "theme": "Djerbahood Murals, El Ghriba & Slow Beach Time",
+            "activities": [
+              {
+                "name": "Djerbahood open-air street art quarter in Erriadh",
+                "cost": "₹0"
+              },
+              {
+                "name": "El Ghriba Synagogue donation or visitor contribution",
+                "cost": "₹130–₹260"
+              },
+              {
+                "name": "Sidi Mahrez or Seguia beach break",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lagoon flamingo viewpoint stop in season",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Dar Dhiafa",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Radisson Blu Palace Resort & Thalasso, Djerba",
+                "budget": "₹12,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Chez Ali",
+              "Djerba Nova",
+              "Rachid et Sophie"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Tunis",
+        "to": "Sidi Bou Said",
+        "method": "TGM suburban train or quick taxi ride",
+        "cost": "₹40–₹260"
+      },
+      {
+        "from": "Sidi Bou Said",
+        "to": "Carthage",
+        "method": "TGM hop or taxi along the coast",
+        "cost": "₹40–₹260"
+      },
+      {
+        "from": "Carthage",
+        "to": "Tozeur",
+        "method": "Tunisair domestic flight from Tunis-Carthage to Tozeur-Nefta",
+        "cost": "₹4,500–₹9,500"
+      },
+      {
+        "from": "Tozeur",
+        "to": "Djerba",
+        "method": "Louage/shared taxi via Gabes or a direct private transfer",
+        "cost": "₹1,560–₹3,120"
+      }
+    ],
+    "extras": [
+      "The official museum and archaeological-site tariff was updated in April 2026, so Bardo, Carthage, El Jem, and Dougga are pricier than many older blog posts suggest.",
+      "Use Tunisair if you want to connect the north coast with Tozeur or Djerba efficiently; overland southbound days are long even when roads are good.",
+      "SNCFT is most useful on the Tunis-Sousse-Sfax-El Jem corridor, while louages are the practical fallback once you head inland or need flexible departures.",
+      "Carry cash for louages, small museum kiosks, medina cafés, and the informal tip or parking ask at Mos Espa near Ong Jemel.",
+      "March to June and September to November are the sweet spots; sand-laden wind and intense midday heat make Sahara-facing days far less pleasant in high summer."
+    ],
+    "cityImages": {
+      "Tunis": [
+        "Bardo National Museum Tunis mosaics",
+        "Medina of Tunis alley and archways",
+        "Avenue Habib Bourguiba Tunis"
+      ],
+      "Sidi Bou Said": [
+        "Sidi Bou Said blue doors and steps",
+        "Café des Nattes terrace Sidi Bou Said",
+        "Sidi Bou Said clifftop Mediterranean view"
+      ],
+      "Carthage": [
+        "Antonine Baths Carthage seafront ruins",
+        "Byrsa Hill Carthage columns",
+        "Carthage archaeological park Tunisia"
+      ],
+      "Tozeur": [
+        "Tozeur old medina brick patterns",
+        "Chott el Jerid salt lake near Tozeur",
+        "Mos Espa set Ong Jemel Tunisia"
+      ],
+      "Djerba": [
+        "Houmt Souk Djerba harbour",
+        "Djerbahood mural Erriadh",
+        "Djerba beach and lagoon"
+      ]
+    }
+  }
+}

@@ -985,9 +985,9 @@
     "lng": 9.54,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 14
   },
   {
     "name": "Algeria",
@@ -1015,9 +1015,9 @@
     "lng": 8.68,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 13
   },
   {
     "name": "Ghana",
@@ -1025,9 +1025,9 @@
     "lng": -1.02,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 12
   },
   {
     "name": "Kenya",
@@ -1115,9 +1115,9 @@
     "lng": -14.45,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 12
   },
   {
     "name": "Ivory Coast",
@@ -1195,9 +1195,9 @@
     "lng": 27.85,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 12
   },
   {
     "name": "Malawi",

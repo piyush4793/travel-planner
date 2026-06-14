@@ -1,0 +1,627 @@
+{
+  "name": "Ghana",
+  "seed": false,
+  "lat": 7.95,
+  "lng": -1.02,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1.0L–₹1.7L",
+    "couple": "₹1.9L–₹3.0L",
+    "family4": "₹3.8L–₹5.6L"
+  },
+  "experiences": [
+    "Cape Coast Castle",
+    "Kakum Canopy Walk",
+    "Ashanti Royal Heritage",
+    "Mole Safari",
+    "Wli Waterfalls"
+  ],
+  "avoid": [
+    "April to June brings the heaviest southern rains, so Cape Coast roads, Kakum trails, and Wli hikes get muddy fast.",
+    "Mole and the northern road legs are long; if you only have a week, use the Tamale-Accra domestic flight to avoid burning two full days in transit.",
+    "Cash still matters outside Accra, especially for tro-tros, castle guides, and community-run waterfall or hiking fees."
+  ],
+  "combo": [
+    "Togo",
+    "Cote d'Ivoire"
+  ],
+  "landmark": "Cape Coast Castle",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Accra (ACC) is the clear gateway; most India itineraries work best as an open-and-close in Accra, with one domestic hop to or from Tamale if you want Mole without an exhausting return bus.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Accra",
+      "lat": 5.6037,
+      "lng": -0.187,
+      "notes": "Colonial and independence landmarks, lively food neighborhoods, beach clubs, markets, and Ghana's best-connected transport hub."
+    },
+    {
+      "name": "Cape Coast",
+      "lat": 5.1053,
+      "lng": -1.2466,
+      "notes": "Cape Coast Castle, nearby Elmina Castle, Kakum National Park, and Ghana's most important coastal heritage circuit."
+    },
+    {
+      "name": "Kumasi",
+      "lat": 6.6885,
+      "lng": -1.6244,
+      "notes": "Ashanti royal history, huge market energy, museums, kente weaving day trips, and the easiest cultural break between coast and north."
+    },
+    {
+      "name": "Mole National Park",
+      "lat": 9.7005,
+      "lng": -1.8194,
+      "notes": "Elephants around the escarpment, walking safaris, Larabanga side trips, and Ghana's signature wildlife stop."
+    },
+    {
+      "name": "Volta Region",
+      "lat": 7.1469,
+      "lng": 0.5996,
+      "notes": "Wli Waterfalls, Mount Afadjato, forested border-country scenery, and a slower community-run nature finish around Hohoe and Wli."
+    }
+  ],
+  "itinerary": {
+    "sim": "MTN Ghana is the safest all-route pick for Accra, Cape Coast, Kumasi, and the Tamale/Mole leg; expect roughly ₹550–₹1,350 for a starter SIM or eSIM bundle with enough data for maps, Bolt, and WhatsApp.",
+    "apps": [
+      "Uber",
+      "Bolt",
+      "Google Maps",
+      "Booking.com",
+      "PassionAir",
+      "Africa World Airlines",
+      "STC",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Accra",
+      "Cape Coast",
+      "Kumasi",
+      "Mole National Park",
+      "Volta Region"
+    ],
+    "cities": {
+      "Accra": {
+        "name": "Accra",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Settle into Ghana with independence landmarks, museum context, and Accra's easiest first-day food circuit.",
+            "activities": [
+              {
+                "name": "Uber/Bolt or airport taxi from Kotoka Airport into Osu or central Accra",
+                "cost": "₹540–₹1,080"
+              },
+              {
+                "name": "Kwame Nkrumah Memorial Park non-Ghanaian entry",
+                "cost": "₹540"
+              },
+              {
+                "name": "National Museum of Ghana non-Ghanaian entry",
+                "cost": "₹430"
+              },
+              {
+                "name": "Black Star Square and Independence Arch walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Makola Market or Jamestown guided city walk",
+                "cost": "₹810–₹1,350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Airport View Hotel",
+                "budget": "₹7,500–₹12,000/night"
+              },
+              {
+                "name": "Accra City Hotel",
+                "budget": "₹10,500–₹18,500/night"
+              },
+              {
+                "name": "Kempinski Hotel Gold Coast City",
+                "budget": "₹31,000–₹38,000/night"
+              }
+            ],
+            "meals": [
+              "Buka Restaurant",
+              "Bistro 22",
+              "Skybar25"
+            ]
+          },
+          {
+            "theme": "Beach air, craft shopping, and the more social side of Accra before the overland legs begin.",
+            "activities": [
+              {
+                "name": "Laboma Beach or Labadi Beach club-style entry",
+                "cost": "₹215–₹540"
+              },
+              {
+                "name": "Artists Alliance Gallery visit and shopping time",
+                "cost": "₹0–₹270"
+              },
+              {
+                "name": "Jamestown lighthouse quarter photo walk",
+                "cost": "₹540–₹1,080"
+              },
+              {
+                "name": "Oxford Street Osu cafe and shopping loop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Uber/Bolt hops across Osu, Cantonments, and Labadi",
+                "cost": "₹270–₹650"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Urbano Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Labadi Beach Hotel",
+                "budget": "₹18,500–₹26,000/night"
+              }
+            ],
+            "meals": [
+              "Santoku",
+              "NsuomNam",
+              "Buka Restaurant"
+            ]
+          }
+        ]
+      },
+      "Cape Coast": {
+        "name": "Cape Coast",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Ride west from Accra for Ghana's heaviest historical site and an easy coastal evening.",
+            "activities": [
+              {
+                "name": "STC or VIP coach from Accra to Cape Coast",
+                "cost": "₹540–₹650"
+              },
+              {
+                "name": "Cape Coast Castle international visitor ticket",
+                "cost": "₹650"
+              },
+              {
+                "name": "Cape Coast harbour and lighthouse seafront walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tuk-tuk or taxi hops around Cape Coast town",
+                "cost": "₹215–₹430"
+              },
+              {
+                "name": "Fort William viewpoint stop",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hans Cottage Botel",
+                "budget": "₹2,200–₹3,250/night"
+              },
+              {
+                "name": "Ridge Royal Hotel",
+                "budget": "₹6,000–₹9,500/night"
+              },
+              {
+                "name": "Coconut Grove Beach Resort",
+                "budget": "₹5,400–₹8,100/night"
+              }
+            ],
+            "meals": [
+              "Castle Restaurant",
+              "Baobab House",
+              "Orange Beach Resort Restaurant"
+            ]
+          },
+          {
+            "theme": "Pair Elmina's UNESCO history with Kakum's rainforest canopy for the classic Central Region day.",
+            "activities": [
+              {
+                "name": "Elmina Castle international visitor ticket",
+                "cost": "₹650"
+              },
+              {
+                "name": "Kakum National Park canopy walkway international ticket",
+                "cost": "₹650"
+              },
+              {
+                "name": "Taxi or shared minibus loop for Cape Coast-Elmina-Kakum",
+                "cost": "₹650–₹1,080"
+              },
+              {
+                "name": "Fort St. Jago viewpoint above Elmina",
+                "cost": "₹0–₹215"
+              },
+              {
+                "name": "Hans Cottage crocodile pond stop",
+                "cost": "₹110–₹270"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ridge Royal Hotel",
+                "budget": "₹6,000–₹9,500/night"
+              },
+              {
+                "name": "Coconut Grove Beach Resort",
+                "budget": "₹5,400–₹8,100/night"
+              }
+            ],
+            "meals": [
+              "Coconut Grove Bridge House Restaurant",
+              "Orange Beach Resort Restaurant",
+              "Castle Restaurant"
+            ]
+          }
+        ]
+      },
+      "Kumasi": {
+        "name": "Kumasi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Swap the coast for Ashanti royal history, big-market energy, and a food-heavy city reset.",
+            "activities": [
+              {
+                "name": "STC/VIP or shared taxi from Cape Coast to Kumasi",
+                "cost": "₹650–₹1,080"
+              },
+              {
+                "name": "Manhyia Palace Museum non-Ghanaian ticket",
+                "cost": "₹270–₹325"
+              },
+              {
+                "name": "Kejetia Market self-guided walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Okomfo Anokye Sword Site donation or local guide",
+                "cost": "₹110–₹215"
+              },
+              {
+                "name": "Rattray Park evening entry",
+                "cost": "₹110"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Asantewaa Premier Hotel",
+                "budget": "₹3,500–₹6,000/night"
+              },
+              {
+                "name": "Lancaster Kumasi City Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Oak Plaza Suites Kumasi",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Ike's Cafe and Grill",
+              "Moti Mahal Restaurant",
+              "The View Bar & Grill"
+            ]
+          },
+          {
+            "theme": "Add weaving villages, more museums, and a lake detour if you want Ashanti culture beyond the city core.",
+            "activities": [
+              {
+                "name": "Prempeh II Jubilee Museum ticket",
+                "cost": "₹160–₹270"
+              },
+              {
+                "name": "Adanwomase Kente village half-day visit",
+                "cost": "₹650–₹1,080"
+              },
+              {
+                "name": "Kumasi Fort and Military Museum donation",
+                "cost": "₹160–₹270"
+              },
+              {
+                "name": "Tro-tro or taxi hops around Ahodwo and Adum",
+                "cost": "₹110–₹325"
+              },
+              {
+                "name": "Lake Bosomtwe day trip by taxi",
+                "cost": "₹1,080–₹2,160"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Frederick's Lodge",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Oak Plaza Suites Kumasi",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Noble House Kumasi",
+              "Ike's Cafe and Grill",
+              "Milan Lounge"
+            ]
+          }
+        ]
+      },
+      "Mole National Park": {
+        "name": "Mole National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Push north for elephants, escarpment views, and the first Mole safari session.",
+            "activities": [
+              {
+                "name": "VIP/STC bus from Kumasi to Tamale plus shared taxi or tro-tro to Larabanga/Mole",
+                "cost": "₹1,350–₹2,700"
+              },
+              {
+                "name": "Mole National Park foreign adult entry fee",
+                "cost": "₹325"
+              },
+              {
+                "name": "Shared afternoon game drive inside Mole",
+                "cost": "₹1,080–₹2,160"
+              },
+              {
+                "name": "Mole Motel escarpment lookout for elephants below",
+                "cost": "₹0"
+              },
+              {
+                "name": "Larabanga Mosque donation stop",
+                "cost": "₹110–₹215"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mole Motel",
+                "budget": "₹2,500–₹6,800/night"
+              },
+              {
+                "name": "Zaina Lodge",
+                "budget": "₹33,000–₹36,500/night"
+              }
+            ],
+            "meals": [
+              "Mole Motel Restaurant",
+              "Zaina Lodge Restaurant",
+              "Jeyads Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Use the cool morning for a walking safari, then decide whether to stay wild or fly back south.",
+            "activities": [
+              {
+                "name": "Guided morning walking safari",
+                "cost": "₹540–₹810"
+              },
+              {
+                "name": "Mognori eco-village canoe and cultural visit",
+                "cost": "₹810–₹1,350"
+              },
+              {
+                "name": "Tamale road transfer from Mole or Larabanga",
+                "cost": "₹650–₹1,350"
+              },
+              {
+                "name": "PassionAir or Africa World Airlines flight from Tamale to Accra",
+                "cost": "₹7,560–₹11,880"
+              },
+              {
+                "name": "Waterhole sundowner back at the lodge",
+                "cost": "₹0–₹270"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mole Motel",
+                "budget": "₹2,500–₹6,800/night"
+              },
+              {
+                "name": "Zaina Lodge",
+                "budget": "₹33,000–₹36,500/night"
+              }
+            ],
+            "meals": [
+              "Zaina Lodge Restaurant",
+              "Mole Motel Restaurant",
+              "Mole Motel Bar"
+            ]
+          }
+        ]
+      },
+      "Volta Region": {
+        "name": "Volta Region",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Finish with rainforest air, community-run hiking, and Ghana's prettiest waterfall day out of Hohoe and Wli.",
+            "activities": [
+              {
+                "name": "VIP, STC, or shared tro-tro from Accra to Hohoe or Wli",
+                "cost": "₹430–₹865"
+              },
+              {
+                "name": "Wli Waterfalls lower falls non-Ghanaian entry",
+                "cost": "₹325"
+              },
+              {
+                "name": "Mount Afadjato entry and community guide",
+                "cost": "₹215–₹430"
+              },
+              {
+                "name": "Motorbike or taxi transfers between Hohoe and Wli",
+                "cost": "₹160–₹430"
+              },
+              {
+                "name": "Wli village evening walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Wli Water Heights Hotel & Restaurant",
+                "budget": "₹2,000–₹3,500/night"
+              },
+              {
+                "name": "Wli Waterfall Inn",
+                "budget": "₹2,700–₹4,800/night"
+              },
+              {
+                "name": "Big Foot Safari Lodge",
+                "budget": "₹1,800–₹3,800/night"
+              }
+            ],
+            "meals": [
+              "Wli Water Heights Restaurant",
+              "Wli Waterfall Inn Restaurant",
+              "Big Foot Safari Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Go higher into the hills if you want a tougher final day before the last ride back to Accra.",
+            "activities": [
+              {
+                "name": "Wli Waterfalls upper falls non-Ghanaian route",
+                "cost": "₹430–₹485"
+              },
+              {
+                "name": "Tagbo Falls or Liati Wote local guide day trip",
+                "cost": "₹540–₹975"
+              },
+              {
+                "name": "Shared taxi or tro-tro back to Hohoe",
+                "cost": "₹110–₹270"
+              },
+              {
+                "name": "VIP or tro-tro return to Accra",
+                "cost": "₹430–₹865"
+              },
+              {
+                "name": "Roadside cocoa, sobolo, and fruit stops",
+                "cost": "₹110–₹215"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Wli Waterfall Inn",
+                "budget": "₹2,700–₹4,800/night"
+              },
+              {
+                "name": "Volta Serene Hotel",
+                "budget": "₹7,000–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Wli Waterfall Inn Restaurant",
+              "Wli Water Heights Restaurant",
+              "Volta Serene Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Accra",
+        "to": "Cape Coast",
+        "method": "STC/VIP coach is the easiest budget move, while shared taxis and tro-tros are cheaper but less predictable",
+        "cost": "₹540–₹975"
+      },
+      {
+        "from": "Cape Coast",
+        "to": "Kumasi",
+        "method": "STC/VIP buses or shared taxis via Assin Foso are the standard overland link inland",
+        "cost": "₹650–₹1,080"
+      },
+      {
+        "from": "Kumasi",
+        "to": "Mole National Park",
+        "method": "Road via Tamale is the usual path: bus first, then shared taxi or tro-tro onward to Larabanga and the park gates",
+        "cost": "₹1,350–₹2,700"
+      },
+      {
+        "from": "Mole National Park",
+        "to": "Volta Region",
+        "method": "The practical fast route is Mole to Tamale by road, a domestic flight to Accra, then a VIP bus or tro-tro east toward Hohoe/Wli",
+        "cost": "₹8,500–₹13,500"
+      },
+      {
+        "from": "Volta Region",
+        "to": "Accra",
+        "method": "VIP coach, shared taxi, or a sequence of tro-tros back through Ho and Tema/Accra",
+        "cost": "₹430–₹865"
+      }
+    ],
+    "extras": [
+      "November to March is the cleanest all-round window: Cape Coast and Wli stay less slippery, and Mole's grass is shorter for easier wildlife sightings.",
+      "Castle visits are guided and emotionally heavy; many travelers prefer doing Cape Coast first thing and leaving beach or Elmina time afterward to decompress.",
+      "Book the Tamale-Accra domestic leg as early as possible if your dates are fixed, because it is the single highest-impact time saver in this itinerary.",
+      "STC and VIP buses are worth the small premium over a full tro-tro for the long Accra-Cape Coast and Kumasi-Tamale stretches.",
+      "Outside Accra, carry small cash notes for tro-tros, community guides, and museum add-ons because card acceptance is inconsistent.",
+      "Mole and Wli both reward early starts: wildlife is better before the heat builds, and waterfall or mountain hikes feel far easier before noon."
+    ],
+    "cityImages": {
+      "Accra": [
+        "Kwame Nkrumah Memorial Park Accra",
+        "Black Star Square Accra",
+        "Jamestown Accra"
+      ],
+      "Cape Coast": [
+        "Cape Coast Castle Ghana",
+        "Elmina Castle Ghana",
+        "Kakum National Park canopy walkway"
+      ],
+      "Kumasi": [
+        "Manhyia Palace Museum Kumasi",
+        "Kejetia Market Kumasi",
+        "Rattray Park Kumasi"
+      ],
+      "Mole National Park": [
+        "Mole National Park Ghana",
+        "Larabanga Mosque Ghana",
+        "Zaina Lodge Mole"
+      ],
+      "Volta Region": [
+        "Wli Waterfalls Ghana",
+        "Mount Afadjato Ghana",
+        "Hohoe Volta Region Ghana"
+      ]
+    }
+  }
+}

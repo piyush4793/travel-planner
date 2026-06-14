@@ -1,0 +1,558 @@
+{
+  "name": "Nigeria",
+  "seed": false,
+  "lat": 9.08,
+  "lng": 8.68,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹95K–₹1.55L",
+    "couple": "₹1.7L–₹2.8L",
+    "family4": "₹3.2L–₹5.1L"
+  },
+  "experiences": [
+    "Lagos art spaces and Atlantic-side city energy",
+    "Olumo Rock history and Yoruba heritage in Abeokuta",
+    "Osun-Osogbo Sacred Grove sculptures and river forest",
+    "Abuja boulevards, viewpoints, and domestic flight connections",
+    "Calabar waterfront culture with Cross River rainforest add-ons"
+  ],
+  "avoid": [
+    "April to October is wetter across most of this route, so road transfers get slower and outdoor days in Lagos and the southwest feel stickier.",
+    "Domestic flight schedules can shift at short notice; keep a buffer before long-haul departures and reconfirm Air Peace or Dana Air sectors the night before.",
+    "Card payments are improving in major cities, but intercity buses, market stops, and smaller attraction add-ons still work more smoothly with some naira cash."
+  ],
+  "combo": [
+    "Ghana",
+    "Benin"
+  ],
+  "landmark": "Osun-Osogbo Sacred Grove",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Lagos is the easiest international gateway and the best place to start or finish; use road transfers for Abeokuta and Osogbo, then save time with domestic hops on the Abuja and Calabar legs instead of trying to force everything overland.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Lagos",
+      "lat": 6.5244,
+      "lng": 3.3792,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Nike Art Gallery, Lekki Conservation Centre, BRT buses, and the country's busiest food-and-nightlife corridor around Victoria Island and Lekki"
+    },
+    {
+      "name": "Abuja",
+      "lat": 9.0765,
+      "lng": 7.3986,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Aso Rock viewpoints, Millennium Park, Jabi Lake, museums, and the easiest domestic-flight hub for moving between the southwest and Cross River"
+    },
+    {
+      "name": "Calabar",
+      "lat": 4.9589,
+      "lng": 8.3269,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Marina Resort, Tinapa, Duke Town history, and straightforward day-trip access toward Kwa Falls and other Cross River nature stops"
+    },
+    {
+      "name": "Abeokuta",
+      "lat": 7.1475,
+      "lng": 3.3619,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Olumo Rock, adire textile heritage, Kuti family history, and an easy first overland stop out of Lagos"
+    },
+    {
+      "name": "Osogbo",
+      "lat": 7.771,
+      "lng": 4.55698,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Osun-Osogbo Sacred Grove, Susanne Wenger sculpture trails, and a slower cultural stop between southwest road legs"
+    }
+  ],
+  "itinerary": {
+    "sim": "MTN Nigeria and Airtel are the easiest picks for this route; budget roughly ₹530–₹1,590 for a starter data bundle with enough coverage for maps, ride-hailing, and messaging across Lagos, Abuja, and Calabar, with patchier speeds on longer road stretches.",
+    "apps": [
+      "Uber",
+      "Bolt",
+      "Google Maps",
+      "Booking.com",
+      "Air Peace",
+      "Dana Air",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Lagos",
+      "Abeokuta",
+      "Osogbo",
+      "Abuja",
+      "Calabar"
+    ],
+    "cities": {
+      "Lagos": {
+        "name": "Lagos",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Lekki art spaces, canopy views, and a first full taste of Lagos Island energy",
+            "activities": [
+              {
+                "name": "Nike Art Gallery entry",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lekki Conservation Centre adult entry",
+                "cost": "₹80"
+              },
+              {
+                "name": "Lekki Conservation Centre canopy walk add-on",
+                "cost": "₹80"
+              },
+              {
+                "name": "Lagos BRT plus short Uber/Bolt hops between Lekki and Victoria Island",
+                "cost": "₹160–₹800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibis Lagos Airport",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "The Wheatbaker",
+                "budget": "₹16,000–₹24,000/night"
+              },
+              {
+                "name": "Lagos Continental Hotel",
+                "budget": "₹14,500–₹23,500/night"
+              }
+            ],
+            "meals": [
+              "Yellow Chilli",
+              "NOK by Alara",
+              "Terra Kulture"
+            ]
+          },
+          {
+            "theme": "Marina-side sights, beach time, and one more flexible day before the southwest overland leg",
+            "activities": [
+              {
+                "name": "Freedom Park Lagos and Marina heritage walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tarkwa Bay return boat and beach setup",
+                "cost": "₹1,060–₹2,650"
+              },
+              {
+                "name": "National Museum Lagos quick stop",
+                "cost": "₹53–₹106"
+              },
+              {
+                "name": "Evening Uber/Bolt back across Victoria Island or Ikoyi",
+                "cost": "₹265–₹1,060"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Radisson Blu Anchorage Hotel",
+                "budget": "₹17,000–₹26,000/night"
+              },
+              {
+                "name": "Eko Hotel & Suites",
+                "budget": "₹11,500–₹21,000/night"
+              }
+            ],
+            "meals": [
+              "RSVP Lagos",
+              "Sky Restaurant & Lounge",
+              "Hard Rock Cafe Lagos"
+            ]
+          }
+        ]
+      },
+      "Abeokuta": {
+        "name": "Abeokuta",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Yoruba history on the rock, adire culture, and an easy western Nigeria side trip",
+            "activities": [
+              {
+                "name": "Intercity bus or shared car from Lagos to Abeokuta",
+                "cost": "₹265–₹1,850"
+              },
+              {
+                "name": "Olumo Rock adult entry",
+                "cost": "₹106"
+              },
+              {
+                "name": "Olumo Rock elevator or guide add-on",
+                "cost": "₹53–₹159"
+              },
+              {
+                "name": "Kuti Heritage Museum stop",
+                "cost": "₹0–₹265"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Park Inn by Radisson Abeokuta",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Green Legacy Resort",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Conference Hotel Abeokuta",
+                "budget": "₹5,000–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "RSL Restaurant Abeokuta",
+              "Green Legacy Resort Restaurant",
+              "Iya Amala"
+            ]
+          }
+        ]
+      },
+      "Osogbo": {
+        "name": "Osogbo",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Sacred grove sculptures, river forest, and a slower Osun State culture day",
+            "activities": [
+              {
+                "name": "Intercity bus from Abeokuta or Ibadan into Osogbo",
+                "cost": "₹370–₹1,060"
+              },
+              {
+                "name": "Osun-Osogbo Sacred Grove foreign visitor entry",
+                "cost": "₹106"
+              },
+              {
+                "name": "Local guide inside the grove and Susanne Wenger shrine area",
+                "cost": "₹265–₹795"
+              },
+              {
+                "name": "Freedom Park Osogbo or central market browse",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ideal Nest Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Aenon Suites",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Atlantis Grand Suites",
+                "budget": "₹5,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "LATTIS Restaurant",
+              "Ideal Nest Hotel Restaurant",
+              "Wimpy's Restaurant"
+            ]
+          }
+        ]
+      },
+      "Abuja": {
+        "name": "Abuja",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Capital landmarks, broad boulevards, and a relaxed first Abuja day",
+            "activities": [
+              {
+                "name": "Millennium Park and Aso Rock viewpoint loop",
+                "cost": "₹0"
+              },
+              {
+                "name": "National Mosque Abuja visit outside prayer times",
+                "cost": "₹0"
+              },
+              {
+                "name": "Jabi Lake boat ride or lakeside time",
+                "cost": "₹530–₹1,590"
+              },
+              {
+                "name": "Uber/Bolt trips between Central Area, Wuse, and Jabi",
+                "cost": "₹530–₹1,325"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nordic Hotel Abuja",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Fraser Suites Abuja",
+                "budget": "₹16,500–₹25,500/night"
+              },
+              {
+                "name": "Transcorp Hilton Abuja",
+                "budget": "₹18,000–₹29,000/night"
+              }
+            ],
+            "meals": [
+              "Nkoyo",
+              "Wakkis",
+              "Jabi Boat Club"
+            ]
+          },
+          {
+            "theme": "Craft shopping, practical flight logistics, and the classic dry-season Yankari add-on",
+            "activities": [
+              {
+                "name": "Arts and Crafts Village Abuja browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Air Peace / Dana Air domestic sector for the Abuja-Calabar leg",
+                "cost": "₹5,300–₹13,250"
+              },
+              {
+                "name": "Yankari Game Reserve foreign visitor entry if you add the Bauchi detour",
+                "cost": "₹159"
+              },
+              {
+                "name": "Yankari Game Reserve vehicle entry",
+                "cost": "₹80"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nordic Hotel Abuja",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Fraser Suites Abuja",
+                "budget": "₹16,500–₹25,500/night"
+              }
+            ],
+            "meals": [
+              "BluCabana",
+              "The Cube Café",
+              "Nkoyo"
+            ]
+          }
+        ]
+      },
+      "Calabar": {
+        "name": "Calabar",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Waterfront Calabar, river history, and a lighter arrival after the domestic hop",
+            "activities": [
+              {
+                "name": "Air Peace / Dana Air flight from Abuja or Lagos into Calabar",
+                "cost": "₹5,300–₹15,900"
+              },
+              {
+                "name": "Marina Resort riverfront and Calabar Museum area walk",
+                "cost": "₹0–₹265"
+              },
+              {
+                "name": "Duke Town heritage circuit with a local cab",
+                "cost": "₹530–₹1,590"
+              },
+              {
+                "name": "Evening at the Tinapa promenade or waterfront",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Monty Suites Calabar",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Axari Hotel & Suites",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Tinapa Lakeside Hotel",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Native Delicacies Restaurant",
+              "Freddy's Restaurant",
+              "Axari Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Resort-side downtime, rainforest edges, and one more Cross River day",
+            "activities": [
+              {
+                "name": "Kwa Falls or Drill Ranch day-trip vehicle split from Calabar",
+                "cost": "₹1,590–₹5,300"
+              },
+              {
+                "name": "Tinapa resort-area browse and lakeside time",
+                "cost": "₹0"
+              },
+              {
+                "name": "Slave History Museum or local heritage stop",
+                "cost": "₹106–₹265"
+              },
+              {
+                "name": "Return transfer planning for Lagos or onward travel",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Monty Suites Calabar",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Tinapa Lakeside Hotel",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Transcorp Hotels Calabar",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "The Slessor Restaurant",
+              "Tinapa Lakeside Hotel Restaurant",
+              "Native Delicacies Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Lagos",
+        "to": "Abeokuta",
+        "method": "Intercity buses and shared cars via the Lagos-Abeokuta Expressway are the easy budget move; leave early to avoid worst commuter traffic out of Lagos",
+        "cost": "₹265–₹1,850"
+      },
+      {
+        "from": "Abeokuta",
+        "to": "Osogbo",
+        "method": "Bus or hired car via Ibadan keeps the southwest loop compact and is easier than backtracking to Lagos first",
+        "cost": "₹370–₹1,850"
+      },
+      {
+        "from": "Osogbo",
+        "to": "Abuja",
+        "method": "Overnight or daytime intercity buses are the value option; if time matters more, road back toward Lagos or Ibadan for a domestic flight onward",
+        "cost": "₹850–₹3,180 by bus; ₹5,300–₹13,250 with a flight sector"
+      },
+      {
+        "from": "Abuja",
+        "to": "Calabar",
+        "method": "Air Peace or Dana Air is the practical way to keep this route efficient; going all-road turns it into a full travel day",
+        "cost": "₹5,300–₹13,250"
+      },
+      {
+        "from": "Calabar",
+        "to": "Lagos",
+        "method": "Domestic flight back to Lagos is the clean finish for onward international departures and saves a long return overland haul",
+        "cost": "₹5,300–₹15,900"
+      }
+    ],
+    "extras": [
+      "November to March is the cleanest window for this loop: Lagos is less waterlogged, southwest road journeys are easier, and Calabar's outdoor days are more manageable than in the wetter months.",
+      "Use BRT selectively in Lagos for predictable trunk routes, but keep Uber or Bolt handy for first-mile and last-mile hops on the Island and for early airport runs.",
+      "Abeokuta and Osogbo work best as short overland stops from Lagos rather than stand-alone flight destinations, so pack them close together before moving north or east.",
+      "If you want wildlife rather than only city-and-culture time, the easiest place to bolt on Yankari is around Abuja, but it makes most sense as an overnight or two-day detour rather than a same-day dash.",
+      "Cross River days often run best with a hired car or driver once you leave central Calabar, especially if you want Kwa Falls or Drill Ranch without losing time to ad-hoc transport searches."
+    ],
+    "cityImages": {
+      "Lagos": [
+        "Nike Art Gallery Lagos",
+        "Lekki Conservation Centre Lagos",
+        "Victoria Island Lagos"
+      ],
+      "Abeokuta": [
+        "Olumo Rock Abeokuta",
+        "Abeokuta adire market",
+        "Kuti Heritage Museum Abeokuta"
+      ],
+      "Osogbo": [
+        "Osun-Osogbo Sacred Grove",
+        "Susanne Wenger Osogbo sculptures",
+        "Osogbo Nigeria"
+      ],
+      "Abuja": [
+        "Aso Rock Abuja",
+        "Millennium Park Abuja",
+        "Jabi Lake Abuja"
+      ],
+      "Calabar": [
+        "Marina Resort Calabar",
+        "Tinapa Calabar",
+        "Kwa Falls Cross River"
+      ]
+    }
+  }
+}
