@@ -1,0 +1,249 @@
+{
+  "name": "Nauru",
+  "seed": false,
+  "lat": -0.52,
+  "lng": 166.93,
+  "region": "Oceania",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹58K–₹95K",
+    "couple": "₹1.05L–₹1.7L",
+    "family4": "₹2L–₹3.1L"
+  },
+  "experiences": [
+    "WWII Relics",
+    "Phosphate Pinnacles",
+    "Island Loop Drive",
+    "Buada Lagoon",
+    "Anibare Bay",
+    "Smallest Island Nation"
+  ],
+  "avoid": [
+    "November-February is hotter, wetter and stickier, so the exposed Topside loop, Command Ridge and beach time feel much rougher than in the drier March-October window.",
+    "Accommodation is limited and often arranged by email or phone, so do not lock flights until your room and airport transfer are confirmed.",
+    "Nauru is tiny but services are thin: carry AUD cash, refill water early and expect informal guide, bike and airport-transfer arrangements rather than app-based bookings."
+  ],
+  "combo": [
+    "Australia",
+    "Fiji",
+    "Kiribati"
+  ],
+  "landmark": "Command Ridge",
+  "travelStyle": [
+    "touch-and-go",
+    "explorer"
+  ],
+  "stopoverNote": "Nauru is best planned as a focused 1-2 day stop: one day for Yaren-side WWII and cave sights, then one more for Anibare Bay, Buada Lagoon and the phosphate-scarred Topside loop.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Yaren District",
+      "lat": -0.5477,
+      "lng": 166.9209,
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "notes": "Yaren is the practical arrival base around the airport and government precinct, close to Command Ridge, Moqua Well and short island-loop drives in every direction."
+    },
+    {
+      "name": "Anibare Bay",
+      "lat": -0.5279,
+      "lng": 166.9512,
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "notes": "Anibare Bay is Nauru's prettiest coastal stretch, pairing Menen-side stays with the east-coast beach, nearby Buada Lagoon detours and the stark phosphate pinnacles inland."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel Nauru is the only practical tourist SIM; a starter prepaid SIM commonly costs about AUD 10, so buy it at the airport or in town and download offline maps before you head into Topside or the east-coast beaches.",
+    "apps": [
+      "Google Maps offline",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Yaren District",
+      "Anibare Bay"
+    ],
+    "cities": {
+      "Yaren District": {
+        "name": "Yaren District",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "One compact Yaren day is enough for arrival logistics, the WWII ridge, the freshwater cave stop and a first complete sense of how tiny Nauru really is.",
+        "days": [
+          {
+            "theme": "Airport Arrival, Command Ridge Relics and the Moqua Well Stop",
+            "activities": [
+              {
+                "name": "Digicel Nauru prepaid SIM setup",
+                "cost": "₹540 pp",
+                "tip": "A basic Digicel starter SIM is commonly about AUD 10; buy it on arrival so you can message your host and keep offline maps synced."
+              },
+              {
+                "name": "Rental car for the island loop",
+                "cost": "₹3,942–₹7,884/day",
+                "tip": "Recent online car-hire pricing for Nauru commonly lands around AUD 73-146 per day; reserve through your hotel or ahead online because availability is thin."
+              },
+              {
+                "name": "Command Ridge WWII guns, bunkers and lookout",
+                "cost": "Free",
+                "tip": "There is no standard ticket for the ridge itself; go early or late for softer light and less heat on the exposed high point."
+              },
+              {
+                "name": "Moqua Well freshwater cave stop",
+                "cost": "Free–₹1,080 pp",
+                "tip": "There is no formal entry booth, but travelers often leave a small AUD 10-20 thank-you if a local helps with access or context around the well."
+              },
+              {
+                "name": "Parliament precinct and airport-side walk in Yaren",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "GoodWorks Accommodation",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Aquariri Lodge",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "Airport Homestay",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "OD-N-Aiwo Hotel Restaurant",
+              "Golden Bridge Restaurant",
+              "K-Love Restaurant"
+            ]
+          }
+        ]
+      },
+      "Anibare Bay": {
+        "name": "Anibare Bay",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "The second day is the scenic Nauru loop: one beach-and-lagoon stop, one Topside phosphate run and one slow meal with an ocean view before departure.",
+        "days": [
+          {
+            "theme": "Phosphate Pinnacles, Buada Lagoon and the East-Coast Bay",
+            "activities": [
+              {
+                "name": "Topside phosphate pinnacles self-drive circuit",
+                "cost": "₹3,942–₹7,884/day",
+                "tip": "There is no official site ticket, so the real cost is your rental-car day; Nauru's limestone pinnacles are easiest as part of a slow self-drive or hotel-arranged island circuit."
+              },
+              {
+                "name": "Buada Lagoon walk and bird-watching stop",
+                "cost": "Free",
+                "tip": "Buada Lagoon is a public natural stop with no entry fee; visit in the morning if you want the coolest loop and the greenest photos."
+              },
+              {
+                "name": "Command Ridge revisit or full island perimeter drive by bicycle",
+                "cost": "Free–₹1,080 pp",
+                "tip": "Walking costs nothing and some hosts can sort simple bike hire around AUD 10-20 a day if you want to pedal sections of the 21-sq-km island."
+              },
+              {
+                "name": "Anibare Bay beach walk and Anibare Boat Harbour lookout",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Menen Hotel",
+                "budget": "₹5,400–₹9,720/night"
+              },
+              {
+                "name": "Ewa Lodge",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "OD-N-Aiwo Hotel",
+                "budget": "₹4,320–₹6,480/night"
+              }
+            ],
+            "meals": [
+              "The Bay Restaurant",
+              "Menen Hotel Restaurant & Bar",
+              "Anibare Boat Harbour Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Nauru International Airport",
+        "to": "Yaren District",
+        "method": "Short hotel pickup, local lift or a quick walk if you are traveling very light and staying near the airport side.",
+        "cost": "Free–₹810"
+      },
+      {
+        "from": "Yaren District",
+        "to": "Anibare Bay",
+        "method": "Continue the island loop by rental car, or bike the sealed coastal road if conditions are cool enough and your guesthouse can arrange a cycle.",
+        "cost": "Included in car hire / Free–₹1,080"
+      },
+      {
+        "from": "Anibare Bay",
+        "to": "Nauru International Airport",
+        "method": "A 15-20 minute drive back along the ring road; reconfirm the transfer time because flights are infrequent and check-in is simple but not frequent enough to risk delays.",
+        "cost": "Included in transfer or car hire"
+      }
+    ],
+    "extras": [
+      "Nauru is only about 21 sq km, so the island works best when you think in one clockwise or anticlockwise loop rather than separate day trips.",
+      "AUD cash is still the safest way to handle hotel meals, guide tips and informal transport because card acceptance is inconsistent outside the better-known hotels.",
+      "The island's key sights are exposed rather than sheltered, so carry water, a hat and reef-safe sun protection even if the total driving distance looks tiny.",
+      "If you only have one day, combine Command Ridge, Moqua Well, Buada Lagoon and Anibare Bay in the same rental-car loop and skip trying to over-structure it."
+    ],
+    "cityImages": {
+      "Yaren District": [
+        "Command Ridge Nauru",
+        "Moqua Well Nauru",
+        "Yaren District Nauru"
+      ],
+      "Anibare Bay": [
+        "Anibare Bay Nauru",
+        "Buada Lagoon Nauru",
+        "Nauru phosphate pinnacles"
+      ]
+    }
+  }
+}

@@ -1125,9 +1125,9 @@
     "lng": -5.55,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 12
   },
   {
     "name": "Cameroon",
@@ -1135,9 +1135,9 @@
     "lng": 12.35,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 11
   },
   {
     "name": "Democratic Republic of the Congo",
@@ -1175,9 +1175,9 @@
     "lng": 35.53,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 13
   },
   {
     "name": "Zimbabwe",
@@ -1955,9 +1955,9 @@
     "lng": 177.65,
     "region": "Oceania",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Nauru",
@@ -1965,9 +1965,9 @@
     "lng": 166.93,
     "region": "Oceania",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 2,
+    "maxDays": 2
   },
   {
     "name": "Antarctica",

@@ -1,0 +1,669 @@
+{
+  "name": "Ivory Coast",
+  "seed": false,
+  "lat": 7.54,
+  "lng": -5.55,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1.1L–₹1.9L",
+    "couple": "₹2.1L–₹3.4L",
+    "family4": "₹4.3L–₹6.4L"
+  },
+  "experiences": [
+    "Banco National Park",
+    "Basilica of Our Lady of Peace",
+    "Grand-Bassam UNESCO Quarter",
+    "Mount Tonkoui",
+    "Assinie Lagoon and Beach"
+  ],
+  "avoid": [
+    "April to October brings the wettest roads and the most humidity, which slows western drives to Man and makes mountain trails around Tonkoui far muddier.",
+    "Intercity travel is mostly by bush taxi, so keep daylight buffers for Grand-Bassam, Yamoussoukro, and Man connections instead of stacking tight same-day plans.",
+    "Cards work best in larger hotels; keep small CFA cash ready for gbakas, market snacks, local guides, and park gates."
+  ],
+  "combo": [
+    "Ghana",
+    "Liberia"
+  ],
+  "landmark": "Basilica of Our Lady of Peace",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Abidjan (ABJ) is the practical gateway for almost every Côte d'Ivoire itinerary. Use gbakas for cheap city hops, bush taxis for most overland legs, and check Air Côte d'Ivoire as a time-saving backup if a domestic schedule lines up with your dates.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Abidjan",
+      "lat": 5.3599517,
+      "lng": -4.0082563,
+      "notes": "Lagoon-side high-rises, serious food, Banco rainforest, big markets, and the country's easiest base for onward transport."
+    },
+    {
+      "name": "Yamoussoukro",
+      "lat": 6.8206,
+      "lng": -5.2767,
+      "notes": "Monumental basilica, broad ceremonial boulevards, crocodile lake viewpoints, and Côte d'Ivoire's political capital stop."
+    },
+    {
+      "name": "Grand-Bassam",
+      "lat": 5.2009,
+      "lng": -3.7388,
+      "notes": "UNESCO-listed colonial quarter, surfy beaches, costume museum, and the easiest heritage side trip from Abidjan."
+    },
+    {
+      "name": "Man",
+      "lat": 7.4125,
+      "lng": -7.5538,
+      "notes": "Waterfalls, mountain viewpoints, western market energy, and the jumping-off point for Mount Tonkoui and deeper forest detours."
+    },
+    {
+      "name": "Assinie",
+      "lat": 5.1333,
+      "lng": -3.3,
+      "notes": "Lagoon-meets-ocean scenery, beach lodges, boat excursions, and Côte d'Ivoire's classic easy seaside reset."
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange Côte d'Ivoire is the safest single-network pick for Abidjan, the coast, Yamoussoukro, and western road sections; expect roughly ₹560–₹1,400 for a starter SIM or eSIM bundle with enough data for maps, calls, and messaging.",
+    "apps": [
+      "Yango",
+      "inDrive",
+      "Google Maps",
+      "Booking.com",
+      "Air Côte d'Ivoire",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Abidjan",
+      "Grand-Bassam",
+      "Assinie",
+      "Yamoussoukro",
+      "Man"
+    ],
+    "cities": {
+      "Abidjan": {
+        "name": "Abidjan",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Start with Banco's urban rainforest, Plateau's skyline, and the most polished first-night food options in the country.",
+            "activities": [
+              {
+                "name": "Airport taxi or Yango/inDrive from Félix-Houphouët-Boigny Airport to Plateau or Cocody",
+                "cost": "₹560–₹1,400"
+              },
+              {
+                "name": "Banco National Park foreign visitor entry",
+                "cost": "₹700"
+              },
+              {
+                "name": "Banco National Park guide or bike add-on",
+                "cost": "₹420–₹980"
+              },
+              {
+                "name": "St. Paul's Cathedral visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Plateau lagoon-front walk and skyline viewpoints",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Seen Hotel Abidjan Plateau",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Hotel Tiama",
+                "budget": "₹12,500–₹21,000/night"
+              },
+              {
+                "name": "Sofitel Abidjan Hotel Ivoire",
+                "budget": "₹26,000–₹41,000/night"
+              }
+            ],
+            "meals": [
+              "Bushman Café",
+              "L'Ambassadeur",
+              "Le Wafou"
+            ]
+          },
+          {
+            "theme": "Lean into markets, local transport, and one more sweep across Abidjan's neighborhoods before the coastal road begins.",
+            "activities": [
+              {
+                "name": "Musée des Civilisations de Côte d'Ivoire ticket",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Marché de Treichville or Marché de Cocody walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Gbaka hops between Plateau, Treichville, and Cocody",
+                "cost": "₹40–₹110"
+              },
+              {
+                "name": "Abidjan Municipal Museum or artisanal shopping stop",
+                "cost": "₹140–₹420"
+              },
+              {
+                "name": "Lagoon ferry or taxi rides across the city",
+                "cost": "₹140–₹560"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Noom Hotel Abidjan Plateau",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Hotel Tiama",
+                "budget": "₹12,500–₹21,000/night"
+              }
+            ],
+            "meals": [
+              "La Teranga",
+              "Le Débarcadère",
+              "Bushman Café"
+            ]
+          }
+        ]
+      },
+      "Grand-Bassam": {
+        "name": "Grand-Bassam",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Slide east for UNESCO heritage, colonial facades, and an easy first beach evening.",
+            "activities": [
+              {
+                "name": "Shared taxi, minibus, or private transfer from Abidjan to Grand-Bassam",
+                "cost": "₹210–₹700"
+              },
+              {
+                "name": "UNESCO-listed colonial quarter self-guided walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Musée National du Costume foreign visitor ticket",
+                "cost": "₹140"
+              },
+              {
+                "name": "Guide tip or short guided heritage walk",
+                "cost": "₹280–₹840"
+              },
+              {
+                "name": "Beachfront promenade and old wharf area",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Etoile du Sud Hôtel",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Boblin la Mer Hotel Restaurant",
+                "budget": "₹7,000–₹12,500/night"
+              },
+              {
+                "name": "Afrikland Hotel",
+                "budget": "₹4,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "La Taverne Bassamoise",
+              "Restaurant Madou",
+              "Les Jardins d'Éden"
+            ]
+          },
+          {
+            "theme": "Use the extra day for more architecture, craft shopping, and a slower UNESCO-coast rhythm before moving on.",
+            "activities": [
+              {
+                "name": "Sacred Heart Cathedral and old quarter side streets",
+                "cost": "₹0"
+              },
+              {
+                "name": "Art galleries and artisan stalls in Vieux Bassam",
+                "cost": "₹0–₹420"
+              },
+              {
+                "name": "Lagoon canoe or pirogue ride",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Taxi hop between the old town and beach strip",
+                "cost": "₹140–₹420"
+              },
+              {
+                "name": "Surf chair or beach lounger rental",
+                "cost": "₹280–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Boblin la Mer Hotel Restaurant",
+                "budget": "₹7,000–₹12,500/night"
+              },
+              {
+                "name": "Etoile du Sud Hôtel",
+                "budget": "₹5,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "La Taverne Bassamoise",
+              "Les Jardins d'Éden",
+              "Restaurant Madou"
+            ]
+          }
+        ]
+      },
+      "Assinie": {
+        "name": "Assinie",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Trade heritage for lagoon-and-ocean scenery with one of the country's easiest resort-style breaks.",
+            "activities": [
+              {
+                "name": "Bush taxi or shared car from Grand-Bassam to Assinie",
+                "cost": "₹560–₹1,120"
+              },
+              {
+                "name": "Boat ride on the Assinie lagoon",
+                "cost": "₹1,120–₹2,800"
+              },
+              {
+                "name": "Assinie beach and sandbar walking time",
+                "cost": "₹0"
+              },
+              {
+                "name": "Beach chair or day-pass spend at a lodge",
+                "cost": "₹420–₹1,120"
+              },
+              {
+                "name": "Short local moto or taxi transfer between lagoon and ocean-side stops",
+                "cost": "₹140–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Coucoue Lodge",
+                "budget": "₹14,500–₹24,000/night"
+              },
+              {
+                "name": "Hotel Nouvelle Vague",
+                "budget": "₹8,500–₹14,000/night"
+              },
+              {
+                "name": "Kame Surf Camp",
+                "budget": "₹4,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Le Santa Maria",
+              "Pampa Beach",
+              "La Paillote d'Assinie"
+            ]
+          },
+          {
+            "theme": "Keep it slow with a second boat run, a long seafood lunch, and one full dry-season beach day.",
+            "activities": [
+              {
+                "name": "Pirogue or motorboat ride to the embouchure",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Kayak, paddle, or light watersports rental",
+                "cost": "₹700–₹1,680"
+              },
+              {
+                "name": "Resort beach access and pool time",
+                "cost": "₹420–₹980"
+              },
+              {
+                "name": "Bush taxi return toward Abidjan or Aboisso transport hub",
+                "cost": "₹560–₹1,120"
+              },
+              {
+                "name": "Sunset drinks by the lagoon",
+                "cost": "₹280–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Coucoue Lodge",
+                "budget": "₹14,500–₹24,000/night"
+              },
+              {
+                "name": "Hotel Nouvelle Vague",
+                "budget": "₹8,500–₹14,000/night"
+              }
+            ],
+            "meals": [
+              "Pampa Beach",
+              "Le Santa Maria",
+              "Hotel L'Ocean"
+            ]
+          }
+        ]
+      },
+      "Yamoussoukro": {
+        "name": "Yamoussoukro",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Aim inland for monumental architecture, broad capital avenues, and the city's signature basilica visit.",
+            "activities": [
+              {
+                "name": "Bush taxi or intercity coach into Yamoussoukro",
+                "cost": "₹980–₹1,960"
+              },
+              {
+                "name": "Basilica of Our Lady of Peace foreign visitor entry",
+                "cost": "₹280"
+              },
+              {
+                "name": "Basilica parking/train-style shuttle or local taxi access",
+                "cost": "₹70–₹280"
+              },
+              {
+                "name": "Presidential Palace crocodile lake viewpoint",
+                "cost": "₹0"
+              },
+              {
+                "name": "Fondation Félix Houphouët-Boigny museum stop",
+                "cost": "₹140–₹280"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Président",
+                "budget": "₹9,500–₹18,000/night"
+              },
+              {
+                "name": "Hôtel des Parlementaires",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Hotel Royal",
+                "budget": "₹4,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Chez Mario",
+              "La Brise",
+              "Banian"
+            ]
+          },
+          {
+            "theme": "If you stay longer, add food stops and a slower sweep of the ceremonial capital before heading west.",
+            "activities": [
+              {
+                "name": "Open-air market and central boulevard walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Local taxi hops across Yamoussoukro",
+                "cost": "₹140–₹420"
+              },
+              {
+                "name": "Hotel Président grounds and lake viewpoints",
+                "cost": "₹0–₹140"
+              },
+              {
+                "name": "Extra museum or civic-building stop",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Roadside fruit, attiéké, and grilled-fish snack budget",
+                "cost": "₹140–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Président",
+                "budget": "₹9,500–₹18,000/night"
+              },
+              {
+                "name": "Hotel Royal",
+                "budget": "₹4,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Brennus",
+              "Chez Mario",
+              "Le Bon Coin Plus"
+            ]
+          }
+        ]
+      },
+      "Man": {
+        "name": "Man",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Push west into the highlands for waterfalls, market energy, and the best cool-weather break in the country.",
+            "activities": [
+              {
+                "name": "Bush taxi or coach from Yamoussoukro to Man",
+                "cost": "₹1,120–₹2,240"
+              },
+              {
+                "name": "La Cascade de Man entry or local access donation",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "La Dent de Man local guide or moto transfer",
+                "cost": "₹420–₹980"
+              },
+              {
+                "name": "Grand marché de Man walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Taxi hops around Man town",
+                "cost": "₹140–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Les Cascades",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Agbanseu Hotel",
+                "budget": "₹3,800–₹6,500/night"
+              },
+              {
+                "name": "Hotel Beau Sejour",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Alibaba Restaurant",
+              "Les Délices de l'Ouest",
+              "Ariane Beach"
+            ]
+          },
+          {
+            "theme": "Use the cool morning for Mount Tonkoui and keep the rest of the day flexible for more western viewpoints.",
+            "activities": [
+              {
+                "name": "Mount Tonkoui local access fee",
+                "cost": "₹140"
+              },
+              {
+                "name": "Mount Tonkoui guide",
+                "cost": "₹420–₹840"
+              },
+              {
+                "name": "Bush taxi or moto transfer to the Tonkoui trailhead",
+                "cost": "₹560–₹1,120"
+              },
+              {
+                "name": "Man hanging bridge or village-side walk",
+                "cost": "₹0–₹140"
+              },
+              {
+                "name": "Evening maquis spend for grilled chicken or fish",
+                "cost": "₹280–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Les Cascades",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Agbanseu Hotel",
+                "budget": "₹3,800–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Ariane Beach",
+              "Hotel Les Cascades Restaurant",
+              "Alibaba Restaurant"
+            ]
+          },
+          {
+            "theme": "Only add this if you want a serious wildlife extension: Taï is a long southwest detour, but it is the signature rainforest add-on.",
+            "activities": [
+              {
+                "name": "Early bush taxi or private 4x4 transfer toward Taï or Guiglo sector",
+                "cost": "₹2,800–₹7,000"
+              },
+              {
+                "name": "Taï National Park foreign visitor entry",
+                "cost": "₹700"
+              },
+              {
+                "name": "Mandatory local eco-guide or tracker",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Packed lunch and water for the forest day",
+                "cost": "₹280–₹560"
+              },
+              {
+                "name": "Return transport or onward overnight toward the southwest",
+                "cost": "₹1,400–₹3,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Agbanseu Hotel",
+                "budget": "₹3,800–₹6,500/night"
+              },
+              {
+                "name": "Hotel Beau Sejour",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Les Délices de l'Ouest",
+              "Alibaba Restaurant",
+              "Hotel Les Cascades Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Abidjan",
+        "to": "Grand-Bassam",
+        "method": "Shared taxi, minibus, or a cheap suburban-style transfer is easiest; this is also the simplest place to sample the local gbaka rhythm before longer legs",
+        "cost": "₹210–₹700"
+      },
+      {
+        "from": "Grand-Bassam",
+        "to": "Assinie",
+        "method": "Bush taxis and shared cars are the standard coastal move east, usually via Bonoua and Aboisso",
+        "cost": "₹560–₹1,120"
+      },
+      {
+        "from": "Assinie",
+        "to": "Yamoussoukro",
+        "method": "This is a longer inland transfer, usually stitched together by bush taxi via Aboisso or Abidjan before continuing to the capital",
+        "cost": "₹980–₹2,240"
+      },
+      {
+        "from": "Yamoussoukro",
+        "to": "Man",
+        "method": "Bush taxis and coaches are the default westbound option; start early because the road day is long even in dry season",
+        "cost": "₹1,120–₹2,240"
+      },
+      {
+        "from": "Man",
+        "to": "Abidjan",
+        "method": "Road returns by bush taxi or coach are the norm, while Air Côte d'Ivoire is worth checking only as an occasional time-saving domestic backup if schedules line up",
+        "cost": "₹1,680–₹8,400"
+      }
+    ],
+    "extras": [
+      "November to March is the cleanest all-round window: Abidjan stays more manageable, Grand-Bassam and Assinie are less stormy, and Mount Tonkoui trails are much less slippery.",
+      "Banco National Park and the Yamoussoukro basilica both reward early starts, before midday heat and traffic make city movement slower.",
+      "Grand-Bassam's UNESCO quarter itself is free to wander; the paid museum stop is the best-value way to add context without booking a full private tour.",
+      "Keep small cash for gbakas, bush taxis, and park gates, because card acceptance drops sharply once you leave Abidjan's bigger hotels.",
+      "Man is the most weather-sensitive leg here: if rain is building in the west, cut the Taï extension first and protect the Tonkoui morning instead.",
+      "Assinie is best used as a dry-season decompression stop, not a packed sightseeing day, so one boat ride plus a long seafood lunch usually feels right."
+    ],
+    "cityImages": {
+      "Abidjan": [
+        "Banco National Park Abidjan",
+        "St. Paul's Cathedral Abidjan",
+        "Plateau Abidjan skyline"
+      ],
+      "Yamoussoukro": [
+        "Basilica of Our Lady of Peace Yamoussoukro",
+        "Presidential Palace Yamoussoukro",
+        "Fondation Felix Houphouet-Boigny Yamoussoukro"
+      ],
+      "Grand-Bassam": [
+        "Grand-Bassam colonial quarter",
+        "Musee National du Costume Grand-Bassam",
+        "Grand-Bassam beach"
+      ],
+      "Man": [
+        "La Cascade de Man",
+        "Mount Tonkoui Ivory Coast",
+        "La Dent de Man"
+      ],
+      "Assinie": [
+        "Assinie beach Ivory Coast",
+        "Assinie lagoon boat",
+        "Assinie Mafia embouchure"
+      ]
+    }
+  }
+}

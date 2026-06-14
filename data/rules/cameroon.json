@@ -1,0 +1,581 @@
+{
+  "name": "Cameroon",
+  "seed": false,
+  "lat": 7.37,
+  "lng": 12.35,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "worstMonths": [
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹78K–₹1.22L",
+    "couple": "₹1.4L–₹2.15L",
+    "family4": "₹2.7L–₹4.1L"
+  },
+  "experiences": [
+    "Douala's street art, cathedral quarter, and Cameroon gateway energy",
+    "Yaoundé museums, reunion monument, and easy long-distance bus links",
+    "Limbe black-sand coast with the Limbe Wildlife Centre and Buea hike access",
+    "Kribi beach days around Lobé Falls where the river meets the Atlantic",
+    "Bamenda highlands culture with Mankon heritage and optional Foumban detours"
+  ],
+  "avoid": [
+    "March to October is wetter across the coast and south, so intercity road journeys to Limbe and Kribi run slower and beach days are less reliable.",
+    "Carry some XAF cash for taxis, market stops, and attraction tickets because cards are inconsistent outside major hotels in Douala and Yaoundé.",
+    "Check current local conditions before committing to Bamenda or longer Northwest road legs, as transport schedules and checkpoints can change faster there than on the coast."
+  ],
+  "combo": [
+    "Gabon",
+    "Equatorial Guinea"
+  ],
+  "landmark": "Lobé Falls",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Douala is the easiest international entry and pairs naturally with Limbe first; save the longer Amour Mezam and Touristique Express coach legs for once you are settled, and treat the Camair-Co/Waza safari idea as a separate Yaoundé add-on rather than forcing it into the core coastal loop.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Douala",
+      "lat": 4.0511,
+      "lng": 9.7679,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "La Nouvelle Liberté, Doual'Art, cathedral-quarter stops, Parcours Vita, and the country's busiest hotel and restaurant scene."
+    },
+    {
+      "name": "Yaoundé",
+      "lat": 3.848,
+      "lng": 11.5021,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "National Museum, Monument de la Réunification, Mefou primate day trips, and the cleanest onward bus and domestic-flight logistics."
+    },
+    {
+      "name": "Limbe",
+      "lat": 4.0244,
+      "lng": 9.2061,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Black-sand beach atmosphere, Limbe Wildlife Centre, botanical gardens, and quick taxi access to Buea for Mount Cameroon trailheads."
+    },
+    {
+      "name": "Kribi",
+      "lat": 2.9373,
+      "lng": 9.9077,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Lobé Falls canoe rides, long beach stretches, seafood restaurants, and easy slow days before returning to Douala."
+    },
+    {
+      "name": "Bamenda",
+      "lat": 5.9631,
+      "lng": 10.1591,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Mankon heritage, market life, highland viewpoints, and an optional long heritage detour toward Foumban."
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange Cameroun and MTN Cameroon are the easiest choices for this route; budget roughly ₹560–₹1,680 for a starter data bundle that covers maps, messaging, and hotel bookings across Douala, Yaoundé, Limbe, and Kribi, with patchier speeds on longer Northwest road sections.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "Camair-Co",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Douala",
+      "Limbe",
+      "Yaoundé",
+      "Bamenda",
+      "Kribi"
+    ],
+    "cities": {
+      "Douala": {
+        "name": "Douala",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Bonanjo landmarks, public art, and a soft landing in Cameroon’s busiest gateway city",
+            "activities": [
+              {
+                "name": "Airport taxi into Akwa, Bonanjo, or Bonapriso",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "La Nouvelle Liberté and Doual'Art stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Cathedral of Saints Peter and Paul Bonadibong visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Taxi hops to Parcours Vita or Marché Central",
+                "cost": "₹280–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "K Hotel Douala",
+                "budget": "₹11,500–₹17,500/night"
+              },
+              {
+                "name": "Akwa Palace Douala",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "ONOMO Hotel Douala",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Bistro Latin",
+              "Saga Africa",
+              "Le Glacier Moderne"
+            ]
+          }
+        ]
+      },
+      "Limbe": {
+        "name": "Limbe",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Wildlife rescue, botanical gardens, and Limbe’s laid-back black-sand coast",
+            "activities": [
+              {
+                "name": "Shared taxi or hired car from Douala to Limbe",
+                "cost": "₹560–₹1,400"
+              },
+              {
+                "name": "Limbe Wildlife Centre international adult entry",
+                "cost": "₹420"
+              },
+              {
+                "name": "Limbe Botanic Garden visit",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Short taxi rides between the wildlife centre, gardens, and Down Beach",
+                "cost": "₹280–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Fini Hotel Limbe",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Atlantic Beach Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Marcsons Hotel & Resort",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Arne's Café",
+              "Miramar Restaurant",
+              "Down Beach fish grills"
+            ]
+          },
+          {
+            "theme": "Buea slopes and the classic Mount Cameroon add-on from the coast",
+            "activities": [
+              {
+                "name": "Taxi from Limbe to Buea trailhead and back",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Mount Cameroon National Park foreign hiker permit",
+                "cost": "₹1,400"
+              },
+              {
+                "name": "Guide or porter arrangement at the Buea office",
+                "cost": "Confirm current rate at check-in"
+              },
+              {
+                "name": "Down Beach sunset or seafood dinner back in Limbe",
+                "cost": "₹0–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Fini Hotel Limbe",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Atlantic Beach Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Arne's Café",
+              "Miramar Restaurant",
+              "Motel Limbe seafood spots"
+            ]
+          }
+        ]
+      },
+      "Yaoundé": {
+        "name": "Yaoundé",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Capital museums, reunion landmarks, and practical city logistics",
+            "activities": [
+              {
+                "name": "Shared taxi or coach from Limbe into Yaoundé",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Monument de la Réunification and city viewpoint loop",
+                "cost": "₹0"
+              },
+              {
+                "name": "National Museum of Cameroon visit",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "City taxi rides between Centre Ville, the museum district, and Mvolyé",
+                "cost": "₹420–₹1,120"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hilton Yaoundé",
+                "budget": "₹13,500–₹21,000/night"
+              },
+              {
+                "name": "Hotel Franco Yaoundé",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Merina Hotel Yaoundé",
+                "budget": "₹7,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "La Paillote",
+              "Kajazoma",
+              "La Salsa"
+            ]
+          },
+          {
+            "theme": "Wildlife or Far North planning day, with the option to bolt on Cameroon’s big safari detour",
+            "activities": [
+              {
+                "name": "Mefou National Park transport and sanctuary visit from Yaoundé",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Camair-Co Yaoundé-Maroua return if you add the Waza safari extension",
+                "cost": "₹16,800–₹28,000"
+              },
+              {
+                "name": "Waza National Park foreign visitor entry for the add-on safari day",
+                "cost": "₹1,400–₹2,100"
+              },
+              {
+                "name": "Touristique Express seat hold or next-leg ticket planning toward Kribi",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hilton Yaoundé",
+                "budget": "₹13,500–₹21,000/night"
+              },
+              {
+                "name": "Hôtel Mont Fébé",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Le Biniou",
+              "Tchop Et Yamo",
+              "La Paillote"
+            ]
+          }
+        ]
+      },
+      "Bamenda": {
+        "name": "Bamenda",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Market energy, Mankon heritage, and a first look at the Northwest highlands",
+            "activities": [
+              {
+                "name": "Amour Mezam coach from Yaoundé to Bamenda",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Mankon Fon’s Palace visit and local guide donation",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "Bamenda Main Market walk and short taxi hops",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "Sunset highland viewpoint drive around town",
+                "cost": "₹420–₹980"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ayaba Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Mawa Hotel",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "International Hotel Bamenda",
+                "budget": "₹4,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "PresCafe Bamenda",
+              "Blue Pearl Restaurant",
+              "Dreamland Restaurant"
+            ]
+          },
+          {
+            "theme": "Optional west-highlands heritage day with the long Foumban palace detour",
+            "activities": [
+              {
+                "name": "Private-car day trip from Bamenda toward Foumban and back",
+                "cost": "₹7,000–₹14,000"
+              },
+              {
+                "name": "Foumban Royal Palace and museum foreign visitor ticket",
+                "cost": "₹700"
+              },
+              {
+                "name": "Ring Road photo stops on the return to Bamenda",
+                "cost": "₹0"
+              },
+              {
+                "name": "Evening taxi back into central Bamenda",
+                "cost": "₹140–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ayaba Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Mawa Hotel",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "PresCafe Bamenda",
+              "Blue Pearl Restaurant"
+            ]
+          }
+        ]
+      },
+      "Kribi": {
+        "name": "Kribi",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Atlantic beach time and the signature Lobé Falls pirogue ride",
+            "activities": [
+              {
+                "name": "Return via Yaoundé and continue by Touristique Express or shared taxi to Kribi",
+                "cost": "₹2,800–₹5,600"
+              },
+              {
+                "name": "Lobé Falls canoe trip",
+                "cost": "₹350–₹700"
+              },
+              {
+                "name": "Taxi hops between town beach, Lobé, and the seafood strip",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "Kribi beach evening and waterfront walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Atlantic Hotel Kribi",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Hôtel Ilomba",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Les Gîtes de Kribi",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Le Plaisir du Goût",
+              "Le Coco Beach Kribi",
+              "Chez Marcel"
+            ]
+          },
+          {
+            "theme": "Slow beach recovery day before the final return to Douala",
+            "activities": [
+              {
+                "name": "Morning beach time or short pirogue hire near Lobé",
+                "cost": "₹350–₹980"
+              },
+              {
+                "name": "Sea turtle coast or village-side excursion toward Ebodjé",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Shared taxi or intercity bus back to Douala",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Short town taxi rides for markets or the return station",
+                "cost": "₹140–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Atlantic Hotel Kribi",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Hôtel Ilomba",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Le Plaisir du Goût",
+              "Le Coco Beach Kribi",
+              "Chez Marcel"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Douala",
+        "to": "Limbe",
+        "method": "Shared taxis and hired cars are the easy coastal move from Douala, with Buea used as the inland pivot if you plan to hike Mount Cameroon first.",
+        "cost": "₹560–₹1,400"
+      },
+      {
+        "from": "Limbe",
+        "to": "Yaoundé",
+        "method": "Road back via Buea and Douala is the standard transfer; leave early because city traffic around Douala can add real time to what looks short on the map.",
+        "cost": "₹1,400–₹2,800"
+      },
+      {
+        "from": "Yaoundé",
+        "to": "Bamenda",
+        "method": "Amour Mezam is the most recognizable coach operator on this leg; daytime departures are easier if you want more flexibility on arrival than an overnight ride.",
+        "cost": "₹1,400–₹2,800"
+      },
+      {
+        "from": "Bamenda",
+        "to": "Kribi",
+        "method": "This is best treated as a split transfer back through Yaoundé, then onward by Touristique Express or shared taxi to the coast, rather than trying to improvise it as one long same-day scramble.",
+        "cost": "₹2,800–₹5,600"
+      },
+      {
+        "from": "Kribi",
+        "to": "Douala",
+        "method": "Shared taxis and intercity buses are frequent enough for the return to Douala, making Kribi the simplest beach finish before an international departure.",
+        "cost": "₹1,400–₹2,800"
+      }
+    ],
+    "extras": [
+      "November to February is the sweet spot for this route: the Douala-Limbe-Kribi coast is drier, road delays ease up, and beach days are more dependable than in the heavier rains.",
+      "Keep small XAF notes ready for taxi bargaining and attraction entries, because even good hotels often cannot smooth out everyday cash needs once you are outside their compound.",
+      "Mount Cameroon normally works better as a Buea-based guided outing from Limbe than as a rushed same-day summit attempt; give yourself flexibility if weather closes in.",
+      "The Waza safari idea is real but logistically separate from the core south-and-west loop, so only add the Camair-Co Maroua detour if you have extra days beyond the main eight-day plan.",
+      "For Bamenda, check the latest on-ground conditions and favor trusted hotel transport or pre-arranged cars for early or late arrivals rather than winging intercity transfers on the spot."
+    ],
+    "cityImages": {
+      "Douala": [
+        "La Nouvelle Liberté Douala",
+        "Doual'Art Douala",
+        "Cathedral of Saints Peter and Paul Douala"
+      ],
+      "Limbe": [
+        "Limbe Wildlife Centre",
+        "Down Beach Limbe",
+        "Mount Cameroon Buea"
+      ],
+      "Yaoundé": [
+        "Monument de la Réunification Yaoundé",
+        "National Museum of Cameroon",
+        "Mefou National Park Cameroon"
+      ],
+      "Bamenda": [
+        "Mankon Fon's Palace Bamenda",
+        "Bamenda Ring Road",
+        "Foumban Royal Palace"
+      ],
+      "Kribi": [
+        "Lobé Falls Kribi",
+        "Kribi Beach Cameroon",
+        "Ebodjé Cameroon"
+      ]
+    }
+  }
+}

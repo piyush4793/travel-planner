@@ -1,0 +1,379 @@
+{
+  "name": "Tuvalu",
+  "seed": false,
+  "lat": -7.11,
+  "lng": 177.65,
+  "region": "Oceania",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹1.35L–₹2.15L",
+    "couple": "₹2.55L–₹3.95L",
+    "family4": "₹5L–₹7.1L"
+  },
+  "experiences": [
+    "Remote Pacific Atolls",
+    "Lagoon Snorkeling",
+    "Village Life",
+    "Airstrip Sunsets",
+    "Outer-Island Boat Travel",
+    "Handicrafts"
+  ],
+  "avoid": [
+    "November-April is wetter, hotter, and more disruption-prone for inter-island boats, so outer-island plans can slide by a day or more.",
+    "Do not try to force Nanumea and Vaitupu into a very short trip; Tuvalu works best with buffer nights because boats are infrequent and weather dependent.",
+    "Cash is essential across Tuvalu, and guesthouses, meal stops, and boat tickets are easiest to manage if you arrive from Fiji with enough Australian dollars for the full stay."
+  ],
+  "combo": [
+    "Fiji",
+    "Samoa",
+    "Kiribati"
+  ],
+  "landmark": "Funafuti Conservation Area",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 6 days, stay on Funafuti and add only one outer island. Trying to cover both Nanumea and Vaitupu on a short visit usually wastes too much time waiting on boats.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Funafuti",
+      "lat": -8.5167,
+      "lng": 179.2167,
+      "notes": "Funafuti is Tuvalu's only realistic arrival base, built around the Fongafale airstrip, the conservation-area lagoon day trip, simple guesthouses, and one of the world's least-visited national capitals."
+    },
+    {
+      "name": "Nanumea",
+      "lat": -5.6819,
+      "lng": 176.1281,
+      "notes": "Nanumea is the far-north atoll extension for community-hosted stays, quiet lagoon swims, and a much more local version of Tuvalu once the supply boat has dropped you off."
+    },
+    {
+      "name": "Vaitupu",
+      "lat": -7.4768,
+      "lng": 178.6745,
+      "notes": "Vaitupu slows the trip down even further with broad lagoon views, village walks around Asau and Faleapoi, and boat-linked reef or sandbank outings when sea conditions co-operate."
+    }
+  ],
+  "itinerary": {
+    "sim": "Tuvalu Telecom service is strongest on Funafuti and much weaker once you head to the outer islands, so buy a prepaid SIM in Fongafale and download offline maps plus boat contacts before leaving the capital.",
+    "apps": [
+      "Google Maps offline",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency",
+      "Fiji Airways"
+    ],
+    "cityOrder": [
+      "Funafuti",
+      "Nanumea",
+      "Vaitupu"
+    ],
+    "cities": {
+      "Funafuti": {
+        "name": "Funafuti",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Funafuti deserves at least two proper days: one for the conservation-area boat and one for the airstrip, handicrafts, and easy island pacing before you gamble on any outer-island sailing.",
+        "days": [
+          {
+            "theme": "Runway Arrival, Vaiaku Orientation and a Classic Tuvalu Sunset",
+            "activities": [
+              {
+                "name": "Funafuti airstrip and WWII runway walk on Fongafale",
+                "cost": "Free",
+                "tip": "The old wartime runway is still the island airstrip, and outside flight windows it doubles as Funafuti's social promenade for walks, volleyball, and sunset people-watching."
+              },
+              {
+                "name": "Tuvalu Women's Handicraft Centre browsing",
+                "cost": "Free–₹1,350 pp",
+                "tip": "Browsing is free, but woven fans, shell jewelry, and baskets usually make this the easiest place to support local makers with a small cash purchase."
+              },
+              {
+                "name": "Sue's Kitchen lunch stop",
+                "cost": "₹540–₹1,080 pp"
+              },
+              {
+                "name": "Bicycle hire for the Fongafale lagoon-side road",
+                "cost": "₹270–₹810 pp",
+                "tip": "Simple day rentals usually land around AUD 5-15 depending on whether your lodge arranges the bike and how long you keep it."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Esfam Hotel",
+                "budget": "₹4,860–₹7,560/night"
+              },
+              {
+                "name": "Filamona Lodge",
+                "budget": "₹4,320–₹7,020/night"
+              },
+              {
+                "name": "L's Lodge",
+                "budget": "₹5,400–₹8,640/night"
+              }
+            ],
+            "meals": [
+              "Sue's Kitchen",
+              "Vaiaku Lagi Hotel Restaurant",
+              "Filamona Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Funafuti Conservation Area Motu Day and Clear-Water Snorkeling",
+            "activities": [
+              {
+                "name": "Funafuti Conservation Area visitor permit",
+                "cost": "₹1,620 pp",
+                "tip": "Foreign visitor permits are commonly quoted around AUD 30, and the dry May-October window usually gives the calmest water and best visibility."
+              },
+              {
+                "name": "Guesthouse-arranged Funafuti Conservation Area boat and snorkel outing",
+                "cost": "₹2,700–₹4,320 pp",
+                "tip": "Most shared day boats with mask, fins, and guide time price around AUD 50-80 per person when enough travelers split fuel."
+              },
+              {
+                "name": "Outer motu picnic or lagoon swim",
+                "cost": "₹540–₹1,080 pp",
+                "tip": "Bring your own drinks and snacks or ask the lodge to pack lunch because there are no restaurants once the boat leaves Fongafale."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vaiaku Lagi Hotel",
+                "budget": "₹6,480–₹9,720/night"
+              },
+              {
+                "name": "Niueti Lodge",
+                "budget": "₹4,860–₹7,560/night"
+              },
+              {
+                "name": "AMS Bed and Breakfast (Lanumoana Lodge)",
+                "budget": "₹4,860–₹7,560/night"
+              }
+            ],
+            "meals": [
+              "Vaiaku Lagi Hotel Restaurant",
+              "Esfam Hotel Restaurant",
+              "L's Lodge kitchen"
+            ]
+          },
+          {
+            "theme": "Lagoon Snorkel Repeat, Village Errands and Boat-Departure Buffer Time",
+            "activities": [
+              {
+                "name": "Guesthouse boat to a Funafuti lagoon snorkel spot outside the conservation area",
+                "cost": "₹3,240–₹5,400 pp",
+                "tip": "Private or small-group outer-motu boats often cost about AUD 60-100 total, so the per-person price drops if you can share with other guests."
+              },
+              {
+                "name": "Snorkel gear hire if not included",
+                "cost": "₹270–₹540 pp",
+                "tip": "Basic mask-and-fin rental is often around AUD 5-10 a day if your guesthouse does not already lend gear."
+              },
+              {
+                "name": "Motorbike rental for quick Fongafale errands",
+                "cost": "₹540–₹1,350 pp",
+                "tip": "Motorbike hire is usually around AUD 10-25 per day and is the easiest way to check boat offices, guesthouses, and the northern swimming end of the island."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hideaway Guesthouse Funafuti",
+                "budget": "₹4,860–₹7,560/night"
+              },
+              {
+                "name": "Afelita Bed & Breakfast",
+                "budget": "₹4,320–₹6,480/night"
+              },
+              {
+                "name": "Wamasiri Lodge",
+                "budget": "₹4,320–₹6,480/night"
+              }
+            ],
+            "meals": [
+              "Sue's Kitchen",
+              "Filamona Lodge Restaurant",
+              "Vaiaku Lagi Hotel Restaurant"
+            ]
+          }
+        ]
+      },
+      "Nanumea": {
+        "name": "Nanumea",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Treat Nanumea as a simple outer-island immersion rather than a checklist stop: one arrival day and one extra lagoon-and-village day is usually enough before supplies or weather shift again.",
+        "days": [
+          {
+            "theme": "Passenger Boat North, Community Check-In and Lagoon Time",
+            "activities": [
+              {
+                "name": "Funafuti to Nanumea inter-island passenger boat",
+                "cost": "₹2,700–₹4,050 pp",
+                "tip": "Government passenger-boat fares to Tuvalu's outer islands are commonly quoted around AUD 50-75 one way, but the bigger issue is irregular timing rather than price."
+              },
+              {
+                "name": "Nanumea lagoon swim and shoreline walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Nanumea community guesthouse or homestay contribution",
+                "cost": "₹1,080–₹2,160/night",
+                "tip": "Outer-island stays are usually arranged through local hosts or the island council and commonly land near AUD 20-40 a night including very simple meals."
+              }
+            ],
+            "meals": [
+              "Community guesthouse dinner",
+              "Packed snacks from Funafuti"
+            ]
+          },
+          {
+            "theme": "Village Paths, Church Stop and a Slow Boat-Life Day",
+            "activities": [
+              {
+                "name": "Nanumea village and church walk",
+                "cost": "Free–₹540 pp",
+                "tip": "A small donation is appreciated if a host opens community spaces or church grounds for visitors, especially on quieter non-Sunday afternoons."
+              },
+              {
+                "name": "Host-arranged small-boat reef edge or fishing outing",
+                "cost": "₹1,080–₹2,160 pp",
+                "tip": "Expect the price to hinge on fuel and who shares the boat; on Nanumea this is usually an informal cash arrangement through your host rather than a formal tour desk."
+              },
+              {
+                "name": "Walking and cycling between settlements on the atoll",
+                "cost": "Free–₹270 pp"
+              }
+            ],
+            "meals": [
+              "Community guesthouse breakfast",
+              "Community guesthouse dinner"
+            ]
+          }
+        ]
+      },
+      "Vaitupu": {
+        "name": "Vaitupu",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Vaitupu is best kept flexible: arrive when the boat works, walk the main villages, and spend one extra day on the lagoon rather than trying to over-plan a place with very light tourism infrastructure.",
+        "days": [
+          {
+            "theme": "Inter-Island Arrival, Asau Village and Broad Lagoon Views",
+            "activities": [
+              {
+                "name": "Nanumea or Funafuti to Vaitupu passenger boat sector",
+                "cost": "₹2,700–₹4,050 pp",
+                "tip": "If you are not coming directly from Funafuti, confirm whether the ship is calling at Vaitupu on your sailing because outer-island routing can change with cargo and weather."
+              },
+              {
+                "name": "Asau village walk and waterfront pause",
+                "cost": "Free"
+              },
+              {
+                "name": "Vaitupu guesthouse or family homestay contribution",
+                "cost": "₹1,080–₹2,160/night",
+                "tip": "Like Nanumea, Vaitupu accommodation is generally simple community lodging booked through local contacts rather than branded hotels."
+              }
+            ],
+            "meals": [
+              "Community guesthouse dinner",
+              "Packed snacks from Funafuti"
+            ]
+          },
+          {
+            "theme": "Vaitupu Lagoon, Faleapoi Village and a Reef-Edge Boat Outing",
+            "activities": [
+              {
+                "name": "Vaitupu lagoon boat and snorkel session",
+                "cost": "₹1,620–₹2,700 pp",
+                "tip": "Local lagoon outings are normally arranged informally with a host family or fisherman, and the dry season gives the best chance of calmer reef conditions."
+              },
+              {
+                "name": "Faleapoi village weaving or handicraft visit",
+                "cost": "₹540–₹1,080 pp",
+                "tip": "Budget a host-family contribution if someone demonstrates weaving, coconut preparation, or other everyday skills."
+              },
+              {
+                "name": "Walking or cycling between Vaitupu villages",
+                "cost": "Free–₹270 pp"
+              }
+            ],
+            "meals": [
+              "Community guesthouse breakfast",
+              "Community guesthouse dinner"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Funafuti International Airport",
+        "to": "Funafuti",
+        "method": "Most guesthouses are within a short walk or very quick pickup from the runway area on Fongafale.",
+        "cost": "Free–₹540"
+      },
+      {
+        "from": "Funafuti",
+        "to": "Nanumea",
+        "method": "Take the government passenger boat north; departures are infrequent, basic, and often weather delayed, so keep at least one buffer night on Funafuti.",
+        "cost": "₹2,700–₹4,050"
+      },
+      {
+        "from": "Nanumea",
+        "to": "Vaitupu",
+        "method": "Continue only if the same inter-island vessel or the next scheduled ship is calling southbound via Vaitupu; otherwise return to Funafuti first.",
+        "cost": "₹2,700–₹4,050"
+      },
+      {
+        "from": "Vaitupu",
+        "to": "Funafuti",
+        "method": "Return by passenger ship and keep your final Fiji flight on a later day, not the same day, because outer-island sailing times move around.",
+        "cost": "₹2,700–₹4,050"
+      }
+    ],
+    "extras": [
+      "Tuvalu is one of the world's least-visited countries, so the real planning skill here is patience: confirm boats repeatedly and treat extra waiting time as part of the trip.",
+      "Outside Funafuti, you should assume patchy power, limited fresh produce, and almost no formal tourism services, so carry snacks, refillable water, and cash in small notes.",
+      "Sunday is especially quiet across Tuvalu, with church activities taking priority and very little transport or commerce moving beyond essentials.",
+      "Reef shoes, sunscreen, a dry bag, and offline confirmations matter more than fancy gear because nearly every worthwhile day here includes boat spray, coral edges, or long waits in the heat."
+    ],
+    "cityImages": {
+      "Funafuti": [
+        "Funafuti Conservation Area",
+        "Funafuti airstrip sunset",
+        "Vaiaku Lagi Hotel"
+      ],
+      "Nanumea": [
+        "Nanumea lagoon Tuvalu",
+        "Nanumea village coastline",
+        "Nanumea atoll aerial"
+      ],
+      "Vaitupu": [
+        "Vaitupu lagoon Tuvalu",
+        "Asau village Tuvalu",
+        "Vaitupu reef shoreline"
+      ]
+    }
+  }
+}

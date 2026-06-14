@@ -1,0 +1,561 @@
+{
+  "name": "Mozambique",
+  "seed": false,
+  "lat": -18.67,
+  "lng": 35.53,
+  "region": "Africa",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "budget": {
+    "solo": "₹1.7L–₹3L",
+    "couple": "₹3.1L–₹5.3L",
+    "family4": "₹6.1L–₹9.8L"
+  },
+  "experiences": [
+    "Maputo seafood and colonial architecture",
+    "Tofo whale shark ocean safaris",
+    "Bazaruto Archipelago dhow days",
+    "Gorongosa National Park safari drives",
+    "Ilha de Moçambique UNESCO fort and Swahili-Portuguese lanes"
+  ],
+  "avoid": [
+    "December to March is hotter, wetter, and the cyclone-risk window on the coast, so dhows, diving, and rough coastal roads get less reliable.",
+    "Chapa minibuses are cheap but cramped and slow with luggage, especially on the long Tofo-Vilankulo and Beira-Gorongosa stretches.",
+    "Some domestic routes do not run daily, so lock LAM flights before confirming lodge nights in Vilankulo, Gorongosa, or Nampula."
+  ],
+  "combo": [
+    "South Africa",
+    "Zimbabwe",
+    "Tanzania"
+  ],
+  "landmark": "Bazaruto Archipelago",
+  "travelStyle": [
+    "explorer",
+    "immersive",
+    "relaxed"
+  ],
+  "stopoverNote": "If you only have 7-8 days, fly open-jaw via Maputo and Nampula, keep just Tofo + Vilankulo or Gorongosa + Ilha de Moçambique, and skip the longest overland transfers.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Maputo",
+      "lat": -25.9692,
+      "lng": 32.5732,
+      "notes": "The capital is the easiest gateway for FEIMA crafts, seafood restaurants, the ironwork railway station, and a first taste of Mozambique's Portuguese-Indian Ocean mix."
+    },
+    {
+      "name": "Tofo Beach",
+      "lat": -23.8583,
+      "lng": 35.5481,
+      "notes": "Tofo is the laid-back Inhambane coast base for whale shark ocean safaris, Tofinho surf viewpoints, and barefoot seafood dinners."
+    },
+    {
+      "name": "Vilankulo",
+      "lat": -21.9997,
+      "lng": 35.3133,
+      "notes": "Vilankulo is the mainland launchpad for the Bazaruto Archipelago, with dhow trips, reef snorkeling, and long tidal sandbars."
+    },
+    {
+      "name": "Gorongosa National Park",
+      "lat": -18.9789,
+      "lng": 34.3549,
+      "notes": "Mozambique's headline safari park combines floodplains, lion and wild dog sightings, community projects, and the Chitengo wildlife hub."
+    },
+    {
+      "name": "Ilha de Moçambique",
+      "lat": -15.0342,
+      "lng": 40.7358,
+      "notes": "This UNESCO island layers Swahili, Arab, and Portuguese history with coral-stone mansions, Fort São Sebastião, and dhow-dotted sea views."
+    }
+  ],
+  "itinerary": {
+    "sim": "Vodacom M-Pesa and Movitel are the easiest airport SIM picks; budget about ₹700–₹1,600 for enough data for maps, WhatsApp, and booking confirmations, with the strongest coverage in Maputo and patchier signal once you push north of Vilankulo.",
+    "apps": [
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "Airbnb",
+      "LAM Mozambique",
+      "XE Currency",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Maputo",
+      "Tofo Beach",
+      "Vilankulo",
+      "Gorongosa National Park",
+      "Ilha de Moçambique"
+    ],
+    "cities": {
+      "Maputo": {
+        "name": "Maputo",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Use Maputo as the soft landing for cash, SIM, and seafood before heading north by LAM or by road.",
+        "days": [
+          {
+            "theme": "Historic core, station architecture, and a relaxed first evening by the bay",
+            "activities": [
+              {
+                "name": "Fortress of Maputo admission",
+                "cost": "₹260 pp",
+                "tip": "Foreigner tickets are usually around MZN 200 and are best paid in small cash at the gate."
+              },
+              {
+                "name": "Maputo Railway Station and Praça dos Trabalhadores walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Central Market and FEIMA craft market browse",
+                "cost": "Free"
+              },
+              {
+                "name": "Tunduru Botanical Gardens sunset stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Airport or city taxi within central Maputo",
+                "cost": "₹650–₹1,300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Polana Serena Hotel",
+                "budget": "₹18,000–₹32,000/night"
+              },
+              {
+                "name": "Southern Sun Maputo",
+                "budget": "₹11,000–₹18,000/night"
+              },
+              {
+                "name": "Hotel Cardoso",
+                "budget": "₹8,500–₹14,000/night"
+              }
+            ],
+            "meals": [
+              "Zambi",
+              "Dhow Café",
+              "Campo di Mare"
+            ]
+          },
+          {
+            "theme": "Museums, bay crossings, and one more city day before the coast",
+            "activities": [
+              {
+                "name": "Museu de História Natural admission",
+                "cost": "₹195 pp"
+              },
+              {
+                "name": "Catembe ferry round-trip across Maputo Bay",
+                "cost": "₹65–₹130"
+              },
+              {
+                "name": "Costa do Sol promenade or beach stop",
+                "cost": "Free"
+              },
+              {
+                "name": "LAM Mozambique flight Maputo-Inhambane or Maputo-Vilankulo",
+                "cost": "₹9,500–₹17,500",
+                "tip": "Book domestic sectors early because some coastal routes do not run daily in the low season."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Polana Serena Hotel",
+                "budget": "₹18,000–₹32,000/night"
+              },
+              {
+                "name": "Radisson Blu Hotel & Residence, Maputo",
+                "budget": "₹13,000–₹22,000/night"
+              },
+              {
+                "name": "Hotel Avenida",
+                "budget": "₹9,000–₹15,000/night"
+              }
+            ],
+            "meals": [
+              "Mundo's",
+              "Zambi",
+              "Txhapo Txhapo"
+            ]
+          }
+        ]
+      },
+      "Tofo Beach": {
+        "name": "Tofo Beach",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Tofo works best as a two-night barefoot beach stop where one morning is reserved for ocean conditions and whale shark luck.",
+        "days": [
+          {
+            "theme": "Beach reset, dune viewpoints, and an easy first night in Tofo",
+            "activities": [
+              {
+                "name": "Inhambane Airport transfer or chapa from Maxixe/Inhambane to Tofo",
+                "cost": "₹390–₹1,300"
+              },
+              {
+                "name": "Praia do Tofo beach time",
+                "cost": "Free"
+              },
+              {
+                "name": "Tofinho viewpoint and surf beach walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Surf lesson at Tofinho",
+                "cost": "₹2,600–₹3,900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Baia Sonambula Guest House",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Kumba Lodge",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Casa na Praia Tofo",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Branko's",
+              "Tofo Tofo",
+              "Sumi Bar and Kitchen"
+            ]
+          },
+          {
+            "theme": "Whale shark ocean safari, reef time, and a proper Tofo seafood evening",
+            "activities": [
+              {
+                "name": "Peri-Peri Divers whale shark ocean safari / snorkeling trip",
+                "cost": "₹4,700 pp",
+                "tip": "The current snorkel ocean safari is around MZN 3,600 and is the benchmark half-day whale shark trip in Tofo."
+              },
+              {
+                "name": "Single dive with full equipment from Peri-Peri Divers or Liquid Dive Adventures",
+                "cost": "₹5,200 pp"
+              },
+              {
+                "name": "Massage or yoga session back near the beach lodges",
+                "cost": "₹1,950–₹3,250"
+              },
+              {
+                "name": "Shared chapa or tuk-tuk rides around Tofo and Barra turnoff",
+                "cost": "₹130–₹390"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Baia Sonambula Guest House",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Mozambeat Motel",
+                "budget": "₹3,500–₹6,500/night"
+              },
+              {
+                "name": "Kumba Lodge",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Branko's",
+              "Tofo Tofo",
+              "Happi"
+            ]
+          }
+        ]
+      },
+      "Vilankulo": {
+        "name": "Vilankulo",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Vilankulo is worth the detour for one full archipelago day; the sandbars and dhows are the actual reason to stay here.",
+        "days": [
+          {
+            "theme": "Arrival in Vilankulo, dhow silhouettes, and a first low-tide beach evening",
+            "activities": [
+              {
+                "name": "LAM Mozambique flight Inhambane-Maputo-Vilankulo or shared road transfer",
+                "cost": "₹10,500–₹18,500"
+              },
+              {
+                "name": "Vilankulo Beach walk and dhow harbor photography",
+                "cost": "Free"
+              },
+              {
+                "name": "Market stop for capulanas, cashews, and fresh fruit",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset dhow cruise from Vilankulo bay",
+                "cost": "₹2,600–₹4,600 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bahia Mar Boutique Hotel",
+                "budget": "₹14,000–₹24,000/night"
+              },
+              {
+                "name": "Casa Rex by Sol Resorts",
+                "budget": "₹9,500–₹16,500/night"
+              },
+              {
+                "name": "Archipelago Resort",
+                "budget": "₹7,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Casbah",
+              "Leopoldina's",
+              "Casa Rex Restaurant"
+            ]
+          },
+          {
+            "theme": "Bazaruto Archipelago dhow day with reef snorkeling and island time",
+            "activities": [
+              {
+                "name": "Traditional dhow safari to Magaruque or Bangue with lunch and snorkeling",
+                "cost": "₹8,500–₹12,800 pp",
+                "tip": "Shared dhow day trips typically price in the USD 100-150 range in 2025, often with marine park fees and lunch bundled in."
+              },
+              {
+                "name": "Bazaruto marine park fee if billed separately",
+                "cost": "₹1,700–₹2,600 pp"
+              },
+              {
+                "name": "Two Mile Reef snorkeling upgrade by speedboat operator",
+                "cost": "₹3,900–₹6,500 pp"
+              },
+              {
+                "name": "Tuk-tuk ride between lodges, market, and dhow beach",
+                "cost": "₹260–₹650"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bahia Mar Boutique Hotel",
+                "budget": "₹14,000–₹24,000/night"
+              },
+              {
+                "name": "Casa Rex by Sol Resorts",
+                "budget": "₹9,500–₹16,500/night"
+              },
+              {
+                "name": "Santorini Mozambique",
+                "budget": "₹32,000–₹58,000/night"
+              }
+            ],
+            "meals": [
+              "Casbah",
+              "Archipelago Resort Restaurant",
+              "Casa Rex Restaurant"
+            ]
+          }
+        ]
+      },
+      "Gorongosa National Park": {
+        "name": "Gorongosa National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Give Gorongosa at least two nights so you can pair one classic game drive day with a slower community or walking add-on.",
+        "days": [
+          {
+            "theme": "Chitengo arrival, floodplain game drive, and the first safari sunset",
+            "activities": [
+              {
+                "name": "Road transfer from Beira or Chimoio into Gorongosa / Chitengo",
+                "cost": "₹3,900–₹9,100"
+              },
+              {
+                "name": "Gorongosa National Park conservation fee",
+                "cost": "₹1,700 pp",
+                "tip": "The current international adult park fee is USD 20 per day, separate from activities and accommodation."
+              },
+              {
+                "name": "Shared afternoon game drive from Chitengo",
+                "cost": "₹2,600–₹4,300 pp"
+              },
+              {
+                "name": "Sundowner stop in the floodplain with guide",
+                "cost": "₹1,300–₹2,600 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Montebelo Gorongosa Lodge & Safari",
+                "budget": "₹11,000–₹20,000/night"
+              },
+              {
+                "name": "Muzimu Lodge",
+                "budget": "₹28,000–₹46,000/night"
+              },
+              {
+                "name": "Chicari Camp",
+                "budget": "₹18,000–₹30,000/night"
+              }
+            ],
+            "meals": [
+              "Chikalango Restaurant & Bar",
+              "Montebelo Gorongosa Lodge Restaurant",
+              "Ricardo's Place Restaurant e Bar"
+            ]
+          },
+          {
+            "theme": "Full safari day with birding, lion country, and a slower evening back at camp",
+            "activities": [
+              {
+                "name": "Sunrise game drive in the Rift Valley and Lake Urema zone",
+                "cost": "₹2,600–₹4,300 pp"
+              },
+              {
+                "name": "Walking safari or community visit add-on",
+                "cost": "₹2,600–₹5,200 pp"
+              },
+              {
+                "name": "Birding around Chitengo or Vinho pans",
+                "cost": "Free"
+              },
+              {
+                "name": "Bush breakfast or bush dinner add-on",
+                "cost": "₹2,600–₹3,900 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Montebelo Gorongosa Lodge & Safari",
+                "budget": "₹11,000–₹20,000/night"
+              },
+              {
+                "name": "Muzimu Lodge",
+                "budget": "₹28,000–₹46,000/night"
+              },
+              {
+                "name": "Chicari Camp",
+                "budget": "₹18,000–₹30,000/night"
+              }
+            ],
+            "meals": [
+              "Chikalango Restaurant & Bar",
+              "Montebelo Gorongosa Lodge Restaurant",
+              "Ricardo's Place Restaurant e Bar"
+            ]
+          }
+        ]
+      },
+      "Ilha de Moçambique": {
+        "name": "Ilha de Moçambique",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "End here if you want a slower heritage finish; most sights are walkable once you arrive from Nampula by road.",
+        "days": [
+          {
+            "theme": "Stone Town lanes, museum fort walls, and a first evening over the sea",
+            "activities": [
+              {
+                "name": "Road transfer from Nampula Airport to Ilha de Moçambique",
+                "cost": "₹2,600–₹5,200"
+              },
+              {
+                "name": "Fortaleza de São Sebastião and chapel admission",
+                "cost": "₹260 pp",
+                "tip": "Foreign visitor entry is commonly reported around MZN 200, and bringing small metical notes makes the fort visit easier."
+              },
+              {
+                "name": "Palácio de São Paulo Museum admission",
+                "cost": "₹130–₹260 pp"
+              },
+              {
+                "name": "Stone Town walking route via the old hospital, mosque quarter, and seafront",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jardim dos Aloés",
+                "budget": "₹6,500–₹11,500/night"
+              },
+              {
+                "name": "Feitoria Boutique Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Hotel Omuhipiti",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "O Escondidinho",
+              "Rickshaws Pousada e Café",
+              "Feitoria Boutique Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Bridge-side life, dhow views, and a slower second heritage day",
+            "activities": [
+              {
+                "name": "Morning dhow or local boat cruise around the island shoreline",
+                "cost": "₹1,300–₹2,600 pp"
+              },
+              {
+                "name": "Museu de Arte Sacra admission",
+                "cost": "₹130–₹260 pp"
+              },
+              {
+                "name": "Cabaceira Pequena beach hop by tuk-tuk or taxi",
+                "cost": "₹520–₹1,300"
+              },
+              {
+                "name": "Handmade jewelry and textile browse in the island lanes",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jardim dos Aloés",
+                "budget": "₹6,500–₹11,500/night"
+              },
+              {
+                "name": "Terraço das Quitandas",
+                "budget": "₹11,000–₹18,000/night"
+              },
+              {
+                "name": "Feitoria Boutique Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "O Escondidinho",
+              "Terraço das Quitandas",
+              "Jardim dos Aloés"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
