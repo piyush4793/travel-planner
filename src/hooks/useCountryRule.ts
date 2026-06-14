@@ -50,16 +50,6 @@ export async function loadConsolidatedCountry(name: string): Promise<Consolidate
   }
 }
 
-/** Get just the itinerary rule (for tripPlans.ts compatibility) */
-export function getCachedRule(name: string): CountryRule | null {
-  return cache.get(name)?.itinerary ?? null;
-}
-
-/** Preload without blocking */
-export function preloadCountry(name: string): void {
-  if (!cache.has(name)) loadConsolidatedCountry(name);
-}
-
 export type UseCountryRuleResult = {
   data: ConsolidatedCountry | null;
   rule: CountryRule | null;

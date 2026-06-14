@@ -1,17 +1,17 @@
-export type RuleActivity = {
+type RuleActivity = {
   name: string;
   cost?: string;
   tip?: string;
 };
 
-export type RuleDayPlan = {
+type RuleDayPlan = {
   theme: string;
   activities: RuleActivity[];
   hotels?: { name: string; budget: string }[];
   meals?: string[];
 };
 
-export type CityRule = {
+type CityRule = {
   name: string;
   minDays: number;
   recDays: number;

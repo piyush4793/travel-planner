@@ -3,7 +3,7 @@ export const MONTHS = [
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
 ] as const;
 
-export type MonthAbbrev = typeof MONTHS[number];
+type MonthAbbrev = typeof MONTHS[number];
 
 const FULL: Record<MonthAbbrev, string> = {
   Jan: "January",  Feb: "February", Mar: "March",     Apr: "April",

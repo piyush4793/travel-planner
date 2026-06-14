@@ -1,234 +1,355 @@
-# Travel Planner — Agent Instructions
+# Travel Planner — Copilot Instructions
 
-Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel planner. No backend, no paid APIs, static site. Deploy to Netlify/Vercel free tier.
+Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel planner — no backend, no server, purely client-side. All state lives in localStorage.
 
 ---
 
-## Workflow — do this before every task
+## Build & Validate
 
 ```bash
-npx tsc --noEmit        # type check before touching anything
-npm run build           # verify build is clean before and after changes
+npx tsc --noEmit                          # type-check
+npm test                                   # Vitest suite
+npm test -- --testPathPattern=tripPlans    # single test file
+npm run lint:unused                        # knip — dead code / unused exports
+npm run build                              # tsc && vite build
+npm run validate                           # all of the above in one command
 ```
 
-No test framework is configured. Validation is type check + build.
+Run `npm run validate` before and after every change set. For quick iteration, `npx tsc --noEmit` is the fastest feedback loop.
 
 ---
 
-## Workflow — do this after every task (once build is clean)
+## Post-task: update docs
 
-After `npm run build` succeeds with no errors, update the three docs below before reporting the task complete. Do all three in the same response — do NOT skip if the build passed.
+After a clean build, update these **three files** before reporting complete:
 
-### 1. Update `README.md` → Features section
-- Add any new feature or UI behaviour introduced in this task
-- Keep the table/section structure consistent with what's already there
-- Do not duplicate entries already documented
+### README.md
+1. **Features** — add any new feature or UI behaviour
+2. **Future Scope** — remove checkbox lines for anything just implemented
+3. **Tech Stack / Architecture / Design Notes** — update if patterns changed
 
-### 2. Update `README.md` → Future Scope section
-- If this task implemented something listed under Future Scope, remove the checkbox line for it
-- Do not move it to a "Done" section — just delete it so the list stays clean and forward-looking
+### CHANGELOG.md
+- Add an entry under `[Unreleased]` for every user-facing change
+- Format: `### Added` / `### Changed` / `### Fixed` / `### Removed`
+- CI blocks PR merge if CHANGELOG.md is not updated
 
-### 3. Update `README.md` → Tech Stack / Architecture / Design Notes (if applicable)
-- If a new technical pattern was introduced (e.g. a new utility, a new architectural invariant, a new portal use), add a short entry to the relevant section
-- If an existing design note is now outdated, update or remove it
-
----
-
-## Git Workflow
-
-- **Always ask for user confirmation before `git commit` and `git push`**. Never auto-commit or auto-push.
-- Use feature branches for new work, merge to `main` only after confirmation.
-- Commit messages: conventional commits (`feat:`, `fix:`, `refactor:`, `docs:`).
+### DESIGN.md
+- Update if architecture, data model, or technical patterns changed
+- Keep in sync with actual code — remove outdated sections
 
 ---
 
-## Architecture — hooks-based state management
+## Git
 
-State is organized into domain-specific custom hooks (Single Responsibility):
+- **Always ask user confirmation before `git commit` and `git push`**
+- Feature branches; conventional commits (`feat:`, `fix:`, `refactor:`, `docs:`)
 
-| Hook | Responsibility |
+---
+
+## Features & Views
+
+5 hash-routed views (`#trips`, `#calendar`, `#map`, `#list`, `#discover`):
+
+| View | Purpose |
 |---|---|
-| `useCountryStore` | Country CRUD, My List, seed+overrides merging, favorites, visited |
-| `useTripStore` | Trip group CRUD, seed+overrides merging for trip groups |
-| `usePersistedSet` | DRY reusable Set<string> with auto-localStorage persistence |
-| `useHashView` | Hash-based URL routing (no router library) |
-| `usePanelDrag` | Resizable panel drag behavior |
+| **Trips** (default) | Dashboard — progress ring, stats, "Next trip" highlight. Trip cards with image collages, budget, best months. Sections: ⭐ Favorites → 📋 Planning → ✅ Completed. List/grid toggle, pagination. |
+| **Calendar** | Heatmap grid — rows = destinations, columns = months. Green = best, red = avoid, blue = current month. |
+| **Map** | MapLibre GL world map with country markers. Click marker → open country detail panel. |
+| **List** | Compact sortable table of My List countries. |
+| **Discover** | Browse all 197 world countries by region. Add/remove from My List. Has its own filter bar (not global filters). |
 
-`App.tsx` is a thin orchestrator (~200 lines) that wires hooks to views.
+**Country Detail Panel** — slides in from right (full-screen on mobile):
+- Header: name, visited toggle, favorite ★, overflow menu (Edit/Delete)
+- Travel style badge (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive)
+- Collapsible sections: Experiences, Cities, Stopover tips, Watch out for, Combine with, Links, Notes
+- Trip planner: days slider → Generate (offline) or Plan with AI
+- Multi-plan selector: switch between Default and saved AI plans
+- Plan comparison: side-by-side modal with summary cards, city overlap analysis
+- Cinematic mode: animated fly-through of itinerary on map
 
----
-
-## Key files — go here first
-
-| What you need | File |
-|---|---|
-| Root layout, view orchestration | `src/App.tsx` |
-| Country CRUD, My List, seed+overrides | `src/hooks/useCountryStore.ts` |
-| Trip group CRUD + merging | `src/hooks/useTripStore.ts` |
-| Reusable persisted Set hook | `src/hooks/usePersistedSet.ts` |
-| Hash-based routing (AppView type) | `src/hooks/useHashView.ts` |
-| Right sidebar, itinerary card, timeline UI | `src/components/CountryPanel.tsx` |
-| Itinerary generation (rule engine + generic fallback) | `src/utils/tripPlans.ts` |
-| Per-country, per-city, per-day rule data | `src/data/itineraryRules.ts` |
-| Style colors, badge and form button classes | `src/utils/travelStyles.ts` |
-| 44 curated seed destinations | `data/countries.json` |
-| 197-country world catalog | `data/worldCatalog.json` |
-| Trip group definitions + merge logic | `src/data/tripGroups.ts` |
-| TypeScript types (Country, CatalogEntry, etc.) | `src/types.ts` |
-| localStorage read/write | `src/utils/storage.ts` |
-| Feature flags system | `src/utils/featureFlags.ts` |
-| Transport emoji + detection (shared) | `src/utils/transport.ts` |
-| Resizable panel drag (shared hook) | `src/hooks/usePanelDrag.ts` |
-| Shared segmented pill toggle | `src/components/PillGroup.tsx` |
-| Home country selector (feature-gated) | `src/components/HomeCountrySelector.tsx` |
-| CSS keyframe animations | `src/index.css` |
+**Responsive design** — mobile-first (375px+). Breakpoints: mobile / tablet (768px) / desktop (1024px). `useBreakpoint()` hook for reactive layout.
 
 ---
 
-## Data Model — two-tier country system
+## Architecture
 
-### Tier 1: World Catalog (`data/worldCatalog.json`)
-197 countries with basic data: `{ name, lat, lng, region }`. Regions: Asia, Europe, Middle East, Africa, Americas, Oceania. Used by the Discover view.
+### Component tree
 
-### Tier 2: Rich Seed (`data/countries.json`)
-44 curated countries with full data: bestMonths, budget, experiences, cities, etc. Pre-added to user's My List.
+```
+App.tsx  (thin orchestrator — wires hooks to views)
+├── Header (nav pills, home country selector, settings)
+├── Filters (month, budget, experiences, visited — portal-based dropdowns)
+├── Views
+│   ├── TripsView
+│   ├── CalendarView
+│   ├── MapView (MapLibre GL)
+│   ├── ListView
+│   └── DiscoverView (own filter bar, hides global filters)
+├── CountryPanel (right sidebar / mobile overlay)
+│   ├── CountryForm (edit modal)
+│   ├── ItineraryModal (day-by-day plan display)
+│   ├── PlanCompareModal (side-by-side comparison)
+│   └── ItineraryCinematic (map fly-through animation)
+├── ChatModal (AI chat interface)
+├── AiItineraryModal (view/save AI-generated plans)
+└── SettingsModal (LLM provider + API key config)
+```
 
-### My List
-Only countries in the user's **My List** (`tp_my_list`) appear on Map, Calendar, List, and Trips views. Users add countries from Discover → creates minimal Country entry. Favorites always sort to top.
+### Component directory layout
+
+```
+src/components/
+  ai/       — AiItineraryModal, ChatModal, SettingsModal
+  country/  — CountryPanel, CountryForm, ItineraryCinematic, ItineraryModal, PlanCompareModal
+  map/      — MapView internals
+  shared/   — PillGroup, FilterChip, Filters, Tooltip, HomeCountrySelector, DevFlagPanel, ExperienceDropdown
+  views/    — CalendarView, DiscoverView, MapView, TripsView
+```
+
+### Hooks (state management)
+
+All state is hooks-based — no Redux, no context providers. `App.tsx` calls hooks and passes results as props.
+
+| Hook | File | Responsibility |
+|---|---|---|
+| `useCountryStore` | `src/hooks/useCountryStore.ts` | Country CRUD, My List, seed+overrides merging, favorites, visited. Returns `allCountries`, `myListCountries`, `saveCountry`, `deleteCountry`, `addToList`, etc. |
+| `useTripStore` | `src/hooks/useTripStore.ts` | Trip group CRUD. Merges seed groups with customs/deletions. Returns `mergedTripGroups`, `saveTrip`, `deleteTrip`. |
+| `useAiPlanStore` | `src/hooks/useAiPlanStore.ts` | Save/load/delete AI-generated plans. Max 3 per destination. Keyed by normalized destination name. |
+| `useChatSession` | `src/hooks/useChatSession.ts` | LLM chat state machine. Manages message history, API calls, finalization, token tracking. Max 20 messages/session guardrail. |
+| `useCountryRule` | `src/hooks/useCountryRule.ts` | Lazy-loads consolidated country data from `data/rules/*.json`. Returns `{ data, rule, loading }`. Module-level cache. |
+| `usePersistedSet` | `src/hooks/usePersistedSet.ts` | Reusable `Set<string>` backed by localStorage. Used for `visited`, `favorites`, `myList`. |
+| `useHashView` | `src/hooks/useHashView.ts` | Hash-based URL routing. Defines `AppView` type and `VALID_VIEWS`. |
+| `useBreakpoint` | `src/hooks/useBreakpoint.ts` | Reactive breakpoint: `mobile` / `tablet` / `desktop` via `matchMedia`. |
+| `usePanelDrag` | `src/hooks/usePanelDrag.ts` | Resizable panel drag behavior for CountryPanel. |
+
+### Shared UI components — reuse, don't recreate
+
+| Component | File | Usage |
+|---|---|---|
+| `PillGroup` | `shared/PillGroup.tsx` | Segmented pill toggle (Trips, Discover, filters) |
+| `FilterChip` | `shared/FilterChip.tsx` | Portal-based dropdown chip |
+| `Tooltip` | `shared/Tooltip.tsx` | Portal-based info tooltip |
+| `HomeCountrySelector` | `shared/HomeCountrySelector.tsx` | Feature-gated searchable dropdown |
+| `DevFlagPanel` | `shared/DevFlagPanel.tsx` | Dev-mode feature flag toggle |
+
+---
+
+## Data Model
+
+### Three-tier country system
+
+```
+Tier 1: World Catalog (data/worldCatalog.json)
+  197 countries: { name, lat, lng, region }
+  Regions: Asia, Europe, Middle East, Africa, Americas, Oceania
+  Used by: Discover view, catalog lookups
+
+Tier 2: Rich Seed (data/countries.json)
+  44 curated countries with full data: bestMonths, budget, experiences, cities, etc.
+  Pre-added to user's My List on first load
+
+Tier 3: Consolidated Rules (data/rules/*.json)
+  ~44 per-country JSON files with itinerary rule data
+  Lazy-loaded via import.meta.glob in useCountryRule
+  Contains: seed data + itinerary rules in one file
+```
 
 4 special non-sovereign destinations exist in seed only (not in catalog): Hawaii, Scotland, Dubai, Antarctica.
 
+### Trip groups
+
+Defined in `src/data/tripGroups.ts`. Group multiple countries into a trip (e.g. "Southeast Asia"). Same seed+overrides pattern as countries — `tp_trip_customs` / `tp_trip_deleted`.
+
+### TypeScript types
+
+All in `src/types.ts`: `Country`, `CityEntry`, `CatalogEntry`, `TravelStyle`, `TripBrief`, `ChatMessage`, `LLMProviderType`, `TokenUsage`, `LLMChatResult`, `BudgetBreakdown`, etc.
+
 ---
 
-## Architecture — invariants, never break these
+## Data Flow
 
-**Seed + Overrides pattern (applies to both countries and trip groups):**
-- `tp_customs` holds full Country objects for user edits (overrides seed entries)
-- `tp_deleted` tombstones removed seed entries
-- `tp_trip_customs` / `tp_trip_deleted` — same pattern for trip groups
-- Never mutate the seed JSON at runtime
+### Country lifecycle (seed → UI)
 
-**Rule engine flow:**
 ```
-generateTripPlan() in tripPlans.ts
-  └─ getRuledItinerary()  ← checks ITINERARY_RULES[country.name]
-       ├─ found → per-day plan from rule data, returns TripPlan
-       └─ not found → falls through to generic algorithm
-```
-- `itineraryRules.ts` must NOT import from `tripPlans.ts` (circular dep)
-- City names in `ITINERARY_RULES` **must exactly match** names in `data/countries.json` — mismatches silently fail
-
-**Views and routing — no library:**
-- 5 views: `map | calendar | list | trips | discover`
-- `AppView` type defined in `src/hooks/useHashView.ts`
-- `VIEW_LABELS` map in `App.tsx` for display names
-- Hash-based: `#map` / `#calendar` / `#list` / `#trips` / `#discover`
-- Do NOT install react-router or any routing library
-
-**Home country:**
-- Stored as `tp_home_country` in localStorage (default `"India"`)
-- When `searchableHomeCountry` feature flag is off: static "India" label
-- When on: searchable dropdown with all 197 countries
-- Do NOT hardcode "India" anywhere except the disabled-flag static label
-
-**Feature flags:**
-- System in `src/utils/featureFlags.ts`
-- Stored in `tp_features` localStorage key
-- Use `isEnabled('flagName')` to check
-- Add new flags to `FeatureFlags` type and `DEFAULTS` object
-
-**Animations:**
-- `itinerary-card` class → CSS keyframe on mount
-- `itinerary-day` class + inline `animationDelay: i * 75ms` → stagger
-- Re-mount `TripPlanCard` by keying it on `${style}-${cities}-${days}`
-
-**Filter dropdowns use `createPortal()`** — the filter bar has `overflow-x: auto` which clips `position: absolute` children per CSS spec.
-
----
-
-## localStorage keys
-
-| Key | Content |
-|---|---|
-| `tp_my_list` | Country names in user's active list (init from seed + customs) |
-| `tp_visited` | Visited country names |
-| `tp_favorites` | Favorited country names |
-| `tp_customs` | `Country[]` — user-added/edited destinations |
-| `tp_deleted` | `string[]` — tombstoned seed country names |
-| `tp_home_country` | `string` — departure country label |
-| `tp_trip_customs` | `TripGroupDef[]` — user-edited/created trip groups |
-| `tp_trip_deleted` | `string[]` — tombstoned seed trip group mains |
-| `tp_features` | `FeatureFlags` — feature flag overrides |
-
----
-
-## Shared UI components — reuse these, don't recreate
-
-| Component | Usage |
-|---|---|
-| `PillGroup` | Segmented pill toggle (used in Trips, Discover, filters) |
-| `FilterChip` | Portal-based dropdown chip (used in Filters) |
-| `HomeCountrySelector` | Feature-gated home country dropdown |
-| `Tooltip` | Portal-based info tooltip |
-
----
-
-## How to add a new country to the rule engine
-
-**Step 1** — Add cities to `data/countries.json` if not already there:
-```bash
-python3 -c "
-import json
-with open('data/countries.json') as f: d = json.load(f)
-country = next(c for c in d if c['name'] == 'CountryName')
-country['cities'].append({
-    'name': 'CityName', 'lat': 0.0, 'lng': 0.0,
-    'bestMonths': ['March'], 'notes': 'Short highlight note'
-})
-with open('data/countries.json', 'w') as f: json.dump(d, f, indent=2, ensure_ascii=False)
-"
+1. data/rules/index.json  ← manifest of all countries (name, inSeed flag)
+2. useCountryStore.buildSeedCountry()  ← creates minimal Country from manifest
+3. useCountryRule.loadConsolidatedCountry()  ← async loads full data/rules/{name}.json
+4. useCountryStore.enrichCountry()  ← converts consolidated data → Country shape
+5. useCountryStore.buildCountryList()  ← overlays customs on enriched/seed, skips deleted
+6. App.tsx: applyFilters()  ← narrows by month/budget/experience/visited
+7. View component renders filtered list
+8. CountryPanel shows selected country detail
 ```
 
-**Step 2** — Add the rule entry to `src/data/itineraryRules.ts` (see existing Vietnam/Norway structure).
+### Seed + Overrides pattern (critical invariant)
 
-**Step 3** — Verify: `npx tsc --noEmit && npm run build`
+This pattern applies to both countries and trip groups:
+- **Seed data** = static JSON files, never mutated at runtime
+- **Customs** (`tp_customs`) = full `Country[]` of user edits that override seed entries by `name` match
+- **Deleted** (`tp_deleted`) = `string[]` tombstones for removed seed entries
+- On merge: customs win over seed → deleted seeds are skipped → custom-only entries appended
+- `deleteCountry()` for seed entries adds to `DELETED`; for custom entries, just removes from `CUSTOMS`
+- `addToList()` for deleted seeds: removes from `DELETED` (restores). For new: creates minimal entry from catalog.
+
+### Filter composition
+
+`src/utils/filterLogic.ts` — filters compose with AND logic in this order:
+1. `filterByMonth()` — expands abbreviations, matches `country.bestMonths`
+2. `filterByExperiences()` — requires ALL selected tags present
+3. `filterByVisited()` — `all` / `visited` / `unvisited`
+4. Budget tiering — parses `₹150K`/`₹2L` strings → `budget` (≤₹1.5L) / `mid` (≤₹3L) / `premium`
+
+Filter dropdowns use `createPortal()` because the filter bar has `overflow-x: auto` which clips `position: absolute` children.
 
 ---
 
-## How to add a new view
+## AI Planning Flow
 
-1. Add to `AppView` type in `src/hooks/useHashView.ts`
-2. Add to `VALID_VIEWS` array in same file
-3. Add label to `VIEW_LABELS` in `src/App.tsx`
-4. Add the view component render branch in `App.tsx`
-5. Hide global filters if the view has its own (see Discover pattern)
+### Full trace: user click → saved plan
+
+```
+1. User clicks "Plan with AI" in CountryPanel
+2. App.handlePlanWithAi(countryName) builds prompt from country data
+3. ChatModal opens with initialPrompt
+4. useChatSession manages the conversation:
+   a. Builds system prompt on first message (buildSystemPrompt)
+   b. Condenses history to stay within token limits (condenseMessages)
+   c. Calls selected LLM provider (OpenAI / Claude / Gemini)
+   d. On "finalize", sends finalization prompt → parses JSON response
+   e. extractTripPlanResult() validates and structures the output
+5. ChatModal.handleViewItinerary() → onPlanReady callback
+6. AiItineraryModal displays the plan, allows save/replace
+7. useAiPlanStore persists to localStorage (max 3 plans per destination)
+```
+
+### LLM provider abstraction
+
+`src/utils/ai/llmProvider.ts` — three providers behind a common `LLMProvider` interface:
+- `OpenAIProvider` — `gpt-4o-mini` default
+- `ClaudeProvider` — Anthropic API
+- `GeminiProvider` — Google Generative AI API
+- `createProvider(type, apiKey)` factory function
+- All use direct browser `fetch` — no SDK dependencies
+
+### Import/export
+
+`src/utils/importParser.ts` — `parseImportedText(text)` tries three strategies:
+1. Direct JSON matching `LLMTripPlanResult` schema
+2. Structured day-by-day text parsing
+3. Full chat conversation extraction
+
+Also supports fetching shared ChatGPT/Claude URLs via CORS proxy (`fetchChatLink()`).
 
 ---
 
-## How to add a new feature flag
+## State Persistence (localStorage)
 
-1. Add to `FeatureFlags` type in `src/utils/featureFlags.ts`
-2. Add default value to `DEFAULTS` object
-3. Use `isEnabled('flagName')` to gate the feature
+All persistence uses `loadLS()` / `saveLS()` from `src/utils/storage.ts` (JSON parse/stringify with error swallowing). Keys centralized in `src/utils/lsKeys.ts` — always use `LS_KEYS.X`, never hardcode strings.
+
+| Key constant | localStorage key | Content |
+|---|---|---|
+| `MY_LIST` | `tp_my_list` | Country names in user's active list |
+| `VISITED` | `tp_visited` | Visited country names |
+| `FAVORITES` | `tp_favorites` | Favorited country names |
+| `CUSTOMS` | `tp_customs` | `Country[]` — user-added/edited destinations |
+| `DELETED` | `tp_deleted` | `string[]` — tombstoned seed country names |
+| `HOME_COUNTRY` | `tp_home_country` | Departure country label (default: `"India"`) |
+| `TRIP_CUSTOMS` | `tp_trip_customs` | `TripGroupDef[]` — user-edited/created trip groups |
+| `TRIP_DELETED` | `tp_trip_deleted` | `string[]` — tombstoned seed trip groups |
+| `FEATURES` | `tp_features` | `FeatureFlags` — feature flag overrides |
+| `LLM_KEYS` | `tp_llm_keys` | LLM API keys per provider |
+| `LLM_PROVIDER` | `tp_llm_provider` | Active LLM provider selection |
+| `AI_PLANS` | `tp_ai_plans` | `Record<string, SavedAiPlan[]>` — saved AI plans |
+
+No server sync — refresh survival is purely localStorage. `usePersistedSet` provides a reusable hook for Set-based keys (visited, favorites, myList).
+
+---
+
+## Performance
+
+- **Lazy loading**: per-country rule JSON files (~44 files) are lazy-loaded via `import.meta.glob` in `useCountryRule`. Only loaded when a country is selected or eagerly during initial mount.
+- **Module-level caching**: `useCountryRule` maintains a `Map<string, ConsolidatedCountry | null>` cache — each country loaded at most once per session.
+- **Memoization**: `useMemo` used extensively:
+  - `App.tsx` — filtered lists, unique experiences
+  - `useCountryStore` — `allCountries`, `myListCountries`, `myListNames`, combo map
+  - `TripsView` — trip grouping, assigned names, filtered results
+  - `CountryPanel` — plan options
+- **Stale update guards**: `useCountryRule` uses a `nameRef` to prevent stale async updates when country selection changes rapidly
+- **No virtualization** — lists render all items (acceptable for ~200 max countries)
+- **No React.lazy/Suspense** — all components are bundled together
+- **Wiki image caching**: `getWikiImage()` caches Wikimedia Commons lookups in module-level map
+
+---
+
+## Security
+
+- **LLM API keys** are stored in localStorage (`tp_llm_keys`). They are sent directly in browser `fetch` requests to provider APIs. The Settings UI shows an explicit warning that keys are visible to browser extensions and devtools.
+- **HTML sanitization**: `pdfExport.ts` escapes HTML via `esc()` before injecting into print iframe. `importParser.ts` strips HTML tags and chat artifacts from imported text.
+- **No CSP headers** — `index.html` and `vite.config.ts` don't set Content-Security-Policy.
+- **JSON validation**: `extractTripPlanResult()` validates parsed LLM output shape before accepting it.
+- **No authentication** — fully client-side, no user accounts.
+
+---
+
+## Itinerary Rule Engine
+
+### Flow
+
+```
+generateTripPlan() in src/utils/tripPlans.ts
+  └─ getRuledItinerary()  ← checks rule data from useCountryRule cache
+       ├─ found → per-day plan from rule data (activities, hotels, transport, costs)
+       └─ not found → generic algorithm fallback
+```
+
+### Adding a new ruled country
+
+1. Ensure country exists in `data/countries.json` with cities
+2. Create `data/rules/<country-name>.json` (see existing files for structure — includes seed data + itinerary field)
+3. City names **must exactly match** `data/countries.json` — mismatches silently fail
+4. Verify: `npx tsc --noEmit && npm test && npm run build`
+
+### PDF export
+
+`src/utils/pdfExport.ts` — "print to PDF" approach. Builds a full HTML document with inline CSS, writes to a hidden iframe, calls `window.print()`, then cleans up. Not a PDF library.
+
+### Wiki images
+
+`src/utils/wikiImages.ts` — `getWikiImage(query)` queries Wikimedia Commons API for JPEG/PNG/WebP ≥600px. Returns URLs directly if input is already a URL. Module-level cache.
+
+---
+
+## Feature Flags
+
+System in `src/utils/featureFlags.ts`. Stored in `tp_features` localStorage key.
+
+**Adding a new flag:**
+1. Add to `FeatureFlags` type in `featureFlags.ts`
+2. Add default to `DEFAULTS` object
+3. Use `isEnabled('flagName')` to check
 4. Document in README under Feature Flags section
+
+---
+
+## Routing
+
+Hash-based, no library. `AppView` type + `VALID_VIEWS` in `src/hooks/useHashView.ts`. Display names in `VIEW_LABELS` map in `App.tsx`.
+
+**Adding a new view:**
+1. Add to `AppView` type in `useHashView.ts`
+2. Add to `VALID_VIEWS` array
+3. Add label to `VIEW_LABELS` in `App.tsx`
+4. Add render branch in `App.tsx`
+5. Hide global filters if view has its own (see Discover pattern)
 
 ---
 
 ## Tailwind conventions
 
-- Text sizes: section labels `text-[10px]`, body `text-[11px]` or `text-xs`, headings `text-sm`/`text-base`
+- Text: labels `text-[10px]`, body `text-[11px]`/`text-xs`, headings `text-sm`/`text-base`
 - Rounded: cards `rounded-xl`, chips `rounded-full`, inputs `rounded-lg`
-- Spacing: section gaps `space-y-5`, inner card gaps `space-y-3.5`
-- Custom keyframes go in `src/index.css`, not Tailwind config — keep config clean
-
----
-
-## Rule countries currently implemented
-
-| Country | Cities |
-|---|---|
-| Vietnam | Ho Chi Minh City, Da Nang, Hoi An, Hanoi, Ninh Binh, Ha Long Bay, Sapa |
-| Norway | Oslo, Bergen, Flam, Voss, Alesund, Geirangerfjord, Tromso |
+- Spacing: section gaps `space-y-5`, inner card `space-y-3.5`
+- Custom keyframes in `src/index.css`, not Tailwind config
 
 ---
 
@@ -236,9 +357,67 @@ with open('data/countries.json', 'w') as f: json.dump(d, f, indent=2, ensure_asc
 
 - Install npm packages — zero runtime deps beyond React + MapLibre is intentional
 - Add a routing library — hash routing is intentional
-- Hardcode "India" — use `homeCountry` prop (except static label when flag is off)
-- Add city names to `ITINERARY_RULES` that don't exist in `data/countries.json` — they silently fail
-- Add comments explaining WHAT code does — only add comments for non-obvious WHY
-- Create new abstraction layers without a concrete need (3+ repeated patterns)
-- Touch `settings.local.json` — that's the user's local permission overrides
+- Hardcode `"India"` — use `homeCountry` prop (except static label when flag is off)
+- Add city names to rule data that don't exist in `data/countries.json` — they silently fail
+- Hardcode localStorage key strings — use `LS_KEYS` from `lsKeys.ts`
+- Add comments explaining WHAT code does — only comment non-obvious WHY
+- Create new abstraction layers without concrete need (3+ repeated patterns)
+- Touch `settings.local.json` — user's local permission overrides
 - Commit or push without asking the user for confirmation first
+
+---
+
+## Code Quality Standards
+
+### SOLID principles — how they apply here
+
+| Principle | Rule in this codebase |
+|---|---|
+| **Single Responsibility** | Each hook owns one domain (countries, trips, AI plans, chat). Each util file does one thing. Don't add country logic to trip hooks. |
+| **Open/Closed** | Extend via new rule JSON files in `data/rules/`, new feature flags, new view components. Don't modify existing hook APIs to add unrelated features. |
+| **Liskov Substitution** | All LLM providers implement the same `LLMProvider` interface. Any provider must be swappable without UI changes. |
+| **Interface Segregation** | Components receive only the props they need. Don't pass the entire country store to a component that only needs `myListNames`. |
+| **Dependency Inversion** | Views depend on hook return types, not on localStorage or JSON directly. All persistence goes through `loadLS`/`saveLS`. |
+
+### DRY — patterns already established
+
+- `usePersistedSet` — reuse for any `Set<string>` backed by localStorage (don't hand-roll)
+- `LS_KEYS` — single source for all localStorage key strings
+- `PillGroup` / `FilterChip` / `Tooltip` — shared UI primitives
+- `loadLS` / `saveLS` — all localStorage access goes through these
+- `applyFilters()` — single composable filter pipeline, don't duplicate filter logic in views
+
+### Component design patterns
+
+- **Composition over wrappers** — pass children or render props, don't create wrapper components that just forward props
+- **Hooks extract logic, components render UI** — if a component has >30 lines of non-render logic, extract a hook
+- **Key-based remounting** — use composite keys (`${style}-${cities}-${days}`) to force re-render with fresh animations instead of imperative state resets
+- **Portal for overlays** — any dropdown, tooltip, or modal that escapes parent overflow must use `createPortal`
+- **Controlled + lifted state** — `App.tsx` owns cross-cutting state, views are controlled components
+
+### Anti-patterns — never introduce these
+
+- ❌ `any` type — use proper types or `unknown` with type guards
+- ❌ `useEffect` for derived state — use `useMemo` instead
+- ❌ Prop drilling >3 levels — extract a hook or restructure
+- ❌ Inline styles for reusable patterns — use Tailwind classes
+- ❌ `setTimeout`/`setInterval` for state sync — use React state + effects
+- ❌ Mutating props or state directly — always use immutable updates
+- ❌ Barrel files (`index.ts` re-exports) — import from specific files
+- ❌ God components >300 lines — split into sub-components or extract hooks
+- ❌ Unused imports, unused exports, dead files — `knip` catches these in CI
+
+### Performance rules
+
+- Memoize expensive derived data with `useMemo` (filtered lists, sorted arrays, computed maps)
+- Use `useCallback` for handlers passed to memoized children
+- Lazy-load per-country data (never eagerly import all `data/rules/*.json`)
+- Cache API/network results at module level (wiki images, country rules)
+- Guard async hooks against stale updates (ref-based cancellation pattern in `useCountryRule`)
+
+### Security rules
+
+- Never log or expose API keys in UI (beyond the settings modal)
+- Always escape HTML before injecting into iframes or `innerHTML` (see `esc()` in pdfExport)
+- Validate all external data shapes before using (LLM responses, imported text)
+- Don't trust imported JSON structure — validate with type guards

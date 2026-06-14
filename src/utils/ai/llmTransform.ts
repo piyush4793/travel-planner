@@ -2,7 +2,7 @@ import type { DayEntry, TripPlan } from "../tripPlans";
 
 /* ── LLM-specific enriched types ── */
 
-export type LLMDailyCostBreakdown = {
+type LLMDailyCostBreakdown = {
   flights?: string;
   hotels?: string;
   excursions?: string;
@@ -31,7 +31,7 @@ export type LLMTripPlan = Omit<TripPlan, "days"> & {
   days: LLMDayEntry[];
 };
 
-export type LLMDestinationMeta = {
+type LLMDestinationMeta = {
   bestMonths: string[];
   worstMonths: string[];
   thingsToAvoid: string[];

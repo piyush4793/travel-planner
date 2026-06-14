@@ -1,6 +1,6 @@
 import type { ChatMessage, LLMProviderType, LLMChatResult, TokenUsage } from "../../types";
 
-export type LLMConfig = {
+type LLMConfig = {
   model?: string;
   temperature?: number;
   maxTokens?: number;
