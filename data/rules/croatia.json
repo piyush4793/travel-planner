@@ -1,0 +1,917 @@
+{
+  "name": "Croatia",
+  "seed": false,
+  "lat": 45.1,
+  "lng": 15.2,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.1L–₹1.9L",
+    "couple": "₹2L–₹3.4L",
+    "family4": "₹4.2L–₹6.8L"
+  },
+  "experiences": [
+    "Beaches",
+    "History",
+    "Food",
+    "National Parks",
+    "Islands",
+    "Road Trips"
+  ],
+  "avoid": [
+    "Dubrovnik and Hvar prices spike sharply in July and August",
+    "Popular ferries and Plitvice entry slots can sell out on summer weekends"
+  ],
+  "combo": [
+    "Slovenia",
+    "Montenegro",
+    "Bosnia & Herzegovina"
+  ],
+  "landmark": "Dubrovnik Old Town",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Zagreb",
+      "lat": 45.815,
+      "lng": 15.9819,
+      "notes": "Upper Town lanes, lively cafe culture, Dolac Market and easy museum-hopping"
+    },
+    {
+      "name": "Split",
+      "lat": 43.5081,
+      "lng": 16.4402,
+      "notes": "Roman palace core, Adriatic promenade, ferry hub and great seafood taverns"
+    },
+    {
+      "name": "Dubrovnik",
+      "lat": 42.6507,
+      "lng": 18.0944,
+      "notes": "Walled old town, fort views, island hops and polished Dalmatian dining"
+    },
+    {
+      "name": "Hvar",
+      "lat": 43.1729,
+      "lng": 16.4429,
+      "notes": "Sunny island base with Fortica views, beach coves and winery detours"
+    },
+    {
+      "name": "Plitvice Lakes",
+      "lat": 44.8806,
+      "lng": 15.6167,
+      "notes": "Turquoise lakes, waterfall boardwalks and one of Europe's best national-park circuits"
+    },
+    {
+      "name": "Zadar",
+      "lat": 44.1194,
+      "lng": 15.2314,
+      "notes": "Compact old town with Roman remnants, the Sea Organ and easy island side trips"
+    }
+  ],
+  "itinerary": {
+    "sim": "A1 Croatia Tourist SIM/eSIM gives the easiest nationwide coverage, while an Airalo Eurolink eSIM is the lowest-friction option if you want data active on arrival.",
+    "apps": [
+      "FlixBus",
+      "GetByBus",
+      "Jadrolinija",
+      "Google Maps",
+      "Bolt",
+      "Booking.com",
+      "XE Currency",
+      "AccuWeather"
+    ],
+    "cityOrder": [
+      "Zagreb",
+      "Plitvice Lakes",
+      "Zadar",
+      "Split",
+      "Hvar",
+      "Dubrovnik"
+    ],
+    "cities": {
+      "Zagreb": {
+        "name": "Zagreb",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the capital well; add a third only if you want a Samobor pastry day trip or a Medvednica hill escape.",
+        "days": [
+          {
+            "theme": "Arrival, Upper Town & Zagreb Classics",
+            "activities": [
+              {
+                "name": "Pleso Prijevoz airport shuttle to Zagreb bus station",
+                "cost": "₹720"
+              },
+              {
+                "name": "Ban Jelacic Square and Dolac Market walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Stone Gate, St. Mark's Church and Upper Town lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Museum of Broken Relationships",
+                "cost": "₹630"
+              },
+              {
+                "name": "Strossmayer Promenade sunset",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Jagerhorn",
+                "budget": "₹10,800–₹16,200/night"
+              },
+              {
+                "name": "Canopy by Hilton Zagreb City Centre",
+                "budget": "₹11,700–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "La Struk",
+              "Vinodol",
+              "Heritage Croatian Street Food"
+            ]
+          },
+          {
+            "theme": "Museums, Parks & Cafe Zagreb",
+            "activities": [
+              {
+                "name": "Croatian Museum of Naive Art",
+                "cost": "₹630"
+              },
+              {
+                "name": "Lotrscak Tower climb",
+                "cost": "₹270"
+              },
+              {
+                "name": "Tunnel Gric walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Botanical Garden Zagreb",
+                "cost": "₹180"
+              },
+              {
+                "name": "Maksimir Park stroll with optional Zagreb Zoo entry",
+                "cost": "₹0–₹1,080"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Jagerhorn",
+                "budget": "₹10,800–₹16,200/night"
+              },
+              {
+                "name": "Canopy by Hilton Zagreb City Centre",
+                "budget": "₹11,700–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Mali Bar",
+              "Nokturno",
+              "Korica"
+            ]
+          },
+          {
+            "theme": "Samobor or Medvednica Add-On Day",
+            "activities": [
+              {
+                "name": "FlixBus return trip to Samobor",
+                "cost": "₹720"
+              },
+              {
+                "name": "Samobor old town and kremsnita stop",
+                "cost": "₹360–₹900"
+              },
+              {
+                "name": "Medvedgrad Fortress on Medvednica",
+                "cost": "₹720"
+              },
+              {
+                "name": "Evening drinks on Tkalciceva Street",
+                "cost": "₹720–₹1,620"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Jagerhorn",
+                "budget": "₹10,800–₹16,200/night"
+              },
+              {
+                "name": "Canopy by Hilton Zagreb City Centre",
+                "budget": "₹11,700–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Stari Fijaker 900",
+              "Gostionica Ficlek",
+              "Kavana Livadic"
+            ]
+          }
+        ]
+      },
+      "Plitvice Lakes": {
+        "name": "Plitvice Lakes",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Most travellers only need one full park day, but an overnight lets you enter early and avoid the heaviest coach-tour crowds.",
+        "days": [
+          {
+            "theme": "Plitvice Lakes Grand Boardwalk Loop",
+            "activities": [
+              {
+                "name": "FlixBus or Croatia Bus Zagreb to Plitvice Entrance 1/2",
+                "cost": "₹1,350–₹1,800"
+              },
+              {
+                "name": "Plitvice Lakes National Park adult ticket",
+                "cost": "₹2,070–₹3,600"
+              },
+              {
+                "name": "Electric boat across Kozjak Lake",
+                "cost": "₹0"
+              },
+              {
+                "name": "Panoramic train ride between upper and lower lakes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Veliki Slap waterfall boardwalk circuit",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Jezero",
+                "budget": "₹9,900–₹14,400/night"
+              },
+              {
+                "name": "Hotel Degenija",
+                "budget": "₹10,800–₹15,300/night"
+              }
+            ],
+            "meals": [
+              "Licka kuca",
+              "Bistro Vucnica",
+              "Restaurant Degenija"
+            ]
+          },
+          {
+            "theme": "Early Entry, Quiet Trails & Rastoke",
+            "activities": [
+              {
+                "name": "Early-morning upper lakes re-entry",
+                "cost": "₹0"
+              },
+              {
+                "name": "Additional lower lakes hiking trails",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bus or taxi excursion to Rastoke watermill village",
+                "cost": "₹1,350–₹2,700"
+              },
+              {
+                "name": "Local trout and cheese lunch",
+                "cost": "₹1,080–₹1,620"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Jezero",
+                "budget": "₹9,900–₹14,400/night"
+              },
+              {
+                "name": "Hotel Degenija",
+                "budget": "₹10,800–₹15,300/night"
+              }
+            ],
+            "meals": [
+              "Petra",
+              "Restaurant Degenija",
+              "Bistro Vucnica"
+            ]
+          }
+        ]
+      },
+      "Zadar": {
+        "name": "Zadar",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One night is enough for the old town; a second day makes sense if you want an easy Ugljan island detour.",
+        "days": [
+          {
+            "theme": "Old Town, Roman Layers & Sunset Waterfront",
+            "activities": [
+              {
+                "name": "Sea Organ and Greeting to the Sun promenade",
+                "cost": "₹0"
+              },
+              {
+                "name": "Roman Forum and St. Donatus square",
+                "cost": "₹0"
+              },
+              {
+                "name": "Church of St. Donatus entry",
+                "cost": "₹360"
+              },
+              {
+                "name": "Museum of Ancient Glass",
+                "cost": "₹540"
+              },
+              {
+                "name": "Five Wells Square sunset",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Teatro Verdi Boutique Hotel",
+                "budget": "₹10,800–₹15,300/night"
+              },
+              {
+                "name": "Hotel A'mare",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Pet Bunara",
+              "Bruschetta",
+              "Proto Food&More"
+            ]
+          },
+          {
+            "theme": "Ugljan Island Side Trip",
+            "activities": [
+              {
+                "name": "Jadrolinija passenger ferry Zadar to Preko return",
+                "cost": "₹900–₹1,260"
+              },
+              {
+                "name": "Bike hire or taxi to St. Michael Fort viewpoint",
+                "cost": "₹1,350–₹2,700"
+              },
+              {
+                "name": "Preko waterfront swim stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Return to Zadar old town for sunset and gelato",
+                "cost": "₹360–₹720"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Teatro Verdi Boutique Hotel",
+                "budget": "₹10,800–₹15,300/night"
+              },
+              {
+                "name": "Hotel A'mare",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Trattoria Mediterraneo",
+              "Kornat",
+              "Slasticarnica Donat"
+            ]
+          }
+        ]
+      },
+      "Split": {
+        "name": "Split",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days lets Split breathe: one for the palace, one for the surrounding coast, and one flexible day for markets, museums or Krka.",
+        "days": [
+          {
+            "theme": "Diocletian's Palace & the Riva",
+            "activities": [
+              {
+                "name": "Diocletian's Palace cellars",
+                "cost": "₹720"
+              },
+              {
+                "name": "Cathedral of St. Domnius and bell tower combo",
+                "cost": "₹1,080–₹1,350"
+              },
+              {
+                "name": "People's Square and Pjaca lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Riva promenade sunset walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Marjan viewpoint evening hike",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Peristil",
+                "budget": "₹12,600–₹18,900/night"
+              },
+              {
+                "name": "Jupiter Luxury Hotel",
+                "budget": "₹10,800–₹16,200/night"
+              }
+            ],
+            "meals": [
+              "Villa Spiza",
+              "Bokeria Kitchen & Wine Bar",
+              "Konoba Fetivi"
+            ]
+          },
+          {
+            "theme": "Trogir Day Trip & Dalmatian Evenings",
+            "activities": [
+              {
+                "name": "Split to Trogir local bus return",
+                "cost": "₹720–₹1,080"
+              },
+              {
+                "name": "Trogir old town walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Kamerlengo Fortress",
+                "cost": "₹540"
+              },
+              {
+                "name": "Kasjuni or Bacvice beach stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Evening wine bar in Varos",
+                "cost": "₹900–₹1,620"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Peristil",
+                "budget": "₹12,600–₹18,900/night"
+              },
+              {
+                "name": "Jupiter Luxury Hotel",
+                "budget": "₹10,800–₹16,200/night"
+              }
+            ],
+            "meals": [
+              "Konoba Trs",
+              "Corto Maltese",
+              "Pandora Greenbox"
+            ]
+          },
+          {
+            "theme": "Markets, Museums & Marjan",
+            "activities": [
+              {
+                "name": "Pazar green market breakfast crawl",
+                "cost": "₹540–₹1,080"
+              },
+              {
+                "name": "Mestrovic Gallery",
+                "cost": "₹1,080"
+              },
+              {
+                "name": "Marjan Forest Park viewpoints",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sustipan promenade sunset",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Peristil",
+                "budget": "₹12,600–₹18,900/night"
+              },
+              {
+                "name": "Jupiter Luxury Hotel",
+                "budget": "₹10,800–₹16,200/night"
+              }
+            ],
+            "meals": [
+              "Kantun Paulina",
+              "Mazzgoon",
+              "Zbirac"
+            ]
+          },
+          {
+            "theme": "Krka National Park Add-On",
+            "activities": [
+              {
+                "name": "FlixBus or organized transfer to Skradin/Lozovac",
+                "cost": "₹1,350–₹2,700"
+              },
+              {
+                "name": "Krka National Park day ticket",
+                "cost": "₹1,440–₹3,600"
+              },
+              {
+                "name": "Skradin waterfront stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Wine stop before returning to Split",
+                "cost": "₹900–₹1,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Peristil",
+                "budget": "₹12,600–₹18,900/night"
+              },
+              {
+                "name": "Jupiter Luxury Hotel",
+                "budget": "₹10,800–₹16,200/night"
+              }
+            ],
+            "meals": [
+              "Konoba Dalmatino",
+              "Bokeria Kitchen & Wine Bar",
+              "Gelateria Emiliana"
+            ]
+          }
+        ]
+      },
+      "Hvar": {
+        "name": "Hvar",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is the sweet spot for Hvar Town plus one boat or wine day; add a third if you want Stari Grad and vineyard country too.",
+        "days": [
+          {
+            "theme": "Harbour Arrival & Fortica Views",
+            "activities": [
+              {
+                "name": "Jadrolinija or Krilo catamaran Split to Hvar",
+                "cost": "₹720–₹1,620"
+              },
+              {
+                "name": "Fortica (Spanjola) Fortress",
+                "cost": "₹900"
+              },
+              {
+                "name": "St. Stephen's Square and harbour promenade",
+                "cost": "₹0"
+              },
+              {
+                "name": "Franciscan Monastery Museum",
+                "cost": "₹720"
+              },
+              {
+                "name": "Sunset drinks above Hvar Town",
+                "cost": "₹1,350–₹2,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pharos Hvar Bayhill Hotel",
+                "budget": "₹12,600–₹19,800/night"
+              },
+              {
+                "name": "Villa Nora Hvar",
+                "budget": "₹13,500–₹22,500/night"
+              }
+            ],
+            "meals": [
+              "Dalmatino",
+              "Fig Hvar",
+              "Konoba Menego"
+            ]
+          },
+          {
+            "theme": "Pakleni Islands Swim Day",
+            "activities": [
+              {
+                "name": "Taxi boat to the Pakleni Islands return",
+                "cost": "₹1,350–₹1,800"
+              },
+              {
+                "name": "Mlini or Palmizana cove beach time",
+                "cost": "₹0–₹1,350"
+              },
+              {
+                "name": "Benedictine Monastery lace display",
+                "cost": "₹360"
+              },
+              {
+                "name": "Old town seafood dinner",
+                "cost": "₹1,800–₹3,150"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pharos Hvar Bayhill Hotel",
+                "budget": "₹12,600–₹19,800/night"
+              },
+              {
+                "name": "Villa Nora Hvar",
+                "budget": "₹13,500–₹22,500/night"
+              }
+            ],
+            "meals": [
+              "Giaxa",
+              "Black Pepper",
+              "Lungo Mare"
+            ]
+          },
+          {
+            "theme": "Stari Grad & Hvar Wine Country",
+            "activities": [
+              {
+                "name": "Bus or scooter to Stari Grad",
+                "cost": "₹720–₹2,700"
+              },
+              {
+                "name": "Tvrdalj Castle",
+                "cost": "₹450"
+              },
+              {
+                "name": "Stari Grad Plain or Jelsa vineyard tasting",
+                "cost": "₹1,800–₹3,600"
+              },
+              {
+                "name": "Return to Hvar waterfront for a final promenade",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pharos Hvar Bayhill Hotel",
+                "budget": "₹12,600–₹19,800/night"
+              },
+              {
+                "name": "Villa Nora Hvar",
+                "budget": "₹13,500–₹22,500/night"
+              }
+            ],
+            "meals": [
+              "Antika",
+              "Kod Kapetana",
+              "Konoba Luviji"
+            ]
+          }
+        ]
+      },
+      "Dubrovnik": {
+        "name": "Dubrovnik",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Stay at least two full days for the walls and Lokrum; a third or fourth day is ideal for kayaking, Cavtat or an island cruise.",
+        "days": [
+          {
+            "theme": "Old Town Walls & Fort Lovrijenac",
+            "activities": [
+              {
+                "name": "Jadrolinija seasonal catamaran or bus/ferry route into Dubrovnik",
+                "cost": "₹1,350–₹3,600"
+              },
+              {
+                "name": "Dubrovnik City Walls ticket",
+                "cost": "₹3,600"
+              },
+              {
+                "name": "Fort Lovrijenac entry with walls ticket",
+                "cost": "₹0"
+              },
+              {
+                "name": "Stradun, Jesuit Stairs and old harbour walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunset at Buza Bar or Banje viewpoint",
+                "cost": "₹540–₹1,620"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Lapad",
+                "budget": "₹14,400–₹22,500/night"
+              },
+              {
+                "name": "Hotel Lero",
+                "budget": "₹12,600–₹18,900/night"
+              }
+            ],
+            "meals": [
+              "Barba",
+              "Taj Mahal Dubrovnik",
+              "Lucin Kantun"
+            ]
+          },
+          {
+            "theme": "Lokrum, Museums & Mount Srd",
+            "activities": [
+              {
+                "name": "Lokrum reserve boat and island ticket",
+                "cost": "₹2,430–₹2,880"
+              },
+              {
+                "name": "Rector's Palace Cultural History Museum",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "Dubrovnik Cable Car round trip",
+                "cost": "₹2,430"
+              },
+              {
+                "name": "Evening panorama over Mount Srd",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Lapad",
+                "budget": "₹14,400–₹22,500/night"
+              },
+              {
+                "name": "Hotel Lero",
+                "budget": "₹12,600–₹18,900/night"
+              }
+            ],
+            "meals": [
+              "Gradska Kavana Arsenal",
+              "Azur Dubrovnik",
+              "Pantarul"
+            ]
+          },
+          {
+            "theme": "Sea Kayak or Trsteno Day",
+            "activities": [
+              {
+                "name": "Sea-kayak tour around Dubrovnik walls and Lokrum",
+                "cost": "₹3,600–₹5,400"
+              },
+              {
+                "name": "Bus to Trsteno Arboretum and entry",
+                "cost": "₹900–₹1,350"
+              },
+              {
+                "name": "Lapad promenade swim or coffee stop",
+                "cost": "₹360–₹900"
+              },
+              {
+                "name": "Konavle wine or oyster tasting dinner",
+                "cost": "₹1,800–₹3,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Lapad",
+                "budget": "₹14,400–₹22,500/night"
+              },
+              {
+                "name": "Hotel Lero",
+                "budget": "₹12,600–₹18,900/night"
+              }
+            ],
+            "meals": [
+              "Konoba Dubrava",
+              "Fish Restaurant Proto",
+              "Bistro Tavulin"
+            ]
+          },
+          {
+            "theme": "Cavtat or Elafiti Islands Finale",
+            "activities": [
+              {
+                "name": "Bus or boat to Cavtat return",
+                "cost": "₹900–₹1,800"
+              },
+              {
+                "name": "Cavtat seafront and Bukovac House",
+                "cost": "₹450–₹900"
+              },
+              {
+                "name": "Optional Elafiti Islands cruise",
+                "cost": "₹4,500–₹6,300"
+              },
+              {
+                "name": "Farewell old town dinner",
+                "cost": "₹1,800–₹3,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Lapad",
+                "budget": "₹14,400–₹22,500/night"
+              },
+              {
+                "name": "Hotel Lero",
+                "budget": "₹12,600–₹18,900/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Kopun",
+              "Nishta",
+              "Lady Pi-Pi"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Zagreb",
+        "to": "Plitvice Lakes",
+        "method": "FlixBus or Croatia Bus coach from Zagreb bus station to Plitvice Entrance 1/2",
+        "cost": "₹1,350–₹1,800"
+      },
+      {
+        "from": "Plitvice Lakes",
+        "to": "Zadar",
+        "method": "FlixBus or Prijevoz Knezevic coach south to Zadar",
+        "cost": "₹1,080–₹1,620"
+      },
+      {
+        "from": "Zadar",
+        "to": "Split",
+        "method": "FlixBus, Arriva or Croatia Bus down the Dalmatian coast",
+        "cost": "₹1,350–₹1,980"
+      },
+      {
+        "from": "Split",
+        "to": "Hvar",
+        "method": "Jadrolinija or Krilo catamaran to Hvar Town",
+        "cost": "₹720–₹1,620"
+      },
+      {
+        "from": "Hvar",
+        "to": "Dubrovnik",
+        "method": "Seasonal Jadrolinija catamaran direct, or ferry back to Split then Croatia Bus onward",
+        "cost": "₹1,350–₹3,600"
+      },
+      {
+        "from": "Dubrovnik",
+        "to": "Zagreb",
+        "method": "Croatia Airlines domestic flight, or an overnight FlixBus if you want to save on hotel spend",
+        "cost": "₹4,500–₹10,800"
+      }
+    ],
+    "extras": [
+      "May, June and September are the sweet spots for warm coast weather without the worst cruise-ship and beach crowds.",
+      "If you dislike stairs and polished resort pricing, keep Hvar to one night and shift extra time to Split or Zadar.",
+      "Book Plitvice timed entry, Dubrovnik walls, and Split-Hvar ferries a few days ahead in summer.",
+      "Dubrovnik works best as your end point because domestic flights back to Zagreb are frequent and save a long backtrack.",
+      "A rental car is useful inland, but once you hit Split the bus-plus-ferry combo is usually cheaper than parking and one-way drop fees."
+    ],
+    "cityImages": {
+      "Zagreb": [
+        "St Mark's Church Zagreb Upper Town",
+        "Dolac Market Zagreb red umbrellas",
+        "Ban Jelacic Square Zagreb tram"
+      ],
+      "Plitvice Lakes": [
+        "Plitvice Lakes boardwalk waterfall Croatia",
+        "Veliki Slap Plitvice Lakes National Park",
+        "Plitvice Lakes turquoise lake boat"
+      ],
+      "Zadar": [
+        "Sea Organ Zadar sunset waterfront",
+        "Greeting to the Sun Zadar night",
+        "Roman Forum Zadar old town"
+      ],
+      "Split": [
+        "Diocletian's Palace Split peristyle",
+        "Riva promenade Split Croatia",
+        "Marjan viewpoint Split coast"
+      ],
+      "Hvar": [
+        "Fortica Hvar town harbour view",
+        "Hvar waterfront old town Croatia",
+        "Pakleni Islands beach Hvar"
+      ],
+      "Dubrovnik": [
+        "Dubrovnik city walls old town aerial",
+        "Stradun Dubrovnik old town",
+        "Mount Srd Dubrovnik cable car view"
+      ]
+    }
+  }
+}

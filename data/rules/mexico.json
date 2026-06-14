@@ -1,0 +1,686 @@
+{
+  "name": "Mexico",
+  "seed": false,
+  "lat": 23.63,
+  "lng": -102.55,
+  "region": "Americas",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1.1L–₹2.1L",
+    "couple": "₹2L–₹3.8L",
+    "family4": "₹4.2L–₹7.2L"
+  },
+  "experiences": [
+    "Food",
+    "Beaches",
+    "Ruins",
+    "Cenotes",
+    "Colonial Towns",
+    "Museums"
+  ],
+  "avoid": [
+    "June–October hurricane and heavy-rain season on the Caribbean coast",
+    "Semana Santa and Christmas/New Year weeks for sharp hotel price spikes",
+    "March spring-break crowds in Cancún and Playa del Carmen"
+  ],
+  "combo": [
+    "Guatemala",
+    "Belize",
+    "United States"
+  ],
+  "landmark": "Chichén Itzá",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Mexico City",
+      "lat": 19.4326,
+      "lng": -99.1332,
+      "notes": "Grand museums, historic plazas, taco trails, and easy day trips across the capital."
+    },
+    {
+      "name": "Oaxaca",
+      "lat": 17.0732,
+      "lng": -96.7266,
+      "notes": "Zapotec history, mole, mezcal, artisan markets, and one of Mexico's best food scenes."
+    },
+    {
+      "name": "Cancún",
+      "lat": 21.1619,
+      "lng": -86.8515,
+      "notes": "Best airport gateway for Caribbean beaches, Isla Mujeres ferries, and Maya museum stops."
+    },
+    {
+      "name": "Playa del Carmen",
+      "lat": 20.6296,
+      "lng": -87.0739,
+      "notes": "Walkable Riviera Maya base for beaches, cenotes, Cozumel ferries, and eco-parks."
+    },
+    {
+      "name": "San Miguel de Allende",
+      "lat": 20.9144,
+      "lng": -100.7436,
+      "notes": "Colonial lanes, rooftop sunsets, galleries, and a slower highland pace."
+    },
+    {
+      "name": "Mérida",
+      "lat": 20.9674,
+      "lng": -89.5926,
+      "notes": "Yucatán culture hub with Paseo de Montejo, Maya museums, cenotes, and Uxmal access."
+    }
+  ],
+  "itinerary": {
+    "sim": "Telcel Amigo tourist prepaid packs are the easiest local option — expect about ₹2,000 for roughly 8–10GB; Airalo's Mexico eSIM is the simplest backup for eSIM phones.",
+    "apps": [
+      "Google Maps",
+      "WhatsApp",
+      "Uber",
+      "DiDi",
+      "ADO",
+      "Volaris",
+      "Viva",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Mexico City",
+      "San Miguel de Allende",
+      "Oaxaca",
+      "Mérida",
+      "Cancún",
+      "Playa del Carmen"
+    ],
+    "cities": {
+      "Mexico City": {
+        "name": "Mexico City",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Historic Center, Bellas Artes & Roma Norte",
+            "activities": [
+              {
+                "name": "Palacio de Bellas Artes museum and murals",
+                "cost": "₹450 pp"
+              },
+              {
+                "name": "Zócalo, Metropolitan Cathedral and Templo Mayor area walk"
+              },
+              {
+                "name": "Templo Mayor Museum",
+                "cost": "₹475 pp"
+              },
+              {
+                "name": "Roma Norte coffee-and-taqueria evening"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Catedral",
+                "budget": "₹6,000–₹8,500/night"
+              },
+              {
+                "name": "Hotel Casa González",
+                "budget": "₹4,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "El Cardenal",
+              "Azul Histórico",
+              "Taquería Orinoco"
+            ]
+          },
+          {
+            "theme": "Chapultepec Museums & Polanco",
+            "activities": [
+              {
+                "name": "Museo Nacional de Antropología",
+                "cost": "₹500 pp"
+              },
+              {
+                "name": "Chapultepec Castle",
+                "cost": "₹500 pp"
+              },
+              {
+                "name": "Bosque de Chapultepec lakeside walk"
+              },
+              {
+                "name": "Soumaya Museum",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Casa González",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "ULIV Mexico City",
+                "budget": "₹7,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Contramar",
+              "Lardo",
+              "El Califa"
+            ]
+          },
+          {
+            "theme": "Coyoacán, Frida Kahlo & Xochimilco",
+            "activities": [
+              {
+                "name": "Frida Kahlo Museum",
+                "cost": "₹1,600 pp"
+              },
+              {
+                "name": "Coyoacán center and Jardín Hidalgo stroll"
+              },
+              {
+                "name": "Xochimilco trajinera ride",
+                "cost": "₹3,000 per boat/hour"
+              },
+              {
+                "name": "UNAM Central Library and campus murals",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Punto MX",
+                "budget": "₹6,500–₹9,000/night"
+              },
+              {
+                "name": "Casa Pepe Hostel Boutique",
+                "budget": "₹2,500–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "Los Danzantes Coyoacán",
+              "Tostadas Coyoacán",
+              "Churrería El Moro"
+            ]
+          }
+        ]
+      },
+      "San Miguel de Allende": {
+        "name": "San Miguel de Allende",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Parroquia, Rooftops & Art Walks",
+            "activities": [
+              {
+                "name": "Parroquia de San Miguel Arcángel and El Jardín",
+                "cost": "Free"
+              },
+              {
+                "name": "Fábrica La Aurora galleries",
+                "cost": "Free"
+              },
+              {
+                "name": "Ignacio Ramírez El Nigromante Cultural Center",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset rooftop circuit around Centro"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Mia Suites",
+                "budget": "₹6,500–₹9,000/night"
+              },
+              {
+                "name": "Hotel Nena Centro",
+                "budget": "₹11,000–₹15,000/night"
+              }
+            ],
+            "meals": [
+              "Lavanda Café",
+              "Hecho en México",
+              "Quince Rooftop"
+            ]
+          },
+          {
+            "theme": "Botanical Reserve & Hot Springs Day",
+            "activities": [
+              {
+                "name": "El Charco del Ingenio botanical garden",
+                "cost": "₹400 pp"
+              },
+              {
+                "name": "La Gruta Spa thermal pools",
+                "cost": "₹1,500 pp"
+              },
+              {
+                "name": "Mercado de Artesanías craft browsing"
+              },
+              {
+                "name": "Cañada de la Virgen archaeological zone tour",
+                "cost": "₹1,250 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Mia Suites",
+                "budget": "₹6,500–₹9,000/night"
+              },
+              {
+                "name": "Hotel Apapacho Boutique",
+                "budget": "₹7,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Panio",
+              "The Restaurant",
+              "Baja Fish Taquito"
+            ]
+          }
+        ]
+      },
+      "Oaxaca": {
+        "name": "Oaxaca",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Santo Domingo, Museums & Market Snacks",
+            "activities": [
+              {
+                "name": "Templo de Santo Domingo de Guzmán",
+                "cost": "Free"
+              },
+              {
+                "name": "Museo de las Culturas de Oaxaca",
+                "cost": "₹475 pp"
+              },
+              {
+                "name": "Jardín Etnobotánico guided visit",
+                "cost": "₹250 pp"
+              },
+              {
+                "name": "Mercado 20 de Noviembre and Pasillo de Humo tasting walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa de la Tía Tere",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "NaNa Vida Hotel Oaxaca",
+                "budget": "₹8,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Boulenc",
+              "Los Danzantes",
+              "Casa Oaxaca El Restaurante"
+            ]
+          },
+          {
+            "theme": "Monte Albán, Weaving Villages & Mezcal",
+            "activities": [
+              {
+                "name": "Monte Albán archaeological site",
+                "cost": "₹500 pp"
+              },
+              {
+                "name": "Teotitlán del Valle weaving workshop visit"
+              },
+              {
+                "name": "El Tule tree stop",
+                "cost": "₹100 pp"
+              },
+              {
+                "name": "Local mezcal tasting room",
+                "cost": "₹1,000 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa de la Tía Tere",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "NaNa Vida Hotel Oaxaca",
+                "budget": "₹8,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Levadura de Olla",
+              "Criollo",
+              "Mercado Benito Juárez"
+            ]
+          }
+        ]
+      },
+      "Mérida": {
+        "name": "Mérida",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Paseo de Montejo & Yucatán Classics",
+            "activities": [
+              {
+                "name": "Gran Museo del Mundo Maya",
+                "cost": "₹750 pp"
+              },
+              {
+                "name": "Paseo de Montejo mansions walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Plaza Grande, cathedral and Palacio de Gobierno murals"
+              },
+              {
+                "name": "Lucas de Gálvez market snack stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel María del Carmen",
+                "budget": "₹3,500–₹5,000/night"
+              },
+              {
+                "name": "Casa Lucia Hotel Boutique",
+                "budget": "₹8,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "La Chaya Maya",
+              "Apoala",
+              "Wayan'e"
+            ]
+          },
+          {
+            "theme": "Uxmal Ruins & Cenote Escape",
+            "activities": [
+              {
+                "name": "Uxmal archaeological zone",
+                "cost": "₹2,500 pp"
+              },
+              {
+                "name": "Cenote X'batun",
+                "cost": "₹250 pp"
+              },
+              {
+                "name": "Hacienda Yaxcopoil",
+                "cost": "₹650 pp"
+              },
+              {
+                "name": "Santa Lucía park evening serenata"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel María del Carmen",
+                "budget": "₹3,500–₹5,000/night"
+              },
+              {
+                "name": "Casa Lucia Hotel Boutique",
+                "budget": "₹8,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Museo de la Gastronomía Yucateca",
+              "Manjar Blanco",
+              "Apoala"
+            ]
+          }
+        ]
+      },
+      "Cancún": {
+        "name": "Cancún",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Hotel Zone Beaches & Maya Museum",
+            "activities": [
+              {
+                "name": "Museo Maya de Cancún",
+                "cost": "₹500 pp"
+              },
+              {
+                "name": "Playa Delfines beach stop",
+                "cost": "Free"
+              },
+              {
+                "name": "El Rey archaeological zone",
+                "cost": "₹300 pp"
+              },
+              {
+                "name": "Nichupté Lagoon sunset cruise",
+                "cost": "₹3,500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Adhara Hacienda Cancun",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Sina Suites Cancún",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Taqueria Coapenitos",
+              "El Fish Fritanga",
+              "Puerto Santo"
+            ]
+          },
+          {
+            "theme": "Isla Mujeres Day Trip",
+            "activities": [
+              {
+                "name": "Ultramar ferry to Isla Mujeres",
+                "cost": "₹3,000 pp round trip"
+              },
+              {
+                "name": "Punta Sur sculpture park and cliffs",
+                "cost": "₹1,000 pp"
+              },
+              {
+                "name": "Playa Norte swim stop",
+                "cost": "Free"
+              },
+              {
+                "name": "MUSA-area snorkel tour",
+                "cost": "₹6,000 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Adhara Hacienda Cancun",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Hotel NYX Cancún",
+                "budget": "₹9,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Los Tacos de Humo",
+              "Mocambo Cancún",
+              "Lorenzillo's"
+            ]
+          }
+        ]
+      },
+      "Playa del Carmen": {
+        "name": "Playa del Carmen",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Quinta Avenida, Beaches & Cenote Swim",
+            "activities": [
+              {
+                "name": "Quinta Avenida stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Parque Los Fundadores and beach promenade",
+                "cost": "Free"
+              },
+              {
+                "name": "Chaak Tun cenote caves",
+                "cost": "₹1,500 pp"
+              },
+              {
+                "name": "Mamitas or Playacar sunset beach time"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Antera Hotel & Residences",
+                "budget": "₹5,500–₹8,000/night"
+              },
+              {
+                "name": "The Reef 28 Hotel & Spa",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "El Fogón",
+              "La Cueva del Chango",
+              "Don Sirloin"
+            ]
+          },
+          {
+            "theme": "Cozumel or Xcaret Adventure Day",
+            "activities": [
+              {
+                "name": "Ultramar ferry to Cozumel",
+                "cost": "₹2,500 pp round trip"
+              },
+              {
+                "name": "Palancar Reef snorkel outing from Cozumel",
+                "cost": "₹5,500 pp"
+              },
+              {
+                "name": "Xcaret Park Plus option",
+                "cost": "₹12,500 pp"
+              },
+              {
+                "name": "Xcaret México Espectacular night show"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Antera Hotel & Residences",
+                "budget": "₹5,500–₹8,000/night"
+              },
+              {
+                "name": "The Reef 28 Hotel & Spa",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Axiote Cocina de México",
+              "Harry's Playa del Carmen",
+              "La Perla Pixan Cuisine"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Mexico City",
+        "to": "San Miguel de Allende",
+        "method": "ETN or Primera Plus luxury bus from Terminal Norte (about 4h15m)",
+        "cost": "₹4,000 pp"
+      },
+      {
+        "from": "San Miguel de Allende",
+        "to": "Oaxaca",
+        "method": "Shuttle to BJX or QRO + VivaAerobus / Volaris flight via Mexico City (6–7h total)",
+        "cost": "₹10,000 pp"
+      },
+      {
+        "from": "Oaxaca",
+        "to": "Mérida",
+        "method": "Volaris or VivaAerobus flight, usually via Mexico City (5–6h total)",
+        "cost": "₹9,500 pp"
+      },
+      {
+        "from": "Mérida",
+        "to": "Cancún",
+        "method": "ADO Platino or ADO GL bus (about 4h30m)",
+        "cost": "₹2,500 pp"
+      },
+      {
+        "from": "Cancún",
+        "to": "Playa del Carmen",
+        "method": "ADO bus from Cancún airport or downtown terminal (1h–1h15m)",
+        "cost": "₹1,250 pp"
+      }
+    ],
+    "extras": [
+      "Book Frida Kahlo Museum tickets and Isla Mujeres ferries a few days ahead in high season — same-day slots sell out fast.",
+      "ADO buses are the most reliable overland option in the Yucatán; book early morning departures for cooler travel and better seat choice.",
+      "Carry some cash for markets, colectivos, cenotes, and small mezcalerías even though cards work in most hotels and museums.",
+      "Uber works well in Mexico City and Mérida, while DiDi is a handy backup; Cancún airport transfers are usually smoother when pre-booked.",
+      "Dry season runs best overall, but December and Easter are expensive enough that shoulder-season November or late January often feels better value."
+    ],
+    "cityImages": {
+      "Mexico City": [
+        "Palacio de Bellas Artes Mexico City",
+        "Chapultepec Castle aerial Mexico City",
+        "Coyoacan Frida Kahlo Museum courtyard"
+      ],
+      "San Miguel de Allende": [
+        "Parroquia de San Miguel Arcangel sunset",
+        "San Miguel de Allende rooftop skyline",
+        "Fabrica La Aurora galleries"
+      ],
+      "Oaxaca": [
+        "Santo Domingo Oaxaca facade",
+        "Monte Alban ruins Oaxaca",
+        "Oaxaca 20 de Noviembre market"
+      ],
+      "Mérida": [
+        "Paseo de Montejo Merida mansions",
+        "Uxmal Pyramid of the Magician",
+        "Gran Museo del Mundo Maya Merida"
+      ],
+      "Cancún": [
+        "Playa Delfines Cancun turquoise water",
+        "Museo Maya de Cancun",
+        "Isla Mujeres Playa Norte aerial"
+      ],
+      "Playa del Carmen": [
+        "Quinta Avenida Playa del Carmen",
+        "Chaak Tun cenote caves",
+        "Xcaret Mexico Espectacular night show"
+      ]
+    }
+  }
+}

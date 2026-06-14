@@ -1,0 +1,651 @@
+{
+  "name": "Portugal",
+  "seed": false,
+  "lat": 39.4,
+  "lng": -8.22,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.3L–₹2L",
+    "couple": "₹2.2L–₹3.5L",
+    "family4": "₹4.5L–₹7L"
+  },
+  "experiences": [
+    "Beaches",
+    "Wine",
+    "History",
+    "Palaces",
+    "Surf",
+    "Food"
+  ],
+  "avoid": [
+    "July-August crowds push up Algarve and Lisbon hotel prices",
+    "Pickpockets are most common on Tram 28 and in busy central squares",
+    "Atlantic water stays chilly even when the Algarve is sunny"
+  ],
+  "combo": [
+    "Spain",
+    "Morocco"
+  ],
+  "landmark": "Belém Tower",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Lisbon",
+      "lat": 38.7223,
+      "lng": -9.1393,
+      "notes": "Alfama lanes, Belém monuments, yellow trams, tiled facades and sunset miradouros"
+    },
+    {
+      "name": "Porto",
+      "lat": 41.1579,
+      "lng": -8.6291,
+      "notes": "Ribeira riverfront, port wine cellars, azulejo stations and Atlantic sunsets"
+    },
+    {
+      "name": "Sintra",
+      "lat": 38.8029,
+      "lng": -9.3817,
+      "notes": "Pena Palace, misty hills, romantic estates and storybook castles"
+    },
+    {
+      "name": "Lagos",
+      "lat": 37.1028,
+      "lng": -8.6742,
+      "notes": "Golden cliffs, cave boat tours, beach coves and laid-back Algarve evenings"
+    },
+    {
+      "name": "Faro",
+      "lat": 37.0194,
+      "lng": -7.9304,
+      "notes": "Walled old town, Ria Formosa lagoon boats and easy Algarve transport links"
+    },
+    {
+      "name": "Évora",
+      "lat": 38.5714,
+      "lng": -7.9135,
+      "notes": "Roman ruins, Alentejo food, whitewashed lanes and the Chapel of Bones"
+    }
+  ],
+  "itinerary": {
+    "sim": "MEO, NOS, or Vodafone tourist SIM/eSIM plans usually land around ₹1,350–₹2,250 for 15–30 days with 20GB-ish data; Airalo Eurolink is the easiest pre-arrival backup if you want to land connected.",
+    "apps": [
+      "CP - Comboios de Portugal",
+      "Rede Expressos",
+      "Carris Way",
+      "Bolt",
+      "Uber",
+      "Google Maps",
+      "Booking.com",
+      "Airalo"
+    ],
+    "cityOrder": [
+      "Porto",
+      "Lisbon",
+      "Sintra",
+      "Évora",
+      "Faro",
+      "Lagos"
+    ],
+    "cities": {
+      "Porto": {
+        "name": "Porto",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Ribeira, Baroque Towers & Bookshop Icons",
+            "activities": [
+              {
+                "name": "Ribeira riverfront and Dom Luís I Bridge walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "São Bento Station azulejo hall",
+                "cost": "₹0"
+              },
+              {
+                "name": "Clérigos Tower climb",
+                "cost": "₹900"
+              },
+              {
+                "name": "Livraria Lello timed entry voucher",
+                "cost": "₹900"
+              },
+              {
+                "name": "Palácio da Bolsa guided visit",
+                "cost": "₹1,260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Passenger Hostel",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Moov Hotel Porto Centro",
+                "budget": "₹7,500–₹10,500/night"
+              },
+              {
+                "name": "PortoBay Teatro",
+                "budget": "₹13,500–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Casa Guedes",
+              "Taberna dos Mercadores",
+              "Manteigaria Fábrica de Pastéis de Nata"
+            ]
+          },
+          {
+            "theme": "Port Cellars, Markets & Atlantic Edge",
+            "activities": [
+              {
+                "name": "Graham's Port Lodge tasting tour",
+                "cost": "₹2,250"
+              },
+              {
+                "name": "Six Bridges Douro cruise",
+                "cost": "₹1,800"
+              },
+              {
+                "name": "Mercado do Bolhão food market",
+                "cost": "₹0"
+              },
+              {
+                "name": "Serralves Museum and gardens",
+                "cost": "₹1,800"
+              },
+              {
+                "name": "Foz do Douro tram and seafront walk",
+                "cost": "₹540"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Moov Hotel Porto Centro",
+                "budget": "₹7,500–₹10,500/night"
+              },
+              {
+                "name": "PortoBay Teatro",
+                "budget": "₹13,500–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Taberna dos Mercadores",
+              "Café Majestic",
+              "Brasão Cervejaria Aliados"
+            ]
+          }
+        ]
+      },
+      "Lisbon": {
+        "name": "Lisbon",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Alfama, Castles & Classic Tram Views",
+            "activities": [
+              {
+                "name": "24-hour Carris/Metro pass with Tram 28 rides",
+                "cost": "₹610"
+              },
+              {
+                "name": "São Jorge Castle",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "Lisbon Cathedral cloister ticket",
+                "cost": "₹450"
+              },
+              {
+                "name": "Santa Justa Lift viewpoint",
+                "cost": "₹540"
+              },
+              {
+                "name": "Miradouro de Santa Luzia and Portas do Sol walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lisbon Destination Hostel",
+                "budget": "₹4,500–₹6,300/night"
+              },
+              {
+                "name": "My Story Hotel Tejo",
+                "budget": "₹9,000–₹12,500/night"
+              },
+              {
+                "name": "LX Boutique Hotel",
+                "budget": "₹13,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Cervejaria Ramiro",
+              "Time Out Market Lisboa",
+              "Manteigaria"
+            ]
+          },
+          {
+            "theme": "Belém Monuments & Riverfront Portugal",
+            "activities": [
+              {
+                "name": "Jerónimos Monastery",
+                "cost": "₹1,620"
+              },
+              {
+                "name": "Belém Tower",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "Monument to the Discoveries",
+                "cost": "₹720"
+              },
+              {
+                "name": "MAAT museum",
+                "cost": "₹990"
+              },
+              {
+                "name": "Belém riverside promenade and gardens",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "My Story Hotel Tejo",
+                "budget": "₹9,000–₹12,500/night"
+              },
+              {
+                "name": "LX Boutique Hotel",
+                "budget": "₹13,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Pastéis de Belém",
+              "Taberna dos Ferreiros",
+              "A Praça"
+            ]
+          },
+          {
+            "theme": "Modern Lisbon, Tiles & Easy Viewpoints",
+            "activities": [
+              {
+                "name": "Oceanário de Lisboa",
+                "cost": "₹2,250"
+              },
+              {
+                "name": "Calouste Gulbenkian Museum",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "National Tile Museum",
+                "cost": "₹900"
+              },
+              {
+                "name": "LX Factory creative district",
+                "cost": "₹0"
+              },
+              {
+                "name": "Pilar 7 Bridge Experience",
+                "cost": "₹1,260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lisbon Destination Hostel",
+                "budget": "₹4,500–₹6,300/night"
+              },
+              {
+                "name": "LX Boutique Hotel",
+                "budget": "₹13,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Prado",
+              "A Cevicheria",
+              "Dear Breakfast"
+            ]
+          }
+        ]
+      },
+      "Sintra": {
+        "name": "Sintra",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Storybook Palaces in the Hills",
+            "activities": [
+              {
+                "name": "Pena Palace and Park",
+                "cost": "₹1,800"
+              },
+              {
+                "name": "Castelo dos Mouros",
+                "cost": "₹1,080"
+              },
+              {
+                "name": "Quinta da Regaleira",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "Sintra National Palace",
+                "cost": "₹1,170"
+              },
+              {
+                "name": "Scotturb 434 palace circuit bus",
+                "cost": "₹1,170"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sintra Bliss Hotel",
+                "budget": "₹8,000–₹11,000/night"
+              },
+              {
+                "name": "Chalet Saudade",
+                "budget": "₹9,500–₹13,500/night"
+              },
+              {
+                "name": "NH Sintra Centro",
+                "budget": "₹12,000–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "Tascantiga",
+              "Piriquita",
+              "Bacalhau na Vila"
+            ]
+          }
+        ]
+      },
+      "Évora": {
+        "name": "Évora",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Roman Ruins & Alentejo Heritage",
+            "activities": [
+              {
+                "name": "Roman Temple of Évora",
+                "cost": "₹0"
+              },
+              {
+                "name": "Évora Cathedral and rooftop",
+                "cost": "₹630"
+              },
+              {
+                "name": "Chapel of Bones and São Francisco Church",
+                "cost": "₹540"
+              },
+              {
+                "name": "University of Évora historic halls",
+                "cost": "₹450"
+              },
+              {
+                "name": "Almendres Cromlech taxi or small-group outing",
+                "cost": "₹2,250"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Moov Hotel Évora",
+                "budget": "₹6,500–₹9,000/night"
+              },
+              {
+                "name": "Vitória Stone Hotel",
+                "budget": "₹10,500–₹14,500/night"
+              },
+              {
+                "name": "The Noble House by Unlock Hotels",
+                "budget": "₹12,500–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Fialho",
+              "Taberna Típica Quarta-feira",
+              "Origens Restaurante"
+            ]
+          }
+        ]
+      },
+      "Faro": {
+        "name": "Faro",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Lagoon Gateways & Walled Old Town",
+            "activities": [
+              {
+                "name": "Cidade Velha and Arco da Vila walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Faro Cathedral",
+                "cost": "₹450"
+              },
+              {
+                "name": "Municipal Museum of Faro",
+                "cost": "₹180"
+              },
+              {
+                "name": "Ria Formosa half-day boat trip",
+                "cost": "₹2,700"
+              },
+              {
+                "name": "Capela dos Ossos at Igreja do Carmo",
+                "cost": "₹180"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Stay Hotel Faro Centro",
+                "budget": "₹6,500–₹9,000/night"
+              },
+              {
+                "name": "AP Eva Senses",
+                "budget": "₹11,500–₹16,000/night"
+              },
+              {
+                "name": "Hotel Faro & Beach Club",
+                "budget": "₹13,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Vila Adentro",
+              "Faz Gostos",
+              "Chelsea"
+            ]
+          }
+        ]
+      },
+      "Lagos": {
+        "name": "Lagos",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Clifftop Beaches & Old Lagos",
+            "activities": [
+              {
+                "name": "Praia Dona Ana beach stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ponta da Piedade boardwalk viewpoints",
+                "cost": "₹0"
+              },
+              {
+                "name": "Forte da Ponta da Bandeira",
+                "cost": "₹270"
+              },
+              {
+                "name": "Mercado de Escravos museum",
+                "cost": "₹450"
+              },
+              {
+                "name": "Praia do Camilo sunset climb",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "WOT Lagos Montemar",
+                "budget": "₹6,300–₹8,500/night"
+              },
+              {
+                "name": "Tivoli Lagos",
+                "budget": "₹11,500–₹16,500/night"
+              },
+              {
+                "name": "Lagos Atlantic Hotel",
+                "budget": "₹12,500–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Casinha do Petisco",
+              "Nah Nah Bah",
+              "Adega da Marina"
+            ]
+          },
+          {
+            "theme": "Sea Caves, Kayaks & Easy Algarve Leisure",
+            "activities": [
+              {
+                "name": "Ponta da Piedade kayak or small-boat cave tour",
+                "cost": "₹2,250"
+              },
+              {
+                "name": "Meia Praia beach afternoon",
+                "cost": "₹0"
+              },
+              {
+                "name": "Igreja de Santo António and Dr. José Formosinho Museum",
+                "cost": "₹270"
+              },
+              {
+                "name": "Porto de Mós beach break",
+                "cost": "₹0"
+              },
+              {
+                "name": "Beginner surf lesson",
+                "cost": "₹2,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "WOT Lagos Montemar",
+                "budget": "₹6,300–₹8,500/night"
+              },
+              {
+                "name": "Tivoli Lagos",
+                "budget": "₹11,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Casinha do Petisco",
+              "The Garden",
+              "Restaurante dos Artistas"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Porto",
+        "to": "Lisbon",
+        "method": "CP Alfa Pendular train",
+        "cost": "₹2,700"
+      },
+      {
+        "from": "Lisbon",
+        "to": "Sintra",
+        "method": "CP suburban train",
+        "cost": "₹250"
+      },
+      {
+        "from": "Sintra",
+        "to": "Évora",
+        "method": "CP suburban + Intercidades train via Lisboa Oriente",
+        "cost": "₹2,250"
+      },
+      {
+        "from": "Évora",
+        "to": "Faro",
+        "method": "Rede Expressos bus",
+        "cost": "₹1,800"
+      },
+      {
+        "from": "Faro",
+        "to": "Lagos",
+        "method": "CP regional train",
+        "cost": "₹760"
+      }
+    ],
+    "extras": [
+      "Book Alfa Pendular and Intercidades tickets early on CP for the best promo fares; last-minute long-distance rail can cost nearly double.",
+      "Lisbon and Sintra monument slots sell out first for 10am-1pm entries, so reserve Pena Palace, Jerónimos, and Belém Tower before you fly.",
+      "Portugal is very card-friendly, but keep a little cash for pastry shops, beach kiosks, and smaller Alentejo taverns.",
+      "Pack a light jacket even in shoulder season — Porto evenings and Sintra mornings can feel cool and windy.",
+      "Tap water is safe everywhere, and many cities have refill points, so a reusable bottle saves money during long walking days.",
+      "Portugal is in the Schengen zone; Indian passport holders should budget roughly ₹8,500–₹9,000 for the visa and apply at least a month ahead."
+    ],
+    "cityImages": {
+      "Lisbon": [
+        "Lisbon Alfama tram 28 viewpoint",
+        "Belém Tower Lisbon riverfront",
+        "Praça do Comércio Lisbon"
+      ],
+      "Porto": [
+        "Porto Ribeira Dom Luís I Bridge",
+        "Livraria Lello Porto interior",
+        "Porto São Bento station azulejos"
+      ],
+      "Sintra": [
+        "Pena Palace Sintra colorful hilltop",
+        "Quinta da Regaleira initiation well",
+        "Moorish Castle Sintra walls"
+      ],
+      "Lagos": [
+        "Ponta da Piedade Lagos cliffs",
+        "Praia Dona Ana Lagos beach",
+        "Lagos Algarve old town"
+      ],
+      "Faro": [
+        "Faro old town cathedral",
+        "Ria Formosa Faro lagoon boat",
+        "Arco da Vila Faro"
+      ],
+      "Évora": [
+        "Roman Temple of Évora",
+        "Évora Cathedral rooftop",
+        "Chapel of Bones Évora"
+      ]
+    }
+  }
+}

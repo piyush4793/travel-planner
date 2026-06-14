@@ -1,0 +1,687 @@
+{
+  "name": "Brazil",
+  "seed": false,
+  "lat": -14.24,
+  "lng": -51.93,
+  "region": "Americas",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "budget": {
+    "solo": "₹2.2L–₹3.4L",
+    "couple": "₹3.8L–₹6.2L",
+    "family4": "₹7.5L–₹12L"
+  },
+  "experiences": [
+    "Rio Icons",
+    "São Paulo Food Scene",
+    "Iguaçu Falls",
+    "Salvador Heritage",
+    "Florianópolis Beaches",
+    "Paraty Colonial Coast"
+  ],
+  "avoid": [
+    "Carnival, New Year, and July school-holiday weeks push up flights and hotel prices fast.",
+    "Rio and Paraty are hottest and wettest from December to March, while Salvador sees its rainiest spell from April to July.",
+    "A May–October nationwide circuit is great for sightseeing, but Florianópolis is quieter and less beach-focused outside peak summer."
+  ],
+  "combo": [
+    "Argentina",
+    "Uruguay"
+  ],
+  "landmark": "Christ the Redeemer",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Rio de Janeiro",
+      "lat": -22.9068,
+      "lng": -43.1729,
+      "notes": "Christ the Redeemer, Sugarloaf, samba nights, and beach-to-mountain scenery in one compact city."
+    },
+    {
+      "name": "São Paulo",
+      "lat": -23.5505,
+      "lng": -46.6333,
+      "notes": "Brazil’s biggest food and culture capital with Paulista museums, markets, and design-heavy neighbourhoods."
+    },
+    {
+      "name": "Iguaçu Falls",
+      "lat": -25.6953,
+      "lng": -54.4367,
+      "notes": "Brazil’s panoramic side of the falls pairs huge viewpoints with bird park and Itaipu add-ons."
+    },
+    {
+      "name": "Salvador",
+      "lat": -12.9777,
+      "lng": -38.5016,
+      "notes": "Afro-Brazilian music, colonial Pelourinho lanes, and bay sunsets with strong Bahian food culture."
+    },
+    {
+      "name": "Florianópolis",
+      "lat": -27.5949,
+      "lng": -48.5482,
+      "notes": "Island city mixing surf beaches, seafood villages, dunes, and a mellow south-Brazil pace."
+    },
+    {
+      "name": "Paraty",
+      "lat": -23.22,
+      "lng": -44.717,
+      "notes": "Car-free colonial centre, cachaça distilleries, and boat days through emerald islands on the Costa Verde."
+    }
+  ],
+  "itinerary": {
+    "sim": "Claro or Vivo prepaid SIM/eSIM is the easiest option at GIG or GRU — around ₹680–₹1,020 typically gets 10–15GB for maps, ride-hailing, and hotspot backup. Keep offline maps downloaded for Costa Verde road stretches and around Iguaçu National Park.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "Uber",
+      "99",
+      "Moovit",
+      "LATAM",
+      "GOL",
+      "ClickBus",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Rio de Janeiro",
+      "São Paulo",
+      "Iguaçu Falls",
+      "Salvador",
+      "Florianópolis",
+      "Paraty"
+    ],
+    "cities": {
+      "Rio de Janeiro": {
+        "name": "Rio de Janeiro",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Stay in Copacabana, Ipanema, or Flamengo, pre-book Christ and Sugarloaf timed entries, and lean on Uber after dark instead of wandering between nightlife districts.",
+        "days": [
+          {
+            "theme": "Corcovado, Santa Teresa & Lapa",
+            "activities": [
+              {
+                "name": "Trem do Corcovado return ticket for Christ the Redeemer",
+                "cost": "₹2,200–₹2,600"
+              },
+              {
+                "name": "Parque das Ruínas viewpoints and Santa Teresa lanes"
+              },
+              {
+                "name": "Escadaria Selarón and Arcos da Lapa walk"
+              },
+              {
+                "name": "Santa Teresa tram ride if operating",
+                "cost": "₹340–₹510"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Regina Rio de Janeiro",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Windsor Martinique Copacabana",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Bar do Mineiro",
+              "Cervantes",
+              "Aprazível"
+            ]
+          },
+          {
+            "theme": "Copacabana, Ipanema & Sugarloaf",
+            "activities": [
+              {
+                "name": "Copacabana beach walk and Forte de Copacabana",
+                "cost": "₹170–₹255"
+              },
+              {
+                "name": "Pão de Açúcar (Sugarloaf) cable car",
+                "cost": "₹2,700–₹3,300"
+              },
+              {
+                "name": "Ipanema and Arpoador sunset circuit"
+              },
+              {
+                "name": "Optional Museum of Tomorrow stop in Porto Maravilha",
+                "cost": "₹600–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Regina Rio de Janeiro",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Windsor Martinique Copacabana",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Zazá Bistrô Tropical",
+              "Bar Urca",
+              "Galeto Sat's"
+            ]
+          },
+          {
+            "theme": "Downtown Museums & Maracanã",
+            "activities": [
+              {
+                "name": "Museu do Amanhã (Museum of Tomorrow)",
+                "cost": "₹600–₹700"
+              },
+              {
+                "name": "Real Gabinete Português de Leitura photo stop"
+              },
+              {
+                "name": "Maracanã stadium tour",
+                "cost": "₹1,200–₹1,500"
+              },
+              {
+                "name": "Evening samba club or roda in Lapa",
+                "cost": "₹850–₹1,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Arena Leme Hotel",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Hotel Regina Rio de Janeiro",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Confeitaria Colombo",
+              "Brewteco",
+              "Marius Degustare"
+            ]
+          }
+        ]
+      },
+      "São Paulo": {
+        "name": "São Paulo",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Base yourself around Paulista or Jardins for quick metro access; Sunday mornings are great for Avenida Paulista car-free time, while museums are busiest on rainy weekends.",
+        "days": [
+          {
+            "theme": "Paulista Avenue, MASP & Ibirapuera",
+            "activities": [
+              {
+                "name": "MASP collection and Lina Bo Bardi building",
+                "cost": "₹1,200–₹1,360"
+              },
+              {
+                "name": "Japan House São Paulo and Paulista cultural strip"
+              },
+              {
+                "name": "Ibirapuera Park and Oscar Niemeyer landmarks"
+              },
+              {
+                "name": "Optional rooftop drinks around Jardins",
+                "cost": "₹850–₹1,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mercure São Paulo Paulista",
+                "budget": "₹7,000–₹11,000/night"
+              },
+              {
+                "name": "Transamerica Executive Paulista",
+                "budget": "₹6,500–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "A Casa do Porco",
+              "Capim Santo",
+              "Bella Paulista"
+            ]
+          },
+          {
+            "theme": "Mercadão, Pinacoteca & Vila Madalena",
+            "activities": [
+              {
+                "name": "Mercado Municipal de São Paulo for mortadella sandwich and fruit stalls"
+              },
+              {
+                "name": "Pinacoteca de São Paulo",
+                "cost": "₹510–₹680"
+              },
+              {
+                "name": "Museu do Futebol at Pacaembu",
+                "cost": "₹410–₹510"
+              },
+              {
+                "name": "Beco do Batman murals and Vila Madalena bars"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mercure São Paulo Paulista",
+                "budget": "₹7,000–₹11,000/night"
+              },
+              {
+                "name": "Hotel Cadoro São Paulo",
+                "budget": "₹11,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Bar da Dona Onça",
+              "Figueira Rubaiyat",
+              "Mocotó"
+            ]
+          }
+        ]
+      },
+      "Iguaçu Falls": {
+        "name": "Iguaçu Falls",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Sleep in Foz do Iguaçu, start the national park early before tour buses arrive, and keep a dry bag ready if you add Macuco Safari or any catwalk viewpoint after rain.",
+        "days": [
+          {
+            "theme": "Brazil Panorama, Catwalks & Birdlife",
+            "activities": [
+              {
+                "name": "Parque Nacional do Iguaçu foreign visitor entry",
+                "cost": "₹1,600–₹1,750"
+              },
+              {
+                "name": "Main panoramic walkway to the falls spray deck"
+              },
+              {
+                "name": "Macuco Safari boat ride",
+                "cost": "₹6,300–₹6,900"
+              },
+              {
+                "name": "Parque das Aves bird park",
+                "cost": "₹1,500–₹1,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tarobá Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Viale Tower Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Porto Canoas Restaurante",
+              "La Mafia Trattoria",
+              "Churrascaria Bufalo Branco"
+            ]
+          },
+          {
+            "theme": "Itaipu, Triple Frontier & Evening Views",
+            "activities": [
+              {
+                "name": "Itaipu Binacional panoramic visit",
+                "cost": "₹1,000–₹1,200"
+              },
+              {
+                "name": "Marco das Três Fronteiras cultural complex",
+                "cost": "₹760–₹1,020"
+              },
+              {
+                "name": "Dreams Ice Bar or Wax Museum if travelling with kids",
+                "cost": "₹1,000–₹1,530"
+              },
+              {
+                "name": "Sunset over the Paraná River back in town"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tarobá Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Bogari Hotel",
+                "budget": "₹4,800–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Capitão Bar",
+              "Rafain Churrascaria Show",
+              "La Mafia Trattoria"
+            ]
+          }
+        ]
+      },
+      "Salvador": {
+        "name": "Salvador",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay near Pelourinho or Barra for short transfers, dress lightly for the humidity, and plan Pelourinho walks by day or with a guided evening food/music circuit.",
+        "days": [
+          {
+            "theme": "Pelourinho, Churches & Lower City",
+            "activities": [
+              {
+                "name": "Pelourinho lanes, Largo do Pelourinho, and live percussion corners"
+              },
+              {
+                "name": "São Francisco Church and Convent",
+                "cost": "₹255–₹425"
+              },
+              {
+                "name": "Casa do Carnaval da Bahia",
+                "cost": "₹340–₹510"
+              },
+              {
+                "name": "Elevador Lacerda and Mercado Modelo",
+                "cost": "₹5–₹10"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bahiacafé Hotel",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Wish Hotel da Bahia",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurante do Senac",
+              "Cuco Bistrô",
+              "Casa de Tereza"
+            ]
+          },
+          {
+            "theme": "Barra Lighthouse & Bay Sunset",
+            "activities": [
+              {
+                "name": "Farol da Barra and Nautical Museum of Bahia",
+                "cost": "₹170–₹255"
+              },
+              {
+                "name": "MAM Bahia at Solar do Unhão"
+              },
+              {
+                "name": "Sunset boat on Baía de Todos-os-Santos",
+                "cost": "₹850–₹1,700"
+              },
+              {
+                "name": "Optional Praia do Forte full-day trip",
+                "cost": "₹3,400–₹5,100"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bahiacafé Hotel",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Casa Di Vina Boutique Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Amado",
+              "Pasta em Casa",
+              "Casa de Tereza"
+            ]
+          }
+        ]
+      },
+      "Florianópolis": {
+        "name": "Florianópolis",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Without a car, split time between the central bridge area and one beach cluster; ride-hailing is easy, but beach-to-beach transfers take longer than they look on the map.",
+        "days": [
+          {
+            "theme": "Centro, Lagoa & Joaquina",
+            "activities": [
+              {
+                "name": "Mercado Público and Hercílio Luz bridge viewpoints"
+              },
+              {
+                "name": "Lagoa da Conceição kayak or stand-up paddle rental",
+                "cost": "₹1,200–₹1,800"
+              },
+              {
+                "name": "Joaquina dunes and beach circuit"
+              },
+              {
+                "name": "Sunset drinks around Lagoa"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Faial Prime Suites",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Hotel Porto da Ilha",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Box 32",
+              "Armazém Rita Maria",
+              "Books & Beers"
+            ]
+          },
+          {
+            "theme": "Ilha do Campeche or Historic Forts",
+            "activities": [
+              {
+                "name": "Boat to Ilha do Campeche for beach and trails",
+                "cost": "₹3,000–₹4,300"
+              },
+              {
+                "name": "Fortaleza de São José da Ponta Grossa",
+                "cost": "₹255–₹340"
+              },
+              {
+                "name": "Santo Antônio de Lisboa village for late lunch"
+              },
+              {
+                "name": "Optional oyster-heavy dinner in Ribeirão da Ilha",
+                "cost": "₹1,200–₹2,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Faial Prime Suites",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Blue Tree Premium Florianópolis",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Ostradamus",
+              "Donna",
+              "Box 32"
+            ]
+          }
+        ]
+      },
+      "Paraty": {
+        "name": "Paraty",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Historic-centre pousadas let you explore on foot, but the stone streets flood after very heavy rain, so keep shoes with grip and avoid wheeled luggage inside the old town.",
+        "days": [
+          {
+            "theme": "Colonial Centre, Churches & Cachaça",
+            "activities": [
+              {
+                "name": "Stone-street walk through the UNESCO-listed historic centre"
+              },
+              {
+                "name": "Santa Rita Church and waterfront photo stops"
+              },
+              {
+                "name": "Cachaçaria Maria Izabel or nearby distillery tasting",
+                "cost": "₹340–₹680"
+              },
+              {
+                "name": "Casa da Cultura de Paraty and artisan shops"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pousada da Marquesa",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Pousada do Sandi",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Banana da Terra",
+              "Quintal das Letras",
+              "Margarida Café"
+            ]
+          },
+          {
+            "theme": "Island-Hopping Schooner Day",
+            "activities": [
+              {
+                "name": "Shared schooner cruise through Paraty Bay islands and beaches",
+                "cost": "₹1,700–₹2,400"
+              },
+              {
+                "name": "Snorkel mask rental for swim stops",
+                "cost": "₹170–₹340"
+              },
+              {
+                "name": "Jabaquara beach or kayak add-on after the boat returns",
+                "cost": "₹850–₹1,530"
+              },
+              {
+                "name": "Relaxed final evening in the lantern-lit old town"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pousada da Marquesa",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Pousada do Sandi",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurante Refúgio",
+              "Quintal das Letras",
+              "Banana da Terra"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Rio de Janeiro",
+        "to": "São Paulo",
+        "method": "LATAM or GOL shuttle flight between SDU/GIG and CGH/GRU in about 1 hour, with 1001 executive bus as the rail-free budget fallback",
+        "cost": "₹2,040–₹8,500"
+      },
+      {
+        "from": "São Paulo",
+        "to": "Iguaçu Falls",
+        "method": "Direct LATAM or GOL flight from Congonhas or Guarulhos to Foz do Iguaçu, about 1 hr 45 min; Catarinense overnight bus is the slower backup",
+        "cost": "₹4,000–₹13,600"
+      },
+      {
+        "from": "Iguaçu Falls",
+        "to": "Salvador",
+        "method": "Domestic flight, usually via São Paulo, on LATAM or GOL; same-day air routing is far more practical than the 30+ hour overland option",
+        "cost": "₹8,500–₹18,700"
+      },
+      {
+        "from": "Salvador",
+        "to": "Florianópolis",
+        "method": "LATAM or GOL flight, usually via São Paulo, taking about 4–6 hours total including the connection",
+        "cost": "₹7,500–₹17,000"
+      },
+      {
+        "from": "Florianópolis",
+        "to": "Paraty",
+        "method": "Catarinense overnight bus to São Paulo plus a Costa Verde connection onward to Paraty, or fly back to Rio/São Paulo and transfer by road",
+        "cost": "₹5,800–₹10,500"
+      }
+    ],
+    "extras": [
+      "Use shoulder season from May to October for the easiest multi-city weather mix; swap Florianópolis for extra Rio or Salvador beach time if you want true swim-first summer conditions.",
+      "Brazil is card-friendly in cities, but keep small cash for kiosks, beach chairs, boat operators, and old-town Paraty shops.",
+      "Book Christ the Redeemer, Sugarloaf, and Iguaçu park tickets in advance on weekends or holidays because timed slots can sell out.",
+      "For fewer days, keep Rio de Janeiro, Iguaçu Falls, Salvador, and one of either São Paulo or Paraty as the core route.",
+      "Domestic fares move quickly around Carnival and year-end, so lock long-haul flight legs before filling in buses and pousadas.",
+      "If you prefer surf or beach clubs over museums, add extra nights in Florianópolis and trim São Paulo first."
+    ],
+    "cityImages": {
+      "Rio de Janeiro": [
+        "Christ the Redeemer Rio de Janeiro",
+        "Sugarloaf Mountain Rio cable car",
+        "Ipanema beach Rio de Janeiro sunset"
+      ],
+      "São Paulo": [
+        "MASP Sao Paulo Paulista Avenue",
+        "Ibirapuera Park Sao Paulo skyline",
+        "Beco do Batman Sao Paulo murals"
+      ],
+      "Iguaçu Falls": [
+        "Iguacu Falls Brazil panoramic walkway",
+        "Parque das Aves Foz do Iguacu",
+        "Itaipu Binacional Foz do Iguacu"
+      ],
+      "Salvador": [
+        "Pelourinho Salvador Bahia colorful street",
+        "Farol da Barra Salvador sunset",
+        "Elevador Lacerda Salvador Bahia"
+      ],
+      "Florianópolis": [
+        "Lagoa da Conceicao Florianopolis",
+        "Ilha do Campeche Florianopolis",
+        "Hercilio Luz bridge Florianopolis"
+      ],
+      "Paraty": [
+        "Paraty historic center cobblestone street",
+        "Paraty Bay schooner boat",
+        "Paraty Brazil colonial waterfront"
+      ]
+    }
+  }
+}

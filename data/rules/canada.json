@@ -1,0 +1,829 @@
+{
+  "name": "Canada",
+  "seed": false,
+  "lat": 56.13,
+  "lng": -106.35,
+  "region": "Americas",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.8L–₹3L",
+    "couple": "₹3.2L–₹5.5L",
+    "family4": "₹6.5L–₹10L"
+  },
+  "experiences": [
+    "CN Tower",
+    "Old Quebec",
+    "Banff Gondola",
+    "Stanley Park",
+    "Notre-Dame Basilica",
+    "Rideau Canal"
+  ],
+  "avoid": [
+    "Banff and Vancouver hotel rates spike fast in July-August — book early.",
+    "Wildfire smoke can affect Alberta and British Columbia in late summer.",
+    "Winter self-drive plans need snow-ready transport, especially around the Rockies."
+  ],
+  "combo": [
+    "United States",
+    "Greenland"
+  ],
+  "landmark": "Lake Louise",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Toronto",
+      "lat": 43.6532,
+      "lng": -79.3832,
+      "notes": "CN Tower, St. Lawrence Market, Casa Loma, ROM, and easy day-trip links across Ontario."
+    },
+    {
+      "name": "Vancouver",
+      "lat": 49.2827,
+      "lng": -123.1207,
+      "notes": "Stanley Park, Granville Island, Capilano, and mountain-meets-ocean city time."
+    },
+    {
+      "name": "Montreal",
+      "lat": 45.5017,
+      "lng": -73.5673,
+      "notes": "Old Montreal, Mount Royal, bagels, poutine, and classic French-Canadian city culture."
+    },
+    {
+      "name": "Banff",
+      "lat": 51.1784,
+      "lng": -115.5708,
+      "notes": "Banff National Park base for Lake Louise, Sulphur Mountain, hot springs, and Rocky Mountain scenery."
+    },
+    {
+      "name": "Quebec City",
+      "lat": 46.8139,
+      "lng": -71.208,
+      "notes": "Walled Old Quebec, Chateau Frontenac, Montmorency Falls, and a compact historic core."
+    },
+    {
+      "name": "Ottawa",
+      "lat": 45.4215,
+      "lng": -75.6972,
+      "notes": "Parliament Hill, ByWard Market, Rideau Canal, and museum-heavy capital-city stop."
+    }
+  ],
+  "itinerary": {
+    "sim": "Airalo Canada eSIM or a Lucky Mobile/Public Mobile prepaid SIM usually works best for tourists — about ₹930–₹2,790 for 5GB to 30GB, enough for maps, boarding passes, and park shuttles.",
+    "apps": [
+      "Google Maps",
+      "Transit",
+      "VIA Rail",
+      "FlixBus",
+      "Porter",
+      "WestJet",
+      "Uber",
+      "Parks Canada",
+      "Booking.com",
+      "OpenTable",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Toronto",
+      "Ottawa",
+      "Montreal",
+      "Quebec City",
+      "Banff",
+      "Vancouver"
+    ],
+    "cities": {
+      "Toronto": {
+        "name": "Toronto",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days covers the skyline icons, one major museum cluster, and neighbourhood food stops without rushing.",
+        "days": [
+          {
+            "theme": "Downtown Arrival, Skyline & Market",
+            "activities": [
+              {
+                "name": "UP Express or TTC transfer into downtown Toronto",
+                "cost": "₹620–₹930 pp"
+              },
+              {
+                "name": "CN Tower general admission",
+                "cost": "₹2,666 pp"
+              },
+              {
+                "name": "St. Lawrence Market snack crawl and souvenir stop"
+              },
+              {
+                "name": "Distillery Historic District evening walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Holiday Inn Toronto Downtown Centre",
+                "budget": "₹11,000–₹17,000/night"
+              },
+              {
+                "name": "Cambridge Suites Toronto",
+                "budget": "₹13,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Pai",
+              "St. Lawrence Market",
+              "Richmond Station"
+            ]
+          },
+          {
+            "theme": "Museum Mile, Yorkville & Casa Loma",
+            "activities": [
+              {
+                "name": "Royal Ontario Museum",
+                "cost": "₹1,612 pp"
+              },
+              {
+                "name": "Yorkville walk and cafe break"
+              },
+              {
+                "name": "Casa Loma castle entry",
+                "cost": "₹2,480 pp"
+              },
+              {
+                "name": "Kensington Market browse for casual evening eats"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Holiday Inn Toronto Downtown Centre",
+                "budget": "₹11,000–₹17,000/night"
+              },
+              {
+                "name": "Cambridge Suites Toronto",
+                "budget": "₹13,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Seven Lives Tacos y Mariscos",
+              "Pai",
+              "Richmond Station"
+            ]
+          },
+          {
+            "theme": "Waterfront, Islands & Aquarium",
+            "activities": [
+              {
+                "name": "Toronto Islands ferry and lakeside walk",
+                "cost": "₹465 pp"
+              },
+              {
+                "name": "Harbourfront and Sugar Beach stroll"
+              },
+              {
+                "name": "Ripley's Aquarium of Canada",
+                "cost": "₹2,728 pp"
+              },
+              {
+                "name": "Sunset around Rogers Centre and Roundhouse Park"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Holiday Inn Toronto Downtown Centre",
+                "budget": "₹11,000–₹17,000/night"
+              },
+              {
+                "name": "Cambridge Suites Toronto",
+                "budget": "₹13,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Kensington Market",
+              "Pai",
+              "St. Lawrence Market"
+            ]
+          }
+        ]
+      },
+      "Ottawa": {
+        "name": "Ottawa",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "An overnight stop works well for Parliament Hill, a major museum, and ByWard Market; add a second day only for extra museum time.",
+        "days": [
+          {
+            "theme": "Parliament, ByWard & Capital Sights",
+            "activities": [
+              {
+                "name": "Parliament Hill guided tour",
+                "cost": "Free"
+              },
+              {
+                "name": "National Gallery of Canada",
+                "cost": "₹1,240 pp"
+              },
+              {
+                "name": "ByWard Market walk with a BeaverTails stop"
+              },
+              {
+                "name": "Rideau Canal and Major's Hill Park sunset stroll"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ByWard Blue Inn",
+                "budget": "₹10,000–₹15,000/night"
+              },
+              {
+                "name": "Alt Hotel Ottawa",
+                "budget": "₹12,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Play Food & Wine",
+              "The King Eddy",
+              "BeaverTails ByWard Market"
+            ]
+          },
+          {
+            "theme": "Museum Add-On Day",
+            "activities": [
+              {
+                "name": "Canadian Museum of History across the river in Gatineau",
+                "cost": "₹1,240 pp"
+              },
+              {
+                "name": "Canadian Museum of Nature",
+                "cost": "₹1,240 pp"
+              },
+              {
+                "name": "Elgin Street cafe and nightlife loop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ByWard Blue Inn",
+                "budget": "₹10,000–₹15,000/night"
+              },
+              {
+                "name": "Alt Hotel Ottawa",
+                "budget": "₹12,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Elgin Street Diner",
+              "The King Eddy",
+              "Play Food & Wine"
+            ]
+          }
+        ]
+      },
+      "Montreal": {
+        "name": "Montreal",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives a strong Old Montreal plus Plateau/Mount Royal pairing; add a third if you want nature-space museums too.",
+        "days": [
+          {
+            "theme": "Old Montreal & Basilica Core",
+            "activities": [
+              {
+                "name": "Notre-Dame Basilica admission",
+                "cost": "₹930 pp"
+              },
+              {
+                "name": "Old Port and Place Jacques-Cartier walking loop"
+              },
+              {
+                "name": "Bonsecours Market browse"
+              },
+              {
+                "name": "Evening dessert or coffee around Rue Saint-Paul"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Le Dauphin Montreal Centre-Ville",
+                "budget": "₹10,500–₹16,000/night"
+              },
+              {
+                "name": "Hotel Faubourg Montreal",
+                "budget": "₹11,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Olive et Gourmando",
+              "Schwartz's Deli",
+              "La Banquise"
+            ]
+          },
+          {
+            "theme": "Mount Royal, Museum & Plateau Food Stops",
+            "activities": [
+              {
+                "name": "Mount Royal Kondiaronk Belvedere walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Montreal Museum of Fine Arts",
+                "cost": "₹1,550 pp"
+              },
+              {
+                "name": "Plateau Mont-Royal street art and cafe time"
+              },
+              {
+                "name": "Saint-Viateur or Fairmount Bagel run"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Le Dauphin Montreal Centre-Ville",
+                "budget": "₹10,500–₹16,000/night"
+              },
+              {
+                "name": "Hotel Faubourg Montreal",
+                "budget": "₹11,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Schwartz's Deli",
+              "St-Viateur Bagel",
+              "La Banquise"
+            ]
+          },
+          {
+            "theme": "Nature Museums Optional Day",
+            "activities": [
+              {
+                "name": "Montreal Biodome",
+                "cost": "₹1,674 pp"
+              },
+              {
+                "name": "Montreal Botanical Garden",
+                "cost": "₹1,364 pp"
+              },
+              {
+                "name": "Jean-Talon Market for produce, snacks, and local cheeses"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Le Dauphin Montreal Centre-Ville",
+                "budget": "₹10,500–₹16,000/night"
+              },
+              {
+                "name": "Hotel Faubourg Montreal",
+                "budget": "₹11,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Jean-Talon Market",
+              "Olive et Gourmando",
+              "La Banquise"
+            ]
+          }
+        ]
+      },
+      "Quebec City": {
+        "name": "Quebec City",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is ideal for the old city plus Montmorency Falls without turning the stay into a pure museum stop.",
+        "days": [
+          {
+            "theme": "Walled City, Frontenac & Petit-Champlain",
+            "activities": [
+              {
+                "name": "Old Quebec self-guided walk around Terrasse Dufferin and Place Royale",
+                "cost": "Free"
+              },
+              {
+                "name": "Fairmont Le Chateau Frontenac guided tour",
+                "cost": "₹1,240 pp"
+              },
+              {
+                "name": "Petit-Champlain lanes and boutique stop"
+              },
+              {
+                "name": "Funicular or stairway descent between Upper and Lower Town",
+                "cost": "₹248 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge Internationale de Quebec",
+                "budget": "₹5,000–₹9,000/night"
+              },
+              {
+                "name": "Hotel du Vieux Quebec",
+                "budget": "₹14,000–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Le Chic Shack",
+              "Chez Boulay Bistro Boreal",
+              "La Buche"
+            ]
+          },
+          {
+            "theme": "Montmorency Falls & Viewpoints",
+            "activities": [
+              {
+                "name": "Montmorency Falls Park entry",
+                "cost": "₹496 pp"
+              },
+              {
+                "name": "Montmorency Falls cable car round-trip",
+                "cost": "₹930 pp"
+              },
+              {
+                "name": "Observatoire de la Capitale",
+                "cost": "₹992 pp"
+              },
+              {
+                "name": "Plains of Abraham sunset walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge Internationale de Quebec",
+                "budget": "₹5,000–₹9,000/night"
+              },
+              {
+                "name": "Hotel du Vieux Quebec",
+                "budget": "₹14,000–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Aux Anciens Canadiens",
+              "Le Chic Shack",
+              "Chez Boulay Bistro Boreal"
+            ]
+          },
+          {
+            "theme": "Slow History Day",
+            "activities": [
+              {
+                "name": "Musee de la civilisation",
+                "cost": "₹1,240 pp"
+              },
+              {
+                "name": "Rue Saint-Jean cafe and bakery crawl"
+              },
+              {
+                "name": "Extra photo time around Dufferin Terrace after dark"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge Internationale de Quebec",
+                "budget": "₹5,000–₹9,000/night"
+              },
+              {
+                "name": "Hotel du Vieux Quebec",
+                "budget": "₹14,000–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Paillard",
+              "La Buche",
+              "Chez Boulay Bistro Boreal"
+            ]
+          }
+        ]
+      },
+      "Banff": {
+        "name": "Banff",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Banff town as the base; two days covers Sulphur Mountain plus the Lake Louise corridor, while a third day can go to winter sports or extra lakes.",
+        "days": [
+          {
+            "theme": "Banff Town, Gondola & Hot Springs",
+            "activities": [
+              {
+                "name": "Parks Canada Banff day pass",
+                "cost": "₹713 pp"
+              },
+              {
+                "name": "Banff Gondola return ticket",
+                "cost": "₹4,340 pp"
+              },
+              {
+                "name": "Bow Falls and Surprise Corner walk"
+              },
+              {
+                "name": "Banff Upper Hot Springs",
+                "cost": "₹1,085 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Samesun Banff Hostel",
+                "budget": "₹4,500–₹8,500/night"
+              },
+              {
+                "name": "Elk + Avenue Hotel",
+                "budget": "₹16,000–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Tooloulou's",
+              "Park Distillery",
+              "Eddie Burger Bar"
+            ]
+          },
+          {
+            "theme": "Lake Louise & Moraine Lake Corridor",
+            "activities": [
+              {
+                "name": "Parks Canada shuttle to Lake Louise and Moraine Lake",
+                "cost": "₹496 pp"
+              },
+              {
+                "name": "Lakeshore walk and Fairview lookout at Lake Louise"
+              },
+              {
+                "name": "Moraine Lake photo stops when seasonal access is open"
+              },
+              {
+                "name": "Cave and Basin National Historic Site",
+                "cost": "₹1,054 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Samesun Banff Hostel",
+                "budget": "₹4,500–₹8,500/night"
+              },
+              {
+                "name": "Elk + Avenue Hotel",
+                "budget": "₹16,000–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Wild Flour Bakery",
+              "Tooloulou's",
+              "Park Distillery"
+            ]
+          },
+          {
+            "theme": "Winter or Scenic Bonus Day",
+            "activities": [
+              {
+                "name": "Sunshine Village sightseeing gondola or ski add-on",
+                "cost": "₹4,650+ pp in peak season"
+              },
+              {
+                "name": "Johnston Canyon walk if trails are accessible"
+              },
+              {
+                "name": "Relaxed Banff Avenue shopping and cafe time"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Samesun Banff Hostel",
+                "budget": "₹4,500–₹8,500/night"
+              },
+              {
+                "name": "Elk + Avenue Hotel",
+                "budget": "₹16,000–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Wild Flour Bakery",
+              "Eddie Burger Bar",
+              "Park Distillery"
+            ]
+          }
+        ]
+      },
+      "Vancouver": {
+        "name": "Vancouver",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days balances classic city sights with one big bridge-or-mountain ticketed day and a lighter waterfront finish.",
+        "days": [
+          {
+            "theme": "Stanley Park, Seawall & Granville Island",
+            "activities": [
+              {
+                "name": "Stanley Park seawall walk or cycle",
+                "cost": "Free"
+              },
+              {
+                "name": "Vancouver Lookout",
+                "cost": "₹1,736 pp"
+              },
+              {
+                "name": "Granville Island Public Market browsing and snack stops"
+              },
+              {
+                "name": "Gastown steam clock and waterfront evening walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "YWCA Hotel Vancouver",
+                "budget": "₹11,500–₹17,500/night"
+              },
+              {
+                "name": "Blue Horizon Hotel",
+                "budget": "₹16,000–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Japadog",
+              "The Naam",
+              "Jam Cafe"
+            ]
+          },
+          {
+            "theme": "North Shore Bridges & Skyline Views",
+            "activities": [
+              {
+                "name": "Capilano Suspension Bridge Park",
+                "cost": "₹4,337 pp"
+              },
+              {
+                "name": "FlyOver Canada immersive ride",
+                "cost": "₹2,418 pp"
+              },
+              {
+                "name": "Canada Place waterfront and Coal Harbour walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "YWCA Hotel Vancouver",
+                "budget": "₹11,500–₹17,500/night"
+              },
+              {
+                "name": "Blue Horizon Hotel",
+                "budget": "₹16,000–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Miku",
+              "Japadog",
+              "The Naam"
+            ]
+          },
+          {
+            "theme": "Mountain Day or Aquarium Split",
+            "activities": [
+              {
+                "name": "Grouse Mountain Skyride",
+                "cost": "₹4,650 pp"
+              },
+              {
+                "name": "Vancouver Aquarium",
+                "cost": "₹2,604 pp"
+              },
+              {
+                "name": "English Bay sunset finish"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "YWCA Hotel Vancouver",
+                "budget": "₹11,500–₹17,500/night"
+              },
+              {
+                "name": "Blue Horizon Hotel",
+                "budget": "₹16,000–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Jam Cafe",
+              "Miku",
+              "The Naam"
+            ]
+          },
+          {
+            "theme": "Rainy Day Flex",
+            "activities": [
+              {
+                "name": "Museum of Anthropology or Vancouver Art Gallery swap-in for bad weather",
+                "cost": "₹1,500–₹1,900 pp"
+              },
+              {
+                "name": "Robson Street shopping and coffee break"
+              },
+              {
+                "name": "False Creek ferry hop between downtown and Granville Island",
+                "cost": "₹372–₹620 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "YWCA Hotel Vancouver",
+                "budget": "₹11,500–₹17,500/night"
+              },
+              {
+                "name": "Blue Horizon Hotel",
+                "budget": "₹16,000–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Miku",
+              "Japadog",
+              "The Naam"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Toronto",
+        "to": "Ottawa",
+        "method": "VIA Rail Corridor train from Toronto Union to Ottawa, with FlixBus as the cheaper Greyhound-style coach backup (about 4.5-6 hours)",
+        "cost": "₹2,170–₹9,300"
+      },
+      {
+        "from": "Ottawa",
+        "to": "Montreal",
+        "method": "VIA Rail or FlixBus from Ottawa to Montreal (about 2-2.5 hours)",
+        "cost": "₹1,240–₹6,200"
+      },
+      {
+        "from": "Montreal",
+        "to": "Quebec City",
+        "method": "VIA Rail or Orléans Express / FlixBus-style coach via Quebec corridor (about 3-3.5 hours)",
+        "cost": "₹1,550–₹7,440"
+      },
+      {
+        "from": "Quebec City",
+        "to": "Banff",
+        "method": "Porter or WestJet flight via Toronto or Montreal into Calgary, then Banff Airporter or Brewster shuttle to Banff (usually 8-11 hours door to door)",
+        "cost": "₹16,500–₹31,000"
+      },
+      {
+        "from": "Banff",
+        "to": "Vancouver",
+        "method": "Shuttle back to Calgary plus Porter or WestJet flight to Vancouver; use the direct coach only if you want a very long scenic day",
+        "cost": "₹11,000–₹22,500"
+      }
+    ],
+    "extras": [
+      "June to September is the easiest all-round window for this route, while December to March is best only if you want frozen-canal, Christmas market, or ski-season energy.",
+      "Reserve Banff Gondola, Lake Louise shuttles, and summer Rockies hotels as soon as dates are fixed — the best-value slots disappear first.",
+      "Greyhound no longer operates domestically in most of Canada, so FlixBus is the easiest coach substitute when you want to save versus VIA Rail.",
+      "Carry a light waterproof layer even in summer; Vancouver rain and Rockies temperature swings can hit the same trip.",
+      "If you want a cheaper Rockies stay, sleep in Canmore and day-trip into Banff by Roam Transit or car."
+    ],
+    "cityImages": {
+      "Toronto": [
+        "CN Tower Toronto skyline at dusk",
+        "Distillery District Toronto brick lanes",
+        "St Lawrence Market Toronto interior"
+      ],
+      "Ottawa": [
+        "Parliament Hill Ottawa summer view",
+        "Rideau Canal Ottawa locks",
+        "ByWard Market Ottawa street scene"
+      ],
+      "Montreal": [
+        "Old Montreal Notre Dame Basilica exterior",
+        "Mount Royal Montreal skyline lookout",
+        "Plateau Mont Royal Montreal street murals"
+      ],
+      "Quebec City": [
+        "Chateau Frontenac Quebec City terrace",
+        "Petit Champlain Quebec City street",
+        "Montmorency Falls Quebec suspension bridge"
+      ],
+      "Banff": [
+        "Banff Gondola Sulphur Mountain view",
+        "Lake Louise turquoise water summer",
+        "Banff Avenue mountains at sunset"
+      ],
+      "Vancouver": [
+        "Stanley Park Vancouver seawall skyline",
+        "Capilano Suspension Bridge forest lights",
+        "Granville Island Vancouver market stalls"
+      ]
+    }
+  }
+}
