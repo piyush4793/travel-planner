@@ -555,9 +555,9 @@
     "lng": 6.13,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Croatia",
@@ -715,9 +715,9 @@
     "lng": 33.43,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 12,
+    "maxDays": 14
   },
   {
     "name": "Malta",
@@ -725,29 +725,29 @@
     "lng": 14.38,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 11
   },
   {
     "name": "Monaco",
-    "lat": 43.75,
-    "lng": 7.41,
+    "lat": 43.73,
+    "lng": 7.42,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 2,
+    "maxDays": 2
   },
   {
     "name": "Liechtenstein",
     "lat": 47.17,
-    "lng": 9.56,
+    "lng": 9.51,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 3,
+    "maxDays": 4
   },
   {
     "name": "Andorra",

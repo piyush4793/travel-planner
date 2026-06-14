@@ -1,0 +1,711 @@
+{
+  "name": "Cyprus",
+  "seed": false,
+  "lat": 35.13,
+  "lng": 33.43,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹85,000–₹1.35L",
+    "couple": "₹1.45L–₹2.3L",
+    "family4": "₹2.8L–₹4.4L"
+  },
+  "experiences": [
+    "Beaches",
+    "Archaeology",
+    "Food",
+    "Mountain villages",
+    "Road trips"
+  ],
+  "avoid": [
+    "Peak heat and beach crowds in July and August",
+    "Depending only on rural buses in Troodos after late afternoon"
+  ],
+  "combo": [
+    "Greece",
+    "Jordan"
+  ],
+  "landmark": "Petra tou Romiou",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Larnaca works for a short stopover, but Cyprus feels far better with 8-12 days so you can combine cities, ruins and Troodos mountain villages.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Larnaca",
+      "lat": 34.918,
+      "lng": 33.6232,
+      "notes": "Palm-lined seafront, Saint Lazarus church, salt lake sunsets and easy airport arrival"
+    },
+    {
+      "name": "Nicosia",
+      "lat": 35.1856,
+      "lng": 33.3823,
+      "notes": "Cyprus' divided capital with Venetian walls, museums, cafe lanes and Büyük Han"
+    },
+    {
+      "name": "Limassol",
+      "lat": 34.7071,
+      "lng": 33.0226,
+      "notes": "Lively seafront city for old quarter walks, tavernas and easy access to Kourion"
+    },
+    {
+      "name": "Paphos",
+      "lat": 34.772,
+      "lng": 32.4297,
+      "notes": "Best base for mosaics, Tombs of the Kings, harbour evenings and Akamas-side day trips"
+    },
+    {
+      "name": "Troodos",
+      "lat": 34.915,
+      "lng": 32.8597,
+      "notes": "Mountain forests, painted churches, Kykkos Monastery and cooler air than the coast"
+    },
+    {
+      "name": "Ayia Napa",
+      "lat": 34.9821,
+      "lng": 34.0018,
+      "notes": "Nissi Beach, Cape Greco sea caves and easy blue-water beach days"
+    }
+  ],
+  "itinerary": {
+    "sim": "Pick up a Cytamobile-Vodafone or epic prepaid SIM at Larnaca Airport, or install an Airalo eSIM before departure if you want maps and taxi apps live on landing.",
+    "apps": [
+      "Google Maps",
+      "Intercity Buses Cyprus",
+      "Pafos Buses (OSYPA)",
+      "Bolt",
+      "Booking.com",
+      "Wolt",
+      "XE Currency",
+      "Windy"
+    ],
+    "cityOrder": [
+      "Larnaca",
+      "Nicosia",
+      "Limassol",
+      "Paphos",
+      "Troodos",
+      "Ayia Napa"
+    ],
+    "cities": {
+      "Larnaca": {
+        "name": "Larnaca",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Airport Arrival, Old Quarter & Finikoudes",
+            "activities": [
+              {
+                "name": "Larnaca Airport bus or taxi into Finikoudes / city centre",
+                "cost": "₹180–₹1,350"
+              },
+              {
+                "name": "Church of Saint Lazarus",
+                "cost": "₹0"
+              },
+              {
+                "name": "Larnaca Fort and medieval seafront quarter",
+                "cost": "₹225"
+              },
+              {
+                "name": "Finikoudes promenade and beach walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mackenzie Beach sunset",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Frangiorgio Hotel",
+                "budget": "₹6,300–₹9,450/night"
+              },
+              {
+                "name": "Achilleos City Hotel",
+                "budget": "₹6,750–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Militzis",
+              "To Kazani Traditional Tavern",
+              "Aldente Cucina Italiana"
+            ]
+          },
+          {
+            "theme": "Salt Lake, Tekke & Local History",
+            "activities": [
+              {
+                "name": "Hala Sultan Tekke",
+                "cost": "₹0"
+              },
+              {
+                "name": "Larnaca Salt Lake walking paths",
+                "cost": "₹0"
+              },
+              {
+                "name": "Kamares Aqueduct",
+                "cost": "₹0"
+              },
+              {
+                "name": "Pierides Museum",
+                "cost": "₹450"
+              },
+              {
+                "name": "Cyprus historic centre coffee stop",
+                "cost": "₹270–₹540"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Frangiorgio Hotel",
+                "budget": "₹6,300–₹9,450/night"
+              },
+              {
+                "name": "Achilleos City Hotel",
+                "budget": "₹6,750–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Maqam Al Sultan",
+              "Militzis",
+              "To Kafe Tis Chrysanthi's"
+            ]
+          }
+        ]
+      },
+      "Nicosia": {
+        "name": "Nicosia",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Venetian Walls, Ledra Street & Büyük Han",
+            "activities": [
+              {
+                "name": "Intercity bus Larnaca to Nicosia",
+                "cost": "₹360"
+              },
+              {
+                "name": "Ledra Street and old city lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Büyük Han courtyard and artisan shops",
+                "cost": "₹0"
+              },
+              {
+                "name": "Shacolas Tower Museum and Observatory",
+                "cost": "₹225"
+              },
+              {
+                "name": "Famagusta Gate and Venetian walls walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Castelli Hotel",
+                "budget": "₹6,300–₹9,000/night"
+              },
+              {
+                "name": "Centrum Hotel",
+                "budget": "₹8,100–₹11,700/night"
+              }
+            ],
+            "meals": [
+              "Piatsa Gourounaki",
+              "Zanettos Tavern",
+              "To Anamma Traditional Restaurant"
+            ]
+          },
+          {
+            "theme": "Museums, Markets & Capital Cafe Hopping",
+            "activities": [
+              {
+                "name": "Cyprus Museum",
+                "cost": "₹0"
+              },
+              {
+                "name": "Leventis Municipal Museum of Nicosia",
+                "cost": "₹0"
+              },
+              {
+                "name": "Omeriye quarter and restored hammam district",
+                "cost": "₹0"
+              },
+              {
+                "name": "Nicosia Municipal Gardens break",
+                "cost": "₹0"
+              },
+              {
+                "name": "Old city meze dinner",
+                "cost": "₹1,350–₹2,250"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Castelli Hotel",
+                "budget": "₹6,300–₹9,000/night"
+              },
+              {
+                "name": "Centrum Hotel",
+                "budget": "₹8,100–₹11,700/night"
+              }
+            ],
+            "meals": [
+              "Pyxida Fish Tavern",
+              "Sawa Restaurant",
+              "To Anamma Traditional Restaurant"
+            ]
+          }
+        ]
+      },
+      "Limassol": {
+        "name": "Limassol",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Old Port, Castle & Seafront",
+            "activities": [
+              {
+                "name": "Intercity bus Nicosia to Limassol",
+                "cost": "₹540"
+              },
+              {
+                "name": "Limassol Castle and Cyprus Medieval Museum",
+                "cost": "₹405"
+              },
+              {
+                "name": "Old Port and Marina stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Molos promenade sunset walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Anexartisias Street cafe stop",
+                "cost": "₹270–₹540"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pefkos City Hotel",
+                "budget": "₹7,200–₹10,800/night"
+              },
+              {
+                "name": "Metropole Hotel",
+                "budget": "₹6,750–₹10,350/night"
+              }
+            ],
+            "meals": [
+              "Meze Taverna Restaurant",
+              "Karatello Tavern",
+              "Dionysus Mansion"
+            ]
+          },
+          {
+            "theme": "Kourion Ruins & Kolossi Castle",
+            "activities": [
+              {
+                "name": "Intercity or local bus / taxi out to Kourion",
+                "cost": "₹180–₹1,350"
+              },
+              {
+                "name": "Kourion Archaeological Site",
+                "cost": "₹405"
+              },
+              {
+                "name": "Kolossi Castle",
+                "cost": "₹225"
+              },
+              {
+                "name": "Lady's Mile Beach stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Limassol Municipal Garden evening loop",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pefkos City Hotel",
+                "budget": "₹7,200–₹10,800/night"
+              },
+              {
+                "name": "Metropole Hotel",
+                "budget": "₹6,750–₹10,350/night"
+              }
+            ],
+            "meals": [
+              "Meze Taverna Restaurant",
+              "Karatello Tavern",
+              "Draught Microbrewery"
+            ]
+          }
+        ]
+      },
+      "Paphos": {
+        "name": "Paphos",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Harbour, Mosaics & Tombs of the Kings",
+            "activities": [
+              {
+                "name": "Intercity bus Limassol to Paphos",
+                "cost": "₹360"
+              },
+              {
+                "name": "Tombs of the Kings",
+                "cost": "₹225"
+              },
+              {
+                "name": "Kato Paphos Archaeological Park",
+                "cost": "₹405"
+              },
+              {
+                "name": "Paphos Harbour and Castle exterior walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "OSYPA urban bus single ride",
+                "cost": "₹180"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Axiothea Hotel",
+                "budget": "₹5,400–₹8,100/night"
+              },
+              {
+                "name": "Pyramos Hotel",
+                "budget": "₹5,850–₹8,550/night"
+              }
+            ],
+            "meals": [
+              "Hondros",
+              "Laona Restaurant",
+              "Windmill Restaurant"
+            ]
+          },
+          {
+            "theme": "Aphrodite Coast & Monastery Detours",
+            "activities": [
+              {
+                "name": "Petra tou Romiou viewpoint",
+                "cost": "₹0"
+              },
+              {
+                "name": "Agios Neophytos Monastery museum and Enkleistra",
+                "cost": "₹225"
+              },
+              {
+                "name": "Paphos Old Town and Markideio area",
+                "cost": "₹0"
+              },
+              {
+                "name": "OSYPA day pass",
+                "cost": "₹540"
+              },
+              {
+                "name": "Optional Akamas Blue Lagoon boat trip",
+                "cost": "₹2,250–₹3,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Axiothea Hotel",
+                "budget": "₹5,400–₹8,100/night"
+              },
+              {
+                "name": "Pyramos Hotel",
+                "budget": "₹5,850–₹8,550/night"
+              }
+            ],
+            "meals": [
+              "7 St. Georges Tavern",
+              "Koutourou Ouzeri",
+              "Laona Restaurant"
+            ]
+          }
+        ]
+      },
+      "Troodos": {
+        "name": "Troodos",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Kykkos Monastery & Mountain Roads",
+            "activities": [
+              {
+                "name": "Rental car from Paphos or Limassol into Troodos",
+                "cost": "₹3,150–₹5,400/day"
+              },
+              {
+                "name": "Kykkos Monastery main church and courtyards",
+                "cost": "₹0"
+              },
+              {
+                "name": "Kykkos Monastery Museum and Treasury",
+                "cost": "₹450"
+              },
+              {
+                "name": "Throni viewpoint and Makarios III tomb",
+                "cost": "₹0"
+              },
+              {
+                "name": "Troodos Square evening stroll",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jubilee Hotel Troodos",
+                "budget": "₹6,300–₹9,900/night"
+              },
+              {
+                "name": "New Helvetia Hotel",
+                "budget": "₹7,200–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Psilo Dendro",
+              "Skylight",
+              "To Anoi"
+            ]
+          },
+          {
+            "theme": "Forests, Waterfalls & Painted Churches",
+            "activities": [
+              {
+                "name": "Caledonia Waterfalls trail",
+                "cost": "₹0"
+              },
+              {
+                "name": "Platres village and trout lunch stop",
+                "cost": "₹900–₹1,800"
+              },
+              {
+                "name": "Church of Agios Nikolaos tis Stegis",
+                "cost": "₹0"
+              },
+              {
+                "name": "Omodos village detour if self-driving",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lambouri Winery tasting",
+                "cost": "₹900–₹1,350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jubilee Hotel Troodos",
+                "budget": "₹6,300–₹9,900/night"
+              },
+              {
+                "name": "New Helvetia Hotel",
+                "budget": "₹7,200–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Psilo Dendro",
+              "To Anoi",
+              "Skylight"
+            ]
+          }
+        ]
+      },
+      "Ayia Napa": {
+        "name": "Ayia Napa",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Nissi Beach, Sculpture Park & Monastery",
+            "activities": [
+              {
+                "name": "Drive from Troodos via Larnaca or intercity bus plus local connection",
+                "cost": "₹540–₹4,500"
+              },
+              {
+                "name": "Nissi Beach day",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ayia Napa Monastery",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ayia Napa Sculpture Park",
+                "cost": "₹0"
+              },
+              {
+                "name": "Love Bridge sunset stop",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "River Rock Hotel",
+                "budget": "₹7,650–₹12,600/night"
+              },
+              {
+                "name": "Nelia Gardens",
+                "budget": "₹6,750–₹10,350/night"
+              }
+            ],
+            "meals": [
+              "Sage Restaurant & Wine Bar",
+              "Isaac Tavern",
+              "Quadro"
+            ]
+          },
+          {
+            "theme": "Cape Greco Sea Caves & Blue Water Day",
+            "activities": [
+              {
+                "name": "Cape Greco National Forest Park viewpoints",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sea Caves and Konnos Bay stops",
+                "cost": "₹0"
+              },
+              {
+                "name": "Cycle or scooter rental for the coast road",
+                "cost": "₹1,350–₹3,150"
+              },
+              {
+                "name": "Blue Lagoon or coastal sightseeing boat",
+                "cost": "₹1,800–₹3,150"
+              },
+              {
+                "name": "Intercity bus Ayia Napa to Larnaca for onward airport link",
+                "cost": "₹360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "River Rock Hotel",
+                "budget": "₹7,650–₹12,600/night"
+              },
+              {
+                "name": "Nelia Gardens",
+                "budget": "₹6,750–₹10,350/night"
+              }
+            ],
+            "meals": [
+              "Sage Restaurant & Wine Bar",
+              "Los Bandidos",
+              "Isaac Tavern"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Larnaca",
+        "to": "Nicosia",
+        "method": "Intercity bus from Finikoudes is the simplest budget hop between the airport coast and the capital.",
+        "cost": "₹360"
+      },
+      {
+        "from": "Nicosia",
+        "to": "Limassol",
+        "method": "Frequent Intercity buses run most of the day and are easier than driving if you only want city time.",
+        "cost": "₹540"
+      },
+      {
+        "from": "Limassol",
+        "to": "Paphos",
+        "method": "Use Intercity buses for a low-friction westbound transfer.",
+        "cost": "₹360"
+      },
+      {
+        "from": "Paphos",
+        "to": "Troodos",
+        "method": "Rental car is fastest for mountain villages and monasteries; buses exist but force slow backtracking.",
+        "cost": "₹3,150–₹5,400/day"
+      },
+      {
+        "from": "Troodos",
+        "to": "Ayia Napa",
+        "method": "Best done by rental car via Larnaca, or with a long bus combination through Limassol / Nicosia / Larnaca.",
+        "cost": "₹540–₹4,500"
+      },
+      {
+        "from": "Ayia Napa",
+        "to": "Larnaca",
+        "method": "Intercity bus or regional bus connection gets you back to Larnaca for flights without needing a final rental day.",
+        "cost": "₹360"
+      }
+    ],
+    "extras": [
+      "Intercity buses are strong for Larnaca, Nicosia, Limassol and Paphos, but they thin out in the evening and are weak for deeper Troodos village-hopping.",
+      "Use OSYPA day passes in Paphos when you want to stitch together Tombs of the Kings, the harbour and Coral Bay-side routes without parking stress.",
+      "Rent a car for one or two days specifically for Troodos and Cape Greco if you want scenic stops; remember Cyprus drives on the left.",
+      "Tombs of the Kings, Kourion and Kykkos Museum are among the best-value paid sights on the island, so keep small cash or a working card handy.",
+      "For beaches, September and early October give you warm water with much softer crowds than August."
+    ],
+    "cityImages": {
+      "Larnaca": [
+        "Church of Saint Lazarus Larnaca",
+        "Finikoudes promenade Larnaca",
+        "Hala Sultan Tekke Larnaca Salt Lake"
+      ],
+      "Nicosia": [
+        "Ledra Street Nicosia old city",
+        "Buyuk Han Nicosia Cyprus",
+        "Cyprus Museum Nicosia"
+      ],
+      "Limassol": [
+        "Limassol Castle Cyprus",
+        "Molos promenade Limassol",
+        "Kourion amphitheatre Cyprus"
+      ],
+      "Paphos": [
+        "Tombs of the Kings Paphos",
+        "Paphos Archaeological Park mosaics",
+        "Petra tou Romiou Cyprus"
+      ],
+      "Troodos": [
+        "Kykkos Monastery Troodos",
+        "Caledonia Waterfalls Troodos",
+        "Platres village Cyprus"
+      ],
+      "Ayia Napa": [
+        "Nissi Beach Ayia Napa",
+        "Cape Greco sea caves Cyprus",
+        "Ayia Napa Sculpture Park"
+      ]
+    }
+  }
+}

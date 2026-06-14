@@ -1,0 +1,253 @@
+{
+  "name": "Monaco",
+  "seed": false,
+  "lat": 43.73,
+  "lng": 7.42,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹55K–₹1.1L",
+    "couple": "₹1L–₹2.1L",
+    "family4": "₹2.2L–₹4.1L"
+  },
+  "experiences": [
+    "Casino Square",
+    "Oceanographic Museum",
+    "Prince's Palace",
+    "Port Hercule",
+    "French Riviera Day Trip"
+  ],
+  "avoid": [
+    "Monaco Grand Prix week in late May — hotel rates and road closures spike dramatically.",
+    "Monaco Yacht Show period in late September — premium stays sell out fast.",
+    "Midday summer cruise-ship hours can make Monaco-Ville and Casino Square feel packed."
+  ],
+  "combo": [
+    "France",
+    "Italy"
+  ],
+  "landmark": "Casino de Monte-Carlo",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": "Monaco works best as a day trip or one-night splurge from Nice; the Monaco-Monte-Carlo station sits centrally, and most highlights are walkable if you are comfortable with hills and stairs.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Monte Carlo",
+      "lat": 43.7401,
+      "lng": 7.4286,
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "notes": "Casino de Monte-Carlo, Café de Paris terraces, luxury shopping arcades and Belle Époque facades in Monaco's most famous district."
+    },
+    {
+      "name": "Monaco-Ville",
+      "lat": 43.7308,
+      "lng": 7.4225,
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "notes": "The old town on Le Rocher with Prince's Palace, Saint Nicholas Cathedral, panoramic lanes and the Oceanographic Museum."
+    },
+    {
+      "name": "La Condamine",
+      "lat": 43.7342,
+      "lng": 7.4197,
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "notes": "Port Hercule waterfront district with Marché de la Condamine, the Monaco Grand Prix harbor stretch and easy station access."
+    }
+  ],
+  "itinerary": {
+    "sim": "Use a France/EU eSIM or tourist SIM for the Riviera, but double-check Monaco roaming terms because some EU plans treat Monaco as non-EU roaming. Download offline maps before arrival.",
+    "apps": [
+      "SNCF Connect",
+      "Monapass",
+      "Google Maps",
+      "Booking.com",
+      "Rome2Rio",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Monaco-Ville",
+      "Monte Carlo"
+    ],
+    "cities": {
+      "Monaco-Ville": {
+        "name": "Monaco-Ville",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Best for a first Monaco day: arrive by train from Nice, cover Le Rocher's headline sights, then walk down through La Condamine and Port Hercule.",
+        "days": [
+          {
+            "theme": "Old Town, palace history and Monaco's cliff-edge classics",
+            "activities": [
+              {
+                "name": "TER train from Nice-Ville to Monaco-Monte-Carlo",
+                "cost": "₹414 pp",
+                "tip": "The ride usually takes about 25 minutes and is the cheapest, least stressful way to arrive from Nice."
+              },
+              {
+                "name": "CAM bus or walk up to Monaco-Ville from the station/port area",
+                "cost": "₹135 pp via Monapass or ₹180 pp on board",
+                "tip": "Monaco is compact but steep; use the bus or public lifts if you want to save energy for museum time."
+              },
+              {
+                "name": "Prince's Palace of Monaco State Apartments",
+                "cost": "₹900 pp",
+                "tip": "The paid interior visit is seasonal, generally April to mid-October; the 11:55 AM changing of the guard outside is free."
+              },
+              {
+                "name": "Oceanographic Museum of Monaco",
+                "cost": "₹2,025 pp",
+                "tip": "Buy a timed ticket in advance in peak months; the rooftop terrace and aquarium tanks easily take 2–3 hours."
+              },
+              {
+                "name": "Saint-Martin Gardens, Saint Nicholas Cathedral and downhill walk into La Condamine",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel de France",
+                "budget": "₹14,400–₹22,500/night"
+              },
+              {
+                "name": "Hôtel Ozz by Happyculture, Nice",
+                "budget": "₹7,200–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "U Cavagnetu",
+              "Le Pinocchio",
+              "Marché de la Condamine"
+            ]
+          }
+        ]
+      },
+      "Monte Carlo": {
+        "name": "Monte Carlo",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Keep Monte Carlo for the polished postcard side of Monaco: Casino Square, harbor views and a relaxed waterfront finish before your train back to Nice.",
+        "days": [
+          {
+            "theme": "Casino facades, Formula 1 corners and Monaco's luxury waterfront",
+            "activities": [
+              {
+                "name": "Walk through La Condamine via Port Hercule and the Fairmont Hairpin section of the Formula 1 street circuit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Casino de Monte-Carlo exterior, Place du Casino and Hôtel de Paris gardens",
+                "cost": "₹0",
+                "tip": "The exterior and surrounding square are free; only the gaming rooms require a paid ticket and dress code after the afternoon opening."
+              },
+              {
+                "name": "Japanese Garden of Monaco and Avenue Princesse Grace stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Larvotto beach walk or quick swim in warm months",
+                "cost": "₹0"
+              },
+              {
+                "name": "TER train back from Monaco-Monte-Carlo to Nice-Ville",
+                "cost": "₹414 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Novotel Monte-Carlo",
+                "budget": "₹24,300–₹36,000/night"
+              },
+              {
+                "name": "ibis Styles Nice Centre Gare",
+                "budget": "₹10,800–₹16,200/night"
+              }
+            ],
+            "meals": [
+              "Café de Paris Monte-Carlo",
+              "Mada One",
+              "Beefbar Monaco"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Nice",
+        "to": "Monaco-Ville",
+        "method": "Direct TER regional train from Nice-Ville to Monaco-Monte-Carlo, then CAM bus or a steep walk/public lifts into the old town",
+        "cost": "₹414 pp by train + ₹135–₹180 pp by CAM bus if needed"
+      },
+      {
+        "from": "Monaco-Ville",
+        "to": "Monte Carlo",
+        "method": "Walk downhill through La Condamine and Port Hercule, or use a short CAM bus ride across the city-state",
+        "cost": "₹0 on foot or ₹135–₹180 pp by CAM bus"
+      },
+      {
+        "from": "Monte Carlo",
+        "to": "Nice",
+        "method": "Return TER train from Monaco-Monte-Carlo to Nice-Ville",
+        "cost": "₹414 pp"
+      }
+    ],
+    "extras": [
+      "Monaco is tiny enough that one full day covers the essentials; add a second only if you want museum time, a nicer lunch or a beach/promenade afternoon.",
+      "Stay in Nice or nearby Beaulieu-sur-Mer/Villefranche-sur-Mer if Monaco hotel prices feel excessive — the train link is fast and frequent.",
+      "Wear comfortable shoes: public elevators help, but Monaco's vertical streets still mean a lot of uphill walking.",
+      "If you care about the Prince's Palace interiors, plan between April and October because the State Apartments are seasonal."
+    ],
+    "cityImages": {
+      "Monte Carlo": [
+        "Casino de Monte-Carlo facade",
+        "Place du Casino Monaco",
+        "Larvotto Monaco beach"
+      ],
+      "Monaco-Ville": [
+        "Prince's Palace of Monaco",
+        "Oceanographic Museum of Monaco",
+        "Monaco-Ville Le Rocher"
+      ],
+      "La Condamine": [
+        "Port Hercules Monaco yachts",
+        "Marche de la Condamine Monaco",
+        "Monaco Grand Prix harbor La Condamine"
+      ]
+    }
+  }
+}

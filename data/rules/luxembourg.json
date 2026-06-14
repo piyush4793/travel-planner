@@ -1,0 +1,380 @@
+{
+  "name": "Luxembourg",
+  "seed": false,
+  "lat": 49.82,
+  "lng": 6.13,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹1.3L–₹2L",
+    "couple": "₹2.1L–₹3.4L",
+    "family4": "₹4.4L–₹6.8L"
+  },
+  "experiences": [
+    "UNESCO old town walks in Luxembourg City",
+    "Bock Casemates & Kirchberg museums",
+    "Vianden Castle on the Our river",
+    "Echternach abbey town charm",
+    "Mullerthal Trail and Schiessentümpel waterfall",
+    "Free nationwide public transport"
+  ],
+  "avoid": [
+    "Grey late-autumn and deep-winter weeks if you want long hiking days in Mullerthal — trails feel damp, daylight is short and smaller towns wind down early"
+  ],
+  "combo": [
+    "Belgium",
+    "France",
+    "Germany"
+  ],
+  "landmark": "Bock Casemates, Luxembourg City",
+  "travelStyle": [
+    "touch-and-go",
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Luxembourg City",
+      "lat": 49.6116,
+      "lng": 6.1319,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "UNESCO old quarters, deep valleys, museums and trams with easy bases for day trips across the country"
+    },
+    {
+      "name": "Vianden",
+      "lat": 49.9355,
+      "lng": 6.2068,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Storybook castle town on the Our with chairlift views, Victor Hugo links and a compact medieval centre"
+    },
+    {
+      "name": "Echternach",
+      "lat": 49.8106,
+      "lng": 6.4206,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Luxembourg's oldest town with abbey heritage, relaxed squares and a practical base for the eastern hiking belt"
+    },
+    {
+      "name": "Mullerthal",
+      "lat": 49.7701,
+      "lng": 6.3478,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Little Switzerland landscapes with forested trails, rock gorges and the photogenic Schiessentümpel bridge"
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange Holiday Europe eSIM or Airalo Eurolink both work well in Luxembourg and neighboring EU countries — expect roughly ₹1,800–₹2,700 for 10–12GB.",
+    "apps": [
+      "CFL mobile",
+      "mobiliteit.lu",
+      "RGTR",
+      "Google Maps",
+      "Visit Luxembourg",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Luxembourg City",
+      "Vianden",
+      "Echternach",
+      "Mullerthal"
+    ],
+    "cities": {
+      "Luxembourg City": {
+        "name": "Luxembourg City",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is ideal for the UNESCO centre plus Kirchberg museums; a third day works if you want more galleries or a slower café-and-viewpoint pace.",
+        "days": [
+          {
+            "theme": "Old Quarters, Corniche & Casemates",
+            "activities": [
+              {
+                "name": "Bock Casemates",
+                "cost": "₹990",
+                "tip": "Adult ticket is €11; book a timed slot in summer because the tunnels cap visitor numbers."
+              },
+              {
+                "name": "Chemin de la Corniche and old fortification viewpoints"
+              },
+              {
+                "name": "Grand Ducal Palace exterior, Place Guillaume II and Notre-Dame Cathedral walk"
+              },
+              {
+                "name": "Grund riverside stroll and Neumünster Abbey courtyard"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Styles Luxembourg Centre Gare",
+                "budget": "₹10,800–₹14,400/night"
+              },
+              {
+                "name": "Hotel Parc Belle-Vue",
+                "budget": "₹12,150–₹16,200/night"
+              }
+            ],
+            "meals": [
+              "Brasserie Guillaume",
+              "Kaempff-Kohler",
+              "Urban Bar & Kitchen"
+            ]
+          },
+          {
+            "theme": "Kirchberg Museums & Valley Views",
+            "activities": [
+              {
+                "name": "MUDAM Luxembourg",
+                "cost": "₹900",
+                "tip": "Adult ticket is €10; the museum pairs well with the nearby Fort Thüngen and Philharmonie area."
+              },
+              {
+                "name": "Dräi Eechelen Museum and Fort Thüngen exterior grounds"
+              },
+              {
+                "name": "Pfaffenthal Panoramic Elevator and lower-town walk"
+              },
+              {
+                "name": "Luxembourg City History Museum",
+                "cost": "₹450"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Styles Luxembourg Centre Gare",
+                "budget": "₹10,800–₹14,400/night"
+              },
+              {
+                "name": "Hotel Parc Belle-Vue",
+                "budget": "₹12,150–₹16,200/night"
+              }
+            ],
+            "meals": [
+              "Le Bouquet Garni",
+              "Brasserie Guillaume",
+              "Chocolate House Nathalie Bonn"
+            ]
+          }
+        ]
+      },
+      "Vianden": {
+        "name": "Vianden",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Vianden is perfect as an overnight or long day trip; stay longer only if you want slow riverside time, extra hiking or the chairlift twice.",
+        "days": [
+          {
+            "theme": "Castle Hill, Victor Hugo & River Views",
+            "activities": [
+              {
+                "name": "Vianden Castle",
+                "cost": "₹1,170",
+                "tip": "Adult ticket is €13; arrive early for quieter ramparts and valley panoramas."
+              },
+              {
+                "name": "Victor Hugo House Literary Museum"
+              },
+              {
+                "name": "Vianden chairlift for ridge views over the Our valley"
+              },
+              {
+                "name": "Ourdall promenade and upper-town lanes"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge du Château",
+                "budget": "₹9,900–₹13,500/night"
+              },
+              {
+                "name": "Hotel Victor Hugo",
+                "budget": "₹10,800–₹14,850/night"
+              }
+            ],
+            "meals": [
+              "Auberge Aal Veinen",
+              "Café du Pont",
+              "Restaurant Victor Hugo"
+            ]
+          }
+        ]
+      },
+      "Echternach": {
+        "name": "Echternach",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Echternach works well as a calm base for the east: abbey heritage by day, lakeside walks in the evening and short bus hops into the trail zone.",
+        "days": [
+          {
+            "theme": "Abbey Heritage & Lakeside Slow Travel",
+            "activities": [
+              {
+                "name": "Basilica of St Willibrord and Abbey courtyard"
+              },
+              {
+                "name": "Echternach Abbey Museum"
+              },
+              {
+                "name": "Market square, old lanes and town-wall fragments"
+              },
+              {
+                "name": "Echternach Lake promenade or pedal-boat break"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Bel Air Sport & Wellness",
+                "budget": "₹12,600–₹17,100/night"
+              },
+              {
+                "name": "Eden au Lac",
+                "budget": "₹11,700–₹15,750/night"
+              }
+            ],
+            "meals": [
+              "La Grappe d'Or",
+              "Restaurant Aal Eechternoach",
+              "Le Petit Poète"
+            ]
+          }
+        ]
+      },
+      "Mullerthal": {
+        "name": "Mullerthal",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Give Mullerthal a full day for the classic short hikes; add another if you want longer trail sections, cave-like rock passages or a slower rural stay.",
+        "days": [
+          {
+            "theme": "Little Switzerland Trails & Rock Formations",
+            "activities": [
+              {
+                "name": "Schiessentümpel waterfall and stone bridge"
+              },
+              {
+                "name": "Mullerthal Trail loop through Wollefsschlucht and forested rock passages"
+              },
+              {
+                "name": "Heringer Millen visitor stop and local produce break"
+              },
+              {
+                "name": "Aquatower Berdorf",
+                "cost": "₹450"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Trail-Inn Natur & Sporthotel",
+                "budget": "₹11,700–₹15,300/night"
+              },
+              {
+                "name": "Hôtel-Restaurant Kinnen",
+                "budget": "₹12,600–₹16,650/night"
+              }
+            ],
+            "meals": [
+              "Brasserie Heringer Millen",
+              "Restaurant Trail-Inn",
+              "Victoria vum Berdorfer Eck"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Luxembourg City",
+        "to": "Vianden",
+        "method": "CFL train from Luxembourg to Ettelbruck, then RGTR/CFL bus onward to Vianden (about 70–90 min total)",
+        "cost": "₹0"
+      },
+      {
+        "from": "Vianden",
+        "to": "Echternach",
+        "method": "Bus via Diekirch or Ettelbruck into Echternach (about 75–95 min total depending on connection)",
+        "cost": "₹0"
+      },
+      {
+        "from": "Echternach",
+        "to": "Mullerthal",
+        "method": "RGTR bus from Echternach to Mullerthal or Berdorf trailheads (about 20–30 min)",
+        "cost": "₹0"
+      },
+      {
+        "from": "Mullerthal",
+        "to": "Luxembourg City",
+        "method": "RGTR bus back to Luxembourg City via Echternach or Junglinster (about 55–75 min)",
+        "cost": "₹0"
+      }
+    ],
+    "extras": [
+      "Luxembourg's biggest budget advantage is free nationwide public transport in second class: CFL trains, RGTR buses, trams and city buses are all free, so intercity hops usually cost ₹0.",
+      "Bock Casemates, MUDAM and Vianden Castle are the three headline paid sights here; otherwise many of the best experiences are scenic walks, viewpoints and small-town wandering.",
+      "Mullerthal trails get slippery after rain, so pack shoes with grip and avoid rushing the rock passages late in the day.",
+      "Luxembourg City has the broadest restaurant choice by far; Vianden, Echternach and Mullerthal feel much quieter after dinner, especially outside peak summer weekends.",
+      "Check Monday and Tuesday openings before you plan museum-heavy days because smaller heritage sites sometimes shorten hours early in the week."
+    ],
+    "cityImages": {
+      "Luxembourg City": [
+        "Bock Casemates Luxembourg City",
+        "Chemin de la Corniche Luxembourg City",
+        "MUDAM Luxembourg"
+      ],
+      "Vianden": [
+        "Vianden Castle",
+        "Victor Hugo House Vianden",
+        "Vianden chairlift"
+      ],
+      "Echternach": [
+        "Echternach Abbey",
+        "Basilica of St Willibrord Echternach",
+        "Echternach Lake"
+      ],
+      "Mullerthal": [
+        "Schiessentümpel Mullerthal",
+        "Mullerthal Trail",
+        "Heringer Millen"
+      ]
+    }
+  }
+}

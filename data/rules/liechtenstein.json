@@ -1,0 +1,374 @@
+{
+  "name": "Liechtenstein",
+  "seed": false,
+  "lat": 47.17,
+  "lng": 9.51,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "November",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹1L–₹1.8L",
+    "couple": "₹1.8L–₹3.2L",
+    "family4": "₹3.8L–₹5.8L"
+  },
+  "experiences": [
+    "Vaduz museums",
+    "Vaduz Castle viewpoint",
+    "Malbun hiking & skiing",
+    "Walser villages",
+    "Gutenberg Castle"
+  ],
+  "avoid": [
+    "Most museums in Vaduz are closed on Mondays",
+    "Evening bus frequencies thin out outside Vaduz, so check the LIEmobil timetable before late dinners"
+  ],
+  "combo": [
+    "Switzerland",
+    "Austria"
+  ],
+  "landmark": "Vaduz Castle",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": "Liechtenstein is tiny and is best covered in 2–3 days, often paired with eastern Switzerland or western Austria.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Vaduz",
+      "lat": 47.1415,
+      "lng": 9.5215,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Compact, walkable capital for museums, the Städtle promenade and Vaduz Castle exterior views"
+    },
+    {
+      "name": "Malbun",
+      "lat": 47.101,
+      "lng": 9.6098,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Liechtenstein's alpine resort for easy ridge walks in summer and family-friendly skiing in winter"
+    },
+    {
+      "name": "Triesenberg",
+      "lat": 47.1181,
+      "lng": 9.5417,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Walser heritage village with valley viewpoints, traditional houses and a museum stop"
+    },
+    {
+      "name": "Balzers",
+      "lat": 47.0653,
+      "lng": 9.5025,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Southern Liechtenstein base for Burg Gutenberg, vineyards and quiet Rhine-side walks"
+    }
+  ],
+  "itinerary": {
+    "sim": "An Airalo Eurolink eSIM is the simplest short-stay option at roughly ₹450–₹1,900 depending on data; Swiss or Austrian roaming plans also work seamlessly in Liechtenstein.",
+    "apps": [
+      "LIEmobil",
+      "SBB Mobile",
+      "Google Maps",
+      "PostAuto",
+      "XE Currency",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Vaduz",
+      "Malbun",
+      "Triesenberg",
+      "Balzers"
+    ],
+    "cities": {
+      "Vaduz": {
+        "name": "Vaduz",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "The capital is extremely compact, so one well-paced day covers the main sights on foot plus one or two museums.",
+        "days": [
+          {
+            "theme": "Capital Core: Castles, Art & Stamps",
+            "activities": [
+              {
+                "name": "Walk up for Vaduz Castle exterior views and panorama over the Rhine Valley",
+                "cost": "₹0",
+                "tip": "The castle is the private residence of the princely family, so only the exterior and viewpoints are open year-round."
+              },
+              {
+                "name": "Kunstmuseum Liechtenstein",
+                "cost": "₹1,425"
+              },
+              {
+                "name": "PostMuseum Vaduz (Postage Stamp Museum; admission via Liechtenstein National Museum ticket)",
+                "cost": "₹950"
+              },
+              {
+                "name": "Liechtenstein National Museum",
+                "cost": "₹950"
+              },
+              {
+                "name": "Städtle promenade, Cathedral of St. Florin and Red House exterior walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Vaduzerhof by b_smart",
+                "budget": "₹15,200–₹20,900/night"
+              },
+              {
+                "name": "Residence Hotel",
+                "budget": "₹18,050–₹26,600/night"
+              },
+              {
+                "name": "Hotel Engel",
+                "budget": "₹12,350–₹17,100/night"
+              }
+            ],
+            "meals": [
+              "Brasserie Burg",
+              "Made in Italy",
+              "Balu Bäckerei Konditorei"
+            ]
+          }
+        ]
+      },
+      "Malbun": {
+        "name": "Malbun",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Use Malbun as the outdoors day: hike the ridge in summer or ski the compact slopes in winter, then head back to Vaduz or Triesenberg for the night.",
+        "days": [
+          {
+            "theme": "Alpine Liechtenstein: Ridge Walks or Ski Day",
+            "activities": [
+              {
+                "name": "Sareis chairlift round trip for easy alpine views",
+                "cost": "₹1,615"
+              },
+              {
+                "name": "Malbun–Sareis panoramic walk or summer meadow trails",
+                "cost": "₹0"
+              },
+              {
+                "name": "Malbun day ski pass in winter",
+                "cost": "₹5,225"
+              },
+              {
+                "name": "Village walk past the chapel and mountain hotels",
+                "cost": "₹0"
+              },
+              {
+                "name": "Family-friendly sledging or snow-play areas in winter",
+                "cost": "₹0–₹1,425"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "JUFA Hotel Malbun – Alpin-Resort",
+                "budget": "₹15,200–₹22,800/night"
+              },
+              {
+                "name": "Familien & Sporthotel TURNA Malbun",
+                "budget": "₹17,100–₹24,700/night"
+              },
+              {
+                "name": "Vögeli Alpenhotel Malbun",
+                "budget": "₹13,300–₹19,950/night"
+              }
+            ],
+            "meals": [
+              "Bergrestaurant Sareis",
+              "Restaurant Turna",
+              "Schlucher-Treff"
+            ]
+          }
+        ]
+      },
+      "Triesenberg": {
+        "name": "Triesenberg",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Triesenberg works well as a half- to full-day cultural stop between Vaduz and Malbun, with good valley views and a simple Walser heritage circuit.",
+        "days": [
+          {
+            "theme": "Walser Heritage & Valley Viewpoints",
+            "activities": [
+              {
+                "name": "Walser Museum Triesenberg",
+                "cost": "₹475"
+              },
+              {
+                "name": "Känzile viewpoint over the Rhine Valley",
+                "cost": "₹0"
+              },
+              {
+                "name": "St. Joseph parish church and old village lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Short village walk to traditional Walser wooden houses",
+                "cost": "₹0"
+              },
+              {
+                "name": "LIEmobil bus ride up from Vaduz for panoramic switchback views",
+                "cost": "₹285"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Oberland",
+                "budget": "₹13,300–₹18,050/night"
+              },
+              {
+                "name": "Hotel Restaurant Kulm",
+                "budget": "₹11,400–₹16,150/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Kainer",
+              "Restaurant Schäfle",
+              "Hotel Restaurant Kulm"
+            ]
+          }
+        ]
+      },
+      "Balzers": {
+        "name": "Balzers",
+        "minDays": 1,
+        "recDays": 0,
+        "maxDays": 1,
+        "note": "Balzers is the optional fourth stop when you want a slower final day focused on Gutenberg Castle and the country’s quieter southern end.",
+        "days": [
+          {
+            "theme": "Southern Liechtenstein & Gutenberg Castle",
+            "activities": [
+              {
+                "name": "Burg Gutenberg outer courtyard and hilltop approach",
+                "cost": "₹0"
+              },
+              {
+                "name": "Castle chapel and rose garden (May–October Sundays)",
+                "cost": "₹0"
+              },
+              {
+                "name": "Balzers old village lanes and parish church walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Rhine embankment walk or cycle on the valley floor",
+                "cost": "₹0"
+              },
+              {
+                "name": "Advance-booked Gutenberg Castle guided tour",
+                "cost": "from ₹4,750/person equivalent if 20-share a CHF 100 group tour"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Hofbalzers",
+                "budget": "₹13,300–₹18,050/night"
+              }
+            ],
+            "meals": [
+              "Restaurant dasRiet",
+              "Ristorante Pizzeria Zentrum Balzers",
+              "Gasthaus Zum Engel"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Vaduz",
+        "to": "Malbun",
+        "method": "LIEmobil bus 21 / PostBus via Triesenberg",
+        "cost": "₹475"
+      },
+      {
+        "from": "Malbun",
+        "to": "Triesenberg",
+        "method": "LIEmobil bus 21 downhill",
+        "cost": "₹285"
+      },
+      {
+        "from": "Triesenberg",
+        "to": "Balzers",
+        "method": "LIEmobil bus via Vaduz",
+        "cost": "₹380"
+      }
+    ],
+    "extras": [
+      "Liechtenstein has no airport; the easiest approach is Zurich Airport to Sargans or Buchs by train, then LIEmobil into Vaduz.",
+      "The country uses Swiss francs, and a simple working conversion is CHF 1 ≈ ₹95 for quick budgeting.",
+      "Vaduz is fully walkable, while Triesenberg, Malbun and Balzers are easiest by frequent LIEmobil buses rather than car rental.",
+      "Kunstmuseum Liechtenstein is free on Wednesdays, while most Vaduz museums close on Mondays.",
+      "If you only have 2 days, focus on Vaduz plus either Malbun for outdoors or Triesenberg for Walser culture."
+    ],
+    "cityImages": {
+      "Vaduz": [
+        "Vaduz Castle hilltop Liechtenstein",
+        "Kunstmuseum Liechtenstein black cube",
+        "Vaduz Städtle Cathedral of St. Florin"
+      ],
+      "Malbun": [
+        "Malbun ski resort Liechtenstein",
+        "Sareis chairlift Malbun",
+        "Malbun alpine meadow Liechtenstein"
+      ],
+      "Triesenberg": [
+        "Triesenberg Walser village Liechtenstein",
+        "Walser Museum Triesenberg",
+        "Känzile viewpoint Triesenberg"
+      ],
+      "Balzers": [
+        "Gutenberg Castle Balzers Liechtenstein",
+        "Balzers vineyard Gutenberg Castle",
+        "Balzers Rhine valley Liechtenstein"
+      ]
+    }
+  }
+}
