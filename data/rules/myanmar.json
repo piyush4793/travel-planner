@@ -1,0 +1,614 @@
+{
+  "name": "Myanmar",
+  "seed": false,
+  "lat": 19.76,
+  "lng": 96.08,
+  "region": "Asia",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹55K–₹95K",
+    "couple": "₹95K–₹1.7L",
+    "family4": "₹1.9L–₹3.2L"
+  },
+  "experiences": [
+    "Shwedagon Pagoda",
+    "Bagan temples",
+    "Irrawaddy river journeys",
+    "Inle Lake boat life",
+    "Ngapali Beach sunsets"
+  ],
+  "avoid": [
+    "June to September is the wettest stretch, with slower road transfers, flooded streets and rougher beach conditions",
+    "March and April are extremely hot across Yangon, Mandalay and Bagan, making daytime temple visits draining",
+    "Myanmar's political and security situation remains volatile after the 2021 coup, so check current government advisories, curfews and domestic flight suspensions before every leg"
+  ],
+  "combo": [
+    "Thailand",
+    "Laos"
+  ],
+  "landmark": "Bagan Archaeological Zone",
+  "travelStyle": [
+    "explorer",
+    "relaxed"
+  ],
+  "stopoverNote": "Yangon is still the easiest international gateway, but domestic transport schedules can change with little notice; keep buffers between flights, buses and beach legs.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Yangon",
+      "lat": 16.8409,
+      "lng": 96.1735,
+      "notes": "Colonial downtown, the golden Shwedagon skyline, teahouse culture and the country's most practical transport hub"
+    },
+    {
+      "name": "Bagan",
+      "lat": 21.1717,
+      "lng": 94.8585,
+      "notes": "Thousands of brick stupas, sunrise balloon skies, lacquerware workshops and easy e-bike temple circuits"
+    },
+    {
+      "name": "Mandalay",
+      "lat": 21.9588,
+      "lng": 96.0891,
+      "notes": "Royal palace history, monastery craft traditions, Amarapura sunsets and a good staging point for upper Myanmar"
+    },
+    {
+      "name": "Inle Lake",
+      "lat": 20.586,
+      "lng": 96.9102,
+      "notes": "Longtail boat days, leg-rowing fishers, stilt villages, Shan food and cooler highland air around Nyaung Shwe"
+    },
+    {
+      "name": "Ngapali Beach",
+      "lat": 18.4313,
+      "lng": 94.3897,
+      "notes": "Palm-lined Bay of Bengal sands, seafood shacks, bikeable fishing villages and Myanmar's classic slow beach finish"
+    }
+  ],
+  "itinerary": {
+    "sim": "MPT or ATOM are the easiest prepaid SIMs for this route; expect roughly ₹350–₹900 for enough data for maps, hotel messaging and flight re-checks, but keep screenshots because mobile networks can be disrupted.",
+    "apps": [
+      "Myanmar National Airlines",
+      "Aung Minalar Bus Ticket",
+      "Booking.com",
+      "Agoda",
+      "Google Maps (offline)",
+      "Grab",
+      "XE Currency",
+      "WhatsApp"
+    ],
+    "cityOrder": [
+      "Yangon",
+      "Bagan",
+      "Mandalay",
+      "Inle Lake",
+      "Ngapali Beach"
+    ],
+    "cities": {
+      "Yangon": {
+        "name": "Yangon",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is enough for the pagodas and downtown core; add a third only if you want museum time, slower tea-shop hopping or a cushion before an onward domestic flight.",
+        "days": [
+          {
+            "theme": "Golden pagodas, lakeside Yangon and a first taste of teahouse culture",
+            "activities": [
+              {
+                "name": "Shwedagon Pagoda foreigner ticket",
+                "cost": "₹780",
+                "tip": "This is the real 20,000 MMK foreigner fee, so carry cash and dress conservatively for shoulder and knee coverage."
+              },
+              {
+                "name": "People's Park and western Shwedagon viewpoints",
+                "cost": "₹0–₹80"
+              },
+              {
+                "name": "Kandawgyi Lake boardwalk stroll",
+                "cost": "₹0–₹120"
+              },
+              {
+                "name": "Karaweik Palace exterior and lakeside sunset",
+                "cost": "Free"
+              },
+              {
+                "name": "Yangon teahouse breakfast and evening milk tea rounds",
+                "cost": "₹120–₹350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel G Yangon",
+                "budget": "₹4,800–₹7,800/night"
+              },
+              {
+                "name": "The Loft Hotel Yangon",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Rangoon Tea House",
+              "Shan Yoe Yar",
+              "Feel Myanmar Food"
+            ]
+          },
+          {
+            "theme": "Colonial downtown, markets and pagoda-lined city history",
+            "activities": [
+              {
+                "name": "Sule Pagoda foreigner ticket",
+                "cost": "₹390"
+              },
+              {
+                "name": "Yangon Circular Train loop segment",
+                "cost": "₹40–₹80",
+                "tip": "Ride only a short central stretch if time is tight; a full loop is long and best done in daylight."
+              },
+              {
+                "name": "Bogyoke Aung San Market browse",
+                "cost": "Free"
+              },
+              {
+                "name": "The Secretariat Yangon guided visit",
+                "cost": "₹390–₹780"
+              },
+              {
+                "name": "Botataung Pagoda riverside stop",
+                "cost": "₹235–₹390"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel G Yangon",
+                "budget": "₹4,800–₹7,800/night"
+              },
+              {
+                "name": "Pan Pacific Yangon",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "999 Shan Noodle House",
+              "Lucky Seven",
+              "LinkAge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Bagan": {
+        "name": "Bagan",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two full days covers the major temple plains well; add a third if you want a balloon flight, Mount Popa detour or slower sunrise and sunset repeats.",
+        "days": [
+          {
+            "theme": "Temple-zone classics by e-bike across Old Bagan and Nyaung U",
+            "activities": [
+              {
+                "name": "Bagan Archaeological Zone ticket",
+                "cost": "₹1,170",
+                "tip": "This is the real 30,000 MMK fee introduced after the 2023 increase and is the main mandatory heritage charge for foreign visitors."
+              },
+              {
+                "name": "E-bike rental for the temple plain",
+                "cost": "₹390–₹585"
+              },
+              {
+                "name": "Ananda Temple and surrounding shrines",
+                "cost": "Included in zone ticket"
+              },
+              {
+                "name": "Dhammayangyi Temple visit",
+                "cost": "Included in zone ticket"
+              },
+              {
+                "name": "Shwesandaw or Pyathada sunset viewpoint circuit",
+                "cost": "Included in zone ticket",
+                "tip": "Climbing rules change, so follow local signage and use designated mounds or terraces instead of closed pagoda tops."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Zfreeti Hotel",
+                "budget": "₹3,200–₹5,500/night"
+              },
+              {
+                "name": "Bagan Thiripyitsaya Sanctuary Resort",
+                "budget": "₹7,800–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Weather Spoon's Bagan Restaurant and Bar",
+              "Sanon",
+              "Black Bamboo"
+            ]
+          },
+          {
+            "theme": "Sunrise balloons, lacquerware and Irrawaddy-side temple life",
+            "activities": [
+              {
+                "name": "Optional hot air balloon flight over Bagan",
+                "cost": "₹28,000–₹40,000"
+              },
+              {
+                "name": "Manuha Temple and Nanpaya Temple",
+                "cost": "Included in zone ticket"
+              },
+              {
+                "name": "Myinkaba lacquerware workshop visit",
+                "cost": "Free–₹390"
+              },
+              {
+                "name": "Nyaung U Market browse and snack stop",
+                "cost": "₹120–₹350"
+              },
+              {
+                "name": "Irrawaddy riverside sunset boat",
+                "cost": "₹585–₹1,170"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bagan Lodge",
+                "budget": "₹12,500–₹20,500/night"
+              },
+              {
+                "name": "Zfreeti Hotel",
+                "budget": "₹3,200–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "The Moon (Be Kind To Animals)",
+              "Star Beam",
+              "Shwe Ou Food Garden"
+            ]
+          }
+        ]
+      },
+      "Mandalay": {
+        "name": "Mandalay",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days works best if you want both the palace-monastery core and Amarapura; add a third for Sagaing, Mingun or a slower craft-focused day.",
+        "days": [
+          {
+            "theme": "Royal Mandalay, monastery carvings and hilltop panoramas",
+            "activities": [
+              {
+                "name": "Mandalay Zone ticket including Mandalay Palace",
+                "cost": "₹585",
+                "tip": "This reflects the common 15,000 MMK foreigner fee used for the palace and nearby heritage sites."
+              },
+              {
+                "name": "Mandalay Palace moat and palace core",
+                "cost": "Included in zone ticket"
+              },
+              {
+                "name": "Shwenandaw Monastery",
+                "cost": "Included in zone ticket"
+              },
+              {
+                "name": "Kuthodaw Pagoda",
+                "cost": "Free–₹120"
+              },
+              {
+                "name": "Mandalay Hill sunset ascent",
+                "cost": "Included or donation-based depending on checkpoint"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Yadanarbon",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "The Link 83 Mandalay Boutique Hotel",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Mingalabar Myanmar Restaurant",
+              "Aye Myit Tar Myanmar Restaurant",
+              "Unique Myanmar Restaurant"
+            ]
+          },
+          {
+            "theme": "Sacred images, bridge sunsets and easy Amarapura side trips",
+            "activities": [
+              {
+                "name": "Mahamuni Buddha Temple",
+                "cost": "₹390–₹585"
+              },
+              {
+                "name": "U Bein Bridge at Amarapura",
+                "cost": "Free"
+              },
+              {
+                "name": "Taungthaman Lake wooden boat at sunset",
+                "cost": "₹235–₹470"
+              },
+              {
+                "name": "Jade Market or Zegyo Market browse",
+                "cost": "Free"
+              },
+              {
+                "name": "Mandalay Marionettes evening performance",
+                "cost": "₹585–₹1,170"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Eastern Palace Hotel",
+                "budget": "₹5,500–₹8,800/night"
+              },
+              {
+                "name": "Hotel Yadanarbon",
+                "budget": "₹3,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Super 81",
+              "BBB European Restaurant",
+              "Ned Kelly Restaurant & Irish Pub"
+            ]
+          }
+        ]
+      },
+      "Inle Lake": {
+        "name": "Inle Lake",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Keep two days for a full lake boat circuit and one slower shore-based Shan day; a third day helps only if you want trekking or a long transfer buffer.",
+        "days": [
+          {
+            "theme": "Longtail boat day through pagodas, gardens and stilt villages",
+            "activities": [
+              {
+                "name": "Inle Lake foreigner zone fee",
+                "cost": "₹975",
+                "tip": "This is the standard 25,000 MMK charge collected around Nyaung Shwe for foreign visitors entering the lake zone."
+              },
+              {
+                "name": "Private longtail boat hire for the main lake circuit",
+                "cost": "₹975–₹1,365",
+                "tip": "The real daily boat rate usually lands around 25,000–35,000 MMK depending on route length and whether you add Indein."
+              },
+              {
+                "name": "Phaung Daw Oo Pagoda",
+                "cost": "Included in zone fee or donation-based"
+              },
+              {
+                "name": "Inpawkhon weaving village stop",
+                "cost": "₹0–₹195"
+              },
+              {
+                "name": "Nga Phe Kyaung Monastery stop",
+                "cost": "₹0–₹120"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ViewPoint Ecolodge",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Inle Apex Hotel",
+                "budget": "₹2,600–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "The Shan Noodle & Food House",
+              "Live Dim Sum House",
+              "Thanakha Garden"
+            ]
+          },
+          {
+            "theme": "Indein pagodas, Nyaung Shwe lanes and slower Shan highland time",
+            "activities": [
+              {
+                "name": "Indein Pagoda complex by boat detour",
+                "cost": "Included in boat hire"
+              },
+              {
+                "name": "Nyaung Shwe canal-side walking route",
+                "cost": "Free"
+              },
+              {
+                "name": "Shan cooking class or tomato salad workshop",
+                "cost": "₹1,170–₹2,340"
+              },
+              {
+                "name": "Bicycle rental around Nyaung Shwe vineyards and farms",
+                "cost": "₹195–₹312"
+              },
+              {
+                "name": "Evening spa or traditional massage",
+                "cost": "₹390–₹975"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Trinity Family Inn",
+                "budget": "₹2,200–₹3,800/night"
+              },
+              {
+                "name": "ViewPoint Ecolodge",
+                "budget": "₹8,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Paw Paw",
+              "Innlay Hut",
+              "Sin Yaw Restaurant"
+            ]
+          }
+        ]
+      },
+      "Ngapali Beach": {
+        "name": "Ngapali Beach",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Two nights is the right finish for most Myanmar trips; Ngapali is more about rest than ticking off sights, and onward connections can change quickly in bad weather.",
+        "days": [
+          {
+            "theme": "Beach reset, cycling and easy seafood by the bay",
+            "activities": [
+              {
+                "name": "Ngapali Beach swim and sunset walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Bicycle rental to nearby fishing villages",
+                "cost": "₹195–₹312"
+              },
+              {
+                "name": "Jetty area seafood lunch stop",
+                "cost": "₹390–₹900"
+              },
+              {
+                "name": "Traditional massage near the beach road",
+                "cost": "₹585–₹1,170"
+              },
+              {
+                "name": "Beach lounger or resort day-use spend",
+                "cost": "₹390–₹975"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bayview - The Beach Resort",
+                "budget": "₹9,500–₹16,500/night"
+              },
+              {
+                "name": "Amazing Ngapali Resort",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Min Thu - Traditional Seafood Restaurant",
+              "Sea Queen",
+              "Golden Sea Restaurant"
+            ]
+          },
+          {
+            "theme": "Boat excursion morning and a quiet final Bay of Bengal sunset",
+            "activities": [
+              {
+                "name": "Pearl Island or nearby snorkeling boat trip",
+                "cost": "₹1,170–₹2,340"
+              },
+              {
+                "name": "Ngapali market or village produce stop",
+                "cost": "₹120–₹390"
+              },
+              {
+                "name": "Coconut and palm-lined beach walk to Gyeiktaw",
+                "cost": "Free"
+              },
+              {
+                "name": "Kayak or paddle hire through a resort desk",
+                "cost": "₹585–₹1,170"
+              },
+              {
+                "name": "Sunset seafood dinner splurge",
+                "cost": "₹780–₹1,950"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pleasant View Resort",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Bayview - The Beach Resort",
+                "budget": "₹9,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "View Point Restaurant",
+              "Ambrosia",
+              "Ngapali Kitchen"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Yangon",
+        "to": "Bagan",
+        "method": "JJ Express overnight bus or Myanmar National Airlines flight to Nyaung U",
+        "cost": "₹975–₹8,500"
+      },
+      {
+        "from": "Bagan",
+        "to": "Mandalay",
+        "method": "Irrawaddy river boat, shared van or private car",
+        "cost": "₹1,170–₹3,120"
+      },
+      {
+        "from": "Mandalay",
+        "to": "Inle Lake",
+        "method": "Overnight bus to Nyaung Shwe or flight to Heho",
+        "cost": "₹1,170–₹7,800"
+      },
+      {
+        "from": "Inle Lake",
+        "to": "Ngapali Beach",
+        "method": "Flight via Yangon on Myanmar National Airlines or MAI",
+        "cost": "₹10,500–₹18,500"
+      }
+    ],
+    "extras": [
+      "Best timing is November to February for cooler, drier weather; temple dawns in Bagan and beach afternoons in Ngapali are both easier then.",
+      "Myanmar's political situation remains unstable, so confirm every bus, flight and hotel directly and keep a backup route in case checkpoints, curfews or cancellations affect the next leg.",
+      "Carry crisp cash because foreign cards fail often, ATMs can go offline and some pagoda tickets still prefer exact MMK notes.",
+      "Domestic flights save time but are not always punctual; build same-day slack rather than tight airport-to-bus or flight-to-beach connections.",
+      "Respect dress codes at Shwedagon, Sule, Mahamuni and lake monasteries: covered shoulders, covered knees and shoes off before entering sacred areas.",
+      "If your government currently advises against non-essential travel to Myanmar, reconsider the trip or keep to the main tourist corridor only after reviewing the latest notice."
+    ],
+    "cityImages": {
+      "Yangon": [
+        "Shwedagon Pagoda Yangon",
+        "Yangon colonial downtown street",
+        "Kandawgyi Lake Yangon"
+      ],
+      "Bagan": [
+        "Bagan temples sunrise Myanmar",
+        "Ananda Temple Bagan",
+        "Bagan hot air balloon"
+      ],
+      "Mandalay": [
+        "Mandalay Palace Myanmar",
+        "U Bein Bridge sunset",
+        "Mandalay Hill view"
+      ],
+      "Inle Lake": [
+        "Inle Lake leg rower Myanmar",
+        "Indein Pagoda Inle Lake",
+        "Nyaung Shwe canal Myanmar"
+      ],
+      "Ngapali Beach": [
+        "Ngapali Beach Myanmar sunset",
+        "Ngapali fishing boats",
+        "Ngapali palm beach"
+      ]
+    }
+  }
+}

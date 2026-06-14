@@ -1,0 +1,528 @@
+{
+  "name": "Kosovo",
+  "seed": false,
+  "lat": 42.6,
+  "lng": 20.9,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹52K–₹86K",
+    "couple": "₹92K–₹1.42L",
+    "family4": "₹1.95L–₹2.95L"
+  },
+  "experiences": [
+    "Ottoman Bazaars",
+    "Orthodox Monasteries",
+    "Cheap Bus Loops",
+    "Cafe Streets",
+    "Fortress Views",
+    "Rugova Gateway"
+  ],
+  "avoid": [
+    "July and August weekends are busiest in Prizren and around Rugova, so central rooms and evening tables book out earlier than elsewhere in Kosovo.",
+    "Intercity buses are cheap and frequent by day, but evening departures thin out fast; keep monastery visits earlier because entry pauses during services and security checks."
+  ],
+  "combo": [
+    "Albania",
+    "North Macedonia",
+    "Montenegro"
+  ],
+  "landmark": "Prizren Fortress",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Pristina works for a quick city break, but Kosovo is better as a compact 5- to 7-day overland loop through Prizren, Peja and Gjakova.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Pristina",
+      "lat": 42.6629,
+      "lng": 21.1655,
+      "notes": "Compact capital for cafe culture, easy half-day monastery trips, museums and the country's best transport connections."
+    },
+    {
+      "name": "Prizren",
+      "lat": 42.2139,
+      "lng": 20.7397,
+      "notes": "Kosovo's prettiest Ottoman town with riverside dining, mosque silhouettes and a fortress viewpoint above the old core."
+    },
+    {
+      "name": "Peja (Peć)",
+      "lat": 42.6591,
+      "lng": 20.2883,
+      "notes": "Western base for the Patriarchate of Peć, old bazaar lanes and quick escapes toward Rugova Canyon."
+    },
+    {
+      "name": "Gjakova",
+      "lat": 42.3803,
+      "lng": 20.4308,
+      "notes": "Relaxed old-bazaar stop with artisan streets, tekke history and a slower local feel than Kosovo's bigger hubs."
+    }
+  ],
+  "itinerary": {
+    "sim": "IPKO and Vala prepaid SIMs are easy to buy in Pristina and work well across the main Kosovo corridor; download offline maps before day trips into monastery zones or Rugova side roads.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "Rome2Rio",
+      "Gjirafa Travel",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Pristina",
+      "Prizren",
+      "Peja (Peć)",
+      "Gjakova"
+    ],
+    "cities": {
+      "Pristina": {
+        "name": "Pristina",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the capital plus its classic monastery-and-sanctuary side trips; take a third only for a slower museum and park day.",
+        "days": [
+          {
+            "theme": "City Center Landmarks, Museums & Cafe Streets",
+            "activities": [
+              {
+                "name": "Airport bus or taxi into central Pristina",
+                "cost": "₹270–₹900"
+              },
+              {
+                "name": "NEWBORN Monument, Mother Teresa Boulevard and National Library exterior walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ethnological Museum (Muzeu Etnologjik) ticket",
+                "cost": "₹90"
+              },
+              {
+                "name": "Kosovo Museum ticket",
+                "cost": "₹90"
+              },
+              {
+                "name": "Evening coffee or drinks around Soma Book Station and the city center",
+                "cost": "₹360–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Sirius",
+                "budget": "₹7,700–₹12,600/night"
+              },
+              {
+                "name": "Swiss Diamond Hotel Prishtina",
+                "budget": "₹14,400–₹22,500/night"
+              }
+            ],
+            "meals": [
+              "Liburnia Restaurant",
+              "Soma Book Station",
+              "Pishat"
+            ]
+          },
+          {
+            "theme": "Gračanica Monastery & Bear Sanctuary Prishtina",
+            "activities": [
+              {
+                "name": "Bus or taxi to Gračanica Monastery",
+                "cost": "₹90–₹540"
+              },
+              {
+                "name": "Gračanica Monastery entry",
+                "cost": "₹0"
+              },
+              {
+                "name": "Taxi to Bear Sanctuary Prishtina",
+                "cost": "₹900–₹1,350"
+              },
+              {
+                "name": "Bear Sanctuary Prishtina adult ticket",
+                "cost": "₹270"
+              },
+              {
+                "name": "Return taxi or evening dinner back in Pristina",
+                "cost": "₹900–₹1,530"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Sirius",
+                "budget": "₹7,700–₹12,600/night"
+              },
+              {
+                "name": "Swiss Diamond Hotel Prishtina",
+                "budget": "₹14,400–₹22,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Liburnia",
+              "Tiffany Restaurant",
+              "Soma Book Station"
+            ]
+          },
+          {
+            "theme": "Slow Pristina Add-On: Parks, Galleries & Brunch",
+            "activities": [
+              {
+                "name": "Short taxi hops around central Pristina",
+                "cost": "₹180–₹360"
+              },
+              {
+                "name": "National Gallery of Kosovo entry",
+                "cost": "₹0"
+              },
+              {
+                "name": "Germia Park walk or coffee stop",
+                "cost": "₹180–₹450"
+              },
+              {
+                "name": "Brunch and bookstore time in the center",
+                "cost": "₹450–₹990"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Sirius",
+                "budget": "₹7,700–₹12,600/night"
+              },
+              {
+                "name": "Swiss Diamond Hotel Prishtina",
+                "budget": "₹14,400–₹22,500/night"
+              }
+            ],
+            "meals": [
+              "Soma Book Station",
+              "Liburnia Restaurant",
+              "Pishat"
+            ]
+          }
+        ]
+      },
+      "Prizren": {
+        "name": "Prizren",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One day is enough for the old town and fortress; keep a second only if you want more museum time and a slower riverside evening.",
+        "days": [
+          {
+            "theme": "Shadervan, Sinan Pasha Mosque & Prizren Fortress",
+            "activities": [
+              {
+                "name": "Intercity bus from Pristina to Prizren",
+                "cost": "₹360–₹450"
+              },
+              {
+                "name": "Shadervan square, Stone Bridge and Sinan Pasha Mosque walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Prizren Fortress entry",
+                "cost": "₹0"
+              },
+              {
+                "name": "Albanian League of Prizren Museum ticket",
+                "cost": "₹90"
+              },
+              {
+                "name": "Riverside dinner in the old town",
+                "cost": "₹720–₹1,350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Centrum Prizren",
+                "budget": "₹4,950–₹8,100/night"
+              },
+              {
+                "name": "Prior Hotel",
+                "budget": "₹5,850–₹8,550/night"
+              }
+            ],
+            "meals": [
+              "Beska",
+              "Marashi",
+              "Hyska"
+            ]
+          },
+          {
+            "theme": "Museum Morning, Church Quarter & Cafe Add-On",
+            "activities": [
+              {
+                "name": "Archaeological Museum of the Prizren Fortress entry",
+                "cost": "₹0"
+              },
+              {
+                "name": "Our Lady of Ljeviš exterior stop and old quarter walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hammam area coffee and pastry break",
+                "cost": "₹270–₹540"
+              },
+              {
+                "name": "Short taxi hops if you skip the hill climb",
+                "cost": "₹180–₹360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Centrum Prizren",
+                "budget": "₹4,950–₹8,100/night"
+              },
+              {
+                "name": "Prior Hotel",
+                "budget": "₹5,850–₹8,550/night"
+              }
+            ],
+            "meals": [
+              "Beska",
+              "Hyska",
+              "Marashi"
+            ]
+          }
+        ]
+      },
+      "Peja (Peć)": {
+        "name": "Peja (Peć)",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One night covers the monastery and bazaar well, while a second gives you enough slack for Rugova scenery without rushing onward.",
+        "days": [
+          {
+            "theme": "Patriarchate of Peć, Old Bazaar & Riverfront Evening",
+            "activities": [
+              {
+                "name": "Bus from Prizren to Peja via Gjakova",
+                "cost": "₹360–₹540"
+              },
+              {
+                "name": "Patriarchate of Peć entry",
+                "cost": "₹180"
+              },
+              {
+                "name": "Old Bazaar and central Peja walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tea or dessert stop near the bazaar",
+                "cost": "₹180–₹360"
+              },
+              {
+                "name": "Evening by the Lumbardhi with dinner",
+                "cost": "₹720–₹1,350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Dukagjini",
+                "budget": "₹7,200–₹11,700/night"
+              },
+              {
+                "name": "Semitronix Hotel Peja",
+                "budget": "₹3,960–₹5,850/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Dukagjini",
+              "Kulla e Zenel Beut",
+              "Pizza Place Peja"
+            ]
+          },
+          {
+            "theme": "Rugova Canyon Add-On & Slow Peja Morning",
+            "activities": [
+              {
+                "name": "Taxi to Rugova Canyon viewpoints",
+                "cost": "₹900–₹1,350"
+              },
+              {
+                "name": "Rugova scenery stops and easy walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Return taxi to Peja",
+                "cost": "₹900–₹1,350"
+              },
+              {
+                "name": "Bazaar coffee before the onward bus",
+                "cost": "₹180–₹360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Dukagjini",
+                "budget": "₹7,200–₹11,700/night"
+              },
+              {
+                "name": "Semitronix Hotel Peja",
+                "budget": "₹3,960–₹5,850/night"
+              }
+            ],
+            "meals": [
+              "Kulla e Zenel Beut",
+              "Restaurant Dukagjini",
+              "Pizza Place Peja"
+            ]
+          }
+        ]
+      },
+      "Gjakova": {
+        "name": "Gjakova",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A full day is enough for the old bazaar and heritage core; stay longer only if you want a deliberately slower final stop before returning to Pristina.",
+        "days": [
+          {
+            "theme": "Çarshia e Madhe, Hadum Mosque & Historic Inns",
+            "activities": [
+              {
+                "name": "Bus or cheap taxi from Peja to Gjakova",
+                "cost": "₹180–₹270 by bus; ₹900–₹1,350 by taxi"
+              },
+              {
+                "name": "Çarshia e Madhe (Old Bazaar) walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hadum Mosque visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Kulla e Abdullah Pashës ticket",
+                "cost": "₹90"
+              },
+              {
+                "name": "Evening meal in the bazaar quarter",
+                "cost": "₹720–₹1,260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Carshia e Jupave",
+                "budget": "₹5,400–₹8,100/night"
+              },
+              {
+                "name": "Kulla Dula Guesthouse",
+                "budget": "₹4,500–₹6,750/night"
+              }
+            ],
+            "meals": [
+              "Hani i Haraçisë",
+              "Jaki Grill",
+              "Amici"
+            ]
+          },
+          {
+            "theme": "Çabrati Hill Add-On & Return Prep",
+            "activities": [
+              {
+                "name": "Taxi to Çabrati hill viewpoint",
+                "cost": "₹180–₹360"
+              },
+              {
+                "name": "Park walk and city panorama stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Coffee and sweets back in the bazaar",
+                "cost": "₹180–₹450"
+              },
+              {
+                "name": "Direct bus to Pristina when ready to return",
+                "cost": "₹360–₹450"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Carshia e Jupave",
+                "budget": "₹5,400–₹8,100/night"
+              },
+              {
+                "name": "Kulla Dula Guesthouse",
+                "budget": "₹4,500–₹6,750/night"
+              }
+            ],
+            "meals": [
+              "Hani i Haraçisë",
+              "Amici",
+              "Jaki Grill"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Pristina",
+        "to": "Prizren",
+        "method": "Frequent intercity buses from Pristina Bus Station; taxis are faster and still relatively cheap if you are splitting the fare.",
+        "cost": "₹360–₹450 by bus; ₹3,150–₹4,500 by taxi"
+      },
+      {
+        "from": "Prizren",
+        "to": "Peja (Peć)",
+        "method": "Direct bus when timings line up, otherwise change in Gjakova on the westbound corridor.",
+        "cost": "₹360–₹540"
+      },
+      {
+        "from": "Peja (Peć)",
+        "to": "Gjakova",
+        "method": "Frequent local buses or a very cheap short-hop taxi between the two western towns.",
+        "cost": "₹180–₹270 by bus; ₹900–₹1,350 by taxi"
+      },
+      {
+        "from": "Gjakova",
+        "to": "Pristina",
+        "method": "Direct bus back to the capital for the simplest airport exit.",
+        "cost": "₹360–₹450"
+      }
+    ],
+    "extras": [
+      "May through September is the sweet spot: long days, easy bus schedules and the best odds for clear fortress and Rugova views.",
+      "Kosovo uses the euro, but local buses and short taxi hops are among the cheapest in the Balkans, so carrying small cash notes helps a lot.",
+      "Dress modestly at Gračanica Monastery and the Patriarchate of Peć, and avoid arriving right in the middle of liturgy or monastery quiet hours.",
+      "If you only have 3 to 4 days, keep Pristina and Prizren as the anchors and treat Peja or Gjakova as a single-night detour.",
+      "English is common in tourism spots, but bus stations still run best with screenshots, small cash and a little timing flexibility."
+    ],
+    "cityImages": {
+      "Pristina": [
+        "NEWBORN Monument Pristina",
+        "Gračanica Monastery Kosovo",
+        "Bear Sanctuary Prishtina"
+      ],
+      "Prizren": [
+        "Prizren Fortress Kosovo",
+        "Sinan Pasha Mosque Prizren",
+        "Stone Bridge Prizren"
+      ],
+      "Peja (Peć)": [
+        "Patriarchate of Peć Kosovo",
+        "Peja Old Bazaar Kosovo",
+        "Rugova Canyon Kosovo"
+      ],
+      "Gjakova": [
+        "Çarshia e Madhe Gjakova",
+        "Hadum Mosque Gjakova",
+        "Kulla e Abdullah Pashës Gjakova"
+      ]
+    }
+  }
+}

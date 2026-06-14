@@ -1,0 +1,420 @@
+{
+  "name": "Andorra",
+  "seed": false,
+  "lat": 42.55,
+  "lng": 1.6,
+  "region": "Europe",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "October",
+    "November",
+    "April",
+    "May"
+  ],
+  "budget": {
+    "solo": "₹90K–₹1.6L",
+    "couple": "₹1.6L–₹2.8L",
+    "family4": "₹3.2L–₹5L"
+  },
+  "experiences": [
+    "Andorra la Vella old town and Caldea",
+    "Ordino heritage museums and valley walks",
+    "Grandvalira skiing or summer mountain viewpoints",
+    "Encamp Funicamp access and lake hikes",
+    "Naturland adventure park day trip"
+  ],
+  "avoid": [
+    "Christmas–New Year and February school-holiday ski weeks if you dislike surge pricing and busy slopes.",
+    "April and November shoulder periods when some lifts, mountain services and seasonal businesses shut between ski and hiking seasons.",
+    "Driving old town cores at peak shopping hours — parking is easier than street navigation, and buses are often less stressful."
+  ],
+  "combo": [
+    "Spain",
+    "France"
+  ],
+  "landmark": "Caldea",
+  "travelStyle": [
+    "touch-and-go",
+    "explorer"
+  ],
+  "stopoverNote": "Andorra is small enough for a long weekend, but 4 days is the sweet spot if you want the capital, one heritage valley, one Grandvalira day and one funicular or adventure-park day without rushing.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Andorra la Vella",
+      "lat": 42.5063,
+      "lng": 1.5218,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Compact capital for historic lanes, shopping boulevards, spa time at Caldea and the easiest base for bus connections across the principality."
+    },
+    {
+      "name": "Ordino",
+      "lat": 42.5562,
+      "lng": 1.5332,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Andorra's prettiest heritage village area, with manor-house museums, stone lanes and quick access to summer trailheads or winter mountain roads."
+    },
+    {
+      "name": "Canillo",
+      "lat": 42.5676,
+      "lng": 1.5976,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Grandvalira gateway for skiing in winter, mountain viewpoints in summer and classic Andorran postcard stops like Sant Joan de Caselles."
+    },
+    {
+      "name": "Encamp",
+      "lat": 42.5347,
+      "lng": 1.5801,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Practical valley town with the Funicamp gondola, Engolasters access and an easy final-night base before driving or busing out of Andorra."
+    }
+  ],
+  "itinerary": {
+    "sim": "Use an EU eSIM only if it explicitly includes Andorra roaming; many Spain/France plans charge extra here. Download offline maps before arrival and expect the simplest all-trip setup from a roaming-enabled Eurolink-style eSIM.",
+    "apps": [
+      "Mou_T_B",
+      "Google Maps",
+      "Grandvalira",
+      "Caldea",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Andorra la Vella",
+      "Ordino",
+      "Canillo",
+      "Encamp"
+    ],
+    "cities": {
+      "Andorra la Vella": {
+        "name": "Andorra la Vella",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Start in the capital for historic sights and spa time; keep a second day here only if you want Caldea plus the Naturland adventure-park detour south of the city.",
+        "days": [
+          {
+            "theme": "Old Town, parliament history and Caldea evening",
+            "activities": [
+              {
+                "name": "Casa de la Vall",
+                "cost": "₹450 pp",
+                "tip": "Adult admission is €5; guided visits are a €1.50 supplement, so book ahead if you want an English-language slot."
+              },
+              {
+                "name": "Sant Esteve Church, Barri Antic lanes and Plaça del Poble walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "La Noblesse du Temps (Dalí clock) and Meritxell Avenue stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Caldea Classic 3-hour spa session",
+                "cost": "₹3,105 pp",
+                "tip": "Official Classic entry starts from €34.50 and varies by slot; evening sessions usually feel best after sightseeing."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Acta Arthotel",
+                "budget": "₹10,800–₹16,200/night"
+              },
+              {
+                "name": "NH Andorra la Vella",
+                "budget": "₹9,900–₹15,300/night"
+              },
+              {
+                "name": "Hotel de l'Isard",
+                "budget": "₹7,200–₹11,700/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Eric Marty",
+              "Plat'in Gastrobar",
+              "Restaurante El Crosto"
+            ]
+          },
+          {
+            "theme": "Optional south-Andorra adventure day",
+            "activities": [
+              {
+                "name": "Naturland Aventura Plus day pass",
+                "cost": "₹4,050 pp",
+                "tip": "Official advance adult price is €45, or €48 at the gate; go early if you want Tobotronc plus other rides without queues."
+              },
+              {
+                "name": "Drive or bus south to Sant Julià de Lòria for Naturland",
+                "cost": "₹165–₹300 pp by interurban bus or ₹1,800–₹2,700 by taxi"
+              },
+              {
+                "name": "Return to Andorra la Vella for shopping or a shorter repeat Caldea slot",
+                "cost": "₹0–₹3,105"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Acta Arthotel",
+                "budget": "₹10,800–₹16,200/night"
+              },
+              {
+                "name": "Andorra Park Hotel",
+                "budget": "₹18,000–₹29,700/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Celler d'En Toni",
+              "Can Manel",
+              "L'Escenari de Pizzes"
+            ]
+          }
+        ]
+      },
+      "Ordino": {
+        "name": "Ordino",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Ordino is ideal for one slow heritage-and-landscape day: museum manor house, village lunch and a simple valley walk without constant transfers.",
+        "days": [
+          {
+            "theme": "Heritage village, manor house and valley viewpoints",
+            "activities": [
+              {
+                "name": "Casa d'Areny-Plandolit",
+                "cost": "₹450 pp",
+                "tip": "Adult admission is typically €5; pair it with the village museum circuit if you enjoy local history."
+              },
+              {
+                "name": "Ordino old village lanes and Sant Corneli i Sant Cebrià church",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ruta del Ferro riverside section or Segudet viewpoint walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Coll d'Ordino scenic stop or short drive toward Ordino Arcalís",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Coma",
+                "budget": "₹9,000–₹14,400/night"
+              },
+              {
+                "name": "Hotel Santa Bàrbara de la Vall d'Ordino",
+                "budget": "₹8,100–₹12,600/night"
+              },
+              {
+                "name": "Hotel Mu & Spa",
+                "budget": "₹8,100–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Topic Restaurant",
+              "Restaurant L'Ensegur",
+              "Hotel Coma Restaurant"
+            ]
+          }
+        ]
+      },
+      "Canillo": {
+        "name": "Canillo",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Give Canillo the dedicated mountain day: ski Grandvalira from December to March, or swap to viewpoints, churches and easy alpine stops in summer.",
+        "days": [
+          {
+            "theme": "Grandvalira mountain day",
+            "activities": [
+              {
+                "name": "Grandvalira adult day ski pass",
+                "cost": "₹3,825 pp",
+                "tip": "Official adult day-pass pricing is dynamic and starts around €42.50 online; peak holiday dates can cost more, so book early."
+              },
+              {
+                "name": "Sant Joan de Caselles church exterior stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mirador Roc del Quer",
+                "cost": "₹540 pp",
+                "tip": "Individual adult entry is €6; parking is free, but the ticket does not include bus transport."
+              },
+              {
+                "name": "Meritxell Sanctuary detour on the return",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Bonavida",
+                "budget": "₹8,100–₹12,600/night"
+              },
+              {
+                "name": "Hotel Roc Meler",
+                "budget": "₹10,800–₹17,100/night"
+              },
+              {
+                "name": "Obaga Blanca & Spa",
+                "budget": "₹10,800–₹16,200/night"
+              }
+            ],
+            "meals": [
+              "Era del Rossell",
+              "La Sangria Restaurant & Grill",
+              "Arrosseria Pi de Migdia"
+            ]
+          }
+        ]
+      },
+      "Encamp": {
+        "name": "Encamp",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Finish in Encamp if you want a gentler final day with gondola views, a museum stop and an easy lake walk before departure.",
+        "days": [
+          {
+            "theme": "Funicamp, auto museum and lake walk",
+            "activities": [
+              {
+                "name": "Funicamp round trip",
+                "cost": "₹1,350 pp",
+                "tip": "Summer round-trip price is €15; in winter it functions mainly as Grandvalira access rather than a sightseeing ride."
+              },
+              {
+                "name": "Museu Nacional de l'Automòbil",
+                "cost": "₹450 pp",
+                "tip": "General admission is €5; add the €1.50 guided supplement only if you want extra context on the classic-car collection."
+              },
+              {
+                "name": "Lake Engolasters walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sant Romà de les Bons complex and lookout",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Guillem Hotel",
+                "budget": "₹8,100–₹12,600/night"
+              },
+              {
+                "name": "Hotel Univers",
+                "budget": "₹7,200–₹10,800/night"
+              },
+              {
+                "name": "Les Pardines 1819 Mountain Suites & Spa",
+                "budget": "₹13,500–₹22,500/night"
+              }
+            ],
+            "meals": [
+              "Borda Vella",
+              "Restaurant Borda del Tremat",
+              "Restaurant Caliu D'en Josep"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Andorra la Vella",
+        "to": "Ordino",
+        "method": "Use the interurban cooperative bus network northbound, or drive/taxi if you want a faster hotel-to-hotel transfer.",
+        "cost": "₹165–₹300 pp by bus or roughly ₹1,800–₹2,700 by taxi"
+      },
+      {
+        "from": "Ordino",
+        "to": "Canillo",
+        "method": "Driving is the simplest direct move; by public transport you usually connect back through the central valley bus corridor.",
+        "cost": "₹300–₹560 pp by bus depending on zones or roughly ₹3,600–₹4,950 by taxi"
+      },
+      {
+        "from": "Canillo",
+        "to": "Encamp",
+        "method": "Short valley hop by interurban bus, taxi or rental car down the CG-2 corridor.",
+        "cost": "₹165–₹300 pp by bus or roughly ₹1,350–₹2,250 by taxi"
+      }
+    ],
+    "extras": [
+      "Andorra has no rail network, so plan around interurban buses, short taxi hops or a rental car if you want maximum flexibility for viewpoints and adventure parks.",
+      "The cooperative bus system uses zone-based single fares: roughly €1.85, €3.35, €4.70 and €6.20 depending on distance, which is why short hops are cheap but cross-country rides add up.",
+      "If you are skiing, stay close to your chosen sector the previous night; morning parking and weather are far easier when you are already in Canillo or Encamp.",
+      "For June–September trips, swap ski time for hiking, Funicamp viewpoints and longer Ordino valley walks; the same city order still works well."
+    ],
+    "cityImages": {
+      "Andorra la Vella": [
+        "Casa de la Vall Andorra la Vella",
+        "Caldea Andorra la Vella exterior",
+        "Barri Antic Andorra la Vella"
+      ],
+      "Ordino": [
+        "Casa d'Areny-Plandolit Ordino",
+        "Ordino village center",
+        "Sorteny Valley Ordino"
+      ],
+      "Canillo": [
+        "Grandvalira Canillo slopes",
+        "Mirador Roc del Quer",
+        "Sant Joan de Caselles"
+      ],
+      "Encamp": [
+        "Funicamp Encamp",
+        "Lake Engolasters Andorra",
+        "Museu Nacional de l'Automobil Encamp"
+      ]
+    }
+  }
+}

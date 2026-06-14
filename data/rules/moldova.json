@@ -1,0 +1,375 @@
+{
+  "name": "Moldova",
+  "seed": false,
+  "lat": 47.41,
+  "lng": 28.37,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹55K–₹95K",
+    "couple": "₹95K–₹1.55L",
+    "family4": "₹1.9L–₹2.9L"
+  },
+  "experiences": [
+    "Chișinău café culture",
+    "Orheiul Vechi cave monastery",
+    "Mileștii Mici wine tunnels",
+    "Cricova underground winery",
+    "Tiraspol Soviet-era streetscapes"
+  ],
+  "avoid": [
+    "December–February for grey weather, icy village roads, and fewer winery departure slots",
+    "Unplanned Transnistria day trips without cash and passport checks in mind"
+  ],
+  "combo": [
+    "Romania",
+    "Ukraine"
+  ],
+  "landmark": "Orheiul Vechi cave monastery",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Chișinău",
+      "lat": 47.0105,
+      "lng": 28.8638,
+      "notes": "Leafy capital with parks, museums, trolleybuses, wine bars, and the country’s easiest transport hub."
+    },
+    {
+      "name": "Orheiul Vechi",
+      "lat": 47.3017,
+      "lng": 28.9766,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Clifftop archaeological reserve and cave monastery above the Răut River, best paired with a Butuceni village stay."
+    },
+    {
+      "name": "Mileștii Mici",
+      "lat": 46.9085,
+      "lng": 28.8036,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Famous underground wine city south of Chișinău, reached most easily by taxi or pre-booked winery transfer."
+    },
+    {
+      "name": "Tiraspol (Transnistria)",
+      "lat": 46.8403,
+      "lng": 29.6433,
+      "notes": "Breakaway-region capital with broad Soviet boulevards, local cognac culture, and a very different feel from the rest of Moldova."
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange Moldova or Moldcell prepaid SIMs are the easiest tourist pick, usually around ₹460–₹920 for 20–50GB; buy them in Chișinău city kiosks, malls, or airport counters before heading to wine country.",
+    "apps": [
+      "Google Maps",
+      "Google Translate",
+      "Booking.com",
+      "Yandex Go",
+      "iTaxi",
+      "Autogara.md"
+    ],
+    "cityOrder": [
+      "Chișinău",
+      "Orheiul Vechi",
+      "Mileștii Mici",
+      "Tiraspol (Transnistria)"
+    ],
+    "cities": {
+      "Chișinău": {
+        "name": "Chișinău",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives you the capital’s museum-and-park core plus a proper winery day trip without turning Chișinău into a rushed transit stop.",
+        "days": [
+          {
+            "theme": "Central Parks, History Museums & Classic Chișinău Boulevards",
+            "activities": [
+              {
+                "name": "Stephen the Great Central Park and Alley of Classics walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Nativity Cathedral and Triumphal Arch stop",
+                "cost": "Free"
+              },
+              {
+                "name": "National Museum of History of Moldova",
+                "cost": "₹230"
+              },
+              {
+                "name": "National Museum of Ethnography and Natural History",
+                "cost": "₹230"
+              },
+              {
+                "name": "Chișinău trolleybus ride across the center",
+                "cost": "₹28"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "City Park Hotel",
+                "budget": "₹6,400–₹9,200/night"
+              },
+              {
+                "name": "Bristol Central Park Hotel",
+                "budget": "₹7,800–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "La Plăcinte",
+              "Pegas Terrace & Restaurant",
+              "Popasul Dacilor"
+            ]
+          },
+          {
+            "theme": "Underground Cellars, Markets & Evening Wine Bars",
+            "activities": [
+              {
+                "name": "Cricova Winery “Underground City” tour",
+                "cost": "₹1,840",
+                "tip": "Reserve ahead; the official weekday 10 a.m. promo is cheaper, while weekends and post-4 p.m. departures add a surcharge."
+              },
+              {
+                "name": "Piața Centrală produce-and-snack browse",
+                "cost": "Free"
+              },
+              {
+                "name": "Valea Morilor lakeside walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Organ Hall and Eugen Doga pedestrian street stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "City Park Hotel",
+                "budget": "₹6,400–₹9,200/night"
+              },
+              {
+                "name": "BERDS Chisinau MGallery Hotel Collection",
+                "budget": "₹13,500–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Carpe Diem Wine Shop & Bar",
+              "Julien Gastro Bistrot",
+              "La Plăcinte"
+            ]
+          }
+        ]
+      },
+      "Orheiul Vechi": {
+        "name": "Orheiul Vechi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "One full day is enough for the cave monastery, reserve viewpoints, and a slow Moldovan lunch in Butuceni without backtracking all afternoon.",
+        "days": [
+          {
+            "theme": "Cave Monastery, Butuceni Village & Răut River Viewpoints",
+            "activities": [
+              {
+                "name": "Orheiul Vechi museum-reserve and cave monastery access ticket",
+                "cost": "₹92",
+                "tip": "The reserve officially lists 20 MDL general admission; guided tours and parking are extra if you want more context."
+              },
+              {
+                "name": "Butuceni cliff trail and Răut River panorama walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Traditional village lanes and ethnographic courtyards in Butuceni",
+                "cost": "Free"
+              },
+              {
+                "name": "Short taxi or marshrutka hop between Trebujeni and Butuceni viewpoints",
+                "cost": "₹92–₹184"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Eco-Resort Butuceni",
+                "budget": "₹4,600–₹7,400/night"
+              },
+              {
+                "name": "Chateau Vartely Hotel",
+                "budget": "₹7,400–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Epoca de Piatră",
+              "Eco-Resort Butuceni Restaurant",
+              "Chateau Vartely Restaurant"
+            ]
+          }
+        ]
+      },
+      "Mileștii Mici": {
+        "name": "Mileștii Mici",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Treat Mileștii Mici as a dedicated tasting day from Chișinău so you can book the right cellar slot and avoid cramming it around intercity transfers.",
+        "days": [
+          {
+            "theme": "Wine Tunnels, Tasting Halls & South-of-Capital Vineyard Country",
+            "activities": [
+              {
+                "name": "Mileștii Mici winery visit without tasting",
+                "cost": "₹1,610"
+              },
+              {
+                "name": "Mileștii Mici “Hai, Noroc!” tasting tour",
+                "cost": "₹3,680",
+                "tip": "This 800 MDL tasting is the sweet spot for most travelers; late-afternoon and weekend slots cost about 100 MDL more per person."
+              },
+              {
+                "name": "Taxi from Chișinău to Mileștii Mici and back",
+                "cost": "₹920–₹1,840"
+              },
+              {
+                "name": "Evening glass at Carpe Diem Wine Shop & Bar back in Chișinău",
+                "cost": "₹460–₹920"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "City Park Hotel",
+                "budget": "₹6,400–₹9,200/night"
+              },
+              {
+                "name": "Thomas Albert Hotel",
+                "budget": "₹6,900–₹9,700/night"
+              }
+            ],
+            "meals": [
+              "Carpe Diem Wine Shop & Bar",
+              "Pegas Terrace & Restaurant",
+              "La Sarkis"
+            ]
+          }
+        ]
+      },
+      "Tiraspol (Transnistria)": {
+        "name": "Tiraspol (Transnistria)",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One day covers the main Soviet-era avenues and food stops; add a second night only if you want a slower border-region detour or a KVINT-focused visit.",
+        "days": [
+          {
+            "theme": "Soviet Boulevards, Riverfront Monuments & Transnistria Atmosphere",
+            "activities": [
+              {
+                "name": "Suvorov Monument and October 25 Street walk",
+                "cost": "Free"
+              },
+              {
+                "name": "House of Soviets exterior and central square",
+                "cost": "Free"
+              },
+              {
+                "name": "De Wollant Park and Dniester riverfront stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Taxi to Noul Neamț Monastery in Chițcani and back",
+                "cost": "₹460–₹920"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "CityClub Hotel",
+                "budget": "₹5,500–₹8,300/night"
+              },
+              {
+                "name": "Hotel Russia",
+                "budget": "₹3,700–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Kumanek",
+              "7 Fridays",
+              "Back in USSR"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Chișinău",
+        "to": "Orheiul Vechi",
+        "method": "Marshrutka from Chișinău North Bus Station toward Butuceni/Trebujeni, then a short walk or taxi to the reserve (about 1h–1h 30m).",
+        "cost": "₹276–₹460"
+      },
+      {
+        "from": "Orheiul Vechi",
+        "to": "Mileștii Mici",
+        "method": "Return marshrutka to Chișinău, then take a taxi or pre-booked winery transfer south to Mileștii Mici (about 2h total with the change).",
+        "cost": "₹460–₹920"
+      },
+      {
+        "from": "Mileștii Mici",
+        "to": "Tiraspol (Transnistria)",
+        "method": "Head back to Chișinău, then use the train when it is running or the more frequent marshrutka/shared taxi to Tiraspol (about 1h 45m–2h 15m).",
+        "cost": "₹460–₹1,150"
+      }
+    ],
+    "extras": [
+      "May through September is the easiest weather window for this route: vineyard visits run more smoothly, Orheiul Vechi trails are greener, and Tiraspol day trips feel far less bleak than in winter.",
+      "Book Cricova and Mileștii Mici at least a day or two ahead; both wineries work on timed tours rather than true walk-ins, and English slots can fill first.",
+      "Use Yandex Go or iTaxi in Chișinău instead of street-hail bargaining, and keep some MDL cash for marshrutkas, monastery tickets, and village snack stops.",
+      "For Tiraspol, carry your passport and a little extra cash because bank cards can be unreliable and border-control formalities are more cumbersome than elsewhere in Moldova."
+    ],
+    "cityImages": {
+      "Chișinău": [
+        "Stephen the Great Central Park Chișinău",
+        "Nativity Cathedral Chișinău",
+        "Valea Morilor Chișinău"
+      ],
+      "Orheiul Vechi": [
+        "Orheiul Vechi cave monastery cliffs",
+        "Butuceni village Moldova",
+        "Răut River viewpoint Orheiul Vechi"
+      ],
+      "Mileștii Mici": [
+        "Mileștii Mici underground wine tunnels",
+        "Mileștii Mici tasting hall",
+        "Moldova vineyard road near Mileștii Mici"
+      ],
+      "Tiraspol (Transnistria)": [
+        "Suvorov Monument Tiraspol",
+        "House of Soviets Tiraspol",
+        "Dniester riverfront Tiraspol"
+      ]
+    }
+  }
+}

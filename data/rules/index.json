@@ -161,13 +161,13 @@
   },
   {
     "name": "Bangladesh",
-    "lat": 23.68,
+    "lat": 23.69,
     "lng": 90.36,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 15
   },
   {
     "name": "Pakistan",
@@ -665,9 +665,9 @@
     "lng": 28.37,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Ukraine",
@@ -755,9 +755,9 @@
     "lng": 1.6,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 5
   },
   {
     "name": "San Marino",

@@ -1,0 +1,636 @@
+{
+  "name": "Bangladesh",
+  "seed": false,
+  "lat": 23.69,
+  "lng": 90.36,
+  "region": "Asia",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹45K–₹75K",
+    "couple": "₹85K–₹1.35L",
+    "family4": "₹1.75L–₹2.7L"
+  },
+  "experiences": [
+    "Old Dhaka biryani and riverfront heritage",
+    "Cox's Bazar beach and Marine Drive",
+    "Sundarbans mangrove boat safari",
+    "Sylhet tea gardens and Lawachara rainforest",
+    "Somapura Mahavihara at Paharpur"
+  ],
+  "avoid": [
+    "April–June is hot and humid across Dhaka, Rajshahi and Cox's Bazar, with dusty afternoons inland.",
+    "June–September monsoon can flood low-lying roads, roughen sea conditions in Cox's Bazar and disrupt Sundarbans boat departures."
+  ],
+  "combo": [
+    "India",
+    "Nepal"
+  ],
+  "landmark": "Somapura Mahavihara",
+  "travelStyle": [
+    "explorer",
+    "culture",
+    "food"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Dhaka",
+      "lat": 23.8103,
+      "lng": 90.4125,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Old Dhaka heritage, Mughal forts, river-port energy and the country's best classic biryani stops"
+    },
+    {
+      "name": "Cox's Bazar",
+      "lat": 21.4272,
+      "lng": 92.0058,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Long sandy beach, Marine Drive viewpoints, seafood restaurants and easy side trips to Himchari and Inani"
+    },
+    {
+      "name": "Sundarbans",
+      "lat": 22.273,
+      "lng": 89.601,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Khulna-Mongla gateway for mangrove creeks, wildlife watchtowers, Karamjal boardwalks and riverboat nights"
+    },
+    {
+      "name": "Sylhet",
+      "lat": 24.8949,
+      "lng": 91.8687,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Tea estates, shrine visits, Ratargul wetlands and the Lawachara rainforest around Sreemangal"
+    },
+    {
+      "name": "Rajshahi (Paharpur)",
+      "lat": 24.3745,
+      "lng": 88.6042,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Padma-side Rajshahi base for silk shops, Varendra heritage and the UNESCO Buddhist ruins at Paharpur"
+    }
+  ],
+  "itinerary": {
+    "sim": "Grameenphone or Robi prepaid SIM is the easiest setup; expect roughly ₹225–₹525 for the SIM plus a 15–30 day data pack with enough maps and ride-hailing data.",
+    "apps": [
+      "Google Maps offline",
+      "Pathao",
+      "Uber",
+      "Shohoz",
+      "Biman Bangladesh Airlines",
+      "Foodpanda"
+    ],
+    "cityOrder": [
+      "Dhaka",
+      "Cox's Bazar",
+      "Sundarbans",
+      "Sylhet",
+      "Rajshahi (Paharpur)"
+    ],
+    "cities": {
+      "Dhaka": {
+        "name": "Dhaka",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days work well for Old Dhaka's headline monuments, a food-heavy riverfront circuit and one modern-city museum stop before you fly onward.",
+        "days": [
+          {
+            "theme": "Arrival, Old Dhaka Forts & Pink Palace",
+            "activities": [
+              {
+                "name": "Airport transfer by CNG auto-rickshaw or app cab into central Dhaka",
+                "cost": "₹150–₹450 per ride"
+              },
+              {
+                "name": "Lalbagh Fort",
+                "cost": "₹75 pp for SAARC visitors / ₹150 pp for other foreign visitors",
+                "tip": "The published ticket rates are BDT 100 for SAARC and BDT 200 for other foreign travelers, so carry small cash for the counter."
+              },
+              {
+                "name": "Ahsan Manzil Museum",
+                "cost": "₹225 pp for SAARC visitors / ₹375 pp for other foreign visitors",
+                "tip": "Current ticketing is BDT 300 for SAARC and BDT 500 for other foreign visitors; Fridays and public holidays are the busiest."
+              },
+              {
+                "name": "Shankhari Bazar and Armenian Church lane walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Old Dhaka biryani and lacchi crawl",
+                "cost": "₹225–₹525 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel 71",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "InterContinental Dhaka",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Hazir Biriani",
+              "Beauty Lacchi",
+              "Star Hotel & Restaurant"
+            ]
+          },
+          {
+            "theme": "Museums, Parliament Area & Sadarghat",
+            "activities": [
+              {
+                "name": "Liberation War Museum",
+                "cost": "₹150–₹300 pp"
+              },
+              {
+                "name": "Jatiya Sangsad Bhaban exterior and Crescent Lake walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Dhakeshwari National Temple",
+                "cost": "Free"
+              },
+              {
+                "name": "Sadarghat riverfront and historic BIWTC Rocket ghat walk",
+                "cost": "Free"
+              },
+              {
+                "name": "CNG auto-rickshaw hops between sights",
+                "cost": "₹90–₹260 per ride"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel 71",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "InterContinental Dhaka",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Kolkata Kacchi Ghor",
+              "Nanna Biriyani",
+              "The Atrium Restaurant & Bar"
+            ]
+          }
+        ]
+      },
+      "Cox's Bazar": {
+        "name": "Cox's Bazar",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days cover the main beach strip plus one Marine Drive outing to Himchari and Inani without turning the stay into only transit.",
+        "days": [
+          {
+            "theme": "Biman Bangladesh Flight, Beach Check-in & Sunset",
+            "activities": [
+              {
+                "name": "Biman Bangladesh Airlines or US-Bangla domestic flight from Dhaka to Cox's Bazar",
+                "cost": "₹4,200–₹8,500 pp",
+                "tip": "Biman is the most reliable full-service domestic option in peak season; morning departures preserve most of your beach day."
+              },
+              {
+                "name": "Laboni Beach and Kolatoli sea-front walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Burmese Market snack and souvenir stop",
+                "cost": "₹150–₹525 pp"
+              },
+              {
+                "name": "Sugandha Point sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Best Western Heritage",
+                "budget": "₹4,800–₹7,500/night"
+              },
+              {
+                "name": "Sayeman Beach Resort",
+                "budget": "₹8,500–₹14,000/night"
+              }
+            ],
+            "meals": [
+              "Poushee Restaurant",
+              "Salt Bistro & Cafe",
+              "Mermaid Cafe"
+            ]
+          },
+          {
+            "theme": "Marine Drive, Himchari & Inani Beach",
+            "activities": [
+              {
+                "name": "Reserve CNG auto-rickshaw or jeep along Marine Drive",
+                "cost": "₹900–₹2,250 per vehicle"
+              },
+              {
+                "name": "Himchari National Park viewpoint",
+                "cost": "₹40–₹75 pp"
+              },
+              {
+                "name": "Inani Beach coral-stone shoreline stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Seafood lunch by the beach",
+                "cost": "₹375–₹900 pp"
+              },
+              {
+                "name": "Laboni or Kolatoli night market return",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Best Western Heritage",
+                "budget": "₹4,800–₹7,500/night"
+              },
+              {
+                "name": "Sayeman Beach Resort",
+                "budget": "₹8,500–₹14,000/night"
+              }
+            ],
+            "meals": [
+              "Coral Station",
+              "Palongki Inani",
+              "Jhaubon Restaurant"
+            ]
+          }
+        ]
+      },
+      "Sundarbans": {
+        "name": "Sundarbans",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "A two-day Khulna-Mongla safari is the shortest worthwhile version because permit formalities and tidal boat timings consume most of day one.",
+        "days": [
+          {
+            "theme": "Khulna Gateway, Permit Processing & Karamjal",
+            "activities": [
+              {
+                "name": "Shyamoli NR Travels or BRTC coach from Dhaka to Khulna",
+                "cost": "₹450–₹825 pp"
+              },
+              {
+                "name": "Shared transfer onward to Mongla jetty",
+                "cost": "₹225–₹525 pp"
+              },
+              {
+                "name": "Bangladesh Forest Department Sundarbans permit",
+                "cost": "₹375 pp for Karamjal day entry or ₹1,725–₹2,588 pp/day for sanctuary permits with VAT",
+                "tip": "Recent published rates are BDT 500 for Karamjal foreign entry, BDT 2,000 outside sanctuary zones and BDT 3,000 inside sanctuary zones, before 15% VAT."
+              },
+              {
+                "name": "Karamjal Wildlife Centre boardwalk",
+                "cost": "Included with permit"
+              },
+              {
+                "name": "Boat safari through the Mongla-Karamjal creek network",
+                "cost": "₹4,500–₹9,000 pp on a shared operator tour"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Castle Salam",
+                "budget": "₹3,500–₹6,000/night"
+              },
+              {
+                "name": "City Inn Limited",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Bistro-C Restaurant",
+              "City Inn Rooftop Restaurant",
+              "Hotel Tiger Garden Restaurant"
+            ]
+          },
+          {
+            "theme": "Harbaria Trail, Watchtowers & Return to Khulna",
+            "activities": [
+              {
+                "name": "Harbaria eco-trail or Kotka/Kochikhali wildlife watchtower cruise",
+                "cost": "Usually bundled into your shared boat package"
+              },
+              {
+                "name": "Forest guide and guard charges",
+                "cost": "₹563–₹750 pp depending on group size",
+                "tip": "Guides are typically charged at BDT 750 per person per day and forest guards at BDT 500 per guard per day, usually split across the boat."
+              },
+              {
+                "name": "Birding and mudflat dolphin watch from the launch deck",
+                "cost": "Included"
+              },
+              {
+                "name": "Khulna riverside dinner after return",
+                "cost": "₹300–₹750 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Castle Salam",
+                "budget": "₹3,500–₹6,000/night"
+              },
+              {
+                "name": "City Inn Limited",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Bistro-C Restaurant",
+              "Handi Restaurant Khulna",
+              "Cafe Narod"
+            ]
+          }
+        ]
+      },
+      "Sylhet": {
+        "name": "Sylhet",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days let you split shrine-and-city time from a proper Sreemangal or Lawachara excursion rather than cramming both into one road-heavy day.",
+        "days": [
+          {
+            "theme": "Shrines, Ratargul Wetlands & Sylhet Eats",
+            "activities": [
+              {
+                "name": "Biman Bangladesh domestic flight into Sylhet via Dhaka if needed",
+                "cost": "₹3,200–₹6,500 pp"
+              },
+              {
+                "name": "Hazrat Shah Jalal Mazar Sharif complex",
+                "cost": "Free"
+              },
+              {
+                "name": "Ratargul Swamp Forest shared boat",
+                "cost": "₹300–₹750 pp"
+              },
+              {
+                "name": "Kin Bridge and Surma riverfront evening walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Noorjahan Grand",
+                "budget": "₹3,800–₹6,500/night"
+              },
+              {
+                "name": "Grand Sylhet Hotel & Resort",
+                "budget": "₹8,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Panshi Restaurant",
+              "Pach Bhai Restaurant",
+              "Woondaal King Kebab"
+            ]
+          },
+          {
+            "theme": "Sreemangal Tea Country & Lawachara",
+            "activities": [
+              {
+                "name": "Road or rail transfer to Sreemangal / Lawachara National Park",
+                "cost": "₹375–₹975 pp"
+              },
+              {
+                "name": "Lawachara National Park entry",
+                "cost": "₹863 pp for foreign visitors",
+                "tip": "The current published foreigner fee is BDT 1,150; locals pay far less, so cash is useful at the gate."
+              },
+              {
+                "name": "Kalabon trail with local guide",
+                "cost": "₹300–₹750 pp"
+              },
+              {
+                "name": "Nilkantha Tea Cabin layered tea stop",
+                "cost": "₹75–₹150 pp"
+              },
+              {
+                "name": "Madhabpur Lake or tea-estate photo detour",
+                "cost": "₹75–₹225 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Noorjahan Grand",
+                "budget": "₹3,800–₹6,500/night"
+              },
+              {
+                "name": "Grand Sultan Tea Resort & Golf",
+                "budget": "₹10,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Nilkantha Tea Cabin",
+              "Kutum Bari Restaurant",
+              "Panshi Restaurant"
+            ]
+          }
+        ]
+      },
+      "Rajshahi (Paharpur)": {
+        "name": "Rajshahi (Paharpur)",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days are ideal because Paharpur is a long archaeological side trip from Rajshahi and pairs best with one slower city day on the Padma riverfront.",
+        "days": [
+          {
+            "theme": "Rajshahi Silk, Museums & Padma Evenings",
+            "activities": [
+              {
+                "name": "Intercity transfer by coach or flight via Dhaka into Rajshahi",
+                "cost": "₹3,500–₹7,500 pp"
+              },
+              {
+                "name": "Varendra Research Museum",
+                "cost": "₹75–₹150 pp"
+              },
+              {
+                "name": "Rajshahi Silk Factory outlet and New Market shopping",
+                "cost": "Free to browse"
+              },
+              {
+                "name": "Padma river embankment sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Grand Riverview Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel Star International",
+                "budget": "₹2,600–₹4,200/night"
+              }
+            ],
+            "meals": [
+              "Cafe Narod",
+              "Chalk & Beans",
+              "Callisto"
+            ]
+          },
+          {
+            "theme": "Paharpur UNESCO Ruins & Bagha Mosque",
+            "activities": [
+              {
+                "name": "Private car or bus excursion to Somapura Mahavihara, Paharpur",
+                "cost": "₹750–₹1,875 pp depending on group size"
+              },
+              {
+                "name": "Somapura Mahavihara entry",
+                "cost": "₹150–₹225 pp",
+                "tip": "Recent traveler reports place foreign and SAARC tickets around BDT 200–300, usually with the site museum included."
+              },
+              {
+                "name": "Site museum and monastery mound circuit",
+                "cost": "Included with entry"
+              },
+              {
+                "name": "Bagha Mosque stop on the return drive",
+                "cost": "Free"
+              },
+              {
+                "name": "Rajshahi dinner back in town",
+                "cost": "₹300–₹750 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Grand Riverview Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel Star International",
+                "budget": "₹2,600–₹4,200/night"
+              }
+            ],
+            "meals": [
+              "Master Chef Bangla Restaurant",
+              "Colonials' Canopy",
+              "Big Boss Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Dhaka",
+        "to": "Cox's Bazar",
+        "method": "Biman Bangladesh Airlines or US-Bangla nonstop domestic flight (about 1 hour)",
+        "cost": "₹4,200–₹8,500 pp"
+      },
+      {
+        "from": "Cox's Bazar",
+        "to": "Sundarbans",
+        "method": "Fly back to Dhaka, then continue by Shyamoli NR / BRTC coach to Khulna and a short transfer to Mongla",
+        "cost": "₹5,500–₹10,500 pp total"
+      },
+      {
+        "from": "Sundarbans",
+        "to": "Sylhet",
+        "method": "Return to Khulna or Jashore, then connect via Dhaka by Biman Bangladesh or an overnight AC coach",
+        "cost": "₹3,500–₹7,500 pp"
+      },
+      {
+        "from": "Sylhet",
+        "to": "Rajshahi (Paharpur)",
+        "method": "Biman Bangladesh domestic routing via Dhaka, or a slower rail-plus-road combination",
+        "cost": "₹3,500–₹7,500 pp"
+      }
+    ],
+    "extras": [
+      "Classic BIWTC Rocket steamers on the Dhaka-Hularhat route are currently suspended, so plan on modern Sadarghat launches if you want a heritage-style river journey.",
+      "Cards work in major hotels, but carry ₹2,000–₹4,000 worth of taka in cash-equivalent for CNG rides, museum counters, market snacks and park gates.",
+      "Cox's Bazar and Sundarbans departures fill quickly in December-January weekends, so lock domestic flights and boat packages early."
+    ],
+    "cityImages": {
+      "Dhaka": [
+        "Lalbagh Fort Dhaka",
+        "Ahsan Manzil Dhaka",
+        "Sadarghat Dhaka riverfront"
+      ],
+      "Cox's Bazar": [
+        "Cox's Bazar beach sunrise",
+        "Inani Beach Cox's Bazar",
+        "Himchari Cox's Bazar viewpoint"
+      ],
+      "Sundarbans": [
+        "Karamjal Wildlife Centre Bangladesh",
+        "Sundarbans mangrove boat safari Bangladesh",
+        "Harbaria eco trail Sundarbans"
+      ],
+      "Sylhet": [
+        "Ratargul Swamp Forest Sylhet",
+        "Lawachara National Park Sreemangal",
+        "Jaflong Sylhet"
+      ],
+      "Rajshahi (Paharpur)": [
+        "Somapura Mahavihara Paharpur",
+        "Varendra Research Museum Rajshahi",
+        "Padma river Rajshahi"
+      ]
+    }
+  }
+}
