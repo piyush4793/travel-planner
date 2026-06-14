@@ -1,0 +1,509 @@
+{
+  "name": "Nicaragua",
+  "seed": false,
+  "lat": 12.87,
+  "lng": -85.21,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹95,000–₹1.55L",
+    "couple": "₹1.75L–₹2.85L",
+    "family4": "₹3.6L–₹5.6L"
+  },
+  "experiences": [
+    "Masaya Volcano crater visits",
+    "Granada colonial streets & islets",
+    "León cathedral rooftop & Cerro Negro",
+    "Ometepe ferries and volcano hikes",
+    "San Juan del Sur surf sunsets"
+  ],
+  "avoid": [
+    "May to November is wetter across the country, so ferry crossings to Ometepe, Playa Maderas road access, and long chicken-bus days are less comfortable and more delay-prone.",
+    "Semana Santa, Christmas, and New Year push up boutique-hotel rates in Granada and San Juan del Sur while volcano shuttles and ferries fill faster than usual.",
+    "Intercity buses are cheap but slow once you start stacking multiple legs, so avoid packing León, Ometepe, and San Juan del Sur into too few days."
+  ],
+  "combo": [
+    "Costa Rica",
+    "Guatemala"
+  ],
+  "landmark": "Masaya Volcano National Park",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Managua is the practical flight hub, and it is also the easiest place to stitch together Granada, León, and the southbound Rivas-Ometepe-San Juan del Sur loop with buses, taxis, and ferries.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Managua",
+      "lat": 12.1364,
+      "lng": -86.2514,
+      "notes": "Capital gateway for markets, lakefront walks, airport overnights, and the easiest launch point for Masaya Volcano, Granada buses, and onward intercity transfers."
+    },
+    {
+      "name": "Granada",
+      "lat": 11.9344,
+      "lng": -85.956,
+      "notes": "Best colonial base in Nicaragua for cathedral views, horse-cart streets, lake islets, and easy day trips to Masaya or Laguna de Apoyo."
+    },
+    {
+      "name": "León",
+      "lat": 12.4379,
+      "lng": -86.878,
+      "notes": "Historic university city for revolutionary history, the giant white cathedral rooftop, strong food stops, and Cerro Negro volcano-boarding departures."
+    },
+    {
+      "name": "Ometepe Island",
+      "lat": 11.5401,
+      "lng": -85.6973,
+      "notes": "Twin-volcano island in Lake Nicaragua for ferry arrivals, jungle hikes, springs, beaches, and relaxed stays around Moyogalpa, Balgüe, or Santo Domingo."
+    },
+    {
+      "name": "San Juan del Sur",
+      "lat": 11.2529,
+      "lng": -85.8705,
+      "notes": "Pacific beach town for surf shuttles to Playa Maderas, catamaran sunsets, bayfront dinners, and an easy final stop before heading back toward Managua."
+    }
+  ],
+  "itinerary": {
+    "sim": "Claro or Tigo prepaid SIM/eSIM plans are the easiest pickup on arrival; expect roughly ₹700–₹1,400 for a short-stay data pack. Coverage is solid in Managua, Granada, and León, but it weakens on Ometepe roads and some San Juan del Sur beach runs, so download offline maps before bus and ferry days.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "inDrive",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Managua",
+      "Granada",
+      "León",
+      "Ometepe Island",
+      "San Juan del Sur"
+    ],
+    "cities": {
+      "Managua": {
+        "name": "Managua",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Use Managua as a short arrival or departure buffer; rely on inDrive or hotel taxis after dark and fold Masaya Volcano into this stop if you want the cleanest logistics.",
+        "days": [
+          {
+            "theme": "Revolution Plaza, Lakefront & Masaya Volcano",
+            "activities": [
+              {
+                "name": "Plaza de la Revolución and the Old Cathedral of Managua exterior walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Puerto Salvador Allende boardwalk on Lake Managua",
+                "cost": "Free"
+              },
+              {
+                "name": "Masaya Volcano National Park entry or standard sunset crater visit",
+                "cost": "₹345 by day / about ₹850 at night",
+                "tip": "Official foreign-adult rates are about 150 NIO for daytime entry or US$10 for the regular night visit."
+              },
+              {
+                "name": "Masaya Handicraft Market stop on the return drive",
+                "cost": "Free to browse"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hyatt Place Managua",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Hotel Los Robles",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Cocina de Doña Haydée",
+              "Los Ranchos",
+              "Restaurante Don Candido"
+            ]
+          }
+        ]
+      },
+      "Granada": {
+        "name": "Granada",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay near Parque Colón or Calle La Calzada so you can walk most evenings; horse-carriage traffic is part of the atmosphere, but the old core is easiest to enjoy early and late in the day.",
+        "days": [
+          {
+            "theme": "Cathedral Plaza, Colonial Core & Islets",
+            "activities": [
+              {
+                "name": "Catedral de Granada interior and Parque Colón walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Islets of Granada shared boat tour on Lake Nicaragua",
+                "cost": "₹3,300–₹3,900"
+              },
+              {
+                "name": "Convento y Museo San Francisco",
+                "cost": "₹230–₹350"
+              },
+              {
+                "name": "Calle La Calzada evening café and music strip",
+                "cost": "Free to wander"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Plaza Colon",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Hotel con Corazón",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "The Garden Café",
+              "Restaurante El Zaguan",
+              "Bistro Estrada"
+            ]
+          },
+          {
+            "theme": "La Merced Viewpoint & Apoyo Day",
+            "activities": [
+              {
+                "name": "Iglesia de La Merced bell-tower climb for city views",
+                "cost": "₹85–₹100",
+                "tip": "Granada Cathedral itself is free; the paid panoramic tower climb most travelers do is La Merced."
+              },
+              {
+                "name": "ChocoMuseo Granada workshop or tasting session",
+                "cost": "₹750–₹1,050"
+              },
+              {
+                "name": "Laguna de Apoyo beach-club day pass or swimming stop",
+                "cost": "₹700–₹1,500"
+              },
+              {
+                "name": "Photo loop past Iglesia de Xalteva and quiet side streets",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Dario",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Hotel Real La Merced",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Pita Pita",
+              "Café de los Sueños",
+              "Bistro Estrada"
+            ]
+          }
+        ]
+      },
+      "León": {
+        "name": "León",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "León is hot and very walkable, so front-load cathedral and rooftop visits in the morning, then save longer museum stops or restaurant breaks for the hottest part of the afternoon.",
+        "days": [
+          {
+            "theme": "UNESCO Cathedral, Revolution History & Street Life",
+            "activities": [
+              {
+                "name": "León Cathedral rooftop visit",
+                "cost": "₹265",
+                "tip": "Foreign rooftop admission is about 115 NIO, usually including shoe covers for the white dome walk."
+              },
+              {
+                "name": "Basílica Catedral interior and Plaza de la Independencia circuit",
+                "cost": "Free"
+              },
+              {
+                "name": "Museo de la Revolución guided visit",
+                "cost": "₹230–₹300"
+              },
+              {
+                "name": "Iglesia La Recolección and mural-lined streets",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel El Convento",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Hotel Flor de Sarta",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "El Bodegón",
+              "Pan y Paz",
+              "Al Carbon"
+            ]
+          },
+          {
+            "theme": "Cerro Negro Adventure & Art Stops",
+            "activities": [
+              {
+                "name": "Cerro Negro volcano-boarding half-day tour from León",
+                "cost": "₹3,000–₹5,500"
+              },
+              {
+                "name": "Fundación Ortiz-Gurdián art museum",
+                "cost": "₹230–₹300"
+              },
+              {
+                "name": "Mercado Central fruit or vigorón stop",
+                "cost": "₹120–₹300"
+              },
+              {
+                "name": "Sunset return through the cathedral square and side streets",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel La Perla",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Hotel Cacique Adiact",
+                "budget": "₹3,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Katu",
+              "Carnivoro",
+              "Pan y Paz"
+            ]
+          }
+        ]
+      },
+      "Ometepe Island": {
+        "name": "Ometepe Island",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Pick a base carefully because cross-island travel is slower than it looks; Moyogalpa is easiest for ferries, while Balgüe and Santo Domingo are better if hikes and springs matter more than quick departures.",
+        "days": [
+          {
+            "theme": "Ferry Arrival, Springs & Reserve Trails",
+            "activities": [
+              {
+                "name": "San Jorge–Moyogalpa ferry as a foot passenger",
+                "cost": "₹115–₹320",
+                "tip": "Slow ferries are cheapest, while faster launches cost more and can sell out first on Friday and Sunday crossings."
+              },
+              {
+                "name": "Ojo de Agua spring pools",
+                "cost": "₹255"
+              },
+              {
+                "name": "Charco Verde nature reserve",
+                "cost": "₹425"
+              },
+              {
+                "name": "Punta Jesús María sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Xalli Beach Hotel",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Finca San Juan de la Isla",
+                "budget": "₹6,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Café Campestre",
+              "Comedor Gloriana",
+              "Mar Dulce"
+            ]
+          },
+          {
+            "theme": "Volcano Hike Day",
+            "activities": [
+              {
+                "name": "Volcán Maderas guided hike with crater-lagoon route",
+                "cost": "₹1,200–₹3,000",
+                "tip": "Typical setup is about 120 NIO for entry plus a local guide fee that drops sharply if you share the hike with a group."
+              },
+              {
+                "name": "Volcán Concepción guided ascent",
+                "cost": "₹2,550–₹3,000",
+                "tip": "Expect roughly a ₹425 park fee plus the certified guide cost; solo hikers pay more than shared groups."
+              },
+              {
+                "name": "El Ceibo Museum as a lower-effort cultural alternative",
+                "cost": "₹340–₹425"
+              },
+              {
+                "name": "Lakefront recovery stop around Santo Domingo after the hike",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Totoco Eco-Lodge",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Hotel Villa Paraiso",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "El Pital Chocolate Paradise",
+              "Café Campestre",
+              "Comedor Gloriana"
+            ]
+          }
+        ]
+      },
+      "San Juan del Sur": {
+        "name": "San Juan del Sur",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Town is compact and easiest on foot, but beach-hopping beyond the bay usually means shuttle timing, motorbike rental, or negotiating a taxi in advance.",
+        "days": [
+          {
+            "theme": "Bayfront, Cristo Viewpoint & Sunset Drinks",
+            "activities": [
+              {
+                "name": "Mirador del Cristo de la Misericordia",
+                "cost": "₹345"
+              },
+              {
+                "name": "San Juan del Sur bay promenade and town beach walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Taxi ride or steep walk up to the Cristo hill",
+                "cost": "₹230–₹460"
+              },
+              {
+                "name": "Sunset cocktail or seafood dinner on the waterfront",
+                "cost": "₹600–₹1,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Victoriano",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Barrio Café Hotel",
+                "budget": "₹4,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Dale Pues",
+              "El Timón",
+              "G&G Gourmet"
+            ]
+          },
+          {
+            "theme": "Playa Maderas Surf Day or Catamaran Trip",
+            "activities": [
+              {
+                "name": "Casa Oro shuttle or local shuttle to Playa Maderas",
+                "cost": "₹340 one way / about ₹600 round trip"
+              },
+              {
+                "name": "Playa Maderas surf lesson with board rental",
+                "cost": "₹2,100–₹2,550"
+              },
+              {
+                "name": "Taxi to Playa Maderas if you miss the shuttle",
+                "cost": "₹850–₹1,300"
+              },
+              {
+                "name": "Group catamaran or sunset sailing trip",
+                "cost": "₹6,000–₹6,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hush Maderas",
+                "budget": "₹6,500–₹11,500/night"
+              },
+              {
+                "name": "Hotel La Estación",
+                "budget": "₹5,000–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "El Timón",
+              "Tuani’s",
+              "Dale Pues"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Managua",
+        "to": "Granada",
+        "method": "Chicken buses from Mercado Huembes or the UCA area run frequently; taxis and private transfers are much faster if you arrive late or carry bags",
+        "cost": "₹30–₹2,500"
+      },
+      {
+        "from": "Granada",
+        "to": "León",
+        "method": "Take the public bus back through Managua for the cheapest run, or book a shared tourist shuttle if you want a simpler same-day intercity transfer",
+        "cost": "₹170–₹2,300"
+      },
+      {
+        "from": "León",
+        "to": "Ometepe Island",
+        "method": "Most budget travelers use buses via Managua and Rivas, then a taxi or tuk-tuk to San Jorge port and the ferry to Moyogalpa; shared shuttles cost more but save hassle",
+        "cost": "₹650–₹4,200"
+      },
+      {
+        "from": "Ometepe Island",
+        "to": "San Juan del Sur",
+        "method": "Take the ferry back to San Jorge, continue by taxi or local bus to Rivas, then hop on the short chicken bus or taxi onward to San Juan del Sur",
+        "cost": "₹220–₹950"
+      }
+    ],
+    "extras": [
+      "December to April is the cleanest weather window for combining Masaya crater visits, León side trips, Ometepe hikes, and San Juan del Sur surf beaches in one loop.",
+      "Carry small córdobas because chicken buses, ferries, reserve entrances, and many taxi rides are still easier to pay in cash than by card.",
+      "If you only have a week, cut either León or San Juan del Sur; trying to keep both plus Ometepe usually turns into too many long transfer days."
+    ]
+  }
+}

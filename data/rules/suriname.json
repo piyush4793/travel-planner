@@ -1,0 +1,424 @@
+{
+  "name": "Suriname",
+  "seed": false,
+  "lat": 3.92,
+  "lng": -56.03,
+  "region": "Americas",
+  "bestMonths": [
+    "February",
+    "March",
+    "April",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "January",
+    "May",
+    "June",
+    "July",
+    "December"
+  ],
+  "budget": {
+    "solo": "₹2.15L–₹3.25L",
+    "couple": "₹4.05L–₹5.95L",
+    "family4": "₹7.9L–₹11.2L"
+  },
+  "experiences": [
+    "Colonial Waterfront",
+    "Rainforest Hiking",
+    "River Boats",
+    "Plantation History",
+    "Birdwatching",
+    "Javanese & Creole Food"
+  ],
+  "avoid": [
+    "May–July is the long rainy season, when Brownsberg roads turn muddy, waterfalls run harder, and interior flight schedules get less predictable.",
+    "Interior charters use strict soft-bag baggage limits; pack light before any Gum Air sector to Raleighvallen or other bush airstrips.",
+    "Cards work in larger Paramaribo hotels, but cash is still important for taxis, buses, small ferries, village stops, and park entrances outside the capital."
+  ],
+  "combo": [
+    "Guyana",
+    "French Guiana",
+    "Trinidad and Tobago"
+  ],
+  "landmark": "Fort Zeelandia",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Most India trips reach Paramaribo via Amsterdam or the Caribbean; keep Paramaribo at both ends so you can handle cash, SIM, and any Gum Air or river-lodge logistics more easily.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Paramaribo",
+      "lat": 5.852,
+      "lng": -55.2038,
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "August",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "UNESCO-listed capital base for Waterkant evenings, Fort Zeelandia, multicultural food, and easy links onward by taxi, bus, or bush-flight transfer."
+    },
+    {
+      "name": "Brownsberg Nature Park",
+      "lat": 4.936,
+      "lng": -55.171,
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "August",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "A classic dry-season rainforest escape for lake panoramas, monkey sightings, and half-day hikes to Leo and Irene Falls above Brokopondo Reservoir."
+    },
+    {
+      "name": "Central Suriname Nature Reserve",
+      "lat": 4.7167,
+      "lng": -56.2167,
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "August",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "Plan this as a lodge-style wilderness segment centered on Raleighvallen, Foengoe Island, and the Voltzberg trail, usually reached by Gum Air charter plus boat."
+    },
+    {
+      "name": "Commewijne",
+      "lat": 5.8899,
+      "lng": -55.0887,
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "August",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "River district east of Paramaribo known for old plantations, dolphin-spotting boat trips, Peperpot walks, and relaxed heritage stays such as Frederiksdorp."
+    }
+  ],
+  "itinerary": {
+    "sim": "Telesur and Digicel prepaid data usually lands around ₹1,200–₹2,000 for enough maps, WhatsApp, and lodge coordination; sort it out in Paramaribo before heading inland.",
+    "apps": [
+      "Google Maps",
+      "Maps.me",
+      "WhatsApp",
+      "Booking.com",
+      "Gum Air",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Paramaribo",
+      "Brownsberg Nature Park",
+      "Central Suriname Nature Reserve",
+      "Commewijne"
+    ],
+    "cities": {
+      "Paramaribo": {
+        "name": "Paramaribo",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay near the Torarica riverfront, Zeelandiafort area, or a central lodge so you can walk the old town in the cooler hours and keep airport or charter transfers easy.",
+        "days": [
+          {
+            "theme": "Waterkant heritage, Fort Zeelandia, and a first taste of Suriname",
+            "activities": [
+              {
+                "name": "Waterkant, Independence Square, Presidential Palace garden side, and Palmentuin walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Fort Zeelandia museum",
+                "cost": "₹58 pp",
+                "tip": "Standard entry is commonly listed around SRD25, which converts to roughly ₹58."
+              },
+              {
+                "name": "St. Peter and Paul Basilica and Keizerstraat mosque-synagogue exterior circuit",
+                "cost": "Free"
+              },
+              {
+                "name": "Dinner at Garden of Eden or Zus & Zo",
+                "cost": "₹1,200–₹2,100 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Holland Lodge Paramaribo",
+                "budget": "₹7,500–₹10,500/night"
+              },
+              {
+                "name": "Royal Torarica",
+                "budget": "₹16,500–₹25,000/night"
+              }
+            ],
+            "meals": [
+              "De Gadri",
+              "Garden of Eden",
+              "Zus & Zo"
+            ]
+          },
+          {
+            "theme": "Markets, riverside culture, and an easy city day before the interior",
+            "activities": [
+              {
+                "name": "Paramaribo Central Market and Waterkant produce stalls",
+                "cost": "Free"
+              },
+              {
+                "name": "Surinaams Museum",
+                "cost": "₹230–₹350 pp"
+              },
+              {
+                "name": "Taxi hops between the old town, Hermitage Mall side, and hotel zone",
+                "cost": "₹350–₹920 per ride"
+              },
+              {
+                "name": "Evening roti, pom, or peanut soup crawl",
+                "cost": "₹700–₹1,500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Greenheart Boutique Hotel",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Eco Torarica",
+                "budget": "₹12,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Souposo",
+              "Roopram Roti",
+              "Passie, Food & Wines"
+            ]
+          }
+        ]
+      },
+      "Brownsberg Nature Park": {
+        "name": "Brownsberg Nature Park",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "This works best as an early-start overnight or full-day nature outing from Paramaribo or Brokopondo, especially in the drier windows when trails stay safer and the park road is easier.",
+        "days": [
+          {
+            "theme": "Brokopondo panorama, waterfall trails, and Suriname's easiest rainforest hit",
+            "activities": [
+              {
+                "name": "STINASU Brownsberg Nature Park entrance",
+                "cost": "₹81 pp",
+                "tip": "Adult admission is commonly listed around SRD35, which converts to roughly ₹81."
+              },
+              {
+                "name": "Mazaroni Top viewpoint and Brokopondo Reservoir lookouts",
+                "cost": "Free"
+              },
+              {
+                "name": "Leo or Irene Falls hike with local guide tip",
+                "cost": "₹575–₹1,150 pp"
+              },
+              {
+                "name": "Taxi or private transfer from Paramaribo/Brokopondo",
+                "cost": "₹3,500–₹6,500 per car"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bergendal Amazonia Wellness Resort",
+                "budget": "₹14,500–₹22,500/night"
+              },
+              {
+                "name": "Ston Island Resort",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Bergendal Restaurant",
+              "Ston Island Resort Restaurant"
+            ]
+          }
+        ]
+      },
+      "Central Suriname Nature Reserve": {
+        "name": "Central Suriname Nature Reserve",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Treat this as a packaged wilderness leg: most travelers fly from Zorg en Hoop to Raleighvallen, then continue by river boat to Foengoe Island or the Voltzberg base with meals and guiding bundled.",
+        "days": [
+          {
+            "theme": "Gum Air bush flight, Coppename River, and remote-lodge arrival",
+            "activities": [
+              {
+                "name": "Gum Air charter from Zorg en Hoop to Raleighvallen airstrip",
+                "cost": "₹29,000–₹32,000 pp one way",
+                "tip": "Interior charters to Raleighvallen are commonly quoted around US$350 one way, roughly ₹29,000, before any lodge packaging."
+              },
+              {
+                "name": "River boat transfer to Foengoe Island camp or lodge base",
+                "cost": "Usually bundled / ₹4,500–₹7,000 pp if itemized"
+              },
+              {
+                "name": "Coppename River sunset and wildlife spotting around Raleighvallen",
+                "cost": "Included in lodge package"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Raleighvallen Voltzberg Lodge",
+                "budget": "₹16,500–₹24,500/night equivalent in package pricing"
+              },
+              {
+                "name": "Foengoe Eiland Camp",
+                "budget": "₹10,500–₹16,500/night equivalent in package pricing"
+              }
+            ],
+            "meals": [
+              "Raleighvallen dining room",
+              "Foengoe camp kitchen"
+            ]
+          },
+          {
+            "theme": "Voltzberg climb, river life, and full immersion in the reserve",
+            "activities": [
+              {
+                "name": "Voltzberg summit hike with ranger/guide",
+                "cost": "Usually bundled in ₹58,000–₹82,000 pp multi-day reserve packages"
+              },
+              {
+                "name": "Raleigh Falls and Foengoe Island canoe or boat outing",
+                "cost": "Included or ₹2,300–₹4,600 pp as an add-on"
+              },
+              {
+                "name": "Birdwatching for macaws, toucans, and monkeys around camp",
+                "cost": "Free / included"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Raleighvallen Voltzberg Lodge",
+                "budget": "₹16,500–₹24,500/night equivalent in package pricing"
+              },
+              {
+                "name": "Foengoe Eiland Camp",
+                "budget": "₹10,500–₹16,500/night equivalent in package pricing"
+              }
+            ]
+          }
+        ]
+      },
+      "Commewijne": {
+        "name": "Commewijne",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Do this as a day trip or one-night wind-down from Paramaribo, focusing on Peperpot, Nieuw Amsterdam, or Frederiksdorp rather than trying to cram every plantation into one loop.",
+        "days": [
+          {
+            "theme": "Plantation stories, river boats, dolphins, and a quieter side of the capital region",
+            "activities": [
+              {
+                "name": "Commewijne plantation boat tour covering Frederiksdorp, Rust en Werk, and river dolphins",
+                "cost": "₹6,300–₹7,100 pp",
+                "tip": "Current operator pricing is commonly around €67–€75 per person, which works out to roughly ₹6.3k–₹7.1k."
+              },
+              {
+                "name": "Peperpot Nature Park walk or cycle loop",
+                "cost": "₹350–₹920 pp"
+              },
+              {
+                "name": "Mariënburg plantation ruins photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Bus or taxi from Paramaribo to Meerzorg / Commewijne side",
+                "cost": "₹115–₹920 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Boutique Hotel Peperpot",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Plantage Resort Frederiksdorp",
+                "budget": "₹14,500–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Pepre Patu",
+              "Plantage Resort Frederiksdorp Restaurant",
+              "De Plantage"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Paramaribo",
+        "to": "Brownsberg Nature Park",
+        "method": "Shared taxi, private driver, or bus toward Brownsweg plus onward arranged transfer (about 2.5–3.5 h depending on road conditions)",
+        "cost": "₹350–₹700 pp by bus plus transfer / ₹3,500–₹6,500 per car by taxi"
+      },
+      {
+        "from": "Brownsberg Nature Park",
+        "to": "Central Suriname Nature Reserve",
+        "method": "Return to Paramaribo, then Gum Air bush flight from Zorg en Hoop to Raleighvallen and continue by river boat to the reserve lodges",
+        "cost": "₹31,500–₹39,000 pp including the flight and typical river transfer"
+      },
+      {
+        "from": "Central Suriname Nature Reserve",
+        "to": "Commewijne",
+        "method": "Gum Air back to Paramaribo, then taxi or public bus east across the Jules Wijdenbosch Bridge to Meerzorg, Peperpot, or Frederiksdorp",
+        "cost": "₹29,500–₹33,000 pp including the return flight sector and road transfer"
+      }
+    ],
+    "extras": [
+      "Line buses and minibuses are the cheapest way to reach Brownsweg or Meerzorg, but schedules are informal and luggage space is limited, so most travelers still use taxis for early departures.",
+      "Gum Air interior sectors normally require soft bags and light packing; confirm your lodge's baggage cap before leaving heavy suitcases at the Paramaribo hotel.",
+      "If you only have five or six days, cut Brownsberg or Commewijne first and protect the Paramaribo buffer days around your interior flight.",
+      "Dry months from February to April and August to November are the safest windows for combining city walks, Brownsberg hikes, and river-based reserve outings in one trip.",
+      "Restaurant quality is strongest in Paramaribo; once you move into Brownsberg or the reserve, expect set menus, simple kitchens, and much earlier nights."
+    ],
+    "cityImages": {
+      "Paramaribo": [
+        "Fort Zeelandia Paramaribo",
+        "Waterkant Paramaribo",
+        "Saint Peter and Paul Basilica Paramaribo"
+      ],
+      "Brownsberg Nature Park": [
+        "Brownsberg Nature Park Suriname",
+        "Brokopondo Reservoir viewpoint",
+        "Leo Falls Brownsberg"
+      ],
+      "Central Suriname Nature Reserve": [
+        "Raleighvallen Suriname",
+        "Voltzberg Suriname",
+        "Foengoe Island Camp"
+      ],
+      "Commewijne": [
+        "Peperpot Suriname",
+        "Frederiksdorp Suriname",
+        "Mariënburg plantation Suriname"
+      ]
+    }
+  }
+}

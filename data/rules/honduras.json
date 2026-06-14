@@ -1,0 +1,569 @@
+{
+  "name": "Honduras",
+  "seed": false,
+  "lat": 15.2,
+  "lng": -86.24,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.05L–₹1.75L",
+    "couple": "₹1.95L–₹3.15L",
+    "family4": "₹4.0L–₹5.95L"
+  },
+  "experiences": [
+    "Copán Maya ruins",
+    "Roatán reef diving",
+    "Utila whale shark season",
+    "Pico Bonito rainforest trails",
+    "Caribbean seafood and island ferries",
+    "Tegucigalpa museum-and-viewpoint stopovers"
+  ],
+  "avoid": [
+    "May–November is wetter across both mainland and Bay Islands, with rougher ferries, muddier national-park trails, and the highest hurricane disruption risk from late summer into autumn.",
+    "Semana Santa and Christmas/New Year weeks push up island hotel rates fast, especially in West Bay, West End, and Utila's dive hostels.",
+    "Long mainland transfers are best done by day on reputable operators such as Hedman Alas; avoid stacking late bus arrivals with same-evening ferry departures from La Ceiba."
+  ],
+  "combo": [
+    "Guatemala",
+    "Belize",
+    "El Salvador"
+  ],
+  "landmark": "Copán Ruins Archaeological Site",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Tegucigalpa works best as a quick air hub, while La Ceiba is the key logistics bridge for Bay Islands ferries and Easy Sky domestic hops.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Tegucigalpa",
+      "lat": 14.0723,
+      "lng": -87.1921,
+      "notes": "Capital arrival base for museums, hilltop viewpoints, Suyapa basilica visits, and onward flights or buses to the north coast and Copán corridor."
+    },
+    {
+      "name": "Copán Ruins",
+      "lat": 14.8407,
+      "lng": -89.1554,
+      "notes": "Western Honduras highlight for the UNESCO Maya site, sculpture museum, bird park, and a slower cobblestoned small-town stay."
+    },
+    {
+      "name": "La Ceiba",
+      "lat": 15.7597,
+      "lng": -86.7822,
+      "notes": "North-coast gateway for Pico Bonito National Park, the Cangrejal River, ferry docks to Roatán and Utila, and domestic flights with Easy Sky."
+    },
+    {
+      "name": "Roatán",
+      "lat": 16.3184,
+      "lng": -86.5375,
+      "notes": "Bay Islands classic for West Bay beach time, easy reef access, sloth sanctuaries, and some of the country's best beginner-friendly dive operations."
+    },
+    {
+      "name": "Utila",
+      "lat": 16.0907,
+      "lng": -86.8933,
+      "notes": "Compact backpacker-favorite island with cheaper dive culture, whale shark lookouts in season, and a lively waterfront built around the municipal cays and reef boats."
+    }
+  ],
+  "itinerary": {
+    "sim": "Tigo or Claro prepaid SIM/eSIM is the easiest setup on arrival; budget around ₹850–₹1,700 for a short-stay data pack. Coverage is fine in Tegucigalpa and Copán town, but weaker on Pico Bonito trails and on ferry crossings, so download offline maps before island transfers.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency",
+      "Hedman Alas",
+      "Easy Sky"
+    ],
+    "cityOrder": [
+      "Tegucigalpa",
+      "Copán Ruins",
+      "La Ceiba",
+      "Roatán",
+      "Utila"
+    ],
+    "cities": {
+      "Tegucigalpa": {
+        "name": "Tegucigalpa",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Keep Tegucigalpa short and practical: stay around Multiplaza, Palmira, or the airport corridor, then move on early before traffic thickens.",
+        "days": [
+          {
+            "theme": "Museum Core, El Picacho & Suyapa",
+            "activities": [
+              {
+                "name": "Museo para la Identidad Nacional",
+                "cost": "₹680 pp"
+              },
+              {
+                "name": "Parque Naciones Unidas El Picacho viewpoint and Cristo del Picacho",
+                "cost": "₹170 pp"
+              },
+              {
+                "name": "Basílica de Nuestra Señora de Suyapa",
+                "cost": "Free"
+              },
+              {
+                "name": "Parque Central and Catedral de San Miguel Arcángel walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hyatt Place Tegucigalpa",
+                "budget": "₹9,500–₹13,500/night"
+              },
+              {
+                "name": "Hotel Plaza Juan Carlos",
+                "budget": "₹8,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "El Patio",
+              "Hacienda Real",
+              "Restaurante 9 Patrias"
+            ]
+          },
+          {
+            "theme": "La Tigra Day Hike or Easy Departure Buffer",
+            "activities": [
+              {
+                "name": "Parque Nacional La Tigra day visit",
+                "cost": "₹680 pp"
+              },
+              {
+                "name": "Mall Multiplaza coffee and errands before onward travel"
+              },
+              {
+                "name": "Chiminike children's museum exterior and city overlook stop",
+                "cost": "₹340 pp"
+              },
+              {
+                "name": "Early airport transfer for Easy Sky domestic connection"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Clarion Hotel Real Tegucigalpa",
+                "budget": "₹9,000–₹13,000/night"
+              },
+              {
+                "name": "InterContinental Tegucigalpa at Multiplaza Mall",
+                "budget": "₹14,000–₹21,000/night"
+              }
+            ],
+            "meals": [
+              "La Cumbre",
+              "Tito's Pizza",
+              "Café Honoré"
+            ]
+          }
+        ]
+      },
+      "Copán Ruins": {
+        "name": "Copán Ruins",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Stay in town and walk almost everywhere; the archaeological park, sculpture museum road, and cafes are easiest when you avoid midday heat.",
+        "days": [
+          {
+            "theme": "UNESCO Ruins, Tunnels & Sculpture Museum",
+            "activities": [
+              {
+                "name": "Parque Arqueológico Copán foreigner entrance ticket",
+                "cost": "₹1,360 pp",
+                "tip": "Recent public pricing is about 400 HNL for nonresidents; bring small cash in case card machines are unreliable."
+              },
+              {
+                "name": "Museo de Escultura Maya",
+                "cost": "₹340 pp"
+              },
+              {
+                "name": "Los Sapos and Sepulturas sector add-on",
+                "cost": "₹510 pp"
+              },
+              {
+                "name": "Copán Ruinas town plaza and souvenir arcade stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Marina Copan",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Terramaya Boutique Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Café San Rafael",
+              "Twisted Tanya's",
+              "Carnitas Nia Lola"
+            ]
+          },
+          {
+            "theme": "Bird Park, Hot Springs & Slow Small-Town Evening",
+            "activities": [
+              {
+                "name": "Macaw Mountain Bird Park & Nature Reserve",
+                "cost": "₹850 pp"
+              },
+              {
+                "name": "Luna Jaguar Hot Spring day-or-evening pass",
+                "cost": "₹1,275 pp"
+              },
+              {
+                "name": "Tea & Chocolate Place tasting stop"
+              },
+              {
+                "name": "Mirador El Cuartel at sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hacienda San Lucas",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hotel Don Udo's Bed & Breakfast",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Sol de Copán",
+              "La Casa de Todo",
+              "Paseo de los Sentidos"
+            ]
+          }
+        ]
+      },
+      "La Ceiba": {
+        "name": "La Ceiba",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Most travelers use La Ceiba as both a rainforest break and a ferry logistics stop; sleep near the pier or at Pico Bonito depending on your next morning plan.",
+        "days": [
+          {
+            "theme": "Pico Bonito Trails & Riverside Finish",
+            "activities": [
+              {
+                "name": "Parque Nacional Pico Bonito visitor entrance",
+                "cost": "₹680 pp",
+                "tip": "Recent public quotes place simple park access at roughly 200 HNL, while guided walks from lodges or operators cost extra."
+              },
+              {
+                "name": "El Bejuco or Zacate waterfall trail in the Pico Bonito buffer zone"
+              },
+              {
+                "name": "Cangrejal River viewpoint or rafting base stop"
+              },
+              {
+                "name": "Paseo de los Ceibeños waterfront stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel La Quinta",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "The Lodge at Pico Bonito",
+                "budget": "₹14,500–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "La Palapa",
+              "Expatriados Café Bar",
+              "El Guacamayo Seafood & Grill"
+            ]
+          },
+          {
+            "theme": "Cuero y Salado or Ferry-Day Buffer",
+            "activities": [
+              {
+                "name": "Cuero y Salado Wildlife Refuge motorized canoe excursion",
+                "cost": "₹1,700 pp"
+              },
+              {
+                "name": "Muelle de Cabotaje ferry check-in for Bay Islands"
+              },
+              {
+                "name": "Mall Megaplaza supply run before island transfer"
+              },
+              {
+                "name": "Swinford Park evening snack circuit"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Gran Hotel Paris",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Hotel Quinta Real",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Terramar",
+              "Sushi Totemo",
+              "Baleadas Express"
+            ]
+          }
+        ]
+      },
+      "Roatán": {
+        "name": "Roatán",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "West End suits divers and nightlife, while West Bay works better for sandy-beach stays; taxis between the two are short but expensive by local standards.",
+        "days": [
+          {
+            "theme": "West Bay Beach, Wildlife Parks & Easy Reef Time",
+            "activities": [
+              {
+                "name": "West Bay Beach swim and snorkel from shore",
+                "cost": "Free"
+              },
+              {
+                "name": "Gumbalimba Park day pass",
+                "cost": "₹2,900 pp"
+              },
+              {
+                "name": "Daniel Johnson's Monkey & Sloth Hang Out",
+                "cost": "₹1,700 pp"
+              },
+              {
+                "name": "West End sunset boardwalk and Half Moon Bay stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Infinity Bay Spa & Beach Resort",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "The Beach House Boutique Hotel",
+                "budget": "₹9,500–₹15,000/night"
+              }
+            ],
+            "meals": [
+              "La Palapa Beach Bar",
+              "Argentinian Grill",
+              "The Lily Pond House Restaurant"
+            ]
+          },
+          {
+            "theme": "Roatán Diving Day",
+            "activities": [
+              {
+                "name": "Sun Divers Roatan or West End Divers 2-tank boat dive",
+                "cost": "₹6,300–₹6,800 pp",
+                "tip": "Recent public rates for a standard 2-tank fun dive sit around US$74–80 with tanks and weights included; marine-park fee may be separate."
+              },
+              {
+                "name": "West End house-reef snorkel if not diving",
+                "cost": "₹850–₹1,700 pp"
+              },
+              {
+                "name": "Maya Key or Little French Key beach-club half day",
+                "cost": "₹3,400–₹5,100 pp"
+              },
+              {
+                "name": "Craft market and beachfront cafés around West Bay"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kimpton Grand Roatan Resort and Spa",
+                "budget": "₹21,000–₹36,000/night"
+              },
+              {
+                "name": "Las Rocas Resort & Dive Center",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Thirsty Turtle Bar & Grill",
+              "Sundowners",
+              "Gio's Restaurant"
+            ]
+          }
+        ]
+      },
+      "Utila": {
+        "name": "Utila",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Utila is compact enough to do with one or two nights; book whale shark lookouts flexibly because sightings depend on weather, season, and captain calls.",
+        "days": [
+          {
+            "theme": "Whale Shark Safari & Utila Waterfront",
+            "activities": [
+              {
+                "name": "Utila Dive Center or WSORC whale shark lookout / snorkel trip",
+                "cost": "₹3,900–₹5,500 pp",
+                "tip": "Recent public pricing for seasonal lookout trips is roughly US$45–65 depending on boat, fuel, and sighting conditions."
+              },
+              {
+                "name": "Bando Beach or Pumpkin Hill viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Chepes Beach quick dip or kayak rental",
+                "cost": "₹850–₹1,700 pp"
+              },
+              {
+                "name": "Municipal dock sunset and dive-town café crawl"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mango Inn Resort",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Utila Lodge",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Mango Tango",
+              "RJ's Barbecue",
+              "The Truck Stop Diner"
+            ]
+          },
+          {
+            "theme": "Cheap Fun Dives, Cays & Lazy Island Time",
+            "activities": [
+              {
+                "name": "2-tank reef dive with Utila Dive Centre or Alton's Dive Center",
+                "cost": "₹4,200–₹5,500 pp"
+              },
+              {
+                "name": "Utila Cays boat ride",
+                "cost": "₹1,700–₹2,900 pp"
+              },
+              {
+                "name": "Jade Seahorse grounds and sculpture photo stop"
+              },
+              {
+                "name": "Waterfront bars along Main Street"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Coral View Beach Resort",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Manurii Garden",
+                "budget": "₹3,000–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Skid Row's",
+              "Tranquila Bar",
+              "The Point Coffee Shop"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Tegucigalpa",
+        "to": "Copán Ruins",
+        "method": "Hedman Alas or other long-distance coach via San Pedro Sula; private transfer is faster but much pricier",
+        "cost": "₹2,700–₹4,200 pp"
+      },
+      {
+        "from": "Copán Ruins",
+        "to": "La Ceiba",
+        "method": "Day coach back through San Pedro Sula, commonly mixing Hedman Alas with onward north-coast service",
+        "cost": "₹3,400–₹5,100 pp"
+      },
+      {
+        "from": "La Ceiba",
+        "to": "Roatán",
+        "method": "Galaxy Wave ferry from Muelle de Cabotaje to Coxen Hole",
+        "cost": "₹3,400 pp"
+      },
+      {
+        "from": "Roatán",
+        "to": "Utila",
+        "method": "Return by ferry or short flight to the mainland, then connect onward on the Utila Dream ferry from La Ceiba",
+        "cost": "₹5,800–₹7,200 pp"
+      },
+      {
+        "from": "Utila",
+        "to": "Tegucigalpa",
+        "method": "Utila Dream ferry back to La Ceiba plus Easy Sky domestic flight onward to Tegucigalpa",
+        "cost": "₹8,800–₹13,600 pp"
+      }
+    ],
+    "extras": [
+      "December to April is the cleanest all-round window: drier mainland roads, calmer Bay Islands crossings, and the best odds of clear reef days.",
+      "Galaxy Wave to Roatán and Utila Dream to Utila can both be choppy in windier weather, so keep one buffer half-day if you are connecting to an international flight.",
+      "Carry cash for Copán ticket booths, small-town taxis, baggage tips, and some island dive shops even though bigger hotels and restaurants take cards.",
+      "Easy Sky schedules can shift seasonally, so confirm baggage rules and reconfirm your domestic sector the evening before if you are flying out of La Ceiba or Tegucigalpa.",
+      "Copán Ruinas rewards an early start, while Roatán and Utila are best when you lock in dive or whale shark boats the day before and stay flexible around sea conditions."
+    ],
+    "cityImages": {
+      "Tegucigalpa": [
+        "Museo para la Identidad Nacional Tegucigalpa",
+        "Cristo del Picacho Tegucigalpa",
+        "Basilica de Suyapa Tegucigalpa"
+      ],
+      "Copán Ruins": [
+        "Copan Ruins archaeological site Honduras",
+        "Museo de Escultura Maya Copan",
+        "Macaw Mountain Copan Ruinas"
+      ],
+      "La Ceiba": [
+        "Pico Bonito National Park Honduras",
+        "Cangrejal River La Ceiba",
+        "Paseo de los Ceibenos"
+      ],
+      "Roatán": [
+        "West Bay Beach Roatan",
+        "West End Roatan diving",
+        "Gumbalimba Park Roatan"
+      ],
+      "Utila": [
+        "Utila waterfront Honduras",
+        "Whale shark tour Utila",
+        "Chepes Beach Utila"
+      ]
+    }
+  }
+}

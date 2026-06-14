@@ -1,0 +1,594 @@
+{
+  "name": "Guyana",
+  "seed": false,
+  "lat": 4.86,
+  "lng": -58.93,
+  "region": "Americas",
+  "bestMonths": [
+    "February",
+    "March",
+    "April",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "December",
+    "January"
+  ],
+  "budget": {
+    "solo": "₹2.15L–₹3.45L",
+    "couple": "₹4.0L–₹6.35L",
+    "family4": "₹7.9L–₹11.9L"
+  },
+  "experiences": [
+    "Kaieteur scenic flight",
+    "Rainforest canopy walkway",
+    "Black caiman research",
+    "Rupununi wildlife",
+    "Colonial Georgetown",
+    "River crossings"
+  ],
+  "avoid": [
+    "May–August and December–January are the wettest stretches, when the Linden–Lethem road gets rougher, slower, and much more tiring.",
+    "Kaieteur Falls flights are weather dependent and often need minimum passenger loads, so do not build a same-day international connection around them.",
+    "Domestic planes and charters in Guyana often enforce soft-bag and light-luggage limits, especially on Rupununi sectors."
+  ],
+  "combo": [
+    "Suriname",
+    "Trinidad and Tobago",
+    "Brazil"
+  ],
+  "landmark": "Kaieteur Falls",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Most India routings reach Georgetown via New York, Miami, Toronto, or a Caribbean hub; keep Kaieteur flexible until your Georgetown arrival is locked because weather and load factors matter.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Georgetown",
+      "lat": 6.8013,
+      "lng": -58.1551,
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "Arrival base for colonial architecture, markets, museums, seawall evenings, and the easiest setup for Kaieteur flights or southbound road-and-air transfers."
+    },
+    {
+      "name": "Kaieteur Falls",
+      "lat": 5.1738,
+      "lng": -59.4806,
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "Usually done as a same-day scenic flight from Georgetown for one of the world's tallest single-drop waterfalls and the classic Guyana wildlife-and-geology highlight."
+    },
+    {
+      "name": "Iwokrama Rainforest",
+      "lat": 4.68,
+      "lng": -58.69,
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "Guyana's great forest corridor for Atta's canopy walkway, the Kurupukari crossing, river-lodge wildlife, and deep overland rainforest travel."
+    },
+    {
+      "name": "Rupununi Savannah",
+      "lat": 3.88,
+      "lng": -59.31,
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "Wide-open grassland and wetland country around Annai, Yupukari, Karanambu, and Lethem, best known for giant anteaters, lodges, ranch stays, and black-caiman nights."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel or GTT prepaid works best for arrival logistics in Georgetown; budget roughly ₹1,200–₹2,500 for a short-stay data pack, then expect patchy or no signal once you are deep in Iwokrama or the Rupununi.",
+    "apps": [
+      "Google Maps",
+      "Maps.me",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency",
+      "Trans Guyana Airways"
+    ],
+    "cityOrder": [
+      "Georgetown",
+      "Kaieteur Falls",
+      "Iwokrama Rainforest",
+      "Rupununi Savannah"
+    ],
+    "cities": {
+      "Georgetown": {
+        "name": "Georgetown",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Stay central or near the seawall so you have easier restaurant options, simpler airport transfers to Ogle, and a calmer buffer before the long interior stretches.",
+        "days": [
+          {
+            "theme": "Cathedral woodwork, museums, and Georgetown's classic food-and-seawall rhythm",
+            "activities": [
+              {
+                "name": "St. George's Cathedral visit and nearby heritage walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Guyana National Museum",
+                "cost": "Free"
+              },
+              {
+                "name": "Promenade Gardens, State House area, and Georgetown Seawall stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Dinner at Backyard Cafe or The Hibiscus Restaurant",
+                "cost": "₹1,200–₹2,400 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cara Lodge",
+                "budget": "₹15,500–₹22,500/night"
+              },
+              {
+                "name": "Herdmanston Lodge",
+                "budget": "₹12,500–₹18,500/night"
+              },
+              {
+                "name": "Guyana Marriott Hotel Georgetown",
+                "budget": "₹22,500–₹32,500/night"
+              }
+            ],
+            "meals": [
+              "Backyard Cafe",
+              "Oasis Cafe",
+              "The Hibiscus Restaurant"
+            ]
+          },
+          {
+            "theme": "Markets, anthropology, and a practical setup day for flights inland",
+            "activities": [
+              {
+                "name": "Stabroek Market and waterfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Walter Roth Museum of Anthropology",
+                "cost": "Free"
+              },
+              {
+                "name": "Bourda Market snack crawl",
+                "cost": "₹600–₹1,400 pp"
+              },
+              {
+                "name": "Taxi transfer between central Georgetown and Eugene F. Correia Airport",
+                "cost": "₹800–₹2,000 per car"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cara Lodge",
+                "budget": "₹15,500–₹22,500/night"
+              },
+              {
+                "name": "Herdmanston Lodge",
+                "budget": "₹12,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "The Maharaja Palace",
+              "Bistro Cafe & Bar",
+              "German's Restaurant"
+            ]
+          }
+        ]
+      },
+      "Kaieteur Falls": {
+        "name": "Kaieteur Falls",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Treat this as a weather-sensitive day trip from Georgetown; confirm the flight the evening before and travel with only a light day bag.",
+        "days": [
+          {
+            "theme": "Guyana's signature scenic flight and waterfall day",
+            "activities": [
+              {
+                "name": "Trans Guyana Airways or Evergreen Adventures Kaieteur Falls day flight from Ogle",
+                "cost": "₹29,000 pp",
+                "tip": "A current public benchmark is about US$350 per person including the return flight and guided stop at the falls."
+              },
+              {
+                "name": "Guided Kaieteur viewpoints including Boy Scout Point, Johnson's View, and the main escarpment edge",
+                "cost": "Included in tour"
+              },
+              {
+                "name": "Kaieteur National Park ranger talk on the golden rocket frog and bromeliad habitat",
+                "cost": "Included in tour"
+              },
+              {
+                "name": "Light snack or boxed lunch around the airstrip stop",
+                "cost": "Usually included"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cara Lodge",
+                "budget": "₹15,500–₹22,500/night"
+              },
+              {
+                "name": "Herdmanston Lodge",
+                "budget": "₹12,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Backyard Cafe",
+              "Oasis Cafe",
+              "The Hibiscus Restaurant"
+            ]
+          }
+        ]
+      },
+      "Iwokrama Rainforest": {
+        "name": "Iwokrama Rainforest",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Base either at Atta for the walkway or at Iwokrama River Lodge for river access; both work best if you carry cash, a torch, and patience for road or ferry delays.",
+        "days": [
+          {
+            "theme": "Interior road journey, Kurupukari crossing, and first canopy views",
+            "activities": [
+              {
+                "name": "Georgetown to Iwokrama shared minibus or 4x4 over the Linden–Lethem Road with Kurupukari river crossing",
+                "cost": "₹4,000–₹8,000 pp"
+              },
+              {
+                "name": "Iwokrama Canopy Walkway",
+                "cost": "₹1,250 pp",
+                "tip": "A current published benchmark is about US$14.95 per visitor."
+              },
+              {
+                "name": "Atta Rainforest trails and late-afternoon birding",
+                "cost": "Included with lodge stay or ₹1,500–₹3,000 pp guided"
+              },
+              {
+                "name": "Optional night drive or spotlight walk near Atta",
+                "cost": "₹2,500–₹4,500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Atta Rainforest Lodge",
+                "budget": "₹19,500–₹28,500/night"
+              },
+              {
+                "name": "Iwokrama River Lodge",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Atta Rainforest Lodge restaurant",
+              "Iwokrama River Lodge dining room",
+              "Surama Eco-Lodge dining room"
+            ]
+          },
+          {
+            "theme": "Essequibo wildlife, Turtle Mountain, and deeper forest time",
+            "activities": [
+              {
+                "name": "Dawn birding from the Atta or Iwokrama trail network",
+                "cost": "Included with lodge stay or ₹1,500–₹3,000 pp guided"
+              },
+              {
+                "name": "Iwokrama River Lodge boat trip on the Essequibo",
+                "cost": "₹2,500–₹5,000 pp"
+              },
+              {
+                "name": "Turtle Mountain guided hike",
+                "cost": "₹2,000–₹4,000 pp"
+              },
+              {
+                "name": "Kurupukari river-boat crossings and local transfers",
+                "cost": "₹400–₹1,200 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Iwokrama River Lodge",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Atta Rainforest Lodge",
+                "budget": "₹19,500–₹28,500/night"
+              }
+            ],
+            "meals": [
+              "Iwokrama River Lodge dining room",
+              "Atta Rainforest Lodge restaurant",
+              "Rock View Lodge restaurant"
+            ]
+          },
+          {
+            "theme": "Extra canopy dawn, Surama-side transition, and a slower forest morning",
+            "activities": [
+              {
+                "name": "Second sunrise canopy session at Atta",
+                "cost": "Included with stay"
+              },
+              {
+                "name": "Fair View–Surama road transfer deeper into North Rupununi",
+                "cost": "₹1,500–₹3,500 pp"
+              },
+              {
+                "name": "Surama village nature walk",
+                "cost": "₹1,500–₹3,000 pp"
+              },
+              {
+                "name": "Downtime for hammock, birding, or lodge-led wildlife spotting",
+                "cost": "Varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Surama Eco-Lodge",
+                "budget": "₹12,500–₹19,500/night"
+              },
+              {
+                "name": "Atta Rainforest Lodge",
+                "budget": "₹19,500–₹28,500/night"
+              }
+            ],
+            "meals": [
+              "Surama Eco-Lodge dining room",
+              "Atta Rainforest Lodge restaurant",
+              "Rock View Lodge restaurant"
+            ]
+          }
+        ]
+      },
+      "Rupununi Savannah": {
+        "name": "Rupununi Savannah",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Choose one main base around Yupukari, Karanambu, Annai, or Lethem rather than trying to move every night; distances are long and wildlife timing matters more than ticking off too many lodges.",
+        "days": [
+          {
+            "theme": "Savannah transfer, wetlands, and your first wide-open Rupununi evening",
+            "activities": [
+              {
+                "name": "4x4 or minibus transfer from Iwokrama to Annai, Karanambu, or Yupukari",
+                "cost": "₹2,000–₹4,500 pp"
+              },
+              {
+                "name": "Surama village walk or Annai foothill trail",
+                "cost": "₹1,500–₹3,000 pp"
+              },
+              {
+                "name": "Karanambu wetlands boat or giant anteater outing",
+                "cost": "₹4,000–₹8,000 pp"
+              },
+              {
+                "name": "Sunset savannah wildlife drive",
+                "cost": "₹2,000–₹4,000 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Karanambu Lodge",
+                "budget": "₹18,500–₹27,500/night"
+              },
+              {
+                "name": "Surama Eco-Lodge",
+                "budget": "₹12,500–₹19,500/night"
+              },
+              {
+                "name": "Waikin Ranch",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Karanambu Lodge dining room",
+              "Surama Eco-Lodge dining room",
+              "Rock View Lodge restaurant"
+            ]
+          },
+          {
+            "theme": "Yupukari conservation day and black-caiman night",
+            "activities": [
+              {
+                "name": "Caiman House wildlife-adventure package with night river research, transport from Lethem, meals, activities, and accommodation",
+                "cost": "₹84,000 pp",
+                "tip": "Visit Rupununi currently lists this all-inclusive package at GYD 210,000."
+              },
+              {
+                "name": "Night Rupununi River boat with the black caiman research team",
+                "cost": "Included in package"
+              },
+              {
+                "name": "Yupukari wetland birding and village downtime",
+                "cost": "Included or ₹1,500–₹3,000 pp guided"
+              },
+              {
+                "name": "Optional turtle or river-edge interpretation with local guides",
+                "cost": "Varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Caiman House Eco-Lodge",
+                "budget": "Package-led pricing"
+              },
+              {
+                "name": "Karanambu Lodge",
+                "budget": "₹18,500–₹27,500/night"
+              }
+            ],
+            "meals": [
+              "Caiman House kitchen",
+              "Karanambu Lodge dining room",
+              "ORI Hotel & Restaurant"
+            ]
+          },
+          {
+            "theme": "Lethem frontier day, ranch culture, and the easiest exit south or back to Georgetown",
+            "activities": [
+              {
+                "name": "Shared minibus into Lethem or onward lodge transfer",
+                "cost": "₹800–₹1,600 pp"
+              },
+              {
+                "name": "Lethem market, Takutu River Bridge, and border-town browsing",
+                "cost": "Free"
+              },
+              {
+                "name": "Waikin Ranch horseback or ranch excursion",
+                "cost": "₹3,000–₹6,000 pp"
+              },
+              {
+                "name": "Trans Guyana Airways Lethem–Georgetown domestic flight or comparable charter-sector benchmark",
+                "cost": "₹12,000–₹22,000 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Waikin Ranch",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "ORI Hotel & Restaurant",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Kanuku Lodge Hotel",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "ORI Hotel & Restaurant",
+              "Wayka's Snackette",
+              "Amazonas Bistro"
+            ]
+          },
+          {
+            "theme": "Optional extra lodge day for anteaters, river life, or a slower savannah finish",
+            "activities": [
+              {
+                "name": "Second Karanambu or Yupukari wildlife outing",
+                "cost": "₹4,000–₹8,000 pp"
+              },
+              {
+                "name": "Rupununi River boat or oxbow-lake birding",
+                "cost": "₹2,500–₹5,000 pp"
+              },
+              {
+                "name": "Craft purchases and village guiding tips",
+                "cost": "₹500–₹2,000 pp"
+              },
+              {
+                "name": "Buffer day for weather, road conditions, or charter timing",
+                "cost": "Varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Karanambu Lodge",
+                "budget": "₹18,500–₹27,500/night"
+              },
+              {
+                "name": "Caiman House Eco-Lodge",
+                "budget": "Package-led pricing"
+              },
+              {
+                "name": "Waikin Ranch",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Karanambu Lodge dining room",
+              "Caiman House kitchen",
+              "ORI Hotel & Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Georgetown",
+        "to": "Kaieteur Falls",
+        "method": "Trans Guyana Airways or another sightseeing flight from Eugene F. Correia Airport, usually about 1 hour each way",
+        "cost": "₹29,000 pp"
+      },
+      {
+        "from": "Kaieteur Falls",
+        "to": "Iwokrama Rainforest",
+        "method": "Return by air to Georgetown, then continue by minibus or 4x4 over the Linden–Lethem Road and Kurupukari crossing; private or charter options are faster but pricier",
+        "cost": "₹4,000–₹8,000 pp by road after the return flight / ₹12,000+ pp if using an interior flight sector"
+      },
+      {
+        "from": "Iwokrama Rainforest",
+        "to": "Rupununi Savannah",
+        "method": "Continue south by 4x4, minibus, lodge transfer, or a light-aircraft hop toward Annai or Lethem depending your lodge",
+        "cost": "₹2,000–₹4,500 pp by road / ₹12,000–₹22,000 pp by domestic flight"
+      }
+    ],
+    "extras": [
+      "Carry more cash than usual once you leave Georgetown; cards are inconsistent in the interior and many lodges or transport fixes still settle in cash.",
+      "Ask every lodge about baggage limits before booking a Trans Guyana Airways sector or charter, especially if you are carrying binoculars, camera gear, or hard suitcases.",
+      "Kaieteur works best either at the start or end of the trip, because weather cancellations are easier to absorb when you still have a Georgetown buffer.",
+      "Road time in Guyana is highly seasonal: the same Linden–Lethem section can feel straightforward in dry weather and exhausting after rain.",
+      "Interior nights are darker, quieter, and more insect-heavy than most travelers expect, so carry a torch, quick-dry layers, and repellent even if your lodge looks polished online."
+    ],
+    "cityImages": {
+      "Georgetown": [
+        "St George's Cathedral Georgetown Guyana",
+        "Stabroek Market Georgetown Guyana",
+        "Georgetown Seawall Guyana"
+      ],
+      "Kaieteur Falls": [
+        "Kaieteur Falls Guyana",
+        "Boy Scout Point Kaieteur",
+        "Kaieteur National Park airstrip"
+      ],
+      "Iwokrama Rainforest": [
+        "Iwokrama Canopy Walkway Guyana",
+        "Atta Rainforest Lodge Guyana",
+        "Iwokrama River Lodge Essequibo"
+      ],
+      "Rupununi Savannah": [
+        "Rupununi Savannah Guyana",
+        "Caiman House Yupukari",
+        "Karanambu Lodge Guyana"
+      ]
+    }
+  }
+}

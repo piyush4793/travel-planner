@@ -1,0 +1,457 @@
+{
+  "name": "El Salvador",
+  "seed": false,
+  "lat": 13.79,
+  "lng": -88.9,
+  "region": "Americas",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹72,000–₹1.15L",
+    "couple": "₹1.35L–₹2.05L",
+    "family4": "₹2.7L–₹4.1L"
+  },
+  "experiences": [
+    "San Salvador museums and volcano viewpoints",
+    "Santa Ana Volcano and Coatepeque crater-lake views",
+    "El Tunco surf sunsets and Pacific beach cafes",
+    "Ruta de las Flores coffee towns and waterfalls",
+    "Suchitoto colonial streets and Suchitlán boat rides"
+  ],
+  "avoid": [
+    "May to October is wetter, with afternoon downpours that can muddy the Santa Ana Volcano trail and make rural transfers along Ruta de las Flores slower.",
+    "Surf towns such as El Tunco are loudest on Friday and Saturday nights, so light sleepers should book back from the main strip.",
+    "Chicken buses are very cheap for short daylight hops, but keep luggage light and avoid tight evening connections between towns."
+  ],
+  "combo": [
+    "Guatemala",
+    "Honduras"
+  ],
+  "landmark": "Joya de Cerén",
+  "travelStyle": [
+    "touch-and-go",
+    "explorer"
+  ],
+  "stopoverNote": "Monseñor Óscar Arnulfo Romero International Airport feeds most trips through San Salvador, where Uber works well for urban hops before switching to intercity buses for the west and Suchitoto.",
+  "links": [],
+  "cities": [
+    {
+      "name": "San Salvador",
+      "lat": 13.6929,
+      "lng": -89.2182,
+      "notes": "Capital base for museums, food, volcano viewpoints, and the easiest place to use Uber before moving onward by bus."
+    },
+    {
+      "name": "Santa Ana",
+      "lat": 13.9942,
+      "lng": -89.5597,
+      "notes": "Best base for Tazumal, Santa Ana Volcano, and Lake Coatepeque day trips with a compact historic center."
+    },
+    {
+      "name": "El Tunco",
+      "lat": 13.4948,
+      "lng": -89.3836,
+      "notes": "Surf village on the Pacific for sunset beach time, beginner lessons, and easy hops to El Sunzal and nearby waterfalls."
+    },
+    {
+      "name": "Ruta de las Flores",
+      "lat": 13.8276,
+      "lng": -89.8456,
+      "notes": "Coffee-town circuit anchored by Juayúa, Apaneca, and Ataco for murals, food fairs, viewpoints, and highland day trips."
+    },
+    {
+      "name": "Suchitoto",
+      "lat": 13.9398,
+      "lng": -89.027,
+      "notes": "Colonial hill town for indigo workshops, lake excursions, and one of the most relaxed cultural stops in the country."
+    }
+  ],
+  "itinerary": {
+    "sim": "Tigo or Claro prepaid/eSIM plans are the simplest option; expect roughly ₹830–₹1,250 for about 8–12GB. Coverage is strong in San Salvador and the west, but download offline maps before volcano, waterfall, and national-park days.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "Uber",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency",
+      "Moovit"
+    ],
+    "cityOrder": [
+      "San Salvador",
+      "Santa Ana",
+      "El Tunco",
+      "Ruta de las Flores",
+      "Suchitoto"
+    ],
+    "cities": {
+      "San Salvador": {
+        "name": "San Salvador",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay around San Benito, Escalón, or Santa Elena for safer evenings, easy restaurant access, and quick Uber rides to museums and viewpoints.",
+        "days": [
+          {
+            "theme": "Historic Core, MARTE & Modern San Benito",
+            "activities": [
+              {
+                "name": "Iglesia El Rosario and Plaza Libertad walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Metropolitan Cathedral of San Salvador exterior and civic-center stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Museo de Arte de El Salvador (MARTE)"
+              },
+              {
+                "name": "Plaza Futura sunset views and dinner stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Terra Bella Hotel Boutique",
+                "budget": "₹4,500–₹6,800/night"
+              },
+              {
+                "name": "Real InterContinental San Salvador",
+                "budget": "₹13,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Cadejo Brewing Company",
+              "Hacienda Real",
+              "Picasso Stone Flame Oven"
+            ]
+          },
+          {
+            "theme": "Volcano Viewpoint & UNESCO Archaeology Day",
+            "activities": [
+              {
+                "name": "El Boquerón National Park crater viewpoint"
+              },
+              {
+                "name": "Joya de Cerén archaeological site",
+                "cost": "₹830 pp"
+              },
+              {
+                "name": "San Andrés archaeological park"
+              },
+              {
+                "name": "Uber rides within San Salvador for the evening return",
+                "cost": "₹330–₹830 per ride"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Courtyard by Marriott San Salvador",
+                "budget": "₹9,500–₹13,500/night"
+              },
+              {
+                "name": "Sheraton Presidente San Salvador Hotel",
+                "budget": "₹11,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Faisca do Brasil",
+              "Beto's Restaurante",
+              "NAU Lounge"
+            ]
+          }
+        ]
+      },
+      "Santa Ana": {
+        "name": "Santa Ana",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Base yourself near the center if you want to walk to the cathedral and theater, then leave early for both Tazumal and the Santa Ana Volcano trailhead.",
+        "days": [
+          {
+            "theme": "Cathedral, Theater & Maya Heritage",
+            "activities": [
+              {
+                "name": "Santa Ana Cathedral and Parque Libertad walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Teatro de Santa Ana exterior and lobby visit"
+              },
+              {
+                "name": "Tazumal archaeological park",
+                "cost": "₹415 pp"
+              },
+              {
+                "name": "Casa Blanca archaeological area museum gardens"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hostal Casa Verde",
+                "budget": "₹2,200–₹4,000/night"
+              },
+              {
+                "name": "Remfort Hotel",
+                "budget": "₹5,800–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Simmer Down",
+              "Expresión Cultural",
+              "Las Ramblas"
+            ]
+          },
+          {
+            "theme": "Santa Ana Volcano Hike & Coatepeque Views",
+            "activities": [
+              {
+                "name": "Santa Ana Volcano hike from Cerro Verde",
+                "cost": "₹498 pp"
+              },
+              {
+                "name": "Cerro Verde viewpoints over Lago de Coatepeque"
+              },
+              {
+                "name": "Lake Coatepeque lakeside lunch stop"
+              },
+              {
+                "name": "Return to Santa Ana by local shuttle or bus",
+                "cost": "₹250–₹500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hostal Casa Verde",
+                "budget": "₹2,200–₹4,000/night"
+              },
+              {
+                "name": "Hotel Sahara",
+                "budget": "₹4,200–₹6,300/night"
+              }
+            ],
+            "meals": [
+              "Restaurante Las Palmeras",
+              "La Pampa Coatepeque",
+              "Pastelería Ban Ban"
+            ]
+          }
+        ]
+      },
+      "El Tunco": {
+        "name": "El Tunco",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Choose lodging a lane back from the beach if you want sleep; the compact core is walkable, and boards, lessons, and sunset bars are all close together.",
+        "days": [
+          {
+            "theme": "Surf Day, Sunsets & Pacific Nightlife",
+            "activities": [
+              {
+                "name": "Beginner surf lesson at El Tunco or El Sunzal",
+                "cost": "₹2,500–₹3,700 pp"
+              },
+              {
+                "name": "El Tunco Beach rock formations and sunset walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Short hop to Playa El Sunzal for watching advanced surfers"
+              },
+              {
+                "name": "Weekend live-music bars on the main strip"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Papaya Lodge",
+                "budget": "₹3,300–₹5,500/night"
+              },
+              {
+                "name": "Boca Olas Resort Villas",
+                "budget": "₹9,000–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Day Cafe & Salad Bar",
+              "Tunco Veloz",
+              "Café Sunzal"
+            ]
+          }
+        ]
+      },
+      "Ruta de las Flores": {
+        "name": "Ruta de las Flores",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Juayúa or Ataco make the simplest overnight bases; public buses work between towns, but a driver or shuttle saves time if you want waterfalls, coffee, and El Imposible in one stretch.",
+        "days": [
+          {
+            "theme": "Juayúa Food Trail, Ataco Murals & Coffee Towns",
+            "activities": [
+              {
+                "name": "Juayúa weekend food festival or central market browsing"
+              },
+              {
+                "name": "Los Chorros de la Calera waterfall outing"
+              },
+              {
+                "name": "Concepción de Ataco murals, plaza, and artisan shops",
+                "cost": "Free"
+              },
+              {
+                "name": "Café Albania viewpoint stop in Apaneca"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Boutique Alicante Apaneca",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Casa Degraciela Hotel Boutique",
+                "budget": "₹4,800–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Entre Nubes Café",
+              "Restaurante R&R",
+              "Jardín de Celeste"
+            ]
+          },
+          {
+            "theme": "El Imposible National Park Day Trip",
+            "activities": [
+              {
+                "name": "El Imposible National Park entry",
+                "cost": "₹498 pp"
+              },
+              {
+                "name": "Guided hike to viewpoints and forest trails",
+                "cost": "₹830–₹1,660 pp"
+              },
+              {
+                "name": "Ahuachapán coffee-country roadside lunch"
+              },
+              {
+                "name": "Evening return to Ataco or Juayúa"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Juayúa",
+                "budget": "₹4,000–₹6,200/night"
+              },
+              {
+                "name": "Hotel Boutique Alicante Apaneca",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Casa 1800 Ataco Restaurant",
+              "Ataco Love Coffee House",
+              "Restaurante y Café La Pampa Ahuachapán"
+            ]
+          }
+        ]
+      },
+      "Suchitoto": {
+        "name": "Suchitoto",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Suchitoto is compact and best enjoyed slowly; most visitors walk the center, then take a tuk-tuk or short transfer to the lake edge or Los Tercios.",
+        "days": [
+          {
+            "theme": "Colonial Streets, Lake Suchitlán & Indigo Crafts",
+            "activities": [
+              {
+                "name": "Santa Lucía Church and central plaza walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Lake Suchitlán boat ride",
+                "cost": "₹1,660–₹2,490 per boat"
+              },
+              {
+                "name": "Centro Arte para la Paz visit"
+              },
+              {
+                "name": "Los Tercios waterfall viewpoint"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Los Almendros de San Lorenzo",
+                "budget": "₹8,000–₹11,500/night"
+              },
+              {
+                "name": "La Posada de Suchitlán",
+                "budget": "₹4,500–₹7,200/night"
+              }
+            ],
+            "meals": [
+              "El Gringo",
+              "La Lupita del Portal",
+              "Café Aroma"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "San Salvador",
+        "to": "Santa Ana",
+        "method": "Intercity bus from Terminal de Occidente or frequent coach-style service; Uber is best only for getting to the terminal inside San Salvador.",
+        "cost": "₹125–₹250 pp"
+      },
+      {
+        "from": "Santa Ana",
+        "to": "El Tunco",
+        "method": "Intercity bus back via San Salvador or a direct shared shuttle if you want fewer changes.",
+        "cost": "₹330–₹830 pp"
+      },
+      {
+        "from": "El Tunco",
+        "to": "Ruta de las Flores",
+        "method": "Chicken bus and local-bus combo via Sonsonate for the cheapest route, or tourist shuttle for a smoother transfer.",
+        "cost": "₹250–₹830 pp"
+      },
+      {
+        "from": "Ruta de las Flores",
+        "to": "Suchitoto",
+        "method": "Intercity buses with a San Salvador change, or private transfer if you are tight on time.",
+        "cost": "₹415–₹1,245 pp"
+      },
+      {
+        "from": "Suchitoto",
+        "to": "San Salvador",
+        "method": "Regular local bus back to the capital for airport or final-night connections.",
+        "cost": "₹125–₹210 pp"
+      }
+    ],
+    "extras": [
+      "El Salvador uses the US dollar locally, but all prices here are converted at roughly ₹83 per dollar for planning consistency.",
+      "Uber is reliable inside San Salvador, while westbound and intercity travel is usually easiest by public bus, shuttle, or pre-arranged driver.",
+      "Carry small cash for chicken buses, market snacks, trailheads, and national-park add-ons because cards are less useful outside the capital and surf hotels."
+    ]
+  }
+}
