@@ -8,6 +8,24 @@ All notable changes to Travel Planner are documented here. Format follows [Keep 
 
 ### Added
 - **Navigation simplified** — 5 views → 3 (Trips home, Calendar, Discover). Map removed from nav, kept for Cinematic. List removed.
+
+### Changed
+- **Cinematic animation uses requestAnimationFrame** — arc/transit animations now use rAF instead of setTimeout loops for jank-free 60fps motion on all devices
+- **Wiki image fetch timeout** — city photo loading capped at 5 seconds to prevent animation from stalling on slow networks
+- **Better cinematic loading UX** — progressive status messages ("Plotting route…", "Loading city photos…"), animated pulsing loader dots during intro, and clearer "Switch to Map view" guidance
+- **3D SVG vehicle icons** — top-down/bird's-eye plane, car, train, bus, ferry, cable-car SVGs with CSS perspective tilt, ground shadow, specular highlights, and pulsing glow — replaces flat emoji-in-circle markers
+- **Plane rotates along arc** — flight icons continuously rotate to face the travel direction using bezier tangent heading, like mult.dev's path-following animation. Ground vehicles also orient along their travel bearing
+- **Clean plane silhouette** — plane marker redesigned as a large white airplane SVG with blue contrail trail, no circular orb — inspired by mult.dev's cinematic flight visuals
+- **All vehicle icons upgraded** — car, train, bus, ferry, cable-car SVGs enlarged to 64×64 with drop shadows, removed glass orb backgrounds, added motion trails behind ground vehicles
+- **Road-like zig-zag movement** — car and bus transit follows winding S-curve paths between cities instead of straight lines, with camera bearing tracking the road direction
+- **Railroad track route style** — train transit shows dark rail lines with cross-tie dashes instead of the default blue glow, visually distinct from road and flight paths
+- **Transport-specific route lines** — flight arcs use thick blue contrail glow, car/bus use dashed road lines, train shows railroad tracks — each mode has a unique visual identity
+- **Camera chase-cam during transit** — camera tracks the moving vehicle in real-time: flights zoom out at midpoint and back in on approach; ground transit uses tight follow-cam with bearing sway. Inspired by mult.dev style
+- **Tile-aware pacing** — animation waits for map tiles to load (`waitForIdle`) before starting each phase, preventing rushed transitions over blurry/unloaded terrain
+- **Cinematic city arrival** — two-stage descent: swoop in at 50° pitch with a unique bearing per city, then settle to flat overhead view
+- **City dots hide when not relevant** — dots start hidden and are progressively revealed only for the current/next city; visited ones dim; future ones stay invisible to avoid map clutter when zoomed in
+- **Cinematic pitch & bearing** — map tilts and rotates to face the travel direction during transit for a dramatic fly-through feel
+- **Enhanced route glow** — active route trail now uses a triple-layer glow (outer halo + inner glow + core line) for a neon trail effect
 - **Multi-plan view & selector** — PillGroup tabs to switch between Default and saved AI plans with full day-wise itinerary for each
 - **Side-by-side plan comparison** — modal comparing any two plans with dropdowns, stat diffs (days, cities, cost), and independent scrolling columns
 - **Per-plan cinematic check** — cinematic button always visible but disabled/greyed when plan lacks matching city coordinates

@@ -93,6 +93,24 @@ html, body, #root {
   100% { transform: scale(1); box-shadow: 0 0 0 4px rgba(59,130,246,0.35); }
 }
 
+@keyframes transportOrbit {
+  0%   { box-shadow: 0 8px 32px rgba(59,130,246,0.35), 0 0 0 0 rgba(59,130,246,0.25), inset 0 -3px 10px rgba(59,130,246,0.1), inset 0 3px 6px rgba(255,255,255,0.7); }
+  50%  { box-shadow: 0 12px 40px rgba(59,130,246,0.5),  0 0 0 8px rgba(59,130,246,0),  inset 0 -3px 10px rgba(59,130,246,0.15), inset 0 3px 6px rgba(255,255,255,0.8); }
+  100% { box-shadow: 0 8px 32px rgba(59,130,246,0.35), 0 0 0 0 rgba(59,130,246,0.25), inset 0 -3px 10px rgba(59,130,246,0.1), inset 0 3px 6px rgba(255,255,255,0.7); }
+}
+
+@keyframes transportGlow {
+  0%   { opacity: 0.4; transform: scale(1); }
+  50%  { opacity: 0.7; transform: scale(1.15); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+
+@keyframes contrailShimmer {
+  0%   { opacity: 0.7; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
 /* Form inputs */
 .input {
   @apply w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
