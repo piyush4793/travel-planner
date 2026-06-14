@@ -1,0 +1,625 @@
+{
+  "name": "Taiwan",
+  "seed": false,
+  "lat": 23.7,
+  "lng": 120.96,
+  "region": "Asia",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹90K–₹1.6L",
+    "couple": "₹1.7L–₹2.9L",
+    "family4": "₹3.4L–₹5.5L"
+  },
+  "experiences": [
+    "Night Markets",
+    "Museums",
+    "Tea Culture",
+    "Mountains",
+    "Temples",
+    "Rail Journeys"
+  ],
+  "avoid": [
+    "Typhoon-prone humidity peaks from July to August"
+  ],
+  "combo": [
+    "Japan",
+    "South Korea"
+  ],
+  "landmark": "Taipei 101",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Taipei",
+      "lat": 25.033,
+      "lng": 121.5654,
+      "notes": "Capital base for observatories, imperial collections, night markets and easy MRT hops"
+    },
+    {
+      "name": "Jiufen",
+      "lat": 25.1099,
+      "lng": 121.8442,
+      "notes": "Lantern-lit hills, teahouses and old mining lanes above Taiwan's northeast coast"
+    },
+    {
+      "name": "Taroko Gorge",
+      "lat": 24.157,
+      "lng": 121.6213,
+      "notes": "Marble canyon landscapes with shrine viewpoints, cliff roads and Hualien rail access"
+    },
+    {
+      "name": "Sun Moon Lake",
+      "lat": 23.8659,
+      "lng": 120.915,
+      "notes": "Scenic lake circuit for ropeway rides, temple stops and easy cycling sections"
+    },
+    {
+      "name": "Tainan",
+      "lat": 22.9997,
+      "lng": 120.227,
+      "notes": "Historic former capital packed with forts, shrines and Taiwan's deepest snack culture"
+    },
+    {
+      "name": "Kaohsiung",
+      "lat": 22.6273,
+      "lng": 120.3014,
+      "notes": "Harbour city for art warehouses, ferries, Buddha museums and easy southern rail links"
+    }
+  ],
+  "itinerary": {
+    "sim": "Chunghwa Telecom airport tourist SIM plans are typically about ₹1,820 for 15 days of unlimited data; Taiwan Mobile is a close backup at about ₹1,560 for 10 days.",
+    "apps": [
+      "Google Maps",
+      "THSR T-EX",
+      "Taiwan Railway e-Booking",
+      "YouBike 2.0",
+      "Bus+",
+      "Uber"
+    ],
+    "cityOrder": [
+      "Taipei",
+      "Jiufen",
+      "Taroko Gorge",
+      "Sun Moon Lake",
+      "Tainan",
+      "Kaohsiung"
+    ],
+    "cities": {
+      "Taipei": {
+        "name": "Taipei",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Airport arrival, heritage core and night-market reset",
+            "activities": [
+              {
+                "name": "Kuo-Kuang Bus 1819 from Taoyuan Airport to Taipei Main Station",
+                "cost": "₹364 pp"
+              },
+              {
+                "name": "Chiang Kai-shek Memorial Hall grounds and changing-of-guard halls",
+                "cost": "Free"
+              },
+              {
+                "name": "Longshan Temple visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Ningxia Night Market tasting loop",
+                "cost": "₹390–₹780 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Relax III",
+                "budget": "₹4,700–₹7,300/night"
+              },
+              {
+                "name": "City Suites Taipei Nandong",
+                "budget": "₹5,700–₹8,800/night"
+              }
+            ],
+            "meals": [
+              "Fuhang Soy Milk",
+              "Din Tai Fung Xinyi Restaurant",
+              "Ningxia Night Market"
+            ]
+          },
+          {
+            "theme": "Skyline icons, observatory views and east-district energy",
+            "activities": [
+              {
+                "name": "Taipei 101 Observatory",
+                "cost": "₹1,560 pp"
+              },
+              {
+                "name": "Sun Yat-sen Memorial Hall",
+                "cost": "Free"
+              },
+              {
+                "name": "Elephant Mountain trail for skyline views",
+                "cost": "Free"
+              },
+              {
+                "name": "Raohe Night Market dinner crawl",
+                "cost": "₹390–₹780 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Green World ZhongXiao",
+                "budget": "₹5,500–₹8,300/night"
+              },
+              {
+                "name": "arTree Hotel",
+                "budget": "₹8,600–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Yongkang Beef Noodles",
+              "Raohe Night Market",
+              "Ice Monster"
+            ]
+          },
+          {
+            "theme": "Imperial treasures, old trading streets and a riverside pedal",
+            "activities": [
+              {
+                "name": "National Palace Museum general admission",
+                "cost": "₹910 pp"
+              },
+              {
+                "name": "Dihua Street heritage walk",
+                "cost": "Free"
+              },
+              {
+                "name": "YouBike riverside ride from Dadaocheng or Songshan sector",
+                "cost": "₹26–₹52 pp"
+              },
+              {
+                "name": "Huashan 1914 Creative Park galleries and cafés",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "CityInn Hotel Plus Fuxing N. Rd. Branch",
+                "budget": "₹6,200–₹9,200/night"
+              },
+              {
+                "name": "Just Sleep Taipei Ximending",
+                "budget": "₹8,800–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Addiction Aquatic Development",
+              "Yang's Fried Dumplings",
+              "Leechi"
+            ]
+          }
+        ]
+      },
+      "Jiufen": {
+        "name": "Jiufen",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "days": [
+          {
+            "theme": "Lantern alleys, teahouses and old gold-mining lanes",
+            "activities": [
+              {
+                "name": "Kuo-Kuang Bus 1062 from Taipei to Jiufen Old Street",
+                "cost": "₹276 pp"
+              },
+              {
+                "name": "Jiufen Old Street roaming",
+                "cost": "Free"
+              },
+              {
+                "name": "A-Mei Tea House tea service",
+                "cost": "₹780–₹1,300 pp"
+              },
+              {
+                "name": "New Taipei City Gold Museum Benshan Tunnel area",
+                "cost": "₹208 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "On My Way Jiufen Youth Hostel",
+                "budget": "₹2,900–₹4,900/night"
+              },
+              {
+                "name": "Chiu Chunt Dint Inn",
+                "budget": "₹6,200–₹9,400/night"
+              }
+            ],
+            "meals": [
+              "Jiufen Tea House",
+              "A-Gan-Yi Taro Balls",
+              "Grandma Lai's Yuyuan"
+            ]
+          }
+        ]
+      },
+      "Taroko Gorge": {
+        "name": "Taroko Gorge",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Marble gorge classics from the visitor center to shrine viewpoints",
+            "activities": [
+              {
+                "name": "Taroko National Park entry",
+                "cost": "Free"
+              },
+              {
+                "name": "Taroko Gorge Visitor Center",
+                "cost": "Free"
+              },
+              {
+                "name": "Shakadang Trail walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Eternal Spring Shrine stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Meci Hotel",
+                "budget": "₹4,400–₹6,800/night"
+              },
+              {
+                "name": "Taroko Liiko Hotels",
+                "budget": "₹7,800–₹11,700/night"
+              }
+            ],
+            "meals": [
+              "Gongzheng Baozi",
+              "Mr. Goose",
+              "Dongdamen Night Market"
+            ]
+          },
+          {
+            "theme": "Cliff viewpoints, beach air and optional permit hiking",
+            "activities": [
+              {
+                "name": "Swallow Grotto trail and cliff road viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Qingshui Cliff scenic stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Qixingtan coast bike or promenade break",
+                "cost": "₹260–₹520 pp"
+              },
+              {
+                "name": "Zhuilu Old Trail permit if reopened for public access",
+                "cost": "₹520 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kindness Hotel Hualien",
+                "budget": "₹5,700–₹8,300/night"
+              },
+              {
+                "name": "Hotel Bayview",
+                "budget": "₹6,200–₹9,600/night"
+              }
+            ],
+            "meals": [
+              "Zhoujia Steamed Dumplings",
+              "Salt Lick BBQ & Bar",
+              "Laorca Cafe"
+            ]
+          }
+        ]
+      },
+      "Sun Moon Lake": {
+        "name": "Sun Moon Lake",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Lake loop, ropeway ride and temple viewpoints",
+            "activities": [
+              {
+                "name": "Sun Moon Lake Ropeway round trip",
+                "cost": "₹1,014 pp"
+              },
+              {
+                "name": "Wenwu Temple",
+                "cost": "Free"
+              },
+              {
+                "name": "Bike rental for the Xiangshan lakeside section",
+                "cost": "₹520–₹780 pp"
+              },
+              {
+                "name": "Ita Thao boardwalk and pier walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mei Jen House B&B",
+                "budget": "₹4,900–₹7,000/night"
+              },
+              {
+                "name": "Fuli Hot Spring Resort",
+                "budget": "₹8,300–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Sun Moon Lake Restaurant (明潭餐廳)",
+              "The Old Papa Black Tea",
+              "Ita Thao Food Street"
+            ]
+          }
+        ]
+      },
+      "Tainan": {
+        "name": "Tainan",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Former-capital core with towers, lanes and night-market snacking",
+            "activities": [
+              {
+                "name": "Chihkan Tower",
+                "cost": "₹182 pp"
+              },
+              {
+                "name": "Hayashi Department Store rooftop and heritage floors",
+                "cost": "Free"
+              },
+              {
+                "name": "Shennong Street lane walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Wusheng Night Market tasting loop",
+                "cost": "₹390–₹780 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kindness Hotel - Tainan Chihkan Tower",
+                "budget": "₹5,200–₹7,800/night"
+              },
+              {
+                "name": "FX Hotel Tainan Minsheng Road Branch",
+                "budget": "₹4,700–₹7,300/night"
+              }
+            ],
+            "meals": [
+              "Slack Season Dan Zai Noodles",
+              "Chihkan Prawn Rolls",
+              "Wusheng Night Market"
+            ]
+          },
+          {
+            "theme": "Anping forts, museums and old-school Tainan specialties",
+            "activities": [
+              {
+                "name": "Fort Zeelandia (Anping Old Fort)",
+                "cost": "₹182 pp"
+              },
+              {
+                "name": "Anping Tree House",
+                "cost": "₹182 pp"
+              },
+              {
+                "name": "Chimei Museum general admission",
+                "cost": "₹520 pp"
+              },
+              {
+                "name": "Tainan Confucius Temple",
+                "cost": "₹104 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dynasty Hotel",
+                "budget": "₹4,200–₹6,200/night"
+              },
+              {
+                "name": "Just Sleep Tainan Hushan",
+                "budget": "₹7,800–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Du Hsiao Yueh",
+              "A Mei Fried Eel Noodles",
+              "Win Chang Beef Soup"
+            ]
+          }
+        ]
+      },
+      "Kaohsiung": {
+        "name": "Kaohsiung",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Harbour art, river lights and classic southern street food",
+            "activities": [
+              {
+                "name": "Pier-2 Art Center warehouses and waterfront",
+                "cost": "Free"
+              },
+              {
+                "name": "Love River evening cruise",
+                "cost": "₹390 pp"
+              },
+              {
+                "name": "Kaohsiung Music Center waterfront stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Liuhe Night Market dinner crawl",
+                "cost": "₹390–₹780 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kindness Hotel Kaohsiung Main Station",
+                "budget": "₹5,700–₹8,300/night"
+              },
+              {
+                "name": "Hotel Dua",
+                "budget": "₹8,800–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Duck Zhen",
+              "Gang Yuan Beef Noodles",
+              "Wu Pao Chun Bakery"
+            ]
+          },
+          {
+            "theme": "Ferries, pagodas and the Buddha museum circuit",
+            "activities": [
+              {
+                "name": "Cijin ferry round trip from Gushan",
+                "cost": "₹156 pp"
+              },
+              {
+                "name": "Cijin Lighthouse and old street stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Lotus Pond with Dragon and Tiger Pagodas",
+                "cost": "Free"
+              },
+              {
+                "name": "Fo Guang Shan Buddha Museum",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "La Hotel - Baseball Theme Hall",
+                "budget": "₹4,900–₹7,300/night"
+              },
+              {
+                "name": "JOHO HOTEL Kaohsiung",
+                "budget": "₹8,300–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Harbour Seafood Restaurant",
+              "Hou de Fu Steamed Dumpling Restaurant",
+              "Dadong Night Market"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Taipei",
+        "to": "Jiufen",
+        "method": "Kuo-Kuang Bus 1062 from Zhongxiao Fuxing area to Jiufen (about 75-90 min)",
+        "cost": "₹276 pp"
+      },
+      {
+        "from": "Jiufen",
+        "to": "Taroko Gorge",
+        "method": "Local bus/taxi to Ruifang + TRA Tze-Chiang train to Hualien, then Taroko shuttle or taxi",
+        "cost": "₹1,040–₹1,560 pp"
+      },
+      {
+        "from": "Taroko Gorge",
+        "to": "Sun Moon Lake",
+        "method": "TRA from Hualien to Taichung + Nantou Bus to Shuishe or Ita Thao",
+        "cost": "₹1,800–₹2,340 pp"
+      },
+      {
+        "from": "Sun Moon Lake",
+        "to": "Tainan",
+        "method": "Nantou Bus to Taichung HSR + THSR to Tainan",
+        "cost": "₹2,400–₹2,860 pp"
+      },
+      {
+        "from": "Tainan",
+        "to": "Kaohsiung",
+        "method": "TRA express or THSR to Zuoying (about 15-35 min)",
+        "cost": "₹276–₹364 pp"
+      },
+      {
+        "from": "Kaohsiung",
+        "to": "Taipei",
+        "method": "THSR from Zuoying to Taipei (about 1 hr 35 min)",
+        "cost": "₹3,874 pp"
+      }
+    ],
+    "extras": [
+      "An EasyCard or iPASS covers MRT, city buses, many TRA rides and YouBike unlocking across the route.",
+      "THSR early-bird bookings can discount long hops like Taipei-Tainan or Kaohsiung-Taipei by up to roughly one-third.",
+      "Taroko trail access can change after heavy rain or earthquake repairs, so re-check park notices the evening before your gorge day.",
+      "Kuo-Kuang's airport 1819 route and Jiufen-bound 1062 route keep the north-Taiwan section simple without a car.",
+      "Vegetarians should save Din Tai Fung, Fuhang Soy Milk, Jiufen Tea House, Du Hsiao Yueh side-dish options and Fo Guang Shan dining before landing."
+    ],
+    "cityImages": {
+      "Taipei": [
+        "Taipei 101 skyline at dusk",
+        "National Palace Museum Taipei exterior",
+        "Chiang Kai-shek Memorial Hall Taipei"
+      ],
+      "Jiufen": [
+        "Jiufen Old Street lanterns",
+        "A-Mei Tea House Jiufen",
+        "Jinguashi Gold Museum Taiwan"
+      ],
+      "Taroko Gorge": [
+        "Taroko Gorge Shakadang Trail Taiwan",
+        "Eternal Spring Shrine Taroko",
+        "Qingshui Cliff Hualien"
+      ],
+      "Sun Moon Lake": [
+        "Sun Moon Lake ropeway Taiwan",
+        "Wenwu Temple Sun Moon Lake",
+        "Ita Thao pier sunset"
+      ],
+      "Tainan": [
+        "Chihkan Tower Tainan",
+        "Anping Old Fort Tainan",
+        "Shennong Street Tainan lanterns"
+      ],
+      "Kaohsiung": [
+        "Pier-2 Art Center Kaohsiung",
+        "Fo Guang Shan Buddha Museum Taiwan",
+        "Lotus Pond Dragon and Tiger Pagodas"
+      ]
+    }
+  }
+}

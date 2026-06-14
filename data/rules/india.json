@@ -1,0 +1,751 @@
+{
+  "name": "India",
+  "seed": false,
+  "lat": 20.59,
+  "lng": 78.96,
+  "region": "Asia",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹65K–₹1.15L",
+    "couple": "₹1.2L–₹2.1L",
+    "family4": "₹2.4L–₹4L"
+  },
+  "experiences": [
+    "Taj Mahal at sunrise",
+    "Golden Triangle forts",
+    "Ganga aarti in Varanasi",
+    "Mumbai heritage and street food",
+    "Goa beaches and Old Goa churches"
+  ],
+  "avoid": [
+    "April–June heat is intense across Delhi, Agra and Jaipur, with afternoon sightseeing often uncomfortable.",
+    "July–September monsoon brings flooding delays, humid skies and rougher sea conditions in Goa."
+  ],
+  "combo": [
+    "Nepal",
+    "Sri Lanka"
+  ],
+  "landmark": "Taj Mahal",
+  "travelStyle": [
+    "explorer",
+    "culture",
+    "food"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Delhi",
+      "lat": 28.6139,
+      "lng": 77.209,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Mughal monuments, bazaars, big-city food trails and the best air-rail gateway for a classic North India loop"
+    },
+    {
+      "name": "Agra",
+      "lat": 27.1767,
+      "lng": 78.0081,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Sunrise Taj Mahal views, Mughal forts and easy side trips to Fatehpur Sikri or Mehtab Bagh"
+    },
+    {
+      "name": "Jaipur",
+      "lat": 26.9124,
+      "lng": 75.7873,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Palaces, stepwells, bazaars and Rajput fort viewpoints that round out the Golden Triangle"
+    },
+    {
+      "name": "Varanasi",
+      "lat": 25.3176,
+      "lng": 82.9739,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Dawn boat rides, Kashi Vishwanath Corridor and a deeply atmospheric old-city pilgrimage circuit"
+    },
+    {
+      "name": "Mumbai",
+      "lat": 19.076,
+      "lng": 72.8777,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Colonial-era heritage, art districts, iconic cafés and the easiest rail-air jump onward to Goa"
+    },
+    {
+      "name": "Goa",
+      "lat": 15.4909,
+      "lng": 73.8278,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Old Goa churches, Panjim's Latin Quarter, beach time and easy wildlife-day-trip options"
+    }
+  ],
+  "itinerary": {
+    "sim": "Airtel or Jio prepaid tourist-ready SIM/eSIM is the easiest airport setup; expect roughly ₹599–₹999 for a 28-day pack with enough daily data for maps, UPI and ride apps.",
+    "apps": [
+      "IRCTC Rail Connect",
+      "ixigo Trains",
+      "Google Maps offline",
+      "Uber",
+      "Ola",
+      "Zomato"
+    ],
+    "cityOrder": [
+      "Delhi",
+      "Agra",
+      "Jaipur",
+      "Varanasi",
+      "Mumbai",
+      "Goa"
+    ],
+    "cities": {
+      "Delhi": {
+        "name": "Delhi",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days cover Old Delhi's monuments and one full Lutyens-plus-UNESCO circuit before you move into the Golden Triangle.",
+        "days": [
+          {
+            "theme": "Arrival, Old Delhi & Mughal Landmarks",
+            "activities": [
+              {
+                "name": "Delhi Airport Metro Express into New Delhi / Shivaji Stadium",
+                "cost": "₹60–₹120 pp"
+              },
+              {
+                "name": "Red Fort",
+                "cost": "₹550–₹600 pp"
+              },
+              {
+                "name": "Jama Masjid courtyard and minaret access",
+                "cost": "Free courtyard; about ₹300 pp for tower/cloakroom"
+              },
+              {
+                "name": "Chandni Chowk cycle-rickshaw and snack crawl",
+                "cost": "₹200–₹400 pp"
+              },
+              {
+                "name": "Raj Ghat memorial stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "bloomrooms @ New Delhi Railway Station",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Hotel Palace Heights",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Karim's",
+              "Kuremal Mohan Lal Kulfi Wale",
+              "Saravana Bhavan Connaught Place"
+            ]
+          },
+          {
+            "theme": "UNESCO Tombs, Qutub & Central Delhi Evenings",
+            "activities": [
+              {
+                "name": "Humayun's Tomb",
+                "cost": "₹600 pp"
+              },
+              {
+                "name": "Qutub Minar",
+                "cost": "₹550–₹600 pp"
+              },
+              {
+                "name": "Lodhi Garden",
+                "cost": "Free"
+              },
+              {
+                "name": "India Gate and Kartavya Path sunset walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Khan Market or Connaught Place dinner loop",
+                "cost": "₹400–₹1,200 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "bloomrooms @ New Delhi Railway Station",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Hotel Palace Heights",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Andhra Bhavan Canteen",
+              "Khan Chacha",
+              "United Coffee House"
+            ]
+          }
+        ]
+      },
+      "Agra": {
+        "name": "Agra",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One well-planned day is enough for the Taj, Agra Fort and sunset viewpoints; add a second day only if you want Fatehpur Sikri without rushing.",
+        "days": [
+          {
+            "theme": "Sunrise Taj, Mughal Forts & Yamuna Sunset",
+            "activities": [
+              {
+                "name": "Gatimaan Express from Hazrat Nizamuddin to Agra Cantt",
+                "cost": "₹750–₹1,000 pp",
+                "tip": "Book the morning chair car early on IRCTC; this is the fastest rail transfer from Delhi."
+              },
+              {
+                "name": "Taj Mahal at sunrise",
+                "cost": "₹1,100 pp"
+              },
+              {
+                "name": "Agra Fort",
+                "cost": "₹650 pp"
+              },
+              {
+                "name": "Mehtab Bagh for late-afternoon Taj views",
+                "cost": "₹300 pp"
+              },
+              {
+                "name": "Sadar Bazaar or Kinari Bazaar evening walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Sidhartha",
+                "budget": "₹2,500–₹4,000/night"
+              },
+              {
+                "name": "Hotel Taj Resorts",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Joney's Place",
+              "Pinch of Spice",
+              "Dasaprakash"
+            ]
+          }
+        ]
+      },
+      "Jaipur": {
+        "name": "Jaipur",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days give you Amber Fort plus the old-city palace observatory circuit; a third day is only needed for craft workshops or a slower fort run.",
+        "days": [
+          {
+            "theme": "Amber Fort Circuit & Pink City Viewpoints",
+            "activities": [
+              {
+                "name": "Road transfer from Agra to Jaipur via Yamuna Expressway / NH21",
+                "cost": "₹500–₹900 pp by intercity bus or ₹3,500–₹5,500 per cab"
+              },
+              {
+                "name": "Amber Fort",
+                "cost": "₹1,000 pp"
+              },
+              {
+                "name": "Panna Meena ka Kund",
+                "cost": "Free"
+              },
+              {
+                "name": "Jal Mahal lakeside photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Nahargarh Fort sunset viewpoint",
+                "cost": "₹300 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Arya Niwas",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Pearl Palace Heritage",
+                "budget": "₹5,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Rawat Misthan Bhandar",
+              "Laxmi Misthan Bhandar",
+              "Niros"
+            ]
+          },
+          {
+            "theme": "City Palace, Astronomy & Bazaar Day",
+            "activities": [
+              {
+                "name": "City Palace Jaipur",
+                "cost": "₹1,000 pp"
+              },
+              {
+                "name": "Jantar Mantar",
+                "cost": "₹600 pp"
+              },
+              {
+                "name": "Hawa Mahal",
+                "cost": "₹600 pp"
+              },
+              {
+                "name": "Johari Bazaar and Bapu Bazaar shopping walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Patrika Gate or Albert Hall exterior for blue-hour photos",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Arya Niwas",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Pearl Palace Heritage",
+                "budget": "₹5,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Anokhi Café",
+              "Laxmi Misthan Bhandar",
+              "Niros"
+            ]
+          }
+        ]
+      },
+      "Varanasi": {
+        "name": "Varanasi",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days work best for one arrival-evening ghat circuit and one early-morning Sarnath day without compressing the riverfront experience.",
+        "days": [
+          {
+            "theme": "Flight In, Ghats & Evening Aarti",
+            "activities": [
+              {
+                "name": "IndiGo or SpiceJet flight from Jaipur to Varanasi",
+                "cost": "₹5,000–₹9,000 pp",
+                "tip": "Nonstops are limited, so many itineraries route via Delhi; morning departures preserve your sunset aarti window."
+              },
+              {
+                "name": "Kashi Vishwanath Corridor",
+                "cost": "Free"
+              },
+              {
+                "name": "Dashashwamedh Ghat evening Ganga aarti by boat or balcony seat",
+                "cost": "₹300–₹700 pp"
+              },
+              {
+                "name": "Assi Ghat and riverfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Old-city lane food crawl around Godowlia",
+                "cost": "₹200–₹500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Alka",
+                "budget": "₹3,000–₹5,000/night"
+              },
+              {
+                "name": "Ganpati Guest House",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Kashi Chat Bhandar",
+              "Blue Lassi Shop",
+              "Brown Bread Bakery"
+            ]
+          },
+          {
+            "theme": "Sunrise Boat Ride & Sarnath Heritage",
+            "activities": [
+              {
+                "name": "Sunrise shared boat ride on the Ganges",
+                "cost": "₹400–₹800 pp"
+              },
+              {
+                "name": "Sarnath archaeological site",
+                "cost": "₹250–₹300 pp"
+              },
+              {
+                "name": "Sarnath Archaeological Museum",
+                "cost": "₹100 pp"
+              },
+              {
+                "name": "Madanpura silk-weaving or old-city heritage walk",
+                "cost": "₹300–₹800 pp"
+              },
+              {
+                "name": "Manikarnika-viewing lanes with local guide",
+                "cost": "₹300–₹700 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Alka",
+                "budget": "₹3,000–₹5,000/night"
+              },
+              {
+                "name": "Ganpati Guest House",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Deena Chaat Bhandar",
+              "Baati Chokha",
+              "Blue Lassi Shop"
+            ]
+          }
+        ]
+      },
+      "Mumbai": {
+        "name": "Mumbai",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days are enough for South Mumbai heritage plus Elephanta; add a third only if you want Bandra, art galleries and a longer food crawl.",
+        "days": [
+          {
+            "theme": "South Mumbai Icons & Museum Day",
+            "activities": [
+              {
+                "name": "IndiGo or SpiceJet flight from Varanasi to Mumbai",
+                "cost": "₹5,500–₹9,500 pp"
+              },
+              {
+                "name": "Gateway of India and Colaba Causeway",
+                "cost": "Free"
+              },
+              {
+                "name": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya",
+                "cost": "₹700 pp"
+              },
+              {
+                "name": "Kala Ghoda art district walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Marine Drive sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Residency Hotel Fort",
+                "budget": "₹6,000–₹8,500/night"
+              },
+              {
+                "name": "The Gordon House Hotel",
+                "budget": "₹7,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Leopold Café",
+              "Britannia & Co.",
+              "Trishna"
+            ]
+          },
+          {
+            "theme": "Elephanta Caves & Classic Mumbai Food Stops",
+            "activities": [
+              {
+                "name": "Gateway ferry and Elephanta Caves circuit",
+                "cost": "₹810–₹870 pp"
+              },
+              {
+                "name": "Chhatrapati Shivaji Maharaj Terminus exterior and heritage walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Crawford Market and Mohammed Ali Road style food trail",
+                "cost": "₹400–₹1,200 pp"
+              },
+              {
+                "name": "Bandra Bandstand or Worli Sea Face evening detour",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Residency Hotel Fort",
+                "budget": "₹6,000–₹8,500/night"
+              },
+              {
+                "name": "The Gordon House Hotel",
+                "budget": "₹7,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Leopold Café",
+              "Trishna",
+              "Bademiya"
+            ]
+          }
+        ]
+      },
+      "Goa": {
+        "name": "Goa",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days balance Old Goa heritage, one full beach day and one Dudhsagar or inland excursion without racing between the north and south ends.",
+        "days": [
+          {
+            "theme": "Mumbai Transfer, Panjim & Fontainhas",
+            "activities": [
+              {
+                "name": "Vande Bharat or Tejas-style daylight train from Mumbai to Madgaon / Goa",
+                "cost": "₹1,600–₹3,200 pp",
+                "tip": "The Konkan Railway ride is more scenic than flying; book early around Christmas and New Year."
+              },
+              {
+                "name": "Fontainhas Latin Quarter walk",
+                "cost": "₹300–₹800 pp with guide or Free self-guided"
+              },
+              {
+                "name": "Church of Our Lady of the Immaculate Conception",
+                "cost": "Free"
+              },
+              {
+                "name": "Miramar Beach sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "BloomSuites | Calangute",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Acron Candolim Regina",
+                "budget": "₹5,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Vinayak Family Restaurant",
+              "Mum's Kitchen",
+              "Ritz Classic Panjim"
+            ]
+          },
+          {
+            "theme": "Old Goa Churches, Forts & North Goa Beaches",
+            "activities": [
+              {
+                "name": "Basilica of Bom Jesus",
+                "cost": "Free"
+              },
+              {
+                "name": "Sé Cathedral",
+                "cost": "Free"
+              },
+              {
+                "name": "Fort Aguada",
+                "cost": "Free"
+              },
+              {
+                "name": "Candolim or Calangute beach shack afternoon",
+                "cost": "₹500–₹1,200 pp"
+              },
+              {
+                "name": "Sunset at Sinquerim or Baga-side cafés",
+                "cost": "₹300–₹900 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "BloomSuites | Calangute",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Acron Candolim Regina",
+                "budget": "₹5,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Pousada by the Beach",
+              "Mum's Kitchen",
+              "Vinayak Family Restaurant"
+            ]
+          },
+          {
+            "theme": "Dudhsagar Day Trip or Slow Beach Finale",
+            "activities": [
+              {
+                "name": "Dudhsagar jeep safari day trip",
+                "cost": "₹1,699–₹1,999 pp"
+              },
+              {
+                "name": "Spice plantation lunch stop",
+                "cost": "₹700–₹1,200 pp"
+              },
+              {
+                "name": "Anjuna or Vagator sunset loop",
+                "cost": "Free"
+              },
+              {
+                "name": "Optional scooter rental for a final beach-hopping day",
+                "cost": "₹400–₹700 per scooter"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "BloomSuites | Calangute",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Acron Candolim Regina",
+                "budget": "₹5,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Fisherman's Wharf Goa",
+              "Ritz Classic Panjim",
+              "Pousada by the Beach"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Delhi",
+        "to": "Agra",
+        "method": "Gatimaan Express or Vande Bharat from Hazrat Nizamuddin to Agra Cantt (about 1h40m)",
+        "cost": "₹750–₹1,100 pp"
+      },
+      {
+        "from": "Agra",
+        "to": "Jaipur",
+        "method": "Private cab or intercity train via Agra Cantt to Jaipur Junction (about 4–5 hr)",
+        "cost": "₹500–₹900 pp by bus/train or ₹3,500–₹5,500 per cab"
+      },
+      {
+        "from": "Jaipur",
+        "to": "Varanasi",
+        "method": "IndiGo or SpiceJet via Delhi / direct seasonal service when available (4–6 hr total)",
+        "cost": "₹5,000–₹9,000 pp"
+      },
+      {
+        "from": "Varanasi",
+        "to": "Mumbai",
+        "method": "IndiGo or SpiceJet nonstop to Mumbai (about 2h15m)",
+        "cost": "₹5,500–₹9,500 pp"
+      },
+      {
+        "from": "Mumbai",
+        "to": "Goa",
+        "method": "Vande Bharat from CSMT to Madgaon on the Konkan Railway, or quick IndiGo / SpiceJet flight",
+        "cost": "₹1,600–₹3,200 pp by train or ₹3,500–₹6,500 pp by flight"
+      }
+    ],
+    "extras": [
+      "For a train-heavy version, Rajdhani or other AC overnight trains can replace the Jaipur–Varanasi or Delhi–Mumbai flight legs, but they take a full night and need early IRCTC booking.",
+      "ASI monuments generally offer slightly cheaper cashless tickets online, so pre-book Red Fort, Humayun's Tomb, Qutub Minar, Taj Mahal and Agra Fort whenever your dates are fixed.",
+      "Start monument days at sunrise in Delhi, Agra and Jaipur; lines and haze build quickly after 10 AM in peak season.",
+      "UPI works widely in cities, but keep ₹2,000–₹4,000 in cash for rickshaws, station porters, smaller ghatside cafés and beach shacks."
+    ],
+    "cityImages": {
+      "Delhi": [
+        "Red Fort Delhi UNESCO",
+        "Qutub Minar Delhi",
+        "Humayun's Tomb Delhi"
+      ],
+      "Agra": [
+        "Taj Mahal sunrise Agra",
+        "Agra Fort red sandstone",
+        "Mehtab Bagh Taj Mahal view"
+      ],
+      "Jaipur": [
+        "Amber Fort Jaipur",
+        "Hawa Mahal Jaipur facade",
+        "City Palace Jaipur courtyard"
+      ],
+      "Varanasi": [
+        "Dashashwamedh Ghat Varanasi aarti",
+        "Varanasi sunrise boat Ganges",
+        "Sarnath Dhamek Stupa"
+      ],
+      "Mumbai": [
+        "Gateway of India Mumbai",
+        "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya Mumbai",
+        "Marine Drive Mumbai skyline"
+      ],
+      "Goa": [
+        "Basilica of Bom Jesus Goa",
+        "Fontainhas Panaji Goa",
+        "Fort Aguada Goa"
+      ]
+    }
+  }
+}

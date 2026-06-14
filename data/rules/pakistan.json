@@ -1,0 +1,758 @@
+{
+  "name": "Pakistan",
+  "seed": false,
+  "lat": 30.38,
+  "lng": 69.35,
+  "region": "Asia",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June"
+  ],
+  "worstMonths": [
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹55K–₹95K",
+    "couple": "₹95K–₹1.7L",
+    "family4": "₹2L–₹3.2L"
+  },
+  "experiences": [
+    "Mughal Lahore",
+    "Hunza road trip",
+    "Skardu lakes",
+    "Swat alpine valleys",
+    "Karachi food trail"
+  ],
+  "avoid": [
+    "July–September can bring monsoon flooding in the plains and landslides on northern mountain roads.",
+    "Karachi is hottest and most humid from late April to June.",
+    "Skardu and upper Hunza flights are weather-sensitive; keep a buffer day before international departures."
+  ],
+  "combo": [
+    "UAE",
+    "Turkey"
+  ],
+  "landmark": "Baltit Fort",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Islamabad",
+      "lat": 33.6844,
+      "lng": 73.0479,
+      "bestMonths": [
+        "October",
+        "November",
+        "February",
+        "March"
+      ],
+      "notes": "Faisal Mosque, leafy Margalla foothills, Saidpur heritage lanes and Pakistan Monument viewpoints"
+    },
+    {
+      "name": "Lahore",
+      "lat": 31.5497,
+      "lng": 74.3436,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Badshahi Mosque, Lahore Fort, old-city food streets and Mughal gardens"
+    },
+    {
+      "name": "Hunza Valley",
+      "lat": 36.3167,
+      "lng": 74.65,
+      "bestMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "notes": "Karimabad bazaars, Baltit Fort, Attabad Lake and Passu cone panoramas"
+    },
+    {
+      "name": "Skardu",
+      "lat": 35.2971,
+      "lng": 75.6333,
+      "bestMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "notes": "Cold Desert dunes, Kharpocho Fort, Shangrila lakes and gateway to Baltistan"
+    },
+    {
+      "name": "Swat Valley",
+      "lat": 34.7717,
+      "lng": 72.3602,
+      "bestMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "notes": "Mingora bazaars, Malam Jabba slopes, White Palace and river valleys"
+    },
+    {
+      "name": "Karachi",
+      "lat": 24.8607,
+      "lng": 67.0011,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Arabian Sea sunsets, colonial Saddar, mausoleums and iconic Bun Kabab stops"
+    }
+  ],
+  "itinerary": {
+    "sim": "Jazz and Zong are the easiest prepaid picks; expect roughly ₹180–₹240 for the SIM and ₹450–₹750 for a 20–30GB data bundle booked at the airport or major city franchise.",
+    "apps": [
+      "Google Maps offline",
+      "inDrive",
+      "Careem",
+      "Bookme.pk",
+      "Sastaticket.pk",
+      "XE Currency",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Lahore",
+      "Islamabad",
+      "Swat Valley",
+      "Hunza Valley",
+      "Skardu",
+      "Karachi"
+    ],
+    "cities": {
+      "Lahore": {
+        "name": "Lahore",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days cover Lahore's essential Mughal monuments, the Walled City food circuit and an evening Wagah border outing.",
+        "days": [
+          {
+            "theme": "Walled City Icons, Fort Ramparts & Food Street",
+            "activities": [
+              {
+                "name": "Lahore Fort (Shahi Qila)",
+                "cost": "₹150 pp",
+                "tip": "Foreigner pricing is usually PKR 500; carry small notes because counters often struggle with change."
+              },
+              {
+                "name": "Badshahi Mosque courtyard and prayer hall",
+                "cost": "Free",
+                "tip": "Dress modestly and avoid the main prayer hall during prayer times."
+              },
+              {
+                "name": "Wazir Khan Mosque and Delhi Gate lanes",
+                "cost": "Free"
+              },
+              {
+                "name": "Shahi Hammam museum stop",
+                "cost": "₹120–₹180 pp"
+              },
+              {
+                "name": "Evening dinner on Fort Road Food Street",
+                "cost": "₹300–₹750 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "LOKAL Rooms x Gulberg",
+                "budget": "₹1,800–₹2,700/night"
+              },
+              {
+                "name": "Luxus Grand Hotel",
+                "budget": "₹3,600–₹4,800/night"
+              }
+            ],
+            "meals": [
+              "Cooco's Den",
+              "Haveli Restaurant",
+              "Butt Karahi Lakshmi Chowk"
+            ]
+          },
+          {
+            "theme": "Museum Day, Shalimar Gardens & Wagah Ceremony",
+            "activities": [
+              {
+                "name": "Lahore Museum",
+                "cost": "₹30–₹60 pp"
+              },
+              {
+                "name": "Shalimar Gardens",
+                "cost": "₹60–₹120 pp"
+              },
+              {
+                "name": "Anarkali Bazaar and Mall Road heritage walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Wagah Border flag-lowering ceremony shared taxi",
+                "cost": "₹450–₹750 pp"
+              },
+              {
+                "name": "Gawalmandi dessert stop for falooda or kulfi",
+                "cost": "₹120–₹240 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "LOKAL Rooms x Gulberg",
+                "budget": "₹1,800–₹2,700/night"
+              },
+              {
+                "name": "Luxus Grand Hotel",
+                "budget": "₹3,600–₹4,800/night"
+              }
+            ],
+            "meals": [
+              "Makhaz Restaurant",
+              "Phajja Siri Paye",
+              "Café Aylanto Lahore"
+            ]
+          }
+        ]
+      },
+      "Islamabad": {
+        "name": "Islamabad",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days are enough for Islamabad's marquee sights plus an easy Margalla and Saidpur loop before heading north.",
+        "days": [
+          {
+            "theme": "Capital Landmarks, Faisal Mosque & Pakistan Monument",
+            "activities": [
+              {
+                "name": "Daewoo Express or Faisal Movers from Lahore to Islamabad",
+                "cost": "₹450–₹660 pp",
+                "tip": "Executive seats save time on roadside stops and are worth the small upgrade."
+              },
+              {
+                "name": "Faisal Mosque",
+                "cost": "Free",
+                "tip": "Visit late afternoon for the cleanest light and cooler marble courtyards."
+              },
+              {
+                "name": "Pakistan Monument Museum",
+                "cost": "₹60–₹90 pp"
+              },
+              {
+                "name": "Daman-e-Koh viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Blue Area chai stop and Jinnah Super evening walk",
+                "cost": "₹120–₹300 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Hillview Islamabad",
+                "budget": "₹2,100–₹3,000/night"
+              },
+              {
+                "name": "Envoy Continental Hotel",
+                "budget": "₹3,600–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Kabul Restaurant",
+              "Burning Brownie",
+              "Des Pardes Saidpur Village"
+            ]
+          },
+          {
+            "theme": "Lok Virsa, Saidpur Village & Margalla Nature",
+            "activities": [
+              {
+                "name": "Lok Virsa Heritage Museum",
+                "cost": "₹30–₹60 pp"
+              },
+              {
+                "name": "Saidpur Village heritage walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Margalla Hills Trail 3 or Trail 5",
+                "cost": "Free"
+              },
+              {
+                "name": "Rawalpindi Raja Bazaar rickshaw hop",
+                "cost": "₹150–₹240 per ride"
+              },
+              {
+                "name": "Monal trailhead sunset tea stop",
+                "cost": "₹180–₹360 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Hillview Islamabad",
+                "budget": "₹2,100–₹3,000/night"
+              },
+              {
+                "name": "Envoy Continental Hotel",
+                "budget": "₹3,600–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Chaaye Khana",
+              "Khyber Dodai",
+              "Street 1 Café"
+            ]
+          }
+        ]
+      },
+      "Swat Valley": {
+        "name": "Swat Valley",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days balance Mingora and Marghazar heritage with a full Malam Jabba alpine outing.",
+        "days": [
+          {
+            "theme": "Islamabad to Mingora, Fizagat Riverfront & White Palace",
+            "activities": [
+              {
+                "name": "Faisal Movers or Daewoo-class coach from Islamabad to Mingora",
+                "cost": "₹360–₹450 pp"
+              },
+              {
+                "name": "Fizagat Park riverside walk",
+                "cost": "Free"
+              },
+              {
+                "name": "White Palace Marghazar",
+                "cost": "₹30–₹60 pp"
+              },
+              {
+                "name": "Mingora Bazaar shopping for shawls and dry fruit",
+                "cost": "Free"
+              },
+              {
+                "name": "Evening chapli kebab dinner",
+                "cost": "₹180–₹360 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Swat View Hotel",
+                "budget": "₹2,400–₹3,600/night"
+              },
+              {
+                "name": "Swat Serena Hotel",
+                "budget": "₹5,400–₹7,200/night"
+              }
+            ],
+            "meals": [
+              "Hujra Restaurant Mingora",
+              "Mingora Chapli Kabab House",
+              "Swat Serena Restaurant"
+            ]
+          },
+          {
+            "theme": "Malam Jabba Slopes, Chairlift & Valley Viewpoints",
+            "activities": [
+              {
+                "name": "Malam Jabba chairlift or zipline area",
+                "cost": "₹900–₹1,200 pp",
+                "tip": "Winter ski rentals cost extra; in summer, pay only for lift and adventure rides you actually use."
+              },
+              {
+                "name": "Malam Jabba scenic chair ride viewpoints",
+                "cost": "Included with lift ticket"
+              },
+              {
+                "name": "Roadside trout lunch near Bahrain or Malam Jabba",
+                "cost": "₹300–₹600 pp"
+              },
+              {
+                "name": "Janjal picnic stop or orchard walk on the return drive",
+                "cost": "Free"
+              },
+              {
+                "name": "Late-evening bus prep for the Karakoram leg",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Swat View Hotel",
+                "budget": "₹2,400–₹3,600/night"
+              },
+              {
+                "name": "Swat Serena Hotel",
+                "budget": "₹5,400–₹7,200/night"
+              }
+            ],
+            "meals": [
+              "Malam Jabba Resort Restaurant",
+              "Swat View Roof Top Restaurant",
+              "Hujra Restaurant Mingora"
+            ]
+          }
+        ]
+      },
+      "Hunza Valley": {
+        "name": "Hunza Valley",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days in Karimabad let you cover the heritage forts and the classic Attabad–Passu scenic loop without rushing.",
+        "days": [
+          {
+            "theme": "CPEC / Karakoram Highway Arrival, Karimabad & Baltit Fort",
+            "activities": [
+              {
+                "name": "Private coaster or shared transport from Swat/Islamabad into Hunza via the CPEC-upgraded Karakoram Highway",
+                "cost": "₹2,400–₹4,500 pp",
+                "tip": "Break the run in Besham or Gilgit if you are not used to 12+ hour mountain road days."
+              },
+              {
+                "name": "Baltit Fort, Karimabad",
+                "cost": "₹150 pp",
+                "tip": "Recent local ticket pricing is PKR 500 for Pakistani nationals; guided fort slots add context and move fast in peak season."
+              },
+              {
+                "name": "Karimabad bazaar walk and zero-point valley overlook",
+                "cost": "Free"
+              },
+              {
+                "name": "Altit Fort and royal garden",
+                "cost": "₹150–₹240 pp"
+              },
+              {
+                "name": "Sunset at Duikar / Eagle's Nest viewpoint",
+                "cost": "Free + ₹300–₹600 shared jeep if you skip the hike"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Old Hunza Inn",
+                "budget": "₹1,500–₹2,100/night"
+              },
+              {
+                "name": "Eagle's Nest Hotel",
+                "budget": "₹5,400–₹6,600/night"
+              }
+            ],
+            "meals": [
+              "Café de Hunza",
+              "Rainbow Restaurant Karimabad",
+              "Hidden Paradise Hunza"
+            ]
+          },
+          {
+            "theme": "Attabad Lake, Passu Cones & Glacier Viewpoints",
+            "activities": [
+              {
+                "name": "Attabad Lake boat ride",
+                "cost": "₹450–₹750 pp"
+              },
+              {
+                "name": "Passu Cathedral / Passu Cones viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Hussaini Suspension Bridge approach stop",
+                "cost": "₹60–₹120 pp parking or local upkeep fees"
+              },
+              {
+                "name": "Hopper Glacier or Ghulkin village jeep outing",
+                "cost": "₹1,200–₹1,800 per jeep share"
+              },
+              {
+                "name": "Walnut cake and sea-buckthorn drink break at Café de Hunza",
+                "cost": "₹180–₹360 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Old Hunza Inn",
+                "budget": "₹1,500–₹2,100/night"
+              },
+              {
+                "name": "Eagle's Nest Hotel",
+                "budget": "₹5,400–₹6,600/night"
+              }
+            ],
+            "meals": [
+              "Yak Grill Karimabad",
+              "Glacier Breeze Restaurant",
+              "Café de Hunza"
+            ]
+          }
+        ]
+      },
+      "Skardu": {
+        "name": "Skardu",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days cover Skardu's classic forts, desert dunes and lake circuit while still leaving time for a weather buffer.",
+        "days": [
+          {
+            "theme": "Jaglot Road Transfer, Kharpocho Fort & Katpana Dunes",
+            "activities": [
+              {
+                "name": "Hunza to Skardu shared coaster or private jeep via Jaglot-Skardu Road",
+                "cost": "₹1,800–₹3,300 pp"
+              },
+              {
+                "name": "Kharpocho (Skardu) Fort",
+                "cost": "₹60–₹120 pp"
+              },
+              {
+                "name": "Katpana Cold Desert sunset walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Skardu Bazaar dry-fruit and apricot shopping",
+                "cost": "Free"
+              },
+              {
+                "name": "Balti dinner in the old bazaar",
+                "cost": "₹300–₹600 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Summit Hotel Skardu",
+                "budget": "₹2,100–₹3,300/night"
+              },
+              {
+                "name": "Roomy Lodge Skardu",
+                "budget": "₹3,300–₹4,800/night"
+              }
+            ],
+            "meals": [
+              "Dewanekhas Restaurant Skardu",
+              "The Grind Café",
+              "North Café Skardu"
+            ]
+          },
+          {
+            "theme": "Shangrila, Satpara Lake & Baltistan Views",
+            "activities": [
+              {
+                "name": "Shangrila Resort / Lower Kachura Lake day visit",
+                "cost": "₹150–₹300 pp"
+              },
+              {
+                "name": "Satpara Lake boat or viewpoint stop",
+                "cost": "₹300–₹600 pp"
+              },
+              {
+                "name": "Organic Village walk or Sarfaranga view drive",
+                "cost": "Free"
+              },
+              {
+                "name": "Kachura trout lunch",
+                "cost": "₹360–₹720 pp"
+              },
+              {
+                "name": "Airport-area tea stop before the flight buffer night",
+                "cost": "₹90–₹180 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Summit Hotel Skardu",
+                "budget": "₹2,100–₹3,300/night"
+              },
+              {
+                "name": "Roomy Lodge Skardu",
+                "budget": "₹3,300–₹4,800/night"
+              }
+            ],
+            "meals": [
+              "Shangrila Resort Restaurant",
+              "The Grind Café",
+              "Dewanekhas Restaurant Skardu"
+            ]
+          }
+        ]
+      },
+      "Karachi": {
+        "name": "Karachi",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days give you the core colonial-and-coast circuit plus enough time to do Karachi's classic restaurant crawl.",
+        "days": [
+          {
+            "theme": "PIA Flight South, Mausoleum & Clifton Seafront",
+            "activities": [
+              {
+                "name": "PIA or Airblue flight from Skardu to Karachi via Islamabad",
+                "cost": "₹10,500–₹15,000 pp",
+                "tip": "Keep at least half a day of buffer because northern departures often slide on weather."
+              },
+              {
+                "name": "Mazar-e-Quaid (Quaid-e-Azam Mausoleum)",
+                "cost": "₹30–₹60 pp"
+              },
+              {
+                "name": "Frere Hall lawns and Saddar colonial walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Clifton Beach sunset",
+                "cost": "Free"
+              },
+              {
+                "name": "Do Darya dinner strip",
+                "cost": "₹450–₹1,050 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Galaxy Karachi",
+                "budget": "₹1,800–₹2,700/night"
+              },
+              {
+                "name": "Hotel Excelsior Karachi",
+                "budget": "₹3,000–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Kolachi Restaurant",
+              "Xander's Clifton",
+              "Waheed Kabab House Burns Road"
+            ]
+          },
+          {
+            "theme": "Mohatta Palace, Street Food & Seaview Loop",
+            "activities": [
+              {
+                "name": "Mohatta Palace Museum",
+                "cost": "₹150 pp"
+              },
+              {
+                "name": "Empress Market and Zainab Market shopping loop",
+                "cost": "Free"
+              },
+              {
+                "name": "Pakistan Air Force Museum",
+                "cost": "₹120–₹180 pp"
+              },
+              {
+                "name": "Seaview camel ride or beach ATV area",
+                "cost": "₹150–₹450 per ride"
+              },
+              {
+                "name": "Burns Road dessert crawl for rabri, falooda and bun kabab",
+                "cost": "₹180–₹360 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Galaxy Karachi",
+                "budget": "₹1,800–₹2,700/night"
+              },
+              {
+                "name": "Hotel Excelsior Karachi",
+                "budget": "₹3,000–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Café Flo",
+              "Boat Basin food street",
+              "Kolachi Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Lahore",
+        "to": "Islamabad",
+        "method": "Daewoo Express or Faisal Movers coach on the M-2 Motorway (4.5–5.5 hr) or a short domestic flight",
+        "cost": "₹450–₹4,800 pp"
+      },
+      {
+        "from": "Islamabad",
+        "to": "Swat Valley",
+        "method": "Daewoo/Faisal Movers-style coach to Mingora (4.5–6 hr) plus local taxi onward to Malam Jabba or Marghazar",
+        "cost": "₹360–₹900 pp"
+      },
+      {
+        "from": "Swat Valley",
+        "to": "Hunza Valley",
+        "method": "Return toward the Hazara/CPEC corridor, then continue on the Karakoram Highway by shared coaster or private car with an optional Gilgit overnight",
+        "cost": "₹2,400–₹4,500 pp"
+      },
+      {
+        "from": "Hunza Valley",
+        "to": "Skardu",
+        "method": "Shared coaster or private jeep via Gilgit and Jaglot-Skardu Road (7–10 hr depending on roadwork)",
+        "cost": "₹1,800–₹3,300 pp"
+      },
+      {
+        "from": "Skardu",
+        "to": "Karachi",
+        "method": "PIA / Airblue connection via Islamabad; use road only if weather cancels flights and you have 2 extra buffer days",
+        "cost": "₹10,500–₹15,000 pp"
+      }
+    ],
+    "extras": [
+      "October to March is the easiest window for Lahore, Islamabad and Karachi, while April to June gives the cleanest mountain roads and views for Swat, Hunza and Skardu.",
+      "Indian rupees are not a practical payment currency inside Pakistan, so budget in rupees for planning only and withdraw or exchange into PKR after arrival.",
+      "Book PIA or Airblue northern sectors early and keep screenshot copies of tickets because weather cancellations are common in Gilgit-Baltistan.",
+      "Daewoo Express is strongest on intercity plains routes; once you head into Swat, Hunza or Skardu, expect to switch to Faisal Movers, NATCO, coasters or private jeeps.",
+      "Carry layers even in June because Hunza and Skardu evenings get cold, while Karachi stays humid enough that light cotton clothes matter year-round."
+    ],
+    "cityImages": {
+      "Lahore": [
+        "Badshahi Mosque Lahore courtyard",
+        "Lahore Fort Alamgiri Gate",
+        "Wazir Khan Mosque Lahore frescoes"
+      ],
+      "Islamabad": [
+        "Faisal Mosque Islamabad aerial view",
+        "Pakistan Monument Islamabad night",
+        "Margalla Hills Daman-e-Koh Islamabad"
+      ],
+      "Swat Valley": [
+        "White Palace Marghazar Swat",
+        "Malam Jabba chairlift Swat",
+        "Swat River Fizagat Park"
+      ],
+      "Hunza Valley": [
+        "Baltit Fort Karimabad Hunza",
+        "Attabad Lake Hunza turquoise water",
+        "Passu Cones Hunza Pakistan"
+      ],
+      "Skardu": [
+        "Katpana Cold Desert Skardu",
+        "Shangrila Resort Lower Kachura Lake",
+        "Kharpocho Fort Skardu"
+      ],
+      "Karachi": [
+        "Mazar-e-Quaid Karachi mausoleum",
+        "Mohatta Palace Karachi",
+        "Clifton Beach Karachi sunset"
+      ]
+    }
+  }
+}

@@ -145,9 +145,9 @@
     "lng": 78.96,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 12,
+    "maxDays": 18
   },
   {
     "name": "Sri Lanka",
@@ -175,9 +175,9 @@
     "lng": 69.35,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 12,
+    "maxDays": 18
   },
   {
     "name": "Afghanistan",
@@ -205,9 +205,9 @@
     "lng": 103.85,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 13,
+    "maxDays": 18
   },
   {
     "name": "North Korea",
@@ -225,9 +225,9 @@
     "lng": 120.96,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 11,
+    "maxDays": 14
   },
   {
     "name": "Brunei",
@@ -255,9 +255,9 @@
     "lng": 64.59,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 16
   },
   {
     "name": "Kazakhstan",

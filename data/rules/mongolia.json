@@ -1,0 +1,796 @@
+{
+  "name": "Mongolia",
+  "seed": false,
+  "lat": 46.86,
+  "lng": 103.85,
+  "region": "Asia",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "budget": {
+    "solo": "₹1.1L–₹1.8L",
+    "couple": "₹2L–₹3.2L",
+    "family4": "₹4.2L–₹6.5L"
+  },
+  "experiences": [
+    "Ger camps",
+    "Steppe road trips",
+    "Horse trekking",
+    "Gobi dunes",
+    "Monasteries"
+  ],
+  "avoid": [
+    "October–May — most ger camps shut and overnight temperatures regularly drop below freezing",
+    "Spring dust-storm season in the Gobi and shoulder-season road washouts",
+    "Naadam week only if you dislike sold-out flights and higher ger-camp prices"
+  ],
+  "combo": [
+    "Russia",
+    "China"
+  ],
+  "landmark": "Khongoryn Els",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Ulaanbaatar",
+      "lat": 47.8864,
+      "lng": 106.9057,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Capital stop for museums, monasteries, cash, SIMs and the buffer nights you need before Mongolia's weather-sensitive countryside legs"
+    },
+    {
+      "name": "Terelj National Park",
+      "lat": 47.9927,
+      "lng": 107.4174,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Base for Turtle Rock, Aryabal Meditation Temple, classic ger camps and easy horse riding close to the capital"
+    },
+    {
+      "name": "Gobi Desert",
+      "lat": 43.5708,
+      "lng": 104.425,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Dalanzadgad gateway for Yolyn Am, Bayanzag Flaming Cliffs and Khongoryn Els camel-and-dune days"
+    },
+    {
+      "name": "Khövsgöl Lake",
+      "lat": 50.4364,
+      "lng": 100.1544,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Hatgal-side lake camps, boat rides, forest horse trails and the clearest warm-season water in the country"
+    },
+    {
+      "name": "Karakorum",
+      "lat": 47.1975,
+      "lng": 102.8238,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Kharkhorin base for Erdene Zuu Monastery, the Karakorum Museum and Orkhon Valley steppe loops"
+    }
+  ],
+  "itinerary": {
+    "sim": "Unitel or Mobicom airport SIMs are the easiest pickup at Chinggis Khaan International; expect about ₹720–₹1,440 for a tourist pack with enough data for maps, and download offline maps before leaving Ulaanbaatar.",
+    "apps": [
+      "MIAT",
+      "UBCab",
+      "Tapatrip",
+      "Google Maps offline",
+      "MAPS.ME",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Ulaanbaatar",
+      "Terelj National Park",
+      "Karakorum",
+      "Gobi Desert",
+      "Khövsgöl Lake"
+    ],
+    "cities": {
+      "Ulaanbaatar": {
+        "name": "Ulaanbaatar",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days is ideal because Mongolia works best with one acclimatization day in the capital before the countryside, one culture day, and one spare half-day for weather or flight changes.",
+        "days": [
+          {
+            "theme": "Sukhbaatar Square, Museums & City Bearings",
+            "activities": [
+              {
+                "name": "Sukhbaatar Square and Government Palace frontage walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Chinggis Khaan National Museum",
+                "cost": "₹720 pp"
+              },
+              {
+                "name": "National Museum of Mongolia",
+                "cost": "₹480 pp"
+              },
+              {
+                "name": "State Department Store cash-and-layers stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Modern Nomads dinner for khorkhog, buuz or tsuivan",
+                "cost": "₹720–₹1,440 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "UB INN Hotel & Gallery",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Best Western Premier Tuushin Hotel",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Blue Sky Hotel & Tower",
+                "budget": "₹12,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Modern Nomads",
+              "Luna Blanca",
+              "Veranda"
+            ]
+          },
+          {
+            "theme": "Monasteries, Bogd Khan History & Zaisan Viewpoint",
+            "activities": [
+              {
+                "name": "Gandantegchinlen Monastery main temple visit",
+                "cost": "₹168 pp"
+              },
+              {
+                "name": "Bogd Khan Palace Museum",
+                "cost": "₹480 pp"
+              },
+              {
+                "name": "Zaisan Memorial hill climb",
+                "cost": "Free"
+              },
+              {
+                "name": "Naran Tuul Market browsing for cashmere and riding gloves",
+                "cost": "Free"
+              },
+              {
+                "name": "Hazara or BD’s Mongolian Barbeque dinner",
+                "cost": "₹960–₹1,800 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "UB INN Hotel & Gallery",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Best Western Premier Tuushin Hotel",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Blue Sky Hotel & Tower",
+                "budget": "₹12,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Hazara",
+              "BD’s Mongolian Barbeque",
+              "Luna Blanca"
+            ]
+          },
+          {
+            "theme": "Railway Buffer Day & Easy Capital Logistics",
+            "activities": [
+              {
+                "name": "Ulaanbaatar Railway Museum",
+                "cost": "₹240 pp"
+              },
+              {
+                "name": "Choijin Lama Temple Museum",
+                "cost": "₹480 pp"
+              },
+              {
+                "name": "Trip-supply run for snacks, cash and wet wipes before the jeep leg",
+                "cost": "₹720–₹2,400 pp"
+              },
+              {
+                "name": "MIAT or road-operator reconfirmation for the next sector",
+                "cost": "Free"
+              },
+              {
+                "name": "Evening folk performance at Tumen Ekh Ensemble",
+                "cost": "₹960–₹1,680 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Springs Hotel Ulaanbaatar",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Holiday Inn Ulaanbaatar",
+                "budget": "₹10,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Veranda",
+              "Millie’s Café",
+              "Modern Nomads"
+            ]
+          }
+        ]
+      },
+      "Terelj National Park": {
+        "name": "Terelj National Park",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives you the classic near-UB national-park loop without rushing the horse riding or the ger-camp evening.",
+        "days": [
+          {
+            "theme": "Park Entry, Turtle Rock & Aryabal Temple",
+            "activities": [
+              {
+                "name": "Gorkhi-Terelj National Park entry fee",
+                "cost": "₹72 pp"
+              },
+              {
+                "name": "Turtle Rock (Melkhii Khad) photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Aryabal Meditation Temple climb",
+                "cost": "₹120 pp"
+              },
+              {
+                "name": "Terelj River valley walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Camp dinner with Mongolian barbecue or noodle soup",
+                "cost": "₹720–₹1,440 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Terelj Lodge",
+                "budget": "₹11,500–₹16,500/night"
+              },
+              {
+                "name": "Dream Adventure Mongolia Eco Ger Camp",
+                "budget": "₹9,500–₹13,500/night with meals"
+              },
+              {
+                "name": "Terelj Mountain Lodge",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Heritage Restaurant at Terelj Lodge",
+              "Farmhouse Retreat",
+              "Dream Adventure Mongolia dining ger"
+            ]
+          },
+          {
+            "theme": "Horse Trekking & Chinggis Statue Complex",
+            "activities": [
+              {
+                "name": "2-hour guided horse ride arranged through camp stables",
+                "cost": "₹2,880–₹4,320 pp"
+              },
+              {
+                "name": "Chinggis Khaan Equestrian Statue Complex",
+                "cost": "₹480 pp"
+              },
+              {
+                "name": "Short archery or nomadic-family visit add-on",
+                "cost": "₹960–₹1,920 pp"
+              },
+              {
+                "name": "Open-steppe picnic tea break",
+                "cost": "₹360–₹720 pp"
+              },
+              {
+                "name": "Sauna or hot-stone add-on at lodge camps",
+                "cost": "₹1,200–₹2,400 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Terelj Hotel & Spa",
+                "budget": "₹18,500–₹28,500/night"
+              },
+              {
+                "name": "Terelj Lodge",
+                "budget": "₹11,500–₹16,500/night"
+              },
+              {
+                "name": "Dream Adventure Mongolia Eco Ger Camp",
+                "budget": "₹9,500–₹13,500/night with meals"
+              }
+            ],
+            "meals": [
+              "Farmhouse Retreat",
+              "Dünkhen Restaurant",
+              "Heritage Restaurant at Terelj Lodge"
+            ]
+          }
+        ]
+      },
+      "Karakorum": {
+        "name": "Karakorum",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Kharkhorin works best as a two-day history-and-steppe stop between Terelj and the deeper southbound jeep journey.",
+        "days": [
+          {
+            "theme": "Erdene Zuu & Karakorum Museum",
+            "activities": [
+              {
+                "name": "Erdene Zuu Monastery entry, temple donation and photo permit",
+                "cost": "₹240–₹480 pp"
+              },
+              {
+                "name": "Karakorum Museum",
+                "cost": "₹240 pp"
+              },
+              {
+                "name": "Stone turtles and old-capital grounds walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Kharkhorin market snack stop",
+                "cost": "₹240–₹600 pp"
+              },
+              {
+                "name": "Sunset on the Orkhon River plain",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ikh Khorum Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Munkh Tenger Ger Camp",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Secret of the Silk Road",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Ikh Khorum Restaurant",
+              "Munkh Tenger Restaurant",
+              "Secret of the Silk Road Restaurant"
+            ]
+          },
+          {
+            "theme": "Orkhon Valley Steppe Loop",
+            "activities": [
+              {
+                "name": "4WD loop into the upper Orkhon Valley with driver",
+                "cost": "₹3,600–₹6,000 pp when split across a small group"
+              },
+              {
+                "name": "Half-day horse ride on valley trails",
+                "cost": "₹2,880–₹4,320 pp"
+              },
+              {
+                "name": "Tovkhon Monastery or nomad-family tea stop",
+                "cost": "₹720–₹1,440 pp"
+              },
+              {
+                "name": "Packed lunch from camp kitchen",
+                "cost": "₹480–₹960 pp"
+              },
+              {
+                "name": "Evening ger-camp bonfire",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Munkh Tenger Ger Camp",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "ASA Land Resort",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Munkh Tenger Restaurant",
+              "ASA Land Resort Restaurant",
+              "Secret of the Silk Road Restaurant"
+            ]
+          }
+        ]
+      },
+      "Gobi Desert": {
+        "name": "Gobi Desert",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days is the sweet spot for a first Gobi visit because you can cover the canyon, dunes and dinosaur cliffs without turning the road days into a blur.",
+        "days": [
+          {
+            "theme": "Dalanzadgad Arrival & Yolyn Am",
+            "activities": [
+              {
+                "name": "MIAT checked-bag buffer and airport transfer in Dalanzadgad",
+                "cost": "₹480–₹1,200 pp"
+              },
+              {
+                "name": "Yolyn Am gorge in Gobi Gurvan Saikhan National Park",
+                "cost": "₹120 pp"
+              },
+              {
+                "name": "Local museum or bazaar stop in Dalanzadgad",
+                "cost": "₹120–₹240 pp"
+              },
+              {
+                "name": "Sunset drive on the gravel steppe",
+                "cost": "₹0 extra with hired jeep"
+              },
+              {
+                "name": "Camp dinner in the South Gobi",
+                "cost": "₹960–₹1,680 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Gobi Mirage Tourist Camp",
+                "budget": "₹7,500–₹11,500/night with meals"
+              },
+              {
+                "name": "Gobi Discovery-1 Tourist Camp",
+                "budget": "₹6,500–₹9,500/night with meals"
+              },
+              {
+                "name": "Dalanzadgad Hotel",
+                "budget": "₹4,000–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Gobi Mirage Restaurant",
+              "Gobi Discovery Restaurant",
+              "Dalanzadgad Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Khongoryn Els Dunes & Camel Riding",
+            "activities": [
+              {
+                "name": "Jeep run to Khongoryn Els (Singing Dunes)",
+                "cost": "₹0 extra with vehicle hire"
+              },
+              {
+                "name": "90-minute Bactrian camel ride with local herders",
+                "cost": "₹1,920–₹2,880 pp"
+              },
+              {
+                "name": "Dune climb for sunset and singing-sand ridge views",
+                "cost": "Free"
+              },
+              {
+                "name": "Cold-drink stop at camp before dusk",
+                "cost": "₹240–₹480 pp"
+              },
+              {
+                "name": "Night sky stargazing away from camp lights",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Gobi Nomad Lodge",
+                "budget": "₹8,500–₹12,500/night with meals"
+              },
+              {
+                "name": "Gobi Mirage Tourist Camp",
+                "budget": "₹7,500–₹11,500/night with meals"
+              },
+              {
+                "name": "Three Camel Lodge",
+                "budget": "₹22,000–₹32,000/night"
+              }
+            ],
+            "meals": [
+              "Three Camel Lodge restaurant",
+              "Gobi Nomad Lodge dining hall",
+              "Gobi Mirage Restaurant"
+            ]
+          },
+          {
+            "theme": "Bayanzag Flaming Cliffs & Fossil Country",
+            "activities": [
+              {
+                "name": "Bayanzag Flaming Cliffs entry",
+                "cost": "₹120 pp"
+              },
+              {
+                "name": "Saxaul grove walk and dinosaur-egg fossil landscape stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Optional Khavtsgait petroglyph detour",
+                "cost": "₹720–₹1,440 pp"
+              },
+              {
+                "name": "Packed picnic lunch under the cliffs",
+                "cost": "₹480–₹960 pp"
+              },
+              {
+                "name": "Return to Dalanzadgad for flight-ready overnight",
+                "cost": "₹0 extra with hired jeep"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dalanzadgad Hotel",
+                "budget": "₹4,000–₹6,500/night"
+              },
+              {
+                "name": "Gobi Mirage Tourist Camp",
+                "budget": "₹7,500–₹11,500/night with meals"
+              }
+            ],
+            "meals": [
+              "Dalanzadgad Hotel Restaurant",
+              "Gobi Mirage Restaurant",
+              "Three Camel Lodge restaurant"
+            ]
+          }
+        ]
+      },
+      "Khövsgöl Lake": {
+        "name": "Khövsgöl Lake",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days gives you the lake, one horse or boat day and enough slack for Murun flight timing and Hatgal road transfers.",
+        "days": [
+          {
+            "theme": "Murun Flight, Hatgal Transfer & Lakeside Arrival",
+            "activities": [
+              {
+                "name": "MIAT flight to Murun plus Hatgal transfer van",
+                "cost": "₹8,400–₹14,400 pp"
+              },
+              {
+                "name": "Khuvsgul Lake National Park entry",
+                "cost": "₹120 pp"
+              },
+              {
+                "name": "Hatgal jetty and shoreline walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Campfire dinner by the lake",
+                "cost": "₹960–₹1,680 pp"
+              },
+              {
+                "name": "Optional lakeside sauna add-on",
+                "cost": "₹1,200–₹2,400 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Toilogt Tourist Camp",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Ashihai Resort",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Art 88 Resort",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Toilogt Restaurant",
+              "Ashihai Resort Restaurant",
+              "Art 88 Restaurant"
+            ]
+          },
+          {
+            "theme": "Boat Cruise & Forest Horse Trails",
+            "activities": [
+              {
+                "name": "Lake cruise from Hatgal pier",
+                "cost": "₹1,680–₹2,880 pp"
+              },
+              {
+                "name": "Half-day horse trek above the shoreline",
+                "cost": "₹2,880–₹4,320 pp"
+              },
+              {
+                "name": "Smoked-fish or buuz lunch at camp",
+                "cost": "₹480–₹960 pp"
+              },
+              {
+                "name": "Kayak or SUP rental on calm afternoon water",
+                "cost": "₹1,440–₹2,160 pp"
+              },
+              {
+                "name": "Clear-night Milky Way viewing",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Toilogt Tourist Camp",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Art 88 Resort",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Toilogt Restaurant",
+              "Art 88 Restaurant",
+              "Ashihai Resort Restaurant"
+            ]
+          },
+          {
+            "theme": "Tsaatan Culture or Extra Lake Day",
+            "activities": [
+              {
+                "name": "Long day trip toward reindeer-herder territory with local guide",
+                "cost": "₹7,200–₹12,000 pp"
+              },
+              {
+                "name": "Alternative easy forest hike from camp if you skip the full cultural day",
+                "cost": "Free"
+              },
+              {
+                "name": "Hatgal handicraft stop for felt and antler work",
+                "cost": "₹480–₹1,680 pp"
+              },
+              {
+                "name": "Packed picnic or camp lunch",
+                "cost": "₹480–₹960 pp"
+              },
+              {
+                "name": "Early sleep before the Murun flight back south",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ashihai Resort",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Toilogt Tourist Camp",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Ashihai Resort Restaurant",
+              "Toilogt Restaurant",
+              "Art 88 Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Ulaanbaatar",
+        "to": "Terelj National Park",
+        "method": "Private van or driver-hired SUV from Ulaanbaatar (about 1.5–2 hr); easiest arranged through your hotel or lodge",
+        "cost": "₹3,600–₹6,000 per vehicle"
+      },
+      {
+        "from": "Terelj National Park",
+        "to": "Karakorum",
+        "method": "4WD jeep with driver via Ulaanbaatar and the westbound A0301 road (7–8 hr with fuel and road stops)",
+        "cost": "₹16,800–₹24,000 per vehicle"
+      },
+      {
+        "from": "Karakorum",
+        "to": "Gobi Desert",
+        "method": "4WD jeep south toward Dalanzadgad, often broken with an Ongi-area stop because rough roads make this a full day or overnight transfer",
+        "cost": "₹24,000–₹36,000 per vehicle/day"
+      },
+      {
+        "from": "Gobi Desert",
+        "to": "Khövsgöl Lake",
+        "method": "Dalanzadgad to Ulaanbaatar flight, then MIAT onward to Murun plus Hatgal transfer; this is the fastest way to link the far south and far north",
+        "cost": "₹19,200–₹28,800 pp"
+      },
+      {
+        "from": "Khövsgöl Lake",
+        "to": "Ulaanbaatar",
+        "method": "Hatgal transfer back to Murun and MIAT flight to Ulaanbaatar, or an all-day overland return if flights sell out",
+        "cost": "₹8,400–₹18,000 pp"
+      }
+    ],
+    "extras": [
+      "June–September is the practical season for this exact loop; many Terelj, Gobi and Khövsgöl ger camps simply do not operate outside that window.",
+      "Carry plenty of cash in MNT once you leave Ulaanbaatar because card terminals and ATMs are unreliable in the countryside.",
+      "A hired 4WD with driver is essential for Karakorum and the Gobi even if you are comfortable on rough roads; self-drive visitors struggle with fuel logistics, washboards and route finding.",
+      "Domestic flights on MIAT and other local carriers have strict baggage allowances, so keep one soft duffel for road legs and one smaller flight bag.",
+      "The Trans-Mongolian railway is excellent for extending the trip from Ulaanbaatar to Russia or China, but it is not a substitute for the jeep-and-flight network needed for Mongolia’s classic countryside highlights."
+    ],
+    "cityImages": {
+      "Ulaanbaatar": [
+        "Sukhbaatar Square Ulaanbaatar",
+        "Gandantegchinlen Monastery Ulaanbaatar",
+        "Chinggis Khaan National Museum Ulaanbaatar"
+      ],
+      "Terelj National Park": [
+        "Turtle Rock Gorkhi-Terelj National Park",
+        "Aryabal Meditation Temple Terelj",
+        "Gorkhi-Terelj National Park Mongolia horseback riding"
+      ],
+      "Gobi Desert": [
+        "Khongoryn Els Gobi Desert Mongolia",
+        "Yolyn Am Gobi Gurvan Saikhan National Park",
+        "Bayanzag Flaming Cliffs Mongolia"
+      ],
+      "Khövsgöl Lake": [
+        "Khuvsgul Lake Hatgal Mongolia",
+        "Tsaatan reindeer herders Khuvsgul",
+        "Khuvsgul Lake boat Mongolia"
+      ],
+      "Karakorum": [
+        "Erdene Zuu Monastery Kharkhorin",
+        "Karakorum Museum Mongolia",
+        "Orkhon Valley Mongolia"
+      ]
+    }
+  }
+}

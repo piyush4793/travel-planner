@@ -1,0 +1,734 @@
+{
+  "name": "Uzbekistan",
+  "seed": false,
+  "lat": 41.38,
+  "lng": 64.59,
+  "region": "Asia",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "January",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹80K–₹1.35L",
+    "couple": "₹1.45L–₹2.4L",
+    "family4": "₹2.8L–₹4.8L"
+  },
+  "experiences": [
+    "Silk Road Cities",
+    "Islamic Architecture",
+    "Bazaars",
+    "Afrosiyob Train",
+    "Savitsky Museum",
+    "Ceramics & Silk"
+  ],
+  "avoid": [
+    "July–August afternoon heat in Bukhara, Khiva and Nukus",
+    "Winter fog or snow can slow valley road transfers and shared taxis"
+  ],
+  "combo": [
+    "Kazakhstan",
+    "Kyrgyzstan"
+  ],
+  "landmark": "Registan",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Tashkent",
+      "lat": 41.2995,
+      "lng": 69.2401,
+      "notes": "Broad Soviet avenues, metro stations, Chorsu Bazaar and the country's best food scene"
+    },
+    {
+      "name": "Samarkand",
+      "lat": 39.6542,
+      "lng": 66.9597,
+      "notes": "Registan, Shah-i-Zinda, Timurid tombs and the most iconic Silk Road skyline"
+    },
+    {
+      "name": "Bukhara",
+      "lat": 39.767,
+      "lng": 64.4231,
+      "notes": "Walkable old city of madrasas, caravanserais, hammams and courtyard dining"
+    },
+    {
+      "name": "Khiva",
+      "lat": 41.3783,
+      "lng": 60.3639,
+      "notes": "Compact mud-brick walled city with minarets, palace courtyards and strong sunset views"
+    },
+    {
+      "name": "Nukus",
+      "lat": 42.4602,
+      "lng": 59.6166,
+      "notes": "Gateway to Karakalpakstan, home of the Savitsky Museum and Aral Sea history"
+    },
+    {
+      "name": "Fergana Valley",
+      "lat": 40.3864,
+      "lng": 71.7864,
+      "notes": "Use Fergana city as a base for Kokand palaces, Margilan silk and Rishtan ceramics"
+    }
+  ],
+  "itinerary": {
+    "sim": "Ucell or Beeline tourist SIMs are easiest in Tashkent; expect roughly ₹400–₹800 for a week of data and local calls.",
+    "apps": [
+      "Yandex Go",
+      "Uzbekistan Railways / eticket.railway.uz",
+      "Uzbekistan Airways",
+      "2GIS",
+      "Yandex Maps",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Tashkent",
+      "Samarkand",
+      "Bukhara",
+      "Khiva",
+      "Nukus",
+      "Fergana Valley"
+    ],
+    "cities": {
+      "Tashkent": {
+        "name": "Tashkent",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the old city, metro, museums and plov; keep a third only for a slower cafe or mountain day.",
+        "days": [
+          {
+            "theme": "Old Tashkent & Metro Classics",
+            "activities": [
+              {
+                "name": "Hazrati Imam Complex and Muyi Muborak Library visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Chorsu Bazaar food-and-spice walk",
+                "cost": "₹150–₹400 pp"
+              },
+              {
+                "name": "Tashkent Metro architectural ride across Kosmonavtlar, Alisher Navoi and Mustaqillik Maydoni",
+                "cost": "₹20 per ride"
+              },
+              {
+                "name": "Amir Timur Square and Broadway evening stroll"
+              },
+              {
+                "name": "Center of Plov at Besh Qozon for a classic Tashkent lunch",
+                "cost": "₹330–₹660 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Topchan Hostel",
+                "budget": "₹1,600–₹2,400/night"
+              },
+              {
+                "name": "Sapiens Hotel",
+                "budget": "₹4,800–₹7,000/night"
+              },
+              {
+                "name": "Central Palace Halal Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Caravan",
+              "Afsona",
+              "Besh Qozon"
+            ]
+          },
+          {
+            "theme": "Museums, Parks & Modern Tashkent",
+            "activities": [
+              {
+                "name": "State Museum of Applied Art",
+                "cost": "₹260–₹330 pp"
+              },
+              {
+                "name": "Amir Timur Museum",
+                "cost": "₹260–₹330 pp"
+              },
+              {
+                "name": "Tashkent TV Tower observation level",
+                "cost": "₹400–₹530 pp"
+              },
+              {
+                "name": "Japanese Garden or Eco Park wind-down"
+              },
+              {
+                "name": "Evening coffee and pastries around Taras Shevchenko Street",
+                "cost": "₹250–₹500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sapiens Hotel",
+                "budget": "₹4,800–₹7,000/night"
+              },
+              {
+                "name": "Harris Hotel Spa & Fitness",
+                "budget": "₹5,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "The Plov",
+              "Jumanji",
+              "Anhor As"
+            ]
+          },
+          {
+            "theme": "Easy Extra Day",
+            "activities": [
+              {
+                "name": "Minor Mosque and Anhor Canal walk"
+              },
+              {
+                "name": "Tashkent City Park fountains at sunset"
+              },
+              {
+                "name": "Souvenir shopping near Chorsu or Eski Juva"
+              }
+            ]
+          }
+        ]
+      },
+      "Samarkand": {
+        "name": "Samarkand",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Plan one full monument day and one Timurid-tombs plus craft day; a third day helps if you like slower museum time.",
+        "days": [
+          {
+            "theme": "Registan, Bazaars & Blue Domes",
+            "activities": [
+              {
+                "name": "Registan ensemble",
+                "cost": "₹660 pp"
+              },
+              {
+                "name": "Bibi-Khanym Mosque",
+                "cost": "₹330 pp"
+              },
+              {
+                "name": "Siyob Bazaar bread, dried fruit and halva tasting",
+                "cost": "₹200–₹500 pp"
+              },
+              {
+                "name": "Shah-i-Zinda necropolis",
+                "cost": "₹530 pp"
+              },
+              {
+                "name": "Registan evening light show from the square"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "B&B Emir",
+                "budget": "₹2,800–₹4,200/night"
+              },
+              {
+                "name": "Hotel Samaria Terrace",
+                "budget": "₹4,500–₹6,800/night"
+              },
+              {
+                "name": "L'Argamak Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Bibikhanum Teahouse",
+              "Samarkand Restaurant",
+              "Platan"
+            ]
+          },
+          {
+            "theme": "Timurid Legacy & Craft Stops",
+            "activities": [
+              {
+                "name": "Gur-e-Amir Mausoleum",
+                "cost": "₹330 pp"
+              },
+              {
+                "name": "Ulugh Beg Observatory",
+                "cost": "₹330 pp"
+              },
+              {
+                "name": "Afrosiab Museum",
+                "cost": "₹260–₹330 pp"
+              },
+              {
+                "name": "Meros Paper Mill at Konigil village",
+                "cost": "₹200–₹400 pp"
+              },
+              {
+                "name": "Wine tasting at Khovrenko Winery",
+                "cost": "₹500–₹900 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Samaria Terrace",
+                "budget": "₹4,500–₹6,800/night"
+              },
+              {
+                "name": "L'Argamak Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Old City Restaurant",
+              "Karimbek",
+              "Cafe Magistr"
+            ]
+          },
+          {
+            "theme": "Optional Slow Day",
+            "activities": [
+              {
+                "name": "Saint Daniel's Tomb and riverbank walk"
+              },
+              {
+                "name": "Shopping for Samarkand paper, ceramics and spices"
+              },
+              {
+                "name": "Sunset tea with a Registan view"
+              }
+            ]
+          }
+        ]
+      },
+      "Bukhara": {
+        "name": "Bukhara",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Bukhara works best at an unhurried pace because nearly everything worth seeing is inside the atmospheric old city core.",
+        "days": [
+          {
+            "theme": "Ark Fortress & Old Town Core",
+            "activities": [
+              {
+                "name": "Ark of Bukhara",
+                "cost": "₹400 pp"
+              },
+              {
+                "name": "Bolo Hauz Mosque",
+                "cost": "Free"
+              },
+              {
+                "name": "Poi Kalyan complex and Kalyan Minaret plaza",
+                "cost": "₹130–₹200 pp where ticketed"
+              },
+              {
+                "name": "Trading domes for carpets, knives and suzani textiles"
+              },
+              {
+                "name": "Lyabi Hauz pond at dusk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sasha & Son",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "Komil Boutique Hotel",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Duston Boutique XIX Century Rooms",
+                "budget": "₹5,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Minzifa Restaurant",
+              "Old Bukhara",
+              "Lyabi Hauz Chaikhana"
+            ]
+          },
+          {
+            "theme": "Mausoleums, Madrasas & Hammam Time",
+            "activities": [
+              {
+                "name": "Samanid Mausoleum",
+                "cost": "Free"
+              },
+              {
+                "name": "Chashma-Ayub Mausoleum",
+                "cost": "₹200–₹260 pp"
+              },
+              {
+                "name": "Chor Minor",
+                "cost": "₹130–₹200 pp"
+              },
+              {
+                "name": "Magoki-Attori Mosque",
+                "cost": "₹130–₹200 pp"
+              },
+              {
+                "name": "Bozori Kord Hammam treatment",
+                "cost": "₹2,500–₹4,500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Komil Boutique Hotel",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Kukaldosh Boutique Hotel",
+                "budget": "₹4,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Ayvan Restaurant",
+              "Chinar",
+              "The Old House"
+            ]
+          },
+          {
+            "theme": "Optional Courtyard Day",
+            "activities": [
+              {
+                "name": "Sitora-i-Mokhi-Khosa summer palace",
+                "cost": "₹260–₹400 pp"
+              },
+              {
+                "name": "Tea, sketching and shopping around Lyabi Hauz"
+              },
+              {
+                "name": "Evening folk music show in an old madrasa courtyard"
+              }
+            ]
+          }
+        ]
+      },
+      "Khiva": {
+        "name": "Khiva",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day is enough for the walled city highlights, but staying the night lets you enjoy Ichan-Kala after day-trippers leave.",
+        "days": [
+          {
+            "theme": "Ichan-Kala Essentials",
+            "activities": [
+              {
+                "name": "Ichan-Kala all-sites ticket",
+                "cost": "₹790 pp"
+              },
+              {
+                "name": "Kuhna Ark and watchtower ramparts",
+                "cost": "Included"
+              },
+              {
+                "name": "Juma Mosque carved-wood columns",
+                "cost": "Included"
+              },
+              {
+                "name": "Tash Hauli Palace courtyards",
+                "cost": "Included"
+              },
+              {
+                "name": "Sunset from Ak Sheykh Bobo or city walls",
+                "cost": "Included or ₹130 extra where ticketed"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Islam Khodja Guest House",
+                "budget": "₹2,500–₹4,000/night"
+              },
+              {
+                "name": "Qibla Tozabog",
+                "budget": "₹3,000–₹4,800/night"
+              },
+              {
+                "name": "Orient Star Khiva",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Terrassa Cafe",
+              "Bir Gumbaz",
+              "Yasavul Boshi"
+            ]
+          },
+          {
+            "theme": "Minarets & Palace Details",
+            "activities": [
+              {
+                "name": "Islam Khoja Minaret climb",
+                "cost": "₹260 pp"
+              },
+              {
+                "name": "Pahlavon Mahmud Mausoleum",
+                "cost": "Included or donation"
+              },
+              {
+                "name": "Nurullaboy Palace",
+                "cost": "₹260–₹400 pp"
+              },
+              {
+                "name": "Handicraft stalls for woodwork and suzani"
+              }
+            ]
+          }
+        ]
+      },
+      "Nukus": {
+        "name": "Nukus",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Come primarily for the Savitsky collection; the second day is only worth it if you want a Muynak or Mizdakhan excursion.",
+        "days": [
+          {
+            "theme": "Savitsky Masterpieces & Karakalpakstan",
+            "activities": [
+              {
+                "name": "Karakalpakstan State Museum of Art named after I. V. Savitsky",
+                "cost": "₹500 pp"
+              },
+              {
+                "name": "State Museum of History and Culture of Karakalpakstan",
+                "cost": "₹200–₹260 pp"
+              },
+              {
+                "name": "Central Dehqon Bazaar snack walk",
+                "cost": "₹150–₹350 pp"
+              },
+              {
+                "name": "Sunset walk along the Amu Darya embankment or local teahouse stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jipek Joli Inn",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Hotel Nukus",
+                "budget": "₹4,000–₹6,000/night"
+              },
+              {
+                "name": "Tashkent Hotel Nukus",
+                "budget": "₹3,500–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Txanaka",
+              "Barak Restaurant",
+              "Nur Restaurant"
+            ]
+          },
+          {
+            "theme": "Aral Sea History Day Trip",
+            "activities": [
+              {
+                "name": "Shared taxi to Muynak ship cemetery",
+                "cost": "₹1,000–₹1,800 pp"
+              },
+              {
+                "name": "Muynak Regional Studies Museum",
+                "cost": "₹130–₹200 pp"
+              },
+              {
+                "name": "Mizdakhan necropolis stop on the return",
+                "cost": "₹130–₹200 pp"
+              }
+            ]
+          }
+        ]
+      },
+      "Fergana Valley": {
+        "name": "Fergana Valley",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use the valley as a multi-stop craft-and-history region rather than a single-city stay; two days is the sweet spot.",
+        "days": [
+          {
+            "theme": "Kokand Palaces & Mosques",
+            "activities": [
+              {
+                "name": "Khudayar Khan Palace",
+                "cost": "₹260–₹330 pp"
+              },
+              {
+                "name": "Jami Mosque of Kokand",
+                "cost": "₹130–₹200 pp"
+              },
+              {
+                "name": "Norbuta-Biy Madrasah",
+                "cost": "Free"
+              },
+              {
+                "name": "Shared taxi between Fergana and Kokand",
+                "cost": "₹200–₹400 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Club 777 Hotel",
+                "budget": "₹3,000–₹4,800/night"
+              },
+              {
+                "name": "Silk Road Kokand Hotel",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Ikat House",
+                "budget": "₹4,800–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Istiklol",
+              "Star Cafe",
+              "Super Margilan"
+            ]
+          },
+          {
+            "theme": "Margilan Silk & Rishtan Ceramics",
+            "activities": [
+              {
+                "name": "Yodgorlik Silk Factory guided visit",
+                "cost": "₹260–₹330 pp"
+              },
+              {
+                "name": "Said Ahmad-Hoja Madrasah craft lanes in Margilan",
+                "cost": "Free"
+              },
+              {
+                "name": "Rishtan ceramics workshop browsing and studio demos",
+                "cost": "Free to ₹260 pp"
+              },
+              {
+                "name": "Shared taxi circuit across Margilan and Rishtan",
+                "cost": "₹400–₹800 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Club 777 Hotel",
+                "budget": "₹3,000–₹4,800/night"
+              },
+              {
+                "name": "Ikat House",
+                "budget": "₹4,800–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Chaikhana Asia",
+              "Traktir Ostrov Sokrovishch",
+              "Super Margilan"
+            ]
+          },
+          {
+            "theme": "Optional Valley Nature Day",
+            "activities": [
+              {
+                "name": "Short outing toward the Qurama foothills or local park cafés"
+              },
+              {
+                "name": "Extra market time for silk scarves, ceramics and dried fruit"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Tashkent",
+        "to": "Samarkand",
+        "method": "Afrosiyob high-speed train from Tashkent to Samarkand (about 2 hr 10 min)",
+        "cost": "₹2,400–₹3,000 pp"
+      },
+      {
+        "from": "Samarkand",
+        "to": "Bukhara",
+        "method": "Afrosiyob high-speed train from Samarkand to Bukhara (about 1 hr 35 min)",
+        "cost": "₹2,000–₹2,500 pp"
+      },
+      {
+        "from": "Bukhara",
+        "to": "Khiva",
+        "method": "Shared taxi, usually via Urgench, or an overnight conventional train; taxi is fastest in daylight",
+        "cost": "₹1,600–₹2,500 pp"
+      },
+      {
+        "from": "Khiva",
+        "to": "Nukus",
+        "method": "Shared taxi across Karakalpakstan (about 3–4 hr)",
+        "cost": "₹700–₹1,200 pp"
+      },
+      {
+        "from": "Nukus",
+        "to": "Tashkent",
+        "method": "Uzbekistan Airways domestic flight (about 1 hr 40 min)",
+        "cost": "₹5,800–₹8,300 pp"
+      },
+      {
+        "from": "Tashkent",
+        "to": "Fergana Valley",
+        "method": "Uzbekistan Airways domestic flight to Fergana plus short taxi to hotel, or a longer train/shared-taxi alternative",
+        "cost": "₹3,300–₹5,400 pp"
+      }
+    ],
+    "extras": [
+      "Best weather is usually April–June and September–October; shoulder-season mornings are cool enough for long old-city walks.",
+      "Carry cash in Uzbek som for monuments, shared taxis and bazaar meals; card acceptance is improving but still inconsistent outside Tashkent.",
+      "Afrosiyob seats sell out quickly around Nowruz and autumn weekends, so book the Tashkent–Samarkand–Bukhara legs a few days ahead.",
+      "Most hotels handle mandatory foreigner registration automatically; keep one printed booking or registration slip just in case.",
+      "For Khiva and Nukus transfers, shared taxis usually leave only when full, so agree on the fare before loading bags.",
+      "If you only have one week, drop Nukus and Fergana Valley and focus on Tashkent, Samarkand, Bukhara and Khiva."
+    ],
+    "cityImages": {
+      "Tashkent": [
+        "Tashkent Metro Kosmonavtlar station",
+        "Chorsu Bazaar Tashkent",
+        "Hazrati Imam Complex Tashkent"
+      ],
+      "Samarkand": [
+        "Registan Samarkand",
+        "Shah-i-Zinda Samarkand",
+        "Gur-e-Amir Samarkand"
+      ],
+      "Bukhara": [
+        "Ark of Bukhara",
+        "Poi Kalyan Bukhara",
+        "Lyabi Hauz Bukhara"
+      ],
+      "Khiva": [
+        "Ichan Kala Khiva",
+        "Kalta Minor Khiva",
+        "Islam Khoja Minaret Khiva"
+      ],
+      "Nukus": [
+        "Savitsky Museum Nukus",
+        "Muynak ship cemetery",
+        "Mizdakhan necropolis"
+      ],
+      "Fergana Valley": [
+        "Khudayar Khan Palace Kokand",
+        "Yodgorlik Silk Factory Margilan",
+        "Rishtan ceramics workshop"
+      ]
+    }
+  }
+}
