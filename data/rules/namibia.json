@@ -1,0 +1,673 @@
+{
+  "name": "Namibia",
+  "seed": false,
+  "lat": -22.96,
+  "lng": 18.49,
+  "region": "Africa",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "budget": {
+    "solo": "₹2.1L–₹3.4L",
+    "couple": "₹3.8L–₹5.9L",
+    "family4": "₹7.2L–₹10.8L"
+  },
+  "experiences": [
+    "Etosha self-drive safari",
+    "Sossusvlei red dunes",
+    "Swakopmund desert-and-ocean adventures",
+    "Fish River Canyon viewpoints",
+    "Epic gravel-road road trip"
+  ],
+  "avoid": [
+    "December to March brings heat, storms, and softer gravel roads in the desert",
+    "Driving after dark is risky because of livestock, wildlife, and long unlit stretches",
+    "Do not underestimate fuel, tyre, and water planning between Sesriem, Etosha, and the deep south"
+  ],
+  "combo": [
+    "Botswana",
+    "South Africa"
+  ],
+  "landmark": "Sossusvlei",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Windhoek is the obvious gateway. A 4x4 rental is the default transport for this loop; Air Namibia no longer operates, so any time-saving domestic hop now means FlyNamibia or Airlink to Walvis Bay or Ondangwa before you reconnect with the self-drive route.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Windhoek",
+      "lat": -22.5609,
+      "lng": 17.0658,
+      "notes": "Christuskirche, Independence Memorial Museum, the Namibia Craft Centre and the practical car-rental reset before Namibia's long self-drive legs"
+    },
+    {
+      "name": "Sossusvlei/Sesriem",
+      "lat": -24.7277,
+      "lng": 15.34,
+      "notes": "Dune 45 sunrise, Deadvlei, Big Daddy, Sesriem Canyon and the classic Namib desert lodge stay"
+    },
+    {
+      "name": "Etosha National Park",
+      "lat": -18.775,
+      "lng": 16.9083,
+      "notes": "Okaukuejo, Halali and Namutoni waterholes with some of southern Africa's best self-drive wildlife viewing"
+    },
+    {
+      "name": "Swakopmund",
+      "lat": -22.6784,
+      "lng": 14.5266,
+      "notes": "German-era architecture, Sandwich Harbour, Living Desert tours and easy access to Walvis Bay marine trips"
+    },
+    {
+      "name": "Fish River Canyon",
+      "lat": -27.6117,
+      "lng": 17.594,
+      "notes": "Hobas viewpoints, Ai-Ais hot springs and one of the biggest canyon landscapes on the continent"
+    }
+  ],
+  "itinerary": {
+    "sim": "MTC is the most reliable SIM/eSIM pick for this route, with TN Mobile as the backup. Budget about ₹460–₹920 for a starter pack with enough data for maps, lodge messaging, and fuel-stop planning.",
+    "apps": [
+      "Google Maps",
+      "Maps.me",
+      "WhatsApp",
+      "Booking.com",
+      "NWR Namibia",
+      "Gondwana Collection",
+      "Namibia2Go",
+      "FlyNamibia",
+      "Airlink",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Windhoek",
+      "Etosha National Park",
+      "Swakopmund",
+      "Sossusvlei/Sesriem",
+      "Fish River Canyon"
+    ],
+    "cities": {
+      "Windhoek": {
+        "name": "Windhoek",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Arrival logistics, a real Namibian dinner, and getting the road-trip kit sorted",
+            "activities": [
+              {
+                "name": "4x4 pickup from Namibia2Go, Avis Safari Rental, or Europcar at Windhoek",
+                "cost": "₹8,300–₹12,000"
+              },
+              {
+                "name": "Christuskirche and Independence Memorial Museum walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Namibia Craft Centre browse for local crafts and first-day coffee",
+                "cost": "₹0"
+              },
+              {
+                "name": "Stock up on water, snacks, and tyre-pressure essentials before the long drives",
+                "cost": "₹1,500–₹4,000"
+              },
+              {
+                "name": "Optional FlyNamibia or Airlink one-way fare to Ondangwa or Walvis Bay if you want to shorten one road leg",
+                "cost": "₹9,500–₹22,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Avani Windhoek Hotel & Casino",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Windhoek Country Club Resort",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Ti Melen Boutique Guesthouse",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Joe’s Beerhouse",
+              "The Stellenbosch Wine Bar & Bistro",
+              "Kubata Restaurant"
+            ]
+          },
+          {
+            "theme": "A flexible buffer day for city sightseeing or an easy reserve outing before you hit the highway",
+            "activities": [
+              {
+                "name": "Daan Viljoen Game Reserve self-drive or short guided nature outing",
+                "cost": "₹460–₹1,840"
+              },
+              {
+                "name": "National Museum and Parliament Gardens area stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "4x4 day rental kept for the departure to Etosha or the southbound loop",
+                "cost": "₹8,300–₹12,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Olive Exclusive",
+                "budget": "₹16,500–₹28,000/night"
+              },
+              {
+                "name": "Avani Windhoek Hotel & Casino",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "The Olive Restaurant",
+              "Leo’s at the Castle",
+              "Craft Café"
+            ]
+          }
+        ]
+      },
+      "Etosha National Park": {
+        "name": "Etosha National Park",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Drive up from Windhoek, enter via Andersson Gate, and finish at the famous Okaukuejo waterhole",
+            "activities": [
+              {
+                "name": "Self-drive Windhoek to Okaukuejo via Otjiwarongo (fuel + gravel-road buffer)",
+                "cost": "₹2,800–₹4,600"
+              },
+              {
+                "name": "NWR Etosha conservation fee for one international adult",
+                "cost": "₹1,288/day"
+              },
+              {
+                "name": "Etosha vehicle fee for a rental 4x4 (10 seats or less)",
+                "cost": "₹276/day"
+              },
+              {
+                "name": "Okaukuejo waterhole sundowner wildlife session",
+                "cost": "₹0"
+              },
+              {
+                "name": "4x4 rental day kept for the Etosha loop",
+                "cost": "₹8,300–₹12,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Okaukuejo Camp",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Etosha Safari Lodge",
+                "budget": "₹14,500–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Okaukuejo Restaurant",
+              "Etosha Safari Camp Restaurant",
+              "Etosha Trading Post"
+            ]
+          },
+          {
+            "theme": "Central Etosha waterholes, big-game scanning, and a guided sunset drive for what self-drive misses",
+            "activities": [
+              {
+                "name": "Self-drive circuit via Gemsbokvlakte, Salvadora, and the Etosha Pan viewpoints",
+                "cost": "₹0"
+              },
+              {
+                "name": "NWR Etosha conservation fee for one international adult",
+                "cost": "₹1,288/day"
+              },
+              {
+                "name": "Etosha vehicle fee for a rental 4x4 (10 seats or less)",
+                "cost": "₹276/day"
+              },
+              {
+                "name": "Shared sunset or night game drive from Okaukuejo or Halali",
+                "cost": "₹3,600–₹4,800"
+              },
+              {
+                "name": "4x4 rental day inside the park",
+                "cost": "₹8,300–₹12,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Halali Camp",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Okaukuejo Camp",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Halali Restaurant",
+              "Okaukuejo Restaurant",
+              "Moringa waterhole picnic supplies"
+            ]
+          },
+          {
+            "theme": "East Etosha and Namutoni for more waterholes, fort views, and a second full safari day",
+            "activities": [
+              {
+                "name": "Self-drive Halali to Namutoni via Goas, Klein Okevi, and Chudop waterholes",
+                "cost": "₹0"
+              },
+              {
+                "name": "NWR Etosha conservation fee for one international adult",
+                "cost": "₹1,288/day"
+              },
+              {
+                "name": "Etosha vehicle fee for a rental 4x4 (10 seats or less)",
+                "cost": "₹276/day"
+              },
+              {
+                "name": "Onguma sunset drive or hide access on the private reserve side",
+                "cost": "₹4,600–₹9,200"
+              },
+              {
+                "name": "4x4 rental day for the eastern sector",
+                "cost": "₹8,300–₹12,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Namutoni Camp",
+                "budget": "₹10,500–₹17,000/night"
+              },
+              {
+                "name": "Onguma Bush Camp",
+                "budget": "₹16,500–₹26,000/night"
+              }
+            ],
+            "meals": [
+              "Namutoni Restaurant",
+              "Onguma Bush Camp Restaurant",
+              "Twitcher’s Nest at Onguma"
+            ]
+          },
+          {
+            "theme": "Optional west-Etosha extension if you want more remoteness before turning toward the coast",
+            "activities": [
+              {
+                "name": "Drive toward Dolomite Camp or Olifantsrus for the quieter western sector",
+                "cost": "₹0"
+              },
+              {
+                "name": "NWR Etosha conservation fee for one international adult",
+                "cost": "₹1,288/day"
+              },
+              {
+                "name": "Etosha vehicle fee for a rental 4x4 (10 seats or less)",
+                "cost": "₹276/day"
+              },
+              {
+                "name": "4x4 rental day for the optional westward extension",
+                "cost": "₹8,300–₹12,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dolomite Camp",
+                "budget": "₹17,500–₹28,000/night"
+              },
+              {
+                "name": "Olifantsrus Camp",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Dolomite Camp Restaurant",
+              "Packed brunch from your lodge",
+              "Okaukuejo Restaurant"
+            ]
+          }
+        ]
+      },
+      "Swakopmund": {
+        "name": "Swakopmund",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Coastal reset after safari with German-era streets, the jetty, and real seafood stops",
+            "activities": [
+              {
+                "name": "Self-drive Etosha to Swakopmund via Outjo and Omaruru (fuel + snack stops)",
+                "cost": "₹3,200–₹5,100"
+              },
+              {
+                "name": "Woermannhaus, Swakopmund Jetty, and Mole promenade walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Swakopmund Museum or Kristall Galerie visit",
+                "cost": "₹460–₹920"
+              },
+              {
+                "name": "4x4 rental day retained for the coast leg",
+                "cost": "₹8,300–₹12,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Strand Hotel Swakopmund",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "Swakopmund Luxury Suites",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Brigadoon Boutique Guesthouse",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "The Tug Restaurant",
+              "Jetty 1905",
+              "Village Café"
+            ]
+          },
+          {
+            "theme": "Dunes to ocean: choose a marine cruise or a proper 4x4 run into Sandwich Harbour",
+            "activities": [
+              {
+                "name": "Sandwich Harbour 4x4 day tour from Walvis Bay",
+                "cost": "₹5,500–₹8,500"
+              },
+              {
+                "name": "Living Desert Tour around the Swakopmund dunes",
+                "cost": "₹3,900–₹5,500"
+              },
+              {
+                "name": "Walvis Bay catamaran dolphin-and-seal cruise",
+                "cost": "₹4,600–₹6,900"
+              },
+              {
+                "name": "4x4 rental day if you skip the guided dune run and stay self-drive",
+                "cost": "₹8,300–₹12,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Strand Hotel Swakopmund",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "Hotel Eberwein",
+                "budget": "₹8,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "The Tug Restaurant",
+              "Jetty 1905",
+              "Kücki’s Pub"
+            ]
+          },
+          {
+            "theme": "Optional extra coast day for adrenaline sports or an easy Walvis Bay flight back to Windhoek",
+            "activities": [
+              {
+                "name": "FlyNamibia or Airlink one-way Walvis Bay to Windhoek fare",
+                "cost": "₹9,500–₹17,000"
+              },
+              {
+                "name": "Swakopmund skydiving tandem jump",
+                "cost": "₹18,000–₹23,000"
+              },
+              {
+                "name": "Kayak tour at Pelican Point",
+                "cost": "₹3,900–₹5,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Beach Hotel Swakopmund",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Swakopmund Luxury Suites",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Farmhouse Deli",
+              "Tiger Reef Beach Bar & Grill",
+              "Altstadt Restaurant"
+            ]
+          }
+        ]
+      },
+      "Sossusvlei/Sesriem": {
+        "name": "Sossusvlei/Sesriem",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Cross the gravel roads from the coast, check in near Sesriem, and save the biggest dunes for dawn",
+            "activities": [
+              {
+                "name": "Self-drive Swakopmund to Sesriem via Solitaire (fuel + tyre-pressure buffer)",
+                "cost": "₹2,800–₹4,600"
+              },
+              {
+                "name": "Sesriem Canyon late-afternoon walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Elim Dune sunset stop near the gate",
+                "cost": "₹0"
+              },
+              {
+                "name": "4x4 rental day for the Namib gravel leg",
+                "cost": "₹8,300–₹12,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Desert Quiver Camp",
+                "budget": "₹11,500–₹16,500/night"
+              },
+              {
+                "name": "Sossus Dune Lodge",
+                "budget": "₹26,000–₹38,000/night"
+              },
+              {
+                "name": "Dead Valley Lodge",
+                "budget": "₹30,000–₹45,000/night"
+              }
+            ],
+            "meals": [
+              "Sossusvlei Lodge Restaurant",
+              "The Boma Restaurant at Sossusvlei Lodge",
+              "Sossus Dune Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "The classic Sossusvlei sunrise: Deadvlei, Dune 45, and the last sandy kilometers into the pan",
+            "activities": [
+              {
+                "name": "NWR Namib-Naukluft conservation fee for one international adult",
+                "cost": "₹1,288/day"
+              },
+              {
+                "name": "Namib-Naukluft vehicle fee for a rental 4x4 (10 seats or less)",
+                "cost": "₹276/day"
+              },
+              {
+                "name": "Dune 45, Deadvlei, and Big Daddy self-drive circuit",
+                "cost": "₹0"
+              },
+              {
+                "name": "NWR shuttle from the 2x4 parking area into Sossusvlei if you do not drive the sand section yourself",
+                "cost": "₹920–₹1,150"
+              },
+              {
+                "name": "4x4 rental day for the dune roads",
+                "cost": "₹8,300–₹12,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sossus Dune Lodge",
+                "budget": "₹26,000–₹38,000/night"
+              },
+              {
+                "name": "Desert Quiver Camp",
+                "budget": "₹11,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Sossus Dune Lodge Restaurant",
+              "Sossusvlei Lodge Restaurant",
+              "Desert Grace Restaurant"
+            ]
+          },
+          {
+            "theme": "Optional splurge morning above the dunes before the long drive into southern Namibia",
+            "activities": [
+              {
+                "name": "Namib Sky Balloon Safaris sunrise balloon flight with breakfast",
+                "cost": "₹33,000–₹39,000"
+              },
+              {
+                "name": "Sossusvlei scenic fixed-wing flight from the airstrip",
+                "cost": "₹12,000–₹20,000"
+              },
+              {
+                "name": "4x4 rental day retained for the Fish River Canyon transfer",
+                "cost": "₹8,300–₹12,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dead Valley Lodge",
+                "budget": "₹30,000–₹45,000/night"
+              },
+              {
+                "name": "Desert Homestead Lodge",
+                "budget": "₹13,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "The Boma Restaurant at Sossusvlei Lodge",
+              "Sossus Dune Lodge Restaurant",
+              "Desert Homestead Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Fish River Canyon": {
+        "name": "Fish River Canyon",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Long desert drive south, Hobas viewpoints, and canyon light at sunset",
+            "activities": [
+              {
+                "name": "Self-drive Sesriem to Hobas/Fish River Canyon (fuel + remote-road buffer)",
+                "cost": "₹4,100–₹6,400"
+              },
+              {
+                "name": "NWR Ai-Ais / Fish River Canyon conservation fee for one international adult",
+                "cost": "₹1,288/day"
+              },
+              {
+                "name": "Fish River Canyon vehicle fee for a rental 4x4 (10 seats or less)",
+                "cost": "₹276/day"
+              },
+              {
+                "name": "Hobas main viewpoint and rim drive at golden hour",
+                "cost": "₹0"
+              },
+              {
+                "name": "4x4 rental day for the deep-south transfer",
+                "cost": "₹8,300–₹12,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Canyon Roadhouse",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Fish River Lodge",
+                "budget": "₹26,000–₹40,000/night"
+              },
+              {
+                "name": "Hobas Camp",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Canyon Roadhouse Restaurant",
+              "Fish River Lodge Restaurant",
+              "Hobas Camp Restaurant"
+            ]
+          },
+          {
+            "theme": "Ai-Ais hot springs, one more canyon panorama, and the final push back toward Windhoek or South Africa",
+            "activities": [
+              {
+                "name": "Ai-Ais Hot Springs Resort pools and canyon-floor relaxation",
+                "cost": "₹920–₹1,840"
+              },
+              {
+                "name": "Fish River Lodge scenic drive or guided canyon activity",
+                "cost": "₹2,800–₹6,000"
+              },
+              {
+                "name": "4x4 rental day kept for the return drive north or onward border crossing",
+                "cost": "₹8,300–₹12,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ai-Ais Hot Springs Resort",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Canyon Village",
+                "budget": "₹11,000–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "Ai-Ais Restaurant",
+              "Canyon Village Restaurant",
+              "Canyon Roadhouse Restaurant"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

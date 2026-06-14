@@ -1055,9 +1055,9 @@
     "lng": 40.49,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 13
   },
   {
     "name": "Uganda",
@@ -1075,9 +1075,9 @@
     "lng": 29.87,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 12
   },
   {
     "name": "Madagascar",
@@ -1215,9 +1215,9 @@
     "lng": 24.68,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 10
   },
   {
     "name": "Namibia",
@@ -1225,9 +1225,9 @@
     "lng": 18.49,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 14
   },
   {
     "name": "Somalia",

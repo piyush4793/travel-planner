@@ -1,0 +1,631 @@
+{
+  "name": "Rwanda",
+  "seed": false,
+  "lat": -1.94,
+  "lng": 29.87,
+  "region": "Africa",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "March",
+    "April",
+    "May",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹3.4L–₹5.8L",
+    "couple": "₹6.1L–₹10L",
+    "family4": "₹11.5L–₹18L"
+  },
+  "experiences": [
+    "Volcanoes gorilla trekking",
+    "Golden monkey tracking",
+    "Lake Kivu boat days",
+    "Nyungwe canopy walk and chimps",
+    "Akagera Big Five safari"
+  ],
+  "avoid": [
+    "March to May and much of November bring the heaviest rain, muddier park tracks and slower road transfers",
+    "Gorilla permits sell out first in peak dry months, so Volcanoes dates need to be locked well before hotels",
+    "Public buses are cheap between Kigali, Musanze, Rubavu and Karongi, but Akagera and some Nyungwe lodges work much better with a rental car or driver"
+  ],
+  "combo": [
+    "Uganda",
+    "Tanzania"
+  ],
+  "landmark": "Volcanoes National Park",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Kigali (KGL) is the only practical international gateway; Rwanda is compact enough to stay road-based, with public buses for city links and rental cars or drivers saving time for Nyungwe and Akagera sectors.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Kigali",
+      "lat": -1.9441,
+      "lng": 30.0619,
+      "notes": "Clean, easy capital for the genocide memorial, design cafés, moto-taxi hops and the launch point for every national-park leg"
+    },
+    {
+      "name": "Volcanoes National Park",
+      "lat": -1.4833,
+      "lng": 29.55,
+      "notes": "Kinigi trailheads for gorilla trekking, golden monkeys, Dian Fossey history and misty Virunga lodge country"
+    },
+    {
+      "name": "Lake Kivu",
+      "lat": -2.0606,
+      "lng": 29.3476,
+      "notes": "Rubavu and Karongi lake stops for boat rides, coffee views, Congo Nile Trail fragments and an easy scenic reset"
+    },
+    {
+      "name": "Nyungwe Forest",
+      "lat": -2.4817,
+      "lng": 29.2147,
+      "notes": "Ancient montane rainforest with chimp treks, canopy walkways, orchid-rich trails and tea-estate viewpoints"
+    },
+    {
+      "name": "Akagera National Park",
+      "lat": -1.8657,
+      "lng": 30.704,
+      "notes": "Savannah, lakes, big-game drives and boat safaris that balance Rwanda's primate-heavy west with classic East African wildlife"
+    }
+  ],
+  "itinerary": {
+    "sim": "MTN Rwanda is the easiest airport pickup and usually the strongest all-round network on this route, with Airtel Rwanda fine in Kigali; expect roughly ₹500–₹1,300 for enough data for maps, mobile money and hotel coordination.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "RwandAir",
+      "WhatsApp",
+      "Move by Volkswagen",
+      "Yego Moto",
+      "MoMo Rwanda",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Kigali",
+      "Volcanoes National Park",
+      "Lake Kivu",
+      "Nyungwe Forest",
+      "Akagera National Park"
+    ],
+    "cities": {
+      "Kigali": {
+        "name": "Kigali",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Memorial history, easy café-hopping, and a soft landing into one of Africa's most orderly capitals",
+            "activities": [
+              {
+                "name": "Kigali Genocide Memorial entry",
+                "cost": "₹0"
+              },
+              {
+                "name": "Guided visit or audio guide at Kigali Genocide Memorial",
+                "cost": "₹0–₹4,300"
+              },
+              {
+                "name": "Inema Arts Center visit and gallery browse",
+                "cost": "₹0–₹650"
+              },
+              {
+                "name": "Moto-taxi hops between Kiyovu, Kimihurura and Gisozi",
+                "cost": "₹125–₹500"
+              },
+              {
+                "name": "Kimironko Market browse for fabric, fruit and first-day cash snacks",
+                "cost": "₹0–₹650"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Heaven Boutique Hotel",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Hotel des Mille Collines",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Kigali Serena Hotel",
+                "budget": "₹16,500–₹27,000/night"
+              }
+            ],
+            "meals": [
+              "Heaven Restaurant",
+              "Poivre Noir",
+              "Repub Lounge"
+            ]
+          },
+          {
+            "theme": "Nyamirambo energy, city viewpoints, and the practical shopping day before primate country",
+            "activities": [
+              {
+                "name": "Nyamirambo Women's Center walking tour with local lunch",
+                "cost": "₹2,200–₹3,900"
+              },
+              {
+                "name": "Campaign Against Genocide Museum visit at Parliament",
+                "cost": "₹0"
+              },
+              {
+                "name": "Kigali Convention Centre and KCC area evening walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Coffee and design stop at Question Coffee or nearby cafés",
+                "cost": "₹300–₹900"
+              },
+              {
+                "name": "Private airport or Musanze transfer booking for the next leg",
+                "cost": "₹6,000–₹10,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Retreat by Heaven",
+                "budget": "₹22,000–₹35,000/night"
+              },
+              {
+                "name": "Heaven Boutique Hotel",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Question Coffee Cafe",
+              "Fusion Restaurant",
+              "The Hut"
+            ]
+          }
+        ]
+      },
+      "Volcanoes National Park": {
+        "name": "Volcanoes National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "The big Rwanda day: pre-dawn check-in, steep bamboo climbs and the once-in-a-lifetime gorilla hour",
+            "activities": [
+              {
+                "name": "Volcanoes National Park gorilla trekking permit",
+                "cost": "₹1,29,000"
+              },
+              {
+                "name": "Private transfer or rental car from Kigali to Kinigi",
+                "cost": "₹6,000–₹10,500"
+              },
+              {
+                "name": "Porter hire for the gorilla trek",
+                "cost": "₹850–₹1,300"
+              },
+              {
+                "name": "Gorilla Guardians Village cultural visit",
+                "cost": "₹2,100–₹2,600"
+              },
+              {
+                "name": "Musanze cave or Twin Lakes add-on by local driver",
+                "cost": "₹1,300–₹3,900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Five Volcanoes Boutique Hotel",
+                "budget": "₹14,500–₹24,000/night"
+              },
+              {
+                "name": "Mountain Gorilla View Lodge",
+                "budget": "₹18,500–₹29,000/night"
+              },
+              {
+                "name": "Le Bambou Gorilla Lodge",
+                "budget": "₹9,500–₹15,000/night"
+              }
+            ],
+            "meals": [
+              "Bamboo Restaurant",
+              "Volcano Restaurant",
+              "La Paillotte Musanze"
+            ]
+          },
+          {
+            "theme": "Golden monkeys, Virunga views and a second day to enjoy the landscape without the permit pressure",
+            "activities": [
+              {
+                "name": "Golden monkey tracking permit",
+                "cost": "₹8,600"
+              },
+              {
+                "name": "Dian Fossey tomb and Karisoke hike permit",
+                "cost": "₹6,500"
+              },
+              {
+                "name": "Kinigi to Musanze moto-taxi or local taxi rides",
+                "cost": "₹190–₹950"
+              },
+              {
+                "name": "Public bus from Kigali to Musanze if you skip the private car",
+                "cost": "₹250–₹440"
+              },
+              {
+                "name": "Coffee stop and souvenir time around Kinigi/Musanze",
+                "cost": "₹300–₹1,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tiloreza Volcanoes Ecolodge",
+                "budget": "₹19,000–₹31,000/night"
+              },
+              {
+                "name": "Virunga Inn Resort & Spa",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Migano Cafe",
+              "Virunga Inn Restaurant",
+              "Merez 2 Restaurant"
+            ]
+          }
+        ]
+      },
+      "Lake Kivu": {
+        "name": "Lake Kivu",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Rubavu lake air, easy waterfront time and the first true slow day after Volcanoes trekking",
+            "activities": [
+              {
+                "name": "Public bus or shared taxi from Musanze to Rubavu",
+                "cost": "₹315–₹650"
+              },
+              {
+                "name": "Lake Kivu beach promenade and public waterfront time",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunset boat ride from Rubavu/Gisenyi",
+                "cost": "₹1,900–₹3,900"
+              },
+              {
+                "name": "Kayak or paddleboard rental on Lake Kivu",
+                "cost": "₹1,600–₹3,200"
+              },
+              {
+                "name": "Hot springs stop near Rubavu",
+                "cost": "₹0–₹650"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lake Kivu Serena Hotel",
+                "budget": "₹17,500–₹28,500/night"
+              },
+              {
+                "name": "Paradise Malahide",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Palm Garden Resort",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Kiyaga Restaurant",
+              "Calafia Cafe",
+              "Tam Tam Beach Bar & Restaurant"
+            ]
+          },
+          {
+            "theme": "Boat-to-island choices, Congo Nile Trail views and a second night that breaks up the long Rwanda westward drive",
+            "activities": [
+              {
+                "name": "Boat excursion around Napoleon Island or Amahoro Island",
+                "cost": "₹2,600–₹5,200"
+              },
+              {
+                "name": "Short Congo Nile Trail cycling or walking segment",
+                "cost": "₹1,300–₹3,200"
+              },
+              {
+                "name": "Transfer onward by rental car or private driver toward Karongi/Nyamasheke",
+                "cost": "₹5,000–₹9,500"
+              },
+              {
+                "name": "Shared public bus onward along the lake road",
+                "cost": "₹440–₹950"
+              },
+              {
+                "name": "Lakeside coffee stop and craft shopping",
+                "cost": "₹300–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cormoran Lodge",
+                "budget": "₹12,500–₹20,500/night"
+              },
+              {
+                "name": "Cleo Lake Kivu Hotel",
+                "budget": "₹15,500–₹25,500/night"
+              }
+            ],
+            "meals": [
+              "Kiyaga Restaurant",
+              "Lake Kivu Serena Brasserie",
+              "Cormoran Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Nyungwe Forest": {
+        "name": "Nyungwe Forest",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Tea-estate scenery, one of Africa's best canopy walks and a cooler high-forest night",
+            "activities": [
+              {
+                "name": "Nyungwe canopy walk permit",
+                "cost": "₹5,200"
+              },
+              {
+                "name": "Tea plantation visit near Gisakura or Kitabi",
+                "cost": "₹650–₹1,900"
+              },
+              {
+                "name": "Park road transfer from Lake Kivu to Nyungwe lodges",
+                "cost": "₹5,000–₹10,500"
+              },
+              {
+                "name": "Guided waterfall or Igishigishigi trail walk",
+                "cost": "₹1,700–₹3,900"
+              },
+              {
+                "name": "Local taxi between Gisakura reception and lodges",
+                "cost": "₹300–₹1,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "One&Only Nyungwe House",
+                "budget": "₹85,000–₹1.35L/night"
+              },
+              {
+                "name": "Nyungwe Top View Hill Hotel",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Nyungwe Nziza Ecolodge",
+                "budget": "₹10,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Nyungwe House Restaurant",
+              "Top View Restaurant",
+              "Nyungwe Nziza Restaurant"
+            ]
+          },
+          {
+            "theme": "Pre-dawn chimp tracking, colobus-rich forest edges and Rwanda's most atmospheric rainforest morning",
+            "activities": [
+              {
+                "name": "Nyungwe chimpanzee trekking permit",
+                "cost": "₹12,900"
+              },
+              {
+                "name": "Colobus monkey tracking or guided forest walk",
+                "cost": "₹3,500–₹5,200"
+              },
+              {
+                "name": "Birding add-on with park guide",
+                "cost": "₹2,600–₹5,200"
+              },
+              {
+                "name": "Packed breakfast and lodge transfer for the early start",
+                "cost": "₹650–₹1,900"
+              },
+              {
+                "name": "Road repositioning toward Kigali or Akagera with a rental car/driver",
+                "cost": "₹9,500–₹18,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "One&Only Nyungwe House",
+                "budget": "₹85,000–₹1.35L/night"
+              },
+              {
+                "name": "Chimpanzee Lodge",
+                "budget": "₹5,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Nyungwe House Restaurant",
+              "Gisakura Guest House Restaurant",
+              "Top View Restaurant"
+            ]
+          }
+        ]
+      },
+      "Akagera National Park": {
+        "name": "Akagera National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Eastern Rwanda savannah, Lake Ihema wildlife and the clean contrast to the western primate parks",
+            "activities": [
+              {
+                "name": "Akagera National Park non-resident entry fee",
+                "cost": "₹8,600"
+              },
+              {
+                "name": "Self-drive or guided daytime game drive",
+                "cost": "₹1,300–₹15,500"
+              },
+              {
+                "name": "Lake Ihema scheduled boat safari",
+                "cost": "₹3,900–₹4,800"
+              },
+              {
+                "name": "Kigali to Akagera rental car or driver transfer",
+                "cost": "₹6,500–₹12,500"
+              },
+              {
+                "name": "Picnic supplies and gate-area snacks",
+                "cost": "₹650–₹1,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mantis Akagera Game Lodge",
+                "budget": "₹16,500–₹27,500/night"
+              },
+              {
+                "name": "Ruzizi Tented Lodge",
+                "budget": "₹28,500–₹44,500/night"
+              },
+              {
+                "name": "Karenge Bush Camp",
+                "budget": "₹19,500–₹31,500/night"
+              }
+            ],
+            "meals": [
+              "Akagera Game Lodge Restaurant",
+              "Ruzizi Camp Dining Tent",
+              "Karenge Bush Camp Dining Area"
+            ]
+          },
+          {
+            "theme": "Sunrise predator hours, marsh-edge birding and a polished final safari day before returning to Kigali",
+            "activities": [
+              {
+                "name": "Night drive or sunrise guided drive add-on",
+                "cost": "₹3,900–₹7,800"
+              },
+              {
+                "name": "Northern plains loop toward giraffe, lion and rhino zones",
+                "cost": "₹0–₹6,500"
+              },
+              {
+                "name": "Fishing or community cultural add-on near the park boundary",
+                "cost": "₹1,300–₹3,900"
+              },
+              {
+                "name": "Return transfer to Kigali",
+                "cost": "₹2,600–₹8,500"
+              },
+              {
+                "name": "RwandAir booking or airport hotel transfer for onward departure",
+                "cost": "₹650–₹4,300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Magashi Camp",
+                "budget": "₹85,000–₹1.35L/night"
+              },
+              {
+                "name": "Mantis Akagera Game Lodge",
+                "budget": "₹16,500–₹27,500/night"
+              }
+            ],
+            "meals": [
+              "Akagera Game Lodge Restaurant",
+              "Magashi Camp Dining",
+              "Ruzizi Camp Dining Tent"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Kigali",
+        "to": "Volcanoes National Park",
+        "method": "Public bus to Musanze plus a short moto-taxi to Kinigi is the budget move; a rental car or private driver is much easier if you are protecting an early gorilla briefing",
+        "cost": "₹250–₹10,500"
+      },
+      {
+        "from": "Volcanoes National Park",
+        "to": "Lake Kivu",
+        "method": "Road transfer via Musanze into Rubavu/Gisenyi by public bus, shared taxi or private car",
+        "cost": "₹315–₹4,500"
+      },
+      {
+        "from": "Lake Kivu",
+        "to": "Nyungwe Forest",
+        "method": "Stay road-based along the lake via Karongi and Nyamasheke; public buses are cheap, but a driver lets you stop for viewpoints and reach Gisakura before dark",
+        "cost": "₹440–₹10,500"
+      },
+      {
+        "from": "Nyungwe Forest",
+        "to": "Akagera National Park",
+        "method": "This is the longest repositioning: most travelers road-trip back through Kigali in a rental car or with a driver, while public buses work only if you break the journey into multiple hops",
+        "cost": "₹1,300–₹18,500"
+      },
+      {
+        "from": "Akagera National Park",
+        "to": "Kigali",
+        "method": "Rental car, lodge-arranged transfer or public transport via Kayonza back to Kigali for the flight home",
+        "cost": "₹315–₹8,500"
+      }
+    ],
+    "extras": [
+      "June to September is the easiest all-round Rwanda window: Volcanoes trails are drier, Akagera wildlife viewing is cleaner and Nyungwe hikes are less slippery; December to February is the other strong season if you want Christmas/New Year dates.",
+      "The Kigali Genocide Memorial is free to enter, but it deserves a slower half-day and a quieter evening afterward rather than being squeezed between airport logistics and nightlife plans.",
+      "Gorilla permits are the main trip cost driver by a huge margin; if you skip them, Rwanda drops from premium safari pricing to a much more manageable road-trip budget.",
+      "RwandAir is the relevant airline for the India-Kigali international leg, but this itinerary inside Rwanda is overwhelmingly road-based because scheduled domestic flights are not the practical norm for these park links.",
+      "Moto-taxis are fast and cheap in Kigali and Musanze, but for Nyungwe and Akagera a rental car or driver is the comfort upgrade that saves missed gate times and awkward lodge transfers.",
+      "Carry some francs for bus stations, moto rides and community visits, yet cards work well in Kigali and premium lodges; park permits are best treated as pre-booked rather than on-the-day decisions."
+    ],
+    "cityImages": {
+      "Kigali": [
+        "Kigali skyline Rwanda",
+        "Kigali Genocide Memorial",
+        "Nyamirambo Kigali"
+      ],
+      "Volcanoes National Park": [
+        "Volcanoes National Park Rwanda gorillas",
+        "Kinigi Rwanda",
+        "Virunga mountains Rwanda"
+      ],
+      "Lake Kivu": [
+        "Lake Kivu Rwanda",
+        "Gisenyi waterfront Rwanda",
+        "Congo Nile Trail Rwanda"
+      ],
+      "Nyungwe Forest": [
+        "Nyungwe Forest canopy walk",
+        "Nyungwe National Park Rwanda",
+        "Nyungwe tea plantation"
+      ],
+      "Akagera National Park": [
+        "Akagera National Park Rwanda safari",
+        "Lake Ihema Akagera",
+        "Akagera game drive Rwanda"
+      ]
+    }
+  }
+}

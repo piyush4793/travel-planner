@@ -1,0 +1,511 @@
+{
+  "name": "Botswana",
+  "seed": false,
+  "lat": -22.33,
+  "lng": 24.68,
+  "region": "Africa",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "January",
+    "February",
+    "March"
+  ],
+  "budget": {
+    "solo": "₹2.3L–₹3.8L",
+    "couple": "₹4.2L–₹6.9L",
+    "family4": "₹8.4L–₹12.8L"
+  },
+  "experiences": [
+    "Okavango Delta mokoro ride",
+    "Chobe River sunset safari",
+    "Moremi game drive",
+    "Makgadikgadi salt pans",
+    "Nata Bird Sanctuary"
+  ],
+  "avoid": [
+    "November-March rains can flood tracks, raise delta water unpredictably, and make self-drive sections slow",
+    "Safari charters usually enforce soft-bag luggage limits, so rigid suitcases create problems on Maun-Delta sectors",
+    "Night driving between Maun, Nata, and Kasane is risky because of livestock and wildlife on the highway"
+  ],
+  "combo": [
+    "Zimbabwe",
+    "Namibia",
+    "South Africa"
+  ],
+  "landmark": "Okavango Delta",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Many India itineraries route via Johannesburg or Addis Ababa; if budget allows, use an open-jaw into Maun or Kasane so you do not lose a full day backtracking across northern Botswana.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Gaborone",
+      "lat": -24.6282,
+      "lng": 25.9231,
+      "notes": "Capital-city reset with Three Dikgosi Monument, the National Museum district, and Mokolodi Nature Reserve before flying north"
+    },
+    {
+      "name": "Maun",
+      "lat": -19.9833,
+      "lng": 23.4167,
+      "notes": "Botswana's safari gateway for Okavango Delta mokoro trips, Moremi drives, scenic flights, and lodge-charter connections"
+    },
+    {
+      "name": "Chobe National Park",
+      "lat": -18.6646,
+      "lng": 24.6849,
+      "notes": "Kasane-based river-and-savanna safari hub known for elephant herds, Chobe River boat cruises, and easy park access"
+    },
+    {
+      "name": "Makgadikgadi Pans",
+      "lat": -20.495,
+      "lng": 25.257,
+      "notes": "Immense salt-pan landscapes with baobabs, meerkats, quad-bike desert routes, and Boteti River wildlife edges"
+    },
+    {
+      "name": "Nata",
+      "lat": -20.2167,
+      "lng": 26.1833,
+      "notes": "Roadside gateway to Sua Pan and Nata Bird Sanctuary, especially rewarding for flamingos after seasonal water fills"
+    }
+  ],
+  "itinerary": {
+    "sim": "Mascom is the safest all-round SIM for this route, with Orange Botswana a workable second option in towns; expect roughly ₹620–₹1,550 for a starter pack or eSIM with enough data for maps, lodge WhatsApp, and flight confirmations, but coverage still drops deep in the Delta and inside parts of Chobe.",
+    "apps": [
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "Air Botswana",
+      "SafariBookings",
+      "Drive Botswana",
+      "XE Currency",
+      "Tracks4Africa",
+      "Waze"
+    ],
+    "cityOrder": [
+      "Gaborone",
+      "Maun",
+      "Chobe National Park",
+      "Nata",
+      "Makgadikgadi Pans"
+    ],
+    "cities": {
+      "Gaborone": {
+        "name": "Gaborone",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Capital landmarks, an easy bush primer, and the domestic flight setup for the north",
+            "activities": [
+              {
+                "name": "Three Dikgosi Monument and central business district walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Botswana National Museum and Art Gallery browse",
+                "cost": "₹0–₹310"
+              },
+              {
+                "name": "Mokolodi Nature Reserve entry",
+                "cost": "₹435–₹590"
+              },
+              {
+                "name": "Mokolodi shared game drive or cheetah-focused activity",
+                "cost": "₹1,240–₹2,170"
+              },
+              {
+                "name": "Air Botswana one-way flight from Gaborone to Maun",
+                "cost": "₹12,090–₹14,690"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Avani Gaborone Resort & Casino",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Cresta Lodge Gaborone",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Peermont Mondior Gaborone",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Botswanacraft Restaurant",
+              "Bull & Bush",
+              "The Daily Grind Café"
+            ]
+          }
+        ]
+      },
+      "Maun": {
+        "name": "Maun",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Ease into the Delta with a mokoro glide, island walks, and Maun riverfront downtime",
+            "activities": [
+              {
+                "name": "Shared Okavango Delta mokoro excursion from Maun",
+                "cost": "₹4,960–₹7,440"
+              },
+              {
+                "name": "Traditional poler tip, island nature walk, and packed bush lunch add-ons",
+                "cost": "₹620–₹1,550"
+              },
+              {
+                "name": "Scenic helicopter or fixed-wing doors-off Delta flight",
+                "cost": "₹12,400–₹24,800"
+              },
+              {
+                "name": "Nhabe Museum visit in Maun",
+                "cost": "₹0–₹310"
+              },
+              {
+                "name": "Taxi hops between Maun Airport, Old Bridge side, and lodge riverfronts",
+                "cost": "₹620–₹1,240"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Thamalakane River Lodge",
+                "budget": "₹10,500–₹17,500/night"
+              },
+              {
+                "name": "Cresta Riley's Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Maun Lodge",
+                "budget": "₹8,000–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "The Duck Café",
+              "French Connection",
+              "Marc's Eatery"
+            ]
+          },
+          {
+            "theme": "Moremi wildlife, charter-flight logistics, and the classic Botswana safari pivot",
+            "activities": [
+              {
+                "name": "Moremi Game Reserve international park fee",
+                "cost": "₹1,675"
+              },
+              {
+                "name": "Foreign private vehicle fee for Moremi or Chobe day access",
+                "cost": "₹715"
+              },
+              {
+                "name": "Shared full-day Moremi 4x4 safari from Maun",
+                "cost": "₹7,440–₹9,920"
+              },
+              {
+                "name": "Charter flight from Maun into an Okavango Delta camp airstrip",
+                "cost": "₹15,500–₹31,000"
+              },
+              {
+                "name": "Fully equipped 4x4 rental for the Maun-based self-drive loop",
+                "cost": "₹8,060–₹13,640/day"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Royal Tree Lodge",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Island Safari Lodge",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "The Duck Café",
+              "French Connection",
+              "Old Bridge Backpackers Restaurant"
+            ]
+          }
+        ]
+      },
+      "Chobe National Park": {
+        "name": "Chobe National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Kasane arrival, first elephant sightings, and a Chobe River sunset cruise",
+            "activities": [
+              {
+                "name": "Road transfer or self-drive 4x4 from Maun to Kasane",
+                "cost": "₹8,060–₹13,640"
+              },
+              {
+                "name": "Chobe National Park international entry fee",
+                "cost": "₹1,675"
+              },
+              {
+                "name": "Foreign private vehicle fee at Chobe gate",
+                "cost": "₹715"
+              },
+              {
+                "name": "Shared Chobe River sunset boat safari",
+                "cost": "₹3,100–₹5,600"
+              },
+              {
+                "name": "Kasane to Kazungula viewpoint taxi or shuttle",
+                "cost": "₹620–₹1,240"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Chobe Safari Lodge",
+                "budget": "₹14,500–₹24,000/night"
+              },
+              {
+                "name": "Kwalape Safari Lodge",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Chobe Bush Lodge",
+                "budget": "₹16,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "The Old House",
+              "Sedudu Bar & Grill",
+              "Coffee Buzz Restaurant"
+            ]
+          },
+          {
+            "theme": "Prime riverfront game viewing, deeper park loops, and the Botswana big-elephant day",
+            "activities": [
+              {
+                "name": "Shared morning 4x4 game drive inside Chobe",
+                "cost": "₹3,720–₹5,580"
+              },
+              {
+                "name": "Full-day private safari vehicle with guide",
+                "cost": "₹18,600–₹24,800"
+              },
+              {
+                "name": "Second Chobe park fee",
+                "cost": "₹1,675"
+              },
+              {
+                "name": "Chobe Game Lodge river cruise or photographic safari boat",
+                "cost": "₹6,200–₹12,400"
+              },
+              {
+                "name": "Namibia border-side sunset detour at Impalila jetty area",
+                "cost": "₹0–₹620"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Chobe Game Lodge",
+                "budget": "₹48,000–₹85,000/night"
+              },
+              {
+                "name": "Chobe Safari Lodge",
+                "budget": "₹14,500–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "The Old House",
+              "Chobe Chilwero Restaurant",
+              "Sedudu Bar & Grill"
+            ]
+          }
+        ]
+      },
+      "Nata": {
+        "name": "Nata",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "A slow pan-edge transit day with flamingos, open skies, and one of Botswana's easiest wildlife stopovers",
+            "activities": [
+              {
+                "name": "4x4 drive from Kasane or Chobe side down to Nata",
+                "cost": "₹6,820–₹11,160"
+              },
+              {
+                "name": "Nata Bird Sanctuary entry fee",
+                "cost": "₹370"
+              },
+              {
+                "name": "Nata Bird Sanctuary vehicle fee",
+                "cost": "₹310"
+              },
+              {
+                "name": "Guided sunset drive onto the pans edge from Nata Lodge",
+                "cost": "₹2,500–₹4,350"
+              },
+              {
+                "name": "Flamingo and pelican photography stop at Sua Pan viewpoints",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nata Lodge",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Pelican Lodge & Camping",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Elephant Sands Lodge",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Nata Lodge Restaurant",
+              "Pelican Lodge Restaurant",
+              "Elephant Sands Restaurant"
+            ]
+          }
+        ]
+      },
+      "Makgadikgadi Pans": {
+        "name": "Makgadikgadi Pans",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Baobabs, salt-pan scale, meerkats, and the most otherworldly finish in Botswana",
+            "activities": [
+              {
+                "name": "Nxai Pan or Makgadikgadi National Park international entry fee",
+                "cost": "₹1,180"
+              },
+              {
+                "name": "Park vehicle fee for day access",
+                "cost": "₹310–₹370"
+              },
+              {
+                "name": "Guided meerkat habituation walk near Gweta",
+                "cost": "₹2,500–₹4,350"
+              },
+              {
+                "name": "Quad-bike or 4x4 pans excursion with baobab sunset stop",
+                "cost": "₹4,350–₹8,060"
+              },
+              {
+                "name": "Makgadikgadi salt-pan transfer from Nata or Gweta",
+                "cost": "₹3,100–₹6,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Planet Baobab",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Gweta Lodge",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Leroo La Tau",
+                "budget": "₹28,000–₹46,000/night"
+              }
+            ],
+            "meals": [
+              "Planet Baobab Bar & Restaurant",
+              "Gweta Lodge Restaurant",
+              "Leroo La Tau dining room"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Gaborone",
+        "to": "Maun",
+        "method": "Air Botswana is the cleanest move for this itinerary; long-distance buses exist, but the domestic flight protects almost a full travel day",
+        "cost": "₹12,090–₹14,690"
+      },
+      {
+        "from": "Maun",
+        "to": "Chobe National Park",
+        "method": "Self-drive 4x4 via Nata is the common independent option, while lodge-linked air charters or road transfers are faster but far more expensive",
+        "cost": "₹8,060–₹31,000"
+      },
+      {
+        "from": "Chobe National Park",
+        "to": "Nata",
+        "method": "Drive south on the A33 in a rented 4x4 or private transfer; daytime travel is strongly preferred because of animals on the road",
+        "cost": "₹6,820–₹11,160"
+      },
+      {
+        "from": "Nata",
+        "to": "Makgadikgadi Pans",
+        "method": "Continue by 4x4 toward Gweta, Planet Baobab, or a pans camp; some lodges bundle the last sandy approach in their excursion rate",
+        "cost": "₹3,100–₹6,200"
+      },
+      {
+        "from": "Makgadikgadi Pans",
+        "to": "Gaborone",
+        "method": "Either drive the long southern return in your rental or backtrack to Maun and connect onward by domestic flight depending on where your international ticket ends",
+        "cost": "₹8,060–₹18,600"
+      }
+    ],
+    "extras": [
+      "May to October is the sweet spot for this exact loop: drier tracks, easier wildlife sightings around water, and more reliable road conditions for the Maun-Chobe-Nata self-drive sections.",
+      "Park fees in Botswana are usually charged per person per day, and private vehicles pay separately, so self-drive days become noticeably pricier once you stack gate fees with fuel and guide costs.",
+      "Delta charters almost always require soft bags around 15kg, so repack before the Maun flight if you are carrying hard-shell luggage from India.",
+      "Kasane and Maun are the easiest places to top up fuel, withdraw cash, and sort SIM issues; once you are in the pans or on a lodge-linked Delta segment, logistics get much less flexible.",
+      "Nata Bird Sanctuary is best just after enough water has collected to draw flamingos, but even in drier months the sunset views over Sua Pan still justify the stop on the Chobe-Maun corridor.",
+      "If you want the highest-value splurge, spend it on one Maun-based Delta activity day or a proper Chobe boat safari rather than upgrading every hotel on the route."
+    ],
+    "cityImages": {
+      "Gaborone": [
+        "Three Dikgosi Monument Gaborone",
+        "Mokolodi Nature Reserve Botswana",
+        "Gaborone skyline Botswana"
+      ],
+      "Maun": [
+        "Okavango Delta mokoro Botswana",
+        "Scenic flight over Okavango Delta",
+        "Maun Thamalakane River Botswana"
+      ],
+      "Chobe National Park": [
+        "Chobe River elephant herd Botswana",
+        "Chobe sunset boat safari Kasane",
+        "Chobe National Park game drive Botswana"
+      ],
+      "Nata": [
+        "Nata Bird Sanctuary flamingos Botswana",
+        "Sua Pan sunset Botswana",
+        "Nata Lodge Botswana"
+      ],
+      "Makgadikgadi Pans": [
+        "Makgadikgadi salt pans Botswana",
+        "Baines Baobabs Botswana",
+        "Planet Baobab Gweta Botswana"
+      ]
+    }
+  }
+}

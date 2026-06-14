@@ -1,0 +1,536 @@
+{
+  "name": "Ethiopia",
+  "seed": false,
+  "lat": 9.15,
+  "lng": 40.49,
+  "region": "Africa",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹90K–₹1.45L",
+    "couple": "₹1.55L–₹2.45L",
+    "family4": "₹2.85L–₹4.4L"
+  },
+  "experiences": [
+    "Rock-hewn churches and living Orthodox pilgrim sites",
+    "Imperial castles and painted church ceilings on the Historic Route",
+    "Ancient stelae, tombs, and Axumite archaeology",
+    "High-altitude trekking with gelada monkeys in the Simien Mountains",
+    "Coffee culture, museums, and food in Addis Ababa"
+  ],
+  "avoid": [
+    "June to September highland rains make road journeys slower and many trails muddier.",
+    "Do not depend on cards or ATMs outside Addis; carry backup cash in birr for tickets and guides.",
+    "The northern circuit is high altitude throughout, so keep the first trekking day light if you arrive tired."
+  ],
+  "combo": [
+    "Kenya",
+    "Uganda"
+  ],
+  "landmark": "Rock-Hewn Churches of Lalibela",
+  "travelStyle": [
+    "Best as a dry-season northern circuit with short Ethiopian Airlines hops plus a few overland links.",
+    "Strong fit for travelers who want history, UNESCO sites, mountain scenery, and modestly paced city stays."
+  ],
+  "stopoverNote": "Addis Ababa is the practical international gateway and the easiest place to buffer your schedule; if you are stringing together Lalibela, Gondar, Axum, and Simien, Ethiopian Airlines domestic sectors save a lot of backtracking versus doing the whole route by bus.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Addis Ababa",
+      "lat": 8.9806,
+      "lng": 38.7578,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "National Museum treasures, Holy Trinity Cathedral, ethnographic collections, coffee stops, and the transport hub for the whole northern circuit"
+    },
+    {
+      "name": "Lalibela",
+      "lat": 12.0317,
+      "lng": 39.0476,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "UNESCO-listed rock-hewn churches, active pilgrimage atmosphere, local guides, and sunset viewpoints above the monastic valley"
+    },
+    {
+      "name": "Gondar",
+      "lat": 12.603,
+      "lng": 37.4521,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Fasil Ghebbi castles, Debre Berhan Selassie, Timket history, and an easy staging point before Debark and the Simiens"
+    },
+    {
+      "name": "Axum",
+      "lat": 14.1211,
+      "lng": 38.7234,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Stelae, royal tombs, Mary of Zion traditions, and one of the oldest historic capitals in sub-Saharan Africa"
+    },
+    {
+      "name": "Simien Mountains",
+      "lat": 13.1881,
+      "lng": 38.0632,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Debark gateway logistics, gelada sightings, escarpment hikes, and Ethiopia's most iconic highland trekking landscapes"
+    }
+  ],
+  "itinerary": {
+    "sim": "Ethio Telecom remains the default choice across this route; data packs are inexpensive in Addis, but expect slower coverage once you are on the Simien escarpment or on long overland bus stretches.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "Ethiopian Airlines",
+      "Ride",
+      "Feres",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Addis Ababa",
+      "Lalibela",
+      "Gondar",
+      "Simien Mountains",
+      "Axum"
+    ],
+    "cities": {
+      "Addis Ababa": {
+        "name": "Addis Ababa",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "National treasures, cathedral history, and an easy first day around the capital",
+            "activities": [
+              {
+                "name": "National Museum of Ethiopia entry",
+                "cost": "₹30"
+              },
+              {
+                "name": "Holy Trinity Cathedral entry",
+                "cost": "₹140"
+              },
+              {
+                "name": "Ride or Feres cab hops between Piazza, Arat Kilo, and Bole",
+                "cost": "₹350–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Lobelia",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Golden Tulip Addis Ababa",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hyatt Regency Addis Ababa",
+                "budget": "₹16,500–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Castelli Restaurant",
+              "Yod Abyssinia",
+              "Tomoca Coffee"
+            ]
+          },
+          {
+            "theme": "University museum time, Merkato energy, and a last Addis stock-up before the north",
+            "activities": [
+              {
+                "name": "Ethnological Museum entry",
+                "cost": "₹35"
+              },
+              {
+                "name": "Merkato local guide or escorted walk",
+                "cost": "₹700–₹1,500"
+              },
+              {
+                "name": "Taxi run to Entoto viewpoints or coffee stops",
+                "cost": "₹500–₹1,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Lobelia",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Golden Tulip Addis Ababa",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hyatt Regency Addis Ababa",
+                "budget": "₹16,500–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Sishu",
+              "Kategna Restaurant",
+              "Chaka Coffee"
+            ]
+          }
+        ]
+      },
+      "Lalibela": {
+        "name": "Lalibela",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "The northwestern church cluster with a local guide and enough time to absorb the carved passages",
+            "activities": [
+              {
+                "name": "Lalibela rock-hewn churches foreigner pass for all 11 churches",
+                "cost": "₹8,300"
+              },
+              {
+                "name": "Licensed local guide for the main church clusters",
+                "cost": "₹1,700–₹3,400"
+              },
+              {
+                "name": "Short tuk-tuk transfers between viewpoints and church entrances",
+                "cost": "₹300–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maribela Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Panoramic View Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Mountain View Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Ben Abeba",
+              "Seven Olives Hotel Restaurant",
+              "Panoramic View Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Bete Giyorgis, cave chapels, and a slower second day for monastery viewpoints or festival atmosphere",
+            "activities": [
+              {
+                "name": "Asheton Maryam hike or mule hire",
+                "cost": "₹1,000–₹2,700"
+              },
+              {
+                "name": "Church pass reuse for the southeastern cluster and Bete Giyorgis",
+                "tip": "The same multi-day ticket usually covers your second day, so do not buy another pass."
+              },
+              {
+                "name": "Local coffee stop and village walk around Lalibela",
+                "cost": "₹170–₹500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maribela Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Panoramic View Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Mountain View Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Ben Abeba",
+              "Seven Olives Hotel Restaurant",
+              "Kana Restaurant"
+            ]
+          }
+        ]
+      },
+      "Gondar": {
+        "name": "Gondar",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Royal enclosure, church art, and one of Ethiopia's best food stops",
+            "activities": [
+              {
+                "name": "Fasil Ghebbi royal enclosure entry",
+                "cost": "₹140"
+              },
+              {
+                "name": "Debre Berhan Selassie Church entry",
+                "cost": "₹140"
+              },
+              {
+                "name": "Fasilides' Bath entry",
+                "cost": "₹70"
+              },
+              {
+                "name": "Bajaj or taxi hops around Gondar",
+                "cost": "₹250–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Goha Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Haile Resort Gondar",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Mayleko Lodge",
+                "budget": "₹5,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "The Four Sisters Restaurant",
+              "Goha Hotel Restaurant",
+              "Tele Cafe"
+            ]
+          }
+        ]
+      },
+      "Simien Mountains": {
+        "name": "Simien Mountains",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Debark permits, escarpment views, and a first trek with gelada troops",
+            "activities": [
+              {
+                "name": "Simien Mountains National Park foreigner entry (per day)",
+                "cost": "₹60"
+              },
+              {
+                "name": "Mandatory park scout",
+                "cost": "₹1,400–₹2,400"
+              },
+              {
+                "name": "Shared 4x4 from Debark to Sankaber or nearby trailheads",
+                "cost": "₹3,500–₹6,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Giant Lobelia Hotel",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Simien Lodge",
+                "budget": "₹14,000–₹24,000/night"
+              },
+              {
+                "name": "Limalimo Lodge",
+                "budget": "₹18,000–₹30,000/night"
+              }
+            ],
+            "meals": [
+              "Giant Lobelia Hotel Restaurant",
+              "Simien Lodge Restaurant",
+              "Limalimo Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Longer ridge walking, wildlife spotting, and either another night in the park or a return to Debark",
+            "activities": [
+              {
+                "name": "Local hiking guide for a half- or full-day trail",
+                "cost": "₹1,400–₹2,700"
+              },
+              {
+                "name": "Optional mule for packs or less confident hikers",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Second park day entry",
+                "cost": "₹60"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Giant Lobelia Hotel",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Simien Lodge",
+                "budget": "₹14,000–₹24,000/night"
+              },
+              {
+                "name": "Limalimo Lodge",
+                "budget": "₹18,000–₹30,000/night"
+              }
+            ],
+            "meals": [
+              "Giant Lobelia Hotel Restaurant",
+              "Simien Lodge Restaurant",
+              "Limalimo Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Axum": {
+        "name": "Axum",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Stelae, royal history, and Ethiopia's most famous church traditions in one compact day",
+            "activities": [
+              {
+                "name": "Northern Stelae Park and archaeology zone entry",
+                "cost": "₹200–₹340"
+              },
+              {
+                "name": "Church of Our Lady Mary of Zion complex entry",
+                "cost": "₹340–₹410"
+              },
+              {
+                "name": "Local guide for the stelae field, tombs, and church precinct",
+                "cost": "₹700–₹1,500"
+              },
+              {
+                "name": "Tuk-tuk or taxi hops around Axum",
+                "cost": "₹250–₹600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sabean International Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Consolar International Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Yared Zema International Hotel",
+                "budget": "₹4,000–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Kuda Juice & Pizzeria",
+              "Lucy Cultural Restaurant",
+              "Antica Special Cultural Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Addis Ababa",
+        "to": "Lalibela",
+        "method": "Ethiopian Airlines domestic is the cleanest way to start the Historic Route; long-distance buses are cheaper but eat a full day and a night",
+        "cost": "₹1,700–₹3,400 by bus; ₹3,500–₹10,500 by air"
+      },
+      {
+        "from": "Lalibela",
+        "to": "Gondar",
+        "method": "Shared minibuses and long-distance buses via Woldia and Debark are the budget norm; flying usually means backtracking through Addis",
+        "cost": "₹1,700–₹3,400 overland; ₹10,000–₹18,000 by air via Addis"
+      },
+      {
+        "from": "Gondar",
+        "to": "Simien Mountains",
+        "method": "Minibus to Debark, then a park-arranged 4x4 or shared transfer into the main Simien trailheads",
+        "cost": "₹1,000–₹6,500"
+      },
+      {
+        "from": "Simien Mountains",
+        "to": "Axum",
+        "method": "Long-distance bus or shared minibus via Shire is the usual budget move; private transfers are faster if you are short on time",
+        "cost": "₹1,400–₹3,000"
+      }
+    ],
+    "extras": [
+      "October to March is the sweet spot for this circuit: dry skies for church visits, clearer mountain views in Simien, and much smoother overland bus days than the June-September rains.",
+      "Lalibela church tickets are expensive by Ethiopian standards, so the route makes more sense if you commit to at least two northern highlights rather than flying in for a single night.",
+      "If you finish in Axum, many travelers fly back to Addis on Ethiopian Airlines instead of retracing the overland route through Gondar and Lalibela."
+    ],
+    "cityImages": {
+      "Addis Ababa": [
+        "National Museum of Ethiopia Addis Ababa",
+        "Holy Trinity Cathedral Addis Ababa",
+        "Ethnological Museum Addis Ababa"
+      ],
+      "Lalibela": [
+        "Bete Giyorgis Lalibela",
+        "Lalibela rock-hewn churches Ethiopia",
+        "Ben Abeba Lalibela"
+      ],
+      "Gondar": [
+        "Fasil Ghebbi Gondar",
+        "Debre Berhan Selassie Gondar",
+        "Goha Hotel Gondar view"
+      ],
+      "Simien Mountains": [
+        "Simien Mountains National Park Ethiopia",
+        "Gelada baboons Simien Mountains",
+        "Sankaber Simien Mountains"
+      ],
+      "Axum": [
+        "Axum stelae Ethiopia",
+        "Church of Our Lady Mary of Zion Axum",
+        "Northern Stelae Park Axum"
+      ]
+    }
+  }
+}
