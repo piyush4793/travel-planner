@@ -1,0 +1,434 @@
+{
+  "name": "Eritrea",
+  "seed": false,
+  "lat": 15.18,
+  "lng": 39.78,
+  "region": "Africa",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹1.05L–₹1.75L",
+    "couple": "₹1.95L–₹3L",
+    "family4": "₹3.7L–₹5.4L"
+  },
+  "experiences": [
+    "UNESCO-listed Italian modernist streetscapes in Asmara",
+    "Monday camel market and shrine stops in Keren",
+    "Ottoman coral-stone lanes and Red Sea seafood in Massawa",
+    "Boat-and-camp island escapes with snorkeling or diving in the Dahlak Archipelago",
+    "Classic bus-and-taxi overland route from cool highlands to the Red Sea coast"
+  ],
+  "avoid": [
+    "April to September is a tougher window: Massawa and the Dahlak coast turn brutally hot, and the July-September wet stretch makes inland road days muddier.",
+    "Foreign travelers need a travel permit for everywhere outside Asmara; arrange it early, carry passport copies, and expect checkpoint checks on the road to Keren, Massawa, and the islands.",
+    "Cards, ATMs, and online bookings are unreliable, so keep cash in nakfa for buses, taxis, museum stops, and permit fees."
+  ],
+  "combo": [
+    "Ethiopia",
+    "Djibouti",
+    "Sudan"
+  ],
+  "landmark": "Asmara: A Modernist African City",
+  "travelStyle": [
+    "explorer",
+    "slow"
+  ],
+  "stopoverNote": "Asmara is the only practical international gateway. The smoothest loop is Asmara → Keren → Asmara/Massawa → Dahlak Archipelago, with the Massawa leg timed late in the trip so you hit the coast after your highland sightseeing and after permits are already in hand.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Asmara",
+      "lat": 15.3229,
+      "lng": 38.9251,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "UNESCO modernist core for Fiat Tagliero, Cinema Impero, Harnet Avenue cafés, Medebar Market, and the permit logistics every foreign traveler handles before leaving the capital"
+    },
+    {
+      "name": "Massawa",
+      "lat": 15.6081,
+      "lng": 39.4746,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Steamy Red Sea port for Ottoman coral architecture, Dahlak boat departures, seafood hotel dining, and the dramatic escarpment drive down from Asmara"
+    },
+    {
+      "name": "Keren",
+      "lat": 15.7779,
+      "lng": 38.4511,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Second city of Eritrea with the Monday camel market, Mariam Dearit shrine, cemetery history, and a gentler highland pace than the capital"
+    },
+    {
+      "name": "Dahlak Archipelago",
+      "lat": 15.75,
+      "lng": 40.22,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Remote island chain reached by licensed boats from Massawa; most stays are organized camping or basic temporary setups with snorkeling, diving, and permit-controlled access"
+    }
+  ],
+  "itinerary": {
+    "sim": "EriTel is the default local SIM. Buy and top up in Asmara before you head out because coastal coverage is patchier and island data can disappear entirely once you leave Massawa.",
+    "apps": [
+      "Google Maps offline",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency",
+      "Maps.me",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Asmara",
+      "Keren",
+      "Massawa",
+      "Dahlak Archipelago"
+    ],
+    "cities": {
+      "Asmara": {
+        "name": "Asmara",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Do the permit paperwork while you are still in the capital, then use Asmara for UNESCO architecture, tank-yard logistics, and easy café time before the coast or Keren.",
+        "days": [
+          {
+            "theme": "UNESCO modernism, café culture, and the easiest first walk in Eritrea",
+            "activities": [
+              {
+                "name": "Guided UNESCO modernist Asmara city tour covering Harnet Avenue, Cinema Impero, Opera House, Cinema Roma, and Fiat Tagliero",
+                "cost": "₹8,300–₹12,500",
+                "tip": "Published guided Asmara tours commonly price the full-day private city circuit in this range, usually with guide and transport bundled."
+              },
+              {
+                "name": "Fiat Tagliero building exterior stop",
+                "cost": "Free",
+                "tip": "There is no formal entry ticket; most visitors just walk up for photos from the forecourt."
+              },
+              {
+                "name": "Shared yellow taxi or contract taxi hops between Harnet Avenue, Fiat Tagliero, and the cathedral quarter",
+                "cost": "₹28 pp shared or ₹385–₹825 private"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Crystal Hotel",
+                "budget": "₹7,000–₹11,000/night"
+              },
+              {
+                "name": "Sunshine Hotel",
+                "budget": "₹6,000–₹9,500/night"
+              },
+              {
+                "name": "Hotel Asmara Palace",
+                "budget": "₹12,500–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "New Fork Restaurant",
+              "Café Vittoria",
+              "Albergo Italia Restaurant"
+            ]
+          },
+          {
+            "theme": "Permits, wartime history, and one more practical day before you leave the capital",
+            "activities": [
+              {
+                "name": "Ministry of Tourism travel permit for each out-of-Asmara destination",
+                "cost": "₹110 per destination",
+                "tip": "The standard tourist movement permit is commonly quoted at 20 nakfa per destination; get Massawa, Keren, and Dahlak covered together if possible."
+              },
+              {
+                "name": "Tank Graveyard visit",
+                "cost": "Free",
+                "tip": "Entry itself is generally free, but visitors are expected to arrive with the right permit and usually hire a taxi for the stop."
+              },
+              {
+                "name": "Contract taxi to Tank Graveyard and back via Medebar or the market district",
+                "cost": "₹550–₹1,100"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Albergo Italia",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Crystal Hotel",
+                "budget": "₹7,000–₹11,000/night"
+              },
+              {
+                "name": "Hotel Khartoum",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Hamassien Restaurant",
+              "Trattoria Italian Restaurant",
+              "Café Moderna"
+            ]
+          }
+        ]
+      },
+      "Keren": {
+        "name": "Keren",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Keren works best as a compact highland side trip, ideally timed for Monday if you want the camel market at full volume.",
+        "days": [
+          {
+            "theme": "Camel market, shrines, and cemetery history in Eritrea's second city",
+            "activities": [
+              {
+                "name": "Monday camel and livestock market",
+                "cost": "Free"
+              },
+              {
+                "name": "Local taxi or bajaj hops between Mariam Dearit, the Italian cemetery, and central Keren",
+                "cost": "₹165–₹440"
+              },
+              {
+                "name": "Asmara–Keren shared bus or minibus",
+                "cost": "₹330–₹550"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sarina Hotel",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "New Costina Hotel",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "Keren Hotel",
+                "budget": "₹3,000–₹4,800/night"
+              }
+            ],
+            "meals": [
+              "Fickri Restaurant",
+              "Salem Restaurant",
+              "Sarina Hotel Restaurant"
+            ]
+          }
+        ]
+      },
+      "Massawa": {
+        "name": "Massawa",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Keep Massawa short but unrushed: one day for the old coral port and one for either Green Island/Gurgussum downtime or your Dahlak boat staging.",
+        "days": [
+          {
+            "theme": "Escarpment descent, Tualud landmarks, and a first Red Sea evening",
+            "activities": [
+              {
+                "name": "Asmara–Massawa intercity bus or minibus",
+                "cost": "₹550–₹825",
+                "tip": "The highway ride is part of the experience, dropping from cool highlands to humid Red Sea heat in a few hours."
+              },
+              {
+                "name": "Massawa Old Town and Tualud causeway walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Taxi out to Gurgussum Beach or between the bus station, Tualud and your hotel",
+                "cost": "₹275–₹660"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dahlak Hotel",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Seghen International Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Gurgussum Beach Hotel",
+                "budget": "₹4,000–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Dahlak Hotel Restaurant",
+              "Seghen International Hotel Restaurant",
+              "Red Sea Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "A slower coastal day for boat logistics, beach time, or a light marine outing before Dahlak",
+            "activities": [
+              {
+                "name": "Green Island boat arranged through Dahlak Hotel or local operators",
+                "cost": "₹2,200–₹4,400"
+              },
+              {
+                "name": "Gurgussum Beach facilities and taxi day",
+                "cost": "₹550–₹1,100"
+              },
+              {
+                "name": "Massawa taxi runs for permit checks, harbor logistics, and hotel transfers",
+                "cost": "₹220–₹550"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Seghen International Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Dahlak Hotel",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Central Hotel",
+                "budget": "₹3,000–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Dahlak Hotel Restaurant",
+              "Gurgussum Beach Hotel Restaurant",
+              "Seghen International Hotel Restaurant"
+            ]
+          }
+        ]
+      },
+      "Dahlak Archipelago": {
+        "name": "Dahlak Archipelago",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "There are no normal island hotels here; nearly all foreign visitors go on organized boat-and-camp packages from Massawa, with permits checked before departure.",
+        "days": [
+          {
+            "theme": "Boat out from Massawa, permit-controlled island access, and the first swim or snorkel stop",
+            "activities": [
+              {
+                "name": "Multi-day Dahlak Islands package with camping, boat transport, meals, and permits",
+                "cost": "₹91,000–₹99,000 pp",
+                "tip": "Published 4-day and 7-day island packages cluster around USD 1,100–1,190 per person, usually including Massawa coordination and permits."
+              },
+              {
+                "name": "Harbor paperwork and island departure permit handling",
+                "cost": "Included in package",
+                "tip": "Tour operators usually process the extra island paperwork in Massawa before boarding."
+              },
+              {
+                "name": "Snorkeling stop around islands such as Dissie or Madote",
+                "cost": "Usually included"
+              }
+            ]
+          },
+          {
+            "theme": "Certified diving or another snorkeling day in one of the Red Sea's least-visited island chains",
+            "activities": [
+              {
+                "name": "Scuba dive with divemaster and rented equipment",
+                "cost": "₹4,700 per dive",
+                "tip": "One published Eritrea operator quotes USD 57 for a single guided dive with equipment; certification is expected."
+              },
+              {
+                "name": "Second island snorkeling and beach day",
+                "cost": "Included in package"
+              },
+              {
+                "name": "Return boat to Massawa",
+                "cost": "Included in package"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Asmara",
+        "to": "Keren",
+        "method": "Shared bus or minibus is the normal budget move; private cars are faster but unnecessary unless you are pairing Keren with cemetery or village stops.",
+        "cost": "₹330–₹550"
+      },
+      {
+        "from": "Keren",
+        "to": "Massawa",
+        "method": "Most travelers route back through Asmara and continue down the Massawa escarpment because direct foreigner logistics are simpler with the capital as the permit base.",
+        "cost": "₹880–₹1,380"
+      },
+      {
+        "from": "Massawa",
+        "to": "Dahlak Archipelago",
+        "method": "Licensed charter boats or tour boats are the only realistic option; independent island hopping is not practical for foreign visitors.",
+        "cost": "Usually bundled into ₹91,000–₹99,000 island packages"
+      }
+    ],
+    "extras": [
+      "October to March is the sweet spot: Asmara and Keren stay pleasantly dry, while Massawa and Dahlak are still hot but much easier than the pre-monsoon heat and summer humidity.",
+      "Permits are the defining logistics step for Eritrea travel. Get them early in Asmara and keep both permit copies and your passport with you because roadblocks between the capital, Keren, Massawa and the coast are normal.",
+      "If the Dahlak budget feels too steep, keep the trip to Asmara + Keren + Massawa and do a lighter Green Island boat day from Massawa instead of a multi-day island camp."
+    ],
+    "cityImages": {
+      "Asmara": [
+        "Fiat Tagliero Asmara",
+        "Cinema Impero Asmara",
+        "Harnet Avenue Asmara"
+      ],
+      "Keren": [
+        "Keren camel market Eritrea",
+        "Mariam Dearit Keren",
+        "Keren Eritrea mountains"
+      ],
+      "Massawa": [
+        "Massawa old town Eritrea",
+        "Dahlak Hotel Massawa",
+        "Gurgussum Beach Massawa"
+      ],
+      "Dahlak Archipelago": [
+        "Dahlak Archipelago Eritrea",
+        "Dissie Island Eritrea",
+        "Red Sea diving Eritrea"
+      ]
+    }
+  }
+}

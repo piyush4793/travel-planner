@@ -1,0 +1,359 @@
+{
+  "name": "Djibouti",
+  "seed": false,
+  "lat": 11.59,
+  "lng": 43.15,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹1.15L–₹1.9L",
+    "couple": "₹2.05L–₹3.25L",
+    "family4": "₹4.1L–₹6.1L"
+  },
+  "experiences": [
+    "Hyper-saline floating at Lake Assal",
+    "Whale shark snorkeling in the Gulf of Tadjoura",
+    "Moucha Island coral reef boat days",
+    "Volcanic rift scenery around Ghoubbet and Ardoukoba",
+    "Historic quarter walks and seafood in Djibouti City"
+  ],
+  "avoid": [
+    "June to September is brutally hot for salt-flat and canyon days, so do not plan Lake Assal as a midday-only outing in peak summer.",
+    "A 4x4 with driver is effectively essential outside Djibouti City; standard taxis are fine in town but not for Lake Assal, Ghoubbet, or Day Forest roads.",
+    "Whale shark trips are seasonal and sea-dependent, so keep November to February flexible and avoid making the boat day your final non-refundable plan."
+  ],
+  "combo": [
+    "Ethiopia",
+    "Kenya",
+    "United Arab Emirates"
+  ],
+  "landmark": "Lake Assal",
+  "travelStyle": [
+    "Best done as a short but high-cost adventure circuit built around private or small-group 4x4 days plus at least one boat excursion.",
+    "Strong fit for travelers who want geology, marine life, and a compact Horn of Africa stop rather than a museum-heavy or nightlife-led trip."
+  ],
+  "stopoverNote": "Djibouti City is the only practical international base; use it for arrival night, SIM, cash, and your boat departures, then loop out by 4x4 to Lake Assal and onward to Tadjoura when sea conditions are stable.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Djibouti City",
+      "lat": 11.5721,
+      "lng": 43.1456,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "The country's coastal capital is the easiest base for Place Menelik, Grande Pecherie, Hamoudi Mosque, hotel dining, Moucha Island departures, and onward logistics to every overland or marine excursion."
+    },
+    {
+      "name": "Lake Assal",
+      "lat": 11.6614,
+      "lng": 42.4111,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Lake Assal is the signature geology day for white salt flats, buoyant swims, Ghoubbet viewpoints, Dimbiya Canyon, and Ardoukoba's black lava fields."
+    },
+    {
+      "name": "Tadjoura",
+      "lat": 11.7853,
+      "lng": 42.8822,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Tadjoura brings the quieter side of Djibouti: whitewashed waterfront streets, Plage des Sables Blancs, boat access into the Gulf of Tadjoura, and 4x4 runs into Foret du Day."
+    }
+  ],
+  "itinerary": {
+    "sim": "Djibouti Telecom / Evatis is the default prepaid option; buy it in Djibouti City because coverage stays usable in Tadjoura town but data speeds and shop access fall away fast once you are on Lake Assal or Day Forest roads.",
+    "apps": [
+      "Google Maps offline",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency",
+      "Windy",
+      "Maps.me"
+    ],
+    "cityOrder": [
+      "Djibouti City",
+      "Lake Assal",
+      "Tadjoura"
+    ],
+    "cities": {
+      "Djibouti City": {
+        "name": "Djibouti City",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Keep one city day for the capital itself and one for the sea, because Moucha Island is the easiest way to add a true reef-and-boat day without changing countries.",
+        "days": [
+          {
+            "theme": "Colonial-era streets, mosque quarter, fish market energy, and a low-stress first day in the capital",
+            "activities": [
+              {
+                "name": "Place Menelik and European Quarter self-guided walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Grande Pecherie fish market stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Hamoudi Mosque exterior and central souq walk",
+                "cost": "Free"
+              },
+              {
+                "name": "City taxis between Place Menelik, Heron Beach, and the fish market",
+                "cost": "₹700–₹1,900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Atlantic Hotel",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Best Western Premier DJ Hotel",
+                "budget": "₹11,500–₹17,500/night"
+              },
+              {
+                "name": "Djibouti Palace Kempinski",
+                "budget": "₹24,000–₹42,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Café de la Gare",
+              "Le Pizzaiollo",
+              "Le Jardin de la Mer"
+            ]
+          },
+          {
+            "theme": "Moucha Island boat day for coral water, reef snorkeling, and a more relaxed Red Sea side of Djibouti",
+            "activities": [
+              {
+                "name": "Moucha Island speedboat and snorkeling day trip",
+                "cost": "₹12,500–₹20,800",
+                "tip": "Most hotel-arranged or local operator trips include the boat and basic lunch; private two-person departures cost more than larger-group departures."
+              },
+              {
+                "name": "Snorkeling gear rental if not bundled",
+                "cost": "₹1,200–₹2,400"
+              },
+              {
+                "name": "Taxi between hotel, marina, and embarkation point",
+                "cost": "₹700–₹1,650"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ras Dika Hotel",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Sheraton Djibouti",
+                "budget": "₹15,500–₹24,500/night"
+              },
+              {
+                "name": "Djibouti Palace Kempinski",
+                "budget": "₹24,000–₹42,000/night"
+              }
+            ],
+            "meals": [
+              "La Palmeraie",
+              "Melting Pot",
+              "The Bankoualé Restaurant"
+            ]
+          }
+        ]
+      },
+      "Lake Assal": {
+        "name": "Lake Assal",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Treat Lake Assal as a dedicated 4x4 day rather than a casual detour; the scenery is world-class, but the payoff depends on starting early and having transport that can handle the terrain.",
+        "days": [
+          {
+            "theme": "Salt flats, Ghoubbet lookouts, canyon viewpoints, and Djibouti's most dramatic geological day",
+            "activities": [
+              {
+                "name": "Lake Assal and Ghoubbet Bay guided 4x4 excursion with permits and lunch",
+                "cost": "₹7,100–₹12,100 pp",
+                "tip": "This reflects published one-day tour pricing for larger small groups through two-person bookings; private solo departures usually cost more."
+              },
+              {
+                "name": "Arta viewpoint and Dimbiya Canyon stops en route",
+                "cost": "Included"
+              },
+              {
+                "name": "Ardoukoba Volcano lava-field and crater viewpoint stop",
+                "cost": "Included"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Arta Hotel de la Paix",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Neem Farm",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hotel Village Les Sables Blancs",
+                "budget": "₹13,500–₹21,500/night"
+              }
+            ],
+            "meals": [
+              "Hotel Village Les Sables Blancs Restaurant",
+              "Gadileh Resort Hotel Restaurant",
+              "Restaurant Café de la Gare"
+            ]
+          }
+        ]
+      },
+      "Tadjoura": {
+        "name": "Tadjoura",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Tadjoura is where Djibouti becomes either marine-adventure-heavy or mountain-and-forest-heavy, so keep a second night here if whale shark conditions or Day Forest weather look promising.",
+        "days": [
+          {
+            "theme": "Old Tadjoura, Gulf views, and the seasonal whale shark boat day that makes winter the sweet spot",
+            "activities": [
+              {
+                "name": "Whale shark snorkeling boat day in the Gulf of Tadjoura",
+                "cost": "₹33,500–₹50,200 pp",
+                "tip": "Best odds are usually November to February; most published tours bundle boat, guide, permits, and lunch, and the price drops only if you share a larger private charter."
+              },
+              {
+                "name": "Tadjoura old town and waterfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Taxi between hotel, beach, and boat jetty",
+                "cost": "₹700–₹1,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Golfe",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Hotel Village Les Sables Blancs",
+                "budget": "₹13,500–₹21,500/night"
+              },
+              {
+                "name": "Gadileh Resort Hotel Tadjourah",
+                "budget": "₹16,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "Le Golfe Restaurant",
+              "Les Sables Blancs Restaurant",
+              "Gadileh Resort Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Foret du Day in the Goda Mountains, then a slower return to Tadjoura's waterfront",
+            "activities": [
+              {
+                "name": "Foret du Day National Park 4x4 day trip with guide and permits",
+                "cost": "₹8,400–₹12,600 pp",
+                "tip": "Operators usually price this as a full excursion from Tadjoura with transport because the forest roads and trailheads are not taxi-friendly."
+              },
+              {
+                "name": "Bankoualé / Goda Mountains short hiking stops",
+                "cost": "Included"
+              },
+              {
+                "name": "Plage des Sables Blancs swim stop or sunset beach time",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Corto Maltese",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Hotel Village Les Sables Blancs",
+                "budget": "₹13,500–₹21,500/night"
+              },
+              {
+                "name": "Gadileh Resort Hotel Tadjourah",
+                "budget": "₹16,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "Corto Maltese Restaurant",
+              "Les Sables Blancs Restaurant",
+              "Gadileh Resort Hotel Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Djibouti City",
+        "to": "Lake Assal",
+        "method": "Private or shared 4x4 via Arta, Wé'a, and Ghoubbet is the standard move and effectively the essential one for this landscape",
+        "cost": "₹7,100–₹12,100 pp on guided day tours; ₹14,000–₹21,000 per vehicle for private hire"
+      },
+      {
+        "from": "Lake Assal",
+        "to": "Tadjoura",
+        "method": "Continue by arranged 4x4 around the gulf if you are looping east, or backtrack to Djibouti City and use the ferry if you want the cheaper but slower split-route option",
+        "cost": "₹4,500–₹8,500 by arranged road transfer; ferry legs later cost about ₹330 pp one way"
+      }
+    ],
+    "extras": [
+      "November to March is the practical travel window: the salt flats are still hot but manageable, whale shark season overlaps the coolest months, and Tadjoura sea days are easier to enjoy.",
+      "Lake Assal, Day Forest, whale shark snorkeling, and Moucha Island are usually sold as guided excursion prices rather than tiny standalone gate fees, so budget for bundled transport-plus-permits rather than only a token entry charge.",
+      "Djibouti is small but not cheap; the country rewards travelers who commit to two or three headline excursions instead of trying to fill every day with long private transfers."
+    ],
+    "cityImages": {
+      "Djibouti City": [
+        "Place Menelik Djibouti City",
+        "Grande Pecherie Djibouti",
+        "Hamoudi Mosque Djibouti City"
+      ],
+      "Lake Assal": [
+        "Lake Assal Djibouti salt flats",
+        "Ghoubbet el Kharab viewpoint Djibouti",
+        "Ardoukoba Volcano Djibouti"
+      ],
+      "Tadjoura": [
+        "Tadjoura waterfront Djibouti",
+        "whale shark Gulf of Tadjoura",
+        "Foret du Day Djibouti"
+      ]
+    }
+  }
+}

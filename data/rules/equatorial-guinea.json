@@ -1,0 +1,425 @@
+{
+  "name": "Equatorial Guinea",
+  "seed": false,
+  "lat": 1.65,
+  "lng": 10.27,
+  "region": "Africa",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "budget": {
+    "solo": "₹1.05L–₹1.8L",
+    "couple": "₹2.0L–₹3.15L",
+    "family4": "₹3.85L–₹5.6L"
+  },
+  "experiences": [
+    "Malabo's Catedral de Santa Isabel, colonial core, and seafood dinners around the corniche",
+    "Dry-season Bioko day trips to Arena Blanca, Ureka, and the lush slopes of Pico Basilé",
+    "Bata promenade downtime with the easiest mainland hotel base before heading inland",
+    "Monte Alén rainforest trails for monkeys, birdlife, and guided jungle walks"
+  ],
+  "avoid": [
+    "October to May is much wetter on both Bioko and the mainland, so Ureka road conditions, boat landings, and Monte Alén trails are less predictable than in the June to September dry window.",
+    "Keep domestic plans flexible because CEIBA Intercontinental schedules can shift, and many Bioko excursions need permits, a guide, or both rather than pure walk-up visits.",
+    "Carry XAF cash for taxis, guides, beach food stalls, and park-side extras because cards work at the bigger hotels but are unreliable once you leave Malabo and Bata."
+  ],
+  "combo": [
+    "Cameroon",
+    "Gabon"
+  ],
+  "landmark": "Pico Basilé",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Malabo is the practical entry and the right place to do the Bioko loop first; keep Arena Blanca, Ureka, and Pico Basilé together, then use a CEIBA Intercontinental domestic flight to Bata before arranging a 4x4 for Monte Alén so you do not waste time backtracking through mainland transfers.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Malabo",
+      "lat": 3.75,
+      "lng": 8.78,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Bioko Island capital for Catedral de Santa Isabel, waterfront dining, Finca Sampaka, and organized dry-season excursions to Arena Blanca, Ureka, and Pico Basilé."
+    },
+    {
+      "name": "Bata",
+      "lat": 1.8639,
+      "lng": 9.7658,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Mainland arrival base with the broadest hotel selection, the seaside paseo, and the most practical jumping-off point for Monte Alén transfers."
+    },
+    {
+      "name": "Monte Alén National Park",
+      "lat": 1.6592,
+      "lng": 10.2987,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Rainforest reserve reached from Bata or Djibloho for guided jungle walks, birding, and wildlife-focused overnights once the June to September dry season firms up the roads."
+    }
+  ],
+  "itinerary": {
+    "sim": "GETESA is the simplest local SIM to find in Malabo and Bata; budget roughly ₹700–₹1,800 for enough data for maps, WhatsApp, and domestic travel coordination, with weaker speeds once you head toward Monte Alén.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency",
+      "CEIBA Intercontinental"
+    ],
+    "cityOrder": [
+      "Malabo",
+      "Bata",
+      "Monte Alén National Park"
+    ],
+    "cities": {
+      "Malabo": {
+        "name": "Malabo",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Settle into Bioko with Malabo’s cathedral quarter, cocoa-history stops, and the easiest restaurant cluster in the country.",
+            "activities": [
+              {
+                "name": "Airport taxi into central Malabo, Sipopo, or the corniche hotels",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Catedral de Santa Isabel (Malabo Cathedral) visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Finca Sampaka visit or cacao stop",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Taxi hops between the cathedral quarter, waterfront, and dinner",
+                "cost": "₹420–₹980"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Malabo",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Bisila Palace",
+                "budget": "₹15,000–₹18,000/night"
+              },
+              {
+                "name": "Hotel Anda",
+                "budget": "₹19,500–₹25,000/night"
+              }
+            ],
+            "meals": [
+              "Cafe Malabo Sampaka",
+              "La Luna",
+              "Restaurante Imagine"
+            ]
+          },
+          {
+            "theme": "Use one long west-and-south Bioko outing for Arena Blanca and Ureka while the dry-season roads are on your side.",
+            "activities": [
+              {
+                "name": "4x4 day trip from Malabo to Arena Blanca and Ureka with driver-guide",
+                "cost": "₹19,600–₹30,800"
+              },
+              {
+                "name": "Arena Blanca beach access",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ureka beach access package / local eco-guide",
+                "cost": "₹19,600–₹30,800"
+              },
+              {
+                "name": "Local boat hire near Ureka when surf or beach access requires it",
+                "cost": "₹2,800–₹5,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Malabo",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Bisila Palace",
+                "budget": "₹15,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "La Luna",
+              "Aviator Pub & Cafe",
+              "Kalytero"
+            ]
+          },
+          {
+            "theme": "Keep a signature summit day for Pico Basilé before you swap the island for the mainland.",
+            "activities": [
+              {
+                "name": "Pico Basilé guided summit excursion with permit, 4x4, and crater stop",
+                "cost": "₹29,400–₹42,000"
+              },
+              {
+                "name": "Mirador and Church of Mother Bisila stop on the upper slopes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hotel-arranged airport transfer or city taxi for the next-day CEIBA departure",
+                "cost": "₹700–₹1,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Malabo",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Sofitel Malabo Sipopo Le Golf",
+                "budget": "₹25,000–₹31,000/night"
+              }
+            ],
+            "meals": [
+              "Kalytero",
+              "Bidji Binia",
+              "Aviator Pub & Cafe"
+            ]
+          }
+        ]
+      },
+      "Bata": {
+        "name": "Bata",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Transit smartly onto the mainland and keep the first Bata day easy with seafront time and park logistics.",
+            "activities": [
+              {
+                "name": "CEIBA Intercontinental domestic flight from Malabo to Bata",
+                "cost": "₹8,500–₹15,500"
+              },
+              {
+                "name": "Airport taxi into the promenade or hotel district",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Paseo Marítimo de Bata and beachfront walking",
+                "cost": "₹0"
+              },
+              {
+                "name": "Taxi hops for dinner and stocking up before Monte Alén",
+                "cost": "₹420–₹980"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Bata",
+                "budget": "₹9,000–₹10,500/night"
+              },
+              {
+                "name": "Hotel Panáfrica Boutique & Spa",
+                "budget": "₹9,500–₹12,500/night"
+              },
+              {
+                "name": "Hotel Carmen",
+                "budget": "₹8,500–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant La Ferme",
+              "Restaurante Le Boukarou",
+              "Cafe Maritimo"
+            ]
+          },
+          {
+            "theme": "Optional buffer day for rest, supplies, and a less rushed start toward the rainforest.",
+            "activities": [
+              {
+                "name": "Taxi to Mercado Central de Bata and back",
+                "cost": "₹420–₹980"
+              },
+              {
+                "name": "Beachfront downtime or hotel pool day",
+                "cost": "₹0–₹1,400"
+              },
+              {
+                "name": "Private 4x4 reservation deposit for Monte Alén transfer",
+                "cost": "₹2,800–₹5,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Bata",
+                "budget": "₹9,000–₹10,500/night"
+              },
+              {
+                "name": "Hotel Panáfrica Boutique & Spa",
+                "budget": "₹9,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurant La Ferme",
+              "Restaurante Le Boukarou",
+              "Cafe Maritimo"
+            ]
+          }
+        ]
+      },
+      "Monte Alén National Park": {
+        "name": "Monte Alén National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Head inland from Bata, pay the park entry, and use the first afternoon for a guided rainforest introduction.",
+            "activities": [
+              {
+                "name": "Private 4x4 or taxi from Bata toward Monte Alén National Park",
+                "cost": "₹5,600–₹11,200"
+              },
+              {
+                "name": "Monte Alén National Park entry fee",
+                "cost": "₹460–₹920"
+              },
+              {
+                "name": "Mandatory local guide for first trails and wildlife spotting",
+                "cost": "₹1,800–₹4,600"
+              },
+              {
+                "name": "Short trailhead transfers inside the park zone",
+                "cost": "₹1,400–₹2,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Grand Hotel Djibloho",
+                "budget": "₹17,000–₹28,000/night"
+              },
+              {
+                "name": "Hotel Panáfrica Boutique & Spa",
+                "budget": "₹9,500–₹12,500/night"
+              },
+              {
+                "name": "Hotel Carmen",
+                "budget": "₹8,500–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Mariposa Restaurant",
+              "L'Incanto Restaurant",
+              "LOM Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep a full second day for deeper jungle walking, birdlife, and a flexible return depending on road conditions.",
+            "activities": [
+              {
+                "name": "Extended Monte Alén guide day for monkey, birding, and waterfall-focused trails",
+                "cost": "₹1,800–₹4,600"
+              },
+              {
+                "name": "Packed lunch or simple roadside meal near the park",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Return 4x4 or taxi to Bata",
+                "cost": "₹5,600–₹11,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Grand Hotel Djibloho",
+                "budget": "₹17,000–₹28,000/night"
+              },
+              {
+                "name": "Hotel Panáfrica Boutique & Spa",
+                "budget": "₹9,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Mariposa Restaurant",
+              "L'Incanto Restaurant",
+              "LOM Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Malabo",
+        "to": "Bata",
+        "method": "The cleanest island-to-mainland move is a CEIBA Intercontinental domestic flight; leave buffer for schedule changes and use taxis at both airports rather than trying to improvise same-day overland-ferry combinations.",
+        "cost": "₹9,200–₹16,900"
+      },
+      {
+        "from": "Bata",
+        "to": "Monte Alén National Park",
+        "method": "Arrange a 4x4 or sturdy taxi from Bata so you can reach the park gate with enough time for an afternoon guided walk; this is far more practical than piecing together public transport for the last stretch.",
+        "cost": "₹5,600–₹11,200"
+      },
+      {
+        "from": "Monte Alén National Park",
+        "to": "Malabo",
+        "method": "Return by road to Bata, then take a CEIBA Intercontinental flight back to Malabo if you are flying out from Bioko; same-day road plus boat improvisation is not worth the uncertainty.",
+        "cost": "₹14,000–₹28,000"
+      }
+    ],
+    "extras": [
+      "June to September is the strongest all-round window because Bioko day trips, Pico Basilé visibility, and Monte Alén roads are all easier in the dry season.",
+      "Photography rules can be sensitive around official buildings and checkpoints, so ask before shooting in central Malabo or on the mainland roads.",
+      "Arena Blanca and Ureka are easiest with a pre-arranged driver-guide because surf, tide, and road conditions can change the final access plan.",
+      "Monte Alén prices vary a lot depending on whether you split the guide and vehicle with other travelers, so the lower end of these ranges assumes shared logistics.",
+      "Many travelers treat Bata as the service base for Monte Alén even if they overnight inland, because hotel choice and cash access are still much better on the coast."
+    ],
+    "cityImages": {
+      "Malabo": [
+        "Catedral de Santa Isabel Malabo",
+        "Pico Basile Equatorial Guinea",
+        "Arena Blanca Bioko"
+      ],
+      "Bata": [
+        "Bata promenade Equatorial Guinea",
+        "Bata beachfront",
+        "Bata city center"
+      ],
+      "Monte Alén National Park": [
+        "Monte Alen National Park rainforest",
+        "Monte Alen wildlife Equatorial Guinea",
+        "Monte Alen jungle trail"
+      ]
+    }
+  }
+}

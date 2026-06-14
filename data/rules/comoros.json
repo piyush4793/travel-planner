@@ -1,0 +1,502 @@
+{
+  "name": "Comoros",
+  "seed": false,
+  "lat": -11.88,
+  "lng": 43.87,
+  "region": "Africa",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹1.25L–₹2.05L",
+    "couple": "₹2.25L–₹3.65L",
+    "family4": "₹4.5L–₹6.9L"
+  },
+  "experiences": [
+    "Mount Karthala Volcano Trek",
+    "Mohéli Marine Park Snorkeling",
+    "Livingstone's Fruit Bat Viewing",
+    "Mutsamudu Medina Walks",
+    "Inter-Island Dhow Crossings"
+  ],
+  "avoid": [
+    "November to April is wetter and rougher at sea, so dhows, beach landings, and even domestic flights are more likely to be delayed than in the dry May-October season.",
+    "Comoros logistics are fragile: AB Aviation schedules, shared taxis, and boat departures can shift without much notice, so keep a Moroni buffer before your international flight.",
+    "Cards are unreliable outside bigger hotels, modest dress matters in town, and Friday prayer hours can slow transport and restaurant service."
+  ],
+  "combo": [
+    "Madagascar",
+    "Mauritius",
+    "Tanzania"
+  ],
+  "landmark": "Mount Karthala",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Moroni is the hub for nearly every practical Comoros routing, so one buffer night on Grande Comore before your international departure protects you from AB Aviation changes and rough-sea dhow cancellations.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Moroni (Grande Comore)",
+      "lat": -11.7042,
+      "lng": 43.2402,
+      "notes": "Grande Comore's capital is the essential arrival hub for Volo Volo Market, the Old Friday Mosque, Itsandra sunsets, and onward departures for Mount Karthala or the other islands."
+    },
+    {
+      "name": "Mohéli",
+      "lat": -12.2922,
+      "lng": 43.7428,
+      "notes": "Mohéli is the wild, low-key island for Mohéli Laka Lodge stays, Mohéli Marine Park boat trips, turtle beaches around Itsamia, and fruit-bat viewing in the high forest."
+    },
+    {
+      "name": "Anjouan",
+      "lat": -12.223,
+      "lng": 44.3811,
+      "notes": "Anjouan rewards a slower finish with Mutsamudu's stone medina, steep plantation roads, Mount Ntringui hikes, and waterfall day trips."
+    }
+  ],
+  "itinerary": {
+    "sim": "Comores Telecom is the safest prepaid option in Moroni; coverage is workable in Mutsamudu and patchier around Mohéli's south coast. Budget roughly ₹450–₹1,080 for a local SIM with enough data for maps, WhatsApp, and schedule changes.",
+    "apps": [
+      "Booking.com",
+      "Google Maps offline",
+      "WhatsApp",
+      "XE Currency",
+      "Windy",
+      "Rome2Rio"
+    ],
+    "cityOrder": [
+      "Moroni (Grande Comore)",
+      "Mohéli",
+      "Anjouan"
+    ],
+    "cities": {
+      "Moroni (Grande Comore)": {
+        "name": "Moroni (Grande Comore)",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Moroni works best as one arrival day and one Karthala or south-coast excursion day; add a third night only if you want the overnight crater trek or need a buffer for domestic hops.",
+        "days": [
+          {
+            "theme": "Ease into Grande Comore with the market, the old seafront mosque, and a sunset on the black-rock coast at Itsandra.",
+            "activities": [
+              {
+                "name": "Taxi from Prince Said Ibrahim Airport to Moroni or Itsandra",
+                "cost": "₹540–₹1,260"
+              },
+              {
+                "name": "Volo Volo Market walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Old Friday Mosque waterfront exterior walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Taxi to Itsandra Beach and back",
+                "cost": "₹360–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Jardin de la Paix",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Retaj Moroni Hotel",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Itsandra Beach Hotel & Resort",
+                "budget": "₹12,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "La Grillade",
+              "Le Sim Sim Restaurant",
+              "Restaurant L'Archipel"
+            ]
+          },
+          {
+            "theme": "Use the second day for Comoros' signature volcano outing, or keep it lighter with south-coast viewpoints if the mountain weather turns.",
+            "activities": [
+              {
+                "name": "Shared taxi or charter to Mvouni trailhead for Mount Karthala",
+                "cost": "₹1,800–₹3,600"
+              },
+              {
+                "name": "Local Mount Karthala guide for a long day hike",
+                "cost": "₹5,400–₹6,300/group",
+                "tip": "Local guide rates are commonly around 30,000–35,000 KMF for the standard ascent; overnight crater treks with extra crew typically cost more."
+              },
+              {
+                "name": "Packed lunch, water, and trail snacks from Moroni",
+                "cost": "₹540–₹1,080"
+              },
+              {
+                "name": "Lac Salé or Iconi south-coast fallback by taxi if Karthala is clouded out",
+                "cost": "₹1,800–₹3,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Jardin de la Paix",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Retaj Moroni Hotel",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "La Grillade",
+              "Restaurant L'Archipel",
+              "Le Sim Sim Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep the extra Moroni day as a buffer for island logistics or for a slower circuit through salt crater views, village lanes, and beach time.",
+            "activities": [
+              {
+                "name": "Taxi excursion to Lac Salé crater lake",
+                "cost": "₹1,800–₹3,600"
+              },
+              {
+                "name": "Iconi old town and cliff viewpoint",
+                "cost": "₹360–₹900"
+              },
+              {
+                "name": "South-coast beach and village taxi loop",
+                "cost": "₹900–₹1,800"
+              },
+              {
+                "name": "Spice shopping at Volo Volo Market",
+                "cost": "₹360–₹1,080"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Retaj Moroni Hotel",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Itsandra Beach Hotel & Resort",
+                "budget": "₹12,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Le Sim Sim Restaurant",
+              "La Grillade",
+              "Restaurant L'Archipel"
+            ]
+          }
+        ]
+      },
+      "Mohéli": {
+        "name": "Mohéli",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Keep Mohéli simple: sleep near Laka Lodge or Fomboni, use one full day inside the marine park, and save the extra day for fruit bats or turtle season rather than racing around the island.",
+        "days": [
+          {
+            "theme": "Hop south from Grande Comore, settle into Mohéli's slower rhythm, and use the afternoon for your first marine-park shoreline views.",
+            "activities": [
+              {
+                "name": "AB Aviation flight from Moroni to Mohéli",
+                "cost": "₹8,100–₹12,600 pp"
+              },
+              {
+                "name": "Shared dhow from Grande Comore to Fomboni",
+                "cost": "₹540–₹1,440 pp",
+                "tip": "This is the cheaper backup when flights are full or retimed, but it is slower and far more weather-dependent than flying."
+              },
+              {
+                "name": "Taxi from Bandar Es Eslam Airport or Fomboni to Nioumachoua / Laka Lodge",
+                "cost": "₹900–₹1,800"
+              },
+              {
+                "name": "Mohéli Marine Park community or entry fee",
+                "cost": "₹900–₹1,800 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mohéli Laka Lodge",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Elage Guest House",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel Al Amal",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Laka Lodge Restaurant",
+              "Al Amal Fomboni Restaurant",
+              "Elage Guest House Restaurant"
+            ]
+          },
+          {
+            "theme": "Use Mohéli for the park day that makes the archipelago special: reef water, turtle beaches, and one of the world's strangest dive options.",
+            "activities": [
+              {
+                "name": "Shared boat into Mohéli Marine Park with snorkeling",
+                "cost": "₹3,600–₹7,200 pp",
+                "tip": "Most lodge-organized trips already fold the marine-park fee into the excursion price, so confirm what is included before paying separately."
+              },
+              {
+                "name": "Coelacanth or deep-water dive via Mohéli Laka Lodge / Massiwa Diving Center",
+                "cost": "₹9,000–₹18,000 per dive",
+                "tip": "These are specialist outings and not guaranteed sightings, so treat the coelacanth angle as a bonus rather than the sole reason to book the dive."
+              },
+              {
+                "name": "Itsamia turtle nesting night excursion",
+                "cost": "₹1,800–₹3,600 pp"
+              },
+              {
+                "name": "Kayak or pirogue around the Nioumachoua islets",
+                "cost": "₹1,800–₹3,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mohéli Laka Lodge",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Hotel Al Amal",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Laka Lodge Restaurant",
+              "Al Amal Fomboni Restaurant",
+              "Elage Guest House Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep the optional extra day for Mohéli's rarest land wildlife and for the slow transport reality that makes the island feel so remote.",
+            "activities": [
+              {
+                "name": "Livingstone's fruit bat viewing with local guide",
+                "cost": "₹1,800–₹5,400 pp"
+              },
+              {
+                "name": "Taxi to the bat-viewing trailhead and back",
+                "cost": "₹900–₹1,800"
+              },
+              {
+                "name": "Fomboni market and port walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Boat or dhow scheduling buffer for onward travel",
+                "cost": "₹540–₹1,440"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Elage Guest House",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel Al Amal",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Laka Lodge Restaurant",
+              "Al Amal Fomboni Restaurant",
+              "Elage Guest House Restaurant"
+            ]
+          }
+        ]
+      },
+      "Anjouan": {
+        "name": "Anjouan",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 3,
+        "note": "Anjouan deserves at least two nights for the medina plus one mountain day; the third day is best used on waterfalls and plantation roads before flying back to Moroni.",
+        "days": [
+          {
+            "theme": "Reach Anjouan, settle into Mutsamudu, and let the old stone port and alley network introduce the island's more historic feel.",
+            "activities": [
+              {
+                "name": "AB Aviation or domestic connection from Mohéli to Anjouan, usually via Moroni",
+                "cost": "₹10,800–₹18,000 pp"
+              },
+              {
+                "name": "Shared dhow when sea conditions and schedules line up",
+                "cost": "₹1,080–₹2,160 pp"
+              },
+              {
+                "name": "Taxi from Ouani Airport to Mutsamudu",
+                "cost": "₹360–₹900"
+              },
+              {
+                "name": "Mutsamudu medina and seafront walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Selam",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel Al Amal",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Hotel La Kasbah",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Café du Port",
+              "Restaurant Al Amal",
+              "Restaurant La Kasbah"
+            ]
+          },
+          {
+            "theme": "Go into Anjouan's steep green interior for the island's strongest hike, then stay out late for the bat-viewing window.",
+            "activities": [
+              {
+                "name": "Taxi from Mutsamudu toward the Mount Ntringui trailhead / Moya side",
+                "cost": "₹1,800–₹3,600"
+              },
+              {
+                "name": "Mount Ntringui local guide and community fee",
+                "cost": "₹900–₹1,800 pp"
+              },
+              {
+                "name": "Livingstone's fruit bat dusk viewing in forest valleys",
+                "cost": "₹1,800–₹5,400 pp"
+              },
+              {
+                "name": "Packed picnic and water for the mountain day",
+                "cost": "₹360–₹720"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel La Kasbah",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Hotel Al Amal",
+                "budget": "₹5,500–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant La Kasbah",
+              "Café du Port",
+              "Restaurant Al Amal"
+            ]
+          },
+          {
+            "theme": "Spend the last full day on waterfalls, ylang-ylang country, and a final slow loop through one of the Indian Ocean's most atmospheric old ports.",
+            "activities": [
+              {
+                "name": "Taxi loop to Dziancoundré Waterfall and nearby ylang-ylang plantations",
+                "cost": "₹2,700–₹4,500"
+              },
+              {
+                "name": "Dziancoundré local guide or village fee",
+                "cost": "₹540–₹1,080"
+              },
+              {
+                "name": "Plantation visit and distillation stop",
+                "cost": "₹900–₹1,800"
+              },
+              {
+                "name": "Spice and vanilla shopping in Mutsamudu",
+                "cost": "₹360–₹1,080"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Selam",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel La Kasbah",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Café du Port",
+              "Restaurant Al Amal",
+              "Restaurant La Kasbah"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Moroni (Grande Comore)",
+        "to": "Mohéli",
+        "method": "AB Aviation is the cleanest hop; dhows are cheaper but very weather-dependent and much slower.",
+        "cost": "₹540–₹12,600"
+      },
+      {
+        "from": "Mohéli",
+        "to": "Anjouan",
+        "method": "Most practical routings backtrack via Moroni on AB Aviation; sea crossings exist but only make sense if weather and local contacts line up.",
+        "cost": "₹1,080–₹18,000"
+      },
+      {
+        "from": "Anjouan",
+        "to": "Moroni (Grande Comore)",
+        "method": "A direct domestic flight is the reliable finish before your international departure, while shared sea transport is cheaper but far less predictable.",
+        "cost": "₹1,080–₹12,600"
+      }
+    ],
+    "extras": [
+      "May to October is the sweet spot: drier hiking weather on Karthala and Ntringui, calmer marine-park outings around Mohéli, and fewer rough-sea surprises on inter-island moves.",
+      "Mount Karthala guides are usually hired locally around Mvouni or arranged by Moroni hotels, and the classic one-day ascent price is commonly around 30,000-35,000 KMF for the guide rather than a formal park ticket.",
+      "Mohéli Marine Park fees are often wrapped into lodge-run snorkeling, turtle, or boat excursions, so ask clearly whether a quoted trip already includes the park contribution.",
+      "Coelacanth diving in Comoros is a specialist deep-water outing with no sighting guarantee; book it only if you are already interested in the dive itself, not as a must-see wildlife promise.",
+      "Livingstone's fruit bats are most active around dawn and dusk, and local guides on both Mohéli and Anjouan make a big difference because roost sites and access tracks can change.",
+      "Carry cash in KMF for guides, boats, and taxis because card acceptance drops sharply once you leave Moroni's larger hotels."
+    ],
+    "cityImages": {
+      "Moroni (Grande Comore)": [
+        "Volo Volo Market Moroni",
+        "Old Friday Mosque Moroni",
+        "Mount Karthala Comoros"
+      ],
+      "Mohéli": [
+        "Mohéli Marine Park",
+        "Mohéli Laka Lodge",
+        "Itsamia turtles Mohéli"
+      ],
+      "Anjouan": [
+        "Mutsamudu medina Anjouan",
+        "Mount Ntringui Anjouan",
+        "Dziancoundré waterfall Anjouan"
+      ]
+    }
+  }
+}

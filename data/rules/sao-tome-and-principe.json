@@ -1,0 +1,438 @@
+{
+  "name": "São Tomé and Príncipe",
+  "seed": false,
+  "lat": 0.19,
+  "lng": 6.61,
+  "region": "Africa",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "budget": {
+    "solo": "₹1.4L–₹2.2L",
+    "couple": "₹2.7L–₹4.2L",
+    "family4": "₹5.0L–₹7.6L"
+  },
+  "experiences": [
+    "Roça Heritage",
+    "Equator Snorkeling",
+    "Rainforest Hikes",
+    "Volcanic Coast",
+    "Island Hopping"
+  ],
+  "avoid": [
+    "October through May is the wetter stretch, so south-coast road days, Pico de São Tomé trail conditions, and small-boat departures to Ilhéu das Rolas are all less predictable than in the June-September gravana season.",
+    "Príncipe flights are the main bottleneck: seats are limited, schedules can shift, and missing the day's flight can easily force an extra night on São Tomé.",
+    "Card acceptance is inconsistent outside top hotels, so keep STN cash for taxis, moto rides, plantation visits, and pier-side boat payments."
+  ],
+  "combo": [
+    "Portugal",
+    "Ghana",
+    "Angola"
+  ],
+  "landmark": "Ilhéu das Rolas Equator Monument",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "If you only have 5-6 days, stay on São Tomé island and split the trip between the capital and a south-coast eco-lodge instead of forcing the expensive Príncipe flight.",
+  "links": [],
+  "cities": [
+    {
+      "name": "São Tomé City",
+      "lat": 0.336,
+      "lng": 6.727,
+      "notes": "The capital is the practical landing base for cash, SIMs, market walks, the fort, and the easiest day loop to Boca do Inferno and the north-coast roças."
+    },
+    {
+      "name": "Príncipe",
+      "lat": 1.613,
+      "lng": 7.412,
+      "notes": "Príncipe is the quieter, pricier second island for Praia Banana, Roça heritage, and low-density beach-and-biosphere stays around Santo António."
+    },
+    {
+      "name": "Obo National Park",
+      "lat": 0.279,
+      "lng": 6.595,
+      "notes": "Use the south and central forest belt for roça lunches, Ilhéu das Rolas boat days, and the serious guided hiking logistics around São Tomé's rainforest core."
+    }
+  ],
+  "itinerary": {
+    "sim": "CST and Unitel STP prepaid SIMs are easiest to sort in São Tomé city; buy enough data before leaving the capital because signal is patchier on the far south coast and on parts of Príncipe.",
+    "apps": [
+      "STP Airways",
+      "Booking.com",
+      "Google Maps offline",
+      "WhatsApp",
+      "XE Currency",
+      "Windy"
+    ],
+    "cityOrder": [
+      "São Tomé City",
+      "Obo National Park",
+      "Príncipe"
+    ],
+    "cities": {
+      "São Tomé City": {
+        "name": "São Tomé City",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Give the capital two nights for arrival admin, an easy old-town day, and one north-coast outing before you move into the slower south-coast or inter-island section.",
+        "days": [
+          {
+            "theme": "Arrival, Fort Views and the Capital Waterfront",
+            "activities": [
+              {
+                "name": "Taxi from Nuno Xavier Airport to central São Tomé or the Omali area",
+                "cost": "₹180–₹360",
+                "tip": "About 50-100 STN is a normal short transfer; agree the fare before loading bags because meters are rarely used."
+              },
+              {
+                "name": "São Sebastião Fort exterior and Ana Chaves bay walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Mercado Municipal de São Tomé browse",
+                "cost": "Free"
+              },
+              {
+                "name": "Motorbike taxi hop between the fort, market and seafront",
+                "cost": "₹72–₹180",
+                "tip": "Short moto rides are cheap and useful in the heat, but settle the price first and carry small cash."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Central",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Omali São Tomé",
+                "budget": "₹14,500–₹22,500/night"
+              },
+              {
+                "name": "Pestana São Tomé",
+                "budget": "₹15,500–₹24,500/night"
+              }
+            ],
+            "meals": [
+              "Papa Figo",
+              "Filomar",
+              "O Pirata"
+            ]
+          },
+          {
+            "theme": "Boca do Inferno and the North-Coast Plantation Loop",
+            "activities": [
+              {
+                "name": "Half-day taxi loop to Boca do Inferno and the north-coast roças",
+                "cost": "₹3,600–₹5,400",
+                "tip": "A private car is the easiest way to combine the blowhole with plantation stops without waiting for shared transport."
+              },
+              {
+                "name": "Boca do Inferno blowhole stop",
+                "cost": "Free",
+                "tip": "There is no formal ticket for independent visitors; go with calm footing because the black lava rock gets slippery."
+              },
+              {
+                "name": "Roça Agostinho Neto community visit",
+                "cost": "₹1,800–₹2,000 pp",
+                "tip": "Recent visitors commonly report an informal local contribution of about €20 per person rather than a fixed museum-style ticket."
+              },
+              {
+                "name": "Roça Monte Café coffee and plantation visit",
+                "cost": "₹9,500–₹12,500 pp",
+                "tip": "Guided coffee-and-roça day tours usually start around €105-140 with transport and lunch, so it is best value if you want context rather than just a quick photo stop."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Central",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Omali São Tomé",
+                "budget": "₹14,500–₹22,500/night"
+              },
+              {
+                "name": "Pestana São Tomé",
+                "budget": "₹15,500–₹24,500/night"
+              }
+            ],
+            "meals": [
+              "Xico's Café",
+              "Omali Restaurant",
+              "Papa Figo"
+            ]
+          }
+        ]
+      },
+      "Obo National Park": {
+        "name": "Obo National Park",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 3,
+        "note": "The park works best from a south-coast eco-lodge or Angolares base: one cultural day, one Ilhéu das Rolas boat day, and one full rainforest day.",
+        "days": [
+          {
+            "theme": "South-Coast Transfer, Roça Lunch and Black-Sand Beaches",
+            "activities": [
+              {
+                "name": "Private taxi from São Tomé City to Angolares or Praia Inhame",
+                "cost": "₹4,500–₹7,500",
+                "tip": "Budget more if you want scenic stops on the east coast because there is no reliable meter or fixed tariff board."
+              },
+              {
+                "name": "Roça São João dos Angolares plantation lunch and estate visit",
+                "cost": "₹1,800–₹3,600 pp",
+                "tip": "Chef João Carlos Silva's roça is one of the country's best-known food stops; reserve ahead because lunch service is destination dining, not a drop-in café."
+              },
+              {
+                "name": "Praia Jalé or Praia Piscina beach stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Praia Inhame Eco-Lodge",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Roça São João dos Angolares",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "N'Guembú Nature Resort",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Roça São João dos Angolares",
+              "Praia Inhame Restaurant",
+              "N'Guembú Restaurant"
+            ]
+          },
+          {
+            "theme": "Ilhéu das Rolas Equator Marker and South-Coast Snorkeling",
+            "activities": [
+              {
+                "name": "Guided boat day to Ilhéu das Rolas with equator stop and snorkeling",
+                "cost": "₹7,500–₹10,500 pp",
+                "tip": "That matches the common €75-105 full-day excursion band from Praia Inhame or Porto Alegre, usually including the boat and often lunch."
+              },
+              {
+                "name": "Motorbike or short taxi transfer to Porto Alegre pier if not bundled",
+                "cost": "₹180–₹540"
+              },
+              {
+                "name": "Equator monument and Praia Bateria swim on Ilhéu das Rolas",
+                "cost": "Included in excursion"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Praia Inhame Eco-Lodge",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Roça São João dos Angolares",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "N'Guembú Nature Resort",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Praia Inhame Restaurant",
+              "Roça São João dos Angolares",
+              "N'Guembú Restaurant"
+            ]
+          },
+          {
+            "theme": "Ôbo Rainforest Logistics and the Pico de São Tomé Climb",
+            "activities": [
+              {
+                "name": "Ôbo National Park access and conservation area",
+                "cost": "Free",
+                "tip": "The park itself does not usually charge an entrance ticket; the real cost is your guide, transport and any camping gear."
+              },
+              {
+                "name": "Guided Pico de São Tomé day hike from Bom Sucesso",
+                "cost": "₹12,500–₹14,500 pp",
+                "tip": "Current guided day hikes are typically priced from about €140 with transport and a picnic; book only if you are fit for a long, muddy 8-11 hour summit day."
+              },
+              {
+                "name": "Alternative Lagoa Amélia forest walk if summit weather closes in",
+                "cost": "₹3,600–₹6,500 pp",
+                "tip": "Ask your operator to downgrade instead of cancel if the high ridge is too wet; you still get rainforest exposure with lower risk."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Praia Inhame Eco-Lodge",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Roça São João dos Angolares",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "N'Guembú Nature Resort",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Praia Inhame Restaurant",
+              "Roça São João dos Angolares",
+              "packed trail lunch"
+            ]
+          }
+        ]
+      },
+      "Príncipe": {
+        "name": "Príncipe",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Príncipe is best kept to two or three nights because flights are expensive; use that time for one beach-and-view day and one heritage-and-biosphere day.",
+        "days": [
+          {
+            "theme": "Flight to Príncipe, Santo António and Praia Banana",
+            "activities": [
+              {
+                "name": "Road transfer back to São Tomé airport from the south coast",
+                "cost": "₹5,400–₹8,500"
+              },
+              {
+                "name": "STP Airways flight from São Tomé to Príncipe",
+                "cost": "₹18,500–₹24,000 pp",
+                "tip": "Book early and reconfirm the day before because seats are limited and timing changes are one of the biggest itinerary risks in the country."
+              },
+              {
+                "name": "Taxi from Príncipe Airport to Santo António, Bom Bom or Sundy",
+                "cost": "₹360–₹900"
+              },
+              {
+                "name": "Praia Banana and Roça Belo Monte viewpoint stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Residencial Brigada",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Bom Bom",
+                "budget": "₹18,500–₹28,500/night"
+              },
+              {
+                "name": "Sundy Praia",
+                "budget": "₹42,500–₹68,500/night"
+              }
+            ],
+            "meals": [
+              "Armazém",
+              "Bom Bom Restaurant",
+              "Oka Sundy Restaurant"
+            ]
+          },
+          {
+            "theme": "Roça Heritage, Santo António and a Slow North-Coast Day",
+            "activities": [
+              {
+                "name": "Taxi or hotel 4x4 for Santo António, Roça Sundy and north-coast viewpoints",
+                "cost": "₹1,800–₹3,600",
+                "tip": "Private transport is practical because public options on Príncipe are limited and spread out."
+              },
+              {
+                "name": "Santo António old-town walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Roça Sundy heritage visit and eclipse-history stop",
+                "cost": "₹720–₹1,800 pp",
+                "tip": "Prices vary by whether you join a guided estate visit through your hotel or just pay a small local access fee at the property."
+              },
+              {
+                "name": "Bom Bom islet boardwalk and swim",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Residencial Brigada",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Bom Bom",
+                "budget": "₹18,500–₹28,500/night"
+              },
+              {
+                "name": "Sundy Praia",
+                "budget": "₹42,500–₹68,500/night"
+              }
+            ],
+            "meals": [
+              "Armazém",
+              "Bom Bom Restaurant",
+              "Oka Sundy Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "São Tomé City",
+        "to": "Obo National Park",
+        "method": "Private taxi or arranged hotel transfer down the east or south coast toward Angolares, Porto Alegre or Praia Inhame.",
+        "cost": "₹4,500–₹7,500"
+      },
+      {
+        "from": "Obo National Park",
+        "to": "Príncipe",
+        "method": "Return road transfer to São Tomé airport, then STP Airways inter-island flight and a short taxi onward on Príncipe.",
+        "cost": "₹24,300–₹33,400"
+      }
+    ],
+    "extras": [
+      "June through September is the most reliable gravana window for this route, with drier hiking conditions and better odds for calm small-boat departures to Ilhéu das Rolas.",
+      "Príncipe is stunning but expensive because the domestic flight dominates the budget; if the forecast looks poor, keep more days on São Tomé instead of forcing the flight.",
+      "For Pico de São Tomé, treat boots, rain protection and a guide as mandatory rather than optional upgrades because the trail can get slick and visibility can drop quickly.",
+      "Moto taxis are useful for short hops in the capital and around pier areas, but for luggage days or plantation loops, standard taxis and pre-arranged drivers are more realistic.",
+      "Roça lunches and estate visits often require advance notice, especially at São João dos Angolares, so lock those in before you leave the capital."
+    ],
+    "cityImages": {
+      "São Tomé City": [
+        "Sao Tome city waterfront",
+        "Boca do Inferno Sao Tome",
+        "Roca Agostinho Neto Sao Tome"
+      ],
+      "Obo National Park": [
+        "Obo National Park Sao Tome rainforest",
+        "Ilheu das Rolas equator monument",
+        "Pico de Sao Tome hike"
+      ],
+      "Príncipe": [
+        "Praia Banana Principe",
+        "Santo Antonio Principe",
+        "Roça Sundy Principe"
+      ]
+    }
+  }
+}

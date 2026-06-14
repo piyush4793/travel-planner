@@ -1365,9 +1365,9 @@
     "lng": 39.78,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 10
   },
   {
     "name": "Djibouti",
@@ -1375,9 +1375,9 @@
     "lng": 42.59,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Gabon",
@@ -1395,9 +1395,9 @@
     "lng": 10.27,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 7
   },
   {
     "name": "Eswatini",
@@ -1455,9 +1455,9 @@
     "lng": 43.87,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 9
   },
   {
     "name": "Cape Verde",
@@ -1475,9 +1475,9 @@
     "lng": 6.61,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 9
   },
   {
     "name": "Argentina",
