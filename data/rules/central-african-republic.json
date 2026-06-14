@@ -1,0 +1,374 @@
+{
+  "name": "Central African Republic",
+  "seed": false,
+  "lat": 6.61,
+  "lng": 20.94,
+  "region": "Africa",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.9L–₹3.3L",
+    "couple": "₹3.2L–₹5.4L",
+    "family4": "₹6.1L–₹9.6L"
+  },
+  "experiences": [
+    "Bangui's cathedral quarter, Boganda National Museum, and practical riverfront base for arranging vetted transport",
+    "Boali Falls and the hydro gorge on a dry-season day trip where a 4x4 is the sensible choice",
+    "Dzanga Bai forest-elephant viewing from the raised platform in one of Central Africa's signature wildlife sites",
+    "Western lowland gorilla tracking in Dzanga-Sangha with mandatory official guides and porters",
+    "Pirogue rides on the Sangha and Ba'Aka cultural encounters around Bayanga when arranged through trusted lodges"
+  ],
+  "avoid": [
+    "Strong safety advisory: the Central African Republic has an active conflict environment and many governments advise against travel; only consider essential, professionally arranged travel, keep plans flexible, and do not move independently after dark.",
+    "Road travel beyond Bangui is slow and security-sensitive, so treat lodge-arranged 4x4 transfers or charter flights as the default rather than improvising buses, bush taxis, or self-drive plans.",
+    "ATMs, medical support, and mobile data are limited outside Bangui; carry enough cash, maintain evacuation-capable insurance, and expect weak signal in Bayanga and on forest legs."
+  ],
+  "combo": [
+    "Cameroon",
+    "Republic of the Congo"
+  ],
+  "landmark": "Dzanga Bai",
+  "travelStyle": [
+    "explorer",
+    "wildlife"
+  ],
+  "stopoverNote": "Bangui is the only realistic logistics base: sleep there before and after Dzanga-Sangha, lock in a vetted fixer or lodge first, and treat Boali as a dry-season daylight outing rather than squeezing everything into tight same-day onward transfers.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Bangui",
+      "lat": 4.3947,
+      "lng": 18.5582,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Bangui Cathedral, Boganda National Museum, secure hotel compounds, cash/SIM logistics, and the only practical jumping-off point for Boali or Dzanga-Sangha."
+    },
+    {
+      "name": "Dzanga-Sangha Reserve",
+      "lat": 2.9636,
+      "lng": 16.3667,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Bayanga-based rainforest access for Dzanga Bai, western lowland gorilla tracking, Sangha pirogues, and Ba'Aka cultural visits, all arranged through lodges or operators."
+    },
+    {
+      "name": "Boali Falls",
+      "lat": 4.8007,
+      "lng": 18.1277,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Classic Bangui day trip for the waterfall viewpoint and hydro station, with limited lodging on site and much better accommodation back in the capital."
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange Centrafrique and Telecel Centrafrique are the practical Bangui options; expect roughly ₹700–₹1,700 for a starter top-up, then plan on patchy or near-nonexistent data once you leave the capital for Boali or Bayanga.",
+    "apps": [
+      "Google Maps",
+      "Organic Maps",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Bangui",
+      "Boali Falls",
+      "Dzanga-Sangha Reserve"
+    ],
+    "cities": {
+      "Bangui": {
+        "name": "Bangui",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Cathedral quarter, museum stop, and settling into the capital's safest hotel zones before any onward travel",
+            "activities": [
+              {
+                "name": "Hotel-arranged airport transfer into the city",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Bangui Cathedral donation at Cathédrale Notre-Dame de l'Immaculée Conception",
+                "cost": "₹140–₹700"
+              },
+              {
+                "name": "Boganda National Museum entry",
+                "cost": "₹280–₹350"
+              },
+              {
+                "name": "Trusted driver or taxi hops between Centre-Ville, the museum, and riverfront hotels",
+                "cost": "₹700–₹1,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ledger Plaza Bangui",
+                "budget": "₹16,500–₹22,500/night"
+              },
+              {
+                "name": "Quatre Saison Hotel Bangui",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Hotel Levy's",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "La Tentation",
+              "Ali Baba",
+              "Ledger Plaza Bangui Restaurant"
+            ]
+          },
+          {
+            "theme": "Buffer day for permits, cash, and riverfront orientation before the harder road or charter legs",
+            "activities": [
+              {
+                "name": "Driver-assisted stop for cash, provisions, and permit reconfirmation",
+                "cost": "₹700–₹1,700"
+              },
+              {
+                "name": "Oubangui riverfront stroll or short local pirogue ride if conditions are calm",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Hotel-arranged security briefing or charter/4x4 coordination for Dzanga-Sangha",
+                "cost": "₹0"
+              },
+              {
+                "name": "Short city taxi hops between hotel compounds and the river",
+                "cost": "₹560–₹1,120"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ledger Plaza Bangui",
+                "budget": "₹16,500–₹22,500/night"
+              },
+              {
+                "name": "Karakandji Boutique Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Hotel Levy's",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "5 Fourchettes",
+              "Thaonhi",
+              "La Tentation"
+            ]
+          }
+        ]
+      },
+      "Boali Falls": {
+        "name": "Boali Falls",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "days": [
+          {
+            "theme": "Dry-season waterfall day trip from Bangui with a 4x4, viewpoint stops, and no pressure to overnight locally",
+            "activities": [
+              {
+                "name": "Private 4x4 from Bangui to Boali and back",
+                "cost": "₹11,000–₹22,000"
+              },
+              {
+                "name": "Boali Falls site entry or local access fee",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "Hydroelectric dam viewpoint or local guide contribution",
+                "cost": "₹140–₹420"
+              },
+              {
+                "name": "Lunch stop or coffee break near the falls",
+                "cost": "₹700–₹1,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel 71 INN Bogura",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Quatre Saison Hotel Bangui",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Hotel Levy's",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Hotel 71 INN Bogura",
+              "La Tentation",
+              "Ledger Plaza Bangui Restaurant"
+            ]
+          }
+        ]
+      },
+      "Dzanga-Sangha Reserve": {
+        "name": "Dzanga-Sangha Reserve",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Reach Bayanga by lodge-arranged charter or expedition 4x4, then head out to the bai for forest-elephant viewing",
+            "activities": [
+              {
+                "name": "Bangui to Bayanga charter seat or operator-arranged transfer",
+                "cost": "₹35,000–₹85,000"
+              },
+              {
+                "name": "Dzanga-Sangha reserve entry fee",
+                "cost": "₹1,700–₹2,500"
+              },
+              {
+                "name": "Dzanga Bai forest-elephant viewing session",
+                "cost": "₹4,000–₹4,500"
+              },
+              {
+                "name": "Sangha River pirogue transfer or sunset ride",
+                "cost": "₹1,400–₹2,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sangha Lodge",
+                "budget": "₹24,000–₹42,000/night"
+              },
+              {
+                "name": "Doli Lodge",
+                "budget": "₹21,000–₹36,000/night"
+              },
+              {
+                "name": "Motel Elephant",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Sangha Lodge Restaurant",
+              "Doli Lodge Restaurant",
+              "Motel Elephant"
+            ]
+          },
+          {
+            "theme": "Western lowland gorilla tracking, Ba'Aka culture, and another night inside the forest corridor",
+            "activities": [
+              {
+                "name": "Western lowland gorilla tracking permit",
+                "cost": "₹24,000–₹25,500"
+              },
+              {
+                "name": "Official tracker or porter tip pool",
+                "cost": "₹1,400–₹3,500"
+              },
+              {
+                "name": "Ba'Aka community visit or cultural contribution",
+                "cost": "₹700–₹1,700"
+              },
+              {
+                "name": "Short pirogue or 4x4 hop between Bayanga, the river, and trailheads",
+                "cost": "₹1,400–₹2,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sangha Lodge",
+                "budget": "₹24,000–₹42,000/night"
+              },
+              {
+                "name": "Doli Lodge",
+                "budget": "₹21,000–₹36,000/night"
+              },
+              {
+                "name": "Tanga Lodge",
+                "budget": "₹5,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Sangha Lodge Restaurant",
+              "Doli Lodge Restaurant",
+              "Tanga Lodge"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bangui",
+        "to": "Boali Falls",
+        "method": "A hired 4x4 with a vetted driver is the only sensible daylight day-trip format; road quality and roadside checks make improvised transport a poor idea.",
+        "cost": "₹11,000–₹22,000"
+      },
+      {
+        "from": "Boali Falls",
+        "to": "Dzanga-Sangha Reserve",
+        "method": "Return to Bangui first, then continue by lodge-arranged charter or a fully organized multi-day 4x4 transfer; there is no dependable independent connection worth planning around.",
+        "cost": "₹35,000–₹1.2L"
+      },
+      {
+        "from": "Dzanga-Sangha Reserve",
+        "to": "Bangui",
+        "method": "Use the same operator structure back out: limited charters are fastest, while overland 4x4 returns are long and should only run with current local security clearance.",
+        "cost": "₹35,000–₹85,000"
+      }
+    ],
+    "extras": [
+      "December to March is the workable dry-season window: forest trails are easier, road washouts are less common, and Boali and Bayanga logistics are more predictable than in the long rains.",
+      "Treat the country as an active-conflict destination, not a casual add-on. If you do go, use hotel or lodge transfers only, keep a daylight-only movement rule, and leave schedule slack for cancellations or security holds.",
+      "Dzanga-Sangha is best booked as a package because permits, guides, river transfers, and charter coordination are tightly linked; trying to split-book each piece independently is usually false economy.",
+      "Carry yellow-fever proof, malaria prophylaxis, backup cash, and a power bank; Bangui can manage basics, but Bayanga and road stops do not reliably support last-minute medical or payment needs.",
+      "Domestic flights are limited and often effectively charter-only, so always leave a Bangui buffer night before any international departure rather than trusting a same-day connection from the forest."
+    ],
+    "cityImages": {
+      "Bangui": [
+        "Bangui Cathedral",
+        "Boganda National Museum Bangui",
+        "Oubangui River Bangui"
+      ],
+      "Boali Falls": [
+        "Boali Falls Central African Republic",
+        "Boali Hydroelectric Dam",
+        "Boali waterfall viewpoint"
+      ],
+      "Dzanga-Sangha Reserve": [
+        "Dzanga Bai Central African Republic",
+        "Sangha Lodge Bayanga",
+        "Western lowland gorillas Dzanga-Sangha"
+      ]
+    }
+  }
+}

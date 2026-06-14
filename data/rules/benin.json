@@ -1,0 +1,601 @@
+{
+  "name": "Benin",
+  "seed": false,
+  "lat": 9.31,
+  "lng": 2.32,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1.1L–₹1.8L",
+    "couple": "₹2.0L–₹3.2L",
+    "family4": "₹4.0L–₹6.0L"
+  },
+  "experiences": [
+    "Route des Esclaves in Ouidah",
+    "Royal Palaces of Abomey UNESCO complex",
+    "Ganvié stilt village pirogue ride",
+    "Pendjari wildlife safari",
+    "Fondation Zinsou and Cotonou markets"
+  ],
+  "avoid": [
+    "April to July and again in September-October bring the wettest southern roads, so Ouidah, Ganvié jetties, and market days in Cotonou get slower and muddier.",
+    "Northbound travel to Pendjari is long; if you only have a week, keep the wildlife leg tight and use the best available intercity coach instead of chaining multiple bush taxis.",
+    "Carry small XOF cash for zémidjans, boatmen, and heritage-site add-ons because cards are unreliable outside larger Cotonou hotels."
+  ],
+  "combo": [
+    "Togo",
+    "Ghana"
+  ],
+  "landmark": "Royal Palaces of Abomey",
+  "travelStyle": [
+    "explorer",
+    "immersive",
+    "wildlife"
+  ],
+  "stopoverNote": "Cotonou (COO) is the practical gateway. Most India itineraries work best as an open-and-close in Cotonou, then a clockwise overland loop through Ouidah, Ganvié, Abomey, and the Atacora north for Pendjari.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Cotonou",
+      "lat": 6.3703,
+      "lng": 2.3912,
+      "notes": "Benin's transport hub for markets, beach evenings, Fondation Zinsou, and the easiest launch point for Ouidah and Ganvié."
+    },
+    {
+      "name": "Ouidah",
+      "lat": 6.3631,
+      "lng": 2.0851,
+      "notes": "Vodun heritage, the Route des Esclaves, Temple of Pythons, beaches, and Benin's most important Atlantic memory trail."
+    },
+    {
+      "name": "Abomey",
+      "lat": 7.1829,
+      "lng": 1.9912,
+      "notes": "The old Dahomey royal capital with the UNESCO palaces, court history, and an easy inland cultural stop on the way north."
+    },
+    {
+      "name": "Ganvié",
+      "lat": 6.4678,
+      "lng": 2.4269,
+      "notes": "A stilt-village lagoon settlement near Abomey-Calavi best experienced by pirogue with a local boatman and guide."
+    },
+    {
+      "name": "Pendjari National Park",
+      "lat": 10.9966,
+      "lng": 1.4378,
+      "notes": "Benin's flagship safari reserve for elephants, antelope, birdlife, and long dry-season game drives from Tanguiéta."
+    }
+  ],
+  "itinerary": {
+    "sim": "MTN Benin or Moov Africa Benin are the safest all-route picks; expect roughly ₹420–₹1,260 for a starter SIM/eSIM and enough data for maps, WhatsApp, and booking confirmations.",
+    "apps": [
+      "Gozem",
+      "Google Maps",
+      "Booking.com",
+      "WhatsApp",
+      "Maps.me",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Cotonou",
+      "Ouidah",
+      "Ganvié",
+      "Abomey",
+      "Pendjari National Park"
+    ],
+    "cities": {
+      "Cotonou": {
+        "name": "Cotonou",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Land in Benin with market energy, museum context, and a first coastal evening without straying far from the airport.",
+            "activities": [
+              {
+                "name": "Airport taxi or zémidjan-assisted taxi from Cotonou Cadjehoun Airport into Haie-Vive or Ganhi",
+                "cost": "₹280–₹840"
+              },
+              {
+                "name": "Fondation Zinsou contemporary art visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Dantokpa Market guided walk",
+                "cost": "₹420–₹840"
+              },
+              {
+                "name": "Place de l'Étoile Rouge and Place des Martyrs drive-by circuit",
+                "cost": "₹70–₹210"
+              },
+              {
+                "name": "Fidjrossè Beach sunset stop",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Benin Royal Hotel",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Hotel du Lac",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Guesthouse Étoile",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Le Privilège",
+              "La Cabane du Pêcheur",
+              "L'Atelier"
+            ]
+          },
+          {
+            "theme": "Use a second Cotonou day for history, crafts, and easy local hops before the heritage coast begins.",
+            "activities": [
+              {
+                "name": "Notre Dame de Miséricorde Cathedral stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Centre Artisanal de Cotonou shopping loop",
+                "cost": "₹0–₹280"
+              },
+              {
+                "name": "Route des Pêches beach-road outing by taxi or zémidjan",
+                "cost": "₹280–₹840"
+              },
+              {
+                "name": "Marché Ganhi produce and spice stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Short Gozem or zémidjan hops around Haie-Vive and Ganhi",
+                "cost": "₹70–₹210"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Golden Tulip Le Diplomate Cotonou",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Hotel Maison Rouge",
+                "budget": "₹12,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Maquis du Port",
+              "Le Privilège",
+              "La Cabane du Pêcheur"
+            ]
+          }
+        ]
+      },
+      "Ouidah": {
+        "name": "Ouidah",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Follow Benin's most important heritage trail from town shrines to the Atlantic slave-route memorials.",
+            "activities": [
+              {
+                "name": "Intercity bus or bush taxi from Cotonou to Ouidah",
+                "cost": "₹140–₹420"
+              },
+              {
+                "name": "Temple of Pythons entry",
+                "cost": "₹280–₹420"
+              },
+              {
+                "name": "Ouidah Museum of History at the Portuguese Fort",
+                "cost": "₹420–₹560"
+              },
+              {
+                "name": "Route des Esclaves walk plus Door of No Return memorial",
+                "cost": "₹0–₹700"
+              },
+              {
+                "name": "Sacred Forest of Kpassè entry or local guide donation",
+                "cost": "₹280–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Del Papa Resort & Spa",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hôtel de la Diaspora",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "La Diaspora Auberge",
+                "budget": "₹2,000–₹3,800/night"
+              }
+            ],
+            "meals": [
+              "Le Jardin Secret",
+              "Casa Del Papa Restaurant",
+              "Ouidah market grilled-fish stalls"
+            ]
+          },
+          {
+            "theme": "Slow down for beach time and museum depth if you want a fuller Ouidah read before turning inland.",
+            "activities": [
+              {
+                "name": "Plage de Ouidah morning beach walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Guided Vodun history walk around central Ouidah temples and squares",
+                "cost": "₹560–₹1,120"
+              },
+              {
+                "name": "Zémidjan hops between town center, museum quarter, and beach road",
+                "cost": "₹70–₹210"
+              },
+              {
+                "name": "Return stop at Door of No Return for sunset photographs",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Del Papa Resort & Spa",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hôtel de la Diaspora",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Casa Del Papa Restaurant",
+              "Le Jardin Secret",
+              "Hôtel de la Diaspora Restaurant"
+            ]
+          }
+        ]
+      },
+      "Ganvié": {
+        "name": "Ganvié",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "days": [
+          {
+            "theme": "Trade roads for water and spend a full day understanding Benin's famous stilt village by pirogue.",
+            "activities": [
+              {
+                "name": "Bush taxi from Ouidah to Abomey-Calavi jetty via Cotonou",
+                "cost": "₹420–₹840"
+              },
+              {
+                "name": "Ganvié shared motorized pirogue tour",
+                "cost": "₹700–₹1,680"
+              },
+              {
+                "name": "Private boat upgrade with local guide",
+                "cost": "₹2,100–₹3,500"
+              },
+              {
+                "name": "Canal-side market and stilt-house photo stops",
+                "cost": "₹0"
+              },
+              {
+                "name": "Zémidjan hops around Abomey-Calavi jetties",
+                "cost": "₹70–₹210"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Chez M Hôtel Ganvié",
+                "budget": "₹2,800–₹5,500/night"
+              },
+              {
+                "name": "Hotel du Lac",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Chez M Restaurant",
+              "Hotel du Lac Restaurant",
+              "Ganvié grilled fish tables"
+            ]
+          }
+        ]
+      },
+      "Abomey": {
+        "name": "Abomey",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Move inland for Dahomey royal history, UNESCO palace courtyards, and a slower provincial evening.",
+            "activities": [
+              {
+                "name": "Intercity bus or bush taxi from Abomey-Calavi/Cotonou to Bohicon and onward to Abomey",
+                "cost": "₹420–₹980"
+              },
+              {
+                "name": "Royal Palaces of Abomey UNESCO site and Historical Museum entry",
+                "cost": "₹700–₹1,120"
+              },
+              {
+                "name": "Local palace guide inside the museum complex",
+                "cost": "₹420–₹700"
+              },
+              {
+                "name": "Place Goho and royal quarter walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Zémidjan hops around Abomey and Bohicon",
+                "cost": "₹70–₹210"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge d'Abomey",
+                "budget": "₹2,000–₹4,200/night"
+              },
+              {
+                "name": "Hotel Sun City Abomey",
+                "budget": "₹2,500–₹4,800/night"
+              }
+            ],
+            "meals": [
+              "Auberge d'Abomey Restaurant",
+              "Le Maquis du Centre",
+              "Hotel Sun City Restaurant"
+            ]
+          },
+          {
+            "theme": "Use an extra Abomey day for museum depth, craft shopping, and a gentler pace before the long northern road.",
+            "activities": [
+              {
+                "name": "Artisan and textile shopping around Bohicon market",
+                "cost": "₹0–₹280"
+              },
+              {
+                "name": "Second museum pass or special exhibition donation",
+                "cost": "₹280–₹420"
+              },
+              {
+                "name": "Bush taxi scouting for the northbound coach to Djougou/Natitingou",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Evening zémidjan ride through the royal quarter",
+                "cost": "₹70–₹140"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge d'Abomey",
+                "budget": "₹2,000–₹4,200/night"
+              },
+              {
+                "name": "Hotel Sun City Abomey",
+                "budget": "₹2,500–₹4,800/night"
+              }
+            ],
+            "meals": [
+              "Auberge d'Abomey Restaurant",
+              "Le Maquis du Centre",
+              "Hotel Sun City Restaurant"
+            ]
+          }
+        ]
+      },
+      "Pendjari National Park": {
+        "name": "Pendjari National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Commit to the long northern transfer, then use the late afternoon for your first Pendjari wildlife session.",
+            "activities": [
+              {
+                "name": "Intercity coach or bush taxi from Abomey/Bohicon to Natitingou or Tanguiéta",
+                "cost": "₹1,120–₹2,240"
+              },
+              {
+                "name": "Shared taxi from Tanguiéta to Pendjari lodge area",
+                "cost": "₹420–₹700"
+              },
+              {
+                "name": "Pendjari National Park foreign visitor entry",
+                "cost": "₹1,400"
+              },
+              {
+                "name": "Mandatory guide and shared vehicle contribution for an afternoon drive",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Sunset lookout around the Pendjari Safari Lodge plains",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pendjari Safari Lodge",
+                "budget": "₹14,000–₹28,000/night"
+              },
+              {
+                "name": "Auberge de la Pendjari",
+                "budget": "₹3,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel Tata Somba",
+                "budget": "₹3,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Pendjari Safari Lodge Restaurant",
+              "Auberge de la Pendjari Restaurant",
+              "Hotel Tata Somba Restaurant"
+            ]
+          },
+          {
+            "theme": "Go out early for the best game-viewing light, then choose between more wildlife or an Atacora nature stop.",
+            "activities": [
+              {
+                "name": "Full morning game drive in Pendjari",
+                "cost": "₹2,100–₹4,200"
+              },
+              {
+                "name": "Park guide supplement for birding or tracking focus",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Tanougou Falls side trip from Tanguiéta area",
+                "cost": "₹560–₹1,120"
+              },
+              {
+                "name": "Shared taxi back to Tanguiéta or Natitingou for onward planning",
+                "cost": "₹420–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pendjari Safari Lodge",
+                "budget": "₹14,000–₹28,000/night"
+              },
+              {
+                "name": "Auberge de la Pendjari",
+                "budget": "₹3,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Pendjari Safari Lodge Restaurant",
+              "Auberge de la Pendjari Restaurant",
+              "Hotel Tata Somba Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep a spare Pendjari day only if you want one more safari loop before the long ride south.",
+            "activities": [
+              {
+                "name": "Second shared game drive or private vehicle top-up",
+                "cost": "₹2,100–₹5,600"
+              },
+              {
+                "name": "Tanguiéta market supply stop before departure",
+                "cost": "₹0–₹280"
+              },
+              {
+                "name": "Overland coach setup for the return to Cotonou",
+                "cost": "₹1,680–₹3,080"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge de la Pendjari",
+                "budget": "₹3,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel Tata Somba",
+                "budget": "₹3,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Pendjari Safari Lodge Restaurant",
+              "Auberge de la Pendjari Restaurant",
+              "Hotel Tata Somba Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Cotonou",
+        "to": "Ouidah",
+        "method": "Intercity buses, bush taxis, or a charter taxi along the RNIE1 coast road are the standard links west",
+        "cost": "₹140–₹420"
+      },
+      {
+        "from": "Ouidah",
+        "to": "Ganvié",
+        "method": "The practical move is a bush taxi back toward Cotonou/Abomey-Calavi, then a pirogue from the Ganvié jetties",
+        "cost": "₹420–₹1,680"
+      },
+      {
+        "from": "Ganvié",
+        "to": "Abomey",
+        "method": "Return by boat to Abomey-Calavi, then continue inland by intercity bus or bush taxi via Bohicon",
+        "cost": "₹700–₹1,260"
+      },
+      {
+        "from": "Abomey",
+        "to": "Pendjari National Park",
+        "method": "Long-haul coaches or chained bush taxis toward Natitingou/Tanguiéta are the normal northern route, followed by a lodge transfer",
+        "cost": "₹1,680–₹3,360"
+      },
+      {
+        "from": "Pendjari National Park",
+        "to": "Cotonou",
+        "method": "Return through Tanguiéta or Natitingou by coach; some travelers break the journey in Parakou, but the all-day bus south is the simplest budget finish",
+        "cost": "₹1,680–₹3,080"
+      }
+    ],
+    "extras": [
+      "November to March is the cleanest all-round window: southern heritage stops stay drier and Pendjari wildlife sightings improve as water sources shrink.",
+      "Zémidjans are fast and cheap in Cotonou, Ouidah, and Abomey, but agree the fare before you sit down and carry a light scarf or helmet liner.",
+      "Ganvié boat prices vary by whether you share or charter a pirogue, so ask your hotel or jetty guide to quote both before boarding.",
+      "Ouidah's memorial sites are emotionally heavy; many travelers like pairing them with a quiet beach sunset rather than rushing straight back to Cotonou.",
+      "Pendjari works best with at least one dawn drive; wildlife movement drops sharply once the afternoon heat sets in."
+    ],
+    "cityImages": {
+      "Cotonou": [
+        "Dantokpa Market Cotonou",
+        "Fondation Zinsou Cotonou",
+        "Fidjrosse Beach Cotonou"
+      ],
+      "Ouidah": [
+        "Temple of Pythons Ouidah",
+        "Door of No Return Ouidah",
+        "Ouidah Museum of History"
+      ],
+      "Abomey": [
+        "Royal Palaces of Abomey",
+        "Historical Museum of Abomey",
+        "Place Goho Abomey"
+      ],
+      "Ganvié": [
+        "Ganvie stilt village Benin",
+        "Ganvie pirogue tour",
+        "Abomey-Calavi jetty Benin"
+      ],
+      "Pendjari National Park": [
+        "Pendjari National Park Benin",
+        "Pendjari Safari Lodge",
+        "Tanougou Falls Benin"
+      ]
+    }
+  }
+}

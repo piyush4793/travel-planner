@@ -1,0 +1,467 @@
+{
+  "name": "Liberia",
+  "seed": false,
+  "lat": 6.43,
+  "lng": -9.43,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1.1L–₹1.9L",
+    "couple": "₹2.1L–₹3.5L",
+    "family4": "₹4.1L–₹6.4L"
+  },
+  "experiences": [
+    "Providence Island heritage visit",
+    "Robertsport surf days on Liberia's Atlantic coast",
+    "Firestone Plantation rubber-history tour",
+    "Sapo National Park rainforest trekking and pygmy hippo tracking",
+    "Buchanan's laid-back beach and port stop"
+  ],
+  "avoid": [
+    "May to October is the wet season, and the Jalay Town access road into Sapo becomes slow, muddy, and sometimes fully impractical.",
+    "Domestic flights inside Liberia are limited and irregular, so build the core trip around road transport and treat any charter or regional hop as a bonus rather than a fixed plan.",
+    "Shared taxis, motorbikes, park payments, and smaller guesthouses usually want cash, especially once you leave Monrovia and Harbel."
+  ],
+  "combo": [
+    "Sierra Leone",
+    "Guinea"
+  ],
+  "landmark": "Sapo National Park",
+  "travelStyle": [
+    "explorer",
+    "slow"
+  ],
+  "stopoverNote": "Roberts International Airport (ROB) is the main international gateway. The smoothest Liberia loop is Monrovia first for Providence Island, the National Museum, and a Firestone day trip, then Robertsport for surf time, Buchanan for a coastal reset, and finally a pre-arranged road run to Sapo because domestic flights are limited and not dependable enough to anchor the itinerary.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Monrovia",
+      "lat": 6.3156,
+      "lng": -10.8074,
+      "notes": "Liberia's practical base for museums, Providence Island, embassy-era hotels, and the easiest logistics for Firestone and onward transport."
+    },
+    {
+      "name": "Robertsport",
+      "lat": 6.7531,
+      "lng": -11.3686,
+      "notes": "Liberia's best-known surf town, with beach lodges, Cape Mount scenery, and a much slower coastal pace than Monrovia."
+    },
+    {
+      "name": "Buchanan",
+      "lat": 5.8808,
+      "lng": -10.0467,
+      "notes": "Grand Bassa's main town offers an easy beach break, small-city port atmosphere, and a useful southbound overnight before the long Sapo run."
+    },
+    {
+      "name": "Sapo National Park",
+      "lat": 5.85,
+      "lng": -8.44,
+      "notes": "Liberia's headline rainforest reserve for canoe crossings, community-run ecolodge stays, and the country's best shot at pygmy hippo habitat."
+    }
+  ],
+  "itinerary": {
+    "sim": "Lonestar Cell MTN is the safest all-round pick for Monrovia and the main highway corridors, with Orange Liberia a useful backup; budget roughly ₹415–₹1,245 for a prepaid SIM bundle with enough data for maps, WhatsApp, and hotel confirmations.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Monrovia",
+      "Robertsport",
+      "Buchanan",
+      "Sapo National Park"
+    ],
+    "cities": {
+      "Monrovia": {
+        "name": "Monrovia",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Settle into Liberia with the core history loop: airport transfer, Providence Island, and the National Museum before a simple oceanfront dinner.",
+            "activities": [
+              {
+                "name": "Taxi from Roberts International Airport to Sinkor, Mamba Point, or central Monrovia",
+                "cost": "₹1,660–₹3,320"
+              },
+              {
+                "name": "Providence Island guided visit and entrance contribution",
+                "cost": "₹500–₹915"
+              },
+              {
+                "name": "Liberian National Museum foreign visitor ticket",
+                "cost": "₹415"
+              },
+              {
+                "name": "Waterside Market and Broad Street walking loop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Shared taxi hops between Waterside, Mamba Point, and Sinkor",
+                "cost": "₹165–₹500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mamba Point Hotel",
+                "budget": "₹16,500–₹27,500/night"
+              },
+              {
+                "name": "Royal Grand Hotel",
+                "budget": "₹13,500–₹22,500/night"
+              },
+              {
+                "name": "Bella Casa Hotel",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "The Barracuda Seafood and Sushi Bar",
+              "Paddy's Sports Bar",
+              "The Cape Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep a second capital day for rubber-history context at Harbel, then return for one more easy Monrovia evening before heading west.",
+            "activities": [
+              {
+                "name": "Shared taxi or chartered car from Monrovia to Harbel and back",
+                "cost": "₹830–₹4,150"
+              },
+              {
+                "name": "Firestone Plantation official company tour by advance appointment",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lunch at Firestone Club House Restaurant",
+                "cost": "₹830–₹1,660"
+              },
+              {
+                "name": "Mamba Point seafront or Hotel Africa viewpoint stop on return",
+                "cost": "₹0–₹415"
+              },
+              {
+                "name": "Motorbike or taxi hops around Sinkor after the day trip",
+                "cost": "₹165–₹415"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Cape Hotel",
+                "budget": "₹15,500–₹25,500/night"
+              },
+              {
+                "name": "Murex Plaza Hotel & Suites",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Firestone Club House Restaurant",
+              "Anglers Bar & Grill",
+              "Mamba Point Hotel Restaurant"
+            ]
+          }
+        ]
+      },
+      "Robertsport": {
+        "name": "Robertsport",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Ride west to Liberia's surf capital, settle into a beach lodge, and use the first afternoon for a proper Robertsport beginner session.",
+            "activities": [
+              {
+                "name": "Shared taxi from Monrovia to Robertsport",
+                "cost": "₹1,245–₹2,075"
+              },
+              {
+                "name": "Motorbike from Robertsport junction to beach lodges",
+                "cost": "₹165–₹415"
+              },
+              {
+                "name": "The Last Wave Liberia or Robertsport Surf Club surf lesson with board",
+                "cost": "₹1,660–₹2,490"
+              },
+              {
+                "name": "Cassava Point and beach walk at sunset",
+                "cost": "₹0"
+              },
+              {
+                "name": "Local motorbike hops between town, the beach, and dinner",
+                "cost": "₹165–₹415"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nana's Lodge",
+                "budget": "₹3,500–₹6,500/night"
+              },
+              {
+                "name": "Warkolor Jungle Lodge & Reserve",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Kwepunha Surf Retreat",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Nana's Lodge Bar & Restaurant",
+              "Warkolor Jungle Lodge & Reserve Restaurant",
+              "Kwepunha Surf Retreat"
+            ]
+          },
+          {
+            "theme": "Use a second Robertsport day for a longer paddle-out, Cape Mount views, and the kind of unhurried beach time that makes the detour worthwhile.",
+            "activities": [
+              {
+                "name": "Full-day surfboard rental in Robertsport",
+                "cost": "₹830–₹1,660"
+              },
+              {
+                "name": "Cape Mount lighthouse trail donation or informal local guide",
+                "cost": "₹165–₹415"
+              },
+              {
+                "name": "Robertsport town market browse",
+                "cost": "₹0–₹165"
+              },
+              {
+                "name": "Motorbike loop between Cape Mount, town, and the beach",
+                "cost": "₹165–₹415"
+              },
+              {
+                "name": "Beach chair, coconut, or cold-drink spend by the surf breaks",
+                "cost": "₹250–₹830"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nana's Lodge",
+                "budget": "₹3,500–₹6,500/night"
+              },
+              {
+                "name": "Robertsport Surf Club",
+                "budget": "₹2,500–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Nana's Lodge Bar & Restaurant",
+              "Warkolor Jungle Lodge & Reserve Restaurant",
+              "Little Paradise Facing The Beach"
+            ]
+          }
+        ]
+      },
+      "Buchanan": {
+        "name": "Buchanan",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "days": [
+          {
+            "theme": "Break the southbound journey with one slower Grand Bassa day for the waterfront, market life, and a beachside overnight before the rainforest push.",
+            "activities": [
+              {
+                "name": "Shared taxi from Monrovia to Buchanan",
+                "cost": "₹1,245–₹2,075"
+              },
+              {
+                "name": "Port of Buchanan waterfront walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Buchanan Central Market snack and produce stop",
+                "cost": "₹165–₹415"
+              },
+              {
+                "name": "Hotel Buchanan Liberia beach access or day-use spend",
+                "cost": "₹415–₹830"
+              },
+              {
+                "name": "Motorbike or taxi hops around town and back to the beach",
+                "cost": "₹165–₹330"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Buchanan Liberia",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Kamaneahn Hotel Inc",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Elizabeth Village and Resort",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Hotel Buchanan Liberia Restaurant",
+              "Kamaneahn Hotel Inc Restaurant",
+              "Elizabeth Village and Resort Restaurant"
+            ]
+          }
+        ]
+      },
+      "Sapo National Park": {
+        "name": "Sapo National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Treat the transfer as part of the adventure: reach Jalay Town, finish the FDA formalities, and cross into Liberia's flagship rainforest stay.",
+            "activities": [
+              {
+                "name": "Pre-arranged vehicle from Buchanan or Monrovia to Jalay Town / FDA headquarters",
+                "cost": "₹5,800–₹12,450"
+              },
+              {
+                "name": "Jalay Town blessing and community donation",
+                "cost": "₹165–₹415"
+              },
+              {
+                "name": "Sapo National Park foreign adult entry fee",
+                "cost": "₹2,075"
+              },
+              {
+                "name": "Sinoe River canoe crossing into the park zone",
+                "cost": "₹165–₹415"
+              },
+              {
+                "name": "Short guided rainforest walk from Jalay Town to Sapo Ecolodge",
+                "cost": "₹0–₹415"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sapo Ecolodge",
+                "budget": "₹8,500–₹11,500/night"
+              },
+              {
+                "name": "Sapo Ecolodge Camping Platforms",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Sapo Ecolodge Dining",
+              "Jalay Town home-cooked meals"
+            ]
+          },
+          {
+            "theme": "Start early for the best wildlife window, using local guides for pygmy hippo habitat and one more community-led cultural stop before the return leg.",
+            "activities": [
+              {
+                "name": "Pygmy hippo tracking guide in Sapo National Park",
+                "cost": "₹830–₹1,245"
+              },
+              {
+                "name": "Additional canoe crossing or porter support where needed",
+                "cost": "₹165–₹415"
+              },
+              {
+                "name": "Sapo Cultural Group performance arranged through Sapo Ecolodge",
+                "cost": "₹830–₹1,660"
+              },
+              {
+                "name": "Birding and forest trail time around Sapo Ecolodge",
+                "cost": "₹0"
+              },
+              {
+                "name": "Packed lunch or dinner add-on through Sapo Ecolodge",
+                "cost": "₹415–₹830"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sapo Ecolodge",
+                "budget": "₹8,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Sapo Ecolodge Dining"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Monrovia",
+        "to": "Robertsport",
+        "method": "Shared taxis are the standard budget option, while a private car saves time; the final beach approach is often by motorbike from the junction",
+        "cost": "₹1,245–₹4,150"
+      },
+      {
+        "from": "Robertsport",
+        "to": "Buchanan",
+        "method": "There is no clean direct tourist link, so most travelers route back through Monrovia by shared taxi before continuing southeast",
+        "cost": "₹2,900–₹5,800"
+      },
+      {
+        "from": "Buchanan",
+        "to": "Sapo National Park",
+        "method": "A pre-arranged private vehicle is the realistic option; limited domestic charters or regional flights can sometimes shorten the approach but are too irregular to depend on",
+        "cost": "₹5,800–₹12,450"
+      },
+      {
+        "from": "Sapo National Park",
+        "to": "Monrovia",
+        "method": "Plan on a long overland return unless you have a confirmed onward charter or domestic hop out of Greenville or another regional airstrip",
+        "cost": "₹5,800–₹13,500"
+      }
+    ],
+    "extras": [
+      "November to April is the key dry-season window: roads are firmer, surf access is simpler, and Sapo's tracks are much easier to manage.",
+      "Providence Island is easiest with a pre-arranged guide because access logistics are smoother and the historical interpretation is far better.",
+      "The Firestone Plantation visit works only by advance appointment, and the tour itself is official-company led rather than a casual walk-in attraction.",
+      "Shared taxis cover most intercity travel, but the last-mile transport in Robertsport and many smaller Liberia stops is often by motorbike.",
+      "For Sapo, arrange FDA paperwork, park fees, guide support, and meals before leaving Monrovia because there is very little room for improvising once you are on the road.",
+      "Carry small USD or Liberian-dollar cash for surf lessons, museum entries, canoe crossings, and community donations because card acceptance drops quickly outside Monrovia hotels."
+    ],
+    "cityImages": {
+      "Monrovia": [
+        "Providence Island Monrovia",
+        "Liberian National Museum Monrovia",
+        "Mamba Point Monrovia"
+      ],
+      "Robertsport": [
+        "Robertsport Liberia surfing",
+        "Cape Mount Robertsport",
+        "Nana's Lodge Robertsport"
+      ],
+      "Buchanan": [
+        "Buchanan Liberia beach",
+        "Port of Buchanan Liberia",
+        "Hotel Buchanan Liberia"
+      ],
+      "Sapo National Park": [
+        "Sapo National Park Liberia",
+        "Sapo Ecolodge Liberia",
+        "Jalay Town Liberia"
+      ]
+    }
+  }
+}

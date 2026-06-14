@@ -1,0 +1,482 @@
+{
+  "name": "Togo",
+  "seed": false,
+  "lat": 8.62,
+  "lng": 1.21,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹90k–₹1.45L",
+    "couple": "₹1.7L–₹2.55L",
+    "family4": "₹3.3L–₹4.9L"
+  },
+  "experiences": [
+    "Grand Marché and fetish-market energy in Lomé",
+    "Mount Agou highland hike",
+    "Koutammakou tata somba houses",
+    "Lake Togo pirogue to Togoville",
+    "Fazao-Malfakassa wilderness detour"
+  ],
+  "avoid": [
+    "April to October is wetter and slower, with muddy rural roads around Plateaux and the far north making bush-taxi timing less reliable.",
+    "Public transport across Togo is affordable but long; Lomé to Kara or Koutammakou easily consumes a full daylight leg even before last-mile moto-taxis.",
+    "Carry small cash notes for moto-taxis, shrine donations, market food, and Batammariba or park guide fees because card acceptance outside Lomé is limited."
+  ],
+  "combo": [
+    "Ghana",
+    "Benin"
+  ],
+  "landmark": "Koutammakou Cultural Landscape",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Lomé (LFW) is the natural gateway; most India trips work best as Lomé arrival and departure with one south-to-north overland sweep, because domestic links are limited and the best cultural stops sit on slow road corridors.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Lomé",
+      "lat": 6.1319,
+      "lng": 1.2228,
+      "notes": "Seafront capital for markets, beach strips, fetish culture, and the easiest transport connections into the rest of Togo."
+    },
+    {
+      "name": "Kpalimé",
+      "lat": 6.9,
+      "lng": 0.6333,
+      "notes": "Cooler highland town for Mount Agou, waterfalls, cocoa-country day trips, and a gentler pace than Lomé."
+    },
+    {
+      "name": "Koutammakou (Tamberma Valley)",
+      "lat": 10.8798,
+      "lng": 0.7786,
+      "notes": "UNESCO-listed Batammariba country of earthen tata somba houses, reached via Kara or Kandé with a slow but rewarding rural last mile."
+    },
+    {
+      "name": "Togoville",
+      "lat": 6.4266,
+      "lng": 1.4902,
+      "notes": "Lake Togo spiritual town known for pirogue arrivals, vodun shrines, and a quiet lakeside rhythm east of Lomé."
+    }
+  ],
+  "itinerary": {
+    "sim": "Togocom is the safest all-route pick for Lomé, Kpalimé, Kara and Lake Togo; budget roughly ₹420–₹980 for a prepaid SIM or data bundle big enough for maps, WhatsApp and ride-hailing in the capital.",
+    "apps": [
+      "Gozem",
+      "Google Maps",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Lomé",
+      "Kpalimé",
+      "Koutammakou (Tamberma Valley)",
+      "Togoville"
+    ],
+    "cities": {
+      "Lomé": {
+        "name": "Lomé",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Start with Lomé’s raw market energy, fetish lore, and easy city rides before leaving the coast.",
+            "activities": [
+              {
+                "name": "Gozem, city taxi, or airport taxi from Gnassingbé Eyadéma Airport into central Lomé",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "Grand Marché de Lomé walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Marché des Féticheurs d’Akodésséwa guide and photo contribution",
+                "cost": "₹420–₹700"
+              },
+              {
+                "name": "Cathédrale du Sacré-Cœur and Monument de l’Indépendance walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Moto-taxi and city taxi hops across downtown and the beachfront",
+                "cost": "₹70–₹210"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ONOMO Hotel Lomé",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hotel Petit Brussel",
+                "budget": "₹7,000–₹11,500/night"
+              },
+              {
+                "name": "Hôtel 2 Février Lomé",
+                "budget": "₹15,500–₹25,000/night"
+              }
+            ],
+            "meals": [
+              "Le Patio",
+              "La Table du DG",
+              "Côté Sud"
+            ]
+          },
+          {
+            "theme": "Use a second day for cultural spaces, artisan shopping, and a slower Atlantic-facing finish.",
+            "activities": [
+              {
+                "name": "Palais de Lomé cultural center and gardens entry",
+                "cost": "₹280–₹560"
+              },
+              {
+                "name": "Village Artisanal de Lomé shopping browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lomé beachfront and Hotel Sarakawa side walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Gozem car or moto rides between the coast, Kodjoviakopé, and your hotel",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Sunset drinks stop around Marcelo Beach or the boulevard",
+                "cost": "₹140–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Patio",
+                "budget": "₹8,000–₹12,500/night"
+              },
+              {
+                "name": "Hôtel Sarakawa",
+                "budget": "₹10,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Marcelo Beach Club",
+              "Le Patio",
+              "La Route des Vins"
+            ]
+          }
+        ]
+      },
+      "Kpalimé": {
+        "name": "Kpalimé",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Trade the coast for Togo’s green highlands and use Kpalimé for the country’s best-known summit hike.",
+            "activities": [
+              {
+                "name": "Bush taxi or intercity minibus from Lomé to Kpalimé",
+                "cost": "₹350–₹560"
+              },
+              {
+                "name": "Mount Agou hike access fee",
+                "cost": "₹350–₹700"
+              },
+              {
+                "name": "Local guide for the Mount Agou trail",
+                "cost": "₹420–₹700"
+              },
+              {
+                "name": "Moto-taxi from Kpalimé to the Agou trailhead villages",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Kpalimé artisan market or craft-centre browse after the hike",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Amédzépé",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Hotel Agbeviade",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "Jess Hotel Kpalimé",
+                "budget": "₹4,200–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "La Montagne Verte",
+              "Restaurant Hôtel Amédzépé",
+              "Jess Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep an extra day for waterfalls, cocoa-country visits, and a slower highland reset before the long northern transfer.",
+            "activities": [
+              {
+                "name": "Cascade de Kpimé entry and local guide",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Coffee or cocoa farm visit outside Kpalimé",
+                "cost": "₹280–₹560"
+              },
+              {
+                "name": "Moto-taxi loops between Kpalimé, Kpimé, and nearby viewpoints",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Kpalimé market fruit, coffee, and craft shopping",
+                "cost": "₹70–₹210"
+              },
+              {
+                "name": "Short forest walk with a local guide",
+                "cost": "₹140–₹280"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "La Montagne Verte",
+                "budget": "₹3,000–₹4,800/night"
+              },
+              {
+                "name": "Hotel Eyram Kpalimé",
+                "budget": "₹3,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "La Montagne Verte",
+              "Restaurant Hôtel Amédzépé",
+              "Hotel Eyram Restaurant"
+            ]
+          }
+        ]
+      },
+      "Koutammakou (Tamberma Valley)": {
+        "name": "Koutammakou (Tamberma Valley)",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Make the long northbound push, using Kara as the staging base and folding in Togo’s biggest wilderness reserve if timing works.",
+            "activities": [
+              {
+                "name": "Intercity bus or bush taxi from Kpalimé toward Kara via Atakpamé and Sokodé",
+                "cost": "₹1,400–₹2,100"
+              },
+              {
+                "name": "Fazao-Malfakassa National Park entry fee",
+                "cost": "₹420–₹700"
+              },
+              {
+                "name": "Ranger or local guide for a Fazao-Malfakassa forest drive or walk",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Bush taxi from Kara to Kandé or the Nadoba junction",
+                "cost": "₹280–₹560"
+              },
+              {
+                "name": "Evening village-edge walk or viewpoint stop near your lodge",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Kara",
+                "budget": "₹3,500–₹6,000/night"
+              },
+              {
+                "name": "Hôtel Meka",
+                "budget": "₹3,000–₹5,000/night"
+              },
+              {
+                "name": "Auberge Koumongou",
+                "budget": "₹2,400–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Hôtel Kara",
+              "Restaurant Hôtel Meka",
+              "Auberge Koumongou Restaurant"
+            ]
+          },
+          {
+            "theme": "Give the UNESCO landscape a full day for Batammariba architecture, guides, and slow travel between earthen towers.",
+            "activities": [
+              {
+                "name": "Koutammakou Cultural Landscape / tata somba house visit",
+                "cost": "₹700"
+              },
+              {
+                "name": "Batammariba village guide and photo contribution",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "Moto-taxi between Nadoba hamlets and trailheads",
+                "cost": "₹210–₹420"
+              },
+              {
+                "name": "Traditional granary, craft, or food demonstration donation",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Sunset walk over the Tamberma Valley",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Club du Koutammakou",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Hotel Kara",
+                "budget": "₹3,500–₹6,000/night"
+              },
+              {
+                "name": "Auberge de la Détente",
+                "budget": "₹2,500–₹4,200/night"
+              }
+            ],
+            "meals": [
+              "Le Club du Koutammakou Restaurant",
+              "Restaurant Hôtel Kara",
+              "Auberge de la Détente Restaurant"
+            ]
+          }
+        ]
+      },
+      "Togoville": {
+        "name": "Togoville",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "days": [
+          {
+            "theme": "Finish by Lake Togo with pirogues, shrine visits, and a calmer spiritual atmosphere than the capital.",
+            "activities": [
+              {
+                "name": "Long-haul intercity bus or shared taxi south from Kara, then bush taxi onward to Agbodrafo",
+                "cost": "₹1,400–₹2,500"
+              },
+              {
+                "name": "Pirogue across Lake Togo to Togoville",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Togoville vodun shrine circuit with a local guide",
+                "cost": "₹140–₹420"
+              },
+              {
+                "name": "Notre-Dame du Lac church and lakeside donation stop",
+                "cost": "₹0–₹140"
+              },
+              {
+                "name": "Moto-taxi or bush taxi between Agbodrafo landing points and your hotel",
+                "cost": "₹70–₹210"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel du Lac Agbodrafo",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Au Royaume King Village",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Hotel Le Lac Paradis",
+                "budget": "₹4,000–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Hotel du Lac Restaurant",
+              "Au Royaume King Village Restaurant",
+              "Afady’s Beach Village Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Lomé",
+        "to": "Kpalimé",
+        "method": "Bush taxis and intercity minibuses are the standard move inland, with moto-taxis useful for the final hill-village legs around Agou.",
+        "cost": "₹350–₹560"
+      },
+      {
+        "from": "Kpalimé",
+        "to": "Koutammakou (Tamberma Valley)",
+        "method": "This is a full northbound transport day: intercity bus or shared taxi toward Kara, then a bush taxi or moto-taxi for the last rural stretch toward Nadoba.",
+        "cost": "₹1,400–₹2,500"
+      },
+      {
+        "from": "Koutammakou (Tamberma Valley)",
+        "to": "Togoville",
+        "method": "Return south by bus or shared taxi through Kara and Lomé, then continue east to Agbodrafo before the short pirogue crossing to Togoville.",
+        "cost": "₹1,750–₹2,900"
+      },
+      {
+        "from": "Togoville",
+        "to": "Lomé",
+        "method": "Pirogue back to the lakeshore followed by a bush taxi or shared car west to Lomé.",
+        "cost": "₹210–₹350"
+      }
+    ],
+    "extras": [
+      "November to March is the cleanest all-round window: trails on Mount Agou are drier, northbound roads are easier, and Lake Togo crossings feel simpler than in the wet season.",
+      "Moto-taxis are everywhere in Lomé, Kpalimé, Kara and the lakeside towns; agree the fare before you climb on and carry a scarf or dust layer for long rides.",
+      "Koutammakou visits work best with a local guide because access, photo etiquette, and village contributions are community-managed rather than ticket-desk formalities.",
+      "Fazao-Malfakassa is remote and is best treated as a ranger-led detour while already moving north, not as a casual day trip from the coast.",
+      "Grand Marché, shrine visits, pirogues, and bush taxis are all strongly cash-first, so keep small CFA notes available outside your main hotel payments."
+    ],
+    "cityImages": {
+      "Lomé": [
+        "Grand Marché Lomé",
+        "Marché des Féticheurs Akodésséwa Lomé",
+        "Palais de Lomé"
+      ],
+      "Kpalimé": [
+        "Mount Agou Togo",
+        "Cascade de Kpimé Togo",
+        "Kpalimé Togo artisan market"
+      ],
+      "Koutammakou (Tamberma Valley)": [
+        "Koutammakou tata somba Togo",
+        "Nadoba Togo tata houses",
+        "Tamberma Valley Togo"
+      ],
+      "Togoville": [
+        "Togoville Lake Togo",
+        "Togoville pirogue Lake Togo",
+        "Togoville vodun shrines"
+      ]
+    }
+  }
+}

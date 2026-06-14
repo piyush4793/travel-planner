@@ -1315,9 +1315,9 @@
     "lng": 2.32,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 10
   },
   {
     "name": "Togo",
@@ -1325,9 +1325,9 @@
     "lng": 1.21,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Sierra Leone",
@@ -1335,9 +1335,9 @@
     "lng": -11.78,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 10
   },
   {
     "name": "Liberia",
@@ -1345,9 +1345,9 @@
     "lng": -9.43,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 8
   },
   {
     "name": "Central African Republic",
@@ -1355,9 +1355,9 @@
     "lng": 20.94,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 6
   },
   {
     "name": "Eritrea",

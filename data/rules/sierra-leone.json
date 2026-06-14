@@ -1,0 +1,531 @@
+{
+  "name": "Sierra Leone",
+  "seed": false,
+  "lat": 8.46,
+  "lng": -11.78,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹95k–₹1.65L",
+    "couple": "₹1.85L–₹2.95L",
+    "family4": "₹3.7L–₹5.4L"
+  },
+  "experiences": [
+    "Tacugama Chimpanzee Sanctuary",
+    "River No. 2 Beach",
+    "Bunce Island slave fort ruins",
+    "Banana Islands off-grid beach stay",
+    "Tiwai Island primates and canoe wildlife"
+  ],
+  "avoid": [
+    "May to October is far wetter, so peninsula roads, Bunce and Banana boat crossings, and Tiwai forest walks all get slower and muddier.",
+    "Cash is still essential for poda-podas, okadas, community-run beach entries, island boats, and many smaller guesthouses outside Freetown.",
+    "Domestic flights inside Sierra Leone are limited and often charter-led, so most realistic itineraries still hinge on long road transfers plus boat legs."
+  ],
+  "combo": [
+    "Guinea",
+    "Liberia"
+  ],
+  "landmark": "Bunce Island",
+  "travelStyle": [
+    "explorer",
+    "immersive",
+    "slow"
+  ],
+  "stopoverNote": "Lungi Airport sits across the estuary from Freetown, so most travelers start with a Sea Bird Express water-taxi or road-and-ferry transfer into Aberdeen before building a peninsula loop; the coastal islands are easiest to combine with Freetown, while Tiwai needs a committed southeast road leg.",
+  "links": [
+    {
+      "label": "Tacugama Chimpanzee Sanctuary",
+      "url": "https://www.tacugama.com/"
+    },
+    {
+      "label": "Tiwai Island",
+      "url": "https://www.tiwaiisland.org/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Freetown",
+      "lat": 8.4844,
+      "lng": -13.2344,
+      "notes": "Best base for airport logistics, city history, Tacugama, River No. 2, Lumley dining, and onward boats to Bunce and the Banana Islands."
+    },
+    {
+      "name": "Banana Islands",
+      "lat": 8.095,
+      "lng": -13.091,
+      "notes": "Rustic Dublin and Ricketts islands for orange-sand beaches, fishing-village life, simple guesthouses, and boat-led snorkeling or diving."
+    },
+    {
+      "name": "Tiwai Island",
+      "lat": 7.5203,
+      "lng": -11.3447,
+      "notes": "Community-run rainforest sanctuary on the Moa River with high primate density, canoe access, and simple eco-lodge accommodation."
+    },
+    {
+      "name": "Bunce Island",
+      "lat": 8.8639,
+      "lng": -13.1957,
+      "notes": "Moving estuary day trip to one of West Africa's most important slave-fort ruins, usually reached by speedboat from Cockle Bay with a guide."
+    }
+  ],
+  "itinerary": {
+    "sim": "Africell is the safest one-SIM choice for Freetown, the peninsula and most main-road sections toward Bo and Tiwai; Orange is fine in town but patchier inland. Budget roughly ₹370–₹1,110 for a starter SIM or data top-up with enough maps and WhatsApp coverage for a week.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency",
+      "Africell",
+      "Sea Bird Express"
+    ],
+    "cityOrder": [
+      "Freetown",
+      "Bunce Island",
+      "Tiwai Island",
+      "Banana Islands"
+    ],
+    "cities": {
+      "Freetown": {
+        "name": "Freetown",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Handle the classic Sierra Leone arrival, then ease into the capital with low-stress history stops and a Lumley-side dinner.",
+            "activities": [
+              {
+                "name": "Sea Bird Express water-taxi from Lungi Airport to Aberdeen",
+                "cost": "₹3,700–₹3,900"
+              },
+              {
+                "name": "Taxi from Aberdeen jetty to Lumley, Aberdeen or Hill Station hotels",
+                "cost": "₹220–₹550"
+              },
+              {
+                "name": "National Museum of Sierra Leone donation or entry contribution",
+                "cost": "₹75–₹185"
+              },
+              {
+                "name": "Cotton Tree and St. George's Cathedral walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Okada or taxi hops between central Freetown, Aberdeen and Lumley",
+                "cost": "₹150–₹370"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Country Lodge Hotel",
+                "budget": "₹9,500–₹16,500/night"
+              },
+              {
+                "name": "The Swiss Hotel",
+                "budget": "₹7,500–₹13,500/night"
+              },
+              {
+                "name": "The Hub Hotel",
+                "budget": "₹8,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Toma Restaurant & Bar",
+              "Mamba Point Lagoonda",
+              "LakaLaka Bar & Restaurant"
+            ]
+          },
+          {
+            "theme": "Use a full peninsula day for Sierra Leone's easiest wildlife stop and its most famous community beach.",
+            "activities": [
+              {
+                "name": "Tacugama Chimpanzee Sanctuary guided foreign visitor tour",
+                "cost": "₹1,250"
+              },
+              {
+                "name": "Driver, taxi or hotel car from Freetown to Tacugama and onward to River No. 2 Beach",
+                "cost": "₹2,600–₹5,500"
+              },
+              {
+                "name": "River No. 2 Beach community entry fee",
+                "cost": "₹40"
+              },
+              {
+                "name": "Beach chair, shade or simple changing-room setup at River No. 2",
+                "cost": "₹110–₹260"
+              },
+              {
+                "name": "Cold drink or coconut budget along the peninsula beaches",
+                "cost": "₹75–₹220"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Country Lodge Hotel",
+                "budget": "₹9,500–₹16,500/night"
+              },
+              {
+                "name": "The Hub Hotel",
+                "budget": "₹8,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Toma Restaurant & Bar",
+              "Roy's Restaurant",
+              "Mamba Point Lagoonda"
+            ]
+          },
+          {
+            "theme": "Keep the third day flexible for city texture, craft markets and seafront time before the island legs begin.",
+            "activities": [
+              {
+                "name": "Big Market or Aberdeen craft-market browsing",
+                "cost": "₹0–₹370"
+              },
+              {
+                "name": "Lumley Beach promenade and beach-club time",
+                "cost": "₹0–₹220"
+              },
+              {
+                "name": "Old Fourah Bay College viewpoint or Hill Station drive",
+                "cost": "₹370–₹920"
+              },
+              {
+                "name": "Shared taxi or okada rides around Lumley, Wilberforce and Congo Cross",
+                "cost": "₹150–₹370"
+              },
+              {
+                "name": "Water, snacks and cash top-up buffer before Bunce or Tiwai departures",
+                "cost": "₹185–₹550"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Swiss Hotel",
+                "budget": "₹7,500–₹13,500/night"
+              },
+              {
+                "name": "Mamba Point Hotel",
+                "budget": "₹12,500–₹21,500/night"
+              }
+            ],
+            "meals": [
+              "Crown Bakery Lumley",
+              "Toma Restaurant & Bar",
+              "LakaLaka Bar & Restaurant"
+            ]
+          }
+        ]
+      },
+      "Bunce Island": {
+        "name": "Bunce Island",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Almost everyone does Bunce as a guided day trip from Freetown; overnighting on nearby Tasso Island is the only practical extension.",
+        "days": [
+          {
+            "theme": "Make space for Sierra Leone's most important historical excursion, pairing the estuary boat ride with a guide-led fort walk.",
+            "activities": [
+              {
+                "name": "Speedboat from Cockle Bay or Aqua Sports Club to Bunce Island return",
+                "cost": "₹4,500–₹9,500"
+              },
+              {
+                "name": "Bunce Island foreign visitor entry and guiding fee",
+                "cost": "₹2,080"
+              },
+              {
+                "name": "Guided walk through the slave yards, bastions and fort ruins",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tasso Island landing and community beach lunch stop",
+                "cost": "₹550–₹1,100"
+              },
+              {
+                "name": "Taxi or okada to and from the Freetown jetty",
+                "cost": "₹150–₹370"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tasso Island Community Ecotourism Project",
+                "budget": "₹3,700–₹6,500/night"
+              },
+              {
+                "name": "Country Lodge Hotel",
+                "budget": "₹9,500–₹16,500/night"
+              },
+              {
+                "name": "The Swiss Hotel",
+                "budget": "₹7,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Tasso Island Community Restaurant",
+              "Mamba Point Lagoonda",
+              "Toma Restaurant & Bar"
+            ]
+          }
+        ]
+      },
+      "Tiwai Island": {
+        "name": "Tiwai Island",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Commit to the long southeastern transfer, then settle into one of Sierra Leone's best community-run wildlife sanctuaries.",
+            "activities": [
+              {
+                "name": "Poda-poda, shared car or arranged driver from Freetown toward Bo-Barri Chiefdom and Tiwai jetty",
+                "cost": "₹2,200–₹6,500"
+              },
+              {
+                "name": "Final okada or short local transfer to the river crossing point",
+                "cost": "₹110–₹370"
+              },
+              {
+                "name": "Canoe or small boat transfer onto Tiwai Island",
+                "cost": "₹110–₹260"
+              },
+              {
+                "name": "Tiwai Island Wildlife Sanctuary foreign day entry",
+                "cost": "₹1,250"
+              },
+              {
+                "name": "Sunset birding or riverside walk after check-in",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tiwai Island Eco-Lodge",
+                "budget": "₹1,700–₹3,300/night"
+              },
+              {
+                "name": "Bo Inn Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Dohas Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Tiwai Island Eco-Lodge dining hall",
+              "Bo Inn Restaurant",
+              "Dohas Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Use the cool morning for primates and forest walks, then add canoe wildlife or community time while the light stays soft.",
+            "activities": [
+              {
+                "name": "Guided primate and rainforest walk on Tiwai trails",
+                "cost": "₹550–₹1,250"
+              },
+              {
+                "name": "Moa River canoe wildlife trip for birds and possible pygmy hippo habitat viewing",
+                "cost": "₹920–₹1,850"
+              },
+              {
+                "name": "Community visit in one of Tiwai's host villages",
+                "cost": "₹370–₹740"
+              },
+              {
+                "name": "Second sanctuary day fee if staying overnight again",
+                "cost": "₹1,250"
+              },
+              {
+                "name": "Simple lantern, charging or bottled-water budget at camp",
+                "cost": "₹110–₹260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tiwai Island Eco-Lodge",
+                "budget": "₹1,700–₹3,300/night"
+              },
+              {
+                "name": "Bo Inn Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Tiwai Island Eco-Lodge dining hall",
+              "Bo Inn Restaurant",
+              "Dohas Hotel Restaurant"
+            ]
+          }
+        ]
+      },
+      "Banana Islands": {
+        "name": "Banana Islands",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Return to the peninsula for a slower finish built around Kent boats, village life and a simple beach stay on Dublin Island.",
+            "activities": [
+              {
+                "name": "Road transfer or poda-poda back west toward Kent from the Bo or Freetown side",
+                "cost": "₹1,850–₹5,500"
+              },
+              {
+                "name": "Community boat or accommodation-arranged boat from Kent to Dublin, Banana Islands",
+                "cost": "₹370–₹920"
+              },
+              {
+                "name": "Dublin village walk including the old cannons and church area",
+                "cost": "₹0"
+              },
+              {
+                "name": "Big Sand Beach swim and sunset time",
+                "cost": "₹0"
+              },
+              {
+                "name": "Stone causeway walk from Dublin to Ricketts",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bafa Resort",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Daltons Banana Guest House",
+                "budget": "₹2,600–₹4,800/night"
+              },
+              {
+                "name": "Sun Shine Guesthouse",
+                "budget": "₹3,300–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Bafa Resort Restaurant",
+              "Daltons Banana Guest House",
+              "Sun Shine Guesthouse"
+            ]
+          },
+          {
+            "theme": "Keep the final island day loose with water activities, lobster on Ricketts and an easy boat back when you're ready.",
+            "activities": [
+              {
+                "name": "Kayak, pedalo or snorkeling arranged through Bafa Resort or Daltons",
+                "cost": "₹740–₹1,850"
+              },
+              {
+                "name": "Boat hop around Ricketts or nearby coves",
+                "cost": "₹1,100–₹2,600"
+              },
+              {
+                "name": "Fresh lobster or seafood lunch on Ricketts",
+                "cost": "₹920–₹1,850"
+              },
+              {
+                "name": "Return boat from Dublin to Kent",
+                "cost": "₹370–₹920"
+              },
+              {
+                "name": "Taxi or shared car from Kent back to Freetown",
+                "cost": "₹920–₹2,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bafa Resort",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Daltons Banana Guest House",
+                "budget": "₹2,600–₹4,800/night"
+              }
+            ],
+            "meals": [
+              "Bafa Resort Restaurant",
+              "Daltons Banana Guest House",
+              "Banana Gardens"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Freetown",
+        "to": "Bunce Island",
+        "method": "Speedboat day trips from Cockle Bay or Aqua Sports Club are the normal Bunce route; some operators fold in Tasso Island for lunch.",
+        "cost": "₹4,500–₹9,500"
+      },
+      {
+        "from": "Bunce Island",
+        "to": "Tiwai Island",
+        "method": "Return to Freetown first, then continue southeast by arranged driver, shared car or a chain of poda-podas; domestic flights are limited, so Tiwai is usually still a road-plus-canoe journey.",
+        "cost": "₹2,600–₹7,400"
+      },
+      {
+        "from": "Tiwai Island",
+        "to": "Banana Islands",
+        "method": "Backtrack west by road to the peninsula, then switch to the local Kent boat or an accommodation-arranged charter into Dublin Island.",
+        "cost": "₹2,200–₹6,500"
+      },
+      {
+        "from": "Banana Islands",
+        "to": "Freetown",
+        "method": "Boat back to Kent, then a shared car, taxi or poda-poda up the peninsula into Lumley or Aberdeen.",
+        "cost": "₹1,300–₹3,100"
+      }
+    ],
+    "extras": [
+      "November to April is the best all-round window: Bunce and Banana crossings are more reliable, River No. 2 stays easier to enjoy, and Tiwai trails are far less waterlogged.",
+      "Book Bunce boats and Tacugama tours ahead in peak dry-season weeks because both depend on guides, tide timing, or vehicle coordination.",
+      "Carry small notes for okadas, poda-podas, beach fees, and island snacks; cards only work reliably in Freetown's better hotels and restaurants.",
+      "Tiwai and Banana are both low-infrastructure stops, so pack a torch, power bank and a little patience for patchy charging and slower meal service.",
+      "If you are short on time, treat Tiwai as the one place worth paying more for a private transfer; it saves a lot of friction versus piecing together multiple public legs.",
+      "Bunce is emotionally heavy and mostly guide-dependent, so many travelers prefer putting a lighter beach or island day either before or after it."
+    ],
+    "cityImages": {
+      "Freetown": [
+        "Cotton Tree Freetown",
+        "Tacugama Chimpanzee Sanctuary Sierra Leone",
+        "River No 2 Beach Sierra Leone"
+      ],
+      "Bunce Island": [
+        "Bunce Island Sierra Leone",
+        "Bunce Island slave fort ruins",
+        "Tasso Island Sierra Leone"
+      ],
+      "Tiwai Island": [
+        "Tiwai Island Sierra Leone",
+        "Moa River Tiwai Island",
+        "Tiwai Island Eco-Lodge"
+      ],
+      "Banana Islands": [
+        "Banana Islands Sierra Leone",
+        "Bafa Resort Banana Island",
+        "Dublin Island Sierra Leone"
+      ]
+    }
+  }
+}
