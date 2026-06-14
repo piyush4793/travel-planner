@@ -1,0 +1,536 @@
+{
+  "name": "Gabon",
+  "seed": false,
+  "lat": -0.8,
+  "lng": 11.61,
+  "region": "Africa",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "March",
+    "April",
+    "May",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.85L–₹3.1L",
+    "couple": "₹3.45L–₹5.75L",
+    "family4": "₹6.8L–₹11.2L"
+  },
+  "experiences": [
+    "Libreville's St. Michael's Church, seafront hotels, and Pointe-Denis beach escape",
+    "Lopé National Park mandrill tracking where forest meets savanna",
+    "Loango beach safaris for elephants, buffalo, hippos, and Jul-Sep whale watching",
+    "Franceville side trips to Poubara Falls and the famous liana bridge"
+  ],
+  "avoid": [
+    "March to May and October to November are the rainiest windows, which makes Transgabonais timings shakier, forest tracks muddier, and Loango boat logistics harder to predict.",
+    "Afrijet domestic seats and the limited lodges in Lopé and Loango sell out early in the dry season, so lock flights, camp nights, and wildlife tracking before you leave Libreville flexible.",
+    "Carry XAF cash for taxis, pirogues, and park-side extras because cards work at top hotels but often fail once you are away from Libreville and Port-Gentil."
+  ],
+  "combo": [
+    "Cameroon",
+    "Equatorial Guinea"
+  ],
+  "landmark": "Loango National Park",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Libreville is the only practical international gateway; use it for Pointe-Denis and Saint-Michel first, then split the wildlife loop between train-based Lopé and an Afrijet hop toward Loango so you do not waste days on backtracking overland.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Libreville",
+      "lat": 0.3901,
+      "lng": 9.4544,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Gabon's practical arrival base for St. Michael's Church, Mont-Bouët market, Pointe-Denis pirogues, and the country's widest hotel and restaurant selection."
+    },
+    {
+      "name": "Lopé National Park",
+      "lat": -0.2267,
+      "lng": 11.605,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "UNESCO-listed forest-savanna mosaic best known for huge dry-season mandrill troops, specialist primate tracking, Ogooué River scenery, and rail-based access from Libreville."
+    },
+    {
+      "name": "Loango National Park",
+      "lat": -2.3333,
+      "lng": 9.5833,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Beach-and-lagoon wilderness accessed via Port-Gentil for classic elephant-on-the-sand sightings, boat safaris, turtle coast excursions, and whale watching from July to September."
+    },
+    {
+      "name": "Franceville",
+      "lat": -1.6333,
+      "lng": 13.5836,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Haut-Ogooué base for Poubara Falls, the liana bridge, Lac Bleu side trips, and an inland overnight that works well with Afrijet or the Transgabonais."
+    }
+  ],
+  "itinerary": {
+    "sim": "Airtel Gabon and Libertis are the easiest prepaid picks; budget roughly ₹700–₹1,800 for enough data for maps, WhatsApp and Afrijet check-ins, but expect weaker speeds once you move into Lopé or the Loango lagoon camps.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "Afrijet",
+      "WhatsApp",
+      "XE Currency",
+      "Windy"
+    ],
+    "cityOrder": [
+      "Libreville",
+      "Lopé National Park",
+      "Franceville",
+      "Loango National Park"
+    ],
+    "cities": {
+      "Libreville": {
+        "name": "Libreville",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "St. Michael's carved-pillared church, central Libreville logistics, and an easy Atlantic-facing first day",
+            "activities": [
+              {
+                "name": "Airport taxi into Centre Ville or Bord de Mer",
+                "cost": "₹1,120–₹2,100"
+              },
+              {
+                "name": "St. Michael's Church (Église Saint-Michel de Nkembo) visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "National Museum of Arts and Traditions ticket",
+                "cost": "₹420–₹700"
+              },
+              {
+                "name": "Taxi hops between Mont-Bouët, the seafront, and your hotel",
+                "cost": "₹420–₹980"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Le Cristal Libreville",
+                "budget": "₹15,000–₹24,000/night"
+              },
+              {
+                "name": "Radisson Blu Okoume Palace Hotel, Libreville",
+                "budget": "₹16,500–₹28,000/night"
+              },
+              {
+                "name": "ONOMO Hotel Libreville",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "L'Odika",
+              "La Voile Rouge",
+              "Roma Restaurant"
+            ]
+          },
+          {
+            "theme": "Pointe-Denis beach day with a real pirogue/navette crossing and a lighter second day before the interior leg",
+            "activities": [
+              {
+                "name": "Pointe-Denis navette / pirogue round-trip from Michel Marine",
+                "cost": "₹2,100"
+              },
+              {
+                "name": "Pointe-Denis beach time and resort-side walking",
+                "cost": "₹0"
+              },
+              {
+                "name": "Beach club chair or day-use add-on if you want a pool base",
+                "cost": "₹700–₹2,100"
+              },
+              {
+                "name": "Taxi to and from the jetty in Libreville",
+                "cost": "₹420–₹980"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Le Cristal Libreville",
+                "budget": "₹15,000–₹24,000/night"
+              },
+              {
+                "name": "Radisson Blu Okoume Palace Hotel, Libreville",
+                "budget": "₹16,500–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "La Voile Rouge",
+              "L'Odika",
+              "Roma Restaurant"
+            ]
+          },
+          {
+            "theme": "One more flexible Libreville day for markets, seaside downtime, and lining up the train or flight inland",
+            "activities": [
+              {
+                "name": "Mont-Bouët market walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bord de Mer promenade and beach stops",
+                "cost": "₹0"
+              },
+              {
+                "name": "Pre-arranged taxi for station or airport errands",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Hotel-arranged transfer for the next morning departure",
+                "cost": "₹980–₹1,680"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Le Cristal Libreville",
+                "budget": "₹15,000–₹24,000/night"
+              },
+              {
+                "name": "Park Inn by Radisson Libreville",
+                "budget": "₹11,000–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "L'Odika",
+              "La Voile Rouge",
+              "Roma Restaurant"
+            ]
+          }
+        ]
+      },
+      "Lopé National Park": {
+        "name": "Lopé National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Transgabonais into the savanna-forest transition, park entry, and a first guided wildlife drive",
+            "activities": [
+              {
+                "name": "Transgabonais train from Libreville to Lopé",
+                "cost": "₹3,500–₹6,300"
+              },
+              {
+                "name": "Taxi or lodge pickup from Lopé station",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Lopé National Park foreign visitor entry",
+                "cost": "₹1,800–₹2,200"
+              },
+              {
+                "name": "Guided late-afternoon savanna drive from Lopé Hotel or Mikongo",
+                "cost": "₹4,200–₹8,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lopé Hotel",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Mikongo Forest Lodge",
+                "budget": "₹18,000–₹32,000/night"
+              },
+              {
+                "name": "Motel E'Mbeyi",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Lopé Hotel Restaurant",
+              "Mikongo camp dining room",
+              "Motel E'Mbeyi restaurant"
+            ]
+          },
+          {
+            "theme": "Dry-season primate day for mandrills, optional gorilla-chimp tracking, and Ogooué River time",
+            "activities": [
+              {
+                "name": "Specialist mandrill tracking excursion in Lopé",
+                "cost": "₹12,600–₹25,200"
+              },
+              {
+                "name": "Specialist gorilla or chimpanzee tracking add-on arranged from Lopé",
+                "cost": "₹25,200–₹42,000"
+              },
+              {
+                "name": "Ogooué River pirogue outing or village-side boat ride",
+                "cost": "₹2,800–₹5,600"
+              },
+              {
+                "name": "Short 4x4 transfer between trailheads and the lodge",
+                "cost": "₹1,400–₹2,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lopé Hotel",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Mikongo Forest Lodge",
+                "budget": "₹18,000–₹32,000/night"
+              }
+            ],
+            "meals": [
+              "Lopé Hotel Restaurant",
+              "Mikongo camp dining room"
+            ]
+          }
+        ]
+      },
+      "Franceville": {
+        "name": "Franceville",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "days": [
+          {
+            "theme": "An inland reset for Poubara Falls, the liana bridge, and Franceville’s practical overnight stop",
+            "activities": [
+              {
+                "name": "Transgabonais onward from Lopé or Afrijet flight from Libreville to Franceville",
+                "cost": "₹4,200–₹6,300 by train or ₹14,000–₹32,000 by air"
+              },
+              {
+                "name": "Taxi or hired car to Chutes de Poubara and the Pont de lianes",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Poubara Falls and bridge visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Short city taxi rides around Franceville / Masuku",
+                "cost": "₹280–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Poubara",
+                "budget": "₹5,000–₹14,500/night"
+              },
+              {
+                "name": "Hotel Masuku",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurant de l'Hôtel Poubara",
+              "Masuku Chez Toussaint"
+            ]
+          }
+        ]
+      },
+      "Loango National Park": {
+        "name": "Loango National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Afrijet into the coast, Port-Gentil transfers, and your first Loango lagoon-beach introduction",
+            "activities": [
+              {
+                "name": "Afrijet flight to Port-Gentil for Loango access",
+                "cost": "₹29,000–₹33,000"
+              },
+              {
+                "name": "Lodge boat or 4x4 transfer from Port-Gentil toward Loango",
+                "cost": "₹4,200–₹8,400"
+              },
+              {
+                "name": "Loango National Park conservation / entry fee",
+                "cost": "₹2,100–₹3,500"
+              },
+              {
+                "name": "Late-afternoon lagoon cruise or beach sundowner drive",
+                "cost": "₹7,000–₹14,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ndola Lodge",
+                "budget": "₹42,000–₹70,000/night"
+              },
+              {
+                "name": "Loango Lodge",
+                "budget": "₹28,000–₹48,000/night"
+              },
+              {
+                "name": "Akaka Forest Camp",
+                "budget": "₹45,000–₹78,000/night"
+              }
+            ],
+            "meals": [
+              "Loango Lodge Restaurant",
+              "Ndola camp dining room",
+              "Akaka Forest Camp dining"
+            ]
+          },
+          {
+            "theme": "The signature Loango beach-wildlife day for elephants, buffalo and hippos moving between sand, savanna and lagoon",
+            "activities": [
+              {
+                "name": "Guided beach wildlife 4x4 safari in Loango",
+                "cost": "₹12,600–₹25,200"
+              },
+              {
+                "name": "Pirogue or motorboat safari through the Iguela Lagoon",
+                "cost": "₹7,000–₹14,000"
+              },
+              {
+                "name": "Forest-edge walking safari with tracker support",
+                "cost": "₹5,600–₹11,200"
+              },
+              {
+                "name": "Short camp-to-jetty transfers by boat or 4x4",
+                "cost": "₹2,100–₹4,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ndola Lodge",
+                "budget": "₹42,000–₹70,000/night"
+              },
+              {
+                "name": "Loango Lodge",
+                "budget": "₹28,000–₹48,000/night"
+              }
+            ],
+            "meals": [
+              "Loango Lodge Restaurant",
+              "Ndola camp dining room"
+            ]
+          },
+          {
+            "theme": "Optional third day for Jul-Sep whale watching or a deeper Akaka-style add-on before returning to Libreville",
+            "activities": [
+              {
+                "name": "Humpback whale-watching launch off Loango (best Jul-Sep)",
+                "cost": "₹14,000–₹21,000"
+              },
+              {
+                "name": "Extra lagoon or turtle-coast outing",
+                "cost": "₹7,000–₹14,000"
+              },
+              {
+                "name": "Return lodge transfer to Port-Gentil jetty or airport",
+                "cost": "₹4,200–₹8,400"
+              },
+              {
+                "name": "Afrijet flight back toward Libreville",
+                "cost": "₹29,000–₹33,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ndola Lodge",
+                "budget": "₹42,000–₹70,000/night"
+              },
+              {
+                "name": "Akaka Forest Camp",
+                "budget": "₹45,000–₹78,000/night"
+              }
+            ],
+            "meals": [
+              "Loango Lodge Restaurant",
+              "Ndola camp dining room",
+              "Akaka Forest Camp dining"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Libreville",
+        "to": "Lopé National Park",
+        "method": "The Transgabonais is the classic move to Lopé; a 4x4 overland transfer exists, but the train is usually less punishing than forcing the interior roads in the wet season.",
+        "cost": "₹3,500–₹6,300"
+      },
+      {
+        "from": "Lopé National Park",
+        "to": "Franceville",
+        "method": "Stay on the Transgabonais south-east if you want the simplest inland continuation, or backtrack to Libreville only if an Afrijet fare lines up better for your schedule.",
+        "cost": "₹4,200–₹6,300 by train or ₹14,000–₹32,000 by air via Libreville"
+      },
+      {
+        "from": "Franceville",
+        "to": "Loango National Park",
+        "method": "This is normally a split transfer via Libreville, then an Afrijet hop to Port-Gentil, followed by your lodge's boat or 4x4 into Loango.",
+        "cost": "₹47,000–₹73,000"
+      },
+      {
+        "from": "Loango National Park",
+        "to": "Libreville",
+        "method": "Use the arranged lodge transfer back to Port-Gentil and take an Afrijet flight to Libreville rather than attempting a long improvised coastal overland return.",
+        "cost": "₹33,000–₹41,000"
+      }
+    ],
+    "extras": [
+      "June to September is the core dry season and the smartest all-round window for this loop; Loango whale watching is strongest from July to September, while Lopé mandrill sightings are also best in the same dry stretch.",
+      "St. Michael's Church is an active place of worship, so dress modestly and avoid visiting during mass if you want a quiet look at the carved wooden pillars.",
+      "Pointe-Denis crossings are simplest when you reserve the navette in advance, especially on weekends, because same-day walk-up space can disappear fast when Libreville locals head to the beach.",
+      "Lopé and Loango activity prices often depend on guide, vehicle, and boat sharing, so the lower end of each range assumes you are joining an existing lodge departure rather than booking privately.",
+      "For Loango, most travelers let the lodge bundle transfers, park fees, and activities because independent logistics from Port-Gentil are possible but rarely cheaper once boats and guide time are added up."
+    ],
+    "cityImages": {
+      "Libreville": [
+        "St. Michael's Church Libreville",
+        "Pointe Denis Beach Libreville",
+        "Mont-Bouet Libreville"
+      ],
+      "Lopé National Park": [
+        "Lopé National Park mandrills",
+        "Ogooue River Lope",
+        "Lopé savanna Gabon"
+      ],
+      "Franceville": [
+        "Chutes de Poubara Franceville",
+        "Pont de lianes Poubara",
+        "Franceville Gabon"
+      ],
+      "Loango National Park": [
+        "Loango National Park beach elephants",
+        "Iguela Lagoon Loango",
+        "Loango whale watching"
+      ]
+    }
+  }
+}

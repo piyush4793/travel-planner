@@ -1,0 +1,517 @@
+{
+  "name": "Democratic Republic of the Congo",
+  "seed": false,
+  "lat": -4.04,
+  "lng": 21.76,
+  "region": "Africa",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "March",
+    "April",
+    "May",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹4.4L–₹7.9L",
+    "couple": "₹7.8L–₹13L",
+    "family4": "₹13.5L–₹24L"
+  },
+  "experiences": [
+    "Congo River boat ride in Kinshasa",
+    "Lola ya Bonobo sanctuary visit",
+    "Virunga gorilla trekking",
+    "Nyiragongo crater-rim overnight hike",
+    "Lake Kivu time in Goma"
+  ],
+  "avoid": [
+    "March to May and October to November are wetter, with muddier tracks around Virunga and slower 4x4 road transfers in the east",
+    "Eastern DRC security conditions can change quickly, so Goma and Virunga legs only work when park operations and your government's travel advisory are both favorable",
+    "Congo Airways schedules, permit windows and escorted park transfers all need buffer days because last-minute changes are more common here than in easier East African circuits"
+  ],
+  "combo": [
+    "Rwanda",
+    "Uganda"
+  ],
+  "landmark": "Virunga National Park",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Kinshasa (FIH) is the practical international gateway; the country is too large to treat as a road trip, so Congo Airways domestic flights do the heavy lifting, while Goma-Virunga sectors need pre-arranged 4x4s and daylight-only transfers.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Kinshasa",
+      "lat": -4.4419,
+      "lng": 15.2663,
+      "notes": "Big, humid river capital for museums, hotel dining, Congo River sunsets and the day trip to Lola ya Bonobo before you fly east"
+    },
+    {
+      "name": "Virunga National Park",
+      "lat": -0.9167,
+      "lng": 29.1667,
+      "notes": "DRC's signature conservation landscape for mountain gorillas, Nyiragongo's lava lake and ranger-managed eco-lodges around Rumangabo, Bukima and Tchegera"
+    },
+    {
+      "name": "Goma",
+      "lat": -1.6788,
+      "lng": 29.2218,
+      "notes": "Lake Kivu gateway city for eastern DRC logistics, volcano views, hotel-based dining and Virunga permit staging"
+    },
+    {
+      "name": "Lubumbashi",
+      "lat": -11.6647,
+      "lng": 27.4794,
+      "notes": "Southern business hub with strong hotels, colonial-era churches, museum stops and an easier final night before the flight back to Kinshasa"
+    }
+  ],
+  "itinerary": {
+    "sim": "Airtel DRC and Orange RDC are the easiest choices across Kinshasa, Goma and Lubumbashi, with Vodacom also seen in the east; expect roughly ₹600–₹1,600 for enough data for maps, WhatsApp and hotel coordination.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "Congo Airways",
+      "WhatsApp",
+      "Airtel Money",
+      "Orange Money",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Kinshasa",
+      "Goma",
+      "Virunga National Park",
+      "Lubumbashi"
+    ],
+    "cities": {
+      "Kinshasa": {
+        "name": "Kinshasa",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "River-city orientation with museums, broad boulevards in Gombe and an easy first look at the Congo River",
+            "activities": [
+              {
+                "name": "National Museum of the Democratic Republic of the Congo entry",
+                "cost": "₹850"
+              },
+              {
+                "name": "Notre Dame Cathedral of the Congo visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Guided Congo River boat ride from the Gombe/Ngobila stretch",
+                "cost": "₹2,500–₹6,500"
+              },
+              {
+                "name": "Taxi hops between N'djili Airport, Gombe and the museum district",
+                "cost": "₹900–₹3,000"
+              },
+              {
+                "name": "Tour de l'Échangeur viewpoint or arts stop",
+                "cost": "₹0–₹850"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pullman Kinshasa Grand Hotel",
+                "budget": "₹18,500–₹29,500/night"
+              },
+              {
+                "name": "Fleuve Congo Hotel by Blazon Hotels",
+                "budget": "₹24,500–₹38,500/night"
+              },
+              {
+                "name": "Hotel Memling",
+                "budget": "₹12,500–₹21,500/night"
+              }
+            ],
+            "meals": [
+              "Oasis Restaurant",
+              "Limoncello",
+              "Café Conc"
+            ]
+          },
+          {
+            "theme": "Bonobo conservation, art spaces and the practical errand day before the long domestic flight east",
+            "activities": [
+              {
+                "name": "Lola ya Bonobo sanctuary entry",
+                "cost": "₹850"
+              },
+              {
+                "name": "Private car or hotel driver round-trip to Kimwenza",
+                "cost": "₹6,500–₹13,000"
+              },
+              {
+                "name": "Marché Central browse for cash snacks and fabric",
+                "cost": "₹0–₹650"
+              },
+              {
+                "name": "Académie des Beaux-Arts or Symphonie des Arts visit",
+                "cost": "₹0–₹850"
+              },
+              {
+                "name": "Gombe riverfront sundowner",
+                "cost": "₹650–₹2,100"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Novotel Kinshasa La Gombe",
+                "budget": "₹14,500–₹24,000/night"
+              },
+              {
+                "name": "Protea Hotel by Marriott Kinshasa",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "A Casa Mia",
+              "Patisserie Nouvelle",
+              "Chez Flore"
+            ]
+          }
+        ]
+      },
+      "Goma": {
+        "name": "Goma",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "The big repositioning day into eastern DRC, softened by lake views and one of the country's easiest hotel bases",
+            "activities": [
+              {
+                "name": "Congo Airways Kinshasa to Goma one-way fare",
+                "cost": "₹18,000–₹32,000"
+              },
+              {
+                "name": "Goma airport transfer to a lakeside hotel",
+                "cost": "₹650–₹1,800"
+              },
+              {
+                "name": "Lake Kivu boat ride from the Goma waterfront",
+                "cost": "₹2,500–₹5,500"
+              },
+              {
+                "name": "Goma Volcano Observatory visit or donation stop by arrangement",
+                "cost": "₹0–₹1,300"
+              },
+              {
+                "name": "Sunset drink or coffee on the lakefront",
+                "cost": "₹500–₹1,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Goma Serena Hotel",
+                "budget": "₹16,500–₹28,500/night"
+              },
+              {
+                "name": "Lac Kivu Lodge",
+                "budget": "₹11,500–₹19,500/night"
+              },
+              {
+                "name": "Cap Kivu Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Le Chalet",
+              "Il Rasentino",
+              "Nyumbani Lounge"
+            ]
+          },
+          {
+            "theme": "A flexible prep day for eastern DRC logistics, lava landscapes and reconfirming park transfers before Virunga",
+            "activities": [
+              {
+                "name": "Birere Market browse",
+                "cost": "₹0–₹650"
+              },
+              {
+                "name": "Local guide for a 2002 lava-flow walk near Petit Barrière",
+                "cost": "₹850–₹2,100"
+              },
+              {
+                "name": "Virunga permit reconfirmation and ranger logistics briefing",
+                "cost": "₹0"
+              },
+              {
+                "name": "4x4 or park transfer booking from Goma to Rumangabo/Bukima",
+                "cost": "₹8,000–₹18,000"
+              },
+              {
+                "name": "Hotel-based lunch and cash withdrawal buffer for the park leg",
+                "cost": "₹650–₹2,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Goma Serena Hotel",
+                "budget": "₹16,500–₹28,500/night"
+              },
+              {
+                "name": "Lac Kivu Lodge",
+                "budget": "₹11,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Le Volcan Resto & Pub",
+              "Salt and Pepper",
+              "Lac Kivu Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Virunga National Park": {
+        "name": "Virunga National Park",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "The flagship conservation day: ranger briefings, steep forest climbs and the once-in-a-lifetime gorilla hour in the Virungas",
+            "activities": [
+              {
+                "name": "Virunga National Park gorilla trekking permit",
+                "cost": "₹34,000"
+              },
+              {
+                "name": "Ranger-cleared 4x4 transfer from Goma/Rumangabo to the Bukima sector",
+                "cost": "₹8,500–₹18,500"
+              },
+              {
+                "name": "Porter hire for the gorilla trek",
+                "cost": "₹850–₹1,700"
+              },
+              {
+                "name": "Senkwekwe Center visit at Rumangabo HQ",
+                "cost": "₹0–₹850"
+              },
+              {
+                "name": "Packed lunch and trail snacks",
+                "cost": "₹650–₹1,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mikeno Lodge",
+                "budget": "₹32,000–₹52,000/night"
+              },
+              {
+                "name": "Bukima Tented Camp",
+                "budget": "₹18,500–₹29,500/night"
+              },
+              {
+                "name": "Tchegera Island Camp",
+                "budget": "₹12,500–₹24,500/night"
+              }
+            ],
+            "meals": [
+              "Mikeno Lodge Restaurant",
+              "Bukima Tented Camp Dining",
+              "Tchegera Island Camp Restaurant"
+            ]
+          },
+          {
+            "theme": "Nyiragongo's ash slopes, the lava-lake reward at the crater rim and the park's most dramatic overnight",
+            "activities": [
+              {
+                "name": "Nyiragongo volcano hike permit with summit shelter",
+                "cost": "₹25,500"
+              },
+              {
+                "name": "Porter hire for the Nyiragongo ascent",
+                "cost": "₹1,300–₹3,900"
+              },
+              {
+                "name": "Hiking poles or warm-gear rental at Kibati",
+                "cost": "₹850–₹2,100"
+              },
+              {
+                "name": "4x4 transfer to the Kibati trailhead",
+                "cost": "₹3,000–₹7,500"
+              },
+              {
+                "name": "Hot drinks and packed meals for the crater night",
+                "cost": "₹1,300–₹3,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nyiragongo Summit Shelters",
+                "budget": "₹included with permit"
+              },
+              {
+                "name": "Mikeno Lodge",
+                "budget": "₹32,000–₹52,000/night"
+              }
+            ],
+            "meals": [
+              "Nyiragongo summit shelter meals",
+              "Mikeno Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "A decompression day on Lake Kivu's edge, with Tchegera downtime and room for weather or security buffers before the next flight",
+            "activities": [
+              {
+                "name": "Nyiragongo descent and return transfer",
+                "cost": "₹0–₹4,500"
+              },
+              {
+                "name": "Boat transfer to Tchegera Island Camp",
+                "cost": "₹2,500–₹5,500"
+              },
+              {
+                "name": "Kayak or lakeside rest session at Tchegera",
+                "cost": "₹1,300–₹4,300"
+              },
+              {
+                "name": "Virunga nature walk or birding around the island/shore",
+                "cost": "₹0–₹2,100"
+              },
+              {
+                "name": "Park-service tips and onward-flight logistics",
+                "cost": "₹850–₹2,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tchegera Island Camp",
+                "budget": "₹12,500–₹24,500/night"
+              },
+              {
+                "name": "Mikeno Lodge",
+                "budget": "₹32,000–₹52,000/night"
+              }
+            ],
+            "meals": [
+              "Tchegera Island Camp Restaurant",
+              "Mikeno Lodge Restaurant",
+              "Bukima Tented Camp Dining"
+            ]
+          }
+        ]
+      },
+      "Lubumbashi": {
+        "name": "Lubumbashi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "A gentler southern finale with museums, cathedral stops and comfortable hotels after the harder eastern DRC logistics",
+            "activities": [
+              {
+                "name": "Congo Airways Goma to Lubumbashi one-way fare",
+                "cost": "₹26,000–₹45,000"
+              },
+              {
+                "name": "National Museum of Lubumbashi entry",
+                "cost": "₹300–₹850"
+              },
+              {
+                "name": "Cathedral of Saints Peter and Paul visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Marché Mzee Kabila browse",
+                "cost": "₹0–₹650"
+              },
+              {
+                "name": "Sunset by Lake Kipopo or a hotel lakeside terrace",
+                "cost": "₹650–₹1,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pullman Lubumbashi Grand Karavia",
+                "budget": "₹16,500–₹28,500/night"
+              },
+              {
+                "name": "Novotel Lubumbashi",
+                "budget": "₹14,500–₹24,500/night"
+              },
+              {
+                "name": "Hotel Lubumbashi",
+                "budget": "₹10,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "La Brioche",
+              "Bougainvilla Restaurant",
+              "Grand Karavia Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Kinshasa",
+        "to": "Goma",
+        "method": "Congo Airways is the practical move for crossing the country; overland travel is unrealistic for most itineraries, so protect this leg with a full buffer day if you have a long-haul departure after it.",
+        "cost": "₹18,000–₹32,000"
+      },
+      {
+        "from": "Goma",
+        "to": "Virunga National Park",
+        "method": "Travel by pre-arranged 4x4 or park transfer via Rumangabo/Bukima, ideally in daylight and only when current security conditions allow tourist movements.",
+        "cost": "₹3,000–₹18,500"
+      },
+      {
+        "from": "Virunga National Park",
+        "to": "Lubumbashi",
+        "method": "Return by 4x4 to Goma, then fly Congo Airways onward, usually routing through Kinshasa rather than trying to stitch together risky road sectors.",
+        "cost": "₹29,000–₹50,000"
+      },
+      {
+        "from": "Lubumbashi",
+        "to": "Kinshasa",
+        "method": "Congo Airways flight back to N'djili for the international departure or final capital stopover.",
+        "cost": "₹18,000–₹30,000"
+      }
+    ],
+    "extras": [
+      "June to September is the cleanest window for this route: Kinshasa feels less stormy, Virunga tracks are drier and Nyiragongo summit weather is more forgiving than in the heavier rain months.",
+      "Treat Goma and Virunga as security-sensitive sectors: confirm your government's travel advisory, your hotel's current transfer advice and the park's own operational notices before paying for non-refundable flights.",
+      "Virunga's gorilla permits and Nyiragongo permits are the main budget drivers by a wide margin, so the trip becomes far cheaper if you only do one of the two signature park experiences.",
+      "Congo Airways schedules can move, so leave at least one buffer night before any long-haul flight out of Kinshasa rather than trying a same-day domestic-to-international connection.",
+      "Cards work in better hotels in Kinshasa and Lubumbashi, but carry cash in both USD and Congolese francs for tips, park incidentals, smaller restaurants and eastern DRC transfers.",
+      "Congo River boats are best treated as guided Kinshasa experiences rather than core transport; for practical routing inside this itinerary, domestic flights and 4x4 transfers matter much more."
+    ],
+    "cityImages": {
+      "Kinshasa": [
+        "Kinshasa Congo River",
+        "National Museum Kinshasa",
+        "Lola ya Bonobo sanctuary"
+      ],
+      "Goma": [
+        "Goma Lake Kivu",
+        "Goma volcano view",
+        "Goma Serena Hotel"
+      ],
+      "Virunga National Park": [
+        "Virunga National Park gorillas",
+        "Nyiragongo volcano hike",
+        "Tchegera Island Camp"
+      ],
+      "Lubumbashi": [
+        "Lubumbashi cathedral",
+        "National Museum of Lubumbashi",
+        "Pullman Lubumbashi Grand Karavia"
+      ]
+    }
+  }
+}

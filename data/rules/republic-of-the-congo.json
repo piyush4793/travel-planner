@@ -1,0 +1,579 @@
+{
+  "name": "Republic of the Congo",
+  "seed": false,
+  "lat": -0.23,
+  "lng": 15.83,
+  "region": "Africa",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "budget": {
+    "solo": "₹2.35L–₹3.95L",
+    "couple": "₹4.55L–₹7.45L",
+    "family4": "₹9.1L–₹14.8L"
+  },
+  "experiences": [
+    "Brazzaville's Congo River corniche, Basilique Sainte-Anne du Congo, and the Pierre Savorgnan de Brazza Memorial",
+    "Odzala-Kokoua rainforest stays split between Ngaga, Mboko, and Lango with western lowland gorilla tracking",
+    "Pointe-Noire's Atlantic coast, Gorges de Diosso viewpoints, and seafood-heavy dining scene",
+    "Loango Bay and the former Loango Kingdom coast for beach downtime, Ma-Loango heritage, and pre-arranged small-boat outings"
+  ],
+  "avoid": [
+    "October to May is much wetter, so rainforest trails, Diosso road conditions, and beach plans around Pointe-Noire are less predictable than in the June to September dry season.",
+    "Odzala-Kokoua is an expensive logistics-heavy add-on: gorilla trekking normally works through all-inclusive lodge stays and charter transfers rather than spontaneous walk-up travel.",
+    "French is the working language for taxis, hotels, and park logistics, and cash in XAF still matters for church donations, taxi bargaining, and small attraction tickets."
+  ],
+  "combo": [
+    "Gabon",
+    "Democratic Republic of the Congo"
+  ],
+  "landmark": "Odzala-Kokoua National Park",
+  "travelStyle": [
+    "wildlife",
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Use Brazzaville as the planning base, carve out Odzala as a dedicated fly-in safari block, then return south for the easier Brazzaville-Pointe-Noire domestic hop on ECAir or Trans Air Congo before finishing on the Loango Bay coast.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Brazzaville",
+      "lat": -4.2634,
+      "lng": 15.2429,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Basilique Sainte-Anne du Congo, the Brazza Memorial, Congo River viewpoints, strong hotel base, and the easiest place to set up flights and park logistics."
+    },
+    {
+      "name": "Odzala-Kokoua National Park",
+      "lat": 0.835,
+      "lng": 14.845,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Ngaga, Mboko, and Lango camp circuit with western lowland gorilla tracking, baï wildlife walks, and mokoro or motor-boat moves on the Lekoli system."
+    },
+    {
+      "name": "Pointe-Noire",
+      "lat": -4.7692,
+      "lng": 11.8664,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Republic of the Congo's coastal hub for the Gorges de Diosso, Côte Sauvage beaches, seafood restaurants, and easy taxi links north toward Loango Bay."
+    },
+    {
+      "name": "Loango Bay",
+      "lat": -4.601,
+      "lng": 11.792,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Quiet Atlantic shoreline north of Pointe-Noire with Malonda Lodge stays, Ma-Loango heritage visits, and small-boat or fishing departures arranged in advance."
+    }
+  ],
+  "itinerary": {
+    "sim": "Airtel Congo and MTN Congo are the easiest options for this route; budget roughly ₹700–₹1,800 for a starter data bundle, but expect weaker data once you move into Odzala where the camps rely more on lodge Wi-Fi and satellite-backed communications.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "WhatsApp",
+      "Google Translate",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Brazzaville",
+      "Odzala-Kokoua National Park",
+      "Pointe-Noire",
+      "Loango Bay"
+    ],
+    "cities": {
+      "Brazzaville": {
+        "name": "Brazzaville",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Riverfront arrival, landmark churches, and the core Brazzaville orientation loop",
+            "activities": [
+              {
+                "name": "Official taxi from Maya-Maya Airport into the city centre or riverfront hotel",
+                "cost": "₹1,300–₹2,200"
+              },
+              {
+                "name": "Basilique Sainte-Anne du Congo visit or donation entry",
+                "cost": "₹0–₹280"
+              },
+              {
+                "name": "Pierre Savorgnan de Brazza Memorial ticket",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Taxi hops between the basilica, memorial, and Corniche riverfront",
+                "cost": "₹420–₹980"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Radisson Blu M'Bamou Palace Hotel",
+                "budget": "₹15,500–₹24,000/night"
+              },
+              {
+                "name": "Hotel Ledger Plaza Maya-Maya",
+                "budget": "₹13,000–₹19,500/night"
+              },
+              {
+                "name": "Hotel Olympic Palace",
+                "budget": "₹7,000–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Le Roi du Poisson",
+              "La Paillote",
+              "Mami Wata"
+            ]
+          },
+          {
+            "theme": "Poto-Poto markets, Les Rapides, and final safari or flight setup before leaving the capital",
+            "activities": [
+              {
+                "name": "Taxi to Poto-Poto market and the Poto-Poto School of Painting area",
+                "cost": "₹420–₹980"
+              },
+              {
+                "name": "Les Rapides viewpoint on the Congo River",
+                "cost": "₹0"
+              },
+              {
+                "name": "Short pirogue or boat outing near the riverfront when operating",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Hotel-arranged airport transfer or safari briefing for the Odzala departure",
+                "cost": "₹0–₹1,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Radisson Blu M'Bamou Palace Hotel",
+                "budget": "₹15,500–₹24,000/night"
+              },
+              {
+                "name": "Hotel Hippocampe",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Chez Ntemba",
+              "Le Bistro Parisien",
+              "La Mandarine"
+            ]
+          }
+        ]
+      },
+      "Odzala-Kokoua National Park": {
+        "name": "Odzala-Kokoua National Park",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Fly-in rainforest transfer and the first baï or river experience",
+            "activities": [
+              {
+                "name": "Lodge-arranged charter flight from Brazzaville to the Odzala camp airstrip",
+                "cost": "Usually included in safari package"
+              },
+              {
+                "name": "4x4 or motor-boat transfer onward to Ngaga, Mboko, or Lango camp",
+                "cost": "Included"
+              },
+              {
+                "name": "Afternoon baï walk or Lekoli River boat safari with camp guide",
+                "cost": "Included"
+              },
+              {
+                "name": "Park conservation fee as wrapped into the nightly camp package",
+                "cost": "Included"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ngaga Camp",
+                "budget": "₹2.25L–₹2.95L/night all-inclusive"
+              },
+              {
+                "name": "Mboko Camp",
+                "budget": "₹2.0L–₹2.75L/night all-inclusive"
+              },
+              {
+                "name": "Lango Camp",
+                "budget": "₹2.2L–₹3.0L/night all-inclusive"
+              }
+            ],
+            "meals": [
+              "Ngaga Camp dining room",
+              "Mboko Camp dining room",
+              "Lango Camp dining room"
+            ]
+          },
+          {
+            "theme": "Western lowland gorilla tracking from Ngaga and a deep-forest day",
+            "activities": [
+              {
+                "name": "Odzala western lowland gorilla tracking permit if itemized separately",
+                "cost": "₹52,000–₹61,000/person"
+              },
+              {
+                "name": "Tracker, guide, and forest transfer linked to the gorilla excursion",
+                "cost": "Usually included"
+              },
+              {
+                "name": "Afternoon forest walk or photography session back at camp",
+                "cost": "Included"
+              },
+              {
+                "name": "Porter tip for the gorilla track",
+                "cost": "₹850–₹1,300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ngaga Camp",
+                "budget": "₹2.25L–₹2.95L/night all-inclusive"
+              },
+              {
+                "name": "Mboko Camp",
+                "budget": "₹2.0L–₹2.75L/night all-inclusive"
+              }
+            ],
+            "meals": [
+              "Ngaga Camp dining room",
+              "Mboko Camp dining room"
+            ]
+          },
+          {
+            "theme": "Lekoli waterways, Lango bai wildlife, and the classic Odzala second act",
+            "activities": [
+              {
+                "name": "Motor-boat or mokoro transfer along the Lekoli channel toward Lango",
+                "cost": "Included"
+              },
+              {
+                "name": "Lango bai walk for buffalo, sitatunga, and forest elephant viewing",
+                "cost": "Included"
+              },
+              {
+                "name": "Kayak or quiet river safari from camp",
+                "cost": "Included"
+              },
+              {
+                "name": "Final charter prep for the return leg toward Brazzaville",
+                "cost": "Included"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lango Camp",
+                "budget": "₹2.2L–₹3.0L/night all-inclusive"
+              },
+              {
+                "name": "Mboko Camp",
+                "budget": "₹2.0L–₹2.75L/night all-inclusive"
+              }
+            ],
+            "meals": [
+              "Lango Camp dining room",
+              "Mboko Camp dining room"
+            ]
+          },
+          {
+            "theme": "Optional extra wildlife day for a slower luxury pacing in the forest",
+            "activities": [
+              {
+                "name": "Second gorilla tracking or specialist birding walk",
+                "cost": "₹52,000–₹61,000 if added as another gorilla track"
+              },
+              {
+                "name": "Additional river safari or bai session",
+                "cost": "Included"
+              },
+              {
+                "name": "Private guide upgrade or photo-focused activity",
+                "cost": "₹8,400–₹16,800"
+              },
+              {
+                "name": "Camp-to-airstrip transfer for the next-day departure",
+                "cost": "Included"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ngaga Camp",
+                "budget": "₹2.25L–₹2.95L/night all-inclusive"
+              },
+              {
+                "name": "Lango Camp",
+                "budget": "₹2.2L–₹3.0L/night all-inclusive"
+              }
+            ],
+            "meals": [
+              "Ngaga Camp dining room",
+              "Lango Camp dining room"
+            ]
+          }
+        ]
+      },
+      "Pointe-Noire": {
+        "name": "Pointe-Noire",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Domestic flight south, red-earth canyon scenery, and Atlantic sunset time",
+            "activities": [
+              {
+                "name": "ECAir or Trans Air Congo flight from Brazzaville to Pointe-Noire",
+                "cost": "₹9,800–₹12,500"
+              },
+              {
+                "name": "Taxi from Antonio Agostinho Neto Airport to the hotel",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Gorges de Diosso entry or local-site access fee",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Round-trip taxi to Diosso and back via Côte Sauvage",
+                "cost": "₹2,100–₹4,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "DoubleTree by Hilton Pointe-Noire City Centre",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "Hotel Elais",
+                "budget": "₹7,000–₹11,000/night"
+              },
+              {
+                "name": "Atlantic Palace Hotel",
+                "budget": "₹11,000–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "L'Arbalete",
+              "La Voile Blanche",
+              "Le Derrick"
+            ]
+          },
+          {
+            "theme": "City beaches, African Circle, and a lighter coast day before moving north",
+            "activities": [
+              {
+                "name": "Taxi rides between Place du Cercle Africain, the market quarter, and Côte Sauvage",
+                "cost": "₹560–₹1,400"
+              },
+              {
+                "name": "Côte Sauvage beach time",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hotel pool or beachfront day-use spend",
+                "cost": "₹700–₹2,100"
+              },
+              {
+                "name": "Evening taxi for dinner on the seafront",
+                "cost": "₹280–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Palm Beach",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "DoubleTree by Hilton Pointe-Noire City Centre",
+                "budget": "₹14,000–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Chez Denise Le Piano Bar",
+              "Jaipur Restaurant",
+              "Quick Sandwich"
+            ]
+          }
+        ]
+      },
+      "Loango Bay": {
+        "name": "Loango Bay",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Quiet coast, Loango heritage, and a small-boat or fishing outing",
+            "activities": [
+              {
+                "name": "Taxi from Pointe-Noire to Loango Bay or Malonda Lodge",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Ma-Loango Museum stop with local ticket or donation",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Pre-arranged fishing boat or short pirogue outing from the bay",
+                "cost": "₹2,800–₹5,600"
+              },
+              {
+                "name": "Loango Bay beach walk and sunset",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Malonda Lodge",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Guest Wharf",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Hotel Palm Beach",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Malonda Lodge restaurant",
+              "La Voile Blanche",
+              "Hotel Palm Beach restaurant"
+            ]
+          },
+          {
+            "theme": "Optional second beach day before the short return to Pointe-Noire airport",
+            "activities": [
+              {
+                "name": "Slow morning on the bay or resort beach access",
+                "cost": "₹0–₹1,400"
+              },
+              {
+                "name": "Taxi back toward central Pointe-Noire or the airport",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Extra coastal fishing or private boat charter",
+                "cost": "₹4,200–₹8,400"
+              },
+              {
+                "name": "Short taxi rides for lunch and departure errands",
+                "cost": "₹280–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Malonda Lodge",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Guest Wharf",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Malonda Lodge restaurant",
+              "L'Arbalete",
+              "Le Derrick"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Brazzaville",
+        "to": "Odzala-Kokoua National Park",
+        "method": "Most travelers go in on lodge-arranged charter flights and camp transfers rather than public transport, so treat Odzala as a pre-booked safari block instead of a DIY side trip.",
+        "cost": "Usually bundled into safari package"
+      },
+      {
+        "from": "Odzala-Kokoua National Park",
+        "to": "Pointe-Noire",
+        "method": "Return by charter to Brazzaville first, then switch to the scheduled Brazzaville-Pointe-Noire domestic hop on ECAir or Trans Air Congo for the most reliable southbound move.",
+        "cost": "₹9,800–₹12,500 plus the included Odzala air transfer"
+      },
+      {
+        "from": "Pointe-Noire",
+        "to": "Loango Bay",
+        "method": "Private taxis are simplest for the short coastal transfer north; ask the hotel to set the fare in advance if you are heading directly to Malonda or Côte Sauvage.",
+        "cost": "₹700–₹1,400"
+      },
+      {
+        "from": "Loango Bay",
+        "to": "Pointe-Noire",
+        "method": "The return is the same quick taxi run, though some lodges can also arrange a fishing boat or coastal outing before dropping you back into town.",
+        "cost": "₹700–₹1,400"
+      }
+    ],
+    "extras": [
+      "June to September is the best practical window: Brazzaville is less humid, Odzala tracking is easier underfoot, and Pointe-Noire plus Loango Bay are far more reliable for beach days.",
+      "Basilique Sainte-Anne du Congo is usually donation-based, while the Brazza Memorial and Gorges de Diosso use small cash tickets, so keep low-denomination XAF on hand even when staying at premium hotels.",
+      "Odzala pricing looks extreme because the charter flights, guiding, conservation fees, meals, and remote luxury-camp logistics are typically packaged together rather than sold à la carte.",
+      "French goes a long way with taxi drivers in both Brazzaville and Pointe-Noire; having hotel staff write down destinations helps, especially for Diosso and Loango runs.",
+      "Trans Air Congo and ECAir are the domestic names worth checking first for the Brazzaville-Pointe-Noire sector, but schedules can shift, so build a little flex into the handoff after Odzala."
+    ],
+    "cityImages": {
+      "Brazzaville": [
+        "Basilique Sainte-Anne du Congo",
+        "Pierre Savorgnan de Brazza Memorial",
+        "Les Rapides Brazzaville"
+      ],
+      "Odzala-Kokoua National Park": [
+        "Ngaga Camp",
+        "Lango Camp",
+        "Odzala western lowland gorillas"
+      ],
+      "Pointe-Noire": [
+        "Gorges de Diosso",
+        "Côte Sauvage Pointe-Noire",
+        "Place du Cercle Africain Pointe-Noire"
+      ],
+      "Loango Bay": [
+        "Loango Bay Republic of the Congo",
+        "Ma-Loango Museum",
+        "Malonda Lodge"
+      ]
+    }
+  }
+}

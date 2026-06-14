@@ -1,0 +1,460 @@
+{
+  "name": "Angola",
+  "seed": false,
+  "lat": -11.2,
+  "lng": 17.87,
+  "region": "Africa",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹2.0L–₹3.5L",
+    "couple": "₹3.7L–₹6.1L",
+    "family4": "₹7.1L–₹11.2L"
+  },
+  "experiences": [
+    "Fortaleza de São Miguel and Luanda bay viewpoints",
+    "Kissama National Park safari and Kwanza River wildlife",
+    "Serra da Leba switchbacks and Tundavala Fissure panoramas",
+    "Cristo Rei sunset above Lubango",
+    "Benguela coast seafood and Catumbela beach time"
+  ],
+  "avoid": [
+    "November to April is hotter, wetter, and muddier in Kissama, while escarpment viewpoints around Lubango can sit in cloud after storms.",
+    "Cards and ATMs get less reliable once you leave Luanda, so carry cash for park gates, fuel, and small-town restaurants.",
+    "TAAG domestic routes and long-distance buses are useful but not always daily, so lock the Luanda-Catumbela or Luanda-Lubango leg before finalizing hotels."
+  ],
+  "combo": [
+    "Namibia",
+    "South Africa",
+    "Zambia"
+  ],
+  "landmark": "Tundavala Fissure",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "If you only have a week, keep Luanda + Kissama + one of Benguela or Lubango, then use a TAAG domestic flight on one long leg instead of forcing every transfer by road.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Luanda",
+      "lat": -8.8383,
+      "lng": 13.2344,
+      "notes": "Angola's capital is the easiest soft landing for SIM, cash, Fortaleza de São Miguel, the Marginal, and seafood dinners before you head south or into Kissama."
+    },
+    {
+      "name": "Lubango",
+      "lat": -14.9172,
+      "lng": 13.4925,
+      "notes": "Lubango is the Huila highlands base for Tundavala Fissure, Cristo Rei, and the dramatic Serra da Leba road down toward the coast."
+    },
+    {
+      "name": "Kissama National Park",
+      "lat": -10.2687,
+      "lng": 13.1221,
+      "notes": "Also spelled Quiçama, this is Angola's easiest flagship wildlife stop for giraffes, antelope, elephant habitat, and Kwanza River boat sections from a Luanda gateway."
+    },
+    {
+      "name": "Benguela",
+      "lat": -12.5763,
+      "lng": 13.4055,
+      "notes": "Benguela mixes a slower colonial core, Praia Morena and Baía Azul beach time, seafood grills, and the Catumbela airport gateway for Angola's southwest coast."
+    }
+  ],
+  "itinerary": {
+    "sim": "Unitel and Africell are the easiest airport-counter options; budget about ₹900–₹2,000 for enough data for maps, WhatsApp, and bookings, with the strongest signal in Luanda and Benguela and weaker coverage once you are deeper inside Kissama.",
+    "apps": [
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "Airbnb",
+      "TAAG Angola Airlines",
+      "XE Currency",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Luanda",
+      "Kissama National Park",
+      "Benguela",
+      "Lubango"
+    ],
+    "cities": {
+      "Luanda": {
+        "name": "Luanda",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Luanda for the history hit, your easiest hotel stock, and the transport reset before Kissama or the southwest domestic flight.",
+        "days": [
+          {
+            "theme": "Historic hilltop Luanda, the fort museum, and a first Marginal evening",
+            "activities": [
+              {
+                "name": "Fortaleza de São Miguel / Museu Central das Forças Armadas admission",
+                "cost": "₹200–₹350 pp",
+                "tip": "Traveler reports usually place foreigner entry around AOA 2,000-3,500, so carry small kwanza notes for the ticket desk."
+              },
+              {
+                "name": "Marginal de Luanda waterfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Museu da Moeda admission",
+                "cost": "₹250–₹500 pp"
+              },
+              {
+                "name": "Airport or central-city taxi rides",
+                "cost": "₹900–₹2,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "InterContinental Luanda Miramar",
+                "budget": "₹24,000–₹38,000/night"
+              },
+              {
+                "name": "EPIC SANA Luanda Hotel",
+                "budget": "₹18,000–₹30,000/night"
+              },
+              {
+                "name": "Hotel Presidente Luanda",
+                "budget": "₹11,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Lookal Mar",
+              "Cais De Quatro",
+              "Espaço Luanda"
+            ]
+          },
+          {
+            "theme": "Museums, island or bay downtime, and setting up the southbound leg",
+            "activities": [
+              {
+                "name": "Ilha do Cabo beach clubs or bay lunch stop",
+                "cost": "₹1,500–₹4,000"
+              },
+              {
+                "name": "National Museum of Anthropology admission",
+                "cost": "₹200–₹400 pp"
+              },
+              {
+                "name": "TAAG Angola Airlines flight Luanda-Catumbela or Luanda-Lubango",
+                "cost": "₹11,500–₹18,500",
+                "tip": "Domestic fares climb fast on limited-frequency dates, so book the flight before locking in Benguela or Lubango hotels."
+              },
+              {
+                "name": "Rental-car pickup for Kissama or the southwest road leg",
+                "cost": "₹5,500–₹9,500/day"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "InterContinental Luanda Miramar",
+                "budget": "₹24,000–₹38,000/night"
+              },
+              {
+                "name": "EPIC SANA Luanda Hotel",
+                "budget": "₹18,000–₹30,000/night"
+              },
+              {
+                "name": "Hotel Alvalade",
+                "budget": "₹9,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Lookal Mar",
+              "Restaurante Tamariz",
+              "Rooftop Japanese"
+            ]
+          }
+        ]
+      },
+      "Kissama National Park": {
+        "name": "Kissama National Park",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Kissama works best as a one- or two-night safari break from Luanda, especially if you want a slower game drive plus the Kwanza River add-on.",
+        "days": [
+          {
+            "theme": "Drive down from Luanda, settle in, and take an afternoon wildlife loop",
+            "activities": [
+              {
+                "name": "Luanda-Kissama transfer by rental car or private driver",
+                "cost": "₹4,500–₹9,500"
+              },
+              {
+                "name": "Kissama safari day package with guide, vehicle, and lunch",
+                "cost": "₹11,500–₹18,500 pp",
+                "tip": "Recent Luanda day-tour pricing usually lands in the USD 120-220 band, so packaged safaris are the cleanest way to cover transport, guide, and reserve access."
+              },
+              {
+                "name": "Park entry if billed separately on a self-drive visit",
+                "cost": "₹1,000–₹1,950 pp"
+              },
+              {
+                "name": "Sunset at the lodge or nearby Kwanza viewpoints",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kissama-Kurica Safari Lodge",
+                "budget": "₹12,500–₹21,500/night"
+              },
+              {
+                "name": "Carpe Diem Resort",
+                "budget": "₹7,500–₹13,500/night"
+              },
+              {
+                "name": "Complexo Turístico Doce Mar",
+                "budget": "₹6,500–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Kissama-Kurica Safari Lodge Restaurant",
+              "Carpe Diem Resort Restaurant",
+              "Doce Mar Restaurant"
+            ]
+          },
+          {
+            "theme": "Second game drive, river section, and a flexible return toward Luanda or the coast",
+            "activities": [
+              {
+                "name": "Morning game drive inside Kissama",
+                "cost": "₹4,000–₹7,500 pp"
+              },
+              {
+                "name": "Kwanza River boat safari add-on",
+                "cost": "₹2,500–₹5,000 pp"
+              },
+              {
+                "name": "Birding and lookout stops around the reserve roads",
+                "cost": "Free"
+              },
+              {
+                "name": "Shared road transfer back to Luanda or onward toward Cabo Ledo",
+                "cost": "₹2,500–₹6,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kissama-Kurica Safari Lodge",
+                "budget": "₹12,500–₹21,500/night"
+              },
+              {
+                "name": "Carpe Diem Resort",
+                "budget": "₹7,500–₹13,500/night"
+              },
+              {
+                "name": "Complexo Turístico Doce Mar",
+                "budget": "₹6,500–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Kissama-Kurica Safari Lodge Restaurant",
+              "Doce Mar Restaurant",
+              "Restaurante Carpe Diem"
+            ]
+          }
+        ]
+      },
+      "Benguela": {
+        "name": "Benguela",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Benguela is the easiest coast-and-seafood reset after Luanda, and Catumbela airport makes it the simplest domestic hop before Lubango.",
+        "days": [
+          {
+            "theme": "Catumbela arrival, Praia Morena, and a relaxed first seafood dinner",
+            "activities": [
+              {
+                "name": "TAAG Angola Airlines flight Luanda-Catumbela",
+                "cost": "₹11,500–₹18,500"
+              },
+              {
+                "name": "Airport taxi into Benguela or Lobito",
+                "cost": "₹700–₹1,800"
+              },
+              {
+                "name": "Praia Morena beach walk and old-town promenade",
+                "cost": "Free"
+              },
+              {
+                "name": "Tuk-tuk or taxi hops between hotel, beachfront, and restaurants",
+                "cost": "₹400–₹1,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Flow Hotel Benguela",
+                "budget": "₹7,500–₹13,500/night"
+              },
+              {
+                "name": "Aparthotel Mil Cidades",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Hotel Praia Morena",
+                "budget": "₹6,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Tudo na Brasa",
+              "Morena Beach Restaurant",
+              "Cervejaria Fininho"
+            ]
+          },
+          {
+            "theme": "Beach time, colonial center, and planning the climb inland to Lubango",
+            "activities": [
+              {
+                "name": "Baía Azul beach stop by taxi or rental car",
+                "cost": "₹900–₹2,400"
+              },
+              {
+                "name": "Benguela railway station and center walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Intercity bus Benguela-Lubango",
+                "cost": "₹1,600–₹3,000",
+                "tip": "The budget overland option is slower but scenic, while a rental car gives you more freedom for Serra da Leba photo stops."
+              },
+              {
+                "name": "Rental car for Benguela-Lubango road day",
+                "cost": "₹5,500–₹9,500/day"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Flow Hotel Benguela",
+                "budget": "₹7,500–₹13,500/night"
+              },
+              {
+                "name": "Hotel Mombaka",
+                "budget": "₹6,500–₹11,500/night"
+              },
+              {
+                "name": "Oceano Boutique Hotel",
+                "budget": "₹6,000–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Tudo na Brasa",
+              "Chakula Caseira",
+              "Restaurante Ferro Velho"
+            ]
+          }
+        ]
+      },
+      "Lubango": {
+        "name": "Lubango",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Lubango deserves at least two nights so you can split the plateau views between Tundavala, Cristo Rei, and the Serra da Leba road without rushing the weather.",
+        "days": [
+          {
+            "theme": "Cristo Rei views, city reset, and an easy first evening in the highlands",
+            "activities": [
+              {
+                "name": "Cristo Rei Lubango viewpoint access",
+                "cost": "Free",
+                "tip": "There is generally no formal ticket; if a local watches your car, a small cash tip is enough."
+              },
+              {
+                "name": "Lubango city taxi rides",
+                "cost": "₹500–₹1,300"
+              },
+              {
+                "name": "Museu Regional da Huíla admission",
+                "cost": "₹150–₹300 pp"
+              },
+              {
+                "name": "Sunset drinks back at the resort",
+                "cost": "₹800–₹2,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pululukwa Resort",
+                "budget": "₹10,500–₹18,500/night"
+              },
+              {
+                "name": "Kimbo do Soba",
+                "budget": "₹8,500–₹15,500/night"
+              },
+              {
+                "name": "Hotel Serra da Chela",
+                "budget": "₹6,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Pululukwa Restaurant",
+              "Kimbo do Soba Restaurant",
+              "Casper Resort Restaurant"
+            ]
+          },
+          {
+            "theme": "Tundavala Fissure, Serra da Leba switchbacks, and the signature Huila road day",
+            "activities": [
+              {
+                "name": "Tundavala Fissure viewpoint circuit",
+                "cost": "Free"
+              },
+              {
+                "name": "Serra da Leba pass viewpoints",
+                "cost": "Free",
+                "tip": "The road and pull-offs are public, so budget only for fuel, a driver, or the occasional small parking tip."
+              },
+              {
+                "name": "Private driver or rental-car day to Serra da Leba",
+                "cost": "₹5,500–₹9,500"
+              },
+              {
+                "name": "Highlands picnic or coffee stop",
+                "cost": "₹500–₹1,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pululukwa Resort",
+                "budget": "₹10,500–₹18,500/night"
+              },
+              {
+                "name": "Kimbo do Soba",
+                "budget": "₹8,500–₹15,500/night"
+              },
+              {
+                "name": "Messe Hotel Huila",
+                "budget": "₹7,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Pululukwa Restaurant",
+              "Kimbo do Soba Restaurant",
+              "Hotel Serra da Chela Restaurant"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

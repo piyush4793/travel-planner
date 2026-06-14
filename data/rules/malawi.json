@@ -1,0 +1,517 @@
+{
+  "name": "Malawi",
+  "seed": false,
+  "lat": -13.25,
+  "lng": 34.3,
+  "region": "Africa",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹1.1L–₹1.9L",
+    "couple": "₹2.0L–₹3.3L",
+    "family4": "₹3.9L–₹5.9L"
+  },
+  "experiences": [
+    "Cape Maclear snorkeling and kayaking on Lake Malawi",
+    "Shire River boat safaris in Liwonde National Park",
+    "Dry-season hiking on Zomba Plateau",
+    "Lilongwe wildlife and craft-market warm-up",
+    "Majete Wildlife Reserve add-on for Big Five safari time"
+  ],
+  "avoid": [
+    "November to April is wetter, muddier, and less reliable for lake crossings, park roads, and long minibus days.",
+    "Matolas and minibuses are the budget backbone but fill up quickly and rarely leave on a fixed clock, so keep buffer time between transfers.",
+    "Cape Maclear and Liwonde are most rewarding in the dry season, when water visibility, wildlife concentration, and road conditions are all stronger."
+  ],
+  "combo": [
+    "Zambia",
+    "Mozambique",
+    "Tanzania"
+  ],
+  "landmark": "Lake Malawi",
+  "travelStyle": [
+    "explorer",
+    "immersive",
+    "relaxed"
+  ],
+  "stopoverNote": "Lilongwe is the practical north-south gateway for Malawi itineraries. Most legs are still easiest by road with minibuses and matolas, but Ulendo Airlink is the cleanest time-saving option if you want to shortcut via Blantyre.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Lilongwe",
+      "lat": -13.9626,
+      "lng": 33.7741,
+      "notes": "Malawi's capital is the logical arrival hub for SIM, cash, a first wildlife stop, and the overland setup before heading to the lake."
+    },
+    {
+      "name": "Lake Malawi (Cape Maclear)",
+      "lat": -14.0167,
+      "lng": 34.85,
+      "notes": "Cape Maclear is the easiest Lake Malawi base for beach downtime, cichlid-rich snorkeling, kayaking, and sunset dhow trips inside the national park."
+    },
+    {
+      "name": "Liwonde National Park",
+      "lat": -15.0667,
+      "lng": 35.3167,
+      "notes": "Liwonde is Malawi's easiest classic safari stop, pairing Shire River boat safaris with elephant, hippo, and antelope sightings."
+    },
+    {
+      "name": "Zomba Plateau",
+      "lat": -15.385,
+      "lng": 35.31,
+      "notes": "The plateau adds pine forest, viewpoints, and cooler hiking weather before you loop back north or continue south toward Blantyre and Majete."
+    }
+  ],
+  "itinerary": {
+    "sim": "Airtel Malawi is the safest all-round tourist SIM, with TNM also fine in the main towns. Budget about ₹300–₹900 for enough data for maps, WhatsApp, and booking confirmations, but expect softer coverage once you are deep inside Liwonde or out on the lake.",
+    "apps": [
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "Ulendo Airlink",
+      "XE Currency",
+      "iOverlander"
+    ],
+    "cityOrder": [
+      "Lilongwe",
+      "Lake Malawi (Cape Maclear)",
+      "Liwonde National Park",
+      "Zomba Plateau"
+    ],
+    "cities": {
+      "Lilongwe": {
+        "name": "Lilongwe",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Keep Lilongwe practical: wildlife, errands, and then get moving toward the lake or southbound air link.",
+        "days": [
+          {
+            "theme": "Arrival reset, wildlife warm-up, and sorting the first Malawi road leg",
+            "activities": [
+              {
+                "name": "Lilongwe Wildlife Centre international adult entry",
+                "cost": "₹580 pp",
+                "tip": "Published international day entry is MWK 12,000, which is roughly ₹576 at the supplied conversion."
+              },
+              {
+                "name": "Old Town Mall and craft-market browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Airport taxi into Area 3 / Old Town / city hotels",
+                "cost": "₹1,400–₹2,400"
+              },
+              {
+                "name": "Long-distance minibus from Lilongwe toward Mangochi or Monkey Bay",
+                "cost": "₹650–₹1,050"
+              },
+              {
+                "name": "Matola pickup for the last Monkey Bay-Cape Maclear stretch",
+                "cost": "₹240–₹480"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Latitude 13°",
+                "budget": "₹13,500–₹22,500/night"
+              },
+              {
+                "name": "Sunbird Capital",
+                "budget": "₹9,500–₹16,500/night"
+              },
+              {
+                "name": "Kumbali Country Lodge",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Ad Lib",
+              "Mama Mia",
+              "Bombay Palace"
+            ]
+          },
+          {
+            "theme": "Use the buffer day for light wildlife, culture, or a faster southbound transport reset",
+            "activities": [
+              {
+                "name": "Kumbali Game Reserve guided game drive",
+                "cost": "₹720 pp",
+                "tip": "The published adult guided drive is MWK 15,000, which converts to about ₹720."
+              },
+              {
+                "name": "Kumbali Cultural Village tour",
+                "cost": "₹1,500–₹3,000"
+              },
+              {
+                "name": "Ulendo Airlink Lilongwe-Blantyre one-way flight",
+                "cost": "₹10,000–₹13,500",
+                "tip": "Useful when you want to save a long road day before Liwonde, Zomba, or a Majete add-on."
+              },
+              {
+                "name": "Intercity minibus from Lilongwe to Blantyre",
+                "cost": "₹950–₹1,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Latitude 13°",
+                "budget": "₹13,500–₹22,500/night"
+              },
+              {
+                "name": "Kumbali Country Lodge",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Heuglin's Lodge",
+                "budget": "₹5,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Vincent's Restaurant",
+              "Ad Lib",
+              "Bombay Palace"
+            ]
+          }
+        ]
+      },
+      "Lake Malawi (Cape Maclear)": {
+        "name": "Lake Malawi (Cape Maclear)",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Cape Maclear is best as a two-night lake break so you can keep one weather-flex day for clear water and paddling.",
+        "days": [
+          {
+            "theme": "Ease into the lake with park entry, a first snorkel, and sunset over Chembe beach",
+            "activities": [
+              {
+                "name": "Lake Malawi National Park foreign visitor entry",
+                "cost": "₹830 pp",
+                "tip": "The published international day fee is about ₹830 after converting the standard foreign visitor rate."
+              },
+              {
+                "name": "Kayak Africa half-day kayak rental or guided paddle",
+                "cost": "₹830–₹2,100 pp"
+              },
+              {
+                "name": "Cape Maclear snorkeling gear rental / reef session",
+                "cost": "₹830–₹1,700 pp"
+              },
+              {
+                "name": "Cape Maclear sunset dhow cruise",
+                "cost": "₹1,700–₹2,500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pumulani Lodge",
+                "budget": "₹24,000–₹42,000/night"
+              },
+              {
+                "name": "Thumbi View Lodge",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Mgoza Lodge",
+                "budget": "₹4,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "The Funky Cichlid",
+              "Gecko Lounge",
+              "Mgoza Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep the second lake day for a bigger island outing and one last slow Malawi beach evening",
+            "activities": [
+              {
+                "name": "Kayak Africa Domwe Island full-day kayaking and snorkeling trip",
+                "cost": "₹3,700–₹5,000 pp",
+                "tip": "Recent full-day island packages are commonly published in the ₹3.7k–₹5k band once converted from current rates."
+              },
+              {
+                "name": "Boat transfer toward Mumbo / Domwe island snorkeling zones",
+                "cost": "₹1,700–₹3,300 pp"
+              },
+              {
+                "name": "Chembe village walk and beach time",
+                "cost": "₹0"
+              },
+              {
+                "name": "Monkey Bay minibus connection setup for the onward Liwonde leg",
+                "cost": "₹240–₹720"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pumulani Lodge",
+                "budget": "₹24,000–₹42,000/night"
+              },
+              {
+                "name": "The Funky Cichlid",
+                "budget": "₹4,500–₹8,000/night"
+              },
+              {
+                "name": "Thumbi View Lodge",
+                "budget": "₹5,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "The Funky Cichlid",
+              "Gecko Lounge",
+              "Thumbi View Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Liwonde National Park": {
+        "name": "Liwonde National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "One boat safari and one game-drive day is the sweet spot unless you are explicitly adding a second premium lodge night.",
+        "days": [
+          {
+            "theme": "Trade the beach for the Shire River and start with Liwonde's easiest signature activity",
+            "activities": [
+              {
+                "name": "Road transfer from Cape Maclear / Mangochi into Liwonde lodges",
+                "cost": "₹1,700–₹4,500"
+              },
+              {
+                "name": "Liwonde National Park foreign visitor entry",
+                "cost": "₹2,500–₹2,900 pp",
+                "tip": "Recent foreign visitor park fees are usually quoted around the low-to-mid ₹2,000s equivalent per day."
+              },
+              {
+                "name": "Shared Shire River sunset boat safari",
+                "cost": "₹2,900–₹5,000 pp"
+              },
+              {
+                "name": "Lodge jetty or game-viewing transfer",
+                "cost": "₹600–₹1,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mvuu Lodge",
+                "budget": "₹28,000–₹48,000/night"
+              },
+              {
+                "name": "Mvuu Camp",
+                "budget": "₹12,500–₹22,500/night"
+              },
+              {
+                "name": "Waters Edge Liwonde",
+                "budget": "₹8,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Mvuu Lodge Restaurant",
+              "Mvuu Camp Dining Area",
+              "Waters Edge Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep the second day for classic safari time and a slower river-and-bush rhythm",
+            "activities": [
+              {
+                "name": "Morning shared game drive in Liwonde National Park",
+                "cost": "₹2,900–₹5,000 pp"
+              },
+              {
+                "name": "Guided bush walk where your lodge offers it",
+                "cost": "₹2,100–₹2,900 pp"
+              },
+              {
+                "name": "Optional second park day fee if billed separately by calendar date",
+                "cost": "₹2,500–₹2,900 pp"
+              },
+              {
+                "name": "Village or craft stop around the park edge en route to Zomba",
+                "cost": "₹0–₹600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kuthengo Camp",
+                "budget": "₹36,000–₹58,000/night"
+              },
+              {
+                "name": "Mvuu Lodge",
+                "budget": "₹28,000–₹48,000/night"
+              },
+              {
+                "name": "Waters Edge Liwonde",
+                "budget": "₹8,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Kuthengo Camp Dining Tent",
+              "Mvuu Lodge Restaurant",
+              "Waters Edge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Zomba Plateau": {
+        "name": "Zomba Plateau",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Zomba works best with one viewpoint day and one longer hike or southbound extension day.",
+        "days": [
+          {
+            "theme": "Climb into cooler air for plateau views, pines, and Malawi's easiest classic hiking stop",
+            "activities": [
+              {
+                "name": "Minibus or private transfer from Liwonde to Zomba town",
+                "cost": "₹500–₹2,400"
+              },
+              {
+                "name": "Taxi up the Ku Chawe road to Zomba Plateau trailheads",
+                "cost": "₹1,000–₹1,700"
+              },
+              {
+                "name": "Local guide for Emperor's View / Chingwe's Hole half-day hike",
+                "cost": "₹400–₹960 per guide",
+                "tip": "Recent quoted guide bands on the plateau are usually negotiated directly and do not normally include a separate park entry fee."
+              },
+              {
+                "name": "Trout Farm and plateau picnic stop",
+                "cost": "₹0–₹400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sunbird Ku Chawe",
+                "budget": "₹10,500–₹17,500/night"
+              },
+              {
+                "name": "Zomba Forest Lodge",
+                "budget": "₹6,500–₹11,500/night"
+              },
+              {
+                "name": "Casa Rossa",
+                "budget": "₹5,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Sunbird Ku Chawe Restaurant",
+              "Casa Rossa Restaurant",
+              "Zomba Forest Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Use the final day for a longer hike or a proper safari extension toward Majete before heading back north",
+            "activities": [
+              {
+                "name": "Full-day Zomba Plateau hike to Williams Falls or Dziwe la Nkhalamba with guide",
+                "cost": "₹1,200–₹1,700 per guide"
+              },
+              {
+                "name": "Majete Wildlife Reserve foreign visitor entry",
+                "cost": "₹2,500 pp",
+                "tip": "Best treated as a southbound add-on via Blantyre rather than a rushed same-day detour."
+              },
+              {
+                "name": "Majete Wildlife Reserve shared game drive",
+                "cost": "₹3,300–₹4,600 pp"
+              },
+              {
+                "name": "Ulendo Airlink Blantyre-Lilongwe one-way flight after the southbound road transfer",
+                "cost": "₹10,000–₹13,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sunbird Ku Chawe",
+                "budget": "₹10,500–₹17,500/night"
+              },
+              {
+                "name": "Zomba Forest Lodge",
+                "budget": "₹6,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Sunbird Ku Chawe Restaurant",
+              "Casa Rossa Restaurant",
+              "Zomba Forest Lodge Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Lilongwe",
+        "to": "Lake Malawi (Cape Maclear)",
+        "method": "Budget travelers usually go by minibus toward Monkey Bay and finish the last stretch by matola, while private transfers save several hours.",
+        "cost": "₹900–₹8,000"
+      },
+      {
+        "from": "Lake Malawi (Cape Maclear)",
+        "to": "Liwonde National Park",
+        "method": "Return through Monkey Bay or Mangochi and continue overland by minibus or lodge-arranged road transfer into Liwonde.",
+        "cost": "₹1,200–₹4,500"
+      },
+      {
+        "from": "Liwonde National Park",
+        "to": "Zomba Plateau",
+        "method": "The simplest move is an overland hop to Zomba town followed by a taxi or lodge transfer up the Ku Chawe road.",
+        "cost": "₹500–₹2,900"
+      },
+      {
+        "from": "Zomba Plateau",
+        "to": "Lilongwe",
+        "method": "Either descend and ride long-distance minibuses north again, or continue to Blantyre and use Ulendo Airlink to cut the return travel time.",
+        "cost": "₹1,200–₹13,500"
+      }
+    ],
+    "extras": [
+      "May to October is the sweet spot for this loop: the lake is clearer, Liwonde wildlife gathers closer to water, and the Zomba trails stay more manageable.",
+      "Cape Maclear snorkeling is most rewarding when the lake is calm and visibility is strong, so keep your paddling day flexible instead of locking every hour in advance.",
+      "Matolas are handy for last-mile hops but they are luggage-tight and schedule-light, so keep small cash and a backup private transfer quote if you are carrying a lot of gear.",
+      "If you want one extra safari splurge beyond Liwonde, Majete Wildlife Reserve is the strongest southbound add-on and pairs better with a Blantyre transit night than with a same-day out-and-back.",
+      "Ulendo Airlink is not essential for the core Malawi loop, but it becomes the best value time-saver once you start mixing Zomba, Majete, and a return to Lilongwe."
+    ],
+    "cityImages": {
+      "Lilongwe": [
+        "Lilongwe Wildlife Centre Malawi",
+        "Latitude 13 Lilongwe",
+        "Old Town Lilongwe market"
+      ],
+      "Lake Malawi (Cape Maclear)": [
+        "Cape Maclear Lake Malawi snorkeling",
+        "Kayak Africa Cape Maclear",
+        "Lake Malawi beach Cape Maclear"
+      ],
+      "Liwonde National Park": [
+        "Liwonde National Park boat safari Malawi",
+        "Mvuu Lodge Liwonde",
+        "Shire River Liwonde hippos"
+      ],
+      "Zomba Plateau": [
+        "Zomba Plateau Emperor's View",
+        "Sunbird Ku Chawe Zomba Plateau",
+        "Zomba Plateau hiking Malawi"
+      ]
+    }
+  }
+}

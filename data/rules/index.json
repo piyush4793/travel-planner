@@ -1145,9 +1145,9 @@
     "lng": 21.76,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 11
   },
   {
     "name": "Republic of the Congo",
@@ -1155,9 +1155,9 @@
     "lng": 15.83,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 10
   },
   {
     "name": "Angola",
@@ -1165,9 +1165,9 @@
     "lng": 17.87,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 10
   },
   {
     "name": "Mozambique",
@@ -1205,9 +1205,9 @@
     "lng": 34.3,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 10
   },
   {
     "name": "Botswana",
@@ -1385,9 +1385,9 @@
     "lng": 11.61,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 9
   },
   {
     "name": "Equatorial Guinea",
