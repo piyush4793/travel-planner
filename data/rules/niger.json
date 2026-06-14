@@ -1,0 +1,445 @@
+{
+  "name": "Niger",
+  "seed": false,
+  "lat": 17.61,
+  "lng": 8.08,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹1.2L–₹2L",
+    "couple": "₹2.2L–₹3.5L",
+    "family4": "₹4.2L–₹6.2L"
+  },
+  "experiences": [
+    "Niamey's markets, museums, and Niger River sunsets",
+    "Agadez old town, Grand Mosque, and Sultan's Palace",
+    "Aïr Mountains oasis camps with Tuareg-guided 4x4 travel",
+    "W National Park safari drives for elephant, antelope, and birdlife",
+    "Cure Salée seasonal nomad gathering near In-Gall"
+  ],
+  "avoid": [
+    "March onward turns brutally hot, and June to September can wash out rougher roads around the Aïr and W National Park.",
+    "Safety advisory: multiple governments currently advise against travel to Niger; recheck live security guidance, use hotel-arranged airport transfers, and avoid independent road movement after dark.",
+    "Bush taxis still handle many paved intercity legs, but desert travel beyond Agadez needs a properly equipped 4x4, extra water, cash in XOF, and a trusted local driver-guide."
+  ],
+  "combo": [
+    "Benin",
+    "Nigeria"
+  ],
+  "landmark": "Grand Mosque of Agadez",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Niamey (NIM) is the only practical international gateway. The smoothest loop is Niamey first, then Agadez by bush taxi or limited domestic flight, a 4x4 circuit into the Aïr, and a separate road or guided safari leg south to W National Park.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Niamey",
+      "lat": 13.5116,
+      "lng": 2.1254,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "National Museum, Grand Marché, riverfront hotels, and the easiest place to sort SIMs, cash, domestic transport, and current security updates"
+    },
+    {
+      "name": "Agadez",
+      "lat": 16.9733,
+      "lng": 7.9911,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "UNESCO-listed mud-brick old town with the Grand Mosque, Sultan's Palace, caravan history, and classic auberges before heading into the Sahara"
+    },
+    {
+      "name": "W National Park",
+      "lat": 12.3399,
+      "lng": 2.4285,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "The Niger section of transboundary W Park is best for dry-season wildlife drives, simple camp stays, and guided access from the Say-Tapoa side"
+    },
+    {
+      "name": "Aïr Mountains",
+      "lat": 18.4869,
+      "lng": 8.7208,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Remote oasis-and-granite massif reached from Agadez by 4x4, with Timia and Iférouane the classic bases for desert scenery and Tuareg hospitality"
+    }
+  ],
+  "itinerary": {
+    "sim": "Airtel Niger is the easiest prepaid tourist pick in Niamey; budget roughly ₹420–₹980 for a starter data bundle, but expect far weaker coverage once you leave the capital and only patchy service around Agadez.",
+    "apps": [
+      "Google Maps offline",
+      "Maps.me",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Niamey",
+      "Agadez",
+      "Aïr Mountains",
+      "W National Park"
+    ],
+    "cities": {
+      "Niamey": {
+        "name": "Niamey",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Land in the capital, get your bearings, and use Niamey for the practical prep every Niger trip needs right now.",
+            "activities": [
+              {
+                "name": "Airport taxi from Diori Hamani International Airport to the Plateau or riverfront hotels",
+                "cost": "₹560–₹1,120"
+              },
+              {
+                "name": "National Museum of Niger entry",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Grand Marché and Petit Marché browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "City taxi hops between the museum, market, and riverfront",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "Sunset drink or tea on the Niger River terrace at Grand Hôtel du Niger",
+                "cost": "₹280–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Radisson Blu Hotel & Conference Center, Niamey",
+                "budget": "₹15,000–₹24,000/night"
+              },
+              {
+                "name": "Bravia Hotel Niamey",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Grand Hôtel du Niger",
+                "budget": "₹8,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Le Pilier",
+              "Café Marrakech",
+              "Grand Hôtel du Niger Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep Niamey focused on logistics: cash, SIM, and one last city day before you commit to the desert leg north.",
+            "activities": [
+              {
+                "name": "Bush taxi seat booking toward Agadez or domestic-flight recheck when a Niamey–Agadez service is operating",
+                "cost": "₹2,800–₹24,000"
+              },
+              {
+                "name": "Grande Mosquée de Niamey exterior stop and central taxi ride",
+                "cost": "₹140–₹420"
+              },
+              {
+                "name": "Craft shopping at Centre Artisanal Wadata",
+                "cost": "₹0–₹1,400"
+              },
+              {
+                "name": "Water, scarf, and cash stock-up for Agadez or W National Park",
+                "cost": "₹1,400–₹4,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Noom Hotel Niamey",
+                "budget": "₹12,500–₹20,000/night"
+              },
+              {
+                "name": "Bravia Hotel Niamey",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Le Pilier",
+              "Café Marrakech",
+              "Noom Hotel Restaurant"
+            ]
+          }
+        ]
+      },
+      "Agadez": {
+        "name": "Agadez",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Reach the old caravan city, settle into a Saharan auberge, and explore Agadez's mud-brick core on foot.",
+            "activities": [
+              {
+                "name": "Niamey–Agadez bush taxi seat or shared transfer",
+                "cost": "₹2,800–₹4,200"
+              },
+              {
+                "name": "Grand Mosque of Agadez roof / minaret access",
+                "cost": "₹700",
+                "tip": "The usual quoted ceiling is about 5,000 XOF and access often depends on finding the guardian and coordinating permission."
+              },
+              {
+                "name": "Grand Mosque quarter and old-town walking circuit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tea stop and market browse around Agadez's historic center",
+                "cost": "₹140–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel de l'Aïr",
+                "budget": "₹4,200–₹6,800/night"
+              },
+              {
+                "name": "Auberge d'Azel",
+                "budget": "₹3,500–₹5,600/night"
+              },
+              {
+                "name": "Hôtel de la Paix",
+                "budget": "₹3,500–₹5,600/night"
+              }
+            ],
+            "meals": [
+              "Restaurant de l'Hôtel de l'Aïr",
+              "Auberge d'Azel Restaurant",
+              "Restaurant de la Paix"
+            ]
+          },
+          {
+            "theme": "Use a second Agadez day for palace access, desert prep, and the seasonal Cure Salée angle if your timing is unusual.",
+            "activities": [
+              {
+                "name": "Sultan's Palace of Agadez guided visit or guardian fee",
+                "cost": "₹280–₹700",
+                "tip": "There is usually no fixed posted ticket, but a small guide or guardian payment is normally expected."
+              },
+              {
+                "name": "4x4 quote, fuel, and water loading for the Aïr circuit",
+                "cost": "₹1,400–₹4,200"
+              },
+              {
+                "name": "Cure Salée festival access at In-Gall (seasonal, usually September)",
+                "cost": "₹0",
+                "tip": "Festival entry itself is generally free, but you still need transport, camping, and guide logistics from Agadez."
+              },
+              {
+                "name": "4x4 and guide share from Agadez to In-Gall during Cure Salée",
+                "cost": "₹2,800–₹7,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge d'Azel",
+                "budget": "₹3,500–₹5,600/night"
+              },
+              {
+                "name": "Hôtel de l'Aïr",
+                "budget": "₹4,200–₹6,800/night"
+              }
+            ],
+            "meals": [
+              "Auberge d'Azel Restaurant",
+              "Restaurant de l'Hôtel de l'Aïr",
+              "Restaurant de la Paix"
+            ]
+          }
+        ]
+      },
+      "Aïr Mountains": {
+        "name": "Aïr Mountains",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Leave the pavement behind with a proper Tuareg-led 4x4 day into the massif, aiming for oasis country rather than rushing the desert.",
+            "activities": [
+              {
+                "name": "Shared 4x4 with driver-guide from Agadez toward Timia or Iférouane",
+                "cost": "₹8,400–₹14,000/person share"
+              },
+              {
+                "name": "Campement de Timia room or simple desert-camp stay",
+                "cost": "₹2,100–₹3,800"
+              },
+              {
+                "name": "Timia oasis walk and village tea stop",
+                "cost": "₹140–₹560"
+              },
+              {
+                "name": "Water, picnic, and fuel contribution for the desert leg",
+                "cost": "₹700–₹1,680"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Campement de Timia",
+                "budget": "₹2,100–₹3,800/night"
+              },
+              {
+                "name": "Campement d'Iférouane",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "Auberge d'Azel",
+                "budget": "₹3,500–₹5,600/night"
+              }
+            ],
+            "meals": [
+              "Campement de Timia table d'hôte",
+              "Campement d'Iférouane table d'hôte",
+              "Auberge d'Azel Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep the Aïr slow and scenic with more oasis time, desert viewpoints, and the kind of buffer that remote Sahara travel always needs.",
+            "activities": [
+              {
+                "name": "Half-day 4x4 outing to surrounding wadis, granite viewpoints, or palm gardens",
+                "cost": "₹2,800–₹5,600"
+              },
+              {
+                "name": "Camel ride or local-guide walk near Timia / Iférouane",
+                "cost": "₹700–₹1,680"
+              },
+              {
+                "name": "Second desert-camp night or camp-fire dinner add-on",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Return 4x4 share back toward Agadez",
+                "cost": "₹4,200–₹7,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Campement d'Iférouane",
+                "budget": "₹2,800–₹4,500/night"
+              },
+              {
+                "name": "Campement de Timia",
+                "budget": "₹2,100–₹3,800/night"
+              }
+            ],
+            "meals": [
+              "Campement d'Iférouane table d'hôte",
+              "Campement de Timia table d'hôte",
+              "Picnic arranged by your driver-guide"
+            ]
+          }
+        ]
+      },
+      "W National Park": {
+        "name": "W National Park",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Treat W as a dry-season safari block: enter early, use a guide, and keep expectations realistic because access and security can change.",
+            "activities": [
+              {
+                "name": "Road transfer from Niamey or Say to the Tapoa entrance area",
+                "cost": "₹1,400–₹3,500"
+              },
+              {
+                "name": "W National Park foreign entry permit",
+                "cost": "₹1,400"
+              },
+              {
+                "name": "4x4 safari vehicle and guide share inside the park",
+                "cost": "₹2,800–₹7,000"
+              },
+              {
+                "name": "Campement de la Tapoa room or park-side camp stay",
+                "cost": "₹2,800–₹4,900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Campement de la Tapoa",
+                "budget": "₹2,800–₹4,900/night"
+              },
+              {
+                "name": "Campement de l'Entrée W",
+                "budget": "₹2,100–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Campement de la Tapoa table d'hôte",
+              "Campement de l'Entrée W kitchen",
+              "Roadside grill stop in Say"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Niamey",
+        "to": "Agadez",
+        "method": "Bush taxi or limited domestic flight",
+        "cost": "₹2,800–₹24,000"
+      },
+      {
+        "from": "Agadez",
+        "to": "Aïr Mountains",
+        "method": "4x4 with local driver-guide (essential)",
+        "cost": "₹8,400–₹14,000/person share"
+      },
+      {
+        "from": "Aïr Mountains",
+        "to": "W National Park",
+        "method": "Return via Agadez and Niamey, then road transfer south",
+        "cost": "₹6,500–₹18,000"
+      }
+    ],
+    "extras": [
+      "Safety advisory: several governments advise against travel to Niger; recheck live advisories before departure and again before every overland leg.",
+      "Cure Salée usually runs around September near In-Gall, so it sits outside the cooler Nov–Feb sweet spot even though festival access itself is normally free.",
+      "Carry enough XOF cash before leaving Niamey because cards, ATMs, and fuel reliability thin out fast on both the Agadez and W routes."
+    ]
+  }
+}

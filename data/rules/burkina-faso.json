@@ -1,0 +1,463 @@
+{
+  "name": "Burkina Faso",
+  "seed": false,
+  "lat": 12.24,
+  "lng": -1.56,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹80K–₹1.3L",
+    "couple": "₹1.5L–₹2.2L",
+    "family4": "₹2.9L–₹4.1L"
+  },
+  "experiences": [
+    "FESPACO cinema culture in Ouagadougou",
+    "Tiébélé's Kassena painted royal court",
+    "Grand Mosque and old quarter walks in Bobo-Dioulasso",
+    "Karfiguéla Falls and Sindou Peaks near Banfora",
+    "Ruins of Loropéni UNESCO day trip"
+  ],
+  "avoid": [
+    "June to September is the wettest stretch, so laterite roads around Tiébélé, Sindou, and Loropéni become slower and muddier.",
+    "Safety advisory: independent trips are usually limited to the Ouagadougou-Bobo-Dioulasso-Banfora-Tiébélé corridor in daylight; avoid the far north, east, and border zones unless you have current local guidance and have rechecked travel advisories.",
+    "Cash is still essential for taxis, community guides, and attraction fees; card acceptance is mostly limited to larger Ouagadougou hotels."
+  ],
+  "combo": [
+    "Ghana",
+    "Cote d'Ivoire"
+  ],
+  "landmark": "Ruins of Loropéni",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Ouagadougou (OUA) is the clear gateway. The cleanest first-time loop is Ouagadougou → Tiébélé → Bobo-Dioulasso → Banfora, using taxis for the southbound Tiébélé leg and Rakieta or TCV coaches for the western intercity stretches.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Ouagadougou",
+      "lat": 12.3714,
+      "lng": -1.5197,
+      "notes": "Capital base for the National Museum, Moro-Naba court ceremony, craft shopping, major hotels, and late-February FESPACO screenings in odd-numbered years."
+    },
+    {
+      "name": "Tiébélé",
+      "lat": 11.0961,
+      "lng": -1.1084,
+      "notes": "Kassena country stop for the painted royal court, rural compounds, and a slower overnight close to the Ghana border."
+    },
+    {
+      "name": "Bobo-Dioulasso",
+      "lat": 11.1771,
+      "lng": -4.2979,
+      "notes": "Burkina Faso's most atmospheric city for the clay Grand Mosque, old Kibidwé quarter, music history, and excellent market food."
+    },
+    {
+      "name": "Banfora",
+      "lat": 10.6333,
+      "lng": -4.7667,
+      "notes": "Southwest base for Cascades de Karfiguéla, Domes de Fabedougou, the Sindou Peaks, and the longer UNESCO run toward Loropéni."
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange Burkina Faso is the easiest all-route pick for Ouaga, Bobo, and Banfora, with patchier but usable coverage toward Tiébélé; expect roughly ₹420–₹1,120 for a prepaid SIM or eSIM bundle with enough data for maps, WhatsApp, and bookings.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "WhatsApp",
+      "Orange Money",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Ouagadougou",
+      "Tiébélé",
+      "Bobo-Dioulasso",
+      "Banfora"
+    ],
+    "cities": {
+      "Ouagadougou": {
+        "name": "Ouagadougou",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Settle into Burkina Faso with museum context, central boulevards, and an easy first-night food circuit.",
+            "activities": [
+              {
+                "name": "Airport taxi from Ouagadougou Airport into the city center or Ouaga 2000",
+                "cost": "₹280–₹560"
+              },
+              {
+                "name": "Musée National du Burkina Faso entry",
+                "cost": "₹210"
+              },
+              {
+                "name": "Cathédrale de l'Immaculée-Conception and central boulevard walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Village Artisanal de Ouagadougou craft-market browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Taxi hops between the museum, craft village, and dinner",
+                "cost": "₹210–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bravia Hotel Ouagadougou",
+                "budget": "₹11,500–₹17,500/night"
+              },
+              {
+                "name": "Sopatel Silmandé",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Lancaster Ouaga 2000",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Le Verdoyant",
+              "Villa Kaya",
+              "Café Cappuccino"
+            ]
+          },
+          {
+            "theme": "Use a second capital day for living traditions, green space, and a festival screening if your dates match FESPACO.",
+            "activities": [
+              {
+                "name": "Moro-Naba ceremony visit in Gounghin (Friday morning viewing)",
+                "cost": "₹0"
+              },
+              {
+                "name": "Parc Urbain Bangr-Weoogo entry",
+                "cost": "₹140–₹210"
+              },
+              {
+                "name": "Musée de la Musique entry",
+                "cost": "₹140"
+              },
+              {
+                "name": "FESPACO public film-screening ticket when the festival is on",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "City taxi hops between Gounghin, Bangr-Weoogo, and the cinema halls",
+                "cost": "₹280–₹560"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Nomade B&B",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Bravia Hotel Ouagadougou",
+                "budget": "₹11,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Le Verdoyant",
+              "Café Cappuccino",
+              "Restaurant de l'Azalaï Hôtel Ouagadougou"
+            ]
+          }
+        ]
+      },
+      "Tiébélé": {
+        "name": "Tiébélé",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Road conditions vary a lot after Po, so start early and avoid trying to do the round-trip from Ouaga in a rush during the rainy season.",
+        "days": [
+          {
+            "theme": "Travel south into Kassena country for one of West Africa's most distinctive living architectural sites.",
+            "activities": [
+              {
+                "name": "Shared taxi or hired car from Ouagadougou to Tiébélé via Po",
+                "cost": "₹1,120–₹3,500"
+              },
+              {
+                "name": "Royal Court of Tiébélé community entry with mandatory local guide",
+                "cost": "₹280–₹420"
+              },
+              {
+                "name": "Short local taxi or moto ride between the market area and the royal court",
+                "cost": "₹70–₹140"
+              },
+              {
+                "name": "Evening village walk with a local host",
+                "cost": "₹140–₹280"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Ouessongo",
+                "budget": "₹1,800–₹3,000/night"
+              }
+            ]
+          }
+        ]
+      },
+      "Bobo-Dioulasso": {
+        "name": "Bobo-Dioulasso",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Cross west by coach, then spend the afternoon on Bobo's old mud-brick core and market streets.",
+            "activities": [
+              {
+                "name": "Rakieta or TCV coach from Ouagadougou to Bobo-Dioulasso",
+                "cost": "₹1,120–₹1,680"
+              },
+              {
+                "name": "Guided visit to the Grand Mosque of Bobo-Dioulasso",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Bobo old quarter and Kibidwé artisans area walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Taxi hops between the station, mosque quarter, and your hotel",
+                "cost": "₹140–₹350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Villa Bobo",
+                "budget": "₹5,000–₹8,000/night"
+              },
+              {
+                "name": "Hôtel L'Auberge",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Wifama Hôtel",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Villa Bobo",
+              "Le Rouf",
+              "Tontons Grillades"
+            ]
+          },
+          {
+            "theme": "Lean into Bobo's music-and-history side with museum time and a relaxed second city day.",
+            "activities": [
+              {
+                "name": "Musée Sogossira Sanon entry",
+                "cost": "₹140–₹210"
+              },
+              {
+                "name": "Old railway station and Avenue de la Nation walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Local guide or taxi run to the sacred fish quarter of Dafra",
+                "cost": "₹210–₹420"
+              },
+              {
+                "name": "Evening live-music cover at a central maquis or hotel venue",
+                "cost": "₹140–₹280"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Villa Bobo",
+                "budget": "₹5,000–₹8,000/night"
+              },
+              {
+                "name": "Les Palmiers",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Le Rouf",
+              "Restaurant Villa Bobo",
+              "Tontons Grillades"
+            ]
+          }
+        ]
+      },
+      "Banfora": {
+        "name": "Banfora",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Banfora works best with your own taxi for waterfalls, domes, Sindou, or the long Loropéni run; public transport exists but makes the day much slower.",
+        "days": [
+          {
+            "theme": "Move south from Bobo for the classic Banfora nature loop of falls, domes, and sugar-cane country.",
+            "activities": [
+              {
+                "name": "Rakieta, TCV, or shared taxi from Bobo-Dioulasso to Banfora",
+                "cost": "₹560–₹980"
+              },
+              {
+                "name": "Cascades de Karfiguéla entry",
+                "cost": "₹140"
+              },
+              {
+                "name": "Domes de Fabedougou local guide fee",
+                "cost": "₹280–₹420"
+              },
+              {
+                "name": "Taxi loop for Banfora, Karfiguéla, and Fabedougou",
+                "cost": "₹420–₹840"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Canne à Sucre",
+                "budget": "₹3,500–₹6,000/night"
+              },
+              {
+                "name": "Hôtel de la Comoé",
+                "budget": "₹4,000–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Canne à Sucre",
+              "Restaurant de l'Hôtel de la Comoé"
+            ]
+          },
+          {
+            "theme": "Use Banfora for the sandstone drama of Sindou and an unhurried southwest road day.",
+            "activities": [
+              {
+                "name": "Pics de Sindou entry",
+                "cost": "₹140"
+              },
+              {
+                "name": "Mandatory local guide for the Sindou Peaks circuit",
+                "cost": "₹280–₹420"
+              },
+              {
+                "name": "Taxi or shared-car run from Banfora to Sindou and back",
+                "cost": "₹840–₹1,680"
+              },
+              {
+                "name": "Banfora market fruit and cane-juice stop",
+                "cost": "₹70–₹140"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Canne à Sucre",
+                "budget": "₹3,500–₹6,000/night"
+              },
+              {
+                "name": "Hôtel Calypso",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Canne à Sucre",
+              "Restaurant de l'Hôtel de la Comoé"
+            ]
+          },
+          {
+            "theme": "If you have a final extra day, stretch southwest for Burkina Faso's signature UNESCO fortification site.",
+            "activities": [
+              {
+                "name": "Private or shared vehicle from Banfora toward Gaoua and Loropéni",
+                "cost": "₹2,100–₹4,200"
+              },
+              {
+                "name": "Ruins of Loropéni UNESCO site entry",
+                "cost": "₹210"
+              },
+              {
+                "name": "Local guide at the Ruins of Loropéni",
+                "cost": "₹280–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Canne à Sucre",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Canne à Sucre"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Ouagadougou",
+        "to": "Tiébélé",
+        "method": "Shared taxi via Po is the usual budget option, while a hired taxi or driver is far smoother if you want to keep the same day flexible",
+        "cost": "₹1,120–₹3,500"
+      },
+      {
+        "from": "Tiébélé",
+        "to": "Bobo-Dioulasso",
+        "method": "Most travelers return north toward Ouagadougou or Po first, then continue west by Rakieta or TCV coach; a direct private transfer is faster but expensive",
+        "cost": "₹1,680–₹5,600"
+      },
+      {
+        "from": "Bobo-Dioulasso",
+        "to": "Banfora",
+        "method": "Rakieta, TCV, and shared taxis all run this easy southwest corridor, with taxis saving the most time for side trips",
+        "cost": "₹560–₹1,120"
+      },
+      {
+        "from": "Banfora",
+        "to": "Ouagadougou",
+        "method": "Overnight or daytime coach with Rakieta/TCV is the simplest reset, while shared taxis are faster but less comfortable",
+        "cost": "₹1,120–₹2,100"
+      }
+    ],
+    "extras": [
+      "November to February is the sweet spot: the air is drier and cooler, waterfall and sandstone sites are easier to manage, and long road days are much less punishing than in the rains.",
+      "Security conditions in Burkina Faso can change quickly, so confirm the latest advice with your embassy and hotel before taking any road beyond the Ouaga-Bobo-Banfora-Tiébélé corridor.",
+      "FESPACO is usually held in late February of odd-numbered years; if your dates miss it, keep the Ouagadougou cinema line as optional and spend the extra time at Bangr-Weoogo or the craft village instead.",
+      "Banfora rewards an early start: Karfiguéla, Fabedougou, Sindou, and Loropéni all involve heat and long drives, and local taxis are easiest to negotiate the evening before.",
+      "Outside larger hotels, expect cash-only payments for bus tickets, guides, and attraction entries, and keep small notes ready for station porters and taxi changes."
+    ],
+    "cityImages": {
+      "Ouagadougou": [
+        "Musée National du Burkina Faso",
+        "Village Artisanal de Ouagadougou",
+        "FESPACO Ouagadougou"
+      ],
+      "Tiébélé": [
+        "Royal Court of Tiébélé",
+        "Tiébélé painted houses",
+        "Kassena architecture Burkina Faso"
+      ],
+      "Bobo-Dioulasso": [
+        "Grand Mosque of Bobo-Dioulasso",
+        "Kibidwé Bobo-Dioulasso",
+        "Bobo-Dioulasso old railway station"
+      ],
+      "Banfora": [
+        "Cascades de Karfiguéla",
+        "Pics de Sindou",
+        "Ruins of Loropéni"
+      ]
+    }
+  }
+}

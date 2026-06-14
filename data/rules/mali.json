@@ -1,0 +1,474 @@
+{
+  "name": "Mali",
+  "seed": false,
+  "lat": 17.57,
+  "lng": -4,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹1L–₹1.75L",
+    "couple": "₹1.9L–₹3L",
+    "family4": "₹3.6L–₹5.1L"
+  },
+  "experiences": [
+    "Musée National du Mali and Bamako's Niger-side city life",
+    "Great Mosque of Djenné and mud-brick old-town lanes",
+    "Timbuktu manuscript-house visits and Saharan skyline",
+    "Dogon escarpment village walks with local guides",
+    "Seasonal Niger pinasse travel and classic bush-taxi logistics"
+  ],
+  "avoid": [
+    "March to May gets brutally hot in Djenné, Dogon Country and Timbuktu, so walking days feel shorter and midday sightseeing becomes draining.",
+    "June to September brings rain and washouts around Mopti and Bandiagara; roads slow down even as river levels improve for pinasses.",
+    "Conflict and banditry risks remain serious in northern Mali and can also change around Mopti-region routes, so never assume a Timbuktu or Dogon transfer is routine without fresh local security advice."
+  ],
+  "combo": [
+    "Senegal",
+    "Mauritania"
+  ],
+  "landmark": "Great Mosque of Djenné",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Bamako (BKO) is the only practical international gateway. Most independent routes use Bamako for the first night, then head east by bush taxi to Djenné and Dogon Country, while Timbuktu works best as a separate add-on by domestic flight or seasonal pinasse rather than a casual overland detour.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Bamako",
+      "lat": 12.6392,
+      "lng": -8.0029,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Capital gateway for the National Museum, artisan markets, Niger River evenings, and the easiest place to sort cash, SIMs and onward Mali transport."
+    },
+    {
+      "name": "Djenné",
+      "lat": 13.9061,
+      "lng": -4.5533,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "UNESCO mud-brick town for the Great Mosque, low-rise rooftops, market-day energy and one of West Africa's most distinctive historic skylines."
+    },
+    {
+      "name": "Timbuktu",
+      "lat": 16.7666,
+      "lng": -3.0026,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Legendary Saharan city for manuscript houses, Sankoré and Djinguereber exteriors, edge-of-desert light, and transport that always depends on current security."
+    },
+    {
+      "name": "Dogon Country (Bandiagara)",
+      "lat": 14.35,
+      "lng": -3.6104,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "notes": "Escarpment base for guided village walks, toguna shelters, granaries and cliff-country views around Bandiagara, Sangha and nearby Dogon communities."
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange Mali and Malitel are the easiest prepaid picks in Bamako; budget roughly ₹280–₹700 for a starter pack with enough data for maps and WhatsApp, but expect weaker speeds once you push toward Dogon Country and the north.",
+    "apps": [
+      "Google Maps",
+      "Maps.me",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Bamako",
+      "Djenné",
+      "Dogon Country (Bandiagara)",
+      "Timbuktu"
+    ],
+    "cities": {
+      "Bamako": {
+        "name": "Bamako",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Land in the capital, sort logistics, and start with Mali's best museum and easiest first-night food scene.",
+            "activities": [
+              {
+                "name": "Registered taxi from Modibo Keita International Airport into central Bamako",
+                "cost": "₹1,400–₹2,100"
+              },
+              {
+                "name": "Musée National du Mali foreign-adult entry",
+                "cost": "₹350–₹700"
+              },
+              {
+                "name": "Marché des Artisans browse for textiles, bogolan and woodwork",
+                "cost": "₹0"
+              },
+              {
+                "name": "Taxi hops between the museum, artisan market and Point G / Koulouba viewpoints",
+                "cost": "₹420–₹980"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Azalaï Hotel Bamako",
+                "budget": "₹9,800–₹16,800/night"
+              },
+              {
+                "name": "ONOMO Hotel Bamako",
+                "budget": "₹8,400–₹12,600/night"
+              },
+              {
+                "name": "Sleeping Camel",
+                "budget": "₹2,000–₹3,100/night"
+              }
+            ],
+            "meals": [
+              "San Toro",
+              "Appaloosa",
+              "La Terrasse"
+            ]
+          },
+          {
+            "theme": "Keep Bamako practical and flexible with river time, market energy, and ticketing for the harder northern legs.",
+            "activities": [
+              {
+                "name": "Grand Marché / Marché Rose walking browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Short Niger River pirogue ride or sunset boat share near the city",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Parc National du Mali stroll and café stop",
+                "cost": "₹0–₹210"
+              },
+              {
+                "name": "Domestic-flight booking or reconfirmation for the Timbuktu sector when operating",
+                "cost": "₹11,000–₹19,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Campement",
+                "budget": "₹6,300–₹9,800/night"
+              },
+              {
+                "name": "ONOMO Hotel Bamako",
+                "budget": "₹8,400–₹12,600/night"
+              },
+              {
+                "name": "Sleeping Camel",
+                "budget": "₹2,000–₹3,100/night"
+              }
+            ],
+            "meals": [
+              "Appaloosa",
+              "San Toro",
+              "La Terrasse"
+            ]
+          }
+        ]
+      },
+      "Djenné": {
+        "name": "Djenné",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Roll in from Sévaré or Mopti, climb to a legal rooftop view, and spend the day inside Djenné's mud-built masterpiece of a townscape.",
+            "activities": [
+              {
+                "name": "Bush taxi or shared minibus seat from Sévaré / Mopti to Djenné plus the Bani ferry crossing",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "Great Mosque of Djenné exterior rooftop / photo access arranged through a local house or guide",
+                "cost": "₹210–₹420"
+              },
+              {
+                "name": "Old-town clay-lane walking circuit around the mosque quarter",
+                "cost": "₹0"
+              },
+              {
+                "name": "Local guide contribution for the Monday market or town orientation",
+                "cost": "₹280–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Djenné Djenno",
+                "budget": "₹1,400–₹3,100/night"
+              },
+              {
+                "name": "Hotel Dar Salam",
+                "budget": "₹1,700–₹3,500/night"
+              },
+              {
+                "name": "Residence Tapama",
+                "budget": "₹1,400–₹2,800/night"
+              }
+            ],
+            "meals": [
+              "Hotel Djenné Djenno Restaurant",
+              "Hotel Dar Salam Restaurant",
+              "Residence Tapama Table d'hôte"
+            ]
+          }
+        ]
+      },
+      "Dogon Country (Bandiagara)": {
+        "name": "Dogon Country (Bandiagara)",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Use Bandiagara as the escarpment base, then walk into the cliff villages with the guide system that makes Dogon visits work.",
+            "activities": [
+              {
+                "name": "Bush taxi from Mopti / Sévaré to Bandiagara",
+                "cost": "₹420–₹840"
+              },
+              {
+                "name": "Mandatory local guide registration for Dogon village access",
+                "cost": "₹420–₹700"
+              },
+              {
+                "name": "Kani Kombolé or Teli escarpment village walk with guide",
+                "cost": "₹2,100–₹3,500"
+              },
+              {
+                "name": "Village entry taxes / cliff-granary contributions",
+                "cost": "₹140–₹420 per village"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel La Falaise",
+                "budget": "₹2,800–₹4,200/night"
+              },
+              {
+                "name": "Campement Hotel Sangha",
+                "budget": "₹1,400–₹2,800/night"
+              },
+              {
+                "name": "Kanaga Cheval Blanc",
+                "budget": "₹2,100–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Hotel La Falaise Restaurant",
+              "Campement Hotel Sangha Restaurant",
+              "Kanaga Cheval Blanc Restaurant"
+            ]
+          },
+          {
+            "theme": "Give Dogon Country a second day for a deeper village-to-village walk, slower viewpoints, and onward transport prep back toward Mopti.",
+            "activities": [
+              {
+                "name": "Shared vehicle toward Sangha or Ende trailheads",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Second-day Dogon guide for granaries, toguna shelters and fields below the escarpment",
+                "cost": "₹2,100–₹3,500"
+              },
+              {
+                "name": "Escarpment viewpoint sunset or short self-paced village walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bush taxi back toward Sévaré / Mopti for onward flight or boat logistics",
+                "cost": "₹420–₹840"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Campement Hotel Sangha",
+                "budget": "₹1,400–₹2,800/night"
+              },
+              {
+                "name": "Hotel La Falaise",
+                "budget": "₹2,800–₹4,200/night"
+              }
+            ],
+            "meals": [
+              "Campement Hotel Sangha Restaurant",
+              "Hotel La Falaise Restaurant",
+              "Kanaga Cheval Blanc Restaurant"
+            ]
+          }
+        ]
+      },
+      "Timbuktu": {
+        "name": "Timbuktu",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Treat Timbuktu as a special add-on: fly or boat in, then focus on manuscripts and the old scholarly quarters.",
+            "activities": [
+              {
+                "name": "Domestic flight from Bamako or Mopti / Sévaré to Timbuktu when operating",
+                "cost": "₹11,000–₹19,000"
+              },
+              {
+                "name": "Taxi from Timbuktu airport or Kabara arrival point into town",
+                "cost": "₹420–₹980"
+              },
+              {
+                "name": "Mamma Haidara Library or similar family manuscript-house visit donation",
+                "cost": "₹420–₹700"
+              },
+              {
+                "name": "Sankoré Mosque and old-town exterior walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel du Désert",
+                "budget": "₹2,800–₹4,900/night"
+              },
+              {
+                "name": "Hotel Hendrina Khan",
+                "budget": "₹2,100–₹4,200/night"
+              },
+              {
+                "name": "La Palmeraie",
+                "budget": "₹1,700–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Hotel du Désert Restaurant",
+              "Hotel Hendrina Khan Restaurant",
+              "La Palmeraie Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep the second day slow and atmospheric with mosque exteriors, market lanes, and the transport decisions that define a Mali north leg.",
+            "activities": [
+              {
+                "name": "Djinguereber Mosque exterior and market-lane walk with local guide",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "Optional camel ride or sunset outing into the edge dunes",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Kabara port excursion or seasonal pinasse arrival/departure logistics",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Tea stop and souvenir browse in the Timbuktu market",
+                "cost": "₹140–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel du Désert",
+                "budget": "₹2,800–₹4,900/night"
+              },
+              {
+                "name": "Sahara Passion",
+                "budget": "₹1,400–₹2,800/night"
+              }
+            ],
+            "meals": [
+              "Hotel du Désert Restaurant",
+              "Sahara Passion Restaurant",
+              "Hotel Hendrina Khan Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bamako",
+        "to": "Djenné",
+        "method": "Long-distance bush taxi or minibus to Sévaré / Mopti, then a shared taxi and ferry into Djenné; this is the classic overland route",
+        "cost": "₹2,800–₹4,900"
+      },
+      {
+        "from": "Djenné",
+        "to": "Dogon Country (Bandiagara)",
+        "method": "Shared taxi back via Mopti / Sévaré, then onward bush taxi to Bandiagara or Sangha; easiest to break in Mopti if you leave Djenné late",
+        "cost": "₹1,100–₹2,100"
+      },
+      {
+        "from": "Dogon Country (Bandiagara)",
+        "to": "Timbuktu",
+        "method": "Return by road to Sévaré / Mopti, then take a domestic flight when operating or a seasonal Niger pinasse to Kabara during higher-water months",
+        "cost": "₹1,400–₹2,100 by road to Mopti + ₹11,000–₹19,000 by air / ₹2,800–₹5,600 by pinasse"
+      },
+      {
+        "from": "Timbuktu",
+        "to": "Bamako",
+        "method": "Domestic flight is the only time-efficient and usually safer exit; overland returns are much longer and more security-sensitive",
+        "cost": "₹11,000–₹19,000"
+      }
+    ],
+    "extras": [
+      "Best timing is November to February for cooler, drier air in Bamako, Djenné and Dogon Country, while Niger River levels can still support some seasonal pinasse services toward Timbuktu.",
+      "Travel advisory: northern Mali remains conflict-sensitive, and Timbuktu, Gao, Kidal plus some Mopti-region roads can face sudden restrictions or escorts. Recheck current government advisories and vetted local operator advice before booking any northern leg.",
+      "Bush taxis are the backbone of the south and center, but they leave when full and daylight timings matter; avoid improvising long road transfers after dark.",
+      "Card acceptance is inconsistent outside larger Bamako hotels, so carry cash for museum tickets, mosque-view rooftops, village taxes, and guide fees.",
+      "Dress modestly around mosques and ask before photographing people, rooftops, or manuscript collections."
+    ],
+    "cityImages": {
+      "Bamako": [
+        "Musée National du Mali Bamako",
+        "Grand Mosque of Bamako",
+        "Niger River Bamako sunset"
+      ],
+      "Djenné": [
+        "Great Mosque of Djenné",
+        "Djenné old town mud architecture",
+        "Monday market Djenné"
+      ],
+      "Dogon Country (Bandiagara)": [
+        "Bandiagara Escarpment Mali",
+        "Teli village Dogon Country",
+        "Kani Kombolé Dogon granaries"
+      ],
+      "Timbuktu": [
+        "Sankoré Mosque Timbuktu",
+        "Djinguereber Mosque Timbuktu",
+        "Timbuktu manuscript library"
+      ]
+    }
+  }
+}

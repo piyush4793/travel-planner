@@ -1,0 +1,607 @@
+{
+  "name": "Chad",
+  "seed": false,
+  "lat": 15.45,
+  "lng": 18.73,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹3.1L–₹5L",
+    "couple": "₹5.5L–₹8.7L",
+    "family4": "₹10.2L–₹16L"
+  },
+  "experiences": [
+    "N'Djamena city days around the National Museum, Grand Marché, Gaoui pottery village, and Chari River sunsets.",
+    "Zakouma National Park safaris with elephant herds, birdlife, and ranger-led drives based from Tinga Camp or seasonal Camp Nomade.",
+    "Ennedi Plateau expedition travel to Aloba Arch, Bachikélé, prehistoric rock art shelters, and the crocodile-haunted Guelta d'Archei.",
+    "Lake Chad boat outings from the Baga Sola side for fishing-village views, reed channels, and dry-season birding."
+  ],
+  "avoid": [
+    "Safety advisory: only attempt this itinerary in the November to March dry season and keep checking same-week government advisories, especially for the Lake Chad basin and remote northeastern routes.",
+    "A 4x4 with a vetted driver or operator is essential for Zakouma, Ennedi, and most Lake Chad movements; self-drive desert travel is a bad idea without fuel caches, satcom, and local support.",
+    "Cards are unreliable outside top N'Djamena hotels, so carry enough XAF cash for park contributions, boat hire, and roadside fuel or food stops."
+  ],
+  "combo": [
+    "Cameroon",
+    "Egypt"
+  ],
+  "landmark": "Guelta d'Archei",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Use N'Djamena as a logistics base for cash, permits, charter confirmations, and guide checks, then treat Zakouma, Ennedi, and Lake Chad as pre-arranged legs rather than a spontaneous overland loop.",
+  "links": [],
+  "cities": [
+    {
+      "name": "N'Djamena",
+      "lat": 12.1348,
+      "lng": 15.0557,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Capital gateway for visas, cash, and outfitter meetings, with the National Museum of Chad, Grand Marché, and Gaoui Village as the most practical sightseeing anchors."
+    },
+    {
+      "name": "Zakouma National Park",
+      "lat": 10.885,
+      "lng": 19.7776,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "African Parks-run safari destination best accessed by charter or long 4x4 transfer, with Tinga Camp and seasonal Camp Nomade as the main known bases."
+    },
+    {
+      "name": "Ennedi Plateau",
+      "lat": 16.786,
+      "lng": 21.409,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "UNESCO-listed Sahara landscape of giant arches, canyon camps, rock art, and Guelta d'Archei, usually reached on a guided 4x4 expedition via Fada."
+    },
+    {
+      "name": "Lake Chad",
+      "lat": 13.4667,
+      "lng": 14.7333,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "The Chadian side is usually experienced from Baga Sola with short pirogue rides, fish-market stops, and birding when local security conditions are calm enough."
+    }
+  ],
+  "itinerary": {
+    "sim": "Airtel Chad and Moov Africa Chad are the easiest SIMs to buy in N'Djamena; budget roughly ₹700–₹1,700 for a starter data top-up, but expect patchy or zero service once you leave major towns, so download offline maps and rely on guide radios or satphones in Zakouma and Ennedi.",
+    "apps": [
+      "Google Maps",
+      "Maps.me",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "N'Djamena",
+      "Zakouma National Park",
+      "Ennedi Plateau",
+      "Lake Chad"
+    ],
+    "cities": {
+      "N'Djamena": {
+        "name": "N'Djamena",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Museum, market, and Chari River orientation before heading into remote Chad",
+            "activities": [
+              {
+                "name": "Airport taxi into the city centre or riverside hotel zone",
+                "cost": "₹1,700–₹2,800"
+              },
+              {
+                "name": "National Museum of Chad entry and short guide",
+                "cost": "₹420–₹1,050"
+              },
+              {
+                "name": "Grand Marché and Artisan Quarter taxi hops",
+                "cost": "₹560–₹1,120"
+              },
+              {
+                "name": "Chari River sunset walk or short corniche boat ride",
+                "cost": "₹0–₹2,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Radisson Blu Hotel N'Djamena",
+                "budget": "₹15,000–₹18,500/night"
+              },
+              {
+                "name": "Hilton N'Djamena",
+                "budget": "₹17,000–₹21,000/night"
+              },
+              {
+                "name": "Hotel Tchadien",
+                "budget": "₹6,700–₹10,100/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Le Carnivore",
+              "La Tchadienne",
+              "Chez Fatima"
+            ]
+          },
+          {
+            "theme": "Gaoui pottery village and expedition prep day for permits, cash, and 4x4 logistics",
+            "activities": [
+              {
+                "name": "Half-day Gaoui Village excursion with driver",
+                "cost": "₹3,400–₹5,100"
+              },
+              {
+                "name": "Pottery workshop tip or local guide at Gaoui",
+                "cost": "₹420–₹840"
+              },
+              {
+                "name": "4x4 rental confirmation for remote legs",
+                "cost": "₹10,500–₹15,500/day"
+              },
+              {
+                "name": "Domestic-flight or charter seat hold for Fada / Zakouma sector",
+                "cost": "₹10,000–₹38,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Radisson Blu Hotel N'Djamena",
+                "budget": "₹15,000–₹18,500/night"
+              },
+              {
+                "name": "Hilton N'Djamena",
+                "budget": "₹17,000–₹21,000/night"
+              },
+              {
+                "name": "Hotel Sahel",
+                "budget": "₹5,000–₹6,700/night"
+              }
+            ],
+            "meals": [
+              "Restaurant du Fleuve",
+              "Pizza Roma",
+              "Café de la Paix"
+            ]
+          }
+        ]
+      },
+      "Zakouma National Park": {
+        "name": "Zakouma National Park",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Get into the park and use the first afternoon for a classic Zakouma game drive",
+            "activities": [
+              {
+                "name": "Shared charter seat from N'Djamena or operator-arranged long 4x4 transfer",
+                "cost": "₹24,000–₹63,000"
+              },
+              {
+                "name": "Zakouma National Park guided game drive with park entry",
+                "cost": "₹8,500–₹21,000"
+              },
+              {
+                "name": "Camp vehicle transfer from gate to Tinga area",
+                "cost": "Included with lodge or operator"
+              },
+              {
+                "name": "Sunset hide stop around the Salamat floodplain",
+                "cost": "Included or ₹1,700–₹3,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tinga Camp",
+                "budget": "₹15,000–₹19,500/night"
+              },
+              {
+                "name": "Camp Nomade",
+                "budget": "₹42,000–₹67,000/night"
+              }
+            ],
+            "meals": [
+              "Tinga Camp dining tent",
+              "Camp Nomade dining tent"
+            ]
+          },
+          {
+            "theme": "Full wildlife day for elephants, antelope, and serious dry-season birding",
+            "activities": [
+              {
+                "name": "Morning safari vehicle with guide if booked à la carte",
+                "cost": "₹8,500–₹16,800"
+              },
+              {
+                "name": "Afternoon waterhole or floodplain drive",
+                "cost": "₹8,500–₹16,800"
+              },
+              {
+                "name": "Short ranger-led birding or bush walk where allowed",
+                "cost": "₹2,500–₹4,200"
+              },
+              {
+                "name": "Laundry or extra camp services",
+                "cost": "₹420–₹1,050"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tinga Camp",
+                "budget": "₹15,000–₹19,500/night"
+              },
+              {
+                "name": "Camp Nomade",
+                "budget": "₹42,000–₹67,000/night"
+              }
+            ],
+            "meals": [
+              "Tinga Camp dining tent",
+              "Camp Nomade dining tent"
+            ]
+          },
+          {
+            "theme": "Final dawn drive and buffer time before the next remote transfer",
+            "activities": [
+              {
+                "name": "Last sunrise safari drive",
+                "cost": "₹8,500–₹16,800"
+              },
+              {
+                "name": "Extra conservation or community contribution at camp",
+                "cost": "₹840–₹2,100"
+              },
+              {
+                "name": "Road or charter exit toward N'Djamena connection",
+                "cost": "₹24,000–₹63,000"
+              },
+              {
+                "name": "Packed lunch and en-route fuel / checkpoint cash",
+                "cost": "₹700–₹1,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tinga Camp",
+                "budget": "₹15,000–₹19,500/night"
+              },
+              {
+                "name": "Camp Nomade",
+                "budget": "₹42,000–₹67,000/night"
+              }
+            ],
+            "meals": [
+              "Tinga Camp dining tent",
+              "Camp Nomade dining tent"
+            ]
+          },
+          {
+            "theme": "Optional extra safari day if you want a slower, photography-first Zakouma stay",
+            "activities": [
+              {
+                "name": "Private vehicle supplement for a dedicated photo-focused drive",
+                "cost": "₹16,800–₹28,000"
+              },
+              {
+                "name": "Additional park day charge where not bundled",
+                "cost": "₹3,400–₹5,900"
+              },
+              {
+                "name": "Guided hide session at first or last light",
+                "cost": "₹2,500–₹4,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tinga Camp",
+                "budget": "₹15,000–₹19,500/night"
+              },
+              {
+                "name": "Camp Nomade",
+                "budget": "₹42,000–₹67,000/night"
+              }
+            ],
+            "meals": [
+              "Tinga Camp dining tent",
+              "Camp Nomade dining tent"
+            ]
+          }
+        ]
+      },
+      "Ennedi Plateau": {
+        "name": "Ennedi Plateau",
+        "minDays": 3,
+        "recDays": 4,
+        "maxDays": 6,
+        "days": [
+          {
+            "theme": "Reach Fada, settle into camp, and start understanding how remote Ennedi really is",
+            "activities": [
+              {
+                "name": "Shared charter or domestic/expedition flight from N'Djamena to Fada sector",
+                "cost": "₹25,000–₹38,000"
+              },
+              {
+                "name": "4x4 expedition share from Fada airstrip to first camp",
+                "cost": "₹14,000–₹28,000"
+              },
+              {
+                "name": "Ennedi reserve permit and operator handling fee",
+                "cost": "₹1,700–₹3,500"
+              },
+              {
+                "name": "Camp setup and drinking-water logistics contribution",
+                "cost": "₹840–₹2,100"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Camp Warda",
+                "budget": "₹27,000–₹45,000/night"
+              },
+              {
+                "name": "Derde' Camp",
+                "budget": "₹23,000–₹32,000/night"
+              }
+            ],
+            "meals": [
+              "Camp Warda dining tent",
+              "Derde' Camp meals"
+            ]
+          },
+          {
+            "theme": "Arch day for Aloba and Bachikélé, the signature sandstone monuments of Chad",
+            "activities": [
+              {
+                "name": "Shared 4x4 run to Aloba Arch and Bachikélé viewpoints",
+                "cost": "₹14,000–₹28,000"
+              },
+              {
+                "name": "Ennedi rock-formation sector permit and local guide contribution",
+                "cost": "₹1,700–₹3,500"
+              },
+              {
+                "name": "Short canyon hike between arch viewpoints",
+                "cost": "Included or ₹840–₹1,700"
+              },
+              {
+                "name": "Sunset photography stop at the dunes or rock towers",
+                "cost": "₹0–₹1,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Camp Warda",
+                "budget": "₹27,000–₹45,000/night"
+              },
+              {
+                "name": "Derde' Camp",
+                "budget": "₹23,000–₹32,000/night"
+              }
+            ],
+            "meals": [
+              "Camp Warda dining tent",
+              "Mobile expedition camp dinner"
+            ]
+          },
+          {
+            "theme": "Guelta d'Archei day for crocodiles, camel caravans, and one of the Sahara’s strangest waterholes",
+            "activities": [
+              {
+                "name": "4x4 transfer to Guelta d'Archei trailhead",
+                "cost": "₹14,000–₹28,000"
+              },
+              {
+                "name": "Guelta d'Archei site access, guide, and local camel-herder contribution",
+                "cost": "₹2,500–₹4,200"
+              },
+              {
+                "name": "Hike into the guelta with pack water and spotter support",
+                "cost": "Included or ₹840–₹1,700"
+              },
+              {
+                "name": "Rock-art shelter stop on the return drive",
+                "cost": "₹840–₹2,100"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Camp Warda",
+                "budget": "₹27,000–₹45,000/night"
+              },
+              {
+                "name": "Derde' Camp",
+                "budget": "₹23,000–₹32,000/night"
+              }
+            ],
+            "meals": [
+              "Camp Warda dining tent",
+              "Mobile expedition camp dinner"
+            ]
+          },
+          {
+            "theme": "Terkei rock art, oasis camps, and a buffer day for desert weather or long drives",
+            "activities": [
+              {
+                "name": "Terkei or nearby rock-art shelter excursion by 4x4",
+                "cost": "₹14,000–₹28,000"
+              },
+              {
+                "name": "Guide contribution for archaeological or rock-art stops",
+                "cost": "₹1,700–₹3,500"
+              },
+              {
+                "name": "Extra fuel and support-vehicle share for longer loops",
+                "cost": "₹2,500–₹5,100"
+              },
+              {
+                "name": "Return toward Fada or onward expedition camp move",
+                "cost": "Included or ₹7,000–₹14,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Camp Warda",
+                "budget": "₹27,000–₹45,000/night"
+              },
+              {
+                "name": "Derde' Camp",
+                "budget": "₹23,000–₹32,000/night"
+              }
+            ],
+            "meals": [
+              "Camp Warda dining tent",
+              "Derde' Camp meals"
+            ]
+          }
+        ]
+      },
+      "Lake Chad": {
+        "name": "Lake Chad",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Baga Sola transfer, fishing-port atmosphere, and the first dry-season boat ride",
+            "activities": [
+              {
+                "name": "Return through N'Djamena and continue to Baga Sola by bush taxi or hired 4x4",
+                "cost": "₹3,500–₹15,500"
+              },
+              {
+                "name": "Lake Chad pirogue or motor-boat trip through reed channels",
+                "cost": "₹2,500–₹5,000"
+              },
+              {
+                "name": "Baga Sola Lakeside Fishing Port and Market walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Local guide or fixer for port access and translation",
+                "cost": "₹1,700–₹3,500"
+              }
+            ]
+          },
+          {
+            "theme": "Birding, village stops, and an early return if security conditions tighten",
+            "activities": [
+              {
+                "name": "Early-morning boat for birdlife and fishing-village views",
+                "cost": "₹2,500–₹5,000"
+              },
+              {
+                "name": "Fresh fish lunch and market purchases",
+                "cost": "₹420–₹1,400"
+              },
+              {
+                "name": "Same-day hired 4x4 or bush taxi back toward N'Djamena",
+                "cost": "₹3,500–₹15,500"
+              },
+              {
+                "name": "Police checkpoint copies, snacks, and water buffer",
+                "cost": "₹420–₹1,050"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "N'Djamena",
+        "to": "Zakouma National Park",
+        "method": "Most travelers either book a shared charter or commit to a long 4x4 transfer via Mongo or Am Timan; the road works, but only with daylight driving and a serious fuel plan.",
+        "cost": "₹24,000–₹63,000"
+      },
+      {
+        "from": "Zakouma National Park",
+        "to": "Ennedi Plateau",
+        "method": "Do not try to improvise this as one direct overland jump; the sane version is back through N'Djamena, then onward by charter or expedition flight to Fada and 4x4 into Ennedi.",
+        "cost": "₹42,000–₹98,000"
+      },
+      {
+        "from": "Ennedi Plateau",
+        "to": "Lake Chad",
+        "method": "This leg is usually split via N'Djamena as well, with a flight or expedition exit from Fada, then a hired 4x4 or bush taxi north-west toward Baga Sola once security checks are complete.",
+        "cost": "₹28,000–₹63,000"
+      },
+      {
+        "from": "Lake Chad",
+        "to": "N'Djamena",
+        "method": "Bush taxis are the cheapest way back from the Baga Sola side, but a hired 4x4 is more realistic if you want daylight arrival and less dependence on filling seats.",
+        "cost": "₹3,500–₹15,500"
+      }
+    ],
+    "extras": [
+      "Plan Chad as an expedition, not a casual hop: remote sectors run on charters, trusted 4x4 crews, and the operator's ability to confirm fuel, water, and the latest local permissions.",
+      "Zakouma is the easiest remote leg to book because Tinga Camp and African Parks already structure access; Ennedi and Lake Chad need even more lead time and stronger local security judgement.",
+      "Lake Chad can be the first piece you cut if advisories worsen, while Zakouma and guided Ennedi departures are usually the most controlled tourism environments in the country.",
+      "Bring printed passport copies, yellow-fever proof, and more cash than you think you need, because road checkpoints, guide tips, and extra fuel often have to be settled in person.",
+      "November to March is the usable sweet spot: cooler nights, drier tracks, better wildlife concentrations, and fewer chances of heat or road washouts wrecking a tight itinerary."
+    ],
+    "cityImages": {
+      "N'Djamena": [
+        "National Museum of Chad",
+        "Grand Marché N'Djamena",
+        "Gaoui Village Chad"
+      ],
+      "Zakouma National Park": [
+        "Tinga Camp Zakouma",
+        "Zakouma National Park elephants",
+        "Camp Nomade Zakouma"
+      ],
+      "Ennedi Plateau": [
+        "Aloba Arch Chad",
+        "Guelta d'Archei Chad",
+        "Ennedi Plateau rock art"
+      ],
+      "Lake Chad": [
+        "Baga Sola Lakeside Fishing Port and Market",
+        "Lake Chad reed channels Chad",
+        "Lake Chad fishing villages Chad"
+      ]
+    }
+  }
+}

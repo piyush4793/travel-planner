@@ -1,0 +1,570 @@
+{
+  "name": "Guinea",
+  "seed": false,
+  "lat": 9.95,
+  "lng": -9.7,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹95k–₹1.7L",
+    "couple": "₹1.8L–₹3.1L",
+    "family4": "₹3.6L–₹5.8L"
+  },
+  "experiences": [
+    "Conakry's markets and Atlantic shoreline",
+    "Îles de Los pirogue island-hopping",
+    "Voile de la Mariée waterfall near Kindia",
+    "Fouta Djallon treks, waterfalls, and Fulani highland scenery",
+    "Mount Nimba Strict Nature Reserve UNESCO add-on"
+  ],
+  "avoid": [
+    "June to October is the hardest window: Fouta Djallon trails get muddy, landslides slow bush taxis, and pirogues to the islands are much less predictable.",
+    "Domestic flights inside Guinea are limited and irregular, so build the core trip around road transport and treat flights as an occasional time-saving bonus rather than a fixed plan.",
+    "Outside larger Conakry hotels, card acceptance drops fast; keep cash ready for bush taxis, waterfall access contributions, pirogues, and guides in Kindia and Fouta."
+  ],
+  "combo": [
+    "Sierra Leone",
+    "Guinea-Bissau"
+  ],
+  "landmark": "Mount Nimba Strict Nature Reserve",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Conakry (CKY) is the only practical international gateway. The smoothest loop is Conakry city first, an Îles de Los day trip or overnight by pirogue, then a road climb through Kindia into Fouta Djallon; only check domestic flights if you are adding far-east Guinea such as N'zérékoré or Mount Nimba.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Conakry",
+      "lat": 9.5092,
+      "lng": -13.7122,
+      "notes": "Atlantic capital for Madina market chaos, museum stops, city beaches, and the boat departures that make the rest of coastal Guinea work."
+    },
+    {
+      "name": "Fouta Djallon (Dalaba / Labé)",
+      "lat": 11.55,
+      "lng": -12.52,
+      "notes": "Highland base split between Dalaba and Labé for Fulani culture, cool air, waterfalls, forest walks, and the classic Guinea trekking days."
+    },
+    {
+      "name": "Îles de Los",
+      "lat": 9.464,
+      "lng": -13.791,
+      "notes": "Short pirogue hop from Conakry for Kassa and Roume beaches, seafood lunches, and a quick island reset without leaving the capital region."
+    },
+    {
+      "name": "Kindia",
+      "lat": 10.0564,
+      "lng": -12.8658,
+      "notes": "Lowland gateway toward Fouta Djallon, best known for Voile de la Mariée, Mount Gangan viewpoints, and simple overnight stops out of Conakry."
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange Guinée is the safest all-round pick for Conakry, Kindia, and the main Fouta towns, while island coverage can dip after you leave the harbor; budget roughly ₹480–₹1,440 for a starter SIM or eSIM with enough data for maps, WhatsApp, and booking confirmations.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Conakry",
+      "Îles de Los",
+      "Kindia",
+      "Fouta Djallon (Dalaba / Labé)"
+    ],
+    "cities": {
+      "Conakry": {
+        "name": "Conakry",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Ease into Guinea with Kaloum logistics, museum context, and the Atlantic-facing neighborhoods that make Conakry feel busiest right away.",
+            "activities": [
+              {
+                "name": "Airport taxi from Ahmed Sékou Touré International Airport to Kaloum, Camayenne, or Kipé",
+                "cost": "₹480–₹960"
+              },
+              {
+                "name": "Musée National de Sandervalia entry or donation",
+                "cost": "₹190–₹290"
+              },
+              {
+                "name": "Marché Madina browse and snack stop",
+                "cost": "₹0–₹290"
+              },
+              {
+                "name": "Taxi rides between Kaloum, Camayenne, and Taouyah/Kipé",
+                "cost": "₹190–₹380"
+              },
+              {
+                "name": "Sunset walk on Plage de Camayenne or Plage de Taouyah",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ONOMO Hotel Conakry",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Riviera Royal Hotel",
+                "budget": "₹13,500–₹21,000/night"
+              },
+              {
+                "name": "Noom Hotel Conakry",
+                "budget": "₹15,500–₹25,000/night"
+              }
+            ],
+            "meals": [
+              "Le Damier",
+              "Le Fouta",
+              "Noom Hotel Conakry Restaurant"
+            ]
+          },
+          {
+            "theme": "Use a second city day for gardens, practical errands, and keeping one buffer before road or boat schedules start dictating the trip.",
+            "activities": [
+              {
+                "name": "Conakry Botanical Garden walk",
+                "cost": "₹0–₹190"
+              },
+              {
+                "name": "Port de Boulbinet taxi run to reconfirm Îles de Los pirogue timing",
+                "cost": "₹190–₹380"
+              },
+              {
+                "name": "Guinea National Museum or artisan shopping revisit",
+                "cost": "₹190–₹290"
+              },
+              {
+                "name": "City taxi hops between Kaloum, Madina, and the Corniche-style coast roads",
+                "cost": "₹190–₹480"
+              },
+              {
+                "name": "Beach chair or drink stop by Kipé",
+                "cost": "₹290–₹770"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Palm Camayenne",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Riviera Royal Hotel",
+                "budget": "₹13,500–₹21,000/night"
+              }
+            ],
+            "meals": [
+              "Le Damier",
+              "Palm Camayenne Restaurant",
+              "Le Cocoloko"
+            ]
+          }
+        ]
+      },
+      "Îles de Los": {
+        "name": "Îles de Los",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Cross to Kassa or Roume for the easiest Guinea island day: pirogue timing, seafood, and a proper break from Conakry traffic.",
+            "activities": [
+              {
+                "name": "Shared pirogue round-trip from Port de Boulbinet to Kassa or Roume",
+                "cost": "₹960"
+              },
+              {
+                "name": "Island landing or beach contribution when collected",
+                "cost": "₹190–₹480"
+              },
+              {
+                "name": "Kassa beach walk and swim near Kassa Kounki Hôtel-Restaurant-Bar",
+                "cost": "₹0"
+              },
+              {
+                "name": "Shared boat hop between Kassa and Roume when available",
+                "cost": "₹380–₹960"
+              },
+              {
+                "name": "Kayak, snorkel, or informal beach gear rental",
+                "cost": "₹480–₹960"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kassa Kounki Hôtel-Restaurant-Bar",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "La Villa Elijah - Guinea Fishing Camp",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Kassa Kounki Restaurant",
+              "La Villa Elijah Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep an extra island night only if the sea is calm enough to justify a slower Tamara or Roume loop before you return to the mainland road trip.",
+            "activities": [
+              {
+                "name": "Private or semi-private pirogue for a Kassa-Roume-Tamara loop",
+                "cost": "₹1,920–₹3,840"
+              },
+              {
+                "name": "Tamara lighthouse and village walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Seafood lunch and drinks on Roume or Kassa",
+                "cost": "₹480–₹1,150"
+              },
+              {
+                "name": "Return pirogue back to Conakry if sea state delays the morning departure",
+                "cost": "₹960"
+              },
+              {
+                "name": "Beach hammock or shaded rest setup",
+                "cost": "₹190–₹480"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kassa Kounki Hôtel-Restaurant-Bar",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "La Villa Elijah - Guinea Fishing Camp",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Kassa Kounki Restaurant",
+              "La Villa Elijah Restaurant"
+            ]
+          }
+        ]
+      },
+      "Kindia": {
+        "name": "Kindia",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Break the climb inland with Kindia's classic waterfall stop and a simple overnight that still feels distinctly greener than Conakry.",
+            "activities": [
+              {
+                "name": "Bush taxi or shared car from Conakry to Kindia",
+                "cost": "₹480–₹860"
+              },
+              {
+                "name": "Voile de la Mariée waterfall entry",
+                "cost": "₹96–₹192"
+              },
+              {
+                "name": "Shared taxi or moto from Kindia town to Voile de la Mariée",
+                "cost": "₹144–₹288"
+              },
+              {
+                "name": "Mount Gangan local guide or lookout contribution",
+                "cost": "₹288–₹576"
+              },
+              {
+                "name": "Kindia market walk and tea stop",
+                "cost": "₹0–₹192"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Masabi",
+                "budget": "₹4,800–₹7,500/night"
+              },
+              {
+                "name": "Hotel Kanya",
+                "budget": "₹3,800–₹6,500/night"
+              },
+              {
+                "name": "Chez BZ",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Hôtel Masabi Restaurant",
+              "Chez BZ Restaurant",
+              "Hotel Kanya Restaurant"
+            ]
+          },
+          {
+            "theme": "Use a second night only if you want an easier transition day for Kilissi scenery before the longer haul into Fouta Djallon.",
+            "activities": [
+              {
+                "name": "Les Eaux de Kilissi walk or picnic stop",
+                "cost": "₹0–₹192"
+              },
+              {
+                "name": "Short taxi around Kindia and nearby gardens",
+                "cost": "₹144–₹288"
+              },
+              {
+                "name": "Local snack or juice break",
+                "cost": "₹96–₹192"
+              },
+              {
+                "name": "Bush taxi stand run to pre-book the Fouta leg",
+                "cost": "₹96–₹192"
+              },
+              {
+                "name": "Sunset rest back at the hotel grounds",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Masabi",
+                "budget": "₹4,800–₹7,500/night"
+              },
+              {
+                "name": "Les Eaux de Kilissi",
+                "budget": "₹4,000–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Hôtel Masabi Restaurant",
+              "Les Eaux de Kilissi Restaurant"
+            ]
+          }
+        ]
+      },
+      "Fouta Djallon (Dalaba / Labé)": {
+        "name": "Fouta Djallon (Dalaba / Labé)",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Climb into the highlands, settle around Dalaba, and take a first easy day for cool air, old villas, and pine-shaded walks.",
+            "activities": [
+              {
+                "name": "Bush taxi or shared car from Kindia to Dalaba",
+                "cost": "₹960–₹1,440"
+              },
+              {
+                "name": "Villa Sylvia visit or caretaker donation",
+                "cost": "₹96–₹192"
+              },
+              {
+                "name": "Les Sapins forest walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Taxi or moto around Dalaba town and viewpoints",
+                "cost": "₹192–₹480"
+              },
+              {
+                "name": "Evening tea stop overlooking the Tangama side of town",
+                "cost": "₹96–₹192"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge Seidy 2",
+                "budget": "₹3,800–₹6,500/night"
+              },
+              {
+                "name": "Hôtel du Fouta",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Lodge Kamawi",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Hôtel du Fouta Restaurant",
+              "Auberge Seidy 2 Restaurant",
+              "Lodge Kamawi Restaurant"
+            ]
+          },
+          {
+            "theme": "This is the core Fouta day: trekking, waterfall time, and the kind of guide-led rural walking that makes Guinea's highlands worth the long road.",
+            "activities": [
+              {
+                "name": "Local guide for a Pont de Dieu or Cascade de Ditinn full-day trek",
+                "cost": "₹1,920–₹3,840"
+              },
+              {
+                "name": "Waterfall or village access contribution",
+                "cost": "₹96–₹288"
+              },
+              {
+                "name": "Shared moto or hired car to the trailhead",
+                "cost": "₹576–₹1,440"
+              },
+              {
+                "name": "Packed lunch and trail snacks",
+                "cost": "₹192–₹384"
+              },
+              {
+                "name": "Optional second short waterfall stop if transport timing holds",
+                "cost": "₹192–₹576"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hôtel Tangama",
+                "budget": "₹3,800–₹6,000/night"
+              },
+              {
+                "name": "Tinka Eco Village",
+                "budget": "₹3,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Hôtel Tangama Restaurant",
+              "Tinka Eco Village Restaurant"
+            ]
+          },
+          {
+            "theme": "Shift toward Labé for markets and bigger mountain views, using the day for one more scenic push before heading back toward Conakry.",
+            "activities": [
+              {
+                "name": "Shared taxi from Dalaba or Pita toward Labé",
+                "cost": "₹480–₹770"
+              },
+              {
+                "name": "Dame de Mali or Mount Loura local guide share",
+                "cost": "₹480–₹960"
+              },
+              {
+                "name": "Labé central market walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Moto or taxi to viewpoints outside Labé",
+                "cost": "₹192–₹576"
+              },
+              {
+                "name": "Evening tea and grilled dinner back in town",
+                "cost": "₹192–₹480"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Tata",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Hotel Djamtum",
+                "budget": "₹3,800–₹6,000/night"
+              },
+              {
+                "name": "Hotel Salaa +",
+                "budget": "₹4,200–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Hotel Tata Restaurant",
+              "Hotel Djamtum Restaurant",
+              "Hotel Salaa + Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep a fourth highland day only if roads are behaving well enough for another waterfall, market, or slow return setup before the long ride home.",
+            "activities": [
+              {
+                "name": "Second local guide half-day for a shorter ridge or village walk",
+                "cost": "₹960–₹1,920"
+              },
+              {
+                "name": "Bush taxi station booking for the Conakry return",
+                "cost": "₹96–₹192"
+              },
+              {
+                "name": "Short waterfall or craft stop close to town",
+                "cost": "₹192–₹576"
+              },
+              {
+                "name": "Local café and bakery stops",
+                "cost": "₹96–₹288"
+              },
+              {
+                "name": "Flexible rest block for weather or road delays",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Tata",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Hôtel du Fouta",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Hotel Tata Restaurant",
+              "Hôtel du Fouta Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Conakry",
+        "to": "Îles de Los",
+        "method": "Shared pirogues from Port de Boulbinet are the standard move; leave buffer because departures wait for enough passengers and sea conditions",
+        "cost": "₹960"
+      },
+      {
+        "from": "Îles de Los",
+        "to": "Kindia",
+        "method": "Return by pirogue to Conakry first, then switch to a bush taxi or shared car inland toward Kindia",
+        "cost": "₹1,440–₹2,300"
+      },
+      {
+        "from": "Kindia",
+        "to": "Fouta Djallon (Dalaba / Labé)",
+        "method": "Bush taxis and shared cars are the normal highland transfer, with rougher timing once rain arrives",
+        "cost": "₹960–₹1,920"
+      },
+      {
+        "from": "Fouta Djallon (Dalaba / Labé)",
+        "to": "Conakry",
+        "method": "Road returns by bush taxi are the norm, while limited domestic flights from Labé only make sense as an occasional backup when a schedule actually operates",
+        "cost": "₹1,440–₹14,000"
+      }
+    ],
+    "extras": [
+      "November to April is the dry-season sweet spot: roads into Kindia and Fouta are easier, waterfall trails are safer, and pirogues to the islands run with fewer weather cancellations.",
+      "Voile de la Mariée is a cheap, fast win out of Kindia; its small gate fee and taxi ride make it one of Guinea's best-value nature stops.",
+      "Fouta Djallon trekking costs are mostly guide and vehicle driven rather than ticket driven, so group up when possible to soften the ₹1,920–₹3,840 full-day guide bill.",
+      "Mount Nimba Strict Nature Reserve is a separate far-east add-on around Nzérékoré and Bossou; expect about ₹960–₹2,880 per day for permit-plus-guide arrangements before transport.",
+      "Îles de Los is best as a flexible weather day rather than a fixed last-minute airport connection, because pirogues can wait to fill or cancel with rougher sea.",
+      "Cash is still king almost everywhere outside Conakry's bigger hotels, especially for bush taxis, moto rides, small waterfalls, and guide tips."
+    ]
+  }
+}
