@@ -1,0 +1,339 @@
+{
+  "name": "Antigua and Barbuda",
+  "seed": false,
+  "lat": 17.06,
+  "lng": -61.8,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.55L–₹2.45L",
+    "couple": "₹2.85L–₹4.2L",
+    "family4": "₹5.5L–₹7.95L"
+  },
+  "experiences": [
+    "Beaches",
+    "Sailing Heritage",
+    "Snorkeling",
+    "Historic Forts",
+    "Wildlife",
+    "Island Hopping"
+  ],
+  "avoid": [
+    "June–November overlaps the wetter hurricane-risk season, so ferries to Barbuda, stingray trips, and exposed beach days are more likely to be disrupted by wind or rough seas.",
+    "Antigua Carnival from late July into early August pushes room rates up in St. John's and makes downtown, beaches, and taxi availability noticeably busier.",
+    "Local buses are cheap but mostly daylight-only and do not reliably reach remote beaches or late-night dinner spots, so avoid planning English Harbour or Barbuda transfers too tightly without a taxi or rental car backup."
+  ],
+  "combo": [
+    "Barbados",
+    "Saint Kitts and Nevis",
+    "Guadeloupe"
+  ],
+  "landmark": "Nelson's Dockyard",
+  "travelStyle": [
+    "relaxed",
+    "explorer"
+  ],
+  "stopoverNote": "For trips under 5 days, stay on Antigua, use St. John's or Dickenson Bay as the main base, and treat Barbuda as a weather-dependent day trip instead of changing hotels twice.",
+  "links": [],
+  "cities": [
+    {
+      "name": "St. John's",
+      "lat": 17.1274,
+      "lng": -61.8468,
+      "notes": "The capital is the practical base for museum stops, market walks, Fort James sunsets, taxi logistics, and onward transport to English Harbour or the Barbuda Express terminal."
+    },
+    {
+      "name": "English Harbour",
+      "lat": 17.0096,
+      "lng": -61.768,
+      "notes": "Best base for Nelson's Dockyard, Shirley Heights, Pigeon Beach, yacht-marina dining, and Antigua's most rewarding concentration of historic naval sights."
+    },
+    {
+      "name": "Barbuda (Codrington)",
+      "lat": 17.6333,
+      "lng": -61.8333,
+      "notes": "Codrington is the jumping-off point for the Frigate Bird Sanctuary, pink-sand beaches, and the laid-back Barbuda pace that feels very different from Antigua."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel Antigua or FLOW prepaid data are the easiest options on arrival; budget roughly ₹1,200–₹2,500 for maps, WhatsApp, and ferry confirmations, and download offline maps before heading to Barbuda.",
+    "apps": [
+      "Google Maps offline",
+      "WhatsApp",
+      "Booking.com",
+      "Waze",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "St. John's",
+      "English Harbour",
+      "Barbuda (Codrington)"
+    ],
+    "cities": {
+      "St. John's": {
+        "name": "St. John's",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use St. John's as the arrival-and-logistics base because taxis, bus stations, supermarkets, and the Barbuda Express dock are all easiest from here.",
+        "days": [
+          {
+            "theme": "Heritage Quay, cathedral views and a classic west-coast sunset",
+            "activities": [
+              {
+                "name": "Museum of Antigua and Barbuda",
+                "cost": "₹310 pp",
+                "tip": "A roughly ₹310 museum ticket is typical; pair it with the market and cathedral while downtown is cooler in the morning."
+              },
+              {
+                "name": "St. John's Cathedral and Public Market walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Heritage Quay waterfront stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Fort James sunset stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Heritage Hotel",
+                "budget": "₹13,500–₹19,500/night"
+              },
+              {
+                "name": "Connie's Comfort Suites",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Hemingway's Caribbean Cafe",
+              "Papa Zouk",
+              "Big Banana Holding Company"
+            ]
+          },
+          {
+            "theme": "Betty's Hope, Stingray City and an easy island-road day",
+            "activities": [
+              {
+                "name": "Betty's Hope Historic Sugar Plantation",
+                "cost": "₹155 pp",
+                "tip": "The usual donation/entry works out to roughly ₹155, so carry small cash because the site often operates on an honesty-box style system."
+              },
+              {
+                "name": "Stingray City Antigua snorkel trip",
+                "cost": "₹5,860 pp",
+                "tip": "The standard adult rate works out to about ₹5,860 without transfers, so pre-book if you want a morning slot in the December–April high season."
+              },
+              {
+                "name": "Dickenson Bay swim block",
+                "cost": "Free"
+              },
+              {
+                "name": "Taxi return between St. John's and stingray departure area",
+                "cost": "₹2,100–₹2,500 per car"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Heritage Hotel",
+                "budget": "₹13,500–₹19,500/night"
+              },
+              {
+                "name": "Connie's Comfort Suites",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Roti King",
+              "C&C Wine House",
+              "Harbour View Bar & Cafe"
+            ]
+          }
+        ]
+      },
+      "English Harbour": {
+        "name": "English Harbour",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Switch here for Antigua's best historical cluster and marina atmosphere; this is where a rental car becomes more useful than relying on buses.",
+        "days": [
+          {
+            "theme": "Nelson's Dockyard, Dow's Hill and Shirley Heights",
+            "activities": [
+              {
+                "name": "Nelson's Dockyard National Park pass",
+                "cost": "₹1,240 pp",
+                "tip": "Tourist admission works out to about ₹1,240 and covers the Dockyard area plus nearby national-park sights such as Shirley Heights and Dow's Hill on the same day."
+              },
+              {
+                "name": "Dow's Hill Interpretation Centre",
+                "cost": "Included in park pass"
+              },
+              {
+                "name": "Shirley Heights Lookout",
+                "cost": "Included in park pass"
+              },
+              {
+                "name": "Admiral's House Museum and Dockyard quayside walk",
+                "cost": "Included in park pass"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Admiral's Inn",
+                "budget": "₹18,500–₹29,500/night"
+              },
+              {
+                "name": "Copper and Lumber Store Hotel",
+                "budget": "₹15,500–₹24,500/night"
+              }
+            ],
+            "meals": [
+              "Pillars Restaurant",
+              "Trappas Bar & Restaurant",
+              "Boom"
+            ]
+          },
+          {
+            "theme": "Pigeon Beach, Galleon Beach and a slower harbor day",
+            "activities": [
+              {
+                "name": "Pigeon Point Beach",
+                "cost": "Free"
+              },
+              {
+                "name": "Galleon Beach snorkel stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Blockhouse viewpoint drive",
+                "cost": "Free"
+              },
+              {
+                "name": "Rental car day for English Harbour and east-coast detours",
+                "cost": "₹3,350–₹4,200/day + ₹1,675 local permit"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "South Point Antigua",
+                "budget": "₹28,000–₹42,000/night"
+              },
+              {
+                "name": "Admiral's Inn",
+                "budget": "₹18,500–₹29,500/night"
+              }
+            ],
+            "meals": [
+              "Colibri Bistro Bar Lounge",
+              "Catherine's Cafe",
+              "The Copper and Lumber Restaurant"
+            ]
+          }
+        ]
+      },
+      "Barbuda (Codrington)": {
+        "name": "Barbuda (Codrington)",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Treat Barbuda as a weather-sensitive extension: catch the earliest workable ferry, keep luggage light, and expect boat trips to dictate the day's rhythm.",
+        "days": [
+          {
+            "theme": "Codrington Lagoon birds, pink sand and a classic Barbuda beach day",
+            "activities": [
+              {
+                "name": "Frigate Bird Sanctuary boat tour from Codrington Lagoon",
+                "cost": "₹3,255–₹4,650 pp + ₹465 pp council fee",
+                "tip": "Most visitors go by licensed boat; many tours land around ₹3,255–₹4,650 pp, and some operators also collect a separate ₹465 council fee at the fisheries dock."
+              },
+              {
+                "name": "Princess Diana Beach / Pink Sand Beach stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Martello Tower exterior and village walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Two Foot Bay lookout",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Barbuda Cottages",
+                "budget": "₹16,500–₹24,500/night"
+              },
+              {
+                "name": "Barbuda Belle Luxury Beach Hotel",
+                "budget": "₹52,000–₹78,000/night"
+              }
+            ],
+            "meals": [
+              "Uncle Roddy's Beach Bar & Grill",
+              "The Mangrove Restaurant",
+              "The Sage Table Barbuda"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "St. John's",
+        "to": "English Harbour",
+        "method": "Local bus from St. John's bus station toward Falmouth/English Harbour, fixed-fare taxi, or rental car via Sir Sydney Walling Highway (about 45–60m)",
+        "cost": "₹93–₹155 pp by bus; ₹2,100–₹2,500 per taxi; ₹3,350–₹4,200/day for a rental car"
+      },
+      {
+        "from": "English Harbour",
+        "to": "Barbuda (Codrington)",
+        "method": "Taxi or self-drive back to St. John's ferry terminal, then Barbuda Express ferry to Barbuda (about 90m sailing, weather permitting)",
+        "cost": "₹2,100–₹2,500 per taxi to terminal + ₹5,115 pp one way / ₹9,300 pp round-trip ferry"
+      }
+    ],
+    "extras": [
+      "Antigua taxis run on government-set route pricing rather than meters, so confirm the fixed fare before you leave; many published rates are per car for up to about four passengers.",
+      "Local buses are really privately run minibuses charging about ₹93–₹155 per ride; they are cheapest in daylight but are not reliable for late dinners or early-morning airport or ferry departures.",
+      "Rental cars usually need a temporary local permit that agencies arrange for about ₹1,675, and Antigua drives on the left.",
+      "Barbuda Express fares effective from December 2025 are about ₹5,115 one way and ₹9,300 round trip for adults, so book ferry seats ahead in the December–April dry season.",
+      "Frigate Bird Sanctuary visits are best from November to April, and December–April is also the driest, easiest weather window for combining Antigua beaches with a Barbuda side trip."
+    ],
+    "cityImages": {
+      "St. John's": [
+        "St. John's Antigua skyline",
+        "Museum of Antigua and Barbuda",
+        "Fort James Antigua"
+      ],
+      "English Harbour": [
+        "Nelson's Dockyard Antigua",
+        "Shirley Heights Antigua",
+        "English Harbour Antigua marina"
+      ],
+      "Barbuda (Codrington)": [
+        "Frigate Bird Sanctuary Barbuda",
+        "Princess Diana Beach Barbuda",
+        "Codrington Lagoon Barbuda"
+      ]
+    }
+  }
+}

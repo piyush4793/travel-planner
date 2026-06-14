@@ -1,0 +1,439 @@
+{
+  "name": "Saint Lucia",
+  "seed": false,
+  "lat": 13.91,
+  "lng": -60.98,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.25L–₹2.05L",
+    "couple": "₹2.35L–₹3.75L",
+    "family4": "₹4.8L–₹7.1L"
+  },
+  "experiences": [
+    "Pitons",
+    "Beaches",
+    "Volcano & Mud Baths",
+    "Sailing",
+    "Snorkeling",
+    "Creole Food"
+  ],
+  "avoid": [
+    "June–November is wetter and overlaps the Caribbean hurricane season, so catamaran cruises, the Gros Piton trail, and west-coast viewpoints are more likely to be affected by rain or choppy seas.",
+    "Friday Night Street Party in Gros Islet is fun but raises north-island taxi demand and restaurant wait times, especially in peak winter weeks.",
+    "The west-coast road between Castries, Marigot Bay, and Soufrière is scenic but narrow and winding; avoid first-time self-drives after dark if possible."
+  ],
+  "combo": [
+    "Barbados",
+    "Grenada",
+    "Martinique"
+  ],
+  "landmark": "Gros Piton",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 6 days, pick either a north-island base around Gros Islet/Castries or a south-west base in Soufrière instead of changing hotels every night.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Castries",
+      "lat": 14.0101,
+      "lng": -60.9875,
+      "notes": "The capital is the most practical arrival base for markets, harbor views, Morne Fortune lookouts, and easy onward links to both Marigot Bay and the north-island resorts."
+    },
+    {
+      "name": "Soufrière",
+      "lat": 13.8571,
+      "lng": -61.0573,
+      "notes": "Saint Lucia's signature Pitons base for Sulphur Springs, Diamond Falls, hiking, cocoa-estate dining, and the island's most dramatic scenery."
+    },
+    {
+      "name": "Gros Islet",
+      "lat": 14.0865,
+      "lng": -60.945,
+      "notes": "Best north-island stop for Pigeon Island, Rodney Bay Marina, Reduit Beach, and the famous Friday night street party."
+    },
+    {
+      "name": "Marigot Bay",
+      "lat": 13.9669,
+      "lng": -61.0275,
+      "notes": "A postcard marina cove between Castries and Soufrière, known for yacht views, short water-taxi hops, and a quieter boutique-resort feel."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel or Flow prepaid plans are the easiest local options; budget roughly ₹1,500–₹2,500 for enough maps, calls, and WhatsApp during a short Saint Lucia trip.",
+    "apps": [
+      "Google Maps",
+      "Waze",
+      "WhatsApp",
+      "Airalo",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Castries",
+      "Marigot Bay",
+      "Soufrière",
+      "Gros Islet"
+    ],
+    "cities": {
+      "Castries": {
+        "name": "Castries",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Markets, cathedral core, and harborfront orientation",
+            "activities": [
+              {
+                "name": "Castries Market produce-and-crafts walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Cathedral Basilica of the Immaculate Conception",
+                "cost": "Free"
+              },
+              {
+                "name": "Derek Walcott Square and central Castries heritage stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Vigie Beach sunset stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bel Jou Hotel",
+                "budget": "₹17,000–₹26,000/night"
+              },
+              {
+                "name": "Villa Beach Cottages",
+                "budget": "₹15,000–₹23,000/night"
+              }
+            ],
+            "meals": [
+              "The Coal Pot",
+              "Pink Papaya Restaurant",
+              "Brown Sugar Restaurant & Bar"
+            ]
+          },
+          {
+            "theme": "Morne Fortune lookouts, La Toc coast, and an easy first beach day",
+            "activities": [
+              {
+                "name": "Morne Fortune and Government House viewpoint circuit",
+                "cost": "Free"
+              },
+              {
+                "name": "Inniskilling Monument photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "La Toc Beach stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Pointe Seraphine harborfront walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bel Jou Hotel",
+                "budget": "₹17,000–₹26,000/night"
+              },
+              {
+                "name": "Sandals Regency La Toc",
+                "budget": "₹55,000–₹95,000/night"
+              }
+            ],
+            "meals": [
+              "The Coal Pot",
+              "Pink Papaya Restaurant",
+              "The Pink Plantation House"
+            ]
+          }
+        ]
+      },
+      "Marigot Bay": {
+        "name": "Marigot Bay",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Marina views, water-taxi hops, and a relaxed bay day",
+            "activities": [
+              {
+                "name": "Marigot Bay marina and waterfront boardwalk",
+                "cost": "Free"
+              },
+              {
+                "name": "Marigot Bay water taxi across the bay",
+                "cost": "₹155 pp",
+                "tip": "A short bay crossing is usually around EC$5 per person, which works out to roughly ₹155."
+              },
+              {
+                "name": "Marigot Bay viewpoint stop",
+                "cost": "Free"
+              },
+              {
+                "name": "La Bas Beach / Marigot Beach Club beach time",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Marigot Beach Club & Dive Resort",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "Zoëtry Marigot Bay St. Lucia",
+                "budget": "₹32,000–₹58,000/night"
+              }
+            ],
+            "meals": [
+              "Rainforest Hideaway",
+              "Chateau Mygo House of Seafood",
+              "Roots 2 Beach Bar"
+            ]
+          }
+        ]
+      },
+      "Soufrière": {
+        "name": "Soufrière",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Sulphur Springs, Diamond Falls, and the classic Soufrière circuit",
+            "activities": [
+              {
+                "name": "Sulphur Springs Park mud bath",
+                "cost": "₹930 pp",
+                "tip": "Tourist mud-bath entry is commonly listed around US$11, or about EC$30, which converts to roughly ₹930."
+              },
+              {
+                "name": "Diamond Falls Botanical Gardens",
+                "cost": "₹545 pp",
+                "tip": "Adult admission is listed at EC$17.50 / US$7, about ₹545."
+              },
+              {
+                "name": "Tet Paul Nature Trail guided walk",
+                "cost": "₹840 pp",
+                "tip": "Adult entry is commonly around US$10, which is roughly EC$27 or about ₹840."
+              },
+              {
+                "name": "Soufrière waterfront and town church walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Stonefield Villa Resort",
+                "budget": "₹29,000–₹48,000/night"
+              },
+              {
+                "name": "Fond Doux Eco Resort",
+                "budget": "₹17,500–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Boucan Restaurant",
+              "Orlando's Restaurant",
+              "Dasheene"
+            ]
+          },
+          {
+            "theme": "Gros Piton hike, beach time, and postcard bay views",
+            "activities": [
+              {
+                "name": "Gros Piton Nature Trail mandatory guide",
+                "cost": "₹4,185 pp",
+                "tip": "The official non-resident guide fee is commonly listed at US$50 per hiker, which is about EC$135 or roughly ₹4,185."
+              },
+              {
+                "name": "Sugar Beach public access beach stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Toraille Waterfall",
+                "cost": "₹420 pp",
+                "tip": "Adult admission is commonly around US$5, which converts to about EC$13.50 or roughly ₹420."
+              },
+              {
+                "name": "Morne Coubaril Historical Adventure Park estate visit",
+                "cost": "₹1,250 pp",
+                "tip": "Estate tours are typically priced around US$15 per adult."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ladera Resort",
+                "budget": "₹48,000–₹82,000/night"
+              },
+              {
+                "name": "Sugar Beach, A Viceroy Resort",
+                "budget": "₹78,000–₹1.45L/night"
+              }
+            ],
+            "meals": [
+              "Bayside Restaurant",
+              "Martha's Tables",
+              "Waterfront De Belle View Restaurant and Bar"
+            ]
+          }
+        ]
+      },
+      "Gros Islet": {
+        "name": "Gros Islet",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Pigeon Island, Rodney Bay Marina, and a beach-first north coast day",
+            "activities": [
+              {
+                "name": "Pigeon Island National Landmark",
+                "cost": "₹840 pp",
+                "tip": "Adult entry is commonly listed at US$10 / EC$27, which works out to about ₹840."
+              },
+              {
+                "name": "Reduit Beach",
+                "cost": "Free"
+              },
+              {
+                "name": "Rodney Bay Marina boardwalk",
+                "cost": "Free"
+              },
+              {
+                "name": "Gros Islet Friday Night Street Party",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bay Gardens Beach Resort & Spa",
+                "budget": "₹18,000–₹29,000/night"
+              },
+              {
+                "name": "Harbor Club St. Lucia, Curio Collection by Hilton",
+                "budget": "₹21,000–₹33,000/night"
+              }
+            ],
+            "meals": [
+              "Spice of India",
+              "Big Chef Steakhouse",
+              "Jacques Waterfront Dining"
+            ]
+          },
+          {
+            "theme": "Zip-lining day trip, Cap Estate viewpoints, and a relaxed finale",
+            "activities": [
+              {
+                "name": "Treetop Adventure Park zipline tour",
+                "cost": "₹7,450 pp",
+                "tip": "The standard adult zipline tour is commonly published at US$89, which is about EC$240 or roughly ₹7,450."
+              },
+              {
+                "name": "Cas en Bas Beach coastline stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Cap Point lookout",
+                "cost": "Free"
+              },
+              {
+                "name": "Smugglers Cove swim stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Landings Resort and Spa",
+                "budget": "₹35,000–₹58,000/night"
+              },
+              {
+                "name": "Bay Gardens Hotel",
+                "budget": "₹13,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Naked Fisherman Restaurant",
+              "Buzz Seafood and Grill",
+              "Flavours of the Grill"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Castries",
+        "to": "Marigot Bay",
+        "method": "Local minibus, taxi, or short drive down the west coast (about 20–30m)",
+        "cost": "₹93–₹155 pp by minibus; ₹775–₹1,240/car by taxi"
+      },
+      {
+        "from": "Marigot Bay",
+        "to": "Soufrière",
+        "method": "West-coast minibus or taxi via Anse La Raye and Canaries, or rental car for flexible lookouts (about 60–75m)",
+        "cost": "₹310–₹465 pp by minibus; ₹4,650–₹6,200/car by taxi; ₹5,500–₹7,500/day for a rental car"
+      },
+      {
+        "from": "Soufrière",
+        "to": "Gros Islet",
+        "method": "Local buses usually connect back through Castries; taxis are the easiest direct option and rental cars work best for scenic stops (about 90–120m)",
+        "cost": "₹465–₹620 pp by bus; ₹7,750–₹10,850/car by taxi"
+      }
+    ],
+    "extras": [
+      "Saint Lucia's green minibuses are the cheapest way to move between towns, but frequencies thin out in the evening; carry small EC-dollar notes and expect cash-only fares.",
+      "Water taxis are most useful around Marigot Bay and some Soufrière beaches; confirm the fare before boarding because prices vary by beach and time of day.",
+      "Rental cars make the west-coast viewpoints, Tet Paul, and beach-hopping far easier; Saint Lucia drives on the left and the road to Soufrière is slow, curvy, and best tackled in daylight.",
+      "December through April is the driest and busiest stretch, so Soufrière resorts, The Landings, and Gros Piton guide slots should be booked ahead.",
+      "If you plan to do both Sulphur Springs and the Gros Piton hike, start early and carry water — mid-day heat and humidity are intense even in the dry season."
+    ],
+    "cityImages": {
+      "Castries": [
+        "Castries Market Saint Lucia",
+        "Derek Walcott Square Saint Lucia",
+        "Morne Fortune Saint Lucia"
+      ],
+      "Soufrière": [
+        "Gros Piton Saint Lucia",
+        "Sulphur Springs Saint Lucia",
+        "Diamond Falls Saint Lucia"
+      ],
+      "Gros Islet": [
+        "Pigeon Island Saint Lucia",
+        "Rodney Bay Marina Saint Lucia",
+        "Reduit Beach Saint Lucia"
+      ],
+      "Marigot Bay": [
+        "Marigot Bay Saint Lucia",
+        "Rainforest Hideaway Saint Lucia",
+        "Marigot Bay marina Saint Lucia"
+      ]
+    }
+  }
+}

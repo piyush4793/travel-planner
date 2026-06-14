@@ -1,0 +1,381 @@
+{
+  "name": "Grenada",
+  "seed": false,
+  "lat": 12.12,
+  "lng": -61.67,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.45L–₹2.25L",
+    "couple": "₹2.65L–₹4.05L",
+    "family4": "₹5.1L–₹7.4L"
+  },
+  "experiences": [
+    "Beaches",
+    "Snorkeling",
+    "Chocolate & Spice Estates",
+    "Rum Heritage",
+    "Rainforest Lakes",
+    "Island Ferries"
+  ],
+  "avoid": [
+    "June–November is wetter and overlaps the main Caribbean storm season, so ferry crossings, snorkel trips, and Grand Etang hikes are more likely to be disrupted.",
+    "Grand Anse fills up quickly around Christmas, New Year, and Easter, which pushes beachfront hotel prices above the island's normal shoulder-season range.",
+    "Carriacou is best done with a flexible buffer because Osprey ferry timings can shift with sea conditions and same-day returns feel rushed if the crossing is delayed."
+  ],
+  "combo": [
+    "Barbados",
+    "Saint Vincent and the Grenadines",
+    "Trinidad and Tobago"
+  ],
+  "landmark": "Grenada Underwater Sculpture Park",
+  "travelStyle": [
+    "relaxed",
+    "explorer"
+  ],
+  "stopoverNote": "For trips under 6 days, most travelers should stay between St. George's and Grand Anse and treat Carriacou as optional unless the Osprey ferry schedule lines up cleanly with the rest of the trip.",
+  "links": [],
+  "cities": [
+    {
+      "name": "St. George's",
+      "lat": 12.0561,
+      "lng": -61.7486,
+      "notes": "Historic harbor capital for Fort George views, the Carenage, chocolate stops, market mornings, and easiest access to island buses and ferry departures."
+    },
+    {
+      "name": "Grand Anse",
+      "lat": 12.0167,
+      "lng": -61.7667,
+      "notes": "Grenada's classic beach base for long swims, Morne Rouge sunsets, dive-operator pickups, and a good balance of resort stays and casual dining."
+    },
+    {
+      "name": "Carriacou",
+      "lat": 12.4833,
+      "lng": -61.45,
+      "notes": "Slow-paced sister island best for ferry-linked beach days, Sandy Island water taxis, Hillsborough village walks, and quieter guesthouse stays."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel Grenada and FLOW Grenada prepaid data packs are the easiest short-stay options; budget roughly ₹1,200–₹2,500 for maps, WhatsApp, and ferry coordination, and download offline maps before the Carriacou crossing.",
+    "apps": [
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency",
+      "Waze"
+    ],
+    "cityOrder": [
+      "St. George's",
+      "Grand Anse",
+      "Carriacou"
+    ],
+    "cities": {
+      "St. George's": {
+        "name": "St. George's",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay near the Carenage, True Blue, or Point Salines side if you want easier ferry-port transfers, restaurant variety, and fast bus access across the island.",
+        "days": [
+          {
+            "theme": "Fort views, harbor history, and Grenadian chocolate in the capital",
+            "activities": [
+              {
+                "name": "Fort George",
+                "cost": "₹166 pp",
+                "tip": "Adult entry is commonly listed at EC$5.35, which works out to about ₹166 at ₹31 per XCD."
+              },
+              {
+                "name": "Grenada National Museum",
+                "cost": "₹155 pp",
+                "tip": "The museum's token EC$5 entry translates to roughly ₹155 and is easy to pair with a Carenage walk."
+              },
+              {
+                "name": "Sendall Tunnel, Carenage waterfront, and Market Square stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "House of Chocolate Grenada tasting stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bay House Grenada",
+                "budget": "₹15,500–₹24,500/night"
+              },
+              {
+                "name": "True Blue Bay Boutique Resort",
+                "budget": "₹17,500–₹28,500/night"
+              }
+            ],
+            "meals": [
+              "Sails Restaurant & Bar",
+              "BB's Crabback",
+              "The Nutmeg Restaurant"
+            ]
+          },
+          {
+            "theme": "Rainforest lake, cocoa estate, and old-rum north-island drive",
+            "activities": [
+              {
+                "name": "Grand Etang National Park & Forest Reserve",
+                "cost": "₹166 pp",
+                "tip": "The Grenada Tourism Authority lists the park fee at EC$5.34, or about ₹166 per adult."
+              },
+              {
+                "name": "Belmont Estate classic tour",
+                "cost": "₹500 pp",
+                "tip": "Belmont's official classic estate tour is US$6, roughly EC$16.2 or about ₹500."
+              },
+              {
+                "name": "River Antoine Rum Distillery guided visit",
+                "cost": "₹155 pp",
+                "tip": "Recent visitor pricing commonly lists the distillery walk-through and tasting at EC$5 per adult."
+              },
+              {
+                "name": "Annandale Falls",
+                "cost": "₹166 pp",
+                "tip": "Recent listings put the falls entry at about EC$5.34 per adult."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bay House Grenada",
+                "budget": "₹15,500–₹24,500/night"
+              },
+              {
+                "name": "The Relax Inn",
+                "budget": "₹7,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "The Aquarium Restaurant",
+              "Patrick's Local Homestyle Restaurant",
+              "Dexter's Restaurant"
+            ]
+          }
+        ]
+      },
+      "Grand Anse": {
+        "name": "Grand Anse",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Grand Anse works best as the beach-and-water-activity base; Route 1 buses make it easy to reach St. George's without changing hotels.",
+        "days": [
+          {
+            "theme": "Grand Anse beach day with sculpture-park snorkeling",
+            "activities": [
+              {
+                "name": "Grand Anse Beach and Morne Rouge swim stops",
+                "cost": "Free"
+              },
+              {
+                "name": "Grenada Underwater Sculpture Park snorkel trip",
+                "cost": "₹5,735–₹6,200 pp",
+                "tip": "Licensed operator trips usually land around EC$185–EC$200 including boat, guide, gear, and the EC$10 marine park fee."
+              },
+              {
+                "name": "Spiceland Mall / local spice-shopping break",
+                "cost": "Free"
+              },
+              {
+                "name": "Grand Anse Craft & Spice Market browse",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Radisson Grenada Beach Resort",
+                "budget": "₹16,500–₹25,500/night"
+              },
+              {
+                "name": "Coyaba Beach Resort",
+                "budget": "₹19,500–₹29,500/night"
+              }
+            ],
+            "meals": [
+              "Umbrellas Beach Bar",
+              "Carib Sushi",
+              "Coconut Beach Restaurant"
+            ]
+          },
+          {
+            "theme": "Easy south-coast day with viewpoints and a resort-beach finish",
+            "activities": [
+              {
+                "name": "Morne Rouge Bay morning walk",
+                "cost": "Free"
+              },
+              {
+                "name": "BBC Beach / Magazine Beach afternoon",
+                "cost": "Free"
+              },
+              {
+                "name": "Quarantine Point lookout",
+                "cost": "Free"
+              },
+              {
+                "name": "Beach-club sunset around Grand Anse",
+                "cost": "Free–₹1,500 pp depending on lounger or drinks"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Blue Horizons Garden Resort",
+                "budget": "₹13,500–₹20,500/night"
+              },
+              {
+                "name": "Mount Cinnamon Resort & Beach Club",
+                "budget": "₹24,500–₹39,500/night"
+              }
+            ],
+            "meals": [
+              "Cummin' Up",
+              "Beachside Bistrot",
+              "Cilantro"
+            ]
+          }
+        ]
+      },
+      "Carriacou": {
+        "name": "Carriacou",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Spend at least one night after the ferry so weather or schedule changes do not turn the island into a rushed same-day dash.",
+        "days": [
+          {
+            "theme": "Osprey ferry arrival, Hillsborough village, and Paradise Beach",
+            "activities": [
+              {
+                "name": "Osprey Lines ferry from Grenada to Carriacou",
+                "cost": "₹2,480 pp",
+                "tip": "The commonly listed adult one-way fare is EC$80, so arrive early with cash for ticketing."
+              },
+              {
+                "name": "Hillsborough waterfront and Carriacou Museum exterior circuit",
+                "cost": "Free"
+              },
+              {
+                "name": "Paradise Beach afternoon",
+                "cost": "Free"
+              },
+              {
+                "name": "Hillsborough to Tyrell Bay taxi",
+                "cost": "₹1,085 per taxi",
+                "tip": "The standard taxi fare is commonly listed at EC$35 for the cross-island run."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Green Roof Inn",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hotel Laurena",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Kayak Kafe",
+              "Slipway Restaurant",
+              "Green Roof Restaurant"
+            ]
+          },
+          {
+            "theme": "Sandy Island boat day and quieter beaches around the sister island",
+            "activities": [
+              {
+                "name": "Sandy Island water taxi",
+                "cost": "₹840–₹1,240 pp",
+                "tip": "Typical return pricing is around EC$27–EC$40 per person, depending on the departure beach and how many people share the boat."
+              },
+              {
+                "name": "Anse La Roche beach or snorkel stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Belair National Park coastal drive",
+                "cost": "Free"
+              },
+              {
+                "name": "Tyrell Bay sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Carriacou Grand View Hotel",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Bogles Round House",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Lazy Turtle Pizzeria & Bar",
+              "Bogles Round House Restaurant",
+              "Slipway Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "St. George's",
+        "to": "Grand Anse",
+        "method": "Route 1 local bus, taxi, or rental car down the south coast (about 10–15m)",
+        "cost": "₹78–₹93 pp by bus; ₹930–₹1,860 by taxi"
+      },
+      {
+        "from": "Grand Anse",
+        "to": "Carriacou",
+        "method": "Bus or taxi back to St. George's port, then Osprey Lines ferry to Hillsborough (allow about 15m transfer plus the sea crossing)",
+        "cost": "₹2,560–₹2,700 pp including bus; higher if you take a taxi to the ferry terminal"
+      }
+    ],
+    "extras": [
+      "Route 1 minibuses between St. George's and Grand Anse usually cost EC$2.50–EC$3.00 each way, which converts to roughly ₹78–₹93; keep small cash ready because change can be slow during peak beach hours.",
+      "The St. George's to Grand Etang bus fare is commonly about EC$6 one way, or roughly ₹186 per person; for Belmont Estate and River Antoine on the same day, a rental car is much more practical than piecing together multiple buses.",
+      "Economy rental cars usually land around US$40–US$80 per day in Grenada, roughly ₹3,300–₹6,700, and most agencies also require the local temporary driving permit.",
+      "Underwater Sculpture Park trips are weather-sensitive; book the snorkel outing early in the Grenada mainland portion so you have room to rebook if visibility or seas turn poor.",
+      "December through May is the driest stretch and the best time for Grand Etang hikes, south-coast snorkel boats, and the Osprey ferry, but it is also the busiest period for Grand Anse beachfront hotels."
+    ],
+    "cityImages": {
+      "St. George's": [
+        "Fort George Grenada",
+        "Carenage St George's Grenada",
+        "House of Chocolate Grenada"
+      ],
+      "Grand Anse": [
+        "Grand Anse Beach Grenada",
+        "Underwater Sculpture Park Grenada",
+        "Morne Rouge Bay Grenada"
+      ],
+      "Carriacou": [
+        "Hillsborough Carriacou",
+        "Sandy Island Carriacou",
+        "Tyrell Bay Carriacou"
+      ]
+    }
+  }
+}

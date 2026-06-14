@@ -1,0 +1,398 @@
+{
+  "name": "Saint Kitts and Nevis",
+  "seed": false,
+  "lat": 17.36,
+  "lng": -62.78,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.6L–₹2.45L",
+    "couple": "₹2.95L–₹4.4L",
+    "family4": "₹5.8L–₹8.1L"
+  },
+  "experiences": [
+    "Fortresses",
+    "Island Ferries",
+    "Beach Time",
+    "Scenic Rail",
+    "Rainforest Hikes",
+    "Plantation Heritage"
+  ],
+  "avoid": [
+    "May–November is warmer, wetter, and more humid, so ferry crossings, fort viewpoints, and the Nevis Peak trail are more likely to be disrupted by squalls or muddy conditions.",
+    "Cruise-heavy weekdays can make Basseterre, Romney Manor, and Brimstone Hill feel busier between late morning and mid-afternoon.",
+    "Nevis Peak is steep, rooty, and often slippery even in the dry season, so do not attempt it without a local guide and proper footwear."
+  ],
+  "combo": [
+    "Antigua and Barbuda",
+    "Barbados",
+    "Sint Maarten"
+  ],
+  "landmark": "Brimstone Hill Fortress National Park",
+  "travelStyle": [
+    "relaxed",
+    "explorer"
+  ],
+  "stopoverNote": "For a 4-6 day trip, split your stay between St. Kitts and Nevis instead of changing bases daily; Basseterre/Frigate Bay work well first, then take the ferry to Charlestown for the second half.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Basseterre",
+      "lat": 17.2948,
+      "lng": -62.7261,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Capital base for cruise-port walks, Brimstone Hill day trips, Romney Manor, ferry departures, and the easiest first-night logistics after landing on St. Kitts."
+    },
+    {
+      "name": "Frigate Bay",
+      "lat": 17.2861,
+      "lng": -62.6906,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "St. Kitts' main resort strip for beach time, Timothy Hill views, scenic railway pickups, and easy taxi access back to Basseterre."
+    },
+    {
+      "name": "Charlestown",
+      "lat": 17.1334,
+      "lng": -62.6233,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Nevis base for ferry arrivals, Bath Hotel heritage stops, Pinney's Beach sunsets, and guided departures for the Nevis Peak trail."
+    }
+  ],
+  "itinerary": {
+    "sim": "Flow or Digicel prepaid data usually lands around ₹1,200–₹2,400 for enough maps, ferry coordination, and WhatsApp messaging across both islands; set it up on St. Kitts before island-hopping.",
+    "apps": [
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "Waze",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Basseterre",
+      "Frigate Bay",
+      "Charlestown"
+    ],
+    "cities": {
+      "Basseterre": {
+        "name": "Basseterre",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Stay near Basseterre or the airport corridor if you want the simplest arrival, fort day-trip, and ferry-terminal logistics before moving to a beach base.",
+        "days": [
+          {
+            "theme": "Historic Basseterre core, Romney Manor, and waterfront orientation",
+            "activities": [
+              {
+                "name": "Independence Square, Berkeley Memorial, and Basseterre Co-Cathedral exterior walk",
+                "cost": "Free"
+              },
+              {
+                "name": "National Museum at Port Zante",
+                "cost": "₹465 pp",
+                "tip": "Adult admission is commonly listed around EC$15, which converts to roughly ₹465."
+              },
+              {
+                "name": "Romney Manor / Caribelle Batik gardens and workshop",
+                "cost": "₹250 pp",
+                "tip": "Visitor admission is commonly listed around US$3, about ₹250."
+              },
+              {
+                "name": "Port Zante boardwalk and ferry-terminal reconnaissance",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Seaview Inn",
+                "budget": "₹9,000–₹13,000/night"
+              },
+              {
+                "name": "Koi Resort Saint Kitts, Curio Collection by Hilton",
+                "budget": "₹17,000–₹26,000/night"
+              }
+            ],
+            "meals": [
+              "El Fredo's Restaurant",
+              "Ballahoo Restaurant",
+              "Fisherman's Wharf"
+            ]
+          },
+          {
+            "theme": "Brimstone Hill fortress day and western-island viewpoints",
+            "activities": [
+              {
+                "name": "Brimstone Hill Fortress National Park",
+                "cost": "₹1,245 pp",
+                "tip": "Adult admission is officially listed around US$15, which converts to about ₹1,245."
+              },
+              {
+                "name": "Black Rocks coastal stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Wingfield Estate grounds photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "The Circus and evening walk back through central Basseterre",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Seaview Inn",
+                "budget": "₹9,000–₹13,000/night"
+              },
+              {
+                "name": "Koi Resort Saint Kitts, Curio Collection by Hilton",
+                "budget": "₹17,000–₹26,000/night"
+              }
+            ],
+            "meals": [
+              "Serendipity Restaurant",
+              "Splash",
+              "Rock Lobster"
+            ]
+          }
+        ]
+      },
+      "Frigate Bay": {
+        "name": "Frigate Bay",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Use Frigate Bay if you want the classic resort stretch, easier beach time, and nightlife without being far from Basseterre's taxi and ferry links.",
+        "days": [
+          {
+            "theme": "Scenic Railway splurge, Timothy Hill views, and the beach strip",
+            "activities": [
+              {
+                "name": "St. Kitts Scenic Railway full island tour",
+                "cost": "₹10,700 pp",
+                "tip": "Adult pricing is commonly published around US$129 for the classic sightseeing circuit, which converts to roughly ₹10,700."
+              },
+              {
+                "name": "Timothy Hill Overlook",
+                "cost": "Free"
+              },
+              {
+                "name": "South Friars Bay beach stop",
+                "cost": "Free"
+              },
+              {
+                "name": "The Strip evening walk in Frigate Bay",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Timothy Beach Resort",
+                "budget": "₹13,000–₹19,000/night"
+              },
+              {
+                "name": "St. Kitts Marriott Resort & The Royal Beach Casino",
+                "budget": "₹24,000–₹38,000/night"
+              }
+            ],
+            "meals": [
+              "Spice Mill Restaurant",
+              "Mr. X's Shiggidy Shack",
+              "Vibes Beach Bar"
+            ]
+          },
+          {
+            "theme": "Relaxed resort day with taxi hops and Caribbean sunsets",
+            "activities": [
+              {
+                "name": "Frigate Bay South beach morning",
+                "cost": "Free"
+              },
+              {
+                "name": "Cockleshell Bay taxi outing",
+                "cost": "₹1,550–₹2,200 per taxi"
+              },
+              {
+                "name": "Caribbean side sunset return via Timothy Hill",
+                "cost": "Free"
+              },
+              {
+                "name": "Optional beach-chair and drink spend",
+                "cost": "₹1,000–₹2,000 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Timothy Beach Resort",
+                "budget": "₹13,000–₹19,000/night"
+              },
+              {
+                "name": "St. Kitts Marriott Resort & The Royal Beach Casino",
+                "budget": "₹24,000–₹38,000/night"
+              }
+            ],
+            "meals": [
+              "Marshall's",
+              "Rituals Coffee House",
+              "Calypso Restaurant"
+            ]
+          }
+        ]
+      },
+      "Charlestown": {
+        "name": "Charlestown",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Charlestown works best as your Nevis base because the ferry, heritage quarter, Bath Hotel ruins, and Pinney's Beach hotels are all close enough for short taxi rides.",
+        "days": [
+          {
+            "theme": "Charlestown heritage, Bath Hotel ruins, and Pinney's Beach",
+            "activities": [
+              {
+                "name": "Bath Hotel ruins and hot spring area",
+                "cost": "Free"
+              },
+              {
+                "name": "Alexander Hamilton Museum",
+                "cost": "₹370 pp",
+                "tip": "Adult admission is commonly listed around EC$12, roughly ₹370."
+              },
+              {
+                "name": "Charlestown waterfront and Memorial Square walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Pinney's Beach sunset stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Hermitage",
+                "budget": "₹18,000–₹27,000/night"
+              },
+              {
+                "name": "Hamilton Beach Villas & Spa",
+                "budget": "₹22,000–₹34,000/night"
+              }
+            ],
+            "meals": [
+              "Bananas Restaurant",
+              "Cafe des Arts",
+              "The Gin Trap Restaurant"
+            ]
+          },
+          {
+            "theme": "Guided Nevis Peak hike and a low-key recovery evening",
+            "activities": [
+              {
+                "name": "Nevis Peak guided hike",
+                "cost": "₹4,200–₹5,800 pp",
+                "tip": "There is no formal park entry fee, but certified guide pricing for this demanding trail commonly falls around US$50–70 per person."
+              },
+              {
+                "name": "Cottle Church photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Bath Stream or hotel pool recovery time",
+                "cost": "Free"
+              },
+              {
+                "name": "Charlestown evening taxi back from dinner",
+                "cost": "₹620–₹930 per taxi"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Hermitage",
+                "budget": "₹18,000–₹27,000/night"
+              },
+              {
+                "name": "Hamilton Beach Villas & Spa",
+                "budget": "₹22,000–₹34,000/night"
+              }
+            ],
+            "meals": [
+              "Luna Restaurant",
+              "Passion Bar & Grill",
+              "Yachtsman Grill"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Basseterre",
+        "to": "Frigate Bay",
+        "method": "Taxi or rental car via the southeast peninsula road (about 10-15m)",
+        "cost": "₹1,150–₹1,550 per taxi; ₹3,700–₹6,200/day for a rental car"
+      },
+      {
+        "from": "Frigate Bay",
+        "to": "Charlestown",
+        "method": "Taxi back to Basseterre ferry terminal, then the public ferry to Charlestown, Nevis (about 60-90m door to door)",
+        "cost": "₹775–₹1,085 pp by ferry, plus local taxi transfers"
+      }
+    ],
+    "extras": [
+      "December through April is the driest and most comfortable window, so it is the easiest season for fort views, ferry crossings, and the muddy Nevis Peak trail; book early because holiday demand raises room rates fast.",
+      "Official taxis on St. Kitts and Nevis do not use ride-hailing apps; agree the fare before you depart, especially on airport, beach-strip, and ferry-terminal runs.",
+      "The Basseterre-Charlestown ferry is the easiest island-to-island link for most travelers, while water taxis from the southeast peninsula are faster but cost materially more.",
+      "Rental cars are practical if you want Brimstone Hill, Romney Manor, Timothy Hill, and Pinney's Beach on your own schedule; drive on the left and budget about ₹2,000 extra for the local temporary driving permit.",
+      "Carry some cash in XCD for ferries, taxis, and smaller food stops even though resorts and larger restaurants usually accept cards."
+    ],
+    "cityImages": {
+      "Basseterre": [
+        "Basseterre Saint Kitts",
+        "Brimstone Hill Fortress Saint Kitts",
+        "Romney Manor Caribelle Batik"
+      ],
+      "Frigate Bay": [
+        "Frigate Bay Saint Kitts",
+        "Timothy Hill Overlook Saint Kitts",
+        "St Kitts Scenic Railway"
+      ],
+      "Charlestown": [
+        "Charlestown Nevis",
+        "Bath Hotel ruins Nevis",
+        "Nevis Peak hike"
+      ]
+    }
+  }
+}

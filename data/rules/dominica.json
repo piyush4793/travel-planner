@@ -1,0 +1,551 @@
+{
+  "name": "Dominica",
+  "seed": false,
+  "lat": 15.41,
+  "lng": -61.37,
+  "region": "Americas",
+  "bestMonths": [
+    "February",
+    "March",
+    "April",
+    "May",
+    "June"
+  ],
+  "worstMonths": [
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.6L–₹2.45L",
+    "couple": "₹2.95L–₹4.35L",
+    "family4": "₹5.7L–₹8.15L"
+  },
+  "experiences": [
+    "Rainforest Hikes",
+    "Waterfalls",
+    "Whale Watching",
+    "Hot Springs",
+    "Black-Sand Beaches",
+    "Creole Food"
+  ],
+  "avoid": [
+    "July to November is wetter and overlaps the core Atlantic hurricane season, so Boiling Lake, Titou Gorge, whale-watching departures, and northeast-coast drives are more likely to be disrupted.",
+    "Cruise-ship call days make central Roseau busier, so Fort Young waterfront, Old Market lanes, and taxi ranks feel more crowded for a few daytime hours.",
+    "Dominica's mountain roads are narrow, steep, and slow even in good weather, so avoid over-packing the route if you are self-driving between Roseau Valley, Portsmouth, and Calibishie."
+  ],
+  "combo": [
+    "Guadeloupe",
+    "Martinique",
+    "Saint Lucia"
+  ],
+  "landmark": "Boiling Lake",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 6 days, stay in Roseau or the Laudat / Wotten Waven area, buy the Morne Trois Pitons day or week pass, and handle Portsmouth plus Calibishie as long day trips or skip one coast entirely.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Roseau",
+      "lat": 15.3092,
+      "lng": -61.3794,
+      "notes": "The capital is the easiest first base for ferry arrivals, whale-watching departures, Roseau market energy, and day trips into the national-park interior."
+    },
+    {
+      "name": "Morne Trois Pitons",
+      "lat": 15.3367,
+      "lng": -61.3326,
+      "notes": "Use the Laudat–Trafalgar–Wotten Waven highlands as your rainforest lodge base for Boiling Lake, Titou Gorge, Emerald Pool, hot springs, and Dominica's signature interior hikes."
+    },
+    {
+      "name": "Portsmouth",
+      "lat": 15.5833,
+      "lng": -61.4667,
+      "notes": "Dominica's north-west hub works well for Cabrits National Park, Fort Shirley, Purple Turtle Beach, Syndicate, and easier access to the island's second town services."
+    },
+    {
+      "name": "Calibishie",
+      "lat": 15.5942,
+      "lng": -61.3495,
+      "notes": "The quiet northeast coast is the scenic finish for Red Rocks, Batibou-style beaches, village guesthouses, and short drives to Chaudiere Pool and Pointe Baptiste."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel Dominica and FLOW sell the most practical prepaid data; budget about ₹900–₹1,800 for a short-stay pack and download offline maps before hiking days because interior coverage fades around trailheads.",
+    "apps": [
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "Airalo",
+      "XE Currency",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Roseau",
+      "Morne Trois Pitons",
+      "Portsmouth",
+      "Calibishie"
+    ],
+    "cities": {
+      "Roseau": {
+        "name": "Roseau",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Roseau works best at the start or end of the trip because shared minibuses, ferry logistics, dive shops, and whale-watch departures are easiest to coordinate here.",
+        "days": [
+          {
+            "theme": "Roseau Core, Botanic Gardens & Bayfront",
+            "activities": [
+              {
+                "name": "Dominica Botanic Gardens and Sisserou parrot enclosure walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Old Market Plaza, Bayfront, and Roseau Cathedral stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Morne Bruce viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Dominica Museum stop",
+                "cost": "₹155 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "St. James Guesthouse",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Fort Young Hotel & Dive Resort",
+                "budget": "₹18,500–₹28,500/night"
+              }
+            ],
+            "meals": [
+              "Old Stone Grill & Bar",
+              "Ruins Rock Café",
+              "Pearl's Cuisine"
+            ]
+          },
+          {
+            "theme": "Whale Watching & Roseau Waterfront Slow Day",
+            "activities": [
+              {
+                "name": "Dive Dominica or PH Whale Watch Dominica shared whale-watching cruise",
+                "cost": "₹5,700–₹7,100 pp",
+                "tip": "Shared departures are commonly published around US$69–85 per adult; Dominica is one of the few places where resident sperm whales are seen year-round, though February to April usually brings calmer seas."
+              },
+              {
+                "name": "Fort Young waterfront and cruise pier walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Roseau Public Market for spices, bay oil, and cocoa tea",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset dinner by the bayfront",
+                "cost": "₹1,200–₹2,200 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Narakiel's Inn",
+                "budget": "₹6,000–₹8,500/night"
+              },
+              {
+                "name": "Fort Young Hotel & Dive Resort",
+                "budget": "₹18,500–₹28,500/night"
+              }
+            ],
+            "meals": [
+              "The Palisades Restaurant",
+              "Fusion Village Restaurant",
+              "Pearl's Cuisine"
+            ]
+          },
+          {
+            "theme": "Easy South-West Day for Sulphur Springs & Snorkel Time",
+            "activities": [
+              {
+                "name": "Soufriere Sulphur Springs single-site pass",
+                "cost": "₹675 pp",
+                "tip": "The Forestry eco-site single-visit pass is officially listed at US$8 / EC$21.74 for one fee-controlled site."
+              },
+              {
+                "name": "Champagne Reef shore snorkel",
+                "cost": "Free"
+              },
+              {
+                "name": "Scott's Head viewpoint walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Roseau evening return by minibus or taxi",
+                "cost": "₹110–₹310 pp by bus; ₹1,400–₹2,500 taxi depending on distance"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "St. James Guesthouse",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Sutton Place Hotel",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Old Stone Grill & Bar",
+              "Pearl's Cuisine",
+              "The Palisades Restaurant"
+            ]
+          }
+        ]
+      },
+      "Morne Trois Pitons": {
+        "name": "Morne Trois Pitons",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Laudat and Trafalgar are the most practical sleep bases if Boiling Lake is the priority; buy the day pass for multi-stop waterfall days or the week pass if you will split hikes across several days.",
+        "days": [
+          {
+            "theme": "Trafalgar Falls, Titou Gorge & Wotten Waven Soak",
+            "activities": [
+              {
+                "name": "Morne Trois Pitons eco-site day pass covering Trafalgar Falls and Titou Gorge",
+                "cost": "₹1,690 pp",
+                "tip": "Dominica Forestry lists the all-sites day pass at US$20 / EC$54.39, which is the best-value option if you combine multiple fee-controlled nature stops in one day."
+              },
+              {
+                "name": "Trafalgar Falls single-site visit",
+                "cost": "₹435 pp",
+                "tip": "If you only do Trafalgar Falls, widely published on-site pricing is about EC$14, roughly ₹435 per adult."
+              },
+              {
+                "name": "Titou Gorge swim-through canyon (included with the pass)",
+                "cost": "Included in ₹1,690 day pass"
+              },
+              {
+                "name": "Wotten Waven hot-spring soak",
+                "cost": "₹620–₹930 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Papillote Wilderness Retreat",
+                "budget": "₹10,500–₹17,500/night"
+              },
+              {
+                "name": "Cocoa Cottages",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Papillote Rainforest Restaurant",
+              "Chez Ophelia",
+              "Roxy's Mountain Lodge"
+            ]
+          },
+          {
+            "theme": "Boiling Lake Hike & Freshwater Lake Overlooks",
+            "activities": [
+              {
+                "name": "Boiling Lake hike park entry",
+                "cost": "₹675 pp",
+                "tip": "The official single-site eco-pass is US$8 / EC$21.74. Most travelers also hire a local guide because the trail is long, muddy, and weather-sensitive."
+              },
+              {
+                "name": "Local guide for the Boiling Lake hike",
+                "cost": "₹4,150–₹8,300 pp",
+                "tip": "Guide pricing commonly starts around US$50 per person and increases with transport, private guiding, or very small groups."
+              },
+              {
+                "name": "Freshwater Lake viewpoint stop",
+                "cost": "Included with park pass"
+              },
+              {
+                "name": "Ti Kwen Glo Cho or nearby post-hike mineral pool",
+                "cost": "₹775–₹1,100 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Papillote Wilderness Retreat",
+                "budget": "₹10,500–₹17,500/night"
+              },
+              {
+                "name": "Roxy's Mountain Lodge",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Papillote Rainforest Restaurant",
+              "Roxy's Mountain Lodge",
+              "Cocoa Cottages"
+            ]
+          },
+          {
+            "theme": "Emerald Pool, Middleham Trailhead & Slow Rainforest Day",
+            "activities": [
+              {
+                "name": "Emerald Pool single-site visit",
+                "cost": "₹435 pp",
+                "tip": "Emerald Pool is generally priced at about EC$14 for a stand-alone visit, or you can cover it with the all-sites pass if you are stacking stops."
+              },
+              {
+                "name": "Middleham Falls trail access",
+                "cost": "₹675 pp or included with a valid day/week pass"
+              },
+              {
+                "name": "Morne Trois Pitons week pass",
+                "cost": "₹4,210 pp",
+                "tip": "The 7-day Forestry pass is officially US$50 / EC$135.85 and makes sense if you want Boiling Lake, Trafalgar, Emerald Pool, and Cabrits spread across several days."
+              },
+              {
+                "name": "Rainforest lodge down-time in Laudat or Trafalgar",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cocoa Cottages",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Chez Ophelia",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Papillote Rainforest Restaurant",
+              "Chez Ophelia",
+              "Cocoa Cottages"
+            ]
+          }
+        ]
+      },
+      "Portsmouth": {
+        "name": "Portsmouth",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Portsmouth is the right overnight stop if you want Cabrits, Purple Turtle Beach, and a more relaxed north-west base before crossing to the island's rougher northeast corner.",
+        "days": [
+          {
+            "theme": "Cabrits National Park, Fort Shirley & Purple Turtle Beach",
+            "activities": [
+              {
+                "name": "Cabrits National Park single-site pass",
+                "cost": "₹675 pp",
+                "tip": "Cabrits is on the Forestry fee programme, so the same official US$8 / EC$21.74 single-site pass applies unless you already hold the day or week pass."
+              },
+              {
+                "name": "Fort Shirley and hilltop cannon viewpoints",
+                "cost": "Included with Cabrits pass"
+              },
+              {
+                "name": "Purple Turtle Beach swim stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset at Cabrits headland or Douglas Bay",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Champs Hotel, Restaurant & Bar",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Portsmouth Beach Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "The Champs Restaurant & Bar",
+              "Purple Turtle Beach Club",
+              "Sandy's Bar & Restaurant"
+            ]
+          },
+          {
+            "theme": "Syndicate Nature Trail & North-Coast Viewpoints",
+            "activities": [
+              {
+                "name": "Syndicate Nature Trail / Morne Diablotin single-site pass",
+                "cost": "₹675 pp",
+                "tip": "Syndicate is another Forestry-managed paid site, so the same official single-site or multi-site pass structure applies."
+              },
+              {
+                "name": "Cold Soufriere and nearby village stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Secret Beach or Douglas Bay easy coast stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Portsmouth riverfront and town market stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Picard Beach Cottages",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "InterContinental Dominica Cabrits Resort & Spa",
+                "budget": "₹24,000–₹42,000/night"
+              }
+            ],
+            "meals": [
+              "The Champs Restaurant & Bar",
+              "Keepin' It Real",
+              "Purple Turtle Beach Club"
+            ]
+          }
+        ]
+      },
+      "Calibishie": {
+        "name": "Calibishie",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Calibishie is best as a decompressing final stop: the scenery is dramatic, but services are thinner than Roseau or Portsmouth, so book dinner plans and transport ahead.",
+        "days": [
+          {
+            "theme": "Red Rocks, Pointe Baptiste & Village Coast",
+            "activities": [
+              {
+                "name": "Red Rocks and Hodges Bay viewpoint walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Pointe Baptiste estate and sea-cliff lookouts",
+                "cost": "Free"
+              },
+              {
+                "name": "Calibishie village waterfront stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset meal with ocean views",
+                "cost": "₹1,100–₹2,000 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Calibishie Lodges",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Sea Cliff Cottages",
+                "budget": "₹8,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Rainbow Restaurant & Bar",
+              "POZ Restaurant & Bar",
+              "Coral Reef Bar & Grill"
+            ]
+          },
+          {
+            "theme": "Chaudiere Pool, Batibou Coast & Slow Northeast Morning",
+            "activities": [
+              {
+                "name": "Chaudiere Pool walk and swim",
+                "cost": "Free"
+              },
+              {
+                "name": "Batibou Beach access",
+                "cost": "Free"
+              },
+              {
+                "name": "Number One Beach or Woodford Hill coast stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Return drive or minibus toward Roseau / airport side",
+                "cost": "₹185–₹620 pp by bus depending on route; taxi costs rise sharply"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pointe Baptiste Guest House",
+                "budget": "₹7,000–₹11,000/night"
+              },
+              {
+                "name": "Calibishie Lodges",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Rainbow Restaurant & Bar",
+              "Coral Reef Bar & Grill",
+              "POZ Restaurant & Bar"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Roseau",
+        "to": "Morne Trois Pitons",
+        "method": "Shared local minibus toward Trafalgar / Laudat or a short taxi / rental-car climb into the Roseau Valley highlands (about 20–40m depending on stop)",
+        "cost": "₹110–₹220 pp by bus; ₹1,400–₹1,900 taxi for up to 3; ₹4,150–₹6,650/day for a rental car"
+      },
+      {
+        "from": "Morne Trois Pitons",
+        "to": "Portsmouth",
+        "method": "Usually backtrack to Roseau and change to a northbound minibus, or drive the full mountain-coast route yourself (about 90–120m)",
+        "cost": "₹370–₹470 pp by connecting buses; about ₹6,800–₹7,500 taxi from the Roseau side; ₹4,150–₹6,650/day for a rental car"
+      },
+      {
+        "from": "Portsmouth",
+        "to": "Calibishie",
+        "method": "North-east coast transfer by shared minibus, taxi, or self-drive via villages like Bense / Woodford Hill (about 45–60m)",
+        "cost": "₹185–₹250 pp by bus; about ₹8,370 taxi for up to 3; ₹4,150–₹6,650/day for a rental car"
+      }
+    ],
+    "extras": [
+      "Dominica's Forestry pass structure is unusually useful: the official single-site pass is US$8 / EC$21.74 (about ₹675), the all-sites day pass is US$20 / EC$54.39 (about ₹1,690), and the 7-day pass is US$50 / EC$135.85 (about ₹4,210).",
+      "Local buses are cheap but informal: they mostly leave when full from Roseau and Portsmouth, they thin out after dark, and they do not always line up well with long hikes or return trips from remote trailheads.",
+      "Rental cars give the most flexibility for Dominica's interior and northeast, but tourists also need the temporary local driving permit, usually about US$12 (roughly ₹1,000) on top of the daily rental.",
+      "If Boiling Lake is your main goal, sleep in Laudat or Trafalgar the night before and keep one weather-buffer day because heavy rain can make the trail unwise even in the drier months.",
+      "Bring water shoes or grippy sandals for Titou Gorge and spare dry bags for waterfall days; short tropical downpours still happen even in February to June."
+    ],
+    "cityImages": {
+      "Roseau": [
+        "Roseau Dominica bayfront",
+        "Dominica Botanic Gardens Roseau",
+        "Fort Young Hotel Roseau"
+      ],
+      "Morne Trois Pitons": [
+        "Trafalgar Falls Dominica",
+        "Boiling Lake Dominica",
+        "Titou Gorge Dominica"
+      ],
+      "Portsmouth": [
+        "Cabrits National Park Dominica",
+        "Fort Shirley Dominica",
+        "Purple Turtle Beach Dominica"
+      ],
+      "Calibishie": [
+        "Red Rocks Calibishie Dominica",
+        "Pointe Baptiste Dominica",
+        "Chaudiere Pool Dominica"
+      ]
+    }
+  }
+}

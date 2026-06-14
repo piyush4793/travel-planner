@@ -1775,9 +1775,9 @@
     "lng": -61.8,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Saint Lucia",
@@ -1785,19 +1785,19 @@
     "lng": -60.98,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 9
   },
   {
     "name": "Grenada",
     "lat": 12.12,
-    "lng": -61.68,
+    "lng": -61.67,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Saint Vincent and the Grenadines",
@@ -1815,9 +1815,9 @@
     "lng": -61.37,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 10
   },
   {
     "name": "Saint Kitts and Nevis",
@@ -1825,9 +1825,9 @@
     "lng": -62.78,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 6
   },
   {
     "name": "Australia",
