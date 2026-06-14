@@ -1,0 +1,624 @@
+{
+  "name": "Kazakhstan",
+  "seed": false,
+  "lat": 48.02,
+  "lng": 66.92,
+  "region": "Asia",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹1.15L–₹1.95L",
+    "couple": "₹2.1L–₹3.5L",
+    "family4": "₹4.1L–₹6.6L"
+  },
+  "experiences": [
+    "Mountain City Cafes",
+    "Steppe Skyline",
+    "Charyn Canyon Hikes",
+    "Kolsai & Kaindy Lakes",
+    "Timurid Heritage",
+    "Talgo Sleeper Train"
+  ],
+  "avoid": [
+    "December to February cold snaps in Astana and icy rural roads around Charyn and Kolsai",
+    "Mid-summer afternoons in Charyn Canyon if you are not comfortable hiking in dry canyon heat"
+  ],
+  "combo": [
+    "Uzbekistan",
+    "Kyrgyzstan"
+  ],
+  "landmark": "Charyn Canyon",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Almaty",
+      "lat": 43.2542,
+      "lng": 76.9547,
+      "notes": "Leafy former capital for cafes, markets, Soviet landmarks and easy mountain excursions"
+    },
+    {
+      "name": "Astana (Nur-Sultan)",
+      "lat": 51.1694,
+      "lng": 71.4491,
+      "notes": "Futuristic steppe capital with Bayterek, broad boulevards, big museums and dramatic skies"
+    },
+    {
+      "name": "Charyn Canyon",
+      "lat": 43.35,
+      "lng": 79.0833,
+      "notes": "Red-rock canyon for the Valley of Castles trail, river views and desert-style sunrise or sunset"
+    },
+    {
+      "name": "Turkestan",
+      "lat": 43.3,
+      "lng": 68.2667,
+      "notes": "UNESCO pilgrimage city centered on the Mausoleum of Khoja Ahmed Yasawi and Silk Road history"
+    },
+    {
+      "name": "Kolsai Lakes",
+      "lat": 42.95,
+      "lng": 78.3333,
+      "notes": "Base in Saty village for Lower Kolsai, Kaindy's submerged forest and quiet mountain guesthouses"
+    }
+  ],
+  "itinerary": {
+    "sim": "Beeline or Kcell tourist SIMs are easiest in Almaty airport and city malls; expect roughly ₹540–₹1,080 for a short trip data pack.",
+    "apps": [
+      "Yandex Go",
+      "2GIS",
+      "Air Astana",
+      "KTZ / bilet.railways.kz",
+      "Yandex Maps",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Almaty",
+      "Charyn Canyon",
+      "Kolsai Lakes",
+      "Astana (Nur-Sultan)",
+      "Turkestan"
+    ],
+    "cities": {
+      "Almaty": {
+        "name": "Almaty",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days lets you cover the core city plus one mountain outing; add a fourth only if you want a slower spa or museum day.",
+        "days": [
+          {
+            "theme": "Panfilov Park, Bazaar & Kok Tobe",
+            "activities": [
+              {
+                "name": "Ascension Cathedral and Park of 28 Panfilov Guardsmen",
+                "cost": "Free"
+              },
+              {
+                "name": "Green Bazaar snack crawl for samsa, dried fruit and lagman",
+                "cost": "₹270–₹720 pp"
+              },
+              {
+                "name": "Museum of Folk Musical Instruments",
+                "cost": "₹90–₹270 pp"
+              },
+              {
+                "name": "Kok Tobe cable car round trip",
+                "cost": "₹1,440 pp"
+              },
+              {
+                "name": "Arbat and Zhibek Zholy evening walk with coffee stop",
+                "cost": "₹270–₹540 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Les Business Hostel",
+                "budget": "₹2,700–₹4,000/night"
+              },
+              {
+                "name": "Kazakhstan Hotel",
+                "budget": "₹7,200–₹9,000/night"
+              },
+              {
+                "name": "Novotel Almaty City Center",
+                "budget": "₹14,400–₹16,200/night"
+              }
+            ],
+            "meals": [
+              "Navat",
+              "Daredzhani",
+              "Kishlak"
+            ]
+          },
+          {
+            "theme": "Museums, Republic Square & Central Almaty",
+            "activities": [
+              {
+                "name": "Central State Museum of Kazakhstan",
+                "cost": "₹180–₹360 pp"
+              },
+              {
+                "name": "Republic Square and Independence Monument",
+                "cost": "Free"
+              },
+              {
+                "name": "A. Kasteyev State Museum of Arts",
+                "cost": "₹180–₹270 pp"
+              },
+              {
+                "name": "Arasan Baths session",
+                "cost": "₹900–₹1,440 pp"
+              },
+              {
+                "name": "Craft coffee or dessert around Dostyk Avenue",
+                "cost": "₹270–₹630 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Renion Park Hotel",
+                "budget": "₹9,000–₹10,800/night"
+              },
+              {
+                "name": "Grand Tien Shan Hotel",
+                "budget": "₹9,000–₹10,800/night"
+              },
+              {
+                "name": "Rixos Almaty",
+                "budget": "₹27,000+/night"
+              }
+            ],
+            "meals": [
+              "Line Brew",
+              "Cafeteria",
+              "Alasha"
+            ]
+          },
+          {
+            "theme": "Medeu & Shymbulak Mountain Day",
+            "activities": [
+              {
+                "name": "Medeu skating rink complex and valley walk",
+                "cost": "Free to ₹720 pp depending on season"
+              },
+              {
+                "name": "Shymbulak cable car round trip",
+                "cost": "₹1,440–₹1,800 pp"
+              },
+              {
+                "name": "Mountain lunch or tea with ridge views at Shymbulak",
+                "cost": "₹630–₹1,260 pp"
+              },
+              {
+                "name": "Return to the city for sunset around Dostyk Plaza or Kok Tobe viewpoint",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kazakhstan Hotel",
+                "budget": "₹7,200–₹9,000/night"
+              },
+              {
+                "name": "Novotel Almaty City Center",
+                "budget": "₹14,400–₹16,200/night"
+              }
+            ],
+            "meals": [
+              "Navat",
+              "Café Central",
+              "Daredzhani"
+            ]
+          },
+          {
+            "theme": "Optional Slow Almaty Day",
+            "activities": [
+              {
+                "name": "Easy morning at First President's Park or Botanical Garden"
+              },
+              {
+                "name": "Souvenir shopping for chocolate, felt goods and tea on Arbat"
+              },
+              {
+                "name": "Long lunch and cafe-hopping around Abay and Dostyk avenues"
+              }
+            ]
+          }
+        ]
+      },
+      "Astana (Nur-Sultan)": {
+        "name": "Astana (Nur-Sultan)",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is enough for the headline architecture and museums; use a third only if you want Expo or opera time.",
+        "days": [
+          {
+            "theme": "Bayterek Axis & Modern Capital Icons",
+            "activities": [
+              {
+                "name": "Bayterek Tower observation deck",
+                "cost": "₹130–₹360 pp"
+              },
+              {
+                "name": "Nurzhol Boulevard walk to Ak Orda viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Khan Shatyr Entertainment Center",
+                "cost": "Free entry; ₹270–₹720 pp for paid rides"
+              },
+              {
+                "name": "Evening riverfront or boulevard coffee stop",
+                "cost": "₹270–₹630 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Good Time Hostel",
+                "budget": "₹2,700–₹4,500/night"
+              },
+              {
+                "name": "Wyndham Garden Astana",
+                "budget": "₹8,100–₹12,600/night"
+              },
+              {
+                "name": "Sheraton Astana Hotel",
+                "budget": "₹14,400–₹20,700/night"
+              }
+            ],
+            "meals": [
+              "Astana Nury",
+              "Satti",
+              "Mökki"
+            ]
+          },
+          {
+            "theme": "National Museum, Hazret Sultan & Expo Sphere",
+            "activities": [
+              {
+                "name": "National Museum of the Republic of Kazakhstan",
+                "cost": "₹180–₹360 pp"
+              },
+              {
+                "name": "Hazret Sultan Mosque",
+                "cost": "Free"
+              },
+              {
+                "name": "Palace of Peace and Reconciliation guided visit",
+                "cost": "₹180–₹220 pp"
+              },
+              {
+                "name": "Nur Alem Museum at the Expo site",
+                "cost": "₹270–₹540 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Park Inn by Radisson Astana",
+                "budget": "₹7,200–₹10,800/night"
+              },
+              {
+                "name": "Wyndham Garden Astana",
+                "budget": "₹8,100–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "Zhirgalau",
+              "Mangilik",
+              "Coffee Boom"
+            ]
+          },
+          {
+            "theme": "Optional Opera or Slow Capital Day",
+            "activities": [
+              {
+                "name": "Astana Opera guided tour or performance",
+                "cost": "₹360–₹900 pp for tours; shows vary"
+              },
+              {
+                "name": "Museum of the First President or extra museum time",
+                "cost": "Free to ₹180 pp"
+              },
+              {
+                "name": "Relaxed brunch and skyline photos around Abu Dhabi Plaza"
+              }
+            ]
+          }
+        ]
+      },
+      "Charyn Canyon": {
+        "name": "Charyn Canyon",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Treat Charyn as a focused overnight or a very long day from Almaty; staying nearby gives you the best light and cooler hiking hours.",
+        "days": [
+          {
+            "theme": "Valley of Castles & Canyon Sunset",
+            "activities": [
+              {
+                "name": "Charyn National Park entry",
+                "cost": "₹130–₹140 pp"
+              },
+              {
+                "name": "Valley of Castles trail down to the Charyn River",
+                "cost": "Included"
+              },
+              {
+                "name": "Eco-post parking or local park shuttle share",
+                "cost": "₹90–₹180 pp equivalent when split"
+              },
+              {
+                "name": "Sunset viewpoint above the canyon rim",
+                "cost": "Included"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Charyn Canyon Camp",
+                "budget": "₹4,500–₹7,200/night"
+              },
+              {
+                "name": "Pana Unique Charyn",
+                "budget": "₹5,400–₹9,000/night"
+              },
+              {
+                "name": "Yurtada",
+                "budget": "₹3,600–₹6,300/night"
+              }
+            ],
+            "meals": [
+              "Kompot Café",
+              "Pana Unique Charyn Restaurant",
+              "Charyn Canyon Camp dining hall"
+            ]
+          }
+        ]
+      },
+      "Turkestan": {
+        "name": "Turkestan",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day covers the mausoleum complex well; add a second only if you want Otyrar or a slower museum-reserve visit.",
+        "days": [
+          {
+            "theme": "Yasawi Mausoleum & Keruen-Saray",
+            "activities": [
+              {
+                "name": "Mausoleum of Khoja Ahmed Yasawi and Azret Sultan reserve ticket",
+                "cost": "₹270–₹360 pp"
+              },
+              {
+                "name": "Rabia Sultan Begim Mausoleum and Hilvet underground mosque",
+                "cost": "Included"
+              },
+              {
+                "name": "Keruen-Saray complex",
+                "cost": "Free entry; ₹180–₹360 pp for flying theater or shows"
+              },
+              {
+                "name": "Evening walk through the new Silk Road promenade",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Edem",
+                "budget": "₹1,400–₹2,500/night"
+              },
+              {
+                "name": "Hotel Khanaka",
+                "budget": "₹1,800–₹2,700/night"
+              },
+              {
+                "name": "Rixos Turkestan",
+                "budget": "₹5,400–₹7,200/night"
+              }
+            ],
+            "meals": [
+              "Kafe Daulet",
+              "Edem Restaurant",
+              "Antalya Restaurant"
+            ]
+          },
+          {
+            "theme": "Optional Otyrar & Arystan Bab Day",
+            "activities": [
+              {
+                "name": "Day trip to Otyrar ruins and Arystan Bab Mausoleum",
+                "cost": "₹4,500–₹9,000 pp with transport"
+              },
+              {
+                "name": "Extra museum-reserve galleries in Turkestan",
+                "cost": "Included or ₹180 pp for add-ons"
+              }
+            ]
+          }
+        ]
+      },
+      "Kolsai Lakes": {
+        "name": "Kolsai Lakes",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay two nights in Saty to split Lower Kolsai and Kaindy; a third day only matters if you want horse riding or a slower forest hike.",
+        "days": [
+          {
+            "theme": "Lower Kolsai Lake & Saty Village",
+            "activities": [
+              {
+                "name": "Kolsai Lakes National Park entry",
+                "cost": "₹130–₹180 pp"
+              },
+              {
+                "name": "Lower Kolsai lakeshore hike",
+                "cost": "Included"
+              },
+              {
+                "name": "Rowboat on Lower Kolsai",
+                "cost": "₹900–₹1,260 per boat for 30 min"
+              },
+              {
+                "name": "Guesthouse dinner in Saty village",
+                "cost": "₹540–₹900 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aruna Guesthouse",
+                "budget": "₹3,150–₹4,500/night"
+              },
+              {
+                "name": "Kolsay Kazakh Village",
+                "budget": "₹7,560–₹8,500/night"
+              },
+              {
+                "name": "Opensky-Kolsay",
+                "budget": "₹7,200–₹8,100/night"
+              }
+            ],
+            "meals": [
+              "Kolsay Kazakh Village restaurant",
+              "Mariya Guesthouse meals",
+              "Kolsay Lakes Town terrace café"
+            ]
+          },
+          {
+            "theme": "Kaindy Lake 4x4 Day",
+            "activities": [
+              {
+                "name": "Kaindy Lake park entry",
+                "cost": "₹180 pp"
+              },
+              {
+                "name": "Shared UAZ transfer from Saty to Kaindy Lake",
+                "cost": "₹900–₹1,440 pp"
+              },
+              {
+                "name": "Horseback option from the drop-off to the viewpoint",
+                "cost": "₹1,080 pp one way"
+              },
+              {
+                "name": "Picnic lunch or guesthouse packed meal",
+                "cost": "₹360–₹720 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kolsay and Kaindy Lakes CozyRest",
+                "budget": "₹8,700–₹9,200/night"
+              },
+              {
+                "name": "Tau-Shelek Guesthouse",
+                "budget": "₹3,600–₹7,200/night"
+              }
+            ],
+            "meals": [
+              "Tau-Shelek Guesthouse dining room",
+              "Mariya Guesthouse meals",
+              "Kolsay Lakes Town terrace café"
+            ]
+          },
+          {
+            "theme": "Optional Forest Hike Day",
+            "activities": [
+              {
+                "name": "Horse or hiking trail farther along the Kolsai valley",
+                "cost": "₹1,080–₹1,800 pp if riding"
+              },
+              {
+                "name": "Slow village morning with tea, apricot jam and mountain views"
+              },
+              {
+                "name": "Extra time for photography around Saty and the lake road"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Almaty",
+        "to": "Charyn Canyon",
+        "method": "Shared taxi from Sayakhat station toward Kegen plus the last local ride into Charyn National Park (about 3.5–4.5 hr total)",
+        "cost": "₹360–₹720 pp"
+      },
+      {
+        "from": "Charyn Canyon",
+        "to": "Kolsai Lakes",
+        "method": "Shared taxi or guesthouse-arranged seat via Saty village (about 3–4 hr)",
+        "cost": "₹900–₹1,800 pp"
+      },
+      {
+        "from": "Kolsai Lakes",
+        "to": "Almaty",
+        "method": "Shared taxi from Saty village back to Sayakhat station in Almaty (about 4.5–5.5 hr)",
+        "cost": "₹720–₹1,080 pp"
+      },
+      {
+        "from": "Almaty",
+        "to": "Astana (Nur-Sultan)",
+        "method": "KTZ Tulpar-Talgo overnight sleeper between Almaty and Astana",
+        "cost": "₹4,800–₹7,200 pp"
+      },
+      {
+        "from": "Astana (Nur-Sultan)",
+        "to": "Turkestan",
+        "method": "Air Astana / FlyArystan domestic flight (about 1 hr 50 min)",
+        "cost": "₹4,900–₹5,300 pp"
+      }
+    ],
+    "extras": [
+      "May to September is the sweet spot for combining Almaty city walks with Charyn and Kolsai without dealing with snowbound roads or Astana's brutal winter wind.",
+      "Carry some cash in tenge for park booths, rural transfers and guesthouses because card acceptance drops sharply once you leave Almaty and Astana.",
+      "For Charyn and Kolsai, pre-arrange a bed in Charyn camp or Saty village before leaving Almaty because same-day walk-ins are unreliable on summer weekends.",
+      "Talgo berths and Air Astana fares jump fast around school holidays, so book the Almaty-Astana and Astana-Turkestan legs several days ahead.",
+      "Yandex Go works well in Almaty and Astana, but around Charyn, Saty and Turkestan you should rely on hotel-arranged drivers, shared taxis and offline maps.",
+      "If you only have one week, skip Turkestan and focus on Almaty, Charyn Canyon, Kolsai Lakes and one overnight in Astana."
+    ],
+    "cityImages": {
+      "Almaty": [
+        "Ascension Cathedral Almaty",
+        "Kok Tobe Almaty",
+        "Green Bazaar Almaty"
+      ],
+      "Astana (Nur-Sultan)": [
+        "Bayterek Tower Astana",
+        "Hazret Sultan Mosque Astana",
+        "Nur Alem Astana"
+      ],
+      "Charyn Canyon": [
+        "Valley of Castles Charyn Canyon",
+        "Charyn Canyon river trail",
+        "Charyn Canyon national park"
+      ],
+      "Turkestan": [
+        "Mausoleum of Khoja Ahmed Yasawi",
+        "Keruen Saray Turkestan",
+        "Arystan Bab Mausoleum"
+      ],
+      "Kolsai Lakes": [
+        "Lower Kolsai Lake",
+        "Kaindy Lake",
+        "Saty village Kazakhstan"
+      ]
+    }
+  }
+}

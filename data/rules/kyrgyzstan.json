@@ -1,0 +1,643 @@
+{
+  "name": "Kyrgyzstan",
+  "seed": false,
+  "lat": 41.2,
+  "lng": 74.77,
+  "region": "Asia",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹85K–₹1.4L",
+    "couple": "₹1.55L–₹2.35L",
+    "family4": "₹3L–₹4.7L"
+  },
+  "experiences": [
+    "Song-Kul yurt stays",
+    "Horse trekking",
+    "Ala-Kul & Altyn Arashan hikes",
+    "Issyk-Kul beaches",
+    "Sulaiman-Too",
+    "Eagle hunting demos"
+  ],
+  "avoid": [
+    "October–May for Song-Kul unless you are set up for snow, closed yurt camps and rough access roads",
+    "Long rural transfers after dark — marshrutkas and shared taxis are safer in daylight",
+    "Late-spring shoulder weeks if you want fully open high-altitude trekking routes"
+  ],
+  "combo": [
+    "Kazakhstan",
+    "Uzbekistan"
+  ],
+  "landmark": "Song-Kul Lake",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Bishkek",
+      "lat": 42.8746,
+      "lng": 74.5698,
+      "notes": "Best base for SIMs, cash, museums, Osh Bazaar and an Ala-Archa warm-up before heading east"
+    },
+    {
+      "name": "Karakol",
+      "lat": 42.4907,
+      "lng": 78.3936,
+      "notes": "Adventure hub for Ala-Kul, Altyn Arashan, Dungan food and trail planning on the east side of Issyk-Kul"
+    },
+    {
+      "name": "Issyk-Kul Lake",
+      "lat": 42.4255,
+      "lng": 77.2742,
+      "notes": "Use Cholpon-Ata for petroglyphs or Bokonbayevo for eagle hunters, Skazka Canyon and quieter south-shore stays"
+    },
+    {
+      "name": "Song-Kul Lake",
+      "lat": 41.8417,
+      "lng": 75.1482,
+      "notes": "High-alpine jailoo known for yurt camps, horseback riding and cold clear nights above 3,000 m"
+    },
+    {
+      "name": "Osh",
+      "lat": 40.5139,
+      "lng": 72.8161,
+      "notes": "Silk Road city anchored by Sulaiman-Too, Jayma Bazaar and some of the country's best plov and lagman"
+    }
+  ],
+  "itinerary": {
+    "sim": "O! or Beeline tourist SIMs are the easiest setup in Bishkek; expect roughly ₹300–₹800 for enough data for a 7–10 day trip, and download offline maps before heading to Song-Kul.",
+    "apps": [
+      "Yandex Go",
+      "2GIS",
+      "Yandex Maps",
+      "CBT Kyrgyzstan",
+      "TezJet",
+      "Booking.com",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Bishkek",
+      "Karakol",
+      "Issyk-Kul Lake",
+      "Song-Kul Lake",
+      "Osh"
+    ],
+    "cities": {
+      "Bishkek": {
+        "name": "Bishkek",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the city basics plus an Ala-Archa day; keep a third only if you want slower museums or extra buffer before the eastbound marshrutka.",
+        "days": [
+          {
+            "theme": "Ala-Too Square, Osh Bazaar & Classic City Stops",
+            "activities": [
+              {
+                "name": "Ala-Too Square, Oak Park and Victory Square orientation walk",
+                "cost": "Free"
+              },
+              {
+                "name": "State History Museum",
+                "cost": "₹145–₹285 pp"
+              },
+              {
+                "name": "Osh Bazaar snack-and-spice walk",
+                "cost": "₹190–₹570 pp"
+              },
+              {
+                "name": "Yandex Go taxi hops around the centre",
+                "cost": "₹95–₹190 per ride"
+              },
+              {
+                "name": "Dinner at Navat or Faiza for lagman, plov and manty",
+                "cost": "₹380–₹950 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Apple Hostel Bishkek",
+                "budget": "₹1,200–₹2,200/night"
+              },
+              {
+                "name": "Plaza Hotel Bishkek",
+                "budget": "₹5,700–₹8,600/night"
+              },
+              {
+                "name": "Orion Hotel Bishkek",
+                "budget": "₹12,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Navat",
+              "Faiza",
+              "Sierra Coffee"
+            ]
+          },
+          {
+            "theme": "Ala-Archa National Park Day",
+            "activities": [
+              {
+                "name": "Shared taxi or arranged day transfer to Ala-Archa National Park",
+                "cost": "₹950–₹1,900 pp"
+              },
+              {
+                "name": "Ala-Archa National Park entry",
+                "cost": "₹95–₹190 pp"
+              },
+              {
+                "name": "Easy river-valley hike toward Broken Heart viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Panfilov Park or Dubovy Park wind-down after returning",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Apple Hostel Bishkek",
+                "budget": "₹1,200–₹2,200/night"
+              },
+              {
+                "name": "Plaza Hotel Bishkek",
+                "budget": "₹5,700–₹8,600/night"
+              }
+            ],
+            "meals": [
+              "Arzu",
+              "Navat",
+              "Sierra Coffee"
+            ]
+          },
+          {
+            "theme": "Optional Museum & Supply Buffer",
+            "activities": [
+              {
+                "name": "National Museum of Fine Arts",
+                "cost": "₹95–₹190 pp"
+              },
+              {
+                "name": "Doroi Bazaar or supermarket stop for trail snacks and cash",
+                "cost": "₹285–₹1,140 pp"
+              },
+              {
+                "name": "Early night before the Karakol marshrutka",
+                "cost": "Free"
+              }
+            ]
+          }
+        ]
+      },
+      "Karakol": {
+        "name": "Karakol",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days works if you mix one town-and-food day with one alpine outing; add a third only if you want a proper multi-day Ala-Kul trek.",
+        "days": [
+          {
+            "theme": "Dungan Mosque, Trinity Church & Karakol Food",
+            "activities": [
+              {
+                "name": "Dungan Mosque donation entry",
+                "cost": "₹50–₹95 pp"
+              },
+              {
+                "name": "Holy Trinity Cathedral visit",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Karakol Historical Museum",
+                "cost": "₹95–₹145 pp"
+              },
+              {
+                "name": "Ashlan-fu and lagman tasting around the bazaar",
+                "cost": "₹190–₹475 pp"
+              },
+              {
+                "name": "Evening coffee stop at Karakol Coffee or Lighthouse Café",
+                "cost": "₹190–₹380 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Argo Guest House",
+                "budget": "₹1,900–₹3,300/night"
+              },
+              {
+                "name": "Green Yard Hotel",
+                "budget": "₹4,300–₹6,700/night"
+              },
+              {
+                "name": "Tagaytay Karakol Hotel",
+                "budget": "₹5,700–₹8,600/night"
+              }
+            ],
+            "meals": [
+              "Dastorkon",
+              "Karakol Coffee",
+              "Lighthouse Café"
+            ]
+          },
+          {
+            "theme": "Altyn Arashan or Ala-Kul Adventure Day",
+            "activities": [
+              {
+                "name": "Marshrutka to Ak-Suu trailhead or shared 4WD toward Altyn Arashan",
+                "cost": "₹95–₹1,425 pp"
+              },
+              {
+                "name": "Altyn Arashan guided outing with hot-springs stop",
+                "cost": "₹4,750–₹7,600 pp"
+              },
+              {
+                "name": "Ala-Kul trekking guide for independent hikers",
+                "cost": "₹2,400–₹3,800 per day"
+              },
+              {
+                "name": "Post-hike banya or sauna at the guesthouse",
+                "cost": "₹475–₹950 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Argo Guest House",
+                "budget": "₹1,900–₹3,300/night"
+              },
+              {
+                "name": "Green Yard Hotel",
+                "budget": "₹4,300–₹6,700/night"
+              }
+            ],
+            "meals": [
+              "Fat Cat Café",
+              "Dastorkon",
+              "Lighthouse Café"
+            ]
+          },
+          {
+            "theme": "Optional Jeti-Ögüz Valley Day",
+            "activities": [
+              {
+                "name": "Marshrutka to Jeti-Ögüz red-rock viewpoints",
+                "cost": "₹50–₹95 pp"
+              },
+              {
+                "name": "Short waterfall or Seven Bulls walk",
+                "cost": "Free"
+              }
+            ]
+          }
+        ]
+      },
+      "Issyk-Kul Lake": {
+        "name": "Issyk-Kul Lake",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is the sweet spot: one for the lake-and-petroglyph side and one for Bokonbayevo's canyon-and-eagle route on the quieter south shore.",
+        "days": [
+          {
+            "theme": "Cholpon-Ata Lakeside & Petroglyphs",
+            "activities": [
+              {
+                "name": "Shared taxi or marshrutka from Karakol to Cholpon-Ata or Bokonbayevo",
+                "cost": "₹380–₹760 pp"
+              },
+              {
+                "name": "Cholpon-Ata Petroglyph Open-Air Museum",
+                "cost": "₹190–₹285 pp"
+              },
+              {
+                "name": "Issyk-Kul public beach time or short boat ride",
+                "cost": "Free / ₹950–₹1,900 pp for a boat ride"
+              },
+              {
+                "name": "Ruh Ordo cultural complex",
+                "cost": "₹285–₹475 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Zaton Guesthouse",
+                "budget": "₹3,300–₹5,200/night"
+              },
+              {
+                "name": "Silence Hotel",
+                "budget": "₹5,700–₹10,500/night"
+              },
+              {
+                "name": "Bosogo Yurt Camp",
+                "budget": "₹4,300–₹6,700/night with meals"
+              }
+            ],
+            "meals": [
+              "Café U Rybaka",
+              "Olimp Hotel restaurant",
+              "Silence Hotel restaurant"
+            ]
+          },
+          {
+            "theme": "Bokonbayevo Eagle Hunters & Skazka Canyon",
+            "activities": [
+              {
+                "name": "Skazka Canyon entry and short hike",
+                "cost": "₹190–₹285 pp"
+              },
+              {
+                "name": "Bokonbayevo eagle hunting demonstration",
+                "cost": "₹1,425–₹2,375 pp"
+              },
+              {
+                "name": "Half-day horse ride on the south shore",
+                "cost": "₹1,900–₹4,300 pp"
+              },
+              {
+                "name": "Lakeside fish dinner in Bokonbayevo",
+                "cost": "₹475–₹1,140 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bosogo Yurt Camp",
+                "budget": "₹4,300–₹6,700/night with meals"
+              },
+              {
+                "name": "Saltanat Guest House",
+                "budget": "₹1,900–₹3,800/night"
+              }
+            ],
+            "meals": [
+              "Bosogo Yurt Camp",
+              "Saltanat Guest House",
+              "Café U Rybaka"
+            ]
+          },
+          {
+            "theme": "Optional Slow Resort Day",
+            "activities": [
+              {
+                "name": "Resort beach day or paddle-boat rental",
+                "cost": "₹380–₹1,425 pp"
+              },
+              {
+                "name": "Extra museum or promenade time in Cholpon-Ata",
+                "cost": "₹95–₹285 pp"
+              }
+            ]
+          }
+        ]
+      },
+      "Song-Kul Lake": {
+        "name": "Song-Kul Lake",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Spend two nights minimum because the access road is long and the real value is one full day of horses, lake views and nomad-camp time.",
+        "days": [
+          {
+            "theme": "Kochkor or Kyzart Approach & First Night in a Yurt",
+            "activities": [
+              {
+                "name": "Shared taxi plus 4WD yurt-camp transfer from Issyk-Kul via Kochkor/Kyzart",
+                "cost": "₹1,900–₹3,800 pp"
+              },
+              {
+                "name": "CBT Song-Kul or family yurt-camp stay with full board",
+                "cost": "₹2,400–₹4,300 pp/night"
+              },
+              {
+                "name": "Sunset lakeshore walk and kumis tasting at camp",
+                "cost": "Included / ₹190–₹380 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "CBT Song-Kul yurt camp",
+                "budget": "₹2,400–₹4,300/night with meals"
+              },
+              {
+                "name": "Yurt Camp Son-Kul-Land Mirlan",
+                "budget": "₹2,800–₹4,700/night with meals"
+              }
+            ],
+            "meals": [
+              "CBT Song-Kul yurt camp",
+              "Yurt Camp Son-Kul-Land Mirlan"
+            ]
+          },
+          {
+            "theme": "Horse Trekking & Jailoo Life",
+            "activities": [
+              {
+                "name": "Half-day horse trek along the jailoo",
+                "cost": "₹1,900–₹3,300 pp"
+              },
+              {
+                "name": "Full-day guided horse trek toward nearby shepherd camps",
+                "cost": "₹3,800–₹5,700 pp"
+              },
+              {
+                "name": "Optional eagle-hunter or nomad-games demo arranged through camp",
+                "cost": "₹1,900–₹2,850 per group"
+              },
+              {
+                "name": "Second yurt-camp night under the stars",
+                "cost": "₹2,400–₹4,300 pp/night"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "CBT Song-Kul yurt camp",
+                "budget": "₹2,400–₹4,300/night with meals"
+              },
+              {
+                "name": "Yurt Camp Son-Kul-Land Mirlan",
+                "budget": "₹2,800–₹4,700/night with meals"
+              }
+            ],
+            "meals": [
+              "CBT Song-Kul yurt camp",
+              "Yurt Camp Son-Kul-Land Mirlan"
+            ]
+          },
+          {
+            "theme": "Optional Spare Weather Day",
+            "activities": [
+              {
+                "name": "Sunrise photography, extra riding or a short shepherd-family visit",
+                "cost": "₹950–₹2,850 pp"
+              },
+              {
+                "name": "Relaxed camp time before the long transfer out",
+                "cost": "Free"
+              }
+            ]
+          }
+        ]
+      },
+      "Osh": {
+        "name": "Osh",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Two days is enough for the sacred mountain, the bazaar and one slow Silk Road food-and-museum day before flying back out.",
+        "days": [
+          {
+            "theme": "Sulaiman-Too & Bazaar First Look",
+            "activities": [
+              {
+                "name": "Sulaiman-Too Sacred Mountain viewpoints and shrine walk",
+                "cost": "₹50–₹95 pp"
+              },
+              {
+                "name": "Sulaiman-Too Museum cave complex",
+                "cost": "₹95–₹190 pp"
+              },
+              {
+                "name": "Jayma Bazaar browse for breads, spices and kurut",
+                "cost": "Free"
+              },
+              {
+                "name": "Dinner at Brio or Ocean Restaurant",
+                "cost": "₹380–₹1,140 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "TES Hotel",
+                "budget": "₹1,900–₹3,300/night"
+              },
+              {
+                "name": "Rayan Hotel",
+                "budget": "₹4,700–₹7,600/night"
+              },
+              {
+                "name": "Kaganat Boutique Hotel",
+                "budget": "₹5,700–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Brio",
+              "Ocean Restaurant",
+              "Uluk-Ata"
+            ]
+          },
+          {
+            "theme": "Silk Road Museum Stops & Osh Plov Day",
+            "activities": [
+              {
+                "name": "Osh Regional Museum or local history stop",
+                "cost": "₹50–₹95 pp"
+              },
+              {
+                "name": "Alisher Navoi Park and Lenin statue walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Lagman and plov lunch at Uluk-Ata or Retro Café",
+                "cost": "₹285–₹760 pp"
+              },
+              {
+                "name": "Short taxi ride to the airport for onward departure",
+                "cost": "₹190–₹380 per cab"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "TES Hotel",
+                "budget": "₹1,900–₹3,300/night"
+              },
+              {
+                "name": "Rayan Hotel",
+                "budget": "₹4,700–₹7,600/night"
+              }
+            ],
+            "meals": [
+              "Uluk-Ata",
+              "Retro Café",
+              "Brio"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bishkek",
+        "to": "Karakol",
+        "method": "Marshrutka or shared taxi from Bishkek's east bus station to Karakol (about 6–7 hr)",
+        "cost": "₹475–₹855 pp"
+      },
+      {
+        "from": "Karakol",
+        "to": "Issyk-Kul Lake",
+        "method": "Shared taxi or marshrutka along the lake shore toward Cholpon-Ata or Bokonbayevo (about 2.5–4 hr depending on shore)",
+        "cost": "₹380–₹760 pp"
+      },
+      {
+        "from": "Issyk-Kul Lake",
+        "to": "Song-Kul Lake",
+        "method": "Shared taxi to Kochkor plus pre-booked 4WD or CBT jeep via Kyzart Pass to the yurt camps",
+        "cost": "₹1,900–₹3,800 pp"
+      },
+      {
+        "from": "Song-Kul Lake",
+        "to": "Osh",
+        "method": "Return by 4WD to Kochkor, continue by shared taxi to Bishkek, then take a Bishkek–Osh domestic flight; overland is possible but much longer",
+        "cost": "₹4,300–₹7,600 pp"
+      }
+    ],
+    "extras": [
+      "Best weather is usually June–September; outside this window Song-Kul camps close quickly and high passes can turn muddy or snowy.",
+      "Shared taxis and marshrutkas leave when full, so keep the plan flexible and start rural transfer days early.",
+      "Carry cash for bazaars, yurt camps, horse riding and village cafés; card acceptance is reliable in Bishkek but patchy at the lakes and almost absent at Song-Kul.",
+      "Even in July and August, Song-Kul nights can feel near-freezing, so pack thermals and a windproof layer.",
+      "A Bishkek–Osh domestic flight is the cleanest way to cover the north-south split without losing a full extra road day.",
+      "If you only have one week, keep Bishkek, Karakol, Issyk-Kul and Song-Kul and save Osh for a separate south-Kyrgyzstan trip."
+    ],
+    "cityImages": {
+      "Bishkek": [
+        "Ala-Too Square Bishkek",
+        "Osh Bazaar Bishkek",
+        "State History Museum Bishkek"
+      ],
+      "Karakol": [
+        "Dungan Mosque Karakol",
+        "Holy Trinity Cathedral Karakol",
+        "Altyn Arashan"
+      ],
+      "Issyk-Kul Lake": [
+        "Ruh Ordo Cholpon-Ata",
+        "Cholpon-Ata petroglyphs",
+        "Skazka Canyon"
+      ],
+      "Song-Kul Lake": [
+        "Song Kol Lake",
+        "Song Kol yurt camp",
+        "Kyzart Pass"
+      ],
+      "Osh": [
+        "Sulaiman-Too",
+        "Jayma Bazaar Osh",
+        "Lenin statue Osh"
+      ]
+    }
+  }
+}

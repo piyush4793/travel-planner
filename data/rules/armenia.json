@@ -1,0 +1,446 @@
+{
+  "name": "Armenia",
+  "seed": false,
+  "lat": 40.07,
+  "lng": 45.04,
+  "region": "Asia",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹45K–₹75K",
+    "couple": "₹80K–₹1.35L",
+    "family4": "₹1.6L–₹2.7L"
+  },
+  "experiences": [
+    "Yerevan café culture",
+    "Ancient monasteries",
+    "Garni–Geghard day trip",
+    "Lake Sevan trout lunches",
+    "Wings of Tatev cable car"
+  ],
+  "avoid": [
+    "Icy mountain roads and fog in deep winter",
+    "Long southbound road transfers without an early start"
+  ],
+  "combo": [
+    "Georgia",
+    "Turkey"
+  ],
+  "landmark": "Tatev Monastery",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Yerevan",
+      "lat": 40.1792,
+      "lng": 44.4991,
+      "notes": "Republic Square, Cascade, pink-tuff architecture, markets and Armenia’s best food scene"
+    },
+    {
+      "name": "Dilijan",
+      "lat": 40.7417,
+      "lng": 44.863,
+      "notes": "Forest-town base for Haghartsin, craft streets, easy hikes and cooler weather"
+    },
+    {
+      "name": "Tatev",
+      "lat": 39.3793,
+      "lng": 46.2481,
+      "notes": "Dramatic monastery reached by the Wings of Tatev cable car above the Vorotan Gorge"
+    },
+    {
+      "name": "Garni",
+      "lat": 40.1193,
+      "lng": 44.7344,
+      "notes": "Pagan temple, gorge landscapes, lavash baking and the Geghard monastery side trip"
+    },
+    {
+      "name": "Lake Sevan",
+      "lat": 40.5627,
+      "lng": 45.0109,
+      "notes": "Big blue lake with Sevanavank views, fish grills, breezy summer swims and peninsula sunsets"
+    }
+  ],
+  "itinerary": {
+    "sim": "Team Telecom, Viva, or Ucom — easiest to buy at Yerevan airport or Republic Square shops",
+    "apps": [
+      "GG and Yandex Go (cheap taxis in Yerevan and for short regional hops)",
+      "Yandex Maps or Google Maps (best for marshrutka routing and walking)",
+      "Maps.me (offline support for monastery roads and gorge trails)",
+      "Hyur Service / local WhatsApp drivers (useful for southbound Tatev transfers)"
+    ],
+    "cityOrder": [
+      "Yerevan",
+      "Garni",
+      "Dilijan",
+      "Lake Sevan",
+      "Tatev"
+    ],
+    "cities": {
+      "Yerevan": {
+        "name": "Yerevan",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Best arrival base for cash, SIM cards, museums, and the easiest onward marshrutka links.",
+        "days": [
+          {
+            "theme": "Republic Square, Cascade & Market-Street Yerevan",
+            "activities": [
+              {
+                "name": "Republic Square, Northern Avenue and Opera House walk through central Yerevan",
+                "cost": "Free"
+              },
+              {
+                "name": "Cascade Complex escalators, sculpture terraces and Cafesjian grounds",
+                "cost": "Free"
+              },
+              {
+                "name": "Matenadaran manuscript museum",
+                "cost": "₹420 pp"
+              },
+              {
+                "name": "Vernissage craft market browsing for carpets, ceramics and silver",
+                "cost": "Free entry; ₹210+ if you shop"
+              },
+              {
+                "name": "Swan Lake and evening fountain show back at Republic Square",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kantar Hostel",
+                "budget": "₹1,050–₹2,100/night"
+              },
+              {
+                "name": "Republica Hotel Yerevan",
+                "budget": "₹6,300–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Lavash — classic Armenian breads, dolma, salads · ₹630–₹1,260 pp",
+              "Sherep — polished local mains by Republic Square · ₹1,050–₹1,890 pp",
+              "Dalan Art Gallery and Restaurant — good lunch stop with craft courtyard · ₹630–₹1,260 pp"
+            ]
+          },
+          {
+            "theme": "History Museum, Blue Mosque & Brandy Tasting",
+            "activities": [
+              {
+                "name": "History Museum of Armenia on Republic Square",
+                "cost": "₹525 pp"
+              },
+              {
+                "name": "Armenian Genocide Memorial and Museum",
+                "cost": "Free"
+              },
+              {
+                "name": "Blue Mosque courtyard and prayer hall visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Ararat Brandy Factory classic tour and tasting",
+                "cost": "₹945–₹1,470 pp"
+              },
+              {
+                "name": "GUM Market dry-fruit and gata snack crawl",
+                "cost": "₹105–₹420 pp"
+              }
+            ],
+            "meals": [
+              "Tavern Yerevan — khorovats, salads, live-music dinner vibe · ₹840–₹1,680 pp",
+              "Anteb — reliable Armenian-Syrian lunch option · ₹630–₹1,050 pp",
+              "Zeituna Home of Food — mezze-heavy dinner in a restored house · ₹840–₹1,470 pp"
+            ]
+          }
+        ]
+      },
+      "Garni": {
+        "name": "Garni",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Usually done as a day trip from Yerevan, but staying overnight makes the gorge quieter by evening.",
+        "days": [
+          {
+            "theme": "Garni Temple, Geghard & Gorge Landscapes",
+            "activities": [
+              {
+                "name": "Yerevan to Garni by marshrutka from Gai station or by taxi",
+                "cost": "₹60–₹105 pp by marshrutka or ₹1,260–₹1,680 per taxi"
+              },
+              {
+                "name": "Garni Temple",
+                "cost": "₹315 pp"
+              },
+              {
+                "name": "Geghard Monastery",
+                "cost": "Free"
+              },
+              {
+                "name": "Symphony of Stones in Garni Gorge",
+                "cost": "₹55 pp"
+              },
+              {
+                "name": "Lavash baking session at Garni Tun",
+                "cost": "₹315–₹525 pp depending on meal bundle"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Garni HinYard",
+                "budget": "₹2,100–₹4,200/night"
+              },
+              {
+                "name": "Garni Bread House",
+                "budget": "₹1,680–₹3,150/night"
+              }
+            ],
+            "meals": [
+              "Garni Tun — lavash, khorovats and village-style lunch sets · ₹420–₹945 pp",
+              "7 Qar — garden seating with grilled meats and salads · ₹525–₹1,050 pp",
+              "Geghard Restaurant — trout, herbs and lavash near the monastery road · ₹420–₹945 pp"
+            ]
+          }
+        ]
+      },
+      "Dilijan": {
+        "name": "Dilijan",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A cool-weather forest break that works well after Yerevan before heading to Sevan.",
+        "days": [
+          {
+            "theme": "Old Dilijan, Haghartsin & National Park Slow Travel",
+            "activities": [
+              {
+                "name": "Sharambeyan Street walk through Old Dilijan craft houses",
+                "cost": "Free"
+              },
+              {
+                "name": "Haghartsin Monastery excursion by taxi or local transfer",
+                "cost": "Free entry; ₹315–₹630 return transport"
+              },
+              {
+                "name": "Dilijan National Park trail or Parz Lake stop",
+                "cost": "Free to hike; ₹315–₹630 for optional boat ride"
+              },
+              {
+                "name": "Dilijan Museum of Folk Art",
+                "cost": "₹210 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tufenkian Old Dilijan Complex",
+                "budget": "₹5,250–₹8,400/night"
+              },
+              {
+                "name": "Dili Villa Family Hotel",
+                "budget": "₹2,520–₹4,620/night"
+              }
+            ],
+            "meals": [
+              "Kchuch — traditional clay-pot Armenian dishes · ₹630–₹1,260 pp",
+              "Cafe #2 — homemade soups, pastries and coffee · ₹315–₹735 pp",
+              "Tufenkian Restaurant — polished regional dinner in Old Dilijan · ₹840–₹1,470 pp"
+            ]
+          }
+        ]
+      },
+      "Lake Sevan": {
+        "name": "Lake Sevan",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Best in summer and early autumn when the peninsula is lively and fish restaurants are fully open.",
+        "days": [
+          {
+            "theme": "Sevan Peninsula, Monastery Views & Fish Lunch",
+            "activities": [
+              {
+                "name": "Sevanavank Monastery and peninsula viewpoint climb",
+                "cost": "Free"
+              },
+              {
+                "name": "Boat ride from the peninsula or Sevan shore",
+                "cost": "₹1,050–₹1,680 per boat"
+              },
+              {
+                "name": "Sevan Writers' House exterior and viewpoint stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Lake swim / beach time in warm months",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Best Western Bohemian Resort",
+                "budget": "₹4,200–₹7,350/night"
+              },
+              {
+                "name": "Lavash Hotel",
+                "budget": "₹4,620–₹8,400/night"
+              }
+            ],
+            "meals": [
+              "Ashot Erkat — classic Sevan trout and crayfish stop · ₹525–₹1,260 pp",
+              "Noy Land Resort Restaurant — lake-view Armenian menu · ₹630–₹1,260 pp",
+              "Tsaghkunq Chef House — destination meal if you have a driver · ₹1,050–₹2,100 pp"
+            ]
+          }
+        ]
+      },
+      "Tatev": {
+        "name": "Tatev",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Long transfer day, but the gorge scenery and cable car ride justify an overnight if you can spare it.",
+        "days": [
+          {
+            "theme": "Vorotan Gorge, Wings of Tatev & Monastery Views",
+            "activities": [
+              {
+                "name": "Yerevan to Halidzor/Goris by marshrutka plus short taxi, or by direct taxi",
+                "cost": "₹840–₹1,890 pp by public transport mix or ₹8,400–₹12,600 per taxi"
+              },
+              {
+                "name": "Wings of Tatev cable car round trip",
+                "cost": "₹1,890 pp"
+              },
+              {
+                "name": "Tatev Monastery",
+                "cost": "Free"
+              },
+              {
+                "name": "Tatev viewpoint walks and Sts. Paul and Peter grounds",
+                "cost": "Free"
+              },
+              {
+                "name": "Optional Devil's Bridge detour by taxi",
+                "cost": "₹630–₹1,260 pp depending on sharing"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Harsnadzor Eco Resort",
+                "budget": "₹3,150–₹5,880/night"
+              },
+              {
+                "name": "Old Tatev Hotel & Restaurant",
+                "budget": "₹2,520–₹4,620/night"
+              }
+            ],
+            "meals": [
+              "Harsnadzor Restaurant — hearty Armenian dishes with gorge views · ₹630–₹1,260 pp",
+              "Old Tatev Restaurant — convenient monastery-area dinner stop · ₹525–₹1,050 pp",
+              "Tatev Hotel restaurant — simple soups, grills and breakfast spreads · ₹420–₹945 pp"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Yerevan",
+        "to": "Garni",
+        "method": "Gai-station marshrutka or quick taxi ride (40–50 mins)",
+        "cost": "₹60–₹105 pp by marshrutka or ₹1,260–₹1,680 per taxi"
+      },
+      {
+        "from": "Garni",
+        "to": "Dilijan",
+        "method": "Return to Yerevan and continue by direct marshrutka, or hire a private transfer (3–3.5 hrs total)",
+        "cost": "₹420–₹840 pp by public transport mix"
+      },
+      {
+        "from": "Yerevan",
+        "to": "Dilijan",
+        "method": "Direct marshrutka or shared taxi from the north bus station (2–2.5 hrs)",
+        "cost": "₹250–₹420 pp"
+      },
+      {
+        "from": "Dilijan",
+        "to": "Lake Sevan",
+        "method": "Shared taxi or marshrutka via Sevan town (1–1.5 hrs)",
+        "cost": "₹210–₹525 pp"
+      },
+      {
+        "from": "Lake Sevan",
+        "to": "Yerevan",
+        "method": "Summer train or regular marshrutka back to the capital (1.5 hrs)",
+        "cost": "₹210–₹420 pp"
+      },
+      {
+        "from": "Lake Sevan",
+        "to": "Tatev",
+        "method": "Best done via Yerevan with marshrutka + taxi connections, or by private taxi south",
+        "cost": "₹1,260–₹2,520 pp by public transport mix"
+      },
+      {
+        "from": "Yerevan",
+        "to": "Tatev",
+        "method": "Marshrutka toward Goris/Kapan plus taxi from Halidzor, or direct taxi (5.5–6.5 hrs)",
+        "cost": "₹840–₹1,890 pp by public transport mix"
+      },
+      {
+        "from": "Tatev",
+        "to": "Yerevan",
+        "method": "Cable car back to Halidzor, then taxi to Goris and onward marshrutka or shared taxi",
+        "cost": "₹840–₹1,890 pp"
+      }
+    ],
+    "extras": [
+      "Khor Virap with Mount Ararat views",
+      "Noravank Monastery detour on the Tatev route",
+      "Jermuk hot springs and waterfall",
+      "Gyumri old-town architecture",
+      "Amberd Fortress from Yerevan"
+    ],
+    "cityImages": {
+      "Yerevan": [
+        "Republic Square Yerevan",
+        "Cascade Complex Yerevan",
+        "Vernissage Yerevan market"
+      ],
+      "Garni": [
+        "Garni Temple Armenia",
+        "Geghard Monastery Armenia",
+        "Symphony of Stones Garni Gorge"
+      ],
+      "Dilijan": [
+        "Old Dilijan Sharambeyan Street",
+        "Haghartsin Monastery Dilijan",
+        "Dilijan National Park Armenia"
+      ],
+      "Lake Sevan": [
+        "Sevanavank Monastery Lake Sevan",
+        "Lake Sevan peninsula Armenia",
+        "Sevan trout restaurant Armenia"
+      ],
+      "Tatev": [
+        "Tatev Monastery Armenia",
+        "Wings of Tatev cable car",
+        "Vorotan Gorge Tatev"
+      ]
+    }
+  }
+}

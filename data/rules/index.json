@@ -265,9 +265,9 @@
     "lng": 66.92,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 13
   },
   {
     "name": "Kyrgyzstan",
@@ -275,9 +275,9 @@
     "lng": 74.77,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 14
   },
   {
     "name": "Tajikistan",
@@ -785,19 +785,19 @@
     "lng": 45.04,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 10
   },
   {
     "name": "Azerbaijan",
     "lat": 40.14,
     "lng": 47.58,
-    "region": "Europe",
+    "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 9
   },
   {
     "name": "Egypt",
@@ -885,9 +885,9 @@
     "lng": 53.69,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 15
   },
   {
     "name": "Syria",

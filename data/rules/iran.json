@@ -1,0 +1,569 @@
+{
+  "name": "Iran",
+  "seed": false,
+  "lat": 32.43,
+  "lng": 53.69,
+  "region": "Middle East",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹55K–₹95K",
+    "couple": "₹95K–₹1.55L",
+    "family4": "₹1.9L–₹3L"
+  },
+  "experiences": [
+    "Persian architecture",
+    "Persepolis",
+    "Desert old towns",
+    "Safavid squares",
+    "Historic bazaars",
+    "Azeri and Persian food"
+  ],
+  "avoid": [
+    "Peak central-plateau heat from June to August",
+    "Tight schedules on Fridays or major religious holidays when hours can change"
+  ],
+  "combo": [
+    "Turkey",
+    "Armenia"
+  ],
+  "landmark": "Persepolis",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Tehran",
+      "lat": 35.6892,
+      "lng": 51.389,
+      "notes": "Golestan Palace, National Museum, Tehran Grand Bazaar and modern bridge viewpoints"
+    },
+    {
+      "name": "Isfahan",
+      "lat": 32.6546,
+      "lng": 51.668,
+      "notes": "Naqsh-e Jahan Square, Safavid mosques, Vank Cathedral and river bridges"
+    },
+    {
+      "name": "Shiraz",
+      "lat": 29.5918,
+      "lng": 52.5837,
+      "notes": "Nasir al-Mulk Mosque, Vakil Bazaar, Persepolis and Shirazi poetry sites"
+    },
+    {
+      "name": "Yazd",
+      "lat": 31.8974,
+      "lng": 54.3569,
+      "notes": "Adobe old town, windcatchers, Jameh Mosque and Amir Chakhmaq"
+    },
+    {
+      "name": "Kerman",
+      "lat": 30.2839,
+      "lng": 57.0834,
+      "notes": "Ganjali Khan Complex, desert bazaars and Shazdeh Garden in nearby Mahan"
+    },
+    {
+      "name": "Tabriz",
+      "lat": 38.0962,
+      "lng": 46.2738,
+      "notes": "Blue Mosque, covered bazaar, Azerbaijan Museum and El Goli park"
+    }
+  ],
+  "itinerary": {
+    "sim": "Irancell or Hamrah-e Aval tourist SIMs with enough data for maps and Snapp usually land around ₹600–₹1,200 at IKA airport; carry your passport for activation.",
+    "apps": [
+      "Snapp",
+      "Tap30",
+      "Alibaba",
+      "Raja",
+      "Iran Air",
+      "Mahan Air",
+      "Google Maps (offline Iran maps)",
+      "Google Translate",
+      "Balad",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Tehran",
+      "Isfahan",
+      "Shiraz",
+      "Yazd",
+      "Kerman",
+      "Tabriz"
+    ],
+    "cities": {
+      "Tehran": {
+        "name": "Tehran",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Qajar palaces, archaeology and the old bazaar core",
+            "activities": [
+              {
+                "name": "Golestan Palace Complex (all museums)",
+                "cost": "₹12,350"
+              },
+              {
+                "name": "National Museum of Iran",
+                "cost": "₹2,850"
+              },
+              {
+                "name": "Tehran Grand Bazaar",
+                "cost": "₹0"
+              },
+              {
+                "name": "Imam Khomeini Mosque courtyard",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Parsian Azadi Hotel",
+                "budget": "₹8,500–₹11,500/night"
+              },
+              {
+                "name": "Pamchal Hotel",
+                "budget": "₹4,200–₹6,700/night"
+              }
+            ],
+            "meals": [
+              "Moslem Restaurant",
+              "Divan Restaurant",
+              "Shandiz Jordan"
+            ]
+          },
+          {
+            "theme": "Museum day, modern Tehran and mountain-edge evenings",
+            "activities": [
+              {
+                "name": "Carpet Museum of Iran",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Reza Abbasi Museum",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Green Palace at Sa'dabad Complex",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Tabiat Bridge sunset walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Darband hillside promenade",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Raamtin Hotel",
+                "budget": "₹6,700–₹10,000/night"
+              },
+              {
+                "name": "Pamchal Hotel",
+                "budget": "₹4,200–₹6,700/night"
+              }
+            ],
+            "meals": [
+              "Dizi Sara",
+              "Nayeb Saei",
+              "Café Tehroon"
+            ]
+          }
+        ]
+      },
+      "Isfahan": {
+        "name": "Isfahan",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Safavid masterpieces around Naqsh-e Jahan",
+            "activities": [
+              {
+                "name": "Naqsh-e Jahan Square",
+                "cost": "₹0"
+              },
+              {
+                "name": "Imam Mosque",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Sheikh Lotfollah Mosque",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Ali Qapu Palace",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Qeysarieh Bazaar arcades",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Abbasi Hotel",
+                "budget": "₹8,000–₹14,000/night"
+              },
+              {
+                "name": "Ghasr Monshi Hotel",
+                "budget": "₹5,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Shahrzad Restaurant",
+              "Haj Mahmoud Beryani",
+              "Hermes Café Restaurant"
+            ]
+          },
+          {
+            "theme": "Jolfa churches, palace gardens and river bridges",
+            "activities": [
+              {
+                "name": "Vank Cathedral",
+                "cost": "₹3,800"
+              },
+              {
+                "name": "Chehel Sotoun Palace",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Jameh Mosque of Isfahan",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Si-o-se-pol and Khaju Bridge walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Abbasi Hotel",
+                "budget": "₹8,000–₹14,000/night"
+              },
+              {
+                "name": "Ragrug Hostel",
+                "budget": "₹2,900–₹4,800/night"
+              }
+            ],
+            "meals": [
+              "Azadegan Teahouse",
+              "Hermes Café Restaurant",
+              "Jolfa Restaurant"
+            ]
+          }
+        ]
+      },
+      "Shiraz": {
+        "name": "Shiraz",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Pink mosque light, citadel walls and bazaar alleys",
+            "activities": [
+              {
+                "name": "Nasir al-Mulk Mosque",
+                "cost": "₹2,850"
+              },
+              {
+                "name": "Vakil Bazaar",
+                "cost": "₹0"
+              },
+              {
+                "name": "Vakil Bath",
+                "cost": "₹950"
+              },
+              {
+                "name": "Arg of Karim Khan",
+                "cost": "₹1,900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Zandiyeh Hotel",
+                "budget": "₹8,000–₹11,500/night"
+              },
+              {
+                "name": "Karimkhan Hotel",
+                "budget": "₹3,000–₹5,800/night"
+              }
+            ],
+            "meals": [
+              "Haft Khan Restaurant Complex",
+              "Sharzeh Traditional Restaurant",
+              "Soofi Restaurant"
+            ]
+          },
+          {
+            "theme": "Achaemenid ruins and Shiraz's poetic afterglow",
+            "activities": [
+              {
+                "name": "Persepolis",
+                "cost": "₹2,850"
+              },
+              {
+                "name": "Naqsh-e Rostam",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Tomb of Hafez",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Tomb of Saadi",
+                "cost": "₹1,900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Zandiyeh Hotel",
+                "budget": "₹8,000–₹11,500/night"
+              },
+              {
+                "name": "Parseh Hotel",
+                "budget": "₹4,500–₹6,700/night"
+              }
+            ],
+            "meals": [
+              "Sotoodeh Traditional House",
+              "Haft Khan Restaurant Complex",
+              "Sharzeh Traditional Restaurant"
+            ]
+          }
+        ]
+      },
+      "Yazd": {
+        "name": "Yazd",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Adobe lanes, windcatchers and sacred old-city monuments",
+            "activities": [
+              {
+                "name": "Amir Chakhmaq Complex",
+                "cost": "₹2,850"
+              },
+              {
+                "name": "Jameh Mosque of Yazd",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Ziaiyeh School (Alexander's Prison)",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Mirror and Lighting Museum",
+                "cost": "₹950"
+              },
+              {
+                "name": "Fahadan old town walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dad Hotel",
+                "budget": "₹3,800–₹7,500/night"
+              },
+              {
+                "name": "Moshir al Mamalek Garden Hotel",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Silk Road Hotel Restaurant",
+              "Adib al Mamalek",
+              "Fooka Café"
+            ]
+          }
+        ]
+      },
+      "Kerman": {
+        "name": "Kerman",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Caravanserai heritage and a garden escape to Mahan",
+            "activities": [
+              {
+                "name": "Ganjali Khan Bathhouse Museum",
+                "cost": "₹380–₹570"
+              },
+              {
+                "name": "Ganjali Khan Bazaar",
+                "cost": "₹0"
+              },
+              {
+                "name": "Shazdeh Garden, Mahan",
+                "cost": "₹380"
+              },
+              {
+                "name": "Shah Nematollah Vali Shrine",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pars Hotel Kerman",
+                "budget": "₹3,500–₹6,700/night"
+              },
+              {
+                "name": "Akhavan Hotel",
+                "budget": "₹2,800–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Vakil Traditional Restaurant",
+              "Keykhosro House Café",
+              "Taj Mahal Restaurant Kerman"
+            ]
+          }
+        ]
+      },
+      "Tabriz": {
+        "name": "Tabriz",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Blue tiles, constitutional history and bazaar vaults",
+            "activities": [
+              {
+                "name": "Tabriz Historic Bazaar Complex",
+                "cost": "₹0"
+              },
+              {
+                "name": "Azerbaijan Museum",
+                "cost": "₹1,900"
+              },
+              {
+                "name": "Blue Mosque (Kabood Mosque)",
+                "cost": "₹1,520"
+              },
+              {
+                "name": "Constitution House of Tabriz",
+                "cost": "₹1,520"
+              },
+              {
+                "name": "El Goli Park",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Laleh Park Hotel Tabriz",
+                "budget": "₹6,700–₹10,000/night"
+              },
+              {
+                "name": "Pars El Goli Hotel",
+                "budget": "₹4,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Haj Ali Kebab",
+              "Berkeh Traditional Restaurant",
+              "Vahid Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Tehran",
+        "to": "Isfahan",
+        "method": "Raja overnight train or VIP bus",
+        "cost": "₹900–₹1,700"
+      },
+      {
+        "from": "Isfahan",
+        "to": "Shiraz",
+        "method": "VIP bus or Iran Air / Mahan Air domestic flight",
+        "cost": "₹1,200–₹4,500"
+      },
+      {
+        "from": "Shiraz",
+        "to": "Yazd",
+        "method": "Train or VIP bus",
+        "cost": "₹850–₹1,500"
+      },
+      {
+        "from": "Yazd",
+        "to": "Kerman",
+        "method": "Train or VIP bus",
+        "cost": "₹500–₹950"
+      },
+      {
+        "from": "Kerman",
+        "to": "Tabriz",
+        "method": "Mahan Air or Iran Air domestic flight via Tehran",
+        "cost": "₹5,500–₹12,000"
+      }
+    ],
+    "extras": [
+      "International bank cards usually do not work in Iran, so carry enough cash in EUR or USD and exchange at city sarrafi counters rather than the airport when possible.",
+      "Snapp is the easiest taxi app in major cities, while VIP buses are comfortable, reserved-seat coaches that are often better value than short domestic flights.",
+      "Dress modestly: women should keep a headscarf handy and everyone should avoid very short or sleeveless clothing in religious sites.",
+      "Friday is the weekly holiday, so museums, banks and some bazaars may open late or close early; confirm hours the day before.",
+      "Easy vegetarian dishes to look for: kashk-e bademjan, mirza ghasemi, adasi, ash-e رشته, falafel in the south and plenty of saffron rice sides."
+    ],
+    "cityImages": {
+      "Tehran": [
+        "Golestan Palace Tehran",
+        "Azadi Tower Tehran",
+        "Tabiat Bridge Tehran night"
+      ],
+      "Isfahan": [
+        "Naqsh-e Jahan Square Isfahan",
+        "Sheikh Lotfollah Mosque Isfahan interior",
+        "Si-o-se-pol Isfahan"
+      ],
+      "Shiraz": [
+        "Nasir al-Mulk Mosque Shiraz stained glass",
+        "Persepolis Apadana Shiraz",
+        "Arg of Karim Khan Shiraz"
+      ],
+      "Yazd": [
+        "Amir Chakhmaq Complex Yazd",
+        "Jameh Mosque of Yazd facade",
+        "Yazd old city windcatchers"
+      ],
+      "Kerman": [
+        "Shazdeh Garden Mahan",
+        "Ganjali Khan Complex Kerman",
+        "Rayen Castle Kerman Province"
+      ],
+      "Tabriz": [
+        "Tabriz Historic Bazaar",
+        "Blue Mosque Tabriz",
+        "El Goli Tabriz"
+      ]
+    }
+  }
+}

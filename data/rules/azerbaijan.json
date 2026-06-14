@@ -1,0 +1,458 @@
+{
+  "name": "Azerbaijan",
+  "seed": false,
+  "lat": 40.14,
+  "lng": 47.58,
+  "region": "Asia",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "January",
+    "February",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹60K–₹95K",
+    "couple": "₹1.1L–₹1.8L",
+    "family4": "₹2.2L–₹3.6L"
+  },
+  "experiences": [
+    "Baku Old City",
+    "Heydar Aliyev Center",
+    "Gobustan Petroglyphs",
+    "Sheki Khan's Palace",
+    "Lahij Copper Workshops"
+  ],
+  "avoid": [
+    "Mountain drives around Lahij in heavy rain or winter snow"
+  ],
+  "combo": [
+    "Georgia",
+    "Turkey"
+  ],
+  "landmark": "Gobustan Rock Art Cultural Landscape",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Baku works well for a 2-night Caspian stopover, but the best Azerbaijan trip adds Sheki and the mountain craft towns inland.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Baku",
+      "lat": 40.3756,
+      "lng": 49.8325,
+      "notes": "Caspian capital with Icherisheher lanes, design-led museums, boulevard walks and skyline viewpoints"
+    },
+    {
+      "name": "Gobustan",
+      "lat": 40.0833,
+      "lng": 49.3833,
+      "notes": "Petroglyph reserve, museum and mud volcano day trip zone southwest of Baku"
+    },
+    {
+      "name": "Gabala",
+      "lat": 40.9833,
+      "lng": 47.85,
+      "notes": "Forest-edged resort town with Tufandag cable cars, Nohur Lake and easy mountain access"
+    },
+    {
+      "name": "Lahij",
+      "lat": 40.85,
+      "lng": 48.3833,
+      "notes": "Historic mountain craft village known for copper workshops, cobbled lanes and stone houses"
+    },
+    {
+      "name": "Sheki",
+      "lat": 41.2,
+      "lng": 47.1667,
+      "notes": "Silk Road town of caravanserais, stained shebeke windows and the ornate Khan's Palace"
+    }
+  ],
+  "itinerary": {
+    "sim": "Azercell tourist SIM — easiest airport pickup and the most dependable coverage once you leave Baku for Sheki and Lahij.",
+    "apps": [
+      "Bolt (best for Baku taxis)",
+      "Biletim.az (Baku bus terminal tickets)",
+      "AZAL (check seasonal domestic Baku–Gabala flights)",
+      "Yandex Go (backup cabs outside central Baku)",
+      "Google Translate (Azerbaijani / Russian menus and signs)"
+    ],
+    "cityOrder": [
+      "Baku",
+      "Gobustan",
+      "Gabala",
+      "Lahij",
+      "Sheki"
+    ],
+    "cities": {
+      "Baku": {
+        "name": "Baku",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay in or near Icherisheher so you can walk the Old City at dawn and still reach the bus terminal or airport easily.",
+        "days": [
+          {
+            "theme": "Icherisheher Heritage, Maiden Tower & Caspian Old Quarter",
+            "activities": [
+              {
+                "name": "Old City / Icherisheher gate-to-gate walking loop through caravanserais, mosques and stone lanes",
+                "cost": "Free"
+              },
+              {
+                "name": "Maiden Tower museum and rooftop lookout",
+                "cost": "₹720 pp"
+              },
+              {
+                "name": "Palace of the Shirvanshahs complex",
+                "cost": "₹720 pp"
+              },
+              {
+                "name": "Azerbaijan National Carpet Museum",
+                "cost": "₹480 pp"
+              },
+              {
+                "name": "Little Venice and Baku Boulevard sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Boutique 19 Hotel Baku",
+                "budget": "₹4,000–₹7,500/night"
+              },
+              {
+                "name": "Sahil Hostel & Hotel",
+                "budget": "₹1,200–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Firuze Restaurant — plov, dolma and local kebabs in central Baku · ₹600–₹1,400 pp",
+              "Dolma Restaurant — classic Azerbaijani plates and good vegetarian sides · ₹700–₹1,500 pp",
+              "Çay Bağı 145 — tea, qutab and Old City terrace tables · ₹500–₹1,200 pp"
+            ]
+          },
+          {
+            "theme": "Heydar Aliyev Center, Flame Towers Skyline & Modern Baku",
+            "activities": [
+              {
+                "name": "Heydar Aliyev Center exhibitions and architecture visit",
+                "cost": "₹720 pp"
+              },
+              {
+                "name": "Nizami Street and Fountain Square walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Baku Funicular up to Highland Park",
+                "cost": "₹96 round trip"
+              },
+              {
+                "name": "Flame Towers / Highland Park evening viewpoint over Baku Bay",
+                "cost": "Free"
+              },
+              {
+                "name": "Optional Caspian cruise or tea stop back on the boulevard",
+                "cost": "₹240–₹720 pp"
+              }
+            ],
+            "meals": [
+              "Nargiz Restaurant — central Azerbaijani menu with fast service · ₹600–₹1,400 pp",
+              "Art Club Restaurant — polished Old City dinner with live music some nights · ₹900–₹2,000 pp",
+              "Passage 145 — modern café good for brunch or late dinner · ₹700–₹1,500 pp"
+            ]
+          }
+        ]
+      },
+      "Gobustan": {
+        "name": "Gobustan",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Treat Gobustan as a full day trip from Baku; there is little reason to sleep here unless you have your own car.",
+        "days": [
+          {
+            "theme": "Rock Art, Mud Volcanoes & Semi-Desert Archaeology",
+            "activities": [
+              {
+                "name": "Baku to Gobustan bus to Qobustan town plus local taxi, or a shared car direct from Baku",
+                "cost": "₹150–₹480 pp"
+              },
+              {
+                "name": "Gobustan Museum and petroglyph reserve ticket",
+                "cost": "₹480 pp"
+              },
+              {
+                "name": "Shared 4x4 out to the mud volcano field",
+                "cost": "₹480–₹720 pp"
+              },
+              {
+                "name": "Bibi-Heybat Mosque photo stop on the return to Baku",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [],
+            "meals": [
+              "Çındır Restoranı — kebabs, salads and tandir bread on the Baku–Alat road · ₹480–₹960 pp",
+              "Araz Cafe — simple tea-and-shashlik roadside lunch stop · ₹300–₹720 pp"
+            ]
+          }
+        ]
+      },
+      "Gabala": {
+        "name": "Gabala",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "If the seasonal AZAL flight operates on your dates, Gabala is the one inland stop where flying can meaningfully save time.",
+        "days": [
+          {
+            "theme": "Tufandag Cable Cars, Nohur Lake & Resort-Air Mountain Scenery",
+            "activities": [
+              {
+                "name": "Baku to Gabala by seasonal AZAL domestic flight or Baku International Bus Terminal coach",
+                "cost": "₹552 by bus or ₹2,400–₹4,800 by flight"
+              },
+              {
+                "name": "Tufandag Mountain Resort cable car rides",
+                "cost": "₹960–₹1,440 pp"
+              },
+              {
+                "name": "Nohur Lake boardwalk and optional pedal boat",
+                "cost": "Free walk or ₹240–₹480 pp for boating"
+              },
+              {
+                "name": "Yeddi Gozel Waterfall entry with local taxi up the final hill road",
+                "cost": "₹96 entry + ₹288–₹480 transport pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Qafqaz Tufandag Mountain Resort Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Qafqaz Riverside Resort Hotel",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Rafting Restaurant Gabala — grilled meats, soups and river-view tables · ₹600–₹1,300 pp",
+              "Qafqaz Tufandag Restaurant — convenient mountain lunch stop after the cable car · ₹700–₹1,500 pp",
+              "Qafqaz Riverside Restaurant — tea, saj and kebabs by the water · ₹700–₹1,500 pp"
+            ]
+          }
+        ]
+      },
+      "Lahij": {
+        "name": "Lahij",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Road conditions matter here — leave early and avoid arriving after dark if you are using shared transport.",
+        "days": [
+          {
+            "theme": "Copper Workshops, Stone Lanes & Slow Mountain Village Time",
+            "activities": [
+              {
+                "name": "Gabala to Lahij shared taxi via Ismayilli",
+                "cost": "₹432–₹720 pp"
+              },
+              {
+                "name": "Lahij State Historical-Cultural Reserve walking circuit through the craft lanes",
+                "cost": "Free"
+              },
+              {
+                "name": "Lahij local history museum visit",
+                "cost": "₹96 pp"
+              },
+              {
+                "name": "Copper workshop demo and souvenir browsing",
+                "cost": "Free to browse; ₹240–₹1,440 depending on purchases"
+              },
+              {
+                "name": "Misirgah Mosque quarter and hillside village panorama walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ancient Lahij Guest House",
+                "budget": "₹2,400–₹4,500/night"
+              },
+              {
+                "name": "Evim Hotel",
+                "budget": "₹3,000–₹5,400/night"
+              }
+            ],
+            "meals": [
+              "Karvansaray Lahic — traditional house menu in a heritage-style setting · ₹480–₹960 pp",
+              "Ancient Lahij Guest House dinner service — home-cooked village meal, tea and preserves · ₹600–₹1,200 pp",
+              "Evim Hotel meal service — simple soups, kebabs and breakfast spreads · ₹480–₹900 pp"
+            ]
+          }
+        ]
+      },
+      "Sheki": {
+        "name": "Sheki",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "End the inland loop here so you can enjoy the palace quarter slowly and take the comfortable bus or shared taxi back to Baku.",
+        "days": [
+          {
+            "theme": "Khan's Palace, Caravanserai Courtyards & Sheki Sweets",
+            "activities": [
+              {
+                "name": "Lahij to Sheki shared taxi with a change near Ismayilli or Gabala",
+                "cost": "₹720–₹1,200 pp"
+              },
+              {
+                "name": "Sheki Khan's Palace guided visit",
+                "cost": "₹480 pp"
+              },
+              {
+                "name": "Upper Caravanserai courtyard and merchants' quarter wander",
+                "cost": "Free"
+              },
+              {
+                "name": "Sheki halva and local craft shopping stop",
+                "cost": "₹240–₹720 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sheki Palace Hotel",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Yaffle Inn Boutique Hotel",
+                "budget": "₹3,000–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Gagarin Restaurant — popular local stop for piti, kebabs and salads · ₹600–₹1,200 pp",
+              "Karvansaray Restaurant — atmospheric dinner inside the historic caravanserai complex · ₹720–₹1,350 pp",
+              "Shebeke Restaurant — classic Azerbaijani set meals near the palace quarter · ₹600–₹1,200 pp"
+            ]
+          },
+          {
+            "theme": "Kish Church Side Trip, Fortress Views & a Slow Final Evening",
+            "activities": [
+              {
+                "name": "Taxi or shared cab to Kish village and the Church of Kish",
+                "cost": "₹192–₹384 pp transport + ₹192 pp entry"
+              },
+              {
+                "name": "Sheki Fortress walls and old neighborhood viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Craft and tea break around the Yukhari Bash reserve",
+                "cost": "₹240–₹600 pp"
+              },
+              {
+                "name": "Evening Sheki to Baku bus or shared taxi booking for the next leg home",
+                "cost": "₹634 by bus or ₹1,200–₹1,920 by shared taxi"
+              }
+            ],
+            "meals": [
+              "Mugam Restaurant — broad Azerbaijani menu and easy family-style dinners · ₹600–₹1,200 pp",
+              "Serin Cafe — lighter café stop for tea, sweets and breakfast plates · ₹300–₹720 pp",
+              "Marxal Restaurant — splurge hillside dinner with mountain views · ₹1,000–₹2,000 pp"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Baku",
+        "to": "Gobustan",
+        "method": "Bus to Qobustan town plus local taxi, or direct shared car from Baku (about 1–1.5 hrs)",
+        "cost": "₹150–₹480 pp"
+      },
+      {
+        "from": "Gobustan",
+        "to": "Baku",
+        "method": "Return by local taxi to the main road and onward bus / shared cab to Baku",
+        "cost": "₹150–₹480 pp"
+      },
+      {
+        "from": "Baku",
+        "to": "Gabala",
+        "method": "Seasonal AZAL domestic flight to Gabala Airport or Baku International Bus Terminal coach (3.5–4 hrs by road)",
+        "cost": "₹552 by bus or ₹2,400–₹4,800 by flight"
+      },
+      {
+        "from": "Gobustan",
+        "to": "Gabala",
+        "method": "Return to Baku first, then continue by coach or seasonal flight to Gabala",
+        "cost": "₹702–₹5,280 pp depending on routing"
+      },
+      {
+        "from": "Gabala",
+        "to": "Lahij",
+        "method": "Shared taxi to Ismayilli and onward Lahij marshrutka / shared cab",
+        "cost": "₹432–₹720 pp"
+      },
+      {
+        "from": "Lahij",
+        "to": "Sheki",
+        "method": "Shared taxi via Ismayilli and Gabala, sometimes with one change",
+        "cost": "₹720–₹1,200 pp"
+      },
+      {
+        "from": "Gabala",
+        "to": "Sheki",
+        "method": "Direct shared taxi or bus connection with a short change en route",
+        "cost": "₹480–₹960 pp"
+      },
+      {
+        "from": "Sheki",
+        "to": "Baku",
+        "method": "Intercity coach from Sheki bus station or shared taxi (4.5–5.5 hrs)",
+        "cost": "₹634 by bus or ₹1,200–₹1,920 by shared taxi"
+      }
+    ],
+    "extras": [
+      "Absheron Peninsula add-on for Ateshgah Fire Temple and Yanar Dag from Baku",
+      "Shamakhi winery detour between Baku and Gabala",
+      "Ilisu or Qax mountain day trip from Sheki",
+      "More time at Tufandag for hiking or winter skiing in Gabala"
+    ],
+    "cityImages": {
+      "Baku": [
+        "Icherisheher Old City Baku Azerbaijan",
+        "Heydar Aliyev Center Baku Azerbaijan",
+        "Flame Towers Highland Park Baku"
+      ],
+      "Gobustan": [
+        "Gobustan National Park petroglyphs Azerbaijan",
+        "Gobustan mud volcanoes Azerbaijan",
+        "Gobustan Museum Azerbaijan"
+      ],
+      "Gabala": [
+        "Tufandag Mountain Resort Gabala Azerbaijan",
+        "Nohur Lake Gabala Azerbaijan",
+        "Yeddi Gozel Waterfall Gabala"
+      ],
+      "Lahij": [
+        "Lahij Azerbaijan copper workshops",
+        "Lahij State Historical Cultural Reserve",
+        "Lahij mountain village Azerbaijan"
+      ],
+      "Sheki": [
+        "Sheki Khans Palace Azerbaijan",
+        "Sheki Karvansaray Azerbaijan",
+        "Kish Church Sheki Azerbaijan"
+      ]
+    }
+  }
+}
