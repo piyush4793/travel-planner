@@ -195,9 +195,9 @@
     "lng": 95.96,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Mongolia",
@@ -625,9 +625,9 @@
     "lng": 20.9,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Slovenia",
@@ -1715,9 +1715,9 @@
     "lng": -86.24,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "El Salvador",
