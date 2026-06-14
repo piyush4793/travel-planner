@@ -1,0 +1,563 @@
+{
+  "name": "Mauritius",
+  "seed": false,
+  "lat": -20.35,
+  "lng": 57.55,
+  "region": "Africa",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ],
+  "worstMonths": [
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹1.1L–₹1.9L",
+    "couple": "₹2L–₹3.4L",
+    "family4": "₹4.1L–₹6.4L"
+  },
+  "experiences": [
+    "Lagoons",
+    "Beaches",
+    "Scenic Drives",
+    "Botanical Gardens",
+    "Creole Food"
+  ],
+  "avoid": [
+    "January-March is hotter, wetter, and the most cyclone-prone part of the year, so lagoon cruises and east-coast boat days are the first plans to get reshuffled.",
+    "Public buses are very cheap but slower on cross-island transfers and awkward with luggage after dark or on Sundays.",
+    "Casela, Chamarel, and Black River Gorges are much easier with a taxi or rental car because the southwest sights are spread out across winding roads."
+  ],
+  "combo": [
+    "South Africa",
+    "Madagascar"
+  ],
+  "landmark": "Chamarel Seven Coloured Earth Geopark",
+  "travelStyle": [
+    "relaxed",
+    "immersive"
+  ],
+  "stopoverNote": "If you only have 5-6 days, keep one coastal base in Grand Baie or Flic-en-Flac and do Port Louis, Chamarel, and Île aux Cerfs as day trips instead of changing hotels every night.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Port Louis",
+      "lat": -20.1609,
+      "lng": 57.5012,
+      "notes": "Mauritius' capital is the heritage-and-market stop for Blue Penny Museum, Aapravasi Ghat, Caudan Waterfront, and the easiest run to SSR Botanical Garden."
+    },
+    {
+      "name": "Grand Baie",
+      "lat": -20.0182,
+      "lng": 57.5802,
+      "notes": "The island's best north-coast base for public beaches, boat trips, Pereybere swims, and easy evening dining without a resort bubble."
+    },
+    {
+      "name": "Flic-en-Flac",
+      "lat": -20.2747,
+      "lng": 57.363,
+      "notes": "Mauritius' classic west-coast beach stay with calmer lagoon water, dolphin boat departures from nearby Tamarin, and fast access to Casela and Wolmar."
+    },
+    {
+      "name": "Chamarel",
+      "lat": -20.4256,
+      "lng": 57.4031,
+      "notes": "The inland southwest scenic zone for Seven Coloured Earth, waterfall viewpoints, rum tasting, and Black River Gorges lookouts."
+    },
+    {
+      "name": "Île aux Cerfs",
+      "lat": -20.275,
+      "lng": 57.8045,
+      "notes": "Mauritius' signature east-coast lagoon island, usually reached by short speedboat from Trou d'Eau Douce for beach time and day-cruise finishes."
+    }
+  ],
+  "itinerary": {
+    "sim": "my.t or Emtel prepaid SIM/eSIM are the easiest airport pickups; budget roughly ₹900–₹1,800 for enough data to run maps, WhatsApp, and booking confirmations around the island.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "WhatsApp",
+      "Airalo",
+      "XE Currency",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Port Louis",
+      "Grand Baie",
+      "Flic-en-Flac",
+      "Chamarel",
+      "Île aux Cerfs"
+    ],
+    "cities": {
+      "Port Louis": {
+        "name": "Port Louis",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Use Port Louis for museums, market walks, and the easy Pamplemousses garden loop before moving to the beaches.",
+        "days": [
+          {
+            "theme": "Aapravasi Ghat, Blue Penny Museum and the Caudan Waterfront",
+            "activities": [
+              {
+                "name": "Taxi from Sir Seewoosagur Ramgoolam International Airport to Port Louis",
+                "cost": "₹2,700–₹3,600",
+                "tip": "Bus 198 is much cheaper at roughly ₹55–₹75 pp but takes longer and is awkward with luggage."
+              },
+              {
+                "name": "Blue Penny Museum admission",
+                "cost": "₹585 pp",
+                "tip": "The current adult foreigner ticket is MUR 325, so carry a card or small cash for the Caudan Waterfront counter."
+              },
+              {
+                "name": "Aapravasi Ghat",
+                "cost": "Free"
+              },
+              {
+                "name": "Port Louis Central Market and Chinatown walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Caudan Waterfront promenade and craft stalls",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Saint Georges Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Le Suffren Hotel & Marina",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "Labourdonnais Waterfront Hotel",
+                "budget": "₹18,000–₹30,000/night"
+              }
+            ],
+            "meals": [
+              "Brasserie Chic",
+              "Namaste",
+              "The Courtyard"
+            ]
+          },
+          {
+            "theme": "Citadel views, SSR Botanical Garden and a gentler second city day",
+            "activities": [
+              {
+                "name": "Fort Adelaide (Citadel) viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Local bus or taxi round-trip to Pamplemousses Botanical Garden",
+                "cost": "₹180–₹1,080",
+                "tip": "Buses are cheap but slower; a taxi saves time if you want to combine the garden with extra Port Louis stops."
+              },
+              {
+                "name": "Sir Seewoosagur Ramgoolam Botanical Garden admission",
+                "cost": "₹540 pp",
+                "tip": "Adult foreigner entry is MUR 300; giant water lilies and talipot palms are the main highlights."
+              },
+              {
+                "name": "Jummah Mosque and old city lane walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Waterfront sunset stop at Caudan",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Saint Georges Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Le Suffren Hotel & Marina",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "Labourdonnais Waterfront Hotel",
+                "budget": "₹18,000–₹30,000/night"
+              }
+            ],
+            "meals": [
+              "Mystic Masala",
+              "Lambic",
+              "La Boussole"
+            ]
+          }
+        ]
+      },
+      "Grand Baie": {
+        "name": "Grand Baie",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Stay here for the north's easiest beach-hopping, nightlife, and boat access to Coin de Mire, Gabriel Island, and Pereybere.",
+        "days": [
+          {
+            "theme": "North-coast transfer, Pereybere swim and a Grand Baie sunset",
+            "activities": [
+              {
+                "name": "Port Louis to Grand Baie by local bus or taxi",
+                "cost": "₹108–₹3,600",
+                "tip": "Bus fares are usually MUR 35–44 per person, while taxis are faster if you have beach luggage."
+              },
+              {
+                "name": "Grand Baie Public Beach and La Cuvette swim stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Pereybere Beach hop by local bus or taxi",
+                "cost": "₹72–₹540"
+              },
+              {
+                "name": "Sunset speedboat cruise around Grand Baie and Coin de Mire",
+                "cost": "₹3,600–₹5,400 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ocean Villas",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Veranda Grand Baie Hotel & Spa",
+                "budget": "₹16,000–₹24,000/night"
+              },
+              {
+                "name": "LUX* Grand Baie Resort & Residences",
+                "budget": "₹42,000–₹72,000/night"
+              }
+            ],
+            "meals": [
+              "La Rougaille Créole",
+              "The Beach House Restaurant & Beach Bar",
+              "Happy Rajah"
+            ]
+          },
+          {
+            "theme": "North-islet day cruise and an easier evening back in town",
+            "activities": [
+              {
+                "name": "Catamaran or speedboat day trip to Gabriel Island and Flat Island",
+                "cost": "₹4,500–₹7,200 pp",
+                "tip": "Book the day before if winds are calm; north-coast departures usually leave from Grand Baie around 8:30-9:00 a.m."
+              },
+              {
+                "name": "Grand Baie Bazaar and Sunset Boulevard walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Tamil Surya Oudaya Sangam Temple photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Short taxi hops between beach and dinner venues",
+                "cost": "₹270–₹720"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ocean Villas",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Veranda Grand Baie Hotel & Spa",
+                "budget": "₹16,000–₹24,000/night"
+              },
+              {
+                "name": "LUX* Grand Baie Resort & Residences",
+                "budget": "₹42,000–₹72,000/night"
+              }
+            ],
+            "meals": [
+              "Le Capitaine",
+              "Top Deck Bar & Grill",
+              "Pomodoro"
+            ]
+          }
+        ]
+      },
+      "Flic-en-Flac": {
+        "name": "Flic-en-Flac",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Base here for west-coast beach time plus quick access to Casela, Tamarin Bay dolphin trips, and Wolmar lagoon hotels.",
+        "days": [
+          {
+            "theme": "Cross-island transfer, Flic-en-Flac beach and west-coast snorkelling",
+            "activities": [
+              {
+                "name": "Grand Baie to Flic-en-Flac by bus via Port Louis or direct taxi",
+                "cost": "₹216–₹4,500",
+                "tip": "Two buses keep costs low; a taxi or rental car makes it much easier if you are hotel-hopping."
+              },
+              {
+                "name": "Flic-en-Flac public beach and Casuarina line walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Tamarin Bay shared dolphin-watch and snorkelling speedboat",
+                "cost": "₹3,600–₹5,400 pp"
+              },
+              {
+                "name": "Beach lounger or sunset drink budget",
+                "cost": "₹360–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aanari Hotel & Spa",
+                "budget": "₹7,500–₹12,000/night"
+              },
+              {
+                "name": "La Pirogue Mauritius",
+                "budget": "₹20,000–₹32,000/night"
+              },
+              {
+                "name": "Sugar Beach Mauritius",
+                "budget": "₹24,000–₹40,000/night"
+              }
+            ],
+            "meals": [
+              "Zub Express Restaurant",
+              "Pakbo",
+              "Buddha-Bar Beach"
+            ]
+          },
+          {
+            "theme": "Casela, Wolmar lagoon and a flexible west-coast evening",
+            "activities": [
+              {
+                "name": "Casela World of Adventures standard admission",
+                "cost": "₹2,745 pp",
+                "tip": "The current standard adult ticket is MUR 1,525; quad biking, zip lines, and safari extras are priced separately."
+              },
+              {
+                "name": "Taxi round-trip between Flic-en-Flac and Casela",
+                "cost": "₹1,260–₹1,980"
+              },
+              {
+                "name": "Wolmar beach kayak or paddleboard rental",
+                "cost": "₹900–₹1,800 pp"
+              },
+              {
+                "name": "Rental car for Tamarin and Rivière Noire scenic loop",
+                "cost": "₹1,620–₹4,500/day"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aanari Hotel & Spa",
+                "budget": "₹7,500–₹12,000/night"
+              },
+              {
+                "name": "La Pirogue Mauritius",
+                "budget": "₹20,000–₹32,000/night"
+              },
+              {
+                "name": "Sugar Beach Mauritius",
+                "budget": "₹24,000–₹40,000/night"
+              }
+            ],
+            "meals": [
+              "Domaine Anna",
+              "Creole Shack",
+              "Mosaic - Eat & Drink"
+            ]
+          }
+        ]
+      },
+      "Chamarel": {
+        "name": "Chamarel",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Chamarel is the inland scenery day: coloured dunes, waterfall viewpoints, rum estate stops, and Black River Gorges lookouts all fit well together.",
+        "days": [
+          {
+            "theme": "Seven Coloured Earth, Black River Gorges and southwest viewpoints",
+            "activities": [
+              {
+                "name": "Flic-en-Flac to Chamarel by taxi, bus connection, or rental car",
+                "cost": "₹270–₹5,040",
+                "tip": "A rental car is the most practical option because the viewpoints and distillery are spread out along winding roads."
+              },
+              {
+                "name": "Chamarel Seven Coloured Earth Geopark admission",
+                "cost": "₹1,350 pp",
+                "tip": "The adult non-resident ticket is MUR 750 and includes the waterfall viewpoint and tortoise park."
+              },
+              {
+                "name": "Black River Gorges National Park viewpoints and short trails",
+                "cost": "Free",
+                "tip": "There is no park entry fee, but bring water because services are limited once you leave the village."
+              },
+              {
+                "name": "Rhumerie de Chamarel guided tasting or lunch stop",
+                "cost": "₹1,620–₹2,700 pp"
+              },
+              {
+                "name": "Chamarel waterfall roadside viewpoint stops",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "La Vieille Cheminée",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Chalets Chamarel",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "Lakaz Chamarel Exclusive Lodge",
+                "budget": "₹24,000–₹38,000/night"
+              }
+            ],
+            "meals": [
+              "Le Chamarel Restaurant",
+              "L'Alchimiste Restaurant",
+              "Le Palais de Barbizon"
+            ]
+          }
+        ]
+      },
+      "Île aux Cerfs": {
+        "name": "Île aux Cerfs",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Treat Île aux Cerfs as an east-coast lagoon finish from Trou d'Eau Douce; most travelers sleep on the mainland and use a short speedboat hop to the island.",
+        "days": [
+          {
+            "theme": "Trou d'Eau Douce launch, lagoon speedboat and an easy beach finale",
+            "activities": [
+              {
+                "name": "Chamarel to Trou d'Eau Douce by rental car or taxi",
+                "cost": "₹4,500–₹6,300",
+                "tip": "It is a long cross-island transfer, so start early if you want a full afternoon on the island."
+              },
+              {
+                "name": "Shared speedboat transfer from Trou d'Eau Douce to Île aux Cerfs",
+                "cost": "₹1,350 pp",
+                "tip": "Basic return transfers start around MUR 750; full-day catamaran trips with lunch usually cost much more."
+              },
+              {
+                "name": "Île aux Cerfs beach time and lagoon swim",
+                "cost": "Free"
+              },
+              {
+                "name": "Full-day catamaran option with Grand River South East waterfall stop",
+                "cost": "₹3,240–₹3,960 pp"
+              },
+              {
+                "name": "Taxi from Trou d'Eau Douce or Belle Mare to the airport",
+                "cost": "₹1,800–₹2,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Friday Attitude",
+                "budget": "₹9,500–₹16,000/night"
+              },
+              {
+                "name": "Tropical Attitude",
+                "budget": "₹12,500–₹19,500/night"
+              },
+              {
+                "name": "Shangri-La Le Touessrok, Mauritius",
+                "budget": "₹32,000–₹65,000/night"
+              }
+            ],
+            "meals": [
+              "Chez Tino",
+              "Green Island Beach Restaurant",
+              "Sands Grill"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Sir Seewoosagur Ramgoolam International Airport",
+        "to": "Port Louis",
+        "method": "Direct taxi in about 1 hour, or Bus 198 if you want the cheapest public-transport option.",
+        "cost": "₹55–₹3,600"
+      },
+      {
+        "from": "Port Louis",
+        "to": "Grand Baie",
+        "method": "Frequent northbound bus from Port Louis Victoria terminal, direct taxi, or a same-day rental car pickup.",
+        "cost": "₹108–₹3,600"
+      },
+      {
+        "from": "Grand Baie",
+        "to": "Flic-en-Flac",
+        "method": "Two-bus route via Port Louis, or a direct taxi/rental car across the island.",
+        "cost": "₹216–₹4,500"
+      },
+      {
+        "from": "Flic-en-Flac",
+        "to": "Chamarel",
+        "method": "Rental car or taxi is easiest for the winding southwest roads; public buses work with a change in Tamarin or Quatre Bornes.",
+        "cost": "₹270–₹5,040"
+      },
+      {
+        "from": "Chamarel",
+        "to": "Île aux Cerfs",
+        "method": "Drive or taxi to Trou d'Eau Douce, then take a short shared speedboat to the island.",
+        "cost": "₹5,850–₹7,650"
+      }
+    ],
+    "extras": [
+      "May through December is the driest and most comfortable stretch for this route; January to March is hotter, wetter, and the most disruption-prone part of the year.",
+      "Mauritius drives on the left, and an economy rental car usually runs about MUR 900-1,500 per day, or roughly ₹1,620-₹2,700 before extra insurance and fuel.",
+      "Local buses are cash-based and very cheap, usually MUR 30-44 for longer intercity rides, but they are slower on cross-island routes and lighter on luggage space.",
+      "Black River Gorges National Park itself is free; the main paid southwest sight is Chamarel Seven Coloured Earth, while Casela charges separately for most add-on adventure activities.",
+      "Île aux Cerfs is easiest as a Trou d'Eau Douce boat day rather than an overnight island stay unless you specifically want Bubble Lodge or a Shangri-La east-coast splurge."
+    ],
+    "cityImages": {
+      "Port Louis": [
+        "Port Louis Mauritius Caudan Waterfront",
+        "Aapravasi Ghat Port Louis Mauritius",
+        "Blue Penny Museum Mauritius"
+      ],
+      "Grand Baie": [
+        "Grand Baie Mauritius beach",
+        "Pereybere Beach Mauritius",
+        "Coin de Mire Mauritius"
+      ],
+      "Flic-en-Flac": [
+        "Flic en Flac Mauritius beach",
+        "Tamarin Bay Mauritius dolphins",
+        "Casela World of Adventures Mauritius"
+      ],
+      "Chamarel": [
+        "Chamarel Seven Coloured Earth Mauritius",
+        "Black River Gorges National Park Mauritius",
+        "Chamarel Waterfall Mauritius"
+      ],
+      "Île aux Cerfs": [
+        "Ile aux Cerfs Mauritius lagoon",
+        "Trou d Eau Douce Mauritius jetty",
+        "Grand River South East waterfall Mauritius"
+      ]
+    }
+  }
+}

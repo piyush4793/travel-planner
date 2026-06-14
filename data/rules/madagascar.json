@@ -1,0 +1,762 @@
+{
+  "name": "Madagascar",
+  "seed": false,
+  "lat": -18.77,
+  "lng": 46.87,
+  "region": "Africa",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "budget": {
+    "solo": "₹1.4L–₹2.2L",
+    "couple": "₹2.5L–₹4.0L",
+    "family4": "₹5.0L–₹7.6L"
+  },
+  "experiences": [
+    "Indri Lemur Trekking in Andasibe",
+    "Avenue of the Baobabs Sunset",
+    "Isalo Canyon Hikes",
+    "Lokobe Reserve Wildlife",
+    "Nosy Tanikely Snorkeling"
+  ],
+  "avoid": [
+    "November to March brings cyclone risk, washed-out tracks, and humid rainforest walks",
+    "Domestic schedules can shift without much notice, so do not stack long-haul and island flights on the same day",
+    "Many west and south routes are punishing overland unless you budget for a private 4x4"
+  ],
+  "combo": [
+    "Mauritius",
+    "Reunion"
+  ],
+  "landmark": "Avenue of the Baobabs",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Antananarivo is the essential hub: nearly every practical Madagascar Airlines domestic routing touches TNR, so keeping one buffer night in the capital protects the rest of the trip.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Antananarivo",
+      "lat": -18.8792,
+      "lng": 47.5079,
+      "notes": "Hilltop palaces, markets, museums, and the main international/domestic gateway before heading into rainforest, baobab country, or the coast"
+    },
+    {
+      "name": "Andasibe",
+      "lat": -18.9333,
+      "lng": 48.4167,
+      "notes": "Best-known base for hearing indri calls at dawn, guided rainforest walks, night wildlife spotting, and easy access to Analamazaotra and Mantadia circuits"
+    },
+    {
+      "name": "Morondava",
+      "lat": -20.2856,
+      "lng": 44.2791,
+      "notes": "The west-coast launch point for Avenue of the Baobabs sunsets, Kirindy wildlife drives, and long dirt-road expeditions into Menabe country"
+    },
+    {
+      "name": "Isalo National Park",
+      "lat": -22.6153,
+      "lng": 45.4008,
+      "notes": "Ranohira-based access to sandstone canyons, natural pools, ring-tailed lemurs, and some of Madagascar’s best dry-season trekking"
+    },
+    {
+      "name": "Nosy Be",
+      "lat": -13.3128,
+      "lng": 48.2593,
+      "notes": "Island finish for Lokobe forest, marine reserve snorkeling, sunset viewpoints, and easier beach downtime after the overland-heavy mainland sections"
+    }
+  ],
+  "itinerary": {
+    "sim": "Telma is the safest Madagascar-wide choice once you leave Antananarivo; Orange Madagascar is fine in bigger towns and Nosy Be. Expect roughly ₹450–₹900 for a tourist SIM or eSIM with enough data for maps, WhatsApp, and flight changes.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "Madagascar Airlines",
+      "WhatsApp",
+      "XE Currency",
+      "iOverlander"
+    ],
+    "cityOrder": [
+      "Antananarivo",
+      "Andasibe",
+      "Morondava",
+      "Isalo National Park",
+      "Nosy Be"
+    ],
+    "cities": {
+      "Antananarivo": {
+        "name": "Antananarivo",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Ease into the highland capital with palace views, old-town lanes, and the practical setup day Madagascar usually demands",
+            "activities": [
+              {
+                "name": "Ivato airport taxi or hotel shuttle into Upper Town / Waterfront",
+                "cost": "₹540–₹1,080"
+              },
+              {
+                "name": "Rova of Antananarivo entry plus compulsory local guide",
+                "cost": "₹360–₹720"
+              },
+              {
+                "name": "Analakely Market and Independence Avenue walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "La Digue craft market shopping and cash-change buffer",
+                "cost": "₹360–₹1,080"
+              },
+              {
+                "name": "Haute-Ville sunset viewpoints and stair streets",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Sakamanga",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Le Relais des Plateaux Hotel & Spa",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Radisson Blu Hotel Antananarivo Waterfront",
+                "budget": "₹13,500–₹21,000/night"
+              }
+            ],
+            "meals": [
+              "La Varangue",
+              "Sakamanga Restaurant",
+              "Nerone Ristorante Italiano"
+            ]
+          },
+          {
+            "theme": "Use the buffer day for UNESCO royal history or an easy lemur fix before the long mainland hops begin",
+            "activities": [
+              {
+                "name": "Royal Hill of Ambohimanga ticket",
+                "cost": "₹558"
+              },
+              {
+                "name": "Lemurs’ Park entry with compulsory guide included",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "Private car to Ambohimanga and Lemurs’ Park",
+                "cost": "₹2,700–₹4,500"
+              },
+              {
+                "name": "Andafiavaratra Palace Museum visit",
+                "cost": "₹360–₹540"
+              },
+              {
+                "name": "Domestic flight reconfirmation and airport transfer buffer",
+                "cost": "₹540–₹1,080"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Sakamanga",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Maison Gallieni",
+                "budget": "₹10,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Citizen",
+              "La Varangue",
+              "Sakamanga Restaurant"
+            ]
+          }
+        ]
+      },
+      "Andasibe": {
+        "name": "Andasibe",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Trade the capital for rainforest humidity, indri calls, and your first mandatory-guide MNP circuit",
+            "activities": [
+              {
+                "name": "Taxi-brousse via Moramanga from Antananarivo to Andasibe",
+                "cost": "₹234–₹252"
+              },
+              {
+                "name": "Private 4x4 with driver from Antananarivo to Andasibe",
+                "cost": "₹12,600"
+              },
+              {
+                "name": "Analamazaotra sector MNP foreign entry fee",
+                "cost": "₹1,620"
+              },
+              {
+                "name": "Mandatory MNP guide fee for a half-day lemur circuit",
+                "cost": "₹1,350/group"
+              },
+              {
+                "name": "Vakôna Private Reserve lemur island visit",
+                "cost": "₹900–₹1,260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Andasibe Hotel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Vakôna Forest Lodge",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Mantadia Lodge",
+                "budget": "₹12,500–₹20,500/night"
+              }
+            ],
+            "meals": [
+              "Vakôna Forest Lodge Restaurant",
+              "Feon’ny Ala Restaurant",
+              "Mantadia Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Go deeper for indri and sifaka trekking by day, then switch to frogs, chameleons, and mouse lemurs after dark",
+            "activities": [
+              {
+                "name": "Second-day Andasibe-Mantadia MNP foreign entry fee",
+                "cost": "₹1,620"
+              },
+              {
+                "name": "Mandatory full-day MNP guide fee for longer Mantadia or Analamazaotra trails",
+                "cost": "₹2,160/group"
+              },
+              {
+                "name": "Mitsinjo or VOIMMA night walk entry plus local guide",
+                "cost": "₹540–₹810"
+              },
+              {
+                "name": "Community reforestation trail or nursery donation",
+                "cost": "₹180–₹360"
+              },
+              {
+                "name": "Short lodge transfer or village tuk-tuk",
+                "cost": "₹180–₹360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Grace Lodge",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Vakôna Forest Lodge",
+                "budget": "₹8,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Feon’ny Ala Restaurant",
+              "Grace Lodge Restaurant",
+              "Marie Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Morondava": {
+        "name": "Morondava",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Fly west, settle by the Mozambique Channel, and time the first baobab run for the softest sunset light",
+            "activities": [
+              {
+                "name": "Madagascar Airlines / Tsaradia flight from Antananarivo to Morondava",
+                "cost": "₹13,500–₹18,500"
+              },
+              {
+                "name": "Taxi or arranged transfer to Avenue of the Baobabs for sunset",
+                "cost": "₹720–₹1,350"
+              },
+              {
+                "name": "Local Sakalava guide at Avenue of the Baobabs",
+                "cost": "₹180–₹360"
+              },
+              {
+                "name": "Baobab Amoureux detour",
+                "cost": "₹0"
+              },
+              {
+                "name": "Morondava beach promenade and pirogue harbor walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Baobab Café",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Kimony Resort",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Palissandre Côte Ouest Resort & Spa",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Le Corail",
+              "Chez Maggie",
+              "Baobab Café"
+            ]
+          },
+          {
+            "theme": "Make the classic Menabe day: dry forest wildlife, fossa country, and a second golden-hour baobab return",
+            "activities": [
+              {
+                "name": "Kirindy Forest / CFPF reserve entry",
+                "cost": "₹630"
+              },
+              {
+                "name": "Mandatory Kirindy local guide fee",
+                "cost": "₹720–₹1,080/group"
+              },
+              {
+                "name": "Kirindy night walk add-on",
+                "cost": "₹180–₹360"
+              },
+              {
+                "name": "Private 4x4 excursion Morondava–Kirindy–Avenue of the Baobabs",
+                "cost": "₹6,300–₹10,800"
+              },
+              {
+                "name": "Second Avenue of the Baobabs sunset stop",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kimony Resort",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Palissandre Côte Ouest Resort & Spa",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Chez Alain",
+              "Le Corail",
+              "Palissandre Côte Ouest Restaurant"
+            ]
+          },
+          {
+            "theme": "Use the spare west-coast day for slower beach time or a second reserve run if your flight timing forces it",
+            "activities": [
+              {
+                "name": "Belo-sur-Mer or fishing-village road excursion by 4x4",
+                "cost": "₹5,400–₹9,000"
+              },
+              {
+                "name": "Hotel pool and beach recovery day",
+                "cost": "₹0"
+              },
+              {
+                "name": "Morondava market seafood lunch and transfers",
+                "cost": "₹360–₹900"
+              },
+              {
+                "name": "Extra baobab sunrise or sunset transfer",
+                "cost": "₹720–₹1,350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Baobab Café",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Capitaine Tsiranana",
+              "Baobab Café",
+              "Chez Maggie"
+            ]
+          }
+        ]
+      },
+      "Isalo National Park": {
+        "name": "Isalo National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Reach Ranohira, pay the higher Isalo MNP tariff, and spend the first afternoon in easy canyon country",
+            "activities": [
+              {
+                "name": "Taxi-brousse from Toliara to Ranohira",
+                "cost": "₹900–₹1,260"
+              },
+              {
+                "name": "Private 4x4 transfer from Toliara to Ranohira / Isalo",
+                "cost": "₹5,400–₹8,100"
+              },
+              {
+                "name": "Isalo National Park MNP foreign entry fee",
+                "cost": "₹2,340"
+              },
+              {
+                "name": "Mandatory MNP guide fee for a half-day circuit",
+                "cost": "₹1,350/group"
+              },
+              {
+                "name": "Piscine Naturelle or short Namaza circuit with water and picnic top-up",
+                "cost": "₹360–₹720"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Jardin du Roy",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Relais de la Reine",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Isalo Rock Lodge",
+                "budget": "₹15,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "Chez Alice",
+              "Relais de la Reine Restaurant",
+              "Isalo Rock Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Commit to the full hiking day for deeper canyons, ring-tailed lemurs, and the signature sandstone finish",
+            "activities": [
+              {
+                "name": "Second-day Isalo National Park MNP foreign entry fee",
+                "cost": "₹2,340"
+              },
+              {
+                "name": "Mandatory full-day MNP guide fee for Namaza / Canyon des Singes circuits",
+                "cost": "₹2,160/group"
+              },
+              {
+                "name": "Lodge transfer between Ranohira and park gate",
+                "cost": "₹360–₹720"
+              },
+              {
+                "name": "Horseback ride from Relais de la Reine to sandstone viewpoints",
+                "cost": "₹1,800–₹3,600"
+              },
+              {
+                "name": "La Fenêtre de l’Isalo sunset stop",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Relais de la Reine",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Isalo Rock Lodge",
+                "budget": "₹15,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "Pizzeria Libertà - Ranohira",
+              "Zébu Grillé",
+              "Le Jardin du Roy Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep the optional extra day for a slower canyon morning or when the southbound transport schedule refuses to line up cleanly",
+            "activities": [
+              {
+                "name": "Short guided botanical walk near Ranohira",
+                "cost": "₹540–₹900"
+              },
+              {
+                "name": "Village market and handicraft stop",
+                "cost": "₹180–₹540"
+              },
+              {
+                "name": "Second horseback or 4x4 viewpoint circuit",
+                "cost": "₹1,800–₹4,500"
+              },
+              {
+                "name": "Road transfer buffer toward Toliara airport",
+                "cost": "₹900–₹8,100"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Jardin du Roy",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Chez Alice",
+              "Mini Gargotte Nam",
+              "Aigle de l’Isalo"
+            ]
+          }
+        ]
+      },
+      "Nosy Be": {
+        "name": "Nosy Be",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Switch from red dust to sea air with a simple island day and a sunset that does not need much planning",
+            "activities": [
+              {
+                "name": "Madagascar Airlines / Tsaradia flight from Antananarivo to Nosy Be",
+                "cost": "₹8,500–₹14,500"
+              },
+              {
+                "name": "Fascene airport transfer to Ambatoloaka, Dzamandzar, or Andilana hotels",
+                "cost": "₹900–₹1,800"
+              },
+              {
+                "name": "Hell-Ville market and colonial quarter walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Madirokely or Andilana beach time",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mont Passot sunset taxi round-trip",
+                "cost": "₹1,080–₹1,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vanila Hotel & Spa",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Ravintsara Wellness Hotel",
+                "budget": "₹14,500–₹24,500/night"
+              },
+              {
+                "name": "Andilana Beach Resort",
+                "budget": "₹19,500–₹34,500/night"
+              }
+            ],
+            "meals": [
+              "Chez Loulou",
+              "Le Papillon",
+              "Tsy Manin"
+            ]
+          },
+          {
+            "theme": "Make the signature forest day by pirogue into Lokobe for lemurs, reptiles, and a very different Madagascar biome",
+            "activities": [
+              {
+                "name": "Lokobe Reserve guided day trip with pirogue, local guide, and entrance",
+                "cost": "₹5,220–₹10,440"
+              },
+              {
+                "name": "Ambatozavavy pirogue landing and village tips",
+                "cost": "₹180–₹360"
+              },
+              {
+                "name": "Hotel-boat-hotel transfer coordination",
+                "cost": "₹540–₹1,080"
+              },
+              {
+                "name": "Beachfront evening transfer or tuk-tuk",
+                "cost": "₹180–₹360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vanila Hotel & Spa",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Ravintsara Wellness Hotel",
+                "budget": "₹14,500–₹24,500/night"
+              }
+            ],
+            "meals": [
+              "Chez Loulou",
+              "Zahana",
+              "Le Parad’Ice"
+            ]
+          },
+          {
+            "theme": "Finish with coral-water snorkeling and one of the easiest boat days in the country",
+            "activities": [
+              {
+                "name": "Nosy Tanikely marine reserve foreign entry fee",
+                "cost": "₹720"
+              },
+              {
+                "name": "Boat trip to Nosy Tanikely with snorkeling stops",
+                "cost": "₹2,700–₹5,400"
+              },
+              {
+                "name": "Snorkeling gear hire if not bundled",
+                "cost": "₹180–₹360"
+              },
+              {
+                "name": "Nosy Komba or Nosy Sakatia add-on stop",
+                "cost": "₹720–₹1,800"
+              },
+              {
+                "name": "Beach sunset dinner transfer",
+                "cost": "₹180–₹360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vanila Hotel & Spa",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Andilana Beach Resort",
+                "budget": "₹19,500–₹34,500/night"
+              }
+            ],
+            "meals": [
+              "Le Papillon",
+              "Chez Loulou",
+              "Zahana"
+            ]
+          },
+          {
+            "theme": "Use the optional extra island day for diving, whale season, or simply to buffer the famously loose domestic flight network",
+            "activities": [
+              {
+                "name": "Intro scuba or two-tank dive from Nosy Be",
+                "cost": "₹4,500–₹8,100"
+              },
+              {
+                "name": "Nosy Sakatia turtle snorkeling trip",
+                "cost": "₹2,700–₹4,500"
+              },
+              {
+                "name": "Airport transfer and baggage buffer for domestic departure",
+                "cost": "₹900–₹1,800"
+              },
+              {
+                "name": "Madagascar Airlines baggage overage / schedule-change cushion",
+                "cost": "₹900–₹2,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ravintsara Wellness Hotel",
+                "budget": "₹14,500–₹24,500/night"
+              }
+            ],
+            "meals": [
+              "Tsy Manin",
+              "Le Papillon",
+              "Zahana"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Antananarivo",
+        "to": "Andasibe",
+        "method": "Taxi-brousse via Moramanga is the cheapest move, but a private 4x4 is far easier if you want door-to-door timing and stops",
+        "cost": "₹234–₹12,600"
+      },
+      {
+        "from": "Andasibe",
+        "to": "Morondava",
+        "method": "Return by road to Antananarivo, then connect onto a Madagascar Airlines / Tsaradia domestic; forcing this overland all the way west wastes too much time",
+        "cost": "₹13,500–₹22,500"
+      },
+      {
+        "from": "Morondava",
+        "to": "Isalo National Park",
+        "method": "This is one of the classic Madagascar pain points: either commit to a long private 4x4 repositioning or backtrack by air via Antananarivo/Toliara and finish by road to Ranohira",
+        "cost": "₹18,000–₹45,000"
+      },
+      {
+        "from": "Isalo National Park",
+        "to": "Nosy Be",
+        "method": "Road to Toliara followed by domestic flights, usually via Antananarivo, is the practical way to jump from the south-west canyons to the north-west islands",
+        "cost": "₹14,500–₹28,500"
+      },
+      {
+        "from": "Nosy Be",
+        "to": "Antananarivo",
+        "method": "Scheduled Madagascar Airlines / Tsaradia domestic back to the capital for international departures",
+        "cost": "₹8,500–₹14,500"
+      }
+    ],
+    "extras": [
+      "April to October is the sweet spot: you get drier rainforest trails in Andasibe, much safer west-coast and south-west road conditions, and clearer beach weather around Nosy Be.",
+      "Madagascar National Parks entries and guide fees are usually cash-only in Ariary; carry small notes because remote gates rarely handle card payments or large bills well.",
+      "Guides are mandatory inside the MNP parks on this route, and the classic lemur night walks happen in community forests such as Mitsinjo or VOIMMA rather than inside the main park sectors.",
+      "Private 4x4 hire is the realistic comfort upgrade for Morondava, Kirindy, and Isalo logistics; taxi-brousse works best on the Antananarivo-Andasibe corridor if you are traveling light.",
+      "Madagascar Airlines domestic schedules can shift at short notice, so keep at least one buffer night in Antananarivo or Nosy Be before any long-haul departure.",
+      "Madagascar uses 220V European two-pin plugs, and even mid-range hotels outside the capital can have weak evening power or patchy hot water, so keep charging windows flexible."
+    ],
+    "cityImages": {
+      "Antananarivo": [
+        "Rova of Antananarivo",
+        "Ambohimanga Madagascar",
+        "Analakely Market Antananarivo"
+      ],
+      "Andasibe": [
+        "Andasibe-Mantadia National Park",
+        "Indri lemur Andasibe",
+        "Vakona Forest Lodge Madagascar"
+      ],
+      "Morondava": [
+        "Avenue of the Baobabs Madagascar",
+        "Kirindy Forest Madagascar",
+        "Morondava beach Madagascar"
+      ],
+      "Isalo National Park": [
+        "Isalo National Park Madagascar",
+        "Piscine Naturelle Isalo",
+        "La Fenetre de l Isalo"
+      ],
+      "Nosy Be": [
+        "Nosy Be Madagascar",
+        "Lokobe Reserve Nosy Be",
+        "Nosy Tanikely Marine Reserve"
+      ]
+    }
+  }
+}

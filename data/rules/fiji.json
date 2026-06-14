@@ -1,0 +1,529 @@
+{
+  "name": "Fiji",
+  "seed": false,
+  "lat": -17.71,
+  "lng": 178.07,
+  "region": "Oceania",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹1.15L–₹2.05L",
+    "couple": "₹2.1L–₹3.75L",
+    "family4": "₹4.4L–₹6.8L"
+  },
+  "experiences": [
+    "Island Hopping",
+    "Snorkeling",
+    "Diving",
+    "Beaches",
+    "Fijian Culture",
+    "Reef Resorts"
+  ],
+  "avoid": [
+    "November–April is wetter, more humid, and overlaps the South Pacific cyclone season, so ferry schedules and sea conditions are less reliable.",
+    "Christmas, New Year, and Australian/NZ school-holiday weeks push up west-coast resort prices and can sell out popular Yasawa ferry sectors.",
+    "Sunday service is quieter in many towns and villages, so market browsing, buses, and cultural visits need a bit more pre-planning."
+  ],
+  "combo": [
+    "Australia",
+    "New Zealand",
+    "Vanuatu"
+  ],
+  "landmark": "Sawa-i-Lau Caves",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 6 days, keep the plan on Viti Levu plus one west-coast island group; doing both Yasawas and Suva makes the pace feel transfer-heavy.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Suva",
+      "lat": -18.1416,
+      "lng": 178.4419,
+      "notes": "Fiji's capital is the practical culture-and-rainforest finale for the itinerary, with the Fiji Museum, Colo-i-Suva, government-era architecture, and easy Fiji Link flights back to Nadi."
+    },
+    {
+      "name": "Nadi",
+      "lat": -17.7765,
+      "lng": 177.4358,
+      "notes": "Nadi is the international arrival hub for temple visits, Sabeto attractions, Port Denarau departures, and a simple first or last night on Viti Levu."
+    },
+    {
+      "name": "Mamanuca Islands",
+      "lat": -17.6743,
+      "lng": 177.1081,
+      "notes": "The Mamanucas are Fiji's easiest postcard-island stay from Port Denarau, with clear lagoons, resort reefs, and day cruises to sandbars and surf breaks."
+    },
+    {
+      "name": "Yasawa Islands",
+      "lat": -17.1229,
+      "lng": 177.1558,
+      "notes": "The Yasawas deliver Fiji's slower island-hopping rhythm, with long beach stays, manta and shark snorkels, and the famous Sawa-i-Lau limestone caves."
+    },
+    {
+      "name": "Coral Coast",
+      "lat": -18.1678,
+      "lng": 177.5099,
+      "notes": "The Coral Coast is the easiest land-based reef break between Nadi and Suva, mixing Sigatoka sights, village culture, and full-service beachfront resorts."
+    }
+  ],
+  "itinerary": {
+    "sim": "Vodafone Fiji prepaid is the safest all-round option for Viti Levu and major resort areas, while Digicel Fiji is the usual backup; download ferry vouchers and offline maps before sailing to the Yasawas.",
+    "apps": [
+      "Fiji Airways",
+      "South Sea Cruises",
+      "Awesome Adventures Fiji",
+      "Google Maps offline",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Nadi",
+      "Mamanuca Islands",
+      "Yasawa Islands",
+      "Coral Coast",
+      "Suva"
+    ],
+    "cities": {
+      "Nadi": {
+        "name": "Nadi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Use Nadi as the soft-landing base for Sabeto, temple stops, and Port Denarau logistics before you head onto the islands.",
+        "days": [
+          {
+            "theme": "Temple Colors, Sabeto Stops and a Gentle West-Coast Arrival",
+            "activities": [
+              {
+                "name": "Sri Siva Subramaniya Temple visit",
+                "cost": "₹185–₹370 pp",
+                "tip": "Entry is typically donation-based or bundled with a short temple explanation; dress modestly and remove footwear."
+              },
+              {
+                "name": "Garden of the Sleeping Giant",
+                "cost": "₹1,295 pp",
+                "tip": "Adult tickets are commonly listed around FJ$35, and the orchid garden is easiest before midday heat builds."
+              },
+              {
+                "name": "Sabeto Hot Springs and Mud Pool",
+                "cost": "₹1,295–₹1,480 pp",
+                "tip": "Most adult walk-in tickets land around FJ$35–40; carry a change of clothes because transfers continue dusty and wet."
+              },
+              {
+                "name": "Wailoaloa Beach sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tokatoka Resort Hotel",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Tanoa International Hotel",
+                "budget": "₹11,500–₹17,500/night"
+              },
+              {
+                "name": "Hilton Fiji Beach Resort and Spa",
+                "budget": "₹20,500–₹34,500/night"
+              }
+            ],
+            "meals": [
+              "Tu's Place",
+              "Bonefish Seafood Restaurant",
+              "The Boatshed"
+            ]
+          }
+        ]
+      },
+      "Mamanuca Islands": {
+        "name": "Mamanuca Islands",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "This is the easiest lagoon-and-resort block from Port Denarau, so it works best as one island stay with one full snorkel or sailing day.",
+        "days": [
+          {
+            "theme": "Port Denarau Departure, Resort Reef Time and a Lagoon Sunset",
+            "activities": [
+              {
+                "name": "South Sea Cruises or Malolo Cat transfer from Port Denarau to a Mamanuca resort",
+                "cost": "₹4,995–₹6,105 pp",
+                "tip": "Adult ferry sectors to islands such as Plantation, Musket Cove, and Castaway commonly land around FJ$135–165 depending on the stop."
+              },
+              {
+                "name": "House-reef snorkel at Plantation Island or Musket Cove",
+                "cost": "Free–₹1,110 pp"
+              },
+              {
+                "name": "Kayak or stand-up paddle rental",
+                "cost": "₹1,480–₹2,590 pp"
+              },
+              {
+                "name": "Sunset cruise arranged by the resort",
+                "cost": "₹2,960–₹4,440 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Plantation Island Resort",
+                "budget": "₹18,500–₹30,500/night"
+              },
+              {
+                "name": "Musket Cove Island Resort & Marina",
+                "budget": "₹22,500–₹34,500/night"
+              },
+              {
+                "name": "Likuliku Lagoon Resort",
+                "budget": "₹58,000–₹95,000/night"
+              }
+            ],
+            "meals": [
+              "Tavola Restaurant",
+              "Dick's Place Bar & Bistro",
+              "Fijiana Restaurant"
+            ]
+          },
+          {
+            "theme": "Sailing Day, Snorkeling and Mamanuca Sandbars",
+            "activities": [
+              {
+                "name": "South Sea Cruises Seaspray sailing trip to Modriki and nearby sand cays",
+                "cost": "₹10,730–₹11,470 pp",
+                "tip": "Adult day-trip pricing is usually around FJ$290–310 with lunch and snorkeling gear included."
+              },
+              {
+                "name": "Introductory or single-tank dive with a Mamanuca resort dive centre",
+                "cost": "₹7,770–₹9,620 pp",
+                "tip": "A resort dive usually prices near FJ$210–260 depending on whether gear hire is bundled."
+              },
+              {
+                "name": "Cloud 9 floating platform boat outing",
+                "cost": "₹5,920–₹7,400 pp",
+                "tip": "Boat-only transfers often start around FJ$160–200 before food or bar credit."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Castaway Island, Fiji",
+                "budget": "₹39,000–₹58,000/night"
+              },
+              {
+                "name": "Malolo Island Resort",
+                "budget": "₹34,000–₹52,000/night"
+              }
+            ],
+            "meals": [
+              "1808 at Castaway Island",
+              "Terrace Restaurant at Malolo Island Resort",
+              "Salty's Pizza at Musket Cove"
+            ]
+          }
+        ]
+      },
+      "Yasawa Islands": {
+        "name": "Yasawa Islands",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Yasawa time pays off only if you slow down a little, so keep one cave-or-manta day and one reef-or-village day rather than trying to island-hop too aggressively.",
+        "days": [
+          {
+            "theme": "Yasawa Flyer Transfer, Blue Water Check-In and an Easy First Snorkel",
+            "activities": [
+              {
+                "name": "Awesome Adventures Fiji Yasawa Flyer ferry into the Yasawas",
+                "cost": "₹5,883–₹7,363 pp",
+                "tip": "Most adult sectors or pass-equivalent one-way segments price around FJ$159–199 depending on how far north you sail."
+              },
+              {
+                "name": "Beach snorkel from Octopus Resort or Barefoot Manta Island Resort",
+                "cost": "Free–₹1,295 pp"
+              },
+              {
+                "name": "Guided village visit with kava ceremony",
+                "cost": "₹1,295–₹1,850 pp",
+                "tip": "Many Yasawa resorts charge roughly FJ$35–50 and ask guests to cover shoulders and knees."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Octopus Resort",
+                "budget": "₹16,500–₹25,500/night"
+              },
+              {
+                "name": "Barefoot Manta Island Resort",
+                "budget": "₹18,500–₹28,500/night"
+              },
+              {
+                "name": "Paradise Cove Resort",
+                "budget": "₹34,500–₹58,500/night"
+              }
+            ],
+            "meals": [
+              "Octopus Resort Restaurant",
+              "Mantaray Island Resort Restaurant",
+              "Donu Restaurant"
+            ]
+          },
+          {
+            "theme": "Sawa-i-Lau Caves, Mantas or Reef Sharks",
+            "activities": [
+              {
+                "name": "Sawa-i-Lau Caves guided visit",
+                "cost": "₹2,775 pp",
+                "tip": "Adult cave visits are commonly priced near FJ$75 before boat transfer charges from your resort."
+              },
+              {
+                "name": "Manta-ray snorkel with Mantaray Island Resort (seasonal)",
+                "cost": "₹3,293–₹4,033 pp",
+                "tip": "Expect roughly FJ$89–109 for the guided water session in peak manta months, usually May to October."
+              },
+              {
+                "name": "Reef shark snorkel with Barefoot Kuata",
+                "cost": "₹5,513 pp",
+                "tip": "The signature shark-snorkel trip is typically listed around FJ$149 and usually includes guide support and safety briefing."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Blue Lagoon Beach Resort",
+                "budget": "₹20,500–₹31,500/night"
+              },
+              {
+                "name": "Yasawa Island Resort & Spa",
+                "budget": "₹82,000–₹1.35L/night"
+              }
+            ],
+            "meals": [
+              "Black Rock Restaurant",
+              "The Chef's Table at Paradise Cove Resort",
+              "Barefoot Kuata Restaurant"
+            ]
+          }
+        ]
+      },
+      "Coral Coast": {
+        "name": "Coral Coast",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Use Coral Coast as the land-based reset after the islands: one nature-and-culture day and one slower reef-or-resort day is the sweet spot.",
+        "days": [
+          {
+            "theme": "Sigatoka Heritage, Sand Dunes and a Reefside Evening",
+            "activities": [
+              {
+                "name": "Sigatoka Sand Dunes National Park",
+                "cost": "₹370 pp",
+                "tip": "Adult entry is usually around FJ$10 and is easiest in the morning before the dunes heat up."
+              },
+              {
+                "name": "Sigatoka Market and town stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Coral Coast reef snorkel arranged by your resort",
+                "cost": "₹2,220–₹3,700 pp",
+                "tip": "Expect roughly FJ$60–100 for a guided lagoon snorkel with gear on the Coral Coast."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bedarra Beach Inn",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Warwick Fiji",
+                "budget": "₹17,500–₹28,500/night"
+              },
+              {
+                "name": "Outrigger Fiji Beach Resort",
+                "budget": "₹24,500–₹42,500/night"
+              }
+            ],
+            "meals": [
+              "Gecko's Restaurant",
+              "Sundowner Bar & Grill",
+              "Wicked Walu Seafood Restaurant"
+            ]
+          },
+          {
+            "theme": "Village Waterfall, Wildlife Park and a Slower South-Coast Afternoon",
+            "activities": [
+              {
+                "name": "Biausevu Waterfall village visit",
+                "cost": "₹925–₹1,295 pp",
+                "tip": "Most operators collect about FJ$25–35 per adult for the village guide and waterfall access, plus a small sevusevu contribution if requested."
+              },
+              {
+                "name": "Kula WILD Adventure Park",
+                "cost": "₹1,850 pp",
+                "tip": "Adult tickets are commonly listed around FJ$50."
+              },
+              {
+                "name": "Natadola Beach swim stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Naviti Resort",
+                "budget": "₹16,500–₹25,500/night"
+              },
+              {
+                "name": "Shangri-La Yanuca Island, Fiji",
+                "budget": "₹28,500–₹48,500/night"
+              }
+            ],
+            "meals": [
+              "Crab Shack Fiji",
+              "Ivi Restaurant at Outrigger Fiji",
+              "Vale Ni Kana"
+            ]
+          }
+        ]
+      },
+      "Suva": {
+        "name": "Suva",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Suva is best used as a culture-heavy last stop, especially if you want museums and rainforest before an easy Fiji Link hop back to Nadi.",
+        "days": [
+          {
+            "theme": "Museum Collections, Market Life and a Rainforest Detour",
+            "activities": [
+              {
+                "name": "Fiji Museum",
+                "cost": "₹555 pp",
+                "tip": "Adult admission is commonly around FJ$15 and pairs well with a short Thurston Gardens walk."
+              },
+              {
+                "name": "Suva Municipal Market and Victoria Parade walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Colo-i-Suva Forest Park swimming holes",
+                "cost": "₹185–₹370 pp",
+                "tip": "Budget around FJ$5–10 for entry or local guide costs depending on the trail area you use."
+              },
+              {
+                "name": "Fiji Link flight from Suva back to Nadi for onward departures",
+                "cost": "₹3,663–₹6,660 pp",
+                "tip": "Nausori-to-Nadi one-way fares often start around FJ$99 and can climb toward FJ$180 on busier dates."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Holiday Inn Suva",
+                "budget": "₹12,500–₹19,500/night"
+              },
+              {
+                "name": "Quest Suva",
+                "budget": "₹13,500–₹21,500/night"
+              },
+              {
+                "name": "Grand Pacific Hotel",
+                "budget": "₹21,500–₹34,500/night"
+              }
+            ],
+            "meals": [
+              "Tiko's Floating Restaurant",
+              "Governors Museum Themed Restaurant",
+              "Eden Bistro & Bar"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Nadi Airport",
+        "to": "Nadi",
+        "method": "Local bus or short taxi ride to Wailoaloa, Namaka, or Denarau-side hotels.",
+        "cost": "₹74–₹740"
+      },
+      {
+        "from": "Nadi",
+        "to": "Mamanuca Islands",
+        "method": "South Sea Cruises or Malolo Cat ferry from Port Denarau to resort islands such as Plantation, Musket Cove, Castaway, or Malolo.",
+        "cost": "₹4,995–₹6,105"
+      },
+      {
+        "from": "Mamanuca Islands",
+        "to": "Yasawa Islands",
+        "method": "Awesome Adventures Fiji Yasawa Flyer northbound service, or a same-day reposition via Port Denarau if your resort is not on the through-ferry route.",
+        "cost": "₹5,883–₹7,363"
+      },
+      {
+        "from": "Yasawa Islands",
+        "to": "Coral Coast",
+        "method": "Yasawa Flyer back to Port Denarau followed by a Sunbeam or Pacific Transport coach to Sigatoka or Korotogo.",
+        "cost": "₹6,845–₹8,880"
+      },
+      {
+        "from": "Coral Coast",
+        "to": "Suva",
+        "method": "Pacific Transport or Sunbeam road coach along Queens Road; private transfers are faster but much pricier.",
+        "cost": "₹555–₹1,110"
+      },
+      {
+        "from": "Suva",
+        "to": "Nadi Airport",
+        "method": "Fiji Link domestic flight from Nausori (Suva) to Nadi, then a short terminal transfer for onward international departures.",
+        "cost": "₹3,663–₹6,660"
+      }
+    ],
+    "extras": [
+      "Most Fiji resort pricing and ferry check-ins work smoothly with credit cards, but keep small FJD cash for village visits, bus fares, market snacks, and sevusevu contributions.",
+      "Reef-safe sunscreen, a dry bag, and a basic rash guard are worth carrying because many day boats leave gear exposed and midday UV is intense even in the dry season.",
+      "Awesome Adventures Fiji and South Sea Cruises both enforce checked-baggage limits on some island sectors, so pack soft luggage if you plan to ferry-hop rather than stay on one island.",
+      "Sunday mornings are quieter around towns and villages, and some attractions or shops trim hours, so make ferry, market, and cultural plans a little earlier in the trip."
+    ],
+    "cityImages": {
+      "Suva": [
+        "Suva Fiji skyline",
+        "Fiji Museum Suva",
+        "Grand Pacific Hotel Suva"
+      ],
+      "Nadi": [
+        "Sri Siva Subramaniya Temple Nadi",
+        "Garden of the Sleeping Giant Fiji",
+        "Wailoaloa Beach Nadi"
+      ],
+      "Mamanuca Islands": [
+        "Mamanuca Islands Fiji aerial",
+        "Likuliku Lagoon Resort Fiji",
+        "Castaway Island Fiji beach"
+      ],
+      "Yasawa Islands": [
+        "Yasawa Islands Fiji aerial",
+        "Sawa-i-Lau Caves Fiji",
+        "Manta ray snorkeling Fiji Yasawa"
+      ],
+      "Coral Coast": [
+        "Sigatoka Sand Dunes Fiji",
+        "Outrigger Fiji Beach Resort Coral Coast",
+        "Kula Wild Adventure Park Fiji"
+      ]
+    }
+  }
+}

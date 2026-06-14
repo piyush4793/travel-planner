@@ -1,0 +1,485 @@
+{
+  "name": "Seychelles",
+  "seed": false,
+  "lat": -4.68,
+  "lng": 55.49,
+  "region": "Africa",
+  "bestMonths": [
+    "April",
+    "May",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "January",
+    "February",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.45L–₹2.35L",
+    "couple": "₹2.7L–₹4.3L",
+    "family4": "₹5.4L–₹8.6L"
+  },
+  "experiences": [
+    "Granite Beaches",
+    "Island Hopping",
+    "Rainforest Hikes",
+    "Snorkeling",
+    "Creole Food"
+  ],
+  "avoid": [
+    "December–February is the wetter northwest monsoon, so Curieuse boat landings, mountain trails, and beach days are more likely to be interrupted by showers or rough seas.",
+    "July–August southeast trade winds can make Cat Cocos sailings choppier and some west-facing swimming beaches less comfortable even though temperatures stay pleasant.",
+    "Sunday is noticeably slower for buses, shops, and some casual restaurants outside resort areas, so avoid treating it as your main logistics day."
+  ],
+  "combo": [
+    "Mauritius",
+    "Kenya",
+    "United Arab Emirates"
+  ],
+  "landmark": "Anse Source d'Argent",
+  "travelStyle": [
+    "relaxed",
+    "immersive"
+  ],
+  "stopoverNote": "For trips shorter than a week, skip Silhouette Island and split your stay between Mahé and a Praslin–La Digue combo instead of changing bases too often.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Victoria (Mahé)",
+      "lat": -4.62,
+      "lng": 55.455,
+      "notes": "Use Mahé's capital as the practical arrival base for Sir Selwyn Selwyn-Clarke Market, Morne Seychellois hikes, Beau Vallon sunsets, and the easiest bus connections in the country."
+    },
+    {
+      "name": "Praslin",
+      "lat": -4.324,
+      "lng": 55.741,
+      "notes": "Praslin is the classic second stop for Vallée de Mai, Curieuse day trips, Côte d'Or stays, and the easiest access to Anse Lazio."
+    },
+    {
+      "name": "La Digue",
+      "lat": -4.357,
+      "lng": 55.839,
+      "notes": "La Digue is the slowest and most photogenic inner island, best explored by bicycle between L'Union Estate, Anse Source d'Argent, Grand Anse, and Anse Cocos."
+    },
+    {
+      "name": "Silhouette Island",
+      "lat": -4.492,
+      "lng": 55.248,
+      "notes": "Silhouette is the quiet nature-and-resort finale for marine park snorkeling, rainforest trails, and a genuinely low-density island stay."
+    }
+  ],
+  "itinerary": {
+    "sim": "Cable & Wireless Seychelles or Airtel Seychelles prepaid SIMs are the simplest airport pickups; coverage is strongest on Mahé and Praslin, with smaller-island speeds more variable.",
+    "apps": [
+      "Air Seychelles",
+      "Cat Cocos",
+      "Booking.com",
+      "Google Maps offline",
+      "WhatsApp",
+      "XE Currency",
+      "Windy"
+    ],
+    "cityOrder": [
+      "Victoria (Mahé)",
+      "Praslin",
+      "La Digue",
+      "Silhouette Island"
+    ],
+    "cities": {
+      "Victoria (Mahé)": {
+        "name": "Victoria (Mahé)",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Keep Mahé at the front of the trip for arrival recovery, capital sights, and your Morne Seychellois hiking window before moving to the outer inner islands.",
+        "days": [
+          {
+            "theme": "Victoria Market, Botanical Garden and a Gentle First Sunset on Mahé",
+            "activities": [
+              {
+                "name": "SPTC local bus rides around Victoria and Beau Vallon",
+                "cost": "₹72 pp per ride",
+                "tip": "The standard public bus fare is 12 SCR, so keep short hops on Mahé flexible instead of paying taxi rates for every transfer."
+              },
+              {
+                "name": "Sir Selwyn Selwyn-Clarke Market",
+                "cost": "Free"
+              },
+              {
+                "name": "Victoria Clocktower and Independence Avenue walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Seychelles National Botanical Gardens",
+                "cost": "₹900 pp"
+              },
+              {
+                "name": "Beau Vallon beach swim and sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Chez Lorna 3 Nights Or Plus",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Hilltop Boutique Hotel",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "STORY Seychelles",
+                "budget": "₹34,000–₹58,000/night"
+              }
+            ],
+            "meals": [
+              "Marie Antoinette Restaurant",
+              "La Perle Noire",
+              "The Boat House"
+            ]
+          },
+          {
+            "theme": "Morne Seychellois Hike, Mission Lodge and a North Coast Dinner",
+            "activities": [
+              {
+                "name": "Morne Blanc Trail in Morne Seychellois National Park",
+                "cost": "Free",
+                "tip": "There is no park entrance fee, but start early because cloud build-up and midday humidity reduce the view quality fast."
+              },
+              {
+                "name": "Mission Lodge viewpoint stop",
+                "cost": "₹600 pp"
+              },
+              {
+                "name": "Tea Factory lookout drive on Sans Souci Road",
+                "cost": "Free"
+              },
+              {
+                "name": "Port Launay Marine National Park snorkeling or kayak session",
+                "cost": "₹1,800–₹4,200 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Ridge Residence",
+                "budget": "₹13,000–₹19,500/night"
+              },
+              {
+                "name": "L'Escale Resort Marina & Spa",
+                "budget": "₹28,000–₹48,000/night"
+              },
+              {
+                "name": "Constance Ephelia",
+                "budget": "₹36,000–₹68,000/night"
+              }
+            ],
+            "meals": [
+              "Del Place Bar and Restaurant",
+              "La Scala",
+              "Baobab Pizzeria"
+            ]
+          }
+        ]
+      },
+      "Praslin": {
+        "name": "Praslin",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Praslin is the best base for the two ticketed nature anchors—Vallée de Mai and Curieuse—while still leaving you room for one classic beach afternoon.",
+        "days": [
+          {
+            "theme": "Transfer to Praslin, Vallée de Mai and Côte d'Or Evening",
+            "activities": [
+              {
+                "name": "Cat Cocos ferry from Mahé to Praslin",
+                "cost": "₹5,400–₹6,000 pp",
+                "tip": "Economy seats are the best-value choice on the Mahe–Praslin run; if the sea forecast looks rough, Air Seychelles is the smoother fallback."
+              },
+              {
+                "name": "Air Seychelles domestic flight from Mahé to Praslin",
+                "cost": "₹8,400–₹13,800 pp"
+              },
+              {
+                "name": "Vallée de Mai Nature Reserve",
+                "cost": "₹2,700 pp",
+                "tip": "Adult visitor tickets are 450 SCR, and the coco de mer explanations are far better if you join one of the scheduled ranger-guided walks."
+              },
+              {
+                "name": "Côte d'Or beach swim and sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Acajou Beach Resort",
+                "budget": "₹18,000–₹30,000/night"
+              },
+              {
+                "name": "Le Duc de Praslin",
+                "budget": "₹24,000–₹42,000/night"
+              },
+              {
+                "name": "Coco de Mer Hotel and Black Parrot Suites",
+                "budget": "₹28,000–₹52,000/night"
+              }
+            ],
+            "meals": [
+              "Pirogue Restaurant & Bar",
+              "Les Lauriers Restaurant",
+              "Café des Arts"
+            ]
+          },
+          {
+            "theme": "Curieuse Island, Anse Lazio and Slow Praslin Logistics",
+            "activities": [
+              {
+                "name": "Curieuse Island landing fee",
+                "cost": "₹1,800 pp",
+                "tip": "The Seychelles Parks fee is 300 SCR and is commonly collected as part of boat excursions from Anse Volbert or Baie Sainte Anne."
+              },
+              {
+                "name": "Shared Curieuse and St Pierre boat excursion from Praslin",
+                "cost": "₹3,600–₹6,600 pp"
+              },
+              {
+                "name": "SPTC local bus ride between Baie Sainte Anne, Vallée de Mai and Anse Lazio",
+                "cost": "₹72 pp per ride"
+              },
+              {
+                "name": "Anse Lazio beach stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Palm Beach Hotel",
+                "budget": "₹15,000–₹22,000/night"
+              },
+              {
+                "name": "Village du Pecheur",
+                "budget": "₹20,000–₹32,000/night"
+              },
+              {
+                "name": "Raffles Seychelles",
+                "budget": "₹70,000–₹1,25,000/night"
+              }
+            ],
+            "meals": [
+              "Bonbon Plume",
+              "PK's @ Pasquiere Restaurant & Gastropub",
+              "Losean Restaurant"
+            ]
+          }
+        ]
+      },
+      "La Digue": {
+        "name": "La Digue",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "La Digue deserves a full bicycle-paced block because the island works best when you are not rushing the beach, estate, and east-coast hiking rhythm.",
+        "days": [
+          {
+            "theme": "Cycle Arrival, L'Union Estate and Anse Source d'Argent",
+            "activities": [
+              {
+                "name": "Inter-island ferry from Praslin to La Digue",
+                "cost": "₹1,500–₹2,100 pp",
+                "tip": "The crossing is short, so it is usually easier to keep luggage light and pick up your bicycle once you reach La Passe jetty."
+              },
+              {
+                "name": "Bicycle rental on La Digue",
+                "cost": "₹900–₹1,080 per day",
+                "tip": "A standard pedal bike usually costs 150–180 SCR a day and remains the default way to get around the island."
+              },
+              {
+                "name": "L'Union Estate and Anse Source d'Argent access",
+                "cost": "₹900 pp",
+                "tip": "The estate entrance fee is 150 SCR and covers the vanilla house, plantation grounds, giant tortoises, and repeated access to Anse Source d'Argent on the same day."
+              },
+              {
+                "name": "La Passe village and old jetty sunset ride",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Repaire Boutique Hotel & Restaurant",
+                "budget": "₹16,000–₹25,000/night"
+              },
+              {
+                "name": "La Digue Island Lodge",
+                "budget": "₹15,000–₹28,000/night"
+              },
+              {
+                "name": "Patatran Village Hotel",
+                "budget": "₹18,000–₹34,000/night"
+              }
+            ],
+            "meals": [
+              "Fish Trap Restaurant & Bar",
+              "Zerof Restaurant",
+              "Chez Marston"
+            ]
+          },
+          {
+            "theme": "Grand Anse, Anse Cocos Hike and a Final Car-Free Day",
+            "activities": [
+              {
+                "name": "Grand Anse and Petite Anse beach circuit by bicycle",
+                "cost": "Free"
+              },
+              {
+                "name": "Anse Cocos hike",
+                "cost": "Free",
+                "tip": "Carry water and start before the sun gets harsh because the trail has little shade in the open sections near Grand Anse."
+              },
+              {
+                "name": "Veuve Nature Reserve stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Clear-bottom kayak or snorkeling session from Anse Severe",
+                "cost": "₹1,500–₹3,600 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Nautique Waterfront Hotel",
+                "budget": "₹22,000–₹32,000/night"
+              },
+              {
+                "name": "Cabanes Des Anges",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "Moonlight Beach Villa",
+                "budget": "₹18,000–₹30,000/night"
+              }
+            ],
+            "meals": [
+              "Rey & Josh Café Takeaway",
+              "Le Repaire Restaurant",
+              "Combava"
+            ]
+          }
+        ]
+      },
+      "Silhouette Island": {
+        "name": "Silhouette Island",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Treat Silhouette as the quiet splurge or nature closer once you are done with the more logistically active Praslin–La Digue segment.",
+        "days": [
+          {
+            "theme": "Silhouette Boat Transfer, Marine Park Time and a Low-Key Final Night",
+            "activities": [
+              {
+                "name": "La Digue to Mahé return ferry plus Silhouette resort boat transfer",
+                "cost": "₹9,000–₹14,400 pp",
+                "tip": "There is no regular public ferry to Silhouette, so most visitors route back via Mahé and use the scheduled Labriz or lodge boat."
+              },
+              {
+                "name": "Silhouette Marine National Park snorkeling",
+                "cost": "₹1,800–₹4,200 pp"
+              },
+              {
+                "name": "Grand Barbe coastal trail or guided nature walk",
+                "cost": "Free–₹3,600 pp"
+              },
+              {
+                "name": "Hilton Labriz jetty and beach sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Fern Lodge Self Catering",
+                "budget": "₹14,000–₹22,000/night"
+              },
+              {
+                "name": "La Belle Tortue Lodge",
+                "budget": "₹28,000–₹45,000/night"
+              },
+              {
+                "name": "Hilton Seychelles Labriz Resort & Spa",
+                "budget": "₹48,000–₹95,000/night"
+              }
+            ],
+            "meals": [
+              "Grann Kaz",
+              "Portobello",
+              "La Belle Tortue Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Seychelles International Airport",
+        "to": "Victoria (Mahé)",
+        "method": "Taxi is fastest; SPTC airport-area buses are far cheaper if you are packing light and heading toward Victoria or Beau Vallon.",
+        "cost": "₹72–₹2,400"
+      },
+      {
+        "from": "Victoria (Mahé)",
+        "to": "Praslin",
+        "method": "Best-value transfer is the Cat Cocos ferry from Mahé to Praslin; Air Seychelles is quicker and smoother in rougher sea conditions.",
+        "cost": "₹5,400–₹13,800"
+      },
+      {
+        "from": "Praslin",
+        "to": "La Digue",
+        "method": "Short passenger ferry from Baie Sainte Anne to La Passe; keep this as a light-luggage hop rather than a full travel day.",
+        "cost": "₹1,500–₹2,100"
+      },
+      {
+        "from": "La Digue",
+        "to": "Silhouette Island",
+        "method": "Return by ferry via Praslin and Mahé, then connect to the scheduled resort or lodge boat because Silhouette has no open public ferry network.",
+        "cost": "₹9,000–₹14,400"
+      },
+      {
+        "from": "Silhouette Island",
+        "to": "Seychelles International Airport",
+        "method": "Boat back to Mahé followed by a road transfer to SEZ; confirm the morning boat timing before choosing a same-day international departure.",
+        "cost": "₹3,600–₹7,800"
+      }
+    ],
+    "extras": [
+      "Indian passport holders do not need to arrange a visa in advance, but Seychelles still expects a valid passport, onward ticket, accommodation proof, and sufficient funds for the visitor's permit on arrival.",
+      "The 1 SCR ≈ ₹6 shortcut works well for quick mental math on buses, estate tickets, and takeaway meals, but larger hotels and tours sometimes quote directly in EUR or USD.",
+      "Mahé and Praslin buses are useful only with compact luggage because big suitcases are commonly refused on board, so save taxis for airport and pier-heavy transfer days.",
+      "Cat Cocos crossings can feel rough in trade-wind months, so motion-sickness tablets are worth carrying if you are choosing the ferry over Air Seychelles.",
+      "La Digue is built around cycling rather than cars, so sandals, sunscreen, and a small day bag are more useful than packing for heavy road-transfer logistics."
+    ],
+    "cityImages": {
+      "Victoria (Mahé)": [
+        "Victoria Seychelles Clock Tower",
+        "Sir Selwyn Selwyn-Clarke Market Victoria Seychelles",
+        "Morne Blanc Trail Mahe Seychelles"
+      ],
+      "Praslin": [
+        "Vallee de Mai Praslin Seychelles",
+        "Anse Lazio Praslin Seychelles",
+        "Curieuse Island giant tortoises Seychelles"
+      ],
+      "La Digue": [
+        "Anse Source d'Argent La Digue Seychelles",
+        "L'Union Estate La Digue Seychelles",
+        "Grand Anse La Digue Seychelles"
+      ],
+      "Silhouette Island": [
+        "Silhouette Island Seychelles beach aerial",
+        "Grand Barbe Silhouette Island Seychelles",
+        "Hilton Seychelles Labriz Resort jetty"
+      ]
+    }
+  }
+}

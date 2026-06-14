@@ -1085,9 +1085,9 @@
     "lng": 46.87,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 14
   },
   {
     "name": "Mauritius",
@@ -1095,9 +1095,9 @@
     "lng": 57.55,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 11
   },
   {
     "name": "Seychelles",
@@ -1105,9 +1105,9 @@
     "lng": 55.49,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 11
   },
   {
     "name": "Senegal",
@@ -1855,9 +1855,9 @@
     "lng": 178.07,
     "region": "Oceania",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 12
   },
   {
     "name": "Papua New Guinea",
