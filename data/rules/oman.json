@@ -1,0 +1,793 @@
+{
+  "name": "Oman",
+  "seed": false,
+  "lat": 21.47,
+  "lng": 55.98,
+  "region": "Middle East",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹85K–₹1.35L",
+    "couple": "₹1.55L–₹2.35L",
+    "family4": "₹3L–₹4.4L"
+  },
+  "experiences": [
+    "Sultan Qaboos Grand Mosque",
+    "Nizwa Fort and souq",
+    "Wadi Shab coastal hike",
+    "Sharqiya desert camp night",
+    "Jebel Akhdar terrace villages",
+    "Salalah frankincense coast"
+  ],
+  "avoid": [
+    "Late spring to early autumn heat, especially inland and in the desert",
+    "Attempting Jebel Akhdar without a 4WD past the checkpoint",
+    "Relying only on public transport for wadis, desert camps, and mountain villages"
+  ],
+  "combo": [
+    "United Arab Emirates",
+    "Jordan"
+  ],
+  "landmark": "Sultan Qaboos Grand Mosque",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Muscat is the easiest international entry for India; Salalah works best as an Oman Air add-on or open-jaw finish instead of a very long overland backtrack.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Muscat",
+      "lat": 23.588,
+      "lng": 58.3829,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Grand mosque, Mutrah Corniche, old Muscat forts, museums and easy day-zero arrival comfort"
+    },
+    {
+      "name": "Nizwa",
+      "lat": 22.9333,
+      "lng": 57.5333,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Historic fort town with Friday livestock market energy, souq lanes, date stalls and easy fort-castle day trips"
+    },
+    {
+      "name": "Sur",
+      "lat": 22.5667,
+      "lng": 59.5289,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "East-coast dhow town with coastal wadis, Ras Al Jinz turtle reserve and sea-facing evening walks"
+    },
+    {
+      "name": "Wahiba Sands",
+      "lat": 22.3476,
+      "lng": 58.7316,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Sharqiya dunes for desert camps, camel rides, sunset drives and star-heavy winter skies"
+    },
+    {
+      "name": "Jebel Akhdar",
+      "lat": 23.0724,
+      "lng": 57.6682,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Cooler Saiq Plateau terraces, rose-season villages, canyon viewpoints and 4WD mountain roads"
+    },
+    {
+      "name": "Salalah",
+      "lat": 17.0194,
+      "lng": 54.0897,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Frankincense history, beaches, blowholes, archaeological sites and a softer winter climate than the north"
+    }
+  ],
+  "itinerary": {
+    "sim": "Omantel Tourist Pack or Ooredoo visitor SIMs usually land around ₹1,090–₹2,180 for enough data for maps, WhatsApp calls, hotel check-ins and Oman Air or Mwasalat bookings.",
+    "apps": [
+      "Mwasalat",
+      "Oman Air",
+      "OTaxi",
+      "Google Maps",
+      "Waze",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Muscat",
+      "Sur",
+      "Wahiba Sands",
+      "Nizwa",
+      "Jebel Akhdar",
+      "Salalah"
+    ],
+    "cities": {
+      "Muscat": {
+        "name": "Muscat",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Keep Muscat as your soft landing and final logistics hub; it is the easiest base for SIM setup, cash, museums and domestic connections.",
+        "days": [
+          {
+            "theme": "Grand mosque calm, museum context and a classic Mutrah first evening",
+            "activities": [
+              {
+                "name": "Sultan Qaboos Grand Mosque",
+                "cost": "Free"
+              },
+              {
+                "name": "Bait Al Zubair Museum",
+                "cost": "₹654"
+              },
+              {
+                "name": "Al Alam Palace exterior, Al Mirani and Al Jalali photo stops",
+                "cost": "Free"
+              },
+              {
+                "name": "Mutrah Corniche and Mutrah Souq evening walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Muscat",
+                "budget": "₹4,700–₹6,900/night"
+              },
+              {
+                "name": "Golden Tulip Headington Ruwi",
+                "budget": "₹4,900–₹7,400/night"
+              },
+              {
+                "name": "Best Western Premier Muscat",
+                "budget": "₹6,500–₹9,800/night"
+              }
+            ],
+            "meals": [
+              "Bait Al Luban",
+              "Kargeen Caffe",
+              "Turkish House Restaurant"
+            ]
+          },
+          {
+            "theme": "Opera district, beach time and the city’s more polished modern side",
+            "activities": [
+              {
+                "name": "Royal Opera House Muscat guided tour",
+                "cost": "₹327"
+              },
+              {
+                "name": "Qurum Natural Park or Shatti Al Qurum beach walk",
+                "cost": "Free"
+              },
+              {
+                "name": "National Museum Oman",
+                "cost": "₹1,090"
+              },
+              {
+                "name": "Mutrah Fort viewpoint at sunset",
+                "cost": "₹436"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Muscat",
+                "budget": "₹4,700–₹6,900/night"
+              },
+              {
+                "name": "Golden Tulip Headington Ruwi",
+                "budget": "₹4,900–₹7,400/night"
+              },
+              {
+                "name": "Best Western Premier Muscat",
+                "budget": "₹6,500–₹9,800/night"
+              }
+            ],
+            "meals": [
+              "Ubhar",
+              "Rozna Restaurant",
+              "Mani's Cafe"
+            ]
+          },
+          {
+            "theme": "Use an extra Muscat day for low-key coast, dolphins or market time before the road trip starts",
+            "activities": [
+              {
+                "name": "Qantab or Bandar Al Khairan boat-and-coast outing",
+                "cost": "₹2,180–₹4,360"
+              },
+              {
+                "name": "Amouage Visitor Centre",
+                "cost": "Free"
+              },
+              {
+                "name": "Mall of Oman / easy errands / early night",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Muscat",
+                "budget": "₹4,700–₹6,900/night"
+              },
+              {
+                "name": "Golden Tulip Headington Ruwi",
+                "budget": "₹4,900–₹7,400/night"
+              },
+              {
+                "name": "Best Western Premier Muscat",
+                "budget": "₹6,500–₹9,800/night"
+              }
+            ],
+            "meals": [
+              "Dukanah Cafe",
+              "The Beach Restaurant",
+              "Bait Al Luban"
+            ]
+          }
+        ]
+      },
+      "Sur": {
+        "name": "Sur",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "The coastal Muscat–Sur drive is part of the appeal, so give yourself daylight for Bimmah Sinkhole and Wadi Shab en route.",
+        "days": [
+          {
+            "theme": "Coastal road, Wadi Shab and Sur’s dhow-building heritage",
+            "activities": [
+              {
+                "name": "Muscat to Sur by Mwasalat or self-drive",
+                "cost": "₹872 by bus / ₹5,450–₹8,175 per day for rental car"
+              },
+              {
+                "name": "Bimmah Sinkhole",
+                "cost": "Free"
+              },
+              {
+                "name": "Wadi Shab boat crossing",
+                "cost": "₹218"
+              },
+              {
+                "name": "Sur dhow yard and Al Ayjah lighthouse area walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sur Plaza Hotel",
+                "budget": "₹4,900–₹7,600/night"
+              },
+              {
+                "name": "Sur Grand Hotel",
+                "budget": "₹5,600–₹8,500/night"
+              },
+              {
+                "name": "Al Ayjah Plaza Hotel",
+                "budget": "₹3,800–₹5,800/night"
+              }
+            ],
+            "meals": [
+              "Zaki Restaurant",
+              "Sahari Restaurant Sur",
+              "Al Hawash Restaurant"
+            ]
+          },
+          {
+            "theme": "Turtles, sea air and a slower east-coast finish before the dunes",
+            "activities": [
+              {
+                "name": "Ras Al Jinz Turtle Reserve guided tour",
+                "cost": "₹1,526"
+              },
+              {
+                "name": "Ras Al Hadd beach sunrise or lighthouse stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Bilad Sur Castle exterior and corniche reset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sur Plaza Hotel",
+                "budget": "₹4,900–₹7,600/night"
+              },
+              {
+                "name": "Sur Grand Hotel",
+                "budget": "₹5,600–₹8,500/night"
+              },
+              {
+                "name": "Al Ayjah Plaza Hotel",
+                "budget": "₹3,800–₹5,800/night"
+              }
+            ],
+            "meals": [
+              "Zaki Restaurant",
+              "Sur Sea Restaurant",
+              "Sahari Restaurant Sur"
+            ]
+          }
+        ]
+      },
+      "Wahiba Sands": {
+        "name": "Wahiba Sands",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Most camps package dinner and breakfast, so the real choice here is how much 4x4, camel or sunrise time you want.",
+        "days": [
+          {
+            "theme": "Dunes, camp sunset and a one-night Sharqiya desert reset",
+            "activities": [
+              {
+                "name": "Sur to Wahiba Sands transfer or self-drive via Bidiyah",
+                "cost": "₹3,270–₹6,540"
+              },
+              {
+                "name": "Sunset dune drive or camp 4x4 add-on",
+                "cost": "₹2,180–₹3,270"
+              },
+              {
+                "name": "Camel ride near camp",
+                "cost": "₹1,090–₹2,180"
+              },
+              {
+                "name": "Camp bonfire and stargazing",
+                "cost": "Usually included"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Arabian Oryx Camp",
+                "budget": "₹8,500–₹12,500/night incl. dinner"
+              },
+              {
+                "name": "Sama Al Wasil Desert Camp",
+                "budget": "₹10,500–₹15,000/night incl. dinner"
+              },
+              {
+                "name": "Desert Nights Camp",
+                "budget": "₹14,000–₹21,000/night incl. dinner"
+              }
+            ],
+            "meals": [
+              "Arabian Oryx Camp buffet",
+              "Sama Al Wasil camp dinner",
+              "Desert Nights Camp restaurant"
+            ]
+          }
+        ]
+      },
+      "Nizwa": {
+        "name": "Nizwa",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Nizwa is the easiest inland base if you want history without changing hotels again for every fort and castle stop.",
+        "days": [
+          {
+            "theme": "Fort ramparts, souq lanes and Oman’s most rewarding inland base town",
+            "activities": [
+              {
+                "name": "Nizwa Fort",
+                "cost": "₹1,090"
+              },
+              {
+                "name": "Nizwa Souq and date market",
+                "cost": "Free"
+              },
+              {
+                "name": "Goat market or Friday livestock market viewing",
+                "cost": "Free"
+              },
+              {
+                "name": "Nizwa old town sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "IntercityHotel Nizwa",
+                "budget": "₹5,900–₹8,500/night"
+              },
+              {
+                "name": "Falaj Daris Hotel",
+                "budget": "₹4,800–₹7,200/night"
+              },
+              {
+                "name": "Antique Inn",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Bin Ateeq",
+              "Al Aqur Traditional Restaurant",
+              "Bahjat Al Sham"
+            ]
+          },
+          {
+            "theme": "UNESCO fort day trips and cooler highland foothill heritage around Nizwa",
+            "activities": [
+              {
+                "name": "Bahla Fort",
+                "cost": "₹654"
+              },
+              {
+                "name": "Jibreen Castle",
+                "cost": "₹654"
+              },
+              {
+                "name": "Birkat Al Mouz falaj and date-palm village walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Oman Across Ages Museum",
+                "cost": "₹1,090"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "IntercityHotel Nizwa",
+                "budget": "₹5,900–₹8,500/night"
+              },
+              {
+                "name": "Falaj Daris Hotel",
+                "budget": "₹4,800–₹7,200/night"
+              },
+              {
+                "name": "Antique Inn",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Bin Ateeq",
+              "Al Mandi Al Dhahabi",
+              "Tamrah Restaurant & Cafe"
+            ]
+          }
+        ]
+      },
+      "Jebel Akhdar": {
+        "name": "Jebel Akhdar",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Treat Jebel Akhdar as a cooler mountain add-on from Nizwa, but plan the checkpoint and 4WD requirement into your logistics.",
+        "days": [
+          {
+            "theme": "Saiq Plateau viewpoints, orchard terraces and a mountain-air switch from the desert",
+            "activities": [
+              {
+                "name": "Nizwa to Jebel Akhdar by 4WD rental or mountain taxi",
+                "cost": "₹4,360–₹7,630"
+              },
+              {
+                "name": "Diana's Point",
+                "cost": "Free"
+              },
+              {
+                "name": "Wadi Bani Habib village trail",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset at Saiq Plateau viewpoints",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Green View Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Sama Hotel Jabal Akhdar",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Sahab Resort & Spa",
+                "budget": "₹12,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Bella Vista Restaurant",
+              "Juniper Restaurant",
+              "Sahab Restaurant"
+            ]
+          },
+          {
+            "theme": "Terrace villages, pomegranate farms and one more cool-weather Oman day",
+            "activities": [
+              {
+                "name": "Al Ayn and Ash Shirayjah terrace village walks",
+                "cost": "Free"
+              },
+              {
+                "name": "Jebel Akhdar rose and pomegranate farm stops in season",
+                "cost": "Free"
+              },
+              {
+                "name": "Local viewpoint picnic or café stop",
+                "cost": "₹436–₹872"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Green View Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Sama Hotel Jabal Akhdar",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Sahab Resort & Spa",
+                "budget": "₹12,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Bella Vista Restaurant",
+              "Juniper Restaurant",
+              "Rose Lounge"
+            ]
+          }
+        ]
+      },
+      "Salalah": {
+        "name": "Salalah",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Salalah is far enough from northern Oman that a domestic flight or open-jaw plan saves major time; keep it for the final coastal stretch.",
+        "days": [
+          {
+            "theme": "Frankincense history, mosque calm and an easy first Dhofar evening",
+            "activities": [
+              {
+                "name": "Jebel Akhdar/Muscat connection onward to Salalah by Oman Air",
+                "cost": "₹6,540–₹9,810"
+              },
+              {
+                "name": "Al Baleed Archaeological Park and Museum of the Frankincense Land",
+                "cost": "₹436"
+              },
+              {
+                "name": "Sultan Qaboos Mosque Salalah",
+                "cost": "Free"
+              },
+              {
+                "name": "Haffa Souq",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Muscat International Hotel Plaza Salalah",
+                "budget": "₹4,800–₹7,000/night"
+              },
+              {
+                "name": "Hamdan Plaza Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Star Emirates Downtown",
+                "budget": "₹4,200–₹6,200/night"
+              }
+            ],
+            "meals": [
+              "Baalbek Restaurant",
+              "Udupi Vegetarian Restaurant",
+              "Annabi Restaurant"
+            ]
+          },
+          {
+            "theme": "Blowholes, western cliffs and the more dramatic Salalah coast",
+            "activities": [
+              {
+                "name": "Mughsail Beach",
+                "cost": "Free"
+              },
+              {
+                "name": "Marneef Cave and blowholes",
+                "cost": "Free"
+              },
+              {
+                "name": "Nabi Imran or Ayn Razat stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset coastal drive with rental car or taxi",
+                "cost": "₹2,180–₹4,360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Muscat International Hotel Plaza Salalah",
+                "budget": "₹4,800–₹7,000/night"
+              },
+              {
+                "name": "Hamdan Plaza Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Star Emirates Downtown",
+                "budget": "₹4,200–₹6,200/night"
+              }
+            ],
+            "meals": [
+              "Baalbek Restaurant",
+              "Al Mina Restaurant",
+              "Udupi Vegetarian Restaurant"
+            ]
+          },
+          {
+            "theme": "Use an extra Dhofar day for eastern ruins, wadis or a khareef-season green detour",
+            "activities": [
+              {
+                "name": "Sumhuram Archaeological Park",
+                "cost": "₹436"
+              },
+              {
+                "name": "Khor Rori lagoon viewpoints",
+                "cost": "Included with Sumhuram entry"
+              },
+              {
+                "name": "Wadi Darbat",
+                "cost": "Free"
+              },
+              {
+                "name": "Taqah Castle",
+                "cost": "₹218"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Muscat International Hotel Plaza Salalah",
+                "budget": "₹4,800–₹7,000/night"
+              },
+              {
+                "name": "Hamdan Plaza Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Star Emirates Downtown",
+                "budget": "₹4,200–₹6,200/night"
+              }
+            ],
+            "meals": [
+              "Annabi Restaurant",
+              "Baalbek Restaurant",
+              "Al Khareef Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Muscat",
+        "to": "Sur",
+        "method": "Mwasalat coach for the straightforward option, or a rental car if you want Bimmah Sinkhole and Wadi Shab stops in daylight",
+        "cost": "₹872 by bus / ₹5,450–₹8,175 per day for rental car"
+      },
+      {
+        "from": "Sur",
+        "to": "Wahiba Sands",
+        "method": "Self-drive or pre-arranged 4x4/camp transfer via Bidiyah and Al Wasil",
+        "cost": "₹3,270–₹6,540"
+      },
+      {
+        "from": "Wahiba Sands",
+        "to": "Nizwa",
+        "method": "Rental car is easiest; some camps can drop you back to the highway for onward shared transport",
+        "cost": "₹763 onward by bus after transfer / ₹5,450–₹8,175 per day for rental car"
+      },
+      {
+        "from": "Nizwa",
+        "to": "Jebel Akhdar",
+        "method": "4WD rental car or local mountain taxi via Birkat Al Mouz checkpoint",
+        "cost": "₹4,360–₹7,630"
+      },
+      {
+        "from": "Jebel Akhdar",
+        "to": "Salalah",
+        "method": "Return to Muscat, then take an Oman Air domestic flight; overland coach is possible but much slower",
+        "cost": "₹6,540–₹9,810 by flight / about ₹2,616 by long-distance Mwasalat bus"
+      }
+    ],
+    "extras": [
+      "October to March is the easiest all-round weather window for Muscat, inland forts, Sharqiya Sands and Jebel Akhdar; summer heat is punishing in the north and center.",
+      "Sultan Qaboos Grand Mosque is free, but arrive early, dress conservatively and avoid Friday tourist planning because visiting hours are limited around prayers.",
+      "A basic 2WD rental works for Muscat, Sur, Nizwa and Salalah city/coast driving, but Jebel Akhdar officially requires a 4WD past the checkpoint and many desert camps prefer one too.",
+      "Mwasalat is reliable on core city-to-city corridors like Muscat–Nizwa and Muscat–Sur, but it will not fully replace a car for wadis, camps, forts and mountain villages.",
+      "Desert camps often include dinner and breakfast in the room rate, so the biggest extra spend in Wahiba is usually transfers, dune bashing, camel rides and sunrise excursions.",
+      "Salalah is geographically disconnected from the classic Muscat–Nizwa–Sur loop, so an Oman Air domestic leg is the simplest way to include Dhofar without burning two or three long transit days."
+    ],
+    "cityImages": {
+      "Muscat": [
+        "Sultan Qaboos Grand Mosque Muscat exterior",
+        "Mutrah Corniche Muscat waterfront",
+        "Al Alam Palace Muscat Oman"
+      ],
+      "Sur": [
+        "Sur Oman dhow yard",
+        "Al Ayjah lighthouse Sur Oman",
+        "Ras Al Jinz turtle reserve Oman"
+      ],
+      "Wahiba Sands": [
+        "Wahiba Sands Oman dunes",
+        "Sharqiya Sands camel camp Oman",
+        "Wahiba Sands sunset desert Oman"
+      ],
+      "Nizwa": [
+        "Nizwa Fort Oman tower",
+        "Nizwa Souq Oman dates market",
+        "Jibreen Castle Oman interior"
+      ],
+      "Jebel Akhdar": [
+        "Jebel Akhdar Oman terrace villages",
+        "Diana Point Jebel Akhdar Oman",
+        "Wadi Bani Habib Oman"
+      ],
+      "Salalah": [
+        "Al Baleed Archaeological Park Salalah",
+        "Mughsail Beach Salalah Oman",
+        "Sumhuram Khor Rori Salalah"
+      ]
+    }
+  }
+}

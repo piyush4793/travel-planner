@@ -1,0 +1,624 @@
+{
+  "name": "Sweden",
+  "seed": false,
+  "lat": 60.13,
+  "lng": 18.64,
+  "region": "Europe",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.9L–₹3.2L",
+    "couple": "₹3.5L–₹5.8L",
+    "family4": "₹7L–₹10.5L"
+  },
+  "experiences": [
+    "Nordic Design",
+    "Archipelago Cruises",
+    "Northern Lights",
+    "Icehotel Stay",
+    "Coastal Summer Towns",
+    "Open-Air Museums"
+  ],
+  "avoid": [
+    "October–November — short days, wetter weather, and many summer services in Gotland shut down",
+    "Midsummer week — scenic but accommodation and domestic transport prices spike quickly",
+    "Kiruna in deep winter without buffer days — snow and wind can disrupt flights and excursions"
+  ],
+  "combo": [
+    "Norway",
+    "Finland",
+    "Denmark"
+  ],
+  "landmark": "Vasa Museum",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Stockholm",
+      "lat": 59.3293,
+      "lng": 18.0686,
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "notes": "Archipelago capital for Gamla Stan lanes, world-class museums, waterfront walks and easy ferries"
+    },
+    {
+      "name": "Gothenburg",
+      "lat": 57.7089,
+      "lng": 11.9746,
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "notes": "Relaxed west-coast city with Haga cafés, archipelago ferries, seafood halls and Liseberg summer energy"
+    },
+    {
+      "name": "Malmö",
+      "lat": 55.605,
+      "lng": 13.0038,
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "notes": "Compact Skåne hub with design-forward food, castle museums, beach promenades and easy Copenhagen access"
+    },
+    {
+      "name": "Uppsala",
+      "lat": 59.8586,
+      "lng": 17.6389,
+      "notes": "Historic university city for cathedral grandeur, Linnaeus heritage and an easy rail day trip from Stockholm"
+    },
+    {
+      "name": "Kiruna",
+      "lat": 67.8558,
+      "lng": 20.2253,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Far-north Lapland base for Icehotel, LKAB mine tours, dog sledding and northern lights nights"
+    },
+    {
+      "name": "Visby",
+      "lat": 57.6348,
+      "lng": 18.2948,
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "notes": "Walled Hanseatic town on Gotland with medieval lanes, sea views and Sweden's best summer island mood"
+    }
+  ],
+  "itinerary": {
+    "sim": "Comviq, Telia, or Telenor prepaid eSIM/SIMs are the easiest tourist options in Sweden and usually cost about ₹800–₹1,600 for enough data for maps, SJ tickets, and aurora forecast apps.",
+    "apps": [
+      "SJ",
+      "SL",
+      "Västtrafik To Go",
+      "Skånetrafiken",
+      "FlixBus",
+      "SAS",
+      "Norwegian",
+      "Aurora Forecast",
+      "Google Maps",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Stockholm",
+      "Uppsala",
+      "Gothenburg",
+      "Malmö",
+      "Visby",
+      "Kiruna"
+    ],
+    "cities": {
+      "Stockholm": {
+        "name": "Stockholm",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days gives you the strongest first Sweden mix: one old-town day, one museum-heavy Djurgården day, and one palace-or-design day with time for a ferry or viewpoint.",
+        "days": [
+          {
+            "theme": "Gamla Stan, Royal Quarters & Waterfront Classics",
+            "activities": [
+              {
+                "name": "Gamla Stan self-guided walk around Stortorget and Västerlånggatan",
+                "cost": "Free"
+              },
+              {
+                "name": "Stockholm Palace (Royal Apartments and Treasury)",
+                "cost": "₹1,600"
+              },
+              {
+                "name": "Storkyrkan (Stockholm Cathedral)",
+                "cost": "₹160"
+              },
+              {
+                "name": "Monteliusvägen sunset viewpoint",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Motel L Hammarby Sjöstad",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Scandic Go, Upplandsgatan 4",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Tradition",
+              "Vete-Katten",
+              "Pelikan"
+            ]
+          },
+          {
+            "theme": "Djurgården Museum Day",
+            "activities": [
+              {
+                "name": "Vasa Museum",
+                "cost": "₹1,920"
+              },
+              {
+                "name": "ABBA The Museum",
+                "cost": "₹2,600"
+              },
+              {
+                "name": "Skansen open-air museum",
+                "cost": "₹2,120"
+              },
+              {
+                "name": "Djurgården canal and harbour walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Motel L Hammarby Sjöstad",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Scandic Go, Upplandsgatan 4",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Rosendals Trädgård",
+              "Blå Porten",
+              "Meatballs for the People"
+            ]
+          },
+          {
+            "theme": "City Hall, Design Stops & Archipelago Feel",
+            "activities": [
+              {
+                "name": "Stockholm City Hall guided visit",
+                "cost": "₹1,200"
+              },
+              {
+                "name": "Fotografiska",
+                "cost": "₹1,720"
+              },
+              {
+                "name": "Skeppsholmen and Moderna Museet exterior campus walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Short public ferry ride between Slussen and Djurgården with SL ticket",
+                "cost": "₹320"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Motel L Hammarby Sjöstad",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Scandic Go, Upplandsgatan 4",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Bakfickan",
+              "Östermalms Saluhall",
+              "Café Saturnus"
+            ]
+          }
+        ]
+      },
+      "Uppsala": {
+        "name": "Uppsala",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Uppsala works best as a focused heritage stop or a long day trip with cathedral, university collections, and one Linnaeus-era garden circuit.",
+        "days": [
+          {
+            "theme": "Cathedral, University Heritage & Viking History",
+            "activities": [
+              {
+                "name": "Uppsala Cathedral",
+                "cost": "Free"
+              },
+              {
+                "name": "Gustavianum",
+                "cost": "₹1,200"
+              },
+              {
+                "name": "Carolina Rediviva and the Silver Bible exhibition",
+                "cost": "Free"
+              },
+              {
+                "name": "Gamla Uppsala Museum and royal mounds",
+                "cost": "₹960"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotell Centralstation",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Clarion Hotel Gillet",
+                "budget": "₹11,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Güntherska Hovkonditori",
+              "Hambergs Fisk",
+              "Peppar Peppar"
+            ]
+          }
+        ]
+      },
+      "Gothenburg": {
+        "name": "Gothenburg",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days lets you cover the city centre and one west-coast excursion without rushing the seafood halls, Haga streets, or archipelago ferries.",
+        "days": [
+          {
+            "theme": "Haga, Canal Core & Museum Highlights",
+            "activities": [
+              {
+                "name": "Haga district and Haga Nygata cinnamon-bun stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Gothenburg Museum of Art",
+                "cost": "₹560"
+              },
+              {
+                "name": "Skansen Kronan hillside viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Paddan canal boat tour",
+                "cost": "₹2,240"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Vanilla",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Sure Hotel by Best Western Center",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Smaka",
+              "Fiskekrogen",
+              "Café Husaren"
+            ]
+          },
+          {
+            "theme": "Science Centre & Southern Archipelago",
+            "activities": [
+              {
+                "name": "Universeum",
+                "cost": "₹1,560"
+              },
+              {
+                "name": "Feskekörka fish market hall",
+                "cost": "Free"
+              },
+              {
+                "name": "Vrångö or Styrsö archipelago ferry with Västtrafik day ticket",
+                "cost": "₹880"
+              },
+              {
+                "name": "Liseberg Gardens and park area",
+                "cost": "₹1,240"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Vanilla",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Sure Hotel by Best Western Center",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Sjöbaren",
+              "Toso",
+              "da Matteo Magasinsgatan"
+            ]
+          }
+        ]
+      },
+      "Malmö": {
+        "name": "Malmö",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day covers Malmö well because the centre, castle district, and waterfront are compact and easy to combine on foot or by local bus.",
+        "days": [
+          {
+            "theme": "Old Town Squares, Castle Museums & Seafront",
+            "activities": [
+              {
+                "name": "Lilla Torg and Stortorget walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Malmö Castle and Malmö Museums",
+                "cost": "₹320"
+              },
+              {
+                "name": "Moderna Museet Malmö",
+                "cost": "Free"
+              },
+              {
+                "name": "Ribersborg beach promenade and Turning Torso viewpoint",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Moment Hotels",
+                "budget": "₹6,500–₹10,000/night"
+              },
+              {
+                "name": "Scandic Malmö City",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Bastard",
+              "Saltimporten Canteen",
+              "Lyran"
+            ]
+          }
+        ]
+      },
+      "Visby": {
+        "name": "Visby",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Visby is ideal for one summer night focused on the medieval wall, museum quarter, and sea-facing lanes, with a second day only if you want a slower island pace.",
+        "days": [
+          {
+            "theme": "Medieval Wall, Museum Quarter & Sea Views",
+            "activities": [
+              {
+                "name": "Visby Ringmur and old-town lanes walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Gotlands Museum",
+                "cost": "₹1,480"
+              },
+              {
+                "name": "St. Mary's Cathedral",
+                "cost": "Free"
+              },
+              {
+                "name": "DBW's Botanical Garden and Almedalen waterfront",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotell St Clemens",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Best Western Strand Hotel",
+                "budget": "₹11,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Bakfickan",
+              "Crêperie & Logi",
+              "Surfers Visby"
+            ]
+          }
+        ]
+      },
+      "Kiruna": {
+        "name": "Kiruna",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Kiruna needs at least two nights if northern lights matter because one day can go to Jukkasjärvi and the other to a mine tour or weather-flexible aurora activity.",
+        "days": [
+          {
+            "theme": "Jukkasjärvi Icehotel & Sami Winter Atmosphere",
+            "activities": [
+              {
+                "name": "Icehotel day visit in Jukkasjärvi",
+                "cost": "₹2,600"
+              },
+              {
+                "name": "Jukkasjärvi Church",
+                "cost": "Free"
+              },
+              {
+                "name": "Guided dog-sled or snowmobile taster near Kiruna",
+                "cost": "₹9,600–₹15,200"
+              },
+              {
+                "name": "Evening northern lights watch outside the city",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "SPiS Hotel & Hostel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Best Western Hotel Arctic Eden",
+                "budget": "₹11,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "SPiS Mat & Dryck",
+              "Camp Ripan Restaurant",
+              "Stejk Street Food"
+            ]
+          },
+          {
+            "theme": "Mine Tour, New Kiruna Centre & Aurora Backup Night",
+            "activities": [
+              {
+                "name": "LKAB Visitor Centre mine tour",
+                "cost": "₹3,040"
+              },
+              {
+                "name": "Kiruna City Hall (Kristallen) exterior and centre walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Kiruna Church photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Second aurora night or Abisko-linked excursion if forecast is stronger",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "SPiS Hotel & Hostel",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Best Western Hotel Arctic Eden",
+                "budget": "₹11,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "SPiS Mat & Dryck",
+              "Camp Ripan Restaurant",
+              "Arctic Thai & Grill"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Stockholm",
+        "to": "Uppsala",
+        "method": "SJ regional or Mälartåg train from Stockholm Central to Uppsala C, about 40 minutes",
+        "cost": "₹720"
+      },
+      {
+        "from": "Uppsala",
+        "to": "Gothenburg",
+        "method": "SJ high-speed or InterCity train, usually 4.5 to 5 hours with many departures via Stockholm Central",
+        "cost": "₹3,200"
+      },
+      {
+        "from": "Gothenburg",
+        "to": "Malmö",
+        "method": "FlixBus coach from Nils Ericson Terminalen to Malmö Central area, about 3 to 3.5 hours",
+        "cost": "₹1,040"
+      },
+      {
+        "from": "Malmö",
+        "to": "Visby",
+        "method": "SAS domestic flight via Stockholm, usually 3.5 to 5 hours total depending on connection",
+        "cost": "₹6,400"
+      },
+      {
+        "from": "Visby",
+        "to": "Kiruna",
+        "method": "Norwegian or SAS domestic flight via Stockholm, usually 4.5 to 6 hours total",
+        "cost": "₹11,200"
+      }
+    ],
+    "extras": [
+      "Sweden is easier to budget than Norway but still pricey: city hotels usually land around ₹6,500–₹17,500/night, while Kiruna winter stays and activity packages rise sharply in December through March.",
+      "Use Stockholm, Gothenburg, Malmö, and Visby in June–August for long daylight and ferry-friendly weather; save Kiruna for December–March when the aurora season and snow activities are strongest.",
+      "SJ is the default for Stockholm–Uppsala and longer intercity train hops, FlixBus is a solid backup on the Gothenburg–Malmö corridor, and SAS or Norwegian save major time for Gotland and Kiruna jumps.",
+      "Vasa Museum, ABBA The Museum, Skansen, Universeum, and the Icehotel are the headline paid stops, so balance them with Sweden's many excellent free walks, cathedral visits, viewpoints, and waterfront promenades.",
+      "If northern lights are the main reason for Sweden, keep at least two Kiruna nights because clear skies matter more than forecast apps and one poor-weather evening can wipe out a short stay.",
+      "Visby is most rewarding in summer; outside the main season the town is still attractive, but many restaurants, garden spaces, and island services run on shorter schedules."
+    ],
+    "cityImages": {
+      "Stockholm": [
+        "Gamla Stan Stockholm",
+        "Vasa Museum Stockholm",
+        "Stockholm City Hall"
+      ],
+      "Uppsala": [
+        "Uppsala Cathedral",
+        "Gustavianum Uppsala",
+        "Gamla Uppsala mounds"
+      ],
+      "Gothenburg": [
+        "Haga Gothenburg",
+        "Universeum Gothenburg",
+        "Gothenburg archipelago"
+      ],
+      "Malmö": [
+        "Malmö Castle",
+        "Turning Torso Malmö",
+        "Lilla Torg Malmö"
+      ],
+      "Visby": [
+        "Visby city wall",
+        "Almedalen Visby",
+        "St. Mary's Cathedral Visby"
+      ],
+      "Kiruna": [
+        "Icehotel Jukkasjarvi",
+        "Kiruna Church",
+        "Northern lights Kiruna"
+      ]
+    }
+  }
+}

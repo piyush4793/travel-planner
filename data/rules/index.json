@@ -515,9 +515,9 @@
     "lng": 18.64,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 16
   },
   {
     "name": "Finland",
@@ -545,9 +545,9 @@
     "lng": 4.47,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 12
   },
   {
     "name": "Luxembourg",
@@ -845,9 +845,9 @@
     "lng": 34.85,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 14
   },
   {
     "name": "Jordan",
@@ -911,13 +911,13 @@
   },
   {
     "name": "Oman",
-    "lat": 21.51,
-    "lng": 55.92,
+    "lat": 21.47,
+    "lng": 55.98,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 13
   },
   {
     "name": "Kuwait",
@@ -1555,9 +1555,9 @@
     "lng": -71.54,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 13,
+    "maxDays": 18
   },
   {
     "name": "Ecuador",

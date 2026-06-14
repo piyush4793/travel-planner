@@ -1,0 +1,709 @@
+{
+  "name": "Israel",
+  "seed": false,
+  "lat": 31.05,
+  "lng": 34.85,
+  "region": "Middle East",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹90K–₹1.45L",
+    "couple": "₹1.7L–₹2.6L",
+    "family4": "₹3.2L–₹4.9L"
+  },
+  "experiences": [
+    "Sunset on the Tel Aviv promenade and Jaffa lanes",
+    "Jerusalem Old City with the Western Wall and museums",
+    "Masada sunrise with a Dead Sea float",
+    "Bahá'í Gardens terraces in Haifa",
+    "Eilat coral reef snorkeling and Red Canyon"
+  ],
+  "avoid": [
+    "Peak midday heat around the Dead Sea and Eilat from June to August",
+    "Long intercity transfers on Friday evening and Saturday daytime during Shabbat"
+  ],
+  "combo": [
+    "Jordan",
+    "Egypt",
+    "United Arab Emirates"
+  ],
+  "landmark": "Western Wall",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "A 4- to 5-day Tel Aviv + Jerusalem split works well for first-time stopovers, while adding the Dead Sea and Eilat suits a longer trip.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Tel Aviv",
+      "lat": 32.0853,
+      "lng": 34.7818,
+      "notes": "Mediterranean city break with Old Jaffa, Bauhaus streets, markets, beaches and strong food scene"
+    },
+    {
+      "name": "Jerusalem",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "notes": "Old City quarters, Western Wall, Church of the Holy Sepulchre, Yad Vashem and the Israel Museum"
+    },
+    {
+      "name": "Dead Sea",
+      "lat": 31.1997,
+      "lng": 35.3625,
+      "notes": "Ein Bokek base for Masada, Ein Gedi hikes and a classic Dead Sea float on the western shore"
+    },
+    {
+      "name": "Haifa",
+      "lat": 32.794,
+      "lng": 34.9896,
+      "notes": "Bahá'í Gardens, German Colony, Stella Maris and easy Carmelite ridge viewpoints over the bay"
+    },
+    {
+      "name": "Nazareth",
+      "lat": 32.6996,
+      "lng": 35.3035,
+      "notes": "Basilica of the Annunciation, old market lanes, Nazareth Village and classic Galilee Arab cuisine"
+    },
+    {
+      "name": "Eilat",
+      "lat": 29.5577,
+      "lng": 34.9519,
+      "notes": "Red Sea resort town for coral reef snorkeling, Dolphin Reef, Timna day trips and winter sun"
+    }
+  ],
+  "itinerary": {
+    "sim": "Pelephone or Partner tourist SIM/eSIM packs usually land around ₹1,360–₹2,280 for enough data for Moovit, Rav-Pass, Israel Railways and offline maps; Airalo is the easiest backup for instant activation.",
+    "apps": [
+      "Moovit",
+      "Israel Railways",
+      "Rav-Pass",
+      "Gett",
+      "Booking.com",
+      "WhatsApp",
+      "Google Maps (offline Israel maps)",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Tel Aviv",
+      "Jerusalem",
+      "Dead Sea",
+      "Haifa",
+      "Nazareth",
+      "Eilat"
+    ],
+    "cities": {
+      "Tel Aviv": {
+        "name": "Tel Aviv",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay central or near Rothschild/Allenby so you can cover Jaffa, markets and the beachfront mostly on foot or with short taxis.",
+        "days": [
+          {
+            "theme": "Ease in with Jaffa's waterfront, Carmel Market energy and a first Mediterranean sunset",
+            "activities": [
+              {
+                "name": "Old Jaffa and Jaffa Port walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Carmel Market and Nachalat Binyamin pedestrian lane",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tel Aviv promenade from Gordon Beach to Alma Beach",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hummus Abu Hassan lunch stop",
+                "cost": "₹345–₹690"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Abraham Tel Aviv",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "BY14 TLV Hotel",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Hummus Abu Hassan",
+              "M25",
+              "Night Kitchen"
+            ]
+          },
+          {
+            "theme": "Keep day two for Bauhaus culture, museum time and café-heavy neighborhoods",
+            "activities": [
+              {
+                "name": "Tel Aviv Museum of Art",
+                "cost": "₹1,265"
+              },
+              {
+                "name": "White City / Rothschild Boulevard self-guided walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Neve Tzedek lanes and Suzanne Dellal area",
+                "cost": "₹0"
+              },
+              {
+                "name": "Levinsky Market tasting stop",
+                "cost": "₹460–₹920"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Abraham Tel Aviv",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "BY14 TLV Hotel",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Cafe Xoho",
+              "Port Said",
+              "Miznon"
+            ]
+          },
+          {
+            "theme": "Add a third Tel Aviv day only if you want another museum or a very slow beach-and-brunch reset",
+            "activities": [
+              {
+                "name": "ANU - Museum of the Jewish People",
+                "cost": "₹1,196"
+              },
+              {
+                "name": "Yarkon Park bike or riverside stroll",
+                "cost": "₹0–₹690"
+              },
+              {
+                "name": "Sarona Market evening browse",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Abraham Tel Aviv",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "BY14 TLV Hotel",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Bicicletta",
+              "La Shuk",
+              "Cafe Xoho"
+            ]
+          }
+        ]
+      },
+      "Jerusalem": {
+        "name": "Jerusalem",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Focus first on the Old City, iconic holy sites and a classic market dinner",
+            "activities": [
+              {
+                "name": "Western Wall",
+                "cost": "₹0"
+              },
+              {
+                "name": "Church of the Holy Sepulchre",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tower of David Museum",
+                "cost": "₹1,495"
+              },
+              {
+                "name": "Mahane Yehuda Market evening walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Abraham Jerusalem",
+                "budget": "₹6,500–₹10,000/night"
+              },
+              {
+                "name": "ibis Styles Jerusalem City Center",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Azura",
+              "Tmol Shilshom",
+              "Cafe Kadosh"
+            ]
+          },
+          {
+            "theme": "Balance difficult history with the country's best museum collection and high viewpoints",
+            "activities": [
+              {
+                "name": "Yad Vashem",
+                "cost": "₹0"
+              },
+              {
+                "name": "Israel Museum",
+                "cost": "₹1,426"
+              },
+              {
+                "name": "Mount of Olives viewpoint",
+                "cost": "₹0"
+              },
+              {
+                "name": "Garden Tomb or Mamilla evening walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Abraham Jerusalem",
+                "budget": "₹6,500–₹10,000/night"
+              },
+              {
+                "name": "ibis Styles Jerusalem City Center",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Azura",
+              "Machneyuda",
+              "Tmol Shilshom"
+            ]
+          },
+          {
+            "theme": "Use a third Jerusalem day for quieter neighborhoods and archaeology rather than another rushed museum block",
+            "activities": [
+              {
+                "name": "Via Dolorosa and Old City lanes revisit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ein Kerem neighborhood walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ramparts Walk",
+                "cost": "₹575"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Abraham Jerusalem",
+                "budget": "₹6,500–₹10,000/night"
+              },
+              {
+                "name": "ibis Styles Jerusalem City Center",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Khan",
+              "Cafe Kadosh",
+              "Azura"
+            ]
+          }
+        ]
+      },
+      "Dead Sea": {
+        "name": "Dead Sea",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One night around Ein Bokek or Ein Gedi is enough for most travelers unless you want both a Masada sunrise and a slower spa day.",
+        "days": [
+          {
+            "theme": "Pair a Dead Sea float with Masada and Ein Gedi for the classic desert-and-oasis day",
+            "activities": [
+              {
+                "name": "Ein Bokek public beach float",
+                "cost": "₹0"
+              },
+              {
+                "name": "Masada National Park entry",
+                "cost": "₹713"
+              },
+              {
+                "name": "Masada cable car return",
+                "cost": "₹1,702"
+              },
+              {
+                "name": "Ein Gedi Nature Reserve",
+                "cost": "₹644"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "HI - Ein Gedi Hostel",
+                "budget": "₹8,000–₹11,500/night"
+              },
+              {
+                "name": "Ein Gedi Kibbutz Hotel",
+                "budget": "₹13,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Taj Mahal",
+              "Aldo at the Beach",
+              "Muza Bistro Bar"
+            ]
+          },
+          {
+            "theme": "Only add a second Dead Sea day if you want a true resort pause or a dawn Masada repeat without rushing",
+            "activities": [
+              {
+                "name": "Hotel spa or day-use pool pass",
+                "cost": "₹2,300–₹5,750"
+              },
+              {
+                "name": "Dead Sea promenade and salt formations walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunrise snake path hike at Masada",
+                "cost": "Included with Masada entry"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "HI - Ein Gedi Hostel",
+                "budget": "₹8,000–₹11,500/night"
+              },
+              {
+                "name": "Ein Gedi Kibbutz Hotel",
+                "budget": "₹13,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Aldo at the Beach",
+              "Taj Mahal",
+              "Muza Bistro Bar"
+            ]
+          }
+        ]
+      },
+      "Haifa": {
+        "name": "Haifa",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Haifa works well as an easy coastal reset after Jerusalem, with most highlights spread between the German Colony, Carmel ridge and Bat Galim.",
+        "days": [
+          {
+            "theme": "Keep Haifa simple with Bahá'í terraces, sea views and the city's Arab-Jewish food culture",
+            "activities": [
+              {
+                "name": "Bahá'í Gardens viewpoints and German Colony walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Stella Maris Monastery and Bat Galim promenade",
+                "cost": "₹0"
+              },
+              {
+                "name": "Elijah's Cave",
+                "cost": "₹0"
+              },
+              {
+                "name": "Haifa Museum of Art",
+                "cost": "₹1,035"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Haifa Hostel",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Bat Galim Boutique Hotel",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Fattoush",
+              "Ein ElWadi",
+              "Falafel HaZkenim"
+            ]
+          },
+          {
+            "theme": "A second Haifa day is best used for a calmer Carmel ridge morning and a food-first evening",
+            "activities": [
+              {
+                "name": "Louis Promenade overlook",
+                "cost": "₹0"
+              },
+              {
+                "name": "Wadi Nisnas market lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "National Maritime Museum",
+                "cost": "₹805"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Haifa Hostel",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Bat Galim Boutique Hotel",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Hanamal 24",
+              "Fattoush",
+              "Cafe Louise"
+            ]
+          }
+        ]
+      },
+      "Nazareth": {
+        "name": "Nazareth",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Nazareth can be done as a long day trip from Haifa, but an overnight makes the old town and restaurants feel much less rushed.",
+        "days": [
+          {
+            "theme": "Cover the main Christian heritage sites, then stay for the market and Galilee dinner scene",
+            "activities": [
+              {
+                "name": "Basilica of the Annunciation",
+                "cost": "₹0"
+              },
+              {
+                "name": "St. Joseph's Church",
+                "cost": "₹0"
+              },
+              {
+                "name": "Nazareth Village",
+                "cost": "₹1,495"
+              },
+              {
+                "name": "Old Market and White Mosque walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Fauzi Azar by Abraham",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Michel House",
+                "budget": "₹10,500–₹15,000/night"
+              }
+            ],
+            "meals": [
+              "Diana Restaurant",
+              "Tishreen",
+              "Alreda"
+            ]
+          }
+        ]
+      },
+      "Eilat": {
+        "name": "Eilat",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Eilat is worth the detour mainly for winter sun, reef access and a quick desert contrast; fly back north if you are short on time.",
+        "days": [
+          {
+            "theme": "Start with the reef zone and the classic marine attractions on the Coral Beach side",
+            "activities": [
+              {
+                "name": "Coral Beach Nature Reserve",
+                "cost": "₹805"
+              },
+              {
+                "name": "Underwater Observatory Marine Park",
+                "cost": "₹2,507"
+              },
+              {
+                "name": "Mosh's Beach or North Beach promenade",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Little Prince Hostel",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Soleil Boutique Hotel",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Pastory",
+              "Omer's",
+              "The Last Refuge"
+            ]
+          },
+          {
+            "theme": "Use day two for wildlife or canyon scenery depending on whether you want sea time or red-rock hiking",
+            "activities": [
+              {
+                "name": "Dolphin Reef",
+                "cost": "₹2,047"
+              },
+              {
+                "name": "Red Canyon self-guided hike",
+                "cost": "₹0"
+              },
+              {
+                "name": "Timna Park day trip",
+                "cost": "₹1,127"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Little Prince Hostel",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Soleil Boutique Hotel",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Olla",
+              "Pastory",
+              "Pedro"
+            ]
+          },
+          {
+            "theme": "Add a third Eilat day only if you want extra dive time, a long beach reset or a very easy final day before flying north",
+            "activities": [
+              {
+                "name": "Intro dive or snorkeling excursion",
+                "cost": "₹4,600–₹9,200"
+              },
+              {
+                "name": "Ice Mall and marina evening",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ramon Airport domestic flight to Tel Aviv",
+                "cost": "₹2,760–₹6,900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Little Prince Hostel",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Soleil Boutique Hotel",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "The Last Refuge",
+              "Pedro",
+              "Omer's"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Tel Aviv",
+        "to": "Jerusalem",
+        "method": "Israel Railways fast train to Yitzhak Navon or shared sherut from Tel Aviv",
+        "cost": "₹184–₹575"
+      },
+      {
+        "from": "Jerusalem",
+        "to": "Dead Sea",
+        "method": "Egged bus 444/486 to Ein Bokek or Masada, or organized shuttle",
+        "cost": "₹414–₹1,840"
+      },
+      {
+        "from": "Dead Sea",
+        "to": "Haifa",
+        "method": "Egged bus or shuttle back via Jerusalem/Tel Aviv, then Israel Railways north",
+        "cost": "₹1,380–₹3,450"
+      },
+      {
+        "from": "Haifa",
+        "to": "Nazareth",
+        "method": "Egged bus or sherut/minibus from Haifa HaMifratz or Hof HaCarmel area",
+        "cost": "₹230–₹460"
+      },
+      {
+        "from": "Nazareth",
+        "to": "Eilat",
+        "method": "Long-distance Egged bus via Tel Aviv/Jerusalem, or return to Tel Aviv for a domestic flight to Ramon Airport",
+        "cost": "₹1,610–₹6,900"
+      }
+    ],
+    "extras": [
+      "Israel Railways is the smoothest way to move between Tel Aviv, Ben Gurion Airport, Jerusalem and Haifa, but there is no train to Nazareth, the Dead Sea or Eilat.",
+      "Egged buses cover the Dead Sea, Masada and Eilat well enough for independent travel, but check Friday/Saturday service carefully because Shabbat schedules are limited.",
+      "Sheruts are useful when trains and buses stop for Shabbat, especially on Tel Aviv-Jerusalem runs and some northern routes.",
+      "The Western Wall and Yad Vashem are free; Masada, Ein Gedi, the Tel Aviv Museum of Art, Israel Museum and Eilat reef attractions are the main paid anchors in this plan.",
+      "Domestic flights between Tel Aviv and Ramon Airport near Eilat save significant time if you do not want a 5- to 7-hour bus leg.",
+      "Carry water, sun protection and a swimsuit/shower kit for Dead Sea days because the salt and desert heat are much harsher than the city legs."
+    ],
+    "cityImages": {
+      "Tel Aviv": [
+        "Old Jaffa Tel Aviv",
+        "Tel Aviv Museum of Art",
+        "Tel Aviv promenade"
+      ],
+      "Jerusalem": [
+        "Western Wall Jerusalem",
+        "Old City Jerusalem skyline",
+        "Israel Museum Jerusalem"
+      ],
+      "Dead Sea": [
+        "Dead Sea Ein Bokek",
+        "Masada plateau Israel",
+        "Ein Gedi oasis"
+      ],
+      "Haifa": [
+        "Bahai Gardens Haifa",
+        "German Colony Haifa",
+        "Stella Maris Monastery Haifa"
+      ],
+      "Nazareth": [
+        "Basilica of the Annunciation Nazareth",
+        "Nazareth old market",
+        "Mary's Well Nazareth"
+      ],
+      "Eilat": [
+        "Coral Beach Nature Reserve Eilat",
+        "Dolphin Reef Eilat",
+        "Red Canyon Israel"
+      ]
+    }
+  }
+}

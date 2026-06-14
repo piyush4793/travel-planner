@@ -1,0 +1,488 @@
+{
+  "name": "Belgium",
+  "seed": false,
+  "lat": 50.5,
+  "lng": 4.47,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹1.2L–₹2L",
+    "couple": "₹2L–₹3.4L",
+    "family4": "₹4.2L–₹6.6L"
+  },
+  "experiences": [
+    "Grand-Place",
+    "Bruges Canals",
+    "Ghent Castles & Belfries",
+    "Antwerp Fashion & Diamonds",
+    "Belgian Beer & Chocolate",
+    "Dinant Meuse Valley"
+  ],
+  "avoid": [
+    "Christmas-market weekends and major summer festival weekends — beautiful but pricier and much more crowded"
+  ],
+  "combo": [
+    "Netherlands",
+    "Luxembourg",
+    "France"
+  ],
+  "landmark": "Grand-Place, Brussels",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Brussels",
+      "lat": 50.8503,
+      "lng": 4.3517,
+      "notes": "Grand-Place, Atomium, Art Nouveau facades, comic murals, waffles and beer bars"
+    },
+    {
+      "name": "Bruges",
+      "lat": 51.2093,
+      "lng": 3.2247,
+      "notes": "Belfry climbs, canal views, chocolate museums and beautifully preserved medieval lanes"
+    },
+    {
+      "name": "Ghent",
+      "lat": 51.0543,
+      "lng": 3.7174,
+      "notes": "Gravensteen castle, the Ghent Altarpiece, lively Graslei quays and student energy"
+    },
+    {
+      "name": "Antwerp",
+      "lat": 51.2213,
+      "lng": 4.4051,
+      "notes": "MAS museum, Cathedral of Our Lady, Antwerp Central and a strong fashion-food scene"
+    },
+    {
+      "name": "Leuven",
+      "lat": 50.8798,
+      "lng": 4.7005,
+      "notes": "Gothic town hall, university heritage, beguinage lanes and relaxed brewery culture"
+    },
+    {
+      "name": "Dinant",
+      "lat": 50.2606,
+      "lng": 4.9114,
+      "notes": "Dramatic citadel above the Meuse, saxophone heritage, river cruises and day-trip scenery"
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange Holiday Europe eSIM or Proximus prepaid SIM both work well in Belgium — expect about ₹1,800–₹2,250 for 10–12GB with easy roaming into nearby EU countries.",
+    "apps": [
+      "SNCB/NMBS",
+      "De Lijn",
+      "TEC",
+      "STIB-MIVB",
+      "Google Maps",
+      "Bolt",
+      "Booking.com",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Brussels",
+      "Bruges",
+      "Ghent",
+      "Antwerp",
+      "Leuven",
+      "Dinant"
+    ],
+    "cities": {
+      "Brussels": {
+        "name": "Brussels",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Brussels as your arrival and departure base; add a third day if you want the Magritte Museum, European Quarter museums, or a slower café-and-comics day.",
+        "days": [
+          {
+            "theme": "Grand-Place, Galeries & Old Centre",
+            "activities": [
+              {
+                "name": "Walk Grand-Place, the guildhalls and nearby Manneken Pis"
+              },
+              {
+                "name": "Browse Galeries Royales Saint-Hubert and the comic-strip murals around the centre"
+              },
+              {
+                "name": "Royal Museums of Fine Arts of Belgium",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "Belgian Beer World at the Bourse",
+                "cost": "₹1,710"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "MEININGER Hotel Brussels City Center",
+                "budget": "₹8,100–₹10,800/night"
+              },
+              {
+                "name": "Motel One Brussels",
+                "budget": "₹10,800–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Chez Léon",
+              "Noordzee Mer du Nord",
+              "Fin de Siècle"
+            ]
+          },
+          {
+            "theme": "Atomium, Laeken & Cinquantenaire",
+            "activities": [
+              {
+                "name": "Atomium",
+                "cost": "₹1,530",
+                "tip": "Morning slots are quieter; the ticket also covers the Design Museum Brussels."
+              },
+              {
+                "name": "Mini-Europe",
+                "cost": "₹2,070"
+              },
+              {
+                "name": "Parc du Cinquantenaire and triumphal arch walk"
+              },
+              {
+                "name": "Musical Instruments Museum rooftop café or Mont des Arts sunset walk",
+                "cost": "₹1,440"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "MEININGER Hotel Brussels City Center",
+                "budget": "₹8,100–₹10,800/night"
+              },
+              {
+                "name": "Motel One Brussels",
+                "budget": "₹10,800–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Le Marmiton",
+              "Maison Dandoy",
+              "Wolf Sharing Food Market"
+            ]
+          }
+        ]
+      },
+      "Bruges": {
+        "name": "Bruges",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Bruges is compact enough for a full day, but an overnight stay gives you quieter early-morning canals and time for another museum.",
+        "days": [
+          {
+            "theme": "Belfry, Canals & Chocolate",
+            "activities": [
+              {
+                "name": "Belfry of Bruges climb",
+                "cost": "₹1,440"
+              },
+              {
+                "name": "Burg Square, Basilica of the Holy Blood and Markt stroll"
+              },
+              {
+                "name": "Canal boat ride from Rozenhoedkaai",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "Choco-Story Brugge",
+                "cost": "₹1,260"
+              },
+              {
+                "name": "Minnewater and Begijnhof evening walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Martin's Brugge",
+                "budget": "₹11,700–₹14,400/night"
+              },
+              {
+                "name": "Hotel Academie",
+                "budget": "₹10,350–₹13,050/night"
+              }
+            ],
+            "meals": [
+              "De Stove",
+              "Poules Moules",
+              "That’s Toast"
+            ]
+          }
+        ]
+      },
+      "Ghent": {
+        "name": "Ghent",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Ghent works brilliantly as an overnight between Bruges and Antwerp; add a second day if you want museums beyond the castle and altarpiece.",
+        "days": [
+          {
+            "theme": "Gravensteen, Graslei & Mystic Lamb",
+            "activities": [
+              {
+                "name": "Gravensteen (Castle of the Counts)",
+                "cost": "₹1,170"
+              },
+              {
+                "name": "Saint Bavo's Cathedral and the Ghent Altarpiece visitor centre",
+                "cost": "₹1,440"
+              },
+              {
+                "name": "Graslei and Korenlei quay walk with Saint Michael's Bridge viewpoints"
+              },
+              {
+                "name": "Ghent Belfry",
+                "cost": "₹990"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Gent Centrum St-Baafs Kathedraal",
+                "budget": "₹9,450–₹11,700/night"
+              },
+              {
+                "name": "NH Gent Belfort",
+                "budget": "₹12,600–₹15,750/night"
+              }
+            ],
+            "meals": [
+              "De Graslei",
+              "De Superette",
+              "Pakhuis"
+            ]
+          }
+        ]
+      },
+      "Antwerp": {
+        "name": "Antwerp",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Stay a second day if you want both museums and fashion shopping without rushing Antwerp Central, the old town and the riverside.",
+        "days": [
+          {
+            "theme": "Station Icons, MAS & Old Town",
+            "activities": [
+              {
+                "name": "Antwerp Central Station and Diamond District walk"
+              },
+              {
+                "name": "MAS | Museum aan de Stroom",
+                "cost": "₹1,080"
+              },
+              {
+                "name": "Cathedral of Our Lady",
+                "cost": "₹1,080"
+              },
+              {
+                "name": "Grote Markt, Vlaeykensgang and riverside evening stroll"
+              },
+              {
+                "name": "Red Star Line Museum",
+                "cost": "₹1,080"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "B&B HOTEL Antwerpen Centrum",
+                "budget": "₹8,100–₹10,350/night"
+              },
+              {
+                "name": "Hotel Indigo Antwerp City Centre",
+                "budget": "₹12,150–₹15,300/night"
+              }
+            ],
+            "meals": [
+              "Frites Atelier",
+              "De Pottekijker",
+              "Elfde Gebod"
+            ]
+          }
+        ]
+      },
+      "Leuven": {
+        "name": "Leuven",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Leuven is best as a compact overnight or long day trip, especially if you enjoy university towns, beguinages and easy food-and-beer hopping.",
+        "days": [
+          {
+            "theme": "University Heritage & Beer Streets",
+            "activities": [
+              {
+                "name": "Leuven Town Hall, Oude Markt and Saint Peter's Church exterior walk"
+              },
+              {
+                "name": "M Leuven",
+                "cost": "₹1,080"
+              },
+              {
+                "name": "University Library tower climb",
+                "cost": "₹720"
+              },
+              {
+                "name": "Groot Begijnhof and Kruidtuin botanical garden"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Leuven Centrum",
+                "budget": "₹8,550–₹10,800/night"
+              },
+              {
+                "name": "Martin's Klooster",
+                "budget": "₹11,250–₹14,400/night"
+              }
+            ],
+            "meals": [
+              "Domus",
+              "Baracca",
+              "De Werf"
+            ]
+          }
+        ]
+      },
+      "Dinant": {
+        "name": "Dinant",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Dinant is easy as a final Wallonia stop; add a second day for river kayaking, abbey detours or the nearby caves and viewpoints.",
+        "days": [
+          {
+            "theme": "Citadel, Sax Heritage & Meuse Views",
+            "activities": [
+              {
+                "name": "Dinant Citadel with cable car",
+                "cost": "₹1,080"
+              },
+              {
+                "name": "Collegiate Church of Notre Dame and Charles de Gaulle Bridge saxophone walk"
+              },
+              {
+                "name": "Maison Leffe",
+                "cost": "₹990"
+              },
+              {
+                "name": "Meuse river cruise or short TEC bus hop to Rocher Bayard",
+                "cost": "₹1,080"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Dinant Centre",
+                "budget": "₹8,550–₹11,250/night"
+              },
+              {
+                "name": "La Merveilleuse by Infiniti Resorts",
+                "budget": "₹10,800–₹13,950/night"
+              }
+            ],
+            "meals": [
+              "La Broche",
+              "Le Wiertz",
+              "Chez Bouboule"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Brussels",
+        "to": "Bruges",
+        "method": "SNCB/NMBS InterCity from Bruxelles-Central or Bruxelles-Midi to Brugge (about 55–65 min)",
+        "cost": "₹1,575–₹1,710"
+      },
+      {
+        "from": "Bruges",
+        "to": "Ghent",
+        "method": "SNCB/NMBS InterCity from Brugge to Gent-Sint-Pieters (about 22–25 min)",
+        "cost": "₹810–₹900"
+      },
+      {
+        "from": "Ghent",
+        "to": "Antwerp",
+        "method": "SNCB/NMBS InterCity from Gent-Sint-Pieters to Antwerpen-Centraal (about 55–65 min)",
+        "cost": "₹945–₹1,035"
+      },
+      {
+        "from": "Antwerp",
+        "to": "Leuven",
+        "method": "SNCB/NMBS InterCity from Antwerpen-Centraal to Leuven (about 45–55 min)",
+        "cost": "₹720–₹855"
+      },
+      {
+        "from": "Leuven",
+        "to": "Dinant",
+        "method": "SNCB/NMBS InterCity via Namur from Leuven to Dinant (about 95–110 min)",
+        "cost": "₹1,440–₹1,620"
+      },
+      {
+        "from": "Dinant",
+        "to": "Brussels",
+        "method": "SNCB/NMBS InterCity via Namur from Dinant to Bruxelles-Midi (about 95–110 min)",
+        "cost": "₹1,530–₹1,665"
+      }
+    ],
+    "extras": [
+      "Buy SNCB/NMBS train tickets in the app and validate local De Lijn or TEC bus tickets separately; Flanders and Wallonia use different bus operators.",
+      "Brussels, Bruges, Ghent and Antwerp all reward early starts — major squares and canals are much calmer before day-trippers arrive.",
+      "Atomium, the Bruges Belfry and the Ghent Altarpiece are all worth pre-booking in summer, especially on weekends.",
+      "De Lijn is the main tram-bus network in Bruges, Ghent, Antwerp and Leuven, while TEC is the operator you will use most in Dinant and elsewhere in Wallonia.",
+      "If you want one museum pass, look at the Brussels Card only for your Brussels days; it does not help much once you switch to Bruges and Ghent rail-hopping."
+    ],
+    "cityImages": {
+      "Brussels": [
+        "Grand-Place Brussels guildhalls",
+        "Atomium Brussels",
+        "Galeries Royales Saint-Hubert Brussels"
+      ],
+      "Bruges": [
+        "Belfry of Bruges Markt square",
+        "Rozenhoedkaai Bruges canal",
+        "Minnewater Bruges"
+      ],
+      "Ghent": [
+        "Gravensteen Ghent",
+        "Graslei Ghent",
+        "Saint Bavo Cathedral Ghent"
+      ],
+      "Antwerp": [
+        "Antwerp Central Station",
+        "MAS Museum Antwerp",
+        "Cathedral of Our Lady Antwerp"
+      ],
+      "Leuven": [
+        "Leuven Town Hall",
+        "Groot Begijnhof Leuven",
+        "M Leuven museum"
+      ],
+      "Dinant": [
+        "Dinant Citadel",
+        "Collegiate Church of Notre Dame Dinant",
+        "Dinant Meuse river"
+      ]
+    }
+  }
+}

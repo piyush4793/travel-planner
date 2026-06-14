@@ -1,0 +1,679 @@
+{
+  "name": "Chile",
+  "seed": false,
+  "lat": -35.68,
+  "lng": -71.54,
+  "region": "Americas",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.8L–₹3L",
+    "couple": "₹3L–₹5L",
+    "family4": "₹6L–₹10L"
+  },
+  "experiences": [
+    "Atacama Desert",
+    "Torres del Paine",
+    "Valparaíso street art",
+    "Lakes & volcanoes",
+    "Rapa Nui moai"
+  ],
+  "avoid": [
+    "June–August brings short, cold days in Patagonia and pricier ski-season weekends around central Chile."
+  ],
+  "combo": [
+    "Argentina",
+    "Peru"
+  ],
+  "landmark": "Torres del Paine National Park",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": "Santiago (SCL) is the unavoidable hub for Easter Island and most long north–south hops, so multi-city Chile trips usually backtrack through the capital at least once.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Santiago",
+      "lat": -33.4489,
+      "lng": -70.6693,
+      "notes": "Historic core, Lastarria cafés, Cerro San Cristóbal views and Chile’s best-connected food-and-metro base."
+    },
+    {
+      "name": "Valparaíso",
+      "lat": -33.0472,
+      "lng": -71.6127,
+      "notes": "Colorful hills, working port, graffiti lanes, funiculars and Pablo Neruda’s sea-facing house museum."
+    },
+    {
+      "name": "San Pedro de Atacama",
+      "lat": -22.9087,
+      "lng": -68.1997,
+      "notes": "Adobe desert village for moonlike valleys, salt lagoons, geysers and some of South America’s clearest night skies."
+    },
+    {
+      "name": "Puerto Natales",
+      "lat": -51.726,
+      "lng": -72.5063,
+      "notes": "Gateway town for Torres del Paine, Grey Glacier sailings and classic Patagonian wind-and-mountain scenery."
+    },
+    {
+      "name": "Pucón",
+      "lat": -39.282,
+      "lng": -71.9543,
+      "notes": "Volcano-and-lake adventure base with hot springs, rafting, Araucanía forest trails and a relaxed backpacker feel."
+    },
+    {
+      "name": "Easter Island",
+      "lat": -27.1212,
+      "lng": -109.3664,
+      "notes": "Remote Polynesian island of moai statues, quarry sites, crater rims and the Hanga Roa seaside base."
+    }
+  ],
+  "itinerary": {
+    "sim": "Entel and WOM usually give the smoothest prepaid coverage in Santiago and across the main mainland route; buy the SIM in Santiago, then download offline maps before Atacama, Patagonia, and Easter Island where data can get patchy or slow.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "LATAM Airlines",
+      "SKY Airline",
+      "JetSMART",
+      "Booking.com",
+      "Red",
+      "Cabify",
+      "XE Currency",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Santiago",
+      "Valparaíso",
+      "San Pedro de Atacama",
+      "Puerto Natales",
+      "Pucón",
+      "Easter Island"
+    ],
+    "cities": {
+      "Santiago": {
+        "name": "Santiago",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay in Lastarria or Providencia, load a Bip! card for Metro/bus rides, and use Cabify late at night instead of negotiating street taxis.",
+        "days": [
+          {
+            "theme": "Centro Histórico, Lastarria & San Cristóbal",
+            "activities": [
+              {
+                "name": "Centropuerto or TurBus airport bus from SCL into central Santiago",
+                "cost": "₹180–₹270"
+              },
+              {
+                "name": "Walk Plaza de Armas, Santiago Cathedral, Paseo Ahumada and La Moneda exterior"
+              },
+              {
+                "name": "Museo Chileno de Arte Precolombino",
+                "cost": "₹450–₹630"
+              },
+              {
+                "name": "Cerro San Cristóbal funicular and cable car circuit",
+                "cost": "₹450–₹720"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Cumbres Lastarria",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "ibis budget Santiago Providencia",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Bocanariz",
+              "Fuente Alemana",
+              "Liguria"
+            ]
+          },
+          {
+            "theme": "Markets, Santa Lucía & Skyline",
+            "activities": [
+              {
+                "name": "Breakfast stroll through La Vega Central and Mercado Central"
+              },
+              {
+                "name": "Climb Cerro Santa Lucía for old-city lookouts"
+              },
+              {
+                "name": "Sky Costanera observation deck",
+                "cost": "₹1,450–₹1,650"
+              },
+              {
+                "name": "Bellavista evening for murals, bars, and live music"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Cumbres Lastarria",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "ibis budget Santiago Providencia",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Peumayén Ancestral Food",
+              "Chipe Libre",
+              "Sarita Colonia"
+            ]
+          }
+        ]
+      },
+      "Valparaíso": {
+        "name": "Valparaíso",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Go as a day trip or one-night stay from Santiago; the city is steep, so pack light and use funiculars or quick Ubers between cerros after dark.",
+        "days": [
+          {
+            "theme": "Street Art Hills, Port Views & Neruda House",
+            "activities": [
+              {
+                "name": "TurBus or Pullman Bus ride from Santiago to Valparaíso",
+                "cost": "₹630–₹1,080"
+              },
+              {
+                "name": "Cerro Alegre and Cerro Concepción self-guided mural walk"
+              },
+              {
+                "name": "Ascensor Reina Victoria and Paseo Gervasoni viewpoints"
+              },
+              {
+                "name": "La Sebastiana (Pablo Neruda house museum)",
+                "cost": "₹810–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Boutique 17",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Hostal Po",
+                "budget": "₹3,000–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Fauna Restaurant",
+              "Cocina Puerto",
+              "Café Turri"
+            ]
+          }
+        ]
+      },
+      "San Pedro de Atacama": {
+        "name": "San Pedro de Atacama",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "The town sits around 2,400 m, so hydrate hard, go easy on alcohol the first night, and keep sunrise tours for after you’ve had at least one acclimatisation evening.",
+        "days": [
+          {
+            "theme": "Arrival, Desert Town & Valle de la Luna",
+            "activities": [
+              {
+                "name": "Shared shuttle or bus from Calama Airport to San Pedro",
+                "cost": "₹900–₹1,350"
+              },
+              {
+                "name": "Walk Caracoles street, the church plaza, and artisan lanes"
+              },
+              {
+                "name": "Valle de la Luna official entry",
+                "cost": "₹970"
+              },
+              {
+                "name": "Piedra del Coyote (Mirador de Kari) for sunset over the Cordillera de la Sal"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Pascual Andino",
+                "budget": "₹10,500–₹16,000/night"
+              },
+              {
+                "name": "Hostal Pueblo de Tierra",
+                "budget": "₹5,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Adobe",
+              "La Estaka",
+              "Pizzería El Charrúa"
+            ]
+          },
+          {
+            "theme": "Salt Flats, Flamingos & High-Altitude Lagoons",
+            "activities": [
+              {
+                "name": "Salar de Atacama and Laguna Chaxa flamingo reserve day tour",
+                "cost": "₹4,500–₹7,000"
+              },
+              {
+                "name": "Piedras Rojas and Miscanti–Miñiques altiplano lagoons excursion",
+                "cost": "₹5,500–₹8,500"
+              },
+              {
+                "name": "Socaire village lunch stop"
+              },
+              {
+                "name": "Stargazing astronomy tour after dinner",
+                "cost": "₹2,700–₹4,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Pascual Andino",
+                "budget": "₹10,500–₹16,000/night"
+              },
+              {
+                "name": "Hostal Pueblo de Tierra",
+                "budget": "₹5,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Baltinache",
+              "Lola",
+              "La Casona"
+            ]
+          },
+          {
+            "theme": "El Tatio Sunrise & Puritama Recovery",
+            "activities": [
+              {
+                "name": "El Tatio Geysers entry",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "Pre-dawn El Tatio guided transport from San Pedro",
+                "cost": "₹3,200–₹5,500"
+              },
+              {
+                "name": "Machuca village stop on the return"
+              },
+              {
+                "name": "Afternoon at Puritama Hot Springs",
+                "cost": "₹2,700–₹4,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Pascual Andino",
+                "budget": "₹10,500–₹16,000/night"
+              },
+              {
+                "name": "Hostal Pueblo de Tierra",
+                "budget": "₹5,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Ayllu",
+              "Inca’s Restaurant",
+              "Emporio Andino"
+            ]
+          }
+        ]
+      },
+      "Puerto Natales": {
+        "name": "Puerto Natales",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Book park entry online before you go, carry full windproof layers even on sunny days, and keep a spare weather-flex day if Base Torres is a priority hike.",
+        "days": [
+          {
+            "theme": "Puerto Natales Waterfront & Milodón Intro",
+            "activities": [
+              {
+                "name": "Costanera, Muelle Histórico and artisan shops around Plaza de Armas"
+              },
+              {
+                "name": "Cueva del Milodón Natural Monument",
+                "cost": "₹900–₹1,170"
+              },
+              {
+                "name": "Bus station recon for tomorrow’s Torres del Paine departure"
+              },
+              {
+                "name": "Sunset over Última Esperanza Sound"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Vendaval",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Hostal Amerindia Patagonia",
+                "budget": "₹4,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Afrigonia",
+              "Santolla",
+              "Cerveza Baguales"
+            ]
+          },
+          {
+            "theme": "Torres del Paine Classic Viewpoints",
+            "activities": [
+              {
+                "name": "Torres del Paine National Park entry (up to 3 days, foreign adult)",
+                "cost": "₹3,060"
+              },
+              {
+                "name": "Round-trip bus Puerto Natales ↔ Laguna Amarga / Pudeto",
+                "cost": "₹1,600–₹2,100"
+              },
+              {
+                "name": "Salto Grande, Lago Pehoé, Cuernos del Paine and Mirador Nordenskjöld stops"
+              },
+              {
+                "name": "Grey Lake beach walk or optional Grey III navigation",
+                "cost": "₹8,500–₹14,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Vendaval",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Hostal Amerindia Patagonia",
+                "budget": "₹4,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Mesita Grande",
+              "Base Camp",
+              "Pizzeria Napoli"
+            ]
+          },
+          {
+            "theme": "Hike or Sail Day in Patagonia",
+            "activities": [
+              {
+                "name": "Base Torres shuttle-supported hiking day or guided full-day trek",
+                "cost": "₹6,500–₹12,500"
+              },
+              {
+                "name": "Torres del Paine park upgrade for stays over 3 days",
+                "cost": "₹4,365"
+              },
+              {
+                "name": "Alternative Balmaceda & Serrano glacier boat trip from Puerto Natales",
+                "cost": "₹11,000–₹18,000"
+              },
+              {
+                "name": "Back in town for craft beer and king-crab dinner"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Vendaval",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Hostal Amerindia Patagonia",
+                "budget": "₹4,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "El Asador Patagónico",
+              "Aldea Restaurant",
+              "Cafe Kaikén"
+            ]
+          }
+        ]
+      },
+      "Pucón": {
+        "name": "Pucón",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Pucón is easy to do without a car, but adventure tours fill up in summer; reserve volcano slots or hot-spring transfers a day or two ahead.",
+        "days": [
+          {
+            "theme": "Villarrica Volcano & Lakeside Town",
+            "activities": [
+              {
+                "name": "Guided Villarrica Volcano ascent with crampons and gear",
+                "cost": "₹10,500–₹16,500"
+              },
+              {
+                "name": "Alternative chairlift / snowline viewpoint if summit conditions close",
+                "cost": "₹1,800–₹2,700"
+              },
+              {
+                "name": "Walk Playa Grande and the main lakeshore promenade"
+              },
+              {
+                "name": "Evening craft-beer stop in central Pucón"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Viento Puelche Hotel Boutique",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Hostal French Andes",
+                "budget": "₹3,000–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Trawen",
+              "La Maga",
+              "Cassis"
+            ]
+          },
+          {
+            "theme": "Waterfalls, Forest Trails & Hot Springs",
+            "activities": [
+              {
+                "name": "Ojos del Caburgua waterfalls",
+                "cost": "₹270–₹450"
+              },
+              {
+                "name": "Huerquehue National Park day hike or lake circuit",
+                "cost": "₹630–₹900"
+              },
+              {
+                "name": "Late soak at Termas Geométricas",
+                "cost": "₹3,600–₹4,500"
+              },
+              {
+                "name": "Optional Trancura River rafting",
+                "cost": "₹3,500–₹5,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Viento Puelche Hotel Boutique",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Hostal French Andes",
+                "budget": "₹3,000–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Andenativo",
+              "Marmohni",
+              "El Camino"
+            ]
+          }
+        ]
+      },
+      "Easter Island": {
+        "name": "Easter Island",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Base yourself in Hanga Roa, keep cash for smaller family-run places, and hire a local guide if you want the deeper archaeological context at the quarry and ceremonial sites.",
+        "days": [
+          {
+            "theme": "Rano Raraku, Tongariki & East Coast Moai",
+            "activities": [
+              {
+                "name": "Rapa Nui National Park digital pass",
+                "cost": "₹4,860"
+              },
+              {
+                "name": "Rano Raraku quarry visit"
+              },
+              {
+                "name": "Ahu Tongariki sunrise or late-afternoon platform stop"
+              },
+              {
+                "name": "Ahu Akahanga and Puna Pau circuit by guided van",
+                "cost": "₹5,500–₹9,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Puku Vai",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "Hotel Tauraa",
+                "budget": "₹7,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Tataku Vave",
+              "Te Moai Sunset",
+              "Kanahau"
+            ]
+          },
+          {
+            "theme": "Orongo, Rano Kau & Anakena Beach",
+            "activities": [
+              {
+                "name": "Orongo ceremonial village and Rano Kau crater rim"
+              },
+              {
+                "name": "Anakena beach and Ahu Nau Nau moai platform"
+              },
+              {
+                "name": "Half-day scooter or car rental for independent coastal stops",
+                "cost": "₹3,500–₹7,000"
+              },
+              {
+                "name": "Tahai ceremonial complex for sunset near Hanga Roa"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Puku Vai",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "Hotel Tauraa",
+                "budget": "₹7,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Haka Honu",
+              "Te Moana",
+              "Neptune Island Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Santiago",
+        "to": "Valparaíso",
+        "method": "Frequent TurBus or Pullman Bus service from Terminal Alameda / Terminal Sur, about 1 hr 45 min to 2 hr 15 min",
+        "cost": "₹630–₹1,080"
+      },
+      {
+        "from": "Valparaíso",
+        "to": "San Pedro de Atacama",
+        "method": "Bus back to Santiago, then LATAM / SKY / JetSMART flight to Calama (CJC) plus shared shuttle to San Pedro",
+        "cost": "₹4,500–₹10,500"
+      },
+      {
+        "from": "San Pedro de Atacama",
+        "to": "Puerto Natales",
+        "method": "Shuttle to Calama, then LATAM / SKY / JetSMART via Santiago to Puerto Natales or Punta Arenas, plus final bus if needed",
+        "cost": "₹10,500–₹22,500"
+      },
+      {
+        "from": "Puerto Natales",
+        "to": "Pucón",
+        "method": "Bus to Punta Arenas or direct airport transfer when seasonal flights run, then flight via Santiago to Temuco and final bus to Pucón",
+        "cost": "₹12,500–₹24,500"
+      },
+      {
+        "from": "Pucón",
+        "to": "Easter Island",
+        "method": "Bus to Temuco, flight to Santiago, then LATAM’s Santiago–Mataveri (IPC) service to Easter Island",
+        "cost": "₹18,500–₹36,000"
+      }
+    ],
+    "extras": [
+      "Chile is long rather than wide: use buses only for Santiago–Valparaíso and maybe Santiago–Pucón; for Atacama, Patagonia, and Easter Island, flights save huge amounts of time.",
+      "Torres del Paine entry is bought online in advance via Pases Parques/CONAF, and summer availability can tighten around Christmas, New Year, and February.",
+      "San Pedro tours often quote transport first and then add park cash/online entries separately, so read the inclusions carefully before paying a deposit.",
+      "Easter Island is one of the priciest domestic add-ons in South America; book the LATAM sector early and expect meals plus vehicle rentals to cost more than mainland Chile.",
+      "Cards work well in Santiago and larger hotels, but keep some pesos for bus terminals, smaller cafés, and family-run places in Puerto Natales, Pucón, and Hanga Roa.",
+      "If you have under 10 days, keep Santiago, Valparaíso, San Pedro de Atacama, and Puerto Natales as the core route, then treat Pucón and Easter Island as separate add-on trips."
+    ],
+    "cityImages": {
+      "Santiago": [
+        "Plaza de Armas Santiago Chile",
+        "Cerro San Cristobal Santiago",
+        "Sky Costanera Santiago"
+      ],
+      "Valparaíso": [
+        "Cerro Concepcion Valparaiso Chile",
+        "La Sebastiana Valparaiso",
+        "Ascensor Reina Victoria Valparaiso"
+      ],
+      "San Pedro de Atacama": [
+        "Valle de la Luna Chile",
+        "Miscanti Lagoon Atacama",
+        "El Tatio Geysers Chile"
+      ],
+      "Puerto Natales": [
+        "Torres del Paine Cuernos del Paine",
+        "Grey Glacier Chile",
+        "Puerto Natales waterfront"
+      ],
+      "Pucón": [
+        "Villarrica Volcano Pucon",
+        "Ojos del Caburgua Chile",
+        "Termas Geometricas Chile"
+      ],
+      "Easter Island": [
+        "Ahu Tongariki Easter Island",
+        "Rano Raraku Easter Island",
+        "Anakena Beach Rapa Nui"
+      ]
+    }
+  }
+}
