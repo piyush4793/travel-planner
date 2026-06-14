@@ -1,0 +1,552 @@
+{
+  "name": "Panama",
+  "seed": false,
+  "lat": 8.54,
+  "lng": -80.78,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.5L–₹2.4L",
+    "couple": "₹2.8L–₹4.4L",
+    "family4": "₹5.5L–₹8.5L"
+  },
+  "experiences": [
+    "Panama Canal & Biomuseo",
+    "Casco Viejo & Panamá Viejo",
+    "San Blas Islands boat days",
+    "Boquete hikes & coffee",
+    "Bocas del Toro beaches"
+  ],
+  "avoid": [
+    "May to November is wetter across both coasts, and September to October is the least reliable window for San Blas boat rides, jungle hikes, and Bocas snorkeling.",
+    "Christmas, New Year, Carnival week, and Semana Santa push up Air Panama fares, Casco Viejo hotel prices, and island lodge availability very quickly.",
+    "San Blas is cash-heavy, rustic, and weather dependent, so do not plan tight same-day international connections around the Guna Yala 4x4 and boat transfers."
+  ],
+  "combo": [
+    "Costa Rica",
+    "Colombia"
+  ],
+  "landmark": "Panama Canal",
+  "travelStyle": [
+    "touch-and-go",
+    "explorer"
+  ],
+  "stopoverNote": "Panama City is the easiest Copa stopover hub in the country, and it is also where Miraflores visits, Albrook domestic flights, and San Blas 4x4 departures connect most smoothly.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Panama City",
+      "lat": 8.9824,
+      "lng": -79.5199,
+      "notes": "Modern high-rise capital for the canal, Frank Gehry's Biomuseo, seafood markets, and easy access to Amador Causeway and Albrook transport links."
+    },
+    {
+      "name": "Casco Viejo",
+      "lat": 8.9528,
+      "lng": -79.5347,
+      "notes": "Historic quarter of Panamá City for churches, plazas, canal history, rooftop dining, and the easiest old-town base before or after island days."
+    },
+    {
+      "name": "San Blas Islands",
+      "lat": 9.5581,
+      "lng": -78.9712,
+      "notes": "Guna Yala archipelago of white-sand cays, simple island cabins, boat transfers from Cartí, and the most castaway-style beach stop in Panama."
+    },
+    {
+      "name": "Boquete",
+      "lat": 8.7807,
+      "lng": -82.4314,
+      "notes": "Cooler Chiriquí highlands base for coffee farms, cloud-forest trails, waterfalls, and a slower inland break after the coast."
+    },
+    {
+      "name": "Bocas del Toro",
+      "lat": 9.34,
+      "lng": -82.25,
+      "notes": "Caribbean island chain anchored by Bocas Town for water taxis, Red Frog Beach, Starfish Beach, and easy reef-and-beach day tours."
+    }
+  ],
+  "itinerary": {
+    "sim": "+Móvil or Tigo prepaid/eSIM plans are the easiest pickup in Panama City; expect roughly ₹840–₹1,260 for 10–15GB. Download offline maps before San Blas and for long Bocas water-taxi days because coverage drops quickly once you leave the city or main islands.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "Waze",
+      "Air Panama",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency",
+      "Uber",
+      "inDrive",
+      "Moovit"
+    ],
+    "cityOrder": [
+      "Panama City",
+      "Casco Viejo",
+      "San Blas Islands",
+      "Boquete",
+      "Bocas del Toro"
+    ],
+    "cities": {
+      "Panama City": {
+        "name": "Panama City",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay around El Cangrejo, Obarrio, or Punta Paitilla if you want easier road access to Miraflores and Albrook, then shift to Casco only if you specifically want old-town evenings.",
+        "days": [
+          {
+            "theme": "Panama Canal & Amador Causeway",
+            "activities": [
+              {
+                "name": "Miraflores Visitor Center and IMAX at the Panama Canal",
+                "cost": "₹1,450"
+              },
+              {
+                "name": "Amador Causeway walk or bike rental with Panama City skyline views",
+                "cost": "₹420–₹840"
+              },
+              {
+                "name": "Panama sign and Flamenco Marina promenade"
+              },
+              {
+                "name": "Seafood stop at Mercado de Mariscos"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Novotel Panama City",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Best Western Plus Panama Zen Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Mercado de Mariscos",
+              "Maito",
+              "El Trapiche"
+            ]
+          },
+          {
+            "theme": "Biomuseo, Nature & Skyline",
+            "activities": [
+              {
+                "name": "Biomuseo admission",
+                "cost": "₹1,512"
+              },
+              {
+                "name": "Metropolitan Natural Park trails and lookout",
+                "cost": "₹420"
+              },
+              {
+                "name": "Cinta Costera waterfront walk"
+              },
+              {
+                "name": "Albrook Mall or Albrook bus terminal recon for onward travel"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel El Panama by Faranda Grand",
+                "budget": "₹6,000–₹9,500/night"
+              },
+              {
+                "name": "Hotel Coral Suites",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Fonda Lo Que Hay",
+              "Mercado de Mariscos",
+              "Mahalo Panamá"
+            ]
+          }
+        ]
+      },
+      "Casco Viejo": {
+        "name": "Casco Viejo",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Casco is compact and walkable by day, but its cobbled lanes get busy at night, so use rideshares for late returns and reserve rooftop dinners ahead on weekends.",
+        "days": [
+          {
+            "theme": "Canal History & Old-Town Plazas",
+            "activities": [
+              {
+                "name": "Museo del Canal Interoceánico de Panamá",
+                "cost": "₹1,260"
+              },
+              {
+                "name": "Plaza de la Independencia, Cathedral Basilica, and Iglesia de San José"
+              },
+              {
+                "name": "Paseo de las Bóvedas and Plaza de Francia"
+              },
+              {
+                "name": "Sunset drinks with bay views from a Casco rooftop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Magnolia Inn",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Hotel Casa Panamá",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Super Gourmet",
+              "Santa Rita",
+              "Lazotea"
+            ]
+          },
+          {
+            "theme": "Panamá Viejo & Casco Food Night",
+            "activities": [
+              {
+                "name": "Panamá Viejo archaeological site and museum",
+                "cost": "₹1,260"
+              },
+              {
+                "name": "Arco Chato and Casa Góngora cultural stop"
+              },
+              {
+                "name": "Casco lanes for mola shopping, coffee, and photo stops"
+              },
+              {
+                "name": "Rooftop or courtyard dinner back in Casco Viejo"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tantalo Hotel / Kitchen / Roofbar",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Selina Casco Viejo Panama City",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Fonda Lo Que Hay",
+              "Mahalo Cocina y Jardin",
+              "Casa Casco"
+            ]
+          }
+        ]
+      },
+      "San Blas Islands": {
+        "name": "San Blas Islands",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Bring passport, dry bags, and enough cash in small USD notes; most islands have limited power, no meaningful ATMs, and meals are usually fixed by your lodge.",
+        "days": [
+          {
+            "theme": "Cartí Transfer & First Island Day",
+            "activities": [
+              {
+                "name": "Shared 4x4 from Panama City to Cartí port",
+                "cost": "₹2,100–₹2,940"
+              },
+              {
+                "name": "Guna Yala entry tax and checkpoint fees",
+                "cost": "₹1,848"
+              },
+              {
+                "name": "Lancha transfer to your island lodge",
+                "cost": "₹1,260–₹2,520"
+              },
+              {
+                "name": "Snorkeling around Isla Perro Chico's sunken-boat reef",
+                "cost": "₹420–₹840"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Franklin's Island",
+                "budget": "₹3,500–₹6,000/night incl. meals"
+              },
+              {
+                "name": "Cabañas Narasgandup - Naranjo Chico",
+                "budget": "₹8,500–₹14,000/night incl. meals"
+              }
+            ],
+            "meals": [
+              "Hotel El Porvenir Restaurant",
+              "Banedo Fragata",
+              "Cabañas Narasgandup Restaurant"
+            ]
+          },
+          {
+            "theme": "Island Hopping & Natural Pool",
+            "activities": [
+              {
+                "name": "Boat trip covering Natural Pool, Chichime, and a second snorkel stop",
+                "cost": "₹2,520–₹4,200"
+              },
+              {
+                "name": "Kayak or paddleboard rental if your island offers it",
+                "cost": "₹840–₹1,260"
+              },
+              {
+                "name": "Beach time on a small Guna-run cay with hammocks and coconut palms"
+              },
+              {
+                "name": "Fresh lobster dinner in season",
+                "cost": "₹1,260–₹2,100"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cabañas Tubasenika",
+                "budget": "₹6,000–₹10,500/night incl. meals"
+              },
+              {
+                "name": "Hotel El Porvenir",
+                "budget": "₹7,500–₹12,500/night incl. meals"
+              }
+            ],
+            "meals": [
+              "Hotel El Porvenir Restaurant",
+              "Chichime Isla San Blas",
+              "Cabañas Wailidup Restaurant"
+            ]
+          }
+        ]
+      },
+      "Boquete": {
+        "name": "Boquete",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Boquete is cooler than the coasts, so keep one light layer for early hikes and pre-book coffee tours or private transfers if you arrive from David late in the day.",
+        "days": [
+          {
+            "theme": "Cloud-Forest Trails & Garden Stops",
+            "activities": [
+              {
+                "name": "Pipeline Trail (Sendero Cascada Escondida)",
+                "cost": "₹420"
+              },
+              {
+                "name": "Mi Jardín es Su Jardín",
+                "cost": "Free"
+              },
+              {
+                "name": "Boquete town center, flowers, and river walk"
+              },
+              {
+                "name": "Boquete Brewing Company taproom stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Central Boquete",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Hotel Valle del Rio",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Sugar & Spice Dulces Gourmet",
+              "Big Daddy's Grill",
+              "RetroGusto Restaurant & Bar"
+            ]
+          },
+          {
+            "theme": "Waterfalls & Coffee Estates",
+            "activities": [
+              {
+                "name": "The Lost Waterfalls hike",
+                "cost": "₹840"
+              },
+              {
+                "name": "Finca Lérida coffee tour and tasting",
+                "cost": "₹2,940"
+              },
+              {
+                "name": "Boquete lookout drive or taxi toward Bajo Mono"
+              },
+              {
+                "name": "Local produce and coffee shopping in central Boquete"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "La Casa de la Abuela",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "The Inn at Palo Alto",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "The Rock",
+              "Bistro Boquete",
+              "Boquete Sandwich Shop"
+            ]
+          }
+        ]
+      },
+      "Bocas del Toro": {
+        "name": "Bocas del Toro",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Base yourself in Bocas Town if you want the simplest water-taxi access; carry cash for beaches and boats, and plan around afternoon rain or choppier seas in the wetter months.",
+        "days": [
+          {
+            "theme": "Red Frog Beach & Bocas Town",
+            "activities": [
+              {
+                "name": "Water taxi round trip from Bocas Town to Red Frog Beach",
+                "cost": "₹1,344"
+              },
+              {
+                "name": "Red Frog Beach entry",
+                "cost": "₹420"
+              },
+              {
+                "name": "Bocas Town waterfront and Simón Bolívar Park"
+              },
+              {
+                "name": "Sunset drink or dinner on the Bocas overwater strip"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Gran Hotel Bahia",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel Bocas del Toro",
+                "budget": "₹7,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "El Ultimo Refugio",
+              "La Buga Gastromarket",
+              "Leaf Eaters Cafe"
+            ]
+          },
+          {
+            "theme": "Dolphin Bay, Zapatilla or Starfish Beach Day",
+            "activities": [
+              {
+                "name": "Shared boat tour through Dolphin Bay with reef or mangrove stops",
+                "cost": "₹2,520–₹3,780"
+              },
+              {
+                "name": "Boca del Drago and Starfish Beach transport",
+                "cost": "₹2,184–₹2,688"
+              },
+              {
+                "name": "Optional snorkeling gear rental",
+                "cost": "₹420–₹840"
+              },
+              {
+                "name": "Evening water-taxi hop to Isla Carenero for dinner"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Swan's Cay Hotel",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Hotel Palma Royale",
+                "budget": "₹8,000–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Cafe del Mar",
+              "Pier 19 Restaurant",
+              "Bibi's on the Beach"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Panama City",
+        "to": "Casco Viejo",
+        "method": "Uber, taxi, or metro plus a short cab ride in about 20–30 minutes, depending on traffic",
+        "cost": "₹420–₹840"
+      },
+      {
+        "from": "Casco Viejo",
+        "to": "San Blas Islands",
+        "method": "Pre-booked shared 4x4 from your hotel to Cartí plus lancha transfer to the island; public transport is impractical for this route",
+        "cost": "₹5,200–₹7,300"
+      },
+      {
+        "from": "San Blas Islands",
+        "to": "Boquete",
+        "method": "Return by boat and 4x4 to Panama City, then continue from Albrook bus terminal on the overnight coach to David plus a local bus or taxi up to Boquete",
+        "cost": "₹3,800–₹6,300"
+      },
+      {
+        "from": "Boquete",
+        "to": "Bocas del Toro",
+        "method": "Shared shuttle or local bus to Almirante, then water taxi to Isla Colón; fastest day-flight alternatives are limited and seasonal",
+        "cost": "₹1,700–₹3,000"
+      }
+    ],
+    "extras": [
+      "Dry season from December to April is the cleanest fit for a one-trip loop that combines Miraflores, San Blas boats, Boquete hikes, and Bocas beaches.",
+      "Use cash for San Blas taxes, many water taxis, and smaller island or highland purchases even though cards work well in Panama City and some Bocas hotels.",
+      "Air Panama flights from PAC at Albrook save a lot of time if you need to shortcut the westbound overland legs, especially on the Bocas return.",
+      "If you only have a week, keep Panama City, Casco Viejo, and either San Blas or Bocas as the core and save Boquete for a longer second trip.",
+      "Guna Yala lodges are rustic by design, so bring a power bank, dry bag, reef-safe sun protection, and low expectations on Wi‑Fi or hot water."
+    ],
+    "cityImages": {
+      "Panama City": [
+        "Miraflores Locks Panama Canal",
+        "Biomuseo Panama City",
+        "Cinta Costera Panama City skyline"
+      ],
+      "Casco Viejo": [
+        "Plaza de Francia Casco Viejo Panama",
+        "Cathedral Basilica Casco Viejo Panama",
+        "Paseo de las Bovedas Panama"
+      ],
+      "San Blas Islands": [
+        "Isla Perro Chico San Blas",
+        "Natural Pool San Blas Panama",
+        "El Porvenir Guna Yala"
+      ],
+      "Boquete": [
+        "Lost Waterfalls Boquete Panama",
+        "Finca Lerida Boquete",
+        "Pipeline Trail Boquete"
+      ],
+      "Bocas del Toro": [
+        "Red Frog Beach Bocas del Toro",
+        "Starfish Beach Bocas del Toro",
+        "Bocas Town waterfront Panama"
+      ]
+    }
+  }
+}

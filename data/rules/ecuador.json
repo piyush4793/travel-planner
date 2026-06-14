@@ -1,0 +1,832 @@
+{
+  "name": "Ecuador",
+  "seed": false,
+  "lat": -1.83,
+  "lng": -78.18,
+  "region": "Americas",
+  "bestMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.4L–₹2.4L",
+    "couple": "₹2.6L–₹4.2L",
+    "family4": "₹5.2L–₹7.8L"
+  },
+  "experiences": [
+    "Quito churches & viewpoints",
+    "Otavalo market",
+    "Mindo cloud forest",
+    "Baños waterfalls & swings",
+    "Cuenca old town",
+    "Galápagos wildlife"
+  ],
+  "avoid": [
+    "October–November can bring heavier rain, cloudy mountain views, and muddier road conditions around Mindo and Baños.",
+    "Carnaval, Semana Santa, and July–August school holidays push up Galápagos flights, island rooms, and last-minute day-tour prices quickly.",
+    "Quito and Cuenca both sit high enough for altitude fatigue, so keep your first day light before packing in church circuits or long bus rides."
+  ],
+  "combo": [
+    "Colombia",
+    "Peru"
+  ],
+  "landmark": "Galápagos Islands",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Quito is the easiest international gateway and the most practical buffer city before Galápagos flights, because most island departures still connect through Quito or Guayaquil.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Quito",
+      "lat": -0.1807,
+      "lng": -78.4678,
+      "notes": "High-altitude capital for colonial churches, TelefériQo views, museums, and the easiest jump-off point for both Otavalo day loops and Galápagos flights."
+    },
+    {
+      "name": "Otavalo",
+      "lat": 0.2346,
+      "lng": -78.2625,
+      "notes": "Imbabura market town known for Plaza de Ponchos textiles, nearby Peguche waterfall, and easy access to Cuicocha crater viewpoints."
+    },
+    {
+      "name": "Mindo",
+      "lat": 0.0488,
+      "lng": -78.775,
+      "notes": "Cloud-forest escape for butterfly gardens, hummingbirds, chocolate stops, river tubing, and waterfall hikes without going far from Quito."
+    },
+    {
+      "name": "Baños",
+      "lat": -1.3969,
+      "lng": -78.4229,
+      "notes": "Adventure base below Tungurahua for Ruta de las Cascadas, Pailón del Diablo, hot springs, canyoning, and the famous Casa del Árbol swing."
+    },
+    {
+      "name": "Cuenca",
+      "lat": -2.9001,
+      "lng": -79.0059,
+      "notes": "UNESCO-listed Andean city of blue-domed cathedrals, riverside walks, Panama-hat workshops, and easy side trips to Ingapirca."
+    },
+    {
+      "name": "Galápagos Islands",
+      "lat": -0.9538,
+      "lng": -90.9656,
+      "notes": "Wildlife-heavy island circuit usually based from Puerto Ayora or San Cristóbal, with giant tortoises, lava scenery, snorkelling, and inter-island lanchas."
+    }
+  ],
+  "itinerary": {
+    "sim": "Claro, Movistar, or Tuenti prepago/eSIM usually runs about ₹840–₹1,260 for 10–15GB. Coverage is solid in Quito and Cuenca, but it gets patchier in Mindo, on Baños canyon roads, and on outer Galápagos boat legs, so download offline maps before long transfers.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "LATAM Airlines",
+      "Avianca",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency",
+      "Uber",
+      "inDrive"
+    ],
+    "cityOrder": [
+      "Quito",
+      "Otavalo",
+      "Mindo",
+      "Baños",
+      "Cuenca",
+      "Galápagos Islands"
+    ],
+    "cities": {
+      "Quito": {
+        "name": "Quito",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Stay around Centro Histórico, La Floresta, or La Mariscal, keep arrival day light because Quito sits above 2,800 m, and use Uber or inDrive after dark instead of flagging random taxis.",
+        "days": [
+          {
+            "theme": "Historic Center, Basilica & Jesuit Church",
+            "activities": [
+              {
+                "name": "Walk Plaza Grande, Calle García Moreno, La Ronda, and the Catedral Metropolitana exterior"
+              },
+              {
+                "name": "Basilica del Voto Nacional nave and tower access",
+                "cost": "₹336"
+              },
+              {
+                "name": "Iglesia de la Compañía de Jesús interior",
+                "cost": "₹420"
+              },
+              {
+                "name": "Convento de San Francisco museum complex",
+                "cost": "₹168–₹252"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Casa Montero",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Friends Hotel & Rooftop",
+                "budget": "₹4,000–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Hasta La Vuelta Señor",
+              "Vista Hermosa",
+              "Café Dios No Muere"
+            ]
+          },
+          {
+            "theme": "TelefériQo, Museums & Viewpoints",
+            "activities": [
+              {
+                "name": "TelefériQo round trip up Cruz Loma",
+                "cost": "₹756"
+              },
+              {
+                "name": "Capilla del Hombre",
+                "cost": "₹840"
+              },
+              {
+                "name": "Museo Casa del Alabado",
+                "cost": "₹504"
+              },
+              {
+                "name": "Itchimbía or Parque Metropolitano sunset viewpoint"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ikala Quito Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Hotel David",
+                "budget": "₹3,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Mercado Central",
+              "Rincón La Ronda",
+              "Bandido Brewing"
+            ]
+          },
+          {
+            "theme": "Mitad del Mundo & North Quito Buffer",
+            "activities": [
+              {
+                "name": "Ciudad Mitad del Mundo monument complex",
+                "cost": "₹420"
+              },
+              {
+                "name": "Museo Intiñan",
+                "cost": "₹420"
+              },
+              {
+                "name": "Museo Templo del Sol Pintor Ortega Maila",
+                "cost": "₹420"
+              },
+              {
+                "name": "Optional Panecillo taxi viewpoint stop",
+                "cost": "₹420–₹630"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Holiday Inn Express Quito",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Casa Joaquin Boutique Hotel",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "URKO Cocina Local",
+              "La Briciola",
+              "Chez Jérôme"
+            ]
+          },
+          {
+            "theme": "Free Day for Papallacta, Museums or Flight Buffer",
+            "activities": [
+              {
+                "name": "Keep this day as a weather or altitude buffer before a long bus ride or Galápagos departure"
+              },
+              {
+                "name": "Optional Papallacta hot springs day trip",
+                "cost": "₹2,500–₹5,500"
+              },
+              {
+                "name": "Mercado Artesanal La Mariscal souvenirs and coffee"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ikala Quito Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Friends Hotel & Rooftop",
+                "budget": "₹4,000–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Cafetería Modelo",
+              "Zazu",
+              "Boca del Lobo"
+            ]
+          }
+        ]
+      },
+      "Otavalo": {
+        "name": "Otavalo",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Saturday is the strongest market day, but weekday visits are still worthwhile if you pair Plaza de Ponchos with Peguche or Cuicocha.",
+        "days": [
+          {
+            "theme": "Plaza de Ponchos & Peguche Falls",
+            "activities": [
+              {
+                "name": "Browse Plaza de Ponchos textile market and nearby leather and jewelry lanes"
+              },
+              {
+                "name": "Taxi or short bus hop to Cascada de Peguche",
+                "cost": "₹84–₹168"
+              },
+              {
+                "name": "Condor Park demonstration and rescue center",
+                "cost": "₹378"
+              },
+              {
+                "name": "Light evening around Parque Simón Bolívar and artisan cafés"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Doña Esther",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Hotel Otavalo",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Mi Otavalito",
+              "Balcón de Imbabura",
+              "Café Pachamama"
+            ]
+          },
+          {
+            "theme": "Cuicocha Crater & Workshops",
+            "activities": [
+              {
+                "name": "Bus or taxi to Laguna Cuicocha rim viewpoints",
+                "cost": "₹252–₹840"
+              },
+              {
+                "name": "Cuicocha boat ride when operating",
+                "cost": "₹336"
+              },
+              {
+                "name": "Peguche weaving workshop stop on the return"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Doña Esther",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Las Palmeras Inn",
+                "budget": "₹3,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Sisa",
+              "La Taberna del Arte",
+              "Mi Otavalito"
+            ]
+          }
+        ]
+      },
+      "Mindo": {
+        "name": "Mindo",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Afternoon rain is common even in the better months, so do birding or waterfall loops early and keep a dry bag ready for tubing or tarabita rides.",
+        "days": [
+          {
+            "theme": "Butterflies, Chocolate & Waterfalls",
+            "activities": [
+              {
+                "name": "Mariposario de Mindo butterfly house",
+                "cost": "₹630"
+              },
+              {
+                "name": "Tarabita and Sendero a las Cascadas de Nambillo circuit",
+                "cost": "₹840"
+              },
+              {
+                "name": "El Quetzal chocolate tour",
+                "cost": "₹840"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "La Posada de Mindo",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Cinnamon House",
+                "budget": "₹3,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "El Quetzal de Mindo",
+              "Mishqui Quinde",
+              "The Food Studio"
+            ]
+          },
+          {
+            "theme": "Birding or Tubing Add-On",
+            "activities": [
+              {
+                "name": "Early hummingbird session at Sachatamia Lodge or another cloud-forest reserve",
+                "cost": "₹420–₹840"
+              },
+              {
+                "name": "Mindo river tubing",
+                "cost": "₹1,260–₹1,680"
+              },
+              {
+                "name": "Orquideario de Mindo and coffee stop",
+                "cost": "₹252–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "La Posada de Mindo",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hostería Arasari",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Oasis",
+              "Fuera de Babilonia",
+              "Mishqui Quinde"
+            ]
+          }
+        ]
+      },
+      "Baños": {
+        "name": "Baños",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Baños for active days rather than luxury downtime; the town is compact, but waterfalls and adventure operators spread along the road toward Puyo.",
+        "days": [
+          {
+            "theme": "Ruta de las Cascadas & Hot Springs",
+            "activities": [
+              {
+                "name": "Bike rental or chiva along the Ruta de las Cascadas",
+                "cost": "₹420–₹840"
+              },
+              {
+                "name": "Pailón del Diablo entrance",
+                "cost": "₹168"
+              },
+              {
+                "name": "Manto de la Novia tarabita",
+                "cost": "₹168"
+              },
+              {
+                "name": "Termas de la Virgen night soak",
+                "cost": "₹336"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "La Floresta Hotel",
+                "budget": "₹5,000–₹8,000/night"
+              },
+              {
+                "name": "Selina Baños",
+                "budget": "₹2,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Café Hood",
+              "Casa Hood",
+              "Trattoria Da Carlo"
+            ]
+          },
+          {
+            "theme": "Casa del Árbol & Adventure Sports",
+            "activities": [
+              {
+                "name": "Casa del Árbol entry and Swing at the End of the World",
+                "cost": "₹84"
+              },
+              {
+                "name": "Basilica of Our Lady of the Holy Water and central plaza"
+              },
+              {
+                "name": "Rafting or canyoning half-day",
+                "cost": "₹2,520–₹4,200"
+              },
+              {
+                "name": "Optional zipline or bridge-jump combo",
+                "cost": "₹1,680–₹3,360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "La Floresta Hotel",
+                "budget": "₹5,000–₹8,000/night"
+              },
+              {
+                "name": "Samari Spa Resort",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Aroma & Sabor",
+              "Tiquicia",
+              "Pappardelle Ristorante"
+            ]
+          },
+          {
+            "theme": "Slow Morning or Chimborazo Transfer Buffer",
+            "activities": [
+              {
+                "name": "Keep this day for recovery, café-hopping, or a simple Virgen waterfall viewpoint walk before the Cuenca transfer"
+              },
+              {
+                "name": "Optional massage or thermal spa treatment",
+                "cost": "₹1,260–₹2,940"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "La Floresta Hotel",
+                "budget": "₹5,000–₹8,000/night"
+              },
+              {
+                "name": "Selina Baños",
+                "budget": "₹2,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Honey Coffee & Tea",
+              "Café Hood",
+              "Aroma & Sabor"
+            ]
+          }
+        ]
+      },
+      "Cuenca": {
+        "name": "Cuenca",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Cuenca feels calmer than Quito, so it works well after Baños; stay near Parque Calderón or the Tomebamba river so churches, museums, and dining are all walkable.",
+        "days": [
+          {
+            "theme": "Blue Domes, Museums & Riverside Walks",
+            "activities": [
+              {
+                "name": "Catedral de la Inmaculada Concepción dome or museum access",
+                "cost": "₹168"
+              },
+              {
+                "name": "Old Cathedral Museum (Iglesia del Sagrario)",
+                "cost": "₹168"
+              },
+              {
+                "name": "Museo Pumapungo and archaeological zone",
+                "cost": "Free"
+              },
+              {
+                "name": "Río Tomebamba walk and flower market around Plaza de las Flores"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Victoria",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Mansión Alcázar",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Raymipampa",
+              "Tiesto's",
+              "Negroni"
+            ]
+          },
+          {
+            "theme": "Ingapirca Ruins Day Trip",
+            "activities": [
+              {
+                "name": "Bus or shared transfer from Cuenca toward Ingapirca",
+                "cost": "₹420–₹840"
+              },
+              {
+                "name": "Ingapirca archaeological complex entry",
+                "cost": "₹504"
+              },
+              {
+                "name": "Homero Ortega Panama hat factory or showroom stop on return"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Cruz del Vado",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Hotel Boutique Santa Lucia",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Goza Espresso Bar",
+              "El Mercado",
+              "Jodoco Belgian Bistro"
+            ]
+          },
+          {
+            "theme": "Cajas National Park or Extra Cuenca Day",
+            "activities": [
+              {
+                "name": "Shared trip to Cajas National Park lagoons and trails",
+                "cost": "₹840–₹1,680"
+              },
+              {
+                "name": "Museum of Modern Art or artisan quarter browsing back in town",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Victoria",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Hotel Cruz del Vado",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Dos Sucres",
+              "San Sebas Café",
+              "Goza Espresso Bar"
+            ]
+          }
+        ]
+      },
+      "Galápagos Islands": {
+        "name": "Galápagos Islands",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Base in Puerto Ayora if you want the widest hotel and food choice, carry cash in USD for park and pier fees, and expect rougher water on fast local lanchas between islands.",
+        "days": [
+          {
+            "theme": "Flight to Baltra, Park Fee & Tortuga Bay",
+            "activities": [
+              {
+                "name": "LATAM flight from Quito or Guayaquil to Baltra",
+                "cost": "₹16,000–₹28,000"
+              },
+              {
+                "name": "Galápagos Transit Control Card",
+                "cost": "₹1,680"
+              },
+              {
+                "name": "Galápagos National Park entry",
+                "cost": "₹8,400"
+              },
+              {
+                "name": "Lobito bus, Itabaca Channel ferry, and taxi or bus into Puerto Ayora",
+                "cost": "₹420–₹840"
+              },
+              {
+                "name": "Tortuga Bay beach walk and sunset"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Fiesta",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hostal Seymour",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Il Giardino",
+              "Lo & Lo",
+              "Isla Grill"
+            ]
+          },
+          {
+            "theme": "Santa Cruz Wildlife Day",
+            "activities": [
+              {
+                "name": "Charles Darwin Research Station and giant tortoise breeding center",
+                "cost": "Free"
+              },
+              {
+                "name": "Las Grietas water taxi and access",
+                "cost": "₹420–₹840"
+              },
+              {
+                "name": "El Chato Ranch giant tortoise reserve",
+                "cost": "₹840"
+              },
+              {
+                "name": "Playa de los Alemanes or Garrapatero beach if you want a slower afternoon"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Fiesta",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hotel Ninfa",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "La Garrapata",
+              "1835 Coffee Lab",
+              "The Rock Galapagos"
+            ]
+          },
+          {
+            "theme": "Local Lancha Inter-Island Day",
+            "activities": [
+              {
+                "name": "Fast lancha between Santa Cruz and Isabela or San Cristóbal",
+                "cost": "₹2,520–₹2,940"
+              },
+              {
+                "name": "Tintoreras islet snorkel from Isabela or a simple San Cristóbal bay walk",
+                "cost": "₹3,780–₹5,460"
+              },
+              {
+                "name": "Small pier or water-taxi fees",
+                "cost": "₹84–₹252"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Cally",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Hostal La Gran Tortuga",
+                "budget": "₹4,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "El Descanso del Guía",
+              "Booby Trap",
+              "Los Kioskos"
+            ]
+          },
+          {
+            "theme": "Extra Boat Tour or Snorkel Buffer",
+            "activities": [
+              {
+                "name": "North Seymour, Bartolomé, or similar full-day boat excursion",
+                "cost": "₹12,600–₹16,800"
+              },
+              {
+                "name": "Mask, fins, or wetsuit rental top-up",
+                "cost": "₹840–₹1,260"
+              },
+              {
+                "name": "Keep this day flexible because marine conditions and passenger checks can reshuffle island departures"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Fiesta",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Hostal Seymour",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Isla Grill",
+              "La Garrapata",
+              "Il Giardino"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Quito",
+        "to": "Otavalo",
+        "method": "Cooperativa Otavalo or similar frequent bus from Terminal Carcelén, roughly 2–2.5 hrs depending on traffic",
+        "cost": "₹252–₹420"
+      },
+      {
+        "from": "Otavalo",
+        "to": "Mindo",
+        "method": "Usually a two-leg route via Quito using an Otavalo cooperative bus back south and Flor del Valle onward to Mindo; private transfer is faster but much pricier",
+        "cost": "₹504–₹924"
+      },
+      {
+        "from": "Mindo",
+        "to": "Baños",
+        "method": "Bus back via Quito or Santo Domingo and onward through Ambato; long but workable if you leave early",
+        "cost": "₹1,008–₹1,512"
+      },
+      {
+        "from": "Baños",
+        "to": "Cuenca",
+        "method": "Cooperative bus via Ambato or Riobamba, typically 6–7 hrs including one terminal change",
+        "cost": "₹756–₹1,260"
+      },
+      {
+        "from": "Cuenca",
+        "to": "Galápagos Islands",
+        "method": "LATAM flight via Quito or Guayaquil into Baltra; build in buffer time because same-day island check-in rules are strict",
+        "cost": "₹18,000–₹32,000"
+      }
+    ],
+    "extras": [
+      "June–September is the cleanest highland weather window for Quito, Otavalo, Cuenca, and Baños, while December–May is warmer and greener for the coast and Galápagos sea life.",
+      "Carry some USD cash for the Galápagos park fee, transit control card, water taxis, and smaller island restaurants because cards do not work everywhere.",
+      "Quito and Cuenca both sit at altitude, so avoid stacking your heaviest church-and-stairs day or a same-night overnight bus immediately after landing.",
+      "Otavalo market is strongest on Saturdays, but even weekday visits are worth it if you pair them with Peguche or Cuicocha.",
+      "Fast lanchas between islands can be rough, so pack motion-sickness tablets and keep valuables in a waterproof pouch."
+    ],
+    "cityImages": {
+      "Quito": [
+        "Basilica del Voto Nacional Quito",
+        "Mitad del Mundo Quito",
+        "TeleferiQo Quito"
+      ],
+      "Otavalo": [
+        "Plaza de Ponchos Otavalo",
+        "Peguche Waterfall Ecuador",
+        "Cuicocha Ecuador"
+      ],
+      "Mindo": [
+        "Mariposario de Mindo",
+        "Nambillo Waterfalls Mindo",
+        "Mindo Cloud Forest"
+      ],
+      "Baños": [
+        "Pailon del Diablo Banos Ecuador",
+        "Casa del Arbol Banos",
+        "Basilica of Our Lady of the Holy Water Banos"
+      ],
+      "Cuenca": [
+        "New Cathedral Cuenca Ecuador",
+        "Pumapungo Museum Cuenca",
+        "Tomebamba River Cuenca"
+      ],
+      "Galápagos Islands": [
+        "Tortuga Bay Galapagos",
+        "Charles Darwin Research Station",
+        "Puerto Ayora Galapagos"
+      ]
+    }
+  }
+}

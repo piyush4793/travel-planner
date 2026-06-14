@@ -1,0 +1,634 @@
+{
+  "name": "Guatemala",
+  "seed": false,
+  "lat": 15.78,
+  "lng": -90.23,
+  "region": "Americas",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹85,000–₹1.45L",
+    "couple": "₹1.55L–₹2.55L",
+    "family4": "₹3.1L–₹4.9L"
+  },
+  "experiences": [
+    "Antigua colonial streets",
+    "Lake Atitlán villages",
+    "Tikal Maya ruins",
+    "Semuc Champey limestone pools",
+    "Chichicastenango market",
+    "Petén jungle sunsets"
+  ],
+  "avoid": [
+    "May–October brings heavier rain, muddier trails, and occasional landslide delays on the Cobán–Lanquín and western highland roads.",
+    "Semana Santa makes Antigua especially crowded and expensive, with hotels and shuttles selling out far ahead.",
+    "Night transfers are less comfortable on mountain roads, and chicken buses are best kept for short daytime hops with light luggage only."
+  ],
+  "combo": [
+    "Belize",
+    "Mexico",
+    "El Salvador"
+  ],
+  "landmark": "Tikal National Park",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Guatemala City is the easiest arrival-and-departure hub, while a TAG flight to Flores saves a full day if Tikal is a must-do.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Guatemala City",
+      "lat": 14.6349,
+      "lng": -90.5069,
+      "notes": "Capital base for museums, markets, airport access, and the quickest launch point toward Antigua or a TAG hop north to Petén."
+    },
+    {
+      "name": "Antigua",
+      "lat": 14.5586,
+      "lng": -90.7295,
+      "notes": "Best colonial stop for convent ruins, café terraces, volcano views, and easy shuttle links across the highlands."
+    },
+    {
+      "name": "Chichicastenango",
+      "lat": 14.9433,
+      "lng": -91.1116,
+      "notes": "Highland market town famous for Thursday and Sunday trading days, Santo Tomás rituals, and K’iche’ culture."
+    },
+    {
+      "name": "Lake Atitlán",
+      "lat": 14.6907,
+      "lng": -91.2024,
+      "notes": "Panajachel gateway for lanchas to artisan villages, volcano-ringed lake views, kayaking, and relaxed café days."
+    },
+    {
+      "name": "Semuc Champey",
+      "lat": 15.5335,
+      "lng": -89.955,
+      "notes": "Lanquín-side jungle stop for turquoise limestone pools, cave circuits, tubing, and one of Guatemala’s most photogenic miradors."
+    },
+    {
+      "name": "Tikal",
+      "lat": 17.2216,
+      "lng": -89.6237,
+      "notes": "Petén highlight for towering Maya temples, howler-monkey-filled jungle walks, and easy Flores overnights before dawn entries."
+    }
+  ],
+  "itinerary": {
+    "sim": "Tigo or Claro prepago/eSIM is the easiest local option; expect roughly ₹1,080–₹1,620 for about 8–12GB. Coverage is solid in Guatemala City, Antigua, and Panajachel, but weaker around Lanquín and inside Tikal, so download offline maps before the long transfers.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "TAG Airlines",
+      "Litegua",
+      "Pullmantur",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency",
+      "Uber",
+      "inDrive"
+    ],
+    "cityOrder": [
+      "Guatemala City",
+      "Antigua",
+      "Chichicastenango",
+      "Lake Atitlán",
+      "Semuc Champey",
+      "Tikal"
+    ],
+    "cities": {
+      "Guatemala City": {
+        "name": "Guatemala City",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Use Zona 10, Zona 4, or airport-adjacent stays for the easiest first night, then move on early to Antigua or Flores before traffic builds.",
+        "days": [
+          {
+            "theme": "Historic Center, Palacio & Markets",
+            "activities": [
+              {
+                "name": "National Palace of Culture guided visit",
+                "cost": "₹432 pp"
+              },
+              {
+                "name": "Plaza de la Constitución, Metropolitan Cathedral exterior, and Portal del Comercio walk"
+              },
+              {
+                "name": "Mercado Central snack and handicraft circuit"
+              },
+              {
+                "name": "Mapa en Relieve de Guatemala",
+                "cost": "₹270 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tequila Sunrise Hostel",
+                "budget": "₹1,600–₹3,200/night"
+              },
+              {
+                "name": "Hotel Biltmore Guatemala",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "San Martín",
+              "Mercado 24",
+              "Flor de Lis"
+            ]
+          },
+          {
+            "theme": "Museums, Civic Core & Cayalá",
+            "activities": [
+              {
+                "name": "Museo Ixchel del Traje Indígena",
+                "cost": "₹540 pp"
+              },
+              {
+                "name": "Museo Popol Vuh",
+                "cost": "₹486 pp"
+              },
+              {
+                "name": "Kaminaljuyú archaeological park",
+                "cost": "Free"
+              },
+              {
+                "name": "Paseo Cayalá evening stroll"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hostal Guatefriends",
+                "budget": "₹2,000–₹3,800/night"
+              },
+              {
+                "name": "Barceló Guatemala City",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Tamarindos",
+              "Los Cebollines",
+              "La Cocina de la Señora Pu"
+            ]
+          }
+        ]
+      },
+      "Antigua": {
+        "name": "Antigua",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay inside the old town if possible; most highlights are walkable, and dawn or evening is when Antigua feels best.",
+        "days": [
+          {
+            "theme": "Arches, Convents & Sunset Viewpoints",
+            "activities": [
+              {
+                "name": "Santa Catalina Arch and Calle del Arco photo walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Convento de las Capuchinas",
+                "cost": "₹432 pp"
+              },
+              {
+                "name": "Iglesia de La Merced and cloister courtyard",
+                "cost": "Free"
+              },
+              {
+                "name": "Cerro de la Cruz viewpoint at golden hour",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Selina Antigua",
+                "budget": "₹2,500–₹4,500/night"
+              },
+              {
+                "name": "Hotel Mesón del Valle",
+                "budget": "₹5,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Café Condesa",
+              "Rincón Típico",
+              "Hector's Bistro"
+            ]
+          },
+          {
+            "theme": "Ruins, Museums & Slow Café Day",
+            "activities": [
+              {
+                "name": "Convento Santa Clara",
+                "cost": "₹432 pp"
+              },
+              {
+                "name": "Ruinas de San Francisco",
+                "cost": "₹216 pp"
+              },
+              {
+                "name": "Casa Santo Domingo museum gardens",
+                "cost": "₹432 pp"
+              },
+              {
+                "name": "Nim Po't craft market browsing"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Posada Don Valentino",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Hotel Casa Antigua",
+                "budget": "₹7,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "La Fonda de la Calle Real",
+              "Fridas Antigua",
+              "Artista de Café"
+            ]
+          }
+        ]
+      },
+      "Chichicastenango": {
+        "name": "Chichicastenango",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Plan this stop for Thursday or Sunday; outside market days the town is quieter and works better as a short cultural break between Antigua and Atitlán.",
+        "days": [
+          {
+            "theme": "Market Day, Santo Tomás & Highland Rituals",
+            "activities": [
+              {
+                "name": "Chichicastenango market through Plaza Central and surrounding alleys",
+                "cost": "Free"
+              },
+              {
+                "name": "Santo Tomás Church incense-and-ritual visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Pascual Abaj hill shrine walk",
+                "cost": "₹108–₹216 pp"
+              },
+              {
+                "name": "Cementerio de Chichicastenango hilltop viewpoints",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Museo Mayan Inn",
+                "budget": "₹5,000–₹8,000/night"
+              },
+              {
+                "name": "Hotel Chalet",
+                "budget": "₹3,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurante Santo Tomás",
+              "Mayan Inn Restaurant",
+              "Café La Estación"
+            ]
+          }
+        ]
+      },
+      "Lake Atitlán": {
+        "name": "Lake Atitlán",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Panajachel is the easiest logistics base, while public lanchas let you sample San Juan, San Pedro, Santa Cruz, and other villages without switching hotels.",
+        "days": [
+          {
+            "theme": "Panajachel, Nature Reserve & Lakefront",
+            "activities": [
+              {
+                "name": "Reserva Natural Atitlán hanging bridges and butterfly enclosure",
+                "cost": "₹756 pp"
+              },
+              {
+                "name": "Panajachel lakefront and Calle Santander stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Public lancha round trip to Santa Cruz La Laguna or San Marcos",
+                "cost": "₹540–₹756 pp"
+              },
+              {
+                "name": "Hotel Atitlán gardens or shoreline sunset drink"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Utz Jay",
+                "budget": "₹3,000–₹5,000/night"
+              },
+              {
+                "name": "Posada de Don Rodrigo Panajachel",
+                "budget": "₹6,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Deli Jasmin",
+              "Guajimbo's",
+              "Café Loco"
+            ]
+          },
+          {
+            "theme": "Village Hopping, Kayak & Indian Nose",
+            "activities": [
+              {
+                "name": "Lancha to San Juan La Laguna for murals, weavers, and coffee co-ops",
+                "cost": "₹540–₹756 pp"
+              },
+              {
+                "name": "Kayak rental on the lake",
+                "cost": "₹1,080–₹1,620"
+              },
+              {
+                "name": "Indian Nose sunrise hike by shared tour",
+                "cost": "₹2,160–₹2,700 pp"
+              },
+              {
+                "name": "Evening live-music stop at Circus Bar"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Selina Atitlán",
+                "budget": "₹3,500–₹6,000/night"
+              },
+              {
+                "name": "Mikaso Hotel",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Circus Bar",
+              "Sababa Restaurant",
+              "The Fifth Dimension"
+            ]
+          }
+        ]
+      },
+      "Semuc Champey": {
+        "name": "Semuc Champey",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Sleep in Lanquín or near the park entrance, carry cash, and expect slower jungle transfers even when distances look short on the map.",
+        "days": [
+          {
+            "theme": "Turquoise Pools & Cave Circuit",
+            "activities": [
+              {
+                "name": "Semuc Champey natural monument entry",
+                "cost": "₹540 pp"
+              },
+              {
+                "name": "K'anba caves guided tour with candle sections",
+                "cost": "₹1,080–₹1,620 pp"
+              },
+              {
+                "name": "Cahabón River tubing",
+                "cost": "₹864–₹1,080 pp"
+              },
+              {
+                "name": "Evening riverside hangout in Lanquín"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "El Portal de Semuc Champey",
+                "budget": "₹2,500–₹4,500/night"
+              },
+              {
+                "name": "Greengos Hotel",
+                "budget": "₹3,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Greengos Restaurant",
+              "El Portal de Semuc Restaurant",
+              "Comedor Shalom"
+            ]
+          },
+          {
+            "theme": "Mirador Hike & Lanquín Caves",
+            "activities": [
+              {
+                "name": "Semuc Champey mirador trail",
+                "cost": "Included with park entry"
+              },
+              {
+                "name": "Swimming through the lower pools",
+                "cost": "Included with park entry"
+              },
+              {
+                "name": "Grutas de Lanquín",
+                "cost": "₹324 pp"
+              },
+              {
+                "name": "Jeep transfer between Lanquín and the park",
+                "cost": "₹216–₹324 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "El Retiro Lodge",
+                "budget": "₹3,000–₹5,000/night"
+              },
+              {
+                "name": "Mountain Nest",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Zephyr Lodge Restaurant",
+              "Restaurante Tikal Lanquín",
+              "Comedor Shalom"
+            ]
+          }
+        ]
+      },
+      "Tikal": {
+        "name": "Tikal",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Most travelers sleep in Flores or El Remate, then leave before dawn for cooler ruins and the best wildlife activity inside the park.",
+        "days": [
+          {
+            "theme": "Tikal Main Circuit & Temple Views",
+            "activities": [
+              {
+                "name": "Tikal National Park general entrance",
+                "cost": "₹1,620 pp"
+              },
+              {
+                "name": "Temple IV, Gran Plaza, and Lost World complex",
+                "cost": "Included with park entry"
+              },
+              {
+                "name": "Sylvanus G. Morley Museum at Tikal",
+                "cost": "₹324 pp"
+              },
+              {
+                "name": "Guided sunrise or wildlife-focused early entry add-on",
+                "cost": "₹1,080 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Los Amigos Hostel",
+                "budget": "₹1,500–₹3,000/night"
+              },
+              {
+                "name": "Hotel Casona de la Isla",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Terrazzo Ristorante & Bar",
+              "Maple & Tocino",
+              "La Casa de Enrico"
+            ]
+          },
+          {
+            "theme": "Flores Waterfront & Petén Buffer Day",
+            "activities": [
+              {
+                "name": "Flores island boardwalk, cathedral, and lakeside miradores",
+                "cost": "Free"
+              },
+              {
+                "name": "ARCAS wildlife rescue center in El Remate",
+                "cost": "₹324–₹540 pp"
+              },
+              {
+                "name": "Jorge's Rope Swing on Lake Petén Itzá",
+                "cost": "₹108–₹216 pp"
+              },
+              {
+                "name": "TAG flight or overnight coach prep back to Guatemala City"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Green World Hotel",
+                "budget": "₹4,000–₹6,500/night"
+              },
+              {
+                "name": "Hotel Casa Amelia",
+                "budget": "₹5,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "La Villa del Chef",
+              "Sky Bar Flores",
+              "Auntie's"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Guatemala City",
+        "to": "Antigua",
+        "method": "Shared shuttle or Uber from La Aurora / Zona 10; chicken buses work from the city if you are traveling very light",
+        "cost": "₹1,080–₹1,620 pp"
+      },
+      {
+        "from": "Antigua",
+        "to": "Chichicastenango",
+        "method": "Tourist shuttle on market days, or chicken bus via Los Encuentros for the budget route",
+        "cost": "₹540–₹1,620 pp"
+      },
+      {
+        "from": "Chichicastenango",
+        "to": "Lake Atitlán",
+        "method": "Chicken bus or shared shuttle down to Panajachel via Sololá",
+        "cost": "₹430–₹650 pp"
+      },
+      {
+        "from": "Lake Atitlán",
+        "to": "Semuc Champey",
+        "method": "Shared shuttle via Cobán, or return toward Guatemala City then continue by Litegua coach plus Lanquín pickup if you want a more broken-up journey",
+        "cost": "₹3,200–₹4,900 pp"
+      },
+      {
+        "from": "Semuc Champey",
+        "to": "Tikal",
+        "method": "Shared shuttle to Flores, or Lanquín/Cobán transfer plus overnight coach toward Petén",
+        "cost": "₹3,500–₹4,900 pp"
+      },
+      {
+        "from": "Tikal",
+        "to": "Guatemala City",
+        "method": "TAG Airlines flight from Flores for speed, with Litegua or Pullmantur overnight buses the cheaper fallback",
+        "cost": "₹2,700–₹13,500 pp"
+      }
+    ],
+    "extras": [
+      "Dry season from November to April is the sweet spot; February and March usually have the clearest mornings for Antigua viewpoints, Atitlán sunrises, and Tikal wildlife walks.",
+      "Keep small bills for chicken buses, public lanchas on Lake Atitlán, church donations, and Lanquín jeep rides because card acceptance drops fast outside the capital and Antigua.",
+      "Book TAG flights and high-season Antigua stays early, especially around Christmas, New Year, and Semana Santa.",
+      "If you skip the Flores flight, Litegua and Pullmantur overnight buses save a hotel night, but bring a light layer because the air-conditioning can feel cold.",
+      "Chichicastenango is most rewarding on Thursday and Sunday market days; on other days you may prefer adding that time to Antigua or Lake Atitlán instead."
+    ],
+    "cityImages": {
+      "Guatemala City": [
+        "National Palace of Culture Guatemala City",
+        "Paseo Cayala Guatemala",
+        "Mapa en Relieve Guatemala City"
+      ],
+      "Antigua": [
+        "Santa Catalina Arch Antigua Guatemala",
+        "Convento de las Capuchinas Antigua Guatemala",
+        "Cerro de la Cruz Antigua Guatemala"
+      ],
+      "Chichicastenango": [
+        "Chichicastenango market Guatemala",
+        "Santo Tomas Church Chichicastenango",
+        "Chichicastenango cemetery Guatemala"
+      ],
+      "Lake Atitlán": [
+        "Lake Atitlan Panajachel waterfront",
+        "San Juan La Laguna murals",
+        "Reserva Natural Atitlan"
+      ],
+      "Semuc Champey": [
+        "Semuc Champey pools Guatemala",
+        "Semuc Champey mirador",
+        "Grutas de Lanquin"
+      ],
+      "Tikal": [
+        "Temple IV Tikal",
+        "Tikal Grand Plaza Guatemala",
+        "Flores Island Peten"
+      ]
+    }
+  }
+}

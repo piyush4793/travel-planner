@@ -1,0 +1,595 @@
+{
+  "name": "Belize",
+  "seed": false,
+  "lat": 17.19,
+  "lng": -88.5,
+  "region": "Americas",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1.25L–₹2.05L",
+    "couple": "₹2.25L–₹3.7L",
+    "family4": "₹4.8L–₹7.1L"
+  },
+  "experiences": [
+    "Reef Snorkeling",
+    "Maya Ruins",
+    "Caves",
+    "Island Time",
+    "Wildlife",
+    "Beach Towns"
+  ],
+  "avoid": [
+    "June–October brings the wettest weather, rougher seas, and the highest hurricane-disruption risk for cayes and reef trips.",
+    "Christmas, New Year, and Easter weeks book out Belize's small hotels fast and push island rates sharply higher.",
+    "September long weekends and Lobsterfest-style event dates can make Caye Caulker and Placencia pricier and busier than usual."
+  ],
+  "combo": [
+    "Guatemala",
+    "Mexico",
+    "Honduras"
+  ],
+  "landmark": "Great Blue Hole",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 8 days, most travelers skip Belize City after arrival and focus on San Ignacio plus one beach base such as Caye Caulker or Placencia.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Belize City",
+      "lat": 17.5046,
+      "lng": -88.1962,
+      "notes": "Main arrival hub for museums, historic riverfront landmarks, water-taxi terminals, and quick positioning nights before heading inland or to the islands."
+    },
+    {
+      "name": "San Ignacio",
+      "lat": 17.1561,
+      "lng": -89.0703,
+      "notes": "Best inland base for ATM Cave, Xunantunich, Cahal Pech, jungle lodges, and the Guatemala border run to Tikal."
+    },
+    {
+      "name": "Caye Caulker",
+      "lat": 17.7369,
+      "lng": -88.0294,
+      "notes": "Laid-back car-free island for Hol Chan, Shark Ray Alley, Blue Hole snorkel runs, and classic go-slow Caribbean evenings."
+    },
+    {
+      "name": "Placencia",
+      "lat": 16.5142,
+      "lng": -88.3665,
+      "notes": "Long sandy peninsula base for reef outings, easy beach days, and a smoother south-Belize finish than busier northern islands."
+    },
+    {
+      "name": "Tikal Day Trip",
+      "lat": 17.2216,
+      "lng": -89.6237,
+      "notes": "Cross-border Guatemala day trip from San Ignacio for one of the Maya world's greatest archaeological sites."
+    }
+  ],
+  "itinerary": {
+    "sim": "SMART Belize prepaid SIMs or eSIM top-ups are the easiest option on arrival; budget roughly ₹1,700–₹2,500 for a short-stay data pack and download offline maps before boat transfers.",
+    "apps": [
+      "Google Maps",
+      "Maps.me",
+      "WhatsApp",
+      "Tropic Air",
+      "San Pedro Belize Express",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Belize City",
+      "San Ignacio",
+      "Tikal Day Trip",
+      "Caye Caulker",
+      "Placencia"
+    ],
+    "cities": {
+      "Belize City": {
+        "name": "Belize City",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Use Belize City mainly as an arrival or departure buffer; the country's richest sightseeing sits in San Ignacio and on the cayes.",
+        "days": [
+          {
+            "theme": "Museum of Belize, Swing Bridge & Old City Landmarks",
+            "activities": [
+              {
+                "name": "Museum of Belize",
+                "cost": "₹420 pp"
+              },
+              {
+                "name": "Swing Bridge, House of Culture area and Regent Street walk",
+                "cost": "Free"
+              },
+              {
+                "name": "St. John's Cathedral and Yarborough Green",
+                "cost": "Free"
+              },
+              {
+                "name": "Baron Bliss Lighthouse and Belize Sign Monument waterfront stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Easy Inn Hotel",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Golden Bay Belize Hotel",
+                "budget": "₹9,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Nerie's II",
+              "Bird's Isle Restaurant",
+              "Celebrity Restaurant & Bar"
+            ]
+          },
+          {
+            "theme": "Altun Ha Day Trip or Easy Departure-Day Add-ons",
+            "activities": [
+              {
+                "name": "Altun Ha archaeological reserve day trip from Belize City",
+                "cost": "₹1,050 pp"
+              },
+              {
+                "name": "Belize River Museum-side coffee stop and souvenir browsing"
+              },
+              {
+                "name": "Belize Tourism Village before a water-taxi or airport transfer"
+              },
+              {
+                "name": "Old Belize grounds and seaside sunset",
+                "cost": "₹1,260 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Easy Inn Hotel",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "The Red Hut Inn",
+                "budget": "₹4,000–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Marva's Restaurant",
+              "The Smoky Mermaid",
+              "Nerie's II"
+            ]
+          }
+        ]
+      },
+      "San Ignacio": {
+        "name": "San Ignacio",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "ATM Cave Adventure Day",
+            "activities": [
+              {
+                "name": "Actun Tunichil Muknal (ATM) Cave full-day guided tour",
+                "cost": "₹12,180 pp",
+                "tip": "Licensed operators such as Pacz Tours price this as an all-in day including guide, gear, transport, park fee, and lunch."
+              },
+              {
+                "name": "Tapir Mountain Nature Reserve drive and trail approach"
+              },
+              {
+                "name": "Evening cool-down at the Macal River riverside bars"
+              },
+              {
+                "name": "San Ignacio town market snack stop before pickup",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Venus Hotel",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Midas Belize",
+                "budget": "₹7,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Ko-Ox Han Nah",
+              "Crave House of Flavour",
+              "The Guava Limb Café"
+            ]
+          },
+          {
+            "theme": "Xunantunich, Cahal Pech & Iguana Conservation",
+            "activities": [
+              {
+                "name": "Xunantunich Archaeological Reserve and hand-cranked ferry crossing",
+                "cost": "₹1,050 pp",
+                "tip": "Current nonresident entrance is about US$12.50, paid at the site or online."
+              },
+              {
+                "name": "Cahal Pech Maya Ruins",
+                "cost": "₹840 pp"
+              },
+              {
+                "name": "Green Iguana Conservation Project at San Ignacio Resort Hotel",
+                "cost": "₹1,260 pp"
+              },
+              {
+                "name": "Hawkesworth Bridge sunset walk and downtown cafes",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Venus Hotel",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Cahal Pech Village Resort",
+                "budget": "₹9,000–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "The Burns Avenue Bakery",
+              "The Guava Limb Café",
+              "Hode's Place"
+            ]
+          }
+        ]
+      },
+      "Tikal Day Trip": {
+        "name": "Tikal Day Trip",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "This is a pre-dawn guided border run from San Ignacio into Guatemala; carry passport, some cash, and expect a very long but rewarding day.",
+        "days": [
+          {
+            "theme": "Cross-Border Tikal Ruins Marathon",
+            "activities": [
+              {
+                "name": "Guided San Ignacio to Tikal day trip transport and border logistics",
+                "cost": "₹6,500–₹8,500 pp"
+              },
+              {
+                "name": "Tikal National Park entrance",
+                "cost": "₹1,650 pp"
+              },
+              {
+                "name": "Great Plaza, Temple I, Temple II and Lost World circuit"
+              },
+              {
+                "name": "Temple IV canopy views if time and heat allow"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Venus Hotel",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Midas Belize",
+                "budget": "₹7,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Pop's Restaurant",
+              "Tikal Inn Restaurant",
+              "Crave House of Flavour"
+            ]
+          }
+        ]
+      },
+      "Caye Caulker": {
+        "name": "Caye Caulker",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "The Split, Lazy Lizard & Go-Slow Island Day",
+            "activities": [
+              {
+                "name": "The Split swimming and Lazy Lizard dock day",
+                "cost": "Free"
+              },
+              {
+                "name": "Tarpon feeding near the main dock",
+                "cost": "₹210 pp"
+              },
+              {
+                "name": "Caye Caulker village lane walk and artisan browsing"
+              },
+              {
+                "name": "Sunset paddle or north-island bike ride",
+                "cost": "₹840 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tropical Paradise Hotel",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Weezie's Ocean Front Hotel and Garden Cottages",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Errolyn's House of Fry Jacks",
+              "Ice and Beans Café",
+              "Reina's"
+            ]
+          },
+          {
+            "theme": "Hol Chan & Shark Ray Alley Snorkel Day",
+            "activities": [
+              {
+                "name": "Hol Chan Marine Reserve and Shark Ray Alley full-day snorkel",
+                "cost": "₹10,160 pp",
+                "tip": "A current full-day operator benchmark is about US$105 plus a US$16 marine park fee, including gear and boat transport."
+              },
+              {
+                "name": "Coral Garden and seagrass stops off Ambergris Caye"
+              },
+              {
+                "name": "Beach break or post-snorkel rum punch back on Caye Caulker"
+              },
+              {
+                "name": "Evening stroll along Front Street",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tropical Paradise Hotel",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Island Magic Beach Resort",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Wish Willy Bar & Grill",
+              "Maggie's Sunset Kitchen",
+              "Namaste Café"
+            ]
+          },
+          {
+            "theme": "Blue Hole Snorkel Expedition",
+            "activities": [
+              {
+                "name": "Blue Hole snorkel trip with Blue Wave Divers",
+                "cost": "₹14,700 pp",
+                "tip": "Blue Wave Divers currently lists US$175 for snorkelers, usually with breakfast, lunch, gear, and park fee included."
+              },
+              {
+                "name": "Half Moon Caye red-footed booby stop"
+              },
+              {
+                "name": "Long Caye Aquarium snorkel"
+              },
+              {
+                "name": "Very early 5:30–6:00am check-in and full-day open-sea boat run"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tropical Paradise Hotel",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Weezie's Ocean Front Hotel and Garden Cottages",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Chef Kareem's UnBelizeable Lunch",
+              "Pasta per Caso",
+              "Suggestion Gourmet"
+            ]
+          }
+        ]
+      },
+      "Placencia": {
+        "name": "Placencia",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Placencia Sidewalk, Beach Time & Creole Food",
+            "activities": [
+              {
+                "name": "Placencia Sidewalk and village pier stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Placencia Beach swim and low-key kayak rental",
+                "cost": "₹840 pp"
+              },
+              {
+                "name": "Placencia Municipal Pier sunset"
+              },
+              {
+                "name": "Barefoot beachfront bars and evening music circuit"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Serenade Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Alan's Paradise Hotel",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Wendy's Creole Restaurant & Bar",
+              "Omar's Creole Grub",
+              "Barefoot Bar"
+            ]
+          },
+          {
+            "theme": "Belize Barrier Reef Snorkel from Placencia",
+            "activities": [
+              {
+                "name": "Laughing Bird Caye or Silk Cayes full-day Belize Barrier Reef snorkel",
+                "cost": "₹9,240 pp",
+                "tip": "Go Sea Tours currently lists US$110 including gear, lunch, park fee, taxes, and hotel pickup."
+              },
+              {
+                "name": "Patch reef, turtle, and eagle-ray snorkel stops"
+              },
+              {
+                "name": "Picnic lunch on a caye"
+              },
+              {
+                "name": "Return boat ride along the peninsula before sunset"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Serenade Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Brisa Oceano Resort",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Rumfish y Vino",
+              "The Shak",
+              "Muna Rooftop"
+            ]
+          },
+          {
+            "theme": "Maya Beach Chill or Wildlife Add-on Day",
+            "activities": [
+              {
+                "name": "Maya Beach craft shops and beach-hopping",
+                "cost": "Free"
+              },
+              {
+                "name": "Monkey River wildlife tour",
+                "cost": "₹7,500 pp"
+              },
+              {
+                "name": "Cockscomb Basin trail add-on from Placencia",
+                "cost": "₹1,260 pp"
+              },
+              {
+                "name": "Gelato and final evening on the main sidewalk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Serenade Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Brisa Oceano Resort",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Above Grounds Coffee",
+              "Dawn's Grill",
+              "Tipsy Tuna"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Belize City",
+        "to": "San Ignacio",
+        "method": "Westbound public express bus from Belize City bus terminal (about 2h30m)",
+        "cost": "₹600 pp"
+      },
+      {
+        "from": "San Ignacio",
+        "to": "Tikal Day Trip",
+        "method": "Guided cross-border shuttle via Benque Viejo and Melchor de Mencos (3h–3h30m each way)",
+        "cost": "₹6,500–₹8,500 pp"
+      },
+      {
+        "from": "San Ignacio",
+        "to": "Caye Caulker",
+        "method": "Bus or shuttle back to Belize City plus San Pedro Belize Express water taxi to Caye Caulker (4.5–5.5h total)",
+        "cost": "₹1,900–₹2,400 pp"
+      },
+      {
+        "from": "Caye Caulker",
+        "to": "Placencia",
+        "method": "Water taxi to Belize City plus James Bus Line southbound service toward Placencia/Independence (6–7h total)",
+        "cost": "₹2,350 pp"
+      },
+      {
+        "from": "Placencia",
+        "to": "Belize City",
+        "method": "Tropic Air domestic hop from Placencia to Belize City Municipal or Philip S. W. Goldson (about 35m)",
+        "cost": "₹12,180 pp"
+      }
+    ],
+    "extras": [
+      "Book ATM Cave at least a few days ahead — guide ratios are controlled and the best San Ignacio operators can sell out in dry season.",
+      "Carry passport plus a little cash for the Tikal day trip: border logistics, Guatemala-side snacks, and some park-area purchases are smoother with cash on hand.",
+      "Belize water taxis can get choppy in windier weather, so pack a dry bag and avoid scheduling same-hour domestic flights after island transfers.",
+      "James Bus Line is most useful for the southbound Placencia leg; westbound San Ignacio runs are usually handled by other public bus companies from Belize City.",
+      "Tropic Air baggage allowances on domestic sectors are tighter than on international flights, so pack light if you plan to fly out of Placencia."
+    ],
+    "cityImages": {
+      "Belize City": [
+        "Museum of Belize",
+        "Swing Bridge Belize City",
+        "St. John's Cathedral Belize City"
+      ],
+      "San Ignacio": [
+        "Cahal Pech Belize",
+        "Xunantunich El Castillo",
+        "ATM Cave Belize"
+      ],
+      "Tikal Day Trip": [
+        "Tikal Temple IV",
+        "Tikal Great Plaza",
+        "Tikal Temple I"
+      ],
+      "Caye Caulker": [
+        "The Split Caye Caulker",
+        "Hol Chan Marine Reserve",
+        "Caye Caulker aerial"
+      ],
+      "Placencia": [
+        "Placencia Sidewalk Belize",
+        "Laughing Bird Caye",
+        "Placencia village pier"
+      ]
+    }
+  }
+}

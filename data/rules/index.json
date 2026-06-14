@@ -1685,9 +1685,9 @@
     "lng": -83.75,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 14,
+    "maxDays": 21
   },
   {
     "name": "Panama",
@@ -1745,9 +1745,9 @@
     "lng": -88.5,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 12
   },
   {
     "name": "Barbados",
