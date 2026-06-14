@@ -32,7 +32,14 @@ const ruleModules = import.meta.glob<ConsolidatedCountry>(
 const cache = new Map<string, ConsolidatedCountry | null>();
 
 function fileKey(name: string): string {
-  return `../../data/rules/${name.toLowerCase().replace(/\s+/g, "-")}.json`;
+  const slug = name
+    .trim()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return `../../data/rules/${slug}.json`;
 }
 
 /** Load full consolidated country data on demand */
