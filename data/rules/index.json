@@ -5,9 +5,9 @@
     "lng": 138.25,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "South Korea",
@@ -15,9 +15,9 @@
     "lng": 127.77,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "China",
@@ -25,9 +25,9 @@
     "lng": 104.2,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Thailand",
@@ -35,9 +35,9 @@
     "lng": 100.99,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Malaysia",
@@ -45,9 +45,9 @@
     "lng": 101.98,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Singapore",
@@ -55,9 +55,9 @@
     "lng": 103.82,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Cambodia",
@@ -65,9 +65,9 @@
     "lng": 104.99,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Laos",
@@ -75,9 +75,9 @@
     "lng": 102.5,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Vietnam",
@@ -95,9 +95,9 @@
     "lng": 84.12,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Bhutan",
@@ -105,9 +105,9 @@
     "lng": 90.43,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Indonesia",
@@ -115,9 +115,9 @@
     "lng": 113.92,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Philippines",
@@ -125,9 +125,9 @@
     "lng": 121.77,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Maldives",
@@ -135,9 +135,9 @@
     "lng": 73.22,
     "region": "Asia",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "India",
@@ -305,9 +305,9 @@
     "lng": 21.82,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Iceland",
@@ -315,9 +315,9 @@
     "lng": -19.02,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Georgia",
@@ -325,9 +325,9 @@
     "lng": 43.36,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Russia",
@@ -335,9 +335,9 @@
     "lng": 105.32,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Belarus",
@@ -345,9 +345,9 @@
     "lng": 27.95,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Poland",
@@ -355,9 +355,9 @@
     "lng": 19.15,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Czech Republic",
@@ -365,9 +365,9 @@
     "lng": 15.47,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Hungary",
@@ -375,9 +375,9 @@
     "lng": 19.5,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Romania",
@@ -385,9 +385,9 @@
     "lng": 24.97,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Austria",
@@ -395,9 +395,9 @@
     "lng": 14.55,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Germany",
@@ -405,9 +405,9 @@
     "lng": 10.45,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Switzerland",
@@ -415,9 +415,9 @@
     "lng": 8.23,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "France",
@@ -435,9 +435,9 @@
     "lng": -3.75,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Netherlands",
@@ -445,9 +445,9 @@
     "lng": 5.29,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "UK",
@@ -455,9 +455,9 @@
     "lng": -3.44,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 11,
+    "maxDays": 15
   },
   {
     "name": "Denmark",
@@ -465,9 +465,9 @@
     "lng": 9.5,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 3,
+    "maxDays": 5
   },
   {
     "name": "Norway",
@@ -485,9 +485,9 @@
     "lng": 12.57,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 9
   },
   {
     "name": "Greenland",
@@ -495,9 +495,9 @@
     "lng": -42.6,
     "region": "Europe",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6
   },
   {
     "name": "Portugal",
@@ -805,9 +805,9 @@
     "lng": 30.8,
     "region": "Middle East",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Turkey",
@@ -815,9 +815,9 @@
     "lng": 35.24,
     "region": "Middle East",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "United Arab Emirates",
@@ -825,9 +825,9 @@
     "lng": 53.85,
     "region": "Middle East",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 3,
+    "maxDays": 5
   },
   {
     "name": "Saudi Arabia",
@@ -965,9 +965,9 @@
     "lng": 22.94,
     "region": "Africa",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Morocco",
@@ -1485,9 +1485,9 @@
     "lng": -63.62,
     "region": "Americas",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "United States",
@@ -1495,9 +1495,9 @@
     "lng": -95.71,
     "region": "Americas",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 11
   },
   {
     "name": "Canada",
@@ -1515,9 +1515,9 @@
     "lng": -102.55,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Brazil",
@@ -1525,9 +1525,9 @@
     "lng": -51.93,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Colombia",
@@ -1565,9 +1565,9 @@
     "lng": -78.18,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Bolivia",
@@ -1695,9 +1695,9 @@
     "lng": -80.78,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 7
   },
   {
     "name": "Guatemala",
@@ -1705,9 +1705,9 @@
     "lng": -90.23,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Honduras",
@@ -1835,9 +1835,9 @@
     "lng": 133.78,
     "region": "Oceania",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "New Zealand",
@@ -1845,9 +1845,9 @@
     "lng": 174.89,
     "region": "Oceania",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Fiji",
@@ -1975,8 +1975,8 @@
     "lng": -25,
     "region": "Oceania",
     "inSeed": true,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 3,
+    "maxDays": 5
   }
 ]
