@@ -1,0 +1,347 @@
+{
+  "name": "Brunei",
+  "seed": false,
+  "lat": 4.94,
+  "lng": 114.95,
+  "region": "Asia",
+  "bestMonths": [
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "October",
+    "November",
+    "December",
+    "January"
+  ],
+  "budget": {
+    "solo": "₹55K–₹90K",
+    "couple": "₹1L–₹1.55L",
+    "family4": "₹1.9L–₹2.8L"
+  },
+  "experiences": [
+    "Omar Ali Saifuddien Mosque",
+    "Royal Regalia Museum",
+    "Kampong Ayer water village",
+    "Ulu Temburong National Park canopy walk",
+    "Tutong coast and lake day trip"
+  ],
+  "avoid": [
+    "Peak monsoon stretches from October to January when downpours can disrupt river and park plans",
+    "Midday heat and humidity for mosque walks and canopy climbs — start early",
+    "Friday prayer hours when many museums, eateries, and shops pause or shorten service"
+  ],
+  "combo": [
+    "Malaysia",
+    "Singapore"
+  ],
+  "landmark": "Omar Ali Saifuddien Mosque",
+  "travelStyle": [
+    "touch-and-go",
+    "explorer"
+  ],
+  "stopoverNote": "Brunei works best as a calm 4-day culture-and-rainforest break: stay in Bandar Seri Begawan, add a guided Ulu Temburong day trip, then use a rental car or taxi for Tutong.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Bandar Seri Begawan",
+      "lat": 4.9031,
+      "lng": 114.9398,
+      "bestMonths": [
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Capital base for mosque views, museums, Gadong food stops, and Kampong Ayer water-taxi rides."
+    },
+    {
+      "name": "Temburong District",
+      "lat": 4.7081,
+      "lng": 115.0724,
+      "bestMonths": [
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Rainforest district reached easiest by the Sultan Haji Omar 'Ali Saifuddien Bridge for canopy-walk tours, longboats, and eco-lodges."
+    },
+    {
+      "name": "Tutong",
+      "lat": 4.8028,
+      "lng": 114.6492,
+      "bestMonths": [
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Laid-back district for beach time, Merimbun lake nature, and small-town Bruneian food stops west of the capital."
+    }
+  ],
+  "itinerary": {
+    "sim": "DST, Progresif, or imagine prepaid tourist SIM/eSIM packs usually land around ₹930–₹1,860 for enough data for maps, Dart bookings, WhatsApp, and hotel confirmations.",
+    "apps": [
+      "Google Maps",
+      "Dart",
+      "WhatsApp",
+      "Booking.com",
+      "Klook",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Bandar Seri Begawan",
+      "Temburong District",
+      "Tutong"
+    ],
+    "cities": {
+      "Bandar Seri Begawan": {
+        "name": "Bandar Seri Begawan",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay here for the whole trip if you want the simplest logistics; Kampong Ayer, the museum quarter, and Gadong are all easiest from the capital.",
+        "days": [
+          {
+            "theme": "Iconic mosque views, royal-history museums, and an easy first look at Brunei's compact capital",
+            "activities": [
+              {
+                "name": "Omar Ali Saifuddien Mosque exterior visit and lagoon walk",
+                "cost": "₹0",
+                "tip": "Tourists can usually enter outside prayer times in modest clothing; bring socks because shoes come off."
+              },
+              {
+                "name": "Royal Regalia Museum",
+                "cost": "₹0",
+                "tip": "Phones and bags may need to be checked, so carry only essentials."
+              },
+              {
+                "name": "Brunei History Centre and downtown civic quarter walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tamu Kianggeh riverside market browse",
+                "cost": "₹0–₹620"
+              },
+              {
+                "name": "Sunset photo stop at Yayasan Sultan Haji Hassanal Bolkiah Complex waterfront",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Brunei Hotel",
+                "budget": "₹6,800–₹10,500/night"
+              },
+              {
+                "name": "Radisson Hotel Brunei Darussalam",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Higher Hotel",
+                "budget": "₹4,300–₹6,800/night"
+              }
+            ],
+            "meals": [
+              "Aminah Arif Restaurant",
+              "Soto Pabo",
+              "Tamu Selera"
+            ]
+          },
+          {
+            "theme": "Water-village life, mosque architecture, and a Gadong dinner finish",
+            "activities": [
+              {
+                "name": "Kampong Ayer water village crossing or guided boat loop",
+                "cost": "₹62–₹1,240",
+                "tip": "Short point-to-point water taxis are about ₹62 each way; longer wildlife or heritage loops usually need fare negotiation before boarding."
+              },
+              {
+                "name": "Kampong Ayer Cultural and Tourism Gallery",
+                "cost": "₹0"
+              },
+              {
+                "name": "Jame'Asr Hassanil Bolkiah Mosque",
+                "cost": "₹0"
+              },
+              {
+                "name": "Malay Technology Museum",
+                "cost": "₹0"
+              },
+              {
+                "name": "Gadong Night Market dinner crawl",
+                "cost": "₹248–₹620"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Brunei Hotel",
+                "budget": "₹6,800–₹10,500/night"
+              },
+              {
+                "name": "Radisson Hotel Brunei Darussalam",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "The Rizqun International Hotel",
+                "budget": "₹9,900–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Kaizen Sushi",
+              "Excapade Sushi",
+              "Gadong Night Market"
+            ]
+          }
+        ]
+      },
+      "Temburong District": {
+        "name": "Temburong District",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Treat this as an early-start day trip or lodge night focused on Ulu Temburong; tours bundle longboat transfers and the canopy-walk staircase climb.",
+        "days": [
+          {
+            "theme": "Rainforest longboats, suspension bridges, and Brunei's signature jungle day",
+            "activities": [
+              {
+                "name": "Ulu Temburong National Park canopy walk day tour",
+                "cost": "₹6,820–₹9,300",
+                "tip": "Most operators include park permit, speedboat or longboat transfers, lunch, and a local guide; confirm whether Bangar jetty pickup is bundled."
+              },
+              {
+                "name": "Temuai Longhouse cultural stop (when included in shared tours)",
+                "cost": "₹0–₹930"
+              },
+              {
+                "name": "Bangar riverfront stroll after returning from the park",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sumbiling Eco Village",
+                "budget": "₹6,200–₹10,500/night"
+              },
+              {
+                "name": "StoneVille Hotel",
+                "budget": "₹4,900–₹7,400/night"
+              },
+              {
+                "name": "Freme Rainforest Lodge",
+                "budget": "₹7,400–₹11,200/night"
+              }
+            ],
+            "meals": [
+              "Sumbiling Eco Village Restaurant",
+              "StoneVille Restaurant",
+              "Kawan Restaurant"
+            ]
+          }
+        ]
+      },
+      "Tutong": {
+        "name": "Tutong",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Best handled by rental car or taxi from Bandar because district sights are spread out and bus frequencies are thin outside the town core.",
+        "days": [
+          {
+            "theme": "Quiet beach time, Merimbun lake nature, and a slower Brunei small-town day",
+            "activities": [
+              {
+                "name": "Pantai Seri Kenangan beach walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Tasek Merimbun Heritage Park boardwalks and lookout",
+                "cost": "₹0–₹62"
+              },
+              {
+                "name": "Tutong town mosque and market-area stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sungai Basong Recreational Park",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Seri Kenangan Beach Lodge",
+                "budget": "₹5,000–₹7,800/night"
+              },
+              {
+                "name": "The Lanes Hotel",
+                "budget": "₹6,200–₹9,300/night"
+              }
+            ],
+            "meals": [
+              "Nur Wanita Restaurant",
+              "Kafe Rasa Sayang",
+              "Mona Lisa Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Brunei International Airport",
+        "to": "Bandar Seri Begawan",
+        "method": "Airport taxi or Dart is the simplest; the public Purple bus is cheapest when timings line up but service is limited compared with taxis.",
+        "cost": "₹62–₹1,860"
+      },
+      {
+        "from": "Bandar Seri Begawan",
+        "to": "Kampong Ayer",
+        "method": "Water taxi from the Bandar riverfront jetties is the standard local hop; agree the fare first if you want a longer heritage cruise instead of a simple crossing.",
+        "cost": "₹62–₹1,240"
+      },
+      {
+        "from": "Bandar Seri Begawan",
+        "to": "Temburong District",
+        "method": "Shared tour transfer, taxi, or rental car via the Temburong bridge is now the easiest route; independent bus options exist but are slower and less frequent.",
+        "cost": "₹310–₹4,340"
+      },
+      {
+        "from": "Bandar Seri Begawan",
+        "to": "Tutong",
+        "method": "Public buses are the budget option at about ₹62, while taxis or a self-drive rental car save time for beach and lake stops in the same day.",
+        "cost": "₹62–₹3,410"
+      },
+      {
+        "from": "Tutong",
+        "to": "Brunei International Airport",
+        "method": "Return by rental car or taxi if you want a direct run; otherwise change buses back through Bandar Seri Begawan.",
+        "cost": "₹62–₹2,790"
+      }
+    ],
+    "extras": [
+      "Brunei buses are cheap at roughly ₹62 a ride, but frequency is limited, so build buffer time if you are not using taxis or a rental car.",
+      "Use water taxis for Kampong Ayer and negotiate longer wildlife or sunset loops before boarding; exact change helps.",
+      "Dart is the easiest ride-hailing fallback in Bandar Seri Begawan because street-hailed taxis are limited outside hotels and airport queues.",
+      "Rental cars are the most flexible option for Tutong and Temburong, generally around ₹2,790–₹4,340 per day before fuel.",
+      "Dress modestly for mosque visits and avoid Friday midday sightseeing blocks when prayer closures are common.",
+      "February to April is the safest weather window for Ulu Temburong because trails and boat logistics are less likely to be disrupted by heavy rain."
+    ],
+    "cityImages": {
+      "Bandar Seri Begawan": [
+        "Omar Ali Saifuddien Mosque Brunei lagoon",
+        "Kampong Ayer water village Brunei",
+        "Royal Regalia Museum Brunei"
+      ],
+      "Temburong District": [
+        "Ulu Temburong National Park canopy walk",
+        "Brunei longboat Ulu Temburong river",
+        "Temburong rainforest Brunei"
+      ],
+      "Tutong": [
+        "Pantai Seri Kenangan Brunei beach",
+        "Tasek Merimbun Heritage Park Brunei",
+        "Tutong town Brunei"
+      ]
+    }
+  }
+}

@@ -1,0 +1,559 @@
+{
+  "name": "Timor-Leste",
+  "seed": false,
+  "lat": -8.87,
+  "lng": 125.73,
+  "region": "Asia",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹55K–₹90K",
+    "couple": "₹95K–₹1.55L",
+    "family4": "₹1.9L–₹3L"
+  },
+  "experiences": [
+    "Cristo Rei sunrise",
+    "Coral Triangle diving at Ataúro",
+    "Portuguese-era Baucau",
+    "Maubisse coffee highlands",
+    "Jaco Island day trip"
+  ],
+  "avoid": [
+    "December–April rains can wash out mountain and far-east roads.",
+    "Boat crossings to Ataúro and Jaco are weather dependent; keep one flexible buffer day.",
+    "Carry USD cash outside Dili — ATMs and card acceptance are limited in Baucau, Maubisse and Tutuala."
+  ],
+  "combo": [
+    "Indonesia",
+    "Australia"
+  ],
+  "landmark": "Cristo Rei of Dili",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Most travellers start and finish in Dili because Presidente Nicolau Lobato International Airport has the broadest connections; keep Dili as your transport anchor for Ataúro ferries and overland trips east or into the highlands.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Dili",
+      "lat": -8.5586,
+      "lng": 125.5736,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "Capital base for Cristo Rei, the Timorese Resistance Archive & Museum, Areia Branca beach and practical ferry departures to Ataúro Island."
+    },
+    {
+      "name": "Baucau",
+      "lat": -8.4667,
+      "lng": 126.45,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "Historic east-coast town with colonial architecture, a photogenic old market, and the best staging point for long road trips toward Tutuala and Jaco Island."
+    },
+    {
+      "name": "Ataúro Island",
+      "lat": -8.2504,
+      "lng": 125.5969,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "Coral Triangle island escape for reef diving, village boat rides, Boneca handicrafts and slow beach days around Beloi and Adara."
+    },
+    {
+      "name": "Maubisse",
+      "lat": -8.8472,
+      "lng": 125.6028,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "Cool highland base for Tatamailau panoramas, colonial pousada views, coffee landscapes and community stays around Hakmatek and Hatu-Builico."
+    }
+  ],
+  "itinerary": {
+    "sim": "Telemor or Telkomcel prepaid SIMs are the practical choice in Timor-Leste; expect roughly ₹415–₹830 for basic 7–15 day data packs, and buy in Dili before heading to Ataúro, Baucau or Maubisse where top-up options are thinner.",
+    "apps": [
+      "Google Maps (offline)",
+      "WhatsApp",
+      "Booking.com",
+      "Rome2Rio",
+      "Google Translate",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Dili",
+      "Ataúro Island",
+      "Baucau",
+      "Maubisse"
+    ],
+    "cities": {
+      "Dili": {
+        "name": "Dili",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Use Dili for your arrival buffer, the core historical sights and one beach day; it is also the easiest place to organize taxis, microlets and ferry tickets before going elsewhere.",
+        "days": [
+          {
+            "theme": "Arrival, resistance history and Dili waterfront",
+            "activities": [
+              {
+                "name": "Presidente Nicolau Lobato Airport taxi into central Dili",
+                "cost": "₹498–₹664",
+                "tip": "Most drivers quote in USD cash, so having small notes ready speeds things up after arrival."
+              },
+              {
+                "name": "Timorese Resistance Archive & Museum",
+                "cost": "₹415 pp",
+                "tip": "The foreign visitor ticket is about US$5 and gives the best crash course on the independence struggle."
+              },
+              {
+                "name": "Tais Market browsing for handwoven textiles",
+                "cost": "₹0"
+              },
+              {
+                "name": "Largo de Lecidere seafront sunset walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Beachside Hotel",
+                "budget": "₹4,150–₹6,640/night"
+              },
+              {
+                "name": "Timor Plaza Hotel & Apartments",
+                "budget": "₹7,470–₹12,450/night"
+              }
+            ],
+            "meals": [
+              "Castaway Bar & Restaurant",
+              "DiZa",
+              "Panorama Restaurant"
+            ]
+          },
+          {
+            "theme": "Cristo Rei steps, Areia Branca and beachside Dili",
+            "activities": [
+              {
+                "name": "Taxi from central Dili to Cristo Rei trailhead",
+                "cost": "₹415–₹581"
+              },
+              {
+                "name": "Cristo Rei of Dili statue climb and viewpoints",
+                "cost": "₹0",
+                "tip": "Go at sunrise or late afternoon — there is no official entrance fee, just the heat and the stair climb."
+              },
+              {
+                "name": "Dolok Oan / Back Beach swim below Cristo Rei",
+                "cost": "₹0"
+              },
+              {
+                "name": "Return by taxi or beachside microlet toward Areia Branca",
+                "cost": "₹17–₹249"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Beachside Hotel",
+                "budget": "₹4,150–₹6,640/night"
+              },
+              {
+                "name": "Palm Springs Hotel Dili",
+                "budget": "₹7,885–₹14,940/night"
+              }
+            ],
+            "meals": [
+              "Beachside Hotel Restaurant",
+              "Agora Food Studio",
+              "Castaway Bar & Restaurant"
+            ]
+          },
+          {
+            "theme": "Microlet city hop, Santa Cruz history and final planning day",
+            "activities": [
+              {
+                "name": "Microlet rides between Lecidere, Becora and central Dili",
+                "cost": "₹17–₹42 pp",
+                "tip": "Microlets are the cheapest city transport; ask locals which route number is currently running because signage is inconsistent."
+              },
+              {
+                "name": "Santa Cruz Cemetery historical visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Motael Church and waterfront quarter stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Advance ferry or boat arrangements for Ataúro departure",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pousada Casa do Sândalo",
+                "budget": "₹4,980–₹8,300/night"
+              },
+              {
+                "name": "Timor Plaza Hotel & Apartments",
+                "budget": "₹7,470–₹12,450/night"
+              }
+            ],
+            "meals": [
+              "Panorama Restaurant",
+              "DiZa",
+              "Hotel Esplanada Restaurant"
+            ]
+          }
+        ]
+      },
+      "Ataúro Island": {
+        "name": "Ataúro Island",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Ataúro is best with two nights if you want both reef time and an unhurried village day; wind or swell can reshuffle ferry schedules, so avoid making same-day international flight connections from here.",
+        "days": [
+          {
+            "theme": "Beloi arrival, village shoreline and Boneca handicrafts",
+            "activities": [
+              {
+                "name": "Dragon Star fast boat from Dili to Beloi",
+                "cost": "₹1,494–₹2,075 pp",
+                "tip": "The cheaper fallback is the slower public angguna/cargo-style boat at about ₹498–₹830 one way, but departure times can shift."
+              },
+              {
+                "name": "Beloi village and beachfront orientation walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Boneca de Ataúro cooperative workshop visit",
+                "cost": "₹0–₹415",
+                "tip": "Entry is usually informal; budget for a small handicraft purchase if you want to support the women’s co-op."
+              },
+              {
+                "name": "Short angguna ride from Beloi toward Adara coast for sunset snorkel access",
+                "cost": "₹830–₹1,660 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Barry's Place",
+                "budget": "₹4,980–₹7,470/night incl. meals"
+              },
+              {
+                "name": "Beloi Beach Hotel Dive Resort",
+                "budget": "₹6,640–₹10,790/night"
+              }
+            ],
+            "meals": [
+              "Barry's Place Restaurant",
+              "Beloi Beach Hotel Restaurant",
+              "Atauro Dive Resort Restaurant"
+            ]
+          },
+          {
+            "theme": "Coral Triangle dive day or reef snorkelling escape",
+            "activities": [
+              {
+                "name": "Atauro Dive Resort or Compass Diving single-tank dive with equipment",
+                "cost": "₹4,150–₹5,810 pp",
+                "tip": "Expect roughly US$50–70 depending on boat fuel and whether you book one dive or a multi-dive package."
+              },
+              {
+                "name": "Guided snorkel boat to outer reef sites",
+                "cost": "₹1,245–₹2,075 pp"
+              },
+              {
+                "name": "Mount Manucoco village hike with local guide",
+                "cost": "₹1,245–₹2,075 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Atauro Dive Resort",
+                "budget": "₹7,470–₹12,450/night incl. meals"
+              },
+              {
+                "name": "Barry's Place",
+                "budget": "₹4,980–₹7,470/night incl. meals"
+              }
+            ],
+            "meals": [
+              "Atauro Dive Resort Restaurant",
+              "Compass Diving Resort Restaurant",
+              "Barry's Place Restaurant"
+            ]
+          }
+        ]
+      },
+      "Baucau": {
+        "name": "Baucau",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "One full day covers Baucau town, but two works better if you want to push farther east to Tutuala and Jaco Island without rushing the return to Dili.",
+        "days": [
+          {
+            "theme": "Colonial Baucau, old market and east-coast views",
+            "activities": [
+              {
+                "name": "Shared minibus from Dili to Baucau",
+                "cost": "₹664–₹830 pp",
+                "tip": "Private cars are faster but much pricier; the shared route usually takes 3–4 hours with roadside stops."
+              },
+              {
+                "name": "Pousada de Baucau hilltop terrace and historic quarter walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mercado Municipal de Baucau and old Portuguese lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Wataboo Beach late-afternoon stop",
+                "cost": "₹0–₹415"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pousada de Baucau",
+                "budget": "₹3,735–₹5,810/night"
+              },
+              {
+                "name": "Costa Guesthouse",
+                "budget": "₹2,075–₹3,320/night"
+              }
+            ],
+            "meals": [
+              "Pousada de Baucau Restaurant",
+              "Amalia Restaurant",
+              "Baucau Beach Bungalows Restaurant"
+            ]
+          },
+          {
+            "theme": "Tutuala road trip and sacred Jaco Island extension",
+            "activities": [
+              {
+                "name": "Early private car or shared overland ride from Baucau to Tutuala / Valu Sere",
+                "cost": "₹2,490–₹8,300",
+                "tip": "This is a long eastbound day, so start before sunrise or plan to overnight near Tutuala if you prefer a slower pace."
+              },
+              {
+                "name": "Jaco Island local fisherman boat from Valu Sere",
+                "cost": "₹830 pp round-trip",
+                "tip": "The standard crossing is about US$10 round-trip; Jaco is sacred, so day visits only and no overnight stays."
+              },
+              {
+                "name": "Jaco Island beach and snorkelling time",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ili Kere Kere sea cave lookout near Tutuala",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pousada de Baucau",
+                "budget": "₹3,735–₹5,810/night"
+              },
+              {
+                "name": "Baucau Beach Bungalows",
+                "budget": "₹1,660–₹2,905/night"
+              }
+            ],
+            "meals": [
+              "Pousada de Baucau Restaurant",
+              "Amalia Restaurant",
+              "packed lunch from Costa Guesthouse"
+            ]
+          }
+        ]
+      },
+      "Maubisse": {
+        "name": "Maubisse",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "The highlands are all about cooler air, views and slow travel; keep two days if you want both Maubisse town and a Tatamailau/Ramelau sunrise mission from nearby Hatu-Builico.",
+        "days": [
+          {
+            "theme": "Highland arrival, market streets and pousada views",
+            "activities": [
+              {
+                "name": "Shared taxi or minibus from Dili to Maubisse",
+                "cost": "₹415–₹664 pp"
+              },
+              {
+                "name": "Pousada de Maubisse viewpoint and colonial grounds",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mercado de Maubisse walk for highland produce and coffee",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hakmatek Tourism sacred-house and valley viewpoint visit",
+                "cost": "₹415–₹830 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pousada de Maubisse",
+                "budget": "₹2,905–₹4,980/night"
+              },
+              {
+                "name": "Hakmatek Tourism",
+                "budget": "₹1,660–₹3,320/night"
+              }
+            ],
+            "meals": [
+              "Pousada de Maubisse Restaurant",
+              "Restorante & Guest House de Sara",
+              "Hakmatek Tourism Restaurant"
+            ]
+          },
+          {
+            "theme": "Tatamailau sunrise mission and coffee-country finale",
+            "activities": [
+              {
+                "name": "Pre-dawn drive to Hatu-Builico trailhead for Mount Ramelau / Tatamailau",
+                "cost": "₹1,660–₹3,320 pp"
+              },
+              {
+                "name": "Mount Ramelau local guide and trail support",
+                "cost": "₹830–₹1,660 pp",
+                "tip": "Guide fees vary by group size; dry-season weekends are the easiest time to find local drivers and guides."
+              },
+              {
+                "name": "Pousada Alecrim lunch stop in Hatu-Builico",
+                "cost": "₹415–₹830 pp"
+              },
+              {
+                "name": "Maubisse coffee farm tasting with local host",
+                "cost": "₹415–₹830 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pousada de Maubisse",
+                "budget": "₹2,905–₹4,980/night"
+              },
+              {
+                "name": "Restorante & Guest House de Sara",
+                "budget": "₹1,660–₹2,905/night"
+              }
+            ],
+            "meals": [
+              "Pousada Alecrim",
+              "Restorante & Guest House de Sara",
+              "Pousada de Maubisse Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Dili",
+        "to": "Ataúro Island",
+        "method": "Dragon Star fast boat to Beloi, with the slower public angguna/cargo-style boat as the budget backup when seas are calm",
+        "cost": "₹498–₹2,075 pp one way"
+      },
+      {
+        "from": "Ataúro Island",
+        "to": "Dili",
+        "method": "Return fast boat or public boat back to Dili port before continuing overland",
+        "cost": "₹498–₹2,075 pp one way"
+      },
+      {
+        "from": "Dili",
+        "to": "Baucau",
+        "method": "Shared minibus or hired car along the north coast highway",
+        "cost": "₹664–₹830 pp shared or ₹8,300–₹10,790 per car"
+      },
+      {
+        "from": "Baucau",
+        "to": "Maubisse",
+        "method": "Best done via a private car back through Dili and up into the highlands, though budget travellers normally split the route across two shared rides",
+        "cost": "₹1,245–₹2,490 pp shared total or ₹10,790–₹14,110 per car"
+      },
+      {
+        "from": "Maubisse",
+        "to": "Dili",
+        "method": "Morning shared taxi or minibus downhill to the capital",
+        "cost": "₹415–₹664 pp"
+      }
+    ],
+    "extras": [
+      "May to November is the sweet spot: roads are drier, visibility is better for Ataúro diving and the Jaco crossing is calmer.",
+      "Timor-Leste runs on USD cash; convert rough prices to INR only for planning and carry small bills for taxis, boats and museum tickets.",
+      "If you only have 5–6 days, keep Dili + Ataúro + one of either Baucau or Maubisse instead of trying to fit all four bases.",
+      "Jaco Island is culturally sacred to the Fataluku people, so respect local guidance, take your rubbish out and do not plan an overnight stay."
+    ],
+    "cityImages": {
+      "Dili": [
+        "Cristo Rei Dili statue",
+        "Timorese Resistance Archive and Museum",
+        "Areia Branca beach Dili"
+      ],
+      "Ataúro Island": [
+        "Beloi beach Ataúro Island",
+        "Ataúro Island coral reef diving",
+        "Boneca de Ataúro cooperative"
+      ],
+      "Baucau": [
+        "Pousada de Baucau",
+        "Baucau old town Timor-Leste",
+        "Jaco Island Timor-Leste"
+      ],
+      "Maubisse": [
+        "Pousada de Maubisse",
+        "Mount Ramelau Tatamailau sunrise",
+        "Maubisse coffee highlands"
+      ]
+    }
+  }
+}

@@ -1,0 +1,638 @@
+{
+  "name": "Haiti",
+  "seed": false,
+  "lat": 18.97,
+  "lng": -72.29,
+  "region": "Americas",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1.35L–₹2.05L",
+    "couple": "₹2.45L–₹3.75L",
+    "family4": "₹4.9L–₹7.2L"
+  },
+  "experiences": [
+    "Citadelle & Sans-Souci UNESCO Day",
+    "Jacmel Arts & Bassin Bleu",
+    "Île-à-Vache Beaches",
+    "Haitian History & Rum"
+  ],
+  "avoid": [
+    "Haiti has a severe security situation and many governments advise against travel; if travel is essential, keep plans flexible, move only in daylight, use hotel-arranged airport transfers, and rely on vetted local guides and drivers.",
+    "April to October is wetter and hotter, while August to October brings the highest hurricane disruption risk for domestic flights, coastal boats, and mountain roads.",
+    "Intercity routes can close with little notice because of protests, roadblocks, fuel shortages, or security incidents, so do not stack tight same-day connections."
+  ],
+  "combo": [
+    "Dominican Republic",
+    "Jamaica",
+    "Cuba"
+  ],
+  "landmark": "Citadelle Laferrière",
+  "travelStyle": [
+    "touch-and-go",
+    "explorer"
+  ],
+  "stopoverNote": "Port-au-Prince remains the main coordination hub for most Haiti trips because Sunrise Airways flights, vetted private drivers, and secure hotel pickups usually route through the capital before onward travel.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Port-au-Prince",
+      "lat": 18.5944,
+      "lng": -72.3074,
+      "notes": "Capital base for museums, markets, galleries, rum, and the easiest place to organize vetted transfers, secure hotels, and onward flights or drivers."
+    },
+    {
+      "name": "Cap-Haïtien",
+      "lat": 19.7578,
+      "lng": -72.2043,
+      "notes": "Best northern base for Cap street life, boulevard cafés, and the Milot day trip to Sans-Souci Palace and Citadelle Laferrière."
+    },
+    {
+      "name": "Jacmel",
+      "lat": 18.2348,
+      "lng": -72.5354,
+      "notes": "Haiti’s artsy south-coast city for gingerbread-era streets, boardwalk sunsets, beach stops, and the jungle pools of Bassin Bleu."
+    },
+    {
+      "name": "Île-à-Vache",
+      "lat": 18.1008,
+      "lng": -73.6992,
+      "notes": "Slow island add-on off Les Cayes for boat hops, fishing villages, and long beach time once you have confirmed weather, boat timing, and accommodation."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel or Natcom prepaid data usually works out to about ₹900–₹1,900 for a short-stay pack. Coverage is best in Port-au-Prince and Cap-Haïtien; download offline maps before Jacmel waterfalls, Milot hill climbs, and Île-à-Vache boat transfers.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "Maps.me",
+      "Booking.com",
+      "Sunrise Airways",
+      "Google Translate",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Port-au-Prince",
+      "Cap-Haïtien",
+      "Jacmel",
+      "Île-à-Vache"
+    ],
+    "cities": {
+      "Port-au-Prince": {
+        "name": "Port-au-Prince",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay in Pétion-Ville, Turgeau, or a major business-hotel zone, line up all airport and city transfers in advance, and avoid independent night movement.",
+        "days": [
+          {
+            "theme": "MUPANAH, Iron Market & Downtown History",
+            "activities": [
+              {
+                "name": "Musée du Panthéon National Haïtien (MUPANAH) admission",
+                "cost": "₹160–₹320 pp"
+              },
+              {
+                "name": "Marché en Fer (Iron Market) walk with local guide or driver drop-off",
+                "cost": "Free"
+              },
+              {
+                "name": "Champ de Mars and Cathédrale Notre-Dame ruins stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Barbancourt Rum Distillery tour or tasting",
+                "cost": "₹1,600–₹2,600 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "NH Haiti El Rancho",
+                "budget": "₹14,000–₹20,000/night"
+              },
+              {
+                "name": "Port-au-Prince Marriott Hotel",
+                "budget": "₹18,000–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Les Jardins du Mupanah",
+              "Papaye Restaurant",
+              "Portofino Ristorante Italiano"
+            ]
+          },
+          {
+            "theme": "Fort Jacques, Art Stops & Pétion-Ville Dinner",
+            "activities": [
+              {
+                "name": "Fort Jacques admission",
+                "cost": "₹125–₹250 pp"
+              },
+              {
+                "name": "Observatoire de Boutilliers viewpoint stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Atis Resistance or El-Saieh Gallery visit",
+                "cost": "₹320–₹840 pp"
+              },
+              {
+                "name": "Evening coffee or dessert run in Pétion-Ville",
+                "cost": "₹500–₹1,000 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Karibe Hotel",
+                "budget": "₹15,000–₹23,000/night"
+              },
+              {
+                "name": "NH Haiti El Rancho",
+                "budget": "₹14,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Magdoos",
+              "Fior di Latte",
+              "Hotel Karibe Restaurant"
+            ]
+          },
+          {
+            "theme": "Museums, Crafts & a Lighter Capital Day",
+            "activities": [
+              {
+                "name": "Bureau of Ethnology visit",
+                "cost": "₹160–₹320 pp"
+              },
+              {
+                "name": "Papillon Enterprise artisan workshop stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Hotel Montana view stop or coffee",
+                "cost": "₹500–₹1,000 pp"
+              },
+              {
+                "name": "Driver-led shopping buffer for crafts or supplies",
+                "cost": "₹800–₹1,600 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Port-au-Prince Marriott Hotel",
+                "budget": "₹18,000–₹28,000/night"
+              },
+              {
+                "name": "Karibe Hotel",
+                "budget": "₹15,000–₹23,000/night"
+              }
+            ],
+            "meals": [
+              "Les Jardins du Mupanah",
+              "Magdoos",
+              "Papaye Restaurant"
+            ]
+          }
+        ]
+      },
+      "Cap-Haïtien": {
+        "name": "Cap-Haïtien",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Cap-Haïtien is the easiest and safest-feeling base in the north; do the Milot UNESCO circuit with a driver-guide, and start the Citadelle climb early before heat and clouds build.",
+        "days": [
+          {
+            "theme": "Boulevard du Cap, Cathedral & Market Streets",
+            "activities": [
+              {
+                "name": "Boulevard du Cap-Haïtien waterfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Notre Dame Cathedral and Place d’Armes stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Marché Cluny browse with driver standby",
+                "cost": "Free"
+              },
+              {
+                "name": "Héros de Vertières monument visit",
+                "cost": "₹160–₹320 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Satama Hotel",
+                "budget": "₹14,000–₹20,000/night"
+              },
+              {
+                "name": "Habitation des Lauriers",
+                "budget": "₹8,500–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Cap Deli",
+              "Boukanye",
+              "Lakay Restaurant"
+            ]
+          },
+          {
+            "theme": "Milot UNESCO Day: Sans-Souci Palace & Citadelle Laferrière",
+            "activities": [
+              {
+                "name": "Sans-Souci Palace admission (usually bundled with National History Park ticket)",
+                "cost": "Included in ₹840 pp combined park ticket"
+              },
+              {
+                "name": "Citadelle Laferrière admission",
+                "cost": "₹840 pp"
+              },
+              {
+                "name": "Horse ride up the Citadelle approach with handler",
+                "cost": "₹840 pp"
+              },
+              {
+                "name": "Private guide for the Milot historical circuit",
+                "cost": "₹2,100–₹2,600 per group"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel du Roi Christophe",
+                "budget": "₹10,000–₹15,000/night"
+              },
+              {
+                "name": "Satama Hotel",
+                "budget": "₹14,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "Vue Sur Mer Bar & Restaurant",
+              "Cap Deli",
+              "Lakay Restaurant"
+            ]
+          },
+          {
+            "theme": "Cormier Plage, Labadee Coast & Sunset Seafood",
+            "activities": [
+              {
+                "name": "Cormier Plage day pass or beach time",
+                "cost": "₹1,700–₹3,400 pp"
+              },
+              {
+                "name": "Labadee coastal boat or beach excursion",
+                "cost": "₹2,500–₹5,000 pp"
+              },
+              {
+                "name": "Cap-Haïtien gingerbread-era architecture walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset drinks on the boulevard",
+                "cost": "₹500–₹1,000 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Mont Joli",
+                "budget": "₹8,000–₹12,000/night"
+              },
+              {
+                "name": "Habitation des Lauriers",
+                "budget": "₹8,500–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Boukanye",
+              "Vue Sur Mer Bar & Restaurant",
+              "Cap Deli"
+            ]
+          },
+          {
+            "theme": "Extra North-Coast Buffer Day",
+            "activities": [
+              {
+                "name": "Relaxed beach morning or weather backup for the Citadelle circuit",
+                "cost": "₹0–₹2,500 pp"
+              },
+              {
+                "name": "Shopping for Haitian coffee, rum, or handicrafts",
+                "cost": "₹800–₹2,500 pp"
+              },
+              {
+                "name": "Moto-taxi and taxi hops around central Cap-Haïtien",
+                "cost": "₹250–₹1,000 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Satama Hotel",
+                "budget": "₹14,000–₹20,000/night"
+              },
+              {
+                "name": "Hotel du Roi Christophe",
+                "budget": "₹10,000–₹15,000/night"
+              }
+            ],
+            "meals": [
+              "Lakay Restaurant",
+              "Boukanye",
+              "Cap Deli"
+            ]
+          }
+        ]
+      },
+      "Jacmel": {
+        "name": "Jacmel",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Jacmel is compact and easiest in daylight; power cuts are normal, and Bassin Bleu is best done with a local guide plus proper shoes because the last section is steep and slippery.",
+        "days": [
+          {
+            "theme": "Historic Jacmel, Art Stops & Raymond les Bains",
+            "activities": [
+              {
+                "name": "Jacmel historic center and boardwalk walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Artist studios or paper-mâché workshop visit",
+                "cost": "₹320–₹840 pp"
+              },
+              {
+                "name": "Raymond les Bains beach stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Evening live-music or rum stop near the waterfront",
+                "cost": "₹500–₹1,200 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Florita",
+                "budget": "₹9,000–₹13,000/night"
+              },
+              {
+                "name": "Cap Lamandou Hotel",
+                "budget": "₹10,000–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "Cafe Koze",
+              "Hotel Florita Restaurant",
+              "Chez Mado"
+            ]
+          },
+          {
+            "theme": "Bassin Bleu Adventure Day",
+            "activities": [
+              {
+                "name": "Bassin Bleu entry + mandatory local guide",
+                "cost": "₹950–₹1,600 pp"
+              },
+              {
+                "name": "Moto-taxi or taxi transfer from Jacmel town to the trailhead",
+                "cost": "₹500–₹1,200 pp"
+              },
+              {
+                "name": "Rope-assisted hike to Bassin Clair and swim time",
+                "cost": "Included"
+              },
+              {
+                "name": "Post-hike beach lunch at Cyvadier",
+                "cost": "₹800–₹1,600 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Cyvadier Plage",
+                "budget": "₹11,000–₹17,000/night"
+              },
+              {
+                "name": "Cap Lamandou Hotel",
+                "budget": "₹10,000–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant Cyvadier Plage",
+              "Cafe Koze",
+              "Chez Mado"
+            ]
+          },
+          {
+            "theme": "Marigot or Slow Beach Buffer Day",
+            "activities": [
+              {
+                "name": "Marigot coastal drive or nearby beach-hopping",
+                "cost": "₹1,200–₹2,500 pp"
+              },
+              {
+                "name": "Souvenir shopping for masks and crafts",
+                "cost": "₹500–₹1,500 pp"
+              },
+              {
+                "name": "Relaxed coffee and gallery stop back in town",
+                "cost": "₹300–₹800 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Florita",
+                "budget": "₹9,000–₹13,000/night"
+              },
+              {
+                "name": "Hotel Cyvadier Plage",
+                "budget": "₹11,000–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "Hotel Florita Restaurant",
+              "Restaurant Cyvadier Plage",
+              "Cafe Koze"
+            ]
+          }
+        ]
+      },
+      "Île-à-Vache": {
+        "name": "Île-à-Vache",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Boat timing, fuel, and sea state matter more than distance here, so confirm your Les Cayes crossing the evening before and carry cash because island card acceptance is very limited.",
+        "days": [
+          {
+            "theme": "Arrival, Abaka Bay & Village Rhythm",
+            "activities": [
+              {
+                "name": "Boat transfer from Les Cayes / Madame Bernard dock to Île-à-Vache",
+                "cost": "₹420–₹1,260 pp"
+              },
+              {
+                "name": "Abaka Bay beach day",
+                "cost": "Free"
+              },
+              {
+                "name": "Village walk and local fishing-boat photo stops",
+                "cost": "Free"
+              },
+              {
+                "name": "Kayak or paddleboard rental through your hotel",
+                "cost": "₹1,300–₹2,500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "L'Anse à l'Eau Beach House",
+                "budget": "₹11,000–₹17,000/night"
+              },
+              {
+                "name": "Abaka Bay Resort",
+                "budget": "₹24,000–₹38,000/night"
+              }
+            ],
+            "meals": [
+              "L'Anse à l'Eau Restaurant",
+              "Abaka Bay Restaurant",
+              "Port Morgan Restaurant"
+            ]
+          },
+          {
+            "theme": "Island Boat Loop, Port Morgan & Snorkeling",
+            "activities": [
+              {
+                "name": "Private or shared boat loop to smaller coves and sand stretches",
+                "cost": "₹2,500–₹5,000 pp"
+              },
+              {
+                "name": "Snorkeling gear or guided reef swim",
+                "cost": "₹1,200–₹2,500 pp"
+              },
+              {
+                "name": "Port Morgan peninsula stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Seafood sunset dinner on the island",
+                "cost": "₹1,000–₹2,100 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Port Morgan Hotel",
+                "budget": "₹18,000–₹27,000/night"
+              },
+              {
+                "name": "L'Anse à l'Eau Beach House",
+                "budget": "₹11,000–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "Port Morgan Restaurant",
+              "Abaka Bay Restaurant",
+              "L'Anse à l'Eau Restaurant"
+            ]
+          },
+          {
+            "theme": "Weather Buffer or Full Slow-Island Day",
+            "activities": [
+              {
+                "name": "Extra beach time, hammock day, and village wandering",
+                "cost": "Free"
+              },
+              {
+                "name": "Motorbike taxi or walking transfer between island hamlets",
+                "cost": "₹250–₹800 pp"
+              },
+              {
+                "name": "Chartered boat back to mainland on your preferred schedule",
+                "cost": "₹1,200–₹2,500 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Port Morgan Hotel",
+                "budget": "₹18,000–₹27,000/night"
+              },
+              {
+                "name": "Abaka Bay Resort",
+                "budget": "₹24,000–₹38,000/night"
+              }
+            ],
+            "meals": [
+              "Port Morgan Restaurant",
+              "L'Anse à l'Eau Restaurant",
+              "Abaka Bay Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Port-au-Prince",
+        "to": "Cap-Haïtien",
+        "method": "Sunrise Airways domestic flight (about 35–40m) is the practical choice; vetted private taxi or bus alternatives take most of a day and should only be attempted with up-to-date security advice.",
+        "cost": "₹9,000–₹16,000 pp by air / ₹3,000–₹7,500 pp by road"
+      },
+      {
+        "from": "Cap-Haïtien",
+        "to": "Jacmel",
+        "method": "Usually route back through Port-au-Prince by Sunrise Airways plus pre-booked taxi, or use a full-day private overland transfer only with a trusted operator.",
+        "cost": "₹11,000–₹19,000 pp via air + road / ₹6,000–₹10,000 pp by road"
+      },
+      {
+        "from": "Jacmel",
+        "to": "Île-à-Vache",
+        "method": "Pre-booked taxi or shared tap-tap/minibus to Les Cayes, then a local boat from the Madame Bernard dock or nearby departure points to the island.",
+        "cost": "₹2,200–₹5,800 pp"
+      }
+    ],
+    "extras": [
+      "Re-check your government travel advisory before booking and again right before departure; hotel closures, flight suspensions, and district-level restrictions can change faster than the weather forecast.",
+      "Tap-taps are the cheapest way around short routes, but most visitors still pair them with vetted taxis or hotel drivers for airport transfers and any movement after dark.",
+      "Carry small HTG notes for museum tickets, guides, moto-taxis, and island boats, because card readers and stable internet are unreliable outside major hotels.",
+      "Sunrise Airways domestic schedules can change around weather, security, or aircraft rotation, so avoid same-day international connections whenever possible.",
+      "For Bassin Bleu, wear grippy shoes and waterproof your phone; for the Citadelle, start early and budget extra time if you plan to ride partway up by horse."
+    ],
+    "cityImages": {
+      "Port-au-Prince": [
+        "MUPANAH Port-au-Prince",
+        "Marche en Fer Haiti",
+        "Fort Jacques Haiti"
+      ],
+      "Cap-Haïtien": [
+        "Citadelle Laferriere",
+        "Sans Souci Palace Haiti",
+        "Boulevard du Cap-Haitien"
+      ],
+      "Jacmel": [
+        "Bassin Bleu Jacmel",
+        "Jacmel boardwalk Haiti",
+        "Hotel Florita Jacmel"
+      ],
+      "Île-à-Vache": [
+        "Abaka Bay Haiti",
+        "Port Morgan Ile a Vache",
+        "Ile a Vache beach"
+      ]
+    }
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "name": "San Marino",
+  "seed": false,
+  "lat": 43.94,
+  "lng": 12.46,
+  "region": "Europe",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "budget": {
+    "solo": "₹45K–₹80K",
+    "couple": "₹80K–₹1.4L",
+    "family4": "₹1.6L–₹2.6L"
+  },
+  "experiences": [
+    "Three Towers ridge walk",
+    "Palazzo Pubblico and Piazza della Liberta",
+    "State Museum",
+    "Borgo Maggiore cable car views",
+    "Serravalle shopping and stadium district"
+  ],
+  "avoid": [
+    "Midday summer weekends when day-trippers from the Riviera crowd the historic center and tower path.",
+    "Foggy winter days when Mount Titano views disappear and the ridge walk feels less rewarding.",
+    "Fridays in Borgo Maggiore only if you dislike market crowds around Piazza Grande and the lower cable-car station."
+  ],
+  "combo": [
+    "Italy"
+  ],
+  "landmark": "Guaita Tower",
+  "travelStyle": [
+    "touch-and-go",
+    "explorer"
+  ],
+  "stopoverNote": "San Marino is easy as a day trip from Rimini, but 2 nights lets you see the towers, museums and lower towns without rushing or relying only on midday buses.",
+  "links": [],
+  "cities": [
+    {
+      "name": "San Marino City",
+      "lat": 43.9367,
+      "lng": 12.4464,
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "notes": "UNESCO-listed hilltop capital for the Three Towers path, Palazzo Pubblico, basilica viewpoints and the republic's densest cluster of museums."
+    },
+    {
+      "name": "Borgo Maggiore",
+      "lat": 43.9419,
+      "lng": 12.4473,
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "notes": "Lower town at the foot of Mount Titano with the cable car, Piazza Grande market area and some of the easiest-value stays in the republic."
+    },
+    {
+      "name": "Serravalle",
+      "lat": 43.9683,
+      "lng": 12.4814,
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "notes": "San Marino's biggest castello, practical for shopping, football at Stadio Olimpico and a last-night stay closer to the Rimini side of the border."
+    }
+  ],
+  "itinerary": {
+    "sim": "Use an Italy/EU eSIM or roaming pack; San Marino is tiny and most visitors enter from Rimini, so an Italy-valid plan plus offline maps is usually enough.",
+    "apps": [
+      "Google Maps",
+      "Moovit",
+      "Trainline",
+      "Booking.com",
+      "Rome2Rio",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "San Marino City",
+      "Borgo Maggiore",
+      "Serravalle"
+    ],
+    "cities": {
+      "San Marino City": {
+        "name": "San Marino City",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Give the capital a full day for the core monuments and ridge walk; add a second only if you want a slower museum pace, sunset viewpoints and a nicer dinner.",
+        "days": [
+          {
+            "theme": "Three Towers, state history and the classic Mount Titano skyline",
+            "activities": [
+              {
+                "name": "Bonelli Bus shuttle from Rimini railway station to San Marino",
+                "cost": "₹630 pp",
+                "tip": "The direct coach is the simplest car-free arrival; book the first morning departure in high season to beat tower crowds."
+              },
+              {
+                "name": "San Marino Multi-Museum Pass for the Three Towers circuit, State Museum and Palazzo Pubblico when open",
+                "cost": "₹990 pp",
+                "tip": "The current adult pass is about €11 and is better value than paying only for the two main towers if you also want the museum and public palace."
+              },
+              {
+                "name": "Guaita and Cesta towers ridge walk, with Montale Tower exterior viewpoints on the trail",
+                "cost": "₹990 pp",
+                "tip": "The same museums pass covers Guaita and Cesta; Montale is normally viewed from outside along the ridge path."
+              },
+              {
+                "name": "Palazzo Pubblico and Piazza della Liberta",
+                "cost": "₹990 pp",
+                "tip": "Palazzo Pubblico entry is included in the museums pass when government functions do not close parts of the building."
+              },
+              {
+                "name": "State Museum of San Marino",
+                "cost": "₹990 pp",
+                "tip": "Use the same pass here; the museum is compact enough to pair with the towers in one day if you start early."
+              },
+              {
+                "name": "Basilica di San Marino, Passo delle Streghe and old-town lanes",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Titano",
+                "budget": "₹11,700–₹18,900/night"
+              },
+              {
+                "name": "Grand Hotel San Marino",
+                "budget": "₹12,600–₹19,800/night"
+              },
+              {
+                "name": "Hotel Cesare",
+                "budget": "₹13,500–₹20,700/night"
+              }
+            ],
+            "meals": [
+              "Ristorante Cesare",
+              "Ritrovo dei Lavoratori",
+              "La Terrazza"
+            ]
+          }
+        ]
+      },
+      "Borgo Maggiore": {
+        "name": "Borgo Maggiore",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Borgo Maggiore works best as a slower half- to full-day extension: ride the cable car, browse the lower town and stay here if you want easier parking or better-value hotels.",
+        "days": [
+          {
+            "theme": "Cable car panoramas, Friday market energy and lower-town local life",
+            "activities": [
+              {
+                "name": "Funivia di San Marino cable car between Borgo Maggiore and San Marino City (return)",
+                "cost": "₹630 pp",
+                "tip": "The current adult round-trip fare is about €7; ride it early or near sunset for the best valley views."
+              },
+              {
+                "name": "Piazza Grande and the Borgo Maggiore market area",
+                "cost": "₹0",
+                "tip": "Friday is the main market day, so visit then if you want the liveliest local atmosphere."
+              },
+              {
+                "name": "Church of Sant'Antimo e San Marino and old lower-town lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Local bus ride within San Marino",
+                "cost": "₹180 pp",
+                "tip": "A standard local one-way bus ticket is about €2 and is useful if you do not want to tackle the steep roads on foot."
+              },
+              {
+                "name": "Walk back through the lower viewpoints or return by cable car",
+                "cost": "₹0–₹630"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hostaria da Lino",
+                "budget": "₹7,200–₹11,700/night"
+              },
+              {
+                "name": "Hotel Crocenzi",
+                "budget": "₹6,300–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Hostaria da Lino",
+              "Ristorante Pizzeria Funivia",
+              "Garden Cucina & Pizza"
+            ]
+          }
+        ]
+      },
+      "Serravalle": {
+        "name": "Serravalle",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Use Serravalle for a practical last day before heading back to Rimini: shopping, sports venues and a lower-altitude overnight near the border road.",
+        "days": [
+          {
+            "theme": "Modern San Marino: shopping district, stadium stop and easy exit day",
+            "activities": [
+              {
+                "name": "Local bus from San Marino City or Borgo Maggiore to Serravalle",
+                "cost": "₹180 pp",
+                "tip": "Serravalle is only a short hop away by local bus, and buses save you from arranging taxis in a country where distances are tiny but uphill roads are constant."
+              },
+              {
+                "name": "Stadio Olimpico di Serravalle exterior and sports district walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Atlante Shopping Center or Azzurro Shopping Center browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "San Marino Outlet Experience detour by bus or taxi if you want brand shopping",
+                "cost": "₹0–₹900",
+                "tip": "Window-shopping is free; add only your transport cost if you do not have a car."
+              },
+              {
+                "name": "Bonelli Bus return from the Rimini-side corridor",
+                "cost": "₹630 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Best Western Palace Hotel",
+                "budget": "₹8,100–₹13,500/night"
+              },
+              {
+                "name": "Hotel iDesign",
+                "budget": "₹7,200–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "Il Castello Osteria Gourmet",
+              "La Salumeria",
+              "Ristorante Le 5 Vie"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Rimini",
+        "to": "San Marino City",
+        "method": "Direct Bonelli Bus shuttle from Rimini railway station up to San Marino's historic center",
+        "cost": "₹630 pp one way"
+      },
+      {
+        "from": "San Marino City",
+        "to": "Borgo Maggiore",
+        "method": "Ride the Funivia cable car or walk down the steep road and stairways",
+        "cost": "₹630 pp return by cable car or ₹0 on foot"
+      },
+      {
+        "from": "Borgo Maggiore",
+        "to": "Serravalle",
+        "method": "Local bus across the republic or a short taxi ride if you are carrying luggage",
+        "cost": "₹180 pp by bus or about ₹1,350–₹1,800 by taxi"
+      },
+      {
+        "from": "Serravalle",
+        "to": "Rimini",
+        "method": "Return by Bonelli Bus toward Rimini or connect onward by road to the Adriatic coast",
+        "cost": "₹630 pp one way"
+      }
+    ],
+    "extras": [
+      "San Marino is tiny enough that confident walkers can cover a lot on foot, but the climbs between levels are steeper than the map suggests.",
+      "If you only have one day, focus on San Marino City and use the cable car once for Borgo Maggiore rather than trying to sleep in multiple towns.",
+      "The museums pass is the key value buy because it bundles the towers with the State Museum and Palazzo Pubblico instead of making you choose just one sight.",
+      "Stay in Borgo Maggiore or Serravalle if you want easier bus logistics and cheaper hotels than the hilltop historic center."
+    ],
+    "cityImages": {
+      "San Marino City": [
+        "Guaita Tower San Marino",
+        "Palazzo Pubblico San Marino",
+        "Passo delle Streghe San Marino"
+      ],
+      "Borgo Maggiore": [
+        "Funivia San Marino Borgo Maggiore",
+        "Piazza Grande Borgo Maggiore",
+        "Borgo Maggiore San Marino market"
+      ],
+      "Serravalle": [
+        "Stadio Olimpico Serravalle",
+        "Atlante Shopping Center San Marino",
+        "Serravalle San Marino skyline"
+      ]
+    }
+  }
+}

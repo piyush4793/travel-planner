@@ -231,13 +231,13 @@
   },
   {
     "name": "Brunei",
-    "lat": 4.54,
-    "lng": 114.73,
+    "lat": 4.94,
+    "lng": 114.95,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 5
   },
   {
     "name": "Timor-Leste",
@@ -245,9 +245,9 @@
     "lng": 125.73,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 12
   },
   {
     "name": "Uzbekistan",
@@ -765,9 +765,9 @@
     "lng": 12.46,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 2,
+    "maxDays": 3
   },
   {
     "name": "Vatican City",
@@ -775,9 +775,9 @@
     "lng": 12.45,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 1,
+    "maxDays": 2
   },
   {
     "name": "Armenia",
@@ -1655,9 +1655,9 @@
     "lng": -72.29,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 12
   },
   {
     "name": "Dominican Republic",

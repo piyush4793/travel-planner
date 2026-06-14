@@ -1,0 +1,205 @@
+{
+  "name": "Vatican City",
+  "seed": false,
+  "lat": 41.9,
+  "lng": 12.45,
+  "region": "Europe",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "July",
+    "August",
+    "December",
+    "January"
+  ],
+  "budget": {
+    "solo": "₹18K–₹42K",
+    "couple": "₹32K–₹76K",
+    "family4": "₹68K–₹1.4L"
+  },
+  "experiences": [
+    "Vatican Museums & Sistine Chapel",
+    "St. Peter's Basilica",
+    "St. Peter's Dome",
+    "Vatican Gardens guided tour",
+    "Scavi tour"
+  ],
+  "avoid": [
+    "Holy Week, Easter and major Jubilee dates bring the Vatican's longest security queues and fastest hotel sell-outs in nearby Rome.",
+    "The last Sunday of the month offers free Vatican Museums entry, but lines and crowding are usually at their worst.",
+    "Summer afternoons in St. Peter's Square are exposed and hot, so book the earliest museum or dome slot you can get."
+  ],
+  "combo": [
+    "Italy"
+  ],
+  "landmark": "St. Peter's Basilica",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": "Vatican City is best handled as a focused 1-day visit or a 2-day Rome add-on if you want the Gardens or Scavi tour without rushing the museums and basilica.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Vatican City",
+      "lat": 41.9029,
+      "lng": 12.4534,
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "September",
+        "October",
+        "November"
+      ],
+      "notes": "The world's smallest country sits inside Rome and is easiest to enter on foot from Ottaviano or San Pietro after a short metro ride, with the basilica, museums and papal sites all clustered tightly together."
+    }
+  ],
+  "itinerary": {
+    "sim": "Any Italy/EU eSIM works fine because Vatican City uses Rome's mobile footprint; keep museum tickets downloaded offline and expect slow data around St. Peter's Square on big audience days.",
+    "apps": [
+      "ATAC Roma",
+      "Google Maps",
+      "TheFork",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Vatican City"
+    ],
+    "cities": {
+      "Vatican City": {
+        "name": "Vatican City",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day covers the Vatican essentials if you start early; add a second day only for premium extras like the Gardens or Scavi tour.",
+        "days": [
+          {
+            "theme": "Museums, Sistine Chapel and the basilica core",
+            "activities": [
+              {
+                "name": "Rome Metro Line A to Ottaviano station, then walk into Vatican City",
+                "cost": "₹135 pp",
+                "tip": "A standard ATAC single ticket costs €1.50; arrive by 7:45–8:00 AM if you have a morning museum slot."
+              },
+              {
+                "name": "Vatican Museums + Sistine Chapel",
+                "cost": "₹2,250 pp online / ₹1,800 pp on-site",
+                "tip": "Official full-price entry is €20, with a €5 online reservation fee that is usually worth paying to avoid the main queue."
+              },
+              {
+                "name": "St. Peter's Basilica",
+                "cost": "₹0",
+                "tip": "Entry is free, but security lines can still take 30–90 minutes unless you time it right after the museums or arrive very early."
+              },
+              {
+                "name": "St. Peter's Basilica dome climb",
+                "cost": "₹720 pp stairs / ₹900 pp elevator",
+                "tip": "The basic cupola climb is paid on-site only: €8 for all 551 steps or €10 if you take the elevator part-way."
+              },
+              {
+                "name": "St. Peter's Square and Via della Conciliazione evening walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Paolo II",
+                "budget": "₹13,500–₹20,700/night"
+              },
+              {
+                "name": "Starhotels Michelangelo Rome",
+                "budget": "₹22,500–₹36,000/night"
+              },
+              {
+                "name": "Hotel Isa",
+                "budget": "₹19,800–₹31,500/night"
+              }
+            ],
+            "meals": [
+              "Pizzarium Bonci",
+              "Ristorante Arlù",
+              "La Soffitta Renovatio"
+            ]
+          },
+          {
+            "theme": "Gardens, necropolis and Vatican deep-dive extras",
+            "activities": [
+              {
+                "name": "Vatican Gardens guided tour",
+                "cost": "₹4,680 pp",
+                "tip": "The official guided Gardens ticket is about €52 and already includes Vatican Museums + Sistine Chapel entry, so treat it as your premium museum day rather than double-buying both tickets."
+              },
+              {
+                "name": "Scavi tour of the Vatican Necropolis",
+                "cost": "₹1,170 pp",
+                "tip": "The official Excavations Office fee is €13 and spots are tiny in number; request it well in advance if you want to see the necropolis under St. Peter's."
+              },
+              {
+                "name": "St. Peter's Square for the Wednesday Papal Audience or Sunday Angelus (timing-dependent)",
+                "cost": "₹0",
+                "tip": "Free, but reach the square early and expect airport-style security checks before seating or standing access."
+              },
+              {
+                "name": "Vatican Grottoes beneath St. Peter's Basilica",
+                "cost": "₹0"
+              },
+              {
+                "name": "Walk from Ottaviano through Borgo Pio and back",
+                "cost": "₹0–₹135 pp",
+                "tip": "Walk if you are staying in Prati or near the river; otherwise reuse Metro Line A for the quickest link back into Rome."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Paolo II",
+                "budget": "₹13,500–₹20,700/night"
+              },
+              {
+                "name": "Starhotels Michelangelo Rome",
+                "budget": "₹22,500–₹36,000/night"
+              },
+              {
+                "name": "NH Collection Roma Giustiniano",
+                "budget": "₹23,400–₹38,700/night"
+              }
+            ],
+            "meals": [
+              "Il Sorpasso",
+              "Trattoria Vaticano Giggi",
+              "Borghiciana Pastificio Artigianale"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Rome",
+        "to": "Vatican City",
+        "method": "Metro Line A to Ottaviano station, then a 10-15 minute walk via Via Ottaviano or Borgo Pio",
+        "cost": "₹135 pp one way"
+      }
+    ],
+    "extras": [
+      "Vatican City is tiny enough that you should think in timed slots, not geography: one early museum reservation defines the whole day.",
+      "Dress modestly for the basilica and papal spaces — shoulders and knees should be covered or you may be refused entry.",
+      "If you want both the Vatican Gardens guided tour and the regular museums ticket, split them across two days because the Gardens product already bundles museum access.",
+      "The dome climb, museums and Scavi tour all have independent queues or booking processes, so keep screenshots, passports/ID and timing buffers handy."
+    ],
+    "cityImages": {
+      "Vatican City": [
+        "St. Peter's Basilica facade",
+        "Sistine Chapel ceiling",
+        "Vatican Museums spiral staircase"
+      ]
+    }
+  }
+}
