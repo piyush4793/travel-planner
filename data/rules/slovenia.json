@@ -1,0 +1,641 @@
+{
+  "name": "Slovenia",
+  "seed": false,
+  "lat": 46.15,
+  "lng": 14.99,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹85K–₹1.45L",
+    "couple": "₹1.5L–₹2.5L",
+    "family4": "₹3.1L–₹4.8L"
+  },
+  "experiences": [
+    "Ljubljana Old Town",
+    "Lake Bled",
+    "Julian Alps",
+    "Karst Caves",
+    "Piran Coast",
+    "Wine & Food"
+  ],
+  "avoid": [
+    "Lake Bled and the coast get crowded and pricier on sunny July-August weekends",
+    "Some Bohinj, Piran and cave-area buses run less frequently on Sundays and holidays"
+  ],
+  "combo": [
+    "Austria",
+    "Croatia",
+    "Italy"
+  ],
+  "landmark": "Lake Bled",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Ljubljana",
+      "lat": 46.0569,
+      "lng": 14.5058,
+      "notes": "Compact capital with Plecnik architecture, Ljubljana Castle, Central Market and easy riverfront cafe hopping"
+    },
+    {
+      "name": "Lake Bled",
+      "lat": 46.3699,
+      "lng": 14.1136,
+      "notes": "Slovenia's postcard lake for Bled Castle, pletna boats, lakeside walks and Vintgar Gorge side trips"
+    },
+    {
+      "name": "Lake Bohinj",
+      "lat": 46.2755,
+      "lng": 13.8884,
+      "notes": "Quieter alpine base for Bohinj lake views, Savica Waterfall, Vogel cable car and Triglav National Park trails"
+    },
+    {
+      "name": "Piran",
+      "lat": 45.5283,
+      "lng": 13.5683,
+      "notes": "Venetian-style Adriatic town with Tartini Square, sea walls, seafood spots and sunset promenades"
+    },
+    {
+      "name": "Postojna",
+      "lat": 45.7744,
+      "lng": 14.214,
+      "notes": "Best base for Postojna Cave plus easy access to Predjama Castle and the UNESCO-listed Skocjan Caves"
+    },
+    {
+      "name": "Maribor",
+      "lat": 46.5547,
+      "lng": 15.6459,
+      "notes": "Slower eastern-city stop with Lent riverfront, the Old Vine House and Pohorje hillside views"
+    }
+  ],
+  "itinerary": {
+    "sim": "Telekom Slovenije prepaid SIMs are easy to top up in Ljubljana, while Airalo Eurolink is the simplest eSIM if you want data live as soon as you land.",
+    "apps": [
+      "SŽ",
+      "Arriva Slovenia",
+      "FlixBus",
+      "Nomago",
+      "Google Maps",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Ljubljana",
+      "Lake Bled",
+      "Lake Bohinj",
+      "Piran",
+      "Postojna",
+      "Maribor"
+    ],
+    "cities": {
+      "Ljubljana": {
+        "name": "Ljubljana",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is ideal for the capital; a third only makes sense if you want slower museum time or a food-heavy cafe day.",
+        "days": [
+          {
+            "theme": "Old Town, Castle Hill & the Ljubljanica",
+            "activities": [
+              {
+                "name": "Preseren Square, Triple Bridge and Dragon Bridge walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ljubljana Central Market and Plecnik colonnade browsing",
+                "cost": "₹0–₹450"
+              },
+              {
+                "name": "Ljubljana Castle with funicular and museum areas",
+                "cost": "₹1,350–₹1,800"
+              },
+              {
+                "name": "Ljubljanica river cruise",
+                "cost": "₹1,170–₹1,530"
+              },
+              {
+                "name": "Sunset walk along Mestni trg and Cobbler's Bridge",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "City Hotel Ljubljana",
+                "budget": "₹9,000–₹13,500/night"
+              },
+              {
+                "name": "B&B Hotel Ljubljana Park",
+                "budget": "₹7,200–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Druga Violina",
+              "Gostilna Sokol",
+              "Julija Restaurant"
+            ]
+          },
+          {
+            "theme": "Museums, Tivoli & Contemporary Ljubljana",
+            "activities": [
+              {
+                "name": "National Gallery of Slovenia",
+                "cost": "₹720–₹900"
+              },
+              {
+                "name": "Tivoli Park and Jakopic Promenade",
+                "cost": "₹0"
+              },
+              {
+                "name": "Metelkova Art Center daytime street-art stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Neboticnik rooftop coffee or aperitif",
+                "cost": "₹450–₹900"
+              },
+              {
+                "name": "Open Kitchen food market (Friday seasonally) or riverside dinner",
+                "cost": "₹900–₹1,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "City Hotel Ljubljana",
+                "budget": "₹9,000–₹13,500/night"
+              },
+              {
+                "name": "B&B Hotel Ljubljana Park",
+                "budget": "₹7,200–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Abi Falafel",
+              "JB Restaurant Ljubljana",
+              "Pop's Place"
+            ]
+          },
+          {
+            "theme": "Slow Capital Add-On Day",
+            "activities": [
+              {
+                "name": "Plecnik House",
+                "cost": "₹630–₹810"
+              },
+              {
+                "name": "Slovenian Ethnographic Museum",
+                "cost": "₹540–₹720"
+              },
+              {
+                "name": "BTC City shopping or a long cafe afternoon in Krakovo",
+                "cost": "₹0–₹1,350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "City Hotel Ljubljana",
+                "budget": "₹9,000–₹13,500/night"
+              },
+              {
+                "name": "B&B Hotel Ljubljana Park",
+                "budget": "₹7,200–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Gostilna Cad",
+              "Le Petit Cafe",
+              "Marjetica"
+            ]
+          }
+        ]
+      },
+      "Lake Bled": {
+        "name": "Lake Bled",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Stay one or two nights to do the lake properly without rushing the viewpoints, castle and nearby gorge.",
+        "days": [
+          {
+            "theme": "Bled Castle, Island Views & the Classic Lake Loop",
+            "activities": [
+              {
+                "name": "Full walk around Lake Bled",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bled Castle admission",
+                "cost": "₹1,530"
+              },
+              {
+                "name": "Pletna boat to Bled Island and Church of the Assumption area",
+                "cost": "₹1,620–₹1,980"
+              },
+              {
+                "name": "Ojstrica viewpoint hike",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bled cream cake stop",
+                "cost": "₹450–₹720"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Garni Hotel Berc",
+                "budget": "₹10,800–₹15,300/night"
+              },
+              {
+                "name": "Bled Hostel",
+                "budget": "₹2,700–₹5,400/night"
+              }
+            ],
+            "meals": [
+              "Ostarija Peglez'n",
+              "Public Bar & Vegan Kitchen Bled",
+              "Sova Restaurant"
+            ]
+          },
+          {
+            "theme": "Vintgar Gorge & a Slower Alpine Day",
+            "activities": [
+              {
+                "name": "Vintgar Gorge admission",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "St. Martin's Parish Church and lakeside promenade",
+                "cost": "₹0"
+              },
+              {
+                "name": "Straža Bled summer toboggan or chairlift",
+                "cost": "₹720–₹1,350"
+              },
+              {
+                "name": "SUP or rowboat rental on Lake Bled",
+                "cost": "₹1,350–₹2,250"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Garni Hotel Berc",
+                "budget": "₹10,800–₹15,300/night"
+              },
+              {
+                "name": "Bled Hostel",
+                "budget": "₹2,700–₹5,400/night"
+              }
+            ],
+            "meals": [
+              "Old Cellar Bled",
+              "Grajska Plaza",
+              "Finefood Berc"
+            ]
+          }
+        ]
+      },
+      "Lake Bohinj": {
+        "name": "Lake Bohinj",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Bohinj works as a one-night nature stop from Bled, but hikers will gladly stretch it to a second day.",
+        "days": [
+          {
+            "theme": "Bohinj Lake, Vogel & Waterfall Day",
+            "activities": [
+              {
+                "name": "Walk from Ribcev Laz to Ukanc along Lake Bohinj",
+                "cost": "₹0"
+              },
+              {
+                "name": "Church of St. John the Baptist exterior and bridge viewpoint",
+                "cost": "₹0"
+              },
+              {
+                "name": "Savica Waterfall ticket",
+                "cost": "₹360"
+              },
+              {
+                "name": "Vogel cable car return ticket",
+                "cost": "₹2,700–₹3,150"
+              },
+              {
+                "name": "Lake swim or kayak rental in summer",
+                "cost": "₹0–₹1,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Jezero",
+                "budget": "₹10,800–₹15,300/night"
+              },
+              {
+                "name": "Hostel pod Voglom",
+                "budget": "₹2,700–₹5,400/night"
+              }
+            ],
+            "meals": [
+              "Foksner Burger Joint",
+              "Restaurant Zlatovcica",
+              "Gostilna Danica"
+            ]
+          },
+          {
+            "theme": "Triglav National Park Add-On",
+            "activities": [
+              {
+                "name": "Mostnica Gorge trail",
+                "cost": "₹270–₹450"
+              },
+              {
+                "name": "Planina Blato shuttle or parking approach for alpine meadow walks",
+                "cost": "₹450–₹900"
+              },
+              {
+                "name": "Extra slow lakeside afternoon",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Jezero",
+                "budget": "₹10,800–₹15,300/night"
+              },
+              {
+                "name": "Hostel pod Voglom",
+                "budget": "₹2,700–₹5,400/night"
+              }
+            ],
+            "meals": [
+              "Picerija Ema",
+              "Strud'l",
+              "Tripic"
+            ]
+          }
+        ]
+      },
+      "Piran": {
+        "name": "Piran",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Piran is best as a compact one-night coastal stop focused on lanes, views and seafood rather than a long beach stay.",
+        "days": [
+          {
+            "theme": "Venetian Coast, City Walls & Sunset Sea Air",
+            "activities": [
+              {
+                "name": "Tartini Square, 1st of May Square and old-town lane walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Walls of Piran admission",
+                "cost": "₹270"
+              },
+              {
+                "name": "St. George's Parish Church bell-tower area",
+                "cost": "₹0–₹270"
+              },
+              {
+                "name": "Piran Coastal Galleries or Sergej Masera Maritime Museum",
+                "cost": "₹450–₹630"
+              },
+              {
+                "name": "Sunset walk to Punta and the lighthouse edge",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Art Hotel Tartini",
+                "budget": "₹9,900–₹14,400/night"
+              },
+              {
+                "name": "Hostel Piran",
+                "budget": "₹2,700–₹4,950/night"
+              }
+            ],
+            "meals": [
+              "Fritolin Pri Cantini",
+              "Pavel 2",
+              "Pizzeria Petica"
+            ]
+          }
+        ]
+      },
+      "Postojna": {
+        "name": "Postojna",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day covers the headline cave well; add a second day if you want both Predjama and Skocjan without rushing.",
+        "days": [
+          {
+            "theme": "Postojna Cave & Predjama Castle",
+            "activities": [
+              {
+                "name": "Postojna Cave guided cave-train tour",
+                "cost": "₹3,150"
+              },
+              {
+                "name": "Predjama Castle",
+                "cost": "₹1,530–₹1,800"
+              },
+              {
+                "name": "Proteus Vivarium",
+                "cost": "₹900–₹1,170"
+              },
+              {
+                "name": "Old town Postojna evening stroll",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Kras",
+                "budget": "₹8,100–₹11,700/night"
+              },
+              {
+                "name": "Rooms & Apartments Proteus",
+                "budget": "₹5,850–₹8,550/night"
+              }
+            ],
+            "meals": [
+              "Magdalena Food & Fun",
+              "Bor Bar",
+              "Kitajska Restavracija Makao"
+            ]
+          },
+          {
+            "theme": "Skocjan Caves UNESCO Add-On",
+            "activities": [
+              {
+                "name": "Skocjan Caves guided tour",
+                "cost": "₹1,980"
+              },
+              {
+                "name": "Regional bus or taxi transfer toward Divaca/Skocjan area",
+                "cost": "₹630–₹1,350"
+              },
+              {
+                "name": "Rakov Skocjan landscape park stop if driving or taxi-sharing",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Kras",
+                "budget": "₹8,100–₹11,700/night"
+              },
+              {
+                "name": "Rooms & Apartments Proteus",
+                "budget": "₹5,850–₹8,550/night"
+              }
+            ],
+            "meals": [
+              "Jamski Dvorec",
+              "Restaurant and Pizzeria Minutka",
+              "Bistro Storja"
+            ]
+          }
+        ]
+      },
+      "Maribor": {
+        "name": "Maribor",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Use Maribor as a relaxed final stop for wine, riverfront walking and a lighter urban pace than Ljubljana.",
+        "days": [
+          {
+            "theme": "Lent, Old Vine & Pohorje Views",
+            "activities": [
+              {
+                "name": "Lent riverfront and Main Square walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Old Vine House museum and tasting",
+                "cost": "₹450–₹900"
+              },
+              {
+                "name": "Maribor Castle Regional Museum",
+                "cost": "₹540–₹720"
+              },
+              {
+                "name": "Mariborsko Pohorje cable car or hillside viewpoint",
+                "cost": "₹900–₹1,530"
+              },
+              {
+                "name": "Evening wine bars around Glavni trg",
+                "cost": "₹720–₹1,620"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "B&B Hotel Maribor",
+                "budget": "₹6,750–₹9,900/night"
+              },
+              {
+                "name": "Hotel Piramida",
+                "budget": "₹7,650–₹11,250/night"
+              }
+            ],
+            "meals": [
+              "Rozmarin",
+              "Gostilna Maribor",
+              "Bascarsija"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Ljubljana",
+        "to": "Lake Bled",
+        "method": "Arriva bus from AP Ljubljana to Bled bus station, or SŽ train to Lesce-Bled plus a local bus/taxi to the lake (about 55-75 min)",
+        "cost": "₹630–₹810"
+      },
+      {
+        "from": "Lake Bled",
+        "to": "Lake Bohinj",
+        "method": "Arriva bus from Bled bus station to Ribcev Laz / Bohinj Jezero (about 1 hr)",
+        "cost": "₹360–₹540"
+      },
+      {
+        "from": "Lake Bohinj",
+        "to": "Piran",
+        "method": "Arriva bus back via Ljubljana, then FlixBus or Arriva onward to Piran (about 4-4.5 hrs total)",
+        "cost": "₹1,260–₹1,980"
+      },
+      {
+        "from": "Piran",
+        "to": "Postojna",
+        "method": "Arriva bus via Koper or a timed coach connection inland to Postojna (about 2-2.5 hrs)",
+        "cost": "₹720–₹1,170"
+      },
+      {
+        "from": "Postojna",
+        "to": "Maribor",
+        "method": "SŽ train via Ljubljana from Postojna station to Maribor (about 3.5-4 hrs)",
+        "cost": "₹1,260–₹1,890"
+      }
+    ],
+    "extras": [
+      "Book Postojna Cave, Predjama and Skocjan Caves ahead in summer; cave tour times are fixed and the best slots sell first.",
+      "For Bled and Bohinj, buses are usually easier than trains because they drop you closer to the lakefront; keep SŽ for longer city hops like Postojna-Maribor.",
+      "Piran's old town is pedestrian-only, so pack light for the last stretch from the bus stop and expect some stone lanes and stairs.",
+      "Most places take cards, but carry a little cash for market snacks, bus stations and small mountain or coastal kiosks."
+    ],
+    "cityImages": {
+      "Ljubljana": [
+        "Ljubljana Castle old town aerial Slovenia",
+        "Dragon Bridge Ljubljana green dragons",
+        "Triple Bridge Preseren Square Ljubljana"
+      ],
+      "Lake Bled": [
+        "Lake Bled island church Slovenia",
+        "Bled Castle cliff lake view",
+        "Ojstrica viewpoint Lake Bled sunrise"
+      ],
+      "Lake Bohinj": [
+        "Lake Bohinj Ribcev Laz church Slovenia",
+        "Vogel cable car Bohinj Julian Alps",
+        "Savica Waterfall Bohinj"
+      ],
+      "Piran": [
+        "Tartini Square Piran aerial",
+        "Walls of Piran Adriatic sunset",
+        "St George Parish Church Piran Slovenia"
+      ],
+      "Postojna": [
+        "Postojna Cave train concert hall Slovenia",
+        "Predjama Castle cliff cave Slovenia",
+        "Skocjan Caves bridge underground canyon"
+      ],
+      "Maribor": [
+        "Lent Maribor Drava riverfront",
+        "Old Vine House Maribor Slovenia",
+        "Mariborsko Pohorje gondola view"
+      ]
+    }
+  }
+}

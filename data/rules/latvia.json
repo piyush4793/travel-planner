@@ -1,0 +1,647 @@
+{
+  "name": "Latvia",
+  "seed": false,
+  "lat": 56.88,
+  "lng": 24.6,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹95K–₹1.7L",
+    "couple": "₹1.8L–₹3L",
+    "family4": "₹3.8L–₹5.8L"
+  },
+  "experiences": [
+    "Riga Art Nouveau",
+    "Baltic Beaches",
+    "Gauja National Park",
+    "Medieval Castles",
+    "Karosta"
+  ],
+  "avoid": [
+    "November–February — cold Baltic winds, short daylight, and greyer beach towns",
+    "Jāņi / Midsummer week — seaside stays around Jūrmala and Liepāja book up early"
+  ],
+  "combo": [
+    "Estonia",
+    "Lithuania",
+    "Finland"
+  ],
+  "landmark": "House of the Black Heads",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Riga",
+      "lat": 56.9496,
+      "lng": 24.1052,
+      "notes": "Compact capital for Art Nouveau streets, market halls, church towers and classic Latvian dining"
+    },
+    {
+      "name": "Jūrmala",
+      "lat": 56.968,
+      "lng": 23.7704,
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "notes": "Easy VIVI train beach escape with long white-sand shoreline, pine parks and wooden villas"
+    },
+    {
+      "name": "Sigulda",
+      "lat": 57.1538,
+      "lng": 24.8595,
+      "notes": "Gauja National Park base for Turaida Castle, cable car views and gentle castle-to-cave hiking"
+    },
+    {
+      "name": "Cēsis",
+      "lat": 57.3119,
+      "lng": 25.2745,
+      "notes": "Small medieval town with Latvia's strongest castle complex and a very walkable old centre"
+    },
+    {
+      "name": "Liepāja",
+      "lat": 56.5047,
+      "lng": 21.0108,
+      "notes": "Laid-back Baltic port with a wide Blue Flag beach, Karosta history and strong cafe culture"
+    }
+  ],
+  "itinerary": {
+    "sim": "LMT, Tele2, or Bite prepaid SIMs are easy airport and city-centre buys in Latvia, usually around ₹450–₹900 for enough data for maps, VIVI tickets, and Bolt rides.",
+    "apps": [
+      "VIVI",
+      "Lux Express",
+      "Ecolines",
+      "Mobilly",
+      "Bolt",
+      "Google Maps",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Riga",
+      "Jūrmala",
+      "Sigulda",
+      "Cēsis",
+      "Liepāja"
+    ],
+    "cities": {
+      "Riga": {
+        "name": "Riga",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days is the sweet spot for Riga because you can split the Old Town icons, Art Nouveau museums, and a slower market-and-canal day without rushing.",
+        "days": [
+          {
+            "theme": "Old Town Icons, Market Halls & Church Tower Views",
+            "activities": [
+              {
+                "name": "House of the Black Heads",
+                "cost": "₹810"
+              },
+              {
+                "name": "St. Peter's Church and bell tower",
+                "cost": "₹810"
+              },
+              {
+                "name": "Riga Central Market food hall wander",
+                "cost": "Free"
+              },
+              {
+                "name": "Town Hall Square to Daugava riverfront evening walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hanza Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Wellton Centrum Hotel & Spa",
+                "budget": "₹8,500–₹13,000/night"
+              }
+            ],
+            "meals": [
+              "Folkklubs ALA Pagrabs",
+              "Milda",
+              "Riga Central Market"
+            ]
+          },
+          {
+            "theme": "Art Nouveau Riga, Parks & Museum Stops",
+            "activities": [
+              {
+                "name": "Riga Art Nouveau Center Museum",
+                "cost": "₹810"
+              },
+              {
+                "name": "Alberta iela Art Nouveau architecture walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Bastejkalns Park and Freedom Monument area",
+                "cost": "Free"
+              },
+              {
+                "name": "Museum of the Occupation of Latvia",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hanza Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Monika Centrum Hotels",
+                "budget": "₹8,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "LIDO Vērmanītis",
+              "Snatch",
+              "Parunāsim kafe'teeka"
+            ]
+          },
+          {
+            "theme": "Canal Cruise, National Library & Slow Riga",
+            "activities": [
+              {
+                "name": "Riga canal and Daugava sightseeing boat",
+                "cost": "₹1,620–₹1,980"
+              },
+              {
+                "name": "Latvian National Library public spaces and skyline views",
+                "cost": "Free"
+              },
+              {
+                "name": "Ķīpsala riverside wooden-house walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Agenskalns Market dinner stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Rixwell Old Riga Palace Hotel",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Konventa Sēta Hotel Keystone Collection",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Āgenskalna Tirgus",
+              "Rozengrāls",
+              "Rocket Bean Roastery"
+            ]
+          }
+        ]
+      },
+      "Jūrmala": {
+        "name": "Jūrmala",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Jūrmala works best as a sunny one-night or full-day seaside break from Riga, especially if you want beach time rather than museums.",
+        "days": [
+          {
+            "theme": "Beach Day, Pine Parks & Wooden Villas",
+            "activities": [
+              {
+                "name": "Majori Beach and Baltic swim stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Dzintari Forest Park viewing tower",
+                "cost": "Free"
+              },
+              {
+                "name": "Jomas Street cafe walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Art Station Dubulti",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Amber Sea Hotel & Spa",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Hotel Jūrmala Spa",
+                "budget": "₹8,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "36. Line Grill Restaurant",
+              "House of Light",
+              "Alus Krodziņš"
+            ]
+          },
+          {
+            "theme": "Kemeri Nature Side Trip & Sunset Seafront",
+            "activities": [
+              {
+                "name": "Ķemeri Bog Boardwalk",
+                "cost": "Free"
+              },
+              {
+                "name": "Jūrmala Open-Air Museum",
+                "cost": "₹225"
+              },
+              {
+                "name": "Dzintari Concert Hall exterior and park area",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset walk back along Dzintari or Majori beach",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Amber Sea Hotel & Spa",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Hotel Jūrmala Spa",
+                "budget": "₹8,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Veranda",
+              "Cafe 53",
+              "Orizzonte"
+            ]
+          }
+        ]
+      },
+      "Sigulda": {
+        "name": "Sigulda",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Two nights lets you do the castles and cave trails at a relaxed pace and still leave room for the cable car or another active stop in Gauja National Park.",
+        "days": [
+          {
+            "theme": "Turaida Castle, Cable Car & Gauja Views",
+            "activities": [
+              {
+                "name": "Turaida Museum Reserve",
+                "cost": "₹540"
+              },
+              {
+                "name": "Sigulda cable car over the Gauja valley (one way)",
+                "cost": "₹1,260"
+              },
+              {
+                "name": "Gutmanis Cave",
+                "cost": "Free"
+              },
+              {
+                "name": "Turaida–Gutmanis–Sigulda walking trail segments",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Sigulda",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Spa Hotel Ezeri",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Aparjods",
+              "Mr. Biskvīts",
+              "Kungu Rija"
+            ]
+          },
+          {
+            "theme": "Castle Quarter & Adventure Park Option",
+            "activities": [
+              {
+                "name": "Sigulda Medieval Castle and New Castle quarter",
+                "cost": "₹360–₹540"
+              },
+              {
+                "name": "Sigulda Castle quarter crafts and viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Tarzāns adventure park full obstacle route",
+                "cost": "₹1,980"
+              },
+              {
+                "name": "Evening Gauja valley viewpoints near Sigulda station",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Sigulda",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Good Stay Segevold Hotel",
+                "budget": "₹7,000–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Gadalaiki",
+              "Aparjods",
+              "Doma"
+            ]
+          }
+        ]
+      },
+      "Cēsis": {
+        "name": "Cēsis",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Cēsis is best as a compact castle-and-old-town stop, but staying a night makes the town feel much less rushed after day-trippers leave.",
+        "days": [
+          {
+            "theme": "Castle Complex, Old Town & Park Walks",
+            "activities": [
+              {
+                "name": "Cēsis Castle Complex high-season combined ticket",
+                "cost": "₹1,080"
+              },
+              {
+                "name": "Rose Square and Cēsis Old Town lanes",
+                "cost": "Free"
+              },
+              {
+                "name": "St. John's Church",
+                "cost": "Free"
+              },
+              {
+                "name": "Maija Park and castle park stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Cēsis",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Villa Santa",
+                "budget": "₹11,000–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "Kafe PRIEDE",
+              "Cafe 2Locals",
+              "Vecpuisis"
+            ]
+          },
+          {
+            "theme": "Slow Cēsis, Museum Time & Brewery District",
+            "activities": [
+              {
+                "name": "Cēsis Exhibition House or temporary gallery stop"
+              },
+              {
+                "name": "Rucka Manor art space grounds",
+                "cost": "Free"
+              },
+              {
+                "name": "Walk the old brewery quarter and hidden courtyards",
+                "cost": "Free"
+              },
+              {
+                "name": "Relaxed coffee-and-pastry morning in the centre",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Cēsis",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Katrina Hotel",
+                "budget": "₹4,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "MALA",
+              "Go To Sushi Bar",
+              "Bekko"
+            ]
+          }
+        ]
+      },
+      "Liepāja": {
+        "name": "Liepāja",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is ideal for Liepāja because one day can focus on Karosta's military history while the other is better spent on the beach, promenade, and cafes.",
+        "days": [
+          {
+            "theme": "Karosta History & Northern Forts",
+            "activities": [
+              {
+                "name": "Karosta Prison guided visit",
+                "cost": "₹720"
+              },
+              {
+                "name": "St. Nicholas Naval Cathedral exterior and grounds",
+                "cost": "Free"
+              },
+              {
+                "name": "Northern Forts coastal walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Karosta beach sunset stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Līva Hotel",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Amrita Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Darbnīca",
+              "MO Liepāja",
+              "Street Burgers"
+            ]
+          },
+          {
+            "theme": "Beach, Promenade & Music City Core",
+            "activities": [
+              {
+                "name": "Liepāja Blue Flag beach and Seaside Park",
+                "cost": "Free"
+              },
+              {
+                "name": "Liepāja Museum",
+                "cost": "Free"
+              },
+              {
+                "name": "Great Amber concert hall architecture stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Promenade and Tram Bridge evening walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Līva Hotel",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Hotel Kolumbs",
+                "budget": "₹7,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Upe",
+              "Red Sun Buffet",
+              "Piano Restaurant"
+            ]
+          },
+          {
+            "theme": "Slow Seaside Finish or Festival Buffer Day",
+            "activities": [
+              {
+                "name": "Peter's Market local produce browse",
+                "cost": "Free"
+              },
+              {
+                "name": "Crafts House visit"
+              },
+              {
+                "name": "Second beach half-day or bike ride along the promenade",
+                "cost": "Free"
+              },
+              {
+                "name": "Final old port coffee stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Amrita Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Hotel Kolumbs",
+                "budget": "₹7,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Vējš Cafe",
+              "Bel Cibo",
+              "Upe"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Riga",
+        "to": "Jūrmala",
+        "method": "VIVI train from Riga Central to Majori or Dzintari, about 30 to 35 minutes",
+        "cost": "₹180"
+      },
+      {
+        "from": "Jūrmala",
+        "to": "Sigulda",
+        "method": "VIVI train back via Riga Central and onward to Sigulda, about 1 hour 45 minutes to 2 hours total",
+        "cost": "₹360–₹450"
+      },
+      {
+        "from": "Sigulda",
+        "to": "Cēsis",
+        "method": "VIVI train or regional bus north through Gauja National Park, about 55 minutes to 1 hour 10 minutes",
+        "cost": "₹225–₹315"
+      },
+      {
+        "from": "Cēsis",
+        "to": "Liepāja",
+        "method": "VIVI train back to Riga, then Lux Express or Ecolines coach to Liepāja, about 5.5 to 6.5 hours total",
+        "cost": "₹1,170–₹1,620"
+      },
+      {
+        "from": "Liepāja",
+        "to": "Riga",
+        "method": "Lux Express or Ecolines direct coach to Riga, about 3.5 to 4 hours",
+        "cost": "₹810–₹1,260"
+      }
+    ],
+    "extras": [
+      "VIVI is the easiest rail backbone for Riga, Jūrmala, Sigulda, and Cēsis; buy tickets in the app or at stations, and validate your train choice carefully because some departures are slightly faster than others.",
+      "If you visit Jūrmala by train, you avoid the €450 car-entry fee entirely; that fee only applies to motor vehicles entering the resort zone.",
+      "Latvia is very card-friendly, but small cafes and market stalls still sometimes prefer cash for tiny purchases, so keep a little EUR on hand.",
+      "Summer daylight is long and comfortable, but Baltic weather shifts quickly: pack a light waterproof even in July if you plan beach time or Gauja hikes.",
+      "Book Liepāja buses and central Riga stays ahead for midsummer weekends because coastal demand spikes faster than prices elsewhere in the country."
+    ],
+    "cityImages": {
+      "Riga": [
+        "House of the Black Heads Riga",
+        "Alberta iela Riga Art Nouveau",
+        "Riga Central Market"
+      ],
+      "Jūrmala": [
+        "Jurmala beach Majori",
+        "Dzintari Forest Park Jurmala",
+        "Dubulti Station Jurmala"
+      ],
+      "Sigulda": [
+        "Turaida Castle Sigulda",
+        "Sigulda Medieval Castle",
+        "Gutmanis Cave"
+      ],
+      "Cēsis": [
+        "Cesis Castle Latvia",
+        "Cesis Old Town",
+        "St Johns Church Cesis"
+      ],
+      "Liepāja": [
+        "Karosta Prison Liepaja",
+        "Liepaja beach",
+        "Great Amber Liepaja"
+      ]
+    }
+  }
+}

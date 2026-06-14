@@ -1,0 +1,562 @@
+{
+  "name": "Slovakia",
+  "seed": false,
+  "lat": 48.67,
+  "lng": 19.7,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "November"
+  ],
+  "budget": {
+    "solo": "₹85K–₹1.5L",
+    "couple": "₹1.5L–₹2.5L",
+    "family4": "₹3L–₹5L"
+  },
+  "experiences": [
+    "Bratislava Old Town",
+    "High Tatras",
+    "Spiš Castle",
+    "Banská Štiavnica",
+    "Košice"
+  ],
+  "avoid": [
+    "Tatras weather flips quickly — keep one flexible mountain day and book ice cave slots or cableways early in summer and ski season"
+  ],
+  "combo": [
+    "Austria",
+    "Hungary",
+    "Poland"
+  ],
+  "landmark": "Spiš Castle",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Bratislava",
+      "lat": 48.1486,
+      "lng": 17.1077,
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "December"
+      ],
+      "notes": "Compact Danube capital with castle views, cafe streets and easy Devín half-day trips"
+    },
+    {
+      "name": "High Tatras",
+      "lat": 49.1361,
+      "lng": 20.2203,
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Slovakia’s headline mountain region for lake walks, hut hikes, skiing and cave excursions"
+    },
+    {
+      "name": "Košice",
+      "lat": 48.7164,
+      "lng": 21.2611,
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "December"
+      ],
+      "notes": "Eastern cultural capital with Gothic cathedral skyline, Hlavná Street and strong cafe culture"
+    },
+    {
+      "name": "Banská Štiavnica",
+      "lat": 48.4584,
+      "lng": 18.8935,
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "notes": "UNESCO mining town of steep lanes, calvary views and castle museums"
+    },
+    {
+      "name": "Levoča",
+      "lat": 49.025,
+      "lng": 20.5883,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Well-preserved walled town with St. James Basilica and easy access to Spiš Castle"
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange, Telekom, or O2 prepaid SIMs are easy to pick up in Bratislava malls and larger rail stations; expect about ₹720–₹1,350 for 10–20GB. eSIM options are common, but physical SIM registration can still be simpler if you want a Slovak number for rail alerts and hotel calls.",
+    "apps": [
+      "IDeme vlakom",
+      "CP",
+      "Ubian",
+      "FlixBus",
+      "Bolt",
+      "Mapy.cz",
+      "Google Translate",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Bratislava",
+      "Banská Štiavnica",
+      "High Tatras",
+      "Levoča",
+      "Košice"
+    ],
+    "cities": {
+      "Bratislava": {
+        "name": "Bratislava",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is enough for the old town, castle interiors and a Devín detour; add a third only if you want gallery time or a slower Danube-food day.",
+        "days": [
+          {
+            "theme": "Old Town lanes, cathedral quarter and Danube skyline",
+            "activities": [
+              {
+                "name": "Hviezdoslav Square, Michael’s Gate and Old Town walking circuit",
+                "cost": "Free"
+              },
+              {
+                "name": "Old Town Hall Museum",
+                "cost": "₹720"
+              },
+              {
+                "name": "St. Martin’s Cathedral treasury or tower visit",
+                "cost": "₹360"
+              },
+              {
+                "name": "UFO Observation Deck sunset entry",
+                "cost": "₹1,160",
+                "tip": "Reserve close to sunset if the weather is clear; bridge security lines move slower on weekends."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibis Bratislava Centrum",
+                "budget": "₹5,400–₹7,200/night"
+              },
+              {
+                "name": "LOFT Hotel Bratislava",
+                "budget": "₹9,900–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "Slovak Pub",
+              "Modrá Hviezda",
+              "Urban House"
+            ]
+          },
+          {
+            "theme": "Castle Hill, Devín ramparts and riverside Bratislava",
+            "activities": [
+              {
+                "name": "Bratislava Castle Museum of History ticket",
+                "cost": "₹900"
+              },
+              {
+                "name": "Castle terraces and baroque garden walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Devín Castle",
+                "cost": "₹720"
+              },
+              {
+                "name": "Blue Church and Eurovea Danube promenade evening stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibis Bratislava Centrum",
+                "budget": "₹5,400–₹7,200/night"
+              },
+              {
+                "name": "LOFT Hotel Bratislava",
+                "budget": "₹9,900–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "Zylinder Cafe Restaurant",
+              "Bratislavský Meštiansky Pivovar",
+              "Mondieu"
+            ]
+          }
+        ]
+      },
+      "Banská Štiavnica": {
+        "name": "Banská Štiavnica",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "This works best as a one-night UNESCO stop between Bratislava and the Tatras; stay longer only if you want caldera lakes or slower museum time.",
+        "days": [
+          {
+            "theme": "Mining heritage, castle pair and steep-lane old town",
+            "activities": [
+              {
+                "name": "Holy Trinity Square and Klopačka orientation walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Old Castle",
+                "cost": "₹720"
+              },
+              {
+                "name": "New Castle",
+                "cost": "₹540"
+              },
+              {
+                "name": "Slovak Mining Museum open-air mining tunnel tour",
+                "cost": "₹900",
+                "tip": "Tours include helmet, coat and lamp; book the tunnel slot first because departures are fixed."
+              },
+              {
+                "name": "Banská Štiavnica Calvary uphill walk for sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Penzión Resla pri Klopačke",
+                "budget": "₹5,400–₹7,650/night"
+              },
+              {
+                "name": "Hotel Grand Matej",
+                "budget": "₹6,750–₹9,900/night"
+              }
+            ],
+            "meals": [
+              "ERB Brewery",
+              "4sochy Café",
+              "Monarchia Restaurant"
+            ]
+          }
+        ]
+      },
+      "High Tatras": {
+        "name": "High Tatras",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Use three days if you want a proper mix of alpine walking, one paid mountain lift/funicular and one cave or bad-weather backup day.",
+        "days": [
+          {
+            "theme": "Štrbské Pleso lake loops and easy Tatra hiking",
+            "activities": [
+              {
+                "name": "Štrbské Pleso lakeside circuit",
+                "cost": "Free"
+              },
+              {
+                "name": "Hike from Popradské Pleso trailhead to Symbolic Cemetery junction",
+                "cost": "Free",
+                "tip": "Carry layers even in July; mountain wind can make the lake basin feel much colder than Poprad."
+              },
+              {
+                "name": "Tatra Electric Railway day riding between Poprad, Starý Smokovec and Štrbské Pleso",
+                "cost": "₹360–₹630"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel SATEL Poprad",
+                "budget": "₹6,300–₹8,550/night"
+              },
+              {
+                "name": "APLEND Hotel Kukučka",
+                "budget": "₹8,550–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "Koliba Kamzík",
+              "Central Restaurant Starý Smokovec",
+              "Restart Burger Poprad"
+            ]
+          },
+          {
+            "theme": "Starý Smokovec, Hrebienok and classic waterfall walks",
+            "activities": [
+              {
+                "name": "Hrebienok funicular round trip",
+                "cost": "₹1,440"
+              },
+              {
+                "name": "Walk from Hrebienok to Rainerova chata",
+                "cost": "Free"
+              },
+              {
+                "name": "Cold Creek Waterfalls trail continuation toward Zamkovského hut if weather allows",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel SATEL Poprad",
+                "budget": "₹6,300–₹8,550/night"
+              },
+              {
+                "name": "APLEND Hotel Kukučka",
+                "budget": "₹8,550–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "Koliba Kamzík",
+              "Reštaurácia Stará Mama",
+              "Dobré Časy Poprad"
+            ]
+          },
+          {
+            "theme": "Ice cave excursion and alpine backup day",
+            "activities": [
+              {
+                "name": "Dobšinská Ice Cave",
+                "cost": "₹1,260",
+                "tip": "Open seasonally and the approach itself is an uphill forest walk, so start early from Poprad and keep a warm layer for the cave interior."
+              },
+              {
+                "name": "Tatranská Lomnica village stroll or weather-safe cafe downtime after the cave trip",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel SATEL Poprad",
+                "budget": "₹6,300–₹8,550/night"
+              },
+              {
+                "name": "APLEND Hotel Kukučka",
+                "budget": "₹8,550–₹12,600/night"
+              }
+            ],
+            "meals": [
+              "Koliba Kamzík",
+              "Reštaurácia Stará Mama",
+              "Restart Burger Poprad"
+            ]
+          }
+        ]
+      },
+      "Levoča": {
+        "name": "Levoča",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Levoča is compact enough for one day, but it earns an extra night if you want Spiš Castle without rushing the basilica and old walls.",
+        "days": [
+          {
+            "theme": "UNESCO square, wooden altar and Spiš country highlights",
+            "activities": [
+              {
+                "name": "Master Pavol Square and town-wall walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Basilica of St. James entry",
+                "cost": "₹270"
+              },
+              {
+                "name": "Mariánska hora short pilgrimage-hill walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Spiš Castle",
+                "cost": "₹1,080"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel U Leva",
+                "budget": "₹5,400–₹7,200/night"
+              },
+              {
+                "name": "Hotel Arkada",
+                "budget": "₹6,300–₹8,550/night"
+              }
+            ],
+            "meals": [
+              "Reštaurácia U Leva",
+              "Kupecká Bašta",
+              "Arkada"
+            ]
+          }
+        ]
+      },
+      "Košice": {
+        "name": "Košice",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Give Košice two days if you enjoy cafe-heavy old towns and museums; a single day covers the main Gothic core but feels tight.",
+        "days": [
+          {
+            "theme": "Hlavná Street, cathedral tower and theatre square",
+            "activities": [
+              {
+                "name": "Hlavná Street and Singing Fountain walk",
+                "cost": "Free"
+              },
+              {
+                "name": "St. Elisabeth Cathedral tower climb",
+                "cost": "₹270"
+              },
+              {
+                "name": "Urban’s Tower exterior and State Theatre square",
+                "cost": "Free"
+              },
+              {
+                "name": "East Slovak Museum",
+                "cost": "₹450"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Michael's Palace",
+                "budget": "₹6,300–₹8,550/night"
+              },
+              {
+                "name": "Hotel Yasmin Košice",
+                "budget": "₹8,100–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Med Malina",
+              "Republika Východu",
+              "Villa Regia"
+            ]
+          },
+          {
+            "theme": "Museums, Hrnčiarska lanes and relaxed east-Slovak pacing",
+            "activities": [
+              {
+                "name": "Slovak Technical Museum",
+                "cost": "₹450"
+              },
+              {
+                "name": "Hrnčiarska craft street walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Košice Botanical Garden",
+                "cost": "₹360"
+              },
+              {
+                "name": "Čermeľ or Anička park tram-side stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Michael's Palace",
+                "budget": "₹6,300–₹8,550/night"
+              },
+              {
+                "name": "Hotel Yasmin Košice",
+                "budget": "₹8,100–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Slávia",
+              "Pivovar Hostinec",
+              "Mondieu Košice"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bratislava",
+        "to": "Banská Štiavnica",
+        "method": "ZSSK train from Bratislava hl.st. to Hronská Dúbrava plus the short local bus onward to Banská Štiavnica (about 3h 15m–3h 45m)",
+        "cost": "₹900–₹1,350"
+      },
+      {
+        "from": "Banská Štiavnica",
+        "to": "High Tatras",
+        "method": "Local bus to Zvolen or Banská Bystrica, then ZSSK train to Poprad-Tatry; FlixBus also works from Banská Bystrica on some schedules (about 4h 30m–5h 30m total)",
+        "cost": "₹1,350–₹2,070"
+      },
+      {
+        "from": "High Tatras",
+        "to": "Levoča",
+        "method": "Tatra Electric Railway or ZSSK connection back to Poprad-Tatry, then FlixBus or regional bus onward to Levoča (about 1h 15m–1h 45m)",
+        "cost": "₹270–₹540"
+      },
+      {
+        "from": "Levoča",
+        "to": "Košice",
+        "method": "Regional bus to Spišská Nová Ves or Poprad, then ZSSK train onward to Košice (about 1h 30m–2h)",
+        "cost": "₹360–₹630"
+      },
+      {
+        "from": "Košice",
+        "to": "Bratislava",
+        "method": "ZSSK InterCity or express train from Košice to Bratislava hlavná stanica (about 4h 45m–5h 15m)",
+        "cost": "₹1,800–₹2,430"
+      }
+    ],
+    "extras": [
+      "May to September is the cleanest window for hut hikes and lake walks, while December to March is better for skiing; October and especially November are the least reliable shoulder months for mountain visibility.",
+      "In the High Tatras, Mapy.cz is usually better than generic map apps for trail markings, hut names, and offline navigation across the Starý Smokovec–Štrbské Pleso corridor.",
+      "Buy long-distance ZSSK tickets early for Bratislava–Poprad or Košice–Bratislava if you want the cheapest seat reservations, especially around holidays and winter weekends.",
+      "Carry some cash for smaller museums, cave kiosks, and mountain huts even though cards are widely accepted in Bratislava and Košice.",
+      "If rain wipes out a Tatras hiking day, swap it for Poprad cafes, AquaCity, or a cave excursion rather than forcing exposed ridge plans."
+    ],
+    "cityImages": {
+      "Bratislava": [
+        "Bratislava Castle Old Town Danube",
+        "Michael's Gate Bratislava historic center",
+        "Devín Castle Slovakia confluence"
+      ],
+      "High Tatras": [
+        "Štrbské Pleso High Tatras lake",
+        "Hrebienok High Tatras Slovakia",
+        "Dobšinská Ice Cave Slovakia"
+      ],
+      "Košice": [
+        "St Elisabeth Cathedral Košice",
+        "Hlavná ulica Košice State Theatre",
+        "Singing Fountain Košice"
+      ],
+      "Banská Štiavnica": [
+        "Holy Trinity Square Banská Štiavnica",
+        "Old Castle Banská Štiavnica",
+        "Banská Štiavnica Calvary Slovakia"
+      ],
+      "Levoča": [
+        "Basilica of St James Levoča",
+        "Master Pavol Square Levoča",
+        "Spiš Castle Slovakia panorama"
+      ]
+    }
+  }
+}

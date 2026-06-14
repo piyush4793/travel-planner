@@ -1,0 +1,507 @@
+{
+  "name": "Lithuania",
+  "seed": false,
+  "lat": 55.17,
+  "lng": 23.88,
+  "region": "Europe",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹85K–₹1.45L",
+    "couple": "₹1.55L–₹2.45L",
+    "family4": "₹3.2L–₹4.9L"
+  },
+  "experiences": [
+    "Vilnius Old Town",
+    "Trakai Island Castle",
+    "Kaunas Modernism",
+    "Klaipėda waterfront",
+    "Curonian Spit dunes"
+  ],
+  "avoid": [
+    "November–February for short daylight, icy pavements, and a cold Baltic coast",
+    "Peak summer weekends in Nida if you dislike traffic and premium hotel rates"
+  ],
+  "combo": [
+    "Latvia",
+    "Poland"
+  ],
+  "landmark": "Trakai Island Castle",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Vilnius",
+      "lat": 54.6872,
+      "lng": 25.2797,
+      "notes": "Baroque Old Town with Gediminas Castle Tower, Užupis lanes and strong café culture"
+    },
+    {
+      "name": "Kaunas",
+      "lat": 54.8985,
+      "lng": 23.9036,
+      "notes": "Interwar modernist city with a castle, funiculars and Lithuania's best museum cluster"
+    },
+    {
+      "name": "Trakai",
+      "lat": 54.6379,
+      "lng": 24.9346,
+      "notes": "Lake-ringed former capital known for Trakai Island Castle and Karaim kibinai"
+    },
+    {
+      "name": "Klaipėda",
+      "lat": 55.7033,
+      "lng": 21.1443,
+      "notes": "Baltic port with a compact German-influenced old town and easy ferry links to the dunes"
+    },
+    {
+      "name": "Curonian Spit",
+      "lat": 55.3036,
+      "lng": 21.0069,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "UNESCO-protected sand-dune peninsula centred on Nida and Juodkrantė"
+    }
+  ],
+  "itinerary": {
+    "sim": "Pildyk or Ežys prepaid SIMs are the easiest tourist pick in Lithuania, usually about ₹450–₹900 for 20–60GB; buy them at Vilnius Airport kiosks, Maxima supermarkets, or telecom shops in the city centres.",
+    "apps": [
+      "LTG Link",
+      "Lux Express",
+      "Trafi",
+      "Bolt",
+      "Google Maps",
+      "Google Translate",
+      "Booking.com"
+    ],
+    "cityOrder": [
+      "Vilnius",
+      "Trakai",
+      "Kaunas",
+      "Klaipėda",
+      "Curonian Spit"
+    ],
+    "cities": {
+      "Vilnius": {
+        "name": "Vilnius",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days is ideal for Vilnius: one classic Old Town day, one museum-and-Užupis day, and one church-and-viewpoint day without rushing the food scene.",
+        "days": [
+          {
+            "theme": "Old Town, Cathedral Square & Gediminas Hill",
+            "activities": [
+              {
+                "name": "Cathedral Square, Pilies Street, and the Old Town lanes",
+                "cost": "Free"
+              },
+              {
+                "name": "Gediminas Castle Tower",
+                "cost": "₹720",
+                "tip": "Go early or late for the best light over the red roofs and fewer tour groups."
+              },
+              {
+                "name": "Palace of the Grand Dukes main route",
+                "cost": "₹1,080"
+              },
+              {
+                "name": "St. Anne's Church and Bernardine quarter walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Corner Hotel",
+                "budget": "₹4,500–₹6,300/night"
+              },
+              {
+                "name": "Artagonist Art Hotel",
+                "budget": "₹8,100–₹11,700/night"
+              }
+            ],
+            "meals": [
+              "Etno Dvaras",
+              "Lokys",
+              "Šnekutis"
+            ]
+          },
+          {
+            "theme": "Soviet History, Užupis & Contemporary Art",
+            "activities": [
+              {
+                "name": "Museum of Occupations and Freedom Fights",
+                "cost": "₹540"
+              },
+              {
+                "name": "MO Museum",
+                "cost": "₹900–₹1,080"
+              },
+              {
+                "name": "Užupis republic walk and riverfront art stops",
+                "cost": "Free"
+              },
+              {
+                "name": "Vilnius Cathedral Bell Tower",
+                "cost": "₹540"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Corner Hotel",
+                "budget": "₹4,500–₹6,300/night"
+              },
+              {
+                "name": "Conti Hotel Vilnius",
+                "budget": "₹7,200–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Senoji Trobelė",
+              "Leičiai",
+              "Džiaugsmas"
+            ]
+          },
+          {
+            "theme": "University Courtyards, Baroque Churches & Market Grazing",
+            "activities": [
+              {
+                "name": "Vilnius University courtyards and St. John's Bell Tower",
+                "cost": "₹630"
+              },
+              {
+                "name": "Church of Sts. Peter and Paul",
+                "cost": "Free"
+              },
+              {
+                "name": "Three Crosses Hill viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Halės Market snack crawl",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Conti Hotel Vilnius",
+                "budget": "₹7,200–₹10,800/night"
+              },
+              {
+                "name": "Artagonist Art Hotel",
+                "budget": "₹8,100–₹11,700/night"
+              }
+            ],
+            "meals": [
+              "Halės Turgus",
+              "Amandus",
+              "Augustin"
+            ]
+          }
+        ]
+      },
+      "Trakai": {
+        "name": "Trakai",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Trakai works best as a relaxed overnight or full-day stop between Vilnius and Kaunas; one day is enough for the castle, lakefront, and Karaim food.",
+        "days": [
+          {
+            "theme": "Island Castle, Karaim Heritage & the Lakeshore",
+            "activities": [
+              {
+                "name": "Trakai Island Castle museum",
+                "cost": "₹1,260",
+                "tip": "The first hour after opening is much calmer than late-morning coach-tour time in summer."
+              },
+              {
+                "name": "Karaim Street wooden houses and kenesa exterior walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Church of the Visitation of the Blessed Virgin Mary",
+                "cost": "Free"
+              },
+              {
+                "name": "Galvė Lake boat ride or pedal boat rental",
+                "cost": "₹900–₹1,350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Apvalaus Stalo Klubas",
+                "budget": "₹8,100–₹11,700/night"
+              },
+              {
+                "name": "TonyResort",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Senoji Kibininė",
+              "Kybynlar",
+              "Apvalaus Stalo Klubas"
+            ]
+          }
+        ]
+      },
+      "Kaunas": {
+        "name": "Kaunas",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Two days lets you cover Kaunas Old Town properly and still give modernist museums and memorial history the time they deserve.",
+        "days": [
+          {
+            "theme": "Old Town, Castle Precinct & Laisvės Alėja",
+            "activities": [
+              {
+                "name": "Kaunas Old Town and Town Hall Square walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Kaunas Castle Museum",
+                "cost": "₹360"
+              },
+              {
+                "name": "Kaunas City Museum at Town Hall",
+                "cost": "₹360"
+              },
+              {
+                "name": "Laisvės alėja boulevard and St. Michael the Archangel Church",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Styles Kaunas Centre",
+                "budget": "₹4,500–₹6,300/night"
+              },
+              {
+                "name": "Moxy Kaunas Center",
+                "budget": "₹7,200–₹10,800/night"
+              }
+            ],
+            "meals": [
+              "Bernelių Užeiga",
+              "Višta Puode",
+              "Uoksas"
+            ]
+          },
+          {
+            "theme": "Modernist Kaunas, Museums & Hilltop Views",
+            "activities": [
+              {
+                "name": "Ninth Fort Museum",
+                "cost": "₹540"
+              },
+              {
+                "name": "Devils' Museum",
+                "cost": "₹450"
+              },
+              {
+                "name": "M. K. Čiurlionis National Museum of Art",
+                "cost": "₹810"
+              },
+              {
+                "name": "Žaliakalnis Funicular and Christ's Resurrection Church rooftop",
+                "cost": "₹180–₹360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Styles Kaunas Centre",
+                "budget": "₹4,500–₹6,300/night"
+              },
+              {
+                "name": "BEST BALTIC Kaunas",
+                "budget": "₹6,300–₹8,100/night"
+              }
+            ],
+            "meals": [
+              "Spurginė",
+              "Numan",
+              "Arrivée"
+            ]
+          }
+        ]
+      },
+      "Klaipėda": {
+        "name": "Klaipėda",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A full day covers Klaipėda's compact old town well; add a second only if you want more museum time before crossing to the Curonian Spit.",
+        "days": [
+          {
+            "theme": "Old Town, Castle Area & the Dane Riverfront",
+            "activities": [
+              {
+                "name": "Theatre Square, Meridianas, and the Old Town lanes",
+                "cost": "Free"
+              },
+              {
+                "name": "Castle Museum",
+                "cost": "₹540"
+              },
+              {
+                "name": "Ferry to Smiltynė and harbourfront walk",
+                "cost": "₹180–₹270"
+              },
+              {
+                "name": "Lithuanian Sea Museum",
+                "cost": "₹1,260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aurora Hotel Klaipėda",
+                "budget": "₹4,500–₹6,300/night"
+              },
+              {
+                "name": "Old Mill Hotel",
+                "budget": "₹6,300–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Friedricho Pasazas",
+              "Stora Antis",
+              "Monai"
+            ]
+          }
+        ]
+      },
+      "Curonian Spit": {
+        "name": "Curonian Spit",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Even one full day on the spit gives you dunes, Nida, and a museum stop, but staying overnight is far more rewarding once the day-trippers leave.",
+        "days": [
+          {
+            "theme": "Nida Dunes, Quiet Harbours & Amber Museums",
+            "activities": [
+              {
+                "name": "Parnidis Dune and sundial viewpoint",
+                "cost": "Free",
+                "tip": "Sunrise and the final hour before sunset are the best times for the dune ridge and lagoon views."
+              },
+              {
+                "name": "Thomas Mann Museum",
+                "cost": "₹270"
+              },
+              {
+                "name": "Mizgiris Amber Museum",
+                "cost": "₹810"
+              },
+              {
+                "name": "Nida harbour walk and beach time",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nerija Hotel",
+                "budget": "₹7,200–₹10,800/night"
+              },
+              {
+                "name": "Nidus Hotel",
+                "budget": "₹10,800–₹14,400/night"
+              }
+            ],
+            "meals": [
+              "Tik Pas Joną",
+              "Fisheria",
+              "Sena Sodyba"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Vilnius",
+        "to": "Trakai",
+        "method": "LTG Link train from Vilnius station to Trakai (about 30–35m)",
+        "cost": "₹270–₹450"
+      },
+      {
+        "from": "Trakai",
+        "to": "Kaunas",
+        "method": "Return to Vilnius and continue by LTG Link train to Kaunas (about 1h 45m–2h 10m total rail time with the transfer)",
+        "cost": "₹900–₹1,350"
+      },
+      {
+        "from": "Kaunas",
+        "to": "Klaipėda",
+        "method": "LTG Link train from Kaunas to Klaipėda (about 3h 45m–4h 15m)",
+        "cost": "₹1,890–₹2,340"
+      },
+      {
+        "from": "Klaipėda",
+        "to": "Curonian Spit",
+        "method": "Pedestrian ferry to Smiltynė plus the local Neringa bus onward to Nida (about 2h–2h 20m total)",
+        "cost": "₹540–₹990"
+      },
+      {
+        "from": "Curonian Spit",
+        "to": "Vilnius",
+        "method": "Local bus and ferry back to Klaipėda, then a Lux Express coach to Vilnius (about 5h 30m–6h 30m total)",
+        "cost": "₹2,250–₹3,420"
+      }
+    ],
+    "extras": [
+      "Lithuania's national museums are often free on the last Sunday of the month, so time Vilnius or Kaunas museum-heavy days around that if you can.",
+      "LTG Link is the easiest way to do Vilnius, Trakai, and Kaunas without a car, while Lux Express is the most comfortable long-haul option back from Klaipėda.",
+      "For the Curonian Spit, overnight in Nida if possible: the dunes and harbour feel much quieter after the last ferry crowds return to Klaipėda.",
+      "Kibinai in Trakai and smoked fish on the Curonian Spit are the two easiest regional food wins to prioritise on a short trip."
+    ],
+    "cityImages": {
+      "Vilnius": [
+        "Vilnius Cathedral Square Lithuania",
+        "Gediminas Castle Tower Vilnius",
+        "Užupis Vilnius street art"
+      ],
+      "Trakai": [
+        "Trakai Island Castle Lithuania aerial view",
+        "Karaim houses Trakai",
+        "Trakai lakeside boardwalk"
+      ],
+      "Kaunas": [
+        "Kaunas Town Hall square Lithuania",
+        "Kaunas Castle tower",
+        "Laisvės alėja Kaunas"
+      ],
+      "Klaipėda": [
+        "Theatre Square Klaipėda Lithuania",
+        "Klaipėda Old Town timber-framed buildings",
+        "Klaipėda Castle museum"
+      ],
+      "Curonian Spit": [
+        "Parnidis Dune Nida Lithuania",
+        "Thomas Mann Museum Nida",
+        "Curonian Spit Juodkrantė dunes"
+      ]
+    }
+  }
+}
