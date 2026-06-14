@@ -525,9 +525,9 @@
     "lng": 25.75,
     "region": "Europe",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 11,
+    "maxDays": 17
   },
   {
     "name": "Ireland",
@@ -1035,9 +1035,9 @@
     "lng": 37.91,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 11,
+    "maxDays": 16
   },
   {
     "name": "Tanzania",
@@ -1045,9 +1045,9 @@
     "lng": 34.89,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 15
   },
   {
     "name": "Ethiopia",
@@ -1535,9 +1535,9 @@
     "lng": -74.3,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 16,
+    "maxDays": 21
   },
   {
     "name": "Peru",
@@ -1635,9 +1635,9 @@
     "lng": -77.78,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 12,
+    "maxDays": 16
   },
   {
     "name": "Jamaica",

@@ -1,0 +1,639 @@
+{
+  "name": "Tanzania",
+  "seed": false,
+  "lat": -6.37,
+  "lng": 34.89,
+  "region": "Africa",
+  "bestMonths": [
+    "January",
+    "February",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "March",
+    "April",
+    "May"
+  ],
+  "budget": {
+    "solo": "₹2.6L–₹4.6L",
+    "couple": "₹4.8L–₹8.4L",
+    "family4": "₹9.2L–₹15L"
+  },
+  "experiences": [
+    "Serengeti Great Migration",
+    "Ngorongoro Crater Safari",
+    "Zanzibar Beaches and Stone Town",
+    "Kilimanjaro Foothills",
+    "Maasai Highlands"
+  ],
+  "avoid": [
+    "March to May long rains can flood safari tracks and roughen Zanzibar seas",
+    "Bush-flight baggage is usually capped at 15kg in soft bags only",
+    "Stone Town and village areas are conservative away from resorts — pack modest layers"
+  ],
+  "combo": [
+    "Kenya",
+    "Rwanda"
+  ],
+  "landmark": "Serengeti National Park",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Dar es Salaam (DAR) is the easiest gateway if you want Zanzibar first; Kilimanjaro (JRO) is better if you want to start directly on the northern safari circuit.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Dar es Salaam",
+      "lat": -6.7924,
+      "lng": 39.2083,
+      "notes": "National Museum, Kivukoni waterfront, Coco Beach sunsets and the main ferry gateway to Zanzibar"
+    },
+    {
+      "name": "Zanzibar",
+      "lat": -6.1659,
+      "lng": 39.2026,
+      "notes": "Stone Town heritage, spice farms, Jozani red colobus forest and Indian Ocean beach time"
+    },
+    {
+      "name": "Serengeti",
+      "lat": -2.3333,
+      "lng": 34.8333,
+      "notes": "Seronera game drives, Great Migration timing, balloon safaris and classic tented camps"
+    },
+    {
+      "name": "Ngorongoro",
+      "lat": -3.1611,
+      "lng": 35.5877,
+      "notes": "Crater wildlife density, Maasai highlands lodges and one of East Africa's easiest Big Five days"
+    },
+    {
+      "name": "Arusha",
+      "lat": -3.3869,
+      "lng": 36.683,
+      "notes": "Northern circuit launchpad with coffee estates, safari outfitters and Cultural Heritage Centre"
+    },
+    {
+      "name": "Kilimanjaro (base area)",
+      "lat": -3.3349,
+      "lng": 37.3404,
+      "notes": "Moshi, Materuni and Marangu foothills for waterfall walks, coffee farms and Kilimanjaro views"
+    }
+  ],
+  "itinerary": {
+    "sim": "Vodacom and Airtel are the easiest airport/eSIM picks here; plan roughly ₹680–₹1,700 for starter data packs, with the best signal around Dar, Arusha and lodge zones in central Serengeti.",
+    "apps": [
+      "Uber",
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "Airbnb",
+      "Precision Air",
+      "Azam Marine",
+      "SafariBookings",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Dar es Salaam",
+      "Zanzibar",
+      "Arusha",
+      "Ngorongoro",
+      "Serengeti",
+      "Kilimanjaro (base area)"
+    ],
+    "cities": {
+      "Dar es Salaam": {
+        "name": "Dar es Salaam",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Coastal arrival, city history, and an easy reset before the islands or safari loop",
+            "activities": [
+              {
+                "name": "National Museum and House of Culture ticket",
+                "cost": "₹610"
+              },
+              {
+                "name": "Askari Monument, St. Joseph Cathedral and waterfront walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Kivukoni Fish Market or Coco Beach sunset stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Slipway waterfront browse for shops and sea views",
+                "cost": "₹0"
+              },
+              {
+                "name": "Azam Marine ferry or Precision Air ticket for the Zanzibar leg",
+                "cost": "₹2,900–₹10,900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hyatt Regency Dar es Salaam, The Kilimanjaro",
+                "budget": "₹15,000–₹26,000/night"
+              },
+              {
+                "name": "Johari Rotana",
+                "budget": "₹10,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Samaki Samaki",
+              "Karambezi Cafe",
+              "Akemi Revolving Restaurant"
+            ]
+          }
+        ]
+      },
+      "Zanzibar": {
+        "name": "Zanzibar",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Stone Town alleys, spice-scented markets, and a first Indian Ocean sunset",
+            "activities": [
+              {
+                "name": "Stone Town guided walking tour",
+                "cost": "₹2,100"
+              },
+              {
+                "name": "Old Fort, House of Wonders exterior and Freddie Mercury Museum area walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Old Slave Market museum and Anglican Cathedral visit",
+                "cost": "₹500–₹850"
+              },
+              {
+                "name": "Prison Island boat trip to see giant tortoises",
+                "cost": "₹2,900–₹4,200"
+              },
+              {
+                "name": "Forodhani Gardens street-food dinner crawl",
+                "cost": "₹510–₹1,020"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Zanzibar Serena Hotel",
+                "budget": "₹18,500–₹32,000/night"
+              },
+              {
+                "name": "Emerson Spice",
+                "budget": "₹8,500–₹15,000/night"
+              }
+            ],
+            "meals": [
+              "Lukmaan Restaurant",
+              "Tea House Restaurant",
+              "The Passing Show Hotel"
+            ]
+          },
+          {
+            "theme": "Jozani forest, spice-farm aromas, and the east-coast beaches",
+            "activities": [
+              {
+                "name": "Jozani Chwaka Bay National Park guided walk",
+                "cost": "₹1,700–₹3,350"
+              },
+              {
+                "name": "Tangawizi or Kidichi Spice Farm half-day tour",
+                "cost": "₹1,300–₹2,100"
+              },
+              {
+                "name": "Paje or Jambiani beach downtime",
+                "cost": "₹0"
+              },
+              {
+                "name": "Shared taxi from Stone Town to the southeast coast and back",
+                "cost": "₹2,100–₹3,350"
+              },
+              {
+                "name": "Pingwe beach stop by The Rock restaurant viewpoint",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Upendo House",
+                "budget": "₹13,500–₹24,000/night"
+              },
+              {
+                "name": "Zanzibar Queen Hotel",
+                "budget": "₹11,000–₹20,000/night"
+              }
+            ],
+            "meals": [
+              "The Rock Restaurant",
+              "Mr Kahawa",
+              "Lukmaan Restaurant"
+            ]
+          },
+          {
+            "theme": "Mnemba snorkeling, Nungwi sands, and a dhow-sail finale",
+            "activities": [
+              {
+                "name": "Mnemba Island half-day snorkeling trip",
+                "cost": "₹3,200–₹3,850"
+              },
+              {
+                "name": "Nungwi beach and dhow-building yard walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mnarani Marine Turtles Conservation Pond entry",
+                "cost": "₹510–₹850"
+              },
+              {
+                "name": "Sunset dhow cruise from Nungwi or Kendwa",
+                "cost": "₹2,100"
+              },
+              {
+                "name": "North-coast taxi transfers for the day",
+                "cost": "₹2,500–₹3,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Zuri Zanzibar",
+                "budget": "₹32,000–₹58,000/night"
+              },
+              {
+                "name": "DoubleTree Resort by Hilton Zanzibar - Nungwi",
+                "budget": "₹11,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Maasha Nungwi",
+              "The Rock Restaurant",
+              "Upendo Zanzibar"
+            ]
+          }
+        ]
+      },
+      "Arusha": {
+        "name": "Arusha",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Coffee-estate calm, gear checks, and a gentle northern-circuit start",
+            "activities": [
+              {
+                "name": "Arusha Coffee Lodge plantation and roasting tour",
+                "cost": "₹2,500–₹4,200"
+              },
+              {
+                "name": "Cultural Heritage Centre art and curio browse",
+                "cost": "₹0"
+              },
+              {
+                "name": "Arusha Declaration Museum or Natural History Museum stop",
+                "cost": "₹340–₹680"
+              },
+              {
+                "name": "Shanga social enterprise workshop visit",
+                "cost": "₹0–₹850"
+              },
+              {
+                "name": "Safari briefing and soft-duffel prep for bush flights",
+                "cost": "₹0–₹2,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Gran Melia Arusha",
+                "budget": "₹18,000–₹34,000/night"
+              },
+              {
+                "name": "Arusha Coffee Lodge",
+                "budget": "₹26,000–₹42,000/night"
+              }
+            ],
+            "meals": [
+              "Khan's Barbecue",
+              "Fifi's Restaurant",
+              "George's Tavern"
+            ]
+          }
+        ]
+      },
+      "Ngorongoro": {
+        "name": "Ngorongoro",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Best handled with a licensed 4x4 safari from Arusha or Karatu; crater descents run on NCAA permits and card payments.",
+        "days": [
+          {
+            "theme": "Crater-rim sunrise, dense wildlife sightings, and Maasai highlands scenery",
+            "activities": [
+              {
+                "name": "Ngorongoro Conservation Area entry fee for a non-resident adult",
+                "cost": "₹5,900"
+              },
+              {
+                "name": "Crater descent service fee share in a 4x4 safari vehicle",
+                "cost": "₹4,100–₹8,200"
+              },
+              {
+                "name": "Half-day crater game drive with driver-guide and picnic stop",
+                "cost": "₹12,500–₹20,900"
+              },
+              {
+                "name": "Oldupai Gorge museum stop en route",
+                "cost": "₹1,500–₹2,100"
+              },
+              {
+                "name": "Maasai boma cultural visit on the rim road",
+                "cost": "₹1,700–₹2,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ngorongoro Serena Safari Lodge",
+                "budget": "₹29,000–₹48,000/night"
+              },
+              {
+                "name": "Rhino Lodge",
+                "budget": "₹14,000–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Ngorongoro Serena Safari Lodge Restaurant",
+              "Rhino Lodge Dining Room",
+              "Gibbs Farm"
+            ]
+          }
+        ]
+      },
+      "Serengeti": {
+        "name": "Serengeti",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "July to September is strongest for Mara River movement in the north, while January to February shifts the action toward the southern calving grounds.",
+        "days": [
+          {
+            "theme": "Bush-flight or overland arrival, Seronera plains, and the first big-cat scans",
+            "activities": [
+              {
+                "name": "Coastal Aviation or Auric Air bush flight into Seronera",
+                "cost": "₹16,700–₹21,650"
+              },
+              {
+                "name": "Serengeti National Park non-resident entry fee for the first 24 hours",
+                "cost": "₹6,900"
+              },
+              {
+                "name": "Afternoon shared 4x4 game drive in the Seronera Valley",
+                "cost": "₹8,350–₹16,700"
+              },
+              {
+                "name": "Seronera Visitor Centre kopje walk and interpretive exhibits",
+                "cost": "₹0"
+              },
+              {
+                "name": "Camp sundowner overlooking the plains",
+                "cost": "₹1,250–₹2,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kubu Kubu Tented Lodge",
+                "budget": "₹34,000–₹56,000/night"
+              },
+              {
+                "name": "Nyikani Central Serengeti Camp",
+                "budget": "₹28,000–₹46,000/night"
+              }
+            ],
+            "meals": [
+              "Kubu Kubu Restaurant",
+              "Nyikani Camp Dining Tent",
+              "Serengeti Serena Safari Lodge"
+            ]
+          },
+          {
+            "theme": "Full wildlife day for migration herds, kopjes, and an optional balloon splurge",
+            "activities": [
+              {
+                "name": "Full-day game drive toward Moru Kopjes or seasonal migration sectors",
+                "cost": "₹12,500–₹20,900"
+              },
+              {
+                "name": "Serengeti National Park entry fee for the second day",
+                "cost": "₹6,900"
+              },
+              {
+                "name": "Optional hot-air balloon safari with bush breakfast",
+                "cost": "₹49,900–₹54,000"
+              },
+              {
+                "name": "Picnic lunch setup at a designated safari site",
+                "cost": "₹850–₹1,700"
+              },
+              {
+                "name": "Golden-hour predator drive back to camp",
+                "cost": "₹0–₹8,350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Four Seasons Safari Lodge Serengeti",
+                "budget": "₹72,000–₹1.2L/night"
+              },
+              {
+                "name": "Nyikani Central Serengeti Camp",
+                "budget": "₹28,000–₹46,000/night"
+              }
+            ],
+            "meals": [
+              "Boma Grill at Four Seasons Safari Lodge Serengeti",
+              "Serengeti Serena Safari Lodge",
+              "Bush picnic lunch"
+            ]
+          },
+          {
+            "theme": "One last drive, wildlife from the lodge deck, and the fly-out toward Kilimanjaro or Zanzibar",
+            "activities": [
+              {
+                "name": "Morning game drive or river-track extension based on migration timing",
+                "cost": "₹12,500–₹20,900"
+              },
+              {
+                "name": "Serengeti National Park entry fee for the third day",
+                "cost": "₹6,900"
+              },
+              {
+                "name": "Lodge deck wildlife watching between drives",
+                "cost": "₹0"
+              },
+              {
+                "name": "Coastal Aviation bush flight onward to Zanzibar or Kilimanjaro",
+                "cost": "₹20,900–₹29,200"
+              },
+              {
+                "name": "Soft-bag porterage and airstrip transfer",
+                "cost": "₹850–₹1,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Serengeti Serena Safari Lodge",
+                "budget": "₹30,000–₹50,000/night"
+              },
+              {
+                "name": "Kubu Kubu Tented Lodge",
+                "budget": "₹34,000–₹56,000/night"
+              }
+            ],
+            "meals": [
+              "Serengeti Serena Safari Lodge",
+              "Kubu Kubu Restaurant",
+              "Nyikani Camp Dining Tent"
+            ]
+          }
+        ]
+      },
+      "Kilimanjaro (base area)": {
+        "name": "Kilimanjaro (base area)",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Moshi foothills, waterfall coffee culture, and a Kilimanjaro-view finale",
+            "activities": [
+              {
+                "name": "Materuni Waterfalls and coffee tour from Moshi",
+                "cost": "₹2,500–₹4,200"
+              },
+              {
+                "name": "Kikuletwa Hot Springs day trip",
+                "cost": "₹4,200–₹7,500"
+              },
+              {
+                "name": "Optional Kilimanjaro National Park day-visit permit via Marangu Gate",
+                "cost": "₹6,900"
+              },
+              {
+                "name": "Moshi rooftop sundowner with mountain views",
+                "cost": "₹850–₹1,700"
+              },
+              {
+                "name": "Private transfer between JRO, Moshi and day-trip sites",
+                "cost": "₹1,700–₹3,350"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Chanya Lodge",
+                "budget": "₹6,500–₹11,500/night"
+              },
+              {
+                "name": "Aishi Machame Hotel",
+                "budget": "₹8,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Indoitaliano Restaurant",
+              "Union Cafe",
+              "El Rancho Kilimanjaro Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Dar es Salaam",
+        "to": "Zanzibar",
+        "method": "Azam Marine fast ferry from Dar port or a short Precision Air flight if seas look rough",
+        "cost": "₹2,900–₹10,900"
+      },
+      {
+        "from": "Zanzibar",
+        "to": "Arusha",
+        "method": "Precision Air or Air Tanzania flight to JRO/Arusha, then road transfer into town",
+        "cost": "₹8,350–₹15,000"
+      },
+      {
+        "from": "Arusha",
+        "to": "Ngorongoro",
+        "method": "Licensed 4x4 safari vehicle via Karatu with lodge or operator pickup",
+        "cost": "₹6,700–₹12,500"
+      },
+      {
+        "from": "Ngorongoro",
+        "to": "Serengeti",
+        "method": "Continue overland by safari vehicle through Naabi Hill Gate or connect via a short bush-flight sector",
+        "cost": "₹8,350–₹21,650"
+      },
+      {
+        "from": "Serengeti",
+        "to": "Kilimanjaro (base area)",
+        "method": "Coastal Aviation or Auric Air bush flight to JRO, then a road transfer to Moshi",
+        "cost": "₹20,900–₹31,000"
+      },
+      {
+        "from": "Kilimanjaro (base area)",
+        "to": "Dar es Salaam",
+        "method": "Precision Air or Air Tanzania domestic flight back to Dar for the India connection",
+        "cost": "₹8,350–₹14,200"
+      }
+    ],
+    "extras": [
+      "June to October is the safest all-round window for this route, with dry wildlife viewing and easier road conditions; July to September is strongest for Serengeti migration sightings, while January to February suits calving-season trips in the southern plains.",
+      "TANAPA and NCAA fees are normally card-only; keep TZS cash mainly for tips, market snacks and small taxi gaps.",
+      "Coastal Aviation and other bush carriers usually enforce a 15kg soft-bag rule, so avoid hard suitcases on safari sectors.",
+      "Zanzibar resort beaches are relaxed, but Stone Town and village areas reward modest shoulders-and-knees coverage out of respect for local norms.",
+      "Malaria prophylaxis is worth discussing before both mainland and Zanzibar stays, and yellow-fever proof may be checked if you transit through another endemic country.",
+      "If you only have one Serengeti base, stay in central Seronera for the easiest year-round game viewing and flight logistics."
+    ],
+    "cityImages": {
+      "Dar es Salaam": [
+        "National Museum of Tanzania Dar es Salaam",
+        "Kivukoni Fish Market Dar es Salaam",
+        "Askari Monument Dar es Salaam"
+      ],
+      "Zanzibar": [
+        "Stone Town Zanzibar House of Wonders",
+        "Jozani Chwaka Bay National Park red colobus",
+        "Nungwi beach Zanzibar dhow"
+      ],
+      "Arusha": [
+        "Arusha Clock Tower Tanzania",
+        "Arusha Coffee Lodge plantation",
+        "Cultural Heritage Centre Arusha"
+      ],
+      "Ngorongoro": [
+        "Ngorongoro Crater aerial view",
+        "Ngorongoro Serena Safari Lodge crater rim",
+        "Maasai boma Ngorongoro Highlands"
+      ],
+      "Serengeti": [
+        "Serengeti National Park wildebeest migration",
+        "Seronera Valley lion Tanzania",
+        "Serengeti hot air balloon sunrise"
+      ],
+      "Kilimanjaro (base area)": [
+        "Moshi Mount Kilimanjaro view",
+        "Materuni Waterfalls Moshi",
+        "Marangu Gate Kilimanjaro National Park"
+      ]
+    }
+  }
+}

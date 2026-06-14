@@ -1,0 +1,700 @@
+{
+  "name": "Kenya",
+  "seed": false,
+  "lat": -0.02,
+  "lng": 37.91,
+  "region": "Africa",
+  "bestMonths": [
+    "January",
+    "February",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "April",
+    "May"
+  ],
+  "budget": {
+    "solo": "₹1.6L–₹2.6L",
+    "couple": "₹2.9L–₹4.6L",
+    "family4": "₹5.8L–₹8.8L"
+  },
+  "experiences": [
+    "Great Migration",
+    "Big Five Safari",
+    "Amboseli Elephants",
+    "Diani Beach",
+    "Lamu Old Town"
+  ],
+  "avoid": [
+    "April-May long rains can flood safari tracks and make coastal days grey",
+    "Maasai Mara fees jump sharply in Jul-Dec, so budget safari days carefully",
+    "Local matatus are cheap but not ideal for long luggage-heavy transfers between parks"
+  ],
+  "combo": [
+    "Tanzania",
+    "Uganda"
+  ],
+  "landmark": "Maasai Mara National Reserve",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Nairobi (NBO) is the clear international gateway; if you finish on the coast, an open-jaw fare via Mombasa or a last Kenya Airways/Jambojet hop back to Nairobi usually saves a full backtrack day.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Nairobi",
+      "lat": -1.2864,
+      "lng": 36.8172,
+      "notes": "Nairobi National Park, Sheldrick Wildlife Trust, Giraffe Centre, Karen museums and the easiest launch point for Kenya's safari circuit"
+    },
+    {
+      "name": "Masai Mara",
+      "lat": -1.4931,
+      "lng": 35.1439,
+      "notes": "Game drives across the Mara Triangle and Talek plains, Mara River crossings in season, and some of East Africa's best wildlife density"
+    },
+    {
+      "name": "Amboseli",
+      "lat": -2.6486,
+      "lng": 37.2606,
+      "notes": "Iconic elephant herds, Observation Hill, swamp-fed game viewing and classic Kilimanjaro backdrops on clear mornings"
+    },
+    {
+      "name": "Lake Nakuru",
+      "lat": -0.3031,
+      "lng": 36.08,
+      "notes": "Rhino sightings, acacia woodland drives, Baboon Cliff viewpoints and seasonal flamingo action inside the compact national park"
+    },
+    {
+      "name": "Diani Beach",
+      "lat": -4.284,
+      "lng": 39.5942,
+      "notes": "Powdery beach time, coral reef trips, Colobus Conservation and a slower coastal reset after the safari circuit"
+    },
+    {
+      "name": "Lamu",
+      "lat": -2.2717,
+      "lng": 40.902,
+      "notes": "UNESCO-listed Swahili townscapes, dhow sunsets, Shela Beach and car-free island life with donkeys and boats"
+    }
+  ],
+  "itinerary": {
+    "sim": "Safaricom is the most reliable network for this route, especially once you leave Nairobi for the Mara and Amboseli; expect roughly ₹650–₹1,300 for a starter pack or eSIM with enough data for maps, M-Pesa, and ride-hailing.",
+    "apps": [
+      "Uber",
+      "Little Cab",
+      "Google Maps",
+      "Booking.com",
+      "Kenya Airways",
+      "Madaraka Express",
+      "eCitizen Kenya",
+      "M-Pesa",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Nairobi",
+      "Masai Mara",
+      "Lake Nakuru",
+      "Amboseli",
+      "Diani Beach",
+      "Lamu"
+    ],
+    "cities": {
+      "Nairobi": {
+        "name": "Nairobi",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Wildlife on the city edge, giraffes in Karen, and an easy first Nairobi reset",
+            "activities": [
+              {
+                "name": "Nairobi National Park non-resident entry fee",
+                "cost": "₹6,640"
+              },
+              {
+                "name": "Shared morning game drive inside Nairobi National Park",
+                "cost": "₹3,900–₹6,500"
+              },
+              {
+                "name": "Sheldrick Wildlife Trust public visiting slot donation",
+                "cost": "₹650"
+              },
+              {
+                "name": "Giraffe Centre entry",
+                "cost": "₹975"
+              },
+              {
+                "name": "Uber/Little Cab hops between Karen and central Nairobi",
+                "cost": "₹650–₹1,300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ibis Styles Nairobi Westlands",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Tamarind Tree Hotel",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Sarova Stanley",
+                "budget": "₹12,500–₹19,000/night"
+              }
+            ],
+            "meals": [
+              "The Carnivore Restaurant",
+              "Talisman",
+              "Java House"
+            ]
+          },
+          {
+            "theme": "Museums, markets, and one more flexible city day before the road safari starts",
+            "activities": [
+              {
+                "name": "Karen Blixen Museum entry",
+                "cost": "₹780"
+              },
+              {
+                "name": "Nairobi National Museum ticket",
+                "cost": "₹780"
+              },
+              {
+                "name": "Kazuri Beads factory tour and ceramic workshop",
+                "cost": "₹650"
+              },
+              {
+                "name": "Karura Forest nature entry and waterfall walk",
+                "cost": "₹325–₹650"
+              },
+              {
+                "name": "Bomas of Kenya cultural show",
+                "cost": "₹975"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Fairview Hotel",
+                "budget": "₹9,500–₹14,000/night"
+              },
+              {
+                "name": "Ibis Styles Nairobi Westlands",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Cultiva Farm Kenya",
+              "About Thyme",
+              "Nyama Mama"
+            ]
+          }
+        ]
+      },
+      "Masai Mara": {
+        "name": "Masai Mara",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Into the Mara plains for the first cat sightings, river stories, and sunset tracks",
+            "activities": [
+              {
+                "name": "Shared 4x4 safari vehicle transfer from Nairobi to Sekenani/Talek",
+                "cost": "₹6,500–₹10,400"
+              },
+              {
+                "name": "Masai Mara non-resident park fee (Jan-Jun)",
+                "cost": "₹8,300"
+              },
+              {
+                "name": "Masai Mara non-resident park fee (Jul-Dec Great Migration season)",
+                "cost": "₹16,600"
+              },
+              {
+                "name": "Sunset shared game drive in the reserve",
+                "cost": "₹8,300–₹12,500"
+              },
+              {
+                "name": "Maasai village visit near Talek",
+                "cost": "₹1,300–₹2,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Enchoro Wildlife Camp",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Miti Mingi Eco Camp",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Mara Sopa Lodge",
+                "budget": "₹16,500–₹26,000/night"
+              }
+            ],
+            "meals": [
+              "Mara Sopa Lodge Restaurant",
+              "Mara Leisure Camp Restaurant",
+              "Keekorok Lodge Hippo Bar"
+            ]
+          },
+          {
+            "theme": "Pre-dawn wildlife loop, Mara River country, and the classic balloon-or-big-cats decision",
+            "activities": [
+              {
+                "name": "Full-day shared safari vehicle game drive",
+                "cost": "₹8,300–₹12,500"
+              },
+              {
+                "name": "Private 4x4 safari vehicle with guide for the day",
+                "cost": "₹20,800–₹33,200"
+              },
+              {
+                "name": "Mara River crossing circuit and hippo pool stops",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hot-air balloon safari with bush breakfast",
+                "cost": "₹41,500–₹49,800"
+              },
+              {
+                "name": "Sundowner setup inside a private conservancy",
+                "cost": "₹3,900–₹6,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mara Leisure Camp",
+                "budget": "₹13,500–₹21,000/night"
+              },
+              {
+                "name": "Enchoro Wildlife Camp",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Mara Sopa Lodge Restaurant",
+              "Keekorok Lodge Restaurant",
+              "Miti Mingi Eco Camp Dining Tent"
+            ]
+          }
+        ]
+      },
+      "Lake Nakuru": {
+        "name": "Lake Nakuru",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Rhinos, escarpment viewpoints, and an easy Rift Valley park day",
+            "activities": [
+              {
+                "name": "Lake Nakuru National Park non-resident entry fee",
+                "cost": "₹7,470"
+              },
+              {
+                "name": "Shared game drive for rhino, buffalo, and Rothschild giraffe sightings",
+                "cost": "₹4,550–₹7,800"
+              },
+              {
+                "name": "Baboon Cliff viewpoint stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Makalia Falls detour",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hyrax Hill Museum visit in Nakuru town",
+                "cost": "₹390"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Buraha Zenoni Hotel & Resort",
+                "budget": "₹4,500–₹7,000/night"
+              },
+              {
+                "name": "Lake Nakuru Lodge",
+                "budget": "₹11,500–₹17,500/night"
+              },
+              {
+                "name": "Flamingo Hill Tented Camp",
+                "budget": "₹13,500–₹20,500/night"
+              }
+            ],
+            "meals": [
+              "Java House Nakuru",
+              "Merica Hotel Restaurant",
+              "Lake Nakuru Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Amboseli": {
+        "name": "Amboseli",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Kilimanjaro silhouettes, elephant herds, and the first Amboseli evening drive",
+            "activities": [
+              {
+                "name": "Road transfer from Lake Nakuru or Nairobi into Amboseli",
+                "cost": "₹6,500–₹12,500"
+              },
+              {
+                "name": "Amboseli National Park non-resident entry fee",
+                "cost": "₹7,470"
+              },
+              {
+                "name": "Observation Hill stop for swamp and mountain views",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunset shared game drive across the Ol Tukai plains",
+                "cost": "₹4,550–₹7,800"
+              },
+              {
+                "name": "Maasai village visit outside Kimana Gate",
+                "cost": "₹1,300–₹2,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "AA Lodge Amboseli",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Kibo Safari Camp",
+                "budget": "₹12,500–₹18,500/night"
+              },
+              {
+                "name": "Amboseli Sopa Lodge",
+                "budget": "₹15,500–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Kibo Safari Camp Restaurant",
+              "AA Lodge Amboseli Restaurant",
+              "Ol Tukai Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Sunrise for the clearest Kilimanjaro views and one more deep wildlife loop",
+            "activities": [
+              {
+                "name": "Early-morning game drive for elephants and Kilimanjaro views",
+                "cost": "₹4,550–₹7,800"
+              },
+              {
+                "name": "Noomotio and Enkongo Narok swamp circuit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Private full-day 4x4 safari vehicle with guide",
+                "cost": "₹20,800–₹31,200"
+              },
+              {
+                "name": "Amboseli Elephant Research Camp interpretive stop",
+                "cost": "₹0–₹650"
+              },
+              {
+                "name": "Local sundowner setup back at the lodge",
+                "cost": "₹1,300–₹2,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kibo Safari Camp",
+                "budget": "₹12,500–₹18,500/night"
+              },
+              {
+                "name": "Amboseli Serena Safari Lodge",
+                "budget": "₹16,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "Kibo Safari Camp Restaurant",
+              "Amboseli Serena Safari Lodge Restaurant",
+              "Ol Tukai Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Diani Beach": {
+        "name": "Diani Beach",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Shift from dust to sea breeze with a soft landing on Kenya's south coast",
+            "activities": [
+              {
+                "name": "Kenya Airways/Jambojet flight from Nairobi to Mombasa or Ukunda",
+                "cost": "₹4,550–₹7,800"
+              },
+              {
+                "name": "SGR Nairobi-Mombasa standard class plus taxi to Diani",
+                "cost": "₹2,925–₹5,850"
+              },
+              {
+                "name": "Diani Beach and Kongo River sandbar walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Colobus Conservation visit",
+                "cost": "₹780"
+              },
+              {
+                "name": "Matatu or tuk-tuk rides along Diani Beach Road",
+                "cost": "₹65–₹260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "African Dream Cottages",
+                "budget": "₹4,500–₹8,000/night"
+              },
+              {
+                "name": "Papillon Lagoon Reef",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Diani Sea Lodge",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Ali Barbour's Cave Restaurant",
+              "Forty Thieves Beach Bar",
+              "Nomad Beach Bar & Restaurant"
+            ]
+          },
+          {
+            "theme": "Reef day trips, sacred forest detours, and a classic Indian Ocean beach day",
+            "activities": [
+              {
+                "name": "Kisite-Mpunguti Marine Park snorkeling day trip from Shimoni",
+                "cost": "₹5,200–₹8,500"
+              },
+              {
+                "name": "Kaya Kinondo Sacred Forest guided walk",
+                "cost": "₹650"
+              },
+              {
+                "name": "Kongo River sunset kayak or paddle session",
+                "cost": "₹2,600–₹4,550"
+              },
+              {
+                "name": "Diani Reef or Galu Beach kitesurf lesson",
+                "cost": "₹4,550–₹7,150"
+              },
+              {
+                "name": "Beach horse ride at sunrise or sunset",
+                "cost": "₹1,950–₹3,250"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Swahili Beach",
+                "budget": "₹15,500–₹24,500/night"
+              },
+              {
+                "name": "Papillon Lagoon Reef",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Kokkos Cafe Bistro",
+              "Nomad Beach Bar & Restaurant",
+              "Forty Thieves Beach Bar"
+            ]
+          }
+        ]
+      },
+      "Lamu": {
+        "name": "Lamu",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Fly into old Swahili stone lanes, rooftop sea views, and a first dhow sunset",
+            "activities": [
+              {
+                "name": "Flight from Ukunda or Mombasa to Lamu via Nairobi",
+                "cost": "₹7,800–₹15,600"
+              },
+              {
+                "name": "Lamu Old Town guided heritage walk",
+                "cost": "₹1,300–₹2,600"
+              },
+              {
+                "name": "Lamu Fort Museum entry",
+                "cost": "₹390"
+              },
+              {
+                "name": "Sunset dhow sail from Shela",
+                "cost": "₹2,600–₹4,550"
+              },
+              {
+                "name": "Boat or donkey transfers between Lamu jetty and Shela",
+                "cost": "₹130–₹650"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jannat House",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Lamu House Hotel",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Msafini Hotel",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Peponi Hotel Restaurant",
+              "Seafront Cafe",
+              "Bush Gardens Restaurant"
+            ]
+          },
+          {
+            "theme": "Shela beach time, island dhow routes, and the most relaxed finish in the plan",
+            "activities": [
+              {
+                "name": "Boat transfer and beach time at Shela",
+                "cost": "₹650–₹1,300"
+              },
+              {
+                "name": "Takwa Ruins and Manda Island dhow excursion",
+                "cost": "₹4,550–₹7,800"
+              },
+              {
+                "name": "Riyadha Mosque and old town lanes self-guided walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Matondoni village or dhow-building visit",
+                "cost": "₹1,300–₹2,600"
+              },
+              {
+                "name": "Flight back to Nairobi for the international connection",
+                "cost": "₹5,850–₹11,700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Stopover Guest House",
+                "budget": "₹4,000–₹6,500/night"
+              },
+              {
+                "name": "Lamu House Hotel",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Peponi Hotel Restaurant",
+              "Seafront Cafe",
+              "Mangrove Restaurant Lamu"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Nairobi",
+        "to": "Masai Mara",
+        "method": "Shared safari 4x4 overland via Narok is the budget-standard option; Wilson bush flights save most of the day if you are short on time",
+        "cost": "₹6,500–₹36,400"
+      },
+      {
+        "from": "Masai Mara",
+        "to": "Lake Nakuru",
+        "method": "Overland safari vehicle or private transfer through Narok and the Rift Valley floor",
+        "cost": "₹5,850–₹10,400"
+      },
+      {
+        "from": "Lake Nakuru",
+        "to": "Amboseli",
+        "method": "Full-day road transfer via Nairobi, usually in the same safari van or a private 4x4",
+        "cost": "₹6,500–₹12,500"
+      },
+      {
+        "from": "Amboseli",
+        "to": "Diani Beach",
+        "method": "Drive back to Nairobi for a Kenya Airways/Jambojet flight, or use the Nairobi-Mombasa SGR and continue by taxi to Diani",
+        "cost": "₹4,550–₹12,000"
+      },
+      {
+        "from": "Diani Beach",
+        "to": "Lamu",
+        "method": "One-stop coastal flight via Nairobi or Mombasa is far easier than piecing together long road and boat transfers",
+        "cost": "₹7,800–₹15,600"
+      },
+      {
+        "from": "Lamu",
+        "to": "Nairobi",
+        "method": "Scheduled flight back to Nairobi for onward India departures",
+        "cost": "₹5,850–₹11,700"
+      }
+    ],
+    "extras": [
+      "July to October is the easiest high-impact window: you get drier roads, Mara migration action, and generally clearer Kilimanjaro mornings in Amboseli, but Masai Mara fees are highest in that same period.",
+      "January and February are the best value dry-season alternative if you want easier wildlife viewing without the July-December Mara fee spike and without the long rains.",
+      "Safaricom is the most dependable SIM once you leave Nairobi; Airtel works in cities, but coverage becomes less predictable on safari drives and island transfers.",
+      "Budget-to-mid safaris often bundle meals and game drives with the lodge, so compare package inclusions before judging a room rate in isolation.",
+      "The SGR is the smoothest budget move between Nairobi and the coast, but if you are protecting a short trip, the Kenya Airways/Jambojet coastal hop saves half a day each way.",
+      "Lamu and the safari circuit both reward light packing: many camps and island guesthouses handle luggage better when you keep to a soft duffel rather than a rigid suitcase."
+    ],
+    "cityImages": {
+      "Nairobi": [
+        "Nairobi National Park Kenya",
+        "Giraffe Centre Nairobi",
+        "Karen Blixen Museum Nairobi"
+      ],
+      "Masai Mara": [
+        "Maasai Mara National Reserve Kenya",
+        "Mara River crossing Kenya",
+        "Great Migration Maasai Mara"
+      ],
+      "Lake Nakuru": [
+        "Lake Nakuru National Park Kenya",
+        "Baboon Cliff Lake Nakuru",
+        "Makalia Falls Kenya"
+      ],
+      "Amboseli": [
+        "Amboseli National Park Kenya",
+        "Observation Hill Amboseli",
+        "Mount Kilimanjaro from Amboseli"
+      ],
+      "Diani Beach": [
+        "Diani Beach Kenya",
+        "Ali Barbour's Cave Restaurant",
+        "Kaya Kinondo Sacred Forest"
+      ],
+      "Lamu": [
+        "Lamu Old Town Kenya",
+        "Shela Beach Lamu",
+        "Lamu Fort Kenya"
+      ]
+    }
+  }
+}

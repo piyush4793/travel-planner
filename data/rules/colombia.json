@@ -1,0 +1,790 @@
+{
+  "name": "Colombia",
+  "seed": false,
+  "lat": 4.57,
+  "lng": -74.3,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "July",
+    "August"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.6L–₹2.6L",
+    "couple": "₹2.9L–₹4.8L",
+    "family4": "₹5.8L–₹9.2L"
+  },
+  "experiences": [
+    "Bogotá Museums & Monserrate",
+    "Medellín & Guatapé",
+    "Cartagena Walled City",
+    "Tayrona & Minca",
+    "Salento Coffee Region",
+    "San Andrés Beaches"
+  ],
+  "avoid": [
+    "April–May and October–November are wetter almost everywhere, so Caribbean boat days, Cocora hikes, and mountain viewpoints become less reliable.",
+    "Semana Santa, December holidays, and year-end school breaks push up domestic flights and Cartagena or San Andrés room rates quickly.",
+    "Cartagena and Santa Marta run hottest from January to April, while Bogotá evenings stay cool year-round — pack for both beach humidity and Andean layers."
+  ],
+  "combo": [
+    "Ecuador",
+    "Peru"
+  ],
+  "landmark": "Cartagena Walled City",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Bogotá is the simplest Avianca and LATAM hub if you want to stitch together the Andes, Coffee Region, Caribbean coast, and San Andrés in one loop.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Bogotá",
+      "lat": 4.711,
+      "lng": -74.0721,
+      "notes": "Andean capital for Monserrate views, La Candelaria streets, major museums, and easy day trips like Zipaquirá."
+    },
+    {
+      "name": "Medellín",
+      "lat": 6.2442,
+      "lng": -75.5812,
+      "notes": "Spring-like weather, Comuna 13 street art, efficient metro-cable links, and the classic Guatapé day trip."
+    },
+    {
+      "name": "Cartagena",
+      "lat": 10.391,
+      "lng": -75.4794,
+      "notes": "Walled-city lanes, Getsemaní nightlife, fortifications, and easy Rosario Islands beach days."
+    },
+    {
+      "name": "Santa Marta",
+      "lat": 11.2408,
+      "lng": -74.199,
+      "notes": "Gateway for Tayrona National Park, Minca mountain escapes, and the easiest base on the Caribbean coast."
+    },
+    {
+      "name": "Salento",
+      "lat": 4.637,
+      "lng": -75.5706,
+      "notes": "Coffee-region town for Cocora Valley wax palms, finca tours, trout lunches, and colorful Calle Real."
+    },
+    {
+      "name": "San Andrés",
+      "lat": 12.5847,
+      "lng": -81.7006,
+      "notes": "Coral-island escape for Johnny Cay, Acuario sandbars, west-side swimming spots, and bright Caribbean water."
+    }
+  ],
+  "itinerary": {
+    "sim": "Claro or Movistar prepago/eSIM usually costs about ₹630–₹945 for 10–15GB, with strong city coverage but patchier service inside Tayrona, around Cocora Valley, and on some San Andrés boat trips, so keep offline maps downloaded.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "Avianca",
+      "LATAM Airlines",
+      "Bolivariano",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency",
+      "DiDi",
+      "inDrive",
+      "Moovit"
+    ],
+    "cityOrder": [
+      "Bogotá",
+      "Medellín",
+      "Salento",
+      "Cartagena",
+      "Santa Marta",
+      "San Andrés"
+    ],
+    "cities": {
+      "Bogotá": {
+        "name": "Bogotá",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Stay in La Candelaria, Chapinero, or around Parque 93, keep a light jacket for cool evenings, and use official taxis or app rides late at night.",
+        "days": [
+          {
+            "theme": "Monserrate & La Candelaria",
+            "activities": [
+              {
+                "name": "Monserrate cable car or funicular round trip",
+                "cost": "₹441–₹735"
+              },
+              {
+                "name": "Plaza de Bolívar, Catedral Primada, and La Candelaria lanes"
+              },
+              {
+                "name": "Museo Botero collection",
+                "cost": "Free"
+              },
+              {
+                "name": "Chorro de Quevedo coffee stop and colonial-street walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Bogota Museo",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Hotel bh Bicentenario",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "La Puerta Falsa",
+              "Prudencia",
+              "Azahar Coffee Company"
+            ]
+          },
+          {
+            "theme": "Gold Museum, Markets & Usaquén",
+            "activities": [
+              {
+                "name": "Museo del Oro (Gold Museum)",
+                "cost": "₹105"
+              },
+              {
+                "name": "Paloquemao Market breakfast circuit"
+              },
+              {
+                "name": "Museo Nacional de Colombia",
+                "cost": "₹105–₹210"
+              },
+              {
+                "name": "Usaquén evening stroll or Sunday flea market"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Bogota Museo",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Hotel bh Bicentenario",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Andrés DC",
+              "Mini Mal",
+              "Masa"
+            ]
+          },
+          {
+            "theme": "Zipaquirá Salt Cathedral Day Trip",
+            "activities": [
+              {
+                "name": "Bus or shared transfer to Zipaquirá",
+                "cost": "₹315–₹630"
+              },
+              {
+                "name": "Salt Cathedral of Zipaquirá entry",
+                "cost": "₹1,365–₹1,575"
+              },
+              {
+                "name": "Zipaquirá historic center and Plaza de la Independencia"
+              },
+              {
+                "name": "Return for Chapinero dinner or cocktails"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel bh Bicentenario",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Hotel Vilar América",
+                "budget": "₹5,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Abasto",
+              "Andrés DC",
+              "La Puerta Falsa"
+            ]
+          }
+        ]
+      },
+      "Medellín": {
+        "name": "Medellín",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Base yourself in El Poblado or Laureles, use the metro for daytime hops, and pre-book Guatapé if you prefer a guided day trip over public buses.",
+        "days": [
+          {
+            "theme": "Plaza Botero, Metro & Comuna 13",
+            "activities": [
+              {
+                "name": "Museo de Antioquia and Plaza Botero",
+                "cost": "₹588"
+              },
+              {
+                "name": "Metro and Metrocable rides across the Aburrá Valley",
+                "cost": "₹82–₹164"
+              },
+              {
+                "name": "Comuna 13 guided graffiti tour",
+                "cost": "₹840–₹1,680"
+              },
+              {
+                "name": "Comuna 13 outdoor escalators and street performances"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Medellin",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Hotel Estelar Blue",
+                "budget": "₹6,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Mondongo's",
+              "Carmen Medellín",
+              "Pergamino Café"
+            ]
+          },
+          {
+            "theme": "Guatapé & El Peñol",
+            "activities": [
+              {
+                "name": "Terminal Norte bus or shared transfer to Guatapé",
+                "cost": "₹420–₹1,260"
+              },
+              {
+                "name": "La Piedra del Peñol entry",
+                "cost": "₹525"
+              },
+              {
+                "name": "Guatapé zócalos, malecón, and lakeside walk"
+              },
+              {
+                "name": "Peñol-Guatapé reservoir boat ride",
+                "cost": "₹420–₹840"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Medellin",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Hotel Estelar Blue",
+                "budget": "₹6,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Oci.Mde",
+              "Hija Mia Coffee Roasters",
+              "Mondongo's"
+            ]
+          },
+          {
+            "theme": "Arví, Laureles & Slow City Day",
+            "activities": [
+              {
+                "name": "Metrocable to Parque Arví",
+                "cost": "₹168–₹252"
+              },
+              {
+                "name": "Jardín Botánico de Medellín",
+                "cost": "Free"
+              },
+              {
+                "name": "Pueblito Paisa on Cerro Nutibara"
+              },
+              {
+                "name": "Museo Casa de la Memoria",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "61Prado Hotel",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Hotel Estelar Blue",
+                "budget": "₹6,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Alambique",
+              "Hacienda",
+              "Carmen Medellín"
+            ]
+          }
+        ]
+      },
+      "Salento": {
+        "name": "Salento",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay near the main square or Calle Real, leave early for Cocora before clouds build, and carry cash for Willys jeeps, reserve fees, and finca tours.",
+        "days": [
+          {
+            "theme": "Cocora Valley Wax Palms",
+            "activities": [
+              {
+                "name": "Willys jeep round trip between Salento plaza and Cocora Valley",
+                "cost": "₹420–₹504"
+              },
+              {
+                "name": "Bosque de Palmas and Acaime reserve loop fees",
+                "cost": "₹525–₹840"
+              },
+              {
+                "name": "Wax palm viewpoints and valley hike"
+              },
+              {
+                "name": "Trout lunch back in town"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Salento Real Eje Cafetero",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel Terasu Salento",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Brunch de Salento",
+              "Bernabé Gourmet",
+              "Café Jesús Martín"
+            ]
+          },
+          {
+            "theme": "Coffee Farm & Calle Real",
+            "activities": [
+              {
+                "name": "Finca El Ocaso or Don Elias coffee tour",
+                "cost": "₹420–₹735"
+              },
+              {
+                "name": "Mirador Alto de la Cruz"
+              },
+              {
+                "name": "Calle Real shops and Plaza de Bolívar"
+              },
+              {
+                "name": "Optional Filandia side trip by local bus",
+                "cost": "₹126–₹210"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Salento Real Eje Cafetero",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel Terasu Salento",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Quindu Restaurante",
+              "Café Jesús Martín",
+              "Brunch de Salento"
+            ]
+          }
+        ]
+      },
+      "Cartagena": {
+        "name": "Cartagena",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 3,
+        "note": "Stay inside the Walled City or Getsemaní for easiest walks, plan fort visits early before the heat spikes, and pre-book Rosario Islands on weekends.",
+        "days": [
+          {
+            "theme": "Walled City & San Felipe",
+            "activities": [
+              {
+                "name": "Castillo San Felipe de Barajas entry",
+                "cost": "₹630–₹840"
+              },
+              {
+                "name": "Getsemaní murals and Plaza de la Trinidad"
+              },
+              {
+                "name": "Clock Tower, Plaza Santo Domingo, and ramparts walk"
+              },
+              {
+                "name": "Sunset along the walls or at Café del Mar"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel 3 Banderas",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "GHL Arsenal Hotel",
+                "budget": "₹9,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "La Cevichería",
+              "Candé",
+              "Celele"
+            ]
+          },
+          {
+            "theme": "Rosario Islands Day",
+            "activities": [
+              {
+                "name": "Shared Rosario Islands speedboat day trip with park fee",
+                "cost": "₹2,500–₹4,600"
+              },
+              {
+                "name": "Snorkel or aquarium add-on",
+                "cost": "₹630–₹1,260"
+              },
+              {
+                "name": "Beach club afternoon on Isla Grande or nearby islands"
+              },
+              {
+                "name": "Return for a gelato and old-town evening walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel 3 Banderas",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "GHL Arsenal Hotel",
+                "budget": "₹9,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Carmen Cartagena",
+              "La Mulata",
+              "Juan del Mar"
+            ]
+          },
+          {
+            "theme": "Convento de la Popa & Museums",
+            "activities": [
+              {
+                "name": "Convento de la Popa entry",
+                "cost": "₹294–₹420"
+              },
+              {
+                "name": "Palacio de la Inquisición or Museo Naval del Caribe",
+                "cost": "₹525–₹735"
+              },
+              {
+                "name": "Las Bóvedas artisan shops"
+              },
+              {
+                "name": "Optional rum tasting or champeta night out",
+                "cost": "₹630–₹1,260"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa India Catalina",
+                "budget": "₹7,000–₹10,000/night"
+              },
+              {
+                "name": "Hotel 3 Banderas",
+                "budget": "₹6,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Demente",
+              "Alma",
+              "Candé"
+            ]
+          }
+        ]
+      },
+      "Santa Marta": {
+        "name": "Santa Marta",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Centro Histórico for restaurants or Bello Horizonte for calmer beach hotels, start Tayrona very early, and do Minca on a clear morning if possible.",
+        "days": [
+          {
+            "theme": "Tayrona National Park",
+            "activities": [
+              {
+                "name": "Tayrona foreign visitor ticket plus insurance",
+                "cost": "₹1,659–₹1,974"
+              },
+              {
+                "name": "Park shuttle inside the entrance",
+                "cost": "₹210"
+              },
+              {
+                "name": "Cabo San Juan or Arrecifes trail circuit"
+              },
+              {
+                "name": "Seafood dinner back in Santa Marta"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Best Western Plus Santa Marta Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Casa de Leda, a Kali Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Lulo Café Bar",
+              "Ouzo Santa Marta",
+              "Donde Chucho"
+            ]
+          },
+          {
+            "theme": "Minca Waterfalls & Coffee",
+            "activities": [
+              {
+                "name": "Shared jeep round trip between Santa Marta and Minca",
+                "cost": "₹420–₹504"
+              },
+              {
+                "name": "Marinka Waterfalls entry",
+                "cost": "₹315"
+              },
+              {
+                "name": "Finca La Victoria coffee tour",
+                "cost": "₹420–₹630"
+              },
+              {
+                "name": "Mototaxi or 4x4 transfer to viewpoints or Pozo Azul",
+                "cost": "₹315–₹630"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Best Western Plus Santa Marta Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Hotel Boutique Casa Carolina",
+                "budget": "₹6,500–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Burukuka",
+              "Ouzo Santa Marta",
+              "Lulo Café Bar"
+            ]
+          }
+        ]
+      },
+      "San Andrés": {
+        "name": "San Andrés",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Stay near Spratt Bight or the north end if you are relying on taxis, buy the OCCRE tourist card before boarding your flight, and lock boat tours in early when seas are calm.",
+        "days": [
+          {
+            "theme": "North End Loop & Island Entry",
+            "activities": [
+              {
+                "name": "OCCRE tourist card for San Andrés",
+                "cost": "₹3,213"
+              },
+              {
+                "name": "Spratt Bight boardwalk and north-end beach time"
+              },
+              {
+                "name": "Golf cart or scooter rental to circle the island",
+                "cost": "₹2,730–₹4,620"
+              },
+              {
+                "name": "Hoyo Soplador and west-side photo stops"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Castel Blanc Hotel Boutique",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Samawi Hotel",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "La Regatta",
+              "Miss Celia",
+              "Capitán Mandy"
+            ]
+          },
+          {
+            "theme": "Johnny Cay & Acuario",
+            "activities": [
+              {
+                "name": "Johnny Cay and Acuario/Haynes Cay combo boat",
+                "cost": "₹1,260–₹1,890"
+              },
+              {
+                "name": "Johnny Cay conservation fee",
+                "cost": "₹168"
+              },
+              {
+                "name": "Snorkel or locker add-ons",
+                "cost": "₹210–₹420"
+              },
+              {
+                "name": "Rocky Cay or Cocoplum sunset stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Castel Blanc Hotel Boutique",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Samawi Hotel",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "La Regatta",
+              "Mahi-Mahi San Andrés",
+              "Miss Celia"
+            ]
+          },
+          {
+            "theme": "West View, La Piscinita & Easy Water Day",
+            "activities": [
+              {
+                "name": "West View sea-access entry",
+                "cost": "₹315"
+              },
+              {
+                "name": "La Piscinita entry",
+                "cost": "₹210"
+              },
+              {
+                "name": "Rocky Cay sandbar walk"
+              },
+              {
+                "name": "Optional scuba discovery or semi-submarine outing",
+                "cost": "₹1,890–₹3,150"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Castel Blanc Hotel Boutique",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Samawi Hotel",
+                "budget": "₹9,000–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Capitán Mandy",
+              "Mahi-Mahi San Andrés",
+              "La Regatta"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bogotá",
+        "to": "Medellín",
+        "method": "Direct Avianca or LATAM flight in about 1 hour, with an overnight Bolivariano coach as the slower but workable budget fallback",
+        "cost": "₹1,900–₹6,500"
+      },
+      {
+        "from": "Medellín",
+        "to": "Salento",
+        "method": "Bolivariano or similar intercity bus to Armenia or Pereira plus a local bus or jeep onward to Salento; flying only makes sense if time matters more than cost",
+        "cost": "₹1,050–₹2,100"
+      },
+      {
+        "from": "Salento",
+        "to": "Cartagena",
+        "method": "Return by road to Pereira or Armenia, then connect on Avianca or LATAM via Bogotá or Medellín to Cartagena",
+        "cost": "₹4,600–₹10,500"
+      },
+      {
+        "from": "Cartagena",
+        "to": "Santa Marta",
+        "method": "Coastal coach or shuttle in about 4–5 hours; buses are usually better value than trying to fly such a short segment",
+        "cost": "₹525–₹945"
+      },
+      {
+        "from": "Santa Marta",
+        "to": "San Andrés",
+        "method": "Avianca or LATAM flight, usually connecting via Bogotá, and best booked early because island inventory tightens fast on weekends and holidays",
+        "cost": "₹5,800–₹12,600"
+      }
+    ],
+    "extras": [
+      "Use December to March or July to August for the cleanest weather mix across Bogotá, the Coffee Region, and the Caribbean coast.",
+      "Carry small cash for Cocora jeeps, Minca moto-taxis, market snacks, and some island boat add-ons even though cities are mostly card-friendly.",
+      "Book San Andrés flights early and remember the separate OCCRE tourist card fee before you board.",
+      "Tayrona trail conditions and boat departures can change quickly after rain, so keep at least one flexible buffer if the coast is a priority.",
+      "If you are short on time, keep Bogotá, Medellín, Cartagena, and either Salento or Santa Marta as the core route, then add San Andrés last.",
+      "Domestic fares look cheap until baggage is added, so compare Avianca and LATAM with carry-on rules included instead of headline fare alone."
+    ],
+    "cityImages": {
+      "Bogotá": [
+        "Monserrate Bogota cable car",
+        "La Candelaria Bogota colonial street",
+        "Gold Museum Bogota"
+      ],
+      "Medellín": [
+        "Comuna 13 Medellin graffiti",
+        "Plaza Botero Medellin",
+        "Guatape El Penol rock"
+      ],
+      "Salento": [
+        "Cocora Valley Salento wax palms",
+        "Calle Real Salento Colombia",
+        "Coffee farm Salento Colombia"
+      ],
+      "Cartagena": [
+        "Cartagena Walled City Colombia",
+        "Castillo San Felipe Cartagena",
+        "Getsemani Cartagena street art"
+      ],
+      "Santa Marta": [
+        "Tayrona National Park Cabo San Juan",
+        "Minca Colombia waterfall",
+        "Santa Marta Colombia historic center"
+      ],
+      "San Andrés": [
+        "Johnny Cay San Andres",
+        "Rocky Cay San Andres",
+        "West View San Andres Colombia"
+      ]
+    }
+  }
+}

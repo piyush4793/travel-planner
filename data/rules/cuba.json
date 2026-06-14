@@ -1,0 +1,663 @@
+{
+  "name": "Cuba",
+  "seed": false,
+  "lat": 21.52,
+  "lng": -77.78,
+  "region": "Americas",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹95,000–₹1.7L",
+    "couple": "₹1.8L–₹3L",
+    "family4": "₹3.8L–₹5.8L"
+  },
+  "experiences": [
+    "Music",
+    "Colonial Towns",
+    "Beaches",
+    "Tobacco Country",
+    "Classic Cars",
+    "History"
+  ],
+  "avoid": [
+    "August–October hurricane window brings the highest rain, humidity, and intercity transport disruption risk.",
+    "Christmas/New Year and Easter weeks push up casa prices and reduce availability on Viazul and shared colectivos.",
+    "Late July carnival dates in Santiago de Cuba are exciting but make hotels, buses, and city-center transport much harder to book."
+  ],
+  "combo": [
+    "Mexico",
+    "Jamaica",
+    "Dominican Republic"
+  ],
+  "landmark": "Viñales Valley",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 10 days, most travelers skip Santiago de Cuba or use a domestic flight to avoid losing two full days on the road.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Havana",
+      "lat": 23.1136,
+      "lng": -82.3666,
+      "notes": "Cuba's atmospheric capital for Old Havana plazas, vintage-car rides, late-night music, and heavyweight museums."
+    },
+    {
+      "name": "Viñales",
+      "lat": 22.617,
+      "lng": -83.7069,
+      "notes": "Best base for mogote scenery, tobacco farms, cave excursions, and slower countryside stays in Pinar del Río."
+    },
+    {
+      "name": "Cienfuegos",
+      "lat": 22.149,
+      "lng": -80.4466,
+      "notes": "A compact French-founded bay city with elegant boulevards, Punta Gorda sunsets, and an easy stop between west and central Cuba."
+    },
+    {
+      "name": "Trinidad",
+      "lat": 21.8042,
+      "lng": -79.9847,
+      "notes": "Cobblestone colonial lanes, live music every night, nearby sugar-estate history, and quick beach access at Playa Ancón."
+    },
+    {
+      "name": "Santiago de Cuba",
+      "lat": 20.0217,
+      "lng": -75.8267,
+      "notes": "Cuba's most Afro-Caribbean city, strong on revolutionary history, son music, and hilltop fort views over the bay."
+    },
+    {
+      "name": "Varadero",
+      "lat": 23.1568,
+      "lng": -81.2444,
+      "notes": "Easy beach finish with white-sand stretches, caves, catamaran day trips, and better card acceptance than much of the island."
+    }
+  ],
+  "itinerary": {
+    "sim": "Cubacel tourist SIMs or airport eSIM packages are the practical option — expect roughly ₹2,500–₹4,000 for a short-stay data pack, and download offline maps before leaving Havana.",
+    "apps": [
+      "Google Maps",
+      "Maps.me",
+      "WhatsApp",
+      "Viazul",
+      "Airalo",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Havana",
+      "Viñales",
+      "Cienfuegos",
+      "Trinidad",
+      "Varadero",
+      "Santiago de Cuba"
+    ],
+    "cities": {
+      "Havana": {
+        "name": "Havana",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Old Havana, Capitolio & Waterfront Icons",
+            "activities": [
+              {
+                "name": "Plaza Vieja, Plaza de Armas and cathedral quarter walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Capitolio guided visit",
+                "cost": "₹500 pp"
+              },
+              {
+                "name": "Museo de la Revolución",
+                "cost": "₹700 pp"
+              },
+              {
+                "name": "Castillo de los Tres Reyes del Morro at sunset",
+                "cost": "₹525 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Vieja 1840",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Casa Vitrales",
+                "budget": "₹5,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "La Vitrola",
+              "El del Frente",
+              "5 Sentidos"
+            ]
+          },
+          {
+            "theme": "Vedado, FAC & Classic Havana",
+            "activities": [
+              {
+                "name": "Classic American car ride along Malecón and Vedado",
+                "cost": "₹3,000 per car/hour"
+              },
+              {
+                "name": "Museo Nacional de Bellas Artes — Cuban Art Building",
+                "cost": "₹700 pp"
+              },
+              {
+                "name": "Hotel Nacional gardens and Malecón promenade",
+                "cost": "Free"
+              },
+              {
+                "name": "Fábrica de Arte Cubano evening entry",
+                "cost": "₹700 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Vieja 1840",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "La Reserva Vedado",
+                "budget": "₹8,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "El Cocinero",
+              "Atelier",
+              "La Guarida"
+            ]
+          },
+          {
+            "theme": "Rum, Forts & Local Music Night",
+            "activities": [
+              {
+                "name": "Museo del Ron Havana Club",
+                "cost": "₹875 pp"
+              },
+              {
+                "name": "Almacenes San José artisan market",
+                "cost": "Free"
+              },
+              {
+                "name": "Fortaleza de San Carlos de la Cabaña complex",
+                "cost": "₹700 pp"
+              },
+              {
+                "name": "Live set at Casa de la Música de Miramar",
+                "cost": "₹875 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Alta Habana",
+                "budget": "₹5,000–₹7,000/night"
+              },
+              {
+                "name": "La Reserva Vedado",
+                "budget": "₹8,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Doña Eutimia",
+              "San Cristóbal Paladar",
+              "Vista Mar"
+            ]
+          }
+        ]
+      },
+      "Viñales": {
+        "name": "Viñales",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Viñales Valley Tobacco Country",
+            "activities": [
+              {
+                "name": "Horseback or walking tour through Viñales Valley tobacco farms",
+                "cost": "₹2,500 pp"
+              },
+              {
+                "name": "Casa del Veguero cigar and coffee stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Los Jazmines viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Mural de la Prehistoria",
+                "cost": "₹350 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Lucilo y Nirma",
+                "budget": "₹3,500–₹5,000/night"
+              },
+              {
+                "name": "Villa Vereda al Valle",
+                "budget": "₹4,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "3J Bar de Tapas",
+              "El Olivo",
+              "Balcón del Valle"
+            ]
+          },
+          {
+            "theme": "Caves, Bikes & Valley Views",
+            "activities": [
+              {
+                "name": "Cueva del Indio with boat section",
+                "cost": "₹525 pp"
+              },
+              {
+                "name": "Palenque de los Cimarrones cave site",
+                "cost": "₹875 pp"
+              },
+              {
+                "name": "Bicycle rental for village and valley lanes",
+                "cost": "₹1,250 per bike/day"
+              },
+              {
+                "name": "Sunset drink at Hotel Los Jazmines terrace",
+                "cost": "₹700 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Jean Pierre",
+                "budget": "₹4,000–₹5,500/night"
+              },
+              {
+                "name": "Casa Eusebia y Eusebio",
+                "budget": "₹3,500–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Finca Agroecológica El Paraíso",
+              "La Cuenca",
+              "Bar-Restaurante 3J"
+            ]
+          }
+        ]
+      },
+      "Cienfuegos": {
+        "name": "Cienfuegos",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "French Center & Punta Gorda",
+            "activities": [
+              {
+                "name": "Parque José Martí and Palacio de Gobierno area stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Teatro Tomás Terry",
+                "cost": "₹525 pp"
+              },
+              {
+                "name": "Palacio de Valle rooftop and bay views",
+                "cost": "₹525 pp"
+              },
+              {
+                "name": "Punta Gorda promenade at sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hostal La Perla del Sur",
+                "budget": "₹3,500–₹5,000/night"
+              },
+              {
+                "name": "Hostal Marina",
+                "budget": "₹4,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Paladar Ache",
+              "Casa Prado",
+              "Doña Nora"
+            ]
+          }
+        ]
+      },
+      "Trinidad": {
+        "name": "Trinidad",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Plaza Mayor, Museums & Music",
+            "activities": [
+              {
+                "name": "Plaza Mayor and cobbled old town walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Museo Romántico",
+                "cost": "₹420 pp"
+              },
+              {
+                "name": "Palacio Cantero bell tower",
+                "cost": "₹420 pp"
+              },
+              {
+                "name": "Casa de la Música evening cover",
+                "cost": "₹700 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Villa Trinidad de Cuba",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Hostal Mar y Sol",
+                "budget": "₹3,500–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Sol Ananda",
+              "La Redacción",
+              "Taberna La Botija"
+            ]
+          },
+          {
+            "theme": "Sugar Valley & Playa Ancón",
+            "activities": [
+              {
+                "name": "Valle de los Ingenios half-day trip",
+                "cost": "₹1,750 pp"
+              },
+              {
+                "name": "Manaca Iznaga tower",
+                "cost": "₹525 pp"
+              },
+              {
+                "name": "Playa Ancón beach time",
+                "cost": "Free"
+              },
+              {
+                "name": "Disco Ayala cave club",
+                "cost": "₹875 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jardín de Juana",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Casa Nivia y Pepe",
+                "budget": "₹4,000–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "San José",
+              "Restaurante Guitarra Mía",
+              "La Ceiba"
+            ]
+          }
+        ]
+      },
+      "Varadero": {
+        "name": "Varadero",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Classic Varadero Beach Day",
+            "activities": [
+              {
+                "name": "Varadero Beach swim and long shoreline walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Parque Josone pedal boats or garden circuit",
+                "cost": "₹350 pp"
+              },
+              {
+                "name": "Mansión Xanadú viewpoint stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Beatles Bar live music set",
+                "cost": "₹525 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Don Felipe y María",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Casa Isis Tropical Beach 2",
+                "budget": "₹5,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "La Vaca Rosada",
+              "Varadero 60",
+              "Waco's Club"
+            ]
+          },
+          {
+            "theme": "Caves, Nature & Catamaran Option",
+            "activities": [
+              {
+                "name": "Cueva de Saturno swim stop",
+                "cost": "₹700 pp"
+              },
+              {
+                "name": "Reserva Ecológica Varahicacos",
+                "cost": "₹350 pp"
+              },
+              {
+                "name": "Catamaran day trip to Cayo Blanco",
+                "cost": "₹6,500 pp"
+              },
+              {
+                "name": "Varadero craft market browsing",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Alba Varadero, House Two Steps from the Sea",
+                "budget": "₹6,000–₹8,500/night"
+              },
+              {
+                "name": "Cozy Modern House, Varadero",
+                "budget": "₹5,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Kiki's Club",
+              "La Gruta El Vino",
+              "El Rancho"
+            ]
+          }
+        ]
+      },
+      "Santiago de Cuba": {
+        "name": "Santiago de Cuba",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Best added on longer Cuba trips because overland transfers from central or western Cuba are time-heavy.",
+        "days": [
+          {
+            "theme": "Historic Core & Revolution Sites",
+            "activities": [
+              {
+                "name": "Céspedes Park and Casa de Diego Velázquez",
+                "cost": "₹525 pp"
+              },
+              {
+                "name": "Cuartel Moncada museum",
+                "cost": "₹525 pp"
+              },
+              {
+                "name": "Santa Ifigenia Cemetery",
+                "cost": "₹700 pp"
+              },
+              {
+                "name": "Casa de la Trova evening music cover",
+                "cost": "₹350 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hostal Heredia",
+                "budget": "₹4,000–₹5,500/night"
+              },
+              {
+                "name": "Hostal Paradiso Santiago de Cuba",
+                "budget": "₹4,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Paladar El Holandés",
+              "Restaurante La Casona",
+              "St. Pauli"
+            ]
+          },
+          {
+            "theme": "El Morro, Bay Views & Rum",
+            "activities": [
+              {
+                "name": "Castillo de San Pedro de la Roca del Morro",
+                "cost": "₹700 pp"
+              },
+              {
+                "name": "Bacardí rum museum visit",
+                "cost": "₹700 pp"
+              },
+              {
+                "name": "Balcón de Velázquez lookout",
+                "cost": "Free"
+              },
+              {
+                "name": "Carnival Museum",
+                "cost": "₹350 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Colonial House Grisel",
+                "budget": "₹3,500–₹5,000/night"
+              },
+              {
+                "name": "Hostal Heredia",
+                "budget": "₹4,000–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Salón Tropical",
+              "El Morro Restaurant",
+              "A Doña Martha"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Havana",
+        "to": "Viñales",
+        "method": "Viazul bus or shared colectivo via Pinar del Río (about 2.5–3h)",
+        "cost": "₹1,500 pp"
+      },
+      {
+        "from": "Viñales",
+        "to": "Cienfuegos",
+        "method": "Shared colectivo, usually routed back through Havana before heading south (7–8h)",
+        "cost": "₹4,000 pp"
+      },
+      {
+        "from": "Cienfuegos",
+        "to": "Trinidad",
+        "method": "Viazul bus or colectivo along the south coast (1.5–2h)",
+        "cost": "₹900 pp"
+      },
+      {
+        "from": "Trinidad",
+        "to": "Varadero",
+        "method": "Viazul via Santa Clara/Matanzas or private transfer (5.5–6.5h)",
+        "cost": "₹2,800 pp"
+      },
+      {
+        "from": "Varadero",
+        "to": "Santiago de Cuba",
+        "method": "Domestic flight via Havana when schedules run, or overnight Viazul as the cheaper fallback",
+        "cost": "₹11,500 pp"
+      }
+    ],
+    "extras": [
+      "Cash still matters: carry small EUR or CAD/USD equivalents for casas, paladares, tips, and colectivos because card acceptance can disappear outside bigger hotels.",
+      "Viazul seats can sell out several days ahead in dry season, so lock longer legs early and reconfirm departure points with your host the night before.",
+      "Power cuts and patchy mobile data are common outside Havana and Varadero, so ask each casa about generator backup and download offline WhatsApp and map info.",
+      "If Santiago feels too far for your timeframe, replace it with another Trinidad or Varadero night instead of forcing a 14+ hour bus sequence.",
+      "Breakfast at casas is often excellent value in Cuba — usually fruit, eggs, bread, and coffee for less than a restaurant meal — so build it into your daily rhythm."
+    ],
+    "cityImages": {
+      "Havana": [
+        "Old Havana Plaza Vieja",
+        "El Malecon Havana sunset",
+        "Capitolio de La Habana"
+      ],
+      "Viñales": [
+        "Vinales Valley mogotes",
+        "Mural de la Prehistoria Vinales",
+        "Cueva del Indio Vinales"
+      ],
+      "Cienfuegos": [
+        "Parque Jose Marti Cienfuegos",
+        "Palacio de Valle Cienfuegos",
+        "Punta Gorda Cienfuegos bay"
+      ],
+      "Trinidad": [
+        "Plaza Mayor Trinidad Cuba",
+        "Manaca Iznaga tower",
+        "Playa Ancon Trinidad Cuba"
+      ],
+      "Varadero": [
+        "Varadero Beach Cuba",
+        "Cueva de Saturno Matanzas",
+        "Parque Josone Varadero"
+      ],
+      "Santiago de Cuba": [
+        "Castillo del Morro Santiago de Cuba",
+        "Santa Ifigenia Cemetery Santiago de Cuba",
+        "Cespedes Park Santiago de Cuba"
+      ]
+    }
+  }
+}
