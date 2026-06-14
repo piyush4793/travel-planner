@@ -1,0 +1,484 @@
+{
+  "name": "Eswatini",
+  "seed": false,
+  "lat": -26.52,
+  "lng": 31.47,
+  "region": "Africa",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹55k–₹95k",
+    "couple": "₹92k–₹1.6L",
+    "family4": "₹1.9L–₹3.2L"
+  },
+  "experiences": [
+    "Sibebe Rock hike",
+    "Hlane safari drives",
+    "Mlilwane wildlife walks",
+    "Mantenga Cultural Village",
+    "Swazi craft markets"
+  ],
+  "avoid": [
+    "October-April is warmer and wetter, so Sibebe trails get slippery and game drives are less comfortable than in the May-September dry season.",
+    "Kombis are cheap and useful between Mbabane, Lobamba, and Manzini, but services thin out early in the evening and on Sundays.",
+    "Keep some cash for park gates, community trail fees, and smaller taxis because cards are not always reliable outside larger hotels."
+  ],
+  "combo": [
+    "South Africa",
+    "Mozambique"
+  ],
+  "landmark": "Sibebe Rock",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "If you only have 4 days, stay in Ezulwini Valley for Mlilwane and Mantenga day trips, do Sibebe Rock from Mbabane, and keep one final night inside Hlane Royal National Park.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Mbabane",
+      "lat": -26.3167,
+      "lng": 31.1333,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Eswatini's cooler highland capital is the best base for Sibebe Rock, craft stops like Ngwenya Glass, and easy kombi links into the Ezulwini Valley."
+    },
+    {
+      "name": "Manzini",
+      "lat": -26.4988,
+      "lng": 31.38,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "The country's commercial hub is practical for the big market, intercity kombis, casual food stops, and quick access to Matsapha and nearby craft centres."
+    },
+    {
+      "name": "Ezulwini Valley",
+      "lat": -26.455,
+      "lng": 31.2361,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "This green valley around Lobamba is Eswatini's classic culture-and-nature base for Mlilwane Wildlife Sanctuary, Mantenga Cultural Village, and House on Fire."
+    },
+    {
+      "name": "Hlane Royal National Park",
+      "lat": -26.2475,
+      "lng": 31.9996,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "notes": "Hlane is Big Game Parks' easiest safari reserve for rhino, elephant, lion, and excellent birding, best reached by rental car or arranged transfer from central Eswatini."
+    }
+  ],
+  "itinerary": {
+    "sim": "MTN Eswatini or Eswatini Mobile prepaid SIMs are the easiest local options; budget about ₹460–₹920 for a starter data bundle and download offline maps before heading to Hlane.",
+    "apps": [
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "Airbnb",
+      "XE Currency",
+      "Tracks4Africa"
+    ],
+    "cityOrder": [
+      "Mbabane",
+      "Ezulwini Valley",
+      "Manzini",
+      "Hlane Royal National Park"
+    ],
+    "cities": {
+      "Mbabane": {
+        "name": "Mbabane",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Use Mbabane for the capital's cooler weather, Sibebe logistics, and one easy first night before shifting south-east toward the valley.",
+        "days": [
+          {
+            "theme": "Highland arrival, easy city reset, and a first taste of Mbabane",
+            "activities": [
+              {
+                "name": "King Mswati III International Airport to Mbabane by taxi",
+                "cost": "₹2,100–₹3,200",
+                "tip": "The cheaper budget option is usually airport shuttle or kombi via Manzini, but a direct taxi is easiest with bags."
+              },
+              {
+                "name": "Mbabane Market walk and first currency exchange stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ngwenya Glass workshop visit",
+                "cost": "₹0",
+                "tip": "Watching the recycled-glass blowing is normally free; budget extra only if you shop in the craft store."
+              },
+              {
+                "name": "Short taxi hops around Mbabane",
+                "cost": "₹230–₹460"
+              },
+              {
+                "name": "Sunset stop at Sibebe Rock Spur or nearby viewpoints",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hilton Garden Inn Mbabane",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Mountain Inn",
+                "budget": "₹5,000–₹8,000/night"
+              },
+              {
+                "name": "Silverstone Lodge",
+                "budget": "₹8,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Ramblas Restaurant",
+              "eDladleni Swazi Restaurant",
+              "Sugar Snap Caffè"
+            ]
+          },
+          {
+            "theme": "Sibebe Rock hike and one deeper day around the capital",
+            "activities": [
+              {
+                "name": "Taxi from Mbabane to Sibebe Trails trailhead",
+                "cost": "₹320–₹690"
+              },
+              {
+                "name": "Sibebe Trails community hiking fee",
+                "cost": "₹140–₹230 pp",
+                "tip": "Recent hikers usually report community fees of E30-E50 per person, with the amount varying slightly by route and local collection point."
+              },
+              {
+                "name": "Optional local guide for Sibebe Rock",
+                "cost": "₹460 pp",
+                "tip": "Community guides are typically about E100 for a half-day hike and help if you want the cave and waterfall detours."
+              },
+              {
+                "name": "Ngwenya Mine viewpoint or extra capital coffee stop",
+                "cost": "₹0–₹230"
+              },
+              {
+                "name": "Return taxi into Mbabane",
+                "cost": "₹320–₹690"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hilton Garden Inn Mbabane",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Emafini Country Lodge",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Tandoori Restaurant",
+              "Mozambik Mbabane",
+              "The Albert Millin"
+            ]
+          }
+        ]
+      },
+      "Ezulwini Valley": {
+        "name": "Ezulwini Valley",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "This is the most efficient base for Eswatini's culture circuit, wildlife sanctuary, and evening venues without changing hotels constantly.",
+        "days": [
+          {
+            "theme": "Lobamba culture, Mantenga stories, and an easy valley afternoon",
+            "activities": [
+              {
+                "name": "Mbabane to Ezulwini by kombi or taxi",
+                "cost": "₹90–₹550",
+                "tip": "Kombis are the cheapest option on the Mbabane-Lobamba-Ezulwini corridor; taxis are faster if you are carrying luggage."
+              },
+              {
+                "name": "Mantenga Cultural Village and Mantenga Falls admission",
+                "cost": "₹460–₹690 pp",
+                "tip": "Recent sources commonly quote E100-E150 for adults depending on what is bundled with the dance performance and reserve access."
+              },
+              {
+                "name": "Lobamba Parliament and royal precinct photo stop",
+                "cost": "₹0"
+              },
+              {
+                "name": "House on Fire grounds visit",
+                "cost": "₹0",
+                "tip": "Entry is usually free unless you time your visit with a ticketed festival, concert, or special event."
+              },
+              {
+                "name": "Short valley taxi rides between Lobamba, Mantenga, and hotel",
+                "cost": "₹230–₹550"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mantenga Lodge",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Happy Valley Hotel & Casino",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "The Royal Villas",
+                "budget": "₹11,000–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "Luxy Garden Restaurant",
+              "Malandela's Restaurant",
+              "The Calabash Lodge And Restaurant"
+            ]
+          },
+          {
+            "theme": "Mlilwane wildlife day with walking trails and a slower valley evening",
+            "activities": [
+              {
+                "name": "Mlilwane Wildlife Sanctuary conservation fee",
+                "cost": "₹390 pp",
+                "tip": "The recent Big Game Parks adult day rate is about E85/ZAR 85, which converts to roughly ₹390 at the working rate used for this planner."
+              },
+              {
+                "name": "Self-guided walking trails and Hippo Haunt area inside Mlilwane",
+                "cost": "₹0"
+              },
+              {
+                "name": "Optional mountain bike hire or horse trail inside Mlilwane",
+                "cost": "₹550–₹1,400"
+              },
+              {
+                "name": "Taxi or self-drive transfer between Ezulwini and Mlilwane gate",
+                "cost": "₹230–₹690"
+              },
+              {
+                "name": "Evening spa or casino time back in the valley",
+                "cost": "₹0–₹1,400"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mantenga Lodge",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Happy Valley Hotel & Casino",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Hippo Haunt Restaurant & Bar",
+              "Luxy Garden Restaurant",
+              "Malandela's Restaurant"
+            ]
+          }
+        ]
+      },
+      "Manzini": {
+        "name": "Manzini",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Keep Manzini short and practical: it works best as a market-and-craft stop before you continue to eastern Eswatini or loop back to the airport.",
+        "days": [
+          {
+            "theme": "Markets, craft shopping, and the commercial pulse of central Eswatini",
+            "activities": [
+              {
+                "name": "Ezulwini to Manzini by kombi or taxi",
+                "cost": "₹70–₹460"
+              },
+              {
+                "name": "Manzini Market browsing and street-snack stop",
+                "cost": "₹0–₹460"
+              },
+              {
+                "name": "Swazi Candles Craft Centre detour",
+                "cost": "₹0",
+                "tip": "There is no formal entry fee for the craft centre; budget only for purchases or a taxi if you are not self-driving."
+              },
+              {
+                "name": "Taxi between market, Matsapha side stops, and hotel",
+                "cost": "₹230–₹550"
+              },
+              {
+                "name": "Optional rental car pickup for the Hlane run next day",
+                "cost": "₹2,800–₹4,600/day"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The George Hotel",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Global Village Guest House",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Vuya Nathi Bed & Breakfast",
+                "budget": "₹2,800–₹4,600/night"
+              }
+            ],
+            "meals": [
+              "Gil Vicente Portuguese Restaurant",
+              "The Waffle Palace Co.",
+              "Nando's Manzini"
+            ]
+          }
+        ]
+      },
+      "Hlane Royal National Park": {
+        "name": "Hlane Royal National Park",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Stay at least one night inside the park if you can; dawn and dusk around the waterhole are the whole point of Hlane.",
+        "days": [
+          {
+            "theme": "Transfer east, check into camp, and catch the first wildlife-heavy evening",
+            "activities": [
+              {
+                "name": "Manzini to Hlane by rental car or private taxi",
+                "cost": "₹1,150–₹3,220",
+                "tip": "Public transport is possible via Simunye plus a last taxi, but the reserve is much easier with your own car or a pre-arranged lodge transfer."
+              },
+              {
+                "name": "Hlane Royal National Park conservation fee",
+                "cost": "₹390–₹440 pp",
+                "tip": "Recent rack rates are usually around E85-E95 per adult per day, depending on the current gate tariff."
+              },
+              {
+                "name": "Waterhole hide session at Ndlovu Camp",
+                "cost": "₹0"
+              },
+              {
+                "name": "Guided sunset game drive",
+                "cost": "₹1,450–₹2,500 pp"
+              },
+              {
+                "name": "Campfire evening at Ndlovu or Bhubesi",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hlane Ndlovu Camp",
+                "budget": "₹4,000–₹6,500/night"
+              },
+              {
+                "name": "Hlane Bhubesi Camp",
+                "budget": "₹3,200–₹5,000/night"
+              },
+              {
+                "name": "Shewula Mountain Camp",
+                "budget": "₹2,300–₹4,100/night"
+              }
+            ],
+            "meals": [
+              "Ndlovu Camp Restaurant"
+            ]
+          },
+          {
+            "theme": "Rhino country, sunrise birding, and one more slow safari day",
+            "activities": [
+              {
+                "name": "Second-day Hlane conservation fee",
+                "cost": "₹390–₹440 pp"
+              },
+              {
+                "name": "Guided morning game drive or rhino-focused drive",
+                "cost": "₹1,450–₹2,500 pp"
+              },
+              {
+                "name": "Self-drive wildlife loops if you rented a car",
+                "cost": "₹0"
+              },
+              {
+                "name": "Bird hide or vulture restaurant viewing area",
+                "cost": "₹0"
+              },
+              {
+                "name": "Check-out transfer toward Manzini or the airport",
+                "cost": "₹1,150–₹3,220"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hlane Ndlovu Camp",
+                "budget": "₹4,000–₹6,500/night"
+              },
+              {
+                "name": "Hlane Bhubesi Camp",
+                "budget": "₹3,200–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Ndlovu Camp Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Mbabane",
+        "to": "Ezulwini Valley",
+        "method": "Kombi via Lobamba or direct taxi",
+        "cost": "₹90–₹550"
+      },
+      {
+        "from": "Ezulwini Valley",
+        "to": "Manzini",
+        "method": "Kombi down the MR103 or short taxi ride",
+        "cost": "₹70–₹460"
+      },
+      {
+        "from": "Manzini",
+        "to": "Hlane Royal National Park",
+        "method": "Rental car, pre-arranged transfer, or kombi to Simunye plus taxi",
+        "cost": "₹460–₹3,220"
+      }
+    ],
+    "extras": [
+      "Dry-season mornings can be genuinely chilly in Mbabane and at Hlane, so pack a fleece for sunrise drives and Sibebe starts.",
+      "Ezulwini and Lobamba are the easiest places to combine culture with wildlife without long travel days.",
+      "If you are self-driving from South Africa, Eswatini pairs very naturally with Kruger or northern KwaZulu-Natal."
+    ]
+  }
+}

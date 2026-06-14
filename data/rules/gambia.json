@@ -1,0 +1,382 @@
+{
+  "name": "Gambia",
+  "seed": false,
+  "lat": 13.44,
+  "lng": -15.31,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹75k–₹1.35L",
+    "couple": "₹1.45L–₹2.35L",
+    "family4": "₹2.7L–₹4.1L"
+  },
+  "experiences": [
+    "Kunta Kinteh Island roots history",
+    "Bijilo monkey walks and beach downtime",
+    "Abuko birding and reserve trails",
+    "Upriver GTSC and pirogue journey to Janjanbureh",
+    "Chimp-viewing boat trips in River Gambia National Park"
+  ],
+  "avoid": [
+    "June to October is wetter and muddier, so ferry queues, reserve trails, and upriver road timings all get less predictable.",
+    "Banjul-Barra ferry delays are common around busy weekends and market days, so keep heritage day trips lightly scheduled.",
+    "Cash is still essential for park fees, gelli-gellis, bush taxis, and pirogues, especially once you leave the Senegambia coast."
+  ],
+  "combo": [
+    "Senegal"
+  ],
+  "landmark": "Kunta Kinteh Island",
+  "travelStyle": [
+    "explorer",
+    "slow"
+  ],
+  "stopoverNote": "Banjul (BJL) is the only practical international gateway; the cleanest loop is the coast first for Kololi, Abuko and the Roots sites, then a GTSC or bush-taxi run upriver to Janjanbureh before returning west.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Banjul",
+      "lat": 13.4549,
+      "lng": -16.579,
+      "notes": "Compact capital for Albert Market, ferry action, colonial-era streets and the easiest launch point for Gambian history before moving to the beach strip."
+    },
+    {
+      "name": "Serekunda / Kololi",
+      "lat": 13.4432,
+      "lng": -16.727,
+      "notes": "The Senegambia coast base for beaches, restaurants, Bijilo's monkeys, and simple transport links for day trips east or across to Barra."
+    },
+    {
+      "name": "Abuko Nature Reserve",
+      "lat": 13.405,
+      "lng": -16.655,
+      "notes": "The Gambia's easiest wildlife stop, mixing bird hides, monkey sightings and low-key creek detours within day-trip range of the coast."
+    },
+    {
+      "name": "Janjanbureh (Georgetown)",
+      "lat": 13.5417,
+      "lng": -14.7678,
+      "notes": "Sleepy upriver island town for river life, local ferries, roots-era history and the best base for River Gambia National Park boat trips."
+    }
+  ],
+  "itinerary": {
+    "sim": "Africell is the easiest all-round pick for the coast and the long upriver road, with QCell a decent backup; budget roughly ₹360–₹960 for a prepaid SIM bundle with enough data for maps, WhatsApp and ferry lookups.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency",
+      "ferries.gm"
+    ],
+    "cityOrder": [
+      "Banjul",
+      "Serekunda / Kololi",
+      "Abuko Nature Reserve",
+      "Janjanbureh (Georgetown)"
+    ],
+    "cities": {
+      "Banjul": {
+        "name": "Banjul",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "days": [
+          {
+            "theme": "Ease into The Gambia with ferry bustle, market life and a light heritage loop before shifting west to the beach belt.",
+            "activities": [
+              {
+                "name": "Taxi from Banjul International Airport to central Banjul or Bakau-side hotels",
+                "cost": "₹360–₹720"
+              },
+              {
+                "name": "GTSC ferry foot-passenger fare on the Banjul-Barra route",
+                "cost": "₹30–₹60"
+              },
+              {
+                "name": "Albert Market browse and produce-stall walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Arch 22 and Independence Drive walking loop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Local taxi hops between the port, museum quarter and Bakau side",
+                "cost": "₹180–₹420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Assaraya Atlantic Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Prime Atlantic Hotel",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Ocean Bay Hotel & Resort",
+                "budget": "₹11,500–₹18,000/night"
+              }
+            ],
+            "meals": [
+              "Ali Baba Restaurant",
+              "Soldier Town Restaurant",
+              "Ngala Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Serekunda / Kololi": {
+        "name": "Serekunda / Kololi",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Settle onto the Senegambia strip with monkey forest time, a beach reset and the easiest restaurant cluster in the country.",
+            "activities": [
+              {
+                "name": "Gelli-gelli or shared taxi from Banjul/Bakau into Kololi",
+                "cost": "₹24–₹120"
+              },
+              {
+                "name": "Bijilo Forest Park adult entry",
+                "cost": "₹360"
+              },
+              {
+                "name": "Bijilo Forest Park guide share",
+                "cost": "₹240–₹360"
+              },
+              {
+                "name": "Kololi beach chair or shade setup",
+                "cost": "₹240–₹600"
+              },
+              {
+                "name": "Short taxi hops between Senegambia hotels, Bijilo gate and dinner",
+                "cost": "₹120–₹300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Senegambia Beach Hotel",
+                "budget": "₹6,500–₹11,500/night"
+              },
+              {
+                "name": "Kairaba Beach Hotel",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Balafon Beach Resort",
+                "budget": "₹12,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Scala Restaurant",
+              "The Green Mamba",
+              "Darboe's"
+            ]
+          },
+          {
+            "theme": "Use the coast as a launch pad for The Gambia's strongest history day, mixing ferry lines, bush-taxi rhythm and the UNESCO island crossing.",
+            "activities": [
+              {
+                "name": "Banjul-Barra GTSC ferry round-trip for a self-guided Roots day",
+                "cost": "₹60–₹120"
+              },
+              {
+                "name": "Bush taxi or gelli-gelli between Barra and Albreda/Juffureh return",
+                "cost": "₹240–₹480"
+              },
+              {
+                "name": "Kunta Kinteh Island UNESCO entry",
+                "cost": "₹360"
+              },
+              {
+                "name": "Albreda Museum and Juffureh museum visits",
+                "cost": "₹120–₹240"
+              },
+              {
+                "name": "Pirogue return crossing from the Albreda/Juffureh jetty to Kunta Kinteh Island",
+                "cost": "₹120–₹240"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Senegambia Beach Hotel",
+                "budget": "₹6,500–₹11,500/night"
+              },
+              {
+                "name": "African Princess Beach Hotel",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Scala Restaurant",
+              "Darboe's",
+              "The Butcher's Shop"
+            ]
+          }
+        ]
+      },
+      "Abuko Nature Reserve": {
+        "name": "Abuko Nature Reserve",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "days": [
+          {
+            "theme": "Keep one slower wildlife day for bird hides, monkey calls and a nearby mangrove detour away from the Senegambia beach strip.",
+            "activities": [
+              {
+                "name": "Gelli-gelli to Abuko Junction plus final bush taxi hop to the reserve gate",
+                "cost": "₹60–₹180"
+              },
+              {
+                "name": "Abuko Nature Reserve adult entry",
+                "cost": "₹120"
+              },
+              {
+                "name": "Reserve guide for birds, reptiles and the bamboo hide",
+                "cost": "₹180–₹240"
+              },
+              {
+                "name": "Self-guided reserve trails and observation-hide time",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lamin Lodge creek pirogue or canoe ride after the reserve",
+                "cost": "₹720–₹1,440"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Woodpecker Resort",
+                "budget": "₹4,500–₹8,000/night"
+              },
+              {
+                "name": "Metzy Residence Hotel",
+                "budget": "₹5,500–₹9,000/night"
+              },
+              {
+                "name": "Mandina River Lodge",
+                "budget": "₹13,500–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "The Hidden Treasure Restaurant",
+              "Lamin Lodge Restaurant",
+              "Scala Restaurant"
+            ]
+          }
+        ]
+      },
+      "Janjanbureh (Georgetown)": {
+        "name": "Janjanbureh (Georgetown)",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Trade the coast for an upriver island town, arriving by GTSC and settling into one of The Gambia's slowest, most atmospheric overnights.",
+            "activities": [
+              {
+                "name": "GTSC Super Express bus from the coast toward Janjanbureh",
+                "cost": "₹420–₹600"
+              },
+              {
+                "name": "Local bush taxi from the main road terminal into Janjanbureh town if your bus stops outside the island centre",
+                "cost": "₹60–₹180"
+              },
+              {
+                "name": "Short pirogue or ferry crossing if you arrive from the riverbank side",
+                "cost": "₹24–₹60"
+              },
+              {
+                "name": "McCarthy Square and riverside walking loop",
+                "cost": "₹0"
+              },
+              {
+                "name": "Market snacks, tea and produce-stop budget",
+                "cost": "₹120–₹240"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Island Hotel Janjanbureh",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Janjanbureh Lodge",
+                "budget": "₹3,500–₹6,500/night"
+              },
+              {
+                "name": "Kairoh Garden",
+                "budget": "₹4,000–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Riverview Restaurant at Island Hotel Janjanbureh",
+              "Janjanbureh Lodge Restaurant",
+              "Kankurang Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Make the upriver leg count with the chimp islands, a longer river boat and one of the best low-volume wildlife days in West Africa.",
+            "activities": [
+              {
+                "name": "Bush taxi or shared transfer between Janjanbureh and Kuntaur jetty return",
+                "cost": "₹240–₹480"
+              },
+              {
+                "name": "River Gambia National Park boat trip including park fee and chimp-viewing permit",
+                "cost": "₹3,600–₹9,600"
+              },
+              {
+                "name": "Jetty or pirogue landing contribution for the Baboon Islands outing",
+                "cost": "₹120–₹240"
+              },
+              {
+                "name": "Riverside birdwatching and town walk after returning from the park",
+                "cost": "₹0"
+              },
+              {
+                "name": "Optional extra local pirogue at sunset around Janjanbureh's banks",
+                "cost": "₹180–₹360"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Island Hotel Janjanbureh",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Kairoh Garden",
+                "budget": "₹4,000–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Riverview Restaurant at Island Hotel Janjanbureh",
+              "Janjanbureh Lodge Restaurant",
+              "Kankurang Lodge Restaurant"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

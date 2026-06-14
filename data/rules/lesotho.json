@@ -1,0 +1,485 @@
+{
+  "name": "Lesotho",
+  "seed": false,
+  "lat": -29.61,
+  "lng": 28.23,
+  "region": "Africa",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "budget": {
+    "solo": "₹95,000–₹1.6L",
+    "couple": "₹1.7L–₹2.8L",
+    "family4": "₹3.4L–₹5L"
+  },
+  "experiences": [
+    "Maletsunyane Falls in Semonkong",
+    "Basotho pony trekking",
+    "Ts'ehlanyane forest hikes",
+    "Sani Pass 4x4 crossing",
+    "Highest Pub at Sani Top"
+  ],
+  "avoid": [
+    "November to March brings storms, muddy highland roads, and frequent cloud cover around Semonkong and Sani Pass",
+    "Do not attempt Sani Pass or the rougher highland legs in a normal sedan; a true 4x4 and rental border letter are essential",
+    "Night driving is a bad idea because of livestock, potholes, and very limited lighting outside Maseru"
+  ],
+  "combo": [
+    "South Africa"
+  ],
+  "landmark": "Maletsunyane Falls",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Most India itineraries work best via Johannesburg, then onward to Maseru by short flight or road. Minibus taxis cover Maseru, Semonkong, and Butha-Buthe on a budget, but a 4x4 is the practical default once you commit to Ts'ehlanyane and Sani Pass.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Maseru",
+      "lat": -29.3151,
+      "lng": 27.4869,
+      "notes": "Capital base for currency, SIM, 4x4 pickup, Basotho craft stops, and the easiest start before the mountain legs"
+    },
+    {
+      "name": "Semonkong",
+      "lat": -29.8436,
+      "lng": 28.055,
+      "notes": "Gateway to Maletsunyane Falls, Basotho pony trekking, and the rough-road heart of Lesotho's highlands"
+    },
+    {
+      "name": "Ts'ehlanyane National Park",
+      "lat": -28.8946,
+      "lng": 28.4331,
+      "notes": "Northern mountain forest reserve anchored by Maliba Lodge, river trails, and easy access toward Leribe's dinosaur sites"
+    },
+    {
+      "name": "Sani Pass",
+      "lat": -29.5886,
+      "lng": 29.2865,
+      "notes": "The classic escarpment crossing for 4x4 travelers, with Sani Top lodges, border formalities, and huge Drakensberg views"
+    }
+  ],
+  "itinerary": {
+    "sim": "Vodacom Lesotho is the safest first pick around Maseru, with Econet Telecom Lesotho as the backup. Budget about ₹460–₹920 for enough data to handle offline maps, lodge messaging, and weather checks before the pass.",
+    "apps": [
+      "Google Maps",
+      "Maps.me",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency",
+      "Waze",
+      "Windy",
+      "Tracks4Africa"
+    ],
+    "cityOrder": [
+      "Maseru",
+      "Semonkong",
+      "Ts'ehlanyane National Park",
+      "Sani Pass"
+    ],
+    "cities": {
+      "Maseru": {
+        "name": "Maseru",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Arrival logistics, Basotho food, and setting up the mountain loop properly",
+            "activities": [
+              {
+                "name": "Pick up a true 4x4 from Lesane Elites Car Rentals or Avis Maseru before heading into the highlands",
+                "cost": "₹3,220–₹5,520/day"
+              },
+              {
+                "name": "Browse the Basotho Hat craft market and central Maseru for blankets, woven souvenirs, and cash supplies",
+                "cost": "₹0"
+              },
+              {
+                "name": "Our Lady of Victories Cathedral and easy city orientation walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Optional Thaba-Bosiu Cultural Village outing if you land early enough for one major historical stop",
+                "cost": "₹460–₹920"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Avani Lesotho Hotel & Casino",
+                "budget": "₹9,500–₹16,500/night"
+              },
+              {
+                "name": "Botleng Guest House",
+                "budget": "₹4,600–₹7,800/night"
+              },
+              {
+                "name": "Hokahanya Inn & Conference Centre",
+                "budget": "₹4,800–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "No.7 Restaurant",
+              "Ouh La La Cafe",
+              "Piri Piri Portuguese Restaurant"
+            ]
+          },
+          {
+            "theme": "Optional buffer day for history, shopping, and an easier start before the rougher roads",
+            "activities": [
+              {
+                "name": "Thaba-Bosiu Cultural Village museum and plateau viewpoint revisit",
+                "cost": "₹460–₹920"
+              },
+              {
+                "name": "Pioneer Mall and local cafe reset before the drive south or north",
+                "cost": "₹0"
+              },
+              {
+                "name": "Retain the 4x4 for the following Semonkong departure day",
+                "cost": "₹3,220–₹5,520/day"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Avani Lesotho Hotel & Casino",
+                "budget": "₹9,500–₹16,500/night"
+              },
+              {
+                "name": "Botleng Guest House",
+                "budget": "₹4,600–₹7,800/night"
+              }
+            ],
+            "meals": [
+              "No.7 Restaurant",
+              "Cafe What?",
+              "Sky Restaurant"
+            ]
+          }
+        ]
+      },
+      "Semonkong": {
+        "name": "Semonkong",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Get into the mountains, reach the lodge, and see Maletsunyane Falls before sunset",
+            "activities": [
+              {
+                "name": "Minibus taxi from Maseru main rank to Semonkong if you are staying budget and traveling light",
+                "cost": "₹460–₹690"
+              },
+              {
+                "name": "4x4 self-drive or arranged transfer on the rough highland road if you want the practical option",
+                "cost": "₹1,840–₹5,520"
+              },
+              {
+                "name": "Maletsunyane Falls community viewpoint fee",
+                "cost": "₹138–₹230"
+              },
+              {
+                "name": "Semonkong village walk and sunset over the gorge",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Semonkong Lodge",
+                "budget": "₹5,500–₹10,500/night"
+              },
+              {
+                "name": "Serumula Guest House",
+                "budget": "₹2,800–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Duck and Donkey Tavern",
+              "Semonkong Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Classic Basotho pony trekking day to the falls and the shepherd trails around the plateau",
+            "activities": [
+              {
+                "name": "Semonkong Lodge 1-hour Basotho pony outride",
+                "cost": "₹690"
+              },
+              {
+                "name": "Semonkong Lodge half-day pony trek to Maletsunyane Falls",
+                "cost": "₹1,380–₹1,840"
+              },
+              {
+                "name": "Semonkong Lodge full-day pony trek if you want the longer mountain version",
+                "cost": "₹1,840–₹2,300"
+              },
+              {
+                "name": "Optional second stop at the Maletsunyane viewpoints for photos in different light",
+                "cost": "₹138–₹230"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Semonkong Lodge",
+                "budget": "₹5,500–₹10,500/night"
+              },
+              {
+                "name": "Serumula Guest House",
+                "budget": "₹2,800–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Duck and Donkey Tavern",
+              "Semonkong Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Weather buffer or slow highlands day for hiking, village time, and road recovery",
+            "activities": [
+              {
+                "name": "Easy guided village walk or informal local guide tip around Semonkong",
+                "cost": "₹230–₹460"
+              },
+              {
+                "name": "Repeat a short pony ride if cloud or rain spoiled the previous day",
+                "cost": "₹690"
+              },
+              {
+                "name": "Retain the 4x4 for the long transfer north toward Ts'ehlanyane",
+                "cost": "₹3,220–₹5,520/day"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Semonkong Lodge",
+                "budget": "₹5,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Duck and Donkey Tavern",
+              "Semonkong Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Ts'ehlanyane National Park": {
+        "name": "Ts'ehlanyane National Park",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Drive north into the forest reserve and settle into the easier, greener side of Lesotho",
+            "activities": [
+              {
+                "name": "4x4 drive from Semonkong to the Ts'ehlanyane/Maliba area with fuel, snack, and road-condition buffer",
+                "cost": "₹1,840–₹3,220"
+              },
+              {
+                "name": "Self-guided river trail or lower forest walk inside Ts'ehlanyane National Park",
+                "cost": "₹0"
+              },
+              {
+                "name": "Optional Maliba-arranged guided hike if you want a ranger or local guide rather than doing the shorter trails yourself",
+                "cost": "₹920–₹2,300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maliba Mountain Lodge",
+                "budget": "₹14,500–₹26,500/night"
+              },
+              {
+                "name": "Maliba River Lodge",
+                "budget": "₹7,500–₹13,500/night"
+              },
+              {
+                "name": "Liphofung Cave Chalets",
+                "budget": "₹4,600–₹7,800/night"
+              }
+            ],
+            "meals": [
+              "Maliba Lodge Restaurant & Bar",
+              "Maliba River Lodge Restaurant",
+              "New Oxbow Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Mix a forest morning with Lesotho's famous dinosaur footprint stop in nearby Leribe district",
+            "activities": [
+              {
+                "name": "Subeng Dinosaur Footprints community guide fee",
+                "cost": "₹276/group"
+              },
+              {
+                "name": "Short return drive from the park or Butha-Buthe area to the Subeng site",
+                "cost": "₹690–₹1,380"
+              },
+              {
+                "name": "Back-in-park waterfall or forest trail for the late afternoon",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maliba Mountain Lodge",
+                "budget": "₹14,500–₹26,500/night"
+              },
+              {
+                "name": "Maliba River Lodge",
+                "budget": "₹7,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Maliba Lodge Restaurant & Bar",
+              "Maliba River Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Sani Pass": {
+        "name": "Sani Pass",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Climb to Sani Top, handle the border costs, and enjoy the signature escarpment views",
+            "activities": [
+              {
+                "name": "Retain a proper 4x4 for the Sani Pass approach and the high-altitude lodge access",
+                "cost": "₹3,220–₹5,520/day"
+              },
+              {
+                "name": "Lesotho tourism levy for foreign visitors at Sani Pass border control",
+                "cost": "₹460/person"
+              },
+              {
+                "name": "Foreign-registered vehicle road or toll fee at the border",
+                "cost": "₹368/vehicle"
+              },
+              {
+                "name": "Stop at Sani Mountain Lodge's Highest Pub in Africa and the nearby escarpment viewpoints",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sani Mountain Lodge",
+                "budget": "₹6,900–₹12,500/night"
+              },
+              {
+                "name": "Sani Stone Lodge",
+                "budget": "₹4,600–₹8,500/night"
+              },
+              {
+                "name": "Masoba-soba Lodge",
+                "budget": "₹3,700–₹6,900/night"
+              }
+            ],
+            "meals": [
+              "Sani Mountain Lodge Restaurant & Pub",
+              "Sani Stone Lodge Restaurant",
+              "Masoba-soba Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Optional extra day for weather margin, sunrise photos, or a slow exit to South Africa or back to Maseru",
+            "activities": [
+              {
+                "name": "Sunrise photography or a short escarpment walk from the lodge area",
+                "cost": "₹0"
+              },
+              {
+                "name": "4x4 drive back to Maseru or descent toward Underberg with fuel buffer",
+                "cost": "₹1,840–₹3,680"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sani Mountain Lodge",
+                "budget": "₹6,900–₹12,500/night"
+              },
+              {
+                "name": "Sani Stone Lodge",
+                "budget": "₹4,600–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Sani Mountain Lodge Restaurant & Pub",
+              "Sani Stone Lodge Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Maseru",
+        "to": "Semonkong",
+        "method": "Minibus taxis run from Maseru on the budget route, but a 4x4 or arranged transfer is far easier once you factor luggage and the rougher final stretch",
+        "cost": "₹460–₹5,520"
+      },
+      {
+        "from": "Semonkong",
+        "to": "Ts'ehlanyane National Park",
+        "method": "Public transport means changing vehicles via Maseru, so most travelers treat this as a full self-drive or private-transfer day",
+        "cost": "₹1,380–₹5,520"
+      },
+      {
+        "from": "Ts'ehlanyane National Park",
+        "to": "Sani Pass",
+        "method": "This is the leg where the retained 4x4 really earns its keep; weather and road conditions make piecemeal minibus connections impractical",
+        "cost": "₹2,300–₹5,520"
+      },
+      {
+        "from": "Sani Pass",
+        "to": "Maseru",
+        "method": "Return by 4x4 to Maseru, or descend toward Underberg if you are exiting into South Africa rather than closing the loop in Lesotho",
+        "cost": "₹1,840–₹5,520"
+      }
+    ],
+    "extras": [
+      "May to September is the sweet spot for this exact loop: roads are drier, pony trails are easier to enjoy, and Sani Pass visibility is far better than in the summer storm season.",
+      "Carry small cash for the Maletsunyane community viewpoint, the Sani tourism levy, and the Subeng dinosaur-footprints guide fee because card facilities can be unreliable away from Maseru.",
+      "Minibus taxis are real and useful in Lesotho, especially from Maseru to Semonkong or Butha-Buthe, but they do not solve last-mile transfers to lodges or the Sani Pass highlands segment.",
+      "If your rental car is South African, confirm the cross-border letter and whether the quoted rate already includes Lesotho paperwork before you leave the desk.",
+      "Sani Pass is not a sedan road. Even experienced self-drivers should treat a proper low-range 4x4 as essential, not optional."
+    ],
+    "cityImages": {
+      "Maseru": [
+        "Avani Lesotho Hotel Maseru",
+        "Thaba-Bosiu Cultural Village Lesotho",
+        "Basotho Hat craft market Maseru"
+      ],
+      "Semonkong": [
+        "Maletsunyane Falls Lesotho",
+        "Semonkong Lodge Lesotho",
+        "Basotho pony trekking Semonkong"
+      ],
+      "Ts'ehlanyane National Park": [
+        "Ts'ehlanyane National Park Lesotho",
+        "Maliba Lodge Lesotho",
+        "Subeng Dinosaur Footprints Lesotho"
+      ],
+      "Sani Pass": [
+        "Sani Pass Lesotho 4x4",
+        "Sani Mountain Lodge Highest Pub",
+        "Sani Top Lesotho"
+      ]
+    }
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "name": "Guinea-Bissau",
+  "seed": false,
+  "lat": 11.8,
+  "lng": -15.18,
+  "region": "Africa",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1L–₹1.8L",
+    "couple": "₹1.9L–₹3.3L",
+    "family4": "₹3.8L–₹6L"
+  },
+  "experiences": [
+    "Bissau's faded Portuguese-era core",
+    "Bijagós pirogue island-hopping",
+    "Orango Island hippo watching",
+    "Cacheu fort and slave-trade history",
+    "Low-key seafood and mangrove sunsets"
+  ],
+  "avoid": [
+    "June to October is rainy, roads to Cacheu get slower, and sea crossings to the Bijagós become much less predictable",
+    "Ferry and pirogue schedules are loose even in the dry season, so keep buffer nights in Bissau or Bubaque instead of a same-day international connection",
+    "Cash is essential outside bigger Bissau hotels; many islands have no reliable ATM, card machine or backup fuel if you change plans late"
+  ],
+  "combo": [
+    "Senegal",
+    "Guinea"
+  ],
+  "landmark": "Bijagós Archipelago",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Bissau (OXB) is the only practical international gateway; most trips work best as Bissau city time first, then a ferry or pirogue from Porto de Pidjiguiti to Bubaque for the Bijagós, with Cacheu added as a dry-season road day trip or simple overnight.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Bissau",
+      "lat": 11.8636,
+      "lng": -15.5977,
+      "notes": "Compact capital for colonial facades, Bandim market energy, port history and the logistics every Guinea-Bissau trip runs through"
+    },
+    {
+      "name": "Bijagós Archipelago",
+      "lat": 11.2978,
+      "lng": -15.8383,
+      "notes": "Island chain reached via Bubaque, with pirogue transfers, beach lodges, birdlife and Orango's rare saltwater hippos"
+    },
+    {
+      "name": "Cacheu",
+      "lat": 12.2747,
+      "lng": -16.1652,
+      "notes": "Historic river town with a small Portuguese fort, mangrove scenery and a slavery-history stop most travelers tackle from Bissau"
+    }
+  ],
+  "itinerary": {
+    "sim": "Orange and MTN are the most practical local picks in Bissau, but island coverage is patchy and often drops to voice-only outside Bubaque; budget roughly ₹700–₹1,400 for a starter SIM or eSIM with enough data for maps, messages and light hotspot use.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Bissau",
+      "Bijagós Archipelago",
+      "Cacheu"
+    ],
+    "cities": {
+      "Bissau": {
+        "name": "Bissau",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Ease into Guinea-Bissau with old Bissau walks, Bandim market noise and the fortress that anchors the country's modern history",
+            "activities": [
+              {
+                "name": "Airport taxi from Osvaldo Vieira International Airport into central Bissau",
+                "cost": "₹980–₹1,120"
+              },
+              {
+                "name": "Fortaleza d'Amura guide or permission contribution when access is allowed",
+                "cost": "₹140–₹420"
+              },
+              {
+                "name": "Bissau Velho and Pidjiguiti waterfront walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Candonga hops across town",
+                "cost": "₹21–₹35"
+              },
+              {
+                "name": "Taxi rides between Bandim Market, the fort area and your hotel",
+                "cost": "₹210–₹280"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dunia Hôtel Bissau",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "Bissau Royal Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Ceiba Hotel Bissau",
+                "budget": "₹14,500–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurante Papa Loca",
+              "Coqueiros Bar & Restaurante",
+              "A Padeira Africana - Bissau"
+            ]
+          },
+          {
+            "theme": "Use a second day for culture and practical errands before the islands, with enough slack for ferry timing and slow city logistics",
+            "activities": [
+              {
+                "name": "Museu Nacional Etnográfico entry or donation",
+                "cost": "₹70–₹140"
+              },
+              {
+                "name": "Bandim Market browsing and snack stop",
+                "cost": "₹0–₹280"
+              },
+              {
+                "name": "Taxi to Porto de Pidjiguiti to reconfirm Bijagós ferry or pirogue seats",
+                "cost": "₹210–₹280"
+              },
+              {
+                "name": "Short in-city taxi across Bissau",
+                "cost": "₹42–₹70"
+              },
+              {
+                "name": "Bissau waterfront sunset walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "CochinChina Hotel",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Dunia Hôtel Bissau",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "Ceiba Hotel Bissau",
+                "budget": "₹14,500–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurante Marisqueira KAIS",
+              "O Bistro",
+              "Kalliste"
+            ]
+          }
+        ]
+      },
+      "Bijagós Archipelago": {
+        "name": "Bijagós Archipelago",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Cross from Bissau to Bubaque, settle into island time and keep day one light because boats run on weather and patience",
+            "activities": [
+              {
+                "name": "Consulmar ferry or public pirogue from Bissau to Bubaque",
+                "cost": "₹700–₹1,050"
+              },
+              {
+                "name": "Shared pirogue harbour transfer to nearby lodge beaches or Rubane",
+                "cost": "₹420–₹980"
+              },
+              {
+                "name": "Bubaque town and beach walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Local taxi between the quay and your guesthouse when available",
+                "cost": "₹140–₹210"
+              },
+              {
+                "name": "Sunset drinks or light dinner by the water",
+                "cost": "₹280–₹700"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mango Eco Lodge",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Cajou Lodge",
+                "budget": "₹9,000–₹14,000/night"
+              },
+              {
+                "name": "Hôtel Ponta Anchaca Eco-Lodge",
+                "budget": "₹24,000–₹31,000/night"
+              }
+            ],
+            "meals": [
+              "Saldomar",
+              "Nha Praia",
+              "Lodge Les Dauphins"
+            ]
+          },
+          {
+            "theme": "Spend a full day on the water with a pirogue and keep the plan flexible around tides, wind and whichever island your lodge can reach best",
+            "activities": [
+              {
+                "name": "Shared Bijagós island-hopping pirogue day trip",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Short beach landing or village guide contribution",
+                "cost": "₹280–₹700"
+              },
+              {
+                "name": "Rubane or sandbank stopover",
+                "cost": "₹0"
+              },
+              {
+                "name": "Extra fuel surcharge for longer private boat routing if seas are rough",
+                "cost": "₹420–₹980"
+              },
+              {
+                "name": "Return pirogue at sunset",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cajou Lodge",
+                "budget": "₹9,000–₹14,000/night"
+              },
+              {
+                "name": "Mango Eco Lodge",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hôtel Ponta Anchaca Eco-Lodge",
+                "budget": "₹24,000–₹31,000/night"
+              }
+            ],
+            "meals": [
+              "Saldomar",
+              "Nha Praia",
+              "Lodge Les Dauphins"
+            ]
+          },
+          {
+            "theme": "Make the signature wildlife day to Orango, where timing the tide and guide availability matters more than starting early for its own sake",
+            "activities": [
+              {
+                "name": "Shared pirogue from Bubaque or Rubane toward Orango",
+                "cost": "₹1,400–₹2,800"
+              },
+              {
+                "name": "Orango National Park entry",
+                "cost": "₹1,400–₹2,100"
+              },
+              {
+                "name": "Guided Orango Island hippo-watching excursion",
+                "cost": "₹3,500–₹6,300"
+              },
+              {
+                "name": "Community guide or ranger contribution",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Simple seafood lunch at lodge or village stop",
+                "cost": "₹420–₹980"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Orango Parque Hotel",
+                "budget": "₹18,000–₹24,000/night"
+              },
+              {
+                "name": "Cajou Lodge",
+                "budget": "₹9,000–₹14,000/night"
+              }
+            ],
+            "meals": [
+              "Orango Parque Hotel Restaurant",
+              "Saldomar",
+              "Nha Praia"
+            ]
+          }
+        ]
+      },
+      "Cacheu": {
+        "name": "Cacheu",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "days": [
+          {
+            "theme": "Do Cacheu as a dry-season history day with river views, a fort stop and the understanding that most travelers sleep back in Bissau",
+            "activities": [
+              {
+                "name": "Bissau-Cacheu candonga or shared minibus round-trip",
+                "cost": "₹840–₹1,120"
+              },
+              {
+                "name": "Cacheu Fort entry",
+                "cost": "₹140–₹280"
+              },
+              {
+                "name": "Local guide or museum-room tip at the fort",
+                "cost": "₹140–₹420"
+              },
+              {
+                "name": "Cacheu River pirogue or canoe outing",
+                "cost": "₹700–₹1,400"
+              },
+              {
+                "name": "Short taxi hop between the road stop, fort and waterfront",
+                "cost": "₹140–₹210"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Casa Cacheu Homestay Guest House",
+                "budget": "₹3,500–₹5,500/night"
+              },
+              {
+                "name": "Bissau Royal Hotel",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Ceiba Hotel Bissau",
+                "budget": "₹14,500–₹17,000/night"
+              }
+            ],
+            "meals": [
+              "Casa Cacheu Homestay Guest House",
+              "Coqueiros Bar & Restaurante",
+              "A Padeira Africana - Bissau"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

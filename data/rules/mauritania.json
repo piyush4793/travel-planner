@@ -1,0 +1,433 @@
+{
+  "name": "Mauritania",
+  "seed": false,
+  "lat": 21.01,
+  "lng": -10.94,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹1.15L–₹1.9L",
+    "couple": "₹2.1L–₹3.4L",
+    "family4": "₹4L–₹6.3L"
+  },
+  "experiences": [
+    "Port de Pêche fish-market spectacle in Nouakchott",
+    "Banc d'Arguin migratory-bird and Imraguen-boat day",
+    "Chinguetti's ancient manuscript libraries",
+    "Richat Structure desert loop by 4x4",
+    "Iron Ore Train adventure logistics through Adrar"
+  ],
+  "avoid": [
+    "April onward gets far hotter and windier; by June to September the desert heat can flatten sightseeing and make long 4x4 legs miserable",
+    "Do not plan Adrar or Banc d'Arguin without confirmed transport: shared bush taxis are slow, departures are flexible, and a 4x4 is essential once you leave paved roads",
+    "Cash is king outside Nouakchott, so sort enough ouguiya before Chinguetti, Iwik or train logistics because ATMs and fuel-stop services are thin"
+  ],
+  "combo": [
+    "Senegal",
+    "Morocco"
+  ],
+  "landmark": "Richat Structure",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Nouakchott (NKC) is the practical international gateway. Most independent trips sleep in the capital first, then use a bush taxi or prebooked 4x4 for Banc d'Arguin and the Adrar circuit, because Chinguetti, Ouadane/Richat and Iron Ore Train logistics are far easier once a local driver is locked in.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Nouakchott",
+      "lat": 18.0735,
+      "lng": -15.9582,
+      "notes": "Windblown capital for the Port de Pêche, National Museum, mosque-lined avenues, seafood restaurants and all the cash-and-transport prep before the desert"
+    },
+    {
+      "name": "Chinguetti",
+      "lat": 20.1627,
+      "lng": -12.3503,
+      "notes": "UNESCO-listed ksar of sand-filled lanes, family-kept manuscript libraries, old-stone mosques and auberges on the edge of the Sahara dunes"
+    },
+    {
+      "name": "Banc d'Arguin National Park",
+      "lat": 19.8874,
+      "lng": -16.1015,
+      "notes": "UNESCO-protected coastal park of bird-rich mudflats, Imraguen fishing villages, simple Iwik camp stays and mandatory guided boat access"
+    },
+    {
+      "name": "Atar",
+      "lat": 20.5169,
+      "lng": -13.0499,
+      "notes": "Adrar hub for Terjit-style oasis detours, desert drivers, Richat Structure planning, Choum train connections and Mauritania's classic auberge stays"
+    }
+  ],
+  "itinerary": {
+    "sim": "Mattel and Mauritel are the two easiest prepaid SIM picks; in Nouakchott, budget about ₹440–₹1,100 for a starter pack with enough data for WhatsApp coordination, offline maps, and 4x4 driver calls before coverage thins in Adrar.",
+    "apps": [
+      "Google Maps",
+      "Maps.me",
+      "Booking.com",
+      "WhatsApp",
+      "Mauritania Airlines",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Nouakchott",
+      "Banc d'Arguin National Park",
+      "Atar",
+      "Chinguetti"
+    ],
+    "cities": {
+      "Nouakchott": {
+        "name": "Nouakchott",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Land in the capital, sort cash and transport, and ease into Mauritania with the fishing port and a first seafood dinner",
+            "activities": [
+              {
+                "name": "Taxi from Nouakchott–Oumtounsy International Airport into central Nouakchott",
+                "cost": "₹900–₹1,600"
+              },
+              {
+                "name": "Port de Pêche fish-market and pirogue landing walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "National Museum of Mauritania entry",
+                "cost": "₹220–₹440"
+              },
+              {
+                "name": "Grand Mosque / Ibn Abbas Mosque exterior stop and city taxi hops",
+                "cost": "₹220–₹660"
+              },
+              {
+                "name": "Cash withdrawal, water and scarf/snack stock-up before the coast or desert",
+                "cost": "₹1,100–₹3,300"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Azalaï Hôtel Nouakchott",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "FASQ Hotel",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Urban Hotel Nouakchott",
+                "budget": "₹6,500–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "TAFARIT Sun House",
+              "La Tissayade",
+              "A Casa Portuguesa"
+            ]
+          },
+          {
+            "theme": "Use the capital as a logistics day for the coast or Adrar, with one more museum-and-market pass before the long road",
+            "activities": [
+              {
+                "name": "Shared bush taxi seat from Nouakchott toward Atar or the northbound transport station",
+                "cost": "₹2,200–₹3,500"
+              },
+              {
+                "name": "Marché Capitale browse for turbans, dates and desert basics",
+                "cost": "₹0"
+              },
+              {
+                "name": "Optional 4x4 day rental quote check for Adrar or Banc d'Arguin",
+                "cost": "₹8,500–₹14,000/day"
+              },
+              {
+                "name": "Tea stop and people-watching on Avenue Gamal Abdel Nasser",
+                "cost": "₹110–₹220"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Azalaï Hôtel Nouakchott",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Hôtel Semiramis City Center",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Le Frisco",
+              "Restaurant Al Fantasia",
+              "Cafe Phoenix"
+            ]
+          }
+        ]
+      },
+      "Banc d'Arguin National Park": {
+        "name": "Banc d'Arguin National Park",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Leave the capital for the UNESCO coast, then sleep simply in Iwik for the birdlife and tidal-light advantage",
+            "activities": [
+              {
+                "name": "Shared 4x4 transfer or seat contribution from Nouakchott to Iwik / Banc d'Arguin",
+                "cost": "₹3,500–₹6,500"
+              },
+              {
+                "name": "Parc National du Banc d'Arguin entry permit",
+                "cost": "₹660–₹1,100"
+              },
+              {
+                "name": "Campement Communautaire d'Iwik bed or simple community-camp stay",
+                "cost": "₹1,800–₹3,300"
+              },
+              {
+                "name": "Beach and mudflat sunset walk with an Imraguen host or park guide",
+                "cost": "₹0–₹660"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Campement Communautaire d'Iwik",
+                "budget": "₹1,800–₹3,300/night"
+              },
+              {
+                "name": "Auberge d'Iwik",
+                "budget": "₹2,200–₹3,800/night"
+              },
+              {
+                "name": "Imraguen village homestay (Iwik)",
+                "budget": "₹1,500–₹2,800/night"
+              }
+            ],
+            "meals": [
+              "Campement Communautaire d'Iwik kitchen",
+              "Auberge d'Iwik table d'hôte",
+              "Imraguen family fish lunch"
+            ]
+          },
+          {
+            "theme": "Spend the full day on UNESCO-protected waters with birdlife, dunes and the traditional sailing culture that defines the park",
+            "activities": [
+              {
+                "name": "Licensed Imraguen boat outing inside Banc d'Arguin",
+                "cost": "₹4,400–₹6,600"
+              },
+              {
+                "name": "Mandatory guide / permit facilitation share for park access",
+                "cost": "₹1,100–₹2,200"
+              },
+              {
+                "name": "Birdwatching from the tidal flats and islands",
+                "cost": "₹0"
+              },
+              {
+                "name": "4x4 return toward Nouakchott or onward desert transfer contribution",
+                "cost": "₹3,500–₹6,500"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Campement Communautaire d'Iwik",
+                "budget": "₹1,800–₹3,300/night"
+              },
+              {
+                "name": "Imraguen village homestay (Iwik)",
+                "budget": "₹1,500–₹2,800/night"
+              }
+            ],
+            "meals": [
+              "Campement Communautaire d'Iwik kitchen",
+              "Auberge d'Iwik table d'hôte",
+              "Imraguen family fish lunch"
+            ]
+          }
+        ]
+      },
+      "Atar": {
+        "name": "Atar",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Use Atar as the Adrar staging ground: lock in the 4x4, test your desert rhythm, and scout the town's classic auberges",
+            "activities": [
+              {
+                "name": "Shared bush taxi seat from Nouakchott to Atar",
+                "cost": "₹2,200–₹3,500"
+              },
+              {
+                "name": "4x4 rental or driver-and-vehicle day rate for Adrar desert roads",
+                "cost": "₹8,500–₹14,500/day"
+              },
+              {
+                "name": "Atar market and old-quarter walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Short outing to the Azougui ruins or palm groves outside Atar",
+                "cost": "₹660–₹1,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge Mer et Désert",
+                "budget": "₹3,300–₹5,500/night"
+              },
+              {
+                "name": "Bab Sahara",
+                "budget": "₹2,800–₹4,800/night"
+              },
+              {
+                "name": "Hôtel et Auberge Étoile du Nord",
+                "budget": "₹3,800–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Auberge Mer et Désert",
+              "Chez Jemal",
+              "Les Toiles Maures"
+            ]
+          },
+          {
+            "theme": "Pick Mauritania's big desert flex: the Richat loop by 4x4 or the legendary Iron Ore Train setup through Choum and Zouérat",
+            "activities": [
+              {
+                "name": "Shared 4x4 excursion toward Ouadane and the Richat Structure (Eye of the Sahara)",
+                "cost": "₹9,000–₹16,000"
+              },
+              {
+                "name": "Guide and lunch share on the Richat / Ouadane circuit",
+                "cost": "₹1,600–₹3,300"
+              },
+              {
+                "name": "4x4 transfer from Atar to Choum or Zouérat for train logistics",
+                "cost": "₹2,200–₹5,500"
+              },
+              {
+                "name": "Official passenger-carriage ticket on the Iron Ore Train (Zouérat–Nouadhibou fare; same ballpark if boarding later)",
+                "cost": "₹660–₹880"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Les Toiles Maures",
+                "budget": "₹4,800–₹7,500/night"
+              },
+              {
+                "name": "Auberge Inimi",
+                "budget": "₹3,300–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Auberge Mer et Désert",
+              "Chez Jemal",
+              "Les Toiles Maures"
+            ]
+          }
+        ]
+      },
+      "Chinguetti": {
+        "name": "Chinguetti",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Drive into the old ksar, settle into an auberge, and spend the day among manuscript keepers and dune-edged stone lanes",
+            "activities": [
+              {
+                "name": "Shared 4x4 or bush-taxi transfer from Atar to Chinguetti",
+                "cost": "₹1,100–₹2,200"
+              },
+              {
+                "name": "Ancient manuscript library visit in Chinguetti",
+                "cost": "₹700–₹1,100"
+              },
+              {
+                "name": "Friday Mosque and old-ksar walking circuit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Guide tip or local host share for dune-edge storytelling and town orientation",
+                "cost": "₹440–₹880"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge La Gueila",
+                "budget": "₹3,800–₹6,000/night"
+              },
+              {
+                "name": "Auberge Nasser",
+                "budget": "₹2,200–₹4,000/night"
+              },
+              {
+                "name": "L'Eden de Chinguetti",
+                "budget": "₹4,500–₹6,800/night"
+              }
+            ],
+            "meals": [
+              "Auberge La Gueila",
+              "Auberge Timnguistt",
+              "Restaurant Traoré"
+            ]
+          },
+          {
+            "theme": "Keep Chinguetti slow: dawn light on the dunes, a second manuscript stop, and time to appreciate why this remains Mauritania's most atmospheric historic stay",
+            "activities": [
+              {
+                "name": "Sunrise dune walk above the old town",
+                "cost": "₹0"
+              },
+              {
+                "name": "Second family-library or manuscript-house visit",
+                "cost": "₹700–₹1,100"
+              },
+              {
+                "name": "4x4 half-day outing to the nearby oasis edge or dune camp",
+                "cost": "₹2,200–₹4,400"
+              },
+              {
+                "name": "Return 4x4 seat toward Atar for onward departures",
+                "cost": "₹1,100–₹2,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auberge La Gueila",
+                "budget": "₹3,800–₹6,000/night"
+              },
+              {
+                "name": "Auberge Zarga",
+                "budget": "₹3,300–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Auberge La Gueila",
+              "Auberge Timnguistt",
+              "L'Eden de Chinguetti"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
