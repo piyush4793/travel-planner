@@ -835,9 +835,9 @@
     "lng": 45.08,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 13
   },
   {
     "name": "Israel",
@@ -865,9 +865,9 @@
     "lng": 35.86,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 10
   },
   {
     "name": "Iraq",
@@ -925,9 +925,9 @@
     "lng": 47.48,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 6
   },
   {
     "name": "Bahrain",
@@ -935,9 +935,9 @@
     "lng": 50.56,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 4
   },
   {
     "name": "Qatar",
@@ -945,9 +945,9 @@
     "lng": 51.18,
     "region": "Middle East",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 7
   },
   {
     "name": "Palestine",

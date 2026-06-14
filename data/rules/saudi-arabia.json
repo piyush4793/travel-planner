@@ -1,0 +1,804 @@
+{
+  "name": "Saudi Arabia",
+  "seed": false,
+  "lat": 23.89,
+  "lng": 45.08,
+  "region": "Middle East",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹1.05L–₹1.65L",
+    "couple": "₹1.9L–₹2.95L",
+    "family4": "₹3.7L–₹5.4L"
+  },
+  "experiences": [
+    "Hegra tombs in Al-Ula",
+    "Edge of the World desert escarpment",
+    "Al-Balad heritage lanes in Jeddah",
+    "Prophet's Mosque courtyard in Medina",
+    "Soudah mountain viewpoints near Abha",
+    "Wadi Disah canyon drive from Tabuk"
+  ],
+  "avoid": [
+    "Inland summer heat from May to September, especially Riyadh and Al-Ula afternoons",
+    "Driving Edge of the World or Wadi Disah without a 4x4, spare water, and daylight buffer",
+    "Peak long-weekend or Umrah spillover dates if you want easier hotel rates in Jeddah and Medina"
+  ],
+  "combo": [
+    "United Arab Emirates",
+    "Jordan"
+  ],
+  "landmark": "Hegra",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "An open-jaw route works best: Riyadh in, then fly and rail westward before finishing in Tabuk or Abha to avoid backtracking across the kingdom.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Riyadh",
+      "lat": 24.7136,
+      "lng": 46.6753,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "National Museum, Al Masmak, Diriyah, modern skyline viewpoints and Edge of the World desert day trips"
+    },
+    {
+      "name": "Jeddah",
+      "lat": 21.4858,
+      "lng": 39.1925,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Al-Balad coral houses, Corniche sunsets, seafood, museums and the kingdom's easiest Red Sea city break"
+    },
+    {
+      "name": "Medina",
+      "lat": 24.5247,
+      "lng": 39.5692,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Prophet's Mosque precinct, Quba Mosque, Uhud history and compact museum stops with easier pacing than Riyadh"
+    },
+    {
+      "name": "Al-Ula",
+      "lat": 26.6084,
+      "lng": 37.923,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Hegra, Dadan, Jabal Ikmah, Elephant Rock and old-town desert heritage landscapes"
+    },
+    {
+      "name": "Tabuk",
+      "lat": 28.3998,
+      "lng": 36.5715,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Gateway to Wadi Disah, Hisma desert, Tabuk Castle and the broader NEOM northwest corridor"
+    },
+    {
+      "name": "Abha",
+      "lat": 18.2465,
+      "lng": 42.5117,
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Cooler Asir highlands, Soudah peaks, Art Street and Rijal Almaa heritage stone villages"
+    }
+  ],
+  "itinerary": {
+    "sim": "STC, Mobily, or Zain visitor SIMs usually land around ₹880–₹1,760 for enough data for Careem, Haramain tickets, domestic boarding passes and map-heavy desert drives.",
+    "apps": [
+      "Saudia",
+      "flynas",
+      "HHR",
+      "Careem",
+      "Jahez",
+      "Google Maps",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Riyadh",
+      "Jeddah",
+      "Medina",
+      "Al-Ula",
+      "Tabuk",
+      "Abha"
+    ],
+    "cities": {
+      "Riyadh": {
+        "name": "Riyadh",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Riyadh as the soft landing city for museums, cash, SIM setup and one headline desert excursion before shifting west.",
+        "days": [
+          {
+            "theme": "Saudi history anchors, old-city lanes and a first skyline reset",
+            "activities": [
+              {
+                "name": "National Museum of Saudi Arabia",
+                "cost": "Free"
+              },
+              {
+                "name": "Al Masmak Fortress",
+                "cost": "Free"
+              },
+              {
+                "name": "Souq Al Zal browsing",
+                "cost": "Free"
+              },
+              {
+                "name": "Kingdom Centre Sky Bridge",
+                "cost": "₹1,518"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Riyadh Olaya Street",
+                "budget": "₹6,200–₹8,600/night"
+              },
+              {
+                "name": "Centro Olaya",
+                "budget": "₹6,800–₹9,400/night"
+              },
+              {
+                "name": "Aloft Riyadh",
+                "budget": "₹8,900–₹12,300/night"
+              }
+            ],
+            "meals": [
+              "Najd Village",
+              "Mama Noura",
+              "Shawarma House"
+            ]
+          },
+          {
+            "theme": "Diriyah heritage by day and Edge of the World cliffs by sunset",
+            "activities": [
+              {
+                "name": "At-Turaif UNESCO site in Diriyah",
+                "cost": "₹1,100–₹1,320"
+              },
+              {
+                "name": "Bujairi Terrace and Wadi Hanifah walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Edge of the World guided 4x4 sunset tour",
+                "cost": "₹5,500–₹7,700"
+              },
+              {
+                "name": "Boulevard City late-evening stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Riyadh Olaya Street",
+                "budget": "₹6,200–₹8,600/night"
+              },
+              {
+                "name": "Centro Olaya",
+                "budget": "₹6,800–₹9,400/night"
+              },
+              {
+                "name": "Aloft Riyadh",
+                "budget": "₹8,900–₹12,300/night"
+              }
+            ],
+            "meals": [
+              "Najd Village",
+              "Mama Noura",
+              "Shawarma House"
+            ]
+          },
+          {
+            "theme": "Keep the bonus Riyadh day for galleries, cafés and a slower urban catch-up",
+            "activities": [
+              {
+                "name": "King Abdulaziz Historical Center gardens",
+                "cost": "Free"
+              },
+              {
+                "name": "Riyadh Front or Via Riyadh café time",
+                "cost": "Free"
+              },
+              {
+                "name": "Diriyah second pass or local shopping time",
+                "cost": "Book separately"
+              },
+              {
+                "name": "Wadi Namar evening viewpoint",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Riyadh Olaya Street",
+                "budget": "₹6,200–₹8,600/night"
+              },
+              {
+                "name": "Centro Olaya",
+                "budget": "₹6,800–₹9,400/night"
+              },
+              {
+                "name": "Aloft Riyadh",
+                "budget": "₹8,900–₹12,300/night"
+              }
+            ],
+            "meals": [
+              "Najd Village",
+              "Mama Noura",
+              "Shawarma House"
+            ]
+          }
+        ]
+      },
+      "Jeddah": {
+        "name": "Jeddah",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Jeddah works best as the Red Sea breathing space between Riyadh's urban pace and the religious corridor north to Medina.",
+        "days": [
+          {
+            "theme": "Al-Balad heritage walks, old merchant houses and classic Jeddah food stops",
+            "activities": [
+              {
+                "name": "Al-Balad historic district walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Nassif House Museum exterior and lanes around Souq Al Alawi",
+                "cost": "Free"
+              },
+              {
+                "name": "Tayebat Museum",
+                "cost": "₹1,760"
+              },
+              {
+                "name": "Jeddah Corniche sunset and King Fahd Fountain views",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Jeddah City Center",
+                "budget": "₹5,800–₹8,100/night"
+              },
+              {
+                "name": "Centro Salama Jeddah by Rotana",
+                "budget": "₹6,400–₹8,900/night"
+              },
+              {
+                "name": "Novotel Jeddah Tahlia",
+                "budget": "₹7,900–₹11,200/night"
+              }
+            ],
+            "meals": [
+              "Al Baik",
+              "Toki",
+              "Twina Seafood"
+            ]
+          },
+          {
+            "theme": "Waterfront Jeddah with aquarium time, mosque views and a lighter seaside finish",
+            "activities": [
+              {
+                "name": "Fakieh Aquarium",
+                "cost": "₹1,320–₹1,540"
+              },
+              {
+                "name": "Al Rahmah Mosque exterior on the water",
+                "cost": "Free"
+              },
+              {
+                "name": "Jeddah Yacht Club and marina promenade",
+                "cost": "Free"
+              },
+              {
+                "name": "Red Sea Mall or café stop before the Medina train",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Jeddah City Center",
+                "budget": "₹5,800–₹8,100/night"
+              },
+              {
+                "name": "Centro Salama Jeddah by Rotana",
+                "budget": "₹6,400–₹8,900/night"
+              },
+              {
+                "name": "Novotel Jeddah Tahlia",
+                "budget": "₹7,900–₹11,200/night"
+              }
+            ],
+            "meals": [
+              "Al Baik",
+              "Toki",
+              "Twina Seafood"
+            ]
+          }
+        ]
+      },
+      "Medina": {
+        "name": "Medina",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Keep Medina compact unless you are specifically extending for worship; the Haramain rail makes it easy to slot in as a one-night stop.",
+        "days": [
+          {
+            "theme": "Sacred-city courtyards, early Islamic landmarks and a gentle museum stop",
+            "activities": [
+              {
+                "name": "Al-Masjid an-Nabawi outer courtyards and surrounding precinct",
+                "cost": "Free"
+              },
+              {
+                "name": "Quba Mosque",
+                "cost": "Free"
+              },
+              {
+                "name": "Uhud Mountain and battlefield area",
+                "cost": "Free"
+              },
+              {
+                "name": "Dar Al Madinah Museum",
+                "cost": "₹550"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Saja Al Madinah",
+                "budget": "₹6,600–₹10,500/night"
+              },
+              {
+                "name": "Zowar International Hotel",
+                "budget": "₹5,800–₹8,400/night"
+              },
+              {
+                "name": "Pullman ZamZam Madina",
+                "budget": "₹11,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Al Baik",
+              "Al Romansiah",
+              "Swiss House"
+            ]
+          }
+        ]
+      },
+      "Al-Ula": {
+        "name": "Al-Ula",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Al-Ula needs at least two well-planned days because Hegra, Dadan and the rock sites all run on timed slots or desert-light windows.",
+        "days": [
+          {
+            "theme": "Nabataean icons first: Hegra tombs with sunset at Elephant Rock",
+            "activities": [
+              {
+                "name": "Hegra guided site visit",
+                "cost": "₹2,090"
+              },
+              {
+                "name": "AlUla Old Town lanes and market area",
+                "cost": "Free"
+              },
+              {
+                "name": "AlJadidah Arts District stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Elephant Rock sunset stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cloud7 Residence AlUla",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Sahary AlUla Resort",
+                "budget": "₹8,800–₹13,500/night"
+              },
+              {
+                "name": "Shaden Resort",
+                "budget": "₹18,500–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Somewhere AlUla",
+              "Suhail",
+              "Pink Camel Pastry Boutique"
+            ]
+          },
+          {
+            "theme": "Ancient kingdoms, inscription valleys and another wide-open desert evening",
+            "activities": [
+              {
+                "name": "Dadan and Jabal Ikmah guided tour",
+                "cost": "₹1,320"
+              },
+              {
+                "name": "Harrat Viewpoint or oasis edge drive",
+                "cost": "Book separately"
+              },
+              {
+                "name": "AlUla Oasis trail segments",
+                "cost": "Free"
+              },
+              {
+                "name": "Maraya exterior photo stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cloud7 Residence AlUla",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Sahary AlUla Resort",
+                "budget": "₹8,800–₹13,500/night"
+              },
+              {
+                "name": "Shaden Resort",
+                "budget": "₹18,500–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Somewhere AlUla",
+              "Suhail",
+              "Pink Camel Pastry Boutique"
+            ]
+          },
+          {
+            "theme": "Use the bonus Al-Ula day for easier pacing, extra booking slots or a desert-resort reset",
+            "activities": [
+              {
+                "name": "Old Town to Oasis heritage walk experience",
+                "cost": "₹1,100–₹1,980"
+              },
+              {
+                "name": "Additional Hegra or adventure booking buffer",
+                "cost": "Book separately"
+              },
+              {
+                "name": "Elephant Rock return at dusk",
+                "cost": "Free"
+              },
+              {
+                "name": "Local café and stargazing time",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cloud7 Residence AlUla",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Sahary AlUla Resort",
+                "budget": "₹8,800–₹13,500/night"
+              },
+              {
+                "name": "Shaden Resort",
+                "budget": "₹18,500–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Somewhere AlUla",
+              "Suhail",
+              "Pink Camel Pastry Boutique"
+            ]
+          }
+        ]
+      },
+      "Tabuk": {
+        "name": "Tabuk",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Tabuk is the practical northwest base for Wadi Disah and NEOM-side landscapes; rent a car if you want the day to work smoothly.",
+        "days": [
+          {
+            "theme": "Big-canyon desert scenery with a lighter city return in the evening",
+            "activities": [
+              {
+                "name": "Wadi Disah self-drive access",
+                "cost": "Free"
+              },
+              {
+                "name": "Local 4x4 guide inside Wadi Disah",
+                "cost": "₹4,400"
+              },
+              {
+                "name": "Tabuk Castle exterior and old Hijaz railway area",
+                "cost": "Free"
+              },
+              {
+                "name": "Tabuk Park or city-centre evening stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Holiday Inn Tabuk",
+                "budget": "₹7,400–₹10,800/night"
+              },
+              {
+                "name": "Swiss In Park Tabuk",
+                "budget": "₹6,000–₹8,900/night"
+              },
+              {
+                "name": "Skyline Hotel & Suites Tabuk",
+                "budget": "₹4,900–₹7,400/night"
+              }
+            ],
+            "meals": [
+              "Shawarmer",
+              "Barn's",
+              "Herfy"
+            ]
+          },
+          {
+            "theme": "Keep a second Tabuk day only if you want more northwest road time toward Hisma or the NEOM coast",
+            "activities": [
+              {
+                "name": "Hisma Desert sandstone drive",
+                "cost": "Book separately"
+              },
+              {
+                "name": "Magna or Sharma coastline outing from Tabuk",
+                "cost": "Book separately"
+              },
+              {
+                "name": "Tabuk souq errands and slower café time",
+                "cost": "Free"
+              },
+              {
+                "name": "Early airport positioning for the Abha flight",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Holiday Inn Tabuk",
+                "budget": "₹7,400–₹10,800/night"
+              },
+              {
+                "name": "Swiss In Park Tabuk",
+                "budget": "₹6,000–₹8,900/night"
+              },
+              {
+                "name": "Skyline Hotel & Suites Tabuk",
+                "budget": "₹4,900–₹7,400/night"
+              }
+            ],
+            "meals": [
+              "Shawarmer",
+              "Barn's",
+              "Herfy"
+            ]
+          }
+        ]
+      },
+      "Abha": {
+        "name": "Abha",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Abha is the cool-climate contrast city; even one day changes the overall Saudi route by adding mountains and Asir heritage.",
+        "days": [
+          {
+            "theme": "Asir highlands, village heritage and a cooler end to the trip",
+            "activities": [
+              {
+                "name": "Soudah Mountain viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Rijal Almaa heritage village and museum",
+                "cost": "₹440"
+              },
+              {
+                "name": "Art Street Abha",
+                "cost": "Free"
+              },
+              {
+                "name": "Abu Kheyal Park sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Citadines Abha",
+                "budget": "₹7,400–₹11,800/night"
+              },
+              {
+                "name": "Aber Abha",
+                "budget": "₹5,600–₹8,100/night"
+              },
+              {
+                "name": "Blue Inn Boutique Abha",
+                "budget": "₹6,300–₹9,100/night"
+              }
+            ],
+            "meals": [
+              "La Casa Pasta",
+              "Kudu",
+              "Barn's"
+            ]
+          },
+          {
+            "theme": "Use a second Abha day for cloud forests, cable-car status permitting, or a slower café-heavy wrap-up",
+            "activities": [
+              {
+                "name": "Soudah forest walks and roadside viewpoints",
+                "cost": "Free"
+              },
+              {
+                "name": "Tuesday Market or local handicraft shopping",
+                "cost": "Free"
+              },
+              {
+                "name": "Shamsan Castle exterior viewpoint",
+                "cost": "Free"
+              },
+              {
+                "name": "Asir regional food detour",
+                "cost": "Book separately"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Citadines Abha",
+                "budget": "₹7,400–₹11,800/night"
+              },
+              {
+                "name": "Aber Abha",
+                "budget": "₹5,600–₹8,100/night"
+              },
+              {
+                "name": "Blue Inn Boutique Abha",
+                "budget": "₹6,300–₹9,100/night"
+              }
+            ],
+            "meals": [
+              "La Casa Pasta",
+              "Kudu",
+              "Barn's"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Riyadh",
+        "to": "Jeddah",
+        "method": "Saudia or flynas nonstop domestic flight",
+        "cost": "₹6,314–₹8,778"
+      },
+      {
+        "from": "Jeddah",
+        "to": "Medina",
+        "method": "Haramain High Speed Railway economy or business seat",
+        "cost": "₹1,320–₹6,952"
+      },
+      {
+        "from": "Medina",
+        "to": "Al-Ula",
+        "method": "Rental car or private transfer on the desert highway",
+        "cost": "₹4,400–₹8,800"
+      },
+      {
+        "from": "Al-Ula",
+        "to": "Tabuk",
+        "method": "Rental car or driver for the northwest desert leg",
+        "cost": "₹3,300–₹6,600"
+      },
+      {
+        "from": "Tabuk",
+        "to": "Abha",
+        "method": "Saudia or flynas, usually via Riyadh or Jeddah",
+        "cost": "₹6,600–₹11,000"
+      }
+    ],
+    "extras": [
+      "This route lands best as a 9-day Saudi sampler: 2 nights Riyadh, 2 Jeddah, 1 Medina, 2 Al-Ula, then 1 each in Tabuk and Abha.",
+      "Hegra, Dadan/Jabal Ikmah and some Old Town heritage walks all work on timed slots, so book official Experience AlUla inventory before locking hotels.",
+      "The Jeddah–Medina Haramain train is the smoothest internal transport leg in the kingdom; for Medina–Al-Ula and Al-Ula–Tabuk, a rental car saves substantial friction.",
+      "Edge of the World and Wadi Disah are safest in daylight with extra water, offline maps and either a 4x4 or a local driver.",
+      "Hotel prices swing sharply around school holidays, Riyadh event weeks and major religious travel periods, so Saudi stays reward earlier booking more than most Gulf routes."
+    ],
+    "cityImages": {
+      "Riyadh": [
+        "Kingdom Centre Riyadh skyline",
+        "Masmak Fortress Riyadh",
+        "At-Turaif Diriyah UNESCO"
+      ],
+      "Jeddah": [
+        "Al-Balad Jeddah coral houses",
+        "King Fahd Fountain Jeddah Corniche",
+        "Al Rahmah Mosque Jeddah"
+      ],
+      "Medina": [
+        "Al-Masjid an-Nabawi Medina courtyard",
+        "Quba Mosque Medina",
+        "Mount Uhud Medina"
+      ],
+      "Al-Ula": [
+        "Hegra AlUla Nabataean tombs",
+        "Elephant Rock AlUla",
+        "Jabal Ikmah AlUla inscriptions"
+      ],
+      "Tabuk": [
+        "Wadi Disah Tabuk canyon",
+        "Tabuk Castle Saudi Arabia",
+        "Hisma Desert Tabuk sandstone"
+      ],
+      "Abha": [
+        "Soudah Mountains Abha",
+        "Rijal Almaa heritage village",
+        "Art Street Abha"
+      ]
+    }
+  }
+}

@@ -1,0 +1,543 @@
+{
+  "name": "Lebanon",
+  "seed": false,
+  "lat": 33.85,
+  "lng": 35.86,
+  "region": "Middle East",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "July",
+    "August",
+    "January"
+  ],
+  "budget": {
+    "solo": "₹70K–₹1.15L",
+    "couple": "₹1.25L–₹1.95L",
+    "family4": "₹2.45L–₹3.7L"
+  },
+  "experiences": [
+    "Corniche and Raouche sunset in Beirut",
+    "Jeita Grotto cave ride and walkways",
+    "Byblos old souk and crusader-era castle",
+    "Baalbek's Temple of Bacchus and Roman complex",
+    "Cedars of God forest with a Qadisha Valley hike"
+  ],
+  "avoid": [
+    "Humid coast and traffic-heavy intercity drives in July and August",
+    "Relying on fixed bus timetables outside Beirut because many vans and service taxis leave only when full"
+  ],
+  "combo": [
+    "Jordan",
+    "Cyprus",
+    "Turkey"
+  ],
+  "landmark": "Baalbek Temples",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "A 4- to 5-day Beirut + Byblos + Baalbek loop works for a quick first trip, but 6 days lets you add Tripoli and the Cedars/Qadisha mountains without rushing.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Beirut",
+      "lat": 33.8938,
+      "lng": 35.5018,
+      "notes": "Capital base for Hamra, Mar Mikhael, Raouche, museums and easy day trips to Jeita Grotto or Jounieh/Harissa"
+    },
+    {
+      "name": "Byblos",
+      "lat": 34.1231,
+      "lng": 35.6484,
+      "notes": "Historic harbor town with Byblos Castle, old souk lanes, Phoenician-Roman archaeology and seafood by the port"
+    },
+    {
+      "name": "Tripoli",
+      "lat": 34.4335,
+      "lng": 35.8442,
+      "notes": "Mamluk old city, Saint-Gilles Citadel, famous sweet shops and Mina waterfront life on Lebanon's north coast"
+    },
+    {
+      "name": "Bcharre/Cedars",
+      "lat": 34.2508,
+      "lng": 36.0106,
+      "notes": "Mountain base for the Cedars of God reserve, Gibran Museum and Qadisha Valley monastery hikes"
+    },
+    {
+      "name": "Baalbek",
+      "lat": 34.0058,
+      "lng": 36.2181,
+      "notes": "Bekaa Valley archaeological city for the Roman temples, old Palmyra hotel atmosphere and nearby stone quarries"
+    }
+  ],
+  "itinerary": {
+    "sim": "Touch or Alfa prepaid SIM/eSIM packs usually land around ₹1,600–₹3,200 for enough data for Uber Beirut, WhatsApp, Booking.com and offline maps; airport kiosks are the simplest option.",
+    "apps": [
+      "Uber",
+      "Google Maps (offline Lebanon maps)",
+      "Booking.com",
+      "WhatsApp",
+      "Toters",
+      "Google Translate",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Beirut",
+      "Byblos",
+      "Tripoli",
+      "Bcharre/Cedars",
+      "Baalbek"
+    ],
+    "cities": {
+      "Beirut": {
+        "name": "Beirut",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Beirut as the transport hub: Uber works best inside the city, while Jeita and most intercity hops are easier with a service taxi, van or hired driver.",
+        "days": [
+          {
+            "theme": "Ease in with Beirut's seafront, downtown core and classic neighborhood food stops",
+            "activities": [
+              {
+                "name": "Corniche Beirut and Raouche Pigeon Rocks walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mohammad Al-Amin Mosque and Martyrs' Square",
+                "cost": "₹0"
+              },
+              {
+                "name": "Beirut Souks and Nejmeh Square stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Barbar shawarma or mezze stop",
+                "cost": "₹430–₹970"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hamra Urban Gardens",
+                "budget": "₹4,200–₹6,800/night"
+              },
+              {
+                "name": "Hotel Cavalier",
+                "budget": "₹5,800–₹9,400/night"
+              }
+            ],
+            "meals": [
+              "Barbar",
+              "Tawlet Mar Mikhael",
+              "Em Sherif Cafe"
+            ]
+          },
+          {
+            "theme": "Do the signature cave day and finish with Beirut's creative east-side neighborhoods",
+            "activities": [
+              {
+                "name": "Jeita Grotto",
+                "cost": "₹7,290"
+              },
+              {
+                "name": "Our Lady of Lebanon cable car and Harissa viewpoint",
+                "cost": "₹2,160 approx"
+              },
+              {
+                "name": "Mar Mikhael and Gemmayzeh evening walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hamra Urban Gardens",
+                "budget": "₹4,200–₹6,800/night"
+              },
+              {
+                "name": "Hotel Cavalier",
+                "budget": "₹5,800–₹9,400/night"
+              }
+            ],
+            "meals": [
+              "Bayt Em Nazih",
+              "Mayrig",
+              "Mezyan"
+            ]
+          },
+          {
+            "theme": "Keep a third Beirut day only for museums, café hopping and a slower city pace",
+            "activities": [
+              {
+                "name": "National Museum of Beirut",
+                "cost": "₹2,700 approx"
+              },
+              {
+                "name": "Sursock Museum",
+                "cost": "₹0"
+              },
+              {
+                "name": "Hamra Street cafés and bookshops",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hamra Urban Gardens",
+                "budget": "₹4,200–₹6,800/night"
+              },
+              {
+                "name": "Hotel Cavalier",
+                "budget": "₹5,800–₹9,400/night"
+              }
+            ],
+            "meals": [
+              "Tawlet Mar Mikhael",
+              "Abdel Wahab",
+              "Cafe Younes"
+            ]
+          }
+        ]
+      },
+      "Byblos": {
+        "name": "Byblos",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Cover the castle, archaeological layers and photogenic harbor in one compact old-town day",
+            "activities": [
+              {
+                "name": "Byblos Castle",
+                "cost": "₹4,320"
+              },
+              {
+                "name": "Byblos archaeological site",
+                "cost": "Included with Byblos Castle entry"
+              },
+              {
+                "name": "Byblos old souk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Saint John-Marc Cathedral and old port walk",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Byblos Comfort Hotel",
+                "budget": "₹5,400–₹8,200/night"
+              },
+              {
+                "name": "Aleph Boutique Hotel",
+                "budget": "₹6,400–₹9,800/night"
+              }
+            ],
+            "meals": [
+              "Feniqia",
+              "Bab El Mina",
+              "Pepe's Fishing Club"
+            ]
+          },
+          {
+            "theme": "Add a second Byblos day only if you want a beach break, harbor time or a slower heritage visit",
+            "activities": [
+              {
+                "name": "Harbor boat ride",
+                "cost": "₹1,350–₹2,160"
+              },
+              {
+                "name": "Byblos fossil and craft shops browsing",
+                "cost": "₹0"
+              },
+              {
+                "name": "Public beach or beach club time",
+                "cost": "₹0–₹2,700 depending on venue"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Byblos Comfort Hotel",
+                "budget": "₹5,400–₹8,200/night"
+              },
+              {
+                "name": "Aleph Boutique Hotel",
+                "budget": "₹6,400–₹9,800/night"
+              }
+            ],
+            "meals": [
+              "Locanda a la Granda",
+              "Feniqia",
+              "Pepe's Fishing Club"
+            ]
+          }
+        ]
+      },
+      "Tripoli": {
+        "name": "Tripoli",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Focus on citadel history, souks and the city's most famous sweets in the old core",
+            "activities": [
+              {
+                "name": "Saint-Gilles Citadel",
+                "cost": "₹1,350 approx"
+              },
+              {
+                "name": "Khan al-Khayyatin and old soap souk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Great Mansouri Mosque exterior and old city lanes",
+                "cost": "₹0"
+              },
+              {
+                "name": "Abdul Rahman Hallab & Sons 1881 sweet stop",
+                "cost": "₹270–₹650"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Via Mina Hotel",
+                "budget": "₹7,200–₹11,500/night"
+              },
+              {
+                "name": "Azur Suites Hotel",
+                "budget": "₹5,600–₹8,900/night"
+              }
+            ],
+            "meals": [
+              "Silver Shore",
+              "Abdul Rahman Hallab & Sons 1881",
+              "Baytna Restaurant"
+            ]
+          },
+          {
+            "theme": "Keep a second Tripoli day for Mina's waterfront and a slower architectural wander",
+            "activities": [
+              {
+                "name": "El Mina corniche walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Boat trip toward Palm Islands Nature Reserve",
+                "cost": "₹2,160–₹4,320 seasonal"
+              },
+              {
+                "name": "Taynal Mosque and nearby heritage quarter",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Via Mina Hotel",
+                "budget": "₹7,200–₹11,500/night"
+              },
+              {
+                "name": "Azur Suites Hotel",
+                "budget": "₹5,600–₹8,900/night"
+              }
+            ],
+            "meals": [
+              "Silver Shore",
+              "Dar Al Amar",
+              "Abdul Rahman Hallab & Sons 1881"
+            ]
+          }
+        ]
+      },
+      "Bcharre/Cedars": {
+        "name": "Bcharre/Cedars",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Stay overnight if you want the forest, museum and Qadisha viewpoints without squeezing them into one rushed mountain transfer day.",
+        "days": [
+          {
+            "theme": "Pair Lebanon's iconic cedar grove with an easy Qadisha Valley walk and mountain food",
+            "activities": [
+              {
+                "name": "Cedars of God reserve",
+                "cost": "₹1,350"
+              },
+              {
+                "name": "Qadisha Valley trail access",
+                "cost": "₹0"
+              },
+              {
+                "name": "Gibran Museum",
+                "cost": "₹1,620 approx"
+              },
+              {
+                "name": "Mar Elisha Monastery viewpoint hike",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Chbat",
+                "budget": "₹6,000–₹9,300/night"
+              },
+              {
+                "name": "Mon Refuge",
+                "budget": "₹7,200–₹11,200/night"
+              }
+            ],
+            "meals": [
+              "Cedars Heaven",
+              "Abou Joseph",
+              "Le Pichet"
+            ]
+          },
+          {
+            "theme": "Add a second mountain day only if you want longer monastery hikes or winter snow time",
+            "activities": [
+              {
+                "name": "Qannoubine Valley or Deir Qozhaya side hike",
+                "cost": "₹0"
+              },
+              {
+                "name": "Cedars ridge viewpoints",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ski or snow activities in season",
+                "cost": "Operator dependent"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Chbat",
+                "budget": "₹6,000–₹9,300/night"
+              },
+              {
+                "name": "Mon Refuge",
+                "budget": "₹7,200–₹11,200/night"
+              }
+            ],
+            "meals": [
+              "Cedars Heaven",
+              "Abou Joseph",
+              "Le Pichet"
+            ]
+          }
+        ]
+      },
+      "Baalbek": {
+        "name": "Baalbek",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Baalbek can be a long day trip from Beirut, but sleeping here makes the temple complex feel far less rushed and leaves room for the quarry and old hotel ambience.",
+        "days": [
+          {
+            "theme": "Give the Roman complex proper time, then add the quarry and one of Baalbek's classic local tables",
+            "activities": [
+              {
+                "name": "Baalbek archaeological site",
+                "cost": "₹8,100"
+              },
+              {
+                "name": "Temple of Bacchus and Temple of Jupiter",
+                "cost": "Included with Baalbek entry"
+              },
+              {
+                "name": "Stone of the Pregnant Woman quarry",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sayyida Khawla Shrine",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Palmyra Hotel",
+                "budget": "₹6,400–₹9,600/night"
+              },
+              {
+                "name": "Kanaan Group Hotel",
+                "budget": "₹6,000–₹8,800/night"
+              }
+            ],
+            "meals": [
+              "Lakkis Farm Restaurant",
+              "Palmyra Hotel Restaurant",
+              "Baalbek Palace"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Beirut",
+        "to": "Byblos",
+        "method": "Shared service taxi/van from Charles Helou or Cola, private taxi or rental car",
+        "cost": "₹1,080–₹3,780"
+      },
+      {
+        "from": "Byblos",
+        "to": "Tripoli",
+        "method": "Northbound shared van/service taxi on the coastal highway or rental car",
+        "cost": "₹1,350–₹4,320"
+      },
+      {
+        "from": "Tripoli",
+        "to": "Bcharre/Cedars",
+        "method": "Shared van toward Bcharre, private taxi or rental car into the mountains",
+        "cost": "₹2,160–₹5,940"
+      },
+      {
+        "from": "Bcharre/Cedars",
+        "to": "Baalbek",
+        "method": "Rental car or full-day driver; public transport is slow and usually requires backtracking via Tripoli or Chtoura",
+        "cost": "₹8,100–₹16,200"
+      }
+    ],
+    "extras": [
+      "Uber is the easiest app-based ride option in Beirut and for airport transfers, but outside the capital most travelers rely on servees/shared taxis, arranged hotel drivers or a rental car.",
+      "Jeita Grotto (~₹7,290), Byblos Castle (~₹4,320), Baalbek (~₹8,100) and the Cedars of God reserve (~₹1,350) are the main paid anchors in this plan; Qadisha Valley hiking itself is generally free.",
+      "Intercity vans and service taxis are usually cash-first and often leave only when full, so keep small LBP notes even if your hotel quotes prices in USD.",
+      "A rental car becomes most useful for Baalbek, Qadisha and Cedars combinations, where same-day backtracking by public transport can waste hours.",
+      "Harissa, Palm Islands boats and some museums can shift prices with the exchange rate, so treat smaller quoted INR amounts as approximate even when the major heritage ticket prices are fixed at the gate in LBP."
+    ],
+    "cityImages": {
+      "Beirut": [
+        "Pigeon Rocks Beirut",
+        "National Museum of Beirut",
+        "Beirut Souks"
+      ],
+      "Byblos": [
+        "Byblos Castle",
+        "Byblos old souk",
+        "Byblos harbour"
+      ],
+      "Tripoli": [
+        "Saint-Gilles Citadel Tripoli Lebanon",
+        "Tripoli old souks Lebanon",
+        "El Mina Tripoli Lebanon"
+      ],
+      "Bcharre/Cedars": [
+        "Cedars of God Lebanon",
+        "Qadisha Valley Lebanon",
+        "Gibran Museum Bcharre"
+      ],
+      "Baalbek": [
+        "Temple of Bacchus Baalbek",
+        "Temple of Jupiter Baalbek",
+        "Stone of the Pregnant Woman Baalbek"
+      ]
+    }
+  }
+}

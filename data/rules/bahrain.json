@@ -1,0 +1,325 @@
+{
+  "name": "Bahrain",
+  "seed": false,
+  "lat": 26.07,
+  "lng": 50.56,
+  "region": "Middle East",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹60K–₹95K",
+    "couple": "₹1.1L–₹1.75L",
+    "family4": "₹2.1L–₹3L"
+  },
+  "experiences": [
+    "Qal'at al-Bahrain",
+    "Bahrain National Museum",
+    "Bab Al Bahrain and Manama Souq",
+    "Muharraq Pearling Path",
+    "Al Fateh Grand Mosque",
+    "Tree of Life",
+    "King Fahd Causeway road add-on"
+  ],
+  "avoid": [
+    "Midday outdoor sightseeing from late spring into early autumn",
+    "Depending only on buses for Tree of Life and south-island detours",
+    "Attempting a Saudi road crossing without visa, insurance, and rental-car approval"
+  ],
+  "combo": [
+    "Saudi Arabia",
+    "United Arab Emirates"
+  ],
+  "landmark": "Qal'at al-Bahrain",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": "Bahrain works best as a compact 4-day Gulf heritage-and-food break, with Manama as the easiest base and Muharraq plus Riffa handled as short side trips.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Manama",
+      "lat": 26.2285,
+      "lng": 50.586,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Museum district, Bab Al Bahrain gateway, souq lanes, mosque visits and the easiest first base for taxis and rideshare."
+    },
+    {
+      "name": "Muharraq",
+      "lat": 26.2572,
+      "lng": 50.6119,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Pearling Path heritage houses, Arad Fort, airport-side convenience and a more traditional old-town feel than central Manama."
+    },
+    {
+      "name": "Riffa",
+      "lat": 26.13,
+      "lng": 50.555,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "South-island base for Riffa Fort, Tree of Life, Bahrain International Circuit area and the road toward King Fahd Causeway."
+    }
+  ],
+  "itinerary": {
+    "sim": "Batelco, stc Bahrain, or Zain prepaid visitor SIMs usually land around ₹1,090–₹1,744 for enough data for maps, rideshare, WhatsApp and hotel bookings.",
+    "apps": [
+      "Careem",
+      "Uber",
+      "Google Maps",
+      "Talabat",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Manama",
+      "Muharraq",
+      "Riffa"
+    ],
+    "cities": {
+      "Manama": {
+        "name": "Manama",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Use Manama as the primary base: it keeps museum, souq and mosque logistics simple before you branch to Muharraq and southern Bahrain.",
+        "days": [
+          {
+            "theme": "Old Manama gateway sights, museum context and an easy first-evening waterfront finish",
+            "activities": [
+              {
+                "name": "Bab Al Bahrain (Bab el-Bahrain) and Manama Souq walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Bahrain National Museum",
+                "cost": "₹436"
+              },
+              {
+                "name": "Al Fateh Grand Mosque guided visit",
+                "cost": "Free"
+              },
+              {
+                "name": "The Avenues Bahrain or Bahrain Bay evening stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Styles Manama Diplomatic Area",
+                "budget": "₹5,800–₹8,700/night"
+              },
+              {
+                "name": "Wyndham Garden Manama",
+                "budget": "₹7,600–₹11,500/night"
+              },
+              {
+                "name": "Downtown Rotana",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Haji Gahwa",
+              "Emmawash Traditional Restaurant",
+              "Lanterns Adliya"
+            ]
+          },
+          {
+            "theme": "UNESCO-era fort history, seaside archaeology and a relaxed Adliya dinner night",
+            "activities": [
+              {
+                "name": "Qal'at al-Bahrain fort site",
+                "cost": "Free"
+              },
+              {
+                "name": "Qal'at al-Bahrain Site Museum",
+                "cost": "₹436"
+              },
+              {
+                "name": "Bahrain Fort seafront promenade and café area",
+                "cost": "Free"
+              },
+              {
+                "name": "Block 338 Adliya evening walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Styles Manama Diplomatic Area",
+                "budget": "₹5,800–₹8,700/night"
+              },
+              {
+                "name": "Wyndham Garden Manama",
+                "budget": "₹7,600–₹11,500/night"
+              },
+              {
+                "name": "Downtown Rotana",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Saffron by Jena",
+              "Monsoon",
+              "The Orangery"
+            ]
+          }
+        ]
+      },
+      "Muharraq": {
+        "name": "Muharraq",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Treat Muharraq as a heritage-heavy day around the Pearling Path; stay here only if you want airport-side convenience or Amwaj beach access.",
+        "days": [
+          {
+            "theme": "Pearling Path houses, fort edges and the older trading-island story behind modern Bahrain",
+            "activities": [
+              {
+                "name": "Pearling Path Visitor and Experience Center",
+                "cost": "Free"
+              },
+              {
+                "name": "Sheikh Isa bin Ali House",
+                "cost": "Free"
+              },
+              {
+                "name": "Arad Fort",
+                "cost": "Free"
+              },
+              {
+                "name": "Muharraq souq and heritage houses walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Majestic Arjaan by Rotana",
+                "budget": "₹7,600–₹11,500/night"
+              },
+              {
+                "name": "The ART Hotel & Resort",
+                "budget": "₹12,000–₹22,000/night"
+              }
+            ],
+            "meals": [
+              "Saffron by Jena",
+              "Moh'd Noor Al Bokhari Restaurant",
+              "Naseef Restaurant"
+            ]
+          }
+        ]
+      },
+      "Riffa": {
+        "name": "Riffa",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Use a taxi or rental car in Riffa: the fort, Tree of Life and south-island roads are far easier by road than by public transport.",
+        "days": [
+          {
+            "theme": "Fort views, desert-edge landmarks and the road-trip side of Bahrain",
+            "activities": [
+              {
+                "name": "Riffa Fort (Shaikh Salman bin Ahmed Fort)",
+                "cost": "Free"
+              },
+              {
+                "name": "Tree of Life",
+                "cost": "Free"
+              },
+              {
+                "name": "Bahrain International Circuit outer visitor area or photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "King Fahd Causeway Bahrain-side drive or Saudi crossing setup",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Wyndham Garden Manama",
+                "budget": "₹7,600–₹11,500/night"
+              },
+              {
+                "name": "Majestic Arjaan by Rotana",
+                "budget": "₹7,600–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Café Lilou Riffa",
+              "Hunters Lodge Restaurant & Lounge",
+              "Links Restaurant at Royal Golf Club"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Manama",
+        "to": "Muharraq",
+        "method": "Taxi or rideshare over the airport bridge for the quickest split between central Manama and heritage Muharraq",
+        "cost": "₹436–₹872"
+      },
+      {
+        "from": "Muharraq",
+        "to": "Riffa",
+        "method": "Rental car or taxi for Riffa Fort, Tree of Life and the wider south-island loop",
+        "cost": "₹1,090–₹1,744"
+      }
+    ],
+    "extras": [
+      "Bahrain is one of the easier Gulf countries for a short budget-conscious trip because headline heritage sights such as Bab Al Bahrain, Al Fateh Grand Mosque, Tree of Life and the fort grounds are free.",
+      "Keep taxis or rideshare for Manama and Muharraq, then switch to a rental car if you want to cover Tree of Life, Bahrain International Circuit and the King Fahd Causeway approach comfortably in one day.",
+      "If you are extending into Saudi Arabia, the King Fahd Causeway is the practical road link, but visa rules, vehicle insurance and rental-car cross-border permission must be checked before departure.",
+      "Plan outdoor fort and desert stops in the morning from November to March, then use museums and restaurants for the warmer afternoon stretch.",
+      "Bahrain National Museum and the Qal'at al-Bahrain museum both commonly price adult entry at 2 BHD each, which works out to roughly ₹436 at 1 BHD ≈ ₹218."
+    ],
+    "cityImages": {
+      "Manama": [
+        "Bab Al Bahrain Manama gateway",
+        "Bahrain National Museum Manama exterior",
+        "Al Fateh Grand Mosque Manama"
+      ],
+      "Muharraq": [
+        "Muharraq Pearling Path traditional houses",
+        "Arad Fort Muharraq Bahrain",
+        "Sheikh Isa bin Ali House Muharraq"
+      ],
+      "Riffa": [
+        "Riffa Fort Bahrain hilltop",
+        "Tree of Life Bahrain desert",
+        "King Fahd Causeway Bahrain approach"
+      ]
+    }
+  }
+}

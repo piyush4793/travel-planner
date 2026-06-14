@@ -1,0 +1,480 @@
+{
+  "name": "Qatar",
+  "seed": false,
+  "lat": 25.35,
+  "lng": 51.18,
+  "region": "Middle East",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹70K–₹1.15L",
+    "couple": "₹1.3L–₹2.05L",
+    "family4": "₹2.6L–₹3.95L"
+  },
+  "experiences": [
+    "Museum of Islamic Art waterfront galleries",
+    "National Museum of Qatar desert-rose architecture",
+    "Souq Waqif evenings and falcon souq lanes",
+    "Katara Cultural Village and beach promenade",
+    "The Pearl-Qatar marina walk",
+    "Richard Serra's East-West/West-East in Zekreet"
+  ],
+  "avoid": [
+    "Long outdoor afternoons from May to September because heat and humidity rise fast",
+    "Depending only on the metro once you leave Doha and Al Wakrah",
+    "Driving to Zekreet late without fuel, shade, and offline maps"
+  ],
+  "combo": [
+    "United Arab Emirates",
+    "Oman",
+    "Bahrain"
+  ],
+  "landmark": "Museum of Islamic Art",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": "Qatar works especially well as a 4- to 6-day premium stopover from India, with Doha as the main base and easy day trips north and west.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Doha",
+      "lat": 25.2854,
+      "lng": 51.531,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Museum-heavy waterfront capital with Souq Waqif, Katara, The Pearl, Doha Metro and the country's easiest hotel base"
+    },
+    {
+      "name": "Al Wakrah",
+      "lat": 25.1715,
+      "lng": 51.6034,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Relaxed southern coastal town with a restored souq, dhow-lined seafront and direct Doha Metro access"
+    },
+    {
+      "name": "Al Khor",
+      "lat": 25.6804,
+      "lng": 51.4969,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Northern coast base for Purple Island, Al Thakira mangroves, the corniche and easy resort stays"
+    },
+    {
+      "name": "Zekreet",
+      "lat": 25.4875,
+      "lng": 50.8181,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "West-coast desert outpost for Richard Serra's sculpture, Film City, limestone formations and Ras Abrouq sunsets"
+    }
+  ],
+  "itinerary": {
+    "sim": "Ooredoo or Vodafone Qatar visitor SIMs usually land around ₹675–₹1,800 depending on data, enough for Doha Metro, Careem, Google Maps, restaurant bookings and a Zekreet day trip.",
+    "apps": [
+      "Qatar Rail",
+      "Karwa Taxi",
+      "Uber",
+      "Careem",
+      "Google Maps",
+      "Waze",
+      "Visit Qatar",
+      "Booking.com",
+      "Talabat",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Doha",
+      "Al Wakrah",
+      "Al Khor",
+      "Zekreet"
+    ],
+    "cities": {
+      "Doha": {
+        "name": "Doha",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Use Doha as the core base because metro coverage, museum density and the biggest hotel range make the rest of Qatar much easier.",
+        "days": [
+          {
+            "theme": "National Museum storytelling, Corniche air, and a first-night Souq Waqif reset",
+            "activities": [
+              {
+                "name": "National Museum of Qatar admission",
+                "cost": "₹1,125"
+              },
+              {
+                "name": "Doha Corniche waterfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Souq Waqif and Falcon Souq lanes",
+                "cost": "Free"
+              },
+              {
+                "name": "Msheireb Museums",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Doha",
+                "budget": "₹4,800–₹7,200/night"
+              },
+              {
+                "name": "Hampton by Hilton Doha Old Town",
+                "budget": "₹5,800–₹8,900/night"
+              },
+              {
+                "name": "Alwadi Hotel Doha - MGallery",
+                "budget": "₹10,500–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "Parisa Souq Waqif",
+              "Shay Al Shoomos",
+              "Bandar Aden"
+            ]
+          },
+          {
+            "theme": "Museum of Islamic Art, Katara, and The Pearl on a culture-to-marina day",
+            "activities": [
+              {
+                "name": "Museum of Islamic Art admission",
+                "cost": "₹1,125"
+              },
+              {
+                "name": "MIA Park and dhow harbour walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Katara Cultural Village",
+                "cost": "Free"
+              },
+              {
+                "name": "The Pearl-Qatar marina promenade",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Doha",
+                "budget": "₹4,800–₹7,200/night"
+              },
+              {
+                "name": "Hampton by Hilton Doha Old Town",
+                "budget": "₹5,800–₹8,900/night"
+              },
+              {
+                "name": "Alwadi Hotel Doha - MGallery",
+                "budget": "₹10,500–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "IDAM",
+              "Sukar Pasha",
+              "Mokarabia"
+            ]
+          },
+          {
+            "theme": "Easy metro day, skyline stops, and flexible café time before the road-based excursions begin",
+            "activities": [
+              {
+                "name": "Doha Metro standard day pass",
+                "cost": "₹135"
+              },
+              {
+                "name": "Mina District and Box Park waterfront stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Imam Muhammad ibn Abd al-Wahhab Mosque exterior and visit",
+                "cost": "Free"
+              },
+              {
+                "name": "West Bay or Lusail evening taxi loop",
+                "cost": "₹450–₹900"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Doha",
+                "budget": "₹4,800–₹7,200/night"
+              },
+              {
+                "name": "Hampton by Hilton Doha Old Town",
+                "budget": "₹5,800–₹8,900/night"
+              },
+              {
+                "name": "Alwadi Hotel Doha - MGallery",
+                "budget": "₹10,500–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "Evergreen Organics",
+              "Jiwan",
+              "Nourlaya"
+            ]
+          },
+          {
+            "theme": "Use the extra Doha day for galleries, beach clubs, or a slower luxury hotel stay",
+            "activities": [
+              {
+                "name": "3-2-1 Qatar Olympic and Sports Museum",
+                "cost": "₹1,125"
+              },
+              {
+                "name": "Doha Quest or Villaggio browse",
+                "cost": "Free"
+              },
+              {
+                "name": "Katara beach promenade return",
+                "cost": "Free"
+              },
+              {
+                "name": "Careem or Uber cabs for hotel-hopping dinner plans",
+                "cost": "₹450–₹1,125"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ibis Doha",
+                "budget": "₹4,800–₹7,200/night"
+              },
+              {
+                "name": "Hampton by Hilton Doha Old Town",
+                "budget": "₹5,800–₹8,900/night"
+              },
+              {
+                "name": "Alwadi Hotel Doha - MGallery",
+                "budget": "₹10,500–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "Morimoto Doha",
+              "SMAT Restaurant",
+              "Marsa Katara"
+            ]
+          }
+        ]
+      },
+      "Al Wakrah": {
+        "name": "Al Wakrah",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Most travelers do Al Wakrah as a metro-and-taxi day trip from Doha, though the souq hotel area works well for a quieter overnight.",
+        "days": [
+          {
+            "theme": "Beachfront souq wandering and an easy coastal change of pace south of Doha",
+            "activities": [
+              {
+                "name": "Doha Metro Red Line rides and short local taxi hops",
+                "cost": "₹135–₹315"
+              },
+              {
+                "name": "Souq Al Wakrah beach promenade",
+                "cost": "Free"
+              },
+              {
+                "name": "Al Wakrah Public Beach",
+                "cost": "Free"
+              },
+              {
+                "name": "Al Janoub Stadium exterior and park",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Souq Al Wakra Hotel Qatar by Tivoli",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "TIME Rako Hotel",
+                "budget": "₹5,400–₹8,200/night"
+              }
+            ],
+            "meals": [
+              "Emshoot",
+              "Danat Al Bahar BBQ Fish",
+              "Jarnen"
+            ]
+          }
+        ]
+      },
+      "Al Khor": {
+        "name": "Al Khor",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "A rental car makes Al Khor easiest because Purple Island and Al Thakira are awkward without your own wheels.",
+        "days": [
+          {
+            "theme": "Mangroves, Purple Island, and a resort-backed northern coast day",
+            "activities": [
+              {
+                "name": "Rental car for the Doha or Al Wakrah to Al Khor round trip",
+                "cost": "₹3,150–₹4,950"
+              },
+              {
+                "name": "Purple Island boardwalk and mangrove trail",
+                "cost": "Free"
+              },
+              {
+                "name": "Al Thakira mangroves kayak session",
+                "cost": "₹3,375–₹4,500"
+              },
+              {
+                "name": "Al Khor Corniche and Al Bayt Park evening stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tio Sea Resort",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Hleetan Wellness Resort",
+                "budget": "₹7,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Pearl of Beirut Restaurant",
+              "Rbyana Seafood",
+              "Tio Shore Restaurant"
+            ]
+          }
+        ]
+      },
+      "Zekreet": {
+        "name": "Zekreet",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Go early, carry water, and do not count on public transport; this is the part of Qatar where a rental car or guided 4x4 is essential.",
+        "days": [
+          {
+            "theme": "West-coast sculpture, film-set ruins, and desert-sea light near Ras Abrouq",
+            "activities": [
+              {
+                "name": "Rental car or guided 4x4 day trip from Doha",
+                "cost": "₹4,500–₹7,875"
+              },
+              {
+                "name": "East-West/West-East by Richard Serra",
+                "cost": "Free"
+              },
+              {
+                "name": "Film City Zekreet",
+                "cost": "Free"
+              },
+              {
+                "name": "Ras Abrouq beach and limestone formation stops",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Our Habitas Ras Abrouq",
+                "budget": "₹28,000–₹45,000/night"
+              },
+              {
+                "name": "Hampton by Hilton Doha Old Town",
+                "budget": "₹5,800–₹8,900/night"
+              }
+            ],
+            "meals": [
+              "Qissa",
+              "Parisa Souq Waqif",
+              "Shay Al Shoomos"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Doha",
+        "to": "Al Wakrah",
+        "method": "Doha Metro Red Line to Al Wakrah with a short taxi for the beach and souq stretch",
+        "cost": "₹45–₹225"
+      },
+      {
+        "from": "Al Wakrah",
+        "to": "Al Khor",
+        "method": "Self-drive or taxi across Doha's orbital roads; metro does not cover this northbound jump",
+        "cost": "₹3,150–₹5,625"
+      },
+      {
+        "from": "Al Khor",
+        "to": "Zekreet",
+        "method": "Drive back through Doha toward Ras Abrouq; there is no practical public transport option",
+        "cost": "₹3,375–₹6,750"
+      }
+    ],
+    "extras": [
+      "This route works best as a 6-day Qatar circuit with Doha as the main base, Al Wakrah as a light metro day, Al Khor as a north-coast outing, and Zekreet as the one road-trip-heavy day.",
+      "Museum of Islamic Art and the National Museum of Qatar currently price standard non-resident entry at QAR 50 each, which converts to about ₹1,125 using the requested QAR-to-INR rate.",
+      "Souq Waqif, The Pearl-Qatar, and Katara Cultural Village are all easy free-entry anchors, so the trip's spend usually comes from hotels, taxis, and optional kayaking or west-coast tours.",
+      "Doha Metro is the cheapest way to move around the capital at roughly ₹45 per ride or ₹135 for a day pass, but taxis and ride-hailing become the practical backup once you leave the central museum-and-souq corridor.",
+      "For Al Khor and especially Zekreet, a rental car is usually better value than chaining long taxis because you control timing around Purple Island tides, Serra sculpture light, and the remote Ras Abrouq stretch."
+    ],
+    "cityImages": {
+      "Doha": [
+        "Museum of Islamic Art Doha waterfront",
+        "Souq Waqif Doha courtyard",
+        "Katara Cultural Village amphitheatre Doha"
+      ],
+      "Al Wakrah": [
+        "Souq Al Wakrah beachfront Qatar",
+        "Al Janoub Stadium Al Wakrah exterior",
+        "Al Wakrah Public Beach dhow boats"
+      ],
+      "Al Khor": [
+        "Purple Island Al Khor mangroves",
+        "Al Khor Corniche waterfront Qatar",
+        "Al Bayt Stadium Al Khor park"
+      ],
+      "Zekreet": [
+        "East-West West-East Richard Serra Qatar",
+        "Film City Zekreet Qatar",
+        "Ras Abrouq limestone formations Qatar"
+      ]
+    }
+  }
+}

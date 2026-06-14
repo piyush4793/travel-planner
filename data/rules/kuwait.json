@@ -1,0 +1,407 @@
+{
+  "name": "Kuwait",
+  "seed": false,
+  "lat": 29.31,
+  "lng": 47.48,
+  "region": "Middle East",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹70K–₹1.1L",
+    "couple": "₹1.25L–₹1.9L",
+    "family4": "₹2.5L–₹3.7L"
+  },
+  "experiences": [
+    "Kuwait Towers skyline views",
+    "Grand Mosque guided visit",
+    "Souq Al-Mubarakiya food walk",
+    "Failaka Island archaeology and ferry ride",
+    "Al Shaheed Park evening promenade",
+    "The Avenues Mall shopping break"
+  ],
+  "avoid": [
+    "Long outdoor sightseeing from May to September because of intense Gulf heat",
+    "Leaving Failaka planning to the last minute because ferries are weather-dependent",
+    "Assuming every attraction keeps Friday hours; many museums and tours run shorter schedules"
+  ],
+  "combo": [
+    "Bahrain",
+    "United Arab Emirates"
+  ],
+  "landmark": "Kuwait Towers",
+  "travelStyle": [
+    "touch-and-go"
+  ],
+  "stopoverNote": "Kuwait works best as a compact 5- to 6-day Gulf city break from India, with Failaka and Jahra handled as day trips rather than frequent hotel swaps.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Kuwait City",
+      "lat": 29.3759,
+      "lng": 47.9774,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Kuwait Towers, Grand Mosque, Al Shaheed Park, Mubarakiya souq lanes and the country’s strongest hotel base"
+    },
+    {
+      "name": "Failaka Island",
+      "lat": 29.4421,
+      "lng": 48.2923,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Short ferry-linked island with Hellenistic ruins, heritage village stretches and low-key winter day-trip appeal"
+    },
+    {
+      "name": "Jahra",
+      "lat": 29.3375,
+      "lng": 47.6581,
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "notes": "Historic Red Fort stop with desert-edge suburbs, birding wetlands and straightforward westward road access from the capital"
+    }
+  ],
+  "itinerary": {
+    "sim": "Zain or Ooredoo Kuwait visitor SIM packs usually land around ₹1,340–₹2,680, enough for maps, Careem, Talabat and ferry coordination without hunting for Wi-Fi.",
+    "apps": [
+      "Careem",
+      "KPTC",
+      "CityBus Kuwait",
+      "Google Maps",
+      "Talabat",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Kuwait City",
+      "Failaka Island",
+      "Jahra"
+    ],
+    "cities": {
+      "Kuwait City": {
+        "name": "Kuwait City",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Keep one hotel base in Kuwait City and use it for the whole trip; it cuts luggage hassle and makes Failaka and Jahra day trips much easier.",
+        "days": [
+          {
+            "theme": "Waterfront icons, mosque architecture and a first-night souq reset",
+            "activities": [
+              {
+                "name": "Kuwait Towers observation sphere",
+                "cost": "₹804"
+              },
+              {
+                "name": "Grand Mosque guided visit",
+                "cost": "Free"
+              },
+              {
+                "name": "Souq Al-Mubarakiya browse and tea stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Seif Palace exterior and Arabian Gulf Street walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Four Points by Sheraton Kuwait",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "ibis Sharq",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "Ramada Encore by Wyndham Kuwait Downtown",
+                "budget": "₹7,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Freej Swaileh",
+              "Mais Alghanim",
+              "Mughal Mahal"
+            ]
+          },
+          {
+            "theme": "Museums, contemporary public space and a calmer cultural day indoors and out",
+            "activities": [
+              {
+                "name": "Tareq Rajab Museum of Islamic Calligraphy",
+                "cost": "₹536"
+              },
+              {
+                "name": "Al Shaheed Park gardens and memorial museums",
+                "cost": "Free"
+              },
+              {
+                "name": "Sadu House cultural stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Sheikh Jaber Al-Ahmad Cultural Centre exterior and lakefront walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Four Points by Sheraton Kuwait",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "ibis Sharq",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "Ramada Encore by Wyndham Kuwait Downtown",
+                "budget": "₹7,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Mais Alghanim",
+              "Dikakeen",
+              "White Robata"
+            ]
+          },
+          {
+            "theme": "Modern retail Kuwait with an easier waterfront finish before the day trips",
+            "activities": [
+              {
+                "name": "The Avenues Mall",
+                "cost": "Free"
+              },
+              {
+                "name": "Marina Crescent seaside walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Souq Sharq waterfront stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Al Hamra Tower district and skyline stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Four Points by Sheraton Kuwait",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "ibis Sharq",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "Ramada Encore by Wyndham Kuwait Downtown",
+                "budget": "₹7,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Freej Swaileh",
+              "Al Boom Steak & Seafood",
+              "Dean & Deluca The Avenues"
+            ]
+          },
+          {
+            "theme": "Optional spare day for a slower museum loop, shopping or a second waterfront evening",
+            "activities": [
+              {
+                "name": "Amricani Cultural Centre",
+                "cost": "Free"
+              },
+              {
+                "name": "Mirror House booked visit",
+                "cost": "₹804"
+              },
+              {
+                "name": "Kuwait National Museum",
+                "cost": "Free"
+              },
+              {
+                "name": "Salmiya promenade sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Four Points by Sheraton Kuwait",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "ibis Sharq",
+                "budget": "₹6,000–₹9,000/night"
+              },
+              {
+                "name": "Ramada Encore by Wyndham Kuwait Downtown",
+                "budget": "₹7,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Mughal Mahal",
+              "The Gathering Bistro",
+              "GIA"
+            ]
+          }
+        ]
+      },
+      "Failaka Island": {
+        "name": "Failaka Island",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Treat Failaka as a weather-sensitive day trip from Kuwait City; ferries and island transport are smoother when booked a day ahead.",
+        "days": [
+          {
+            "theme": "Ferry out for archaeology, beaches and the quieter Gulf side of Kuwait",
+            "activities": [
+              {
+                "name": "Taxi or Careem to the ferry terminal",
+                "cost": "₹1,072–₹1,608"
+              },
+              {
+                "name": "Ikarus Marine return ferry to Failaka Island",
+                "cost": "₹4,020"
+              },
+              {
+                "name": "Failaka Heritage Village beachfront and museum area",
+                "cost": "Free"
+              },
+              {
+                "name": "Greek Temple ruins and Al-Qusur archaeological stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Four Points by Sheraton Kuwait",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "ibis Sharq",
+                "budget": "₹6,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Failaka Heritage Village Restaurant",
+              "Mais Alghanim",
+              "Mughal Mahal"
+            ]
+          }
+        ]
+      },
+      "Jahra": {
+        "name": "Jahra",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Jahra is easiest as a westbound day trip by KPTC bus, taxi or rental car; stay overnight only if you want a slower wetlands detour.",
+        "days": [
+          {
+            "theme": "Red Fort history, suburban Kuwait and a glimpse of the country’s western edge",
+            "activities": [
+              {
+                "name": "Kuwait City to Jahra by KPTC bus or taxi",
+                "cost": "₹67 by bus / ₹3,216 by taxi"
+              },
+              {
+                "name": "Red Fort (Qasr Al-Ahmar)",
+                "cost": "Free"
+              },
+              {
+                "name": "Jahra Traditional Market walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Jahra Pools Reserve birding stop",
+                "cost": "Free with advance access check"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Al Jahra Copthorne Hotel & Resort",
+                "budget": "₹9,000–₹13,500/night"
+              },
+              {
+                "name": "Four Points by Sheraton Kuwait",
+                "budget": "₹10,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Mughal Mahal Jahra",
+              "Freej Swaileh Jahra",
+              "Awtar Libnan"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Kuwait City",
+        "to": "Failaka Island",
+        "method": "Taxi to the ferry terminal, then the public Ikarus Marine sailing; carry passport copy and expect weather-led schedule changes.",
+        "cost": "₹4,020 ferry return + ₹1,072–₹1,608 taxi"
+      },
+      {
+        "from": "Failaka Island",
+        "to": "Jahra",
+        "method": "Return to Kuwait City first, then continue west by KPTC bus, taxi or a rental car if you want more flexibility around the reserve edge.",
+        "cost": "₹67 by bus / ₹3,216 by taxi / ₹2,144–₹2,680 per rental-car day"
+      }
+    ],
+    "extras": [
+      "November to March is the sweet spot for Kuwait; daytime walking is much easier and evening waterfront time actually feels pleasant.",
+      "Grand Mosque tours are free but work best in the morning outside prayer windows, so keep modest clothing and a little time buffer.",
+      "The required big-ticket sights here are light on paid entry: Kuwait Towers is the main fixed-fee city landmark, while Al Shaheed Park and The Avenues are free to enter.",
+      "KPTC and CityBus are cheap for simple corridors like Kuwait City to Jahra, but taxis or a short rental are far more practical for Failaka ferry logistics and scattered museum stops.",
+      "Keep a backup indoor plan such as The Avenues, Al Shaheed Park museums or Tareq Rajab Museum in case ferry sailings to Failaka pause because of wind or sea conditions."
+    ],
+    "cityImages": {
+      "Kuwait City": [
+        "Kuwait Towers skyline Kuwait City",
+        "Grand Mosque Kuwait facade",
+        "Souq Al-Mubarakiya alley Kuwait City"
+      ],
+      "Failaka Island": [
+        "Failaka Island Greek temple Kuwait",
+        "Failaka Heritage Village waterfront",
+        "Al-Qusur archaeological site Failaka"
+      ],
+      "Jahra": [
+        "Red Fort Jahra Kuwait",
+        "Jahra Pools Reserve Kuwait",
+        "Jahra traditional market Kuwait"
+      ]
+    }
+  }
+}
