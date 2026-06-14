@@ -1,0 +1,413 @@
+{
+  "name": "Turkmenistan",
+  "seed": false,
+  "lat": 38.97,
+  "lng": 59.56,
+  "region": "Asia",
+  "bestMonths": [
+    "April",
+    "May",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "January",
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹1.45L–₹2.35L",
+    "couple": "₹2.55L–₹4.1L",
+    "family4": "₹4.9L–₹7.6L"
+  },
+  "experiences": [
+    "White-marble Ashgabat",
+    "Parthian Nisa ruins",
+    "Darvaza Gas Crater camp",
+    "Ancient Merv",
+    "Konye-Urgench mausoleums",
+    "Desert road journey"
+  ],
+  "avoid": [
+    "June–August desert heat around Darvaza, Merv and Konye-Urgench where midday sightseeing becomes draining fast",
+    "Last-minute planning — most tourists need a letter of invitation plus a pre-arranged licensed guide and driver",
+    "Casual photography near ministries, checkpoints and some public buildings in Ashgabat where security can intervene quickly"
+  ],
+  "combo": [
+    "Uzbekistan",
+    "Kazakhstan"
+  ],
+  "landmark": "Darvaza Gas Crater",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": null,
+  "links": [],
+  "cities": [
+    {
+      "name": "Ashgabat",
+      "lat": 37.9601,
+      "lng": 58.3261,
+      "notes": "The white-marble capital is the easiest place for visa formalities, banks, museums, Nisa day trips and the broadest hotel choice."
+    },
+    {
+      "name": "Darvaza (Gates of Hell)",
+      "lat": 40.2525,
+      "lng": 58.4394,
+      "notes": "Remote Karakum Desert gas crater best done as an overnight guided camp with a 4x4, sunset arrival and early-morning departure."
+    },
+    {
+      "name": "Merv",
+      "lat": 37.6612,
+      "lng": 62.1749,
+      "notes": "Use Mary as the hotel base for the vast UNESCO ruins of Ancient Merv, Sultan Sanjar Mausoleum and nearby desert archaeology."
+    },
+    {
+      "name": "Konye-Urgench",
+      "lat": 42.3277,
+      "lng": 59.1544,
+      "notes": "UNESCO-listed Khwarazm capital of minarets and mausoleums, usually visited as a guided day trip from Dashoguz."
+    }
+  ],
+  "itinerary": {
+    "sim": "TM CELL or Altyn Asyr setup is easiest through a hotel or guide in Ashgabat; expect roughly ₹700–₹1,400 for a short tourist data pack, and keep offline maps because coverage and speeds drop quickly outside the cities.",
+    "apps": [
+      "Yandex Go",
+      "2GIS",
+      "Maps.me",
+      "Turkmenistan Airlines",
+      "Google Translate"
+    ],
+    "cityOrder": [
+      "Ashgabat",
+      "Merv",
+      "Darvaza (Gates of Hell)",
+      "Konye-Urgench"
+    ],
+    "cities": {
+      "Ashgabat": {
+        "name": "Ashgabat",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the capital highlights plus Old Nisa; keep a third only if you want slower museum time or extra visa-buffer space.",
+        "days": [
+          {
+            "theme": "Marble Capital Icons & Museums",
+            "activities": [
+              {
+                "name": "National Museum of Turkmenistan",
+                "cost": "₹475–₹950 pp"
+              },
+              {
+                "name": "Turkmen Carpet Museum",
+                "cost": "₹240–₹475 pp"
+              },
+              {
+                "name": "Arch of Neutrality observation stop and Independence Park drive-by",
+                "cost": "₹240–₹475 pp where ticketed"
+              },
+              {
+                "name": "Alem Cultural and Entertainment Center Ferris wheel complex",
+                "cost": "₹475–₹950 pp"
+              },
+              {
+                "name": "Evening taxi ride along Magtymguly Avenue and the white-marble government quarter",
+                "cost": "₹475–₹950 per taxi hop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ak Altyn Hotel",
+                "budget": "₹7,500–₹10,500/night"
+              },
+              {
+                "name": "Nusay Hotel",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Oguzkent Hotel",
+                "budget": "₹23,000–₹45,000/night"
+              }
+            ],
+            "meals": [
+              "Ammar Cafe",
+              "AlpEt Steakhouse",
+              "Sha Coffee"
+            ]
+          },
+          {
+            "theme": "Old Nisa & Ashgabat Landmarks",
+            "activities": [
+              {
+                "name": "Old Nisa archaeological site",
+                "cost": "₹240–₹475 pp",
+                "tip": "Recent visitor reports put the ticket around 10–20 TMT, so carry small cash for the guard booth."
+              },
+              {
+                "name": "Turkmenbashi Ruhy Mosque at Gypjak",
+                "cost": "Free"
+              },
+              {
+                "name": "Wedding Palace and Yyldyz Hotel hilltop panorama stop",
+                "cost": "Free to ₹240 pp"
+              },
+              {
+                "name": "Berkarar shopping complex or Russian Bazaar for snacks and ATM backup",
+                "cost": "₹240–₹950 pp depending on shopping"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nusay Hotel",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Yyldyz Hotel",
+                "budget": "₹25,000–₹35,000/night"
+              }
+            ],
+            "meals": [
+              "Uzum Cafe",
+              "Coffee House",
+              "Ammar Cafe"
+            ]
+          },
+          {
+            "theme": "Optional Buffer Day",
+            "activities": [
+              {
+                "name": "Tolkuchka Bazaar outing with your guide for carpets and silverwork"
+              },
+              {
+                "name": "Spa or pool downtime at Oguzkent Hotel or Yyldyz Hotel"
+              },
+              {
+                "name": "Keep this day for flight shifts, migration formalities or a slower city drive"
+              }
+            ]
+          }
+        ]
+      },
+      "Merv": {
+        "name": "Merv",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One long day works if you start early from Mary with a guide; a second day helps only if you want Mary museums or a gentler pace in the ruins.",
+        "days": [
+          {
+            "theme": "Ancient Merv UNESCO Circuit",
+            "activities": [
+              {
+                "name": "Ancient Merv archaeological park ticket",
+                "cost": "₹240–₹475 pp",
+                "tip": "Current reports usually place entry around 10–20 TMT; photography can be charged separately at roughly ₹1,185."
+              },
+              {
+                "name": "Sultan Sanjar Mausoleum",
+                "cost": "Included"
+              },
+              {
+                "name": "Erk Kala, Gyaur Kala and Shahriyar Ark circuit with guide",
+                "cost": "Included"
+              },
+              {
+                "name": "Greater and Lesser Kyz Kala adobe fortresses",
+                "cost": "Included"
+              },
+              {
+                "name": "Round-trip taxi or guided transfer from Mary",
+                "cost": "₹2,400–₹4,700 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mary Hotel",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Hotel Margush",
+                "budget": "₹7,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Mary Hotel Restaurant",
+              "Margush Hotel Restaurant",
+              "Gyzylgum"
+            ]
+          },
+          {
+            "theme": "Mary City Add-on",
+            "activities": [
+              {
+                "name": "Mary History Museum or local bazaar walk before the next domestic flight",
+                "cost": "₹240–₹475 pp where ticketed"
+              },
+              {
+                "name": "Short tea stop and souvenir shopping in central Mary"
+              }
+            ]
+          }
+        ]
+      },
+      "Darvaza (Gates of Hell)": {
+        "name": "Darvaza (Gates of Hell)",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Treat Darvaza as an overnight desert camp: arrive before sunset, stay for the crater glow, and leave at sunrise before the heat builds.",
+        "days": [
+          {
+            "theme": "Karakum Desert Drive & Crater Camp",
+            "activities": [
+              {
+                "name": "Guided 4x4 transfer across the Karakum Desert via Erbent village",
+                "cost": "₹5,900–₹11,900 pp depending on group size"
+              },
+              {
+                "name": "Darvaza Gas Crater sunset walk and crater-rim viewing",
+                "cost": "Free once on site"
+              },
+              {
+                "name": "Overnight yurt or tent stay at Ayan Yurt Camp / similar Darvaza camp",
+                "cost": "₹2,500–₹5,000 pp",
+                "tip": "Recent camp listings and traveler reports put simple overnight camping with dinner and breakfast around $30–$60 per person."
+              },
+              {
+                "name": "Sunrise visit to the nearby water crater before departure",
+                "cost": "Included if your driver adds the stop"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ayan Yurt Camp",
+                "budget": "₹2,500–₹5,000/night"
+              },
+              {
+                "name": "Darvaza Yurt Camp",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Ayan Yurt Camp dining tent"
+            ]
+          }
+        ]
+      },
+      "Konye-Urgench": {
+        "name": "Konye-Urgench",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Most travelers do Konye-Urgench as a guided day trip from Dashoguz because the site is spread out but the city itself has limited tourist infrastructure.",
+        "days": [
+          {
+            "theme": "Khwarazm Mausoleums & Minaret",
+            "activities": [
+              {
+                "name": "Kutlug Timur Minaret and Turabek Khanum Mausoleum complex",
+                "cost": "₹240–₹475 pp where ticketed"
+              },
+              {
+                "name": "Najm ad-Din al-Kubra Mausoleum",
+                "cost": "Free to ₹240 donation"
+              },
+              {
+                "name": "Il Arslan Mausoleum and caravan-route ruins",
+                "cost": "Included or small donation"
+              },
+              {
+                "name": "Round-trip Dashoguz taxi or guided transfer",
+                "cost": "₹1,900–₹3,800 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Uzboy Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Dashoguz Hotel",
+                "budget": "₹6,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Uzboy Hotel Restaurant",
+              "Dashoguz Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Optional Dashoguz Buffer",
+            "activities": [
+              {
+                "name": "Dashoguz city rest day before the domestic flight back to Ashgabat"
+              },
+              {
+                "name": "Leave extra time for checkpoint delays and flight reschedules"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Ashgabat",
+        "to": "Merv",
+        "method": "Turkmenistan Airlines domestic flight from Ashgabat to Mary plus short taxi to hotel",
+        "cost": "₹5,900–₹9,500 pp"
+      },
+      {
+        "from": "Merv",
+        "to": "Darvaza (Gates of Hell)",
+        "method": "Private guided overland transfer from Mary through the Karakum; this is usually bundled by your agency rather than sold as public transport",
+        "cost": "₹11,900–₹19,000 pp"
+      },
+      {
+        "from": "Darvaza (Gates of Hell)",
+        "to": "Konye-Urgench",
+        "method": "Continue north by 4x4 to Dashoguz, then taxi onward for the UNESCO site visit",
+        "cost": "₹7,100–₹11,900 pp"
+      },
+      {
+        "from": "Konye-Urgench",
+        "to": "Ashgabat",
+        "method": "Taxi back to Dashoguz and Turkmenistan Airlines domestic flight to Ashgabat",
+        "cost": "₹6,600–₹10,700 pp"
+      }
+    ],
+    "extras": [
+      "Most tourists need a letter of invitation and a licensed guide/driver for the full trip; only short transit-visa travelers move more independently.",
+      "Best weather is usually April–May and September–October; Darvaza nights can still feel cold, so pack a fleece even when Ashgabat is warm.",
+      "Carry cash in Turkmen manat for museum tickets, site guards and rural tea stops because cards are rarely useful outside major hotels.",
+      "Internet is heavily filtered and often slow, so preload translations, maps and hotel confirmations before leaving Ashgabat.",
+      "Photography around ministries, military sites and checkpoints can trigger trouble quickly; ask your guide before taking city shots.",
+      "If you only have 5–6 days, keep Ashgabat, Merv and Darvaza, then add Konye-Urgench only if the Dashoguz flight schedule lines up."
+    ],
+    "cityImages": {
+      "Ashgabat": [
+        "Arch of Neutrality Ashgabat",
+        "Old Nisa Turkmenistan",
+        "Turkmen Carpet Museum Ashgabat"
+      ],
+      "Merv": [
+        "Sultan Sanjar Mausoleum Merv",
+        "Kyz Kala Merv",
+        "Erk Kala Merv"
+      ],
+      "Darvaza (Gates of Hell)": [
+        "Darvaza Gas Crater",
+        "Karakum Desert camp",
+        "Darvaza at night"
+      ],
+      "Konye-Urgench": [
+        "Kutlug Timur Minaret",
+        "Turabek Khanum Mausoleum",
+        "Najm ad-Din al-Kubra Mausoleum"
+      ]
+    }
+  }
+}

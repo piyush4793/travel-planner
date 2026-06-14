@@ -1,0 +1,519 @@
+{
+  "name": "Cape Verde",
+  "seed": false,
+  "lat": 16.0,
+  "lng": -24.01,
+  "region": "Africa",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June"
+  ],
+  "worstMonths": [
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "budget": {
+    "solo": "₹1.15L–₹1.95L",
+    "couple": "₹2.1L–₹3.5L",
+    "family4": "₹4.35L–₹6.8L"
+  },
+  "experiences": [
+    "Volcanic Islands",
+    "Creole Music",
+    "Beach Time",
+    "Coastal Hikes",
+    "Inter-Island Hopping"
+  ],
+  "avoid": [
+    "July-October is the more humid rainy stretch, so Santo Antão trail days and open-sea ferry schedules are more likely to be disrupted than in the dry November-June window.",
+    "January-March is still one of the best seasons overall, but Sal and other exposed islands can be noticeably windy, which is great for kitesurfers and less ideal if you only want calm beach hours.",
+    "Inter-island logistics in Cape Verde are real trip constraints: flights can be retimed, ferries can be weather affected, and aluguer minibuses usually leave only when nearly full."
+  ],
+  "combo": [
+    "Senegal",
+    "Portugal",
+    "Morocco"
+  ],
+  "landmark": "Cidade Velha",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "If you only have 5-6 days, do either Praia + Sal for the easiest beach-and-history combo or Mindelo + Santo Antão for culture and hiking, instead of trying to force all four islands into one trip.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Praia (Santiago)",
+      "lat": 14.933,
+      "lng": -23.513,
+      "notes": "Cape Verde's capital is the practical Santiago base for Plateau walks, Sucupira market, Quebra Canela evenings, and the short run to UNESCO-listed Cidade Velha."
+    },
+    {
+      "name": "Sal",
+      "lat": 16.741,
+      "lng": -22.934,
+      "notes": "Sal is the easiest soft-landing island for Santa Maria beach time, Pedra de Lume's salt crater, and frequent domestic flight connections."
+    },
+    {
+      "name": "Mindelo (São Vicente)",
+      "lat": 16.887,
+      "lng": -24.987,
+      "notes": "Mindelo is Cape Verde's music-and-café capital, best for waterfront walks, Monte Verde viewpoints, live morna bars, and the ferry gateway to Santo Antão."
+    },
+    {
+      "name": "Santo Antão",
+      "lat": 17.083,
+      "lng": -25.167,
+      "notes": "Santo Antão is the dramatic hiking island for Cova crater, Paúl Valley descents, Fontainhas lookouts, and scenic aluguer rides between villages."
+    }
+  ],
+  "itinerary": {
+    "sim": "CVMóvel or Unitel T+ prepaid SIMs are the easiest options on arrival; budget about ₹820–₹1,640 for enough data to run maps, WhatsApp, boarding updates, and ferry confirmations across the islands.",
+    "apps": [
+      "Binter Cabo Verde",
+      "TACV Cabo Verde Airlines",
+      "CV Interilhas",
+      "Booking.com",
+      "Google Maps offline",
+      "WhatsApp",
+      "XE Currency",
+      "Windy"
+    ],
+    "cityOrder": [
+      "Praia (Santiago)",
+      "Sal",
+      "Mindelo (São Vicente)",
+      "Santo Antão"
+    ],
+    "cities": {
+      "Praia (Santiago)": {
+        "name": "Praia (Santiago)",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Keep Santiago short and efficient: one capital day and one Cidade Velha day gives you Cape Verde's strongest historical stop before you move into the island-hopping stretch.",
+        "days": [
+          {
+            "theme": "Plateau, Sucupira Market and a First Evening by the Sea",
+            "activities": [
+              {
+                "name": "Official airport taxi from Nelson Mandela International Airport to central Praia",
+                "cost": "₹1,230–₹2,050",
+                "tip": "Ask your hotel to pre-book if you land late; fares vary by drop-off area and luggage."
+              },
+              {
+                "name": "Plateau old town and Praça Alexandre Albuquerque walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Mercado de Sucupira browse",
+                "cost": "Free"
+              },
+              {
+                "name": "Quebra Canela beach stop and sunset promenade",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Pérola",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Pestana Trópico",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Oásis Atlântico Praiamar",
+                "budget": "₹12,500–₹20,500/night"
+              }
+            ],
+            "meals": [
+              "Quintal da Música",
+              "Avis Restaurante",
+              "Terrazza Italia"
+            ]
+          },
+          {
+            "theme": "Cidade Velha UNESCO Day and Santiago's Oldest Streets",
+            "activities": [
+              {
+                "name": "Aluguer minibus or taxi from Praia to Cidade Velha and back",
+                "cost": "₹82–₹1,640",
+                "tip": "Shared aluguer seats are the cheapest option, while a taxi is easier if you want to linger at viewpoints and the fort."
+              },
+              {
+                "name": "Fortaleza Real de São Filipe admission",
+                "cost": "₹410 pp",
+                "tip": "The current foreign visitor ticket is 500 CVE, and it usually includes a short orientation before you enter the fort."
+              },
+              {
+                "name": "Pelourinho and Rua Banana walk in Cidade Velha",
+                "cost": "Free"
+              },
+              {
+                "name": "Praínha or Kebra Kanela evening back in Praia",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aparthotel Praiano",
+                "budget": "₹7,000–₹10,500/night"
+              },
+              {
+                "name": "Pestana Trópico",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Oásis Atlântico Praiamar",
+                "budget": "₹12,500–₹20,500/night"
+              }
+            ],
+            "meals": [
+              "Kebra Cabana",
+              "Lotus Café",
+              "Quintal da Música"
+            ]
+          }
+        ]
+      },
+      "Sal": {
+        "name": "Sal",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Sal works best as the easiest low-friction beach base: one Santa Maria day and one crater-and-coast day is enough unless you specifically want extra resort time or watersports lessons.",
+        "days": [
+          {
+            "theme": "Flight to Sal, Santa Maria Beach and an Easy Resort-Town Evening",
+            "activities": [
+              {
+                "name": "Binter Cabo Verde or TACV inter-island flight from Praia to Sal",
+                "cost": "₹4,900–₹8,900 pp",
+                "tip": "Book the morning flight when possible because domestic schedules can shift, and Sal is one of the easiest islands for onward international connections."
+              },
+              {
+                "name": "Airport transfer into Santa Maria by taxi or hotel shuttle",
+                "cost": "₹1,230–₹2,050"
+              },
+              {
+                "name": "Santa Maria Beach and pontoon walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Santa Maria salt-pastel streets and pier at sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ouril Hotel Julia",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Hotel Morabeza",
+                "budget": "₹15,500–₹27,500/night"
+              },
+              {
+                "name": "Hilton Cabo Verde Sal Resort",
+                "budget": "₹20,500–₹36,500/night"
+              }
+            ],
+            "meals": [
+              "Ocean Café",
+              "Cape Fruit",
+              "The Dubliner"
+            ]
+          },
+          {
+            "theme": "Pedra de Lume Salt Crater, Palmeira and Buracona",
+            "activities": [
+              {
+                "name": "Taxi or shared island tour to Pedra de Lume",
+                "cost": "₹820–₹2,460",
+                "tip": "If you go independently, combine Pedra de Lume with Palmeira and Buracona in the same loop to avoid paying for separate taxi runs."
+              },
+              {
+                "name": "Salinas de Pedra de Lume entry",
+                "cost": "₹410 pp",
+                "tip": "Foreign visitor entry is commonly 500 CVE, usually paid in cash, and includes access to the crater salt lake where you can float."
+              },
+              {
+                "name": "Palmeira harbour walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Buracona and Blue Eye coastal stop",
+                "cost": "₹246 pp",
+                "tip": "Adult entry is commonly 300 CVE; go near late morning for the clearest blue-light effect if the sea is calm."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ouril Hotel Julia",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Hotel Oasis Salinas Sea",
+                "budget": "₹14,500–₹25,500/night"
+              },
+              {
+                "name": "Hilton Cabo Verde Sal Resort",
+                "budget": "₹20,500–₹36,500/night"
+              }
+            ],
+            "meals": [
+              "Marea Restaurant",
+              "Ocean Café",
+              "Soul Kitchen"
+            ]
+          }
+        ]
+      },
+      "Mindelo (São Vicente)": {
+        "name": "Mindelo (São Vicente)",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Mindelo deserves two nights for its music-city atmosphere, Monte Verde views, and easy positioning before the early Santo Antão ferry.",
+        "days": [
+          {
+            "theme": "Flight to Mindelo, Waterfront Walks and Laginha Beach",
+            "activities": [
+              {
+                "name": "Binter Cabo Verde or TACV inter-island flight from Sal to São Vicente",
+                "cost": "₹4,900–₹8,900 pp",
+                "tip": "Allow buffer for checked bags because domestic connections and gate changes are not always tightly coordinated."
+              },
+              {
+                "name": "Avenida Marginal, Torre de Belém exterior and Praça Nova walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Laginha Beach swim",
+                "cost": "Free"
+              },
+              {
+                "name": "Mercado Municipal and Rua de Lisboa evening",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kira's Boutique Hotel",
+                "budget": "₹8,500–₹12,500/night"
+              },
+              {
+                "name": "Prassa 3 Boutique Hotel",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Ouril Mindelo",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Nautilus",
+              "Caravela Restaurante",
+              "Casa Café Mindelo"
+            ]
+          },
+          {
+            "theme": "Monte Verde Views and a Classic Mindelo Music Night",
+            "activities": [
+              {
+                "name": "Shared taxi or private ride to Monte Verde viewpoint",
+                "cost": "₹205–₹2,050",
+                "tip": "Go early for the clearest island views before haze builds over Mindelo Bay."
+              },
+              {
+                "name": "Centro Cultural do Mindelo or artisan gallery stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Baía das Gatas beach detour or waterfront café afternoon",
+                "cost": "₹410–₹2,460"
+              },
+              {
+                "name": "Live morna or coladeira evening in central Mindelo",
+                "cost": "₹410–₹1,230",
+                "tip": "Many venues have no formal cover but expect at least drinks or a small music-night minimum."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Solar Windelo",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Prassa 3 Boutique Hotel",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Four Points by Sheraton São Vicente Resort",
+                "budget": "₹14,500–₹25,500/night"
+              }
+            ],
+            "meals": [
+              "Taverna",
+              "Kalimba Beach Club",
+              "Nautilus"
+            ]
+          }
+        ]
+      },
+      "Santo Antão": {
+        "name": "Santo Antão",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "This is the hiking island, so keep two full days for the classic crater-to-valley scenery and one flexible village-and-viewpoint day if you have extra time.",
+        "days": [
+          {
+            "theme": "CV Interilhas Ferry, Cova Crater and the Paúl Valley Descent",
+            "activities": [
+              {
+                "name": "CV Interilhas ferry from Mindelo to Porto Novo",
+                "cost": "₹738–₹820 pp",
+                "tip": "The common one-way fare is about 900 CVE; buy ahead in busy periods and keep the morning sailing if you want a same-day hike."
+              },
+              {
+                "name": "Aluguer minibus from Porto Novo toward Cova or Paúl Valley trailheads",
+                "cost": "₹164–₹410 pp",
+                "tip": "Aluguers are the standard local transport on Santo Antão and usually leave only when enough seats are filled."
+              },
+              {
+                "name": "Guided Cova crater to Paúl Valley hike",
+                "cost": "₹2,870–₹4,100 pp",
+                "tip": "A licensed guide commonly runs 3,500-5,000 CVE for the day depending on route length and whether it is a shared or private booking."
+              },
+              {
+                "name": "Ponta do Sol or Paúl village evening walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tiduca Hotel",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Musica do Mar",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Hotel Santantao Art Resort",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Casa Maracujá",
+              "O Curral",
+              "Cantinho de Amizade"
+            ]
+          },
+          {
+            "theme": "Fontainhas, Delgadinho and a Scenic North-Coast Day",
+            "activities": [
+              {
+                "name": "Aluguer or taxi along the Ribeira Grande–Ponta do Sol–Fontainhas road",
+                "cost": "₹164–₹2,460",
+                "tip": "Short shared hops are cheap, but a taxi is easier if you want to stop repeatedly for photos along the cliff road."
+              },
+              {
+                "name": "Fontainhas village walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Delgadinho viewpoint stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Ribeira Grande or Porto Novo return ferry positioning",
+                "cost": "₹164–₹820",
+                "tip": "Use the evening to stage yourself for the next day's ferry or onward flight rather than trying to rush one more long hike."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kasa d'Vizin",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Black Mamba",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Musica do Mar",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "O Veleiro",
+              "Casa Maracujá",
+              "Cantinho de Amizade"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Praia (Santiago)",
+        "to": "Sal",
+        "method": "Binter Cabo Verde or TACV domestic flight, then taxi or hotel shuttle into Santa Maria.",
+        "cost": "₹6,100–₹10,900"
+      },
+      {
+        "from": "Sal",
+        "to": "Mindelo (São Vicente)",
+        "method": "Direct inter-island flight on Binter Cabo Verde or TACV; schedules are usually shorter and easier than routing back through Praia.",
+        "cost": "₹4,900–₹8,900"
+      },
+      {
+        "from": "Mindelo (São Vicente)",
+        "to": "Santo Antão",
+        "method": "CV Interilhas ferry to Porto Novo followed by an aluguer minibus or taxi to your valley or coast base.",
+        "cost": "₹902–₹1,230"
+      }
+    ],
+    "extras": [
+      "November through June is the cleanest weather window for this route; July-October is more humid and brings the highest chance of rain interruptions on Santiago and Santo Antão.",
+      "Domestic flights are the time-saver in Cape Verde, but keep at least a two- to three-hour buffer before international departures because schedule changes are not rare.",
+      "CV Interilhas ferries are essential for Santo Antão because the island has no airport; seas are often manageable, but wind and swell can still alter timings.",
+      "Aluguer minibuses are the backbone of local transport on Santiago and Santo Antão: fares are low, luggage space is limited, and having small CVE cash helps a lot.",
+      "For Santo Antão hiking, wear proper grip shoes and carry water and a light layer because trails can start cool at altitude and end hot down in the valleys."
+    ],
+    "cityImages": {
+      "Praia (Santiago)": [
+        "Plateau Praia Cape Verde",
+        "Cidade Velha Cape Verde",
+        "Fortaleza Real de Sao Filipe Cape Verde"
+      ],
+      "Sal": [
+        "Santa Maria Sal Cape Verde",
+        "Pedra de Lume Sal Cape Verde",
+        "Buracona Blue Eye Sal Cape Verde"
+      ],
+      "Mindelo (São Vicente)": [
+        "Mindelo waterfront Cape Verde",
+        "Laginha Beach Mindelo Cape Verde",
+        "Monte Verde Sao Vicente Cape Verde"
+      ],
+      "Santo Antão": [
+        "Cova crater Santo Antao Cape Verde",
+        "Paul Valley Santo Antao Cape Verde",
+        "Fontainhas Santo Antao Cape Verde"
+      ]
+    }
+  }
+}

@@ -1,0 +1,742 @@
+{
+  "name": "Venezuela",
+  "seed": false,
+  "lat": 6.42,
+  "lng": -66.59,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹2.2L–₹3.6L",
+    "couple": "₹4.1L–₹6.4L",
+    "family4": "₹8.1L–₹12.6L"
+  },
+  "experiences": [
+    "Caracas cable car & historic core",
+    "Canaima Lagoon & Angel Falls",
+    "Mérida Andean cable car",
+    "Los Roques cays by boat",
+    "Isla de Margarita beaches & Pampatar"
+  ],
+  "avoid": [
+    "May to November is wetter and less predictable for Canaima river runs, Los Roques boat days, and mountain views in Mérida.",
+    "Venezuela's safety and political situation remains fragile: avoid protests, do not use unregulated airport taxis, and keep intercity moves in daylight with hotel-arranged transfers where possible.",
+    "Domestic flight schedules, fuel availability, and card acceptance can change quickly, so carry backup cash in small notes and keep same-day slack before every island or park flight."
+  ],
+  "combo": [
+    "Colombia",
+    "Brazil"
+  ],
+  "landmark": "Angel Falls",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Caracas is the practical hub for Conviasa hops to Canaima, Los Roques, and Porlamar, so most multi-stop Venezuela itineraries work best as out-and-back spokes from the capital.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Caracas",
+      "lat": 10.4806,
+      "lng": -66.9036,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Main air hub for Venezuela, with the Warairarepano cable car, Bolívar-era landmarks, and the easiest base for onward domestic flights."
+    },
+    {
+      "name": "Canaima",
+      "lat": 6.241,
+      "lng": -62.854,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Remote Pemón gateway to Laguna de Canaima and Salto Ángel, where most stays bundle flights, meals, guides, and boat logistics."
+    },
+    {
+      "name": "Mérida",
+      "lat": 8.5897,
+      "lng": -71.1561,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Andean university city known for the Mukumbarí cable car, cool weather, markets, and easy mountain viewpoints."
+    },
+    {
+      "name": "Los Roques",
+      "lat": 11.95,
+      "lng": -66.67,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Gran Roque base for reef flats, white-sand cays, snorkeling, kitesurfing, and posada-based island logistics."
+    },
+    {
+      "name": "Isla de Margarita",
+      "lat": 10.9971,
+      "lng": -63.9113,
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "notes": "Beach-and-resort island around Porlamar and Pampatar, mixing Caribbean strands, castles, seafood, and easy domestic-flight access."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digitel is usually the easiest tourist SIM/eSIM option; expect roughly ₹830–₹1,660 for a small 4–10GB pack, but coverage weakens quickly in Canaima, offshore cays, and mountain roads, so download offline maps before leaving Caracas.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "Conviasa",
+      "Ridery",
+      "Yummy Rides",
+      "Booking.com",
+      "Google Translate",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Caracas",
+      "Canaima",
+      "Mérida",
+      "Los Roques",
+      "Isla de Margarita"
+    ],
+    "cities": {
+      "Caracas": {
+        "name": "Caracas",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Stay in Altamira, Los Palos Grandes, or La Castellana, use hotel-booked cars or app rides after dark, and avoid flashing valuables around bus terminals or airport ATMs.",
+        "days": [
+          {
+            "theme": "Warairarepano & the Historic Center",
+            "activities": [
+              {
+                "name": "Teleférico Warairarepano round trip (international tourist fare)",
+                "cost": "₹2,490"
+              },
+              {
+                "name": "Plaza Bolívar, Catedral de Caracas, and Casa Natal del Libertador"
+              },
+              {
+                "name": "Paseo at Hotel Humboldt viewpoints or Galipán ridge stops"
+              },
+              {
+                "name": "Museo de Bellas Artes or nearby Parque Los Caobos"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "JW Marriott Hotel Caracas",
+                "budget": "₹16,000–₹24,000/night"
+              },
+              {
+                "name": "Eurobuilding Hotel & Suites Caracas",
+                "budget": "₹18,000–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Alto",
+              "La Cita",
+              "Mola"
+            ]
+          },
+          {
+            "theme": "East Caracas Parks & Dining",
+            "activities": [
+              {
+                "name": "Parque Generalísimo Francisco de Miranda morning walk"
+              },
+              {
+                "name": "Centro de Arte Los Galpones galleries and coffee stops"
+              },
+              {
+                "name": "Museo de Arte Contemporáneo de Caracas"
+              },
+              {
+                "name": "Evening in Las Mercedes with hotel-arranged return transfer"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Renaissance Caracas La Castellana Hotel",
+                "budget": "₹17,000–₹25,000/night"
+              },
+              {
+                "name": "Eurobuilding Hotel & Suites Caracas",
+                "budget": "₹18,000–₹28,000/night"
+              }
+            ],
+            "meals": [
+              "Maute Grill",
+              "La Isabela",
+              "El Alazán de Altamira"
+            ]
+          }
+        ]
+      },
+      "Canaima": {
+        "name": "Canaima",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 3,
+        "note": "Book full-board lodges or a verified operator before flying in, carry the national park fee in cash, and keep an extra buffer day because wind and river levels can shift Salto Ángel departures.",
+        "days": [
+          {
+            "theme": "Laguna de Canaima Arrival",
+            "activities": [
+              {
+                "name": "Canaima National Park foreign visitor entry",
+                "cost": "₹3,320"
+              },
+              {
+                "name": "Laguna de Canaima curiara ride and El Sapo or El Hacha waterfall walk",
+                "cost": "₹4,150–₹6,640"
+              },
+              {
+                "name": "Laguna beach sunset under the tepuis"
+              },
+              {
+                "name": "Pemón craft stalls near the lagoon"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Waku Lodge",
+                "budget": "₹28,000–₹42,000/night incl. meals"
+              },
+              {
+                "name": "Campamento Canaima",
+                "budget": "₹24,000–₹36,000/night incl. meals"
+              }
+            ],
+            "meals": [
+              "Waku Lodge Restaurant",
+              "Campamento Canaima dining room",
+              "Tapuy Lodge restaurant"
+            ]
+          },
+          {
+            "theme": "Angel Falls Expedition",
+            "activities": [
+              {
+                "name": "Shared Salto Ángel river expedition from Canaima",
+                "cost": "₹12,450–₹20,750"
+              },
+              {
+                "name": "Curiara ride up the Carrao and Churún rivers"
+              },
+              {
+                "name": "Mirador Laime trek for the classic Angel Falls view"
+              },
+              {
+                "name": "Hammock-camp night or simple jungle lodge depending on river level"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Waku Lodge",
+                "budget": "₹28,000–₹42,000/night incl. meals"
+              },
+              {
+                "name": "Tapuy Lodge",
+                "budget": "₹22,000–₹34,000/night incl. meals"
+              }
+            ],
+            "meals": [
+              "Waku Lodge Restaurant",
+              "Tapuy Lodge restaurant",
+              "Campamento Canaima dining room"
+            ]
+          },
+          {
+            "theme": "Scenic Buffer & Tepui Views",
+            "activities": [
+              {
+                "name": "Optional helicopter or scenic overflight over the tepuis",
+                "cost": "₹6,640–₹9,960"
+              },
+              {
+                "name": "Easy canoeing and photography around Laguna de Canaima"
+              },
+              {
+                "name": "Free time for weather delays before the return flight"
+              },
+              {
+                "name": "Lodge-guided stargazing if skies stay clear"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Waku Lodge",
+                "budget": "₹28,000–₹42,000/night incl. meals"
+              },
+              {
+                "name": "Campamento Canaima",
+                "budget": "₹24,000–₹36,000/night incl. meals"
+              }
+            ],
+            "meals": [
+              "Waku Lodge Restaurant",
+              "Campamento Canaima dining room",
+              "Tapuy Lodge restaurant"
+            ]
+          }
+        ]
+      },
+      "Mérida": {
+        "name": "Mérida",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Bring layers for cool evenings, pre-check Teleférico Mukumbarí operating days before arriving, and use registered taxis or por puestos for side trips to Jají or mountain viewpoints.",
+        "days": [
+          {
+            "theme": "Mukumbarí & the Old Center",
+            "activities": [
+              {
+                "name": "Teleférico Mukumbarí foreign visitor ticket",
+                "cost": "₹3,320"
+              },
+              {
+                "name": "Plaza Las Heroínas and Mérida cathedral quarter"
+              },
+              {
+                "name": "Mercado Principal de Mérida snacks and produce walk"
+              },
+              {
+                "name": "Evening stop at Heladería Coromoto"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel La Pedregosa",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Posada Casa Sol",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Heladería Coromoto",
+              "Casa Solar",
+              "El Arado"
+            ]
+          },
+          {
+            "theme": "Jají Village & Andean Food Day",
+            "activities": [
+              {
+                "name": "Por puesto or registered taxi round trip to Jají",
+                "cost": "₹830–₹1,660"
+              },
+              {
+                "name": "Jají colonial square and mountain viewpoints"
+              },
+              {
+                "name": "Museo Arquidiocesano or city-center church circuit"
+              },
+              {
+                "name": "Slow afternoon back in Mérida for cafés and artisan shops"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel La Pedregosa",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Posada Casa Sol",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Tía Nicota",
+              "Casa Solar",
+              "Heladería Coromoto"
+            ]
+          },
+          {
+            "theme": "Mucuchíes High-Andes Extension",
+            "activities": [
+              {
+                "name": "Shared car or por puesto toward Mucuchíes and páramo viewpoints",
+                "cost": "₹1,660–₹2,490"
+              },
+              {
+                "name": "Capilla de Piedra de Juan Félix Sánchez"
+              },
+              {
+                "name": "Local trucha lunch in the highlands"
+              },
+              {
+                "name": "Return before dusk because mountain weather changes fast"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel La Pedregosa",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Posada Casa Sol",
+                "budget": "₹4,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "El Arado",
+              "Heladería Coromoto",
+              "Casa Solar"
+            ]
+          }
+        ]
+      },
+      "Los Roques": {
+        "name": "Los Roques",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Most posadas on Gran Roque include breakfast and dinner, boats leave early around wind and tide, and you should reconfirm baggage limits because light-aircraft allowances are strict.",
+        "days": [
+          {
+            "theme": "Gran Roque Arrival & Nearby Cays",
+            "activities": [
+              {
+                "name": "Conviasa Caracas–Los Roques round-trip flight",
+                "cost": "₹22,700"
+              },
+              {
+                "name": "Boat hop to Madrisquí or Francisquí",
+                "cost": "₹2,490–₹4,150"
+              },
+              {
+                "name": "Snorkel straight off the beach in calm conditions"
+              },
+              {
+                "name": "Gran Roque lighthouse sunset walk"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Posada Acuarela",
+                "budget": "₹18,000–₹28,000/night incl. breakfast"
+              },
+              {
+                "name": "Posada Caracol",
+                "budget": "₹16,000–₹24,000/night incl. breakfast"
+              }
+            ],
+            "meals": [
+              "Aquarena",
+              "Bora La Mar",
+              "Restaurante Caribeaquí"
+            ]
+          },
+          {
+            "theme": "Cayo de Agua or Crasquí Day",
+            "activities": [
+              {
+                "name": "Full-day lancha to Cayo de Agua or Crasquí with beach time",
+                "cost": "₹4,980–₹9,130"
+              },
+              {
+                "name": "Snorkel gear rental",
+                "cost": "₹830–₹1,660"
+              },
+              {
+                "name": "Fresh seafood lunch arranged by your posada or boat crew"
+              },
+              {
+                "name": "Evening lobster or catch-of-the-day dinner back on Gran Roque"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Posada Movida",
+                "budget": "₹17,000–₹26,000/night incl. breakfast"
+              },
+              {
+                "name": "Posada Acuarela",
+                "budget": "₹18,000–₹28,000/night incl. breakfast"
+              }
+            ],
+            "meals": [
+              "El Canto de la Ballena",
+              "Aquarena",
+              "Play Los Roques - Bar & Restaurante & Kite Center"
+            ]
+          },
+          {
+            "theme": "Wind Backup & Gran Roque Slow Day",
+            "activities": [
+              {
+                "name": "Short boat run to Noronquí or quiet beach if weather allows",
+                "cost": "₹2,490–₹4,150"
+              },
+              {
+                "name": "Kitesurf or paddle add-on in season",
+                "cost": "₹3,320–₹6,640"
+              },
+              {
+                "name": "Stroll village lanes and artisan shops around Plaza Bolívar"
+              },
+              {
+                "name": "Use this as a buffer if flights or boats shift with wind"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Posada Caracol",
+                "budget": "₹16,000–₹24,000/night incl. breakfast"
+              },
+              {
+                "name": "Posada Movida",
+                "budget": "₹17,000–₹26,000/night incl. breakfast"
+              }
+            ],
+            "meals": [
+              "Bora La Mar",
+              "Restaurante Caribeaquí",
+              "Aquarena"
+            ]
+          }
+        ]
+      },
+      "Isla de Margarita": {
+        "name": "Isla de Margarita",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 4,
+        "note": "Base yourself around Pampatar, Costa Azul, or a full-service beach resort, pre-arrange airport transfers, and keep beach days flexible if domestic flights shift on the Caracas leg.",
+        "days": [
+          {
+            "theme": "Pampatar, Castle & Beach",
+            "activities": [
+              {
+                "name": "Castillo San Carlos de Borromeo and Pampatar seafront"
+              },
+              {
+                "name": "Playa El Agua or Playa Parguito beach day"
+              },
+              {
+                "name": "Pampatar sunset boardwalk and old quarter"
+              },
+              {
+                "name": "Hotel-arranged taxi hops between beach zones"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hesperia Isla Margarita",
+                "budget": "₹10,000–₹16,000/night"
+              },
+              {
+                "name": "Wyndham Concorde Resort Isla Margarita",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Casa Caranta",
+              "Portarossa",
+              "El Remo"
+            ]
+          },
+          {
+            "theme": "El Valle & Parque El Agua",
+            "activities": [
+              {
+                "name": "Parque El Agua admission",
+                "cost": "₹1,330–₹1,660"
+              },
+              {
+                "name": "Basílica Menor de Nuestra Señora del Valle"
+              },
+              {
+                "name": "La Asunción historic center and Castillo Santa Rosa"
+              },
+              {
+                "name": "Evening seafood dinner back in Pampatar"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hesperia Isla Margarita",
+                "budget": "₹10,000–₹16,000/night"
+              },
+              {
+                "name": "Lidotel Margarita",
+                "budget": "₹8,000–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Portarossa",
+              "El Remo",
+              "Casa Caranta"
+            ]
+          },
+          {
+            "theme": "Porlamar Resort Buffer",
+            "activities": [
+              {
+                "name": "Conviasa Caracas–Porlamar round-trip flight",
+                "cost": "₹14,940"
+              },
+              {
+                "name": "Costa Azul or Playa Moreno easy swim day"
+              },
+              {
+                "name": "Sambil Margarita shopping or café stop"
+              },
+              {
+                "name": "Use as a spare day for weather or flight padding"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Wyndham Concorde Resort Isla Margarita",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Lidotel Margarita",
+                "budget": "₹8,000–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Casa Caranta",
+              "El Remo",
+              "Portarossa"
+            ]
+          },
+          {
+            "theme": "Macanao Peninsula Extension",
+            "activities": [
+              {
+                "name": "Registered taxi day trip toward Punta Arenas and the Macanao side",
+                "cost": "₹3,320–₹5,810"
+              },
+              {
+                "name": "Quiet beach time away from the Porlamar strip"
+              },
+              {
+                "name": "Seafood lunch en route"
+              },
+              {
+                "name": "Return before dark on the quieter roads"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hesperia Isla Margarita",
+                "budget": "₹10,000–₹16,000/night"
+              },
+              {
+                "name": "Wyndham Concorde Resort Isla Margarita",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "El Remo",
+              "Portarossa",
+              "Casa Caranta"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Caracas",
+        "to": "Canaima",
+        "method": "Direct Conviasa flight from Caracas to Canaima (about 1h 5m), usually with strict baggage limits and only a few operating days each week",
+        "cost": "₹23,820–₹24,900"
+      },
+      {
+        "from": "Canaima",
+        "to": "Mérida",
+        "method": "Return flight from Canaima to Caracas, then continue by SITSSA overnight bus to Mérida or by a domestic flight toward El Vigía plus road transfer",
+        "cost": "₹26,060–₹34,860"
+      },
+      {
+        "from": "Mérida",
+        "to": "Los Roques",
+        "method": "SITSSA bus or por puesto back toward Caracas, then Conviasa or charter flight onward to Los Roques; keep a night in Caracas if you do not want a risky same-day connection",
+        "cost": "₹24,940–₹28,510"
+      },
+      {
+        "from": "Los Roques",
+        "to": "Isla de Margarita",
+        "method": "Fly back to Caracas from Gran Roque, then connect to Porlamar on Conviasa; this is usually an all-day transfer and works best with a schedule buffer",
+        "cost": "₹29,570–₹37,640"
+      }
+    ],
+    "extras": [
+      "Best timing is December to April for the driest mix across Canaima, Los Roques, and the Mérida highlands; shoulder-season showers are workable but make boat days and mountain views less reliable.",
+      "Travel advisory: Venezuela remains a high-risk destination because crime, political unrest, and limited healthcare can affect plans quickly. Recheck current government advisories before departure, avoid demonstrations, and use only registered transfers or hotel-arranged taxis, especially around Maiquetía airport.",
+      "Domestic tourism is heavily dollarized, but card terminals and mobile data fail often; carry cash in small USD notes and expect some fees to be settled at the day's bolívar exchange rate.",
+      "Conviasa flights are practical for Canaima, Los Roques, and Porlamar, yet schedules can move with demand, weather, or operational changes, so avoid tight same-day international connections.",
+      "Long-distance buses remain the cheapest way to reach Mérida, while por puesto shared taxis are useful for short regional hops like Jají or Mucuchíes when you want more flexibility than scheduled buses.",
+      "Pack strong sun protection for the islands, a light rain shell for Canaima spray and sudden storms, and mosquito repellent for lagoon and jungle nights."
+    ],
+    "cityImages": {
+      "Caracas": [
+        "Teleférico Warairarepano Caracas",
+        "Plaza Bolívar Caracas historic center",
+        "Hotel Humboldt viewpoint Caracas"
+      ],
+      "Canaima": [
+        "Laguna de Canaima waterfalls",
+        "Angel Falls Venezuela viewpoint",
+        "Tepuis over Canaima National Park"
+      ],
+      "Mérida": [
+        "Teleférico Mukumbarí Mérida",
+        "Plaza Las Heroínas Mérida",
+        "Jají village Mérida Andes"
+      ],
+      "Los Roques": [
+        "Gran Roque lighthouse sunset",
+        "Cayo de Agua Los Roques",
+        "Francisquí beach Los Roques"
+      ],
+      "Isla de Margarita": [
+        "Pampatar seafront Isla de Margarita",
+        "Playa El Agua Margarita",
+        "Castillo San Carlos de Borromeo"
+      ]
+    }
+  }
+}

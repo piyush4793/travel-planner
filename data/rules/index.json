@@ -295,9 +295,9 @@
     "lng": 59.56,
     "region": "Asia",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Greece",
@@ -995,9 +995,9 @@
     "lng": 1.66,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 15
   },
   {
     "name": "Libya",
@@ -1465,9 +1465,9 @@
     "lng": -24.01,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 10
   },
   {
     "name": "São Tomé and Príncipe",
@@ -1585,9 +1585,9 @@
     "lng": -66.59,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 11,
+    "maxDays": 15
   },
   {
     "name": "Paraguay",
@@ -1595,9 +1595,9 @@
     "lng": -58.44,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 10
   },
   {
     "name": "Uruguay",

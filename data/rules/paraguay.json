@@ -1,0 +1,448 @@
+{
+  "name": "Paraguay",
+  "seed": false,
+  "lat": -23.44,
+  "lng": -58.44,
+  "region": "Americas",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "December",
+    "January",
+    "February"
+  ],
+  "budget": {
+    "solo": "₹95,000–₹1.55L",
+    "couple": "₹1.7L–₹2.75L",
+    "family4": "₹3.4L–₹5.3L"
+  },
+  "experiences": [
+    "Asunción heritage core & riverside",
+    "Jesuit Missions of Trinidad & Jesús from Encarnación",
+    "Itaipu Dam and Triple Frontier edge",
+    "Paraguayan Chaco Mennonite culture in Filadelfia",
+    "Tereré culture, grills, and relaxed inland road trips"
+  ],
+  "avoid": [
+    "December to February is the hottest, muggiest stretch, and the Chaco can feel brutally dry and above 40°C in the afternoon.",
+    "Heavy rain can slow Chaco road travel and make long self-drive days tiring, especially if you are trying to connect Filadelfia with eastern Paraguay in one shot.",
+    "Ciudad del Este border traffic around Foz do Iguaçu can be chaotic on weekends and holidays, so keep buffers before flights or long bus legs."
+  ],
+  "combo": [
+    "Brazil",
+    "Argentina"
+  ],
+  "landmark": "Jesuit Missions of La Santísima Trinidad de Paraná",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Fits neatly with Iguazú / Foz do Iguaçu, or with Argentina's Misiones province if you want a wider Jesuit-history loop.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Asunción",
+      "lat": -25.2637,
+      "lng": -57.5759,
+      "notes": "Historic center for the Panteón, riverfront walks, traditional bars, and the easiest entry point for buses, taxis, and rental cars."
+    },
+    {
+      "name": "Encarnación",
+      "lat": -27.3306,
+      "lng": -55.8667,
+      "notes": "Paraná river promenade base for Playa San José and the best launch point for the Jesuit missions at Trinidad and Jesús."
+    },
+    {
+      "name": "Ciudad del Este",
+      "lat": -25.5167,
+      "lng": -54.6167,
+      "notes": "Busy Triple Frontier city for Itaipu, shopping, and easy onward links to Foz do Iguaçu plus nearby natural viewpoints."
+    },
+    {
+      "name": "Chaco (Filadelfia)",
+      "lat": -22.3394,
+      "lng": -60.0316,
+      "notes": "Dry western Paraguay stop for Mennonite museums, broad-road Chaco landscapes, and birding or national-park style day drives."
+    }
+  ],
+  "itinerary": {
+    "sim": "Tigo and Personal prepago are the easiest tourist SIM choices; expect roughly ₹550–₹1,100 for a practical short-stay data pack. Signal is reliable in Asunción, Encarnación, and Ciudad del Este, but download maps before long Chaco drives because coverage becomes patchy outside Filadelfia.",
+    "apps": [
+      "WhatsApp",
+      "Google Maps",
+      "Booking.com",
+      "inDrive",
+      "Bolt",
+      "Moovit",
+      "Google Translate",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Asunción",
+      "Encarnación",
+      "Ciudad del Este",
+      "Chaco (Filadelfia)"
+    ],
+    "cities": {
+      "Asunción": {
+        "name": "Asunción",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay in Villa Morra or the historic center if you want easier taxi hops between museums, restaurants, and the riverside. Asunción is compact enough for short taxi rides, but the center is best explored on foot in the morning before the heat builds.",
+        "days": [
+          {
+            "theme": "Historic Core, Panteón & Costanera",
+            "activities": [
+              {
+                "name": "Panteón Nacional de los Héroes and surrounding Palma Street walk",
+                "cost": "Free entry"
+              },
+              {
+                "name": "Casa de la Independencia and Palacio de López exterior circuit"
+              },
+              {
+                "name": "Centro Cultural El Cabildo or Museo Casa de la Independencia stop"
+              },
+              {
+                "name": "Golden-hour stroll on the Costanera de Asunción"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Palmaroga Hotel Asuncion, Tapestry Collection by Hilton",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Dazzler by Wyndham Asuncion",
+                "budget": "₹6,000–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Lido Bar",
+              "Bolsi",
+              "Tierra Colorada Gastro"
+            ]
+          },
+          {
+            "theme": "Ñu Guasú, Museums & Modern Asunción",
+            "activities": [
+              {
+                "name": "Parque Ñu Guasú walking or cycling loop",
+                "cost": "Free entry"
+              },
+              {
+                "name": "Taxi ride between central Asunción and Ñu Guasú / airport side",
+                "cost": "₹550–₹1,100 return"
+              },
+              {
+                "name": "Museo del Barro for Paraguayan folk and contemporary art"
+              },
+              {
+                "name": "Sunset drinks or dinner around Villa Morra and Paseo La Galería"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "La Mision Hotel Boutique",
+                "budget": "₹8,500–₹14,000/night"
+              },
+              {
+                "name": "Esplendor by Wyndham Asuncion",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Lo de Osvaldo",
+              "El Café de Acá",
+              "Pakuri"
+            ]
+          }
+        ]
+      },
+      "Encarnación": {
+        "name": "Encarnación",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Encarnación works best with one city day and one missions day. Stay near the Costanera so you can walk the waterfront, then decide between a taxi/driver or rental car for the Jesuit ruins loop.",
+        "days": [
+          {
+            "theme": "Costanera, Playa San José & Riverside Evening",
+            "activities": [
+              {
+                "name": "Costanera de Encarnación walk and Playa San José break"
+              },
+              {
+                "name": "Plaza de Armas and Catedral de Encarnación"
+              },
+              {
+                "name": "Short taxi hops between the waterfront, downtown, and hotel zone",
+                "cost": "₹220–₹660"
+              },
+              {
+                "name": "Evening riverfront cafés and the Sambódromo surroundings"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Carnaval Hotel Casino",
+                "budget": "₹7,000–₹11,500/night"
+              },
+              {
+                "name": "Savoy Hotel Encarnación",
+                "budget": "₹6,500–₹10,500/night"
+              }
+            ],
+            "meals": [
+              "Milord",
+              "Parrilla Restaurant San Pedro",
+              "Hiroshima Sushi Bar"
+            ]
+          },
+          {
+            "theme": "Jesuit Missions of Trinidad & Jesús",
+            "activities": [
+              {
+                "name": "Jesuit Missions of La Santísima Trinidad de Paraná and Jesús de Tavarangue combined ticket",
+                "cost": "₹440 (40,000 PYG foreign visitor rate)"
+              },
+              {
+                "name": "Taxi, private driver, or rental-car run from Encarnación to the mission sites",
+                "cost": "₹2,800–₹6,000"
+              },
+              {
+                "name": "UNESCO site walks through the main plazas, church façades, and mission remains"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Luxsur",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Carnaval Hotel Casino",
+                "budget": "₹7,000–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Umami Asian Cuisine",
+              "Milord",
+              "La Casa de Óscar"
+            ]
+          }
+        ]
+      },
+      "Ciudad del Este": {
+        "name": "Ciudad del Este",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Base near the downtown river side or closer to Hernandarias if Itaipu is your priority. Traffic can be intense, so start early for Itaipu and keep border-crossing plans separate from the sightseeing day.",
+        "days": [
+          {
+            "theme": "Itaipu, Hernandarias & Frontier Views",
+            "activities": [
+              {
+                "name": "Itaipu Binacional panoramic visitor tour",
+                "cost": "Free entry"
+              },
+              {
+                "name": "Taxi or app ride between central Ciudad del Este and Itaipu visitor center in Hernandarias",
+                "cost": "₹880–₹1,650 return"
+              },
+              {
+                "name": "Costanera Hernandarias or nearby river viewpoints after the dam visit"
+              },
+              {
+                "name": "Evening food stop back in Ciudad del Este"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Rio Hotel by Bourbon Ciudad del Este",
+                "budget": "₹5,500–₹8,500/night"
+              },
+              {
+                "name": "Hotel Casino Acaray",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Mango Restaurante",
+              "Capitão Bar",
+              "Pizzeria Paulista"
+            ]
+          },
+          {
+            "theme": "Templo Budista, Monday Falls & Shopping",
+            "activities": [
+              {
+                "name": "Templo Budista Chen Tien visit for hillside city views"
+              },
+              {
+                "name": "Saltos del Monday nature stop in Presidente Franco"
+              },
+              {
+                "name": "Taxi circuit or half-day rental car for Presidente Franco and downtown shopping districts",
+                "cost": "₹1,100–₹3,800"
+              },
+              {
+                "name": "Shopping del Este or Monalisa area browse if you want a lighter afternoon"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Howard Johnson Ciudad del Este",
+                "budget": "₹5,000–₹8,000/night"
+              },
+              {
+                "name": "Hotel Casino Acaray",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "SAX Palace",
+              "Mango Restaurante",
+              "Armazém 77"
+            ]
+          }
+        ]
+      },
+      "Chaco (Filadelfia)": {
+        "name": "Chaco (Filadelfia)",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Filadelfia is best with a rental car because distances are longer and the best Chaco stops are spread out. Keep fuel topped up, carry water, and front-load outdoor visits into the cooler morning hours.",
+        "days": [
+          {
+            "theme": "Mennonite Heritage & Filadelfia Town Stops",
+            "activities": [
+              {
+                "name": "Museo Histórico y de Historia Natural Fernheim"
+              },
+              {
+                "name": "Museo Jakob Unger"
+              },
+              {
+                "name": "Monumento de la Paz del Chaco and central Filadelfia walk"
+              },
+              {
+                "name": "Local taxi or short self-drive hops around Filadelfia",
+                "cost": "₹330–₹1,100"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Florida",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel Campo'í",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Flor de Coco",
+              "Churrasquería Don Alfredo",
+              "Restaurant Hotel Florida"
+            ]
+          },
+          {
+            "theme": "Chaco Nature Drive or Teniente Enciso Day Trip",
+            "activities": [
+              {
+                "name": "Rental car day for birding roads, estancia scenery, or the long-run option toward Parque Nacional Teniente Enciso",
+                "cost": "₹3,800–₹6,500/day"
+              },
+              {
+                "name": "Slow tereré and café stop back in Filadelfia after the drive"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hotel Florida",
+                "budget": "₹4,500–₹7,500/night"
+              },
+              {
+                "name": "Hotel Campo'í",
+                "budget": "₹5,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Flor de Coco",
+              "Churrasquería Don Alfredo",
+              "Restaurant Hotel Florida"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Asunción",
+        "to": "Encarnación",
+        "method": "Intercity bus from the Terminal de Ómnibus de Asunción is the standard 5.5–6.5 hr run; taxis are only practical to the terminal, while a rental car gives flexibility for stops on Ruta PY01",
+        "cost": "₹1,800–₹3,500"
+      },
+      {
+        "from": "Encarnación",
+        "to": "Ciudad del Este",
+        "method": "Intercity buses cover the 4–5 hr eastern hop; a rental car is faster if you want to add small stops between Itapúa and Alto Paraná",
+        "cost": "₹1,500–₹2,800"
+      },
+      {
+        "from": "Ciudad del Este",
+        "to": "Asunción",
+        "method": "Long-distance bus is the usual 5–6 hr reset before heading west; private transfers are expensive, so most travelers either bus or self-drive",
+        "cost": "₹1,700–₹3,300"
+      },
+      {
+        "from": "Asunción",
+        "to": "Chaco (Filadelfia)",
+        "method": "Daily intercity buses and rental cars both work for the 5–6 hr Trans-Chaco leg, but a rental car is much more useful once you start exploring beyond Filadelfia town",
+        "cost": "₹1,800–₹6,500"
+      },
+      {
+        "from": "Foz do Iguaçu / Puerto Iguazú",
+        "to": "Ciudad del Este",
+        "method": "Taxi, rideshare, or short cross-border bus links make Ciudad del Este the easiest Paraguay add-on from the wider Iguazú region",
+        "cost": "₹550–₹2,200"
+      }
+    ],
+    "extras": [
+      "May to September is the sweet spot because days are drier and cooler, which matters most in Asunción afternoons and even more on Chaco road trips.",
+      "The Jesuit missions ticket covers both Trinidad and Jesús, so try to leave Encarnación early enough to enjoy the sites before the harshest midday heat.",
+      "Itaipu's standard panoramic tour is free, but reserve ahead when possible because slots can fill on weekends and holiday periods.",
+      "Keep small cash reserves for buses, kiosks, and simpler Chaco stops even though cards are widely accepted in bigger hotels and restaurants in the east.",
+      "If you are short on time, keep Asunción plus Encarnación as the cultural core, add Ciudad del Este for Itaipu, and treat Filadelfia as the deeper overland extension."
+    ],
+    "cityImages": {
+      "Asunción": [
+        "Panteón Nacional de los Héroes Asunción",
+        "Costanera de Asunción sunset",
+        "Palacio de López Paraguay"
+      ],
+      "Encarnación": [
+        "Costanera de Encarnación Paraguay",
+        "Jesuit Missions Trinidad Paraguay",
+        "Playa San José Encarnación"
+      ],
+      "Ciudad del Este": [
+        "Itaipu Dam Paraguay visitor tour",
+        "Templo Budista Chen Tien Ciudad del Este",
+        "Saltos del Monday Paraguay"
+      ],
+      "Chaco (Filadelfia)": [
+        "Filadelfia Paraguay Chaco",
+        "Museo Jakob Unger Filadelfia",
+        "Parque Nacional Teniente Enciso Paraguay"
+      ]
+    }
+  }
+}

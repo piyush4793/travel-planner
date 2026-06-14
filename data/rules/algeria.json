@@ -1,0 +1,583 @@
+{
+  "name": "Algeria",
+  "seed": false,
+  "lat": 28.03,
+  "lng": 1.66,
+  "region": "Africa",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹95K–₹1.45L",
+    "couple": "₹1.7L–₹2.6L",
+    "family4": "₹3.25L–₹4.9L"
+  },
+  "experiences": [
+    "Ottoman Casbahs",
+    "Roman Ruins",
+    "Bridge City Views",
+    "M'zab Ksar Life",
+    "Sahara Rock Art"
+  ],
+  "avoid": [
+    "June-August heat is exhausting in Ghardaia and Djanet, with desert excursions becoming hard work by late morning.",
+    "Tassili trips need a guide, permit, and plenty of cash, so last-minute DIY planning rarely works well.",
+    "Domestic flight timings and long-distance bus departures can shift, so reconfirm Air Algérie sectors and station timings the day before."
+  ],
+  "combo": [
+    "Tunisia",
+    "Morocco"
+  ],
+  "landmark": "Tassili n'Ajjer",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Algiers Houari Boumediene is the simplest gateway from India; keep the north-coast cities together by train or domestic flight before committing to the longer Sahara legs south.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Algiers",
+      "lat": 36.7538,
+      "lng": 3.0588,
+      "notes": "UNESCO-listed Casbah lanes, Bastion 23, Hamma gardens, sea views, and the country's biggest transport hub."
+    },
+    {
+      "name": "Oran",
+      "lat": 35.6981,
+      "lng": -0.6348,
+      "notes": "Santa Cruz fortress, rai-music heritage, waterfront boulevards, and a relaxed Mediterranean energy."
+    },
+    {
+      "name": "Constantine",
+      "lat": 36.365,
+      "lng": 6.6147,
+      "notes": "Dramatic suspension bridges, Ahmed Bey-era heritage, and the best base for Djémila and Timgad day trips."
+    },
+    {
+      "name": "Ghardaia (M'zab Valley)",
+      "lat": 32.4909,
+      "lng": 3.6735,
+      "notes": "A UNESCO oasis valley of clay ksour, palm groves, austere mosques, and traditional Mozabite market culture."
+    },
+    {
+      "name": "Tassili n'Ajjer (Djanet)",
+      "lat": 24.5542,
+      "lng": 9.4845,
+      "notes": "Tuareg gateway to Erg Admer, sandstone arches, and some of the Sahara's most important prehistoric cave paintings."
+    }
+  ],
+  "itinerary": {
+    "sim": "Djezzy, Mobilis, and Ooredoo Algeria sell airport or city-centre SIMs; expect roughly ₹610–₹1,830 for around 10–30GB, while an eSIM backup is helpful if you land late or connect onward quickly.",
+    "apps": [
+      "Air Algérie",
+      "SNTF",
+      "Yassir",
+      "Google Maps",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Algiers",
+      "Oran",
+      "Constantine",
+      "Ghardaia (M'zab Valley)",
+      "Tassili n'Ajjer (Djanet)"
+    ],
+    "cities": {
+      "Algiers": {
+        "name": "Algiers",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Casbah Lanes, Ottoman Palaces & Bay Views",
+            "activities": [
+              {
+                "name": "Casbah of Algiers heritage walk",
+                "cost": "₹0–₹122",
+                "tip": "The UNESCO quarter itself has no central turnstile; public lanes are free, while some palace-house entries or symbolic local access contributions run up to about 200 DZD."
+              },
+              {
+                "name": "Ketchaoua Mosque and Place des Martyrs stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Palais des Raïs (Bastion 23) courtyards and seafront exterior",
+                "cost": "₹0–₹122"
+              },
+              {
+                "name": "Notre Dame d'Afrique viewpoint",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "El Aurassi Hotel",
+                "budget": "₹12,000–₹18,000/night"
+              },
+              {
+                "name": "Lamaraz Arts Hotel",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Sofitel Algiers Hamma Garden",
+                "budget": "₹16,500–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "Restaurant El Djenina",
+              "Restaurant Signature",
+              "Taj Mahal"
+            ]
+          },
+          {
+            "theme": "Gardens, Memorials & Slow Central Algiers",
+            "activities": [
+              {
+                "name": "Jardin d'Essai du Hamma",
+                "cost": "₹61–₹122"
+              },
+              {
+                "name": "Martyrs' Memorial esplanade",
+                "cost": "₹0"
+              },
+              {
+                "name": "Grande Poste and boulevard walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Seafront coffee around the waterfront",
+                "cost": "₹122–₹305"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lamaraz Arts Hotel",
+                "budget": "₹9,500–₹14,500/night"
+              },
+              {
+                "name": "Sofitel Algiers Hamma Garden",
+                "budget": "₹16,500–₹24,000/night"
+              }
+            ],
+            "meals": [
+              "The Brunch Box",
+              "Caracoya",
+              "Restaurant El Djenina"
+            ]
+          }
+        ]
+      },
+      "Oran": {
+        "name": "Oran",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Santa Cruz Heights, Seafront Air & Colonial Core",
+            "activities": [
+              {
+                "name": "Fort Santa Cruz",
+                "cost": "₹0"
+              },
+              {
+                "name": "Chapelle de Santa Cruz",
+                "cost": "₹0"
+              },
+              {
+                "name": "Place du 1er Novembre and city-centre stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Front de Mer sunset promenade",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Royal Hotel Oran - MGallery Collection",
+                "budget": "₹9,000–₹14,000/night"
+              },
+              {
+                "name": "Four Points by Sheraton Oran",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Le Méridien Oran Hotel & Convention Centre",
+                "budget": "₹12,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Le Ciel d'Oran",
+              "La Comète",
+              "Ambiance La Pyramide"
+            ]
+          }
+        ]
+      },
+      "Constantine": {
+        "name": "Constantine",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "days": [
+          {
+            "theme": "Suspension Bridges, Clifftop Views & Old Constantine",
+            "activities": [
+              {
+                "name": "Sidi M'Cid Bridge walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Mellah Slimane footbridge viewpoints",
+                "cost": "₹0"
+              },
+              {
+                "name": "Palace of Ahmed Bey exterior and old-city lanes",
+                "cost": "₹0–₹122"
+              },
+              {
+                "name": "Emir Abdelkader Mosque exterior stop",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Novotel Constantine",
+                "budget": "₹8,000–₹11,500/night"
+              },
+              {
+                "name": "Constantine Marriott Hotel",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Hotel El Bey Constantine",
+                "budget": "₹6,000–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurant El Arz",
+              "Le Bardo",
+              "Cirta"
+            ]
+          },
+          {
+            "theme": "UNESCO Day Trip to Djémila",
+            "activities": [
+              {
+                "name": "Djémila archaeological site and museum",
+                "cost": "₹122–₹305",
+                "tip": "Recent traveler reports place entry around 200–500 DZD, usually with the museum included or offered for a small add-on."
+              },
+              {
+                "name": "Arch of Caracalla and Severan Forum circuit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Christian basilicas and baptistery quarter",
+                "cost": "₹0"
+              },
+              {
+                "name": "Setif or roadside coffee stop on the return",
+                "cost": "₹122–₹244"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Novotel Constantine",
+                "budget": "₹8,000–₹11,500/night"
+              },
+              {
+                "name": "Constantine Marriott Hotel",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Le Bardo",
+              "Restaurant El Arz",
+              "El Atrium"
+            ]
+          },
+          {
+            "theme": "Roman Gridlines at Timgad",
+            "activities": [
+              {
+                "name": "Timgad archaeological site and museum",
+                "cost": "₹122–₹305",
+                "tip": "Expect roughly 200–500 DZD in cash for entry; guides at the gate are extra if you want a deeper Roman-history walk-through."
+              },
+              {
+                "name": "Trajan's Arch and decumanus walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Theatre, market and bath complex circuit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Batna coffee and pastry break",
+                "cost": "₹122–₹244"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Constantine Marriott Hotel",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Hotel El Bey Constantine",
+                "budget": "₹6,000–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Cirta",
+              "El Atrium",
+              "Restaurant El Arz"
+            ]
+          }
+        ]
+      },
+      "Ghardaia (M'zab Valley)": {
+        "name": "Ghardaia (M'zab Valley)",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Ghardaia Ksar, Market Rhythm & Mozabite Views",
+            "activities": [
+              {
+                "name": "M'zab Valley ksar visit with local association or guide",
+                "cost": "₹122–₹305",
+                "tip": "Public lanes are often free, but protected ksar interiors or guided access in places like Beni Isguen usually land around 200–500 DZD."
+              },
+              {
+                "name": "Ghardaia old market walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Ksar rooftop or mosque-quarter viewpoints",
+                "cost": "₹0"
+              },
+              {
+                "name": "Date, spice, and carpet browsing",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maison D’hôtes Taskift",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Dardiaf",
+                "budget": "₹4,800–₹7,200/night"
+              },
+              {
+                "name": "Hotel Noumerat",
+                "budget": "₹4,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Baaziz Resturant",
+              "Khaïma Hamma",
+              "FOOD CLUB"
+            ]
+          },
+          {
+            "theme": "Beni Isguen, Palm Groves & Slow Oasis Time",
+            "activities": [
+              {
+                "name": "Beni Isguen old quarter walk",
+                "cost": "₹122–₹305"
+              },
+              {
+                "name": "El Atteuf and palm-grove drive",
+                "cost": "₹0–₹244"
+              },
+              {
+                "name": "Traditional irrigation and oasis-edge stroll",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sunset tea in a local café",
+                "cost": "₹122–₹183"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Maison D’hôtes Taskift",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Dardiaf",
+                "budget": "₹4,800–₹7,200/night"
+              }
+            ],
+            "meals": [
+              "Club Papillion",
+              "Al Nawras Tent for Sweets and Traditional Food",
+              "Baaziz Resturant"
+            ]
+          }
+        ]
+      },
+      "Tassili n'Ajjer (Djanet)": {
+        "name": "Tassili n'Ajjer (Djanet)",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Djanet Gateway, Ksar Lanes & Erg Admer Light",
+            "activities": [
+              {
+                "name": "Djanet old ksar and market walk",
+                "cost": "₹0"
+              },
+              {
+                "name": "Erg Admer sunset dunes outing",
+                "cost": "₹305–₹610"
+              },
+              {
+                "name": "Tassili Café tea stop",
+                "cost": "₹122–₹183"
+              },
+              {
+                "name": "Tuareg handicraft browsing",
+                "cost": "₹0"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dar Dhiaf Hotel de Charme",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Zeriba Voyage & Tourisme",
+                "budget": "₹4,500–₹6,500/night"
+              },
+              {
+                "name": "Tenere Village",
+                "budget": "₹4,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Resturant Elbarikya",
+              "Tassili Café",
+              "Pizzeria Djanet Iffri"
+            ]
+          },
+          {
+            "theme": "Cave Paintings, Sandstone Arches & Sahara Silence",
+            "activities": [
+              {
+                "name": "Tassili n'Ajjer park permit for cave-painting sectors",
+                "cost": "₹610–₹1,220",
+                "tip": "The protected-area permit usually runs about 1,000–2,000 DZD; certified guide, 4x4, camping, and food are extra and normally bundled by local operators."
+              },
+              {
+                "name": "Tegharghart or nearby rock-art circuit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Sandstone arch and guelta photo stops",
+                "cost": "₹0"
+              },
+              {
+                "name": "Desert camp dinner under the stars",
+                "cost": "₹610–₹1,220"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dar Dhiaf Hotel de Charme",
+                "budget": "₹5,000–₹7,500/night"
+              },
+              {
+                "name": "Tenere Village",
+                "budget": "₹4,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Resturant Elbarikya",
+              "خيمة إياد للمأكولات التقليدية",
+              "Cafe resrtaurant TOFRAKT"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Algiers",
+        "to": "Oran",
+        "method": "SNTF intercity train along the north coast",
+        "cost": "₹730–₹1,590"
+      },
+      {
+        "from": "Oran",
+        "to": "Constantine",
+        "method": "Air Algérie domestic flight",
+        "cost": "₹3,660–₹7,320"
+      },
+      {
+        "from": "Constantine",
+        "to": "Ghardaia (M'zab Valley)",
+        "method": "Intercity bus or overnight coach",
+        "cost": "₹1,525–₹2,440"
+      },
+      {
+        "from": "Ghardaia (M'zab Valley)",
+        "to": "Tassili n'Ajjer (Djanet)",
+        "method": "Air Algérie domestic flight, usually via Algiers",
+        "cost": "₹7,320–₹13,420"
+      }
+    ],
+    "extras": [
+      "March to May and September to November are the sweet spots; the Sahara feels dramatically harsher once the midsummer heat settles in.",
+      "Casbah of Algiers and many M'zab public lanes can be explored for free, but palace-house visits, local-association access, or guided ksar entry often add a symbolic 200–500 DZD.",
+      "Djémila and Timgad ticket booths still work best with cash in DZD, and the quoted site fees you see online usually exclude any private transport or guide.",
+      "For Tassili n'Ajjer, the permit is only one part of the spend: most travelers book a bundled 4x4, guide, and camp package from Djanet.",
+      "Use SNTF for comfortable north-coast rail legs, Air Algérie to save time on the huge southbound jumps, and intercity buses where rail or flights do not line up well."
+    ],
+    "cityImages": {
+      "Algiers": [
+        "Casbah of Algiers white alleys",
+        "Palais des Rais Bastion 23 Algiers",
+        "Notre Dame d'Afrique Algiers view"
+      ],
+      "Oran": [
+        "Fort Santa Cruz Oran hilltop",
+        "Front de Mer Oran promenade",
+        "Place du 1er Novembre Oran"
+      ],
+      "Constantine": [
+        "Sidi M'Cid Bridge Constantine gorge",
+        "Ahmed Bey Palace Constantine",
+        "Djémila Roman ruins Algeria"
+      ],
+      "Ghardaia (M'zab Valley)": [
+        "Ghardaia M'zab Valley ksar skyline",
+        "Beni Isguen market Ghardaia",
+        "Mozabite palm grove Algeria"
+      ],
+      "Tassili n'Ajjer (Djanet)": [
+        "Tassili n'Ajjer cave paintings Algeria",
+        "Erg Admer dunes Djanet",
+        "Djanet sandstone arch Sahara"
+      ]
+    }
+  }
+}
