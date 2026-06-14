@@ -1805,9 +1805,9 @@
     "lng": -61.29,
     "region": "Americas",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Dominica",
@@ -1865,9 +1865,9 @@
     "lng": 143.96,
     "region": "Oceania",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 12
   },
   {
     "name": "Samoa",
@@ -1875,9 +1875,9 @@
     "lng": -172.1,
     "region": "Oceania",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8
   },
   {
     "name": "Tonga",
@@ -1885,9 +1885,9 @@
     "lng": -175.2,
     "region": "Oceania",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 9
   },
   {
     "name": "Vanuatu",
@@ -1895,9 +1895,9 @@
     "lng": 166.96,
     "region": "Oceania",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 12
   },
   {
     "name": "Solomon Islands",

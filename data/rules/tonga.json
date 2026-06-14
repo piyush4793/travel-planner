@@ -1,0 +1,408 @@
+{
+  "name": "Tonga",
+  "seed": false,
+  "lat": -21.18,
+  "lng": -175.2,
+  "region": "Oceania",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹1.6L–₹2.65L",
+    "couple": "₹3L–₹4.8L",
+    "family4": "₹6.2L–₹8.8L"
+  },
+  "experiences": [
+    "Whale Watching",
+    "Island Hopping",
+    "Cave Swimming",
+    "Polynesian Culture",
+    "Beaches",
+    "Snorkeling"
+  ],
+  "avoid": [
+    "November–April is hotter, wetter, and overlaps South Pacific cyclone season, so inter-island ferries and small-plane schedules are less reliable.",
+    "July–October is peak humpback season in Vava'u, so whale-swim boats, guesthouses, and domestic flights can sell out well in advance.",
+    "Sunday is quieter across Tonga: many shops close, public transport is limited, and some family-run eateries reduce hours."
+  ],
+  "combo": [
+    "Fiji",
+    "Samoa",
+    "New Zealand"
+  ],
+  "landmark": "Ha'amonga 'a Maui Trilithon",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 6 days, keep the plan to Tongatapu plus either Vava'u or Ha'apai; trying to cover all three island groups gets transfer-heavy.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Nuku'alofa",
+      "lat": -21.1394,
+      "lng": -175.2018,
+      "notes": "Tongatapu's capital is the practical arrival base for the Royal Palace waterfront, Talamahu Market, and easy self-drive day trips to Ha'amonga, Anahulu Cave, and the south-coast blowholes."
+    },
+    {
+      "name": "Vava'u",
+      "lat": -18.6502,
+      "lng": -173.9836,
+      "notes": "Vava'u centers on Neiafu's protected harbour, humpback-whale season from July to October, and boat days to Swallows Cave, Mariner's Cave, and reef islands such as Nuku."
+    },
+    {
+      "name": "Ha'apai",
+      "lat": -19.8052,
+      "lng": -174.3508,
+      "notes": "Ha'apai is the slower barefoot-islands leg built around Pangai logistics, Foa's long beaches, simple reef snorkels, and guesthouse-led boat trips."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel Tonga prepaid is the easiest setup in Nuku'alofa; buy it on Tongatapu and download ferry confirmations plus offline maps before heading to Vava'u or Ha'apai.",
+    "apps": [
+      "Google Maps offline",
+      "Booking.com",
+      "WhatsApp",
+      "XE Currency",
+      "Facebook"
+    ],
+    "cityOrder": [
+      "Nuku'alofa",
+      "Vava'u",
+      "Ha'apai"
+    ],
+    "cities": {
+      "Nuku'alofa": {
+        "name": "Nuku'alofa",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Base yourself in Nuku'alofa for one town day and one full Tongatapu loop; the best sights are spread out enough that a rental car or driver saves time.",
+        "days": [
+          {
+            "theme": "Royal Waterfront, Market Browsing and a Gentle Capital Arrival",
+            "activities": [
+              {
+                "name": "Royal Palace waterfront viewing",
+                "cost": "Free",
+                "tip": "The palace is admired from outside only; go in softer morning or late-afternoon light because interior visits are not generally open to the public."
+              },
+              {
+                "name": "Talamahu Market produce and handicraft stop",
+                "cost": "Free–₹360 pp",
+                "tip": "Entry is free; budget a few pa'anga for fruit, coconut bread, or woven souvenirs."
+              },
+              {
+                "name": "Friends Cafe coffee and town-center lunch break",
+                "cost": "₹540–₹1,080 pp"
+              },
+              {
+                "name": "Sunset walk along Vuna Road and the Nuku'alofa waterfront",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "House of Tonga",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Seaview Lodge & Restaurant",
+                "budget": "₹11,500–₹17,500/night"
+              },
+              {
+                "name": "Tanoa International Dateline Hotel",
+                "budget": "₹16,500–₹24,500/night"
+              }
+            ],
+            "meals": [
+              "Friends Cafe",
+              "Little Italy Restaurant",
+              "Billfish Bar & Restaurant"
+            ]
+          },
+          {
+            "theme": "Ha'amonga, Anahulu Cave and the South-Coast Blowholes",
+            "activities": [
+              {
+                "name": "Ha'amonga 'a Maui Trilithon visit",
+                "cost": "Free",
+                "tip": "The ancient stone trilithon is usually ungated; arrive early because there is little shade and only occasional caretaker donations."
+              },
+              {
+                "name": "Anahulu Cave freshwater swim",
+                "cost": "₹720 pp",
+                "tip": "Adult entry is commonly TOP20 cash; bring reef shoes because the cave steps and limestone edges stay slippery."
+              },
+              {
+                "name": "Mapu'a 'a Vaea blowholes stop",
+                "cost": "Free",
+                "tip": "The spray is strongest on a rougher tide, and staying back from the edge matters because the rock shelf gets slick."
+              },
+              {
+                "name": "Sunshine Rentals self-drive day on Tongatapu",
+                "cost": "₹2,160–₹3,600 per car/day",
+                "tip": "Budget another ₹1,440–₹2,160 once per trip for the local temporary driving permit that rental desks help arrange."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Waterfront Lodge",
+                "budget": "₹10,500–₹15,500/night"
+              },
+              {
+                "name": "Little Italy Hotel",
+                "budget": "₹12,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Seaview Lodge Restaurant",
+              "Little Italy Restaurant",
+              "Emerald Restaurant"
+            ]
+          }
+        ]
+      },
+      "Vava'u": {
+        "name": "Vava'u",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 3,
+        "note": "Vava'u is worth three slower days if you can spare them: one harbour day, one whale or boat day, and one reef-or-cave outing keeps the pace right.",
+        "days": [
+          {
+            "theme": "Flight North, Neiafu Harbour and Mt Talau Views",
+            "activities": [
+              {
+                "name": "Lulutai Airlines flight from Tongatapu to Vava'u",
+                "cost": "₹12,600–₹16,920 pp",
+                "tip": "One-way fares usually sit around TOP350–470 depending on baggage and season, and July–October seats should be booked as early as possible."
+              },
+              {
+                "name": "Mount Talau National Park lookout walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Neiafu harbourfront stroll and market stop",
+                "cost": "Free–₹360 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Port Wine Guest House",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Mystic Sands",
+                "budget": "₹16,500–₹24,500/night"
+              },
+              {
+                "name": "Tongan Beach Resort",
+                "budget": "₹21,500–₹31,500/night"
+              }
+            ],
+            "meals": [
+              "Mango Cafe",
+              "Bellavista Cafe & Restaurant",
+              "Aquarium Cafe"
+            ]
+          },
+          {
+            "theme": "Humpback Whale Day or a Relaxed Harbour Backup",
+            "activities": [
+              {
+                "name": "Vava'u Whale Watching Adventures humpback whale swim day trip (Jul–Oct)",
+                "cost": "₹18,000–₹21,600 pp",
+                "tip": "Licensed full-day trips commonly land around TOP500–600 with lunch; if you're outside whale season, swap this for a Nuku Island snorkel day."
+              },
+              {
+                "name": "Bounty Bar & Restaurant sunset dinner",
+                "cost": "₹1,080–₹1,800 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Boathouse Apartments",
+                "budget": "₹13,500–₹20,500/night"
+              },
+              {
+                "name": "Reef Resort",
+                "budget": "₹24,500–₹36,500/night"
+              }
+            ],
+            "meals": [
+              "Bounty Bar & Restaurant",
+              "The Kraken",
+              "Cafe Tropicana"
+            ]
+          },
+          {
+            "theme": "Swallows Cave, Mariner's Cave and Vava'u Blue Water",
+            "activities": [
+              {
+                "name": "Local boat charter to Swallows Cave and Mariner's Cave",
+                "cost": "₹7,200–₹10,800 pp",
+                "tip": "Most small-group boat days price around TOP200–300 depending on fuel, cave count, and snorkel inclusions; seas are usually calmer in the morning."
+              },
+              {
+                "name": "Nuku Island beach stop",
+                "cost": "₹1,800–₹3,600 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mandala Resort",
+                "budget": "₹14,500–₹21,500/night"
+              },
+              {
+                "name": "Puataukanave International Hotel",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Bellavista Cafe & Restaurant",
+              "Mango Cafe",
+              "Basque Tavern"
+            ]
+          }
+        ]
+      },
+      "Ha'apai": {
+        "name": "Ha'apai",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Ha'apai works best as a simple beach-and-boat decompression block, so keep expectations low-key and let your lodge shape the day around weather and ferry timing.",
+        "days": [
+          {
+            "theme": "Inter-Island Arrival, Foa Beaches and a Slow Sunset",
+            "activities": [
+              {
+                "name": "Friendly Islands Shipping Agency ferry from Vava'u to Ha'apai",
+                "cost": "₹3,600–₹5,400 pp",
+                "tip": "Adult deck fares usually sit around TOP100–150 when sailings line up, but schedules are irregular enough that you should reconfirm locally before leaving Vava'u."
+              },
+              {
+                "name": "Foa Island beach time near Sandy Beach Resort or Matafonua Lodge",
+                "cost": "Free"
+              },
+              {
+                "name": "Resort snorkel gear or kayak rental",
+                "cost": "₹1,080–₹2,160 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vaikona Lodge",
+                "budget": "₹7,500–₹10,500/night"
+              },
+              {
+                "name": "Sandy Beach Resort",
+                "budget": "₹16,500–₹25,500/night"
+              },
+              {
+                "name": "Matafonua Lodge",
+                "budget": "₹19,500–₹29,500/night"
+              }
+            ],
+            "meals": [
+              "Sandy Beach Resort Restaurant",
+              "Matafonua Lodge Restaurant",
+              "Mariner's Cafe"
+            ]
+          },
+          {
+            "theme": "Uoleva Day Trip, Pangai Errands and a Barefoot Island Rhythm",
+            "activities": [
+              {
+                "name": "Boat trip to Uoleva Island beaches and reef snorkel",
+                "cost": "₹2,880–₹4,320 pp",
+                "tip": "Expect roughly TOP80–120 for a simple guesthouse-arranged boat depending on group size and whether lunch is packed."
+              },
+              {
+                "name": "Pangai town and harbour wander",
+                "cost": "Free"
+              },
+              {
+                "name": "Compact rental car or island transfer day",
+                "cost": "₹2,520–₹3,600 per car/day",
+                "tip": "Local hires on Ha'apai are limited, so many travelers rely on their lodge to pre-arrange a small car or driver."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Evaloni's Guest House",
+                "budget": "₹6,500–₹9,500/night"
+              },
+              {
+                "name": "Lata's Place",
+                "budget": "₹8,500–₹12,500/night"
+              }
+            ],
+            "meals": [
+              "Matafonua Lodge Restaurant",
+              "Sandy Beach Resort Restaurant",
+              "Mariner's Cafe"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Nuku'alofa",
+        "to": "Vava'u",
+        "method": "Lulutai Airlines domestic flight from Fua'amotu to Lupepau'u Airport.",
+        "cost": "₹12,600–₹16,920"
+      },
+      {
+        "from": "Vava'u",
+        "to": "Ha'apai",
+        "method": "Friendly Islands Shipping Agency inter-island ferry when the weekly sailing aligns; some weeks require backtracking via Tongatapu instead.",
+        "cost": "₹3,600–₹5,400"
+      },
+      {
+        "from": "Ha'apai",
+        "to": "Nuku'alofa",
+        "method": "Lulutai Airlines domestic flight back to Tongatapu, with ferry as the slower fallback if flights are full or weather-disrupted.",
+        "cost": "₹7,200–₹10,800"
+      }
+    ],
+    "extras": [
+      "Carry cash outside Tongatapu because fuel surcharges, ferry tickets, cave entry, and family-run lodges often prefer pa'anga over cards.",
+      "Book whale-season flights and rooms before you lock the rest of the route; Vava'u fills first and then ferry timing shapes the rest of the itinerary.",
+      "A reef-safe rash guard, dry bag, and basic motion-sickness tablets help because small-boat transfers and cave stops are central to a Tonga trip.",
+      "If Sunday falls in the middle of your island hops, stock up on snacks the previous evening because shops and cafés may open only briefly."
+    ],
+    "cityImages": {
+      "Nuku'alofa": [
+        "Royal Palace Nuku'alofa Tonga",
+        "Ha'amonga 'a Maui Trilithon Tonga",
+        "Mapu'a 'a Vaea blowholes Tonga"
+      ],
+      "Vava'u": [
+        "Neiafu Vava'u harbour Tonga",
+        "Vava'u whale watching Tonga",
+        "Swallows Cave Vava'u Tonga"
+      ],
+      "Ha'apai": [
+        "Ha'apai Tonga beach",
+        "Sandy Beach Resort Ha'apai Tonga",
+        "Matafonua Lodge Ha'apai"
+      ]
+    }
+  }
+}

@@ -1,0 +1,504 @@
+{
+  "name": "Papua New Guinea",
+  "seed": false,
+  "lat": -6.31,
+  "lng": 147.18,
+  "region": "Oceania",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹1.95L–₹3.15L",
+    "couple": "₹3.7L–₹5.75L",
+    "family4": "₹7.4L–₹10.2L"
+  },
+  "experiences": [
+    "Varirata birding and rainforest lookouts",
+    "Mount Hagen highlands culture",
+    "Asaro Mudmen performances",
+    "Rabaul caldera volcanoes",
+    "Kimbe Bay diving extension"
+  ],
+  "avoid": [
+    "November–April is wetter, muddier, and more disruption-prone for highlands roads, village access, and volcano viewpoints.",
+    "Papua New Guinea needs a stronger safety buffer than most Pacific itineraries: use hotel-arranged airport transfers, avoid walking after dark, skip casual PMV use in Port Moresby, and keep valuables out of sight.",
+    "Domestic flights on Air Niugini and PNG Air are often the only practical links between provinces, so build in at least one same-day buffer before any international departure."
+  ],
+  "combo": [
+    "Australia",
+    "Solomon Islands",
+    "Indonesia"
+  ],
+  "landmark": "Kokoda Track",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Port Moresby is the transport anchor for almost every Papua New Guinea trip, so the smoothest plan is one capital block, one PMV or private-road highlands leg between Mount Hagen and Goroka, and then one final domestic flight out to East New Britain.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Port Moresby",
+      "lat": -9.4438,
+      "lng": 147.1803,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "notes": "The capital is the safest place to sort SIMs, cash, domestic flights, and guided day trips to Varirata National Park, the National Museum, and Kokoda pre-trek logistics."
+    },
+    {
+      "name": "Mount Hagen",
+      "lat": -5.8581,
+      "lng": 144.2326,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "notes": "Western Highlands base for the Mount Hagen Cultural Show, produce markets, Waghi Valley landscapes, and the short detour to the UNESCO-listed Kuk Early Agricultural Site."
+    },
+    {
+      "name": "Goroka",
+      "lat": -6.0834,
+      "lng": 145.3874,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "notes": "Goroka mixes Eastern Highlands museums, coffee country, and the best access to Asaro Mudmen villages and Daulo Pass viewpoints."
+    },
+    {
+      "name": "Rabaul/Kokopo",
+      "lat": -4.352,
+      "lng": 152.2633,
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "notes": "East New Britain's twin-base stop combines Kokopo seaside hotels with Rabaul's caldera history, Tavurvur volcano outings, Baining performances, and onward diving links."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel PNG is the most reliable tourist SIM for Port Moresby, the Highlands, and East New Britain, with bmobile-Vodafone as the usual backup; buy and top up in Port Moresby before you fly onward.",
+    "apps": [
+      "Air Niugini",
+      "PNG Air",
+      "Google Maps offline",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Port Moresby",
+      "Mount Hagen",
+      "Goroka",
+      "Rabaul/Kokopo"
+    ],
+    "cities": {
+      "Port Moresby": {
+        "name": "Port Moresby",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Keep the capital tightly structured around museum time, a guided Varirata run, and flight logistics rather than trying to sightsee independently across the city.",
+        "days": [
+          {
+            "theme": "Museum Collections, Nature Park and an Easy Capital Arrival",
+            "activities": [
+              {
+                "name": "Papua New Guinea National Museum and Art Gallery",
+                "cost": "₹315–₹420 pp",
+                "tip": "Adult entry is commonly around PGK15–20, and it is the easiest first stop for Sepik carvings, masks, and wartime history."
+              },
+              {
+                "name": "Port Moresby Nature Park",
+                "cost": "₹840 pp",
+                "tip": "Budget about PGK40 for adult entry; go earlier in the day for tree kangaroos, cassowaries, and shaded bird enclosures."
+              },
+              {
+                "name": "Ela Beach and APEC Haus seafront walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lamana Hotel",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "The Stanley Hotel & Suites",
+                "budget": "₹18,500–₹28,500/night"
+              },
+              {
+                "name": "Airways Hotel",
+                "budget": "₹28,500–₹46,500/night"
+              }
+            ],
+            "meals": [
+              "Duffy Cafe",
+              "Tasty Bite Indian Restaurant",
+              "Bacchus"
+            ]
+          },
+          {
+            "theme": "Varirata Rainforest, War Memory and Trek Logistics",
+            "activities": [
+              {
+                "name": "Varirata National Park",
+                "cost": "₹210 pp + ₹1,050–₹2,100 per vehicle",
+                "tip": "The official expatriate adult park fee is PGK10, with vehicle charges usually around PGK50–100 depending on size, so it works best as a guided shared trip."
+              },
+              {
+                "name": "Bomana War Cemetery",
+                "cost": "Free"
+              },
+              {
+                "name": "Kokoda Track permit processing with a licensed operator",
+                "cost": "₹7,350 pp permit",
+                "tip": "The Kokoda Track Authority's international trek permit is PGK350 per trekker, and licensed operators bundle it into the final trek package."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hilton Port Moresby Hotel & Residences",
+                "budget": "₹21,500–₹34,500/night"
+              },
+              {
+                "name": "Ela Beach Hotel",
+                "budget": "₹12,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Daikoku",
+              "Salt Restaurant",
+              "Wild Orchid Restaurant"
+            ]
+          }
+        ]
+      },
+      "Mount Hagen": {
+        "name": "Mount Hagen",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Mount Hagen works best as a short highlands culture stop, with the August show as the main draw and Kuk or market time as the fallback outside festival dates.",
+        "days": [
+          {
+            "theme": "Highlands Culture, Market Life and Kuk Side Trip",
+            "activities": [
+              {
+                "name": "Mount Hagen Cultural Show grounds pass",
+                "cost": "₹3,150–₹6,300 pp",
+                "tip": "For the August show, independent tourist day passes are commonly budgeted around PGK150–300, and accommodation sells out long before the event."
+              },
+              {
+                "name": "Mount Hagen Market walk",
+                "cost": "Free–₹420 pp",
+                "tip": "A hotel-arranged local escort is worth the small cost because the produce market is most comfortable earlier in the morning."
+              },
+              {
+                "name": "Kuk Early Agricultural Site guided visit",
+                "cost": "₹1,050–₹2,100 pp",
+                "tip": "Community guide and transport costs vary, but many day visits land around PGK50–100 per person before private transfer charges."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Highlander Hotel",
+                "budget": "₹12,500–₹19,500/night"
+              },
+              {
+                "name": "Kimininga Hotel",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "McRoyal Hotel",
+                "budget": "₹11,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Palmuri Restaurant",
+              "Nu Ming Bar",
+              "McRoyal Hotel Restaurant"
+            ]
+          }
+        ]
+      },
+      "Goroka": {
+        "name": "Goroka",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Goroka is the most rewarding Eastern Highlands base if you pair one town-and-museum day with one dedicated Asaro or Daulo excursion.",
+        "days": [
+          {
+            "theme": "Museum History, Coffee Country and a Soft Highlands Afternoon",
+            "activities": [
+              {
+                "name": "J.K. McCarthy Museum",
+                "cost": "₹210–₹420 pp",
+                "tip": "Entry is usually modest and the aviation, patrol-post, and highlands collections make the best context stop before village outings."
+              },
+              {
+                "name": "Raun Raun Theatre and Cultural Centre",
+                "cost": "₹420–₹840 pp",
+                "tip": "Expect a small community donation or arranged guide fee if a rehearsal, music session, or craft stop is available."
+              },
+              {
+                "name": "Goroka market and coffee tasting stop",
+                "cost": "₹210–₹630 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bird of Paradise Hotel",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Pacific Gardens Hotel",
+                "budget": "₹10,500–₹17,500/night"
+              },
+              {
+                "name": "Hotel Phoenix",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Deck Bistro",
+              "Birdy's Cocktail Bar",
+              "Pacific Gardens Restaurant"
+            ]
+          },
+          {
+            "theme": "Asaro Mudmen and Daulo Pass Viewpoints",
+            "activities": [
+              {
+                "name": "Asaro Mudmen village performance",
+                "cost": "₹5,250–₹8,400 pp",
+                "tip": "Most day tours or direct village arrangements work out near PGK250–400 per visitor depending on group size, transport, and whether dances are private."
+              },
+              {
+                "name": "Daulo Pass lookout and ridge stop",
+                "cost": "₹210–₹630 pp",
+                "tip": "A small local guide or land-access payment is common if you stop for photography and short ridge walks."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bird of Paradise Hotel",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Pacific Gardens Hotel",
+                "budget": "₹10,500–₹17,500/night"
+              }
+            ],
+            "meals": [
+              "Deck Bistro",
+              "Pacific Gardens Restaurant",
+              "Bird of Paradise Hotel Restaurant"
+            ]
+          }
+        ]
+      },
+      "Rabaul/Kokopo": {
+        "name": "Rabaul/Kokopo",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Base yourself in Kokopo for easier hotels, then day-trip into Rabaul for volcanoes, war history, and the Baining cultural night.",
+        "days": [
+          {
+            "theme": "Caldera Orientation, War Relics and the Kokopo Waterfront",
+            "activities": [
+              {
+                "name": "Rabaul Volcano Observatory lookout",
+                "cost": "₹210–₹420 pp",
+                "tip": "Most visits only need a small donation or local guiding fee, and it is the best quick overview of the caldera and Tavurvur."
+              },
+              {
+                "name": "Japanese Barge Tunnels",
+                "cost": "₹420–₹840 pp"
+              },
+              {
+                "name": "Kokopo waterfront sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kokopo Beach Bungalow Resort",
+                "budget": "₹13,500–₹21,500/night"
+              },
+              {
+                "name": "Gazelle International Hotel",
+                "budget": "₹12,500–₹19,500/night"
+              },
+              {
+                "name": "Rapopo Plantation Resort",
+                "budget": "₹16,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "Haus Win Restaurant",
+              "Plantations Restaurant",
+              "Gazelle International Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Tavurvur Volcano, Hot Springs and Old Rabaul",
+            "activities": [
+              {
+                "name": "Mount Tavurvur volcano excursion",
+                "cost": "₹4,750–₹5,600 pp",
+                "tip": "Recent guided half-day or cruise-market rates have commonly landed around AUD85–100 per adult, usually including transport and a local guide."
+              },
+              {
+                "name": "Hot River thermal area stop",
+                "cost": "₹210–₹420 pp"
+              },
+              {
+                "name": "Old Rabaul town and market drive",
+                "cost": "Free–₹420 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Rapopo Plantation Resort",
+                "budget": "₹16,500–₹26,500/night"
+              },
+              {
+                "name": "Kokopo Beach Bungalow Resort",
+                "budget": "₹13,500–₹21,500/night"
+              }
+            ],
+            "meals": [
+              "Plantations Restaurant",
+              "Haus Win Restaurant",
+              "Gazelle International Hotel Restaurant"
+            ]
+          },
+          {
+            "theme": "Baining Fire Dance or a Kimbe Bay Dive Extension",
+            "activities": [
+              {
+                "name": "Baining Fire Dance evening tour",
+                "cost": "₹7,560 pp",
+                "tip": "Recent organized Gaulim-village tours have been quoted around AUD135 per adult including transport, security, water, and guiding."
+              },
+              {
+                "name": "Walindi Plantation Resort two-tank Kimbe Bay dive day",
+                "cost": "₹9,870–₹12,600 pp",
+                "tip": "Recent published Kimbe Bay dive pricing has typically sat around PGK470–600 before equipment rental, flights, or overnight stays in West New Britain."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Rapopo Plantation Resort",
+                "budget": "₹16,500–₹26,500/night"
+              },
+              {
+                "name": "Gazelle International Hotel",
+                "budget": "₹12,500–₹19,500/night"
+              }
+            ],
+            "meals": [
+              "Plantations Restaurant",
+              "Haus Win Restaurant",
+              "Gazelle International Hotel Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Jacksons International Airport",
+        "to": "Port Moresby",
+        "method": "Hotel-arranged transfer or licensed airport taxi to Waigani, Ela Beach, or airport-side hotels; this is preferable to using casual transport after arrival.",
+        "cost": "₹840–₹1,890"
+      },
+      {
+        "from": "Port Moresby",
+        "to": "Mount Hagen",
+        "method": "Air Niugini or PNG Air domestic flight from Jacksons to Kagamuga; flying is effectively essential because road connections from the capital are not practical.",
+        "cost": "₹7,500–₹12,500"
+      },
+      {
+        "from": "Mount Hagen",
+        "to": "Goroka",
+        "method": "Highlands Highway PMV or hotel-arranged road transfer; PMVs are the classic local option, but most visitors prefer a private day transfer for comfort and security.",
+        "cost": "₹315–₹630 by PMV"
+      },
+      {
+        "from": "Goroka",
+        "to": "Rabaul/Kokopo",
+        "method": "Air Niugini or PNG Air domestic flight, usually via Port Moresby, into Tokua Airport for Kokopo and Rabaul.",
+        "cost": "₹10,500–₹18,500"
+      },
+      {
+        "from": "Rabaul/Kokopo",
+        "to": "Port Moresby",
+        "method": "Air Niugini or PNG Air flight from Tokua back to Port Moresby for onward international departures.",
+        "cost": "₹12,000–₹21,000"
+      }
+    ],
+    "extras": [
+      "Keep most cash in PNG kina for markets, museum tickets, village fees, and PMVs; card acceptance is best only at the larger hotels in Port Moresby, Goroka, and Kokopo.",
+      "The Kokoda Track Authority's current international trek permit is PGK350 (about ₹7,350) per trekker, and treks must be arranged through a licensed operator rather than independently.",
+      "Port Moresby needs the strongest safety discipline in the itinerary: move by hotel transfer or trusted taxi, avoid isolated walks, and treat PMVs in the capital as a local-only option unless you are with a trusted fixer.",
+      "Air Niugini and PNG Air schedules can shift with weather or equipment changes, so keep all luggage tagged carefully and avoid booking your final domestic hop on the same day as a long-haul departure."
+    ],
+    "cityImages": {
+      "Port Moresby": [
+        "Port Moresby skyline Ela Beach",
+        "Port Moresby Nature Park Papua New Guinea",
+        "Varirata National Park Papua New Guinea"
+      ],
+      "Mount Hagen": [
+        "Mount Hagen Cultural Show Papua New Guinea",
+        "Kuk Early Agricultural Site Papua New Guinea",
+        "Waghi Valley Mount Hagen"
+      ],
+      "Goroka": [
+        "Asaro Mudmen Goroka Papua New Guinea",
+        "J.K. McCarthy Museum Goroka",
+        "Daulo Pass Eastern Highlands Papua New Guinea"
+      ],
+      "Rabaul/Kokopo": [
+        "Mount Tavurvur Rabaul Papua New Guinea",
+        "Kokopo Beach Bungalow Resort",
+        "Baining Fire Dance East New Britain"
+      ]
+    }
+  }
+}

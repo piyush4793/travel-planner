@@ -1,0 +1,405 @@
+{
+  "name": "Saint Vincent and the Grenadines",
+  "seed": false,
+  "lat": 12.98,
+  "lng": -61.29,
+  "region": "Americas",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹1.55L–₹2.45L",
+    "couple": "₹2.9L–₹4.35L",
+    "family4": "₹5.45L–₹8.1L"
+  },
+  "experiences": [
+    "Volcano Hikes",
+    "Island Ferries",
+    "Snorkeling",
+    "Yachting",
+    "Botanical Gardens",
+    "Beach Hops"
+  ],
+  "avoid": [
+    "June–November is wetter and overlaps the main Caribbean storm season, so ferry crossings, Tobago Cays day sails, and La Soufrière summit attempts are more likely to be disrupted.",
+    "Bequia and Mustique room rates jump sharply around Christmas, New Year, and Easter, so splurge stays often need to be booked months ahead in the dry season.",
+    "Saint Vincent minibuses and inter-island ferries are practical but not precision-timed; same-day island hops can feel rushed if seas are rough or sailings shift."
+  ],
+  "combo": [
+    "Grenada",
+    "Saint Lucia",
+    "Barbados"
+  ],
+  "landmark": "La Soufrière Volcano",
+  "travelStyle": [
+    "relaxed",
+    "explorer"
+  ],
+  "stopoverNote": "For trips under 6 days, keep the plan to mainland Saint Vincent plus Bequia, then treat Mustique or Tobago Cays as a single splurge day rather than trying to overnight-hop across every island.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Kingstown",
+      "lat": 13.1603,
+      "lng": -61.2248,
+      "notes": "The capital is the most practical first base for Fort Charlotte, the Botanical Gardens, market walks, and early departures toward the Rabacca side for La Soufrière hikes."
+    },
+    {
+      "name": "Bequia",
+      "lat": 13.0066,
+      "lng": -61.2422,
+      "notes": "Use Port Elizabeth and Admiralty Bay as the easy-going Grenadines base for ferry arrivals, water-taxi beach hops, and day sails toward Mustique or the Tobago Cays."
+    },
+    {
+      "name": "Mustique",
+      "lat": 12.8866,
+      "lng": -61.1805,
+      "notes": "Mustique is the polished private-island detour for Macaroni Beach, Britannia Bay, Basil's Bar, and a classic one-day or one-night luxury break between other Grenadines stops."
+    },
+    {
+      "name": "Tobago Cays",
+      "lat": 12.6315,
+      "lng": -61.3565,
+      "notes": "The marine park is a boat-access highlight rather than a town; most travelers visit by day cruise and sleep on nearby Bequia, Mayreau, or Canouan after snorkeling with turtles."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel and Flow prepaid packs are the simplest options; budget about ₹1,200–₹2,400 for enough maps, WhatsApp, and ferry coordination, and download offline maps before sailing south into the Grenadines.",
+    "apps": [
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency",
+      "Windy"
+    ],
+    "cityOrder": [
+      "Kingstown",
+      "Bequia",
+      "Mustique",
+      "Tobago Cays"
+    ],
+    "cities": {
+      "Kingstown": {
+        "name": "Kingstown",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay near Kingstown, Villa, or the Blue Lagoon side if you want easier airport access, stronger restaurant options, and a cleaner pre-dawn start for the volcano-hike day.",
+        "days": [
+          {
+            "theme": "Fort views, Botanical Gardens, and the compact capital core",
+            "activities": [
+              {
+                "name": "Fort Charlotte",
+                "cost": "Free",
+                "tip": "The fort is generally visited without an entrance fee; budget separately for a taxi up the hill if you do not want the climb from town."
+              },
+              {
+                "name": "St. Vincent Botanical Gardens",
+                "cost": "₹420 pp",
+                "tip": "The official non-national adult fee is US$5, roughly EC$13.5 or about ₹420; the optional guided tour is EC$10 extra, about ₹310."
+              },
+              {
+                "name": "Kingstown Market, Bay Street, and harborfront walk",
+                "cost": "Free"
+              },
+              {
+                "name": "St. George's Cathedral exterior stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cobblestone Inn",
+                "budget": "₹11,500–₹16,500/night"
+              },
+              {
+                "name": "Grenadine House",
+                "budget": "₹17,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "Vee Jay's Restaurant & Bar",
+              "Flow Wine Bar",
+              "Mangoz Restaurant & Bar"
+            ]
+          },
+          {
+            "theme": "La Soufrière summit day and the island's dramatic windward side",
+            "activities": [
+              {
+                "name": "La Soufrière volcano hike with transport",
+                "cost": "₹7,950–₹8,400 pp",
+                "tip": "Published group rates from operators such as Fraser Taxi & Tours and Topdawg Tours commonly land around US$95–100 per adult, or roughly EC$257–270."
+              },
+              {
+                "name": "Rabacca Dry River viewpoint stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Black Point Tunnel coastal photo stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Fresh-fruit or roadside bake break on the windward return",
+                "cost": "₹310–₹620 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mariners Hotel",
+                "budget": "₹12,500–₹18,500/night"
+              },
+              {
+                "name": "Grenadine House",
+                "budget": "₹17,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "Basil's Bar at Mariners",
+              "Flow Wine Bar",
+              "Surf Side"
+            ]
+          }
+        ]
+      },
+      "Bequia": {
+        "name": "Bequia",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Port Elizabeth is the simplest base because ferries dock here, most taxis and water taxis start here, and you can still reach Princess Margaret Beach or Lower Bay without changing hotels.",
+        "days": [
+          {
+            "theme": "Ferry arrival, Admiralty Bay orientation, and beach time close to Port Elizabeth",
+            "activities": [
+              {
+                "name": "Bequia Express or Admiral ferry from Kingstown to Port Elizabeth",
+                "cost": "₹775 pp",
+                "tip": "The published adult foot-passenger fare is EC$25 one way, with return tickets commonly listed at EC$45 or about ₹1,395."
+              },
+              {
+                "name": "Port Elizabeth harborfront and Belmont Walkway stroll",
+                "cost": "Free"
+              },
+              {
+                "name": "Princess Margaret Beach swim stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Admiralty Bay water taxi to Princess Margaret Beach or Lower Bay",
+                "cost": "₹465–₹775 pp return",
+                "tip": "Short water-taxi hops are usually negotiated on the spot; expect the fare to vary by sea conditions, departure beach, and whether others are sharing the boat."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Frangipani Hotel",
+                "budget": "₹12,500–₹18,500/night"
+              },
+              {
+                "name": "Gingerbread Hotel",
+                "budget": "₹16,500–₹24,500/night"
+              }
+            ],
+            "meals": [
+              "Mac's Pizzeria & Kitchen",
+              "Laura's",
+              "Jack's Beach Bar"
+            ]
+          },
+          {
+            "theme": "Quieter bays, plantation views, and a classic slow-Bequia day",
+            "activities": [
+              {
+                "name": "Lower Bay Beach morning",
+                "cost": "Free"
+              },
+              {
+                "name": "Firefly Plantation Bequia lunch-and-viewpoint stop",
+                "cost": "₹1,550–₹3,100 pp"
+              },
+              {
+                "name": "Spring Bay or Industry Bay coastal stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Devil's Table viewpoint at sunset",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bequia Beach Hotel",
+                "budget": "₹28,500–₹44,500/night"
+              },
+              {
+                "name": "Sugar Reef Bequia",
+                "budget": "₹19,500–₹31,500/night"
+              }
+            ],
+            "meals": [
+              "Fig Tree",
+              "Plantation House Restaurant",
+              "Maria's Café"
+            ]
+          }
+        ]
+      },
+      "Mustique": {
+        "name": "Mustique",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Mustique is best treated as a splurge stop or day sail from Bequia unless you specifically want a luxury overnight at Cotton House or Firefly.",
+        "days": [
+          {
+            "theme": "Macaroni Beach, Britannia Bay, and the island's iconic lunch stop",
+            "activities": [
+              {
+                "name": "Friendship Rose Mustique day sail from Bequia",
+                "cost": "₹12,555 pp",
+                "tip": "The scheduled Mustique cruise is published at US$150 per adult and is typically sold as a full-day sail rather than a simple ferry transfer."
+              },
+              {
+                "name": "Macaroni Beach",
+                "cost": "Free"
+              },
+              {
+                "name": "Britannia Bay and Lovell Village walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Basil's Bar lunch or sunset drinks",
+                "cost": "₹2,000–₹4,000 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Cotton House",
+                "budget": "₹78,000–₹1.45L/night"
+              },
+              {
+                "name": "Firefly Mustique",
+                "budget": "₹31,000–₹46,000/night"
+              }
+            ],
+            "meals": [
+              "Basil's Bar",
+              "The Veranda at The Cotton House",
+              "Firefly Restaurant"
+            ]
+          }
+        ]
+      },
+      "Tobago Cays": {
+        "name": "Tobago Cays",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "There are no conventional hotels inside the marine park itself, so use a day boat from Bequia or sleep on nearby Mayreau or Canouan if you want an early start on the water.",
+        "days": [
+          {
+            "theme": "Marine-park sail, turtle snorkeling, and a Salt Whistle Bay stop",
+            "activities": [
+              {
+                "name": "Tobago Cays snorkeling day trip from Bequia",
+                "cost": "₹10,900–₹14,700 pp",
+                "tip": "Current shared-boat rates from operators such as Octopus, Gusto, and Friendship Rose usually start around US$130 and can reach US$175 including snorkel gear and the park fee."
+              },
+              {
+                "name": "Baradel turtle snorkel",
+                "cost": "Included in day-trip pricing"
+              },
+              {
+                "name": "Petit Bateau / Jamesby beach time",
+                "cost": "Included in day-trip pricing"
+              },
+              {
+                "name": "Salt Whistle Bay swim stop on nearby Mayreau",
+                "cost": "Included on many day sails"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Salt Whistle Bay Club",
+                "budget": "₹15,500–₹24,500/night"
+              },
+              {
+                "name": "Tamarind Beach Hotel & Yacht Club",
+                "budget": "₹23,500–₹35,500/night"
+              }
+            ],
+            "meals": [
+              "Salt Whistle Bay Club Restaurant",
+              "Dennis' Hideaway",
+              "Gusto Bequia beach barbecue"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Kingstown",
+        "to": "Bequia",
+        "method": "Bequia Express or Admiral inter-island ferry from the Grenadines wharf to Port Elizabeth (about 1h)",
+        "cost": "₹775 pp one way; ₹1,395 return"
+      },
+      {
+        "from": "Bequia",
+        "to": "Mustique",
+        "method": "Best handled as a scheduled day sail or arranged private water-taxi/charter rather than a frequent public ferry",
+        "cost": "₹12,555 pp on Friendship Rose's scheduled day sail; private charters cost more"
+      },
+      {
+        "from": "Bequia",
+        "to": "Tobago Cays",
+        "method": "Full-day catamaran or schooner trip south via Mustique/Canouan/Mayreau, with snorkeling stops built in",
+        "cost": "₹10,900–₹14,700 pp"
+      }
+    ],
+    "extras": [
+      "Saint Vincent's local minibuses are the cheapest mainland transport and work well for short hops around Kingstown, but they are cash-only, loosely timed, and less useful for pre-dawn volcano starts.",
+      "Water taxis are especially handy around Bequia's Admiralty Bay and around Mayreau landing spots; agree the fare before boarding because pricing changes with distance, luggage, and sea state.",
+      "December through May is the driest and easiest stretch for La Soufrière, ferry crossings, and Tobago Cays visibility, but it is also when Bequia and Mustique availability gets tightest.",
+      "Tobago Cays trips are weather-sensitive even in the dry season; book them early in your Bequia stay so you still have room to rebook if winds or swell pick up.",
+      "If you only have one premium splurge day, Tobago Cays usually delivers more value than trying to overnight on Mustique unless the goal is specifically luxury dining and resort downtime."
+    ],
+    "cityImages": {
+      "Kingstown": [
+        "Fort Charlotte Saint Vincent",
+        "Botanical Gardens Kingstown Saint Vincent",
+        "Kingstown harbor Saint Vincent"
+      ],
+      "Bequia": [
+        "Port Elizabeth Bequia",
+        "Princess Margaret Beach Bequia",
+        "Lower Bay Bequia"
+      ],
+      "Mustique": [
+        "Macaroni Beach Mustique",
+        "Basil's Bar Mustique",
+        "Britannia Bay Mustique"
+      ],
+      "Tobago Cays": [
+        "Tobago Cays Marine Park",
+        "Baradel Island Tobago Cays",
+        "Salt Whistle Bay Mayreau"
+      ]
+    }
+  }
+}

@@ -1,0 +1,549 @@
+{
+  "name": "Vanuatu",
+  "seed": false,
+  "lat": -15.38,
+  "lng": 166.96,
+  "region": "Oceania",
+  "bestMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "budget": {
+    "solo": "₹1.35L–₹2.2L",
+    "couple": "₹2.45L–₹4L",
+    "family4": "₹5L–₹7.4L"
+  },
+  "experiences": [
+    "Volcanoes",
+    "Blue Holes",
+    "Snorkeling",
+    "Melanesian Culture",
+    "Remote Islands",
+    "Beaches"
+  ],
+  "avoid": [
+    "November–March is wetter, more humid, and more cyclone-prone, so domestic flight reliability, boat crossings, and volcano visibility can all drop.",
+    "Outer-island schedules shift more than in Fiji or New Zealand, so same-day domestic connections need extra buffer and soft luggage helps on smaller aircraft.",
+    "Cash is still important outside Port Vila and Luganville, especially for blue-hole entries, village visits, local buses, and guesthouse meals."
+  ],
+  "combo": [
+    "Australia",
+    "Fiji",
+    "New Zealand"
+  ],
+  "landmark": "Mount Yasur",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 6 days, keep the plan to Efate plus either Tanna or Espiritu Santo; adding both outer-island hops makes the routing feel too flight-heavy.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Port Vila",
+      "lat": -17.7334,
+      "lng": 168.3273,
+      "notes": "Port Vila on Efate is the easy arrival base for cascades, reef day trips, waterfront restaurants, local buses, and the short ferry to Hideaway Island."
+    },
+    {
+      "name": "Tanna",
+      "lat": -19.5469,
+      "lng": 169.2812,
+      "notes": "Tanna is Vanuatu's volcanic showstopper for Mount Yasur, kastom village visits, Blue Cave excursions, and black-sand beaches around Port Resolution."
+    },
+    {
+      "name": "Espiritu Santo",
+      "lat": -15.5128,
+      "lng": 167.1767,
+      "notes": "Espiritu Santo mixes the country's best blue holes, Champagne Beach, Millennium Cave adventures, and classic wreck snorkeling around Luganville."
+    },
+    {
+      "name": "Ambrym",
+      "lat": -16.2667,
+      "lng": 168.1167,
+      "notes": "Ambrym is the rugged add-on for black-sand coasts, village culture, and rustic guesthouse stays closer to Vanuatu's more remote island rhythm."
+    }
+  ],
+  "itinerary": {
+    "sim": "Digicel Vanuatu or Vodafone Vanuatu prepaid both work around Port Vila and Luganville; buy a SIM on Efate, then download offline maps and airline confirmations before heading to Tanna or Ambrym.",
+    "apps": [
+      "Air Vanuatu",
+      "Google Maps offline",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency",
+      "Maps.me"
+    ],
+    "cityOrder": [
+      "Port Vila",
+      "Tanna",
+      "Espiritu Santo",
+      "Ambrym"
+    ],
+    "cities": {
+      "Port Vila": {
+        "name": "Port Vila",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Efate works best as a soft landing: one easy waterfall-and-snorkel day, then one cultural or lagoon day before you commit to outer-island flights.",
+        "days": [
+          {
+            "theme": "Mele Cascades, Underwater Postcards and a Waterfront Sunset",
+            "activities": [
+              {
+                "name": "Mele Cascades entry",
+                "cost": "₹1,400 pp",
+                "tip": "Adult entry is commonly 2,000 VUV; carry swim shoes because the upper cascade track is rocky and slippery."
+              },
+              {
+                "name": "Hideaway Island day pass for the Underwater Post Office",
+                "cost": "₹840 pp",
+                "tip": "The day pass is usually around 1,200 VUV and includes the short ferry from Mele Bay; reef shoes help on the coral shoreline."
+              },
+              {
+                "name": "Waterproof postcard mailed from the Underwater Post Office",
+                "cost": "₹460 pp",
+                "tip": "A waterproof postcard usually costs around 660 VUV and is the easiest souvenir if visibility is good."
+              },
+              {
+                "name": "Port Vila waterfront sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ramada Resort by Wyndham Port Vila",
+                "budget": "₹13,500–₹22,500/night"
+              },
+              {
+                "name": "Breakas Beach Resort",
+                "budget": "₹15,500–₹24,500/night"
+              },
+              {
+                "name": "Iririki Island Resort & Spa",
+                "budget": "₹18,500–₹31,500/night"
+              }
+            ],
+            "meals": [
+              "Chill Restaurant",
+              "Stonegrill Restaurant",
+              "Le Cafe du Village"
+            ]
+          },
+          {
+            "theme": "Port Vila Market, Local Buses and a Slower Lagoon Day",
+            "activities": [
+              {
+                "name": "Port Vila Market produce and handicraft stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Local minibus rides around Port Vila and Mele",
+                "cost": "₹140–₹280 pp",
+                "tip": "Town buses typically charge small per-seat cash fares, making them the cheapest way to move between central Port Vila and Mele."
+              },
+              {
+                "name": "Erakor Island ferry and lagoon time",
+                "cost": "₹280–₹1,400 pp",
+                "tip": "The short ferry crossing is inexpensive, while kayaks or SUP hire on the island pushes the spend higher."
+              },
+              {
+                "name": "Ekasup Cultural Village visit",
+                "cost": "₹2,800–₹3,500 pp",
+                "tip": "Most guided village visits land around 4,000–5,000 VUV depending on whether transport is bundled."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Erakor Island Resort & Spa",
+                "budget": "₹15,500–₹26,500/night"
+              },
+              {
+                "name": "Tamanu on the Beach",
+                "budget": "₹17,500–₹29,500/night"
+              },
+              {
+                "name": "The Havannah Vanuatu",
+                "budget": "₹28,500–₹46,500/night"
+              }
+            ],
+            "meals": [
+              "Au Peche Mignon",
+              "Nambawan Cafe",
+              "The Stone Oven"
+            ]
+          }
+        ]
+      },
+      "Tanna": {
+        "name": "Tanna",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Tanna deserves an overnight because Mount Yasur is best timed for late afternoon light, while kastom visits and the east-coast Blue Cave need their own weather window.",
+        "days": [
+          {
+            "theme": "Air Vanuatu Hop, Port Resolution and Mount Yasur at Sunset",
+            "activities": [
+              {
+                "name": "Air Vanuatu flight from Port Vila to Tanna",
+                "cost": "₹12,320 pp",
+                "tip": "One-way fares often start around 17,600 VUV on the ATR route; remember the VT200 provincial departure tax is paid separately."
+              },
+              {
+                "name": "Mount Yasur volcano access",
+                "cost": "₹6,860 pp",
+                "tip": "The community entrance fee is typically 9,800 VUV, while 4WD transfers from White Grass or Lenakel are charged separately."
+              },
+              {
+                "name": "Port Resolution hot springs and black-sand beach stop",
+                "cost": "₹2,800–₹4,200 pp",
+                "tip": "This is usually bundled into a half-day driver or volcano transfer around the Port Resolution side of the island."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "White Grass Ocean Resort & Spa",
+                "budget": "₹16,500–₹26,500/night"
+              },
+              {
+                "name": "Tanna Evergreen Resort & Tours",
+                "budget": "₹10,500–₹17,500/night"
+              },
+              {
+                "name": "Rockwater Resort",
+                "budget": "₹18,500–₹29,500/night"
+              }
+            ],
+            "meals": [
+              "White Grass Ocean Resort Restaurant",
+              "Tanna Evergreen Restaurant",
+              "Rockwater Restaurant"
+            ]
+          },
+          {
+            "theme": "Kastom Village, Blue Cave and a Slower Tanna Morning",
+            "activities": [
+              {
+                "name": "Yakel Custom Village visit",
+                "cost": "₹3,500–₹4,900 pp",
+                "tip": "Guided village visits commonly land around 5,000–7,000 VUV depending on transport and whether a custom dance is included."
+              },
+              {
+                "name": "Blue Cave boat excursion",
+                "cost": "₹4,200–₹6,300 pp",
+                "tip": "Sea conditions decide departures on the east coast, so book with your resort and carry a dry bag."
+              },
+              {
+                "name": "Lenakel Market stop",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tanna Lava View Bungalows",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Alofa Beach Bungalows",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "White Grass Ocean Resort & Spa",
+                "budget": "₹16,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "White Grass Ocean Resort Restaurant",
+              "Tanna Evergreen Restaurant",
+              "Rockwater Restaurant"
+            ]
+          }
+        ]
+      },
+      "Espiritu Santo": {
+        "name": "Espiritu Santo",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Santo is the most flexible outer-island stop: keep one blue-hole day, one cave or wreck day, and one beach day rather than rushing every north-coast sight in one loop.",
+        "days": [
+          {
+            "theme": "Flight via Port Vila, Blue Holes and an Aore Sunset",
+            "activities": [
+              {
+                "name": "Air Vanuatu routing from Tanna to Espiritu Santo via Port Vila",
+                "cost": "₹27,895–₹29,400 pp",
+                "tip": "Most itineraries use separate Tanna–Port Vila and Port Vila–Santo sectors, so keep buffer time in case the first leg shifts."
+              },
+              {
+                "name": "Nanda Blue Hole entry",
+                "cost": "₹1,050 pp",
+                "tip": "Community entry is commonly around 1,500 VUV; cash is preferred and the water is clearest before midday."
+              },
+              {
+                "name": "Matevulu Blue Hole entry",
+                "cost": "₹700–₹1,050 pp",
+                "tip": "Expect about 1,000–1,500 VUV depending on the access point and whether you hire a local tube or guide."
+              },
+              {
+                "name": "Aore Island ferry across the Segond Channel",
+                "cost": "₹280–₹560 pp",
+                "tip": "The crossing is short and usually paid in cash at the dock or through your accommodation."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aore Island Resort",
+                "budget": "₹14,500–₹24,500/night"
+              },
+              {
+                "name": "Deco Stop Lodge",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "The Espiritu",
+                "budget": "₹9,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurant 1606",
+              "Attar Cafe",
+              "Natangora Cafe"
+            ]
+          },
+          {
+            "theme": "Millennium Cave Trek and Luganville Waterfront Recovery",
+            "activities": [
+              {
+                "name": "Millennium Cave guided trek",
+                "cost": "₹2,450–₹3,500 pp",
+                "tip": "Most guided day treks land around 3,500–5,000 VUV and require proper shoes because the route mixes river sections, ladders, and limestone."
+              },
+              {
+                "name": "Luganville Market and town stop",
+                "cost": "Free"
+              },
+              {
+                "name": "Million Dollar Point snorkel entry",
+                "cost": "₹700–₹1,400 pp",
+                "tip": "Community access fees are usually around 1,000–2,000 VUV; visibility is best when the sea is calm and bright."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Turtle Bay Lodge",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Beachfront Resort",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Barrier Beach Resort",
+                "budget": "₹24,500–₹41,500/night"
+              }
+            ],
+            "meals": [
+              "Restaurant 1606",
+              "Hotel Santo Restaurant",
+              "Aore Island Resort Restaurant"
+            ]
+          },
+          {
+            "theme": "Champagne Beach, Riri Blue Hole and a Final Santo Swim Day",
+            "activities": [
+              {
+                "name": "Champagne Beach community entry",
+                "cost": "₹350–₹700 pp",
+                "tip": "Adult entry is usually around 500–1,000 VUV, and the road is easiest to combine with another east-coast stop."
+              },
+              {
+                "name": "Riri Blue Hole swim stop",
+                "cost": "₹700–₹1,050 pp",
+                "tip": "Expect roughly 1,000–1,500 VUV for community access; bring a rope swing or tube mindset rather than a rushed photo stop."
+              },
+              {
+                "name": "Aore or east-coast reef snorkel",
+                "cost": "₹1,400–₹3,500 pp",
+                "tip": "Boat-based snorkel trips vary widely by resort, but short guided reef outings generally stay within this band."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ratua Private Island Resort",
+                "budget": "₹34,500–₹58,500/night"
+              },
+              {
+                "name": "Aore Island Resort",
+                "budget": "₹14,500–₹24,500/night"
+              },
+              {
+                "name": "Turtle Bay Lodge",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Natangora Cafe",
+              "Attar Cafe",
+              "Aore Island Resort Restaurant"
+            ]
+          }
+        ]
+      },
+      "Ambrym": {
+        "name": "Ambrym",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Ambrym works best as a rustic extension once you've already seen Efate and Santo: come for guesthouse life, village culture, and a slower pace rather than polished resort infrastructure.",
+        "days": [
+          {
+            "theme": "Craig Cove Arrival, Village Culture and the Black-Sand Coast",
+            "activities": [
+              {
+                "name": "Local passenger boat from Santo or limited outer-island air connection into Ambrym",
+                "cost": "₹5,600–₹12,600 pp",
+                "tip": "Transport is weather- and schedule-dependent, so most guesthouses reconfirm the latest boat day or small-aircraft seat before arrival."
+              },
+              {
+                "name": "Fanla village cultural visit",
+                "cost": "₹1,400–₹2,800 pp",
+                "tip": "Visits are usually arranged through your host and often include a small community payment rather than a formal ticket office."
+              },
+              {
+                "name": "Ranon black-sand beach sunset walk",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ranon Beach Bungalows",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Olal Beach Bungalows",
+                "budget": "₹5,500–₹9,500/night"
+              },
+              {
+                "name": "Craig Cove Guesthouse",
+                "budget": "₹4,500–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Ranon Beach Bungalows Restaurant",
+              "Olal Beach Bungalows Restaurant",
+              "Craig Cove Guesthouse Kitchen"
+            ]
+          },
+          {
+            "theme": "Optional Extra Day for West-Coast Boats and Volcano-Logistics Planning",
+            "activities": [
+              {
+                "name": "Local boat outing between coastal villages",
+                "cost": "₹2,100–₹4,200 pp",
+                "tip": "Short inter-village boat rides are usually arranged on the spot and priced by boat rather than by published timetable."
+              },
+              {
+                "name": "4WD transfer toward North Ambrym trailheads",
+                "cost": "₹4,200–₹7,000 pp",
+                "tip": "Only worth paying for if you're arranging a longer volcano trek with a guide; otherwise keep Ambrym as a culture-and-coast stop."
+              },
+              {
+                "name": "Guesthouse beach and village downtime",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ranon Beach Bungalows",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Olal Beach Bungalows",
+                "budget": "₹5,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Ranon Beach Bungalows Restaurant",
+              "Olal Beach Bungalows Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bauerfield International Airport",
+        "to": "Port Vila",
+        "method": "Local bus or short taxi ride into central Port Vila, Mele, or lagoon-side resorts on Efate.",
+        "cost": "₹140–₹700"
+      },
+      {
+        "from": "Port Vila",
+        "to": "Tanna",
+        "method": "Air Vanuatu domestic flight from Bauerfield to Whitegrass, followed by a resort transfer or local 4WD pickup.",
+        "cost": "₹12,320"
+      },
+      {
+        "from": "Tanna",
+        "to": "Espiritu Santo",
+        "method": "Air Vanuatu usually routes this via Port Vila, often as separate domestic sectors, so build in buffer time for the hub transfer.",
+        "cost": "₹27,895–₹29,400"
+      },
+      {
+        "from": "Espiritu Santo",
+        "to": "Ambrym",
+        "method": "Use a local passenger boat when the sea is settled, or take a limited outer-island Air Vanuatu service with light-aircraft baggage limits.",
+        "cost": "₹5,600–₹12,600"
+      },
+      {
+        "from": "Ambrym",
+        "to": "Port Vila",
+        "method": "Return by outer-island Air Vanuatu service, sometimes via Santo, or by boat if your schedule is flexible and seas cooperate.",
+        "cost": "₹9,800–₹18,500"
+      }
+    ],
+    "extras": [
+      "Carry more VUV cash than you would in Fiji because community-run attractions, local buses, guesthouse meals, and some small-island transfers often do not take cards.",
+      "Air Vanuatu's smaller outer-island services can shift with weather and aircraft availability, so avoid tight same-day international connections after Ambrym or Tanna.",
+      "Dry bags, reef shoes, and a lightweight headlamp are genuinely useful here because blue holes, cave treks, and boat landings are more rustic than resort-heavy Pacific destinations.",
+      "April to October is the best overall weather window, but evenings on Tanna and Santo can still feel cool after rain or on open boats, so pack one light layer."
+    ],
+    "cityImages": {
+      "Port Vila": [
+        "Port Vila waterfront",
+        "Mele Cascades Vanuatu",
+        "Hideaway Island Underwater Post Office"
+      ],
+      "Tanna": [
+        "Mount Yasur Vanuatu",
+        "Port Resolution Tanna",
+        "White Grass Ocean Resort Tanna"
+      ],
+      "Espiritu Santo": [
+        "Nanda Blue Hole Vanuatu",
+        "Champagne Beach Espiritu Santo",
+        "Millennium Cave Vanuatu"
+      ],
+      "Ambrym": [
+        "Ambrym black sand beach",
+        "Craig Cove Ambrym",
+        "Fanla village Ambrym"
+      ]
+    }
+  }
+}

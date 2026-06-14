@@ -1,0 +1,411 @@
+{
+  "name": "Samoa",
+  "seed": false,
+  "lat": -13.76,
+  "lng": -172.1,
+  "region": "Oceania",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "budget": {
+    "solo": "₹1.25L–₹2.15L",
+    "couple": "₹2.2L–₹3.85L",
+    "family4": "₹4.6L–₹7.4L"
+  },
+  "experiences": [
+    "Beach Fales",
+    "Coastal Drives",
+    "Snorkeling",
+    "Blowholes",
+    "Village Culture",
+    "Volcanic Landscapes"
+  ],
+  "avoid": [
+    "November–April is wetter and overlaps the South Pacific cyclone season, so swimming conditions, road plans, and ferry schedules are less predictable.",
+    "Sunday is the quietest day in Samoa: many shops close, buses thin out, and villages expect a more respectful, low-key pace.",
+    "Dry-season school holidays and festival weeks can book out the best beach fales early, especially around Lalomanu and Manase."
+  ],
+  "combo": [
+    "American Samoa",
+    "Fiji",
+    "Tonga"
+  ],
+  "landmark": "To Sua Ocean Trench",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "For trips under 5 days, stay on Upolu for Apia plus one south-coast beach base; adding Savai'i makes the pace ferry-heavy.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Apia",
+      "lat": -13.8333,
+      "lng": -171.7667,
+      "notes": "Apia is the best practical base for museums, markets, harbour sunsets, and north-coast day trips before you head to Samoa's beach and ferry legs."
+    },
+    {
+      "name": "Lalomanu",
+      "lat": -14.0056,
+      "lng": -171.3858,
+      "notes": "Lalomanu is Samoa's classic east-Upolu beach stretch for fale stays, To Sua access, and slower lagoon time on the island's drier-season south coast."
+    },
+    {
+      "name": "Savai'i",
+      "lat": -13.58,
+      "lng": -172.44,
+      "notes": "Savai'i rewards the extra ferry with lava fields, blowholes, village beaches, and a more spacious, less-developed island rhythm than Upolu."
+    }
+  ],
+  "itinerary": {
+    "sim": "Vodafone Samoa is the easiest all-round prepaid option around Apia and Upolu, while Digicel Samoa is the usual backup; download offline maps before crossing to Savai'i.",
+    "apps": [
+      "Google Maps offline",
+      "WhatsApp",
+      "Booking.com",
+      "XE Currency",
+      "Maps.me"
+    ],
+    "cityOrder": [
+      "Apia",
+      "Lalomanu",
+      "Savai'i"
+    ],
+    "cities": {
+      "Apia": {
+        "name": "Apia",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Use Apia as the practical landing base for culture, food, and light day trips before shifting to Samoa's beach and ferry segments.",
+        "days": [
+          {
+            "theme": "Museum Morning, Market Stops and a Harbour-Side First Day",
+            "activities": [
+              {
+                "name": "Robert Louis Stevenson Museum",
+                "cost": "₹600 pp",
+                "tip": "Adult entry is commonly SAT20 with a guided house-and-gardens tour included; aim for a weekday morning for the fullest access."
+              },
+              {
+                "name": "Fugalei Market walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Palolo Deep Marine Reserve snorkel",
+                "cost": "₹150 pp",
+                "tip": "Adult entry is typically around SAT5; reef shoes help on the ladder and coral entry."
+              },
+              {
+                "name": "Mulinuu Peninsula sunset stroll",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tanoa Tusitala Hotel",
+                "budget": "₹14,500–₹22,500/night"
+              },
+              {
+                "name": "Hotel Elisa",
+                "budget": "₹9,500–₹15,500/night"
+              },
+              {
+                "name": "Taumeasina Island Resort",
+                "budget": "₹24,500–₹41,500/night"
+              }
+            ],
+            "meals": [
+              "Paddles Restaurant",
+              "Milani Caffé",
+              "Scalinis Restaurant"
+            ]
+          },
+          {
+            "theme": "North-Coast Swim Stops and Scenic Upolu Lookouts",
+            "activities": [
+              {
+                "name": "Piula Cave Pool",
+                "cost": "₹300–₹450 pp",
+                "tip": "Expect SAT5 per person plus a SAT10 vehicle fee, or around SAT15 pp on some recent visits; carry cash and modest swimwear."
+              },
+              {
+                "name": "Papapapaitai Falls lookout",
+                "cost": "Free"
+              },
+              {
+                "name": "Bahá'í House of Worship gardens",
+                "cost": "Free"
+              },
+              {
+                "name": "Apia Fish Market breakfast stop",
+                "cost": "₹300–₹750 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sheraton Samoa Aggie Grey's Hotel & Bungalows",
+                "budget": "₹16,500–₹25,500/night"
+              },
+              {
+                "name": "Amanaki Hotel",
+                "budget": "₹10,500–₹16,500/night"
+              }
+            ],
+            "meals": [
+              "Giordano's Pizzeria",
+              "The Edge Marina View",
+              "Georgies Pizza"
+            ]
+          }
+        ]
+      },
+      "Lalomanu": {
+        "name": "Lalomanu",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Lalomanu works best as Samoa's slow-beach pause: one scenic transfer day anchored by To Sua, then an easy lagoon-and-fale reset.",
+        "days": [
+          {
+            "theme": "South-Coast Drive, To Sua Swim and a Classic Beach-Fale Check-In",
+            "activities": [
+              {
+                "name": "To Sua Ocean Trench",
+                "cost": "₹450 pp",
+                "tip": "Adult entry is usually SAT15; the ladder is steep, and the site is typically open Monday-Saturday with shorter Sunday hours."
+              },
+              {
+                "name": "Lalomanu Beach swim",
+                "cost": "Free"
+              },
+              {
+                "name": "Aleipata coastal viewpoint stops",
+                "cost": "Free"
+              },
+              {
+                "name": "Snorkel or kayak hire from a beach fale",
+                "cost": "₹450–₹1,200 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Taufua Beach Fales",
+                "budget": "₹4,500–₹8,500/night"
+              },
+              {
+                "name": "Aga Reef Resort",
+                "budget": "₹13,500–₹24,500/night"
+              },
+              {
+                "name": "Litia Sini Beach Fales",
+                "budget": "₹5,500–₹9,500/night"
+              }
+            ],
+            "meals": [
+              "Taufua Beach Fales dining fale",
+              "Aga Reef Resort Restaurant",
+              "Litia Sini restaurant"
+            ]
+          },
+          {
+            "theme": "Sunrise Lagoon Time and a Slower East-Upolu Beach Day",
+            "activities": [
+              {
+                "name": "Lalomanu Beach sunrise walk",
+                "cost": "Free"
+              },
+              {
+                "name": "Aga Reef lagoon swim",
+                "cost": "Free"
+              },
+              {
+                "name": "Togitogiga Waterfall stop",
+                "cost": "Free–₹300 pp"
+              },
+              {
+                "name": "South-coast fale buffet dinner",
+                "cost": "₹900–₹1,800 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Faofao Beach Fales",
+                "budget": "₹4,500–₹8,000/night"
+              },
+              {
+                "name": "Seabreeze Resort Samoa",
+                "budget": "₹20,500–₹34,500/night"
+              }
+            ],
+            "meals": [
+              "Faofao Beach Fales dining fale",
+              "Seabreeze Resort restaurant",
+              "Aga Reef Resort Restaurant"
+            ]
+          }
+        ]
+      },
+      "Savai'i": {
+        "name": "Savai'i",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Give Savai'i at least two nights so the ferry effort pays off with one volcanic west-coast day and one slower beach-or-waterfall day.",
+        "days": [
+          {
+            "theme": "Lady Samoa Crossing, Lava Fields and the Blowholes",
+            "activities": [
+              {
+                "name": "Lady Samoa ferry from Mulifanua to Salelologa",
+                "cost": "₹300 pp",
+                "tip": "Walk-on adult fares are typically SAT10 one way; taking a rental car usually costs about SAT80–95 extra per vehicle, so reserve ahead in peak season."
+              },
+              {
+                "name": "Saleaula Lava Fields",
+                "cost": "₹300 pp",
+                "tip": "Adult entry is commonly SAT10 and often includes a short village-led explanation of the lava flow and church ruins."
+              },
+              {
+                "name": "Alofaaga Blowholes",
+                "cost": "₹150–₹300 pp",
+                "tip": "Village-run entry is usually SAT5–10 cash; sea spray is strongest on a rougher swell, but keep well back from the edge."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Le Lagoto Resort & Spa",
+                "budget": "₹13,500–₹24,500/night"
+              },
+              {
+                "name": "Stevensons at Manase",
+                "budget": "₹10,500–₹18,500/night"
+              },
+              {
+                "name": "Savai'i Lagoon Resort",
+                "budget": "₹11,500–₹20,500/night"
+              }
+            ],
+            "meals": [
+              "JoLene's Restaurant",
+              "Stevensons Restaurant",
+              "Savai'i Lagoon Restaurant"
+            ]
+          },
+          {
+            "theme": "North-Coast Lagoon Time and a Waterfall Detour",
+            "activities": [
+              {
+                "name": "Manase Beach snorkel or swim",
+                "cost": "Free"
+              },
+              {
+                "name": "Afu Aau Waterfall",
+                "cost": "₹150–₹300 pp",
+                "tip": "Most visits involve a small village fee, commonly around SAT5–10 per adult, and the pool is best before heavier afternoon cloud."
+              },
+              {
+                "name": "Satoalepai Wetlands and Giant Clam Sanctuary",
+                "cost": "₹150–₹300 pp",
+                "tip": "Budget a small village cash fee, usually around SAT5–10, for clam-pond access and guiding."
+              },
+              {
+                "name": "Ferry-side seafood lunch in Salelologa",
+                "cost": "₹600–₹1,200 pp"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Amoa Resort",
+                "budget": "₹12,500–₹21,500/night"
+              },
+              {
+                "name": "Va-i-Moana Seaside Lodge",
+                "budget": "₹8,500–₹14,500/night"
+              }
+            ],
+            "meals": [
+              "Amoa Resort Restaurant",
+              "Leilina's Pizzeria",
+              "Savai'i Lagoon Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Faleolo Airport",
+        "to": "Apia",
+        "method": "Airport shuttle, local bus from the main road, or a pre-booked hotel transfer into central Apia.",
+        "cost": "₹150–₹1,800"
+      },
+      {
+        "from": "Apia",
+        "to": "Lalomanu",
+        "method": "South-coast bus or rental car via Lufilufi and the Aleipata district; the drive is scenic but slower than it looks on the map.",
+        "cost": "₹150–₹3,600"
+      },
+      {
+        "from": "Apia",
+        "to": "Savai'i",
+        "method": "Road transfer to Mulifanua Wharf followed by the Lady Samoa ferry to Salelologa, then continue by bus or rental car to your beach stay.",
+        "cost": "₹450–₹4,800"
+      },
+      {
+        "from": "Lalomanu",
+        "to": "Savai'i",
+        "method": "Return across Upolu by rental car or bus to Mulifanua Wharf, then take the Lady Samoa ferry to Salelologa and continue north or west on Savai'i.",
+        "cost": "₹450–₹5,400"
+      },
+      {
+        "from": "Savai'i",
+        "to": "Apia",
+        "method": "Reverse the island hop: Salelologa to Mulifanua on the Lady Samoa ferry, then road transfer back to Apia or Faleolo.",
+        "cost": "₹450–₹4,800"
+      },
+      {
+        "from": "Savai'i",
+        "to": "Faleolo Airport",
+        "method": "Ferry from Salelologa to Mulifanua and a short onward road transfer to Faleolo for departure.",
+        "cost": "₹450–₹2,400"
+      }
+    ],
+    "extras": [
+      "Carry small tala cash for village-run attractions, bus fares, and ferry kiosks because cards are far less reliable outside Apia.",
+      "Rental cars are the easiest way to stitch together To Sua, Lalomanu, and Savai'i without losing daylight, but you need to validate your foreign licence locally first.",
+      "Beach fales often bundle breakfast and dinner, so confirm meal plans before double-booking restaurant reservations on the south coast or in Manase.",
+      "Reef shoes, a dry bag, and modest cover-ups are especially useful because many Samoa swim spots use ladders, rocky entries, and village-managed changing areas."
+    ],
+    "cityImages": {
+      "Apia": [
+        "Robert Louis Stevenson Museum Samoa",
+        "Apia harbour Samoa",
+        "Taumeasina Island Resort Samoa"
+      ],
+      "Lalomanu": [
+        "To Sua Ocean Trench Samoa",
+        "Lalomanu Beach Samoa",
+        "Aga Reef Resort Samoa"
+      ],
+      "Savai'i": [
+        "Alofaaga Blowholes Samoa",
+        "Saleaula Lava Fields Samoa",
+        "Stevensons at Manase Samoa"
+      ]
+    }
+  }
+}
