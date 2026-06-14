@@ -1,0 +1,526 @@
+{
+  "name": "Uganda",
+  "seed": false,
+  "lat": 1.37,
+  "lng": 32.29,
+  "region": "Africa",
+  "bestMonths": [
+    "December",
+    "January",
+    "February",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "worstMonths": [
+    "March",
+    "April",
+    "May",
+    "October",
+    "November"
+  ],
+  "budget": {
+    "solo": "₹2.9L–₹5L",
+    "couple": "₹5.3L–₹8.9L",
+    "family4": "₹9.8L–₹16L"
+  },
+  "experiences": [
+    "Bwindi gorilla trekking",
+    "Kazinga Channel boat safari",
+    "Jinja white-water rafting",
+    "Murchison Falls game drives",
+    "Chimp tracking in Kyambura or Budongo"
+  ],
+  "avoid": [
+    "March-May and October-November rains make red-dirt park roads slower and hiking trails muddier",
+    "Gorilla permits, Aerolink seats and the best safari lodges often sell out first for Jun-Sep and Dec-Feb departures",
+    "Matatus and boda-bodas are great for short budget hops, but long inter-park sectors are more comfortable with a driver or Aerolink flight"
+  ],
+  "combo": [
+    "Rwanda",
+    "Kenya"
+  ],
+  "landmark": "Bwindi Impenetrable National Park",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Entebbe (EBB) is the practical international gateway, with Kampala and Jinja handled by road; for the big safari legs, Aerolink flights into Kihihi, Kasese or Pakuba can save a full day versus long matatu-plus-transfer combinations.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Kampala",
+      "lat": 0.3476,
+      "lng": 32.5825,
+      "notes": "Uganda's energetic capital for markets, museums, cultural performances, SafeBoda hops and stocking up before rafting or safari departures"
+    },
+    {
+      "name": "Bwindi Impenetrable Forest",
+      "lat": -1.0521,
+      "lng": 29.6201,
+      "notes": "Misty gorilla country around Buhoma and Rushaga, with Batwa cultural visits, steep forest trails and Uganda's signature wildlife permit day"
+    },
+    {
+      "name": "Queen Elizabeth National Park",
+      "lat": -0.1828,
+      "lng": 29.8949,
+      "notes": "Kasenyi game drives, Kazinga Channel boat safaris, crater-lake lookouts and chimp tracking around Kyambura Gorge"
+    },
+    {
+      "name": "Jinja",
+      "lat": 0.4244,
+      "lng": 33.2042,
+      "notes": "Adventure hub on the Upper Nile for white-water rafting, Source of the Nile boat rides and a lighter reset after Kampala"
+    },
+    {
+      "name": "Murchison Falls",
+      "lat": 2.2694,
+      "lng": 31.7167,
+      "notes": "Uganda's classic savannah park for the dramatic Nile squeeze, Buligi game drives, boat cruises and Budongo chimp add-ons"
+    }
+  ],
+  "itinerary": {
+    "sim": "MTN Uganda is the safest all-round pick for Kampala, Jinja and most safari lodges, with Airtel Uganda also usable; expect roughly ₹450–₹1,350 for a starter SIM or eSIM with enough data for maps, hotel coordination and mobile payments.",
+    "apps": [
+      "Google Maps",
+      "Booking.com",
+      "Aerolink Uganda",
+      "SafeBoda",
+      "Uber",
+      "WhatsApp",
+      "MTN MoMo",
+      "Tripadvisor",
+      "XE Currency"
+    ],
+    "cityOrder": [
+      "Kampala",
+      "Jinja",
+      "Murchison Falls",
+      "Queen Elizabeth National Park",
+      "Bwindi Impenetrable Forest"
+    ],
+    "cities": {
+      "Kampala": {
+        "name": "Kampala",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Markets, history and an easy first day learning Kampala's hills before the bigger safari sectors start",
+            "activities": [
+              {
+                "name": "Uganda Museum entry",
+                "cost": "₹220"
+              },
+              {
+                "name": "Kabaka's Palace and Idi Amin torture chambers entry",
+                "cost": "₹770"
+              },
+              {
+                "name": "Guided browse at Owino Market or Nakasero Market",
+                "cost": "₹440–₹1,320"
+              },
+              {
+                "name": "SafeBoda or Uber hops between central Kampala sights",
+                "cost": "₹220–₹880"
+              },
+              {
+                "name": "Ndere Cultural Centre evening show",
+                "cost": "₹1,540–₹2,420"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "ONOMO Hotel Kampala",
+                "budget": "₹7,500–₹11,500/night"
+              },
+              {
+                "name": "Speke Hotel Kampala",
+                "budget": "₹7,800–₹12,500/night"
+              },
+              {
+                "name": "Kampala Serena Hotel",
+                "budget": "₹15,500–₹26,500/night"
+              }
+            ],
+            "meals": [
+              "Cafe Javas",
+              "The Lawns Restaurant",
+              "2K Restaurant Central"
+            ]
+          },
+          {
+            "theme": "Mosque views, craft stops and practical prep for Jinja or an early safari departure",
+            "activities": [
+              {
+                "name": "Uganda National Mosque entry and minaret view",
+                "cost": "₹440–₹660"
+              },
+              {
+                "name": "Kasubi Tombs guided visit",
+                "cost": "₹440–₹660"
+              },
+              {
+                "name": "Nommo Gallery and craft shopping stop",
+                "cost": "₹0–₹440"
+              },
+              {
+                "name": "Road transfer from Kampala to Jinja by private car or hotel shuttle",
+                "cost": "₹2,200–₹4,400"
+              },
+              {
+                "name": "Matatu minibus from Kampala to Jinja",
+                "cost": "₹220–₹440"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Latitude 0 Degrees",
+                "budget": "₹12,500–₹19,000/night"
+              },
+              {
+                "name": "ONOMO Hotel Kampala",
+                "budget": "₹7,500–₹11,500/night"
+              }
+            ],
+            "meals": [
+              "Mediterraneo Restaurant",
+              "Yujo Izakaya",
+              "The Lawns Restaurant"
+            ]
+          }
+        ]
+      },
+      "Jinja": {
+        "name": "Jinja",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "An action-heavy Nile day with rafting, river viewpoints and a much looser pace than Kampala",
+            "activities": [
+              {
+                "name": "Nile River Explorers or Nalubale Rafting full-day white-water rafting",
+                "cost": "₹11,600–₹13,300"
+              },
+              {
+                "name": "Source of the Nile boat ride",
+                "cost": "₹660–₹1,320"
+              },
+              {
+                "name": "Boda-boda or tuk-tuk hops between town, the Nile and river lodges",
+                "cost": "₹220–₹660"
+              },
+              {
+                "name": "Itanda Falls viewpoint add-on",
+                "cost": "₹440–₹1,100"
+              },
+              {
+                "name": "Jinja Brewing Company tasting or evening riverfront stop",
+                "cost": "₹440–₹1,320"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "2 Friends Jinja",
+                "budget": "₹6,500–₹10,500/night"
+              },
+              {
+                "name": "Jinja Nile Resort",
+                "budget": "₹8,500–₹14,500/night"
+              },
+              {
+                "name": "Wildwaters Lodge",
+                "budget": "₹26,500–₹44,000/night"
+              }
+            ],
+            "meals": [
+              "The Deli",
+              "The Keep",
+              "Jinja Sailing Club"
+            ]
+          }
+        ]
+      },
+      "Murchison Falls": {
+        "name": "Murchison Falls",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Into savannah country with your first big Uganda wildlife drive and the Nile already doing all the scenery work",
+            "activities": [
+              {
+                "name": "Aerolink one-way flight from Entebbe to Pakuba or Chobe",
+                "cost": "₹19,900–₹28,200"
+              },
+              {
+                "name": "Murchison Falls National Park non-resident entry fee",
+                "cost": "₹3,700"
+              },
+              {
+                "name": "Shared Buligi sector game drive",
+                "cost": "₹3,300–₹5,800"
+              },
+              {
+                "name": "Ferry crossing or lodge transfer within the park sector",
+                "cost": "₹440–₹1,320"
+              },
+              {
+                "name": "Sunset drink stop at Paraa or Pakuba lookout",
+                "cost": "₹660–₹1,760"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pakuba Safari Lodge",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Fort Murchison",
+                "budget": "₹7,500–₹12,500/night"
+              },
+              {
+                "name": "Paraa Safari Lodge",
+                "budget": "₹24,500–₹39,500/night"
+              }
+            ],
+            "meals": [
+              "Pakuba Safari Lodge Restaurant",
+              "Fort Murchison Restaurant",
+              "Paraa Safari Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Boat to the base of the falls, roaring viewpoints and the optional chimp add-on that makes this leg deeper than a standard safari",
+            "activities": [
+              {
+                "name": "Boat cruise to the base of Murchison Falls",
+                "cost": "₹3,300–₹5,800"
+              },
+              {
+                "name": "Top of the Falls hike with ranger or lodge transfer",
+                "cost": "₹1,760–₹2,900"
+              },
+              {
+                "name": "Budongo Forest chimpanzee habituation permit",
+                "cost": "₹19,100"
+              },
+              {
+                "name": "Kaniyo Pabidi chimp tracking permit",
+                "cost": "₹10,800–₹12,500"
+              },
+              {
+                "name": "Evening game drive or Nile delta cruise add-on",
+                "cost": "₹3,300–₹5,800"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nile Safari Lodge",
+                "budget": "₹46,000–₹74,000/night"
+              },
+              {
+                "name": "Pakuba Safari Lodge",
+                "budget": "₹11,500–₹18,500/night"
+              }
+            ],
+            "meals": [
+              "Nile Safari Lodge Dining Room",
+              "Paraa Safari Lodge Restaurant",
+              "Pakuba Safari Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Queen Elizabeth National Park": {
+        "name": "Queen Elizabeth National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Classic QENP day: Kasenyi plains wildlife in the morning and a Kazinga Channel boat packed with hippos by afternoon",
+            "activities": [
+              {
+                "name": "Queen Elizabeth National Park non-resident entry fee",
+                "cost": "₹3,700"
+              },
+              {
+                "name": "Shared Kasenyi plains game drive",
+                "cost": "₹3,300–₹5,800"
+              },
+              {
+                "name": "Kazinga Channel boat cruise",
+                "cost": "₹2,900–₹4,600"
+              },
+              {
+                "name": "Katwe salt lake community walk",
+                "cost": "₹660–₹1,320"
+              },
+              {
+                "name": "Road transfer from Murchison to Mweya or Kasenyi sector",
+                "cost": "₹15,500–₹24,000"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Park View Safari Lodge",
+                "budget": "₹10,500–₹16,500/night"
+              },
+              {
+                "name": "Elephant Plains Lodge",
+                "budget": "₹14,500–₹23,500/night"
+              },
+              {
+                "name": "Mweya Safari Lodge",
+                "budget": "₹25,500–₹41,500/night"
+              }
+            ],
+            "meals": [
+              "Mweya Safari Lodge Restaurant",
+              "Elephant Plains Lodge Restaurant",
+              "Park View Safari Lodge Restaurant"
+            ]
+          },
+          {
+            "theme": "Chimp tracking and crater-lake scenery, with the Ishasha turnoff ready if you want tree-climbing lions on the way south",
+            "activities": [
+              {
+                "name": "Kyambura Gorge chimpanzee tracking permit",
+                "cost": "₹8,300–₹16,600"
+              },
+              {
+                "name": "Explosion crater drive and viewpoint circuit",
+                "cost": "₹1,320–₹2,640"
+              },
+              {
+                "name": "Ishasha sector transfer for tree-climbing lion game drive",
+                "cost": "₹4,400–₹7,700"
+              },
+              {
+                "name": "Boda-boda or local taxi hops around Katunguru and lodge areas",
+                "cost": "₹220–₹660"
+              },
+              {
+                "name": "Aerolink one-way flight from Kasese to Entebbe",
+                "cost": "₹20,800–₹28,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ihamba Lakeside Safari Lodge",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Buffalo Safari Lodge",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Ihamba Lakeside Safari Lodge Restaurant",
+              "Buffalo Safari Lodge Restaurant",
+              "Mweya Safari Lodge Restaurant"
+            ]
+          }
+        ]
+      },
+      "Bwindi Impenetrable Forest": {
+        "name": "Bwindi Impenetrable Forest",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Permit day in one of Africa's great forests, with a steep climb rewarded by Uganda's most iconic wildlife encounter",
+            "activities": [
+              {
+                "name": "Bwindi gorilla trekking permit (high season)",
+                "cost": "₹66,400"
+              },
+              {
+                "name": "Bwindi gorilla trekking permit (low season Apr-May, Nov)",
+                "cost": "₹49,800"
+              },
+              {
+                "name": "Porter hire for the gorilla trek",
+                "cost": "₹830–₹1,250"
+              },
+              {
+                "name": "Transfer from Ishasha or Kasese side to Buhoma or Rushaga",
+                "cost": "₹6,600–₹11,600"
+              },
+              {
+                "name": "Batwa cultural experience",
+                "cost": "₹2,500–₹4,600"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Buhoma Lodge",
+                "budget": "₹24,500–₹39,500/night"
+              },
+              {
+                "name": "Gorilla Leisure Lodge",
+                "budget": "₹13,500–₹21,500/night"
+              },
+              {
+                "name": "Four Gorillas Lodge",
+                "budget": "₹21,500–₹36,500/night"
+              }
+            ],
+            "meals": [
+              "Buhoma Lodge Restaurant",
+              "Gorilla Leisure Lodge Restaurant",
+              "Ride 4 a Woman Restaurant"
+            ]
+          },
+          {
+            "theme": "A slower forest and community day that helps justify the long transfer for anyone not flying straight back out",
+            "activities": [
+              {
+                "name": "Munyaga River Trail or waterfall walk with local guide",
+                "cost": "₹830–₹1,660"
+              },
+              {
+                "name": "Ride 4 a Woman weaving or cooking experience",
+                "cost": "₹660–₹1,320"
+              },
+              {
+                "name": "Birding walk in Buhoma sector",
+                "cost": "₹1,660–₹3,300"
+              },
+              {
+                "name": "Boda-boda hop between trailheads and lodge clusters",
+                "cost": "₹440–₹1,100"
+              },
+              {
+                "name": "Aerolink one-way flight from Kihihi to Entebbe",
+                "cost": "₹20,800–₹28,200"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mahogany Springs Lodge",
+                "budget": "₹25,500–₹41,500/night"
+              },
+              {
+                "name": "Gorilla Valley Lodge",
+                "budget": "₹9,500–₹15,500/night"
+              }
+            ],
+            "meals": [
+              "Mahogany Springs Restaurant",
+              "Buhoma Community Rest Camp Restaurant",
+              "Gorilla Valley Lodge Restaurant"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

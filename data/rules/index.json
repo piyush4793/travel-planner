@@ -1065,9 +1065,9 @@
     "lng": 32.29,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 14
   },
   {
     "name": "Rwanda",
@@ -1185,9 +1185,9 @@
     "lng": 29.15,
     "region": "Africa",
     "inSeed": false,
-    "hasItinerary": false,
-    "recDays": null,
-    "maxDays": null
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 10
   },
   {
     "name": "Zambia",

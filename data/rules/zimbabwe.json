@@ -1,0 +1,517 @@
+{
+  "name": "Zimbabwe",
+  "seed": false,
+  "lat": -19.02,
+  "lng": 29.15,
+  "region": "Africa",
+  "bestMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October"
+  ],
+  "worstMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "budget": {
+    "solo": "₹1.6L–₹2.7L",
+    "couple": "₹2.9L–₹4.8L",
+    "family4": "₹5.8L–₹8.9L"
+  },
+  "experiences": [
+    "Victoria Falls rainforest walk",
+    "Zambezi sunset cruise",
+    "Hwange safari",
+    "Matobo rhino tracking",
+    "Great Zimbabwe ruins"
+  ],
+  "avoid": [
+    "November to March brings hotter weather, storms, muddier roads, and weaker safari visibility in many parks",
+    "Night driving between Harare, Bulawayo, Hwange, and Masvingo is risky because of livestock, potholes, and unlit stretches",
+    "Carry small USD notes for park gates and activity balances because card acceptance can still be patchy outside major hotels"
+  ],
+  "combo": [
+    "Botswana",
+    "Zambia",
+    "South Africa"
+  ],
+  "landmark": "Victoria Falls",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Most India itineraries connect through Addis Ababa, Johannesburg, Nairobi, or Dubai. For this route, Harare is the easiest gateway, while Victoria Falls also works well as an open-jaw exit if you are combining Zimbabwe with Chobe or Livingstone.",
+  "links": [],
+  "cities": [
+    {
+      "name": "Harare",
+      "lat": -17.8292,
+      "lng": 31.0522,
+      "notes": "Capital gateway for museums, jacaranda-lined suburbs, wildlife sanctuaries, and the cleanest Fastjet or Air Zimbabwe jump to Victoria Falls"
+    },
+    {
+      "name": "Victoria Falls",
+      "lat": -17.9243,
+      "lng": 25.8572,
+      "notes": "Zimbabwe's signature stop for the rainforest trail, Zambezi cruises, helicopter flights, bridge bungee, and high-water rafting logistics"
+    },
+    {
+      "name": "Hwange National Park",
+      "lat": -18.6292,
+      "lng": 26.9414,
+      "notes": "Zimbabwe's classic big-game park with waterhole hides, elephant-heavy game drives, and easy lodge-based safaris from Main Camp or the eastern concessions"
+    },
+    {
+      "name": "Matobo Hills",
+      "lat": -20.5,
+      "lng": 28.5,
+      "notes": "Granite kopjes, San rock art, Cecil Rhodes viewpoints, and one of southern Africa's best rhino-tracking reserves"
+    },
+    {
+      "name": "Great Zimbabwe",
+      "lat": -20.267,
+      "lng": 30.933,
+      "notes": "The country's defining archaeological site near Masvingo, with the Hill Complex, Great Enclosure, and museum telling the Shona kingdom story"
+    }
+  ],
+  "itinerary": {
+    "sim": "Econet is the safest all-round SIM for this route, with NetOne as the main backup. Budget about ₹415–₹1,245 for a starter pack or eSIM with enough data for maps, WhatsApp, and activity confirmations, but expect weaker coverage once you are deep inside Hwange or among the granite hills of Matobo.",
+    "apps": [
+      "Google Maps",
+      "WhatsApp",
+      "Booking.com",
+      "Fastjet",
+      "Air Zimbabwe",
+      "Zimbabwe Parks & Wildlife",
+      "XE Currency",
+      "SafariBookings",
+      "Waze"
+    ],
+    "cityOrder": [
+      "Harare",
+      "Victoria Falls",
+      "Hwange National Park",
+      "Matobo Hills",
+      "Great Zimbabwe"
+    ],
+    "cities": {
+      "Harare": {
+        "name": "Harare",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Arrival logistics, a light city day, and setting up the domestic jump west",
+            "activities": [
+              {
+                "name": "Rental-car pickup from Avis, Europcar, or a similar airport desk for the later overland legs",
+                "cost": "₹4,980–₹7,470/day"
+              },
+              {
+                "name": "National Gallery of Zimbabwe and central Harare walk",
+                "cost": "₹0–₹415"
+              },
+              {
+                "name": "Mukuvisi Woodlands game-viewing or walking circuit",
+                "cost": "₹830–₹1,660"
+              },
+              {
+                "name": "Wild Is Life & ZEN evening sanctuary visit",
+                "cost": "₹6,640–₹9,960"
+              },
+              {
+                "name": "Fastjet or Air Zimbabwe one-way flight from Harare to Victoria Falls",
+                "cost": "₹18,090–₹22,410"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hyatt Regency Harare The Meikles",
+                "budget": "₹15,500–₹26,500/night"
+              },
+              {
+                "name": "Bronte Hotel",
+                "budget": "₹11,500–₹18,500/night"
+              },
+              {
+                "name": "Holiday Inn Harare",
+                "budget": "₹8,500–₹13,500/night"
+              }
+            ],
+            "meals": [
+              "Amanzi Restaurant",
+              "The Fishmonger",
+              "Sabai Thai"
+            ]
+          }
+        ]
+      },
+      "Victoria Falls": {
+        "name": "Victoria Falls",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Rainforest viewpoints, bridge history, and a Zambezi sunset on the first full day",
+            "activities": [
+              {
+                "name": "Victoria Falls rainforest entry for international visitors",
+                "cost": "₹4,814"
+              },
+              {
+                "name": "Victoria Falls Bridge tour and historic walkway access",
+                "cost": "₹830–₹1,660"
+              },
+              {
+                "name": "Victoria Falls town craft market and curio browsing",
+                "cost": "₹0"
+              },
+              {
+                "name": "Zambezi sunset cruise with snacks and drinks",
+                "cost": "₹4,980–₹8,300"
+              },
+              {
+                "name": "Optional moonbow or night-photo revisit when spray levels justify a second entry",
+                "cost": "₹4,814–₹9,628"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Victoria Falls Hotel",
+                "budget": "₹32,000–₹58,000/night"
+              },
+              {
+                "name": "Ilala Lodge Hotel",
+                "budget": "₹19,500–₹33,500/night"
+              },
+              {
+                "name": "Batonka Guest Lodge",
+                "budget": "₹14,500–₹24,500/night"
+              }
+            ],
+            "meals": [
+              "The Lookout Café",
+              "MaKuwa-Kuwa Restaurant",
+              "Dusty Road Township Experience"
+            ]
+          },
+          {
+            "theme": "Big-adrenaline gorge activities and the classic aerial view of Mosi-oa-Tunya",
+            "activities": [
+              {
+                "name": "Helicopter Flight of Angels over Victoria Falls",
+                "cost": "₹12,450–₹14,940"
+              },
+              {
+                "name": "Victoria Falls Bridge bungee jump",
+                "cost": "₹13,944"
+              },
+              {
+                "name": "Zambezi one-day white-water rafting",
+                "cost": "₹12,450–₹14,110"
+              },
+              {
+                "name": "Rafting river usage or park fee where billed separately",
+                "cost": "₹830–₹1,245"
+              },
+              {
+                "name": "Victoria Falls Canopy Tour or gorge swing alternative",
+                "cost": "₹7,470–₹12,450"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Victoria Falls Safari Lodge",
+                "budget": "₹20,500–₹35,500/night"
+              },
+              {
+                "name": "The Palm River Hotel",
+                "budget": "₹30,000–₹48,000/night"
+              },
+              {
+                "name": "Ilala Lodge Hotel",
+                "budget": "₹19,500–₹33,500/night"
+              }
+            ],
+            "meals": [
+              "The Boma - Dinner & Drum Show",
+              "Three Monkeys Restaurant",
+              "The Lookout Café"
+            ]
+          }
+        ]
+      },
+      "Hwange National Park": {
+        "name": "Hwange National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "days": [
+          {
+            "theme": "Road into safari country, first waterhole sightings, and a classic sunset drive",
+            "activities": [
+              {
+                "name": "Shared road transfer, intercity bus, or rental-car drive from Victoria Falls to Hwange side lodges",
+                "cost": "₹2,905–₹7,470"
+              },
+              {
+                "name": "Hwange National Park international entry fee",
+                "cost": "₹1,992"
+              },
+              {
+                "name": "Foreign vehicle fee for a self-drive park day",
+                "cost": "₹830–₹1,245"
+              },
+              {
+                "name": "Lodge-based afternoon game drive in the Main Camp or eastern concession zone",
+                "cost": "₹4,150–₹6,640"
+              },
+              {
+                "name": "Waterhole hide session at Mandavu, Nyamandhlovu, or your lodge platform",
+                "cost": "₹0–₹830"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hwange Safari Lodge",
+                "budget": "₹14,500–₹24,500/night"
+              },
+              {
+                "name": "Ivory Lodge",
+                "budget": "₹38,000–₹65,000/night"
+              },
+              {
+                "name": "Nantwich Lodge",
+                "budget": "₹24,000–₹42,000/night"
+              }
+            ],
+            "meals": [
+              "Hwange Safari Lodge Restaurant",
+              "Ivory Lodge dining room",
+              "Nantwich Lodge dining room"
+            ]
+          },
+          {
+            "theme": "Pre-dawn wildlife tracking, bigger elephant herds, and the best-value full safari day",
+            "activities": [
+              {
+                "name": "Second Hwange park entry fee",
+                "cost": "₹1,992"
+              },
+              {
+                "name": "Sunrise shared game drive with guide",
+                "cost": "₹4,980–₹7,470"
+              },
+              {
+                "name": "Walking safari or pumped-waterhole experience with ranger",
+                "cost": "₹5,810–₹9,130"
+              },
+              {
+                "name": "Full-day private safari vehicle if you want to cover remote loops",
+                "cost": "₹14,940–₹24,900"
+              },
+              {
+                "name": "Painted Dog Conservation centre stop on the way toward Dete or Victoria Falls side",
+                "cost": "₹830–₹1,660"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Hide",
+                "budget": "₹36,000–₹62,000/night"
+              },
+              {
+                "name": "Hwange Safari Lodge",
+                "budget": "₹14,500–₹24,500/night"
+              }
+            ],
+            "meals": [
+              "The Hide dining room",
+              "Hwange Safari Lodge Restaurant",
+              "Nantwich Lodge dining room"
+            ]
+          }
+        ]
+      },
+      "Matobo Hills": {
+        "name": "Matobo Hills",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Granite kopjes, San rock art, and Zimbabwe's signature rhino-on-foot experience",
+            "activities": [
+              {
+                "name": "Drive or transfer via Bulawayo into Matobo National Park",
+                "cost": "₹4,150–₹8,300"
+              },
+              {
+                "name": "Matobo National Park international entry fee",
+                "cost": "₹1,245"
+              },
+              {
+                "name": "Guided white-rhino tracking on foot with an armed ranger",
+                "cost": "₹5,810–₹9,960"
+              },
+              {
+                "name": "World's View and Cecil Rhodes grave circuit",
+                "cost": "₹0–₹830"
+              },
+              {
+                "name": "Pomongwe Cave or Nswatugi rock-art visit",
+                "cost": "₹830–₹1,660"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Amalinda Lodge",
+                "budget": "₹28,000–₹48,000/night"
+              },
+              {
+                "name": "Big Cave Camp",
+                "budget": "₹20,500–₹34,500/night"
+              },
+              {
+                "name": "Matobo Hills Lodge",
+                "budget": "₹16,500–₹27,500/night"
+              }
+            ],
+            "meals": [
+              "Amalinda Lodge dining room",
+              "Big Cave Camp restaurant",
+              "Matobo Hills Lodge restaurant"
+            ]
+          }
+        ]
+      },
+      "Great Zimbabwe": {
+        "name": "Great Zimbabwe",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "days": [
+          {
+            "theme": "Ancient stone architecture, hilltop history, and a quieter final chapter near Masvingo",
+            "activities": [
+              {
+                "name": "Intercity bus or rental-car transfer from Bulawayo/Matobo side to Masvingo",
+                "cost": "₹4,150–₹9,960"
+              },
+              {
+                "name": "Great Zimbabwe Monument international entry fee",
+                "cost": "₹1,245"
+              },
+              {
+                "name": "Site guide for the Hill Complex, Great Enclosure, and Valley Ruins",
+                "cost": "₹415–₹830"
+              },
+              {
+                "name": "Great Zimbabwe Museum visit",
+                "cost": "₹0"
+              },
+              {
+                "name": "Lake Mutirikwi sunset detour or Kyle Recreational Park add-on",
+                "cost": "₹830–₹1,660"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Great Zimbabwe Hotel",
+                "budget": "₹8,500–₹13,500/night"
+              },
+              {
+                "name": "Norma Jeane's Lake View Resort",
+                "budget": "₹9,500–₹16,500/night"
+              },
+              {
+                "name": "Regency Hotel Flamboyant",
+                "budget": "₹7,500–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Great Zimbabwe Hotel Restaurant",
+              "Norma Jeane's restaurant",
+              "Flamboyant Hotel Restaurant"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Harare",
+        "to": "Victoria Falls",
+        "method": "Fastjet or Air Zimbabwe is the cleanest move for this route; Intercape, CAG Travellers, and other overnight buses are cheaper but consume most of a day",
+        "cost": "₹3,735–₹22,410"
+      },
+      {
+        "from": "Victoria Falls",
+        "to": "Hwange National Park",
+        "method": "Use a shared lodge shuttle, an intercity bus toward Dete or Hwange town, or your own rental car on the A8 depending on how safari-focused your stay is",
+        "cost": "₹2,905–₹7,470"
+      },
+      {
+        "from": "Hwange National Park",
+        "to": "Matobo Hills",
+        "method": "Route south via Bulawayo by rental car or arranged road transfer; public buses work but are slower and less useful once you need park-area pickups",
+        "cost": "₹4,980–₹11,620"
+      },
+      {
+        "from": "Matobo Hills",
+        "to": "Great Zimbabwe",
+        "method": "A rental car gives the easiest door-to-door move, while Bulawayo-Masvingo buses are the budget alternative before a short taxi onward to the ruins",
+        "cost": "₹4,150–₹9,960"
+      },
+      {
+        "from": "Great Zimbabwe",
+        "to": "Harare",
+        "method": "Return north by intercity bus or self-drive on the A4; this is the simplest finish unless you are continuing onward into South Africa",
+        "cost": "₹2,075–₹7,470"
+      }
+    ],
+    "extras": [
+      "May to October is the sweet spot for this exact loop: safari visibility is strongest in Hwange, Matobo roads stay easier to handle, and cooler mornings make the ruins and viewpoints far more pleasant.",
+      "Victoria Falls entry on the Zimbabwe side is charged per visit for international travelers, so if you want both a daylight walk and an after-dark moonbow or photography slot, budget for two entries.",
+      "Rafting and bungee operators sometimes bundle bridge access or river fees and sometimes break them out separately, so confirm the final invoice before paying a deposit.",
+      "Carry small USD notes for park gates, tipping, and curio-market buys, but settle larger hotel and activity balances by card whenever the rate looks fair.",
+      "If you plan to self-drive, ask specifically about cross-country mileage limits, spare tyres, and what happens after a pothole puncture because road conditions can change quickly outside the main tourist corridor.",
+      "Victoria Falls pairs naturally with Chobe or Livingstone, but this Zimbabwe-only route is strongest when you keep the western flight first and the longer overland legs for the back half."
+    ],
+    "cityImages": {
+      "Harare": [
+        "Hyatt Regency Harare The Meikles Zimbabwe",
+        "National Gallery of Zimbabwe Harare",
+        "Mukuvisi Woodlands Harare"
+      ],
+      "Victoria Falls": [
+        "Victoria Falls rainforest Zimbabwe",
+        "Victoria Falls Bridge bungee Zimbabwe",
+        "Zambezi sunset cruise Victoria Falls"
+      ],
+      "Hwange National Park": [
+        "Hwange elephant waterhole Zimbabwe",
+        "Hwange Safari Lodge Zimbabwe",
+        "Hwange game drive Zimbabwe"
+      ],
+      "Matobo Hills": [
+        "Matobo Hills balancing rocks Zimbabwe",
+        "Matobo rhino tracking Zimbabwe",
+        "Big Cave Camp Matobo"
+      ],
+      "Great Zimbabwe": [
+        "Great Zimbabwe ruins Masvingo",
+        "Great Enclosure Zimbabwe",
+        "Great Zimbabwe Hotel Masvingo"
+      ]
+    }
+  }
+}
