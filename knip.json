@@ -1,3 +1,5 @@
 {
-  "ignoreBinaries": ["husky"]
+  "ignoreBinaries": ["husky"],
+  "ignore": ["src/core/index.ts"],
+  "ignoreExportsUsedInFile": true
 }

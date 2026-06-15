@@ -13,7 +13,6 @@ export type BackupSchedule = {
 };
 
 const DAY_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] as const;
-export { DAY_NAMES };
 
 type BackupData = {
   version: 1;
@@ -65,7 +64,7 @@ export async function exportFullBackup(): Promise<void> {
 }
 
 /** Silent auto-backup — no dialog, downloads to default folder */
-export function autoExportBackup(): void {
+function autoExportBackup(): void {
   downloadBlob(buildBackupBlob(), `roamwise-backup-${dateStamp()}.json`);
   saveLS(LS_KEYS.LAST_BACKUP, new Date().toISOString());
 }

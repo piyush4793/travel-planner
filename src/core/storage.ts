@@ -4,10 +4,12 @@ import { webStorageAdapter } from "./adapters/WebStorageAdapter";
 // Singleton — can be swapped for testing or React Native
 let _storage: StoragePort = webStorageAdapter;
 
+/** @public Swap storage backend (e.g. AsyncStorage for React Native) */
 export function setStorageAdapter(adapter: StoragePort): void {
   _storage = adapter;
 }
 
+/** @public Get the current storage adapter */
 export function getStorageAdapter(): StoragePort {
   return _storage;
 }
