@@ -18,6 +18,7 @@ All notable changes to Roamwise are documented here. Format follows [Keep a Chan
 - **Smarter auto-backup** — first launch no longer triggers backup; default frequency changed from weekly to monthly; backup only nags when user has actual custom data
 - **"Learn about country" section** — collapsible panel in country detail with Wikipedia summary, thumbnail, capital, currency, and language (fetched on demand, cached per session)
 - **Planning resources** — top 3 curated external links per country: Wikivoyage travel guide, Lonely Planet, and visa/entry requirements
+- **First run experience (FRE)** — guided tooltip tour for new users highlighting Trips, Calendar, Discover, Cinematic, Settings, and PWA install prompt. One-time, stored in localStorage
 - **Cinematic animation uses requestAnimationFrame** — arc/transit animations now use rAF instead of setTimeout loops for jank-free 60fps motion on all devices
 - **Wiki image fetch timeout** — city photo loading capped at 5 seconds to prevent animation from stalling on slow networks
 - **Better cinematic loading UX** — progressive status messages ("Plotting route…", "Loading city photos…"), animated pulsing loader dots during intro, and clearer "Switch to Map view" guidance

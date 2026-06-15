@@ -23,7 +23,9 @@ import { useTripStore } from "./hooks/useTripStore";
 import { useAiPlanStore } from "./hooks/useAiPlanStore";
 import { useBreakpoint } from "./hooks/useBreakpoint";
 import { isEnabled } from "./core/featureFlags";
+import { useInstallPrompt } from "./hooks/useInstallPrompt";
 import { isBackupOverdue, autoBackupIfOverdue } from "./utils/backup";
+import FreTour from "./components/shared/FreTour";
 
 const VIEW_LABELS: Record<AppView, string> = {
   trips: "✈ Trips", calendar: "📅 Calendar", discover: "🌍 Discover",
@@ -34,6 +36,7 @@ export default function App() {
   const aiPlanStore = useAiPlanStore();
   const bp = useBreakpoint();
   const isMobile = bp === "mobile";
+  const installPrompt = useInstallPrompt();
   const [view, setView] = useHashView();
   const [homeCountry, setHomeCountry] = useState(() => loadLS(LS_KEYS.HOME_COUNTRY, "India"));
   const [selectedMonth, setSelectedMonth] = useState<string[]>([]);
@@ -163,6 +166,7 @@ export default function App() {
         <div className="hidden md:flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto">
           {(Object.keys(VIEW_LABELS) as AppView[]).map((v) => (
             <button key={v} onClick={() => setView(v)}
+              data-tour={`nav-${v}`}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
               }`}>
@@ -175,6 +179,7 @@ export default function App() {
         <div className="flex md:hidden items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto">
           {(Object.keys(VIEW_LABELS) as AppView[]).map((v) => (
             <button key={v} onClick={() => setView(v)}
+              data-tour={isMobile ? `nav-${v}` : undefined}
               className={`px-2.5 py-1.5 rounded-full text-[11px] font-semibold transition-all min-h-[36px] ${
                 view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
               }`}>
@@ -194,6 +199,7 @@ export default function App() {
             + Add
           </button>
           <button onClick={() => setSettingsOpen(true)}
+            data-tour="settings"
             className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15"
             title="Settings">
             ⚙️
@@ -355,6 +361,13 @@ export default function App() {
           onReplacePlan={(id) => aiPlanResult && aiPlanStore.replacePlan(id, aiPlanResult)}
         />
       )}
+
+      <FreTour
+        canPromptInstall={installPrompt.canPrompt}
+        isInstalled={installPrompt.isInstalled}
+        isIOS={installPrompt.isIOS}
+        onInstall={installPrompt.promptInstall}
+      />
     </div>
   );
 }

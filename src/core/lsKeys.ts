@@ -15,4 +15,5 @@ export const LS_KEYS = {
   LAST_BACKUP: "tp_last_backup",
   BACKUP_FREQUENCY: "tp_backup_frequency",
   BACKUP_SCHEDULE: "tp_backup_schedule",
+  FRE_DONE: "tp_fre_done",
 } as const;

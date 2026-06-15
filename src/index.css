@@ -143,3 +143,32 @@ html, body, #root {
   font-weight: 700;
   line-height: 1;
 }
+
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* FRE tour animations */
+@keyframes freFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(5deg); }
+  66% { transform: translateY(6px) rotate(-3deg); }
+}
+
+.fre-slide-next {
+  animation: freSlideNext 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.fre-slide-prev {
+  animation: freSlidePrev 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes freSlideNext {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes freSlidePrev {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
