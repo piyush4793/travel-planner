@@ -32,9 +32,6 @@ export default defineConfig({
         "src/test/**",
         "src/vite-env.d.ts",
         "src/main.tsx",
-        // Components need integration/e2e tests, not unit coverage.
-        // Industry standard: unit coverage targets business logic, not UI rendering.
-        "src/components/**",
         // Type-only and barrel exports — no runtime logic to test
         "src/core/types.ts",
         "src/core/ports/**",
@@ -54,14 +51,19 @@ export default defineConfig({
           functions: 60,
         },
         "src/hooks/**": {
-          statements: 50,
-          branches: 50,
-          functions: 50,
+          statements: 60,
+          branches: 55,
+          functions: 60,
         },
         "src/utils/**": {
-          statements: 40,
-          branches: 40,
-          functions: 40,
+          statements: 60,
+          branches: 50,
+          functions: 60,
+        },
+        "src/components/**": {
+          statements: 4,
+          branches: 2,
+          functions: 4,
         },
       },
     },
