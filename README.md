@@ -204,6 +204,29 @@ Coverage thresholds are enforced in `vite.config.ts`:
 
 The `scripts/check-new-coverage.sh` script compares changed files against the coverage report and flags any new/modified source file below 50% — run it before merging to catch untested code.
 
+### Bundle Optimization
+
+The build uses manual chunk splitting to keep the initial load fast:
+
+| Chunk | Size | Gzipped | Caching |
+|---|---|---|---|
+| App code | 319 KB | 88 KB | Changes per deploy |
+| MapLibre GL | 802 KB | 217 KB | Cached across deploys |
+| React vendor | 141 KB | 45 KB | Cached across deploys |
+| 198 country rules | ~10 KB each | ~4 KB | Lazy-loaded on demand |
+| CSS | 123 KB | 19 KB | Changes per deploy |
+
+MapLibre and React are split into separate chunks that cache independently — users only re-download the app code on updates.
+
+### Error Handling & Bug Reports
+
+A global `ErrorBoundary` catches React render crashes and shows a recovery UI with:
+- **Try Again** — resets error state and navigates to Trips view
+- **Copy Info** — copies version, stack trace, viewport, and localStorage keys to clipboard
+- **Report** — opens a pre-filled GitHub issue with debug context
+
+Build metadata (`__APP_VERSION__`, `__BUILD_TIME__`) is injected at compile time for traceability.
+
 For detailed architecture, code structure, design patterns, and data model, see [DESIGN.md](./DESIGN.md).
 
 ---
@@ -231,7 +254,6 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 |----------|-----------|---------|----------|-------------|
 | 🟢 Short | ⭐⭐⭐ | Cinematic for AI plans | AI | Fuzzy city name matching + AI lat/lng fallback so cinematic works for imported plans |
 | 🟢 Short | ⭐⭐ | Budget currency toggle | UX | Convert ₹ to USD / EUR / AUD |
-| 🟡 Medium | ⭐⭐⭐⭐ | First run experience | UX | Guided onboarding tour highlighting key features (tooltip-based, one-time) |
 | 🟡 Medium | ⭐⭐⭐ | Import parser quality | AI | Better ChatGPT link extraction, React Router stream data, entity cleanup |
 | 🟡 Medium | ⭐⭐⭐ | Multi-country trip builder | Core | String countries into a single trip with total cost/days |
 | 🟡 Medium | ⭐⭐ | Calendar sync | Export | Export itinerary as `.ics` file |
