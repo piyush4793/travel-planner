@@ -11,6 +11,8 @@ type TourStep = {
   kind: StepKind;
   /** CSS selector for spotlight target */
   target?: string;
+  /** Alternate target for mobile (if different from desktop) */
+  mobileTarget?: string;
   position?: "top" | "bottom" | "left" | "right";
   emoji: string;
   title: string;
@@ -65,10 +67,11 @@ const STEPS: TourStep[] = [
   {
     kind: "spotlight",
     target: "[data-tour='settings']",
+    mobileTarget: "[data-tour='mobile-menu']",
     position: "bottom",
     emoji: "\u2699\uFE0F",
     title: "Settings & Backup",
-    body: "Export your data as JSON, CSV, or XLSX. Set up auto-backups so you never lose a plan. Configure AI providers for smart trip planning.",
+    body: "Tap the menu to access settings. Export your data, set up auto-backups, and configure AI providers for smart trip planning.",
   },
   {
     kind: "install",
@@ -125,9 +128,23 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
   useEffect(() => {
     if (!visible) return;
     const s = STEPS[step];
-    if (isMobile || s.kind !== "spotlight" || !s.target) { setRect(null); return; }
-    const el = document.querySelector(s.target);
+    if (s.kind !== "spotlight" || !s.target) { setRect(null); return; }
+    const selector = (isMobile && s.mobileTarget) ? s.mobileTarget : s.target;
+    // Find visible target — skip hidden elements (e.g. desktop nav when on mobile)
+    const allMatches = document.querySelectorAll(selector);
+    let el: Element | null = null;
+    for (const candidate of allMatches) {
+      const r = candidate.getBoundingClientRect();
+      if (r.width > 0 && r.height > 0) { el = candidate; break; }
+    }
     if (!el) { setRect(null); return; }
+    // On mobile, scroll target into view first
+    if (isMobile) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      // Wait for scroll to settle before measuring
+      const t = setTimeout(() => setRect(el.getBoundingClientRect()), 350);
+      return () => clearTimeout(t);
+    }
     setRect(el.getBoundingClientRect());
   }, [step, visible, isMobile]);
 
@@ -174,13 +191,13 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
 
   const current = STEPS[step];
   const isLast = step === STEPS.length - 1;
-  // On mobile, render spotlight steps as hero cards (no room for positioned tooltips)
-  const renderAsHero = current.kind === "hero" || (current.kind === "spotlight" && isMobile);
+  // On mobile, spotlight renders as hero only if we couldn't find the target
+  const renderAsHero = current.kind === "hero" || (current.kind === "spotlight" && isMobile && !rect);
 
   return createPortal(
     <div className="fixed inset-0 z-[9999]" onClick={(e) => e.stopPropagation()}>
       {/* Backdrop */}
-      {current.kind === "spotlight" && rect && !isMobile ? (
+      {current.kind === "spotlight" && rect ? (
         <SpotlightBackdrop rect={rect} />
       ) : (
         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
@@ -199,7 +216,7 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
             onSkip={finish}
           />
         )}
-        {current.kind === "spotlight" && !isMobile && (
+        {current.kind === "spotlight" && !renderAsHero && (
           <SpotlightCard
             step={current}
             targetRect={rect}
@@ -431,8 +448,8 @@ function FloatingEmoji({ emojis }: { emojis: string[] }) {
 // ─── Spotlight backdrop ──────────────────────────────────────────────────────
 
 function SpotlightBackdrop({ rect }: { rect: DOMRect }) {
-  const pad = 8;
-  const r = 14;
+  const pad = 12;
+  const r = 16;
   const x = rect.left - pad;
   const y = rect.top - pad;
   const w = rect.width + pad * 2;
@@ -446,13 +463,20 @@ function SpotlightBackdrop({ rect }: { rect: DOMRect }) {
           <rect x={x} y={y} width={w} height={h} rx={r} fill="black" />
         </mask>
         <filter id="fre-glow">
-          <feGaussianBlur stdDeviation="3" />
+          <feGaussianBlur stdDeviation="4" />
         </filter>
       </defs>
-      <rect width="100%" height="100%" fill="rgba(0,0,0,0.65)" mask="url(#fre-mask)" style={{ pointerEvents: "all" }} />
-      {/* Blue glow ring */}
-      <rect x={x - 2} y={y - 2} width={w + 4} height={h + 4} rx={r + 2} fill="none" stroke="rgba(59,130,246,0.5)" strokeWidth="3" filter="url(#fre-glow)" />
-      <rect x={x} y={y} width={w} height={h} rx={r} fill="none" stroke="rgba(59,130,246,0.8)" strokeWidth="2" />
+      <rect width="100%" height="100%" fill="rgba(0,0,0,0.7)" mask="url(#fre-mask)" style={{ pointerEvents: "all" }} />
+      {/* Bright highlight behind target so it pops on dark headers */}
+      <rect x={x} y={y} width={w} height={h} rx={r} fill="rgba(255,255,255,0.15)" />
+      {/* Pulsing glow ring */}
+      <rect x={x - 3} y={y - 3} width={w + 6} height={h + 6} rx={r + 3} fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2" filter="url(#fre-glow)" className="animate-pulse" />
+      <rect x={x - 1} y={y - 1} width={w + 2} height={h + 2} rx={r + 1} fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2" />
+      {/* Arrow pointing down from target to card */}
+      <polygon
+        points={`${rect.left + rect.width / 2 - 8},${y + h + 4} ${rect.left + rect.width / 2 + 8},${y + h + 4} ${rect.left + rect.width / 2},${y + h + 16}`}
+        fill="rgba(255,255,255,0.7)"
+      />
     </svg>
   );
 }
@@ -486,21 +510,30 @@ function ProgressBar({ current, total, light }: { current: number; total: number
 // ─── Positioning ─────────────────────────────────────────────────────────────
 
 function getPositionStyle(rect: DOMRect, position: string): React.CSSProperties {
-  const gap = 14;
+  const isMobileView = window.innerWidth < 768;
+  const gap = isMobileView ? 20 : 14;
   const tooltipWidth = 280;
-  const tooltipHeight = 180; // approximate
+  const tooltipHeight = 180;
 
-  const centerX = Math.max(12, Math.min(rect.left + rect.width / 2 - tooltipWidth / 2, window.innerWidth - tooltipWidth - 12));
+  const centerX = isMobileView
+    ? Math.max(12, (window.innerWidth - tooltipWidth) / 2)
+    : Math.max(12, Math.min(rect.left + rect.width / 2 - tooltipWidth / 2, window.innerWidth - tooltipWidth - 12));
 
-  // If target is near the top, always place below regardless of requested position
+  // On mobile, if the target is inside the header, place card below the full header
+  if (isMobileView) {
+    const header = document.querySelector("header");
+    const headerBottom = header ? header.getBoundingClientRect().bottom : rect.bottom;
+    const cardTop = Math.max(rect.bottom, headerBottom) + gap;
+    return { top: cardTop, left: centerX };
+  }
+
   const effectivePosition = rect.top < tooltipHeight + gap ? "bottom" : position;
 
   switch (effectivePosition) {
-    case "bottom":
-      return {
-        top: Math.min(rect.bottom + gap, window.innerHeight - tooltipHeight - 12),
-        left: centerX,
-      };
+    case "bottom": {
+      const top = rect.bottom + gap;
+      return { top, left: centerX };
+    }
     case "top":
       return {
         bottom: window.innerHeight - rect.top + gap,

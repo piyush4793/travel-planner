@@ -106,6 +106,7 @@ export default function TripsView({
   const [creatingNew, setCreatingNew] = useState(false);
   const [layout, setLayout] = useState<"list" | "grid">("grid");
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [statsOpen, setStatsOpen] = useState(false);
 
   const hasFilters = viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all";
 
@@ -188,35 +189,30 @@ export default function TripsView({
 
   return (
     <div className="h-full flex flex-col bg-slate-50 overflow-hidden">
-      {/* Dashboard stats — compact on mobile */}
-      <div className="px-3 md:px-5 py-2 md:py-4 bg-white border-b shrink-0">
-        <div className="max-w-5xl mx-auto flex items-center gap-3 md:gap-6">
-          {/* Progress ring */}
-          <div className="relative w-10 h-10 md:w-16 md:h-16 shrink-0">
+      {/* Dashboard stats — hidden on mobile */}
+      <div className="hidden md:block px-5 py-4 bg-white border-b shrink-0">
+        <div className="max-w-5xl mx-auto flex items-center gap-6">
+          <div className="relative w-16 h-16 shrink-0">
             <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
               <circle cx="18" cy="18" r="15.5" fill="none" stroke="#e2e8f0" strokeWidth="3" />
               <circle cx="18" cy="18" r="15.5" fill="none" stroke="#3b82f6" strokeWidth="3"
                 strokeDasharray={`${completionPct} ${100 - completionPct}`}
                 strokeLinecap="round" className="transition-all duration-500" />
             </svg>
-            <span className="absolute inset-0 flex items-center justify-center text-[10px] md:text-sm font-black text-slate-700">
+            <span className="absolute inset-0 flex items-center justify-center text-sm font-black text-slate-700">
               {completionPct}%
             </span>
           </div>
-
-          {/* Quick stats — fewer on mobile */}
-          <div className="flex items-center gap-3 md:gap-5 flex-1 flex-wrap">
+          <div className="flex items-center gap-5 flex-1 flex-wrap">
             <DashStat value={uniqueCountries} label="destinations" icon="🌍" />
             <DashStat value={totalVisited} label="visited" icon="✅" />
-            <span className="hidden md:inline-flex"><DashStat value={continentsVisited} label="regions" icon="🗺" /></span>
-            <span className="hidden md:inline-flex"><DashStat value={comboTrips.length} label="combo" icon="🔗" /></span>
-            <span className="hidden md:inline-flex"><DashStat value={soloTrips.length} label="solo" icon="📍" /></span>
+            <DashStat value={continentsVisited} label="regions" icon="🗺" />
+            <DashStat value={comboTrips.length} label="combo" icon="🔗" />
+            <DashStat value={soloTrips.length} label="solo" icon="📍" />
           </div>
-
-          {/* Actions */}
           <div className="flex items-center gap-2 shrink-0">
             {nextTrip && (
-              <div className="hidden sm:flex shrink-0 items-center gap-2.5 px-4 py-2.5 bg-blue-50 rounded-xl border border-blue-100">
+              <div className="flex shrink-0 items-center gap-2.5 px-4 py-2.5 bg-blue-50 rounded-xl border border-blue-100">
                 <span className="text-lg">🎯</span>
                 <div>
                   <p className="text-[9px] font-bold text-blue-500 uppercase tracking-wider">Next trip</p>
@@ -277,6 +273,50 @@ export default function TripsView({
             Clear
           </button>
         )}
+
+        {/* Stats popup — mobile only */}
+        <div className="md:hidden relative shrink-0">
+          <button
+            onClick={() => setStatsOpen((o) => !o)}
+            className={`flex items-center px-2 py-2 rounded-lg transition-colors min-h-[44px] border ${
+              statsOpen ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-500 hover:bg-gray-100 border-gray-200"
+            }`}
+            title="View stats"
+          >
+            📊
+          </button>
+          {statsOpen && (
+            <>
+              <div className="fixed inset-0 z-40 bg-black/20" onClick={() => setStatsOpen(false)} />
+              <div className="fixed left-3 right-3 bottom-3 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-12 h-12 shrink-0">
+                      <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
+                        <circle cx="18" cy="18" r="15.5" fill="none" stroke="#e2e8f0" strokeWidth="3" />
+                        <circle cx="18" cy="18" r="15.5" fill="none" stroke="#3b82f6" strokeWidth="3"
+                          strokeDasharray={`${completionPct} ${100 - completionPct}`}
+                          strokeLinecap="round" className="transition-all duration-500" />
+                      </svg>
+                      <span className="absolute inset-0 flex items-center justify-center text-[11px] font-black text-slate-700">
+                        {completionPct}%
+                      </span>
+                    </div>
+                    <p className="text-sm font-semibold text-slate-700">Travel Progress</p>
+                  </div>
+                  <button onClick={() => setStatsOpen(false)} className="text-gray-400 hover:text-gray-600 p-1">✕</button>
+                </div>
+                <div className="grid grid-cols-3 gap-3">
+                  <DashStat value={uniqueCountries} label="destinations" icon="🌍" />
+                  <DashStat value={totalVisited} label="visited" icon="✅" />
+                  <DashStat value={continentsVisited} label="regions" icon="🗺" />
+                  <DashStat value={comboTrips.length} label="combo" icon="🔗" />
+                  <DashStat value={soloTrips.length} label="solo" icon="📍" />
+                </div>
+              </div>
+            </>
+          )}
+        </div>
 
         <div className="ml-auto shrink-0 flex items-center gap-0.5 bg-gray-100 rounded-lg p-0.5">
           <button onClick={() => setLayout("list")} title="List view"

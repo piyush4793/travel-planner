@@ -153,7 +153,19 @@ export default function App() {
       {/* Header */}
       <header className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 text-white shrink-0 shadow-md">
         <div className="flex items-center gap-2 shrink-0">
-          <span className="text-base md:text-lg font-black tracking-tight">Roamwise</span>
+          {/* Brand: icon on mobile, full name on desktop */}
+          <span className="md:hidden flex items-center justify-center w-8 h-8">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 h-7">
+              <circle cx="16" cy="16" r="14" stroke="white" strokeWidth="2" opacity="0.9"/>
+              <ellipse cx="16" cy="16" rx="6" ry="14" stroke="white" strokeWidth="1.5" opacity="0.7"/>
+              <line x1="2" y1="16" x2="30" y2="16" stroke="white" strokeWidth="1.5" opacity="0.5"/>
+              <line x1="16" y1="2" x2="16" y2="30" stroke="white" strokeWidth="1.5" opacity="0.5"/>
+              <circle cx="16" cy="16" r="3" fill="white" opacity="0.9"/>
+              <path d="M16 6L18 14H16V6Z" fill="#facc15" opacity="0.9"/>
+              <path d="M16 26L14 18H16V26Z" fill="#facc15" opacity="0.9"/>
+            </svg>
+          </span>
+          <span className="hidden md:inline text-lg font-black tracking-tight">Roamwise</span>
           {hasActiveFilters && (
             <span className="text-[10px] md:text-xs bg-white/20 px-2 py-0.5 rounded-full font-medium hidden sm:inline">
               {filtered.length} shown
@@ -205,6 +217,7 @@ export default function App() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen((o) => !o)}
+          data-tour="mobile-menu"
           className="md:hidden flex items-center justify-center w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-base transition-colors shrink-0"
         >
           {menuOpen ? "✕" : "☰"}
