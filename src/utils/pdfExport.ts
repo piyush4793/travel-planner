@@ -10,6 +10,17 @@ export function exportItineraryAsPdf(plan: TripPlan, country: Country, homeCount
   const cityRoute = extractCityRoute(plan.days);
   const html = buildPrintHtml(plan, country, homeCountry, cityRoute);
 
+  // Mobile browsers don't support iframe.print() — open in new tab instead
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    const win = window.open("", "_blank");
+    if (!win) return;
+    win.document.open();
+    win.document.write(html);
+    win.document.close();
+    return;
+  }
+
   const iframe = document.createElement("iframe");
   iframe.style.cssText = "position:fixed;top:-9999px;left:-9999px;width:0;height:0;border:none;";
   document.body.appendChild(iframe);
