@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { renderHook, act } from "@testing-library/react";
-import { normalizeDestinationKey, useAiPlanStore } from "../core/hooks/useAiPlanStore";
+import { normalizeDestinationKey, useAiPlanStore } from "../hooks/useAiPlanStore";
 import type { LLMTripPlanResult } from "../core/utils/ai/llmTransform";
 
 function makePlan(dest = "Norway"): LLMTripPlanResult {

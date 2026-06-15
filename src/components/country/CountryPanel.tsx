@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../core/types";
-import type { SavedAiPlan } from "../../core/hooks/useAiPlanStore";
+import type { SavedAiPlan } from "../../hooks/useAiPlanStore";
 import { STYLE_META } from "../../core/utils/travelStyles";
 import { generateTripPlan, getMaxRuleDays, getRecRuleDays, extractPlanCities } from "../../core/utils/tripPlans";
 import type { TripPlan } from "../../core/utils/tripPlans";

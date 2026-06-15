@@ -471,14 +471,20 @@ async function saveBlob(blob: Blob, filename: string, mimeType: string): Promise
   downloadBlob(blob, filename);
 }
 
-/** Silent download — used by auto-backup (no dialog) */
+/** Silent download — used by auto-backup and mobile fallback */
 function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
   a.download = filename;
+  a.style.display = "none";
+  document.body.appendChild(a);
   a.click();
-  URL.revokeObjectURL(url);
+  // Delay revocation so browser has time to start the download
+  setTimeout(() => {
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, 500);
 }
 
 function dateStamp(): string {

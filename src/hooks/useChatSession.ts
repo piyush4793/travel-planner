@@ -70,15 +70,20 @@ export function useChatSession(homeCountry: string) {
       return;
     }
 
-    // Guardrail: limit messages per session
-    const userMsgCount = state.messages.filter((m) => m.role === "user").length;
-    if (userMsgCount >= MAX_MESSAGES_PER_SESSION) {
-      setState((s) => ({
-        ...s,
-        error: `Message limit reached (${MAX_MESSAGES_PER_SESSION} messages). Click "Finish & Generate Plan" to get your itinerary, or close and start a new chat.`,
-      }));
-      return;
-    }
+    // Read current message count from state to avoid stale closure
+    let blocked = false;
+    setState((s) => {
+      const userMsgCount = s.messages.filter((m) => m.role === "user").length;
+      if (userMsgCount >= MAX_MESSAGES_PER_SESSION) {
+        blocked = true;
+        return {
+          ...s,
+          error: `Message limit reached (${MAX_MESSAGES_PER_SESSION} messages). Click "Finish & Generate Plan" to get your itinerary, or close and start a new chat.`,
+        };
+      }
+      return s;
+    });
+    if (blocked) return;
 
     const userMsg: ChatMessage = { role: "user", content: userText };
 
@@ -90,19 +95,20 @@ export function useChatSession(homeCountry: string) {
 
     fullHistory.current.push(userMsg);
 
-    // Usage warning as user approaches limit
-    const remaining = MAX_MESSAGES_PER_SESSION - (userMsgCount + 1);
-    const usageWarning = remaining <= (MAX_MESSAGES_PER_SESSION - MESSAGE_WARNING_THRESHOLD)
-      ? `${remaining} message${remaining !== 1 ? "s" : ""} remaining in this session`
-      : null;
-
-    setState((s) => ({
-      ...s,
-      messages: [...s.messages, userMsg],
-      loading: true,
-      error: null,
-      usageWarning,
-    }));
+    setState((s) => {
+      const userMsgCount = s.messages.filter((m) => m.role === "user").length + 1;
+      const remaining = MAX_MESSAGES_PER_SESSION - userMsgCount;
+      const usageWarning = remaining <= (MAX_MESSAGES_PER_SESSION - MESSAGE_WARNING_THRESHOLD)
+        ? `${remaining} message${remaining !== 1 ? "s" : ""} remaining in this session`
+        : null;
+      return {
+        ...s,
+        messages: [...s.messages, userMsg],
+        loading: true,
+        error: null,
+        usageWarning,
+      };
+    });
 
     try {
       const provider = createProvider(resolved.provider, resolved.key);

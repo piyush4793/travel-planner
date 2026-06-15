@@ -18,9 +18,9 @@ import { applyFilters, allUniqueExperiences, type BudgetTier } from "./core/util
 import { loadLS, saveLS } from "./core/storage";
 import { LS_KEYS } from "./core/lsKeys";
 import { useHashView, type AppView } from "./hooks/useHashView";
-import { useCountryStore } from "./core/hooks/useCountryStore";
-import { useTripStore } from "./core/hooks/useTripStore";
-import { useAiPlanStore } from "./core/hooks/useAiPlanStore";
+import { useCountryStore } from "./hooks/useCountryStore";
+import { useTripStore } from "./hooks/useTripStore";
+import { useAiPlanStore } from "./hooks/useAiPlanStore";
 import { useBreakpoint } from "./hooks/useBreakpoint";
 import { isEnabled } from "./core/featureFlags";
 import { isBackupOverdue, autoBackupIfOverdue } from "./utils/backup";

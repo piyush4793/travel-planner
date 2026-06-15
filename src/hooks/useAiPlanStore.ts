@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
-import type { LLMTripPlanResult } from "../utils/ai/llmTransform";
-import { loadLS, saveLS } from "../storage";
-import { LS_KEYS } from "../lsKeys";
+import type { LLMTripPlanResult } from "../core/utils/ai/llmTransform";
+import { loadLS, saveLS } from "../core/storage";
+import { LS_KEYS } from "../core/lsKeys";
 
 const MAX_CUSTOM_PLANS = 3;
 const SCHEMA_VERSION = 1;

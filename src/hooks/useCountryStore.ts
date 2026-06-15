@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-import manifestData from "../../../data/rules/index.json";
-import catalogData from "../../../data/worldCatalog.json";
-import type { Country, CatalogEntry } from "../types";
-import { loadLS, saveLS } from "../storage";
-import { LS_KEYS } from "../lsKeys";
+import manifestData from "../../data/rules/index.json";
+import catalogData from "../../data/worldCatalog.json";
+import type { Country, CatalogEntry } from "../core/types";
+import { loadLS, saveLS } from "../core/storage";
+import { LS_KEYS } from "../core/lsKeys";
 import { usePersistedSet } from "./usePersistedSet";
 import { loadConsolidatedCountry } from "../data/consolidatedCountry";
 

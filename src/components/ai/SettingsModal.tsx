@@ -243,6 +243,11 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
                   {validating ? "Verifying\u2026" : "Save"}
                 </button>
               </div>
+              <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2">
+                <p className="text-[10px] leading-relaxed text-amber-700">
+                  ⚠️ API keys are stored in your browser&apos;s local storage (unencrypted). Only use keys with spending limits set. Never share your browser profile.
+                </p>
+              </div>
             </div>
 
             {status && (

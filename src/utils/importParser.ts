@@ -296,6 +296,9 @@ function analyzeGaps(
 
 // ── Chat link fetching ────────────────────────────────────────────────────
 
+// WARNING: This proxy routes requests through a third-party service.
+// User data (shared chat URLs and their content) passes through this proxy.
+// TODO: Replace with a first-party CORS proxy (Cloudflare Worker / Vercel Edge Function).
 const CORS_PROXY = "https://api.codetabs.com/v1/proxy/?quest=";
 
 /** Clean ChatGPT HTML artifacts: unescape JSON, remove entity/image/cite markers */
@@ -320,6 +323,8 @@ function cleanChatGPTText(html: string): string {
 
 /**
  * Fetch a shared ChatGPT/Claude conversation link and extract text.
+ * PRIVACY: Content passes through a third-party proxy (api.codetabs.com).
+ * Consider deploying a first-party proxy for production use.
  * Uses a CORS proxy since browsers can't fetch these directly.
  * Returns the conversation text or an error message.
  */

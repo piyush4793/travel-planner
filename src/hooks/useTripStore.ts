@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-import { loadLS, saveLS } from "../storage";
-import { LS_KEYS } from "../lsKeys";
-import { buildMergedTripGroups, type TripGroupDef } from "../data/tripGroups";
-import type { Country } from "../types";
+import { loadLS, saveLS } from "../core/storage";
+import { LS_KEYS } from "../core/lsKeys";
+import { buildMergedTripGroups, type TripGroupDef } from "../core/data/tripGroups";
+import type { Country } from "../core/types";
 
 export function useTripStore(myListNames: string[], countries: Country[]) {
   const [tripCustoms, setTripCustoms] = useState<TripGroupDef[]>(() => loadLS(LS_KEYS.TRIP_CUSTOMS, []));

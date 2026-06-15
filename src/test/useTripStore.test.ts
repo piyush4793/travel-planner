@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { renderHook, act, waitFor } from "@testing-library/react";
-import { useTripStore } from "../core/hooks/useTripStore";
+import { useTripStore } from "../hooks/useTripStore";
 import { LS_KEYS } from "../core/lsKeys";
 import type { Country } from "../core/types";
 

@@ -1,4 +1,4 @@
-import type { CountryRule } from "./itineraryRules";
+import type { CountryRule } from "../core/data/itineraryRules";
 
 /** Consolidated country data from data/rules/*.json */
 export type ConsolidatedCountry = {
@@ -22,7 +22,7 @@ export type ConsolidatedCountry = {
 };
 
 const ruleModules = import.meta.glob<ConsolidatedCountry>(
-  ["../../../data/rules/*.json", "!../../../data/rules/index.json"],
+  ["../../data/rules/*.json", "!../../data/rules/index.json"],
   { import: "default" },
 );
 
@@ -36,7 +36,7 @@ export function fileKey(name: string): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
-  return `../../../data/rules/${slug}.json`;
+  return `../../data/rules/${slug}.json`;
 }
 
 export function hasConsolidatedCountry(name: string): boolean {

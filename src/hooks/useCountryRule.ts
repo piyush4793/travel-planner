@@ -6,7 +6,7 @@ import {
   loadConsolidatedCountry,
   getCachedConsolidatedCountry,
   type ConsolidatedCountry,
-} from "../core/data/consolidatedCountry";
+} from "../data/consolidatedCountry";
 
 export { fileKey, loadConsolidatedCountry };
 

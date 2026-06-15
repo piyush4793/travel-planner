@@ -7,11 +7,11 @@ const { loadConsolidatedCountryMock } = vi.hoisted(() => ({
   loadConsolidatedCountryMock: vi.fn().mockResolvedValue(null),
 }));
 
-vi.mock("../core/data/consolidatedCountry", () => ({
+vi.mock("../data/consolidatedCountry", () => ({
   loadConsolidatedCountry: loadConsolidatedCountryMock,
 }));
 
-import { useCountryStore } from "../core/hooks/useCountryStore";
+import { useCountryStore } from "../hooks/useCountryStore";
 import type { Country } from "../core/types";
 
 type ManifestEntry = { name: string; inSeed: boolean };

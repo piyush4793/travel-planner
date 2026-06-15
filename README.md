@@ -107,7 +107,7 @@ Bring-your-own-key integration with OpenAI and Claude. Chat with an AI assistant
 - **Pre-finalization cost estimate** — "Finish & Generate" button shows estimated cost before generating; tooltip with expected additional token usage
 - **Provider pricing reference** — collapsible pricing table in Settings showing per-model input/output rates for all providers
 - **Quota-aware error handling** — provider-specific error messages for rate limits, billing exhaustion, and free tier caps with links to billing pages
-- **Settings modal** — provider selector, API key management with validation, security notice, setup guides
+- **Settings modal** — provider selector, API key management with validation, explicit localStorage warning for unencrypted keys, security notice, setup guides
 - **Feature-gated** — behind `llmPlanning` feature flag (enabled by default)
 
 ---
@@ -182,7 +182,7 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 
 ## Tech Stack
 
-Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, rule/data utilities, storage-backed state hooks) and web-only `src/hooks/` + `src/utils/` layers for DOM/browser concerns. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 217 tests across 23 files, including hook state, backup import flows, trip-group merging, and route-building utilities.
+Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 217 tests across 23 files, including hook state, backup import flows, trip-group merging, and route-building utilities.
 
 For detailed architecture, code structure, design patterns, and data model, see [DESIGN.md](./DESIGN.md).
 
