@@ -187,37 +187,33 @@ export default function TripsView({
 
   return (
     <div className="h-full flex flex-col bg-slate-50 overflow-hidden">
-      {/* Dashboard stats */}
-      <div className="px-3 md:px-5 py-3 md:py-4 bg-white border-b shrink-0">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
-          {/* Top row: ring + stats */}
-          <div className="flex items-center gap-4 md:gap-6">
-            {/* Progress ring */}
-            <div className="relative w-12 h-12 md:w-16 md:h-16 shrink-0">
-              <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
-                <circle cx="18" cy="18" r="15.5" fill="none" stroke="#e2e8f0" strokeWidth="3" />
-                <circle cx="18" cy="18" r="15.5" fill="none" stroke="#3b82f6" strokeWidth="3"
-                  strokeDasharray={`${completionPct} ${100 - completionPct}`}
-                  strokeLinecap="round" className="transition-all duration-500" />
-              </svg>
-              <span className="absolute inset-0 flex items-center justify-center text-xs md:text-sm font-black text-slate-700">
-                {completionPct}%
-              </span>
-            </div>
-
-            {/* Quick stats — wrap on mobile */}
-            <div className="flex items-center gap-3 md:gap-5 flex-1 flex-wrap">
-              <DashStat value={uniqueCountries} label="destinations" icon="🌍" />
-              <DashStat value={totalVisited} label="visited" icon="✅" />
-              <DashStat value={continentsVisited} label="regions" icon="🗺" />
-              <DashStat value={comboTrips.length} label="combo" icon="🔗" />
-              <DashStat value={soloTrips.length} label="solo" icon="📍" />
-            </div>
+      {/* Dashboard stats — compact on mobile */}
+      <div className="px-3 md:px-5 py-2 md:py-4 bg-white border-b shrink-0">
+        <div className="max-w-5xl mx-auto flex items-center gap-3 md:gap-6">
+          {/* Progress ring */}
+          <div className="relative w-10 h-10 md:w-16 md:h-16 shrink-0">
+            <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
+              <circle cx="18" cy="18" r="15.5" fill="none" stroke="#e2e8f0" strokeWidth="3" />
+              <circle cx="18" cy="18" r="15.5" fill="none" stroke="#3b82f6" strokeWidth="3"
+                strokeDasharray={`${completionPct} ${100 - completionPct}`}
+                strokeLinecap="round" className="transition-all duration-500" />
+            </svg>
+            <span className="absolute inset-0 flex items-center justify-center text-[10px] md:text-sm font-black text-slate-700">
+              {completionPct}%
+            </span>
           </div>
 
-          {/* Actions row */}
-          <div className="flex items-center gap-2 md:gap-3">
-            {/* Next trip highlight */}
+          {/* Quick stats — fewer on mobile */}
+          <div className="flex items-center gap-3 md:gap-5 flex-1 flex-wrap">
+            <DashStat value={uniqueCountries} label="destinations" icon="🌍" />
+            <DashStat value={totalVisited} label="visited" icon="✅" />
+            <span className="hidden md:inline-flex"><DashStat value={continentsVisited} label="regions" icon="🗺" /></span>
+            <span className="hidden md:inline-flex"><DashStat value={comboTrips.length} label="combo" icon="🔗" /></span>
+            <span className="hidden md:inline-flex"><DashStat value={soloTrips.length} label="solo" icon="📍" /></span>
+          </div>
+
+          {/* Actions */}
+          <div className="flex items-center gap-2 shrink-0">
             {nextTrip && (
               <div className="hidden sm:flex shrink-0 items-center gap-2.5 px-4 py-2.5 bg-blue-50 rounded-xl border border-blue-100">
                 <span className="text-lg">🎯</span>
@@ -239,13 +235,24 @@ export default function TripsView({
 
       {/* Filter bar — compact: search + filter toggle + layout */}
       <div className="flex items-center gap-2 px-3 md:px-5 py-2 border-b bg-white shrink-0 flex-wrap md:flex-nowrap">
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search countries…"
-          className="w-full sm:w-44 px-3 py-2 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors min-h-[44px]"
-        />
+        <div className="relative w-full sm:w-44">
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search countries…"
+            className="w-full px-3 py-2 pr-8 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors min-h-[44px]"
+          />
+          {search && (
+            <button
+              onClick={() => setSearch("")}
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm leading-none p-1"
+              title="Clear search"
+            >
+              ✕
+            </button>
+          )}
+        </div>
 
         <button
           onClick={() => setFiltersOpen((o) => !o)}
@@ -328,6 +335,7 @@ export default function TripsView({
               <TripEditor
                 initial={null}
                 allCountryNames={countries.map((c) => c.name)}
+                countryRegionMap={Object.fromEntries(countries.filter((c) => c.region).map((c) => [c.name, c.region!]))}
                 assignedNames={assignedNames}
                 currentTripNames={[]}
                 onSave={(group) => handleSave(null, group)}
@@ -395,6 +403,7 @@ export default function TripsView({
                 region: trip.region,
               }}
               allCountryNames={countries.map((c) => c.name)}
+              countryRegionMap={Object.fromEntries(countries.filter((c) => c.region).map((c) => [c.name, c.region!]))}
               assignedNames={assignedNames}
               currentTripNames={trip.allCountries.map((c) => c.name)}
               onSave={(group) => handleSave(trip.main.name, group)}
@@ -423,6 +432,7 @@ export default function TripsView({
 function TripEditor({
   initial,
   allCountryNames,
+  countryRegionMap,
   assignedNames,
   currentTripNames,
   onSave,
@@ -431,6 +441,7 @@ function TripEditor({
 }: {
   initial: TripGroupDef | null;
   allCountryNames: string[];
+  countryRegionMap: Record<string, string>;
   assignedNames: Set<string>;
   currentTripNames: string[];
   onSave: (group: TripGroupDef) => void;
@@ -445,14 +456,16 @@ function TripEditor({
   const currentSet = new Set(currentTripNames);
   const sorted = [...allCountryNames].sort();
 
-  // Available for main: not assigned elsewhere (allow current trip's countries)
+  // Available for main: not assigned elsewhere, filtered by selected region
   const availableMain = sorted.filter(
-    (n) => !assignedNames.has(n) || currentSet.has(n) || n === main
+    (n) => (!assignedNames.has(n) || currentSet.has(n) || n === main) &&
+           (countryRegionMap[n] === region || n === main)
   );
 
-  // Available for add-ons: not assigned elsewhere and not the current main
+  // Available for add-ons: not assigned elsewhere, not main, filtered by region
   const availableAddOns = sorted.filter(
-    (n) => n !== main && (!assignedNames.has(n) || currentSet.has(n) || addOns.includes(n))
+    (n) => n !== main && (!assignedNames.has(n) || currentSet.has(n) || addOns.includes(n)) &&
+           (countryRegionMap[n] === region || addOns.includes(n))
   );
 
   const filteredAddOns = addOnSearch.trim()
@@ -471,6 +484,9 @@ function TripEditor({
   const handleMainChange = (newMain: string) => {
     setMain(newMain);
     setAddOns((prev) => prev.filter((n) => n !== newMain));
+    if (countryRegionMap[newMain]) {
+      setRegion(countryRegionMap[newMain] as Region);
+    }
   };
 
   return (

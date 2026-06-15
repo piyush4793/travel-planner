@@ -21,14 +21,11 @@ describe("Filters", () => {
     cleanup();
   });
 
-  it("renders the month, experience, visited, and budget controls", () => {
+  it("renders the month, visited, and budget controls", () => {
     render(
       <Filters
         selectedMonth={[]}
         setMonth={vi.fn()}
-        activeExperiences={[]}
-        allExperiences={["Temples", "Food"]}
-        setExperiences={vi.fn()}
         visitedFilter="all"
         setVisitedFilter={vi.fn()}
         budgetFilter="all"
@@ -38,7 +35,6 @@ describe("Filters", () => {
 
     expect(screen.getByRole("button", { name: /^month/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^budget/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /^experiences/i })).toBeInTheDocument();
 
     const visitedSelect = screen.getByRole("combobox");
     expect(visitedSelect).toBeInTheDocument();

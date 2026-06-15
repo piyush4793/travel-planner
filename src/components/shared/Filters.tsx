@@ -1,5 +1,4 @@
 import FilterChip from "./FilterChip";
-import ExperienceDropdown from "./ExperienceDropdown";
 import type { BudgetTier } from "../../core/utils/filterLogic";
 import type { VisitedFilter } from "../../core/types";
 import { MONTHS } from "../../core/utils/months";
@@ -13,9 +12,6 @@ const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string }[] = [
 type Props = {
   selectedMonth: string[];
   setMonth: (m: string[]) => void;
-  activeExperiences: string[];
-  allExperiences: string[];
-  setExperiences: (tags: string[]) => void;
   visitedFilter: VisitedFilter;
   setVisitedFilter: (v: VisitedFilter) => void;
   budgetFilter: BudgetTier;
@@ -24,7 +20,6 @@ type Props = {
 
 export default function Filters({
   selectedMonth, setMonth,
-  activeExperiences, allExperiences, setExperiences,
   visitedFilter, setVisitedFilter,
   budgetFilter, setBudgetFilter,
 }: Props) {
@@ -100,12 +95,6 @@ export default function Filters({
             </div>
           )}
         </FilterChip>
-
-        <ExperienceDropdown
-          allExperiences={allExperiences}
-          selected={activeExperiences}
-          onChange={setExperiences}
-        />
 
         <div className="w-px h-5 bg-gray-200 shrink-0 mx-0.5" />
 

@@ -14,7 +14,7 @@ import SettingsModal from "./components/ai/SettingsModal";
 import ChatModal from "./components/ai/ChatModal";
 import AiItineraryModal from "./components/ai/AiItineraryModal";
 import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
-import { applyFilters, allUniqueExperiences, type BudgetTier } from "./core/utils/filterLogic";
+import { applyFilters, type BudgetTier } from "./core/utils/filterLogic";
 import { loadLS, saveLS } from "./core/storage";
 import { LS_KEYS } from "./core/lsKeys";
 import { useHashView, type AppView } from "./hooks/useHashView";
@@ -86,7 +86,6 @@ export default function App() {
     () => applyFilters(store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, "all", budgetFilter),
     [store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, budgetFilter],
   );
-  const allExperiences = useMemo(() => allUniqueExperiences(store.myListCountries), [store.myListCountries]);
   const comboNames = selectedCountry?.combo ?? [];
 
   const handleSave = useCallback((country: Country) => {
@@ -194,10 +193,6 @@ export default function App() {
           {store.favorites.set.size > 0 && <span className="text-yellow-300 text-sm font-semibold">★ {store.favorites.set.size}</span>}
           {store.visited.set.size > 0 && <span className="text-emerald-300 text-sm font-semibold">✓ {store.visited.set.size}</span>}
           <span className="text-white/60 text-xs font-medium">{store.myList.set.size} 📋</span>
-          <button onClick={() => setFormTarget("new")}
-            className="flex items-center gap-1 px-3 py-1.5 bg-white/15 hover:bg-white/25 rounded-full text-xs font-semibold transition-colors border border-white/20">
-            + Add
-          </button>
           <button onClick={() => setSettingsOpen(true)}
             data-tour="settings"
             className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15"
@@ -226,12 +221,8 @@ export default function App() {
             {store.visited.set.size > 0 && <span className="text-emerald-300 text-xs font-semibold">✓ {store.visited.set.size}</span>}
           </div>
           <div className="flex gap-2">
-            <button onClick={() => { setFormTarget("new"); setMenuOpen(false); }}
-              className="flex-1 py-2.5 bg-white/15 hover:bg-white/25 rounded-xl text-xs font-semibold transition-colors border border-white/20 min-h-[44px]">
-              + Add Destination
-            </button>
             <button onClick={() => { setSettingsOpen(true); setMenuOpen(false); }}
-              className="py-2.5 px-4 bg-white/10 hover:bg-white/20 rounded-xl text-xs font-semibold transition-colors border border-white/15 min-h-[44px]">
+              className="flex-1 py-2.5 px-4 bg-white/10 hover:bg-white/20 rounded-xl text-xs font-semibold transition-colors border border-white/15 min-h-[44px]">
               ⚙️ Settings
             </button>
           </div>
@@ -252,9 +243,6 @@ export default function App() {
         <Filters
           selectedMonth={selectedMonth}
           setMonth={setSelectedMonth}
-          activeExperiences={selectedExperiences}
-          allExperiences={allExperiences}
-          setExperiences={setSelectedExperiences}
           visitedFilter={visitedFilter}
           setVisitedFilter={setVisitedFilter}
           budgetFilter={budgetFilter}
