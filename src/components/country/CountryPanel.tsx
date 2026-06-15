@@ -148,17 +148,27 @@ export default function CountryPanel({
           <div className="sticky top-0 z-10 shrink-0 border-b border-blue-100 bg-gradient-to-b from-blue-50/80 to-white backdrop-blur-sm">
             <div className="px-5 pt-4 pb-3 space-y-3">
               <div className="space-y-2">
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-2xl leading-none">{getCountryFlag(country.name)}</span>
-                    <h2 className="min-w-0 truncate text-xl font-bold text-gray-900 leading-tight">
-                      {country.name}
-                    </h2>
-                  </div>
+                <div className="flex items-start gap-2">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl leading-none">{getCountryFlag(country.name)}</span>
+                      <h2 className="min-w-0 truncate text-xl font-bold text-gray-900 leading-tight">
+                        {country.name}
+                      </h2>
+                    </div>
                   <p className="mt-1 text-xs font-medium text-gray-500">
                     {getBudgetDisplay(country.budget)} · from {homeCountry}
                     {ruleLoading && <span className="ml-2 text-[10px] text-blue-500">Loading itinerary…</span>}
                   </p>
+                  </div>
+
+                  <button
+                   onClick={onClose}
+                   className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+                   aria-label="Close panel"
+                  >
+                   ✕
+                  </button>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
@@ -191,7 +201,6 @@ export default function CountryPanel({
                 />
                 <IconToolbarButton icon="✏️" label="Edit country" onClick={onEdit} />
                 <IconToolbarButton icon="🗑" label="Delete country" onClick={onDelete} className="text-red-500 hover:bg-red-50" />
-                <IconToolbarButton icon="✕" label="Close panel" onClick={onClose} />
               </div>
 
               {country.travelStyle && country.travelStyle.length > 0 && (
