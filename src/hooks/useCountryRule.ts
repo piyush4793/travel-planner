@@ -31,7 +31,7 @@ const ruleModules = import.meta.glob<ConsolidatedCountry>(
 // In-memory cache
 const cache = new Map<string, ConsolidatedCountry | null>();
 
-function fileKey(name: string): string {
+export function fileKey(name: string): string {
   const slug = name
     .trim()
     .normalize("NFD")

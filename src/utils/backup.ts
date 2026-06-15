@@ -121,7 +121,7 @@ export async function exportCountriesCSV(countries: Country[]): Promise<void> {
   await saveBlob(blob, `roamwise-countries-${dateStamp()}.csv`, "text/csv");
 }
 
-function csvCell(country: Country, col: string): string {
+export function csvCell(country: Country, col: string): string {
   const val = (country as Record<string, unknown>)[col];
   if (val === undefined || val === null) return "";
   if (col === "cities" && Array.isArray(val)) {
@@ -132,7 +132,7 @@ function csvCell(country: Country, col: string): string {
   return csvEscape(String(val));
 }
 
-function csvEscape(s: string): string {
+export function csvEscape(s: string): string {
   if (s.includes(",") || s.includes('"') || s.includes("\n")) {
     return `"${s.replace(/"/g, '""')}"`;
   }
