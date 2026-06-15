@@ -1,0 +1,85 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior in Roamwise
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! If the app crashed, use the **Copy Info** button on the error screen and paste it below.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe what you were doing and what went wrong.
+      placeholder: "I clicked on Japan in the Trips view and the panel didn't open..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      placeholder: "The country panel should have opened with Japan's details."
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the app
+        2. Go to Trips view
+        3. Click on Japan
+        4. ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: debug-info
+    attributes:
+      label: Debug info
+      description: Paste the debug info from the error screen's "Copy Info" button, or fill in manually.
+      render: text
+      placeholder: |
+        Error: ...
+        App version: 0.1.0
+        Build: 2026-06-15
+        UA: Mozilla/5.0 ...
+        Viewport: 1920x1080
+    validations:
+      required: false
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options:
+        - Desktop
+        - Mobile
+        - Tablet
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Safari
+        - Firefox
+        - Edge
+        - Other
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag & drop screenshots here if helpful.
+    validations:
+      required: false

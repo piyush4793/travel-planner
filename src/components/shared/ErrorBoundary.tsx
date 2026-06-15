@@ -46,6 +46,14 @@ export default class ErrorBoundary extends Component<Props, State> {
     window.open(`https://github.com/piyush4793/travel-planner/issues/new?title=${title}&body=${body}`, "_blank");
   };
 
+  handleEmail = () => {
+    const subject = encodeURIComponent(`Bug: ${this.state.error?.message?.slice(0, 80) ?? "App crash"}`);
+    const body = encodeURIComponent(
+      `What happened?\n\n[Describe what you were doing]\n\nDebug info:\n${this.state.errorInfo}`,
+    );
+    window.open(`mailto:techiedojo4793@gmail.com?subject=${subject}&body=${body}`);
+  };
+
   render() {
     if (!this.state.error) return this.props.children;
 
@@ -64,10 +72,10 @@ export default class ErrorBoundary extends Component<Props, State> {
             {this.state.error.message}
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             <button
               onClick={this.handleReset}
-              className="flex-1 px-4 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors"
+              className="flex-1 px-4 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors min-w-[120px]"
             >
               🔄 Try Again
             </button>
@@ -76,14 +84,21 @@ export default class ErrorBoundary extends Component<Props, State> {
               className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-lg text-sm font-semibold hover:bg-gray-200 transition-colors"
               title="Copy debug info to clipboard"
             >
-              📋 Copy Info
+              📋 Copy
             </button>
             <button
               onClick={this.handleReport}
               className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-lg text-sm font-semibold hover:bg-gray-200 transition-colors"
               title="Open GitHub issue with debug info"
             >
-              🐛 Report
+              🐛 GitHub
+            </button>
+            <button
+              onClick={this.handleEmail}
+              className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-lg text-sm font-semibold hover:bg-gray-200 transition-colors"
+              title="Email bug report"
+            >
+              ✉️ Email
             </button>
           </div>
 
