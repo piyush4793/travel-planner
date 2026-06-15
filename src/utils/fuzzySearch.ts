@@ -74,7 +74,7 @@ export function fuzzySearchTrips<T extends Searchable>(trips: T[], query: string
     keys: ["text"],
     includeScore: true,
     minMatchCharLength: 1,
-    threshold: 0.4, // Allow ~40% character mismatch (fuzzy)
+    threshold: 0.6, // Stricter: allow ~20% character mismatch (not country name fuzzy)
     useExtendedSearch: true,
     shouldSort: true,
   });
