@@ -210,15 +210,15 @@ export default function TripsView({
   return (
     <div className="h-full flex flex-col bg-slate-50 overflow-hidden">
       {/* Header: search + filter controls (responsive) */}
-      <div className="flex items-center gap-2 px-3 md:px-5 py-2 border-b bg-white shrink-0 flex-wrap lg:flex-nowrap">
+      <div className="flex items-center gap-1.5 px-3 py-2 border-b bg-white shrink-0">
         {/* Search bar — full width on mobile, narrower on tablet+ */}
-        <div className="relative w-full lg:w-48">
+        <div className="relative flex-1 min-w-0">
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search…"
-            className="w-full px-3 py-2 pr-8 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors h-9"
+            className="w-full px-3 py-2 pr-8 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors h-8"
           />
           {search && (
             <button
@@ -231,8 +231,96 @@ export default function TripsView({
           )}
         </div>
 
-        {/* Toggles: compact row (grows on larger screens) */}
-        <div className="flex items-center gap-1 flex-wrap lg:flex-nowrap">
+        {/* Mobile menu — hamburger for secondary controls */}
+        <div className="md:hidden relative">
+          <button
+            onClick={() => setFiltersOpen((o) => !o)}
+            className={`flex items-center px-2 py-1.5 rounded-lg transition-colors h-8 border ${
+              filtersOpen || hasFilters
+                ? "bg-blue-50 text-blue-700 border-blue-200"
+                : "text-gray-500 hover:bg-gray-100 border-gray-200"
+            }`}
+            title="Menu"
+          >
+            ☰
+            {hasFilters && <span className="w-1 h-1 rounded-full bg-blue-500 ml-1" />}
+          </button>
+
+          {/* Mobile dropdown menu */}
+          {filtersOpen && (
+            <>
+              <div className="fixed inset-0 z-30 bg-black/10" onClick={() => setFiltersOpen(false)} />
+              <div className="absolute right-0 top-full mt-1 z-40 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                <div className="flex flex-col divide-y max-w-xs">
+                  {/* View mode */}
+                  <div className="p-2 space-y-1">
+                    <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">View</p>
+                    {["all", "combo", "solo"].map((m) => (
+                      <button
+                        key={m}
+                        onClick={() => { setViewMode(m as ViewMode); setFiltersOpen(false); }}
+                        className={`w-full text-left px-3 py-1.5 text-xs rounded transition-colors ${
+                          viewMode === m
+                            ? "bg-blue-100 text-blue-700 font-semibold"
+                            : "text-gray-600 hover:bg-gray-50"
+                        }`}
+                      >
+                        {m === "all" ? "All trips" : m === "combo" ? "Combo trips" : "Solo trips"}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Visited mode */}
+                  <div className="p-2 space-y-1">
+                    <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">Status</p>
+                    {["all", "completed", "in-progress", "not-started"].map((m) => (
+                      <button
+                        key={m}
+                        onClick={() => { setVisitedMode(m as VisitedMode); setFiltersOpen(false); }}
+                        className={`w-full text-left px-3 py-1.5 text-xs rounded transition-colors ${
+                          visitedMode === m
+                            ? "bg-blue-100 text-blue-700 font-semibold"
+                            : "text-gray-600 hover:bg-gray-50"
+                        }`}
+                      >
+                        {m === "all" ? "All" : m === "completed" ? "Completed" : m === "in-progress" ? "In progress" : "Not started"}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Layout toggle */}
+                  <button
+                    onClick={() => { setLayout(layout === "grid" ? "list" : "grid"); setFiltersOpen(false); }}
+                    className="text-left px-3 py-2 text-xs text-gray-600 hover:bg-gray-50 transition-colors"
+                  >
+                    📋 {layout === "grid" ? "Switch to list" : "Switch to grid"}
+                  </button>
+
+                  {/* Stats */}
+                  <button
+                    onClick={() => { setStatsOpen(true); setFiltersOpen(false); }}
+                    className="text-left px-3 py-2 text-xs text-gray-600 hover:bg-gray-50 transition-colors"
+                  >
+                    📊 View stats
+                  </button>
+
+                  {/* Clear filters */}
+                  {hasFilters && (
+                    <button
+                      onClick={() => { setSearch(""); setViewMode("all"); setVisitedMode("all"); setRegionFilter("all"); setFiltersOpen(false); }}
+                      className="text-left px-3 py-2 text-xs text-red-600 hover:bg-red-50 transition-colors font-semibold"
+                    >
+                      ✕ Clear all
+                    </button>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Desktop controls — hidden on mobile */}
+        <div className="hidden md:flex items-center gap-1">
           {/* View mode toggle */}
           <div className="flex items-center gap-0.5 bg-gray-100 rounded-lg p-0.5 shrink-0">
             {["all", "combo", "solo"].map((m) => (
@@ -269,7 +357,7 @@ export default function TripsView({
             ))}
           </div>
 
-          {/* Region filter + more toggle */}
+          {/* More filters button */}
           <button
             onClick={() => setFiltersOpen((o) => !o)}
             className={`flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg transition-colors h-7 shrink-0 ${
@@ -302,19 +390,19 @@ export default function TripsView({
           >
             {layout === "grid" ? "▦" : "≡"}
           </button>
-
-          {/* New trip button */}
-          {isEnabled("tripGroups") && (
-            <button
-              onClick={() => { setCreatingNew(true); setEditingMain(null); }}
-              className="flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors h-7 shrink-0 ml-auto lg:ml-0"
-              title="Create new trip"
-            >
-              ➕
-              <span className="hidden sm:inline">Trip</span>
-            </button>
-          )}
         </div>
+
+        {/* New trip button — desktop and tablet only */}
+        {isEnabled("tripGroups") && (
+          <button
+            onClick={() => { setCreatingNew(true); setEditingMain(null); }}
+            className="hidden sm:flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors h-7 shrink-0 ml-auto md:ml-0"
+            title="Create new trip"
+          >
+            ➕
+            <span className="hidden md:inline">Trip</span>
+          </button>
+        )}
       </div>
 
       {/* Collapsible filter panel — only shows when open or active filters */}
