@@ -361,7 +361,7 @@ export default function TripsView({
           <button
             onClick={() => setFiltersOpen((o) => !o)}
             className={`flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg transition-colors h-7 shrink-0 ${
-              filtersOpen || hasFilters
+              filtersOpen
                 ? "bg-blue-50 text-blue-700 border border-blue-200"
                 : "text-gray-500 hover:bg-gray-100 border border-gray-200"
             }`}
@@ -405,8 +405,8 @@ export default function TripsView({
         )}
       </div>
 
-      {/* Collapsible filter panel — only shows when open or active filters */}
-      {(filtersOpen || hasFilters) && (
+      {/* Collapsible filter panel — only shows when explicitly opened */}
+      {filtersOpen && (
         <div className="px-3 md:px-5 py-2 bg-blue-50 border-b border-blue-100 shrink-0 flex items-center gap-3 flex-wrap">
           {/* Region selector */}
           <select
