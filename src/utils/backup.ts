@@ -39,7 +39,7 @@ const BACKUP_KEYS = [
 
 // ─── JSON Full Backup ─────────────────────────────────────────────────────────
 
-export function exportFullBackup(): void {
+function buildBackupBlob(): Blob {
   const data: Record<string, unknown> = {};
   for (const key of BACKUP_KEYS) {
     const raw = localStorage.getItem(key);
@@ -54,8 +54,19 @@ export function exportFullBackup(): void {
     data,
   };
 
-  const blob = new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" });
-  downloadBlob(blob, `travel-planner-backup-${dateStamp()}.json`);
+  return new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" });
+}
+
+/** Manual export — opens "Save As" dialog when supported */
+export async function exportFullBackup(): Promise<void> {
+  const filename = `travel-planner-backup-${dateStamp()}.json`;
+  await saveBlob(buildBackupBlob(), filename, "application/json");
+  saveLS(LS_KEYS.LAST_BACKUP, new Date().toISOString());
+}
+
+/** Silent auto-backup — no dialog, downloads to default folder */
+export function autoExportBackup(): void {
+  downloadBlob(buildBackupBlob(), `travel-planner-backup-${dateStamp()}.json`);
   saveLS(LS_KEYS.LAST_BACKUP, new Date().toISOString());
 }
 
@@ -99,7 +110,7 @@ const CSV_COLUMNS = [
   "landmark", "stopoverNote", "notes", "cities",
 ] as const;
 
-export function exportCountriesCSV(countries: Country[]): void {
+export async function exportCountriesCSV(countries: Country[]): Promise<void> {
   const header = CSV_COLUMNS.join(",");
   const rows = countries.map((c) =>
     CSV_COLUMNS.map((col) => csvCell(c, col)).join(",")
@@ -107,7 +118,7 @@ export function exportCountriesCSV(countries: Country[]): void {
 
   const csv = [header, ...rows].join("\n");
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
-  downloadBlob(blob, `travel-planner-countries-${dateStamp()}.csv`);
+  await saveBlob(blob, `travel-planner-countries-${dateStamp()}.csv`, "text/csv");
 }
 
 function csvCell(country: Country, col: string): string {
@@ -234,7 +245,7 @@ function parseCSVRows(text: string): string[][] {
 // ─── XLSX Export (Countries) ──────────────────────────────────────────────────
 // Generates Office Open XML manually — no npm dependencies
 
-export function exportCountriesXLSX(countries: Country[]): void {
+export async function exportCountriesXLSX(countries: Country[]): Promise<void> {
   const sheetData = [CSV_COLUMNS as unknown as string[]];
   for (const c of countries) {
     sheetData.push(CSV_COLUMNS.map((col) => {
@@ -248,7 +259,8 @@ export function exportCountriesXLSX(countries: Country[]): void {
   }
 
   const blob = buildXLSX(sheetData);
-  downloadBlob(blob, `travel-planner-countries-${dateStamp()}.xlsx`);
+  const mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+  await saveBlob(blob, `travel-planner-countries-${dateStamp()}.xlsx`, mime);
 }
 
 function buildXLSX(rows: string[][]): Blob {
@@ -389,7 +401,7 @@ export function isBackupOverdue(): boolean {
 /** Auto-backup: triggers download silently when overdue. Returns true if backup was triggered. */
 export function autoBackupIfOverdue(): boolean {
   if (!isBackupOverdue()) return false;
-  exportFullBackup();
+  autoExportBackup();
   return true;
 }
 
@@ -432,6 +444,28 @@ export function getNextBackupLabel(): string {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
+/** Manual save — opens native "Save As" dialog when supported, falls back to download */
+async function saveBlob(blob: Blob, filename: string, mimeType: string): Promise<void> {
+  if ("showSaveFilePicker" in window) {
+    try {
+      const ext = filename.split(".").pop() ?? "";
+      const handle = await (window as unknown as { showSaveFilePicker: (opts: unknown) => Promise<FileSystemFileHandle> })
+        .showSaveFilePicker({
+          suggestedName: filename,
+          types: [{ description: ext.toUpperCase() + " file", accept: { [mimeType]: ["." + ext] } }],
+        });
+      const writable = await handle.createWritable();
+      await writable.write(blob);
+      await writable.close();
+      return;
+    } catch (err) {
+      if (err instanceof DOMException && err.name === "AbortError") return;
+    }
+  }
+  downloadBlob(blob, filename);
+}
+
+/** Silent download — used by auto-backup (no dialog) */
 function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");

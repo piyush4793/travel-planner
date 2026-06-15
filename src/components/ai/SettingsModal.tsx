@@ -345,20 +345,20 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
             <div className="space-y-2">
               <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Export</label>
               <button
-                onClick={() => { exportFullBackup(); setBackupStatus({ ok: true, msg: "Full backup downloaded!" }); }}
+                onClick={async () => { await exportFullBackup(); setBackupStatus({ ok: true, msg: "Full backup downloaded!" }); }}
                 className="w-full px-3 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
               >
                 {"\u{1F4E6}"} Full Backup (JSON)
               </button>
               <div className="flex gap-2">
                 <button
-                  onClick={() => { if (countries?.length) { exportCountriesCSV(countries); setBackupStatus({ ok: true, msg: "CSV exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
+                  onClick={async () => { if (countries?.length) { await exportCountriesCSV(countries); setBackupStatus({ ok: true, msg: "CSV exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
                   className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition-colors border border-slate-200"
                 >
                   {"\u{1F4C4}"} Countries CSV
                 </button>
                 <button
-                  onClick={() => { if (countries?.length) { exportCountriesXLSX(countries); setBackupStatus({ ok: true, msg: "XLSX exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
+                  onClick={async () => { if (countries?.length) { await exportCountriesXLSX(countries); setBackupStatus({ ok: true, msg: "XLSX exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
                   className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition-colors border border-slate-200"
                 >
                   {"\u{1F4CA}"} Countries XLSX
@@ -442,11 +442,34 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
               <p className={"text-xs " + (backupStatus.ok ? "text-emerald-600" : "text-red-500")}>{backupStatus.msg}</p>
             )}
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg px-3 py-2.5">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg px-3 py-2.5 space-y-1.5">
               <p className="text-[10px] text-blue-600/80 leading-relaxed">
                 {"\u{1F4A1}"} API keys are <span className="text-blue-700 font-medium">never</span> included in backups for security.
                 Full backup restores everything else {"\u2014"} reload the page after restoring.
               </p>
+              <p className="text-[10px] text-blue-600/80 leading-relaxed">
+                {"\u{1F4C2}"} Manual exports open a <span className="text-blue-700 font-medium">Save As</span> dialog so you can choose where to save.
+                Auto-backups download silently to your browser{"\u2019"}s default folder.
+              </p>
+              <div className="flex items-start gap-1.5 mt-1 bg-blue-100/60 rounded-md px-2 py-1.5">
+                <span className="text-[10px] leading-none mt-px">{"\u{1F4C1}"}</span>
+                <div className="text-[10px] text-blue-700 leading-relaxed">
+                  <span className="font-medium">Default download location:</span>{" "}
+                  <code className="bg-blue-100 px-1 py-0.5 rounded text-[9px] font-mono">
+                    {navigator.platform?.toLowerCase().includes("mac")
+                      ? "~/Downloads"
+                      : navigator.platform?.toLowerCase().includes("win")
+                      ? "C:\\Users\\{you}\\Downloads"
+                      : "~/Downloads"}
+                  </code>
+                  <br />
+                  <span className="text-blue-600/70">
+                    Change it in your browser{"\u2019"}s{" "}
+                    <span className="font-medium">Settings {"\u2192"} Downloads</span>
+                    {" "}or enable {"\u201C"}Ask where to save{"\u201D"} for every download.
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         )}
