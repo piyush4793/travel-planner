@@ -103,7 +103,16 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
   const [rect, setRect] = useState<DOMRect | null>(null);
   const [installing, setInstalling] = useState(false);
   const [direction, setDirection] = useState<"next" | "prev">("next");
+  const [isMobile, setIsMobile] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   useEffect(() => {
     const done = loadLS<boolean>(LS_KEYS.FRE_DONE, false);
@@ -116,11 +125,11 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
   useEffect(() => {
     if (!visible) return;
     const s = STEPS[step];
-    if (s.kind !== "spotlight" || !s.target) { setRect(null); return; }
+    if (isMobile || s.kind !== "spotlight" || !s.target) { setRect(null); return; }
     const el = document.querySelector(s.target);
     if (!el) { setRect(null); return; }
     setRect(el.getBoundingClientRect());
-  }, [step, visible]);
+  }, [step, visible, isMobile]);
 
   // Re-trigger animation on step change
   useEffect(() => {
@@ -134,6 +143,15 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
     saveLS(LS_KEYS.FRE_DONE, true);
     setVisible(false);
   }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") finish();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [visible, finish]);
 
   const next = useCallback(() => {
     if (step >= STEPS.length - 1) { finish(); return; }
@@ -156,11 +174,13 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
 
   const current = STEPS[step];
   const isLast = step === STEPS.length - 1;
+  // On mobile, render spotlight steps as hero cards (no room for positioned tooltips)
+  const renderAsHero = current.kind === "hero" || (current.kind === "spotlight" && isMobile);
 
   return createPortal(
     <div className="fixed inset-0 z-[9999]" onClick={(e) => e.stopPropagation()}>
       {/* Backdrop */}
-      {current.kind === "spotlight" && rect ? (
+      {current.kind === "spotlight" && rect && !isMobile ? (
         <SpotlightBackdrop rect={rect} />
       ) : (
         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
@@ -168,9 +188,9 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
 
       {/* Card */}
       <div ref={cardRef} className="absolute inset-0 fre-slide-next">
-        {current.kind === "hero" && (
+        {renderAsHero && (
           <HeroCard
-            step={current}
+            step={{ ...current, gradient: current.gradient || "from-blue-600 via-indigo-600 to-violet-700" }}
             index={step}
             total={STEPS.length}
             isLast={isLast}
@@ -179,7 +199,7 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
             onSkip={finish}
           />
         )}
-        {current.kind === "spotlight" && (
+        {current.kind === "spotlight" && !isMobile && (
           <SpotlightCard
             step={current}
             targetRect={rect}
@@ -198,7 +218,7 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
             isIOS={isIOS}
             installing={installing}
             onInstall={handleInstall}
-            onSkip={next}
+            onSkip={finish}
             onBack={prev}
             index={step}
             total={STEPS.length}
