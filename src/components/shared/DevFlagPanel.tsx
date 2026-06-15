@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { getFeatureFlags, setFeatureFlag, PAID_FLAGS, type FeatureFlags } from "../../core/featureFlags";
+import { LS_KEYS } from "../../core/lsKeys";
 
 const IS_DEV = typeof window !== "undefined" &&
   (window.location.hostname === "localhost" ||
@@ -110,8 +111,14 @@ export default function DevFlagPanel() {
             </div>
 
             {/* Footer */}
-            <div className="px-6 py-3 border-t border-slate-100 bg-slate-50">
+            <div className="px-6 py-3 border-t border-slate-100 bg-slate-50 flex items-center justify-between">
               <p className="text-[10px] text-slate-400">Changes apply instantly · paid children require master gate on</p>
+              <button
+                onClick={() => { localStorage.removeItem(LS_KEYS.FRE_DONE); window.location.reload(); }}
+                className="text-[10px] font-semibold text-blue-600 hover:text-blue-800 whitespace-nowrap"
+              >
+                Reset FRE
+              </button>
             </div>
           </div>
         </div>,
