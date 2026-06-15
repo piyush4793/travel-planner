@@ -339,7 +339,7 @@ function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstal
         {step.floaters && <FloatingEmoji emojis={step.floaters} />}
 
         <div className="relative z-10">
-          <button onClick={onSkip} className="absolute top-0 right-0 text-white/40 hover:text-white/80 text-lg transition-colors p-1 leading-none" title="Skip">
+          <button onClick={onSkip} className="absolute top-0 right-0 z-20 text-white/50 hover:text-white text-lg transition-colors p-2 leading-none" title="Skip">
             {"✕"}
           </button>
           <div className="text-3xl mb-2 drop-shadow-lg">{step.emoji}</div>
