@@ -337,7 +337,7 @@ function buildXLSX(rows: string[][]): Blob {
 // ─── Backup Reminder ──────────────────────────────────────────────────────────
 
 export function getBackupFrequency(): BackupFrequency {
-  return loadLS<BackupFrequency>(LS_KEYS.BACKUP_FREQUENCY, "weekly");
+  return loadLS<BackupFrequency>(LS_KEYS.BACKUP_FREQUENCY, "monthly");
 }
 
 export function setBackupFrequency(freq: BackupFrequency): void {
@@ -357,7 +357,14 @@ export function isBackupOverdue(): boolean {
   if (freq === "never") return false;
 
   const last = loadLS<string>(LS_KEYS.LAST_BACKUP, "");
-  if (!last) return true;
+  if (!last) {
+    // First launch or no backup ever — only nag if user has actual data
+    const hasCustoms = (loadLS<unknown[]>(LS_KEYS.CUSTOMS, [])?.length ?? 0) > 0;
+    const hasTrips = (loadLS<unknown[]>(LS_KEYS.TRIP_CUSTOMS, [])?.length ?? 0) > 0;
+    const hasPlans = Object.keys(loadLS<Record<string, unknown>>(LS_KEYS.AI_PLANS, {}) ?? {}).length > 0;
+    if (!hasCustoms && !hasTrips && !hasPlans) return false;
+    return true;
+  }
 
   const lastDate = new Date(last).getTime();
   if (isNaN(lastDate)) return true;
