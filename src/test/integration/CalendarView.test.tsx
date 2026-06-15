@@ -11,6 +11,21 @@ vi.mock("maplibre-gl", () => ({
   Marker: vi.fn(),
 }));
 
+// Mock matchMedia for useBreakpoint — default to desktop
+Object.defineProperty(window, "matchMedia", {
+  writable: true,
+  value: vi.fn().mockImplementation((query: string) => ({
+    matches: query === "(min-width: 1024px)" || query === "(min-width: 768px)",
+    media: query,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    onchange: null,
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  })),
+});
+
 const countries: Country[] = [
   {
     name: "Japan",

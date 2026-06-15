@@ -1,5 +1,6 @@
 import type { Country } from "../../core/types";
 import { MONTHS, expandMonth } from "../../core/utils/months";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 type CellType = "best" | "worst" | "neutral";
 
@@ -20,39 +21,48 @@ type Props = {
 
 export default function CalendarView({ countries, onSelect, visitedNames, selectedCountry }: Props) {
   const nowIdx = new Date().getMonth();
+  const bp = useBreakpoint();
+  const compact = bp === "mobile";
 
   return (
     <div className="h-full flex flex-col bg-white overflow-hidden">
       {/* Legend */}
-      <div className="flex items-center gap-5 px-5 py-2.5 border-b bg-white shrink-0">
-        <span className="text-xs font-semibold text-gray-500">
+      <div className={`flex items-center border-b bg-white shrink-0 ${compact ? "gap-2 px-3 py-1.5" : "gap-5 px-5 py-2.5"}`}>
+        <span className={`font-semibold text-gray-500 ${compact ? "text-[10px]" : "text-xs"}`}>
           {countries.length} destination{countries.length !== 1 ? "s" : ""}
         </span>
-        <div className="flex items-center gap-4 ml-auto text-xs text-gray-500">
-          <span className="flex items-center gap-1.5">
-            <span className="w-3.5 h-3.5 rounded bg-emerald-400 inline-block" /> Best time
+        <div className={`flex items-center ml-auto text-gray-500 ${compact ? "gap-2 text-[10px]" : "gap-4 text-xs"}`}>
+          <span className="flex items-center gap-1">
+            <span className={`rounded bg-emerald-400 inline-block ${compact ? "w-2.5 h-2.5" : "w-3.5 h-3.5"}`} />
+            {!compact && "Best time"}
           </span>
-          <span className="flex items-center gap-1.5">
-            <span className="w-3.5 h-3.5 rounded bg-red-200 inline-block" /> Avoid
+          <span className="flex items-center gap-1">
+            <span className={`rounded bg-red-200 inline-block ${compact ? "w-2.5 h-2.5" : "w-3.5 h-3.5"}`} />
+            {!compact && "Avoid"}
           </span>
-          <span className="flex items-center gap-1.5">
-            <span className="w-3.5 h-3.5 rounded bg-blue-100 border-2 border-blue-400 inline-block" /> This month
+          <span className="flex items-center gap-1">
+            <span className={`rounded border-2 border-blue-400 bg-blue-100 inline-block ${compact ? "w-2.5 h-2.5" : "w-3.5 h-3.5"}`} />
+            {!compact && "This month"}
           </span>
         </div>
       </div>
 
       {/* Grid */}
       <div className="flex-1 overflow-auto">
-        <table className="w-full border-collapse min-w-[700px] text-sm">
+        <table className={`w-full border-collapse text-sm ${compact ? "" : "min-w-[700px]"}`}>
           <thead className="sticky top-0 z-20">
             <tr>
-              <th className="sticky left-0 z-30 bg-slate-100 text-left px-5 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider min-w-[180px] border-b-2 border-gray-200 border-r">
-                Destination
+              <th className={`sticky left-0 z-30 bg-slate-100 text-left text-xs font-bold text-gray-500 uppercase tracking-wider border-b-2 border-gray-200 border-r ${
+                compact ? "px-2 py-2 min-w-[100px] max-w-[120px]" : "px-5 py-3 min-w-[180px]"
+              }`}>
+                {compact ? "Place" : "Destination"}
               </th>
               {MONTHS.map((m, i) => (
                 <th
                   key={m}
-                  className={`py-3 text-center text-xs font-bold border-b-2 border-gray-200 min-w-[52px] transition-colors ${
+                  className={`text-center text-xs font-bold border-b-2 border-gray-200 transition-colors ${
+                    compact ? "py-1.5 min-w-[32px] px-0.5" : "py-3 min-w-[52px]"
+                  } ${
                     i === nowIdx
                       ? "bg-blue-600 text-white"
                       : "bg-slate-100 text-gray-500"
@@ -85,25 +95,32 @@ export default function CalendarView({ countries, onSelect, visitedNames, select
                   >
                     {/* Country name — sticky */}
                     <td
-                      className={`sticky left-0 z-10 px-5 py-3 border-b border-r border-gray-100 ${
+                      className={`sticky left-0 z-10 border-b border-r border-gray-100 ${
+                        compact ? "px-2 py-1.5" : "px-5 py-3"
+                      } ${
                         isSelected ? "bg-blue-50" : `${rowBase} group-hover:bg-slate-100`
                       }`}
                     >
-                      <div className="flex items-center gap-2.5">
-                        {isVisited ? (
-                          <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 text-[10px] flex items-center justify-center font-bold shrink-0">
-                            ✓
-                          </span>
-                        ) : (
-                          <span className="w-5 h-5 rounded-full bg-gray-100 text-gray-400 text-[10px] flex items-center justify-center font-bold shrink-0">
-                            {country.name[0]}
-                          </span>
+                      <div className={`flex items-center ${compact ? "gap-1.5" : "gap-2.5"}`}>
+                        {!compact && (
+                          isVisited ? (
+                            <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 text-[10px] flex items-center justify-center font-bold shrink-0">
+                              ✓
+                            </span>
+                          ) : (
+                            <span className="w-5 h-5 rounded-full bg-gray-100 text-gray-400 text-[10px] flex items-center justify-center font-bold shrink-0">
+                              {country.name[0]}
+                            </span>
+                          )
                         )}
-                        <div>
-                          <p className={`font-semibold leading-tight ${isVisited ? "text-emerald-800" : "text-gray-800"}`}>
+                        <div className={compact ? "min-w-0" : ""}>
+                          <p className={`font-semibold leading-tight ${compact ? "text-xs truncate" : ""} ${isVisited ? "text-emerald-800" : "text-gray-800"}`}>
+                            {compact && isVisited && <span className="mr-0.5">✓</span>}
                             {country.name}
                           </p>
-                          <p className="text-[10px] text-gray-400 leading-tight">{country.budget}</p>
+                          <p className={`text-gray-400 leading-tight ${compact ? "text-[9px]" : "text-[10px]"}`}>
+                            {country.budget}{country.budget && <span className="ml-0.5" title="per couple">👫</span>}
+                          </p>
                         </div>
                       </div>
                     </td>
@@ -116,7 +133,7 @@ export default function CalendarView({ countries, onSelect, visitedNames, select
                         <td
                           key={m}
                           className={[
-                            "text-center py-3 border-b border-gray-100 font-bold text-base transition-colors",
+                            `text-center border-b border-gray-100 font-bold transition-colors ${compact ? "py-1.5 text-xs" : "py-3 text-base"}`,
                             type === "best"
                               ? "bg-emerald-100 text-emerald-600"
                               : type === "worst"

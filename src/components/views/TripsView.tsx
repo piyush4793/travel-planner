@@ -2,6 +2,7 @@ import { useMemo, useState, useEffect } from "react";
 import type { Country, VisitedFilter } from "../../core/types";
 import { ALL_REGIONS, type Region, type TripGroupDef } from "../../core/data/tripGroups";
 import { getWikiImage } from "../../utils/wikiImages";
+import { isEnabled } from "../../core/featureFlags";
 import PillGroup from "../shared/PillGroup";
 
 type Props = {
@@ -223,12 +224,14 @@ export default function TripsView({
                 </div>
               </div>
             )}
-            <button
-              onClick={() => { setCreatingNew(true); setEditingMain(null); }}
-              className="shrink-0 flex items-center gap-1 px-3 py-2 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors min-h-[44px]"
-            >
-              + New Trip
-            </button>
+            {isEnabled("tripGroups") && (
+              <button
+                onClick={() => { setCreatingNew(true); setEditingMain(null); }}
+                className="shrink-0 flex items-center gap-1 px-3 py-2 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors min-h-[44px]"
+              >
+                + New Trip
+              </button>
+            )}
           </div>
         </div>
       </div>
