@@ -49,7 +49,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | Hash-based routing | `src/hooks/useHashView.ts` |
 | Breakpoint detection | `src/hooks/useBreakpoint.ts` |
 | Resizable panel behavior | `src/hooks/usePanelDrag.ts` |
-| Country detail panel (legacy + panelV2 inline) | `src/components/country/CountryPanel.tsx` |
+| Country detail panel | `src/components/country/CountryPanel.tsx` |
 | Itinerary modal | `src/components/country/ItineraryModal.tsx` |
 | Cinematic map experience | `src/components/country/ItineraryCinematic.tsx` |
 | Plan comparison modal | `src/components/country/PlanCompareModal.tsx` |
@@ -76,14 +76,13 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 **MapView** is not a standalone route anymore — it stays mounted behind the UI and becomes visible for Cinematic mode.
 
 **Country Detail Panel** — slides in from right (full-screen on mobile):
-- Header: name, visited toggle, favorite ★, overflow menu (Edit/Delete)
+- Header: name, visited toggle, favorite ★, dedicated edit/delete actions
 - Travel style badge (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive)
 - Collapsible sections: Experiences, Cities, Stopover tips, Watch out for, Combine with, Links, Notes
 - Trip planner: days slider → Generate (offline) or Plan with AI
 - Multi-plan selector: switch between Default and saved AI plans
 - Plan comparison: side-by-side modal with summary cards, city overlap analysis
 - Cinematic mode: animated fly-through of itinerary on map
-- `panelV2` flag: refreshed sticky-header, card-based variant rendered inline inside `CountryPanel.tsx`
 
 **Responsive design** — mobile-first (375px+). Breakpoints: mobile / tablet (768px) / desktop (1024px). `useBreakpoint()` drives reactive layout choices.
 
@@ -99,8 +98,7 @@ App.tsx  (thin orchestrator — wires hooks to views)
 ├── Filters (month, budget, experiences, visited — portal-based dropdowns)
 ├── TripsView / CalendarView / DiscoverView
 ├── CountryPanel
-│   ├── legacy panel render path
-│   ├── panelV2 render path (inline, feature-flagged)
+│   ├── default panel render path
 │   ├── CountryForm
 │   ├── ItineraryModal
 │   ├── PlanCompareModal
@@ -347,7 +345,6 @@ System in `src/utils/featureFlags.ts`. Stored in `tp_features` localStorage key.
 | `llmPlanning` | `true` | paid | AI trip planning flow |
 | `pdfExport` | `true` | paid | Export itineraries as PDF |
 | `searchableHomeCountry` | `false` | free | Searchable home-country dropdown |
-| `panelV2` | `false` | free | Refreshed country detail panel with sticky header and card sections |
 
 **Adding a new flag:**
 1. Add to `FeatureFlags` type in `featureFlags.ts`
@@ -384,7 +381,7 @@ Hash-based, no library. `AppView` + `VALID_VIEWS` live in `src/hooks/useHashView
 - Install npm packages unless absolutely necessary
 - Add a routing library — hash routing is intentional
 - Hardcode localStorage key strings — use `LS_KEYS`
-- Split `CountryPanelV2` into a separate file without a concrete maintenance reason
+- Split `CountryPanel` into a separate file without a concrete maintenance reason
 - Add comments explaining WHAT code does — only comment non-obvious WHY
 - Touch `settings.local.json` — user's local permission overrides
 - Commit or push without asking the user for confirmation first

@@ -50,8 +50,8 @@ All filters combine with AND logic:
 
 ### Country Detail Panel
 Slides in from the right with a compact, decluttered layout:
-- **`panelV2` refresh (feature-flagged)** — sticky header, card-based sections, enhanced slider, and calendar-style month grid
-- **Compact header** — country name, visited toggle, favorite ★, overflow menu (⋯ for Edit/Delete), close
+- **Refreshed panel layout** — sticky header, card-based sections, enhanced slider, and calendar-style month grid
+- **Compact header** — country name, visited toggle, favorite ★, dedicated edit/delete actions, close
 - **Travel style badge** — single research-backed recommendation per country (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive)
 - **Collapsible sections** — Experiences, Cities, Stopover tips, Watch out for, Combine with, Links, Notes collapse by default with item counts
 - **"When to go"** — best + avoid months merged in one row
@@ -169,7 +169,6 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 | `llmPlanning` | `true` | paid | AI trip planning (chat, itinerary generation, save plans). Hidden unless `paidFeatures=true`. |
 | `pdfExport` | `true` | paid | Export itineraries as PDF from country panel. Hidden unless `paidFeatures=true`. |
 | `searchableHomeCountry` | `false` | free | Searchable dropdown with all 197 countries for home country selection |
-| `panelV2` | `false` | free | Refreshed country detail panel with sticky header, card-based sections, enhanced slider, and calendar grid |
 
 **Payment flow (future):** A payment page will set `paidFeatures=true` in localStorage upon successful purchase, unlocking all premium features for the user.
 

@@ -50,7 +50,7 @@ src/
 │   │   ├── CalendarView.tsx       # Month × destination heatmap grid
 │   │   └── DiscoverView.tsx       # 197-country catalog browser
 │   ├── country/
-│   │   ├── CountryPanel.tsx       # Right-side detail panel; legacy + panelV2 inline
+│   │   ├── CountryPanel.tsx       # Right-side detail panel
 │   │   ├── CountryForm.tsx        # Add/edit modal form
 │   │   ├── ItineraryModal.tsx     # Day-by-day itinerary modal
 │   │   ├── ItineraryCinematic.tsx # Animated map fly-through
@@ -146,7 +146,6 @@ Two-tier gating lives in `src/utils/featureFlags.ts`. Paid features require both
 | `llmPlanning` | `true` | paid | AI trip planning flow |
 | `pdfExport` | `true` | paid | PDF export from itinerary views |
 | `searchableHomeCountry` | `false` | free | Searchable home-country picker |
-| `panelV2` | `false` | free | Refreshed country detail panel UI |
 
 ### Portal pattern
 

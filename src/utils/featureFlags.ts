@@ -16,7 +16,6 @@ export type FeatureFlags = {
   llmPlanning: boolean;
   pdfExport: boolean;
   paidFeatures: boolean;
-  panelV2: boolean;
 };
 
 // Which individual flags require paidFeatures to be true
@@ -27,7 +26,6 @@ const DEFAULTS: FeatureFlags = {
   llmPlanning: true,
   pdfExport: true,
   paidFeatures: false,
-  panelV2: false,
 };
 
 let _cache: FeatureFlags | null = null;

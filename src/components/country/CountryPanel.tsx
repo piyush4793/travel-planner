@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../types";
@@ -39,470 +39,7 @@ type Props = {
   onCinematicChange?: (active: boolean) => void;
 };
 
-export default function CountryPanel(props: Props) {
-  if (isEnabled("panelV2")) {
-    return <CountryPanelV2 {...props} />;
-  }
-
-  return <CountryPanelLegacy {...props} />;
-}
-
-
-function CountryPanelLegacy({
-  country, onClose,
-  isFavorite, onToggleFavorite,
-  isVisited, onToggleVisited,
-  onFilterExperience, activeExperiences,
-  onEdit, onDelete, onUpdateNotes,
-  homeCountry,
-  mainMapRef,
-  allCountries,
-  onPlanWithAi,
-  aiPlans = [],
-  onDeleteAiPlan,
-  onCinematicChange,
-}: Props) {
-  const { panelWidth, startPanelDrag }    = usePanelDrag(320, 320);
-  const bp = useBreakpoint();
-  const isMobile = bp === "mobile";
-  const { data: consolidated, rule, loading: ruleLoading } = useCountryRule(country?.name);
-  const [activePlanId, setActivePlanId]   = useState("default");
-  const [selectedCities, setSelectedCities] = useState<string[]>([]);
-  const [customDays, setCustomDays]       = useState(7);
-  const [notes, setNotes]                 = useState(country?.notes ?? "");
-  const [cinematicPlan, setCinematicPlan] = useState<TripPlan | null>(null);
-  const [modalPlan, setModalPlan]         = useState<TripPlan | null>(null);
-  const [compareOpen, setCompareOpen]     = useState(false);
-
-  const maxDays = getMaxRuleDays(rule) ?? 30;
-  const recDays = getRecRuleDays(rule) ?? 7;
-
-  useEffect(() => {
-    setActivePlanId("default");
-    setSelectedCities([]);
-    setCustomDays(recDays);
-    setNotes(country?.notes ?? "");
-    setCinematicPlan(null);
-    setModalPlan(null);
-    setCompareOpen(false);
-  }, [country?.name, recDays]);
-
-  // Reset to default if active AI plan is deleted
-  useEffect(() => {
-    if (activePlanId !== "default" && !aiPlans.find((p) => p.id === activePlanId)) {
-      setActivePlanId("default");
-    }
-  }, [activePlanId, aiPlans]);
-
-  // Notify parent when cinematic mode changes
-  useEffect(() => {
-    onCinematicChange?.(cinematicPlan !== null);
-  }, [cinematicPlan, onCinematicChange]);
-
-  // Build plan options for pill selector and compare
-  const planOptions = useMemo(() => {
-    const opts: { id: string; label: string; plan: TripPlan }[] = [];
-    if (country) {
-      const defaultPlan = generateTripPlan(country, "custom", selectedCities, customDays, rule);
-      opts.push({ id: "default", label: "📅 Default", plan: defaultPlan });
-      for (let i = 0; i < aiPlans.length; i++) {
-        const sp = aiPlans[i];
-        const dayCount = sp.result.plan.days.length;
-        opts.push({ id: sp.id, label: `✨ AI ${i + 1} · ${dayCount}d`, plan: sp.result.plan });
-      }
-    }
-    return opts;
-  }, [country, selectedCities, customDays, aiPlans, rule]);
-
-  const activePlan = planOptions.find((o) => o.id === activePlanId) ?? planOptions[0];
-  const isDefaultActive = activePlanId === "default";
-
-  function toggleCity(name: string) {
-    setSelectedCities(prev => prev.includes(name) ? prev.filter(c => c !== name) : [...prev, name]);
-  }
-
-  return (
-    <div
-      className={`${
-        isMobile
-          ? "fixed inset-0 z-30 bg-white flex flex-col overflow-hidden transition-transform duration-300 ease-out"
-          : "absolute top-0 right-0 h-full bg-white shadow-2xl z-20 flex flex-col overflow-hidden transition-transform duration-300 ease-out"
-      } ${
-        country && !cinematicPlan ? "translate-x-0" : "translate-x-full"
-      }`}
-      style={isMobile ? undefined : { width: panelWidth }}
-    >
-      {/* Drag handle — desktop only */}
-      {!isMobile && (
-        <div
-          className="absolute top-0 left-0 bottom-0 z-30 cursor-col-resize select-none group"
-          style={{ width: 12 }}
-          onPointerDown={startPanelDrag}
-        >
-          <div className="absolute inset-y-0 left-[5px] w-[2px] bg-gray-200 group-hover:bg-blue-400/60 transition-colors" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[5px]">
-            {[0,1,2,3].map((i) => (
-              <div key={i} className="w-[3px] h-[3px] rounded-full bg-gray-300 group-hover:bg-blue-400/80 transition-colors" />
-            ))}
-          </div>
-        </div>
-      )}
-
-      {country && (
-        <>
-          {/* Header */}
-          <div className="px-5 py-4 border-b bg-gradient-to-br from-slate-50 to-white shrink-0">
-            <div className="flex items-start justify-between gap-2">
-              <div className="flex-1 min-w-0">
-                <h2 className="text-xl font-bold text-gray-900 leading-tight">
-                  {country.name}
-                </h2>
-                <p className="text-xs text-gray-400 mt-0.5 font-medium">
-                  {getBudgetDisplay(country.budget)} · from {homeCountry}
-                  {ruleLoading && <span className="text-[9px] text-blue-400 ml-2">Loading itinerary…</span>}
-                </p>
-               {/* V2 budget breakdown */}
-               {consolidated && (
-                 <div className="flex items-center gap-2 mt-1.5 flex-wrap">
-                   <span className="text-[9px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
-                     👤 {consolidated.budget.solo}
-                   </span>
-                   <span className="text-[9px] font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">
-                     👫 {consolidated.budget.couple}
-                   </span>
-                   <span className="text-[9px] font-semibold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">
-                     👨‍👩‍👧‍👦 {consolidated.budget.family4}
-                   </span>
-                 </div>
-               )}
-             </div>
-              <div className="flex items-center gap-0.5 shrink-0">
-                <button onClick={onToggleVisited}
-                  className={`px-2 py-1 rounded-lg text-[10px] font-bold transition-all ${
-                    isVisited ? "bg-emerald-100 text-emerald-700" : "text-gray-400 hover:bg-gray-100"
-                  }`}>
-                  {isVisited ? "✓ Visited" : "○ Visited"}
-                </button>
-                <button onClick={onToggleFavorite}
-                  className={`text-lg p-1 rounded-lg transition-colors ${isFavorite ? "text-yellow-400" : "text-gray-300 hover:text-yellow-300"}`}>
-                  {isFavorite ? "★" : "☆"}
-                </button>
-                <OverflowMenu onEdit={onEdit} onDelete={onDelete} />
-                <button onClick={onClose}
-                  className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 text-lg leading-none p-1 rounded-lg transition-colors"
-                  aria-label="Close panel">
-                  ✕
-                </button>
-              </div>
-            </div>
-
-            {/* Recommended travel style badges */}
-            {country.travelStyle && country.travelStyle.length > 0 && (
-              <div className="flex flex-wrap gap-1.5 mt-2.5">
-                {country.travelStyle.map((s) => {
-                  const m = STYLE_META[s];
-                  if (!m) return null;
-                  return (
-                    <span key={s} className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold ${m.badge}`}>
-                      {m.icon} {m.label}
-                      <Tooltip text={m.description} />
-                    </span>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-
-          {/* Body */}
-          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-5">
-
-            {/* ── Trip Planner ── */}
-            <Section label="Plan your trip">
-              {/* Plan selector dropdown */}
-              {planOptions.length > 1 && (
-                <div className="mb-3 flex items-center gap-2">
-                  <select
-                    value={activePlanId}
-                    onChange={(e) => setActivePlanId(e.target.value)}
-                    className="flex-1 min-w-0 text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg px-3 py-2 outline-none focus:border-blue-400 transition-colors truncate"
-                  >
-                    {planOptions.map((o) => (
-                      <option key={o.id} value={o.id}>{o.label}</option>
-                    ))}
-                  </select>
-                  <button
-                    onClick={() => setCompareOpen(true)}
-                    className="text-[10px] font-bold text-indigo-600 hover:text-indigo-800 px-2.5 py-2 rounded-lg hover:bg-indigo-50 border border-indigo-100 transition-colors shrink-0"
-                  >
-                    ⚖ Compare
-                  </button>
-                </div>
-              )}
-
-              {/* Default plan controls — days slider + city selection */}
-              {isDefaultActive && (
-                <>
-                  {/* Days selector */}
-                  <div className="mb-3 space-y-2">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-2xl font-black text-slate-800">{customDays}</span>
-                        <span className="text-xs text-slate-400 font-semibold">day{customDays !== 1 ? "s" : ""}</span>
-                      </div>
-                      <span className="text-[10px] text-slate-400">
-                        Recommended: <span className="font-bold text-blue-600">{recDays} days</span>
-                      </span>
-                    </div>
-                    <input
-                      type="range"
-                      min={1}
-                      max={maxDays}
-                      value={customDays}
-                      onChange={(e) => setCustomDays(parseInt(e.target.value))}
-                      className="w-full h-1.5 bg-slate-200 rounded-full appearance-none cursor-pointer accent-blue-600"
-                    />
-                    <div className="flex items-center justify-between">
-                      <span className="text-[9px] text-slate-400">1 day</span>
-                      <span className="text-[9px] text-slate-400">{maxDays} days</span>
-                    </div>
-                  </div>
-
-                  {/* City selection (optional override) — collapsible */}
-                  {country.cities && country.cities.length > 0 && (
-                    <CollapsibleSection label={`Cities to visit (${country.cities.length})`} defaultOpen={false}>
-                      <p className="text-[10px] text-gray-400 mb-1.5">Optional — auto-selected if blank</p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {country.cities.map((city) => {
-                          const on = selectedCities.includes(city.name);
-                          return (
-                            <button
-                              key={city.name}
-                              onClick={() => toggleCity(city.name)}
-                              className={`px-2.5 py-1 rounded-full text-xs font-semibold border transition-all ${
-                                on
-                                  ? "bg-slate-700 text-white border-slate-700"
-                                  : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
-                              }`}
-                            >
-                              {city.name}
-                            </button>
-                          );
-                        })}
-                      </div>
-                      {selectedCities.length > 0 && (
-                        <button
-                          onClick={() => setSelectedCities([])}
-                          className="text-[10px] text-gray-400 hover:text-gray-600 mt-1"
-                        >
-                          Clear selection
-                        </button>
-                      )}
-                    </CollapsibleSection>
-                  )}
-                </>
-              )}
-
-              {/* AI plan info bar (when an AI plan is selected) */}
-              {!isDefaultActive && activePlan && (
-                <div className="mb-3 bg-indigo-50 rounded-xl px-3 py-2.5 border border-indigo-100 flex items-center justify-between gap-2">
-                  <div className="min-w-0">
-                    <p className="text-[11px] font-bold text-indigo-700 truncate">{activePlan.label}</p>
-                    <p className="text-[10px] text-indigo-500">{activePlan.plan.days.length} days · {activePlan.plan.costPerPerson}</p>
-                  </div>
-                  {onDeleteAiPlan && (
-                    <button
-                      onClick={() => onDeleteAiPlan(activePlanId)}
-                      className="text-[10px] text-red-400 hover:text-red-600 font-semibold shrink-0"
-                    >
-                      🗑 Delete
-                    </button>
-                  )}
-                </div>
-              )}
-
-              {/* Action buttons */}
-              <div className="flex gap-2 mb-3">
-                {isDefaultActive && onPlanWithAi && (
-                  <button
-                    onClick={() => onPlanWithAi(country.name)}
-                    className="flex-1 py-2.5 border-2 border-emerald-200 bg-emerald-50 text-emerald-700 hover:border-emerald-300 hover:bg-emerald-100 text-[11px] font-bold rounded-xl transition-all"
-                  >
-                    ✨ Plan with AI
-                  </button>
-                )}
-              </div>
-
-              {/* Plan preview — shows for whatever plan is active */}
-              {activePlan && (
-                <PlanPreview
-                  key={`${activePlanId}-${isDefaultActive ? [...selectedCities].sort().join(",") : ""}-${isDefaultActive ? customDays : activePlan.plan.days.length}`}
-                  country={country}
-                  plan={activePlan.plan}
-                  homeCountry={homeCountry}
-                  onCinematic={setCinematicPlan}
-                  onItinerary={setModalPlan}
-                  isAiPlan={!isDefaultActive}
-                  rule={rule}
-                />
-              )}
-            </Section>
-
-            {/* ── When to go (merged best + avoid months) ── */}
-            <Section label="When to go">
-              <div className="flex flex-wrap items-center gap-1.5">
-                {country.bestMonths.map((m) => (
-                  <span key={m} className="px-2.5 py-1 bg-emerald-100 text-emerald-800 text-xs rounded-full font-semibold">{m}</span>
-                ))}
-                {country.worstMonths && country.worstMonths.length > 0 && (
-                  <>
-                    <span className="text-gray-300 mx-1">·</span>
-                    <span className="text-[10px] text-red-400 font-bold mr-0.5">avoid</span>
-                    {country.worstMonths.map((m) => (
-                      <span key={m} className="px-2.5 py-1 bg-red-100 text-red-700 text-xs rounded-full font-semibold">{m}</span>
-                    ))}
-                  </>
-                )}
-              </div>
-            </Section>
-
-            <CollapsibleSection label="Experiences — tap to filter" count={country.experiences.length}>
-              <div className="flex flex-wrap gap-1.5">
-                {country.experiences.map((e) => {
-                  const active = activeExperiences.includes(e);
-                  return (
-                    <button key={e} onClick={() => onFilterExperience(e)}
-                      className={`px-2.5 py-1 text-xs rounded-full font-semibold transition-all ${
-                        active ? "bg-blue-600 text-white shadow-sm" : "bg-blue-50 text-blue-700 hover:bg-blue-100"
-                      }`}>
-                      {e}
-                    </button>
-                  );
-                })}
-              </div>
-            </CollapsibleSection>
-
-            {country.cities && country.cities.length > 0 && (
-              <CollapsibleSection label="Cities to visit" count={country.cities.length}>
-                <div className="space-y-2.5">
-                  {country.cities.map((city) => (
-                    <div key={city.name} className="bg-slate-50 rounded-xl px-3 py-2.5">
-                      <div className="flex items-center justify-between">
-                        <p className="text-sm font-bold text-gray-800">{city.name}</p>
-                        {city.bestMonths && city.bestMonths.length > 0 && (
-                          <div className="flex gap-1">
-                            {city.bestMonths.slice(0, 3).map((m) => (
-                              <span key={m} className="text-[9px] font-bold px-1.5 py-0.5 bg-emerald-100 text-emerald-700 rounded">{m.slice(0, 3)}</span>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                      {city.notes && <p className="text-[11px] text-gray-500 mt-1 leading-snug">{city.notes}</p>}
-                    </div>
-                  ))}
-                </div>
-              </CollapsibleSection>
-            )}
-
-            {country.stopoverNote && (
-              <CollapsibleSection label="Stopover tip ✈️">
-                <div className="bg-blue-50 rounded-xl px-3 py-2.5">
-                  <p className="text-xs text-blue-800 leading-relaxed">{country.stopoverNote}</p>
-                </div>
-              </CollapsibleSection>
-            )}
-
-            {country.avoid && country.avoid.length > 0 && (
-              <CollapsibleSection label="Watch out for" count={country.avoid.length}>
-                <ul className="space-y-1.5">
-                  {country.avoid.map((a) => (
-                    <li key={a} className="text-sm text-gray-600 flex gap-2 leading-snug">
-                      <span className="text-amber-500 mt-0.5 shrink-0 font-bold">!</span>{a}
-                    </li>
-                  ))}
-                </ul>
-              </CollapsibleSection>
-            )}
-
-            {country.combo && country.combo.length > 0 && (
-              <CollapsibleSection label="Combine with" count={country.combo.length}>
-                <div className="flex flex-wrap gap-1.5">
-                  {country.combo.map((c) => (
-                    <span key={c} className="px-2.5 py-1 bg-purple-50 text-purple-700 text-xs rounded-full font-semibold border border-purple-200">{c}</span>
-                  ))}
-                </div>
-                <p className="text-[10px] text-gray-400 mt-1.5">Highlighted in purple on the map</p>
-              </CollapsibleSection>
-            )}
-
-            {country.links && country.links.length > 0 && (
-              <CollapsibleSection label="Useful links" count={country.links.length}>
-                <div className="space-y-2">
-                  {country.links.map((link) => (
-                    <a
-                      key={link.url}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-3 py-2 bg-slate-50 hover:bg-slate-100 rounded-xl text-xs font-semibold text-blue-700 transition-colors group"
-                    >
-                      <span className="text-base">🔗</span>
-                      <span className="flex-1 truncate">{link.label}</span>
-                      <svg className="w-3 h-3 text-gray-400 group-hover:text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  ))}
-                </div>
-              </CollapsibleSection>
-            )}
-
-            <CollapsibleSection label="My notes">
-              <textarea
-                className="w-full text-sm text-gray-700 bg-amber-50 rounded-xl px-3 py-2.5 resize-none outline-none border border-transparent focus:border-amber-300 placeholder:text-gray-400 leading-relaxed transition-colors"
-                rows={4}
-                placeholder="Jot down ideas, reminders, or anything to remember about this destination..."
-                value={notes}
-                onChange={(e) => setNotes(e.target.value)}
-                onBlur={() => onUpdateNotes(notes)}
-              />
-            </CollapsibleSection>
-          </div>
-        </>
-      )}
-
-      {cinematicPlan && country && (
-        <ItineraryCinematic
-          plan={cinematicPlan}
-          country={country}
-          homeCountry={homeCountry}
-          mainMapRef={mainMapRef}
-          rule={rule}
-          comboCountries={country.combo
-            ?.map((name) => allCountries?.find((c) => c.name === name))
-            .filter((c): c is Country => !!c)
-            .map(({ name, lat, lng }) => ({ name, lat, lng }))}
-          onClose={() => setCinematicPlan(null)}
-        />
-      )}
-      {modalPlan && country && (
-        <ItineraryModal
-          plan={modalPlan}
-          country={country}
-          rule={rule}
-          onClose={() => setModalPlan(null)}
-        />
-      )}
-      {compareOpen && planOptions.length >= 2 && (
-        <PlanCompareModal
-          options={planOptions}
-          onClose={() => setCompareOpen(false)}
-        />
-      )}
-    </div>
-  );
-}
-
-function CountryPanelV2({
+export default function CountryPanel({
   country, onClose,
   isFavorite, onToggleFavorite,
   isVisited, onToggleVisited,
@@ -675,7 +212,7 @@ function CountryPanelV2({
           </div>
 
           <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3">
-            <Section label="Plan your trip" variant="v2">
+            <Section label="Plan your trip">
               {planOptions.length > 1 && (
                 <div className="mb-3 flex items-center gap-2">
                   <select
@@ -746,7 +283,7 @@ function CountryPanelV2({
                   </div>
 
                   {country.cities && country.cities.length > 0 && (
-                    <CollapsibleSection label="Cities to visit" count={country.cities.length} defaultOpen={false} variant="v2">
+                    <CollapsibleSection label="Cities to visit" count={country.cities.length} defaultOpen={false}>
                       <p className="mb-2 text-[11px] text-gray-500">Optional — auto-selected if blank</p>
                       <div className="flex flex-wrap gap-1.5">
                         {country.cities.map((city) => {
@@ -817,12 +354,12 @@ function CountryPanelV2({
                   onItinerary={setModalPlan}
                   isAiPlan={!isDefaultActive}
                   rule={rule}
-                  variant="v2"
+                 
                 />
               )}
             </Section>
 
-            <Section label="When to go" variant="v2">
+            <Section label="When to go">
               <div className="grid grid-cols-3 gap-2">
                 {monthGrid.map((month) => {
                   const monthClassName = bestMonthSet.has(month)
@@ -840,7 +377,7 @@ function CountryPanelV2({
               </div>
             </Section>
 
-            <CollapsibleSection label="Experiences" count={country.experiences.length} variant="v2">
+            <CollapsibleSection label="Experiences" count={country.experiences.length}>
               <div className="flex flex-wrap gap-1.5">
                 {country.experiences.map((experience) => {
                   const active = activeExperiences.includes(experience);
@@ -860,7 +397,7 @@ function CountryPanelV2({
             </CollapsibleSection>
 
             {country.cities && country.cities.length > 0 && (
-              <CollapsibleSection label="Cities" count={country.cities.length} variant="v2">
+              <CollapsibleSection label="Cities" count={country.cities.length}>
                 <div className="space-y-2.5">
                   {country.cities.map((city) => (
                     <div key={city.name} className="rounded-xl border border-white/70 bg-white/80 px-3 py-2.5 shadow-sm shadow-slate-100">
@@ -884,7 +421,7 @@ function CountryPanelV2({
             )}
 
             {country.stopoverNote && (
-              <CollapsibleSection label="Stopover tip ✈️" variant="v2">
+              <CollapsibleSection label="Stopover tip ✈️">
                 <div className="rounded-xl bg-blue-50 px-3 py-2.5">
                   <p className="text-xs leading-relaxed text-blue-800">{country.stopoverNote}</p>
                 </div>
@@ -892,7 +429,7 @@ function CountryPanelV2({
             )}
 
             {country.avoid && country.avoid.length > 0 && (
-              <CollapsibleSection label="Watch out for" count={country.avoid.length} variant="v2">
+              <CollapsibleSection label="Watch out for" count={country.avoid.length}>
                 <ul className="space-y-2">
                   {country.avoid.map((item) => (
                     <li key={item} className="flex gap-2 text-sm leading-snug text-gray-600">
@@ -905,7 +442,7 @@ function CountryPanelV2({
             )}
 
             {country.combo && country.combo.length > 0 && (
-              <CollapsibleSection label="Combine with" count={country.combo.length} variant="v2">
+              <CollapsibleSection label="Combine with" count={country.combo.length}>
                 <div className="flex flex-wrap gap-1.5">
                   {country.combo.map((comboCountry) => (
                     <span key={comboCountry} className="rounded-full border border-purple-200 bg-purple-50 px-2.5 py-1 text-xs font-semibold text-purple-700">
@@ -918,7 +455,7 @@ function CountryPanelV2({
             )}
 
             {country.links && country.links.length > 0 && (
-              <CollapsibleSection label="Useful links" count={country.links.length} variant="v2">
+              <CollapsibleSection label="Useful links" count={country.links.length}>
                 <div className="space-y-2">
                   {country.links.map((link) => (
                     <a
@@ -939,7 +476,7 @@ function CountryPanelV2({
               </CollapsibleSection>
             )}
 
-            <CollapsibleSection label="My notes" variant="v2">
+            <CollapsibleSection label="My notes">
               <textarea
                 className="w-full resize-none rounded-xl border border-transparent bg-amber-50 px-3 py-2.5 text-sm leading-relaxed text-gray-700 outline-none transition-colors placeholder:text-gray-400 focus:border-amber-300"
                 rows={4}
@@ -985,7 +522,7 @@ function CountryPanelV2({
   );
 }
 
-function PlanPreview({ country, plan, homeCountry, onCinematic, onItinerary, isAiPlan, rule, variant = "legacy" }: {
+function PlanPreview({ country, plan, homeCountry, onCinematic, onItinerary, isAiPlan, rule }: {
   country: Country;
   plan: TripPlan;
   homeCountry: string;
@@ -993,7 +530,6 @@ function PlanPreview({ country, plan, homeCountry, onCinematic, onItinerary, isA
   onItinerary: (plan: TripPlan) => void;
   isAiPlan?: boolean;
   rule?: CountryRule | null;
-  variant?: "legacy" | "v2";
 }) {
   const hasRuleData = !!rule;
 
@@ -1009,12 +545,11 @@ function PlanPreview({ country, plan, homeCountry, onCinematic, onItinerary, isA
 
   const buttonCount = 1 + 1 + (canExportPdf ? 1 : 0);
   const gridCols = buttonCount >= 3 ? "grid-cols-3" : buttonCount === 2 ? "grid-cols-2" : "grid-cols-1";
-  const isV2 = variant === "v2";
 
   return (
-    <div className={`itinerary-card overflow-hidden rounded-xl border bg-white ${isV2 ? "border-slate-200 shadow-sm shadow-slate-100" : "border-gray-200"}`}>
+    <div className="itinerary-card overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm shadow-slate-100">
       {/* Summary bar */}
-      <div className={`flex items-center justify-between px-3 py-2.5 ${isV2 ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white" : "bg-blue-100 text-blue-800"}`}>
+      <div className="flex items-center justify-between bg-gradient-to-r from-blue-600 to-indigo-600 px-3 py-2.5 text-white">
         <span className="text-xs font-bold">{isAiPlan ? "✨" : "📅"} {plan.duration}</span>
         <span className="text-xs font-bold">{plan.costPerPerson} / person</span>
       </div>
@@ -1027,11 +562,11 @@ function PlanPreview({ country, plan, homeCountry, onCinematic, onItinerary, isA
 
       {/* City route preview */}
       {planCities.length > 1 && (
-        <div className={`border-b border-gray-100 px-3 py-2 ${isV2 ? "overflow-x-auto scrollbar-hide" : "flex flex-wrap items-center gap-1"}`}>
-          <div className={`min-w-max ${isV2 ? "flex items-center gap-1.5" : "contents"}`}>
+        <div className="overflow-x-auto scrollbar-hide border-b border-gray-100 px-3 py-2">
+          <div className="min-w-max flex items-center gap-1.5">
           {planCities.map((city, i) => (
             <span key={city} className="flex items-center gap-1">
-              <span className={isV2 ? "rounded-full bg-slate-100 px-2 py-1 text-[10px] font-semibold text-slate-700" : "text-[10px] font-semibold text-gray-600"}>
+              <span className="rounded-full bg-slate-100 px-2 py-1 text-[10px] font-semibold text-slate-700">
                 {city}
               </span>
               {i < planCities.length - 1 && <span className="text-gray-300 text-[10px]">→</span>}
@@ -1046,45 +581,33 @@ function PlanPreview({ country, plan, homeCountry, onCinematic, onItinerary, isA
         <button
           onClick={() => canCinematic && onCinematic(plan)}
           disabled={!canCinematic}
-          className={`flex flex-col items-center gap-1 py-3.5 rounded-xl active:scale-[0.97] transition-all ${
+          className={`flex flex-col items-center gap-1 rounded-xl py-3.5 transition-all active:scale-[0.97] ${
             canCinematic
-              ? isV2
-                ? "cursor-pointer border border-slate-200 bg-white text-slate-900 shadow-sm shadow-slate-100 hover:-translate-y-0.5 hover:shadow-md"
-                : "bg-gray-950 text-white hover:bg-gray-800 cursor-pointer"
-              : isV2
-                ? "cursor-not-allowed border border-slate-200 bg-slate-100 text-slate-400"
-                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+              ? "cursor-pointer border border-slate-200 bg-white text-slate-900 shadow-sm shadow-slate-100 hover:-translate-y-0.5 hover:shadow-md"
+              : "cursor-not-allowed border border-slate-200 bg-slate-100 text-slate-400"
           }`}
           title={canCinematic ? "Watch animated journey" : "Cinematic not available for this country"}
         >
-          <span className={`${isV2 ? "text-2xl" : "text-xl"} leading-none`}>🎬</span>
+          <span className="text-2xl leading-none">🎬</span>
           <span className="text-[10px] font-black tracking-wide mt-0.5">Cinematic</span>
-          <span className={`text-[9px] leading-none ${canCinematic ? (isV2 ? "text-slate-400" : "text-gray-400") : "text-gray-300"}`}>
+          <span className={`text-[9px] leading-none ${canCinematic ? "text-slate-400" : "text-gray-300"}`}>
             {canCinematic ? "animated journey" : "not available"}
           </span>
         </button>
         <button
           onClick={() => onItinerary(plan)}
-          className={`flex flex-col items-center gap-1 rounded-xl py-3.5 active:scale-[0.97] transition-all ${
-            isV2
-              ? "border border-blue-100 bg-blue-50 text-blue-700 shadow-sm shadow-blue-100/60 hover:-translate-y-0.5 hover:shadow-md hover:bg-blue-100"
-              : "border border-blue-100 bg-blue-50 text-blue-700 hover:bg-blue-100"
-          }`}
+          className="flex flex-col items-center gap-1 rounded-xl border border-blue-100 bg-blue-50 py-3.5 text-blue-700 shadow-sm shadow-blue-100/60 transition-all active:scale-[0.97] hover:-translate-y-0.5 hover:bg-blue-100 hover:shadow-md"
         >
-          <span className={`${isV2 ? "text-2xl" : "text-xl"} leading-none`}>📋</span>
+          <span className="text-2xl leading-none">📋</span>
           <span className="text-[10px] font-black tracking-wide mt-0.5">Itinerary</span>
           <span className="text-[9px] text-blue-400 leading-none">day-by-day plan</span>
         </button>
         {canExportPdf && (
           <button
             onClick={() => exportItineraryAsPdf(plan, country, homeCountry)}
-            className={`flex flex-col items-center gap-1 rounded-xl py-3.5 active:scale-[0.97] transition-all ${
-              isV2
-                ? "border border-rose-100 bg-rose-50 text-rose-700 shadow-sm shadow-rose-100/60 hover:-translate-y-0.5 hover:shadow-md hover:bg-rose-100"
-                : "border border-rose-100 bg-rose-50 text-rose-700 hover:bg-rose-100"
-            }`}
+            className="flex flex-col items-center gap-1 rounded-xl border border-rose-100 bg-rose-50 py-3.5 text-rose-700 shadow-sm shadow-rose-100/60 transition-all active:scale-[0.97] hover:-translate-y-0.5 hover:bg-rose-100 hover:shadow-md"
           >
-            <span className={`${isV2 ? "text-2xl" : "text-xl"} leading-none`}>📄</span>
+            <span className="text-2xl leading-none">📄</span>
             <span className="text-[10px] font-black tracking-wide mt-0.5">Export PDF</span>
             <span className="text-[9px] text-rose-400 leading-none">save & share</span>
           </button>
@@ -1094,118 +617,44 @@ function PlanPreview({ country, plan, homeCountry, onCinematic, onItinerary, isA
   );
 }
 
-function Section({ label, children, variant = "legacy" }: { label: string; children: React.ReactNode; variant?: "legacy" | "v2" }) {
-  if (variant === "v2") {
-    return (
-      <div className="rounded-xl bg-gray-50/50 p-3.5">
-        <p className="mb-3 text-[11px] font-semibold text-gray-500">{label}</p>
-        {children}
-      </div>
-    );
-  }
-
+function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div>
-      <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">{label}</p>
+    <div className="rounded-xl bg-gray-50/50 p-3.5">
+      <p className="mb-3 text-[11px] font-semibold text-gray-500">{label}</p>
       {children}
     </div>
   );
 }
 
-function CollapsibleSection({ label, count, defaultOpen = false, children, variant = "legacy" }: {
+function CollapsibleSection({ label, count, defaultOpen = false, children }: {
   label: string;
   count?: number;
   defaultOpen?: boolean;
   children: React.ReactNode;
-  variant?: "legacy" | "v2";
 }) {
   const [open, setOpen] = useState(defaultOpen);
 
-  if (variant === "v2") {
-    return (
-      <div className="rounded-xl bg-gray-50/50 p-3.5">
-        <button
-          onClick={() => setOpen((state) => !state)}
-          className="group flex w-full items-center gap-2 text-left"
-        >
-          <span className={`text-xs text-gray-400 transition-transform duration-300 ease-out ${open ? "rotate-90 text-blue-500" : ""}`}>▸</span>
-          <span className="flex-1 text-[11px] font-semibold text-gray-500">{label}</span>
-          {count !== undefined && (
-            <span className="rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold text-gray-500 ring-1 ring-gray-200">
-              {count}
-            </span>
-          )}
-        </button>
-        <div className={`grid transition-all duration-300 ease-out ${open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-          <div className="overflow-hidden">
-            <div className={`border-l pl-3 transition-colors duration-300 ${open ? "border-blue-200" : "border-transparent"}`}>
-              {children}
-            </div>
+  return (
+    <div className="rounded-xl bg-gray-50/50 p-3.5">
+      <button
+        onClick={() => setOpen((state) => !state)}
+        className="group flex w-full items-center gap-2 text-left"
+      >
+        <span className={`text-xs text-gray-400 transition-transform duration-300 ease-out ${open ? "rotate-90 text-blue-500" : ""}`}>▸</span>
+        <span className="flex-1 text-[11px] font-semibold text-gray-500">{label}</span>
+        {count !== undefined && (
+          <span className="rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold text-gray-500 ring-1 ring-gray-200">
+            {count}
+          </span>
+        )}
+      </button>
+      <div className={`grid transition-all duration-300 ease-out ${open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+        <div className="overflow-hidden">
+          <div className={`border-l pl-3 transition-colors duration-300 ${open ? "border-blue-200" : "border-transparent"}`}>
+            {children}
           </div>
         </div>
       </div>
-    );
-  }
-
-  return (
-    <div>
-      <button
-        onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-1.5 w-full text-left group"
-      >
-        <span className={`text-[9px] text-gray-400 transition-transform duration-200 ${open ? "rotate-90" : ""}`}>▸</span>
-        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider flex-1">
-          {label}{count !== undefined ? ` (${count})` : ""}
-        </span>
-      </button>
-      <div className={`grid transition-all duration-200 ease-out ${open ? "grid-rows-[1fr] opacity-100 mt-2" : "grid-rows-[0fr] opacity-0"}`}>
-        <div className="overflow-hidden">
-          {children}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function OverflowMenu({ onEdit, onDelete }: { onEdit: () => void; onDelete: () => void }) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [open]);
-
-  return (
-    <div className="relative" ref={ref}>
-      <button
-        onClick={() => setOpen((o) => !o)}
-        className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 text-lg leading-none p-1 rounded-lg transition-colors"
-        aria-label="More options"
-        aria-expanded={open}
-      >
-        ⋯
-      </button>
-      {open && (
-        <div className="absolute right-0 top-full mt-1 bg-white rounded-xl shadow-xl border border-slate-200 py-1 min-w-[120px] z-50">
-          <button
-            onClick={() => { onEdit(); setOpen(false); }}
-            className="w-full text-left px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50"
-          >
-            ✏️ Edit
-          </button>
-          <button
-            onClick={() => { onDelete(); setOpen(false); }}
-            className="w-full text-left px-4 py-2 text-xs font-semibold text-red-500 hover:bg-red-50"
-          >
-            🗑 Delete
-          </button>
-        </div>
-      )}
     </div>
   );
 }
