@@ -1,6 +1,6 @@
 # Travel Planner
 
-A personal, map-based travel planner with a catalog of 197 world countries, 44 curated seed destinations with rich data, and a rule-based day-by-day itinerary engine. Filter by season, budget, travel style, and experience type — then explore itineraries with real costs, hotel picks, and transport connections. Built entirely free with no paid APIs or backend.
+A personal, map-based travel planner with a catalog of 197 world countries, 44 curated seed destinations with rich data, and offline day-by-day itineraries for all 198 rule-backed destinations. Filter by season, budget, travel style, and experience type — then explore itineraries with real costs, hotel picks, and transport connections. Built entirely free with no paid APIs or backend.
 
 ---
 
@@ -28,7 +28,7 @@ Mobile-first responsive layout — works on phones (375px+), tablets (768px+), a
 
 ### My List & Discover
 - **197 countries** in the world catalog (`data/worldCatalog.json`), organized by 6 regions
-- **44 curated seed destinations** with rich data (budget, best months, experiences, cities) pre-added to your list — includes United States, United Arab Emirates, and Antarctica as full destinations
+- **44 curated seed destinations** with rich data (budget, best months, experiences, cities) pre-added to your list — and **all 198 itinerary-backed destinations** now have offline planning data available on demand
 - Only countries in **My List** appear on Map, Calendar, List, and Trips views
 - Add from Discover → creates a minimal Country entry that can be enriched via edit
 - Remove from list without losing custom data — re-add anytime
@@ -50,6 +50,7 @@ All filters combine with AND logic:
 
 ### Country Detail Panel
 Slides in from the right with a compact, decluttered layout:
+- **`panelV2` refresh (feature-flagged)** — sticky header, card-based sections, enhanced slider, and calendar-style month grid
 - **Compact header** — country name, visited toggle, favorite ★, overflow menu (⋯ for Edit/Delete), close
 - **Travel style badge** — single research-backed recommendation per country (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive)
 - **Collapsible sections** — Experiences, Cities, Stopover tips, Watch out for, Combine with, Links, Notes collapse by default with item counts
@@ -64,12 +65,13 @@ Slides in from the right with a compact, decluttered layout:
 ### Day-by-Day Itinerary Planner
 Custom trip planner with a days slider — set your duration and the engine builds the best itinerary:
 
+- **198 countries covered** — every country in the world catalog has a day-wise offline itinerary
 - **Range slider** from 1 to max available days (based on rule data)
 - **Recommended days** shown for guidance (e.g. "Recommended: 12 days")
-- **Smart city selection** — when days are fewer than total cities, the algorithm prioritizes by importance (recDays) and drops lowest-priority cities first
+- **Smart city selection** — when days are fewer than total cities, the algorithm prioritizes by importance and drops lowest-priority cities first
 - **Optional city override** — manually pick which cities to include
-
-**Rule-based data** now includes France, Italy, Spain, Japan, Australia, Greece, Indonesia, Turkey, Switzerland, South Korea, New Zealand, Egypt, Germany, the Netherlands, the Czech Republic, Argentina, Hungary, Poland, Romania, Denmark, and the UK in the lazy-loaded country JSON set. Italy covers a Rome → Naples → Amalfi → Florence → Cinque Terre → Venice → Milan journey with INR-priced attractions, hotel picks, transport legs, and meal recommendations; France keeps its Paris → Lyon → Nice route with Paris-based Versailles / Mont Saint-Michel day trips; Spain spans Barcelona, Valencia, Madrid, Seville, Granada, and San Sebastian with real hotels, restaurants, and rail/flight connections; Japan covers Tokyo, Hakone, Kyoto, Osaka, Nara, and Hiroshima with JR-friendly transport legs, hotel picks, real restaurant suggestions, and a Miyajima add-on day; Australia maps Sydney, Melbourne, Brisbane, Cairns, Uluru, and Perth with INR-priced activities, hotels, restaurant picks, and domestic flight connections; Greece maps Athens, Santorini, Crete, Mykonos, Rhodes, and Thessaloniki with ferry or flight links, real stays, and Athens-based Delphi and Meteora day trips; Indonesia maps Bali, Yogyakarta, Jakarta, Lombok, Komodo, and Raja Ampat with ₹-priced activities, real hotels and restaurants, marine-heavy transfers, and image search terms tailored to the lazy-loaded rule JSON; Turkey now maps Istanbul, Cappadocia, Pamukkale, Antalya, Ephesus, and Bodrum with museum pricing, real stays and meals, and domestic flight or bus routing; Switzerland covers Zurich, Lucerne, Interlaken, Zermatt, Geneva, and Bern with Swiss Travel Pass-friendly train legs, real hotels and restaurants, and Jungfraujoch / Matterhorn highlight days; South Korea now maps Incheon, Seoul, Busan, Gyeongju, and Jeju with INR-priced transport legs, real hotels and restaurant picks, a DMZ day trip, and airport-friendly routing; New Zealand now maps Auckland, Rotorua, Wellington, Christchurch, Queenstown, and Fiordland with INR-priced activities, real stays and restaurant picks, inter-island flight links, and Milford Sound day-trip coverage; Egypt now maps Cairo, Alexandria, Luxor, Aswan, and Hurghada with INR-priced monument entries, real hotels and restaurants, Abu Simbel day-trip coverage, and Red Sea transfer guidance; Germany now maps Cologne, Heidelberg, Munich, Dresden, Berlin, and Hamburg with DB-friendly rail legs, real hotels and restaurants, and a Munich-based Neuschwanstein day trip; Austria now maps Vienna, Graz, Salzburg, Hallstatt, and Innsbruck with ÖBB-friendly rail legs, real hotels and restaurants, Salzburg-to-Hallstatt planning, and city image search terms in the lazy-loaded rule JSON set; the Netherlands maps Amsterdam, Haarlem, Rotterdam, Delft, and Utrecht with INR-priced museum and rail costs, real hotel and restaurant picks, contactless transit tips, and a spring-friendly Keukenhof swap; the Czech Republic now maps Prague, Karlovy Vary, Cesky Krumlov, and Brno with ₹-priced castle, spa, museum, and rail-bus routing details plus real hotel and meal picks; and Argentina now maps Buenos Aires, Iguazu Falls, Salta, Mendoza, Bariloche, and Patagonia with ₹-priced activities, real hotels and restaurants, domestic flight guidance, and glacier-to-Tierra-del-Fuego coverage; Hungary now maps Budapest, Eger, Debrecen, and Pecs with ₹-priced thermal baths, parliament and cathedral visits, real hotel and restaurant picks, and cross-country rail connections; and Poland now maps Warsaw, Krakow, Wroclaw, and Gdansk with PKP Intercity rail costs, real hotels and restaurants, and Auschwitz Memorial guidance as a Krakow day trip; Romania now maps Bucharest, Brasov, Sibiu, and Cluj-Napoca with ₹-priced museum-and-castle entries, real hotel and restaurant picks, Transylvania-friendly rail and bus connections, and Bran Castle plus Turda Salt Mine coverage; Denmark now maps Copenhagen, Aarhus, and Odense with DSB Orange rail fares, a Roskilde Viking-and-cathedral day trip, hotel and vegetarian meal picks, and landmark image search terms. Georgia now maps Tbilisi, Sighnaghi, Kazbegi, Kutaisi, and Batumi with INR-priced bath, monastery, mountain, and coastal activities, real hotel and restaurant picks, Mtskheta day-trip coverage, and flexible cross-country transport legs in the lazy-loaded rule JSON set. The itinerary planner also includes detailed rule coverage for Singapore, Malaysia, Vietnam, Norway, Thailand, Laos, Cambodia, Nepal, the Philippines, South Africa, China, the United States, the United Arab Emirates, and Belarus. Singapore now maps Marina Bay, Sentosa, Chinatown, and Little India with ₹-priced attraction planning, real hotel and restaurant picks, MRT/Sentosa transfer guidance, and district image search terms in the lazy-loaded country JSON set. Malaysia now maps Kuala Lumpur, Malacca, Cameron Highlands, Penang, Langkawi, and optional Kota Kinabalu with ₹-priced attractions, real hotel and restaurant picks, tourist SIM/app guidance, and bus-ferry-flight connections. Thailand covers Bangkok, Ayutthaya, Chiang Mai, Pai, Phuket, and Koh Samui, while Norway spans 11 cities including Lofoten, Gudvangen Viking village, Trollstigen, and Loen. Laos now maps Vientiane, Vang Vieng, Luang Prabang, and Pakse with ₹-priced temples, train legs, waterfall and heritage day plans, real hotel and restaurant picks, and southern Laos gateway guidance in the lazy-loaded country JSON set. Cambodia now maps Siem Reap, Phnom Penh, Kampot, and Sihanoukville with ₹-priced Angkor passes, Phnom Penh history stops, Bokor-and-pepper-farm detours, real hotel and restaurant picks, and Koh Rong ferry planning in the lazy-loaded country JSON set. Nepal now maps Kathmandu, Pokhara, Chitwan, and Lumbini with INR-priced heritage entries, safari activities, real hotel and restaurant picks, and India-friendly SIM and currency guidance in the lazy-loaded country JSON set. The Philippines now maps Manila, Palawan, Cebu, Bohol, Boracay, and Siargao with INR-priced island hops, real hotel and restaurant picks, and surf-to-lagoon routing in the lazy-loaded country JSON set. South Africa now maps Cape Town, Stellenbosch, Garden Route, Kruger National Park, Johannesburg, and Durban with ₹-priced safaris, real hotel and restaurant picks, domestic flight links, and airport-SIM guidance in the lazy-loaded rule JSON set. China now maps Beijing, Xi'an, Chengdu, Guilin, Hangzhou, and Shanghai with ₹-priced rail, flight, monument, and river-cruise costs, real hotel and restaurant picks, Great Firewall-ready SIM/app guidance, and a Hangzhou-to-Shanghai finish in the lazy-loaded rule JSON set. The United States now maps New York, Los Angeles, San Francisco, Honolulu, Maui, Big Island, Kauai, and Lanai with INR-priced mainland and inter-island connections, real hotel and restaurant picks, and Hawaii-heavy day planning in the lazy-loaded rule JSON set. The United Arab Emirates now maps Dubai City, Sharjah, and Abu Dhabi with Burj Khalifa, Dubai Frame, desert safari, Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, Ferrari World, an Al Ain day trip, hotel picks, tourist SIM/app guidance, and landmark image terms in the lazy-loaded rule JSON set. The UK now maps London, Oxford, Cambridge, Bath, Stonehenge, York, Edinburgh, St Andrews, Glasgow, Inverness, and the Isle of Skye with ₹-priced rail and bus links, real hotel and restaurant picks, and heritage-to-Highlands routing in the lazy-loaded rule JSON set. Bhutan now maps Thimphu, Punakha, Paro, and Bumthang with SDF-aware ₹ costs, real hotel and restaurant picks, and Paro–Bumthang domestic flight guidance in the lazy-loaded rule JSON set. Belarus now maps Minsk, Mir, Nesvizh, and Brest with ₹-priced fortress and castle entries, real hotel and restaurant picks, rail-bus-taxi connections, and a Minsk-to-Brest route in the lazy-loaded rule JSON set. Russia now maps Moscow, St Petersburg, Krasnodar, Sochi, and Murmansk with ₹-priced Sapsan, flight, Black Sea, and Arctic aurora planning, plus real hotels, restaurant picks, and seasonal add-on guidance in the lazy-loaded rule JSON set. Maldives now maps Male, Ari Atoll, Baa Atoll, and Maafushi with ₹-priced ferry, seaplane, flight, snorkeling, and manta-or-whale-shark planning, plus real hotels, restaurant picks, and local-island travel notes in the lazy-loaded rule JSON set. Greenland now maps Nuuk, Kangerlussuaq, Sisimiut, and Ilulissat with ₹-priced fjord, glacier, whale-watching, and museum planning, real hotel and restaurant picks, SIM/app guidance, and Air Greenland connection notes in the lazy-loaded rule JSON set.
+- **Real data** — each country's rule file includes real hotel names, restaurant picks, attraction fees (in ₹), transport connections, SIM/app tips, and city images
+- **Lazy-loaded** — rule files are separate JSON chunks loaded on demand, keeping the initial bundle small
 
 **Two planning modes:**
 | Mode | Trigger | Description |
@@ -81,7 +83,7 @@ Custom trip planner with a days slider — set your duration and the engine buil
 | Mode | Availability | Description |
 |---|---|---|
 | 🎬 Cinematic | Rule-based only | Full-screen animated journey with styled transport markers, easing, city pulse, route glow |
-| 📋 Itinerary | All countries (offline + AI) | Scrollable modal with expandable day cards, activities with cost highlighting, quick links (📍 Maps, 🔍 Search), meal recommendations, hotel booking links |
+| 📋 Itinerary | All countries (offline + AI) | Scrollable modal with expandable day cards, activities with cost highlighting, quick links (📍 Maps, 🔍 Search), meal recommendations, hotel booking links, and per-day 🗺️ Route button that opens a Google Maps Directions link with all stops plotted in walking/transit order |
 | 📄 PDF Export | All countries (paid) | Browser print dialog → Save as PDF with clean formatted layout |
 
 ---
@@ -135,7 +137,23 @@ Full-screen animated experience for rule-based countries:
 ### Home Country
 📍 button in header — changes budget "from X" labels. Persists in localStorage.
 
-Default: 16 curated countries. With `searchableHomeCountry` feature flag enabled: searchable dropdown with all 197 countries (max 10 visible, scroll-enabled).
+Default: static "India" label. With `searchableHomeCountry` feature flag enabled: searchable dropdown with all 197 countries (max 10 visible, scroll-enabled).
+
+### Backup & Restore
+All travel data lives in localStorage. The Settings modal (⚙️) includes a full backup section:
+
+| Action | Format | Scope |
+|---|---|---|
+| **Full Backup** | JSON | All localStorage data — countries, trips, AI plans, visited/favorites, settings |
+| **Export Countries** | CSV or XLSX | Flat table of My List countries with all fields (human-editable) |
+| **Restore Backup** | JSON | Replaces all localStorage data from a previously exported JSON backup |
+| **Import Countries** | CSV | Merges imported countries into your customs (existing entries updated, new ones added) |
+
+- **XLSX export** uses manual Office Open XML construction — no npm dependencies
+- **API keys are excluded** from backup files for security
+- **Backup reminders** — configurable (daily / weekly / never). Overdue backups show a dismissible amber banner at the top
+
+---
 
 ### Feature Flags
 Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel in the header to toggle flags live.
@@ -151,6 +169,7 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 | `llmPlanning` | `true` | paid | AI trip planning (chat, itinerary generation, save plans). Hidden unless `paidFeatures=true`. |
 | `pdfExport` | `true` | paid | Export itineraries as PDF from country panel. Hidden unless `paidFeatures=true`. |
 | `searchableHomeCountry` | `false` | free | Searchable dropdown with all 197 countries for home country selection |
+| `panelV2` | `false` | free | Refreshed country detail panel with sticky header, card-based sections, enhanced slider, and calendar grid |
 
 **Payment flow (future):** A payment page will set `paidFeatures=true` in localStorage upon successful purchase, unlocking all premium features for the user.
 
@@ -164,7 +183,7 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 
 ## Tech Stack
 
-Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre. No routing library, no state management library. Static site — deploy to Netlify/Vercel free tier. Rule-based itinerary content is stored in lazy-loaded per-country JSON files under `data/rules/`, with each destination carrying transport legs, SIM/app tips, hotel/meal picks, day-trip guidance where needed, and city image search terms so research-heavy updates like rail-first Laos journeys, Cambodia's Angkor-to-Koh-Rong route, mixed city-and-safari South Africa routes, Nepal's heritage-and-safari circuit, rail-heavy UK heritage circuits, China's VPN-aware rail-plus-river route planning, Belarus's castle-and-fortress loop, Bhutan's SDF-aware Himalayan valley route, Maldives' seaplane-and-speedboat atoll hopping, or Greenland's multi-hop Arctic route can ship without touching core UI logic.
+Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest covers the app with 169 tests across 16 files.
 
 For detailed architecture, code structure, design patterns, and data model, see [DESIGN.md](./DESIGN.md).
 
@@ -192,7 +211,6 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 | 🟢 Short | ⭐⭐ | Budget currency toggle | UX | Convert ₹ to USD / EUR / AUD |
 | 🟡 Medium | ⭐⭐⭐⭐ | First run experience | UX | Guided onboarding tour highlighting key features (tooltip-based, one-time) |
 | 🟡 Medium | ⭐⭐⭐ | Import parser quality | AI | Better ChatGPT link extraction, React Router stream data, entity cleanup |
-| 🟡 Medium | ⭐⭐⭐ | Data backup — Spreadsheet sync | Export | Google Sheets / CSV export & import of all user data (My List, notes, AI plans) |
 | 🟡 Medium | ⭐⭐⭐ | Multi-country trip builder | Core | String countries into a single trip with total cost/days |
 | 🟡 Medium | ⭐⭐ | Calendar sync | Export | Export itinerary as `.ics` file |
 | 🟡 Medium | ⭐⭐ | Enriched AI response schema | AI | lat/lng per city, transport type per leg in LLM output |
@@ -203,5 +221,6 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 | 🔴 Long | ⭐⭐ | Seasonal flight cost hints | Data | Rough fare ranges from public sources |
 | 🔴 Long | ⭐⭐ | Voice input for chat | AI | Speak trip requests instead of typing |
 | 🔴 Long | ⭐⭐ | Drag-and-drop trip reorder | UX | Reorder trip group add-ons |
+| 🟡 Medium | ⭐⭐⭐⭐ | Daily Google Maps route | Export | Generate a shareable Google Maps link per day with all stops plotted — one tap to see walking/transit directions for the day's itinerary |
 | 🔴 Long | ⭐ | Real-time pricing | Integration | Flights/hotels API integration |
 | 🔴 Long | ⭐ | Social layer | Social | Follow friends, see where they've been |
