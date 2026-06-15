@@ -59,6 +59,7 @@ Slides in from the right with a compact, decluttered layout:
 - **Multi-plan selector** — dropdown to switch between Default and saved AI plans, with full day-wise itinerary for each
 - **Plan comparison** — side-by-side modal with summary cards (duration, cost, cities, activities/day, hotels), city overlap analysis (shared/unique badges), and independent day-by-day scroll
 - **Cinematic for any plan** — saved AI plans can also run cinematic mode; button disabled per-plan when city coordinates don't match
+- **Country facts stay in sync** — lazily loaded overview/facts discard stale responses if you switch destinations mid-fetch
 
 ---
 
@@ -102,6 +103,7 @@ Bring-your-own-key integration with OpenAI and Claude. Chat with an AI assistant
 - **Save to My List** — save AI-generated destinations to your list with instant feedback (saved / already exists)
 - **Import plans from external AI** — paste a ChatGPT/Claude conversation or share link; multi-strategy parser extracts day-by-day itinerary with prompt improvement suggestions
 - **Save AI plans** — persist up to 3 AI-generated itineraries per destination in localStorage with compare-and-replace flow
+- **Rename-safe replacements** — replacing a saved AI plan now works even if the regenerated itinerary changes the destination label
 - **Plan comparison** — when saving, view existing plans side-by-side with diff summary (duration, budget, cities, cost) and choose to add or replace
 - **Token usage tracking** — running token counter with cost estimate in chat footer (color-coded: green <4K, amber 4K-12K, red >12K); hover for detailed breakdown (input/output tokens, per-provider pricing, estimated USD cost)
 - **Pre-finalization cost estimate** — "Finish & Generate" button shows estimated cost before generating; tooltip with expected additional token usage
@@ -121,6 +123,7 @@ Full-screen animated experience for rule-based countries:
 5. Staggered activity cards on resizable right panel
 6. Return arc with "Welcome back!" screen
 7. Pause/resume, close to restore original camera
+8. Pause/resume stays reliable across re-renders because playback control is state-driven
 
 ---
 
@@ -130,7 +133,7 @@ Full-screen animated experience for rule-based countries:
 - Create custom trip groups from the + New Trip button
 - Delete trips (seed trips are tombstoned, custom trips removed)
 - One-trip-per-country invariant enforced in editor
-- Unassigned countries appear as auto-generated solo trips (read-only)
+- Unassigned countries appear as auto-generated solo trips (read-only) and inherit their real country region for filtering/stats
 
 ---
 
@@ -182,7 +185,7 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 
 ## Tech Stack
 
-Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 217 tests across 23 files, including hook state, backup import flows, trip-group merging, and route-building utilities.
+Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 217 tests across 23 files, including hook state, backup import flows, trip-group merging, and route-building utilities.
 
 For detailed architecture, code structure, design patterns, and data model, see [DESIGN.md](./DESIGN.md).
 

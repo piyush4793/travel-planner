@@ -79,7 +79,7 @@ function buildTrips(
       allVisited: isV,
       noneVisited: !isV,
       isFavorited: favorites.has(c.name),
-      region: "Asia",
+      region: (c.region as Region) || "Asia",
       source: "solo",
     });
   }

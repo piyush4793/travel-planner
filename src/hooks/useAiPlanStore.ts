@@ -82,7 +82,7 @@ export function useAiPlanStore() {
     (planId: string, result: LLMTripPlanResult): SavedAiPlan => {
       const key = normalizeDestinationKey(result.destinationName);
       const replacement: SavedAiPlan = {
-        id: generateId(),
+        id: planId,
         schemaVersion: SCHEMA_VERSION,
         savedAt: new Date().toISOString(),
         destinationKey: key,
@@ -90,9 +90,23 @@ export function useAiPlanStore() {
         result,
       };
       persistUpdate((prev) => {
-        const existing = prev[key] ?? [];
-        const updated = existing.map((p) => (p.id === planId ? replacement : p));
-        return { ...prev, [key]: updated };
+        const next = { ...prev };
+
+        for (const [existingKey, existingPlans] of Object.entries(next)) {
+          const idx = existingPlans.findIndex((p) => p.id === planId);
+          if (idx === -1) continue;
+          const updated = existingPlans.filter((p) => p.id !== planId);
+          if (updated.length === 0) {
+            delete next[existingKey];
+          } else {
+            next[existingKey] = updated;
+          }
+          break;
+        }
+
+        const bucket = next[key] ?? [];
+        next[key] = [...bucket.filter((p) => p.id !== planId), replacement].slice(-MAX_CUSTOM_PLANS);
+        return next;
       });
       return replacement;
     },

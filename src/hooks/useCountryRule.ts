@@ -39,6 +39,11 @@ export function useCountryRule(countryName: string | undefined): UseCountryRuleR
         setData(r);
         setLoading(false);
       }
+    }).catch(() => {
+      if (nameRef.current === countryName) {
+        setData(null);
+        setLoading(false);
+      }
     });
   }, [countryName]);
 

@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../core/types";
@@ -69,6 +69,7 @@ export default function CountryPanel({
   const [countryInfo, setCountryInfo] = useState<CountryInfo | null>(null);
   const [infoLoading, setInfoLoading] = useState(false);
   const [infoFetched, setInfoFetched] = useState(false);
+  const currentCountryNameRef = useRef<string | null>(country?.name ?? null);
 
   const maxDays = getMaxRuleDays(rule) ?? 30;
   const recDays = getRecRuleDays(rule) ?? 7;
@@ -82,6 +83,7 @@ export default function CountryPanel({
   const monthGrid = MONTHS.filter((month) => bestMonthSet.has(month) || worstMonthSet.has(month));
 
   useEffect(() => {
+    currentCountryNameRef.current = country?.name ?? null;
     setActivePlanId("default");
     setSelectedCities([]);
     setCustomDays(recDays);
@@ -96,8 +98,10 @@ export default function CountryPanel({
 
   const loadCountryInfo = useCallback(() => {
     if (infoFetched || infoLoading || !country) return;
+    const targetName = country.name;
     setInfoLoading(true);
-    fetchCountryInfo(country.name).then((info) => {
+    fetchCountryInfo(targetName).then((info) => {
+      if (currentCountryNameRef.current !== targetName) return;
       setCountryInfo(info);
       setInfoFetched(true);
       setInfoLoading(false);

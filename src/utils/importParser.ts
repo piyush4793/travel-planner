@@ -31,7 +31,7 @@ export function importResultToLLM(r: ImportResult, homeCountry: string): LLMTrip
     durationDays: r.durationDays,
     budgetLevel: "mid-range",
     assumptions: ["Imported from external AI conversation"],
-    cities: r.cities.map((name) => ({ name, lat: 0, lng: 0, nights: Math.max(1, Math.floor(r.durationDays / r.cities.length)) })),
+    cities: r.cities.map((name) => ({ name, lat: 0, lng: 0, nights: Math.max(1, Math.floor(r.durationDays / (r.cities.length || 1))) })),
     meta: { bestMonths: [], worstMonths: [], thingsToAvoid: [], comboCountries: [], highlights: [] },
     plan: llmPlan,
   };

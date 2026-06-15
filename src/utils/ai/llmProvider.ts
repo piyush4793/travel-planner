@@ -140,6 +140,11 @@ class GeminiProvider implements LLMProvider {
     this.apiKey = apiKey;
   }
 
+  /**
+   * NOTE: Gemini API requires the key in the URL query string (Google's design).
+   * This means the key appears in browser history and DevTools Network tab.
+   * Users should set billing limits on their Google AI Studio account.
+   */
   async chat(messages: ChatMessage[], config?: LLMConfig): Promise<LLMChatResult> {
     const model = config?.model ?? DEFAULT_GEMINI_MODEL;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${this.apiKey}`;

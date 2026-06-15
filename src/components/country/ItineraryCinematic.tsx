@@ -1377,7 +1377,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
             </div>
             <div className="flex items-center gap-1.5 shrink-0">
               <button
-                onClick={() => { pausedRef.current = !pausedRef.current; }}
+                onClick={() => setPaused((p) => !p)}
                 className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm"
                 title="Pause / Resume"
               >⏯</button>

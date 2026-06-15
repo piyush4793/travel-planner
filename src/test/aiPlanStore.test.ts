@@ -87,7 +87,7 @@ describe("useAiPlanStore — P1", () => {
     expect(result.current.canAddNew("Norway")).toBe(true);
   });
 
-  it("replacePlan swaps the matching plan", () => {
+  it("replacePlan moves the matching plan when destination name changes", () => {
     const { result } = renderHook(() => useAiPlanStore());
 
     let firstId: string;
@@ -96,16 +96,17 @@ describe("useAiPlanStore — P1", () => {
       firstId = saved.id;
     });
 
-    const luxuryPlan = makePlan();
+    const luxuryPlan = makePlan("Japan");
     luxuryPlan.budgetLevel = "luxury";
     luxuryPlan.durationDays = 14;
 
     act(() => { result.current.replacePlan(firstId!, luxuryPlan); });
 
-    const plans = result.current.getPlans("Norway");
+    expect(result.current.getPlans("Norway")).toEqual([]);
+    const plans = result.current.getPlans("Japan");
     expect(plans).toHaveLength(1);
     expect(plans[0].result.budgetLevel).toBe("luxury");
-    expect(plans[0].id).not.toBe(firstId!);
+    expect(plans[0].id).toBe(firstId!);
   });
 
   it("deletePlan removes the plan and cleans up empty buckets", () => {
