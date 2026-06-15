@@ -204,13 +204,8 @@ export default function ItineraryModal({ plan, country, rule, onClose }: Props) 
             </div>
           ))}
 
-          {/* Practical notes — inside scroll so they don't eat fixed space */}
-          {plan.note && (
-            <div className="mx-4 md:mx-6 my-4 px-4 py-3 bg-slate-50 rounded-xl border border-slate-100">
-              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Practical Notes</p>
-              <p className="text-xs text-slate-500 leading-relaxed">{plan.note}</p>
-            </div>
-          )}
+          {/* Practical notes — parsed into structured items */}
+          {plan.note && <PracticalNotes note={plan.note} />}
           <div className="h-4" />
         </div>
       </div>
@@ -234,6 +229,56 @@ function searchUrl(query: string, city: string): string {
 
 function mapsUrl(query: string, city: string): string {
   return `https://www.google.com/maps/search/${encodeURIComponent(`${query}, ${city}`)}`;
+}
+
+// ─── Practical Notes ──────────────────────────────────────────────────────────
+
+type NoteItem = { icon: string; label: string; value: string };
+
+function parseNoteItems(note: string): NoteItem[] {
+  const parts = note.split(" | ").map((s) => s.trim()).filter(Boolean);
+  if (parts.length <= 1) return [{ icon: "📝", label: "", value: note }];
+  return parts.map((part) => {
+    if (part.includes("→") && part.includes(":")) return { icon: "🚆", label: "Route", value: part };
+    if (/^SIM:/i.test(part)) return { icon: "📱", label: "SIM", value: part.replace(/^SIM:\s*/i, "") };
+    if (/^Extras?:/i.test(part)) return { icon: "💡", label: "Tips", value: part.replace(/^Extras?:\s*/i, "") };
+    if (part.includes("·")) return { icon: "📲", label: "Apps", value: part };
+    if (/best\s+(month|for|time)/i.test(part)) return { icon: "📅", label: "Timing", value: part };
+    return { icon: "📝", label: "Note", value: part };
+  });
+}
+
+function PracticalNotes({ note }: { note: string }) {
+  const items = parseNoteItems(note);
+  const isSingle = items.length === 1 && !items[0].label;
+
+  if (isSingle) {
+    return (
+      <div className="mx-4 md:mx-6 my-4 px-4 py-3 bg-slate-50 rounded-xl border border-slate-100">
+        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Practical Notes</p>
+        <p className="text-xs text-slate-500 leading-relaxed">{note}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-4 md:mx-6 my-4 px-4 py-3 bg-slate-50 rounded-xl border border-slate-100">
+      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2.5">Practical Notes</p>
+      <div className="space-y-2">
+        {items.map((item, i) => (
+          <div key={i} className="flex items-start gap-2.5">
+            <span className="text-sm shrink-0 mt-px">{item.icon}</span>
+            <div className="min-w-0">
+              {item.label && (
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wide mr-1.5">{item.label}</span>
+              )}
+              <span className="text-xs text-slate-600 leading-relaxed">{item.value}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: CountryRule | null }) {
