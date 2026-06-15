@@ -3,6 +3,7 @@
   "configurations": [
     {
       "name": "🚀 Dev Server",
+      "detail": "Start Vite dev server at localhost:5173 with HMR",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -13,6 +14,7 @@
     },
     {
       "name": "🔍 Dev Server (Debug)",
+      "detail": "Launch Chrome with DevTools attached — auto-starts dev server, set breakpoints in VS Code",
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:5173",
@@ -24,6 +26,7 @@
     },
     {
       "name": "📦 Preview Build",
+      "detail": "Build for production then serve dist/ locally — verify production bundle before deploy",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -34,6 +37,7 @@
     },
     {
       "name": "🧪 Run Tests",
+      "detail": "Run all Vitest tests once and exit",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -43,6 +47,7 @@
     },
     {
       "name": "🧪 Tests (Watch)",
+      "detail": "Run Vitest in watch mode — re-runs on file changes",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -52,6 +57,7 @@
     },
     {
       "name": "📊 Test Coverage",
+      "detail": "Run tests with V8 coverage — open coverage/index.html for the report",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -61,6 +67,7 @@
     },
     {
       "name": "🔬 Debug Current Test File",
+      "detail": "Run only the currently open test file with verbose output — great for debugging a single spec",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npx",

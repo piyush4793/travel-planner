@@ -68,15 +68,18 @@ src/
 │   ├── useCountryRule.ts          # React wrapper around consolidated-country loader
 │   ├── useHashView.ts             # Hash-based routing
 │   ├── useBreakpoint.ts           # Reactive breakpoint (mobile/tablet/desktop)
+│   ├── useInstallPrompt.ts        # PWA beforeinstallprompt capture + iOS detection
 │   └── usePanelDrag.ts            # Resizable panel drag behavior
 │
 ├── utils/                         # Web/browser utilities
 │   ├── ai/
 │   │   └── llmProvider.ts         # LLM provider abstraction (OpenAI/Claude/Gemini)
-│   ├── pdfExport.ts               # Print-to-PDF via hidden iframe
+│   ├── pdfExport.ts               # Print-to-PDF via hidden iframe (mobile: new tab)
 │   ├── importParser.ts            # Multi-strategy text/link plan parser
 │   ├── wikiImages.ts              # Wikimedia Commons image fetch + cache
-│   └── backup.ts                  # Full backup/restore, CSV/XLSX export/import
+│   ├── countryInfo.ts             # Wikipedia/Wikidata country facts fetch + cache
+│   ├── planningLinks.ts           # Curated external planning links per country
+│   └── backup.ts                  # Full backup/restore, CSV/XLSX export, Save As dialog
 │
 ├── components/
 │   ├── views/
@@ -102,6 +105,7 @@ src/
 │       ├── ExperienceDropdown.tsx # Experience tag multi-select
 │       ├── HomeCountrySelector.tsx# Home country dropdown
 │       ├── DevFlagPanel.tsx       # Dev-only feature flag panel
+│       ├── FreTour.tsx            # First-run guided tour (hero/spotlight/install cards)
 │       └── Tooltip.tsx            # Portal-based tooltip
 
 data/
@@ -110,6 +114,13 @@ data/
 │   └── {country}.json             # 198 lazy-loaded per-country rule files
 ├── worldCatalog.json              # 197-country sovereign catalog for Discover
 └── wishlist.md                    # Product backlog / scratchpad
+
+public/
+├── manifest.json                  # PWA manifest (name, icons, display mode)
+├── sw.js                          # Service worker (cache-first statics, network-first HTML)
+├── icon-192.svg                   # App icon 192×192
+├── icon-512.svg                   # App icon 512×512
+└── icon-maskable.svg              # Maskable icon for Android adaptive icons
 ```
 
 ---
@@ -128,6 +139,7 @@ data/
 | `usePersistedSet` | Reusable `Set<string>` + localStorage (DRY) |
 | `useHashView` | URL hash routing |
 | `useBreakpoint` | Responsive breakpoint state |
+| `useInstallPrompt` | PWA install prompt capture + iOS detection |
 | `usePanelDrag` | Resizable country panel behavior |
 
 No Redux, no context providers. `App.tsx` calls hooks and passes results as props.

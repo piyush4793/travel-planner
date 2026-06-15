@@ -152,9 +152,37 @@ All travel data lives in localStorage. The Settings modal (⚙️) includes a fu
 | **Restore Backup** | JSON | Replaces all localStorage data from a previously exported JSON backup |
 | **Import Countries** | CSV | Merges imported countries into your customs (existing entries updated, new ones added) |
 
+- **Save As dialog** — manual exports open native "Save As" file picker (Chrome/Edge) so you can choose where to save; auto-backups silently download to browser's default folder
 - **XLSX export** uses manual Office Open XML construction — no npm dependencies
 - **API keys are excluded** from backup files for security
-- **Backup reminders** — configurable (daily / weekly / never). Overdue backups show a dismissible amber banner at the top
+- **Backup reminders** — configurable (daily / weekly / monthly / never). Default: monthly. Overdue backups show a dismissible amber banner at the top
+- **Smart first-launch** — won't nag for backup until user has actual custom data (not just seed data)
+
+---
+
+### PWA & Offline Mode
+Roamwise is a Progressive Web App — installable on desktop (Chrome/Edge) and mobile (Add to Home Screen):
+- **Service worker** — cache-first for static assets (JS/CSS/SVG), network-first for HTML with cache fallback
+- **Works offline** — all 198 country itineraries, trip data, and the full UI work without internet
+- **Installable** — shows native install prompt on supported browsers; manual instructions for iOS Safari
+- **Auto-updates** — service worker updates silently on new deploys
+
+---
+
+### First Run Experience (FRE)
+Guided 8-step onboarding tour for new users:
+- **Hero cards** — full-screen gradient cards with floating emoji decorations for immersive steps (Welcome, Cinematic, Finale)
+- **Spotlight cards** — positioned tooltips with blue glow highlight on target elements (Trips, Discover, Calendar, Settings)
+- **Install card** — PWA install prompt with platform-specific instructions (Chrome/Edge programmatic, iOS manual, fallback text)
+- **Mobile-responsive** — spotlight steps render as centered hero cards on mobile (<768px) since nav items have no room for tooltips
+- **Dismiss anytime** — ✕ button on every card + Escape key closes tour; progress bar shows step count
+- **One-time** — stored in localStorage (`tp_fre_done`), never shown again after completion or dismissal
+
+---
+
+### Country Info & Planning Resources
+- **Learn about country** — collapsible section in country detail panel with Wikipedia summary, thumbnail image, capital, currency, and language (fetched on demand from Wikipedia/Wikidata APIs, cached per session)
+- **Planning resources** — 3 curated external links per country: Wikivoyage travel guide, Lonely Planet destination page, and Passport Index visa/entry requirements
 
 ---
 
