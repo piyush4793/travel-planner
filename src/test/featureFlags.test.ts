@@ -14,9 +14,9 @@ describe("featureFlags — P0", () => {
     expect(flags).toHaveProperty("paidFeatures");
   });
 
-  it("isEnabled returns false for paid flags by default (paidFeatures gate)", () => {
-    expect(isEnabled("llmPlanning")).toBe(false);
-    expect(isEnabled("pdfExport")).toBe(false);
+  it("isEnabled returns true for paid flags by default (paidFeatures enabled)", () => {
+    expect(isEnabled("llmPlanning")).toBe(true);
+    expect(isEnabled("pdfExport")).toBe(true);
   });
 
   it("setFeatureFlag persists to localStorage", () => {
@@ -34,12 +34,12 @@ describe("featureFlags — P0", () => {
   });
 
   describe("paid tier gating", () => {
-    it("paidFeatures defaults to false", () => {
-      expect(isPaidTier()).toBe(false);
+    it("paidFeatures defaults to true", () => {
+      expect(isPaidTier()).toBe(true);
     });
 
-    it("llmPlanning is hidden by default (paidFeatures=false)", () => {
-      expect(isEnabled("llmPlanning")).toBe(false);
+    it("llmPlanning is enabled by default (paidFeatures=true)", () => {
+      expect(isEnabled("llmPlanning")).toBe(true);
     });
 
     it("llmPlanning is enabled when paidFeatures=true", () => {

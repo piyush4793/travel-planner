@@ -25,7 +25,7 @@ const DEFAULTS: FeatureFlags = {
   searchableHomeCountry: false,
   llmPlanning: true,
   pdfExport: true,
-  paidFeatures: false,
+  paidFeatures: true,
 };
 
 let _cache: FeatureFlags | null = null;
