@@ -1,5 +1,6 @@
 {
   "ignoreBinaries": ["husky"],
   "ignore": ["src/core/index.ts", "public/sw.js"],
+  "ignoreDependencies": ["@vitest/coverage-v8"],
   "ignoreExportsUsedInFile": true
 }
