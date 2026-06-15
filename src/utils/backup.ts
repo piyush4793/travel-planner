@@ -59,14 +59,14 @@ function buildBackupBlob(): Blob {
 
 /** Manual export — opens "Save As" dialog when supported */
 export async function exportFullBackup(): Promise<void> {
-  const filename = `travel-planner-backup-${dateStamp()}.json`;
+  const filename = `roamwise-backup-${dateStamp()}.json`;
   await saveBlob(buildBackupBlob(), filename, "application/json");
   saveLS(LS_KEYS.LAST_BACKUP, new Date().toISOString());
 }
 
 /** Silent auto-backup — no dialog, downloads to default folder */
 export function autoExportBackup(): void {
-  downloadBlob(buildBackupBlob(), `travel-planner-backup-${dateStamp()}.json`);
+  downloadBlob(buildBackupBlob(), `roamwise-backup-${dateStamp()}.json`);
   saveLS(LS_KEYS.LAST_BACKUP, new Date().toISOString());
 }
 
@@ -118,7 +118,7 @@ export async function exportCountriesCSV(countries: Country[]): Promise<void> {
 
   const csv = [header, ...rows].join("\n");
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
-  await saveBlob(blob, `travel-planner-countries-${dateStamp()}.csv`, "text/csv");
+  await saveBlob(blob, `roamwise-countries-${dateStamp()}.csv`, "text/csv");
 }
 
 function csvCell(country: Country, col: string): string {
@@ -260,7 +260,7 @@ export async function exportCountriesXLSX(countries: Country[]): Promise<void> {
 
   const blob = buildXLSX(sheetData);
   const mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-  await saveBlob(blob, `travel-planner-countries-${dateStamp()}.xlsx`, mime);
+  await saveBlob(blob, `roamwise-countries-${dateStamp()}.xlsx`, mime);
 }
 
 function buildXLSX(rows: string[][]): Blob {
