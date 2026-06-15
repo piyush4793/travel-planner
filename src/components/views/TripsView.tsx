@@ -158,12 +158,9 @@ export default function TripsView({
     return result;
   }, [trips, viewMode, visitedMode, visitedFilter, visitedNames, regionFilter, search]);
 
-  const comboTrips = trips.filter((t) => t.addOns.length > 0);
-  const soloTrips = trips.filter((t) => t.addOns.length === 0);
   const uniqueCountries = new Set(trips.flatMap((t) => t.allCountries.map((c) => c.name))).size;
   const totalVisited = new Set(trips.flatMap((t) => t.allCountries.filter((c) => visitedNames.has(c.name)).map((c) => c.name))).size;
   const tripsCompleted = trips.filter((t) => t.allVisited).length;
-  const completionPct = trips.length > 0 ? Math.round((tripsCompleted / trips.length) * 100) : 0;
 
   // Group filtered trips into sections
   const favoriteTrips = filtered.filter((t) => t.isFavorited && !t.allVisited);
@@ -173,8 +170,33 @@ export default function TripsView({
   // Next trip highlight — top favorited unvisited
   const nextTrip = trips.find((t) => t.isFavorited && !t.allVisited) ?? trips.find((t) => !t.allVisited);
 
-  // Unique continents visited
-  const continentsVisited = new Set(trips.filter((t) => t.visitedCount > 0).map((t) => t.region)).size;
+  // Best upcoming month — month with most unvisited destinations
+  const bestMonth = useMemo(() => {
+    const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const now = new Date().getMonth(); // 0-indexed
+    const freq = new Map<string, number>();
+    for (const t of trips) {
+      if (t.allVisited) continue;
+      for (const c of t.allCountries) {
+        if (visitedNames.has(c.name)) continue;
+        for (const m of c.bestMonths ?? []) freq.set(m, (freq.get(m) ?? 0) + 1);
+      }
+    }
+    if (freq.size === 0) return null;
+    // Prefer months that are upcoming (within next 6 months)
+    const sorted = [...freq.entries()].sort((a, b) => {
+      const aDist = (MONTHS.indexOf(a[0]) - now + 12) % 12;
+      const bDist = (MONTHS.indexOf(b[0]) - now + 12) % 12;
+      // Weight: upcoming months get a boost
+      const aScore = a[1] + (aDist <= 3 ? 5 : aDist <= 6 ? 2 : 0);
+      const bScore = b[1] + (bDist <= 3 ? 5 : bDist <= 6 ? 2 : 0);
+      return bScore - aScore;
+    });
+    return { month: sorted[0][0], count: sorted[0][1] };
+  }, [trips, visitedNames]);
+
+  // Unique regions across all trips
+  const uniqueRegions = new Set(trips.map((t) => t.region)).size;
 
   const handleSave = (originalMain: string | null, group: TripGroupDef) => {
     onSaveTrip(originalMain, group);
@@ -188,37 +210,61 @@ export default function TripsView({
   };
 
   return (
-    <div className="h-full flex flex-col bg-slate-50 overflow-hidden">
-      {/* Dashboard stats — hidden on mobile */}
-      <div className="hidden md:block px-5 py-4 bg-white border-b shrink-0">
-        <div className="max-w-5xl mx-auto flex items-center gap-6">
-          <div className="relative w-16 h-16 shrink-0">
-            <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
-              <circle cx="18" cy="18" r="15.5" fill="none" stroke="#e2e8f0" strokeWidth="3" />
-              <circle cx="18" cy="18" r="15.5" fill="none" stroke="#3b82f6" strokeWidth="3"
-                strokeDasharray={`${completionPct} ${100 - completionPct}`}
-                strokeLinecap="round" className="transition-all duration-500" />
-            </svg>
-            <span className="absolute inset-0 flex items-center justify-center text-sm font-black text-slate-700">
-              {completionPct}%
-            </span>
-          </div>
-          <div className="flex items-center gap-5 flex-1 flex-wrap">
-            <DashStat value={uniqueCountries} label="destinations" icon="🌍" />
-            <DashStat value={totalVisited} label="visited" icon="✅" />
-            <DashStat value={continentsVisited} label="regions" icon="🗺" />
-            <DashStat value={comboTrips.length} label="combo" icon="🔗" />
-            <DashStat value={soloTrips.length} label="solo" icon="📍" />
-          </div>
-          <div className="flex items-center gap-2 shrink-0">
-            {nextTrip && (
-              <div className="flex shrink-0 items-center gap-2.5 px-4 py-2.5 bg-blue-50 rounded-xl border border-blue-100">
-                <span className="text-lg">🎯</span>
-                <div>
-                  <p className="text-[9px] font-bold text-blue-500 uppercase tracking-wider">Next trip</p>
-                  <p className="text-xs font-bold text-slate-700">{nextTrip.main.name}</p>
-                </div>
+    <div className="h-full flex flex-col bg-gradient-to-b from-slate-50 to-slate-100/80 overflow-hidden">
+      {/* Dashboard hero strip */}
+      <div className="hidden md:block px-5 py-3 bg-gradient-to-r from-blue-50/80 via-white to-indigo-50/60 border-b shrink-0">
+        <div className="max-w-5xl mx-auto flex items-center gap-5">
+          {/* Progress — visited/total with inline bar */}
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="flex items-baseline gap-1">
+              <span className="text-2xl font-black text-slate-800">{totalVisited}</span>
+              <span className="text-sm text-slate-400 font-medium">/ {uniqueCountries}</span>
+            </div>
+            <div className="flex flex-col gap-0.5">
+              <span className="text-[9px] font-semibold text-slate-400 uppercase tracking-wider">visited</span>
+              <div className="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                <div
+                  className="h-full rounded-full bg-emerald-400 transition-all duration-500"
+                  style={{ width: `${uniqueCountries > 0 ? (totalVisited / uniqueCountries) * 100 : 0}%` }}
+                />
               </div>
+            </div>
+          </div>
+
+          <div className="h-8 w-px bg-slate-200" />
+
+          {/* Compact stats */}
+          <div className="flex items-center gap-4 text-xs">
+            <span className="text-slate-500"><span className="font-bold text-slate-700">{trips.length}</span> trips</span>
+            <span className="text-slate-500"><span className="font-bold text-slate-700">{uniqueRegions}</span> regions</span>
+            <span className="text-slate-500"><span className="font-bold text-slate-700">{tripsCompleted}</span> completed</span>
+          </div>
+
+          {/* Best month to travel */}
+          {bestMonth && (
+            <>
+              <div className="h-8 w-px bg-slate-200" />
+              <div className="flex items-center gap-1.5 text-xs">
+                <span className="text-amber-500">☀️</span>
+                <span className="text-slate-500">Best month: <span className="font-bold text-slate-700">{bestMonth.month}</span></span>
+                <span className="text-[9px] text-slate-400">({bestMonth.count} destinations)</span>
+              </div>
+            </>
+          )}
+
+          {/* Spacer + actions */}
+          <div className="flex items-center gap-2 ml-auto shrink-0">
+            {nextTrip && (
+              <button
+                onClick={() => onSelect(nextTrip.main)}
+                className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 rounded-lg shadow-sm transition-all hover:shadow-md"
+              >
+                <span className="text-sm">🎯</span>
+                <div className="text-left">
+                  <p className="text-[8px] font-bold text-blue-100 uppercase tracking-wider leading-tight">Next trip</p>
+                  <p className="text-xs font-bold text-white leading-tight">{nextTrip.main.name}</p>
+                </div>
+              </button>
             )}
             {isEnabled("tripGroups") && (
               <button
@@ -290,29 +336,48 @@ export default function TripsView({
               <div className="fixed inset-0 z-40 bg-black/20" onClick={() => setStatsOpen(false)} />
               <div className="fixed left-3 right-3 bottom-3 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-4">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-3">
-                    <div className="relative w-12 h-12 shrink-0">
-                      <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
-                        <circle cx="18" cy="18" r="15.5" fill="none" stroke="#e2e8f0" strokeWidth="3" />
-                        <circle cx="18" cy="18" r="15.5" fill="none" stroke="#3b82f6" strokeWidth="3"
-                          strokeDasharray={`${completionPct} ${100 - completionPct}`}
-                          strokeLinecap="round" className="transition-all duration-500" />
-                      </svg>
-                      <span className="absolute inset-0 flex items-center justify-center text-[11px] font-black text-slate-700">
-                        {completionPct}%
-                      </span>
-                    </div>
-                    <p className="text-sm font-semibold text-slate-700">Travel Progress</p>
-                  </div>
+                  <p className="text-sm font-semibold text-slate-700">Travel Progress</p>
                   <button onClick={() => setStatsOpen(false)} className="text-gray-400 hover:text-gray-600 p-1">✕</button>
                 </div>
-                <div className="grid grid-cols-3 gap-3">
-                  <DashStat value={uniqueCountries} label="destinations" icon="🌍" />
-                  <DashStat value={totalVisited} label="visited" icon="✅" />
-                  <DashStat value={continentsVisited} label="regions" icon="🗺" />
-                  <DashStat value={comboTrips.length} label="combo" icon="🔗" />
-                  <DashStat value={soloTrips.length} label="solo" icon="📍" />
+
+                {/* Visited progress */}
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-2xl font-black text-slate-800">{totalVisited}</span>
+                    <span className="text-sm text-slate-400">/ {uniqueCountries}</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-emerald-400 transition-all duration-500"
+                        style={{ width: `${uniqueCountries > 0 ? (totalVisited / uniqueCountries) * 100 : 0}%` }}
+                      />
+                    </div>
+                    <p className="text-[9px] text-slate-400 mt-0.5">destinations visited</p>
+                  </div>
                 </div>
+
+                {/* Stat chips */}
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="text-[11px] text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full">
+                    <span className="font-bold text-slate-700">{trips.length}</span> trips
+                  </span>
+                  <span className="text-[11px] text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full">
+                    <span className="font-bold text-slate-700">{uniqueRegions}</span> regions
+                  </span>
+                  <span className="text-[11px] text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full">
+                    <span className="font-bold text-slate-700">{tripsCompleted}</span> completed
+                  </span>
+                </div>
+
+                {/* Best month */}
+                {bestMonth && (
+                  <div className="flex items-center gap-1.5 text-xs text-slate-500 bg-amber-50 px-3 py-2 rounded-lg">
+                    <span>☀️</span>
+                    <span>Best month: <span className="font-bold text-slate-700">{bestMonth.month}</span></span>
+                    <span className="text-[9px] text-slate-400">({bestMonth.count} destinations)</span>
+                  </div>
+                )}
               </div>
             </>
           )}
@@ -681,16 +746,6 @@ function TripEditor({
 
 /* ── Shared sub-components ──────────────────────────────────────────── */
 
-function DashStat({ value, label, icon }: { value: number; label: string; icon: string }) {
-  return (
-    <div className="flex items-center gap-1.5">
-      <span className="text-sm">{icon}</span>
-      <span className="text-lg font-black text-slate-700">{value}</span>
-      <span className="text-[11px] text-slate-400 font-medium">{label}</span>
-    </div>
-  );
-}
-
 function TripSection({ icon, label, count, color, children, defaultOpen = true }: {
   icon: string; label: string; count: number; color: string; children: React.ReactNode; defaultOpen?: boolean;
 }) {
@@ -705,6 +760,7 @@ function TripSection({ icon, label, count, color, children, defaultOpen = true }
         <span className="text-sm">{icon}</span>
         <span className={`text-xs font-bold uppercase tracking-wider ${color}`}>{label}</span>
         <span className="text-[10px] text-slate-400 font-semibold bg-slate-100 px-2 py-0.5 rounded-full">{count}</span>
+        <span className="flex-1 h-px bg-slate-200 ml-2" />
       </button>
       {open && children}
     </div>
@@ -736,6 +792,24 @@ function PaginatedTripSection({ icon, label, count, color, trips, renderCards, p
   );
 }
 
+const REGION_ACCENT: Record<string, string> = {
+  Asia: "border-l-rose-400",
+  Europe: "border-l-blue-400",
+  "Middle East": "border-l-amber-400",
+  Africa: "border-l-orange-400",
+  Americas: "border-l-emerald-400",
+  Oceania: "border-l-cyan-400",
+};
+
+const REGION_BADGE: Record<string, string> = {
+  Asia: "bg-rose-50 text-rose-600",
+  Europe: "bg-blue-50 text-blue-600",
+  "Middle East": "bg-amber-50 text-amber-600",
+  Africa: "bg-orange-50 text-orange-600",
+  Americas: "bg-emerald-50 text-emerald-600",
+  Oceania: "bg-cyan-50 text-cyan-600",
+};
+
 function TripRow({
   trip,
   visitedNames,
@@ -761,13 +835,15 @@ function TripRow({
     c.landmark ? `${c.landmark} ${c.name}` : `${c.name} travel landmark`
   );
 
+  const accent = REGION_ACCENT[trip.region] ?? "border-l-slate-300";
+
   return (
     <div
       onClick={() => onSelect(trip.main)}
-      className={`rounded-xl border overflow-hidden transition-all group cursor-pointer ${
+      className={`rounded-xl border border-l-[3px] overflow-hidden transition-all group cursor-pointer ${accent} ${
         trip.allVisited
           ? "bg-emerald-50/60 border-emerald-200"
-          : "bg-white border-gray-200 hover:border-blue-200 hover:shadow-sm"
+          : "bg-white border-gray-200 hover:border-blue-200 hover:shadow-md hover:-translate-y-0.5"
       }`}
     >
       {/* Image collage strip */}
@@ -784,7 +860,7 @@ function TripRow({
             >
               {trip.allVisited ? "✅ " : ""}{trip.main.name}
             </button>
-            <span className="text-[9px] text-gray-400 bg-gray-50 px-1.5 py-0.5 rounded shrink-0 ml-1">
+            <span className={`text-[9px] font-medium px-1.5 py-0.5 rounded shrink-0 ml-1 ${REGION_BADGE[trip.region] ?? "bg-gray-50 text-gray-400"}`}>
               {trip.region}
             </span>
           </div>
@@ -840,7 +916,7 @@ function TripRow({
               </span>
             </>
           )}
-          <span className="shrink-0 text-[9px] text-gray-400 bg-gray-50 px-1.5 py-0.5 rounded">
+          <span className={`shrink-0 text-[9px] font-medium px-1.5 py-0.5 rounded ${REGION_BADGE[trip.region] ?? "bg-gray-50 text-gray-400"}`}>
             {trip.region}
           </span>
         </div>
