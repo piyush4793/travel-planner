@@ -1,6 +1,6 @@
 # Design & Architecture
 
-Technical documentation for Travel Planner — code structure, design patterns, data model, and implementation details.
+Technical documentation for Roamwise — code structure, design patterns, data model, and implementation details.
 
 For features, setup, and user-facing docs, see [README.md](./README.md).
 

@@ -151,7 +151,7 @@ export default function App() {
       {/* Header */}
       <header className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 text-white shrink-0 shadow-md">
         <div className="flex items-center gap-2 shrink-0">
-          <span className="text-base md:text-lg font-black tracking-tight">Travel Planner</span>
+          <span className="text-base md:text-lg font-black tracking-tight">Roamwise</span>
           {hasActiveFilters && (
             <span className="text-[10px] md:text-xs bg-white/20 px-2 py-0.5 rounded-full font-medium hidden sm:inline">
               {filtered.length} shown

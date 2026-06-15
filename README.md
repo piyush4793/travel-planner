@@ -1,4 +1,4 @@
-# Travel Planner
+# Roamwise
 
 A personal, map-based travel planner with a catalog of 197 world countries, 44 curated seed destinations with rich data, and offline day-by-day itineraries for all 198 rule-backed destinations. Filter by season, budget, travel style, and experience type — then explore itineraries with real costs, hotel picks, and transport connections. Built entirely free with no paid APIs or backend.
 
