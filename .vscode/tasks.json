@@ -66,6 +66,14 @@
       "dependsOrder": "sequence",
       "group": "build",
       "problemMatcher": []
+    },
+    {
+      "label": "check:coverage",
+      "type": "shell",
+      "command": "npm run check:coverage",
+      "group": "test",
+      "presentation": { "reveal": "always" },
+      "problemMatcher": []
     }
   ]
 }

@@ -185,7 +185,24 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 
 ## Tech Stack
 
-Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 217 tests across 23 files, including hook state, backup import flows, trip-group merging, and route-building utilities.
+Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 243 tests across 29 files, including hook state, backup import flows, trip-group merging, route-building utilities, and wiki/Wikipedia API mocks.
+
+### Testing & Coverage
+
+| Command | Description |
+|---|---|
+| `npm test` | Run all 243 tests |
+| `npm run test:watch` | Watch mode |
+| `npm run test:coverage` | V8 coverage → terminal + `coverage/index.html` (HTML report) |
+| `npm run test:ui` | Vitest browser UI |
+| `npm run check:coverage` | Flag changed files below 50% coverage threshold |
+
+Coverage thresholds are enforced in `vite.config.ts`:
+- `src/core/utils/**` — 80% statements, 70% branches, 80% functions
+- `src/core/data/**` — 60% across the board
+- `src/hooks/**` — 50% across the board
+
+The `scripts/check-new-coverage.sh` script compares changed files against the coverage report and flags any new/modified source file below 50% — run it before merging to catch untested code.
 
 For detailed architecture, code structure, design patterns, and data model, see [DESIGN.md](./DESIGN.md).
 
@@ -195,10 +212,13 @@ For detailed architecture, code structure, design patterns, and data model, see 
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm test         # run all tests (vitest)
-npm run build    # static output → dist/
-npm run preview  # preview the build
+npm run dev            # http://localhost:5173
+npm test               # run all tests (vitest)
+npm run test:coverage  # coverage report → coverage/index.html
+npm run check:coverage # flag untested changed files
+npm run build          # static output → dist/
+npm run preview        # preview the build
+npm run validate       # full check: tsc + tests + knip + build
 ```
 
 Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server needed).

@@ -25,6 +25,10 @@ const COUNTRY_NO_CITIES: Country = {
   experiences: ["Adventure"],
 };
 
+function generateNonCustomPlan(style: "touch-and-go" | "explorer" | "immersive") {
+  return generateTripPlan(COUNTRY_WITH_CITIES, style as never, [], 7);
+}
+
 describe("tripPlans — P0", () => {
   describe("generateTripPlan", () => {
     it("generates a short trip plan", () => {
@@ -85,6 +89,56 @@ describe("tripPlans — P0", () => {
     it("includes a note in the plan", () => {
       const plan = generateTripPlan(COUNTRY_WITH_CITIES, "custom", [], 7);
       expect(plan.note).toBeTruthy();
+    });
+  });
+
+  describe("touch-and-go style", () => {
+    it("returns 3 day groups with a cost range and stopover note", () => {
+      const plan = generateNonCustomPlan("touch-and-go");
+
+      expect(plan.days).toHaveLength(3);
+      expect(plan.costPerPerson).toContain("₹");
+      expect(plan.costPerPerson).toContain("–");
+      expect(plan.note.toLowerCase()).toContain("stopover");
+    });
+  });
+
+  describe("explorer style", () => {
+    it("returns 4 day groups with a 7-12 day duration", () => {
+      const plan = generateNonCustomPlan("explorer");
+
+      expect(plan.days).toHaveLength(4);
+      expect(plan.duration).toBe("7 – 12 days");
+    });
+  });
+
+  describe("month-long style", () => {
+    it("covers the immersive long-stay branch with 4 day groups and ~30 day duration", () => {
+      const plan = generateNonCustomPlan("immersive");
+
+      expect(plan.days).toHaveLength(4);
+      expect(plan.duration).toMatch(/30/);
+    });
+  });
+
+  describe("custom style with selected cities", () => {
+    it("returns one day-group per selected city", () => {
+      const plan = generateTripPlan(COUNTRY_WITH_CITIES, "custom", ["CityA", "CityB"], 8);
+
+      expect(plan.days).toHaveLength(2);
+      expect(plan.days.map((day) => day.label)).toEqual([
+        expect.stringContaining("CityA"),
+        expect.stringContaining("CityB"),
+      ]);
+    });
+
+    it("uses city-based activities that mention each selected city", () => {
+      const plan = generateTripPlan(COUNTRY_WITH_CITIES, "custom", ["CityA", "CityB", "CityC"], 12);
+      const allActivities = plan.days.flatMap((day) => day.activities).join(" ");
+
+      expect(allActivities).toContain("CityA");
+      expect(allActivities).toContain("CityB");
+      expect(allActivities).toContain("CityC");
     });
   });
 
