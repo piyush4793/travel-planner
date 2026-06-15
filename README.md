@@ -214,7 +214,6 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 | 🟡 Medium | ⭐⭐ | Calendar sync | Export | Export itinerary as `.ics` file |
 | 🟡 Medium | ⭐⭐ | Enriched AI response schema | AI | lat/lng per city, transport type per leg in LLM output |
 | 🔴 Long | ⭐⭐⭐⭐ | Visited stats page | Analytics | Continents, total days, spend, heatmap timeline |
-| 🔴 Long | ⭐⭐⭐ | "Learn about country" section | Content | Historical facts, culture, safety tips, visa implications |
 | 🔴 Long | ⭐⭐⭐ | Community itineraries | Social | Import/export rule data for sharing |
 | 🔴 Long | ⭐⭐ | Seasonal flight cost hints | Data | Rough fare ranges from public sources |
 | 🔴 Long | ⭐⭐ | Voice input for chat | AI | Speak trip requests instead of typing |

@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../core/types";
@@ -17,6 +17,8 @@ import Tooltip from "../shared/Tooltip";
 import ItineraryCinematic from "./ItineraryCinematic";
 import ItineraryModal from "./ItineraryModal";
 import PlanCompareModal from "./PlanCompareModal";
+import { fetchCountryInfo, type CountryInfo } from "../../utils/countryInfo";
+import { getPlanningLinks } from "../../utils/planningLinks";
 
 type Props = {
   country: Country | null;
@@ -64,6 +66,9 @@ export default function CountryPanel({
   const [cinematicPlan, setCinematicPlan] = useState<TripPlan | null>(null);
   const [modalPlan, setModalPlan] = useState<TripPlan | null>(null);
   const [compareOpen, setCompareOpen] = useState(false);
+  const [countryInfo, setCountryInfo] = useState<CountryInfo | null>(null);
+  const [infoLoading, setInfoLoading] = useState(false);
+  const [infoFetched, setInfoFetched] = useState(false);
 
   const maxDays = getMaxRuleDays(rule) ?? 30;
   const recDays = getRecRuleDays(rule) ?? 7;
@@ -84,7 +89,20 @@ export default function CountryPanel({
     setCinematicPlan(null);
     setModalPlan(null);
     setCompareOpen(false);
+    setCountryInfo(null);
+    setInfoFetched(false);
+    setInfoLoading(false);
   }, [country?.name, recDays]);
+
+  const loadCountryInfo = useCallback(() => {
+    if (infoFetched || infoLoading || !country) return;
+    setInfoLoading(true);
+    fetchCountryInfo(country.name).then((info) => {
+      setCountryInfo(info);
+      setInfoFetched(true);
+      setInfoLoading(false);
+    });
+  }, [infoFetched, infoLoading, country]);
 
   useEffect(() => {
     if (activePlanId !== "default" && !aiPlans.find((p) => p.id === activePlanId)) {
@@ -463,6 +481,15 @@ export default function CountryPanel({
               </CollapsibleSection>
             )}
 
+            <LearnAboutSection
+              countryName={country.name}
+              countryInfo={countryInfo}
+              loading={infoLoading}
+              onExpand={loadCountryInfo}
+            />
+
+            <PlanningResourcesSection countryName={country.name} />
+
             {country.links && country.links.length > 0 && (
               <CollapsibleSection label="Useful links" count={country.links.length}>
                 <div className="space-y-2">
@@ -794,4 +821,119 @@ function getBudgetBadges(
 function getRangePercent(value: number, max: number) {
   if (max <= 1) return 0;
   return ((value - 1) / (max - 1)) * 100;
+}
+
+// ─── Learn about country ──────────────────────────────────────────────────────
+
+function LearnAboutSection({ countryName, countryInfo, loading, onExpand }: {
+  countryName: string;
+  countryInfo: CountryInfo | null;
+  loading: boolean;
+  onExpand: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+
+  const handleToggle = () => {
+    const next = !open;
+    setOpen(next);
+    if (next) onExpand();
+  };
+
+  return (
+    <div className="rounded-xl bg-gray-50/50 p-3.5">
+      <button onClick={handleToggle} className="group flex w-full items-center gap-2 text-left">
+        <span className={`text-xs text-gray-400 transition-transform duration-300 ease-out ${open ? "rotate-90 text-blue-500" : ""}`}>▸</span>
+        <span className="flex-1 text-[11px] font-semibold text-gray-500">Learn about {countryName} 🌐</span>
+      </button>
+      <div className={`grid transition-all duration-300 ease-out ${open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+        <div className="overflow-hidden">
+          <div className={`border-l pl-3 transition-colors duration-300 ${open ? "border-blue-200" : "border-transparent"}`}>
+            {loading && (
+              <div className="flex items-center gap-2 py-2">
+                <span className="inline-block h-3 w-3 animate-spin rounded-full border-2 border-blue-400 border-t-transparent" />
+                <span className="text-[11px] text-blue-500">Loading info…</span>
+              </div>
+            )}
+            {!loading && countryInfo && (
+              <div className="space-y-3">
+                {countryInfo.thumbnail && (
+                  <img
+                    src={countryInfo.thumbnail}
+                    alt={countryName}
+                    className="w-full h-32 object-cover rounded-lg"
+                    loading="lazy"
+                  />
+                )}
+
+                {(countryInfo.capital || countryInfo.currency || countryInfo.language) && (
+                  <div className="flex flex-wrap gap-2">
+                    {countryInfo.capital && (
+                      <span className="rounded-full bg-emerald-50 border border-emerald-200 px-2.5 py-1 text-[10px] font-semibold text-emerald-700">
+                        🏛️ {countryInfo.capital}
+                      </span>
+                    )}
+                    {countryInfo.currency && (
+                      <span className="rounded-full bg-amber-50 border border-amber-200 px-2.5 py-1 text-[10px] font-semibold text-amber-700">
+                        💰 {countryInfo.currency}
+                      </span>
+                    )}
+                    {countryInfo.language && (
+                      <span className="rounded-full bg-violet-50 border border-violet-200 px-2.5 py-1 text-[10px] font-semibold text-violet-700">
+                        🗣️ {countryInfo.language}
+                      </span>
+                    )}
+                  </div>
+                )}
+
+                <p className="text-xs leading-relaxed text-gray-600">{countryInfo.summary}</p>
+
+                <a
+                  href={`https://en.wikipedia.org/wiki/${encodeURIComponent(countryName.replace(/ /g, "_"))}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-[10px] font-semibold text-blue-500 hover:text-blue-700 transition-colors"
+                >
+                  Read more on Wikipedia →
+                </a>
+              </div>
+            )}
+            {!loading && !countryInfo && open && (
+              <p className="text-[11px] text-gray-400 py-1">Could not load info. Check your internet connection.</p>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Planning resources ───────────────────────────────────────────────────────
+
+function PlanningResourcesSection({ countryName }: { countryName: string }) {
+  const links = useMemo(() => getPlanningLinks(countryName), [countryName]);
+
+  return (
+    <CollapsibleSection label="Planning resources 🧭" count={links.length}>
+      <div className="space-y-2">
+        {links.map((link) => (
+          <a
+            key={link.url}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-start gap-2.5 rounded-xl bg-white/80 px-3 py-2.5 shadow-sm shadow-slate-100 transition-colors hover:bg-slate-100"
+          >
+            <span className="text-base mt-0.5">{link.emoji}</span>
+            <div className="flex-1 min-w-0">
+              <span className="text-xs font-semibold text-blue-700 group-hover:text-blue-800">{link.label}</span>
+              <p className="text-[10px] text-gray-400 leading-snug mt-0.5">{link.description}</p>
+            </div>
+            <svg className="h-3 w-3 shrink-0 text-gray-400 transition-colors group-hover:text-blue-500 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    </CollapsibleSection>
+  );
 }
