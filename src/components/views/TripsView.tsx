@@ -3,6 +3,7 @@ import type { Country, VisitedFilter } from "../../core/types";
 import { ALL_REGIONS, type Region, type TripGroupDef } from "../../core/data/tripGroups";
 import { getWikiImage } from "../../utils/wikiImages";
 import { isEnabled } from "../../core/featureFlags";
+import { fuzzySearchTrips } from "../../utils/fuzzySearch";
 
 type Props = {
   countries: Country[];
@@ -140,11 +141,9 @@ export default function TripsView({
 
     if (regionFilter !== "all") result = result.filter((t) => t.region === regionFilter);
 
+    // Fuzzy search across all trip attributes (name, region, experiences, cities, etc.)
     if (search.trim()) {
-      const q = search.toLowerCase();
-      result = result.filter((t) =>
-        t.allCountries.some((c) => c.name.toLowerCase().includes(q))
-      );
+      result = fuzzySearchTrips(result, search);
     }
 
     // Sort: favorites first → unvisited middle → visited last
