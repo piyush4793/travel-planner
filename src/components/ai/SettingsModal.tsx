@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { createPortal } from "react-dom";
-import type { LLMProviderType, LLMKeys } from "../../types";
+import type { LLMProviderType, LLMKeys, Country } from "../../types";
 import { loadLS, saveLS } from "../../utils/storage";
 import { LS_KEYS } from "../../utils/lsKeys";
 import { validateKey, PROVIDER_LABELS, PROVIDER_PRICING } from "../../utils/ai/llmProvider";
+import {
+  exportFullBackup, importFullBackup,
+  exportCountriesCSV, importCountriesCSV, exportCountriesXLSX,
+  getBackupFrequency, setBackupFrequency,
+  getBackupSchedule, setBackupSchedule,
+  getLastBackupLabel, getNextBackupLabel,
+  type BackupFrequency, type BackupSchedule,
+} from "../../utils/backup";
+import { isEnabled } from "../../utils/featureFlags";
 
 export function getLLMKeys(): LLMKeys {
   return loadLS<LLMKeys>(LS_KEYS.LLM_KEYS, {});
@@ -24,9 +33,9 @@ function saveActiveProvider(p: LLMProviderType) {
 const PROVIDERS: LLMProviderType[] = ["openai", "claude", "gemini"];
 
 const PROVIDER_ICONS: Record<LLMProviderType, string> = {
-  openai: "🤖",
-  claude: "🧠",
-  gemini: "💎",
+  openai: "\u{1F916}",
+  claude: "\u{1F9E0}",
+  gemini: "\u{1F48E}",
 };
 
 const PROVIDER_HELP: Record<LLMProviderType, { placeholder: string; steps: string[] }> = {
@@ -36,7 +45,7 @@ const PROVIDER_HELP: Record<LLMProviderType, { placeholder: string; steps: strin
       "Go to platform.openai.com",
       "Sign in or create an account",
       "Navigate to API Keys in your account settings",
-      "Click \"Create new secret key\"",
+      'Click "Create new secret key"',
       "Copy and paste it above",
     ],
   },
@@ -46,7 +55,7 @@ const PROVIDER_HELP: Record<LLMProviderType, { placeholder: string; steps: strin
       "Go to console.anthropic.com",
       "Sign in or create an account",
       "Navigate to API Keys",
-      "Click \"Create Key\"",
+      'Click "Create Key"',
       "Copy and paste it above",
     ],
   },
@@ -55,22 +64,30 @@ const PROVIDER_HELP: Record<LLMProviderType, { placeholder: string; steps: strin
     steps: [
       "Go to aistudio.google.com/apikey",
       "Sign in with your Google account",
-      "Click \"Create API key\"",
+      'Click "Create API key"',
       "Select or create a Google Cloud project",
       "Copy and paste the key above",
     ],
   },
 };
 
-type Props = { open: boolean; onClose: () => void; onOpenChat?: () => void };
+type SettingsTab = "ai" | "backup";
+type Props = { open: boolean; onClose: () => void; onOpenChat?: () => void; countries?: Country[] };
 
-export default function SettingsModal({ open, onClose, onOpenChat }: Props) {
+export default function SettingsModal({ open, onClose, onOpenChat, countries }: Props) {
+  const showAi = isEnabled("llmPlanning");
+  const [tab, setTab] = useState<SettingsTab>(showAi ? "ai" : "backup");
   const [keys, setKeys] = useState<LLMKeys>(getLLMKeys);
   const [draft, setDraft] = useState("");
   const [provider, setProvider] = useState<LLMProviderType>(getActiveProvider);
   const [validating, setValidating] = useState(false);
   const [status, setStatus] = useState<{ ok: boolean; msg: string } | null>(null);
   const [showKey, setShowKey] = useState(false);
+  const [backupFreq, setBackupFreq] = useState<BackupFrequency>(getBackupFrequency);
+  const [backupSched, setBackupSched] = useState<BackupSchedule>(getBackupSchedule);
+  const [backupStatus, setBackupStatus] = useState<{ ok: boolean; msg: string } | null>(null);
+  const restoreRef = useRef<HTMLInputElement>(null);
+  const importRef = useRef<HTMLInputElement>(null);
 
   if (!open) return null;
 
@@ -96,7 +113,7 @@ export default function SettingsModal({ open, onClose, onOpenChat }: Props) {
       setKeys(next);
       saveLLMKeys(next);
       setDraft("");
-      setStatus({ ok: true, msg: `${PROVIDER_LABELS[provider]} key verified and saved!` });
+      setStatus({ ok: true, msg: PROVIDER_LABELS[provider] + " key verified and saved!" });
     } else {
       setStatus({ ok: false, msg: result.error ?? "Validation failed" });
     }
@@ -111,159 +128,328 @@ export default function SettingsModal({ open, onClose, onOpenChat }: Props) {
     setStatus({ ok: true, msg: "Key removed." });
   }
 
-  const masked = currentKey ? currentKey.slice(0, 7) + "•".repeat(20) + currentKey.slice(-4) : "";
+  async function handleRestore(file: File) {
+    setBackupStatus(null);
+    const result = await importFullBackup(file);
+    setBackupStatus(result);
+  }
+
+  async function handleImportCSV(file: File) {
+    setBackupStatus(null);
+    const result = await importCountriesCSV(file);
+    if (result.ok && result.countries?.length) {
+      const existing = loadLS<Country[]>(LS_KEYS.CUSTOMS, []);
+      const existingNames = new Set(existing.map((c) => c.name));
+      const merged = [...existing];
+      for (const c of result.countries) {
+        if (existingNames.has(c.name)) {
+          const idx = merged.findIndex((e) => e.name === c.name);
+          if (idx >= 0) merged[idx] = c;
+        } else {
+          merged.push(c);
+        }
+      }
+      saveLS(LS_KEYS.CUSTOMS, merged);
+      setBackupStatus({ ok: true, msg: "Imported " + result.countries.length + " countries. Reload to see changes." });
+    } else {
+      setBackupStatus(result);
+    }
+  }
+
+  function handleFreqChange(f: BackupFrequency) {
+    setBackupFreq(f);
+    setBackupFrequency(f);
+  }
+
+  function handleSchedChange(update: Partial<BackupSchedule>) {
+    const next = { ...backupSched, ...update };
+    setBackupSched(next);
+    setBackupSchedule(next);
+  }
+
+  const masked = currentKey ? currentKey.slice(0, 7) + "\u2022".repeat(20) + currentKey.slice(-4) : "";
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/30 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="bg-[#1e1e2e] border border-white/10 md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-md md:mx-4 p-5 md:p-6 space-y-5 h-dvh md:h-auto overflow-y-auto"
+        className="bg-white md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-md md:mx-4 p-5 md:p-6 space-y-4 h-dvh md:h-auto md:max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h2 className="text-base font-semibold text-white flex items-center gap-2">
-            <span className="text-lg">⚙️</span> AI Settings
+          <h2 className="text-base font-bold text-slate-800 flex items-center gap-2">
+            <span className="text-lg">{"\u2699\uFE0F"}</span> Settings
           </h2>
-          <button onClick={onClose} className="text-white/40 hover:text-white text-lg leading-none" aria-label="Close settings">✕</button>
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-lg leading-none" aria-label="Close settings">{"\u2715"}</button>
         </div>
 
-        {/* Provider selector */}
-        <div className="space-y-1.5">
-          <label className="text-[11px] text-white/50 uppercase tracking-wide font-medium">Provider</label>
-          <div className="relative">
-            <select
-              value={provider}
-              onChange={(e) => handleProviderChange(e.target.value as LLMProviderType)}
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white appearance-none cursor-pointer focus:outline-none focus:border-emerald-500/50 hover:border-white/20 transition-colors"
+        {/* Tab switcher */}
+        <div className="flex gap-1 bg-slate-100 rounded-xl p-1">
+          {showAi && (
+            <button
+              onClick={() => setTab("ai")}
+              className={"flex-1 px-3 py-2 rounded-lg text-xs font-semibold transition-all " + (tab === "ai" ? "bg-white text-blue-700 shadow-sm" : "text-slate-500 hover:text-slate-700")}
             >
-              {PROVIDERS.map((p) => (
-                <option key={p} value={p} className="bg-[#1e1e2e] text-white">
-                  {PROVIDER_ICONS[p]} {PROVIDER_LABELS[p]}{keys[p] ? " ✓" : ""}
-                </option>
-              ))}
-            </select>
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none text-xs">▼</span>
-          </div>
+              {"\u{1F916}"} AI
+            </button>
+          )}
+          <button
+            onClick={() => setTab("backup")}
+            className={"flex-1 px-3 py-2 rounded-lg text-xs font-semibold transition-all " + (tab === "backup" ? "bg-white text-blue-700 shadow-sm" : "text-slate-500 hover:text-slate-700")}
+          >
+            {"\u{1F4BE}"} Backup
+          </button>
         </div>
 
-        {/* Current key */}
-        {currentKey && (
-          <div className="space-y-1.5">
-            <label className="text-[11px] text-white/50 uppercase tracking-wide font-medium">Current Key</label>
-            <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
-              <code className="text-xs text-emerald-400 flex-1 font-mono">
-                {showKey ? currentKey : masked}
-              </code>
+        {/* AI Tab */}
+        {tab === "ai" && showAi && (
+          <div className="space-y-4">
+            <div className="space-y-1.5">
+              <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Provider</label>
+              <div className="relative">
+                <select
+                  value={provider}
+                  onChange={(e) => handleProviderChange(e.target.value as LLMProviderType)}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-sm text-slate-800 appearance-none cursor-pointer focus:outline-none focus:border-blue-400 hover:border-slate-300 transition-colors"
+                >
+                  {PROVIDERS.map((p) => (
+                    <option key={p} value={p}>
+                      {PROVIDER_ICONS[p]} {PROVIDER_LABELS[p]}{keys[p] ? " \u2713" : ""}
+                    </option>
+                  ))}
+                </select>
+                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-xs">{"\u25BC"}</span>
+              </div>
+            </div>
+
+            {currentKey && (
+              <div className="space-y-1.5">
+                <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Current Key</label>
+                <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2">
+                  <code className="text-xs text-emerald-600 flex-1 font-mono">{showKey ? currentKey : masked}</code>
+                  <button onClick={() => setShowKey(!showKey)} className="text-[10px] text-slate-400 hover:text-slate-600">{showKey ? "Hide" : "Show"}</button>
+                  <button onClick={handleDelete} className="text-[10px] text-red-500 hover:text-red-600">Delete</button>
+                </div>
+              </div>
+            )}
+
+            <div className="space-y-1.5">
+              <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">
+                {currentKey ? "Replace Key" : PROVIDER_LABELS[provider] + " API Key"}
+              </label>
+              <div className="flex gap-2">
+                <input
+                  type="password"
+                  value={draft}
+                  onChange={(e) => setDraft(e.target.value)}
+                  placeholder={help.placeholder}
+                  className="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-800 placeholder:text-slate-300 focus:outline-none focus:border-blue-400"
+                  onKeyDown={(e) => e.key === "Enter" && handleSave()}
+                />
+                <button
+                  onClick={handleSave}
+                  disabled={!draft.trim() || validating}
+                  className="px-4 py-2 bg-blue-600 hover:bg-blue-500 disabled:bg-slate-200 disabled:text-slate-400 text-white text-xs font-medium rounded-lg transition-colors"
+                >
+                  {validating ? "Verifying\u2026" : "Save"}
+                </button>
+              </div>
+            </div>
+
+            {status && (
+              <p className={"text-xs " + (status.ok ? "text-emerald-600" : "text-red-500")}>{status.msg}</p>
+            )}
+
+            {currentKey && onOpenChat && (
               <button
-                onClick={() => setShowKey(!showKey)}
-                className="text-[10px] text-white/40 hover:text-white/70"
+                onClick={() => { onClose(); onOpenChat(); }}
+                className="w-full flex items-center justify-center gap-2 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg transition-colors"
               >
-                {showKey ? "Hide" : "Show"}
+                {"\u2728"} Start Planning with AI
               </button>
+            )}
+
+            <details className="text-[11px] text-slate-500 cursor-pointer">
+              <summary className="hover:text-slate-700 font-medium">{"\u{1F4B0}"} Token pricing reference</summary>
+              <div className="mt-2 rounded-lg overflow-hidden border border-slate-200">
+                <table className="w-full text-[10px]">
+                  <thead>
+                    <tr className="bg-slate-50 text-slate-600">
+                      <th className="px-3 py-1.5 text-left font-bold">Provider</th>
+                      <th className="px-3 py-1.5 text-left font-bold">Model</th>
+                      <th className="px-3 py-1.5 text-right font-bold">Input $/1M</th>
+                      <th className="px-3 py-1.5 text-right font-bold">Output $/1M</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {PROVIDERS.map((p) => {
+                      const pr = PROVIDER_PRICING[p];
+                      return (
+                        <tr key={p} className={"border-t border-slate-100 " + (p === provider ? "bg-blue-50 text-slate-700" : "text-slate-500")}>
+                          <td className="px-3 py-1.5">{PROVIDER_ICONS[p]} {PROVIDER_LABELS[p]}</td>
+                          <td className="px-3 py-1.5">{pr.model}</td>
+                          <td className="px-3 py-1.5 text-right font-mono">${pr.inputPer1M}</td>
+                          <td className="px-3 py-1.5 text-right font-mono">${pr.outputPer1M}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-[9px] text-slate-400 mt-1">Approximate pricing {"\u2014"} check provider dashboards for exact rates</p>
+            </details>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2.5 space-y-1">
+              <p className="text-[11px] text-amber-700 font-medium">{"\u26A0"} Security Notice</p>
+              <p className="text-[10px] text-amber-600/80 leading-relaxed">
+                Your API key is stored in browser localStorage and used for direct API calls.
+                It is never sent to any server other than the selected provider ({PROVIDER_LABELS[provider]}).
+                However, it is accessible to browser extensions and dev tools. Use a key with appropriate spending limits.
+              </p>
+            </div>
+
+            <details className="text-[11px] text-slate-400 cursor-pointer">
+              <summary className="hover:text-slate-600">How to get a {PROVIDER_LABELS[provider]} API key</summary>
+              <ol className="mt-2 space-y-1 text-[10px] text-slate-400 list-decimal list-inside leading-relaxed">
+                {help.steps.map((step, i) => (
+                  <li key={i}>{step}</li>
+                ))}
+              </ol>
+            </details>
+          </div>
+        )}
+
+        {/* Backup Tab */}
+        {tab === "backup" && (
+          <div className="space-y-4">
+            <p className="text-[10px] text-slate-400 leading-relaxed">
+              All your travel data lives in this browser. Export backups to keep it safe.
+            </p>
+
+            <div className="bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] text-slate-500">Last backup</span>
+                <span className="text-[11px] text-slate-700 font-medium">{getLastBackupLabel()}</span>
+              </div>
+              {backupFreq !== "never" && (
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] text-slate-500">Next auto-backup</span>
+                  <span className="text-[11px] text-blue-600 font-medium">{getNextBackupLabel()}</span>
+                </div>
+              )}
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Export</label>
               <button
-                onClick={handleDelete}
-                className="text-[10px] text-red-400 hover:text-red-300"
+                onClick={() => { exportFullBackup(); setBackupStatus({ ok: true, msg: "Full backup downloaded!" }); }}
+                className="w-full px-3 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
               >
-                Delete
+                {"\u{1F4E6}"} Full Backup (JSON)
               </button>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => { if (countries?.length) { exportCountriesCSV(countries); setBackupStatus({ ok: true, msg: "CSV exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
+                  className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition-colors border border-slate-200"
+                >
+                  {"\u{1F4C4}"} Countries CSV
+                </button>
+                <button
+                  onClick={() => { if (countries?.length) { exportCountriesXLSX(countries); setBackupStatus({ ok: true, msg: "XLSX exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
+                  className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition-colors border border-slate-200"
+                >
+                  {"\u{1F4CA}"} Countries XLSX
+                </button>
+              </div>
+              <p className="text-[9px] text-slate-400">Full backup includes everything. CSV/XLSX export only countries (human-editable).</p>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Import</label>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => restoreRef.current?.click()}
+                  className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition-colors border border-slate-200"
+                >
+                  {"\u{1F504}"} Restore (JSON)
+                </button>
+                <button
+                  onClick={() => importRef.current?.click()}
+                  className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition-colors border border-slate-200"
+                >
+                  {"\u{1F4E5}"} Import (CSV)
+                </button>
+              </div>
+              <input ref={restoreRef} type="file" accept=".json" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) handleRestore(f); e.target.value = ""; }} />
+              <input ref={importRef} type="file" accept=".csv" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) handleImportCSV(f); e.target.value = ""; }} />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Auto-Backup Schedule</label>
+              <div className="flex gap-1.5">
+                {(["daily", "weekly", "monthly", "never"] as BackupFrequency[]).map((f) => (
+                  <button
+                    key={f}
+                    onClick={() => handleFreqChange(f)}
+                    className={"flex-1 px-2 py-2 text-[11px] font-medium rounded-lg transition-colors " + (backupFreq === f ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-500 hover:bg-slate-200 border border-slate-200")}
+                  >
+                    {f.charAt(0).toUpperCase() + f.slice(1)}
+                  </button>
+                ))}
+              </div>
+
+              {backupFreq === "weekly" && (
+                <div className="flex items-center gap-2 pt-1">
+                  <span className="text-[11px] text-slate-500">Every:</span>
+                  <select
+                    value={backupSched.weekday ?? 0}
+                    onChange={(e) => handleSchedChange({ weekday: parseInt(e.target.value) })}
+                    className="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1.5 text-[11px] text-slate-700 appearance-none cursor-pointer focus:outline-none focus:border-blue-400"
+                  >
+                    {["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].map((day, i) => (
+                      <option key={i} value={i}>{day}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
+
+              {backupFreq === "monthly" && (
+                <div className="flex items-center gap-2 pt-1">
+                  <span className="text-[11px] text-slate-500">Day of month:</span>
+                  <select
+                    value={backupSched.monthDay ?? 1}
+                    onChange={(e) => handleSchedChange({ monthDay: parseInt(e.target.value) })}
+                    className="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1.5 text-[11px] text-slate-700 appearance-none cursor-pointer focus:outline-none focus:border-blue-400"
+                  >
+                    {Array.from({ length: 28 }, (_, i) => (
+                      <option key={i + 1} value={i + 1}>{i + 1}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
+
+              <p className="text-[9px] text-slate-400">
+                {backupFreq === "never"
+                  ? "Auto-backup disabled. Use the buttons above to back up manually."
+                  : "A backup file will auto-download to your browser\u2019s download folder when overdue."}
+              </p>
+            </div>
+
+            {backupStatus && (
+              <p className={"text-xs " + (backupStatus.ok ? "text-emerald-600" : "text-red-500")}>{backupStatus.msg}</p>
+            )}
+
+            <div className="bg-blue-50 border border-blue-200 rounded-lg px-3 py-2.5">
+              <p className="text-[10px] text-blue-600/80 leading-relaxed">
+                {"\u{1F4A1}"} API keys are <span className="text-blue-700 font-medium">never</span> included in backups for security.
+                Full backup restores everything else {"\u2014"} reload the page after restoring.
+              </p>
             </div>
           </div>
         )}
-
-        {/* New key input */}
-        <div className="space-y-1.5">
-          <label className="text-[11px] text-white/50 uppercase tracking-wide font-medium">
-            {currentKey ? "Replace Key" : `${PROVIDER_LABELS[provider]} API Key`}
-          </label>
-          <div className="flex gap-2">
-            <input
-              type="password"
-              value={draft}
-              onChange={(e) => setDraft(e.target.value)}
-              placeholder={help.placeholder}
-              className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder:text-white/25 focus:outline-none focus:border-emerald-500/50"
-              onKeyDown={(e) => e.key === "Enter" && handleSave()}
-            />
-            <button
-              onClick={handleSave}
-              disabled={!draft.trim() || validating}
-              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 disabled:bg-white/10 disabled:text-white/30 text-white text-xs font-medium rounded-lg transition-colors"
-            >
-              {validating ? "Verifying…" : "Save"}
-            </button>
-          </div>
-        </div>
-
-        {/* Status */}
-        {status && (
-          <p className={`text-xs ${status.ok ? "text-emerald-400" : "text-red-400"}`}>
-            {status.msg}
-          </p>
-        )}
-
-        {/* CTA to open chat — always visible when active provider has a key */}
-        {currentKey && onOpenChat && (
-          <button
-            onClick={() => { onClose(); onOpenChat(); }}
-            className="w-full flex items-center justify-center gap-2 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition-colors"
-          >
-            ✨ Start Planning with AI
-          </button>
-        )}
-
-        {/* Pricing reference */}
-        <details className="text-[11px] text-white/50 cursor-pointer">
-          <summary className="hover:text-white/70 font-medium">💰 Token pricing reference</summary>
-          <div className="mt-2 rounded-lg overflow-hidden border border-white/10">
-            <table className="w-full text-[10px]">
-              <thead>
-                <tr className="bg-white/5 text-white/60">
-                  <th className="px-3 py-1.5 text-left font-bold">Provider</th>
-                  <th className="px-3 py-1.5 text-left font-bold">Model</th>
-                  <th className="px-3 py-1.5 text-right font-bold">Input $/1M</th>
-                  <th className="px-3 py-1.5 text-right font-bold">Output $/1M</th>
-                </tr>
-              </thead>
-              <tbody>
-                {PROVIDERS.map((p) => {
-                  const pr = PROVIDER_PRICING[p];
-                  return (
-                    <tr key={p} className={`border-t border-white/5 ${p === provider ? "bg-blue-500/10 text-white/80" : "text-white/40"}`}>
-                      <td className="px-3 py-1.5">{PROVIDER_ICONS[p]} {PROVIDER_LABELS[p]}</td>
-                      <td className="px-3 py-1.5">{pr.model}</td>
-                      <td className="px-3 py-1.5 text-right font-mono">${pr.inputPer1M}</td>
-                      <td className="px-3 py-1.5 text-right font-mono">${pr.outputPer1M}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-[9px] text-white/30 mt-1">Approximate pricing — check provider dashboards for exact rates</p>
-        </details>
-
-        {/* Security notice */}
-        <div className="bg-amber-500/10 border border-amber-500/20 rounded-lg px-3 py-2.5 space-y-1">
-          <p className="text-[11px] text-amber-400 font-medium">⚠ Security Notice</p>
-          <p className="text-[10px] text-amber-400/70 leading-relaxed">
-            Your API key is stored in browser localStorage and used for direct API calls.
-            It is never sent to any server other than the selected provider ({PROVIDER_LABELS[provider]}).
-            However, it is accessible to browser extensions and dev tools. Use a key with appropriate spending limits.
-          </p>
-        </div>
-
-        {/* How to get a key */}
-        <details className="text-[11px] text-white/40 cursor-pointer">
-          <summary className="hover:text-white/60">How to get a {PROVIDER_LABELS[provider]} API key</summary>
-          <ol className="mt-2 space-y-1 text-[10px] text-white/30 list-decimal list-inside leading-relaxed">
-            {help.steps.map((step, i) => (
-              <li key={i}>{step}</li>
-            ))}
-          </ol>
-        </details>
       </div>
     </div>,
     document.body,

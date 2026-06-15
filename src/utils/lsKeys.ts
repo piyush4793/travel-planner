@@ -12,4 +12,7 @@ export const LS_KEYS = {
   LLM_KEYS: "tp_llm_keys",
   LLM_PROVIDER: "tp_llm_provider",
   AI_PLANS: "tp_ai_plans",
+  LAST_BACKUP: "tp_last_backup",
+  BACKUP_FREQUENCY: "tp_backup_frequency",
+  BACKUP_SCHEDULE: "tp_backup_schedule",
 } as const;
