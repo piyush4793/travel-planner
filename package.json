@@ -10,7 +10,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint:unused": "knip --reporter compact",
-    "validate": "tsc --noEmit && vitest run && knip --reporter compact && vite build"
+    "validate": "tsc --noEmit && vitest run && knip --reporter compact && vite build",
+    "prepare": "husky"
   },
   "dependencies": {
     "maplibre-gl": "^4.7.1",
@@ -24,6 +25,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
+    "husky": "^9.1.7",
     "jsdom": "^27.0.1",
     "knip": "^6.16.1",
     "postcss": "^8.4.47",
