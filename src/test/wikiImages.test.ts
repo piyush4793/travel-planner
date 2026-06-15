@@ -112,4 +112,76 @@ describe("wikiImages — P0", () => {
     expect(image).toBe("https://images.example/photo.webp");
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
+
+  it("retries on 429 and succeeds on second attempt", async () => {
+    vi.useFakeTimers();
+    const fetchMock = globalThis.fetch as unknown as ReturnType<typeof vi.fn>;
+    fetchMock
+      .mockResolvedValueOnce({ ok: false, status: 429 } as Response)
+      .mockResolvedValueOnce(
+        mockJsonResponse({
+          query: {
+            pages: {
+              "1": {
+                imageinfo: [
+                  {
+                    mime: "image/jpeg",
+                    width: 1200,
+                    thumbwidth: 1024,
+                    thumburl: "https://images.example/retry-thumb.jpg",
+                    url: "https://images.example/retry.jpg",
+                  },
+                ],
+              },
+            },
+          },
+        }),
+      );
+
+    const { getWikiImage } = await importWikiImages();
+    const promise = getWikiImage("Retry test");
+    await vi.advanceTimersByTimeAsync(2000);
+    const result = await promise;
+
+    expect(result).toBe("https://images.example/retry-thumb.jpg");
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    vi.useRealTimers();
+  });
+
+  it("does not cache 429 failures so next render can retry", async () => {
+    vi.useFakeTimers();
+    const fetchMock = globalThis.fetch as unknown as ReturnType<typeof vi.fn>;
+    fetchMock.mockResolvedValue({ ok: false, status: 429 } as Response);
+
+    const { getWikiImage } = await importWikiImages();
+    const promise = getWikiImage("Throttled query");
+    await vi.advanceTimersByTimeAsync(5000);
+    const first = await promise;
+    expect(first).toBeNull();
+    expect(fetchMock).toHaveBeenCalledTimes(3);
+
+    fetchMock.mockClear();
+    fetchMock.mockResolvedValueOnce(
+      mockJsonResponse({
+        query: {
+          pages: {
+            "1": {
+              imageinfo: [
+                {
+                  mime: "image/jpeg",
+                  width: 800,
+                  thumbwidth: 1024,
+                  thumburl: "https://images.example/recovered.jpg",
+                  url: "https://images.example/recovered.jpg",
+                },
+              ],
+            },
+          },
+        },
+      }),
+    );
+    const second = await getWikiImage("Throttled query");
+    expect(second).toBe("https://images.example/recovered.jpg");
+    vi.useRealTimers();
+  });
 });

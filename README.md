@@ -134,6 +134,11 @@ Full-screen animated experience for rule-based countries:
 - Delete trips (seed trips are tombstoned, custom trips removed)
 - One-trip-per-country invariant enforced in editor
 - Unassigned countries appear as auto-generated solo trips (read-only) and inherit their real country region for filtering/stats
+- **Collapsible sections** — Favorites, Planning, and Completed sections can be toggled open/closed for quick scanning
+- **Skeleton loading** — image collages show a shimmer placeholder while wiki images load (no layout jump)
+- **Mobile FAB** — floating "+" button to create new trips on mobile (since header button is hidden)
+- **Always-visible edit** — ✏️ button visible on mobile (hover-only on desktop)
+- **Combo suggestions** — solo trip cards show "Pair with…" hint from the country's combo data
 
 ---
 
@@ -213,13 +218,13 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 
 ## Tech Stack
 
-Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 292 tests across 36 files, including unit tests for hooks/utils/providers and P0 integration tests for key component flows (view rendering, filtering, country CRUD, trip management).
+Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 298 tests across 36 files, including unit tests for hooks/utils/providers and P0 integration tests for key component flows (view rendering, filtering, country CRUD, trip management).
 
 ### Testing & Coverage
 
 | Command | Description |
 |---|---|
-| `npm test` | Run all 292 tests (unit + integration) |
+| `npm test` | Run all 298 tests (unit + integration) |
 | `npm run test:watch` | Watch mode |
 | `npm run test:coverage` | V8 coverage → terminal + `coverage/index.html` (HTML report) |
 | `npm run test:ui` | Vitest browser UI |

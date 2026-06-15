@@ -1,6 +1,17 @@
 // Module-level cache — survives re-renders without a context provider
 const cache = new Map<string, string | null>();
 
+// Retry fetch on 429 with exponential backoff (max 2 retries)
+async function fetchWithRetry(url: string, retries = 2): Promise<Response> {
+  for (let i = 0; i <= retries; i++) {
+    const res = await fetch(url);
+    if (res.status !== 429 || i === retries) return res;
+    const wait = (i + 1) * 1500; // 1.5s, 3s
+    await new Promise((r) => setTimeout(r, wait));
+  }
+  return fetch(url); // unreachable but satisfies TS
+}
+
 // Searches Wikimedia Commons for a photographic image matching `query`.
 // Returns a thumbnail URL at ~1200px width, or null if nothing suitable found.
 export async function getWikiImage(query: string): Promise<string | null> {
@@ -25,8 +36,12 @@ export async function getWikiImage(query: string): Promise<string | null> {
       origin:       "*",          // CORS
     });
 
-    const res = await fetch(`https://commons.wikimedia.org/w/api.php?${params}`);
-    if (!res.ok) { cache.set(query, null); return null; }
+    const res = await fetchWithRetry(`https://commons.wikimedia.org/w/api.php?${params}`);
+    if (!res.ok) {
+      // Don't cache throttle responses — allow retry on next render
+      if (res.status !== 429) cache.set(query, null);
+      return null;
+    }
 
     const data = await res.json();
     const pages = Object.values(data?.query?.pages ?? {}) as any[];

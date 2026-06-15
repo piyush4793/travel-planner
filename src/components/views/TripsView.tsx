@@ -430,6 +430,17 @@ export default function TripsView({
           )}
         </div>
       </div>
+
+      {/* Mobile FAB — New Trip */}
+      {isEnabled("tripGroups") && !creatingNew && (
+        <button
+          onClick={() => { setCreatingNew(true); setEditingMain(null); }}
+          className="md:hidden fixed bottom-5 right-5 z-30 w-14 h-14 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 active:scale-95 transition-all flex items-center justify-center text-2xl"
+          title="New Trip"
+        >
+          +
+        </button>
+      )}
     </div>
   );
 
@@ -680,17 +691,22 @@ function DashStat({ value, label, icon }: { value: number; label: string; icon: 
   );
 }
 
-function TripSection({ icon, label, count, color, children }: {
-  icon: string; label: string; count: number; color: string; children: React.ReactNode;
+function TripSection({ icon, label, count, color, children, defaultOpen = true }: {
+  icon: string; label: string; count: number; color: string; children: React.ReactNode; defaultOpen?: boolean;
 }) {
+  const [open, setOpen] = useState(defaultOpen);
   return (
     <div>
-      <div className="flex items-center gap-2 mb-3">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="flex items-center gap-2 mb-3 w-full text-left group"
+      >
+        <span className={`text-[10px] transition-transform ${open ? "rotate-90" : ""}`}>▶</span>
         <span className="text-sm">{icon}</span>
         <span className={`text-xs font-bold uppercase tracking-wider ${color}`}>{label}</span>
         <span className="text-[10px] text-slate-400 font-semibold bg-slate-100 px-2 py-0.5 rounded-full">{count}</span>
-      </div>
-      {children}
+      </button>
+      {open && children}
     </div>
   );
 }
@@ -786,6 +802,11 @@ function TripRow({
               ))}
             </div>
           )}
+          {!isCombo && trip.main.combo && trip.main.combo.length > 0 && !trip.allVisited && (
+            <p className="text-[9px] text-gray-400 italic mb-1 truncate">
+              Pair with {trip.main.combo.slice(0, 2).join(", ")}
+            </p>
+          )}
           <div className="flex items-center gap-2">
             <span className="text-[10px] text-gray-400 font-medium">{trip.visitedCount}/{trip.allCountries.length}</span>
             <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
@@ -828,7 +849,7 @@ function TripRow({
           {onEdit && (
             <button
               onClick={(e) => { e.stopPropagation(); onEdit(); }}
-              className="opacity-0 group-hover:opacity-100 text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-0.5 rounded hover:bg-blue-50 transition-all"
+              className="md:opacity-0 md:group-hover:opacity-100 text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-0.5 rounded hover:bg-blue-50 transition-all"
               title="Edit trip"
             >
               ✏️
@@ -927,9 +948,11 @@ function getSharedExperiences(countries: Country[]): string[] {
 
 function ImageCollage({ queries }: { queries: string[] }) {
   const [images, setImages] = useState<string[]>([]);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
+    setLoaded(false);
     Promise.allSettled(queries.map((q) => getWikiImage(q))).then((results) => {
       if (cancelled) return;
       const urls = results
@@ -937,9 +960,18 @@ function ImageCollage({ queries }: { queries: string[] }) {
         .map((r) => r.value)
         .filter((v): v is string => !!v);
       setImages(urls);
+      setLoaded(true);
     });
     return () => { cancelled = true; };
   }, [queries.join(",")]);
+
+  if (!loaded) {
+    return (
+      <div className="relative h-24 overflow-hidden bg-slate-200 rounded-t-xl">
+        <div className="absolute inset-0 shimmer-sweep" />
+      </div>
+    );
+  }
 
   if (images.length === 0) return null;
 
