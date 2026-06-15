@@ -220,6 +220,5 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 | 🔴 Long | ⭐⭐ | Seasonal flight cost hints | Data | Rough fare ranges from public sources |
 | 🔴 Long | ⭐⭐ | Voice input for chat | AI | Speak trip requests instead of typing |
 | 🔴 Long | ⭐⭐ | Drag-and-drop trip reorder | UX | Reorder trip group add-ons |
-| 🟡 Medium | ⭐⭐⭐⭐ | Daily Google Maps route | Export | Generate a shareable Google Maps link per day with all stops plotted — one tap to see walking/transit directions for the day's itinerary |
 | 🔴 Long | ⭐ | Real-time pricing | Integration | Flights/hotels API integration |
 | 🔴 Long | ⭐ | Social layer | Social | Follow friends, see where they've been |

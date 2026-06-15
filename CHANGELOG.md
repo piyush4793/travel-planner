@@ -11,7 +11,8 @@ All notable changes to Travel Planner are documented here. Format follows [Keep 
 
 ### Changed
 - **Save As dialog for manual exports** — manual JSON/CSV/XLSX exports open native "Save As" file picker (Chrome/Edge) so you can choose where to save; auto-backups silently download to the browser's default folder
-- **Download location tip in Settings** — Backup tab now shows info about Save As dialog and where auto-backups go
+- **Download location tip in Settings** — Backup tab now shows default download path (OS-aware) and how to change it
+- **Shareable route links** — 📋 copy button next to every 🗺️ Route link for sharing day routes with travel companions
 - **Country panel close button** — moved from toolbar to header row for better visibility
 - **Cinematic animation uses requestAnimationFrame** — arc/transit animations now use rAF instead of setTimeout loops for jank-free 60fps motion on all devices
 - **Wiki image fetch timeout** — city photo loading capped at 5 seconds to prevent animation from stalling on slow networks

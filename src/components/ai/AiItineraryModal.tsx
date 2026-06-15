@@ -191,15 +191,18 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
                         </span>
                       )}
                       {route && (
-                        <a
-                          href={route.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[9px] font-semibold text-blue-500 bg-blue-50 hover:bg-blue-100 px-2 py-0.5 rounded-full shrink-0 transition-colors"
-                          title="Open day route in Google Maps"
-                        >
-                          🗺️ Route
-                        </a>
+                        <span className="flex items-center gap-1 shrink-0">
+                          <a
+                            href={route.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[9px] font-semibold text-blue-500 bg-blue-50 hover:bg-blue-100 px-2 py-0.5 rounded-full transition-colors"
+                            title="Open day route in Google Maps"
+                          >
+                            🗺️ Route
+                          </a>
+                          <CopyLinkButton url={route.url} />
+                        </span>
                       )}
                     </div>
 
@@ -454,5 +457,27 @@ function MetaChips({ label, items, color }: { label: string; items: string[]; co
         ))}
       </div>
     </div>
+  );
+}
+
+function CopyLinkButton({ url }: { url: string }) {
+  const [copied, setCopied] = useState(false);
+  return (
+    <button
+      onClick={() => {
+        navigator.clipboard.writeText(url).then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 1500);
+        });
+      }}
+      className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-full transition-colors ${
+        copied
+          ? "text-emerald-600 bg-emerald-50"
+          : "text-slate-400 bg-slate-50 hover:bg-slate-100 hover:text-slate-600"
+      }`}
+      title={copied ? "Copied!" : "Copy route link"}
+    >
+      {copied ? "✓" : "📋"}
+    </button>
   );
 }

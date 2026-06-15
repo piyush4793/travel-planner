@@ -54,6 +54,7 @@ interface Props {
 
 export default function ItineraryModal({ plan, country, rule, onClose }: Props) {
   const groups = groupDays(plan.days, rule);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
@@ -82,26 +83,57 @@ export default function ItineraryModal({ plan, country, rule, onClose }: Props) 
               <span className="text-[10px] md:text-[11px] text-slate-400">per person</span>
             </div>
 
-            {/* City route summary — hidden on mobile to save space */}
+            {/* City route navigation */}
             {groups.length > 1 && (
-              <div className="hidden md:flex flex-wrap items-center gap-1.5 mt-3">
-                {groups.map((g, i) => (
-                  <span key={g.name} className="flex items-center gap-1.5">
-                    <button
-                      onClick={() => document.getElementById(`city-${g.name}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}
-                      className="text-[11px] font-semibold text-slate-300 bg-white/10 px-2 py-0.5 rounded-full hover:bg-white/20 hover:text-white transition-colors cursor-pointer"
-                    >
-                      {g.name}
-                    </button>
-                    {i < groups.length - 1 && g.transport && (
-                      <span className="text-sm opacity-60">{TRANSPORT_EMOJI[g.transport.type]}</span>
-                    )}
-                    {i < groups.length - 1 && !g.transport && (
-                      <span className="text-slate-600 text-xs">→</span>
-                    )}
-                  </span>
-                ))}
-              </div>
+              <>
+                {/* Desktop: wrapped pills */}
+                <div className="hidden md:flex flex-wrap items-center gap-1.5 mt-3">
+                  {groups.map((g, i) => (
+                    <span key={g.name} className="flex items-center gap-1.5">
+                      <button
+                        onClick={() => document.getElementById(`city-${g.name}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}
+                        className="text-[11px] font-semibold text-slate-300 bg-white/10 px-2 py-0.5 rounded-full hover:bg-white/20 hover:text-white transition-colors cursor-pointer"
+                      >
+                        {g.name}
+                      </button>
+                      {i < groups.length - 1 && g.transport && (
+                        <span className="text-sm opacity-60">{TRANSPORT_EMOJI[g.transport.type]}</span>
+                      )}
+                      {i < groups.length - 1 && !g.transport && (
+                        <span className="text-slate-600 text-xs">→</span>
+                      )}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Mobile: dropdown */}
+                <div className="md:hidden mt-2 relative">
+                  <button
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    className="flex items-center gap-1.5 text-[10px] font-semibold text-slate-300 bg-white/10 px-2.5 py-1 rounded-full hover:bg-white/20 hover:text-white transition-colors"
+                  >
+                    <span>Jump to city…</span>
+                    <span className={`transition-transform ${dropdownOpen ? "rotate-180" : ""}`}>▾</span>
+                  </button>
+                  {dropdownOpen && (
+                    <div className="absolute top-full left-0 mt-1 bg-slate-800 border border-slate-600 rounded-lg shadow-xl z-20 min-w-[160px] py-1">
+                      {groups.map((g) => (
+                        <button
+                          key={g.name}
+                          onClick={() => {
+                            document.getElementById(`city-${g.name}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                            setDropdownOpen(false);
+                          }}
+                          className="w-full text-left px-3 py-1.5 text-[11px] text-slate-300 hover:bg-white/10 hover:text-white transition-colors"
+                        >
+                          {g.name}
+                          <span className="ml-2 text-[9px] text-slate-500">{g.days.length}d</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </>
             )}
           </div>
           <button
@@ -235,16 +267,18 @@ function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: Coun
           </span>
         )}
         {routeInfo && (
-          <a
-            href={routeInfo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="text-[9px] font-semibold text-blue-500 bg-blue-50 hover:bg-blue-100 px-2 py-0.5 rounded-full shrink-0 transition-colors"
-            title="Open day route in Google Maps"
-          >
-            🗺️ Route
-          </a>
+          <span className="flex items-center gap-1 shrink-0" onClick={(e) => e.stopPropagation()}>
+            <a
+              href={routeInfo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[9px] font-semibold text-blue-500 bg-blue-50 hover:bg-blue-100 px-2 py-0.5 rounded-full transition-colors"
+              title="Open day route in Google Maps"
+            >
+              🗺️ Route
+            </a>
+            <CopyLinkButton url={routeInfo.url} />
+          </span>
         )}
       </button>
 
@@ -311,5 +345,27 @@ function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: Coun
         </div>
       </div>
     </div>
+  );
+}
+
+function CopyLinkButton({ url }: { url: string }) {
+  const [copied, setCopied] = useState(false);
+  return (
+    <button
+      onClick={() => {
+        navigator.clipboard.writeText(url).then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 1500);
+        });
+      }}
+      className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-full transition-colors ${
+        copied
+          ? "text-emerald-600 bg-emerald-50"
+          : "text-slate-400 bg-slate-50 hover:bg-slate-100 hover:text-slate-600"
+      }`}
+      title={copied ? "Copied!" : "Copy route link"}
+    >
+      {copied ? "✓" : "📋"}
+    </button>
   );
 }
