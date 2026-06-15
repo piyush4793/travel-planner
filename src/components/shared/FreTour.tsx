@@ -319,6 +319,9 @@ function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstal
         {step.floaters && <FloatingEmoji emojis={step.floaters} />}
 
         <div className="relative z-10">
+          <button onClick={onSkip} className="absolute top-0 right-0 text-white/40 hover:text-white/80 text-lg transition-colors p-1 leading-none" title="Skip">
+            {"✕"}
+          </button>
           <div className="text-3xl mb-2 drop-shadow-lg">{step.emoji}</div>
           <h2 className="text-lg font-black tracking-tight mb-2 drop-shadow">{step.title}</h2>
 
@@ -364,14 +367,9 @@ function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstal
 
           <div className="flex items-center justify-between">
             <ProgressBar current={index} total={total} light />
-            <div className="flex gap-2">
-              <button onClick={onBack} className="px-4 py-2 text-xs font-semibold text-white/70 hover:text-white transition-colors">
-                Back
-              </button>
-              <button onClick={onSkip} className="px-6 py-2.5 bg-white text-slate-800 text-xs font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-105 transition-all active:scale-95">
-                {isInstalled || !canPrompt ? "Next →" : "Maybe Later"}
-              </button>
-            </div>
+            <button onClick={onBack} className="px-4 py-2 text-xs font-semibold text-white/70 hover:text-white transition-colors">
+              Back
+            </button>
           </div>
         </div>
       </div>
