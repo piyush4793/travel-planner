@@ -1,5 +1,5 @@
 // Roamwise Service Worker — cache-first for assets, network-first for navigation
-const CACHE_NAME = "roamwise-v1";
+const CACHE_NAME = "roamwise-v2";
 
 // Assets to pre-cache on install (shell)
 const SHELL_ASSETS = [
