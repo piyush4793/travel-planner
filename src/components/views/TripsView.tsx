@@ -3,7 +3,6 @@ import type { Country, VisitedFilter } from "../../core/types";
 import { ALL_REGIONS, type Region, type TripGroupDef } from "../../core/data/tripGroups";
 import { getWikiImage } from "../../utils/wikiImages";
 import { isEnabled } from "../../core/featureFlags";
-import PillGroup from "../shared/PillGroup";
 
 type Props = {
   countries: Country[];
@@ -210,232 +209,222 @@ export default function TripsView({
   };
 
   return (
-    <div className="h-full flex flex-col bg-gradient-to-b from-slate-50 to-slate-100/80 overflow-hidden">
-      {/* Dashboard hero strip */}
-      <div className="hidden md:block px-5 py-3 bg-gradient-to-r from-blue-50/80 via-white to-indigo-50/60 border-b shrink-0">
-        <div className="max-w-5xl mx-auto flex items-center gap-5">
-          {/* Progress — visited/total with inline bar */}
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="flex items-baseline gap-1">
-              <span className="text-2xl font-black text-slate-800">{totalVisited}</span>
-              <span className="text-sm text-slate-400 font-medium">/ {uniqueCountries}</span>
-            </div>
-            <div className="flex flex-col gap-0.5">
-              <span className="text-[9px] font-semibold text-slate-400 uppercase tracking-wider">visited</span>
-              <div className="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                <div
-                  className="h-full rounded-full bg-emerald-400 transition-all duration-500"
-                  style={{ width: `${uniqueCountries > 0 ? (totalVisited / uniqueCountries) * 100 : 0}%` }}
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="h-8 w-px bg-slate-200" />
-
-          {/* Compact stats */}
-          <div className="flex items-center gap-4 text-xs">
-            <span className="text-slate-500"><span className="font-bold text-slate-700">{trips.length}</span> trips</span>
-            <span className="text-slate-500"><span className="font-bold text-slate-700">{uniqueRegions}</span> regions</span>
-            <span className="text-slate-500"><span className="font-bold text-slate-700">{tripsCompleted}</span> completed</span>
-          </div>
-
-          {/* Best month to travel */}
-          {bestMonth && (
-            <>
-              <div className="h-8 w-px bg-slate-200" />
-              <div className="flex items-center gap-1.5 text-xs">
-                <span className="text-amber-500">☀️</span>
-                <span className="text-slate-500">Best month: <span className="font-bold text-slate-700">{bestMonth.month}</span></span>
-                <span className="text-[9px] text-slate-400">({bestMonth.count} destinations)</span>
-              </div>
-            </>
-          )}
-
-          {/* Spacer + actions */}
-          <div className="flex items-center gap-2 ml-auto shrink-0">
-            {nextTrip && (
-              <button
-                onClick={() => onSelect(nextTrip.main)}
-                className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 rounded-lg shadow-sm transition-all hover:shadow-md"
-              >
-                <span className="text-sm">🎯</span>
-                <div className="text-left">
-                  <p className="text-[8px] font-bold text-blue-100 uppercase tracking-wider leading-tight">Next trip</p>
-                  <p className="text-xs font-bold text-white leading-tight">{nextTrip.main.name}</p>
-                </div>
-              </button>
-            )}
-            {isEnabled("tripGroups") && (
-              <button
-                onClick={() => { setCreatingNew(true); setEditingMain(null); }}
-                className="shrink-0 flex items-center gap-1 px-3 py-2 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors min-h-[44px]"
-              >
-                + New Trip
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Filter bar — compact: search + filter toggle + layout */}
-      <div className="flex items-center gap-2 px-3 md:px-5 py-2 border-b bg-white shrink-0 flex-wrap md:flex-nowrap">
-        <div className="relative w-full sm:w-44">
+    <div className="h-full flex flex-col bg-slate-50 overflow-hidden">
+      {/* Header: search + filter controls (responsive) */}
+      <div className="flex items-center gap-2 px-3 md:px-5 py-2 border-b bg-white shrink-0 flex-wrap lg:flex-nowrap">
+        {/* Search bar — full width on mobile, narrower on tablet+ */}
+        <div className="relative w-full lg:w-48">
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search countries…"
-            className="w-full px-3 py-2 pr-8 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors min-h-[44px]"
+            placeholder="Search…"
+            className="w-full px-3 py-2 pr-8 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors h-9"
           />
           {search && (
             <button
               onClick={() => setSearch("")}
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm leading-none p-1"
-              title="Clear search"
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm p-0.5"
+              title="Clear"
             >
               ✕
             </button>
           )}
         </div>
 
-        <button
-          onClick={() => setFiltersOpen((o) => !o)}
-          className={`flex items-center gap-1 px-3 py-2 text-[11px] font-semibold rounded-lg transition-colors min-h-[44px] shrink-0 ${
-            filtersOpen || hasFilters
-              ? "bg-blue-50 text-blue-700 border border-blue-200"
-              : "text-gray-500 hover:bg-gray-100 border border-gray-200"
-          }`}
-        >
-          🔍 Filters
-          {hasFilters && <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />}
-        </button>
+        {/* Toggles: compact row (grows on larger screens) */}
+        <div className="flex items-center gap-1 flex-wrap lg:flex-nowrap">
+          {/* View mode toggle */}
+          <div className="flex items-center gap-0.5 bg-gray-100 rounded-lg p-0.5 shrink-0">
+            {["all", "combo", "solo"].map((m) => (
+              <button
+                key={m}
+                onClick={() => setViewMode(m as ViewMode)}
+                className={`px-2 py-1 text-[10px] font-semibold rounded transition-colors h-7 ${
+                  viewMode === m
+                    ? "bg-white text-blue-700 shadow-sm"
+                    : "text-gray-500 hover:text-gray-700"
+                }`}
+                title={m === "all" ? "All trips" : m === "combo" ? "Combo trips" : "Solo trips"}
+              >
+                {m === "all" ? "All" : m === "combo" ? "Combo" : "Solo"}
+              </button>
+            ))}
+          </div>
 
-        {hasFilters && (
+          {/* Visited toggle */}
+          <div className="flex items-center gap-0.5 bg-gray-100 rounded-lg p-0.5 shrink-0">
+            {["all", "completed", "in-progress", "not-started"].map((m) => (
+              <button
+                key={m}
+                onClick={() => setVisitedMode(m as VisitedMode)}
+                className={`px-1.5 py-1 text-[9px] font-semibold rounded transition-colors h-7 ${
+                  visitedMode === m
+                    ? "bg-white text-blue-700 shadow-sm"
+                    : "text-gray-500 hover:text-gray-700"
+                }`}
+                title={m === "all" ? "All" : m === "completed" ? "Completed" : m === "in-progress" ? "In progress" : "Not started"}
+              >
+                {m === "all" ? "All" : m === "completed" ? "✓" : m === "in-progress" ? "▶" : "○"}
+              </button>
+            ))}
+          </div>
+
+          {/* Region filter + more toggle */}
           <button
-            onClick={() => { setSearch(""); setViewMode("all"); setVisitedMode("all"); setRegionFilter("all"); }}
-            className="text-[10px] text-red-500 hover:text-red-700 font-medium"
+            onClick={() => setFiltersOpen((o) => !o)}
+            className={`flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg transition-colors h-7 shrink-0 ${
+              filtersOpen || hasFilters
+                ? "bg-blue-50 text-blue-700 border border-blue-200"
+                : "text-gray-500 hover:bg-gray-100 border border-gray-200"
+            }`}
+            title="More filters"
           >
-            Clear
+            ⚙️
+            {hasFilters && <span className="w-1 h-1 rounded-full bg-blue-500" />}
           </button>
-        )}
 
-        {/* Stats popup — mobile only */}
-        <div className="md:hidden relative shrink-0">
+          {/* Stats icon */}
           <button
             onClick={() => setStatsOpen((o) => !o)}
-            className={`flex items-center px-2 py-2 rounded-lg transition-colors min-h-[44px] border ${
+            className={`flex items-center px-2 py-1 rounded-lg transition-colors h-7 shrink-0 border ${
               statsOpen ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-500 hover:bg-gray-100 border-gray-200"
             }`}
             title="View stats"
           >
             📊
           </button>
-          {statsOpen && (
-            <>
-              <div className="fixed inset-0 z-40 bg-black/20" onClick={() => setStatsOpen(false)} />
-              <div className="fixed left-3 right-3 bottom-3 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-4">
-                <div className="flex items-center justify-between mb-3">
-                  <p className="text-sm font-semibold text-slate-700">Travel Progress</p>
-                  <button onClick={() => setStatsOpen(false)} className="text-gray-400 hover:text-gray-600 p-1">✕</button>
-                </div>
 
-                {/* Visited progress */}
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-2xl font-black text-slate-800">{totalVisited}</span>
-                    <span className="text-sm text-slate-400">/ {uniqueCountries}</span>
-                  </div>
-                  <div className="flex-1">
-                    <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
-                      <div
-                        className="h-full rounded-full bg-emerald-400 transition-all duration-500"
-                        style={{ width: `${uniqueCountries > 0 ? (totalVisited / uniqueCountries) * 100 : 0}%` }}
-                      />
-                    </div>
-                    <p className="text-[9px] text-slate-400 mt-0.5">destinations visited</p>
-                  </div>
-                </div>
+          {/* Layout toggle */}
+          <button
+            onClick={() => setLayout(layout === "grid" ? "list" : "grid")}
+            className="flex items-center px-2 py-1 text-gray-500 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors h-7 shrink-0"
+            title={layout === "grid" ? "Switch to list" : "Switch to grid"}
+          >
+            {layout === "grid" ? "▦" : "≡"}
+          </button>
 
-                {/* Stat chips */}
-                <div className="flex flex-wrap gap-2 mb-3">
-                  <span className="text-[11px] text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full">
-                    <span className="font-bold text-slate-700">{trips.length}</span> trips
-                  </span>
-                  <span className="text-[11px] text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full">
-                    <span className="font-bold text-slate-700">{uniqueRegions}</span> regions
-                  </span>
-                  <span className="text-[11px] text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full">
-                    <span className="font-bold text-slate-700">{tripsCompleted}</span> completed
-                  </span>
-                </div>
-
-                {/* Best month */}
-                {bestMonth && (
-                  <div className="flex items-center gap-1.5 text-xs text-slate-500 bg-amber-50 px-3 py-2 rounded-lg">
-                    <span>☀️</span>
-                    <span>Best month: <span className="font-bold text-slate-700">{bestMonth.month}</span></span>
-                    <span className="text-[9px] text-slate-400">({bestMonth.count} destinations)</span>
-                  </div>
-                )}
-              </div>
-            </>
+          {/* New trip button */}
+          {isEnabled("tripGroups") && (
+            <button
+              onClick={() => { setCreatingNew(true); setEditingMain(null); }}
+              className="flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors h-7 shrink-0 ml-auto lg:ml-0"
+              title="Create new trip"
+            >
+              ➕
+              <span className="hidden sm:inline">Trip</span>
+            </button>
           )}
-        </div>
-
-        <div className="ml-auto shrink-0 flex items-center gap-0.5 bg-gray-100 rounded-lg p-0.5">
-          <button onClick={() => setLayout("list")} title="List view"
-            className={`px-2 py-1 rounded text-xs font-semibold transition-colors ${layout === "list" ? "bg-white text-blue-700 shadow-sm" : "text-gray-400 hover:text-gray-600"}`}>
-            ☰
-          </button>
-          <button onClick={() => setLayout("grid")} title="Grid view"
-            className={`px-2 py-1 rounded text-xs font-semibold transition-colors ${layout === "grid" ? "bg-white text-blue-700 shadow-sm" : "text-gray-400 hover:text-gray-600"}`}>
-            ▦
-          </button>
         </div>
       </div>
 
-      {/* Expandable filter panel */}
-      {filtersOpen && (
-        <div className="flex items-center gap-3 px-5 py-2 border-b bg-slate-50 shrink-0 overflow-x-auto">
-          <PillGroup
-            options={[
-              { key: "all", label: "All" },
-              { key: "combo", label: "Combo" },
-              { key: "solo", label: "Solo" },
-            ]}
-            value={viewMode}
-            onChange={(v) => setViewMode(v as ViewMode)}
-          />
-
-          <div className="h-5 w-px bg-gray-200 shrink-0" />
-
-          <PillGroup
-            options={[
-              { key: "all", label: "Any" },
-              { key: "not-started", label: "Not Started" },
-              { key: "in-progress", label: "In Progress" },
-              { key: "completed", label: "Completed" },
-            ]}
-            value={visitedMode}
-            onChange={(v) => setVisitedMode(v as VisitedMode)}
-          />
-
-          <div className="h-5 w-px bg-gray-200 shrink-0" />
-
-          <PillGroup
-            options={[
-              { key: "all", label: "🌍 All" },
-              ...ALL_REGIONS.map((r) => ({ key: r, label: r })),
-            ]}
+      {/* Collapsible filter panel — only shows when open or active filters */}
+      {(filtersOpen || hasFilters) && (
+        <div className="px-3 md:px-5 py-2 bg-blue-50 border-b border-blue-100 shrink-0 flex items-center gap-3 flex-wrap">
+          {/* Region selector */}
+          <select
             value={regionFilter}
-            onChange={(v) => setRegionFilter(v as Region | "all")}
-          />
+            onChange={(e) => setRegionFilter(e.target.value as Region | "all")}
+            className="px-2 py-1 text-xs rounded-lg border border-blue-200 bg-white text-slate-700 focus:outline-none h-7"
+          >
+            <option value="all">All regions</option>
+            {ALL_REGIONS.map((r) => (
+              <option key={r} value={r}>{r}</option>
+            ))}
+          </select>
+
+          {/* Visited filter from parent */}
+          {visitedFilter !== undefined && visitedFilter !== "all" && (
+            <span className="text-xs text-slate-600 bg-white px-2 py-1 rounded-lg border border-blue-200">
+              {visitedFilter === "visited" ? "✓ Visited only" : "○ Unvisited only"}
+            </span>
+          )}
+
+          {/* Clear button */}
+          {hasFilters && (
+            <button
+              onClick={() => { setSearch(""); setViewMode("all"); setVisitedMode("all"); setRegionFilter("all"); }}
+              className="ml-auto text-[10px] text-red-600 hover:text-red-700 font-semibold px-2 py-1"
+            >
+              ✕ Clear
+            </button>
+          )}
+
+          {/* Close button on mobile */}
+          <button
+            onClick={() => setFiltersOpen(false)}
+            className="lg:hidden text-xs text-gray-500 hover:text-gray-700 font-semibold"
+          >
+            Done
+          </button>
         </div>
       )}
 
+      {/* Stats modal */}
+      {statsOpen && (
+        <>
+          <div className="fixed inset-0 z-40 bg-black/20" onClick={() => setStatsOpen(false)} />
+          <div className="fixed left-3 right-3 bottom-3 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-4">
+            <div className="flex items-center justify-between mb-3">
+              <p className="text-sm font-semibold text-slate-700">Travel Progress</p>
+              <button onClick={() => setStatsOpen(false)} className="text-gray-400 hover:text-gray-600 p-1">✕</button>
+            </div>
+
+            {/* Visited progress */}
+            <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-baseline gap-1">
+                <span className="text-2xl font-black text-slate-800">{totalVisited}</span>
+                <span className="text-sm text-slate-400">/ {uniqueCountries}</span>
+              </div>
+              <div className="flex-1">
+                <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                  <div
+                    className="h-full rounded-full bg-emerald-400 transition-all duration-500"
+                    style={{ width: `${uniqueCountries > 0 ? (totalVisited / uniqueCountries) * 100 : 0}%` }}
+                  />
+                </div>
+                <p className="text-[9px] text-slate-400 mt-0.5">destinations visited</p>
+              </div>
+            </div>
+
+            {/* Stat chips */}
+            <div className="flex flex-wrap gap-2 mb-3">
+              <span className="text-[11px] text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full">
+                <span className="font-bold text-slate-700">{trips.length}</span> trips
+              </span>
+              <span className="text-[11px] text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full">
+                <span className="font-bold text-slate-700">{uniqueRegions}</span> regions
+              </span>
+              <span className="text-[11px] text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full">
+                <span className="font-bold text-slate-700">{tripsCompleted}</span> completed
+              </span>
+            </div>
+
+            {/* Best month */}
+            {bestMonth && (
+              <div className="flex items-center gap-1.5 text-xs text-slate-500 bg-amber-50 px-3 py-2 rounded-lg">
+                <span>☀️</span>
+                <span>Best month: <span className="font-bold text-slate-700">{bestMonth.month}</span></span>
+                <span className="text-[9px] text-slate-400">({bestMonth.count} destinations)</span>
+              </div>
+            )}
+
+            {/* Next trip quick action */}
+            {nextTrip && (
+              <button
+                onClick={() => { setStatsOpen(false); onSelect(nextTrip.main); }}
+                className="w-full mt-3 flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 rounded-lg text-white transition-all"
+              >
+                <span>🎯</span>
+                <span className="text-xs font-semibold">{nextTrip.main.name}</span>
+              </button>
+            )}
+          </div>
+        </>
+      )}
+
       {/* Trip cards — grouped by section */}
-      <div className="flex-1 overflow-y-auto px-5 py-4">
+      <div className="flex-1 overflow-y-auto px-3 md:px-5 py-3 md:py-4">
         <div className="max-w-5xl mx-auto space-y-6">
           {/* Create new trip form */}
           {creatingNew && (
