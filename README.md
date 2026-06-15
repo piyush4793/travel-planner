@@ -185,13 +185,13 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 
 ## Tech Stack
 
-Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 243 tests across 29 files, including hook state, backup import flows, trip-group merging, route-building utilities, and wiki/Wikipedia API mocks.
+Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 271 tests across 30 files, including hook state, LLM provider mocking, backup/restore flows, import parsing, trip-group merging, and route-building utilities.
 
 ### Testing & Coverage
 
 | Command | Description |
 |---|---|
-| `npm test` | Run all 243 tests |
+| `npm test` | Run all 271 tests |
 | `npm run test:watch` | Watch mode |
 | `npm run test:coverage` | V8 coverage → terminal + `coverage/index.html` (HTML report) |
 | `npm run test:ui` | Vitest browser UI |

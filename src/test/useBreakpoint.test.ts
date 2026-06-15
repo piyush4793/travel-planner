@@ -83,4 +83,21 @@ describe("useBreakpoint — P0", () => {
 
     expect(result.current).toBe("tablet");
   });
+
+  it("reacts across mobile, tablet, and desktop breakpoint changes", () => {
+    const media = installMatchMedia({ tablet: false, desktop: false });
+    const { result } = renderHook(() => useBreakpoint());
+
+    expect(result.current).toBe("mobile");
+
+    act(() => {
+      media.emit({ tablet: true, desktop: false });
+    });
+    expect(result.current).toBe("tablet");
+
+    act(() => {
+      media.emit({ tablet: true, desktop: true });
+    });
+    expect(result.current).toBe("desktop");
+  });
 });

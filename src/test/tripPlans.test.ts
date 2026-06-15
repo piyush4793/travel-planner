@@ -90,6 +90,28 @@ describe("tripPlans — P0", () => {
       const plan = generateTripPlan(COUNTRY_WITH_CITIES, "custom", [], 7);
       expect(plan.note).toBeTruthy();
     });
+
+    it("uses the generic fallback entry when no cities are selected and zero days are requested", () => {
+      const plan = generateTripPlan(COUNTRY_NO_CITIES, "custom", [], 0);
+
+      expect(plan.days).toHaveLength(1);
+      expect(plan.days[0].label).toContain("Your Trip");
+    });
+
+    it("adds deeper exploration and final days entries for longer generic custom trips", () => {
+      const twoWeeks = generateTripPlan(COUNTRY_NO_CITIES, "custom", [], 14);
+      const threeWeeks = generateTripPlan(COUNTRY_NO_CITIES, "custom", [], 21);
+
+      expect(twoWeeks.days.some((day) => day.label.includes("Deeper Exploration"))).toBe(true);
+      expect(threeWeeks.days.some((day) => day.label.includes("Final Days"))).toBe(true);
+    });
+
+    it("warns when custom city selections are tighter than the available days", () => {
+      const plan = generateTripPlan(COUNTRY_WITH_CITIES, "custom", ["CityA", "CityB", "CityC"], 2);
+
+      expect(plan.warning).toContain("tight");
+      expect(plan.duration).toBe("3 days");
+    });
   });
 
   describe("touch-and-go style", () => {
@@ -110,6 +132,17 @@ describe("tripPlans — P0", () => {
       expect(plan.days).toHaveLength(4);
       expect(plan.duration).toBe("7 – 12 days");
     });
+
+    it("warns when too many cities are packed into explorer mode", () => {
+      const plan = generateTripPlan(
+        COUNTRY_WITH_CITIES,
+        "explorer" as never,
+        ["CityA", "CityB", "CityC", "CityD", "CityE", "CityF", "CityG", "CityH", "CityI"],
+        10,
+      );
+
+      expect(plan.warning).toContain("rushed");
+    });
   });
 
   describe("month-long style", () => {
@@ -119,6 +152,20 @@ describe("tripPlans — P0", () => {
       expect(plan.days).toHaveLength(4);
       expect(plan.duration).toMatch(/30/);
     });
+
+    it("uses city-based month-long planning when specific cities are selected", () => {
+      const plan = generateTripPlan(COUNTRY_WITH_CITIES, "immersive" as never, ["CityA", "CityB"], 30);
+
+      expect(plan.duration).toBe("30 days");
+      expect(plan.days).toHaveLength(2);
+      expect(plan.days.every((day) => /CityA|CityB/.test(day.label))).toBe(true);
+    });
+  });
+
+  it("formats generic plan cost ranges as rupee ranges", () => {
+    const plan = generateTripPlan(COUNTRY_WITH_CITIES, "explorer" as never, [], 10);
+
+    expect(plan.costPerPerson).toMatch(/^₹\d+(?:\.\d)?[KL] – ₹\d+(?:\.\d)?[KL]$/);
   });
 
   describe("custom style with selected cities", () => {

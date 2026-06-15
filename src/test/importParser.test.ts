@@ -1,10 +1,10 @@
-import { describe, it, expect } from "vitest";
-import { parseImportedText } from "../utils/importParser";
+import { describe, expect, it } from "vitest";
+import { fetchChatLink, importResultToLLM, parseImportedText } from "../utils/importParser";
+import type { LLMTripPlanResult } from "../core/utils/ai/llmTransform";
 
 describe("importParser — P1", () => {
-  it("returns error for empty text", () => {
-    const r = parseImportedText("");
-    expect("error" in r).toBe(true);
+  it("returns a clear error for empty text", () => {
+    expect(parseImportedText("")).toEqual({ error: "Please paste some text to import." });
   });
 
   it("returns error for unrecognizable text", () => {
@@ -12,95 +12,129 @@ describe("importParser — P1", () => {
     expect("error" in r).toBe(true);
   });
 
-  it("parses structured day-by-day itinerary", () => {
+  it("parses structured day-by-day text and derives destination and cities", () => {
     const text = [
-      "Day 1 — Oslo: Visit Vigeland Park, Oslo Opera House, Aker Brygge",
-      "Day 2 — Oslo: Viking Museum, National Museum, Holmenkollen",
-      "Day 3 — Bergen: Bryggen Wharf, Floyen funicular, Fish Market",
-      "Day 4 — Flam: Flam Railway, Naeroyfjord cruise",
-      "Day 5 — Tromso: Arctic Cathedral, Northern Lights tour",
+      "Trip to Japan",
+      "Day 1 — Tokyo: Visit Shibuya, Explore Akihabara",
+      "Day 2 — Kyoto: Fushimi Inari, Bamboo forest",
+      "Day 3 — Osaka: Street food, Dotonbori",
     ].join("\n");
+
     const r = parseImportedText(text);
+
     expect("error" in r).toBe(false);
     if ("error" in r) return;
-    expect(r.durationDays).toBe(5);
-    expect(r.cities.length).toBeGreaterThanOrEqual(3);
-    expect(r.plan.days.length).toBe(5);
+    expect(r.destinationName).toContain("Japan");
+    expect(r.durationDays).toBe(3);
+    expect(r.cities).toEqual(["Tokyo", "Kyoto", "Osaka"]);
+    expect(r.plan.days).toHaveLength(3);
+    expect(r.plan.days[0]).toEqual({
+      label: "Day 1 — Tokyo",
+      activities: ["Visit Shibuya", "Explore Akihabara"],
+    });
   });
 
-  it("generates prompt suggestions for sparse plan", () => {
-    const text = "Day 1 — Paris: Eiffel Tower\nDay 2 — Paris: Louvre";
-    const r = parseImportedText(text);
-    expect("error" in r).toBe(false);
-    if ("error" in r) return;
-    expect(r.warnings.length).toBeGreaterThan(0);
-    expect(r.promptSuggestions.length).toBeGreaterThan(0);
+  it("parses valid LLM JSON and converts imported results back to the LLM format", () => {
+    const jsonText = JSON.stringify({
+      destinationName: "Japan",
+      originCountry: "India",
+      travelers: 2,
+      durationDays: 5,
+      budgetLevel: "mid-range",
+      assumptions: [],
+      cities: [
+        { name: "Tokyo", lat: 35.6, lng: 139.7, nights: 3 },
+        { name: "Kyoto", lat: 35.0, lng: 135.7, nights: 1 },
+        { name: "Osaka", lat: 34.7, lng: 135.5, nights: 1 },
+      ],
+      meta: { bestMonths: [], worstMonths: [], thingsToAvoid: [], comboCountries: [], highlights: [] },
+      plan: {
+        duration: "5 days",
+        costPerPerson: "$1000-1500",
+        days: [
+          { label: "Day 1 — Tokyo", activities: ["Visit temple", "Evening walk"] },
+          { label: "Day 2 — Tokyo", activities: ["Museum tour"] },
+          { label: "Day 3 — Kyoto", activities: ["Fushimi Inari"] },
+        ],
+        note: "Great trip",
+      },
+    } satisfies LLMTripPlanResult);
+
+    const parsed = parseImportedText(jsonText);
+
+    expect("error" in parsed).toBe(false);
+    if ("error" in parsed) return;
+    expect(parsed.destinationName).toBe("Japan");
+    expect(parsed.durationDays).toBe(5);
+    expect(parsed.cities).toEqual(["Tokyo", "Kyoto", "Osaka"]);
+    expect(parsed.plan.costPerPerson).toBe("$1000-1500");
+
+    const llm = importResultToLLM(parsed, "India");
+    expect(llm.destinationName).toBe("Japan");
+    expect(llm.originCountry).toBe("India");
+    expect(llm.durationDays).toBe(5);
+    expect(llm.assumptions).toContain("Imported from external AI conversation");
+    expect(llm.cities).toHaveLength(3);
+    expect(llm.plan.days[0].label).toBe("Day 1 — Tokyo");
   });
 
-  it("extracts itinerary from full chat conversation", () => {
+  it("adds a no-budget warning when imported text has no cost information", () => {
     const text = [
-      "User: Plan a 5-day trip to Japan",
-      "Assistant: Here is your itinerary:",
-      "Day 1 — Tokyo: Shibuya crossing, Meiji Shrine",
-      "Day 2 — Tokyo: Tsukiji Market, Senso-ji Temple",
-      "Day 3 — Kyoto: Fushimi Inari, Kinkaku-ji",
-      "Day 4 — Kyoto: Nara day trip, deer park",
-      "Day 5 — Osaka: Dotonbori, Osaka Castle",
-      "User: Thanks!",
+      "Trip to Norway",
+      "Day 1 — Oslo: Vigeland Park, Opera House",
+      "Day 2 — Bergen: Bryggen, Floyen",
+      "Day 3 — Flam: Railway, Fjord cruise",
     ].join("\n");
-    const r = parseImportedText(text);
-    expect("error" in r).toBe(false);
-    if ("error" in r) return;
-    expect(r.durationDays).toBe(5);
-    expect(r.cities.length).toBeGreaterThanOrEqual(2);
-  });
 
-  it("suggests budget prompt when cost is missing", () => {
-    const text = "Day 1 — Rome: Colosseum\nDay 2 — Rome: Vatican\nDay 3 — Florence: Uffizi";
     const r = parseImportedText(text);
+
     expect("error" in r).toBe(false);
     if ("error" in r) return;
     expect(r.plan.costPerPerson).toBe("Not specified");
-    expect(r.promptSuggestions.some((s) => s.toLowerCase().includes("budget"))).toBe(true);
+    expect(r.warnings).toContain("No budget/cost information found");
+    expect(r.promptSuggestions.some((s) => s.includes("estimated budget"))).toBe(true);
   });
 
-  it("cleans ARRIVE IN / RETURN from city names", () => {
+  it("extracts itinerary from chat-style text with user and assistant labels", () => {
     const text = [
-      "Day 1 — ARRIVE IN OSLO",
-      "Karl Johans Gate, Oslo Opera House",
-      "Day 2 — OSLO",
-      "Viking Museum, Holmenkollen",
-      "Day 3 — BERGEN",
-      "Bryggen Wharf, Fish Market",
-      "Day 4 — RETURN",
-      "Fly back home",
+      "User: Plan a trip to Japan",
+      "Assistant: Sure — here's a draft.",
+      "Day 1 — Tokyo: Shibuya crossing, Meiji Shrine",
+      "Day 2 — Kyoto: Fushimi Inari, Kinkaku-ji",
+      "Day 3 — Osaka: Dotonbori, Osaka Castle",
+      "User: Can you make it cheaper?",
     ].join("\n");
+
     const r = parseImportedText(text);
+
     expect("error" in r).toBe(false);
     if ("error" in r) return;
-    // "ARRIVE IN OSLO" should become "OSLO", "RETURN" should be skipped
-    expect(r.cities).not.toContain("ARRIVE IN OSLO");
-    expect(r.cities).not.toContain("RETURN");
-    expect(r.cities).toContain("OSLO");
-    expect(r.cities).toContain("BERGEN");
+    expect(r.durationDays).toBe(3);
+    expect(r.cities).toEqual(["Tokyo", "Kyoto", "Osaka"]);
   });
 
-  it("filters noise lines like Stay:, Activities:, Time required:", () => {
+  it("cleans ARRIVE IN / RETURN from city names and filters noise lines", () => {
     const text = [
-      "Day 1 — Oslo",
+      "trip to Norway itinerary",
+      "Day 1 — ARRIVE IN OSLO",
       "Stay: Grand Hotel Oslo",
       "Activities:",
       "Oslo Opera House",
       "Karl Johans Gate",
+      "Day 2 — BERGEN",
       "Time required: Half day",
-      "Day 2 — Bergen",
-      "Stay: Bergen Bors Hotel",
       "Bryggen Wharf",
       "Floyen funicular",
+      "Day 3 — RETURN",
+      "Fly back home",
     ].join("\n");
+
     const r = parseImportedText(text);
+
     expect("error" in r).toBe(false);
     if ("error" in r) return;
+    expect(r.destinationName).toContain("Norway itinerary");
+    expect(r.cities).toEqual(["OSLO", "BERGEN"]);
     const allActivities = r.plan.days.flatMap((d) => d.activities);
     expect(allActivities).not.toContain("Stay: Grand Hotel Oslo");
     expect(allActivities).not.toContain("Activities:");
@@ -109,16 +143,24 @@ describe("importParser — P1", () => {
     expect(allActivities).toContain("Bryggen Wharf");
   });
 
-  it("derives destination name from trip context", () => {
+  it("derives Norway as the destination from trip phrasing", () => {
     const text = [
-      "Here is your 5-day trip to Norway itinerary:",
+      "Here is your trip to Norway plan:",
       "Day 1 — Oslo: Visit Vigeland Park",
       "Day 2 — Bergen: Bryggen Wharf",
       "Day 3 — Flam: Flam Railway",
     ].join("\n");
+
     const r = parseImportedText(text);
+
     expect("error" in r).toBe(false);
     if ("error" in r) return;
-    expect(r.destinationName.toLowerCase()).toContain("norway");
+    expect(r.destinationName).toContain("Norway");
+  });
+
+  it("rejects invalid share links before fetching", async () => {
+    await expect(fetchChatLink("https://example.com/not-a-share-link")).resolves.toEqual({
+      error: "Please paste a valid ChatGPT or Claude share link (https://chatgpt.com/share/... or https://claude.ai/share/...)",
+    });
   });
 });
