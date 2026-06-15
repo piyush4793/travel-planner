@@ -5,6 +5,7 @@ import type { TripPlan, DayEntry } from "../../utils/tripPlans";
 import { extractCityFromLabel } from "../../utils/tripPlans";
 import type { CountryRule } from "../../data/itineraryRules";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../utils/transport";
+import { buildRoute } from "../../utils/googleMapsRoute";
 
 // ─── Day grouping ─────────────────────────────────────────────────────────────
 
@@ -199,6 +200,8 @@ function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: Coun
     ? cityRule.days.find((d) => d.theme === day.theme)
     : undefined;
 
+  const routeInfo = buildRoute(day.activities, city);
+
   return (
     <div className="border border-slate-150 rounded-xl overflow-hidden shadow-sm">
       <button
@@ -219,6 +222,18 @@ function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: Coun
             {day.theme}
           </span>
         )}
+        {routeInfo && (
+          <a
+            href={routeInfo.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="text-[9px] font-semibold text-blue-500 bg-blue-50 hover:bg-blue-100 px-2 py-0.5 rounded-full shrink-0 transition-colors"
+            title="Open day route in Google Maps"
+          >
+            🗺️ Route
+          </a>
+        )}
       </button>
 
       <div className={`grid transition-all duration-200 ease-out ${expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
@@ -227,9 +242,14 @@ function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: Coun
             <ul className="space-y-2">
               {day.activities.map((a, ai) => {
                 const parsed = parseActivity(a);
+                const letter = routeInfo?.labels.get(ai);
                 return (
                   <li key={ai} className="flex gap-2.5 leading-snug group">
-                    <span className="text-slate-300 shrink-0 mt-0.5 text-sm">›</span>
+                    {letter ? (
+                      <span className="w-[18px] h-[18px] rounded-full bg-blue-500 text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{letter}</span>
+                    ) : (
+                      <span className="text-slate-300 shrink-0 mt-0.5 text-sm">›</span>
+                    )}
                     <span className="text-sm text-slate-700 flex-1">
                       {parsed.name}
                       {parsed.cost && (

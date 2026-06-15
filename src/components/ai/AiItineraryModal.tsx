@@ -2,6 +2,7 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import type { LLMTripPlanResult, LLMDayEntry, LLMCityInfo } from "../../utils/ai/llmTransform";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../utils/transport";
+import { buildRoute } from "../../utils/googleMapsRoute";
 import type { SavedAiPlan } from "../../hooks/useAiPlanStore";
 import { formatPlanLabel } from "../../utils/planDiff";
 
@@ -174,7 +175,9 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
 
               {/* Day cards */}
               <div className="px-6 pb-2 space-y-3">
-                {group.days.map((day, di) => (
+                {group.days.map((day, di) => {
+                  const route = buildRoute(day.activities, group.name);
+                  return (
                   <div key={di} className="border border-slate-150 rounded-xl overflow-hidden shadow-sm itinerary-day"
                     style={{ animationDelay: `${(gi * 3 + di) * 75}ms` }}>
 
@@ -187,6 +190,17 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
                           {day.theme}
                         </span>
                       )}
+                      {route && (
+                        <a
+                          href={route.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[9px] font-semibold text-blue-500 bg-blue-50 hover:bg-blue-100 px-2 py-0.5 rounded-full shrink-0 transition-colors"
+                          title="Open day route in Google Maps"
+                        >
+                          🗺️ Route
+                        </a>
+                      )}
                     </div>
 
                     <div className="px-4 py-3">
@@ -194,9 +208,14 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
                         {day.activities.map((a, ai) => {
                           const [main, ...rest] = a.split(" — ");
                           const detail = rest.join(" — ");
+                          const letter = route?.labels.get(ai);
                           return (
                             <li key={ai} className="flex gap-2.5 leading-snug">
-                              <span className="text-slate-300 shrink-0 mt-0.5 text-sm">›</span>
+                              {letter ? (
+                                <span className="w-[18px] h-[18px] rounded-full bg-blue-500 text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{letter}</span>
+                              ) : (
+                                <span className="text-slate-300 shrink-0 mt-0.5 text-sm">›</span>
+                              )}
                               <span className="text-sm text-slate-700 flex-1">
                                 {main}
                                 {detail && (
@@ -257,7 +276,8 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
                       )}
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ))}
