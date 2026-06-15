@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useChatSession } from "../../hooks/useChatSession";
-import type { LLMTripPlanResult } from "../../utils/ai/llmTransform";
+import type { LLMTripPlanResult } from "../../core/utils/ai/llmTransform";
 import { getLLMKeys, getActiveProvider } from "./SettingsModal";
 import { parseImportedText, fetchChatLink, importResultToLLM, type ImportResult } from "../../utils/importParser";
 import { estimateCost, formatCost, PROVIDER_PRICING } from "../../utils/ai/llmProvider";

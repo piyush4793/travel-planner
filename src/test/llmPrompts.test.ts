@@ -5,8 +5,8 @@ import {
   defaultBrief,
   buildFinalizationPrompt,
   buildBriefSummary,
-} from "../utils/ai/llmPrompts";
-import type { ChatMessage, TripBrief } from "../types";
+} from "../core/utils/ai/llmPrompts";
+import type { ChatMessage, TripBrief } from "../core/types";
 
 describe("llmPrompts — P0", () => {
   describe("buildSystemPrompt", () => {

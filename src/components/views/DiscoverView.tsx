@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import type { CatalogEntry } from "../../types";
+import type { CatalogEntry } from "../../core/types";
 import PillGroup from "../shared/PillGroup";
 
 type Props = {

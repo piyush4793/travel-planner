@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { buildMergedTripGroups, type TripGroupDef } from "../data/tripGroups";
+import { buildMergedTripGroups, type TripGroupDef } from "../core/data/tripGroups";
 
 function findGroup(groups: TripGroupDef[], main: string) {
   return groups.find((group) => group.main === main);

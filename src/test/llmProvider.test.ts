@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { createProvider, PROVIDER_LABELS, validateKey } from "../utils/ai/llmProvider";
-import type { LLMProviderType } from "../types";
+import type { LLMProviderType } from "../core/types";
 
 describe("llmProvider — P1", () => {
   describe("createProvider factory", () => {

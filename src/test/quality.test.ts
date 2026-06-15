@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { extractPlanCities, isRealCity, normalizeCityName } from "../utils/tripPlans";
+import { extractPlanCities, isRealCity, normalizeCityName } from "../core/utils/tripPlans";
 import { estimateCost, formatCost, PROVIDER_PRICING } from "../utils/ai/llmProvider";
 import { parseImportedText } from "../utils/importParser";
 

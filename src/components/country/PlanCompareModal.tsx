@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import type { TripPlan } from "../../utils/tripPlans";
-import { extractPlanCities, isRealCity, normalizeCityName } from "../../utils/tripPlans";
+import type { TripPlan } from "../../core/utils/tripPlans";
+import { extractPlanCities, isRealCity, normalizeCityName } from "../../core/utils/tripPlans";
 
 type PlanOption = {
   id: string;

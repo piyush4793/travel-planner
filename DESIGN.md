@@ -19,7 +19,7 @@ For features, setup, and user-facing docs, see [README.md](./README.md).
 | State | **Custom hooks + localStorage** | No external state library |
 | Routing | **URL hash** | Zero deps, back/forward works |
 | Data | **Local JSON** | Ships with app, works offline |
-| Tests | **Vitest** | 169 tests across 16 files |
+| Tests | **Vitest** | 217 tests across 23 files |
 
 **Zero runtime dependencies** beyond React + MapLibre. No routing library, no state management library.
 
@@ -30,19 +30,53 @@ For features, setup, and user-facing docs, see [README.md](./README.md).
 ```
 src/
 ├── App.tsx                        # Root layout, view orchestration, state wiring
-├── types.ts                       # Shared TypeScript types
-├── index.css                      # Tailwind + 8 keyframe animations
+├── index.css                      # Tailwind + keyframe animations
 │
-├── hooks/
-│   ├── useCountryStore.ts         # Country CRUD, My List, seed + lazy enrichment
-│   ├── useTripStore.ts            # Trip group CRUD + seed merging
-│   ├── useAiPlanStore.ts          # AI plan persistence (max 3 per destination)
+├── core/                          # Platform-agnostic logic (no DOM/component deps)
+│   ├── types.ts                   # Shared TypeScript types
+│   ├── lsKeys.ts                  # Centralized localStorage key constants
+│   ├── featureFlags.ts            # Two-tier feature gate (free + paid)
+│   ├── storage.ts                 # StoragePort-backed load/save helpers
+│   ├── ports/
+│   │   └── StoragePort.ts         # Storage interface
+│   ├── adapters/
+│   │   └── WebStorageAdapter.ts   # localStorage implementation
+│   ├── hooks/
+│   │   ├── useCountryStore.ts     # Country CRUD, My List, seed + lazy enrichment
+│   │   ├── useTripStore.ts        # Trip group CRUD + seed merging
+│   │   ├── useAiPlanStore.ts      # AI plan persistence (max 3 per destination)
+│   │   └── usePersistedSet.ts     # Reusable Set<string> + storage persistence
+│   ├── data/
+│   │   ├── itineraryRules.ts      # Rule-backed itinerary types/data
+│   │   ├── tripGroups.ts          # Trip group seeds + merge helpers
+│   │   └── consolidatedCountry.ts # Lazy country-rule loader shared by hooks
+│   └── utils/
+│       ├── ai/
+│       │   ├── llmPrompts.ts      # System prompts + context condensation
+│       │   ├── llmSettings.ts     # LLM key/provider persistence helpers
+│       │   └── llmTransform.ts    # LLM JSON → TripPlan extraction + validation
+│       ├── tripPlans.ts           # Itinerary generation (rule engine + generic)
+│       ├── filterLogic.ts         # Pure filter functions (month/budget/experience/visited)
+│       ├── transport.ts           # TransportType enum, emoji map, detection
+│       ├── travelStyles.ts        # Travel style metadata (icons, colors)
+│       ├── googleMapsRoute.ts     # Google Maps Directions URL builder
+│       ├── planDiff.ts            # Plan summary + diff labels
+│       └── months.ts              # Month constants
+│
+├── hooks/                         # Web/browser hooks
 │   ├── useChatSession.ts          # LLM chat state machine
-│   ├── useCountryRule.ts          # Async per-country JSON loader + cache
-│   ├── usePersistedSet.ts         # Reusable Set<string> + localStorage
+│   ├── useCountryRule.ts          # React wrapper around consolidated-country loader
 │   ├── useHashView.ts             # Hash-based routing
 │   ├── useBreakpoint.ts           # Reactive breakpoint (mobile/tablet/desktop)
 │   └── usePanelDrag.ts            # Resizable panel drag behavior
+│
+├── utils/                         # Web/browser utilities
+│   ├── ai/
+│   │   └── llmProvider.ts         # LLM provider abstraction (OpenAI/Claude/Gemini)
+│   ├── pdfExport.ts               # Print-to-PDF via hidden iframe
+│   ├── importParser.ts            # Multi-strategy text/link plan parser
+│   ├── wikiImages.ts              # Wikimedia Commons image fetch + cache
+│   └── backup.ts                  # Full backup/restore, CSV/XLSX export/import
 │
 ├── components/
 │   ├── views/
@@ -69,29 +103,6 @@ src/
 │       ├── HomeCountrySelector.tsx# Home country dropdown
 │       ├── DevFlagPanel.tsx       # Dev-only feature flag panel
 │       └── Tooltip.tsx            # Portal-based tooltip
-│
-├── data/
-│   └── tripGroups.ts              # Trip group seeds
-│
-└── utils/
-    ├── ai/
-    │   ├── llmProvider.ts         # LLM provider abstraction (OpenAI/Claude/Gemini)
-    │   ├── llmPrompts.ts          # System prompts + context condensation
-    │   └── llmTransform.ts        # LLM JSON → TripPlan extraction + validation
-    ├── tripPlans.ts               # Itinerary generation (rule engine + generic)
-    ├── filterLogic.ts             # Pure filter functions (month/budget/experience/visited)
-    ├── transport.ts               # TransportType enum, emoji map, detection
-    ├── travelStyles.ts            # Travel style metadata (icons, colors)
-    ├── googleMapsRoute.ts         # Google Maps Directions URL builder
-    ├── pdfExport.ts               # Print-to-PDF via hidden iframe
-    ├── planDiff.ts                # Plan summary + diff labels
-    ├── importParser.ts            # Multi-strategy text/link plan parser
-    ├── wikiImages.ts              # Wikimedia Commons image fetch + cache
-    ├── backup.ts                  # Full backup/restore, CSV/XLSX export/import
-    ├── months.ts                  # Month constants
-    ├── lsKeys.ts                  # Centralized localStorage key constants
-    ├── featureFlags.ts            # Two-tier feature gate (free + paid)
-    └── storage.ts                 # localStorage read/write helpers
 
 data/
 ├── rules/
@@ -121,6 +132,10 @@ data/
 
 No Redux, no context providers. `App.tsx` calls hooks and passes results as props.
 
+### Core/web split
+
+`src/core/` owns reusable domain logic, storage-backed state, and pure utilities. Web-facing code depends on core via relative imports, while adapter seams (`StoragePort` + `WebStorageAdapter`) isolate browser persistence from the rest of the application.
+
 ### Seed + Overrides
 
 User edits stored as full objects in `tp_customs`. On load, customs override seed entries by name; `tp_deleted` tombstones removed seeds. Applied to both countries and trip groups.
@@ -138,7 +153,7 @@ All 198 manifest destinations currently ship with offline rule JSON coverage, bu
 
 ### Feature flags
 
-Two-tier gating lives in `src/utils/featureFlags.ts`. Paid features require both `paidFeatures=true` and the individual flag to be enabled.
+Two-tier gating lives in `src/core/featureFlags.ts`. Paid features require both `paidFeatures=true` and the individual flag to be enabled.
 
 | Flag | Default | Tier | Description |
 |---|---|---|---|
@@ -212,7 +227,7 @@ type LLMTripPlanResult = {
 
 ## Persistence
 
-All keys in `src/utils/lsKeys.ts` — never hardcode strings.
+All keys live in `src/core/lsKeys.ts` — never hardcode strings.
 
 | Key | Content |
 |---|---|

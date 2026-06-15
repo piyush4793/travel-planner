@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-import manifestData from "../../data/rules/index.json";
-import catalogData from "../../data/worldCatalog.json";
+import manifestData from "../../../data/rules/index.json";
+import catalogData from "../../../data/worldCatalog.json";
 import type { Country, CatalogEntry } from "../types";
-import { loadLS, saveLS } from "../utils/storage";
-import { LS_KEYS } from "../utils/lsKeys";
+import { loadLS, saveLS } from "../storage";
+import { LS_KEYS } from "../lsKeys";
 import { usePersistedSet } from "./usePersistedSet";
-import { loadConsolidatedCountry } from "./useCountryRule";
+import { loadConsolidatedCountry } from "../data/consolidatedCountry";
 
 type ManifestEntry = { name: string; lat: number; lng: number; region: string; inSeed: boolean; hasItinerary: boolean; recDays: number | null; maxDays: number | null };
 

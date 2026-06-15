@@ -1,4 +1,4 @@
-import type { ChatMessage, LLMProviderType, LLMChatResult, TokenUsage } from "../../types";
+import type { ChatMessage, LLMProviderType, LLMChatResult, TokenUsage } from "../../core/types";
 
 type LLMConfig = {
   model?: string;

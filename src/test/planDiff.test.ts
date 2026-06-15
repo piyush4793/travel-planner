@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { summarizePlan, formatPlanLabel } from "../utils/planDiff";
-import type { LLMTripPlanResult } from "../utils/ai/llmTransform";
+import { summarizePlan, formatPlanLabel } from "../core/utils/planDiff";
+import type { LLMTripPlanResult } from "../core/utils/ai/llmTransform";
 
 function makePlan(overrides: Partial<LLMTripPlanResult> = {}): LLMTripPlanResult {
   return {

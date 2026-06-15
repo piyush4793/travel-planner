@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { generateTripPlan, getMaxRuleDays, getRecRuleDays, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../utils/tripPlans";
-import type { Country } from "../types";
+import { generateTripPlan, getMaxRuleDays, getRecRuleDays, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../core/utils/tripPlans";
+import type { Country } from "../core/types";
 
 const COUNTRY_WITH_CITIES: Country = {
   name: "TestLand",

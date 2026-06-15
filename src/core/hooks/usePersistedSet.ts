@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { saveLS } from "../utils/storage";
+import { saveLS } from "../storage";
 
 /**
  * Persisted Set<string> backed by localStorage.

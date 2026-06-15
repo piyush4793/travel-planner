@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { buildRoute } from "../utils/googleMapsRoute";
+import { buildRoute } from "../core/utils/googleMapsRoute";
 
 describe("buildRoute — P0", () => {
   it("returns null for empty activities", () => {

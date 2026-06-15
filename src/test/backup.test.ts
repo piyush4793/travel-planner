@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { importFullBackup, csvEscape, csvCell, importCountriesCSV } from "../utils/backup";
-import { LS_KEYS } from "../utils/lsKeys";
-import type { Country } from "../types";
+import { LS_KEYS } from "../core/lsKeys";
+import type { Country } from "../core/types";
 
 function makeFile(contents: string, name: string, type: string) {
   return new File([contents], name, { type });

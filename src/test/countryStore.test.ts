@@ -1,18 +1,18 @@
 import { describe, it, expect, vi } from "vitest";
 import { renderHook, act, waitFor } from "@testing-library/react";
 import manifestData from "../../data/rules/index.json";
-import { LS_KEYS } from "../utils/lsKeys";
+import { LS_KEYS } from "../core/lsKeys";
 
 const { loadConsolidatedCountryMock } = vi.hoisted(() => ({
   loadConsolidatedCountryMock: vi.fn().mockResolvedValue(null),
 }));
 
-vi.mock("../hooks/useCountryRule", () => ({
+vi.mock("../core/data/consolidatedCountry", () => ({
   loadConsolidatedCountry: loadConsolidatedCountryMock,
 }));
 
-import { useCountryStore } from "../hooks/useCountryStore";
-import type { Country } from "../types";
+import { useCountryStore } from "../core/hooks/useCountryStore";
+import type { Country } from "../core/types";
 
 type ManifestEntry = { name: string; inSeed: boolean };
 

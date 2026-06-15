@@ -7,8 +7,8 @@ import {
   getBudgetTier,
   applyFilters,
   allUniqueExperiences,
-} from "../utils/filterLogic";
-import type { Country } from "../types";
+} from "../core/utils/filterLogic";
+import type { Country } from "../core/types";
 
 const COUNTRIES: Country[] = [
   {

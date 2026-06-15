@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { STYLE_META, TRAVEL_STYLES } from "../utils/travelStyles";
-import type { TravelStyle } from "../types";
+import { STYLE_META, TRAVEL_STYLES } from "../core/utils/travelStyles";
+import type { TravelStyle } from "../core/types";
 
 describe("travelStyles — P0", () => {
   it("TRAVEL_STYLES contains exactly 3 styles", () => {

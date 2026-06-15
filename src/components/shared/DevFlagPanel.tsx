@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { getFeatureFlags, setFeatureFlag, PAID_FLAGS, type FeatureFlags } from "../../utils/featureFlags";
+import { getFeatureFlags, setFeatureFlag, PAID_FLAGS, type FeatureFlags } from "../../core/featureFlags";
 
 const IS_DEV = typeof window !== "undefined" &&
   (window.location.hostname === "localhost" ||

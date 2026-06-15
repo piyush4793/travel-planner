@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import type { Country } from "../../types";
+import type { Country } from "../../core/types";
 import { getWikiImage } from "../../utils/wikiImages";
 
 type Props = {

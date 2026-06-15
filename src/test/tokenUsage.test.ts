@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import type { TokenUsage, LLMChatResult } from "../types";
+import type { TokenUsage, LLMChatResult } from "../core/types";
 import { estimateCost, formatCost, PROVIDER_PRICING } from "../utils/ai/llmProvider";
 
 describe("TokenUsage type — P0", () => {

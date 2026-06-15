@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
-import type { LLMTripPlanResult, LLMDayEntry, LLMCityInfo } from "../../utils/ai/llmTransform";
-import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../utils/transport";
-import { buildRoute } from "../../utils/googleMapsRoute";
-import type { SavedAiPlan } from "../../hooks/useAiPlanStore";
-import { formatPlanLabel } from "../../utils/planDiff";
+import type { LLMTripPlanResult, LLMDayEntry, LLMCityInfo } from "../../core/utils/ai/llmTransform";
+import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../core/utils/transport";
+import { buildRoute } from "../../core/utils/googleMapsRoute";
+import type { SavedAiPlan } from "../../core/hooks/useAiPlanStore";
+import { formatPlanLabel } from "../../core/utils/planDiff";
 
 type CityGroup = {
   name: string;

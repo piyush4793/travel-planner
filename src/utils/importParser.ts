@@ -1,5 +1,5 @@
-import { extractTripPlanResult, type LLMTripPlanResult, type LLMTripPlan } from "./ai/llmTransform";
-import type { TripPlan, DayEntry } from "./tripPlans";
+import { extractTripPlanResult, type LLMTripPlanResult, type LLMTripPlan } from "../core/utils/ai/llmTransform";
+import type { TripPlan, DayEntry } from "../core/utils/tripPlans";
 
 export type ImportResult = {
   plan: TripPlan;

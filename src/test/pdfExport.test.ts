@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import type { TripPlan } from "../utils/tripPlans";
-import type { Country } from "../types";
+import type { TripPlan } from "../core/utils/tripPlans";
+import type { Country } from "../core/types";
 
 // We can't test actual window.print() in jsdom, but we can test the
 // module exports and that the function doesn't throw with valid input.

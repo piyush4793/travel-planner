@@ -1,5 +1,5 @@
-import type { TripPlan, DayEntry } from "./tripPlans";
-import type { Country } from "../types";
+import type { TripPlan, DayEntry } from "../core/utils/tripPlans";
+import type { Country } from "../core/types";
 
 /**
  * Generate a print-friendly HTML document for an itinerary and trigger

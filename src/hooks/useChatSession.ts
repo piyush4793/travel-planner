@@ -1,14 +1,14 @@
 import { useState, useCallback, useRef } from "react";
-import type { ChatMessage, TripBrief, TokenUsage } from "../types";
+import type { ChatMessage, TripBrief, TokenUsage } from "../core/types";
 import { createProvider } from "../utils/ai/llmProvider";
-import { getLLMKeys, getActiveProvider } from "../components/ai/SettingsModal";
+import { getLLMKeys, getActiveProvider } from "../core/utils/ai/llmSettings";
 import {
   buildSystemPrompt,
   condenseMessages,
   buildFinalizationPrompt,
   defaultBrief,
-} from "../utils/ai/llmPrompts";
-import { extractTripPlanResult, type LLMTripPlanResult } from "../utils/ai/llmTransform";
+} from "../core/utils/ai/llmPrompts";
+import { extractTripPlanResult, type LLMTripPlanResult } from "../core/utils/ai/llmTransform";
 import { PROVIDER_LABELS } from "../utils/ai/llmProvider";
 
 // Guardrails to prevent accidental overspend

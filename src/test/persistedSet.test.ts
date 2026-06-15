@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { renderHook, act } from "@testing-library/react";
-import { usePersistedSet } from "../hooks/usePersistedSet";
+import { usePersistedSet } from "../core/hooks/usePersistedSet";
 
 describe("usePersistedSet — P0", () => {
   it("initializes from the provided init function", () => {

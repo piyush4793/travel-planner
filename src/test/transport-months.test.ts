@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { detectTransport, TRANSPORT_EMOJI } from "../utils/transport";
-import { MONTHS, expandMonth } from "../utils/months";
+import { detectTransport, TRANSPORT_EMOJI } from "../core/utils/transport";
+import { MONTHS, expandMonth } from "../core/utils/months";
 
 describe("transport — P1", () => {
   it("detects flight", () => {

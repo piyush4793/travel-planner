@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-import { loadLS, saveLS } from "../utils/storage";
-import { LS_KEYS } from "../utils/lsKeys";
+import { loadLS, saveLS } from "../storage";
+import { LS_KEYS } from "../lsKeys";
 import { buildMergedTripGroups, type TripGroupDef } from "../data/tripGroups";
 import type { Country } from "../types";
 

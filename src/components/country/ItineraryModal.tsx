@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import type { Country } from "../../types";
-import type { TripPlan, DayEntry } from "../../utils/tripPlans";
-import { extractCityFromLabel } from "../../utils/tripPlans";
-import type { CountryRule } from "../../data/itineraryRules";
-import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../utils/transport";
-import { buildRoute } from "../../utils/googleMapsRoute";
+import type { Country } from "../../core/types";
+import type { TripPlan, DayEntry } from "../../core/utils/tripPlans";
+import { extractCityFromLabel } from "../../core/utils/tripPlans";
+import type { CountryRule } from "../../core/data/itineraryRules";
+import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../core/utils/transport";
+import { buildRoute } from "../../core/utils/googleMapsRoute";
 
 // ─── Day grouping ─────────────────────────────────────────────────────────────
 

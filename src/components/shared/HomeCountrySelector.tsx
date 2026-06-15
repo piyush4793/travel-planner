@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import catalogData from "../../../data/worldCatalog.json";
-import type { CatalogEntry } from "../../types";
-import { isEnabled } from "../../utils/featureFlags";
+import type { CatalogEntry } from "../../core/types";
+import { isEnabled } from "../../core/featureFlags";
 
 const CATALOG = catalogData as CatalogEntry[];
 const MAX_VISIBLE = 10;

@@ -1,6 +1,6 @@
 import { useState, useCallback, useMemo, useRef, useEffect } from "react";
 import type maplibregl from "maplibre-gl";
-import type { Country, VisitedFilter } from "./types";
+import type { Country, VisitedFilter } from "./core/types";
 import MapView from "./components/views/MapView";
 import CalendarView from "./components/views/CalendarView";
 import DiscoverView from "./components/views/DiscoverView";
@@ -13,16 +13,16 @@ import CountryForm from "./components/country/CountryForm";
 import SettingsModal from "./components/ai/SettingsModal";
 import ChatModal from "./components/ai/ChatModal";
 import AiItineraryModal from "./components/ai/AiItineraryModal";
-import type { LLMTripPlanResult } from "./utils/ai/llmTransform";
-import { applyFilters, allUniqueExperiences, type BudgetTier } from "./utils/filterLogic";
-import { loadLS, saveLS } from "./utils/storage";
-import { LS_KEYS } from "./utils/lsKeys";
+import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
+import { applyFilters, allUniqueExperiences, type BudgetTier } from "./core/utils/filterLogic";
+import { loadLS, saveLS } from "./core/storage";
+import { LS_KEYS } from "./core/lsKeys";
 import { useHashView, type AppView } from "./hooks/useHashView";
-import { useCountryStore } from "./hooks/useCountryStore";
-import { useTripStore } from "./hooks/useTripStore";
-import { useAiPlanStore } from "./hooks/useAiPlanStore";
+import { useCountryStore } from "./core/hooks/useCountryStore";
+import { useTripStore } from "./core/hooks/useTripStore";
+import { useAiPlanStore } from "./core/hooks/useAiPlanStore";
 import { useBreakpoint } from "./hooks/useBreakpoint";
-import { isEnabled } from "./utils/featureFlags";
+import { isEnabled } from "./core/featureFlags";
 import { isBackupOverdue, autoBackupIfOverdue } from "./utils/backup";
 
 const VIEW_LABELS: Record<AppView, string> = {

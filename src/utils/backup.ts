@@ -1,6 +1,6 @@
-import { LS_KEYS } from "./lsKeys";
-import { loadLS, saveLS } from "./storage";
-import type { Country } from "../types";
+import { LS_KEYS } from "../core/lsKeys";
+import { loadLS, saveLS } from "../core/storage";
+import type { Country } from "../core/types";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 

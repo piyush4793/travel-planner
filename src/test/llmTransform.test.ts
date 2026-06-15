@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { extractTripPlanResult } from "../utils/ai/llmTransform";
+import { extractTripPlanResult } from "../core/utils/ai/llmTransform";
 
 const VALID_PLAN = {
   destinationName: "Norway",

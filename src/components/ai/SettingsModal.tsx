@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
 import { createPortal } from "react-dom";
-import type { LLMProviderType, LLMKeys, Country } from "../../types";
-import { loadLS, saveLS } from "../../utils/storage";
-import { LS_KEYS } from "../../utils/lsKeys";
+import type { LLMProviderType, LLMKeys, Country } from "../../core/types";
+import { loadLS, saveLS } from "../../core/storage";
+import { LS_KEYS } from "../../core/lsKeys";
 import { validateKey, PROVIDER_LABELS, PROVIDER_PRICING } from "../../utils/ai/llmProvider";
 import {
   exportFullBackup, importFullBackup,
@@ -12,23 +12,11 @@ import {
   getLastBackupLabel, getNextBackupLabel,
   type BackupFrequency, type BackupSchedule,
 } from "../../utils/backup";
-import { isEnabled } from "../../utils/featureFlags";
+import { isEnabled } from "../../core/featureFlags";
 
-export function getLLMKeys(): LLMKeys {
-  return loadLS<LLMKeys>(LS_KEYS.LLM_KEYS, {});
-}
+export { getLLMKeys, getActiveProvider, saveLLMKeys, saveActiveProvider } from "../../core/utils/ai/llmSettings";
+import { getLLMKeys, getActiveProvider, saveLLMKeys, saveActiveProvider } from "../../core/utils/ai/llmSettings";
 
-export function getActiveProvider(): LLMProviderType {
-  return loadLS<LLMProviderType>(LS_KEYS.LLM_PROVIDER, "openai");
-}
-
-function saveLLMKeys(keys: LLMKeys) {
-  saveLS(LS_KEYS.LLM_KEYS, keys);
-}
-
-function saveActiveProvider(p: LLMProviderType) {
-  saveLS(LS_KEYS.LLM_PROVIDER, p);
-}
 
 const PROVIDERS: LLMProviderType[] = ["openai", "claude", "gemini"];
 

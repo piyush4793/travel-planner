@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect } from "react";
-import type { Country, VisitedFilter } from "../../types";
-import { ALL_REGIONS, type Region, type TripGroupDef } from "../../data/tripGroups";
+import type { Country, VisitedFilter } from "../../core/types";
+import { ALL_REGIONS, type Region, type TripGroupDef } from "../../core/data/tripGroups";
 import { getWikiImage } from "../../utils/wikiImages";
 import PillGroup from "../shared/PillGroup";
 

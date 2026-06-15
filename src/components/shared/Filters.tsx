@@ -1,8 +1,8 @@
 import FilterChip from "./FilterChip";
 import ExperienceDropdown from "./ExperienceDropdown";
-import type { BudgetTier } from "../../utils/filterLogic";
-import type { VisitedFilter } from "../../types";
-import { MONTHS } from "../../utils/months";
+import type { BudgetTier } from "../../core/utils/filterLogic";
+import type { VisitedFilter } from "../../core/types";
+import { MONTHS } from "../../core/utils/months";
 
 const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string }[] = [
   { value: "budget",  label: "₹ Budget",    desc: "under ₹1.5L" },

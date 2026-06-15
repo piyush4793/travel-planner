@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { getFeatureFlags, isEnabled, isPaidTier, setFeatureFlag } from "../utils/featureFlags";
+import { getFeatureFlags, isEnabled, isPaidTier, setFeatureFlag } from "../core/featureFlags";
 
 describe("featureFlags — P0", () => {
   beforeEach(() => {

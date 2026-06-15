@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import type { RefObject } from "react";
 import { createPortal } from "react-dom";
 import maplibregl from "maplibre-gl";
-import type { Country } from "../../types";
-import type { TripPlan, DayEntry } from "../../utils/tripPlans";
-import { extractCityFromLabel } from "../../utils/tripPlans";
+import type { Country } from "../../core/types";
+import type { TripPlan, DayEntry } from "../../core/utils/tripPlans";
+import { extractCityFromLabel } from "../../core/utils/tripPlans";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
-import type { CountryRule } from "../../data/itineraryRules";
+import type { CountryRule } from "../../core/data/itineraryRules";
 import { getWikiImage } from "../../utils/wikiImages";
-import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../utils/transport";
+import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../core/utils/transport";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
 
 // ─── City stops ───────────────────────────────────────────────────────────────

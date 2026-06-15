@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { loadLS, saveLS } from "../utils/storage";
+import { loadLS, saveLS } from "../core/storage";
 
 describe("storage — P0", () => {
   it("saveLS + loadLS round-trips a string", () => {

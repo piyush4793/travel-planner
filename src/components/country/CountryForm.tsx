@@ -1,6 +1,6 @@
 import { useState, useRef, type KeyboardEvent } from "react";
-import type { Country, TravelStyle } from "../../types";
-import { STYLE_META, TRAVEL_STYLES } from "../../utils/travelStyles";
+import type { Country, TravelStyle } from "../../core/types";
+import { STYLE_META, TRAVEL_STYLES } from "../../core/utils/travelStyles";
 import Tooltip from "../shared/Tooltip";
 
 const ALL_MONTHS = [
