@@ -1,5 +1,5 @@
 {
   "ignoreBinaries": ["husky"],
-  "ignore": ["src/core/index.ts"],
+  "ignore": ["src/core/index.ts", "public/sw.js"],
   "ignoreExportsUsedInFile": true
 }

@@ -8,3 +8,12 @@ createRoot(document.getElementById("root")!).render(
     <App />
   </StrictMode>
 );
+
+// Register service worker for PWA / offline support
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/travel-planner/sw.js").catch(() => {
+      // SW registration failed — app still works without it
+    });
+  });
+}

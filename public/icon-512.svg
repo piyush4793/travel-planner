@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="80" fill="url(#bg)"/>
+  <!-- Globe circle -->
+  <circle cx="256" cy="240" r="130" fill="none" stroke="#fff" stroke-width="6" opacity="0.9"/>
+  <!-- Latitude lines -->
+  <ellipse cx="256" cy="240" rx="130" ry="48" fill="none" stroke="#fff" stroke-width="3" opacity="0.4"/>
+  <ellipse cx="256" cy="240" rx="130" ry="96" fill="none" stroke="#fff" stroke-width="3" opacity="0.3"/>
+  <!-- Longitude line -->
+  <ellipse cx="256" cy="240" rx="54" ry="130" fill="none" stroke="#fff" stroke-width="3" opacity="0.4"/>
+  <!-- Compass needle -->
+  <polygon points="256,130 268,228 256,218 244,228" fill="#facc15" opacity="0.95"/>
+  <polygon points="256,350 268,252 256,262 244,252" fill="#fff" opacity="0.6"/>
+  <!-- Text -->
+  <text x="256" y="440" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-weight="800" font-size="52" fill="#fff" letter-spacing="2">ROAMWISE</text>
+</svg>
