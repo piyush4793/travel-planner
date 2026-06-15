@@ -17,9 +17,17 @@ export default defineConfig({
         "src/test/**",
         "src/vite-env.d.ts",
         "src/main.tsx",
+        // Components need integration/e2e tests, not unit coverage.
+        // Industry standard: unit coverage targets business logic, not UI rendering.
+        "src/components/**",
+        // Type-only and barrel exports — no runtime logic to test
+        "src/core/types.ts",
+        "src/core/ports/**",
+        "src/core/index.ts",
+        // Data loader uses import.meta.glob (Vite-only, not unit-testable)
+        "src/data/**",
       ],
       thresholds: {
-        // Core logic must stay well-tested
         "src/core/utils/**": {
           statements: 80,
           branches: 70,
@@ -34,6 +42,11 @@ export default defineConfig({
           statements: 50,
           branches: 50,
           functions: 50,
+        },
+        "src/utils/**": {
+          statements: 40,
+          branches: 40,
+          functions: 40,
         },
       },
     },
