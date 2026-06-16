@@ -5,7 +5,6 @@ import MapView from "./components/views/MapView";
 import CalendarView from "./components/views/CalendarView";
 import DiscoverView from "./components/views/DiscoverView";
 import TripsView from "./components/views/TripsView";
-import Filters from "./components/shared/Filters";
 import HomeCountrySelector from "./components/shared/HomeCountrySelector";
 import DevFlagPanel from "./components/shared/DevFlagPanel";
 import CountryPanel from "./components/country/CountryPanel";
@@ -242,16 +241,6 @@ export default function App() {
         </div>
       )}
 
-      {view !== "discover" && (
-        <Filters
-          selectedMonth={selectedMonth}
-          setMonth={setSelectedMonth}
-          visitedFilter={visitedFilter}
-          setVisitedFilter={setVisitedFilter}
-          budgetFilter={budgetFilter}
-          setBudgetFilter={setBudgetFilter}
-        />
-      )}
 
       <div className="flex-1 relative overflow-hidden">
         {/* MapView — hidden by default, shown during Cinematic mode */}
@@ -273,6 +262,11 @@ export default function App() {
             visitedNames={store.visited.set}
             favorites={store.favorites.set}
             visitedFilter={visitedFilter}
+            setVisitedFilter={setVisitedFilter}
+            selectedMonth={selectedMonth}
+            setMonth={setSelectedMonth}
+            budgetFilter={budgetFilter}
+            setBudgetFilter={setBudgetFilter}
             onSelect={setSelectedCountry}
             tripGroups={trips.mergedTripGroups}
             onSaveTrip={trips.saveTrip}

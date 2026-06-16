@@ -1,15 +1,23 @@
 import { useMemo, useState, useEffect } from "react";
 import type { Country, VisitedFilter } from "../../core/types";
+import { type BudgetTier } from "../../core/utils/filterLogic";
+import { MONTHS } from "../../core/utils/months";
 import { ALL_REGIONS, type Region, type TripGroupDef } from "../../core/data/tripGroups";
 import { getWikiImage } from "../../utils/wikiImages";
 import { isEnabled } from "../../core/featureFlags";
 import { fuzzySearchTrips } from "../../utils/fuzzySearch";
+import FilterChip from "../shared/FilterChip";
 
 type Props = {
   countries: Country[];
   visitedNames: Set<string>;
   favorites: Set<string>;
   visitedFilter?: VisitedFilter;
+  setVisitedFilter: (v: VisitedFilter) => void;
+  selectedMonth: string[];
+  setMonth: (m: string[]) => void;
+  budgetFilter: BudgetTier;
+  setBudgetFilter: (b: BudgetTier) => void;
   onSelect: (c: Country) => void;
   tripGroups: TripGroupDef[];
   onSaveTrip: (originalMain: string | null, group: TripGroupDef) => void;
@@ -93,11 +101,23 @@ export default function TripsView({
   visitedNames,
   favorites,
   visitedFilter = "all",
+  setVisitedFilter,
+  selectedMonth,
+  setMonth,
+  budgetFilter,
+  setBudgetFilter,
   onSelect,
   tripGroups,
   onSaveTrip,
   onDeleteTrip,
 }: Props) {
+  
+const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string }[] = [
+  { value: "budget",  label: "₹ Budget",    desc: "under ₹1.5L" },
+  { value: "mid",     label: "₹₹ Mid",      desc: "₹1.5L–₹3L"  },
+  { value: "premium", label: "₹₹₹ Premium", desc: "₹3L+"        },
+];
+
   const [viewMode, setViewMode] = useState<ViewMode>("all");
   const [visitedMode, setVisitedMode] = useState<VisitedMode>("all");
   const [regionFilter, setRegionFilter] = useState<Region | "all">("all");
@@ -108,7 +128,6 @@ export default function TripsView({
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
 
-  const hasFilters = viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all";
 
   const trips = useMemo(
     () => buildTrips(countries, tripGroups, visitedNames, favorites),
@@ -210,15 +229,15 @@ export default function TripsView({
   return (
     <div className="h-full flex flex-col bg-slate-50 overflow-hidden">
       {/* Header: compact single-line responsive */}
-      <div className="flex items-center gap-1 px-3 py-2 border-b bg-white shrink-0 flex-wrap md:flex-nowrap">
-        {/* Search bar — full width on mobile, fixed width on tablet+ */}
-        <div className="relative flex-1 md:flex-none min-w-0 md:min-w-fit">
+      <div className="flex items-center gap-2 px-3 py-2 border-b bg-white shrink-0 flex-wrap md:flex-nowrap">
+        {/* Search bar */}
+        <div className="relative flex-1 md:flex-none min-w-0 md:w-40">
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search…"
-            className="w-full md:w-40 px-2 md:px-2 py-1.5 pr-8 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors h-8"
+            className="w-full px-2 py-1.5 pr-8 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors h-8"
           />
           {search && (
             <button
@@ -231,22 +250,96 @@ export default function TripsView({
           )}
         </div>
 
-        {/* Mobile menu — hamburger for secondary controls */}
-        <div className="md:hidden relative">
+        {/* Primary filters - Month and Budget (visible inline) */}
+        <FilterChip label={selectedMonth.length === 0 ? "Month" : selectedMonth.length === 1 ? selectedMonth[0] : `Month (${selectedMonth.length})`} active={selectedMonth.length > 0}>
+          {() => (
+            <div className="p-3 w-48">
+              <div className="flex items-center justify-between mb-2.5">
+                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Month</p>
+                {selectedMonth.length > 0 && (
+                  <button onClick={() => setMonth([])} className="text-[10px] text-blue-500 font-semibold hover:text-blue-700">
+                    Clear
+                  </button>
+                )}
+              </div>
+              <div className="grid grid-cols-4 gap-1.5">
+                {MONTHS.map((m) => (
+                  <button
+                    key={m}
+                    onClick={() => setMonth(selectedMonth.includes(m) ? selectedMonth.filter(x => x !== m) : [...selectedMonth, m])}
+                    className={`py-1.5 rounded-lg text-[11px] font-semibold transition-all ${
+                      selectedMonth.includes(m)
+                        ? "bg-blue-600 text-white shadow-sm"
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    }`}
+                  >
+                    {m}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </FilterChip>
+
+        <FilterChip label={budgetFilter === "all" ? "Budget" : (BUDGET_OPTIONS.find(b => b.value === budgetFilter)?.label ?? "Budget")} active={budgetFilter !== "all"}>
+          {(close) => (
+            <div className="p-3 w-44">
+              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2.5">Budget</p>
+              <div className="space-y-1.5">
+                {BUDGET_OPTIONS.map(({ value, label, desc }) => (
+                  <button
+                    key={value}
+                    onClick={() => { setBudgetFilter(budgetFilter === value ? "all" : value); close(); }}
+                    className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
+                      budgetFilter === value
+                        ? "bg-amber-500 text-white shadow-sm"
+                        : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                    }`}
+                  >
+                    <span>{label}</span>
+                    <span className={`text-[10px] font-normal ${budgetFilter === value ? "opacity-75" : "text-gray-400"}`}>
+                      {desc}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </FilterChip>
+
+        <select
+          value={visitedFilter}
+          onChange={(e) => setVisitedFilter(e.target.value as VisitedFilter)}
+          className={`px-2.5 py-1.5 rounded-lg text-[11px] font-semibold border transition-colors appearance-none cursor-pointer pr-6 bg-[length:12px] bg-[right_6px_center] bg-no-repeat ${
+            visitedFilter !== "all"
+              ? "bg-blue-50 text-blue-700 border-blue-200"
+              : "bg-white text-gray-600 border-gray-200 hover:border-gray-300"
+          }`}
+          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")` }}
+        >
+          <option value="all">All Countries</option>
+          <option value="unvisited">Not Visited</option>
+          <option value="visited">✓ Visited</option>
+        </select>
+
+        <div className="w-px h-5 bg-gray-200 shrink-0" />
+
+        {/* Secondary filters menu - Region/View/Status */}
+        <div className="relative">
           <button
             onClick={() => setFiltersOpen((o) => !o)}
-            className={`flex items-center px-2 py-1.5 rounded-lg transition-colors h-8 border ${
-              filtersOpen || hasFilters
+            className={`flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg transition-colors h-7 border ${
+              filtersOpen
                 ? "bg-blue-50 text-blue-700 border-blue-200"
-                : "text-gray-500 hover:bg-gray-100 border-gray-200"
+                : (viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all" ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-500 hover:bg-gray-100 border-gray-200")
             }`}
-            title="Menu"
+            title="More filters"
           >
-            ☰
-            {hasFilters && <span className="w-1 h-1 rounded-full bg-blue-500 ml-1" />}
+            ⚙️
+            {(viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all") && <span className="w-1 h-1 rounded-full bg-blue-500" />}
           </button>
 
-          {/* Mobile dropdown menu */}
+          {/* Dropdown menu - Secondary filters */}
           {filtersOpen && (
             <>
               <div className="fixed inset-0 z-30 bg-black/10" onClick={() => setFiltersOpen(false)} />
@@ -270,7 +363,7 @@ export default function TripsView({
                     ))}
                   </div>
 
-                  {/* Visited mode */}
+                  {/* Visited mode / Status */}
                   <div className="p-2 space-y-1">
                     <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">Status</p>
                     {["all", "completed", "in-progress", "not-started"].map((m) => (
@@ -288,29 +381,43 @@ export default function TripsView({
                     ))}
                   </div>
 
-                  {/* Layout toggle */}
-                  <button
-                    onClick={() => { setLayout(layout === "grid" ? "list" : "grid"); setFiltersOpen(false); }}
-                    className="text-left px-3 py-2 text-xs text-gray-600 hover:bg-gray-50 transition-colors"
-                  >
-                    📋 {layout === "grid" ? "Switch to list" : "Switch to grid"}
-                  </button>
+                  {/* Region filter */}
+                  <div className="p-2 space-y-1">
+                    <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">Region</p>
+                    <div className="space-y-0.5 max-h-48 overflow-y-auto">
+                      <button
+                        onClick={() => { setRegionFilter("all"); setFiltersOpen(false); }}
+                        className={`w-full text-left px-3 py-1.5 rounded text-xs transition-all ${
+                          regionFilter === "all"
+                            ? "bg-blue-600 text-white shadow-sm font-semibold"
+                            : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                        }`}
+                      >
+                        All regions
+                      </button>
+                      {ALL_REGIONS.map((r) => (
+                        <button
+                          key={r}
+                          onClick={() => { setRegionFilter(r); setFiltersOpen(false); }}
+                          className={`w-full text-left px-3 py-1.5 rounded text-xs transition-all ${
+                            regionFilter === r
+                              ? "bg-blue-600 text-white shadow-sm font-semibold"
+                              : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                          }`}
+                        >
+                          {r}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
 
-                  {/* Stats */}
-                  <button
-                    onClick={() => { setStatsOpen(true); setFiltersOpen(false); }}
-                    className="text-left px-3 py-2 text-xs text-gray-600 hover:bg-gray-50 transition-colors"
-                  >
-                    📊 View stats
-                  </button>
-
-                  {/* Clear filters */}
-                  {hasFilters && (
+                  {/* Clear secondary filters only */}
+                  {(viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all") && (
                     <button
-                      onClick={() => { setSearch(""); setViewMode("all"); setVisitedMode("all"); setRegionFilter("all"); setFiltersOpen(false); }}
+                      onClick={() => { setViewMode("all"); setVisitedMode("all"); setRegionFilter("all"); setFiltersOpen(false); }}
                       className="text-left px-3 py-2 text-xs text-red-600 hover:bg-red-50 transition-colors font-semibold"
                     >
-                      ✕ Clear all
+                      ✕ Clear filters
                     </button>
                   )}
                 </div>
@@ -319,129 +426,38 @@ export default function TripsView({
           )}
         </div>
 
-        {/* Desktop controls — hidden on mobile */}
-        <div className="hidden md:flex items-center gap-1">
-          {/* Single toggle menu for all controls */}
-          <div className="relative">
-            <button
-              onClick={() => setFiltersOpen((o) => !o)}
-              className={`flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg transition-colors h-7 ${
-                filtersOpen
-                  ? "bg-blue-50 text-blue-700 border border-blue-200"
-                  : "text-gray-500 hover:bg-gray-100 border border-gray-200"
-              }`}
-              title="Filters & options"
-            >
-              ⚙️
-              {hasFilters && <span className="w-1 h-1 rounded-full bg-blue-500" />}
-            </button>
+        {/* Layout toggle — separate quick-access button */}
+        <button
+          onClick={() => setLayout(layout === "grid" ? "list" : "grid")}
+          className="flex items-center px-2 py-1 text-gray-500 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors h-7"
+          title={layout === "grid" ? "Switch to list" : "Switch to grid"}
+        >
+          {layout === "grid" ? "▦" : "≡"}
+        </button>
 
-            {/* Dropdown menu */}
-            {filtersOpen && (
-              <>
-                <div className="fixed inset-0 z-30 bg-black/10" onClick={() => setFiltersOpen(false)} />
-                <div className="absolute right-0 top-full mt-1 z-40 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden max-w-xs">
-                  <div className="flex flex-col divide-y py-1">
-                    {/* View mode */}
-                    <div className="p-2 space-y-1">
-                      <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">View</p>
-                      {["all", "combo", "solo"].map((m) => (
-                        <button
-                          key={m}
-                          onClick={() => { setViewMode(m as ViewMode); setFiltersOpen(false); }}
-                          className={`w-full text-left px-3 py-1.5 text-xs rounded transition-colors ${
-                            viewMode === m
-                              ? "bg-blue-100 text-blue-700 font-semibold"
-                              : "text-gray-600 hover:bg-gray-50"
-                          }`}
-                        >
-                          {m === "all" ? "All trips" : m === "combo" ? "Combo trips" : "Solo trips"}
-                        </button>
-                      ))}
-                    </div>
+        {/* Stats — separate quick-access button */}
+        <button
+          onClick={() => setStatsOpen((o) => !o)}
+          className={`flex items-center px-2 py-1 rounded-lg transition-colors h-7 border ${
+            statsOpen ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-500 hover:bg-gray-100 border-gray-200"
+          }`}
+          title="View stats"
+        >
+          📊
+        </button>
 
-                    {/* Visited mode */}
-                    <div className="p-2 space-y-1">
-                      <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">Status</p>
-                      {["all", "completed", "in-progress", "not-started"].map((m) => (
-                        <button
-                          key={m}
-                          onClick={() => { setVisitedMode(m as VisitedMode); setFiltersOpen(false); }}
-                          className={`w-full text-left px-3 py-1.5 text-xs rounded transition-colors ${
-                            visitedMode === m
-                              ? "bg-blue-100 text-blue-700 font-semibold"
-                              : "text-gray-600 hover:bg-gray-50"
-                          }`}
-                        >
-                          {m === "all" ? "All" : m === "completed" ? "Completed" : m === "in-progress" ? "In progress" : "Not started"}
-                        </button>
-                      ))}
-                    </div>
-
-                    {/* Region filter */}
-                    <div className="p-2">
-                      <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">Region</p>
-                      <select
-                        value={regionFilter}
-                        onChange={(e) => { setRegionFilter(e.target.value as Region | "all"); setFiltersOpen(false); }}
-                        className="w-full px-2 py-1.5 text-xs rounded-lg border border-blue-200 bg-white text-slate-700 focus:outline-none"
-                      >
-                        <option value="all">All regions</option>
-                        {ALL_REGIONS.map((r) => (
-                          <option key={r} value={r}>{r}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    {/* Clear filters */}
-                    {hasFilters && (
-                      <button
-                        onClick={() => { setSearch(""); setViewMode("all"); setVisitedMode("all"); setRegionFilter("all"); setFiltersOpen(false); }}
-                        className="text-left px-3 py-2 text-xs text-red-600 hover:bg-red-50 transition-colors font-semibold"
-                      >
-                        ✕ Clear all
-                      </button>
-                    )}
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
-
-          {/* Layout toggle — separate quick-access button */}
+        {/* New trip button */}
+        {isEnabled("tripGroups") && (
           <button
-            onClick={() => setLayout(layout === "grid" ? "list" : "grid")}
-            className="flex items-center px-2 py-1 text-gray-500 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors h-7"
-            title={layout === "grid" ? "Switch to list" : "Switch to grid"}
+            onClick={() => { setCreatingNew(true); setEditingMain(null); }}
+            className="flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors h-7"
+            title="Create new trip"
           >
-            {layout === "grid" ? "▦" : "≡"}
+            ➕
           </button>
-
-          {/* Stats — separate quick-access button */}
-          <button
-            onClick={() => setStatsOpen((o) => !o)}
-            className={`flex items-center px-2 py-1 rounded-lg transition-colors h-7 border ${
-              statsOpen ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-500 hover:bg-gray-100 border-gray-200"
-            }`}
-            title="View stats"
-          >
-            📊
-          </button>
-
-          {/* New trip button — inside desktop controls */}
-          {isEnabled("tripGroups") && (
-            <button
-              onClick={() => { setCreatingNew(true); setEditingMain(null); }}
-              className="flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors h-7"
-              title="Create new trip"
-            >
-              ➕
-            </button>
-          )}
-        </div>
-
-        {/* Mobile menu — hidden on desktop */}
+        )}
       </div>
+
 
       {/* Stats modal */}
       {statsOpen && (
