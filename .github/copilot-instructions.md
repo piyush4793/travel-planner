@@ -8,7 +8,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (309 tests across 40 files)
+npm test                # Vitest suite (318 tests across 44 files)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests + knip + build
 ```
@@ -283,8 +283,10 @@ No server sync — refresh survival is purely localStorage. `usePersistedSet` ba
 ## Performance
 
 - **Lazy loading**: `data/rules/` contains 199 JSON files total (198 country chunks + `index.json`), loaded on demand via `import.meta.glob`
+- **Code-splitting**: Heavy modals/overlays (`ChatModal`, `ItineraryCinematic`, `SettingsModal`, `AiItineraryModal`, `FreTour`, `CountryForm`, `ItineraryModal`, `PlanCompareModal`) are lazy-loaded via `React.lazy()` + `Suspense`, moving ~123 KB out of the initial bundle
+- **Idle-time enrichment**: Seed country data enriches in `requestIdleCallback` chunks of 10, so the first paint renders instantly with minimal seed data and cards progressively hydrate
 - **Module-level caching**: `useCountryRule` keeps each country loaded at most once per session
-- **Memoization**: `useMemo` is used across `App.tsx`, `useCountryStore`, `TripsView`, and `CountryPanel`
+- **Memoization**: `useMemo` is used across `App.tsx`, `useCountryStore`, `TripsView`, `CountryPanel`, and `ItineraryModal`
 - **Stale update guards**: `useCountryRule` prevents stale async updates when selection changes rapidly
 - **No virtualization**: acceptable at current scale (~200 destinations)
 - **Wiki image caching**: `getWikiImage()` memoizes Wikimedia lookups

@@ -234,13 +234,13 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 
 ## Tech Stack
 
-Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 309 tests across 40 files, including unit tests for hooks/utils/providers and P0 integration tests for key component flows (view rendering, filtering, country CRUD, trip management).
+Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 318 tests across 44 files, including unit tests for hooks/utils/providers and P0 integration tests for key component flows (view rendering, filtering, country CRUD, trip management).
 
 ### Testing & Coverage
 
 | Command | Description |
 |---|---|
-| `npm test` | Run all 309 tests (unit + integration) |
+| `npm test` | Run all 318 tests (unit + integration) |
 | `npm run test:watch` | Watch mode |
 | `npm run test:coverage` | V8 coverage → terminal + `coverage/index.html` (HTML report) |
 | `npm run test:ui` | Vitest browser UI |
@@ -255,17 +255,25 @@ The `scripts/check-new-coverage.sh` script compares changed files against the co
 
 ### Bundle Optimization
 
-The build uses manual chunk splitting to keep the initial load fast:
+The build uses manual chunk splitting and `React.lazy()` code-splitting to keep the initial load fast:
 
-| Chunk | Size | Gzipped | Caching |
+| Chunk | Size | Gzipped | Loading |
 |---|---|---|---|
-| App code | 319 KB | 88 KB | Changes per deploy |
-| MapLibre GL | 802 KB | 217 KB | Cached across deploys |
-| React vendor | 141 KB | 45 KB | Cached across deploys |
-| 198 country rules | ~10 KB each | ~4 KB | Lazy-loaded on demand |
-| CSS | 123 KB | 19 KB | Changes per deploy |
+| App code | ~217 KB | ~62 KB | Initial |
+| MapLibre GL | 802 KB | 217 KB | Initial, cached across deploys |
+| React vendor | 141 KB | 45 KB | Initial, cached across deploys |
+| ChatModal | 38 KB | 13 KB | Lazy — on first AI chat open |
+| ItineraryCinematic | 42 KB | 11 KB | Lazy — on cinematic mode |
+| SettingsModal | 15 KB | 4 KB | Lazy — on settings open |
+| AiItineraryModal | 14 KB | 4 KB | Lazy — on AI plan result |
+| FreTour | 14 KB | 4 KB | Lazy — on first-run tour |
+| CountryForm | — | — | Lazy — on add/edit country |
+| ItineraryModal | — | — | Lazy — on itinerary view |
+| PlanCompareModal | — | — | Lazy — on plan compare |
+| 198 country rules | ~10 KB each | ~4 KB | Lazy — on country select |
+| CSS | 123 KB | 19 KB | Initial |
 
-MapLibre and React are split into separate chunks that cache independently — users only re-download the app code on updates.
+MapLibre and React are split into separate vendor chunks that cache independently. Heavy modals and overlays are lazy-loaded via `React.lazy()` + `Suspense`, moving ~123 KB out of the initial bundle. Seed country enrichment uses `requestIdleCallback` chunking (10 per batch) so the first paint is never blocked by data hydration.
 
 ### Error Handling & Bug Reports
 
