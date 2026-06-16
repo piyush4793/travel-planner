@@ -25,6 +25,7 @@ export function filterByVisited(
 }
 
 export type BudgetTier = "all" | "budget" | "mid" | "premium";
+export type BudgetBasis = "solo" | "couple" | "family4";
 
 function parseBudgetLower(budget: string): number {
   const match = budget.match(/₹([\d.]+)([KL])/);
@@ -40,9 +41,13 @@ export function getBudgetTier(budget: string): "budget" | "mid" | "premium" {
   return "premium";
 }
 
-export function filterByBudget(countries: Country[], tier: BudgetTier): Country[] {
+function getBudgetForBasis(country: Country, basis: BudgetBasis): string {
+  return country.budgetBreakdown?.[basis] ?? country.budget;
+}
+
+export function filterByBudget(countries: Country[], tier: BudgetTier, basis: BudgetBasis = "couple"): Country[] {
   if (tier === "all") return countries;
-  return countries.filter((c) => getBudgetTier(c.budget) === tier);
+  return countries.filter((c) => getBudgetTier(getBudgetForBasis(c, basis)) === tier);
 }
 
 export function applyFilters(
@@ -52,6 +57,7 @@ export function applyFilters(
   visited: Set<string>,
   visitedFilter: VisitedFilter,
   budget: BudgetTier,
+  budgetBasis: BudgetBasis = "couple",
 ): Country[] {
   return filterByBudget(
     filterByVisited(
@@ -59,7 +65,8 @@ export function applyFilters(
       visited,
       visitedFilter
     ),
-    budget
+    budget,
+    budgetBasis,
   );
 }
 

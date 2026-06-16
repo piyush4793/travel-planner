@@ -8,7 +8,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (169 tests across 16 files)
+npm test                # Vitest suite (305 tests across 38 files)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests + knip + build
 ```
@@ -69,7 +69,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 
 | View | Purpose |
 |---|---|
-| **Trips** (default) | Dashboard — progress ring, stats, “Next trip” highlight. Trip cards with image collages, budget, best months. Sections: ⭐ Favorites → 📋 Planning → ✅ Completed. |
+| **Trips** (default) | Dashboard — progress ring, stats, “Next trip” highlight. **One card per My List country** (card count should match list size) with image collages, budget, best months. Sections: ⭐ Favorites → 📋 Planning → ✅ Completed. Tablet/desktop use a collapsible left filter rail + right results toolbar (icon-only list/grid toggle + sort); mobile defaults to list (grid toggle on wider phones). Popularity sort uses per-country `popularityScore` metadata (then favorites, then name). |
 | **Calendar** | Heatmap grid — rows = destinations, columns = months. Green = best, red = avoid, blue = current month. |
 | **Discover** | Browse the 197-country sovereign catalog by region. Add/remove destinations from My List. Uses its own filter bar. |
 
@@ -77,8 +77,13 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 
 **Country Detail Panel** — slides in from right (full-screen on mobile):
 - Header: name, visited toggle, favorite ★, dedicated edit/delete actions
+- Header flag rendering: explicit aliases + locale region-name lookup with full manifest-country coverage
 - Travel style badge (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive)
 - Collapsible sections: Experiences, Cities, Stopover tips, Watch out for, Combine with, Links, Notes
+- Combine-with pills are clickable and should open that country panel when available in My List
+- Trips search should prioritize primary-country matches (including word-prefix matches) over combine/related hits; combine matches can appear but not at the top, and active search should preserve relevance order (do not re-sort by popularity)
+- Compact Trips cards should keep progress-row alignment; show a "No combo yet" placeholder when combo suggestions are absent
+- In list cards, avoid duplicating combine values: do not repeat add-ons inline in the header when add-on chips are shown
 - Trip planner: days slider → Generate (offline) or Plan with AI
 - Multi-plan selector: switch between Default and saved AI plans
 - Plan comparison: side-by-side modal with summary cards, city overlap analysis
@@ -95,7 +100,6 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 ```
 App.tsx  (thin orchestrator — wires hooks to views)
 ├── Header (nav pills, home country selector, settings)
-├── Filters (month, budget, experiences, visited — portal-based dropdowns)
 ├── TripsView / CalendarView / DiscoverView
 ├── CountryPanel
 │   ├── default panel render path
@@ -159,7 +163,7 @@ Tier 1: World Catalog (data/worldCatalog.json)
 
 Tier 2: Rule Manifest (data/rules/index.json)
   198 itinerary-backed destinations
-  Adds: inSeed, hasItinerary, recDays, maxDays
+  Adds: inSeed, hasItinerary, recDays, maxDays, popularityScore
   Used by: initial My List population, slider bounds, lazy-load routing
 
 Tier 3: Consolidated Rules (data/rules/*.json)
@@ -172,7 +176,7 @@ Curated starter destinations are controlled by the manifest's `inSeed` flag. Spe
 
 ### Trip groups
 
-Defined in `src/data/tripGroups.ts`. Group multiple countries into a trip. Same seed+overrides pattern as countries — `tp_trip_customs` / `tp_trip_deleted`.
+Defined in `src/data/tripGroups.ts`. Group multiple countries into a trip. Same seed+overrides pattern as countries — `tp_trip_customs` / `tp_trip_deleted`. In Trips UI, group metadata annotates cards, but every country in My List still gets its own card.
 
 ### TypeScript types
 
@@ -211,9 +215,10 @@ This pattern applies to both countries and trip groups:
 1. `filterByMonth()` — expands abbreviations, matches `country.bestMonths`
 2. `filterByExperiences()` — requires ALL selected tags present
 3. `filterByVisited()` — `all` / `visited` / `unvisited`
-4. Budget tiering — parses `₹150K`/`₹2L` strings → `budget` / `mid` / `premium`
+4. Budget tiering — parses `₹150K`/`₹2L` strings → `budget` / `mid` / `premium` using selected basis (`solo` / `couple` / `family4`) when available
 
-Filter dropdowns use `createPortal()` because the filter bar has `overflow-x: auto` which clips `position: absolute` children.
+Portal-based dropdowns/tooltips use `createPortal()` to prevent clipping in overflow/scroll containers (shared chips/tooltips and modal/panel overlays).
+Trips view intentionally does not apply app-level experience tags, so Trips filtering always matches visible Trips controls.
 
 ---
 
@@ -363,7 +368,7 @@ Hash-based, no library. `AppView` + `VALID_VIEWS` live in `src/hooks/useHashView
 2. Add to `VALID_VIEWS`
 3. Add label to `VIEW_LABELS` in `App.tsx`
 4. Add render branch in `App.tsx`
-5. Hide global filters if the new view owns its own filters
+5. Keep filter ownership explicit (Trips view owns trip-header filter controls)
 
 ---
 

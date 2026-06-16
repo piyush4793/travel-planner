@@ -63,9 +63,11 @@ export type Country = {
   lat: number;
   lng: number;
   region?: string;
+  popularityScore?: number;
   bestMonths: string[];
   worstMonths?: string[];
   budget: string;
+  budgetBreakdown?: BudgetBreakdown;
   experiences: string[];
   avoid?: string[];
   combo?: string[];

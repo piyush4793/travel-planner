@@ -23,6 +23,7 @@ import { getPlanningLinks } from "../../utils/planningLinks";
 type Props = {
   country: Country | null;
   onClose: () => void;
+  onSelectCountry?: (country: Country) => void;
   isFavorite: boolean;
   onToggleFavorite: () => void;
   isVisited: boolean;
@@ -43,6 +44,7 @@ type Props = {
 
 export default function CountryPanel({
   country, onClose,
+  onSelectCountry,
   isFavorite, onToggleFavorite,
   isVisited, onToggleVisited,
   onFilterExperience, activeExperiences,
@@ -476,9 +478,17 @@ export default function CountryPanel({
               <CollapsibleSection label="Combine with" count={country.combo.length}>
                 <div className="flex flex-wrap gap-1.5">
                   {country.combo.map((comboCountry) => (
-                    <span key={comboCountry} className="rounded-full border border-purple-200 bg-purple-50 px-2.5 py-1 text-xs font-semibold text-purple-700">
+                    <button
+                      key={comboCountry}
+                      onClick={() => {
+                        const match = allCountries?.find((item) => item.name === comboCountry);
+                        if (match) onSelectCountry?.(match);
+                      }}
+                      className="rounded-full border border-purple-200 bg-purple-50 px-2.5 py-1 text-xs font-semibold text-purple-700 transition-colors hover:border-purple-300 hover:bg-purple-100"
+                      title={`Open ${comboCountry}`}
+                    >
                       {comboCountry}
-                    </span>
+                    </button>
                   ))}
                 </div>
                 <p className="mt-1.5 text-[10px] text-gray-400">Highlighted in purple on the map</p>
@@ -793,16 +803,74 @@ const COUNTRY_FLAG_EMOJIS: Record<string, string> = {
   antarctica: "🇦🇶",
 };
 
+const COUNTRY_NAME_ALIASES: Record<string, string> = {
+  uk: "united-kingdom",
+  usa: "united-states",
+  uae: "united-arab-emirates",
+  "czech-republic": "czechia",
+  "myanmar": "myanmar-burma",
+  "bosnia-and-herzegovina": "bosnia-herzegovina",
+  "sao-tome-and-principe": "sao-tome-principe",
+  "trinidad-and-tobago": "trinidad-tobago",
+  "antigua-and-barbuda": "antigua-barbuda",
+  "saint-lucia": "st-lucia",
+  "saint-vincent-and-the-grenadines": "st-vincent-grenadines",
+  "saint-kitts-and-nevis": "st-kitts-nevis",
+  "ivory-coast": "cote-d-ivoire",
+  "palestine": "palestinian-territories",
+  "democratic-republic-of-the-congo": "congo-kinshasa",
+  "republic-of-the-congo": "congo-brazzaville",
+};
+
+const COUNTRY_FLAG_BY_NAME = buildCountryFlagByName();
+
 function getCountryFlag(countryName: string): string {
-  const key = countryName
+  const key = normalizeCountryKey(countryName);
+  const aliasKey = COUNTRY_NAME_ALIASES[key] ?? key;
+
+  return COUNTRY_FLAG_EMOJIS[key] ?? COUNTRY_FLAG_BY_NAME.get(aliasKey) ?? countryName.trim().charAt(0).toUpperCase() ?? "📍";
+}
+
+function normalizeCountryKey(name: string): string {
+  return name
     .trim()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
 
-  return COUNTRY_FLAG_EMOJIS[key] ?? countryName.trim().charAt(0).toUpperCase() ?? "📍";
+function buildCountryFlagByName(): Map<string, string> {
+  const map = new Map<string, string>();
+  if (typeof Intl === "undefined" || typeof Intl.DisplayNames === "undefined") {
+    return map;
+  }
+
+  try {
+    const displayNames = new Intl.DisplayNames(["en"], { type: "region" });
+    for (let first = 65; first <= 90; first++) {
+      for (let second = 65; second <= 90; second++) {
+        const code = String.fromCharCode(first, second);
+        const displayName = displayNames.of(code);
+        if (!displayName || displayName === code) continue;
+        const key = normalizeCountryKey(displayName);
+        map.set(key, toFlagEmoji(code));
+      }
+    }
+  } catch {
+    // Ignore Intl edge-case failures and gracefully fall back.
+  }
+
+  return map;
+}
+
+function toFlagEmoji(code: string): string {
+  const upper = code.toUpperCase();
+  return String.fromCodePoint(
+    127397 + upper.charCodeAt(0),
+    127397 + upper.charCodeAt(1),
+  );
 }
 
 function getBudgetBadges(

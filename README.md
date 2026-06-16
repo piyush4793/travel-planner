@@ -9,7 +9,7 @@ A personal, map-based travel planner with a catalog of 197 world countries, 44 c
 ### Views
 | View | What it does |
 |---|---|
-| **✈ Trips** (home) | Dashboard with progress ring, stats, and "Next trip" highlight. Trip cards with image collages, budget, best months. Grouped sections: ⭐ Favorites → 📋 Planning → ✅ Completed. List/grid toggle, paginated. Click any card to open country detail. |
+| **✈ Trips** (home) | Dashboard with progress ring, stats, and "Next trip" highlight. **One card per My List country** (so card count always matches list size), with image collages, budget, and best months. Grouped sections: ⭐ Favorites → 📋 Planning → ✅ Completed. Tablet/desktop now use a collapsible left filter rail + right results workspace (icon-only view toggle + sort in results toolbar). Mobile defaults to list (grid toggle appears only on wider phones). Paginated. Click any card to open country detail. |
 | **📅 Calendar** | Heatmap grid — rows are destinations, columns are months. Emerald = best, red = avoid, blue = current month. |
 | **🌍 Discover** | Browse all 197 world countries. Filter by region and list status. Add countries to your list or remove them. |
 
@@ -18,6 +18,7 @@ View persists in the URL hash (`#trips`, `#calendar`, `#discover`) — refresh r
 ### Responsive Design
 Mobile-first responsive layout — works on phones (375px+), tablets (768px+), and desktops (1024px+):
 - **Header**: hamburger menu on mobile with slide-down drawer for settings/actions; full pill nav on tablet+
+- **Trips view controls**: mobile uses compact icon-triggered filter panels; tablet/desktop uses persistent left filter rail + right results toolbar
 - **Country detail panel**: full-screen overlay on mobile; resizable side panel on desktop
 - **All modals**: full-screen on mobile (no rounded corners, full height); centered cards on desktop
 - **Trip cards grid**: 1 col mobile → 2 col tablet → 3 col desktop
@@ -36,15 +37,22 @@ Mobile-first responsive layout — works on phones (375px+), tablets (768px+), a
 
 ---
 
-### Filters (top bar, hidden on Discover)
+### Filters (Trips + Calendar; hidden on Discover)
 All filters combine with AND logic:
 
 | Filter | Behaviour |
 |---|---|
 | **Month** | Multi-select — shows countries with best-time overlap |
-| **Budget** | ₹ Budget (< ₹1.5L) / ₹₹ Mid (₹1.5L–₹3L) / ₹₹₹ Premium (₹3L+) |
-| **Experiences** | Multi-select tag picker — AND logic |
-| **Visited** | Dropdown: All Countries / Not Visited / ✓ Visited — on Trips, filters at trip-card level (shows card if any country matches) |
+| **Budget** | Choose **basis** first (Solo / Couple / Family), then tier: ₹ Budget (< ₹1.5L) / ₹₹ Mid (₹1.5L–₹3L) / ₹₹₹ Premium (₹3L+) |
+| **Experiences** | Multi-select tag picker — AND logic (applies to non-Trips filtered views) |
+| **Visited** | Dropdown: All Countries / Not Visited / ✓ Visited — on Trips, filters country cards directly |
+| **Sort (Trips)** | Popularity / A to Z / Z to A. Popularity uses `popularityScore` from `data/rules/index.json` (tie-break: favorites, then name), seeded from 2024 international tourist-arrival rankings (WorldData/UN Tourism references). When a search query is active, relevance ranking takes precedence. |
+
+On **mobile Trips view**, filter controls are grouped behind two icon toggles:
+- **Primary filters panel**: Month, Budget, Visited
+- **Secondary filters panel**: View mode, Status, Region
+
+On **tablet/desktop Trips view**, these controls live in a **left filter rail** (collapsible), with search + icon-only list/grid toggle + sort + result count in the **right results toolbar**.
 
 ---
 
@@ -52,8 +60,10 @@ All filters combine with AND logic:
 Slides in from the right with a compact, decluttered layout:
 - **Refreshed panel layout** — sticky header, card-based sections, enhanced slider, and calendar-style month grid
 - **Compact header** — country name, visited toggle, favorite ★, dedicated edit/delete actions, close
+- **Country flag support** — panel header now resolves flags for all manifest destinations (including naming variants like Czech Republic/Czechia, Ivory Coast/Côte d’Ivoire, St./Saint forms)
 - **Travel style badge** — single research-backed recommendation per country (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive)
 - **Collapsible sections** — Experiences, Cities, Stopover tips, Watch out for, Combine with, Links, Notes collapse by default with item counts
+- **Combine-with navigation** — country pills in “Combine with” are clickable and open that country panel directly
 - **"When to go"** — best + avoid months merged in one row
 - **Trip planner** — days slider with smart city selection + Generate/AI buttons
 - **Multi-plan selector** — dropdown to switch between Default and saved AI plans, with full day-wise itinerary for each
@@ -133,12 +143,15 @@ Full-screen animated experience for rule-based countries:
 - Create custom trip groups from the + New Trip button
 - Delete trips (seed trips are tombstoned, custom trips removed)
 - One-trip-per-country invariant enforced in editor
-- Unassigned countries appear as auto-generated solo trips (read-only) and inherit their real country region for filtering/stats
+- Trips view still renders one card per My List country even when country is part of a trip group (group metadata no longer hides standalone cards)
 - **Collapsible sections** — Favorites, Planning, and Completed sections can be toggled open/closed for quick scanning
 - **Skeleton loading** — image collages show a shimmer placeholder while wiki images load (no layout jump)
 - **Mobile FAB** — floating "+" button to create new trips on mobile (since header button is hidden)
 - **Always-visible edit** — ✏️ button visible on mobile (hover-only on desktop)
-- **Combo suggestions** — solo trip cards show "Pair with…" hint from the country's combo data
+- **Combo suggestions** — solo trip cards show "Pair with…" hints when available, or a "No combo yet" placeholder chip to preserve layout rhythm
+- **Search intent priority** — search prioritizes the card’s primary country name (including word-prefix matches like `kore`/`swit`) over combine/related hits, and active search keeps relevance order instead of re-sorting by popularity
+- **Grid alignment consistency** — compact cards reserve the combo-row slot so progress rows align even when no combo/suggestion pills exist
+- **No duplicate combine labels** — list cards show combine countries once (as chips only), without repeating them inline next to the main country
 
 ---
 
@@ -218,13 +231,13 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 
 ## Tech Stack
 
-Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 298 tests across 36 files, including unit tests for hooks/utils/providers and P0 integration tests for key component flows (view rendering, filtering, country CRUD, trip management).
+Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 305 tests across 38 files, including unit tests for hooks/utils/providers and P0 integration tests for key component flows (view rendering, filtering, country CRUD, trip management).
 
 ### Testing & Coverage
 
 | Command | Description |
 |---|---|
-| `npm test` | Run all 298 tests (unit + integration) |
+| `npm test` | Run all 305 tests (unit + integration) |
 | `npm run test:watch` | Watch mode |
 | `npm run test:coverage` | V8 coverage → terminal + `coverage/index.html` (HTML report) |
 | `npm run test:ui` | Vitest browser UI |

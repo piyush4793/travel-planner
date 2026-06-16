@@ -1,12 +1,12 @@
 import { useMemo, useState, useEffect } from "react";
 import type { Country, VisitedFilter } from "../../core/types";
-import { type BudgetTier } from "../../core/utils/filterLogic";
+import { type BudgetBasis, type BudgetTier } from "../../core/utils/filterLogic";
 import { MONTHS } from "../../core/utils/months";
 import { ALL_REGIONS, type Region, type TripGroupDef } from "../../core/data/tripGroups";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { getWikiImage } from "../../utils/wikiImages";
 import { isEnabled } from "../../core/featureFlags";
 import { fuzzySearchTrips } from "../../utils/fuzzySearch";
-import FilterChip from "../shared/FilterChip";
 
 type Props = {
   countries: Country[];
@@ -18,6 +18,8 @@ type Props = {
   setMonth: (m: string[]) => void;
   budgetFilter: BudgetTier;
   setBudgetFilter: (b: BudgetTier) => void;
+  budgetBasis: BudgetBasis;
+  setBudgetBasis: (b: BudgetBasis) => void;
   onSelect: (c: Country) => void;
   tripGroups: TripGroupDef[];
   onSaveTrip: (originalMain: string | null, group: TripGroupDef) => void;
@@ -39,6 +41,7 @@ type Trip = {
 
 type ViewMode = "all" | "combo" | "solo";
 type VisitedMode = "all" | "completed" | "in-progress" | "not-started";
+type SortMode = "popular" | "az" | "za";
 
 function buildTrips(
   allCountries: Country[],
@@ -47,20 +50,17 @@ function buildTrips(
   favorites: Set<string>,
 ): Trip[] {
   const byName = new Map(allCountries.map((c) => [c.name, c]));
-  const assigned = new Set<string>();
+  const groupByMain = new Map(tripGroups.map((g) => [g.main, g]));
   const trips: Trip[] = [];
   let nextId = 0;
 
-  for (const group of tripGroups) {
-    const main = byName.get(group.main);
-    if (!main) continue;
-
-    const addOns = group.addOns
+  for (const main of allCountries) {
+    const group = groupByMain.get(main.name);
+    const addOns = (group?.addOns ?? [])
       .map((n) => byName.get(n))
-      .filter((c): c is Country => c !== undefined);
-
-    const all = [main, ...addOns];
-    const vCount = all.filter((c) => visitedNames.has(c.name)).length;
+      .filter((c): c is Country => c !== undefined && c.name !== main.name);
+    const all = [main];
+    const vCount = visitedNames.has(main.name) ? 1 : 0;
     trips.push({
       id: nextId++,
       main,
@@ -70,26 +70,8 @@ function buildTrips(
       allVisited: vCount === all.length,
       noneVisited: vCount === 0,
       isFavorited: all.some((c) => favorites.has(c.name)),
-      region: group.region,
-      source: "group",
-    });
-    for (const c of all) assigned.add(c.name);
-  }
-
-  for (const c of allCountries) {
-    if (assigned.has(c.name)) continue;
-    const isV = visitedNames.has(c.name);
-    trips.push({
-      id: nextId++,
-      main: c,
-      addOns: [],
-      allCountries: [c],
-      visitedCount: isV ? 1 : 0,
-      allVisited: isV,
-      noneVisited: !isV,
-      isFavorited: favorites.has(c.name),
-      region: (c.region as Region) || "Asia",
-      source: "solo",
+      region: (group?.region ?? (main.region as Region)) || "Asia",
+      source: group ? "group" : "solo",
     });
   }
 
@@ -106,6 +88,8 @@ export default function TripsView({
   setMonth,
   budgetFilter,
   setBudgetFilter,
+  budgetBasis,
+  setBudgetBasis,
   onSelect,
   tripGroups,
   onSaveTrip,
@@ -118,15 +102,49 @@ const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string }[] = [
   { value: "premium", label: "₹₹₹ Premium", desc: "₹3L+"        },
 ];
 
+const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
+  { value: "solo", label: "Solo" },
+  { value: "couple", label: "Couple" },
+  { value: "family4", label: "Family" },
+];
+
+  const bp = useBreakpoint();
+  const isMobile = bp === "mobile";
   const [viewMode, setViewMode] = useState<ViewMode>("all");
   const [visitedMode, setVisitedMode] = useState<VisitedMode>("all");
+  const [sortMode, setSortMode] = useState<SortMode>("popular");
   const [regionFilter, setRegionFilter] = useState<Region | "all">("all");
   const [search, setSearch] = useState("");
   const [editingMain, setEditingMain] = useState<string | null>(null);
   const [creatingNew, setCreatingNew] = useState(false);
-  const [layout, setLayout] = useState<"list" | "grid">("grid");
+  const [layout, setLayout] = useState<"list" | "grid">(
+    typeof window !== "undefined" && window.innerWidth < 768 ? "list" : "grid"
+  );
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [primaryFiltersOpen, setPrimaryFiltersOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
+  const [railOpen, setRailOpen] = useState(bp !== "tablet");
+  const [isWideMobile, setIsWideMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth >= 390 : false
+  );
+  const canUseMobileGrid = isMobile && isWideMobile;
+  const effectiveLayout: "list" | "grid" = isMobile ? (canUseMobileGrid ? layout : "list") : layout;
+
+  const hasPrimaryFilters = selectedMonth.length > 0 || budgetFilter !== "all" || visitedFilter !== "all";
+  const hasSecondaryFilters = viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all";
+
+  useEffect(() => {
+    function onResize() {
+      setIsWideMobile(window.innerWidth >= 390);
+    }
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  useEffect(() => {
+    if (bp === "tablet") setRailOpen(false);
+    if (bp === "desktop") setRailOpen(true);
+  }, [bp]);
 
 
   const trips = useMemo(
@@ -154,26 +172,32 @@ const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string }[] = [
     if (visitedMode === "in-progress") result = result.filter((t) => !t.allVisited && !t.noneVisited);
     if (visitedMode === "not-started") result = result.filter((t) => t.noneVisited);
 
-    // Global visited filter — show trip if ANY country in it matches
+    // Global visited filter at card level
     if (visitedFilter === "visited") result = result.filter((t) => t.allCountries.some((c) => visitedNames.has(c.name)));
     if (visitedFilter === "unvisited") result = result.filter((t) => t.allCountries.some((c) => !visitedNames.has(c.name)));
 
     if (regionFilter !== "all") result = result.filter((t) => t.region === regionFilter);
 
-    // Fuzzy search across all trip attributes (name, region, experiences, cities, etc.)
+    // Search ranking should stay relevance-first while query is active.
     if (search.trim()) {
       result = fuzzySearchTrips(result, search);
+    } else {
+      result = [...result].sort((a, b) => {
+        if (sortMode === "az") return a.main.name.localeCompare(b.main.name);
+        if (sortMode === "za") return b.main.name.localeCompare(a.main.name);
+        if (sortMode === "popular") {
+          const popA = Math.max(...a.allCountries.map((c) => c.popularityScore ?? 0));
+          const popB = Math.max(...b.allCountries.map((c) => c.popularityScore ?? 0));
+          if (popA !== popB) return popB - popA;
+          if (a.isFavorited !== b.isFavorited) return a.isFavorited ? -1 : 1;
+          return a.main.name.localeCompare(b.main.name);
+        }
+        return a.main.name.localeCompare(b.main.name);
+      });
     }
 
-    // Sort: favorites first → unvisited middle → visited last
-    result = [...result].sort((a, b) => {
-      if (a.isFavorited !== b.isFavorited) return a.isFavorited ? -1 : 1;
-      if (a.allVisited !== b.allVisited) return a.allVisited ? 1 : -1;
-      return 0;
-    });
-
     return result;
-  }, [trips, viewMode, visitedMode, visitedFilter, visitedNames, regionFilter, search]);
+  }, [trips, viewMode, visitedMode, visitedFilter, visitedNames, regionFilter, search, sortMode]);
 
   const uniqueCountries = new Set(trips.flatMap((t) => t.allCountries.map((c) => c.name))).size;
   const totalVisited = new Set(trips.flatMap((t) => t.allCountries.filter((c) => visitedNames.has(c.name)).map((c) => c.name))).size;
@@ -226,241 +250,336 @@ const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string }[] = [
     setEditingMain(null);
   };
 
+  const renderTripsContent = (widthClass: string) => (
+    <div className={`${widthClass} mx-auto space-y-6`}>
+      {creatingNew && (
+        <div className="mb-4">
+          <TripEditor
+            initial={null}
+            allCountryNames={countries.map((c) => c.name)}
+            countryRegionMap={Object.fromEntries(countries.filter((c) => c.region).map((c) => [c.name, c.region!]))}
+            assignedNames={assignedNames}
+            currentTripNames={[]}
+            onSave={(group) => handleSave(null, group)}
+            onCancel={() => setCreatingNew(false)}
+            onDelete={null}
+          />
+        </div>
+      )}
+
+      {filtered.length > 0 && (
+        <p className="text-[10px] text-gray-400">
+          Showing {filtered.length} of {countries.length} countries
+        </p>
+      )}
+
+      {favoriteTrips.length > 0 && (
+        <PaginatedTripSection
+          icon="⭐"
+          label="Favorites"
+          count={favoriteTrips.length}
+          color="text-yellow-600"
+          trips={favoriteTrips}
+          renderCards={renderTripCards}
+          pageSize={effectiveLayout === "grid" ? 6 : 5}
+        />
+      )}
+
+      {planning.length > 0 && (
+        <PaginatedTripSection
+          icon="📋"
+          label="Planning"
+          count={planning.length}
+          color="text-blue-600"
+          trips={planning}
+          renderCards={renderTripCards}
+          pageSize={effectiveLayout === "grid" ? 6 : 5}
+        />
+      )}
+
+      {completed.length > 0 && (
+        <PaginatedTripSection
+          icon="✅"
+          label="Completed"
+          count={completed.length}
+          color="text-emerald-600"
+          trips={completed}
+          renderCards={renderTripCards}
+          pageSize={effectiveLayout === "grid" ? 6 : 5}
+        />
+      )}
+
+      {filtered.length === 0 && !creatingNew && (
+        <div className="text-center py-20 space-y-4">
+          <span className="text-5xl block">🌍</span>
+          <p className="text-lg font-bold text-slate-700">Your travel board is empty</p>
+          <p className="text-sm text-slate-400 max-w-md mx-auto">
+            Head to Discover to add countries, then come back here to organize them into trips.
+          </p>
+          <button
+            onClick={() => { setCreatingNew(true); }}
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg transition-colors"
+          >
+            + Create your first trip
+          </button>
+        </div>
+      )}
+    </div>
+  );
   return (
     <div className="h-full flex flex-col bg-slate-50 overflow-hidden">
-      {/* Header: compact single-line responsive */}
-      <div className="flex items-center gap-2 px-3 py-2 border-b bg-white shrink-0 flex-wrap md:flex-nowrap">
-        {/* Search bar */}
-        <div className="relative flex-1 md:flex-none min-w-0 md:w-40">
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search…"
-            className="w-full px-2 py-1.5 pr-8 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors h-8"
-          />
-          {search && (
-            <button
-              onClick={() => setSearch("")}
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm p-0.5"
-              title="Clear"
-            >
-              ✕
-            </button>
-          )}
-        </div>
+      {/* Header */}
+      <div className="border-b bg-white shrink-0">
+        {/* Mobile: compact row + expandable filter panels */}
+        <div className="md:hidden px-3 py-2 space-y-2">
+          <div className="flex items-center gap-1.5">
+            <div className="relative flex-1 min-w-0">
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search…"
+                className="w-full px-2 py-1.5 pr-8 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors h-8"
+              />
+              {search && (
+                <button
+                  onClick={() => setSearch("")}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm p-0.5"
+                  title="Clear"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
 
-        {/* Primary filters - Month and Budget (visible inline) */}
-        <FilterChip label={selectedMonth.length === 0 ? "Month" : selectedMonth.length === 1 ? selectedMonth[0] : `Month (${selectedMonth.length})`} active={selectedMonth.length > 0}>
-          {() => (
-            <div className="p-3 w-48">
-              <div className="flex items-center justify-between mb-2.5">
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Month</p>
-                {selectedMonth.length > 0 && (
-                  <button onClick={() => setMonth([])} className="text-[10px] text-blue-500 font-semibold hover:text-blue-700">
+            <button
+              onClick={() => {
+                setPrimaryFiltersOpen((o) => !o);
+                setFiltersOpen(false);
+              }}
+              className={`flex items-center justify-center w-8 h-8 rounded-lg border text-xs ${
+                primaryFiltersOpen || hasPrimaryFilters
+                  ? "bg-blue-50 text-blue-700 border-blue-200"
+                  : "text-gray-500 border-gray-200 hover:bg-gray-100"
+              }`}
+              title="Primary filters"
+            >
+              🎚️
+            </button>
+
+            <button
+              onClick={() => {
+                setFiltersOpen((o) => !o);
+                setPrimaryFiltersOpen(false);
+              }}
+              className={`flex items-center justify-center w-8 h-8 rounded-lg border text-xs ${
+                filtersOpen || hasSecondaryFilters
+                  ? "bg-blue-50 text-blue-700 border-blue-200"
+                  : "text-gray-500 border-gray-200 hover:bg-gray-100"
+              }`}
+              title="Secondary filters"
+            >
+              ⚙️
+            </button>
+
+            {canUseMobileGrid && (
+              <button
+                onClick={() => setLayout(layout === "grid" ? "list" : "grid")}
+                className="flex items-center justify-center w-8 h-8 text-gray-500 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors"
+                title={layout === "grid" ? "Switch to list" : "Switch to grid"}
+              >
+                {layout === "grid" ? "▦" : "≡"}
+              </button>
+            )}
+
+            <button
+              onClick={() => setStatsOpen((o) => !o)}
+              className={`flex items-center justify-center w-8 h-8 rounded-lg border transition-colors ${
+                statsOpen ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-500 hover:bg-gray-100 border-gray-200"
+              }`}
+              title="View stats"
+            >
+              📊
+            </button>
+          </div>
+
+          {primaryFiltersOpen && (
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-2.5 space-y-2">
+              <div className="flex items-center justify-between">
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Primary filters</p>
+                {hasPrimaryFilters && (
+                  <button
+                    onClick={() => { setMonth([]); setBudgetBasis("couple"); setBudgetFilter("all"); setVisitedFilter("all"); }}
+                    className="text-[10px] font-semibold text-red-600"
+                  >
                     Clear
                   </button>
                 )}
               </div>
-              <div className="grid grid-cols-4 gap-1.5">
-                {MONTHS.map((m) => (
-                  <button
-                    key={m}
-                    onClick={() => setMonth(selectedMonth.includes(m) ? selectedMonth.filter(x => x !== m) : [...selectedMonth, m])}
-                    className={`py-1.5 rounded-lg text-[11px] font-semibold transition-all ${
-                      selectedMonth.includes(m)
-                        ? "bg-blue-600 text-white shadow-sm"
-                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                    }`}
-                  >
-                    {m}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-        </FilterChip>
 
-        <FilterChip label={budgetFilter === "all" ? "Budget" : (BUDGET_OPTIONS.find(b => b.value === budgetFilter)?.label ?? "Budget")} active={budgetFilter !== "all"}>
-          {(close) => (
-            <div className="p-3 w-44">
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2.5">Budget</p>
-              <div className="space-y-1.5">
-                {BUDGET_OPTIONS.map(({ value, label, desc }) => (
-                  <button
-                    key={value}
-                    onClick={() => { setBudgetFilter(budgetFilter === value ? "all" : value); close(); }}
-                    className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
-                      budgetFilter === value
-                        ? "bg-amber-500 text-white shadow-sm"
-                        : "bg-gray-50 text-gray-700 hover:bg-gray-100"
-                    }`}
-                  >
-                    <span>{label}</span>
-                    <span className={`text-[10px] font-normal ${budgetFilter === value ? "opacity-75" : "text-gray-400"}`}>
-                      {desc}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-        </FilterChip>
-
-        <select
-          value={visitedFilter}
-          onChange={(e) => setVisitedFilter(e.target.value as VisitedFilter)}
-          className={`px-2.5 py-1.5 rounded-lg text-[11px] font-semibold border transition-colors appearance-none cursor-pointer pr-6 bg-[length:12px] bg-[right_6px_center] bg-no-repeat ${
-            visitedFilter !== "all"
-              ? "bg-blue-50 text-blue-700 border-blue-200"
-              : "bg-white text-gray-600 border-gray-200 hover:border-gray-300"
-          }`}
-          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")` }}
-        >
-          <option value="all">All Countries</option>
-          <option value="unvisited">Not Visited</option>
-          <option value="visited">✓ Visited</option>
-        </select>
-
-        <div className="w-px h-5 bg-gray-200 shrink-0" />
-
-        {/* Secondary filters menu - Region/View/Status */}
-        <div className="relative">
-          <button
-            onClick={() => setFiltersOpen((o) => !o)}
-            className={`flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg transition-colors h-7 border ${
-              filtersOpen
-                ? "bg-blue-50 text-blue-700 border-blue-200"
-                : (viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all" ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-500 hover:bg-gray-100 border-gray-200")
-            }`}
-            title="More filters"
-          >
-            ⚙️
-            {(viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all") && <span className="w-1 h-1 rounded-full bg-blue-500" />}
-          </button>
-
-          {/* Dropdown menu - Secondary filters */}
-          {filtersOpen && (
-            <>
-              <div className="fixed inset-0 z-30 bg-black/10" onClick={() => setFiltersOpen(false)} />
-              <div className="absolute right-0 top-full mt-1 z-40 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
-                <div className="flex flex-col divide-y max-w-xs">
-                  {/* View mode */}
-                  <div className="p-2 space-y-1">
-                    <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">View</p>
-                    {["all", "combo", "solo"].map((m) => (
-                      <button
-                        key={m}
-                        onClick={() => { setViewMode(m as ViewMode); setFiltersOpen(false); }}
-                        className={`w-full text-left px-3 py-1.5 text-xs rounded transition-colors ${
-                          viewMode === m
-                            ? "bg-blue-100 text-blue-700 font-semibold"
-                            : "text-gray-600 hover:bg-gray-50"
-                        }`}
-                      >
-                        {m === "all" ? "All trips" : m === "combo" ? "Combo trips" : "Solo trips"}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Visited mode / Status */}
-                  <div className="p-2 space-y-1">
-                    <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">Status</p>
-                    {["all", "completed", "in-progress", "not-started"].map((m) => (
-                      <button
-                        key={m}
-                        onClick={() => { setVisitedMode(m as VisitedMode); setFiltersOpen(false); }}
-                        className={`w-full text-left px-3 py-1.5 text-xs rounded transition-colors ${
-                          visitedMode === m
-                            ? "bg-blue-100 text-blue-700 font-semibold"
-                            : "text-gray-600 hover:bg-gray-50"
-                        }`}
-                      >
-                        {m === "all" ? "All" : m === "completed" ? "Completed" : m === "in-progress" ? "In progress" : "Not started"}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Region filter */}
-                  <div className="p-2 space-y-1">
-                    <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">Region</p>
-                    <div className="space-y-0.5 max-h-48 overflow-y-auto">
-                      <button
-                        onClick={() => { setRegionFilter("all"); setFiltersOpen(false); }}
-                        className={`w-full text-left px-3 py-1.5 rounded text-xs transition-all ${
-                          regionFilter === "all"
-                            ? "bg-blue-600 text-white shadow-sm font-semibold"
-                            : "bg-gray-50 text-gray-700 hover:bg-gray-100"
-                        }`}
-                      >
-                        All regions
-                      </button>
-                      {ALL_REGIONS.map((r) => (
-                        <button
-                          key={r}
-                          onClick={() => { setRegionFilter(r); setFiltersOpen(false); }}
-                          className={`w-full text-left px-3 py-1.5 rounded text-xs transition-all ${
-                            regionFilter === r
-                              ? "bg-blue-600 text-white shadow-sm font-semibold"
-                              : "bg-gray-50 text-gray-700 hover:bg-gray-100"
-                          }`}
-                        >
-                          {r}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Clear secondary filters only */}
-                  {(viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all") && (
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 mb-1">Month</p>
+                <div className="grid grid-cols-4 gap-1">
+                  {MONTHS.map((m) => (
                     <button
-                      onClick={() => { setViewMode("all"); setVisitedMode("all"); setRegionFilter("all"); setFiltersOpen(false); }}
-                      className="text-left px-3 py-2 text-xs text-red-600 hover:bg-red-50 transition-colors font-semibold"
+                      key={m}
+                      onClick={() => setMonth(selectedMonth.includes(m) ? selectedMonth.filter((x) => x !== m) : [...selectedMonth, m])}
+                      className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                        selectedMonth.includes(m)
+                          ? "bg-blue-600 text-white"
+                          : "bg-white text-gray-600 border border-gray-200"
+                      }`}
                     >
-                      ✕ Clear filters
+                      {m}
                     </button>
-                  )}
+                  ))}
                 </div>
               </div>
-            </>
+
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 mb-1">Budget basis</p>
+                <div className="grid grid-cols-3 gap-1 mb-2">
+                  {BUDGET_BASIS_OPTIONS.map(({ value, label }) => (
+                    <button
+                      key={value}
+                      onClick={() => setBudgetBasis(value)}
+                      className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                        budgetBasis === value
+                          ? "bg-blue-600 text-white"
+                          : "bg-white text-gray-600 border border-gray-200"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+                <p className="text-[10px] font-bold text-gray-500 mb-1">Budget</p>
+                <p className="text-[9px] text-gray-400 mb-1">Basis: {BUDGET_BASIS_OPTIONS.find((x) => x.value === budgetBasis)?.label}</p>
+                <div className="grid grid-cols-3 gap-1">
+                  {BUDGET_OPTIONS.map(({ value, label }) => (
+                    <button
+                      key={value}
+                      onClick={() => setBudgetFilter(budgetFilter === value ? "all" : value)}
+                      className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                        budgetFilter === value
+                          ? "bg-amber-500 text-white"
+                          : "bg-white text-gray-600 border border-gray-200"
+                      }`}
+                    >
+                      {label.replace("₹₹₹ Premium", "Premium").replace("₹₹ Mid", "Mid").replace("₹ Budget", "Budget")}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 mb-1">Visited</p>
+                <div className="grid grid-cols-3 gap-1">
+                  {[
+                    { value: "all", label: "All" },
+                    { value: "unvisited", label: "Not visited" },
+                    { value: "visited", label: "Visited" },
+                  ].map((item) => (
+                    <button
+                      key={item.value}
+                      onClick={() => setVisitedFilter(item.value as VisitedFilter)}
+                      className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                        visitedFilter === item.value
+                          ? "bg-blue-600 text-white"
+                          : "bg-white text-gray-600 border border-gray-200"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {filtersOpen && (
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-2.5 space-y-2">
+              <div className="flex items-center justify-between">
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Secondary filters</p>
+                {hasSecondaryFilters && (
+                  <button
+                    onClick={() => { setViewMode("all"); setVisitedMode("all"); setRegionFilter("all"); }}
+                    className="text-[10px] font-semibold text-red-600"
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 mb-1">View</p>
+                <div className="grid grid-cols-3 gap-1">
+                  {["all", "combo", "solo"].map((m) => (
+                    <button
+                      key={m}
+                      onClick={() => setViewMode(m as ViewMode)}
+                      className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                        viewMode === m ? "bg-blue-600 text-white" : "bg-white text-gray-600 border border-gray-200"
+                      }`}
+                    >
+                      {m === "all" ? "All" : m === "combo" ? "Combo" : "Solo"}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 mb-1">Status</p>
+                <div className="grid grid-cols-2 gap-1">
+                  {["all", "completed", "in-progress", "not-started"].map((m) => (
+                    <button
+                      key={m}
+                      onClick={() => setVisitedMode(m as VisitedMode)}
+                      className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                        visitedMode === m ? "bg-blue-600 text-white" : "bg-white text-gray-600 border border-gray-200"
+                      }`}
+                    >
+                      {m === "all" ? "All" : m === "completed" ? "Completed" : m === "in-progress" ? "In progress" : "Not started"}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 mb-1">Region</p>
+                <select
+                  value={regionFilter}
+                  onChange={(e) => setRegionFilter(e.target.value as Region | "all")}
+                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700"
+                >
+                  <option value="all">All regions</option>
+                  {ALL_REGIONS.map((r) => (
+                    <option key={r} value={r}>{r}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 mb-1">Sort</p>
+                <select
+                  value={sortMode}
+                  onChange={(e) => setSortMode(e.target.value as SortMode)}
+                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700"
+                >
+                  <option value="popular">Popularity</option>
+                  <option value="az">A to Z</option>
+                  <option value="za">Z to A</option>
+                </select>
+              </div>
+            </div>
           )}
         </div>
 
-        {/* Layout toggle — separate quick-access button */}
-        <button
-          onClick={() => setLayout(layout === "grid" ? "list" : "grid")}
-          className="flex items-center px-2 py-1 text-gray-500 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors h-7"
-          title={layout === "grid" ? "Switch to list" : "Switch to grid"}
-        >
-          {layout === "grid" ? "▦" : "≡"}
-        </button>
-
-        {/* Stats — separate quick-access button */}
-        <button
-          onClick={() => setStatsOpen((o) => !o)}
-          className={`flex items-center px-2 py-1 rounded-lg transition-colors h-7 border ${
-            statsOpen ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-500 hover:bg-gray-100 border-gray-200"
-          }`}
-          title="View stats"
-        >
-          📊
-        </button>
-
-        {/* New trip button */}
-        {isEnabled("tripGroups") && (
-          <button
-            onClick={() => { setCreatingNew(true); setEditingMain(null); }}
-            className="flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors h-7"
-            title="Create new trip"
-          >
-            ➕
-          </button>
-        )}
       </div>
 
 
       {/* Stats modal */}
-      {statsOpen && (
+      {isMobile && statsOpen && (
         <>
           <div className="fixed inset-0 z-40 bg-black/20" onClick={() => setStatsOpen(false)} />
           <div className="fixed left-3 right-3 bottom-3 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-4">
@@ -489,7 +608,7 @@ const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string }[] = [
             {/* Stat chips */}
             <div className="flex flex-wrap gap-2 mb-3">
               <span className="text-[11px] text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full">
-                <span className="font-bold text-slate-700">{trips.length}</span> trips
+                <span className="font-bold text-slate-700">{trips.length}</span> cards
               </span>
               <span className="text-[11px] text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full">
                 <span className="font-bold text-slate-700">{uniqueRegions}</span> regions
@@ -522,67 +641,267 @@ const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string }[] = [
         </>
       )}
 
-      {/* Trip cards — grouped by section */}
-      <div className="flex-1 overflow-y-auto px-3 md:px-5 py-3 md:py-4">
-        <div className="max-w-5xl mx-auto space-y-6">
-          {/* Create new trip form */}
-          {creatingNew && (
-            <div className="mb-4">
-              <TripEditor
-                initial={null}
-                allCountryNames={countries.map((c) => c.name)}
-                countryRegionMap={Object.fromEntries(countries.filter((c) => c.region).map((c) => [c.name, c.region!]))}
-                assignedNames={assignedNames}
-                currentTripNames={[]}
-                onSave={(group) => handleSave(null, group)}
-                onCancel={() => setCreatingNew(false)}
-                onDelete={null}
-              />
-            </div>
-          )}
-
-          {filtered.length > 0 && (
-            <p className="text-[10px] text-gray-400">
-              Showing {filtered.length} of {trips.length} trips
-            </p>
-          )}
-
-          {/* ⭐ Favorites */}
-          {favoriteTrips.length > 0 && (
-            <PaginatedTripSection icon="⭐" label="Favorites" count={favoriteTrips.length} color="text-yellow-600"
-              trips={favoriteTrips} renderCards={renderTripCards} pageSize={layout === "grid" ? 6 : 5} />
-          )}
-
-          {/* 📋 Planning */}
-          {planning.length > 0 && (
-            <PaginatedTripSection icon="📋" label="Planning" count={planning.length} color="text-blue-600"
-              trips={planning} renderCards={renderTripCards} pageSize={layout === "grid" ? 6 : 5} />
-          )}
-
-          {/* ✅ Completed */}
-          {completed.length > 0 && (
-            <PaginatedTripSection icon="✅" label="Completed" count={completed.length} color="text-emerald-600"
-              trips={completed} renderCards={renderTripCards} pageSize={layout === "grid" ? 6 : 5} />
-          )}
-
-          {/* Empty state */}
-          {filtered.length === 0 && !creatingNew && (
-            <div className="text-center py-20 space-y-4">
-              <span className="text-5xl block">🌍</span>
-              <p className="text-lg font-bold text-slate-700">Your travel board is empty</p>
-              <p className="text-sm text-slate-400 max-w-md mx-auto">
-                Head to Discover to add countries, then come back here to organize them into trips.
-              </p>
-              <button
-                onClick={() => { setCreatingNew(true); }}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg transition-colors"
-              >
-                + Create your first trip
-              </button>
-            </div>
-          )}
+      {isMobile ? (
+        <div className="flex-1 overflow-y-auto px-3 py-3">
+          {renderTripsContent("max-w-5xl")}
         </div>
-      </div>
+      ) : (
+        <div className="hidden md:flex flex-1 overflow-hidden">
+          {railOpen ? (
+            <aside className="w-72 lg:w-80 shrink-0 border-r border-gray-200 bg-white overflow-y-auto p-4 space-y-4">
+              <div className="flex items-center justify-between">
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Primary filters</p>
+                <button
+                  onClick={() => setRailOpen(false)}
+                  className="px-2 py-1 text-sm rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50"
+                  title="Hide filters"
+                  aria-label="Hide filters"
+                >
+                  ⟨
+                </button>
+              </div>
+              <div className="space-y-2">
+                <div>
+                  <p className="text-[10px] font-semibold text-gray-500 mb-1">Month</p>
+                  <div className="grid grid-cols-4 gap-1">
+                    {MONTHS.map((m) => (
+                      <button
+                        key={m}
+                        onClick={() => setMonth(selectedMonth.includes(m) ? selectedMonth.filter((x) => x !== m) : [...selectedMonth, m])}
+                        className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                          selectedMonth.includes(m)
+                            ? "bg-blue-600 text-white"
+                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        }`}
+                      >
+                        {m}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-semibold text-gray-500 mb-1">Budget + travelers</p>
+                  <div className="grid grid-cols-3 gap-1 mb-1.5">
+                    {BUDGET_BASIS_OPTIONS.map(({ value, label }) => (
+                      <button
+                        key={value}
+                        onClick={() => setBudgetBasis(value)}
+                        className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                          budgetBasis === value
+                            ? "bg-blue-600 text-white"
+                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="space-y-1">
+                    {BUDGET_OPTIONS.map(({ value, label, desc }) => (
+                      <button
+                        key={value}
+                        onClick={() => setBudgetFilter(budgetFilter === value ? "all" : value)}
+                        className={`w-full px-3 py-2 rounded-lg text-left ${
+                          budgetFilter === value ? "bg-amber-100 text-amber-800 border border-amber-200" : "bg-gray-50 text-gray-600 border border-transparent hover:bg-gray-100"
+                        }`}
+                      >
+                        <p className="text-[11px] font-semibold">{label}</p>
+                        <p className="text-[10px] opacity-75">{desc}</p>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-semibold text-gray-500 mb-1">Visited</p>
+                  <select
+                    value={visitedFilter}
+                    onChange={(e) => setVisitedFilter(e.target.value as VisitedFilter)}
+                    className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700"
+                  >
+                    <option value="all">All countries</option>
+                    <option value="unvisited">Not visited</option>
+                    <option value="visited">Visited</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-gray-100 space-y-2">
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Trip filters</p>
+                <select
+                  value={viewMode}
+                  onChange={(e) => setViewMode(e.target.value as ViewMode)}
+                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700"
+                  title="Trip type"
+                >
+                  <option value="all">All trips</option>
+                  <option value="combo">Combo trips</option>
+                  <option value="solo">Solo trips</option>
+                </select>
+                <select
+                  value={visitedMode}
+                  onChange={(e) => setVisitedMode(e.target.value as VisitedMode)}
+                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700"
+                  title="Trip progress"
+                >
+                  <option value="all">All status</option>
+                  <option value="completed">Completed</option>
+                  <option value="in-progress">In progress</option>
+                  <option value="not-started">Not started</option>
+                </select>
+                <select
+                  value={regionFilter}
+                  onChange={(e) => setRegionFilter(e.target.value as Region | "all")}
+                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700"
+                  title="Region filter"
+                >
+                  <option value="all">All regions</option>
+                  {ALL_REGIONS.map((r) => (
+                    <option key={r} value={r}>{r}</option>
+                  ))}
+                </select>
+                {(selectedMonth.length > 0 || budgetFilter !== "all" || budgetBasis !== "couple" || visitedFilter !== "all" || hasSecondaryFilters) && (
+                  <button
+                    onClick={() => {
+                      setMonth([]);
+                      setBudgetBasis("couple");
+                      setBudgetFilter("all");
+                      setVisitedFilter("all");
+                      setViewMode("all");
+                      setVisitedMode("all");
+                      setRegionFilter("all");
+                    }}
+                    className="w-full px-3 py-2 rounded-lg text-xs font-semibold text-red-600 border border-red-100 hover:bg-red-50"
+                  >
+                    Clear all filters
+                  </button>
+                )}
+              </div>
+
+              <div className="rounded-xl border border-gray-200 bg-gray-50 p-3 space-y-2">
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Trip stats</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-xl font-black text-slate-800">{totalVisited}</span>
+                  <span className="text-xs text-slate-400">/ {uniqueCountries} visited</span>
+                </div>
+                <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                  <div
+                    className="h-full rounded-full bg-emerald-400 transition-all duration-500"
+                    style={{ width: `${uniqueCountries > 0 ? (totalVisited / uniqueCountries) * 100 : 0}%` }}
+                  />
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  <span className="text-[10px] text-slate-500 bg-white px-2 py-1 rounded-full border border-gray-200">
+                    <span className="font-bold text-slate-700">{trips.length}</span> cards
+                  </span>
+                  <span className="text-[10px] text-slate-500 bg-white px-2 py-1 rounded-full border border-gray-200">
+                    <span className="font-bold text-slate-700">{uniqueRegions}</span> regions
+                  </span>
+                  <span className="text-[10px] text-slate-500 bg-white px-2 py-1 rounded-full border border-gray-200">
+                    <span className="font-bold text-slate-700">{tripsCompleted}</span> completed
+                  </span>
+                </div>
+                {bestMonth && (
+                  <p className="text-[10px] text-amber-700 bg-amber-50 border border-amber-100 rounded-lg px-2 py-1.5">
+                    Best month: <span className="font-semibold">{bestMonth.month}</span> ({bestMonth.count})
+                  </p>
+                )}
+                {nextTrip && (
+                  <button
+                    onClick={() => onSelect(nextTrip.main)}
+                    className="w-full mt-1 px-3 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-xs font-semibold"
+                  >
+                    Open next trip: {nextTrip.main.name}
+                  </button>
+                )}
+              </div>
+            </aside>
+          ) : (
+            <aside className="w-11 shrink-0 border-r border-gray-200 bg-white flex items-start justify-center pt-3">
+              <button
+                onClick={() => setRailOpen(true)}
+                className="w-7 h-7 text-sm rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50"
+                title="Show filters"
+                aria-label="Show filters"
+              >
+                ⟩
+              </button>
+            </aside>
+          )}
+
+          <div className="flex-1 overflow-y-auto px-5 lg:px-6 py-4">
+            <div className="max-w-6xl mx-auto space-y-4">
+              <div className="rounded-xl border border-gray-200 bg-white p-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="relative flex-1 min-w-[16rem]">
+                    <input
+                      type="text"
+                      value={search}
+                      onChange={(e) => setSearch(e.target.value)}
+                      placeholder="Search countries, cities..."
+                      className="w-full px-3 py-2 pr-8 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none"
+                    />
+                    {search && (
+                      <button
+                        onClick={() => setSearch("")}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm p-0.5"
+                        title="Clear search"
+                      >
+                        ✕
+                      </button>
+                    )}
+                  </div>
+
+                  <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                      onClick={() => setLayout("list")}
+                      className={`px-2.5 py-2 text-sm leading-none ${layout === "list" ? "bg-blue-50 text-blue-700" : "text-gray-600 hover:bg-gray-50"}`}
+                      title="List view"
+                      aria-label="List view"
+                    >
+                      ≡
+                    </button>
+                    <button
+                      onClick={() => setLayout("grid")}
+                      className={`px-2.5 py-2 text-sm leading-none border-l border-gray-200 ${layout === "grid" ? "bg-blue-50 text-blue-700" : "text-gray-600 hover:bg-gray-50"}`}
+                      title="Grid view"
+                      aria-label="Grid view"
+                    >
+                      ▦
+                    </button>
+                  </div>
+
+                  <select
+                    value={sortMode}
+                    onChange={(e) => setSortMode(e.target.value as SortMode)}
+                    className="px-2.5 py-2 text-xs font-semibold rounded-lg border border-gray-200 bg-white text-gray-700"
+                    title="Sort trips"
+                  >
+                    <option value="popular">Sort: Popularity</option>
+                    <option value="az">Sort: A to Z</option>
+                    <option value="za">Sort: Z to A</option>
+                  </select>
+
+                  <span className="text-[11px] text-gray-500 bg-gray-50 border border-gray-200 rounded-lg px-2.5 py-2">
+                    {filtered.length} of {trips.length}
+                  </span>
+
+                  {isEnabled("tripGroups") && (
+                    <button
+                      onClick={() => { setCreatingNew(true); setEditingMain(null); }}
+                      className="px-3 py-2 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                    >
+                      + New Trip
+                    </button>
+                  )}
+                </div>
+              </div>
+              {renderTripsContent(effectiveLayout === "grid" ? "max-w-6xl" : "max-w-5xl")}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Mobile FAB — New Trip */}
       {isEnabled("tripGroups") && !creatingNew && (
@@ -599,7 +918,7 @@ const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string }[] = [
 
   function renderTripCards(tripList: Trip[]) {
     return (
-      <div className={layout === "grid" ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" : "grid gap-3"}>
+      <div className={effectiveLayout === "grid" ? "grid grid-cols-2 lg:grid-cols-3 gap-3" : "grid gap-3"}>
         {tripList.map((trip) =>
           editingMain === trip.main.name ? (
             <TripEditor
@@ -624,7 +943,7 @@ const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string }[] = [
               visitedNames={visitedNames}
               favorites={favorites}
               onSelect={onSelect}
-              compact={layout === "grid"}
+              compact={effectiveLayout === "grid"}
               onEdit={trip.source === "group" ? () => { setEditingMain(trip.main.name); setCreatingNew(false); } : undefined}
             />
           ),
@@ -914,6 +1233,7 @@ function TripRow({
   compact?: boolean;
 }) {
   const isCombo = trip.addOns.length > 0;
+  const suggestedPairs = !isCombo && !trip.allVisited ? (trip.main.combo ?? []).slice(0, 2) : [];
   const progress = trip.allCountries.length > 0
     ? Math.round((trip.visitedCount / trip.allCountries.length) * 100)
     : 0;
@@ -953,7 +1273,7 @@ function TripRow({
             </span>
           </div>
           {isCombo && (
-            <div className="flex items-center gap-1 mb-1.5 flex-wrap">
+            <div className="flex min-h-[22px] items-center gap-1 mb-1.5 flex-wrap">
               <span className="text-gray-300 text-[10px]">+</span>
               {trip.addOns.map((c) => (
                 <button
@@ -966,10 +1286,26 @@ function TripRow({
               ))}
             </div>
           )}
-          {!isCombo && trip.main.combo && trip.main.combo.length > 0 && !trip.allVisited && (
-            <p className="text-[9px] text-gray-400 italic mb-1 truncate">
-              Pair with {trip.main.combo.slice(0, 2).join(", ")}
-            </p>
+          {!isCombo && (
+            <div className="flex min-h-[22px] items-center gap-1 mb-1.5 flex-wrap">
+              {suggestedPairs.length > 0 ? (
+                <>
+                  <span className="text-gray-300 text-[10px]">+</span>
+                  {suggestedPairs.map((name) => (
+                    <span
+                      key={name}
+                      className="text-[10px] font-medium text-gray-500 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-100"
+                    >
+                      {name}
+                    </span>
+                  ))}
+                </>
+              ) : (
+                <span className="text-[10px] font-medium text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-100">
+                  No combo yet
+                </span>
+              )}
+            </div>
           )}
           <div className="flex items-center gap-2">
             <span className="text-[10px] text-gray-400 font-medium">{trip.visitedCount}/{trip.allCountries.length}</span>
@@ -993,17 +1329,6 @@ function TripRow({
           >
             {trip.main.name}
           </button>
-          {isCombo && (
-            <>
-              <span className="text-gray-300 text-xs shrink-0">+</span>
-              <span className="text-xs text-gray-500 truncate">
-                {trip.addOns.map((c) => c.name).join(", ")}
-              </span>
-              <span className="shrink-0 text-[10px] font-semibold text-indigo-500 bg-indigo-50 px-2 py-0.5 rounded-full">
-                {trip.allCountries.length} countries
-              </span>
-            </>
-          )}
           <span className={`shrink-0 text-[9px] font-medium px-1.5 py-0.5 rounded ${REGION_BADGE[trip.region] ?? "bg-gray-50 text-gray-400"}`}>
             {trip.region}
           </span>
@@ -1045,13 +1370,26 @@ function TripRow({
         </div>
       )}
 
-      {/* Country chips (list mode only) */}
-      {!compact && (
+      {suggestedPairs.length > 0 && !compact && (
+        <div className="flex items-center gap-1 mb-2 flex-wrap">
+          <span className="text-gray-300 text-xs">+</span>
+          {suggestedPairs.map((name) => (
+            <span
+              key={name}
+              className="text-[10px] font-medium text-gray-500 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-100"
+            >
+              {name}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Add-on chips (list mode only) */}
+      {!compact && isCombo && trip.addOns.length > 0 && (
         <div className="flex flex-wrap gap-1.5">
-          {trip.allCountries.map((c, i) => {
+          {trip.addOns.map((c) => {
             const isVisited = visitedNames.has(c.name);
             const isFav = favorites.has(c.name);
-            const isMain = i === 0 && isCombo;
             return (
               <button
                 key={c.name}
@@ -1059,9 +1397,7 @@ function TripRow({
                 className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium transition-all cursor-pointer ${
                   isVisited
                     ? "bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
-                    : isMain
-                      ? "bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200"
-                      : "bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-700"
+                    : "bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-700"
                 }`}
               >
                 {isVisited

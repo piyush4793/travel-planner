@@ -7,10 +7,21 @@ import { LS_KEYS } from "../core/lsKeys";
 import { usePersistedSet } from "./usePersistedSet";
 import { loadConsolidatedCountry } from "../data/consolidatedCountry";
 
-type ManifestEntry = { name: string; lat: number; lng: number; region: string; inSeed: boolean; hasItinerary: boolean; recDays: number | null; maxDays: number | null };
+type ManifestEntry = {
+  name: string;
+  lat: number;
+  lng: number;
+  region: string;
+  inSeed: boolean;
+  hasItinerary: boolean;
+  recDays: number | null;
+  maxDays: number | null;
+  popularityScore?: number;
+};
 
 const MANIFEST = manifestData as ManifestEntry[];
 const CATALOG = catalogData as CatalogEntry[];
+const MANIFEST_BY_NAME = new Map(MANIFEST.map((m) => [m.name, m]));
 
 // Seed country names from manifest
 const SEED_NAMES = new Set(MANIFEST.filter((m) => m.inSeed).map((m) => m.name));
@@ -19,6 +30,7 @@ const SEED_NAMES = new Set(MANIFEST.filter((m) => m.inSeed).map((m) => m.name));
 function buildSeedCountry(m: ManifestEntry): Country {
   return {
     name: m.name, lat: m.lat, lng: m.lng, region: m.region,
+    popularityScore: m.popularityScore,
     bestMonths: [], budget: "", experiences: [],
   };
 }
@@ -32,8 +44,10 @@ async function enrichCountry(name: string): Promise<Country | null> {
   if (!data) return null;
   const country: Country = {
     name: data.name, lat: data.lat, lng: data.lng, region: data.region,
+    popularityScore: MANIFEST_BY_NAME.get(data.name)?.popularityScore,
     bestMonths: data.bestMonths, worstMonths: data.worstMonths,
     budget: typeof data.budget === "object" ? data.budget.couple : data.budget,
+    budgetBreakdown: typeof data.budget === "object" ? data.budget : undefined,
     experiences: data.experiences, avoid: data.avoid, combo: data.combo,
     landmark: data.landmark ?? undefined, travelStyle: data.travelStyle as Country["travelStyle"],
     cities: data.cities, stopoverNote: data.stopoverNote ?? undefined,

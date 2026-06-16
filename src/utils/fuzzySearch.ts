@@ -8,78 +8,146 @@ export type Searchable = {
   main: Country;
 };
 
-// Create a searchable document from a trip for fuzzy matching
+// Create a searchable document from a trip for matching/ranking
 function createSearchDocument(trip: Searchable): {
   id: number;
+  mainName: string;
+  countryNames: string[];
+  regions: string[];
+  cities: string[];
+  experiences: string[];
+  extras: string[];
   text: string;
-  displayName: string;
 } {
-  const parts: string[] = [];
+  const countries: string[] = [];
+  const regions: string[] = [];
+  const cities: string[] = [];
+  const experiences: string[] = [];
+  const extras: string[] = [];
 
   for (const country of trip.allCountries) {
-    // Country name
-    parts.push(country.name);
+    countries.push(normalizeKey(country.name));
 
-    // Region
-    if (country.region) parts.push(country.region);
+    if (country.region) regions.push(normalizeKey(country.region));
 
-    // Experiences
     if (country.experiences?.length) {
-      parts.push(...country.experiences);
+      experiences.push(...country.experiences.map(normalizeKey));
     }
 
-    // Cities
     if (country.cities?.length) {
-      parts.push(...country.cities.map((c) => c.name));
+      cities.push(...country.cities.map((c) => normalizeKey(c.name)));
       if (country.cities.some((c) => c.notes)) {
-        parts.push(...country.cities.map((c) => c.notes || "").filter(Boolean));
+        extras.push(...country.cities.map((c) => c.notes || "").filter(Boolean).map(normalizeKey));
       }
     }
 
-    // Landmark
-    if (country.landmark) parts.push(country.landmark);
+    if (country.landmark) extras.push(normalizeKey(country.landmark));
 
-    // Travel style
     if (country.travelStyle?.length) {
-      parts.push(...country.travelStyle);
+      extras.push(...country.travelStyle.map(normalizeKey));
     }
 
-    // Stopover note
-    if (country.stopoverNote) parts.push(country.stopoverNote);
+    if (country.stopoverNote) extras.push(normalizeKey(country.stopoverNote));
 
-    // Avoid/watch out for
-    if (country.avoid?.length) parts.push(...country.avoid);
+    if (country.avoid?.length) extras.push(...country.avoid.map(normalizeKey));
 
-    // Combo destinations
-    if (country.combo?.length) parts.push(...country.combo);
+    if (country.combo?.length) extras.push(...country.combo.map(normalizeKey));
 
-    // Notes
-    if (country.notes) parts.push(country.notes);
+    if (country.notes) extras.push(normalizeKey(country.notes));
   }
 
+  const mainName = normalizeKey(trip.main.name);
   return {
     id: trip.id,
-    text: parts.join(" ").toLowerCase(),
-    displayName: trip.main.name,
+    mainName,
+    countryNames: countries,
+    regions,
+    cities,
+    experiences,
+    extras,
+    text: [mainName, ...countries, ...regions, ...cities, ...experiences, ...extras].join(" "),
   };
 }
 
 // Fuzzy search trips by any attribute
 export function fuzzySearchTrips<T extends Searchable>(trips: T[], query: string): T[] {
-  if (!query.trim()) return trips;
+  const q = normalizeKey(query);
+  if (!q) return trips;
 
   const documents = trips.map(createSearchDocument);
+  const tripById = new Map(trips.map((trip) => [trip.id, trip]));
+
+  const buckets: T[][] = [[], [], [], [], [], [], []];
+
+  for (const doc of documents) {
+    const trip = tripById.get(doc.id);
+    if (!trip) continue;
+
+    const mainPrefix = doc.mainName.startsWith(q);
+    const mainWordPrefix = hasWordPrefix(doc.mainName, q);
+    const countryPrefix = doc.countryNames.some((name) => name.startsWith(q));
+    const mainContains = doc.mainName.includes(q);
+    const countryContains = doc.countryNames.some((name) => name.includes(q));
+    const cityPrefix = doc.cities.some((city) => city.startsWith(q));
+    const relatedContains =
+      doc.cities.some((city) => city.includes(q)) ||
+      doc.regions.some((region) => region.includes(q)) ||
+      doc.experiences.some((experience) => experience.includes(q)) ||
+      doc.extras.some((extra) => extra.includes(q)) ||
+      doc.text.includes(q);
+
+    let bucketIndex = -1;
+    if (mainPrefix) bucketIndex = 0;
+    else if (mainWordPrefix) bucketIndex = 1;
+    else if (countryPrefix) bucketIndex = 2;
+    else if (mainContains) bucketIndex = 3;
+    else if (countryContains) bucketIndex = 4;
+    else if (cityPrefix) bucketIndex = 5;
+    else if (relatedContains) bucketIndex = 6;
+
+    if (bucketIndex >= 0) {
+      buckets[bucketIndex].push(trip);
+    }
+  }
+
+  const deterministic = buckets.flat();
+  if (deterministic.length > 0) return deterministic;
 
   const fuse = new Fuse(documents, {
-    keys: ["text"],
+    keys: [
+      { name: "mainName", weight: 0.5 },
+      { name: "countryNames", weight: 0.25 },
+      { name: "cities", weight: 0.15 },
+      { name: "text", weight: 0.1 },
+    ],
     includeScore: true,
-    minMatchCharLength: 1,
-    threshold: 0.6, // Stricter: allow ~20% character mismatch (not country name fuzzy)
-    useExtendedSearch: true,
+    minMatchCharLength: 2,
+    threshold: 0.3,
+    ignoreLocation: true,
     shouldSort: true,
   });
 
-  const results = fuse.search(query);
-  const resultIds = new Set(results.map((r) => r.item.id));
-  return trips.filter((t) => resultIds.has(t.id));
+  const fuzzyResults = fuse.search(q);
+  const seen = new Set<number>();
+  const ranked: T[] = [];
+  for (const result of fuzzyResults) {
+    const trip = tripById.get(result.item.id);
+    if (!trip || seen.has(trip.id)) continue;
+    seen.add(trip.id);
+    ranked.push(trip);
+  }
+  return ranked;
+}
+
+function normalizeKey(value: string): string {
+  return value
+    .trim()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, " ")
+    .toLowerCase();
+}
+
+function hasWordPrefix(text: string, query: string): boolean {
+  return text.split(" ").some((word) => word.startsWith(query));
 }

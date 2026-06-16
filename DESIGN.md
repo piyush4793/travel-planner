@@ -19,7 +19,7 @@ For features, setup, and user-facing docs, see [README.md](./README.md).
 | State | **Custom hooks + localStorage** | No external state library |
 | Routing | **URL hash** | Zero deps, back/forward works |
 | Data | **Local JSON** | Ships with app, works offline |
-| Tests | **Vitest** | 217 tests across 23 files |
+| Tests | **Vitest** | 305 tests across 38 files |
 
 **Zero runtime dependencies** beyond React + MapLibre. No routing library, no state management library.
 
@@ -99,7 +99,7 @@ src/
 │   ├── map/
 │   │   └── HoverCard.tsx          # Wikipedia photo card on map hover
 │   └── shared/
-│       ├── Filters.tsx            # Global filter bar
+│       ├── Filters.tsx            # Shared filter primitives (legacy/global wiring reference)
 │       ├── PillGroup.tsx          # Segmented pill toggle
 │       ├── FilterChip.tsx         # Portal-based dropdown chip
 │       ├── ExperienceDropdown.tsx # Experience tag multi-select
@@ -176,7 +176,25 @@ Two-tier gating lives in `src/core/featureFlags.ts`. Paid features require both 
 
 ### Portal pattern
 
-Filter dropdowns, tooltips, and experience picker use `createPortal` — the filter bar has `overflow-x: auto` which clips absolute children.
+Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid clipping from scroll/overflow containers in header and panel layouts.
+
+### Trips responsive control layout
+
+`TripsView` keeps one filter model but adapts presentation by breakpoint:
+- **Mobile**: compact header row with icon-triggered primary/secondary filter panels
+- **Tablet/Desktop**: left filter rail (primary + secondary + stats) that can be collapsed, with right-side results toolbar (filter toggle, search, icon-only list/grid, sort, count, new trip)
+- **Card invariant**: Trips renders one card per country in My List (trip groups annotate cards but do not suppress standalone country cards)
+- **Narrow mobile**: forced list view; wider phones can switch list/grid
+- **Popularity sort**: driven by country `popularityScore` sourced from manifest metadata (then favorites, then name)
+- **Experience tags**: app-level experience tags are not applied to Trips cards to avoid hidden filtering states in Trips UX
+- **Search ranking behavior**: primary-country matches (including word-prefix matches) rank above combine/related hits; fuzzy fallback is strict and only used when deterministic matching finds nothing; active search keeps relevance order (no popularity re-sort)
+- **Compact card rhythm**: grid cards reserve combo-row space and render a "No combo yet" placeholder when suggestions are absent, keeping progress rows aligned
+- **List card de-duplication**: combo cards no longer repeat add-ons inline in the header; add-on countries are shown once in the chip row
+
+### Country panel interactions
+
+- Header flag rendering uses explicit aliases plus locale region-name resolution and now covers all manifest country names.
+- “Combine with” pills are interactive and navigate directly to the selected country panel when present in My List.
 
 ### Cinematic map
 
@@ -191,7 +209,7 @@ Reuses the main MapLibre instance via `mainMapRef`. Disables user interaction on
 | Tier | Source | Count | Content |
 |---|---|---|---|
 | **Catalog** | `data/worldCatalog.json` | 197 | `{ name, lat, lng, region }` — Discover view |
-| **Manifest** | `data/rules/index.json` | 198 | Browse metadata + `inSeed`, `hasItinerary`, `recDays`, `maxDays` |
+| **Manifest** | `data/rules/index.json` | 198 | Browse metadata + `inSeed`, `hasItinerary`, `recDays`, `maxDays`, `popularityScore` |
 | **Rule JSON** | `data/rules/{name}.json` | 198 | Consolidated country data + day-by-day itinerary rules |
 
 The Discover catalog remains a 197-country sovereign browse list. The manifest expands coverage to 198 itinerary-backed destinations, and curated starter destinations are identified via `inSeed` for first-run My List population.
@@ -204,7 +222,8 @@ type Country = {
   lat: number; lng: number;
   bestMonths: string[];
   worstMonths?: string[];
-  budget: string;              // "₹3L–₹5L"
+  budget: string;              // "₹3L–₹5L" (display fallback)
+  budgetBreakdown?: { solo: string; couple: string; family4: string };
   experiences: string[];
   avoid?: string[];
   combo?: string[];
@@ -293,7 +312,7 @@ ChatModal ImportView → paste text or share link
 
 ```bash
 npx tsc --noEmit    # type check
-npm test            # vitest (169 tests, 16 files)
+npm test            # vitest (305 tests, 38 files)
 npm run build       # tsc + vite build
 ```
 

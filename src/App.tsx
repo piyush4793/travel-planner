@@ -13,7 +13,7 @@ import SettingsModal from "./components/ai/SettingsModal";
 import ChatModal from "./components/ai/ChatModal";
 import AiItineraryModal from "./components/ai/AiItineraryModal";
 import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
-import { applyFilters, type BudgetTier } from "./core/utils/filterLogic";
+import { applyFilters, type BudgetTier, type BudgetBasis } from "./core/utils/filterLogic";
 import { loadLS, saveLS } from "./core/storage";
 import { LS_KEYS } from "./core/lsKeys";
 import { useHashView, type AppView } from "./hooks/useHashView";
@@ -42,6 +42,7 @@ export default function App() {
   const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
   const [visitedFilter, setVisitedFilter] = useState<VisitedFilter>("all");
   const [budgetFilter, setBudgetFilter] = useState<BudgetTier>("all");
+  const [budgetBasis, setBudgetBasis] = useState<BudgetBasis>("couple");
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [formTarget, setFormTarget] = useState<Country | "new" | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -77,13 +78,13 @@ export default function App() {
   const trips = useTripStore(store.myListNames, store.myListCountries);
 
   const filtered = useMemo(
-    () => applyFilters(store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter),
-    [store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter],
+    () => applyFilters(store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter, budgetBasis),
+    [store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter, budgetBasis],
   );
   // For Trips: apply all filters EXCEPT visited (Trips filters at trip-card level)
   const filteredForTrips = useMemo(
-    () => applyFilters(store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, "all", budgetFilter),
-    [store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, budgetFilter],
+    () => applyFilters(store.myListCountries, selectedMonth, [], store.visited.set, "all", budgetFilter, budgetBasis),
+    [store.myListCountries, selectedMonth, store.visited.set, budgetFilter, budgetBasis],
   );
   const comboNames = selectedCountry?.combo ?? [];
 
@@ -267,6 +268,8 @@ export default function App() {
             setMonth={setSelectedMonth}
             budgetFilter={budgetFilter}
             setBudgetFilter={setBudgetFilter}
+            budgetBasis={budgetBasis}
+            setBudgetBasis={setBudgetBasis}
             onSelect={setSelectedCountry}
             tripGroups={trips.mergedTripGroups}
             onSaveTrip={trips.saveTrip}
@@ -291,6 +294,7 @@ export default function App() {
         <CountryPanel
           country={selectedCountry}
           onClose={() => setSelectedCountry(null)}
+          onSelectCountry={setSelectedCountry}
           isFavorite={selectedCountry ? store.favorites.set.has(selectedCountry.name) : false}
           onToggleFavorite={() => selectedCountry && store.favorites.toggle(selectedCountry.name)}
           isVisited={selectedCountry ? store.visited.set.has(selectedCountry.name) : false}
