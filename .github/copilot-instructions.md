@@ -14,6 +14,7 @@ npm run validate        # tsc + tests + knip + build
 ```
 
 Run `npx tsc --noEmit` and `npm run build` before and after every change set. Use `npm test` whenever behavior changes or when documentation references current suite counts. `npm run validate` is the full confidence pass.
+Before committing, ensure adequate test coverage for the behavior you changed (add or update TCs so regressions are caught).
 
 ---
 
