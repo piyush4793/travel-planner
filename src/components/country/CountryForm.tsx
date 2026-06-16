@@ -3,6 +3,7 @@ import type { Country, TravelStyle } from "../../core/types";
 import { STYLE_META, TRAVEL_STYLES } from "../../core/utils/travelStyles";
 import Tooltip from "../shared/Tooltip";
 import ModalShell from "../shared/ModalShell";
+import { useConfirm } from "../shared/ConfirmDialog";
 
 const BUDGET_PATTERN = /^[₹$€£¥][\d.]+[KkLlMm](\s*[–—-]\s*[₹$€£¥][\d.]+[KkLlMm])?$/;
 
@@ -17,6 +18,7 @@ export default function CountryForm({ initial, onSave, onClose }: Props) {
   const [landmark, setLandmark] = useState(initial.landmark ?? "");
   const [travelStyle, setTravelStyle] = useState<TravelStyle[]>(initial.travelStyle ?? []);
   const [notes, setNotes] = useState(initial.notes ?? "");
+  const [confirm, ConfirmDialog] = useConfirm();
 
   const isDirty = useMemo(() => {
     return budget !== (initial.budget ?? "") ||
@@ -33,8 +35,17 @@ export default function CountryForm({ initial, onSave, onClose }: Props) {
     setTravelStyle((prev) => prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]);
   }
 
-  function handleClose() {
-    if (isDirty && !window.confirm("You have unsaved changes. Discard them?")) return;
+  async function handleClose() {
+    if (isDirty) {
+      const ok = await confirm({
+        title: "Discard changes?",
+        message: "You have unsaved changes that will be lost.",
+        confirmLabel: "Discard",
+        cancelLabel: "Keep editing",
+        variant: "warning",
+      });
+      if (!ok) return;
+    }
     onClose();
   }
 
@@ -49,6 +60,7 @@ export default function CountryForm({ initial, onSave, onClose }: Props) {
   }
 
   return (
+    <>
     <ModalShell
       open={true}
       onClose={handleClose}
@@ -144,6 +156,8 @@ export default function CountryForm({ initial, onSave, onClose }: Props) {
           </button>
         </div>
     </ModalShell>
+    <ConfirmDialog />
+    </>
   );
 }
 

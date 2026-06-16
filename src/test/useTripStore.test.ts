@@ -69,35 +69,47 @@ describe("useTripStore — P0", () => {
     });
   });
 
-  it("deleteTrip is a no-op for seed trips", async () => {
+  it("deleteTrip on a customized seed trip removes override and reverts to default", async () => {
     const { result } = renderHook(() => useTripStore(
       ["Vietnam", "Cambodia"],
       [country("Vietnam", ["Cambodia"]), country("Cambodia")],
     ));
 
+    // Customize the seed trip
+    act(() => {
+      result.current.saveTrip("Vietnam", { main: "Vietnam", addOns: ["Cambodia"], region: "Asia" });
+    });
+    expect(result.current.mergedTripGroups.find((g) => g.main === "Vietnam")?.isCustom).toBe(true);
+
+    // Delete removes the override — trip reverts to seed defaults
     act(() => {
       result.current.deleteTrip("Vietnam");
     });
-
-    // Seed trip should still be present — deleteTrip rejects seeds
-    expect(result.current.mergedTripGroups.some((group) => group.main === "Vietnam")).toBe(true);
+    const trip = result.current.mergedTripGroups.find((g) => g.main === "Vietnam");
+    expect(trip).toBeDefined();
+    expect(trip?.isCustom).toBeFalsy();
   });
 
-  it("deleteTrip removes non-seed custom trips from customs", async () => {
-    const { result } = renderHook(() => useTripStore([], []));
+  it("deleteTrip removes custom override — seed repopulates the trip", async () => {
+    const { result } = renderHook(() => useTripStore(["Brazil"], []));
 
+    // Customize Brazil trip
     act(() => {
       result.current.saveTrip(null, { main: "Brazil", addOns: ["Argentina"], region: "Americas" });
     });
+    expect(result.current.mergedTripGroups.find((g) => g.main === "Brazil")?.isCustom).toBe(true);
+
+    // Delete removes override — seed repopulates
     act(() => {
       result.current.deleteTrip("Brazil");
     });
 
-    expect(result.current.mergedTripGroups.some((group) => group.main === "Brazil")).toBe(false);
+    const trip = result.current.mergedTripGroups.find((g) => g.main === "Brazil");
+    expect(trip).toBeDefined();
+    expect(trip?.isCustom).toBeFalsy();
 
     await waitFor(() => {
       expect(JSON.parse(localStorage.getItem(LS_KEYS.TRIP_CUSTOMS) ?? "[]")).toEqual([]);
-      expect(JSON.parse(localStorage.getItem(LS_KEYS.TRIP_DELETED) ?? "[]")).toEqual([]);
     });
   });
 
@@ -123,5 +135,33 @@ describe("useTripStore — P0", () => {
       "Cambodia",
       "Thailand",
     ]);
+  });
+
+  it("deleteTrip on an unmodified seed trip is harmless (trip stays from seed)", () => {
+    const { result } = renderHook(() => useTripStore(
+      ["Vietnam", "Cambodia"],
+      [country("Vietnam", ["Cambodia"]), country("Cambodia")],
+    ));
+
+    act(() => {
+      result.current.deleteTrip("Vietnam");
+    });
+
+    // Trip still present — seed data is untouched
+    expect(result.current.mergedTripGroups.some((g) => g.main === "Vietnam")).toBe(true);
+  });
+
+  it("deleteTrip on custom-only trip removes it permanently", async () => {
+    const { result } = renderHook(() => useTripStore([], []));
+
+    act(() => {
+      result.current.saveTrip(null, { main: "Custom Trip", addOns: [], region: "Europe" });
+    });
+    expect(result.current.mergedTripGroups.some((g) => g.main === "Custom Trip")).toBe(true);
+
+    act(() => {
+      result.current.deleteTrip("Custom Trip");
+    });
+    expect(result.current.mergedTripGroups.some((g) => g.main === "Custom Trip")).toBe(false);
   });
 });

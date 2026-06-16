@@ -5,6 +5,7 @@ import { getLLMKeys, getActiveProvider } from "../../core/utils/ai/llmSettings";
 import { parseImportedText, fetchChatLink, importResultToLLM, type ImportResult } from "../../utils/importParser";
 import { estimateCost, formatCost, PROVIDER_PRICING } from "../../utils/ai/llmProvider";
 import ModalShell from "../shared/ModalShell";
+import { useConfirm } from "../shared/ConfirmDialog";
 
 type Props = {
   open: boolean;
@@ -42,6 +43,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
   const [importResult, setImportResult] = useState<ImportResult | null>(null);
   const [importError, setImportError] = useState<string | null>(null);
   const [importSaved, setImportSaved] = useState(false);
+  const [confirmChat, ConfirmDialog] = useConfirm();
 
   const keys = getLLMKeys();
   const activeProvider = getActiveProvider();
@@ -85,7 +87,17 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
     }
   }
 
-  function handleClose() {
+  async function handleClose() {
+    if (messages.length > 0) {
+      const ok = await confirmChat({
+        title: "Close chat?",
+        message: "Your conversation will be lost. Make sure you've saved any plans you want to keep.",
+        confirmLabel: "Close",
+        cancelLabel: "Keep chatting",
+        variant: "warning",
+      });
+      if (!ok) return;
+    }
     clearChat();
     autoSentRef.current = null;
     setPasteMode(false); setLinkMode(false); setLinkUrl(""); setLinkLoading(false);
@@ -96,6 +108,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
   const hasConversation = messages.length > 0;
 
   return (
+    <>
     <ModalShell
       open={open}
       onClose={handleClose}
@@ -336,6 +349,8 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
           </div>
         )}
     </ModalShell>
+    {ConfirmDialog()}
+    </>
   );
 }
 

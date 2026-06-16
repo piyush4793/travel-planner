@@ -10,6 +10,7 @@ import type { CountryRule } from "../../core/data/itineraryRules";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { useCountryRule } from "../../hooks/useCountryRule";
+import { useConfirm } from "../shared/ConfirmDialog";
 import { isEnabled } from "../../core/featureFlags";
 import { exportItineraryAsPdf } from "../../utils/pdfExport";
 import { getBudgetDisplay } from "../../core/types";
@@ -74,6 +75,7 @@ export default function CountryPanel({
   const [countryInfo, setCountryInfo] = useState<CountryInfo | null>(null);
   const [infoLoading, setInfoLoading] = useState(false);
   const [infoFetched, setInfoFetched] = useState(false);
+  const [confirm, ConfirmDialog] = useConfirm();
   const currentCountryNameRef = useRef<string | null>(country?.name ?? null);
 
   const maxDays = getMaxRuleDays(rule) ?? 30;
@@ -362,7 +364,15 @@ export default function CountryPanel({
                   </div>
                   {onDeleteAiPlan && (
                     <button
-                      onClick={() => onDeleteAiPlan(activePlanId)}
+                      onClick={async () => {
+                        const ok = await confirm({
+                          title: "Delete AI plan?",
+                          message: `"${activePlan?.label}" will be permanently removed.`,
+                          confirmLabel: "Delete",
+                          variant: "danger",
+                        });
+                        if (ok) onDeleteAiPlan(activePlanId);
+                      }}
                       className="shrink-0 text-[10px] font-semibold text-red-400 transition-colors hover:text-red-600"
                     >
                       🗑 Delete
@@ -621,6 +631,7 @@ export default function CountryPanel({
           />
         )}
       </Suspense>
+      <ConfirmDialog />
     </div>
   );
 }

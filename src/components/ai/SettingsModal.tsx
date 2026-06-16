@@ -15,6 +15,7 @@ import {
 import { isEnabled } from "../../core/featureFlags";
 import { getLLMKeys, getActiveProvider, saveLLMKeys, saveActiveProvider } from "../../core/utils/ai/llmSettings";
 import ModalShell from "../shared/ModalShell";
+import { useConfirm } from "../shared/ConfirmDialog";
 
 
 const PROVIDERS: LLMProviderType[] = ["openai", "claude", "gemini"];
@@ -76,6 +77,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
   const [restorePreview, setRestorePreview] = useState<BackupPreview | null>(null);
   const restoreRef = useRef<HTMLInputElement>(null);
   const importRef = useRef<HTMLInputElement>(null);
+  const [confirmDel, ConfirmDialog] = useConfirm();
 
   if (!open) return null;
 
@@ -107,7 +109,14 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
     }
   }
 
-  function handleDelete() {
+  async function handleDelete() {
+    const ok = await confirmDel({
+      title: "Delete API key?",
+      message: `Remove the ${PROVIDER_LABELS[provider]} API key from this browser?`,
+      confirmLabel: "Delete",
+      variant: "danger",
+    });
+    if (!ok) return;
     const next = { ...keys };
     delete next[provider];
     setKeys(next);
@@ -169,6 +178,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
   const masked = currentKey ? currentKey.slice(0, 7) + "\u2022".repeat(20) + currentKey.slice(-4) : "";
 
   return (
+    <>
     <ModalShell
       open={open}
       onClose={onClose}
@@ -535,5 +545,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
           </div>
         )}
     </ModalShell>
+    {ConfirmDialog()}
+    </>
   );
 }

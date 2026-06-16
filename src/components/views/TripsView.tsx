@@ -7,6 +7,8 @@ import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { getWikiImage } from "../../utils/wikiImages";
 import { isEnabled } from "../../core/featureFlags";
 import { fuzzySearchTrips } from "../../utils/fuzzySearch";
+import { useConfirm } from "../shared/ConfirmDialog";
+import { createPortal } from "react-dom";
 
 type Props = {
   countries: Country[];
@@ -132,6 +134,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
   );
   const [showSortHelp, setShowSortHelp] = useState(false);
   const sortHelpTimerRef = useRef<number | null>(null);
+  const [confirm, ConfirmDialog] = useConfirm();
   const canUseMobileGrid = isMobile && isWideMobile;
   const effectiveLayout: "list" | "grid" = isMobile ? (canUseMobileGrid ? layout : "list") : layout;
 
@@ -276,14 +279,21 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
     setCreatingNew(false);
   };
 
-  const handleDelete = (main: string) => {
+  const handleReset = async (main: string) => {
+    const ok = await confirm({
+      title: "Reset to defaults?",
+      message: "Your customizations will be removed and the trip will revert to its original configuration.",
+      confirmLabel: "Reset",
+      variant: "warning",
+    });
+    if (!ok) return;
     onDeleteTrip(main);
     setEditingMain(null);
   };
 
   const renderTripsContent = (widthClass: string) => (
     <div className={`${widthClass} mx-auto space-y-6`}>
-      {creatingNew && (
+      {creatingNew && !isMobile && (
         <div className="mb-4">
           <TripEditor
             initial={null}
@@ -293,7 +303,6 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
             currentTripNames={[]}
             onSave={(group) => handleSave(null, group)}
             onCancel={() => setCreatingNew(false)}
-            onDelete={null}
           />
         </div>
       )}
@@ -357,6 +366,39 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
       )}
     </div>
   );
+
+  // On mobile, the editing trip's TripEditor renders in a bottom drawer portal
+  const editingTrip = editingMain ? trips.find((t) => t.main.name === editingMain) : null;
+  const mobileEditorContent = isMobile ? (
+    creatingNew ? (
+      <TripEditor
+        initial={null}
+        allCountryNames={countries.map((c) => c.name)}
+        countryRegionMap={Object.fromEntries(countries.filter((c) => c.region).map((c) => [c.name, c.region!]))}
+        assignedNames={assignedNames}
+        currentTripNames={[]}
+        onSave={(group) => handleSave(null, group)}
+        onCancel={() => setCreatingNew(false)}
+      />
+    ) : editingTrip ? (
+      <TripEditor
+        initial={{
+          main: editingTrip.main.name,
+          addOns: editingTrip.addOns.map((c) => c.name),
+          region: editingTrip.region,
+        }}
+        isSeedTrip={editingTrip.source === "group" && !editingTrip.isCustom}
+        allCountryNames={countries.map((c) => c.name)}
+        countryRegionMap={Object.fromEntries(countries.filter((c) => c.region).map((c) => [c.name, c.region!]))}
+        assignedNames={assignedNames}
+        currentTripNames={editingTrip.allCountries.map((c) => c.name)}
+        onSave={(group) => handleSave(editingTrip.main.name, group)}
+        onCancel={() => setEditingMain(null)}
+        onReset={editingTrip.isCustom ? () => handleReset(editingTrip.main.name) : undefined}
+      />
+    ) : null
+  ) : null;
+
   return (
     <div className="h-full flex flex-col bg-slate-50 overflow-hidden">
       {/* Header */}
@@ -973,7 +1015,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
       )}
 
       {/* Mobile FAB — New Trip */}
-      {isEnabled("tripGroups") && !creatingNew && (
+      {isEnabled("tripGroups") && !creatingNew && !editingMain && (
         <button
           onClick={() => { setCreatingNew(true); setEditingMain(null); }}
           className="md:hidden fixed bottom-5 right-5 z-30 w-14 h-14 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 active:scale-95 transition-all flex items-center justify-center text-2xl"
@@ -982,6 +1024,24 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
           +
         </button>
       )}
+
+      {/* Mobile bottom drawer for trip editor */}
+      {isMobile && (editingMain || creatingNew) && createPortal(
+        <div
+          className="fixed inset-0 z-[9998] flex items-end bg-black/40 backdrop-blur-sm"
+          onClick={(e) => { if (e.target === e.currentTarget) { setEditingMain(null); setCreatingNew(false); } }}
+        >
+          <div
+            className="w-full max-h-[85vh] overflow-y-auto rounded-t-2xl bg-white shadow-2xl animate-[slideUp_0.2s_ease-out] safe-bottom"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {mobileEditorContent}
+          </div>
+        </div>,
+        document.body,
+      )}
+
+      <ConfirmDialog />
     </div>
   );
 
@@ -990,7 +1050,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
     return (
       <div className={effectiveLayout === "grid" ? "grid grid-cols-2 lg:grid-cols-3 gap-3" : "grid gap-3"}>
         {tripList.map((trip) =>
-          editingMain === trip.main.name ? (
+          editingMain === trip.main.name && !isMobile ? (
             <TripEditor
               key={trip.id}
               initial={{
@@ -1005,8 +1065,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
               currentTripNames={trip.allCountries.map((c) => c.name)}
               onSave={(group) => handleSave(trip.main.name, group)}
               onCancel={() => setEditingMain(null)}
-              onDelete={() => handleDelete(trip.main.name)}
-              onReset={trip.isCustom ? () => { handleDelete(trip.main.name); setEditingMain(null); } : undefined}
+              onReset={trip.isCustom ? () => handleReset(trip.main.name) : undefined}
             />
           ) : (
             <TripRow
@@ -1038,7 +1097,6 @@ function TripEditor({
   currentTripNames,
   onSave,
   onCancel,
-  onDelete,
   onReset,
 }: {
   initial: TripGroupDef | null;
@@ -1049,7 +1107,6 @@ function TripEditor({
   currentTripNames: string[];
   onSave: (group: TripGroupDef) => void;
   onCancel: () => void;
-  onDelete: (() => void) | null;
   onReset?: () => void;
 }) {
   const mainLocked = !!isSeedTrip && !!initial;
@@ -1085,6 +1142,13 @@ function TripEditor({
 
   const canSave = main.trim() !== "";
 
+  // Dirty check: don't save if nothing changed (avoids marking seed trips as custom)
+  const isDirty = !initial ||
+    main !== initial.main ||
+    region !== initial.region ||
+    addOns.length !== (initial.addOns?.length ?? 0) ||
+    addOns.some((a, i) => a !== initial.addOns?.[i]);
+
   // If main is changed and was an add-on, remove it
   const handleMainChange = (newMain: string) => {
     setMain(newMain);
@@ -1114,14 +1178,6 @@ function TripEditor({
               ↩ Reset
             </button>
           )}
-          {onDelete && !mainLocked && (
-            <button
-              onClick={onDelete}
-              className="text-[10px] font-medium text-red-500 hover:text-red-700 px-2 py-1 rounded hover:bg-red-50 transition-colors"
-            >
-              🗑 Delete
-            </button>
-          )}
           <button
             onClick={onCancel}
             className="text-[10px] font-medium text-gray-500 hover:text-gray-700 px-2 py-1 rounded hover:bg-gray-100 transition-colors"
@@ -1129,10 +1185,10 @@ function TripEditor({
             Cancel
           </button>
           <button
-            onClick={() => canSave && onSave({ main, addOns, region })}
-            disabled={!canSave}
+            onClick={() => canSave && isDirty && onSave({ main, addOns, region })}
+            disabled={!canSave || !isDirty}
             className={`text-[10px] font-semibold px-3 py-1 rounded-lg transition-colors ${
-              canSave
+              canSave && isDirty
                 ? "bg-blue-600 text-white hover:bg-blue-700"
                 : "bg-gray-200 text-gray-400 cursor-not-allowed"
             }`}
@@ -1194,10 +1250,19 @@ function TripEditor({
 
       {/* Add-on selector */}
       <div>
-        <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
-          Add-on Countries (max 2)
-        </label>
-
+        <div className="flex items-center justify-between mb-1">
+          <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">
+            Add-on Countries (max 2)
+          </label>
+          {addOns.length > 0 && (
+            <button
+              onClick={() => setAddOns([])}
+              className="text-[10px] font-medium text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              Clear all
+            </button>
+          )}
+        </div>
         {/* Selected add-ons as removable chips */}
         {addOns.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mb-2">

@@ -39,11 +39,11 @@ export function useTripStore(myListNames: string[], countries: Country[]) {
     }
   }, [isSeedTrip]);
 
+  // Removes a trip's custom overrides. For custom-only trips this deletes them;
+  // for customized seed trips this reverts to system defaults.
   const deleteTrip = useCallback((main: string) => {
-    // Only custom trips can be deleted; seed trips use "reset to default" instead
-    if (isSeedTrip(main)) return;
     setTripCustoms((prev) => prev.filter((g) => g.main !== main));
-  }, [isSeedTrip]);
+  }, []);
 
   return { mergedTripGroups, saveTrip, deleteTrip } as const;
 }

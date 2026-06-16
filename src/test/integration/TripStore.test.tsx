@@ -64,19 +64,22 @@ describe("useTripStore integration", () => {
     );
   });
 
-  it("deletes a custom trip from mergedTripGroups", async () => {
+  it("deletes a custom override and reverts to seed trip", async () => {
     const { result } = await renderStores();
     const customTrip: TripGroupDef = { main: "Brazil", addOns: ["Argentina"], region: "Americas" };
 
     act(() => {
       result.current.saveTrip(null, customTrip);
     });
-    expect(result.current.mergedTripGroups.some((group) => group.main === "Brazil")).toBe(true);
+    expect(result.current.mergedTripGroups.find((g) => g.main === "Brazil")?.isCustom).toBe(true);
 
     act(() => {
       result.current.deleteTrip("Brazil");
     });
 
-    expect(result.current.mergedTripGroups.some((group) => group.main === "Brazil")).toBe(false);
+    // Trip still exists (from seed), but no longer marked custom
+    const trip = result.current.mergedTripGroups.find((g) => g.main === "Brazil");
+    expect(trip).toBeDefined();
+    expect(trip?.isCustom).toBeFalsy();
   });
 });
