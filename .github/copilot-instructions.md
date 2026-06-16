@@ -8,7 +8,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (357 tests across 46 files)
+npm test                # Vitest suite (366 tests across 47 files)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests + knip + build
 ```
@@ -20,6 +20,28 @@ Current testing priority:
 - Move to country-detail and itinerary-surface coverage (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) after completing App-level orchestration coverage.
 - Reuse `src/test/testUtils.ts` helpers for localStorage seeding, route setup, and deterministic timers in timing-sensitive UI tests.
 - Keep `src/components/**` threshold intentionally low until broader integration coverage is in place; tighten only after critical journeys are covered.
+
+## TC Coverage Agent Workflow
+
+Use this whenever the task is "improve coverage/testing quality":
+
+1. **Plan in phases first**
+   - Phase A: high-risk regressions (critical integration paths)
+   - Phase B: component/unit gaps in touched modules
+   - Phase C: threshold hardening and cleanup
+2. **Implement in thin slices**
+   - Add a small batch of tests per phase (unit + integration + regression/progression checks).
+   - Keep tests deterministic (mock I/O, timers, network, random/time).
+3. **Gate each slice**
+   - `npx tsc --noEmit`
+   - `npm test`
+   - `npm run build`
+4. **Measure + rebalance**
+   - Run `npm run test:coverage` and move next batch to the lowest-value/highest-risk uncovered areas.
+5. **Keep quality bar**
+   - Prefer behavior assertions over implementation details.
+   - Avoid brittle timing/DOM structure coupling.
+   - Add regression tests for every bug fix path.
 
 ---
 

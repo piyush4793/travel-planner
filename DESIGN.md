@@ -19,7 +19,7 @@ For features, setup, and user-facing docs, see [README.md](./README.md).
 | State | **Custom hooks + localStorage** | No external state library |
 | Routing | **URL hash** | Zero deps, back/forward works |
 | Data | **Local JSON** | Ships with app, works offline |
-| Tests | **Vitest** | 357 tests across 46 files |
+| Tests | **Vitest** | Unit + integration coverage with Testing Library |
 
 **Zero runtime dependencies** beyond React + MapLibre. No routing library, no state management library.
 
@@ -320,7 +320,7 @@ ChatModal ImportView → paste text or share link
 
 ```bash
 npx tsc --noEmit    # type check
-npm test            # vitest (357 tests, 46 files)
+npm test            # vitest
 npm run build       # tsc + vite build
 ```
 
@@ -341,6 +341,18 @@ npm run build       # tsc + vite build
   - filter-state interaction effect on Calendar vs Trips pipelines
   - feature-flag-driven AI prop wiring at the top shell boundary
   - Discover add/remove callback wiring into country-store pathways
+
+### Coverage-improvement agent model
+
+Use a phased execution model for coverage work:
+1. **Phase 1 (Integration risk-first):** lock critical journeys and known regression paths.
+2. **Phase 2 (Component/unit depth):** cover branch-heavy logic inside touched modules.
+3. **Phase 3 (Threshold hardening):** raise/verify thresholds only after stable behavioral coverage.
+
+Per phase:
+- add tests in small batches,
+- keep deterministic mocks for timer/network/storage behavior,
+- run full quality gates (`tsc`, `test`, `build`) before advancing.
 
 ---
 

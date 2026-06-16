@@ -234,13 +234,13 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 
 ## Tech Stack
 
-Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with 357 tests across 46 files, including unit tests for hooks/utils/providers and P0 integration tests for key component flows (view rendering, filtering, country CRUD, trip management).
+Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL JS. Zero runtime dependencies beyond React + MapLibre, no backend, and no routing or state libraries. The codebase is split into a platform-agnostic `src/core/` layer (types, storage ports/adapters, feature flags, pure trip/data utilities), web-only `src/hooks/` layer for React state/hooks, and `src/data/` / `src/utils/` for app-specific loaders and browser helpers. Async UI loaders use stale-request guards before committing fetched data so fast panel/view switches cannot overwrite the current selection. Offline itinerary content lives in `data/rules/` as 199 JSON files (198 country rule chunks + `index.json`) that lazy-load on demand, while Vitest + `@testing-library/react` cover the app with unit tests for hooks/utils/providers and P0 integration tests for key component flows (view rendering, filtering, country CRUD, trip management).
 
 ### Testing & Coverage
 
 | Command | Description |
 |---|---|
-| `npm test` | Run all 357 tests (unit + integration) |
+| `npm test` | Run all tests (unit + integration) |
 | `npm run test:watch` | Watch mode |
 | `npm run test:coverage` | V8 coverage → terminal + `coverage/index.html` (HTML report) |
 | `npm run test:ui` | Vitest browser UI |
@@ -257,6 +257,12 @@ Current testing expansion focus:
 - App-level orchestration coverage for hash-route hydration, top-level view switching, cross-view selection wiring, top-shell feature-flag branches, and Discover add/remove callback wiring
 - Reusable test helpers for localStorage seeding, hash navigation setup, and deterministic timer control (`src/test/testUtils.ts`)
 - Next target: country detail + itinerary modal flows (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) before tightening `src/components/**` thresholds
+
+Coverage-improvement agent loop (recommended):
+1. Plan in phases (critical integration flows -> targeted unit/component gaps -> threshold hardening).
+2. Implement in small test batches (unit + integration + regression/progression cases).
+3. Run gates each batch: `npx tsc --noEmit && npm test && npm run build`.
+4. Re-run `npm run test:coverage` and pick next lowest-covered high-risk surface.
 
 The `scripts/check-new-coverage.sh` script compares changed files against the coverage report and flags any new/modified source file below 50% — run it before merging to catch untested code.
 
