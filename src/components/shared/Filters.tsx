@@ -46,7 +46,7 @@ export default function Filters({
               <div className="flex items-center justify-between mb-2.5">
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Month</p>
                 {selectedMonth.length > 0 && (
-                  <button onClick={() => setMonth([])} className="text-[10px] text-blue-500 font-semibold hover:text-blue-700">
+                  <button onClick={() => setMonth([])} className="text-[10px] text-blue-500 font-semibold hover:text-blue-700 focus-ring min-h-[28px] px-1.5 rounded">
                     Clear
                   </button>
                 )}
@@ -56,7 +56,7 @@ export default function Filters({
                   <button
                     key={m}
                     onClick={() => toggleMonth(m)}
-                    className={`py-1.5 rounded-lg text-[11px] font-semibold transition-all ${
+                    className={`py-1.5 min-h-[32px] rounded-lg text-[11px] font-semibold transition-all focus-ring ${
                       selectedMonth.includes(m)
                         ? "bg-blue-600 text-white shadow-sm"
                         : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -79,7 +79,7 @@ export default function Filters({
                   <button
                     key={value}
                     onClick={() => { setBudgetFilter(budgetFilter === value ? "all" : value); close(); }}
-                    className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
+                    className={`w-full flex items-center justify-between px-3 py-2 min-h-[36px] rounded-xl text-xs font-semibold transition-all focus-ring ${
                       budgetFilter === value
                         ? "bg-amber-500 text-white shadow-sm"
                         : "bg-gray-50 text-gray-700 hover:bg-gray-100"
@@ -101,7 +101,8 @@ export default function Filters({
         <select
           value={visitedFilter}
           onChange={(e) => setVisitedFilter(e.target.value as VisitedFilter)}
-          className={`px-2.5 py-1.5 rounded-lg text-[11px] font-semibold border transition-colors appearance-none cursor-pointer pr-6 bg-[length:12px] bg-[right_6px_center] bg-no-repeat ${
+          aria-label="Visited filter"
+          className={`px-2.5 py-1.5 min-h-[32px] rounded-lg text-[11px] font-semibold border transition-colors appearance-none cursor-pointer pr-6 bg-[length:12px] bg-[right_6px_center] bg-no-repeat focus-ring ${
             visitedFilter !== "all"
               ? "bg-blue-50 text-blue-700 border-blue-200"
               : "bg-white text-gray-600 border-gray-200 hover:border-gray-300"

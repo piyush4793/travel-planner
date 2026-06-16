@@ -33,13 +33,13 @@ describe("DevFlagPanel", () => {
 
     render(<DevFlagPanel />);
 
-    await user.click(screen.getByRole("button", { name: "🛠" }));
+    await user.click(screen.getByRole("button", { name: "Dev: Feature Flags" }));
     expect(screen.getByText("🛠 Feature Flags")).toBeInTheDocument();
     expect(screen.getByText("Trip Groups")).toBeInTheDocument();
 
-    const switches = document.querySelectorAll("button.w-11.h-6");
+    const switches = screen.getAllByRole("switch");
     expect(switches.length).toBeGreaterThan(0);
-    await user.click(switches[switches.length - 1] as HTMLButtonElement);
+    await user.click(switches[switches.length - 1]);
 
     expect(setFeatureFlagMock).toHaveBeenCalled();
     expect(featureChangeListener).toHaveBeenCalled();

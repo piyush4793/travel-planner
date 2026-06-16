@@ -85,7 +85,7 @@ export default function ItineraryModal({ plan, country, rule, onClose }: Props) 
                     <span key={g.name} className="flex items-center gap-1.5">
                       <button
                         onClick={() => document.getElementById(`city-${g.name}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}
-                        className="text-[11px] font-semibold text-slate-300 bg-white/10 px-2 py-0.5 rounded-full hover:bg-white/20 hover:text-white transition-colors cursor-pointer"
+                        className="text-[11px] font-semibold text-slate-300 bg-white/10 px-2.5 py-1 min-h-[28px] rounded-full hover:bg-white/20 hover:text-white transition-colors cursor-pointer focus-ring"
                       >
                         {g.name}
                       </button>
@@ -103,7 +103,7 @@ export default function ItineraryModal({ plan, country, rule, onClose }: Props) 
                 <div className="md:hidden mt-2 relative">
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className="flex items-center gap-1.5 text-[10px] font-semibold text-slate-300 bg-white/10 px-2.5 py-1 rounded-full hover:bg-white/20 hover:text-white transition-colors"
+                    className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-300 bg-white/10 px-3 py-1.5 min-h-[32px] rounded-full hover:bg-white/20 hover:text-white transition-colors focus-ring"
                   >
                     <span>Jump to city…</span>
                     <span className={`transition-transform ${dropdownOpen ? "rotate-180" : ""}`}>▾</span>
@@ -117,7 +117,7 @@ export default function ItineraryModal({ plan, country, rule, onClose }: Props) 
                             document.getElementById(`city-${g.name}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
                             setDropdownOpen(false);
                           }}
-                          className="w-full text-left px-3 py-1.5 text-[11px] text-slate-300 hover:bg-white/10 hover:text-white transition-colors"
+                          className="w-full text-left px-3 py-2 min-h-[36px] text-xs text-slate-300 hover:bg-white/10 hover:text-white transition-colors focus-ring"
                         >
                           {g.name}
                           <span className="ml-2 text-[9px] text-slate-500">{g.days.length}d</span>
@@ -131,7 +131,7 @@ export default function ItineraryModal({ plan, country, rule, onClose }: Props) 
           </div>
           <button
             onClick={onClose}
-            className="text-slate-400 hover:text-white hover:bg-white/10 p-1.5 md:p-2 rounded-xl transition-colors text-base leading-none shrink-0"
+            className="text-slate-400 hover:text-white hover:bg-white/10 p-1.5 md:p-2 rounded-xl transition-colors text-base leading-none shrink-0 focus-ring"
             aria-label="Close"
           >
             ✕
@@ -286,7 +286,7 @@ function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: Coun
     <div className="border border-slate-150 rounded-xl overflow-hidden shadow-sm">
       <button
         onClick={() => setExpanded((e) => !e)}
-        className="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border-b border-slate-100 w-full text-left hover:bg-slate-100 transition-colors"
+        className="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border-b border-slate-100 w-full text-left hover:bg-slate-100 transition-colors focus-ring rounded-none"
       >
         <span className={`text-[9px] text-slate-400 transition-transform duration-200 ${expanded ? "rotate-90" : ""}`}>▸</span>
         <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide flex-1">
@@ -394,7 +394,7 @@ function CopyLinkButton({ url }: { url: string }) {
           setTimeout(() => setCopied(false), 1500);
         });
       }}
-      className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-full transition-colors ${
+      className={`text-[10px] font-semibold px-2 py-1 min-h-[24px] rounded-full transition-colors focus-ring ${
         copied
           ? "text-emerald-600 bg-emerald-50"
           : "text-slate-400 bg-slate-50 hover:bg-slate-100 hover:text-slate-600"

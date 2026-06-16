@@ -154,11 +154,12 @@ export default function App() {
         </div>
 
         {/* Desktop nav pills */}
-        <div className="hidden md:flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto">
+        <div className="hidden md:flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto" role="navigation" aria-label="Main navigation">
           {(Object.keys(VIEW_LABELS) as AppView[]).map((v) => (
             <button key={v} onClick={() => setView(v)}
               data-tour={`nav-${v}`}
-              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              aria-current={view === v ? "page" : undefined}
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all focus-ring ${
                 view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
               }`}>
               {VIEW_LABELS[v]}
@@ -167,11 +168,12 @@ export default function App() {
         </div>
 
         {/* Mobile nav pills — compact */}
-        <div className="flex md:hidden items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto overflow-x-auto max-w-[56vw]">
+        <div className="flex md:hidden items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto overflow-x-auto max-w-[56vw]" role="navigation" aria-label="Main navigation">
           {(Object.keys(VIEW_LABELS) as AppView[]).map((v) => (
             <button key={v} onClick={() => setView(v)}
               data-tour={isMobile ? `nav-${v}` : undefined}
-              className={`px-2.5 py-1.5 rounded-full text-[11px] font-semibold transition-all min-h-[36px] ${
+              aria-current={view === v ? "page" : undefined}
+              className={`px-2.5 py-1.5 rounded-full text-[11px] font-semibold transition-all min-h-[36px] focus-ring ${
                 view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
               }`}>
               {VIEW_LABELS[v]}
@@ -184,8 +186,8 @@ export default function App() {
           <HomeCountrySelector value={homeCountry} onChange={setHomeCountry} />
           <button onClick={() => setSettingsOpen(true)}
             data-tour="settings"
-            className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15"
-            title="Settings">
+            className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15 focus-ring"
+            aria-label="Settings">
             ⚙️
           </button>
           <DevFlagPanel />
@@ -195,7 +197,9 @@ export default function App() {
         <button
           onClick={() => setMenuOpen((o) => !o)}
           data-tour="mobile-menu"
-          className="md:hidden flex items-center justify-center w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-base transition-colors shrink-0"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          className="md:hidden flex items-center justify-center w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-base transition-colors shrink-0 focus-ring"
         >
           {menuOpen ? "✕" : "☰"}
         </button>
@@ -210,8 +214,8 @@ export default function App() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => { setSettingsOpen(true); setMenuOpen(false); }}
-              className="flex items-center justify-center w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15"
-              title="Settings"
+              className="flex items-center justify-center w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15 focus-ring"
+              aria-label="Settings"
             >
               ⚙️
             </button>

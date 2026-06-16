@@ -51,7 +51,7 @@ function SummaryCard({ leftPlan, rightPlan }: { leftPlan: PlanOption; rightPlan:
       {/* Collapsible header */}
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full flex items-center gap-2 px-4 md:px-6 py-2.5 bg-slate-50 hover:bg-slate-100 transition-colors text-left"
+        className="w-full flex items-center gap-2 px-4 md:px-6 py-2.5 bg-slate-50 hover:bg-slate-100 transition-colors text-left focus-ring rounded-none"
       >
         <span className={`text-[9px] text-slate-400 transition-transform duration-200 ${open ? "rotate-90" : ""}`}>▸</span>
         <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider flex-1">Quick Summary</span>
@@ -66,7 +66,7 @@ function SummaryCard({ leftPlan, rightPlan }: { leftPlan: PlanOption; rightPlan:
         <div className="overflow-hidden">
           <div className="px-4 md:px-6 py-3 space-y-3">
             {/* Comparison table — works on all sizes */}
-            <table className="w-full text-[11px]">
+            <table className="w-full text-xs">
               <thead>
                 <tr className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">
                   <th className="text-left py-1 w-8"></th>
@@ -128,19 +128,25 @@ function PlanColumn({ plan }: { plan: TripPlan }) {
     <div className="flex-1 min-w-0 flex flex-col">
       {/* Days */}
       <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2">
+        {plan.days.length === 0 && (
+          <div className="flex flex-col items-center justify-center py-8 text-center">
+            <p className="text-sm text-slate-400">No days in this plan</p>
+            <p className="text-xs text-slate-300 mt-1">Generate or import an itinerary to see day-by-day details</p>
+          </div>
+        )}
         {plan.days.map((day, i) => (
           <div key={i} className="border border-slate-100 rounded-lg overflow-hidden">
             <div className="px-3 py-1.5 bg-slate-50 border-b border-slate-100">
-              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide">{day.label}</p>
+              <p className="text-[11px] font-bold text-slate-600 uppercase tracking-wide">{day.label}</p>
             </div>
             <div className="px-3 py-2 space-y-1">
               {day.activities.map((a, ai) => (
-                <p key={ai} className="text-[11px] text-slate-600 leading-snug">
+                <p key={ai} className="text-xs text-slate-600 leading-snug">
                   <span className="text-slate-300 mr-1.5">›</span>{a}
                 </p>
               ))}
               {day.hotels && day.hotels.length > 0 && (
-                <p className="text-[10px] text-slate-400 mt-1">🏨 {day.hotels.join(", ")}</p>
+                <p className="text-[11px] text-slate-400 mt-1">🏨 {day.hotels.join(", ")}</p>
               )}
             </div>
           </div>
@@ -172,7 +178,7 @@ export default function PlanCompareModal({ options, onClose }: Props) {
             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5">Compare Plans</p>
             <p className="text-lg font-black">Side-by-Side Comparison</p>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-white hover:bg-white/10 p-2 rounded-xl transition-colors text-base leading-none" aria-label="Close">
+          <button onClick={onClose} className="text-slate-400 hover:text-white hover:bg-white/10 p-2 rounded-xl transition-colors text-base leading-none focus-ring" aria-label="Close">
             ✕
           </button>
         </div>
@@ -184,7 +190,7 @@ export default function PlanCompareModal({ options, onClose }: Props) {
             <select
               value={leftId}
               onChange={(e) => setLeftId(e.target.value)}
-              className="w-full text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg px-3 py-2 outline-none focus:border-blue-400"
+              className="w-full text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg px-3 py-2 outline-none focus:border-blue-400 focus-ring"
             >
               {options.map((o) => (
                 <option key={o.id} value={o.id}>{o.label}</option>
@@ -196,7 +202,7 @@ export default function PlanCompareModal({ options, onClose }: Props) {
             <select
               value={rightId}
               onChange={(e) => setRightId(e.target.value)}
-              className="w-full text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg px-3 py-2 outline-none focus:border-blue-400"
+              className="w-full text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg px-3 py-2 outline-none focus:border-blue-400 focus-ring"
             >
               {options.map((o) => (
                 <option key={o.id} value={o.id}>{o.label}</option>

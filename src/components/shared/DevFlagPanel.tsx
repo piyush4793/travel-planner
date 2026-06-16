@@ -51,8 +51,9 @@ export default function DevFlagPanel() {
     <>
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15"
-        title="Dev: Feature Flags"
+        className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15 focus-ring"
+        aria-label="Dev: Feature Flags"
+        aria-expanded={open}
       >
         🛠
       </button>
@@ -73,7 +74,7 @@ export default function DevFlagPanel() {
                 <h3 className="text-sm font-bold text-white">🛠 Feature Flags</h3>
                 <p className="text-[10px] text-slate-400 mt-0.5">Dev panel · localhost only</p>
               </div>
-              <button onClick={() => setOpen(false)} className="text-slate-400 hover:text-white text-lg p-1 rounded-lg transition-colors">✕</button>
+              <button onClick={() => setOpen(false)} className="text-slate-400 hover:text-white text-lg p-1 rounded-lg transition-colors focus-ring" aria-label="Close">✕</button>
             </div>
 
             <div className="px-6 py-5 space-y-5">
@@ -116,7 +117,7 @@ export default function DevFlagPanel() {
               <p className="text-[10px] text-slate-400">Changes apply instantly · paid children require master gate on</p>
               <button
                 onClick={() => { localStorage.removeItem(LS_KEYS.FRE_DONE); window.location.reload(); }}
-                className="text-[10px] font-semibold text-blue-600 hover:text-blue-800 whitespace-nowrap"
+                className="text-[10px] font-semibold text-blue-600 hover:text-blue-800 whitespace-nowrap focus-ring rounded px-1"
               >
                 Reset FRE
               </button>
@@ -151,7 +152,10 @@ function FlagRow({ flag, flags, meta, onToggle, root, dimmed }: {
       </div>
       <button
         onClick={() => onToggle(flag)}
-        className={`relative w-11 h-6 rounded-full shrink-0 transition-colors duration-200 ${
+        role="switch"
+        aria-checked={enabled}
+        aria-label={`${meta.label} ${enabled ? "on" : "off"}`}
+        className={`relative w-11 h-6 rounded-full shrink-0 transition-colors duration-200 focus-ring ${
           enabled ? "bg-blue-600" : "bg-slate-300"
         }`}
       >
