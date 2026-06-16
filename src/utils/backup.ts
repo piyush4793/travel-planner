@@ -1,5 +1,5 @@
 import { LS_KEYS } from "../core/lsKeys";
-import { loadLS, saveLS } from "../core/storage";
+import { loadLS, saveLS, getStorageAdapter } from "../core/storage";
 import type { Country } from "../core/types";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -41,9 +41,10 @@ const BACKUP_KEYS = [
 // ─── JSON Full Backup ─────────────────────────────────────────────────────────
 
 function buildBackupBlob(): Blob {
+  const storage = getStorageAdapter();
   const data: Record<string, unknown> = {};
   for (const key of BACKUP_KEYS) {
-    const raw = localStorage.getItem(key);
+    const raw = storage.getItem(key);
     if (raw !== null) {
       try { data[key] = JSON.parse(raw); } catch { data[key] = raw; }
     }
@@ -136,11 +137,12 @@ export function applyBackup(backup: BackupData): { ok: boolean; msg: string } {
     return { ok: false, msg: `Unsupported backup version (${backup.version}). Please update the app.` };
   }
   try {
+    const storage = getStorageAdapter();
     const data = backup.data;
     let restored = 0;
     for (const key of BACKUP_KEYS) {
       if (key in data) {
-        localStorage.setItem(key, JSON.stringify(data[key]));
+        storage.setItem(key, JSON.stringify(data[key]));
         restored++;
       }
     }
@@ -167,11 +169,12 @@ export function importFullBackup(file: File): Promise<{ ok: boolean; msg: string
         }
 
         const data = parsed.data as Record<string, unknown>;
+        const storage = getStorageAdapter();
         let restored = 0;
 
         for (const key of BACKUP_KEYS) {
           if (key in data) {
-            localStorage.setItem(key, JSON.stringify(data[key]));
+            storage.setItem(key, JSON.stringify(data[key]));
             restored++;
           }
         }

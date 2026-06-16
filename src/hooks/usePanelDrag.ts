@@ -1,10 +1,14 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 const KEYBOARD_STEP = 20;
 
 export function usePanelDrag(initialWidth: number, minWidth: number) {
   const [panelWidth, setPanelWidth] = useState(initialWidth);
   const maxWidth = typeof window !== "undefined" ? window.innerWidth * 0.5 : 600;
+  const cleanupRef = useRef<(() => void) | null>(null);
+
+  // Ensure listeners are removed if component unmounts mid-drag
+  useEffect(() => () => { cleanupRef.current?.(); }, []);
 
   function startPanelDrag() {
     document.body.style.userSelect = "none";
@@ -18,9 +22,16 @@ export function usePanelDrag(initialWidth: number, minWidth: number) {
       document.body.style.cursor = "";
       document.removeEventListener("pointermove", onMove);
       document.removeEventListener("pointerup", onUp);
+      cleanupRef.current = null;
     }
     document.addEventListener("pointermove", onMove);
     document.addEventListener("pointerup", onUp);
+    cleanupRef.current = () => {
+      document.body.style.userSelect = "";
+      document.body.style.cursor = "";
+      document.removeEventListener("pointermove", onMove);
+      document.removeEventListener("pointerup", onUp);
+    };
   }
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {

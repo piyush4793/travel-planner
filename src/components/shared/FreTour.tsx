@@ -108,6 +108,38 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
   const [direction, setDirection] = useState<"next" | "prev">("next");
   const [isMobile, setIsMobile] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const reducedMotion = typeof window !== "undefined"
+    && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Focus trap: move focus into dialog on mount and trap Tab
+  useEffect(() => {
+    if (!visible || !dialogRef.current) return;
+    const dialog = dialogRef.current;
+    const prev = document.activeElement as HTMLElement | null;
+    // Focus first focusable element
+    const focusable = dialog.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length) focusable[0].focus();
+
+    const trapFocus = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      const items = dialog.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
+    document.addEventListener("keydown", trapFocus);
+    return () => {
+      document.removeEventListener("keydown", trapFocus);
+      prev?.focus?.();
+    };
+  }, [visible, step]);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
@@ -148,13 +180,13 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
     setRect(el.getBoundingClientRect());
   }, [step, visible, isMobile]);
 
-  // Re-trigger animation on step change
+  // Re-trigger animation on step change (skip when reduced-motion)
   useEffect(() => {
-    if (!cardRef.current) return;
+    if (!cardRef.current || reducedMotion) return;
     cardRef.current.classList.remove("fre-slide-next", "fre-slide-prev");
     void cardRef.current.offsetWidth; // force reflow
     cardRef.current.classList.add(direction === "next" ? "fre-slide-next" : "fre-slide-prev");
-  }, [step, direction]);
+  }, [step, direction, reducedMotion]);
 
   const finish = useCallback(() => {
     saveLS(LS_KEYS.FRE_DONE, true);
@@ -195,7 +227,7 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
   const renderAsHero = current.kind === "hero" || (current.kind === "spotlight" && isMobile && !rect);
 
   return createPortal(
-    <div className="fixed inset-0 z-[9999]" onClick={(e) => e.stopPropagation()} onKeyDown={(e) => { if (e.key === "Escape") finish(); }} role="dialog" aria-modal="true" aria-label="Welcome tour">
+    <div ref={dialogRef} className="fixed inset-0 z-[9999]" onClick={(e) => e.stopPropagation()} onKeyDown={(e) => { if (e.key === "Escape") finish(); }} role="dialog" aria-modal="true" aria-label="Welcome tour">
       {/* Backdrop */}
       {current.kind === "spotlight" && rect ? (
         <SpotlightBackdrop rect={rect} />
@@ -425,6 +457,12 @@ function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstal
 // ─── Floating emoji decorations ──────────────────────────────────────────────
 
 function FloatingEmoji({ emojis }: { emojis: string[] }) {
+  // Skip floating animations when user prefers reduced motion
+  const reducedMotion = typeof window !== "undefined"
+    && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reducedMotion) return null;
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
       {emojis.map((emoji, i) => {
@@ -477,8 +515,8 @@ function SpotlightBackdrop({ rect }: { rect: DOMRect }) {
       <rect width="100%" height="100%" fill="rgba(0,0,0,0.7)" mask="url(#fre-mask)" style={{ pointerEvents: "all" }} />
       {/* Bright highlight behind target so it pops on dark headers */}
       <rect x={x} y={y} width={w} height={h} rx={r} fill="rgba(255,255,255,0.15)" />
-      {/* Pulsing glow ring */}
-      <rect x={x - 3} y={y - 3} width={w + 6} height={h + 6} rx={r + 3} fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2" filter="url(#fre-glow)" className="animate-pulse" />
+      {/* Pulsing glow ring — disabled when reduced-motion */}
+      <rect x={x - 3} y={y - 3} width={w + 6} height={h + 6} rx={r + 3} fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2" filter="url(#fre-glow)" className="motion-safe:animate-pulse" />
       <rect x={x - 1} y={y - 1} width={w + 2} height={h + 2} rx={r + 1} fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2" />
       {/* Arrow pointing down from target to card */}
       <polygon

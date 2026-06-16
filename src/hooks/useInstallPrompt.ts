@@ -30,9 +30,13 @@ export function useInstallPrompt() {
     window.addEventListener("beforeinstallprompt", handler);
 
     // Detect when app gets installed
-    window.addEventListener("appinstalled", () => setIsInstalled(true));
+    const installedHandler = () => setIsInstalled(true);
+    window.addEventListener("appinstalled", installedHandler);
 
-    return () => window.removeEventListener("beforeinstallprompt", handler);
+    return () => {
+      window.removeEventListener("beforeinstallprompt", handler);
+      window.removeEventListener("appinstalled", installedHandler);
+    };
   }, []);
 
   const promptInstall = useCallback(async (): Promise<boolean> => {

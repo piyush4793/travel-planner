@@ -555,6 +555,47 @@ interface Props {
 type Phase = "intro" | "city" | "done";
 
 export default function ItineraryCinematic({ plan, country, homeCountry, mainMapRef, rule, comboCountries, onClose }: Props) {
+  // Reduced-motion: show static itinerary summary instead of fly-through
+  const prefersReducedMotion = typeof window !== "undefined"
+    && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const cityStopsStatic = prefersReducedMotion ? buildCityStops(plan, country, rule) : [];
+
+  if (prefersReducedMotion) {
+    return createPortal(
+      <div className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div className="w-full max-w-lg bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden">
+          <div className="p-5 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+            <h2 className="text-base font-bold text-slate-800 dark:text-white">🎬 {country.name} — Itinerary Overview</h2>
+            <button onClick={onClose} className="text-slate-400 hover:text-slate-600 dark:hover:text-white text-xl leading-none focus-ring rounded p-1" aria-label="Close">✕</button>
+          </div>
+          <div className="p-5 space-y-4 max-h-[70vh] overflow-y-auto">
+            <p className="text-xs text-slate-500 dark:text-slate-400">Animated fly-through disabled (reduced-motion preference). Here's your route:</p>
+            {cityStopsStatic.map((stop, i) => (
+              <div key={stop.name} className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-xs font-bold text-blue-700 dark:text-blue-300">{i + 1}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm font-semibold text-slate-800 dark:text-white">{stop.name}</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">{stop.days.length} day{stop.days.length > 1 ? "s" : ""}</div>
+                  {stop.transportToNext && (
+                    <div className="text-[10px] text-slate-400 mt-1">→ {stop.transportToNext.label}</div>
+                  )}
+                </div>
+              </div>
+            ))}
+            {cityStopsStatic.length === 0 && (
+              <p className="text-xs text-slate-400 text-center py-4">No city route data available for this plan.</p>
+            )}
+          </div>
+          <div className="p-4 border-t border-slate-200 dark:border-slate-700 flex justify-end">
+            <button onClick={onClose} className="px-5 py-2 text-xs font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus-ring">Close</button>
+          </div>
+        </div>
+      </div>,
+      document.body
+    );
+  }
+
   const pausedRef = useRef(false);
 
   // useState (not useRef) so React re-renders when photos arrive
