@@ -61,6 +61,7 @@ describe("useTripStore — P0", () => {
       main: "Japan",
       addOns: ["China"],
       region: "Asia",
+      isCustom: true,
     });
 
     await waitFor(() => {

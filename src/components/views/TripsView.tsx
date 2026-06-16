@@ -37,6 +37,7 @@ type Trip = {
   isFavorited: boolean;
   region: Region;
   source: "group" | "solo";
+  isCustom?: boolean;
 };
 
 type ViewMode = "all" | "combo" | "solo";
@@ -72,6 +73,7 @@ function buildTrips(
       isFavorited: all.some((c) => favorites.has(c.name)),
       region: (group?.region ?? (main.region as Region)) || "Asia",
       source: group ? "group" : "solo",
+      isCustom: group?.isCustom,
     });
   }
 
@@ -1311,6 +1313,11 @@ function TripRow({
             <span className={`text-[9px] font-medium px-1.5 py-0.5 rounded shrink-0 ml-1 ${REGION_BADGE[trip.region] ?? "bg-gray-50 text-gray-400"}`}>
               {trip.region}
             </span>
+            {trip.isCustom && (
+              <span className="text-[9px] font-medium px-1.5 py-0.5 rounded shrink-0 ml-0.5 bg-violet-50 text-violet-500 border border-violet-100">
+                🏷 Custom
+              </span>
+            )}
           </div>
           {isCombo && (
             <div className="flex min-h-[22px] items-center gap-1 mb-1.5 flex-wrap">
@@ -1378,6 +1385,11 @@ function TripRow({
           <span className={`shrink-0 text-[9px] font-medium px-1.5 py-0.5 rounded ${REGION_BADGE[trip.region] ?? "bg-gray-50 text-gray-400"}`}>
             {trip.region}
           </span>
+          {trip.isCustom && (
+            <span className="shrink-0 text-[9px] font-medium px-1.5 py-0.5 rounded bg-violet-50 text-violet-500 border border-violet-100">
+              🏷 Custom
+            </span>
+          )}
         </div>
 
         <div className="flex items-center gap-2 shrink-0">

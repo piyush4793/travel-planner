@@ -10,26 +10,24 @@ const ALL_MONTHS = [
 ];
 
 type Props = {
-  initial?: Country;
-  existingNames: string[];
+  initial: Country;
   onSave: (c: Country) => void;
   onClose: () => void;
 };
 
-export default function CountryForm({ initial, existingNames, onSave, onClose }: Props) {
-  const isEdit = !!initial;
-  const [name, setName] = useState(initial?.name ?? "");
-  const [lat, setLat] = useState(String(initial?.lat ?? ""));
-  const [lng, setLng] = useState(String(initial?.lng ?? ""));
-  const [bestMonths, setBestMonths] = useState<string[]>(initial?.bestMonths ?? []);
-  const [worstMonths, setWorstMonths] = useState<string[]>(initial?.worstMonths ?? []);
-  const [budget, setBudget] = useState(initial?.budget ?? "");
-  const [experiences, setExperiences] = useState<string[]>(initial?.experiences ?? []);
-  const [avoid, setAvoid] = useState<string[]>(initial?.avoid ?? []);
-  const [combo, setCombo] = useState<string[]>(initial?.combo ?? []);
-  const [landmark, setLandmark] = useState(initial?.landmark ?? "");
-  const [travelStyle, setTravelStyle] = useState<TravelStyle[]>(initial?.travelStyle ?? []);
-  const [notes, setNotes] = useState(initial?.notes ?? "");
+export default function CountryForm({ initial, onSave, onClose }: Props) {
+  const [name, setName] = useState(initial.name);
+  const [lat, setLat] = useState(String(initial.lat ?? ""));
+  const [lng, setLng] = useState(String(initial.lng ?? ""));
+  const [bestMonths, setBestMonths] = useState<string[]>(initial.bestMonths ?? []);
+  const [worstMonths, setWorstMonths] = useState<string[]>(initial.worstMonths ?? []);
+  const [budget, setBudget] = useState(initial.budget ?? "");
+  const [experiences, setExperiences] = useState<string[]>(initial.experiences ?? []);
+  const [avoid, setAvoid] = useState<string[]>(initial.avoid ?? []);
+  const [combo, setCombo] = useState<string[]>(initial.combo ?? []);
+  const [landmark, setLandmark] = useState(initial.landmark ?? "");
+  const [travelStyle, setTravelStyle] = useState<TravelStyle[]>(initial.travelStyle ?? []);
+  const [notes, setNotes] = useState(initial.notes ?? "");
   const [error, setError] = useState("");
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
@@ -46,8 +44,6 @@ export default function CountryForm({ initial, existingNames, onSave, onClose }:
   function handleSubmit() {
     const errs: Record<string, string> = {};
     if (!name.trim()) errs.name = "Name is required.";
-    else if (!isEdit && existingNames.map(n => n.toLowerCase()).includes(name.trim().toLowerCase()))
-      errs.name = "A country with that name already exists.";
     const latN = parseFloat(lat);
     const lngN = parseFloat(lng);
     if (isNaN(latN) || latN < -90 || latN > 90) errs.lat = "Must be between −90 and 90.";
@@ -81,13 +77,13 @@ export default function CountryForm({ initial, existingNames, onSave, onClose }:
     <ModalShell
       open={true}
       onClose={onClose}
-      label={isEdit ? `Edit ${initial?.name}` : "Add Country"}
+      label={`Edit ${initial.name}`}
       className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] flex flex-col"
       backdropClassName="bg-black/50"
     >
         <div className="flex items-center justify-between px-6 py-4 border-b">
           <h2 className="text-lg font-bold text-gray-900">
-            {isEdit ? `Edit — ${initial?.name}` : "Add Country"}
+            {`Edit — ${initial.name}`}
           </h2>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-2xl leading-none" aria-label="Close">×</button>
         </div>
@@ -101,7 +97,7 @@ export default function CountryForm({ initial, existingNames, onSave, onClose }:
                 className={`input ${fieldErrors.name ? "border-red-400" : ""}`}
                 value={name}
                 onChange={(e) => { setName(e.target.value); setFieldErrors((p) => { const { name: _, ...rest } = p; return rest; }); }}
-                disabled={isEdit}
+                disabled
                 placeholder="e.g. Japan"
                 aria-invalid={!!fieldErrors.name}
               />
@@ -236,7 +232,7 @@ export default function CountryForm({ initial, existingNames, onSave, onClose }:
             onClick={handleSubmit}
             className="px-5 py-2 text-sm rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700"
           >
-            {isEdit ? "Save changes" : "Add country"}
+            Save changes
           </button>
         </div>
     </ModalShell>

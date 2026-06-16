@@ -46,7 +46,7 @@ export default function App() {
   const [budgetFilter, setBudgetFilter] = useState<BudgetTier>("all");
   const [budgetBasis, setBudgetBasis] = useState<BudgetBasis>("couple");
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
-  const [formTarget, setFormTarget] = useState<Country | "new" | null>(null);
+  const [formTarget, setFormTarget] = useState<Country | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
   const [chatInitialPrompt, setChatInitialPrompt] = useState<string | undefined>();
@@ -310,8 +310,7 @@ export default function App() {
       <Suspense fallback={null}>
         {formTarget !== null && (
           <CountryForm
-            initial={formTarget === "new" ? undefined : formTarget}
-            existingNames={store.myListNames}
+            initial={formTarget}
             onSave={handleSave}
             onClose={() => setFormTarget(null)}
           />

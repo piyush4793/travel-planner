@@ -40,6 +40,7 @@ describe("buildMergedTripGroups — P0", () => {
       main: "Vietnam",
       addOns: ["Japan"],
       region: "Europe",
+      isCustom: true,
     });
   });
 
@@ -55,6 +56,7 @@ describe("buildMergedTripGroups — P0", () => {
       main: "Brazil",
       addOns: ["Argentina"],
       region: "Americas",
+      isCustom: true,
     });
   });
 
@@ -111,5 +113,34 @@ describe("buildMergedTripGroups — P0", () => {
     );
 
     expect(findGroup(groups, "Brazil")?.addOns).toEqual(["Argentina"]);
+  });
+
+  it("marks custom overrides of seed groups as isCustom", () => {
+    const groups = buildMergedTripGroups(
+      [{ main: "Vietnam", addOns: ["Japan"], region: "Asia" }],
+      [],
+      ["Vietnam", "Japan"],
+      new Map(),
+    );
+
+    expect(findGroup(groups, "Vietnam")?.isCustom).toBe(true);
+  });
+
+  it("does not mark unmodified seed groups as isCustom", () => {
+    const groups = buildMergedTripGroups(
+      [],
+      [],
+      ["Vietnam", "Cambodia"],
+      new Map([["Vietnam", ["Cambodia"]]]),
+    );
+
+    expect(findGroup(groups, "Vietnam")?.isCustom).toBeUndefined();
+  });
+
+  it("does not mutate input customs when marking isCustom", () => {
+    const customs = [{ main: "Brazil", addOns: ["Argentina"], region: "Americas" as const }];
+    buildMergedTripGroups(customs, [], ["Brazil", "Argentina"], new Map());
+
+    expect((customs[0] as TripGroupDef).isCustom).toBeUndefined();
   });
 });

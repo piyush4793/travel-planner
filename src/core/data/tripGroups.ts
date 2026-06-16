@@ -12,6 +12,7 @@ export type TripGroupDef = {
   main: string;
   addOns: string[];
   region: Region;
+  isCustom?: boolean;
 };
 
 type TripGroupSeed = { main: string; region: Region };
@@ -76,26 +77,26 @@ export function buildMergedTripGroups(
   const merged: TripGroupDef[] = [];
   for (const seed of TRIP_GROUP_SEEDS) {
     if (deletedSet.has(seed.main)) continue;
-    // User override takes priority; otherwise derive from combo
-    const group = customByMain.get(seed.main) ?? resolveSeed(seed, comboMap, nameSet);
+    const custom = customByMain.get(seed.main);
+    const group = custom ?? resolveSeed(seed, comboMap, nameSet);
     customByMain.delete(seed.main);
-    merged.push(sanitizeGroup(group, nameSet));
+    merged.push(sanitizeGroup(group, nameSet, !!custom));
   }
 
   // User-created groups (main not in seed)
   for (const custom of customByMain.values()) {
     if (deletedSet.has(custom.main)) continue;
-    merged.push(sanitizeGroup(custom, nameSet));
+    merged.push(sanitizeGroup(custom, nameSet, true));
   }
 
   return merged;
 }
 
-function sanitizeGroup(g: TripGroupDef, validNames: Set<string>): TripGroupDef {
+function sanitizeGroup(g: TripGroupDef, validNames: Set<string>, isCustom = false): TripGroupDef {
   const addOns = g.addOns
     .filter((n) => validNames.has(n) && n !== g.main)
     .filter((n, i, arr) => arr.indexOf(n) === i)
     .slice(0, 2);
   const region = ALL_REGIONS.includes(g.region) ? g.region : "Asia";
-  return { main: g.main, addOns, region };
+  return { main: g.main, addOns, region, ...(isCustom ? { isCustom: true } : {}) };
 }
