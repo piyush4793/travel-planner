@@ -12,7 +12,7 @@ export default function Tooltip({ text, children }: Props) {
   const [below, setBelow] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
-  function handleEnter() {
+  function show() {
     if (ref.current) {
       const r = ref.current.getBoundingClientRect();
       const flip = r.top < 110;
@@ -26,14 +26,21 @@ export default function Tooltip({ text, children }: Props) {
     setVisible(true);
   }
 
+  function hide() { setVisible(false); }
+
   return (
     <>
       <span
         ref={ref}
-        onMouseEnter={handleEnter}
-        onMouseLeave={() => setVisible(false)}
+        tabIndex={0}
+        onMouseEnter={show}
+        onMouseLeave={hide}
+        onFocus={show}
+        onBlur={hide}
         className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-current/15 text-current text-[9px] font-black cursor-help select-none leading-none shrink-0"
         style={{ opacity: 0.6 }}
+        role="img"
+        aria-label={text}
       >
         {children ?? "i"}
       </span>

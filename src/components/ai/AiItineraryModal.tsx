@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { createPortal } from "react-dom";
 import type { LLMTripPlanResult, LLMDayEntry, LLMCityInfo } from "../../core/utils/ai/llmTransform";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../core/utils/transport";
 import { buildRoute } from "../../core/utils/googleMapsRoute";
 import type { SavedAiPlan } from "../../hooks/useAiPlanStore";
 import { formatPlanLabel } from "../../core/utils/planDiff";
+import ModalShell from "../shared/ModalShell";
 
 type CityGroup = {
   name: string;
@@ -61,12 +61,13 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
   const [showComparison, setShowComparison] = useState(false);
   const [planSaved, setPlanSaved] = useState(false);
 
-  return createPortal(
-    <div
-      className="fixed inset-0 z-[200] flex items-center justify-center p-0 md:p-4 bg-black/60 backdrop-blur-sm"
-      onClick={(e) => e.target === e.currentTarget && onClose()}
+  return (
+    <ModalShell
+      open={true}
+      onClose={onClose}
+      label={`AI Itinerary — ${result.destinationName}`}
+      className="bg-white rounded-2xl shadow-2xl w-full max-w-[720px] max-h-[88vh] flex flex-col overflow-hidden"
     >
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-[720px] max-h-[88vh] flex flex-col overflow-hidden">
 
         {/* Header */}
         <div className="px-6 py-5 bg-gradient-to-br from-emerald-900 to-slate-800 text-white shrink-0 flex items-start justify-between gap-4">
@@ -393,9 +394,7 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
             </div>
           </div>
         </div>
-      </div>
-    </div>,
-    document.body,
+    </ModalShell>
   );
 }
 

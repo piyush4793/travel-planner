@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
+import { useState } from "react";
 import type { TripPlan } from "../../core/utils/tripPlans";
 import { extractPlanCities, isRealCity, normalizeCityName } from "../../core/utils/tripPlans";
+import ModalShell from "../shared/ModalShell";
 
 type PlanOption = {
   id: string;
@@ -157,22 +157,15 @@ export default function PlanCompareModal({ options, onClose }: Props) {
   const leftPlan = options.find((o) => o.id === leftId);
   const rightPlan = options.find((o) => o.id === rightId);
 
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
-    document.addEventListener("keydown", handler);
-    return () => document.removeEventListener("keydown", handler);
-  }, [onClose]);
-
   if (options.length < 2) return null;
 
-  return createPortal(
-    <div
-      role="dialog"
-      aria-modal="true"
-      className="fixed inset-0 z-[200] flex items-center justify-center p-0 md:p-4 bg-black/60 backdrop-blur-sm"
-      onClick={(e) => e.target === e.currentTarget && onClose()}
+  return (
+    <ModalShell
+      open={true}
+      onClose={onClose}
+      label="Compare Plans"
+      className="bg-white rounded-2xl shadow-2xl w-full max-w-[1100px] max-h-[88vh] flex flex-col overflow-hidden"
     >
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-[1100px] max-h-[88vh] flex flex-col overflow-hidden">
         {/* Header */}
         <div className="px-6 py-4 bg-gradient-to-br from-slate-900 to-slate-800 text-white shrink-0 flex items-center justify-between">
           <div>
@@ -234,8 +227,6 @@ export default function PlanCompareModal({ options, onClose }: Props) {
           {leftPlan && <PlanColumn plan={leftPlan.plan} />}
           {rightPlan && <PlanColumn plan={rightPlan.plan} />}
         </div>
-      </div>
-    </div>,
-    document.body
+    </ModalShell>
   );
 }

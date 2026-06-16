@@ -29,8 +29,12 @@ export default function FilterChip({ label, active, children }: Props) {
         !panelRef.current?.contains(e.target as Node)
       ) setOpen(false);
     }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") { setOpen(false); btnRef.current?.focus(); }
+    }
     document.addEventListener("mousedown", onDown);
-    return () => document.removeEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => { document.removeEventListener("mousedown", onDown); document.removeEventListener("keydown", onKey); };
   }, [open]);
 
   return (

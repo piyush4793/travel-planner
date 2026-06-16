@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import type { CatalogEntry } from "../../core/types";
 import PillGroup from "../shared/PillGroup";
 
@@ -14,16 +14,23 @@ type ListFilter = "all" | "in-list" | "not-in-list";
 
 export default function DiscoverView({ catalog, myListNames, onAddToList, onRemoveFromList }: Props) {
   const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>();
+  const handleSearch = useCallback((value: string) => {
+    setSearch(value);
+    clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => setDebouncedSearch(value), 200);
+  }, []);
   const [region, setRegion] = useState("All");
-  const [listFilter, setListFilter] = useState<ListFilter>("in-list");
+  const [listFilter, setListFilter] = useState<ListFilter>("all");
 
   const filtered = useMemo(() => {
     let result = catalog;
     if (region !== "All") result = result.filter((c) => c.region === region);
     if (listFilter === "in-list") result = result.filter((c) => myListNames.has(c.name));
     if (listFilter === "not-in-list") result = result.filter((c) => !myListNames.has(c.name));
-    if (search.trim()) {
-      const q = search.toLowerCase();
+    if (debouncedSearch.trim()) {
+      const q = debouncedSearch.toLowerCase();
       result = result.filter((c) => c.name.toLowerCase().includes(q));
     }
     // Listed countries sort to top when showing "all"
@@ -33,7 +40,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
       if (aIn !== bIn) return aIn - bIn;
       return a.name.localeCompare(b.name);
     });
-  }, [catalog, region, listFilter, search, myListNames]);
+  }, [catalog, region, listFilter, debouncedSearch, myListNames]);
 
   const inListCount = catalog.filter((c) => myListNames.has(c.name)).length;
 
@@ -62,7 +69,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
         <input
           type="text"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => handleSearch(e.target.value)}
           placeholder="Search countries…"
           className="w-52 px-3 py-1.5 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors"
         />
@@ -89,7 +96,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
 
         {(search || region !== "All" || listFilter !== "all") && (
           <button
-            onClick={() => { setSearch(""); setRegion("All"); setListFilter("all"); }}
+            onClick={() => { setSearch(""); setDebouncedSearch(""); clearTimeout(debounceRef.current); setRegion("All"); setListFilter("all"); }}
             className="shrink-0 text-[10px] text-red-500 hover:text-red-700 font-medium px-2 py-1 rounded hover:bg-red-50 transition-colors"
           >
             Clear

@@ -2,6 +2,7 @@ import { useState, useRef, type KeyboardEvent } from "react";
 import type { Country, TravelStyle } from "../../core/types";
 import { STYLE_META, TRAVEL_STYLES } from "../../core/utils/travelStyles";
 import Tooltip from "../shared/Tooltip";
+import ModalShell from "../shared/ModalShell";
 
 const ALL_MONTHS = [
   "January","February","March","April","May","June",
@@ -30,6 +31,7 @@ export default function CountryForm({ initial, existingNames, onSave, onClose }:
   const [travelStyle, setTravelStyle] = useState<TravelStyle[]>(initial?.travelStyle ?? []);
   const [notes, setNotes] = useState(initial?.notes ?? "");
   const [error, setError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
   function toggleStyle(s: TravelStyle) {
     setTravelStyle((prev) => prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]);
@@ -42,16 +44,22 @@ export default function CountryForm({ initial, existingNames, onSave, onClose }:
   }
 
   function handleSubmit() {
-    if (!name.trim()) return setError("Name is required.");
-    if (!isEdit && existingNames.map(n => n.toLowerCase()).includes(name.trim().toLowerCase()))
-      return setError("A country with that name already exists.");
+    const errs: Record<string, string> = {};
+    if (!name.trim()) errs.name = "Name is required.";
+    else if (!isEdit && existingNames.map(n => n.toLowerCase()).includes(name.trim().toLowerCase()))
+      errs.name = "A country with that name already exists.";
     const latN = parseFloat(lat);
     const lngN = parseFloat(lng);
-    if (isNaN(latN) || latN < -90 || latN > 90) return setError("Lat must be between -90 and 90.");
-    if (isNaN(lngN) || lngN < -180 || lngN > 180) return setError("Lng must be between -180 and 180.");
-    if (bestMonths.length === 0) return setError("Select at least one best month.");
-    if (!budget.trim()) return setError("Budget is required.");
-    if (experiences.length === 0) return setError("Add at least one experience.");
+    if (isNaN(latN) || latN < -90 || latN > 90) errs.lat = "Must be between −90 and 90.";
+    if (isNaN(lngN) || lngN < -180 || lngN > 180) errs.lng = "Must be between −180 and 180.";
+    if (bestMonths.length === 0) errs.bestMonths = "Select at least one best month.";
+    if (!budget.trim()) errs.budget = "Budget is required.";
+    if (experiences.length === 0) errs.experiences = "Add at least one experience.";
+    setFieldErrors(errs);
+    if (Object.keys(errs).length > 0) {
+      setError(Object.values(errs)[0]);
+      return;
+    }
     setError("");
     onSave({
       name: name.trim(),
@@ -70,8 +78,13 @@ export default function CountryForm({ initial, existingNames, onSave, onClose }:
   }
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] flex flex-col">
+    <ModalShell
+      open={true}
+      onClose={onClose}
+      label={isEdit ? `Edit ${initial?.name}` : "Add Country"}
+      className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] flex flex-col"
+      backdropClassName="bg-black/50"
+    >
         <div className="flex items-center justify-between px-6 py-4 border-b">
           <h2 className="text-lg font-bold text-gray-900">
             {isEdit ? `Edit — ${initial?.name}` : "Add Country"}
@@ -85,24 +98,49 @@ export default function CountryForm({ initial, existingNames, onSave, onClose }:
             <div className="col-span-3">
               <Label>Country name</Label>
               <input
-                className="input"
+                className={`input ${fieldErrors.name ? "border-red-400" : ""}`}
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => { setName(e.target.value); setFieldErrors((p) => { const { name: _, ...rest } = p; return rest; }); }}
                 disabled={isEdit}
                 placeholder="e.g. Japan"
+                aria-invalid={!!fieldErrors.name}
               />
+              {fieldErrors.name && <p className="text-[11px] text-red-500 mt-1">{fieldErrors.name}</p>}
             </div>
             <div>
               <Label>Latitude</Label>
-              <input className="input" type="number" step="any" value={lat} onChange={(e) => setLat(e.target.value)} placeholder="36.2" />
+              <input
+                className={`input ${fieldErrors.lat ? "border-red-400" : ""}`}
+                type="number" step="any" min={-90} max={90}
+                value={lat}
+                onChange={(e) => { setLat(e.target.value); setFieldErrors((p) => { const { lat: _, ...rest } = p; return rest; }); }}
+                placeholder="36.2"
+                aria-invalid={!!fieldErrors.lat}
+              />
+              {fieldErrors.lat && <p className="text-[11px] text-red-500 mt-1">{fieldErrors.lat}</p>}
             </div>
             <div>
               <Label>Longitude</Label>
-              <input className="input" type="number" step="any" value={lng} onChange={(e) => setLng(e.target.value)} placeholder="138.2" />
+              <input
+                className={`input ${fieldErrors.lng ? "border-red-400" : ""}`}
+                type="number" step="any" min={-180} max={180}
+                value={lng}
+                onChange={(e) => { setLng(e.target.value); setFieldErrors((p) => { const { lng: _, ...rest } = p; return rest; }); }}
+                placeholder="138.2"
+                aria-invalid={!!fieldErrors.lng}
+              />
+              {fieldErrors.lng && <p className="text-[11px] text-red-500 mt-1">{fieldErrors.lng}</p>}
             </div>
             <div>
               <Label>Budget</Label>
-              <input className="input" value={budget} onChange={(e) => setBudget(e.target.value)} placeholder="₹2L–₹4L" />
+              <input
+                className={`input ${fieldErrors.budget ? "border-red-400" : ""}`}
+                value={budget}
+                onChange={(e) => { setBudget(e.target.value); setFieldErrors((p) => { const { budget: _, ...rest } = p; return rest; }); }}
+                placeholder="₹2L–₹4L"
+                aria-invalid={!!fieldErrors.budget}
+              />
+              {fieldErrors.budget && <p className="text-[11px] text-red-500 mt-1">{fieldErrors.budget}</p>}
             </div>
           </div>
 
@@ -132,7 +170,8 @@ export default function CountryForm({ initial, existingNames, onSave, onClose }:
           {/* Best months */}
           <div>
             <Label>Best months to visit</Label>
-            <MonthGrid selected={bestMonths} onToggle={(m) => toggleMonth(m, "best")} color="green" />
+            <MonthGrid selected={bestMonths} onToggle={(m) => { toggleMonth(m, "best"); setFieldErrors((p) => { const { bestMonths: _, ...rest } = p; return rest; }); }} color="green" />
+            {fieldErrors.bestMonths && <p className="text-[11px] text-red-500 mt-1">{fieldErrors.bestMonths}</p>}
           </div>
 
           {/* Worst months */}
@@ -144,7 +183,8 @@ export default function CountryForm({ initial, existingNames, onSave, onClose }:
           {/* Experiences */}
           <div>
             <Label>Experiences</Label>
-            <TagInput tags={experiences} onChange={setExperiences} placeholder="e.g. Beaches" />
+            <TagInput tags={experiences} onChange={(t) => { setExperiences(t); setFieldErrors((p) => { const { experiences: _, ...rest } = p; return rest; }); }} placeholder="e.g. Beaches" />
+            {fieldErrors.experiences && <p className="text-[11px] text-red-500 mt-1">{fieldErrors.experiences}</p>}
           </div>
 
           {/* Avoid notes */}
@@ -199,8 +239,7 @@ export default function CountryForm({ initial, existingNames, onSave, onClose }:
             {isEdit ? "Save changes" : "Add country"}
           </button>
         </div>
-      </div>
-    </div>
+    </ModalShell>
   );
 }
 

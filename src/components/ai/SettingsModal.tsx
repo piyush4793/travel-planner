@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import { createPortal } from "react-dom";
 import type { LLMProviderType, LLMKeys, Country } from "../../core/types";
 import { loadLS, saveLS } from "../../core/storage";
 import { LS_KEYS } from "../../core/lsKeys";
@@ -14,6 +13,7 @@ import {
 } from "../../utils/backup";
 import { isEnabled } from "../../core/featureFlags";
 import { getLLMKeys, getActiveProvider, saveLLMKeys, saveActiveProvider } from "../../core/utils/ai/llmSettings";
+import ModalShell from "../shared/ModalShell";
 
 
 const PROVIDERS: LLMProviderType[] = ["openai", "claude", "gemini"];
@@ -155,15 +155,14 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
 
   const masked = currentKey ? currentKey.slice(0, 7) + "\u2022".repeat(20) + currentKey.slice(-4) : "";
 
-  return createPortal(
-    <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/30 backdrop-blur-sm"
-      onClick={onClose}
+  return (
+    <ModalShell
+      open={open}
+      onClose={onClose}
+      label="Settings"
+      className="bg-white md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-md md:mx-4 p-5 md:p-6 space-y-4 h-dvh md:h-auto md:max-h-[90vh] overflow-y-auto"
+      backdropClassName="bg-black/30 backdrop-blur-sm"
     >
-      <div
-        className="bg-white md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-md md:mx-4 p-5 md:p-6 space-y-4 h-dvh md:h-auto md:max-h-[90vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
-      >
         {/* Header */}
         <div className="flex items-center justify-between">
           <h2 className="text-base font-bold text-slate-800 flex items-center gap-2">
@@ -464,8 +463,6 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
             </div>
           </div>
         )}
-      </div>
-    </div>,
-    document.body,
+    </ModalShell>
   );
 }

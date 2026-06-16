@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, render, screen, within } from "@testing-library/react";
+import { cleanup, render, screen, within, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import DiscoverView from "../../components/views/DiscoverView";
 import type { CatalogEntry } from "../../core/types";
@@ -51,12 +51,13 @@ describe("DiscoverView", () => {
       />,
     );
 
-    await user.click(screen.getByRole("button", { name: "Any" }));
     await user.type(screen.getByPlaceholderText(/search countries/i), "Jap");
 
-    expect(screen.getByText("Japan")).toBeInTheDocument();
-    expect(screen.queryByText("France")).not.toBeInTheDocument();
-    expect(screen.queryByText("Brazil")).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText("Japan")).toBeInTheDocument();
+      expect(screen.queryByText("France")).not.toBeInTheDocument();
+      expect(screen.queryByText("Brazil")).not.toBeInTheDocument();
+    });
   });
 
   it("filters countries by region pills", async () => {
@@ -71,8 +72,7 @@ describe("DiscoverView", () => {
       />,
     );
 
-    await user.click(screen.getByRole("button", { name: "Any" }));
-    await user.click(screen.getByRole("button", { name: "Asia" }));
+    await user.click(screen.getByRole("tab", { name: "Asia" }));
 
     expect(screen.getByText("Japan")).toBeInTheDocument();
     expect(screen.queryByText("France")).not.toBeInTheDocument();
@@ -91,8 +91,6 @@ describe("DiscoverView", () => {
         onRemoveFromList={vi.fn()}
       />,
     );
-
-    await user.click(screen.getByRole("button", { name: "Not Added" }));
 
     const brazilCard = screen.getByText("Brazil").closest("div.rounded-xl");
     expect(brazilCard).not.toBeNull();

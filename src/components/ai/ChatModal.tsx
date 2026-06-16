@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { createPortal } from "react-dom";
 import { useChatSession } from "../../hooks/useChatSession";
 import type { LLMTripPlanResult } from "../../core/utils/ai/llmTransform";
 import { getLLMKeys, getActiveProvider } from "../../core/utils/ai/llmSettings";
 import { parseImportedText, fetchChatLink, importResultToLLM, type ImportResult } from "../../utils/importParser";
 import { estimateCost, formatCost, PROVIDER_PRICING } from "../../utils/ai/llmProvider";
+import ModalShell from "../shared/ModalShell";
 
 type Props = {
   open: boolean;
@@ -66,19 +66,10 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
     }
   }, [open, initialPrompt, hasApiKey, messages.length, loading, sendMessage, autoSend]);
 
-  // Focus input on open
-  useEffect(() => {
-    if (!open) return;
-    const id = setTimeout(() => inputRef.current?.focus(), 100);
-    return () => clearTimeout(id);
-  }, [open]);
-
   function handleViewItinerary() {
     if (finalResult) onPlanReady(finalResult);
     handleClose();
   }
-
-  if (!open) return null;
 
   function handleSend() {
     const text = input.trim();
@@ -104,16 +95,14 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
 
   const hasConversation = messages.length > 0;
 
-  return createPortal(
-    <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm"
-      onClick={finalizing ? undefined : handleClose}
+  return (
+    <ModalShell
+      open={open}
+      onClose={handleClose}
+      preventClose={finalizing}
+      label="AI Trip Planner"
+      className="bg-white border border-slate-200 md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-2xl md:mx-4 flex flex-col h-dvh md:h-auto"
     >
-      <div
-        className="bg-white border border-slate-200 md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-2xl md:mx-4 flex flex-col h-dvh md:h-auto"
-        style={{ maxHeight: "min(100dvh, 700px)" }}
-        onClick={(e) => e.stopPropagation()}
-      >
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-200 shrink-0 bg-gradient-to-r from-blue-50 to-indigo-50">
           <div className="flex items-center gap-2.5">
@@ -346,9 +335,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
             </div>
           </div>
         )}
-      </div>
-    </div>,
-    document.body,
+    </ModalShell>
   );
 }
 

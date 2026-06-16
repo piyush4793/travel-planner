@@ -1,11 +1,11 @@
-import { useState, useEffect, useMemo } from "react";
-import { createPortal } from "react-dom";
+import { useState, useMemo } from "react";
 import type { Country } from "../../core/types";
 import type { TripPlan, DayEntry } from "../../core/utils/tripPlans";
 import { extractCityFromLabel } from "../../core/utils/tripPlans";
 import type { CountryRule } from "../../core/data/itineraryRules";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../core/utils/transport";
 import { buildRoute } from "../../core/utils/googleMapsRoute";
+import ModalShell from "../shared/ModalShell";
 
 // ─── Day grouping ─────────────────────────────────────────────────────────────
 
@@ -56,20 +56,13 @@ export default function ItineraryModal({ plan, country, rule, onClose }: Props) 
   const groups = useMemo(() => groupDays(plan.days, rule), [plan.days, rule]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
-    document.addEventListener("keydown", handler);
-    return () => document.removeEventListener("keydown", handler);
-  }, [onClose]);
-
-  return createPortal(
-    <div
-      role="dialog"
-      aria-modal="true"
-      className="fixed inset-0 z-[200] flex items-center justify-center p-0 md:p-4 bg-black/60 backdrop-blur-sm"
-      onClick={(e) => e.target === e.currentTarget && onClose()}
+  return (
+    <ModalShell
+      open={true}
+      onClose={onClose}
+      label={`Itinerary — ${country.name}`}
+      className="bg-white md:rounded-2xl shadow-2xl w-full max-w-[720px] h-full md:h-auto md:max-h-[88vh] flex flex-col overflow-hidden"
     >
-      <div className="bg-white md:rounded-2xl shadow-2xl w-full max-w-[720px] h-full md:h-auto md:max-h-[88vh] flex flex-col overflow-hidden">
 
         {/* ── Header — compact on mobile ──────────────────────────────────── */}
         <div className="px-4 py-3 md:px-6 md:py-5 bg-gradient-to-br from-slate-900 to-slate-800 text-white shrink-0 flex items-start justify-between gap-3">
@@ -208,9 +201,7 @@ export default function ItineraryModal({ plan, country, rule, onClose }: Props) 
           {plan.note && <PracticalNotes note={plan.note} />}
           <div className="h-4" />
         </div>
-      </div>
-    </div>,
-    document.body
+    </ModalShell>
   );
 }
 
