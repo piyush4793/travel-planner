@@ -150,6 +150,8 @@ Full-screen animated experience for rule-based countries:
 - **Always-visible edit** — ✏️ button visible on mobile (hover-only on desktop)
 - **Combo suggestions** — solo trip cards show "Pair with…" hints when available, or a "No combo yet" placeholder chip to preserve layout rhythm
 - **Search intent priority** — search prioritizes the card’s primary country name (including word-prefix matches like `kore`/`swit`) over combine/related hits, and active search keeps relevance order instead of re-sorting by popularity
+- **Results context line** — desktop toolbar now shows an always-visible status line (current sort + active budget basis icon/label) so ranking and pricing context stay explicit
+- **One-click reset** — desktop results toolbar includes a `Clear all` action that resets search + Trips filters in one tap
 - **Grid alignment consistency** — compact cards reserve the combo-row slot so progress rows align even when no combo/suggestion pills exist
 - **No duplicate combine labels** — list cards show combine countries once (as chips only), without repeating them inline next to the main country
 - **Budget basis clarity** — list card budget chips show traveler-basis icons (👤 solo / 👫 couple / 👨‍👩‍👧‍👦 family4) matching the active Trips budget basis filter

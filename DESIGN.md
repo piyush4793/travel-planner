@@ -194,7 +194,8 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 - **Popularity sort**: driven by country `popularityScore` sourced from manifest metadata (then favorites, then name)
 - **Experience tags**: app-level experience tags are not applied to Trips cards to avoid hidden filtering states in Trips UX
 - **Search ranking behavior**: primary-country matches (including word-prefix matches) rank above combine/related hits; fuzzy fallback is strict and only used when deterministic matching finds nothing; active search keeps relevance order (no popularity re-sort)
-- **Compact card rhythm**: grid cards reserve combo-row space and render a "No combo yet" placeholder when suggestions are absent, keeping progress rows aligned
+- **Results context strip**: desktop results toolbar shows sort + budget-basis context and provides a one-click clear-all reset
+- **Compact card rhythm**: grid cards reserve combo-row space and render a low-emphasis "No combo yet" placeholder when suggestions are absent, keeping progress rows aligned
 - **List card de-duplication**: combo cards no longer repeat add-ons inline in the header; add-on countries are shown once in the chip row
 - **Budget-basis cue**: list card budget chips display the active basis icon (solo/couple/family4) so shown values are unambiguous
 

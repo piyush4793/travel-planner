@@ -132,6 +132,8 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
 
   const hasPrimaryFilters = selectedMonth.length > 0 || budgetFilter !== "all" || visitedFilter !== "all";
   const hasSecondaryFilters = viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all";
+  const basisLabel = BUDGET_BASIS_OPTIONS.find((x) => x.value === budgetBasis)?.label ?? "Couple";
+  const hasQuickReset = search.trim().length > 0 || hasPrimaryFilters || hasSecondaryFilters;
 
   useEffect(() => {
     function onResize() {
@@ -887,6 +889,24 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                     {filtered.length} of {trips.length}
                   </span>
 
+                  {hasQuickReset && (
+                    <button
+                      onClick={() => {
+                        setSearch("");
+                        setMonth([]);
+                        setBudgetBasis("couple");
+                        setBudgetFilter("all");
+                        setVisitedFilter("all");
+                        setViewMode("all");
+                        setVisitedMode("all");
+                        setRegionFilter("all");
+                      }}
+                      className="px-2.5 py-2 text-xs font-semibold rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50"
+                    >
+                      Clear all
+                    </button>
+                  )}
+
                   {isEnabled("tripGroups") && (
                     <button
                       onClick={() => { setCreatingNew(true); setEditingMain(null); }}
@@ -896,6 +916,10 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                     </button>
                   )}
                 </div>
+                <p className="mt-2 pt-2 border-t border-gray-100 text-[10px] text-gray-500">
+                  {sortMode === "popular" ? "Sorted by Popularity" : sortMode === "az" ? "Sorted A to Z" : "Sorted Z to A"} ·
+                  {" "}Budget shown for {BUDGET_BASIS_META[budgetBasis].icon} {basisLabel}
+                </p>
               </div>
               {renderTripsContent(effectiveLayout === "grid" ? "max-w-6xl" : "max-w-5xl")}
             </div>
@@ -1312,7 +1336,7 @@ function TripRow({
                   ))}
                 </>
               ) : (
-                <span className="text-[10px] font-medium text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-100">
+                <span className="text-[10px] font-medium text-gray-300 bg-transparent px-2 py-0.5 rounded-full border border-dashed border-gray-200">
                   No combo yet
                 </span>
               )}
