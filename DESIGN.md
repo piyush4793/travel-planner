@@ -19,7 +19,7 @@ For features, setup, and user-facing docs, see [README.md](./README.md).
 | State | **Custom hooks + localStorage** | No external state library |
 | Routing | **URL hash** | Zero deps, back/forward works |
 | Data | **Local JSON** | Ships with app, works offline |
-| Tests | **Vitest** | 352 tests across 46 files |
+| Tests | **Vitest** | 357 tests across 46 files |
 
 **Zero runtime dependencies** beyond React + MapLibre. No routing library, no state management library.
 
@@ -320,7 +320,7 @@ ChatModal ImportView → paste text or share link
 
 ```bash
 npx tsc --noEmit    # type check
-npm test            # vitest (352 tests, 46 files)
+npm test            # vitest (357 tests, 46 files)
 npm run build       # tsc + vite build
 ```
 
@@ -332,6 +332,15 @@ npm run build       # tsc + vite build
   - hash-route setup
   - deterministic timer control for timing-sensitive UI tests
 - Current threshold policy remains strict for domain logic (`core/utils`, hooks, utils) and intentionally permissive for broad UI shells (`src/components/**`) until additional integration coverage lands.
+
+### Testing expansion plan (Phase 2 complete)
+
+- Expanded App orchestration integration tests to cover:
+  - default-hash fallback to Trips and route switching across top-level views
+  - cross-view country selection wiring into `CountryPanel`
+  - filter-state interaction effect on Calendar vs Trips pipelines
+  - feature-flag-driven AI prop wiring at the top shell boundary
+  - Discover add/remove callback wiring into country-store pathways
 
 ---
 

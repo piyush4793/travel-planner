@@ -8,7 +8,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (352 tests across 46 files)
+npm test                # Vitest suite (357 tests across 46 files)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests + knip + build
 ```
@@ -16,8 +16,8 @@ npm run validate        # tsc + tests + knip + build
 Run `npx tsc --noEmit` and `npm run build` before and after every change set. Use `npm test` whenever behavior changes or when documentation references current suite counts. `npm run validate` is the full confidence pass.
 Before committing, ensure adequate test coverage for the behavior you changed (add or update TCs so regressions are caught).
 
-Phase-1 testing priority:
-- Expand App-level orchestration tests first (hash routing, view switching, browser/localStorage hydration).
+Current testing priority:
+- Move to country-detail and itinerary-surface coverage (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) after completing App-level orchestration coverage.
 - Reuse `src/test/testUtils.ts` helpers for localStorage seeding, route setup, and deterministic timers in timing-sensitive UI tests.
 - Keep `src/components/**` threshold intentionally low until broader integration coverage is in place; tighten only after critical journeys are covered.
 
