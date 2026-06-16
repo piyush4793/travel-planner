@@ -27,16 +27,16 @@ describe("PillGroup", () => {
   it("renders all options as tabs", () => {
     render(<PillGroup options={options} value="all" onChange={vi.fn()} />);
 
-    expect(screen.getByRole("tab", { name: "All" })).toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: "Asia" })).toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: "Europe" })).toBeInTheDocument();
+    expect(screen.getByRole("radio", { name: "All" })).toBeInTheDocument();
+    expect(screen.getByRole("radio", { name: "Asia" })).toBeInTheDocument();
+    expect(screen.getByRole("radio", { name: "Europe" })).toBeInTheDocument();
   });
 
   it("applies active styling to the selected pill", () => {
     render(<PillGroup options={options} value="asia" onChange={vi.fn()} />);
 
-    expect(screen.getByRole("tab", { name: "Asia" })).toHaveClass("bg-white", "text-blue-700");
-    expect(screen.getByRole("tab", { name: "All" })).not.toHaveClass("bg-white", "text-blue-700");
+    expect(screen.getByRole("radio", { name: "Asia" })).toHaveClass("bg-white", "text-blue-700");
+    expect(screen.getByRole("radio", { name: "All" })).not.toHaveClass("bg-white", "text-blue-700");
   });
 
   it("calls onChange with the clicked key", async () => {
@@ -45,7 +45,7 @@ describe("PillGroup", () => {
 
     render(<PillGroup options={options} value="all" onChange={onChange} />);
 
-    await user.click(screen.getByRole("tab", { name: "Europe" }));
+    await user.click(screen.getByRole("radio", { name: "Europe" }));
 
     expect(onChange).toHaveBeenCalledWith("europe");
   });
@@ -56,7 +56,7 @@ describe("PillGroup", () => {
 
     render(<PillGroup options={options} value="asia" onChange={onChange} />);
 
-    await user.click(screen.getByRole("tab", { name: "Asia" }));
+    await user.click(screen.getByRole("radio", { name: "Asia" }));
 
     expect(onChange).toHaveBeenCalledWith("asia");
     expect(onChange).toHaveBeenCalledTimes(1);

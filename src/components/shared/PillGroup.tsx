@@ -16,12 +16,12 @@ export default function PillGroup({ options, value, onChange }: Props) {
   }
 
   return (
-    <div className="flex items-center gap-0.5 bg-gray-100 rounded-full p-0.5 shrink-0" role="tablist" aria-orientation="horizontal">
+    <div className="flex items-center gap-0.5 bg-gray-100 rounded-full p-0.5 shrink-0" role="radiogroup" aria-orientation="horizontal">
       {options.map((o, i) => (
         <button
           key={o.key}
-          role="tab"
-          aria-selected={value === o.key}
+          role="radio"
+          aria-checked={value === o.key}
           tabIndex={value === o.key ? 0 : -1}
           onClick={() => onChange(o.key)}
           onKeyDown={(e) => handleKeyDown(e, i)}

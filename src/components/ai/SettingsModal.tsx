@@ -284,6 +284,11 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
                 <p className="text-[10px] leading-relaxed text-amber-700">
                   ⚠️ API keys are stored in your browser&apos;s local storage (unencrypted). Only use keys with spending limits set. Never share your browser profile.
                 </p>
+                {provider === "gemini" && (
+                  <p className="text-[10px] text-amber-600 leading-snug mt-1">
+                    🔑 Gemini keys are sent as a URL parameter (Google&apos;s required pattern). Restrict your key to the Generative Language API and set IP/referrer restrictions in Google Cloud Console.
+                  </p>
+                )}
               </div>
             </div>
 

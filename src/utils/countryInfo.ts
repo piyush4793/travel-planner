@@ -12,6 +12,7 @@ export type CountryInfo = {
   thumbnail?: string;
 };
 
+const MAX_CACHE_SIZE = 250;
 const cache = new Map<string, CountryInfo | null>();
 
 /** Wikipedia name overrides for countries whose article title differs */
@@ -56,6 +57,11 @@ export async function fetchCountryInfo(countryName: string): Promise<CountryInfo
     };
 
     cache.set(key, info);
+    // Evict oldest entries if cache exceeds cap
+    if (cache.size > MAX_CACHE_SIZE) {
+      const first = cache.keys().next().value;
+      if (first !== undefined) cache.delete(first);
+    }
     return info;
   } catch {
     cache.set(key, null);
