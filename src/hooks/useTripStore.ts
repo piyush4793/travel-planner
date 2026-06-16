@@ -40,9 +40,8 @@ export function useTripStore(myListNames: string[], countries: Country[]) {
   }, [isSeedTrip]);
 
   const deleteTrip = useCallback((main: string) => {
-    if (isSeedTrip(main)) {
-      setTripDeleted((prev) => [...prev.filter((m) => m !== main), main]);
-    }
+    // Only custom trips can be deleted; seed trips use "reset to default" instead
+    if (isSeedTrip(main)) return;
     setTripCustoms((prev) => prev.filter((g) => g.main !== main));
   }, [isSeedTrip]);
 

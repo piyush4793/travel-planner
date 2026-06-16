@@ -33,7 +33,6 @@ type Props = {
   onFilterExperience: (tag: string) => void;
   activeExperiences: string[];
   onEdit: () => void;
-  onDelete: () => void;
   onUpdateNotes: (notes: string) => void;
   homeCountry: string;
   mainMapRef?: RefObject<maplibregl.Map | null>;
@@ -50,7 +49,7 @@ export default function CountryPanel({
   isFavorite, onToggleFavorite,
   isVisited, onToggleVisited,
   onFilterExperience, activeExperiences,
-  onEdit, onDelete, onUpdateNotes,
+  onEdit, onUpdateNotes,
   homeCountry,
   mainMapRef,
   allCountries,
@@ -231,7 +230,6 @@ export default function CountryPanel({
                   onClick={onToggleFavorite}
                 />
                 <IconToolbarButton icon="✏️" label="Edit country" onClick={onEdit} />
-                <IconToolbarButton icon="🗑" label="Delete country" onClick={onDelete} className="text-red-500 hover:bg-red-50" />
               </div>
 
               {country.travelStyle && country.travelStyle.length > 0 && (

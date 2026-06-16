@@ -69,7 +69,7 @@ describe("useTripStore — P0", () => {
     });
   });
 
-  it("deleteTrip tombstones seed trips", async () => {
+  it("deleteTrip is a no-op for seed trips", async () => {
     const { result } = renderHook(() => useTripStore(
       ["Vietnam", "Cambodia"],
       [country("Vietnam", ["Cambodia"]), country("Cambodia")],
@@ -79,11 +79,8 @@ describe("useTripStore — P0", () => {
       result.current.deleteTrip("Vietnam");
     });
 
-    expect(result.current.mergedTripGroups.some((group) => group.main === "Vietnam")).toBe(false);
-
-    await waitFor(() => {
-      expect(JSON.parse(localStorage.getItem(LS_KEYS.TRIP_DELETED) ?? "[]")).toContain("Vietnam");
-    });
+    // Seed trip should still be present — deleteTrip rejects seeds
+    expect(result.current.mergedTripGroups.some((group) => group.main === "Vietnam")).toBe(true);
   });
 
   it("deleteTrip removes non-seed custom trips from customs", async () => {

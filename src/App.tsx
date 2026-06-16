@@ -96,11 +96,6 @@ export default function App() {
     setSelectedCountry(country);
   }, [store]);
 
-  const handleDelete = useCallback((country: Country) => {
-    store.deleteCountry(country);
-    setSelectedCountry(null);
-  }, [store]);
-
   const handleUpdateNotes = useCallback((notes: string) => {
     setSelectedCountry((current) => {
       if (!current) return current;
@@ -295,7 +290,6 @@ export default function App() {
           onFilterExperience={toggleExperience}
           activeExperiences={selectedExperiences}
           onEdit={() => selectedCountry && setFormTarget(selectedCountry)}
-          onDelete={() => selectedCountry && handleDelete(selectedCountry)}
           onUpdateNotes={handleUpdateNotes}
           homeCountry={homeCountry}
           mainMapRef={mainMapRef}
