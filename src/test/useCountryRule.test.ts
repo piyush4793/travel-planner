@@ -123,4 +123,16 @@ describe("useCountryRule", () => {
       expect(result.current.rule?.cityOrder).toEqual(["Paris"]);
     });
   });
+
+  it("returns null and resets loading when loader rejects", async () => {
+    loadConsolidatedCountryMock.mockRejectedValue(new Error("network"));
+
+    const { result } = renderHook(() => useCountryRule("Japan"));
+
+    await waitFor(() => {
+      expect(result.current.loading).toBe(false);
+      expect(result.current.data).toBeNull();
+      expect(result.current.rule).toBeNull();
+    });
+  });
 });

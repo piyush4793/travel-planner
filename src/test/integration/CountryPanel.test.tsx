@@ -36,6 +36,38 @@ function makeCountry(overrides: Partial<Country>): Country {
 }
 
 describe("CountryPanel", () => {
+  it("renders expected flag emojis for countries with manual fallbacks", () => {
+    const cases = [
+      { name: "South Korea", flag: "🇰🇷" },
+      { name: "Denmark", flag: "🇩🇰" },
+      { name: "Czech Republic", flag: "🇨🇿" },
+    ];
+
+    for (const testCase of cases) {
+      const { unmount } = render(
+        <CountryPanel
+          country={makeCountry({ name: testCase.name })}
+          onClose={vi.fn()}
+          onSelectCountry={vi.fn()}
+          isFavorite={false}
+          onToggleFavorite={vi.fn()}
+          isVisited={false}
+          onToggleVisited={vi.fn()}
+          onFilterExperience={vi.fn()}
+          activeExperiences={[]}
+          onEdit={vi.fn()}
+          onDelete={vi.fn()}
+          onUpdateNotes={vi.fn()}
+          homeCountry="India"
+          allCountries={[makeCountry({ name: testCase.name })]}
+        />,
+      );
+
+      expect(screen.getByText(testCase.flag)).toBeInTheDocument();
+      unmount();
+    }
+  });
+
   it("navigates to a combo country when combine pill is clicked", async () => {
     const user = userEvent.setup();
     const france = makeCountry({ name: "France", lat: 48.8566, lng: 2.3522, experiences: ["Museums"] });

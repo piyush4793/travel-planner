@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import TripsView from "../../components/views/TripsView";
 import type { Country } from "../../core/types";
@@ -28,6 +28,7 @@ function createCountry(overrides: Partial<Country>): Country {
 
 const countries: Country[] = [
   createCountry({ name: "Sweden", popularityScore: 95, combo: ["Norway"] }),
+  createCountry({ name: "Norway", popularityScore: 20, combo: ["Sweden"] }),
   createCountry({ name: "Switzerland", popularityScore: 10, combo: ["France"] }),
   createCountry({ name: "Japan", popularityScore: 80, region: "Asia", budgetBreakdown: { solo: "₹1L", couple: "₹2L", family4: "₹3L" } }),
 ];
@@ -67,8 +68,8 @@ describe("TripsView", () => {
     renderTrips();
 
     const searchInput = screen.getByPlaceholderText("Search countries, cities...");
-    expect(screen.getByRole("button", { name: "Sweden" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Switzerland" })).toBeInTheDocument();
+    expect(screen.getAllByRole("button", { name: "Sweden" }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("button", { name: "Switzerland" }).length).toBeGreaterThan(0);
 
     await user.type(searchInput, "swit");
 
@@ -77,7 +78,7 @@ describe("TripsView", () => {
 
     await user.click(screen.getByRole("button", { name: "Clear all" }));
     expect(searchInput).toHaveValue("");
-    expect(screen.getByRole("button", { name: "Sweden" })).toBeInTheDocument();
+    expect(screen.getAllByRole("button", { name: "Sweden" }).length).toBeGreaterThan(0);
   });
 
   it("supports list/grid toggles, sort updates, and card selection", async () => {
@@ -96,5 +97,17 @@ describe("TripsView", () => {
 
     await user.click(screen.getByRole("button", { name: "Grid view" }));
     expect(screen.getByTitle("Grid view")).toHaveClass("bg-blue-50");
+  });
+
+  it("opens suggested combine country from grid chips", async () => {
+    const user = userEvent.setup();
+    const { onSelect } = renderTrips();
+
+    await user.click(screen.getByRole("button", { name: "Grid view" }));
+    const swedenCard = screen.getAllByRole("button", { name: "Sweden" })[0].closest("div.rounded-xl");
+    expect(swedenCard).not.toBeNull();
+    await user.click(within(swedenCard as HTMLDivElement).getByRole("button", { name: "Norway" }));
+
+    expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Norway" }));
   });
 });

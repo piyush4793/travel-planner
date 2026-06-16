@@ -941,6 +941,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
   );
 
   function renderTripCards(tripList: Trip[]) {
+    const countryByName = new Map(countries.map((country) => [country.name, country]));
     return (
       <div className={effectiveLayout === "grid" ? "grid grid-cols-2 lg:grid-cols-3 gap-3" : "grid gap-3"}>
         {tripList.map((trip) =>
@@ -967,6 +968,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
               budgetBasis={budgetBasis}
               visitedNames={visitedNames}
               favorites={favorites}
+              countryByName={countryByName}
               onSelect={onSelect}
               compact={effectiveLayout === "grid"}
               onEdit={trip.source === "group" ? () => { setEditingMain(trip.main.name); setCreatingNew(false); } : undefined}
@@ -1253,6 +1255,7 @@ function TripRow({
   budgetBasis,
   visitedNames,
   favorites,
+  countryByName,
   onSelect,
   onEdit,
   compact,
@@ -1261,6 +1264,7 @@ function TripRow({
   budgetBasis: BudgetBasis;
   visitedNames: Set<string>;
   favorites: Set<string>;
+  countryByName: Map<string, Country>;
   onSelect: (c: Country) => void;
   onEdit?: () => void;
   compact?: boolean;
@@ -1327,12 +1331,17 @@ function TripRow({
                 <>
                   <span className="text-gray-300 text-[10px]">+</span>
                   {suggestedPairs.map((name) => (
-                    <span
+                    <button
                       key={name}
-                      className="text-[10px] font-medium text-gray-500 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-100"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        const match = countryByName.get(name);
+                        if (match) onSelect(match);
+                      }}
+                      className="text-[10px] font-medium text-gray-500 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-100 hover:bg-blue-50 hover:text-blue-700 transition-colors"
                     >
                       {name}
-                    </span>
+                    </button>
                   ))}
                 </>
               ) : (
@@ -1414,12 +1423,17 @@ function TripRow({
         <div className="flex items-center gap-1 mb-2 flex-wrap">
           <span className="text-gray-300 text-xs">+</span>
           {suggestedPairs.map((name) => (
-            <span
+            <button
               key={name}
-              className="text-[10px] font-medium text-gray-500 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-100"
+              onClick={(e) => {
+                e.stopPropagation();
+                const match = countryByName.get(name);
+                if (match) onSelect(match);
+              }}
+              className="text-[10px] font-medium text-gray-500 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-100 hover:bg-blue-50 hover:text-blue-700 transition-colors"
             >
               {name}
-            </span>
+            </button>
           ))}
         </div>
       )}
