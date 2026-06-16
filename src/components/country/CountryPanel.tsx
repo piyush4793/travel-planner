@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback, useRef } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef, lazy, Suspense } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../core/types";
@@ -14,11 +14,13 @@ import { isEnabled } from "../../core/featureFlags";
 import { exportItineraryAsPdf } from "../../utils/pdfExport";
 import { getBudgetDisplay } from "../../core/types";
 import Tooltip from "../shared/Tooltip";
-import ItineraryCinematic from "./ItineraryCinematic";
-import ItineraryModal from "./ItineraryModal";
-import PlanCompareModal from "./PlanCompareModal";
 import { fetchCountryInfo, type CountryInfo } from "../../utils/countryInfo";
 import { getPlanningLinks } from "../../utils/planningLinks";
+
+// Lazy-load heavy sub-components — only fetched when user triggers them
+const ItineraryCinematic = lazy(() => import("./ItineraryCinematic"));
+const ItineraryModal = lazy(() => import("./ItineraryModal"));
+const PlanCompareModal = lazy(() => import("./PlanCompareModal"));
 
 type Props = {
   country: Country | null;
@@ -80,9 +82,12 @@ export default function CountryPanel({
   const recPercent = getRangePercent(Math.min(recDays, safeMaxDays), safeMaxDays);
   const bestMonths = country?.bestMonths ?? [];
   const worstMonths = country?.worstMonths ?? [];
-  const bestMonthSet = new Set(bestMonths);
-  const worstMonthSet = new Set(worstMonths);
-  const monthGrid = MONTHS.filter((month) => bestMonthSet.has(month) || worstMonthSet.has(month));
+  const bestMonthSet = useMemo(() => new Set(bestMonths), [bestMonths]);
+  const worstMonthSet = useMemo(() => new Set(worstMonths), [worstMonths]);
+  const monthGrid = useMemo(
+    () => MONTHS.filter((month) => bestMonthSet.has(month) || worstMonthSet.has(month)),
+    [bestMonthSet, worstMonthSet],
+  );
 
   useEffect(() => {
     currentCountryNameRef.current = country?.name ?? null;
@@ -540,34 +545,36 @@ export default function CountryPanel({
         </>
       )}
 
-      {cinematicPlan && country && (
-        <ItineraryCinematic
-          plan={cinematicPlan}
-          country={country}
-          homeCountry={homeCountry}
-          mainMapRef={mainMapRef}
-          rule={rule}
-          comboCountries={country.combo
-            ?.map((name) => allCountries?.find((item) => item.name === name))
-            .filter((item): item is Country => !!item)
-            .map(({ name, lat, lng }) => ({ name, lat, lng }))}
-          onClose={() => setCinematicPlan(null)}
-        />
-      )}
-      {modalPlan && country && (
-        <ItineraryModal
-          plan={modalPlan}
-          country={country}
-          rule={rule}
-          onClose={() => setModalPlan(null)}
-        />
-      )}
-      {compareOpen && planOptions.length >= 2 && (
-        <PlanCompareModal
-          options={planOptions}
-          onClose={() => setCompareOpen(false)}
-        />
-      )}
+      <Suspense fallback={null}>
+        {cinematicPlan && country && (
+          <ItineraryCinematic
+            plan={cinematicPlan}
+            country={country}
+            homeCountry={homeCountry}
+            mainMapRef={mainMapRef}
+            rule={rule}
+            comboCountries={country.combo
+              ?.map((name) => allCountries?.find((item) => item.name === name))
+              .filter((item): item is Country => !!item)
+              .map(({ name, lat, lng }) => ({ name, lat, lng }))}
+            onClose={() => setCinematicPlan(null)}
+          />
+        )}
+        {modalPlan && country && (
+          <ItineraryModal
+            plan={modalPlan}
+            country={country}
+            rule={rule}
+            onClose={() => setModalPlan(null)}
+          />
+        )}
+        {compareOpen && planOptions.length >= 2 && (
+          <PlanCompareModal
+            options={planOptions}
+            onClose={() => setCompareOpen(false)}
+          />
+        )}
+      </Suspense>
     </div>
   );
 }

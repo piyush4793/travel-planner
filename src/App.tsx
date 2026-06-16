@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo, useRef, useEffect } from "react";
+import { useState, useCallback, useMemo, useRef, useEffect, lazy, Suspense } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country, VisitedFilter } from "./core/types";
 import MapView from "./components/views/MapView";
@@ -8,10 +8,6 @@ import TripsView from "./components/views/TripsView";
 import HomeCountrySelector from "./components/shared/HomeCountrySelector";
 import DevFlagPanel from "./components/shared/DevFlagPanel";
 import CountryPanel from "./components/country/CountryPanel";
-import CountryForm from "./components/country/CountryForm";
-import SettingsModal from "./components/ai/SettingsModal";
-import ChatModal from "./components/ai/ChatModal";
-import AiItineraryModal from "./components/ai/AiItineraryModal";
 import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
 import { applyFilters, type BudgetTier, type BudgetBasis } from "./core/utils/filterLogic";
 import { loadLS, saveLS } from "./core/storage";
@@ -24,7 +20,13 @@ import { useBreakpoint } from "./hooks/useBreakpoint";
 import { isEnabled } from "./core/featureFlags";
 import { useInstallPrompt } from "./hooks/useInstallPrompt";
 import { isBackupOverdue, autoBackupIfOverdue } from "./utils/backup";
-import FreTour from "./components/shared/FreTour";
+
+// Lazy-load heavy modals/overlays — only fetched when first opened
+const CountryForm = lazy(() => import("./components/country/CountryForm"));
+const SettingsModal = lazy(() => import("./components/ai/SettingsModal"));
+const ChatModal = lazy(() => import("./components/ai/ChatModal"));
+const AiItineraryModal = lazy(() => import("./components/ai/AiItineraryModal"));
+const FreTour = lazy(() => import("./components/shared/FreTour"));
 
 const VIEW_LABELS: Record<AppView, string> = {
   trips: "✈ Trips", calendar: "📅 Calendar", discover: "🌍 Discover",
@@ -305,49 +307,55 @@ export default function App() {
         />
       </div>
 
-      {formTarget !== null && (
-        <CountryForm
-          initial={formTarget === "new" ? undefined : formTarget}
-          existingNames={store.myListNames}
-          onSave={handleSave}
-          onClose={() => setFormTarget(null)}
-        />
-      )}
+      <Suspense fallback={null}>
+        {formTarget !== null && (
+          <CountryForm
+            initial={formTarget === "new" ? undefined : formTarget}
+            existingNames={store.myListNames}
+            onSave={handleSave}
+            onClose={() => setFormTarget(null)}
+          />
+        )}
 
-      <SettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} onOpenChat={() => { setChatInitialPrompt(undefined); setChatOpen(true); }} countries={store.myListCountries} />
-      <ChatModal
-        open={chatOpen}
-        onClose={() => { setChatOpen(false); setChatInitialPrompt(undefined); setChatAutoSend(true); }}
-        homeCountry={homeCountry}
-        onPlanReady={handleAiPlanReady}
-        onOpenSettings={() => setSettingsOpen(true)}
-        initialPrompt={chatInitialPrompt}
-        autoSend={chatAutoSend}
-        onSaveImportedPlan={(result) => { setAiPlanResult(result); setChatOpen(false); }}
-      />
-      {aiPlanResult && (
-        <AiItineraryModal
-          result={aiPlanResult}
-          onClose={() => setAiPlanResult(null)}
-          onSaveToList={
-            store.myList.set.has(aiPlanResult.destinationName) ||
-            store.myListNames.some((n) => n.toLowerCase() === aiPlanResult.destinationName.toLowerCase())
-              ? undefined : handleSaveAiToList
-          }
-          existingPlans={aiPlanStore.getPlans(aiPlanResult.destinationName)}
-          canAddNew={aiPlanStore.canAddNew(aiPlanResult.destinationName)}
-          maxPlans={aiPlanStore.maxPlans}
-          onSavePlan={() => aiPlanResult && aiPlanStore.savePlan(aiPlanResult)}
-          onReplacePlan={(id) => aiPlanResult && aiPlanStore.replacePlan(id, aiPlanResult)}
-        />
-      )}
+        {settingsOpen && (
+          <SettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} onOpenChat={() => { setChatInitialPrompt(undefined); setChatOpen(true); }} countries={store.myListCountries} />
+        )}
+        {chatOpen && (
+          <ChatModal
+            open={chatOpen}
+            onClose={() => { setChatOpen(false); setChatInitialPrompt(undefined); setChatAutoSend(true); }}
+            homeCountry={homeCountry}
+            onPlanReady={handleAiPlanReady}
+            onOpenSettings={() => setSettingsOpen(true)}
+            initialPrompt={chatInitialPrompt}
+            autoSend={chatAutoSend}
+            onSaveImportedPlan={(result) => { setAiPlanResult(result); setChatOpen(false); }}
+          />
+        )}
+        {aiPlanResult && (
+          <AiItineraryModal
+            result={aiPlanResult}
+            onClose={() => setAiPlanResult(null)}
+            onSaveToList={
+              store.myList.set.has(aiPlanResult.destinationName) ||
+              store.myListNames.some((n) => n.toLowerCase() === aiPlanResult.destinationName.toLowerCase())
+                ? undefined : handleSaveAiToList
+            }
+            existingPlans={aiPlanStore.getPlans(aiPlanResult.destinationName)}
+            canAddNew={aiPlanStore.canAddNew(aiPlanResult.destinationName)}
+            maxPlans={aiPlanStore.maxPlans}
+            onSavePlan={() => aiPlanResult && aiPlanStore.savePlan(aiPlanResult)}
+            onReplacePlan={(id) => aiPlanResult && aiPlanStore.replacePlan(id, aiPlanResult)}
+          />
+        )}
 
-      <FreTour
-        canPromptInstall={installPrompt.canPrompt}
-        isInstalled={installPrompt.isInstalled}
-        isIOS={installPrompt.isIOS}
-        onInstall={installPrompt.promptInstall}
-      />
+        <FreTour
+          canPromptInstall={installPrompt.canPrompt}
+          isInstalled={installPrompt.isInstalled}
+          isIOS={installPrompt.isIOS}
+          onInstall={installPrompt.promptInstall}
+        />
+      </Suspense>
     </div>
   );
 }

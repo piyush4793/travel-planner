@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { createPortal } from "react-dom";
 import type { Country } from "../../core/types";
 import type { TripPlan, DayEntry } from "../../core/utils/tripPlans";
@@ -53,7 +53,7 @@ interface Props {
 }
 
 export default function ItineraryModal({ plan, country, rule, onClose }: Props) {
-  const groups = groupDays(plan.days, rule);
+  const groups = useMemo(() => groupDays(plan.days, rule), [plan.days, rule]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {

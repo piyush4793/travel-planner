@@ -86,16 +86,39 @@ export function useCountryStore() {
   useEffect(() => { saveLS(LS_KEYS.CUSTOMS, customs); }, [customs]);
   useEffect(() => { saveLS(LS_KEYS.DELETED, deleted); }, [deleted]);
 
-  // Eagerly enrich all seed countries from per-country JSON files
+  // Enrich seed countries in idle-time chunks to avoid blocking first render
   useEffect(() => {
     const names = [...SEED_NAMES];
     let cancelled = false;
-    Promise.all(names.map(enrichCountry)).then((results) => {
-      if (cancelled) return;
-      const map = new Map<string, Country>();
-      for (const c of results) { if (c) map.set(c.name, c); }
-      setEnriched(map);
-    });
+    const CHUNK_SIZE = 10;
+    let idx = 0;
+
+    function processChunk() {
+      if (cancelled || idx >= names.length) return;
+      const batch = names.slice(idx, idx + CHUNK_SIZE);
+      idx += CHUNK_SIZE;
+      Promise.all(batch.map(enrichCountry)).then((results) => {
+        if (cancelled) return;
+        setEnriched((prev) => {
+          const next = new Map(prev);
+          for (const c of results) { if (c) next.set(c.name, c); }
+          return next;
+        });
+        if (idx < names.length) {
+          if (typeof requestIdleCallback === "function") {
+            requestIdleCallback(() => processChunk());
+          } else {
+            setTimeout(processChunk, 50);
+          }
+        }
+      });
+    }
+
+    if (typeof requestIdleCallback === "function") {
+      requestIdleCallback(() => processChunk());
+    } else {
+      setTimeout(processChunk, 50);
+    }
     return () => { cancelled = true; };
   }, []);
 
