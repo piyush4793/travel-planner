@@ -321,75 +321,108 @@ export default function TripsView({
 
         {/* Desktop controls — hidden on mobile */}
         <div className="hidden md:flex items-center gap-1">
-          {/* View mode toggle */}
-          <div className="flex items-center gap-0.5 bg-gray-100 rounded-lg p-0.5 shrink-0">
-            {["all", "combo", "solo"].map((m) => (
-              <button
-                key={m}
-                onClick={() => setViewMode(m as ViewMode)}
-                className={`px-2 py-1 text-[10px] font-semibold rounded transition-colors h-7 ${
-                  viewMode === m
-                    ? "bg-white text-blue-700 shadow-sm"
-                    : "text-gray-500 hover:text-gray-700"
-                }`}
-                title={m === "all" ? "All trips" : m === "combo" ? "Combo trips" : "Solo trips"}
-              >
-                {m === "all" ? "All" : m === "combo" ? "Combo" : "Solo"}
-              </button>
-            ))}
+          {/* Single toggle menu for all controls */}
+          <div className="relative">
+            <button
+              onClick={() => setFiltersOpen((o) => !o)}
+              className={`flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg transition-colors h-7 ${
+                filtersOpen
+                  ? "bg-blue-50 text-blue-700 border border-blue-200"
+                  : "text-gray-500 hover:bg-gray-100 border border-gray-200"
+              }`}
+              title="Filters & options"
+            >
+              ⚙️
+              {hasFilters && <span className="w-1 h-1 rounded-full bg-blue-500" />}
+            </button>
+
+            {/* Dropdown menu */}
+            {filtersOpen && (
+              <>
+                <div className="fixed inset-0 z-30 bg-black/10" onClick={() => setFiltersOpen(false)} />
+                <div className="absolute right-0 top-full mt-1 z-40 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden max-w-xs">
+                  <div className="flex flex-col divide-y py-1">
+                    {/* View mode */}
+                    <div className="p-2 space-y-1">
+                      <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">View</p>
+                      {["all", "combo", "solo"].map((m) => (
+                        <button
+                          key={m}
+                          onClick={() => { setViewMode(m as ViewMode); setFiltersOpen(false); }}
+                          className={`w-full text-left px-3 py-1.5 text-xs rounded transition-colors ${
+                            viewMode === m
+                              ? "bg-blue-100 text-blue-700 font-semibold"
+                              : "text-gray-600 hover:bg-gray-50"
+                          }`}
+                        >
+                          {m === "all" ? "All trips" : m === "combo" ? "Combo trips" : "Solo trips"}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Visited mode */}
+                    <div className="p-2 space-y-1">
+                      <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">Status</p>
+                      {["all", "completed", "in-progress", "not-started"].map((m) => (
+                        <button
+                          key={m}
+                          onClick={() => { setVisitedMode(m as VisitedMode); setFiltersOpen(false); }}
+                          className={`w-full text-left px-3 py-1.5 text-xs rounded transition-colors ${
+                            visitedMode === m
+                              ? "bg-blue-100 text-blue-700 font-semibold"
+                              : "text-gray-600 hover:bg-gray-50"
+                          }`}
+                        >
+                          {m === "all" ? "All" : m === "completed" ? "Completed" : m === "in-progress" ? "In progress" : "Not started"}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Region filter */}
+                    <div className="p-2">
+                      <p className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase">Region</p>
+                      <select
+                        value={regionFilter}
+                        onChange={(e) => { setRegionFilter(e.target.value as Region | "all"); setFiltersOpen(false); }}
+                        className="w-full px-2 py-1.5 text-xs rounded-lg border border-blue-200 bg-white text-slate-700 focus:outline-none"
+                      >
+                        <option value="all">All regions</option>
+                        {ALL_REGIONS.map((r) => (
+                          <option key={r} value={r}>{r}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    {/* Layout toggle */}
+                    <button
+                      onClick={() => { setLayout(layout === "grid" ? "list" : "grid"); setFiltersOpen(false); }}
+                      className="text-left px-3 py-2 text-xs text-gray-600 hover:bg-gray-50 transition-colors"
+                    >
+                      📋 {layout === "grid" ? "Switch to list" : "Switch to grid"}
+                    </button>
+
+                    {/* Stats */}
+                    <button
+                      onClick={() => { setStatsOpen(true); setFiltersOpen(false); }}
+                      className="text-left px-3 py-2 text-xs text-gray-600 hover:bg-gray-50 transition-colors"
+                    >
+                      📊 View stats
+                    </button>
+
+                    {/* Clear filters */}
+                    {hasFilters && (
+                      <button
+                        onClick={() => { setSearch(""); setViewMode("all"); setVisitedMode("all"); setRegionFilter("all"); setFiltersOpen(false); }}
+                        className="text-left px-3 py-2 text-xs text-red-600 hover:bg-red-50 transition-colors font-semibold"
+                      >
+                        ✕ Clear all
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </>
+            )}
           </div>
-
-          {/* Visited toggle */}
-          <div className="flex items-center gap-0.5 bg-gray-100 rounded-lg p-0.5 shrink-0">
-            {["all", "completed", "in-progress", "not-started"].map((m) => (
-              <button
-                key={m}
-                onClick={() => setVisitedMode(m as VisitedMode)}
-                className={`px-1.5 py-1 text-[9px] font-semibold rounded transition-colors h-7 ${
-                  visitedMode === m
-                    ? "bg-white text-blue-700 shadow-sm"
-                    : "text-gray-500 hover:text-gray-700"
-                }`}
-                title={m === "all" ? "All" : m === "completed" ? "Completed" : m === "in-progress" ? "In progress" : "Not started"}
-              >
-                {m === "all" ? "All" : m === "completed" ? "✓" : m === "in-progress" ? "▶" : "○"}
-              </button>
-            ))}
-          </div>
-
-          {/* More filters button */}
-          <button
-            onClick={() => setFiltersOpen((o) => !o)}
-            className={`flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg transition-colors h-7 shrink-0 ${
-              filtersOpen
-                ? "bg-blue-50 text-blue-700 border border-blue-200"
-                : "text-gray-500 hover:bg-gray-100 border border-gray-200"
-            }`}
-            title="More filters"
-          >
-            ⚙️
-            {hasFilters && <span className="w-1 h-1 rounded-full bg-blue-500" />}
-          </button>
-
-          {/* Stats icon */}
-          <button
-            onClick={() => setStatsOpen((o) => !o)}
-            className={`flex items-center px-2 py-1 rounded-lg transition-colors h-7 shrink-0 border ${
-              statsOpen ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-500 hover:bg-gray-100 border-gray-200"
-            }`}
-            title="View stats"
-          >
-            📊
-          </button>
-
-          {/* Layout toggle */}
-          <button
-            onClick={() => setLayout(layout === "grid" ? "list" : "grid")}
-            className="flex items-center px-2 py-1 text-gray-500 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors h-7 shrink-0"
-            title={layout === "grid" ? "Switch to list" : "Switch to grid"}
-          >
-            {layout === "grid" ? "▦" : "≡"}
-          </button>
         </div>
 
         {/* New trip button — desktop and tablet only */}
@@ -404,48 +437,6 @@ export default function TripsView({
           </button>
         )}
       </div>
-
-      {/* Collapsible filter panel — only shows when explicitly opened */}
-      {filtersOpen && (
-        <div className="px-3 md:px-5 py-2 bg-blue-50 border-b border-blue-100 shrink-0 flex items-center gap-3 flex-wrap">
-          {/* Region selector */}
-          <select
-            value={regionFilter}
-            onChange={(e) => setRegionFilter(e.target.value as Region | "all")}
-            className="px-2 py-1 text-xs rounded-lg border border-blue-200 bg-white text-slate-700 focus:outline-none h-7"
-          >
-            <option value="all">All regions</option>
-            {ALL_REGIONS.map((r) => (
-              <option key={r} value={r}>{r}</option>
-            ))}
-          </select>
-
-          {/* Visited filter from parent */}
-          {visitedFilter !== undefined && visitedFilter !== "all" && (
-            <span className="text-xs text-slate-600 bg-white px-2 py-1 rounded-lg border border-blue-200">
-              {visitedFilter === "visited" ? "✓ Visited only" : "○ Unvisited only"}
-            </span>
-          )}
-
-          {/* Clear button */}
-          {hasFilters && (
-            <button
-              onClick={() => { setSearch(""); setViewMode("all"); setVisitedMode("all"); setRegionFilter("all"); }}
-              className="ml-auto text-[10px] text-red-600 hover:text-red-700 font-semibold px-2 py-1"
-            >
-              ✕ Clear
-            </button>
-          )}
-
-          {/* Close button on mobile */}
-          <button
-            onClick={() => setFiltersOpen(false)}
-            className="lg:hidden text-xs text-gray-500 hover:text-gray-700 font-semibold"
-          >
-            Done
-          </button>
-        </div>
-      )}
 
       {/* Stats modal */}
       {statsOpen && (
