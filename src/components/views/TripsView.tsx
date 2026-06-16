@@ -129,7 +129,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
   const [statsOpen, setStatsOpen] = useState(false);
   const [railOpen, setRailOpen] = useState(bp !== "tablet");
   const [isWideMobile, setIsWideMobile] = useState(
-    typeof window !== "undefined" ? window.innerWidth >= 390 : false
+    typeof window !== "undefined" ? window.innerWidth >= 360 : false
   );
   const [showSortHelp, setShowSortHelp] = useState(false);
   const sortHelpTimerRef = useRef<number | null>(null);
@@ -147,7 +147,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
 
   useEffect(() => {
     function onResize() {
-      setIsWideMobile(window.innerWidth >= 390);
+      setIsWideMobile(window.innerWidth >= 360);
     }
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
