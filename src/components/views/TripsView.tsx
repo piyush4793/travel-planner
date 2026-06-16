@@ -998,6 +998,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                 addOns: trip.addOns.map((c) => c.name),
                 region: trip.region,
               }}
+              isSeedTrip={trip.source === "group" && !trip.isCustom}
               allCountryNames={countries.map((c) => c.name)}
               countryRegionMap={Object.fromEntries(countries.filter((c) => c.region).map((c) => [c.name, c.region!]))}
               assignedNames={assignedNames}
@@ -1005,6 +1006,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
               onSave={(group) => handleSave(trip.main.name, group)}
               onCancel={() => setEditingMain(null)}
               onDelete={() => handleDelete(trip.main.name)}
+              onReset={trip.isCustom ? () => { handleDelete(trip.main.name); setEditingMain(null); } : undefined}
             />
           ) : (
             <TripRow
@@ -1029,6 +1031,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
 
 function TripEditor({
   initial,
+  isSeedTrip,
   allCountryNames,
   countryRegionMap,
   assignedNames,
@@ -1036,8 +1039,10 @@ function TripEditor({
   onSave,
   onCancel,
   onDelete,
+  onReset,
 }: {
   initial: TripGroupDef | null;
+  isSeedTrip?: boolean;
   allCountryNames: string[];
   countryRegionMap: Record<string, string>;
   assignedNames: Set<string>;
@@ -1045,10 +1050,12 @@ function TripEditor({
   onSave: (group: TripGroupDef) => void;
   onCancel: () => void;
   onDelete: (() => void) | null;
+  onReset?: () => void;
 }) {
+  const mainLocked = !!isSeedTrip && !!initial;
   const [main, setMain] = useState(initial?.main ?? "");
   const [addOns, setAddOns] = useState<string[]>(initial?.addOns ?? []);
-  const [region, setRegion] = useState<Region>(initial?.region ?? "Asia");
+  const [region, setRegion] = useState<Region>(initial?.region ?? (countryRegionMap[initial?.main ?? ""] as Region) ?? "Asia");
   const [addOnSearch, setAddOnSearch] = useState("");
 
   const currentSet = new Set(currentTripNames);
@@ -1088,13 +1095,26 @@ function TripEditor({
   };
 
   return (
-    <div className="rounded-xl border-2 border-blue-300 bg-blue-50/50 p-4 space-y-3">
-      <div className="flex items-center justify-between">
+    <div
+      className="rounded-xl border-2 border-blue-300 bg-blue-50/50 p-4 space-y-3"
+      tabIndex={-1}
+      ref={(el) => el?.focus()}
+      onKeyDown={(e) => { if (e.key === "Escape") { e.stopPropagation(); onCancel(); } }}
+    >
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <span className="text-xs font-bold text-blue-700">
-          {initial ? "Edit Trip" : "New Trip"}
+          {initial ? (mainLocked ? "Customize Trip" : "Edit Trip") : "New Trip"}
         </span>
-        <div className="flex items-center gap-2">
-          {onDelete && (
+        <div className="flex items-center gap-2 flex-wrap">
+          {onReset && (
+            <button
+              onClick={onReset}
+              className="text-[10px] font-medium text-amber-600 hover:text-amber-700 px-2 py-1 rounded hover:bg-amber-50 transition-colors"
+            >
+              ↩ Reset
+            </button>
+          )}
+          {onDelete && !mainLocked && (
             <button
               onClick={onDelete}
               className="text-[10px] font-medium text-red-500 hover:text-red-700 px-2 py-1 rounded hover:bg-red-50 transition-colors"
@@ -1122,39 +1142,47 @@ function TripEditor({
         </div>
       </div>
 
-      <div className="grid grid-cols-[1fr_1fr_auto] gap-3">
+      <div className={mainLocked ? "grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3" : "grid grid-cols-1 sm:grid-cols-[1fr_1fr_auto] gap-3"}>
         {/* Main country */}
         <div>
           <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
             Main Country
           </label>
-          <select
-            value={main}
-            onChange={(e) => handleMainChange(e.target.value)}
-            className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-gray-200 bg-white focus:border-blue-300 focus:outline-none"
-          >
-            <option value="">Select…</option>
-            {availableMain.map((n) => (
-              <option key={n} value={n}>{n}</option>
-            ))}
-          </select>
+          {mainLocked ? (
+            <div className="px-2.5 py-1.5 text-xs rounded-lg border border-gray-200 bg-gray-50 text-gray-600 font-medium">
+              {main}
+            </div>
+          ) : (
+            <select
+              value={main}
+              onChange={(e) => handleMainChange(e.target.value)}
+              className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-gray-200 bg-white focus:border-blue-300 focus:outline-none"
+            >
+              <option value="">Select…</option>
+              {availableMain.map((n) => (
+                <option key={n} value={n}>{n}</option>
+              ))}
+            </select>
+          )}
         </div>
 
-        {/* Region */}
-        <div>
-          <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
-            Region
-          </label>
-          <select
-            value={region}
-            onChange={(e) => setRegion(e.target.value as Region)}
-            className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-gray-200 bg-white focus:border-blue-300 focus:outline-none"
-          >
-            {ALL_REGIONS.map((r) => (
-              <option key={r} value={r}>{r}</option>
-            ))}
-          </select>
-        </div>
+        {/* Region — hidden for seed trips (auto-derived) */}
+        {!mainLocked && (
+          <div>
+            <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+              Region
+            </label>
+            <select
+              value={region}
+              onChange={(e) => setRegion(e.target.value as Region)}
+              className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-gray-200 bg-white focus:border-blue-300 focus:outline-none"
+            >
+              {ALL_REGIONS.map((r) => (
+                <option key={r} value={r}>{r}</option>
+              ))}
+            </select>
+          </div>
+        )}
 
         {/* Add-on count badge */}
         <div className="flex items-end pb-0.5">
@@ -1354,14 +1382,25 @@ function TripRow({
             >
               {trip.allVisited ? "✅ " : ""}{trip.main.name}
             </button>
-            <span className={`text-[9px] font-medium px-1.5 py-0.5 rounded shrink-0 ml-1 ${REGION_BADGE[trip.region] ?? "bg-gray-50 text-gray-400"}`}>
-              {trip.region}
-            </span>
-            {trip.isCustom && (
-              <span className="text-[9px] font-medium px-1.5 py-0.5 rounded shrink-0 ml-0.5 bg-violet-50 text-violet-500 border border-violet-100">
-                🏷 Custom
-              </span>
-            )}
+           <div className="flex items-center gap-1 shrink-0 ml-1">
+             {onEdit && (
+               <button
+                 onClick={(e) => { e.stopPropagation(); onEdit(); }}
+                 className="text-[11px] text-gray-400 hover:text-blue-600 px-1 py-0.5 rounded hover:bg-blue-50 transition-all"
+                 title="Edit trip"
+               >
+                 ✏️
+               </button>
+             )}
+             <span className={`text-[9px] font-medium px-1.5 py-0.5 rounded ${REGION_BADGE[trip.region] ?? "bg-gray-50 text-gray-400"}`}>
+               {trip.region}
+             </span>
+             {trip.isCustom && (
+               <span className="text-[9px] font-medium px-1.5 py-0.5 rounded bg-violet-50 text-violet-500 border border-violet-100">
+                 🏷 Custom
+               </span>
+             )}
+           </div>
           </div>
           {isCombo && (
             <div className="flex min-h-[22px] items-center gap-1 mb-1.5 flex-wrap">

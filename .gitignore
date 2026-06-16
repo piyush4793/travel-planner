@@ -6,3 +6,4 @@ dist
 
 # Coverage reports
 coverage/
+tmp-ux-audit.html

@@ -67,6 +67,8 @@ export default function CountryPanel({
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
   const [customDays, setCustomDays] = useState(7);
   const [notes, setNotes] = useState(country?.notes ?? "");
+  const [notesSaved, setNotesSaved] = useState(false);
+  const [notesExpanded, setNotesExpanded] = useState(false);
   const [cinematicPlan, setCinematicPlan] = useState<TripPlan | null>(null);
   const [modalPlan, setModalPlan] = useState<TripPlan | null>(null);
   const [compareOpen, setCompareOpen] = useState(false);
@@ -532,15 +534,61 @@ export default function CountryPanel({
             )}
 
             <CollapsibleSection label="My notes">
-              <textarea
-                className="w-full resize-none rounded-xl border border-transparent bg-amber-50 px-3 py-2.5 text-sm leading-relaxed text-gray-700 outline-none transition-colors placeholder:text-gray-400 focus:border-amber-300"
-                rows={4}
-                placeholder="Jot down ideas, reminders, or anything to remember about this destination..."
-                value={notes}
-                onChange={(e) => setNotes(e.target.value)}
-                onBlur={() => onUpdateNotes(notes)}
-              />
+              <div className="relative">
+                <textarea
+                  className="w-full resize-none rounded-xl border border-transparent bg-amber-50 px-3 py-2.5 pr-8 text-sm leading-relaxed text-gray-700 outline-none transition-colors placeholder:text-gray-400 focus:border-amber-300"
+                  rows={4}
+                  maxLength={4000}
+                  placeholder="Jot down ideas, reminders, or anything to remember about this destination..."
+                  value={notes}
+                  onChange={(e) => { setNotes(e.target.value); setNotesSaved(false); }}
+                  onBlur={() => { onUpdateNotes(notes); setNotesSaved(true); setTimeout(() => setNotesSaved(false), 2000); }}
+                />
+                <button
+                  onClick={() => setNotesExpanded(true)}
+                  className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 transition-colors"
+                  title="Expand notes"
+                  aria-label="Expand notes"
+                >
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2L9 7M2 14l5-5"/></svg>
+                </button>
+              </div>
+              <div className="flex items-center justify-between mt-1.5">
+                <span className={`text-[11px] font-medium transition-opacity duration-300 ${notesSaved ? "text-emerald-500 opacity-100" : "opacity-0"}`}>
+                  ✓ Saved
+                </span>
+                <span className="text-[11px] text-gray-400">{notes.length.toLocaleString()} / 4,000</span>
+              </div>
             </CollapsibleSection>
+
+            {/* Notes expand modal */}
+            {notesExpanded && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40" onClick={() => setNotesExpanded(false)}>
+                <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[80vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
+                  <div className="flex items-center justify-between px-5 py-3 border-b">
+                    <h3 className="text-sm font-bold text-gray-800">📝 Notes — {country?.name}</h3>
+                    <button onClick={() => setNotesExpanded(false)} className="text-gray-400 hover:text-gray-600 text-xl leading-none" aria-label="Close">×</button>
+                  </div>
+                  <div className="flex-1 p-5 overflow-y-auto">
+                    <textarea
+                      className="w-full resize-none rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-gray-700 outline-none focus:border-amber-400"
+                      rows={12}
+                      maxLength={4000}
+                      value={notes}
+                      onChange={(e) => { setNotes(e.target.value); setNotesSaved(false); }}
+                      onBlur={() => { onUpdateNotes(notes); setNotesSaved(true); setTimeout(() => setNotesSaved(false), 2000); }}
+                      autoFocus
+                    />
+                  </div>
+                  <div className="flex items-center justify-between px-5 py-3 border-t">
+                    <span className={`text-[11px] font-medium transition-opacity duration-300 ${notesSaved ? "text-emerald-500 opacity-100" : "opacity-0"}`}>
+                      ✓ Saved
+                    </span>
+                    <span className="text-[11px] text-gray-400">{notes.length.toLocaleString()} / 4,000</span>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </>
       )}

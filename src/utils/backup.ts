@@ -69,6 +69,72 @@ function autoExportBackup(): void {
   saveLS(LS_KEYS.LAST_BACKUP, new Date().toISOString());
 }
 
+export type BackupPreview = {
+  ok: true;
+  exportedAt: string;
+  countryCount: number;
+  tripCount: number;
+  aiPlanCount: number;
+  totalKeys: number;
+  raw: BackupData;
+} | {
+  ok: false;
+  msg: string;
+};
+
+export function parseBackupFile(file: File): Promise<BackupPreview> {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const parsed = JSON.parse(reader.result as string);
+        if (!parsed || typeof parsed !== "object" || !parsed.data) {
+          resolve({ ok: false, msg: "Invalid backup file — missing data field" });
+          return;
+        }
+        const data = parsed.data as Record<string, unknown>;
+        const myList = Array.isArray(data[LS_KEYS.MY_LIST]) ? (data[LS_KEYS.MY_LIST] as unknown[]).length : 0;
+        const customs = Array.isArray(data[LS_KEYS.CUSTOMS]) ? (data[LS_KEYS.CUSTOMS] as unknown[]).length : 0;
+        const trips = Array.isArray(data[LS_KEYS.TRIP_CUSTOMS]) ? (data[LS_KEYS.TRIP_CUSTOMS] as unknown[]).length : 0;
+        const aiPlans = data[LS_KEYS.AI_PLANS] && typeof data[LS_KEYS.AI_PLANS] === "object"
+          ? Object.values(data[LS_KEYS.AI_PLANS] as Record<string, unknown[]>).reduce((sum, arr) => sum + (Array.isArray(arr) ? arr.length : 0), 0)
+          : 0;
+        const totalKeys = BACKUP_KEYS.filter((k) => k in data).length;
+        resolve({
+          ok: true,
+          exportedAt: parsed.exportedAt ?? "Unknown",
+          countryCount: Math.max(myList, customs),
+          tripCount: trips,
+          aiPlanCount: aiPlans,
+          totalKeys,
+          raw: parsed as BackupData,
+        });
+      } catch {
+        resolve({ ok: false, msg: "Could not parse backup file — invalid JSON" });
+      }
+    };
+    reader.onerror = () => resolve({ ok: false, msg: "Failed to read file" });
+    reader.readAsText(file);
+  });
+}
+
+export function applyBackup(backup: BackupData): { ok: boolean; msg: string } {
+  try {
+    const data = backup.data;
+    let restored = 0;
+    for (const key of BACKUP_KEYS) {
+      if (key in data) {
+        localStorage.setItem(key, JSON.stringify(data[key]));
+        restored++;
+      }
+    }
+    saveLS(LS_KEYS.LAST_BACKUP, new Date().toISOString());
+    return { ok: true, msg: `Restored ${restored} items. Reload the page to see changes.` };
+  } catch {
+    return { ok: false, msg: "Failed to apply backup" };
+  }
+}
+
 export function importFullBackup(file: File): Promise<{ ok: boolean; msg: string }> {
   return new Promise((resolve) => {
     const reader = new FileReader();

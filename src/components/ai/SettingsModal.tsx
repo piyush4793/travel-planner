@@ -4,12 +4,13 @@ import { loadLS, saveLS } from "../../core/storage";
 import { LS_KEYS } from "../../core/lsKeys";
 import { validateKey, PROVIDER_LABELS, PROVIDER_PRICING } from "../../utils/ai/llmProvider";
 import {
-  exportFullBackup, importFullBackup,
+  exportFullBackup,
   exportCountriesCSV, importCountriesCSV, exportCountriesXLSX,
   getBackupFrequency, setBackupFrequency,
   getBackupSchedule, setBackupSchedule,
   getLastBackupLabel, getNextBackupLabel,
-  type BackupFrequency, type BackupSchedule,
+  parseBackupFile, applyBackup,
+  type BackupFrequency, type BackupSchedule, type BackupPreview,
 } from "../../utils/backup";
 import { isEnabled } from "../../core/featureFlags";
 import { getLLMKeys, getActiveProvider, saveLLMKeys, saveActiveProvider } from "../../core/utils/ai/llmSettings";
@@ -72,6 +73,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
   const [backupFreq, setBackupFreq] = useState<BackupFrequency>(getBackupFrequency);
   const [backupSched, setBackupSched] = useState<BackupSchedule>(getBackupSchedule);
   const [backupStatus, setBackupStatus] = useState<{ ok: boolean; msg: string } | null>(null);
+  const [restorePreview, setRestorePreview] = useState<BackupPreview | null>(null);
   const restoreRef = useRef<HTMLInputElement>(null);
   const importRef = useRef<HTMLInputElement>(null);
 
@@ -114,10 +116,21 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
     setStatus({ ok: true, msg: "Key removed." });
   }
 
-  async function handleRestore(file: File) {
+  async function handleRestoreFile(file: File) {
     setBackupStatus(null);
-    const result = await importFullBackup(file);
+    const preview = await parseBackupFile(file);
+    if (preview.ok) {
+      setRestorePreview(preview);
+    } else {
+      setBackupStatus({ ok: false, msg: preview.msg });
+    }
+  }
+
+  function confirmRestore() {
+    if (!restorePreview || !restorePreview.ok) return;
+    const result = applyBackup(restorePreview.raw);
     setBackupStatus(result);
+    setRestorePreview(null);
   }
 
   async function handleImportCSV(file: File) {
@@ -358,13 +371,13 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
             </div>
 
             <div className="space-y-2">
-              <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Import</label>
+              <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Restore</label>
               <div className="flex gap-2">
                 <button
                   onClick={() => restoreRef.current?.click()}
                   className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition-colors border border-slate-200"
                 >
-                  {"\u{1F504}"} Restore (JSON)
+                  {"\u{1F4E6}"} Restore Backup (JSON)
                 </button>
                 <button
                   onClick={() => importRef.current?.click()}
@@ -373,7 +386,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
                   {"\u{1F4E5}"} Import (CSV)
                 </button>
               </div>
-              <input ref={restoreRef} type="file" accept=".json" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) handleRestore(f); e.target.value = ""; }} />
+              <input ref={restoreRef} type="file" accept=".json" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) handleRestoreFile(f); e.target.value = ""; }} />
               <input ref={importRef} type="file" accept=".csv" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) handleImportCSV(f); e.target.value = ""; }} />
             </div>
 
@@ -459,6 +472,64 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
                     {" "}or enable {"\u201C"}Ask where to save{"\u201D"} for every download.
                   </span>
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Restore confirmation dialog */}
+        {restorePreview && restorePreview.ok && (
+          <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50" onClick={() => setRestorePreview(null)}>
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
+              <div className="px-5 py-4 border-b">
+                <h3 className="text-sm font-bold text-gray-900">📦 Restore Backup</h3>
+              </div>
+              <div className="px-5 py-4 space-y-3">
+                <div className="bg-slate-50 rounded-xl p-3 space-y-1.5">
+                  <p className="text-[11px] text-slate-500">Backup from</p>
+                  <p className="text-xs font-semibold text-slate-800">
+                    {new Date(restorePreview.exportedAt).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {restorePreview.countryCount > 0 && (
+                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">
+                        🌍 {restorePreview.countryCount} countries
+                      </span>
+                    )}
+                    {restorePreview.tripCount > 0 && (
+                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600">
+                        ✈️ {restorePreview.tripCount} trips
+                      </span>
+                    )}
+                    {restorePreview.aiPlanCount > 0 && (
+                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-violet-50 text-violet-600">
+                        ✨ {restorePreview.aiPlanCount} AI plans
+                      </span>
+                    )}
+                    <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">
+                      {restorePreview.totalKeys} data keys
+                    </span>
+                  </div>
+                </div>
+                <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2.5">
+                  <p className="text-[11px] text-amber-700 font-medium leading-relaxed">
+                    ⚠️ All changes not backed up will be lost upon restore. This cannot be undone.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-2 px-5 py-3 border-t">
+                <button
+                  onClick={() => setRestorePreview(null)}
+                  className="flex-1 px-3 py-2 text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={confirmRestore}
+                  className="flex-1 px-3 py-2 text-xs font-semibold text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors"
+                >
+                  Restore Now
+                </button>
               </div>
             </div>
           </div>
