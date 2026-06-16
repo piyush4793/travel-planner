@@ -1,4 +1,5 @@
 import "@testing-library/jest-dom";
+import { afterEach, beforeEach, vi } from "vitest";
 
 // Mock localStorage for tests
 const store: Record<string, string> = {};
@@ -16,4 +17,9 @@ Object.defineProperty(globalThis, "localStorage", { value: localStorageMock });
 // Clear localStorage between tests
 beforeEach(() => {
   localStorageMock.clear();
+  window.history.replaceState(null, "", "/");
+});
+
+afterEach(() => {
+  vi.useRealTimers();
 });
