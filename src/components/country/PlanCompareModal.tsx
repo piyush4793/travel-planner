@@ -51,9 +51,10 @@ function SummaryCard({ leftPlan, rightPlan }: { leftPlan: PlanOption; rightPlan:
       {/* Collapsible header */}
       <button
         onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
         className="w-full flex items-center gap-2 px-4 md:px-6 py-2.5 bg-slate-50 hover:bg-slate-100 transition-colors text-left focus-ring rounded-none"
       >
-        <span className={`text-[9px] text-slate-400 transition-transform duration-200 ${open ? "rotate-90" : ""}`}>▸</span>
+        <span className={`text-[9px] text-slate-400 motion-safe:transition-transform motion-safe:duration-200 ${open ? "rotate-90" : ""}`}>▸</span>
         <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider flex-1">Quick Summary</span>
         {!open && (
           <span className="text-[10px] text-slate-400">
@@ -62,7 +63,7 @@ function SummaryCard({ leftPlan, rightPlan }: { leftPlan: PlanOption; rightPlan:
         )}
       </button>
 
-      <div className={`grid transition-all duration-200 ease-out ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+      <div className={`grid motion-safe:transition-all motion-safe:duration-200 ease-out ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
         <div className="overflow-hidden">
           <div className="px-4 md:px-6 py-3 space-y-3">
             {/* Comparison table — works on all sizes */}

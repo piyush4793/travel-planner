@@ -155,11 +155,11 @@ function FlagRow({ flag, flags, meta, onToggle, root, dimmed }: {
         role="switch"
         aria-checked={enabled}
         aria-label={`${meta.label} ${enabled ? "on" : "off"}`}
-        className={`relative w-11 h-6 rounded-full shrink-0 transition-colors duration-200 focus-ring ${
+        className={`relative w-11 h-7 rounded-full shrink-0 transition-colors duration-200 focus-ring ${
           enabled ? "bg-blue-600" : "bg-slate-300"
         }`}
       >
-        <span className={`absolute top-1 w-4 h-4 rounded-full bg-white shadow-md transition-all duration-200 ${
+        <span className={`absolute top-1.5 w-4 h-4 rounded-full bg-white shadow-md transition-all duration-200 ${
           enabled ? "left-6" : "left-1"
         }`} />
       </button>

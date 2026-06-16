@@ -84,7 +84,7 @@ export default class ErrorBoundary extends Component<Props, State> {
           {/* Primary action */}
           <button
             onClick={this.handleReset}
-            className="w-full px-5 py-3 bg-blue-600 text-white rounded-xl text-sm font-semibold hover:bg-blue-700 active:scale-[0.98] transition-all shadow-sm focus-ring"
+            className="w-full px-5 py-3 bg-blue-600 text-white rounded-xl text-sm font-semibold hover:bg-blue-700 motion-safe:active:scale-[0.98] transition-colors shadow-sm focus-ring"
           >
             Try Again
           </button>

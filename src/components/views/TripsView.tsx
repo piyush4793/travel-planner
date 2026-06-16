@@ -443,7 +443,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
           <div className="flex items-center gap-1.5">
             <button
               onClick={() => setMobileFiltersOpen((o) => !o)}
-              className={`relative shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all focus-ring ${
+              className={`relative shrink-0 flex items-center gap-1 px-3 py-1.5 min-h-[32px] rounded-full text-[11px] font-semibold transition-colors focus-ring ${
                 mobileFiltersOpen || activeFilterCount > 0
                   ? "bg-blue-600 text-white shadow-sm"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -464,7 +464,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
 
             <button
               onClick={() => setSortMode(sortMode === "popular" ? "az" : sortMode === "az" ? "za" : "popular")}
-              className="shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors focus-ring"
+              className="shrink-0 flex items-center gap-1 px-3 py-1.5 min-h-[32px] rounded-full text-[11px] font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors focus-ring"
               aria-label="Sort trips"
             >
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M3 7h6M3 12h10M3 17h14"/></svg>

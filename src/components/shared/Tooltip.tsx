@@ -44,7 +44,7 @@ export default function Tooltip({ text, children, triggerClassName }: Props) {
         onFocus={show}
         onBlur={hide}
         onClick={show}
-        className={`inline-flex items-center justify-center w-5 h-5 min-w-[20px] min-h-[20px] rounded-full bg-current/15 text-current text-[9px] font-black cursor-help select-none leading-none shrink-0 opacity-60 focus-ring ${triggerClassName ?? ""}`}
+        className={`inline-flex items-center justify-center w-5 h-5 min-w-[32px] min-h-[32px] rounded-full bg-current/15 text-current text-[9px] font-black cursor-help select-none leading-none shrink-0 opacity-60 focus-ring ${triggerClassName ?? ""}`}
         aria-label={text}
         aria-describedby={visible ? "tooltip-content" : undefined}
       >

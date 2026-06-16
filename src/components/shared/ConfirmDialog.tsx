@@ -8,7 +8,7 @@ const DEFAULT_CANCEL_LABEL = "Cancel";
 const BACKDROP_CLASS =
   "fixed inset-0 z-[10000] flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-4";
 const DIALOG_CONTAINER_CLASS =
-  "w-full max-w-sm rounded-2xl bg-white shadow-2xl overflow-hidden animate-[slideUp_0.2s_ease-out] sm:animate-[scaleIn_0.15s_ease-out]";
+  "w-full max-w-sm rounded-2xl bg-white shadow-2xl overflow-hidden motion-safe:animate-[slideUp_0.2s_ease-out] sm:motion-safe:animate-[scaleIn_0.15s_ease-out]";
 const CANCEL_BUTTON_CLASS =
   "flex-1 px-4 py-2.5 text-xs font-semibold rounded-xl border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300";
 const CONFIRM_BUTTON_BASE_CLASS =

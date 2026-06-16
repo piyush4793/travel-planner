@@ -25,8 +25,9 @@ export default function HoverCard({ country, x, y, isVisited }: Props) {
         left: x,
         top: y,
         transform: "translate(-50%, calc(-100% - 52px))",
-        pointerEvents: "none",
       }}
+      role="tooltip"
+      aria-label={`${country.name} — ${country.budget ?? ""}${isVisited ? " (Visited)" : ""}`}
     >
       <div className="relative h-28 bg-gradient-to-br from-slate-700 to-slate-900">
         {imgSrc ? (

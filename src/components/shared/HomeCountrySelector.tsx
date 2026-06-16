@@ -186,7 +186,7 @@ function CountryOption({ id, name, selected, active, onClick }: { id: string; na
       role="option"
       aria-selected={selected}
       onClick={onClick}
-      className={`w-full text-left px-3 py-1.5 text-xs transition-colors focus-ring ${
+      className={`w-full text-left px-3 py-2 min-h-[36px] text-xs transition-colors focus-ring ${
         active ? "bg-blue-50 text-blue-700" :
         selected ? "text-blue-600 font-bold bg-blue-50/50" : "text-gray-700 hover:bg-gray-50"
       }`}

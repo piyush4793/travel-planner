@@ -771,9 +771,10 @@ function CollapsibleSection({ label, count, defaultOpen = false, children }: {
     <div className="rounded-xl bg-gray-50/50 p-3.5">
       <button
         onClick={() => setOpen((state) => !state)}
+        aria-expanded={open}
         className="group flex w-full items-center gap-2 text-left"
       >
-        <span className={`text-xs text-gray-400 transition-transform duration-300 ease-out ${open ? "rotate-90 text-blue-500" : ""}`}>▸</span>
+        <span className={`text-xs text-gray-400 motion-safe:transition-transform motion-safe:duration-300 ease-out ${open ? "rotate-90 text-blue-500" : ""}`}>▸</span>
         <span className="flex-1 text-[11px] font-semibold text-gray-500">{label}</span>
         {count !== undefined && (
           <span className="rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold text-gray-500 ring-1 ring-gray-200">
@@ -781,9 +782,9 @@ function CollapsibleSection({ label, count, defaultOpen = false, children }: {
           </span>
         )}
       </button>
-      <div className={`grid transition-all duration-300 ease-out ${open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+      <div className={`grid motion-safe:transition-all motion-safe:duration-300 ease-out ${open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
         <div className="overflow-hidden">
-          <div className={`border-l pl-3 transition-colors duration-300 ${open ? "border-blue-200" : "border-transparent"}`}>
+          <div className={`border-l pl-3 motion-safe:transition-colors motion-safe:duration-300 ${open ? "border-blue-200" : "border-transparent"}`}>
             {children}
           </div>
         </div>
@@ -884,11 +885,11 @@ function LearnAboutSection({ countryName, countryInfo, loading, error, onExpand,
 
   return (
     <div className="rounded-xl bg-gray-50/50 p-3.5">
-      <button onClick={handleToggle} className="group flex w-full items-center gap-2 text-left">
-        <span className={`text-xs text-gray-400 transition-transform duration-300 ease-out ${open ? "rotate-90 text-blue-500" : ""}`}>▸</span>
+      <button onClick={handleToggle} aria-expanded={open} className="group flex w-full items-center gap-2 text-left">
+        <span className={`text-xs text-gray-400 motion-safe:transition-transform motion-safe:duration-300 ease-out ${open ? "rotate-90 text-blue-500" : ""}`}>▸</span>
         <span className="flex-1 text-[11px] font-semibold text-gray-500">Learn about {countryName} 🌐</span>
       </button>
-      <div className={`grid transition-all duration-300 ease-out ${open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+      <div className={`grid motion-safe:transition-all motion-safe:duration-300 ease-out ${open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
         <div className="overflow-hidden">
           <div className={`border-l pl-3 transition-colors duration-300 ${open ? "border-blue-200" : "border-transparent"}`}>
             {loading && (
