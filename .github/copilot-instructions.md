@@ -26,7 +26,7 @@ Current testing priority:
 Use this whenever the task is "improve coverage/testing quality":
 
 - Reusable slash command: `/tc-improvement <scope>`
-- Prompt source: `.github/prompts/tc-improvement.prompt.md`
+- Backed by local Copilot skill: `tc-improvement`
 
 1. **Plan in phases first**
    - Phase A: high-risk regressions (critical integration paths)

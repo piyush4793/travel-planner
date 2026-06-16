@@ -325,7 +325,7 @@ npm run build       # tsc + vite build
 ```
 
 Reusable coverage slash command:
-- `/tc-improvement <scope>` uses `.github/prompts/tc-improvement.prompt.md` to execute phased coverage work (integration risk-first -> unit/component depth -> threshold hardening).
+- `/tc-improvement <scope>` uses the local `tc-improvement` Copilot skill to execute phased coverage work (integration risk-first -> unit/component depth -> threshold hardening).
 
 ### Testing expansion plan (Phase 1)
 
