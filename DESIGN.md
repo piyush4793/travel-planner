@@ -19,7 +19,7 @@ For features, setup, and user-facing docs, see [README.md](./README.md).
 | State | **Custom hooks + localStorage** | No external state library |
 | Routing | **URL hash** | Zero deps, back/forward works |
 | Data | **Local JSON** | Ships with app, works offline |
-| Tests | **Vitest** | 324 tests across 44 files |
+| Tests | **Vitest** | 328 tests across 44 files |
 
 **Zero runtime dependencies** beyond React + MapLibre. No routing library, no state management library.
 
@@ -191,7 +191,7 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 - **Tablet/Desktop**: left filter rail (primary + secondary + stats) that can be collapsed, with right-side results toolbar (filter toggle, search, icon-only list/grid, sort, count, new trip)
 - **Card invariant**: Trips renders one card per country in My List (trip groups annotate cards but do not suppress standalone country cards)
 - **Narrow mobile**: forced list view; wider phones can switch list/grid
-- **Popularity sort**: driven by country `popularityScore` sourced from manifest metadata (then favorites, then name)
+- **Popularity sort**: driven by country `popularityScore` sourced from manifest metadata (calibrated to a 1-100 **leisure-only** composite across all 198 destinations: experiences 35% + city depth 20% + seasonality 20% + affordability/value 15% + combo breadth 5% + landmark presence 5%; no arrivals/receipts/work-business inputs), then favorites, then name
 - **Experience tags**: app-level experience tags are not applied to Trips cards to avoid hidden filtering states in Trips UX
 - **Search ranking behavior**: primary-country matches (including word-prefix matches) rank above combine/related hits; fuzzy fallback is strict and only used when deterministic matching finds nothing; active search keeps relevance order (no popularity re-sort)
 - **Results context strip**: desktop results toolbar shows sort + budget-basis context and provides a one-click clear-all reset
@@ -320,7 +320,7 @@ ChatModal ImportView → paste text or share link
 
 ```bash
 npx tsc --noEmit    # type check
-npm test            # vitest (324 tests, 44 files)
+npm test            # vitest (328 tests, 44 files)
 npm run build       # tsc + vite build
 ```
 

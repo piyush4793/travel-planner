@@ -8,7 +8,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (324 tests across 44 files)
+npm test                # Vitest suite (328 tests across 44 files)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests + knip + build
 ```
@@ -70,7 +70,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 
 | View | Purpose |
 |---|---|
-| **Trips** (default) | Dashboard — progress ring, stats, “Next trip” highlight. **One card per My List country** (card count should match list size) with image collages, budget, best months. Sections: ⭐ Favorites → 📋 Planning → ✅ Completed. Tablet/desktop use a collapsible left filter rail + right results toolbar (icon-only list/grid toggle + sort); mobile defaults to list (grid toggle on wider phones). Popularity sort uses per-country `popularityScore` metadata (then favorites, then name). |
+| **Trips** (default) | Dashboard — progress ring, stats, “Next trip” highlight. **One card per My List country** (card count should match list size) with image collages, budget, best months. Sections: ⭐ Favorites → 📋 Planning → ✅ Completed. Tablet/desktop use a collapsible left filter rail + right results toolbar (icon-only list/grid toggle + sort); mobile defaults to list (grid toggle on wider phones). Popularity sort uses per-country `popularityScore` metadata (1-100 **leisure-only** composite over all 198 destinations: experiences 35%, city depth 20%, seasonality 20%, affordability/value 15%, combo breadth 5%, landmark presence 5%; then favorites, then name). |
 | **Calendar** | Heatmap grid — rows = destinations, columns = months. Green = best, red = avoid, blue = current month. |
 | **Discover** | Browse the 197-country sovereign catalog by region. Add/remove destinations from My List. Uses its own filter bar. |
 

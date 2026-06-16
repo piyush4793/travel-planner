@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import type { Country, VisitedFilter } from "../../core/types";
 import { type BudgetBasis, type BudgetTier } from "../../core/utils/filterLogic";
 import { MONTHS } from "../../core/utils/months";
@@ -43,6 +43,7 @@ type Trip = {
 type ViewMode = "all" | "combo" | "solo";
 type VisitedMode = "all" | "completed" | "in-progress" | "not-started";
 type SortMode = "popular" | "az" | "za";
+const SORT_HELP_DELAY_MS = 120;
 
 function buildTrips(
   allCountries: Country[],
@@ -129,12 +130,16 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
   const [isWideMobile, setIsWideMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth >= 390 : false
   );
+  const [showSortHelp, setShowSortHelp] = useState(false);
+  const sortHelpTimerRef = useRef<number | null>(null);
   const canUseMobileGrid = isMobile && isWideMobile;
   const effectiveLayout: "list" | "grid" = isMobile ? (canUseMobileGrid ? layout : "list") : layout;
 
   const hasPrimaryFilters = selectedMonth.length > 0 || budgetFilter !== "all" || visitedFilter !== "all";
   const hasSecondaryFilters = viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all";
   const basisLabel = BUDGET_BASIS_OPTIONS.find((x) => x.value === budgetBasis)?.label ?? "Couple";
+  const sortSummary = sortMode === "popular" ? "Popularity" : sortMode === "az" ? "A to Z" : "Z to A";
+  const sortHelpText = `Sort: ${sortSummary}. Cards stay sectioned as Favorites, Planning, and Completed. Budget chips follow ${BUDGET_BASIS_META[budgetBasis].icon} ${basisLabel}.`;
   const hasQuickReset = search.trim().length > 0 || hasPrimaryFilters || hasSecondaryFilters;
 
   useEffect(() => {
@@ -149,6 +154,28 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
     if (bp === "tablet") setRailOpen(false);
     if (bp === "desktop") setRailOpen(true);
   }, [bp]);
+
+  const clearSortHelpTimer = () => {
+    if (sortHelpTimerRef.current !== null) {
+      window.clearTimeout(sortHelpTimerRef.current);
+      sortHelpTimerRef.current = null;
+    }
+  };
+
+  const openSortHelp = () => {
+    clearSortHelpTimer();
+    sortHelpTimerRef.current = window.setTimeout(() => {
+      setShowSortHelp(true);
+      sortHelpTimerRef.current = null;
+    }, SORT_HELP_DELAY_MS);
+  };
+
+  const closeSortHelp = () => {
+    clearSortHelpTimer();
+    setShowSortHelp(false);
+  };
+
+  useEffect(() => () => clearSortHelpTimer(), []);
 
 
   const trips = useMemo(
@@ -876,16 +903,36 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                     </button>
                   </div>
 
-                  <select
-                    value={sortMode}
-                    onChange={(e) => setSortMode(e.target.value as SortMode)}
-                    className="px-2.5 py-2 text-xs font-semibold rounded-lg border border-gray-200 bg-white text-gray-700"
-                    title="Sort trips"
+                  <div
+                    className="relative"
+                    onMouseEnter={openSortHelp}
+                    onMouseLeave={closeSortHelp}
+                    onFocusCapture={openSortHelp}
+                    onBlurCapture={(e) => {
+                      if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+                        closeSortHelp();
+                      }
+                    }}
                   >
-                    <option value="popular">Sort: Popularity</option>
-                    <option value="az">Sort: A to Z</option>
-                    <option value="za">Sort: Z to A</option>
-                  </select>
+                    <select
+                      value={sortMode}
+                      onChange={(e) => setSortMode(e.target.value as SortMode)}
+                      className="px-2.5 py-2 text-xs font-semibold rounded-lg border border-gray-200 bg-white text-gray-700"
+                      aria-label="Sort trips"
+                    >
+                      <option value="popular">Sort: Popularity</option>
+                      <option value="az">Sort: A to Z</option>
+                      <option value="za">Sort: Z to A</option>
+                    </select>
+                    {showSortHelp && (
+                      <div
+                        role="tooltip"
+                        className="pointer-events-none absolute left-1/2 top-full mt-1.5 w-64 -translate-x-1/2 rounded-lg bg-gray-900 px-2.5 py-2 text-[10px] leading-snug text-white shadow-xl z-20"
+                      >
+                        {sortHelpText}
+                      </div>
+                    )}
+                  </div>
 
                   <span className="text-[11px] text-gray-500 bg-gray-50 border border-gray-200 rounded-lg px-2.5 py-2">
                     {filtered.length} of {trips.length}
@@ -918,10 +965,6 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                     </button>
                   )}
                 </div>
-                <p className="mt-2 pt-2 border-t border-gray-100 text-[10px] text-gray-500">
-                  {sortMode === "popular" ? "Sorted by Popularity" : sortMode === "az" ? "Sorted A to Z" : "Sorted Z to A"} ·
-                  {" "}Budget shown for {BUDGET_BASIS_META[budgetBasis].icon} {basisLabel}
-                </p>
               </div>
               {renderTripsContent(effectiveLayout === "grid" ? "max-w-6xl" : "max-w-5xl")}
             </div>
@@ -1279,10 +1322,11 @@ function TripRow({
     ? Math.round((trip.visitedCount / trip.allCountries.length) * 100)
     : 0;
 
-  // Build search queries for images — country landmark or "country name travel"
-  const imageQueries = trip.allCountries.slice(0, 3).map((c) =>
-    c.landmark ? `${c.landmark} ${c.name}` : `${c.name} travel landmark`
-  );
+  // Build search queries for images — landmark first, then first experience/city as a stronger fallback.
+  const imageQueries = trip.allCountries.slice(0, 3).map((c) => {
+    const anchor = c.landmark ?? c.experiences?.[0] ?? c.cities?.[0]?.name;
+    return anchor ? `${anchor} ${c.name}` : `${c.name} travel landmark`;
+  });
 
   const accent = REGION_ACCENT[trip.region] ?? "border-l-slate-300";
 

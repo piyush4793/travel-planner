@@ -4,9 +4,10 @@ import { createPortal } from "react-dom";
 type Props = {
   text: string;
   children?: React.ReactNode;
+  triggerClassName?: string;
 };
 
-export default function Tooltip({ text, children }: Props) {
+export default function Tooltip({ text, children, triggerClassName }: Props) {
   const [visible, setVisible] = useState(false);
   const [pos, setPos] = useState({ top: 0, left: 0 });
   const [below, setBelow] = useState(false);
@@ -37,8 +38,7 @@ export default function Tooltip({ text, children }: Props) {
         onMouseLeave={hide}
         onFocus={show}
         onBlur={hide}
-        className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-current/15 text-current text-[9px] font-black cursor-help select-none leading-none shrink-0"
-        style={{ opacity: 0.6 }}
+        className={`inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-current/15 text-current text-[9px] font-black cursor-help select-none leading-none shrink-0 opacity-60 ${triggerClassName ?? ""}`}
         role="img"
         aria-label={text}
       >

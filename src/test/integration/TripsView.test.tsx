@@ -1,9 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, within } from "@testing-library/react";
+import { render, screen, within, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import TripsView from "../../components/views/TripsView";
 import type { Country } from "../../core/types";
 import type { TripGroupDef } from "../../core/data/tripGroups";
+import { getWikiImage } from "../../utils/wikiImages";
 
 vi.mock("../../hooks/useBreakpoint", () => ({
   useBreakpoint: () => "desktop",
@@ -36,14 +37,19 @@ const countries: Country[] = [
   createCountry({ name: "Japan", popularityScore: 80, region: "Asia", budgetBreakdown: { solo: "₹1L", couple: "₹2L", family4: "₹3L" } }),
 ];
 
-function renderTrips(options?: { onSelect?: ReturnType<typeof vi.fn>; tripGroups?: TripGroupDef[] }) {
+function renderTrips(options?: {
+  onSelect?: ReturnType<typeof vi.fn>;
+  tripGroups?: TripGroupDef[];
+  countries?: Country[];
+}) {
   const onSelect = options?.onSelect ?? vi.fn();
   const tripGroups = options?.tripGroups ?? [];
+  const countriesToRender = options?.countries ?? countries;
   return {
     onSelect,
     ...render(
       <TripsView
-        countries={countries}
+        countries={countriesToRender}
         visitedNames={new Set<string>()}
         favorites={new Set<string>()}
         visitedFilter="all"
@@ -70,6 +76,7 @@ function appearsBefore(a: Element, b: Element): boolean {
 describe("TripsView", () => {
   beforeEach(() => {
     Object.defineProperty(window, "innerWidth", { writable: true, configurable: true, value: 1280 });
+    vi.mocked(getWikiImage).mockClear();
   });
 
   it("filters trips by search and supports quick reset", async () => {
@@ -97,9 +104,14 @@ describe("TripsView", () => {
     await user.click(screen.getByRole("button", { name: "List view" }));
     expect(screen.getByTitle("List view")).toHaveClass("bg-blue-50");
 
-    await user.selectOptions(screen.getByTitle("Sort trips"), "az");
-    expect(screen.getByText(/Sorted A to Z/i)).toBeInTheDocument();
-    expect(screen.getByText(/Budget shown for/i)).toHaveTextContent("Budget shown for 👫 Couple");
+    const sortSelect = screen.getByLabelText("Sort trips");
+    await user.selectOptions(sortSelect, "az");
+    await user.hover(sortSelect);
+    await waitFor(() => {
+      expect(screen.getByRole("tooltip")).toHaveTextContent("Sort: A to Z.");
+    });
+    await user.unhover(sortSelect);
+    expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "Open Japan" }));
     expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Japan" }));
@@ -119,7 +131,7 @@ describe("TripsView", () => {
     expect(appearsBefore(sweden, japan)).toBe(true);
     expect(appearsBefore(japan, antarctica)).toBe(true);
 
-    await user.selectOptions(screen.getByTitle("Sort trips"), "az");
+    await user.selectOptions(screen.getByLabelText("Sort trips"), "az");
     const argentina = screen.getByRole("button", { name: "Open Argentina" });
     const norway = screen.getByRole("button", { name: "Open Norway" });
     expect(appearsBefore(argentina, norway)).toBe(true);
@@ -133,7 +145,7 @@ describe("TripsView", () => {
     await user.type(searchInput, "swit");
 
     const switzerlandBeforeSortChange = screen.getByRole("button", { name: "Open Switzerland" });
-    await user.selectOptions(screen.getByTitle("Sort trips"), "za");
+    await user.selectOptions(screen.getByLabelText("Sort trips"), "za");
     const switzerlandAfterSortChange = screen.getByRole("button", { name: "Open Switzerland" });
 
     expect(switzerlandBeforeSortChange).toBeInTheDocument();
@@ -164,5 +176,20 @@ describe("TripsView", () => {
     await user.click(within(norwayCard as HTMLDivElement).getByRole("button", { name: "Sweden" }));
 
     expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Sweden" }));
+  });
+
+  it("uses first experience as image-query fallback when landmark is missing", async () => {
+    const uae = createCountry({
+      name: "United Arab Emirates",
+      region: "Middle East",
+      landmark: undefined,
+      experiences: ["Burj Khalifa", "Desert Safari"],
+    });
+
+    renderTrips({ countries: [uae] });
+
+    await waitFor(() => {
+      expect(getWikiImage).toHaveBeenCalledWith("Burj Khalifa United Arab Emirates");
+    });
   });
 });
