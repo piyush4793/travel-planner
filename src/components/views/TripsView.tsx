@@ -209,10 +209,10 @@ export default function TripsView({
 
   return (
     <div className="h-full flex flex-col bg-slate-50 overflow-hidden">
-      {/* Header: search + filter controls (responsive) */}
-      <div className="flex items-center gap-1.5 px-3 py-2 border-b bg-white shrink-0">
-        {/* Search bar — full width on mobile, narrower on tablet+ */}
-        <div className="relative flex-1 min-w-0">
+      {/* Header: compact single-line responsive */}
+      <div className="flex items-center gap-1 px-3 py-2 border-b bg-white shrink-0 flex-wrap md:flex-nowrap">
+        {/* Search bar — full width on mobile, fixed width on tablet+ */}
+        <div className="relative flex-1 md:flex-none min-w-0 md:min-w-fit">
           <input
             type="text"
             value={search}
@@ -427,19 +427,20 @@ export default function TripsView({
           >
             📊
           </button>
+
+          {/* New trip button — inside desktop controls */}
+          {isEnabled("tripGroups") && (
+            <button
+              onClick={() => { setCreatingNew(true); setEditingMain(null); }}
+              className="flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors h-7"
+              title="Create new trip"
+            >
+              ➕
+            </button>
+          )}
         </div>
 
-        {/* New trip button — desktop and tablet only */}
-        {isEnabled("tripGroups") && (
-          <button
-            onClick={() => { setCreatingNew(true); setEditingMain(null); }}
-            className="hidden sm:flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors h-7 shrink-0 ml-auto md:ml-0"
-            title="Create new trip"
-          >
-            ➕
-            <span className="hidden md:inline">Trip</span>
-          </button>
-        )}
+        {/* Mobile menu — hidden on desktop */}
       </div>
 
       {/* Stats modal */}
