@@ -8,7 +8,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (321 tests across 44 files)
+npm test                # Vitest suite (324 tests across 44 files)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests + knip + build
 ```

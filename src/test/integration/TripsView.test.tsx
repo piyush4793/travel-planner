@@ -3,6 +3,7 @@ import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import TripsView from "../../components/views/TripsView";
 import type { Country } from "../../core/types";
+import type { TripGroupDef } from "../../core/data/tripGroups";
 
 vi.mock("../../hooks/useBreakpoint", () => ({
   useBreakpoint: () => "desktop",
@@ -30,10 +31,14 @@ const countries: Country[] = [
   createCountry({ name: "Sweden", popularityScore: 95, combo: ["Norway"] }),
   createCountry({ name: "Norway", popularityScore: 20, combo: ["Sweden"] }),
   createCountry({ name: "Switzerland", popularityScore: 10, combo: ["France"] }),
+  createCountry({ name: "Argentina", popularityScore: 30, combo: ["Antarctica"] }),
+  createCountry({ name: "Antarctica", popularityScore: 1, combo: ["Argentina"] }),
   createCountry({ name: "Japan", popularityScore: 80, region: "Asia", budgetBreakdown: { solo: "₹1L", couple: "₹2L", family4: "₹3L" } }),
 ];
 
-function renderTrips(onSelect = vi.fn()) {
+function renderTrips(options?: { onSelect?: ReturnType<typeof vi.fn>; tripGroups?: TripGroupDef[] }) {
+  const onSelect = options?.onSelect ?? vi.fn();
+  const tripGroups = options?.tripGroups ?? [];
   return {
     onSelect,
     ...render(
@@ -50,12 +55,16 @@ function renderTrips(onSelect = vi.fn()) {
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         onSelect={onSelect}
-        tripGroups={[]}
+        tripGroups={tripGroups}
         onSaveTrip={vi.fn()}
         onDeleteTrip={vi.fn()}
       />,
     ),
   };
+}
+
+function appearsBefore(a: Element, b: Element): boolean {
+  return Boolean(a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING);
 }
 
 describe("TripsView", () => {
@@ -68,17 +77,17 @@ describe("TripsView", () => {
     renderTrips();
 
     const searchInput = screen.getByPlaceholderText("Search countries, cities...");
-    expect(screen.getAllByRole("button", { name: "Sweden" }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("button", { name: "Switzerland" }).length).toBeGreaterThan(0);
+    expect(screen.getByRole("button", { name: "Open Sweden" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Open Switzerland" })).toBeInTheDocument();
 
     await user.type(searchInput, "swit");
 
-    expect(screen.getByRole("button", { name: "Switzerland" })).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: "Sweden" })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Open Switzerland" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Open Sweden" })).not.toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "Clear all" }));
     expect(searchInput).toHaveValue("");
-    expect(screen.getAllByRole("button", { name: "Sweden" }).length).toBeGreaterThan(0);
+    expect(screen.getByRole("button", { name: "Open Sweden" })).toBeInTheDocument();
   });
 
   it("supports list/grid toggles, sort updates, and card selection", async () => {
@@ -92,11 +101,44 @@ describe("TripsView", () => {
     expect(screen.getByText(/Sorted A to Z/i)).toBeInTheDocument();
     expect(screen.getByText(/Budget shown for/i)).toHaveTextContent("Budget shown for 👫 Couple");
 
-    await user.click(screen.getAllByRole("button", { name: "Japan" })[0]);
+    await user.click(screen.getByRole("button", { name: "Open Japan" }));
     expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Japan" }));
 
     await user.click(screen.getByRole("button", { name: "Grid view" }));
     expect(screen.getByTitle("Grid view")).toHaveClass("bg-blue-50");
+  });
+
+  it("applies popularity sorting when search is empty", async () => {
+    const user = userEvent.setup();
+    renderTrips();
+
+    const sweden = screen.getByRole("button", { name: "Open Sweden" });
+    const japan = screen.getByRole("button", { name: "Open Japan" });
+    const antarctica = screen.getByRole("button", { name: "Open Antarctica" });
+
+    expect(appearsBefore(sweden, japan)).toBe(true);
+    expect(appearsBefore(japan, antarctica)).toBe(true);
+
+    await user.selectOptions(screen.getByTitle("Sort trips"), "az");
+    const argentina = screen.getByRole("button", { name: "Open Argentina" });
+    const norway = screen.getByRole("button", { name: "Open Norway" });
+    expect(appearsBefore(argentina, norway)).toBe(true);
+  });
+
+  it("keeps relevance-driven results while search query is active", async () => {
+    const user = userEvent.setup();
+    renderTrips();
+
+    const searchInput = screen.getByPlaceholderText("Search countries, cities...");
+    await user.type(searchInput, "swit");
+
+    const switzerlandBeforeSortChange = screen.getByRole("button", { name: "Open Switzerland" });
+    await user.selectOptions(screen.getByTitle("Sort trips"), "za");
+    const switzerlandAfterSortChange = screen.getByRole("button", { name: "Open Switzerland" });
+
+    expect(switzerlandBeforeSortChange).toBeInTheDocument();
+    expect(switzerlandAfterSortChange).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Open Japan" })).not.toBeInTheDocument();
   });
 
   it("opens suggested combine country from grid chips", async () => {
@@ -104,10 +146,23 @@ describe("TripsView", () => {
     const { onSelect } = renderTrips();
 
     await user.click(screen.getByRole("button", { name: "Grid view" }));
-    const swedenCard = screen.getAllByRole("button", { name: "Sweden" })[0].closest("div.rounded-xl");
+    const swedenCard = screen.getByRole("button", { name: "Open Sweden" }).closest("div.rounded-xl");
     expect(swedenCard).not.toBeNull();
     await user.click(within(swedenCard as HTMLDivElement).getByRole("button", { name: "Norway" }));
 
     expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Norway" }));
+  });
+
+  it("opens add-on country from list combo chips", async () => {
+    const user = userEvent.setup();
+    const { onSelect } = renderTrips({
+      tripGroups: [{ main: "Norway", addOns: ["Sweden"], region: "Europe" }],
+    });
+
+    const norwayCard = screen.getByRole("button", { name: "Open Norway" }).closest("div.rounded-xl");
+    expect(norwayCard).not.toBeNull();
+    await user.click(within(norwayCard as HTMLDivElement).getByRole("button", { name: "Sweden" }));
+
+    expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Sweden" }));
   });
 });

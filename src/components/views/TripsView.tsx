@@ -1303,6 +1303,7 @@ function TripRow({
           <div className="flex items-center justify-between mb-1.5">
             <button
               onClick={() => onSelect(trip.main)}
+              aria-label={`Open ${trip.main.name}`}
               className="text-sm font-bold text-gray-800 hover:text-blue-600 transition-colors truncate"
             >
               {trip.allVisited ? "✅ " : ""}{trip.main.name}
@@ -1369,6 +1370,7 @@ function TripRow({
           </span>
           <button
             onClick={() => onSelect(trip.main)}
+            aria-label={`Open ${trip.main.name}`}
             className="text-sm font-bold text-gray-800 hover:text-blue-600 transition-colors truncate"
           >
             {trip.main.name}
