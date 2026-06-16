@@ -940,6 +940,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
             <TripRow
               key={trip.id}
               trip={trip}
+              budgetBasis={budgetBasis}
               visitedNames={visitedNames}
               favorites={favorites}
               onSelect={onSelect}
@@ -1217,8 +1218,15 @@ const REGION_BADGE: Record<string, string> = {
   Oceania: "bg-cyan-50 text-cyan-600",
 };
 
+const BUDGET_BASIS_META: Record<BudgetBasis, { icon: string; label: string }> = {
+  solo: { icon: "👤", label: "per solo traveler" },
+  couple: { icon: "👫", label: "per couple" },
+  family4: { icon: "👨‍👩‍👧‍👦", label: "per family of 4" },
+};
+
 function TripRow({
   trip,
+  budgetBasis,
   visitedNames,
   favorites,
   onSelect,
@@ -1226,6 +1234,7 @@ function TripRow({
   compact,
 }: {
   trip: Trip;
+  budgetBasis: BudgetBasis;
   visitedNames: Set<string>;
   favorites: Set<string>;
   onSelect: (c: Country) => void;
@@ -1234,6 +1243,8 @@ function TripRow({
 }) {
   const isCombo = trip.addOns.length > 0;
   const suggestedPairs = !isCombo && !trip.allVisited ? (trip.main.combo ?? []).slice(0, 2) : [];
+  const budgetDisplay = trip.main.budgetBreakdown?.[budgetBasis] ?? trip.main.budget;
+  const budgetBasisMeta = BUDGET_BASIS_META[budgetBasis];
   const progress = trip.allCountries.length > 0
     ? Math.round((trip.visitedCount / trip.allCountries.length) * 100)
     : 0;
@@ -1362,7 +1373,12 @@ function TripRow({
       {!compact && (
         <div className="flex flex-wrap items-center gap-2 mb-2">
           {trip.main.budget && (
-            <span className="text-[10px] text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">💰 {trip.main.budget}</span>
+            <span
+              className="text-[10px] text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full"
+              title={`Budget ${budgetBasisMeta.label}`}
+            >
+              {budgetBasisMeta.icon} {budgetDisplay}
+            </span>
           )}
           {trip.main.bestMonths?.slice(0, 3).map((m) => (
             <span key={m} className="text-[9px] text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded font-medium">{m}</span>

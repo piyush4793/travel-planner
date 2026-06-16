@@ -152,6 +152,7 @@ Full-screen animated experience for rule-based countries:
 - **Search intent priority** — search prioritizes the card’s primary country name (including word-prefix matches like `kore`/`swit`) over combine/related hits, and active search keeps relevance order instead of re-sorting by popularity
 - **Grid alignment consistency** — compact cards reserve the combo-row slot so progress rows align even when no combo/suggestion pills exist
 - **No duplicate combine labels** — list cards show combine countries once (as chips only), without repeating them inline next to the main country
+- **Budget basis clarity** — list card budget chips show traveler-basis icons (👤 solo / 👫 couple / 👨‍👩‍👧‍👦 family4) matching the active Trips budget basis filter
 
 ---
 

@@ -84,6 +84,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 - Trips search should prioritize primary-country matches (including word-prefix matches) over combine/related hits; combine matches can appear but not at the top, and active search should preserve relevance order (do not re-sort by popularity)
 - Compact Trips cards should keep progress-row alignment; show a "No combo yet" placeholder when combo suggestions are absent
 - In list cards, avoid duplicating combine values: do not repeat add-ons inline in the header when add-on chips are shown
+- In list cards, budget chips should include a traveler-basis icon (solo/couple/family4) that matches the active Trips budget basis
 - Trip planner: days slider → Generate (offline) or Plan with AI
 - Multi-plan selector: switch between Default and saved AI plans
 - Plan comparison: side-by-side modal with summary cards, city overlap analysis
