@@ -191,7 +191,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
           <h2 className="text-base font-bold text-slate-800 flex items-center gap-2">
             <span className="text-lg">{"\u2699\uFE0F"}</span> Settings
           </h2>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-lg leading-none" aria-label="Close settings">{"\u2715"}</button>
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-lg leading-none p-1.5 min-w-[32px] min-h-[32px] rounded-lg focus-ring" aria-label="Close settings">{"\u2715"}</button>
         </div>
 
         {/* Tab switcher */}
@@ -238,8 +238,8 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
                 <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Current Key</label>
                 <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2">
                   <code className="text-xs text-emerald-600 flex-1 font-mono">{showKey ? currentKey : masked}</code>
-                  <button onClick={() => setShowKey(!showKey)} className="text-[10px] text-slate-400 hover:text-slate-600">{showKey ? "Hide" : "Show"}</button>
-                  <button onClick={handleDelete} className="text-[10px] text-red-500 hover:text-red-600">Delete</button>
+                  <button onClick={() => setShowKey(!showKey)} className="text-[11px] px-2 py-1 min-h-[28px] rounded text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors focus-ring">{showKey ? "Hide" : "Show"}</button>
+                  <button onClick={handleDelete} className="text-[11px] px-2 py-1 min-h-[28px] rounded text-red-500 hover:text-red-600 hover:bg-red-50 transition-colors focus-ring">Delete</button>
                 </div>
               </div>
             )}

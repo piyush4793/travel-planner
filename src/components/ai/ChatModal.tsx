@@ -129,11 +129,11 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
             {!pasteMode && !linkMode && !finished && !finalizing && (
               <>
                 <button onClick={() => setPasteMode(true)}
-                  className="px-2.5 py-1.5 border border-violet-200 bg-violet-50 text-violet-700 hover:bg-violet-100 text-[10px] font-semibold rounded-lg transition-colors">
+                  className="px-2.5 py-1.5 min-h-[32px] border border-violet-200 bg-violet-50 text-violet-700 hover:bg-violet-100 text-[11px] font-semibold rounded-lg transition-colors focus-ring">
                   📋 Paste
                 </button>
                 <button onClick={() => setLinkMode(true)}
-                  className="px-2.5 py-1.5 border border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 text-[10px] font-semibold rounded-lg transition-colors">
+                  className="px-2.5 py-1.5 min-h-[32px] border border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 text-[11px] font-semibold rounded-lg transition-colors focus-ring">
                   🔗 Link
                 </button>
               </>
@@ -142,7 +142,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
               <FinishButton tokens={tokenUsage.totalTokens} loading={loading} onClick={finishChat} />
             )}
             <button onClick={handleClose} disabled={finalizing} aria-label="Close chat"
-              className={`text-lg leading-none p-1 ${finalizing ? "text-slate-200 cursor-not-allowed" : "text-slate-400 hover:text-slate-700"}`}>✕</button>
+              className={`text-lg leading-none p-2 min-w-[32px] min-h-[32px] rounded-lg focus-ring ${finalizing ? "text-slate-200 cursor-not-allowed" : "text-slate-400 hover:text-slate-700"}`}>✕</button>
           </div>
         </div>
 

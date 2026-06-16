@@ -16,7 +16,15 @@ export default function FilterChip({ label, active, children }: Props) {
   function toggle() {
     if (btnRef.current) {
       const r = btnRef.current.getBoundingClientRect();
-      setPos({ top: r.bottom + 6, left: r.left });
+      const panelWidth = 240;
+      let left = r.left;
+      // Prevent overflow on the right edge
+      if (left + panelWidth > window.innerWidth - 12) {
+        left = window.innerWidth - panelWidth - 12;
+      }
+      // Prevent overflow on the left edge
+      if (left < 12) left = 12;
+      setPos({ top: r.bottom + 6, left });
     }
     setOpen(o => !o);
   }
@@ -43,7 +51,8 @@ export default function FilterChip({ label, active, children }: Props) {
         ref={btnRef}
         onClick={toggle}
         aria-expanded={open}
-        className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold whitespace-nowrap transition-all border ${
+        aria-haspopup="true"
+        className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold whitespace-nowrap transition-all border focus-ring ${
           active
             ? "bg-blue-600 text-white border-blue-600 shadow-sm"
             : open

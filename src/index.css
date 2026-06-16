@@ -93,23 +93,6 @@ html, body, #root {
   100% { transform: scale(1); box-shadow: 0 0 0 4px rgba(59,130,246,0.35); }
 }
 
-@keyframes transportOrbit {
-  0%   { box-shadow: 0 8px 32px rgba(59,130,246,0.35), 0 0 0 0 rgba(59,130,246,0.25), inset 0 -3px 10px rgba(59,130,246,0.1), inset 0 3px 6px rgba(255,255,255,0.7); }
-  50%  { box-shadow: 0 12px 40px rgba(59,130,246,0.5),  0 0 0 8px rgba(59,130,246,0),  inset 0 -3px 10px rgba(59,130,246,0.15), inset 0 3px 6px rgba(255,255,255,0.8); }
-  100% { box-shadow: 0 8px 32px rgba(59,130,246,0.35), 0 0 0 0 rgba(59,130,246,0.25), inset 0 -3px 10px rgba(59,130,246,0.1), inset 0 3px 6px rgba(255,255,255,0.7); }
-}
-
-@keyframes transportGlow {
-  0%   { opacity: 0.4; transform: scale(1); }
-  50%  { opacity: 0.7; transform: scale(1.15); }
-  100% { opacity: 0.4; transform: scale(1); }
-}
-
-@keyframes contrailShimmer {
-  0%   { opacity: 0.7; }
-  50%  { opacity: 1; }
-  100% { opacity: 0.7; }
-}
 
 /* Form inputs */
 .input {
@@ -144,11 +127,6 @@ html, body, #root {
   line-height: 1;
 }
 
-
-@keyframes fadeSlideIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
 
 /* FRE tour animations */
 @keyframes freFloat {
@@ -191,4 +169,21 @@ html, body, #root {
 @keyframes scaleIn {
   from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Global focus-visible ring for interactive elements */
+.focus-ring:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 4px;
 }

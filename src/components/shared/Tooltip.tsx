@@ -11,17 +11,22 @@ export default function Tooltip({ text, children, triggerClassName }: Props) {
   const [visible, setVisible] = useState(false);
   const [pos, setPos] = useState({ top: 0, left: 0 });
   const [below, setBelow] = useState(false);
-  const ref = useRef<HTMLSpanElement>(null);
+  const ref = useRef<HTMLButtonElement>(null);
 
   function show() {
     if (ref.current) {
       const r = ref.current.getBoundingClientRect();
       const flip = r.top < 110;
       setBelow(flip);
+      let left = r.left + r.width / 2;
+      // Prevent overflow on edges (tooltip is ~176px / w-44)
+      const halfWidth = 88;
+      if (left - halfWidth < 8) left = halfWidth + 8;
+      if (left + halfWidth > window.innerWidth - 8) left = window.innerWidth - halfWidth - 8;
       setPos(
         flip
-          ? { top: r.bottom + 8, left: r.left + r.width / 2 }
-          : { top: r.top - 6, left: r.left + r.width / 2 }
+          ? { top: r.bottom + 8, left }
+          : { top: r.top - 6, left }
       );
     }
     setVisible(true);
@@ -31,22 +36,25 @@ export default function Tooltip({ text, children, triggerClassName }: Props) {
 
   return (
     <>
-      <span
+      <button
+        type="button"
         ref={ref}
-        tabIndex={0}
         onMouseEnter={show}
         onMouseLeave={hide}
         onFocus={show}
         onBlur={hide}
-        className={`inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-current/15 text-current text-[9px] font-black cursor-help select-none leading-none shrink-0 opacity-60 ${triggerClassName ?? ""}`}
-        role="img"
+        onClick={show}
+        className={`inline-flex items-center justify-center w-5 h-5 min-w-[20px] min-h-[20px] rounded-full bg-current/15 text-current text-[9px] font-black cursor-help select-none leading-none shrink-0 opacity-60 focus-ring ${triggerClassName ?? ""}`}
         aria-label={text}
+        aria-describedby={visible ? "tooltip-content" : undefined}
       >
         {children ?? "i"}
-      </span>
+      </button>
 
       {visible && createPortal(
         <div
+          id="tooltip-content"
+          role="tooltip"
           style={{
             position: "fixed",
             top: pos.top,

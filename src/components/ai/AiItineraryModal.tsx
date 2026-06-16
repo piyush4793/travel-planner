@@ -187,7 +187,7 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
                         {day.label}
                       </p>
                       {day.theme && (
-                        <span className="text-[9px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full shrink-0">
+                        <span className="text-[10px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full shrink-0">
                           {day.theme}
                         </span>
                       )}
@@ -197,7 +197,7 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
                             href={route.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[9px] font-semibold text-blue-500 bg-blue-50 hover:bg-blue-100 px-2 py-0.5 rounded-full transition-colors"
+                            className="text-[10px] font-semibold text-blue-500 bg-blue-50 hover:bg-blue-100 px-2.5 py-1 rounded-full transition-colors focus-ring"
                             title="Open day route in Google Maps"
                           >
                             🗺️ Route
@@ -469,7 +469,7 @@ function CopyLinkButton({ url }: { url: string }) {
           setTimeout(() => setCopied(false), 1500);
         });
       }}
-      className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-full transition-colors ${
+      className={`text-[10px] font-semibold px-2 py-1 min-w-[28px] min-h-[28px] rounded-full transition-colors focus-ring ${
         copied
           ? "text-emerald-600 bg-emerald-50"
           : "text-slate-400 bg-slate-50 hover:bg-slate-100 hover:text-slate-600"
