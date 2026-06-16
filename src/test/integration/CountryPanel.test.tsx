@@ -118,7 +118,7 @@ describe("CountryPanel", () => {
       />,
     );
 
-    await user.click(screen.getByRole("button", { name: /My notes/i }));
+    await user.click(screen.getByRole("tab", { name: /Notes/i }));
     const textarea = screen.getByPlaceholderText(/Jot down ideas/i);
     await user.clear(textarea);
     await user.type(textarea, "Pack adapter");
