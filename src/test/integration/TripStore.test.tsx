@@ -4,6 +4,16 @@ import { useCountryStore } from "../../hooks/useCountryStore";
 import { useTripStore } from "../../hooks/useTripStore";
 import type { TripGroupDef } from "../../core/data/tripGroups";
 
+const COUNTRY = {
+  JAPAN: "Japan",
+  BRAZIL: "Brazil",
+  ARGENTINA: "Argentina",
+} as const;
+
+const REGION = {
+  AMERICAS: "Americas",
+} as const;
+
 const { loadConsolidatedCountryMock } = vi.hoisted(() => ({
   loadConsolidatedCountryMock: vi.fn().mockResolvedValue(null),
 }));
@@ -47,38 +57,38 @@ describe("useTripStore integration", () => {
 
     expect(result.current.mergedTripGroups.length).toBeGreaterThan(0);
     expect(result.current.mergedTripGroups).toEqual(
-      expect.arrayContaining([expect.objectContaining({ main: "Japan" })]),
+      expect.arrayContaining([expect.objectContaining({ main: COUNTRY.JAPAN })]),
     );
   });
 
   it("saves a custom trip and includes it in mergedTripGroups", async () => {
     const { result } = await renderStores();
-    const customTrip: TripGroupDef = { main: "Brazil", addOns: ["Argentina"], region: "Americas" };
+    const customTrip: TripGroupDef = { main: COUNTRY.BRAZIL, addOns: [COUNTRY.ARGENTINA], region: REGION.AMERICAS };
 
     act(() => {
       result.current.saveTrip(null, customTrip);
     });
 
     expect(result.current.mergedTripGroups).toEqual(
-      expect.arrayContaining([expect.objectContaining({ main: "Brazil", addOns: ["Argentina"] })]),
+      expect.arrayContaining([expect.objectContaining({ main: COUNTRY.BRAZIL, addOns: [COUNTRY.ARGENTINA] })]),
     );
   });
 
   it("deletes a custom override and reverts to seed trip", async () => {
     const { result } = await renderStores();
-    const customTrip: TripGroupDef = { main: "Brazil", addOns: ["Argentina"], region: "Americas" };
+    const customTrip: TripGroupDef = { main: COUNTRY.BRAZIL, addOns: [COUNTRY.ARGENTINA], region: REGION.AMERICAS };
 
     act(() => {
       result.current.saveTrip(null, customTrip);
     });
-    expect(result.current.mergedTripGroups.find((g) => g.main === "Brazil")?.isCustom).toBe(true);
+    expect(result.current.mergedTripGroups.find((g) => g.main === COUNTRY.BRAZIL)?.isCustom).toBe(true);
 
     act(() => {
-      result.current.deleteTrip("Brazil");
+      result.current.deleteTrip(COUNTRY.BRAZIL);
     });
 
     // Trip still exists (from seed), but no longer marked custom
-    const trip = result.current.mergedTripGroups.find((g) => g.main === "Brazil");
+    const trip = result.current.mergedTripGroups.find((g) => g.main === COUNTRY.BRAZIL);
     expect(trip).toBeDefined();
     expect(trip?.isCustom).toBeFalsy();
   });

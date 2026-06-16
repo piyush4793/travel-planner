@@ -1,6 +1,19 @@
 import { useState, useCallback, useRef } from "react";
 import { createPortal } from "react-dom";
 
+const ESCAPE_KEY = "Escape";
+const DEFAULT_TITLE = "Are you sure?";
+const DEFAULT_CONFIRM_LABEL = "Confirm";
+const DEFAULT_CANCEL_LABEL = "Cancel";
+const BACKDROP_CLASS =
+  "fixed inset-0 z-[10000] flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-4";
+const DIALOG_CONTAINER_CLASS =
+  "w-full max-w-sm rounded-2xl bg-white shadow-2xl overflow-hidden animate-[slideUp_0.2s_ease-out] sm:animate-[scaleIn_0.15s_ease-out]";
+const CANCEL_BUTTON_CLASS =
+  "flex-1 px-4 py-2.5 text-xs font-semibold rounded-xl border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300";
+const CONFIRM_BUTTON_BASE_CLASS =
+  "flex-1 px-4 py-2.5 text-xs font-semibold rounded-xl transition-colors focus:outline-none focus:ring-2";
+
 /* ── Types ── */
 type ConfirmOptions = {
   title?: string;
@@ -70,10 +83,10 @@ const VARIANT_STYLES = {
 };
 
 function ConfirmDialogView({
-  title = "Are you sure?",
+  title = DEFAULT_TITLE,
   message,
-  confirmLabel = "Confirm",
-  cancelLabel = "Cancel",
+  confirmLabel = DEFAULT_CONFIRM_LABEL,
+  cancelLabel = DEFAULT_CANCEL_LABEL,
   variant = "danger",
   onConfirm,
   onCancel,
@@ -94,9 +107,9 @@ function ConfirmDialogView({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[10000] flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+      className={BACKDROP_CLASS}
       onClick={(e) => { if (e.target === e.currentTarget) onCancel(); }}
-      onKeyDown={(e) => { if (e.key === "Escape") { e.stopPropagation(); onCancel(); } }}
+      onKeyDown={(e) => { if (e.key === ESCAPE_KEY) { e.stopPropagation(); onCancel(); } }}
     >
       <div
         ref={dialogRef}
@@ -104,7 +117,7 @@ function ConfirmDialogView({
         aria-modal="true"
         aria-labelledby="confirm-title"
         aria-describedby="confirm-msg"
-        className="w-full max-w-sm rounded-2xl bg-white shadow-2xl overflow-hidden animate-[slideUp_0.2s_ease-out] sm:animate-[scaleIn_0.15s_ease-out]"
+        className={DIALOG_CONTAINER_CLASS}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="p-5 space-y-3">
@@ -122,13 +135,13 @@ function ConfirmDialogView({
           <button
             ref={refCallback}
             onClick={onCancel}
-            className="flex-1 px-4 py-2.5 text-xs font-semibold rounded-xl border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300"
+            className={CANCEL_BUTTON_CLASS}
           >
             {cancelLabel}
           </button>
           <button
             onClick={onConfirm}
-            className={`flex-1 px-4 py-2.5 text-xs font-semibold rounded-xl transition-colors focus:outline-none focus:ring-2 ${style.confirm}`}
+            className={`${CONFIRM_BUTTON_BASE_CLASS} ${style.confirm}`}
           >
             {confirmLabel}
           </button>

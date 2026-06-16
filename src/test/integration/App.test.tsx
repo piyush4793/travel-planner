@@ -7,19 +7,63 @@ import { seedLocalStorage, setHashRoute } from "../testUtils";
 import type { Country } from "../../core/types";
 import { isEnabled } from "../../core/featureFlags";
 
+const COUNTRY_NAMES = {
+  JAPAN: "Japan",
+  BRAZIL: "Brazil",
+  CHILE: "Chile",
+} as const;
+
+const ROUTES = {
+  INVALID: "#invalid",
+  TRIPS: "#trips",
+  CALENDAR: "#calendar",
+  DISCOVER: "#discover",
+} as const;
+
+const NAV_TOUR_IDS = {
+  TRIPS: "nav-trips",
+  CALENDAR: "nav-calendar",
+  DISCOVER: "nav-discover",
+} as const;
+
+const TEST_IDS = {
+  HOME_COUNTRY: "home-country-value",
+  TRIPS_VIEW: "trips-view",
+  CALENDAR_VIEW: "calendar-view",
+  DISCOVER_VIEW: "discover-view",
+  SELECTED_COUNTRY: "selected-country",
+  TRIPS_SELECT_COUNTRY: "trips-select-country",
+  COUNTRY_PANEL_CLOSE: "country-panel-close",
+  CALENDAR_SELECT_COUNTRY: "calendar-select-country",
+  CALENDAR_COUNT: "calendar-count",
+  COUNTRY_PANEL_FILTER_FOOD: "country-panel-filter-food",
+  TRIPS_COUNT: "trips-count",
+  DISCOVER_ADD_COUNTRY: "discover-add-country",
+  DISCOVER_REMOVE_COUNTRY: "discover-remove-country",
+} as const;
+
+const DEFAULT_HOME_COUNTRY = "Canada";
+const FOOD_EXPERIENCE = "Food";
+const BR_PRESENT_COUNTRIES_COUNT = "2";
+const JP_ONLY_COUNTRIES_COUNT = "1";
+
+function navButton(tourId: string) {
+  return document.querySelector(`button[data-tour="${tourId}"]`) as HTMLButtonElement;
+}
+
 const japan: Country = {
-  name: "Japan",
+  name: COUNTRY_NAMES.JAPAN,
   lat: 35.6,
   lng: 139.7,
   region: "Asia",
   popularityScore: 88,
   bestMonths: ["April"],
   budget: "₹2L",
-  experiences: ["Food"],
+  experiences: [FOOD_EXPERIENCE],
 };
 
 const brazil: Country = {
-  name: "Brazil",
+  name: COUNTRY_NAMES.BRAZIL,
   lat: -15.7,
   lng: -47.8,
   region: "Americas",
@@ -55,10 +99,10 @@ vi.mock("../../components/views/TripsView", () => ({
     const onSelect = props.onSelect as ((c: Country) => void) | undefined;
     return (
       <div data-testid="trips-view">
-        <div data-testid="trips-count">{countries.length}</div>
+        <div data-testid={TEST_IDS.TRIPS_COUNT}>{countries.length}</div>
         <button
           type="button"
-          data-testid="trips-select-country"
+          data-testid={TEST_IDS.TRIPS_SELECT_COUNTRY}
           onClick={() => onSelect?.(countries[0])}
         >
           Select trip country
@@ -74,10 +118,10 @@ vi.mock("../../components/views/CalendarView", () => ({
     const onSelect = props.onSelect as ((c: Country) => void) | undefined;
     return (
       <div data-testid="calendar-view">
-        <div data-testid="calendar-count">{countries.length}</div>
+        <div data-testid={TEST_IDS.CALENDAR_COUNT}>{countries.length}</div>
         <button
           type="button"
-          data-testid="calendar-select-country"
+          data-testid={TEST_IDS.CALENDAR_SELECT_COUNTRY}
           onClick={() => onSelect?.(countries[0])}
         >
           Select calendar country
@@ -92,21 +136,21 @@ vi.mock("../../components/views/DiscoverView", () => ({
     const onAddToList = props.onAddToList as ((name: string) => void) | undefined;
     const onRemoveFromList = props.onRemoveFromList as ((name: string) => void) | undefined;
     return (
-      <div data-testid="discover-view">
+      <div data-testid={TEST_IDS.DISCOVER_VIEW}>
         Discover View
         <button
           type="button"
-          data-testid="discover-add-country"
-          onClick={() => onAddToList?.("Chile")}
+          data-testid={TEST_IDS.DISCOVER_ADD_COUNTRY}
+          onClick={() => onAddToList?.(COUNTRY_NAMES.CHILE)}
         >
-          Add Chile
+          Add {COUNTRY_NAMES.CHILE}
         </button>
         <button
           type="button"
-          data-testid="discover-remove-country"
-          onClick={() => onRemoveFromList?.("Japan")}
+          data-testid={TEST_IDS.DISCOVER_REMOVE_COUNTRY}
+          onClick={() => onRemoveFromList?.(COUNTRY_NAMES.JAPAN)}
         >
-          Remove Japan
+          Remove {COUNTRY_NAMES.JAPAN}
         </button>
       </div>
     );
@@ -114,7 +158,7 @@ vi.mock("../../components/views/DiscoverView", () => ({
 }));
 
 vi.mock("../../components/shared/HomeCountrySelector", () => ({
-  default: ({ value }: { value: string }) => <div data-testid="home-country-value">{value}</div>,
+  default: ({ value }: { value: string }) => <div data-testid={TEST_IDS.HOME_COUNTRY}>{value}</div>,
 }));
 
 vi.mock("../../components/shared/DevFlagPanel", () => ({
@@ -129,14 +173,14 @@ vi.mock("../../components/country/CountryPanel", () => ({
     const onFilterExperience = props.onFilterExperience as ((tag: string) => void) | undefined;
     return (
       <div data-testid="country-panel">
-        <div data-testid="selected-country">{country?.name ?? "none"}</div>
-        <button type="button" data-testid="country-panel-close" onClick={() => onClose?.()}>
+      <div data-testid={TEST_IDS.SELECTED_COUNTRY}>{country?.name ?? "none"}</div>
+      <button type="button" data-testid={TEST_IDS.COUNTRY_PANEL_CLOSE} onClick={() => onClose?.()}>
           Close
         </button>
         <button
           type="button"
-          data-testid="country-panel-filter-food"
-          onClick={() => onFilterExperience?.("Food")}
+        data-testid={TEST_IDS.COUNTRY_PANEL_FILTER_FOOD}
+        onClick={() => onFilterExperience?.(FOOD_EXPERIENCE)}
         >
           Filter Food
         </button>
@@ -218,39 +262,39 @@ describe("App orchestration", () => {
 
   it("defaults to trips view when hash is invalid and supports top-level view switching", async () => {
     const user = userEvent.setup();
-    seedLocalStorage({ [LS_KEYS.HOME_COUNTRY]: "Canada" });
-    window.history.pushState(null, "", "#invalid");
+    seedLocalStorage({ [LS_KEYS.HOME_COUNTRY]: DEFAULT_HOME_COUNTRY });
+    window.history.pushState(null, "", ROUTES.INVALID);
 
     render(<App />);
 
-    expect(screen.getByTestId("home-country-value")).toHaveTextContent("Canada");
-    expect(screen.getByTestId("trips-view")).toBeInTheDocument();
-    expect(window.location.hash).toBe("#trips");
+    expect(screen.getByTestId(TEST_IDS.HOME_COUNTRY)).toHaveTextContent(DEFAULT_HOME_COUNTRY);
+    expect(screen.getByTestId(TEST_IDS.TRIPS_VIEW)).toBeInTheDocument();
+    expect(window.location.hash).toBe(ROUTES.TRIPS);
 
-    await user.click(document.querySelector('button[data-tour="nav-calendar"]') as HTMLButtonElement);
-    expect(screen.getByTestId("calendar-view")).toBeInTheDocument();
-    expect(window.location.hash).toBe("#calendar");
+    await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
+    expect(screen.getByTestId(TEST_IDS.CALENDAR_VIEW)).toBeInTheDocument();
+    expect(window.location.hash).toBe(ROUTES.CALENDAR);
 
-    await user.click(document.querySelector('button[data-tour="nav-discover"]') as HTMLButtonElement);
-    expect(screen.getByTestId("discover-view")).toBeInTheDocument();
-    expect(window.location.hash).toBe("#discover");
+    await user.click(navButton(NAV_TOUR_IDS.DISCOVER));
+    expect(screen.getByTestId(TEST_IDS.DISCOVER_VIEW)).toBeInTheDocument();
+    expect(window.location.hash).toBe(ROUTES.DISCOVER);
   });
 
   it("wires country selection from Trips and Calendar into CountryPanel", async () => {
     const user = userEvent.setup();
     render(<App />);
 
-    expect(screen.getByTestId("selected-country")).toHaveTextContent("none");
+    expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent("none");
 
-    await user.click(screen.getByTestId("trips-select-country"));
-    expect(screen.getByTestId("selected-country")).toHaveTextContent("Japan");
+    await user.click(screen.getByTestId(TEST_IDS.TRIPS_SELECT_COUNTRY));
+    expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent(COUNTRY_NAMES.JAPAN);
 
-    await user.click(screen.getByTestId("country-panel-close"));
-    expect(screen.getByTestId("selected-country")).toHaveTextContent("none");
+    await user.click(screen.getByTestId(TEST_IDS.COUNTRY_PANEL_CLOSE));
+    expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent("none");
 
-    await user.click(document.querySelector('button[data-tour="nav-calendar"]') as HTMLButtonElement);
-    await user.click(screen.getByTestId("calendar-select-country"));
-    expect(screen.getByTestId("selected-country")).toHaveTextContent("Japan");
+    await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
+    await user.click(screen.getByTestId(TEST_IDS.CALENDAR_SELECT_COUNTRY));
+    expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent(COUNTRY_NAMES.JAPAN);
   });
 
   it("applies experience filter to Calendar results but keeps Trips result set unchanged", async () => {
@@ -258,13 +302,13 @@ describe("App orchestration", () => {
     setHashRoute("calendar");
     render(<App />);
 
-    expect(screen.getByTestId("calendar-count")).toHaveTextContent("2");
+    expect(screen.getByTestId(TEST_IDS.CALENDAR_COUNT)).toHaveTextContent(BR_PRESENT_COUNTRIES_COUNT);
 
-    await user.click(screen.getByTestId("country-panel-filter-food"));
-    expect(screen.getByTestId("calendar-count")).toHaveTextContent("1");
+    await user.click(screen.getByTestId(TEST_IDS.COUNTRY_PANEL_FILTER_FOOD));
+    expect(screen.getByTestId(TEST_IDS.CALENDAR_COUNT)).toHaveTextContent(JP_ONLY_COUNTRIES_COUNT);
 
-    await user.click(document.querySelector('button[data-tour="nav-trips"]') as HTMLButtonElement);
-    expect(screen.getByTestId("trips-count")).toHaveTextContent("2");
+    await user.click(navButton(NAV_TOUR_IDS.TRIPS));
+    expect(screen.getByTestId(TEST_IDS.TRIPS_COUNT)).toHaveTextContent(BR_PRESENT_COUNTRIES_COUNT);
   });
 
   it("passes AI planning handlers to CountryPanel only when llmPlanning is enabled", () => {
@@ -289,11 +333,11 @@ describe("App orchestration", () => {
     const user = userEvent.setup();
     render(<App />);
 
-    await user.click(document.querySelector('button[data-tour="nav-discover"]') as HTMLButtonElement);
-    await user.click(screen.getByTestId("discover-add-country"));
-    await user.click(screen.getByTestId("discover-remove-country"));
+    await user.click(navButton(NAV_TOUR_IDS.DISCOVER));
+    await user.click(screen.getByTestId(TEST_IDS.DISCOVER_ADD_COUNTRY));
+    await user.click(screen.getByTestId(TEST_IDS.DISCOVER_REMOVE_COUNTRY));
 
-    expect(addToListMock).toHaveBeenCalledWith("Chile");
-    expect(removeFromListMock).toHaveBeenCalledWith("Japan");
+    expect(addToListMock).toHaveBeenCalledWith(COUNTRY_NAMES.CHILE);
+    expect(removeFromListMock).toHaveBeenCalledWith(COUNTRY_NAMES.JAPAN);
   });
 });
