@@ -430,3 +430,43 @@ Hash-based, no library. `AppView` + `VALID_VIEWS` live in `src/hooks/useHashView
 - ❌ Direct state mutation
 - ❌ Eager importing of all rule JSON files
 - ❌ Dead files / unused exports / unused imports
+
+---
+
+## UX & Accessibility Checklist (enforce on every new component/change)
+
+### Interactive elements — MANDATORY
+
+| Rule | How |
+|---|---|
+| **Focus-visible ring** | Every `<button>`, `<a>`, interactive `<span>` MUST have `focus-ring` class |
+| **Min touch target** | All interactive elements: `min-h-[32px] min-w-[32px]` (prefer 44×44 on mobile) |
+| **Text floor** | Interactive text minimum `text-[10px]`; prefer `text-[11px]` or `text-xs` for buttons |
+| **ARIA on popups** | Trigger needs `aria-expanded` + `aria-haspopup`; popup needs `role` |
+| **ARIA on icon buttons** | Icon-only buttons MUST have `aria-label` |
+| **Keyboard nav** | Anything clickable must be reachable via Tab; custom widgets need arrow-key support |
+
+### Portals & popups — MANDATORY
+
+| Rule | How |
+|---|---|
+| **Viewport collision** | Portal popups MUST detect viewport edges and reposition (left, right, top, bottom) |
+| **Mobile fallback** | Complex popups should go full-width or bottom-sheet on mobile viewports |
+| **Escape to close** | All overlays/popups must close on Escape and return focus to trigger |
+
+### Animations — MANDATORY
+
+| Rule | How |
+|---|---|
+| **Reduced motion** | All animations respect `prefers-reduced-motion: reduce` (global rule in index.css) |
+| **Consistent timing** | Use standard durations: 0.15s (fast), 0.25s (normal), 0.4s (slow) |
+| **No transition-all** | Use specific properties (`transition-colors`, `transition-opacity`, `transition-transform`) |
+| **No dead keyframes** | Remove unused `@keyframes` from index.css |
+
+### Component quality gate — verify before PR
+
+1. Tab through the component — can you see where focus is?
+2. Shrink viewport to 375px — are all buttons tappable? Any overflow?
+3. Enable reduced-motion in DevTools — do animations stop?
+4. Screen reader: are interactive elements announced correctly?
+5. Run `npx knip` — any dead exports introduced?
