@@ -235,6 +235,7 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
             isIOS={isIOS}
             installing={installing}
             onInstall={handleInstall}
+            onNext={next}
             onSkip={finish}
             onBack={prev}
             index={step}
@@ -345,9 +346,9 @@ function SpotlightCard({ step, targetRect, index, total, onNext, onPrev, onSkip 
 
 // ─── Install card ────────────────────────────────────────────────────────────
 
-function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstall, onSkip, onBack, index, total }: {
+function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstall, onNext, onSkip, onBack, index, total }: {
   step: TourStep; canPrompt: boolean; isInstalled: boolean; isIOS: boolean;
-  installing: boolean; onInstall: () => void; onSkip: () => void; onBack: () => void;
+  installing: boolean; onInstall: () => void; onNext: () => void; onSkip: () => void; onBack: () => void;
   index: number; total: number;
 }) {
   return (
@@ -404,9 +405,16 @@ function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstal
 
           <div className="flex items-center justify-between">
             <ProgressBar current={index} total={total} light />
-            <button onClick={onBack} className="px-4 py-2 text-xs font-semibold text-white/70 hover:text-white transition-colors">
-              Back
-            </button>
+            <div className="flex items-center gap-1">
+              <button onClick={onBack} className="px-4 py-2 text-xs font-semibold text-white/70 hover:text-white transition-colors">
+                Back
+              </button>
+              {!canPrompt && (
+                <button onClick={onNext} className="px-4 py-2 text-xs font-bold text-white bg-white/20 hover:bg-white/30 rounded-lg transition-colors">
+                  Next →
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
