@@ -78,17 +78,19 @@ export default function CountryForm({ initial, onSave, onClose }: Props) {
         <div className="flex-1 overflow-y-auto px-6 py-4 space-y-5">
           {/* Budget */}
           <div>
-            <Label>Budget estimate</Label>
+            <Label htmlFor="cf-budget">Budget estimate</Label>
             <input
-              className={`input ${budgetWarning ? "border-amber-300" : ""}`}
+              id="cf-budget"
+              className={`input focus-ring ${budgetWarning ? "border-amber-300" : ""}`}
               value={budget}
               onChange={(e) => setBudget(e.target.value)}
               placeholder="₹2L–₹4L"
+              aria-describedby={budgetWarning ? "cf-budget-warn" : "cf-budget-hint"}
             />
             {budgetWarning ? (
-              <p className="text-[11px] text-amber-500 mt-1">⚠ {budgetWarning}</p>
+              <p id="cf-budget-warn" className="text-[11px] text-amber-500 mt-1">⚠ {budgetWarning}</p>
             ) : (
-              <p className="text-[11px] text-gray-400 mt-1">e.g. ₹50K, ₹1.5L–₹3L, $2K–$5K</p>
+              <p id="cf-budget-hint" className="text-[11px] text-gray-400 mt-1">e.g. ₹50K, ₹1.5L–₹3L, $2K–$5K</p>
             )}
           </div>
 
@@ -119,40 +121,44 @@ export default function CountryForm({ initial, onSave, onClose }: Props) {
 
           {/* Landmark */}
           <div>
-            <Label>Landmark image (optional)</Label>
+            <Label htmlFor="cf-landmark">Landmark image (optional)</Label>
             <input
-              className="input"
+              id="cf-landmark"
+              className="input focus-ring"
               value={landmark}
               onChange={(e) => setLandmark(e.target.value)}
               placeholder="Wikipedia title or image URL, e.g. Mount Fuji"
+              aria-describedby="cf-landmark-hint"
             />
-            <p className="text-[11px] text-gray-400 mt-1">
+            <p id="cf-landmark-hint" className="text-[11px] text-gray-400 mt-1">
               Wikipedia article name for the card image. Or paste a direct image URL.
             </p>
           </div>
 
           {/* Notes */}
           <div>
-            <Label>Notes (optional)</Label>
+            <Label htmlFor="cf-notes">Notes (optional)</Label>
             <textarea
-              className="input resize-none"
+              id="cf-notes"
+              className="input resize-none focus-ring"
               rows={3}
               maxLength={4000}
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Personal notes, reminders, or things to research..."
+              aria-describedby="cf-notes-hint"
             />
-            <p className="text-[11px] text-gray-400 mt-1 text-right">{notes.length.toLocaleString()} / 4,000</p>
+            <p id="cf-notes-hint" className="text-[11px] text-gray-400 mt-1 text-right">{notes.length.toLocaleString()} / 4,000</p>
           </div>
         </div>
 
         <div className="flex justify-end gap-3 px-6 py-4 border-t">
-          <button onClick={handleClose} className="px-4 py-2 text-sm rounded-lg text-gray-600 hover:bg-gray-100">
+          <button onClick={handleClose} className="px-4 py-2 text-sm rounded-lg text-gray-600 hover:bg-gray-100 focus-ring min-h-[36px]">
             Cancel
           </button>
           <button
             onClick={handleSubmit}
-            className="px-5 py-2 text-sm rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700"
+            className="px-5 py-2 text-sm rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 focus-ring min-h-[36px]"
           >
             Save changes
           </button>
@@ -163,6 +169,6 @@ export default function CountryForm({ initial, onSave, onClose }: Props) {
   );
 }
 
-function Label({ children }: { children: React.ReactNode }) {
-  return <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">{children}</p>;
+function Label({ children, htmlFor }: { children: React.ReactNode; htmlFor?: string }) {
+  return <label htmlFor={htmlFor} className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5 block">{children}</label>;
 }

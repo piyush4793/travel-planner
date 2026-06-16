@@ -63,7 +63,11 @@ export function useChatSession(homeCountry: string) {
 
   const fullHistory = useRef<ChatMessage[]>([]);
   const briefRef = useRef(state.brief);
+  const abortRef = useRef<AbortController | null>(null);
   useEffect(() => { briefRef.current = state.brief; }, [state.brief]);
+
+  // Abort in-flight requests on unmount
+  useEffect(() => () => { abortRef.current?.abort(); }, []);
 
   const sendMessage = useCallback(async (userText: string) => {
     const resolved = getProviderAndKey();
@@ -113,10 +117,14 @@ export function useChatSession(homeCountry: string) {
     });
 
     try {
+      abortRef.current?.abort();
+      const controller = new AbortController();
+      abortRef.current = controller;
       const provider = createProvider(resolved.provider, resolved.key);
       const condensed = condenseMessages(fullHistory.current, briefRef.current);
       const { content, usage } = await provider.chat(condensed, { maxTokens: 16384 });
 
+      if (controller.signal.aborted) return;
       const assistantMsg: ChatMessage = { role: "assistant", content };
       fullHistory.current.push(assistantMsg);
 
@@ -127,6 +135,7 @@ export function useChatSession(homeCountry: string) {
         tokenUsage: addUsage(s.tokenUsage, usage),
       }));
     } catch (e) {
+      if ((e as Error).name === "AbortError") return;
       setState((s) => ({
         ...s,
         loading: false,
@@ -145,10 +154,14 @@ export function useChatSession(homeCountry: string) {
     setState((s) => ({ ...s, loading: true, finalizing: true, error: null }));
 
     try {
+      abortRef.current?.abort();
+      const controller = new AbortController();
+      abortRef.current = controller;
       const provider = createProvider(resolved.provider, resolved.key);
       const condensed = condenseMessages(fullHistory.current, briefRef.current);
       const { content, usage } = await provider.chat(condensed, { maxTokens: 16384, temperature: 0.3 });
 
+      if (controller.signal.aborted) return;
       const { result, error } = extractTripPlanResult(content);
 
       if (result) {
@@ -170,6 +183,7 @@ export function useChatSession(homeCountry: string) {
         }));
       }
     } catch (e) {
+      if ((e as Error).name === "AbortError") return;
       setState((s) => ({
         ...s,
         loading: false,

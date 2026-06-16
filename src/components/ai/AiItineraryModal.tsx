@@ -116,7 +116,7 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
           </div>
           <button
             onClick={onClose}
-            className="text-slate-400 hover:text-white hover:bg-white/10 p-2 rounded-xl transition-colors text-base leading-none shrink-0 mt-0.5"
+            className="text-slate-400 hover:text-white hover:bg-white/10 p-2 rounded-xl transition-colors text-base leading-none shrink-0 mt-0.5 focus-ring min-h-[32px] min-w-[32px] flex items-center justify-center"
             aria-label="Close"
           >
             ✕

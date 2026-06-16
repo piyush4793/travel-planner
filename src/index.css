@@ -29,6 +29,12 @@ html, body, #root {
   transform: rotate(-45deg) scale(1.15);
 }
 
+.travel-marker:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25), 0 2px 6px rgba(0,0,0,0.3);
+}
+
 .travel-marker--combo {
   background: #7c3aed;
   border-color: #ede9fe;
@@ -76,6 +82,12 @@ html, body, #root {
 
 .itinerary-day {
   animation: itinerary-day-in 0.35s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .itinerary-day {
+    animation: none;
+  }
 }
 
 /* Hide scrollbar but keep scroll */
