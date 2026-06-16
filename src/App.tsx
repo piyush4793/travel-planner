@@ -1,13 +1,15 @@
 import { useState, useCallback, useMemo, useRef, useEffect, lazy, Suspense } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country, VisitedFilter } from "./core/types";
-import MapView from "./components/views/MapView";
-import CalendarView from "./components/views/CalendarView";
-import DiscoverView from "./components/views/DiscoverView";
-import TripsView from "./components/views/TripsView";
 import HomeCountrySelector from "./components/shared/HomeCountrySelector";
 import DevFlagPanel from "./components/shared/DevFlagPanel";
-import CountryPanel from "./components/country/CountryPanel";
+
+// Lazy-load view and panel components — only fetched when first navigated/opened
+const MapView = lazy(() => import("./components/views/MapView"));
+const CalendarView = lazy(() => import("./components/views/CalendarView"));
+const DiscoverView = lazy(() => import("./components/views/DiscoverView"));
+const TripsView = lazy(() => import("./components/views/TripsView"));
+const CountryPanel = lazy(() => import("./components/country/CountryPanel"));
 import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
 import { applyFilters, type BudgetTier, type BudgetBasis } from "./core/utils/filterLogic";
 import { loadLS, saveLS } from "./core/storage";
@@ -75,6 +77,19 @@ export default function App() {
     const handler = () => forceUpdate((n) => n + 1);
     window.addEventListener("featureflag-change", handler);
     return () => window.removeEventListener("featureflag-change", handler);
+  }, []);
+
+  // Detect localStorage changes from other tabs (resilience)
+  const [storageConflict, setStorageConflict] = useState(false);
+  useEffect(() => {
+    const LS_KEY_SET = new Set<string>(Object.values(LS_KEYS));
+    const handler = (e: StorageEvent) => {
+      if (e.key && LS_KEY_SET.has(e.key)) {
+        setStorageConflict(true);
+      }
+    };
+    window.addEventListener("storage", handler);
+    return () => window.removeEventListener("storage", handler);
   }, []);
 
   const trips = useTripStore(store.myListNames, store.myListCountries);
@@ -234,12 +249,21 @@ export default function App() {
         </div>
       )}
 
+      {storageConflict && (
+        <div className="bg-red-500/90 text-white px-4 py-2 flex items-center gap-3 text-xs shrink-0">
+          <span>⚠️ Data was changed in another tab. Reload to stay in sync.</span>
+          <button onClick={() => window.location.reload()} className="px-3 py-1 bg-white/20 hover:bg-white/30 rounded-lg font-semibold transition-colors">Reload</button>
+          <button onClick={() => setStorageConflict(false)} className="ml-auto text-white/70 hover:text-white" aria-label="Dismiss">✕</button>
+        </div>
+      )}
+
 
       <div className="flex-1 relative overflow-hidden">
         {/* MapView — hidden by default, shown during Cinematic mode */}
         <div className={`absolute inset-0 transition-opacity duration-300 ${
           cinematicActive ? "z-10 opacity-100" : "-z-10 opacity-0 pointer-events-none"
         }`}>
+          <Suspense fallback={<div className="flex items-center justify-center h-full"><span className="text-sm text-gray-400">Loading map…</span></div>}>
           <MapView
             countries={filtered}
             onSelect={setSelectedCountry}
@@ -247,8 +271,10 @@ export default function App() {
             visitedNames={store.visited.set}
             onMapReady={(m) => { mainMapRef.current = m; }}
           />
+          </Suspense>
         </div>
 
+        <Suspense fallback={<div className="flex items-center justify-center h-full"><span className="text-sm text-gray-400">Loading…</span></div>}>
         {view === "trips" ? (
           <TripsView
             countries={filteredForTrips}
@@ -282,7 +308,9 @@ export default function App() {
             onRemoveFromList={store.myList.remove}
           />
         )}
+        </Suspense>
 
+        <Suspense fallback={null}>
         <CountryPanel
           country={selectedCountry}
           onClose={() => setSelectedCountry(null)}
@@ -303,6 +331,7 @@ export default function App() {
           onDeleteAiPlan={isEnabled("llmPlanning") ? handleDeleteAiPlan : undefined}
           onCinematicChange={setCinematicActive}
         />
+        </Suspense>
       </div>
 
       <Suspense fallback={null}>

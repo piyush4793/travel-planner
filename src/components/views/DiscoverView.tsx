@@ -35,6 +35,9 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
     clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => setDebouncedSearch(value), 200);
   }, []);
+
+  // Clear debounce timer on unmount
+  useEffect(() => () => clearTimeout(debounceRef.current), []);
   const [region, setRegion] = useState("All");
   const [listFilter, setListFilter] = useState<ListFilter>("all");
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -125,7 +128,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
         <button
           key={r}
           onClick={() => setRegion(r)}
-          className={`py-1.5 px-2 rounded-lg text-[10px] font-semibold transition-colors focus-ring ${
+          className={`py-2 px-2.5 min-h-[32px] rounded-lg text-[10px] font-semibold transition-colors focus-ring ${
             region === r
               ? "bg-blue-600 text-white"
               : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -144,7 +147,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
         <button
           key={k}
           onClick={() => setListFilter(k)}
-          className={`flex-1 py-1.5 rounded-lg text-[10px] font-semibold transition-colors focus-ring ${
+          className={`flex-1 py-2 min-h-[32px] rounded-lg text-[10px] font-semibold transition-colors focus-ring ${
             listFilter === k
               ? "bg-blue-600 text-white"
               : "bg-gray-100 text-gray-600 hover:bg-gray-200"

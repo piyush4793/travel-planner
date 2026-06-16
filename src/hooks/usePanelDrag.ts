@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
+
+const KEYBOARD_STEP = 20;
 
 export function usePanelDrag(initialWidth: number, minWidth: number) {
   const [panelWidth, setPanelWidth] = useState(initialWidth);
+  const maxWidth = typeof window !== "undefined" ? window.innerWidth * 0.5 : 600;
 
   function startPanelDrag() {
     document.body.style.userSelect = "none";
@@ -20,5 +23,27 @@ export function usePanelDrag(initialWidth: number, minWidth: number) {
     document.addEventListener("pointerup", onUp);
   }
 
-  return { panelWidth, startPanelDrag };
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      setPanelWidth((w) => Math.min(w + KEYBOARD_STEP, maxWidth));
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      setPanelWidth((w) => Math.max(w - KEYBOARD_STEP, minWidth));
+    }
+  }, [minWidth, maxWidth]);
+
+  /** Props to spread on the drag handle element for a11y */
+  const dragHandleProps = {
+    role: "separator" as const,
+    "aria-orientation": "vertical" as const,
+    "aria-valuenow": panelWidth,
+    "aria-valuemin": minWidth,
+    "aria-valuemax": maxWidth,
+    "aria-label": "Resize panel",
+    tabIndex: 0,
+    onKeyDown: handleKeyDown,
+  };
+
+  return { panelWidth, startPanelDrag, dragHandleProps };
 }

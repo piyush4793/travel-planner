@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import type { ChatMessage, TripBrief, TokenUsage } from "../core/types";
 import { createProvider } from "../utils/ai/llmProvider";
 import { getLLMKeys, getActiveProvider } from "../core/utils/ai/llmSettings";
@@ -62,6 +62,8 @@ export function useChatSession(homeCountry: string) {
   }));
 
   const fullHistory = useRef<ChatMessage[]>([]);
+  const briefRef = useRef(state.brief);
+  useEffect(() => { briefRef.current = state.brief; }, [state.brief]);
 
   const sendMessage = useCallback(async (userText: string) => {
     const resolved = getProviderAndKey();
@@ -112,7 +114,7 @@ export function useChatSession(homeCountry: string) {
 
     try {
       const provider = createProvider(resolved.provider, resolved.key);
-      const condensed = condenseMessages(fullHistory.current, state.brief);
+      const condensed = condenseMessages(fullHistory.current, briefRef.current);
       const { content, usage } = await provider.chat(condensed, { maxTokens: 16384 });
 
       const assistantMsg: ChatMessage = { role: "assistant", content };
@@ -131,7 +133,7 @@ export function useChatSession(homeCountry: string) {
         error: e instanceof Error ? e.message : "Something went wrong.",
       }));
     }
-  }, [homeCountry, state.brief]);
+  }, [homeCountry]);
 
   const finishChat = useCallback(async () => {
     const resolved = getProviderAndKey();
@@ -144,7 +146,7 @@ export function useChatSession(homeCountry: string) {
 
     try {
       const provider = createProvider(resolved.provider, resolved.key);
-      const condensed = condenseMessages(fullHistory.current, state.brief);
+      const condensed = condenseMessages(fullHistory.current, briefRef.current);
       const { content, usage } = await provider.chat(condensed, { maxTokens: 16384, temperature: 0.3 });
 
       const { result, error } = extractTripPlanResult(content);
@@ -175,7 +177,7 @@ export function useChatSession(homeCountry: string) {
         error: e instanceof Error ? e.message : "Failed to finalize the plan.",
       }));
     }
-  }, [state.brief]);
+  }, []);
 
   const clearChat = useCallback(() => {
     fullHistory.current = [];

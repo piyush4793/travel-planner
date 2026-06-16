@@ -15,10 +15,12 @@ export type BackupSchedule = {
 const DAY_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] as const;
 
 type BackupData = {
-  version: 1;
+  version: number;
   exportedAt: string;
   data: Record<string, unknown>;
 };
+
+const CURRENT_BACKUP_VERSION = 1;
 
 // Keys to include in full backup (exclude backup-meta keys themselves)
 const BACKUP_KEYS = [
@@ -48,7 +50,7 @@ function buildBackupBlob(): Blob {
   }
 
   const backup: BackupData = {
-    version: 1,
+    version: CURRENT_BACKUP_VERSION,
     exportedAt: new Date().toISOString(),
     data,
   };
@@ -92,7 +94,18 @@ export function parseBackupFile(file: File): Promise<BackupPreview> {
           resolve({ ok: false, msg: "Invalid backup file — missing data field" });
           return;
         }
+        if (typeof parsed.version !== "number" || parsed.version > CURRENT_BACKUP_VERSION) {
+          resolve({ ok: false, msg: `Unsupported backup version (${parsed.version ?? "unknown"}). Please update the app.` });
+          return;
+        }
         const data = parsed.data as Record<string, unknown>;
+        // Validate that data keys are from expected set
+        const knownKeys = new Set<string>(BACKUP_KEYS);
+        const unknownKeys = Object.keys(data).filter((k) => !knownKeys.has(k));
+        if (unknownKeys.length > 5) {
+          resolve({ ok: false, msg: "Backup contains too many unrecognized keys — may be corrupted" });
+          return;
+        }
         const myList = Array.isArray(data[LS_KEYS.MY_LIST]) ? (data[LS_KEYS.MY_LIST] as unknown[]).length : 0;
         const customs = Array.isArray(data[LS_KEYS.CUSTOMS]) ? (data[LS_KEYS.CUSTOMS] as unknown[]).length : 0;
         const trips = Array.isArray(data[LS_KEYS.TRIP_CUSTOMS]) ? (data[LS_KEYS.TRIP_CUSTOMS] as unknown[]).length : 0;
@@ -119,6 +132,9 @@ export function parseBackupFile(file: File): Promise<BackupPreview> {
 }
 
 export function applyBackup(backup: BackupData): { ok: boolean; msg: string } {
+  if (typeof backup.version !== "number" || backup.version > CURRENT_BACKUP_VERSION) {
+    return { ok: false, msg: `Unsupported backup version (${backup.version}). Please update the app.` };
+  }
   try {
     const data = backup.data;
     let restored = 0;
@@ -143,6 +159,10 @@ export function importFullBackup(file: File): Promise<{ ok: boolean; msg: string
         const parsed = JSON.parse(reader.result as string);
         if (!parsed || typeof parsed !== "object" || !parsed.data) {
           resolve({ ok: false, msg: "Invalid backup file — missing data field" });
+          return;
+        }
+        if (typeof parsed.version !== "number" || parsed.version > CURRENT_BACKUP_VERSION) {
+          resolve({ ok: false, msg: `Unsupported backup version (${parsed.version ?? "unknown"}). Please update the app.` });
           return;
         }
 

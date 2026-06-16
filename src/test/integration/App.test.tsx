@@ -268,15 +268,15 @@ describe("App orchestration", () => {
     render(<App />);
 
     expect(screen.getByTestId(TEST_IDS.HOME_COUNTRY)).toHaveTextContent(DEFAULT_HOME_COUNTRY);
-    expect(screen.getByTestId(TEST_IDS.TRIPS_VIEW)).toBeInTheDocument();
+    expect(await screen.findByTestId(TEST_IDS.TRIPS_VIEW)).toBeInTheDocument();
     expect(window.location.hash).toBe(ROUTES.TRIPS);
 
     await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
-    expect(screen.getByTestId(TEST_IDS.CALENDAR_VIEW)).toBeInTheDocument();
+    expect(await screen.findByTestId(TEST_IDS.CALENDAR_VIEW)).toBeInTheDocument();
     expect(window.location.hash).toBe(ROUTES.CALENDAR);
 
     await user.click(navButton(NAV_TOUR_IDS.DISCOVER));
-    expect(screen.getByTestId(TEST_IDS.DISCOVER_VIEW)).toBeInTheDocument();
+    expect(await screen.findByTestId(TEST_IDS.DISCOVER_VIEW)).toBeInTheDocument();
     expect(window.location.hash).toBe(ROUTES.DISCOVER);
   });
 

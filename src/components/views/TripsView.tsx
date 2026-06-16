@@ -233,14 +233,14 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
     return result;
   }, [trips, viewMode, visitedMode, visitedFilter, visitedNames, regionFilter, search, sortMode]);
 
-  const uniqueCountries = new Set(trips.flatMap((t) => t.allCountries.map((c) => c.name))).size;
-  const totalVisited = new Set(trips.flatMap((t) => t.allCountries.filter((c) => visitedNames.has(c.name)).map((c) => c.name))).size;
-  const tripsCompleted = trips.filter((t) => t.allVisited).length;
+  const uniqueCountries = useMemo(() => new Set(trips.flatMap((t) => t.allCountries.map((c) => c.name))).size, [trips]);
+  const totalVisited = useMemo(() => new Set(trips.flatMap((t) => t.allCountries.filter((c) => visitedNames.has(c.name)).map((c) => c.name))).size, [trips, visitedNames]);
+  const tripsCompleted = useMemo(() => trips.filter((t) => t.allVisited).length, [trips]);
 
   // Group filtered trips into sections
-  const favoriteTrips = filtered.filter((t) => t.isFavorited && !t.allVisited);
-  const planning = filtered.filter((t) => !t.isFavorited && !t.allVisited);
-  const completed = filtered.filter((t) => t.allVisited);
+  const favoriteTrips = useMemo(() => filtered.filter((t) => t.isFavorited && !t.allVisited), [filtered]);
+  const planning = useMemo(() => filtered.filter((t) => !t.isFavorited && !t.allVisited), [filtered]);
+  const completed = useMemo(() => filtered.filter((t) => t.allVisited), [filtered]);
 
   // Next trip highlight — top favorited unvisited
   const nextTrip = trips.find((t) => t.isFavorited && !t.allVisited) ?? trips.find((t) => !t.allVisited);
@@ -271,7 +271,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
   }, [trips, visitedNames]);
 
   // Unique regions across all trips
-  const uniqueRegions = new Set(trips.map((t) => t.region)).size;
+  const uniqueRegions = useMemo(() => new Set(trips.map((t) => t.region)).size, [trips]);
 
   const handleSave = (originalMain: string | null, group: TripGroupDef) => {
     onSaveTrip(originalMain, group);

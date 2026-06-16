@@ -60,7 +60,7 @@ export default function CountryPanel({
   onDeleteAiPlan,
   onCinematicChange,
 }: Props) {
-  const { panelWidth, startPanelDrag } = usePanelDrag(320, 320);
+  const { panelWidth, startPanelDrag, dragHandleProps } = usePanelDrag(320, 320);
   const bp = useBreakpoint();
   const isMobile = bp === "mobile";
   const { data: consolidated, rule, loading: ruleLoading } = useCountryRule(country?.name);
@@ -69,6 +69,7 @@ export default function CountryPanel({
   const [customDays, setCustomDays] = useState(7);
   const [notes, setNotes] = useState(country?.notes ?? "");
   const [notesSaved, setNotesSaved] = useState(false);
+  const notesSaveTimerRef = useRef<number | null>(null);
   const [notesExpanded, setNotesExpanded] = useState(false);
   const [cinematicPlan, setCinematicPlan] = useState<TripPlan | null>(null);
   const [modalPlan, setModalPlan] = useState<TripPlan | null>(null);
@@ -108,6 +109,13 @@ export default function CountryPanel({
     setInfoLoading(false);
     setInfoError(false);
   }, [country?.name, recDays]);
+
+  // Cleanup notes-saved timer on unmount or country change
+  useEffect(() => {
+    return () => {
+      if (notesSaveTimerRef.current) window.clearTimeout(notesSaveTimerRef.current);
+    };
+  }, [country?.name]);
 
   const loadCountryInfo = useCallback(() => {
     if (infoFetched || infoLoading || !country) return;
@@ -170,9 +178,10 @@ export default function CountryPanel({
     >
       {!isMobile && (
         <div
-          className="absolute top-0 left-0 bottom-0 z-30 cursor-col-resize select-none group"
+          className="absolute top-0 left-0 bottom-0 z-30 cursor-col-resize select-none group focus-ring rounded"
           style={{ width: 12 }}
           onPointerDown={startPanelDrag}
+          {...dragHandleProps}
         >
           <div className="absolute inset-y-0 left-[5px] w-[2px] bg-gray-200 group-hover:bg-blue-400/60 transition-colors" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[5px]">
@@ -560,7 +569,7 @@ export default function CountryPanel({
                   placeholder="Jot down ideas, reminders, or anything to remember about this destination..."
                   value={notes}
                   onChange={(e) => { setNotes(e.target.value); setNotesSaved(false); }}
-                  onBlur={() => { onUpdateNotes(notes); setNotesSaved(true); setTimeout(() => setNotesSaved(false), 2000); }}
+                  onBlur={() => { onUpdateNotes(notes); setNotesSaved(true); if (notesSaveTimerRef.current) window.clearTimeout(notesSaveTimerRef.current); notesSaveTimerRef.current = window.setTimeout(() => setNotesSaved(false), 2000); }}
                 />
                 <button
                   onClick={() => setNotesExpanded(true)}
@@ -594,7 +603,7 @@ export default function CountryPanel({
                       maxLength={4000}
                       value={notes}
                       onChange={(e) => { setNotes(e.target.value); setNotesSaved(false); }}
-                      onBlur={() => { onUpdateNotes(notes); setNotesSaved(true); setTimeout(() => setNotesSaved(false), 2000); }}
+                      onBlur={() => { onUpdateNotes(notes); setNotesSaved(true); if (notesSaveTimerRef.current) window.clearTimeout(notesSaveTimerRef.current); notesSaveTimerRef.current = window.setTimeout(() => setNotesSaved(false), 2000); }}
                       autoFocus
                     />
                   </div>

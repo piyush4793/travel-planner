@@ -35,8 +35,9 @@ function buildSeedCountry(m: ManifestEntry): Country {
   };
 }
 
-// Cache for enriched country data loaded from per-country JSON
+// Cache for enriched country data loaded from per-country JSON (capped to prevent unbounded growth)
 const enrichedCache = new Map<string, Country>();
+const MAX_ENRICHED_CACHE = 200;
 
 async function enrichCountry(name: string): Promise<Country | null> {
   if (enrichedCache.has(name)) return enrichedCache.get(name)!;
@@ -53,6 +54,10 @@ async function enrichCountry(name: string): Promise<Country | null> {
     cities: data.cities, stopoverNote: data.stopoverNote ?? undefined,
     links: data.links,
   };
+  if (enrichedCache.size >= MAX_ENRICHED_CACHE) {
+    const firstKey = enrichedCache.keys().next().value;
+    if (firstKey) enrichedCache.delete(firstKey);
+  }
   enrichedCache.set(name, country);
   return country;
 }

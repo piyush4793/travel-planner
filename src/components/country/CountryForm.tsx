@@ -72,7 +72,7 @@ export default function CountryForm({ initial, onSave, onClose }: Props) {
           <h2 className="text-lg font-bold text-gray-900">
             {`Customize — ${initial.name}`}
           </h2>
-          <button onClick={handleClose} className="text-gray-400 hover:text-gray-600 text-2xl leading-none" aria-label="Close">×</button>
+          <button onClick={handleClose} className="text-gray-400 hover:text-gray-600 text-2xl leading-none min-h-[32px] min-w-[32px] flex items-center justify-center focus-ring rounded" aria-label="Close">×</button>
         </div>
 
         <div className="flex-1 overflow-y-auto px-6 py-4 space-y-5">
@@ -99,17 +99,19 @@ export default function CountryForm({ initial, onSave, onClose }: Props) {
               {TRAVEL_STYLES.map((s) => {
                 const meta = STYLE_META[s];
                 return (
-                  <button
-                    key={s}
-                    type="button"
-                    onClick={() => toggleStyle(s)}
-                    className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold border-2 transition-all ${
-                      travelStyle.includes(s) ? meta.activeForm : "border-gray-200 bg-white text-gray-500 hover:border-gray-300"
-                    }`}
-                  >
-                    {meta.icon} {meta.label}
+                  <div key={s} className="flex-1 flex flex-col items-center gap-1">
+                    <button
+                      type="button"
+                      onClick={() => toggleStyle(s)}
+                      aria-pressed={travelStyle.includes(s)}
+                      className={`w-full flex items-center justify-center gap-1.5 py-2.5 min-h-[36px] rounded-xl text-xs font-bold border-2 transition-colors focus-ring ${
+                        travelStyle.includes(s) ? meta.activeForm : "border-gray-200 bg-white text-gray-500 hover:border-gray-300"
+                      }`}
+                    >
+                      {meta.icon} {meta.label}
+                    </button>
                     <Tooltip text={meta.description} />
-                  </button>
+                  </div>
                 );
               })}
             </div>

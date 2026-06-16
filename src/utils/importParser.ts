@@ -331,13 +331,15 @@ function cleanChatGPTText(html: string): string {
 export async function fetchChatLink(url: string): Promise<{ text: string } | { error: string }> {
   const trimmed = url.trim();
 
-  // Validate URL pattern
-  const validPatterns = [
-    /^https:\/\/chat\.openai\.com\/share\//,
-    /^https:\/\/chatgpt\.com\/share\//,
-    /^https:\/\/claude\.ai\/share\//,
-  ];
-  if (!validPatterns.some((p) => p.test(trimmed))) {
+  // Validate URL structure and enforce host allowlist
+  const ALLOWED_HOSTS = ["chat.openai.com", "chatgpt.com", "claude.ai"];
+  let parsed: URL;
+  try {
+    parsed = new URL(trimmed);
+  } catch {
+    return { error: "Please paste a valid ChatGPT or Claude share link (https://chatgpt.com/share/... or https://claude.ai/share/...)" };
+  }
+  if (parsed.protocol !== "https:" || !ALLOWED_HOSTS.includes(parsed.hostname) || !parsed.pathname.startsWith("/share/")) {
     return { error: "Please paste a valid ChatGPT or Claude share link (https://chatgpt.com/share/... or https://claude.ai/share/...)" };
   }
 
