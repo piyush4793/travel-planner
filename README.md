@@ -264,6 +264,10 @@ Coverage-improvement agent loop (recommended):
 3. Run gates each batch: `npx tsc --noEmit && npm test && npm run build`.
 4. Re-run `npm run test:coverage` and pick next lowest-covered high-risk surface.
 
+Reusable slash command:
+- Run `/tc-improvement <scope>` to invoke the phased workflow from `.github/prompts/tc-improvement.prompt.md`.
+- Example: `/tc-improvement Improve CountryPanel and ItineraryModal coverage in phased slices`.
+
 The `scripts/check-new-coverage.sh` script compares changed files against the coverage report and flags any new/modified source file below 50% — run it before merging to catch untested code.
 
 ### Bundle Optimization
