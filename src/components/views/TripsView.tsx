@@ -393,22 +393,6 @@ export default function TripsView({
                       </select>
                     </div>
 
-                    {/* Layout toggle */}
-                    <button
-                      onClick={() => { setLayout(layout === "grid" ? "list" : "grid"); setFiltersOpen(false); }}
-                      className="text-left px-3 py-2 text-xs text-gray-600 hover:bg-gray-50 transition-colors"
-                    >
-                      📋 {layout === "grid" ? "Switch to list" : "Switch to grid"}
-                    </button>
-
-                    {/* Stats */}
-                    <button
-                      onClick={() => { setStatsOpen(true); setFiltersOpen(false); }}
-                      className="text-left px-3 py-2 text-xs text-gray-600 hover:bg-gray-50 transition-colors"
-                    >
-                      📊 View stats
-                    </button>
-
                     {/* Clear filters */}
                     {hasFilters && (
                       <button
@@ -423,6 +407,26 @@ export default function TripsView({
               </>
             )}
           </div>
+
+          {/* Layout toggle — separate quick-access button */}
+          <button
+            onClick={() => setLayout(layout === "grid" ? "list" : "grid")}
+            className="flex items-center px-2 py-1 text-gray-500 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors h-7"
+            title={layout === "grid" ? "Switch to list" : "Switch to grid"}
+          >
+            {layout === "grid" ? "▦" : "≡"}
+          </button>
+
+          {/* Stats — separate quick-access button */}
+          <button
+            onClick={() => setStatsOpen((o) => !o)}
+            className={`flex items-center px-2 py-1 rounded-lg transition-colors h-7 border ${
+              statsOpen ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-500 hover:bg-gray-100 border-gray-200"
+            }`}
+            title="View stats"
+          >
+            📊
+          </button>
         </div>
 
         {/* New trip button — desktop and tablet only */}
