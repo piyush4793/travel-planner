@@ -81,13 +81,21 @@ export default function MapView({
           isCombo ? "travel-marker--combo" : "",
         ].filter(Boolean).join(" ");
         el.innerHTML = `<span>${country.name[0]}</span>`;
-        el.title = country.name;
+        el.setAttribute("role", "button");
+        el.setAttribute("tabindex", "0");
+        el.setAttribute("aria-label", country.name);
 
         const marker = new maplibregl.Marker({ element: el })
           .setLngLat([country.lng, country.lat])
           .addTo(map);
 
         el.addEventListener("click", () => onSelectRef.current(country));
+        el.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            onSelectRef.current(country);
+          }
+        });
 
         el.addEventListener("mouseenter", () => {
           if (!containerRef.current) return;

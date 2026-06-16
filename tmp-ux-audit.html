@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roamwise — Component UX Audit</title>
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    const theme =
+      param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<style>
+:root {
+  color-scheme: light;
+  --cp-bg: #f7f4ef;
+  --cp-bg-elevated: #fcfbf8;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f5f5f5;
+  --cp-border: #dedede;
+  --cp-border-strong: #919191;
+  --cp-text: #242424;
+  --cp-text-muted: #5c5c5c;
+  --cp-text-soft: #6f6f6f;
+  --cp-accent: #b11f4b;
+  --cp-accent-hover: #9a1a41;
+  --cp-accent-soft: rgba(177, 31, 75, 0.08);
+  --cp-accent-fg: #ffffff;
+  --cp-success: #16a34a;
+  --cp-danger: #dc2626;
+  --cp-warning: #f59e0b;
+  --cp-link: #0078d4;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+  --cp-overlay: rgba(255, 255, 255, 0.8);
+  --cp-panel: rgba(255, 255, 255, 0.86);
+  --cp-panel-strong: rgba(255, 255, 255, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.55);
+  --cp-highlight: rgba(177, 31, 75, 0.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #3d3b3a;
+  --cp-bg-elevated: #343231;
+  --cp-surface: #292929;
+  --cp-surface-soft: #2e2e2e;
+  --cp-border: #474747;
+  --cp-border-strong: #5f5f5f;
+  --cp-text: #dedede;
+  --cp-text-muted: #919191;
+  --cp-text-soft: #b0b0b0;
+  --cp-accent: #fd8ea1;
+  --cp-accent-hover: #fb7b91;
+  --cp-accent-soft: rgba(253, 142, 161, 0.14);
+  --cp-accent-fg: #1a1a1a;
+  --cp-success: #4ade80;
+  --cp-danger: #f87171;
+  --cp-warning: #fbbf24;
+  --cp-link: #4da6ff;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  --cp-overlay: rgba(41, 41, 41, 0.88);
+  --cp-panel: rgba(41, 41, 41, 0.72);
+  --cp-panel-strong: rgba(41, 41, 41, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.04);
+  --cp-highlight: rgba(253, 142, 161, 0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cp-bg); color: var(--cp-text);
+  line-height: 1.6; padding: 20px; max-width: 1200px; margin: 0 auto;
+}
+code { font-family: Consolas, "Courier New", monospace; font-size: 0.85em; background: var(--cp-surface-soft); padding: 1px 5px; border-radius: 4px; }
+
+.header { text-align: center; margin-bottom: 32px; }
+.header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 4px; }
+.header p { color: var(--cp-text-muted); font-size: 0.9rem; }
+
+/* Tabs */
+.tab-bar { display: flex; gap: 4px; border-bottom: 2px solid var(--cp-border); margin-bottom: 24px; overflow-x: auto; padding-bottom: 0; }
+.tab-btn {
+  padding: 10px 18px; border: none; background: none; color: var(--cp-text-muted);
+  font-size: 0.82rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+  border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.15s;
+  font-family: inherit;
+}
+.tab-btn:hover { color: var(--cp-text); background: var(--cp-surface-soft); }
+.tab-btn.active { color: var(--cp-accent); border-bottom-color: var(--cp-accent); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* Component cards */
+.comp-grid { display: grid; gap: 16px; }
+.comp-card {
+  background: var(--cp-surface); border: 1px solid var(--cp-border);
+  border-radius: 16px; padding: 20px; cursor: pointer;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.comp-card:hover { border-color: var(--cp-accent); box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14); }
+.comp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+.comp-name { font-weight: 700; font-size: 0.95rem; }
+.comp-file { font-size: 0.75rem; color: var(--cp-text-muted); margin-top: 2px; }
+.comp-rating { display: flex; align-items: center; gap: 6px; }
+.rating-badge {
+  font-size: 0.85rem; font-weight: 700; padding: 4px 12px;
+  border-radius: 20px; min-width: 48px; text-align: center;
+}
+.rating-high { background: rgba(22,163,74,0.12); color: var(--cp-success); }
+.rating-mid { background: rgba(245,158,11,0.12); color: var(--cp-warning); }
+.rating-low { background: rgba(220,38,38,0.12); color: var(--cp-danger); }
+.comp-desc { font-size: 0.82rem; color: var(--cp-text-muted); margin-bottom: 12px; }
+.issue-count { display: flex; gap: 12px; font-size: 0.78rem; }
+.ic { padding: 3px 10px; border-radius: 12px; font-weight: 600; }
+.ic-high { background: rgba(220,38,38,0.1); color: var(--cp-danger); }
+.ic-med { background: rgba(245,158,11,0.1); color: var(--cp-warning); }
+.ic-low { background: rgba(22,163,74,0.1); color: var(--cp-success); }
+
+/* Detail panel */
+.detail-overlay {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--cp-overlay); backdrop-filter: blur(4px); z-index: 100;
+}
+.detail-overlay.open { display: flex; justify-content: center; align-items: flex-start; padding: 40px 20px; overflow-y: auto; }
+.detail-panel {
+  background: var(--cp-surface); border: 1px solid var(--cp-border);
+  border-radius: 16px; max-width: 720px; width: 100%; padding: 28px;
+  box-shadow: var(--cp-shadow); animation: scaleIn 0.2s ease-out;
+}
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+.detail-close { float: right; border: none; background: none; font-size: 1.3rem; cursor: pointer; color: var(--cp-text-muted); padding: 4px 8px; }
+.detail-close:hover { color: var(--cp-text); }
+.detail-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
+.detail-file { font-size: 0.78rem; color: var(--cp-text-muted); margin-bottom: 16px; }
+.detail-section { margin-bottom: 18px; }
+.detail-section h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.issue-item {
+  padding: 10px 14px; border-radius: 10px; margin-bottom: 8px;
+  font-size: 0.82rem; line-height: 1.5; border-left: 3px solid;
+}
+.issue-item.high { background: rgba(220,38,38,0.06); border-left-color: var(--cp-danger); }
+.issue-item.medium { background: rgba(245,158,11,0.06); border-left-color: var(--cp-warning); }
+.issue-item.low { background: rgba(22,163,74,0.06); border-left-color: var(--cp-success); }
+.issue-item strong { font-weight: 600; }
+
+/* Summary stats */
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; }
+.stat-card {
+  background: var(--cp-surface); border: 1px solid var(--cp-border);
+  border-radius: 12px; padding: 16px; text-align: center;
+}
+.stat-num { font-size: 1.8rem; font-weight: 700; }
+.stat-label { font-size: 0.78rem; color: var(--cp-text-muted); margin-top: 2px; }
+
+/* Priority table */
+.priority-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.priority-table th { text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--cp-border); color: var(--cp-text-muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; }
+.priority-table td { padding: 10px 12px; border-bottom: 1px solid var(--cp-border); }
+.priority-table tr:hover { background: var(--cp-surface-soft); }
+.pri-badge { padding: 2px 8px; border-radius: 8px; font-weight: 600; font-size: 0.75rem; }
+.pri-p1 { background: rgba(220,38,38,0.1); color: var(--cp-danger); }
+.pri-p2 { background: rgba(245,158,11,0.1); color: var(--cp-warning); }
+.pri-p3 { background: rgba(22,163,74,0.1); color: var(--cp-success); }
+
+/* Cross-cutting themes */
+.theme-card {
+  background: var(--cp-surface); border: 1px solid var(--cp-border);
+  border-radius: 12px; padding: 18px; margin-bottom: 12px;
+}
+.theme-card h3 { font-size: 0.92rem; font-weight: 700; margin-bottom: 6px; }
+.theme-card p { font-size: 0.82rem; color: var(--cp-text-muted); margin-bottom: 8px; }
+.theme-card ul { font-size: 0.82rem; padding-left: 18px; }
+.theme-card li { margin-bottom: 4px; }
+.affected { font-size: 0.75rem; color: var(--cp-text-soft); margin-top: 6px; }
+
+.bar-fill { height: 8px; border-radius: 4px; transition: width 0.3s; }
+.bar-bg { height: 8px; border-radius: 4px; background: var(--cp-surface-soft); width: 100%; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🧭 Roamwise — Component UX Audit</h1>
+  <p>23 components audited · Prioritized by improvement potential · Click any card for details</p>
+</div>
+
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="overview">📊 Overview</button>
+  <button class="tab-btn" data-tab="components">🧩 Components</button>
+  <button class="tab-btn" data-tab="crosscut">🔗 Cross-cutting</button>
+  <button class="tab-btn" data-tab="priority">📋 Priority Queue</button>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div class="tab-panel active" id="tab-overview">
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-num" style="color:var(--cp-accent)">23</div><div class="stat-label">Components Audited</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:var(--cp-danger)">17</div><div class="stat-label">High Priority Issues</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:var(--cp-warning)">44</div><div class="stat-label">Medium Priority</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:var(--cp-success)">9</div><div class="stat-label">Low Priority</div></div>
+    <div class="stat-card"><div class="stat-num">8.0</div><div class="stat-label">Average Rating /10</div></div>
+  </div>
+
+  <h2 style="font-size:1rem; margin-bottom:16px;">Component Ratings — Worst → Best</h2>
+  <div id="ratingBars" style="display:grid; gap:8px; margin-bottom:28px;"></div>
+
+  <h2 style="font-size:1rem; margin-bottom:12px;">Top 5 Biggest Wins — Next Up</h2>
+  <div style="display:grid; gap:8px;">
+    <div class="theme-card" style="border-left:3px solid var(--cp-danger)">
+      <h3>1. Filters shared component — full a11y pass</h3>
+      <p>Rating 6.0 — missing focus rings, undersized touch targets, no ARIA semantics on filter controls. Affects every view that uses shared filters.</p>
+    </div>
+    <div class="theme-card" style="border-left:3px solid var(--cp-danger)">
+      <h3>2. DevFlagPanel — role="switch" + focus rings</h3>
+      <p>Rating 6.0 — toggle flags lack <code>role="switch"</code>, <code>aria-checked</code>, visible focus rings, and have tiny hit areas. Used by all developers.</p>
+    </div>
+    <div class="theme-card" style="border-left:3px solid var(--cp-danger)">
+      <h3>3. PlanCompareModal — typography + empty states</h3>
+      <p>Rating 7.0 — small type makes side-by-side comparison hard to scan. No empty state when a plan has no days. Focus styling missing on close/switch controls.</p>
+    </div>
+    <div class="theme-card" style="border-left:3px solid var(--cp-warning)">
+      <h3>4. ItineraryModal — touch targets + focus styling</h3>
+      <p>Rating 7.3 — route/navigation pills have tiny touch areas (<code>text-[10px] + py-0.5</code>). No focus-visible rings on interactive controls.</p>
+    </div>
+    <div class="theme-card" style="border-left:3px solid var(--cp-warning)">
+      <h3>5. App Header — aria-current + mobile nav</h3>
+      <p>Rating 7.3 — navigation pills lack <code>aria-current="page"</code>. Mobile hamburger menu needs keyboard trap and better ergonomics.</p>
+    </div>
+  </div>
+</div>
+
+<!-- COMPONENTS TAB -->
+<div class="tab-panel" id="tab-components">
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
+    <button class="tab-btn active" onclick="filterCategory('all',this)" style="padding:6px 14px;font-size:0.78rem;border-radius:20px;border:1px solid var(--cp-border);">All (23)</button>
+    <button class="tab-btn" onclick="filterCategory('shared',this)" style="padding:6px 14px;font-size:0.78rem;border-radius:20px;border:1px solid var(--cp-border);">Shared (10)</button>
+    <button class="tab-btn" onclick="filterCategory('country',this)" style="padding:6px 14px;font-size:0.78rem;border-radius:20px;border:1px solid var(--cp-border);">Country (5)</button>
+    <button class="tab-btn" onclick="filterCategory('view',this)" style="padding:6px 14px;font-size:0.78rem;border-radius:20px;border:1px solid var(--cp-border);">Views (5)</button>
+    <button class="tab-btn" onclick="filterCategory('ai',this)" style="padding:6px 14px;font-size:0.78rem;border-radius:20px;border:1px solid var(--cp-border);">AI (3)</button>
+  </div>
+  <div class="comp-grid" id="compGrid"></div>
+</div>
+
+<!-- CROSS-CUTTING TAB -->
+<div class="tab-panel" id="tab-crosscut">
+  <h2 style="font-size:1rem; margin-bottom:16px;">Cross-cutting Themes</h2>
+
+  <div class="theme-card">
+    <h3>🎯 Accessibility — Focus States</h3>
+    <p>Most interactive elements lack <code>focus-visible:ring</code> styling. This is the single most impactful a11y fix.</p>
+    <ul>
+      <li>CountryPanel — all buttons, pills, clickable chips</li>
+      <li>PillGroup — tab buttons have keyboard nav but no focus ring</li>
+      <li>FilterChip — trigger button needs focus ring</li>
+      <li><s>CalendarView — row clicks not keyboard-accessible</s> ✅ Fixed</li>
+      <li><s>DiscoverView — search input, filter pills</s> ✅ Fixed</li>
+      <li>ChatModal — header actions, footer controls</li>
+      <li>SettingsModal — form controls, action buttons</li>
+      <li>ConfirmDialog — action buttons</li>
+      <li>App header — nav buttons, menu items</li>
+    </ul>
+    <p class="affected"><strong>Fix:</strong> Add global <code>.focus-ring</code> utility: <code>focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-[var(--cp-accent)]</code></p>
+  </div>
+
+  <div class="theme-card">
+    <h3>♿ Accessibility — Reduced Motion</h3>
+    <p>Zero <code>prefers-reduced-motion</code> handling. 14+ animations (slideUp, scaleIn, cardAppear, itinerary-card-in, shimmerSweep, etc.) run unconditionally.</p>
+    <ul>
+      <li>HoverCard — cardAppear animation</li>
+      <li>ConfirmDialog — slideUp + scaleIn</li>
+      <li>TripsView — shimmerSweep, slideUp for drawer</li>
+      <li>AiItineraryModal — itinerary-card-in, day delay animations</li>
+      <li>ItineraryCinematic — cityPulse, card animations</li>
+      <li>ChatModal — fadeInUp, typing dots</li>
+    </ul>
+    <p class="affected"><strong>Fix:</strong> Add <code>@media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }</code> in index.css</p>
+  </div>
+
+  <div class="theme-card">
+    <h3>👆 Touch Targets</h3>
+    <p>Many controls are below the WCAG 2.2 minimum of 24×24px (target 44×44px). Worst offenders use <code>text-[9px]</code> with <code>py-0.5</code>.</p>
+    <ul>
+      <li>PlanCompareModal — comparison chips (text-[9px] py-0.5)</li>
+      <li>ItineraryModal — route pills, nav controls</li>
+      <li>AiItineraryModal — route/save chips, close button</li>
+      <li>ChatModal — header action buttons, Paste/Link/Finish</li>
+      <li>SettingsModal — Show/Delete/Restore buttons</li>
+      <li><s>DiscoverView — clear filter button</s> ✅ Fixed</li>
+      <li>PillGroup — tab buttons (py-1 is borderline)</li>
+    </ul>
+    <p class="affected"><strong>Fix:</strong> Minimum <code>min-h-[32px] min-w-[32px]</code> on all interactive elements; prefer <code>p-2</code> over <code>py-0.5 px-1</code></p>
+  </div>
+
+  <div class="theme-card">
+    <h3>🎬 Animation Consistency</h3>
+    <p>Mixed timings across the app: 0.15s, 0.2s, 0.25s, 0.35s, 0.4s, 0.5s. No design tokens for motion.</p>
+    <ul>
+      <li>4 unused keyframes: transportOrbit, transportGlow, contrailShimmer, fadeSlideIn</li>
+      <li>Some use <code>transition-all</code> (expensive) vs specific properties</li>
+      <li>No consistent easing — mix of ease-out, ease, and defaults</li>
+    </ul>
+    <p class="affected"><strong>Fix:</strong> Define motion tokens: <code>--motion-fast: 0.15s</code>, <code>--motion-normal: 0.25s</code>, <code>--motion-slow: 0.4s</code>. Remove unused keyframes. Replace <code>transition-all</code> with specific properties.</p>
+  </div>
+
+  <div class="theme-card">
+    <h3>📱 Mobile UX Gaps</h3>
+    <p>Some portal-based popups and tooltips don't handle viewport edges on small screens.</p>
+    <ul>
+      <li>FilterChip — fixed popup position can overflow</li>
+      <li>Tooltip — no mobile fallback, can clip off-screen</li>
+      <li>HomeCountrySelector — dropdown may clip on narrow viewports</li>
+      <li>App header — nav pills + hamburger + selector feel cramped</li>
+      <li>PlanCompareModal — table is very cramped on mobile</li>
+    </ul>
+    <p class="affected"><strong>Fix:</strong> Add viewport-aware positioning to portal popups; full-screen fallback on mobile for complex popups.</p>
+  </div>
+
+  <div class="theme-card">
+    <h3>⚠️ ARIA Semantics</h3>
+    <p>Several components have incomplete or incorrect ARIA patterns.</p>
+    <ul>
+      <li>Tooltip — uses <code>role="img"</code> instead of a button/trigger pattern</li>
+      <li>HomeCountrySelector — missing aria-expanded, aria-controls, listbox semantics</li>
+      <li>FilterChip — missing aria-haspopup, focus management for popover</li>
+      <li><s>CalendarView — table rows clickable but no keyboard support or aria-selected</s> ✅ Fixed</li>
+      <li>App header — nav buttons lack aria-current for active state</li>
+      <li>PillGroup — has role="tablist" but missing aria-controls, aria-orientation</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PRIORITY QUEUE TAB -->
+<div class="tab-panel" id="tab-priority">
+  <h2 style="font-size:1rem; margin-bottom:16px;">Prioritized Fix Queue — Sorted by Impact</h2>
+  <table class="priority-table">
+    <thead><tr><th>#</th><th>Fix</th><th>Components</th><th>Priority</th><th>Effort</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><s>Add <code>prefers-reduced-motion</code> global rule</s> ✅</td><td>All animated</td><td><span class="pri-badge pri-p1">Done</span></td><td>—</td></tr>
+      <tr><td>2</td><td><s>Global focus-visible ring utility class</s> ✅</td><td>All interactive</td><td><span class="pri-badge pri-p1">Done</span></td><td>—</td></tr>
+      <tr><td>3</td><td><s>Increase touch targets to ≥32px on all buttons/chips</s> ✅</td><td>7+ components</td><td><span class="pri-badge pri-p1">Done</span></td><td>—</td></tr>
+      <tr><td>4</td><td><s>Fix Tooltip: role="button", mobile fallback, viewport check</s> ✅</td><td>Tooltip</td><td><span class="pri-badge pri-p1">Done</span></td><td>—</td></tr>
+      <tr><td>5</td><td><s>FilterChip viewport collision detection</s> ✅</td><td>FilterChip</td><td><span class="pri-badge pri-p1">Done</span></td><td>—</td></tr>
+      <tr><td>6</td><td><s>CalendarView keyboard nav + aria-selected on rows</s> ✅</td><td>CalendarView</td><td><span class="pri-badge pri-p1">Done</span></td><td>—</td></tr>
+      <tr><td>7</td><td><s>HomeCountrySelector ARIA combobox/listbox + keyboard nav</s> ✅</td><td>HomeCountrySelector</td><td><span class="pri-badge pri-p1">Done</span></td><td>—</td></tr>
+      <tr><td>8</td><td>Panel drag keyboard support + role="separator"</td><td>usePanelDrag</td><td><span class="pri-badge pri-p1">P1</span></td><td>20 min</td></tr>
+      <tr><td>9</td><td><s>CountryPanel error state + retry for async content</s> ✅</td><td>CountryPanel</td><td><span class="pri-badge pri-p2">Done</span></td><td>—</td></tr>
+      <tr><td>10</td><td><s>DiscoverView search label + accessible filter pills</s> ✅</td><td>DiscoverView</td><td><span class="pri-badge pri-p2">Done</span></td><td>—</td></tr>
+      <tr><td>11</td><td>App header aria-current + mobile nav ergonomics</td><td>App.tsx</td><td><span class="pri-badge pri-p2">P2</span></td><td>20 min</td></tr>
+      <tr><td>12</td><td><s>PillGroup: focus ring + touch targets</s> ✅</td><td>PillGroup</td><td><span class="pri-badge pri-p2">Done</span></td><td>—</td></tr>
+      <tr><td>13</td><td><s>ChatModal: enlarge header actions, keyboard tooltip</s> ✅</td><td>ChatModal</td><td><span class="pri-badge pri-p2">Done</span></td><td>—</td></tr>
+      <tr><td>14</td><td>SettingsModal: enlarge action buttons + focus styling</td><td>SettingsModal</td><td><span class="pri-badge pri-p2">P2</span></td><td>15 min</td></tr>
+      <tr><td>15</td><td>AiItineraryModal: enlarge chips, empty plan.days fallback</td><td>AiItineraryModal</td><td><span class="pri-badge pri-p2">P2</span></td><td>15 min</td></tr>
+      <tr><td>16</td><td>PlanCompareModal: larger typography, empty state messages</td><td>PlanCompareModal</td><td><span class="pri-badge pri-p2">P2</span></td><td>15 min</td></tr>
+      <tr><td>17</td><td>Suspense fallbacks for lazy modals (spinner instead of null)</td><td>App.tsx</td><td><span class="pri-badge pri-p2">P2</span></td><td>10 min</td></tr>
+      <tr><td>18</td><td><s>Standardize motion tokens + remove dead keyframes</s> ✅</td><td>index.css</td><td><span class="pri-badge pri-p2">Done</span></td><td>—</td></tr>
+      <tr><td>19</td><td>Replace transition-all with specific properties</td><td>Multiple</td><td><span class="pri-badge pri-p3">P3</span></td><td>20 min</td></tr>
+      <tr><td>20</td><td><s>TripsView: full a11y + modernized mobile header + semantic cards</s> ✅</td><td>TripsView</td><td><span class="pri-badge pri-p1">Done</span></td><td>—</td></tr>
+      <tr><td>21</td><td>HoverCard: softer animation + image loading state</td><td>HoverCard</td><td><span class="pri-badge pri-p3">P3</span></td><td>10 min</td></tr>
+      <tr><td>22</td><td><s>ErrorBoundary: friendly UI, hide raw details, copy button</s> ✅</td><td>ErrorBoundary</td><td><span class="pri-badge pri-p2">Done</span></td><td>—</td></tr>
+      <tr><td>23</td><td><s>MapView marker keyboard access (role, tabIndex, keydown)</s> ✅</td><td>MapView</td><td><span class="pri-badge pri-p1">Done</span></td><td>—</td></tr>
+      <tr><td>24</td><td><s>FreTour dialog ARIA, Escape key, focus-ring on all buttons</s> ✅</td><td>FreTour</td><td><span class="pri-badge pri-p1">Done</span></td><td>—</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Detail overlay -->
+<div class="detail-overlay" id="detailOverlay">
+  <div class="detail-panel" id="detailPanel"></div>
+</div>
+
+<script>
+const COMPONENTS = [
+  {
+    name: "Tooltip", file: "src/components/shared/Tooltip.tsx", category: "shared",
+    rating: 8.0, desc: "Portal-based info tooltip. aria-label, aria-describedby, focus-ring, min touch target, viewport collision detection.",
+    issues: {
+      high: [],
+      medium: [
+        "Content is <code>pointer-events: none</code> — links/actions inside tooltip are inaccessible",
+        "No max-width responsive adjustment for narrow viewports"
+      ],
+      low: [
+        "No animation on show/hide — feels abrupt"
+      ]
+    }
+  },
+  {
+    name: "FilterChip", file: "src/components/shared/FilterChip.tsx", category: "shared",
+    rating: 8.0, desc: "Portal-based dropdown chip. Viewport collision detection, focus-ring, adequate touch targets.",
+    issues: {
+      high: [],
+      medium: [
+        "Missing <code>aria-haspopup</code> on trigger and focus management for popover content",
+        "Popover doesn't reposition on scroll or resize"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "Map / Animations", file: "src/components/map/ + src/index.css", category: "shared",
+    rating: 7.5, desc: "HoverCard, global CSS keyframes, usePanelDrag, useBreakpoint. Reduced-motion rule added, dead keyframes removed.",
+    issues: {
+      high: [
+        "Panel drag (usePanelDrag) is pointer-only — no keyboard resize, no <code>role=\"separator\"</code>, no ARIA"
+      ],
+      medium: [
+        "<code>transition-all</code> used in several places — expensive for layout performance",
+        "HoverCard entrance is very fast (0.15s) — feels abrupt"
+      ],
+      low: [
+        "No image loading state in HoverCard"
+      ]
+    }
+  },
+  {
+    name: "PillGroup", file: "src/components/shared/PillGroup.tsx", category: "shared",
+    rating: 8.0, desc: "Segmented pill toggle. Keyboard arrow support, focus-ring, adequate touch targets.",
+    issues: {
+      high: [],
+      medium: [
+        "Missing <code>aria-orientation=\"horizontal\"</code> and <code>aria-controls</code> on tablist"
+      ],
+      low: [
+        "Text is very small at <code>text-[10px]</code> — consider text-xs minimum"
+      ]
+    }
+  },
+  {
+    name: "HomeCountrySelector", file: "src/components/shared/HomeCountrySelector.tsx", category: "shared",
+    rating: 9.0, desc: "ARIA combobox with keyboard nav (Arrow/Enter/Escape), role=listbox/option, aria-activedescendant, scroll-into-view, focus-ring.",
+    issues: {
+      high: [],
+      medium: [
+        "Non-searchable mode renders as a static span — doesn't feel interactive",
+        "Dropdown may clip on narrow mobile viewports (fixed min-width + right alignment)"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "DiscoverView", file: "src/components/views/DiscoverView.tsx", category: "view",
+    rating: 9.5, desc: "Browse 197-country catalog by region. Compact toolbar with chip popovers, flag emoji cards, progress ring, scroll-to-top FAB, full a11y.",
+    issues: {
+      high: [],
+      medium: [],
+      low: [
+        "Could add virtualization for 197 cards if performance degrades on low-end devices"
+      ]
+    }
+  },
+  {
+    name: "App Header / Nav", file: "src/App.tsx", category: "shared",
+    rating: 7.3, desc: "Global header, nav pills, mobile hamburger menu, backup banner.",
+    issues: {
+      high: [
+        "Nav buttons lack <code>aria-current</code> or selected state for screen readers",
+        "No focus-visible styling on header buttons"
+      ],
+      medium: [
+        "Mobile header is cramped — nav pills + hamburger + selector compete for space",
+        "Settings/home-country require menu open on mobile — not directly accessible",
+        "Suspense fallback is <code>null</code> for lazy modals — user sees nothing while loading"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "CalendarView", file: "src/components/views/CalendarView.tsx", category: "view",
+    rating: 9.5, desc: "Heatmap grid — rows = destinations, columns = months. Compact toolbar with search + month popover filter, resizable column, keyboard nav, empty state, live region.",
+    issues: {
+      high: [],
+      medium: [],
+      low: [
+        "Column sort by month status (click header) — feature enhancement",
+        "Persist filter/column-width to localStorage — optional polish"
+      ]
+    }
+  },
+  {
+    name: "CountryPanel", file: "src/components/country/CountryPanel.tsx", category: "country",
+    rating: 8.5, desc: "Core detail panel (~1080 lines). Header, sections, itinerary, plans, notes. Error state with retry for async content.",
+    issues: {
+      high: [
+        "No visible keyboard focus states on buttons, pills, clickable chips"
+      ],
+      medium: [
+        "Many collapsible sections look visually similar — priorities blur in dense scroll",
+        "Loading state is small inline text — easy to miss",
+        "Cinematic disabled state affordance is too subtle — needs tooltip or helper text"
+      ],
+      low: [
+        "Some sections silently render nothing when data is missing (no empty state message)"
+      ]
+    }
+  },
+  {
+    name: "ItineraryModal", file: "src/components/country/ItineraryModal.tsx", category: "country",
+    rating: 7.3, desc: "Day-by-day itinerary view with route pills, navigation, and city breakdown.",
+    issues: {
+      high: [
+        "Route/navigation pills have very small touch targets (text-[10px] + py-0.5)",
+        "No focus-visible styling on interactive controls"
+      ],
+      medium: [
+        "Dropdown and action pills feel cramped — low discoverability",
+        "Title-only affordances on some elements — not obvious they're interactive"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "PlanCompareModal", file: "src/components/country/PlanCompareModal.tsx", category: "country",
+    rating: 7.0, desc: "Side-by-side plan comparison with summary cards, city overlap, hotel data.",
+    issues: {
+      high: [
+        "Most cramped component — chips at <code>text-[9px]</code> with <code>py-0.5</code> are very hard to tap",
+        "No focus styling on interactive elements"
+      ],
+      medium: [
+        "No empty-state messaging if city overlap or hotel data is absent",
+        "Table + chip layout is very information-dense — overwhelming on mobile"
+      ],
+      low: [
+        "Typography at text-[9px] is below minimum legibility threshold"
+      ]
+    }
+  },
+  {
+    name: "CountryForm", file: "src/components/country/CountryForm.tsx", category: "country",
+    rating: 7.5, desc: "Slim 4-field edit form (budget, style, landmark, notes). Dirty-state detection.",
+    issues: {
+      high: [
+        "Travel-style buttons lack focus styling and clear selected-state accessibility"
+      ],
+      medium: [
+        "Button sizes are adequate but could be more generous on mobile"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "ChatModal", file: "src/components/ai/ChatModal.tsx", category: "ai",
+    rating: 8.5, desc: "LLM chat interface. FinishButton with focus-ring + min-h, TokenBadge as accessible button with expand/collapse.",
+    issues: {
+      high: [],
+      medium: [
+        "Header area is cluttered — too many controls competing for space on mobile",
+        "No persistent 'scroll to latest' button for long conversations",
+        "Footer controls need larger touch targets"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "ConfirmDialog", file: "src/components/shared/ConfirmDialog.tsx", category: "shared",
+    rating: 7.8, desc: "Custom confirm dialog with useConfirm() hook. 3 variants, mobile bottom sheet.",
+    issues: {
+      high: [
+        "Action buttons lack explicit <code>focus-visible</code> ring styling"
+      ],
+      medium: [
+        "Uses <code>role=\"alertdialog\"</code> even for non-destructive confirms — should be <code>role=\"dialog\"</code> for info variant"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "SettingsModal", file: "src/components/ai/SettingsModal.tsx", category: "ai",
+    rating: 7.9, desc: "Tabbed settings: AI provider config, backup/restore, feature flags.",
+    issues: {
+      high: [
+        "Show/Delete/Restore buttons are tiny text buttons — need larger targets and focus styling"
+      ],
+      medium: [
+        "Form controls need stronger focus-visible styling",
+        "Backup tab is very information-dense — could benefit from better visual separation"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "AiItineraryModal", file: "src/components/ai/AiItineraryModal.tsx", category: "ai",
+    rating: 8.1, desc: "Beautiful AI plan presentation. Hero, meta, route, city cards, save/compare.",
+    issues: {
+      high: [
+        "Route/save chips and close button area have small tap targets"
+      ],
+      medium: [
+        "No fallback UX if plan.days or groups is unexpectedly empty",
+        "Hero + meta area is vertically dense on mobile",
+        "Consider sticky action bar for Save on long itineraries"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "TripsView", file: "src/components/views/TripsView.tsx", category: "view",
+    rating: 9.5, desc: "Main trip dashboard (~1700 lines). Cards, filters, trip editor, mobile drawer, stats. Modernized filter rail, semantic cards, full a11y.",
+    issues: {
+      high: [],
+      medium: [],
+      low: [
+        "Sort tooltip is hover-only — not discoverable on touch (desktop only, acceptable)",
+        "Some filter labels use <code>text-[10px]</code> for density — acceptable on mobile"
+      ]
+    }
+  },
+  {
+    name: "Filters", file: "src/components/shared/Filters.tsx", category: "shared",
+    rating: 6.0, desc: "Shared filter bar with month/budget/experience chips. Used across views.",
+    issues: {
+      high: [
+        "No keyboard focus rings on month/budget buttons or select elements",
+        "Touch targets for month buttons are small (<code>py-1.5</code> + <code>text-[11px]</code>)"
+      ],
+      medium: [
+        "Fixed widths (<code>w-52</code>, <code>w-48</code>) feel tight on smaller screens — need responsive sizing",
+        "Section labels above chip groups would improve scanning speed",
+        "Custom select arrow has no focus-visible ring"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "FreTour", file: "src/components/shared/FreTour.tsx", category: "shared",
+    rating: 8.5, desc: "First-run experience with role=dialog, aria-modal, Escape key dismiss, focus-ring on all buttons, aria-label on skip.",
+    issues: {
+      high: [],
+      medium: [
+        "No focus trap inside tour card — keyboard users can tab to elements behind the overlay",
+        "Skip/dismiss button should be more prominent on mobile",
+        "Long copy on hero cards may overflow on small screens"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "ItineraryCinematic", file: "src/components/country/ItineraryCinematic.tsx", category: "country",
+    rating: 7.5, desc: "Animated fly-through of itinerary on map. Transport icons, route animation, city stops.",
+    issues: {
+      high: [
+        "No pause/skip control for reduced-motion users or those who want to exit early",
+        "No visible loading state while waiting for map tiles to load"
+      ],
+      medium: [
+        "Controls should be keyboard accessible and labeled",
+        "Consider a progress indicator showing current city in the sequence"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "MapView", file: "src/components/views/MapView.tsx", category: "view",
+    rating: 7.5, desc: "Map container with markers. Markers now have role=button, tabIndex, aria-label, keyboard handlers (Enter/Space).",
+    issues: {
+      high: [
+        "No map loading/error fallback UI"
+      ],
+      medium: [
+        "Hovered/selected country changes not announced to screen readers",
+        "No empty state when no countries have coordinates"
+      ],
+      low: []
+    }
+  },
+  {
+    name: "ErrorBoundary", file: "src/components/shared/ErrorBoundary.tsx", category: "shared",
+    rating: 9.0, desc: "Friendly crash recovery screen. Hides technical details, Copy Details button with confirmation, GitHub/Email pre-fill, prominent Try Again CTA.",
+    issues: {
+      high: [],
+      medium: [],
+      low: [
+        "Error container could add <code>role=\"alert\"</code> for screen reader announcement"
+      ]
+    }
+  },
+  {
+    name: "DevFlagPanel", file: "src/components/shared/DevFlagPanel.tsx", category: "shared",
+    rating: 6.0, desc: "Dev-only feature flag toggle panel. Overlay with switches for paid/free features.",
+    issues: {
+      high: [
+        "Toggle buttons lack <code>role=\"switch\"</code> and <code>aria-pressed</code>/<code>aria-checked</code>",
+        "No focus-visible rings on any toggle controls",
+        "Hit areas for toggles are small"
+      ],
+      medium: [
+        "No confirmation/undo for 'Reset FRE' action",
+        "Dense tree layout — reduce visual noise"
+      ],
+      low: []
+    }
+  }
+];
+
+// Sort by rating ascending (worst first)
+COMPONENTS.sort((a, b) => a.rating - b.rating);
+
+function getRatingClass(r) { return r >= 7.8 ? 'rating-high' : r >= 7.0 ? 'rating-mid' : 'rating-low'; }
+function countIssues(c, level) { return c.issues[level]?.length || 0; }
+
+// Render rating bars
+const barsEl = document.getElementById('ratingBars');
+COMPONENTS.forEach(c => {
+  const pct = (c.rating / 10) * 100;
+  const cls = getRatingClass(c.rating);
+  const color = c.rating >= 7.8 ? 'var(--cp-success)' : c.rating >= 7.0 ? 'var(--cp-warning)' : 'var(--cp-danger)';
+  barsEl.innerHTML += `
+    <div style="display:grid;grid-template-columns:180px 48px 1fr;align-items:center;gap:10px;font-size:0.82rem;">
+      <span style="font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${c.name}</span>
+      <span class="rating-badge ${cls}" style="font-size:0.78rem;padding:2px 8px;">${c.rating}</span>
+      <div class="bar-bg"><div class="bar-fill" style="width:${pct}%;background:${color};"></div></div>
+    </div>`;
+});
+
+// Render component cards
+function renderCards(filter) {
+  const grid = document.getElementById('compGrid');
+  grid.innerHTML = '';
+  const filtered = filter === 'all' ? COMPONENTS : COMPONENTS.filter(c => c.category === filter);
+  filtered.forEach((c, i) => {
+    const h = countIssues(c, 'high'), m = countIssues(c, 'medium'), l = countIssues(c, 'low');
+    grid.innerHTML += `
+      <div class="comp-card" onclick="showDetail(${COMPONENTS.indexOf(c)})">
+        <div class="comp-header">
+          <div>
+            <div class="comp-name">${c.name}</div>
+            <div class="comp-file">${c.file}</div>
+          </div>
+          <div class="comp-rating">
+            <span class="rating-badge ${getRatingClass(c.rating)}">${c.rating}</span>
+          </div>
+        </div>
+        <div class="comp-desc">${c.desc}</div>
+        <div class="issue-count">
+          ${h ? `<span class="ic ic-high">${h} high</span>` : ''}
+          ${m ? `<span class="ic ic-med">${m} medium</span>` : ''}
+          ${l ? `<span class="ic ic-low">${l} low</span>` : ''}
+        </div>
+      </div>`;
+  });
+}
+renderCards('all');
+
+function filterCategory(cat, btn) {
+  document.querySelectorAll('#tab-components .tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCards(cat);
+}
+
+// Detail overlay
+function showDetail(idx) {
+  const c = COMPONENTS[idx];
+  const panel = document.getElementById('detailPanel');
+  let html = `<button class="detail-close" onclick="closeDetail()">✕</button>`;
+  html += `<div class="detail-title">${c.name}</div>`;
+  html += `<div class="detail-file">${c.file}</div>`;
+  html += `<div style="margin-bottom:16px;"><span class="rating-badge ${getRatingClass(c.rating)}" style="font-size:1rem;">${c.rating} / 10</span></div>`;
+  html += `<p style="font-size:0.85rem;color:var(--cp-text-muted);margin-bottom:18px;">${c.desc}</p>`;
+
+  ['high', 'medium', 'low'].forEach(level => {
+    const items = c.issues[level];
+    if (!items || items.length === 0) return;
+    const emoji = level === 'high' ? '🔴' : level === 'medium' ? '🟡' : '🟢';
+    const label = level.charAt(0).toUpperCase() + level.slice(1);
+    html += `<div class="detail-section"><h3>${emoji} ${label} Priority (${items.length})</h3>`;
+    items.forEach(issue => {
+      html += `<div class="issue-item ${level}">${issue}</div>`;
+    });
+    html += `</div>`;
+  });
+
+  panel.innerHTML = html;
+  document.getElementById('detailOverlay').classList.add('open');
+}
+
+function closeDetail() { document.getElementById('detailOverlay').classList.remove('open'); }
+document.getElementById('detailOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeDetail(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+
+// Tab switching
+document.querySelectorAll('#tabBar .tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#tabBar .tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

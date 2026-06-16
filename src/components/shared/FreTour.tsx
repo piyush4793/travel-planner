@@ -195,7 +195,7 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
   const renderAsHero = current.kind === "hero" || (current.kind === "spotlight" && isMobile && !rect);
 
   return createPortal(
-    <div className="fixed inset-0 z-[9999]" onClick={(e) => e.stopPropagation()}>
+    <div className="fixed inset-0 z-[9999]" onClick={(e) => e.stopPropagation()} onKeyDown={(e) => { if (e.key === "Escape") finish(); }} role="dialog" aria-modal="true" aria-label="Welcome tour">
       {/* Backdrop */}
       {current.kind === "spotlight" && rect ? (
         <SpotlightBackdrop rect={rect} />
@@ -269,7 +269,7 @@ function HeroCard({ step, index, total, isLast, onNext, onPrev, onSkip }: {
             {isLast && (
               <button
                 onClick={onNext}
-                className="w-full py-3 bg-white text-slate-800 text-sm font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all active:scale-95"
+                className="w-full py-3 bg-white text-slate-800 text-sm font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all active:scale-95 focus-ring"
               >
                 {"Let\u2019s Go! \u{1F30D}"}
               </button>
@@ -278,14 +278,14 @@ function HeroCard({ step, index, total, isLast, onNext, onPrev, onSkip }: {
               <ProgressBar current={index} total={total} />
               <div className="flex gap-2">
                 {onPrev && (
-                  <button onClick={onPrev} className="px-4 py-2 text-xs font-semibold text-white/70 hover:text-white transition-colors">
+                  <button onClick={onPrev} className="px-4 py-2 text-xs font-semibold text-white/70 hover:text-white transition-colors focus-ring rounded">
                     Back
                   </button>
                 )}
                 {!isLast && (
                   <button
                     onClick={onNext}
-                    className="px-6 py-2.5 bg-white text-slate-800 text-xs font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-105 transition-all active:scale-95"
+                    className="px-6 py-2.5 bg-white text-slate-800 text-xs font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-105 transition-all active:scale-95 focus-ring"
                   >
                     {"Next →"}
                   </button>
@@ -295,7 +295,7 @@ function HeroCard({ step, index, total, isLast, onNext, onPrev, onSkip }: {
           </div>
 
           {!isLast && (
-            <button onClick={onSkip} className="absolute top-0 right-0 text-white/40 hover:text-white/80 text-lg transition-colors p-1 leading-none" title="Skip tour">
+            <button onClick={onSkip} className="absolute top-0 right-0 text-white/40 hover:text-white/80 text-lg transition-colors p-1 leading-none focus-ring" aria-label="Skip tour">
               {"✕"}
             </button>
           )}
@@ -323,7 +323,7 @@ function SpotlightCard({ step, targetRect, index, total, onNext, onPrev, onSkip 
             <div className="text-2xl mb-2 drop-shadow-lg">{step.emoji}</div>
             <h3 className="text-sm font-bold text-white drop-shadow mb-1.5">{step.title}</h3>
             <p className="text-xs text-white/85 leading-relaxed">{step.body}</p>
-            <button onClick={onSkip} className="absolute top-0 right-0 text-white/40 hover:text-white/80 text-lg transition-colors p-1 leading-none" title="Skip tour">
+            <button onClick={onSkip} className="absolute top-0 right-0 text-white/40 hover:text-white/80 text-lg transition-colors p-1 leading-none focus-ring" aria-label="Skip tour">
               {"✕"}
             </button>
           </div>
@@ -331,10 +331,10 @@ function SpotlightCard({ step, targetRect, index, total, onNext, onPrev, onSkip 
           <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/15">
             <ProgressBar current={index} total={total} light />
             <div className="flex gap-2">
-              <button onClick={onPrev} className="px-3 py-1.5 text-[11px] font-semibold text-white/60 hover:text-white transition-colors">
+              <button onClick={onPrev} className="px-3 py-1.5 text-[11px] font-semibold text-white/60 hover:text-white transition-colors focus-ring rounded">
                 Back
               </button>
-              <button onClick={onNext} className="px-5 py-1.5 bg-white text-slate-800 text-[11px] font-bold rounded-full whitespace-nowrap transition-all shadow-sm hover:shadow hover:scale-105 active:scale-95">
+              <button onClick={onNext} className="px-5 py-1.5 bg-white text-slate-800 text-[11px] font-bold rounded-full whitespace-nowrap transition-all shadow-sm hover:shadow hover:scale-105 active:scale-95 focus-ring">
                 {"Next →"}
               </button>
             </div>
@@ -357,7 +357,7 @@ function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstal
         {step.floaters && <FloatingEmoji emojis={step.floaters} />}
 
         <div className="relative z-10">
-          <button onClick={onSkip} className="absolute top-0 right-0 z-20 text-white/50 hover:text-white text-lg transition-colors p-2 leading-none" title="Skip">
+          <button onClick={onSkip} className="absolute top-0 right-0 z-20 text-white/50 hover:text-white text-lg transition-colors p-2 leading-none focus-ring" aria-label="Skip tour">
             {"✕"}
           </button>
           <div className="text-3xl mb-2 drop-shadow-lg">{step.emoji}</div>
@@ -375,7 +375,7 @@ function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstal
               <button
                 onClick={onInstall}
                 disabled={installing}
-                className="w-full mb-4 px-5 py-3 bg-white text-slate-800 text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-70"
+                className="w-full mb-4 px-5 py-3 bg-white text-slate-800 text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-70 focus-ring"
               >
                 {installing ? (
                   <><span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-slate-800 border-t-transparent" /> {"Installing\u2026"}</>
@@ -406,11 +406,11 @@ function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstal
           <div className="flex items-center justify-between">
             <ProgressBar current={index} total={total} light />
             <div className="flex items-center gap-1">
-              <button onClick={onBack} className="px-4 py-2 text-xs font-semibold text-white/70 hover:text-white transition-colors">
+              <button onClick={onBack} className="px-4 py-2 text-xs font-semibold text-white/70 hover:text-white transition-colors focus-ring rounded">
                 Back
               </button>
               {!canPrompt && (
-                <button onClick={onNext} className="px-4 py-2 text-xs font-bold text-white bg-white/20 hover:bg-white/30 rounded-lg transition-colors">
+                <button onClick={onNext} className="px-4 py-2 text-xs font-bold text-white bg-white/20 hover:bg-white/30 rounded-lg transition-colors focus-ring">
                   Next →
                 </button>
               )}

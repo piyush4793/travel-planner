@@ -17,7 +17,7 @@ export default function HomeCountrySelector({ value, onChange }: Props) {
   return (
     <span
       className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-white bg-white/10 rounded-full border border-white/15"
-      title="Home country"
+      aria-label={`Home country: ${value}`}
     >
       📍 {value}
     </span>
@@ -27,8 +27,11 @@ export default function HomeCountrySelector({ value, onChange }: Props) {
 function SearchableSelector({ value, onChange }: Props) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
+  const [activeIndex, setActiveIndex] = useState(-1);
   const ref = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+  const listId = "home-country-listbox";
 
   const allCountries = useMemo(
     () => CATALOG.map((c) => c.name).sort(),
@@ -50,6 +53,7 @@ function SearchableSelector({ value, onChange }: Props) {
       if (!ref.current?.contains(e.target as Node)) {
         setOpen(false);
         setSearch("");
+        setActiveIndex(-1);
       }
     };
     document.addEventListener("mousedown", handle);
@@ -57,11 +61,63 @@ function SearchableSelector({ value, onChange }: Props) {
   }, [open]);
 
   useEffect(() => {
-    if (open) inputRef.current?.focus();
+    if (open) {
+      inputRef.current?.focus();
+      setActiveIndex(-1);
+    }
   }, [open]);
 
+  // Reset active index when filtered list changes
+  useEffect(() => { setActiveIndex(-1); }, [filtered.length]);
+
+  const selectCountry = (name: string) => {
+    onChange(name);
+    setOpen(false);
+    setSearch("");
+    setActiveIndex(-1);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (!open) {
+      if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        setOpen(true);
+      }
+      return;
+    }
+    switch (e.key) {
+      case "ArrowDown":
+        e.preventDefault();
+        setActiveIndex((i) => Math.min(i + 1, visible.length - 1));
+        break;
+      case "ArrowUp":
+        e.preventDefault();
+        setActiveIndex((i) => Math.max(i - 1, 0));
+        break;
+      case "Enter":
+        e.preventDefault();
+        if (activeIndex >= 0 && activeIndex < visible.length) {
+          selectCountry(visible[activeIndex]);
+        }
+        break;
+      case "Escape":
+        e.preventDefault();
+        setOpen(false);
+        setSearch("");
+        setActiveIndex(-1);
+        break;
+    }
+  };
+
+  // Scroll active option into view
+  useEffect(() => {
+    if (activeIndex < 0 || !listRef.current) return;
+    const option = listRef.current.children[activeIndex] as HTMLElement | undefined;
+    option?.scrollIntoView?.({ block: "nearest" });
+  }, [activeIndex]);
+
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className="relative" onKeyDown={handleKeyDown}>
       <TriggerButton value={value} open={open} onClick={() => setOpen((o) => !o)} />
       {open && (
         <div className="absolute right-0 top-full mt-1 bg-white rounded-xl shadow-xl border border-gray-200 z-50 min-w-52 overflow-hidden">
@@ -73,15 +129,22 @@ function SearchableSelector({ value, onChange }: Props) {
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search countries…"
               className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors"
+              role="combobox"
+              aria-expanded={true}
+              aria-controls={listId}
+              aria-activedescendant={activeIndex >= 0 ? `hc-opt-${activeIndex}` : undefined}
+              aria-autocomplete="list"
             />
           </div>
-          <div className="max-h-[280px] overflow-y-auto py-1">
-            {visible.map((c) => (
+          <div ref={listRef} className="max-h-[280px] overflow-y-auto py-1" role="listbox" id={listId}>
+            {visible.map((c, i) => (
               <CountryOption
                 key={c}
+                id={`hc-opt-${i}`}
                 name={c}
                 selected={c === value}
-                onClick={() => { onChange(c); setOpen(false); setSearch(""); }}
+                active={i === activeIndex}
+                onClick={() => selectCountry(c)}
               />
             ))}
             {hasMore && (
@@ -105,7 +168,10 @@ function TriggerButton({ value, open, onClick }: { value: string; open: boolean;
   return (
     <button
       onClick={onClick}
-      className="flex items-center gap-1 px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-full text-xs font-semibold transition-colors border border-white/20 text-white"
+      className="flex items-center gap-1 px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-full text-xs font-semibold transition-colors border border-white/20 text-white focus-ring"
+      aria-expanded={open}
+      aria-haspopup="listbox"
+      aria-label={`Home country: ${value}`}
     >
       📍 {value}
       <span className={`text-white/60 text-[10px] transition-transform inline-block ${open ? "rotate-180" : ""}`}>▾</span>
@@ -113,12 +179,16 @@ function TriggerButton({ value, open, onClick }: { value: string; open: boolean;
   );
 }
 
-function CountryOption({ name, selected, onClick }: { name: string; selected: boolean; onClick: () => void }) {
+function CountryOption({ id, name, selected, active, onClick }: { id: string; name: string; selected: boolean; active: boolean; onClick: () => void }) {
   return (
     <button
+      id={id}
+      role="option"
+      aria-selected={selected}
       onClick={onClick}
-      className={`w-full text-left px-3 py-1.5 text-xs transition-colors ${
-        selected ? "text-blue-600 font-bold bg-blue-50" : "text-gray-700 hover:bg-gray-50"
+      className={`w-full text-left px-3 py-1.5 text-xs transition-colors focus-ring ${
+        active ? "bg-blue-50 text-blue-700" :
+        selected ? "text-blue-600 font-bold bg-blue-50/50" : "text-gray-700 hover:bg-gray-50"
       }`}
     >
       {selected ? "✓ " : "  "}{name}

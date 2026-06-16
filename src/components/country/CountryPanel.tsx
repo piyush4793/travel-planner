@@ -76,6 +76,7 @@ export default function CountryPanel({
   const [countryInfo, setCountryInfo] = useState<CountryInfo | null>(null);
   const [infoLoading, setInfoLoading] = useState(false);
   const [infoFetched, setInfoFetched] = useState(false);
+  const [infoError, setInfoError] = useState(false);
   const [confirm, ConfirmDialog] = useConfirm();
   const currentCountryNameRef = useRef<string | null>(country?.name ?? null);
 
@@ -105,17 +106,23 @@ export default function CountryPanel({
     setCountryInfo(null);
     setInfoFetched(false);
     setInfoLoading(false);
+    setInfoError(false);
   }, [country?.name, recDays]);
 
   const loadCountryInfo = useCallback(() => {
     if (infoFetched || infoLoading || !country) return;
     const targetName = country.name;
     setInfoLoading(true);
+    setInfoError(false);
     fetchCountryInfo(targetName).then((info) => {
       if (currentCountryNameRef.current !== targetName) return;
       setCountryInfo(info);
       setInfoFetched(true);
       setInfoLoading(false);
+    }).catch(() => {
+      if (currentCountryNameRef.current !== targetName) return;
+      setInfoLoading(false);
+      setInfoError(true);
     });
   }, [infoFetched, infoLoading, country]);
 
@@ -515,7 +522,9 @@ export default function CountryPanel({
               countryName={country.name}
               countryInfo={countryInfo}
               loading={infoLoading}
+              error={infoError}
               onExpand={loadCountryInfo}
+              onRetry={() => { setInfoFetched(false); setInfoError(false); }}
             />
 
             <PlanningResourcesSection countryName={country.name} />
@@ -843,11 +852,13 @@ function getRangePercent(value: number, max: number) {
 
 // ─── Learn about country ──────────────────────────────────────────────────────
 
-function LearnAboutSection({ countryName, countryInfo, loading, onExpand }: {
+function LearnAboutSection({ countryName, countryInfo, loading, error, onExpand, onRetry }: {
   countryName: string;
   countryInfo: CountryInfo | null;
   loading: boolean;
+  error: boolean;
   onExpand: () => void;
+  onRetry: () => void;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -856,6 +867,11 @@ function LearnAboutSection({ countryName, countryInfo, loading, onExpand }: {
     setOpen(next);
     if (next) onExpand();
   };
+
+  // Trigger reload after retry resets state
+  useEffect(() => {
+    if (open && !loading && !countryInfo && !error) onExpand();
+  }, [open, loading, countryInfo, error, onExpand]);
 
   return (
     <div className="rounded-xl bg-gray-50/50 p-3.5">
@@ -870,6 +886,14 @@ function LearnAboutSection({ countryName, countryInfo, loading, onExpand }: {
               <div className="flex items-center gap-2 py-2">
                 <span className="inline-block h-3 w-3 animate-spin rounded-full border-2 border-blue-400 border-t-transparent" />
                 <span className="text-[11px] text-blue-500">Loading info…</span>
+              </div>
+            )}
+            {!loading && error && (
+              <div className="flex items-center gap-2 py-2">
+                <span className="text-[11px] text-gray-500">Failed to load info</span>
+                <button onClick={onRetry} className="text-[11px] font-semibold text-blue-600 hover:text-blue-700 focus-ring rounded px-1.5 py-0.5">
+                  Retry
+                </button>
               </div>
             )}
             {!loading && countryInfo && (

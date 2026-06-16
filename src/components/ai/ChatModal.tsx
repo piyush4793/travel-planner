@@ -469,8 +469,8 @@ function FinishButton({ tokens, loading, onClick }: { tokens: number; loading: b
     <button
       onClick={onClick}
       disabled={loading}
-      className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-100 disabled:text-slate-300 text-white text-[11px] font-semibold rounded-lg transition-colors"
-      title={tokens > 0 ? `This will use ~${formatTokens(estExtraTokens)} additional tokens (${formatCost(estCost)})` : undefined}
+      className="px-3 py-1.5 min-h-[32px] bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-100 disabled:text-slate-300 text-white text-[11px] font-semibold rounded-lg transition-colors focus-ring"
+      aria-label={tokens > 0 ? `Finish and generate — estimated ${formatCost(estCost)}` : "Finish and generate"}
     >
       ✓ Finish & Generate{costLabel}
     </button>
@@ -485,10 +485,15 @@ function TokenBadge({ tokens, inputTokens, outputTokens }: { tokens: number; inp
   const pricing = PROVIDER_PRICING[provider];
 
   return (
-    <span
-      className={`text-[10px] font-medium ${color} cursor-help relative`}
+    <button
+      type="button"
+      className={`text-[10px] font-medium ${color} cursor-help relative focus-ring rounded px-1 py-0.5`}
       onMouseEnter={() => setShowTip(true)}
       onMouseLeave={() => setShowTip(false)}
+      onFocus={() => setShowTip(true)}
+      onBlur={() => setShowTip(false)}
+      onClick={() => setShowTip((s) => !s)}
+      aria-label={`Token usage: ~${formatTokens(tokens)} tokens, estimated cost ${formatCost(cost)}`}
     >
       ~{formatTokens(tokens)} tokens · {formatCost(cost)}
       {showTip && (
@@ -504,7 +509,7 @@ function TokenBadge({ tokens, inputTokens, outputTokens }: { tokens: number; inp
           <span className="block mt-0.5 font-semibold text-emerald-400">Est. cost: {formatCost(cost)}</span>
         </span>
       )}
-    </span>
+    </button>
   );
 }
 

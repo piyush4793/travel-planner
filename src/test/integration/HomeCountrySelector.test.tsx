@@ -35,7 +35,7 @@ describe("HomeCountrySelector", () => {
     await user.click(screen.getByRole("button", { name: /India/ }));
     const input = screen.getByPlaceholderText("Search countries…");
     await user.type(input, "jap");
-    await user.click(screen.getByRole("button", { name: /Japan/i }));
+    await user.click(screen.getByRole("option", { name: /Japan/i }));
 
     expect(onChange).toHaveBeenCalledWith("Japan");
     expect(screen.queryByPlaceholderText("Search countries…")).not.toBeInTheDocument();
