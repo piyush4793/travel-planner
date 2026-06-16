@@ -17,7 +17,7 @@ View persists in the URL hash (`#trips`, `#calendar`, `#discover`) — refresh r
 
 ### Responsive Design
 Mobile-first responsive layout — works on phones (375px+), tablets (768px+), and desktops (1024px+):
-- **Header**: hamburger menu on mobile with slide-down drawer for settings/actions; full pill nav on tablet+
+- **Header**: decluttered top bar (brand + route pills + home country + settings); mobile uses hamburger drawer with compact utility actions (icon-first, no oversized CTA), while list/favorite/visited counts stay in Trips context
 - **Trips view controls**: mobile uses compact icon-triggered filter panels; tablet/desktop uses persistent left filter rail + right results toolbar
 - **Country detail panel**: full-screen overlay on mobile; resizable side panel on desktop
 - **All modals**: full-screen on mobile (no rounded corners, full height); centered cards on desktop

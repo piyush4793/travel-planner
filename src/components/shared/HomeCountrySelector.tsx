@@ -15,8 +15,11 @@ export default function HomeCountrySelector({ value, onChange }: Props) {
     return <SearchableSelector value={value} onChange={onChange} />;
   }
   return (
-    <span className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-white">
-      📍 India
+    <span
+      className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-white bg-white/10 rounded-full border border-white/15"
+      title="Home country"
+    >
+      📍 {value}
     </span>
   );
 }

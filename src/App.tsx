@@ -146,8 +146,6 @@ export default function App() {
     return "saved";
   }, [store]);
 
-  const hasActiveFilters = selectedMonth.length > 0 || selectedExperiences.length > 0 || visitedFilter !== "all" || budgetFilter !== "all";
-
   return (
     <div className="flex flex-col h-dvh overflow-hidden bg-slate-50">
       {/* Header */}
@@ -156,11 +154,6 @@ export default function App() {
           {/* Brand icon — all screens */}
           <img src="icon-192.svg" alt="Roamwise" className="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-lg" />
           <span className="hidden md:inline text-lg font-black tracking-tight">Roamwise</span>
-          {hasActiveFilters && (
-            <span className="text-[10px] md:text-xs bg-white/20 px-2 py-0.5 rounded-full font-medium hidden sm:inline">
-              {filtered.length} shown
-            </span>
-          )}
         </div>
 
         {/* Desktop nav pills */}
@@ -177,7 +170,7 @@ export default function App() {
         </div>
 
         {/* Mobile nav pills — compact */}
-        <div className="flex md:hidden items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto">
+        <div className="flex md:hidden items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto overflow-x-auto max-w-[56vw]">
           {(Object.keys(VIEW_LABELS) as AppView[]).map((v) => (
             <button key={v} onClick={() => setView(v)}
               data-tour={isMobile ? `nav-${v}` : undefined}
@@ -192,9 +185,6 @@ export default function App() {
         {/* Desktop actions */}
         <div className="hidden md:flex items-center gap-2.5 shrink-0">
           <HomeCountrySelector value={homeCountry} onChange={setHomeCountry} />
-          {store.favorites.set.size > 0 && <span className="text-yellow-300 text-sm font-semibold">★ {store.favorites.set.size}</span>}
-          {store.visited.set.size > 0 && <span className="text-emerald-300 text-sm font-semibold">✓ {store.visited.set.size}</span>}
-          <span className="text-white/60 text-xs font-medium">{store.myList.set.size} 📋</span>
           <button onClick={() => setSettingsOpen(true)}
             data-tour="settings"
             className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15"
@@ -219,17 +209,18 @@ export default function App() {
         <div className="md:hidden bg-gradient-to-b from-indigo-600 to-indigo-700 text-white px-4 py-3 space-y-3 shrink-0 shadow-lg">
           <div className="flex items-center gap-2 flex-wrap">
             <HomeCountrySelector value={homeCountry} onChange={(v) => { setHomeCountry(v); }} />
-            <span className="text-white/60 text-xs">{store.myList.set.size} 📋</span>
-            {store.favorites.set.size > 0 && <span className="text-yellow-300 text-xs font-semibold">★ {store.favorites.set.size}</span>}
-            {store.visited.set.size > 0 && <span className="text-emerald-300 text-xs font-semibold">✓ {store.visited.set.size}</span>}
           </div>
-          <div className="flex gap-2">
-            <button onClick={() => { setSettingsOpen(true); setMenuOpen(false); }}
-              className="flex-1 py-2.5 px-4 bg-white/10 hover:bg-white/20 rounded-xl text-xs font-semibold transition-colors border border-white/15 min-h-[44px]">
-              ⚙️ Settings
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => { setSettingsOpen(true); setMenuOpen(false); }}
+              className="flex items-center justify-center w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15"
+              title="Settings"
+            >
+              ⚙️
             </button>
+            <span className="text-xs font-medium text-white/85">Settings</span>
+            <DevFlagPanel />
           </div>
-          <DevFlagPanel />
         </div>
       )}
 

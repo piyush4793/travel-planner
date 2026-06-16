@@ -178,6 +178,12 @@ Two-tier gating lives in `src/core/featureFlags.ts`. Paid features require both 
 
 Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid clipping from scroll/overflow containers in header and panel layouts.
 
+### App header layout
+
+- Primary header keeps global controls only: brand, view navigation, home-country selector, and settings.
+- Progress/count telemetry (favorites, visited, total) belongs to Trips page context instead of global top bar.
+- Mobile keeps the same model via hamburger utility drawer with compact icon-based actions.
+
 ### Trips responsive control layout
 
 `TripsView` keeps one filter model but adapts presentation by breakpoint:

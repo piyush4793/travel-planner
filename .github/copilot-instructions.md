@@ -100,7 +100,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 
 ```
 App.tsx  (thin orchestrator — wires hooks to views)
-├── Header (nav pills, home country selector, settings)
+├── Header (brand, nav pills, home country selector, settings/menu only)
 ├── TripsView / CalendarView / DiscoverView
 ├── CountryPanel
 │   ├── default panel render path
