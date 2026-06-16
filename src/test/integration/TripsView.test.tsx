@@ -102,9 +102,9 @@ describe("TripsView", () => {
     const { onSelect } = renderTrips();
 
     await user.click(screen.getByRole("button", { name: "List view" }));
-    expect(screen.getByTitle("List view")).toHaveClass("bg-blue-50");
+    expect(screen.getByRole("button", { name: "List view" })).toHaveClass("bg-blue-50");
 
-    const sortSelect = screen.getByLabelText("Sort trips");
+    const sortSelect = screen.getAllByLabelText("Sort trips").pop()!;
     await user.selectOptions(sortSelect, "az");
     await user.hover(sortSelect);
     await waitFor(() => {
@@ -117,7 +117,7 @@ describe("TripsView", () => {
     expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Japan" }));
 
     await user.click(screen.getByRole("button", { name: "Grid view" }));
-    expect(screen.getByTitle("Grid view")).toHaveClass("bg-blue-50");
+    expect(screen.getByRole("button", { name: "Grid view" })).toHaveClass("bg-blue-50");
   });
 
   it("applies popularity sorting when search is empty", async () => {
@@ -131,7 +131,7 @@ describe("TripsView", () => {
     expect(appearsBefore(sweden, japan)).toBe(true);
     expect(appearsBefore(japan, antarctica)).toBe(true);
 
-    await user.selectOptions(screen.getByLabelText("Sort trips"), "az");
+    await user.selectOptions(screen.getAllByLabelText("Sort trips").pop()!, "az");
     const argentina = screen.getByRole("button", { name: "Open Argentina" });
     const norway = screen.getByRole("button", { name: "Open Norway" });
     expect(appearsBefore(argentina, norway)).toBe(true);
@@ -145,7 +145,7 @@ describe("TripsView", () => {
     await user.type(searchInput, "swit");
 
     const switzerlandBeforeSortChange = screen.getByRole("button", { name: "Open Switzerland" });
-    await user.selectOptions(screen.getByLabelText("Sort trips"), "za");
+    await user.selectOptions(screen.getAllByLabelText("Sort trips").pop()!, "za");
     const switzerlandAfterSortChange = screen.getByRole("button", { name: "Open Switzerland" });
 
     expect(switzerlandBeforeSortChange).toBeInTheDocument();
@@ -158,9 +158,9 @@ describe("TripsView", () => {
     const { onSelect } = renderTrips();
 
     await user.click(screen.getByRole("button", { name: "Grid view" }));
-    const swedenCard = screen.getByRole("button", { name: "Open Sweden" }).closest("div.rounded-xl");
+    const swedenCard = screen.getByRole("button", { name: "Open Sweden" }).closest("article");
     expect(swedenCard).not.toBeNull();
-    await user.click(within(swedenCard as HTMLDivElement).getByRole("button", { name: "Norway" }));
+    await user.click(within(swedenCard as HTMLElement).getByRole("button", { name: "Norway" }));
 
     expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Norway" }));
   });
@@ -171,9 +171,9 @@ describe("TripsView", () => {
       tripGroups: [{ main: "Norway", addOns: ["Sweden"], region: "Europe" }],
     });
 
-    const norwayCard = screen.getByRole("button", { name: "Open Norway" }).closest("div.rounded-xl");
+    const norwayCard = screen.getByRole("button", { name: "Open Norway" }).closest("article");
     expect(norwayCard).not.toBeNull();
-    await user.click(within(norwayCard as HTMLDivElement).getByRole("button", { name: "Sweden" }));
+    await user.click(within(norwayCard as HTMLElement).getByRole("button", { name: "Sweden" }));
 
     expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Sweden" }));
   });

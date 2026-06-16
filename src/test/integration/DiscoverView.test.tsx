@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, render, screen, within, waitFor } from "@testing-library/react";
+import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import DiscoverView from "../../components/views/DiscoverView";
 import type { CatalogEntry } from "../../core/types";
@@ -9,6 +9,21 @@ vi.mock("maplibre-gl", () => ({
   Map: vi.fn(),
   Marker: vi.fn(),
 }));
+
+// Mock matchMedia for useBreakpoint — default to desktop
+Object.defineProperty(window, "matchMedia", {
+  writable: true,
+  value: vi.fn().mockImplementation((query: string) => ({
+    matches: query === "(min-width: 1024px)" || query === "(min-width: 768px)",
+    media: query,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    onchange: null,
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  })),
+});
 
 const catalog: CatalogEntry[] = [
   { name: "Japan", lat: 35, lng: 139, region: "Asia" },
@@ -25,7 +40,7 @@ describe("DiscoverView", () => {
     cleanup();
   });
 
-  it("renders the worldwide and in-list counts", () => {
+  it("renders the count and progress stats", () => {
     render(
       <DiscoverView
         catalog={catalog}
@@ -35,8 +50,9 @@ describe("DiscoverView", () => {
       />,
     );
 
-    expect(screen.getByText("countries worldwide").parentElement).toHaveTextContent("3countries worldwide");
-    expect(screen.getByText("in your list").parentElement).toHaveTextContent("2in your list");
+    // Desktop toolbar shows "2 / 3 (67%)"
+    expect(screen.getByText("2")).toBeInTheDocument();
+    expect(screen.getByText(/67%/)).toBeInTheDocument();
   });
 
   it("filters countries by search text", async () => {
@@ -60,7 +76,7 @@ describe("DiscoverView", () => {
     });
   });
 
-  it("filters countries by region pills", async () => {
+  it("filters countries by region popover", async () => {
     const user = userEvent.setup();
 
     render(
@@ -72,14 +88,16 @@ describe("DiscoverView", () => {
       />,
     );
 
-    await user.click(screen.getByRole("tab", { name: "Asia" }));
+    // Open region popover, then click Asia
+    await user.click(screen.getByRole("button", { name: /Region/i }));
+    await user.click(screen.getByRole("button", { name: "Asia" }));
 
     expect(screen.getByText("Japan")).toBeInTheDocument();
     expect(screen.queryByText("France")).not.toBeInTheDocument();
     expect(screen.queryByText("Brazil")).not.toBeInTheDocument();
   });
 
-  it("calls onAddToList for countries not already in the list", async () => {
+  it("calls onAddToList when clicking an un-listed country card", async () => {
     const user = userEvent.setup();
     const onAddToList = vi.fn();
 
@@ -92,15 +110,14 @@ describe("DiscoverView", () => {
       />,
     );
 
-    const brazilCard = screen.getByText("Brazil").closest("div.rounded-xl");
-    expect(brazilCard).not.toBeNull();
-
-    await user.click(within(brazilCard as HTMLDivElement).getByRole("button", { name: /add to my list/i }));
+    // Each card is a <button> now — find the one containing "Brazil"
+    const brazilCard = screen.getByRole("button", { name: /Brazil/i });
+    await user.click(brazilCard);
 
     expect(onAddToList).toHaveBeenCalledWith("Brazil");
   });
 
-  it("calls onRemoveFromList for countries already in the list", async () => {
+  it("calls onRemoveFromList when clicking a listed country card", async () => {
     const user = userEvent.setup();
     const onRemoveFromList = vi.fn();
 
@@ -113,7 +130,8 @@ describe("DiscoverView", () => {
       />,
     );
 
-    await user.click(screen.getByRole("button", { name: /remove from list/i }));
+    const japanCard = screen.getByRole("button", { name: /Japan/i });
+    await user.click(japanCard);
 
     expect(onRemoveFromList).toHaveBeenCalledWith("Japan");
   });

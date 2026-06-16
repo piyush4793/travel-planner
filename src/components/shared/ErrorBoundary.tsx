@@ -1,14 +1,15 @@
 import { Component, type ReactNode } from "react";
 
 type Props = { children: ReactNode };
-type State = { error: Error | null; errorInfo: string };
+type State = { error: Error | null; errorInfo: string; copied: boolean };
 
 /**
  * Global error boundary — catches React render crashes and shows
- * a recovery UI with debug info the user can copy for bug reports.
+ * a friendly recovery UI. Technical details are hidden behind a
+ * "Copy issue details" button so users can paste into bug reports.
  */
 export default class ErrorBoundary extends Component<Props, State> {
-  state: State = { error: null, errorInfo: "" };
+  state: State = { error: null, errorInfo: "", copied: false };
 
   static getDerivedStateFromError(error: Error): Partial<State> {
     return { error };
@@ -30,12 +31,16 @@ export default class ErrorBoundary extends Component<Props, State> {
   }
 
   handleReset = () => {
-    this.setState({ error: null, errorInfo: "" });
+    this.setState({ error: null, errorInfo: "", copied: false });
     location.hash = "#trips";
   };
 
   handleCopy = () => {
-    navigator.clipboard.writeText(this.state.errorInfo).catch(() => {});
+    const text = `## Bug Report — Roamwise\n\n**What happened?**\n\n<!-- Describe what you were doing when this error occurred -->\n\n**Debug info**\n\n\`\`\`\n${this.state.errorInfo}\n\`\`\``;
+    navigator.clipboard.writeText(text).then(() => {
+      this.setState({ copied: true });
+      setTimeout(() => this.setState({ copied: false }), 2500);
+    }).catch(() => {});
   };
 
   handleReport = () => {
@@ -58,51 +63,71 @@ export default class ErrorBoundary extends Component<Props, State> {
     if (!this.state.error) return this.props.children;
 
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
-        <div className="max-w-lg w-full bg-white rounded-2xl shadow-xl p-8 space-y-5">
-          <div className="text-center space-y-2">
-            <span className="text-4xl">🛠️</span>
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center p-6">
+        <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 space-y-6 text-center">
+          {/* Icon */}
+          <div className="mx-auto w-16 h-16 rounded-full bg-red-50 flex items-center justify-center">
+            <svg className="w-8 h-8 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+            </svg>
+          </div>
+
+          {/* Heading */}
+          <div className="space-y-2">
             <h1 className="text-xl font-bold text-gray-800">Something went wrong</h1>
-            <p className="text-sm text-gray-500">
-              Roamwise hit an unexpected error. Your data is safe in localStorage.
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Roamwise ran into an unexpected issue.<br/>
+              Your data is safe — nothing has been lost.
             </p>
           </div>
 
-          <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-xs text-red-700 font-mono max-h-40 overflow-auto">
-            {this.state.error.message}
+          {/* Primary action */}
+          <button
+            onClick={this.handleReset}
+            className="w-full px-5 py-3 bg-blue-600 text-white rounded-xl text-sm font-semibold hover:bg-blue-700 active:scale-[0.98] transition-all shadow-sm focus-ring"
+          >
+            Try Again
+          </button>
+
+          {/* Divider */}
+          <div className="flex items-center gap-3">
+            <div className="flex-1 h-px bg-gray-200" />
+            <span className="text-[10px] font-medium text-gray-400 uppercase tracking-wider">Report this issue</span>
+            <div className="flex-1 h-px bg-gray-200" />
           </div>
 
-          <div className="flex gap-2 flex-wrap">
-            <button
-              onClick={this.handleReset}
-              className="flex-1 px-4 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors min-w-[120px]"
-            >
-              🔄 Try Again
-            </button>
+          {/* Report actions */}
+          <div className="flex gap-2">
             <button
               onClick={this.handleCopy}
-              className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-lg text-sm font-semibold hover:bg-gray-200 transition-colors"
-              title="Copy debug info to clipboard"
+              className={`flex-1 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all focus-ring ${
+                this.state.copied
+                  ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                  : "bg-gray-50 text-gray-600 border border-gray-200 hover:bg-gray-100"
+              }`}
             >
-              📋 Copy
+              {this.state.copied ? "✓ Copied!" : "📋 Copy Details"}
             </button>
             <button
               onClick={this.handleReport}
-              className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-lg text-sm font-semibold hover:bg-gray-200 transition-colors"
-              title="Open GitHub issue with debug info"
+              className="flex-1 px-3 py-2.5 bg-gray-50 text-gray-600 border border-gray-200 rounded-xl text-xs font-semibold hover:bg-gray-100 transition-colors focus-ring"
             >
-              🐛 GitHub
+              GitHub Issue
             </button>
             <button
               onClick={this.handleEmail}
-              className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-lg text-sm font-semibold hover:bg-gray-200 transition-colors"
-              title="Email bug report"
+              className="flex-1 px-3 py-2.5 bg-gray-50 text-gray-600 border border-gray-200 rounded-xl text-xs font-semibold hover:bg-gray-100 transition-colors focus-ring"
             >
               ✉️ Email
             </button>
           </div>
 
-          <p className="text-[10px] text-gray-400 text-center">
+          {/* Subtle hint */}
+          <p className="text-[10px] text-gray-400">
+            Use "Copy Details" to include technical info when reporting this issue.
+          </p>
+
+          <p className="text-[10px] text-gray-300">
             v{__APP_VERSION__} · {__BUILD_TIME__}
           </p>
         </div>

@@ -182,7 +182,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
                 {search && (
-                  <button onClick={() => { setSearch(""); setDebouncedSearch(""); }} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm p-0.5 focus-ring rounded" title="Clear">✕</button>
+                  <button onClick={() => { setSearch(""); setDebouncedSearch(""); }} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm p-0.5 focus-ring rounded" aria-label="Clear search">✕</button>
                 )}
               </div>
             </div>
@@ -191,7 +191,8 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
               className={`flex items-center justify-center w-8 h-8 rounded-lg border text-xs focus-ring ${
                 filtersOpen || hasFilters ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-500 border-gray-200 hover:bg-gray-100"
               }`}
-              title="Filters"
+              aria-label="Filters"
+              aria-expanded={filtersOpen}
             >
               🎚️
             </button>
@@ -248,7 +249,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             {search && (
-              <button onClick={() => { setSearch(""); setDebouncedSearch(""); }} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs focus-ring rounded">✕</button>
+              <button onClick={() => { setSearch(""); setDebouncedSearch(""); }} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs focus-ring rounded" aria-label="Clear search">✕</button>
             )}
           </div>
 
@@ -259,6 +260,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-medium transition-colors focus-ring ${
                 region !== "All" ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-600 border-gray-200 hover:bg-gray-50"
               }`}
+              aria-expanded={regionOpen}
             >
               {region === "All" ? "Region" : region}
               <svg className={`w-3 h-3 transition-transform ${regionOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
@@ -281,6 +283,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-medium transition-colors focus-ring ${
                 listFilter !== "all" ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-600 border-gray-200 hover:bg-gray-50"
               }`}
+              aria-expanded={statusOpen}
             >
               {listFilter === "all" ? "Status" : listFilter === "in-list" ? "In List" : "Not Added"}
               <svg className={`w-3 h-3 transition-transform ${statusOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
@@ -328,7 +331,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
                     : "bg-white border-gray-200 hover:border-blue-200 hover:shadow-md hover:-translate-y-0.5"
                 }`}
                 aria-pressed={inList}
-                title={inList ? `Remove ${entry.name} from list` : `Add ${entry.name} to list`}
+                aria-label={inList ? `Remove ${entry.name} from list` : `Add ${entry.name} to list`}
               >
                 <div className="flex items-start justify-between gap-1 mb-1">
                   <div className="flex items-center gap-1.5 min-w-0">

@@ -13,6 +13,7 @@ import { useCountryRule } from "../../hooks/useCountryRule";
 import { useConfirm } from "../shared/ConfirmDialog";
 import { isEnabled } from "../../core/featureFlags";
 import { exportItineraryAsPdf } from "../../utils/pdfExport";
+import { getCountryFlag } from "../../utils/countryFlags";
 import { getBudgetDisplay } from "../../core/types";
 import Tooltip from "../shared/Tooltip";
 import { fetchCountryInfo, type CountryInfo } from "../../utils/countryInfo";
@@ -817,129 +818,6 @@ const MONTHS = [
   "December",
 ] as const;
 
-const COUNTRY_FLAG_EMOJIS: Record<string, string> = {
-  india: "🇮🇳",
-  japan: "🇯🇵",
-  thailand: "🇹🇭",
-  vietnam: "🇻🇳",
-  singapore: "🇸🇬",
-  indonesia: "🇮🇩",
-  malaysia: "🇲🇾",
-  "sri-lanka": "🇱🇰",
-  "south-korea": "🇰🇷",
-  "north-korea": "🇰🇵",
-  maldives: "🇲🇻",
-  nepal: "🇳🇵",
-  bhutan: "🇧🇹",
-  uae: "🇦🇪",
-  "united-arab-emirates": "🇦🇪",
-  dubai: "🇦🇪",
-  norway: "🇳🇴",
-  iceland: "🇮🇸",
-  switzerland: "🇨🇭",
-  scotland: "🏴",
-  uk: "🇬🇧",
-  "united-kingdom": "🇬🇧",
-  france: "🇫🇷",
-  italy: "🇮🇹",
-  spain: "🇪🇸",
-  portugal: "🇵🇹",
-  greece: "🇬🇷",
-  austria: "🇦🇹",
-  netherlands: "🇳🇱",
-  denmark: "🇩🇰",
-  germany: "🇩🇪",
-  belgium: "🇧🇪",
-  "czech-republic": "🇨🇿",
-  turkey: "🇹🇷",
-  egypt: "🇪🇬",
-  morocco: "🇲🇦",
-  kenya: "🇰🇪",
-  tanzania: "🇹🇿",
-  "south-africa": "🇿🇦",
-  usa: "🇺🇸",
-  "united-states": "🇺🇸",
-  canada: "🇨🇦",
-  mexico: "🇲🇽",
-  peru: "🇵🇪",
-  brazil: "🇧🇷",
-  argentina: "🇦🇷",
-  chile: "🇨🇱",
-  australia: "🇦🇺",
-  "new-zealand": "🇳🇿",
-  hawaii: "🌺",
-  antarctica: "🇦🇶",
-};
-
-const COUNTRY_NAME_ALIASES: Record<string, string> = {
-  uk: "united-kingdom",
-  usa: "united-states",
-  uae: "united-arab-emirates",
-  "czech-republic": "czechia",
-  "myanmar": "myanmar-burma",
-  "bosnia-and-herzegovina": "bosnia-herzegovina",
-  "sao-tome-and-principe": "sao-tome-principe",
-  "trinidad-and-tobago": "trinidad-tobago",
-  "antigua-and-barbuda": "antigua-barbuda",
-  "saint-lucia": "st-lucia",
-  "saint-vincent-and-the-grenadines": "st-vincent-grenadines",
-  "saint-kitts-and-nevis": "st-kitts-nevis",
-  "ivory-coast": "cote-d-ivoire",
-  "palestine": "palestinian-territories",
-  "democratic-republic-of-the-congo": "congo-kinshasa",
-  "republic-of-the-congo": "congo-brazzaville",
-};
-
-const COUNTRY_FLAG_BY_NAME = buildCountryFlagByName();
-
-function getCountryFlag(countryName: string): string {
-  const key = normalizeCountryKey(countryName);
-  const aliasKey = COUNTRY_NAME_ALIASES[key] ?? key;
-
-  return COUNTRY_FLAG_EMOJIS[key] ?? COUNTRY_FLAG_BY_NAME.get(aliasKey) ?? countryName.trim().charAt(0).toUpperCase() ?? "📍";
-}
-
-function normalizeCountryKey(name: string): string {
-  return name
-    .trim()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-function buildCountryFlagByName(): Map<string, string> {
-  const map = new Map<string, string>();
-  if (typeof Intl === "undefined" || typeof Intl.DisplayNames === "undefined") {
-    return map;
-  }
-
-  try {
-    const displayNames = new Intl.DisplayNames(["en"], { type: "region" });
-    for (let first = 65; first <= 90; first++) {
-      for (let second = 65; second <= 90; second++) {
-        const code = String.fromCharCode(first, second);
-        const displayName = displayNames.of(code);
-        if (!displayName || displayName === code) continue;
-        const key = normalizeCountryKey(displayName);
-        map.set(key, toFlagEmoji(code));
-      }
-    }
-  } catch {
-    // Ignore Intl edge-case failures and gracefully fall back.
-  }
-
-  return map;
-}
-
-function toFlagEmoji(code: string): string {
-  const upper = code.toUpperCase();
-  return String.fromCodePoint(
-    127397 + upper.charCodeAt(0),
-    127397 + upper.charCodeAt(1),
-  );
-}
 
 function getBudgetBadges(
   country: Country,

@@ -125,8 +125,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
   const [layout, setLayout] = useState<"list" | "grid">(
     typeof window !== "undefined" && window.innerWidth < 768 ? "list" : "grid"
   );
-  const [filtersOpen, setFiltersOpen] = useState(false);
-  const [primaryFiltersOpen, setPrimaryFiltersOpen] = useState(false);
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
   const [railOpen, setRailOpen] = useState(bp !== "tablet");
   const [isWideMobile, setIsWideMobile] = useState(
@@ -140,6 +139,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
 
   const hasPrimaryFilters = selectedMonth.length > 0 || budgetFilter !== "all" || visitedFilter !== "all";
   const hasSecondaryFilters = viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all";
+  const activeFilterCount = (selectedMonth.length > 0 ? 1 : 0) + (budgetFilter !== "all" ? 1 : 0) + (visitedFilter !== "all" ? 1 : 0) + (viewMode !== "all" ? 1 : 0) + (visitedMode !== "all" ? 1 : 0) + (regionFilter !== "all" ? 1 : 0);
   const basisLabel = BUDGET_BASIS_OPTIONS.find((x) => x.value === budgetBasis)?.label ?? "Couple";
   const sortSummary = sortMode === "popular" ? "Popularity" : sortMode === "az" ? "A to Z" : "Z to A";
   const sortHelpText = `Sort: ${sortSummary}. Cards stay sectioned as Favorites, Planning, and Completed. Budget chips follow ${BUDGET_BASIS_META[budgetBasis].icon} ${basisLabel}.`;
@@ -403,22 +403,24 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
     <div className="h-full flex flex-col bg-slate-50 overflow-hidden">
       {/* Header */}
       <div className="border-b bg-white shrink-0">
-        {/* Mobile: compact row + expandable filter panels */}
-        <div className="md:hidden px-3 py-2 space-y-2">
-          <div className="flex items-center gap-1.5">
+        {/* Mobile: modern compact header */}
+        <div className="md:hidden px-3 py-2.5 space-y-2">
+          {/* Row 1: Search + action buttons */}
+          <div className="flex items-center gap-2">
             <div className="relative flex-1 min-w-0">
               <input
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search…"
-                className="w-full px-2 py-1.5 pr-8 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors h-8"
+                placeholder="Search destinations…"
+                className="w-full pl-8 pr-8 py-2 text-xs rounded-xl border border-gray-200 bg-gray-50/80 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors"
               />
+              <svg className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
               {search && (
                 <button
                   onClick={() => setSearch("")}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm p-0.5"
-                  title="Clear"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm p-0.5 focus-ring rounded"
+                  aria-label="Clear search"
                 >
                   ✕
                 </button>
@@ -426,81 +428,94 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
             </div>
 
             <button
-              onClick={() => {
-                setPrimaryFiltersOpen((o) => !o);
-                setFiltersOpen(false);
-              }}
-              className={`flex items-center justify-center w-8 h-8 rounded-lg border text-xs ${
-                primaryFiltersOpen || hasPrimaryFilters
-                  ? "bg-blue-50 text-blue-700 border-blue-200"
-                  : "text-gray-500 border-gray-200 hover:bg-gray-100"
+              onClick={() => setStatsOpen((o) => !o)}
+              className={`shrink-0 w-9 h-9 rounded-xl flex items-center justify-center transition-colors focus-ring ${
+                statsOpen ? "bg-blue-50 text-blue-600 border border-blue-200" : "text-gray-500 border border-gray-200 hover:bg-gray-50"
               }`}
-              title="Primary filters"
+              aria-label="View stats"
+              aria-expanded={statsOpen}
             >
-              🎚️
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M3 3v18h18"/><path d="M7 16V8"/><path d="M11 16V11"/><path d="M15 16V5"/><path d="M19 16V9"/></svg>
+            </button>
+          </div>
+
+          {/* Row 2: Filter chip + sort + layout + count */}
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={() => setMobileFiltersOpen((o) => !o)}
+              className={`relative shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all focus-ring ${
+                mobileFiltersOpen || activeFilterCount > 0
+                  ? "bg-blue-600 text-white shadow-sm"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              }`}
+              aria-label="Toggle filters"
+              aria-expanded={mobileFiltersOpen}
+            >
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M3 4h18l-7 8v5l-4 2V12z"/></svg>
+              Filters
+              {activeFilterCount > 0 && (
+                <span className={`ml-0.5 w-4 h-4 rounded-full text-[9px] font-bold flex items-center justify-center ${
+                  mobileFiltersOpen ? "bg-white/25 text-white" : "bg-blue-600 text-white"
+                }`}>
+                  {activeFilterCount}
+                </span>
+              )}
             </button>
 
             <button
-              onClick={() => {
-                setFiltersOpen((o) => !o);
-                setPrimaryFiltersOpen(false);
-              }}
-              className={`flex items-center justify-center w-8 h-8 rounded-lg border text-xs ${
-                filtersOpen || hasSecondaryFilters
-                  ? "bg-blue-50 text-blue-700 border-blue-200"
-                  : "text-gray-500 border-gray-200 hover:bg-gray-100"
-              }`}
-              title="Secondary filters"
+              onClick={() => setSortMode(sortMode === "popular" ? "az" : sortMode === "az" ? "za" : "popular")}
+              className="shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors focus-ring"
+              aria-label="Sort trips"
             >
-              ⚙️
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M3 7h6M3 12h10M3 17h14"/></svg>
+              {sortMode === "popular" ? "Popular" : sortMode === "az" ? "A→Z" : "Z→A"}
             </button>
 
             {canUseMobileGrid && (
               <button
                 onClick={() => setLayout(layout === "grid" ? "list" : "grid")}
-                className="flex items-center justify-center w-8 h-8 text-gray-500 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors"
-                title={layout === "grid" ? "Switch to list" : "Switch to grid"}
+                className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors focus-ring"
+                aria-label={layout === "grid" ? "Switch to list" : "Switch to grid"}
               >
-                {layout === "grid" ? "▦" : "≡"}
+                <span className="text-xs">{layout === "grid" ? "≡" : "▦"}</span>
               </button>
             )}
 
-            <button
-              onClick={() => setStatsOpen((o) => !o)}
-              className={`flex items-center justify-center w-8 h-8 rounded-lg border transition-colors ${
-                statsOpen ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-500 hover:bg-gray-100 border-gray-200"
-              }`}
-              title="View stats"
-            >
-              📊
-            </button>
+            <span className="ml-auto text-[10px] text-gray-400 font-medium tabular-nums">
+              {filtered.length}/{trips.length}
+            </span>
           </div>
 
-          {primaryFiltersOpen && (
-            <div className="rounded-xl border border-gray-200 bg-gray-50 p-2.5 space-y-2">
+          {/* Expandable unified filter panel */}
+          {mobileFiltersOpen && (
+            <div className="rounded-2xl border border-gray-200 bg-gradient-to-b from-gray-50 to-white p-3 space-y-3 shadow-sm">
               <div className="flex items-center justify-between">
-                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Primary filters</p>
-                {hasPrimaryFilters && (
+                <p className="text-xs font-bold text-gray-700">Filters</p>
+                {activeFilterCount > 0 && (
                   <button
-                    onClick={() => { setMonth([]); setBudgetBasis("couple"); setBudgetFilter("all"); setVisitedFilter("all"); }}
-                    className="text-[10px] font-semibold text-red-600"
+                    onClick={() => {
+                      setMonth([]); setBudgetBasis("couple"); setBudgetFilter("all"); setVisitedFilter("all");
+                      setViewMode("all"); setVisitedMode("all"); setRegionFilter("all");
+                    }}
+                    className="text-[10px] font-semibold text-red-500 hover:text-red-600 focus-ring rounded px-1"
                   >
-                    Clear
+                    Clear all
                   </button>
                 )}
               </div>
 
+              {/* Month */}
               <div>
-                <p className="text-[10px] font-bold text-gray-500 mb-1">Month</p>
+                <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Month</p>
                 <div className="grid grid-cols-4 gap-1">
                   {MONTHS.map((m) => (
                     <button
                       key={m}
                       onClick={() => setMonth(selectedMonth.includes(m) ? selectedMonth.filter((x) => x !== m) : [...selectedMonth, m])}
-                      className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                      className={`py-1.5 rounded-lg text-[10px] font-semibold transition-colors focus-ring ${
                         selectedMonth.includes(m)
-                          ? "bg-blue-600 text-white"
-                          : "bg-white text-gray-600 border border-gray-200"
+                          ? "bg-blue-600 text-white shadow-sm"
+                          : "bg-white text-gray-600 border border-gray-200 hover:border-gray-300"
                       }`}
                     >
                       {m}
@@ -509,16 +524,17 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                 </div>
               </div>
 
+              {/* Budget */}
               <div>
-                <p className="text-[10px] font-bold text-gray-500 mb-1">Budget basis</p>
-                <div className="grid grid-cols-3 gap-1 mb-2">
+                <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Budget</p>
+                <div className="flex items-center gap-1 mb-1.5">
                   {BUDGET_BASIS_OPTIONS.map(({ value, label }) => (
                     <button
                       key={value}
                       onClick={() => setBudgetBasis(value)}
-                      className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                      className={`flex-1 py-1 rounded-lg text-[10px] font-semibold transition-colors focus-ring ${
                         budgetBasis === value
-                          ? "bg-blue-600 text-white"
+                          ? "bg-blue-600 text-white shadow-sm"
                           : "bg-white text-gray-600 border border-gray-200"
                       }`}
                     >
@@ -526,16 +542,14 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                     </button>
                   ))}
                 </div>
-                <p className="text-[10px] font-bold text-gray-500 mb-1">Budget</p>
-                <p className="text-[9px] text-gray-400 mb-1">Basis: {BUDGET_BASIS_OPTIONS.find((x) => x.value === budgetBasis)?.label}</p>
-                <div className="grid grid-cols-3 gap-1">
+                <div className="flex items-center gap-1">
                   {BUDGET_OPTIONS.map(({ value, label }) => (
                     <button
                       key={value}
                       onClick={() => setBudgetFilter(budgetFilter === value ? "all" : value)}
-                      className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                      className={`flex-1 py-1 rounded-lg text-[10px] font-semibold transition-colors focus-ring ${
                         budgetFilter === value
-                          ? "bg-amber-500 text-white"
+                          ? "bg-amber-500 text-white shadow-sm"
                           : "bg-white text-gray-600 border border-gray-200"
                       }`}
                     >
@@ -545,104 +559,85 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                 </div>
               </div>
 
-              <div>
-                <p className="text-[10px] font-bold text-gray-500 mb-1">Visited</p>
-                <div className="grid grid-cols-3 gap-1">
-                  {[
-                    { value: "all", label: "All" },
-                    { value: "unvisited", label: "Not visited" },
-                    { value: "visited", label: "Visited" },
-                  ].map((item) => (
-                    <button
-                      key={item.value}
-                      onClick={() => setVisitedFilter(item.value as VisitedFilter)}
-                      className={`py-1.5 rounded-lg text-[10px] font-semibold ${
-                        visitedFilter === item.value
-                          ? "bg-blue-600 text-white"
-                          : "bg-white text-gray-600 border border-gray-200"
-                      }`}
-                    >
-                      {item.label}
-                    </button>
-                  ))}
+              {/* Visited + View + Status in a compact 2-col grid */}
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Visited</p>
+                  <div className="space-y-1">
+                    {[
+                      { value: "all", label: "All" },
+                      { value: "unvisited", label: "Not visited" },
+                      { value: "visited", label: "Visited" },
+                    ].map((item) => (
+                      <button
+                        key={item.value}
+                        onClick={() => setVisitedFilter(item.value as VisitedFilter)}
+                        className={`w-full py-1 rounded-lg text-[10px] font-semibold transition-colors focus-ring ${
+                          visitedFilter === item.value
+                            ? "bg-blue-600 text-white shadow-sm"
+                            : "bg-white text-gray-600 border border-gray-200"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Status</p>
+                  <div className="space-y-1">
+                    {["all", "completed", "in-progress", "not-started"].map((m) => (
+                      <button
+                        key={m}
+                        onClick={() => setVisitedMode(m as VisitedMode)}
+                        className={`w-full py-1 rounded-lg text-[10px] font-semibold transition-colors focus-ring ${
+                          visitedMode === m
+                            ? "bg-blue-600 text-white shadow-sm"
+                            : "bg-white text-gray-600 border border-gray-200"
+                        }`}
+                      >
+                        {m === "all" ? "All" : m === "completed" ? "Done" : m === "in-progress" ? "In progress" : "Not started"}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
 
-          {filtersOpen && (
-            <div className="rounded-xl border border-gray-200 bg-gray-50 p-2.5 space-y-2">
-              <div className="flex items-center justify-between">
-                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Secondary filters</p>
-                {hasSecondaryFilters && (
-                  <button
-                    onClick={() => { setViewMode("all"); setVisitedMode("all"); setRegionFilter("all"); }}
-                    className="text-[10px] font-semibold text-red-600"
+              {/* View + Region row */}
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5">View</p>
+                  <div className="space-y-1">
+                    {["all", "combo", "solo"].map((m) => (
+                      <button
+                        key={m}
+                        onClick={() => setViewMode(m as ViewMode)}
+                        className={`w-full py-1 rounded-lg text-[10px] font-semibold transition-colors focus-ring ${
+                          viewMode === m
+                            ? "bg-blue-600 text-white shadow-sm"
+                            : "bg-white text-gray-600 border border-gray-200"
+                        }`}
+                      >
+                        {m === "all" ? "All" : m === "combo" ? "Combo" : "Solo"}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Region</p>
+                  <select
+                    value={regionFilter}
+                    onChange={(e) => setRegionFilter(e.target.value as Region | "all")}
+                    className="w-full px-2 py-1.5 rounded-lg text-[10px] font-semibold border border-gray-200 bg-white text-gray-700 focus-ring"
                   >
-                    Clear
-                  </button>
-                )}
-              </div>
-
-              <div>
-                <p className="text-[10px] font-bold text-gray-500 mb-1">View</p>
-                <div className="grid grid-cols-3 gap-1">
-                  {["all", "combo", "solo"].map((m) => (
-                    <button
-                      key={m}
-                      onClick={() => setViewMode(m as ViewMode)}
-                      className={`py-1.5 rounded-lg text-[10px] font-semibold ${
-                        viewMode === m ? "bg-blue-600 text-white" : "bg-white text-gray-600 border border-gray-200"
-                      }`}
-                    >
-                      {m === "all" ? "All" : m === "combo" ? "Combo" : "Solo"}
-                    </button>
-                  ))}
+                    <option value="all">All regions</option>
+                    {ALL_REGIONS.map((r) => (
+                      <option key={r} value={r}>{r}</option>
+                    ))}
+                  </select>
                 </div>
-              </div>
-
-              <div>
-                <p className="text-[10px] font-bold text-gray-500 mb-1">Status</p>
-                <div className="grid grid-cols-2 gap-1">
-                  {["all", "completed", "in-progress", "not-started"].map((m) => (
-                    <button
-                      key={m}
-                      onClick={() => setVisitedMode(m as VisitedMode)}
-                      className={`py-1.5 rounded-lg text-[10px] font-semibold ${
-                        visitedMode === m ? "bg-blue-600 text-white" : "bg-white text-gray-600 border border-gray-200"
-                      }`}
-                    >
-                      {m === "all" ? "All" : m === "completed" ? "Completed" : m === "in-progress" ? "In progress" : "Not started"}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <p className="text-[10px] font-bold text-gray-500 mb-1">Region</p>
-                <select
-                  value={regionFilter}
-                  onChange={(e) => setRegionFilter(e.target.value as Region | "all")}
-                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700"
-                >
-                  <option value="all">All regions</option>
-                  {ALL_REGIONS.map((r) => (
-                    <option key={r} value={r}>{r}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <p className="text-[10px] font-bold text-gray-500 mb-1">Sort</p>
-                <select
-                  value={sortMode}
-                  onChange={(e) => setSortMode(e.target.value as SortMode)}
-                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700"
-                >
-                  <option value="popular">Popularity</option>
-                  <option value="az">A to Z</option>
-                  <option value="za">Z to A</option>
-                </select>
               </div>
             </div>
           )}
@@ -658,7 +653,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
           <div className="fixed left-3 right-3 bottom-3 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-4">
             <div className="flex items-center justify-between mb-3">
               <p className="text-sm font-semibold text-slate-700">Travel Progress</p>
-              <button onClick={() => setStatsOpen(false)} className="text-gray-400 hover:text-gray-600 p-1">✕</button>
+              <button onClick={() => setStatsOpen(false)} className="text-gray-400 hover:text-gray-600 p-1 focus-ring rounded" aria-label="Close stats">✕</button>
             </div>
 
             {/* Visited progress */}
@@ -721,27 +716,26 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
       ) : (
         <div className="hidden md:flex flex-1 overflow-hidden">
           {railOpen ? (
-            <aside className="w-72 lg:w-80 shrink-0 border-r border-gray-200 bg-white overflow-y-auto p-4 space-y-4">
+            <aside className="w-72 lg:w-80 shrink-0 border-r border-gray-200 bg-gradient-to-b from-white to-slate-50/50 overflow-y-auto p-4 space-y-5">
               <div className="flex items-center justify-between">
-                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Primary filters</p>
+                <p className="text-xs font-bold text-gray-600 uppercase tracking-wider">Filters</p>
                 <button
                   onClick={() => setRailOpen(false)}
-                  className="px-2 py-1 text-sm rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50"
-                  title="Hide filters"
+                  className="px-2 py-1 text-sm rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50 focus-ring"
                   aria-label="Hide filters"
                 >
                   ⟨
                 </button>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <div>
-                  <p className="text-[10px] font-semibold text-gray-500 mb-1">Month</p>
+                  <p className="text-[11px] font-semibold text-gray-500 mb-1.5">Month</p>
                   <div className="grid grid-cols-4 gap-1">
                     {MONTHS.map((m) => (
                       <button
                         key={m}
                         onClick={() => setMonth(selectedMonth.includes(m) ? selectedMonth.filter((x) => x !== m) : [...selectedMonth, m])}
-                        className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                        className={`py-1.5 rounded-lg text-[10px] font-semibold focus-ring ${
                           selectedMonth.includes(m)
                             ? "bg-blue-600 text-white"
                             : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -754,13 +748,13 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-semibold text-gray-500 mb-1">Budget + travelers</p>
+                  <p className="text-[11px] font-semibold text-gray-500 mb-1.5">Budget + travelers</p>
                   <div className="grid grid-cols-3 gap-1 mb-1.5">
                     {BUDGET_BASIS_OPTIONS.map(({ value, label }) => (
                       <button
                         key={value}
                         onClick={() => setBudgetBasis(value)}
-                        className={`py-1.5 rounded-lg text-[10px] font-semibold ${
+                        className={`py-1.5 rounded-lg text-[10px] font-semibold focus-ring ${
                           budgetBasis === value
                             ? "bg-blue-600 text-white"
                             : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -775,23 +769,24 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                       <button
                         key={value}
                         onClick={() => setBudgetFilter(budgetFilter === value ? "all" : value)}
-                        className={`w-full px-3 py-2 rounded-lg text-left ${
-                          budgetFilter === value ? "bg-amber-100 text-amber-800 border border-amber-200" : "bg-gray-50 text-gray-600 border border-transparent hover:bg-gray-100"
+                        className={`w-full px-3 py-2 rounded-xl text-left transition-colors focus-ring ${
+                          budgetFilter === value ? "bg-amber-50 text-amber-800 border border-amber-200 shadow-sm" : "bg-white text-gray-600 border border-gray-100 hover:bg-gray-50 hover:border-gray-200"
                         }`}
                       >
                         <p className="text-[11px] font-semibold">{label}</p>
-                        <p className="text-[10px] opacity-75">{desc}</p>
+                        <p className="text-[10px] opacity-70">{desc}</p>
                       </button>
                     ))}
                   </div>
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-semibold text-gray-500 mb-1">Visited</p>
+                  <p className="text-[11px] font-semibold text-gray-500 mb-1.5">Visited</p>
                   <select
                     value={visitedFilter}
                     onChange={(e) => setVisitedFilter(e.target.value as VisitedFilter)}
-                    className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700"
+                    className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700 focus-ring"
+                    aria-label="Visited filter"
                   >
                     <option value="all">All countries</option>
                     <option value="unvisited">Not visited</option>
@@ -800,13 +795,13 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-gray-100 space-y-2">
-                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Trip filters</p>
+              <div className="pt-3 border-t border-gray-200 space-y-3">
+                <p className="text-xs font-bold text-gray-600 uppercase tracking-wider">Trip filters</p>
                 <select
                   value={viewMode}
                   onChange={(e) => setViewMode(e.target.value as ViewMode)}
-                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700"
-                  title="Trip type"
+                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700 focus-ring"
+                  aria-label="Trip type"
                 >
                   <option value="all">All trips</option>
                   <option value="combo">Combo trips</option>
@@ -815,8 +810,8 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                 <select
                   value={visitedMode}
                   onChange={(e) => setVisitedMode(e.target.value as VisitedMode)}
-                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700"
-                  title="Trip progress"
+                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700 focus-ring"
+                  aria-label="Trip progress"
                 >
                   <option value="all">All status</option>
                   <option value="completed">Completed</option>
@@ -826,8 +821,8 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                 <select
                   value={regionFilter}
                   onChange={(e) => setRegionFilter(e.target.value as Region | "all")}
-                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700"
-                  title="Region filter"
+                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700 focus-ring"
+                  aria-label="Region filter"
                 >
                   <option value="all">All regions</option>
                   {ALL_REGIONS.map((r) => (
@@ -845,15 +840,15 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                       setVisitedMode("all");
                       setRegionFilter("all");
                     }}
-                    className="w-full px-3 py-2 rounded-lg text-xs font-semibold text-red-600 border border-red-100 hover:bg-red-50"
+                    className="w-full px-3 py-2 rounded-xl text-xs font-semibold text-red-600 border border-red-200 hover:bg-red-50 transition-colors focus-ring"
                   >
                     Clear all filters
                   </button>
                 )}
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-gray-50 p-3 space-y-2">
-                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Trip stats</p>
+              <div className="rounded-xl border border-gray-200 bg-white p-3.5 space-y-2.5 shadow-sm">
+                <p className="text-xs font-bold text-gray-600 uppercase tracking-wider">Stats</p>
                 <div className="flex items-baseline gap-1">
                   <span className="text-xl font-black text-slate-800">{totalVisited}</span>
                   <span className="text-xs text-slate-400">/ {uniqueCountries} visited</span>
@@ -894,8 +889,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
             <aside className="w-11 shrink-0 border-r border-gray-200 bg-white flex items-start justify-center pt-3">
               <button
                 onClick={() => setRailOpen(true)}
-                className="w-7 h-7 text-sm rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50"
-                title="Show filters"
+                className="w-7 h-7 text-sm rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50 focus-ring"
                 aria-label="Show filters"
               >
                 ⟩
@@ -918,8 +912,8 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                     {search && (
                       <button
                         onClick={() => setSearch("")}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm p-0.5"
-                        title="Clear search"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm p-0.5 focus-ring rounded"
+                        aria-label="Clear search"
                       >
                         ✕
                       </button>
@@ -929,16 +923,14 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                   <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
                     <button
                       onClick={() => setLayout("list")}
-                      className={`px-2.5 py-2 text-sm leading-none ${layout === "list" ? "bg-blue-50 text-blue-700" : "text-gray-600 hover:bg-gray-50"}`}
-                      title="List view"
+                      className={`px-2.5 py-2 text-sm leading-none focus-ring ${layout === "list" ? "bg-blue-50 text-blue-700" : "text-gray-600 hover:bg-gray-50"}`}
                       aria-label="List view"
                     >
                       ≡
                     </button>
                     <button
                       onClick={() => setLayout("grid")}
-                      className={`px-2.5 py-2 text-sm leading-none border-l border-gray-200 ${layout === "grid" ? "bg-blue-50 text-blue-700" : "text-gray-600 hover:bg-gray-50"}`}
-                      title="Grid view"
+                      className={`px-2.5 py-2 text-sm leading-none border-l border-gray-200 focus-ring ${layout === "grid" ? "bg-blue-50 text-blue-700" : "text-gray-600 hover:bg-gray-50"}`}
                       aria-label="Grid view"
                     >
                       ▦
@@ -958,7 +950,8 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                   >
                     <select
                       value={sortMode}
-                      onChange={(e) => setSortMode(e.target.value as SortMode)}
+                      onChange={(e) => { closeSortHelp(); setSortMode(e.target.value as SortMode); }}
+                      onMouseDown={closeSortHelp}
                       className="px-2.5 py-2 text-xs font-semibold rounded-lg border border-gray-200 bg-white text-gray-700"
                       aria-label="Sort trips"
                     >
@@ -1018,8 +1011,8 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
       {isEnabled("tripGroups") && !creatingNew && !editingMain && (
         <button
           onClick={() => { setCreatingNew(true); setEditingMain(null); }}
-          className="md:hidden fixed bottom-5 right-5 z-30 w-14 h-14 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 active:scale-95 transition-all flex items-center justify-center text-2xl"
-          title="New Trip"
+          className="md:hidden fixed bottom-5 right-5 z-30 w-14 h-14 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 active:scale-95 transition-all flex items-center justify-center text-2xl focus-ring"
+          aria-label="New Trip"
         >
           +
         </button>
@@ -1030,11 +1023,25 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
         <div
           className="fixed inset-0 z-[9998] flex items-end bg-black/40 backdrop-blur-sm"
           onClick={(e) => { if (e.target === e.currentTarget) { setEditingMain(null); setCreatingNew(false); } }}
+          role="dialog"
+          aria-label={creatingNew ? "Create new trip" : "Edit trip"}
+          aria-modal="true"
         >
           <div
             className="w-full max-h-[85vh] overflow-y-auto rounded-t-2xl bg-white shadow-2xl animate-[slideUp_0.2s_ease-out] safe-bottom"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Close button */}
+            <div className="sticky top-0 z-10 flex justify-between items-center px-4 pt-3 pb-1 bg-white border-b border-gray-100">
+              <p className="text-xs font-bold text-gray-700">{creatingNew ? "New Trip" : "Edit Trip"}</p>
+              <button
+                onClick={() => { setEditingMain(null); setCreatingNew(false); }}
+                className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 focus-ring"
+                aria-label="Close editor"
+              >
+                ✕
+              </button>
+            </div>
             {mobileEditorContent}
           </div>
         </div>,
@@ -1326,7 +1333,8 @@ function TripSection({ icon, label, count, color, children, defaultOpen = true }
     <div>
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-2 mb-3 w-full text-left group"
+        className="flex items-center gap-2 mb-3 w-full text-left group focus-ring rounded-lg px-1 -mx-1"
+        aria-expanded={open}
       >
         <span className={`text-[10px] transition-transform ${open ? "rotate-90" : ""}`}>▶</span>
         <span className="text-sm">{icon}</span>
@@ -1424,9 +1432,11 @@ function TripRow({
   const accent = REGION_ACCENT[trip.region] ?? "border-l-slate-300";
 
   return (
-    <div
+    <article
       onClick={() => onSelect(trip.main)}
-      className={`rounded-xl border border-l-[3px] overflow-hidden transition-all group cursor-pointer ${accent} ${
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelect(trip.main); } }}
+      tabIndex={0}
+      className={`rounded-xl border border-l-[3px] overflow-hidden transition-all group cursor-pointer focus-ring ${accent} ${
         trip.allVisited
           ? "bg-emerald-50/60 border-emerald-200"
           : "bg-white border-gray-200 hover:border-blue-200 hover:shadow-md hover:-translate-y-0.5"
@@ -1451,8 +1461,8 @@ function TripRow({
              {onEdit && (
                <button
                  onClick={(e) => { e.stopPropagation(); onEdit(); }}
-                 className="text-[11px] text-gray-400 hover:text-blue-600 px-1 py-0.5 rounded hover:bg-blue-50 transition-all"
-                 title="Edit trip"
+                 className="text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-1 rounded hover:bg-blue-50 transition-all focus-ring"
+                 aria-label="Edit trip"
                >
                  ✏️
                </button>
@@ -1545,7 +1555,7 @@ function TripRow({
             <button
               onClick={(e) => { e.stopPropagation(); onEdit(); }}
               className="md:opacity-0 md:group-hover:opacity-100 text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-0.5 rounded hover:bg-blue-50 transition-all"
-              title="Edit trip"
+              aria-label="Edit trip"
             >
               ✏️
             </button>
@@ -1644,7 +1654,7 @@ function TripRow({
       </>
       )}
       </div>
-    </div>
+    </article>
   );
 }
 
