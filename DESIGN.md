@@ -19,7 +19,7 @@ For features, setup, and user-facing docs, see [README.md](./README.md).
 | State | **Custom hooks + localStorage** | No external state library |
 | Routing | **URL hash** | Zero deps, back/forward works |
 | Data | **Local JSON** | Ships with app, works offline |
-| Tests | **Vitest** | 305 tests across 38 files |
+| Tests | **Vitest** | 309 tests across 40 files |
 
 **Zero runtime dependencies** beyond React + MapLibre. No routing library, no state management library.
 
@@ -320,7 +320,7 @@ ChatModal ImportView → paste text or share link
 
 ```bash
 npx tsc --noEmit    # type check
-npm test            # vitest (305 tests, 38 files)
+npm test            # vitest (309 tests, 40 files)
 npm run build       # tsc + vite build
 ```
 

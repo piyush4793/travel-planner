@@ -34,6 +34,8 @@ export default defineConfig({
         "src/main.tsx",
         // Type-only and barrel exports — no runtime logic to test
         "src/core/types.ts",
+        // CountryRule/CityRule declarations are type-only; runtime coverage is not meaningful.
+        "src/core/data/itineraryRules.ts",
         "src/core/ports/**",
         "src/core/index.ts",
         // Data loader uses import.meta.glob (Vite-only, not unit-testable)
