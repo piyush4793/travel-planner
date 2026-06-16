@@ -280,6 +280,18 @@ describe("App orchestration", () => {
     expect(window.location.hash).toBe(ROUTES.DISCOVER);
   });
 
+  it("navigates to trips (home) when brand icon is clicked", async () => {
+    const user = userEvent.setup();
+    setHashRoute("discover");
+    render(<App />);
+
+    expect(await screen.findByTestId(TEST_IDS.DISCOVER_VIEW)).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Home" }));
+    expect(await screen.findByTestId(TEST_IDS.TRIPS_VIEW)).toBeInTheDocument();
+    expect(window.location.hash).toBe(ROUTES.TRIPS);
+  });
+
   it("wires country selection from Trips and Calendar into CountryPanel", async () => {
     const user = userEvent.setup();
     render(<App />);

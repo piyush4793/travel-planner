@@ -162,11 +162,11 @@ export default function App() {
     <div className="flex flex-col h-dvh overflow-hidden bg-slate-50">
       {/* Header */}
       <header className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 text-white shrink-0 shadow-md">
-        <div className="flex items-center gap-2 shrink-0">
+        <button onClick={() => setView("trips")} className="flex items-center gap-2 shrink-0 hover:opacity-90 transition-opacity" aria-label="Home">
           {/* Brand icon — all screens */}
           <img src="icon-192.svg" alt="Roamwise" className="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-lg" />
           <span className="hidden md:inline text-lg font-black tracking-tight">Roamwise</span>
-        </div>
+        </button>
 
         {/* Desktop nav pills */}
         <div className="hidden md:flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto" role="navigation" aria-label="Main navigation">
