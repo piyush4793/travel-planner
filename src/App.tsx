@@ -174,7 +174,7 @@ export default function App() {
             <button key={v} onClick={() => setView(v)}
               data-tour={`nav-${v}`}
               aria-current={view === v ? "page" : undefined}
-              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all focus-ring ${
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors focus-ring ${
                 view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
               }`}>
               {VIEW_LABELS[v]}
@@ -188,7 +188,7 @@ export default function App() {
             <button key={v} onClick={() => setView(v)}
               data-tour={isMobile ? `nav-${v}` : undefined}
               aria-current={view === v ? "page" : undefined}
-              className={`px-2.5 py-1.5 rounded-full text-[11px] font-semibold transition-all min-h-[36px] focus-ring ${
+              className={`px-2.5 py-1.5 rounded-full text-[11px] font-semibold transition-colors min-h-[36px] focus-ring ${
                 view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
               }`}>
               {VIEW_LABELS[v]}

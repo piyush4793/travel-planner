@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import manifestData from "../../data/rules/index.json";
 import catalogData from "../../data/worldCatalog.json";
 import type { Country, CatalogEntry } from "../core/types";
@@ -92,6 +92,8 @@ export function useCountryStore() {
   useEffect(() => { saveLS(LS_KEYS.DELETED, deleted); }, [deleted]);
 
   // Enrich seed countries in idle-time chunks to avoid blocking first render
+  const enrichTimerRef = useRef<number>(0);
+  const enrichIdleRef = useRef<number>(0);
   useEffect(() => {
     const names = [...SEED_NAMES];
     let cancelled = false;
@@ -111,20 +113,24 @@ export function useCountryStore() {
         });
         if (idx < names.length) {
           if (typeof requestIdleCallback === "function") {
-            requestIdleCallback(() => processChunk());
+            enrichIdleRef.current = requestIdleCallback(() => processChunk());
           } else {
-            setTimeout(processChunk, 50);
+            enrichTimerRef.current = window.setTimeout(processChunk, 50);
           }
         }
       });
     }
 
     if (typeof requestIdleCallback === "function") {
-      requestIdleCallback(() => processChunk());
+      enrichIdleRef.current = requestIdleCallback(() => processChunk());
     } else {
-      setTimeout(processChunk, 50);
+      enrichTimerRef.current = window.setTimeout(processChunk, 50);
     }
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+      if (enrichTimerRef.current) clearTimeout(enrichTimerRef.current);
+      if (enrichIdleRef.current && typeof cancelIdleCallback === "function") cancelIdleCallback(enrichIdleRef.current);
+    };
   }, []);
 
   const visited = usePersistedSet(LS_KEYS.VISITED, () => new Set(loadLS<string[]>(LS_KEYS.VISITED, [])));

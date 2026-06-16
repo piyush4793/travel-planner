@@ -195,18 +195,33 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
         </div>
 
         {/* Tab switcher */}
-        <div className="flex gap-1 bg-slate-100 rounded-xl p-1">
+        <div className="flex gap-1 bg-slate-100 rounded-xl p-1" role="tablist" aria-label="Settings sections" onKeyDown={(e) => {
+          const tabs: SettingsTab[] = showAi ? ["ai", "backup"] : ["backup"];
+          const idx = tabs.indexOf(tab);
+          if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); setTab(tabs[(idx + 1) % tabs.length]); }
+          else if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); setTab(tabs[(idx - 1 + tabs.length) % tabs.length]); }
+        }}>
           {showAi && (
             <button
+              role="tab"
+              aria-selected={tab === "ai"}
+              aria-controls="settings-panel-ai"
+              id="settings-tab-ai"
+              tabIndex={tab === "ai" ? 0 : -1}
               onClick={() => setTab("ai")}
-              className={"flex-1 px-3 py-2 rounded-lg text-xs font-semibold transition-all " + (tab === "ai" ? "bg-white text-blue-700 shadow-sm" : "text-slate-500 hover:text-slate-700")}
+              className={"flex-1 px-3 py-2 rounded-lg text-xs font-semibold transition-colors focus-ring " + (tab === "ai" ? "bg-white text-blue-700 shadow-sm" : "text-slate-500 hover:text-slate-700")}
             >
               {"\u{1F916}"} AI
             </button>
           )}
           <button
+            role="tab"
+            aria-selected={tab === "backup"}
+            aria-controls="settings-panel-backup"
+            id="settings-tab-backup"
+            tabIndex={tab === "backup" ? 0 : -1}
             onClick={() => setTab("backup")}
-            className={"flex-1 px-3 py-2 rounded-lg text-xs font-semibold transition-all " + (tab === "backup" ? "bg-white text-blue-700 shadow-sm" : "text-slate-500 hover:text-slate-700")}
+            className={"flex-1 px-3 py-2 rounded-lg text-xs font-semibold transition-colors focus-ring " + (tab === "backup" ? "bg-white text-blue-700 shadow-sm" : "text-slate-500 hover:text-slate-700")}
           >
             {"\u{1F4BE}"} Backup
           </button>
@@ -214,7 +229,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
 
         {/* AI Tab */}
         {tab === "ai" && showAi && (
-          <div className="space-y-4">
+          <div className="space-y-4" role="tabpanel" id="settings-panel-ai" aria-labelledby="settings-tab-ai">
             <div className="space-y-1.5">
               <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Provider</label>
               <div className="relative">
@@ -337,7 +352,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
 
         {/* Backup Tab */}
         {tab === "backup" && (
-          <div className="space-y-4">
+          <div className="space-y-4" role="tabpanel" id="settings-panel-backup" aria-labelledby="settings-tab-backup">
             <p className="text-[10px] text-slate-400 leading-relaxed">
               All your travel data lives in this browser. Export backups to keep it safe.
             </p>

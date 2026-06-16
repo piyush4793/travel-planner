@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 
 type Props = {
@@ -29,8 +29,29 @@ export default function FilterChip({ label, active, children }: Props) {
     setOpen(o => !o);
   }
 
+  // Focus trap: move focus into panel when opened, trap Tab within
+  const trapFocus = useCallback((e: KeyboardEvent) => {
+    if (e.key !== "Tab" || !panelRef.current) return;
+    const items = panelRef.current.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (!items.length) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }, []);
+
   useEffect(() => {
     if (!open) return;
+    // Move focus to first focusable in panel
+    requestAnimationFrame(() => {
+      const items = panelRef.current?.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (items?.length) items[0].focus();
+    });
+
     function onDown(e: MouseEvent) {
       if (
         !btnRef.current?.contains(e.target as Node) &&
@@ -42,8 +63,13 @@ export default function FilterChip({ label, active, children }: Props) {
     }
     document.addEventListener("mousedown", onDown);
     document.addEventListener("keydown", onKey);
-    return () => { document.removeEventListener("mousedown", onDown); document.removeEventListener("keydown", onKey); };
-  }, [open]);
+    document.addEventListener("keydown", trapFocus);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("keydown", trapFocus);
+    };
+  }, [open, trapFocus]);
 
   return (
     <>
