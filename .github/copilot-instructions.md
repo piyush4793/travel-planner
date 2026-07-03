@@ -315,8 +315,12 @@ All persistence uses `loadLS()` / `saveLS()` from `src/utils/storage.ts`. Keys a
 | `LAST_BACKUP` | `tp_last_backup` | ISO timestamp of last backup |
 | `BACKUP_FREQUENCY` | `tp_backup_frequency` | Reminder cadence |
 | `BACKUP_SCHEDULE` | `tp_backup_schedule` | Backup scheduling metadata |
+| `FRE_DONE` | `tp_fre_done` | First-run experience completed/dismissed |
+| `SCHEMA_VERSION` | `tp_schema_version` | Persisted-data schema version |
 
 No server sync — refresh survival is purely localStorage. `usePersistedSet` backs the set-style keys (`visited`, `favorites`, `myList`).
+
+**Schema migrations** (`src/core/migrations.ts`): `runMigrations()` runs once in `main.tsx` before any hook reads storage. Bump `SCHEMA_VERSION` and append an ordered `MIGRATIONS` entry to evolve a persisted shape; pre-versioning stores are stamped as the v1 baseline. The runner never throws so a bad migration can't block boot.
 
 ---
 

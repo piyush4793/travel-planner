@@ -347,6 +347,18 @@ All keys live in `src/core/lsKeys.ts` — never hardcode strings.
 | `tp_last_backup` | ISO timestamp of last backup |
 | `tp_backup_frequency` | Reminder cadence: daily / weekly / never |
 | `tp_backup_schedule` | Backup reminder schedule metadata |
+| `tp_fre_done` | First-run experience completed/dismissed flag |
+| `tp_schema_version` | Persisted-data schema version (see Schema migrations) |
+
+### Schema migrations
+
+`src/core/migrations.ts` owns forward-compatible persistence upgrades:
+
+- `SCHEMA_VERSION` is the current on-disk shape version (baseline `1`).
+- `MIGRATIONS` is an **append-only, ordered** registry of `{ version, description, migrate }`. Each entry upgrades data _to_ its `version`.
+- `runMigrations()` is called once in `main.tsx` **before any hook reads storage**. It applies every pending migration in ascending order, then stamps `tp_schema_version`. It never throws — a failed migration is logged and boot continues (hooks still fall back to defaults via `loadLS`).
+- Pre-versioning stores (data present, no version key) are treated as the v1 baseline and simply stamped — no transform, because the shipped shapes _are_ v1.
+- To evolve a shape: bump `SCHEMA_VERSION`, append a `Migration` with the new version, and add tests in `src/test/migrations.test.ts`.
 
 ---
 
