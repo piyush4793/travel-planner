@@ -55,6 +55,7 @@ interface Props {
 export default function ItineraryModal({ plan, country, rule, onClose }: Props) {
   const groups = useMemo(() => groupDays(plan.days, rule), [plan.days, rule]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [jumpCity, setJumpCity] = useState<string | null>(null);
 
   return (
     <ModalShell
@@ -103,18 +104,23 @@ export default function ItineraryModal({ plan, country, rule, onClose }: Props) 
                 <div className="md:hidden mt-2 relative">
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
+                    aria-haspopup="listbox"
+                    aria-expanded={dropdownOpen}
                     className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-300 bg-white/10 px-3 py-1.5 min-h-[32px] rounded-full hover:bg-white/20 hover:text-white transition-colors focus-ring"
                   >
-                    <span>Jump to city…</span>
+                    <span>{jumpCity ?? "Jump to city…"}</span>
                     <span className={`transition-transform ${dropdownOpen ? "rotate-180" : ""}`}>▾</span>
                   </button>
                   {dropdownOpen && (
-                    <div className="absolute top-full left-0 mt-1 bg-slate-800 border border-slate-600 rounded-lg shadow-xl z-20 min-w-[160px] py-1">
+                    <div className="absolute top-full left-0 mt-1 bg-slate-800 border border-slate-600 rounded-lg shadow-xl z-20 min-w-[160px] py-1" role="listbox">
                       {groups.map((g) => (
                         <button
                           key={g.name}
+                          role="option"
+                          aria-selected={jumpCity === g.name}
                           onClick={() => {
                             document.getElementById(`city-${g.name}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                            setJumpCity(g.name);
                             setDropdownOpen(false);
                           }}
                           className="w-full text-left px-3 py-2 min-h-[36px] text-xs text-slate-300 hover:bg-white/10 hover:text-white transition-colors focus-ring"
