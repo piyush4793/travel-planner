@@ -1,15 +1,18 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import ShareButton from "../../components/country/panel/ShareButton";
 import type { Country } from "../../core/types";
 import type { TripPlan } from "../../core/utils/tripPlans";
 
-const { exportPdfMock, isEnabledMock } = vi.hoisted(() => ({
-  exportPdfMock: vi.fn(),
+const { buildPdfMock, isEnabledMock } = vi.hoisted(() => ({
+  buildPdfMock: vi.fn(() => new Blob(["%PDF-1.7"], { type: "application/pdf" })),
   isEnabledMock: vi.fn(),
 }));
 
-vi.mock("../../utils/pdfExport", () => ({ exportItineraryAsPdf: exportPdfMock }));
+vi.mock("../../utils/pdfDocument", () => ({
+  buildItineraryPdfBlob: buildPdfMock,
+  itineraryPdfName: () => "India-itinerary.pdf",
+}));
 vi.mock("../../core/featureFlags", () => ({ isEnabled: isEnabledMock }));
 
 const COUNTRY: Country = {
@@ -29,52 +32,102 @@ const PLAN: TripPlan = {
   note: "note",
 };
 
+function setShare(share: unknown, canShare: unknown) {
+  Object.defineProperty(navigator, "share", { value: share, configurable: true });
+  Object.defineProperty(navigator, "canShare", { value: canShare, configurable: true });
+}
+
 let writeTextMock: ReturnType<typeof vi.fn>;
 
 beforeEach(() => {
   vi.clearAllMocks();
   isEnabledMock.mockReturnValue(true);
   writeTextMock = vi.fn().mockResolvedValue(undefined);
-  Object.defineProperty(navigator, "clipboard", {
-    value: { writeText: writeTextMock },
-    configurable: true,
-  });
-  // Ensure clipboard path (not Web Share) is exercised
-  Object.defineProperty(navigator, "share", { value: undefined, configurable: true });
+  Object.defineProperty(navigator, "clipboard", { value: { writeText: writeTextMock }, configurable: true });
 });
 
-describe("ShareButton", () => {
-  it("copies the itinerary summary and triggers PDF export when a plan exists", async () => {
+afterEach(() => {
+  setShare(undefined, undefined);
+});
+
+describe("ShareButton — native PDF file share", () => {
+  it("shares the itinerary PDF via the native sheet when file share is supported", async () => {
+    const shareMock = vi.fn().mockResolvedValue(undefined);
+    setShare(shareMock, vi.fn().mockReturnValue(true));
+
+    render(<ShareButton country={COUNTRY} homeCountry="India" plan={PLAN} />);
+    fireEvent.click(screen.getByRole("button", { name: /share/i }));
+
+    await waitFor(() => expect(shareMock).toHaveBeenCalledTimes(1));
+    expect(buildPdfMock).toHaveBeenCalledWith(PLAN, COUNTRY, "India");
+    const arg = shareMock.mock.calls[0][0] as { files: File[]; text: string };
+    expect(arg.files).toHaveLength(1);
+    expect(arg.files[0].name).toBe("India-itinerary.pdf");
+    expect(arg.files[0].type).toBe("application/pdf");
+    expect(arg.text).toContain("Route: Delhi");
+    expect(writeTextMock).not.toHaveBeenCalled();
+  });
+
+  it("does not fall back to clipboard when the user cancels the share sheet", async () => {
+    const shareMock = vi.fn().mockRejectedValue(new DOMException("cancelled", "AbortError"));
+    setShare(shareMock, vi.fn().mockReturnValue(true));
+
+    render(<ShareButton country={COUNTRY} homeCountry="India" plan={PLAN} />);
+    fireEvent.click(screen.getByRole("button", { name: /share/i }));
+
+    await waitFor(() => expect(shareMock).toHaveBeenCalled());
+    expect(writeTextMock).not.toHaveBeenCalled();
+  });
+
+  it("falls back to native text share when files can't be shared", async () => {
+    const shareMock = vi.fn().mockResolvedValue(undefined);
+    setShare(shareMock, vi.fn().mockReturnValue(false));
+
+    render(<ShareButton country={COUNTRY} homeCountry="India" plan={PLAN} />);
+    fireEvent.click(screen.getByRole("button", { name: /share/i }));
+
+    await waitFor(() => expect(shareMock).toHaveBeenCalledTimes(1));
+    expect(buildPdfMock).toHaveBeenCalled();
+    const arg = shareMock.mock.calls[0][0] as { text: string; files?: File[] };
+    expect(arg.files).toBeUndefined();
+    expect(arg.text).toContain("Route: Delhi");
+  });
+});
+
+describe("ShareButton — desktop clipboard fallback", () => {
+  it("copies the summary + app link when Web Share is unavailable", async () => {
+    setShare(undefined, undefined);
     render(<ShareButton country={COUNTRY} homeCountry="India" plan={PLAN} />);
 
     fireEvent.click(screen.getByRole("button", { name: /share/i }));
 
     expect(await screen.findByText("Copied!")).toBeInTheDocument();
-    expect(exportPdfMock).toHaveBeenCalledWith(PLAN, COUNTRY, "India");
+    expect(buildPdfMock).not.toHaveBeenCalled();
     expect(writeTextMock).toHaveBeenCalledTimes(1);
     const copied = writeTextMock.mock.calls[0][0] as string;
     expect(copied).toContain("Route: Delhi");
     expect(copied).toContain("Day 1 — Delhi: Old Delhi");
   });
 
-  it("does not trigger PDF export when no plan is available", async () => {
+  it("does not generate a PDF when no plan exists", async () => {
+    setShare(undefined, undefined);
     render(<ShareButton country={COUNTRY} homeCountry="India" />);
 
     fireEvent.click(screen.getByRole("button", { name: /share/i }));
 
     expect(await screen.findByText("Copied!")).toBeInTheDocument();
-    expect(exportPdfMock).not.toHaveBeenCalled();
+    expect(buildPdfMock).not.toHaveBeenCalled();
     expect(writeTextMock).toHaveBeenCalledTimes(1);
   });
 
-  it("does not trigger PDF export when the pdfExport flag is disabled", async () => {
+  it("does not generate a PDF when the pdfExport flag is disabled", async () => {
     isEnabledMock.mockReturnValue(false);
-    render(<ShareButton country={COUNTRY} homeCountry="India" plan={PLAN} />);
+    setShare(vi.fn().mockResolvedValue(undefined), vi.fn().mockReturnValue(true));
 
+    render(<ShareButton country={COUNTRY} homeCountry="India" plan={PLAN} />);
     fireEvent.click(screen.getByRole("button", { name: /share/i }));
 
-    expect(await screen.findByText("Copied!")).toBeInTheDocument();
-    expect(exportPdfMock).not.toHaveBeenCalled();
-    expect(writeTextMock).toHaveBeenCalledTimes(1);
+    await waitFor(() => expect(navigator.share).toHaveBeenCalled());
+    expect(buildPdfMock).not.toHaveBeenCalled();
   });
 });

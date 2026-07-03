@@ -382,9 +382,11 @@ The 198-country ruleset was built with batched, parallel content passes. When do
 - reconcile `index.json` after content edits
 - validate a representative sample manually, then run the full test/build pass
 
-### PDF export
+### PDF export & sharing
 
-`src/utils/pdfExport.ts` uses a hidden iframe + `window.print()` flow. It is not a PDF library.
+`src/utils/pdfExport.ts` uses a hidden iframe + `window.print()` flow (the "Export PDF" button) — it is not a PDF library.
+
+`src/utils/pdfDocument.ts` builds a real PDF `Blob` with **jsPDF** for the Country Panel **Share** action, so the itinerary can be attached to the native share sheet without a download. jsPDF is heavy (~128 KB gzip) so this module is only ever reached via dynamic `import()` — never import it statically. `useItineraryShare` (`src/hooks/useItineraryShare.ts`) owns the share flow (native PDF file → native text → clipboard), prefetches the jsPDF chunk on pointer/focus to keep the share within the user gesture, and reuses `appUrl()`. `buildShareText` lives in `src/components/country/panel/shareText.ts` (re-exported from `ShareButton`).
 
 ### Wiki images
 

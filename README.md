@@ -70,7 +70,7 @@ Slides in from the right with a compact, decluttered layout:
 - **Multi-plan selector** — dropdown to switch between Default and saved AI plans, with full day-wise itinerary for each
 - **Plan comparison** — side-by-side modal with summary cards (duration, cost, cities, activities/day, hotels), city overlap analysis (shared/unique badges), and independent day-by-day scroll
 - **Cinematic for any plan** — saved AI plans can also run cinematic mode; button disabled per-plan when city coordinates don't match
-- **Share** — the header Share action copies (or shares via the Web Share sheet) a rich text summary that includes the active plan's route and day-by-day themes, and simultaneously triggers the Save-as-PDF export of the itinerary
+- **Share** — the panel Share action opens the phone's **native share sheet with the itinerary PDF attached** (generated in-browser via a lazy-loaded jsPDF chunk — no download step). It falls back to a native text share where file sharing isn't supported, and to copying a rich text summary + app link on desktop. The separate **Export PDF** button still saves/prints via the browser's print dialog
 - **Country facts stay in sync** — lazily loaded overview/facts discard stale responses if you switch destinations mid-fetch
 
 ---

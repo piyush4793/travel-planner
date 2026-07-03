@@ -70,12 +70,15 @@ src/
 │   ├── useHashView.ts             # Hash-based routing
 │   ├── useBreakpoint.ts           # Reactive breakpoint (mobile/tablet/desktop)
 │   ├── useInstallPrompt.ts        # PWA beforeinstallprompt + getInstalledRelatedApps + iOS detection
+│   ├── useAppShare.ts             # App-level share (Web Share → wa.me → clipboard)
+│   ├── useItineraryShare.ts       # Country/itinerary share (native PDF file → text → clipboard)
 │   └── usePanelDrag.ts            # Resizable panel drag behavior
 │
 ├── utils/                         # Web/browser utilities
 │   ├── ai/
 │   │   └── llmProvider.ts         # LLM provider abstraction (OpenAI/Claude/Gemini)
 │   ├── pdfExport.ts               # Print-to-PDF via hidden iframe (mobile: new tab)
+│   ├── pdfDocument.ts             # Real PDF Blob via jsPDF (lazy chunk) for native file share
 │   ├── importParser.ts            # Multi-strategy text/link plan parser
 │   ├── wikiImages.ts              # Wikimedia Commons image fetch + cache
 │   ├── countryInfo.ts             # Wikipedia/Wikidata country facts fetch + cache
@@ -146,6 +149,7 @@ public/
 | `useHashView` | URL hash routing |
 | `useBreakpoint` | Responsive breakpoint state |
 | `useInstallPrompt` | PWA install prompt capture, installed-in-browser detection (`getInstalledRelatedApps`) + `openApp`, iOS detection |
+| `useItineraryShare` | Country/itinerary share: native PDF file (lazy jsPDF) → native text → clipboard |
 | `usePanelDrag` | Resizable country panel behavior |
 
 No Redux, no context providers. `App.tsx` calls hooks and passes results as props.
