@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import type { Country, TravelStyle } from "../../core/types";
 import { STYLE_META, TRAVEL_STYLES } from "../../core/utils/travelStyles";
-import Tooltip from "../shared/Tooltip";
+import { BUDGET_BASIS_META, deriveBudgetBreakdown } from "../../core/utils/budget";
 import ModalShell from "../shared/ModalShell";
 import { useConfirm } from "../shared/ConfirmDialog";
 
@@ -14,26 +14,30 @@ type Props = {
 };
 
 export default function CountryForm({ initial, onSave, onClose }: Props) {
-  const [budget, setBudget] = useState(initial.budget ?? "");
+  const [solo, setSolo] = useState(initial.budgetBreakdown?.solo ?? "");
   const [landmark, setLandmark] = useState(initial.landmark ?? "");
-  const [travelStyle, setTravelStyle] = useState<TravelStyle[]>(initial.travelStyle ?? []);
+  const [travelStyle, setTravelStyle] = useState<TravelStyle | undefined>(initial.travelStyle?.[0]);
   const [notes, setNotes] = useState(initial.notes ?? "");
   const [confirm, ConfirmDialog] = useConfirm();
 
+  const derived = useMemo(() => deriveBudgetBreakdown(solo), [solo]);
+  const initialSolo = initial.budgetBreakdown?.solo ?? "";
   const isDirty = useMemo(() => {
-    return budget !== (initial.budget ?? "") ||
+    return solo !== initialSolo ||
       landmark !== (initial.landmark ?? "") ||
       notes !== (initial.notes ?? "") ||
-      JSON.stringify(travelStyle) !== JSON.stringify(initial.travelStyle ?? []);
-  }, [budget, landmark, notes, travelStyle, initial]);
+      travelStyle !== initial.travelStyle?.[0];
+  }, [solo, landmark, notes, travelStyle, initial, initialSolo]);
 
-  const budgetWarning = budget.trim() && !BUDGET_PATTERN.test(budget.trim())
+  const budgetWarning = solo.trim() && !BUDGET_PATTERN.test(solo.trim())
     ? "Expected format: ₹50K–₹1L or ₹2L"
     : "";
 
-  function toggleStyle(s: TravelStyle) {
-    setTravelStyle((prev) => prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]);
+  function selectStyle(s: TravelStyle) {
+    setTravelStyle((prev) => (prev === s ? undefined : s));
   }
+
+  const activeStyleMeta = travelStyle ? STYLE_META[travelStyle] : undefined;
 
   async function handleClose() {
     if (isDirty) {
@@ -50,11 +54,16 @@ export default function CountryForm({ initial, onSave, onClose }: Props) {
   }
 
   function handleSubmit() {
+    const trimmedSolo = solo.trim();
+    const breakdown = deriveBudgetBreakdown(trimmedSolo);
+    const hasBudget = Boolean(trimmedSolo);
     onSave({
       ...initial,
-      budget: budget.trim() || initial.budget,
+      // Keep the single budget string synced to the couple basis (enrichment convention).
+      budget: hasBudget ? breakdown.couple : initial.budget,
+      budgetBreakdown: hasBudget ? breakdown : undefined,
       landmark: landmark.trim() || undefined,
-      travelStyle: travelStyle.length ? travelStyle : undefined,
+      travelStyle: travelStyle ? [travelStyle] : undefined,
       notes: notes.trim() || undefined,
     });
   }
@@ -76,47 +85,72 @@ export default function CountryForm({ initial, onSave, onClose }: Props) {
         </div>
 
         <div className="flex-1 overflow-y-auto px-6 py-4 space-y-5">
-          {/* Budget */}
+          {/* Budget — single per-person input; couple & family are derived */}
           <div>
-            <Label htmlFor="cf-budget">Budget estimate</Label>
-            <input
-              id="cf-budget"
-              className={`input focus-ring ${budgetWarning ? "border-amber-300" : ""}`}
-              value={budget}
-              onChange={(e) => setBudget(e.target.value)}
-              placeholder="₹2L–₹4L"
-              aria-describedby={budgetWarning ? "cf-budget-warn" : "cf-budget-hint"}
-            />
-            {budgetWarning ? (
-              <p id="cf-budget-warn" className="text-[11px] text-amber-500 mt-1">⚠ {budgetWarning}</p>
-            ) : (
-              <p id="cf-budget-hint" className="text-[11px] text-gray-400 mt-1">e.g. ₹50K, ₹1.5L–₹3L, $2K–$5K</p>
+            <Label>Budget estimate</Label>
+            <div className="flex items-center gap-2">
+              <span className="w-24 shrink-0 flex items-center gap-1.5 text-[11px] font-medium text-gray-500">
+                <span aria-hidden="true">{BUDGET_BASIS_META.solo.icon}</span>
+                {BUDGET_BASIS_META.solo.label}
+              </span>
+              <input
+                id="cf-budget-solo"
+                className={`input focus-ring flex-1 ${budgetWarning ? "border-amber-300" : ""}`}
+                value={solo}
+                onChange={(e) => setSolo(e.target.value)}
+                placeholder="₹1L–₹2L"
+                aria-label={`Budget ${BUDGET_BASIS_META.solo.long}`}
+                aria-invalid={Boolean(budgetWarning)}
+                aria-describedby={budgetWarning ? "cf-budget-warn" : "cf-budget-derived"}
+              />
+            </div>
+            {budgetWarning && (
+              <p id="cf-budget-warn" className="text-[11px] text-amber-500 mt-1 pl-[104px]">⚠ {budgetWarning}</p>
             )}
+            {derived.couple && !budgetWarning && (
+              <p id="cf-budget-derived" className="text-[11px] text-gray-500 mt-1.5 pl-[104px] flex items-center gap-3">
+                <span className="flex items-center gap-1" title={`Budget ${BUDGET_BASIS_META.couple.long}`}>
+                  <span aria-hidden="true">{BUDGET_BASIS_META.couple.icon}</span>{derived.couple}
+                </span>
+                <span className="flex items-center gap-1" title={`Budget ${BUDGET_BASIS_META.family4.long}`}>
+                  <span aria-hidden="true">{BUDGET_BASIS_META.family4.icon}</span>{derived.family4}
+                </span>
+              </p>
+            )}
+            <p className="text-[11px] text-gray-400 mt-1.5">Enter a per-person estimate (e.g. ₹1.5L–₹3L). Couple & family totals are derived automatically. Leave blank to use built-in estimates.</p>
           </div>
 
-          {/* Travel style */}
+          {/* Travel style — single select, drives the default trip length */}
           <div>
             <Label>Travel style</Label>
-            <div className="flex gap-2">
+            <div className="flex gap-2" role="radiogroup" aria-label="Travel style">
               {TRAVEL_STYLES.map((s) => {
                 const meta = STYLE_META[s];
+                const active = travelStyle === s;
                 return (
-                  <div key={s} className="flex-1 flex flex-col items-center gap-1">
-                    <button
-                      type="button"
-                      onClick={() => toggleStyle(s)}
-                      aria-pressed={travelStyle.includes(s)}
-                      className={`w-full flex items-center justify-center gap-1.5 py-2.5 min-h-[36px] rounded-xl text-xs font-bold border-2 transition-colors focus-ring ${
-                        travelStyle.includes(s) ? meta.activeForm : "border-gray-200 bg-white text-gray-500 hover:border-gray-300"
-                      }`}
-                    >
-                      {meta.icon} {meta.label}
-                    </button>
-                    <Tooltip text={meta.description} />
-                  </div>
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => selectStyle(s)}
+                    role="radio"
+                    aria-checked={active}
+                    title={meta.description}
+                    className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 min-h-[40px] rounded-xl text-xs font-bold border-2 transition-colors focus-ring ${
+                      active ? meta.activeForm : "border-gray-200 bg-white text-gray-500 hover:border-gray-300"
+                    }`}
+                  >
+                    {meta.icon} {meta.label}
+                  </button>
                 );
               })}
             </div>
+            <p className="text-[11px] text-gray-500 mt-2 min-h-[2.5rem]">
+              {activeStyleMeta ? (
+                <><span className="font-semibold text-gray-600">{activeStyleMeta.icon} {activeStyleMeta.label}</span> — {activeStyleMeta.description}</>
+              ) : (
+                "Pick a style to set the default day count when planning — you can still fine-tune with the slider."
+              )}
+            </p>
           </div>
 
           {/* Landmark */}

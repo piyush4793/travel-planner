@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback, useMemo, useEffect } from "react";
 import type { Country } from "../../core/types";
 import { MONTHS, expandMonth } from "../../core/utils/months";
+import { budgetForBasis, BUDGET_BASIS_META, type BudgetBasis } from "../../core/utils/budget";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 type CellType = "best" | "worst" | "neutral";
@@ -23,9 +24,10 @@ type Props = {
   onSelect: (c: Country) => void;
   visitedNames: Set<string>;
   selectedCountry: Country | null;
+  budgetBasis: BudgetBasis;
 };
 
-export default function CalendarView({ countries, onSelect, visitedNames, selectedCountry }: Props) {
+export default function CalendarView({ countries, onSelect, visitedNames, selectedCountry, budgetBasis }: Props) {
   const nowIdx = new Date().getMonth();
   useBreakpoint(); // triggers re-render on breakpoint change for md: classes
   const [focusedRow, setFocusedRow] = useState(-1);
@@ -277,13 +279,13 @@ export default function CalendarView({ countries, onSelect, visitedNames, select
 
         {/* Table */}
         <div className="flex-1 overflow-auto">
-          <CalendarTable filtered={filtered} compact={false} nowIdx={nowIdx} selectedCountry={selectedCountry} focusedRow={focusedRow} visitedNames={visitedNames} filterMonths={filterMonths} onSelect={onSelect} handleKeyDown={handleKeyDown} setFocusedRow={setFocusedRow} tbodyRef={tbodyRef} colWidth={desktopColWidth} onColResize={setDesktopColWidth} onClearFilters={clearAll} />
+          <CalendarTable filtered={filtered} compact={false} nowIdx={nowIdx} selectedCountry={selectedCountry} focusedRow={focusedRow} visitedNames={visitedNames} filterMonths={filterMonths} budgetBasis={budgetBasis} onSelect={onSelect} handleKeyDown={handleKeyDown} setFocusedRow={setFocusedRow} tbodyRef={tbodyRef} colWidth={desktopColWidth} onColResize={setDesktopColWidth} onClearFilters={clearAll} />
         </div>
       </div>
 
       {/* ─── MOBILE TABLE ─── */}
       <div className="md:hidden flex-1 overflow-auto">
-        <CalendarTable filtered={filtered} compact={true} nowIdx={nowIdx} selectedCountry={selectedCountry} focusedRow={focusedRow} visitedNames={visitedNames} filterMonths={filterMonths} onSelect={onSelect} handleKeyDown={handleKeyDown} setFocusedRow={setFocusedRow} tbodyRef={tbodyRef} colWidth={mobileColWidth} onColResize={setMobileColWidth} onClearFilters={clearAll} />
+        <CalendarTable filtered={filtered} compact={true} nowIdx={nowIdx} selectedCountry={selectedCountry} focusedRow={focusedRow} visitedNames={visitedNames} filterMonths={filterMonths} budgetBasis={budgetBasis} onSelect={onSelect} handleKeyDown={handleKeyDown} setFocusedRow={setFocusedRow} tbodyRef={tbodyRef} colWidth={mobileColWidth} onColResize={setMobileColWidth} onClearFilters={clearAll} />
       </div>
     </div>
   );
@@ -291,7 +293,7 @@ export default function CalendarView({ countries, onSelect, visitedNames, select
 
 /* ── Table component (shared between mobile and desktop) ── */
 function CalendarTable({
-  filtered, compact, nowIdx, selectedCountry, focusedRow, visitedNames, filterMonths, onSelect, handleKeyDown, setFocusedRow, tbodyRef, colWidth, onColResize, onClearFilters,
+  filtered, compact, nowIdx, selectedCountry, focusedRow, visitedNames, filterMonths, budgetBasis, onSelect, handleKeyDown, setFocusedRow, tbodyRef, colWidth, onColResize, onClearFilters,
 }: {
   filtered: Country[];
   compact: boolean;
@@ -300,6 +302,7 @@ function CalendarTable({
   focusedRow: number;
   visitedNames: Set<string>;
   filterMonths: string[];
+  budgetBasis: BudgetBasis;
   onSelect: (c: Country) => void;
   handleKeyDown: (e: React.KeyboardEvent, idx: number) => void;
   setFocusedRow: (idx: number) => void;
@@ -454,7 +457,7 @@ function CalendarTable({
                       </p>
                       {country.budget && (
                         <p className={`text-gray-400 leading-tight mt-0.5 truncate ${compact ? "text-[9px]" : "text-[10px]"}`}>
-                          {country.budget} 👫
+                          {budgetForBasis(country, budgetBasis)} {BUDGET_BASIS_META[budgetBasis].icon}
                         </p>
                       )}
                     </div>

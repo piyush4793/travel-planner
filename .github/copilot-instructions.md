@@ -87,6 +87,8 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | Plan comparison modal | `src/components/country/PlanCompareModal.tsx` |
 | AI chat/settings modals | `src/components/ai/ChatModal.tsx`, `src/components/ai/SettingsModal.tsx` |
 | Trip planner engine | `src/utils/tripPlans.ts` |
+| City selection + day allocation (DP) | `src/core/utils/citySelection.ts` |
+| Budget basis (party size) source of truth | `src/core/utils/budget.ts` |
 | Feature flags | `src/utils/featureFlags.ts` |
 | localStorage keys | `src/utils/lsKeys.ts` |
 | Trip group seeds | `src/data/tripGroups.ts` |
@@ -110,7 +112,9 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 **Country Detail Panel** — slides in from right (full-screen on mobile):
 - Header: name, visited toggle, favorite ★, dedicated edit/delete actions
 - Header flag rendering: explicit aliases + locale region-name lookup with full manifest-country coverage
-- Travel style badge (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive)
+- Travel style badge (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive). In the edit form travel style is **single-select** and sets the default day count via `defaultDaysForStyle()` (touch-and-go ≈ 60% recDays / explorer = recDays / immersive = maxDays)
+- Edit form budget is a **single per-person (solo) input** → couple/family4 derived via `deriveBudgetBreakdown` (data-calibrated `BASIS_MULTIPLIER`: couple 1.77×, family4 3.45×) → `Country.budgetBreakdown`; the single `budget` string is kept synced to the derived couple value. `getBudgetBadges` must prefer `country.budgetBreakdown` over raw rule data so edits show in member chips
+- Saving edits is an **in-place** panel update (no reload): identity-reset effect keys on `country.name`; a separate effect re-seeds the day slider from `travelStyle`/rule bounds. Editing budget alone preserves an in-progress plan
 - Collapsible sections: Experiences, Cities, Stopover tips, Watch out for, Combine with, Links, Notes
 - Combine-with pills are clickable and should open that country panel when available in My List
 - Trips search should prioritize primary-country matches (including word-prefix matches) over combine/related hits; combine matches can appear but not at the top, and active search should preserve relevance order (do not re-sort by popularity)
@@ -173,6 +177,7 @@ All state is hooks-based — no Redux, no context providers. `App.tsx` calls hoo
 | `useHashView` | `src/hooks/useHashView.ts` | Hash-based URL routing for the 3 top-level views |
 | `useBreakpoint` | `src/hooks/useBreakpoint.ts` | Reactive `mobile` / `tablet` / `desktop` state |
 | `usePanelDrag` | `src/hooks/usePanelDrag.ts` | Resizable desktop country panel drag behavior |
+| `useBudgetBasis` | `src/hooks/useBudgetBasis.ts` | Two-layer budget party size: persisted global default + transient active |
 
 ### Shared UI components — reuse, don't recreate
 
@@ -298,6 +303,7 @@ All persistence uses `loadLS()` / `saveLS()` from `src/utils/storage.ts`. Keys a
 | `CUSTOMS` | `tp_customs` | `Country[]` — user-added/edited destinations |
 | `DELETED` | `tp_deleted` | `string[]` — tombstoned seed country names |
 | `HOME_COUNTRY` | `tp_home_country` | Departure country label |
+| `BUDGET_BASIS` | `tp_budget_basis` | Persisted global budget party size (`solo`/`couple`/`family4`) |
 | `TRIP_CUSTOMS` | `tp_trip_customs` | `TripGroupDef[]` — user-edited/created trip groups |
 | `TRIP_DELETED` | `tp_trip_deleted` | `string[]` — tombstoned seed trip groups |
 | `FEATURES` | `tp_features` | `FeatureFlags` — feature flag overrides |
@@ -341,9 +347,17 @@ No server sync — refresh survival is purely localStorage. `usePersistedSet` ba
 ```
 generateTripPlan() in src/utils/tripPlans.ts
   └─ getRuledItinerary()
-       ├─ found → per-day plan from rule data (activities, hotels, transport, costs)
+       ├─ found → planItinerary() (citySelection.ts) picks cities + allocates days
+       │           via bounded-knapsack DP, then builds per-day plan from rule data
        └─ not found → generic algorithm fallback
 ```
+
+### City selection (`src/core/utils/citySelection.ts`)
+
+- `scoreCities(rule)` → per-city importance (recDays 0.5 + content depth 0.3 + route order 0.2); **popularity proxy — no per-city popularity in the data**, swap a real metric in here if one appears
+- `cityDayValue(bounds, days)` → concave: 0 below min, 0.7× at min, 1.0× at recDays, 1.15× at max
+- `planItinerary(cities, D, {includeAll})` → DP `dp[t]=best value with exactly t days`; fills exactly D when feasible, else fullest reachable; `includeAll:true` for user-picked cities (allocate only). O(n·D·R), guarded by a brute-force optimality test
+- Never reintroduce the old greedy `selectCitiesForDays` / proportional+drift allocation — it was replaced by the DP
 
 ### Rule coverage
 

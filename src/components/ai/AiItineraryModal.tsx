@@ -80,7 +80,7 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
               <span className="text-sm font-semibold text-slate-300">{plan.duration}</span>
               <span className="text-slate-600 text-sm">·</span>
               <span className="text-sm font-bold text-white">{plan.costPerPerson}</span>
-              <span className="text-[11px] text-slate-400">per person</span>
+              <span className="text-[11px] text-slate-400" title="per person" aria-label="per person">👤</span>
             </div>
 
             {/* Meta info */}

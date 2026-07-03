@@ -2,6 +2,7 @@ import { useState, useCallback, useMemo, useRef, useEffect, lazy, Suspense } fro
 import type maplibregl from "maplibre-gl";
 import type { Country, VisitedFilter } from "./core/types";
 import HomeCountrySelector from "./components/shared/HomeCountrySelector";
+import BudgetBasisPills from "./components/shared/BudgetBasisPills";
 import DevFlagPanel from "./components/shared/DevFlagPanel";
 
 // Lazy-load view and panel components — only fetched when first navigated/opened
@@ -11,7 +12,8 @@ const DiscoverView = lazy(() => import("./components/views/DiscoverView"));
 const TripsView = lazy(() => import("./components/views/TripsView"));
 const CountryPanel = lazy(() => import("./components/country/CountryPanel"));
 import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
-import { applyFilters, type BudgetTier, type BudgetBasis } from "./core/utils/filterLogic";
+import { applyFilters, type BudgetTier } from "./core/utils/filterLogic";
+import { useBudgetBasis } from "./hooks/useBudgetBasis";
 import { loadLS, saveLS } from "./core/storage";
 import { LS_KEYS } from "./core/lsKeys";
 import { useHashView, type AppView } from "./hooks/useHashView";
@@ -48,7 +50,7 @@ export default function App() {
   const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
   const [visitedFilter, setVisitedFilter] = useState<VisitedFilter>("all");
   const [budgetFilter, setBudgetFilter] = useState<BudgetTier>("all");
-  const [budgetBasis, setBudgetBasis] = useState<BudgetBasis>("couple");
+  const { globalBasis, activeBasis, setGlobalBasis, setActiveBasis } = useBudgetBasis();
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const closeCountryPanel = useBackDismiss(selectedCountry !== null, () => setSelectedCountry(null));
   const [formTarget, setFormTarget] = useState<Country | null>(null);
@@ -98,13 +100,13 @@ export default function App() {
   const trips = useTripStore(store.myListNames, store.myListCountries);
 
   const filtered = useMemo(
-    () => applyFilters(store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter, budgetBasis),
-    [store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter, budgetBasis],
+    () => applyFilters(store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter, activeBasis),
+    [store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter, activeBasis],
   );
   // For Trips: apply all filters EXCEPT visited (Trips filters at trip-card level)
   const filteredForTrips = useMemo(
-    () => applyFilters(store.myListCountries, selectedMonth, [], store.visited.set, "all", budgetFilter, budgetBasis),
-    [store.myListCountries, selectedMonth, store.visited.set, budgetFilter, budgetBasis],
+    () => applyFilters(store.myListCountries, selectedMonth, [], store.visited.set, "all", budgetFilter, activeBasis),
+    [store.myListCountries, selectedMonth, store.visited.set, budgetFilter, activeBasis],
   );
   const comboNames = selectedCountry?.combo ?? [];
 
@@ -214,6 +216,7 @@ export default function App() {
 
         {/* Desktop actions */}
         <div className="hidden md:flex items-center gap-2.5 shrink-0">
+          <BudgetBasisPills value={globalBasis} onChange={setGlobalBasis} variant="header" ariaLabel="Default budget party size" />
           <HomeCountrySelector value={homeCountry} onChange={setHomeCountry} />
           <AppInstallShare
             canInstall={installPrompt.canPrompt}
@@ -248,6 +251,10 @@ export default function App() {
         <div className="md:hidden bg-gradient-to-b from-indigo-600 to-indigo-700 text-white px-4 py-3 space-y-3 shrink-0 shadow-lg">
           <div className="flex items-center gap-2 flex-wrap">
             <HomeCountrySelector value={homeCountry} onChange={(v) => { setHomeCountry(v); }} />
+          </div>
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-xs font-medium text-white/85">Budget for</span>
+            <BudgetBasisPills value={globalBasis} onChange={setGlobalBasis} variant="header" showLabel ariaLabel="Default budget party size" />
           </div>
           <div className="flex items-center gap-2 flex-wrap">
             <AppInstallShare
@@ -318,8 +325,9 @@ export default function App() {
             setMonth={setSelectedMonth}
             budgetFilter={budgetFilter}
             setBudgetFilter={setBudgetFilter}
-            budgetBasis={budgetBasis}
-            setBudgetBasis={setBudgetBasis}
+            budgetBasis={activeBasis}
+            setBudgetBasis={setActiveBasis}
+            defaultBasis={globalBasis}
             onSelect={setSelectedCountry}
             tripGroups={trips.mergedTripGroups}
             onSaveTrip={trips.saveTrip}
@@ -331,6 +339,7 @@ export default function App() {
             onSelect={setSelectedCountry}
             visitedNames={store.visited.set}
             selectedCountry={selectedCountry}
+            budgetBasis={activeBasis}
           />
         ) : (
           <DiscoverView
@@ -356,6 +365,7 @@ export default function App() {
           onEdit={() => selectedCountry && setFormTarget(selectedCountry)}
           onUpdateNotes={handleUpdateNotes}
           homeCountry={homeCountry}
+          budgetBasis={activeBasis}
           mainMapRef={mainMapRef}
           allCountries={store.myListCountries}
           resolveCountry={resolveCountry}

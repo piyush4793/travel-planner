@@ -60,6 +60,7 @@ function renderTrips(options?: {
         setBudgetFilter={vi.fn()}
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
+        defaultBasis="couple"
         onSelect={onSelect}
         tripGroups={tripGroups}
         onSaveTrip={vi.fn()}

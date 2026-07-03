@@ -81,10 +81,16 @@ export default function PanelHeader({
             const meta = STYLE_META[style];
             if (!meta) return null;
             return (
-              <span key={style} className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold text-slate-200 ring-1 ring-white/10">
-                {meta.icon} {meta.label}
-                <Tooltip text={meta.description} />
-              </span>
+              <Tooltip
+                key={style}
+                variant="wrap"
+                text={meta.description}
+                triggerClassName="gap-1 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold text-slate-200 ring-1 ring-white/10 min-h-[28px] hover:bg-white/15 transition-colors"
+              >
+                <span aria-hidden="true">{meta.icon}</span>
+                <span>{meta.label}</span>
+                <span aria-hidden="true" className="ml-0.5 text-[8px] opacity-50">ⓘ</span>
+              </Tooltip>
             );
           })}
         </div>

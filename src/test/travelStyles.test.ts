@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { STYLE_META, TRAVEL_STYLES } from "../core/utils/travelStyles";
+import { STYLE_META, TRAVEL_STYLES, defaultDaysForStyle } from "../core/utils/travelStyles";
 import type { TravelStyle } from "../core/types";
 
 describe("travelStyles — P0", () => {
@@ -34,5 +34,31 @@ describe("travelStyles — P0", () => {
   it("immersive has correct label", () => {
     expect(STYLE_META["immersive"].label).toBe("Immersive");
     expect(STYLE_META["immersive"].icon).toBe("🌿");
+  });
+});
+
+describe("defaultDaysForStyle", () => {
+  const rec = 7;
+  const max = 12;
+
+  it("explorer uses the recommended day count", () => {
+    expect(defaultDaysForStyle("explorer", rec, max)).toBe(rec);
+  });
+
+  it("immersive uses the maximum useful day count", () => {
+    expect(defaultDaysForStyle("immersive", rec, max)).toBe(max);
+  });
+
+  it("touch-and-go is a brisk ~60% of recommended, floored at 1", () => {
+    expect(defaultDaysForStyle("touch-and-go", rec, max)).toBe(Math.round(rec * 0.6));
+    expect(defaultDaysForStyle("touch-and-go", 1, 2)).toBe(1);
+  });
+
+  it("falls back to recommended when no style is set", () => {
+    expect(defaultDaysForStyle(undefined, rec, max)).toBe(rec);
+  });
+
+  it("never returns fewer days than recommended for immersive when max < rec", () => {
+    expect(defaultDaysForStyle("immersive", 10, 6)).toBe(10);
   });
 });

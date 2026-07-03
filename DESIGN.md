@@ -56,9 +56,10 @@ src/
 │       │   ├── llmSettings.ts     # LLM key/provider persistence helpers
 │       │   └── llmTransform.ts    # LLM JSON → TripPlan extraction + validation
 │       ├── tripPlans.ts           # Itinerary generation (rule engine + generic)
+│       ├── citySelection.ts       # DP city selection + day allocation (bounded knapsack)
 │       ├── filterLogic.ts         # Pure filter functions (month/budget/experience/visited)
 │       ├── transport.ts           # TransportType enum, emoji map, detection
-│       ├── travelStyles.ts        # Travel style metadata (icons, colors)
+│       ├── travelStyles.ts        # Travel style metadata + defaultDaysForStyle()
 │       ├── googleMapsRoute.ts     # Google Maps Directions URL builder
 │       ├── planDiff.ts            # Plan summary + diff labels
 │       └── months.ts              # Month constants
@@ -165,6 +166,36 @@ generateTripPlan(country, style, cities, days, rule)
 
 All 198 manifest destinations currently ship with offline rule JSON coverage, but the generic fallback remains as a safety net.
 
+### City selection & day allocation (`citySelection.ts`)
+
+When a rule-backed itinerary is generated for **D** days, the engine must decide
+*which* cities to include and *how many* days each gets. This is solved optimally
+with a **bounded-knapsack dynamic program**, not greedy heuristics:
+
+```
+scoreCities(rule)            → per-city importance from real signals:
+                               recDays (0.5) + content depth days.length (0.3)
+                               + route prominence (0.2)   [popularity proxy]
+cityDayValue(bounds, days)   → concave satisfaction: 0 below min, 0.7× at min,
+                               1.0× at recDays, 1.15× at max (diminishing returns)
+planItinerary(cities, D, …)  → DP over dp[t] = best value using exactly t days;
+                               reconstructs allocation, fills exactly D when
+                               feasible, else the fullest reachable trip
+```
+
+- **Concavity** makes the DP spread days across more worthwhile cities rather than
+  over-stuffing one, while still filling the requested trip length.
+- `includeAll: true` (used when the user hand-picks cities) keeps every city and
+  only allocates days; auto mode may drop low-value cities to fit a tight budget.
+- Below-minimum budgets fall back to the single most valuable city (or all cities
+  at their minimum when inclusion is forced), so callers always get a usable plan.
+- Complexity **O(n·D·R)** — trivial at real scale (n≈4–8, D≤~40). Correctness is
+  guarded by a brute-force optimality test.
+
+Editing a country's **travel style** re-seeds the default day count via
+`defaultDaysForStyle()` (touch-and-go ≈ 60% recDays, explorer = recDays,
+immersive = maxDays); the day slider then feeds `planItinerary`.
+
 ### Feature flags
 
 Two-tier gating lives in `src/core/featureFlags.ts`. Paid features require both `paidFeatures=true` and the individual flag to be enabled.
@@ -201,10 +232,20 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 - **List card de-duplication**: combo cards no longer repeat add-ons inline in the header; add-on countries are shown once in the chip row
 - **Budget-basis cue**: list card budget chips display the active basis icon (solo/couple/family4) so shown values are unambiguous
 
+### Budget basis (party size)
+
+- **Single source of truth**: `src/core/utils/budget.ts` owns the `BudgetBasis` type (`solo`/`couple`/`family4`), `DEFAULT_BUDGET_BASIS` (`couple`), basis meta (icon/label/long), `budgetForBasis(country, basis)` (per-basis lookup with fallback to the single `budget` string), and `deriveBudgetBreakdown(solo)` (scales a per-person range into couple/family totals via `BASIS_MULTIPLIER` — couple 1.77×, family4 3.45×, calibrated from the median ratios across all 198 rule-backed destinations). `filterLogic` re-exports `BudgetBasis` and reuses the helper.
+- **Two-layer state** (`useBudgetBasis`): a persisted **global default** (`tp_budget_basis`) plus a transient in-session **active** value seeded from it. `setGlobalBasis` persists and resets active to it; `setActiveBasis` is temporary (not persisted). A corrupt stored value is guarded by `isBudgetBasis` and falls back to `couple`.
+- **Controls**: the Header shows a `BudgetBasisPills` segmented control bound to the **global** default; the Trips toolbar pill edits only the **active** value (quick "play around"), and the Trips clear-all resets active to the global default.
+- **Consumers of active basis**: Trips filtering/cards, `CountryPanel` (budget chips + plan generation), `CalendarView` budget cue. The App threads `activeBasis` to each.
+- **Cost model**: `generateTripPlan(..., basis)` computes plan cost from `budgetForBasis(country, basis)` scaled by `days / recommendedDays` (floor 0.2), so at the recommended length the plan cost equals that basis's budget chip. The resulting `TripPlan.costBasis` records the party basis; `planCostBasisIcon` renders the basis icon (👤/👫/👨‍👩‍👧‍👦) beside the cost, with `planCostBasisLabel` supplying an accessible `title`/`aria-label` (never shown as visible text). AI plans omit `costBasis` and fall back to the 👤 (per-person) icon.
+
 ### Country panel interactions
 
 - Header flag rendering uses explicit aliases plus locale region-name resolution and now covers all manifest country names.
 - “Combine with” pills are interactive and open the selected country panel — resolving from My List, the seed/custom set, or the catalog — so related destinations open even when not yet added. The panel merges loaded rule data (`mergeCountryData`) over the resolved country, so a not-yet-tracked target still shows full budget/months/experiences/itinerary.
+- **Edit form** (`CountryForm`): budget is edited as a **single per-person (solo) field**; couple and family4 totals are derived via `deriveBudgetBreakdown` and shown as read-only icon hints, then written to `Country.budgetBreakdown`. The single `budget` string stays synced to the derived couple value (enrichment convention). Travel style is **single-select** and drives the default day count. `getBudgetBadges` prefers the country's `budgetBreakdown` override over raw rule data, so edits are reflected in the member chips.
+- **In-place refresh**: saving updates React state only (no reload). The panel's identity-reset effect keys on `country.name`, and a separate effect re-seeds the day slider from `travelStyle`/rule bounds — so editing budget alone preserves an in-progress plan, while editing style re-seeds the default pacing in place.
 
 ### Cinematic map
 
@@ -284,6 +325,7 @@ All keys live in `src/core/lsKeys.ts` — never hardcode strings.
 | `tp_customs` | User-added/edited Country objects |
 | `tp_deleted` | Tombstoned seed country names |
 | `tp_home_country` | Departure country (default: "India") |
+| `tp_budget_basis` | Persisted global budget party size (default: "couple") |
 | `tp_trip_customs` | User-created/edited trip groups |
 | `tp_trip_deleted` | Tombstoned seed trip groups |
 | `tp_features` | Feature flag overrides |

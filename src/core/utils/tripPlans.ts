@@ -1,5 +1,7 @@
 import type { Country, CityEntry, PlanStyle } from "../types";
 import type { CountryRule } from "../data/itineraryRules";
+import { scoreCities, planItinerary } from "./citySelection";
+import { budgetForBasis, BUDGET_BASIS_META, DEFAULT_BUDGET_BASIS, type BudgetBasis } from "./budget";
 
 export type DayEntry = {
   label: string;
@@ -14,7 +16,19 @@ export type TripPlan = {
   days: DayEntry[];
   note: string;
   warning?: string;
+  /** Party basis the cost is computed for. Absent for AI plans (per-person). */
+  costBasis?: BudgetBasis;
 };
+
+/** Basis icon for a plan's cost figure (person icon for AI/per-person plans). */
+export function planCostBasisIcon(plan: TripPlan): string {
+  return plan.costBasis ? BUDGET_BASIS_META[plan.costBasis].icon : "👤";
+}
+
+/** Accessible label for a plan's cost basis — for `title`/`aria-label` only, never rendered as visible text. */
+export function planCostBasisLabel(plan: TripPlan): string {
+  return plan.costBasis ? BUDGET_BASIS_META[plan.costBasis].long : "per person";
+}
 
 /** Extract city name from a day label like "Day 1 — Oslo" */
 export function extractCityFromLabel(label: string): string {
@@ -148,36 +162,6 @@ function cityBasedPlan(
   };
 }
 
-/**
- * Smart city selection: given N available days, pick the best subset of cities
- * that fits. Prioritizes by recDays (higher = more important), drops lowest-priority
- * cities first until the trip fits within the day budget.
- */
-function selectCitiesForDays(rule: CountryRule, days: number): string[] {
-  const allCities = rule.cityOrder.filter((c) => rule.cities[c]);
-  const minTotal = allCities.reduce((s, c) => s + rule.cities[c].minDays, 0);
-
-  // If days can fit all cities at their minimum, include all
-  if (days >= minTotal) return allCities;
-
-  // Otherwise, greedily add cities in order until budget exhausted
-  // Priority: cities with higher recDays are more important to keep
-  const sorted = [...allCities].sort((a, b) => rule.cities[b].recDays - rule.cities[a].recDays);
-  const selected: string[] = [];
-  let remaining = days;
-
-  for (const city of sorted) {
-    const minDays = rule.cities[city].minDays;
-    if (remaining >= minDays) {
-      selected.push(city);
-      remaining -= minDays;
-    }
-  }
-
-  // Restore original route order
-  return rule.cityOrder.filter((c) => selected.includes(c));
-}
-
 /** Calculate the max useful days from a loaded rule */
 export function getMaxRuleDays(rule: CountryRule | null | undefined): number | null {
   if (!rule) return null;
@@ -199,82 +183,67 @@ function getRuledItinerary(
   _style: PlanStyle,
   selectedCities: string[],
   customDays: number,
-  rule?: CountryRule,
+  rule: CountryRule | undefined,
+  basis: BudgetBasis,
 ): TripPlan | null {
   const effectiveRule = rule;
   if (!effectiveRule) return null;
 
-  // Determine which cities to visit — user selection or smart auto-selection
-  let citiesToVisit: string[];
-  if (selectedCities.length > 0) {
-    citiesToVisit = effectiveRule.cityOrder.filter((c) => selectedCities.includes(c));
-  } else {
-    citiesToVisit = selectCitiesForDays(effectiveRule, customDays);
-  }
+  // Select cities and allocate days via optimal bounded-knapsack DP.
+  // User-picked cities are all kept (allocation only); auto mode may drop cities
+  // to best fit the day budget.
+  const scored = scoreCities(effectiveRule);
+  const pool =
+    selectedCities.length > 0
+      ? scored.filter((c) => selectedCities.includes(c.name))
+      : scored;
+  if (pool.length === 0) return null;
 
-  const cityRules = citiesToVisit
-    .map((n) => effectiveRule.cities[n])
-    .filter((c): c is NonNullable<typeof c> => c !== undefined);
+  const allocation = planItinerary(pool, customDays, {
+    includeAll: selectedCities.length > 0,
+  });
+  if (allocation.length === 0) return null;
 
-  if (!cityRules.length) return null;
-
-  // Allocate days per city proportionally, clamped to min/max
-  const recTotal = cityRules.reduce((s, c) => s + c.recDays, 0);
-  const totalDays = customDays;
-
-  let allocs = cityRules.map((c) =>
-    Math.max(c.minDays, Math.min(c.maxDays, Math.round(totalDays * (c.recDays / recTotal))))
-  );
-
-  // Fix rounding drift
-  let allocated = allocs.reduce((a, b) => a + b, 0);
-  let passes = 0;
-  while (allocated !== totalDays && passes++ < 20) {
-    if (allocated < totalDays) {
-      const i = allocs.findIndex((a, idx) => a < cityRules[idx].maxDays);
-      if (i === -1) break;
-      allocs[i]++;
-    } else {
-      let i = allocs.length - 1;
-      while (i >= 0 && allocs[i] <= cityRules[i].minDays) i--;
-      if (i === -1) break;
-      allocs[i]--;
-    }
-    allocated = allocs.reduce((a, b) => a + b, 0);
-  }
+  const citiesToVisit = allocation.map((a) => a.name);
+  const totalDays = allocation.reduce((s, a) => s + a.days, 0);
 
   // Build DayEntry array — one entry per calendar day
   const days: DayEntry[] = [];
   let dayIdx = 1;
 
-  cityRules.forEach((city, ci) => {
-    const numDays = allocs[ci];
-    for (let d = 0; d < numDays; d++) {
+  for (const a of allocation) {
+    const city = effectiveRule.cities[a.name];
+    for (let d = 0; d < a.days; d++) {
       const rulePlan = city.days[d] ?? city.days[city.days.length - 1];
       const dayNum = dayIdx + d;
       days.push({
-        label: `Day ${dayNum} — ${city.name}`,
+        label: `Day ${dayNum} — ${a.name}`,
         theme: rulePlan.theme,
         activities: rulePlan.activities
           .slice(0, 5)
-          .map((a) => (a.cost ? `${a.name} (${a.cost})` : a.name)),
+          .map((act) => (act.cost ? `${act.name} (${act.cost})` : act.name)),
         hotels: rulePlan.hotels?.slice(0, 2).map((h) => `${h.name} — ${h.budget}`),
       });
     }
-    dayIdx += numDays;
-  });
+    dayIdx += a.days;
+  }
 
-  // Cost — scale proportionally to trip length
-  const [baseLow, baseHigh] = parseCostRange(country.budget);
-  const scaleFactor = Math.max(0.3, totalDays / 10);
+  // Cost — scaled from the selected party basis (falls back to country.budget)
+  // by trip length relative to the recommended length. At the recommended length
+  // the factor is 1, so the plan cost equals that basis's budget chip; longer or
+  // shorter trips scale linearly from that single source.
+  const basisBudget = budgetForBasis(country, basis);
+  const [baseLow, baseHigh] = parseCostRange(basisBudget);
+  const recBaseline = getRecRuleDays(effectiveRule) ?? totalDays;
+  const scaleFactor = recBaseline > 0 ? Math.max(0.2, totalDays / recBaseline) : 1;
   const costLow = Math.round(baseLow * scaleFactor);
   const costHigh = Math.round(baseHigh * scaleFactor);
 
-  // Warning if days are tight
-  const minTotal = cityRules.reduce((s, c) => s + c.minDays, 0);
+  // Warning if the requested days couldn't fit the chosen cities and the trip had
+  // to be expanded to each city's minimum stay.
   const warning =
-    totalDays < minTotal
-      ? `⚠️ ${totalDays} days is tight for ${cityRules.length} cities — consider at least ${minTotal} days.`
+    totalDays > customDays
+      ? `⚠️ ${customDays} day${customDays !== 1 ? "s" : ""} is tight for ${allocation.length} ${allocation.length !== 1 ? "cities" : "city"} — expanded to ${totalDays} days (minimum needed).`
       : undefined;
 
   // Note: key connections + practical tips
@@ -303,6 +272,7 @@ function getRuledItinerary(
     days,
     note,
     warning,
+    costBasis: basis,
   };
 }
 
@@ -312,17 +282,18 @@ export function generateTripPlan(
   selectedCities: string[] = [],
   customDays = 7,
   externalRule?: CountryRule | null,
+  basis: BudgetBasis = DEFAULT_BUDGET_BASIS,
 ): TripPlan {
   // Use explicit rule if provided
   const rule = externalRule;
   if (rule) {
-    const ruled = getRuledItinerary(country, style, selectedCities, customDays, rule);
+    const ruled = getRuledItinerary(country, style, selectedCities, customDays, rule, basis);
     if (ruled) return ruled;
   }
 
   const exps = country.experiences;
   const cities = country.cities ?? [];
-  const [baseLow, baseHigh] = parseCostRange(country.budget);
+  const [baseLow, baseHigh] = parseCostRange(budgetForBasis(country, basis));
   const landmark = country.landmark ?? exps[0] ?? country.name;
   const comboSuggestion = country.combo?.slice(0, 2).join(" & ") ?? "nearby countries";
   const bestTime = country.bestMonths.slice(0, 3).join(", ");
@@ -375,6 +346,7 @@ export function generateTripPlan(
       return {
         duration: `${customDays} day${customDays !== 1 ? "s" : ""}`,
         costPerPerson: costRange(low, high),
+        costBasis: basis,
         days: dayChunks,
         note: `Flexible custom itinerary. Best months: ${bestTime}.`,
       };
@@ -405,6 +377,7 @@ export function generateTripPlan(
     return {
       duration: "3 – 4 days",
       costPerPerson: costRange(low, high),
+      costBasis: basis,
       days: [
         {
           label: "Day 1 — Arrive & First Look",
@@ -458,6 +431,7 @@ export function generateTripPlan(
     return {
       duration: "7 – 12 days",
       costPerPerson: costRange(low, high),
+      costBasis: basis,
       days: [
         {
           label: "Day 1 – 2 — Arrival & City Base",
@@ -501,6 +475,7 @@ export function generateTripPlan(
   return {
     duration: "30 days",
     costPerPerson: costRange(low, high),
+    costBasis: basis,
     days: [
       {
         label: "Week 1 — Capital Deep Dive",

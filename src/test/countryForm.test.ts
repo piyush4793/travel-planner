@@ -42,35 +42,39 @@ describe("CountryForm budget validation — P0", () => {
 });
 
 describe("CountryForm dirty check — P0", () => {
+  type FormState = {
+    solo: string;
+    landmark: string;
+    notes: string;
+    travelStyle?: string;
+  };
+  const isDirty = (initial: FormState, current: FormState) =>
+    current.solo !== initial.solo ||
+    current.landmark !== initial.landmark ||
+    current.notes !== initial.notes ||
+    current.travelStyle !== initial.travelStyle;
+
   it("detects no change when values match initial", () => {
-    const initial = { budget: "₹2L", landmark: "Mt Fuji", notes: "hello", travelStyle: ["explorer"] };
-    const current = { budget: "₹2L", landmark: "Mt Fuji", notes: "hello", travelStyle: ["explorer"] };
-    const isDirty =
-      current.budget !== initial.budget ||
-      current.landmark !== initial.landmark ||
-      current.notes !== initial.notes ||
-      JSON.stringify(current.travelStyle) !== JSON.stringify(initial.travelStyle);
-    expect(isDirty).toBe(false);
+    const initial: FormState = { solo: "₹1L–₹2L", landmark: "Mt Fuji", notes: "hello", travelStyle: "explorer" };
+    const current: FormState = { ...initial };
+    expect(isDirty(initial, current)).toBe(false);
   });
 
-  it("detects change when budget differs", () => {
-    const initial = { budget: "₹2L", landmark: "", notes: "", travelStyle: [] as string[] };
-    const current = { ...initial, budget: "₹3L" };
-    const isDirty = current.budget !== initial.budget;
-    expect(isDirty).toBe(true);
+  it("detects change when the solo budget differs", () => {
+    const initial: FormState = { solo: "₹1L", landmark: "", notes: "" };
+    const current: FormState = { ...initial, solo: "₹2L" };
+    expect(isDirty(initial, current)).toBe(true);
   });
 
-  it("detects change when travel style differs", () => {
-    const initial = { budget: "₹2L", landmark: "", notes: "", travelStyle: ["explorer"] };
-    const current = { ...initial, travelStyle: ["explorer", "immersive"] };
-    const isDirty = JSON.stringify(current.travelStyle) !== JSON.stringify(initial.travelStyle);
-    expect(isDirty).toBe(true);
+  it("detects change when travel style is (single-)selected", () => {
+    const initial: FormState = { solo: "", landmark: "", notes: "", travelStyle: undefined };
+    const current: FormState = { ...initial, travelStyle: "immersive" };
+    expect(isDirty(initial, current)).toBe(true);
   });
 
   it("detects change when notes differ", () => {
-    const initial = { budget: "₹2L", landmark: "", notes: "", travelStyle: [] as string[] };
-    const current = { ...initial, notes: "new note" };
-    const isDirty = current.notes !== initial.notes;
-    expect(isDirty).toBe(true);
+    const initial: FormState = { solo: "", landmark: "", notes: "", travelStyle: undefined };
+    const current: FormState = { ...initial, notes: "new note" };
+    expect(isDirty(initial, current)).toBe(true);
   });
 });

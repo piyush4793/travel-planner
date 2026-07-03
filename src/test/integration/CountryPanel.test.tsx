@@ -58,6 +58,7 @@ describe("CountryPanel", () => {
           onEdit={vi.fn()}
           onUpdateNotes={vi.fn()}
           homeCountry="India"
+          budgetBasis="couple"
           allCountries={[makeCountry({ name: testCase.name })]}
         />,
       );
@@ -86,6 +87,7 @@ describe("CountryPanel", () => {
         onEdit={vi.fn()}
         onUpdateNotes={vi.fn()}
         homeCountry="India"
+        budgetBasis="couple"
         allCountries={[makeCountry({ combo: ["France"] }), france]}
       />,
     );
@@ -116,6 +118,7 @@ describe("CountryPanel", () => {
         onEdit={vi.fn()}
         onUpdateNotes={vi.fn()}
         homeCountry="India"
+        budgetBasis="couple"
         allCountries={[makeCountry({ name: "India", combo: ["Sri Lanka"] })]}
         resolveCountry={resolveCountry}
       />,
@@ -146,6 +149,7 @@ describe("CountryPanel", () => {
         onEdit={vi.fn()}
         onUpdateNotes={onUpdateNotes}
         homeCountry="India"
+        budgetBasis="couple"
         allCountries={[makeCountry({ notes: "Initial note" })]}
       />,
     );

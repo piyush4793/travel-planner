@@ -6,11 +6,14 @@ export function getBudgetBadges(
   country: Country,
   consolidated: ReturnType<typeof useCountryRule>["data"],
 ) {
-  if (consolidated) {
+  // User-edited per-basis budget wins over the raw rule data; fall back to the
+  // single budget string only when no breakdown exists at all.
+  const breakdown = country.budgetBreakdown ?? consolidated?.budget;
+  if (breakdown) {
     return [
-      { icon: "👤", label: consolidated.budget.solo, className: "bg-slate-100 text-slate-600" },
-      { icon: "👫", label: consolidated.budget.couple, className: "bg-blue-50 text-blue-600" },
-      { icon: "👨‍👩‍👧‍👦", label: consolidated.budget.family4, className: "bg-purple-50 text-purple-600" },
+      { icon: "👤", label: breakdown.solo, className: "bg-slate-100 text-slate-600" },
+      { icon: "👫", label: breakdown.couple, className: "bg-blue-50 text-blue-600" },
+      { icon: "👨‍👩‍👧‍👦", label: breakdown.family4, className: "bg-purple-50 text-purple-600" },
     ];
   }
 

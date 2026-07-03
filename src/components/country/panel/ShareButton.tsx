@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import type { Country } from "../../../core/types";
 import type { TripPlan } from "../../../core/utils/tripPlans";
-import { extractPlanCities } from "../../../core/utils/tripPlans";
+import { extractPlanCities, planCostBasisIcon } from "../../../core/utils/tripPlans";
 import { isEnabled } from "../../../core/featureFlags";
 import { exportItineraryAsPdf } from "../../../utils/pdfExport";
 
@@ -16,7 +16,7 @@ export function buildShareText(country: Country, homeCountry: string, plan?: Tri
   const lines: string[] = [`✈️ ${country.name}`, `From: ${homeCountry}`];
 
   if (plan) {
-    lines.push(`📅 ${plan.duration} · 💰 ${plan.costPerPerson} / person`);
+    lines.push(`📅 ${plan.duration} · 💰 ${plan.costPerPerson} ${planCostBasisIcon(plan)}`);
     const route = extractPlanCities(plan.days);
     if (route.length > 0) lines.push(`Route: ${route.join(" → ")}`);
   }

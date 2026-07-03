@@ -33,3 +33,28 @@ export const STYLE_META: Record<TravelStyle, StyleMeta> = {
 };
 
 export const TRAVEL_STYLES: TravelStyle[] = ["touch-and-go", "explorer", "immersive"];
+
+/**
+ * Default trip length (in days) implied by a travel style, given a country's
+ * recommended and maximum useful days:
+ *  - touch-and-go → a brisk ~60% of recommended (min 1 day)
+ *  - explorer     → the recommended length
+ *  - immersive    → the full maximum useful length
+ * Falls back to `recDays` when no style is set. The result is only a starting
+ * point for the day slider — the itinerary engine clamps and re-plans from here.
+ */
+export function defaultDaysForStyle(
+  style: TravelStyle | undefined,
+  recDays: number,
+  maxDays: number,
+): number {
+  switch (style) {
+    case "touch-and-go":
+      return Math.max(1, Math.round(recDays * 0.6));
+    case "immersive":
+      return Math.max(recDays, maxDays);
+    case "explorer":
+    default:
+      return recDays;
+  }
+}

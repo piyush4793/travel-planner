@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect, useRef } from "react";
 import type { Country, VisitedFilter } from "../../core/types";
 import { type BudgetBasis, type BudgetTier } from "../../core/utils/filterLogic";
+import { budgetForBasis, BUDGET_BASIS_ORDER, BUDGET_BASIS_META } from "../../core/utils/budget";
 import { MONTHS } from "../../core/utils/months";
 import { ALL_REGIONS, type Region, type TripGroupDef } from "../../core/data/tripGroups";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
@@ -22,6 +23,7 @@ type Props = {
   setBudgetFilter: (b: BudgetTier) => void;
   budgetBasis: BudgetBasis;
   setBudgetBasis: (b: BudgetBasis) => void;
+  defaultBasis: BudgetBasis;
   onSelect: (c: Country) => void;
   tripGroups: TripGroupDef[];
   onSaveTrip: (originalMain: string | null, group: TripGroupDef) => void;
@@ -95,6 +97,7 @@ export default function TripsView({
   setBudgetFilter,
   budgetBasis,
   setBudgetBasis,
+  defaultBasis,
   onSelect,
   tripGroups,
   onSaveTrip,
@@ -107,11 +110,9 @@ const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string }[] = [
   { value: "premium", label: "₹₹₹ Premium", desc: "₹3L+"        },
 ];
 
-const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
-  { value: "solo", label: "Solo" },
-  { value: "couple", label: "Couple" },
-  { value: "family4", label: "Family" },
-];
+const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BASIS_ORDER.map(
+  (value) => ({ value, label: BUDGET_BASIS_META[value].label }),
+);
 
   const bp = useBreakpoint();
   const isMobile = bp === "mobile";
@@ -494,7 +495,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                 {activeFilterCount > 0 && (
                   <button
                     onClick={() => {
-                      setMonth([]); setBudgetBasis("couple"); setBudgetFilter("all"); setVisitedFilter("all");
+                      setMonth([]); setBudgetBasis(defaultBasis); setBudgetFilter("all"); setVisitedFilter("all");
                       setViewMode("all"); setVisitedMode("all"); setRegionFilter("all");
                     }}
                     className="text-[10px] font-semibold text-red-500 hover:text-red-600 focus-ring rounded px-1"
@@ -829,11 +830,11 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                     <option key={r} value={r}>{r}</option>
                   ))}
                 </select>
-                {(selectedMonth.length > 0 || budgetFilter !== "all" || budgetBasis !== "couple" || visitedFilter !== "all" || hasSecondaryFilters) && (
+                {(selectedMonth.length > 0 || budgetFilter !== "all" || budgetBasis !== defaultBasis || visitedFilter !== "all" || hasSecondaryFilters) && (
                   <button
                     onClick={() => {
                       setMonth([]);
-                      setBudgetBasis("couple");
+                      setBudgetBasis(defaultBasis);
                       setBudgetFilter("all");
                       setVisitedFilter("all");
                       setViewMode("all");
@@ -978,7 +979,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = [
                       onClick={() => {
                         setSearch("");
                         setMonth([]);
-                        setBudgetBasis("couple");
+                        setBudgetBasis(defaultBasis);
                         setBudgetFilter("all");
                         setVisitedFilter("all");
                         setViewMode("all");
@@ -1390,12 +1391,6 @@ const REGION_BADGE: Record<string, string> = {
   Oceania: "bg-cyan-50 text-cyan-600",
 };
 
-const BUDGET_BASIS_META: Record<BudgetBasis, { icon: string; label: string }> = {
-  solo: { icon: "👤", label: "per solo traveler" },
-  couple: { icon: "👫", label: "per couple" },
-  family4: { icon: "👨‍👩‍👧‍👦", label: "per family of 4" },
-};
-
 function TripRow({
   trip,
   budgetBasis,
@@ -1417,7 +1412,7 @@ function TripRow({
 }) {
   const isCombo = trip.addOns.length > 0;
   const suggestedPairs = !isCombo && !trip.allVisited ? (trip.main.combo ?? []).slice(0, 2) : [];
-  const budgetDisplay = trip.main.budgetBreakdown?.[budgetBasis] ?? trip.main.budget;
+  const budgetDisplay = budgetForBasis(trip.main, budgetBasis);
   const budgetBasisMeta = BUDGET_BASIS_META[budgetBasis];
   const progress = trip.allCountries.length > 0
     ? Math.round((trip.visitedCount / trip.allCountries.length) * 100)
@@ -1580,7 +1575,7 @@ function TripRow({
           {trip.main.budget && (
             <span
               className="text-[10px] text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full"
-              title={`Budget ${budgetBasisMeta.label}`}
+              title={`Budget ${budgetBasisMeta.long}`}
             >
               {budgetBasisMeta.icon} {budgetDisplay}
             </span>

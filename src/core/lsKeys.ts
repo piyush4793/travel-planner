@@ -6,6 +6,7 @@ export const LS_KEYS = {
   CUSTOMS: "tp_customs",
   DELETED: "tp_deleted",
   HOME_COUNTRY: "tp_home_country",
+  BUDGET_BASIS: "tp_budget_basis",
   TRIP_CUSTOMS: "tp_trip_customs",
   TRIP_DELETED: "tp_trip_deleted",
   FEATURES: "tp_features",

@@ -6,4 +6,7 @@ dist
 
 # Coverage reports
 coverage/
-tmp-ux-audit.html
+
+# Scratch / audit artifacts (never commit)
+tmp-*.html
+Untitled-*

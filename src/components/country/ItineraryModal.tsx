@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import type { Country } from "../../core/types";
 import type { TripPlan, DayEntry } from "../../core/utils/tripPlans";
-import { extractCityFromLabel } from "../../core/utils/tripPlans";
+import { extractCityFromLabel, planCostBasisIcon, planCostBasisLabel } from "../../core/utils/tripPlans";
 import type { CountryRule } from "../../core/data/itineraryRules";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../core/utils/transport";
 import { buildRoute } from "../../core/utils/googleMapsRoute";
@@ -74,7 +74,7 @@ export default function ItineraryModal({ plan, country, rule, onClose }: Props) 
               <span className="text-xs md:text-sm font-semibold text-slate-300">{plan.duration}</span>
               <span className="text-slate-600 text-xs md:text-sm">·</span>
               <span className="text-xs md:text-sm font-bold text-white">{plan.costPerPerson}</span>
-              <span className="text-[10px] md:text-[11px] text-slate-400">per person</span>
+              <span className="text-[10px] md:text-[11px] text-slate-400" title={planCostBasisLabel(plan)} aria-label={planCostBasisLabel(plan)}>{planCostBasisIcon(plan)}</span>
             </div>
 
             {/* City route navigation */}

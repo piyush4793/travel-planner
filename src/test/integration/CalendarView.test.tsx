@@ -62,6 +62,7 @@ describe("CalendarView", () => {
         onSelect={vi.fn()}
         visitedNames={new Set()}
         selectedCountry={null}
+        budgetBasis="couple"
       />,
     );
 
@@ -81,6 +82,7 @@ describe("CalendarView", () => {
         onSelect={onSelect}
         visitedNames={new Set()}
         selectedCountry={null}
+        budgetBasis="couple"
       />,
     );
 
@@ -96,6 +98,7 @@ describe("CalendarView", () => {
         onSelect={vi.fn()}
         visitedNames={new Set()}
         selectedCountry={null}
+        budgetBasis="couple"
       />,
     );
 

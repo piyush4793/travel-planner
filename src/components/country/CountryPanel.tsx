@@ -5,7 +5,9 @@ import type { Country } from "../../core/types";
 import type { SavedAiPlan } from "../../hooks/useAiPlanStore";
 import { generateTripPlan, getMaxRuleDays, getRecRuleDays } from "../../core/utils/tripPlans";
 import type { TripPlan } from "../../core/utils/tripPlans";
+import type { BudgetBasis } from "../../core/utils/budget";
 import { mergeCountryData } from "../../core/utils/countryData";
+import { defaultDaysForStyle } from "../../core/utils/travelStyles";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { useCountryRule } from "../../hooks/useCountryRule";
@@ -38,6 +40,7 @@ type Props = {
   onEdit: () => void;
   onUpdateNotes: (notes: string) => void;
   homeCountry: string;
+  budgetBasis: BudgetBasis;
   mainMapRef?: RefObject<maplibregl.Map | null>;
   allCountries?: Country[];
   resolveCountry?: (name: string) => Country | null;
@@ -55,6 +58,7 @@ export default function CountryPanel({
   onFilterExperience, activeExperiences,
   onEdit, onUpdateNotes,
   homeCountry,
+  budgetBasis,
   mainMapRef,
   allCountries,
   resolveCountry,
@@ -94,18 +98,26 @@ export default function CountryPanel({
   );
   const bestMonths = displayCountry?.bestMonths ?? [];
   const worstMonths = displayCountry?.worstMonths ?? [];
+  const primaryStyle = displayCountry?.travelStyle?.[0];
 
+  // Reset panel state when switching to a different country.
   useEffect(() => {
     currentCountryNameRef.current = country?.name ?? null;
     setActivePlanId("default");
     setSelectedCities([]);
-    setCustomDays(recDays);
     setNotes(country?.notes ?? "");
     setCinematicPlan(null);
     setModalPlan(null);
     setCompareOpen(false);
     setPanelTab("overview");
-  }, [country?.name, recDays]);
+  }, [country?.name]);
+
+  // Default the day slider from the country's travel style (and rule bounds once
+  // loaded). Editing budget alone leaves this untouched, so an in-progress plan
+  // survives; editing travel style re-seeds the default pacing in place.
+  useEffect(() => {
+    setCustomDays(defaultDaysForStyle(primaryStyle, recDays, safeMaxDays));
+  }, [primaryStyle, recDays, safeMaxDays]);
 
   // Debounced notes auto-save (300ms)
   const debouncedSave = useCallback((text: string) => {
@@ -137,7 +149,7 @@ export default function CountryPanel({
   const planOptions = useMemo(() => {
     const opts: { id: string; label: string; plan: TripPlan }[] = [];
     if (displayCountry) {
-      const defaultPlan = generateTripPlan(displayCountry, "custom", selectedCities, customDays, rule);
+      const defaultPlan = generateTripPlan(displayCountry, "custom", selectedCities, customDays, rule, budgetBasis);
       opts.push({ id: "default", label: "📅 Default", plan: defaultPlan });
       for (let i = 0; i < aiPlans.length; i++) {
         const sp = aiPlans[i];
@@ -146,7 +158,7 @@ export default function CountryPanel({
       }
     }
     return opts;
-  }, [displayCountry, selectedCities, customDays, aiPlans, rule]);
+  }, [displayCountry, selectedCities, customDays, aiPlans, rule, budgetBasis]);
 
   const activePlan = planOptions.find((o) => o.id === activePlanId) ?? planOptions[0];
   const isDefaultActive = activePlanId === "default";

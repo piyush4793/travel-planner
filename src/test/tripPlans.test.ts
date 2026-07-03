@@ -325,3 +325,95 @@ describe("tripPlans — P0", () => {
     });
   });
 });
+
+describe("tripPlans — rule-based DP selection", () => {
+  const RULE = {
+    cityOrder: ["Alpha", "Beta", "Gamma"],
+    cities: {
+      Alpha: {
+        name: "Alpha",
+        minDays: 2,
+        recDays: 3,
+        maxDays: 4,
+        days: [
+          { theme: "A1", activities: [{ name: "Museum", cost: "₹500" }] },
+          { theme: "A2", activities: [{ name: "Market" }] },
+        ],
+      },
+      Beta: {
+        name: "Beta",
+        minDays: 1,
+        recDays: 2,
+        maxDays: 3,
+        days: [{ theme: "B1", activities: [{ name: "Beach" }] }],
+      },
+      Gamma: {
+        name: "Gamma",
+        minDays: 1,
+        recDays: 1,
+        maxDays: 2,
+        days: [{ theme: "G1", activities: [{ name: "Hike" }] }],
+      },
+    },
+    connections: [{ from: "Alpha", to: "Beta", method: "Train", cost: "₹800" }],
+  };
+
+  const COUNTRY = {
+    name: "Ruleland",
+    lat: 0,
+    lng: 0,
+    bestMonths: ["May"],
+    budget: "₹1L–₹2L",
+    experiences: ["Food"],
+  } as const;
+
+  it("fills exactly the requested days and keeps route order", () => {
+    const plan = generateTripPlan(COUNTRY as never, "custom" as never, [], 6, RULE as never);
+    expect(plan.days).toHaveLength(6);
+    expect(plan.duration).toBe("6 days");
+    const cities = plan.days.map((d) => d.label.split("— ")[1]);
+    const firstAlpha = cities.indexOf("Alpha");
+    const firstBeta = cities.indexOf("Beta");
+    if (firstAlpha !== -1 && firstBeta !== -1) expect(firstAlpha).toBeLessThan(firstBeta);
+  });
+
+  it("honours user-selected cities and only those", () => {
+    const plan = generateTripPlan(COUNTRY as never, "custom" as never, ["Alpha", "Gamma"], 5, RULE as never);
+    const cities = new Set(plan.days.map((d) => d.label.split("— ")[1]));
+    expect(cities.has("Alpha")).toBe(true);
+    expect(cities.has("Gamma")).toBe(true);
+    expect(cities.has("Beta")).toBe(false);
+  });
+
+  it("expands and warns when the day budget can't fit all selected cities", () => {
+    // sum of mins for all three = 4; ask for 2 -> expands to 4 with a warning.
+    const plan = generateTripPlan(COUNTRY as never, "custom" as never, ["Alpha", "Beta", "Gamma"], 2, RULE as never);
+    expect(plan.days).toHaveLength(4);
+    expect(plan.warning).toContain("tight");
+  });
+
+  it("plan cost tracks the selected basis and scales with trip length", () => {
+    // recBaseline = Alpha(3) + Beta(2) + Gamma(1) = 6 days. At that length the
+    // scale factor is 1, so the plan cost equals the chosen basis's budget chip.
+    const withBudget = { ...COUNTRY, budgetBreakdown: { solo: "₹1L–₹2L", couple: "₹2L–₹4L", family4: "₹4L–₹8L" } };
+    const couple = generateTripPlan(withBudget as never, "custom" as never, [], 6, RULE as never, "couple");
+    expect(couple.costPerPerson).toBe("₹2L – ₹4L");
+    expect(couple.costBasis).toBe("couple");
+    const solo = generateTripPlan(withBudget as never, "custom" as never, [], 6, RULE as never, "solo");
+    expect(solo.costPerPerson).toBe("₹1L – ₹2L");
+    expect(solo.costBasis).toBe("solo");
+    const family = generateTripPlan(withBudget as never, "custom" as never, [], 6, RULE as never, "family4");
+    expect(family.costPerPerson).toBe("₹4L – ₹8L");
+    // Longer trip scales up; the DP caps reachable days at 9 (sum of city maxima),
+    // so factor = 9/6 = 1.5 rather than a naive 2×.
+    const longer = generateTripPlan(withBudget as never, "custom" as never, [], 12, RULE as never, "couple");
+    expect(longer.costPerPerson).toBe("₹3L – ₹6L");
+  });
+
+  it("defaults to the couple basis when none is supplied", () => {
+    const withBudget = { ...COUNTRY, budgetBreakdown: { solo: "₹1L–₹2L", couple: "₹2L–₹4L", family4: "₹4L–₹8L" } };
+    const plan = generateTripPlan(withBudget as never, "custom" as never, [], 6, RULE as never);
+    expect(plan.costPerPerson).toBe("₹2L – ₹4L");
+    expect(plan.costBasis).toBe("couple");
+  });
+})

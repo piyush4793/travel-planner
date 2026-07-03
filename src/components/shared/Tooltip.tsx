@@ -5,9 +5,15 @@ type Props = {
   text: string;
   children?: React.ReactNode;
   triggerClassName?: string;
+  /**
+   * "icon" (default) renders a circular ⓘ affordance. "wrap" turns the passed
+   * children into the trigger itself, so a whole pill/label can reveal the tip
+   * without an extra icon button.
+   */
+  variant?: "icon" | "wrap";
 };
 
-export default function Tooltip({ text, children, triggerClassName }: Props) {
+export default function Tooltip({ text, children, triggerClassName, variant = "icon" }: Props) {
   const [visible, setVisible] = useState(false);
   const [pos, setPos] = useState({ top: 0, left: 0 });
   const [below, setBelow] = useState(false);
@@ -34,6 +40,9 @@ export default function Tooltip({ text, children, triggerClassName }: Props) {
 
   function hide() { setVisible(false); }
 
+  const iconClass = `inline-flex items-center justify-center w-5 h-5 min-w-[32px] min-h-[32px] rounded-full bg-current/15 text-current text-[9px] font-black cursor-help select-none leading-none shrink-0 opacity-60 focus-ring ${triggerClassName ?? ""}`;
+  const wrapClass = `inline-flex items-center cursor-help focus-ring ${triggerClassName ?? ""}`;
+
   return (
     <>
       <button
@@ -44,11 +53,11 @@ export default function Tooltip({ text, children, triggerClassName }: Props) {
         onFocus={show}
         onBlur={hide}
         onClick={show}
-        className={`inline-flex items-center justify-center w-5 h-5 min-w-[32px] min-h-[32px] rounded-full bg-current/15 text-current text-[9px] font-black cursor-help select-none leading-none shrink-0 opacity-60 focus-ring ${triggerClassName ?? ""}`}
+        className={variant === "wrap" ? wrapClass : iconClass}
         aria-label={text}
         aria-describedby={visible ? "tooltip-content" : undefined}
       >
-        {children ?? "i"}
+        {variant === "wrap" ? children : (children ?? "i")}
       </button>
 
       {visible && createPortal(

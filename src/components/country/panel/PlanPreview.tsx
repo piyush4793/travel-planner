@@ -2,7 +2,7 @@ import { memo } from "react";
 import type { Country } from "../../../core/types";
 import type { CountryRule } from "../../../core/data/itineraryRules";
 import type { TripPlan } from "../../../core/utils/tripPlans";
-import { extractPlanCities } from "../../../core/utils/tripPlans";
+import { extractPlanCities, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
 import { isEnabled } from "../../../core/featureFlags";
 import { exportItineraryAsPdf } from "../../../utils/pdfExport";
 
@@ -34,7 +34,7 @@ function PlanPreviewInner({ country, plan, homeCountry, onCinematic, onItinerary
       {/* Summary bar */}
       <div className="flex items-center justify-between bg-gradient-to-r from-blue-600 to-indigo-600 px-3 py-2.5 text-white">
         <span className="text-xs font-bold">{isAiPlan ? "✨" : "📅"} {plan.duration}</span>
-        <span className="text-xs font-bold">{plan.costPerPerson} / person</span>
+        <span className="text-xs font-bold">{plan.costPerPerson} <span title={planCostBasisLabel(plan)} aria-label={planCostBasisLabel(plan)}>{planCostBasisIcon(plan)}</span></span>
       </div>
 
       {plan.warning && (

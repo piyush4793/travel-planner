@@ -43,11 +43,16 @@ describe("buildShareText", () => {
 
   it("includes duration, cost, route and day-by-day when a plan is provided", () => {
     const text = buildShareText(COUNTRY, "India", PLAN);
-    expect(text).toContain("📅 3 days · 💰 ₹36K – ₹63K / person");
+    expect(text).toContain("📅 3 days · 💰 ₹36K – ₹63K 👤");
     expect(text).toContain("Route: Delhi → Jaipur");
     expect(text).toContain("Day-by-day:");
     expect(text).toContain("Day 1 — Delhi: Old Delhi");
     expect(text).toContain("Day 3 — Jaipur: Pink City");
+  });
+
+  it("labels the cost with the plan's party-basis icon when present", () => {
+    const text = buildShareText(COUNTRY, "India", { ...PLAN, costBasis: "family4" });
+    expect(text).toContain("💰 ₹36K – ₹63K 👨‍👩‍👧‍👦");
   });
 
   it("omits the flat city list when a plan is present (avoids duplication)", () => {

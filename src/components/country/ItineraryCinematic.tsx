@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import maplibregl from "maplibre-gl";
 import type { Country } from "../../core/types";
 import type { TripPlan, DayEntry } from "../../core/utils/tripPlans";
-import { extractCityFromLabel } from "../../core/utils/tripPlans";
+import { extractCityFromLabel, planCostBasisIcon } from "../../core/utils/tripPlans";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import type { CountryRule } from "../../core/data/itineraryRules";
 import { getWikiImage } from "../../utils/wikiImages";
@@ -957,7 +957,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       const comboLine = comboCountries?.length
         ? ` · also pairs with ${comboCountries.map((c) => c.name).join(", ")}`
         : "";
-      setStatusMsg(`${plan.duration} · ${plan.costPerPerson} pp${comboLine}`);
+      setStatusMsg(`${plan.duration} · ${plan.costPerPerson} ${planCostBasisIcon(plan)}${comboLine}`);
 
       // Pre-fetch city images during overview hold (parallel, with timeout)
       // rule passed as prop
@@ -983,7 +983,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       if (cancelled) return;
       setCityPhotoMap((prev) => ({ ...prev, ...fetchedPhotos }));
 
-      setStatusMsg(`${plan.duration} · ${plan.costPerPerson} pp${comboLine}`);
+      setStatusMsg(`${plan.duration} · ${plan.costPerPerson} ${planCostBasisIcon(plan)}${comboLine}`);
       await sleep(400);
       if (cancelled) return;
 
@@ -1570,7 +1570,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
                 <p className="text-gray-500 text-sm mt-2">✈</p>
                 <p className="text-base font-bold text-white mt-2">{country.name}</p>
               </div>
-              <p className="text-[11px] text-gray-400">{plan.duration} · {plan.costPerPerson} pp</p>
+              <p className="text-[11px] text-gray-400">{plan.duration} · {plan.costPerPerson} {planCostBasisIcon(plan)}</p>
               {comboCountries && comboCountries.length > 0 && (
                 <div className="mt-1">
                   <p className="text-[10px] text-gray-600 uppercase tracking-widest mb-1.5">Also pairs with</p>
@@ -1672,7 +1672,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
             <div className="h-full flex flex-col items-center justify-center gap-3 text-center pb-8">
               <span className="text-5xl mb-2">🎉</span>
               <h3 className="text-lg font-black">Back in {HOME_CITY[homeCountry] ?? homeCountry}!</h3>
-              <p className="text-xs text-gray-400">{plan.duration} · {plan.costPerPerson} pp</p>
+              <p className="text-xs text-gray-400">{plan.duration} · {plan.costPerPerson} {planCostBasisIcon(plan)}</p>
               <div className="mt-3 text-[11px] text-gray-500 leading-relaxed text-left bg-white/5 rounded-xl px-4 py-3">
                 {plan.note}
               </div>

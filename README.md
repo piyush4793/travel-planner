@@ -61,11 +61,12 @@ Slides in from the right with a compact, decluttered layout:
 - **Refreshed panel layout** — sticky header, card-based sections, enhanced slider, and calendar-style month grid
 - **Compact header** — country name, visited toggle, favorite ★, dedicated edit/delete actions, close
 - **Country flag support** — panel header now resolves flags for all manifest destinations (including naming variants like Czech Republic/Czechia, Ivory Coast/Côte d’Ivoire, St./Saint forms)
-- **Travel style badge** — single research-backed recommendation per country (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive)
+- **Travel style badge** — single research-backed recommendation per country (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive). Editing it (single-select) sets the default trip length: Touch & Go ≈ 60% of recommended, Explorer = recommended, Immersive = maximum
+- **Single-input budget** — the edit form takes one per-person (solo) estimate; couple and family-of-4 totals are derived automatically from data-calibrated ratios and shown as read-only hints, so the member budget chips stay consistent with no chance of contradictory entries; edits update the panel in place with no reload
 - **Collapsible sections** — Experiences, Cities, Stopover tips, Watch out for, Combine with, Links, Notes collapse by default with item counts
 - **Combine-with navigation** — country pills in “Combine with” are clickable and open that country panel directly
 - **"When to go"** — best + avoid months merged in one row
-- **Trip planner** — days slider with smart city selection + Generate/AI buttons
+- **Trip planner** — days slider with **optimal DP-based city selection** (bounded knapsack over popularity + day bounds) + Generate/AI buttons
 - **Multi-plan selector** — dropdown to switch between Default and saved AI plans, with full day-wise itinerary for each
 - **Plan comparison** — side-by-side modal with summary cards (duration, cost, cities, activities/day, hotels), city overlap analysis (shared/unique badges), and independent day-by-day scroll
 - **Cinematic for any plan** — saved AI plans can also run cinematic mode; button disabled per-plan when city coordinates don't match
@@ -157,6 +158,7 @@ Full-screen animated experience for rule-based countries:
 - **Grid alignment consistency** — compact cards reserve the combo-row slot so progress rows align even when no combo/suggestion pills exist
 - **No duplicate combine labels** — list cards show combine countries once (as chips only), without repeating them inline next to the main country
 - **Budget basis clarity** — list card budget chips show traveler-basis icons (👤 solo / 👫 couple / 👨‍👩‍👧‍👦 family4) matching the active Trips budget basis filter
+- **Global + local budget basis** — a Header pill (👤/👫/👨‍👩‍👧‍👦) sets your **persisted default** party size; the Trips pill is a **temporary override** for quick what-if exploration (resets to your default on refresh). The active basis drives every cost/budget figure — Trips cards, Country Panel budget chips, Plan-tab and itinerary cost, and the Calendar budget cue — so all surfaces stay linked. Plan cost equals that basis's chip at the recommended length and scales with trip length.
 
 ---
 
