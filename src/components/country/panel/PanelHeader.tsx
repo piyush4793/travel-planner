@@ -32,7 +32,7 @@ export default function PanelHeader({
   return (
     <div className="sticky top-0 z-10 shrink-0">
       {/* Hero gradient header */}
-      <div className="bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-950 px-5 pt-5 pb-4 text-white">
+      <div className="bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-950 px-5 pt-4 pb-3.5 text-white">
         {/* Top row: flag + name + close */}
         <div className="flex items-start gap-3">
           <span className="text-4xl leading-none drop-shadow-sm mt-0.5">{getCountryFlag(country.name)}</span>
@@ -54,17 +54,21 @@ export default function PanelHeader({
           </button>
         </div>
 
-        {/* Quick stats chips */}
-        <div className="flex flex-wrap items-center gap-1.5 mt-3">
-          {budgetBadges.map((badge) => (
-            <span
-              key={badge.label}
-              className="inline-flex items-center gap-1 rounded-full bg-white/10 backdrop-blur-sm px-2.5 py-1 text-[10px] font-semibold text-slate-200 ring-1 ring-white/10"
-            >
-              <span>{badge.icon}</span>
-              <span>{badge.label}</span>
+        {/* Budget strip — grouped into one card to reduce chip clutter */}
+        <div className="mt-3 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg bg-white/[0.06] px-3 py-1.5 ring-1 ring-white/10">
+          {budgetBadges.map((badge, i) => (
+            <span key={badge.label} className="inline-flex items-center gap-1.5">
+              {i > 0 && <span className="text-white/15" aria-hidden="true">|</span>}
+              <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-slate-200">
+                <span aria-hidden="true">{badge.icon}</span>
+                <span>{badge.label}</span>
+              </span>
             </span>
           ))}
+        </div>
+
+        {/* Trip facts — recommended days, best months, travel style on one row */}
+        <div className="flex flex-wrap items-center gap-1.5 mt-2">
           <span className="inline-flex items-center gap-1 rounded-full bg-blue-500/20 px-2.5 py-1 text-[10px] font-semibold text-blue-300 ring-1 ring-blue-400/20">
             ⏱️ {recDays}d rec
           </span>
@@ -73,33 +77,27 @@ export default function PanelHeader({
               🌤️ {bestMonthsPreview.join(", ")}
             </span>
           )}
+          {(country.travelStyle ?? []).map((style) => {
+            const meta = STYLE_META[style];
+            if (!meta) return null;
+            return (
+              <span key={style} className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold text-slate-200 ring-1 ring-white/10">
+                {meta.icon} {meta.label}
+                <Tooltip text={meta.description} />
+              </span>
+            );
+          })}
         </div>
-
-        {/* Travel style badges */}
-        {country.travelStyle && country.travelStyle.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mt-2.5">
-            {country.travelStyle.map((style) => {
-              const meta = STYLE_META[style];
-              if (!meta) return null;
-              return (
-                <span key={style} className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2 py-1 text-[10px] font-semibold text-slate-200">
-                  {meta.icon} {meta.label}
-                  <Tooltip text={meta.description} />
-                </span>
-              );
-            })}
-          </div>
-        )}
       </div>
 
       {/* Action bar — sits below gradient */}
-      <div className="flex items-center gap-2 px-5 py-2.5 bg-white border-b border-gray-100">
+      <div className="flex flex-wrap items-center gap-1.5 px-4 py-2.5 bg-white border-b border-gray-100">
         <ActionPill
           active={isVisited}
           onClick={onToggleVisited}
           activeClassName="bg-emerald-50 text-emerald-700 ring-emerald-200"
           icon={isVisited ? "✓" : "○"}
-          label={isVisited ? "Visited" : "Visited"}
+          label="Visited"
         />
         <ActionPill
           active={isFavorite}
@@ -127,7 +125,7 @@ function ActionPill({ icon, label, onClick, active = false, activeClassName }: {
       onClick={onClick}
       aria-label={label}
       aria-pressed={active}
-      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold transition-colors focus-ring ring-1 ${
+      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[11px] font-semibold transition-colors focus-ring ring-1 ${
         active
           ? activeClassName ?? "bg-slate-100 text-slate-700 ring-slate-200"
           : "bg-white text-gray-500 ring-gray-200 hover:bg-gray-50 hover:text-gray-700"

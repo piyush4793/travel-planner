@@ -105,6 +105,19 @@ export default function App() {
   );
   const comboNames = selectedCountry?.combo ?? [];
 
+  // Resolve any country by name (My List → all seed/custom → catalog stub) so
+  // combine-with pills open even for destinations the user hasn't added yet.
+  const resolveCountry = useCallback((name: string): Country | null => {
+    const tracked = store.myListCountries.find((c) => c.name === name)
+      ?? store.allCountries.find((c) => c.name === name);
+    if (tracked) return tracked;
+    const cat = store.catalog.find((c) => c.name === name);
+    if (cat) {
+      return { name: cat.name, lat: cat.lat, lng: cat.lng, region: cat.region, bestMonths: [], budget: "", experiences: [] };
+    }
+    return null;
+  }, [store.myListCountries, store.allCountries, store.catalog]);
+
   const handleSave = useCallback((country: Country) => {
     store.saveCountry(country);
     setFormTarget(null);
@@ -326,6 +339,7 @@ export default function App() {
           homeCountry={homeCountry}
           mainMapRef={mainMapRef}
           allCountries={store.myListCountries}
+          resolveCountry={resolveCountry}
           onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
           aiPlans={isEnabled("llmPlanning") ? selectedCountryAiPlans : undefined}
           onDeleteAiPlan={isEnabled("llmPlanning") ? handleDeleteAiPlan : undefined}

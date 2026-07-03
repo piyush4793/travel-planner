@@ -5,6 +5,7 @@ import type { Country } from "../../core/types";
 import type { SavedAiPlan } from "../../hooks/useAiPlanStore";
 import { generateTripPlan, getMaxRuleDays, getRecRuleDays } from "../../core/utils/tripPlans";
 import type { TripPlan } from "../../core/utils/tripPlans";
+import { mergeCountryData } from "../../core/utils/countryData";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { useCountryRule } from "../../hooks/useCountryRule";
@@ -39,6 +40,7 @@ type Props = {
   homeCountry: string;
   mainMapRef?: RefObject<maplibregl.Map | null>;
   allCountries?: Country[];
+  resolveCountry?: (name: string) => Country | null;
   onPlanWithAi?: (countryName: string) => void;
   aiPlans?: SavedAiPlan[];
   onDeleteAiPlan?: (planId: string) => void;
@@ -55,12 +57,13 @@ export default function CountryPanel({
   homeCountry,
   mainMapRef,
   allCountries,
+  resolveCountry,
   onPlanWithAi,
   aiPlans = [],
   onDeleteAiPlan,
   onCinematicChange,
 }: Props) {
-  const { panelWidth, startPanelDrag, dragHandleProps } = usePanelDrag(320, 320);
+  const { panelWidth, startPanelDrag, dragHandleProps } = usePanelDrag(400, 340);
   const bp = useBreakpoint();
   const isMobile = bp === "mobile";
   const { data: consolidated, rule, loading: ruleLoading } = useCountryRule(country?.name);
@@ -83,8 +86,14 @@ export default function CountryPanel({
   const safeMaxDays = Math.max(maxDays, 1);
   const sliderPercent = getRangePercent(customDays, safeMaxDays);
   const recPercent = getRangePercent(Math.min(recDays, safeMaxDays), safeMaxDays);
-  const bestMonths = country?.bestMonths ?? [];
-  const worstMonths = country?.worstMonths ?? [];
+  // Overlay loaded rule data onto the (possibly minimal) country so combine-with
+  // targets and not-yet-enriched entries render full details.
+  const displayCountry = useMemo(
+    () => (country ? mergeCountryData(country, consolidated) : null),
+    [country, consolidated],
+  );
+  const bestMonths = displayCountry?.bestMonths ?? [];
+  const worstMonths = displayCountry?.worstMonths ?? [];
 
   useEffect(() => {
     currentCountryNameRef.current = country?.name ?? null;
@@ -127,8 +136,8 @@ export default function CountryPanel({
 
   const planOptions = useMemo(() => {
     const opts: { id: string; label: string; plan: TripPlan }[] = [];
-    if (country) {
-      const defaultPlan = generateTripPlan(country, "custom", selectedCities, customDays, rule);
+    if (displayCountry) {
+      const defaultPlan = generateTripPlan(displayCountry, "custom", selectedCities, customDays, rule);
       opts.push({ id: "default", label: "📅 Default", plan: defaultPlan });
       for (let i = 0; i < aiPlans.length; i++) {
         const sp = aiPlans[i];
@@ -137,7 +146,7 @@ export default function CountryPanel({
       }
     }
     return opts;
-  }, [country, selectedCities, customDays, aiPlans, rule]);
+  }, [displayCountry, selectedCities, customDays, aiPlans, rule]);
 
   const activePlan = planOptions.find((o) => o.id === activePlanId) ?? planOptions[0];
   const isDefaultActive = activePlanId === "default";
@@ -173,10 +182,10 @@ export default function CountryPanel({
         </div>
       )}
 
-      {country && (
+      {displayCountry && (
         <>
           <PanelHeader
-            country={country}
+            country={displayCountry}
             consolidated={consolidated}
             ruleLoading={ruleLoading}
             homeCountry={homeCountry}
@@ -187,7 +196,7 @@ export default function CountryPanel({
             onToggleFavorite={onToggleFavorite}
             onEdit={onEdit}
             onClose={onClose}
-            extraActions={<ShareButton country={country} homeCountry={homeCountry} plan={activePlan?.plan} />}
+            extraActions={<ShareButton country={displayCountry} homeCountry={homeCountry} plan={activePlan?.plan} />}
           />
 
           {/* Tab bar */}
@@ -220,7 +229,7 @@ export default function CountryPanel({
               <>
                 <CollapsibleSection label="Trip readiness" defaultOpen={false}>
                   <TripReadiness
-                    country={country}
+                    country={displayCountry}
                     isVisited={isVisited}
                     isFavorite={isFavorite}
                     aiPlanCount={aiPlans.length}
@@ -234,9 +243,9 @@ export default function CountryPanel({
                   </CollapsibleSection>
                 )}
 
-                <CollapsibleSection label="Experiences" count={country.experiences.length}>
+                <CollapsibleSection label="Experiences" count={displayCountry.experiences.length}>
                   <div className="flex flex-wrap gap-1.5">
-                    {country.experiences.map((experience) => {
+                    {displayCountry.experiences.map((experience) => {
                       const active = activeExperiences.includes(experience);
                       return (
                         <button
@@ -253,28 +262,28 @@ export default function CountryPanel({
                   </div>
                 </CollapsibleSection>
 
-                {country.cities && country.cities.length > 0 && (
-                  <CollapsibleSection label="Cities" count={country.cities.length}>
+                {displayCountry.cities && displayCountry.cities.length > 0 && (
+                  <CollapsibleSection label="Cities" count={displayCountry.cities.length}>
                     <div className="space-y-2">
-                      {country.cities.map((city) => (
+                      {displayCountry.cities.map((city) => (
                         <CityCard key={city.name} city={city} />
                       ))}
                     </div>
                   </CollapsibleSection>
                 )}
 
-                {country.stopoverNote && (
+                {displayCountry.stopoverNote && (
                   <div className="rounded-xl bg-blue-50 border border-blue-100 px-3.5 py-2.5">
                     <p className="text-[10px] font-bold text-blue-500 uppercase tracking-wide mb-1">✈️ Stopover tip</p>
-                    <p className="text-xs leading-relaxed text-blue-800">{country.stopoverNote}</p>
+                    <p className="text-xs leading-relaxed text-blue-800">{displayCountry.stopoverNote}</p>
                   </div>
                 )}
 
-                {country.avoid && country.avoid.length > 0 && (
+                {displayCountry.avoid && displayCountry.avoid.length > 0 && (
                   <div className="rounded-xl bg-amber-50 border border-amber-100 px-3.5 py-2.5">
                     <p className="text-[10px] font-bold text-amber-600 uppercase tracking-wide mb-1.5">⚠️ Watch out for</p>
                     <ul className="space-y-1.5">
-                      {country.avoid.map((item) => (
+                      {displayCountry.avoid.map((item) => (
                         <li key={item} className="flex gap-2 text-xs leading-snug text-amber-800">
                           <span className="mt-0.5 shrink-0">•</span>
                           <span>{item}</span>
@@ -284,14 +293,15 @@ export default function CountryPanel({
                   </div>
                 )}
 
-                {country.combo && country.combo.length > 0 && (
-                  <CollapsibleSection label="Combine with" count={country.combo.length}>
+                {displayCountry.combo && displayCountry.combo.length > 0 && (
+                  <CollapsibleSection label="Combine with" count={displayCountry.combo.length}>
                     <div className="flex flex-wrap gap-1.5">
-                      {country.combo.map((comboCountry) => (
+                      {displayCountry.combo.map((comboCountry) => (
                         <button
                           key={comboCountry}
                           onClick={() => {
-                            const match = allCountries?.find((item) => item.name === comboCountry);
+                            const match = allCountries?.find((item) => item.name === comboCountry)
+                              ?? resolveCountry?.(comboCountry);
                             if (match) onSelectCountry?.(match);
                           }}
                           className="rounded-full border border-purple-200 bg-purple-50 px-2.5 py-1 text-xs font-semibold text-purple-700 transition-colors hover:border-purple-300 hover:bg-purple-100 focus-ring"
@@ -379,11 +389,11 @@ export default function CountryPanel({
                       </div>
                     </div>
 
-                    {country.cities && country.cities.length > 0 && (
-                      <CollapsibleSection label="Cities to visit" count={country.cities.length} defaultOpen={false}>
+                    {displayCountry.cities && displayCountry.cities.length > 0 && (
+                      <CollapsibleSection label="Cities to visit" count={displayCountry.cities.length} defaultOpen={false}>
                         <p className="mb-2 text-[11px] text-gray-500">Optional — auto-selected if blank</p>
                         <div className="space-y-2">
-                          {country.cities.map((city) => (
+                          {displayCountry.cities.map((city) => (
                             <CityCard
                               key={city.name}
                               city={city}
@@ -434,7 +444,7 @@ export default function CountryPanel({
                 <div className="flex gap-2">
                   {isDefaultActive && onPlanWithAi && (
                     <button
-                      onClick={() => onPlanWithAi(country.name)}
+                      onClick={() => onPlanWithAi(displayCountry.name)}
                       className="flex-1 rounded-xl border-2 border-emerald-200 bg-emerald-50 py-2.5 text-[11px] font-bold text-emerald-700 transition-colors hover:border-emerald-300 hover:bg-emerald-100 focus-ring"
                     >
                       ✨ Plan with AI
@@ -445,7 +455,7 @@ export default function CountryPanel({
                 {activePlan && (
                   <PlanPreview
                     key={`${activePlanId}-${isDefaultActive ? [...selectedCities].sort().join(",") : ""}-${isDefaultActive ? customDays : activePlan.plan.days.length}`}
-                    country={country}
+                    country={displayCountry}
                     plan={activePlan.plan}
                     homeCountry={homeCountry}
                     onCinematic={setCinematicPlan}
@@ -461,16 +471,16 @@ export default function CountryPanel({
             {panelTab === "info" && (
               <>
                 <LearnAboutSection
-                  countryName={country.name}
+                  countryName={displayCountry.name}
                   currentCountryNameRef={currentCountryNameRef}
                 />
 
-                <PlanningResourcesSection countryName={country.name} />
+                <PlanningResourcesSection countryName={displayCountry.name} />
 
-                {country.links && country.links.length > 0 && (
-                  <CollapsibleSection label="Useful links" count={country.links.length}>
+                {displayCountry.links && displayCountry.links.length > 0 && (
+                  <CollapsibleSection label="Useful links" count={displayCountry.links.length}>
                     <div className="space-y-2">
-                      {country.links.map((link) => (
+                      {displayCountry.links.map((link) => (
                         <a
                           key={link.url}
                           href={link.url}
@@ -564,24 +574,24 @@ export default function CountryPanel({
       )}
 
       <Suspense fallback={null}>
-        {cinematicPlan && country && (
+        {cinematicPlan && displayCountry && (
           <ItineraryCinematic
             plan={cinematicPlan}
-            country={country}
+            country={displayCountry}
             homeCountry={homeCountry}
             mainMapRef={mainMapRef}
             rule={rule}
-            comboCountries={country.combo
-              ?.map((name) => allCountries?.find((item) => item.name === name))
+            comboCountries={displayCountry.combo
+              ?.map((name) => allCountries?.find((item) => item.name === name) ?? resolveCountry?.(name))
               .filter((item): item is Country => !!item)
               .map(({ name, lat, lng }) => ({ name, lat, lng }))}
             onClose={() => setCinematicPlan(null)}
           />
         )}
-        {modalPlan && country && (
+        {modalPlan && displayCountry && (
           <ItineraryModal
             plan={modalPlan}
-            country={country}
+            country={displayCountry}
             rule={rule}
             onClose={() => setModalPlan(null)}
           />

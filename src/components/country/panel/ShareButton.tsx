@@ -98,7 +98,7 @@ export default function ShareButton({ country, homeCountry, plan }: Props) {
   return (
     <button
       onClick={handleShare}
-      className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold transition-colors focus-ring ring-1 bg-white text-gray-500 ring-gray-200 hover:bg-gray-50 hover:text-gray-700"
+      className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[11px] font-semibold transition-colors focus-ring ring-1 bg-white text-gray-500 ring-gray-200 hover:bg-gray-50 hover:text-gray-700"
       aria-label={copied ? "Copied to clipboard" : "Share destination and itinerary"}
     >
       <span aria-hidden="true">{copied ? "✓" : "🔗"}</span>

@@ -202,7 +202,7 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 ### Country panel interactions
 
 - Header flag rendering uses explicit aliases plus locale region-name resolution and now covers all manifest country names.
-- “Combine with” pills are interactive and navigate directly to the selected country panel when present in My List.
+- “Combine with” pills are interactive and open the selected country panel — resolving from My List, the seed/custom set, or the catalog — so related destinations open even when not yet added. The panel merges loaded rule data (`mergeCountryData`) over the resolved country, so a not-yet-tracked target still shows full budget/months/experiences/itinerary.
 
 ### Cinematic map
 

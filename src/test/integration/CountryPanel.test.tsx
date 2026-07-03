@@ -96,6 +96,38 @@ describe("CountryPanel", () => {
     expect(onSelectCountry).toHaveBeenCalledWith(expect.objectContaining({ name: "France" }));
   });
 
+  it("opens a combo country not in My List via resolveCountry fallback", async () => {
+    const user = userEvent.setup();
+    const onSelectCountry = vi.fn();
+    const resolved = makeCountry({ name: "Sri Lanka", lat: 7.8, lng: 80.7, experiences: [] });
+    const resolveCountry = vi.fn().mockReturnValue(resolved);
+
+    render(
+      <CountryPanel
+        country={makeCountry({ name: "India", combo: ["Sri Lanka"] })}
+        onClose={vi.fn()}
+        onSelectCountry={onSelectCountry}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+        isVisited={false}
+        onToggleVisited={vi.fn()}
+        onFilterExperience={vi.fn()}
+        activeExperiences={[]}
+        onEdit={vi.fn()}
+        onUpdateNotes={vi.fn()}
+        homeCountry="India"
+        allCountries={[makeCountry({ name: "India", combo: ["Sri Lanka"] })]}
+        resolveCountry={resolveCountry}
+      />,
+    );
+
+    await user.click(screen.getByRole("button", { name: /Combine with/i }));
+    await user.click(screen.getByRole("button", { name: "Sri Lanka" }));
+
+    expect(resolveCountry).toHaveBeenCalledWith("Sri Lanka");
+    expect(onSelectCountry).toHaveBeenCalledWith(expect.objectContaining({ name: "Sri Lanka" }));
+  });
+
   it("persists notes updates on blur", async () => {
     const user = userEvent.setup();
     const onUpdateNotes = vi.fn();
