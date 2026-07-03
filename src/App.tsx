@@ -22,6 +22,7 @@ import { useBreakpoint } from "./hooks/useBreakpoint";
 import { useBackDismiss } from "./hooks/useBackDismiss";
 import { isEnabled } from "./core/featureFlags";
 import { useInstallPrompt } from "./hooks/useInstallPrompt";
+import AppInstallShare from "./components/shared/AppInstallShare";
 import { isBackupOverdue, autoBackupIfOverdue } from "./utils/backup";
 
 // Lazy-load heavy modals/overlays — only fetched when first opened
@@ -214,6 +215,13 @@ export default function App() {
         {/* Desktop actions */}
         <div className="hidden md:flex items-center gap-2.5 shrink-0">
           <HomeCountrySelector value={homeCountry} onChange={setHomeCountry} />
+          <AppInstallShare
+            canInstall={installPrompt.canPrompt}
+            isIOS={installPrompt.isIOS}
+            isStandalone={installPrompt.isInstalled}
+            onInstall={installPrompt.promptInstall}
+            variant="header"
+          />
           <button onClick={() => setSettingsOpen(true)}
             data-tour="settings"
             className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15 focus-ring"
@@ -240,6 +248,15 @@ export default function App() {
         <div className="md:hidden bg-gradient-to-b from-indigo-600 to-indigo-700 text-white px-4 py-3 space-y-3 shrink-0 shadow-lg">
           <div className="flex items-center gap-2 flex-wrap">
             <HomeCountrySelector value={homeCountry} onChange={(v) => { setHomeCountry(v); }} />
+          </div>
+          <div className="flex items-center gap-2 flex-wrap">
+            <AppInstallShare
+              canInstall={installPrompt.canPrompt}
+              isIOS={installPrompt.isIOS}
+              isStandalone={installPrompt.isInstalled}
+              onInstall={() => { void installPrompt.promptInstall(); setMenuOpen(false); }}
+              variant="menu"
+            />
           </div>
           <div className="flex items-center gap-2">
             <button

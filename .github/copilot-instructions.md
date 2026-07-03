@@ -154,7 +154,7 @@ src/components/
   ai/       — AiItineraryModal, ChatModal, SettingsModal
   country/  — CountryPanel, CountryForm, ItineraryCinematic, ItineraryModal, PlanCompareModal
   map/      — HoverCard and map internals
-  shared/   — PillGroup, FilterChip, Filters, Tooltip, HomeCountrySelector, DevFlagPanel, ExperienceDropdown
+  shared/   — PillGroup, FilterChip, Filters, Tooltip, HomeCountrySelector, DevFlagPanel, ExperienceDropdown, AppInstallShare, FreTour
   views/    — CalendarView, DiscoverView, TripsView
 ```
 
@@ -183,6 +183,7 @@ All state is hooks-based — no Redux, no context providers. `App.tsx` calls hoo
 | `Tooltip` | `shared/Tooltip.tsx` | Portal-based info tooltip |
 | `HomeCountrySelector` | `shared/HomeCountrySelector.tsx` | Feature-gated searchable dropdown |
 | `DevFlagPanel` | `shared/DevFlagPanel.tsx` | Dev-mode feature flag toggle |
+| `AppInstallShare` | `shared/AppInstallShare.tsx` | Header/menu app Install (beforeinstallprompt / iOS A2HS) + Share app (Web Share → `wa.me` → clipboard) |
 
 ---
 

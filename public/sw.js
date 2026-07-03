@@ -1,10 +1,13 @@
 // Roamwise Service Worker — cache-first for assets, network-first for navigation
-const CACHE_NAME = "roamwise-v2";
+const CACHE_NAME = "roamwise-v3";
 
 // Assets to pre-cache on install (shell)
 const SHELL_ASSETS = [
   "/travel-planner/",
   "/travel-planner/index.html",
+  "/travel-planner/manifest.json",
+  "/travel-planner/icon-192.png",
+  "/travel-planner/icon-512.png",
 ];
 
 self.addEventListener("install", (event) => {

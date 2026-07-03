@@ -105,6 +105,7 @@ src/
 │       ├── ExperienceDropdown.tsx # Experience tag multi-select
 │       ├── HomeCountrySelector.tsx# Home country dropdown
 │       ├── DevFlagPanel.tsx       # Dev-only feature flag panel
+│       ├── AppInstallShare.tsx    # Header/menu Install + Share-app controls
 │       ├── FreTour.tsx            # First-run guided tour (hero/spotlight/install cards)
 │       └── Tooltip.tsx            # Portal-based tooltip
 
@@ -116,11 +117,12 @@ data/
 └── wishlist.md                    # Product backlog / scratchpad
 
 public/
-├── manifest.json                  # PWA manifest (name, icons, display mode)
+├── manifest.json                  # PWA manifest (name, PNG+SVG icons, display mode)
 ├── sw.js                          # Service worker (cache-first statics, network-first HTML)
-├── icon-192.svg                   # App icon 192×192
-├── icon-512.svg                   # App icon 512×512
-└── icon-maskable.svg              # Maskable icon for Android adaptive icons
+├── icon-192.png / icon-512.png    # PNG app icons (Android/Chrome install criteria)
+├── icon-maskable.png              # Maskable PNG icon for Android adaptive icons
+├── icon-*.svg                     # SVG icon sources (also listed in manifest)
+└── og-image.png                   # 1200×630 Open Graph image for link previews
 ```
 
 ---
