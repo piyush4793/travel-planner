@@ -80,4 +80,32 @@ describe("ModalShell", () => {
     fireEvent.keyDown(first, { key: "Tab", shiftKey: true });
     expect(last).toHaveFocus();
   });
+
+  it("closes on device Back (popstate) when on a mobile viewport", () => {
+    const prevMatchMedia = window.matchMedia;
+    // Force the mobile breakpoint: no min-width query matches.
+    window.matchMedia = ((query: string) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      addListener: () => {},
+      removeListener: () => {},
+      dispatchEvent: () => false,
+    })) as typeof window.matchMedia;
+
+    const onClose = vi.fn();
+    const { unmount } = render(
+      <ModalShell open onClose={onClose} label="Settings">
+        <button>Inside modal</button>
+      </ModalShell>,
+    );
+
+    fireEvent.popState(window);
+    expect(onClose).toHaveBeenCalledTimes(1);
+
+    unmount();
+    window.matchMedia = prevMatchMedia;
+  });
 });

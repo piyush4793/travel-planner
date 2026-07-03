@@ -2,6 +2,8 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import catalogData from "../../../data/worldCatalog.json";
 import type { CatalogEntry } from "../../core/types";
 import { isEnabled } from "../../core/featureFlags";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
+import { useBackDismiss } from "../../hooks/useBackDismiss";
 
 const CATALOG = catalogData as CatalogEntry[];
 const MAX_VISIBLE = 10;
@@ -36,6 +38,10 @@ function SearchableSelector({ value, onChange, variant = "header" }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const listId = "home-country-listbox";
+  const isMobile = useBreakpoint() === "mobile";
+
+  // On mobile, let the device Back button close the dropdown first.
+  useBackDismiss(open && isMobile, () => setOpen(false));
 
   const allCountries = useMemo(
     () => CATALOG.map((c) => c.name).sort(),

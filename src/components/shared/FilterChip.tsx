@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
+import { useBackDismiss } from "../../hooks/useBackDismiss";
 
 type Props = {
   label: string;
@@ -12,6 +14,10 @@ export default function FilterChip({ label, active, children }: Props) {
   const [pos, setPos] = useState({ top: 0, left: 0 });
   const btnRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const isMobile = useBreakpoint() === "mobile";
+
+  // On mobile, let the device Back button close the dropdown first.
+  useBackDismiss(open && isMobile, () => setOpen(false));
 
   function toggle() {
     if (btnRef.current) {

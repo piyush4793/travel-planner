@@ -14,6 +14,25 @@ const localStorageMock: Storage = {
 
 Object.defineProperty(globalThis, "localStorage", { value: localStorageMock });
 
+// jsdom lacks matchMedia; default to the desktop breakpoint so components using
+// useBreakpoint render without crashing. Tests that need a specific breakpoint
+// mock useBreakpoint directly.
+if (!window.matchMedia) {
+  Object.defineProperty(window, "matchMedia", {
+    writable: true,
+    value: (query: string) => ({
+      matches: true,
+      media: query,
+      onchange: null,
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      addListener: () => {},
+      removeListener: () => {},
+      dispatchEvent: () => false,
+    }),
+  });
+}
+
 // Clear localStorage between tests
 beforeEach(() => {
   localStorageMock.clear();

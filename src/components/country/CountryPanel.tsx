@@ -11,6 +11,7 @@ import { defaultDaysForStyle } from "../../core/utils/travelStyles";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { useCountryRule } from "../../hooks/useCountryRule";
+import { useBackDismiss } from "../../hooks/useBackDismiss";
 import { useConfirm } from "../shared/ConfirmDialog";
 import PanelHeader from "./panel/PanelHeader";
 import PlanPreview from "./panel/PlanPreview";
@@ -145,6 +146,9 @@ export default function CountryPanel({
   useEffect(() => {
     onCinematicChange?.(cinematicPlan !== null);
   }, [cinematicPlan, onCinematicChange]);
+
+  // On mobile, the device Back button exits cinematic mode before closing the panel.
+  useBackDismiss(cinematicPlan !== null && isMobile, () => setCinematicPlan(null));
 
   // Close the panel on Escape, unless a sub-overlay (modal, compare, cinematic,
   // or expanded notes) is open — those own the Escape key while active.

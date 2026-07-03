@@ -1,5 +1,7 @@
 import { useState, useCallback, useRef } from "react";
 import { createPortal } from "react-dom";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
+import { useBackDismiss } from "../../hooks/useBackDismiss";
 
 const ESCAPE_KEY = "Escape";
 const DEFAULT_TITLE = "Are you sure?";
@@ -93,6 +95,10 @@ function ConfirmDialogView({
 }: ConfirmOptions & { onConfirm: () => void; onCancel: () => void }) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const style = VARIANT_STYLES[variant];
+  const isMobile = useBreakpoint() === "mobile";
+
+  // On mobile, the device Back button cancels the dialog before navigating.
+  useBackDismiss(isMobile, onCancel);
 
   // Auto-focus cancel button (safer default) + Escape to cancel
   const cancelRef = useRef<HTMLButtonElement>(null);

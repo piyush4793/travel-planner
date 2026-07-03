@@ -1,5 +1,7 @@
 import { useEffect, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
+import { useBackDismiss } from "../../hooks/useBackDismiss";
 
 type Props = {
   open: boolean;
@@ -28,10 +30,15 @@ export default function ModalShell({
 }: Props) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<Element | null>(null);
+  const isMobile = useBreakpoint() === "mobile";
 
   const safeClose = useCallback(() => {
     if (!preventClose) onClose();
   }, [preventClose, onClose]);
+
+  // On mobile, let the device Back button dismiss the modal before navigating.
+  // safeClose honors preventClose, so a locked modal stays open on Back too.
+  useBackDismiss(open && isMobile, safeClose);
 
   // Escape key handler
   useEffect(() => {
