@@ -262,10 +262,10 @@ Coverage thresholds are enforced in `vite.config.ts`:
 - `src/utils/**` — 60% statements/functions, 50% branches
 - `src/components/**` — 4% statements/functions, 2% branches (temporary floor while UI integration coverage is expanded)
 
-Current testing expansion focus:
-- App-level orchestration coverage for hash-route hydration, top-level view switching, cross-view selection wiring, top-shell feature-flag branches, and Discover add/remove callback wiring
+Current testing status:
+- Total statement coverage is ~81% (624 tests across 77 files). The `ai` folder, country-detail surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`), shared components, and the Trips/Discover/Calendar views are now covered.
 - Reusable test helpers for localStorage seeding, hash navigation setup, and deterministic timer control (`src/test/testUtils.ts`)
-- Next target: country detail + itinerary modal flows (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) before tightening `src/components/**` thresholds
+- Remaining lower-coverage surfaces: maplibre-heavy `ItineraryCinematic` / `MapView` / `HoverCard` and `App.tsx` orchestration — with these covered, the `src/components/**` thresholds can be tightened.
 
 Coverage-improvement agent loop (recommended):
 1. Plan in phases (critical integration flows -> targeted unit/component gaps -> threshold hardening).
