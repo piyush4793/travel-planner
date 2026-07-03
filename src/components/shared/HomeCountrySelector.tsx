@@ -6,17 +6,21 @@ import { isEnabled } from "../../core/featureFlags";
 const CATALOG = catalogData as CatalogEntry[];
 const MAX_VISIBLE = 10;
 
-type Props = { value: string; onChange: (v: string) => void };
+type Variant = "header" | "light";
+type Props = { value: string; onChange: (v: string) => void; variant?: Variant };
 
-export default function HomeCountrySelector({ value, onChange }: Props) {
+export default function HomeCountrySelector({ value, onChange, variant = "header" }: Props) {
   const searchable = isEnabled("searchableHomeCountry");
 
   if (searchable) {
-    return <SearchableSelector value={value} onChange={onChange} />;
+    return <SearchableSelector value={value} onChange={onChange} variant={variant} />;
   }
+  const staticClass = variant === "light"
+    ? "flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-slate-700 bg-slate-100 rounded-lg border border-slate-200"
+    : "flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-white bg-white/10 rounded-full border border-white/15";
   return (
     <span
-      className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-white bg-white/10 rounded-full border border-white/15"
+      className={staticClass}
       aria-label={`Home country: ${value}`}
     >
       📍 {value}
@@ -24,7 +28,7 @@ export default function HomeCountrySelector({ value, onChange }: Props) {
   );
 }
 
-function SearchableSelector({ value, onChange }: Props) {
+function SearchableSelector({ value, onChange, variant = "header" }: Props) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -118,7 +122,7 @@ function SearchableSelector({ value, onChange }: Props) {
 
   return (
     <div ref={ref} className="relative" onKeyDown={handleKeyDown}>
-      <TriggerButton value={value} open={open} onClick={() => setOpen((o) => !o)} />
+      <TriggerButton value={value} open={open} variant={variant} onClick={() => setOpen((o) => !o)} />
       {open && (
         <div className="absolute right-0 top-full mt-1 bg-white rounded-xl shadow-xl border border-gray-200 z-50 min-w-52 overflow-hidden">
           <div className="p-2 border-b border-gray-100">
@@ -164,17 +168,21 @@ function SearchableSelector({ value, onChange }: Props) {
   );
 }
 
-function TriggerButton({ value, open, onClick }: { value: string; open: boolean; onClick: () => void }) {
+function TriggerButton({ value, open, variant = "header", onClick }: { value: string; open: boolean; variant?: Variant; onClick: () => void }) {
+  const cls = variant === "light"
+    ? "flex items-center gap-1 px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-xs font-semibold transition-colors border border-slate-200 text-slate-700 focus-ring"
+    : "flex items-center gap-1 px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-full text-xs font-semibold transition-colors border border-white/20 text-white focus-ring";
+  const chevronCls = variant === "light" ? "text-slate-400" : "text-white/60";
   return (
     <button
       onClick={onClick}
-      className="flex items-center gap-1 px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-full text-xs font-semibold transition-colors border border-white/20 text-white focus-ring"
+      className={cls}
       aria-expanded={open}
       aria-haspopup="listbox"
       aria-label={`Home country: ${value}`}
     >
       📍 {value}
-      <span className={`text-white/60 text-[10px] transition-transform inline-block ${open ? "rotate-180" : ""}`}>▾</span>
+      <span className={`${chevronCls} text-[10px] transition-transform inline-block ${open ? "rotate-180" : ""}`}>▾</span>
     </button>
   );
 }

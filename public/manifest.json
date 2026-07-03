@@ -9,6 +9,15 @@
   "theme_color": "#2563eb",
   "orientation": "any",
   "categories": ["travel", "lifestyle", "productivity"],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://piyush4793.github.io/travel-planner/manifest.json"
+    }
+  ],
   "icons": [
     {
       "src": "icon-192.png",

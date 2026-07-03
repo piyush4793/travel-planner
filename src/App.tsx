@@ -1,8 +1,6 @@
 import { useState, useCallback, useMemo, useRef, useEffect, lazy, Suspense } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country, VisitedFilter } from "./core/types";
-import HomeCountrySelector from "./components/shared/HomeCountrySelector";
-import BudgetBasisPills from "./components/shared/BudgetBasisPills";
 import DevFlagPanel from "./components/shared/DevFlagPanel";
 
 // Lazy-load view and panel components — only fetched when first navigated/opened
@@ -215,14 +213,14 @@ export default function App() {
         </div>
 
         {/* Desktop actions */}
-        <div className="hidden md:flex items-center gap-2.5 shrink-0">
-          <BudgetBasisPills value={globalBasis} onChange={setGlobalBasis} variant="header" ariaLabel="Default budget party size" />
-          <HomeCountrySelector value={homeCountry} onChange={setHomeCountry} />
+        <div className="hidden md:flex items-center gap-2 shrink-0">
           <AppInstallShare
             canInstall={installPrompt.canPrompt}
             isIOS={installPrompt.isIOS}
             isStandalone={installPrompt.isInstalled}
+            installedInBrowser={installPrompt.installedInBrowser}
             onInstall={installPrompt.promptInstall}
+            onOpenApp={installPrompt.openApp}
             variant="header"
           />
           <button onClick={() => setSettingsOpen(true)}
@@ -250,18 +248,13 @@ export default function App() {
       {menuOpen && isMobile && (
         <div className="md:hidden bg-gradient-to-b from-indigo-600 to-indigo-700 text-white px-4 py-3 space-y-3 shrink-0 shadow-lg">
           <div className="flex items-center gap-2 flex-wrap">
-            <HomeCountrySelector value={homeCountry} onChange={(v) => { setHomeCountry(v); }} />
-          </div>
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-xs font-medium text-white/85">Budget for</span>
-            <BudgetBasisPills value={globalBasis} onChange={setGlobalBasis} variant="header" showLabel ariaLabel="Default budget party size" />
-          </div>
-          <div className="flex items-center gap-2 flex-wrap">
             <AppInstallShare
               canInstall={installPrompt.canPrompt}
               isIOS={installPrompt.isIOS}
               isStandalone={installPrompt.isInstalled}
+              installedInBrowser={installPrompt.installedInBrowser}
               onInstall={() => { void installPrompt.promptInstall(); setMenuOpen(false); }}
+              onOpenApp={() => { installPrompt.openApp(); setMenuOpen(false); }}
               variant="menu"
             />
           </div>
@@ -387,7 +380,7 @@ export default function App() {
         )}
 
         {settingsOpen && (
-          <SettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} onOpenChat={() => { setChatInitialPrompt(undefined); setChatOpen(true); }} countries={store.myListCountries} />
+          <SettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} onOpenChat={() => { setChatInitialPrompt(undefined); setChatOpen(true); }} countries={store.myListCountries} homeCountry={homeCountry} onHomeCountryChange={setHomeCountry} budgetBasis={globalBasis} onBudgetBasisChange={setGlobalBasis} />
         )}
         {chatOpen && (
           <ChatModal
@@ -420,7 +413,7 @@ export default function App() {
 
         <FreTour
           canPromptInstall={installPrompt.canPrompt}
-          isInstalled={installPrompt.isInstalled}
+          isInstalled={installPrompt.isInstalled || installPrompt.installedInBrowser}
           isIOS={installPrompt.isIOS}
           onInstall={installPrompt.promptInstall}
         />

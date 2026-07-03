@@ -2,8 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "../../App";
-import { LS_KEYS } from "../../core/lsKeys";
-import { seedLocalStorage, setHashRoute } from "../testUtils";
+import { setHashRoute } from "../testUtils";
 import type { Country } from "../../core/types";
 import { isEnabled } from "../../core/featureFlags";
 
@@ -27,7 +26,6 @@ const NAV_TOUR_IDS = {
 } as const;
 
 const TEST_IDS = {
-  HOME_COUNTRY: "home-country-value",
   TRIPS_VIEW: "trips-view",
   CALENDAR_VIEW: "calendar-view",
   DISCOVER_VIEW: "discover-view",
@@ -42,7 +40,6 @@ const TEST_IDS = {
   DISCOVER_REMOVE_COUNTRY: "discover-remove-country",
 } as const;
 
-const DEFAULT_HOME_COUNTRY = "Canada";
 const FOOD_EXPERIENCE = "Food";
 const BR_PRESENT_COUNTRIES_COUNT = "2";
 const JP_ONLY_COUNTRIES_COUNT = "1";
@@ -157,10 +154,6 @@ vi.mock("../../components/views/DiscoverView", () => ({
   },
 }));
 
-vi.mock("../../components/shared/HomeCountrySelector", () => ({
-  default: ({ value }: { value: string }) => <div data-testid={TEST_IDS.HOME_COUNTRY}>{value}</div>,
-}));
-
 vi.mock("../../components/shared/DevFlagPanel", () => ({
   default: () => <div data-testid="dev-flag-panel" />,
 }));
@@ -262,12 +255,10 @@ describe("App orchestration", () => {
 
   it("defaults to trips view when hash is invalid and supports top-level view switching", async () => {
     const user = userEvent.setup();
-    seedLocalStorage({ [LS_KEYS.HOME_COUNTRY]: DEFAULT_HOME_COUNTRY });
     window.history.pushState(null, "", ROUTES.INVALID);
 
     render(<App />);
 
-    expect(screen.getByTestId(TEST_IDS.HOME_COUNTRY)).toHaveTextContent(DEFAULT_HOME_COUNTRY);
     expect(await screen.findByTestId(TEST_IDS.TRIPS_VIEW)).toBeInTheDocument();
     expect(window.location.hash).toBe(ROUTES.TRIPS);
 

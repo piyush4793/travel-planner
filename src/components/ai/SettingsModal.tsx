@@ -14,8 +14,11 @@ import {
 } from "../../utils/backup";
 import { isEnabled } from "../../core/featureFlags";
 import { getLLMKeys, getActiveProvider, saveLLMKeys, saveActiveProvider } from "../../core/utils/ai/llmSettings";
+import type { BudgetBasis } from "../../core/utils/budget";
 import ModalShell from "../shared/ModalShell";
 import { useConfirm } from "../shared/ConfirmDialog";
+import SettingsNav, { type SettingsNavItem } from "./settings/SettingsNav";
+import GeneralSettings from "./settings/GeneralSettings";
 
 
 const PROVIDERS: LLMProviderType[] = ["openai", "claude", "gemini"];
@@ -59,12 +62,21 @@ const PROVIDER_HELP: Record<LLMProviderType, { placeholder: string; steps: strin
   },
 };
 
-type SettingsTab = "ai" | "backup";
-type Props = { open: boolean; onClose: () => void; onOpenChat?: () => void; countries?: Country[] };
+type SettingsSection = "general" | "ai" | "backup";
+type Props = {
+  open: boolean;
+  onClose: () => void;
+  onOpenChat?: () => void;
+  countries?: Country[];
+  homeCountry: string;
+  onHomeCountryChange: (v: string) => void;
+  budgetBasis: BudgetBasis;
+  onBudgetBasisChange: (b: BudgetBasis) => void;
+};
 
-export default function SettingsModal({ open, onClose, onOpenChat, countries }: Props) {
+export default function SettingsModal({ open, onClose, onOpenChat, countries, homeCountry, onHomeCountryChange, budgetBasis, onBudgetBasisChange }: Props) {
   const showAi = isEnabled("llmPlanning");
-  const [tab, setTab] = useState<SettingsTab>(showAi ? "ai" : "backup");
+  const [section, setSection] = useState<SettingsSection>("general");
   const [keys, setKeys] = useState<LLMKeys>(getLLMKeys);
   const [draft, setDraft] = useState("");
   const [provider, setProvider] = useState<LLMProviderType>(getActiveProvider);
@@ -177,58 +189,48 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
 
   const masked = currentKey ? currentKey.slice(0, 7) + "\u2022".repeat(20) + currentKey.slice(-4) : "";
 
+  const navItems: SettingsNavItem<SettingsSection>[] = [
+    { key: "general", icon: "\u2699\uFE0F", label: "General" },
+    ...(showAi ? [{ key: "ai" as const, icon: "\u{1F916}", label: "AI" }] : []),
+    { key: "backup", icon: "\u{1F4BE}", label: "Backup" },
+  ];
+
   return (
     <>
     <ModalShell
       open={open}
       onClose={onClose}
       label="Settings"
-      className="bg-white md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-md md:mx-4 p-5 md:p-6 space-y-4 h-dvh md:h-auto md:max-h-[90vh] overflow-y-auto"
+      className="bg-white md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-2xl md:mx-4 h-dvh md:h-[600px] md:max-h-[88vh] flex flex-col overflow-hidden"
       backdropClassName="bg-black/30 backdrop-blur-sm"
     >
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between px-5 md:px-6 pt-5 md:pt-6 pb-4 border-b border-slate-100">
           <h2 className="text-base font-bold text-slate-800 flex items-center gap-2">
             <span className="text-lg">{"\u2699\uFE0F"}</span> Settings
           </h2>
           <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-lg leading-none p-1.5 min-w-[32px] min-h-[32px] rounded-lg focus-ring" aria-label="Close settings">{"\u2715"}</button>
         </div>
 
-        {/* Tab switcher */}
-        <div className="flex gap-1 bg-slate-100 rounded-xl p-1" role="tablist" aria-label="Settings sections" onKeyDown={(e) => {
-          const tabs: SettingsTab[] = showAi ? ["ai", "backup"] : ["backup"];
-          const idx = tabs.indexOf(tab);
-          if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); setTab(tabs[(idx + 1) % tabs.length]); }
-          else if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); setTab(tabs[(idx - 1 + tabs.length) % tabs.length]); }
-        }}>
-          {showAi && (
-            <button
-              role="tab"
-              aria-selected={tab === "ai"}
-              aria-controls="settings-panel-ai"
-              id="settings-tab-ai"
-              tabIndex={tab === "ai" ? 0 : -1}
-              onClick={() => setTab("ai")}
-              className={"flex-1 px-3 py-2 rounded-lg text-xs font-semibold transition-colors focus-ring " + (tab === "ai" ? "bg-white text-blue-700 shadow-sm" : "text-slate-500 hover:text-slate-700")}
-            >
-              {"\u{1F916}"} AI
-            </button>
-          )}
-          <button
-            role="tab"
-            aria-selected={tab === "backup"}
-            aria-controls="settings-panel-backup"
-            id="settings-tab-backup"
-            tabIndex={tab === "backup" ? 0 : -1}
-            onClick={() => setTab("backup")}
-            className={"flex-1 px-3 py-2 rounded-lg text-xs font-semibold transition-colors focus-ring " + (tab === "backup" ? "bg-white text-blue-700 shadow-sm" : "text-slate-500 hover:text-slate-700")}
-          >
-            {"\u{1F4BE}"} Backup
-          </button>
-        </div>
+        {/* Sidebar + content */}
+        <div className="flex flex-col md:flex-row flex-1 min-h-0 px-5 md:px-6 pt-4">
+          <SettingsNav items={navItems} active={section} onSelect={setSection} />
 
-        {/* AI Tab */}
-        {tab === "ai" && showAi && (
+          <div className="flex-1 min-h-0 overflow-y-auto md:pl-5 pb-5 md:pb-6">
+        {/* General */}
+        {section === "general" && (
+          <div role="tabpanel" id="settings-panel-general" aria-labelledby="settings-tab-general">
+            <GeneralSettings
+              homeCountry={homeCountry}
+              onHomeCountryChange={onHomeCountryChange}
+              budgetBasis={budgetBasis}
+              onBudgetBasisChange={onBudgetBasisChange}
+            />
+          </div>
+        )}
+
+        {/* AI */}
+        {section === "ai" && showAi && (
           <div className="space-y-4" role="tabpanel" id="settings-panel-ai" aria-labelledby="settings-tab-ai">
             <div className="space-y-1.5">
               <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Provider</label>
@@ -355,8 +357,8 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
           </div>
         )}
 
-        {/* Backup Tab */}
-        {tab === "backup" && (
+        {/* Backup */}
+        {section === "backup" && (
           <div className="space-y-4" role="tabpanel" id="settings-panel-backup" aria-labelledby="settings-tab-backup">
             <p className="text-[10px] text-slate-400 leading-relaxed">
               All your travel data lives in this browser. Export backups to keep it safe.
@@ -564,6 +566,8 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries }: 
             </div>
           </div>
         )}
+          </div>
+        </div>
     </ModalShell>
     {ConfirmDialog()}
     </>

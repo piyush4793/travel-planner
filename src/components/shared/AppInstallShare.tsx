@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useState } from "react";
+import { useAppShare } from "../../hooks/useAppShare";
 
 type Variant = "header" | "menu";
 
@@ -6,57 +7,30 @@ type Props = {
   canInstall: boolean;
   isIOS: boolean;
   isStandalone: boolean;
+  installedInBrowser?: boolean;
   onInstall: () => Promise<boolean> | void;
+  onOpenApp?: () => void;
   variant?: Variant;
 };
 
-/** Absolute URL of the deployed app (works on any host / subpath). */
-function appUrl(): string {
-  if (typeof window === "undefined") return "";
-  return new URL(import.meta.env.BASE_URL, window.location.origin).href;
-}
-
-const SHARE_BLURB =
-  "Plan your trips with Roamwise — 197 countries, offline itineraries, cinematic maps & AI planning. Free, no account:";
-
 /**
  * Persistent app-level Install + Share controls.
- * Share uses the Web Share API, falling back to a WhatsApp deep link, then clipboard.
  * Install triggers the captured beforeinstallprompt (Android/desktop Chrome); iOS shows A2HS guidance.
+ * When the PWA is already installed but viewed in a browser tab, Install is replaced by "Open app".
+ * Share uses the shared useAppShare hook: the header copies the link (avoids the
+ * off-position desktop native share popover); the mobile menu uses the native share sheet.
  */
-export default function AppInstallShare({ canInstall, isIOS, isStandalone, onInstall, variant = "header" }: Props) {
-  const [copied, setCopied] = useState(false);
+export default function AppInstallShare({
+  canInstall,
+  isIOS,
+  isStandalone,
+  installedInBrowser = false,
+  onInstall,
+  onOpenApp,
+  variant = "header",
+}: Props) {
+  const { share, copyLink, copied } = useAppShare();
   const [showIosHint, setShowIosHint] = useState(false);
-  const timerRef = useRef<number>(0);
-
-  useEffect(() => () => clearTimeout(timerRef.current), []);
-
-  const handleShare = useCallback(async () => {
-    const url = appUrl();
-    const text = `${SHARE_BLURB} ${url}`;
-
-    if (navigator.share) {
-      try {
-        await navigator.share({ title: "Roamwise", text: SHARE_BLURB, url });
-        return;
-      } catch {
-        // cancelled or unsupported payload — fall through
-      }
-    }
-
-    // WhatsApp deep link (opens chooser on mobile, WhatsApp Web on desktop)
-    const wa = `https://wa.me/?text=${encodeURIComponent(text)}`;
-    const win = window.open(wa, "_blank", "noopener,noreferrer");
-    if (win) return;
-
-    try {
-      await navigator.clipboard.writeText(url);
-      setCopied(true);
-      timerRef.current = window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      /* ignore */
-    }
-  }, []);
 
   const handleInstall = useCallback(() => {
     if (isIOS) {
@@ -67,11 +41,14 @@ export default function AppInstallShare({ canInstall, isIOS, isStandalone, onIns
   }, [isIOS, onInstall]);
 
   const isMenu = variant === "menu";
-  const showInstall = !isStandalone && (canInstall || isIOS);
+  const showOpenApp = !isStandalone && installedInBrowser && !!onOpenApp;
+  const showInstall = !isStandalone && !installedInBrowser && (canInstall || isIOS);
+  const onShare = isMenu ? share : copyLink;
+  const shareLabel = isMenu ? (copied ? "Copied!" : "Share app") : (copied ? "Link copied" : "Copy app link");
 
   const shareBtnClass = isMenu
     ? "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 border border-white/15 transition-colors focus-ring"
-    : "flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15 focus-ring";
+    : "flex items-center justify-center gap-1.5 h-8 px-2.5 min-w-[32px] bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15 focus-ring";
 
   const installBtnClass = isMenu
     ? "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold bg-white text-blue-700 hover:bg-blue-50 transition-colors focus-ring"
@@ -79,21 +56,46 @@ export default function AppInstallShare({ canInstall, isIOS, isStandalone, onIns
 
   return (
     <div className="relative flex items-center gap-2">
+      {showOpenApp && (
+        <button onClick={onOpenApp} className={installBtnClass} aria-label="Open Roamwise app">
+          <span aria-hidden="true">🚀</span>
+          {isMenu ? (
+            <span>Open app</span>
+          ) : (
+            <>
+              <span className="lg:hidden">Open</span>
+              <span className="hidden lg:inline">Open app</span>
+            </>
+          )}
+        </button>
+      )}
+
       {showInstall && (
         <button onClick={handleInstall} className={installBtnClass} aria-label="Install Roamwise app">
           <span aria-hidden="true">📲</span>
-          <span>{isMenu ? "Install app" : "Install"}</span>
+          {isMenu ? (
+            <span>Install app</span>
+          ) : (
+            <>
+              <span className="lg:hidden">Install</span>
+              <span className="hidden lg:inline">Install app</span>
+            </>
+          )}
         </button>
       )}
 
       <button
-        onClick={handleShare}
+        onClick={() => void onShare()}
         className={shareBtnClass}
-        aria-label={copied ? "Link copied" : "Share Roamwise"}
-        title="Share app"
+        aria-label={shareLabel}
+        title={shareLabel}
       >
         <span aria-hidden="true">{copied ? "✓" : "🔗"}</span>
-        {isMenu && <span>{copied ? "Copied!" : "Share app"}</span>}
+        {isMenu ? (
+          <span>{copied ? "Copied!" : "Share app"}</span>
+        ) : (
+          <span className="hidden lg:inline text-xs font-semibold">{copied ? "Copied!" : "Share"}</span>
+        )}
       </button>
 
       {showIosHint && (
