@@ -1,6 +1,7 @@
 import type { Country } from "../../../core/types";
 import type { useCountryRule } from "../../../hooks/useCountryRule";
 import { STYLE_META } from "../../../core/utils/travelStyles";
+import { BUDGET_BASIS_META, type BudgetBasis } from "../../../core/utils/budget";
 import { getCountryFlag } from "../../../utils/countryFlags";
 import Tooltip from "../../shared/Tooltip";
 import { getBudgetBadges } from "./utils";
@@ -11,6 +12,7 @@ type Props = {
   ruleLoading: boolean;
   homeCountry: string;
   recDays: number;
+  budgetBasis: BudgetBasis;
   isVisited: boolean;
   onToggleVisited: () => void;
   isFavorite: boolean;
@@ -21,7 +23,7 @@ type Props = {
 };
 
 export default function PanelHeader({
-  country, consolidated, ruleLoading, homeCountry, recDays,
+  country, consolidated, ruleLoading, homeCountry, recDays, budgetBasis,
   isVisited, onToggleVisited,
   isFavorite, onToggleFavorite,
   onEdit, onClose, extraActions,
@@ -54,17 +56,36 @@ export default function PanelHeader({
           </button>
         </div>
 
-        {/* Budget strip — grouped into one card to reduce chip clutter */}
-        <div className="mt-3 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg bg-white/[0.06] px-3 py-1.5 ring-1 ring-white/10">
-          {budgetBadges.map((badge, i) => (
-            <span key={badge.label} className="inline-flex items-center gap-1.5">
-              {i > 0 && <span className="text-white/15" aria-hidden="true">|</span>}
-              <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-slate-200">
-                <span aria-hidden="true">{badge.icon}</span>
-                <span>{badge.label}</span>
-              </span>
-            </span>
-          ))}
+        {/* Budget strip — static full-trip reference; active basis is highlighted */}
+        <div className="mt-3 rounded-xl bg-white/[0.06] px-3 py-2 ring-1 ring-white/10">
+          <Tooltip
+            variant="wrap"
+            text={`Typical total for a full ~${recDays}-day trip, shown by party size. This is a fixed reference — your plan's live cost updates in the Plan tab as you change days.`}
+            triggerClassName="gap-1 text-[9px] font-semibold uppercase tracking-wide text-slate-400 hover:text-slate-200 transition-colors"
+          >
+            <span>Typical budget</span>
+            <span aria-hidden="true" className="text-[8px] opacity-60">ⓘ</span>
+          </Tooltip>
+          <div className="mt-1.5 flex flex-wrap gap-1.5">
+            {budgetBadges.map((badge) => {
+              const active = badge.basis != null && badge.basis === budgetBasis;
+              const title = badge.basis ? BUDGET_BASIS_META[badge.basis].long : undefined;
+              return (
+                <span
+                  key={badge.basis ?? "single"}
+                  title={title}
+                  className={`inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-[11px] font-semibold ring-1 transition-colors ${
+                    active
+                      ? "bg-blue-500/20 text-blue-100 ring-blue-400/30"
+                      : "bg-white/[0.04] text-slate-200 ring-white/10"
+                  }`}
+                >
+                  <span aria-hidden="true" className="text-xs leading-none">{badge.icon}</span>
+                  <span>{badge.label}</span>
+                </span>
+              );
+            })}
+          </div>
         </div>
 
         {/* Trip facts — recommended days, best months, travel style on one row */}

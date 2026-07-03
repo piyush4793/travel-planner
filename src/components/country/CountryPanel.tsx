@@ -202,6 +202,7 @@ export default function CountryPanel({
             ruleLoading={ruleLoading}
             homeCountry={homeCountry}
             recDays={recDays}
+            budgetBasis={budgetBasis}
             isVisited={isVisited}
             onToggleVisited={onToggleVisited}
             isFavorite={isFavorite}

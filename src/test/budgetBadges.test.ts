@@ -34,5 +34,11 @@ describe("getBudgetBadges", () => {
     const badges = getBudgetBadges(baseCountry, null);
     expect(badges).toHaveLength(1);
     expect(badges[0].label).toBe("₹2L");
+    expect(badges[0].basis).toBeUndefined();
+  });
+
+  it("tags each breakdown badge with its basis in canonical order", () => {
+    const badges = getBudgetBadges(baseCountry, consolidated);
+    expect(badges.map((b) => b.basis)).toEqual(["solo", "couple", "family4"]);
   });
 });

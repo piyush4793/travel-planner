@@ -68,6 +68,31 @@ describe("CountryPanel", () => {
     }
   });
 
+  it("labels the header budget strip as a static full-trip reference", () => {
+    render(
+      <CountryPanel
+        country={makeCountry({ name: "Japan" })}
+        onClose={vi.fn()}
+        onSelectCountry={vi.fn()}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+        isVisited={false}
+        onToggleVisited={vi.fn()}
+        onFilterExperience={vi.fn()}
+        activeExperiences={[]}
+        onEdit={vi.fn()}
+        onUpdateNotes={vi.fn()}
+        homeCountry="India"
+        budgetBasis="couple"
+        allCountries={[makeCountry({ name: "Japan" })]}
+      />,
+    );
+
+    expect(screen.getByText("Typical budget")).toBeInTheDocument();
+    const tooltip = screen.getByLabelText(/fixed reference/i);
+    expect(tooltip).toBeInTheDocument();
+  });
+
   it("navigates to a combo country when combine pill is clicked", async () => {
     const user = userEvent.setup();
     const france = makeCountry({ name: "France", lat: 48.8566, lng: 2.3522, experiences: ["Museums"] });

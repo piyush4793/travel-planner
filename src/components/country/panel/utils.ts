@@ -1,25 +1,26 @@
 import type { Country } from "../../../core/types";
 import type { useCountryRule } from "../../../hooks/useCountryRule";
 import { getBudgetDisplay } from "../../../core/types";
+import { BUDGET_BASIS_META, BUDGET_BASIS_ORDER, type BudgetBasis } from "../../../core/utils/budget";
+
+export type BudgetBadge = { basis?: BudgetBasis; icon: string; label: string };
 
 export function getBudgetBadges(
   country: Country,
   consolidated: ReturnType<typeof useCountryRule>["data"],
-) {
+): BudgetBadge[] {
   // User-edited per-basis budget wins over the raw rule data; fall back to the
   // single budget string only when no breakdown exists at all.
   const breakdown = country.budgetBreakdown ?? consolidated?.budget;
   if (breakdown) {
-    return [
-      { icon: "👤", label: breakdown.solo, className: "bg-slate-100 text-slate-600" },
-      { icon: "👫", label: breakdown.couple, className: "bg-blue-50 text-blue-600" },
-      { icon: "👨‍👩‍👧‍👦", label: breakdown.family4, className: "bg-purple-50 text-purple-600" },
-    ];
+    return BUDGET_BASIS_ORDER.map((basis) => ({
+      basis,
+      icon: BUDGET_BASIS_META[basis].icon,
+      label: breakdown[basis],
+    }));
   }
 
-  return [
-    { icon: "💸", label: getBudgetDisplay(country.budget), className: "bg-slate-100 text-slate-600" },
-  ];
+  return [{ icon: "💸", label: getBudgetDisplay(country.budget) }];
 }
 
 export function getRangePercent(value: number, max: number) {
