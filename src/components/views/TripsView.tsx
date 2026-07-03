@@ -86,6 +86,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
     typeof window !== "undefined" ? window.innerWidth >= 360 : false
   );
   const [showSortHelp, setShowSortHelp] = useState(false);
+  const [advancedOpen, setAdvancedOpen] = useState(false);
   const sortHelpTimerRef = useRef<number | null>(null);
   const [confirm, ConfirmDialog] = useConfirm();
   const canUseMobileGrid = isMobile && isWideMobile;
@@ -102,6 +103,8 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
 
   const hasPrimaryFilters = selectedMonth.length > 0 || budgetFilter !== "all" || visitedFilter !== "all";
   const hasSecondaryFilters = viewMode !== "all" || visitedMode !== "all" || regionFilter !== "all";
+  const secondaryFilterCount = (viewMode !== "all" ? 1 : 0) + (visitedMode !== "all" ? 1 : 0) + (regionFilter !== "all" ? 1 : 0);
+  const advancedExpanded = advancedOpen || hasSecondaryFilters;
   const activeFilterCount = (selectedMonth.length > 0 ? 1 : 0) + (budgetFilter !== "all" ? 1 : 0) + (visitedFilter !== "all" ? 1 : 0) + (viewMode !== "all" ? 1 : 0) + (visitedMode !== "all" ? 1 : 0) + (regionFilter !== "all" ? 1 : 0);
   const basisLabel = BUDGET_BASIS_OPTIONS.find((x) => x.value === budgetBasis)?.label ?? "Couple";
   const sortSummary = sortMode === "popular" ? "Popularity" : sortMode === "az" ? "A to Z" : "Z to A";
@@ -759,39 +762,63 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
               </div>
 
               <div className="pt-3 border-t border-gray-200 space-y-3">
-                <p className="text-xs font-bold text-gray-600 uppercase tracking-wider">Trip filters</p>
-                <select
-                  value={viewMode}
-                  onChange={(e) => setViewMode(e.target.value as ViewMode)}
-                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700 focus-ring"
-                  aria-label="Trip type"
+                <button
+                  onClick={() => setAdvancedOpen((o) => !o)}
+                  className="w-full min-h-[32px] flex items-center justify-between text-xs font-bold text-gray-600 uppercase tracking-wider focus-ring rounded-lg px-1 hover:text-gray-800 transition-colors"
+                  aria-expanded={advancedExpanded}
+                  aria-controls="trips-advanced-filters"
                 >
-                  <option value="all">All trips</option>
-                  <option value="combo">Combo trips</option>
-                  <option value="solo">Solo trips</option>
-                </select>
-                <select
-                  value={visitedMode}
-                  onChange={(e) => setVisitedMode(e.target.value as VisitedMode)}
-                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700 focus-ring"
-                  aria-label="Trip progress"
-                >
-                  <option value="all">All status</option>
-                  <option value="completed">Completed</option>
-                  <option value="in-progress">In progress</option>
-                  <option value="not-started">Not started</option>
-                </select>
-                <select
-                  value={regionFilter}
-                  onChange={(e) => setRegionFilter(e.target.value as Region | "all")}
-                  className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700 focus-ring"
-                  aria-label="Region filter"
-                >
-                  <option value="all">All regions</option>
-                  {ALL_REGIONS.map((r) => (
-                    <option key={r} value={r}>{r}</option>
-                  ))}
-                </select>
+                  <span className="flex items-center gap-1.5">
+                    Trip filters
+                    {secondaryFilterCount > 0 && (
+                      <span className="w-4 h-4 rounded-full bg-blue-600 text-white text-[9px] font-bold flex items-center justify-center normal-case tracking-normal">
+                        {secondaryFilterCount}
+                      </span>
+                    )}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className={`text-sm text-gray-400 transition-transform ${advancedExpanded ? "rotate-90" : ""}`}
+                  >
+                    ⟩
+                  </span>
+                </button>
+                {advancedExpanded && (
+                  <div id="trips-advanced-filters" className="space-y-3">
+                    <select
+                      value={viewMode}
+                      onChange={(e) => setViewMode(e.target.value as ViewMode)}
+                      className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700 focus-ring"
+                      aria-label="Trip type"
+                    >
+                      <option value="all">All trips</option>
+                      <option value="combo">Combo trips</option>
+                      <option value="solo">Solo trips</option>
+                    </select>
+                    <select
+                      value={visitedMode}
+                      onChange={(e) => setVisitedMode(e.target.value as VisitedMode)}
+                      className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700 focus-ring"
+                      aria-label="Trip progress"
+                    >
+                      <option value="all">All status</option>
+                      <option value="completed">Completed</option>
+                      <option value="in-progress">In progress</option>
+                      <option value="not-started">Not started</option>
+                    </select>
+                    <select
+                      value={regionFilter}
+                      onChange={(e) => setRegionFilter(e.target.value as Region | "all")}
+                      className="w-full px-2.5 py-2 rounded-lg text-xs font-semibold border border-gray-200 bg-white text-gray-700 focus-ring"
+                      aria-label="Region filter"
+                    >
+                      <option value="all">All regions</option>
+                      {ALL_REGIONS.map((r) => (
+                        <option key={r} value={r}>{r}</option>
+                      ))}
+                    </select>
+                  </div>
+                )}
                 {(selectedMonth.length > 0 || budgetFilter !== "all" || budgetBasis !== defaultBasis || visitedFilter !== "all" || hasSecondaryFilters) && (
                   <button
                     onClick={() => {

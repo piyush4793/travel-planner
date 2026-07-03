@@ -118,10 +118,29 @@ describe("TripsView more coverage", () => {
     expect(appearsBefore(openButton("Oman"), openButton("Norway"))).toBe(true);
   });
 
+  it("collapses secondary trip filters by default and reveals them on demand", async () => {
+    const user = userEvent.setup();
+    renderTrips();
+
+    // Secondary filters (Trip type / progress / region) are hidden by default
+    // so the desktop rail stays scannable for new users.
+    expect(screen.queryByLabelText("Trip type")).not.toBeInTheDocument();
+    expect(screen.queryByLabelText("Region filter")).not.toBeInTheDocument();
+
+    const disclosure = screen.getByRole("button", { name: /Trip filters/ });
+    expect(disclosure).toHaveAttribute("aria-expanded", "false");
+
+    await user.click(disclosure);
+    expect(disclosure).toHaveAttribute("aria-expanded", "true");
+    expect(screen.getByLabelText("Trip type")).toBeInTheDocument();
+    expect(screen.getByLabelText("Region filter")).toBeInTheDocument();
+  });
+
   it("filters all, combo, and solo trip views", async () => {
     const user = userEvent.setup();
     renderTrips({ tripGroups: [{ main: "Sweden", addOns: ["Norway"], region: "Europe" }] });
 
+    await user.click(screen.getByRole("button", { name: /Trip filters/ }));
     const tripType = screen.getByLabelText("Trip type");
     expect(openButton("Sweden")).toBeInTheDocument();
     expect(openButton("Japan")).toBeInTheDocument();
@@ -139,6 +158,7 @@ describe("TripsView more coverage", () => {
     const user = userEvent.setup();
     renderTrips({ visitedNames: new Set(["Japan"]) });
 
+    await user.click(screen.getByRole("button", { name: /Trip filters/ }));
     const progress = screen.getByLabelText("Trip progress");
     await user.selectOptions(progress, "completed");
     expect(openButton("Japan")).toBeInTheDocument();
@@ -280,6 +300,7 @@ describe("TripsView more coverage", () => {
     expect(screen.getByRole("button", { name: "Show filters" })).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "Show filters" }));
+    await user.click(screen.getByRole("button", { name: /Trip filters/ }));
     await user.selectOptions(screen.getByLabelText("Region filter"), "Americas");
 
     expect(openButton("Argentina")).toBeInTheDocument();

@@ -241,7 +241,7 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 
 `TripsView` keeps one filter model but adapts presentation by breakpoint:
 - **Mobile**: compact header row with icon-triggered primary/secondary filter panels
-- **Tablet/Desktop**: left filter rail (primary + secondary + stats) that can be collapsed, with right-side results toolbar (filter toggle, search, icon-only list/grid, sort, count, new trip)
+- **Tablet/Desktop**: left filter rail (primary Month/Budget/Visited + a collapsible **Trip filters** disclosure for secondary type/status/region + stats) that can itself be collapsed, with right-side results toolbar (filter toggle, search, icon-only list/grid, sort, count, new trip). The secondary disclosure is collapsed by default (auto-expands when any secondary filter is active) so the default rail stays scannable — progressive disclosure mirrors the mobile filter sheet
 - **Card invariant**: Trips renders one card per country in My List (trip groups annotate cards but do not suppress standalone country cards)
 - **Narrow mobile**: forced list view; wider phones can switch list/grid
 - **Popularity sort**: driven by country `popularityScore` sourced from manifest metadata (calibrated to a 1-100 **leisure-only** composite across all 198 destinations: experiences 35% + city depth 20% + seasonality 20% + affordability/value 15% + combo breadth 5% + landmark presence 5%; no arrivals/receipts/work-business inputs), then favorites, then name

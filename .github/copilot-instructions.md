@@ -8,7 +8,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (682 tests across 83 files)
+npm test                # Vitest suite (683 tests across 83 files)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests + knip + build
 ```
@@ -17,7 +17,7 @@ Run `npx tsc --noEmit` and `npm run build` before and after every change set. Us
 Before committing, ensure adequate test coverage for the behavior you changed (add or update TCs so regressions are caught).
 
 Current testing priority:
-- Total statement coverage is ~82% (682 tests). Country-detail and itinerary surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) and the `ai` folder are now covered; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` and `App.tsx` orchestration.
+- Total statement coverage is ~82% (683 tests). Country-detail and itinerary surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) and the `ai` folder are now covered; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` and `App.tsx` orchestration.
 - Reuse `src/test/testUtils.ts` helpers for localStorage seeding, route setup, and deterministic timers in timing-sensitive UI tests.
 - Prefer `fireEvent` over `userEvent.tab()` for focus-trap/timing-sensitive assertions (jsdom focus timing is flaky).
 - `src/components/**` thresholds remain intentionally low in `vite.config.ts`; tighten them now that broad integration coverage exists.
@@ -105,7 +105,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 
 | View | Purpose |
 |---|---|
-| **Trips** (default) | Dashboard — progress ring, stats, “Next trip” highlight. **One card per My List country** (card count should match list size) with image collages, budget, best months. Sections: ⭐ Favorites → 📋 Planning → ✅ Completed. Tablet/desktop use a collapsible left filter rail + right results toolbar (icon-only list/grid toggle + sort); mobile defaults to list (grid toggle on wider phones). Popularity sort uses per-country `popularityScore` metadata (1-100 **leisure-only** composite over all 198 destinations: experiences 35%, city depth 20%, seasonality 20%, affordability/value 15%, combo breadth 5%, landmark presence 5%; then favorites, then name). |
+| **Trips** (default) | Dashboard — progress ring, stats, “Next trip” highlight. **One card per My List country** (card count should match list size) with image collages, budget, best months. Sections: ⭐ Favorites → 📋 Planning → ✅ Completed. Tablet/desktop use a collapsible left filter rail + right results toolbar (icon-only list/grid toggle + sort); the rail's secondary "Trip filters" (type/status/region) collapse behind a disclosure by default (auto-expand when active) for a lighter default density; mobile defaults to list (grid toggle on wider phones). Popularity sort uses per-country `popularityScore` metadata (1-100 **leisure-only** composite over all 198 destinations: experiences 35%, city depth 20%, seasonality 20%, affordability/value 15%, combo breadth 5%, landmark presence 5%; then favorites, then name). |
 | **Calendar** | Heatmap grid — rows = destinations, columns = months. Green = best, red = avoid, blue = current month. |
 | **Discover** | Browse the 197-country sovereign catalog by region. Add/remove destinations from My List. Uses its own filter bar. |
 
