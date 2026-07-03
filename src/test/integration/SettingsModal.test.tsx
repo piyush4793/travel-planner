@@ -126,7 +126,7 @@ describe("SettingsModal", () => {
     const { user } = renderSettings();
 
     await user.click(screen.getByRole("tab", { name: /ai/i }));
-    await user.selectOptions(screen.getByRole("combobox"), "gemini");
+    await user.click(screen.getByRole("radio", { name: /gemini/i }));
 
     expect(getActiveProvider()).toBe("gemini");
     expect(screen.getByPlaceholderText("AIza...")).toBeInTheDocument();
@@ -185,7 +185,7 @@ describe("SettingsModal", () => {
 
     await user.click(screen.getByRole("tab", { name: /backup/i }));
     await user.click(screen.getByRole("button", { name: "Weekly" }));
-    expect(screen.getByText("Every:")).toBeInTheDocument();
+    expect(screen.getByText("Every")).toBeInTheDocument();
     expect(localStorage.getItem(LS_KEYS.BACKUP_FREQUENCY)).toBe(JSON.stringify("weekly"));
 
     await user.click(screen.getByRole("button", { name: /countries csv/i }));

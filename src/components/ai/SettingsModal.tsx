@@ -19,15 +19,11 @@ import ModalShell from "../shared/ModalShell";
 import { useConfirm } from "../shared/ConfirmDialog";
 import SettingsNav, { type SettingsNavItem } from "./settings/SettingsNav";
 import GeneralSettings from "./settings/GeneralSettings";
+import ProviderPicker, { PROVIDER_ICONS } from "./settings/ProviderPicker";
+import { SectionCard, StatusBanner, FieldLabel } from "./settings/SettingsUI";
 
 
 const PROVIDERS: LLMProviderType[] = ["openai", "claude", "gemini"];
-
-const PROVIDER_ICONS: Record<LLMProviderType, string> = {
-  openai: "\u{1F916}",
-  claude: "\u{1F9E0}",
-  gemini: "\u{1F48E}",
-};
 
 const PROVIDER_HELP: Record<LLMProviderType, { placeholder: string; steps: string[] }> = {
   openai: {
@@ -202,21 +198,29 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
       onClose={onClose}
       label="Settings"
       className="bg-white md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-2xl md:mx-4 h-dvh md:h-[600px] md:max-h-[88vh] flex flex-col overflow-hidden"
-      backdropClassName="bg-black/30 backdrop-blur-sm"
+      backdropClassName="bg-black/40 backdrop-blur-sm"
     >
-        {/* Header */}
-        <div className="flex items-center justify-between px-5 md:px-6 pt-5 md:pt-6 pb-4 border-b border-slate-100">
-          <h2 className="text-base font-bold text-slate-800 flex items-center gap-2">
-            <span className="text-lg">{"\u2699\uFE0F"}</span> Settings
-          </h2>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-lg leading-none p-1.5 min-w-[32px] min-h-[32px] rounded-lg focus-ring" aria-label="Close settings">{"\u2715"}</button>
+        {/* Hero header */}
+        <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 px-5 md:px-6 py-5 text-white">
+          <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-16 h-40 w-40 rounded-full bg-white/15 blur-2xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 left-1/3 h-40 w-40 rounded-full bg-violet-300/20 blur-2xl" />
+          <div className="relative flex items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <span className="flex items-center justify-center w-11 h-11 rounded-2xl bg-white/15 ring-1 ring-white/25 text-xl backdrop-blur-sm shadow-inner" aria-hidden="true">{"\u2699\uFE0F"}</span>
+              <div>
+                <h2 className="text-lg font-bold leading-tight tracking-tight">Settings</h2>
+                <p className="text-[11px] text-blue-100/90">Preferences, AI keys &amp; backups</p>
+              </div>
+            </div>
+            <button onClick={onClose} className="text-white/80 hover:text-white hover:bg-white/15 text-lg leading-none p-1.5 min-w-[32px] min-h-[32px] rounded-xl focus-ring transition-colors" aria-label="Close settings">{"\u2715"}</button>
+          </div>
         </div>
 
         {/* Sidebar + content */}
-        <div className="flex flex-col md:flex-row flex-1 min-h-0 px-5 md:px-6 pt-4">
+        <div className="flex flex-col md:flex-row flex-1 min-h-0 bg-slate-50 px-4 md:px-5 pt-4">
           <SettingsNav items={navItems} active={section} onSelect={setSection} />
 
-          <div className="flex-1 min-h-0 overflow-y-auto md:pl-5 pb-5 md:pb-6">
+          <div className="flex-1 min-h-0 overflow-y-auto md:pl-5 pb-5 md:pb-6 space-y-4">
         {/* General */}
         {section === "general" && (
           <div role="tabpanel" id="settings-panel-general" aria-labelledby="settings-tab-general">
@@ -232,204 +236,190 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
         {/* AI */}
         {section === "ai" && showAi && (
           <div className="space-y-4" role="tabpanel" id="settings-panel-ai" aria-labelledby="settings-tab-ai">
-            <div className="space-y-1.5">
-              <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Provider</label>
-              <div className="relative">
-                <select
-                  value={provider}
-                  onChange={(e) => handleProviderChange(e.target.value as LLMProviderType)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-sm text-slate-800 appearance-none cursor-pointer focus:outline-none focus:border-blue-400 hover:border-slate-300 transition-colors"
-                >
-                  {PROVIDERS.map((p) => (
-                    <option key={p} value={p}>
-                      {PROVIDER_ICONS[p]} {PROVIDER_LABELS[p]}{keys[p] ? " \u2713" : ""}
-                    </option>
-                  ))}
-                </select>
-                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-xs">{"\u25BC"}</span>
-              </div>
-            </div>
+            <SectionCard title="AI provider" icon={"\u{1F916}"} accent="bg-blue-100 text-blue-600" desc="Choose which model powers AI trip planning. Add a key for each provider you want to use.">
+              <ProviderPicker value={provider} onChange={handleProviderChange} connected={keys} />
+            </SectionCard>
 
             {currentKey && (
-              <div className="space-y-1.5">
-                <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Current Key</label>
-                <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2">
-                  <code className="text-xs text-emerald-600 flex-1 font-mono">{showKey ? currentKey : masked}</code>
-                  <button onClick={() => setShowKey(!showKey)} className="text-[11px] px-2 py-1 min-h-[28px] rounded text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors focus-ring">{showKey ? "Hide" : "Show"}</button>
-                  <button onClick={handleDelete} className="text-[11px] px-2 py-1 min-h-[28px] rounded text-red-500 hover:text-red-600 hover:bg-red-50 transition-colors focus-ring">Delete</button>
+              <SectionCard title="Current key" icon={"\u{1F511}"} accent="bg-emerald-100 text-emerald-600">
+                <div className="flex items-center gap-2 rounded-xl bg-slate-50 ring-1 ring-slate-200 px-3 py-2">
+                  <code className="text-xs text-emerald-600 flex-1 font-mono truncate">{showKey ? currentKey : masked}</code>
+                  <button onClick={() => setShowKey(!showKey)} className="text-[11px] px-2 py-1 min-h-[32px] rounded-lg text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition-colors focus-ring">{showKey ? "Hide" : "Show"}</button>
+                  <button onClick={handleDelete} className="text-[11px] px-2 py-1 min-h-[32px] rounded-lg text-red-500 hover:text-red-600 hover:bg-red-50 transition-colors focus-ring">Delete</button>
                 </div>
-              </div>
+              </SectionCard>
             )}
 
-            <div className="space-y-1.5">
-              <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">
-                {currentKey ? "Replace Key" : PROVIDER_LABELS[provider] + " API Key"}
-              </label>
+            <SectionCard title={currentKey ? "Replace key" : PROVIDER_LABELS[provider] + " API key"} icon={"\u2795"} accent="bg-indigo-100 text-indigo-600">
               <div className="flex gap-2">
                 <input
                   type="password"
                   value={draft}
                   onChange={(e) => setDraft(e.target.value)}
                   placeholder={help.placeholder}
-                  className="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-800 placeholder:text-slate-300 focus:outline-none focus:border-blue-400"
+                  className="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-xs text-slate-800 placeholder:text-slate-300 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-shadow"
                   onKeyDown={(e) => e.key === "Enter" && handleSave()}
                 />
                 <button
                   onClick={handleSave}
                   disabled={!draft.trim() || validating}
-                  className="px-4 py-2 bg-blue-600 hover:bg-blue-500 disabled:bg-slate-200 disabled:text-slate-400 text-white text-xs font-medium rounded-lg transition-colors"
+                  className="px-4 py-2 min-h-[32px] bg-blue-600 hover:bg-blue-500 disabled:bg-slate-200 disabled:text-slate-400 text-white text-xs font-semibold rounded-lg transition-colors focus-ring"
                 >
                   {validating ? "Verifying\u2026" : "Save"}
                 </button>
               </div>
-              <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2">
+              <div className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2">
                 <p className="text-[10px] leading-relaxed text-amber-700">
-                  ⚠️ API keys are stored in your browser&apos;s local storage (unencrypted). Only use keys with spending limits set. Never share your browser profile.
+                  {"\u26A0\uFE0F"} API keys are stored in your browser&apos;s local storage (unencrypted). Only use keys with spending limits set. Never share your browser profile.
                 </p>
                 {provider === "gemini" && (
                   <p className="text-[10px] text-amber-600 leading-snug mt-1">
-                    🔑 Gemini keys are sent as a URL parameter (Google&apos;s required pattern). Restrict your key to the Generative Language API and set IP/referrer restrictions in Google Cloud Console.
+                    {"\u{1F511}"} Gemini keys are sent as a URL parameter (Google&apos;s required pattern). Restrict your key to the Generative Language API and set IP/referrer restrictions in Google Cloud Console.
                   </p>
                 )}
               </div>
-            </div>
+            </SectionCard>
 
-            {status && (
-              <p className={"text-xs " + (status.ok ? "text-emerald-600" : "text-red-500")}>{status.msg}</p>
-            )}
+            <StatusBanner status={status} />
 
             {currentKey && onOpenChat && (
               <button
                 onClick={() => { onClose(); onOpenChat(); }}
-                className="w-full flex items-center justify-center gap-2 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg transition-colors"
+                className="w-full flex items-center justify-center gap-2 py-2.5 min-h-[32px] bg-gradient-to-br from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-semibold rounded-xl shadow-sm transition-colors focus-ring"
               >
                 {"\u2728"} Start Planning with AI
               </button>
             )}
 
-            <details className="text-[11px] text-slate-500 cursor-pointer">
-              <summary className="hover:text-slate-700 font-medium">{"\u{1F4B0}"} Token pricing reference</summary>
-              <div className="mt-2 rounded-lg overflow-hidden border border-slate-200">
-                <table className="w-full text-[10px]">
-                  <thead>
-                    <tr className="bg-slate-50 text-slate-600">
-                      <th className="px-3 py-1.5 text-left font-bold">Provider</th>
-                      <th className="px-3 py-1.5 text-left font-bold">Model</th>
-                      <th className="px-3 py-1.5 text-right font-bold">Input $/1M</th>
-                      <th className="px-3 py-1.5 text-right font-bold">Output $/1M</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {PROVIDERS.map((p) => {
-                      const pr = PROVIDER_PRICING[p];
-                      return (
-                        <tr key={p} className={"border-t border-slate-100 " + (p === provider ? "bg-blue-50 text-slate-700" : "text-slate-500")}>
-                          <td className="px-3 py-1.5">{PROVIDER_ICONS[p]} {PROVIDER_LABELS[p]}</td>
-                          <td className="px-3 py-1.5">{pr.model}</td>
-                          <td className="px-3 py-1.5 text-right font-mono">${pr.inputPer1M}</td>
-                          <td className="px-3 py-1.5 text-right font-mono">${pr.outputPer1M}</td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
+            <SectionCard className="space-y-3">
+              <details className="text-[11px] text-slate-500 cursor-pointer">
+                <summary className="hover:text-slate-700 font-semibold focus-ring rounded">{"\u{1F4B0}"} Token pricing reference</summary>
+                <div className="mt-2 rounded-lg overflow-hidden border border-slate-200">
+                  <table className="w-full text-[10px]">
+                    <thead>
+                      <tr className="bg-slate-50 text-slate-600">
+                        <th className="px-3 py-1.5 text-left font-bold">Provider</th>
+                        <th className="px-3 py-1.5 text-left font-bold">Model</th>
+                        <th className="px-3 py-1.5 text-right font-bold">Input $/1M</th>
+                        <th className="px-3 py-1.5 text-right font-bold">Output $/1M</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {PROVIDERS.map((p) => {
+                        const pr = PROVIDER_PRICING[p];
+                        return (
+                          <tr key={p} className={"border-t border-slate-100 " + (p === provider ? "bg-blue-50 text-slate-700" : "text-slate-500")}>
+                            <td className="px-3 py-1.5">{PROVIDER_ICONS[p]} {PROVIDER_LABELS[p]}</td>
+                            <td className="px-3 py-1.5">{pr.model}</td>
+                            <td className="px-3 py-1.5 text-right font-mono">${pr.inputPer1M}</td>
+                            <td className="px-3 py-1.5 text-right font-mono">${pr.outputPer1M}</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-[9px] text-slate-400 mt-1">Approximate pricing {"\u2014"} check provider dashboards for exact rates</p>
+              </details>
+
+              <details className="text-[11px] text-slate-400 cursor-pointer">
+                <summary className="hover:text-slate-600 focus-ring rounded">How to get a {PROVIDER_LABELS[provider]} API key</summary>
+                <ol className="mt-2 space-y-1 text-[10px] text-slate-400 list-decimal list-inside leading-relaxed">
+                  {help.steps.map((step, i) => (
+                    <li key={i}>{step}</li>
+                  ))}
+                </ol>
+              </details>
+
+              <div className="rounded-lg bg-amber-50 border border-amber-200 px-3 py-2.5 space-y-1">
+                <p className="text-[11px] text-amber-700 font-medium">{"\u26A0"} Security notice</p>
+                <p className="text-[10px] text-amber-600/80 leading-relaxed">
+                  Your API key is stored in browser localStorage and used for direct API calls.
+                  It is never sent to any server other than the selected provider ({PROVIDER_LABELS[provider]}).
+                  However, it is accessible to browser extensions and dev tools. Use a key with appropriate spending limits.
+                </p>
               </div>
-              <p className="text-[9px] text-slate-400 mt-1">Approximate pricing {"\u2014"} check provider dashboards for exact rates</p>
-            </details>
-
-            <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2.5 space-y-1">
-              <p className="text-[11px] text-amber-700 font-medium">{"\u26A0"} Security Notice</p>
-              <p className="text-[10px] text-amber-600/80 leading-relaxed">
-                Your API key is stored in browser localStorage and used for direct API calls.
-                It is never sent to any server other than the selected provider ({PROVIDER_LABELS[provider]}).
-                However, it is accessible to browser extensions and dev tools. Use a key with appropriate spending limits.
-              </p>
-            </div>
-
-            <details className="text-[11px] text-slate-400 cursor-pointer">
-              <summary className="hover:text-slate-600">How to get a {PROVIDER_LABELS[provider]} API key</summary>
-              <ol className="mt-2 space-y-1 text-[10px] text-slate-400 list-decimal list-inside leading-relaxed">
-                {help.steps.map((step, i) => (
-                  <li key={i}>{step}</li>
-                ))}
-              </ol>
-            </details>
+            </SectionCard>
           </div>
         )}
 
         {/* Backup */}
         {section === "backup" && (
           <div className="space-y-4" role="tabpanel" id="settings-panel-backup" aria-labelledby="settings-tab-backup">
-            <p className="text-[10px] text-slate-400 leading-relaxed">
+            <p className="text-[11px] text-slate-500 leading-relaxed px-0.5">
               All your travel data lives in this browser. Export backups to keep it safe.
             </p>
 
-            <div className="bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 space-y-1.5">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] text-slate-500">Last backup</span>
-                <span className="text-[11px] text-slate-700 font-medium">{getLastBackupLabel()}</span>
-              </div>
-              {backupFreq !== "never" && (
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] text-slate-500">Next auto-backup</span>
-                  <span className="text-[11px] text-blue-600 font-medium">{getNextBackupLabel()}</span>
+            {/* Status hero */}
+            <div className="rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 text-white p-4 md:p-5 shadow-sm">
+              <div className="flex items-center gap-3">
+                <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-xl" aria-hidden="true">{"\u{1F4BE}"}</span>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[11px] text-slate-300">Last backup</span>
+                    <span className="text-[11px] font-semibold text-white">{getLastBackupLabel()}</span>
+                  </div>
+                  {backupFreq !== "never" && (
+                    <div className="flex items-center justify-between gap-2 mt-1">
+                      <span className="text-[11px] text-slate-300">Next auto-backup</span>
+                      <span className="text-[11px] font-semibold text-blue-300">{getNextBackupLabel()}</span>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Export</label>
-              <button
-                onClick={async () => { await exportFullBackup(); setBackupStatus({ ok: true, msg: "Full backup downloaded!" }); }}
-                className="w-full px-3 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
-              >
-                {"\u{1F4E6}"} Full Backup (JSON)
-              </button>
-              <div className="flex gap-2">
-                <button
-                  onClick={async () => { if (countries?.length) { await exportCountriesCSV(countries); setBackupStatus({ ok: true, msg: "CSV exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
-                  className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition-colors border border-slate-200"
-                >
-                  {"\u{1F4C4}"} Countries CSV
-                </button>
-                <button
-                  onClick={async () => { if (countries?.length) { await exportCountriesXLSX(countries); setBackupStatus({ ok: true, msg: "XLSX exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
-                  className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition-colors border border-slate-200"
-                >
-                  {"\u{1F4CA}"} Countries XLSX
-                </button>
               </div>
-              <p className="text-[9px] text-slate-400">Full backup includes everything. CSV/XLSX export only countries (human-editable).</p>
             </div>
 
-            <div className="space-y-2">
-              <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Restore</label>
+            <SectionCard title="Export" icon={"\u{1F4E4}"} accent="bg-blue-100 text-blue-600" desc="Full backup includes everything. CSV/XLSX export only countries (human-editable).">
+              <div className="space-y-2">
+                <button
+                  onClick={async () => { await exportFullBackup(); setBackupStatus({ ok: true, msg: "Full backup downloaded!" }); }}
+                  className="w-full px-3 py-2.5 min-h-[32px] bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-semibold rounded-xl transition-colors focus-ring flex items-center justify-center gap-2"
+                >
+                  {"\u{1F4E6}"} Full Backup (JSON)
+                </button>
+                <div className="flex gap-2">
+                  <button
+                    onClick={async () => { if (countries?.length) { await exportCountriesCSV(countries); setBackupStatus({ ok: true, msg: "CSV exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
+                    className="flex-1 px-3 py-2 min-h-[32px] bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-slate-200"
+                  >
+                    {"\u{1F4C4}"} Countries CSV
+                  </button>
+                  <button
+                    onClick={async () => { if (countries?.length) { await exportCountriesXLSX(countries); setBackupStatus({ ok: true, msg: "XLSX exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
+                    className="flex-1 px-3 py-2 min-h-[32px] bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-slate-200"
+                  >
+                    {"\u{1F4CA}"} Countries XLSX
+                  </button>
+                </div>
+              </div>
+            </SectionCard>
+
+            <SectionCard title="Restore" icon={"\u{1F4E5}"} accent="bg-amber-100 text-amber-600">
               <div className="flex gap-2">
                 <button
                   onClick={() => restoreRef.current?.click()}
-                  className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition-colors border border-slate-200"
+                  className="flex-1 px-3 py-2 min-h-[32px] bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-slate-200"
                 >
                   {"\u{1F4E6}"} Restore Backup (JSON)
                 </button>
                 <button
                   onClick={() => importRef.current?.click()}
-                  className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition-colors border border-slate-200"
+                  className="flex-1 px-3 py-2 min-h-[32px] bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-slate-200"
                 >
-                  {"\u{1F4E5}"} Import (CSV)
+                  {"\u{1F4C4}"} Import (CSV)
                 </button>
               </div>
               <input ref={restoreRef} type="file" accept=".json" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) handleRestoreFile(f); e.target.value = ""; }} />
               <input ref={importRef} type="file" accept=".csv" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) handleImportCSV(f); e.target.value = ""; }} />
-            </div>
+            </SectionCard>
 
-            <div className="space-y-2">
-              <label className="text-[11px] text-slate-500 uppercase tracking-wide font-medium">Auto-Backup Schedule</label>
+            <SectionCard title="Auto-backup schedule" icon={"\u23F0"} accent="bg-violet-100 text-violet-600">
               <div className="flex gap-1.5">
                 {(["daily", "weekly", "monthly", "never"] as BackupFrequency[]).map((f) => (
                   <button
                     key={f}
                     onClick={() => handleFreqChange(f)}
-                    className={"flex-1 px-2 py-2 text-[11px] font-medium rounded-lg transition-colors " + (backupFreq === f ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-500 hover:bg-slate-200 border border-slate-200")}
+                    className={"flex-1 px-2 py-2 min-h-[32px] text-[11px] font-semibold rounded-xl transition-colors focus-ring " + (backupFreq === f ? "bg-blue-600 text-white shadow-sm" : "bg-slate-100 text-slate-500 hover:bg-slate-200 ring-1 ring-slate-200")}
                   >
                     {f.charAt(0).toUpperCase() + f.slice(1)}
                   </button>
@@ -437,8 +427,8 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
               </div>
 
               {backupFreq === "weekly" && (
-                <div className="flex items-center gap-2 pt-1">
-                  <span className="text-[11px] text-slate-500">Every:</span>
+                <div className="flex items-center gap-2 pt-2.5">
+                  <FieldLabel>Every</FieldLabel>
                   <select
                     value={backupSched.weekday ?? 0}
                     onChange={(e) => handleSchedChange({ weekday: parseInt(e.target.value) })}
@@ -452,8 +442,8 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
               )}
 
               {backupFreq === "monthly" && (
-                <div className="flex items-center gap-2 pt-1">
-                  <span className="text-[11px] text-slate-500">Day of month:</span>
+                <div className="flex items-center gap-2 pt-2.5">
+                  <FieldLabel>Day of month</FieldLabel>
                   <select
                     value={backupSched.monthDay ?? 1}
                     onChange={(e) => handleSchedChange({ monthDay: parseInt(e.target.value) })}
@@ -466,18 +456,16 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                 </div>
               )}
 
-              <p className="text-[9px] text-slate-400">
+              <p className="text-[9px] text-slate-400 mt-2.5">
                 {backupFreq === "never"
                   ? "Auto-backup disabled. Use the buttons above to back up manually."
                   : "A backup file will auto-download to your browser\u2019s download folder when overdue."}
               </p>
-            </div>
+            </SectionCard>
 
-            {backupStatus && (
-              <p className={"text-xs " + (backupStatus.ok ? "text-emerald-600" : "text-red-500")}>{backupStatus.msg}</p>
-            )}
+            <StatusBanner status={backupStatus} />
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg px-3 py-2.5 space-y-1.5">
+            <div className="bg-blue-50 border border-blue-200 rounded-xl px-3 py-2.5 space-y-1.5">
               <p className="text-[10px] text-blue-600/80 leading-relaxed">
                 {"\u{1F4A1}"} API keys are <span className="text-blue-700 font-medium">never</span> included in backups for security.
                 Full backup restores everything else {"\u2014"} reload the page after restoring.

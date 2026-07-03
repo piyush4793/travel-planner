@@ -30,7 +30,7 @@ export default function SettingsNav<K extends string>({ items, active, onSelect 
       role="tablist"
       aria-label="Settings sections"
       aria-orientation="vertical"
-      className="flex flex-row md:flex-col gap-1 shrink-0 overflow-x-auto md:overflow-visible md:w-44 md:border-r md:border-slate-100 md:pr-3 pb-2 md:pb-0"
+      className="flex flex-row md:flex-col gap-1 shrink-0 overflow-x-auto md:overflow-visible md:w-44 md:pr-4 pb-2 md:pb-0"
     >
       {items.map((item, i) => {
         const selected = item.key === active;
@@ -46,10 +46,10 @@ export default function SettingsNav<K extends string>({ items, active, onSelect 
             onClick={() => onSelect(item.key)}
             onKeyDown={(e) => handleKeyDown(e, i)}
             className={
-              "flex items-center gap-2 shrink-0 whitespace-nowrap px-3 py-2 min-h-[36px] rounded-lg text-xs font-semibold transition-colors focus-ring " +
+              "flex items-center gap-2 shrink-0 whitespace-nowrap px-3 py-2 min-h-[36px] rounded-xl text-xs font-semibold transition-[background-color,color,box-shadow] focus-ring " +
               (selected
-                ? "bg-blue-50 text-blue-700"
-                : "text-slate-500 hover:text-slate-700 hover:bg-slate-50")
+                ? "bg-white text-blue-700 shadow-sm ring-1 ring-slate-200/70"
+                : "text-slate-500 hover:text-slate-700 hover:bg-white/60")
             }
           >
             <span aria-hidden="true">{item.icon}</span>

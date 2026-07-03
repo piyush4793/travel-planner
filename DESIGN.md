@@ -102,7 +102,9 @@ src/
 │   │   ├── SettingsModal.tsx      # Sidebar-nav settings shell (General / AI / Backup)
 │   │   └── settings/
 │   │       ├── SettingsNav.tsx    # Responsive tablist rail (vertical desktop / scroll mobile)
-│   │       └── GeneralSettings.tsx # Home country + default budget basis + About
+│   │       ├── GeneralSettings.tsx # Home country + default budget basis + About
+│   │       ├── ProviderPicker.tsx # Visual radiogroup LLM provider picker (cards)
+│   │       └── SettingsUI.tsx     # Shared primitives: SectionCard / StatusBanner / FieldLabel
 │   ├── map/
 │   │   └── HoverCard.tsx          # Wikipedia photo card on map hover
 │   └── shared/

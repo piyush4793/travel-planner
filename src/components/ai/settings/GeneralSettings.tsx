@@ -1,6 +1,7 @@
 import type { BudgetBasis } from "../../../core/utils/budget";
 import HomeCountrySelector from "../../shared/HomeCountrySelector";
 import BudgetBasisPills from "../../shared/BudgetBasisPills";
+import { SectionCard } from "./SettingsUI";
 
 type Props = {
   homeCountry: string;
@@ -21,18 +22,22 @@ export default function GeneralSettings({
   onBudgetBasisChange,
 }: Props) {
   return (
-    <div className="space-y-5">
-      <div className="space-y-1.5">
-        <label className="block text-xs font-semibold text-slate-700">Home country</label>
-        <p className="text-[11px] text-slate-500">Where your trips depart from — used for travel estimates.</p>
+    <div className="space-y-4">
+      <SectionCard
+        title="Home country"
+        icon={"\u{1F3E0}"}
+        accent="bg-blue-100 text-blue-600"
+        desc="Where your trips depart from — used for travel estimates."
+      >
         <HomeCountrySelector value={homeCountry} onChange={onHomeCountryChange} variant="light" />
-      </div>
+      </SectionCard>
 
-      <div className="space-y-1.5">
-        <label className="block text-xs font-semibold text-slate-700">Default budget party size</label>
-        <p className="text-[11px] text-slate-500">
-          Sets the baseline for costs shown across the app. Trips can be switched temporarily without changing this default.
-        </p>
+      <SectionCard
+        title="Default budget party size"
+        icon={"\u{1F4B0}"}
+        accent="bg-emerald-100 text-emerald-600"
+        desc="Sets the baseline for costs shown across the app. Trips can be switched temporarily without changing this default."
+      >
         <BudgetBasisPills
           value={budgetBasis}
           onChange={onBudgetBasisChange}
@@ -40,12 +45,14 @@ export default function GeneralSettings({
           showLabel
           ariaLabel="Default budget party size"
         />
-      </div>
+      </SectionCard>
 
-      <div className="pt-1 border-t border-slate-100">
-        <p className="text-[11px] text-slate-500">
-          <span className="font-semibold text-slate-600">Roamwise</span> · v{__APP_VERSION__} · {__BUILD_TIME__}
-        </p>
+      <div className="flex items-center justify-center gap-2 pt-1 text-[11px] text-slate-400">
+        <span className="font-semibold text-slate-500">Roamwise</span>
+        <span aria-hidden="true">·</span>
+        <span>v{__APP_VERSION__}</span>
+        <span aria-hidden="true">·</span>
+        <span>{__BUILD_TIME__}</span>
       </div>
     </div>
   );
