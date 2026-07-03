@@ -187,7 +187,7 @@ export default function CountryPanel({
             onToggleFavorite={onToggleFavorite}
             onEdit={onEdit}
             onClose={onClose}
-            extraActions={<ShareButton country={country} homeCountry={homeCountry} />}
+            extraActions={<ShareButton country={country} homeCountry={homeCountry} plan={activePlan?.plan} />}
           />
 
           {/* Tab bar */}

@@ -69,6 +69,7 @@ Slides in from the right with a compact, decluttered layout:
 - **Multi-plan selector** — dropdown to switch between Default and saved AI plans, with full day-wise itinerary for each
 - **Plan comparison** — side-by-side modal with summary cards (duration, cost, cities, activities/day, hotels), city overlap analysis (shared/unique badges), and independent day-by-day scroll
 - **Cinematic for any plan** — saved AI plans can also run cinematic mode; button disabled per-plan when city coordinates don't match
+- **Share** — the header Share action copies (or shares via the Web Share sheet) a rich text summary that includes the active plan's route and day-by-day themes, and simultaneously triggers the Save-as-PDF export of the itinerary
 - **Country facts stay in sync** — lazily loaded overview/facts discard stale responses if you switch destinations mid-fetch
 
 ---
