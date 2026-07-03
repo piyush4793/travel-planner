@@ -108,4 +108,40 @@ describe("useCountryStore integration", () => {
       expect.arrayContaining([expect.objectContaining({ name: "TestCountry" })]),
     );
   });
+
+  it("enriches a non-seed My List country (India) with rule-backed data", async () => {
+    loadConsolidatedCountryMock.mockImplementation(async (name: string) => {
+      if (name === "India") {
+        return {
+          name: "India",
+          lat: 20,
+          lng: 78,
+          region: "Asia",
+          bestMonths: ["November", "December"],
+          budget: "₹1L–₹2L",
+          experiences: ["Taj Mahal", "Street food", "Backwaters"],
+        };
+      }
+      return null;
+    });
+
+    const { result } = await renderCountryStore();
+
+    act(() => {
+      result.current.addToList("India");
+    });
+
+    await act(async () => {
+      await Promise.resolve();
+      await Promise.resolve();
+    });
+
+    const india = result.current.myListCountries.find((c) => c.name === "India");
+    expect(india).toBeDefined();
+    expect(india?.experiences).toEqual(["Taj Mahal", "Street food", "Backwaters"]);
+    expect(india?.budget).toBe("₹1L–₹2L");
+    expect(india?.bestMonths).toContain("November");
+
+    loadConsolidatedCountryMock.mockResolvedValue(null);
+  });
 });

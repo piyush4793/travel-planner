@@ -79,4 +79,63 @@ describe("buildRoute — P0", () => {
     expect(route?.url).toContain("origin=Tokyo%20Tower%2C%20Tokyo");
     expect(route?.url).toContain("destination=Shinjuku%20Gyoen%2C%20Tokyo");
   });
+
+  describe("transport-leg arrow pattern", () => {
+    it("uses the destination after an arrow for the geocodable stop", () => {
+      const route = buildRoute(["Ferry Aker Brygge → Bygdøy (10 min, seasonal)"], "Oslo");
+
+      expect(route?.url).toContain("origin=Bygd%C3%B8y%2C%20Oslo");
+      expect(route?.url).not.toContain("Brygge");
+    });
+
+    it("never leaves an arrow character in the generated URL", () => {
+      const route = buildRoute(
+        [
+          "National Museum — Munch's The Scream",
+          "Ferry Aker Brygge → Bygdøy (10 min, seasonal)",
+          "Bus 950 Gudvangen → Voss (1 hr) — continue toward Alesund",
+        ],
+        "Oslo",
+      );
+
+      expect(route).not.toBeNull();
+      expect(decodeURIComponent(route!.url)).not.toMatch(/[→←⟶⟵➜➔]/);
+      expect(route!.url).not.toContain("%E2%86");
+    });
+
+    it("strips arrow, mid-leg note, and em-dash detail together", () => {
+      const route = buildRoute(
+        ["Nærøyfjord electric ferry Flam → Gudvangen (2 hrs) — world's narrowest fjord"],
+        "Flam",
+      );
+
+      expect(route?.url).toContain("origin=Gudvangen%2C%20Flam");
+    });
+
+    it("handles ASCII arrows (->)", () => {
+      const route = buildRoute(["Bus A -> Voss (1 hr)"], "Bergen");
+
+      expect(route?.url).toContain("origin=Voss%2C%20Bergen");
+    });
+  });
+
+  describe("trailing note parentheticals", () => {
+    it("strips a non-cost trailing parenthetical like (10 min, seasonal)", () => {
+      const route = buildRoute(["Bygdøy Peninsula (10 min, seasonal)"], "Oslo");
+      expect(route?.url).toContain("origin=Bygd%C3%B8y%20Peninsula%2C%20Oslo");
+    });
+
+    it("strips a duration/detail parenthetical like (free, 1 hr)", () => {
+      const route = buildRoute(["Vigeland Sculpture Park (free, 1 hr)"], "Oslo");
+      expect(route?.url).toContain("origin=Vigeland%20Sculpture%20Park%2C%20Oslo");
+    });
+
+    it("leaves no parenthesis in the generated URL", () => {
+      const route = buildRoute(
+        ["Akershus Fortress (medieval)", "Oslo Opera House (rooftop walk)"],
+        "Oslo",
+      );
+      expect(decodeURIComponent(route!.url)).not.toMatch(/[()]/);
+    });
+  });
 });

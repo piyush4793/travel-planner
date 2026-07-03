@@ -25,6 +25,18 @@ const COUNTRY_NO_CITIES: Country = {
   experiences: ["Adventure"],
 };
 
+// Mirrors a non-seed My List country before enrichment loads (e.g. India on
+// first render): no experiences, no budget, no cities. Historically this crashed
+// generateTripPlan via act(undefined).toLowerCase().
+const EMPTY_COUNTRY: Country = {
+  name: "Emptyland",
+  lat: 0,
+  lng: 0,
+  bestMonths: [],
+  budget: "",
+  experiences: [],
+};
+
 function generateNonCustomPlan(style: "touch-and-go" | "explorer" | "immersive") {
   return generateTripPlan(COUNTRY_WITH_CITIES, style as never, [], 7);
 }
@@ -285,6 +297,31 @@ describe("tripPlans — P0", () => {
     });
     it("strips Stay: prefix", () => {
       expect(normalizeCityName("Stay: Flåm")).toBe("flåm");
+    });
+  });
+
+  describe("empty-data resilience (India-style non-seed country)", () => {
+    const styles = ["custom", "touch-and-go", "explorer", "immersive"] as const;
+    for (const style of styles) {
+      for (const days of [1, 3, 7, 21]) {
+        it(`does not crash for style=${style}, days=${days} with no experiences/budget/cities`, () => {
+          const plan = generateTripPlan(EMPTY_COUNTRY, style as never, [], days);
+          expect(plan.days.length).toBeGreaterThan(0);
+          expect(plan.costPerPerson).toContain("₹");
+          for (const day of plan.days) {
+            for (const activity of day.activities) {
+              expect(typeof activity).toBe("string");
+              expect(activity.length).toBeGreaterThan(0);
+            }
+          }
+        });
+      }
+    }
+
+    it("tolerates selectedCities referencing an empty country", () => {
+      expect(() =>
+        generateTripPlan(EMPTY_COUNTRY, "custom", ["Nowhere"], 5),
+      ).not.toThrow();
     });
   });
 });

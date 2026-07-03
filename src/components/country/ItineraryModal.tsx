@@ -294,12 +294,12 @@ function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: Coun
           {day.label}
         </p>
         {!expanded && (
-          <span className="text-[9px] text-slate-400 font-medium shrink-0">
+          <span className="hidden sm:inline text-[9px] text-slate-400 font-medium shrink-0">
             {day.activities.length} activities
           </span>
         )}
         {day.theme && (
-          <span className="text-[9px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full shrink-0">
+          <span className="text-[9px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full min-w-0 max-w-[45%] truncate" title={day.theme}>
             {day.theme}
           </span>
         )}

@@ -6,11 +6,25 @@
  * Google Maps labels waypoints A, B, C… — we mirror those letters in the UI.
  */
 
+/** Directional arrows used in transport-leg activity names ("A → B"). */
+const ARROW_RE = /\s*(?:→|←|⟶|⟵|➜|➔|➙|➛|➞|-{1,2}>|=>)\s*/;
+
 /** Strip cost parentheticals, detail suffixes, and leading time-of-day prefixes */
 function cleanStopName(raw: string): string {
-  let s = raw
-    .replace(/\s*\([₹$€£][\d,.]+[^)]*\)\s*$/, "")  // trailing cost like (₹500)
-    .replace(/\s*—\s*.+$/, "")                        // detail after em-dash
+  let s = raw.replace(/\s*—\s*.+$/, "").trim(); // drop detail after em-dash first
+
+  // Transport legs like "Ferry Aker Brygge → Bygdøy (10 min)" describe movement
+  // between two points; the geocodable stop is the destination — the segment
+  // after the final arrow. Also drop a trailing note parenthetical on the leg.
+  if (ARROW_RE.test(s)) {
+    const segments = s.split(ARROW_RE).map((p) => p.trim()).filter(Boolean);
+    if (segments.length > 1) {
+      s = segments[segments.length - 1].replace(/\s*\([^)]*\)\s*$/, "").trim();
+    }
+  }
+
+  s = s
+    .replace(/\s*\([^)]*\)\s*$/, "")  // trailing note/cost like (10 min, seasonal) or (₹500)
     .replace(/^(Morning|Afternoon|Evening|Night|Early morning|Late morning|Midday|Lunchtime|Sunset|Sunrise)\s*[:–—-]\s*/i, "")
     .trim();
 

@@ -62,6 +62,17 @@ async function enrichCountry(name: string): Promise<Country | null> {
   return country;
 }
 
+// A bare stub is a My List entry created purely from catalog data (no itinerary
+// content and no user edits). Such entries can be transparently upgraded to their
+// enriched rule-backed version without discarding anything the user authored.
+function isBareStub(c: Country): boolean {
+  return (!c.experiences || c.experiences.length === 0)
+    && !c.budget
+    && (!c.bestMonths || c.bestMonths.length === 0)
+    && !c.notes
+    && (!c.cities || c.cities.length === 0);
+}
+
 function buildCountryList(customs: Country[], deleted: string[], enriched: Map<string, Country>): Country[] {
   const overrides = new Map(customs.map((c) => [c.name, c]));
   const seedEntries = MANIFEST.filter((m) => m.inSeed && !deleted.includes(m.name));
@@ -70,7 +81,9 @@ function buildCountryList(customs: Country[], deleted: string[], enriched: Map<s
     if (enriched.has(m.name)) return enriched.get(m.name)!;
     return buildSeedCountry(m);
   });
-  const added = customs.filter((c) => !SEED_NAMES.has(c.name));
+  const added = customs
+    .filter((c) => !SEED_NAMES.has(c.name))
+    .map((c) => (isBareStub(c) ? enriched.get(c.name) ?? c : c));
   return [...base, ...added];
 }
 
@@ -151,6 +164,26 @@ export function useCountryStore() {
 
   const myListNames = useMemo(() => myListCountries.map((c) => c.name), [myListCountries]);
 
+  // Enrich non-seed My List countries (e.g. India) so they show real budget,
+  // months and experiences. Seed enrichment only covers SEED_NAMES, but My List
+  // is the source of truth per user, so anything the user tracks must hydrate.
+  useEffect(() => {
+    const pending = myListNames.filter(
+      (n) => !SEED_NAMES.has(n) && MANIFEST_BY_NAME.has(n) && !enriched.has(n),
+    );
+    if (pending.length === 0) return;
+    let cancelled = false;
+    Promise.all(pending.map(enrichCountry)).then((results) => {
+      if (cancelled) return;
+      setEnriched((prev) => {
+        const next = new Map(prev);
+        for (const c of results) { if (c) next.set(c.name, c); }
+        return next;
+      });
+    });
+    return () => { cancelled = true; };
+  }, [myListNames, enriched]);
+
   const saveCountry = useCallback((country: Country) => {
     setCustoms((prev) => [...prev.filter((c) => c.name !== country.name), country]);
     myList.add(country.name);
@@ -165,7 +198,7 @@ export function useCountryStore() {
 
   const updateNotes = useCallback((name: string, notes: string) => {
     setCustoms((prev) => {
-      const existing = prev.find((c) => c.name === name) ?? allCountries.find((c) => c.name === name);
+      const existing = allCountries.find((c) => c.name === name) ?? prev.find((c) => c.name === name);
       if (!existing) return prev;
       const updated = { ...existing, notes: notes.trim() || undefined };
       return [...prev.filter((c) => c.name !== name), updated];

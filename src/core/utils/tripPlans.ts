@@ -68,7 +68,8 @@ function costRange(low: number, high: number): string {
   return `${fmt(low)} – ${fmt(high)}`;
 }
 
-function act(exp: string): string {
+function act(exp?: string): string {
+  if (!exp) return "Explore at your own pace";
   const lower = exp.toLowerCase();
   if (/museum|gallery|memorial|palace|castle/.test(lower)) return `Visit ${exp}`;
   if (/temple|shrine|monastery|mosque|cathedral|church/.test(lower)) return `Explore ${exp}`;

@@ -362,7 +362,7 @@ Per phase:
 ## Performance
 
 - **Code-splitting**: Heavy modals/overlays are lazy-loaded via `React.lazy()` + `Suspense` (~123 KB deferred from initial bundle): `ChatModal`, `ItineraryCinematic`, `SettingsModal`, `AiItineraryModal`, `FreTour`, `CountryForm`, `ItineraryModal`, `PlanCompareModal`
-- **Idle-time enrichment**: `useCountryStore` enriches seed countries in `requestIdleCallback` chunks of 10 — first paint renders instantly with minimal seed objects, cards progressively hydrate
+- **Idle-time enrichment**: `useCountryStore` enriches seed countries in `requestIdleCallback` chunks of 10 — first paint renders instantly with minimal seed objects, cards progressively hydrate. Non-seed countries added to My List (e.g. India, `inSeed: false`) are also enriched on demand from their rule JSON, so any tracked destination shows real budget/months/experiences — My List is the source of truth, independent of the seed set. Bare catalog stubs are transparently upgraded to enriched data in `buildCountryList` without discarding user edits.
 - **Rule lazy-loading**: 199 JSON files in `data/rules/` loaded on demand via `import.meta.glob`, cached at module level in `useCountryRule`
 - **Memoization**: `useMemo` across `App.tsx`, `useCountryStore`, `TripsView`, `CountryPanel` (month sets/grid), and `ItineraryModal` (day grouping)
 - **Stale update guards**: `useCountryRule` + `fetchCountryInfo` discard results when selection changes before the fetch resolves
