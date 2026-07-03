@@ -162,6 +162,7 @@ src/components/
   map/      — HoverCard and map internals
   shared/   — PillGroup, FilterChip, Filters, Tooltip, HomeCountrySelector, DevFlagPanel, ExperienceDropdown, AppInstallShare, FreTour
   views/    — CalendarView, DiscoverView, TripsView
+  views/trips/ — TripsView subcomponents: types (Trip + buildTrips), TripCard (memo'd), TripEditor (memo'd), TripSection (collapsible + paginated wrappers)
 ```
 
 ### Hooks (state management)

@@ -87,7 +87,12 @@ src/
 │
 ├── components/
 │   ├── views/
-│   │   ├── TripsView.tsx          # Trip cards + progress ring (home view)
+│   │   ├── TripsView.tsx          # Trip cards + progress ring (home view; orchestrates trips/*)
+│   │   ├── trips/                 # Memoized TripsView subcomponents (render isolation)
+│   │   │   ├── types.ts           # Trip type + buildTrips()
+│   │   │   ├── TripCard.tsx       # memo'd card (+ memo'd ImageCollage, getSharedExperiences)
+│   │   │   ├── TripEditor.tsx     # memo'd inline trip editor
+│   │   │   └── TripSection.tsx    # collapsible + paginated section wrappers
 │   │   ├── CalendarView.tsx       # Month × destination heatmap grid
 │   │   └── DiscoverView.tsx       # 197-country catalog browser
 │   ├── country/
