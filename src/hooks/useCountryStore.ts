@@ -6,6 +6,7 @@ import { loadLS, saveLS } from "../core/storage";
 import { LS_KEYS } from "../core/lsKeys";
 import { usePersistedSet } from "./usePersistedSet";
 import { loadConsolidatedCountry } from "../data/consolidatedCountry";
+import { consolidatedToCountry } from "../core/utils/countryData";
 
 type ManifestEntry = {
   name: string;
@@ -43,17 +44,7 @@ async function enrichCountry(name: string): Promise<Country | null> {
   if (enrichedCache.has(name)) return enrichedCache.get(name)!;
   const data = await loadConsolidatedCountry(name);
   if (!data) return null;
-  const country: Country = {
-    name: data.name, lat: data.lat, lng: data.lng, region: data.region,
-    popularityScore: MANIFEST_BY_NAME.get(data.name)?.popularityScore,
-    bestMonths: data.bestMonths, worstMonths: data.worstMonths,
-    budget: typeof data.budget === "object" ? data.budget.couple : data.budget,
-    budgetBreakdown: typeof data.budget === "object" ? data.budget : undefined,
-    experiences: data.experiences, avoid: data.avoid, combo: data.combo,
-    landmark: data.landmark ?? undefined, travelStyle: data.travelStyle as Country["travelStyle"],
-    cities: data.cities, stopoverNote: data.stopoverNote ?? undefined,
-    links: data.links,
-  };
+  const country = consolidatedToCountry(data, MANIFEST_BY_NAME.get(data.name)?.popularityScore);
   if (enrichedCache.size >= MAX_ENRICHED_CACHE) {
     const firstKey = enrichedCache.keys().next().value;
     if (firstKey) enrichedCache.delete(firstKey);

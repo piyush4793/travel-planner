@@ -284,32 +284,34 @@ function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: Coun
 
   return (
     <div className="border border-slate-150 rounded-xl overflow-hidden shadow-sm">
-      <button
-        onClick={() => setExpanded((e) => !e)}
-        aria-expanded={expanded}
-        className="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border-b border-slate-100 w-full text-left hover:bg-slate-100 transition-colors focus-ring rounded-none"
-      >
-        <span className={`text-[9px] text-slate-400 motion-safe:transition-transform motion-safe:duration-200 ${expanded ? "rotate-90" : ""}`}>▸</span>
-        <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide flex-1">
-          {day.label}
-        </p>
-        {!expanded && (
-          <span className="hidden sm:inline text-[9px] text-slate-400 font-medium shrink-0">
-            {day.activities.length} activities
-          </span>
-        )}
+      <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border-b border-slate-100">
+        <button
+          onClick={() => setExpanded((e) => !e)}
+          aria-expanded={expanded}
+          className="flex items-center gap-2 flex-1 min-w-0 text-left hover:opacity-70 transition-opacity focus-ring rounded"
+        >
+          <span className={`text-[9px] text-slate-400 motion-safe:transition-transform motion-safe:duration-200 ${expanded ? "rotate-90" : ""}`}>▸</span>
+          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide truncate">
+            {day.label}
+          </p>
+          {!expanded && (
+            <span className="hidden sm:inline text-[9px] text-slate-400 font-medium shrink-0">
+              {day.activities.length} activities
+            </span>
+          )}
+        </button>
         {day.theme && (
-          <span className="text-[9px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full min-w-0 max-w-[45%] truncate" title={day.theme}>
+          <span className="text-[9px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full min-w-0 max-w-[40%] truncate shrink" title={day.theme}>
             {day.theme}
           </span>
         )}
         {routeInfo && (
-          <span className="flex items-center gap-1 shrink-0" onClick={(e) => e.stopPropagation()}>
+          <span className="flex items-center gap-1 shrink-0">
             <a
               href={routeInfo.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[9px] font-semibold text-blue-500 bg-blue-50 hover:bg-blue-100 px-2 py-0.5 rounded-full transition-colors"
+              className="text-[9px] font-semibold text-blue-500 bg-blue-50 hover:bg-blue-100 px-2 py-0.5 rounded-full transition-colors focus-ring"
               title="Open day route in Google Maps"
             >
               🗺️ Route
@@ -317,7 +319,7 @@ function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: Coun
             <CopyLinkButton url={routeInfo.url} />
           </span>
         )}
-      </button>
+      </div>
 
       <div className={`grid motion-safe:transition-all motion-safe:duration-200 ease-out ${expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
         <div className="overflow-hidden">
