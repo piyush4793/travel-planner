@@ -5,6 +5,7 @@ import { buildRoute } from "../../core/utils/googleMapsRoute";
 import type { SavedAiPlan } from "../../hooks/useAiPlanStore";
 import { formatPlanLabel } from "../../core/utils/planDiff";
 import ModalShell from "../shared/ModalShell";
+import { useConfirm } from "../shared/ConfirmDialog";
 
 type CityGroup = {
   name: string;
@@ -60,8 +61,24 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
   const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "exists">("idle");
   const [showComparison, setShowComparison] = useState(false);
   const [planSaved, setPlanSaved] = useState(false);
+  const [confirm, ConfirmDialog] = useConfirm();
+
+  const handleReplace = async (id: string, label: string) => {
+    if (!onReplacePlan) return;
+    const ok = await confirm({
+      title: "Replace this plan?",
+      message: `"${label}" will be permanently overwritten with the new plan. This cannot be undone.`,
+      confirmLabel: "Replace",
+      variant: "danger",
+    });
+    if (!ok) return;
+    onReplacePlan(id);
+    setPlanSaved(true);
+    setShowComparison(false);
+  };
 
   return (
+    <>
     <ModalShell
       open={true}
       onClose={onClose}
@@ -309,8 +326,8 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
                 </div>
                 {onReplacePlan && (
                   <button
-                    onClick={() => { onReplacePlan(ep.id); setPlanSaved(true); setShowComparison(false); }}
-                    className="text-[10px] text-red-500 hover:text-red-600 font-semibold shrink-0"
+                    onClick={() => handleReplace(ep.id, formatPlanLabel(ep.result, ep.savedAt))}
+                    className="text-[10px] text-red-500 hover:text-red-600 font-semibold shrink-0 focus-ring rounded min-h-[32px] px-1"
                   >
                     Replace
                   </button>
@@ -395,6 +412,8 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
           </div>
         </div>
     </ModalShell>
+    {ConfirmDialog()}
+    </>
   );
 }
 

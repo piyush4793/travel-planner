@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ChatModal from "../../components/ai/ChatModal";
 import type { LLMTripPlanResult } from "../../core/utils/ai/llmTransform";
@@ -195,6 +195,25 @@ describe("ChatModal", () => {
 
     expect(screen.getByText("I want fjords")).toBeInTheDocument();
     expect(screen.getByText("Norway is a great fit")).toBeInTheDocument();
+  });
+
+  it("shows a scroll-to-latest button when the message list is scrolled up", () => {
+    mocks.mockSession.messages = [
+      { role: "user", content: "I want fjords" },
+      { role: "assistant", content: "Norway is a great fit" },
+    ];
+
+    renderModal();
+
+    expect(screen.queryByRole("button", { name: /scroll to latest/i })).toBeNull();
+
+    const container = screen.getByText("I want fjords").closest(".overflow-y-auto") as HTMLElement;
+    Object.defineProperty(container, "scrollHeight", { value: 1000, configurable: true });
+    Object.defineProperty(container, "clientHeight", { value: 300, configurable: true });
+    Object.defineProperty(container, "scrollTop", { value: 100, configurable: true, writable: true });
+    fireEvent.scroll(container);
+
+    expect(screen.getByRole("button", { name: /scroll to latest/i })).toBeInTheDocument();
   });
 
   it("shows and dismisses errors", async () => {

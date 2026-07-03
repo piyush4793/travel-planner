@@ -34,6 +34,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const [showScrollBtn, setShowScrollBtn] = useState(false);
   const autoSentRef = useRef<string | null>(null);
   const [pasteMode, setPasteMode] = useState(false);
   const [linkMode, setLinkMode] = useState(false);
@@ -53,8 +54,23 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+      setShowScrollBtn(false);
     }
   }, [messages, loading]);
+
+  const handleMessagesScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const distanceFromBottom = el.scrollHeight - el.scrollTop - el.clientHeight;
+    setShowScrollBtn(distanceFromBottom > 120);
+  };
+
+  const scrollToLatest = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
+    setShowScrollBtn(false);
+  };
 
   // Auto-send or prefill initial prompt
   useEffect(() => {
@@ -180,7 +196,8 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
             onSwitchToPaste={() => { setLinkMode(false); setPasteMode(true); setImportError(null); }}
           />
         ) : (
-        <div ref={scrollRef} className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
+        <div className="relative flex-1 min-h-0 flex flex-col">
+        <div ref={scrollRef} onScroll={handleMessagesScroll} className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
           {!hasApiKey && messages.length === 0 && (
             <div className="flex items-center justify-center h-full">
               <div className="max-w-md space-y-4">
@@ -290,6 +307,16 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
               </div>
             </div>
           )}
+        </div>
+        {showScrollBtn && (
+          <button
+            onClick={scrollToLatest}
+            aria-label="Scroll to latest message"
+            className="absolute bottom-3 right-4 z-10 flex items-center justify-center min-h-[32px] min-w-[32px] w-9 h-9 rounded-full bg-slate-800/90 text-white shadow-lg hover:bg-slate-700 transition-colors focus-ring"
+          >
+            <span aria-hidden="true" className="text-base leading-none">↓</span>
+          </button>
+        )}
         </div>
         )}
 

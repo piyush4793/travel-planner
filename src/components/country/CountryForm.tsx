@@ -108,7 +108,7 @@ export default function CountryForm({ initial, onSave, onClose }: Props) {
               <p id="cf-budget-warn" className="text-[11px] text-amber-500 mt-1 pl-[104px]">⚠ {budgetWarning}</p>
             )}
             {derived.couple && !budgetWarning && (
-              <p id="cf-budget-derived" className="text-[11px] text-gray-500 mt-1.5 pl-[104px] flex items-center gap-3">
+              <p id="cf-budget-derived" aria-live="polite" className="text-[11px] text-gray-500 mt-1.5 pl-[104px] flex items-center gap-3">
                 <span className="flex items-center gap-1" title={`Budget ${BUDGET_BASIS_META.couple.long}`}>
                   <span aria-hidden="true">{BUDGET_BASIS_META.couple.icon}</span>{derived.couple}
                 </span>

@@ -27,7 +27,7 @@ function PlanPreviewInner({ country, plan, homeCountry, onCinematic, onItinerary
   const canExportPdf = isEnabled("pdfExport");
 
   const buttonCount = 1 + 1 + (canExportPdf ? 1 : 0);
-  const gridCols = buttonCount >= 3 ? "grid-cols-3" : buttonCount === 2 ? "grid-cols-2" : "grid-cols-1";
+  const gridCols = buttonCount >= 3 ? "grid-cols-2 min-[360px]:grid-cols-3" : buttonCount === 2 ? "grid-cols-2" : "grid-cols-1";
 
   return (
     <div className="itinerary-card overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm shadow-slate-100">

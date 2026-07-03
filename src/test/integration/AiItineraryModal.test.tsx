@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import AiItineraryModal from "../../components/ai/AiItineraryModal";
 import type { LLMTripPlanResult } from "../../core/utils/ai/llmTransform";
@@ -197,7 +197,33 @@ describe("AiItineraryModal", () => {
 
     expect(screen.getByText(/Max 1 plans reached/i)).toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: /Replace/i }));
+    // Replace is now guarded by a confirm dialog
+    expect(onReplacePlan).not.toHaveBeenCalled();
+    const dialog = screen.getByRole("alertdialog");
+    await user.click(within(dialog).getByRole("button", { name: /Replace/i }));
     expect(onReplacePlan).toHaveBeenCalledWith("existing-plan");
     expect(screen.getByText(/Plan saved/i)).toBeInTheDocument();
+  });
+
+  it("does not replace when the confirm dialog is cancelled", async () => {
+    const user = userEvent.setup();
+    const onReplacePlan = vi.fn();
+    render(
+      <AiItineraryModal
+        result={makeResult()}
+        onClose={vi.fn()}
+        existingPlans={[makeSavedPlan({ id: "existing-plan" })]}
+        canAddNew={false}
+        maxPlans={1}
+        onSavePlan={vi.fn()}
+        onReplacePlan={onReplacePlan}
+      />,
+    );
+
+    await user.click(screen.getByRole("button", { name: /Save Plan/i }));
+    await user.click(screen.getByRole("button", { name: /Replace/i }));
+    const dialog = screen.getByRole("alertdialog");
+    await user.click(within(dialog).getByRole("button", { name: /Cancel/i }));
+    expect(onReplacePlan).not.toHaveBeenCalled();
   });
 });

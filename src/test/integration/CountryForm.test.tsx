@@ -35,6 +35,19 @@ describe("CountryForm", () => {
     expect(saved.budget).toBe(saved.budgetBreakdown?.couple);
   });
 
+  it("announces the derived couple/family budget hint via an aria-live region", async () => {
+    const user = setupUser();
+    render(<CountryForm initial={makeCountry()} onSave={vi.fn()} onClose={vi.fn()} />);
+
+    const input = screen.getByLabelText(/Budget.*solo|per.?person/i);
+    await user.clear(input);
+    await user.type(input, "₹1L–₹2L");
+
+    const hint = document.getElementById("cf-budget-derived");
+    expect(hint).not.toBeNull();
+    expect(hint).toHaveAttribute("aria-live", "polite");
+  });
+
   it("shows a format warning for an invalid budget and marks the input invalid", async () => {
     const user = setupUser();
     render(<CountryForm initial={makeCountry()} onSave={vi.fn()} onClose={vi.fn()} />);
