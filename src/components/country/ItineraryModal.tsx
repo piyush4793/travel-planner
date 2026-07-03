@@ -327,7 +327,7 @@ function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: Coun
         )}
       </div>
 
-      <div className={`grid motion-safe:transition-all motion-safe:duration-200 ease-out ${expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+      <div className={`grid motion-safe:transition-[grid-template-rows] motion-safe:duration-200 ease-out ${expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
         <div className="overflow-hidden">
           <div className="px-4 py-3">
             <ul className="space-y-2">

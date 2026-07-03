@@ -116,7 +116,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
       <svg width={size} height={size} className="shrink-0 -rotate-90">
         <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#e5e7eb" strokeWidth={stroke} />
         <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#10b981" strokeWidth={stroke}
-          strokeDasharray={circ} strokeDashoffset={offset} strokeLinecap="round" className="transition-all duration-500" />
+          strokeDasharray={circ} strokeDashoffset={offset} strokeLinecap="round" className="transition-[stroke-dashoffset] duration-500" />
       </svg>
     );
   };
@@ -328,7 +328,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
               <button
                 key={entry.name}
                 onClick={() => toggleCard(entry.name)}
-                className={`group text-left rounded-xl border border-l-[3px] ${borderColor} p-3 transition-all focus-ring ${
+                className={`group text-left rounded-xl border border-l-[3px] ${borderColor} p-3 transition focus-ring ${
                   inList
                     ? "bg-emerald-50/60 border-emerald-200 hover:bg-emerald-50"
                     : "bg-white border-gray-200 hover:border-blue-200 hover:shadow-md hover:-translate-y-0.5"

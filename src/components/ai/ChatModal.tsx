@@ -532,7 +532,7 @@ function PromptSuggestions({ suggestions }: { suggestions: string[] }) {
       <div className="flex items-center justify-between mb-2">
         <p className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">Improve Your Prompt</p>
         <button onClick={copyAll}
-          className={`text-[10px] font-semibold px-2.5 py-1 rounded-md transition-all ${
+          className={`text-[10px] font-semibold px-2.5 py-1 rounded-md transition-colors ${
             copied ? "bg-emerald-100 text-emerald-700" : "bg-blue-100 text-blue-600 hover:bg-blue-200"
           }`}>
           {copied ? "✓ Copied" : "📋 Copy All"}

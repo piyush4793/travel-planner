@@ -664,9 +664,9 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
                 <span className="text-sm text-slate-400">/ {uniqueCountries}</span>
               </div>
               <div className="flex-1">
-                <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={uniqueCountries > 0 ? Math.round((totalVisited / uniqueCountries) * 100) : 0} aria-label="Countries visited">
                   <div
-                    className="h-full rounded-full bg-emerald-400 transition-all duration-500"
+                    className="h-full rounded-full bg-emerald-400 transition-[width] duration-500"
                     style={{ width: `${uniqueCountries > 0 ? (totalVisited / uniqueCountries) * 100 : 0}%` }}
                   />
                 </div>
@@ -700,7 +700,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
             {nextTrip && (
               <button
                 onClick={() => { setStatsOpen(false); onSelect(nextTrip.main); }}
-                className="w-full mt-3 flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 rounded-lg text-white transition-all"
+                className="w-full mt-3 flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 rounded-lg text-white transition-colors"
               >
                 <span>🎯</span>
                 <span className="text-xs font-semibold">{nextTrip.main.name}</span>
@@ -854,9 +854,9 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
                   <span className="text-xl font-black text-slate-800">{totalVisited}</span>
                   <span className="text-xs text-slate-400">/ {uniqueCountries} visited</span>
                 </div>
-                <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={uniqueCountries > 0 ? Math.round((totalVisited / uniqueCountries) * 100) : 0} aria-label="Countries visited">
                   <div
-                    className="h-full rounded-full bg-emerald-400 transition-all duration-500"
+                    className="h-full rounded-full bg-emerald-400 transition-[width] duration-500"
                     style={{ width: `${uniqueCountries > 0 ? (totalVisited / uniqueCountries) * 100 : 0}%` }}
                   />
                 </div>
@@ -1012,7 +1012,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
       {isEnabled("tripGroups") && !creatingNew && !editingMain && (
         <button
           onClick={() => { setCreatingNew(true); setEditingMain(null); }}
-          className="md:hidden fixed bottom-5 right-5 z-30 w-14 h-14 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 active:scale-95 transition-all flex items-center justify-center text-2xl focus-ring"
+          className="md:hidden fixed bottom-5 right-5 z-30 w-14 h-14 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 active:scale-95 transition flex items-center justify-center text-2xl focus-ring"
           aria-label="New Trip"
         >
           +
@@ -1431,7 +1431,7 @@ function TripRow({
       onClick={() => onSelect(trip.main)}
       onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelect(trip.main); } }}
       tabIndex={0}
-      className={`rounded-xl border border-l-[3px] overflow-hidden transition-all group cursor-pointer focus-ring ${accent} ${
+      className={`rounded-xl border border-l-[3px] overflow-hidden transition group cursor-pointer focus-ring ${accent} ${
         trip.allVisited
           ? "bg-emerald-50/60 border-emerald-200"
           : "bg-white border-gray-200 hover:border-blue-200 hover:shadow-md hover:-translate-y-0.5"
@@ -1456,7 +1456,7 @@ function TripRow({
              {onEdit && (
                <button
                  onClick={(e) => { e.stopPropagation(); onEdit(); }}
-                 className="text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-1 rounded hover:bg-blue-50 transition-all focus-ring"
+                 className="text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-1 rounded hover:bg-blue-50 transition-colors focus-ring"
                  aria-label="Edit trip"
                >
                  ✏️
@@ -1514,8 +1514,8 @@ function TripRow({
           )}
           <div className="flex items-center gap-2">
             <span className="text-[10px] text-gray-400 font-medium">{trip.visitedCount}/{trip.allCountries.length}</span>
-            <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
-              <div className={`h-full rounded-full transition-all ${trip.allVisited ? "bg-emerald-400" : "bg-blue-400"}`}
+            <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress} aria-label="Trip completion">
+              <div className={`h-full rounded-full transition-[width,background-color] ${trip.allVisited ? "bg-emerald-400" : "bg-blue-400"}`}
                 style={{ width: `${progress}%` }} />
             </div>
           </div>
@@ -1549,7 +1549,7 @@ function TripRow({
           {onEdit && (
             <button
               onClick={(e) => { e.stopPropagation(); onEdit(); }}
-              className="md:opacity-0 md:group-hover:opacity-100 text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-0.5 rounded hover:bg-blue-50 transition-all"
+              className="md:opacity-0 md:group-hover:opacity-100 text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-0.5 rounded hover:bg-blue-50 transition"
               aria-label="Edit trip"
             >
               ✏️
@@ -1558,9 +1558,9 @@ function TripRow({
           <span className="text-[10px] text-gray-400 font-medium">
             {trip.visitedCount}/{trip.allCountries.length}
           </span>
-          <div className="w-16 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+          <div className="w-16 h-1.5 bg-gray-100 rounded-full overflow-hidden" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress} aria-label="Trip completion">
             <div
-              className={`h-full rounded-full transition-all ${
+              className={`h-full rounded-full transition-[width,background-color] ${
                 trip.allVisited ? "bg-emerald-400" : "bg-blue-400"
               }`}
               style={{ width: `${progress}%` }}
@@ -1615,7 +1615,7 @@ function TripRow({
               <button
                 key={c.name}
                 onClick={(e) => { e.stopPropagation(); onSelect(c); }}
-                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium transition-all cursor-pointer ${
+                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors cursor-pointer ${
                   isVisited
                     ? "bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
                     : "bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-700"

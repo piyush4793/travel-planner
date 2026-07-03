@@ -1415,7 +1415,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
                 {activeStop.days.map((_, di) => (
                   <div
                     key={di}
-                    className="rounded-full transition-all duration-500"
+                    className="rounded-full transition-[width,background] duration-500"
                     style={{
                       width: di === activeDayIdx ? "20px" : "6px",
                       height: "6px",
@@ -1542,7 +1542,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
               <span key={stop.name} className="flex items-center gap-1">
                 <span
                   title={stop.name}
-                  className={`inline-block rounded-full transition-all duration-500 ${
+                  className={`inline-block rounded-full transition-[width,height,background-color,box-shadow] duration-500 ${
                     i < activeCityIdx   ? "w-2 h-2 bg-blue-400" :
                     i === activeCityIdx ? "w-3 h-3 bg-white ring-2 ring-blue-400 ring-offset-1 ring-offset-gray-950" :
                                          "w-2 h-2 bg-white/15"

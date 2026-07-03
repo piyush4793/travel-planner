@@ -78,7 +78,7 @@ export default function FilterChip({ label, active, children }: Props) {
         onClick={toggle}
         aria-expanded={open}
         aria-haspopup="true"
-        className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold whitespace-nowrap transition-all border focus-ring ${
+        className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold whitespace-nowrap transition-colors border focus-ring ${
           active
             ? "bg-blue-600 text-white border-blue-600 shadow-sm"
             : open

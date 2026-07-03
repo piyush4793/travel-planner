@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useId } from "react";
 import { createPortal } from "react-dom";
 
 type Props = {
@@ -18,6 +18,7 @@ export default function Tooltip({ text, children, triggerClassName, variant = "i
   const [pos, setPos] = useState({ top: 0, left: 0 });
   const [below, setBelow] = useState(false);
   const ref = useRef<HTMLButtonElement>(null);
+  const tooltipId = useId();
 
   function show() {
     if (ref.current) {
@@ -55,14 +56,14 @@ export default function Tooltip({ text, children, triggerClassName, variant = "i
         onClick={show}
         className={variant === "wrap" ? wrapClass : iconClass}
         aria-label={text}
-        aria-describedby={visible ? "tooltip-content" : undefined}
+        aria-describedby={visible ? tooltipId : undefined}
       >
         {variant === "wrap" ? children : (children ?? "i")}
       </button>
 
       {visible && createPortal(
         <div
-          id="tooltip-content"
+          id={tooltipId}
           role="tooltip"
           style={{
             position: "fixed",

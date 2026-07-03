@@ -100,7 +100,7 @@ export default class ErrorBoundary extends Component<Props, State> {
           <div className="flex gap-2">
             <button
               onClick={this.handleCopy}
-              className={`flex-1 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all focus-ring ${
+              className={`flex-1 px-3 py-2.5 rounded-xl text-xs font-semibold transition-colors focus-ring ${
                 this.state.copied
                   ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
                   : "bg-gray-50 text-gray-600 border border-gray-200 hover:bg-gray-100"

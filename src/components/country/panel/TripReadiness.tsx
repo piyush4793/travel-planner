@@ -42,7 +42,7 @@ function TripReadinessInner({ country, isVisited, isFavorite, aiPlanCount, hasNo
     <div className="space-y-3">
       {/* Progress bar */}
       <div className="flex items-center gap-3">
-        <div className="flex-1 h-2.5 rounded-full bg-gray-100 overflow-hidden">
+        <div className="flex-1 h-2.5 rounded-full bg-gray-100 overflow-hidden" role="progressbar" aria-valuenow={percent} aria-valuemin={0} aria-valuemax={100} aria-label={`Trip readiness ${percent}%`}>
           <div
             className={`h-full rounded-full bg-gradient-to-r ${barColor} transition-[width] duration-500`}
             style={{ width: `${percent}%` }}

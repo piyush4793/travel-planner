@@ -106,7 +106,7 @@ export default function PanelHeader({
                 key={style}
                 variant="wrap"
                 text={meta.description}
-                triggerClassName="gap-1 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold text-slate-200 ring-1 ring-white/10 min-h-[28px] hover:bg-white/15 transition-colors"
+                triggerClassName="gap-1 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold text-slate-200 ring-1 ring-white/10 min-h-[32px] hover:bg-white/15 transition-colors"
               >
                 <span aria-hidden="true">{meta.icon}</span>
                 <span>{meta.label}</span>
@@ -152,7 +152,7 @@ function ActionPill({ icon, label, onClick, active = false, activeClassName }: {
       onClick={onClick}
       aria-label={label}
       aria-pressed={active}
-      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[11px] font-semibold transition-colors focus-ring ring-1 ${
+      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 min-h-[32px] text-[11px] font-semibold transition-colors focus-ring ring-1 ${
         active
           ? activeClassName ?? "bg-slate-100 text-slate-700 ring-slate-200"
           : "bg-white text-gray-500 ring-gray-200 hover:bg-gray-50 hover:text-gray-700"

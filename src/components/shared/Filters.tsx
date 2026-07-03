@@ -56,7 +56,7 @@ export default function Filters({
                   <button
                     key={m}
                     onClick={() => toggleMonth(m)}
-                    className={`py-1.5 min-h-[32px] rounded-lg text-[11px] font-semibold transition-all focus-ring ${
+                    className={`py-1.5 min-h-[32px] rounded-lg text-[11px] font-semibold transition-colors focus-ring ${
                       selectedMonth.includes(m)
                         ? "bg-blue-600 text-white shadow-sm"
                         : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -79,7 +79,7 @@ export default function Filters({
                   <button
                     key={value}
                     onClick={() => { setBudgetFilter(budgetFilter === value ? "all" : value); close(); }}
-                    className={`w-full flex items-center justify-between px-3 py-2 min-h-[36px] rounded-xl text-xs font-semibold transition-all focus-ring ${
+                    className={`w-full flex items-center justify-between px-3 py-2 min-h-[36px] rounded-xl text-xs font-semibold transition-colors focus-ring ${
                       budgetFilter === value
                         ? "bg-amber-500 text-white shadow-sm"
                         : "bg-gray-50 text-gray-700 hover:bg-gray-100"

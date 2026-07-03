@@ -301,7 +301,7 @@ function HeroCard({ step, index, total, isLast, onNext, onPrev, onSkip }: {
             {isLast && (
               <button
                 onClick={onNext}
-                className="w-full py-3 bg-white text-slate-800 text-sm font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all active:scale-95 focus-ring"
+                className="w-full py-3 bg-white text-slate-800 text-sm font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] active:scale-95 focus-ring"
               >
                 {"Let\u2019s Go! \u{1F30D}"}
               </button>
@@ -317,7 +317,7 @@ function HeroCard({ step, index, total, isLast, onNext, onPrev, onSkip }: {
                 {!isLast && (
                   <button
                     onClick={onNext}
-                    className="px-6 py-2.5 bg-white text-slate-800 text-xs font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-105 transition-all active:scale-95 focus-ring"
+                    className="px-6 py-2.5 bg-white text-slate-800 text-xs font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-105 transition-[transform,box-shadow] active:scale-95 focus-ring"
                   >
                     {"Next →"}
                   </button>
@@ -366,7 +366,7 @@ function SpotlightCard({ step, targetRect, index, total, onNext, onPrev, onSkip 
               <button onClick={onPrev} className="px-3 py-1.5 text-[11px] font-semibold text-white/60 hover:text-white transition-colors focus-ring rounded">
                 Back
               </button>
-              <button onClick={onNext} className="px-5 py-1.5 bg-white text-slate-800 text-[11px] font-bold rounded-full whitespace-nowrap transition-all shadow-sm hover:shadow hover:scale-105 active:scale-95 focus-ring">
+              <button onClick={onNext} className="px-5 py-1.5 bg-white text-slate-800 text-[11px] font-bold rounded-full whitespace-nowrap transition-[transform,box-shadow] shadow-sm hover:shadow hover:scale-105 active:scale-95 focus-ring">
                 {"Next →"}
               </button>
             </div>
@@ -407,7 +407,7 @@ function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstal
               <button
                 onClick={onInstall}
                 disabled={installing}
-                className="w-full mb-4 px-5 py-3 bg-white text-slate-800 text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-70 focus-ring"
+                className="w-full mb-4 px-5 py-3 bg-white text-slate-800 text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] active:scale-95 flex items-center justify-center gap-2 disabled:opacity-70 focus-ring"
               >
                 {installing ? (
                   <><span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-slate-800 border-t-transparent" /> {"Installing\u2026"}</>
@@ -539,7 +539,7 @@ function ProgressBar({ current, total, light }: { current: number; total: number
         {Array.from({ length: total }, (_, i) => (
           <span
             key={i}
-            className={`h-1 rounded-full transition-all duration-500 ${
+            className={`h-1 rounded-full transition-[width,background-color] duration-500 ${
               i === current
                 ? `w-5 ${light ? "bg-white" : "bg-blue-600"}`
                 : i < current

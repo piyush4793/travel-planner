@@ -63,7 +63,7 @@ function SummaryCard({ leftPlan, rightPlan }: { leftPlan: PlanOption; rightPlan:
         )}
       </button>
 
-      <div className={`grid motion-safe:transition-all motion-safe:duration-200 ease-out ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+      <div className={`grid motion-safe:transition-[grid-template-rows] motion-safe:duration-200 ease-out ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
         <div className="overflow-hidden">
           <div className="px-4 md:px-6 py-3 space-y-3">
             {/* Comparison table — works on all sizes */}

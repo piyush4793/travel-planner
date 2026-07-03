@@ -23,7 +23,7 @@ export function CollapsibleSection({ label, count, defaultOpen = false, children
           </span>
         )}
       </button>
-      <div className={`grid motion-safe:transition-all motion-safe:duration-300 ease-out ${open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+      <div className={`grid motion-safe:transition-[grid-template-rows,opacity,margin] motion-safe:duration-300 ease-out ${open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
         <div className="overflow-hidden">
           <div className={`border-l pl-3 motion-safe:transition-colors motion-safe:duration-300 ${open ? "border-blue-200" : "border-transparent"}`}>
             {children}
