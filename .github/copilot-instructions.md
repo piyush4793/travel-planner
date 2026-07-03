@@ -122,6 +122,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 - Compact Trips cards should keep progress-row alignment; show a low-emphasis "No combo yet" placeholder when combo suggestions are absent
 - In list cards, avoid duplicating combine values: do not repeat add-ons inline in the header when add-on chips are shown
 - In list cards, budget chips should include a traveler-basis icon (solo/couple/family4) that matches the active Trips budget basis
+- `PanelHeader`'s "Typical budget" strip is a **static full-trip reference** (all three party sizes, independent of day slider / active basis) — it carries an ⓘ tooltip saying so; the live day/basis-aware figure is the Plan tab cost. Do not wire the header strip to the slider
 - Trip planner: days slider → Generate (offline) or Plan with AI
 - Multi-plan selector: switch between Default and saved AI plans
 - Plan comparison: side-by-side modal with summary cards, city overlap analysis
@@ -188,7 +189,7 @@ All state is hooks-based — no Redux, no context providers. `App.tsx` calls hoo
 | `Tooltip` | `shared/Tooltip.tsx` | Portal-based info tooltip |
 | `HomeCountrySelector` | `shared/HomeCountrySelector.tsx` | Feature-gated searchable dropdown |
 | `DevFlagPanel` | `shared/DevFlagPanel.tsx` | Dev-mode feature flag toggle |
-| `AppInstallShare` | `shared/AppInstallShare.tsx` | Header/menu app Install (beforeinstallprompt / iOS A2HS) + Share app (Web Share → `wa.me` → clipboard) |
+| `AppInstallShare` | `shared/AppInstallShare.tsx` | Header/menu Install + Share (via `useAppShare`). Install = onboarding-oriented white pill (labeled **"Install app"** at `lg`); shows only when `beforeinstallprompt` fired or on iOS (A2HS hint). When the PWA is already installed but viewed in a browser tab (`installedInBrowser`), Install is swapped for a best-effort **"Open app"** button (`onOpenApp` → opens the in-scope start URL; Chromium may focus the app via `launch_handler`). Share is always present: **header variant copies the link** (`copyLink`, labeled "Share" at `lg`) to avoid the off-position desktop native share popover; **menu variant uses the native share sheet** (`share`) with `wa.me` → clipboard fallback |
 
 ---
 

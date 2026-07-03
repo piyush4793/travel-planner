@@ -7,6 +7,9 @@ All notable changes to Roamwise are documented here. Format follows [Keep a Chan
 ## [Unreleased]
 
 ### Added
+- **Sidebar Settings** — Settings modal rebuilt as a left-rail layout (General · AI · Backup) with stable desktop height; Home country and the global default budget party size now live in **Settings → General**, decluttering the header.
+- **Onboarding-friendly header** — labeled **Install app** pill and a clearer **Share** affordance for easier first-run discovery.
+- **Open app when installed** — once the PWA is installed, the header/menu detects it via `navigator.getInstalledRelatedApps()` and offers a best-effort **Open app** action (with `launch_handler: focus-existing`) instead of a redundant Install prompt.
 - **Navigation simplified** — 5 views → 3 (Trips home, Calendar, Discover). Map removed from nav, kept for Cinematic. List removed.
 
 ### Changed

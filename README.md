@@ -189,8 +189,9 @@ All travel data lives in localStorage. The Settings modal (⚙️) includes a fu
 Roamwise is a Progressive Web App — installable on desktop (Chrome/Edge) and mobile (Add to Home Screen):
 - **Service worker** — cache-first for static assets (JS/CSS/SVG/PNG), network-first for HTML with cache fallback; shell precaches PNG icons + manifest
 - **Works offline** — all 198 country itineraries, trip data, and the full UI work without internet
-- **Installable** — PNG icons (192/512 + maskable) satisfy Android/Chrome install criteria; persistent **Install** button in the header/menu (in addition to the first-run tour) triggers the native prompt, with manual Add-to-Home-Screen guidance on iOS Safari
-- **Share the app** — a header/menu **Share app** action shares the app URL via the Web Share sheet, falling back to a WhatsApp deep link (`wa.me`) then clipboard — so people can pass Roamwise around and install it
+- **Installable** — PNG icons (192/512 + maskable) satisfy Android/Chrome install criteria; onboarding-oriented **Install app** pill in the header/menu (in addition to the first-run tour) triggers the native prompt, with manual Add-to-Home-Screen guidance on iOS Safari
+- **Open app when installed** — once the PWA is installed, the header/menu detects it (`navigator.getInstalledRelatedApps()`) and swaps **Install** for a best-effort **Open app** action, so browser-tab users can jump to the installed app instead of re-installing
+- **Share the app** — an always-available header/menu **Share** action: the header copies the app link (clipboard, avoiding the off-position desktop native share popover) while the mobile menu opens the native Web Share sheet, falling back to a WhatsApp deep link (`wa.me`) then clipboard — so people can pass Roamwise around and install it
 - **Rich link previews** — Open Graph + Twitter Card meta with a 1200×630 image render a proper card when the link is shared on WhatsApp/social
 - **Auto-updates** — service worker updates silently on new deploys
 

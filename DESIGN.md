@@ -69,7 +69,7 @@ src/
 │   ├── useCountryRule.ts          # React wrapper around consolidated-country loader
 │   ├── useHashView.ts             # Hash-based routing
 │   ├── useBreakpoint.ts           # Reactive breakpoint (mobile/tablet/desktop)
-│   ├── useInstallPrompt.ts        # PWA beforeinstallprompt capture + iOS detection
+│   ├── useInstallPrompt.ts        # PWA beforeinstallprompt + getInstalledRelatedApps + iOS detection
 │   └── usePanelDrag.ts            # Resizable panel drag behavior
 │
 ├── utils/                         # Web/browser utilities
@@ -96,7 +96,10 @@ src/
 │   ├── ai/
 │   │   ├── ChatModal.tsx          # LLM chat + import interface
 │   │   ├── AiItineraryModal.tsx   # AI-generated itinerary display
-│   │   └── SettingsModal.tsx      # LLM keys + backup/restore
+│   │   ├── SettingsModal.tsx      # Sidebar-nav settings shell (General / AI / Backup)
+│   │   └── settings/
+│   │       ├── SettingsNav.tsx    # Responsive tablist rail (vertical desktop / scroll mobile)
+│   │       └── GeneralSettings.tsx # Home country + default budget basis + About
 │   ├── map/
 │   │   └── HoverCard.tsx          # Wikipedia photo card on map hover
 │   └── shared/
@@ -106,7 +109,7 @@ src/
 │       ├── ExperienceDropdown.tsx # Experience tag multi-select
 │       ├── HomeCountrySelector.tsx# Home country dropdown
 │       ├── DevFlagPanel.tsx       # Dev-only feature flag panel
-│       ├── AppInstallShare.tsx    # Header/menu Install + Share-app controls
+│       ├── AppInstallShare.tsx    # Header/menu Install / Open-app / Share controls
 │       ├── FreTour.tsx            # First-run guided tour (hero/spotlight/install cards)
 │       └── Tooltip.tsx            # Portal-based tooltip
 
@@ -142,7 +145,7 @@ public/
 | `usePersistedSet` | Reusable `Set<string>` + localStorage (DRY) |
 | `useHashView` | URL hash routing |
 | `useBreakpoint` | Responsive breakpoint state |
-| `useInstallPrompt` | PWA install prompt capture + iOS detection |
+| `useInstallPrompt` | PWA install prompt capture, installed-in-browser detection (`getInstalledRelatedApps`) + `openApp`, iOS detection |
 | `usePanelDrag` | Resizable country panel behavior |
 
 No Redux, no context providers. `App.tsx` calls hooks and passes results as props.
@@ -213,9 +216,11 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 
 ### App header layout
 
-- Primary header keeps global controls only: brand, view navigation, home-country selector, and settings.
+- Primary header keeps navigation + lightweight app actions only: brand, view navigation, and a slim right cluster of **Share app · Settings (⚙️) · Dev flag panel (dev-only)** plus a conditional **Install app** button.
+- The install slot is context-aware: it shows **Install app** when the browser offers `beforeinstallprompt` (or iOS A2HS guidance), and swaps to a best-effort **Open app** action once `navigator.getInstalledRelatedApps()` reports the PWA is already installed but running in a browser tab. Nothing shows when running standalone.
+- App-wide defaults (home country, default budget party size) live inside **Settings → General**, not in the header — this declutters the top bar and gives those controls a stable, discoverable home.
 - Progress/count telemetry (favorites, visited, total) belongs to Trips page context instead of global top bar.
-- Mobile keeps the same model via hamburger utility drawer with compact icon-based actions.
+- Mobile keeps the same model via hamburger utility drawer with compact icon-based actions (Share/Install/Open + Settings + Dev).
 
 ### Trips responsive control layout
 
@@ -236,8 +241,9 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 
 - **Single source of truth**: `src/core/utils/budget.ts` owns the `BudgetBasis` type (`solo`/`couple`/`family4`), `DEFAULT_BUDGET_BASIS` (`couple`), basis meta (icon/label/long), `budgetForBasis(country, basis)` (per-basis lookup with fallback to the single `budget` string), and `deriveBudgetBreakdown(solo)` (scales a per-person range into couple/family totals via `BASIS_MULTIPLIER` — couple 1.77×, family4 3.45×, calibrated from the median ratios across all 198 rule-backed destinations). `filterLogic` re-exports `BudgetBasis` and reuses the helper.
 - **Two-layer state** (`useBudgetBasis`): a persisted **global default** (`tp_budget_basis`) plus a transient in-session **active** value seeded from it. `setGlobalBasis` persists and resets active to it; `setActiveBasis` is temporary (not persisted). A corrupt stored value is guarded by `isBudgetBasis` and falls back to `couple`.
-- **Controls**: the Header shows a `BudgetBasisPills` segmented control bound to the **global** default; the Trips toolbar pill edits only the **active** value (quick "play around"), and the Trips clear-all resets active to the global default.
+- **Controls**: **Settings → General** hosts the app-wide defaults — the home-country selector and a `BudgetBasisPills` segmented control (`variant="light"`, with label) bound to the **global** default. The Trips toolbar pill edits only the **active** value (quick "play around"), and the Trips clear-all resets active to the global default.
 - **Consumers of active basis**: Trips filtering/cards, `CountryPanel` (budget chips + plan generation), `CalendarView` budget cue. The App threads `activeBasis` to each.
+- **Header budget strip vs plan cost**: `PanelHeader`'s "Typical budget" strip (`getBudgetBadges`) is a **static full-trip reference** — it shows all three party sizes at once and does NOT react to the day slider or active basis (labeled with an ⓘ tooltip clarifying this). The **live** figure that follows selected days + active basis is the Plan tab cost from `generateTripPlan`.
 - **Cost model**: `generateTripPlan(..., basis)` computes plan cost from `budgetForBasis(country, basis)` scaled by `days / recommendedDays` (floor 0.2), so at the recommended length the plan cost equals that basis's budget chip. The resulting `TripPlan.costBasis` records the party basis; `planCostBasisIcon` renders the basis icon (👤/👫/👨‍👩‍👧‍👦) beside the cost, with `planCostBasisLabel` supplying an accessible `title`/`aria-label` (never shown as visible text). AI plans omit `costBasis` and fall back to the 👤 (per-person) icon.
 
 ### Country panel interactions
