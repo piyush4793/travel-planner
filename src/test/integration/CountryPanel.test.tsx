@@ -68,6 +68,34 @@ describe("CountryPanel", () => {
     }
   });
 
+  it("closes the panel when Escape is pressed", async () => {
+    const user = userEvent.setup();
+    const onClose = vi.fn();
+
+    render(
+      <CountryPanel
+        country={makeCountry({ name: "Japan" })}
+        onClose={onClose}
+        onSelectCountry={vi.fn()}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+        isVisited={false}
+        onToggleVisited={vi.fn()}
+        onFilterExperience={vi.fn()}
+        activeExperiences={[]}
+        onEdit={vi.fn()}
+        onUpdateNotes={vi.fn()}
+        homeCountry="India"
+        budgetBasis="couple"
+        allCountries={[makeCountry({ name: "Japan" })]}
+      />,
+    );
+
+    await user.keyboard("{Escape}");
+
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
   it("labels the header budget strip as a static full-trip reference", () => {
     render(
       <CountryPanel

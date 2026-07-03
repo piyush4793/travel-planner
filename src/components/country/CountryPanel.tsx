@@ -146,6 +146,19 @@ export default function CountryPanel({
     onCinematicChange?.(cinematicPlan !== null);
   }, [cinematicPlan, onCinematicChange]);
 
+  // Close the panel on Escape, unless a sub-overlay (modal, compare, cinematic,
+  // or expanded notes) is open — those own the Escape key while active.
+  useEffect(() => {
+    if (!country) return;
+    const overlayOpen = cinematicPlan !== null || modalPlan !== null || compareOpen || notesExpanded;
+    if (overlayOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [country, cinematicPlan, modalPlan, compareOpen, notesExpanded, onClose]);
+
   const planOptions = useMemo(() => {
     const opts: { id: string; label: string; plan: TripPlan }[] = [];
     if (displayCountry) {
