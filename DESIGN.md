@@ -145,7 +145,7 @@ public/
 | `useAiPlanStore` | AI plan persistence (save/replace/compare) |
 | `useChatSession` | LLM chat state machine (messages, finalize, tokens) |
 | `useCountryRule` | Lazy-loading and caching consolidated per-country rule JSON |
-| `usePersistedSet` | Reusable `Set<string>` + localStorage (DRY) |
+| `usePersistedSet` | Reusable `Set<string>` + localStorage (DRY); reconciles cross-tab via `storage` events |
 | `useHashView` | URL hash routing |
 | `useBreakpoint` | Responsive breakpoint state |
 | `useInstallPrompt` | PWA install prompt capture, installed-in-browser detection (`getInstalledRelatedApps`) + `openApp`, iOS detection |
