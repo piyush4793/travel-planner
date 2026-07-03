@@ -481,12 +481,24 @@ function bezierPt(p0: [number, number], p1: [number, number], p2: [number, numbe
 
 // ─── rAF animation helper ─────────────────────────────────────────────────────
 
+// Strip undefined camera keys so MapLibre's jumpTo never receives NaN bearing/pitch
+// (passing `undefined` sets them to NaN → "failed to invert matrix").
+export function cleanJumpOptions(opts: maplibregl.FlyToOptions): maplibregl.JumpToOptions {
+  const o: maplibregl.JumpToOptions = {};
+  if (opts.center !== undefined) o.center = opts.center;
+  if (opts.zoom !== undefined) o.zoom = opts.zoom;
+  if (opts.bearing !== undefined) o.bearing = opts.bearing;
+  if (opts.pitch !== undefined) o.pitch = opts.pitch;
+  return o;
+}
+
 // Smooth requestAnimationFrame loop — replaces setTimeout stepping for jank-free 60fps
 function rafAnimate(
   durationMs: number,
   onProgress: (t: number) => void,
   isCancelled: () => boolean,
   isPaused: () => boolean,
+  isSkipped?: () => boolean,
 ): Promise<void> {
   return new Promise((resolve) => {
     let start: number | null = null;
@@ -495,6 +507,7 @@ function rafAnimate(
 
     function tick(now: number) {
       if (isCancelled()) { resolve(); return; }
+      if (isSkipped?.()) { onProgress(1); resolve(); return; }
 
       if (isPaused()) {
         if (!pauseStart) pauseStart = now;
@@ -597,6 +610,14 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
   }
 
   const pausedRef = useRef(false);
+  const speedRef = useRef(1);
+  const skipActiveRef = useRef(false);
+  // Index of the last-arrived city stop (drives prev/next), and the fast-forward
+  // target used when replaying from the start to reach an earlier stop.
+  const currentStopRef = useRef(-1);
+  const jumpToRef = useRef<number | null>(null);
+  // Preserves the true pre-cinematic camera across replays so close always restores it.
+  const savedViewRef = useRef<{ center: maplibregl.LngLat; zoom: number; bearing: number; pitch: number } | null>(null);
 
   // useState (not useRef) so React re-renders when photos arrive
   const [cityPhotoMap, setCityPhotoMap] = useState<Record<string, string[]>>({});
@@ -614,8 +635,30 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
   const [slideIdx, setSlideIdx]           = useState(0);
   const [statusMsg, setStatusMsg]         = useState("Preparing journey…");
   const [paused, setPaused]               = useState(false);
+  const [speed, setSpeed]                 = useState(1);
+  const [runId, setRunId]                 = useState(0);
 
   useEffect(() => { pausedRef.current = paused; }, [paused]);
+  useEffect(() => { speedRef.current = speed; }, [speed]);
+
+  const cycleSpeed = () => setSpeed((s) => (s >= 2 ? 1 : s === 1 ? 1.5 : 2));
+  // Fast-forward every segment until the next city stop is reached (auto-cleared there).
+  const skipStep = () => {
+    jumpToRef.current = null;
+    skipActiveRef.current = true;
+    setPaused(false);
+  };
+  // Replay from the start, fast-forwarding to the previous stop (forward-only engine).
+  // Decrement from the pending target when a jump is already in flight so rapid
+  // clicks step back deterministically.
+  const prevStep = () => {
+    const base = jumpToRef.current != null ? jumpToRef.current : currentStopRef.current;
+    const target = Math.max(0, base - 1);
+    jumpToRef.current = target;
+    skipActiveRef.current = true;
+    setPaused(false);
+    setRunId((r) => r + 1);
+  };
 
   // Auto-advance slideshow during city phase
   useEffect(() => {
@@ -644,25 +687,52 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
     map.touchZoomRotate.disable();
     map.keyboard.disable();
 
-    const origCenter  = map.getCenter();
-    const origZoom    = map.getZoom();
-    const origBearing = map.getBearing();
-    const origPitch   = map.getPitch();
+    const savedView = savedViewRef.current ?? {
+      center: map.getCenter(),
+      zoom: map.getZoom(),
+      bearing: map.getBearing(),
+      pitch: map.getPitch(),
+    };
+    savedViewRef.current = savedView;
+    const { center: origCenter, zoom: origZoom, bearing: origBearing, pitch: origPitch } = savedView;
 
     const allMarkers: maplibregl.Marker[] = [];
 
-    const sleep = (ms: number) => new Promise<void>((res) => setTimeout(res, ms));
+    const sleep = (ms: number) => new Promise<void>((res) => {
+      if (skipActiveRef.current) { res(); return; }
+      const target = ms / speedRef.current;
+      const t0 = Date.now();
+      const poll = () => {
+        if (cancelled || skipActiveRef.current || Date.now() - t0 >= target) { res(); return; }
+        setTimeout(poll, 24);
+      };
+      poll();
+    });
     async function untilUnpaused() {
       while (pausedRef.current && !cancelled) await sleep(80);
     }
 
+    const jumpTo = (opts: maplibregl.FlyToOptions): void => {
+      map.jumpTo(cleanJumpOptions(opts));
+    };
+
     const flyAndWait = (opts: maplibregl.FlyToOptions): Promise<void> =>
-      new Promise((res) => { map.once("moveend", res); map.flyTo({ essential: true, ...opts }); });
+      new Promise((res) => {
+        if (skipActiveRef.current) { jumpTo(opts); res(); return; }
+        map.once("moveend", res);
+        map.flyTo({ essential: true, ...opts, duration: (opts.duration ?? 0) / speedRef.current });
+      });
+
+    // Speed-scaled flyTo for the fire-and-forget segments (paired with a matching sleep)
+    const fly = (opts: maplibregl.FlyToOptions): void => {
+      if (skipActiveRef.current) { jumpTo(opts); return; }
+      map.flyTo({ essential: true, ...opts, duration: (opts.duration ?? 0) / speedRef.current });
+    };
 
     // Wait for map tiles to finish loading (caps at timeoutMs to avoid infinite hang)
     function waitForIdle(timeoutMs = 2500): Promise<void> {
       return new Promise((res) => {
-        if (map.areTilesLoaded()) { res(); return; }
+        if (skipActiveRef.current || map.areTilesLoaded()) { res(); return; }
         const timer = setTimeout(res, timeoutMs);
         map.once("idle", () => { clearTimeout(timer); res(); });
       });
@@ -817,6 +887,12 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
 
     async function run() {
       setStatusMsg("Preparing your journey…");
+      // Reset visible state so replays (prev/jump) start from a clean intro.
+      setPhase("intro");
+      setShowCard(false);
+      setActiveCityIdx(-1);
+      setActiveDayIdx(0);
+      setVisibleActs(0);
 
       if (!map.isStyleLoaded()) {
         await Promise.race([
@@ -905,7 +981,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         sleep(5000),
       ]);
       if (cancelled) return;
-      setCityPhotoMap(fetchedPhotos);
+      setCityPhotoMap((prev) => ({ ...prev, ...fetchedPhotos }));
 
       setStatusMsg(`${plan.duration} · ${plan.costPerPerson} pp${comboLine}`);
       await sleep(400);
@@ -927,7 +1003,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       showCityDots(- 1, 0);
 
       setStatusMsg(`✈️  ${homeCity} → ${firstStop.name}`);
-      map.flyTo({
+      fly({
         center: homeCoords,
         zoom: 4.5, pitch: 45, bearing: depBearing,
         duration: 1200, essential: true,
@@ -949,7 +1025,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         const depSeg: [number, number][] = [homeCoords];
         let depLast = 0;
         const DEP_STEPS = 50;
-        await rafAnimate(2200, (progress) => {
+        await rafAnimate(2200 / speedRef.current, (progress) => {
           const targetStep = Math.min(Math.ceil(progress * DEP_STEPS), DEP_STEPS);
           for (let s = depLast + 1; s <= targetStep; s++) {
             depSeg.push(bezierPt(homeCoords, depCtrl, firstStop.coords, easeInOut(s / DEP_STEPS)));
@@ -965,7 +1041,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
           const zoomCurve = 3 + 2.5 * Math.sin(progress * Math.PI);
           const pitchCurve = 35 + 20 * Math.sin(progress * Math.PI);
           map.jumpTo({ center: pt, zoom: zoomCurve, pitch: pitchCurve, bearing: depBearing });
-        }, () => cancelled, () => pausedRef.current);
+        }, () => cancelled, () => pausedRef.current, () => skipActiveRef.current);
         removeTransportMarker(depMarker);
         completedCoords.push(...depSeg.slice(1));
       }
@@ -1006,13 +1082,13 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
 
           // Position camera for departure
           if (isFlight) {
-            map.flyTo({
+            fly({
               center: from,
               zoom: 5, pitch: 50, bearing: transitBearing,
               duration: 1000, essential: true,
             });
           } else {
-            map.flyTo({
+            fly({
               center: from,
               zoom: Math.max(7, 9 - dist * 0.3), pitch: 55, bearing: transitBearing,
               duration: 1000, essential: true,
@@ -1040,7 +1116,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
           let lastStep = 0;
           const STEPS = 40;
 
-          await rafAnimate(isFlight ? 3200 : isTrain ? 3000 : 2600, (progress) => {
+          await rafAnimate((isFlight ? 3200 : isTrain ? 3000 : 2600) / speedRef.current, (progress) => {
             const targetStep = Math.min(Math.ceil(progress * STEPS), STEPS);
             for (let s = lastStep + 1; s <= targetStep; s++) {
               const t = easeInOut(s / STEPS);
@@ -1098,7 +1174,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
               const groundZoom = Math.max(7, 9 - dist * 0.3);
               map.jumpTo({ center: pt, zoom: groundZoom, pitch: 55, bearing: camBearing + sway });
             }
-          }, () => cancelled, () => pausedRef.current);
+          }, () => cancelled, () => pausedRef.current, () => skipActiveRef.current);
 
           removeTransportMarker(txMarker);
           completedCoords.push(...seg.slice(1));
@@ -1122,6 +1198,13 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         setActiveCityIdx(i);
         setActiveDayIdx(0);
         setPhase("city");
+        currentStopRef.current = i;
+        // Stop fast-forwarding once we've reached the jump target (or the next stop
+        // for a plain skip). Keep skipping while replaying toward an earlier stop.
+        if (jumpToRef.current == null || i >= jumpToRef.current) {
+          skipActiveRef.current = false;
+          jumpToRef.current = null;
+        }
         await sleep(300);
         setShowCard(true);
 
@@ -1144,9 +1227,9 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
           }
 
           // Hold after all activities shown
-          const holdEnd = Date.now() + 2200;
+          const holdEnd = Date.now() + 2200 / speedRef.current;
           while (Date.now() < holdEnd) {
-            if (cancelled) return;
+            if (cancelled || skipActiveRef.current) break;
             await untilUnpaused();
             await sleep(100);
           }
@@ -1161,7 +1244,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         if (i < cityStops.length - 1) {
           const next = cityStops[i + 1].coords;
           const transitBearing = calcBearing(stop.coords, next);
-          map.flyTo({
+          fly({
             center: [(stop.coords[0] + next[0]) / 2, (stop.coords[1] + next[1]) / 2],
             zoom: 5, pitch: 40, bearing: transitBearing * 0.3,
             duration: 1300, essential: true,
@@ -1184,7 +1267,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       }
 
       // Position camera at last city looking homeward
-      map.flyTo({
+      fly({
         center: lastStop.coords,
         zoom: 4.5, pitch: 45, bearing: retBearing,
         duration: 1200, essential: true,
@@ -1206,7 +1289,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         const retSeg: [number, number][] = [lastStop.coords];
         let retLast = 0;
         const RET_STEPS = 50;
-        await rafAnimate(2200, (progress) => {
+        await rafAnimate(2200 / speedRef.current, (progress) => {
           const targetStep = Math.min(Math.ceil(progress * RET_STEPS), RET_STEPS);
           for (let s = retLast + 1; s <= targetStep; s++) {
             retSeg.push(bezierPt(lastStop.coords, retCtrl, homeCoords, easeInOut(s / RET_STEPS)));
@@ -1221,7 +1304,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
           const zoomCurve = 3 + 2.5 * Math.sin(progress * Math.PI);
           const pitchCurve = 35 + 20 * Math.sin(progress * Math.PI);
           map.jumpTo({ center: pt, zoom: zoomCurve, pitch: pitchCurve, bearing: retBearing });
-        }, () => cancelled, () => pausedRef.current);
+        }, () => cancelled, () => pausedRef.current, () => skipActiveRef.current);
         removeTransportMarker(retMarker);
         completedCoords.push(...retSeg.slice(1));
       }
@@ -1237,6 +1320,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       await sleep(500);
 
       setStatusMsg("Trip complete!");
+      skipActiveRef.current = false;
       setPhase("done");
     }
 
@@ -1256,7 +1340,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       map.flyTo({ center: origCenter, zoom: origZoom, bearing: origBearing, pitch: origPitch, duration: 800, essential: true });
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [runId]);
 
   const activeStop  = activeCityIdx >= 0 ? cityStops[activeCityIdx] : null;
   const activeDay   = activeStop?.days[activeDayIdx] ?? null;
@@ -1418,13 +1502,34 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
             </div>
             <div className="flex items-center gap-1.5 shrink-0">
               <button
+                onClick={cycleSpeed}
+                className="text-gray-300 hover:text-white hover:bg-white/10 h-8 min-w-[36px] px-1.5 flex items-center justify-center rounded-lg transition-colors text-xs font-bold tabular-nums focus-ring"
+                title="Playback speed"
+                aria-label={`Playback speed ${speed}×`}
+              >{speed}×</button>
+              <button
+                onClick={prevStep}
+                disabled={activeCityIdx <= 0}
+                className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm focus-ring disabled:opacity-30 disabled:cursor-not-allowed"
+                title="Back to previous stop"
+                aria-label="Back to previous stop"
+              >⏮</button>
+              <button
                 onClick={() => setPaused((p) => !p)}
-                className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm"
+                className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm focus-ring"
                 title="Pause / Resume"
+                aria-label={paused ? "Resume" : "Pause"}
               >⏯</button>
               <button
+                onClick={skipStep}
+                className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm focus-ring"
+                title="Skip to next stop"
+                aria-label="Skip to next stop"
+              >⏭</button>
+              <button
                 onClick={onClose}
-                className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm"
+                className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm focus-ring"
+                aria-label="Close"
               >✕</button>
             </div>
           </div>
@@ -1577,17 +1682,48 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
 
         {/* Footer */}
         <div className="px-5 py-4 border-t border-white/10 flex items-center justify-between shrink-0">
-          <button
-            onClick={() => setPaused((p) => !p)}
-            className="flex items-center gap-1.5 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full text-xs font-bold transition-colors"
-          >
-            {paused ? "▶ Resume" : "⏸ Pause"}
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={prevStep}
+              disabled={activeCityIdx <= 0}
+              className="w-9 h-9 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors focus-ring disabled:opacity-30 disabled:cursor-not-allowed"
+              title="Back to previous stop"
+              aria-label="Back to previous stop"
+            >
+              ⏮
+            </button>
+            <button
+              onClick={() => setPaused((p) => !p)}
+              className="w-9 h-9 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors focus-ring"
+              title={paused ? "Resume" : "Pause"}
+              aria-label={paused ? "Resume" : "Pause"}
+            >
+              {paused ? "▶" : "⏸"}
+            </button>
+            <button
+              onClick={skipStep}
+              className="w-9 h-9 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors focus-ring"
+              title="Skip to next stop"
+              aria-label="Skip to next stop"
+            >
+              ⏭
+            </button>
+            <button
+              onClick={cycleSpeed}
+              className="w-9 h-9 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-xs font-bold transition-colors tabular-nums focus-ring"
+              title="Playback speed"
+              aria-label={`Playback speed ${speed}×`}
+            >
+              {speed}×
+            </button>
+          </div>
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full text-xs font-bold transition-colors text-gray-400 hover:text-white"
+            className="w-9 h-9 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors text-gray-400 hover:text-white focus-ring"
+            title="Close"
+            aria-label="Close"
           >
-            Close
+            ✕
           </button>
         </div>
       </div>

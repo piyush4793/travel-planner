@@ -208,6 +208,12 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 
 Reuses the main MapLibre instance via `mainMapRef`. Disables user interaction on mount, adds GeoJSON route sources, animates fly-through with rAF, restores on close.
 
+Playback controls are ref-backed so the imperative animation reads live values without re-running the effect:
+- **Pause** (`pausedRef`) — halts rAF ticks and dwell loops.
+- **Speed** (`speedRef`, 1× / 1.5× / 2×) — divides every `rafAnimate` duration, `sleep`, `flyTo`/`flyAndWait` duration, and dwell hold, keeping camera flights and route-draw in sync.
+- **Skip** (`skipActiveRef` flag) — fast-forwards every segment (`rafAnimate` snaps `onProgress(1)`, skip-aware `sleep`/hold loops resolve, `flyTo`→`jumpTo`) until the next city arrival, where it auto-clears and normal playback resumes. Idempotent, so rapid clicks simply advance more stops without state drift.
+- **Prev** (`jumpToRef` target + `runId` replay) — the fly-through is forward-only, so stepping back re-runs the effect from the start with skip active and stops fast-forwarding only once the arrival index reaches the target. `savedViewRef` preserves the true pre-cinematic camera across replays, and `cityPhotoMap` is merged (not overwritten) so photos survive a replay.
+
 ---
 
 ## Data Model

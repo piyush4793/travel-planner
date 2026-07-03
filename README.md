@@ -135,6 +135,7 @@ Full-screen animated experience for rule-based countries:
 6. Return arc with "Welcome back!" screen
 7. Pause/resume, close to restore original camera
 8. Pause/resume stays reliable across re-renders because playback control is state-driven
+9. **Prev / Skip stops** — ⏮ replays to the previous stop (forward-only engine replays from start and fast-forwards to the target), ⏭ fast-forwards the current segment to the next stop; **playback speed** toggle cycles 1× → 1.5× → 2× and scales every fly-through, sleep, and route-draw segment
 
 ---
 

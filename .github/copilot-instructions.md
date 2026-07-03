@@ -120,7 +120,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 - Trip planner: days slider → Generate (offline) or Plan with AI
 - Multi-plan selector: switch between Default and saved AI plans
 - Plan comparison: side-by-side modal with summary cards, city overlap analysis
-- Cinematic mode: animated fly-through of itinerary on map
+- Cinematic mode: animated fly-through of itinerary on map. Icon-only controls with tooltips: **prev stop ⏮**, **pause ⏯**, **skip to next stop ⏭**, and **playback speed** 1×/1.5×/2×. Skip/speed are ref-backed so they steer the imperative animation without restarting it; **prev stop replays from the start (via a `runId` effect bump) and fast-forwards to the target stop**. All camera jumps go through `cleanJumpOptions()` which strips undefined `bearing`/`pitch` (passing `undefined` sets them to NaN → "failed to invert matrix").
 
 **Responsive design** — mobile-first (375px+). Breakpoints: mobile / tablet (768px) / desktop (1024px). `useBreakpoint()` drives reactive layout choices.
 
