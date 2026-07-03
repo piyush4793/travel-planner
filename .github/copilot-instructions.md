@@ -8,7 +8,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (636 tests across 79 files)
+npm test                # Vitest suite (682 tests across 83 files)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests + knip + build
 ```
@@ -17,7 +17,7 @@ Run `npx tsc --noEmit` and `npm run build` before and after every change set. Us
 Before committing, ensure adequate test coverage for the behavior you changed (add or update TCs so regressions are caught).
 
 Current testing priority:
-- Total statement coverage is ~81% (636 tests). Country-detail and itinerary surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) and the `ai` folder are now covered; remaining gaps are the maplibre-heavy `ItineraryCinematic` / `MapView` / `HoverCard` and `App.tsx` orchestration.
+- Total statement coverage is ~82% (682 tests). Country-detail and itinerary surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) and the `ai` folder are now covered; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` and `App.tsx` orchestration.
 - Reuse `src/test/testUtils.ts` helpers for localStorage seeding, route setup, and deterministic timers in timing-sensitive UI tests.
 - Prefer `fireEvent` over `userEvent.tab()` for focus-trap/timing-sensitive assertions (jsdom focus timing is flaky).
 - `src/components/**` thresholds remain intentionally low in `vite.config.ts`; tighten them now that broad integration coverage exists.
@@ -84,7 +84,8 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | Shared Back-button overlay stack (mobile: closes topmost overlay first) | `src/hooks/useBackDismiss.ts` |
 | Country detail panel | `src/components/country/CountryPanel.tsx` |
 | Itinerary modal | `src/components/country/ItineraryModal.tsx` |
-| Cinematic map experience | `src/components/country/ItineraryCinematic.tsx` |
+| Cinematic map experience (React shell) | `src/components/country/ItineraryCinematic.tsx` |
+| Cinematic pure engine (paths, bearings, markers, rAF) | `src/components/country/cinematic/engine.ts` |
 | Plan comparison modal | `src/components/country/PlanCompareModal.tsx` |
 | AI chat/settings modals | `src/components/ai/ChatModal.tsx`, `src/components/ai/SettingsModal.tsx` |
 | Trip planner engine | `src/utils/tripPlans.ts` |
@@ -158,7 +159,7 @@ App.tsx  (thin orchestrator — wires hooks to views)
 ```
 src/components/
   ai/       — AiItineraryModal, ChatModal, SettingsModal
-  country/  — CountryPanel, CountryForm, ItineraryCinematic, ItineraryModal, PlanCompareModal
+  country/  — CountryPanel, CountryForm, ItineraryCinematic, ItineraryModal, PlanCompareModal, cinematic/engine.ts (pure fly-through engine)
   map/      — HoverCard and map internals
   shared/   — PillGroup, FilterChip, Filters, Tooltip, HomeCountrySelector, DevFlagPanel, ExperienceDropdown, AppInstallShare, FreTour
   views/    — CalendarView, DiscoverView, TripsView

@@ -101,7 +101,9 @@ src/
 │   │   ├── CountryPanel.tsx       # Right-side detail panel
 │   │   ├── CountryForm.tsx        # Add/edit modal form
 │   │   ├── ItineraryModal.tsx     # Day-by-day itinerary modal
-│   │   ├── ItineraryCinematic.tsx # Animated map fly-through
+│   │   ├── ItineraryCinematic.tsx # Animated map fly-through (React shell — lifecycle + render)
+│   │   ├── cinematic/
+│   │   │   └── engine.ts          # Pure fly-through engine: path/bezier/bearing math, city-stop grouping, marker builders, rAF loop (unit-tested)
 │   │   └── PlanCompareModal.tsx   # Side-by-side plan comparison
 │   ├── ai/
 │   │   ├── ChatModal.tsx          # LLM chat + import interface
