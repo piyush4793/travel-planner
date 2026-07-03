@@ -10,6 +10,25 @@ export function usePersistedSet(key: string, init: () => Set<string>) {
 
   useEffect(() => { saveLS(key, [...set]); }, [key, set]);
 
+  // Reconcile when another tab mutates the same key (storage events only fire cross-tab).
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key !== key || e.newValue == null) return;
+      let incoming: string[];
+      try {
+        const parsed = JSON.parse(e.newValue);
+        if (!Array.isArray(parsed)) return;
+        incoming = parsed.filter((v): v is string => typeof v === "string");
+      } catch { return; }
+      setSet((prev) => {
+        if (prev.size === incoming.length && incoming.every((v) => prev.has(v))) return prev;
+        return new Set(incoming);
+      });
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, [key]);
+
   const toggle = useCallback((name: string) => {
     setSet((prev) => {
       const next = new Set(prev);

@@ -28,4 +28,24 @@ describe("Tooltip", () => {
     fireEvent.mouseLeave(trigger);
     expect(screen.queryByText("Helpful text")).not.toBeInTheDocument();
   });
+
+  it("links the trigger to the tooltip via a unique aria-describedby id", () => {
+    render(
+      <>
+        <Tooltip text="First tip" />
+        <Tooltip text="Second tip" />
+      </>,
+    );
+
+    const [firstTrigger, secondTrigger] = screen.getAllByText("i");
+    expect(firstTrigger).not.toHaveAttribute("aria-describedby");
+
+    fireEvent.focus(firstTrigger);
+    const tip = screen.getByRole("tooltip");
+    const describedBy = firstTrigger.getAttribute("aria-describedby");
+    expect(describedBy).toBeTruthy();
+    expect(tip).toHaveAttribute("id", describedBy);
+    // The second, unopened tooltip must not share the id.
+    expect(secondTrigger).not.toHaveAttribute("aria-describedby");
+  });
 });

@@ -101,6 +101,9 @@ describe("InfoSections", () => {
     await user.click(toggle);
 
     expect(toggle).toHaveAttribute("aria-expanded", "true");
+    // Async region is an assertive-free live region so SR users hear load/error/content updates.
+    const liveRegion = document.querySelector('[aria-live="polite"]');
+    expect(liveRegion).toBeTruthy();
     expect(mocks.fetchCountryInfo).toHaveBeenCalledWith("Japan");
     expect(await screen.findByText("Japan blends food, nature, and culture.")).toBeInTheDocument();
     expect(screen.getByText(/Tokyo/)).toBeInTheDocument();

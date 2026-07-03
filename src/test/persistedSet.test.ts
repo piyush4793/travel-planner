@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { renderHook, act } from "@testing-library/react";
 import { usePersistedSet } from "../hooks/usePersistedSet";
 
@@ -76,5 +76,58 @@ describe("usePersistedSet — P0", () => {
 
     expect([...result.current.set]).toEqual(["Thailand", "Cambodia"]);
     expect(JSON.parse(localStorage.getItem("test_set") ?? "[]")).toEqual(["Thailand", "Cambodia"]);
+  });
+});
+
+describe("usePersistedSet — cross-tab sync", () => {
+  function fireStorage(key: string, newValue: string | null) {
+    act(() => {
+      window.dispatchEvent(new StorageEvent("storage", { key, newValue }));
+    });
+  }
+
+  it("reconciles state when another tab writes the same key", () => {
+    const { result } = renderHook(() => usePersistedSet("test_set", () => new Set(["Japan"])));
+
+    fireStorage("test_set", JSON.stringify(["Japan", "Vietnam", "Thailand"]));
+
+    expect([...result.current.set]).toEqual(["Japan", "Vietnam", "Thailand"]);
+  });
+
+  it("ignores storage events for other keys", () => {
+    const { result } = renderHook(() => usePersistedSet("test_set", () => new Set(["Japan"])));
+
+    fireStorage("other_key", JSON.stringify(["Vietnam"]));
+
+    expect([...result.current.set]).toEqual(["Japan"]);
+  });
+
+  it("ignores malformed or non-array payloads", () => {
+    const { result } = renderHook(() => usePersistedSet("test_set", () => new Set(["Japan"])));
+
+    fireStorage("test_set", "not-json");
+    fireStorage("test_set", JSON.stringify({ not: "an array" }));
+    fireStorage("test_set", null);
+
+    expect([...result.current.set]).toEqual(["Japan"]);
+  });
+
+  it("does not change reference when incoming value is equal (no ping-pong)", () => {
+    const { result } = renderHook(() => usePersistedSet("test_set", () => new Set(["Japan", "Vietnam"])));
+    const before = result.current.set;
+
+    fireStorage("test_set", JSON.stringify(["Japan", "Vietnam"]));
+
+    expect(result.current.set).toBe(before);
+  });
+
+  it("removes the storage listener on unmount", () => {
+    const removeSpy = vi.spyOn(window, "removeEventListener");
+    const { unmount } = renderHook(() => usePersistedSet("test_set", () => new Set<string>()));
+
+    unmount();
+
+    expect(removeSpy).toHaveBeenCalledWith("storage", expect.any(Function));
+    removeSpy.mockRestore();
   });
 });

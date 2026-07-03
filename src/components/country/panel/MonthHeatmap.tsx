@@ -5,7 +5,6 @@ const MONTHS = [
   "July", "August", "September", "October", "November", "December",
 ];
 const SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const CURRENT_MONTH_INDEX = new Date().getMonth();
 
 type Props = {
   bestMonths: string[];
@@ -15,6 +14,7 @@ type Props = {
 function MonthHeatmapInner({ bestMonths, worstMonths }: Props) {
   const bestSet = useMemo(() => new Set(bestMonths), [bestMonths]);
   const worstSet = useMemo(() => new Set(worstMonths), [worstMonths]);
+  const currentMonthIndex = new Date().getMonth();
 
   // Only show months that have a designation
   const rows = useMemo(() => {
@@ -31,7 +31,7 @@ function MonthHeatmapInner({ bestMonths, worstMonths }: Props) {
   return (
     <div className="space-y-1" role="img" aria-label="Monthly travel suitability">
       {rows.map((row) => {
-        const isCurrent = row.index === CURRENT_MONTH_INDEX;
+        const isCurrent = row.index === currentMonthIndex;
         return (
           <div key={row.full} className="flex items-center gap-2">
             <span className={`w-8 shrink-0 text-[10px] font-bold tabular-nums ${

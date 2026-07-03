@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { LLMTripPlanResult, LLMDayEntry, LLMCityInfo } from "../../core/utils/ai/llmTransform";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../core/utils/transport";
 import { buildRoute } from "../../core/utils/googleMapsRoute";
@@ -461,20 +461,24 @@ function MetaChips({ label, items, color }: { label: string; items: string[]; co
 
 function CopyLinkButton({ url }: { url: string }) {
   const [copied, setCopied] = useState(false);
+  const copyTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  useEffect(() => () => clearTimeout(copyTimerRef.current), []);
   return (
     <button
       onClick={() => {
         navigator.clipboard.writeText(url).then(() => {
           setCopied(true);
-          setTimeout(() => setCopied(false), 1500);
+          clearTimeout(copyTimerRef.current);
+          copyTimerRef.current = setTimeout(() => setCopied(false), 1500);
         });
       }}
-      className={`text-[10px] font-semibold px-2 py-1 min-w-[28px] min-h-[28px] rounded-full transition-colors focus-ring ${
+      className={`text-[10px] font-semibold px-2 py-1 min-w-[32px] min-h-[32px] rounded-full transition-colors focus-ring ${
         copied
           ? "text-emerald-600 bg-emerald-50"
           : "text-slate-400 bg-slate-50 hover:bg-slate-100 hover:text-slate-600"
       }`}
       title={copied ? "Copied!" : "Copy route link"}
+      aria-label={copied ? "Route link copied" : "Copy route link"}
     >
       {copied ? "✓" : "📋"}
     </button>

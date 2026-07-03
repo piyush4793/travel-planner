@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import AiItineraryModal from "../../components/ai/AiItineraryModal";
 import type { LLMTripPlanResult } from "../../core/utils/ai/llmTransform";
@@ -93,6 +93,23 @@ describe("AiItineraryModal", () => {
     expect(screen.getByText("Fjord cruise")).toBeInTheDocument();
     expect(screen.getByText("Day 3 — Bergen")).toBeInTheDocument();
     expect(screen.getByText("Funicular")).toBeInTheDocument();
+  });
+
+  it("copies the day route link and unmounts cleanly without a pending-timer crash", async () => {
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    Object.assign(navigator, { clipboard: { writeText } });
+
+    const { unmount } = render(<AiItineraryModal result={makeResult()} onClose={vi.fn()} />);
+
+    const copyBtn = screen.getAllByRole("button", { name: /Copy route link/i })[0];
+    expect(copyBtn.className).toContain("min-h-[32px]");
+
+    fireEvent.click(copyBtn);
+    expect(writeText).toHaveBeenCalledTimes(1);
+    expect(await screen.findByRole("button", { name: /Route link copied/i })).toBeInTheDocument();
+
+    // Unmount before the 1.5s reset — cleanup clears the timer (no setState-after-unmount).
+    expect(() => unmount()).not.toThrow();
   });
 
   it("calls onClose from the close button", async () => {

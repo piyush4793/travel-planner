@@ -80,7 +80,9 @@ export default function MapView({
           isVisited ? "travel-marker--visited" : "",
           isCombo ? "travel-marker--combo" : "",
         ].filter(Boolean).join(" ");
-        el.innerHTML = `<span>${country.name[0]}</span>`;
+        const label = document.createElement("span");
+        label.textContent = country.name[0] ?? "";
+        el.replaceChildren(label);
         el.setAttribute("role", "button");
         el.setAttribute("tabindex", "0");
         el.setAttribute("aria-label", country.name);
