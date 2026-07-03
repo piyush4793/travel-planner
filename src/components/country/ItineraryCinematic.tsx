@@ -8,6 +8,7 @@ import { extractCityFromLabel, planCostBasisIcon } from "../../core/utils/tripPl
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import type { CountryRule } from "../../core/data/itineraryRules";
 import { getWikiImage } from "../../utils/wikiImages";
+import { VEHICLE_SVG, TRANSPORT_COLORS, buildVehicleSvgNode } from "../../utils/vehicleMarkers";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../core/utils/transport";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
 
@@ -165,104 +166,6 @@ function roadPt(path: [number, number][], progress: number): [number, number] {
   ];
 }
 
-// ─── SVG vehicle icons for 3D transport markers ──────────────────────────────
-
-// Top-down / bird's-eye vehicle silhouettes — pointing UP (north) by default.
-// Flights rotate to follow arc heading; ground vehicles stay fixed.
-const VEHICLE_SVG: Record<string, string> = {
-  // Airplane — clean white commercial airliner top-down silhouette (no orb)
-  "✈️": `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="pg" x1="20" y1="2" x2="44" y2="58"><stop stop-color="#ffffff"/><stop offset="0.5" stop-color="#f0f4f8"/><stop offset="1" stop-color="#c8d6e5"/></linearGradient>
-      <filter id="planeShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.3)"/></filter>
-    </defs>
-    <g filter="url(#planeShadow)">
-      <path d="M32 3C33 3 34 4 34.5 7L35.5 18L54 26C55 26.4 55 27.6 54 28L35.5 28L36 42L43 50C43.5 50.5 43.2 51.5 42.5 51.5L35 48L33 52C32.7 52.6 31.3 52.6 31 52L29 48L21.5 51.5C20.8 51.5 20.5 50.5 21 50L28 42L28.5 28L10 28C9 27.6 9 26.4 10 26L28.5 18L29.5 7C30 4 31 3 32 3Z" fill="url(#pg)" stroke="rgba(200,210,225,0.6)" stroke-width="0.4"/>
-      <ellipse cx="32" cy="14" rx="1.8" ry="6" fill="rgba(255,255,255,0.35)"/>
-      <path d="M31 7L33 7L33.5 18L30.5 18Z" fill="rgba(200,215,235,0.25)"/>
-    </g>
-  </svg>`,
-  // Car — 3D convertible with glossy paint, chrome, leather seats, reflections
-  "🚗": `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="ctd" cx="0.4" cy="0.35" r="0.7"><stop stop-color="#ff6b6b"/><stop offset="0.4" stop-color="#ef4444"/><stop offset="0.8" stop-color="#b91c1c"/><stop offset="1" stop-color="#7f1d1d"/></radialGradient>
-      <linearGradient id="cshine" x1="16" y1="6" x2="48" y2="56"><stop stop-color="rgba(255,255,255,0.5)"/><stop offset="0.3" stop-color="rgba(255,255,255,0.05)"/><stop offset="1" stop-color="rgba(0,0,0,0.1)"/></linearGradient>
-      <radialGradient id="cseat" cx="0.5" cy="0.4" r="0.6"><stop stop-color="#a16207"/><stop offset="0.7" stop-color="#78350f"/><stop offset="1" stop-color="#451a03"/></radialGradient>
-      <linearGradient id="cglass" x1="20" y1="8" x2="44" y2="12"><stop stop-color="rgba(147,197,253,0.8)"/><stop offset="0.5" stop-color="rgba(96,165,250,0.5)"/><stop offset="1" stop-color="rgba(59,130,246,0.7)"/></linearGradient>
-      <filter id="carShadow" x="-25%" y="-15%" width="150%" height="140%"><feDropShadow dx="1" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.45)"/></filter>
-    </defs>
-    <g filter="url(#carShadow)">
-      <path d="M24 6C21 6 17 9 16 13L15 22L15 46C15 51 19 55 24 55L40 55C45 55 49 51 49 46L49 22L48 13C47 9 43 6 40 6Z" fill="url(#ctd)"/>
-      <path d="M24 6C21 6 17 9 16 13L15 22L15 46C15 51 19 55 24 55L40 55C45 55 49 51 49 46L49 22L48 13C47 9 43 6 40 6Z" fill="url(#cshine)"/>
-      <path d="M18 10L46 10L48 13L47 16L17 16L16 13Z" fill="url(#cglass)" stroke="rgba(200,200,200,0.3)" stroke-width="0.4"/>
-      <path d="M20 10L36 10" stroke="rgba(255,255,255,0.6)" stroke-width="0.5"/>
-      <ellipse cx="26" cy="26" rx="5" ry="6.5" fill="url(#cseat)"/><ellipse cx="38" cy="26" rx="5" ry="6.5" fill="url(#cseat)"/>
-      <path d="M23 23L29 23" stroke="rgba(255,255,255,0.15)" stroke-width="0.8" stroke-linecap="round"/><path d="M35 23L41 23" stroke="rgba(255,255,255,0.15)" stroke-width="0.8" stroke-linecap="round"/>
-      <ellipse cx="26" cy="38" rx="5" ry="6" fill="url(#cseat)" opacity="0.85"/><ellipse cx="38" cy="38" rx="5" ry="6" fill="url(#cseat)" opacity="0.85"/>
-      <rect x="30" y="18" width="4" height="8" rx="1" fill="rgba(140,140,140,0.4)"/>
-      <circle cx="31" cy="20" r="1.5" fill="rgba(200,200,200,0.5)"/>
-      <rect x="13" y="15" width="5" height="9" rx="2.5" fill="rgba(20,20,20,0.7)" stroke="rgba(80,80,80,0.3)" stroke-width="0.4"/><rect x="46" y="15" width="5" height="9" rx="2.5" fill="rgba(20,20,20,0.7)" stroke="rgba(80,80,80,0.3)" stroke-width="0.4"/>
-      <rect x="13" y="38" width="5" height="9" rx="2.5" fill="rgba(20,20,20,0.7)" stroke="rgba(80,80,80,0.3)" stroke-width="0.4"/><rect x="46" y="38" width="5" height="9" rx="2.5" fill="rgba(20,20,20,0.7)" stroke="rgba(80,80,80,0.3)" stroke-width="0.4"/>
-      <circle cx="22" cy="8" r="2.2" fill="#fbbf24"/><circle cx="22" cy="8" r="1.2" fill="#fef3c7" opacity="0.9"/>
-      <circle cx="42" cy="8" r="2.2" fill="#fbbf24"/><circle cx="42" cy="8" r="1.2" fill="#fef3c7" opacity="0.9"/>
-      <circle cx="22" cy="53" r="1.8" fill="#dc2626"/><circle cx="22" cy="53" r="0.8" fill="#fca5a5" opacity="0.7"/>
-      <circle cx="42" cy="53" r="1.8" fill="#dc2626"/><circle cx="42" cy="53" r="0.8" fill="#fca5a5" opacity="0.7"/>
-      <path d="M16 6Q32 4 48 6" stroke="rgba(255,255,255,0.3)" stroke-width="0.6" fill="none"/>
-      <path d="M17 30L15 30" stroke="rgba(200,200,200,0.25)" stroke-width="0.8"/><path d="M49 30L47 30" stroke="rgba(200,200,200,0.25)" stroke-width="0.8"/>
-    </g>
-  </svg>`,
-  // Train — 3D bullet train with metallic body, specular highlights, depth
-  "🚂": `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="ttd" x1="18" y1="0" x2="46" y2="62"><stop stop-color="#f0fdf4"/><stop offset="0.1" stop-color="#dcfce7"/><stop offset="0.4" stop-color="#22c55e"/><stop offset="0.7" stop-color="#16a34a"/><stop offset="1" stop-color="#14532d"/></linearGradient>
-      <linearGradient id="tshine" x1="20" y1="0" x2="44" y2="62"><stop stop-color="rgba(255,255,255,0.55)"/><stop offset="0.15" stop-color="rgba(255,255,255,0.2)"/><stop offset="0.5" stop-color="rgba(255,255,255,0)"/><stop offset="1" stop-color="rgba(0,0,0,0.15)"/></linearGradient>
-      <linearGradient id="tglass" x1="24" y1="0" x2="40" y2="10"><stop stop-color="rgba(186,230,253,0.85)"/><stop offset="0.5" stop-color="rgba(125,211,252,0.6)"/><stop offset="1" stop-color="rgba(56,189,248,0.8)"/></linearGradient>
-      <radialGradient id="tnose" cx="0.5" cy="0.3" r="0.6"><stop stop-color="#f0fdf4"/><stop offset="0.5" stop-color="#bbf7d0"/><stop offset="1" stop-color="#22c55e"/></radialGradient>
-      <filter id="trainShadow" x="-25%" y="-15%" width="150%" height="140%"><feDropShadow dx="1" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.45)"/></filter>
-    </defs>
-    <g filter="url(#trainShadow)">
-      <path d="M32 1C29 1 24 5 22 10L19 20L19 50C19 55 23 60 28 60L36 60C41 60 45 55 45 50L45 20L42 10C40 5 35 1 32 1Z" fill="url(#ttd)"/>
-      <path d="M32 1C29 1 24 5 22 10L19 20L19 50C19 55 23 60 28 60L36 60C41 60 45 55 45 50L45 20L42 10C40 5 35 1 32 1Z" fill="url(#tshine)"/>
-      <path d="M27 2L37 2L42 10L22 10Z" fill="url(#tnose)"/>
-      <path d="M29 1L35 1L37 3L27 3Z" fill="rgba(255,255,255,0.6)"/>
-      <rect x="24" y="5" width="16" height="4" rx="2" fill="url(#tglass)" stroke="rgba(200,220,200,0.3)" stroke-width="0.3"/>
-      <path d="M25 5L39 5" stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>
-      <circle cx="32" cy="13" r="3.5" fill="#facc15" stroke="rgba(234,179,8,0.5)" stroke-width="0.5"/><circle cx="32" cy="13" r="1.8" fill="#fef9c3"/>
-      <rect x="19" y="18" width="26" height="1.5" rx="0.75" fill="rgba(255,255,255,0.3)"/>
-      <rect x="23" y="22" width="7" height="9" rx="2" fill="url(#tglass)" stroke="rgba(200,220,200,0.2)" stroke-width="0.3"/><rect x="34" y="22" width="7" height="9" rx="2" fill="url(#tglass)" stroke="rgba(200,220,200,0.2)" stroke-width="0.3"/>
-      <path d="M24 22L29 22" stroke="rgba(255,255,255,0.35)" stroke-width="0.4"/><path d="M35 22L40 22" stroke="rgba(255,255,255,0.35)" stroke-width="0.4"/>
-      <rect x="19" y="34" width="26" height="1.5" rx="0.75" fill="rgba(255,255,255,0.2)"/>
-      <rect x="23" y="38" width="7" height="9" rx="2" fill="url(#tglass)" opacity="0.8" stroke="rgba(200,220,200,0.15)" stroke-width="0.3"/><rect x="34" y="38" width="7" height="9" rx="2" fill="url(#tglass)" opacity="0.8" stroke="rgba(200,220,200,0.15)" stroke-width="0.3"/>
-      <rect x="19" y="50" width="26" height="1.5" rx="0.75" fill="rgba(255,255,255,0.15)"/>
-      <path d="M19 20L19 50" stroke="rgba(21,128,61,0.5)" stroke-width="2"/><path d="M45 20L45 50" stroke="rgba(21,128,61,0.5)" stroke-width="2"/>
-      <path d="M22 20L22 50" stroke="rgba(255,255,255,0.12)" stroke-width="0.6"/><path d="M42 20L42 50" stroke="rgba(255,255,255,0.12)" stroke-width="0.6"/>
-      <rect x="17" y="18" width="3.5" height="7" rx="1.75" fill="rgba(20,20,20,0.5)" stroke="rgba(100,100,100,0.2)" stroke-width="0.3"/><rect x="43.5" y="18" width="3.5" height="7" rx="1.75" fill="rgba(20,20,20,0.5)" stroke="rgba(100,100,100,0.2)" stroke-width="0.3"/>
-      <rect x="17" y="40" width="3.5" height="7" rx="1.75" fill="rgba(20,20,20,0.5)" stroke="rgba(100,100,100,0.2)" stroke-width="0.3"/><rect x="43.5" y="40" width="3.5" height="7" rx="1.75" fill="rgba(20,20,20,0.5)" stroke="rgba(100,100,100,0.2)" stroke-width="0.3"/>
-      <circle cx="28" cy="57" r="1.5" fill="#ef4444" opacity="0.7"/><circle cx="36" cy="57" r="1.5" fill="#ef4444" opacity="0.7"/>
-      <circle cx="28" cy="57" r="0.7" fill="#fca5a5" opacity="0.5"/><circle cx="36" cy="57" r="0.7" fill="#fca5a5" opacity="0.5"/>
-    </g>
-  </svg>`,
-  // Bus — 3D luxury coach inside circular orb, glossy metallic blue with reflections
-  "🚌": `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="btd" x1="7" y1="1" x2="25" y2="31"><stop stop-color="#93c5fd"/><stop offset="0.3" stop-color="#3b82f6"/><stop offset="0.7" stop-color="#2563eb"/><stop offset="1" stop-color="#1e3a8a"/></linearGradient>
-      <linearGradient id="bshine" x1="7" y1="1" x2="25" y2="31"><stop stop-color="rgba(255,255,255,0.45)"/><stop offset="0.2" stop-color="rgba(255,255,255,0.1)"/><stop offset="1" stop-color="rgba(0,0,0,0.1)"/></linearGradient>
-      <linearGradient id="bglass" x1="9" y1="3" x2="23" y2="8"><stop stop-color="rgba(186,230,253,0.85)"/><stop offset="1" stop-color="rgba(96,165,250,0.7)"/></linearGradient>
-    </defs>
-    <path d="M16 1C13 1 9 2.5 8 5L7 9L7 25C7 27.5 9 30 12 30L20 30C23 30 25 27.5 25 25L25 9L24 5C23 2.5 19 1 16 1Z" fill="url(#btd)"/>
-    <path d="M16 1C13 1 9 2.5 8 5L7 9L7 25C7 27.5 9 30 12 30L20 30C23 30 25 27.5 25 25L25 9L24 5C23 2.5 19 1 16 1Z" fill="url(#bshine)"/>
-    <rect x="9" y="3.5" width="14" height="4.5" rx="1.5" fill="url(#bglass)" stroke="rgba(200,210,230,0.3)" stroke-width="0.2"/>
-    <path d="M10 3.5L22 3.5" stroke="rgba(255,255,255,0.4)" stroke-width="0.3"/>
-    <rect x="9" y="10" width="6" height="4" rx="1" fill="url(#bglass)" opacity="0.7"/><rect x="17" y="10" width="6" height="4" rx="1" fill="url(#bglass)" opacity="0.7"/>
-    <rect x="9" y="16" width="6" height="4" rx="1" fill="url(#bglass)" opacity="0.6"/><rect x="17" y="16" width="6" height="4" rx="1" fill="url(#bglass)" opacity="0.6"/>
-    <rect x="9" y="22" width="6" height="3.5" rx="1" fill="url(#bglass)" opacity="0.5"/><rect x="17" y="22" width="6" height="3.5" rx="1" fill="url(#bglass)" opacity="0.5"/>
-    <rect x="5" y="7" width="3" height="4" rx="1.5" fill="rgba(20,20,20,0.5)"/><rect x="24" y="7" width="3" height="4" rx="1.5" fill="rgba(20,20,20,0.5)"/>
-    <rect x="5" y="15" width="3" height="4" rx="1.5" fill="rgba(20,20,20,0.45)"/><rect x="24" y="15" width="3" height="4" rx="1.5" fill="rgba(20,20,20,0.45)"/>
-    <rect x="5" y="22" width="3" height="4" rx="1.5" fill="rgba(20,20,20,0.4)"/><rect x="24" y="22" width="3" height="4" rx="1.5" fill="rgba(20,20,20,0.4)"/>
-    <path d="M7 9L7 26" stroke="rgba(59,130,246,0.5)" stroke-width="1"/><path d="M25 9L25 26" stroke="rgba(59,130,246,0.5)" stroke-width="1"/>
-  </svg>`,
-};
-
 // Rotate the inner SVG icon of a transport marker to face a heading
 function rotateIconToHeading(marker: maplibregl.Marker, heading: number, mapBearing: number) {
   const icon = marker.getElement().querySelector(".transport-icon") as HTMLElement | null;
@@ -270,16 +173,6 @@ function rotateIconToHeading(marker: maplibregl.Marker, heading: number, mapBear
   const screenAngle = heading - mapBearing;
   icon.style.transform = `rotate(${screenAngle}deg)`;
 }
-
-// Color config per transport type for visual distinction
-const TRANSPORT_COLORS: Record<string, { trail: string; glow: string }> = {
-  "✈️": { trail: "rgba(140,190,255,0.8)", glow: "rgba(100,160,255,0.4)" },
-  "🚗": { trail: "rgba(239,68,68,0.5)", glow: "rgba(239,68,68,0.2)" },
-  "🚂": { trail: "rgba(16,185,129,0.5)", glow: "rgba(16,185,129,0.2)" },
-  "🚌": { trail: "rgba(59,130,246,0.6)", glow: "rgba(59,130,246,0.3)" },
-  "⛴️": { trail: "rgba(100,116,139,0.4)", glow: "rgba(100,116,139,0.15)" },
-  "🚡": { trail: "rgba(239,68,68,0.4)", glow: "rgba(239,68,68,0.15)" },
-};
 
 // Build a 3D transport marker with SVG vehicle icon, shadow, and glow
 function createTransportEl(emoji: string): HTMLDivElement {
@@ -336,9 +229,8 @@ function createTransportEl(emoji: string): HTMLDivElement {
     // Plane SVG
     const svgWrap = document.createElement("div");
     svgWrap.style.cssText = "position:relative;width:100%;height:100%;z-index:1;";
-    svgWrap.innerHTML = VEHICLE_SVG[emoji];
-    const svgEl = svgWrap.querySelector("svg");
-    if (svgEl) svgEl.style.cssText = "width:100%;height:100%;display:block;";
+    const svgEl = buildVehicleSvgNode(VEHICLE_SVG[emoji]);
+    if (svgEl) svgWrap.appendChild(svgEl);
     iconBox.appendChild(svgWrap);
 
     el.appendChild(iconBox);
@@ -394,9 +286,8 @@ function createTransportEl(emoji: string): HTMLDivElement {
       "padding:10px",
       "box-shadow:inset 0 2px 6px rgba(255,255,255,0.6),inset 0 -2px 4px rgba(59,130,246,0.15)",
     ].join(";");
-    circle.innerHTML = VEHICLE_SVG[emoji];
-    const svgEl = circle.querySelector("svg");
-    if (svgEl) svgEl.style.cssText = "width:100%;height:100%;display:block;";
+    const svgEl = buildVehicleSvgNode(VEHICLE_SVG[emoji]);
+    if (svgEl) circle.appendChild(svgEl);
     iconBox.appendChild(circle);
 
     el.appendChild(iconBox);
@@ -441,11 +332,9 @@ function createTransportEl(emoji: string): HTMLDivElement {
   // SVG icon
   const svgWrap = document.createElement("div");
   svgWrap.style.cssText = "position:relative;width:100%;height:100%;z-index:1;";
-  const svgMarkup = VEHICLE_SVG[emoji];
-  if (svgMarkup) {
-    svgWrap.innerHTML = svgMarkup;
-    const svgEl = svgWrap.querySelector("svg");
-    if (svgEl) svgEl.style.cssText = "width:100%;height:100%;display:block;";
+  const svgEl = buildVehicleSvgNode(VEHICLE_SVG[emoji]);
+  if (svgEl) {
+    svgWrap.appendChild(svgEl);
   } else {
     svgWrap.style.cssText += "font-size:32px;display:flex;align-items:center;justify-content:center;";
     svgWrap.textContent = emoji;

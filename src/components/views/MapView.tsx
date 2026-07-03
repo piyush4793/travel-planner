@@ -3,6 +3,7 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { Country } from "../../core/types";
 import HoverCard from "../map/HoverCard";
+import { buildMarkerElement, computeHoverPosition } from "../../utils/mapMarkers";
 
 type Props = {
   countries: Country[];
@@ -74,18 +75,7 @@ export default function MapView({
       countries.forEach((country) => {
         const isVisited = visitedNames.has(country.name);
         const isCombo = highlightedNames.includes(country.name);
-        const el = document.createElement("div");
-        el.className = [
-          "travel-marker",
-          isVisited ? "travel-marker--visited" : "",
-          isCombo ? "travel-marker--combo" : "",
-        ].filter(Boolean).join(" ");
-        const label = document.createElement("span");
-        label.textContent = country.name[0] ?? "";
-        el.replaceChildren(label);
-        el.setAttribute("role", "button");
-        el.setAttribute("tabindex", "0");
-        el.setAttribute("aria-label", country.name);
+        const el = buildMarkerElement(country.name, { isVisited, isCombo });
 
         const marker = new maplibregl.Marker({ element: el })
           .setLngLat([country.lng, country.lat])
@@ -103,11 +93,7 @@ export default function MapView({
           if (!containerRef.current) return;
           const cRect = containerRef.current.getBoundingClientRect();
           const eRect = el.getBoundingClientRect();
-          setHovered({
-            country,
-            x: eRect.left - cRect.left + eRect.width / 2,
-            y: eRect.top - cRect.top,
-          });
+          setHovered({ country, ...computeHoverPosition(cRect, eRect) });
         });
         el.addEventListener("mouseleave", () => setHovered(null));
 

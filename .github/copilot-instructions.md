@@ -342,6 +342,7 @@ No server sync — refresh survival is purely localStorage. `usePersistedSet` ba
 
 - **LLM API keys** live in localStorage and are sent directly to provider APIs from the browser
 - **HTML sanitization**: `pdfExport.ts` escapes HTML before injecting into the print iframe
+- **No innerHTML sinks in imperative DOM**: MapView markers use `textContent`/`replaceChildren`; cinematic vehicle SVGs are built via `buildVehicleSvgNode` (DOMParser + cached node clone) in `utils/vehicleMarkers.ts`, not `innerHTML`
 - **Validation**: transformed/imported AI output is shape-checked before use
 - **No authentication**: fully client-side, no user accounts
 

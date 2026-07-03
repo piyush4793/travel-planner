@@ -81,7 +81,9 @@ src/
 │   ├── pdfDocument.ts             # Real PDF Blob via jsPDF (lazy chunk) for native file share
 │   ├── importParser.ts            # Multi-strategy text/link plan parser
 │   ├── wikiImages.ts              # Wikimedia Commons image fetch + cache
-│   ├── countryInfo.ts             # Wikipedia/Wikidata country facts fetch + cache
+│   ├── vehicleMarkers.ts          # Cinematic vehicle SVG assets + DOMParser-based node builder (no innerHTML)
+│   ├── mapMarkers.ts              # Pure MapView marker element + hover-geometry helpers (unit-tested)
+│   ├── countryInfo.ts            # Wikipedia/Wikidata country facts fetch + cache
 │   ├── planningLinks.ts           # Curated external planning links per country
 │   └── backup.ts                  # Full backup/restore, CSV/XLSX export, Save As dialog
 │
