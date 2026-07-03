@@ -19,6 +19,7 @@ import { useCountryStore } from "./hooks/useCountryStore";
 import { useTripStore } from "./hooks/useTripStore";
 import { useAiPlanStore } from "./hooks/useAiPlanStore";
 import { useBreakpoint } from "./hooks/useBreakpoint";
+import { useBackDismiss } from "./hooks/useBackDismiss";
 import { isEnabled } from "./core/featureFlags";
 import { useInstallPrompt } from "./hooks/useInstallPrompt";
 import { isBackupOverdue, autoBackupIfOverdue } from "./utils/backup";
@@ -48,6 +49,7 @@ export default function App() {
   const [budgetFilter, setBudgetFilter] = useState<BudgetTier>("all");
   const [budgetBasis, setBudgetBasis] = useState<BudgetBasis>("couple");
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
+  const closeCountryPanel = useBackDismiss(selectedCountry !== null, () => setSelectedCountry(null));
   const [formTarget, setFormTarget] = useState<Country | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
@@ -326,7 +328,7 @@ export default function App() {
         <Suspense fallback={null}>
         <CountryPanel
           country={selectedCountry}
-          onClose={() => setSelectedCountry(null)}
+          onClose={closeCountryPanel}
           onSelectCountry={setSelectedCountry}
           isFavorite={selectedCountry ? store.favorites.set.has(selectedCountry.name) : false}
           onToggleFavorite={() => selectedCountry && store.favorites.toggle(selectedCountry.name)}

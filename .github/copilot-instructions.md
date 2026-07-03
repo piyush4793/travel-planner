@@ -80,6 +80,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | Hash-based routing | `src/hooks/useHashView.ts` |
 | Breakpoint detection | `src/hooks/useBreakpoint.ts` |
 | Resizable panel behavior | `src/hooks/usePanelDrag.ts` |
+| Back-button overlay dismiss | `src/hooks/useBackDismiss.ts` |
 | Country detail panel | `src/components/country/CountryPanel.tsx` |
 | Itinerary modal | `src/components/country/ItineraryModal.tsx` |
 | Cinematic map experience | `src/components/country/ItineraryCinematic.tsx` |
