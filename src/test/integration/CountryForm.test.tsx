@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { setupUser } from "../testUtils";
 import CountryForm from "../../components/country/CountryForm";
 import type { Country } from "../../core/types";
 
@@ -18,7 +18,7 @@ function makeCountry(overrides: Partial<Country> = {}): Country {
 
 describe("CountryForm", () => {
   it("saves a valid per-person budget as a derived breakdown synced to couple", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onSave = vi.fn();
     render(<CountryForm initial={makeCountry()} onSave={onSave} onClose={vi.fn()} />);
 
@@ -36,7 +36,7 @@ describe("CountryForm", () => {
   });
 
   it("shows a format warning for an invalid budget and marks the input invalid", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     render(<CountryForm initial={makeCountry()} onSave={vi.fn()} onClose={vi.fn()} />);
 
     const input = screen.getByLabelText(/Budget.*solo|per.?person/i);
@@ -47,7 +47,7 @@ describe("CountryForm", () => {
   });
 
   it("clearing budget saves undefined breakdown and preserves the original budget", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onSave = vi.fn();
     render(
       <CountryForm
@@ -66,7 +66,7 @@ describe("CountryForm", () => {
   });
 
   it("travel style is single-select and toggles off when re-clicked", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onSave = vi.fn();
     render(<CountryForm initial={makeCountry()} onSave={onSave} onClose={vi.fn()} />);
 
@@ -89,7 +89,7 @@ describe("CountryForm", () => {
   });
 
   it("trims landmark and notes on save", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onSave = vi.fn();
     render(<CountryForm initial={makeCountry()} onSave={onSave} onClose={vi.fn()} />);
 
@@ -104,7 +104,7 @@ describe("CountryForm", () => {
   });
 
   it("closes immediately when there are no unsaved changes", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onClose = vi.fn();
     render(<CountryForm initial={makeCountry()} onSave={vi.fn()} onClose={onClose} />);
 
@@ -113,7 +113,7 @@ describe("CountryForm", () => {
   });
 
   it("prompts to discard when dirty and keeps editing on cancel", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onClose = vi.fn();
     render(<CountryForm initial={makeCountry()} onSave={vi.fn()} onClose={onClose} />);
 
@@ -126,7 +126,7 @@ describe("CountryForm", () => {
   });
 
   it("prompts to discard when dirty and closes on discard", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onClose = vi.fn();
     render(<CountryForm initial={makeCountry()} onSave={vi.fn()} onClose={onClose} />);
 

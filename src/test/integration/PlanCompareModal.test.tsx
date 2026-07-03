@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { setupUser } from "../testUtils";
 import PlanCompareModal from "../../components/country/PlanCompareModal";
 import type { TripPlan } from "../../core/utils/tripPlans";
 
@@ -64,7 +64,7 @@ describe("PlanCompareModal", () => {
   });
 
   it("switching the right selector updates the compared plan", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     render(<PlanCompareModal options={options()} onClose={vi.fn()} />);
 
     // Two <select> comboboxes: [0]=Left, [1]=Right (labels aren't htmlFor-associated).
@@ -75,7 +75,7 @@ describe("PlanCompareModal", () => {
   });
 
   it("collapses and expands the quick summary", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     render(<PlanCompareModal options={options()} onClose={vi.fn()} />);
 
     const toggle = screen.getByRole("button", { name: /Quick Summary/i });
@@ -85,7 +85,7 @@ describe("PlanCompareModal", () => {
   });
 
   it("invokes onClose from the header close button", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onClose = vi.fn();
     render(<PlanCompareModal options={options()} onClose={onClose} />);
 
@@ -94,7 +94,7 @@ describe("PlanCompareModal", () => {
   });
 
   it("renders an empty-state message for a plan with no days", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     render(
       <PlanCompareModal
         options={[
