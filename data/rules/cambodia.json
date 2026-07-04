@@ -24,11 +24,12 @@
     "family4": "₹1.5L–₹2.5L"
   },
   "experiences": [
-    "Angkor Wat",
-    "Temples",
+    "Ancient Ruins",
+    "Temples & Religious Sites",
     "History",
-    "Street Food",
-    "River Life"
+    "Beaches",
+    "Islands",
+    "UNESCO Sites"
   ],
   "avoid": [
     "Monsoon season",
@@ -49,25 +50,61 @@
       "name": "Siem Reap",
       "lat": 13.3671,
       "lng": 103.8448,
-      "notes": "Gateway to Angkor Wat, Ta Prohm jungle temple and Pub Street"
+      "notes": "Gateway to Angkor Wat, Ta Prohm jungle temple and Pub Street",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Phnom Penh",
       "lat": 11.5564,
       "lng": 104.9282,
-      "notes": "Royal Palace, Tuol Sleng Genocide Museum and Mekong riverside"
+      "notes": "Royal Palace, Tuol Sleng Genocide Museum and Mekong riverside",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Sihanoukville",
       "lat": 10.61,
       "lng": 103.523,
-      "notes": "Beach resort base for Koh Rong and Koh Rong Sanloem islands"
+      "notes": "Beach resort base for Koh Rong and Koh Rong Sanloem islands",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Kampot",
       "lat": 10.6111,
       "lng": 104.1812,
-      "notes": "Charming riverside town famous for Kampot pepper and Bokor Hill Station"
+      "notes": "Charming riverside town famous for Kampot pepper and Bokor Hill Station",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     }
   ],
   "itinerary": {
@@ -96,8 +133,9 @@
         "maxDays": 4,
         "note": "Keep all three recommended days if Angkor Wat, Banteay Srey, and the museums matter to you; the new airport is far from town, so arrival and departure days feel longer than they look on paper.",
         "experiences": [
-          "Angkor Wat",
-          "Temples"
+          "Ancient Ruins",
+          "Temples & Religious Sites",
+          "UNESCO Sites"
         ],
         "days": [
           {
@@ -233,7 +271,7 @@
         "note": "The capital works best as a two-day contrast to Siem Reap: one slower riverside day and one heavier history-focused day.",
         "experiences": [
           "History",
-          "Street Food"
+          "Temples & Religious Sites"
         ],
         "days": [
           {
@@ -325,9 +363,6 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Kampot as the slower river-and-countryside stop between Phnom Penh and the beaches; it is best when you keep one afternoon completely unhurried.",
-        "experiences": [
-          "River Life"
-        ],
         "days": [
           {
             "theme": "Colonial Kampot, Riverside Cafés & Sunset Cruise",
@@ -418,6 +453,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Treat Sihanoukville as the mainland gateway to Koh Rong: many travelers sleep one night on the island, but the ferry hub, cash machines, and onward transport all run through town.",
+        "experiences": [
+          "Beaches",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Coastal Arrival, Ferry Across & Koh Rong Sunset",

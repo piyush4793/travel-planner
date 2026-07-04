@@ -26,11 +26,12 @@
     "family4": "₹2.7L–₹4.1L"
   },
   "experiences": [
-    "Douala's street art, cathedral quarter, and Cameroon gateway energy",
-    "Yaoundé museums, reunion monument, and easy long-distance bus links",
-    "Limbe black-sand coast with the Limbe Wildlife Centre and Buea hike access",
-    "Kribi beach days around Lobé Falls where the river meets the Atlantic",
-    "Bamenda highlands culture with Mankon heritage and optional Foumban detours"
+    "Wildlife & Safari",
+    "Beaches",
+    "Mountains",
+    "National Parks",
+    "Markets & Shopping",
+    "Volcanoes"
   ],
   "avoid": [
     "March to October is wetter across the coast and south, so intercity road journeys to Limbe and Kribi run slower and beach days are less reliable.",
@@ -59,7 +60,10 @@
         "January",
         "February"
       ],
-      "notes": "La Nouvelle Liberté, Doual'Art, cathedral-quarter stops, Parcours Vita, and the country's busiest hotel and restaurant scene."
+      "notes": "La Nouvelle Liberté, Doual'Art, cathedral-quarter stops, Parcours Vita, and the country's busiest hotel and restaurant scene.",
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Yaoundé",
@@ -71,7 +75,10 @@
         "January",
         "February"
       ],
-      "notes": "National Museum, Monument de la Réunification, Mefou primate day trips, and the cleanest onward bus and domestic-flight logistics."
+      "notes": "National Museum, Monument de la Réunification, Mefou primate day trips, and the cleanest onward bus and domestic-flight logistics.",
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Limbe",
@@ -83,7 +90,11 @@
         "January",
         "February"
       ],
-      "notes": "Black-sand beach atmosphere, Limbe Wildlife Centre, botanical gardens, and quick taxi access to Buea for Mount Cameroon trailheads."
+      "notes": "Black-sand beach atmosphere, Limbe Wildlife Centre, botanical gardens, and quick taxi access to Buea for Mount Cameroon trailheads.",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Kribi",
@@ -95,7 +106,10 @@
         "January",
         "February"
       ],
-      "notes": "Lobé Falls canoe rides, long beach stretches, seafood restaurants, and easy slow days before returning to Douala."
+      "notes": "Lobé Falls canoe rides, long beach stretches, seafood restaurants, and easy slow days before returning to Douala.",
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Bamenda",
@@ -107,7 +121,10 @@
         "January",
         "February"
       ],
-      "notes": "Mankon heritage, market life, highland viewpoints, and an optional long heritage detour toward Foumban."
+      "notes": "Mankon heritage, market life, highland viewpoints, and an optional long heritage detour toward Foumban.",
+      "worstMonths": [
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -133,7 +150,7 @@
         "recDays": 1,
         "maxDays": 2,
         "experiences": [
-          "Douala's street art, cathedral quarter, and Cameroon gateway energy"
+          "Markets & Shopping"
         ],
         "days": [
           {
@@ -184,7 +201,9 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Limbe black-sand coast with the Limbe Wildlife Centre and Buea hike access"
+          "Beaches",
+          "Volcanoes",
+          "Wildlife & Safari"
         ],
         "days": [
           {
@@ -271,7 +290,7 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Yaoundé museums, reunion monument, and easy long-distance bus links"
+          "Markets & Shopping"
         ],
         "days": [
           {
@@ -358,7 +377,8 @@
         "recDays": 1,
         "maxDays": 2,
         "experiences": [
-          "Bamenda highlands culture with Mankon heritage and optional Foumban detours"
+          "Mountains",
+          "Markets & Shopping"
         ],
         "days": [
           {
@@ -444,7 +464,7 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Kribi beach days around Lobé Falls where the river meets the Atlantic"
+          "Beaches"
         ],
         "days": [
           {

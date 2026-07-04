@@ -21,11 +21,12 @@
     "family4": "₹1.9L–₹2.8L"
   },
   "experiences": [
-    "Omar Ali Saifuddien Mosque",
-    "Royal Regalia Museum",
-    "Kampong Ayer water village",
-    "Ulu Temburong National Park canopy walk",
-    "Tutong coast and lake day trip"
+    "Temples & Religious Sites",
+    "Wildlife & Safari",
+    "Architecture",
+    "National Parks",
+    "Cruises & Boat Trips",
+    "Markets & Shopping"
   ],
   "avoid": [
     "Peak monsoon stretches from October to January when downpours can disrupt river and park plans",
@@ -51,9 +52,14 @@
       "bestMonths": [
         "February",
         "March",
-        "April"
+        "April",
+        "May"
       ],
-      "notes": "Capital base for mosque views, museums, Gadong food stops, and Kampong Ayer water-taxi rides."
+      "notes": "Capital base for mosque views, museums, Gadong food stops, and Kampong Ayer water-taxi rides.",
+      "worstMonths": [
+        "November",
+        "December"
+      ]
     },
     {
       "name": "Temburong District",
@@ -62,9 +68,14 @@
       "bestMonths": [
         "February",
         "March",
-        "April"
+        "April",
+        "May"
       ],
-      "notes": "Rainforest district reached easiest by the Sultan Haji Omar 'Ali Saifuddien Bridge for canopy-walk tours, longboats, and eco-lodges."
+      "notes": "Rainforest district reached easiest by the Sultan Haji Omar 'Ali Saifuddien Bridge for canopy-walk tours, longboats, and eco-lodges.",
+      "worstMonths": [
+        "November",
+        "December"
+      ]
     },
     {
       "name": "Tutong",
@@ -73,9 +84,14 @@
       "bestMonths": [
         "February",
         "March",
-        "April"
+        "April",
+        "May"
       ],
-      "notes": "Laid-back district for beach time, Merimbun lake nature, and small-town Bruneian food stops west of the capital."
+      "notes": "Laid-back district for beach time, Merimbun lake nature, and small-town Bruneian food stops west of the capital.",
+      "worstMonths": [
+        "November",
+        "December"
+      ]
     }
   ],
   "itinerary": {
@@ -101,9 +117,10 @@
         "maxDays": 3,
         "note": "Stay here for the whole trip if you want the simplest logistics; Kampong Ayer, the museum quarter, and Gadong are all easiest from the capital.",
         "experiences": [
-          "Omar Ali Saifuddien Mosque",
-          "Royal Regalia Museum",
-          "Kampong Ayer water village"
+          "Temples & Religious Sites",
+          "Architecture",
+          "Markets & Shopping",
+          "Cruises & Boat Trips"
         ],
         "days": [
           {
@@ -206,7 +223,8 @@
         "maxDays": 1,
         "note": "Treat this as an early-start day trip or lodge night focused on Ulu Temburong; tours bundle longboat transfers and the canopy-walk staircase climb.",
         "experiences": [
-          "Ulu Temburong National Park canopy walk"
+          "Wildlife & Safari",
+          "National Parks"
         ],
         "days": [
           {
@@ -255,7 +273,7 @@
         "maxDays": 1,
         "note": "Best handled by rental car or taxi from Bandar because district sights are spread out and bus frequencies are thin outside the town core.",
         "experiences": [
-          "Tutong coast and lake day trip"
+          "Wildlife & Safari"
         ],
         "days": [
           {
