@@ -377,4 +377,27 @@ describe("CityCard", () => {
       screen.queryByRole("button", { name: /matches your focus experiences/i }),
     ).not.toBeInTheDocument();
   });
+
+  it("renders worst-month avoid badges in the read-only card", () => {
+    const withWorst: CityEntry = { ...city, worstMonths: ["June", "July", "August", "September"] };
+    render(<CityCard city={withWorst} />);
+
+    expect(screen.getByLabelText("Best avoided in June")).toBeInTheDocument();
+    expect(screen.getByLabelText("Best avoided in July")).toBeInTheDocument();
+    expect(screen.getByLabelText("Best avoided in August")).toBeInTheDocument();
+    expect(screen.queryByLabelText("Best avoided in September")).not.toBeInTheDocument();
+  });
+
+  it("renders worst-month avoid badges in the selectable card", () => {
+    const withWorst: CityEntry = { ...city, worstMonths: ["June"] };
+    render(<CityCard city={withWorst} selectable selected={false} onToggle={vi.fn()} />);
+
+    expect(screen.getByLabelText("Best avoided in June")).toBeInTheDocument();
+  });
+
+  it("omits worst-month badges when none are present", () => {
+    render(<CityCard city={city} />);
+
+    expect(screen.queryByLabelText(/Best avoided/i)).not.toBeInTheDocument();
+  });
 });

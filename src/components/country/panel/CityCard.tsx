@@ -13,6 +13,7 @@ type Props = {
 
 function CityCardInner({ city, selectable, selected, onToggle, activeExperiences }: Props) {
   const bestMonths = city.bestMonths ?? [];
+  const worstMonths = city.worstMonths ?? [];
   const experiences = city.experiences ?? [];
   const focus = activeExperiences ?? [];
   const matchesFocus = focus.length > 0 && experiences.some((e) => focus.includes(e));
@@ -68,6 +69,23 @@ function CityCardInner({ city, selectable, selected, onToggle, activeExperiences
             ))}
           </div>
         )}
+        {worstMonths.length > 0 && (
+          <div className="mt-1 flex gap-1">
+            {worstMonths.slice(0, 3).map((month) => (
+              <span
+                key={month}
+                title={`Best avoided in ${month}`}
+                aria-label={`Best avoided in ${month}`}
+                className={`rounded px-1.5 py-0.5 text-[9px] font-bold ${
+                  selected ? "bg-white/20 text-rose-100" : "bg-rose-100 text-rose-700"
+                }`}
+              >
+                <span aria-hidden="true">✕ </span>
+                {month.slice(0, 3)}
+              </span>
+            ))}
+          </div>
+        )}
         {experiences.length > 0 && (
           <div className="mt-1.5 flex flex-wrap gap-1">
             {experiences.slice(0, 4).map((exp) => {
@@ -116,6 +134,21 @@ function CityCardInner({ city, selectable, selected, onToggle, activeExperiences
           </div>
         )}
       </div>
+      {worstMonths.length > 0 && (
+        <div className="mt-1 flex gap-1">
+          {worstMonths.slice(0, 3).map((month) => (
+            <span
+              key={month}
+              title={`Best avoided in ${month}`}
+              aria-label={`Best avoided in ${month}`}
+              className="rounded bg-rose-100 px-1.5 py-0.5 text-[9px] font-bold text-rose-700"
+            >
+              <span aria-hidden="true">✕ </span>
+              {month.slice(0, 3)}
+            </span>
+          ))}
+        </div>
+      )}
       {city.notes && (
         <p className="mt-1 text-[11px] leading-snug text-gray-500 line-clamp-3">{city.notes}</p>
       )}
