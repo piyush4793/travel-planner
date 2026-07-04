@@ -147,9 +147,9 @@ describe("InfoSections", () => {
   it("renders planning resources from the link provider and toggles the section", async () => {
     const user = setupUser();
 
-    render(<PlanningResourcesSection countryName="Japan" />);
+    render(<PlanningResourcesSection countryName="Japan" homeCountry="India" />);
 
-    expect(mocks.getPlanningLinks).toHaveBeenCalledWith("Japan");
+    expect(mocks.getPlanningLinks).toHaveBeenCalledWith("Japan", "India");
     const toggle = screen.getByRole("button", { name: /Planning resources/i });
     expect(toggle).toHaveAttribute("aria-expanded", "false");
 

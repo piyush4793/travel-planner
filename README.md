@@ -219,7 +219,7 @@ Guided 8-step onboarding tour for new users:
 
 ### Country Info & Planning Resources
 - **Learn about country** — collapsible section in country detail panel with Wikipedia summary, thumbnail image, capital, currency, and language (fetched on demand from Wikipedia/Wikidata APIs, cached per session)
-- **Planning resources** — 3 curated external links per country: Wikivoyage travel guide, Lonely Planet destination page, and Passport Index visa/entry requirements
+- **Planning resources** — 3 curated external links per country: Wikivoyage travel guide, Lonely Planet destination page, and a home-country-aware visa/entry requirements search (uses the selected home country as the passport base)
 
 ---
 

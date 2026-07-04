@@ -135,8 +135,8 @@ export function LearnAboutSection({ countryName, currentCountryNameRef }: {
 
 // ─── Planning resources ───────────────────────────────────────────────────────
 
-export function PlanningResourcesSection({ countryName }: { countryName: string }) {
-  const links = useMemo(() => getPlanningLinks(countryName), [countryName]);
+export function PlanningResourcesSection({ countryName, homeCountry }: { countryName: string; homeCountry?: string }) {
+  const links = useMemo(() => getPlanningLinks(countryName, homeCountry), [countryName, homeCountry]);
 
   return (
     <CollapsibleSection label="Planning resources 🧭" count={links.length}>

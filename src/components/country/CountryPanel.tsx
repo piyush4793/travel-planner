@@ -505,7 +505,7 @@ export default function CountryPanel({
                   currentCountryNameRef={currentCountryNameRef}
                 />
 
-                <PlanningResourcesSection countryName={displayCountry.name} />
+                <PlanningResourcesSection countryName={displayCountry.name} homeCountry={homeCountry} />
 
                 {displayCountry.links && displayCountry.links.length > 0 && (
                   <CollapsibleSection label="Useful links" count={displayCountry.links.length}>

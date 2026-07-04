@@ -34,9 +34,19 @@ function toWikiSlug(name: string): string {
   return name.replace(/\s+/g, "_");
 }
 
-export function getPlanningLinks(countryName: string): PlanningLink[] {
+export function getPlanningLinks(countryName: string, homeCountry?: string): PlanningLink[] {
   const slug = toSlug(countryName);
   const wikiSlug = toWikiSlug(countryName);
+  const home = homeCountry?.trim();
+
+  // Passport Index has no static from→to URL, so route the visa link through a
+  // Google search that includes the traveler's home country as the base.
+  const visaQuery = home
+    ? `${home} passport visa requirements for ${countryName}`
+    : `${countryName} visa & entry requirements`;
+  const visaDescription = home
+    ? `Does a ${home} passport need a visa for ${countryName}? Check entry rules`
+    : "Check visa requirements & entry rules";
 
   return [
     {
@@ -54,8 +64,8 @@ export function getPlanningLinks(countryName: string): PlanningLink[] {
     {
       emoji: "🛂",
       label: "Visa & Entry Requirements",
-      url: `https://www.passportindex.org/passport/${slug}/`,
-      description: "Check visa requirements, passport power & entry rules",
+      url: `https://www.google.com/search?q=${encodeURIComponent(visaQuery)}`,
+      description: visaDescription,
     },
   ];
 }

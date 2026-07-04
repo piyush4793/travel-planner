@@ -22,18 +22,16 @@ describe("planningLinks — P0", () => {
     });
   });
 
-  it("uses a lowercase slug for Japan in planning URLs", () => {
+  it("uses a lowercase slug for Japan in the Lonely Planet URL", () => {
     const links = getPlanningLinks("Japan");
 
     expect(links[1].url).toContain("/japan");
-    expect(links[2].url).toContain("/japan/");
   });
 
-  it("uses slug overrides for USA", () => {
+  it("uses slug overrides for USA in the Lonely Planet URL", () => {
     const links = getPlanningLinks("USA");
 
     expect(links[1].url).toContain("/united-states");
-    expect(links[2].url).toContain("/united-states/");
   });
 
   it("uses hyphenated slugs for South Korea and underscores for Wikivoyage", () => {
@@ -41,6 +39,30 @@ describe("planningLinks — P0", () => {
 
     expect(links[0].url).toContain("/South_Korea");
     expect(links[1].url).toContain("/south-korea");
-    expect(links[2].url).toContain("/south-korea/");
+  });
+
+  it("builds the visa link as a home-country-aware Google search", () => {
+    const visa = getPlanningLinks("Japan", "India")[2];
+
+    expect(visa.url).toBe(
+      `https://www.google.com/search?q=${encodeURIComponent("India passport visa requirements for Japan")}`,
+    );
+    expect(visa.description).toContain("India");
+    expect(visa.description).toContain("Japan");
+  });
+
+  it("falls back to a destination-only visa query when no home country is given", () => {
+    const visa = getPlanningLinks("Japan")[2];
+
+    expect(visa.url).toBe(
+      `https://www.google.com/search?q=${encodeURIComponent("Japan visa & entry requirements")}`,
+    );
+    expect(visa.description).not.toContain("passport");
+  });
+
+  it("ignores a blank home country for the visa query", () => {
+    const visa = getPlanningLinks("Japan", "   ")[2];
+
+    expect(visa.url).toContain(encodeURIComponent("Japan visa & entry requirements"));
   });
 });
