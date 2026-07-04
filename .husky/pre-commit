@@ -1,1 +1,1 @@
-npx tsc --noEmit && npx knip --reporter compact --tags='+public'
+npx tsc --noEmit && npx knip --reporter compact --tags='+public' && npx vitest run --coverage

@@ -13,7 +13,7 @@
     "preview": "vite preview",
     "lint:unused": "knip --reporter compact --tags='+public'",
     "check:coverage": "bash scripts/check-new-coverage.sh",
-    "validate": "tsc --noEmit && vitest run && knip --reporter compact --tags='+public' && vite build",
+    "validate": "tsc --noEmit && vitest run --coverage && knip --reporter compact --tags='+public' && vite build",
     "prepare": "husky"
   },
   "dependencies": {
