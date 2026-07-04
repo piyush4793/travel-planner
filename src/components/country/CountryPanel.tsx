@@ -85,6 +85,12 @@ export default function CountryPanel({
   const [panelTab, setPanelTab] = useState<"overview" | "plan" | "notes">("overview");
   const [confirm, ConfirmDialog] = useConfirm();
   const currentCountryNameRef = useRef<string | null>(country?.name ?? null);
+  // Once the user drags the day slider, that value is "pinned": the four intent
+  // knobs still drive the plan output, but they no longer re-suggest the day
+  // count the user deliberately chose. Cleared when switching country, or when the
+  // user taps "Reset to recommended". State (not a ref) so the reset affordance and
+  // the "auto-tuned" hint stay in sync with the pinned status.
+  const [daysPinned, setDaysPinned] = useState(false);
 
   const maxDays = getMaxRuleDays(rule) ?? 30;
   const recDays = getRecRuleDays(rule) ?? 7;
@@ -104,6 +110,7 @@ export default function CountryPanel({
   // Reset panel state when switching to a different country.
   useEffect(() => {
     currentCountryNameRef.current = country?.name ?? null;
+    setDaysPinned(false);
     setActivePlanId("default");
     setSelectedCities([]);
     setSelectedExperiences([]);
@@ -136,11 +143,12 @@ export default function CountryPanel({
   );
 
   // Re-seed the day slider whenever the recommendation changes (style/budget from
-  // edit, or experience/city focus). Manual slider drags persist until one of
-  // these inputs next changes.
+  // edit, or experience/city focus) — unless the user has pinned it by dragging.
+  // A pinned value survives filter changes; switching country or tapping "Reset to
+  // recommended" clears the pin, letting this effect re-seed the suggested length.
   useEffect(() => {
-    setCustomDays(recommendedDays);
-  }, [recommendedDays]);
+    if (!daysPinned) setCustomDays(recommendedDays);
+  }, [recommendedDays, daysPinned]);
 
   // Debounced notes auto-save (300ms)
   const debouncedSave = useCallback((text: string) => {
@@ -400,6 +408,26 @@ export default function CountryPanel({
                         </div>
                       </div>
 
+                      {daysPinned ? (
+                        <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px]">
+                          <span className="font-medium text-slate-500">Custom length</span>
+                          {customDays !== recommendedDays && (
+                            <button
+                              type="button"
+                              onClick={() => setDaysPinned(false)}
+                              className="focus-ring inline-flex min-h-[32px] items-center gap-1 rounded-full px-2 py-1 font-semibold text-blue-600 transition-colors hover:bg-blue-50"
+                              aria-label={`Reset trip length to the recommended ${recommendedDays} days`}
+                            >
+                              ↺ Reset to recommended ({recommendedDays}d)
+                            </button>
+                          )}
+                        </div>
+                      ) : (
+                        <p className="mt-1.5 text-[11px] text-slate-400">
+                          ✨ Auto-tuned to your style, budget & focus — drag to set your own
+                        </p>
+                      )}
+
                       <div className="relative px-1 pt-8">
                         <div
                           className="pointer-events-none absolute top-0 z-[1] -translate-x-1/2 rounded-full bg-slate-900 px-2.5 py-1 text-[10px] font-bold text-white shadow-sm"
@@ -423,7 +451,10 @@ export default function CountryPanel({
                             min={1}
                             max={safeMaxDays}
                             value={customDays}
-                            onChange={(e) => setCustomDays(parseInt(e.target.value))}
+                            onChange={(e) => {
+                              setDaysPinned(true);
+                              setCustomDays(parseInt(e.target.value));
+                            }}
                             className="panel-v2-slider absolute inset-0 h-6 w-full cursor-pointer appearance-none bg-transparent"
                           />
                         </div>

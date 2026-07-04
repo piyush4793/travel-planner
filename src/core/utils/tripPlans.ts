@@ -1,7 +1,7 @@
 import type { Country, CityEntry, PlanStyle, TravelStyle } from "../types";
 import type { CountryRule } from "../data/itineraryRules";
 import { scoreCities, planItinerary } from "./citySelection";
-import { budgetForBasis, BUDGET_BASIS_META, DEFAULT_BUDGET_BASIS, type BudgetBasis } from "./budget";
+import { budgetForBasis, parseBudgetRange, BUDGET_BASIS_META, DEFAULT_BUDGET_BASIS, type BudgetBasis } from "./budget";
 import { experienceTokens, tokenHits, matchCityExperiences, ruleCityText } from "./cityExperiences";
 import { defaultDaysForStyle } from "./travelStyles";
 
@@ -63,13 +63,7 @@ export function normalizeCityName(name: string): string {
 
 function parseCostRange(budget: string | { solo: string; couple: string; family4: string }): [number, number] {
   const str = typeof budget === "string" ? budget : budget.couple;
-  const m = str.match(/₹([\d.]+)([KL])[–\-]₹([\d.]+)([KL])/);
-  if (!m) return [100000, 200000];
-  const toNum = (n: string, u: string) => {
-    const v = parseFloat(n);
-    return u === "K" ? v * 1000 : v * 100000;
-  };
-  return [toNum(m[1], m[2]), toNum(m[3], m[4])];
+  return parseBudgetRange(str) ?? [100000, 200000];
 }
 
 function fmt(n: number): string {
@@ -188,14 +182,54 @@ export const BUDGET_DAY_FACTOR: Record<"budget" | "mid" | "premium", number> = {
 };
 
 /**
+ * How many cities an experience-only focus expands to. A focus experience should
+ * anchor the trip on the one or two cities that deliver it best — not every city
+ * that happens to list it — so both the day estimate and the auto-built plan stay
+ * tight and relevant.
+ */
+export const EXPERIENCE_CITY_LIMIT = 2;
+
+/**
+ * Rank a rule's cities by how strongly they deliver the selected experiences and
+ * return the best `limit` names, strongest first. Strength = number of matched
+ * experiences, then the city's base importance (`scoreCities`: rec days + content
+ * depth + route prominence, a popularity proxy). Returns [] when nothing matches.
+ * Pure — shared by the day estimator and the engine's auto-selection so they agree
+ * on which cities an experience focus implies.
+ */
+export function topExperienceCities(
+  rule: CountryRule,
+  selectedExperiences: string[],
+  limit: number = EXPERIENCE_CITY_LIMIT,
+): string[] {
+  if (selectedExperiences.length === 0) return [];
+  return scoreCities(rule)
+    .map((c) => {
+      const cr = rule.cities[c.name];
+      const tags = cr.experiences ?? matchCityExperiences(ruleCityText(cr), selectedExperiences);
+      const hits = tags.filter((t) => selectedExperiences.includes(t)).length;
+      return { name: c.name, value: c.value, hits };
+    })
+    .filter((c) => c.hits > 0)
+    .sort((a, b) => b.hits - a.hits || b.value - a.value)
+    .slice(0, Math.max(1, limit))
+    .map((c) => c.name);
+}
+
+/**
  * Recommended trip length (days) for the current Plan-tab selections. Scope is
  * driven by, in priority order:
  *  1. explicitly picked cities → sum of their recommended days,
- *  2. focus experiences (no explicit cities) → sum of matching cities' rec days,
+ *  2. focus experiences (no explicit cities) → sum of the top one or two cities
+ *     that deliver those experiences best (via `topExperienceCities`), never every
+ *     city that lists them,
  *  3. otherwise the travel-style default across the whole country.
- * A budget-tier factor then nudges the result (premium longer, budget shorter),
- * clamped to [1, maxDays]. Pure and side-effect free so the panel can re-seed its
- * day slider whenever any of these inputs change.
+ * The budget-tier factor (premium longer, budget shorter) only applies once the
+ * user has actually scoped the plan (picked cities or experiences) — a pristine,
+ * unscoped panel seeds to the style default so it lines up with the static
+ * "Recommended" marker instead of silently diverging. Clamped to [1, maxDays].
+ * Pure and side-effect free so the panel can re-seed its day slider whenever any
+ * of these inputs change.
  */
 export function recommendedDaysForSelection(opts: {
   rule: CountryRule | null | undefined;
@@ -208,23 +242,22 @@ export function recommendedDaysForSelection(opts: {
 }): number {
   const { rule, style, recDays, maxDays, selectedCities, selectedExperiences, budgetTier } = opts;
   const safeMax = Math.max(1, maxDays);
+  const scoped = selectedCities.length > 0 || selectedExperiences.length > 0;
 
   let base: number;
   if (rule && selectedCities.length > 0) {
     base = selectedCities.reduce((s, n) => s + (rule.cities[n]?.recDays ?? 0), 0);
   } else if (rule && selectedExperiences.length > 0) {
-    const matchDays = Object.values(rule.cities)
-      .filter((c) => {
-        const tags = c.experiences ?? matchCityExperiences(ruleCityText(c), selectedExperiences);
-        return tags.some((t) => selectedExperiences.includes(t));
-      })
-      .reduce((s, c) => s + c.recDays, 0);
+    const matchDays = topExperienceCities(rule, selectedExperiences).reduce(
+      (s, n) => s + (rule.cities[n]?.recDays ?? 0),
+      0,
+    );
     base = matchDays > 0 ? matchDays : defaultDaysForStyle(style, recDays, safeMax);
   } else {
     base = defaultDaysForStyle(style, recDays, safeMax);
   }
 
-  const factor = budgetTier ? BUDGET_DAY_FACTOR[budgetTier] : 1;
+  const factor = scoped && budgetTier ? BUDGET_DAY_FACTOR[budgetTier] : 1;
   return Math.min(safeMax, Math.max(1, Math.round(base * factor)));
 }
 
@@ -266,7 +299,15 @@ function getRuledItinerary(
   const pool =
     selectedCities.length > 0
       ? boosted.filter((c) => selectedCities.includes(c.name))
-      : boosted;
+      : selectedExperiences.length > 0
+        ? (() => {
+            // Anchor an experience-only trip on the one or two cities that deliver
+            // it best, rather than every city that lists it. Fall back to the full
+            // pool if nothing matches so we always return a usable itinerary.
+            const top = topExperienceCities(effectiveRule, selectedExperiences);
+            return top.length > 0 ? boosted.filter((c) => top.includes(c.name)) : boosted;
+          })()
+        : boosted;
   if (pool.length === 0) return null;
 
   const allocation = planItinerary(pool, customDays, {

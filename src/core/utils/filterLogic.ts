@@ -1,6 +1,6 @@
 import type { Country, VisitedFilter } from "../types";
 import { expandMonth } from "./months";
-import { budgetForBasis, DEFAULT_BUDGET_BASIS, type BudgetBasis } from "./budget";
+import { budgetForBasis, parseBudgetRange, DEFAULT_BUDGET_BASIS, type BudgetBasis } from "./budget";
 
 export type { BudgetBasis } from "./budget";
 
@@ -29,17 +29,17 @@ export function filterByVisited(
 
 export type BudgetTier = "all" | "budget" | "mid" | "premium";
 
-function parseBudgetLower(budget: string): number {
-  const match = budget.match(/₹([\d.]+)([KL])/);
-  if (!match) return 0;
-  const val = parseFloat(match[1]);
-  return match[2] === "K" ? val * 1000 : val * 100000;
-}
-
+/**
+ * Classify a budget range into a spend tier using the range **midpoint** — a
+ * fairer representative of the trip's typical cost than the lower bound alone
+ * (e.g. "₹1.5L–₹3L" averages ₹2.25L → mid, not budget). Unparseable strings fall
+ * back to the cheapest tier so filtering stays inclusive.
+ */
 export function getBudgetTier(budget: string): "budget" | "mid" | "premium" {
-  const lower = parseBudgetLower(budget);
-  if (lower <= 150000) return "budget";
-  if (lower <= 300000) return "mid";
+  const range = parseBudgetRange(budget);
+  const midpoint = range ? (range[0] + range[1]) / 2 : 0;
+  if (midpoint <= 150000) return "budget";
+  if (midpoint <= 300000) return "mid";
   return "premium";
 }
 

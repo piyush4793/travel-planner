@@ -98,12 +98,18 @@ describe("filterLogic — P0", () => {
   });
 
   describe("getBudgetTier", () => {
-    it("classifies budget tier correctly", () => {
-      expect(getBudgetTier("₹50K–₹1L")).toBe("budget");
-      // ₹1.5L = 150000, boundary is <= 150000 → budget
-      expect(getBudgetTier("₹1.5L–₹3L")).toBe("budget");
-      expect(getBudgetTier("₹2L–₹3L")).toBe("mid");
-      expect(getBudgetTier("₹3.5L–₹5L")).toBe("premium");
+    it("classifies by the range midpoint", () => {
+      expect(getBudgetTier("₹50K–₹1L")).toBe("budget"); // mid ₹75K
+      // ₹1.5L–₹3L averages ₹2.25L → mid (the lower bound alone would read budget).
+      expect(getBudgetTier("₹1.5L–₹3L")).toBe("mid");
+      expect(getBudgetTier("₹2L–₹3L")).toBe("mid"); // mid ₹2.5L
+      expect(getBudgetTier("₹3.5L–₹5L")).toBe("premium"); // mid ₹4.25L
+    });
+
+    it("handles boundaries and single values at the midpoint", () => {
+      expect(getBudgetTier("₹1L–₹2L")).toBe("budget"); // mid ₹1.5L = 150K boundary
+      expect(getBudgetTier("₹3L")).toBe("mid"); // single value ₹3L = 300K boundary
+      expect(getBudgetTier("₹3L–₹4L")).toBe("premium"); // mid ₹3.5L
     });
 
     it("returns budget for unparseable strings", () => {
@@ -116,10 +122,10 @@ describe("filterLogic — P0", () => {
       expect(filterByBudget(COUNTRIES, "all")).toHaveLength(3);
     });
 
-    it("filters budget tier", () => {
-      // Thailand (₹50K) + Norway (₹1.5L = 150K boundary) are both "budget"
-      expect(filterByBudget(COUNTRIES, "budget")).toHaveLength(2);
-      expect(filterByBudget(COUNTRIES, "mid")).toHaveLength(0);
+    it("filters by the midpoint tier", () => {
+      // Midpoints: Thailand ₹75K → budget, Norway ₹2.25L → mid, Switzerland ₹4.25L → premium.
+      expect(filterByBudget(COUNTRIES, "budget")).toHaveLength(1);
+      expect(filterByBudget(COUNTRIES, "mid")).toHaveLength(1);
       expect(filterByBudget(COUNTRIES, "premium")).toHaveLength(1);
     });
   });

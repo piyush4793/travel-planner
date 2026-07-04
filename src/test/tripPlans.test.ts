@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { generateTripPlan, getMaxRuleDays, getRecRuleDays, recommendedDaysForSelection, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../core/utils/tripPlans";
+import { generateTripPlan, getMaxRuleDays, getRecRuleDays, recommendedDaysForSelection, topExperienceCities, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../core/utils/tripPlans";
 import type { Country } from "../core/types";
 
 const COUNTRY_WITH_CITIES: Country = {
@@ -494,11 +494,23 @@ describe("recommendedDaysForSelection", () => {
     ).toBe(2);
   });
 
-  it("applies the budget-tier nudge and clamps to maxDays", () => {
-    const premium = recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 15, selectedCities: [], selectedExperiences: [], budgetTier: "premium" });
-    const budget = recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 15, selectedCities: [], selectedExperiences: [], budgetTier: "budget" });
-    expect(premium).toBe(Math.round(9 * 1.15)); // 10
-    expect(budget).toBe(Math.round(9 * 0.85)); // 8
+  it("ignores the budget nudge on a pristine (unscoped) panel", () => {
+    // No cities/experiences picked → seeds to the style default (recDays), so it
+    // lines up with the static "Recommended" marker regardless of budget tier.
+    expect(
+      recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 15, selectedCities: [], selectedExperiences: [], budgetTier: "premium" }),
+    ).toBe(9);
+    expect(
+      recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 15, selectedCities: [], selectedExperiences: [], budgetTier: "budget" }),
+    ).toBe(9);
+  });
+
+  it("applies the budget-tier nudge once the plan is scoped and clamps to maxDays", () => {
+    // Cities picked (3+4 = 7) → nudge applies.
+    const premium = recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 15, selectedCities: ["Alpha", "Gamma"], selectedExperiences: [], budgetTier: "premium" });
+    const budget = recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 15, selectedCities: ["Alpha", "Gamma"], selectedExperiences: [], budgetTier: "budget" });
+    expect(premium).toBe(Math.round(7 * 1.15)); // 8
+    expect(budget).toBe(Math.round(7 * 0.85)); // 6
     // Clamp: huge city-sum capped at maxDays.
     expect(
       recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 6, selectedCities: ["Alpha", "Beta", "Gamma"], selectedExperiences: [], budgetTier: "premium" }),
@@ -510,5 +522,45 @@ describe("recommendedDaysForSelection", () => {
     expect(
       recommendedDaysForSelection({ rule: null, style: "touch-and-go", recDays: 5, maxDays: 10, selectedCities: ["X"], selectedExperiences: [] }),
     ).toBe(3);
+  });
+})
+
+describe("topExperienceCities", () => {
+  // Three cities all offer "Street Food"; importance descends Aa > Bb > Cc via
+  // rec days + content depth + route order.
+  const MULTI_RULE = {
+    cityOrder: ["Aa", "Bb", "Cc"],
+    cities: {
+      Aa: { name: "Aa", minDays: 1, recDays: 3, maxDays: 4, days: [{ theme: "Street Food alley", activities: [{ name: "Stall" }] }, { theme: "More Street Food", activities: [{ name: "Market" }] }, { theme: "Street Food night", activities: [{ name: "Night bites" }] }] },
+      Bb: { name: "Bb", minDays: 1, recDays: 2, maxDays: 3, days: [{ theme: "Street Food lane", activities: [{ name: "Snacks" }] }, { theme: "Street Food day 2", activities: [{ name: "Cafe" }] }] },
+      Cc: { name: "Cc", minDays: 1, recDays: 1, maxDays: 2, days: [{ theme: "Street Food corner", activities: [{ name: "Kiosk" }] }] },
+    },
+    connections: [],
+  } as never;
+
+  it("returns the top cities for an experience, strongest first, capped at the limit", () => {
+    expect(topExperienceCities(MULTI_RULE, ["Street Food"])).toEqual(["Aa", "Bb"]);
+    expect(topExperienceCities(MULTI_RULE, ["Street Food"], 1)).toEqual(["Aa"]);
+  });
+
+  it("returns an empty list when no city matches", () => {
+    expect(topExperienceCities(MULTI_RULE, ["Skiing"])).toEqual([]);
+    expect(topExperienceCities(MULTI_RULE, [])).toEqual([]);
+  });
+
+  it("caps an experience day estimate at the top two cities, not every match", () => {
+    // Only Aa (3) + Bb (2) = 5 count — Cc (1) is dropped though it also matches.
+    expect(
+      recommendedDaysForSelection({ rule: MULTI_RULE, style: "explorer", recDays: 6, maxDays: 20, selectedCities: [], selectedExperiences: ["Street Food"] }),
+    ).toBe(5);
+  });
+
+  it("builds an experience-only plan from the top cities, excluding weaker matches", () => {
+    const country = { name: "Snackland", lat: 0, lng: 0, bestMonths: ["May"], budget: "₹1L–₹2L", experiences: ["Street Food"] } as never;
+    const plan = generateTripPlan(country, "custom" as never, [], 6, MULTI_RULE, "couple", ["Street Food"]);
+    const labels = plan.days.map((d) => d.label).join();
+    expect(labels).toContain("Aa");
+    expect(labels).toContain("Bb");
+    expect(labels).not.toContain("Cc");
   });
 })

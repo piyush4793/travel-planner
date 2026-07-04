@@ -241,6 +241,30 @@ describe("CountryPanel more coverage", () => {
     expect(screen.getAllByTitle(/per family of 4/i).length).toBeGreaterThan(0);
   });
 
+  it("pins a manually dragged day count so later focus changes don't re-seed it", async () => {
+    const user = userEvent.setup();
+    renderPanel();
+
+    await user.click(screen.getByRole("tab", { name: /Plan/i }));
+    // Drag the slider to 5 days — this pins the value.
+    fireEvent.change(screen.getByRole("slider"), { target: { value: "5" } });
+    await waitFor(() => expect(screen.getByText("5d")).toBeInTheDocument());
+
+    // Toggling a focus experience would otherwise re-suggest a shorter length,
+    // but the pinned value must survive.
+    await user.click(screen.getByRole("button", { name: /Focus experiences/i }));
+    await user.click(screen.getByRole("button", { name: "Food" }));
+
+    // The pinned slider value survives the focus change (the plan itself may be
+    // shorter if the focused cities can't fill the requested length).
+    expect(screen.getByText("5d")).toBeInTheDocument();
+
+    // The pin is legible and recoverable: tapping "Reset to recommended" re-links
+    // the day count to the current focus/style selection.
+    await user.click(screen.getByRole("button", { name: /Reset trip length to the recommended/i }));
+    await waitFor(() => expect(screen.queryByText("5d")).not.toBeInTheDocument());
+  });
+
   it("switches from the default plan to a saved AI plan and opens comparison", async () => {
     const user = userEvent.setup();
     renderPanel({ aiPlans: [makeAiPlan()] });

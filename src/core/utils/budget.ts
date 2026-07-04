@@ -56,6 +56,23 @@ function parseAmount(token: string): number | null {
   return value;
 }
 
+/**
+ * Parse a "lo–hi" (or single-value) budget/cost string into a `[low, high]`
+ * rupee range. Single values yield `[v, v]`; unparseable input yields `null`.
+ * The canonical range parser reused by budget tiering and trip-cost scaling so
+ * the "₹XL/₹XK" grammar lives in exactly one place.
+ */
+export function parseBudgetRange(range: string): [number, number] | null {
+  const parts = range
+    .split(/[–-]/)
+    .map((p) => parseAmount(p))
+    .filter((n): n is number => n != null);
+  if (parts.length === 0) return null;
+  const low = Math.min(...parts);
+  const high = Math.max(...parts);
+  return [low, high];
+}
+
 /** Format a rupee number back into the app's compact "₹XL" / "₹XK" style. */
 function formatAmount(value: number): string {
   if (value >= 1e5) {

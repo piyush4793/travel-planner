@@ -7,6 +7,7 @@ import {
   BASIS_MULTIPLIER,
   DEFAULT_BUDGET_BASIS,
   deriveBudgetBreakdown,
+  parseBudgetRange,
 } from "../core/utils/budget";
 import type { Country } from "../core/types";
 
@@ -83,5 +84,26 @@ describe("deriveBudgetBreakdown", () => {
     expect(d.solo).toBe("free");
     expect(d.couple).toBe("free");
     expect(d.family4).toBe("free");
+  });
+});
+
+describe("parseBudgetRange", () => {
+  it("parses a lo–hi range into ordered rupee bounds", () => {
+    expect(parseBudgetRange("₹1.5L–₹3L")).toEqual([150000, 300000]);
+    expect(parseBudgetRange("₹50K–₹1L")).toEqual([50000, 100000]);
+  });
+
+  it("treats a single value as a zero-width range", () => {
+    expect(parseBudgetRange("₹2L")).toEqual([200000, 200000]);
+    expect(parseBudgetRange("₹80,000")).toEqual([80000, 80000]);
+  });
+
+  it("normalizes reversed bounds to [low, high]", () => {
+    expect(parseBudgetRange("₹3L–₹1L")).toEqual([100000, 300000]);
+  });
+
+  it("returns null when nothing is parseable", () => {
+    expect(parseBudgetRange("free")).toBeNull();
+    expect(parseBudgetRange("")).toBeNull();
   });
 });
