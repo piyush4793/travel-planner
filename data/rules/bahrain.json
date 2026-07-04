@@ -109,6 +109,12 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Use Manama as the primary base: it keeps museum, souq and mosque logistics simple before you branch to Muharraq and southern Bahrain.",
+        "experiences": [
+          "Qal'at al-Bahrain",
+          "Bahrain National Museum",
+          "Bab Al Bahrain and Manama Souq",
+          "Al Fateh Grand Mosque"
+        ],
         "days": [
           {
             "theme": "Old Manama gateway sights, museum context and an easy first-evening waterfront finish",
@@ -198,6 +204,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat Muharraq as a heritage-heavy day around the Pearling Path; stay here only if you want airport-side convenience or Amwaj beach access.",
+        "experiences": [
+          "Muharraq Pearling Path"
+        ],
         "days": [
           {
             "theme": "Pearling Path houses, fort edges and the older trading-island story behind modern Bahrain",
@@ -243,6 +252,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Use a taxi or rental car in Riffa: the fort, Tree of Life and south-island roads are far easier by road than by public transport.",
+        "experiences": [
+          "Tree of Life"
+        ],
         "days": [
           {
             "theme": "Fort views, desert-edge landmarks and the road-trip side of Bahrain",

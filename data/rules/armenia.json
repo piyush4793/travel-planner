@@ -96,6 +96,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Best arrival base for cash, SIM cards, museums, and the easiest onward marshrutka links.",
+        "experiences": [
+          "Yerevan café culture"
+        ],
         "days": [
           {
             "theme": "Republic Square, Cascade & Market-Street Yerevan",
@@ -175,6 +178,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Usually done as a day trip from Yerevan, but staying overnight makes the gorge quieter by evening.",
+        "experiences": [
+          "Garni–Geghard day trip"
+        ],
         "days": [
           {
             "theme": "Garni Temple, Geghard & Gorge Landscapes",
@@ -224,6 +230,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "A cool-weather forest break that works well after Yerevan before heading to Sevan.",
+        "experiences": [
+          "Ancient monasteries"
+        ],
         "days": [
           {
             "theme": "Old Dilijan, Haghartsin & National Park Slow Travel",
@@ -269,6 +278,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Best in summer and early autumn when the peninsula is lively and fish restaurants are fully open.",
+        "experiences": [
+          "Lake Sevan trout lunches"
+        ],
         "days": [
           {
             "theme": "Sevan Peninsula, Monastery Views & Fish Lunch",
@@ -314,6 +326,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Long transfer day, but the gorge scenery and cable car ride justify an overnight if you can spare it.",
+        "experiences": [
+          "Wings of Tatev cable car"
+        ],
         "days": [
           {
             "theme": "Vorotan Gorge, Wings of Tatev & Monastery Views",

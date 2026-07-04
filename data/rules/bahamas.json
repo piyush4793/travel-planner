@@ -105,6 +105,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Nassau as your arrival buffer and cultural day; jitneys are cheapest inside town, but taxis are still the practical airport transfer after dark.",
+        "experiences": [
+          "Beaches",
+          "Island Hopping"
+        ],
         "days": [
           {
             "theme": "Queen's Staircase, Downtown Museums and Fish Fry Night",
@@ -191,6 +195,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Paradise Island works best as a single full resort-and-beach day unless you are staying on-site at Atlantis for multiple park sessions.",
+        "experiences": [
+          "Beaches",
+          "Water Parks"
+        ],
         "days": [
           {
             "theme": "Atlantis Aquaventure, Cabbage Beach and Harbor Views",
@@ -241,6 +249,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Base around Governor's Harbour if you want easier food choices, or around Gregory Town/North Eleuthera if Sapphire Blue Hole and Harbour Island are the priority.",
+        "experiences": [
+          "Beaches",
+          "Snorkeling",
+          "Blue Holes"
+        ],
         "days": [
           {
             "theme": "Glass Window Bridge, Queen's Bath and Pink-Sand Driving Day",
@@ -328,6 +341,12 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "George Town is the most practical base if you want to keep Pig Beach, Stocking Island and beach time all within easy reach without paying luxury-cay rates.",
+        "experiences": [
+          "Beaches",
+          "Island Hopping",
+          "Snorkeling",
+          "Pig Beach"
+        ],
         "days": [
           {
             "theme": "Swimming Pigs, Thunderball Grotto and Sandbar Day",
@@ -414,6 +433,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Grand Bahama is the easiest Out Island to end on if you want gentler hotel pricing, cave walks and a direct flight finish from Freeport.",
+        "experiences": [
+          "Beaches",
+          "Snorkeling",
+          "Blue Holes"
+        ],
         "days": [
           {
             "theme": "Lucayan National Park, Gold Rock Beach and Port Lucaya",

@@ -97,6 +97,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay in or near Icherisheher so you can walk the Old City at dawn and still reach the bus terminal or airport easily.",
+        "experiences": [
+          "Baku Old City",
+          "Heydar Aliyev Center"
+        ],
         "days": [
           {
             "theme": "Icherisheher Heritage, Maiden Tower & Caspian Old Quarter",
@@ -176,6 +180,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat Gobustan as a full day trip from Baku; there is little reason to sleep here unless you have your own car.",
+        "experiences": [
+          "Gobustan Petroglyphs"
+        ],
         "days": [
           {
             "theme": "Rock Art, Mud Volcanoes & Semi-Desert Archaeology",
@@ -256,6 +263,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Road conditions matter here — leave early and avoid arriving after dark if you are using shared transport.",
+        "experiences": [
+          "Lahij Copper Workshops"
+        ],
         "days": [
           {
             "theme": "Copper Workshops, Stone Lanes & Slow Mountain Village Time",
@@ -305,6 +315,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "End the inland loop here so you can enjoy the palace quarter slowly and take the comfortable bus or shared taxi back to Baku.",
+        "experiences": [
+          "Sheki Khan's Palace"
+        ],
         "days": [
           {
             "theme": "Khan's Palace, Caravanserai Courtyards & Sheki Sweets",

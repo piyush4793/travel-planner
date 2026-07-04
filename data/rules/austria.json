@@ -98,6 +98,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Plan at least 3 days to cover the imperial core properly; a fourth day works well for an opera evening or a slower museum day.",
+        "experiences": [
+          "Vienna",
+          "Christmas Markets"
+        ],
         "days": [
           {
             "theme": "Imperial Vienna: Palaces & the Ring Road",
@@ -276,6 +280,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers the baroque core plus either Hellbrunn or a Sound of Music outing; add a third day for Salzkammergut side trips.",
+        "experiences": [
+          "Salzburg",
+          "Mozart"
+        ],
         "days": [
           {
             "theme": "Fortress, Mozart & Baroque Altstadt",
@@ -365,6 +373,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Best handled as an early-start day trip from Salzburg unless you want sunrise photos and a quieter overnight in the village.",
+        "experiences": [
+          "Hallstatt"
+        ],
         "days": [
           {
             "theme": "Salt Mines, Skywalk & Lakeside Village",
@@ -414,6 +425,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days gives you one historic-core day and one Alps-and-castles day; add a third for nearby Tyrolean valleys or ski lifts.",
+        "experiences": [
+          "Alps Skiing"
+        ],
         "days": [
           {
             "theme": "Golden Roof, Nordkette & Imperial Innsbruck",

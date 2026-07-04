@@ -141,6 +141,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days work well for Old Dhaka's headline monuments, a food-heavy riverfront circuit and one modern-city museum stop before you fly onward.",
+        "experiences": [
+          "Old Dhaka biryani and riverfront heritage"
+        ],
         "days": [
           {
             "theme": "Arrival, Old Dhaka Forts & Pink Palace",
@@ -232,6 +235,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days cover the main beach strip plus one Marine Drive outing to Himchari and Inani without turning the stay into only transit.",
+        "experiences": [
+          "Cox's Bazar beach and Marine Drive"
+        ],
         "days": [
           {
             "theme": "Biman Bangladesh Flight, Beach Check-in & Sunset",
@@ -318,6 +324,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "A two-day Khulna-Mongla safari is the shortest worthwhile version because permit formalities and tidal boat timings consume most of day one.",
+        "experiences": [
+          "Sundarbans mangrove boat safari"
+        ],
         "days": [
           {
             "theme": "Khulna Gateway, Permit Processing & Karamjal",
@@ -405,6 +414,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days let you split shrine-and-city time from a proper Sreemangal or Lawachara excursion rather than cramming both into one road-heavy day.",
+        "experiences": [
+          "Sylhet tea gardens and Lawachara rainforest"
+        ],
         "days": [
           {
             "theme": "Shrines, Ratargul Wetlands & Sylhet Eats",
@@ -491,6 +503,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days are ideal because Paharpur is a long archaeological side trip from Rajshahi and pairs best with one slower city day on the Padma riverfront.",
+        "experiences": [
+          "Somapura Mahavihara at Paharpur"
+        ],
         "days": [
           {
             "theme": "Rajshahi Silk, Museums & Padma Evenings",

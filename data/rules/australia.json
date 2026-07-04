@@ -110,6 +110,9 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Sydney Opera House"
+        ],
         "days": [
           {
             "theme": "Harbour Icons & Botanic Views",
@@ -226,6 +229,9 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Melbourne Food"
+        ],
         "days": [
           {
             "theme": "Laneways, Coffee & Galleries",
@@ -342,6 +348,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Gold Coast"
+        ],
         "days": [
           {
             "theme": "Riverfront Brisbane & South Bank",
@@ -422,6 +431,9 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Great Barrier Reef"
+        ],
         "days": [
           {
             "theme": "Great Barrier Reef Day Cruise",
@@ -502,6 +514,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Uluru"
+        ],
         "days": [
           {
             "theme": "Sacred Red Centre Sunrise & Sunset",
