@@ -8,16 +8,19 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (693 tests across 83 files)
+npm test                # Vitest suite (764 tests across 90 files)
+npm run test:coverage   # coverage report (must stay ≥ 84% total statements/lines)
 npm run build           # tsc && vite build
-npm run validate        # tsc + tests + knip + build
+npm run validate        # tsc + tests(+coverage) + knip + build
 ```
 
 Run `npx tsc --noEmit` and `npm run build` before and after every change set. Use `npm test` whenever behavior changes or when documentation references current suite counts. `npm run validate` is the full confidence pass.
 Before committing, ensure adequate test coverage for the behavior you changed (add or update TCs so regressions are caught).
 
+**Coverage gate (hard):** the pre-commit hook and `npm run validate` run `vitest run --coverage`, which enforces a **global floor of 84% statements/lines** (set in `vite.config.ts` `coverage.thresholds`). A commit is blocked if total coverage drops below 84%. Per-directory thresholds also apply (`src/utils/**` 60/50/60, `src/core/utils/**` 80/70/80, etc.). Raise the floor when coverage rises; never lower it to force a commit through.
+
 Current testing priority:
-- Total statement coverage is ~82% (693 tests). Country-detail and itinerary surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) and the `ai` folder are now covered; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` and `App.tsx` orchestration.
+- Total statement coverage is ~82% (764 tests). Country-detail and itinerary surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) and the `ai` folder are now covered; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; the platform-backup stack (`core/platform/*`, `core/adapters/backup/*`, `StorageLocationCard`) is covered via a reusable fake File System helper (`src/test/support/fakeFileSystem.ts`); remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` and `App.tsx` orchestration.
 - Reuse `src/test/testUtils.ts` helpers for localStorage seeding, route setup, and deterministic timers in timing-sensitive UI tests.
 - Prefer `fireEvent` over `userEvent.tab()` for focus-trap/timing-sensitive assertions (jsdom focus timing is flaky).
 - `src/components/**` thresholds remain intentionally low in `vite.config.ts`; tighten them now that broad integration coverage exists.
@@ -92,6 +95,9 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | City selection + day allocation (DP) | `src/core/utils/citySelection.ts` |
 | Budget basis (party size) source of truth | `src/core/utils/budget.ts` |
 | Feature flags | `src/utils/featureFlags.ts` |
+| Platform capability profile | `src/core/platform/platformProfile.ts` |
+| Platform backup defaults + target selection | `src/core/platform/defaults.ts`, `src/core/platform/selectBackupTarget.ts` |
+| Backup target port + adapters | `src/core/ports/BackupTargetPort.ts`, `src/core/adapters/backup/*` |
 | localStorage keys | `src/utils/lsKeys.ts` |
 | Trip group seeds | `src/data/tripGroups.ts` |
 | Rule manifest + lazy JSON chunks | `data/rules/index.json`, `data/rules/*.json` |
@@ -317,12 +323,15 @@ All persistence uses `loadLS()` / `saveLS()` from `src/utils/storage.ts`. Keys a
 | `LAST_BACKUP` | `tp_last_backup` | ISO timestamp of last backup |
 | `BACKUP_FREQUENCY` | `tp_backup_frequency` | Reminder cadence |
 | `BACKUP_SCHEDULE` | `tp_backup_schedule` | Backup scheduling metadata |
+| `BACKUP_TARGET` | `tp_backup_target` | Platform backup destination override (`filesystem`/`opfs`/`download`) |
 | `FRE_DONE` | `tp_fre_done` | First-run experience completed/dismissed |
 | `SCHEMA_VERSION` | `tp_schema_version` | Persisted-data schema version |
 
 No server sync — refresh survival is purely localStorage. `usePersistedSet` backs the set-style keys (`visited`, `favorites`, `myList`).
 
 **Schema migrations** (`src/core/migrations.ts`): `runMigrations()` runs once in `main.tsx` before any hook reads storage. Bump `SCHEMA_VERSION` and append an ordered `MIGRATIONS` entry to evolve a persisted shape; pre-versioning stores are stamped as the v1 baseline. The runner never throws so a bad migration can't block boot.
+
+**Platform-aware backup targets** (`src/core/platform/`): auto-backup is routed to a capability-based target so data is findable + restorable per device. `detectPlatformProfile(env)` is pure (OS/form-factor/surface + capability flags); `resolvePlatformDefaults()` picks a `BackupTargetKind` (`filesystem` for desktop with File System Access → `opfs` for mobile → `download` fallback). Adapters implement `BackupTargetPort` (`write`/`readLatest`/`configure`/`location`); every persistent target stores data inside a dedicated `Roamwise/` app folder (created if absent, shared via `adapters/backup/appDir.ts`) as a stable `roamwise-backup-latest.json`, so backups are grouped and re-readable. The filesystem adapter persists a picked `FileSystemDirectoryHandle` in IndexedDB (`handleStore.ts`) and re-verifies read/write permission. `backup.ts` exposes `backupToTarget()`, `autoBackupToTargetIfOverdue()`, `restoreFromTarget()`, `canAutoImport()`, `hasAnyLocalData()`, and target-kind override helpers. On mount `App.tsx` backs up overdue data, or — on a fresh device with no local data — **offers** (never silently applies) a restore from the target. Settings → Backup surfaces the active location via `StorageLocationCard`.
 
 ---
 

@@ -183,6 +183,13 @@ All travel data lives in localStorage. The Settings modal (⚙️) includes a fu
 - **Backup reminders** — configurable (daily / weekly / monthly / never). Default: monthly. Overdue backups show a dismissible amber banner at the top
 - **Smart first-launch** — won't nag for backup until user has actual custom data (not just seed data)
 
+**Platform-aware backup location** — auto-backups pick the best destination for your device so they're easy to find and restore:
+- **Desktop (Chrome/Edge):** choose a folder once (Settings → Backup → Storage location); backups then write silently into a dedicated `Roamwise/` app folder inside it as a stable `roamwise-backup-latest.json` (created automatically if absent, so all app data stays grouped and findable)
+- **Mobile / other browsers:** silent app-private storage (OPFS); restore reads it back in-app
+- **Fallback:** browsers without those APIs download a dated JSON to the Downloads folder
+- **Fresh-device restore** — open the app on a new device with the same backup location and it *offers* (never auto-overwrites) a one-click restore of your travel data
+- **Persistent storage** — the app asks the browser to protect your data from eviction where supported
+
 ---
 
 ### PWA & Offline Mode
@@ -263,7 +270,7 @@ Coverage thresholds are enforced in `vite.config.ts`:
 - `src/components/**` — 4% statements/functions, 2% branches (temporary floor while UI integration coverage is expanded)
 
 Current testing status:
-- Total statement coverage is ~81% (636 tests across 79 files). The `ai` folder, country-detail surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`), shared components, and the Trips/Discover/Calendar views are now covered.
+- Total statement coverage is ~82% (764 tests across 90 files). The `ai` folder, country-detail surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`), shared components, the Trips/Discover/Calendar views, and the platform-backup stack (`core/platform/*`, `core/adapters/backup/*`, `StorageLocationCard`) are now covered.
 - Reusable test helpers for localStorage seeding, hash navigation setup, and deterministic timer control (`src/test/testUtils.ts`)
 - Remaining lower-coverage surfaces: maplibre-heavy `ItineraryCinematic` / `MapView` / `HoverCard` and `App.tsx` orchestration — with these covered, the `src/components/**` thresholds can be tightened.
 

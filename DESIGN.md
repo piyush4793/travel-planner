@@ -356,6 +356,7 @@ All keys live in `src/core/lsKeys.ts` — never hardcode strings.
 | `tp_last_backup` | ISO timestamp of last backup |
 | `tp_backup_frequency` | Reminder cadence: daily / weekly / never |
 | `tp_backup_schedule` | Backup reminder schedule metadata |
+| `tp_backup_target` | Platform backup destination override (`filesystem`/`opfs`/`download`) |
 | `tp_fre_done` | First-run experience completed/dismissed flag |
 | `tp_schema_version` | Persisted-data schema version (see Schema migrations) |
 
@@ -368,6 +369,16 @@ All keys live in `src/core/lsKeys.ts` — never hardcode strings.
 - `runMigrations()` is called once in `main.tsx` **before any hook reads storage**. It applies every pending migration in ascending order, then stamps `tp_schema_version`. It never throws — a failed migration is logged and boot continues (hooks still fall back to defaults via `loadLS`).
 - Pre-versioning stores (data present, no version key) are treated as the v1 baseline and simply stamped — no transform, because the shipped shapes _are_ v1.
 - To evolve a shape: bump `SCHEMA_VERSION`, append a `Migration` with the new version, and add tests in `src/test/migrations.test.ts`.
+
+### Platform-aware backup targets
+
+Auto-backup is routed to a **capability-based** destination so app data stays findable and restorable per device (one PWA codebase, no desktop/mobile fork):
+
+- `src/core/platform/platformProfile.ts` — pure `detectPlatformProfile(env)` (OS, form-factor, surface, capability flags: File System Access / OPFS / share-files / persistent-storage) + memoized `getPlatformProfile()`. iPadOS (desktop UA + touch points) is classified as iOS.
+- `src/core/platform/defaults.ts` — `resolvePlatformDefaults()` chooses a `BackupTargetKind`: desktop prefers `filesystem` (a folder the user picks once, browsable in the OS file manager); mobile prefers silent `opfs`; both fall back to `download`. `autoImport` is enabled only for readable targets.
+- `src/core/ports/BackupTargetPort.ts` + `src/core/adapters/backup/*` — swappable targets implementing `write` / `readLatest` / `configure` / `location`. Every persistent target stores data inside a dedicated `Roamwise/` app folder (created on demand via the shared `appDir.ts` helper) as a stable `roamwise-backup-latest.json`, so backups are grouped and re-readable. Filesystem persists the chosen `FileSystemDirectoryHandle` in IndexedDB (`handleStore.ts`) and re-verifies read/write permission.
+- `src/utils/backup.ts` — `backupToTarget()` requests `navigator.storage.persist()` then writes via the active target (falling back to a download if not ready); `autoBackupToTargetIfOverdue()`, `restoreFromTarget()`, `canAutoImport()`, `hasAnyLocalData()`, and `getBackupTargetKind`/`setBackupTargetKind` support the flow.
+- `App.tsx` — on mount, backs up overdue data, or on a fresh/empty device **offers** (never silently applies) a one-click restore when a backup is readable. Settings → Backup shows the active location and controls via `StorageLocationCard`.
 
 ---
 
@@ -418,6 +429,7 @@ Reusable coverage slash command:
   - hash-route setup
   - deterministic timer control for timing-sensitive UI tests
 - Current threshold policy remains strict for domain logic (`core/utils`, hooks, utils) and intentionally permissive for broad UI shells (`src/components/**`) until additional integration coverage lands.
+- **Hard commit gate:** a global floor of **84% statements/lines** is enforced by `vitest run --coverage` (thresholds in `vite.config.ts`), wired into both the pre-commit hook and `npm run validate`. Commits are blocked below 84%. Backup targets are tested against a reusable fake File System (`src/test/support/fakeFileSystem.ts`) covering permissions, the dedicated `Roamwise/` app folder, and read/write round-trips.
 
 ### Testing expansion plan (Phase 2 complete)
 
