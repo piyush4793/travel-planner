@@ -25,11 +25,12 @@
     "family4": "₹3.6L–₹5.8L"
   },
   "experiences": [
-    "Conakry's markets and Atlantic shoreline",
-    "Îles de Los pirogue island-hopping",
-    "Voile de la Mariée waterfall near Kindia",
-    "Fouta Djallon treks, waterfalls, and Fulani highland scenery",
-    "Mount Nimba Strict Nature Reserve UNESCO add-on"
+    "Mountains",
+    "Hiking",
+    "Waterfalls",
+    "Beaches",
+    "Islands",
+    "Markets & Shopping"
   ],
   "avoid": [
     "June to October is the hardest window: Fouta Djallon trails get muddy, landslides slow bush taxis, and pirogues to the islands are much less predictable.",
@@ -52,25 +53,61 @@
       "name": "Conakry",
       "lat": 9.5092,
       "lng": -13.7122,
-      "notes": "Atlantic capital for Madina market chaos, museum stops, city beaches, and the boat departures that make the rest of coastal Guinea work."
+      "notes": "Atlantic capital for Madina market chaos, museum stops, city beaches, and the boat departures that make the rest of coastal Guinea work.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Fouta Djallon (Dalaba / Labé)",
       "lat": 11.55,
       "lng": -12.52,
-      "notes": "Highland base split between Dalaba and Labé for Fulani culture, cool air, waterfalls, forest walks, and the classic Guinea trekking days."
+      "notes": "Highland base split between Dalaba and Labé for Fulani culture, cool air, waterfalls, forest walks, and the classic Guinea trekking days.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Îles de Los",
       "lat": 9.464,
       "lng": -13.791,
-      "notes": "Short pirogue hop from Conakry for Kassa and Roume beaches, seafood lunches, and a quick island reset without leaving the capital region."
+      "notes": "Short pirogue hop from Conakry for Kassa and Roume beaches, seafood lunches, and a quick island reset without leaving the capital region.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Kindia",
       "lat": 10.0564,
       "lng": -12.8658,
-      "notes": "Lowland gateway toward Fouta Djallon, best known for Voile de la Mariée, Mount Gangan viewpoints, and simple overnight stops out of Conakry."
+      "notes": "Lowland gateway toward Fouta Djallon, best known for Voile de la Mariée, Mount Gangan viewpoints, and simple overnight stops out of Conakry.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -93,6 +130,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Markets & Shopping",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Ease into Guinea with Kaloum logistics, museum context, and the Atlantic-facing neighborhoods that make Conakry feel busiest right away.",
@@ -185,6 +226,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Cross to Kassa or Roume for the easiest Guinea island day: pirogue timing, seafood, and a proper break from Conakry traffic.",
@@ -271,6 +316,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Waterfalls"
+        ],
         "days": [
           {
             "theme": "Break the climb inland with Kindia's classic waterfall stop and a simple overnight that still feels distinctly greener than Conakry.",
@@ -362,6 +410,11 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "Waterfalls"
+        ],
         "days": [
           {
             "theme": "Climb into the highlands, settle around Dalaba, and take a first easy day for cool air, old villas, and pine-shaded walks.",

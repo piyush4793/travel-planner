@@ -25,11 +25,12 @@
     "family4": "₹3.8L–₹6L"
   },
   "experiences": [
-    "Bissau's faded Portuguese-era core",
-    "Bijagós pirogue island-hopping",
-    "Orango Island hippo watching",
-    "Cacheu fort and slave-trade history",
-    "Low-key seafood and mangrove sunsets"
+    "Islands",
+    "Beaches",
+    "Wildlife & Safari",
+    "National Parks",
+    "Diving & Snorkeling",
+    "Markets & Shopping"
   ],
   "avoid": [
     "June to October is rainy, roads to Cacheu get slower, and sea crossings to the Bijagós become much less predictable",
@@ -52,19 +53,46 @@
       "name": "Bissau",
       "lat": 11.8636,
       "lng": -15.5977,
-      "notes": "Compact capital for colonial facades, Bandim market energy, port history and the logistics every Guinea-Bissau trip runs through"
+      "notes": "Compact capital for colonial facades, Bandim market energy, port history and the logistics every Guinea-Bissau trip runs through",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Bijagós Archipelago",
       "lat": 11.2978,
       "lng": -15.8383,
-      "notes": "Island chain reached via Bubaque, with pirogue transfers, beach lodges, birdlife and Orango's rare saltwater hippos"
+      "notes": "Island chain reached via Bubaque, with pirogue transfers, beach lodges, birdlife and Orango's rare saltwater hippos",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Cacheu",
       "lat": 12.2747,
       "lng": -16.1652,
-      "notes": "Historic river town with a small Portuguese fort, mangrove scenery and a slavery-history stop most travelers tackle from Bissau"
+      "notes": "Historic river town with a small Portuguese fort, mangrove scenery and a slavery-history stop most travelers tackle from Bissau",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -86,6 +114,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Ease into Guinea-Bissau with old Bissau walks, Bandim market noise and the fortress that anchors the country's modern history",
@@ -182,6 +213,12 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Cross from Bissau to Bubaque, settle into island time and keep day one light because boats run on weather and patience",
@@ -318,6 +355,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 1,
+        "experiences": [
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Do Cacheu as a dry-season history day with river views, a fort stop and the understanding that most travelers sleep back in Bissau",

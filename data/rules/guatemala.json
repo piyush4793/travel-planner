@@ -26,12 +26,14 @@
     "family4": "₹3.1L–₹4.9L"
   },
   "experiences": [
-    "Antigua colonial streets",
-    "Lake Atitlán villages",
-    "Tikal Maya ruins",
-    "Semuc Champey limestone pools",
-    "Chichicastenango market",
-    "Petén jungle sunsets"
+    "Ancient Ruins",
+    "History",
+    "Volcanoes",
+    "Lakes",
+    "Markets & Shopping",
+    "Hiking",
+    "UNESCO Sites",
+    "Waterfalls"
   ],
   "avoid": [
     "May–October brings heavier rain, muddier trails, and occasional landslide delays on the Cobán–Lanquín and western highland roads.",
@@ -54,37 +56,91 @@
       "name": "Guatemala City",
       "lat": 14.6349,
       "lng": -90.5069,
-      "notes": "Capital base for museums, markets, airport access, and the quickest launch point toward Antigua or a TAG hop north to Petén."
+      "notes": "Capital base for museums, markets, airport access, and the quickest launch point toward Antigua or a TAG hop north to Petén.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Antigua",
       "lat": 14.5586,
       "lng": -90.7295,
-      "notes": "Best colonial stop for convent ruins, café terraces, volcano views, and easy shuttle links across the highlands."
+      "notes": "Best colonial stop for convent ruins, café terraces, volcano views, and easy shuttle links across the highlands.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Chichicastenango",
       "lat": 14.9433,
       "lng": -91.1116,
-      "notes": "Highland market town famous for Thursday and Sunday trading days, Santo Tomás rituals, and K’iche’ culture."
+      "notes": "Highland market town famous for Thursday and Sunday trading days, Santo Tomás rituals, and K’iche’ culture.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Lake Atitlán",
       "lat": 14.6907,
       "lng": -91.2024,
-      "notes": "Panajachel gateway for lanchas to artisan villages, volcano-ringed lake views, kayaking, and relaxed café days."
+      "notes": "Panajachel gateway for lanchas to artisan villages, volcano-ringed lake views, kayaking, and relaxed café days.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Semuc Champey",
       "lat": 15.5335,
       "lng": -89.955,
-      "notes": "Lanquín-side jungle stop for turquoise limestone pools, cave circuits, tubing, and one of Guatemala’s most photogenic miradors."
+      "notes": "Lanquín-side jungle stop for turquoise limestone pools, cave circuits, tubing, and one of Guatemala’s most photogenic miradors.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Tikal",
       "lat": 17.2216,
       "lng": -89.6237,
-      "notes": "Petén highlight for towering Maya temples, howler-monkey-filled jungle walks, and easy Flores overnights before dawn entries."
+      "notes": "Petén highlight for towering Maya temples, howler-monkey-filled jungle walks, and easy Flores overnights before dawn entries.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     }
   ],
   "itinerary": {
@@ -116,6 +172,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Use Zona 10, Zona 4, or airport-adjacent stays for the easiest first night, then move on early to Antigua or Flores before traffic builds.",
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Historic Center, Palacio & Markets",
@@ -194,6 +254,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay inside the old town if possible; most highlights are walkable, and dawn or evening is when Antigua feels best.",
+        "experiences": [
+          "History",
+          "Volcanoes",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Arches, Convents & Sunset Viewpoints",
@@ -274,6 +339,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Plan this stop for Thursday or Sunday; outside market days the town is quieter and works better as a short cultural break between Antigua and Atitlán.",
+        "experiences": [
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Market Day, Santo Tomás & Highland Rituals",
@@ -319,6 +387,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Panajachel is the easiest logistics base, while public lanchas let you sample San Juan, San Pedro, Santa Cruz, and other villages without switching hotels.",
+        "experiences": [
+          "Lakes",
+          "Volcanoes",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Panajachel, Nature Reserve & Lakefront",
@@ -398,6 +471,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Sleep in Lanquín or near the park entrance, carry cash, and expect slower jungle transfers even when distances look short on the map.",
+        "experiences": [
+          "Waterfalls",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Turquoise Pools & Cave Circuit",
@@ -478,6 +555,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Most travelers sleep in Flores or El Remate, then leave before dawn for cooler ruins and the best wildlife activity inside the park.",
+        "experiences": [
+          "Ancient Ruins",
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Tikal Main Circuit & Temple Views",

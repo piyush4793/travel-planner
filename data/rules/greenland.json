@@ -22,11 +22,12 @@
     "family4": "₹15L–₹28L"
   },
   "experiences": [
-    "Arctic Wilderness",
+    "Glaciers",
     "Northern Lights",
-    "Icebergs",
-    "Dog Sledding",
-    "Midnight Sun"
+    "Wildlife & Safari",
+    "Hiking",
+    "Cruises & Boat Trips",
+    "National Parks"
   ],
   "avoid": [
     "Inaccessible in harsh winter without expedition-level prep"
@@ -46,25 +47,61 @@
       "name": "Nuuk",
       "lat": 64.1836,
       "lng": -51.7214,
-      "notes": "Colorful colonial harbour, Greenland National Museum and Inuit culture"
+      "notes": "Colorful colonial harbour, Greenland National Museum and Inuit culture",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Ilulissat",
       "lat": 69.2198,
       "lng": -51.0986,
-      "notes": "UNESCO Icefjord with massive calving glacier and midnight sun hikes"
+      "notes": "UNESCO Icefjord with massive calving glacier and midnight sun hikes",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Sisimiut",
       "lat": 66.9397,
       "lng": -53.6733,
-      "notes": "Gateway to the Arctic Circle Trail 160km multi-day wilderness trek"
+      "notes": "Gateway to the Arctic Circle Trail 160km multi-day wilderness trek",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Kangerlussuaq",
       "lat": 67.0065,
       "lng": -50.689,
-      "notes": "International gateway with musk ox country and ice sheet access"
+      "notes": "International gateway with musk ox country and ice sheet access",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     }
   ],
   "itinerary": {
@@ -91,6 +128,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Nuuk for flight recovery, museums, and one fjord day before heading deeper into Greenland; weather delays are common, so this is the best city for your first two nights.",
+        "experiences": [
+          "Wildlife & Safari",
+          "Cruises & Boat Trips",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Colonial Harbour, Museums & City Icons",
@@ -182,6 +224,12 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Greenland's classic inland air hub is the easiest place to touch the ice sheet and spot musk oxen; one well-planned night is enough for most first-time trips.",
+        "experiences": [
+          "Glaciers",
+          "Northern Lights",
+          "Hiking",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Russell Glacier, Ice Sheet Access & Tundra Wildlife",
@@ -228,6 +276,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Sisimiut adds Greenlandic small-town life, Arctic Circle Trail scenery, and a strong culture stop without needing a long detour; it works best as a one-night pause between inland and Disko Bay sectors.",
+        "experiences": [
+          "Hiking",
+          "Northern Lights",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Arctic Circle Trail Gateway & Inuit Heritage",
@@ -274,6 +327,12 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Ilulissat is the star stop of a Greenland first trip; give it three nights so you can keep one full day flexible for weather-sensitive whale, boat, or helicopter excursions.",
+        "experiences": [
+          "Glaciers",
+          "Cruises & Boat Trips",
+          "Wildlife & Safari",
+          "Northern Lights"
+        ],
         "days": [
           {
             "theme": "Icefjord Arrival, Sermermiut & Town Landmarks",

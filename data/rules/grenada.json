@@ -27,11 +27,11 @@
   },
   "experiences": [
     "Beaches",
-    "Snorkeling",
-    "Chocolate & Spice Estates",
-    "Rum Heritage",
-    "Rainforest Lakes",
-    "Island Ferries"
+    "Diving & Snorkeling",
+    "Islands",
+    "Waterfalls",
+    "Water Sports",
+    "Hiking"
   ],
   "avoid": [
     "June–November is wetter and overlaps the main Caribbean storm season, so ferry crossings, snorkel trips, and Grand Etang hikes are more likely to be disrupted.",
@@ -54,19 +54,49 @@
       "name": "St. George's",
       "lat": 12.0561,
       "lng": -61.7486,
-      "notes": "Historic harbor capital for Fort George views, the Carenage, chocolate stops, market mornings, and easiest access to island buses and ferry departures."
+      "notes": "Historic harbor capital for Fort George views, the Carenage, chocolate stops, market mornings, and easiest access to island buses and ferry departures.",
+      "bestMonths": [
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Grand Anse",
       "lat": 12.0167,
       "lng": -61.7667,
-      "notes": "Grenada's classic beach base for long swims, Morne Rouge sunsets, dive-operator pickups, and a good balance of resort stays and casual dining."
+      "notes": "Grenada's classic beach base for long swims, Morne Rouge sunsets, dive-operator pickups, and a good balance of resort stays and casual dining.",
+      "bestMonths": [
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Carriacou",
       "lat": 12.4833,
       "lng": -61.45,
-      "notes": "Slow-paced sister island best for ferry-linked beach days, Sandy Island water taxis, Hillsborough village walks, and quieter guesthouse stays."
+      "notes": "Slow-paced sister island best for ferry-linked beach days, Sandy Island water taxis, Hillsborough village walks, and quieter guesthouse stays.",
+      "bestMonths": [
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     }
   ],
   "itinerary": {
@@ -90,6 +120,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay near the Carenage, True Blue, or Point Salines side if you want easier ferry-port transfers, restaurant variety, and fast bus access across the island.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Fort views, harbor history, and Grenadian chocolate in the capital",
@@ -177,6 +211,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Grand Anse works best as the beach-and-water-activity base; Route 1 buses make it easy to reach St. George's without changing hotels.",
+        "experiences": [
+          "Beaches",
+          "Water Sports"
+        ],
         "days": [
           {
             "theme": "Grand Anse beach day with sculpture-park snorkeling",
@@ -259,6 +297,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Spend at least one night after the ferry so weather or schedule changes do not turn the island into a rushed same-day dash.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Osprey ferry arrival, Hillsborough village, and Paradise Beach",
