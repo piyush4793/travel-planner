@@ -26,12 +26,14 @@
     "family4": "₹5.2L–₹7.8L"
   },
   "experiences": [
-    "Quito churches & viewpoints",
-    "Otavalo market",
-    "Mindo cloud forest",
-    "Baños waterfalls & swings",
-    "Cuenca old town",
-    "Galápagos wildlife"
+    "Wildlife & Safari",
+    "Islands",
+    "Markets & Shopping",
+    "Volcanoes",
+    "History",
+    "Waterfalls",
+    "Hiking",
+    "Diving & Snorkeling"
   ],
   "avoid": [
     "October–November can bring heavier rain, cloudy mountain views, and muddier road conditions around Mindo and Baños.",
@@ -53,37 +55,92 @@
       "name": "Quito",
       "lat": -0.1807,
       "lng": -78.4678,
-      "notes": "High-altitude capital for colonial churches, TelefériQo views, museums, and the easiest jump-off point for both Otavalo day loops and Galápagos flights."
+      "notes": "High-altitude capital for colonial churches, TelefériQo views, museums, and the easiest jump-off point for both Otavalo day loops and Galápagos flights.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "March",
+        "April"
+      ]
     },
     {
       "name": "Otavalo",
       "lat": 0.2346,
       "lng": -78.2625,
-      "notes": "Imbabura market town known for Plaza de Ponchos textiles, nearby Peguche waterfall, and easy access to Cuicocha crater viewpoints."
+      "notes": "Imbabura market town known for Plaza de Ponchos textiles, nearby Peguche waterfall, and easy access to Cuicocha crater viewpoints.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "March"
+      ]
     },
     {
       "name": "Mindo",
       "lat": 0.0488,
       "lng": -78.775,
-      "notes": "Cloud-forest escape for butterfly gardens, hummingbirds, chocolate stops, river tubing, and waterfall hikes without going far from Quito."
+      "notes": "Cloud-forest escape for butterfly gardens, hummingbirds, chocolate stops, river tubing, and waterfall hikes without going far from Quito.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "March"
+      ]
     },
     {
       "name": "Baños",
       "lat": -1.3969,
       "lng": -78.4229,
-      "notes": "Adventure base below Tungurahua for Ruta de las Cascadas, Pailón del Diablo, hot springs, canyoning, and the famous Casa del Árbol swing."
+      "notes": "Adventure base below Tungurahua for Ruta de las Cascadas, Pailón del Diablo, hot springs, canyoning, and the famous Casa del Árbol swing.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "March"
+      ]
     },
     {
       "name": "Cuenca",
       "lat": -2.9001,
       "lng": -79.0059,
-      "notes": "UNESCO-listed Andean city of blue-domed cathedrals, riverside walks, Panama-hat workshops, and easy side trips to Ingapirca."
+      "notes": "UNESCO-listed Andean city of blue-domed cathedrals, riverside walks, Panama-hat workshops, and easy side trips to Ingapirca.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "March"
+      ]
     },
     {
       "name": "Galápagos Islands",
       "lat": -0.9538,
       "lng": -90.9656,
-      "notes": "Wildlife-heavy island circuit usually based from Puerto Ayora or San Cristóbal, with giant tortoises, lava scenery, snorkelling, and inter-island lanchas."
+      "notes": "Wildlife-heavy island circuit usually based from Puerto Ayora or San Cristóbal, with giant tortoises, lava scenery, snorkelling, and inter-island lanchas.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     }
   ],
   "itinerary": {
@@ -114,6 +171,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Stay around Centro Histórico, La Floresta, or La Mariscal, keep arrival day light because Quito sits above 2,800 m, and use Uber or inDrive after dark instead of flagging random taxis.",
+        "experiences": [
+          "History",
+          "Volcanoes"
+        ],
         "days": [
           {
             "theme": "Historic Center, Basilica & Jesuit Church",
@@ -259,6 +320,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Saturday is the strongest market day, but weekday visits are still worthwhile if you pair Plaza de Ponchos with Peguche or Cuicocha.",
+        "experiences": [
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Plaza de Ponchos & Peguche Falls",
@@ -333,6 +397,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Afternoon rain is common even in the better months, so do birding or waterfall loops early and keep a dry bag ready for tubing or tarabita rides.",
+        "experiences": [
+          "Wildlife & Safari",
+          "Waterfalls",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Butterflies, Chocolate & Waterfalls",
@@ -406,6 +475,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Baños for active days rather than luxury downtime; the town is compact, but waterfalls and adventure operators spread along the road toward Puyo.",
+        "experiences": [
+          "Waterfalls",
+          "Volcanoes",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Ruta de las Cascadas & Hot Springs",
@@ -513,6 +587,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Cuenca feels calmer than Quito, so it works well after Baños; stay near Parque Calderón or the Tomebamba river so churches, museums, and dining are all walkable.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Blue Domes, Museums & Riverside Walks",
@@ -616,6 +693,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Base in Puerto Ayora if you want the widest hotel and food choice, carry cash in USD for park and pier fees, and expect rougher water on fast local lanchas between islands.",
+        "experiences": [
+          "Wildlife & Safari",
+          "Islands",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Flight to Baltra, Park Fee & Tortuga Bay",

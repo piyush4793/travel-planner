@@ -23,11 +23,12 @@
     "family4": "₹4.1L–₹6.1L"
   },
   "experiences": [
-    "Hyper-saline floating at Lake Assal",
-    "Whale shark snorkeling in the Gulf of Tadjoura",
-    "Moucha Island coral reef boat days",
-    "Volcanic rift scenery around Ghoubbet and Ardoukoba",
-    "Historic quarter walks and seafood in Djibouti City"
+    "Deserts",
+    "Lakes",
+    "Diving & Snorkeling",
+    "Beaches",
+    "Wildlife & Safari",
+    "Hiking"
   ],
   "avoid": [
     "June to September is brutally hot for salt-flat and canyon days, so do not plan Lake Assal as a midday-only outing in peak summer.",
@@ -54,10 +55,13 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "The country's coastal capital is the easiest base for Place Menelik, Grande Pecherie, Hamoudi Mosque, hotel dining, Moucha Island departures, and onward logistics to every overland or marine excursion."
+      "notes": "The country's coastal capital is the easiest base for Place Menelik, Grande Pecherie, Hamoudi Mosque, hotel dining, Moucha Island departures, and onward logistics to every overland or marine excursion.",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Lake Assal",
@@ -67,10 +71,13 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Lake Assal is the signature geology day for white salt flats, buoyant swims, Ghoubbet viewpoints, Dimbiya Canyon, and Ardoukoba's black lava fields."
+      "notes": "Lake Assal is the signature geology day for white salt flats, buoyant swims, Ghoubbet viewpoints, Dimbiya Canyon, and Ardoukoba's black lava fields.",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Tadjoura",
@@ -80,10 +87,13 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Tadjoura brings the quieter side of Djibouti: whitewashed waterfront streets, Plage des Sables Blancs, boat access into the Gulf of Tadjoura, and 4x4 runs into Foret du Day."
+      "notes": "Tadjoura brings the quieter side of Djibouti: whitewashed waterfront streets, Plage des Sables Blancs, boat access into the Gulf of Tadjoura, and 4x4 runs into Foret du Day.",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -108,6 +118,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Keep one city day for the capital itself and one for the sea, because Moucha Island is the easiest way to add a true reef-and-boat day without changing countries.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Colonial-era streets, mosque quarter, fish market energy, and a low-stress first day in the capital",
@@ -194,6 +208,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat Lake Assal as a dedicated 4x4 day rather than a casual detour; the scenery is world-class, but the payoff depends on starting early and having transport that can handle the terrain.",
+        "experiences": [
+          "Lakes",
+          "Deserts"
+        ],
         "days": [
           {
             "theme": "Salt flats, Ghoubbet lookouts, canyon viewpoints, and Djibouti's most dramatic geological day",
@@ -240,6 +258,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Tadjoura is where Djibouti becomes either marine-adventure-heavy or mountain-and-forest-heavy, so keep a second night here if whale shark conditions or Day Forest weather look promising.",
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Old Tadjoura, Gulf views, and the seasonal whale shark boat day that makes winter the sweet spot",

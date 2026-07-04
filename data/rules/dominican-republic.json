@@ -24,12 +24,13 @@
     "family4": "₹5.4L–₹8.1L"
   },
   "experiences": [
-    "Zona Colonial History",
-    "All-Inclusive Beaches",
-    "Los Haitises Boat Days",
-    "Samaná Whale Watching",
-    "Jarabacoa Rafting",
-    "Saona Island"
+    "Beaches",
+    "Diving & Snorkeling",
+    "History",
+    "Mountains",
+    "Wildlife & Safari",
+    "Luxury & Resorts",
+    "Water Sports"
   ],
   "avoid": [
     "May to November is wetter and more humid, and August to October is the peak hurricane-risk window for Samaná boat tours, east-coast beach days, and mountain roads.",
@@ -53,37 +54,97 @@
       "name": "Santo Domingo",
       "lat": 18.4861,
       "lng": -69.9312,
-      "notes": "Historic-capital base for the Zona Colonial, early Spanish Caribbean landmarks, major museums, the Malecón, and the smoothest overland connections in the country."
+      "notes": "Historic-capital base for the Zona Colonial, early Spanish Caribbean landmarks, major museums, the Malecón, and the smoothest overland connections in the country.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Punta Cana",
       "lat": 18.5601,
       "lng": -68.3725,
-      "notes": "Resort-heavy east-coast base for Bávaro and Macao beaches, Ojos Indígenas, Scape Park, catamaran trips, and the easiest no-fuss beach finish."
+      "notes": "Resort-heavy east-coast base for Bávaro and Macao beaches, Ojos Indígenas, Scape Park, catamaran trips, and the easiest no-fuss beach finish.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Samaná",
       "lat": 19.2056,
       "lng": -69.3369,
-      "notes": "Peninsula gateway for Los Haitises mangroves, seasonal humpback whale watching, Cayo Levantado, and lush day trips to El Limón and Playa Rincón."
+      "notes": "Peninsula gateway for Los Haitises mangroves, seasonal humpback whale watching, Cayo Levantado, and lush day trips to El Limón and Playa Rincón.",
+      "bestMonths": [
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Puerto Plata",
       "lat": 19.7902,
       "lng": -70.6871,
-      "notes": "North-coast city for the Teleférico, Fortaleza San Felipe, colorful centro histórico lanes, Playa Dorada, and Damajagua waterfall excursions."
+      "notes": "North-coast city for the Teleférico, Fortaleza San Felipe, colorful centro histórico lanes, Playa Dorada, and Damajagua waterfall excursions.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Jarabacoa",
       "lat": 19.1167,
       "lng": -70.6359,
-      "notes": "Cooler mountain stop for river rafting, Salto de Jimenoa, pine-forest lodges, and a break from the resort coast in the Cordillera Central."
+      "notes": "Cooler mountain stop for river rafting, Salto de Jimenoa, pine-forest lodges, and a break from the resort coast in the Cordillera Central.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "La Romana",
       "lat": 18.4273,
       "lng": -68.9728,
-      "notes": "South-east base for Altos de Chavón, Bayahibe day boats, Saona Island excursions, and easy access to caves and beaches beyond the big resorts."
+      "notes": "South-east base for Altos de Chavón, Bayahibe day boats, Saona Island excursions, and easy access to caves and beaches beyond the big resorts.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     }
   ],
   "itinerary": {
@@ -115,6 +176,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay inside or near Zona Colonial if you want the easiest walking access to museums and evening dining, but use app taxis for Faro a Colón and outer-city stops.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Zona Colonial Core & First Spanish-Caribbean Landmarks",
@@ -232,6 +296,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Jarabacoa works best as a one- or two-night weather break; pack light rain gear and closed shoes because waterfall trails stay slippery even in dry season.",
+        "experiences": [
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Salto de Jimenoa & Yaque del Norte Adventure",
@@ -313,6 +380,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Base in central Puerto Plata or Playa Dorada if you want easier Teleférico starts and less nightly traffic than all the way out in Sosúa or Cabarete.",
+        "experiences": [
+          "Beaches",
+          "Water Sports"
+        ],
         "days": [
           {
             "theme": "Teleférico, Fort & Historic Center",
@@ -394,6 +465,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "January to March is peak whale-watching season; outside that window, keep Samaná for Los Haitises, El Limón, Cayo Levantado, and beach drives across the peninsula.",
+        "experiences": [
+          "Wildlife & Safari",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Los Haitises Mangroves & Bay Views",
@@ -512,6 +587,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay around Bávaro or El Cortecito for cheaper taxis, more independent dining, and easier access to Macao, Scape Park, and shared excursions than deep-resort compounds.",
+        "experiences": [
+          "Beaches",
+          "Luxury & Resorts",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Bávaro Beach & Ojos Indígenas",
@@ -629,6 +709,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Use La Romana mainly for Altos de Chavón and Bayahibe boat access; if your focus is only Saona, sleeping closer to Bayahibe reduces early-morning transfer time.",
+        "experiences": [
+          "Beaches",
+          "Luxury & Resorts",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Altos de Chavón & Town Sights",

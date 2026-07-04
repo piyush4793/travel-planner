@@ -24,11 +24,14 @@
     "family4": "₹2L–₹3.5L"
   },
   "experiences": [
-    "Pyramids of Giza",
-    "Nile Cruise",
-    "Luxor Temples",
-    "Red Sea Diving",
-    "Cairo Museum"
+    "Ancient Ruins",
+    "History",
+    "Deserts",
+    "Diving & Snorkeling",
+    "Beaches",
+    "Cruises & Boat Trips",
+    "Temples & Religious Sites",
+    "UNESCO Sites"
   ],
   "avoid": [
     "Extreme summer heat (40°C+)",
@@ -49,37 +52,98 @@
       "name": "Cairo",
       "lat": 30.0444,
       "lng": 31.2357,
-      "notes": "Pyramids of Giza, Sphinx, Egyptian Museum and Khan el-Khalili bazaar"
+      "notes": "Pyramids of Giza, Sphinx, Egyptian Museum and Khan el-Khalili bazaar",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Luxor",
       "lat": 25.6872,
       "lng": 32.6396,
-      "notes": "Valley of the Kings, Karnak temple complex and hot air balloon sunrise"
+      "notes": "Valley of the Kings, Karnak temple complex and hot air balloon sunrise",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Aswan",
       "lat": 24.0889,
       "lng": 32.8998,
-      "notes": "Philae temple, Nubian villages and Abu Simbel day trip by flight"
+      "notes": "Philae temple, Nubian villages and Abu Simbel day trip by flight",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Alexandria",
       "lat": 31.2001,
       "lng": 29.9187,
-      "notes": "Bibliotheca Alexandrina, Pompey's Pillar and Mediterranean seafood"
+      "notes": "Bibliotheca Alexandrina, Pompey's Pillar and Mediterranean seafood",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Hurghada",
       "lat": 27.2579,
       "lng": 33.8116,
-      "notes": "Red Sea diving and snorkeling with dolphins and coral reefs"
+      "notes": "Red Sea diving and snorkeling with dolphins and coral reefs",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Sharm el-Sheikh",
       "lat": 27.9158,
       "lng": 34.33,
-      "notes": "World-class coral reefs at Ras Mohammed and Tiran island"
+      "notes": "World-class coral reefs at Ras Mohammed and Tiran island",
+      "experiences": [
+        "Diving & Snorkeling",
+        "Beaches"
+      ],
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -109,6 +173,11 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Ancient Ruins",
+          "History",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Ancient wonders of Giza and the new Grand Egyptian Museum",
@@ -233,6 +302,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Greco-Roman Alexandria on the Mediterranean",
@@ -281,6 +354,12 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Ancient Ruins",
+          "Temples & Religious Sites",
+          "Cruises & Boat Trips",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "East Bank temples and a Nile sunset",
@@ -369,6 +448,11 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Ancient Ruins",
+          "Cruises & Boat Trips",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Philae Temple, Nubian color and a softer Nile mood",
@@ -497,6 +581,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Diving & Snorkeling",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Red Sea reefs, snorkeling and marina evenings",

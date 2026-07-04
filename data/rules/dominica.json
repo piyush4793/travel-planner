@@ -24,12 +24,12 @@
     "family4": "₹5.7L–₹8.15L"
   },
   "experiences": [
-    "Rainforest Hikes",
+    "Hiking",
     "Waterfalls",
-    "Whale Watching",
-    "Hot Springs",
-    "Black-Sand Beaches",
-    "Creole Food"
+    "National Parks",
+    "Diving & Snorkeling",
+    "Hot Springs & Wellness",
+    "Volcanoes"
   ],
   "avoid": [
     "July to November is wetter and overlaps the core Atlantic hurricane season, so Boiling Lake, Titou Gorge, whale-watching departures, and northeast-coast drives are more likely to be disrupted.",
@@ -53,25 +53,65 @@
       "name": "Roseau",
       "lat": 15.3092,
       "lng": -61.3794,
-      "notes": "The capital is the easiest first base for ferry arrivals, whale-watching departures, Roseau market energy, and day trips into the national-park interior."
+      "notes": "The capital is the easiest first base for ferry arrivals, whale-watching departures, Roseau market energy, and day trips into the national-park interior.",
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Morne Trois Pitons",
       "lat": 15.3367,
       "lng": -61.3326,
-      "notes": "Use the Laudat–Trafalgar–Wotten Waven highlands as your rainforest lodge base for Boiling Lake, Titou Gorge, Emerald Pool, hot springs, and Dominica's signature interior hikes."
+      "notes": "Use the Laudat–Trafalgar–Wotten Waven highlands as your rainforest lodge base for Boiling Lake, Titou Gorge, Emerald Pool, hot springs, and Dominica's signature interior hikes.",
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Portsmouth",
       "lat": 15.5833,
       "lng": -61.4667,
-      "notes": "Dominica's north-west hub works well for Cabrits National Park, Fort Shirley, Purple Turtle Beach, Syndicate, and easier access to the island's second town services."
+      "notes": "Dominica's north-west hub works well for Cabrits National Park, Fort Shirley, Purple Turtle Beach, Syndicate, and easier access to the island's second town services.",
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Calibishie",
       "lat": 15.5942,
       "lng": -61.3495,
-      "notes": "The quiet northeast coast is the scenic finish for Red Rocks, Batibou-style beaches, village guesthouses, and short drives to Chaudiere Pool and Pointe Baptiste."
+      "notes": "The quiet northeast coast is the scenic finish for Red Rocks, Batibou-style beaches, village guesthouses, and short drives to Chaudiere Pool and Pointe Baptiste.",
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     }
   ],
   "itinerary": {
@@ -97,6 +137,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Roseau works best at the start or end of the trip because shared minibuses, ferry logistics, dive shops, and whale-watch departures are easiest to coordinate here.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Hot Springs & Wellness"
+        ],
         "days": [
           {
             "theme": "Roseau Core, Botanic Gardens & Bayfront",
@@ -216,6 +260,12 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Laudat and Trafalgar are the most practical sleep bases if Boiling Lake is the priority; buy the day pass for multi-stop waterfall days or the week pass if you will split hikes across several days.",
+        "experiences": [
+          "National Parks",
+          "Hiking",
+          "Waterfalls",
+          "Hot Springs & Wellness"
+        ],
         "days": [
           {
             "theme": "Trafalgar Falls, Titou Gorge & Wotten Waven Soak",
@@ -339,6 +389,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Portsmouth is the right overnight stop if you want Cabrits, Purple Turtle Beach, and a more relaxed north-west base before crossing to the island's rougher northeast corner.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Cabrits National Park, Fort Shirley & Purple Turtle Beach",
@@ -422,6 +476,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Calibishie is best as a decompressing final stop: the scenery is dramatic, but services are thinner than Roseau or Portsmouth, so book dinner plans and transport ahead.",
+        "experiences": [
+          "Hiking",
+          "Waterfalls"
+        ],
         "days": [
           {
             "theme": "Red Rocks, Pointe Baptiste & Village Coast",
