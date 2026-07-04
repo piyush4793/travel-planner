@@ -282,12 +282,12 @@ export default function App() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => { setSettingsOpen(true); setMenuOpen(false); }}
-              className="flex items-center justify-center w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15 focus-ring"
+              className="flex items-center gap-2 min-h-[36px] pl-1 pr-3 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15 focus-ring"
               aria-label="Settings"
             >
-              ⚙️
+              <span className="flex items-center justify-center w-8 h-8 rounded-full text-sm" aria-hidden="true">⚙️</span>
+              <span className="text-xs font-medium text-white/85">Settings</span>
             </button>
-            <span className="text-xs font-medium text-white/85">Settings</span>
             <DevFlagPanel />
           </div>
         </div>
