@@ -26,11 +26,12 @@
     "family4": "₹1.75L–₹2.7L"
   },
   "experiences": [
-    "Old Dhaka biryani and riverfront heritage",
-    "Cox's Bazar beach and Marine Drive",
-    "Sundarbans mangrove boat safari",
-    "Sylhet tea gardens and Lawachara rainforest",
-    "Somapura Mahavihara at Paharpur"
+    "History",
+    "Wildlife & Safari",
+    "Beaches",
+    "National Parks",
+    "Food",
+    "Ancient Ruins"
   ],
   "avoid": [
     "April–June is hot and humid across Dhaka, Rajshahi and Cox's Bazar, with dusty afternoons inland.",
@@ -52,28 +53,32 @@
       "lat": 23.8103,
       "lng": 90.4125,
       "bestMonths": [
-        "October",
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Old Dhaka heritage, Mughal forts, river-port energy and the country's best classic biryani stops"
+      "notes": "Old Dhaka heritage, Mughal forts, river-port energy and the country's best classic biryani stops",
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Cox's Bazar",
       "lat": 21.4272,
       "lng": 92.0058,
       "bestMonths": [
-        "October",
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Long sandy beach, Marine Drive viewpoints, seafood restaurants and easy side trips to Himchari and Inani"
+      "notes": "Long sandy beach, Marine Drive viewpoints, seafood restaurants and easy side trips to Himchari and Inani",
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Sundarbans",
@@ -83,10 +88,13 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Khulna-Mongla gateway for mangrove creeks, wildlife watchtowers, Karamjal boardwalks and riverboat nights"
+      "notes": "Khulna-Mongla gateway for mangrove creeks, wildlife watchtowers, Karamjal boardwalks and riverboat nights",
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Sylhet",
@@ -95,26 +103,30 @@
       "bestMonths": [
         "October",
         "November",
-        "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Tea estates, shrine visits, Ratargul wetlands and the Lawachara rainforest around Sreemangal"
+      "notes": "Tea estates, shrine visits, Ratargul wetlands and the Lawachara rainforest around Sreemangal",
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Rajshahi (Paharpur)",
       "lat": 24.3745,
       "lng": 88.6042,
       "bestMonths": [
-        "October",
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Padma-side Rajshahi base for silk shops, Varendra heritage and the UNESCO Buddhist ruins at Paharpur"
+      "notes": "Padma-side Rajshahi base for silk shops, Varendra heritage and the UNESCO Buddhist ruins at Paharpur",
+      "worstMonths": [
+        "April",
+        "May"
+      ]
     }
   ],
   "itinerary": {
@@ -142,7 +154,8 @@
         "maxDays": 3,
         "note": "Two days work well for Old Dhaka's headline monuments, a food-heavy riverfront circuit and one modern-city museum stop before you fly onward.",
         "experiences": [
-          "Old Dhaka biryani and riverfront heritage"
+          "History",
+          "Food"
         ],
         "days": [
           {
@@ -236,7 +249,7 @@
         "maxDays": 3,
         "note": "Two days cover the main beach strip plus one Marine Drive outing to Himchari and Inani without turning the stay into only transit.",
         "experiences": [
-          "Cox's Bazar beach and Marine Drive"
+          "Beaches"
         ],
         "days": [
           {
@@ -325,7 +338,8 @@
         "maxDays": 3,
         "note": "A two-day Khulna-Mongla safari is the shortest worthwhile version because permit formalities and tidal boat timings consume most of day one.",
         "experiences": [
-          "Sundarbans mangrove boat safari"
+          "Wildlife & Safari",
+          "National Parks"
         ],
         "days": [
           {
@@ -415,7 +429,7 @@
         "maxDays": 3,
         "note": "Two days let you split shrine-and-city time from a proper Sreemangal or Lawachara excursion rather than cramming both into one road-heavy day.",
         "experiences": [
-          "Sylhet tea gardens and Lawachara rainforest"
+          "National Parks"
         ],
         "days": [
           {
@@ -504,7 +518,8 @@
         "maxDays": 3,
         "note": "Two days are ideal because Paharpur is a long archaeological side trip from Rajshahi and pairs best with one slower city day on the Padma riverfront.",
         "experiences": [
-          "Somapura Mahavihara at Paharpur"
+          "History",
+          "Ancient Ruins"
         ],
         "days": [
           {

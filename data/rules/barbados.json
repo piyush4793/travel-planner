@@ -27,11 +27,11 @@
   },
   "experiences": [
     "Beaches",
-    "Surf",
-    "Rum Heritage",
-    "Seafood",
-    "Colonial History",
-    "Scenic Drives"
+    "Surfing",
+    "Diving & Snorkeling",
+    "Food",
+    "History",
+    "Nightlife"
   ],
   "avoid": [
     "June–November is wetter and overlaps the Atlantic storm season, so cave tours, catamaran trips, and east-coast viewpoints are more likely to be affected by passing systems.",
@@ -54,25 +54,65 @@
       "name": "Bridgetown",
       "lat": 13.0975,
       "lng": -59.6167,
-      "notes": "Historic Bridgetown is the practical arrival base for UNESCO core sights, Carlisle Bay beaches, rum heritage, and easy island-wide bus connections."
+      "notes": "Historic Bridgetown is the practical arrival base for UNESCO core sights, Carlisle Bay beaches, rum heritage, and easy island-wide bus connections.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Bathsheba",
       "lat": 13.2134,
       "lng": -59.5243,
-      "notes": "Barbados' dramatic east-coast stop for Soup Bowl surf, Bathsheba rock formations, breezy viewpoints, and a slower village feel."
+      "notes": "Barbados' dramatic east-coast stop for Soup Bowl surf, Bathsheba rock formations, breezy viewpoints, and a slower village feel.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Speightstown",
       "lat": 13.2506,
       "lng": -59.6433,
-      "notes": "A calmer west-coast heritage town with waterfront walks, local rum history nearby, and easier beach time than the Atlantic side."
+      "notes": "A calmer west-coast heritage town with waterfront walks, local rum history nearby, and easier beach time than the Atlantic side.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Oistins",
       "lat": 13.0671,
       "lng": -59.5615,
-      "notes": "The south-coast favorite for Miami Beach, the famous fish fry, guesthouse-heavy stays, and quick bus access to the airport and Bridgetown."
+      "notes": "The south-coast favorite for Miami Beach, the famous fish fry, guesthouse-heavy stays, and quick bus access to the airport and Bridgetown.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     }
   ],
   "itinerary": {
@@ -97,8 +137,9 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Colonial History",
-          "Rum Heritage"
+          "History",
+          "Food",
+          "Nightlife"
         ],
         "days": [
           {
@@ -184,8 +225,8 @@
         "recDays": 1,
         "maxDays": 2,
         "experiences": [
-          "Surf",
-          "Scenic Drives"
+          "Surfing",
+          "Beaches"
         ],
         "days": [
           {
@@ -233,7 +274,7 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Colonial History",
+          "History",
           "Beaches"
         ],
         "days": [
@@ -319,8 +360,9 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Seafood",
-          "Beaches"
+          "Food",
+          "Beaches",
+          "Nightlife"
         ],
         "days": [
           {

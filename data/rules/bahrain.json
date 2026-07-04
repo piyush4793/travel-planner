@@ -23,13 +23,12 @@
     "family4": "₹2.1L–₹3L"
   },
   "experiences": [
-    "Qal'at al-Bahrain",
-    "Bahrain National Museum",
-    "Bab Al Bahrain and Manama Souq",
-    "Muharraq Pearling Path",
-    "Al Fateh Grand Mosque",
-    "Tree of Life",
-    "King Fahd Causeway road add-on"
+    "History",
+    "Architecture",
+    "Museums",
+    "Ancient Ruins",
+    "Markets & Shopping",
+    "Temples & Religious Sites"
   ],
   "avoid": [
     "Midday outdoor sightseeing from late spring into early autumn",
@@ -54,11 +53,14 @@
       "bestMonths": [
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Museum district, Bab Al Bahrain gateway, souq lanes, mosque visits and the easiest first base for taxis and rideshare."
+      "notes": "Museum district, Bab Al Bahrain gateway, souq lanes, mosque visits and the easiest first base for taxis and rideshare.",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Muharraq",
@@ -67,11 +69,14 @@
       "bestMonths": [
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Pearling Path heritage houses, Arad Fort, airport-side convenience and a more traditional old-town feel than central Manama."
+      "notes": "Pearling Path heritage houses, Arad Fort, airport-side convenience and a more traditional old-town feel than central Manama.",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Riffa",
@@ -80,11 +85,14 @@
       "bestMonths": [
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "South-island base for Riffa Fort, Tree of Life, Bahrain International Circuit area and the road toward King Fahd Causeway."
+      "notes": "South-island base for Riffa Fort, Tree of Life, Bahrain International Circuit area and the road toward King Fahd Causeway.",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -110,10 +118,10 @@
         "maxDays": 2,
         "note": "Use Manama as the primary base: it keeps museum, souq and mosque logistics simple before you branch to Muharraq and southern Bahrain.",
         "experiences": [
-          "Qal'at al-Bahrain",
-          "Bahrain National Museum",
-          "Bab Al Bahrain and Manama Souq",
-          "Al Fateh Grand Mosque"
+          "Museums",
+          "Architecture",
+          "Markets & Shopping",
+          "Ancient Ruins"
         ],
         "days": [
           {
@@ -205,7 +213,8 @@
         "maxDays": 1,
         "note": "Treat Muharraq as a heritage-heavy day around the Pearling Path; stay here only if you want airport-side convenience or Amwaj beach access.",
         "experiences": [
-          "Muharraq Pearling Path"
+          "History",
+          "Architecture"
         ],
         "days": [
           {
@@ -253,7 +262,8 @@
         "maxDays": 1,
         "note": "Use a taxi or rental car in Riffa: the fort, Tree of Life and south-island roads are far easier by road than by public transport.",
         "experiences": [
-          "Tree of Life"
+          "History",
+          "Architecture"
         ],
         "days": [
           {

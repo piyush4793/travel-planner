@@ -22,11 +22,12 @@
     "family4": "₹2L–₹3.5L"
   },
   "experiences": [
-    "Minsk Architecture",
-    "Mir Castle",
-    "Forests",
-    "Soviet Heritage",
-    "Nesvizh Palace"
+    "History",
+    "Architecture",
+    "Museums",
+    "National Parks",
+    "Wildlife & Safari",
+    "Markets & Shopping"
   ],
   "avoid": [
     "Check visa requirements — may need special permissions"
@@ -46,25 +47,59 @@
       "name": "Minsk",
       "lat": 53.9045,
       "lng": 27.5615,
-      "notes": "Soviet-era grand boulevards, Stalin architecture and vibrant nightlife"
+      "notes": "Soviet-era grand boulevards, Stalin architecture and vibrant nightlife",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Mir",
       "lat": 53.45,
       "lng": 26.4667,
-      "notes": "Fairy-tale Mir Castle Complex, UNESCO World Heritage Site"
+      "notes": "Fairy-tale Mir Castle Complex, UNESCO World Heritage Site",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Nesvizh",
       "lat": 53.2217,
       "lng": 26.6931,
-      "notes": "Radziwill palace and castle complex surrounded by ornamental parks"
+      "notes": "Radziwill palace and castle complex surrounded by ornamental parks",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Brest",
       "lat": 52.0979,
       "lng": 23.6844,
-      "notes": "Brest Fortress WWII memorial and charming pedestrian Sovetskaya street"
+      "notes": "Brest Fortress WWII memorial and charming pedestrian Sovetskaya street",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -92,8 +127,9 @@
         "maxDays": 4,
         "note": "Three days lets you cover Minsk's Stalinist avenues, museums, and cultural stops before using the city as the practical gateway for the Mir-Nesvizh castle belt.",
         "experiences": [
-          "Minsk Architecture",
-          "Soviet Heritage"
+          "Architecture",
+          "History",
+          "Museums"
         ],
         "days": [
           {
@@ -228,7 +264,8 @@
         "maxDays": 1,
         "note": "Mir works best as a focused castle day with an optional overnight stay inside the UNESCO complex if you want the village at its quietest.",
         "experiences": [
-          "Mir Castle"
+          "History",
+          "Architecture"
         ],
         "days": [
           {
@@ -281,7 +318,8 @@
         "maxDays": 1,
         "note": "One day covers the Radziwiłł residence, the historic center, and the lake-ringed parklands without making Nesvizh feel like a rushed photo stop.",
         "experiences": [
-          "Nesvizh Palace"
+          "History",
+          "Architecture"
         ],
         "days": [
           {
@@ -334,8 +372,9 @@
         "maxDays": 3,
         "note": "Two days is the sweet spot for Brest: one for the fortress and Soviet memorial core, and one for Belovezhskaya Pushcha plus the city's evening lamplighter ritual.",
         "experiences": [
-          "Forests",
-          "Soviet Heritage"
+          "History",
+          "National Parks",
+          "Wildlife & Safari"
         ],
         "days": [
           {

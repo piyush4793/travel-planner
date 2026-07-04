@@ -22,12 +22,12 @@
     "family4": "₹4.2L–₹6.6L"
   },
   "experiences": [
-    "Grand-Place",
-    "Bruges Canals",
-    "Ghent Castles & Belfries",
-    "Antwerp Fashion & Diamonds",
-    "Belgian Beer & Chocolate",
-    "Dinant Meuse Valley"
+    "History",
+    "Architecture",
+    "Food",
+    "Museums",
+    "Art & Design",
+    "Markets & Shopping"
   ],
   "avoid": [
     "Christmas-market weekends and major summer festival weekends — beautiful but pricier and much more crowded"
@@ -48,37 +48,88 @@
       "name": "Brussels",
       "lat": 50.8503,
       "lng": 4.3517,
-      "notes": "Grand-Place, Atomium, Art Nouveau facades, comic murals, waffles and beer bars"
+      "notes": "Grand-Place, Atomium, Art Nouveau facades, comic murals, waffles and beer bars",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "December"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Bruges",
       "lat": 51.2093,
       "lng": 3.2247,
-      "notes": "Belfry climbs, canal views, chocolate museums and beautifully preserved medieval lanes"
+      "notes": "Belfry climbs, canal views, chocolate museums and beautifully preserved medieval lanes",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "December"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Ghent",
       "lat": 51.0543,
       "lng": 3.7174,
-      "notes": "Gravensteen castle, the Ghent Altarpiece, lively Graslei quays and student energy"
+      "notes": "Gravensteen castle, the Ghent Altarpiece, lively Graslei quays and student energy",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Antwerp",
       "lat": 51.2213,
       "lng": 4.4051,
-      "notes": "MAS museum, Cathedral of Our Lady, Antwerp Central and a strong fashion-food scene"
+      "notes": "MAS museum, Cathedral of Our Lady, Antwerp Central and a strong fashion-food scene",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Leuven",
       "lat": 50.8798,
       "lng": 4.7005,
-      "notes": "Gothic town hall, university heritage, beguinage lanes and relaxed brewery culture"
+      "notes": "Gothic town hall, university heritage, beguinage lanes and relaxed brewery culture",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Dinant",
       "lat": 50.2606,
       "lng": 4.9114,
-      "notes": "Dramatic citadel above the Meuse, saxophone heritage, river cruises and day-trip scenery"
+      "notes": "Dramatic citadel above the Meuse, saxophone heritage, river cruises and day-trip scenery",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -109,8 +160,9 @@
         "maxDays": 3,
         "note": "Use Brussels as your arrival and departure base; add a third day if you want the Magritte Museum, European Quarter museums, or a slower café-and-comics day.",
         "experiences": [
-          "Grand-Place",
-          "Belgian Beer & Chocolate"
+          "Architecture",
+          "Food",
+          "Museums"
         ],
         "days": [
           {
@@ -192,8 +244,9 @@
         "maxDays": 2,
         "note": "Bruges is compact enough for a full day, but an overnight stay gives you quieter early-morning canals and time for another museum.",
         "experiences": [
-          "Bruges Canals",
-          "Belgian Beer & Chocolate"
+          "Architecture",
+          "History",
+          "Food"
         ],
         "days": [
           {
@@ -243,7 +296,8 @@
         "maxDays": 2,
         "note": "Ghent works brilliantly as an overnight between Bruges and Antwerp; add a second day if you want museums beyond the castle and altarpiece.",
         "experiences": [
-          "Ghent Castles & Belfries"
+          "Architecture",
+          "History"
         ],
         "days": [
           {
@@ -290,7 +344,9 @@
         "maxDays": 2,
         "note": "Stay a second day if you want both museums and fashion shopping without rushing Antwerp Central, the old town and the riverside.",
         "experiences": [
-          "Antwerp Fashion & Diamonds"
+          "Art & Design",
+          "Architecture",
+          "Markets & Shopping"
         ],
         "days": [
           {
@@ -340,7 +396,9 @@
         "maxDays": 1,
         "note": "Leuven is best as a compact overnight or long day trip, especially if you enjoy university towns, beguinages and easy food-and-beer hopping.",
         "experiences": [
-          "Belgian Beer & Chocolate"
+          "Food",
+          "History",
+          "Architecture"
         ],
         "days": [
           {
@@ -386,7 +444,8 @@
         "maxDays": 2,
         "note": "Dinant is easy as a final Wallonia stop; add a second day for river kayaking, abbey detours or the nearby caves and viewpoints.",
         "experiences": [
-          "Dinant Meuse Valley"
+          "Architecture",
+          "History"
         ],
         "days": [
           {
