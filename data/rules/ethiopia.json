@@ -24,11 +24,13 @@
     "family4": "₹2.85L–₹4.4L"
   },
   "experiences": [
-    "Rock-hewn churches and living Orthodox pilgrim sites",
-    "Imperial castles and painted church ceilings on the Historic Route",
-    "Ancient stelae, tombs, and Axumite archaeology",
-    "High-altitude trekking with gelada monkeys in the Simien Mountains",
-    "Coffee culture, museums, and food in Addis Ababa"
+    "History",
+    "Temples & Religious Sites",
+    "Mountains",
+    "Hiking",
+    "UNESCO Sites",
+    "Ancient Ruins",
+    "Wildlife & Safari"
   ],
   "avoid": [
     "June to September highland rains make road journeys slower and many trails muddier.",
@@ -54,11 +56,13 @@
         "October",
         "November",
         "December",
-        "January",
-        "February",
-        "March"
+        "January"
       ],
-      "notes": "National Museum treasures, Holy Trinity Cathedral, ethnographic collections, coffee stops, and the transport hub for the whole northern circuit"
+      "notes": "National Museum treasures, Holy Trinity Cathedral, ethnographic collections, coffee stops, and the transport hub for the whole northern circuit",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Lalibela",
@@ -68,11 +72,13 @@
         "October",
         "November",
         "December",
-        "January",
-        "February",
-        "March"
+        "January"
       ],
-      "notes": "UNESCO-listed rock-hewn churches, active pilgrimage atmosphere, local guides, and sunset viewpoints above the monastic valley"
+      "notes": "UNESCO-listed rock-hewn churches, active pilgrimage atmosphere, local guides, and sunset viewpoints above the monastic valley",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Gondar",
@@ -82,11 +88,13 @@
         "October",
         "November",
         "December",
-        "January",
-        "February",
-        "March"
+        "January"
       ],
-      "notes": "Fasil Ghebbi castles, Debre Berhan Selassie, Timket history, and an easy staging point before Debark and the Simiens"
+      "notes": "Fasil Ghebbi castles, Debre Berhan Selassie, Timket history, and an easy staging point before Debark and the Simiens",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Axum",
@@ -96,11 +104,13 @@
         "October",
         "November",
         "December",
-        "January",
-        "February",
-        "March"
+        "January"
       ],
-      "notes": "Stelae, royal tombs, Mary of Zion traditions, and one of the oldest historic capitals in sub-Saharan Africa"
+      "notes": "Stelae, royal tombs, Mary of Zion traditions, and one of the oldest historic capitals in sub-Saharan Africa",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Simien Mountains",
@@ -110,11 +120,13 @@
         "October",
         "November",
         "December",
-        "January",
-        "February",
-        "March"
+        "January"
       ],
-      "notes": "Debark gateway logistics, gelada sightings, escarpment hikes, and Ethiopia's most iconic highland trekking landscapes"
+      "notes": "Debark gateway logistics, gelada sightings, escarpment hikes, and Ethiopia's most iconic highland trekking landscapes",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -141,6 +153,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "National treasures, cathedral history, and an easy first day around the capital",
@@ -221,6 +236,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Temples & Religious Sites",
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "The northwestern church cluster with a local guide and enough time to absorb the carved passages",
@@ -301,6 +321,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Royal enclosure, church art, and one of Ethiopia's best food stops",
@@ -349,6 +373,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Debark permits, escarpment views, and a first trek with gelada troops",
@@ -429,6 +458,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Ancient Ruins",
+          "History",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Stelae, royal history, and Ethiopia's most famous church traditions in one compact day",

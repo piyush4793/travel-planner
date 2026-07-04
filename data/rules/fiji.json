@@ -26,12 +26,12 @@
     "family4": "₹4.4L–₹6.8L"
   },
   "experiences": [
-    "Island Hopping",
-    "Snorkeling",
-    "Diving",
     "Beaches",
-    "Fijian Culture",
-    "Reef Resorts"
+    "Islands",
+    "Diving & Snorkeling",
+    "Surfing",
+    "Luxury & Resorts",
+    "Water Sports"
   ],
   "avoid": [
     "November–April is wetter, more humid, and overlaps the South Pacific cyclone season, so ferry schedules and sea conditions are less reliable.",
@@ -55,31 +55,81 @@
       "name": "Suva",
       "lat": -18.1416,
       "lng": 178.4419,
-      "notes": "Fiji's capital is the practical culture-and-rainforest finale for the itinerary, with the Fiji Museum, Colo-i-Suva, government-era architecture, and easy Fiji Link flights back to Nadi."
+      "notes": "Fiji's capital is the practical culture-and-rainforest finale for the itinerary, with the Fiji Museum, Colo-i-Suva, government-era architecture, and easy Fiji Link flights back to Nadi.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Nadi",
       "lat": -17.7765,
       "lng": 177.4358,
-      "notes": "Nadi is the international arrival hub for temple visits, Sabeto attractions, Port Denarau departures, and a simple first or last night on Viti Levu."
+      "notes": "Nadi is the international arrival hub for temple visits, Sabeto attractions, Port Denarau departures, and a simple first or last night on Viti Levu.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Mamanuca Islands",
       "lat": -17.6743,
       "lng": 177.1081,
-      "notes": "The Mamanucas are Fiji's easiest postcard-island stay from Port Denarau, with clear lagoons, resort reefs, and day cruises to sandbars and surf breaks."
+      "notes": "The Mamanucas are Fiji's easiest postcard-island stay from Port Denarau, with clear lagoons, resort reefs, and day cruises to sandbars and surf breaks.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Yasawa Islands",
       "lat": -17.1229,
       "lng": 177.1558,
-      "notes": "The Yasawas deliver Fiji's slower island-hopping rhythm, with long beach stays, manta and shark snorkels, and the famous Sawa-i-Lau limestone caves."
+      "notes": "The Yasawas deliver Fiji's slower island-hopping rhythm, with long beach stays, manta and shark snorkels, and the famous Sawa-i-Lau limestone caves.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Coral Coast",
       "lat": -18.1678,
       "lng": 177.5099,
-      "notes": "The Coral Coast is the easiest land-based reef break between Nadi and Suva, mixing Sigatoka sights, village culture, and full-service beachfront resorts."
+      "notes": "The Coral Coast is the easiest land-based reef break between Nadi and Suva, mixing Sigatoka sights, village culture, and full-service beachfront resorts.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     }
   ],
   "itinerary": {
@@ -107,6 +157,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Use Nadi as the soft-landing base for Sabeto, temple stops, and Port Denarau logistics before you head onto the islands.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Temple Colors, Sabeto Stops and a Gentle West-Coast Arrival",
@@ -159,6 +212,13 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "This is the easiest lagoon-and-resort block from Port Denarau, so it works best as one island stay with one full snorkel or sailing day.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling",
+          "Surfing",
+          "Luxury & Resorts"
+        ],
         "days": [
           {
             "theme": "Port Denarau Departure, Resort Reef Time and a Lagoon Sunset",
@@ -244,6 +304,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Yasawa time pays off only if you slow down a little, so keep one cave-or-manta day and one reef-or-village day rather than trying to island-hop too aggressively.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Yasawa Flyer Transfer, Blue Water Check-In and an Easy First Snorkel",
@@ -326,6 +391,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Use Coral Coast as the land-based reset after the islands: one nature-and-culture day and one slower reef-or-resort day is the sweet spot.",
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling",
+          "Luxury & Resorts"
+        ],
         "days": [
           {
             "theme": "Sigatoka Heritage, Sand Dunes and a Reefside Evening",

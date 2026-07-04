@@ -23,12 +23,14 @@
     "family4": "₹6L–₹9L"
   },
   "experiences": [
-    "Midnight Sun",
     "Northern Lights",
-    "Sauna Culture",
-    "Lapland Igloos",
     "Skiing",
-    "Design Districts"
+    "History",
+    "Architecture",
+    "Lakes",
+    "Hiking",
+    "National Parks",
+    "Art & Design"
   ],
   "avoid": [
     "October–November — dark shoulder season with short daylight and less reliable snow in Lapland",
@@ -50,19 +52,43 @@
       "name": "Helsinki",
       "lat": 60.1699,
       "lng": 24.9384,
-      "notes": "Harbourfront capital with Design District shopping, Suomenlinna and classic Finnish sauna culture"
+      "notes": "Harbourfront capital with Design District shopping, Suomenlinna and classic Finnish sauna culture",
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Turku",
       "lat": 60.4518,
       "lng": 22.2666,
-      "notes": "Finland's former capital with Turku Castle, cathedral heritage and relaxed Aura River dining"
+      "notes": "Finland's former capital with Turku Castle, cathedral heritage and relaxed Aura River dining",
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Tampere",
       "lat": 61.4978,
       "lng": 23.761,
-      "notes": "Compact lakeside city known for the Moomin Museum, public saunas and red-brick factory heritage"
+      "notes": "Compact lakeside city known for the Moomin Museum, public saunas and red-brick factory heritage",
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Rovaniemi",
@@ -74,7 +100,10 @@
         "February",
         "March"
       ],
-      "notes": "Santa Claus Village gateway with Arktikum, husky safaris and some of Finland's easiest aurora stays"
+      "notes": "Santa Claus Village gateway with Arktikum, husky safaris and some of Finland's easiest aurora stays",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Levi",
@@ -86,7 +115,10 @@
         "February",
         "March"
       ],
-      "notes": "Finland's best-known ski resort for slopes, husky parks and winter aurora cabins"
+      "notes": "Finland's best-known ski resort for slopes, husky parks and winter aurora cabins",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Saariselkä",
@@ -98,7 +130,10 @@
         "February",
         "March"
       ],
-      "notes": "Quiet far-north base for Urho Kekkonen National Park, Kaunispää fell views and iconic glass igloos"
+      "notes": "Quiet far-north base for Urho Kekkonen National Park, Kaunispää fell views and iconic glass igloos",
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -128,6 +163,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days works well for a first Finland trip: one historic centre day, one museum-and-design day, and one fortress-and-sauna day before heading north.",
+        "experiences": [
+          "Architecture",
+          "Art & Design",
+          "History"
+        ],
         "days": [
           {
             "theme": "Senate Square, Market Halls & Harbour Icons",
@@ -245,6 +285,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Turku is best as a one-night heritage stop focused on the castle, cathedral quarter, and a relaxed Aura River evening.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Castle, Cathedral & Aura Riverside",
@@ -290,6 +334,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "A single full day is enough for Tampere's best museum stops, lakeside sauna culture, and easy walkable centre.",
+        "experiences": [
+          "History",
+          "Lakes"
+        ],
         "days": [
           {
             "theme": "Moomins, Museum Quarter & Sauna",
@@ -335,6 +383,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Rovaniemi is the easiest Lapland base for first-timers because you can combine Santa attractions, aurora lodging, and snow activities without long transfers.",
+        "experiences": [
+          "Northern Lights",
+          "Skiing"
+        ],
         "days": [
           {
             "theme": "Arctic Culture & Santa Claus Village",
@@ -416,6 +468,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Levi is strongest as a two-night ski-and-safari stop where you can balance slopes, a husky park, and one premium aurora stay.",
+        "experiences": [
+          "Skiing",
+          "Northern Lights"
+        ],
         "days": [
           {
             "theme": "Ski Slopes, Fell Views & Village Core",
@@ -489,6 +545,12 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Saariselkä is quieter than Levi and better if you want dark skies, easy national-park access, and a classic glass-igloo finish.",
+        "experiences": [
+          "Skiing",
+          "Northern Lights",
+          "Hiking",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Urho Kekkonen National Park & Fell Panorama",

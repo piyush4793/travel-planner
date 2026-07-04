@@ -23,10 +23,11 @@
     "family4": "₹6.8L–₹11.2L"
   },
   "experiences": [
-    "Libreville's St. Michael's Church, seafront hotels, and Pointe-Denis beach escape",
-    "Lopé National Park mandrill tracking where forest meets savanna",
-    "Loango beach safaris for elephants, buffalo, hippos, and Jul-Sep whale watching",
-    "Franceville side trips to Poubara Falls and the famous liana bridge"
+    "Wildlife & Safari",
+    "National Parks",
+    "Beaches",
+    "Hiking",
+    "Cruises & Boat Trips"
   ],
   "avoid": [
     "March to May and October to November are the rainiest windows, which makes Transgabonais timings shakier, forest tracks muddier, and Loango boat logistics harder to predict.",
@@ -55,7 +56,10 @@
         "August",
         "September"
       ],
-      "notes": "Gabon's practical arrival base for St. Michael's Church, Mont-Bouët market, Pointe-Denis pirogues, and the country's widest hotel and restaurant selection."
+      "notes": "Gabon's practical arrival base for St. Michael's Church, Mont-Bouët market, Pointe-Denis pirogues, and the country's widest hotel and restaurant selection.",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Lopé National Park",
@@ -67,19 +71,25 @@
         "August",
         "September"
       ],
-      "notes": "UNESCO-listed forest-savanna mosaic best known for huge dry-season mandrill troops, specialist primate tracking, Ogooué River scenery, and rail-based access from Libreville."
+      "notes": "UNESCO-listed forest-savanna mosaic best known for huge dry-season mandrill troops, specialist primate tracking, Ogooué River scenery, and rail-based access from Libreville.",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Loango National Park",
       "lat": -2.3333,
       "lng": 9.5833,
       "bestMonths": [
-        "June",
         "July",
         "August",
-        "September"
+        "September",
+        "October"
       ],
-      "notes": "Beach-and-lagoon wilderness accessed via Port-Gentil for classic elephant-on-the-sand sightings, boat safaris, turtle coast excursions, and whale watching from July to September."
+      "notes": "Beach-and-lagoon wilderness accessed via Port-Gentil for classic elephant-on-the-sand sightings, boat safaris, turtle coast excursions, and whale watching from July to September.",
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Franceville",
@@ -91,7 +101,10 @@
         "August",
         "September"
       ],
-      "notes": "Haut-Ogooué base for Poubara Falls, the liana bridge, Lac Bleu side trips, and an inland overnight that works well with Afrijet or the Transgabonais."
+      "notes": "Haut-Ogooué base for Poubara Falls, the liana bridge, Lac Bleu side trips, and an inland overnight that works well with Afrijet or the Transgabonais.",
+      "worstMonths": [
+        "November"
+      ]
     }
   ],
   "itinerary": {
@@ -116,6 +129,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "St. Michael's carved-pillared church, central Libreville logistics, and an easy Atlantic-facing first day",
@@ -236,6 +252,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Transgabonais into the savanna-forest transition, park entry, and a first guided wildlife drive",
@@ -362,6 +383,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Afrijet into the coast, Port-Gentil transfers, and your first Loango lagoon-beach introduction",

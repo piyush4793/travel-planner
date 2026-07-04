@@ -21,12 +21,15 @@
     "family4": "₹5L–₹9L"
   },
   "experiences": [
-    "Eiffel Tower",
-    "Louvre",
-    "French Riviera",
-    "Normandy",
-    "Loire Valley",
-    "Food & Wine"
+    "History",
+    "Architecture",
+    "Art & Design",
+    "Food",
+    "Wine & Vineyards",
+    "Beaches",
+    "Nightlife",
+    "Museums",
+    "UNESCO Sites"
   ],
   "avoid": [
     "August (Parisians leave, but tourists flood in)"
@@ -46,37 +49,106 @@
       "name": "Paris",
       "lat": 48.8566,
       "lng": 2.3522,
-      "notes": "Eiffel Tower, Louvre, Notre-Dame, Montmartre and world's finest cuisine"
+      "notes": "Eiffel Tower, Louvre, Notre-Dame, Montmartre and world's finest cuisine",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Nice",
       "lat": 43.7102,
       "lng": 7.262,
-      "notes": "Promenade des Anglais, Vieux-Nice old town and Riviera coastal hikes"
+      "notes": "Promenade des Anglais, Vieux-Nice old town and Riviera coastal hikes",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Lyon",
       "lat": 45.764,
       "lng": 4.8357,
-      "notes": "Gastronomic capital with bouchon bistros, traboules and Roman amphitheatre"
+      "notes": "Gastronomic capital with bouchon bistros, traboules and Roman amphitheatre",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Bordeaux",
       "lat": 44.8378,
       "lng": -0.5792,
-      "notes": "Wine capital with chateau tours, Miroir d'eau and CIVB wine bar"
+      "notes": "Wine capital with chateau tours, Miroir d'eau and CIVB wine bar",
+      "experiences": [
+        "Wine & Vineyards",
+        "Architecture",
+        "Food"
+      ],
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Strasbourg",
       "lat": 48.5734,
       "lng": 7.7521,
-      "notes": "Half-timbered Alsatian Petite France and European Parliament hub"
+      "notes": "Half-timbered Alsatian Petite France and European Parliament hub",
+      "experiences": [
+        "History",
+        "Architecture",
+        "UNESCO Sites"
+      ],
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "December"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Marseille",
       "lat": 43.2965,
       "lng": 5.3698,
-      "notes": "Vieux-Port fish market, Calanques national park and bouillabaisse"
+      "notes": "Vieux-Port fish market, Calanques national park and bouillabaisse",
+      "experiences": [
+        "Beaches",
+        "History",
+        "Food"
+      ],
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -101,6 +173,14 @@
         "recDays": 6,
         "maxDays": 6,
         "note": "Base yourself in Paris and use two full days for Versailles and Mont Saint-Michel day trips.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Art & Design",
+          "Museums",
+          "Food",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Arrival & First Impressions",
@@ -271,6 +351,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Best for food-led city breaks; keep Lyon as a compact two-day stop between Paris and the Riviera.",
+        "experiences": [
+          "Food",
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Arrival + Old Lyon History",
@@ -344,6 +429,11 @@
         "recDays": 3,
         "maxDays": 3,
         "note": "Use Nice as your Riviera base and fit the Riviera highlights into a focused three-day stay.",
+        "experiences": [
+          "Beaches",
+          "Nightlife",
+          "Art & Design"
+        ],
         "days": [
           {
             "theme": "Arrival on the French Riviera",
