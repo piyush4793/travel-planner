@@ -26,11 +26,12 @@
     "family4": "₹3.9L–₹5.9L"
   },
   "experiences": [
-    "Cape Maclear snorkeling and kayaking on Lake Malawi",
-    "Shire River boat safaris in Liwonde National Park",
-    "Dry-season hiking on Zomba Plateau",
-    "Lilongwe wildlife and craft-market warm-up",
-    "Majete Wildlife Reserve add-on for Big Five safari time"
+    "Lakes",
+    "Wildlife & Safari",
+    "National Parks",
+    "Diving & Snorkeling",
+    "Hiking",
+    "Beaches"
   ],
   "avoid": [
     "November to April is wetter, muddier, and less reliable for lake crossings, park roads, and long minibus days.",
@@ -54,25 +55,61 @@
       "name": "Lilongwe",
       "lat": -13.9626,
       "lng": 33.7741,
-      "notes": "Malawi's capital is the logical arrival hub for SIM, cash, a first wildlife stop, and the overland setup before heading to the lake."
+      "notes": "Malawi's capital is the logical arrival hub for SIM, cash, a first wildlife stop, and the overland setup before heading to the lake.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Lake Malawi (Cape Maclear)",
       "lat": -14.0167,
       "lng": 34.85,
-      "notes": "Cape Maclear is the easiest Lake Malawi base for beach downtime, cichlid-rich snorkeling, kayaking, and sunset dhow trips inside the national park."
+      "notes": "Cape Maclear is the easiest Lake Malawi base for beach downtime, cichlid-rich snorkeling, kayaking, and sunset dhow trips inside the national park.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Liwonde National Park",
       "lat": -15.0667,
       "lng": 35.3167,
-      "notes": "Liwonde is Malawi's easiest classic safari stop, pairing Shire River boat safaris with elephant, hippo, and antelope sightings."
+      "notes": "Liwonde is Malawi's easiest classic safari stop, pairing Shire River boat safaris with elephant, hippo, and antelope sightings.",
+      "bestMonths": [
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Zomba Plateau",
       "lat": -15.385,
       "lng": 35.31,
-      "notes": "The plateau adds pine forest, viewpoints, and cooler hiking weather before you loop back north or continue south toward Blantyre and Majete."
+      "notes": "The plateau adds pine forest, viewpoints, and cooler hiking weather before you loop back north or continue south toward Blantyre and Majete.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -194,6 +231,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Cape Maclear is best as a two-night lake break so you can keep one weather-flex day for clear water and paddling.",
+        "experiences": [
+          "Lakes",
+          "Diving & Snorkeling",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Ease into the lake with park entry, a first snorkel, and sunset over Chembe beach",
@@ -285,6 +327,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "One boat safari and one game-drive day is the sweet spot unless you are explicitly adding a second premium lodge night.",
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Trade the beach for the Shire River and start with Liwonde's easiest signature activity",
@@ -375,6 +421,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Zomba works best with one viewpoint day and one longer hike or southbound extension day.",
+        "experiences": [
+          "Hiking",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Climb into cooler air for plateau views, pines, and Malawi's easiest classic hiking stop",

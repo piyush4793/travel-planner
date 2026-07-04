@@ -25,11 +25,12 @@
     "family4": "₹5L–₹10L"
   },
   "experiences": [
-    "Overwater Bungalows",
     "Beaches",
-    "Snorkeling",
-    "Diving",
-    "Luxury"
+    "Islands",
+    "Diving & Snorkeling",
+    "Luxury & Resorts",
+    "Water Sports",
+    "Surfing"
   ],
   "avoid": [
     "Monsoon season (May–Oct)"
@@ -48,25 +49,61 @@
       "name": "Male",
       "lat": 4.1755,
       "lng": 73.5093,
-      "notes": "Colorful Fish Market, Friday Mosque and Grand Friday Mosque"
+      "notes": "Colorful Fish Market, Friday Mosque and Grand Friday Mosque",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Maafushi",
       "lat": 3.9381,
       "lng": 73.4813,
-      "notes": "Budget local island with guesthouses, sandbank excursions and diving"
+      "notes": "Budget local island with guesthouses, sandbank excursions and diving",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Baa Atoll",
       "lat": 5.1333,
       "lng": 72.9833,
-      "notes": "UNESCO Biosphere Reserve with manta ray aggregations and whale sharks"
+      "notes": "UNESCO Biosphere Reserve with manta ray aggregations and whale sharks",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Ari Atoll",
       "lat": 3.8333,
       "lng": 72.8333,
-      "notes": "Luxury resort strip, nurse sharks and hammerhead cleaning stations"
+      "notes": "Luxury resort strip, nurse sharks and hammerhead cleaning stations",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -94,6 +131,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Use Male as the cultural gateway and buffer night if your incoming flight lands too late for a same-day seaplane transfer.",
+        "experiences": [
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Old Mosque, Markets and a Soft Landing into the Maldives",
@@ -154,6 +194,12 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "This block is optimized for South Ari bases such as Dhigurah, Vilamendhoo or LUX* so you can combine whale-shark water time with one proper dive or lagoon day.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Luxury & Resorts",
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Arrival in Whale Shark Territory, House Reef and Dolphin Sunset",
@@ -250,6 +296,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Baa Atoll works best as a Dharavandhoo-based UNESCO biosphere stay, with Hanifaru Bay as the anchor experience and one flex day for reef or island-hopping weather windows.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Luxury & Resorts",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "UNESCO Biosphere Arrival, Lacquer Crafts and Reef Snorkeling",
@@ -345,6 +396,12 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Finish on Maafushi if you want one affordable local-island stay with easy speedboat access back to Male for departure day.",
+        "experiences": [
+          "Beaches",
+          "Islands",
+          "Water Sports",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Bikini Beach, Nurse Sharks and Local Island Energy",

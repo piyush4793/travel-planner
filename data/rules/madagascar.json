@@ -26,11 +26,12 @@
     "family4": "₹5.0L–₹7.6L"
   },
   "experiences": [
-    "Indri Lemur Trekking in Andasibe",
-    "Avenue of the Baobabs Sunset",
-    "Isalo Canyon Hikes",
-    "Lokobe Reserve Wildlife",
-    "Nosy Tanikely Snorkeling"
+    "Wildlife & Safari",
+    "National Parks",
+    "Beaches",
+    "Islands",
+    "Hiking",
+    "Diving & Snorkeling"
   ],
   "avoid": [
     "November to March brings cyclone risk, washed-out tracks, and humid rainforest walks",
@@ -53,31 +54,78 @@
       "name": "Antananarivo",
       "lat": -18.8792,
       "lng": 47.5079,
-      "notes": "Hilltop palaces, markets, museums, and the main international/domestic gateway before heading into rainforest, baobab country, or the coast"
+      "notes": "Hilltop palaces, markets, museums, and the main international/domestic gateway before heading into rainforest, baobab country, or the coast",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Andasibe",
       "lat": -18.9333,
       "lng": 48.4167,
-      "notes": "Best-known base for hearing indri calls at dawn, guided rainforest walks, night wildlife spotting, and easy access to Analamazaotra and Mantadia circuits"
+      "notes": "Best-known base for hearing indri calls at dawn, guided rainforest walks, night wildlife spotting, and easy access to Analamazaotra and Mantadia circuits",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Morondava",
       "lat": -20.2856,
       "lng": 44.2791,
-      "notes": "The west-coast launch point for Avenue of the Baobabs sunsets, Kirindy wildlife drives, and long dirt-road expeditions into Menabe country"
+      "notes": "The west-coast launch point for Avenue of the Baobabs sunsets, Kirindy wildlife drives, and long dirt-road expeditions into Menabe country",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Isalo National Park",
       "lat": -22.6153,
       "lng": 45.4008,
-      "notes": "Ranohira-based access to sandstone canyons, natural pools, ring-tailed lemurs, and some of Madagascar’s best dry-season trekking"
+      "notes": "Ranohira-based access to sandstone canyons, natural pools, ring-tailed lemurs, and some of Madagascar’s best dry-season trekking",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Nosy Be",
       "lat": -13.3128,
       "lng": 48.2593,
-      "notes": "Island finish for Lokobe forest, marine reserve snorkeling, sunset viewpoints, and easier beach downtime after the overland-heavy mainland sections"
+      "notes": "Island finish for Lokobe forest, marine reserve snorkeling, sunset viewpoints, and easier beach downtime after the overland-heavy mainland sections",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     }
   ],
   "itinerary": {
@@ -195,6 +243,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Trade the capital for rainforest humidity, indri calls, and your first mandatory-guide MNP circuit",
@@ -287,6 +340,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Fly west, settle by the Mozambique Channel, and time the first baobab run for the softest sunset light",
@@ -411,6 +467,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "National Parks",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Reach Ranohira, pay the higher Isalo MNP tariff, and spend the first afternoon in easy canyon country",
@@ -535,6 +595,11 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Switch from red dust to sea air with a simple island day and a sunset that does not need much planning",

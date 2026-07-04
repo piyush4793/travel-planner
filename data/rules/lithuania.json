@@ -23,11 +23,12 @@
     "family4": "₹3.2L–₹4.9L"
   },
   "experiences": [
-    "Vilnius Old Town",
-    "Trakai Island Castle",
-    "Kaunas Modernism",
-    "Klaipėda waterfront",
-    "Curonian Spit dunes"
+    "History",
+    "Architecture",
+    "UNESCO Sites",
+    "National Parks",
+    "Beaches",
+    "Museums"
   ],
   "avoid": [
     "November–February for short daylight, icy pavements, and a cold Baltic coast",
@@ -48,38 +49,74 @@
       "name": "Vilnius",
       "lat": 54.6872,
       "lng": 25.2797,
-      "notes": "Baroque Old Town with Gediminas Castle Tower, Užupis lanes and strong café culture"
+      "notes": "Baroque Old Town with Gediminas Castle Tower, Užupis lanes and strong café culture",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Kaunas",
       "lat": 54.8985,
       "lng": 23.9036,
-      "notes": "Interwar modernist city with a castle, funiculars and Lithuania's best museum cluster"
+      "notes": "Interwar modernist city with a castle, funiculars and Lithuania's best museum cluster",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Trakai",
       "lat": 54.6379,
       "lng": 24.9346,
-      "notes": "Lake-ringed former capital known for Trakai Island Castle and Karaim kibinai"
+      "notes": "Lake-ringed former capital known for Trakai Island Castle and Karaim kibinai",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Klaipėda",
       "lat": 55.7033,
       "lng": 21.1443,
-      "notes": "Baltic port with a compact German-influenced old town and easy ferry links to the dunes"
+      "notes": "Baltic port with a compact German-influenced old town and easy ferry links to the dunes",
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Curonian Spit",
       "lat": 55.3036,
       "lng": 21.0069,
       "bestMonths": [
-        "May",
         "June",
         "July",
-        "August",
-        "September"
+        "August"
       ],
-      "notes": "UNESCO-protected sand-dune peninsula centred on Nida and Juodkrantė"
+      "notes": "UNESCO-protected sand-dune peninsula centred on Nida and Juodkrantė",
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -107,6 +144,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days is ideal for Vilnius: one classic Old Town day, one museum-and-Užupis day, and one church-and-viewpoint day without rushing the food scene.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Old Town, Cathedral Square & Gediminas Hill",
@@ -225,6 +267,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Trakai works best as a relaxed overnight or full-day stop between Vilnius and Kaunas; one day is enough for the castle, lakefront, and Karaim food.",
+        "experiences": [
+          "History",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Island Castle, Karaim Heritage & the Lakeshore",
@@ -271,6 +317,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Two days lets you cover Kaunas Old Town properly and still give modernist museums and memorial history the time they deserve.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Old Town, Castle Precinct & Laisvės Alėja",
@@ -352,6 +403,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "A full day covers Klaipėda's compact old town well; add a second only if you want more museum time before crossing to the Curonian Spit.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Old Town, Castle Area & the Dane Riverfront",
@@ -397,6 +452,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Even one full day on the spit gives you dunes, Nida, and a museum stop, but staying overnight is far more rewarding once the day-trippers leave.",
+        "experiences": [
+          "Beaches",
+          "National Parks",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Nida Dunes, Quiet Harbours & Amber Museums",

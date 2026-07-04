@@ -24,11 +24,14 @@
     "family4": "₹1.5L–₹3L"
   },
   "experiences": [
-    "Food",
-    "Rainforests",
+    "Beaches",
     "Islands",
-    "Culture",
-    "Borneo Wildlife"
+    "Food",
+    "History",
+    "National Parks",
+    "Diving & Snorkeling",
+    "Wildlife & Safari",
+    "Markets & Shopping"
   ],
   "avoid": [
     "Northeast monsoon Nov-Jan on east coast"
@@ -48,37 +51,92 @@
       "name": "Kuala Lumpur",
       "lat": 3.139,
       "lng": 101.6869,
-      "notes": "Petronas Towers, Batu Caves, Jalan Alor food street and rooftop bars"
+      "notes": "Petronas Towers, Batu Caves, Jalan Alor food street and rooftop bars",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "December"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Penang",
       "lat": 5.4164,
       "lng": 100.3327,
-      "notes": "George Town street art, Peranakan food and Clan Jetties over the sea"
+      "notes": "George Town street art, Peranakan food and Clan Jetties over the sea",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "July"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Langkawi",
       "lat": 6.35,
       "lng": 99.8,
-      "notes": "Duty-free island with rainforest cable car, mangroves and powder beaches"
+      "notes": "Duty-free island with rainforest cable car, mangroves and powder beaches",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Malacca",
       "lat": 2.1896,
       "lng": 102.2501,
-      "notes": "UNESCO heritage town with Dutch Stadthuys, Christ Church and Jonker Street"
+      "notes": "UNESCO heritage town with Dutch Stadthuys, Christ Church and Jonker Street",
+      "bestMonths": [
+        "June",
+        "July",
+        "December",
+        "January"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Kota Kinabalu",
       "lat": 5.9804,
       "lng": 116.0735,
-      "notes": "Gateway to Mt Kinabalu climb and Borneo orangutan wildlife"
+      "notes": "Gateway to Mt Kinabalu climb and Borneo orangutan wildlife",
+      "bestMonths": [
+        "March",
+        "April",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Cameron Highlands",
       "lat": 4.4712,
       "lng": 101.38,
-      "notes": "Cool hill station with tea plantations, strawberry farms and jungle treks"
+      "notes": "Cool hill station with tea plantations, strawberry farms and jungle treks",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "June"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     }
   ],
   "itinerary": {
@@ -109,6 +167,11 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Food",
+          "Markets & Shopping",
+          "History"
+        ],
         "days": [
           {
             "theme": "Modern skyline, towers, and Bukit Bintang lights",
@@ -237,6 +300,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Food",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "UNESCO lanes, Dutch Square, and Peranakan heritage",
@@ -289,6 +357,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Tea plantations, misty forests, and cool-weather viewpoints",
@@ -377,6 +448,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Food",
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "George Town murals, clan houses, and Little India streets",
@@ -465,6 +541,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Cable cars, waterfalls, and duty-free island icons",
@@ -553,6 +634,12 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Islands",
+          "Diving & Snorkeling",
+          "Wildlife & Safari",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Marine park islands, waterfront walks, and mosque views",

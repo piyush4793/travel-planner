@@ -22,11 +22,12 @@
     "family4": "₹3.6L–₹5.1L"
   },
   "experiences": [
-    "Musée National du Mali and Bamako's Niger-side city life",
-    "Great Mosque of Djenné and mud-brick old-town lanes",
-    "Timbuktu manuscript-house visits and Saharan skyline",
-    "Dogon escarpment village walks with local guides",
-    "Seasonal Niger pinasse travel and classic bush-taxi logistics"
+    "History",
+    "Architecture",
+    "Ancient Ruins",
+    "UNESCO Sites",
+    "Markets & Shopping",
+    "Deserts"
   ],
   "avoid": [
     "March to May gets brutally hot in Djenné, Dogon Country and Timbuktu, so walking days feel shorter and midday sightseeing becomes draining.",
@@ -55,7 +56,10 @@
         "January",
         "February"
       ],
-      "notes": "Capital gateway for the National Museum, artisan markets, Niger River evenings, and the easiest place to sort cash, SIMs and onward Mali transport."
+      "notes": "Capital gateway for the National Museum, artisan markets, Niger River evenings, and the easiest place to sort cash, SIMs and onward Mali transport.",
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Djenné",
@@ -67,7 +71,10 @@
         "January",
         "February"
       ],
-      "notes": "UNESCO mud-brick town for the Great Mosque, low-rise rooftops, market-day energy and one of West Africa's most distinctive historic skylines."
+      "notes": "UNESCO mud-brick town for the Great Mosque, low-rise rooftops, market-day energy and one of West Africa's most distinctive historic skylines.",
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Timbuktu",
@@ -79,7 +86,10 @@
         "January",
         "February"
       ],
-      "notes": "Legendary Saharan city for manuscript houses, Sankoré and Djinguereber exteriors, edge-of-desert light, and transport that always depends on current security."
+      "notes": "Legendary Saharan city for manuscript houses, Sankoré and Djinguereber exteriors, edge-of-desert light, and transport that always depends on current security.",
+      "worstMonths": [
+        "May"
+      ]
     },
     {
       "name": "Dogon Country (Bandiagara)",
@@ -91,7 +101,10 @@
         "January",
         "February"
       ],
-      "notes": "Escarpment base for guided village walks, toguna shelters, granaries and cliff-country views around Bandiagara, Sangha and nearby Dogon communities."
+      "notes": "Escarpment base for guided village walks, toguna shelters, granaries and cliff-country views around Bandiagara, Sangha and nearby Dogon communities.",
+      "worstMonths": [
+        "April"
+      ]
     }
   ],
   "itinerary": {
@@ -115,6 +128,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Markets & Shopping",
+          "History"
+        ],
         "days": [
           {
             "theme": "Land in the capital, sort logistics, and start with Mali's best museum and easiest first-night food scene.",
@@ -203,6 +220,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Architecture",
+          "UNESCO Sites",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Roll in from Sévaré or Mopti, climb to a legal rooftop view, and spend the day inside Djenné's mud-built masterpiece of a townscape.",
@@ -251,6 +273,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "UNESCO Sites",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Use Bandiagara as the escarpment base, then walk into the cliff villages with the guide system that makes Dogon visits work.",
@@ -335,6 +362,12 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Deserts",
+          "UNESCO Sites",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Treat Timbuktu as a special add-on: fly or boat in, then focus on manuscripts and the old scholarly quarters.",

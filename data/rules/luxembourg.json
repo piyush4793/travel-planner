@@ -23,12 +23,12 @@
     "family4": "₹4.4L–₹6.8L"
   },
   "experiences": [
-    "UNESCO old town walks in Luxembourg City",
-    "Bock Casemates & Kirchberg museums",
-    "Vianden Castle on the Our river",
-    "Echternach abbey town charm",
-    "Mullerthal Trail and Schiessentümpel waterfall",
-    "Free nationwide public transport"
+    "History",
+    "Architecture",
+    "Hiking",
+    "National Parks",
+    "UNESCO Sites",
+    "Wine & Vineyards"
   ],
   "avoid": [
     "Grey late-autumn and deep-winter weeks if you want long hiking days in Mullerthal — trails feel damp, daylight is short and smaller towns wind down early"
@@ -53,11 +53,13 @@
       "bestMonths": [
         "May",
         "June",
-        "July",
-        "August",
-        "September"
+        "September",
+        "October"
       ],
-      "notes": "UNESCO old quarters, deep valleys, museums and trams with easy bases for day trips across the country"
+      "notes": "UNESCO old quarters, deep valleys, museums and trams with easy bases for day trips across the country",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Vianden",
@@ -66,11 +68,13 @@
       "bestMonths": [
         "May",
         "June",
-        "July",
-        "August",
-        "September"
+        "September",
+        "October"
       ],
-      "notes": "Storybook castle town on the Our with chairlift views, Victor Hugo links and a compact medieval centre"
+      "notes": "Storybook castle town on the Our with chairlift views, Victor Hugo links and a compact medieval centre",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Echternach",
@@ -79,11 +83,13 @@
       "bestMonths": [
         "May",
         "June",
-        "July",
-        "August",
-        "September"
+        "September",
+        "October"
       ],
-      "notes": "Luxembourg's oldest town with abbey heritage, relaxed squares and a practical base for the eastern hiking belt"
+      "notes": "Luxembourg's oldest town with abbey heritage, relaxed squares and a practical base for the eastern hiking belt",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Mullerthal",
@@ -92,11 +98,13 @@
       "bestMonths": [
         "May",
         "June",
-        "July",
-        "August",
-        "September"
+        "September",
+        "October"
       ],
-      "notes": "Little Switzerland landscapes with forested trails, rock gorges and the photogenic Schiessentümpel bridge"
+      "notes": "Little Switzerland landscapes with forested trails, rock gorges and the photogenic Schiessentümpel bridge",
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -122,6 +130,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is ideal for the UNESCO centre plus Kirchberg museums; a third day works if you want more galleries or a slower café-and-viewpoint pace.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Old Quarters, Corniche & Casemates",
@@ -200,6 +213,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Vianden is perfect as an overnight or long day trip; stay longer only if you want slow riverside time, extra hiking or the chairlift twice.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Castle Hill, Victor Hugo & River Views",
@@ -243,6 +260,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Echternach works well as a calm base for the east: abbey heritage by day, lakeside walks in the evening and short bus hops into the trail zone.",
+        "experiences": [
+          "History",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Abbey Heritage & Lakeside Slow Travel",
@@ -284,6 +305,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Give Mullerthal a full day for the classic short hikes; add another if you want longer trail sections, cave-like rock passages or a slower rural stay.",
+        "experiences": [
+          "Hiking",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Little Switzerland Trails & Rock Formations",

@@ -26,11 +26,12 @@
     "family4": "₹4.1L–₹6.4L"
   },
   "experiences": [
-    "Providence Island heritage visit",
-    "Robertsport surf days on Liberia's Atlantic coast",
-    "Firestone Plantation rubber-history tour",
-    "Sapo National Park rainforest trekking and pygmy hippo tracking",
-    "Buchanan's laid-back beach and port stop"
+    "Beaches",
+    "Surfing",
+    "Wildlife & Safari",
+    "National Parks",
+    "Markets & Shopping",
+    "History"
   ],
   "avoid": [
     "May to October is the wet season, and the Jalay Town access road into Sapo becomes slow, muddy, and sometimes fully impractical.",
@@ -52,25 +53,63 @@
       "name": "Monrovia",
       "lat": 6.3156,
       "lng": -10.8074,
-      "notes": "Liberia's practical base for museums, Providence Island, embassy-era hotels, and the easiest logistics for Firestone and onward transport."
+      "notes": "Liberia's practical base for museums, Providence Island, embassy-era hotels, and the easiest logistics for Firestone and onward transport.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Robertsport",
       "lat": 6.7531,
       "lng": -11.3686,
-      "notes": "Liberia's best-known surf town, with beach lodges, Cape Mount scenery, and a much slower coastal pace than Monrovia."
+      "notes": "Liberia's best-known surf town, with beach lodges, Cape Mount scenery, and a much slower coastal pace than Monrovia.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Buchanan",
       "lat": 5.8808,
       "lng": -10.0467,
-      "notes": "Grand Bassa's main town offers an easy beach break, small-city port atmosphere, and a useful southbound overnight before the long Sapo run."
+      "notes": "Grand Bassa's main town offers an easy beach break, small-city port atmosphere, and a useful southbound overnight before the long Sapo run.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Sapo National Park",
       "lat": 5.85,
       "lng": -8.44,
-      "notes": "Liberia's headline rainforest reserve for canoe crossings, community-run ecolodge stays, and the country's best shot at pygmy hippo habitat."
+      "notes": "Liberia's headline rainforest reserve for canoe crossings, community-run ecolodge stays, and the country's best shot at pygmy hippo habitat.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -93,6 +132,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Markets & Shopping",
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Settle into Liberia with the core history loop: airport transfer, Providence Island, and the National Museum before a simple oceanfront dinner.",
@@ -185,6 +229,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Surfing",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Ride west to Liberia's surf capital, settle into a beach lodge, and use the first afternoon for a proper Robertsport beginner session.",
@@ -277,6 +325,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 1,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Break the southbound journey with one slower Grand Bassa day for the waterfront, market life, and a beachside overnight before the rainforest push.",
@@ -329,6 +380,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "National Parks",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Treat the transfer as part of the adventure: reach Jalay Town, finish the FDA formalities, and cross into Liberia's flagship rainforest stay.",

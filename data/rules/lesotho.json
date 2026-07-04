@@ -24,11 +24,12 @@
     "family4": "₹3.4L–₹5L"
   },
   "experiences": [
-    "Maletsunyane Falls in Semonkong",
-    "Basotho pony trekking",
-    "Ts'ehlanyane forest hikes",
-    "Sani Pass 4x4 crossing",
-    "Highest Pub at Sani Top"
+    "Mountains",
+    "Hiking",
+    "Waterfalls",
+    "National Parks",
+    "Skiing",
+    "Adventure Sports"
   ],
   "avoid": [
     "November to March brings storms, muddy highland roads, and frequent cloud cover around Semonkong and Sani Pass",
@@ -50,25 +51,61 @@
       "name": "Maseru",
       "lat": -29.3151,
       "lng": 27.4869,
-      "notes": "Capital base for currency, SIM, 4x4 pickup, Basotho craft stops, and the easiest start before the mountain legs"
+      "notes": "Capital base for currency, SIM, 4x4 pickup, Basotho craft stops, and the easiest start before the mountain legs",
+      "bestMonths": [
+        "September",
+        "October",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Semonkong",
       "lat": -29.8436,
       "lng": 28.055,
-      "notes": "Gateway to Maletsunyane Falls, Basotho pony trekking, and the rough-road heart of Lesotho's highlands"
+      "notes": "Gateway to Maletsunyane Falls, Basotho pony trekking, and the rough-road heart of Lesotho's highlands",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Ts'ehlanyane National Park",
       "lat": -28.8946,
       "lng": 28.4331,
-      "notes": "Northern mountain forest reserve anchored by Maliba Lodge, river trails, and easy access toward Leribe's dinosaur sites"
+      "notes": "Northern mountain forest reserve anchored by Maliba Lodge, river trails, and easy access toward Leribe's dinosaur sites",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Sani Pass",
       "lat": -29.5886,
       "lng": 29.2865,
-      "notes": "The classic escarpment crossing for 4x4 travelers, with Sani Top lodges, border formalities, and huge Drakensberg views"
+      "notes": "The classic escarpment crossing for 4x4 travelers, with Sani Top lodges, border formalities, and huge Drakensberg views",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "July"
+      ],
+      "worstMonths": [
+        "May"
+      ]
     }
   ],
   "itinerary": {
@@ -175,6 +212,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Waterfalls",
+          "Hiking",
+          "Adventure Sports"
+        ],
         "days": [
           {
             "theme": "Get into the mountains, reach the lodge, and see Maletsunyane Falls before sunset",
@@ -280,6 +322,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "National Parks",
+          "Hiking",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Drive north into the forest reserve and settle into the easier, greener side of Lesotho",
@@ -355,6 +402,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "Skiing"
+        ],
         "days": [
           {
             "theme": "Climb to Sani Top, handle the border costs, and enjoy the signature escarpment views",

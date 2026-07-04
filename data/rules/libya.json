@@ -26,11 +26,12 @@
     "family4": "₹4.7L–₹6.9L"
   },
   "experiences": [
-    "Leptis Magna's Severan-era Roman ruins",
-    "Sabratha's monumental Roman theatre",
-    "Tripoli medina lanes and Assaraya Alhamra",
-    "Ghadames old town's covered Berber streets",
-    "Saharan dune runs by 4x4 outside Ghadames"
+    "Ancient Ruins",
+    "History",
+    "Deserts",
+    "UNESCO Sites",
+    "Architecture",
+    "Beaches"
   ],
   "avoid": [
     "Strong safety advisory: Libya remains politically unstable and many governments advise against travel; only consider a trip with a vetted local operator, fixed hotel transfers, and enough slack for abrupt closures or permit changes.",
@@ -52,25 +53,61 @@
       "name": "Tripoli",
       "lat": 32.8872,
       "lng": 13.1913,
-      "notes": "Libya's gateway city for the medina, Martyrs' Square, the Red Castle/Assaraya Alhamra, and all the operator, SIM, cash, and permit logistics before heading out."
+      "notes": "Libya's gateway city for the medina, Martyrs' Square, the Red Castle/Assaraya Alhamra, and all the operator, SIM, cash, and permit logistics before heading out.",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Leptis Magna",
       "lat": 32.6397,
       "lng": 14.2939,
-      "notes": "UNESCO-listed Roman port city east of Tripoli with the Severan forum, Hadrianic baths, basilica, amphitheatre, and one of North Africa's most complete archaeological spreads."
+      "notes": "UNESCO-listed Roman port city east of Tripoli with the Severan forum, Hadrianic baths, basilica, amphitheatre, and one of North Africa's most complete archaeological spreads.",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Sabratha",
       "lat": 32.7937,
       "lng": 12.4853,
-      "notes": "Mediterranean UNESCO site west of Tripoli famed for its three-storey Roman theatre, forum temples, basilica remains, and compact site museum."
+      "notes": "Mediterranean UNESCO site west of Tripoli famed for its three-storey Roman theatre, forum temples, basilica remains, and compact site museum.",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Ghadames",
       "lat": 30.1337,
       "lng": 9.5007,
-      "notes": "Remote oasis near the Algeria-Tunisia frontier with a UNESCO old town of roof-linked white houses, palm gardens, and desert 4x4 excursions to high dunes."
+      "notes": "Remote oasis near the Algeria-Tunisia frontier with a UNESCO old town of roof-linked white houses, palm gardens, and desert 4x4 excursions to high dunes.",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -95,6 +132,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Assaraya Alhamra, Martyrs' Square & First Steps in the Medina",
@@ -180,6 +221,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Ancient Ruins",
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Roman Theatre, Forum Temples & a West-Coast Daylight Run",
@@ -230,6 +276,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Ancient Ruins",
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Severan Forum, Basilica & North Africa's Grandest Roman Day",
@@ -276,6 +327,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Deserts",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "UNESCO Old Town, Covered Alleys & Mint Tea in the Desert Oasis",

@@ -23,10 +23,12 @@
   },
   "experiences": [
     "History",
-    "Island-hopping",
+    "Ancient Ruins",
+    "Architecture",
     "Beaches",
-    "Food",
-    "Architecture"
+    "Diving & Snorkeling",
+    "UNESCO Sites",
+    "Islands"
   ],
   "avoid": [
     "Peak July-August heat and Blue Lagoon crowding",
@@ -47,31 +49,76 @@
       "name": "Valletta",
       "lat": 35.8989,
       "lng": 14.5146,
-      "notes": "Baroque capital for St. John's Co-Cathedral, Upper Barrakka and harbour views"
+      "notes": "Baroque capital for St. John's Co-Cathedral, Upper Barrakka and harbour views",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Mdina",
       "lat": 35.8869,
       "lng": 14.4025,
-      "notes": "The Silent City with medieval walls, cathedral interiors and easy Rabat archaeology stops"
+      "notes": "The Silent City with medieval walls, cathedral interiors and easy Rabat archaeology stops",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Gozo",
       "lat": 36.0443,
       "lng": 14.2397,
-      "notes": "Slower second island with the Citadel, Ġgantija temples, salt pans and Dwejra coast"
+      "notes": "Slower second island with the Citadel, Ġgantija temples, salt pans and Dwejra coast",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Blue Lagoon (Comino)",
       "lat": 36.0176,
       "lng": 14.3286,
-      "notes": "Clear-water lagoon day trip for swimming, Santa Marija Bay and Comino cave boats"
+      "notes": "Clear-water lagoon day trip for swimming, Santa Marija Bay and Comino cave boats",
+      "bestMonths": [
+        "June",
+        "July",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Sliema",
       "lat": 35.9125,
       "lng": 14.5019,
-      "notes": "Convenient seafront base for ferries, harbour cruises, swimming ladders and sunset walks"
+      "notes": "Convenient seafront base for ferries, harbour cruises, swimming ladders and sunset walks",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -99,6 +146,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Arrival, Baroque Core & Harbour Views",
@@ -187,6 +239,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Silent City Walls & Rabat Archaeology",
@@ -235,6 +291,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Promenade, Valletta Ferry & Seafront Swim Stops",
@@ -319,6 +379,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Islands",
+          "Diving & Snorkeling",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Citadel, Victoria Lanes & Salt Pans",
@@ -407,6 +472,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 1,
+        "experiences": [
+          "Beaches",
+          "Islands",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Blue Lagoon Swim Day & Comino Coves",

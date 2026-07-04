@@ -23,11 +23,12 @@
     "family4": "₹4L–₹6.3L"
   },
   "experiences": [
-    "Port de Pêche fish-market spectacle in Nouakchott",
-    "Banc d'Arguin migratory-bird and Imraguen-boat day",
-    "Chinguetti's ancient manuscript libraries",
-    "Richat Structure desert loop by 4x4",
-    "Iron Ore Train adventure logistics through Adrar"
+    "Deserts",
+    "Wildlife & Safari",
+    "National Parks",
+    "History",
+    "Ancient Ruins",
+    "Beaches"
   ],
   "avoid": [
     "April onward gets far hotter and windier; by June to September the desert heat can flatten sightseeing and make long 4x4 legs miserable",
@@ -50,25 +51,61 @@
       "name": "Nouakchott",
       "lat": 18.0735,
       "lng": -15.9582,
-      "notes": "Windblown capital for the Port de Pêche, National Museum, mosque-lined avenues, seafood restaurants and all the cash-and-transport prep before the desert"
+      "notes": "Windblown capital for the Port de Pêche, National Museum, mosque-lined avenues, seafood restaurants and all the cash-and-transport prep before the desert",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Chinguetti",
       "lat": 20.1627,
       "lng": -12.3503,
-      "notes": "UNESCO-listed ksar of sand-filled lanes, family-kept manuscript libraries, old-stone mosques and auberges on the edge of the Sahara dunes"
+      "notes": "UNESCO-listed ksar of sand-filled lanes, family-kept manuscript libraries, old-stone mosques and auberges on the edge of the Sahara dunes",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Banc d'Arguin National Park",
       "lat": 19.8874,
       "lng": -16.1015,
-      "notes": "UNESCO-protected coastal park of bird-rich mudflats, Imraguen fishing villages, simple Iwik camp stays and mandatory guided boat access"
+      "notes": "UNESCO-protected coastal park of bird-rich mudflats, Imraguen fishing villages, simple Iwik camp stays and mandatory guided boat access",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Atar",
       "lat": 20.5169,
       "lng": -13.0499,
-      "notes": "Adrar hub for Terjit-style oasis detours, desert drivers, Richat Structure planning, Choum train connections and Mauritania's classic auberge stays"
+      "notes": "Adrar hub for Terjit-style oasis detours, desert drivers, Richat Structure planning, Choum train connections and Mauritania's classic auberge stays",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -93,6 +130,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Land in the capital, sort cash and transport, and ease into Mauritania with the fishing port and a first seafood dinner",
@@ -181,6 +221,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "National Parks",
+          "Wildlife & Safari",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Leave the capital for the UNESCO coast, then sleep simply in Iwik for the birdlife and tidal-light advantage",
@@ -265,6 +310,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Deserts",
+          "History"
+        ],
         "days": [
           {
             "theme": "Use Atar as the Adrar staging ground: lock in the 4x4, test your desert rhythm, and scout the town's classic auberges",
@@ -349,6 +398,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Deserts",
+          "History",
+          "Ancient Ruins"
+        ],
         "days": [
           {
             "theme": "Drive into the old ksar, settle into an auberge, and spend the day among manuscript keepers and dune-edged stone lanes",

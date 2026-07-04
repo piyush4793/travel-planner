@@ -26,11 +26,12 @@
     "family4": "₹4.1L–₹6.4L"
   },
   "experiences": [
-    "Lagoons",
     "Beaches",
-    "Scenic Drives",
-    "Botanical Gardens",
-    "Creole Food"
+    "Diving & Snorkeling",
+    "Luxury & Resorts",
+    "Water Sports",
+    "Hiking",
+    "Waterfalls"
   ],
   "avoid": [
     "January-March is hotter, wetter, and the most cyclone-prone part of the year, so lagoon cruises and east-coast boat days are the first plans to get reshuffled.",
@@ -52,31 +53,80 @@
       "name": "Port Louis",
       "lat": -20.1609,
       "lng": 57.5012,
-      "notes": "Mauritius' capital is the heritage-and-market stop for Blue Penny Museum, Aapravasi Ghat, Caudan Waterfront, and the easiest run to SSR Botanical Garden."
+      "notes": "Mauritius' capital is the heritage-and-market stop for Blue Penny Museum, Aapravasi Ghat, Caudan Waterfront, and the easiest run to SSR Botanical Garden.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Grand Baie",
       "lat": -20.0182,
       "lng": 57.5802,
-      "notes": "The island's best north-coast base for public beaches, boat trips, Pereybere swims, and easy evening dining without a resort bubble."
+      "notes": "The island's best north-coast base for public beaches, boat trips, Pereybere swims, and easy evening dining without a resort bubble.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Flic-en-Flac",
       "lat": -20.2747,
       "lng": 57.363,
-      "notes": "Mauritius' classic west-coast beach stay with calmer lagoon water, dolphin boat departures from nearby Tamarin, and fast access to Casela and Wolmar."
+      "notes": "Mauritius' classic west-coast beach stay with calmer lagoon water, dolphin boat departures from nearby Tamarin, and fast access to Casela and Wolmar.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Chamarel",
       "lat": -20.4256,
       "lng": 57.4031,
-      "notes": "The inland southwest scenic zone for Seven Coloured Earth, waterfall viewpoints, rum tasting, and Black River Gorges lookouts."
+      "notes": "The inland southwest scenic zone for Seven Coloured Earth, waterfall viewpoints, rum tasting, and Black River Gorges lookouts.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Île aux Cerfs",
       "lat": -20.275,
       "lng": 57.8045,
-      "notes": "Mauritius' signature east-coast lagoon island, usually reached by short speedboat from Trou d'Eau Douce for beach time and day-cruise finishes."
+      "notes": "Mauritius' signature east-coast lagoon island, usually reached by short speedboat from Trou d'Eau Douce for beach time and day-cruise finishes.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     }
   ],
   "itinerary": {
@@ -204,6 +254,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Stay here for the north's easiest beach-hopping, nightlife, and boat access to Coin de Mire, Gabriel Island, and Pereybere.",
+        "experiences": [
+          "Beaches",
+          "Water Sports",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "North-coast transfer, Pereybere swim and a Grand Baie sunset",
@@ -295,6 +350,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Base here for west-coast beach time plus quick access to Casela, Tamarin Bay dolphin trips, and Wolmar lagoon hotels.",
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling",
+          "Luxury & Resorts"
+        ],
         "days": [
           {
             "theme": "Cross-island transfer, Flic-en-Flac beach and west-coast snorkelling",
@@ -386,6 +446,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Chamarel is the inland scenery day: coloured dunes, waterfall viewpoints, rum estate stops, and Black River Gorges lookouts all fit well together.",
+        "experiences": [
+          "Waterfalls",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Seven Coloured Earth, Black River Gorges and southwest viewpoints",
@@ -442,6 +506,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Treat Île aux Cerfs as an east-coast lagoon finish from Trou d'Eau Douce; most travelers sleep on the mainland and use a short speedboat hop to the island.",
+        "experiences": [
+          "Beaches",
+          "Water Sports",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Trou d'Eau Douce launch, lagoon speedboat and an easy beach finale",

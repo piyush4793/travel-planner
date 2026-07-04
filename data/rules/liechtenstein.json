@@ -25,11 +25,12 @@
     "family4": "₹3.8L–₹5.8L"
   },
   "experiences": [
-    "Vaduz museums",
-    "Vaduz Castle viewpoint",
-    "Malbun hiking & skiing",
-    "Walser villages",
-    "Gutenberg Castle"
+    "Mountains",
+    "Hiking",
+    "Skiing",
+    "History",
+    "Architecture",
+    "Wine & Vineyards"
   ],
   "avoid": [
     "Most museums in Vaduz are closed on Mondays",
@@ -53,40 +54,43 @@
       "bestMonths": [
         "May",
         "June",
-        "July",
-        "August",
-        "September"
+        "September",
+        "October"
       ],
-      "notes": "Compact, walkable capital for museums, the Städtle promenade and Vaduz Castle exterior views"
+      "notes": "Compact, walkable capital for museums, the Städtle promenade and Vaduz Castle exterior views",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Malbun",
       "lat": 47.101,
       "lng": 9.6098,
       "bestMonths": [
-        "June",
-        "July",
-        "August",
-        "September",
         "December",
         "January",
-        "February",
-        "March"
+        "July",
+        "August"
       ],
-      "notes": "Liechtenstein's alpine resort for easy ridge walks in summer and family-friendly skiing in winter"
+      "notes": "Liechtenstein's alpine resort for easy ridge walks in summer and family-friendly skiing in winter",
+      "worstMonths": [
+        "May"
+      ]
     },
     {
       "name": "Triesenberg",
       "lat": 47.1181,
       "lng": 9.5417,
       "bestMonths": [
-        "May",
         "June",
         "July",
         "August",
         "September"
       ],
-      "notes": "Walser heritage village with valley viewpoints, traditional houses and a museum stop"
+      "notes": "Walser heritage village with valley viewpoints, traditional houses and a museum stop",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Balzers",
@@ -95,11 +99,13 @@
       "bestMonths": [
         "May",
         "June",
-        "July",
-        "August",
-        "September"
+        "September",
+        "October"
       ],
-      "notes": "Southern Liechtenstein base for Burg Gutenberg, vineyards and quiet Rhine-side walks"
+      "notes": "Southern Liechtenstein base for Burg Gutenberg, vineyards and quiet Rhine-side walks",
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -125,6 +131,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "The capital is extremely compact, so one well-paced day covers the main sights on foot plus one or two museums.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Wine & Vineyards"
+        ],
         "days": [
           {
             "theme": "Capital Core: Castles, Art & Stamps",
@@ -179,6 +190,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Use Malbun as the outdoors day: hike the ridge in summer or ski the compact slopes in winter, then head back to Vaduz or Triesenberg for the night.",
+        "experiences": [
+          "Skiing",
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Alpine Liechtenstein: Ridge Walks or Ski Day",
@@ -232,6 +248,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Triesenberg works well as a half- to full-day cultural stop between Vaduz and Malbun, with good valley views and a simple Walser heritage circuit.",
+        "experiences": [
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Walser Heritage & Valley Viewpoints",
@@ -281,6 +301,10 @@
         "recDays": 0,
         "maxDays": 1,
         "note": "Balzers is the optional fourth stop when you want a slower final day focused on Gutenberg Castle and the country’s quieter southern end.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Southern Liechtenstein & Gutenberg Castle",

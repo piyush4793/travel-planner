@@ -24,12 +24,11 @@
     "family4": "₹5.2L–₹18.5L"
   },
   "experiences": [
-    "WWII Wreck Diving",
-    "Remote Atolls",
-    "Museum Visits",
-    "Lagoon Boats",
-    "Quiet Beaches",
-    "Micronesian Culture"
+    "Diving & Snorkeling",
+    "Islands",
+    "Beaches",
+    "Water Sports",
+    "History"
   ],
   "avoid": [
     "May through November is wetter and more humid, so outer-atoll boats, light-aircraft schedules, and simple beach plans are more disruption-prone than in the drier December-April window.",
@@ -53,19 +52,46 @@
       "name": "Majuro",
       "lat": 7.0897,
       "lng": 171.3803,
-      "notes": "Majuro is the practical arrival hub for museum time, market eats, shared-taxi hops along the atoll road, and boat departures to Laura and nearby outer-lagoon islands."
+      "notes": "Majuro is the practical arrival hub for museum time, market eats, shared-taxi hops along the atoll road, and boat departures to Laura and nearby outer-lagoon islands.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Bikini Atoll",
       "lat": 11.6075,
       "lng": 165.3767,
-      "notes": "Bikini Atoll is a remote UNESCO-listed wreck-diving destination where serious divers join long technical liveaboards for USS Saratoga, Nagato, and other Operation Crossroads relics."
+      "notes": "Bikini Atoll is a remote UNESCO-listed wreck-diving destination where serious divers join long technical liveaboards for USS Saratoga, Nagato, and other Operation Crossroads relics.",
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Arno Atoll",
       "lat": 7.0629,
       "lng": 171.5541,
-      "notes": "Arno Atoll is the easy barefoot escape from Majuro, reached by local boat for white-sand beaches, quiet lagoon swims, and simple lodge stays."
+      "notes": "Arno Atoll is the easy barefoot escape from Majuro, reached by local boat for white-sand beaches, quiet lagoon swims, and simple lodge stays.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     }
   ],
   "itinerary": {
@@ -89,6 +115,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Majuro as the logistics base: one day for culture and food, then one drier-day outing west to Laura or out across the lagoon before any outer-atoll connections.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Museum Intro, Market Snacks and Shared-Taxi Orientation",
@@ -176,6 +207,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Arno works best as one or two easy nights: go with groceries, expect simple lodge facilities, and let the lagoon and village pace be the main activity.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Boat from Majuro, White-Sand Check-In and an Empty-Lagoon Sunset",
@@ -243,6 +279,10 @@
         "recDays": 2,
         "maxDays": 4,
         "note": "Keep Bikini optional inside the planner: in real life it is a high-cost, technical-diving extension that usually departs via Kwajalein or Ebeye rather than a casual short hop from Majuro.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "History"
+        ],
         "days": [
           {
             "theme": "Kwajalein Positioning and Liveaboard Embarkation",
