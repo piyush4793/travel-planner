@@ -26,11 +26,12 @@
     "family4": "₹4.35L–₹6.8L"
   },
   "experiences": [
-    "Volcanic Islands",
-    "Creole Music",
-    "Beach Time",
-    "Coastal Hikes",
-    "Inter-Island Hopping"
+    "Beaches",
+    "Islands",
+    "Hiking",
+    "Water Sports",
+    "Surfing",
+    "Festivals"
   ],
   "avoid": [
     "July-October is the more humid rainy stretch, so Santo Antão trail days and open-sea ferry schedules are more likely to be disrupted than in the dry November-June window.",
@@ -54,25 +55,61 @@
       "name": "Praia (Santiago)",
       "lat": 14.933,
       "lng": -23.513,
-      "notes": "Cape Verde's capital is the practical Santiago base for Plateau walks, Sucupira market, Quebra Canela evenings, and the short run to UNESCO-listed Cidade Velha."
+      "notes": "Cape Verde's capital is the practical Santiago base for Plateau walks, Sucupira market, Quebra Canela evenings, and the short run to UNESCO-listed Cidade Velha.",
+      "bestMonths": [
+        "November",
+        "December",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Sal",
       "lat": 16.741,
       "lng": -22.934,
-      "notes": "Sal is the easiest soft-landing island for Santa Maria beach time, Pedra de Lume's salt crater, and frequent domestic flight connections."
+      "notes": "Sal is the easiest soft-landing island for Santa Maria beach time, Pedra de Lume's salt crater, and frequent domestic flight connections.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Mindelo (São Vicente)",
       "lat": 16.887,
       "lng": -24.987,
-      "notes": "Mindelo is Cape Verde's music-and-café capital, best for waterfront walks, Monte Verde viewpoints, live morna bars, and the ferry gateway to Santo Antão."
+      "notes": "Mindelo is Cape Verde's music-and-café capital, best for waterfront walks, Monte Verde viewpoints, live morna bars, and the ferry gateway to Santo Antão.",
+      "bestMonths": [
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Santo Antão",
       "lat": 17.083,
       "lng": -25.167,
-      "notes": "Santo Antão is the dramatic hiking island for Cova crater, Paúl Valley descents, Fontainhas lookouts, and scenic aluguer rides between villages."
+      "notes": "Santo Antão is the dramatic hiking island for Cova crater, Paúl Valley descents, Fontainhas lookouts, and scenic aluguer rides between villages.",
+      "bestMonths": [
+        "November",
+        "December",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     }
   ],
   "itinerary": {
@@ -101,7 +138,8 @@
         "maxDays": 2,
         "note": "Keep Santiago short and efficient: one capital day and one Cidade Velha day gives you Cape Verde's strongest historical stop before you move into the island-hopping stretch.",
         "experiences": [
-          "Inter-Island Hopping"
+          "Beaches",
+          "Islands"
         ],
         "days": [
           {
@@ -196,7 +234,9 @@
         "maxDays": 3,
         "note": "Sal works best as the easiest low-friction beach base: one Santa Maria day and one crater-and-coast day is enough unless you specifically want extra resort time or watersports lessons.",
         "experiences": [
-          "Beach Time"
+          "Beaches",
+          "Water Sports",
+          "Surfing"
         ],
         "days": [
           {
@@ -292,7 +332,8 @@
         "maxDays": 2,
         "note": "Mindelo deserves two nights for its music-city atmosphere, Monte Verde views, and easy positioning before the early Santo Antão ferry.",
         "experiences": [
-          "Creole Music"
+          "Festivals",
+          "Beaches"
         ],
         "days": [
           {
@@ -387,8 +428,8 @@
         "maxDays": 3,
         "note": "This is the hiking island, so keep two full days for the classic crater-to-valley scenery and one flexible village-and-viewpoint day if you have extra time.",
         "experiences": [
-          "Coastal Hikes",
-          "Volcanic Islands"
+          "Hiking",
+          "Islands"
         ],
         "days": [
           {

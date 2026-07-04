@@ -22,11 +22,15 @@
     "family4": "₹6L–₹10L"
   },
   "experiences": [
-    "Atacama Desert",
-    "Torres del Paine",
-    "Valparaíso street art",
-    "Lakes & volcanoes",
-    "Rapa Nui moai"
+    "Deserts",
+    "Mountains",
+    "Glaciers",
+    "Hiking",
+    "Wine & Vineyards",
+    "Volcanoes",
+    "Islands",
+    "Ancient Ruins",
+    "Beaches"
   ],
   "avoid": [
     "June–August brings short, cold days in Patagonia and pricier ski-season weekends around central Chile."
@@ -46,37 +50,92 @@
       "name": "Santiago",
       "lat": -33.4489,
       "lng": -70.6693,
-      "notes": "Historic core, Lastarria cafés, Cerro San Cristóbal views and Chile’s best-connected food-and-metro base."
+      "notes": "Historic core, Lastarria cafés, Cerro San Cristóbal views and Chile’s best-connected food-and-metro base.",
+      "bestMonths": [
+        "September",
+        "October",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Valparaíso",
       "lat": -33.0472,
       "lng": -71.6127,
-      "notes": "Colorful hills, working port, graffiti lanes, funiculars and Pablo Neruda’s sea-facing house museum."
+      "notes": "Colorful hills, working port, graffiti lanes, funiculars and Pablo Neruda’s sea-facing house museum.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "San Pedro de Atacama",
       "lat": -22.9087,
       "lng": -68.1997,
-      "notes": "Adobe desert village for moonlike valleys, salt lagoons, geysers and some of South America’s clearest night skies."
+      "notes": "Adobe desert village for moonlike valleys, salt lagoons, geysers and some of South America’s clearest night skies.",
+      "bestMonths": [
+        "March",
+        "April",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Puerto Natales",
       "lat": -51.726,
       "lng": -72.5063,
-      "notes": "Gateway town for Torres del Paine, Grey Glacier sailings and classic Patagonian wind-and-mountain scenery."
+      "notes": "Gateway town for Torres del Paine, Grey Glacier sailings and classic Patagonian wind-and-mountain scenery.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Pucón",
       "lat": -39.282,
       "lng": -71.9543,
-      "notes": "Volcano-and-lake adventure base with hot springs, rafting, Araucanía forest trails and a relaxed backpacker feel."
+      "notes": "Volcano-and-lake adventure base with hot springs, rafting, Araucanía forest trails and a relaxed backpacker feel.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Easter Island",
       "lat": -27.1212,
       "lng": -109.3664,
-      "notes": "Remote Polynesian island of moai statues, quarry sites, crater rims and the Hanga Roa seaside base."
+      "notes": "Remote Polynesian island of moai statues, quarry sites, crater rims and the Hanga Roa seaside base.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -108,6 +167,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay in Lastarria or Providencia, load a Bip! card for Metro/bus rides, and use Cabify late at night instead of negotiating street taxis.",
+        "experiences": [
+          "Wine & Vineyards",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Centro Histórico, Lastarria & San Cristóbal",
@@ -186,7 +249,7 @@
         "maxDays": 2,
         "note": "Go as a day trip or one-night stay from Santiago; the city is steep, so pack light and use funiculars or quick Ubers between cerros after dark.",
         "experiences": [
-          "Valparaíso street art"
+          "Beaches"
         ],
         "days": [
           {
@@ -232,7 +295,9 @@
         "maxDays": 4,
         "note": "The town sits around 2,400 m, so hydrate hard, go easy on alcohol the first night, and keep sunrise tours for after you’ve had at least one acclimatisation evening.",
         "experiences": [
-          "Atacama Desert"
+          "Deserts",
+          "Volcanoes",
+          "Hiking"
         ],
         "days": [
           {
@@ -348,7 +413,9 @@
         "maxDays": 4,
         "note": "Book park entry online before you go, carry full windproof layers even on sunny days, and keep a spare weather-flex day if Base Torres is a priority hike.",
         "experiences": [
-          "Torres del Paine"
+          "Glaciers",
+          "Hiking",
+          "Mountains"
         ],
         "days": [
           {
@@ -463,7 +530,8 @@
         "maxDays": 3,
         "note": "Pucón is easy to do without a car, but adventure tours fill up in summer; reserve volcano slots or hot-spring transfers a day or two ahead.",
         "experiences": [
-          "Lakes & volcanoes"
+          "Volcanoes",
+          "Hiking"
         ],
         "days": [
           {
@@ -545,7 +613,9 @@
         "maxDays": 3,
         "note": "Base yourself in Hanga Roa, keep cash for smaller family-run places, and hire a local guide if you want the deeper archaeological context at the quarry and ceremonial sites.",
         "experiences": [
-          "Rapa Nui moai"
+          "Ancient Ruins",
+          "Islands",
+          "Beaches"
         ],
         "days": [
           {

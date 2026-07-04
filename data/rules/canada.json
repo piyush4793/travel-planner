@@ -24,12 +24,14 @@
     "family4": "₹6.5L–₹10L"
   },
   "experiences": [
-    "CN Tower",
-    "Old Quebec",
-    "Banff Gondola",
-    "Stanley Park",
-    "Notre-Dame Basilica",
-    "Rideau Canal"
+    "Mountains",
+    "National Parks",
+    "Lakes",
+    "History",
+    "Architecture",
+    "Hiking",
+    "Skiing",
+    "Nightlife"
   ],
   "avoid": [
     "Banff and Vancouver hotel rates spike fast in July-August — book early.",
@@ -51,37 +53,95 @@
       "name": "Toronto",
       "lat": 43.6532,
       "lng": -79.3832,
-      "notes": "CN Tower, St. Lawrence Market, Casa Loma, ROM, and easy day-trip links across Ontario."
+      "notes": "CN Tower, St. Lawrence Market, Casa Loma, ROM, and easy day-trip links across Ontario.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Vancouver",
       "lat": 49.2827,
       "lng": -123.1207,
-      "notes": "Stanley Park, Granville Island, Capilano, and mountain-meets-ocean city time."
+      "notes": "Stanley Park, Granville Island, Capilano, and mountain-meets-ocean city time.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "December",
+        "January"
+      ]
     },
     {
       "name": "Montreal",
       "lat": 45.5017,
       "lng": -73.5673,
-      "notes": "Old Montreal, Mount Royal, bagels, poutine, and classic French-Canadian city culture."
+      "notes": "Old Montreal, Mount Royal, bagels, poutine, and classic French-Canadian city culture.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Banff",
       "lat": 51.1784,
       "lng": -115.5708,
-      "notes": "Banff National Park base for Lake Louise, Sulphur Mountain, hot springs, and Rocky Mountain scenery."
+      "notes": "Banff National Park base for Lake Louise, Sulphur Mountain, hot springs, and Rocky Mountain scenery.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Quebec City",
       "lat": 46.8139,
       "lng": -71.208,
-      "notes": "Walled Old Quebec, Chateau Frontenac, Montmorency Falls, and a compact historic core."
+      "notes": "Walled Old Quebec, Chateau Frontenac, Montmorency Falls, and a compact historic core.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Ottawa",
       "lat": 45.4215,
       "lng": -75.6972,
-      "notes": "Parliament Hill, ByWard Market, Rideau Canal, and museum-heavy capital-city stop."
+      "notes": "Parliament Hill, ByWard Market, Rideau Canal, and museum-heavy capital-city stop.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     }
   ],
   "itinerary": {
@@ -115,7 +175,9 @@
         "maxDays": 4,
         "note": "Three days covers the skyline icons, one major museum cluster, and neighbourhood food stops without rushing.",
         "experiences": [
-          "CN Tower"
+          "History",
+          "Architecture",
+          "Nightlife"
         ],
         "days": [
           {
@@ -229,7 +291,8 @@
         "maxDays": 2,
         "note": "An overnight stop works well for Parliament Hill, a major museum, and ByWard Market; add a second day only for extra museum time.",
         "experiences": [
-          "Rideau Canal"
+          "History",
+          "Architecture"
         ],
         "days": [
           {
@@ -306,7 +369,9 @@
         "maxDays": 3,
         "note": "Two days gives a strong Old Montreal plus Plateau/Mount Royal pairing; add a third if you want nature-space museums too.",
         "experiences": [
-          "Notre-Dame Basilica"
+          "History",
+          "Architecture",
+          "Nightlife"
         ],
         "days": [
           {
@@ -416,7 +481,8 @@
         "maxDays": 3,
         "note": "Two days is ideal for the old city plus Montmorency Falls without turning the stay into a pure museum stop.",
         "experiences": [
-          "Old Quebec"
+          "History",
+          "Architecture"
         ],
         "days": [
           {
@@ -528,7 +594,10 @@
         "maxDays": 3,
         "note": "Use Banff town as the base; two days covers Sulphur Mountain plus the Lake Louise corridor, while a third day can go to winter sports or extra lakes.",
         "experiences": [
-          "Banff Gondola"
+          "Mountains",
+          "National Parks",
+          "Lakes",
+          "Hiking"
         ],
         "days": [
           {
@@ -639,7 +708,9 @@
         "maxDays": 4,
         "note": "Three days balances classic city sights with one big bridge-or-mountain ticketed day and a lighter waterfront finish.",
         "experiences": [
-          "Stanley Park"
+          "Mountains",
+          "Hiking",
+          "Nightlife"
         ],
         "days": [
           {

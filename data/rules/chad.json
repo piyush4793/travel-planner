@@ -26,10 +26,12 @@
     "family4": "₹10.2L–₹16L"
   },
   "experiences": [
-    "N'Djamena city days around the National Museum, Grand Marché, Gaoui pottery village, and Chari River sunsets.",
-    "Zakouma National Park safaris with elephant herds, birdlife, and ranger-led drives based from Tinga Camp or seasonal Camp Nomade.",
-    "Ennedi Plateau expedition travel to Aloba Arch, Bachikélé, prehistoric rock art shelters, and the crocodile-haunted Guelta d'Archei.",
-    "Lake Chad boat outings from the Baga Sola side for fishing-village views, reed channels, and dry-season birding."
+    "Wildlife & Safari",
+    "National Parks",
+    "Deserts",
+    "Lakes",
+    "Ancient Ruins",
+    "Hiking"
   ],
   "avoid": [
     "Safety advisory: only attempt this itinerary in the November to March dry season and keep checking same-week government advisories, especially for the Lake Chad basin and remote northeastern routes.",
@@ -56,23 +58,27 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Capital gateway for visas, cash, and outfitter meetings, with the National Museum of Chad, Grand Marché, and Gaoui Village as the most practical sightseeing anchors."
+      "notes": "Capital gateway for visas, cash, and outfitter meetings, with the National Museum of Chad, Grand Marché, and Gaoui Village as the most practical sightseeing anchors.",
+      "worstMonths": [
+        "May"
+      ]
     },
     {
       "name": "Zakouma National Park",
       "lat": 10.885,
       "lng": 19.7776,
       "bestMonths": [
-        "November",
-        "December",
         "January",
         "February",
-        "March"
+        "March",
+        "April"
       ],
-      "notes": "African Parks-run safari destination best accessed by charter or long 4x4 transfer, with Tinga Camp and seasonal Camp Nomade as the main known bases."
+      "notes": "African Parks-run safari destination best accessed by charter or long 4x4 transfer, with Tinga Camp and seasonal Camp Nomade as the main known bases.",
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Ennedi Plateau",
@@ -82,10 +88,12 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "UNESCO-listed Sahara landscape of giant arches, canyon camps, rock art, and Guelta d'Archei, usually reached on a guided 4x4 expedition via Fada."
+      "notes": "UNESCO-listed Sahara landscape of giant arches, canyon camps, rock art, and Guelta d'Archei, usually reached on a guided 4x4 expedition via Fada.",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Lake Chad",
@@ -95,10 +103,12 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "The Chadian side is usually experienced from Baga Sola with short pirogue rides, fish-market stops, and birding when local security conditions are calm enough."
+      "notes": "The Chadian side is usually experienced from Baga Sola with short pirogue rides, fish-market stops, and birding when local security conditions are calm enough.",
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -122,9 +132,6 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
-        "experiences": [
-          "N'Djamena city days around the National Museum, Grand Marché, Gaoui pottery village, and Chari River sunsets."
-        ],
         "days": [
           {
             "theme": "Museum, market, and Chari River orientation before heading into remote Chad",
@@ -214,7 +221,8 @@
         "recDays": 3,
         "maxDays": 4,
         "experiences": [
-          "Zakouma National Park safaris with elephant herds, birdlife, and ranger-led drives based from Tinga Camp or seasonal Camp Nomade."
+          "Wildlife & Safari",
+          "National Parks"
         ],
         "days": [
           {
@@ -361,7 +369,9 @@
         "recDays": 4,
         "maxDays": 6,
         "experiences": [
-          "Ennedi Plateau expedition travel to Aloba Arch, Bachikélé, prehistoric rock art shelters, and the crocodile-haunted Guelta d'Archei."
+          "Deserts",
+          "Ancient Ruins",
+          "Hiking"
         ],
         "days": [
           {
@@ -512,7 +522,8 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Lake Chad boat outings from the Baga Sola side for fishing-village views, reed channels, and dry-season birding."
+          "Lakes",
+          "Wildlife & Safari"
         ],
         "days": [
           {

@@ -26,11 +26,11 @@
     "family4": "₹6.1L–₹9.6L"
   },
   "experiences": [
-    "Bangui's cathedral quarter, Boganda National Museum, and practical riverfront base for arranging vetted transport",
-    "Boali Falls and the hydro gorge on a dry-season day trip where a 4x4 is the sensible choice",
-    "Dzanga Bai forest-elephant viewing from the raised platform in one of Central Africa's signature wildlife sites",
-    "Western lowland gorilla tracking in Dzanga-Sangha with mandatory official guides and porters",
-    "Pirogue rides on the Sangha and Ba'Aka cultural encounters around Bayanga when arranged through trusted lodges"
+    "Wildlife & Safari",
+    "National Parks",
+    "Waterfalls",
+    "Markets & Shopping",
+    "Cruises & Boat Trips"
   ],
   "avoid": [
     "Strong safety advisory: the Central African Republic has an active conflict environment and many governments advise against travel; only consider essential, professionally arranged travel, keep plans flexible, and do not move independently after dark.",
@@ -55,10 +55,12 @@
       "bestMonths": [
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Bangui Cathedral, Boganda National Museum, secure hotel compounds, cash/SIM logistics, and the only practical jumping-off point for Boali or Dzanga-Sangha."
+      "notes": "Bangui Cathedral, Boganda National Museum, secure hotel compounds, cash/SIM logistics, and the only practical jumping-off point for Boali or Dzanga-Sangha.",
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Dzanga-Sangha Reserve",
@@ -67,22 +69,26 @@
       "bestMonths": [
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Bayanga-based rainforest access for Dzanga Bai, western lowland gorilla tracking, Sangha pirogues, and Ba'Aka cultural visits, all arranged through lodges or operators."
+      "notes": "Bayanga-based rainforest access for Dzanga Bai, western lowland gorilla tracking, Sangha pirogues, and Ba'Aka cultural visits, all arranged through lodges or operators.",
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Boali Falls",
       "lat": 4.8007,
       "lng": 18.1277,
       "bestMonths": [
-        "December",
-        "January",
-        "February",
-        "March"
+        "October",
+        "November",
+        "December"
       ],
-      "notes": "Classic Bangui day trip for the waterfall viewpoint and hydro station, with limited lodging on site and much better accommodation back in the capital."
+      "notes": "Classic Bangui day trip for the waterfall viewpoint and hydro station, with limited lodging on site and much better accommodation back in the capital.",
+      "worstMonths": [
+        "March"
+      ]
     }
   ],
   "itinerary": {
@@ -106,7 +112,8 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Bangui's cathedral quarter, Boganda National Museum, and practical riverfront base for arranging vetted transport"
+          "Markets & Shopping",
+          "Cruises & Boat Trips"
         ],
         "days": [
           {
@@ -197,7 +204,7 @@
         "recDays": 1,
         "maxDays": 1,
         "experiences": [
-          "Boali Falls and the hydro gorge on a dry-season day trip where a 4x4 is the sensible choice"
+          "Waterfalls"
         ],
         "days": [
           {
@@ -248,9 +255,8 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Dzanga Bai forest-elephant viewing from the raised platform in one of Central Africa's signature wildlife sites",
-          "Western lowland gorilla tracking in Dzanga-Sangha with mandatory official guides and porters",
-          "Pirogue rides on the Sangha and Ba'Aka cultural encounters around Bayanga when arranged through trusted lodges"
+          "Wildlife & Safari",
+          "National Parks"
         ],
         "days": [
           {
