@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ChatModal from "../../components/ai/ChatModal";
 import type { LLMTripPlanResult } from "../../core/utils/ai/llmTransform";
@@ -290,5 +290,114 @@ describe("ChatModal", () => {
 
     await waitFor(() => expect(onClose).toHaveBeenCalledTimes(1));
     expect(mocks.clearChat).toHaveBeenCalledTimes(1);
+  });
+
+  it("fetches and parses a shared chat link, then saves the plan", async () => {
+    const user = userEvent.setup({ delay: null });
+    const onSaveImportedPlan = vi.fn();
+    renderModal({ onSaveImportedPlan });
+
+    await user.click(screen.getByRole("button", { name: /Link/i }));
+    await user.type(screen.getByPlaceholderText(/chatgpt\.com\/share/i), "https://chatgpt.com/share/abc");
+    await user.click(screen.getByRole("button", { name: /Fetch & Parse/i }));
+
+    expect(mocks.fetchChatLink).toHaveBeenCalledWith("https://chatgpt.com/share/abc");
+    await waitFor(() => expect(mocks.parseImportedText).toHaveBeenCalledWith("Day 1 — Oslo"));
+
+    await user.click(screen.getByRole("button", { name: /Review & Save/i }));
+    expect(onSaveImportedPlan).toHaveBeenCalledWith(fixture);
+  });
+
+  it("shows a link fetch error and switches to manual paste", async () => {
+    const user = userEvent.setup({ delay: null });
+    mocks.fetchChatLink.mockResolvedValue({ error: "Failed to fetch link (502)." });
+    renderModal();
+
+    await user.click(screen.getByRole("button", { name: /Link/i }));
+    await user.type(screen.getByPlaceholderText(/chatgpt\.com\/share/i), "https://chatgpt.com/share/x");
+    await user.click(screen.getByRole("button", { name: /Fetch & Parse/i }));
+
+    expect(await screen.findByText(/Failed to fetch link/i)).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: /Paste conversation text manually instead/i }));
+    expect(screen.getByPlaceholderText(/Paste conversation here/i)).toBeInTheDocument();
+  });
+
+  it("retries the last user message after a recoverable error", async () => {
+    const user = userEvent.setup({ delay: null });
+    mocks.mockSession.error = "Network error fetching the response";
+    mocks.mockSession.messages = [
+      { role: "user", content: "Plan Norway" },
+      { role: "assistant", content: "..." },
+      { role: "user", content: "Make it cheaper" },
+    ];
+    renderModal();
+
+    await user.click(screen.getByRole("button", { name: /Retry/i }));
+    expect(mocks.sendMessage).toHaveBeenCalledWith("Make it cheaper");
+  });
+
+  it("renders assistant markdown (headings, bullets, numbered lists, bold)", () => {
+    mocks.mockSession.messages = [
+      { role: "assistant", content: "### Day 1\n- Visit Oslo\n1. Opera House\n**Bring a jacket**" },
+    ];
+    renderModal();
+
+    expect(screen.getByText("Day 1")).toBeInTheDocument();
+    expect(screen.getByText("Visit Oslo")).toBeInTheDocument();
+    expect(screen.getByText("Opera House")).toBeInTheDocument();
+    expect(screen.getByText("Bring a jacket").tagName).toBe("STRONG");
+  });
+
+  it("scrolls to the latest message when the scroll button is clicked", () => {
+    mocks.mockSession.messages = [
+      { role: "user", content: "I want fjords" },
+      { role: "assistant", content: "Norway is a great fit" },
+    ];
+    renderModal();
+
+    const container = screen.getByText("I want fjords").closest(".overflow-y-auto") as HTMLElement;
+    const scrollTo = vi.fn();
+    container.scrollTo = scrollTo as never;
+    Object.defineProperty(container, "scrollHeight", { value: 1000, configurable: true });
+    Object.defineProperty(container, "clientHeight", { value: 300, configurable: true });
+    Object.defineProperty(container, "scrollTop", { value: 100, configurable: true, writable: true });
+    fireEvent.scroll(container);
+
+    fireEvent.click(screen.getByRole("button", { name: /scroll to latest/i }));
+    expect(scrollTo).toHaveBeenCalledWith({ top: 1000, behavior: "smooth" });
+    expect(screen.queryByRole("button", { name: /scroll to latest/i })).toBeNull();
+  });
+
+  it("cycles the finalizing splash steps on an interval", () => {
+    vi.useFakeTimers();
+    try {
+      mocks.mockSession.finalizing = true;
+      renderModal();
+
+      expect(screen.getByText(/Analyzing your preferences/i)).toBeInTheDocument();
+      act(() => { vi.advanceTimersByTime(2500); });
+      expect(screen.getByText(/Mapping the best route/i)).toBeInTheDocument();
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("copies all prompt suggestions to the clipboard", async () => {
+    const user = userEvent.setup({ delay: null });
+    const writeText = vi.fn();
+    vi.spyOn(navigator, "clipboard", "get").mockReturnValue({ writeText } as unknown as Clipboard);
+    mocks.parseImportedText.mockReturnValue({
+      ...importResult,
+      promptSuggestions: ["Ask: 'What is the budget?'", "Ask: 'Which cities?'"],
+    });
+    renderModal();
+
+    await user.click(screen.getByRole("button", { name: /Paste/i }));
+    await user.type(screen.getByPlaceholderText(/Paste conversation here/i), "Day 1 — Oslo");
+    await user.click(screen.getByRole("button", { name: /Parse Conversation/i }));
+    await user.click(screen.getByRole("button", { name: /Copy All/i }));
+
+    expect(writeText).toHaveBeenCalledWith("What is the budget?\nWhich cities?");
+    expect(screen.getByRole("button", { name: /Copied/i })).toBeInTheDocument();
   });
 });

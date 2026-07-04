@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CountryPanel from "../../components/country/CountryPanel";
 import type { Country } from "../../core/types";
@@ -340,5 +340,74 @@ describe("CountryPanel more coverage", () => {
     await user.click(screen.getByRole("button", { name: "Food" }));
 
     expect(onFilterExperience).toHaveBeenCalledWith("Food");
+  });
+
+  it("selects and clears cities in the Plan tab", async () => {
+    const user = userEvent.setup();
+    renderPanel();
+
+    await user.click(screen.getByRole("tab", { name: /Plan/i }));
+    await user.click(screen.getByRole("button", { name: /Cities to visit/i }));
+
+    await user.click(screen.getByRole("button", { name: /Tokyo/i }));
+    expect(screen.getByRole("button", { name: /Tokyo/i })).toHaveAttribute("aria-pressed", "true");
+
+    await user.click(screen.getByRole("button", { name: /Kyoto/i }));
+    const clearBtn = screen.getByRole("button", { name: /Clear selection \(2\)/i });
+    expect(clearBtn).toBeInTheDocument();
+
+    await user.click(clearBtn);
+    expect(screen.queryByRole("button", { name: /Clear selection/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Tokyo/i })).toHaveAttribute("aria-pressed", "false");
+  });
+
+  it("triggers Plan with AI from the plan tab", async () => {
+    const user = userEvent.setup();
+    const onPlanWithAi = vi.fn();
+    renderPanel({ onPlanWithAi });
+
+    await user.click(screen.getByRole("tab", { name: /Plan/i }));
+    await user.click(screen.getByRole("button", { name: /Plan with AI/i }));
+
+    expect(onPlanWithAi).toHaveBeenCalledWith("Japan");
+  });
+
+  it("expands notes into a modal and closes it", async () => {
+    const user = userEvent.setup();
+    renderPanel();
+
+    await user.click(screen.getByRole("tab", { name: /Notes/i }));
+    await user.click(screen.getByRole("button", { name: /Expand notes/i }));
+
+    const dialog = screen.getByRole("dialog", { name: /Expanded notes for Japan/i });
+    expect(dialog).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Close" }));
+    expect(screen.queryByRole("dialog", { name: /Expanded notes for Japan/i })).not.toBeInTheDocument();
+  });
+
+  it("auto-saves notes after the debounce window and shows the saved indicator", () => {
+    vi.useFakeTimers();
+    try {
+      const onUpdateNotes = vi.fn();
+      renderPanel({ onUpdateNotes });
+
+      fireEvent.click(screen.getByRole("tab", { name: /Notes/i }));
+      const textarea = screen.getByPlaceholderText(/Jot down ideas/i);
+      fireEvent.change(textarea, { target: { value: "Pack an umbrella" } });
+
+      // Debounced save has not fired yet.
+      expect(onUpdateNotes).not.toHaveBeenCalled();
+
+      act(() => { vi.advanceTimersByTime(300); });
+      expect(onUpdateNotes).toHaveBeenCalledWith("Pack an umbrella");
+      expect(screen.getByText(/✓ Saved/)).toHaveClass("opacity-100");
+
+      // Saved indicator fades after 2s.
+      act(() => { vi.advanceTimersByTime(2000); });
+      expect(screen.getByText(/✓ Saved/)).toHaveClass("opacity-0");
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });

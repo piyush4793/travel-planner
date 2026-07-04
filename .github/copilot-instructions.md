@@ -8,7 +8,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (805 tests across 90 files)
+npm test                # Vitest suite (825 tests across 91 files)
 npm run test:coverage   # coverage report (must stay ≥ 86% total statements/lines)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests(+coverage) + knip + build
@@ -20,7 +20,7 @@ Before committing, ensure adequate test coverage for the behavior you changed (a
 **Coverage gate (hard):** the pre-commit hook and `npm run validate` run `vitest run --coverage`, which enforces a **global floor of 86% statements/lines** (set in `vite.config.ts` `coverage.thresholds`). A commit is blocked if total coverage drops below 86%. Per-directory thresholds also apply (`src/utils/**` 60/50/60, `src/core/utils/**` 80/70/80, etc.). Raise the floor when coverage rises; never lower it to force a commit through.
 
 Current testing priority:
-- Total statement coverage is ~86% (805 tests). Country-detail and itinerary surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) and the `ai` folder are now covered; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; `importParser` (incl. `fetchChatLink`), `usePanelDrag`, `useChatSession`, `core/storage`, and `App.tsx` orchestration handlers are covered; the platform-backup stack (`core/platform/*`, `core/adapters/backup/*`, `StorageLocationCard`) is covered via a reusable fake File System helper (`src/test/support/fakeFileSystem.ts`); remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` (need a real WebGL context).
+- Total statement coverage is ~88% (825 tests). Country-detail and itinerary surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) and the `ai` folder (`ChatModal` import/link/finalize flows, `SettingsModal` backup/restore/CSV flows) are now covered; the Trips view covers sort/filter plus trip create/edit/delete flows; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; `importParser` (incl. `fetchChatLink`), `usePanelDrag`, `useChatSession`, `core/storage`, and `App.tsx` orchestration handlers are covered; the platform-backup stack (`core/platform/*`, `core/adapters/backup/*`, `StorageLocationCard`) is covered via a reusable fake File System helper (`src/test/support/fakeFileSystem.ts`); remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` (need a real WebGL context).
 - Reuse `src/test/testUtils.ts` helpers for localStorage seeding, route setup, and deterministic timers in timing-sensitive UI tests.
 - Prefer `fireEvent` over `userEvent.tab()` for focus-trap/timing-sensitive assertions (jsdom focus timing is flaky).
 - `src/components/**` thresholds remain intentionally low in `vite.config.ts`; tighten them now that broad integration coverage exists.

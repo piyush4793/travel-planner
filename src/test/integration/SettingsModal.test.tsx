@@ -9,6 +9,12 @@ import type { Country } from "../../core/types";
 
 const mocks = vi.hoisted(() => ({
   validateKey: vi.fn(),
+  exportFullBackup: vi.fn(),
+  exportCountriesCSV: vi.fn(),
+  exportCountriesXLSX: vi.fn(),
+  importCountriesCSV: vi.fn(),
+  parseBackupFile: vi.fn(),
+  applyBackup: vi.fn(),
 }));
 
 vi.mock("../../utils/ai/llmProvider", async (importOriginal) => {
@@ -16,6 +22,19 @@ vi.mock("../../utils/ai/llmProvider", async (importOriginal) => {
   return {
     ...actual,
     validateKey: mocks.validateKey,
+  };
+});
+
+vi.mock("../../utils/backup", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("../../utils/backup")>();
+  return {
+    ...actual,
+    exportFullBackup: mocks.exportFullBackup,
+    exportCountriesCSV: mocks.exportCountriesCSV,
+    exportCountriesXLSX: mocks.exportCountriesXLSX,
+    importCountriesCSV: mocks.importCountriesCSV,
+    parseBackupFile: mocks.parseBackupFile,
+    applyBackup: mocks.applyBackup,
   };
 });
 
@@ -57,6 +76,12 @@ describe("SettingsModal", () => {
     localStorage.clear();
     vi.clearAllMocks();
     mocks.validateKey.mockResolvedValue({ ok: true });
+    mocks.exportFullBackup.mockResolvedValue(undefined);
+    mocks.exportCountriesCSV.mockResolvedValue(undefined);
+    mocks.exportCountriesXLSX.mockResolvedValue(undefined);
+    mocks.importCountriesCSV.mockResolvedValue({ ok: true, countries: [] });
+    mocks.parseBackupFile.mockResolvedValue({ ok: false, msg: "bad file" });
+    mocks.applyBackup.mockReturnValue({ ok: true, msg: "Restored!" });
   });
 
   it("renders nothing while closed and shows settings navigation when open", () => {
@@ -190,6 +215,92 @@ describe("SettingsModal", () => {
 
     await user.click(screen.getByRole("button", { name: /countries csv/i }));
     expect(screen.getByText("No countries to export")).toBeInTheDocument();
+  });
+
+  it("exports a full backup and the countries CSV/XLSX when data is present", async () => {
+    const { user } = renderSettings();
+
+    await user.click(screen.getByRole("tab", { name: /backup/i }));
+
+    await user.click(screen.getByRole("button", { name: /Full Backup \(JSON\)/i }));
+    expect(mocks.exportFullBackup).toHaveBeenCalledTimes(1);
+    expect(await screen.findByText(/Full backup downloaded/i)).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /Countries CSV/i }));
+    expect(mocks.exportCountriesCSV).toHaveBeenCalledTimes(1);
+    expect(await screen.findByText("CSV exported!")).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /Countries XLSX/i }));
+    expect(mocks.exportCountriesXLSX).toHaveBeenCalledTimes(1);
+    expect(await screen.findByText("XLSX exported!")).toBeInTheDocument();
+  });
+
+  it("previews a restore file and applies the backup on confirmation", async () => {
+    mocks.parseBackupFile.mockResolvedValue({
+      ok: true,
+      raw: { data: true },
+      exportedAt: "2024-01-01T10:00:00Z",
+      countryCount: 2,
+      tripCount: 1,
+      aiPlanCount: 0,
+      totalKeys: 5,
+    });
+    const { user } = renderSettings();
+
+    await user.click(screen.getByRole("tab", { name: /backup/i }));
+
+    const restoreInput = document.querySelector('input[type="file"][accept=".json"]') as HTMLInputElement;
+    const file = new File(['{"data":true}'], "backup.json", { type: "application/json" });
+    await user.upload(restoreInput, file);
+
+    expect(await screen.findByRole("heading", { name: /Restore Backup/i })).toBeInTheDocument();
+    expect(screen.getByText(/2 countries/i)).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /Restore Now/i }));
+    expect(mocks.applyBackup).toHaveBeenCalledWith({ data: true });
+    expect(await screen.findByText("Restored!")).toBeInTheDocument();
+  });
+
+  it("shows an error when the restore file cannot be parsed", async () => {
+    mocks.parseBackupFile.mockResolvedValue({ ok: false, msg: "Corrupt backup file" });
+    const { user } = renderSettings();
+
+    await user.click(screen.getByRole("tab", { name: /backup/i }));
+    const restoreInput = document.querySelector('input[type="file"][accept=".json"]') as HTMLInputElement;
+    await user.upload(restoreInput, new File(["nope"], "bad.json", { type: "application/json" }));
+
+    expect(await screen.findByText("Corrupt backup file")).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: /Restore Backup/i })).not.toBeInTheDocument();
+  });
+
+  it("merges imported countries from a CSV file into custom storage", async () => {
+    mocks.importCountriesCSV.mockResolvedValue({
+      ok: true,
+      countries: [{ name: "Japan", lat: 35, lng: 139, bestMonths: [], budget: "₹1L", experiences: [] } as Country],
+    });
+    localStorage.setItem(LS_KEYS.CUSTOMS, JSON.stringify([{ name: "Japan", lat: 0, lng: 0, bestMonths: [], budget: "₹0", experiences: [] }]));
+    const { user } = renderSettings();
+
+    await user.click(screen.getByRole("tab", { name: /backup/i }));
+    const importInput = document.querySelector('input[type="file"][accept=".csv"]') as HTMLInputElement;
+    await user.upload(importInput, new File(["csv"], "countries.csv", { type: "text/csv" }));
+
+    expect(mocks.importCountriesCSV).toHaveBeenCalledTimes(1);
+    expect(await screen.findByText(/Imported 1 countries/i)).toBeInTheDocument();
+    const stored = JSON.parse(localStorage.getItem(LS_KEYS.CUSTOMS)!) as Country[];
+    expect(stored).toHaveLength(1);
+    expect(stored[0].budget).toBe("₹1L");
+  });
+
+  it("persists the weekly backup weekday through the schedule selector", async () => {
+    const { user } = renderSettings();
+
+    await user.click(screen.getByRole("tab", { name: /backup/i }));
+    await user.click(screen.getByRole("button", { name: "Weekly" }));
+    await user.selectOptions(screen.getByRole("combobox"), "Wednesday");
+
+    const stored = JSON.parse(localStorage.getItem(LS_KEYS.BACKUP_SCHEDULE)!) as { weekday: number };
+    expect(stored.weekday).toBe(3);
   });
 
   it("calls onClose from the close button", async () => {
