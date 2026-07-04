@@ -42,6 +42,43 @@ describe("consolidatedToCountry", () => {
     expect(c.landmark).toBe("Sigiriya");
     expect(c.popularityScore).toBe(42);
   });
+
+  it("derives per-city experiences from notes and itinerary content", () => {
+    const withRule: ConsolidatedCountry = {
+      ...CONSOLIDATED,
+      cities: [
+        { name: "Colombo", lat: 6.9, lng: 79.8, notes: "city beaches and nightlife" },
+        { name: "Ella", lat: 6.8, lng: 81.0 },
+      ],
+      itinerary: {
+        cityOrder: ["Ella"],
+        cities: {
+          Ella: {
+            name: "Ella",
+            minDays: 1,
+            recDays: 2,
+            maxDays: 3,
+            days: [{ theme: "Tea country walks and wildlife safari", activities: [{ name: "Nine Arches" }] }],
+          },
+        },
+        connections: [],
+      },
+    };
+    const c = consolidatedToCountry(withRule);
+    const colombo = c.cities?.find((x) => x.name === "Colombo");
+    const ella = c.cities?.find((x) => x.name === "Ella");
+    expect(colombo?.experiences).toEqual(["Beaches"]);
+    expect(ella?.experiences).toEqual(["Tea country", "Wildlife"]);
+  });
+
+  it("honours an authored city experiences override", () => {
+    const authored: ConsolidatedCountry = {
+      ...CONSOLIDATED,
+      cities: [{ name: "Colombo", lat: 6.9, lng: 79.8, notes: "beaches", experiences: ["Wildlife"] }],
+    };
+    const c = consolidatedToCountry(authored);
+    expect(c.cities?.[0].experiences).toEqual(["Wildlife"]);
+  });
 });
 
 describe("mergeCountryData", () => {

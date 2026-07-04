@@ -8,7 +8,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (840 tests across 92 files)
+npm test                # Vitest suite (861 tests across 94 files)
 npm run test:coverage   # coverage report (must stay ≥ 89% total statements/lines)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests(+coverage) + knip + build
@@ -92,6 +92,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | Plan comparison modal | `src/components/country/PlanCompareModal.tsx` |
 | AI chat/settings modals | `src/components/ai/ChatModal.tsx`, `src/components/ai/SettingsModal.tsx` |
 | Trip planner engine | `src/utils/tripPlans.ts` |
+| City↔experience matching (shared) | `src/core/utils/cityExperiences.ts` |
 | City selection + day allocation (DP) | `src/core/utils/citySelection.ts` |
 | Budget basis (party size) source of truth | `src/core/utils/budget.ts` |
 | Feature flags | `src/utils/featureFlags.ts` |
@@ -124,7 +125,8 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 - Edit form budget is a **single per-person (solo) input** → couple/family4 derived via `deriveBudgetBreakdown` (data-calibrated `BASIS_MULTIPLIER`: couple 1.77×, family4 3.45×) → `Country.budgetBreakdown`; the single `budget` string is kept synced to the derived couple value. `getBudgetBadges` must prefer `country.budgetBreakdown` over raw rule data so edits show in member chips
 - Saving edits is an **in-place** panel update (no reload): identity-reset effect keys on `country.name`; a separate effect re-seeds the day slider from `travelStyle`/rule bounds. Editing budget alone preserves an in-progress plan
 - **Three panel tabs** (`PANEL_TABS`, `panelTab` = `overview` | `plan` | `notes`): the former **Info tab was merged into Overview**. Overview = decision info (Trip readiness, When to go, Stopover tip, Watch out for, Combine with) followed by the merged research group (`LearnAboutSection`, `PlanningResourcesSection`, `UsefulLinksSection` from `panel/InfoSections.tsx`). All research sections are lazy collapsibles (Learn fetches only on expand), so the merge adds no eager network. Cities info lives only in the Plan tab
-- **Experience + City filters are panel-local only** — the Plan tab hosts a "Focus experiences" multi-select and a "Cities to visit" picker (both scoped via CountryPanel `selectedExperiences`/`selectedCities` state). They shape ONLY this country's offline itinerary and must never touch global/App state or Calendar. Experiences boost matching cities in auto city-selection and reorder each day's activities so matches surface first (interim keyword heuristic in `tripPlans.ts` — B1). There is no global experience filter in App.tsx
+- **Experience + City filters are panel-local only** — the Plan tab hosts a "Focus experiences" multi-select and a "Cities to visit" picker (both scoped via CountryPanel `selectedExperiences`/`selectedCities` state). They shape ONLY this country's offline itinerary and must never touch global/App state or Calendar. Each `CityEntry` carries structured `experiences?: string[]` tags (authored override on the rule JSON, else derived at enrichment from notes + itinerary content). Selecting experiences boosts matching cities in auto city-selection, sorts matching cities first in the picker (highlighted tags), and reorders each day's activities so matches surface first. Matching logic lives in one place — `src/core/utils/cityExperiences.ts` (`experienceTokens`/`tokenHits`/`ruleCityText`/`matchCityExperiences`), reused by `tripPlans.ts` (engine) and `countryData.ts` (enrichment). There is no global experience filter in App.tsx
+- **Days slider re-seeds from selection** — the Plan tab's `customDays` re-seeds via `recommendedDaysForSelection()` (`tripPlans.ts`), a pure function of travel style + budget tier (`BUDGET_DAY_FACTOR` ±15%) + panel-local city/experience focus, clamped to `[1, maxDays]`. It reacts to style/budget (edited via `CountryForm`) and to experience/city focus; manual drags persist until the next scope change. Budget tier comes from `getBudgetTier(budgetForBasis(country, basis))`. Panel-local only
 - Combine-with pills are clickable and should open that country panel when available in My List
 - Trips search should prioritize primary-country matches (including word-prefix matches) over combine/related hits; combine matches can appear but not at the top, and active search should preserve relevance order (do not re-sort by popularity)
 - Desktop results toolbar should show context (sort + budget basis) and include a one-click clear-all reset for Trips controls

@@ -1,7 +1,9 @@
-import type { Country, CityEntry, PlanStyle } from "../types";
+import type { Country, CityEntry, PlanStyle, TravelStyle } from "../types";
 import type { CountryRule } from "../data/itineraryRules";
 import { scoreCities, planItinerary } from "./citySelection";
 import { budgetForBasis, BUDGET_BASIS_META, DEFAULT_BUDGET_BASIS, type BudgetBasis } from "./budget";
+import { experienceTokens, tokenHits, matchCityExperiences, ruleCityText } from "./cityExperiences";
+import { defaultDaysForStyle } from "./travelStyles";
 
 export type DayEntry = {
   label: string;
@@ -178,30 +180,59 @@ export function getRecRuleDays(rule: CountryRule | null | undefined): number | n
     .reduce((s, c) => s + rule.cities[c].recDays, 0);
 }
 
+/** Budget-tier nudge applied to the recommended trip length. */
+export const BUDGET_DAY_FACTOR: Record<"budget" | "mid" | "premium", number> = {
+  budget: 0.85,
+  mid: 1,
+  premium: 1.15,
+};
+
 /**
- * Reduce free-form experience labels to lowercase, singularised keyword tokens
- * (≥4 chars) for loose matching against rule text. E.g. "Street Food" →
- * ["street", "food"], "Temples" → ["temple"].
+ * Recommended trip length (days) for the current Plan-tab selections. Scope is
+ * driven by, in priority order:
+ *  1. explicitly picked cities → sum of their recommended days,
+ *  2. focus experiences (no explicit cities) → sum of matching cities' rec days,
+ *  3. otherwise the travel-style default across the whole country.
+ * A budget-tier factor then nudges the result (premium longer, budget shorter),
+ * clamped to [1, maxDays]. Pure and side-effect free so the panel can re-seed its
+ * day slider whenever any of these inputs change.
  */
-function experienceTokens(experiences: string[]): string[] {
-  const toks = new Set<string>();
-  for (const e of experiences) {
-    for (const w of e.toLowerCase().split(/[^a-z]+/)) {
-      if (w.length >= 4) toks.add(w.replace(/s$/, ""));
-    }
+export function recommendedDaysForSelection(opts: {
+  rule: CountryRule | null | undefined;
+  style: TravelStyle | undefined;
+  recDays: number;
+  maxDays: number;
+  selectedCities: string[];
+  selectedExperiences: string[];
+  budgetTier?: "budget" | "mid" | "premium";
+}): number {
+  const { rule, style, recDays, maxDays, selectedCities, selectedExperiences, budgetTier } = opts;
+  const safeMax = Math.max(1, maxDays);
+
+  let base: number;
+  if (rule && selectedCities.length > 0) {
+    base = selectedCities.reduce((s, n) => s + (rule.cities[n]?.recDays ?? 0), 0);
+  } else if (rule && selectedExperiences.length > 0) {
+    const matchDays = Object.values(rule.cities)
+      .filter((c) => {
+        const tags = c.experiences ?? matchCityExperiences(ruleCityText(c), selectedExperiences);
+        return tags.some((t) => selectedExperiences.includes(t));
+      })
+      .reduce((s, c) => s + c.recDays, 0);
+    base = matchDays > 0 ? matchDays : defaultDaysForStyle(style, recDays, safeMax);
+  } else {
+    base = defaultDaysForStyle(style, recDays, safeMax);
   }
-  return [...toks];
+
+  const factor = budgetTier ? BUDGET_DAY_FACTOR[budgetTier] : 1;
+  return Math.min(safeMax, Math.max(1, Math.round(base * factor)));
 }
 
-/** Count how many experience tokens appear anywhere in `text`. */
-function tokenHits(text: string, tokens: string[]): number {
-  if (tokens.length === 0) return 0;
-  const t = text.toLowerCase();
-  let hits = 0;
-  for (const tok of tokens) if (t.includes(tok)) hits++;
-  return hits;
-}
-
+/**
+ * Build a ruled itinerary for a country, optionally biased toward the given
+ * experiences. Experience matching is delegated to the shared cityExperiences
+ * helpers so the engine and the panel UI stay consistent.
+ */
 function getRuledItinerary(
   country: Country,
   _style: PlanStyle,
@@ -224,16 +255,12 @@ function getRuledItinerary(
   // DP (auto mode) prefers experience-relevant cities. Explicitly picked cities
   // are always kept, so the boost only reshuffles which cities auto mode drops.
   const boosted =
-    expTokens.length > 0
+    selectedExperiences.length > 0
       ? scored.map((c) => {
           const cr = effectiveRule.cities[c.name];
-          const text = [
-            c.name,
-            cr.note ?? "",
-            ...cr.days.map((d) => `${d.theme} ${d.activities.map((a) => a.name).join(" ")}`),
-          ].join(" ");
-          const hits = tokenHits(text, expTokens);
-          return hits > 0 ? { ...c, value: c.value * (1 + Math.min(0.6, 0.2 * hits)) } : c;
+          const matched = cr.experiences ?? matchCityExperiences(ruleCityText(cr), selectedExperiences);
+          const hits = matched.filter((e) => selectedExperiences.includes(e)).length;
+          return hits > 0 ? { ...c, value: c.value * (1 + Math.min(0.6, 0.3 * hits)) } : c;
         })
       : scored;
   const pool =

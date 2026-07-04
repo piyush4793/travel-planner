@@ -3,11 +3,12 @@ import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../core/types";
 import type { SavedAiPlan } from "../../hooks/useAiPlanStore";
-import { generateTripPlan, getMaxRuleDays, getRecRuleDays } from "../../core/utils/tripPlans";
+import { generateTripPlan, getMaxRuleDays, getRecRuleDays, recommendedDaysForSelection } from "../../core/utils/tripPlans";
 import type { TripPlan } from "../../core/utils/tripPlans";
 import type { BudgetBasis } from "../../core/utils/budget";
+import { budgetForBasis } from "../../core/utils/budget";
+import { getBudgetTier } from "../../core/utils/filterLogic";
 import { mergeCountryData } from "../../core/utils/countryData";
-import { defaultDaysForStyle } from "../../core/utils/travelStyles";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { useCountryRule } from "../../hooks/useCountryRule";
@@ -113,12 +114,33 @@ export default function CountryPanel({
     setPanelTab("overview");
   }, [country?.name]);
 
-  // Default the day slider from the country's travel style (and rule bounds once
-  // loaded). Editing budget alone leaves this untouched, so an in-progress plan
-  // survives; editing travel style re-seeds the default pacing in place.
+  // Recommended trip length for the current Plan selections — reacts to travel
+  // style, budget (both edited via the form), and the panel-local experience and
+  // city focus. Purely local: never touches App/Calendar state.
+  const budgetTier = useMemo(
+    () => (displayCountry ? getBudgetTier(budgetForBasis(displayCountry, budgetBasis)) : undefined),
+    [displayCountry, budgetBasis],
+  );
+  const recommendedDays = useMemo(
+    () =>
+      recommendedDaysForSelection({
+        rule,
+        style: primaryStyle,
+        recDays,
+        maxDays: safeMaxDays,
+        selectedCities,
+        selectedExperiences,
+        budgetTier,
+      }),
+    [rule, primaryStyle, recDays, safeMaxDays, selectedCities, selectedExperiences, budgetTier],
+  );
+
+  // Re-seed the day slider whenever the recommendation changes (style/budget from
+  // edit, or experience/city focus). Manual slider drags persist until one of
+  // these inputs next changes.
   useEffect(() => {
-    setCustomDays(defaultDaysForStyle(primaryStyle, recDays, safeMaxDays));
-  }, [primaryStyle, recDays, safeMaxDays]);
+    setCustomDays(recommendedDays);
+  }, [recommendedDays]);
 
   // Debounced notes auto-save (300ms)
   const debouncedSave = useCallback((text: string) => {
@@ -187,6 +209,15 @@ export default function CountryPanel({
   const toggleExperience = useCallback((tag: string) => {
     setSelectedExperiences((prev) => prev.includes(tag) ? prev.filter((e) => e !== tag) : [...prev, tag]);
   }, []);
+
+  // When focus experiences are active, surface matching cities first (stable).
+  const orderedCities = useMemo(() => {
+    const cities = displayCountry?.cities ?? [];
+    if (selectedExperiences.length === 0) return cities;
+    const matches = (c: (typeof cities)[number]) =>
+      (c.experiences ?? []).some((e) => selectedExperiences.includes(e));
+    return [...cities].sort((a, b) => Number(matches(b)) - Number(matches(a)));
+  }, [displayCountry?.cities, selectedExperiences]);
 
   return (
     <div
@@ -438,13 +469,14 @@ export default function CountryPanel({
                       <CollapsibleSection label="Cities to visit" count={displayCountry.cities.length} defaultOpen={false}>
                         <p className="mb-2 text-[11px] text-gray-500">Optional — auto-selected if blank</p>
                         <div className="space-y-2">
-                          {displayCountry.cities.map((city) => (
+                          {orderedCities.map((city) => (
                             <CityCard
                               key={city.name}
                               city={city}
                               selectable
                               selected={selectedCities.includes(city.name)}
                               onToggle={() => toggleCity(city.name)}
+                              activeExperiences={selectedExperiences}
                             />
                           ))}
                         </div>

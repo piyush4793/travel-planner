@@ -1,5 +1,28 @@
-import type { Country } from "../types";
+import type { Country, CityEntry } from "../types";
 import type { ConsolidatedCountry } from "../../data/consolidatedCountry";
+import { matchCityExperiences, ruleCityText } from "./cityExperiences";
+
+/**
+ * Attach the country-level experiences each city satisfies. An authored
+ * `experiences` array on the city wins; otherwise we derive from the city's
+ * notes plus its itinerary content (day themes + activities) so the panel and
+ * engine share one consistent mapping. Cities with no match are left untouched.
+ */
+function withCityExperiences(
+  cities: ConsolidatedCountry["cities"],
+  countryExperiences: string[],
+  itinerary: ConsolidatedCountry["itinerary"],
+): CityEntry[] {
+  if (!Array.isArray(cities)) return cities;
+  return cities.map((c) => {
+    if (Array.isArray(c.experiences) && c.experiences.length > 0) return c;
+    if (countryExperiences.length === 0) return c;
+    const ruleCity = itinerary?.cities[c.name];
+    const text = `${c.notes ?? ""} ${ruleCity ? ruleCityText(ruleCity) : ""}`;
+    const matched = matchCityExperiences(text, countryExperiences);
+    return matched.length > 0 ? { ...c, experiences: matched } : c;
+  });
+}
 
 /** Convert a loaded consolidated rule record into a full Country object. */
 export function consolidatedToCountry(
@@ -22,7 +45,7 @@ export function consolidatedToCountry(
     combo: data.combo,
     landmark: data.landmark ?? undefined,
     travelStyle: data.travelStyle as Country["travelStyle"],
-    cities: data.cities,
+    cities: withCityExperiences(data.cities, data.experiences ?? [], data.itinerary),
     stopoverNote: data.stopoverNote ?? undefined,
     links: data.links,
   };

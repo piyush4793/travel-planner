@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { generateTripPlan, getMaxRuleDays, getRecRuleDays, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../core/utils/tripPlans";
+import { generateTripPlan, getMaxRuleDays, getRecRuleDays, recommendedDaysForSelection, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../core/utils/tripPlans";
 import type { Country } from "../core/types";
 
 const COUNTRY_WITH_CITIES: Country = {
@@ -460,5 +460,55 @@ describe("tripPlans — rule-based DP selection", () => {
 
     const focused = generateTripPlan(EXP_COUNTRY as never, "custom" as never, [], 1, EXP_RULE as never, "couple", ["Street Food"]);
     expect(focused.days.map((d) => d.label).join()).toContain("Foodville");
+  });
+})
+
+describe("recommendedDaysForSelection", () => {
+  const RULE = {
+    cityOrder: ["Alpha", "Beta", "Gamma"],
+    cities: {
+      Alpha: { name: "Alpha", minDays: 1, recDays: 3, maxDays: 5, days: [{ theme: "Temples tour", activities: [{ name: "Shrine" }] }] },
+      Beta: { name: "Beta", minDays: 1, recDays: 2, maxDays: 4, days: [{ theme: "Street Food crawl", activities: [{ name: "Market" }] }] },
+      Gamma: { name: "Gamma", minDays: 1, recDays: 4, maxDays: 6, days: [{ theme: "Beaches", activities: [{ name: "Coast" }] }] },
+    },
+    connections: [],
+  } as never;
+
+  it("uses the travel-style default when nothing is selected", () => {
+    // explorer → recDays (3+2+4 = 9), no budget nudge.
+    expect(
+      recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 15, selectedCities: [], selectedExperiences: [] }),
+    ).toBe(9);
+  });
+
+  it("sums the recommended days of explicitly picked cities", () => {
+    expect(
+      recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 15, selectedCities: ["Alpha", "Gamma"], selectedExperiences: [] }),
+    ).toBe(7);
+  });
+
+  it("sums matching cities' days for a focus experience", () => {
+    // "Street Food" matches only Beta (recDays 2).
+    expect(
+      recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 15, selectedCities: [], selectedExperiences: ["Street Food"] }),
+    ).toBe(2);
+  });
+
+  it("applies the budget-tier nudge and clamps to maxDays", () => {
+    const premium = recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 15, selectedCities: [], selectedExperiences: [], budgetTier: "premium" });
+    const budget = recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 15, selectedCities: [], selectedExperiences: [], budgetTier: "budget" });
+    expect(premium).toBe(Math.round(9 * 1.15)); // 10
+    expect(budget).toBe(Math.round(9 * 0.85)); // 8
+    // Clamp: huge city-sum capped at maxDays.
+    expect(
+      recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 9, maxDays: 6, selectedCities: ["Alpha", "Beta", "Gamma"], selectedExperiences: [], budgetTier: "premium" }),
+    ).toBe(6);
+  });
+
+  it("falls back to the style default with no rule", () => {
+    // touch-and-go → round(recDays*0.6) = round(5*0.6) = 3.
+    expect(
+      recommendedDaysForSelection({ rule: null, style: "touch-and-go", recDays: 5, maxDays: 10, selectedCities: ["X"], selectedExperiences: [] }),
+    ).toBe(3);
   });
 })

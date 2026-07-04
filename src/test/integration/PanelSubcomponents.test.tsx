@@ -353,4 +353,28 @@ describe("CityCard", () => {
     expect(screen.getByText("May")).toBeInTheDocument();
     expect(screen.queryByText("Nov")).not.toBeInTheDocument();
   });
+
+  it("shows experience chips and flags a card matching the active focus", () => {
+    const tagged: CityEntry = { ...city, experiences: ["Temples", "Food"] };
+    render(
+      <CityCard city={tagged} selectable selected={false} onToggle={vi.fn()} activeExperiences={["Temples"]} />,
+    );
+
+    expect(screen.getByText("Temples")).toBeInTheDocument();
+    expect(screen.getByText("Food")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /Kyoto — matches your focus experiences/i }),
+    ).toBeInTheDocument();
+  });
+
+  it("does not flag a match when no experiences intersect the focus", () => {
+    const tagged: CityEntry = { ...city, experiences: ["Food"] };
+    render(
+      <CityCard city={tagged} selectable selected={false} onToggle={vi.fn()} activeExperiences={["Temples"]} />,
+    );
+
+    expect(
+      screen.queryByRole("button", { name: /matches your focus experiences/i }),
+    ).not.toBeInTheDocument();
+  });
 });

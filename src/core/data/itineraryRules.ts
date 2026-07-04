@@ -11,12 +11,14 @@ type RuleDayPlan = {
   meals?: string[];
 };
 
-type CityRule = {
+export type CityRule = {
   name: string;
   minDays: number;
   recDays: number;
   maxDays: number;
   note?: string;
+  /** Optional authored override for the experiences this city satisfies. */
+  experiences?: string[];
   days: RuleDayPlan[];
 };
 

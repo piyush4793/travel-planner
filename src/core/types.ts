@@ -8,6 +8,8 @@ export type CityEntry = {
   lng: number;
   bestMonths?: string[];
   notes?: string;
+  /** Country-level experiences this city satisfies (authored or derived). */
+  experiences?: string[];
 };
 
 export type CatalogEntry = {
