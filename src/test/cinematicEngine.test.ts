@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   easeInOut,
   roadPt,
@@ -8,6 +8,10 @@ import {
   generateRailPath,
   cleanJumpOptions,
   buildCityStops,
+  createTransportEl,
+  rotateIconToHeading,
+  removeTransportMarker,
+  rafAnimate,
   HOME_COORDS,
   HOME_CITY,
 } from "../components/country/cinematic/engine";
@@ -137,5 +141,101 @@ describe("buildCityStops", () => {
   it("drops cities without coordinates", () => {
     const p = { days: [{ label: "Day 1 — Ghost", activities: [] }] } as unknown as TripPlan;
     expect(buildCityStops(p, country)).toHaveLength(0);
+  });
+});
+
+describe("createTransportEl", () => {
+  it("builds a plane marker with contrails and an SVG icon", () => {
+    const el = createTransportEl("✈️");
+    expect(el.style.width).toBe("64px");
+    expect(el.querySelector(".transport-icon")).toBeTruthy();
+    expect(el.querySelector(".plane-contrail")).toBeTruthy();
+    expect(el.querySelector(".plane-contrail-glow")).toBeTruthy();
+    expect(el.querySelector("svg")).toBeTruthy();
+  });
+
+  it("builds a bus marker as a circular orb", () => {
+    const el = createTransportEl("🚌");
+    expect(el.style.width).toBe("52px");
+    expect(el.querySelector(".transport-icon")).toBeTruthy();
+    expect(el.querySelector("svg")).toBeTruthy();
+  });
+
+  it("builds a ground-vehicle marker with a motion trail", () => {
+    const el = createTransportEl("🚗");
+    expect(el.style.width).toBe("56px");
+    expect(el.querySelector(".ground-motion-trail")).toBeTruthy();
+    expect(el.querySelector("svg")).toBeTruthy();
+  });
+
+  it("falls back to the emoji glyph when no SVG asset exists", () => {
+    const el = createTransportEl("🛸");
+    expect(el.querySelector("svg")).toBeNull();
+    expect(el.textContent).toContain("🛸");
+  });
+});
+
+describe("rotateIconToHeading", () => {
+  it("applies the screen-relative rotation to the inner icon", () => {
+    const el = createTransportEl("🚗");
+    const marker = { getElement: () => el } as unknown as import("maplibre-gl").Marker;
+    rotateIconToHeading(marker, 90, 30);
+    const icon = el.querySelector(".transport-icon") as HTMLElement;
+    expect(icon.style.transform).toBe("rotate(60deg)");
+  });
+
+  it("no-ops when the marker has no transport-icon", () => {
+    const bare = document.createElement("div");
+    const marker = { getElement: () => bare } as unknown as import("maplibre-gl").Marker;
+    expect(() => rotateIconToHeading(marker, 45, 0)).not.toThrow();
+  });
+});
+
+describe("removeTransportMarker", () => {
+  afterEach(() => vi.useRealTimers());
+
+  it("animates out and removes the marker after the transition", () => {
+    vi.useFakeTimers();
+    const el = createTransportEl("✈️");
+    const remove = vi.fn();
+    const marker = { getElement: () => el, remove } as unknown as import("maplibre-gl").Marker;
+
+    removeTransportMarker(marker);
+    expect(el.style.transform).toBe("scale(0)");
+    expect(el.style.opacity).toBe("0");
+    expect(remove).not.toHaveBeenCalled();
+
+    vi.advanceTimersByTime(400);
+    expect(remove).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("rafAnimate", () => {
+  it("resolves immediately without progress when cancelled", async () => {
+    const onProgress = vi.fn();
+    await rafAnimate(1000, onProgress, () => true, () => false);
+    expect(onProgress).not.toHaveBeenCalled();
+  });
+
+  it("jumps progress to 1 when skipped", async () => {
+    const onProgress = vi.fn();
+    await rafAnimate(1000, onProgress, () => false, () => false, () => true);
+    expect(onProgress).toHaveBeenLastCalledWith(1);
+  });
+
+  it("drives progress from 0 to 1 to completion", async () => {
+    let now = 0;
+    const raf = vi
+      .spyOn(globalThis, "requestAnimationFrame")
+      .mockImplementation((cb: FrameRequestCallback) => {
+        now += 500;
+        cb(now);
+        return 0 as unknown as number;
+      });
+    const seen: number[] = [];
+    await rafAnimate(1000, (t) => seen.push(t), () => false, () => false);
+    expect(seen[seen.length - 1]).toBe(1);
+    expect(seen.some((t) => t > 0 && t < 1)).toBe(true);
+    raf.mockRestore();
   });
 });

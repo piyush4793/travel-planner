@@ -8,7 +8,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (683 tests across 83 files)
+npm test                # Vitest suite (693 tests across 83 files)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests + knip + build
 ```
@@ -17,7 +17,7 @@ Run `npx tsc --noEmit` and `npm run build` before and after every change set. Us
 Before committing, ensure adequate test coverage for the behavior you changed (add or update TCs so regressions are caught).
 
 Current testing priority:
-- Total statement coverage is ~82% (683 tests). Country-detail and itinerary surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) and the `ai` folder are now covered; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` and `App.tsx` orchestration.
+- Total statement coverage is ~82% (693 tests). Country-detail and itinerary surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) and the `ai` folder are now covered; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` and `App.tsx` orchestration.
 - Reuse `src/test/testUtils.ts` helpers for localStorage seeding, route setup, and deterministic timers in timing-sensitive UI tests.
 - Prefer `fireEvent` over `userEvent.tab()` for focus-trap/timing-sensitive assertions (jsdom focus timing is flaky).
 - `src/components/**` thresholds remain intentionally low in `vite.config.ts`; tighten them now that broad integration coverage exists.
