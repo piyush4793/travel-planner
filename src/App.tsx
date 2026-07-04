@@ -23,7 +23,7 @@ import { useBackDismiss } from "./hooks/useBackDismiss";
 import { isEnabled } from "./core/featureFlags";
 import { useInstallPrompt } from "./hooks/useInstallPrompt";
 import AppInstallShare from "./components/shared/AppInstallShare";
-import { isBackupOverdue, autoBackupIfOverdue } from "./utils/backup";
+import { isBackupOverdue, autoBackupToTargetIfOverdue, hasAnyLocalData, canAutoImport, restoreFromTarget } from "./utils/backup";
 
 // Lazy-load heavy modals/overlays — only fetched when first opened
 const CountryForm = lazy(() => import("./components/country/CountryForm"));
@@ -61,18 +61,39 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const mainMapRef = useRef<maplibregl.Map | null>(null);
   const [backupBannerDismissed, setBackupBannerDismissed] = useState(false);
+  const [restoreAvailable, setRestoreAvailable] = useState(false);
+  const [restoreBusy, setRestoreBusy] = useState(false);
 
   useEffect(() => { saveLS(LS_KEYS.HOME_COUNTRY, homeCountry); }, [homeCountry]);
 
-  // Auto-backup on mount when overdue
+  // On mount: back up overdue data to the platform target, or — on a fresh
+  // device with no local data — offer to restore from an existing backup.
   const autoBackupRan = useRef(false);
   useEffect(() => {
     if (autoBackupRan.current) return;
     autoBackupRan.current = true;
-    if (autoBackupIfOverdue()) {
-      setBackupBannerDismissed(true);
-    }
+    let cancelled = false;
+    (async () => {
+      if (hasAnyLocalData()) {
+        if (await autoBackupToTargetIfOverdue()) {
+          if (!cancelled) setBackupBannerDismissed(true);
+        }
+        return;
+      }
+      if (await canAutoImport()) {
+        if (!cancelled) setRestoreAvailable(true);
+      }
+    })();
+    return () => { cancelled = true; };
   }, []);
+
+  const handleRestoreFromTarget = async () => {
+    setRestoreBusy(true);
+    const result = await restoreFromTarget();
+    setRestoreBusy(false);
+    if (result.ok) window.location.reload();
+    else setRestoreAvailable(false);
+  };
 
   // Re-render when dev flag panel toggles a feature
   const [, forceUpdate] = useState(0);
@@ -269,6 +290,25 @@ export default function App() {
             <span className="text-xs font-medium text-white/85">Settings</span>
             <DevFlagPanel />
           </div>
+        </div>
+      )}
+
+      {/* Fresh-device restore offer — data found in the backup location */}
+      {restoreAvailable && (
+        <div className="bg-emerald-600/90 text-white px-4 py-2 flex items-center gap-3 text-xs shrink-0">
+          <span>📦 We found a saved backup for this app. Restore your travel data?</span>
+          <button
+            onClick={handleRestoreFromTarget}
+            disabled={restoreBusy}
+            className="focus-ring min-h-[32px] px-3 py-1 bg-white/20 hover:bg-white/30 disabled:opacity-60 rounded-lg font-semibold transition-colors"
+          >
+            {restoreBusy ? "Restoring…" : "Restore"}
+          </button>
+          <button
+            onClick={() => setRestoreAvailable(false)}
+            className="focus-ring min-h-[32px] min-w-[32px] ml-auto text-white/70 hover:text-white"
+            aria-label="Dismiss restore offer"
+          >✕</button>
         </div>
       )}
 

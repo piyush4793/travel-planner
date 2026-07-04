@@ -1,6 +1,9 @@
 import { LS_KEYS } from "../core/lsKeys";
 import { loadLS, saveLS, getStorageAdapter } from "../core/storage";
 import type { Country } from "../core/types";
+import type { BackupTargetKind } from "../core/platform/defaults";
+import type { BackupTargetPort } from "../core/ports/BackupTargetPort";
+import { getBackupTarget, defaultBackupTargetKind } from "../core/platform/selectBackupTarget";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -40,7 +43,7 @@ const BACKUP_KEYS = [
 
 // ─── JSON Full Backup ─────────────────────────────────────────────────────────
 
-function buildBackupBlob(): Blob {
+function buildBackupJson(): string {
   const storage = getStorageAdapter();
   const data: Record<string, unknown> = {};
   for (const key of BACKUP_KEYS) {
@@ -56,7 +59,11 @@ function buildBackupBlob(): Blob {
     data,
   };
 
-  return new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" });
+  return JSON.stringify(backup, null, 2);
+}
+
+function buildBackupBlob(): Blob {
+  return new Blob([buildBackupJson()], { type: "application/json" });
 }
 
 /** Manual export — opens "Save As" dialog when supported */
@@ -66,7 +73,7 @@ export async function exportFullBackup(): Promise<void> {
   saveLS(LS_KEYS.LAST_BACKUP, new Date().toISOString());
 }
 
-/** Silent auto-backup — no dialog, downloads to default folder */
+/** Silent auto-backup fallback — downloads to default folder. */
 function autoExportBackup(): void {
   downloadBlob(buildBackupBlob(), `roamwise-backup-${dateStamp()}.json`);
   saveLS(LS_KEYS.LAST_BACKUP, new Date().toISOString());
@@ -498,6 +505,84 @@ export function autoBackupIfOverdue(): boolean {
   if (!isBackupOverdue()) return false;
   autoExportBackup();
   return true;
+}
+
+// ─── Platform backup targets ──────────────────────────────────────────────────
+
+/** True when the user has any of their own data worth backing up / restoring. */
+export function hasAnyLocalData(): boolean {
+  const hasList = (loadLS<unknown[]>(LS_KEYS.MY_LIST, [])?.length ?? 0) > 0;
+  const hasCustoms = (loadLS<unknown[]>(LS_KEYS.CUSTOMS, [])?.length ?? 0) > 0;
+  const hasTrips = (loadLS<unknown[]>(LS_KEYS.TRIP_CUSTOMS, [])?.length ?? 0) > 0;
+  const hasPlans = Object.keys(loadLS<Record<string, unknown>>(LS_KEYS.AI_PLANS, {}) ?? {}).length > 0;
+  return hasList || hasCustoms || hasTrips || hasPlans;
+}
+
+/** User-selected target kind, falling back to the platform default. */
+export function getBackupTargetKind(): BackupTargetKind {
+  const override = loadLS<BackupTargetKind | "">(LS_KEYS.BACKUP_TARGET, "");
+  if (override === "filesystem" || override === "opfs" || override === "download") return override;
+  return defaultBackupTargetKind();
+}
+
+export function setBackupTargetKind(kind: BackupTargetKind): void {
+  saveLS(LS_KEYS.BACKUP_TARGET, kind);
+}
+
+/** The active backup target implementation. */
+export function activeBackupTarget(): BackupTargetPort {
+  return getBackupTarget(getBackupTargetKind());
+}
+
+/** Ask the browser to protect our data from eviction (best-effort). */
+async function requestPersistentStorage(): Promise<void> {
+  const storage = typeof navigator !== "undefined" ? navigator.storage : undefined;
+  if (storage && typeof storage.persist === "function") {
+    try { await storage.persist(); } catch { /* best-effort */ }
+  }
+}
+
+/**
+ * Write a backup to the active platform target; falls back to a download if the
+ * target isn't ready (e.g. no folder picked yet). Records the timestamp on success.
+ */
+export async function backupToTarget(): Promise<{ ok: boolean; location: string }> {
+  await requestPersistentStorage();
+  const target = activeBackupTarget();
+  if (await target.isReady()) {
+    const result = await target.write(buildBackupJson());
+    if (result.ok) {
+      saveLS(LS_KEYS.LAST_BACKUP, new Date().toISOString());
+      return { ok: true, location: result.location };
+    }
+  }
+  autoExportBackup();
+  return { ok: true, location: "Downloads" };
+}
+
+/** Async auto-backup routed through the platform target. */
+export async function autoBackupToTargetIfOverdue(): Promise<boolean> {
+  if (!isBackupOverdue()) return false;
+  await backupToTarget();
+  return true;
+}
+
+/** Read the latest backup from the active target for fresh-device restore. */
+export async function restoreFromTarget(): Promise<{ ok: boolean; msg: string }> {
+  const record = await activeBackupTarget().readLatest();
+  if (!record) return { ok: false, msg: "No backup found in the current location." };
+  try {
+    const parsed = JSON.parse(record.text) as BackupData;
+    return applyBackup(parsed);
+  } catch {
+    return { ok: false, msg: "The stored backup could not be parsed." };
+  }
+}
+
+/** Whether the active target can silently read a backup back (for auto-import). */
+export async function canAutoImport(): Promise<boolean> {
+  const target = activeBackupTarget();
+  return (await target.isReady()) && (await target.readLatest()) !== null;
 }
 
 export function getLastBackupLabel(): string {

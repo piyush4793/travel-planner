@@ -21,6 +21,7 @@ import SettingsNav, { type SettingsNavItem } from "./settings/SettingsNav";
 import GeneralSettings from "./settings/GeneralSettings";
 import ProviderPicker, { PROVIDER_ICONS } from "./settings/ProviderPicker";
 import { SectionCard, StatusBanner, FieldLabel } from "./settings/SettingsUI";
+import StorageLocationCard from "./settings/StorageLocationCard";
 
 
 const PROVIDERS: LLMProviderType[] = ["openai", "claude", "gemini"];
@@ -368,6 +369,8 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                 </div>
               </div>
             </div>
+
+            <StorageLocationCard onStatus={setBackupStatus} />
 
             <SectionCard title="Export" icon={"\u{1F4E4}"} accent="bg-blue-100 text-blue-600" desc="Full backup includes everything. CSV/XLSX export only countries (human-editable).">
               <div className="space-y-2">
