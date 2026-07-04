@@ -24,10 +24,11 @@
   },
   "experiences": [
     "Beaches",
-    "Street Food",
-    "Temples",
     "Islands",
-    "Nightlife"
+    "Temples & Religious Sites",
+    "Food",
+    "Diving & Snorkeling",
+    "History"
   ],
   "avoid": [
     "Monsoon season May-Oct"
@@ -47,37 +48,91 @@
       "name": "Bangkok",
       "lat": 13.7563,
       "lng": 100.5018,
-      "notes": "Grand Palace, Wat Pho, Khao San Road and legendary Pad Thai"
+      "notes": "Grand Palace, Wat Pho, Khao San Road and legendary Pad Thai",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Chiang Mai",
       "lat": 18.7883,
       "lng": 98.9853,
-      "notes": "300 temples, Sunday Night Market, elephant sanctuaries and doi hiking"
+      "notes": "300 temples, Sunday Night Market, elephant sanctuaries and doi hiking",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Phuket",
       "lat": 7.8804,
       "lng": 98.3923,
-      "notes": "Patong Beach, Phi Phi Island day trips and vibrant nightlife"
+      "notes": "Patong Beach, Phi Phi Island day trips and vibrant nightlife",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Koh Samui",
       "lat": 9.512,
       "lng": 100.0136,
-      "notes": "Coconut palm beaches, Big Buddha Temple and Na Muang waterfalls"
+      "notes": "Coconut palm beaches, Big Buddha Temple and Na Muang waterfalls",
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "July"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Ayutthaya",
       "lat": 14.3692,
       "lng": 100.5877,
-      "notes": "Ancient capital ruins with headless Buddha statues at sunset"
+      "notes": "Ancient capital ruins with headless Buddha statues at sunset",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Pai",
       "lat": 19.3583,
       "lng": 98.4393,
-      "notes": "Misty mountain valley with hot springs, canyon views and bohemian cafes"
+      "notes": "Misty mountain valley with hot springs, canyon views and bohemian cafes",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     }
   ],
   "itinerary": {
@@ -106,6 +161,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Keep one weekend day here if you want Chatuchak at its liveliest.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Arrival + Sacred Bangkok",
@@ -244,6 +303,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Works well as a Bangkok day trip, but an overnight stay gives you the best sunset at the ruins.",
+        "experiences": [
+          "History",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Ancient Capital Ruins & River Sunset",
@@ -296,6 +359,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Book Elephant Nature Park and any cooking class a few weeks ahead in peak season.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Ancient Lanna Temples & Night Bazaar",
@@ -424,6 +491,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "The Chiang Mai road has 700+ bends, so carry motion-sickness tablets if needed.",
+        "experiences": [
+          "Food"
+        ],
         "days": [
           {
             "theme": "Canyon Views, Hot Springs & Walking Street",
@@ -516,6 +586,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Phuket as your Andaman base for both heritage walks and island-hopping tours.",
+        "experiences": [
+          "Beaches",
+          "Islands",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Old Town, Big Buddha & Patong Nightlife",
@@ -607,6 +682,10 @@
         "recDays": 2,
         "maxDays": 4,
         "note": "Leave some flexibility here because ferry and boat trips change with Gulf weather.",
+        "experiences": [
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Temple Circuit, Beaches & Fisherman’s Village",

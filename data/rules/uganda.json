@@ -26,11 +26,12 @@
     "family4": "₹9.8L–₹16L"
   },
   "experiences": [
-    "Bwindi gorilla trekking",
-    "Kazinga Channel boat safari",
-    "Jinja white-water rafting",
-    "Murchison Falls game drives",
-    "Chimp tracking in Kyambura or Budongo"
+    "Wildlife & Safari",
+    "National Parks",
+    "Hiking",
+    "Lakes",
+    "Adventure Sports",
+    "Waterfalls"
   ],
   "avoid": [
     "March-May and October-November rains make red-dirt park roads slower and hiking trails muddier",
@@ -53,31 +54,76 @@
       "name": "Kampala",
       "lat": 0.3476,
       "lng": 32.5825,
-      "notes": "Uganda's energetic capital for markets, museums, cultural performances, SafeBoda hops and stocking up before rafting or safari departures"
+      "notes": "Uganda's energetic capital for markets, museums, cultural performances, SafeBoda hops and stocking up before rafting or safari departures",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "December"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Bwindi Impenetrable Forest",
       "lat": -1.0521,
       "lng": 29.6201,
-      "notes": "Misty gorilla country around Buhoma and Rushaga, with Batwa cultural visits, steep forest trails and Uganda's signature wildlife permit day"
+      "notes": "Misty gorilla country around Buhoma and Rushaga, with Batwa cultural visits, steep forest trails and Uganda's signature wildlife permit day",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "December"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Queen Elizabeth National Park",
       "lat": -0.1828,
       "lng": 29.8949,
-      "notes": "Kasenyi game drives, Kazinga Channel boat safaris, crater-lake lookouts and chimp tracking around Kyambura Gorge"
+      "notes": "Kasenyi game drives, Kazinga Channel boat safaris, crater-lake lookouts and chimp tracking around Kyambura Gorge",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "December"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Jinja",
       "lat": 0.4244,
       "lng": 33.2042,
-      "notes": "Adventure hub on the Upper Nile for white-water rafting, Source of the Nile boat rides and a lighter reset after Kampala"
+      "notes": "Adventure hub on the Upper Nile for white-water rafting, Source of the Nile boat rides and a lighter reset after Kampala",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "December"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Murchison Falls",
       "lat": 2.2694,
       "lng": 31.7167,
-      "notes": "Uganda's classic savannah park for the dramatic Nile squeeze, Buligi game drives, boat cruises and Budongo chimp add-ons"
+      "notes": "Uganda's classic savannah park for the dramatic Nile squeeze, Buligi game drives, boat cruises and Budongo chimp add-ons",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "December"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     }
   ],
   "itinerary": {
@@ -106,6 +152,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Lakes"
+        ],
         "days": [
           {
             "theme": "Markets, history and an easy first day learning Kampala's hills before the bigger safari sectors start",
@@ -198,6 +247,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Adventure Sports"
+        ],
         "days": [
           {
             "theme": "An action-heavy Nile day with rafting, river viewpoints and a much looser pace than Kampala",
@@ -250,6 +302,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Waterfalls",
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Into savannah country with your first big Uganda wildlife drive and the Nile already doing all the scenery work",
@@ -342,6 +399,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Classic QENP day: Kasenyi plains wildlife in the morning and a Kazinga Channel boat packed with hippos by afternoon",
@@ -434,6 +495,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Permit day in one of Africa's great forests, with a steep climb rewarded by Uganda's most iconic wildlife encounter",

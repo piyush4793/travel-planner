@@ -26,11 +26,12 @@
     "family4": "₹3.3L–₹4.9L"
   },
   "experiences": [
-    "Grand Marché and fetish-market energy in Lomé",
-    "Mount Agou highland hike",
-    "Koutammakou tata somba houses",
-    "Lake Togo pirogue to Togoville",
-    "Fazao-Malfakassa wilderness detour"
+    "Beaches",
+    "History",
+    "UNESCO Sites",
+    "Markets & Shopping",
+    "Hiking",
+    "Wildlife & Safari"
   ],
   "avoid": [
     "April to October is wetter and slower, with muddy rural roads around Plateaux and the far north making bush-taxi timing less reliable.",
@@ -53,25 +54,61 @@
       "name": "Lomé",
       "lat": 6.1319,
       "lng": 1.2228,
-      "notes": "Seafront capital for markets, beach strips, fetish culture, and the easiest transport connections into the rest of Togo."
+      "notes": "Seafront capital for markets, beach strips, fetish culture, and the easiest transport connections into the rest of Togo.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Kpalimé",
       "lat": 6.9,
       "lng": 0.6333,
-      "notes": "Cooler highland town for Mount Agou, waterfalls, cocoa-country day trips, and a gentler pace than Lomé."
+      "notes": "Cooler highland town for Mount Agou, waterfalls, cocoa-country day trips, and a gentler pace than Lomé.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Koutammakou (Tamberma Valley)",
       "lat": 10.8798,
       "lng": 0.7786,
-      "notes": "UNESCO-listed Batammariba country of earthen tata somba houses, reached via Kara or Kandé with a slow but rewarding rural last mile."
+      "notes": "UNESCO-listed Batammariba country of earthen tata somba houses, reached via Kara or Kandé with a slow but rewarding rural last mile.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Togoville",
       "lat": 6.4266,
       "lng": 1.4902,
-      "notes": "Lake Togo spiritual town known for pirogue arrivals, vodun shrines, and a quiet lakeside rhythm east of Lomé."
+      "notes": "Lake Togo spiritual town known for pirogue arrivals, vodun shrines, and a quiet lakeside rhythm east of Lomé.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -95,6 +132,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Start with Lomé’s raw market energy, fetish lore, and easy city rides before leaving the coast.",
@@ -187,6 +228,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Trade the coast for Togo’s green highlands and use Kpalimé for the country’s best-known summit hike.",
@@ -279,6 +323,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Make the long northbound push, using Kara as the staging base and folding in Togo’s biggest wilderness reserve if timing works.",
@@ -375,6 +423,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 1,
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Finish by Lake Togo with pirogues, shrine visits, and a calmer spiritual atmosphere than the capital.",

@@ -22,12 +22,12 @@
     "family4": "₹4.9L–₹7.6L"
   },
   "experiences": [
-    "White-marble Ashgabat",
-    "Parthian Nisa ruins",
-    "Darvaza Gas Crater camp",
-    "Ancient Merv",
-    "Konye-Urgench mausoleums",
-    "Desert road journey"
+    "Deserts",
+    "History",
+    "Ancient Ruins",
+    "UNESCO Sites",
+    "Architecture",
+    "Markets & Shopping"
   ],
   "avoid": [
     "June–August desert heat around Darvaza, Merv and Konye-Urgench where midday sightseeing becomes draining fast",
@@ -50,25 +50,61 @@
       "name": "Ashgabat",
       "lat": 37.9601,
       "lng": 58.3261,
-      "notes": "The white-marble capital is the easiest place for visa formalities, banks, museums, Nisa day trips and the broadest hotel choice."
+      "notes": "The white-marble capital is the easiest place for visa formalities, banks, museums, Nisa day trips and the broadest hotel choice.",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Darvaza (Gates of Hell)",
       "lat": 40.2525,
       "lng": 58.4394,
-      "notes": "Remote Karakum Desert gas crater best done as an overnight guided camp with a 4x4, sunset arrival and early-morning departure."
+      "notes": "Remote Karakum Desert gas crater best done as an overnight guided camp with a 4x4, sunset arrival and early-morning departure.",
+      "bestMonths": [
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Merv",
       "lat": 37.6612,
       "lng": 62.1749,
-      "notes": "Use Mary as the hotel base for the vast UNESCO ruins of Ancient Merv, Sultan Sanjar Mausoleum and nearby desert archaeology."
+      "notes": "Use Mary as the hotel base for the vast UNESCO ruins of Ancient Merv, Sultan Sanjar Mausoleum and nearby desert archaeology.",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Konye-Urgench",
       "lat": 42.3277,
       "lng": 59.1544,
-      "notes": "UNESCO-listed Khwarazm capital of minarets and mausoleums, usually visited as a guided day trip from Dashoguz."
+      "notes": "UNESCO-listed Khwarazm capital of minarets and mausoleums, usually visited as a guided day trip from Dashoguz.",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -93,6 +129,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers the capital highlights plus Old Nisa; keep a third only if you want slower museum time or extra visa-buffer space.",
+        "experiences": [
+          "Architecture",
+          "History"
+        ],
         "days": [
           {
             "theme": "Marble Capital Icons & Museums",
@@ -197,6 +237,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One long day works if you start early from Mary with a guide; a second day helps only if you want Mary museums or a gentler pace in the ruins.",
+        "experiences": [
+          "Ancient Ruins",
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Ancient Merv UNESCO Circuit",
@@ -259,6 +304,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat Darvaza as an overnight desert camp: arrive before sunset, stay for the crater glow, and leave at sunrise before the heat builds.",
+        "experiences": [
+          "Deserts"
+        ],
         "days": [
           {
             "theme": "Karakum Desert Drive & Crater Camp",
@@ -303,6 +351,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Most travelers do Konye-Urgench as a guided day trip from Dashoguz because the site is spread out but the city itself has limited tourist infrastructure.",
+        "experiences": [
+          "Ancient Ruins",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Khwarazm Mausoleums & Minaret",

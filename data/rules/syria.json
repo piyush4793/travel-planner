@@ -26,11 +26,12 @@
     "family4": "₹3.2L–₹4.9L"
   },
   "experiences": [
-    "Umayyad Mosque and Al-Hamidiyah Souq inside Old Damascus",
-    "Aleppo Citadel with revived souk and Jdeideh quarter walks",
-    "Palmyra's desert colonnades and tomb valleys",
-    "Krak des Chevaliers fortress circuit and valley views",
-    "Classic Levantine food stops in Damascus and Aleppo"
+    "History",
+    "Ancient Ruins",
+    "UNESCO Sites",
+    "Architecture",
+    "Markets & Shopping",
+    "Temples & Religious Sites"
   ],
   "avoid": [
     "Strong safety advisory: Syria remains a post-conflict destination with checkpoints, rebuilding damage, sudden district-level restrictions, and uneven services; only travel after checking current government advisories, using a vetted local operator or fixer, and keeping every leg flexible.",
@@ -54,25 +55,61 @@
       "name": "Damascus",
       "lat": 33.5138,
       "lng": 36.2765,
-      "notes": "Old Damascus, the Umayyad Mosque, Al-Hamidiyah Souq, Azm Palace, and Christian Quarter lanes make this the essential arrival base."
+      "notes": "Old Damascus, the Umayyad Mosque, Al-Hamidiyah Souq, Azm Palace, and Christian Quarter lanes make this the essential arrival base.",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Aleppo",
       "lat": 36.2021,
       "lng": 37.1343,
-      "notes": "Aleppo Citadel, Al-Madina Souq, Jdeideh heritage lanes, and some of Syria's strongest food traditions anchor the north."
+      "notes": "Aleppo Citadel, Al-Madina Souq, Jdeideh heritage lanes, and some of Syria's strongest food traditions anchor the north.",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Palmyra",
       "lat": 34.5481,
       "lng": 38.2741,
-      "notes": "Tadmur is the base for Palmyra's Roman-era ruins, desert viewpoints, and guide-led archaeological visits."
+      "notes": "Tadmur is the base for Palmyra's Roman-era ruins, desert viewpoints, and guide-led archaeological visits.",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Krak des Chevaliers",
       "lat": 34.756,
       "lng": 36.2947,
-      "notes": "The crusader castle above Al-Husn is Syria's most dramatic fortress stop and works best as a western-valley day trip or overnight."
+      "notes": "The crusader castle above Al-Husn is Syria's most dramatic fortress stop and works best as a western-valley day trip or overnight.",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -98,6 +135,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Damascus to settle SIM, cash, and local guidance first; the Old City is the easiest place to sightsee on foot, while longer transfers should stay daylight-only.",
+        "experiences": [
+          "History",
+          "UNESCO Sites",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Walk the UNESCO core through Syria's best-known mosque, market lanes, and classic Old City tables",
@@ -220,6 +262,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Only head north with current local advice; the historic core is the goal, and you should avoid improvising late-evening arrivals or extra district hopping.",
+        "experiences": [
+          "History",
+          "UNESCO Sites",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Focus on the citadel, souk spine, and Aleppo's classic mansion restaurants in one concentrated heritage day",
@@ -298,6 +345,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Treat Palmyra as a guide-led daylight archaeology leg from Tadmur; access, restoration zones, and where you can actually stay can all change fast.",
+        "experiences": [
+          "Ancient Ruins",
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "See the famous desert ruins with time for the colonnade, monumental remains, and a cautious sunset return",
@@ -376,6 +428,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "This western-valley stop works best with a driver or carefully timed shared taxi because onward public transport thins out fast after lunch.",
+        "experiences": [
+          "History",
+          "UNESCO Sites",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Give Syria's headline crusader fortress a full daylight block with nearby village views and a proper lunch stop",

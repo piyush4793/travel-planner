@@ -25,12 +25,12 @@
     "family4": "₹6.8L–₹9.4L"
   },
   "experiences": [
-    "Carnival",
     "Beaches",
-    "Birdwatching",
-    "Rainforest Drives",
-    "Bake and Shark",
-    "Reef Trips"
+    "Festivals",
+    "Wildlife & Safari",
+    "Islands",
+    "Diving & Snorkeling",
+    "Nightlife"
   ],
   "avoid": [
     "June–November is wetter, greener, and more humid, with rougher north-coast seas and more washed-out hiking plans.",
@@ -58,10 +58,12 @@
         "January",
         "February",
         "March",
-        "April",
-        "May"
+        "April"
       ],
-      "notes": "Capital base for Savannah walks, Fort George sunsets, Carnival energy, Ariapita Avenue dining, and easy airport or water-taxi logistics."
+      "notes": "Capital base for Savannah walks, Fort George sunsets, Carnival energy, Ariapita Avenue dining, and easy airport or water-taxi logistics.",
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Tobago",
@@ -71,10 +73,12 @@
         "January",
         "February",
         "March",
-        "April",
-        "May"
+        "April"
       ],
-      "notes": "Use Crown Point or nearby Bon Accord as your base for Pigeon Point, Buccoo Reef, Scarborough fort history, and slower east-coast beach days."
+      "notes": "Use Crown Point or nearby Bon Accord as your base for Pigeon Point, Buccoo Reef, Scarborough fort history, and slower east-coast beach days.",
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Maracas Bay",
@@ -84,10 +88,12 @@
         "January",
         "February",
         "March",
-        "April",
-        "May"
+        "April"
       ],
-      "notes": "Trinidad's classic north-coast beach stop for bake-and-shark, dramatic viewpoints, and a half-day escape from the capital."
+      "notes": "Trinidad's classic north-coast beach stop for bake-and-shark, dramatic viewpoints, and a half-day escape from the capital.",
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Caroni Swamp",
@@ -97,10 +103,12 @@
         "January",
         "February",
         "March",
-        "April",
-        "May"
+        "April"
       ],
-      "notes": "Mangrove wetland famous for sunset scarlet ibis returns, quiet channels, and bird-heavy late-afternoon boat trips."
+      "notes": "Mangrove wetland famous for sunset scarlet ibis returns, quiet channels, and bird-heavy late-afternoon boat trips.",
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Blanchisseuse",
@@ -110,10 +118,12 @@
         "January",
         "February",
         "March",
-        "April",
-        "May"
+        "April"
       ],
-      "notes": "Remote-feeling north-coast village with river-mouth swims, easy waterfall add-ons, and one of Trinidad's prettiest daylight drives."
+      "notes": "Remote-feeling north-coast village with river-mouth swims, easy waterfall add-ons, and one of Trinidad's prettiest daylight drives.",
+      "worstMonths": [
+        "October"
+      ]
     }
   ],
   "itinerary": {
@@ -141,6 +151,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay around St. Ann's, Newtown, or Woodbrook for easier restaurant access, shorter airport transfers, and simple water-taxi or Carnival logistics.",
+        "experiences": [
+          "Festivals",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Savannah icons, Fort George sunset, and a first taste of the capital",
@@ -222,6 +236,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Best as a daylight outing from Port of Spain; leave early to beat road traffic and arrive before the busiest lunch window at the beach stalls.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "North-coast viewpoints, beach time, and the island's signature sandwich",
@@ -257,6 +274,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Plan this around the late-afternoon boat because the scarlet ibis return to roost is the main reason most travelers come here.",
+        "experiences": [
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Mangrove channels, scarlet ibis, and a gentle central-Trinidad evening",
@@ -302,6 +322,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Carry cash, snacks, and swimwear, and avoid rushing — this is one of Trinidad's prettiest road trips rather than a place to over-schedule.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Scenic north-coast drive, waterfall detour, and river-mouth swims",
@@ -332,6 +355,11 @@
         "recDays": 3,
         "maxDays": 3,
         "note": "Base in Crown Point or Bon Accord for the easiest flight logistics, then branch to Scarborough, Buccoo, Speyside, or Castara based on weather and energy.",
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Pigeon Point, Buccoo Reef, and an easy beach-first arrival",

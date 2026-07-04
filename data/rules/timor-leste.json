@@ -26,11 +26,12 @@
     "family4": "₹1.9L–₹3L"
   },
   "experiences": [
-    "Cristo Rei sunrise",
-    "Coral Triangle diving at Ataúro",
-    "Portuguese-era Baucau",
-    "Maubisse coffee highlands",
-    "Jaco Island day trip"
+    "Diving & Snorkeling",
+    "Beaches",
+    "Islands",
+    "History",
+    "Hiking",
+    "Wildlife & Safari"
   ],
   "avoid": [
     "December–April rains can wash out mountain and far-east roads.",
@@ -57,12 +58,12 @@
         "May",
         "June",
         "July",
-        "August",
-        "September",
-        "October",
-        "November"
+        "October"
       ],
-      "notes": "Capital base for Cristo Rei, the Timorese Resistance Archive & Museum, Areia Branca beach and practical ferry departures to Ataúro Island."
+      "notes": "Capital base for Cristo Rei, the Timorese Resistance Archive & Museum, Areia Branca beach and practical ferry departures to Ataúro Island.",
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Baucau",
@@ -72,12 +73,12 @@
         "May",
         "June",
         "July",
-        "August",
-        "September",
-        "October",
-        "November"
+        "October"
       ],
-      "notes": "Historic east-coast town with colonial architecture, a photogenic old market, and the best staging point for long road trips toward Tutuala and Jaco Island."
+      "notes": "Historic east-coast town with colonial architecture, a photogenic old market, and the best staging point for long road trips toward Tutuala and Jaco Island.",
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Ataúro Island",
@@ -87,12 +88,12 @@
         "May",
         "June",
         "July",
-        "August",
-        "September",
-        "October",
-        "November"
+        "October"
       ],
-      "notes": "Coral Triangle island escape for reef diving, village boat rides, Boneca handicrafts and slow beach days around Beloi and Adara."
+      "notes": "Coral Triangle island escape for reef diving, village boat rides, Boneca handicrafts and slow beach days around Beloi and Adara.",
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Maubisse",
@@ -102,12 +103,12 @@
         "May",
         "June",
         "July",
-        "August",
-        "September",
-        "October",
-        "November"
+        "October"
       ],
-      "notes": "Cool highland base for Tatamailau panoramas, colonial pousada views, coffee landscapes and community stays around Hakmatek and Hatu-Builico."
+      "notes": "Cool highland base for Tatamailau panoramas, colonial pousada views, coffee landscapes and community stays around Hakmatek and Hatu-Builico.",
+      "worstMonths": [
+        "February"
+      ]
     }
   ],
   "itinerary": {
@@ -133,6 +134,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Use Dili for your arrival buffer, the core historical sights and one beach day; it is also the easiest place to organize taxis, microlets and ferry tickets before going elsewhere.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Arrival, resistance history and Dili waterfront",
@@ -254,6 +259,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Ataúro is best with two nights if you want both reef time and an unhurried village day; wind or swell can reshuffle ferry schedules, so avoid making same-day international flight connections from here.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Beloi arrival, village shoreline and Boneca handicrafts",
@@ -334,6 +343,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "One full day covers Baucau town, but two works better if you want to push farther east to Tutuala and Jaco Island without rushing the return to Dili.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Colonial Baucau, old market and east-coast views",
@@ -418,6 +431,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "The highlands are all about cooler air, views and slow travel; keep two days if you want both Maubisse town and a Tatamailau/Ramelau sunrise mission from nearby Hatu-Builico.",
+        "experiences": [
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Highland arrival, market streets and pousada views",

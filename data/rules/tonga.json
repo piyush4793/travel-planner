@@ -26,12 +26,12 @@
     "family4": "₹6.2L–₹8.8L"
   },
   "experiences": [
-    "Whale Watching",
-    "Island Hopping",
-    "Cave Swimming",
-    "Polynesian Culture",
     "Beaches",
-    "Snorkeling"
+    "Islands",
+    "Diving & Snorkeling",
+    "Wildlife & Safari",
+    "Water Sports",
+    "Cruises & Boat Trips"
   ],
   "avoid": [
     "November–April is hotter, wetter, and overlaps South Pacific cyclone season, so inter-island ferries and small-plane schedules are less reliable.",
@@ -55,19 +55,46 @@
       "name": "Nuku'alofa",
       "lat": -21.1394,
       "lng": -175.2018,
-      "notes": "Tongatapu's capital is the practical arrival base for the Royal Palace waterfront, Talamahu Market, and easy self-drive day trips to Ha'amonga, Anahulu Cave, and the south-coast blowholes."
+      "notes": "Tongatapu's capital is the practical arrival base for the Royal Palace waterfront, Talamahu Market, and easy self-drive day trips to Ha'amonga, Anahulu Cave, and the south-coast blowholes.",
+      "bestMonths": [
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Vava'u",
       "lat": -18.6502,
       "lng": -173.9836,
-      "notes": "Vava'u centers on Neiafu's protected harbour, humpback-whale season from July to October, and boat days to Swallows Cave, Mariner's Cave, and reef islands such as Nuku."
+      "notes": "Vava'u centers on Neiafu's protected harbour, humpback-whale season from July to October, and boat days to Swallows Cave, Mariner's Cave, and reef islands such as Nuku.",
+      "bestMonths": [
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Ha'apai",
       "lat": -19.8052,
       "lng": -174.3508,
-      "notes": "Ha'apai is the slower barefoot-islands leg built around Pangai logistics, Foa's long beaches, simple reef snorkels, and guesthouse-led boat trips."
+      "notes": "Ha'apai is the slower barefoot-islands leg built around Pangai logistics, Foa's long beaches, simple reef snorkels, and guesthouse-led boat trips.",
+      "bestMonths": [
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     }
   ],
   "itinerary": {
@@ -91,6 +118,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Base yourself in Nuku'alofa for one town day and one full Tongatapu loop; the best sights are spread out enough that a rental car or driver saves time.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Royal Waterfront, Market Browsing and a Gentle Capital Arrival",
@@ -182,6 +212,11 @@
         "recDays": 3,
         "maxDays": 3,
         "note": "Vava'u is worth three slower days if you can spare them: one harbour day, one whale or boat day, and one reef-or-cave outing keeps the pace right.",
+        "experiences": [
+          "Wildlife & Safari",
+          "Diving & Snorkeling",
+          "Cruises & Boat Trips"
+        ],
         "days": [
           {
             "theme": "Flight North, Neiafu Harbour and Mt Talau Views",
@@ -286,6 +321,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Ha'apai works best as a simple beach-and-boat decompression block, so keep expectations low-key and let your lodge shape the day around weather and ferry timing.",
+        "experiences": [
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Inter-Island Arrival, Foa Beaches and a Slow Sunset",

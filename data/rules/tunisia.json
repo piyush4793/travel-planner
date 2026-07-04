@@ -23,11 +23,12 @@
     "family4": "₹2.8L–₹4.2L"
   },
   "experiences": [
-    "Medinas",
-    "Roman Ruins",
-    "Blue-and-White Villages",
-    "Sahara Oases",
-    "Island Beaches"
+    "Beaches",
+    "Ancient Ruins",
+    "History",
+    "Deserts",
+    "UNESCO Sites",
+    "Markets & Shopping"
   ],
   "avoid": [
     "July-August gets punishingly hot in Tozeur and the Sahara fringe even if Tunis still feels manageable.",
@@ -49,31 +50,76 @@
       "name": "Tunis",
       "lat": 36.8065,
       "lng": 10.1815,
-      "notes": "Bardo Museum, the old medina, French-era boulevards and easy rail day trips into Tunisia's Roman heartland."
+      "notes": "Bardo Museum, the old medina, French-era boulevards and easy rail day trips into Tunisia's Roman heartland.",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Sidi Bou Said",
       "lat": 36.8687,
       "lng": 10.3417,
-      "notes": "Blue-and-white clifftop lanes, café terraces, art spaces and postcard Mediterranean views above the bay."
+      "notes": "Blue-and-white clifftop lanes, café terraces, art spaces and postcard Mediterranean views above the bay.",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Carthage",
       "lat": 36.8529,
       "lng": 10.323,
-      "notes": "Byrsa Hill, Antonine Baths, Punic and Roman layers, and one of North Africa's most atmospheric archaeological spreads."
+      "notes": "Byrsa Hill, Antonine Baths, Punic and Roman layers, and one of North Africa's most atmospheric archaeological spreads.",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Djerba",
       "lat": 33.8076,
       "lng": 10.8451,
-      "notes": "Houmt Souk markets, Djerbahood street art, beaches, El Ghriba synagogue and easy-going island stays."
+      "notes": "Houmt Souk markets, Djerbahood street art, beaches, El Ghriba synagogue and easy-going island stays.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Tozeur",
       "lat": 33.9197,
       "lng": 8.1335,
-      "notes": "Palm oasis walks, brick medina lanes, Chott el Jerid mirages and desert excursions to Ong Jemel and Mos Espa."
+      "notes": "Palm oasis walks, brick medina lanes, Chott el Jerid mirages and desert excursions to Ong Jemel and Mos Espa.",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -99,6 +145,10 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Bardo Treasures, Central Tunis & Medina Rooftops",
@@ -219,6 +269,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Blue Doors, Sea Views & Café Pauses Above the Gulf",
@@ -267,6 +321,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Ancient Ruins",
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Punic-Roman Layers from Byrsa to the Antonine Baths",
@@ -315,6 +374,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Deserts"
+        ],
         "days": [
           {
             "theme": "Oasis Paths, Brick Medina & Chott el Jerid Light",
@@ -399,6 +461,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Houmt Souk, Foundouks & Harbour Seafood",

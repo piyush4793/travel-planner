@@ -22,12 +22,12 @@
     "family4": "₹3.4L–₹5.5L"
   },
   "experiences": [
-    "Night Markets",
-    "Museums",
-    "Tea Culture",
+    "Food",
     "Mountains",
-    "Temples",
-    "Rail Journeys"
+    "Hiking",
+    "Temples & Religious Sites",
+    "Markets & Shopping",
+    "Lakes"
   ],
   "avoid": [
     "Typhoon-prone humidity peaks from July to August"
@@ -47,37 +47,91 @@
       "name": "Taipei",
       "lat": 25.033,
       "lng": 121.5654,
-      "notes": "Capital base for observatories, imperial collections, night markets and easy MRT hops"
+      "notes": "Capital base for observatories, imperial collections, night markets and easy MRT hops",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Jiufen",
       "lat": 25.1099,
       "lng": 121.8442,
-      "notes": "Lantern-lit hills, teahouses and old mining lanes above Taiwan's northeast coast"
+      "notes": "Lantern-lit hills, teahouses and old mining lanes above Taiwan's northeast coast",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Taroko Gorge",
       "lat": 24.157,
       "lng": 121.6213,
-      "notes": "Marble canyon landscapes with shrine viewpoints, cliff roads and Hualien rail access"
+      "notes": "Marble canyon landscapes with shrine viewpoints, cliff roads and Hualien rail access",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Sun Moon Lake",
       "lat": 23.8659,
       "lng": 120.915,
-      "notes": "Scenic lake circuit for ropeway rides, temple stops and easy cycling sections"
+      "notes": "Scenic lake circuit for ropeway rides, temple stops and easy cycling sections",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Tainan",
       "lat": 22.9997,
       "lng": 120.227,
-      "notes": "Historic former capital packed with forts, shrines and Taiwan's deepest snack culture"
+      "notes": "Historic former capital packed with forts, shrines and Taiwan's deepest snack culture",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Kaohsiung",
       "lat": 22.6273,
       "lng": 120.3014,
-      "notes": "Harbour city for art warehouses, ferries, Buddha museums and easy southern rail links"
+      "notes": "Harbour city for art warehouses, ferries, Buddha museums and easy southern rail links",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -104,6 +158,11 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Food",
+          "Markets & Shopping",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Airport arrival, heritage core and night-market reset",
@@ -220,6 +279,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 1,
+        "experiences": [
+          "Food",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Lantern alleys, teahouses and old gold-mining lanes",
@@ -264,6 +327,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Marble gorge classics from the visitor center to shrine viewpoints",
@@ -344,6 +411,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Lakes"
+        ],
         "days": [
           {
             "theme": "Lake loop, ropeway ride and temple viewpoints",
@@ -388,6 +458,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Temples & Religious Sites",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Former-capital core with towers, lanes and night-market snacking",
@@ -468,6 +542,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Food",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Harbour art, river lights and classic southern street food",

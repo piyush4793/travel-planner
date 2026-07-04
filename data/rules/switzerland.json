@@ -19,11 +19,12 @@
     "family4": "₹8L–₹14L"
   },
   "experiences": [
-    "Swiss Alps",
-    "Interlaken",
-    "Zermatt / Matterhorn",
-    "Zurich",
-    "Chocolate & Cheese"
+    "Mountains",
+    "Hiking",
+    "Lakes",
+    "Skiing",
+    "History",
+    "Glaciers"
   ],
   "avoid": [
     "Budget carefully — most expensive country in Europe"
@@ -43,37 +44,91 @@
       "name": "Zurich",
       "lat": 47.3769,
       "lng": 8.5417,
-      "notes": "Old Town Lindenhugel, Lake Zurich promenade and world-class museums"
+      "notes": "Old Town Lindenhugel, Lake Zurich promenade and world-class museums",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Geneva",
       "lat": 46.2044,
       "lng": 6.1432,
-      "notes": "Jet d'Eau fountain, UN Palais des Nations and Vieille-Ville old town"
+      "notes": "Jet d'Eau fountain, UN Palais des Nations and Vieille-Ville old town",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Interlaken",
       "lat": 46.6863,
       "lng": 7.8632,
-      "notes": "Paragliding, skydiving, Jungfrau railway and two alpine lake views"
+      "notes": "Paragliding, skydiving, Jungfrau railway and two alpine lake views",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Lucerne",
       "lat": 47.0502,
       "lng": 8.3093,
-      "notes": "Kapellbrucke wooden bridge, Lion Monument and Mt Pilatus cog railway"
+      "notes": "Kapellbrucke wooden bridge, Lion Monument and Mt Pilatus cog railway",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Zermatt",
       "lat": 46.0207,
       "lng": 7.7491,
-      "notes": "Car-free village at the foot of the iconic Matterhorn peak"
+      "notes": "Car-free village at the foot of the iconic Matterhorn peak",
+      "bestMonths": [
+        "July",
+        "August",
+        "December",
+        "February"
+      ],
+      "worstMonths": [
+        "May"
+      ]
     },
     {
       "name": "Bern",
       "lat": 46.948,
       "lng": 7.4474,
-      "notes": "Bear Park, rose garden, medieval arcaded Lauben streets and clock tower"
+      "notes": "Bear Park, rose garden, medieval arcaded Lauben streets and clock tower",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -102,6 +157,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Lakes"
+        ],
         "days": [
           {
             "theme": "Banking City Meets Medieval Soul",
@@ -194,6 +253,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Lakes",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Medieval Bridges & Mountain Vibes",
@@ -282,6 +345,10 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Gateway to the Alps",
@@ -405,6 +472,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Mountains",
+          "Skiing",
+          "Glaciers"
+        ],
         "days": [
           {
             "theme": "Matterhorn Up Close",
@@ -493,6 +565,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Lakes",
+          "History"
+        ],
         "days": [
           {
             "theme": "International City of Peace",
@@ -585,6 +661,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Bear City: Switzerland's Hidden Capital",

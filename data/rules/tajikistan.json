@@ -24,11 +24,12 @@
     "family4": "₹3.5L–₹5.8L"
   },
   "experiences": [
-    "Pamir Highway road trip",
-    "Rokhat Teahouse & Dushanbe museums",
-    "Seven Lakes and Fann Mountains hikes",
-    "Panjshanbe Bazaar in Khujand",
-    "Ancient Penjikent & Sarazm"
+    "Mountains",
+    "Hiking",
+    "Lakes",
+    "History",
+    "Road Trips",
+    "Ancient Ruins"
   ],
   "avoid": [
     "October–May for the Pamir Highway unless you are prepared for snow, landslides and sudden road closures",
@@ -51,31 +52,76 @@
       "name": "Dushanbe",
       "lat": 38.5598,
       "lng": 68.787,
-      "notes": "Main arrival city for museums, visa errands, Hissar Fortress and the easiest place to sort SIMs, cash and Pamir permits before heading out"
+      "notes": "Main arrival city for museums, visa errands, Hissar Fortress and the easiest place to sort SIMs, cash and Pamir permits before heading out",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Pamir Highway (Khorog)",
       "lat": 37.4999,
       "lng": 71.5531,
-      "notes": "Use Khorog as the Pamir base for the botanical garden, bazaar, Gunt River walks and onward 4x4 trips deeper into GBAO"
+      "notes": "Use Khorog as the Pamir base for the botanical garden, bazaar, Gunt River walks and onward 4x4 trips deeper into GBAO",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Iskanderkul Lake",
       "lat": 39.0786,
       "lng": 68.3804,
-      "notes": "Classic alpine stop for lakeshore views, Fann Niagara and a simple homestay night in Sarytag or by the water"
+      "notes": "Classic alpine stop for lakeshore views, Fann Niagara and a simple homestay night in Sarytag or by the water",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Penjikent",
       "lat": 39.4952,
       "lng": 67.6093,
-      "notes": "Best cultural base for Ancient Penjikent, Sarazm and Seven Lakes or Camp Artuch outings in the Fann Mountains"
+      "notes": "Best cultural base for Ancient Penjikent, Sarazm and Seven Lakes or Camp Artuch outings in the Fann Mountains",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Khujand",
       "lat": 40.2833,
       "lng": 69.6333,
-      "notes": "Sughd-region city on the Syr Darya known for Panjshanbe Bazaar, the cable car and a softer Silk Road finale"
+      "notes": "Sughd-region city on the Syr Darya known for Panjshanbe Bazaar, the cable car and a softer Silk Road finale",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -102,6 +148,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers the city highlights plus Hissar Fortress; keep a third only for permit buffer, galleries or a slower pre-Pamir reset.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Rudaki Park, National Museum & Classic Dushanbe",
@@ -206,6 +255,10 @@
         "recDays": 3,
         "maxDays": 5,
         "note": "Three days gives Khorog a proper look plus one long 4x4 outing; add days only if you want to continue toward the Wakhan or Bulunkul lakes.",
+        "experiences": [
+          "Road Trips",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Arrival in Khorog & Gunt River Strolls",
@@ -339,6 +392,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One night is enough for lake views and a short waterfall walk; only add a second if you want a slower Sarytag hike or a weather cushion.",
+        "experiences": [
+          "Lakes",
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Lakeshore Walks & Fann Niagara",
@@ -401,6 +459,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days works well for one history day and one Fann Mountains outing; keep a third only for Sarazm plus Panjrud or a slower trek start.",
+        "experiences": [
+          "Ancient Ruins",
+          "History"
+        ],
         "days": [
           {
             "theme": "Ancient Penjikent, Rudaki & Sarazm",
@@ -492,6 +554,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "One day gets the fortress, bazaar and cable car done; a second day helps if you want Arbob Palace and a more relaxed Syr Darya evening.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Fortress, Panjshanbe Bazaar & Cable Car",

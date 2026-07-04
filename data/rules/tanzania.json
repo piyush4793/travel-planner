@@ -24,11 +24,12 @@
     "family4": "₹9.2L–₹15L"
   },
   "experiences": [
-    "Serengeti Great Migration",
-    "Ngorongoro Crater Safari",
-    "Zanzibar Beaches and Stone Town",
-    "Kilimanjaro Foothills",
-    "Maasai Highlands"
+    "Wildlife & Safari",
+    "Beaches",
+    "National Parks",
+    "Mountains",
+    "Islands",
+    "Diving & Snorkeling"
   ],
   "avoid": [
     "March to May long rains can flood safari tracks and roughen Zanzibar seas",
@@ -51,37 +52,91 @@
       "name": "Dar es Salaam",
       "lat": -6.7924,
       "lng": 39.2083,
-      "notes": "National Museum, Kivukoni waterfront, Coco Beach sunsets and the main ferry gateway to Zanzibar"
+      "notes": "National Museum, Kivukoni waterfront, Coco Beach sunsets and the main ferry gateway to Zanzibar",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Zanzibar",
       "lat": -6.1659,
       "lng": 39.2026,
-      "notes": "Stone Town heritage, spice farms, Jozani red colobus forest and Indian Ocean beach time"
+      "notes": "Stone Town heritage, spice farms, Jozani red colobus forest and Indian Ocean beach time",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Serengeti",
       "lat": -2.3333,
       "lng": 34.8333,
-      "notes": "Seronera game drives, Great Migration timing, balloon safaris and classic tented camps"
+      "notes": "Seronera game drives, Great Migration timing, balloon safaris and classic tented camps",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Ngorongoro",
       "lat": -3.1611,
       "lng": 35.5877,
-      "notes": "Crater wildlife density, Maasai highlands lodges and one of East Africa's easiest Big Five days"
+      "notes": "Crater wildlife density, Maasai highlands lodges and one of East Africa's easiest Big Five days",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Arusha",
       "lat": -3.3869,
       "lng": 36.683,
-      "notes": "Northern circuit launchpad with coffee estates, safari outfitters and Cultural Heritage Centre"
+      "notes": "Northern circuit launchpad with coffee estates, safari outfitters and Cultural Heritage Centre",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Kilimanjaro (base area)",
       "lat": -3.3349,
       "lng": 37.3404,
-      "notes": "Moshi, Materuni and Marangu foothills for waterfall walks, coffee farms and Kilimanjaro views"
+      "notes": "Moshi, Materuni and Marangu foothills for waterfall walks, coffee farms and Kilimanjaro views",
+      "bestMonths": [
+        "July",
+        "August",
+        "September",
+        "January"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     }
   ],
   "itinerary": {
@@ -111,6 +166,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Coastal arrival, city history, and an easy reset before the islands or safari loop",
@@ -159,6 +217,11 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Stone Town alleys, spice-scented markets, and a first Indian Ocean sunset",
@@ -287,6 +350,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Coffee-estate calm, gear checks, and a gentle northern-circuit start",
@@ -336,6 +402,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Best handled with a licensed 4x4 safari from Arusha or Karatu; crater descents run on NCAA permits and card payments.",
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Crater-rim sunrise, dense wildlife sightings, and Maasai highlands scenery",
@@ -385,6 +455,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "July to September is strongest for Mara River movement in the north, while January to February shifts the action toward the southern calving grounds.",
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Bush-flight or overland arrival, Seronera plains, and the first big-cat scans",
@@ -513,6 +587,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Mountains",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Moshi foothills, waterfall coffee culture, and a Kilimanjaro-view finale",

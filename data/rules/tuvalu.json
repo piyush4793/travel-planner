@@ -26,12 +26,12 @@
     "family4": "₹5L–₹7.1L"
   },
   "experiences": [
-    "Remote Pacific Atolls",
-    "Lagoon Snorkeling",
-    "Village Life",
-    "Airstrip Sunsets",
-    "Outer-Island Boat Travel",
-    "Handicrafts"
+    "Beaches",
+    "Islands",
+    "Diving & Snorkeling",
+    "Water Sports",
+    "Wildlife & Safari",
+    "Cruises & Boat Trips"
   ],
   "avoid": [
     "November-April is wetter, hotter, and more disruption-prone for inter-island boats, so outer-island plans can slide by a day or more.",
@@ -55,19 +55,46 @@
       "name": "Funafuti",
       "lat": -8.5167,
       "lng": 179.2167,
-      "notes": "Funafuti is Tuvalu's only realistic arrival base, built around the Fongafale airstrip, the conservation-area lagoon day trip, simple guesthouses, and one of the world's least-visited national capitals."
+      "notes": "Funafuti is Tuvalu's only realistic arrival base, built around the Fongafale airstrip, the conservation-area lagoon day trip, simple guesthouses, and one of the world's least-visited national capitals.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Nanumea",
       "lat": -5.6819,
       "lng": 176.1281,
-      "notes": "Nanumea is the far-north atoll extension for community-hosted stays, quiet lagoon swims, and a much more local version of Tuvalu once the supply boat has dropped you off."
+      "notes": "Nanumea is the far-north atoll extension for community-hosted stays, quiet lagoon swims, and a much more local version of Tuvalu once the supply boat has dropped you off.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Vaitupu",
       "lat": -7.4768,
       "lng": 178.6745,
-      "notes": "Vaitupu slows the trip down even further with broad lagoon views, village walks around Asau and Faleapoi, and boat-linked reef or sandbank outings when sea conditions co-operate."
+      "notes": "Vaitupu slows the trip down even further with broad lagoon views, village walks around Asau and Faleapoi, and boat-linked reef or sandbank outings when sea conditions co-operate.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     }
   ],
   "itinerary": {
@@ -91,6 +118,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Funafuti deserves at least two proper days: one for the conservation-area boat and one for the airstrip, handicrafts, and easy island pacing before you gamble on any outer-island sailing.",
+        "experiences": [
+          "Beaches",
+          "Islands",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Runway Arrival, Vaiaku Orientation and a Classic Tuvalu Sunset",
@@ -221,6 +253,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Treat Nanumea as a simple outer-island immersion rather than a checklist stop: one arrival day and one extra lagoon-and-village day is usually enough before supplies or weather shift again.",
+        "experiences": [
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Passenger Boat North, Community Check-In and Lagoon Time",
@@ -276,6 +312,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Vaitupu is best kept flexible: arrive when the boat works, walk the main villages, and spend one extra day on the lagoon rather than trying to over-plan a place with very light tourism infrastructure.",
+        "experiences": [
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Inter-Island Arrival, Asau Village and Broad Lagoon Views",
