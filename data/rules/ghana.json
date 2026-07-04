@@ -24,11 +24,12 @@
     "family4": "₹3.8L–₹5.6L"
   },
   "experiences": [
-    "Cape Coast Castle",
-    "Kakum Canopy Walk",
-    "Ashanti Royal Heritage",
-    "Mole Safari",
-    "Wli Waterfalls"
+    "History",
+    "Beaches",
+    "Wildlife & Safari",
+    "National Parks",
+    "Markets & Shopping",
+    "Waterfalls"
   ],
   "avoid": [
     "April to June brings the heaviest southern rains, so Cape Coast roads, Kakum trails, and Wli hikes get muddy fast.",
@@ -51,31 +52,76 @@
       "name": "Accra",
       "lat": 5.6037,
       "lng": -0.187,
-      "notes": "Colonial and independence landmarks, lively food neighborhoods, beach clubs, markets, and Ghana's best-connected transport hub."
+      "notes": "Colonial and independence landmarks, lively food neighborhoods, beach clubs, markets, and Ghana's best-connected transport hub.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Cape Coast",
       "lat": 5.1053,
       "lng": -1.2466,
-      "notes": "Cape Coast Castle, nearby Elmina Castle, Kakum National Park, and Ghana's most important coastal heritage circuit."
+      "notes": "Cape Coast Castle, nearby Elmina Castle, Kakum National Park, and Ghana's most important coastal heritage circuit.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Kumasi",
       "lat": 6.6885,
       "lng": -1.6244,
-      "notes": "Ashanti royal history, huge market energy, museums, kente weaving day trips, and the easiest cultural break between coast and north."
+      "notes": "Ashanti royal history, huge market energy, museums, kente weaving day trips, and the easiest cultural break between coast and north.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Mole National Park",
       "lat": 9.7005,
       "lng": -1.8194,
-      "notes": "Elephants around the escarpment, walking safaris, Larabanga side trips, and Ghana's signature wildlife stop."
+      "notes": "Elephants around the escarpment, walking safaris, Larabanga side trips, and Ghana's signature wildlife stop.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Volta Region",
       "lat": 7.1469,
       "lng": 0.5996,
-      "notes": "Wli Waterfalls, Mount Afadjato, forested border-country scenery, and a slower community-run nature finish around Hohoe and Wli."
+      "notes": "Wli Waterfalls, Mount Afadjato, forested border-country scenery, and a slower community-run nature finish around Hohoe and Wli.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -104,6 +150,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Markets & Shopping",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Settle into Ghana with independence landmarks, museum context, and Accra's easiest first-day food circuit.",
@@ -196,6 +247,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Ride west from Accra for Ghana's heaviest historical site and an easy coastal evening.",
@@ -288,6 +343,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Swap the coast for Ashanti royal history, big-market energy, and a food-heavy city reset.",
@@ -380,6 +439,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Push north for elephants, escarpment views, and the first Mole safari session.",
@@ -468,6 +531,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Waterfalls",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Finish with rainforest air, community-run hiking, and Ghana's prettiest waterfall day out of Hohoe and Wli.",

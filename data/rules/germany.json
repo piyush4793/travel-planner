@@ -18,11 +18,14 @@
     "family4": "₹5L–₹8L"
   },
   "experiences": [
-    "Berlin",
-    "Neuschwanstein Castle",
-    "Oktoberfest",
-    "Rhine Valley",
-    "Christmas Markets"
+    "History",
+    "Architecture",
+    "Museums",
+    "Nightlife",
+    "Festivals",
+    "Food",
+    "Art & Design",
+    "UNESCO Sites"
   ],
   "avoid": [
     "Oktoberfest if avoiding crowds (or embrace it!)"
@@ -42,37 +45,91 @@
       "name": "Berlin",
       "lat": 52.52,
       "lng": 13.405,
-      "notes": "Brandenburg Gate, Museum Island, Berlin Wall and legendary club scene"
+      "notes": "Brandenburg Gate, Museum Island, Berlin Wall and legendary club scene",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Munich",
       "lat": 48.1351,
       "lng": 11.582,
-      "notes": "Marienplatz Glockenspiel, English Garden, BMW Museum and Oktoberfest"
+      "notes": "Marienplatz Glockenspiel, English Garden, BMW Museum and Oktoberfest",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Hamburg",
       "lat": 53.5753,
       "lng": 10.0153,
-      "notes": "Speicherstadt warehouse district, Miniatur Wunderland and fish market"
+      "notes": "Speicherstadt warehouse district, Miniatur Wunderland and fish market",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Dresden",
       "lat": 51.0504,
       "lng": 13.7373,
-      "notes": "Baroque Frauenkirche, Zwinger palace and Elbe valley vineyard views"
+      "notes": "Baroque Frauenkirche, Zwinger palace and Elbe valley vineyard views",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "December"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Heidelberg",
       "lat": 49.3988,
       "lng": 8.6724,
-      "notes": "Romantic castle ruins above the Neckar with Germany's oldest university"
+      "notes": "Romantic castle ruins above the Neckar with Germany's oldest university",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Cologne",
       "lat": 50.9333,
       "lng": 6.95,
-      "notes": "Twin-spired Gothic cathedral, Roman history and vibrant Carnival"
+      "notes": "Twin-spired Gothic cathedral, Roman history and vibrant Carnival",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -104,6 +161,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "A strong west-Germany entry point with fast rail links onward; December adds some of Germany's best Christmas markets.",
+        "experiences": [
+          "Architecture",
+          "History",
+          "Festivals"
+        ],
         "days": [
           {
             "theme": "Cathedral Quarter & Old Town",
@@ -182,6 +244,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Romantic and compact, so one night works; a second day lets you slow down for river views, university history, and castle time.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Castle, Bridge & Baroque Core",
@@ -259,6 +325,12 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Munich works best as a 3-night base for royal sights, museums, and a Neuschwanstein day trip; avoid underbooking during Oktoberfest.",
+        "experiences": [
+          "History",
+          "Festivals",
+          "Food",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Altstadt & Bavarian Icons",
@@ -376,6 +448,12 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Dresden is compact enough for one night, but two days gives you room for museum time plus a Bastei or Saxon Switzerland outing.",
+        "experiences": [
+          "Architecture",
+          "History",
+          "Art & Design",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Baroque Old Town",
@@ -454,6 +532,12 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days covers the historical core, East Berlin, and Museum Island; add a fourth only if you want Potsdam or slower museum pacing.",
+        "experiences": [
+          "History",
+          "Museums",
+          "Nightlife",
+          "Art & Design"
+        ],
         "days": [
           {
             "theme": "Mitte & Historical Core",
@@ -572,6 +656,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is ideal for warehouse-district sights, Miniatur Wunderland, and a harbor-heavy finale before flying out.",
+        "experiences": [
+          "Architecture",
+          "Nightlife",
+          "History"
+        ],
         "days": [
           {
             "theme": "Speicherstadt & Harbor Highlights",

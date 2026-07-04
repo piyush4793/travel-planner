@@ -19,11 +19,14 @@
     "family4": "₹4L–₹7L"
   },
   "experiences": [
-    "Islands",
     "Beaches",
+    "Islands",
+    "Ancient Ruins",
     "History",
-    "Food",
-    "Sunsets"
+    "Nightlife",
+    "UNESCO Sites",
+    "Diving & Snorkeling",
+    "Food"
   ],
   "avoid": [
     "Peak summer crowds in Santorini",
@@ -44,37 +47,91 @@
       "name": "Athens",
       "lat": 37.9838,
       "lng": 23.7275,
-      "notes": "Acropolis and Parthenon, Monastiraki flea market and vibrant Plaka"
+      "notes": "Acropolis and Parthenon, Monastiraki flea market and vibrant Plaka",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Santorini",
       "lat": 36.3932,
       "lng": 25.4615,
-      "notes": "Iconic blue-domed churches, caldera sunset views and volcanic beaches"
+      "notes": "Iconic blue-domed churches, caldera sunset views and volcanic beaches",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Mykonos",
       "lat": 37.4467,
       "lng": 25.3289,
-      "notes": "Cosmopolitan party island with windmills, Little Venice and beaches"
+      "notes": "Cosmopolitan party island with windmills, Little Venice and beaches",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Thessaloniki",
       "lat": 40.6401,
       "lng": 22.9444,
-      "notes": "Byzantine walls, Roman rotunda and the best bougatsa in Greece"
+      "notes": "Byzantine walls, Roman rotunda and the best bougatsa in Greece",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Rhodes",
       "lat": 36.4341,
       "lng": 28.2176,
-      "notes": "UNESCO medieval old town, Palace of the Grand Master and Lindos acropolis"
+      "notes": "UNESCO medieval old town, Palace of the Grand Master and Lindos acropolis",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Crete",
       "lat": 35.2401,
       "lng": 24.8093,
-      "notes": "Minoan Palace of Knossos, Samaria Gorge hike and pristine Elafonissi beach"
+      "notes": "Minoan Palace of Knossos, Samaria Gorge hike and pristine Elafonissi beach",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -103,6 +160,11 @@
         "minDays": 2,
         "recDays": 4,
         "maxDays": 5,
+        "experiences": [
+          "Ancient Ruins",
+          "History",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Arrival & Neighbourhood Immersion",
@@ -259,6 +321,11 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Fira Arrival & Oia Caldera Sunset",
@@ -383,6 +450,12 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 4,
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Ancient Ruins",
+          "History"
+        ],
         "days": [
           {
             "theme": "Heraklion Old Town & Venetian Harbour",
@@ -471,6 +544,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Chora Lanes, Windmills & Little Venice",
@@ -563,6 +641,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Islands",
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Medieval Old Town & Harbour Walls",
@@ -655,6 +738,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Food",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Roman Rotunda, White Tower & Waterfront",

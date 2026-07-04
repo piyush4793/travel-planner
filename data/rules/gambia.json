@@ -26,11 +26,11 @@
     "family4": "₹2.7L–₹4.1L"
   },
   "experiences": [
-    "Kunta Kinteh Island roots history",
-    "Bijilo monkey walks and beach downtime",
-    "Abuko birding and reserve trails",
-    "Upriver GTSC and pirogue journey to Janjanbureh",
-    "Chimp-viewing boat trips in River Gambia National Park"
+    "Beaches",
+    "Wildlife & Safari",
+    "National Parks",
+    "Cruises & Boat Trips",
+    "Markets & Shopping"
   ],
   "avoid": [
     "June to October is wetter and muddier, so ferry queues, reserve trails, and upriver road timings all get less predictable.",
@@ -51,25 +51,61 @@
       "name": "Banjul",
       "lat": 13.4549,
       "lng": -16.579,
-      "notes": "Compact capital for Albert Market, ferry action, colonial-era streets and the easiest launch point for Gambian history before moving to the beach strip."
+      "notes": "Compact capital for Albert Market, ferry action, colonial-era streets and the easiest launch point for Gambian history before moving to the beach strip.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Serekunda / Kololi",
       "lat": 13.4432,
       "lng": -16.727,
-      "notes": "The Senegambia coast base for beaches, restaurants, Bijilo's monkeys, and simple transport links for day trips east or across to Barra."
+      "notes": "The Senegambia coast base for beaches, restaurants, Bijilo's monkeys, and simple transport links for day trips east or across to Barra.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Abuko Nature Reserve",
       "lat": 13.405,
       "lng": -16.655,
-      "notes": "The Gambia's easiest wildlife stop, mixing bird hides, monkey sightings and low-key creek detours within day-trip range of the coast."
+      "notes": "The Gambia's easiest wildlife stop, mixing bird hides, monkey sightings and low-key creek detours within day-trip range of the coast.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Janjanbureh (Georgetown)",
       "lat": 13.5417,
       "lng": -14.7678,
-      "notes": "Sleepy upriver island town for river life, local ferries, roots-era history and the best base for River Gambia National Park boat trips."
+      "notes": "Sleepy upriver island town for river life, local ferries, roots-era history and the best base for River Gambia National Park boat trips.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -93,6 +129,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 1,
+        "experiences": [
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Ease into The Gambia with ferry bustle, market life and a light heritage loop before shifting west to the beach belt.",
@@ -145,6 +184,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Settle onto the Senegambia strip with monkey forest time, a beach reset and the easiest restaurant cluster in the country.",
@@ -237,6 +280,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 1,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Keep one slower wildlife day for bird hides, monkey calls and a nearby mangrove detour away from the Senegambia beach strip.",
@@ -289,6 +336,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Cruises & Boat Trips",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Trade the coast for an upriver island town, arriving by GTSC and settling into one of The Gambia's slowest, most atmospheric overnights.",

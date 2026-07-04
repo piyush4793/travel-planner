@@ -20,11 +20,14 @@
     "family4": "₹1.5L–₹3L"
   },
   "experiences": [
-    "Tbilisi Old Town",
-    "Wine Culture",
-    "Kazbegi Mountains",
-    "Batumi",
-    "Monasteries"
+    "Mountains",
+    "Wine & Vineyards",
+    "History",
+    "Hiking",
+    "Beaches",
+    "Temples & Religious Sites",
+    "Architecture",
+    "Skiing"
   ],
   "avoid": [
     "Mountain roads in winter"
@@ -44,31 +47,76 @@
       "name": "Tbilisi",
       "lat": 41.7151,
       "lng": 44.8271,
-      "notes": "Old Town sulfur baths, Narikala fortress, natural wine and bridge of peace"
+      "notes": "Old Town sulfur baths, Narikala fortress, natural wine and bridge of peace",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Batumi",
       "lat": 41.6168,
       "lng": 41.6367,
-      "notes": "Black Sea promenade, Alphabet Tower, botanical garden and beach clubs"
+      "notes": "Black Sea promenade, Alphabet Tower, botanical garden and beach clubs",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Kazbegi",
       "lat": 42.6553,
       "lng": 44.6329,
-      "notes": "Dramatic Gergeti Trinity Church above clouds with Caucasus peak backdrop"
+      "notes": "Dramatic Gergeti Trinity Church above clouds with Caucasus peak backdrop",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Kutaisi",
       "lat": 42.2679,
       "lng": 42.6946,
-      "notes": "Gelati monastery UNESCO site, Prometheus stalactite cave and Okatse canyon"
+      "notes": "Gelati monastery UNESCO site, Prometheus stalactite cave and Okatse canyon",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Sighnaghi",
       "lat": 41.6213,
       "lng": 45.9218,
-      "notes": "Walled town in Kakheti wine country with Alazani Valley views"
+      "notes": "Walled town in Kakheti wine country with Alazani Valley views",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -94,6 +142,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Best first base for transit, cash exchange, museums, and the Mtskheta side trip.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Old Town, Sulphur Baths & Riverfront Icons",
@@ -204,6 +256,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Compact Kakheti wine-country stop with valley views, town walls, and easy monastery access.",
+        "experiences": [
+          "Wine & Vineyards",
+          "History"
+        ],
         "days": [
           {
             "theme": "Kakheti Views, Old Town Walls & Wine Country Slow Travel",
@@ -253,6 +309,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Bring cash before arrival — coverage and ATMs are limited once you reach the valley.",
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Georgian Military Highway Arrival & Gergeti Views",
@@ -324,6 +385,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Good western-Georgia stop for UNESCO monasteries, river walks, and a lower-cost city break.",
+        "experiences": [
+          "History",
+          "Temples & Religious Sites",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "UNESCO Monasteries, River Bridges & Old Kutaisi",
@@ -373,6 +439,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Batumi to slow down at the end of the trip — beach, boulevard, cable car, and botanical garden.",
+        "experiences": [
+          "Beaches",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Boulevard Arrival, Old Town Squares & Night Lights",
