@@ -24,10 +24,12 @@
     "family4": "₹4L–₹6.2L"
   },
   "experiences": [
-    "Kabul museum and Babur garden circuit with secure hotel-based transfers",
-    "Bamyan Valley's Buddha niches and a 4x4 day into Band-e-Amir's blue lakes",
-    "Timurid-era Herat Citadel, Friday Mosque tiles, and old-city bazaars",
-    "Mazar-i-Sharif's Blue Mosque courtyard and a shared-taxi side trip to ancient Balkh"
+    "History",
+    "Ancient Ruins",
+    "Mountains",
+    "Architecture",
+    "Lakes",
+    "Markets & Shopping"
   ],
   "avoid": [
     "Strong safety advisory: Afghanistan remains an active-conflict destination under Taliban governance, with ISIS-K attacks, arbitrary detention risk, weak consular support, and multiple governments advising against all travel.",
@@ -55,20 +57,27 @@
         "September",
         "October"
       ],
-      "notes": "National Museum of Afghanistan, Babur's Gardens, Darul Aman axis, Shahr-e Naw hotels, and the main Kam Air hub for domestic flights."
+      "notes": "National Museum of Afghanistan, Babur's Gardens, Darul Aman axis, Shahr-e Naw hotels, and the main Kam Air hub for domestic flights.",
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Bamyan",
       "lat": 34.8216,
       "lng": 67.8273,
       "bestMonths": [
-        "April",
-        "May",
         "June",
-        "September",
-        "October"
+        "July",
+        "August",
+        "September"
       ],
-      "notes": "Bamyan Buddha niches, Shahr-e Gholghola viewpoints, and the 4x4 route to Band-e-Amir National Park."
+      "notes": "Bamyan Buddha niches, Shahr-e Gholghola viewpoints, and the 4x4 route to Band-e-Amir National Park.",
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Herat",
@@ -77,10 +86,12 @@
       "bestMonths": [
         "April",
         "May",
-        "September",
         "October"
       ],
-      "notes": "Herat Citadel, Friday Mosque, Musalla minarets, and Persian-influenced food around the old city."
+      "notes": "Herat Citadel, Friday Mosque, Musalla minarets, and Persian-influenced food around the old city.",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Mazar-i-Sharif",
@@ -89,10 +100,13 @@
       "bestMonths": [
         "April",
         "May",
-        "September",
         "October"
       ],
-      "notes": "Blue Mosque / Shrine of Hazrat Ali, bazaar lanes, and the classic Balkh day trip by shared taxi."
+      "notes": "Blue Mosque / Shrine of Hazrat Ali, bazaar lanes, and the classic Balkh day trip by shared taxi.",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -118,7 +132,9 @@
         "maxDays": 2,
         "note": "Use Kabul mainly for museum time, secure compounds, and onward logistics; keep sightseeing compact and daylight-only.",
         "experiences": [
-          "Kabul museum and Babur garden circuit with secure hotel-based transfers"
+          "History",
+          "Architecture",
+          "Markets & Shopping"
         ],
         "days": [
           {
@@ -220,7 +236,9 @@
         "maxDays": 3,
         "note": "Two days cover the Buddha cliff, Gholghola, and a full Band-e-Amir outing; add a third only if you want more weather buffer.",
         "experiences": [
-          "Bamyan Valley's Buddha niches and a 4x4 day into Band-e-Amir's blue lakes"
+          "Ancient Ruins",
+          "Mountains",
+          "Lakes"
         ],
         "days": [
           {
@@ -324,7 +342,9 @@
         "maxDays": 2,
         "note": "One focused day is enough for the citadel, Friday Mosque, and an old-city food circuit if flights cooperate.",
         "experiences": [
-          "Timurid-era Herat Citadel, Friday Mosque tiles, and old-city bazaars"
+          "History",
+          "Architecture",
+          "Markets & Shopping"
         ],
         "days": [
           {
@@ -382,7 +402,8 @@
         "maxDays": 2,
         "note": "Two days cover the Blue Mosque plus the easy Balkh excursion; use flights instead of long overland hops whenever possible.",
         "experiences": [
-          "Mazar-i-Sharif's Blue Mosque courtyard and a shared-taxi side trip to ancient Balkh"
+          "Architecture",
+          "Ancient Ruins"
         ],
         "days": [
           {

@@ -26,11 +26,12 @@
     "family4": "₹7.1L–₹11.2L"
   },
   "experiences": [
-    "Fortaleza de São Miguel and Luanda bay viewpoints",
-    "Kissama National Park safari and Kwanza River wildlife",
-    "Serra da Leba switchbacks and Tundavala Fissure panoramas",
-    "Cristo Rei sunset above Lubango",
-    "Benguela coast seafood and Catumbela beach time"
+    "Wildlife & Safari",
+    "Beaches",
+    "National Parks",
+    "History",
+    "Architecture",
+    "Mountains"
   ],
   "avoid": [
     "November to April is hotter, wetter, and muddier in Kissama, while escarpment viewpoints around Lubango can sit in cloud after storms.",
@@ -54,25 +55,63 @@
       "name": "Luanda",
       "lat": -8.8383,
       "lng": 13.2344,
-      "notes": "Angola's capital is the easiest soft landing for SIM, cash, Fortaleza de São Miguel, the Marginal, and seafood dinners before you head south or into Kissama."
+      "notes": "Angola's capital is the easiest soft landing for SIM, cash, Fortaleza de São Miguel, the Marginal, and seafood dinners before you head south or into Kissama.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "March",
+        "April"
+      ]
     },
     {
       "name": "Lubango",
       "lat": -14.9172,
       "lng": 13.4925,
-      "notes": "Lubango is the Huila highlands base for Tundavala Fissure, Cristo Rei, and the dramatic Serra da Leba road down toward the coast."
+      "notes": "Lubango is the Huila highlands base for Tundavala Fissure, Cristo Rei, and the dramatic Serra da Leba road down toward the coast.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Kissama National Park",
       "lat": -10.2687,
       "lng": 13.1221,
-      "notes": "Also spelled Quiçama, this is Angola's easiest flagship wildlife stop for giraffes, antelope, elephant habitat, and Kwanza River boat sections from a Luanda gateway."
+      "notes": "Also spelled Quiçama, this is Angola's easiest flagship wildlife stop for giraffes, antelope, elephant habitat, and Kwanza River boat sections from a Luanda gateway.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "March"
+      ]
     },
     {
       "name": "Benguela",
       "lat": -12.5763,
       "lng": 13.4055,
-      "notes": "Benguela mixes a slower colonial core, Praia Morena and Baía Azul beach time, seafood grills, and the Catumbela airport gateway for Angola's southwest coast."
+      "notes": "Benguela mixes a slower colonial core, Praia Morena and Baía Azul beach time, seafood grills, and the Catumbela airport gateway for Angola's southwest coast.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "March"
+      ]
     }
   ],
   "itinerary": {
@@ -100,7 +139,9 @@
         "maxDays": 3,
         "note": "Use Luanda for the history hit, your easiest hotel stock, and the transport reset before Kissama or the southwest domestic flight.",
         "experiences": [
-          "Fortaleza de São Miguel and Luanda bay viewpoints"
+          "History",
+          "Architecture",
+          "Beaches"
         ],
         "days": [
           {
@@ -194,7 +235,8 @@
         "maxDays": 2,
         "note": "Kissama works best as a one- or two-night safari break from Luanda, especially if you want a slower game drive plus the Kwanza River add-on.",
         "experiences": [
-          "Kissama National Park safari and Kwanza River wildlife"
+          "Wildlife & Safari",
+          "National Parks"
         ],
         "days": [
           {
@@ -287,7 +329,7 @@
         "maxDays": 2,
         "note": "Benguela is the easiest coast-and-seafood reset after Luanda, and Catumbela airport makes it the simplest domestic hop before Lubango.",
         "experiences": [
-          "Benguela coast seafood and Catumbela beach time"
+          "Beaches"
         ],
         "days": [
           {
@@ -380,8 +422,8 @@
         "maxDays": 3,
         "note": "Lubango deserves at least two nights so you can split the plateau views between Tundavala, Cristo Rei, and the Serra da Leba road without rushing the weather.",
         "experiences": [
-          "Serra da Leba switchbacks and Tundavala Fissure panoramas",
-          "Cristo Rei sunset above Lubango"
+          "Mountains",
+          "History"
         ],
         "days": [
           {

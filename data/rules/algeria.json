@@ -22,11 +22,12 @@
     "family4": "₹3.25L–₹4.9L"
   },
   "experiences": [
-    "Ottoman Casbahs",
-    "Roman Ruins",
-    "Bridge City Views",
-    "M'zab Ksar Life",
-    "Sahara Rock Art"
+    "Ancient Ruins",
+    "History",
+    "Architecture",
+    "Deserts",
+    "UNESCO Sites",
+    "Markets & Shopping"
   ],
   "avoid": [
     "June-August heat is exhausting in Ghardaia and Djanet, with desert excursions becoming hard work by late morning.",
@@ -48,31 +49,77 @@
       "name": "Algiers",
       "lat": 36.7538,
       "lng": 3.0588,
-      "notes": "UNESCO-listed Casbah lanes, Bastion 23, Hamma gardens, sea views, and the country's biggest transport hub."
+      "notes": "UNESCO-listed Casbah lanes, Bastion 23, Hamma gardens, sea views, and the country's biggest transport hub.",
+      "bestMonths": [
+        "April",
+        "May",
+        "October"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Oran",
       "lat": 35.6981,
       "lng": -0.6348,
-      "notes": "Santa Cruz fortress, rai-music heritage, waterfront boulevards, and a relaxed Mediterranean energy."
+      "notes": "Santa Cruz fortress, rai-music heritage, waterfront boulevards, and a relaxed Mediterranean energy.",
+      "bestMonths": [
+        "April",
+        "May",
+        "October"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Constantine",
       "lat": 36.365,
       "lng": 6.6147,
-      "notes": "Dramatic suspension bridges, Ahmed Bey-era heritage, and the best base for Djémila and Timgad day trips."
+      "notes": "Dramatic suspension bridges, Ahmed Bey-era heritage, and the best base for Djémila and Timgad day trips.",
+      "bestMonths": [
+        "April",
+        "May",
+        "October"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Ghardaia (M'zab Valley)",
       "lat": 32.4909,
       "lng": 3.6735,
-      "notes": "A UNESCO oasis valley of clay ksour, palm groves, austere mosques, and traditional Mozabite market culture."
+      "notes": "A UNESCO oasis valley of clay ksour, palm groves, austere mosques, and traditional Mozabite market culture.",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Tassili n'Ajjer (Djanet)",
       "lat": 24.5542,
       "lng": 9.4845,
-      "notes": "Tuareg gateway to Erg Admer, sandstone arches, and some of the Sahara's most important prehistoric cave paintings."
+      "notes": "Tuareg gateway to Erg Admer, sandstone arches, and some of the Sahara's most important prehistoric cave paintings.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -99,8 +146,10 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Ottoman Casbahs",
-          "Roman Ruins"
+          "History",
+          "Architecture",
+          "Markets & Shopping",
+          "Ancient Ruins"
         ],
         "days": [
           {
@@ -187,6 +236,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Architecture",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Santa Cruz Heights, Seafront Air & Colonial Core",
@@ -236,7 +290,8 @@
         "recDays": 3,
         "maxDays": 4,
         "experiences": [
-          "Bridge City Views"
+          "History",
+          "Architecture"
         ],
         "days": [
           {
@@ -361,7 +416,10 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "M'zab Ksar Life"
+          "Architecture",
+          "UNESCO Sites",
+          "Deserts",
+          "Markets & Shopping"
         ],
         "days": [
           {
@@ -449,7 +507,9 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Sahara Rock Art"
+          "Deserts",
+          "Ancient Ruins",
+          "UNESCO Sites"
         ],
         "days": [
           {

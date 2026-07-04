@@ -26,11 +26,12 @@
     "family4": "₹3.2L–₹5L"
   },
   "experiences": [
-    "Andorra la Vella old town and Caldea",
-    "Ordino heritage museums and valley walks",
-    "Grandvalira skiing or summer mountain viewpoints",
-    "Encamp Funicamp access and lake hikes",
-    "Naturland adventure park day trip"
+    "Skiing",
+    "Mountains",
+    "Hiking",
+    "Hot Springs & Wellness",
+    "Markets & Shopping",
+    "Adventure Sports"
   ],
   "avoid": [
     "Christmas–New Year and February school-holiday ski weeks if you dislike surge pricing and busy slopes.",
@@ -54,16 +55,14 @@
       "lat": 42.5063,
       "lng": 1.5218,
       "bestMonths": [
-        "June",
         "July",
         "August",
-        "September",
-        "December",
-        "January",
-        "February",
-        "March"
+        "January"
       ],
-      "notes": "Compact capital for historic lanes, shopping boulevards, spa time at Caldea and the easiest base for bus connections across the principality."
+      "notes": "Compact capital for historic lanes, shopping boulevards, spa time at Caldea and the easiest base for bus connections across the principality.",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Ordino",
@@ -73,45 +72,42 @@
         "June",
         "July",
         "August",
-        "September",
-        "December",
-        "January",
-        "February",
-        "March"
+        "September"
       ],
-      "notes": "Andorra's prettiest heritage village area, with manor-house museums, stone lanes and quick access to summer trailheads or winter mountain roads."
+      "notes": "Andorra's prettiest heritage village area, with manor-house museums, stone lanes and quick access to summer trailheads or winter mountain roads.",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Canillo",
       "lat": 42.5676,
       "lng": 1.5976,
       "bestMonths": [
-        "June",
-        "July",
-        "August",
-        "September",
         "December",
         "January",
         "February",
-        "March"
+        "July"
       ],
-      "notes": "Grandvalira gateway for skiing in winter, mountain viewpoints in summer and classic Andorran postcard stops like Sant Joan de Caselles."
+      "notes": "Grandvalira gateway for skiing in winter, mountain viewpoints in summer and classic Andorran postcard stops like Sant Joan de Caselles.",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Encamp",
       "lat": 42.5347,
       "lng": 1.5801,
       "bestMonths": [
-        "June",
-        "July",
-        "August",
-        "September",
         "December",
         "January",
         "February",
-        "March"
+        "July"
       ],
-      "notes": "Practical valley town with the Funicamp gondola, Engolasters access and an easy final-night base before driving or busing out of Andorra."
+      "notes": "Practical valley town with the Funicamp gondola, Engolasters access and an easy final-night base before driving or busing out of Andorra.",
+      "worstMonths": [
+        "November"
+      ]
     }
   ],
   "itinerary": {
@@ -138,8 +134,8 @@
         "maxDays": 2,
         "note": "Start in the capital for historic sights and spa time; keep a second day here only if you want Caldea plus the Naturland adventure-park detour south of the city.",
         "experiences": [
-          "Andorra la Vella old town and Caldea",
-          "Naturland adventure park day trip"
+          "Markets & Shopping",
+          "Hot Springs & Wellness"
         ],
         "days": [
           {
@@ -226,7 +222,8 @@
         "maxDays": 1,
         "note": "Ordino is ideal for one slow heritage-and-landscape day: museum manor house, village lunch and a simple valley walk without constant transfers.",
         "experiences": [
-          "Ordino heritage museums and valley walks"
+          "Mountains",
+          "Hiking"
         ],
         "days": [
           {
@@ -279,7 +276,9 @@
         "maxDays": 1,
         "note": "Give Canillo the dedicated mountain day: ski Grandvalira from December to March, or swap to viewpoints, churches and easy alpine stops in summer.",
         "experiences": [
-          "Grandvalira skiing or summer mountain viewpoints"
+          "Skiing",
+          "Mountains",
+          "Adventure Sports"
         ],
         "days": [
           {
@@ -333,7 +332,8 @@
         "maxDays": 1,
         "note": "Finish in Encamp if you want a gentler final day with gondola views, a museum stop and an easy lake walk before departure.",
         "experiences": [
-          "Encamp Funicamp access and lake hikes"
+          "Skiing",
+          "Hiking"
         ],
         "days": [
           {

@@ -17,7 +17,7 @@ export type ConsolidatedCountry = {
   travelStyle: string[];
   stopoverNote: string | null;
   links: { label: string; url: string }[];
-  cities: { name: string; lat: number; lng: number; bestMonths?: string[]; notes?: string; experiences?: string[] }[];
+  cities: { name: string; lat: number; lng: number; bestMonths?: string[]; worstMonths?: string[]; notes?: string; experiences?: string[] }[];
   itinerary: CountryRule | null;
 };
 

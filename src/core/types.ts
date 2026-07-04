@@ -7,6 +7,8 @@ export type CityEntry = {
   lat: number;
   lng: number;
   bestMonths?: string[];
+  /** Months to avoid for this city (authored; UI rendering TBD). */
+  worstMonths?: string[];
   notes?: string;
   /** Country-level experiences this city satisfies (authored or derived). */
   experiences?: string[];

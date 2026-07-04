@@ -23,12 +23,12 @@
     "family4": "₹2.4L–₹3.8L"
   },
   "experiences": [
-    "Ottoman Towns",
+    "Beaches",
+    "History",
+    "Mountains",
+    "Hiking",
     "UNESCO Sites",
-    "Albanian Riviera",
-    "Mountain Hikes",
-    "Road Trips",
-    "Guesthouses"
+    "Road Trips"
   ],
   "avoid": [
     "July and August bring heavier Riviera traffic, pricier seafront stays and fully booked Theth guesthouses.",
@@ -50,37 +50,92 @@
       "name": "Tirana",
       "lat": 41.3275,
       "lng": 19.8187,
-      "notes": "Colorful capital for museums, cafe culture, Blloku nightlife and the easiest jump-off point for the rest of Albania"
+      "notes": "Colorful capital for museums, cafe culture, Blloku nightlife and the easiest jump-off point for the rest of Albania",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Berat",
       "lat": 40.7058,
       "lng": 19.9522,
-      "notes": "UNESCO hill town of white Ottoman houses, castle lanes and riverfront evenings"
+      "notes": "UNESCO hill town of white Ottoman houses, castle lanes and riverfront evenings",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Gjirokastër",
       "lat": 40.0758,
       "lng": 20.1389,
-      "notes": "Stone-roofed UNESCO city with a dramatic hilltop castle, historic houses and a compact old bazaar"
+      "notes": "Stone-roofed UNESCO city with a dramatic hilltop castle, historic houses and a compact old bazaar",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Sarandë",
       "lat": 39.8756,
       "lng": 20.0053,
-      "notes": "Sunny Ionian base for Butrint, Ksamil beaches, Blue Eye day trips and easy waterfront evenings"
+      "notes": "Sunny Ionian base for Butrint, Ksamil beaches, Blue Eye day trips and easy waterfront evenings",
+      "bestMonths": [
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Vlorë",
       "lat": 40.4661,
       "lng": 19.4914,
-      "notes": "Gateway to the Albanian Riviera with a lively lungomare, nearby lagoons and easy boat trips"
+      "notes": "Gateway to the Albanian Riviera with a lively lungomare, nearby lagoons and easy boat trips",
+      "bestMonths": [
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Theth",
       "lat": 42.3952,
       "lng": 19.7745,
-      "notes": "Albanian Alps village for guesthouse stays, mountain hikes, waterfalls and the famous Blue Eye trek"
+      "notes": "Albanian Alps village for guesthouse stays, mountain hikes, waterfalls and the famous Blue Eye trek",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "December",
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -110,6 +165,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is enough for the capital's museums, cafe districts and a Dajti mountain ride before moving south.",
+        "experiences": [
+          "History",
+          "Road Trips"
+        ],
         "days": [
           {
             "theme": "Skanderbeg Square, Communist-Era Museums & Blloku",
@@ -236,9 +295,8 @@
         "maxDays": 2,
         "note": "One full day covers the UNESCO core well; stay a second night only if you want a slower canyon or village detour.",
         "experiences": [
-          "Ottoman Towns",
-          "UNESCO Sites",
-          "Guesthouses"
+          "History",
+          "UNESCO Sites"
         ],
         "days": [
           {
@@ -326,9 +384,8 @@
         "maxDays": 2,
         "note": "An overnight is the minimum, but two days lets you enjoy the castle, historic tower houses and a slower bazaar evening.",
         "experiences": [
-          "Ottoman Towns",
-          "UNESCO Sites",
-          "Guesthouses"
+          "History",
+          "UNESCO Sites"
         ],
         "days": [
           {
@@ -420,7 +477,8 @@
         "maxDays": 3,
         "note": "Use Sarandë as the practical south-coast base: one day for Butrint and Ksamil, another for the Blue Eye or a pure beach day.",
         "experiences": [
-          "Albanian Riviera",
+          "Beaches",
+          "UNESCO Sites",
           "Road Trips"
         ],
         "days": [
@@ -549,7 +607,7 @@
         "maxDays": 2,
         "note": "One night is enough if you mainly want the waterfront and a break in the long south-to-north transit; add a second for the lagoon or a boat day.",
         "experiences": [
-          "Albanian Riviera",
+          "Beaches",
           "Road Trips"
         ],
         "days": [
@@ -638,9 +696,8 @@
         "maxDays": 3,
         "note": "Plan at least two nights for Theth so the long approach feels worth it and you can do one proper full-day hike.",
         "experiences": [
-          "Mountain Hikes",
-          "Road Trips",
-          "Guesthouses"
+          "Mountains",
+          "Hiking"
         ],
         "days": [
           {
