@@ -12,6 +12,10 @@ function MaybeBoom({ shouldThrow }: { shouldThrow: boolean }) {
   return <div>Recovered content</div>;
 }
 
+function ChunkBoom(): JSX.Element {
+  throw new Error("Failed to fetch dynamically imported module");
+}
+
 describe("ErrorBoundary", () => {
   it("renders children when no error is thrown", () => {
     render(
@@ -123,6 +127,32 @@ describe("ErrorBoundary", () => {
       expect(open.mock.calls[1][0]).toContain("Bug%3A%20boom");
     } finally {
       open.mockRestore();
+      consoleError.mockRestore();
+    }
+  });
+
+  it("offers an update-recovery UI and hard-reloads for stale-chunk errors", async () => {
+    const user = userEvent.setup();
+    const consoleError = vi.spyOn(console, "error").mockImplementation(() => {});
+    const realLocation = window.location;
+    const reload = vi.fn();
+    Object.defineProperty(window, "location", {
+      configurable: true,
+      value: { ...realLocation, reload },
+    });
+
+    try {
+      render(
+        <ErrorBoundary>
+          <ChunkBoom />
+        </ErrorBoundary>,
+      );
+
+      expect(screen.getByRole("heading", { name: /A new version is available/i })).toBeInTheDocument();
+      await user.click(screen.getByRole("button", { name: /Reload App/i }));
+      expect(reload).toHaveBeenCalledTimes(1);
+    } finally {
+      Object.defineProperty(window, "location", { configurable: true, value: realLocation });
       consoleError.mockRestore();
     }
   });

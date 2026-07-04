@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef, useCallback, lazy, Suspense } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback, Suspense } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../core/types";
@@ -22,6 +22,7 @@ import ShareButton from "./panel/ShareButton";
 import { CollapsibleSection } from "./panel/PanelSection";
 import { LearnAboutSection, PlanningResourcesSection } from "./panel/InfoSections";
 import { getRangePercent } from "./panel/utils";
+import { lazyWithRetry as lazy } from "../../utils/lazyWithRetry";
 
 // Lazy-load heavy sub-components — only fetched when user triggers them
 const ItineraryCinematic = lazy(() => import("./ItineraryCinematic"));

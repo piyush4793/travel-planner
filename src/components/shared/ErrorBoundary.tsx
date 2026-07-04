@@ -3,6 +3,14 @@ import { Component, type ReactNode } from "react";
 type Props = { children: ReactNode };
 type State = { error: Error | null; errorInfo: string; copied: boolean };
 
+/** Matches Vite/browser messages for a dynamic import that 404'd after a deploy. */
+function isChunkLoadError(error: Error | null): boolean {
+  if (!error) return false;
+  return /dynamically imported module|Importing a module script failed|ChunkLoadError|Failed to fetch/i.test(
+    `${error.name} ${error.message}`,
+  );
+}
+
 /**
  * Global error boundary — catches React render crashes and shows
  * a friendly recovery UI. Technical details are hidden behind a
@@ -31,6 +39,11 @@ export default class ErrorBoundary extends Component<Props, State> {
   }
 
   handleReset = () => {
+    // Stale-chunk crashes can only be cleared by refetching the asset manifest.
+    if (isChunkLoadError(this.state.error)) {
+      location.reload();
+      return;
+    }
     this.setState({ error: null, errorInfo: "", copied: false });
     location.hash = "#trips";
   };
@@ -62,6 +75,8 @@ export default class ErrorBoundary extends Component<Props, State> {
   render() {
     if (!this.state.error) return this.props.children;
 
+    const chunkError = isChunkLoadError(this.state.error);
+
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center p-6">
         <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 space-y-6 text-center">
@@ -74,10 +89,15 @@ export default class ErrorBoundary extends Component<Props, State> {
 
           {/* Heading */}
           <div className="space-y-2">
-            <h1 className="text-xl font-bold text-gray-800">Something went wrong</h1>
+            <h1 className="text-xl font-bold text-gray-800">
+              {chunkError ? "A new version is available" : "Something went wrong"}
+            </h1>
             <p className="text-sm text-gray-500 leading-relaxed">
-              Roamwise ran into an unexpected issue.<br/>
-              Your data is safe — nothing has been lost.
+              {chunkError ? (
+                <>Roamwise was updated while this tab was open.<br/>Reload to get the latest version — your data is safe.</>
+              ) : (
+                <>Roamwise ran into an unexpected issue.<br/>Your data is safe — nothing has been lost.</>
+              )}
             </p>
           </div>
 
@@ -86,7 +106,7 @@ export default class ErrorBoundary extends Component<Props, State> {
             onClick={this.handleReset}
             className="w-full px-5 py-3 bg-blue-600 text-white rounded-xl text-sm font-semibold hover:bg-blue-700 motion-safe:active:scale-[0.98] transition-colors shadow-sm focus-ring"
           >
-            Try Again
+            {chunkError ? "Reload App" : "Try Again"}
           </button>
 
           {/* Divider */}

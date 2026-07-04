@@ -1,7 +1,8 @@
-import { useState, useCallback, useMemo, useRef, useEffect, lazy, Suspense } from "react";
+import { useState, useCallback, useMemo, useRef, useEffect, Suspense } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country, VisitedFilter } from "./core/types";
 import DevFlagPanel from "./components/shared/DevFlagPanel";
+import { lazyWithRetry as lazy } from "./utils/lazyWithRetry";
 
 // Lazy-load view and panel components — only fetched when first navigated/opened
 const MapView = lazy(() => import("./components/views/MapView"));
