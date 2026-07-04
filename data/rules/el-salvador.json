@@ -26,11 +26,12 @@
     "family4": "₹2.7L–₹4.1L"
   },
   "experiences": [
-    "San Salvador museums and volcano viewpoints",
-    "Santa Ana Volcano and Coatepeque crater-lake views",
-    "El Tunco surf sunsets and Pacific beach cafes",
-    "Ruta de las Flores coffee towns and waterfalls",
-    "Suchitoto colonial streets and Suchitlán boat rides"
+    "Surfing",
+    "Beaches",
+    "Volcanoes",
+    "Coffee & Cafés",
+    "History",
+    "Lakes"
   ],
   "avoid": [
     "May to October is wetter, with afternoon downpours that can muddy the Santa Ana Volcano trail and make rural transfers along Ruta de las Flores slower.",
@@ -53,31 +54,76 @@
       "name": "San Salvador",
       "lat": 13.6929,
       "lng": -89.2182,
-      "notes": "Capital base for museums, food, volcano viewpoints, and the easiest place to use Uber before moving onward by bus."
+      "notes": "Capital base for museums, food, volcano viewpoints, and the easiest place to use Uber before moving onward by bus.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Santa Ana",
       "lat": 13.9942,
       "lng": -89.5597,
-      "notes": "Best base for Tazumal, Santa Ana Volcano, and Lake Coatepeque day trips with a compact historic center."
+      "notes": "Best base for Tazumal, Santa Ana Volcano, and Lake Coatepeque day trips with a compact historic center.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "El Tunco",
       "lat": 13.4948,
       "lng": -89.3836,
-      "notes": "Surf village on the Pacific for sunset beach time, beginner lessons, and easy hops to El Sunzal and nearby waterfalls."
+      "notes": "Surf village on the Pacific for sunset beach time, beginner lessons, and easy hops to El Sunzal and nearby waterfalls.",
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "November"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Ruta de las Flores",
       "lat": 13.8276,
       "lng": -89.8456,
-      "notes": "Coffee-town circuit anchored by Juayúa, Apaneca, and Ataco for murals, food fairs, viewpoints, and highland day trips."
+      "notes": "Coffee-town circuit anchored by Juayúa, Apaneca, and Ataco for murals, food fairs, viewpoints, and highland day trips.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Suchitoto",
       "lat": 13.9398,
       "lng": -89.027,
-      "notes": "Colonial hill town for indigo workshops, lake excursions, and one of the most relaxed cultural stops in the country."
+      "notes": "Colonial hill town for indigo workshops, lake excursions, and one of the most relaxed cultural stops in the country.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     }
   ],
   "itinerary": {
@@ -105,6 +151,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay around San Benito, Escalón, or Santa Elena for safer evenings, easy restaurant access, and quick Uber rides to museums and viewpoints.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Historic Core, MARTE & Modern San Benito",
@@ -182,6 +231,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Base yourself near the center if you want to walk to the cathedral and theater, then leave early for both Tazumal and the Santa Ana Volcano trailhead.",
+        "experiences": [
+          "Volcanoes",
+          "Lakes",
+          "History"
+        ],
         "days": [
           {
             "theme": "Cathedral, Theater & Maya Heritage",
@@ -259,6 +313,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Choose lodging a lane back from the beach if you want sleep; the compact core is walkable, and boards, lessons, and sunset bars are all close together.",
+        "experiences": [
+          "Surfing",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Surf Day, Sunsets & Pacific Nightlife",
@@ -302,6 +360,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Juayúa or Ataco make the simplest overnight bases; public buses work between towns, but a driver or shuttle saves time if you want waterfalls, coffee, and El Imposible in one stretch.",
+        "experiences": [
+          "Coffee & Cafés",
+          "Volcanoes"
+        ],
         "days": [
           {
             "theme": "Juayúa Food Trail, Ataco Murals & Coffee Towns",
@@ -378,6 +440,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Suchitoto is compact and best enjoyed slowly; most visitors walk the center, then take a tuk-tuk or short transfer to the lake edge or Los Tercios.",
+        "experiences": [
+          "History",
+          "Lakes"
+        ],
         "days": [
           {
             "theme": "Colonial Streets, Lake Suchitlán & Indigo Crafts",

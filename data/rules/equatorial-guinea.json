@@ -26,10 +26,11 @@
     "family4": "₹3.85L–₹5.6L"
   },
   "experiences": [
-    "Malabo's Catedral de Santa Isabel, colonial core, and seafood dinners around the corniche",
-    "Dry-season Bioko day trips to Arena Blanca, Ureka, and the lush slopes of Pico Basilé",
-    "Bata promenade downtime with the easiest mainland hotel base before heading inland",
-    "Monte Alén rainforest trails for monkeys, birdlife, and guided jungle walks"
+    "Wildlife & Safari",
+    "National Parks",
+    "Beaches",
+    "Architecture",
+    "Hiking"
   ],
   "avoid": [
     "October to May is much wetter on both Bioko and the mainland, so Ureka road conditions, boat landings, and Monte Alén trails are less predictable than in the June to September dry window.",
@@ -53,24 +54,31 @@
       "lat": 3.75,
       "lng": 8.78,
       "bestMonths": [
-        "June",
-        "July",
-        "August",
-        "September"
+        "November",
+        "December",
+        "January",
+        "February"
       ],
-      "notes": "Bioko Island capital for Catedral de Santa Isabel, waterfront dining, Finca Sampaka, and organized dry-season excursions to Arena Blanca, Ureka, and Pico Basilé."
+      "notes": "Bioko Island capital for Catedral de Santa Isabel, waterfront dining, Finca Sampaka, and organized dry-season excursions to Arena Blanca, Ureka, and Pico Basilé.",
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Bata",
       "lat": 1.8639,
       "lng": 9.7658,
       "bestMonths": [
-        "June",
-        "July",
-        "August",
-        "September"
+        "December",
+        "January",
+        "February"
       ],
-      "notes": "Mainland arrival base with the broadest hotel selection, the seaside paseo, and the most practical jumping-off point for Monte Alén transfers."
+      "notes": "Mainland arrival base with the broadest hotel selection, the seaside paseo, and the most practical jumping-off point for Monte Alén transfers.",
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Monte Alén National Park",
@@ -79,10 +87,13 @@
       "bestMonths": [
         "June",
         "July",
-        "August",
-        "September"
+        "December",
+        "January"
       ],
-      "notes": "Rainforest reserve reached from Bata or Djibloho for guided jungle walks, birding, and wildlife-focused overnights once the June to September dry season firms up the roads."
+      "notes": "Rainforest reserve reached from Bata or Djibloho for guided jungle walks, birding, and wildlife-focused overnights once the June to September dry season firms up the roads.",
+      "worstMonths": [
+        "April"
+      ]
     }
   ],
   "itinerary": {
@@ -105,6 +116,10 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 3,
+        "experiences": [
+          "Architecture",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Settle into Bioko with Malabo’s cathedral quarter, cocoa-history stops, and the easiest restaurant cluster in the country.",
@@ -221,6 +236,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Transit smartly onto the mainland and keep the first Bata day easy with seafront time and park logistics.",
@@ -301,6 +319,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Head inland from Bata, pay the park entry, and use the first afternoon for a guided rainforest introduction.",

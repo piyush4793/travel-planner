@@ -22,11 +22,12 @@
     "family4": "₹1.9L–₹3.2L"
   },
   "experiences": [
-    "Sibebe Rock hike",
-    "Hlane safari drives",
-    "Mlilwane wildlife walks",
-    "Mantenga Cultural Village",
-    "Swazi craft markets"
+    "Wildlife & Safari",
+    "National Parks",
+    "Hiking",
+    "Markets & Shopping",
+    "Festivals",
+    "Mountains"
   ],
   "avoid": [
     "October-April is warmer and wetter, so Sibebe trails get slippery and game drives are less comfortable than in the May-September dry season.",
@@ -52,11 +53,13 @@
       "bestMonths": [
         "May",
         "June",
-        "July",
         "August",
         "September"
       ],
-      "notes": "Eswatini's cooler highland capital is the best base for Sibebe Rock, craft stops like Ngwenya Glass, and easy kombi links into the Ezulwini Valley."
+      "notes": "Eswatini's cooler highland capital is the best base for Sibebe Rock, craft stops like Ngwenya Glass, and easy kombi links into the Ezulwini Valley.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Manzini",
@@ -65,11 +68,13 @@
       "bestMonths": [
         "May",
         "June",
-        "July",
         "August",
         "September"
       ],
-      "notes": "The country's commercial hub is practical for the big market, intercity kombis, casual food stops, and quick access to Matsapha and nearby craft centres."
+      "notes": "The country's commercial hub is practical for the big market, intercity kombis, casual food stops, and quick access to Matsapha and nearby craft centres.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Ezulwini Valley",
@@ -78,24 +83,27 @@
       "bestMonths": [
         "May",
         "June",
-        "July",
         "August",
         "September"
       ],
-      "notes": "This green valley around Lobamba is Eswatini's classic culture-and-nature base for Mlilwane Wildlife Sanctuary, Mantenga Cultural Village, and House on Fire."
+      "notes": "This green valley around Lobamba is Eswatini's classic culture-and-nature base for Mlilwane Wildlife Sanctuary, Mantenga Cultural Village, and House on Fire.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Hlane Royal National Park",
       "lat": -26.2475,
       "lng": 31.9996,
       "bestMonths": [
-        "May",
-        "June",
-        "July",
         "August",
-        "September"
+        "September",
+        "October"
       ],
-      "notes": "Hlane is Big Game Parks' easiest safari reserve for rhino, elephant, lion, and excellent birding, best reached by rental car or arranged transfer from central Eswatini."
+      "notes": "Hlane is Big Game Parks' easiest safari reserve for rhino, elephant, lion, and excellent birding, best reached by rental car or arranged transfer from central Eswatini.",
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -121,6 +129,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Use Mbabane for the capital's cooler weather, Sibebe logistics, and one easy first night before shifting south-east toward the valley.",
+        "experiences": [
+          "Markets & Shopping",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Highland arrival, easy city reset, and a first taste of Mbabane",
@@ -218,6 +230,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "This is the most efficient base for Eswatini's culture circuit, wildlife sanctuary, and evening venues without changing hotels constantly.",
+        "experiences": [
+          "Markets & Shopping",
+          "Wildlife & Safari",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Lobamba culture, Mantenga stories, and an easy valley afternoon",
@@ -315,6 +332,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Keep Manzini short and practical: it works best as a market-and-craft stop before you continue to eastern Eswatini or loop back to the airport.",
+        "experiences": [
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Markets, craft shopping, and the commercial pulse of central Eswatini",
@@ -369,6 +389,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Stay at least one night inside the park if you can; dawn and dusk around the waterhole are the whole point of Hlane.",
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Transfer east, check into camp, and catch the first wildlife-heavy evening",

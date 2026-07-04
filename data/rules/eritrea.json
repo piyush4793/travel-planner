@@ -26,11 +26,12 @@
     "family4": "₹3.7L–₹5.4L"
   },
   "experiences": [
-    "UNESCO-listed Italian modernist streetscapes in Asmara",
-    "Monday camel market and shrine stops in Keren",
-    "Ottoman coral-stone lanes and Red Sea seafood in Massawa",
-    "Boat-and-camp island escapes with snorkeling or diving in the Dahlak Archipelago",
-    "Classic bus-and-taxi overland route from cool highlands to the Red Sea coast"
+    "Architecture",
+    "History",
+    "Beaches",
+    "Diving & Snorkeling",
+    "Islands",
+    "Markets & Shopping"
   ],
   "avoid": [
     "April to September is a tougher window: Massawa and the Dahlak coast turn brutally hot, and the July-September wet stretch makes inland road days muddier.",
@@ -56,26 +57,29 @@
       "bestMonths": [
         "October",
         "November",
-        "December",
-        "January",
-        "February",
-        "March"
+        "March",
+        "April"
       ],
-      "notes": "UNESCO modernist core for Fiat Tagliero, Cinema Impero, Harnet Avenue cafés, Medebar Market, and the permit logistics every foreign traveler handles before leaving the capital"
+      "notes": "UNESCO modernist core for Fiat Tagliero, Cinema Impero, Harnet Avenue cafés, Medebar Market, and the permit logistics every foreign traveler handles before leaving the capital",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Massawa",
       "lat": 15.6081,
       "lng": 39.4746,
       "bestMonths": [
-        "October",
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Steamy Red Sea port for Ottoman coral architecture, Dahlak boat departures, seafood hotel dining, and the dramatic escarpment drive down from Asmara"
+      "notes": "Steamy Red Sea port for Ottoman coral architecture, Dahlak boat departures, seafood hotel dining, and the dramatic escarpment drive down from Asmara",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Keren",
@@ -85,25 +89,28 @@
         "October",
         "November",
         "December",
-        "January",
-        "February",
-        "March"
+        "January"
       ],
-      "notes": "Second city of Eritrea with the Monday camel market, Mariam Dearit shrine, cemetery history, and a gentler highland pace than the capital"
+      "notes": "Second city of Eritrea with the Monday camel market, Mariam Dearit shrine, cemetery history, and a gentler highland pace than the capital",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Dahlak Archipelago",
       "lat": 15.75,
       "lng": 40.22,
       "bestMonths": [
-        "October",
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Remote island chain reached by licensed boats from Massawa; most stays are organized camping or basic temporary setups with snorkeling, diving, and permit-controlled access"
+      "notes": "Remote island chain reached by licensed boats from Massawa; most stays are organized camping or basic temporary setups with snorkeling, diving, and permit-controlled access",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -129,6 +136,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Do the permit paperwork while you are still in the capital, then use Asmara for UNESCO architecture, tank-yard logistics, and easy café time before the coast or Keren.",
+        "experiences": [
+          "Architecture",
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "UNESCO modernism, café culture, and the easiest first walk in Eritrea",
@@ -214,6 +226,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Keren works best as a compact highland side trip, ideally timed for Monday if you want the camel market at full volume.",
+        "experiences": [
+          "Markets & Shopping",
+          "History"
+        ],
         "days": [
           {
             "theme": "Camel market, shrines, and cemetery history in Eritrea's second city",
@@ -259,6 +275,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Keep Massawa short but unrushed: one day for the old coral port and one for either Green Island/Gurgussum downtime or your Dahlak boat staging.",
+        "experiences": [
+          "History",
+          "Beaches",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Escarpment descent, Tualud landmarks, and a first Red Sea evening",
@@ -341,6 +362,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "There are no normal island hotels here; nearly all foreign visitors go on organized boat-and-camp packages from Massawa, with permits checked before departure.",
+        "experiences": [
+          "Islands",
+          "Diving & Snorkeling",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Boat out from Massawa, permit-controlled island access, and the first swim or snorkel stop",

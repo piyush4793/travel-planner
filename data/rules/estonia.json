@@ -24,12 +24,12 @@
     "family4": "₹4.1L–₹6.4L"
   },
   "experiences": [
-    "Medieval Old Town",
-    "Baltic Spa Towns",
-    "Island Ferries",
-    "Bog Boardwalks",
-    "Manor Houses",
-    "Design Cafés"
+    "History",
+    "Architecture",
+    "National Parks",
+    "Beaches",
+    "Islands",
+    "UNESCO Sites"
   ],
   "avoid": [
     "November–March — cold, damp, and dark with fewer island services and much shorter sightseeing days outside Tallinn",
@@ -52,13 +52,31 @@
       "name": "Tallinn",
       "lat": 59.437,
       "lng": 24.7536,
-      "notes": "Walkable Baltic capital with a UNESCO-listed Old Town, Kadriorg museums, harbour culture, and some of Estonia's best food scene."
+      "notes": "Walkable Baltic capital with a UNESCO-listed Old Town, Kadriorg museums, harbour culture, and some of Estonia's best food scene.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Tartu",
       "lat": 58.3776,
       "lng": 26.729,
-      "notes": "Estonia's university city for riverside cafés, creative districts, the national museum, and an easy compact centre."
+      "notes": "Estonia's university city for riverside cafés, creative districts, the national museum, and an easy compact centre.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Pärnu",
@@ -69,45 +87,53 @@
         "July",
         "August"
       ],
-      "notes": "The country's classic summer resort with a sandy beach, historic villas, spas, and relaxed seafood-and-pizza evenings."
+      "notes": "The country's classic summer resort with a sandy beach, historic villas, spas, and relaxed seafood-and-pizza evenings.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Saaremaa",
       "lat": 58.2529,
       "lng": 22.4862,
       "bestMonths": [
-        "May",
         "June",
         "July",
-        "August",
-        "September"
+        "August"
       ],
-      "notes": "Best covered from Kuressaare, mixing a castle-town base with lighthouse drives, windmills, cliffs, and slow-island pacing."
+      "notes": "Best covered from Kuressaare, mixing a castle-town base with lighthouse drives, windmills, cliffs, and slow-island pacing.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Lahemaa",
       "lat": 59.5657,
       "lng": 25.8082,
       "bestMonths": [
-        "May",
         "June",
         "July",
         "August",
         "September"
       ],
-      "notes": "National park region of bog trails, manor estates, pine forest, and small fishing villages that works as an overnight or long day trip from Tallinn."
+      "notes": "National park region of bog trails, manor estates, pine forest, and small fishing villages that works as an overnight or long day trip from Tallinn.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Haapsalu",
       "lat": 58.9431,
       "lng": 23.5413,
       "bestMonths": [
-        "May",
         "June",
         "July",
         "August"
       ],
-      "notes": "Small west-coast spa town known for its bishop's castle, wooden villas, promenade sunsets, and slow café rhythm."
+      "notes": "Small west-coast spa town known for its bishop's castle, wooden villas, promenade sunsets, and slow café rhythm.",
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -137,6 +163,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days gives Tallinn enough time for the Old Town, one major museum day, and one Kadriorg-to-seafront day without rushing.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Old Town Gates, Toompea & Medieval Lanes",
@@ -254,6 +285,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Lahemaa works best as one scenic overnight focused on a bog trail, one manor, and one fishing-village stop.",
+        "experiences": [
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Bog Boardwalks, Manors & Fishing Villages",
@@ -299,6 +333,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Give Tartu two nights if possible so you can combine its historic core with the museum-heavy east side without cramming the day.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "University Heritage, Ruins & Creative Quarter",
@@ -376,6 +414,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Pärnu is strongest as a one-night summer resort stop for the beach, a spa session, and an easy dinner near the promenade.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Beach Promenade, Museum & Spa Time",
@@ -421,6 +462,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Saaremaa deserves two nights if you want both Kuressaare's castle-town base and a proper island drive to the crater, cliffs, or lighthouse coast.",
+        "experiences": [
+          "Islands",
+          "History"
+        ],
         "days": [
           {
             "theme": "Kuressaare Castle, Old Town & Spa Evening",
@@ -498,6 +543,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Haapsalu is ideal for one quiet night of castle history, promenade walks, and a spa-town dinner before returning to Tallinn.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Castle Towers, Railway Heritage & Seafront",
