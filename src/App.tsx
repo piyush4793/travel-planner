@@ -46,7 +46,6 @@ export default function App() {
   const [view, setView] = useHashView();
   const [homeCountry, setHomeCountry] = useState(() => loadLS(LS_KEYS.HOME_COUNTRY, "India"));
   const [selectedMonth, setSelectedMonth] = useState<string[]>([]);
-  const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
   const [visitedFilter, setVisitedFilter] = useState<VisitedFilter>("all");
   const [budgetFilter, setBudgetFilter] = useState<BudgetTier>("all");
   const { globalBasis, activeBasis, setGlobalBasis, setActiveBasis } = useBudgetBasis();
@@ -120,8 +119,8 @@ export default function App() {
   const trips = useTripStore(store.myListNames, store.myListCountries);
 
   const filtered = useMemo(
-    () => applyFilters(store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter, activeBasis),
-    [store.myListCountries, selectedMonth, selectedExperiences, store.visited.set, visitedFilter, budgetFilter, activeBasis],
+    () => applyFilters(store.myListCountries, selectedMonth, [], store.visited.set, visitedFilter, budgetFilter, activeBasis),
+    [store.myListCountries, selectedMonth, store.visited.set, visitedFilter, budgetFilter, activeBasis],
   );
   // For Trips: apply all filters EXCEPT visited (Trips filters at trip-card level)
   const filteredForTrips = useMemo(
@@ -156,10 +155,6 @@ export default function App() {
       return { ...current, notes: notes.trim() || undefined };
     });
   }, [store]);
-
-  const toggleExperience = useCallback((tag: string) => {
-    setSelectedExperiences((p) => p.includes(tag) ? p.filter((t) => t !== tag) : [...p, tag]);
-  }, []);
 
   const handleAiPlanReady = useCallback((result: LLMTripPlanResult) => {
     setAiPlanResult(result);
@@ -394,8 +389,6 @@ export default function App() {
           onToggleFavorite={() => selectedCountry && store.favorites.toggle(selectedCountry.name)}
           isVisited={selectedCountry ? store.visited.set.has(selectedCountry.name) : false}
           onToggleVisited={() => selectedCountry && store.visited.toggle(selectedCountry.name)}
-          onFilterExperience={toggleExperience}
-          activeExperiences={selectedExperiences}
           onEdit={() => selectedCountry && setFormTarget(selectedCountry)}
           onUpdateNotes={handleUpdateNotes}
           homeCountry={homeCountry}

@@ -35,15 +35,12 @@ const TEST_IDS = {
   COUNTRY_PANEL_CLOSE: "country-panel-close",
   CALENDAR_SELECT_COUNTRY: "calendar-select-country",
   CALENDAR_COUNT: "calendar-count",
-  COUNTRY_PANEL_FILTER_FOOD: "country-panel-filter-food",
   TRIPS_COUNT: "trips-count",
   DISCOVER_ADD_COUNTRY: "discover-add-country",
   DISCOVER_REMOVE_COUNTRY: "discover-remove-country",
 } as const;
 
 const FOOD_EXPERIENCE = "Food";
-const BR_PRESENT_COUNTRIES_COUNT = "2";
-const JP_ONLY_COUNTRIES_COUNT = "1";
 
 function navButton(tourId: string) {
   return document.querySelector(`button[data-tour="${tourId}"]`) as HTMLButtonElement;
@@ -164,19 +161,11 @@ vi.mock("../../components/country/CountryPanel", () => ({
     lastCountryPanelProps = props;
     const country = props.country as Country | null;
     const onClose = props.onClose as (() => void) | undefined;
-    const onFilterExperience = props.onFilterExperience as ((tag: string) => void) | undefined;
     return (
       <div data-testid="country-panel">
       <div data-testid={TEST_IDS.SELECTED_COUNTRY}>{country?.name ?? "none"}</div>
       <button type="button" data-testid={TEST_IDS.COUNTRY_PANEL_CLOSE} onClick={() => onClose?.()}>
           Close
-        </button>
-        <button
-          type="button"
-        data-testid={TEST_IDS.COUNTRY_PANEL_FILTER_FOOD}
-        onClick={() => onFilterExperience?.(FOOD_EXPERIENCE)}
-        >
-          Filter Food
         </button>
       </div>
     );
@@ -351,20 +340,6 @@ describe("App orchestration", () => {
     await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
     await user.click(screen.getByTestId(TEST_IDS.CALENDAR_SELECT_COUNTRY));
     expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent(COUNTRY_NAMES.JAPAN);
-  });
-
-  it("applies experience filter to Calendar results but keeps Trips result set unchanged", async () => {
-    const user = userEvent.setup();
-    setHashRoute("calendar");
-    render(<App />);
-
-    expect(screen.getByTestId(TEST_IDS.CALENDAR_COUNT)).toHaveTextContent(BR_PRESENT_COUNTRIES_COUNT);
-
-    await user.click(screen.getByTestId(TEST_IDS.COUNTRY_PANEL_FILTER_FOOD));
-    expect(screen.getByTestId(TEST_IDS.CALENDAR_COUNT)).toHaveTextContent(JP_ONLY_COUNTRIES_COUNT);
-
-    await user.click(navButton(NAV_TOUR_IDS.TRIPS));
-    expect(screen.getByTestId(TEST_IDS.TRIPS_COUNT)).toHaveTextContent(BR_PRESENT_COUNTRIES_COUNT);
   });
 
   it("passes AI planning handlers to CountryPanel only when llmPlanning is enabled", () => {

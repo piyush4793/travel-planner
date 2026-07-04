@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import { setupUser } from "../testUtils";
-import { LearnAboutSection, PlanningResourcesSection } from "../../components/country/panel/InfoSections";
+import { LearnAboutSection, PlanningResourcesSection, UsefulLinksSection } from "../../components/country/panel/InfoSections";
 import PlanPreview from "../../components/country/panel/PlanPreview";
 import CityCard from "../../components/country/panel/CityCard";
 import type { Country, CityEntry } from "../../core/types";
@@ -159,6 +159,28 @@ describe("InfoSections", () => {
     expect(screen.getByRole("link", { name: /Official tourism/i })).toHaveAttribute("href", "https://example.test/tourism");
     expect(screen.getByText("Entry rules and highlights")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Transit guide/i })).toHaveAttribute("href", "https://example.test/transit");
+  });
+
+  it("renders nothing when there are no useful links", () => {
+    const { container } = render(<UsefulLinksSection links={[]} />);
+    expect(container).toBeEmptyDOMElement();
+    render(<UsefulLinksSection />);
+    expect(screen.queryByRole("button", { name: /Useful links/i })).not.toBeInTheDocument();
+  });
+
+  it("renders curated useful links as external, safe anchors when expanded", async () => {
+    const user = setupUser();
+    render(<UsefulLinksSection links={[{ label: "Japan Rail Pass", url: "https://example.test/jr" }]} />);
+
+    const toggle = screen.getByRole("button", { name: /Useful links/i });
+    expect(toggle).toHaveAttribute("aria-expanded", "false");
+
+    await user.click(toggle);
+
+    const link = screen.getByRole("link", { name: /Japan Rail Pass/i });
+    expect(link).toHaveAttribute("href", "https://example.test/jr");
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", "noopener noreferrer");
   });
 });
 
@@ -321,10 +343,14 @@ describe("CityCard", () => {
     expect(onToggle).toHaveBeenCalledTimes(1);
   });
 
-  it("renders an unselected selectable card with notes", () => {
+  it("renders an unselected selectable card with notes and month badges", () => {
     render(<CityCard city={city} selectable selected={false} onToggle={vi.fn()} />);
 
     expect(screen.getByRole("button", { name: /Kyoto/i })).toHaveAttribute("aria-pressed", "false");
     expect(screen.getByText("Temples, gardens, and calm evening streets.")).toBeInTheDocument();
+    expect(screen.getByText("Mar")).toBeInTheDocument();
+    expect(screen.getByText("Apr")).toBeInTheDocument();
+    expect(screen.getByText("May")).toBeInTheDocument();
+    expect(screen.queryByText("Nov")).not.toBeInTheDocument();
   });
 });

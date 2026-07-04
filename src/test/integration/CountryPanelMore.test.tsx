@@ -186,8 +186,6 @@ function renderPanel(overrides: Partial<PanelProps> = {}) {
     onToggleFavorite: vi.fn(),
     isVisited: false,
     onToggleVisited: vi.fn(),
-    onFilterExperience: vi.fn(),
-    activeExperiences: [],
     onEdit: vi.fn(),
     onUpdateNotes: vi.fn(),
     homeCountry: "India",
@@ -200,22 +198,33 @@ function renderPanel(overrides: Partial<PanelProps> = {}) {
 }
 
 describe("CountryPanel more coverage", () => {
-  it("switches between overview, plan, info, and notes tabs", async () => {
+  it("switches between overview, plan, and notes tabs", async () => {
     const user = userEvent.setup();
     renderPanel();
 
     expect(screen.getByRole("button", { name: /Trip readiness/i })).toBeInTheDocument();
+    // Info sections are merged into Overview (no separate Info tab).
+    expect(screen.getByRole("button", { name: /Learn about Japan/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Useful links/i })).toBeInTheDocument();
+    expect(screen.queryByRole("tab", { name: /Info/i })).not.toBeInTheDocument();
 
     await user.click(screen.getByRole("tab", { name: /Plan/i }));
     expect(screen.getByText(/Trip length/i)).toBeInTheDocument();
     expect(screen.getByText(/Recommended/i)).toBeInTheDocument();
 
-    await user.click(screen.getByRole("tab", { name: /Info/i }));
-    expect(screen.getByRole("button", { name: /Learn about Japan/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /Useful links/i })).toBeInTheDocument();
-
     await user.click(screen.getByRole("tab", { name: /Notes/i }));
     expect(screen.getByPlaceholderText(/Jot down ideas/i)).toBeInTheDocument();
+  });
+
+  it("keeps cities only in the Plan tab, not in Overview", async () => {
+    const user = userEvent.setup();
+    renderPanel();
+
+    // Overview no longer lists a read-only Cities section.
+    expect(screen.queryByRole("button", { name: /^Cities$/i })).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole("tab", { name: /Plan/i }));
+    expect(screen.getByRole("button", { name: /Cities to visit/i })).toBeInTheDocument();
   });
 
   it("updates the day slider and renders the offline plan preview for the selected duration", async () => {
@@ -308,8 +317,6 @@ describe("CountryPanel more coverage", () => {
     const sections = [
       screen.getByRole("button", { name: /Trip readiness/i }),
       screen.getByRole("button", { name: /When to go/i }),
-      screen.getByRole("button", { name: /Experiences/i }),
-      screen.getByRole("button", { name: /Cities/i }),
       screen.getByRole("button", { name: /Combine with/i }),
     ];
 
@@ -324,22 +331,29 @@ describe("CountryPanel more coverage", () => {
     expect(screen.getByText(/Stopover tip/i)).toBeInTheDocument();
     expect(screen.getByText(/Watch out for/i)).toBeInTheDocument();
 
-    await user.click(screen.getByRole("tab", { name: /Info/i }));
+    // "Useful links" now lives in Overview (Info tab merged in).
     const links = screen.getByRole("button", { name: /Useful links/i });
     expect(links).toHaveAttribute("aria-expanded", "false");
     await user.click(links);
     expect(links).toHaveAttribute("aria-expanded", "true");
   });
 
-  it("filters by clicked experience tags", async () => {
+  it("toggles panel-local focus experiences in the Plan tab without any global callback", async () => {
     const user = userEvent.setup();
-    const onFilterExperience = vi.fn();
-    renderPanel({ onFilterExperience, activeExperiences: ["Food"] });
+    renderPanel();
 
-    await user.click(screen.getByRole("button", { name: /Experiences/i }));
-    await user.click(screen.getByRole("button", { name: "Food" }));
+    await user.click(screen.getByRole("tab", { name: /Plan/i }));
+    await user.click(screen.getByRole("button", { name: /Focus experiences/i }));
 
-    expect(onFilterExperience).toHaveBeenCalledWith("Food");
+    const foodChip = screen.getByRole("button", { name: "Food" });
+    expect(foodChip).toHaveAttribute("aria-pressed", "false");
+
+    await user.click(foodChip);
+    expect(screen.getByRole("button", { name: "Food" })).toHaveAttribute("aria-pressed", "true");
+
+    const clearBtn = screen.getByRole("button", { name: /Clear focus \(1\)/i });
+    await user.click(clearBtn);
+    expect(screen.getByRole("button", { name: "Food" })).toHaveAttribute("aria-pressed", "false");
   });
 
   it("selects and clears cities in the Plan tab", async () => {

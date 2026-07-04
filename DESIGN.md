@@ -245,7 +245,7 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 - **Card invariant**: Trips renders one card per country in My List (trip groups annotate cards but do not suppress standalone country cards)
 - **Narrow mobile**: forced list view; wider phones can switch list/grid
 - **Popularity sort**: driven by country `popularityScore` sourced from manifest metadata (calibrated to a 1-100 **leisure-only** composite across all 198 destinations: experiences 35% + city depth 20% + seasonality 20% + affordability/value 15% + combo breadth 5% + landmark presence 5%; no arrivals/receipts/work-business inputs), then favorites, then name
-- **Experience tags**: app-level experience tags are not applied to Trips cards to avoid hidden filtering states in Trips UX
+- **Experience tags**: experience selection is **panel-local only** — the country panel's Plan tab owns a `selectedExperiences` state that shapes just that country's offline itinerary (city-score boost in auto-selection + experience-first activity ordering per day). There is no global/app-level experience filter; Trips and Calendar never filter by experience
 - **Search ranking behavior**: primary-country matches (including word-prefix matches) rank above combine/related hits; fuzzy fallback is strict and only used when deterministic matching finds nothing; active search keeps relevance order (no popularity re-sort)
 - **Results context strip**: desktop results toolbar shows sort + budget-basis context and provides a one-click clear-all reset
 - **Compact card rhythm**: grid cards reserve combo-row space and render a low-emphasis "No combo yet" placeholder when suggestions are absent, keeping progress rows aligned
@@ -263,6 +263,7 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 
 ### Country panel interactions
 
+- **Three tabs** (`PANEL_TABS`, `panelTab` state = `overview` | `plan` | `notes`). The former **Info tab is merged into Overview**: decision content (Trip readiness, When to go, Stopover tip, Watch out for, Combine with) is followed by the research group — `LearnAboutSection`, `PlanningResourcesSection`, `UsefulLinksSection` (all in `panel/InfoSections.tsx`). These are lazy collapsibles (`LearnAboutSection` fetches only on expand; the shared `ExternalLinkIcon` is reused across link rows), so the merge adds no eager network and keeps Overview short at rest.
 - Header flag rendering uses explicit aliases plus locale region-name resolution and now covers all manifest country names.
 - “Combine with” pills are interactive and open the selected country panel — resolving from My List, the seed/custom set, or the catalog — so related destinations open even when not yet added. The panel merges loaded rule data (`mergeCountryData`) over the resolved country, so a not-yet-tracked target still shows full budget/months/experiences/itinerary.
 - **Edit form** (`CountryForm`): budget is edited as a **single per-person (solo) field**; couple and family4 totals are derived via `deriveBudgetBreakdown` and shown as read-only icon hints, then written to `Country.budgetBreakdown`. The single `budget` string stays synced to the derived couple value (enrichment convention). Travel style is **single-select** and drives the default day count. `getBudgetBadges` prefers the country's `budgetBreakdown` override over raw rule data, so edits are reflected in the member chips.
@@ -386,8 +387,8 @@ Auto-backup is routed to a **capability-based** destination so app data stays fi
 
 ### Offline plan generation
 ```
-CountryPanel → generateTripPlan(country, style, cities, days, rule)
-  → rule engine or generic fallback
+CountryPanel → generateTripPlan(country, style, cities, days, rule, basis, experiences)
+  → rule engine (experience-aware: boosts matching cities + orders day activities) or generic fallback
   → TripPlan { duration, costPerPerson, days[], note }
   → PlanPreview → Cinematic / Itinerary / PDF / 🗺️ Route
 ```
@@ -429,7 +430,7 @@ Reusable coverage slash command:
   - hash-route setup
   - deterministic timer control for timing-sensitive UI tests
 - Current threshold policy remains strict for domain logic (`core/utils`, hooks, utils) and intentionally permissive for broad UI shells (`src/components/**`) until additional integration coverage lands.
-- **Hard commit gate:** a global floor of **86% statements/lines** is enforced by `vitest run --coverage` (thresholds in `vite.config.ts`), wired into both the pre-commit hook and `npm run validate`. Commits are blocked below 86%. Backup targets are tested against a reusable fake File System (`src/test/support/fakeFileSystem.ts`) covering permissions, the dedicated `Roamwise/` app folder, and read/write round-trips.
+- **Hard commit gate:** a global floor of **89% statements/lines** is enforced by `vitest run --coverage` (thresholds in `vite.config.ts`), wired into both the pre-commit hook and `npm run validate`. Commits are blocked below 89%. Backup targets are tested against a reusable fake File System (`src/test/support/fakeFileSystem.ts`) covering permissions, the dedicated `Roamwise/` app folder, and read/write round-trips.
 
 ### Testing expansion plan (Phase 2 complete)
 

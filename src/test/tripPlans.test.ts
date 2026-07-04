@@ -416,4 +416,49 @@ describe("tripPlans — rule-based DP selection", () => {
     expect(plan.costPerPerson).toBe("₹2L – ₹4L");
     expect(plan.costBasis).toBe("couple");
   });
+
+  const EXP_RULE = {
+    cityOrder: ["Dryton", "Foodville"],
+    cities: {
+      Dryton: {
+        name: "Dryton",
+        minDays: 1,
+        recDays: 1,
+        maxDays: 2,
+        days: [{ theme: "History", activities: [{ name: "Old Fort" }] }],
+      },
+      Foodville: {
+        name: "Foodville",
+        minDays: 1,
+        recDays: 1,
+        maxDays: 2,
+        days: [
+          {
+            theme: "Street Food Market",
+            activities: [{ name: "Old Fort" }, { name: "Street Food Tour" }, { name: "Park Walk" }],
+          },
+        ],
+      },
+    },
+    connections: [],
+  };
+  const EXP_COUNTRY = { name: "Tasteland", lat: 0, lng: 0, bestMonths: ["May"], budget: "₹1L–₹2L", experiences: ["Street Food"] } as const;
+
+  it("surfaces experience-matching activities first within a day", () => {
+    const base = generateTripPlan(EXP_COUNTRY as never, "custom" as never, ["Foodville"], 2, EXP_RULE as never);
+    expect(base.days[0].activities[0]).toContain("Old Fort");
+
+    const focused = generateTripPlan(EXP_COUNTRY as never, "custom" as never, ["Foodville"], 2, EXP_RULE as never, "couple", ["Street Food"]);
+    expect(focused.days[0].activities[0]).toContain("Street Food");
+  });
+
+  it("boosts experience-matching cities in auto selection", () => {
+    // 1-day budget fits only one city. Base value favours Dryton (route order);
+    // a "Street Food" focus boosts Foodville's content match enough to win.
+    const auto = generateTripPlan(EXP_COUNTRY as never, "custom" as never, [], 1, EXP_RULE as never);
+    expect(auto.days.map((d) => d.label).join()).toContain("Dryton");
+
+    const focused = generateTripPlan(EXP_COUNTRY as never, "custom" as never, [], 1, EXP_RULE as never, "couple", ["Street Food"]);
+    expect(focused.days.map((d) => d.label).join()).toContain("Foodville");
+  });
 })

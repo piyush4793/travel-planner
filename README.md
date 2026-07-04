@@ -44,7 +44,6 @@ All filters combine with AND logic:
 |---|---|
 | **Month** | Multi-select — shows countries with best-time overlap |
 | **Budget** | Choose **basis** first (Solo / Couple / Family), then tier: ₹ Budget (< ₹1.5L) / ₹₹ Mid (₹1.5L–₹3L) / ₹₹₹ Premium (₹3L+) |
-| **Experiences** | Multi-select tag picker — AND logic (applies to non-Trips filtered views) |
 | **Visited** | Dropdown: All Countries / Not Visited / ✓ Visited — on Trips, filters country cards directly |
 | **Sort (Trips)** | Popularity / A to Z / Z to A. Popularity uses `popularityScore` from `data/rules/index.json` (tie-break: favorites, then name), calibrated across all 198 destinations on a 1–100 **leisure-only** scale (no arrivals/receipts/business proxies): experiences depth (35%), city depth (20%), seasonality viability (20%), affordability/value from budget (15%), combo-network breadth (5%), and landmark presence (5%). When a search query is active, relevance ranking takes precedence. |
 
@@ -63,10 +62,12 @@ Slides in from the right with a compact, decluttered layout:
 - **Country flag support** — panel header now resolves flags for all manifest destinations (including naming variants like Czech Republic/Czechia, Ivory Coast/Côte d’Ivoire, St./Saint forms)
 - **Travel style badge** — single research-backed recommendation per country (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive). Editing it (single-select) sets the default trip length: Touch & Go ≈ 60% of recommended, Explorer = recommended, Immersive = maximum
 - **Single-input budget** — the edit form takes one per-person (solo) estimate; couple and family-of-4 totals are derived automatically from data-calibrated ratios and shown as read-only hints, so the member budget chips stay consistent with no chance of contradictory entries; edits update the panel in place with no reload
-- **Collapsible sections** — Experiences, Cities, Stopover tips, Watch out for, Combine with, Links, Notes collapse by default with item counts
+- **Collapsible sections** — Cities, Stopover tips, Watch out for, Combine with, Links collapse by default with item counts
+- **Three tabs (Overview · Plan · Notes)** — the former *Info* tab is folded into **Overview**: after the at-a-glance decision info come the research sections (Learn about, Planning resources, Useful links), all lazy collapsibles so nothing loads until expanded
 - **Combine-with navigation** — country pills in “Combine with” are clickable and open that country panel directly
 - **"When to go"** — best + avoid months merged in one row
 - **Trip planner** — days slider with **optimal DP-based city selection** (bounded knapsack over popularity + day bounds) + Generate/AI buttons
+- **Panel-scoped Plan filters** — the Plan tab hosts a **Focus experiences** multi-select and a **Cities to visit** picker that only shape *this country's* offline itinerary (never any global/Calendar view). Selecting experiences boosts matching cities in auto-selection and surfaces experience-matching activities first within each day
 - **Multi-plan selector** — dropdown to switch between Default and saved AI plans, with full day-wise itinerary for each
 - **Plan comparison** — side-by-side modal with summary cards (duration, cost, cities, activities/day, hotels), city overlap analysis (shared/unique badges), and independent day-by-day scroll
 - **Cinematic for any plan** — saved AI plans can also run cinematic mode; button disabled per-plan when city coordinates don't match

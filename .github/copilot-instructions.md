@@ -9,7 +9,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 ```bash
 npx tsc --noEmit        # fastest type-check loop
 npm test                # Vitest suite (840 tests across 92 files)
-npm run test:coverage   # coverage report (must stay ≥ 86% total statements/lines)
+npm run test:coverage   # coverage report (must stay ≥ 89% total statements/lines)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests(+coverage) + knip + build
 ```
@@ -17,7 +17,7 @@ npm run validate        # tsc + tests(+coverage) + knip + build
 Run `npx tsc --noEmit` and `npm run build` before and after every change set. Use `npm test` whenever behavior changes or when documentation references current suite counts. `npm run validate` is the full confidence pass.
 Before committing, ensure adequate test coverage for the behavior you changed (add or update TCs so regressions are caught).
 
-**Coverage gate (hard):** the pre-commit hook and `npm run validate` run `vitest run --coverage`, which enforces a **global floor of 86% statements/lines** (set in `vite.config.ts` `coverage.thresholds`). A commit is blocked if total coverage drops below 86%. Per-directory thresholds also apply (`src/utils/**` 60/50/60, `src/core/utils/**` 80/70/80, etc.). Raise the floor when coverage rises; never lower it to force a commit through.
+**Coverage gate (hard):** the pre-commit hook and `npm run validate` run `vitest run --coverage`, which enforces a **global floor of 89% statements/lines** (set in `vite.config.ts` `coverage.thresholds`). A commit is blocked if total coverage drops below 89%. Per-directory thresholds also apply (`src/utils/**` 60/50/60, `src/core/utils/**` 80/70/80, etc.). Raise the floor when coverage rises; never lower it to force a commit through.
 
 Current testing priority:
 - Total statement coverage is ~90% (840 tests). Country-detail and itinerary surfaces (`CountryForm`, `ItineraryModal`, `PlanCompareModal`, `CountryPanel`) and the `ai` folder (`ChatModal` import/link/finalize flows, `SettingsModal` backup/restore/CSV flows) are now covered; the Trips view covers sort/filter plus trip create/edit/delete flows; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; `importParser` (incl. `fetchChatLink`), `usePanelDrag`, `useChatSession`, `core/storage`, and `App.tsx` orchestration handlers are covered; the platform-backup stack (`core/platform/*`, `core/adapters/backup/*`, `StorageLocationCard`) is covered via a reusable fake File System helper (`src/test/support/fakeFileSystem.ts`); remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` (need a real WebGL context).
@@ -123,7 +123,8 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 - Travel style badge (🏃 Touch & Go / 🔭 Explorer / 🌿 Immersive). In the edit form travel style is **single-select** and sets the default day count via `defaultDaysForStyle()` (touch-and-go ≈ 60% recDays / explorer = recDays / immersive = maxDays)
 - Edit form budget is a **single per-person (solo) input** → couple/family4 derived via `deriveBudgetBreakdown` (data-calibrated `BASIS_MULTIPLIER`: couple 1.77×, family4 3.45×) → `Country.budgetBreakdown`; the single `budget` string is kept synced to the derived couple value. `getBudgetBadges` must prefer `country.budgetBreakdown` over raw rule data so edits show in member chips
 - Saving edits is an **in-place** panel update (no reload): identity-reset effect keys on `country.name`; a separate effect re-seeds the day slider from `travelStyle`/rule bounds. Editing budget alone preserves an in-progress plan
-- Collapsible sections: Experiences, Cities, Stopover tips, Watch out for, Combine with, Links, Notes
+- **Three panel tabs** (`PANEL_TABS`, `panelTab` = `overview` | `plan` | `notes`): the former **Info tab was merged into Overview**. Overview = decision info (Trip readiness, When to go, Stopover tip, Watch out for, Combine with) followed by the merged research group (`LearnAboutSection`, `PlanningResourcesSection`, `UsefulLinksSection` from `panel/InfoSections.tsx`). All research sections are lazy collapsibles (Learn fetches only on expand), so the merge adds no eager network. Cities info lives only in the Plan tab
+- **Experience + City filters are panel-local only** — the Plan tab hosts a "Focus experiences" multi-select and a "Cities to visit" picker (both scoped via CountryPanel `selectedExperiences`/`selectedCities` state). They shape ONLY this country's offline itinerary and must never touch global/App state or Calendar. Experiences boost matching cities in auto city-selection and reorder each day's activities so matches surface first (interim keyword heuristic in `tripPlans.ts` — B1). There is no global experience filter in App.tsx
 - Combine-with pills are clickable and should open that country panel when available in My List
 - Trips search should prioritize primary-country matches (including word-prefix matches) over combine/related hits; combine matches can appear but not at the top, and active search should preserve relevance order (do not re-sort by popularity)
 - Desktop results toolbar should show context (sort + budget basis) and include a one-click clear-all reset for Trips controls

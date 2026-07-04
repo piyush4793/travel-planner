@@ -35,6 +35,20 @@ function CityCardInner({ city, selectable, selected, onToggle }: Props) {
             ✓
           </span>
         </div>
+        {bestMonths.length > 0 && (
+          <div className="mt-1.5 flex gap-1">
+            {bestMonths.slice(0, 3).map((month) => (
+              <span
+                key={month}
+                className={`rounded px-1.5 py-0.5 text-[9px] font-bold ${
+                  selected ? "bg-white/20 text-emerald-100" : "bg-emerald-100 text-emerald-700"
+                }`}
+              >
+                {month.slice(0, 3)}
+              </span>
+            ))}
+          </div>
+        )}
         {city.notes && (
           <p className={`mt-1 text-[11px] leading-snug line-clamp-2 ${
             selected ? "text-slate-300" : "text-gray-500"

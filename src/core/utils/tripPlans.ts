@@ -178,6 +178,30 @@ export function getRecRuleDays(rule: CountryRule | null | undefined): number | n
     .reduce((s, c) => s + rule.cities[c].recDays, 0);
 }
 
+/**
+ * Reduce free-form experience labels to lowercase, singularised keyword tokens
+ * (≥4 chars) for loose matching against rule text. E.g. "Street Food" →
+ * ["street", "food"], "Temples" → ["temple"].
+ */
+function experienceTokens(experiences: string[]): string[] {
+  const toks = new Set<string>();
+  for (const e of experiences) {
+    for (const w of e.toLowerCase().split(/[^a-z]+/)) {
+      if (w.length >= 4) toks.add(w.replace(/s$/, ""));
+    }
+  }
+  return [...toks];
+}
+
+/** Count how many experience tokens appear anywhere in `text`. */
+function tokenHits(text: string, tokens: string[]): number {
+  if (tokens.length === 0) return 0;
+  const t = text.toLowerCase();
+  let hits = 0;
+  for (const tok of tokens) if (t.includes(tok)) hits++;
+  return hits;
+}
+
 function getRuledItinerary(
   country: Country,
   _style: PlanStyle,
@@ -185,18 +209,37 @@ function getRuledItinerary(
   customDays: number,
   rule: CountryRule | undefined,
   basis: BudgetBasis,
+  selectedExperiences: string[] = [],
 ): TripPlan | null {
   const effectiveRule = rule;
   if (!effectiveRule) return null;
+
+  const expTokens = experienceTokens(selectedExperiences);
 
   // Select cities and allocate days via optimal bounded-knapsack DP.
   // User-picked cities are all kept (allocation only); auto mode may drop cities
   // to best fit the day budget.
   const scored = scoreCities(effectiveRule);
+  // Boost cities whose authored content matches the selected experiences so the
+  // DP (auto mode) prefers experience-relevant cities. Explicitly picked cities
+  // are always kept, so the boost only reshuffles which cities auto mode drops.
+  const boosted =
+    expTokens.length > 0
+      ? scored.map((c) => {
+          const cr = effectiveRule.cities[c.name];
+          const text = [
+            c.name,
+            cr.note ?? "",
+            ...cr.days.map((d) => `${d.theme} ${d.activities.map((a) => a.name).join(" ")}`),
+          ].join(" ");
+          const hits = tokenHits(text, expTokens);
+          return hits > 0 ? { ...c, value: c.value * (1 + Math.min(0.6, 0.2 * hits)) } : c;
+        })
+      : scored;
   const pool =
     selectedCities.length > 0
-      ? scored.filter((c) => selectedCities.includes(c.name))
-      : scored;
+      ? boosted.filter((c) => selectedCities.includes(c.name))
+      : boosted;
   if (pool.length === 0) return null;
 
   const allocation = planItinerary(pool, customDays, {
@@ -216,10 +259,18 @@ function getRuledItinerary(
     for (let d = 0; d < a.days; d++) {
       const rulePlan = city.days[d] ?? city.days[city.days.length - 1];
       const dayNum = dayIdx + d;
+      // Surface experience-matching activities first (stable), then cap at 5.
+      const orderedActs =
+        expTokens.length > 0
+          ? rulePlan.activities
+              .map((act, i) => ({ act, i, hits: tokenHits(`${act.name} ${act.tip ?? ""}`, expTokens) }))
+              .sort((a, b) => b.hits - a.hits || a.i - b.i)
+              .map((x) => x.act)
+          : rulePlan.activities;
       days.push({
         label: `Day ${dayNum} — ${a.name}`,
         theme: rulePlan.theme,
-        activities: rulePlan.activities
+        activities: orderedActs
           .slice(0, 5)
           .map((act) => (act.cost ? `${act.name} (${act.cost})` : act.name)),
         hotels: rulePlan.hotels?.slice(0, 2).map((h) => `${h.name} — ${h.budget}`),
@@ -283,11 +334,12 @@ export function generateTripPlan(
   customDays = 7,
   externalRule?: CountryRule | null,
   basis: BudgetBasis = DEFAULT_BUDGET_BASIS,
+  selectedExperiences: string[] = [],
 ): TripPlan {
   // Use explicit rule if provided
   const rule = externalRule;
   if (rule) {
-    const ruled = getRuledItinerary(country, style, selectedCities, customDays, rule, basis);
+    const ruled = getRuledItinerary(country, style, selectedCities, customDays, rule, basis, selectedExperiences);
     if (ruled) return ruled;
   }
 

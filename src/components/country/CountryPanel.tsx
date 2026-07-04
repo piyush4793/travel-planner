@@ -20,7 +20,7 @@ import CityCard from "./panel/CityCard";
 import TripReadiness from "./panel/TripReadiness";
 import ShareButton from "./panel/ShareButton";
 import { CollapsibleSection } from "./panel/PanelSection";
-import { LearnAboutSection, PlanningResourcesSection } from "./panel/InfoSections";
+import { LearnAboutSection, PlanningResourcesSection, UsefulLinksSection } from "./panel/InfoSections";
 import { getRangePercent } from "./panel/utils";
 import { lazyWithRetry as lazy } from "../../utils/lazyWithRetry";
 
@@ -37,8 +37,6 @@ type Props = {
   onToggleFavorite: () => void;
   isVisited: boolean;
   onToggleVisited: () => void;
-  onFilterExperience: (tag: string) => void;
-  activeExperiences: string[];
   onEdit: () => void;
   onUpdateNotes: (notes: string) => void;
   homeCountry: string;
@@ -57,7 +55,6 @@ export default function CountryPanel({
   onSelectCountry,
   isFavorite, onToggleFavorite,
   isVisited, onToggleVisited,
-  onFilterExperience, activeExperiences,
   onEdit, onUpdateNotes,
   homeCountry,
   budgetBasis,
@@ -75,6 +72,7 @@ export default function CountryPanel({
   const { data: consolidated, rule, loading: ruleLoading } = useCountryRule(country?.name);
   const [activePlanId, setActivePlanId] = useState("default");
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
+  const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
   const [customDays, setCustomDays] = useState(7);
   const [notes, setNotes] = useState(country?.notes ?? "");
   const [notesSaved, setNotesSaved] = useState(false);
@@ -83,7 +81,7 @@ export default function CountryPanel({
   const [cinematicPlan, setCinematicPlan] = useState<TripPlan | null>(null);
   const [modalPlan, setModalPlan] = useState<TripPlan | null>(null);
   const [compareOpen, setCompareOpen] = useState(false);
-  const [panelTab, setPanelTab] = useState<"overview" | "plan" | "info" | "notes">("overview");
+  const [panelTab, setPanelTab] = useState<"overview" | "plan" | "notes">("overview");
   const [confirm, ConfirmDialog] = useConfirm();
   const currentCountryNameRef = useRef<string | null>(country?.name ?? null);
 
@@ -107,6 +105,7 @@ export default function CountryPanel({
     currentCountryNameRef.current = country?.name ?? null;
     setActivePlanId("default");
     setSelectedCities([]);
+    setSelectedExperiences([]);
     setNotes(country?.notes ?? "");
     setCinematicPlan(null);
     setModalPlan(null);
@@ -167,7 +166,7 @@ export default function CountryPanel({
   const planOptions = useMemo(() => {
     const opts: { id: string; label: string; plan: TripPlan }[] = [];
     if (displayCountry) {
-      const defaultPlan = generateTripPlan(displayCountry, "custom", selectedCities, customDays, rule, budgetBasis);
+      const defaultPlan = generateTripPlan(displayCountry, "custom", selectedCities, customDays, rule, budgetBasis, selectedExperiences);
       opts.push({ id: "default", label: "📅 Default", plan: defaultPlan });
       for (let i = 0; i < aiPlans.length; i++) {
         const sp = aiPlans[i];
@@ -176,13 +175,17 @@ export default function CountryPanel({
       }
     }
     return opts;
-  }, [displayCountry, selectedCities, customDays, aiPlans, rule, budgetBasis]);
+  }, [displayCountry, selectedCities, selectedExperiences, customDays, aiPlans, rule, budgetBasis]);
 
   const activePlan = planOptions.find((o) => o.id === activePlanId) ?? planOptions[0];
   const isDefaultActive = activePlanId === "default";
 
   const toggleCity = useCallback((name: string) => {
     setSelectedCities((prev) => prev.includes(name) ? prev.filter((city) => city !== name) : [...prev, name]);
+  }, []);
+
+  const toggleExperience = useCallback((tag: string) => {
+    setSelectedExperiences((prev) => prev.includes(tag) ? prev.filter((e) => e !== tag) : [...prev, tag]);
   }, []);
 
   return (
@@ -274,35 +277,6 @@ export default function CountryPanel({
                   </CollapsibleSection>
                 )}
 
-                <CollapsibleSection label="Experiences" count={displayCountry.experiences.length}>
-                  <div className="flex flex-wrap gap-1.5">
-                    {displayCountry.experiences.map((experience) => {
-                      const active = activeExperiences.includes(experience);
-                      return (
-                        <button
-                          key={experience}
-                          onClick={() => onFilterExperience(experience)}
-                          className={`rounded-full px-2.5 py-1 text-xs font-semibold transition-colors focus-ring ${
-                            active ? "bg-blue-600 text-white shadow-sm" : "bg-blue-50 text-blue-700 hover:bg-blue-100"
-                          }`}
-                        >
-                          {experience}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </CollapsibleSection>
-
-                {displayCountry.cities && displayCountry.cities.length > 0 && (
-                  <CollapsibleSection label="Cities" count={displayCountry.cities.length}>
-                    <div className="space-y-2">
-                      {displayCountry.cities.map((city) => (
-                        <CityCard key={city.name} city={city} />
-                      ))}
-                    </div>
-                  </CollapsibleSection>
-                )}
-
                 {displayCountry.stopoverNote && (
                   <div className="rounded-xl bg-blue-50 border border-blue-100 px-3.5 py-2.5">
                     <p className="text-[10px] font-bold text-blue-500 uppercase tracking-wide mb-1">✈️ Stopover tip</p>
@@ -345,6 +319,15 @@ export default function CountryPanel({
                     <p className="mt-1.5 text-[10px] text-gray-400">Highlighted in purple on the map</p>
                   </CollapsibleSection>
                 )}
+
+                <LearnAboutSection
+                  countryName={displayCountry.name}
+                  currentCountryNameRef={currentCountryNameRef}
+                />
+
+                <PlanningResourcesSection countryName={displayCountry.name} homeCountry={homeCountry} />
+
+                <UsefulLinksSection links={displayCountry.links} />
               </>
             )}
 
@@ -420,6 +403,37 @@ export default function CountryPanel({
                       </div>
                     </div>
 
+                    {displayCountry.experiences.length > 0 && (
+                      <CollapsibleSection label="Focus experiences" count={displayCountry.experiences.length} defaultOpen={false}>
+                        <p className="mb-2 text-[11px] text-gray-500">Optional — shapes the itinerary toward what you pick</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {displayCountry.experiences.map((experience) => {
+                            const active = selectedExperiences.includes(experience);
+                            return (
+                              <button
+                                key={experience}
+                                onClick={() => toggleExperience(experience)}
+                                aria-pressed={active}
+                                className={`min-h-[32px] rounded-full px-2.5 py-1 text-xs font-semibold transition-colors focus-ring ${
+                                  active ? "bg-blue-600 text-white shadow-sm" : "bg-blue-50 text-blue-700 hover:bg-blue-100"
+                                }`}
+                              >
+                                {experience}
+                              </button>
+                            );
+                          })}
+                        </div>
+                        {selectedExperiences.length > 0 && (
+                          <button
+                            onClick={() => setSelectedExperiences([])}
+                            className="mt-2 text-[10px] font-semibold text-gray-400 transition-colors hover:text-gray-600 focus-ring rounded"
+                          >
+                            Clear focus ({selectedExperiences.length})
+                          </button>
+                        )}
+                      </CollapsibleSection>
+                    )}
+
                     {displayCountry.cities && displayCountry.cities.length > 0 && (
                       <CollapsibleSection label="Cities to visit" count={displayCountry.cities.length} defaultOpen={false}>
                         <p className="mb-2 text-[11px] text-gray-500">Optional — auto-selected if blank</p>
@@ -485,7 +499,7 @@ export default function CountryPanel({
 
                 {activePlan && (
                   <PlanPreview
-                    key={`${activePlanId}-${isDefaultActive ? [...selectedCities].sort().join(",") : ""}-${isDefaultActive ? customDays : activePlan.plan.days.length}`}
+                    key={`${activePlanId}-${isDefaultActive ? [...selectedCities].sort().join(",") : ""}-${isDefaultActive ? [...selectedExperiences].sort().join(",") : ""}-${isDefaultActive ? customDays : activePlan.plan.days.length}`}
                     country={displayCountry}
                     plan={activePlan.plan}
                     homeCountry={homeCountry}
@@ -494,40 +508,6 @@ export default function CountryPanel({
                     isAiPlan={!isDefaultActive}
                     rule={rule}
                   />
-                )}
-              </>
-            )}
-
-            {/* ─── INFO TAB ─── */}
-            {panelTab === "info" && (
-              <>
-                <LearnAboutSection
-                  countryName={displayCountry.name}
-                  currentCountryNameRef={currentCountryNameRef}
-                />
-
-                <PlanningResourcesSection countryName={displayCountry.name} homeCountry={homeCountry} />
-
-                {displayCountry.links && displayCountry.links.length > 0 && (
-                  <CollapsibleSection label="Useful links" count={displayCountry.links.length}>
-                    <div className="space-y-2">
-                      {displayCountry.links.map((link) => (
-                        <a
-                          key={link.url}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group flex items-center gap-2 rounded-xl bg-white/80 px-3 py-2 text-xs font-semibold text-blue-700 shadow-sm shadow-slate-100 transition-colors hover:bg-slate-100 focus-ring"
-                        >
-                          <span className="text-base">🔗</span>
-                          <span className="flex-1 truncate">{link.label}</span>
-                          <svg className="h-3 w-3 shrink-0 text-gray-400 transition-colors group-hover:text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      ))}
-                    </div>
-                  </CollapsibleSection>
                 )}
               </>
             )}
@@ -642,7 +622,6 @@ export default function CountryPanel({
 const PANEL_TABS = [
   { key: "overview" as const, icon: "🗺️", label: "Overview" },
   { key: "plan" as const, icon: "📋", label: "Plan" },
-  { key: "info" as const, icon: "📚", label: "Info" },
   { key: "notes" as const, icon: "📝", label: "Notes" },
 ];
 
