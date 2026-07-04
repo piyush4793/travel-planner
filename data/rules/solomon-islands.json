@@ -26,12 +26,12 @@
     "family4": "₹6.4L–₹8.9L"
   },
   "experiences": [
-    "WWII History",
-    "Wreck Diving",
-    "Lagoon Canoeing",
-    "Melanesian Culture",
-    "Remote Island Lodges",
-    "Coral Reefs"
+    "Diving & Snorkeling",
+    "Islands",
+    "Beaches",
+    "History",
+    "Wildlife & Safari",
+    "Water Sports"
   ],
   "avoid": [
     "November–March is wetter and more cyclone-prone, so Solomon Airlines schedules, boat crossings, and lagoon visibility are less reliable than in the April–October dry season.",
@@ -55,25 +55,61 @@
       "name": "Honiara",
       "lat": -9.428,
       "lng": 159.9729,
-      "notes": "The capital is the practical entry point for Our Telekom SIMs, cash, taxis, war-memorial viewpoints, and the shortest transfer out to Guadalcanal's Bonegi wrecks and west-coast battlefields."
+      "notes": "The capital is the practical entry point for Our Telekom SIMs, cash, taxis, war-memorial viewpoints, and the shortest transfer out to Guadalcanal's Bonegi wrecks and west-coast battlefields.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Guadalcanal",
       "lat": -9.5773,
       "lng": 160.1456,
-      "notes": "Guadalcanal is the history-and-diving block for Bonegi I and II, Vilu War Museum, Bloody Ridge, Red Beach, and memorial stops linked to the island's WWII campaign."
+      "notes": "Guadalcanal is the history-and-diving block for Bonegi I and II, Vilu War Museum, Bloody Ridge, Red Beach, and memorial stops linked to the island's WWII campaign.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Western Province (Munda/Gizo)",
       "lat": -8.3279,
       "lng": 157.2691,
-      "notes": "Munda and Gizo are the easy Western Province pair for Solomon Airlines hops, Skull Island visits, Kennedy Island boat trips, Peter Joseph's WWII collection, and resort-based snorkeling or diving."
+      "notes": "Munda and Gizo are the easy Western Province pair for Solomon Airlines hops, Skull Island visits, Kennedy Island boat trips, Peter Joseph's WWII collection, and resort-based snorkeling or diving.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Marovo Lagoon",
       "lat": -8.492,
       "lng": 158.103,
-      "notes": "Marovo Lagoon is the remote finale for Seghe boat transfers, village canoe outings, Uepi reefs, and low-key eco-lodges around one of the world's largest saltwater lagoons."
+      "notes": "Marovo Lagoon is the remote finale for Seghe boat transfers, village canoe outings, Uepi reefs, and low-key eco-lodges around one of the world's largest saltwater lagoons.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     }
   ],
   "itinerary": {
@@ -99,6 +135,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Keep Honiara as the logistics-and-orientation block: one city day for memorials and market rhythm, then one buffer day before you commit to Guadalcanal drives or outer-island flights.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Memorial Hilltops, Market Time and a Simple Capital Arrival",
@@ -189,6 +228,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Treat Guadalcanal as a guided day-trip or overnight extension from Honiara: the best version pairs one WWII circuit with one Bonegi wreck day rather than trying to cover every battlefield marker.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Bonegi Wrecks, West-Coast History and Beach Access",
@@ -280,6 +323,10 @@
         "recDays": 2,
         "maxDays": 4,
         "note": "Use either Munda or Gizo as the main sleep base, then day-trip the other side by boat; the sweet spot is one history-or-snorkel day and one Skull Island or Kennedy Island outing.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Solomon Airlines Hop, Roviana Lagoon Views and WWII Collections",
@@ -367,6 +414,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Marovo works best as the slowest block of the trip: one transfer day with a short paddle or snorkel, then one full canoe-and-village day before you route back toward Seghe.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Islands",
+          "Water Sports"
+        ],
         "days": [
           {
             "theme": "Seghe Transfer, Uepi Reefs and a Lagoon Arrival",

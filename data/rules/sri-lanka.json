@@ -26,11 +26,12 @@
     "family4": "₹1.7L–₹2.6L"
   },
   "experiences": [
-    "Kandy–Ella Scenic Train",
-    "Sigiriya Rock Fortress",
-    "Galle Fort",
-    "Pigeon Island Snorkeling",
-    "Temple of the Tooth"
+    "Beaches",
+    "History",
+    "Ancient Ruins",
+    "Wildlife & Safari",
+    "Hiking",
+    "Temples & Religious Sites"
   ],
   "avoid": [
     "October–November inter-monsoon brings island-wide showers; west/south coast is wetter from May–September and east coast is roughest from October–January"
@@ -57,20 +58,25 @@
         "February",
         "March"
       ],
-      "notes": "Colonial fort district, temples, museums and sunset snacks at Galle Face Green"
+      "notes": "Colonial fort district, temples, museums and sunset snacks at Galle Face Green",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Kandy",
       "lat": 7.2906,
       "lng": 80.6337,
       "bestMonths": [
-        "December",
         "January",
         "February",
         "March",
         "April"
       ],
-      "notes": "Temple of the Tooth, lakefront walks and hill-country gateway for the classic train south"
+      "notes": "Temple of the Tooth, lakefront walks and hill-country gateway for the classic train south",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Ella",
@@ -79,10 +85,12 @@
       "bestMonths": [
         "January",
         "February",
-        "March",
-        "April"
+        "March"
       ],
-      "notes": "Nine Arches Bridge, Little Adam's Peak hikes and tea-country viewpoints"
+      "notes": "Nine Arches Bridge, Little Adam's Peak hikes and tea-country viewpoints",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Galle",
@@ -94,7 +102,10 @@
         "February",
         "March"
       ],
-      "notes": "Walkable Dutch fort, cafés, ramparts and easy side trips to Unawatuna beaches"
+      "notes": "Walkable Dutch fort, cafés, ramparts and easy side trips to Unawatuna beaches",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Sigiriya",
@@ -106,21 +117,25 @@
         "March",
         "April"
       ],
-      "notes": "Lion Rock sunrise climbs, Pidurangala panoramas and Cultural Triangle heritage stops"
+      "notes": "Lion Rock sunrise climbs, Pidurangala panoramas and Cultural Triangle heritage stops",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Trincomalee",
       "lat": 8.5874,
       "lng": 81.2152,
       "bestMonths": [
-        "April",
         "May",
         "June",
         "July",
-        "August",
-        "September"
+        "August"
       ],
-      "notes": "East-coast beaches, Koneswaram Temple and Pigeon Island coral snorkeling"
+      "notes": "East-coast beaches, Koneswaram Temple and Pigeon Island coral snorkeling",
+      "worstMonths": [
+        "December"
+      ]
     }
   ],
   "itinerary": {
@@ -148,6 +163,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days cover the key temples, museum circuit and a sunset food crawl without rushing your first or last night in Sri Lanka.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Arrival, Fort District & Temple Circuit",
@@ -238,6 +256,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days let you do the sacred core plus one relaxed hill-country day before the scenic rail journey onward.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Colombo Transfer, Temple of the Tooth & Lake Walk",
@@ -328,6 +350,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days are ideal for the train arrival, the bridge photo stop and one full hiking day around Ella Gap.",
+        "experiences": [
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Scenic Rail Arrival & Nine Arches Bridge",
@@ -414,6 +439,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days give you the fort proper plus one beach-and-café day at the calmer south-coast pace.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Ella Transfer & Galle Fort Ramparts",
@@ -503,6 +532,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days work best for the sunrise or sunset climbs, a cultural site ticket and one village-style countryside excursion.",
+        "experiences": [
+          "Ancient Ruins",
+          "History"
+        ],
         "days": [
           {
             "theme": "Long Transfer & Pidurangala Sunset",
@@ -589,6 +622,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two nights are enough for one temple-and-beach day plus one full snorkelling day if you hit the east coast in season.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Sigiriya Transfer, Koneswaram & Nilaveli Coast",

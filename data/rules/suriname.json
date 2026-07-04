@@ -26,12 +26,12 @@
     "family4": "₹7.9L–₹11.2L"
   },
   "experiences": [
-    "Colonial Waterfront",
-    "Rainforest Hiking",
-    "River Boats",
-    "Plantation History",
-    "Birdwatching",
-    "Javanese & Creole Food"
+    "Wildlife & Safari",
+    "National Parks",
+    "History",
+    "Architecture",
+    "Hiking",
+    "UNESCO Sites"
   ],
   "avoid": [
     "May–July is the long rainy season, when Brownsberg roads turn muddy, waterfalls run harder, and interior flight schedules get less predictable.",
@@ -56,60 +56,60 @@
       "lat": 5.852,
       "lng": -55.2038,
       "bestMonths": [
-        "February",
-        "March",
-        "April",
         "August",
         "September",
         "October",
         "November"
       ],
-      "notes": "UNESCO-listed capital base for Waterkant evenings, Fort Zeelandia, multicultural food, and easy links onward by taxi, bus, or bush-flight transfer."
+      "notes": "UNESCO-listed capital base for Waterkant evenings, Fort Zeelandia, multicultural food, and easy links onward by taxi, bus, or bush-flight transfer.",
+      "worstMonths": [
+        "May"
+      ]
     },
     {
       "name": "Brownsberg Nature Park",
       "lat": 4.936,
       "lng": -55.171,
       "bestMonths": [
-        "February",
-        "March",
-        "April",
         "August",
         "September",
         "October",
         "November"
       ],
-      "notes": "A classic dry-season rainforest escape for lake panoramas, monkey sightings, and half-day hikes to Leo and Irene Falls above Brokopondo Reservoir."
+      "notes": "A classic dry-season rainforest escape for lake panoramas, monkey sightings, and half-day hikes to Leo and Irene Falls above Brokopondo Reservoir.",
+      "worstMonths": [
+        "May"
+      ]
     },
     {
       "name": "Central Suriname Nature Reserve",
       "lat": 4.7167,
       "lng": -56.2167,
       "bestMonths": [
-        "February",
-        "March",
-        "April",
         "August",
         "September",
         "October",
         "November"
       ],
-      "notes": "Plan this as a lodge-style wilderness segment centered on Raleighvallen, Foengoe Island, and the Voltzberg trail, usually reached by Gum Air charter plus boat."
+      "notes": "Plan this as a lodge-style wilderness segment centered on Raleighvallen, Foengoe Island, and the Voltzberg trail, usually reached by Gum Air charter plus boat.",
+      "worstMonths": [
+        "May"
+      ]
     },
     {
       "name": "Commewijne",
       "lat": 5.8899,
       "lng": -55.0887,
       "bestMonths": [
-        "February",
-        "March",
-        "April",
         "August",
         "September",
         "October",
         "November"
       ],
-      "notes": "River district east of Paramaribo known for old plantations, dolphin-spotting boat trips, Peperpot walks, and relaxed heritage stays such as Frederiksdorp."
+      "notes": "River district east of Paramaribo known for old plantations, dolphin-spotting boat trips, Peperpot walks, and relaxed heritage stays such as Frederiksdorp.",
+      "worstMonths": [
+        "May"
+      ]
     }
   ],
   "itinerary": {
@@ -135,6 +135,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay near the Torarica riverfront, Zeelandiafort area, or a central lodge so you can walk the old town in the cooler hours and keep airport or charter transfers easy.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Waterkant heritage, Fort Zeelandia, and a first taste of Suriname",
@@ -217,6 +222,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "This works best as an early-start overnight or full-day nature outing from Paramaribo or Brokopondo, especially in the drier windows when trails stay safer and the park road is easier.",
+        "experiences": [
+          "National Parks",
+          "Hiking",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Brokopondo panorama, waterfall trails, and Suriname's easiest rainforest hit",
@@ -262,6 +272,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Treat this as a packaged wilderness leg: most travelers fly from Zorg en Hoop to Raleighvallen, then continue by river boat to Foengoe Island or the Voltzberg base with meals and guiding bundled.",
+        "experiences": [
+          "National Parks",
+          "Wildlife & Safari",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Gum Air bush flight, Coppename River, and remote-lodge arrival",
@@ -330,6 +345,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Do this as a day trip or one-night wind-down from Paramaribo, focusing on Peperpot, Nieuw Amsterdam, or Frederiksdorp rather than trying to cram every plantation into one loop.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Plantation stories, river boats, dolphins, and a quieter side of the capital region",

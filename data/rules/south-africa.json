@@ -18,11 +18,12 @@
     "family4": "₹4L–₹7L"
   },
   "experiences": [
-    "Kruger National Park Safari",
-    "Cape Town",
-    "Table Mountain",
-    "Garden Route",
-    "Winelands"
+    "Wildlife & Safari",
+    "Beaches",
+    "Wine & Vineyards",
+    "Mountains",
+    "National Parks",
+    "History"
   ],
   "avoid": [
     "High crime areas — research neighbourhoods",
@@ -43,37 +44,91 @@
       "name": "Cape Town",
       "lat": -33.9249,
       "lng": 18.4241,
-      "notes": "Table Mountain cable car, Cape Point, Boulders penguin beach and Winelands"
+      "notes": "Table Mountain cable car, Cape Point, Boulders penguin beach and Winelands",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Johannesburg",
       "lat": -26.2041,
       "lng": 28.0473,
-      "notes": "Apartheid Museum, Soweto tour, Mandela House and Maboneng arts precinct"
+      "notes": "Apartheid Museum, Soweto tour, Mandela House and Maboneng arts precinct",
+      "bestMonths": [
+        "March",
+        "April",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Durban",
       "lat": -29.8587,
       "lng": 31.0218,
-      "notes": "Golden Mile beach, Umhlanga Rocks and spicy bunny chow street food"
+      "notes": "Golden Mile beach, Umhlanga Rocks and spicy bunny chow street food",
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Stellenbosch",
       "lat": -33.9321,
       "lng": 18.8602,
-      "notes": "Cape Dutch architecture, wine estate tours and Jonkershoek hiking"
+      "notes": "Cape Dutch architecture, wine estate tours and Jonkershoek hiking",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Kruger National Park",
       "lat": -23.9884,
       "lng": 31.5547,
-      "notes": "Africa's premier Big Five game reserve with self-drive or guided safaris"
+      "notes": "Africa's premier Big Five game reserve with self-drive or guided safaris",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Garden Route",
       "lat": -33.98,
       "lng": 22.46,
-      "notes": "Scenic coastal road with Tsitsikamma forest, bungee bridge and whale watching"
+      "notes": "Scenic coastal road with Tsitsikamma forest, bungee bridge and whale watching",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -104,6 +159,11 @@
         "minDays": 3,
         "recDays": 4,
         "maxDays": 5,
+        "experiences": [
+          "Beaches",
+          "Mountains",
+          "History"
+        ],
         "days": [
           {
             "theme": "Waterfront arrival, harbor views, and an easy first evening",
@@ -272,6 +332,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Wine & Vineyards"
+        ],
         "days": [
           {
             "theme": "Cape Dutch streets, wine estates, and a gourmet Winelands day",
@@ -320,6 +383,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Wilderness beaches, Knysna lagoon, and the classic coastal drive",
@@ -408,6 +475,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Arrival safari, sunset bush time, and the first Big Five search",
@@ -496,6 +567,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Apartheid history, Soweto stories, and essential context for the country",
@@ -584,6 +658,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Golden Mile promenade, Indian market stops, and a seafood-and-curry finale",

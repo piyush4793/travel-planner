@@ -24,11 +24,12 @@
     "family4": "₹3L–₹5L"
   },
   "experiences": [
-    "Bratislava Old Town",
-    "High Tatras",
-    "Spiš Castle",
-    "Banská Štiavnica",
-    "Košice"
+    "History",
+    "Mountains",
+    "Hiking",
+    "Architecture",
+    "UNESCO Sites",
+    "Skiing"
   ],
   "avoid": [
     "Tatras weather flips quickly — keep one flexible mountain day and book ice cave slots or cableways early in summer and ski season"
@@ -52,10 +53,13 @@
       "bestMonths": [
         "May",
         "June",
-        "September",
-        "December"
+        "July",
+        "September"
       ],
-      "notes": "Compact Danube capital with castle views, cafe streets and easy Devín half-day trips"
+      "notes": "Compact Danube capital with castle views, cafe streets and easy Devín half-day trips",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "High Tatras",
@@ -65,13 +69,12 @@
         "June",
         "July",
         "August",
-        "September",
-        "December",
-        "January",
-        "February",
-        "March"
+        "September"
       ],
-      "notes": "Slovakia’s headline mountain region for lake walks, hut hikes, skiing and cave excursions"
+      "notes": "Slovakia’s headline mountain region for lake walks, hut hikes, skiing and cave excursions",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Košice",
@@ -80,10 +83,13 @@
       "bestMonths": [
         "May",
         "June",
-        "September",
-        "December"
+        "July",
+        "September"
       ],
-      "notes": "Eastern cultural capital with Gothic cathedral skyline, Hlavná Street and strong cafe culture"
+      "notes": "Eastern cultural capital with Gothic cathedral skyline, Hlavná Street and strong cafe culture",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Banská Štiavnica",
@@ -92,9 +98,13 @@
       "bestMonths": [
         "May",
         "June",
+        "July",
         "September"
       ],
-      "notes": "UNESCO mining town of steep lanes, calvary views and castle museums"
+      "notes": "UNESCO mining town of steep lanes, calvary views and castle museums",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Levoča",
@@ -104,10 +114,12 @@
         "May",
         "June",
         "July",
-        "August",
         "September"
       ],
-      "notes": "Well-preserved walled town with St. James Basilica and easy access to Spiš Castle"
+      "notes": "Well-preserved walled town with St. James Basilica and easy access to Spiš Castle",
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -136,6 +148,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is enough for the old town, castle interiors and a Devín detour; add a third only if you want gallery time or a slower Danube-food day.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Old Town lanes, cathedral quarter and Danube skyline",
@@ -218,6 +234,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "This works best as a one-night UNESCO stop between Bratislava and the Tatras; stay longer only if you want caldera lakes or slower museum time.",
+        "experiences": [
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Mining heritage, castle pair and steep-lane old town",
@@ -268,6 +288,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Use three days if you want a proper mix of alpine walking, one paid mountain lift/funicular and one cave or bad-weather backup day.",
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "Skiing"
+        ],
         "days": [
           {
             "theme": "Štrbské Pleso lake loops and easy Tatra hiking",
@@ -371,6 +396,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Levoča is compact enough for one day, but it earns an extra night if you want Spiš Castle without rushing the basilica and old walls.",
+        "experiences": [
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "UNESCO square, wooden altar and Spiš country highlights",
@@ -416,6 +445,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Give Košice two days if you enjoy cafe-heavy old towns and museums; a single day covers the main Gothic core but feels tight.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Hlavná Street, cathedral tower and theatre square",

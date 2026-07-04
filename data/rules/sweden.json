@@ -23,12 +23,12 @@
     "family4": "₹7L–₹10.5L"
   },
   "experiences": [
-    "Nordic Design",
-    "Archipelago Cruises",
+    "History",
+    "Architecture",
+    "Islands",
     "Northern Lights",
-    "Icehotel Stay",
-    "Coastal Summer Towns",
-    "Open-Air Museums"
+    "Museums",
+    "Hiking"
   ],
   "avoid": [
     "October–November — short days, wetter weather, and many summer services in Gotland shut down",
@@ -56,7 +56,10 @@
         "July",
         "August"
       ],
-      "notes": "Archipelago capital for Gamla Stan lanes, world-class museums, waterfront walks and easy ferries"
+      "notes": "Archipelago capital for Gamla Stan lanes, world-class museums, waterfront walks and easy ferries",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Gothenburg",
@@ -67,7 +70,10 @@
         "July",
         "August"
       ],
-      "notes": "Relaxed west-coast city with Haga cafés, archipelago ferries, seafood halls and Liseberg summer energy"
+      "notes": "Relaxed west-coast city with Haga cafés, archipelago ferries, seafood halls and Liseberg summer energy",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Malmö",
@@ -78,13 +84,24 @@
         "July",
         "August"
       ],
-      "notes": "Compact Skåne hub with design-forward food, castle museums, beach promenades and easy Copenhagen access"
+      "notes": "Compact Skåne hub with design-forward food, castle museums, beach promenades and easy Copenhagen access",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Uppsala",
       "lat": 59.8586,
       "lng": 17.6389,
-      "notes": "Historic university city for cathedral grandeur, Linnaeus heritage and an easy rail day trip from Stockholm"
+      "notes": "Historic university city for cathedral grandeur, Linnaeus heritage and an easy rail day trip from Stockholm",
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Kiruna",
@@ -93,10 +110,12 @@
       "bestMonths": [
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Far-north Lapland base for Icehotel, LKAB mine tours, dog sledding and northern lights nights"
+      "notes": "Far-north Lapland base for Icehotel, LKAB mine tours, dog sledding and northern lights nights",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Visby",
@@ -107,7 +126,10 @@
         "July",
         "August"
       ],
-      "notes": "Walled Hanseatic town on Gotland with medieval lanes, sea views and Sweden's best summer island mood"
+      "notes": "Walled Hanseatic town on Gotland with medieval lanes, sea views and Sweden's best summer island mood",
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -139,6 +161,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days gives you the strongest first Sweden mix: one old-town day, one museum-heavy Djurgården day, and one palace-or-design day with time for a ferry or viewpoint.",
+        "experiences": [
+          "History",
+          "Islands",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Gamla Stan, Royal Quarters & Waterfront Classics",
@@ -256,6 +283,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Uppsala works best as a focused heritage stop or a long day trip with cathedral, university collections, and one Linnaeus-era garden circuit.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Cathedral, University Heritage & Viking History",
@@ -301,6 +332,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days lets you cover the city centre and one west-coast excursion without rushing the seafood halls, Haga streets, or archipelago ferries.",
+        "experiences": [
+          "Islands",
+          "History"
+        ],
         "days": [
           {
             "theme": "Haga, Canal Core & Museum Highlights",
@@ -382,6 +417,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One full day covers Malmö well because the centre, castle district, and waterfront are compact and easy to combine on foot or by local bus.",
+        "experiences": [
+          "Architecture",
+          "History"
+        ],
         "days": [
           {
             "theme": "Old Town Squares, Castle Museums & Seafront",
@@ -427,6 +466,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Visby is ideal for one summer night focused on the medieval wall, museum quarter, and sea-facing lanes, with a second day only if you want a slower island pace.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Medieval Wall, Museum Quarter & Sea Views",
@@ -472,6 +515,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Kiruna needs at least two nights if northern lights matter because one day can go to Jukkasjärvi and the other to a mine tour or weather-flexible aurora activity.",
+        "experiences": [
+          "Northern Lights"
+        ],
         "days": [
           {
             "theme": "Jukkasjärvi Icehotel & Sami Winter Atmosphere",

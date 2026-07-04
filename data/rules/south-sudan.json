@@ -26,11 +26,12 @@
     "family4": "₹10.8L–₹17.8L"
   },
   "experiences": [
-    "White Nile sunset cruise below Juba Bridge, paired with Konyo Konyo Market and the John Garang memorial.",
-    "Nimule National Park wildlife drives for elephants, hippos, buffalo, baboons, and dramatic granite rapids on the Nile.",
-    "Boma National Park dry-season migration country, where white-eared kob, tiang, and Mongalla gazelle move across one of Africa's least-visited savannahs.",
-    "Jebel Kujur viewpoints and low-key city orientation in Juba before committing to long overland park sectors.",
-    "Remote camp-based travel using boats, convoy-style 4x4s, and charter-style aviation rather than casual independent hopping."
+    "Wildlife & Safari",
+    "National Parks",
+    "History",
+    "Markets & Shopping",
+    "Hiking",
+    "Waterfalls"
   ],
   "avoid": [
     "Strong safety advisory: South Sudan is the world's youngest nation and remains affected by active conflict, armed checkpoints, and abrupt security changes; only attempt a fully arranged trip with current local clearance, daylight-only movements, and embassy-level contingency planning.",
@@ -55,10 +56,12 @@
       "bestMonths": [
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Capital gateway for White Nile views, hotel compounds, money exchange, and the only realistic starting point for both Nimule road trips and Boma expedition planning."
+      "notes": "Capital gateway for White Nile views, hotel compounds, money exchange, and the only realistic starting point for both Nimule road trips and Boma expedition planning.",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Nimule",
@@ -67,10 +70,12 @@
       "bestMonths": [
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Uganda-border park town where Nimule National Park, Nile rapids, and elephant country are the main draw, usually reached by a long escorted drive from Juba."
+      "notes": "Uganda-border park town where Nimule National Park, Nile rapids, and elephant country are the main draw, usually reached by a long escorted drive from Juba.",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Boma National Park",
@@ -79,10 +84,12 @@
       "bestMonths": [
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Extremely remote migration landscape in the Greater Pibor area, best tackled as a camp-based safari using African Parks-linked logistics, local guides, and either a hard overland convoy or ad-hoc charter access."
+      "notes": "Extremely remote migration landscape in the Greater Pibor area, best tackled as a camp-based safari using African Parks-linked logistics, local guides, and either a hard overland convoy or ad-hoc charter access.",
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -106,6 +113,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Settle into the capital, sort practical logistics, and use the White Nile for the least stressful first look at South Sudan.",
@@ -190,6 +201,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "National Parks",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "A dry-season park day for Nile scenery, elephant country, and the easiest wildlife access South Sudan currently offers.",
@@ -256,6 +271,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "This is expedition travel: reach camp, get briefed by local guides, and use the first afternoon to read the scale of the migration plains.",

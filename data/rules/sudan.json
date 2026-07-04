@@ -26,11 +26,12 @@
     "family4": "₹3.85L–₹5.95L"
   },
   "experiences": [
-    "Blue and White Nile confluence views, museums, and old-city history in Khartoum and Omdurman.",
-    "Sunrise and sunset visits to the royal necropolis at the Meroë Pyramids.",
-    "Red Sea seafood, corniche walks, and diving logistics from Port Sudan.",
-    "Coral-stone Ottoman ruins and ferry-port heritage around Suakin Old Town.",
-    "Classic north-and-east overland arc mixing archaeology, Nile desert scenery, and Red Sea coast."
+    "Ancient Ruins",
+    "History",
+    "Deserts",
+    "Diving & Snorkeling",
+    "Beaches",
+    "Markets & Shopping"
   ],
   "avoid": [
     "Safety advisory: Sudan remains affected by ongoing armed conflict, airport disruption, fuel shortages, and fast-changing security conditions; avoid non-essential travel and only consider this route if you have same-week official clearance, a trusted local fixer, and a daily evacuation plan.",
@@ -58,7 +59,10 @@
         "January",
         "February"
       ],
-      "notes": "Capital base for the Blue/White Nile confluence, National Museum, Omdurman side trips, cash logistics, and the most important same-day security checks before moving onward."
+      "notes": "Capital base for the Blue/White Nile confluence, National Museum, Omdurman side trips, cash logistics, and the most important same-day security checks before moving onward.",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Meroë Pyramids",
@@ -70,7 +74,10 @@
         "January",
         "February"
       ],
-      "notes": "Royal Necropolis desert site usually visited with an overnight at Meroe Tented Camp or from the Karima side, best timed for sunrise and sunset light."
+      "notes": "Royal Necropolis desert site usually visited with an overnight at Meroe Tented Camp or from the Karima side, best timed for sunrise and sunset light.",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Port Sudan",
@@ -79,10 +86,13 @@
       "bestMonths": [
         "November",
         "December",
-        "January",
-        "February"
+        "February",
+        "March"
       ],
-      "notes": "Red Sea gateway for seafood, corniche evenings, domestic flight links when Badr Airlines is operating, and dive boats heading to reefs off the Sudanese coast."
+      "notes": "Red Sea gateway for seafood, corniche evenings, domestic flight links when Badr Airlines is operating, and dive boats heading to reefs off the Sudanese coast.",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Suakin",
@@ -91,10 +101,13 @@
       "bestMonths": [
         "November",
         "December",
-        "January",
-        "February"
+        "February",
+        "March"
       ],
-      "notes": "Historic coral-port ghost town south of Port Sudan, usually handled as a half- or full-day heritage outing with a local guide and transport arranged from the coast."
+      "notes": "Historic coral-port ghost town south of Port Sudan, usually handled as a half- or full-day heritage outing with a local guide and transport arranged from the coast.",
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -119,6 +132,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Keep Khartoum compact and daytime-focused: use the first day for the Nile confluence and museum stops, then reserve the second for Omdurman or buffer time in case local conditions change.",
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Blue and White Nile confluence, museum time, and cautious city orientation",
@@ -201,6 +218,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "An overnight near the site is worth it because the pyramids are at their best around sunrise and sunset, and the road north from Khartoum is too long for a relaxed same-day out-and-back.",
+        "experiences": [
+          "Ancient Ruins",
+          "Deserts",
+          "History"
+        ],
         "days": [
           {
             "theme": "Royal Necropolis dunes, pyramid entry, and sunset in the desert",
@@ -270,6 +292,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Port Sudan is the Red Sea logistics base: use one day for diving or a reef boat and another for seafood, rest, or a light city day before Suakin.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Red Sea diving and corniche seafood on Sudan's coast",
@@ -352,6 +378,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Most travelers sleep in Port Sudan and visit Suakin as a day trip, but the heritage stop still merits a full half-day for the ruins, harbour, and slow photography walks.",
+        "experiences": [
+          "History",
+          "Ancient Ruins"
+        ],
         "days": [
           {
             "theme": "Ghost-town coral architecture, harbour views, and a guided ruins walk",

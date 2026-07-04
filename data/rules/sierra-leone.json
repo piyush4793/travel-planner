@@ -26,11 +26,12 @@
     "family4": "₹3.7L–₹5.4L"
   },
   "experiences": [
-    "Tacugama Chimpanzee Sanctuary",
-    "River No. 2 Beach",
-    "Bunce Island slave fort ruins",
-    "Banana Islands off-grid beach stay",
-    "Tiwai Island primates and canoe wildlife"
+    "Beaches",
+    "Islands",
+    "History",
+    "Wildlife & Safari",
+    "Diving & Snorkeling",
+    "National Parks"
   ],
   "avoid": [
     "May to October is far wetter, so peninsula roads, Bunce and Banana boat crossings, and Tiwai forest walks all get slower and muddier.",
@@ -62,25 +63,61 @@
       "name": "Freetown",
       "lat": 8.4844,
       "lng": -13.2344,
-      "notes": "Best base for airport logistics, city history, Tacugama, River No. 2, Lumley dining, and onward boats to Bunce and the Banana Islands."
+      "notes": "Best base for airport logistics, city history, Tacugama, River No. 2, Lumley dining, and onward boats to Bunce and the Banana Islands.",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Banana Islands",
       "lat": 8.095,
       "lng": -13.091,
-      "notes": "Rustic Dublin and Ricketts islands for orange-sand beaches, fishing-village life, simple guesthouses, and boat-led snorkeling or diving."
+      "notes": "Rustic Dublin and Ricketts islands for orange-sand beaches, fishing-village life, simple guesthouses, and boat-led snorkeling or diving.",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Tiwai Island",
       "lat": 7.5203,
       "lng": -11.3447,
-      "notes": "Community-run rainforest sanctuary on the Moa River with high primate density, canoe access, and simple eco-lodge accommodation."
+      "notes": "Community-run rainforest sanctuary on the Moa River with high primate density, canoe access, and simple eco-lodge accommodation.",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Bunce Island",
       "lat": 8.8639,
       "lng": -13.1957,
-      "notes": "Moving estuary day trip to one of West Africa's most important slave-fort ruins, usually reached by speedboat from Cockle Bay with a guide."
+      "notes": "Moving estuary day trip to one of West Africa's most important slave-fort ruins, usually reached by speedboat from Cockle Bay with a guide.",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -105,6 +142,10 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Beaches",
+          "History"
+        ],
         "days": [
           {
             "theme": "Handle the classic Sierra Leone arrival, then ease into the capital with low-stress history stops and a Lumley-side dinner.",
@@ -238,6 +279,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Almost everyone does Bunce as a guided day trip from Freetown; overnighting on nearby Tasso Island is the only practical extension.",
+        "experiences": [
+          "History",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Make space for Sierra Leone's most important historical excursion, pairing the estuary boat ride with a guide-led fort walk.",
@@ -290,6 +335,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Commit to the long southeastern transfer, then settle into one of Sierra Leone's best community-run wildlife sanctuaries.",
@@ -382,6 +431,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Return to the peninsula for a slower finish built around Kent boats, village life and a simple beach stay on Dublin Island.",

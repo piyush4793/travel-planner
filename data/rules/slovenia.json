@@ -23,12 +23,12 @@
     "family4": "₹3.1L–₹4.8L"
   },
   "experiences": [
-    "Ljubljana Old Town",
-    "Lake Bled",
-    "Julian Alps",
-    "Karst Caves",
-    "Piran Coast",
-    "Wine & Food"
+    "Lakes",
+    "Mountains",
+    "Hiking",
+    "History",
+    "Architecture",
+    "National Parks"
   ],
   "avoid": [
     "Lake Bled and the coast get crowded and pricier on sunny July-August weekends",
@@ -50,37 +50,91 @@
       "name": "Ljubljana",
       "lat": 46.0569,
       "lng": 14.5058,
-      "notes": "Compact capital with Plecnik architecture, Ljubljana Castle, Central Market and easy riverfront cafe hopping"
+      "notes": "Compact capital with Plecnik architecture, Ljubljana Castle, Central Market and easy riverfront cafe hopping",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Lake Bled",
       "lat": 46.3699,
       "lng": 14.1136,
-      "notes": "Slovenia's postcard lake for Bled Castle, pletna boats, lakeside walks and Vintgar Gorge side trips"
+      "notes": "Slovenia's postcard lake for Bled Castle, pletna boats, lakeside walks and Vintgar Gorge side trips",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Lake Bohinj",
       "lat": 46.2755,
       "lng": 13.8884,
-      "notes": "Quieter alpine base for Bohinj lake views, Savica Waterfall, Vogel cable car and Triglav National Park trails"
+      "notes": "Quieter alpine base for Bohinj lake views, Savica Waterfall, Vogel cable car and Triglav National Park trails",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Piran",
       "lat": 45.5283,
       "lng": 13.5683,
-      "notes": "Venetian-style Adriatic town with Tartini Square, sea walls, seafood spots and sunset promenades"
+      "notes": "Venetian-style Adriatic town with Tartini Square, sea walls, seafood spots and sunset promenades",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Postojna",
       "lat": 45.7744,
       "lng": 14.214,
-      "notes": "Best base for Postojna Cave plus easy access to Predjama Castle and the UNESCO-listed Skocjan Caves"
+      "notes": "Best base for Postojna Cave plus easy access to Predjama Castle and the UNESCO-listed Skocjan Caves",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Maribor",
       "lat": 46.5547,
       "lng": 15.6459,
-      "notes": "Slower eastern-city stop with Lent riverfront, the Old Vine House and Pohorje hillside views"
+      "notes": "Slower eastern-city stop with Lent riverfront, the Old Vine House and Pohorje hillside views",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -110,6 +164,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is ideal for the capital; a third only makes sense if you want slower museum time or a food-heavy cafe day.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Old Town, Castle Hill & the Ljubljanica",
@@ -231,6 +289,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Stay one or two nights to do the lake properly without rushing the viewpoints, castle and nearby gorge.",
+        "experiences": [
+          "Lakes"
+        ],
         "days": [
           {
             "theme": "Bled Castle, Island Views & the Classic Lake Loop",
@@ -316,6 +377,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Bohinj works as a one-night nature stop from Bled, but hikers will gladly stretch it to a second day.",
+        "experiences": [
+          "Lakes",
+          "National Parks",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Bohinj Lake, Vogel & Waterfall Day",
@@ -397,6 +463,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Piran is best as a compact one-night coastal stop focused on lanes, views and seafood rather than a long beach stay.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Venetian Coast, City Walls & Sunset Sea Air",
@@ -523,6 +593,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Use Maribor as a relaxed final stop for wine, riverfront walking and a lighter urban pace than Ljubljana.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Lent, Old Vine & Pohorje Views",

@@ -21,12 +21,12 @@
     "family4": "₹4L–₹7L"
   },
   "experiences": [
-    "Barcelona",
-    "Sagrada Familia",
-    "Alhambra",
-    "Camino de Santiago",
-    "Flamenco",
-    "Tapas"
+    "History",
+    "Architecture",
+    "Beaches",
+    "Food",
+    "Festivals",
+    "Art & Design"
   ],
   "avoid": [
     "Peak summer heat in Seville/inland (40°C+)"
@@ -45,37 +45,90 @@
       "name": "Madrid",
       "lat": 40.4168,
       "lng": -3.7038,
-      "notes": "Prado museum, Retiro park, Puerta del Sol and churros at San Gines"
+      "notes": "Prado museum, Retiro park, Puerta del Sol and churros at San Gines",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Barcelona",
       "lat": 41.3851,
       "lng": 2.1734,
-      "notes": "Gaudi's Sagrada Familia, Park Guell, La Boqueria and Barceloneta beach"
+      "notes": "Gaudi's Sagrada Familia, Park Guell, La Boqueria and Barceloneta beach",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Seville",
       "lat": 37.3891,
       "lng": -5.9845,
-      "notes": "Alcazar palace, Giralda tower, flamenco shows and Semana Santa"
+      "notes": "Alcazar palace, Giralda tower, flamenco shows and Semana Santa",
+      "bestMonths": [
+        "April",
+        "May",
+        "October"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Granada",
       "lat": 37.1773,
       "lng": -3.5986,
-      "notes": "Alhambra fortress, Albaicin Moorish quarter and Sacromonte cave flamenco"
+      "notes": "Alhambra fortress, Albaicin Moorish quarter and Sacromonte cave flamenco",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Valencia",
       "lat": 39.4699,
       "lng": -0.3763,
-      "notes": "City of Arts and Sciences, paella birthplace and La Tomatina festival"
+      "notes": "City of Arts and Sciences, paella birthplace and La Tomatina festival",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "San Sebastian",
       "lat": 43.3183,
       "lng": -1.9812,
-      "notes": "Most Michelin stars per capita, La Concha bay beach and pintxos bars"
+      "notes": "Most Michelin stars per capita, La Concha bay beach and pintxos bars",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -106,6 +159,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Book Sagrada Familia and Casa Batllo well ahead; add a fourth day for Montserrat or a slower beach day.",
+        "experiences": [
+          "Architecture",
+          "Beaches",
+          "Art & Design"
+        ],
         "days": [
           {
             "theme": "Gothic Quarter & First Tapas",
@@ -228,6 +286,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Valencia works best between Barcelona and Madrid; add a third day if you want a full Albufera nature outing.",
+        "experiences": [
+          "Architecture",
+          "Beaches",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Arts, Science & Turia Gardens",
@@ -313,6 +376,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Keep Madrid as your central rail hub; day three is best used for Toledo before heading south.",
+        "experiences": [
+          "History",
+          "Art & Design",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Prado, Retiro & Central Madrid",
@@ -435,6 +503,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Avoid the hottest summer afternoons here; early starts make the Alcazar and Cathedral far more enjoyable.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Festivals"
+        ],
         "days": [
           {
             "theme": "Triana, Riverfront & Flamenco",
@@ -519,6 +592,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Alhambra timing controls the whole city plan, so lock that ticket first and build everything else around it.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Albaicin, Miradors & Cave Flamenco",
@@ -602,6 +679,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Come here for pintxos and sea views; book tables early if you want the marquee bars in Parte Vieja.",
+        "experiences": [
+          "Beaches",
+          "Food"
+        ],
         "days": [
           {
             "theme": "La Concha & Parte Vieja Pintxos",

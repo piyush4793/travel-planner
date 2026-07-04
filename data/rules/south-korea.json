@@ -20,12 +20,12 @@
     "family4": "₹3.5L–₹6L"
   },
   "experiences": [
-    "K-Pop",
+    "History",
+    "Temples & Religious Sites",
     "Food",
-    "Temples",
-    "Hiking",
-    "Palaces",
-    "DMZ"
+    "Mountains",
+    "Beaches",
+    "Nightlife"
   ],
   "avoid": [
     "Monsoon July-August"
@@ -45,31 +45,76 @@
       "name": "Seoul",
       "lat": 37.5665,
       "lng": 126.978,
-      "notes": "Gyeongbokgung Palace, Hongdae nightlife, K-pop and street food"
+      "notes": "Gyeongbokgung Palace, Hongdae nightlife, K-pop and street food",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Busan",
       "lat": 35.1796,
       "lng": 129.0756,
-      "notes": "Jagalchi fish market, Gamcheon village and Haeundae beach"
+      "notes": "Jagalchi fish market, Gamcheon village and Haeundae beach",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Jeju",
       "lat": 33.4996,
       "lng": 126.5312,
-      "notes": "Volcanic island with Hallasan hike, waterfalls and black lava beaches"
+      "notes": "Volcanic island with Hallasan hike, waterfalls and black lava beaches",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Gyeongju",
       "lat": 35.8562,
       "lng": 129.2243,
-      "notes": "Open-air museum with Silla dynasty royal tombs and Bulguksa temple"
+      "notes": "Open-air museum with Silla dynasty royal tombs and Bulguksa temple",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Incheon",
       "lat": 37.4563,
       "lng": 126.7052,
-      "notes": "Colorful Chinatown, Songdo smart city and gateway to the archipelago"
+      "notes": "Colorful Chinatown, Songdo smart city and gateway to the archipelago",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -95,6 +140,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Food"
+        ],
         "days": [
           {
             "theme": "Airport landing, Chinatown lanes & Songdo waterfront",
@@ -139,6 +187,11 @@
         "minDays": 2,
         "recDays": 4,
         "maxDays": 5,
+        "experiences": [
+          "History",
+          "Food",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Arrival ease, Myeongdong streets & Han River lights",
@@ -291,6 +344,10 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Beaches",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Haeundae coast, Dongbaek trails & beach lights",
@@ -407,6 +464,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Silla capital tombs, museum halls & lit-up pond",
@@ -487,6 +548,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 4,
+        "experiences": [
+          "Mountains",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Sunrise Peak, lava tubes & east-coast nature",

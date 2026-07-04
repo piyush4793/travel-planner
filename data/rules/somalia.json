@@ -22,10 +22,12 @@
     "family4": "₹4.4L–₹6.4L"
   },
   "experiences": [
-    "Laas Geel rock-art day from Hargeisa with permit, guide, and mandatory escort",
-    "Berbera's Ottoman-era old town, corniche, and Red Sea beach time",
-    "Hargeisa's War Memorial, Cultural Centre, and market streets",
-    "Mogadishu's Liido Beach and cathedral ruins only on tightly managed security-led visits"
+    "Beaches",
+    "History",
+    "Ancient Ruins",
+    "Markets & Shopping",
+    "Diving & Snorkeling",
+    "Deserts"
   ],
   "avoid": [
     "Strong safety advisory: for tourism, Somaliland is the only realistic recommendation in this file; Mogadishu should be treated as essential-only travel with pre-arranged security, fixed hotel transfers, and no independent movement after dark.",
@@ -49,36 +51,45 @@
       "lat": 2.0469,
       "lng": 45.3182,
       "bestMonths": [
+        "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "High-security capital stop for Liido Beach, the cathedral ruins, and short guided drives between hotel compounds; not the recommended leisure base compared with Somaliland."
+      "notes": "High-security capital stop for Liido Beach, the cathedral ruins, and short guided drives between hotel compounds; not the recommended leisure base compared with Somaliland.",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Hargeisa",
       "lat": 9.5624,
       "lng": 44.077,
       "bestMonths": [
+        "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Somaliland's main air gateway and the practical base for Laas Geel permits, the War Memorial, Hargeisa Cultural Centre, and onward road trips to Berbera."
+      "notes": "Somaliland's main air gateway and the practical base for Laas Geel permits, the War Memorial, Hargeisa Cultural Centre, and onward road trips to Berbera.",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Berbera",
       "lat": 10.4396,
       "lng": 45.0143,
       "bestMonths": [
+        "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Historic Red Sea port for Berbera old town, waterfront fish meals, easier beach time than Mogadishu, and the most relaxed stop in a Somaliland-first trip."
+      "notes": "Historic Red Sea port for Berbera old town, waterfront fish meals, easier beach time than Mogadishu, and the most relaxed stop in a Somaliland-first trip.",
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -102,6 +113,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Base yourself in Hargeisa for permits, money exchange, and the easiest hotel choice, then treat Laas Geel as a planned daytime excursion rather than an improvised half-day hop.",
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "War Memorial, Cultural Centre, and market streets to settle into Somaliland's most straightforward visitor base",
@@ -188,6 +203,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Berbera is the most relaxed segment of the trip, but it still works best with a prearranged car from Hargeisa, daylight-only movement, and hotels that can help if plans shift.",
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Ottoman-era lanes, corniche time, and a slow walk through the old port city",
@@ -273,6 +292,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Keep Mogadishu to a single tightly managed day inside vetted hotel and driver networks; for leisure travel, Somaliland is the stronger and safer recommendation.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Liido Beach, cathedral ruins, and a brief look at the capital only with hotel-arranged security",

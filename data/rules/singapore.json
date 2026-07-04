@@ -20,11 +20,12 @@
     "family4": "₹3L–₹5L"
   },
   "experiences": [
+    "Architecture",
+    "Markets & Shopping",
     "Food",
-    "Gardens by the Bay",
-    "Marina Bay",
-    "Culture",
-    "Shopping"
+    "Nightlife",
+    "Museums",
+    "Temples & Religious Sites"
   ],
   "avoid": [
     "Singapore F1 Grand Prix week (Sep) — prices spike"
@@ -44,25 +45,61 @@
       "name": "Marina Bay",
       "lat": 1.2834,
       "lng": 103.8607,
-      "notes": "Marina Bay Sands, Gardens by the Bay supertrees and light show"
+      "notes": "Marina Bay Sands, Gardens by the Bay supertrees and light show",
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "July"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Chinatown",
       "lat": 1.2836,
       "lng": 103.8445,
-      "notes": "Sri Mariamman Temple, hawker stalls and Buddha Tooth Relic Temple"
+      "notes": "Sri Mariamman Temple, hawker stalls and Buddha Tooth Relic Temple",
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "July"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Sentosa",
       "lat": 1.2494,
       "lng": 103.8303,
-      "notes": "Universal Studios, Siloso Beach, cable car and S.E.A. Aquarium"
+      "notes": "Universal Studios, Siloso Beach, cable car and S.E.A. Aquarium",
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "July"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Little India",
       "lat": 1.3066,
       "lng": 103.8518,
-      "notes": "Mustafa Centre, Sri Veeramakaliamman Temple and 24-hour street food"
+      "notes": "Mustafa Centre, Sri Veeramakaliamman Temple and 24-hour street food",
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "July"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     }
   ],
   "itinerary": {
@@ -89,6 +126,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Architecture",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Skyline icons, waterfront walks, and classic first-day Singapore views",
@@ -177,6 +218,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Theme-park thrills, beach time, and a big Sentosa finish",
@@ -225,6 +269,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 1,
+        "experiences": [
+          "Temples & Religious Sites",
+          "Food",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Temples, heritage lanes, and hawker-centre classics",
@@ -273,6 +322,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 1,
+        "experiences": [
+          "Markets & Shopping",
+          "Food",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Tamil heritage, temple visits, market energy, and comfort food from home",

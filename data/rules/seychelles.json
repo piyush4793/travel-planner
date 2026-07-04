@@ -22,11 +22,12 @@
     "family4": "₹5.4L–₹8.6L"
   },
   "experiences": [
-    "Granite Beaches",
-    "Island Hopping",
-    "Rainforest Hikes",
-    "Snorkeling",
-    "Creole Food"
+    "Beaches",
+    "Islands",
+    "Diving & Snorkeling",
+    "Luxury & Resorts",
+    "Hiking",
+    "Water Sports"
   ],
   "avoid": [
     "December–February is the wetter northwest monsoon, so Curieuse boat landings, mountain trails, and beach days are more likely to be interrupted by showers or rough seas.",
@@ -49,25 +50,61 @@
       "name": "Victoria (Mahé)",
       "lat": -4.62,
       "lng": 55.455,
-      "notes": "Use Mahé's capital as the practical arrival base for Sir Selwyn Selwyn-Clarke Market, Morne Seychellois hikes, Beau Vallon sunsets, and the easiest bus connections in the country."
+      "notes": "Use Mahé's capital as the practical arrival base for Sir Selwyn Selwyn-Clarke Market, Morne Seychellois hikes, Beau Vallon sunsets, and the easiest bus connections in the country.",
+      "bestMonths": [
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Praslin",
       "lat": -4.324,
       "lng": 55.741,
-      "notes": "Praslin is the classic second stop for Vallée de Mai, Curieuse day trips, Côte d'Or stays, and the easiest access to Anse Lazio."
+      "notes": "Praslin is the classic second stop for Vallée de Mai, Curieuse day trips, Côte d'Or stays, and the easiest access to Anse Lazio.",
+      "bestMonths": [
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "La Digue",
       "lat": -4.357,
       "lng": 55.839,
-      "notes": "La Digue is the slowest and most photogenic inner island, best explored by bicycle between L'Union Estate, Anse Source d'Argent, Grand Anse, and Anse Cocos."
+      "notes": "La Digue is the slowest and most photogenic inner island, best explored by bicycle between L'Union Estate, Anse Source d'Argent, Grand Anse, and Anse Cocos.",
+      "bestMonths": [
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Silhouette Island",
       "lat": -4.492,
       "lng": 55.248,
-      "notes": "Silhouette is the quiet nature-and-resort finale for marine park snorkeling, rainforest trails, and a genuinely low-density island stay."
+      "notes": "Silhouette is the quiet nature-and-resort finale for marine park snorkeling, rainforest trails, and a genuinely low-density island stay.",
+      "bestMonths": [
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -94,6 +131,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Keep Mahé at the front of the trip for arrival recovery, capital sights, and your Morne Seychellois hiking window before moving to the outer inner islands.",
+        "experiences": [
+          "Beaches",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Victoria Market, Botanical Garden and a Gentle First Sunset on Mahé",
@@ -189,6 +230,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Praslin is the best base for the two ticketed nature anchors—Vallée de Mai and Curieuse—while still leaving you room for one classic beach afternoon.",
+        "experiences": [
+          "Beaches",
+          "Islands",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Transfer to Praslin, Vallée de Mai and Côte d'Or Evening",
@@ -281,6 +327,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "La Digue deserves a full bicycle-paced block because the island works best when you are not rushing the beach, estate, and east-coast hiking rhythm.",
+        "experiences": [
+          "Beaches",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Cycle Arrival, L'Union Estate and Anse Source d'Argent",
@@ -374,6 +424,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Treat Silhouette as the quiet splurge or nature closer once you are done with the more logistically active Praslin–La Digue segment.",
+        "experiences": [
+          "Islands",
+          "Diving & Snorkeling",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Silhouette Boat Transfer, Marine Park Time and a Low-Key Final Night",
