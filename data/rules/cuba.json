@@ -25,12 +25,13 @@
     "family4": "₹3.8L–₹5.8L"
   },
   "experiences": [
-    "Music",
-    "Colonial Towns",
+    "History",
+    "Architecture",
     "Beaches",
-    "Tobacco Country",
-    "Classic Cars",
-    "History"
+    "Nightlife",
+    "Festivals",
+    "Diving & Snorkeling",
+    "National Parks"
   ],
   "avoid": [
     "August–October hurricane window brings the highest rain, humidity, and intercity transport disruption risk.",
@@ -54,37 +55,93 @@
       "name": "Havana",
       "lat": 23.1136,
       "lng": -82.3666,
-      "notes": "Cuba's atmospheric capital for Old Havana plazas, vintage-car rides, late-night music, and heavyweight museums."
+      "notes": "Cuba's atmospheric capital for Old Havana plazas, vintage-car rides, late-night music, and heavyweight museums.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Viñales",
       "lat": 22.617,
       "lng": -83.7069,
-      "notes": "Best base for mogote scenery, tobacco farms, cave excursions, and slower countryside stays in Pinar del Río."
+      "notes": "Best base for mogote scenery, tobacco farms, cave excursions, and slower countryside stays in Pinar del Río.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Cienfuegos",
       "lat": 22.149,
       "lng": -80.4466,
-      "notes": "A compact French-founded bay city with elegant boulevards, Punta Gorda sunsets, and an easy stop between west and central Cuba."
+      "notes": "A compact French-founded bay city with elegant boulevards, Punta Gorda sunsets, and an easy stop between west and central Cuba.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Trinidad",
       "lat": 21.8042,
       "lng": -79.9847,
-      "notes": "Cobblestone colonial lanes, live music every night, nearby sugar-estate history, and quick beach access at Playa Ancón."
+      "notes": "Cobblestone colonial lanes, live music every night, nearby sugar-estate history, and quick beach access at Playa Ancón.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Santiago de Cuba",
       "lat": 20.0217,
       "lng": -75.8267,
-      "notes": "Cuba's most Afro-Caribbean city, strong on revolutionary history, son music, and hilltop fort views over the bay."
+      "notes": "Cuba's most Afro-Caribbean city, strong on revolutionary history, son music, and hilltop fort views over the bay.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Varadero",
       "lat": 23.1568,
       "lng": -81.2444,
-      "notes": "Easy beach finish with white-sand stretches, caves, catamaran day trips, and better card acceptance than much of the island."
+      "notes": "Easy beach finish with white-sand stretches, caves, catamaran day trips, and better card acceptance than much of the island.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     }
   ],
   "itinerary": {
@@ -112,10 +169,9 @@
         "recDays": 3,
         "maxDays": 4,
         "experiences": [
-          "Music",
-          "Classic Cars",
           "History",
-          "Colonial Towns"
+          "Architecture",
+          "Nightlife"
         ],
         "days": [
           {
@@ -234,7 +290,8 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Tobacco Country"
+          "National Parks",
+          "History"
         ],
         "days": [
           {
@@ -317,7 +374,8 @@
         "recDays": 1,
         "maxDays": 2,
         "experiences": [
-          "Colonial Towns"
+          "Architecture",
+          "History"
         ],
         "days": [
           {
@@ -364,8 +422,9 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Colonial Towns",
-          "Music"
+          "History",
+          "Architecture",
+          "Beaches"
         ],
         "days": [
           {
@@ -448,7 +507,8 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Beaches"
+          "Beaches",
+          "Diving & Snorkeling"
         ],
         "days": [
           {
@@ -532,8 +592,9 @@
         "maxDays": 3,
         "note": "Best added on longer Cuba trips because overland transfers from central or western Cuba are time-heavy.",
         "experiences": [
-          "Music",
-          "History"
+          "History",
+          "Festivals",
+          "Architecture"
         ],
         "days": [
           {

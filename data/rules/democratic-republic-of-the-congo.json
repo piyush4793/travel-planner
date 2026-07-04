@@ -23,11 +23,12 @@
     "family4": "₹13.5L–₹24L"
   },
   "experiences": [
-    "Congo River boat ride in Kinshasa",
-    "Lola ya Bonobo sanctuary visit",
-    "Virunga gorilla trekking",
-    "Nyiragongo crater-rim overnight hike",
-    "Lake Kivu time in Goma"
+    "Wildlife & Safari",
+    "National Parks",
+    "Volcanoes",
+    "Hiking",
+    "Cruises & Boat Trips",
+    "Markets & Shopping"
   ],
   "avoid": [
     "March to May and October to November are wetter, with muddier tracks around Virunga and slower 4x4 road transfers in the east",
@@ -50,25 +51,61 @@
       "name": "Kinshasa",
       "lat": -4.4419,
       "lng": 15.2663,
-      "notes": "Big, humid river capital for museums, hotel dining, Congo River sunsets and the day trip to Lola ya Bonobo before you fly east"
+      "notes": "Big, humid river capital for museums, hotel dining, Congo River sunsets and the day trip to Lola ya Bonobo before you fly east",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Virunga National Park",
       "lat": -0.9167,
       "lng": 29.1667,
-      "notes": "DRC's signature conservation landscape for mountain gorillas, Nyiragongo's lava lake and ranger-managed eco-lodges around Rumangabo, Bukima and Tchegera"
+      "notes": "DRC's signature conservation landscape for mountain gorillas, Nyiragongo's lava lake and ranger-managed eco-lodges around Rumangabo, Bukima and Tchegera",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Goma",
       "lat": -1.6788,
       "lng": 29.2218,
-      "notes": "Lake Kivu gateway city for eastern DRC logistics, volcano views, hotel-based dining and Virunga permit staging"
+      "notes": "Lake Kivu gateway city for eastern DRC logistics, volcano views, hotel-based dining and Virunga permit staging",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Lubumbashi",
       "lat": -11.6647,
       "lng": 27.4794,
-      "notes": "Southern business hub with strong hotels, colonial-era churches, museum stops and an easier final night before the flight back to Kinshasa"
+      "notes": "Southern business hub with strong hotels, colonial-era churches, museum stops and an easier final night before the flight back to Kinshasa",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     }
   ],
   "itinerary": {
@@ -94,6 +131,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Markets & Shopping",
+          "Cruises & Boat Trips"
+        ],
         "days": [
           {
             "theme": "River-city orientation with museums, broad boulevards in Gombe and an easy first look at the Congo River",
@@ -186,6 +227,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Volcanoes"
+        ],
         "days": [
           {
             "theme": "The big repositioning day into eastern DRC, softened by lake views and one of the country's easiest hotel bases",
@@ -278,6 +322,12 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks",
+          "Volcanoes",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "The flagship conservation day: ranger briefings, steep forest climbs and the once-in-a-lifetime gorilla hour in the Virungas",
@@ -409,6 +459,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "A gentler southern finale with museums, cathedral stops and comfortable hotels after the harder eastern DRC logistics",

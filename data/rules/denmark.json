@@ -20,11 +20,12 @@
     "family4": "₹7L–₹12L"
   },
   "experiences": [
-    "Copenhagen",
-    "Nyhavn",
-    "Viking History",
-    "Design Culture",
-    "Legoland"
+    "History",
+    "Architecture",
+    "Art & Design",
+    "Food",
+    "Nightlife",
+    "Markets & Shopping"
   ],
   "avoid": [
     "Budget carefully — expensive Scandinavian prices"
@@ -44,25 +45,66 @@
       "name": "Copenhagen",
       "lat": 55.6761,
       "lng": 12.5683,
-      "notes": "Nyhavn canal, Tivoli Gardens, Little Mermaid and New Nordic dining"
+      "notes": "Nyhavn canal, Tivoli Gardens, Little Mermaid and New Nordic dining",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Aarhus",
       "lat": 56.1629,
       "lng": 10.2039,
-      "notes": "ARoS Art Museum rainbow panorama and Den Gamle By open-air museum"
+      "notes": "ARoS Art Museum rainbow panorama and Den Gamle By open-air museum",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Odense",
       "lat": 55.4038,
       "lng": 10.4024,
-      "notes": "Hans Christian Andersen birthplace museum and Funen Village"
+      "notes": "Hans Christian Andersen birthplace museum and Funen Village",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Aalborg",
       "lat": 57.0488,
       "lng": 9.9217,
-      "notes": "Viking burial site at Lindholm Hoje and waterfront Utzon Center"
+      "notes": "Viking burial site at Lindholm Hoje and waterfront Utzon Center",
+      "experiences": [
+        "History",
+        "Nightlife",
+        "Art & Design"
+      ],
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -89,6 +131,12 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days gives you two full city days plus a Roskilde day trip; add a fourth day only if you want a slower museum-and-cafe pace.",
+        "experiences": [
+          "Architecture",
+          "Art & Design",
+          "Food",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Nyhavn, Strøget & Historic Centre",
@@ -199,6 +247,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Use Aarhus for a compact two-day culture stop with most sights reachable on foot or a short bus ride from the centre.",
+        "experiences": [
+          "Art & Design",
+          "Architecture",
+          "History"
+        ],
         "days": [
           {
             "theme": "ARoS, Latin Quarter & Old Town",
@@ -269,6 +322,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Odense works well as a one-night stop focused on Hans Christian Andersen heritage and a gentle old-town pace.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Hans Christian Andersen Trail & Funen History",

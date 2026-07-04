@@ -18,11 +18,12 @@
     "family4": "₹3.5L–₹6L"
   },
   "experiences": [
-    "Prague Castle",
-    "Český Krumlov",
-    "Beer Culture",
+    "History",
     "Architecture",
-    "Karlovy Vary"
+    "Hot Springs & Wellness",
+    "UNESCO Sites",
+    "Nightlife",
+    "Museums"
   ],
   "avoid": [
     "Prague tourist traps — explore beyond the centre"
@@ -42,25 +43,61 @@
       "name": "Prague",
       "lat": 50.0755,
       "lng": 14.4378,
-      "notes": "Charles Bridge at dawn, Prague Castle, Astronomical Clock and craft beer"
+      "notes": "Charles Bridge at dawn, Prague Castle, Astronomical Clock and craft beer",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Cesky Krumlov",
       "lat": 48.8127,
       "lng": 14.3175,
-      "notes": "Perfectly preserved medieval town on a Vltava river bend"
+      "notes": "Perfectly preserved medieval town on a Vltava river bend",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Brno",
       "lat": 49.1951,
       "lng": 16.6068,
-      "notes": "Student city with Ossuary bone church and modernist Villa Tugendhat"
+      "notes": "Student city with Ossuary bone church and modernist Villa Tugendhat",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Karlovy Vary",
       "lat": 50.2317,
       "lng": 12.8716,
-      "notes": "Belle Epoque colonnades, hot spring drinking and film festival"
+      "notes": "Belle Epoque colonnades, hot spring drinking and film festival",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -90,9 +127,10 @@
         "recDays": 3,
         "maxDays": 4,
         "experiences": [
-          "Prague Castle",
+          "History",
           "Architecture",
-          "Beer Culture"
+          "Nightlife",
+          "UNESCO Sites"
         ],
         "days": [
           {
@@ -217,7 +255,8 @@
         "recDays": 1,
         "maxDays": 2,
         "experiences": [
-          "Karlovy Vary"
+          "Hot Springs & Wellness",
+          "Architecture"
         ],
         "days": [
           {
@@ -266,8 +305,9 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Český Krumlov",
-          "Architecture"
+          "History",
+          "Architecture",
+          "UNESCO Sites"
         ],
         "days": [
           {
@@ -353,8 +393,9 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Beer Culture",
-          "Architecture"
+          "History",
+          "Architecture",
+          "Museums"
         ],
         "days": [
           {

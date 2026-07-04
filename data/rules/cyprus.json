@@ -23,10 +23,13 @@
   },
   "experiences": [
     "Beaches",
-    "Archaeology",
-    "Food",
-    "Mountain villages",
-    "Road trips"
+    "History",
+    "Ancient Ruins",
+    "Mountains",
+    "Nightlife",
+    "Wine & Vineyards",
+    "UNESCO Sites",
+    "Diving & Snorkeling"
   ],
   "avoid": [
     "Peak heat and beach crowds in July and August",
@@ -47,37 +50,91 @@
       "name": "Larnaca",
       "lat": 34.918,
       "lng": 33.6232,
-      "notes": "Palm-lined seafront, Saint Lazarus church, salt lake sunsets and easy airport arrival"
+      "notes": "Palm-lined seafront, Saint Lazarus church, salt lake sunsets and easy airport arrival",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Nicosia",
       "lat": 35.1856,
       "lng": 33.3823,
-      "notes": "Cyprus' divided capital with Venetian walls, museums, cafe lanes and Büyük Han"
+      "notes": "Cyprus' divided capital with Venetian walls, museums, cafe lanes and Büyük Han",
+      "bestMonths": [
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Limassol",
       "lat": 34.7071,
       "lng": 33.0226,
-      "notes": "Lively seafront city for old quarter walks, tavernas and easy access to Kourion"
+      "notes": "Lively seafront city for old quarter walks, tavernas and easy access to Kourion",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Paphos",
       "lat": 34.772,
       "lng": 32.4297,
-      "notes": "Best base for mosaics, Tombs of the Kings, harbour evenings and Akamas-side day trips"
+      "notes": "Best base for mosaics, Tombs of the Kings, harbour evenings and Akamas-side day trips",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Troodos",
       "lat": 34.915,
       "lng": 32.8597,
-      "notes": "Mountain forests, painted churches, Kykkos Monastery and cooler air than the coast"
+      "notes": "Mountain forests, painted churches, Kykkos Monastery and cooler air than the coast",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Ayia Napa",
       "lat": 34.9821,
       "lng": 34.0018,
-      "notes": "Nissi Beach, Cape Greco sea caves and easy blue-water beach days"
+      "notes": "Nissi Beach, Cape Greco sea caves and easy blue-water beach days",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -107,7 +164,9 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Beaches"
+          "Beaches",
+          "History",
+          "Diving & Snorkeling"
         ],
         "days": [
           {
@@ -198,8 +257,7 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Archaeology",
-          "Food"
+          "History"
         ],
         "days": [
           {
@@ -291,7 +349,8 @@
         "maxDays": 3,
         "experiences": [
           "Beaches",
-          "Food"
+          "Nightlife",
+          "Wine & Vineyards"
         ],
         "days": [
           {
@@ -382,7 +441,8 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Archaeology",
+          "Ancient Ruins",
+          "UNESCO Sites",
           "Beaches"
         ],
         "days": [
@@ -474,7 +534,8 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Mountain villages"
+          "Mountains",
+          "Wine & Vineyards"
         ],
         "days": [
           {
@@ -565,7 +626,8 @@
         "recDays": 2,
         "maxDays": 2,
         "experiences": [
-          "Beaches"
+          "Beaches",
+          "Nightlife"
         ],
         "days": [
           {
