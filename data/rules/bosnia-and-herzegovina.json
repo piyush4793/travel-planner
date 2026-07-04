@@ -21,12 +21,12 @@
     "family4": "₹2.6L–₹4.1L"
   },
   "experiences": [
-    "Old Towns",
     "History",
-    "Rivers & Waterfalls",
-    "Road Trips",
-    "Coffee Culture",
-    "Wine"
+    "Architecture",
+    "Waterfalls",
+    "Food",
+    "Coffee & Cafés",
+    "Hiking"
   ],
   "avoid": [
     "Winter fog, snow and shorter daylight can make mountain bus connections around Sarajevo and Jajce slower than summer schedules suggest",
@@ -48,31 +48,74 @@
       "name": "Sarajevo",
       "lat": 43.8563,
       "lng": 18.4131,
-      "notes": "Layered Ottoman and Austro-Hungarian capital with poignant war history, strong cafe culture and easy hilltop viewpoints"
+      "notes": "Layered Ottoman and Austro-Hungarian capital with poignant war history, strong cafe culture and easy hilltop viewpoints",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Mostar",
       "lat": 43.3438,
       "lng": 17.8078,
-      "notes": "Stari Most views, riverside lanes, Ottoman houses and Herzegovinian food in Bosnia's most photogenic old town"
+      "notes": "Stari Most views, riverside lanes, Ottoman houses and Herzegovinian food in Bosnia's most photogenic old town",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Trebinje",
       "lat": 42.7119,
       "lng": 18.3436,
-      "notes": "Sunny stone town near the Adriatic border with monasteries, wine cellars and long plane-tree promenades"
+      "notes": "Sunny stone town near the Adriatic border with monasteries, wine cellars and long plane-tree promenades",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Jajce",
       "lat": 44.3422,
       "lng": 17.2706,
-      "notes": "Fortress town split by waterfalls, catacombs and Pliva lake scenery that feels ideal for a one-night inland detour"
+      "notes": "Fortress town split by waterfalls, catacombs and Pliva lake scenery that feels ideal for a one-night inland detour",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Blagaj",
       "lat": 43.2586,
       "lng": 17.8887,
-      "notes": "Tiny Buna spring village below limestone cliffs, best known for the dervish tekija and trout restaurants by the water"
+      "notes": "Tiny Buna spring village below limestone cliffs, best known for the dervish tekija and trout restaurants by the water",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -102,9 +145,10 @@
         "maxDays": 3,
         "note": "Three days lets you balance the old town, siege history and a green Ilidža or museum day without rushing between hillside viewpoints.",
         "experiences": [
-          "Old Towns",
           "History",
-          "Coffee Culture"
+          "Architecture",
+          "Coffee & Cafés",
+          "Food"
         ],
         "days": [
           {
@@ -236,7 +280,7 @@
         "maxDays": 1,
         "note": "One night is enough for the waterfall, fortress and lakeside mills, especially if you are using Jajce as the inland leg between Sarajevo and Herzegovina.",
         "experiences": [
-          "Rivers & Waterfalls",
+          "Waterfalls",
           "History"
         ],
         "days": [
@@ -289,9 +333,9 @@
         "maxDays": 3,
         "note": "Two days covers the old town well, while a third day helps if you want a slower museum-and-cafes pace before moving on to Blagaj or Trebinje.",
         "experiences": [
-          "Old Towns",
+          "Architecture",
           "History",
-          "Rivers & Waterfalls"
+          "Food"
         ],
         "days": [
           {
@@ -419,7 +463,8 @@
         "maxDays": 1,
         "note": "Blagaj works best as a one-night riverside stop so you can see the tekija early or late, after the heaviest day-trip crowds leave from Mostar.",
         "experiences": [
-          "Rivers & Waterfalls"
+          "Waterfalls",
+          "History"
         ],
         "days": [
           {
@@ -471,8 +516,9 @@
         "maxDays": 2,
         "note": "One day covers the old town and monastery circuit, while a second day is worthwhile if you want cellar tastings and a slower Herzegovinian finale.",
         "experiences": [
-          "Wine",
-          "Coffee Culture"
+          "Food",
+          "Coffee & Cafés",
+          "History"
         ],
         "days": [
           {

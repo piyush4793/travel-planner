@@ -25,11 +25,12 @@
     "family4": "₹4.0L–₹6.0L"
   },
   "experiences": [
-    "Route des Esclaves in Ouidah",
-    "Royal Palaces of Abomey UNESCO complex",
-    "Ganvié stilt village pirogue ride",
-    "Pendjari wildlife safari",
-    "Fondation Zinsou and Cotonou markets"
+    "History",
+    "Wildlife & Safari",
+    "Markets & Shopping",
+    "Museums",
+    "National Parks",
+    "UNESCO Sites"
   ],
   "avoid": [
     "April to July and again in September-October bring the wettest southern roads, so Ouidah, Ganvié jetties, and market days in Cotonou get slower and muddier.",
@@ -52,31 +53,81 @@
       "name": "Cotonou",
       "lat": 6.3703,
       "lng": 2.3912,
-      "notes": "Benin's transport hub for markets, beach evenings, Fondation Zinsou, and the easiest launch point for Ouidah and Ganvié."
+      "notes": "Benin's transport hub for markets, beach evenings, Fondation Zinsou, and the easiest launch point for Ouidah and Ganvié.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Ouidah",
       "lat": 6.3631,
       "lng": 2.0851,
-      "notes": "Vodun heritage, the Route des Esclaves, Temple of Pythons, beaches, and Benin's most important Atlantic memory trail."
+      "notes": "Vodun heritage, the Route des Esclaves, Temple of Pythons, beaches, and Benin's most important Atlantic memory trail.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Abomey",
       "lat": 7.1829,
       "lng": 1.9912,
-      "notes": "The old Dahomey royal capital with the UNESCO palaces, court history, and an easy inland cultural stop on the way north."
+      "notes": "The old Dahomey royal capital with the UNESCO palaces, court history, and an easy inland cultural stop on the way north.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Ganvié",
       "lat": 6.4678,
       "lng": 2.4269,
-      "notes": "A stilt-village lagoon settlement near Abomey-Calavi best experienced by pirogue with a local boatman and guide."
+      "notes": "A stilt-village lagoon settlement near Abomey-Calavi best experienced by pirogue with a local boatman and guide.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Pendjari National Park",
       "lat": 10.9966,
       "lng": 1.4378,
-      "notes": "Benin's flagship safari reserve for elephants, antelope, birdlife, and long dry-season game drives from Tanguiéta."
+      "notes": "Benin's flagship safari reserve for elephants, antelope, birdlife, and long dry-season game drives from Tanguiéta.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -103,7 +154,8 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Fondation Zinsou and Cotonou markets"
+          "Markets & Shopping",
+          "Museums"
         ],
         "days": [
           {
@@ -198,7 +250,7 @@
         "recDays": 1,
         "maxDays": 2,
         "experiences": [
-          "Route des Esclaves in Ouidah"
+          "History"
         ],
         "days": [
           {
@@ -289,7 +341,7 @@
         "recDays": 1,
         "maxDays": 1,
         "experiences": [
-          "Ganvié stilt village pirogue ride"
+          "History"
         ],
         "days": [
           {
@@ -340,7 +392,9 @@
         "recDays": 1,
         "maxDays": 2,
         "experiences": [
-          "Royal Palaces of Abomey UNESCO complex"
+          "History",
+          "UNESCO Sites",
+          "Museums"
         ],
         "days": [
           {
@@ -427,7 +481,8 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Pendjari wildlife safari"
+          "Wildlife & Safari",
+          "National Parks"
         ],
         "days": [
           {

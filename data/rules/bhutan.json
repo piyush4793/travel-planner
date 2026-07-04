@@ -22,11 +22,12 @@
     "family4": "₹3L–₹5L"
   },
   "experiences": [
-    "Tiger's Nest Monastery",
-    "Himalayas",
-    "Culture",
-    "Dzongs",
-    "Archery"
+    "Temples & Religious Sites",
+    "Mountains",
+    "Hiking",
+    "History",
+    "Festivals",
+    "Museums"
   ],
   "avoid": [
     "Monsoon season",
@@ -47,25 +48,61 @@
       "name": "Thimphu",
       "lat": 27.4712,
       "lng": 89.6339,
-      "notes": "Tashichho Dzong, Memorial Chorten and weekend vegetable market"
+      "notes": "Tashichho Dzong, Memorial Chorten and weekend vegetable market",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Paro",
       "lat": 27.4287,
       "lng": 89.4164,
-      "notes": "Tiger's Nest Monastery cliff hike, Rinpung Dzong and apple orchards"
+      "notes": "Tiger's Nest Monastery cliff hike, Rinpung Dzong and apple orchards",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Punakha",
       "lat": 27.6101,
       "lng": 89.8731,
-      "notes": "Punakha Dzong at the confluence of two rivers and suspension bridge"
+      "notes": "Punakha Dzong at the confluence of two rivers and suspension bridge",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Bumthang",
       "lat": 27.5496,
       "lng": 90.7289,
-      "notes": "Spiritual heartland with Jakar Dzong, ancient temples and yak cheese"
+      "notes": "Spiritual heartland with Jakar Dzong, ancient temples and yak cheese",
+      "bestMonths": [
+        "March",
+        "April",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -92,8 +129,9 @@
         "maxDays": 3,
         "note": "Use Thimphu as the acclimatization stop after landing in Paro and keep one full day for culture-heavy sightseeing.",
         "experiences": [
-          "Culture",
-          "Archery"
+          "History",
+          "Festivals",
+          "Museums"
         ],
         "days": [
           {
@@ -198,7 +236,8 @@
         "maxDays": 3,
         "note": "Punakha works best after Thimphu because the descent via Dochula Pass naturally breaks the journey and keeps the route efficient.",
         "experiences": [
-          "Dzongs"
+          "Temples & Religious Sites",
+          "Hiking"
         ],
         "days": [
           {
@@ -298,8 +337,10 @@
         "maxDays": 3,
         "note": "Keep two nights here so Tiger’s Nest gets a full dedicated hiking day instead of being rushed around arrival or departure.",
         "experiences": [
-          "Tiger's Nest Monastery",
-          "Himalayas"
+          "Temples & Religious Sites",
+          "Mountains",
+          "Hiking",
+          "Festivals"
         ],
         "days": [
           {
@@ -399,8 +440,9 @@
         "maxDays": 2,
         "note": "Bumthang is the spiritual extension for travelers who want quieter valleys and older temple history beyond western Bhutan.",
         "experiences": [
-          "Culture",
-          "Dzongs"
+          "Temples & Religious Sites",
+          "History",
+          "Festivals"
         ],
         "days": [
           {

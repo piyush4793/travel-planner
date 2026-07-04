@@ -22,11 +22,12 @@
     "family4": "₹3.1L–₹4.95L"
   },
   "experiences": [
-    "Salar de Uyuni",
-    "La Paz & Tiwanaku",
-    "Sucre colonial core",
-    "Lake Titicaca at Copacabana",
-    "Potosí silver history"
+    "Deserts",
+    "History",
+    "Ancient Ruins",
+    "Lakes",
+    "Mountains",
+    "Markets & Shopping"
   ],
   "avoid": [
     "January–March rains can flood sections of Salar de Uyuni, muddy desert tracks, and cause landslides on long road journeys.",
@@ -48,31 +49,78 @@
       "name": "La Paz",
       "lat": -16.4897,
       "lng": -68.1193,
-      "notes": "High-altitude capital for cable car views, Witches' Market lanes, lunar badlands at Valle de la Luna and Tiwanaku day trips."
+      "notes": "High-altitude capital for cable car views, Witches' Market lanes, lunar badlands at Valle de la Luna and Tiwanaku day trips.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Uyuni",
       "lat": -20.4607,
       "lng": -66.825,
-      "notes": "Gateway to Salar de Uyuni for the train cemetery, Colchani salt processing, cactus islands and mirror-season photography."
+      "notes": "Gateway to Salar de Uyuni for the train cemetery, Colchani salt processing, cactus islands and mirror-season photography.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Sucre",
       "lat": -19.0479,
       "lng": -65.2595,
-      "notes": "Whitewashed constitutional capital with convent viewpoints, Bolivian independence history and a slower pace than La Paz."
+      "notes": "Whitewashed constitutional capital with convent viewpoints, Bolivian independence history and a slower pace than La Paz.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Copacabana",
       "lat": -16.167,
       "lng": -69.087,
-      "notes": "Lake Titicaca base for the basilica, Cerro Calvario sunsets and day boats to Isla del Sol."
+      "notes": "Lake Titicaca base for the basilica, Cerro Calvario sunsets and day boats to Isla del Sol.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Potosí",
       "lat": -19.5887,
       "lng": -65.7531,
-      "notes": "UNESCO silver-boom city for Casa Nacional de la Moneda, colonial churches and Cerro Rico mine history."
+      "notes": "UNESCO silver-boom city for Casa Nacional de la Moneda, colonial churches and Cerro Rico mine history.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -102,7 +150,10 @@
         "maxDays": 3,
         "note": "Sleep centrally in Sopocachi or near the cable cars, keep day one lighter for altitude, and slot Tiwanaku on a separate early start if you want the archaeology without rushing.",
         "experiences": [
-          "La Paz & Tiwanaku"
+          "History",
+          "Ancient Ruins",
+          "Markets & Shopping",
+          "Mountains"
         ],
         "days": [
           {
@@ -180,7 +231,8 @@
         "maxDays": 2,
         "note": "Copacabana is best as a slower lake break between big transit legs, and it also works well if you plan to continue onward to Peru after Bolivia.",
         "experiences": [
-          "Lake Titicaca at Copacabana"
+          "Lakes",
+          "History"
         ],
         "days": [
           {
@@ -253,7 +305,8 @@
         "maxDays": 3,
         "note": "Sucre is gentler for acclimatization than La Paz or Potosí, so it works well as a reset city for longer café mornings and museum-heavy afternoons.",
         "experiences": [
-          "Sucre colonial core"
+          "History",
+          "Markets & Shopping"
         ],
         "days": [
           {
@@ -326,7 +379,8 @@
         "maxDays": 2,
         "note": "Potosí is colder and higher than Sucre, so layer up for morning mine tours and book a reputable operator that includes proper helmets, boots and masks for Cerro Rico.",
         "experiences": [
-          "Potosí silver history"
+          "History",
+          "Mountains"
         ],
         "days": [
           {
@@ -399,7 +453,7 @@
         "maxDays": 3,
         "note": "Lock your Uyuni tour operator, vehicle condition and English-guide needs before arrival, and pack sun protection because the salt glare is intense even in cool dry-season weather.",
         "experiences": [
-          "Salar de Uyuni"
+          "Deserts"
         ],
         "days": [
           {

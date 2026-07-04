@@ -25,12 +25,12 @@
     "family4": "₹4.8L–₹7.1L"
   },
   "experiences": [
-    "Reef Snorkeling",
-    "Maya Ruins",
-    "Caves",
-    "Island Time",
-    "Wildlife",
-    "Beach Towns"
+    "Diving & Snorkeling",
+    "Ancient Ruins",
+    "Wildlife & Safari",
+    "Islands",
+    "Beaches",
+    "Adventure Sports"
   ],
   "avoid": [
     "June–October brings the wettest weather, rougher seas, and the highest hurricane-disruption risk for cayes and reef trips.",
@@ -54,31 +54,81 @@
       "name": "Belize City",
       "lat": 17.5046,
       "lng": -88.1962,
-      "notes": "Main arrival hub for museums, historic riverfront landmarks, water-taxi terminals, and quick positioning nights before heading inland or to the islands."
+      "notes": "Main arrival hub for museums, historic riverfront landmarks, water-taxi terminals, and quick positioning nights before heading inland or to the islands.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "San Ignacio",
       "lat": 17.1561,
       "lng": -89.0703,
-      "notes": "Best inland base for ATM Cave, Xunantunich, Cahal Pech, jungle lodges, and the Guatemala border run to Tikal."
+      "notes": "Best inland base for ATM Cave, Xunantunich, Cahal Pech, jungle lodges, and the Guatemala border run to Tikal.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Caye Caulker",
       "lat": 17.7369,
       "lng": -88.0294,
-      "notes": "Laid-back car-free island for Hol Chan, Shark Ray Alley, Blue Hole snorkel runs, and classic go-slow Caribbean evenings."
+      "notes": "Laid-back car-free island for Hol Chan, Shark Ray Alley, Blue Hole snorkel runs, and classic go-slow Caribbean evenings.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "April"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Placencia",
       "lat": 16.5142,
       "lng": -88.3665,
-      "notes": "Long sandy peninsula base for reef outings, easy beach days, and a smoother south-Belize finish than busier northern islands."
+      "notes": "Long sandy peninsula base for reef outings, easy beach days, and a smoother south-Belize finish than busier northern islands.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Tikal Day Trip",
       "lat": 17.2216,
       "lng": -89.6237,
-      "notes": "Cross-border Guatemala day trip from San Ignacio for one of the Maya world's greatest archaeological sites."
+      "notes": "Cross-border Guatemala day trip from San Ignacio for one of the Maya world's greatest archaeological sites.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     }
   ],
   "itinerary": {
@@ -184,9 +234,9 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Maya Ruins",
-          "Caves",
-          "Wildlife"
+          "Ancient Ruins",
+          "Wildlife & Safari",
+          "Adventure Sports"
         ],
         "days": [
           {
@@ -270,7 +320,8 @@
         "maxDays": 1,
         "note": "This is a pre-dawn guided border run from San Ignacio into Guatemala; carry passport, some cash, and expect a very long but rewarding day.",
         "experiences": [
-          "Maya Ruins"
+          "Ancient Ruins",
+          "Wildlife & Safari"
         ],
         "days": [
           {
@@ -315,8 +366,9 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Reef Snorkeling",
-          "Island Time"
+          "Diving & Snorkeling",
+          "Islands",
+          "Beaches"
         ],
         "days": [
           {
@@ -431,8 +483,9 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Beach Towns",
-          "Reef Snorkeling"
+          "Beaches",
+          "Diving & Snorkeling",
+          "Islands"
         ],
         "days": [
           {
