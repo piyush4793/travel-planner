@@ -20,11 +20,12 @@
     "family4": "₹5L–₹8L"
   },
   "experiences": [
-    "Tulip Fields",
-    "Amsterdam Canals",
-    "Van Gogh Museum",
-    "Windmills",
-    "Cycling"
+    "History",
+    "Architecture",
+    "Art & Design",
+    "Museums",
+    "Nightlife",
+    "Markets & Shopping"
   ],
   "avoid": [
     "King's Day (April) — crowded but fun"
@@ -44,31 +45,76 @@
       "name": "Amsterdam",
       "lat": 52.3676,
       "lng": 4.9041,
-      "notes": "Canals by bike, Rijksmuseum, Van Gogh Museum and Anne Frank House"
+      "notes": "Canals by bike, Rijksmuseum, Van Gogh Museum and Anne Frank House",
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Rotterdam",
       "lat": 51.9225,
       "lng": 4.4792,
-      "notes": "Cube houses, Erasmus Bridge, Markthal food hall and Fenix warehouse"
+      "notes": "Cube houses, Erasmus Bridge, Markthal food hall and Fenix warehouse",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Delft",
       "lat": 52.0116,
       "lng": 4.3571,
-      "notes": "Blue and white Delftware pottery, Vermeer birthplace and canal walks"
+      "notes": "Blue and white Delftware pottery, Vermeer birthplace and canal walks",
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Utrecht",
       "lat": 52.0907,
       "lng": 5.1214,
-      "notes": "Dom Tower views, wharf-level cafe terraces along the Oudegracht"
+      "notes": "Dom Tower views, wharf-level cafe terraces along the Oudegracht",
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Haarlem",
       "lat": 52.3874,
       "lng": 4.6462,
-      "notes": "Medieval Grote Kerk, tulip bulb fields nearby and Frans Hals Museum"
+      "notes": "Medieval Grote Kerk, tulip bulb fields nearby and Frans Hals Museum",
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -101,6 +147,13 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Pre-book Anne Frank House and Van Gogh Museum well ahead; add a fourth day for Zaanse Schans or a slower canal-and-cafe day.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Art & Design",
+          "Museums",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Arrival, Canal Belt & Dam Square",
@@ -213,6 +266,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Best as a spring add-on: swap in Keukenhof and the Bollenstreek bulb fields when visiting from mid-March to early May.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Medieval Haarlem & Tulip Corridor",
@@ -255,6 +312,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Stay a second day if you want to add a quick Den Haag / Scheveningen side trip without changing hotels.",
+        "experiences": [
+          "Architecture",
+          "Art & Design",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Modern Architecture & Waterfront",
@@ -301,6 +363,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Delft works well as a slow overnight between Rotterdam and Utrecht, especially if you want pottery workshops and quieter canals.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Art & Design"
+        ],
         "days": [
           {
             "theme": "Delft Blue, Vermeer & Canal Town",
@@ -344,6 +411,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Add a second day for the Railway Museum, Miffy Museum, or a slower cafe-heavy Oudegracht day.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Dom Tower & Wharf Cellars",

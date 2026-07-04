@@ -26,12 +26,11 @@
     "family4": "₹2L–₹3.1L"
   },
   "experiences": [
-    "WWII Relics",
-    "Phosphate Pinnacles",
-    "Island Loop Drive",
-    "Buada Lagoon",
-    "Anibare Bay",
-    "Smallest Island Nation"
+    "Beaches",
+    "Islands",
+    "History",
+    "Diving & Snorkeling",
+    "Water Sports"
   ],
   "avoid": [
     "November-February is hotter, wetter and stickier, so the exposed Topside loop, Command Ridge and beach time feel much rougher than in the drier March-October window.",
@@ -56,32 +55,30 @@
       "lat": -0.5477,
       "lng": 166.9209,
       "bestMonths": [
-        "March",
-        "April",
         "May",
         "June",
-        "July",
-        "August",
         "September",
         "October"
       ],
-      "notes": "Yaren is the practical arrival base around the airport and government precinct, close to Command Ridge, Moqua Well and short island-loop drives in every direction."
+      "notes": "Yaren is the practical arrival base around the airport and government precinct, close to Command Ridge, Moqua Well and short island-loop drives in every direction.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Anibare Bay",
       "lat": -0.5279,
       "lng": 166.9512,
       "bestMonths": [
-        "March",
-        "April",
         "May",
         "June",
-        "July",
-        "August",
         "September",
         "October"
       ],
-      "notes": "Anibare Bay is Nauru's prettiest coastal stretch, pairing Menen-side stays with the east-coast beach, nearby Buada Lagoon detours and the stark phosphate pinnacles inland."
+      "notes": "Anibare Bay is Nauru's prettiest coastal stretch, pairing Menen-side stays with the east-coast beach, nearby Buada Lagoon detours and the stark phosphate pinnacles inland.",
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -103,6 +100,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "One compact Yaren day is enough for arrival logistics, the WWII ridge, the freshwater cave stop and a first complete sense of how tiny Nauru really is.",
+        "experiences": [
+          "History",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Airport Arrival, Command Ridge Relics and the Moqua Well Stop",
@@ -160,6 +161,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "The second day is the scenic Nauru loop: one beach-and-lagoon stop, one Topside phosphate run and one slow meal with an ocean view before departure.",
+        "experiences": [
+          "Beaches",
+          "Islands",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Phosphate Pinnacles, Buada Lagoon and the East-Coast Bay",

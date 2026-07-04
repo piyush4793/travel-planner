@@ -22,11 +22,11 @@
     "family4": "₹1.9L–₹2.9L"
   },
   "experiences": [
-    "Chișinău café culture",
-    "Orheiul Vechi cave monastery",
-    "Mileștii Mici wine tunnels",
-    "Cricova underground winery",
-    "Tiraspol Soviet-era streetscapes"
+    "Wine & Vineyards",
+    "History",
+    "Temples & Religious Sites",
+    "Architecture",
+    "Markets & Shopping"
   ],
   "avoid": [
     "December–February for grey weather, icy village roads, and fewer winery departure slots",
@@ -47,7 +47,16 @@
       "name": "Chișinău",
       "lat": 47.0105,
       "lng": 28.8638,
-      "notes": "Leafy capital with parks, museums, trolleybuses, wine bars, and the country’s easiest transport hub."
+      "notes": "Leafy capital with parks, museums, trolleybuses, wine bars, and the country’s easiest transport hub.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Orheiul Vechi",
@@ -56,11 +65,13 @@
       "bestMonths": [
         "May",
         "June",
-        "July",
-        "August",
-        "September"
+        "September",
+        "October"
       ],
-      "notes": "Clifftop archaeological reserve and cave monastery above the Răut River, best paired with a Butuceni village stay."
+      "notes": "Clifftop archaeological reserve and cave monastery above the Răut River, best paired with a Butuceni village stay.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Mileștii Mici",
@@ -69,17 +80,28 @@
       "bestMonths": [
         "May",
         "June",
-        "July",
-        "August",
-        "September"
+        "September",
+        "October"
       ],
-      "notes": "Famous underground wine city south of Chișinău, reached most easily by taxi or pre-booked winery transfer."
+      "notes": "Famous underground wine city south of Chișinău, reached most easily by taxi or pre-booked winery transfer.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Tiraspol (Transnistria)",
       "lat": 46.8403,
       "lng": 29.6433,
-      "notes": "Breakaway-region capital with broad Soviet boulevards, local cognac culture, and a very different feel from the rest of Moldova."
+      "notes": "Breakaway-region capital with broad Soviet boulevards, local cognac culture, and a very different feel from the rest of Moldova.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -105,6 +127,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days gives you the capital’s museum-and-park core plus a proper winery day trip without turning Chișinău into a rushed transit stop.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Wine & Vineyards"
+        ],
         "days": [
           {
             "theme": "Central Parks, History Museums & Classic Chișinău Boulevards",
@@ -191,6 +218,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "One full day is enough for the cave monastery, reserve viewpoints, and a slow Moldovan lunch in Butuceni without backtracking all afternoon.",
+        "experiences": [
+          "History",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Cave Monastery, Butuceni Village & Răut River Viewpoints",
@@ -237,6 +268,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat Mileștii Mici as a dedicated tasting day from Chișinău so you can book the right cellar slot and avoid cramming it around intercity transfers.",
+        "experiences": [
+          "Wine & Vineyards"
+        ],
         "days": [
           {
             "theme": "Wine Tunnels, Tasting Halls & South-of-Capital Vineyard Country",
@@ -283,6 +317,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One day covers the main Soviet-era avenues and food stops; add a second night only if you want a slower border-region detour or a KVINT-focused visit.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Soviet Boulevards, Riverfront Monuments & Transnistria Atmosphere",

@@ -22,11 +22,12 @@
     "family4": "₹1.9L–₹3.2L"
   },
   "experiences": [
-    "Shwedagon Pagoda",
-    "Bagan temples",
-    "Irrawaddy river journeys",
-    "Inle Lake boat life",
-    "Ngapali Beach sunsets"
+    "Temples & Religious Sites",
+    "History",
+    "Ancient Ruins",
+    "Lakes",
+    "Beaches",
+    "UNESCO Sites"
   ],
   "avoid": [
     "June to September is the wettest stretch, with slower road transfers, flooded streets and rougher beach conditions",
@@ -48,31 +49,77 @@
       "name": "Yangon",
       "lat": 16.8409,
       "lng": 96.1735,
-      "notes": "Colonial downtown, the golden Shwedagon skyline, teahouse culture and the country's most practical transport hub"
+      "notes": "Colonial downtown, the golden Shwedagon skyline, teahouse culture and the country's most practical transport hub",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Bagan",
       "lat": 21.1717,
       "lng": 94.8585,
-      "notes": "Thousands of brick stupas, sunrise balloon skies, lacquerware workshops and easy e-bike temple circuits"
+      "notes": "Thousands of brick stupas, sunrise balloon skies, lacquerware workshops and easy e-bike temple circuits",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Mandalay",
       "lat": 21.9588,
       "lng": 96.0891,
-      "notes": "Royal palace history, monastery craft traditions, Amarapura sunsets and a good staging point for upper Myanmar"
+      "notes": "Royal palace history, monastery craft traditions, Amarapura sunsets and a good staging point for upper Myanmar",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Inle Lake",
       "lat": 20.586,
       "lng": 96.9102,
-      "notes": "Longtail boat days, leg-rowing fishers, stilt villages, Shan food and cooler highland air around Nyaung Shwe"
+      "notes": "Longtail boat days, leg-rowing fishers, stilt villages, Shan food and cooler highland air around Nyaung Shwe",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Ngapali Beach",
       "lat": 18.4313,
       "lng": 94.3897,
-      "notes": "Palm-lined Bay of Bengal sands, seafood shacks, bikeable fishing villages and Myanmar's classic slow beach finish"
+      "notes": "Palm-lined Bay of Bengal sands, seafood shacks, bikeable fishing villages and Myanmar's classic slow beach finish",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -101,6 +148,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is enough for the pagodas and downtown core; add a third only if you want museum time, slower tea-shop hopping or a cushion before an onward domestic flight.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Golden pagodas, lakeside Yangon and a first taste of teahouse culture",
@@ -192,6 +243,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two full days covers the major temple plains well; add a third if you want a balloon flight, Mount Popa detour or slower sunrise and sunset repeats.",
+        "experiences": [
+          "Ancient Ruins",
+          "Temples & Religious Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Temple-zone classics by e-bike across Old Bagan and Nyaung U",
@@ -283,6 +339,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days works best if you want both the palace-monastery core and Amarapura; add a third for Sagaing, Mingun or a slower craft-focused day.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Royal Mandalay, monastery carvings and hilltop panoramas",
@@ -373,6 +433,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Keep two days for a full lake boat circuit and one slower shore-based Shan day; a third day helps only if you want trekking or a long transfer buffer.",
+        "experiences": [
+          "Lakes",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Longtail boat day through pagodas, gardens and stilt villages",
@@ -464,6 +528,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Two nights is the right finish for most Myanmar trips; Ngapali is more about rest than ticking off sights, and onward connections can change quickly in bad weather.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Beach reset, cycling and easy seafood by the bay",

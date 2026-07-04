@@ -23,12 +23,14 @@
     "family4": "₹3.1L–₹4.9L"
   },
   "experiences": [
-    "Bay Views",
     "Beaches",
     "History",
     "Mountains",
     "National Parks",
-    "Road Trips"
+    "Hiking",
+    "Architecture",
+    "UNESCO Sites",
+    "Nightlife"
   ],
   "avoid": [
     "Budva Riviera traffic, parking and hotel rates jump sharply from mid-July to late August.",
@@ -50,37 +52,91 @@
       "name": "Podgorica",
       "lat": 42.4304,
       "lng": 19.2594,
-      "notes": "Practical arrival hub with riverfront walks, grilled-food institutions and the easiest jump-off to Skadar Lake or the old royal capital."
+      "notes": "Practical arrival hub with riverfront walks, grilled-food institutions and the easiest jump-off to Skadar Lake or the old royal capital.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Kotor",
       "lat": 42.4247,
       "lng": 18.7712,
-      "notes": "Medieval lanes, fortress climbs, church museums and easy bay boat trips make this Montenegro's classic base."
+      "notes": "Medieval lanes, fortress climbs, church museums and easy bay boat trips make this Montenegro's classic base.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Budva",
       "lat": 42.2911,
       "lng": 18.8403,
-      "notes": "A compact walled old town paired with beach clubs, boat hops and the liveliest stretch of Adriatic promenade in Montenegro."
+      "notes": "A compact walled old town paired with beach clubs, boat hops and the liveliest stretch of Adriatic promenade in Montenegro.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Durmitor",
       "lat": 43.1555,
       "lng": 19.1226,
-      "notes": "Use Zabljak as the base for Black Lake, Tara Canyon viewpoints and high-alpine road trips through Durmitor National Park."
+      "notes": "Use Zabljak as the base for Black Lake, Tara Canyon viewpoints and high-alpine road trips through Durmitor National Park.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Cetinje",
       "lat": 42.3906,
       "lng": 18.9142,
-      "notes": "Former royal capital with museums, monastery history and the best access road to Lovcen and Njegos Mausoleum."
+      "notes": "Former royal capital with museums, monastery history and the best access road to Lovcen and Njegos Mausoleum.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Sveti Stefan",
       "lat": 42.256,
       "lng": 18.8955,
-      "notes": "Iconic islet viewpoints, Milocer pines and a quieter coast stay than central Budva."
+      "notes": "Iconic islet viewpoints, Milocer pines and a quieter coast stay than central Budva.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -108,6 +164,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One day is enough for the capital itself; add a second only if you want a relaxed Skadar Lake detour or extra cafe time before heading coastward.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Podgorica Arrival, Old Town & Morača River",
@@ -189,6 +249,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "A full day covers the royal-capital museums and Lovcen viewpoints without needing an overnight unless you want a slow mountain stay.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Royal Capital Museums & Lovcen Heights",
@@ -238,6 +302,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days gives you the old town, fortress and bay boat trip; a third day is worth it only if you want a rental-car loop around the whole bay.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Kotor Old Town, Cathedral & City Walls",
@@ -363,6 +432,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "One night works if you only want the old town and beach, but two days is better if you want a proper Adriatic break before moving south or inland.",
+        "experiences": [
+          "Beaches",
+          "Nightlife",
+          "History"
+        ],
         "days": [
           {
             "theme": "Budva Old Town & Beachfront Classics",
@@ -480,6 +554,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "This works best as a one-night scenic coast stop focused on the viewpoints, Milocer parkland and a quieter beach mood than Budva.",
+        "experiences": [
+          "Beaches",
+          "History"
+        ],
         "days": [
           {
             "theme": "Sveti Stefan Viewpoints, Milocer & Monastery Walk",
@@ -529,6 +607,12 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Two days covers Black Lake and Tara viewpoints, but three is the sweet spot if you want one active day and one flexible weather buffer in the mountains.",
+        "experiences": [
+          "Mountains",
+          "National Parks",
+          "Hiking",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Arrival in Zabljak & Black Lake",

@@ -25,12 +25,14 @@
     "family4": "₹4.2L–₹7.2L"
   },
   "experiences": [
-    "Food",
+    "History",
+    "Ancient Ruins",
     "Beaches",
-    "Ruins",
-    "Cenotes",
-    "Colonial Towns",
-    "Museums"
+    "Food",
+    "Architecture",
+    "Nightlife",
+    "Diving & Snorkeling",
+    "UNESCO Sites"
   ],
   "avoid": [
     "June–October hurricane and heavy-rain season on the Caribbean coast",
@@ -53,37 +55,93 @@
       "name": "Mexico City",
       "lat": 19.4326,
       "lng": -99.1332,
-      "notes": "Grand museums, historic plazas, taco trails, and easy day trips across the capital."
+      "notes": "Grand museums, historic plazas, taco trails, and easy day trips across the capital.",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Oaxaca",
       "lat": 17.0732,
       "lng": -96.7266,
-      "notes": "Zapotec history, mole, mezcal, artisan markets, and one of Mexico's best food scenes."
+      "notes": "Zapotec history, mole, mezcal, artisan markets, and one of Mexico's best food scenes.",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Cancún",
       "lat": 21.1619,
       "lng": -86.8515,
-      "notes": "Best airport gateway for Caribbean beaches, Isla Mujeres ferries, and Maya museum stops."
+      "notes": "Best airport gateway for Caribbean beaches, Isla Mujeres ferries, and Maya museum stops.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Playa del Carmen",
       "lat": 20.6296,
       "lng": -87.0739,
-      "notes": "Walkable Riviera Maya base for beaches, cenotes, Cozumel ferries, and eco-parks."
+      "notes": "Walkable Riviera Maya base for beaches, cenotes, Cozumel ferries, and eco-parks.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "San Miguel de Allende",
       "lat": 20.9144,
       "lng": -100.7436,
-      "notes": "Colonial lanes, rooftop sunsets, galleries, and a slower highland pace."
+      "notes": "Colonial lanes, rooftop sunsets, galleries, and a slower highland pace.",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Mérida",
       "lat": 20.9674,
       "lng": -89.5926,
-      "notes": "Yucatán culture hub with Paseo de Montejo, Maya museums, cenotes, and Uxmal access."
+      "notes": "Yucatán culture hub with Paseo de Montejo, Maya museums, cenotes, and Uxmal access.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "May"
+      ]
     }
   ],
   "itinerary": {
@@ -112,6 +170,11 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "History",
+          "Food",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Historic Center, Bellas Artes & Roma Norte",
@@ -224,6 +287,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Architecture",
+          "History",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Parroquia, Rooftops & Art Walks",
@@ -302,6 +370,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Food",
+          "History",
+          "Ancient Ruins"
+        ],
         "days": [
           {
             "theme": "Santo Domingo, Museums & Market Snacks",
@@ -380,6 +453,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Ancient Ruins",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Paseo de Montejo & Yucatán Classics",
@@ -457,6 +535,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Hotel Zone Beaches & Maya Museum",
@@ -537,6 +620,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Quinta Avenida, Beaches & Cenote Swim",

@@ -20,11 +20,15 @@
     "family4": "₹7L–₹12L"
   },
   "experiences": [
-    "Fjords (Milford Sound)",
-    "Hobbiton",
-    "Bungee Jumping",
-    "Lord of the Rings",
-    "Wine"
+    "Mountains",
+    "Hiking",
+    "National Parks",
+    "Adventure Sports",
+    "Lakes",
+    "Wildlife & Safari",
+    "Beaches",
+    "Wine & Vineyards",
+    "Hot Springs & Wellness"
   ],
   "avoid": [],
   "combo": [
@@ -47,37 +51,91 @@
       "name": "Auckland",
       "lat": -36.8485,
       "lng": 174.7633,
-      "notes": "Sky Tower, Waiheke Island wine, Rangitoto volcano and America's Cup harbour"
+      "notes": "Sky Tower, Waiheke Island wine, Rangitoto volcano and America's Cup harbour",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Queenstown",
       "lat": -45.0312,
       "lng": 168.6626,
-      "notes": "Bungee jumping birthplace, Milford Sound day trip and Remarkables skiing"
+      "notes": "Bungee jumping birthplace, Milford Sound day trip and Remarkables skiing",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "May"
+      ]
     },
     {
       "name": "Wellington",
       "lat": -41.2865,
       "lng": 174.7762,
-      "notes": "Te Papa national museum, Weta Workshop tour and Cuba Street cafe culture"
+      "notes": "Te Papa national museum, Weta Workshop tour and Cuba Street cafe culture",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Rotorua",
       "lat": -38.1368,
       "lng": 176.2497,
-      "notes": "Geothermal geysers, Wai-O-Tapu colour pools and Maori haka performance"
+      "notes": "Geothermal geysers, Wai-O-Tapu colour pools and Maori haka performance",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Christchurch",
       "lat": -43.5321,
       "lng": 172.6362,
-      "notes": "Rebuilt Cardboard Cathedral, Hagley Park and Antarctic Centre gateway"
+      "notes": "Rebuilt Cardboard Cathedral, Hagley Park and Antarctic Centre gateway",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Fiordland",
       "lat": -45.4164,
       "lng": 167.7196,
-      "notes": "Milford Sound and Doubtful Sound by boat through ancient glacier fiords"
+      "notes": "Milford Sound and Doubtful Sound by boat through ancient glacier fiords",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -105,6 +163,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches",
+          "Wine & Vineyards"
+        ],
         "days": [
           {
             "theme": "City of Sails — Harbour Icons & Volcanic Views",
@@ -193,6 +255,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Hot Springs & Wellness",
+          "Adventure Sports"
+        ],
         "days": [
           {
             "theme": "Geothermal Wonderland — Geysers, Mud Pools & Māori Culture",
@@ -457,6 +523,11 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Adventure Sports",
+          "Mountains",
+          "Lakes"
+        ],
         "days": [
           {
             "theme": "Arrival on Lake Wakatipu — Gondola, Gardens & Historic Steamer",
@@ -585,6 +656,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "National Parks",
+          "Hiking",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Fiordland National Park — Milford Sound Cruise, Waterfalls & Alpine Road Stops",

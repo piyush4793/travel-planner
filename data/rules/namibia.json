@@ -24,11 +24,12 @@
     "family4": "₹7.2L–₹10.8L"
   },
   "experiences": [
-    "Etosha self-drive safari",
-    "Sossusvlei red dunes",
-    "Swakopmund desert-and-ocean adventures",
-    "Fish River Canyon viewpoints",
-    "Epic gravel-road road trip"
+    "Deserts",
+    "Wildlife & Safari",
+    "National Parks",
+    "Adventure Sports",
+    "Hiking",
+    "Beaches"
   ],
   "avoid": [
     "December to March brings heat, storms, and softer gravel roads in the desert",
@@ -51,31 +52,76 @@
       "name": "Windhoek",
       "lat": -22.5609,
       "lng": 17.0658,
-      "notes": "Christuskirche, Independence Memorial Museum, the Namibia Craft Centre and the practical car-rental reset before Namibia's long self-drive legs"
+      "notes": "Christuskirche, Independence Memorial Museum, the Namibia Craft Centre and the practical car-rental reset before Namibia's long self-drive legs",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Sossusvlei/Sesriem",
       "lat": -24.7277,
       "lng": 15.34,
-      "notes": "Dune 45 sunrise, Deadvlei, Big Daddy, Sesriem Canyon and the classic Namib desert lodge stay"
+      "notes": "Dune 45 sunrise, Deadvlei, Big Daddy, Sesriem Canyon and the classic Namib desert lodge stay",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Etosha National Park",
       "lat": -18.775,
       "lng": 16.9083,
-      "notes": "Okaukuejo, Halali and Namutoni waterholes with some of southern Africa's best self-drive wildlife viewing"
+      "notes": "Okaukuejo, Halali and Namutoni waterholes with some of southern Africa's best self-drive wildlife viewing",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Swakopmund",
       "lat": -22.6784,
       "lng": 14.5266,
-      "notes": "German-era architecture, Sandwich Harbour, Living Desert tours and easy access to Walvis Bay marine trips"
+      "notes": "German-era architecture, Sandwich Harbour, Living Desert tours and easy access to Walvis Bay marine trips",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Fish River Canyon",
       "lat": -27.6117,
       "lng": 17.594,
-      "notes": "Hobas viewpoints, Ai-Ais hot springs and one of the biggest canyon landscapes on the continent"
+      "notes": "Hobas viewpoints, Ai-Ais hot springs and one of the biggest canyon landscapes on the continent",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -189,6 +235,10 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Drive up from Windhoek, enter via Andersson Gate, and finish at the famous Okaukuejo waterhole",
@@ -353,6 +403,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Adventure Sports",
+          "Beaches",
+          "Deserts"
+        ],
         "days": [
           {
             "theme": "Coastal reset after safari with German-era streets, the jetty, and real seafood stops",
@@ -469,6 +524,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Deserts",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Cross the gravel roads from the coast, check in near Sesriem, and save the biggest dunes for dawn",
@@ -589,6 +648,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Deserts",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Long desert drive south, Hobas viewpoints, and canyon light at sunset",

@@ -26,11 +26,13 @@
     "family4": "₹3.6L–₹5.6L"
   },
   "experiences": [
-    "Masaya Volcano crater visits",
-    "Granada colonial streets & islets",
-    "León cathedral rooftop & Cerro Negro",
-    "Ometepe ferries and volcano hikes",
-    "San Juan del Sur surf sunsets"
+    "Volcanoes",
+    "History",
+    "Architecture",
+    "Beaches",
+    "Surfing",
+    "Lakes",
+    "Islands"
   ],
   "avoid": [
     "May to November is wetter across the country, so ferry crossings to Ometepe, Playa Maderas road access, and long chicken-bus days are less comfortable and more delay-prone.",
@@ -53,31 +55,76 @@
       "name": "Managua",
       "lat": 12.1364,
       "lng": -86.2514,
-      "notes": "Capital gateway for markets, lakefront walks, airport overnights, and the easiest launch point for Masaya Volcano, Granada buses, and onward intercity transfers."
+      "notes": "Capital gateway for markets, lakefront walks, airport overnights, and the easiest launch point for Masaya Volcano, Granada buses, and onward intercity transfers.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Granada",
       "lat": 11.9344,
       "lng": -85.956,
-      "notes": "Best colonial base in Nicaragua for cathedral views, horse-cart streets, lake islets, and easy day trips to Masaya or Laguna de Apoyo."
+      "notes": "Best colonial base in Nicaragua for cathedral views, horse-cart streets, lake islets, and easy day trips to Masaya or Laguna de Apoyo.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "León",
       "lat": 12.4379,
       "lng": -86.878,
-      "notes": "Historic university city for revolutionary history, the giant white cathedral rooftop, strong food stops, and Cerro Negro volcano-boarding departures."
+      "notes": "Historic university city for revolutionary history, the giant white cathedral rooftop, strong food stops, and Cerro Negro volcano-boarding departures.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Ometepe Island",
       "lat": 11.5401,
       "lng": -85.6973,
-      "notes": "Twin-volcano island in Lake Nicaragua for ferry arrivals, jungle hikes, springs, beaches, and relaxed stays around Moyogalpa, Balgüe, or Santo Domingo."
+      "notes": "Twin-volcano island in Lake Nicaragua for ferry arrivals, jungle hikes, springs, beaches, and relaxed stays around Moyogalpa, Balgüe, or Santo Domingo.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "San Juan del Sur",
       "lat": 11.2529,
       "lng": -85.8705,
-      "notes": "Pacific beach town for surf shuttles to Playa Maderas, catamaran sunsets, bayfront dinners, and an easy final stop before heading back toward Managua."
+      "notes": "Pacific beach town for surf shuttles to Playa Maderas, catamaran sunsets, bayfront dinners, and an easy final stop before heading back toward Managua.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     }
   ],
   "itinerary": {
@@ -104,6 +151,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Use Managua as a short arrival or departure buffer; rely on inDrive or hotel taxis after dark and fold Masaya Volcano into this stop if you want the cleanest logistics.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Revolution Plaza, Lakefront & Masaya Volcano",
@@ -150,6 +200,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay near Parque Colón or Calle La Calzada so you can walk most evenings; horse-carriage traffic is part of the atmosphere, but the old core is easiest to enjoy early and late in the day.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Volcanoes"
+        ],
         "days": [
           {
             "theme": "Cathedral Plaza, Colonial Core & Islets",
@@ -232,6 +287,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "León is hot and very walkable, so front-load cathedral and rooftop visits in the morning, then save longer museum stops or restaurant breaks for the hottest part of the afternoon.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Volcanoes"
+        ],
         "days": [
           {
             "theme": "UNESCO Cathedral, Revolution History & Street Life",
@@ -314,6 +374,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Pick a base carefully because cross-island travel is slower than it looks; Moyogalpa is easiest for ferries, while Balgüe and Santo Domingo are better if hikes and springs matter more than quick departures.",
+        "experiences": [
+          "Islands",
+          "Volcanoes",
+          "Lakes"
+        ],
         "days": [
           {
             "theme": "Ferry Arrival, Springs & Reserve Trails",
@@ -398,6 +463,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Town is compact and easiest on foot, but beach-hopping beyond the bay usually means shuttle timing, motorbike rental, or negotiating a taxi in advance.",
+        "experiences": [
+          "Beaches",
+          "Surfing"
+        ],
         "days": [
           {
             "theme": "Bayfront, Cristo Viewpoint & Sunset Drinks",

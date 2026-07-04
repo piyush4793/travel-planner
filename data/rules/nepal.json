@@ -22,11 +22,12 @@
     "family4": "₹1L–₹1.5L"
   },
   "experiences": [
-    "Everest Base Camp",
-    "Annapurna Trek",
-    "Kathmandu",
-    "Pokhara",
-    "Himalayan Views"
+    "Mountains",
+    "Hiking",
+    "Temples & Religious Sites",
+    "Wildlife & Safari",
+    "History",
+    "UNESCO Sites"
   ],
   "avoid": [
     "Monsoon season — trails become dangerous"
@@ -46,25 +47,61 @@
       "name": "Kathmandu",
       "lat": 27.7172,
       "lng": 85.324,
-      "notes": "Pashupatinath temple, Boudhanath stupa and chaotic Thamel trekking hub"
+      "notes": "Pashupatinath temple, Boudhanath stupa and chaotic Thamel trekking hub",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Pokhara",
       "lat": 28.2096,
       "lng": 83.9856,
-      "notes": "Phewa Lake, Annapurna panorama and base for Poon Hill sunrise trek"
+      "notes": "Phewa Lake, Annapurna panorama and base for Poon Hill sunrise trek",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Chitwan",
       "lat": 27.5291,
       "lng": 84.3542,
-      "notes": "Jungle safari for one-horned rhinos, tigers and elephant grass walks"
+      "notes": "Jungle safari for one-horned rhinos, tigers and elephant grass walks",
+      "bestMonths": [
+        "October",
+        "November",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Lumbini",
       "lat": 27.4833,
       "lng": 83.276,
-      "notes": "Birthplace of Siddhartha Gautama with ancient Ashokan pillar"
+      "notes": "Birthplace of Siddhartha Gautama with ancient Ashokan pillar",
+      "bestMonths": [
+        "October",
+        "November",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -91,6 +128,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three full days cover Kathmandu's sacred circuit plus the best Newari heritage day trip loop through Bhaktapur and Patan.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Arrival, Thamel Lanes & Easy Heritage Stops",
@@ -221,6 +263,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days balance slow Lakeside time with the Sarangkot adventure day and Pokhara's lake-and-stupa highlights.",
+        "experiences": [
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Kathmandu Transfer & Phewa Lake Sunset",
@@ -351,6 +397,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days in Sauraha give you the classic canoe-and-culture arrival plus one full wildlife safari day inside Chitwan National Park.",
+        "experiences": [
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Pokhara Transfer, Rapti Canoe & Tharu Evening",
@@ -440,6 +489,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One full day is enough for the sacred garden, Ashokan pillar and a cycle loop through the international monastery zone.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Maya Devi Temple, Monastery Circuit & Peace Pagoda",

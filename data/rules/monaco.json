@@ -25,11 +25,12 @@
     "family4": "₹2.2L–₹4.1L"
   },
   "experiences": [
-    "Casino Square",
-    "Oceanographic Museum",
-    "Prince's Palace",
-    "Port Hercule",
-    "French Riviera Day Trip"
+    "Luxury & Resorts",
+    "Nightlife",
+    "History",
+    "Architecture",
+    "Museums",
+    "Beaches"
   ],
   "avoid": [
     "Monaco Grand Prix week in late May — hotel rates and road closures spike dramatically.",
@@ -54,11 +55,13 @@
       "bestMonths": [
         "April",
         "May",
-        "June",
         "September",
         "October"
       ],
-      "notes": "Casino de Monte-Carlo, Café de Paris terraces, luxury shopping arcades and Belle Époque facades in Monaco's most famous district."
+      "notes": "Casino de Monte-Carlo, Café de Paris terraces, luxury shopping arcades and Belle Époque facades in Monaco's most famous district.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Monaco-Ville",
@@ -67,11 +70,13 @@
       "bestMonths": [
         "April",
         "May",
-        "June",
         "September",
         "October"
       ],
-      "notes": "The old town on Le Rocher with Prince's Palace, Saint Nicholas Cathedral, panoramic lanes and the Oceanographic Museum."
+      "notes": "The old town on Le Rocher with Prince's Palace, Saint Nicholas Cathedral, panoramic lanes and the Oceanographic Museum.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "La Condamine",
@@ -80,11 +85,17 @@
       "bestMonths": [
         "April",
         "May",
-        "June",
         "September",
         "October"
       ],
-      "notes": "Port Hercule waterfront district with Marché de la Condamine, the Monaco Grand Prix harbor stretch and easy station access."
+      "notes": "Port Hercule waterfront district with Marché de la Condamine, the Monaco Grand Prix harbor stretch and easy station access.",
+      "experiences": [
+        "Luxury & Resorts",
+        "Nightlife"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -108,6 +119,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Best for a first Monaco day: arrive by train from Nice, cover Le Rocher's headline sights, then walk down through La Condamine and Port Hercule.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Old Town, palace history and Monaco's cliff-edge classics",
@@ -161,6 +177,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Keep Monte Carlo for the polished postcard side of Monaco: Casino Square, harbor views and a relaxed waterfront finish before your train back to Nice.",
+        "experiences": [
+          "Luxury & Resorts",
+          "Nightlife",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Casino facades, Formula 1 corners and Monaco's luxury waterfront",

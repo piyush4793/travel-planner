@@ -26,11 +26,13 @@
     "family4": "₹4.2L–₹6.5L"
   },
   "experiences": [
-    "Ger camps",
-    "Steppe road trips",
-    "Horse trekking",
-    "Gobi dunes",
-    "Monasteries"
+    "Deserts",
+    "National Parks",
+    "Lakes",
+    "Mountains",
+    "Wildlife & Safari",
+    "History",
+    "Adventure Sports"
   ],
   "avoid": [
     "October–May — most ger camps shut and overnight temperatures regularly drop below freezing",
@@ -59,7 +61,10 @@
         "August",
         "September"
       ],
-      "notes": "Capital stop for museums, monasteries, cash, SIMs and the buffer nights you need before Mongolia's weather-sensitive countryside legs"
+      "notes": "Capital stop for museums, monasteries, cash, SIMs and the buffer nights you need before Mongolia's weather-sensitive countryside legs",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Terelj National Park",
@@ -71,7 +76,10 @@
         "August",
         "September"
       ],
-      "notes": "Base for Turtle Rock, Aryabal Meditation Temple, classic ger camps and easy horse riding close to the capital"
+      "notes": "Base for Turtle Rock, Aryabal Meditation Temple, classic ger camps and easy horse riding close to the capital",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Gobi Desert",
@@ -83,7 +91,10 @@
         "August",
         "September"
       ],
-      "notes": "Dalanzadgad gateway for Yolyn Am, Bayanzag Flaming Cliffs and Khongoryn Els camel-and-dune days"
+      "notes": "Dalanzadgad gateway for Yolyn Am, Bayanzag Flaming Cliffs and Khongoryn Els camel-and-dune days",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Khövsgöl Lake",
@@ -95,7 +106,10 @@
         "August",
         "September"
       ],
-      "notes": "Hatgal-side lake camps, boat rides, forest horse trails and the clearest warm-season water in the country"
+      "notes": "Hatgal-side lake camps, boat rides, forest horse trails and the clearest warm-season water in the country",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Karakorum",
@@ -107,7 +121,10 @@
         "August",
         "September"
       ],
-      "notes": "Kharkhorin base for Erdene Zuu Monastery, the Karakorum Museum and Orkhon Valley steppe loops"
+      "notes": "Kharkhorin base for Erdene Zuu Monastery, the Karakorum Museum and Orkhon Valley steppe loops",
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -134,6 +151,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days is ideal because Mongolia works best with one acclimatization day in the capital before the countryside, one culture day, and one spare half-day for weather or flight changes.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Sukhbaatar Square, Museums & City Bearings",
@@ -271,6 +291,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days gives you the classic near-UB national-park loop without rushing the horse riding or the ger-camp evening.",
+        "experiences": [
+          "National Parks",
+          "Mountains",
+          "Adventure Sports"
+        ],
         "days": [
           {
             "theme": "Park Entry, Turtle Rock & Aryabal Temple",
@@ -368,6 +393,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Kharkhorin works best as a two-day history-and-steppe stop between Terelj and the deeper southbound jeep journey.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Erdene Zuu & Karakorum Museum",
@@ -461,6 +489,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days is the sweet spot for a first Gobi visit because you can cover the canyon, dunes and dinosaur cliffs without turning the road days into a blur.",
+        "experiences": [
+          "Deserts",
+          "Wildlife & Safari",
+          "Adventure Sports"
+        ],
         "days": [
           {
             "theme": "Dalanzadgad Arrival & Yolyn Am",
@@ -598,6 +631,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days gives you the lake, one horse or boat day and enough slack for Murun flight timing and Hatgal road transfers.",
+        "experiences": [
+          "Lakes",
+          "National Parks",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Murun Flight, Hatgal Transfer & Lakeside Arrival",

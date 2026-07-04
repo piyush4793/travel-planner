@@ -22,12 +22,13 @@
     "family4": "₹3L–₹5L"
   },
   "experiences": [
-    "Medinas",
-    "Sahara",
-    "Riads",
-    "Souks",
-    "Atlantic Coast",
-    "Architecture"
+    "History",
+    "Markets & Shopping",
+    "Deserts",
+    "Architecture",
+    "Beaches",
+    "Mountains",
+    "UNESCO Sites"
   ],
   "avoid": [
     "July-August heat is brutal in Marrakech and Merzouga",
@@ -49,37 +50,93 @@
       "name": "Casablanca",
       "lat": 33.5731,
       "lng": -7.5898,
-      "notes": "Hassan II Mosque, Art Deco boulevards, Habous quarter bakeries and Atlantic corniche evenings"
+      "notes": "Hassan II Mosque, Art Deco boulevards, Habous quarter bakeries and Atlantic corniche evenings",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Marrakech",
       "lat": 31.6295,
       "lng": -7.9811,
-      "notes": "Bahia Palace, Majorelle Garden, Jemaa el-Fnaa and atmospheric riad stays inside the medina"
+      "notes": "Bahia Palace, Majorelle Garden, Jemaa el-Fnaa and atmospheric riad stays inside the medina",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Essaouira",
       "lat": 31.5085,
       "lng": -9.7595,
-      "notes": "Windy Atlantic ramparts, blue boats in the fishing port and a compact UNESCO-listed medina"
+      "notes": "Windy Atlantic ramparts, blue boats in the fishing port and a compact UNESCO-listed medina",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Merzouga",
       "lat": 31.0994,
       "lng": -4.0126,
-      "notes": "Erg Chebbi dunes, camel treks, desert camps and Gnawa music in nearby Khamlia"
+      "notes": "Erg Chebbi dunes, camel treks, desert camps and Gnawa music in nearby Khamlia",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Fes",
       "lat": 34.0181,
       "lng": -5.0078,
-      "notes": "Bou Inania, ancient tanneries, labyrinthine souks and the deepest old medina in Morocco"
+      "notes": "Bou Inania, ancient tanneries, labyrinthine souks and the deepest old medina in Morocco",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Chefchaouen",
       "lat": 35.1688,
       "lng": -5.2636,
-      "notes": "Blue-washed lanes, Kasbah gardens, Ras El Maa springs and sunset from the Spanish Mosque"
+      "notes": "Blue-washed lanes, Kasbah gardens, Ras El Maa springs and sunset from the Spanish Mosque",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -108,6 +165,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Architecture",
+          "History"
+        ],
         "days": [
           {
             "theme": "Atlantic Arrival, Art Deco Core & Morocco's Grand Mosque",
@@ -160,6 +221,11 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Markets & Shopping",
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Palaces, Tombs & First Night in Jemaa el-Fnaa",
@@ -292,6 +358,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Beaches",
+          "History"
+        ],
         "days": [
           {
             "theme": "Ramparts, Fishing Port & Windy Atlantic Medina",
@@ -344,6 +414,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Deserts"
+        ],
         "days": [
           {
             "theme": "Erg Chebbi Dunes, Camel Trail & Campfire Night",
@@ -428,6 +501,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Markets & Shopping",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Madrasas, Tanneries & Medina Craft Routes",
@@ -516,6 +594,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Architecture",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Blue Medina Lanes, Kasbah Garden & Rif Sunset",

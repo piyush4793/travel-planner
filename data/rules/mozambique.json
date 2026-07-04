@@ -26,11 +26,12 @@
     "family4": "₹6.1L–₹9.8L"
   },
   "experiences": [
-    "Maputo seafood and colonial architecture",
-    "Tofo whale shark ocean safaris",
-    "Bazaruto Archipelago dhow days",
-    "Gorongosa National Park safari drives",
-    "Ilha de Moçambique UNESCO fort and Swahili-Portuguese lanes"
+    "Beaches",
+    "Diving & Snorkeling",
+    "Islands",
+    "Wildlife & Safari",
+    "National Parks",
+    "History"
   ],
   "avoid": [
     "December to March is hotter, wetter, and the cyclone-risk window on the coast, so dhows, diving, and rough coastal roads get less reliable.",
@@ -54,31 +55,80 @@
       "name": "Maputo",
       "lat": -25.9692,
       "lng": 32.5732,
-      "notes": "The capital is the easiest gateway for FEIMA crafts, seafood restaurants, the ironwork railway station, and a first taste of Mozambique's Portuguese-Indian Ocean mix."
+      "notes": "The capital is the easiest gateway for FEIMA crafts, seafood restaurants, the ironwork railway station, and a first taste of Mozambique's Portuguese-Indian Ocean mix.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Tofo Beach",
       "lat": -23.8583,
       "lng": 35.5481,
-      "notes": "Tofo is the laid-back Inhambane coast base for whale shark ocean safaris, Tofinho surf viewpoints, and barefoot seafood dinners."
+      "notes": "Tofo is the laid-back Inhambane coast base for whale shark ocean safaris, Tofinho surf viewpoints, and barefoot seafood dinners.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Vilankulo",
       "lat": -21.9997,
       "lng": 35.3133,
-      "notes": "Vilankulo is the mainland launchpad for the Bazaruto Archipelago, with dhow trips, reef snorkeling, and long tidal sandbars."
+      "notes": "Vilankulo is the mainland launchpad for the Bazaruto Archipelago, with dhow trips, reef snorkeling, and long tidal sandbars.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Gorongosa National Park",
       "lat": -18.9789,
       "lng": 34.3549,
-      "notes": "Mozambique's headline safari park combines floodplains, lion and wild dog sightings, community projects, and the Chitengo wildlife hub."
+      "notes": "Mozambique's headline safari park combines floodplains, lion and wild dog sightings, community projects, and the Chitengo wildlife hub.",
+      "bestMonths": [
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Ilha de Moçambique",
       "lat": -15.0342,
       "lng": 40.7358,
-      "notes": "This UNESCO island layers Swahili, Arab, and Portuguese history with coral-stone mansions, Fort São Sebastião, and dhow-dotted sea views."
+      "notes": "This UNESCO island layers Swahili, Arab, and Portuguese history with coral-stone mansions, Fort São Sebastião, and dhow-dotted sea views.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     }
   ],
   "itinerary": {
@@ -106,6 +156,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Use Maputo as the soft landing for cash, SIM, and seafood before heading north by LAM or by road.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Historic core, station architecture, and a relaxed first evening by the bay",
@@ -201,6 +255,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Tofo works best as a two-night barefoot beach stop where one morning is reserved for ocean conditions and whale shark luck.",
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Beach reset, dune viewpoints, and an easy first night in Tofo",
@@ -291,6 +349,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Vilankulo is worth the detour for one full archipelago day; the sandbars and dhows are the actual reason to stay here.",
+        "experiences": [
+          "Beaches",
+          "Islands",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Arrival in Vilankulo, dhow silhouettes, and a first low-tide beach evening",
@@ -381,6 +444,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Give Gorongosa at least two nights so you can pair one classic game drive day with a slower community or walking add-on.",
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Chitengo arrival, floodplain game drive, and the first safari sunset",
@@ -471,6 +538,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "End here if you want a slower heritage finish; most sights are walkable once you arrive from Nampula by road.",
+        "experiences": [
+          "History",
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Stone Town lanes, museum fort walls, and a first evening over the sea",

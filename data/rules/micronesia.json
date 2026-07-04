@@ -26,12 +26,11 @@
     "family4": "₹6.9L–₹10.8L"
   },
   "experiences": [
-    "Ancient Ruins",
-    "Wreck Diving",
-    "Manta Rays",
-    "Island Flights",
-    "Village Culture",
-    "Snorkeling"
+    "Diving & Snorkeling",
+    "Islands",
+    "History",
+    "Beaches",
+    "Water Sports"
   ],
   "avoid": [
     "May–November is wetter across the FSM, so visibility, hiking comfort, and small-boat reliability are weaker than the drier December–April window.",
@@ -55,19 +54,46 @@
       "name": "Pohnpei",
       "lat": 6.8541,
       "lng": 158.2624,
-      "notes": "Pohnpei is Micronesia's lush historical anchor, mixing Kolonia's practical base with Nan Madol, waterfalls, reef outings, and easy United island-hopper access."
+      "notes": "Pohnpei is Micronesia's lush historical anchor, mixing Kolonia's practical base with Nan Madol, waterfalls, reef outings, and easy United island-hopper access.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Chuuk",
       "lat": 7.4465,
       "lng": 151.843,
-      "notes": "Chuuk revolves around Truk Lagoon: world-class WWII wreck diving, Weno-based resort logistics, and short boat rides to both wrecks and cultural stops."
+      "notes": "Chuuk revolves around Truk Lagoon: world-class WWII wreck diving, Weno-based resort logistics, and short boat rides to both wrecks and cultural stops.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Yap",
       "lat": 9.5167,
       "lng": 138.1167,
-      "notes": "Yap balances stone money villages, manta-ray channels, and a slower cultural rhythm than the rest of the FSM, with Colonia as the main practical base."
+      "notes": "Yap balances stone money villages, manta-ray channels, and a slower cultural rhythm than the rest of the FSM, with Colonia as the main practical base.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -91,6 +117,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Pohnpei works best as the history-and-nature start: give Nan Madol its own daylight block, then use a second day for waterfalls or a reef boat outing.",
+        "experiences": [
+          "History",
+          "Diving & Snorkeling",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Kolonia Arrival, Nan Madol and a Waterfall Detour",
@@ -175,6 +206,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Chuuk rewards divers with at least one full wreck day and one lighter topside or second-dive day; non-divers should still use boat time to see the lagoon from the water.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "History",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Weno Arrival, Lagoon Orientation and WWII Stories",
@@ -254,6 +290,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Yap is strongest when split between one cultural land-and-boat day and one manta-focused dive or snorkel day instead of rushing around multiple villages in one afternoon.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "History",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Stone Money Banks, Village Trails and Rumung Views",
