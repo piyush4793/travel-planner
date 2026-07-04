@@ -26,11 +26,14 @@
     "family4": "₹2.4L–₹4L"
   },
   "experiences": [
-    "Taj Mahal at sunrise",
-    "Golden Triangle forts",
-    "Ganga aarti in Varanasi",
-    "Mumbai heritage and street food",
-    "Goa beaches and Old Goa churches"
+    "History",
+    "Architecture",
+    "Temples & Religious Sites",
+    "Beaches",
+    "UNESCO Sites",
+    "Markets & Shopping",
+    "Nightlife",
+    "Food"
   ],
   "avoid": [
     "April–June heat is intense across Delhi, Agra and Jaipur, with afternoon sightseeing often uncomfortable.",
@@ -54,12 +57,14 @@
       "bestMonths": [
         "October",
         "November",
-        "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Mughal monuments, bazaars, big-city food trails and the best air-rail gateway for a classic North India loop"
+      "notes": "Mughal monuments, bazaars, big-city food trails and the best air-rail gateway for a classic North India loop",
+      "worstMonths": [
+        "May",
+        "June"
+      ]
     },
     {
       "name": "Agra",
@@ -68,12 +73,14 @@
       "bestMonths": [
         "October",
         "November",
-        "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Sunrise Taj Mahal views, Mughal forts and easy side trips to Fatehpur Sikri or Mehtab Bagh"
+      "notes": "Sunrise Taj Mahal views, Mughal forts and easy side trips to Fatehpur Sikri or Mehtab Bagh",
+      "worstMonths": [
+        "May",
+        "June"
+      ]
     },
     {
       "name": "Jaipur",
@@ -82,12 +89,14 @@
       "bestMonths": [
         "October",
         "November",
-        "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Palaces, stepwells, bazaars and Rajput fort viewpoints that round out the Golden Triangle"
+      "notes": "Palaces, stepwells, bazaars and Rajput fort viewpoints that round out the Golden Triangle",
+      "worstMonths": [
+        "May",
+        "June"
+      ]
     },
     {
       "name": "Varanasi",
@@ -96,12 +105,14 @@
       "bestMonths": [
         "October",
         "November",
-        "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Dawn boat rides, Kashi Vishwanath Corridor and a deeply atmospheric old-city pilgrimage circuit"
+      "notes": "Dawn boat rides, Kashi Vishwanath Corridor and a deeply atmospheric old-city pilgrimage circuit",
+      "worstMonths": [
+        "May",
+        "June"
+      ]
     },
     {
       "name": "Mumbai",
@@ -111,10 +122,13 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Colonial-era heritage, art districts, iconic cafés and the easiest rail-air jump onward to Goa"
+      "notes": "Colonial-era heritage, art districts, iconic cafés and the easiest rail-air jump onward to Goa",
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Goa",
@@ -124,10 +138,13 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Old Goa churches, Panjim's Latin Quarter, beach time and easy wildlife-day-trip options"
+      "notes": "Old Goa churches, Panjim's Latin Quarter, beach time and easy wildlife-day-trip options",
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -155,6 +172,12 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days cover Old Delhi's monuments and one full Lutyens-plus-UNESCO circuit before you move into the Golden Triangle.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Markets & Shopping",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Arrival, Old Delhi & Mughal Landmarks",
@@ -244,6 +267,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One well-planned day is enough for the Taj, Agra Fort and sunset viewpoints; add a second day only if you want Fatehpur Sikri without rushing.",
+        "experiences": [
+          "Architecture",
+          "History",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Sunrise Taj, Mughal Forts & Yamuna Sunset",
@@ -294,6 +322,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days give you Amber Fort plus the old-city palace observatory circuit; a third day is only needed for craft workshops or a slower fort run.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Amber Fort Circuit & Pink City Viewpoints",
@@ -383,6 +416,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days work best for one arrival-evening ghat circuit and one early-morning Sarnath day without compressing the riverfront experience.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Flight In, Ghats & Evening Aarti",
@@ -473,6 +510,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days are enough for South Mumbai heritage plus Elephanta; add a third only if you want Bandra, art galleries and a longer food crawl.",
+        "experiences": [
+          "Nightlife",
+          "Architecture",
+          "Food"
+        ],
         "days": [
           {
             "theme": "South Mumbai Icons & Museum Day",
@@ -558,6 +600,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days balance Old Goa heritage, one full beach day and one Dudhsagar or inland excursion without racing between the north and south ends.",
+        "experiences": [
+          "Beaches",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Mumbai Transfer, Panjim & Fontainhas",

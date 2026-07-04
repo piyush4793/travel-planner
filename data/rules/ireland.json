@@ -21,13 +21,13 @@
     "family4": "₹6L–₹9L"
   },
   "experiences": [
-    "Trinity College and Guinness in Dublin",
-    "Galway's Latin Quarter",
-    "Cliffs of Moher coastal views",
-    "Killarney National Park",
-    "Ring of Kerry scenic loop",
-    "Blarney Castle",
-    "Titanic Belfast"
+    "History",
+    "Architecture",
+    "Nightlife",
+    "Hiking",
+    "Road Trips",
+    "National Parks",
+    "Festivals"
   ],
   "avoid": [
     "July-August weekends sell out fast in Galway, Killarney, and Doolin — book rooms early.",
@@ -48,37 +48,91 @@
       "name": "Dublin",
       "lat": 53.3498,
       "lng": -6.2603,
-      "notes": "Trinity College, Guinness Storehouse, Georgian squares, pub culture and easy airport access"
+      "notes": "Trinity College, Guinness Storehouse, Georgian squares, pub culture and easy airport access",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Galway",
       "lat": 53.2707,
       "lng": -9.0568,
-      "notes": "Latin Quarter lanes, trad music pubs, Salthill promenade and west-coast base"
+      "notes": "Latin Quarter lanes, trad music pubs, Salthill promenade and west-coast base",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Cliffs of Moher",
       "lat": 52.9715,
       "lng": -9.4309,
-      "notes": "Iconic County Clare sea cliffs best paired with Doolin village and coastal walks"
+      "notes": "Iconic County Clare sea cliffs best paired with Doolin village and coastal walks",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Killarney",
       "lat": 52.0599,
       "lng": -9.5044,
-      "notes": "Killarney National Park, Muckross House, lakes and Ring of Kerry departures"
+      "notes": "Killarney National Park, Muckross House, lakes and Ring of Kerry departures",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Cork",
       "lat": 51.8985,
       "lng": -8.4756,
-      "notes": "English Market food culture, compact centre and easy access to Blarney Castle"
+      "notes": "English Market food culture, compact centre and easy access to Blarney Castle",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Belfast",
       "lat": 54.5973,
       "lng": -5.9301,
-      "notes": "Titanic Quarter, Belfast City Hall and a straightforward rail day trip from Dublin"
+      "notes": "Titanic Quarter, Belfast City Hall and a straightforward rail day trip from Dublin",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -109,6 +163,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Use Dublin to settle in, cover the big-ticket sights, and keep one flexible day for neighborhoods, museums, or an early Belfast run.",
+        "experiences": [
+          "History",
+          "Nightlife",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Trinity, Grafton Street & Georgian Core",
@@ -228,6 +287,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Galway is compact enough for a short stay but deserves two days if you want both city atmosphere and one worthwhile excursion.",
+        "experiences": [
+          "Nightlife",
+          "Festivals",
+          "History"
+        ],
         "days": [
           {
             "theme": "Latin Quarter, Salthill & Trad Music",
@@ -306,6 +370,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "A one-night stop in Doolin gives you a calmer Cliffs visit than a rushed day trip from Dublin and keeps you well placed for onward travel south.",
+        "experiences": [
+          "Hiking",
+          "National Parks",
+          "Road Trips"
+        ],
         "days": [
           {
             "theme": "Doolin Base & Cliff Walk",
@@ -351,6 +420,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Killarney works best with two nights so you can split national-park sights from the full Ring of Kerry circuit.",
+        "experiences": [
+          "National Parks",
+          "Hiking",
+          "Road Trips"
+        ],
         "days": [
           {
             "theme": "National Park, Lakes & Heritage Houses",
@@ -429,6 +503,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One full day covers central Cork plus Blarney Castle; stay longer only if you want a separate Cobh or Kinsale outing.",
+        "experiences": [
+          "History",
+          "Nightlife",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "English Market & Blarney Castle",
@@ -474,6 +553,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat Belfast as a long but manageable day trip from Dublin by Enterprise train, or stay one night if you want a slower Titanic Quarter morning.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Titanic Quarter & City Centre",

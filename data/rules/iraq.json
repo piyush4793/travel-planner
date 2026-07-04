@@ -26,11 +26,12 @@
     "family4": "₹3.2L–₹5.1L"
   },
   "experiences": [
-    "Baghdad's museum core, Abbasid streets and riverfront promenades",
-    "UNESCO-listed Babylon ruins and the Lion of Babylon outside Hillah",
-    "Najaf and Karbala's major shrine precincts with deep Shia pilgrimage history",
-    "Erbil Citadel, bazaars and the easier self-planned feel of the Kurdistan Region",
-    "Optional deep-south extension to the Ziggurat of Ur and a mashhoof boat ride in the Mesopotamian Marshes"
+    "Ancient Ruins",
+    "History",
+    "Temples & Religious Sites",
+    "Markets & Shopping",
+    "Mountains",
+    "Architecture"
   ],
   "avoid": [
     "June to September is extremely hot and dusty across Baghdad and southern Iraq, so long outdoor site days become punishing.",
@@ -52,25 +53,64 @@
       "name": "Baghdad",
       "lat": 33.3152,
       "lng": 44.3661,
-      "notes": "Best for the Iraq Museum, old book-market streets, river walks and practical flight connections before heading south or north."
+      "notes": "Best for the Iraq Museum, old book-market streets, river walks and practical flight connections before heading south or north.",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Erbil (Kurdistan)",
       "lat": 36.1911,
       "lng": 44.0092,
-      "notes": "The most relaxed independent stop in this plan, with the UNESCO citadel, bazaars, parks and easy hotel infrastructure."
+      "notes": "The most relaxed independent stop in this plan, with the UNESCO citadel, bazaars, parks and easy hotel infrastructure.",
+      "bestMonths": [
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Babylon",
       "lat": 32.5364,
       "lng": 44.42,
-      "notes": "Hillah-based heritage stop for Babylon's archaeological zone, the Lion of Babylon and Iraq's flagship Mesopotamian ruins."
+      "notes": "Hillah-based heritage stop for Babylon's archaeological zone, the Lion of Babylon and Iraq's flagship Mesopotamian ruins.",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Najaf/Karbala",
       "lat": 31.9951,
       "lng": 44.314,
-      "notes": "Twin-city pilgrimage corridor anchored by Najaf airport, major shrines, conservative dress norms and the best launchpad here for a longer south-Iraq extension."
+      "notes": "Twin-city pilgrimage corridor anchored by Najaf airport, major shrines, conservative dress norms and the best launchpad here for a longer south-Iraq extension.",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -97,6 +137,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Baghdad rewards an early start, hotel-arranged or trusted taxis, and enough buffer for museum security checks and Friday hour changes.",
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "National treasures, the old book market and the central Tigris core",
@@ -179,6 +223,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Most travelers visit from Baghdad or continue onward to Karbala/Najaf; start early because exposed ruins get harsh in midday heat.",
+        "experiences": [
+          "Ancient Ruins",
+          "History"
+        ],
         "days": [
           {
             "theme": "UNESCO ruins, processional reconstructions and Mesopotamian iconography",
@@ -225,6 +273,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Dress modestly, expect heavier security near the shrines, and treat the south-Iraq extension to Ur and the Marshes as a very long guided day or an overnight add-on.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Najaf's shrine heart, cemetery history and classic pilgrimage meals",
@@ -328,6 +381,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Erbil is usually the easiest self-managed stop in Iraq; shared taxis from the main garages are the normal way to add Shaqlawa, Sulaymaniyah or Duhok side trips beyond this core plan.",
+        "experiences": [
+          "History",
+          "Markets & Shopping",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "UNESCO citadel lanes, museum stop and the bazaar below",

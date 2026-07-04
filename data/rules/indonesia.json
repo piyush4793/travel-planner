@@ -23,11 +23,14 @@
     "family4": "₹1.5L–₹3L"
   },
   "experiences": [
-    "Komodo Dragons",
-    "Raja Ampat Diving",
-    "Java Temples",
+    "Beaches",
+    "Islands",
+    "Diving & Snorkeling",
     "Volcanoes",
-    "Orangutans (Borneo)"
+    "Temples & Religious Sites",
+    "Surfing",
+    "Wildlife & Safari",
+    "Ancient Ruins"
   ],
   "avoid": [
     "Monsoon season in most regions"
@@ -47,37 +50,97 @@
       "name": "Bali",
       "lat": -8.3405,
       "lng": 115.092,
-      "notes": "Ubud rice terraces, Tanah Lot sunset temple and surf at Uluwatu"
+      "notes": "Ubud rice terraces, Tanah Lot sunset temple and surf at Uluwatu",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Yogyakarta",
       "lat": -7.7972,
       "lng": 110.3688,
-      "notes": "Borobudur at sunrise, Prambanan temple complex and batik workshops"
+      "notes": "Borobudur at sunrise, Prambanan temple complex and batik workshops",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Jakarta",
       "lat": -6.2088,
       "lng": 106.8456,
-      "notes": "National Museum, Kota Tua Dutch colonial quarter and diverse food scene"
+      "notes": "National Museum, Kota Tua Dutch colonial quarter and diverse food scene",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Lombok",
       "lat": -8.65,
       "lng": 116.324,
-      "notes": "Gili Islands snorkeling, Rinjani volcano trek and quieter beaches"
+      "notes": "Gili Islands snorkeling, Rinjani volcano trek and quieter beaches",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Komodo",
       "lat": -8.55,
       "lng": 119.5,
-      "notes": "Komodo dragon encounters, Pink Beach and world-class diving"
+      "notes": "Komodo dragon encounters, Pink Beach and world-class diving",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Raja Ampat",
       "lat": -0.5,
       "lng": 130.5,
-      "notes": "Earth's most biodiverse marine ecosystem with 1500+ fish species"
+      "notes": "Earth's most biodiverse marine ecosystem with 1500+ fish species",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "March"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -106,6 +169,11 @@
         "minDays": 3,
         "recDays": 5,
         "maxDays": 6,
+        "experiences": [
+          "Beaches",
+          "Temples & Religious Sites",
+          "Surfing"
+        ],
         "days": [
           {
             "theme": "Arrival, Saraswati Temple & Ubud Palace",
@@ -294,6 +362,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Ancient Ruins",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Kraton, Water Castle & Malioboro",
@@ -418,6 +490,12 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches",
+          "Islands",
+          "Surfing",
+          "Volcanoes"
+        ],
         "days": [
           {
             "theme": "Gili Trawangan Arrival, Turtles & Sunset Hill",
@@ -498,6 +576,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Islands",
+          "Wildlife & Safari",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Labuan Bajo Arrival & Harbour Sunset",
@@ -578,6 +661,11 @@
         "minDays": 3,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Diving & Snorkeling",
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Waisai Arrival, Jetty Snorkel & Easy Sunset",

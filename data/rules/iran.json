@@ -23,12 +23,13 @@
     "family4": "₹1.9L–₹3L"
   },
   "experiences": [
-    "Persian architecture",
-    "Persepolis",
-    "Desert old towns",
-    "Safavid squares",
-    "Historic bazaars",
-    "Azeri and Persian food"
+    "History",
+    "Architecture",
+    "Ancient Ruins",
+    "Temples & Religious Sites",
+    "UNESCO Sites",
+    "Deserts",
+    "Markets & Shopping"
   ],
   "avoid": [
     "Peak central-plateau heat from June to August",
@@ -49,37 +50,91 @@
       "name": "Tehran",
       "lat": 35.6892,
       "lng": 51.389,
-      "notes": "Golestan Palace, National Museum, Tehran Grand Bazaar and modern bridge viewpoints"
+      "notes": "Golestan Palace, National Museum, Tehran Grand Bazaar and modern bridge viewpoints",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Isfahan",
       "lat": 32.6546,
       "lng": 51.668,
-      "notes": "Naqsh-e Jahan Square, Safavid mosques, Vank Cathedral and river bridges"
+      "notes": "Naqsh-e Jahan Square, Safavid mosques, Vank Cathedral and river bridges",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Shiraz",
       "lat": 29.5918,
       "lng": 52.5837,
-      "notes": "Nasir al-Mulk Mosque, Vakil Bazaar, Persepolis and Shirazi poetry sites"
+      "notes": "Nasir al-Mulk Mosque, Vakil Bazaar, Persepolis and Shirazi poetry sites",
+      "bestMonths": [
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Yazd",
       "lat": 31.8974,
       "lng": 54.3569,
-      "notes": "Adobe old town, windcatchers, Jameh Mosque and Amir Chakhmaq"
+      "notes": "Adobe old town, windcatchers, Jameh Mosque and Amir Chakhmaq",
+      "bestMonths": [
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Kerman",
       "lat": 30.2839,
       "lng": 57.0834,
-      "notes": "Ganjali Khan Complex, desert bazaars and Shazdeh Garden in nearby Mahan"
+      "notes": "Ganjali Khan Complex, desert bazaars and Shazdeh Garden in nearby Mahan",
+      "bestMonths": [
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Tabriz",
       "lat": 38.0962,
       "lng": 46.2738,
-      "notes": "Blue Mosque, covered bazaar, Azerbaijan Museum and El Goli park"
+      "notes": "Blue Mosque, covered bazaar, Azerbaijan Museum and El Goli park",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -110,6 +165,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Qajar palaces, archaeology and the old bazaar core",
@@ -194,6 +253,12 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Architecture",
+          "UNESCO Sites",
+          "Temples & Religious Sites",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Safavid masterpieces around Naqsh-e Jahan",
@@ -278,6 +343,12 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Ancient Ruins",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Pink mosque light, citadel walls and bazaar alleys",
@@ -358,6 +429,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Architecture",
+          "UNESCO Sites",
+          "Deserts"
+        ],
         "days": [
           {
             "theme": "Adobe lanes, windcatchers and sacred old-city monuments",
@@ -406,6 +482,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Deserts",
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Caravanserai heritage and a garden escape to Mahan",
@@ -450,6 +531,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Markets & Shopping",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Blue tiles, constitutional history and bazaar vaults",
