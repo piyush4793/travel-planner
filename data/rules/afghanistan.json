@@ -117,6 +117,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Use Kabul mainly for museum time, secure compounds, and onward logistics; keep sightseeing compact and daylight-only.",
+        "experiences": [
+          "Kabul museum and Babur garden circuit with secure hotel-based transfers"
+        ],
         "days": [
           {
             "theme": "Arrival logistics, Kabul Museum, and Darul Aman axis with vetted transfers",
@@ -216,6 +219,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days cover the Buddha cliff, Gholghola, and a full Band-e-Amir outing; add a third only if you want more weather buffer.",
+        "experiences": [
+          "Bamyan Valley's Buddha niches and a 4x4 day into Band-e-Amir's blue lakes"
+        ],
         "days": [
           {
             "theme": "Kabul to Bamyan by shared taxi or 4x4, Buddha niches, and sunset over Shahr-e Gholghola",
@@ -317,6 +323,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One focused day is enough for the citadel, Friday Mosque, and an old-city food circuit if flights cooperate.",
+        "experiences": [
+          "Timurid-era Herat Citadel, Friday Mosque tiles, and old-city bazaars"
+        ],
         "days": [
           {
             "theme": "Kam Air arrival, Herat Citadel, Friday Mosque, and Timurid-era landmarks",
@@ -372,6 +381,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Two days cover the Blue Mosque plus the easy Balkh excursion; use flights instead of long overland hops whenever possible.",
+        "experiences": [
+          "Mazar-i-Sharif's Blue Mosque courtyard and a shared-taxi side trip to ancient Balkh"
+        ],
         "days": [
           {
             "theme": "Flight into Mazar, Blue Mosque courtyard, and bazaar lanes around the shrine",

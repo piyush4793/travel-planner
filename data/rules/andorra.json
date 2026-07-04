@@ -137,6 +137,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Start in the capital for historic sights and spa time; keep a second day here only if you want Caldea plus the Naturland adventure-park detour south of the city.",
+        "experiences": [
+          "Andorra la Vella old town and Caldea",
+          "Naturland adventure park day trip"
+        ],
         "days": [
           {
             "theme": "Old Town, parliament history and Caldea evening",
@@ -221,6 +225,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Ordino is ideal for one slow heritage-and-landscape day: museum manor house, village lunch and a simple valley walk without constant transfers.",
+        "experiences": [
+          "Ordino heritage museums and valley walks"
+        ],
         "days": [
           {
             "theme": "Heritage village, manor house and valley viewpoints",
@@ -271,6 +278,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Give Canillo the dedicated mountain day: ski Grandvalira from December to March, or swap to viewpoints, churches and easy alpine stops in summer.",
+        "experiences": [
+          "Grandvalira skiing or summer mountain viewpoints"
+        ],
         "days": [
           {
             "theme": "Grandvalira mountain day",
@@ -322,6 +332,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Finish in Encamp if you want a gentler final day with gondola views, a museum stop and an easy lake walk before departure.",
+        "experiences": [
+          "Encamp Funicamp access and lake hikes"
+        ],
         "days": [
           {
             "theme": "Funicamp, auto museum and lake walk",

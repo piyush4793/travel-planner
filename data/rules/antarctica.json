@@ -44,8 +44,8 @@
   "cities": [
     {
       "name": "Drake Passage",
-      "lat": -58.0,
-      "lng": -65.0,
+      "lat": -58,
+      "lng": -65,
       "bestMonths": [
         "December",
         "January",
@@ -146,6 +146,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "2 days crossing each way — lectures, wildlife spotting from deck",
+        "experiences": [
+          "Drake Passage"
+        ],
         "days": [
           {
             "theme": "Drake Passage Crossing — Southbound",
@@ -189,6 +192,12 @@
         "recDays": 5,
         "maxDays": 7,
         "note": "Zodiac landings twice daily, weather permitting. Flexible itinerary based on ice conditions.",
+        "experiences": [
+          "Penguin Colonies",
+          "Iceberg Scenery",
+          "Polar Night",
+          "Zodiac Expeditions"
+        ],
         "days": [
           {
             "theme": "First Landing — Penguin Colonies",

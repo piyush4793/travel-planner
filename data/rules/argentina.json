@@ -106,6 +106,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Base yourself in Palermo or Recoleta, use Cabify after dark, and pre-book any paid tango show or football tour at least a few days ahead.",
+        "experiences": [
+          "Buenos Aires",
+          "Tango"
+        ],
         "days": [
           {
             "theme": "Centro, Plaza de Mayo & San Telmo",
@@ -217,6 +221,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay in Puerto Iguazú, carry a dry bag for the boat ride, and keep passport plus Brazil visa status ready if you plan to cross for the panoramic side.",
+        "experiences": [
+          "Iguazu Falls"
+        ],
         "days": [
           {
             "theme": "Argentina Side & Devil’s Throat",
@@ -372,6 +379,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Mendoza city as a sleep base and split time between Maipú or Luján de Cuyo wineries and one Andes landscape day.",
+        "experiences": [
+          "Wine (Mendoza)"
+        ],
         "days": [
           {
             "theme": "Maipú Bodegas & Malbec Tastings",
@@ -450,6 +460,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Bariloche is best in shoulder-season summer or autumn; keep one day flexible for lake weather and mountain visibility.",
+        "experiences": [
+          "Patagonia"
+        ],
         "days": [
           {
             "theme": "Circuito Chico & Classic Viewpoints",
@@ -530,6 +543,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Treat Patagonia here as the El Calafate plus Ushuaia combo: one glacier-heavy section and one end-of-the-world finale. Book flights early and keep buffer time for wind delays.",
+        "experiences": [
+          "Patagonia"
+        ],
         "days": [
           {
             "theme": "El Calafate & Perito Moreno Glacier",

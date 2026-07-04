@@ -98,6 +98,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Ottoman Casbahs",
+          "Roman Ruins"
+        ],
         "days": [
           {
             "theme": "Casbah Lanes, Ottoman Palaces & Bay Views",
@@ -231,6 +235,9 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Bridge City Views"
+        ],
         "days": [
           {
             "theme": "Suspension Bridges, Clifftop Views & Old Constantine",
@@ -353,6 +360,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "M'zab Ksar Life"
+        ],
         "days": [
           {
             "theme": "Ghardaia Ksar, Market Rhythm & Mozabite Views",
@@ -438,6 +448,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Sahara Rock Art"
+        ],
         "days": [
           {
             "theme": "Djanet Gateway, Ksar Lanes & Erg Admer Light",

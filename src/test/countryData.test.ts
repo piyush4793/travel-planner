@@ -71,6 +71,30 @@ describe("consolidatedToCountry", () => {
     expect(ella?.experiences).toEqual(["Tea country", "Wildlife"]);
   });
 
+  it("prefers authored itinerary-city experiences over text derivation", () => {
+    const withRule: ConsolidatedCountry = {
+      ...CONSOLIDATED,
+      cities: [{ name: "Ella", lat: 6.8, lng: 81.0, notes: "city beaches and nightlife" }],
+      itinerary: {
+        cityOrder: ["Ella"],
+        cities: {
+          Ella: {
+            name: "Ella",
+            minDays: 1,
+            recDays: 2,
+            maxDays: 3,
+            experiences: ["Tea country", "Wildlife"],
+            days: [{ theme: "Beach day", activities: [{ name: "Colombo Beach" }] }],
+          },
+        },
+        connections: [],
+      },
+    };
+    const c = consolidatedToCountry(withRule);
+    const ella = c.cities?.find((x) => x.name === "Ella");
+    expect(ella?.experiences).toEqual(["Tea country", "Wildlife"]);
+  });
+
   it("honours an authored city experiences override", () => {
     const authored: ConsolidatedCountry = {
       ...CONSOLIDATED,

@@ -235,6 +235,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One full day covers the UNESCO core well; stay a second night only if you want a slower canyon or village detour.",
+        "experiences": [
+          "Ottoman Towns",
+          "UNESCO Sites",
+          "Guesthouses"
+        ],
         "days": [
           {
             "theme": "Berat Castle, Onufri Icons & Ottoman Quarters",
@@ -320,6 +325,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "An overnight is the minimum, but two days lets you enjoy the castle, historic tower houses and a slower bazaar evening.",
+        "experiences": [
+          "Ottoman Towns",
+          "UNESCO Sites",
+          "Guesthouses"
+        ],
         "days": [
           {
             "theme": "Stone City Arrival & Castle Ridge",
@@ -409,6 +419,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Sarandë as the practical south-coast base: one day for Butrint and Ksamil, another for the Blue Eye or a pure beach day.",
+        "experiences": [
+          "Albanian Riviera",
+          "Road Trips"
+        ],
         "days": [
           {
             "theme": "Promenade, Lëkurësi Sunset & Easy Riviera Start",
@@ -534,6 +548,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One night is enough if you mainly want the waterfront and a break in the long south-to-north transit; add a second for the lagoon or a boat day.",
+        "experiences": [
+          "Albanian Riviera",
+          "Road Trips"
+        ],
         "days": [
           {
             "theme": "Lungomare, Independence History & Seafront Dinner",
@@ -619,6 +637,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Plan at least two nights for Theth so the long approach feels worth it and you can do one proper full-day hike.",
+        "experiences": [
+          "Mountain Hikes",
+          "Road Trips",
+          "Guesthouses"
+        ],
         "days": [
           {
             "theme": "Arrival in the Albanian Alps",

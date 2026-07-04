@@ -3,10 +3,12 @@ import type { ConsolidatedCountry } from "../../data/consolidatedCountry";
 import { matchCityExperiences, ruleCityText } from "./cityExperiences";
 
 /**
- * Attach the country-level experiences each city satisfies. An authored
- * `experiences` array on the city wins; otherwise we derive from the city's
- * notes plus its itinerary content (day themes + activities) so the panel and
- * engine share one consistent mapping. Cities with no match are left untouched.
+ * Attach the country-level experiences each city satisfies. Precedence:
+ *  1. an authored `experiences` array on the display city (rare hand-overrides),
+ *  2. an authored `experiences` array on the matching itinerary city (`CityRule`)
+ *     — the single source of truth shared with the engine,
+ *  3. otherwise derive from the city's notes + itinerary content (keyword match).
+ * Cities with no match are left untouched.
  */
 function withCityExperiences(
   cities: ConsolidatedCountry["cities"],
@@ -18,6 +20,9 @@ function withCityExperiences(
     if (Array.isArray(c.experiences) && c.experiences.length > 0) return c;
     if (countryExperiences.length === 0) return c;
     const ruleCity = itinerary?.cities[c.name];
+    if (ruleCity && Array.isArray(ruleCity.experiences) && ruleCity.experiences.length > 0) {
+      return { ...c, experiences: ruleCity.experiences };
+    }
     const text = `${c.notes ?? ""} ${ruleCity ? ruleCityText(ruleCity) : ""}`;
     const matched = matchCityExperiences(text, countryExperiences);
     return matched.length > 0 ? { ...c, experiences: matched } : c;

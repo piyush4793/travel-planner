@@ -99,6 +99,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Luanda for the history hit, your easiest hotel stock, and the transport reset before Kissama or the southwest domestic flight.",
+        "experiences": [
+          "Fortaleza de São Miguel and Luanda bay viewpoints"
+        ],
         "days": [
           {
             "theme": "Historic hilltop Luanda, the fort museum, and a first Marginal evening",
@@ -190,6 +193,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Kissama works best as a one- or two-night safari break from Luanda, especially if you want a slower game drive plus the Kwanza River add-on.",
+        "experiences": [
+          "Kissama National Park safari and Kwanza River wildlife"
+        ],
         "days": [
           {
             "theme": "Drive down from Luanda, settle in, and take an afternoon wildlife loop",
@@ -280,6 +286,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Benguela is the easiest coast-and-seafood reset after Luanda, and Catumbela airport makes it the simplest domestic hop before Lubango.",
+        "experiences": [
+          "Benguela coast seafood and Catumbela beach time"
+        ],
         "days": [
           {
             "theme": "Catumbela arrival, Praia Morena, and a relaxed first seafood dinner",
@@ -370,6 +379,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Lubango deserves at least two nights so you can split the plateau views between Tundavala, Cristo Rei, and the Serra da Leba road without rushing the weather.",
+        "experiences": [
+          "Serra da Leba switchbacks and Tundavala Fissure panoramas",
+          "Cristo Rei sunset above Lubango"
+        ],
         "days": [
           {
             "theme": "Cristo Rei views, city reset, and an easy first evening in the highlands",
