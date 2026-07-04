@@ -5,7 +5,7 @@ import App from "../../App";
 import { setHashRoute } from "../testUtils";
 import type { Country } from "../../core/types";
 import { isEnabled } from "../../core/featureFlags";
-import { hasAnyLocalData, canAutoImport, restoreFromTarget } from "../../utils/backup";
+import { hasAnyLocalData, canAutoImport, restoreFromTarget, isBackupOverdue } from "../../utils/backup";
 
 const COUNTRY_NAMES = {
   JAPAN: "Japan",
@@ -576,5 +576,21 @@ describe("App fresh-device restore offer", () => {
     await waitFor(() =>
       expect(screen.queryByText(/We found a saved backup/i)).not.toBeInTheDocument(),
     );
+  });
+
+  it("dismisses the backup-overdue reminder", async () => {
+    const user = userEvent.setup();
+    vi.mocked(isBackupOverdue).mockReturnValue(true);
+    try {
+      render(<App />);
+
+      const banner = await screen.findByText(/haven't backed up recently/i);
+      expect(banner).toBeInTheDocument();
+
+      await user.click(screen.getByRole("button", { name: "Dismiss" }));
+      expect(screen.queryByText(/haven't backed up recently/i)).not.toBeInTheDocument();
+    } finally {
+      vi.mocked(isBackupOverdue).mockReturnValue(false);
+    }
   });
 });

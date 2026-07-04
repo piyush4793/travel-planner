@@ -175,4 +175,45 @@ describe("FreTour", () => {
 
     trigger.remove();
   });
+
+  it("renders floating emoji decorations when motion is allowed", async () => {
+    mockMatchMedia(false, false); // not mobile, motion allowed
+    await openTour();
+
+    const dialog = screen.getByRole("dialog", { name: /welcome tour/i });
+    const decorations = dialog.querySelectorAll('[aria-hidden="true"] span');
+    expect(decorations.length).toBeGreaterThan(0);
+  });
+
+  it("renders a spotlight backdrop over a visible target element", async () => {
+    const target = document.createElement("button");
+    target.setAttribute("data-tour", "nav-trips");
+    target.getBoundingClientRect = () =>
+      ({ left: 20, top: 30, width: 100, height: 40, right: 120, bottom: 70, x: 20, y: 30, toJSON: () => ({}) }) as DOMRect;
+    document.body.appendChild(target);
+
+    const { user } = await openTour();
+    await user.click(screen.getByRole("button", { name: /Next/i }));
+
+    expect(screen.getByRole("heading", { name: /Your Trip Dashboard/i })).toBeInTheDocument();
+    const dialog = screen.getByRole("dialog", { name: /welcome tour/i });
+    await waitFor(() => expect(dialog.querySelector("svg mask#fre-mask")).not.toBeNull());
+
+    target.remove();
+  });
+
+  it("traps focus within the dialog when tabbing past the boundaries", async () => {
+    const { user } = await openTour();
+    const dialog = screen.getByRole("dialog", { name: /welcome tour/i });
+    const focusable = dialog.querySelectorAll<HTMLElement>("button");
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    last.focus();
+    await user.tab();
+    expect(document.activeElement).toBe(first);
+
+    await user.tab({ shift: true });
+    expect(document.activeElement).toBe(last);
+  });
 });

@@ -13,6 +13,8 @@ import {
   importCountriesCSV,
   importFullBackup,
   isBackupOverdue,
+  parseBackupFile,
+  applyBackup,
   setBackupFrequency,
   setBackupSchedule,
 } from "../utils/backup";
@@ -99,6 +101,63 @@ describe("backup import/export helpers — P0", () => {
       ok: false,
       msg: "Invalid backup file — missing data field",
     });
+  });
+
+  it("previews a valid backup file with country, trip, and AI-plan counts", async () => {
+    const backup = {
+      version: 1,
+      exportedAt: "2026-06-15T00:00:00.000Z",
+      data: {
+        [LS_KEYS.MY_LIST]: ["Japan", "Vietnam", "Peru"],
+        [LS_KEYS.CUSTOMS]: [{ name: "Brazil" }],
+        [LS_KEYS.TRIP_CUSTOMS]: [{ main: "Japan", addOns: [] }],
+        [LS_KEYS.AI_PLANS]: { Japan: [{ id: "a" }, { id: "b" }], Peru: [{ id: "c" }] },
+      },
+    };
+
+    const preview = await parseBackupFile(createFile(JSON.stringify(backup), "backup.json"));
+
+    expect(preview.ok).toBe(true);
+    if (!preview.ok) return;
+    expect(preview.countryCount).toBe(3);
+    expect(preview.tripCount).toBe(1);
+    expect(preview.aiPlanCount).toBe(3);
+    expect(preview.totalKeys).toBe(4);
+    expect(preview.exportedAt).toBe("2026-06-15T00:00:00.000Z");
+  });
+
+  it("rejects a backup preview with a missing data field or a future version", async () => {
+    const noData = await parseBackupFile(createFile(JSON.stringify({ version: 1 }), "b.json"));
+    expect(noData).toEqual({ ok: false, msg: "Invalid backup file — missing data field" });
+
+    const future = await parseBackupFile(createFile(JSON.stringify({ version: 999, data: {} }), "b.json"));
+    expect(future.ok).toBe(false);
+    if (!future.ok) expect(future.msg).toMatch(/Unsupported backup version/);
+  });
+
+  it("rejects a backup preview with too many unknown keys or invalid JSON", async () => {
+    const junk = { version: 1, data: { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 } };
+    const tooMany = await parseBackupFile(createFile(JSON.stringify(junk), "b.json"));
+    expect(tooMany).toEqual({ ok: false, msg: "Backup contains too many unrecognized keys — may be corrupted" });
+
+    const bad = await parseBackupFile(createFile("{not json", "b.json"));
+    expect(bad).toEqual({ ok: false, msg: "Could not parse backup file — invalid JSON" });
+  });
+
+  it("applies a valid backup to storage and rejects an unsupported version", () => {
+    const ok = applyBackup({
+      version: 1,
+      exportedAt: "2026-06-15T00:00:00.000Z",
+      data: { [LS_KEYS.MY_LIST]: ["Japan"], [LS_KEYS.FAVORITES]: ["Japan"] },
+    });
+    expect(ok.ok).toBe(true);
+    expect(ok.msg).toMatch(/Restored 2 items/);
+    expect(JSON.parse(localStorage.getItem(LS_KEYS.MY_LIST) ?? "[]")).toEqual(["Japan"]);
+    expect(localStorage.getItem(LS_KEYS.LAST_BACKUP)).not.toBeNull();
+
+    const bad = applyBackup({ version: 999, exportedAt: "", data: {} } as never);
+    expect(bad.ok).toBe(false);
+    expect(bad.msg).toMatch(/Unsupported backup version/);
   });
 
   it("gets and sets backup frequency with a monthly default", () => {
@@ -191,6 +250,13 @@ describe("backup import/export helpers — P0", () => {
 
     localStorage.setItem(LS_KEYS.LAST_BACKUP, JSON.stringify("2026-06-16T08:00:00.000Z"));
     expect(isBackupOverdue()).toBe(false);
+
+    // Monthly next-label branches: before the target day (this month) and after it (next month)
+    setBackupSchedule({ monthDay: 20, weekday: 1 });
+    vi.setSystemTime(new Date("2026-06-10T12:00:00.000Z"));
+    expect(getNextBackupLabel()).toBeTruthy();
+    vi.setSystemTime(new Date("2026-06-25T12:00:00.000Z"));
+    expect(getNextBackupLabel()).toBeTruthy();
 
     vi.useRealTimers();
   });
