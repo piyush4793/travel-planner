@@ -24,12 +24,12 @@
     "family4": "₹2.5L–₹3.7L"
   },
   "experiences": [
-    "Kuwait Towers skyline views",
-    "Grand Mosque guided visit",
-    "Souq Al-Mubarakiya food walk",
-    "Failaka Island archaeology and ferry ride",
-    "Al Shaheed Park evening promenade",
-    "The Avenues Mall shopping break"
+    "Architecture",
+    "History",
+    "Markets & Shopping",
+    "Islands",
+    "Beaches",
+    "Museums"
   ],
   "avoid": [
     "Long outdoor sightseeing from May to September because of intense Gulf heat",
@@ -54,11 +54,14 @@
       "bestMonths": [
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Kuwait Towers, Grand Mosque, Al Shaheed Park, Mubarakiya souq lanes and the country’s strongest hotel base"
+      "notes": "Kuwait Towers, Grand Mosque, Al Shaheed Park, Mubarakiya souq lanes and the country’s strongest hotel base",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Failaka Island",
@@ -67,11 +70,14 @@
       "bestMonths": [
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Short ferry-linked island with Hellenistic ruins, heritage village stretches and low-key winter day-trip appeal"
+      "notes": "Short ferry-linked island with Hellenistic ruins, heritage village stretches and low-key winter day-trip appeal",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Jahra",
@@ -80,11 +86,14 @@
       "bestMonths": [
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Historic Red Fort stop with desert-edge suburbs, birding wetlands and straightforward westward road access from the capital"
+      "notes": "Historic Red Fort stop with desert-edge suburbs, birding wetlands and straightforward westward road access from the capital",
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -111,6 +120,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Keep one hotel base in Kuwait City and use it for the whole trip; it cuts luggage hassle and makes Failaka and Jahra day trips much easier.",
+        "experiences": [
+          "Architecture",
+          "Markets & Shopping",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Waterfront icons, mosque architecture and a first-night souq reset",
@@ -280,6 +294,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat Failaka as a weather-sensitive day trip from Kuwait City; ferries and island transport are smoother when booked a day ahead.",
+        "experiences": [
+          "History",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Ferry out for archaeology, beaches and the quieter Gulf side of Kuwait",
@@ -325,6 +343,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Jahra is easiest as a westbound day trip by KPTC bus, taxi or rental car; stay overnight only if you want a slower wetlands detour.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Red Fort history, suburban Kuwait and a glimpse of the country’s western edge",

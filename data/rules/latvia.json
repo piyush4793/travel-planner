@@ -23,11 +23,12 @@
     "family4": "₹3.8L–₹5.8L"
   },
   "experiences": [
-    "Riga Art Nouveau",
-    "Baltic Beaches",
-    "Gauja National Park",
-    "Medieval Castles",
-    "Karosta"
+    "History",
+    "Architecture",
+    "Beaches",
+    "Art & Design",
+    "National Parks",
+    "UNESCO Sites"
   ],
   "avoid": [
     "November–February — cold Baltic winds, short daylight, and greyer beach towns",
@@ -49,7 +50,16 @@
       "name": "Riga",
       "lat": 56.9496,
       "lng": 24.1052,
-      "notes": "Compact capital for Art Nouveau streets, market halls, church towers and classic Latvian dining"
+      "notes": "Compact capital for Art Nouveau streets, market halls, church towers and classic Latvian dining",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Jūrmala",
@@ -60,25 +70,54 @@
         "July",
         "August"
       ],
-      "notes": "Easy VIVI train beach escape with long white-sand shoreline, pine parks and wooden villas"
+      "notes": "Easy VIVI train beach escape with long white-sand shoreline, pine parks and wooden villas",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Sigulda",
       "lat": 57.1538,
       "lng": 24.8595,
-      "notes": "Gauja National Park base for Turaida Castle, cable car views and gentle castle-to-cave hiking"
+      "notes": "Gauja National Park base for Turaida Castle, cable car views and gentle castle-to-cave hiking",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Cēsis",
       "lat": 57.3119,
       "lng": 25.2745,
-      "notes": "Small medieval town with Latvia's strongest castle complex and a very walkable old centre"
+      "notes": "Small medieval town with Latvia's strongest castle complex and a very walkable old centre",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Liepāja",
       "lat": 56.5047,
       "lng": 21.0108,
-      "notes": "Laid-back Baltic port with a wide Blue Flag beach, Karosta history and strong cafe culture"
+      "notes": "Laid-back Baltic port with a wide Blue Flag beach, Karosta history and strong cafe culture",
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -107,6 +146,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days is the sweet spot for Riga because you can split the Old Town icons, Art Nouveau museums, and a slower market-and-canal day without rushing.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Art & Design"
+        ],
         "days": [
           {
             "theme": "Old Town Icons, Market Halls & Church Tower Views",
@@ -224,6 +268,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Jūrmala works best as a sunny one-night or full-day seaside break from Riga, especially if you want beach time rather than museums.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Beach Day, Pine Parks & Wooden Villas",
@@ -305,6 +352,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Two nights lets you do the castles and cave trails at a relaxed pace and still leave room for the cable car or another active stop in Gauja National Park.",
+        "experiences": [
+          "National Parks",
+          "History"
+        ],
         "days": [
           {
             "theme": "Turaida Castle, Cable Car & Gauja Views",
@@ -386,6 +437,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Cēsis is best as a compact castle-and-old-town stop, but staying a night makes the town feel much less rushed after day-trippers leave.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Castle Complex, Old Town & Park Walks",
@@ -466,6 +521,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is ideal for Liepāja because one day can focus on Karosta's military history while the other is better spent on the beach, promenade, and cafes.",
+        "experiences": [
+          "Beaches",
+          "History",
+          "Art & Design"
+        ],
         "days": [
           {
             "theme": "Karosta History & Northern Forts",

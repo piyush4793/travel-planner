@@ -23,12 +23,12 @@
     "family4": "₹1.95L–₹2.95L"
   },
   "experiences": [
-    "Ottoman Bazaars",
-    "Orthodox Monasteries",
-    "Cheap Bus Loops",
-    "Cafe Streets",
-    "Fortress Views",
-    "Rugova Gateway"
+    "History",
+    "Architecture",
+    "Mountains",
+    "Hiking",
+    "Temples & Religious Sites",
+    "Waterfalls"
   ],
   "avoid": [
     "July and August weekends are busiest in Prizren and around Rugova, so central rooms and evening tables book out earlier than elsewhere in Kosovo.",
@@ -50,25 +50,61 @@
       "name": "Pristina",
       "lat": 42.6629,
       "lng": 21.1655,
-      "notes": "Compact capital for cafe culture, easy half-day monastery trips, museums and the country's best transport connections."
+      "notes": "Compact capital for cafe culture, easy half-day monastery trips, museums and the country's best transport connections.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Prizren",
       "lat": 42.2139,
       "lng": 20.7397,
-      "notes": "Kosovo's prettiest Ottoman town with riverside dining, mosque silhouettes and a fortress viewpoint above the old core."
+      "notes": "Kosovo's prettiest Ottoman town with riverside dining, mosque silhouettes and a fortress viewpoint above the old core.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Peja (Peć)",
       "lat": 42.6591,
       "lng": 20.2883,
-      "notes": "Western base for the Patriarchate of Peć, old bazaar lanes and quick escapes toward Rugova Canyon."
+      "notes": "Western base for the Patriarchate of Peć, old bazaar lanes and quick escapes toward Rugova Canyon.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Gjakova",
       "lat": 42.3803,
       "lng": 20.4308,
-      "notes": "Relaxed old-bazaar stop with artisan streets, tekke history and a slower local feel than Kosovo's bigger hubs."
+      "notes": "Relaxed old-bazaar stop with artisan streets, tekke history and a slower local feel than Kosovo's bigger hubs.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -94,6 +130,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers the capital plus its classic monastery-and-sanctuary side trips; take a third only for a slower museum and park day.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "City Center Landmarks, Museums & Cafe Streets",
@@ -219,6 +259,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One day is enough for the old town and fortress; keep a second only if you want more museum time and a slower riverside evening.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Shadervan, Sinan Pasha Mosque & Prizren Fortress",
@@ -304,6 +349,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One night covers the monastery and bazaar well, while a second gives you enough slack for Rugova scenery without rushing onward.",
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Patriarchate of Peć, Old Bazaar & Riverfront Evening",
@@ -389,6 +439,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "A full day is enough for the old bazaar and heritage core; stay longer only if you want a deliberately slower final stop before returning to Pristina.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Çarshia e Madhe, Hadum Mosque & Historic Inns",

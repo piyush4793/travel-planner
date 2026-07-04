@@ -24,11 +24,12 @@
     "family4": "₹4.3L–₹6.4L"
   },
   "experiences": [
-    "Banco National Park",
-    "Basilica of Our Lady of Peace",
-    "Grand-Bassam UNESCO Quarter",
-    "Mount Tonkoui",
-    "Assinie Lagoon and Beach"
+    "Beaches",
+    "History",
+    "Architecture",
+    "Markets & Shopping",
+    "Mountains",
+    "Wildlife & Safari"
   ],
   "avoid": [
     "April to October brings the wettest roads and the most humidity, which slows western drives to Man and makes mountain trails around Tonkoui far muddier.",
@@ -51,31 +52,76 @@
       "name": "Abidjan",
       "lat": 5.3599517,
       "lng": -4.0082563,
-      "notes": "Lagoon-side high-rises, serious food, Banco rainforest, big markets, and the country's easiest base for onward transport."
+      "notes": "Lagoon-side high-rises, serious food, Banco rainforest, big markets, and the country's easiest base for onward transport.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Yamoussoukro",
       "lat": 6.8206,
       "lng": -5.2767,
-      "notes": "Monumental basilica, broad ceremonial boulevards, crocodile lake viewpoints, and Côte d'Ivoire's political capital stop."
+      "notes": "Monumental basilica, broad ceremonial boulevards, crocodile lake viewpoints, and Côte d'Ivoire's political capital stop.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Grand-Bassam",
       "lat": 5.2009,
       "lng": -3.7388,
-      "notes": "UNESCO-listed colonial quarter, surfy beaches, costume museum, and the easiest heritage side trip from Abidjan."
+      "notes": "UNESCO-listed colonial quarter, surfy beaches, costume museum, and the easiest heritage side trip from Abidjan.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Man",
       "lat": 7.4125,
       "lng": -7.5538,
-      "notes": "Waterfalls, mountain viewpoints, western market energy, and the jumping-off point for Mount Tonkoui and deeper forest detours."
+      "notes": "Waterfalls, mountain viewpoints, western market energy, and the jumping-off point for Mount Tonkoui and deeper forest detours.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Assinie",
       "lat": 5.1333,
       "lng": -3.3,
-      "notes": "Lagoon-meets-ocean scenery, beach lodges, boat excursions, and Côte d'Ivoire's classic easy seaside reset."
+      "notes": "Lagoon-meets-ocean scenery, beach lodges, boat excursions, and Côte d'Ivoire's classic easy seaside reset.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -102,6 +148,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Start with Banco's urban rainforest, Plateau's skyline, and the most polished first-night food options in the country.",
@@ -194,6 +243,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Slide east for UNESCO heritage, colonial facades, and an easy first beach evening.",
@@ -286,6 +339,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Trade heritage for lagoon-and-ocean scenery with one of the country's easiest resort-style breaks.",
@@ -378,6 +434,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Aim inland for monumental architecture, broad capital avenues, and the city's signature basilica visit.",
@@ -470,6 +529,9 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Push west into the highlands for waterfalls, market energy, and the best cool-weather break in the country.",

@@ -19,12 +19,14 @@
     "family4": "₹5L–₹10L"
   },
   "experiences": [
-    "Cherry Blossoms",
+    "History",
+    "Temples & Religious Sites",
     "Food",
-    "Culture",
-    "Temples",
-    "Anime",
-    "Bullet Train"
+    "Nightlife",
+    "Architecture",
+    "UNESCO Sites",
+    "Wildlife & Safari",
+    "Hot Springs & Wellness"
   ],
   "avoid": [
     "Golden Week (late April–early May)",
@@ -45,37 +47,91 @@
       "name": "Tokyo",
       "lat": 35.6762,
       "lng": 139.6503,
-      "notes": "Shibuya crossing, Asakusa temple, Akihabara and world-class ramen"
+      "notes": "Shibuya crossing, Asakusa temple, Akihabara and world-class ramen",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Kyoto",
       "lat": 35.0116,
       "lng": 135.7681,
-      "notes": "Arashiyama bamboo grove, Fushimi Inari, Gion geisha district"
+      "notes": "Arashiyama bamboo grove, Fushimi Inari, Gion geisha district",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Osaka",
       "lat": 34.6937,
       "lng": 135.5023,
-      "notes": "Dotonbori food street, Osaka Castle, takoyaki capital of Japan"
+      "notes": "Dotonbori food street, Osaka Castle, takoyaki capital of Japan",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Hiroshima",
       "lat": 34.3853,
       "lng": 132.4553,
-      "notes": "Peace Memorial Park, A-Bomb Dome and Miyajima floating torii gate"
+      "notes": "Peace Memorial Park, A-Bomb Dome and Miyajima floating torii gate",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Nara",
       "lat": 34.6851,
       "lng": 135.8048,
-      "notes": "Free-roaming deer and the giant Todai-ji Buddha"
+      "notes": "Free-roaming deer and the giant Todai-ji Buddha",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Hakone",
       "lat": 35.2321,
       "lng": 139.1069,
-      "notes": "Volcanic hot springs and clear views of Mt Fuji across the lake"
+      "notes": "Volcanic hot springs and clear views of Mt Fuji across the lake",
+      "bestMonths": [
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -104,6 +160,12 @@
         "recDays": 4,
         "maxDays": 5,
         "note": "Tokyo comfortably fills four full days; add a fifth for Disney, Nikko, or a slower shopping day.",
+        "experiences": [
+          "Nightlife",
+          "Food",
+          "Architecture",
+          "History"
+        ],
         "days": [
           {
             "theme": "Arrival & Neon Shinjuku",
@@ -246,6 +308,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Best as a scenic onsen stop between Tokyo and Kyoto; stay overnight if you want sunrise Fuji views.",
+        "experiences": [
+          "Hot Springs & Wellness"
+        ],
         "days": [
           {
             "theme": "Mt. Fuji Views, Ropeways & Onsen",
@@ -291,6 +356,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days covers the classic east, west, and central Kyoto circuit; add another if you want tea ceremonies or Uji.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Arrival, Nishiki Market & Gion Evenings",
@@ -406,6 +476,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Osaka is best for food and nightlife; many travelers keep it as the base for a Nara day trip.",
+        "experiences": [
+          "Food",
+          "Nightlife",
+          "History"
+        ],
         "days": [
           {
             "theme": "Castle, Markets & Dotonbori Neon",
@@ -482,6 +557,12 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Usually done as a full day trip from Osaka; if you stay overnight, it is one of Japan's most atmospheric heritage cities.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "Wildlife & Safari",
+          "History",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Sacred Deer & Ancient Capital Highlights",
@@ -529,6 +610,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Two days lets you pair Hiroshima's peace memorial sites with a proper Miyajima island visit.",
+        "experiences": [
+          "History",
+          "Temples & Religious Sites",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Peace Memorials & City History",

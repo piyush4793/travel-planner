@@ -23,11 +23,12 @@
     "family4": "₹1.2L–₹2L"
   },
   "experiences": [
-    "Luang Prabang",
-    "Mekong River",
+    "Temples & Religious Sites",
+    "History",
     "Waterfalls",
-    "Temples",
-    "Slow Travel"
+    "Cruises & Boat Trips",
+    "UNESCO Sites",
+    "Markets & Shopping"
   ],
   "avoid": [
     "Monsoon (May-Oct) makes roads difficult"
@@ -47,25 +48,61 @@
       "name": "Vientiane",
       "lat": 17.9757,
       "lng": 102.6331,
-      "notes": "Patuxai victory arch, Pha That Luang stupa and slow Mekong evenings"
+      "notes": "Patuxai victory arch, Pha That Luang stupa and slow Mekong evenings",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Luang Prabang",
       "lat": 19.8833,
       "lng": 102.1347,
-      "notes": "UNESCO old town with alms-giving monks at dawn and Kuang Si Falls"
+      "notes": "UNESCO old town with alms-giving monks at dawn and Kuang Si Falls",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Vang Vieng",
       "lat": 18.924,
       "lng": 102.4508,
-      "notes": "Karst mountain backdrop, Nam Song River tubing and hot air balloons"
+      "notes": "Karst mountain backdrop, Nam Song River tubing and hot air balloons",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Pakse",
       "lat": 15.1203,
       "lng": 105.7999,
-      "notes": "Gateway to 4000 Islands and Bolaven Plateau coffee country"
+      "notes": "Gateway to 4000 Islands and Bolaven Plateau coffee country",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     }
   ],
   "itinerary": {
@@ -90,6 +127,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers the capital well; add a third only if you want a slower arrival or more café time by the Mekong.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Sacred Vientiane & National Symbols",
@@ -183,6 +225,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Keep two full days for the lagoons and river activities; a third day only helps if weather delays ballooning or kayaking.",
+        "experiences": [
+          "Cruises & Boat Trips"
+        ],
         "days": [
           {
             "theme": "Blue Lagoons, Caves & Karst Viewpoints",
@@ -278,6 +323,12 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days is the sweet spot; add a fourth only if you want a slow-boat arrival, more cafés, or another waterfall day.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "UNESCO Sites",
+          "History",
+          "Cruises & Boat Trips"
+        ],
         "days": [
           {
             "theme": "Royal Temples, Alms Ceremony & Phou Si Sunset",
@@ -412,6 +463,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Pakse as your southern Laos hub; if Si Phan Don matters more than waterfalls, swap the second day for a Don Det extension and overnight farther south.",
+        "experiences": [
+          "Waterfalls",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Wat Phou Heritage & Pakse Riverside",

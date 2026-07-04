@@ -23,11 +23,13 @@
     "family4": "₹2.45L–₹3.7L"
   },
   "experiences": [
-    "Corniche and Raouche sunset in Beirut",
-    "Jeita Grotto cave ride and walkways",
-    "Byblos old souk and crusader-era castle",
-    "Baalbek's Temple of Bacchus and Roman complex",
-    "Cedars of God forest with a Qadisha Valley hike"
+    "History",
+    "Ancient Ruins",
+    "Food",
+    "Nightlife",
+    "Mountains",
+    "UNESCO Sites",
+    "Skiing"
   ],
   "avoid": [
     "Humid coast and traffic-heavy intercity drives in July and August",
@@ -49,31 +51,76 @@
       "name": "Beirut",
       "lat": 33.8938,
       "lng": 35.5018,
-      "notes": "Capital base for Hamra, Mar Mikhael, Raouche, museums and easy day trips to Jeita Grotto or Jounieh/Harissa"
+      "notes": "Capital base for Hamra, Mar Mikhael, Raouche, museums and easy day trips to Jeita Grotto or Jounieh/Harissa",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Byblos",
       "lat": 34.1231,
       "lng": 35.6484,
-      "notes": "Historic harbor town with Byblos Castle, old souk lanes, Phoenician-Roman archaeology and seafood by the port"
+      "notes": "Historic harbor town with Byblos Castle, old souk lanes, Phoenician-Roman archaeology and seafood by the port",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Tripoli",
       "lat": 34.4335,
       "lng": 35.8442,
-      "notes": "Mamluk old city, Saint-Gilles Citadel, famous sweet shops and Mina waterfront life on Lebanon's north coast"
+      "notes": "Mamluk old city, Saint-Gilles Citadel, famous sweet shops and Mina waterfront life on Lebanon's north coast",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Bcharre/Cedars",
       "lat": 34.2508,
       "lng": 36.0106,
-      "notes": "Mountain base for the Cedars of God reserve, Gibran Museum and Qadisha Valley monastery hikes"
+      "notes": "Mountain base for the Cedars of God reserve, Gibran Museum and Qadisha Valley monastery hikes",
+      "bestMonths": [
+        "January",
+        "February",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "May"
+      ]
     },
     {
       "name": "Baalbek",
       "lat": 34.0058,
       "lng": 36.2181,
-      "notes": "Bekaa Valley archaeological city for the Roman temples, old Palmyra hotel atmosphere and nearby stone quarries"
+      "notes": "Bekaa Valley archaeological city for the Roman temples, old Palmyra hotel atmosphere and nearby stone quarries",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -101,6 +148,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Beirut as the transport hub: Uber works best inside the city, while Jeita and most intercity hops are easier with a service taxi, van or hired driver.",
+        "experiences": [
+          "Nightlife",
+          "Food",
+          "History"
+        ],
         "days": [
           {
             "theme": "Ease in with Beirut's seafront, downtown core and classic neighborhood food stops",
@@ -209,6 +261,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Ancient Ruins",
+          "History",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Cover the castle, archaeological layers and photogenic harbor in one compact old-town day",
@@ -285,6 +342,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Focus on citadel history, souks and the city's most famous sweets in the old core",
@@ -362,6 +423,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Stay overnight if you want the forest, museum and Qadisha viewpoints without squeezing them into one rushed mountain transfer day.",
+        "experiences": [
+          "Mountains",
+          "Skiing"
+        ],
         "days": [
           {
             "theme": "Pair Lebanon's iconic cedar grove with an easy Qadisha Valley walk and mountain food",
@@ -439,6 +504,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Baalbek can be a long day trip from Beirut, but sleeping here makes the temple complex feel far less rushed and leaves room for the quarry and old hotel ambience.",
+        "experiences": [
+          "Ancient Ruins",
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Give the Roman complex proper time, then add the quarry and one of Baalbek's classic local tables",

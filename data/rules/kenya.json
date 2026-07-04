@@ -22,11 +22,12 @@
     "family4": "₹5.8L–₹8.8L"
   },
   "experiences": [
-    "Great Migration",
-    "Big Five Safari",
-    "Amboseli Elephants",
-    "Diani Beach",
-    "Lamu Old Town"
+    "Wildlife & Safari",
+    "National Parks",
+    "Beaches",
+    "Diving & Snorkeling",
+    "History",
+    "Lakes"
   ],
   "avoid": [
     "April-May long rains can flood safari tracks and make coastal days grey",
@@ -49,37 +50,93 @@
       "name": "Nairobi",
       "lat": -1.2864,
       "lng": 36.8172,
-      "notes": "Nairobi National Park, Sheldrick Wildlife Trust, Giraffe Centre, Karen museums and the easiest launch point for Kenya's safari circuit"
+      "notes": "Nairobi National Park, Sheldrick Wildlife Trust, Giraffe Centre, Karen museums and the easiest launch point for Kenya's safari circuit",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April",
+        "May"
+      ]
     },
     {
       "name": "Masai Mara",
       "lat": -1.4931,
       "lng": 35.1439,
-      "notes": "Game drives across the Mara Triangle and Talek plains, Mara River crossings in season, and some of East Africa's best wildlife density"
+      "notes": "Game drives across the Mara Triangle and Talek plains, Mara River crossings in season, and some of East Africa's best wildlife density",
+      "bestMonths": [
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Amboseli",
       "lat": -2.6486,
       "lng": 37.2606,
-      "notes": "Iconic elephant herds, Observation Hill, swamp-fed game viewing and classic Kilimanjaro backdrops on clear mornings"
+      "notes": "Iconic elephant herds, Observation Hill, swamp-fed game viewing and classic Kilimanjaro backdrops on clear mornings",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Lake Nakuru",
       "lat": -0.3031,
       "lng": 36.08,
-      "notes": "Rhino sightings, acacia woodland drives, Baboon Cliff viewpoints and seasonal flamingo action inside the compact national park"
+      "notes": "Rhino sightings, acacia woodland drives, Baboon Cliff viewpoints and seasonal flamingo action inside the compact national park",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Diani Beach",
       "lat": -4.284,
       "lng": 39.5942,
-      "notes": "Powdery beach time, coral reef trips, Colobus Conservation and a slower coastal reset after the safari circuit"
+      "notes": "Powdery beach time, coral reef trips, Colobus Conservation and a slower coastal reset after the safari circuit",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "May",
+        "June"
+      ]
     },
     {
       "name": "Lamu",
       "lat": -2.2717,
       "lng": 40.902,
-      "notes": "UNESCO-listed Swahili townscapes, dhow sunsets, Shela Beach and car-free island life with donkeys and boats"
+      "notes": "UNESCO-listed Swahili townscapes, dhow sunsets, Shela Beach and car-free island life with donkeys and boats",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "May"
+      ]
     }
   ],
   "itinerary": {
@@ -110,6 +167,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "National Parks",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Wildlife on the city edge, giraffes in Karen, and an easy first Nairobi reset",
@@ -202,6 +263,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Into the Mara plains for the first cat sightings, river stories, and sunset tracks",
@@ -294,6 +359,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Lakes",
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Rhinos, escarpment viewpoints, and an easy Rift Valley park day",
@@ -346,6 +416,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Kilimanjaro silhouettes, elephant herds, and the first Amboseli evening drive",
@@ -438,6 +512,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Shift from dust to sea breeze with a soft landing on Kenya's south coast",
@@ -530,6 +608,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches",
+          "History"
+        ],
         "days": [
           {
             "theme": "Fly into old Swahili stone lanes, rooftop sea views, and a first dhow sunset",

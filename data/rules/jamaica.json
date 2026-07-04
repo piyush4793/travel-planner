@@ -28,10 +28,10 @@
   "experiences": [
     "Beaches",
     "Waterfalls",
-    "Reggae Heritage",
-    "Jerk Food",
-    "Rafting",
-    "Nightlife"
+    "Diving & Snorkeling",
+    "Nightlife",
+    "Hiking",
+    "Water Sports"
   ],
   "avoid": [
     "June–October is the wettest stretch and overlaps the Atlantic hurricane season, so north-coast boat trips and east-coast roads face the most disruption risk.",
@@ -54,31 +54,81 @@
       "name": "Kingston",
       "lat": 17.9712,
       "lng": -76.7936,
-      "notes": "The capital is Jamaica's best base for reggae history, museums, New Kingston food spots, and day-one logistics before heading to the coast."
+      "notes": "The capital is Jamaica's best base for reggae history, museums, New Kingston food spots, and day-one logistics before heading to the coast.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Port Antonio",
       "lat": 18.1765,
       "lng": -76.4509,
-      "notes": "Lush Portland parish base for Blue Lagoon, Frenchman's Cove, bamboo rafting, and a slower east-coast pace than the resort belt."
+      "notes": "Lush Portland parish base for Blue Lagoon, Frenchman's Cove, bamboo rafting, and a slower east-coast pace than the resort belt.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Ocho Rios",
       "lat": 18.4079,
       "lng": -77.1031,
-      "notes": "The classic north-coast stop for Dunn's River Falls, easy excursions, and compact town access to beaches, parks, and river activities."
+      "notes": "The classic north-coast stop for Dunn's River Falls, easy excursions, and compact town access to beaches, parks, and river activities.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Montego Bay",
       "lat": 18.4762,
       "lng": -77.8939,
-      "notes": "Best for a smoother arrival or departure via MBJ, beach time on the Hip Strip, jerk meals, and a few polished heritage sights."
+      "notes": "Best for a smoother arrival or departure via MBJ, beach time on the Hip Strip, jerk meals, and a few polished heritage sights.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Negril",
       "lat": 18.2683,
       "lng": -78.3482,
-      "notes": "Jamaica's easy beach finale for Seven Mile Beach days, cliff sunsets, relaxed dining, and simple short-hop transfers from Montego Bay."
+      "notes": "Jamaica's easy beach finale for Seven Mile Beach days, cliff sunsets, relaxed dining, and simple short-hop transfers from Montego Bay.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     }
   ],
   "itinerary": {
@@ -104,6 +154,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Bob Marley, Devon House & New Kingston",
@@ -185,6 +238,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Beaches",
+          "Waterfalls",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Blue Lagoon, Frenchman's Cove & Marina",
@@ -266,6 +324,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Waterfalls",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Dunn's River Falls & Town Highlights",
@@ -347,6 +410,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Beaches",
+          "Nightlife",
+          "Water Sports"
+        ],
         "days": [
           {
             "theme": "Doctor's Cave, Hip Strip & Sunset Harbour",
@@ -428,6 +496,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Negril works best as the final Jamaica base because it is simple to reach from Montego Bay and rewards slower beach-focused days.",
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Seven Mile Beach & Cliff Sunset",

@@ -26,12 +26,11 @@
     "family4": "₹8.2L–₹11.8L"
   },
   "experiences": [
-    "WWII History",
-    "Bonefishing",
-    "Bird Watching",
-    "Remote Atolls",
-    "Lagoon Swimming",
-    "Village Life"
+    "Islands",
+    "Beaches",
+    "Diving & Snorkeling",
+    "Water Sports",
+    "Wildlife & Safari"
   ],
   "avoid": [
     "November–March is wetter and more humid, and squalls can disrupt boats, light-aircraft timing, and lagoon visibility on both Tarawa and Kiritimati.",
@@ -55,19 +54,46 @@
       "name": "South Tarawa",
       "lat": 1.451,
       "lng": 172.971,
-      "notes": "South Tarawa is the practical base for Betio battlefield history, maneaba culture, minibus-linked village hops, and the main transport connections into the outer atolls."
+      "notes": "South Tarawa is the practical base for Betio battlefield history, maneaba culture, minibus-linked village hops, and the main transport connections into the outer atolls.",
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Christmas Island (Kiritimati)",
       "lat": 1.987,
       "lng": -157.477,
-      "notes": "Kiritimati is Kiribati's remote Line Islands showpiece for world-class bonefishing, huge seabird colonies around the lagoon, and long, empty beaches near London and Paris Peninsula."
+      "notes": "Kiritimati is Kiribati's remote Line Islands showpiece for world-class bonefishing, huge seabird colonies around the lagoon, and long, empty beaches near London and Paris Peninsula.",
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Abaiang",
       "lat": 1.79,
       "lng": 173.04,
-      "notes": "Abaiang is the softer, slower atoll add-on for canoe rides, easy lagoon swims, beach cycling, and guesthouse-led village life just north of Tarawa."
+      "notes": "Abaiang is the softer, slower atoll add-on for canoe rides, easy lagoon swims, beach cycling, and guesthouse-led village life just north of Tarawa.",
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -91,6 +117,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use South Tarawa for the history-and-logistics part of the trip: one proper Betio day plus one lighter culture-and-lagoon day is the sweet spot.",
+        "experiences": [
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Betio Battlefield History, Market Stops and a First Lagoon Sunset",
@@ -180,6 +210,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Abaiang works best as Kiribati's slower atoll pause: one transfer-and-swim day and one birding-or-canoe day make the guesthouse stay worthwhile.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Boat North, Tanaea Lagoon and a Beach-Bungalow Arrival",
@@ -256,6 +291,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Kiritimati pays off only if you slow down a little: one flats day, one full guided fishing day, and one birding-or-beach day is the most balanced version.",
+        "experiences": [
+          "Water Sports",
+          "Wildlife & Safari",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Cassidy Arrival, London Flats and an Ocean-Side Evening",

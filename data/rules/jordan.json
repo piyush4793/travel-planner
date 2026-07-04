@@ -23,11 +23,13 @@
     "family4": "₹2.7L–₹4.2L"
   },
   "experiences": [
-    "Petra canyon walk to the Treasury",
-    "Wadi Rum jeep safari and stargazing",
-    "Dead Sea float",
-    "Jerash Roman ruins",
-    "Aqaba Red Sea snorkeling"
+    "Ancient Ruins",
+    "History",
+    "Deserts",
+    "Hot Springs & Wellness",
+    "Diving & Snorkeling",
+    "UNESCO Sites",
+    "Adventure Sports"
   ],
   "avoid": [
     "Midday desert heat from June to August",
@@ -48,37 +50,91 @@
       "name": "Amman",
       "lat": 31.9539,
       "lng": 35.9106,
-      "notes": "Amman Citadel, Roman Theatre, Rainbow Street and Jordan Museum"
+      "notes": "Amman Citadel, Roman Theatre, Rainbow Street and Jordan Museum",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Petra",
       "lat": 30.3285,
       "lng": 35.4444,
-      "notes": "The Siq, Treasury, Royal Tombs, Monastery and Little Petra from Wadi Musa"
+      "notes": "The Siq, Treasury, Royal Tombs, Monastery and Little Petra from Wadi Musa",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Wadi Rum",
       "lat": 29.5737,
       "lng": 35.4211,
-      "notes": "Protected desert valley with Bedouin camps, jeep routes and dark-sky stargazing"
+      "notes": "Protected desert valley with Bedouin camps, jeep routes and dark-sky stargazing",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Dead Sea",
       "lat": 31.7167,
       "lng": 35.5833,
-      "notes": "Floating beaches near Sweimeh with easy side trips to Mount Nebo and Bethany Beyond the Jordan"
+      "notes": "Floating beaches near Sweimeh with easy side trips to Mount Nebo and Bethany Beyond the Jordan",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Aqaba",
       "lat": 29.5321,
       "lng": 35.0063,
-      "notes": "Red Sea snorkeling, seafood restaurants and Aqaba Castle on Jordan's southern coast"
+      "notes": "Red Sea snorkeling, seafood restaurants and Aqaba Castle on Jordan's southern coast",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Jerash",
       "lat": 32.2744,
       "lng": 35.8916,
-      "notes": "Roman colonnaded streets, Oval Plaza, Hadrian's Arch and the Temple of Artemis"
+      "notes": "Roman colonnaded streets, Oval Plaza, Hadrian's Arch and the Temple of Artemis",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -107,6 +163,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Ancient Ruins"
+        ],
         "days": [
           {
             "theme": "Citadel views, downtown archaeology and a classic first taste of Amman",
@@ -228,6 +288,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Most travelers do Jerash as a day trip from Amman, but staying one night nearby makes an early ruins visit much easier.",
+        "experiences": [
+          "Ancient Ruins",
+          "History"
+        ],
         "days": [
           {
             "theme": "One of the Levant's best Roman cities plus a castle stop in the northern hills",
@@ -273,6 +337,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "This works best as a restorative overnight between Amman and Petra, with enough time for either Bethany or Madaba/Mount Nebo.",
+        "experiences": [
+          "Hot Springs & Wellness"
+        ],
         "days": [
           {
             "theme": "Float in the salt water, then pair the low point on earth with biblical hilltop views",
@@ -349,6 +416,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Ancient Ruins",
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Walk the Siq to the Treasury and keep going through Petra's main royal core",
@@ -462,6 +534,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "An overnight desert camp is the sweet spot; stay longer only if you want extra hiking, camel time or a dawn balloon ride.",
+        "experiences": [
+          "Deserts",
+          "Adventure Sports",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Jeep through the sandstone desert, then stay out for sunset and stars",
@@ -534,6 +611,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Castle history, a laid-back waterfront and a first Red Sea snorkel day",

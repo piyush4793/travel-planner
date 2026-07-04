@@ -23,11 +23,14 @@
     "family4": "₹3.2L–₹4.9L"
   },
   "experiences": [
-    "Sunset on the Tel Aviv promenade and Jaffa lanes",
-    "Jerusalem Old City with the Western Wall and museums",
-    "Masada sunrise with a Dead Sea float",
-    "Bahá'í Gardens terraces in Haifa",
-    "Eilat coral reef snorkeling and Red Canyon"
+    "History",
+    "Temples & Religious Sites",
+    "Beaches",
+    "Nightlife",
+    "Diving & Snorkeling",
+    "Deserts",
+    "UNESCO Sites",
+    "Hot Springs & Wellness"
   ],
   "avoid": [
     "Peak midday heat around the Dead Sea and Eilat from June to August",
@@ -49,37 +52,92 @@
       "name": "Tel Aviv",
       "lat": 32.0853,
       "lng": 34.7818,
-      "notes": "Mediterranean city break with Old Jaffa, Bauhaus streets, markets, beaches and strong food scene"
+      "notes": "Mediterranean city break with Old Jaffa, Bauhaus streets, markets, beaches and strong food scene",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Jerusalem",
       "lat": 31.7683,
       "lng": 35.2137,
-      "notes": "Old City quarters, Western Wall, Church of the Holy Sepulchre, Yad Vashem and the Israel Museum"
+      "notes": "Old City quarters, Western Wall, Church of the Holy Sepulchre, Yad Vashem and the Israel Museum",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Dead Sea",
       "lat": 31.1997,
       "lng": 35.3625,
-      "notes": "Ein Bokek base for Masada, Ein Gedi hikes and a classic Dead Sea float on the western shore"
+      "notes": "Ein Bokek base for Masada, Ein Gedi hikes and a classic Dead Sea float on the western shore",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ]
     },
     {
       "name": "Haifa",
       "lat": 32.794,
       "lng": 34.9896,
-      "notes": "Bahá'í Gardens, German Colony, Stella Maris and easy Carmelite ridge viewpoints over the bay"
+      "notes": "Bahá'í Gardens, German Colony, Stella Maris and easy Carmelite ridge viewpoints over the bay",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Nazareth",
       "lat": 32.6996,
       "lng": 35.3035,
-      "notes": "Basilica of the Annunciation, old market lanes, Nazareth Village and classic Galilee Arab cuisine"
+      "notes": "Basilica of the Annunciation, old market lanes, Nazareth Village and classic Galilee Arab cuisine",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Eilat",
       "lat": 29.5577,
       "lng": 34.9519,
-      "notes": "Red Sea resort town for coral reef snorkeling, Dolphin Reef, Timna day trips and winter sun"
+      "notes": "Red Sea resort town for coral reef snorkeling, Dolphin Reef, Timna day trips and winter sun",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -109,6 +167,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay central or near Rothschild/Allenby so you can cover Jaffa, markets and the beachfront mostly on foot or with short taxis.",
+        "experiences": [
+          "Beaches",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Ease in with Jaffa's waterfront, Carmel Market energy and a first Mediterranean sunset",
@@ -221,6 +283,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Temples & Religious Sites",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Focus first on the Old City, iconic holy sites and a classic market dinner",
@@ -334,6 +401,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One night around Ein Bokek or Ein Gedi is enough for most travelers unless you want both a Masada sunrise and a slower spa day.",
+        "experiences": [
+          "Hot Springs & Wellness",
+          "Deserts"
+        ],
         "days": [
           {
             "theme": "Pair a Dead Sea float with Masada and Ein Gedi for the classic desert-and-oasis day",
@@ -411,6 +482,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Haifa works well as an easy coastal reset after Jerusalem, with most highlights spread between the German Colony, Carmel ridge and Bat Galim.",
+        "experiences": [
+          "History",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Keep Haifa simple with Bahá'í terraces, sea views and the city's Arab-Jewish food culture",
@@ -488,6 +563,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Nazareth can be done as a long day trip from Haifa, but an overnight makes the old town and restaurants feel much less rushed.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Cover the main Christian heritage sites, then stay for the market and Galilee dinner scene",
@@ -533,6 +612,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Eilat is worth the detour mainly for winter sun, reef access and a quick desert contrast; fly back north if you are short on time.",
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Start with the reef zone and the classic marine attractions on the Coral Beach side",

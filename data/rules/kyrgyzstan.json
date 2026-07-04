@@ -24,12 +24,12 @@
     "family4": "₹3L–₹4.7L"
   },
   "experiences": [
-    "Song-Kul yurt stays",
-    "Horse trekking",
-    "Ala-Kul & Altyn Arashan hikes",
-    "Issyk-Kul beaches",
-    "Sulaiman-Too",
-    "Eagle hunting demos"
+    "Mountains",
+    "Lakes",
+    "Hiking",
+    "History",
+    "Markets & Shopping",
+    "Adventure Sports"
   ],
   "avoid": [
     "October–May for Song-Kul unless you are set up for snow, closed yurt camps and rough access roads",
@@ -52,31 +52,76 @@
       "name": "Bishkek",
       "lat": 42.8746,
       "lng": 74.5698,
-      "notes": "Best base for SIMs, cash, museums, Osh Bazaar and an Ala-Archa warm-up before heading east"
+      "notes": "Best base for SIMs, cash, museums, Osh Bazaar and an Ala-Archa warm-up before heading east",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Karakol",
       "lat": 42.4907,
       "lng": 78.3936,
-      "notes": "Adventure hub for Ala-Kul, Altyn Arashan, Dungan food and trail planning on the east side of Issyk-Kul"
+      "notes": "Adventure hub for Ala-Kul, Altyn Arashan, Dungan food and trail planning on the east side of Issyk-Kul",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Issyk-Kul Lake",
       "lat": 42.4255,
       "lng": 77.2742,
-      "notes": "Use Cholpon-Ata for petroglyphs or Bokonbayevo for eagle hunters, Skazka Canyon and quieter south-shore stays"
+      "notes": "Use Cholpon-Ata for petroglyphs or Bokonbayevo for eagle hunters, Skazka Canyon and quieter south-shore stays",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Song-Kul Lake",
       "lat": 41.8417,
       "lng": 75.1482,
-      "notes": "High-alpine jailoo known for yurt camps, horseback riding and cold clear nights above 3,000 m"
+      "notes": "High-alpine jailoo known for yurt camps, horseback riding and cold clear nights above 3,000 m",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Osh",
       "lat": 40.5139,
       "lng": 72.8161,
-      "notes": "Silk Road city anchored by Sulaiman-Too, Jayma Bazaar and some of the country's best plov and lagman"
+      "notes": "Silk Road city anchored by Sulaiman-Too, Jayma Bazaar and some of the country's best plov and lagman",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -104,6 +149,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers the city basics plus an Ala-Archa day; keep a third only if you want slower museums or extra buffer before the eastbound marshrutka.",
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Ala-Too Square, Osh Bazaar & Classic City Stops",
@@ -210,6 +259,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days works if you mix one town-and-food day with one alpine outing; add a third only if you want a proper multi-day Ala-Kul trek.",
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "Adventure Sports"
+        ],
         "days": [
           {
             "theme": "Dungan Mosque, Trinity Church & Karakol Food",
@@ -312,6 +366,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is the sweet spot: one for the lake-and-petroglyph side and one for Bokonbayevo's canyon-and-eagle route on the quieter south shore.",
+        "experiences": [
+          "Lakes",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Cholpon-Ata Lakeside & Petroglyphs",
@@ -410,6 +468,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Spend two nights minimum because the access road is long and the real value is one full day of horses, lake views and nomad-camp time.",
+        "experiences": [
+          "Lakes",
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Kochkor or Kyzart Approach & First Night in a Yurt",
@@ -498,6 +561,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Two days is enough for the sacred mountain, the bazaar and one slow Silk Road food-and-museum day before flying back out.",
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Sulaiman-Too & Bazaar First Look",

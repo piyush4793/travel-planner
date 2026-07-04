@@ -22,12 +22,13 @@
     "family4": "₹4.1L–₹6.6L"
   },
   "experiences": [
-    "Mountain City Cafes",
-    "Steppe Skyline",
-    "Charyn Canyon Hikes",
-    "Kolsai & Kaindy Lakes",
-    "Timurid Heritage",
-    "Talgo Sleeper Train"
+    "Mountains",
+    "Lakes",
+    "History",
+    "Architecture",
+    "Hiking",
+    "Deserts",
+    "Ancient Ruins"
   ],
   "avoid": [
     "December to February cold snaps in Astana and icy rural roads around Charyn and Kolsai",
@@ -48,31 +49,76 @@
       "name": "Almaty",
       "lat": 43.2542,
       "lng": 76.9547,
-      "notes": "Leafy former capital for cafes, markets, Soviet landmarks and easy mountain excursions"
+      "notes": "Leafy former capital for cafes, markets, Soviet landmarks and easy mountain excursions",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Astana (Nur-Sultan)",
       "lat": 51.1694,
       "lng": 71.4491,
-      "notes": "Futuristic steppe capital with Bayterek, broad boulevards, big museums and dramatic skies"
+      "notes": "Futuristic steppe capital with Bayterek, broad boulevards, big museums and dramatic skies",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Charyn Canyon",
       "lat": 43.35,
       "lng": 79.0833,
-      "notes": "Red-rock canyon for the Valley of Castles trail, river views and desert-style sunrise or sunset"
+      "notes": "Red-rock canyon for the Valley of Castles trail, river views and desert-style sunrise or sunset",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Turkestan",
       "lat": 43.3,
       "lng": 68.2667,
-      "notes": "UNESCO pilgrimage city centered on the Mausoleum of Khoja Ahmed Yasawi and Silk Road history"
+      "notes": "UNESCO pilgrimage city centered on the Mausoleum of Khoja Ahmed Yasawi and Silk Road history",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Kolsai Lakes",
       "lat": 42.95,
       "lng": 78.3333,
-      "notes": "Base in Saty village for Lower Kolsai, Kaindy's submerged forest and quiet mountain guesthouses"
+      "notes": "Base in Saty village for Lower Kolsai, Kaindy's submerged forest and quiet mountain guesthouses",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -99,6 +145,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days lets you cover the core city plus one mountain outing; add a fourth only if you want a slower spa or museum day.",
+        "experiences": [
+          "Mountains",
+          "History",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Panfilov Park, Bazaar & Kok Tobe",
@@ -246,6 +297,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is enough for the headline architecture and museums; use a third only if you want Expo or opera time.",
+        "experiences": [
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Bayterek Axis & Modern Capital Icons",
@@ -347,6 +401,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat Charyn as a focused overnight or a very long day from Almaty; staying nearby gives you the best light and cooler hiking hours.",
+        "experiences": [
+          "Deserts",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Valley of Castles & Canyon Sunset",
@@ -396,6 +454,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One full day covers the mausoleum complex well; add a second only if you want Otyrar or a slower museum-reserve visit.",
+        "experiences": [
+          "History",
+          "Ancient Ruins",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Yasawi Mausoleum & Keruen-Saray",
@@ -458,6 +521,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay two nights in Saty to split Lower Kolsai and Kaindy; a third day only matters if you want horse riding or a slower forest hike.",
+        "experiences": [
+          "Lakes",
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Lower Kolsai Lake & Saty Village",
