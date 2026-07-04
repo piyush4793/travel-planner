@@ -91,6 +91,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "FESPACO cinema culture in Ouagadougou"
+        ],
         "days": [
           {
             "theme": "Settle into Burkina Faso with museum context, central boulevards, and an easy first-night food circuit.",
@@ -184,6 +187,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Road conditions vary a lot after Po, so start early and avoid trying to do the round-trip from Ouaga in a rush during the rainy season.",
+        "experiences": [
+          "Tiébélé's Kassena painted royal court"
+        ],
         "days": [
           {
             "theme": "Travel south into Kassena country for one of West Africa's most distinctive living architectural sites.",
@@ -219,6 +225,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Grand Mosque and old quarter walks in Bobo-Dioulasso"
+        ],
         "days": [
           {
             "theme": "Cross west by coach, then spend the afternoon on Bobo's old mud-brick core and market streets.",
@@ -304,6 +313,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Banfora works best with your own taxi for waterfalls, domes, Sindou, or the long Loropéni run; public transport exists but makes the day much slower.",
+        "experiences": [
+          "Karfiguéla Falls and Sindou Peaks near Banfora",
+          "Ruins of Loropéni UNESCO day trip"
+        ],
         "days": [
           {
             "theme": "Move south from Bobo for the classic Banfora nature loop of falls, domes, and sugar-cane country.",

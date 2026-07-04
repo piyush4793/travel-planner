@@ -100,6 +100,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay here for the whole trip if you want the simplest logistics; Kampong Ayer, the museum quarter, and Gadong are all easiest from the capital.",
+        "experiences": [
+          "Omar Ali Saifuddien Mosque",
+          "Royal Regalia Museum",
+          "Kampong Ayer water village"
+        ],
         "days": [
           {
             "theme": "Iconic mosque views, royal-history museums, and an easy first look at Brunei's compact capital",
@@ -200,6 +205,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat this as an early-start day trip or lodge night focused on Ulu Temburong; tours bundle longboat transfers and the canopy-walk staircase climb.",
+        "experiences": [
+          "Ulu Temburong National Park canopy walk"
+        ],
         "days": [
           {
             "theme": "Rainforest longboats, suspension bridges, and Brunei's signature jungle day",
@@ -246,6 +254,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Best handled by rental car or taxi from Bandar because district sights are spread out and bus frequencies are thin outside the town core.",
+        "experiences": [
+          "Tutong coast and lake day trip"
+        ],
         "days": [
           {
             "theme": "Quiet beach time, Merimbun lake nature, and a slower Brunei small-town day",

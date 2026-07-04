@@ -114,6 +114,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Stay in Copacabana, Ipanema, or Flamengo, pre-book Christ and Sugarloaf timed entries, and lean on Uber after dark instead of wandering between nightlife districts.",
+        "experiences": [
+          "Rio Icons"
+        ],
         "days": [
           {
             "theme": "Corcovado, Santa Teresa & Lapa",
@@ -227,6 +230,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Base yourself around Paulista or Jardins for quick metro access; Sunday mornings are great for Avenida Paulista car-free time, while museums are busiest on rainy weekends.",
+        "experiences": [
+          "São Paulo Food Scene"
+        ],
         "days": [
           {
             "theme": "Paulista Avenue, MASP & Ibirapuera",
@@ -304,6 +310,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Sleep in Foz do Iguaçu, start the national park early before tour buses arrive, and keep a dry bag ready if you add Macuco Safari or any catwalk viewpoint after rain.",
+        "experiences": [
+          "Iguaçu Falls"
+        ],
         "days": [
           {
             "theme": "Brazil Panorama, Catwalks & Birdlife",
@@ -383,6 +392,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay near Pelourinho or Barra for short transfers, dress lightly for the humidity, and plan Pelourinho walks by day or with a guided evening food/music circuit.",
+        "experiences": [
+          "Salvador Heritage"
+        ],
         "days": [
           {
             "theme": "Pelourinho, Churches & Lower City",
@@ -462,6 +474,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Without a car, split time between the central bridge area and one beach cluster; ride-hailing is easy, but beach-to-beach transfers take longer than they look on the map.",
+        "experiences": [
+          "Florianópolis Beaches"
+        ],
         "days": [
           {
             "theme": "Centro, Lagoa & Joaquina",
@@ -539,6 +554,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Historic-centre pousadas let you explore on foot, but the stone streets flood after very heavy rain, so keep shoes with grip and avoid wheeled luggage inside the old town.",
+        "experiences": [
+          "Paraty Colonial Coast"
+        ],
         "days": [
           {
             "theme": "Colonial Centre, Churches & Cachaça",

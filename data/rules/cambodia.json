@@ -95,6 +95,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Keep all three recommended days if Angkor Wat, Banteay Srey, and the museums matter to you; the new airport is far from town, so arrival and departure days feel longer than they look on paper.",
+        "experiences": [
+          "Angkor Wat",
+          "Temples"
+        ],
         "days": [
           {
             "theme": "Arrival, Old Market Lanes & Apsara Evening",
@@ -227,6 +231,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "The capital works best as a two-day contrast to Siem Reap: one slower riverside day and one heavier history-focused day.",
+        "experiences": [
+          "History",
+          "Street Food"
+        ],
         "days": [
           {
             "theme": "Riverside Arrival, Markets & Khmer Art",
@@ -317,6 +325,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Kampot as the slower river-and-countryside stop between Phnom Penh and the beaches; it is best when you keep one afternoon completely unhurried.",
+        "experiences": [
+          "River Life"
+        ],
         "days": [
           {
             "theme": "Colonial Kampot, Riverside Cafés & Sunset Cruise",

@@ -101,6 +101,11 @@
         "recDays": 3,
         "maxDays": 3,
         "note": "Three days lets you balance the old town, siege history and a green Ilidža or museum day without rushing between hillside viewpoints.",
+        "experiences": [
+          "Old Towns",
+          "History",
+          "Coffee Culture"
+        ],
         "days": [
           {
             "theme": "Arrival, Baščaršija & Ottoman Sarajevo",
@@ -230,6 +235,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "One night is enough for the waterfall, fortress and lakeside mills, especially if you are using Jajce as the inland leg between Sarajevo and Herzegovina.",
+        "experiences": [
+          "Rivers & Waterfalls",
+          "History"
+        ],
         "days": [
           {
             "theme": "Waterfall Town, Fortress & Pliva Lakes",
@@ -279,6 +288,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers the old town well, while a third day helps if you want a slower museum-and-cafes pace before moving on to Blagaj or Trebinje.",
+        "experiences": [
+          "Old Towns",
+          "History",
+          "Rivers & Waterfalls"
+        ],
         "days": [
           {
             "theme": "Stari Most Classics & Ottoman Lanes",
@@ -404,6 +418,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Blagaj works best as a one-night riverside stop so you can see the tekija early or late, after the heaviest day-trip crowds leave from Mostar.",
+        "experiences": [
+          "Rivers & Waterfalls"
+        ],
         "days": [
           {
             "theme": "Buna Spring, Tekija & Cliffside Walks",
@@ -453,6 +470,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One day covers the old town and monastery circuit, while a second day is worthwhile if you want cellar tastings and a slower Herzegovinian finale.",
+        "experiences": [
+          "Wine",
+          "Coffee Culture"
+        ],
         "days": [
           {
             "theme": "Old Town, Bridges & Hilltop Monastery",

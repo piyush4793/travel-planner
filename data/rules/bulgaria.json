@@ -146,6 +146,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers Sofia's essential churches, Roman ruins and museum core without turning the city into a museum-only stop.",
+        "experiences": [
+          "Sofia landmarks"
+        ],
         "days": [
           {
             "theme": "Cathedral Square, Roman Layers & Central Sofia",
@@ -236,6 +239,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "This works best as a full-day outing from Sofia; staying overnight only matters if you want long mountain walks around the monastery valley.",
+        "experiences": [
+          "Rila Monastery"
+        ],
         "days": [
           {
             "theme": "UNESCO Monastery, Museum Rooms & Mountain Quiet",
@@ -285,6 +291,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is the sweet spot for Plovdiv: one for Roman monuments and the Old Town, one for Kapana, basilicas and a slower hilltop evening.",
+        "experiences": [
+          "Plovdiv Old Town"
+        ],
         "days": [
           {
             "theme": "Ancient Theatre, Revival Houses & Kapana",
@@ -374,6 +383,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay two days if you want both the medieval fortresses and Tarnovo's slower craft-street atmosphere instead of a rushed fortress-only stop.",
+        "experiences": [
+          "Tsarevets Fortress"
+        ],
         "days": [
           {
             "theme": "Tsarevets, Monument Views & Old Craft Street",
@@ -464,6 +476,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Give Bansko two days so you get one proper mountain day and one day for the old town, taverns and museums without rushing between ski lifts.",
+        "experiences": [
+          "Pirin skiing"
+        ],
         "days": [
           {
             "theme": "Stone Old Town, House Museums & Mehana Night",
@@ -550,6 +565,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is enough for the old town museums, coast walk and one lazy beach day without needing to move bases along the southern Black Sea.",
+        "experiences": [
+          "Black Sea coast"
+        ],
         "days": [
           {
             "theme": "Old Town Walls, Archaeology & Harbour Streets",

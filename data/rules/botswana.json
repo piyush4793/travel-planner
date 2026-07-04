@@ -156,6 +156,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Okavango Delta mokoro ride",
+          "Moremi game drive"
+        ],
         "days": [
           {
             "theme": "Ease into the Delta with a mokoro glide, island walks, and Maun riverfront downtime",
@@ -248,6 +252,9 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Chobe River sunset safari"
+        ],
         "days": [
           {
             "theme": "Kasane arrival, first elephant sightings, and a Chobe River sunset cruise",
@@ -340,6 +347,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Nata Bird Sanctuary"
+        ],
         "days": [
           {
             "theme": "A slow pan-edge transit day with flamingos, open skies, and one of Botswana's easiest wildlife stopovers",
@@ -392,6 +402,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Makgadikgadi salt pans"
+        ],
         "days": [
           {
             "theme": "Baobabs, salt-pan scale, meerkats, and the most otherworldly finish in Botswana",
