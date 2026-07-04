@@ -26,11 +26,12 @@
     "family4": "₹4.5L–₹6.9L"
   },
   "experiences": [
-    "Mount Karthala Volcano Trek",
-    "Mohéli Marine Park Snorkeling",
-    "Livingstone's Fruit Bat Viewing",
-    "Mutsamudu Medina Walks",
-    "Inter-Island Dhow Crossings"
+    "Beaches",
+    "Islands",
+    "Diving & Snorkeling",
+    "Volcanoes",
+    "Hiking",
+    "Wildlife & Safari"
   ],
   "avoid": [
     "November to April is wetter and rougher at sea, so dhows, beach landings, and even domestic flights are more likely to be delayed than in the dry May-October season.",
@@ -54,19 +55,49 @@
       "name": "Moroni (Grande Comore)",
       "lat": -11.7042,
       "lng": 43.2402,
-      "notes": "Grande Comore's capital is the essential arrival hub for Volo Volo Market, the Old Friday Mosque, Itsandra sunsets, and onward departures for Mount Karthala or the other islands."
+      "notes": "Grande Comore's capital is the essential arrival hub for Volo Volo Market, the Old Friday Mosque, Itsandra sunsets, and onward departures for Mount Karthala or the other islands.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Mohéli",
       "lat": -12.2922,
       "lng": 43.7428,
-      "notes": "Mohéli is the wild, low-key island for Mohéli Laka Lodge stays, Mohéli Marine Park boat trips, turtle beaches around Itsamia, and fruit-bat viewing in the high forest."
+      "notes": "Mohéli is the wild, low-key island for Mohéli Laka Lodge stays, Mohéli Marine Park boat trips, turtle beaches around Itsamia, and fruit-bat viewing in the high forest.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Anjouan",
       "lat": -12.223,
       "lng": 44.3811,
-      "notes": "Anjouan rewards a slower finish with Mutsamudu's stone medina, steep plantation roads, Mount Ntringui hikes, and waterfall day trips."
+      "notes": "Anjouan rewards a slower finish with Mutsamudu's stone medina, steep plantation roads, Mount Ntringui hikes, and waterfall day trips.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     }
   ],
   "itinerary": {
@@ -92,8 +123,9 @@
         "maxDays": 3,
         "note": "Moroni works best as one arrival day and one Karthala or south-coast excursion day; add a third night only if you want the overnight crater trek or need a buffer for domestic hops.",
         "experiences": [
-          "Mount Karthala Volcano Trek",
-          "Inter-Island Dhow Crossings"
+          "Volcanoes",
+          "Beaches",
+          "Islands"
         ],
         "days": [
           {
@@ -218,8 +250,10 @@
         "maxDays": 3,
         "note": "Keep Mohéli simple: sleep near Laka Lodge or Fomboni, use one full day inside the marine park, and save the extra day for fruit bats or turtle season rather than racing around the island.",
         "experiences": [
-          "Mohéli Marine Park Snorkeling",
-          "Livingstone's Fruit Bat Viewing"
+          "Diving & Snorkeling",
+          "Wildlife & Safari",
+          "Islands",
+          "Beaches"
         ],
         "days": [
           {
@@ -346,7 +380,9 @@
         "maxDays": 3,
         "note": "Anjouan deserves at least two nights for the medina plus one mountain day; the third day is best used on waterfalls and plantation roads before flying back to Moroni.",
         "experiences": [
-          "Mutsamudu Medina Walks"
+          "Hiking",
+          "Beaches",
+          "Islands"
         ],
         "days": [
           {

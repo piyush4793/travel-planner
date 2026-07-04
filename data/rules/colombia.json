@@ -24,12 +24,14 @@
     "family4": "₹5.8L–₹9.2L"
   },
   "experiences": [
-    "Bogotá Museums & Monserrate",
-    "Medellín & Guatapé",
-    "Cartagena Walled City",
-    "Tayrona & Minca",
-    "Salento Coffee Region",
-    "San Andrés Beaches"
+    "History",
+    "Beaches",
+    "Coffee & Cafés",
+    "Islands",
+    "Nightlife",
+    "Architecture",
+    "Diving & Snorkeling",
+    "Mountains"
   ],
   "avoid": [
     "April–May and October–November are wetter almost everywhere, so Caribbean boat days, Cocora hikes, and mountain viewpoints become less reliable.",
@@ -51,37 +53,93 @@
       "name": "Bogotá",
       "lat": 4.711,
       "lng": -74.0721,
-      "notes": "Andean capital for Monserrate views, La Candelaria streets, major museums, and easy day trips like Zipaquirá."
+      "notes": "Andean capital for Monserrate views, La Candelaria streets, major museums, and easy day trips like Zipaquirá.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "July"
+      ],
+      "worstMonths": [
+        "April",
+        "October"
+      ]
     },
     {
       "name": "Medellín",
       "lat": 6.2442,
       "lng": -75.5812,
-      "notes": "Spring-like weather, Comuna 13 street art, efficient metro-cable links, and the classic Guatapé day trip."
+      "notes": "Spring-like weather, Comuna 13 street art, efficient metro-cable links, and the classic Guatapé day trip.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "July"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Cartagena",
       "lat": 10.391,
       "lng": -75.4794,
-      "notes": "Walled-city lanes, Getsemaní nightlife, fortifications, and easy Rosario Islands beach days."
+      "notes": "Walled-city lanes, Getsemaní nightlife, fortifications, and easy Rosario Islands beach days.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Santa Marta",
       "lat": 11.2408,
       "lng": -74.199,
-      "notes": "Gateway for Tayrona National Park, Minca mountain escapes, and the easiest base on the Caribbean coast."
+      "notes": "Gateway for Tayrona National Park, Minca mountain escapes, and the easiest base on the Caribbean coast.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Salento",
       "lat": 4.637,
       "lng": -75.5706,
-      "notes": "Coffee-region town for Cocora Valley wax palms, finca tours, trout lunches, and colorful Calle Real."
+      "notes": "Coffee-region town for Cocora Valley wax palms, finca tours, trout lunches, and colorful Calle Real.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "July"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "San Andrés",
       "lat": 12.5847,
       "lng": -81.7006,
-      "notes": "Coral-island escape for Johnny Cay, Acuario sandbars, west-side swimming spots, and bright Caribbean water."
+      "notes": "Coral-island escape for Johnny Cay, Acuario sandbars, west-side swimming spots, and bright Caribbean water.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "October",
+        "November"
+      ]
     }
   ],
   "itinerary": {
@@ -115,7 +173,9 @@
         "maxDays": 4,
         "note": "Stay in La Candelaria, Chapinero, or around Parque 93, keep a light jacket for cool evenings, and use official taxis or app rides late at night.",
         "experiences": [
-          "Bogotá Museums & Monserrate"
+          "History",
+          "Architecture",
+          "Nightlife"
         ],
         "days": [
           {
@@ -229,7 +289,8 @@
         "maxDays": 4,
         "note": "Base yourself in El Poblado or Laureles, use the metro for daytime hops, and pre-book Guatapé if you prefer a guided day trip over public buses.",
         "experiences": [
-          "Medellín & Guatapé"
+          "Nightlife",
+          "Architecture"
         ],
         "days": [
           {
@@ -346,7 +407,8 @@
         "maxDays": 3,
         "note": "Stay near the main square or Calle Real, leave early for Cocora before clouds build, and carry cash for Willys jeeps, reserve fees, and finca tours.",
         "experiences": [
-          "Salento Coffee Region"
+          "Coffee & Cafés",
+          "Mountains"
         ],
         "days": [
           {
@@ -426,7 +488,10 @@
         "maxDays": 3,
         "note": "Stay inside the Walled City or Getsemaní for easiest walks, plan fort visits early before the heat spikes, and pre-book Rosario Islands on weekends.",
         "experiences": [
-          "Cartagena Walled City"
+          "History",
+          "Beaches",
+          "Architecture",
+          "Nightlife"
         ],
         "days": [
           {
@@ -540,7 +605,8 @@
         "maxDays": 3,
         "note": "Use Centro Histórico for restaurants or Bello Horizonte for calmer beach hotels, start Tayrona very early, and do Minca on a clear morning if possible.",
         "experiences": [
-          "Tayrona & Minca"
+          "Beaches",
+          "Mountains"
         ],
         "days": [
           {
@@ -622,7 +688,9 @@
         "maxDays": 4,
         "note": "Stay near Spratt Bight or the north end if you are relying on taxis, buy the OCCRE tourist card before boarding your flight, and lock boat tours in early when seas are calm.",
         "experiences": [
-          "San Andrés Beaches"
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
         ],
         "days": [
           {

@@ -21,11 +21,13 @@
   },
   "experiences": [
     "Beaches",
-    "History",
-    "Food",
-    "National Parks",
     "Islands",
-    "Road Trips"
+    "History",
+    "National Parks",
+    "Waterfalls",
+    "Architecture",
+    "Nightlife",
+    "UNESCO Sites"
   ],
   "avoid": [
     "Dubrovnik and Hvar prices spike sharply in July and August",
@@ -47,37 +49,91 @@
       "name": "Zagreb",
       "lat": 45.815,
       "lng": 15.9819,
-      "notes": "Upper Town lanes, lively cafe culture, Dolac Market and easy museum-hopping"
+      "notes": "Upper Town lanes, lively cafe culture, Dolac Market and easy museum-hopping",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Split",
       "lat": 43.5081,
       "lng": 16.4402,
-      "notes": "Roman palace core, Adriatic promenade, ferry hub and great seafood taverns"
+      "notes": "Roman palace core, Adriatic promenade, ferry hub and great seafood taverns",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Dubrovnik",
       "lat": 42.6507,
       "lng": 18.0944,
-      "notes": "Walled old town, fort views, island hops and polished Dalmatian dining"
+      "notes": "Walled old town, fort views, island hops and polished Dalmatian dining",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Hvar",
       "lat": 43.1729,
       "lng": 16.4429,
-      "notes": "Sunny island base with Fortica views, beach coves and winery detours"
+      "notes": "Sunny island base with Fortica views, beach coves and winery detours",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Plitvice Lakes",
       "lat": 44.8806,
       "lng": 15.6167,
-      "notes": "Turquoise lakes, waterfall boardwalks and one of Europe's best national-park circuits"
+      "notes": "Turquoise lakes, waterfall boardwalks and one of Europe's best national-park circuits",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Zadar",
       "lat": 44.1194,
       "lng": 15.2314,
-      "notes": "Compact old town with Roman remnants, the Sea Organ and easy island side trips"
+      "notes": "Compact old town with Roman remnants, the Sea Organ and easy island side trips",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -109,7 +165,7 @@
         "note": "Two days covers the capital well; add a third only if you want a Samobor pastry day trip or a Medvednica hill escape.",
         "experiences": [
           "History",
-          "Food"
+          "Architecture"
         ],
         "days": [
           {
@@ -237,7 +293,9 @@
         "maxDays": 2,
         "note": "Most travellers only need one full park day, but an overnight lets you enter early and avoid the heaviest coach-tour crowds.",
         "experiences": [
-          "National Parks"
+          "National Parks",
+          "Waterfalls",
+          "UNESCO Sites"
         ],
         "days": [
           {
@@ -326,6 +384,7 @@
         "note": "One night is enough for the old town; a second day makes sense if you want an easy Ugljan island detour.",
         "experiences": [
           "History",
+          "Architecture",
           "Beaches"
         ],
         "days": [
@@ -415,8 +474,9 @@
         "note": "Three days lets Split breathe: one for the palace, one for the surrounding coast, and one flexible day for markets, museums or Krka.",
         "experiences": [
           "History",
+          "Architecture",
           "Beaches",
-          "Islands"
+          "UNESCO Sites"
         ],
         "days": [
           {
@@ -581,7 +641,8 @@
         "note": "Two days is the sweet spot for Hvar Town plus one boat or wine day; add a third if you want Stari Grad and vineyard country too.",
         "experiences": [
           "Islands",
-          "Beaches"
+          "Beaches",
+          "Nightlife"
         ],
         "days": [
           {
@@ -706,6 +767,8 @@
         "note": "Stay at least two full days for the walls and Lokrum; a third or fourth day is ideal for kayaking, Cavtat or an island cruise.",
         "experiences": [
           "History",
+          "Architecture",
+          "UNESCO Sites",
           "Beaches"
         ],
         "days": [

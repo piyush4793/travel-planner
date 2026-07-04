@@ -23,12 +23,14 @@
     "family4": "₹7.2L–₹11.2L"
   },
   "experiences": [
-    "Arenal Volcano & hot springs",
-    "Monteverde cloud forest trails",
-    "Manuel Antonio wildlife beaches",
-    "Tamarindo surf sunsets",
-    "Puerto Viejo Caribbean coast",
-    "San José museums & markets"
+    "Wildlife & Safari",
+    "National Parks",
+    "Beaches",
+    "Volcanoes",
+    "Surfing",
+    "Hot Springs & Wellness",
+    "Adventure Sports",
+    "Hiking"
   ],
   "avoid": [
     "September and October are the wettest months on much of the Pacific side, so Manuel Antonio, Monteverde drives, and Tamarindo surf plans are more vulnerable to washouts.",
@@ -51,37 +53,96 @@
       "name": "San José",
       "lat": 9.9281,
       "lng": -84.0907,
-      "notes": "Capital gateway for museums, coffee culture, barrio food walks, and the simplest launch point for nationwide buses, shuttles, and SANSA domestic flights."
+      "notes": "Capital gateway for museums, coffee culture, barrio food walks, and the simplest launch point for nationwide buses, shuttles, and SANSA domestic flights.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Arenal",
       "lat": 10.4631,
       "lng": -84.7032,
-      "notes": "La Fortuna and the Arenal Volcano area combine lava-field trails, hanging bridges, hot springs, and easy wildlife spotting."
+      "notes": "La Fortuna and the Arenal Volcano area combine lava-field trails, hanging bridges, hot springs, and easy wildlife spotting.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Monteverde",
       "lat": 10.3004,
       "lng": -84.8256,
-      "notes": "Cloud-forest ridge town for reserve walks, hummingbirds, hanging bridges, and cool highland nights."
+      "notes": "Cloud-forest ridge town for reserve walks, hummingbirds, hanging bridges, and cool highland nights.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Manuel Antonio",
       "lat": 9.412,
       "lng": -84.1551,
-      "notes": "Quepos-Manuel Antonio base for Costa Rica's most famous national park, monkey-filled beaches, and easy sunset catamaran trips."
+      "notes": "Quepos-Manuel Antonio base for Costa Rica's most famous national park, monkey-filled beaches, and easy sunset catamaran trips.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Tamarindo",
       "lat": 10.2993,
       "lng": -85.8371,
-      "notes": "North Pacific surf town with beginner-friendly waves, lively dining, and quick access to Playa Avellanas and Las Baulas estuary tours."
+      "notes": "North Pacific surf town with beginner-friendly waves, lively dining, and quick access to Playa Avellanas and Las Baulas estuary tours.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Puerto Viejo",
       "lat": 9.6556,
       "lng": -82.7536,
-      "notes": "Relaxed Caribbean coast base for bike rides to Punta Uva, Cahuita day trips, reggae bars, and Afro-Caribbean food."
+      "notes": "Relaxed Caribbean coast base for bike rides to Punta Uva, Cahuita day trips, reggae bars, and Afro-Caribbean food.",
+      "bestMonths": [
+        "February",
+        "March",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     }
   ],
   "itinerary": {
@@ -113,9 +174,6 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay in Barrio Escalante, Amón, or near downtown museums if you only need a short stop; Uber is usually easier than street taxis for evening dinners.",
-        "experiences": [
-          "San José museums & markets"
-        ],
         "days": [
           {
             "theme": "Historic Center, Theater & Gold Museum",
@@ -193,7 +251,10 @@
         "maxDays": 4,
         "note": "Use La Fortuna as your base, start trails early for clearer volcano views, and pre-book hot springs if you want evening entry in dry season.",
         "experiences": [
-          "Arenal Volcano & hot springs"
+          "Volcanoes",
+          "Hot Springs & Wellness",
+          "Adventure Sports",
+          "Hiking"
         ],
         "days": [
           {
@@ -312,7 +373,9 @@
         "maxDays": 3,
         "note": "Even in dry season the cloud forest runs cool and windy, so carry a rain shell and avoid arriving after dark if you are not self-driving.",
         "experiences": [
-          "Monteverde cloud forest trails"
+          "Wildlife & Safari",
+          "Hiking",
+          "Adventure Sports"
         ],
         "days": [
           {
@@ -395,7 +458,9 @@
         "maxDays": 4,
         "note": "Book park tickets online before you arrive, stay on the hill or near Playa Espadilla if you want buses over taxis, and carry water because the park gets hot fast.",
         "experiences": [
-          "Manuel Antonio wildlife beaches"
+          "National Parks",
+          "Wildlife & Safari",
+          "Beaches"
         ],
         "days": [
           {
@@ -511,7 +576,8 @@
         "maxDays": 3,
         "note": "Dry season sunsets are the draw here, but book surf lessons and weekend rooms early because Guanacaste fills fast from December to Easter.",
         "experiences": [
-          "Tamarindo surf sunsets"
+          "Beaches",
+          "Surfing"
         ],
         "days": [
           {
@@ -592,7 +658,9 @@
         "maxDays": 4,
         "note": "A bike is the easiest way to move between beaches, but carry cash for small bars and remember that Caribbean weather can differ from the Pacific even in shoulder months.",
         "experiences": [
-          "Puerto Viejo Caribbean coast"
+          "Beaches",
+          "Surfing",
+          "Wildlife & Safari"
         ],
         "days": [
           {

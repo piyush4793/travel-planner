@@ -20,12 +20,14 @@
     "family4": "₹3.5L–₹7L"
   },
   "experiences": [
-    "Great Wall",
-    "Food",
     "History",
-    "Temples",
-    "Nature",
-    "Shanghai Skyline"
+    "Ancient Ruins",
+    "Architecture",
+    "Wildlife & Safari",
+    "Mountains",
+    "Temples & Religious Sites",
+    "UNESCO Sites",
+    "Food"
   ],
   "avoid": [
     "National Golden Week (Oct 1-7)",
@@ -46,37 +48,91 @@
       "name": "Beijing",
       "lat": 39.9042,
       "lng": 116.4074,
-      "notes": "Forbidden City, Great Wall day trip, Temple of Heaven and Hutong lanes"
+      "notes": "Forbidden City, Great Wall day trip, Temple of Heaven and Hutong lanes",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Shanghai",
       "lat": 31.2304,
       "lng": 121.4737,
-      "notes": "Bund waterfront skyline, French Concession and Yu Garden bazaar"
+      "notes": "Bund waterfront skyline, French Concession and Yu Garden bazaar",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Xi'an",
       "lat": 34.3416,
       "lng": 108.9398,
-      "notes": "Terracotta Army, Ancient City Walls cycling and Muslim Quarter night market"
+      "notes": "Terracotta Army, Ancient City Walls cycling and Muslim Quarter night market",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Chengdu",
       "lat": 30.5728,
       "lng": 104.0668,
-      "notes": "Giant Panda Research Base, mahjong culture and fiery Sichuan hot pot"
+      "notes": "Giant Panda Research Base, mahjong culture and fiery Sichuan hot pot",
+      "bestMonths": [
+        "March",
+        "April",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Guilin",
       "lat": 25.2736,
       "lng": 110.2907,
-      "notes": "Karst limestone peaks, Li River bamboo raft and Yangshuo rice paddies"
+      "notes": "Karst limestone peaks, Li River bamboo raft and Yangshuo rice paddies",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Hangzhou",
       "lat": 30.2741,
       "lng": 120.1551,
-      "notes": "West Lake gardens, Longjing tea plantations and Song Dynasty Town"
+      "notes": "West Lake gardens, Longjing tea plantations and Song Dynasty Town",
+      "bestMonths": [
+        "March",
+        "April",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -107,9 +163,9 @@
         "maxDays": 4,
         "note": "Three days covers imperial Beijing well with one full Great Wall day and one slower temple-and-garden day.",
         "experiences": [
-          "Great Wall",
           "History",
-          "Temples"
+          "Architecture",
+          "UNESCO Sites"
         ],
         "days": [
           {
@@ -236,8 +292,9 @@
         "maxDays": 3,
         "note": "Two days is ideal for the Terracotta Army, the old walls and the Tang-era core without rushing.",
         "experiences": [
+          "Ancient Ruins",
           "History",
-          "Food"
+          "UNESCO Sites"
         ],
         "days": [
           {
@@ -329,8 +386,8 @@
         "maxDays": 3,
         "note": "Two days gives you pandas, Sichuan culture and a solid mix of Buddhist and local food stops.",
         "experiences": [
-          "Food",
-          "Nature"
+          "Wildlife & Safari",
+          "Food"
         ],
         "days": [
           {
@@ -419,7 +476,8 @@
         "maxDays": 3,
         "note": "Two days works well for the classic Li River cruise plus a slower Yangshuo countryside day before heading east.",
         "experiences": [
-          "Nature"
+          "Mountains",
+          "UNESCO Sites"
         ],
         "days": [
           {
@@ -509,8 +567,9 @@
         "maxDays": 2,
         "note": "Hangzhou works perfectly as a one-day West Lake and tea-culture stop before Shanghai.",
         "experiences": [
-          "Temples",
-          "Nature"
+          "History",
+          "Temples & Religious Sites",
+          "Architecture"
         ],
         "days": [
           {
@@ -560,7 +619,7 @@
         "maxDays": 3,
         "note": "Two days is enough for the skyline, museums, old-city landmarks and one flexible water-town-or-concession day.",
         "experiences": [
-          "Shanghai Skyline",
+          "Architecture",
           "Food"
         ],
         "days": [
