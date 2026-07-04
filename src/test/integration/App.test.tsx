@@ -1,5 +1,5 @@
 import { beforeEach, afterEach, describe, expect, it, vi } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "../../App";
 import { setHashRoute } from "../testUtils";
@@ -187,6 +187,55 @@ vi.mock("../../components/shared/FreTour", () => ({
   default: () => null,
 }));
 
+vi.mock("../../components/country/CountryForm", () => ({
+  default: (props: Record<string, unknown>) => {
+    const initial = props.initial as Country;
+    const onSave = props.onSave as ((c: Country) => void) | undefined;
+    const onClose = props.onClose as (() => void) | undefined;
+    return (
+      <div data-testid="country-form">
+        <button type="button" data-testid="form-save" onClick={() => onSave?.({ ...initial, budget: "₹3L" })}>Save</button>
+        <button type="button" data-testid="form-close" onClick={() => onClose?.()}>Close</button>
+      </div>
+    );
+  },
+}));
+
+vi.mock("../../components/ai/ChatModal", () => ({
+  default: (props: Record<string, unknown>) => {
+    const onClose = props.onClose as (() => void) | undefined;
+    const onSaveImportedPlan = props.onSaveImportedPlan as ((r: unknown) => void) | undefined;
+    return (
+      <div data-testid="chat-modal">
+        <div data-testid="chat-initial">{(props.initialPrompt as string) ?? ""}</div>
+        <button
+          type="button"
+          data-testid="chat-import"
+          onClick={() => onSaveImportedPlan?.({ destinationName: "Chile", cities: [], plan: { duration: "", costPerPerson: "", days: [], note: "" } })}
+        >Import</button>
+        <button type="button" data-testid="chat-close" onClick={() => onClose?.()}>Close</button>
+      </div>
+    );
+  },
+}));
+
+vi.mock("../../components/ai/AiItineraryModal", () => ({
+  default: (props: Record<string, unknown>) => {
+    const result = props.result as { destinationName: string };
+    const onSaveToList = props.onSaveToList as ((name: string) => void) | undefined;
+    const onClose = props.onClose as (() => void) | undefined;
+    return (
+      <div data-testid="ai-itinerary-modal">
+        <div data-testid="ai-dest">{result.destinationName}</div>
+        {onSaveToList && (
+          <button type="button" data-testid="ai-save-to-list" onClick={() => onSaveToList(result.destinationName)}>Save to list</button>
+        )}
+        <button type="button" data-testid="ai-close" onClick={() => onClose?.()}>Close</button>
+      </div>
+    );
+  },
+}));
+
 vi.mock("../../hooks/useInstallPrompt", () => ({
   useInstallPrompt: () => ({
     canPrompt: false,
@@ -346,6 +395,106 @@ describe("App orchestration", () => {
 
     expect(addToListMock).toHaveBeenCalledWith(COUNTRY_NAMES.CHILE);
     expect(removeFromListMock).toHaveBeenCalledWith(COUNTRY_NAMES.JAPAN);
+  });
+});
+
+describe("App handler wiring", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    lastCountryPanelProps = null;
+    vi.mocked(isEnabled).mockImplementation(() => false);
+  });
+
+  async function selectJapan(user: ReturnType<typeof userEvent.setup>) {
+    await user.click(await screen.findByTestId(TEST_IDS.TRIPS_SELECT_COUNTRY));
+    expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent(COUNTRY_NAMES.JAPAN);
+  }
+
+  it("saves note edits through the country store and keeps the panel in sync", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await selectJapan(user);
+
+    await act(async () => {
+      (lastCountryPanelProps?.onUpdateNotes as (n: string) => void)("Bring a jacket");
+    });
+
+    expect(updateNotesMock).toHaveBeenCalledWith(COUNTRY_NAMES.JAPAN, "Bring a jacket");
+  });
+
+  it("toggles favorite and visited state via the store", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await selectJapan(user);
+
+    act(() => {
+      (lastCountryPanelProps?.onToggleFavorite as () => void)();
+      (lastCountryPanelProps?.onToggleVisited as () => void)();
+    });
+
+    expect(favoritesToggleMock).toHaveBeenCalledWith(COUNTRY_NAMES.JAPAN);
+    expect(visitedToggleMock).toHaveBeenCalledWith(COUNTRY_NAMES.JAPAN);
+  });
+
+  it("resolveCountry returns tracked countries and null for unknown names", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await selectJapan(user);
+
+    const resolve = lastCountryPanelProps?.resolveCountry as (n: string) => Country | null;
+    expect(resolve(COUNTRY_NAMES.JAPAN)?.name).toBe(COUNTRY_NAMES.JAPAN);
+    expect(resolve("Atlantis")).toBeNull();
+  });
+
+  it("opens the edit form and persists edits via handleSave", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await selectJapan(user);
+
+    act(() => {
+      (lastCountryPanelProps?.onEdit as () => void)();
+    });
+
+    await user.click(await screen.findByTestId("form-save"));
+
+    expect(saveCountryMock).toHaveBeenCalledWith(expect.objectContaining({ name: COUNTRY_NAMES.JAPAN, budget: "₹3L" }));
+    expect(screen.queryByTestId("country-form")).not.toBeInTheDocument();
+  });
+
+  it("routes Plan-with-AI into the chat modal, then imports a plan and saves it to the list", async () => {
+    const user = userEvent.setup();
+    vi.mocked(isEnabled).mockImplementation((flag) => flag === "llmPlanning");
+    render(<App />);
+    await selectJapan(user);
+
+    act(() => {
+      (lastCountryPanelProps?.onPlanWithAi as (n: string) => void)(COUNTRY_NAMES.JAPAN);
+    });
+
+    const chat = await screen.findByTestId("chat-modal");
+    expect(chat).toBeInTheDocument();
+    expect(screen.getByTestId("chat-initial")).toHaveTextContent(/Plan a trip to Japan/);
+
+    // Import a plan for a destination not already in My List.
+    await user.click(screen.getByTestId("chat-import"));
+
+    expect(await screen.findByTestId("ai-dest")).toHaveTextContent("Chile");
+    await user.click(screen.getByTestId("ai-save-to-list"));
+    expect(addToListMock).toHaveBeenCalledWith("Chile");
+  });
+
+  it("surfaces a cross-tab storage conflict banner and dismisses it", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    expect(await screen.findByTestId(TEST_IDS.TRIPS_VIEW)).toBeInTheDocument();
+
+    act(() => {
+      window.dispatchEvent(new StorageEvent("storage", { key: "tp_my_list", newValue: "[]" }));
+    });
+
+    expect(await screen.findByText(/changed in another tab/i)).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: /^Dismiss$/i }));
+    expect(screen.queryByText(/changed in another tab/i)).not.toBeInTheDocument();
   });
 });
 

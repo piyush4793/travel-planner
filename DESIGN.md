@@ -429,7 +429,7 @@ Reusable coverage slash command:
   - hash-route setup
   - deterministic timer control for timing-sensitive UI tests
 - Current threshold policy remains strict for domain logic (`core/utils`, hooks, utils) and intentionally permissive for broad UI shells (`src/components/**`) until additional integration coverage lands.
-- **Hard commit gate:** a global floor of **84% statements/lines** is enforced by `vitest run --coverage` (thresholds in `vite.config.ts`), wired into both the pre-commit hook and `npm run validate`. Commits are blocked below 84%. Backup targets are tested against a reusable fake File System (`src/test/support/fakeFileSystem.ts`) covering permissions, the dedicated `Roamwise/` app folder, and read/write round-trips.
+- **Hard commit gate:** a global floor of **86% statements/lines** is enforced by `vitest run --coverage` (thresholds in `vite.config.ts`), wired into both the pre-commit hook and `npm run validate`. Commits are blocked below 86%. Backup targets are tested against a reusable fake File System (`src/test/support/fakeFileSystem.ts`) covering permissions, the dedicated `Roamwise/` app folder, and read/write round-trips.
 
 ### Testing expansion plan (Phase 2 complete)
 
