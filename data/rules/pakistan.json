@@ -26,11 +26,12 @@
     "family4": "₹2L–₹3.2L"
   },
   "experiences": [
-    "Mughal Lahore",
-    "Hunza road trip",
-    "Skardu lakes",
-    "Swat alpine valleys",
-    "Karachi food trail"
+    "Mountains",
+    "Hiking",
+    "History",
+    "Architecture",
+    "Lakes",
+    "Markets & Shopping"
   ],
   "avoid": [
     "July–September can bring monsoon flooding in the plains and landslides on northern mountain roads.",
@@ -53,12 +54,15 @@
       "lat": 33.6844,
       "lng": 73.0479,
       "bestMonths": [
+        "March",
+        "April",
         "October",
-        "November",
-        "February",
-        "March"
+        "November"
       ],
-      "notes": "Faisal Mosque, leafy Margalla foothills, Saidpur heritage lanes and Pakistan Monument viewpoints"
+      "notes": "Faisal Mosque, leafy Margalla foothills, Saidpur heritage lanes and Pakistan Monument viewpoints",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Lahore",
@@ -67,45 +71,58 @@
       "bestMonths": [
         "October",
         "November",
-        "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Badshahi Mosque, Lahore Fort, old-city food streets and Mughal gardens"
+      "notes": "Badshahi Mosque, Lahore Fort, old-city food streets and Mughal gardens",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Hunza Valley",
       "lat": 36.3167,
       "lng": 74.65,
       "bestMonths": [
-        "April",
-        "May",
-        "June"
+        "June",
+        "July",
+        "August",
+        "September"
       ],
-      "notes": "Karimabad bazaars, Baltit Fort, Attabad Lake and Passu cone panoramas"
+      "notes": "Karimabad bazaars, Baltit Fort, Attabad Lake and Passu cone panoramas",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Skardu",
       "lat": 35.2971,
       "lng": 75.6333,
       "bestMonths": [
-        "April",
-        "May",
-        "June"
+        "June",
+        "July",
+        "August",
+        "September"
       ],
-      "notes": "Cold Desert dunes, Kharpocho Fort, Shangrila lakes and gateway to Baltistan"
+      "notes": "Cold Desert dunes, Kharpocho Fort, Shangrila lakes and gateway to Baltistan",
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Swat Valley",
       "lat": 34.7717,
       "lng": 72.3602,
       "bestMonths": [
-        "April",
         "May",
-        "June"
+        "June",
+        "July",
+        "September"
       ],
-      "notes": "Mingora bazaars, Malam Jabba slopes, White Palace and river valleys"
+      "notes": "Mingora bazaars, Malam Jabba slopes, White Palace and river valleys",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Karachi",
@@ -117,7 +134,10 @@
         "January",
         "February"
       ],
-      "notes": "Arabian Sea sunsets, colonial Saddar, mausoleums and iconic Bun Kabab stops"
+      "notes": "Arabian Sea sunsets, colonial Saddar, mausoleums and iconic Bun Kabab stops",
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -146,6 +166,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days cover Lahore's essential Mughal monuments, the Walled City food circuit and an evening Wagah border outing.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Walled City Icons, Fort Ramparts & Food Street",
@@ -237,6 +262,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days are enough for Islamabad's marquee sights plus an easy Margalla and Saidpur loop before heading north.",
+        "experiences": [
+          "Architecture",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Capital Landmarks, Faisal Mosque & Pakistan Monument",
@@ -328,6 +357,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days balance Mingora and Marghazar heritage with a full Malam Jabba alpine outing.",
+        "experiences": [
+          "Mountains",
+          "Lakes",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Islamabad to Mingora, Fizagat Riverfront & White Palace",
@@ -418,6 +452,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days in Karimabad let you cover the heritage forts and the classic Attabad–Passu scenic loop without rushing.",
+        "experiences": [
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "CPEC / Karakoram Highway Arrival, Karimabad & Baltit Fort",
@@ -509,6 +547,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days cover Skardu's classic forts, desert dunes and lake circuit while still leaving time for a weather buffer.",
+        "experiences": [
+          "Mountains",
+          "Lakes",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Jaglot Road Transfer, Kharpocho Fort & Katpana Dunes",
@@ -598,6 +641,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days give you the core colonial-and-coast circuit plus enough time to do Karachi's classic restaurant crawl.",
+        "experiences": [
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "PIA Flight South, Mausoleum & Clifton Seafront",

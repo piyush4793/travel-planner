@@ -25,11 +25,12 @@
     "family4": "₹1.5L–₹2.5L"
   },
   "experiences": [
-    "Palawan Beaches",
-    "Diving",
-    "Island Hopping",
-    "Chocolate Hills",
-    "Siargao Surfing"
+    "Beaches",
+    "Islands",
+    "Diving & Snorkeling",
+    "Surfing",
+    "Water Sports",
+    "History"
   ],
   "avoid": [
     "Typhoon season June-Oct"
@@ -49,37 +50,90 @@
       "name": "Manila",
       "lat": 14.5995,
       "lng": 120.9842,
-      "notes": "Intramuros walled city, Rizal Park and chaotic street food culture"
+      "notes": "Intramuros walled city, Rizal Park and chaotic street food culture",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Palawan",
       "lat": 9.8349,
       "lng": 118.7384,
-      "notes": "El Nido lagoons, Puerto Princesa underground river and Coron shipwrecks"
+      "notes": "El Nido lagoons, Puerto Princesa underground river and Coron shipwrecks",
+      "bestMonths": [
+        "November",
+        "December",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Cebu",
       "lat": 10.3157,
       "lng": 123.8854,
-      "notes": "Magellan's Cross, whale shark swimming in Oslob and Chocolate Hills day trip"
+      "notes": "Magellan's Cross, whale shark swimming in Oslob and Chocolate Hills day trip",
+      "bestMonths": [
+        "November",
+        "December",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Boracay",
       "lat": 11.9674,
       "lng": 121.9248,
-      "notes": "White Beach sunset walks, parasailing and Willy's Rock"
+      "notes": "White Beach sunset walks, parasailing and Willy's Rock",
+      "bestMonths": [
+        "November",
+        "December",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Siargao",
       "lat": 9.8482,
       "lng": 126.0455,
-      "notes": "Cloud 9 surf break, Sugba Lagoon and island-hopping with rock pools"
+      "notes": "Cloud 9 surf break, Sugba Lagoon and island-hopping with rock pools",
+      "bestMonths": [
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Bohol",
       "lat": 9.67,
       "lng": 124.0641,
-      "notes": "Chocolate Hills, Philippine tarsier sanctuary and Loboc River cruise"
+      "notes": "Chocolate Hills, Philippine tarsier sanctuary and Loboc River cruise",
+      "bestMonths": [
+        "November",
+        "December",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -108,6 +162,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Manila to shake off the flight and cover Intramuros, museums and Binondo before hopping to the islands.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Intramuros, Fort Santiago & Sunset Heritage Walk",
@@ -199,6 +256,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "These days are designed around El Nido; if flights into El Nido are pricey, fly to Puerto Princesa and continue by shared van.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Arrival in El Nido, Town Orientation & Las Cabanas Sunset",
@@ -317,6 +379,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Cebu works best as one city day plus one excursion day; keep Oslob weather and ethics in mind before locking it in.",
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling",
+          "History"
+        ],
         "days": [
           {
             "theme": "Spanish Cebu, Fort San Pedro & Downtown Heritage",
@@ -400,6 +467,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay near Alona Beach so the countryside loop and Balicasag boats are both easy to access.",
+        "experiences": [
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Chocolate Hills, Tarsiers & Loboc Countryside Circuit",
@@ -486,6 +557,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Pre-book your accredited hotel before arrival because the island still checks booking proof at the jetty.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "White Beach, Parasailing & Station-to-Station Sunset",
@@ -572,6 +646,10 @@
         "recDays": 1,
         "maxDays": 3,
         "note": "A one-day sampler works, but add extra nights if you want both surf sessions and the full lagoon-island loop at a relaxed pace.",
+        "experiences": [
+          "Surfing",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Cloud 9 Surf, Sugba Lagoon & General Luna Cafe Crawl",

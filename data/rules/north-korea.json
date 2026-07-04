@@ -23,12 +23,12 @@
     "family4": "₹6.2L–₹9L"
   },
   "experiences": [
-    "Guided state tour",
-    "Pyongyang monuments",
-    "DMZ from the North side",
-    "Kaesong history",
-    "East coast scenery",
-    "Mount Kumgang"
+    "History",
+    "Architecture",
+    "Museums",
+    "Mountains",
+    "Hiking",
+    "Beaches"
   ],
   "avoid": [
     "Independent travel is not allowed — all sightseeing, meals and transfers must be arranged through a state-approved tour company with guides.",
@@ -51,25 +51,59 @@
       "name": "Pyongyang",
       "lat": 39.0392,
       "lng": 125.7625,
-      "notes": "Capital showpiece for Juche Tower, grand monuments, the metro and the tightly choreographed core of most licensed tours."
+      "notes": "Capital showpiece for Juche Tower, grand monuments, the metro and the tightly choreographed core of most licensed tours.",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Kaesong",
       "lat": 37.9708,
       "lng": 126.5544,
-      "notes": "Historic Koryo-era city paired with Panmunjom visits, Confucian academy buildings and old-gate streets near the DMZ."
+      "notes": "Historic Koryo-era city paired with Panmunjom visits, Confucian academy buildings and old-gate streets near the DMZ.",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Mount Kumgang",
       "lat": 38.6606,
       "lng": 128.0416,
-      "notes": "Scenic east-coast mountain zone with guided valley walks, Samilpo Lake and the former inter-Korean tourist village."
+      "notes": "Scenic east-coast mountain zone with guided valley walks, Samilpo Lake and the former inter-Korean tourist village.",
+      "bestMonths": [
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Wonsan",
       "lat": 39.1528,
       "lng": 127.4461,
-      "notes": "A controlled east-coast stop for waterfront drives, state beaches, Songdowon camp visits and onward travel to Mount Kumgang."
+      "notes": "A controlled east-coast stop for waterfront drives, state beaches, Songdowon camp visits and onward travel to Mount Kumgang.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -94,6 +128,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers the core monuments and formal visits; use a third only for slower museum time or a performance/cruise add-on.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Arrival monuments, Juche Tower and the formal city core",
@@ -207,6 +246,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Kaesong is usually a long escorted day or one-night stop built around Panmunjom and Koryo-era heritage.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "DMZ/JSA protocol day and Koryo-era history",
@@ -256,6 +299,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Wonsan works best as a controlled overnight on the east-coast drive between Pyongyang/Kaesong and Mount Kumgang.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "East-coast transit, Songdowon visit and waterfront stops",
@@ -301,6 +347,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One day gives you the classic valley highlights; keep a second only for a cable-car day or slower mountain walks.",
+        "experiences": [
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Tourist village arrival, Inner Kumgang scenery and lake circuit",

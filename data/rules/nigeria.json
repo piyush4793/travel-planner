@@ -26,11 +26,12 @@
     "family4": "₹3.2L–₹5.1L"
   },
   "experiences": [
-    "Lagos art spaces and Atlantic-side city energy",
-    "Olumo Rock history and Yoruba heritage in Abeokuta",
-    "Osun-Osogbo Sacred Grove sculptures and river forest",
-    "Abuja boulevards, viewpoints, and domestic flight connections",
-    "Calabar waterfront culture with Cross River rainforest add-ons"
+    "Markets & Shopping",
+    "History",
+    "Nightlife",
+    "Beaches",
+    "Festivals",
+    "Museums"
   ],
   "avoid": [
     "April to October is wetter across most of this route, so road transfers get slower and outdoor days in Lagos and the southwest feel stickier.",
@@ -57,10 +58,12 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Nike Art Gallery, Lekki Conservation Centre, BRT buses, and the country's busiest food-and-nightlife corridor around Victoria Island and Lekki"
+      "notes": "Nike Art Gallery, Lekki Conservation Centre, BRT buses, and the country's busiest food-and-nightlife corridor around Victoria Island and Lekki",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Abuja",
@@ -70,23 +73,26 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Aso Rock viewpoints, Millennium Park, Jabi Lake, museums, and the easiest domestic-flight hub for moving between the southwest and Cross River"
+      "notes": "Aso Rock viewpoints, Millennium Park, Jabi Lake, museums, and the easiest domestic-flight hub for moving between the southwest and Cross River",
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Calabar",
       "lat": 4.9589,
       "lng": 8.3269,
       "bestMonths": [
-        "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Marina Resort, Tinapa, Duke Town history, and straightforward day-trip access toward Kwa Falls and other Cross River nature stops"
+      "notes": "Marina Resort, Tinapa, Duke Town history, and straightforward day-trip access toward Kwa Falls and other Cross River nature stops",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Abeokuta",
@@ -96,10 +102,12 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Olumo Rock, adire textile heritage, Kuti family history, and an easy first overland stop out of Lagos"
+      "notes": "Olumo Rock, adire textile heritage, Kuti family history, and an easy first overland stop out of Lagos",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Osogbo",
@@ -109,10 +117,12 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Osun-Osogbo Sacred Grove, Susanne Wenger sculpture trails, and a slower cultural stop between southwest road legs"
+      "notes": "Osun-Osogbo Sacred Grove, Susanne Wenger sculpture trails, and a slower cultural stop between southwest road legs",
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -140,6 +150,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Nightlife",
+          "Beaches",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Lekki art spaces, canopy views, and a first full taste of Lagos Island energy",
@@ -224,6 +239,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Yoruba history on the rock, adire culture, and an easy western Nigeria side trip",
@@ -272,6 +290,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Festivals",
+          "History"
+        ],
         "days": [
           {
             "theme": "Sacred grove sculptures, river forest, and a slower Osun State culture day",
@@ -320,6 +342,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Museums",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Capital landmarks, broad boulevards, and a relaxed first Abuja day",
@@ -404,6 +430,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Festivals",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Waterfront Calabar, river history, and a lighter arrival after the domestic hop",

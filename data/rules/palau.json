@@ -26,12 +26,12 @@
     "family4": "₹5.7L–₹9.1L"
   },
   "experiences": [
-    "Rock Islands Boat Days",
-    "Snorkeling",
-    "World-Class Diving",
-    "WWII History",
-    "Island Resorts",
-    "Limestone Lagoons"
+    "Diving & Snorkeling",
+    "Islands",
+    "Beaches",
+    "Wildlife & Safari",
+    "Water Sports",
+    "History"
   ],
   "avoid": [
     "June–October is wetter and more humid, so visibility, jellyfish-lake conditions, and boat schedules are less predictable than the November–May dry season.",
@@ -55,19 +55,46 @@
       "name": "Koror",
       "lat": 7.3419,
       "lng": 134.4798,
-      "notes": "Koror is Palau's practical base for museums, marinas, dive shops, hotel choices, and taxi-linked access to nearly every shared boat trip into the Rock Islands."
+      "notes": "Koror is Palau's practical base for museums, marinas, dive shops, hotel choices, and taxi-linked access to nearly every shared boat trip into the Rock Islands.",
+      "bestMonths": [
+        "November",
+        "December",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Rock Islands (Jellyfish Lake)",
       "lat": 7.1622,
       "lng": 134.3625,
-      "notes": "The Rock Islands are Palau's signature limestone-lagoon playground for Jellyfish Lake, Long Beach, the Milky Way, German Channel, and the boat-heavy snorkeling days that justify the trip."
+      "notes": "The Rock Islands are Palau's signature limestone-lagoon playground for Jellyfish Lake, Long Beach, the Milky Way, German Channel, and the boat-heavy snorkeling days that justify the trip.",
+      "bestMonths": [
+        "November",
+        "December",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Peleliu",
       "lat": 7.0029,
       "lng": 134.2433,
-      "notes": "Peleliu adds the most important WWII battlefield landscapes in Palau, plus a quieter island stay if you want one more night beyond Koror's marina-and-tour rhythm."
+      "notes": "Peleliu adds the most important WWII battlefield landscapes in Palau, plus a quieter island stay if you want one more night beyond Koror's marina-and-tour rhythm.",
+      "bestMonths": [
+        "November",
+        "December",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -92,6 +119,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Koror as the sleep-easy base for taxis, marina departures, museum time, and your big Blue Corner or Rock Islands days.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Museum Stops, Marina Bearings and a Gentle Koror Landing",
@@ -178,6 +209,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Give the Rock Islands two full days if you can: one permit-heavy Jellyfish Lake day and one slower Long Beach or German Channel snorkel loop.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Islands",
+          "Water Sports"
+        ],
         "days": [
           {
             "theme": "Jellyfish Lake, Milky Way and the Classic Permit-Heavy First Boat Day",
@@ -260,6 +296,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Peleliu is best as a focused WWII-history add-on: either a long guided day trip from Koror or one quiet overnight that lets the battlefield stops breathe.",
+        "experiences": [
+          "History",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Battlefield History, Orange Beach and a Quiet Island Night",

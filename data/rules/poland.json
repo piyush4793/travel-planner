@@ -21,11 +21,12 @@
     "family4": "₹3L–₹5L"
   },
   "experiences": [
-    "Krakow Old Town",
-    "Auschwitz Memorial",
-    "Warsaw",
-    "Tatras Mountains",
-    "Gdansk"
+    "History",
+    "Architecture",
+    "UNESCO Sites",
+    "Museums",
+    "Mountains",
+    "Skiing"
   ],
   "avoid": [],
   "combo": [
@@ -43,31 +44,79 @@
       "name": "Warsaw",
       "lat": 52.2297,
       "lng": 21.0122,
-      "notes": "Meticulously rebuilt Royal Castle, WWII uprising museum and Neon Museum"
+      "notes": "Meticulously rebuilt Royal Castle, WWII uprising museum and Neon Museum",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Krakow",
       "lat": 50.0647,
       "lng": 19.945,
-      "notes": "Wawel Castle, Kazimierz Jewish quarter, Auschwitz day trip and pierogi"
+      "notes": "Wawel Castle, Kazimierz Jewish quarter, Auschwitz day trip and pierogi",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Gdansk",
       "lat": 54.352,
       "lng": 18.6466,
-      "notes": "Colorful Hanseatic merchant houses, amber jewellery and old shipyard"
+      "notes": "Colorful Hanseatic merchant houses, amber jewellery and old shipyard",
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Wroclaw",
       "lat": 51.1079,
       "lng": 17.0385,
-      "notes": "Island city with 100+ bridges, Market Square dwarfs and nightlife"
+      "notes": "Island city with 100+ bridges, Market Square dwarfs and nightlife",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Zakopane",
       "lat": 49.2992,
       "lng": 19.9496,
-      "notes": "Tatra mountain resort with oscypek cheese, hiking and Kasprowy Wierch"
+      "notes": "Tatra mountain resort with oscypek cheese, hiking and Kasprowy Wierch",
+      "experiences": [
+        "Mountains",
+        "Skiing"
+      ],
+      "bestMonths": [
+        "January",
+        "February",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     }
   ],
   "itinerary": {
@@ -93,6 +142,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days covers the rebuilt Old Town, Warsaw Uprising history, and the Royal Route well; add a fourth day only if you want more museums or a Wilanów-and-Praga split day.",
+        "experiences": [
+          "History",
+          "Museums",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Old Town, Castle Square & the Vistula",
@@ -214,6 +268,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Use the core three days for Krakow itself and add a fourth day if you want to do Auschwitz-Birkenau properly without rushing Kazimierz or Schindler’s Factory.",
+        "experiences": [
+          "History",
+          "UNESCO Sites",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Wawel Hill & Riverside Krakow",
@@ -333,6 +392,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "One day is enough for Market Square and Ostrów Tumski, but two days lets you add Panorama Racławicka and a slower riverside museum day.",
+        "experiences": [
+          "Architecture",
+          "History"
+        ],
         "days": [
           {
             "theme": "Market Square, Dwarfs & Old Town",
@@ -415,6 +478,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers the Royal Way and Solidarity history well; add a third only if you want a relaxed Sopot add-on or a slower WWII Museum visit.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Royal Way, Crane & Hanseatic Core",

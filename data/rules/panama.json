@@ -24,11 +24,12 @@
     "family4": "₹5.5L–₹8.5L"
   },
   "experiences": [
-    "Panama Canal & Biomuseo",
-    "Casco Viejo & Panamá Viejo",
-    "San Blas Islands boat days",
-    "Boquete hikes & coffee",
-    "Bocas del Toro beaches"
+    "Beaches",
+    "Islands",
+    "History",
+    "Wildlife & Safari",
+    "Diving & Snorkeling",
+    "Coffee & Cafés"
   ],
   "avoid": [
     "May to November is wetter across both coasts, and September to October is the least reliable window for San Blas boat rides, jungle hikes, and Bocas snorkeling.",
@@ -51,31 +52,75 @@
       "name": "Panama City",
       "lat": 8.9824,
       "lng": -79.5199,
-      "notes": "Modern high-rise capital for the canal, Frank Gehry's Biomuseo, seafood markets, and easy access to Amador Causeway and Albrook transport links."
+      "notes": "Modern high-rise capital for the canal, Frank Gehry's Biomuseo, seafood markets, and easy access to Amador Causeway and Albrook transport links.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Casco Viejo",
       "lat": 8.9528,
       "lng": -79.5347,
-      "notes": "Historic quarter of Panamá City for churches, plazas, canal history, rooftop dining, and the easiest old-town base before or after island days."
+      "notes": "Historic quarter of Panamá City for churches, plazas, canal history, rooftop dining, and the easiest old-town base before or after island days.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "San Blas Islands",
       "lat": 9.5581,
       "lng": -78.9712,
-      "notes": "Guna Yala archipelago of white-sand cays, simple island cabins, boat transfers from Cartí, and the most castaway-style beach stop in Panama."
+      "notes": "Guna Yala archipelago of white-sand cays, simple island cabins, boat transfers from Cartí, and the most castaway-style beach stop in Panama.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Boquete",
       "lat": 8.7807,
       "lng": -82.4314,
-      "notes": "Cooler Chiriquí highlands base for coffee farms, cloud-forest trails, waterfalls, and a slower inland break after the coast."
+      "notes": "Cooler Chiriquí highlands base for coffee farms, cloud-forest trails, waterfalls, and a slower inland break after the coast.",
+      "bestMonths": [
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Bocas del Toro",
       "lat": 9.34,
       "lng": -82.25,
-      "notes": "Caribbean island chain anchored by Bocas Town for water taxis, Red Frog Beach, Starfish Beach, and easy reef-and-beach day tours."
+      "notes": "Caribbean island chain anchored by Bocas Town for water taxis, Red Frog Beach, Starfish Beach, and easy reef-and-beach day tours.",
+      "bestMonths": [
+        "February",
+        "March",
+        "September"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     }
   ],
   "itinerary": {
@@ -106,6 +151,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay around El Cangrejo, Obarrio, or Punta Paitilla if you want easier road access to Miraflores and Albrook, then shift to Casco only if you specifically want old-town evenings.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Panama Canal & Amador Causeway",
@@ -183,6 +231,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Casco is compact and walkable by day, but its cobbled lanes get busy at night, so use rideshares for late returns and reserve rooftop dinners ahead on weekends.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Canal History & Old-Town Plazas",
@@ -258,6 +309,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Bring passport, dry bags, and enough cash in small USD notes; most islands have limited power, no meaningful ATMs, and meals are usually fixed by your lodge.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Cartí Transfer & First Island Day",
@@ -338,6 +394,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Boquete is cooler than the coasts, so keep one light layer for early hikes and pre-book coffee tours or private transfers if you arrive from David late in the day.",
+        "experiences": [
+          "Coffee & Cafés",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Cloud-Forest Trails & Garden Stops",
@@ -415,6 +475,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Base yourself in Bocas Town if you want the simplest water-taxi access; carry cash for beaches and boats, and plan around afternoon rain or choppier seas in the wetter months.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Red Frog Beach & Bocas Town",

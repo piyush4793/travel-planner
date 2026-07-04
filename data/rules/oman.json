@@ -25,12 +25,12 @@
     "family4": "₹3L–₹4.4L"
   },
   "experiences": [
-    "Sultan Qaboos Grand Mosque",
-    "Nizwa Fort and souq",
-    "Wadi Shab coastal hike",
-    "Sharqiya desert camp night",
-    "Jebel Akhdar terrace villages",
-    "Salalah frankincense coast"
+    "Deserts",
+    "Mountains",
+    "Beaches",
+    "History",
+    "Hiking",
+    "Markets & Shopping"
   ],
   "avoid": [
     "Late spring to early autumn heat, especially inland and in the desert",
@@ -56,11 +56,12 @@
         "October",
         "November",
         "December",
-        "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Grand mosque, Mutrah Corniche, old Muscat forts, museums and easy day-zero arrival comfort"
+      "notes": "Grand mosque, Mutrah Corniche, old Muscat forts, museums and easy day-zero arrival comfort",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Nizwa",
@@ -70,11 +71,12 @@
         "October",
         "November",
         "December",
-        "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Historic fort town with Friday livestock market energy, souq lanes, date stalls and easy fort-castle day trips"
+      "notes": "Historic fort town with Friday livestock market energy, souq lanes, date stalls and easy fort-castle day trips",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Sur",
@@ -84,25 +86,27 @@
         "October",
         "November",
         "December",
-        "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "East-coast dhow town with coastal wadis, Ras Al Jinz turtle reserve and sea-facing evening walks"
+      "notes": "East-coast dhow town with coastal wadis, Ras Al Jinz turtle reserve and sea-facing evening walks",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Wahiba Sands",
       "lat": 22.3476,
       "lng": 58.7316,
       "bestMonths": [
-        "October",
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Sharqiya dunes for desert camps, camel rides, sunset drives and star-heavy winter skies"
+      "notes": "Sharqiya dunes for desert camps, camel rides, sunset drives and star-heavy winter skies",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Jebel Akhdar",
@@ -111,26 +115,27 @@
       "bestMonths": [
         "October",
         "November",
-        "December",
-        "January",
-        "February",
-        "March"
+        "March",
+        "April"
       ],
-      "notes": "Cooler Saiq Plateau terraces, rose-season villages, canyon viewpoints and 4WD mountain roads"
+      "notes": "Cooler Saiq Plateau terraces, rose-season villages, canyon viewpoints and 4WD mountain roads",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Salalah",
       "lat": 17.0194,
       "lng": 54.0897,
       "bestMonths": [
-        "October",
-        "November",
-        "December",
-        "January",
-        "February",
-        "March"
+        "July",
+        "August",
+        "September"
       ],
-      "notes": "Frankincense history, beaches, blowholes, archaeological sites and a softer winter climate than the north"
+      "notes": "Frankincense history, beaches, blowholes, archaeological sites and a softer winter climate than the north",
+      "worstMonths": [
+        "May"
+      ]
     }
   ],
   "itinerary": {
@@ -160,6 +165,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Keep Muscat as your soft landing and final logistics hub; it is the easiest base for SIM setup, cash, museums and domestic connections.",
+        "experiences": [
+          "History",
+          "Markets & Shopping",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Grand mosque calm, museum context and a classic Mutrah first evening",
@@ -285,6 +295,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "The coastal Muscat–Sur drive is part of the appeal, so give yourself daylight for Bimmah Sinkhole and Wadi Shab en route.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Coastal road, Wadi Shab and Sur’s dhow-building heritage",
@@ -370,6 +383,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Most camps package dinner and breakfast, so the real choice here is how much 4x4, camel or sunrise time you want.",
+        "experiences": [
+          "Deserts"
+        ],
         "days": [
           {
             "theme": "Dunes, camp sunset and a one-night Sharqiya desert reset",
@@ -419,6 +435,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Nizwa is the easiest inland base if you want history without changing hotels again for every fort and castle stop.",
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Fort ramparts, souq lanes and Oman’s most rewarding inland base town",
@@ -508,6 +528,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Treat Jebel Akhdar as a cooler mountain add-on from Nizwa, but plan the checkpoint and 4WD requirement into your logistics.",
+        "experiences": [
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Saiq Plateau viewpoints, orchard terraces and a mountain-air switch from the desert",
@@ -593,6 +617,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Salalah is far enough from northern Oman that a domestic flight or open-jaw plan saves major time; keep it for the final coastal stretch.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Frankincense history, mosque calm and an easy first Dhofar evening",

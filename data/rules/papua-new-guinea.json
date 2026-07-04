@@ -26,11 +26,12 @@
     "family4": "₹7.4L–₹10.2L"
   },
   "experiences": [
-    "Varirata birding and rainforest lookouts",
-    "Mount Hagen highlands culture",
-    "Asaro Mudmen performances",
-    "Rabaul caldera volcanoes",
-    "Kimbe Bay diving extension"
+    "Diving & Snorkeling",
+    "Wildlife & Safari",
+    "Hiking",
+    "Festivals",
+    "Volcanoes",
+    "Islands"
   ],
   "avoid": [
     "November–April is wetter, muddier, and more disruption-prone for highlands roads, village access, and volcano viewpoints.",
@@ -58,11 +59,12 @@
         "May",
         "June",
         "July",
-        "August",
-        "September",
         "October"
       ],
-      "notes": "The capital is the safest place to sort SIMs, cash, domestic flights, and guided day trips to Varirata National Park, the National Museum, and Kokoda pre-trek logistics."
+      "notes": "The capital is the safest place to sort SIMs, cash, domestic flights, and guided day trips to Varirata National Park, the National Museum, and Kokoda pre-trek logistics.",
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Mount Hagen",
@@ -72,25 +74,27 @@
         "May",
         "June",
         "July",
-        "August",
-        "September",
-        "October"
+        "August"
       ],
-      "notes": "Western Highlands base for the Mount Hagen Cultural Show, produce markets, Waghi Valley landscapes, and the short detour to the UNESCO-listed Kuk Early Agricultural Site."
+      "notes": "Western Highlands base for the Mount Hagen Cultural Show, produce markets, Waghi Valley landscapes, and the short detour to the UNESCO-listed Kuk Early Agricultural Site.",
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Goroka",
       "lat": -6.0834,
       "lng": 145.3874,
       "bestMonths": [
-        "May",
         "June",
         "July",
         "August",
-        "September",
-        "October"
+        "September"
       ],
-      "notes": "Goroka mixes Eastern Highlands museums, coffee country, and the best access to Asaro Mudmen villages and Daulo Pass viewpoints."
+      "notes": "Goroka mixes Eastern Highlands museums, coffee country, and the best access to Asaro Mudmen villages and Daulo Pass viewpoints.",
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Rabaul/Kokopo",
@@ -100,11 +104,12 @@
         "May",
         "June",
         "July",
-        "August",
-        "September",
         "October"
       ],
-      "notes": "East New Britain's twin-base stop combines Kokopo seaside hotels with Rabaul's caldera history, Tavurvur volcano outings, Baining performances, and onward diving links."
+      "notes": "East New Britain's twin-base stop combines Kokopo seaside hotels with Rabaul's caldera history, Tavurvur volcano outings, Baining performances, and onward diving links.",
+      "worstMonths": [
+        "February"
+      ]
     }
   ],
   "itinerary": {
@@ -130,6 +135,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Keep the capital tightly structured around museum time, a guided Varirata run, and flight logistics rather than trying to sightsee independently across the city.",
+        "experiences": [
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Museum Collections, Nature Park and an Easy Capital Arrival",
@@ -211,6 +219,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Mount Hagen works best as a short highlands culture stop, with the August show as the main draw and Kuk or market time as the fallback outside festival dates.",
+        "experiences": [
+          "Festivals",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Highlands Culture, Market Life and Kuk Side Trip",
@@ -259,6 +271,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Goroka is the most rewarding Eastern Highlands base if you pair one town-and-museum day with one dedicated Asaro or Daulo excursion.",
+        "experiences": [
+          "Festivals",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Museum History, Coffee Country and a Soft Highlands Afternoon",
@@ -336,6 +352,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Base yourself in Kokopo for easier hotels, then day-trip into Rabaul for volcanoes, war history, and the Baining cultural night.",
+        "experiences": [
+          "Volcanoes",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Caldera Orientation, War Relics and the Kokopo Waterfront",

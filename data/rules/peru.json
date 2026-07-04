@@ -21,11 +21,12 @@
     "family4": "₹3.8L–₹6L"
   },
   "experiences": [
-    "Machu Picchu",
-    "Cusco & Inca history",
-    "Sacred Valley",
-    "Arequipa & Colca Canyon",
-    "Lake Titicaca"
+    "Ancient Ruins",
+    "Mountains",
+    "Hiking",
+    "History",
+    "UNESCO Sites",
+    "Lakes"
   ],
   "avoid": [
     "January–February rains can trigger landslides and train delays around Cusco, Sacred Valley, and Machu Picchu",
@@ -46,37 +47,91 @@
       "name": "Lima",
       "lat": -12.0464,
       "lng": -77.0428,
-      "notes": "Food-first capital with Miraflores cliffs, Barranco street art, Larco Museum and easy long-haul recovery before the Andes"
+      "notes": "Food-first capital with Miraflores cliffs, Barranco street art, Larco Museum and easy long-haul recovery before the Andes",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Cusco",
       "lat": -13.5319,
       "lng": -71.9675,
-      "notes": "Acclimatization base for Inca walls, Plaza de Armas, San Pedro Market and the Sacsayhuamán archaeological circuit"
+      "notes": "Acclimatization base for Inca walls, Plaza de Armas, San Pedro Market and the Sacsayhuamán archaeological circuit",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Sacred Valley",
       "lat": -13.3047,
       "lng": -72.1158,
-      "notes": "Urubamba-Ollantaytambo-Pisac corridor for ruins, markets, Moray terraces and Maras salt pans"
+      "notes": "Urubamba-Ollantaytambo-Pisac corridor for ruins, markets, Moray terraces and Maras salt pans",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Machu Picchu",
       "lat": -13.1631,
       "lng": -72.545,
-      "notes": "Aguas Calientes gateway for the citadel, dawn entry circuits and optional Huayna Picchu hike"
+      "notes": "Aguas Calientes gateway for the citadel, dawn entry circuits and optional Huayna Picchu hike",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Arequipa",
       "lat": -16.409,
       "lng": -71.5375,
-      "notes": "White-stone colonial city with Santa Catalina Monastery, volcano views and the classic route into Colca Canyon"
+      "notes": "White-stone colonial city with Santa Catalina Monastery, volcano views and the classic route into Colca Canyon",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Lake Titicaca",
       "lat": -15.8402,
       "lng": -70.0219,
-      "notes": "Puno-side base for Uros floating islands, Taquile textiles and high-altitude lake culture"
+      "notes": "Puno-side base for Uros floating islands, Taquile textiles and high-altitude lake culture",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -110,6 +165,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Miraflores or Barranco as your base, keep a buffer for international arrival day, and save the heaviest altitude days for after Lima.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Miraflores Coastline & Barranco Food Day",
@@ -188,6 +246,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Treat day one as acclimatization, keep coca tea or hydration handy, and book Machu Picchu plus train slots before you arrive in Cusco.",
+        "experiences": [
+          "History",
+          "Ancient Ruins"
+        ],
         "days": [
           {
             "theme": "Acclimatization in the Historic Core",
@@ -293,6 +355,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay near Ollantaytambo or Urubamba so the train day is easier, and use the full tourist ticket if you plan multiple valley ruins.",
+        "experiences": [
+          "Ancient Ruins",
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Pisac Market & Urubamba Valley",
@@ -370,6 +437,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Book the circuit first, then train, then hotel; aim for one of the earlier entry windows and pack only the small bag allowed on the train.",
+        "experiences": [
+          "UNESCO Sites",
+          "Ancient Ruins",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Aguas Calientes Arrival & Hot Springs Town",
@@ -446,6 +518,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Arequipa is lower than Cusco but still elevated, so keep hydration up and decide early whether you want a long Colca day trip or a proper overnight canyon stay.",
+        "experiences": [
+          "History",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "White City Core & Monastery",
@@ -525,6 +601,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Puno is cold after sunset even in the dry season, and lake trips feel better if you leave one lighter afternoon before or after a long bus ride.",
+        "experiences": [
+          "Lakes"
+        ],
         "days": [
           {
             "theme": "Uros & Taquile Islands",

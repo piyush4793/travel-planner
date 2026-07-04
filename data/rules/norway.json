@@ -23,11 +23,10 @@
   "experiences": [
     "Fjords",
     "Northern Lights",
-    "Dog Sledding",
-    "Skiing",
-    "Midnight Sun",
     "Hiking",
-    "Cruises"
+    "Mountains",
+    "Waterfalls",
+    "Islands"
   ],
   "avoid": [
     "July — peak domestic tourism, crowded fjords and higher prices",
@@ -50,83 +49,127 @@
       "name": "Oslo",
       "lat": 59.9139,
       "lng": 10.7522,
-      "notes": "Viking Ship Museum, Vigeland Sculpture Park, Akershus fortress and fjord"
+      "notes": "Viking Ship Museum, Vigeland Sculpture Park, Akershus fortress and fjord",
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Bergen",
       "lat": 60.3913,
       "lng": 5.3221,
-      "notes": "Bryggen UNESCO wharf, Funicular to Floyen and gateway to fjords"
+      "notes": "Bryggen UNESCO wharf, Funicular to Floyen and gateway to fjords",
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Tromso",
       "lat": 69.6492,
       "lng": 18.9553,
-      "notes": "Northern lights capital, Midnight Sun and Arctic Cathedral"
+      "notes": "Northern lights capital, Midnight Sun and Arctic Cathedral",
+      "bestMonths": [
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Flam",
       "lat": 60.8629,
       "lng": 7.1229,
-      "notes": "Flam Railway — world's steepest rail journey into Naeroyfjord"
+      "notes": "Flam Railway — world's steepest rail journey into Naeroyfjord",
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Alesund",
       "lat": 62.4724,
       "lng": 6.1549,
-      "notes": "Art Nouveau archipelago town and gateway to Geirangerfjord cruise"
+      "notes": "Art Nouveau archipelago town and gateway to Geirangerfjord cruise",
+      "bestMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Voss",
       "lat": 60.6276,
       "lng": 6.4154,
       "bestMonths": [
-        "January",
-        "February",
-        "March",
+        "June",
         "July",
         "August"
       ],
-      "notes": "Adventure capital — skiing Jan–Easter, paragliding and white-water rafting in summer"
+      "notes": "Adventure capital — skiing Jan–Easter, paragliding and white-water rafting in summer",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Geirangerfjord",
       "lat": 62.0997,
       "lng": 7.206,
       "bestMonths": [
-        "May",
         "June",
         "July",
-        "August",
-        "September"
+        "August"
       ],
-      "notes": "UNESCO fjord, Seven Sisters waterfall, Eagle Road hairpins and 4–5 hr cruise"
+      "notes": "UNESCO fjord, Seven Sisters waterfall, Eagle Road hairpins and 4–5 hr cruise",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Gudvangen",
       "lat": 60.87,
       "lng": 6.85,
       "bestMonths": [
-        "May",
         "June",
         "July",
-        "August",
-        "September"
+        "August"
       ],
-      "notes": "Viking village Njardarheimr at the end of Nærøyfjord. Gateway from Flam ferry."
+      "notes": "Viking village Njardarheimr at the end of Nærøyfjord. Gateway from Flam ferry.",
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Loen",
       "lat": 61.87,
       "lng": 6.85,
       "bestMonths": [
-        "May",
         "June",
         "July",
-        "August",
-        "September"
+        "August"
       ],
-      "notes": "Nordfjord base — Loen Skylift, Briksdal glacier, turquoise lake Lovatnet."
+      "notes": "Nordfjord base — Loen Skylift, Briksdal glacier, turquoise lake Lovatnet.",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Trollstigen",
@@ -135,10 +178,12 @@
       "bestMonths": [
         "June",
         "July",
-        "August",
-        "September"
+        "August"
       ],
-      "notes": "11-hairpin mountain pass with dramatic viewpoint platform. Road closed Oct–May."
+      "notes": "11-hairpin mountain pass with dramatic viewpoint platform. Road closed Oct–May.",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Lofoten",
@@ -147,10 +192,12 @@
       "bestMonths": [
         "June",
         "July",
-        "August",
-        "September"
+        "August"
       ],
-      "notes": "Arctic archipelago — dramatic peaks, fishing villages, midnight sun, and early aurora. Reine, Henningsvær, Å."
+      "notes": "Arctic archipelago — dramatic peaks, fishing villages, midnight sun, and early aurora. Reine, Henningsvær, Å.",
+      "worstMonths": [
+        "November"
+      ]
     }
   ],
   "itinerary": {
@@ -263,6 +310,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Take the Bergen Line scenic train from Oslo (7 hrs) — one of Europe's great rail journeys; book at vy.no 90 days out for Mini Pris fares. Bergen is Europe's rainiest city — waterproofs are non-negotiable.",
+        "experiences": [
+          "Fjords"
+        ],
         "days": [
           {
             "theme": "Bryggen UNESCO Wharf & Fløyen Summit",
@@ -348,6 +398,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "From Bergen: train to Voss (1 hr, vy.no) + bus to Flam (1.5 hrs). Arrive in the evening for Day 1 (Stegastein + village); Day 2 is the Railway + Nærøyfjord cruise. Book Flåmsbana at norwaysbest.com — summer dates sell out 2–3 months ahead.",
+        "experiences": [
+          "Fjords",
+          "Waterfalls"
+        ],
         "days": [
           {
             "theme": "Arrival Evening & Stegastein Viewpoint",
@@ -406,6 +460,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Arrive by Nærøyfjord ferry from Flam. The Viking village Njardarheimr is the main attraction — a living reconstruction of a Viking-era settlement. Half-day stop before continuing to Bergen via Voss.",
+        "experiences": [
+          "Fjords"
+        ],
         "days": [
           {
             "theme": "Viking Village & Nærøyfjord",
@@ -444,6 +501,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Nordfjord gem between Bergen and Alesund. Loen Skylift is one of Norway's most spectacular cable cars. Drive from Bergen (4 hrs) or Alesund (2.5 hrs). Briksdal Glacier arm is an easy walk. Lake Lovatnet is surreally turquoise in summer.",
+        "experiences": [
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Loen Skylift & Lake Lovatnet",
@@ -501,6 +562,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "The Troll's Ladder — 11 hairpin bends climbing 858m with a dramatic cantilevered viewpoint platform. Road open late May–Oct only (check vegvesen.no). Best as a day stop between Loen/Geirangerfjord and Alesund. Drive self or join a bus tour.",
+        "experiences": [
+          "Mountains",
+          "Waterfalls"
+        ],
         "days": [
           {
             "theme": "Troll Road & Viewpoints",
@@ -537,6 +602,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Arctic archipelago 200km north of the Arctic Circle. Fly to Leknes (LKN) or Svolvær (SVJ) from Tromsø or Oslo. Rent a car — essential for island-hopping. Sept: dark enough for aurora, still mild (5–10°C), fall colors. Traditional rorbuer (fisherman cabins) are the quintessential stay. Book 2–3 months ahead for Sept.",
+        "experiences": [
+          "Islands",
+          "Northern Lights",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Svolvær & Henningsvær – Art & Arctic Harbour",
@@ -639,6 +709,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Transit hub between Bergen Line and Alesund. Don't skip Stalheim Gorge — one of Norway's most dramatic road descents (14 hairpins). Ski season Jan–Easter. Adventure centre summer: rafting, paragliding, skydiving.",
+        "experiences": [
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Adventure Capital & Gondola",
@@ -703,6 +776,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Best May–Sept. Geirangerfjord roads (Eagle Road, Trollstigen, Dalsnibba) close Oct–May — confirm openings at vegvesen.no. Rent a car in Alesund for Day 2 self-drive loop; all major agencies at the airport.",
+        "experiences": [
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Art Nouveau Town & Panoramic Views",
@@ -768,6 +844,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Best May–Sept. All approach roads (Eagle Road, Trollstigen, Rv63) close Oct–May. Recommended as an overnight from Alesund for longer trips. Cruise season peaks June–Aug; kayak season May–Sept.",
+        "experiences": [
+          "Fjords",
+          "Waterfalls"
+        ],
         "days": [
           {
             "theme": "UNESCO Fjord Cruise & Viewpoints",
@@ -828,6 +908,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Best Sept–March for Northern Lights. Feb–March: daylight returns + snow stable — ideal combination. Polar night (no sun at all) Nov–Jan. Summer (June–Aug): Midnight Sun, whale watching closes, dog sledding unavailable.",
+        "experiences": [
+          "Northern Lights"
+        ],
         "days": [
           {
             "theme": "Arctic City & Cathedral",

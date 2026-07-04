@@ -24,11 +24,12 @@
     "family4": "₹4.2L–₹6.2L"
   },
   "experiences": [
-    "Niamey's markets, museums, and Niger River sunsets",
-    "Agadez old town, Grand Mosque, and Sultan's Palace",
-    "Aïr Mountains oasis camps with Tuareg-guided 4x4 travel",
-    "W National Park safari drives for elephant, antelope, and birdlife",
-    "Cure Salée seasonal nomad gathering near In-Gall"
+    "Deserts",
+    "Wildlife & Safari",
+    "History",
+    "Markets & Shopping",
+    "National Parks",
+    "UNESCO Sites"
   ],
   "avoid": [
     "March onward turns brutally hot, and June to September can wash out rougher roads around the Aïr and W National Park.",
@@ -57,7 +58,10 @@
         "January",
         "February"
       ],
-      "notes": "National Museum, Grand Marché, riverfront hotels, and the easiest place to sort SIMs, cash, domestic transport, and current security updates"
+      "notes": "National Museum, Grand Marché, riverfront hotels, and the easiest place to sort SIMs, cash, domestic transport, and current security updates",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Agadez",
@@ -69,19 +73,24 @@
         "January",
         "February"
       ],
-      "notes": "UNESCO-listed mud-brick old town with the Grand Mosque, Sultan's Palace, caravan history, and classic auberges before heading into the Sahara"
+      "notes": "UNESCO-listed mud-brick old town with the Grand Mosque, Sultan's Palace, caravan history, and classic auberges before heading into the Sahara",
+      "worstMonths": [
+        "May"
+      ]
     },
     {
       "name": "W National Park",
       "lat": 12.3399,
       "lng": 2.4285,
       "bestMonths": [
-        "November",
         "December",
         "January",
         "February"
       ],
-      "notes": "The Niger section of transboundary W Park is best for dry-season wildlife drives, simple camp stays, and guided access from the Say-Tapoa side"
+      "notes": "The Niger section of transboundary W Park is best for dry-season wildlife drives, simple camp stays, and guided access from the Say-Tapoa side",
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Aïr Mountains",
@@ -93,7 +102,10 @@
         "January",
         "February"
       ],
-      "notes": "Remote oasis-and-granite massif reached from Agadez by 4x4, with Timia and Iférouane the classic bases for desert scenery and Tuareg hospitality"
+      "notes": "Remote oasis-and-granite massif reached from Agadez by 4x4, with Timia and Iférouane the classic bases for desert scenery and Tuareg hospitality",
+      "worstMonths": [
+        "May"
+      ]
     }
   ],
   "itinerary": {
@@ -117,6 +129,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Land in the capital, get your bearings, and use Niamey for the practical prep every Niger trip needs right now.",
@@ -205,6 +221,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Deserts",
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Reach the old caravan city, settle into a Saharan auberge, and explore Agadez's mud-brick core on foot.",
@@ -292,6 +313,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Deserts",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Leave the pavement behind with a proper Tuareg-led 4x4 day into the massif, aiming for oasis country rather than rushing the desert.",
@@ -376,6 +401,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Treat W as a dry-season safari block: enter early, use a guide, and keep expectations realistic because access and security can change.",

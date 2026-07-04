@@ -23,12 +23,12 @@
     "family4": "₹2.2L–₹3.35L"
   },
   "experiences": [
-    "Lake Towns",
-    "Orthodox Monasteries",
-    "Ottoman Bazaars",
-    "Mountain Drives",
-    "Canyon Boat Rides",
-    "Cafe Streets"
+    "Lakes",
+    "History",
+    "Hiking",
+    "National Parks",
+    "UNESCO Sites",
+    "Architecture"
   ],
   "avoid": [
     "July and August are busiest around Lake Ohrid, so lakefront rooms and St. Naum boats need advance booking.",
@@ -50,31 +50,74 @@
       "name": "Skopje",
       "lat": 41.9981,
       "lng": 21.4254,
-      "notes": "Capital base for Ottoman bazaar lanes, big civic monuments, fortress views and the easiest onward buses across the country."
+      "notes": "Capital base for Ottoman bazaar lanes, big civic monuments, fortress views and the easiest onward buses across the country.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Matka Canyon",
       "lat": 41.9506,
       "lng": 21.2978,
-      "notes": "Near-Skopje canyon stop for the boat ride to Vrelo Cave, monastery terraces and a quick nature reset from the capital."
+      "notes": "Near-Skopje canyon stop for the boat ride to Vrelo Cave, monastery terraces and a quick nature reset from the capital.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Mavrovo National Park",
       "lat": 41.6556,
       "lng": 20.7336,
-      "notes": "Mountain-lake stop for forest drives, easy hikes and cooler summer air around Mavrovo village and the national park."
+      "notes": "Mountain-lake stop for forest drives, easy hikes and cooler summer air around Mavrovo village and the national park.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Ohrid",
       "lat": 41.1172,
       "lng": 20.8016,
-      "notes": "UNESCO lake town with church-dotted lanes, fortress views, St. Naum day trips and the country's strongest slow-travel base."
+      "notes": "UNESCO lake town with church-dotted lanes, fortress views, St. Naum day trips and the country's strongest slow-travel base.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Bitola",
       "lat": 41.0314,
       "lng": 21.3347,
-      "notes": "Elegant southern city for Shirok Sokak cafe culture, Ottoman facades and the nearby ruins of Heraclea Lyncestis."
+      "notes": "Elegant southern city for Shirok Sokak cafe culture, Ottoman facades and the nearby ruins of Heraclea Lyncestis.",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -102,6 +145,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers the capital's core sights well; take a third only if you want a slower museum day or extra Vodno viewpoints.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Old Bazaar, Kale Fortress & Macedonian History",
@@ -231,6 +278,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat Matka as a focused nature day from Skopje or one slow overnight at the canyon hotel.",
+        "experiences": [
+          "Lakes",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Vrelo Cave Boat Ride & Canyon Walks",
@@ -280,6 +331,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One night gives you the lake and one easy walk; add a second only for a longer scenic drive or the Bigorski monastery detour.",
+        "experiences": [
+          "National Parks",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Lake Mavrovo, Village Church & Alpine Air",
@@ -365,6 +420,11 @@
         "recDays": 3,
         "maxDays": 3,
         "note": "Ohrid rewards a slower base: two days is workable, but three lets you cover the old town, St. Naum and one relaxed lake day properly.",
+        "experiences": [
+          "Lakes",
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "UNESCO Old Town, Fortress Views & Lakeside Sunset",
@@ -494,6 +554,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "One full day is enough for Bitola's elegant center and Heraclea Lyncestis before returning north.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Shirok Sokak, Heraclea Lyncestis & Bitola Cafes",

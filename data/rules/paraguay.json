@@ -22,11 +22,12 @@
     "family4": "₹3.4L–₹5.3L"
   },
   "experiences": [
-    "Asunción heritage core & riverside",
-    "Jesuit Missions of Trinidad & Jesús from Encarnación",
-    "Itaipu Dam and Triple Frontier edge",
-    "Paraguayan Chaco Mennonite culture in Filadelfia",
-    "Tereré culture, grills, and relaxed inland road trips"
+    "History",
+    "UNESCO Sites",
+    "Architecture",
+    "Wildlife & Safari",
+    "Waterfalls",
+    "Markets & Shopping"
   ],
   "avoid": [
     "December to February is the hottest, muggiest stretch, and the Chaco can feel brutally dry and above 40°C in the afternoon.",
@@ -48,25 +49,61 @@
       "name": "Asunción",
       "lat": -25.2637,
       "lng": -57.5759,
-      "notes": "Historic center for the Panteón, riverfront walks, traditional bars, and the easiest entry point for buses, taxis, and rental cars."
+      "notes": "Historic center for the Panteón, riverfront walks, traditional bars, and the easiest entry point for buses, taxis, and rental cars.",
+      "bestMonths": [
+        "May",
+        "June",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Encarnación",
       "lat": -27.3306,
       "lng": -55.8667,
-      "notes": "Paraná river promenade base for Playa San José and the best launch point for the Jesuit missions at Trinidad and Jesús."
+      "notes": "Paraná river promenade base for Playa San José and the best launch point for the Jesuit missions at Trinidad and Jesús.",
+      "bestMonths": [
+        "May",
+        "June",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Ciudad del Este",
       "lat": -25.5167,
       "lng": -54.6167,
-      "notes": "Busy Triple Frontier city for Itaipu, shopping, and easy onward links to Foz do Iguaçu plus nearby natural viewpoints."
+      "notes": "Busy Triple Frontier city for Itaipu, shopping, and easy onward links to Foz do Iguaçu plus nearby natural viewpoints.",
+      "bestMonths": [
+        "May",
+        "June",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Chaco (Filadelfia)",
       "lat": -22.3394,
       "lng": -60.0316,
-      "notes": "Dry western Paraguay stop for Mennonite museums, broad-road Chaco landscapes, and birding or national-park style day drives."
+      "notes": "Dry western Paraguay stop for Mennonite museums, broad-road Chaco landscapes, and birding or national-park style day drives.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -94,6 +131,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay in Villa Morra or the historic center if you want easier taxi hops between museums, restaurants, and the riverside. Asunción is compact enough for short taxi rides, but the center is best explored on foot in the morning before the heat builds.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Historic Core, Panteón & Costanera",
@@ -170,6 +212,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Encarnación works best with one city day and one missions day. Stay near the Costanera so you can walk the waterfront, then decide between a taxi/driver or rental car for the Jesuit ruins loop.",
+        "experiences": [
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Costanera, Playa San José & Riverside Evening",
@@ -243,6 +289,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Base near the downtown river side or closer to Hernandarias if Itaipu is your priority. Traffic can be intense, so start early for Itaipu and keep border-crossing plans separate from the sightseeing day.",
+        "experiences": [
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Itaipu, Hernandarias & Frontier Views",
@@ -319,6 +368,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Filadelfia is best with a rental car because distances are longer and the best Chaco stops are spread out. Keep fuel topped up, carry water, and front-load outdoor visits into the cooler morning hours.",
+        "experiences": [
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Mennonite Heritage & Filadelfia Town Stops",

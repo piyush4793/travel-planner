@@ -23,11 +23,12 @@
     "family4": "₹1.8L–₹2.7L"
   },
   "experiences": [
-    "Church of the Nativity and Bethlehem's Star Street",
-    "Banksy murals and The Walled Off Hotel museum",
-    "Ramallah café culture and museum stops",
-    "Jericho's Mount of Temptation cable car and Hisham's Palace",
-    "Hebron Old City lanes and the Ibrahimi Mosque"
+    "History",
+    "Temples & Religious Sites",
+    "UNESCO Sites",
+    "Markets & Shopping",
+    "Ancient Ruins",
+    "Architecture"
   ],
   "avoid": [
     "Jericho gets intensely hot from June to August, especially from late morning onward.",
@@ -53,12 +54,13 @@
       "bestMonths": [
         "March",
         "April",
-        "May",
-        "September",
         "October",
         "November"
       ],
-      "notes": "Manger Square base for the Church of the Nativity, Star Street, Banksy wall art, traditional guesthouses and easy walking between most core sights"
+      "notes": "Manger Square base for the Church of the Nativity, Star Street, Banksy wall art, traditional guesthouses and easy walking between most core sights",
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Ramallah",
@@ -67,12 +69,13 @@
       "bestMonths": [
         "March",
         "April",
-        "May",
-        "September",
         "October",
         "November"
       ],
-      "notes": "The West Bank's easiest urban base for cafés, cultural venues, central hotels and onward shared taxis to other cities"
+      "notes": "The West Bank's easiest urban base for cafés, cultural venues, central hotels and onward shared taxis to other cities",
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Jericho",
@@ -81,12 +84,12 @@
       "bestMonths": [
         "March",
         "April",
-        "May",
-        "September",
-        "October",
         "November"
       ],
-      "notes": "Low-lying oasis city for the Mount of Temptation, Hisham's Palace, archaeological sites and quick palm-lined road trips"
+      "notes": "Low-lying oasis city for the Mount of Temptation, Hisham's Palace, archaeological sites and quick palm-lined road trips",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Hebron",
@@ -95,12 +98,13 @@
       "bestMonths": [
         "March",
         "April",
-        "May",
-        "September",
         "October",
         "November"
       ],
-      "notes": "Historic Al-Khalil for the Ibrahimi Mosque, old souq lanes, ceramic and glass workshops, and one of the West Bank's most layered old cities"
+      "notes": "Historic Al-Khalil for the Ibrahimi Mosque, old souq lanes, ceramic and glass workshops, and one of the West Bank's most layered old cities",
+      "worstMonths": [
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -126,6 +130,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Stay near Manger Square or Beit Sahour so the Church of the Nativity, Star Street, the old market and the wall-art circuit are all walkable without depending on taxis.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Cover Bethlehem's pilgrimage core first, then slow down for cafés and the evening atmosphere around the square",
@@ -207,6 +216,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Hebron works best as a focused daytime visit with an early arrival; keep your passport handy, dress conservatively, and leave buffer time for checkpoints or security screening near the old city.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Give Hebron a full old-city day for religious history, market lanes and working craft traditions",
@@ -252,6 +266,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Ramallah is the easiest place to recover between religious-history days: most sights are short taxi hops apart, and central hotels make evening food and café crawls simple on foot.",
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Switch to a more contemporary urban day with museums, public squares and Ramallah's strong café culture",
@@ -329,6 +347,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Start early in Jericho because the valley heat rises fast; use walking only for the compact center and rely on short taxis or service rides for Mount of Temptation and Hisham's Palace.",
+        "experiences": [
+          "Ancient Ruins",
+          "History"
+        ],
         "days": [
           {
             "theme": "Do Jericho's headline sites in one efficient day by starting with the cable car before the worst of the heat",
