@@ -26,12 +26,12 @@
     "family4": "₹7.9L–₹11.9L"
   },
   "experiences": [
-    "Kaieteur scenic flight",
-    "Rainforest canopy walkway",
-    "Black caiman research",
-    "Rupununi wildlife",
-    "Colonial Georgetown",
-    "River crossings"
+    "Waterfalls",
+    "Wildlife & Safari",
+    "National Parks",
+    "Hiking",
+    "Cruises & Boat Trips",
+    "Markets & Shopping"
   ],
   "avoid": [
     "May–August and December–January are the wettest stretches, when the Linden–Lethem road gets rougher, slower, and much more tiring.",
@@ -58,26 +58,28 @@
       "bestMonths": [
         "February",
         "March",
-        "April",
         "September",
-        "October",
-        "November"
+        "October"
       ],
-      "notes": "Arrival base for colonial architecture, markets, museums, seawall evenings, and the easiest setup for Kaieteur flights or southbound road-and-air transfers."
+      "notes": "Arrival base for colonial architecture, markets, museums, seawall evenings, and the easiest setup for Kaieteur flights or southbound road-and-air transfers.",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Kaieteur Falls",
       "lat": 5.1738,
       "lng": -59.4806,
       "bestMonths": [
-        "February",
-        "March",
         "April",
-        "September",
-        "October",
-        "November"
+        "May",
+        "June",
+        "July"
       ],
-      "notes": "Usually done as a same-day scenic flight from Georgetown for one of the world's tallest single-drop waterfalls and the classic Guyana wildlife-and-geology highlight."
+      "notes": "Usually done as a same-day scenic flight from Georgetown for one of the world's tallest single-drop waterfalls and the classic Guyana wildlife-and-geology highlight.",
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Iwokrama Rainforest",
@@ -86,26 +88,28 @@
       "bestMonths": [
         "February",
         "March",
-        "April",
         "September",
-        "October",
-        "November"
+        "October"
       ],
-      "notes": "Guyana's great forest corridor for Atta's canopy walkway, the Kurupukari crossing, river-lodge wildlife, and deep overland rainforest travel."
+      "notes": "Guyana's great forest corridor for Atta's canopy walkway, the Kurupukari crossing, river-lodge wildlife, and deep overland rainforest travel.",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Rupununi Savannah",
       "lat": 3.88,
       "lng": -59.31,
       "bestMonths": [
-        "February",
-        "March",
-        "April",
         "September",
         "October",
-        "November"
+        "November",
+        "December"
       ],
-      "notes": "Wide-open grassland and wetland country around Annai, Yupukari, Karanambu, and Lethem, best known for giant anteaters, lodges, ranch stays, and black-caiman nights."
+      "notes": "Wide-open grassland and wetland country around Annai, Yupukari, Karanambu, and Lethem, best known for giant anteaters, lodges, ranch stays, and black-caiman nights.",
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -131,6 +135,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Stay central or near the seawall so you have easier restaurant options, simpler airport transfers to Ogle, and a calmer buffer before the long interior stretches.",
+        "experiences": [
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Cathedral woodwork, museums, and Georgetown's classic food-and-seawall rhythm",
@@ -216,6 +223,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat this as a weather-sensitive day trip from Georgetown; confirm the flight the evening before and travel with only a light day bag.",
+        "experiences": [
+          "Waterfalls",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Guyana's signature scenic flight and waterfall day",
@@ -262,6 +273,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Base either at Atta for the walkway or at Iwokrama River Lodge for river access; both work best if you carry cash, a torch, and patience for road or ferry delays.",
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Interior road journey, Kurupukari crossing, and first canopy views",
@@ -380,6 +396,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Choose one main base around Yupukari, Karanambu, Annai, or Lethem rather than trying to move every night; distances are long and wildlife timing matters more than ticking off too many lodges.",
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Savannah transfer, wetlands, and your first wide-open Rupununi evening",

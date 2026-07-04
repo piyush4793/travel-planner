@@ -26,12 +26,12 @@
     "family4": "₹4.0L–₹5.95L"
   },
   "experiences": [
-    "Copán Maya ruins",
-    "Roatán reef diving",
-    "Utila whale shark season",
-    "Pico Bonito rainforest trails",
-    "Caribbean seafood and island ferries",
-    "Tegucigalpa museum-and-viewpoint stopovers"
+    "Ancient Ruins",
+    "Diving & Snorkeling",
+    "Islands",
+    "Beaches",
+    "Wildlife & Safari",
+    "National Parks"
   ],
   "avoid": [
     "May–November is wetter across both mainland and Bay Islands, with rougher ferries, muddier national-park trails, and the highest hurricane disruption risk from late summer into autumn.",
@@ -55,31 +55,78 @@
       "name": "Tegucigalpa",
       "lat": 14.0723,
       "lng": -87.1921,
-      "notes": "Capital arrival base for museums, hilltop viewpoints, Suyapa basilica visits, and onward flights or buses to the north coast and Copán corridor."
+      "notes": "Capital arrival base for museums, hilltop viewpoints, Suyapa basilica visits, and onward flights or buses to the north coast and Copán corridor.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Copán Ruins",
       "lat": 14.8407,
       "lng": -89.1554,
-      "notes": "Western Honduras highlight for the UNESCO Maya site, sculpture museum, bird park, and a slower cobblestoned small-town stay."
+      "notes": "Western Honduras highlight for the UNESCO Maya site, sculpture museum, bird park, and a slower cobblestoned small-town stay.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "La Ceiba",
       "lat": 15.7597,
       "lng": -86.7822,
-      "notes": "North-coast gateway for Pico Bonito National Park, the Cangrejal River, ferry docks to Roatán and Utila, and domestic flights with Easy Sky."
+      "notes": "North-coast gateway for Pico Bonito National Park, the Cangrejal River, ferry docks to Roatán and Utila, and domestic flights with Easy Sky.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Roatán",
       "lat": 16.3184,
       "lng": -86.5375,
-      "notes": "Bay Islands classic for West Bay beach time, easy reef access, sloth sanctuaries, and some of the country's best beginner-friendly dive operations."
+      "notes": "Bay Islands classic for West Bay beach time, easy reef access, sloth sanctuaries, and some of the country's best beginner-friendly dive operations.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "October",
+        "November"
+      ]
     },
     {
       "name": "Utila",
       "lat": 16.0907,
       "lng": -86.8933,
-      "notes": "Compact backpacker-favorite island with cheaper dive culture, whale shark lookouts in season, and a lively waterfront built around the municipal cays and reef boats."
+      "notes": "Compact backpacker-favorite island with cheaper dive culture, whale shark lookouts in season, and a lively waterfront built around the municipal cays and reef boats.",
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "August"
+      ],
+      "worstMonths": [
+        "October",
+        "November"
+      ]
     }
   ],
   "itinerary": {
@@ -186,6 +233,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Stay in town and walk almost everywhere; the archaeological park, sculpture museum road, and cafes are easiest when you avoid midday heat.",
+        "experiences": [
+          "Ancient Ruins"
+        ],
         "days": [
           {
             "theme": "UNESCO Ruins, Tunnels & Sculpture Museum",
@@ -267,6 +317,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Most travelers use La Ceiba as both a rainforest break and a ferry logistics stop; sleep near the pier or at Pico Bonito depending on your next morning plan.",
+        "experiences": [
+          "National Parks",
+          "Wildlife & Safari",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Pico Bonito Trails & Riverside Finish",
@@ -344,6 +399,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "West End suits divers and nightlife, while West Bay works better for sandy-beach stays; taxis between the two are short but expensive by local standards.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "West Bay Beach, Wildlife Parks & Easy Reef Time",
@@ -425,6 +485,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Utila is compact enough to do with one or two nights; book whale shark lookouts flexibly because sightings depend on weather, season, and captain calls.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Whale Shark Safari & Utila Waterfront",

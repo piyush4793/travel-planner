@@ -16,11 +16,14 @@
     "family4": "₹8L–₹14L"
   },
   "experiences": [
-    "Northern Lights",
     "Waterfalls",
     "Glaciers",
-    "Hot Springs",
-    "Midnight Sun"
+    "Northern Lights",
+    "Volcanoes",
+    "Hot Springs & Wellness",
+    "Hiking",
+    "Wildlife & Safari",
+    "Road Trips"
   ],
   "avoid": [
     "Driving in winter without experience"
@@ -40,31 +43,80 @@
       "name": "Reykjavik",
       "lat": 64.1466,
       "lng": -21.9426,
-      "notes": "Hallgrimskirkja church, Blue Lagoon nearby and aurora viewing base"
+      "notes": "Hallgrimskirkja church, Blue Lagoon nearby and aurora viewing base",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Akureyri",
       "lat": 65.6885,
       "lng": -18.1262,
-      "notes": "North Iceland hub with Godafoss waterfall and whale watching"
+      "notes": "North Iceland hub with Godafoss waterfall and whale watching",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Vik",
       "lat": 63.4185,
       "lng": -18.9999,
-      "notes": "Black sand Reynisfjara beach and dramatic basalt sea stacks"
+      "notes": "Black sand Reynisfjara beach and dramatic basalt sea stacks",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Jokulsarlon",
       "lat": 64.0784,
       "lng": -16.2306,
-      "notes": "Glacier lagoon filled with floating icebergs calving from Vatnajokull"
+      "notes": "Glacier lagoon filled with floating icebergs calving from Vatnajokull",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Husavik",
       "lat": 65.9562,
       "lng": -17.3389,
-      "notes": "Whale watching capital — humpbacks almost guaranteed in summer"
+      "notes": "Whale watching capital — humpbacks almost guaranteed in summer",
+      "experiences": [
+        "Wildlife & Safari",
+        "Northern Lights"
+      ],
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -89,6 +141,11 @@
         "recDays": 3,
         "maxDays": 3,
         "note": "Base yourself here for arrival logistics, an easy Golden Circle loop, and one weather-dependent Northern Lights night.",
+        "experiences": [
+          "Hot Springs & Wellness",
+          "Northern Lights",
+          "Road Trips"
+        ],
         "days": [
           {
             "theme": "Arrival + Reykjavik Icons",
@@ -205,6 +262,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Drive this stretch in daylight so the waterfalls and black-sand coastline become part of the itinerary, not just the transfer.",
+        "experiences": [
+          "Waterfalls",
+          "Glaciers",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "South Coast Waterfalls to Vik",
@@ -283,6 +345,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Stay close to the lagoon or in Höfn so you can catch the icebergs at both golden hour and the next morning if weather is clear.",
+        "experiences": [
+          "Glaciers",
+          "Northern Lights"
+        ],
         "days": [
           {
             "theme": "Ice Lagoon Highlights",
@@ -328,6 +394,12 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Akureyri works best as a North Iceland base with one waterfall day and one Mývatn geothermal loop.",
+        "experiences": [
+          "Waterfalls",
+          "Wildlife & Safari",
+          "Northern Lights",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "North Iceland Arrival + Goðafoss",

@@ -18,11 +18,12 @@
     "family4": "₹3L–₹5L"
   },
   "experiences": [
-    "Budapest",
-    "Thermal Baths",
-    "Ruin Bars",
-    "Lake Balaton",
-    "Danube Bend"
+    "History",
+    "Architecture",
+    "Hot Springs & Wellness",
+    "Wine & Vineyards",
+    "Nightlife",
+    "UNESCO Sites"
   ],
   "avoid": [],
   "combo": [
@@ -40,25 +41,61 @@
       "name": "Budapest",
       "lat": 47.4979,
       "lng": 19.0402,
-      "notes": "Parliament building at dusk, Szechenyi thermal bath and ruin bar scene"
+      "notes": "Parliament building at dusk, Szechenyi thermal bath and ruin bar scene",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Eger",
       "lat": 47.9025,
       "lng": 20.3772,
-      "notes": "Valley of Beautiful Women wine cellars and Ottoman minaret"
+      "notes": "Valley of Beautiful Women wine cellars and Ottoman minaret",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Pecs",
       "lat": 46.0727,
       "lng": 18.2328,
-      "notes": "Southern city with Mediterranean feel and Ottoman mosque-turned-church"
+      "notes": "Southern city with Mediterranean feel and Ottoman mosque-turned-church",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Debrecen",
       "lat": 47.5316,
       "lng": 21.6273,
-      "notes": "Hungary's Calvinist capital with Great Reformed Church and thermal baths"
+      "notes": "Hungary's Calvinist capital with Great Reformed Church and thermal baths",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -86,6 +123,12 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Keep Budapest as the longest stop; add a fourth day if you want Szentendre or a second thermal-bath session.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Hot Springs & Wellness",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Castle Hill classics, Danube panoramas and first-night lights",
@@ -203,6 +246,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Weekdays are best if you want lunch at Govinda Vegetarian Restaurant Eger.",
+        "experiences": [
+          "History",
+          "Wine & Vineyards",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Budapest transfer, castle ramparts and baroque old town",
@@ -284,6 +332,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Stay near the center for the church and museum day, then shift toward Great Forest if you want spa time.",
+        "experiences": [
+          "History",
+          "Hot Springs & Wellness"
+        ],
         "days": [
           {
             "theme": "East Hungary rail hop, civic landmarks and museum time",
@@ -365,6 +417,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Pecs is compact in the core, but use Bolt or a taxi if you add Bagolyvár or the TV Tower hillside viewpoints.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Long cross-country transfer, Ottoman square and UNESCO tombs",

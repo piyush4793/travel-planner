@@ -26,10 +26,12 @@
     "family4": "₹4.9L–₹7.2L"
   },
   "experiences": [
-    "Citadelle & Sans-Souci UNESCO Day",
-    "Jacmel Arts & Bassin Bleu",
-    "Île-à-Vache Beaches",
-    "Haitian History & Rum"
+    "History",
+    "Beaches",
+    "Islands",
+    "Architecture",
+    "Art & Design",
+    "Diving & Snorkeling"
   ],
   "avoid": [
     "Haiti has a severe security situation and many governments advise against travel; if travel is essential, keep plans flexible, move only in daylight, use hotel-arranged airport transfers, and rely on vetted local guides and drivers.",
@@ -53,25 +55,65 @@
       "name": "Port-au-Prince",
       "lat": 18.5944,
       "lng": -72.3074,
-      "notes": "Capital base for museums, markets, galleries, rum, and the easiest place to organize vetted transfers, secure hotels, and onward flights or drivers."
+      "notes": "Capital base for museums, markets, galleries, rum, and the easiest place to organize vetted transfers, secure hotels, and onward flights or drivers.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Cap-Haïtien",
       "lat": 19.7578,
       "lng": -72.2043,
-      "notes": "Best northern base for Cap street life, boulevard cafés, and the Milot day trip to Sans-Souci Palace and Citadelle Laferrière."
+      "notes": "Best northern base for Cap street life, boulevard cafés, and the Milot day trip to Sans-Souci Palace and Citadelle Laferrière.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Jacmel",
       "lat": 18.2348,
       "lng": -72.5354,
-      "notes": "Haiti’s artsy south-coast city for gingerbread-era streets, boardwalk sunsets, beach stops, and the jungle pools of Bassin Bleu."
+      "notes": "Haiti’s artsy south-coast city for gingerbread-era streets, boardwalk sunsets, beach stops, and the jungle pools of Bassin Bleu.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Île-à-Vache",
       "lat": 18.1008,
       "lng": -73.6992,
-      "notes": "Slow island add-on off Les Cayes for boat hops, fishing villages, and long beach time once you have confirmed weather, boat timing, and accommodation."
+      "notes": "Slow island add-on off Les Cayes for boat hops, fishing villages, and long beach time once you have confirmed weather, boat timing, and accommodation.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     }
   ],
   "itinerary": {
@@ -98,6 +140,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay in Pétion-Ville, Turgeau, or a major business-hotel zone, line up all airport and city transfers in advance, and avoid independent night movement.",
+        "experiences": [
+          "History",
+          "Art & Design",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "MUPANAH, Iron Market & Downtown History",
@@ -215,6 +262,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Cap-Haïtien is the easiest and safest-feeling base in the north; do the Milot UNESCO circuit with a driver-guide, and start the Citadelle climb early before heat and clouds build.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Boulevard du Cap, Cathedral & Market Streets",
@@ -364,6 +415,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Jacmel is compact and easiest in daylight; power cuts are normal, and Bassin Bleu is best done with a local guide plus proper shoes because the last section is steep and slippery.",
+        "experiences": [
+          "Art & Design",
+          "Beaches",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Historic Jacmel, Art Stops & Raymond les Bains",
@@ -477,6 +533,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Boat timing, fuel, and sea state matter more than distance here, so confirm your Les Cayes crossing the evening before and carry cash because island card acceptance is very limited.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Arrival, Abaka Bay & Village Rhythm",
