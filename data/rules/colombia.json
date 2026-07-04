@@ -114,6 +114,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Stay in La Candelaria, Chapinero, or around Parque 93, keep a light jacket for cool evenings, and use official taxis or app rides late at night.",
+        "experiences": [
+          "Bogotá Museums & Monserrate"
+        ],
         "days": [
           {
             "theme": "Monserrate & La Candelaria",
@@ -225,6 +228,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Base yourself in El Poblado or Laureles, use the metro for daytime hops, and pre-book Guatapé if you prefer a guided day trip over public buses.",
+        "experiences": [
+          "Medellín & Guatapé"
+        ],
         "days": [
           {
             "theme": "Plaza Botero, Metro & Comuna 13",
@@ -339,6 +345,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay near the main square or Calle Real, leave early for Cocora before clouds build, and carry cash for Willys jeeps, reserve fees, and finca tours.",
+        "experiences": [
+          "Salento Coffee Region"
+        ],
         "days": [
           {
             "theme": "Cocora Valley Wax Palms",
@@ -416,6 +425,9 @@
         "recDays": 3,
         "maxDays": 3,
         "note": "Stay inside the Walled City or Getsemaní for easiest walks, plan fort visits early before the heat spikes, and pre-book Rosario Islands on weekends.",
+        "experiences": [
+          "Cartagena Walled City"
+        ],
         "days": [
           {
             "theme": "Walled City & San Felipe",
@@ -527,6 +539,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Centro Histórico for restaurants or Bello Horizonte for calmer beach hotels, start Tayrona very early, and do Minca on a clear morning if possible.",
+        "experiences": [
+          "Tayrona & Minca"
+        ],
         "days": [
           {
             "theme": "Tayrona National Park",
@@ -606,6 +621,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Stay near Spratt Bight or the north end if you are relying on taxis, buy the OCCRE tourist card before boarding your flight, and lock boat tours in early when seas are calm.",
+        "experiences": [
+          "San Andrés Beaches"
+        ],
         "days": [
           {
             "theme": "North End Loop & Island Entry",

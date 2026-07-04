@@ -113,6 +113,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay in Barrio Escalante, Amón, or near downtown museums if you only need a short stop; Uber is usually easier than street taxis for evening dinners.",
+        "experiences": [
+          "San José museums & markets"
+        ],
         "days": [
           {
             "theme": "Historic Center, Theater & Gold Museum",
@@ -189,6 +192,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Use La Fortuna as your base, start trails early for clearer volcano views, and pre-book hot springs if you want evening entry in dry season.",
+        "experiences": [
+          "Arenal Volcano & hot springs"
+        ],
         "days": [
           {
             "theme": "Arenal Volcano National Park",
@@ -305,6 +311,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Even in dry season the cloud forest runs cool and windy, so carry a rain shell and avoid arriving after dark if you are not self-driving.",
+        "experiences": [
+          "Monteverde cloud forest trails"
+        ],
         "days": [
           {
             "theme": "Monteverde Cloud Forest Reserve",
@@ -385,6 +394,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Book park tickets online before you arrive, stay on the hill or near Playa Espadilla if you want buses over taxis, and carry water because the park gets hot fast.",
+        "experiences": [
+          "Manuel Antonio wildlife beaches"
+        ],
         "days": [
           {
             "theme": "Manuel Antonio National Park",
@@ -498,6 +510,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Dry season sunsets are the draw here, but book surf lessons and weekend rooms early because Guanacaste fills fast from December to Easter.",
+        "experiences": [
+          "Tamarindo surf sunsets"
+        ],
         "days": [
           {
             "theme": "Surf & Tamarindo Beach",
@@ -576,6 +591,9 @@
         "recDays": 2,
         "maxDays": 4,
         "note": "A bike is the easiest way to move between beaches, but carry cash for small bars and remember that Caribbean weather can differ from the Pacific even in shoulder months.",
+        "experiences": [
+          "Puerto Viejo Caribbean coast"
+        ],
         "days": [
           {
             "theme": "Cocles, Punta Uva & Jaguar Rescue Center",

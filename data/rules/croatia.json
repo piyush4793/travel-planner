@@ -107,6 +107,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers the capital well; add a third only if you want a Samobor pastry day trip or a Medvednica hill escape.",
+        "experiences": [
+          "History",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Arrival, Upper Town & Zagreb Classics",
@@ -232,6 +236,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Most travellers only need one full park day, but an overnight lets you enter early and avoid the heaviest coach-tour crowds.",
+        "experiences": [
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Plitvice Lakes Grand Boardwalk Loop",
@@ -317,6 +324,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One night is enough for the old town; a second day makes sense if you want an easy Ugljan island detour.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Old Town, Roman Layers & Sunset Waterfront",
@@ -402,6 +413,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days lets Split breathe: one for the palace, one for the surrounding coast, and one flexible day for markets, museums or Krka.",
+        "experiences": [
+          "History",
+          "Beaches",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Diocletian's Palace & the Riva",
@@ -563,6 +579,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is the sweet spot for Hvar Town plus one boat or wine day; add a third if you want Stari Grad and vineyard country too.",
+        "experiences": [
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Harbour Arrival & Fortica Views",
@@ -684,6 +704,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Stay at least two full days for the walls and Lokrum; a third or fourth day is ideal for kayaking, Cavtat or an island cruise.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Old Town Walls & Fort Lovrijenac",

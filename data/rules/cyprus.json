@@ -106,6 +106,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Airport Arrival, Old Quarter & Finikoudes",
@@ -194,6 +197,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Archaeology",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Venetian Walls, Ledra Street & Büyük Han",
@@ -282,6 +289,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Old Port, Castle & Seafront",
@@ -370,6 +381,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Archaeology",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Harbour, Mosaics & Tombs of the Kings",
@@ -458,6 +473,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Mountain villages"
+        ],
         "days": [
           {
             "theme": "Kykkos Monastery & Mountain Roads",
@@ -546,6 +564,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Nissi Beach, Sculpture Park & Monastery",

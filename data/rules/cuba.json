@@ -111,6 +111,12 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Music",
+          "Classic Cars",
+          "History",
+          "Colonial Towns"
+        ],
         "days": [
           {
             "theme": "Old Havana, Capitolio & Waterfront Icons",
@@ -227,6 +233,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Tobacco Country"
+        ],
         "days": [
           {
             "theme": "Viñales Valley Tobacco Country",
@@ -307,6 +316,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Colonial Towns"
+        ],
         "days": [
           {
             "theme": "French Center & Punta Gorda",
@@ -351,6 +363,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Colonial Towns",
+          "Music"
+        ],
         "days": [
           {
             "theme": "Plaza Mayor, Museums & Music",
@@ -431,6 +447,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Classic Varadero Beach Day",
@@ -512,6 +531,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Best added on longer Cuba trips because overland transfers from central or western Cuba are time-heavy.",
+        "experiences": [
+          "Music",
+          "History"
+        ],
         "days": [
           {
             "theme": "Historic Core & Revolution Sites",

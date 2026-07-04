@@ -89,6 +89,11 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Prague Castle",
+          "Architecture",
+          "Beer Culture"
+        ],
         "days": [
           {
             "theme": "Old Town Squares, Charles Bridge & First Prague Views",
@@ -211,6 +216,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Karlovy Vary"
+        ],
         "days": [
           {
             "theme": "Spa Colonnades, Crystal Craft & Hilltop Views",
@@ -257,6 +265,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Český Krumlov",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Castle Arrival, Tower Views & UNESCO Old Town",
@@ -340,6 +352,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beer Culture",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Špilberk Castle, Petrov Hill & Old Town Legends",

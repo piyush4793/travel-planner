@@ -91,6 +91,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Moroni works best as one arrival day and one Karthala or south-coast excursion day; add a third night only if you want the overnight crater trek or need a buffer for domestic hops.",
+        "experiences": [
+          "Mount Karthala Volcano Trek",
+          "Inter-Island Dhow Crossings"
+        ],
         "days": [
           {
             "theme": "Ease into Grande Comore with the market, the old seafront mosque, and a sunset on the black-rock coast at Itsandra.",
@@ -213,6 +217,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Keep Mohéli simple: sleep near Laka Lodge or Fomboni, use one full day inside the marine park, and save the extra day for fruit bats or turtle season rather than racing around the island.",
+        "experiences": [
+          "Mohéli Marine Park Snorkeling",
+          "Livingstone's Fruit Bat Viewing"
+        ],
         "days": [
           {
             "theme": "Hop south from Grande Comore, settle into Mohéli's slower rhythm, and use the afternoon for your first marine-park shoreline views.",
@@ -337,6 +345,9 @@
         "recDays": 3,
         "maxDays": 3,
         "note": "Anjouan deserves at least two nights for the medina plus one mountain day; the third day is best used on waterfalls and plantation roads before flying back to Moroni.",
+        "experiences": [
+          "Mutsamudu Medina Walks"
+        ],
         "days": [
           {
             "theme": "Reach Anjouan, settle into Mutsamudu, and let the old stone port and alley network introduce the island's more historic feel.",
