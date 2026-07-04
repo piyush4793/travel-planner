@@ -19,11 +19,12 @@
     "family4": "₹1.8L–₹3L"
   },
   "experiences": [
-    "Ha Long Bay",
-    "Street Food",
+    "Beaches",
     "History",
-    "Hoi An",
-    "Motorbikes"
+    "Islands",
+    "Food",
+    "Mountains",
+    "UNESCO Sites"
   ],
   "avoid": [
     "Typhoon season in central regions"
@@ -43,37 +44,95 @@
       "name": "Hanoi",
       "lat": 21.0285,
       "lng": 105.8542,
-      "notes": "Old Quarter 36 streets, Hoan Kiem Lake, egg coffee and pho"
+      "notes": "Old Quarter 36 streets, Hoan Kiem Lake, egg coffee and pho",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Ho Chi Minh City",
       "lat": 10.8231,
       "lng": 106.6297,
-      "notes": "War Remnants Museum, Cu Chi Tunnels and Ben Thanh Market energy"
+      "notes": "War Remnants Museum, Cu Chi Tunnels and Ben Thanh Market energy",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Hoi An",
       "lat": 15.8801,
       "lng": 108.338,
-      "notes": "Lantern-lit ancient town, tailor shops and An Bang beach cycling"
+      "notes": "Lantern-lit ancient town, tailor shops and An Bang beach cycling",
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Ha Long Bay",
       "lat": 20.9101,
       "lng": 107.1839,
-      "notes": "3000 limestone karsts, emerald waters and overnight cruise junks"
+      "notes": "3000 limestone karsts, emerald waters and overnight cruise junks",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Hue",
       "lat": 16.4637,
       "lng": 107.5909,
-      "notes": "Imperial Citadel, royal tombs by boat and fiery bun bo Hue noodles"
+      "notes": "Imperial Citadel, royal tombs by boat and fiery bun bo Hue noodles",
+      "experiences": [
+        "History",
+        "UNESCO Sites"
+      ],
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Da Nang",
       "lat": 16.0544,
       "lng": 108.2022,
-      "notes": "Marble Mountains, Dragon Bridge fire show and My Khe beach"
+      "notes": "Marble Mountains, Dragon Bridge fire show and My Khe beach",
+      "bestMonths": [
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "October"
+      ]
     },
     {
       "name": "Ninh Binh",
@@ -85,20 +144,25 @@
         "March",
         "April"
       ],
-      "notes": "Mua Cave viewpoint, Trang An boating through limestone caves"
+      "notes": "Mua Cave viewpoint, Trang An boating through limestone caves",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Sapa",
       "lat": 22.3364,
       "lng": 103.8438,
       "bestMonths": [
-        "March",
-        "April",
-        "May",
         "September",
-        "October"
+        "October",
+        "March",
+        "April"
       ],
-      "notes": "Fansipan peak cable car, Muong Hoa rice terraces and H'mong village treks"
+      "notes": "Fansipan peak cable car, Muong Hoa rice terraces and H'mong village treks",
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -125,6 +189,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Add +1 day if you need rest after a long flight",
+        "experiences": [
+          "History",
+          "Food"
+        ],
         "days": [
           {
             "theme": "History & City Life",
@@ -210,6 +278,9 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Beach & Dragon Bridge",
@@ -312,6 +383,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "UNESCO Sites",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Ancient Town & Lanterns",
@@ -362,6 +438,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Base for Ninh Binh & Ha Long Bay day trips",
+        "experiences": [
+          "History",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Old Quarter & Lakes",
@@ -426,6 +506,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Day trip from Hanoi (1–1.5 hr). Leave luggage at Hanoi bus station locker.",
+        "experiences": [
+          "UNESCO Sites",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Caves, Boats & Karst Peaks",
@@ -455,6 +539,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Day trip from Hanoi. Shuttle bus or public bus (~3–4 hrs each way).",
+        "experiences": [
+          "UNESCO Sites",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Cruise the Emerald Waters",
@@ -495,6 +583,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Overnight train from Hanoi (~8 hrs, ₹2,500 pp via 12go.asia)",
+        "experiences": [
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Peaks & Village Culture",

@@ -24,11 +24,12 @@
     "family4": "₹68K–₹1.4L"
   },
   "experiences": [
-    "Vatican Museums & Sistine Chapel",
-    "St. Peter's Basilica",
-    "St. Peter's Dome",
-    "Vatican Gardens guided tour",
-    "Scavi tour"
+    "History",
+    "Architecture",
+    "Museums",
+    "Art & Design",
+    "Temples & Religious Sites",
+    "UNESCO Sites"
   ],
   "avoid": [
     "Holy Week, Easter and major Jubilee dates bring the Vatican's longest security queues and fastest hotel sell-outs in nearby Rome.",
@@ -50,14 +51,15 @@
       "lat": 41.9029,
       "lng": 12.4534,
       "bestMonths": [
-        "March",
         "April",
         "May",
         "September",
-        "October",
-        "November"
+        "October"
       ],
-      "notes": "The world's smallest country sits inside Rome and is easiest to enter on foot from Ottaviano or San Pietro after a short metro ride, with the basilica, museums and papal sites all clustered tightly together."
+      "notes": "The world's smallest country sits inside Rome and is easiest to enter on foot from Ottaviano or San Pietro after a short metro ride, with the basilica, museums and papal sites all clustered tightly together.",
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -80,6 +82,12 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One full day covers the Vatican essentials if you start early; add a second day only for premium extras like the Gardens or Scavi tour.",
+        "experiences": [
+          "Architecture",
+          "Museums",
+          "Art & Design",
+          "Temples & Religious Sites"
+        ],
         "days": [
           {
             "theme": "Museums, Sistine Chapel and the basilica core",

@@ -26,12 +26,12 @@
     "family4": "₹5L–₹7.4L"
   },
   "experiences": [
+    "Beaches",
+    "Islands",
     "Volcanoes",
-    "Blue Holes",
-    "Snorkeling",
-    "Melanesian Culture",
-    "Remote Islands",
-    "Beaches"
+    "Diving & Snorkeling",
+    "Water Sports",
+    "Wildlife & Safari"
   ],
   "avoid": [
     "November–March is wetter, more humid, and more cyclone-prone, so domestic flight reliability, boat crossings, and volcano visibility can all drop.",
@@ -55,25 +55,61 @@
       "name": "Port Vila",
       "lat": -17.7334,
       "lng": 168.3273,
-      "notes": "Port Vila on Efate is the easy arrival base for cascades, reef day trips, waterfront restaurants, local buses, and the short ferry to Hideaway Island."
+      "notes": "Port Vila on Efate is the easy arrival base for cascades, reef day trips, waterfront restaurants, local buses, and the short ferry to Hideaway Island.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Tanna",
       "lat": -19.5469,
       "lng": 169.2812,
-      "notes": "Tanna is Vanuatu's volcanic showstopper for Mount Yasur, kastom village visits, Blue Cave excursions, and black-sand beaches around Port Resolution."
+      "notes": "Tanna is Vanuatu's volcanic showstopper for Mount Yasur, kastom village visits, Blue Cave excursions, and black-sand beaches around Port Resolution.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Espiritu Santo",
       "lat": -15.5128,
       "lng": 167.1767,
-      "notes": "Espiritu Santo mixes the country's best blue holes, Champagne Beach, Millennium Cave adventures, and classic wreck snorkeling around Luganville."
+      "notes": "Espiritu Santo mixes the country's best blue holes, Champagne Beach, Millennium Cave adventures, and classic wreck snorkeling around Luganville.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Ambrym",
       "lat": -16.2667,
       "lng": 168.1167,
-      "notes": "Ambrym is the rugged add-on for black-sand coasts, village culture, and rustic guesthouse stays closer to Vanuatu's more remote island rhythm."
+      "notes": "Ambrym is the rugged add-on for black-sand coasts, village culture, and rustic guesthouse stays closer to Vanuatu's more remote island rhythm.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "October"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     }
   ],
   "itinerary": {
@@ -99,6 +135,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Efate works best as a soft landing: one easy waterfall-and-snorkel day, then one cultural or lagoon day before you commit to outer-island flights.",
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Mele Cascades, Underwater Postcards and a Waterfront Sunset",
@@ -194,6 +234,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Tanna deserves an overnight because Mount Yasur is best timed for late afternoon light, while kastom visits and the east-coast Blue Cave need their own weather window.",
+        "experiences": [
+          "Volcanoes",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Air Vanuatu Hop, Port Resolution and Mount Yasur at Sunset",
@@ -280,6 +324,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Santo is the most flexible outer-island stop: keep one blue-hole day, one cave or wreck day, and one beach day rather than rushing every north-coast sight in one loop.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Beaches",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Flight via Port Vila, Blue Holes and an Aore Sunset",
@@ -410,6 +459,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Ambrym works best as a rustic extension once you've already seen Efate and Santo: come for guesthouse life, village culture, and a slower pace rather than polished resort infrastructure.",
+        "experiences": [
+          "Volcanoes",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Craig Cove Arrival, Village Culture and the Black-Sand Coast",

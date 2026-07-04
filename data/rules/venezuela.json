@@ -26,11 +26,12 @@
     "family4": "₹8.1L–₹12.6L"
   },
   "experiences": [
-    "Caracas cable car & historic core",
-    "Canaima Lagoon & Angel Falls",
-    "Mérida Andean cable car",
-    "Los Roques cays by boat",
-    "Isla de Margarita beaches & Pampatar"
+    "Beaches",
+    "Islands",
+    "Waterfalls",
+    "Mountains",
+    "National Parks",
+    "Diving & Snorkeling"
   ],
   "avoid": [
     "May to November is wetter and less predictable for Canaima river runs, Los Roques boat days, and mountain views in Mérida.",
@@ -56,23 +57,27 @@
         "December",
         "January",
         "February",
-        "March",
-        "April"
+        "March"
       ],
-      "notes": "Main air hub for Venezuela, with the Warairarepano cable car, Bolívar-era landmarks, and the easiest base for onward domestic flights."
+      "notes": "Main air hub for Venezuela, with the Warairarepano cable car, Bolívar-era landmarks, and the easiest base for onward domestic flights.",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Canaima",
       "lat": 6.241,
       "lng": -62.854,
       "bestMonths": [
-        "December",
-        "January",
-        "February",
-        "March",
-        "April"
+        "July",
+        "August",
+        "September",
+        "October"
       ],
-      "notes": "Remote Pemón gateway to Laguna de Canaima and Salto Ángel, where most stays bundle flights, meals, guides, and boat logistics."
+      "notes": "Remote Pemón gateway to Laguna de Canaima and Salto Ángel, where most stays bundle flights, meals, guides, and boat logistics.",
+      "worstMonths": [
+        "March"
+      ]
     },
     {
       "name": "Mérida",
@@ -82,10 +87,12 @@
         "December",
         "January",
         "February",
-        "March",
-        "April"
+        "March"
       ],
-      "notes": "Andean university city known for the Mukumbarí cable car, cool weather, markets, and easy mountain viewpoints."
+      "notes": "Andean university city known for the Mukumbarí cable car, cool weather, markets, and easy mountain viewpoints.",
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "Los Roques",
@@ -95,10 +102,12 @@
         "December",
         "January",
         "February",
-        "March",
-        "April"
+        "March"
       ],
-      "notes": "Gran Roque base for reef flats, white-sand cays, snorkeling, kitesurfing, and posada-based island logistics."
+      "notes": "Gran Roque base for reef flats, white-sand cays, snorkeling, kitesurfing, and posada-based island logistics.",
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Isla de Margarita",
@@ -108,10 +117,12 @@
         "December",
         "January",
         "February",
-        "March",
-        "April"
+        "March"
       ],
-      "notes": "Beach-and-resort island around Porlamar and Pampatar, mixing Caribbean strands, castles, seafood, and easy domestic-flight access."
+      "notes": "Beach-and-resort island around Porlamar and Pampatar, mixing Caribbean strands, castles, seafood, and easy domestic-flight access.",
+      "worstMonths": [
+        "September"
+      ]
     }
   ],
   "itinerary": {
@@ -140,6 +151,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Stay in Altamira, Los Palos Grandes, or La Castellana, use hotel-booked cars or app rides after dark, and avoid flashing valuables around bus terminals or airport ATMs.",
+        "experiences": [
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Warairarepano & the Historic Center",
@@ -214,6 +228,10 @@
         "recDays": 3,
         "maxDays": 3,
         "note": "Book full-board lodges or a verified operator before flying in, carry the national park fee in cash, and keep an extra buffer day because wind and river levels can shift Salto Ángel departures.",
+        "experiences": [
+          "Waterfalls",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Laguna de Canaima Arrival",
@@ -323,6 +341,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Bring layers for cool evenings, pre-check Teleférico Mukumbarí operating days before arriving, and use registered taxis or por puestos for side trips to Jají or mountain viewpoints.",
+        "experiences": [
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Mukumbarí & the Old Center",
@@ -431,6 +452,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Most posadas on Gran Roque include breakfast and dinner, boats leave early around wind and tide, and you should reconfirm baggage limits because light-aircraft allowances are strict.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Gran Roque Arrival & Nearby Cays",
@@ -542,6 +568,10 @@
         "recDays": 2,
         "maxDays": 4,
         "note": "Base yourself around Pampatar, Costa Azul, or a full-service beach resort, pre-arrange airport transfers, and keep beach days flexible if domestic flights shift on the Caracas leg.",
+        "experiences": [
+          "Islands",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Pampatar, Castle & Beach",

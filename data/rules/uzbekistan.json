@@ -22,12 +22,12 @@
     "family4": "₹2.8L–₹4.8L"
   },
   "experiences": [
-    "Silk Road Cities",
-    "Islamic Architecture",
-    "Bazaars",
-    "Afrosiyob Train",
-    "Savitsky Museum",
-    "Ceramics & Silk"
+    "History",
+    "Architecture",
+    "Ancient Ruins",
+    "UNESCO Sites",
+    "Markets & Shopping",
+    "Deserts"
   ],
   "avoid": [
     "July–August afternoon heat in Bukhara, Khiva and Nukus",
@@ -48,37 +48,91 @@
       "name": "Tashkent",
       "lat": 41.2995,
       "lng": 69.2401,
-      "notes": "Broad Soviet avenues, metro stations, Chorsu Bazaar and the country's best food scene"
+      "notes": "Broad Soviet avenues, metro stations, Chorsu Bazaar and the country's best food scene",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Samarkand",
       "lat": 39.6542,
       "lng": 66.9597,
-      "notes": "Registan, Shah-i-Zinda, Timurid tombs and the most iconic Silk Road skyline"
+      "notes": "Registan, Shah-i-Zinda, Timurid tombs and the most iconic Silk Road skyline",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Bukhara",
       "lat": 39.767,
       "lng": 64.4231,
-      "notes": "Walkable old city of madrasas, caravanserais, hammams and courtyard dining"
+      "notes": "Walkable old city of madrasas, caravanserais, hammams and courtyard dining",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Khiva",
       "lat": 41.3783,
       "lng": 60.3639,
-      "notes": "Compact mud-brick walled city with minarets, palace courtyards and strong sunset views"
+      "notes": "Compact mud-brick walled city with minarets, palace courtyards and strong sunset views",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Nukus",
       "lat": 42.4602,
       "lng": 59.6166,
-      "notes": "Gateway to Karakalpakstan, home of the Savitsky Museum and Aral Sea history"
+      "notes": "Gateway to Karakalpakstan, home of the Savitsky Museum and Aral Sea history",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Fergana Valley",
       "lat": 40.3864,
       "lng": 71.7864,
-      "notes": "Use Fergana city as a base for Kokand palaces, Margilan silk and Rishtan ceramics"
+      "notes": "Use Fergana city as a base for Kokand palaces, Margilan silk and Rishtan ceramics",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -106,6 +160,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days covers the old city, metro, museums and plov; keep a third only for a slower cafe or mountain day.",
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Old Tashkent & Metro Classics",
@@ -211,6 +269,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Plan one full monument day and one Timurid-tombs plus craft day; a third day helps if you like slower museum time.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Registan, Bazaars & Blue Domes",
@@ -317,6 +380,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Bukhara works best at an unhurried pace because nearly everything worth seeing is inside the atmospheric old city core.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Ark Fortress & Old Town Core",
@@ -423,6 +491,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One full day is enough for the walled city highlights, but staying the night lets you enjoy Ichan-Kala after day-trippers leave.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Ichan-Kala Essentials",
@@ -496,6 +569,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Come primarily for the Savitsky collection; the second day is only worth it if you want a Muynak or Mizdakhan excursion.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Savitsky Masterpieces & Karakalpakstan",
@@ -561,6 +637,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use the valley as a multi-stop craft-and-history region rather than a single-city stay; two days is the sweet spot.",
+        "experiences": [
+          "Markets & Shopping",
+          "History"
+        ],
         "days": [
           {
             "theme": "Kokand Palaces & Mosques",

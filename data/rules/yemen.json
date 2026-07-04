@@ -26,11 +26,12 @@
     "family4": "₹6.8L–₹9.5L"
   },
   "experiences": [
-    "Old City of Sana'a tower houses, Bab al-Yemen, and Souk al-Milh when local conditions permit access",
-    "Dar al-Hajar rock palace above Wadi Dhahr with a low official entry fee and a half-day 4x4 outing",
-    "Shibam's mud-brick skyscrapers and old-city lanes in Wadi Hadramawt, often paired with a Seiyun base",
-    "Aden's Crater district, Sira Fortress viewpoints, and Gold Mohur seafront on a tightly planned daylight stop",
-    "Socotra's dragon's blood tree plateau, white-sand lagoons, and 4x4-led eco-tour loops from Hadibo"
+    "History",
+    "Ancient Ruins",
+    "Architecture",
+    "UNESCO Sites",
+    "Islands",
+    "Beaches"
   ],
   "avoid": [
     "Strong safety advisory: Yemen remains an active-conflict destination and most governments advise against all travel; only consider travel with a vetted fixer or operator, keep every mainland move in daylight, and expect abrupt closures, checkpoints, or cancellations.",
@@ -55,12 +56,13 @@
       "bestMonths": [
         "October",
         "November",
-        "December",
-        "January",
-        "February",
-        "March"
+        "March",
+        "April"
       ],
-      "notes": "UNESCO old city lanes, Bab al-Yemen, Souk al-Milh, and Dar al-Hajar excursions, but only with same-week security checks and hotel-arranged transport."
+      "notes": "UNESCO old city lanes, Bab al-Yemen, Souk al-Milh, and Dar al-Hajar excursions, but only with same-week security checks and hotel-arranged transport.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Socotra Island",
@@ -69,40 +71,43 @@
       "bestMonths": [
         "October",
         "November",
-        "December",
-        "January",
-        "February",
-        "March"
+        "March",
+        "April"
       ],
-      "notes": "Hadibo-based eco-travel for Diksam dragon's blood trees, Qalansiyah, Detwah, Homhil and beach camps, usually run as guided 4x4 packages."
+      "notes": "Hadibo-based eco-travel for Diksam dragon's blood trees, Qalansiyah, Detwah, Homhil and beach camps, usually run as guided 4x4 packages.",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Shibam",
       "lat": 15.9236,
       "lng": 48.6267,
       "bestMonths": [
-        "October",
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "The Manhattan of the Desert: mud-brick tower blocks, skyline viewpoints, and easy pairing with Seiyun hotels and drivers."
+      "notes": "The Manhattan of the Desert: mud-brick tower blocks, skyline viewpoints, and easy pairing with Seiyun hotels and drivers.",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Aden",
       "lat": 12.7855,
       "lng": 45.0187,
       "bestMonths": [
-        "October",
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Crater and Tawahi seafront stops work best as a short daylight logistics base before or after Yemenia flights."
+      "notes": "Crater and Tawahi seafront stops work best as a short daylight logistics base before or after Yemenia flights.",
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -128,6 +133,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Treat Sana'a as a fixer-led heritage stop, not a free-roaming city break; keep hotels inside known compounds or established Old City properties and avoid night movement.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Bab al-Yemen, UNESCO lanes, and a careful first read of Old Sana'a with a local fixer",
@@ -253,6 +263,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Most travelers sleep in Seiyun and visit Shibam by arranged car; the old city itself is small, but the skyline and nearby wadis reward a full daylight block.",
+        "experiences": [
+          "Architecture",
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Mud-skyscraper skyline, old lanes, and a heritage day in Wadi Hadramawt",
@@ -338,6 +353,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Keep Aden functional: sleep near your airport or onward meeting point, move only in daylight, and use it as a short transition before Socotra or departure.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Crater district viewpoints, seafront air, and logistics before the next flight",
@@ -387,6 +406,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Socotra works best as an operator-run 4x4 circuit from Hadibo; most real costs are bundled into packages covering airport handling, camping, meals, and guide support.",
+        "experiences": [
+          "Islands",
+          "UNESCO Sites",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Hadibo arrival, airport handling, and an easy first-night island reset",

@@ -26,11 +26,12 @@
     "family4": "₹7.8L–₹11.6L"
   },
   "experiences": [
-    "Victoria Falls rainforest walk",
-    "South Luangwa walking safari",
-    "Lower Zambezi canoe safari",
-    "Livingstone sunset cruise",
-    "Lake Kariba houseboat and fishing trips"
+    "Wildlife & Safari",
+    "National Parks",
+    "Waterfalls",
+    "Lakes",
+    "Adventure Sports",
+    "Hiking"
   ],
   "avoid": [
     "November to April is wetter and greener, but safari roads get slower, Victoria Falls spray can limit viewpoints, and walking safari logistics are less predictable",
@@ -54,31 +55,76 @@
       "name": "Lusaka",
       "lat": -15.3875,
       "lng": 28.3228,
-      "notes": "Capital reset for museums, craft shopping, and the key Proflight Zambia connections before the safari sectors begin"
+      "notes": "Capital reset for museums, craft shopping, and the key Proflight Zambia connections before the safari sectors begin",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Livingstone",
       "lat": -17.8419,
       "lng": 25.8543,
-      "notes": "Base for the Zambian side of Victoria Falls, Zambezi cruises, museum stops, and easy access to Mosi-oa-Tunya"
+      "notes": "Base for the Zambian side of Victoria Falls, Zambezi cruises, museum stops, and easy access to Mosi-oa-Tunya",
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "August"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "South Luangwa National Park",
       "lat": -13.1094,
       "lng": 31.7867,
-      "notes": "Mfuwe-based safari country known for classic walking safaris, leopard-rich night drives, and some of Zambia's best-value bush camps"
+      "notes": "Mfuwe-based safari country known for classic walking safaris, leopard-rich night drives, and some of Zambia's best-value bush camps",
+      "bestMonths": [
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Lower Zambezi",
       "lat": -15.75,
       "lng": 29.33,
-      "notes": "River-and-escarpment wilderness where canoeing, boat safaris, walking, and tiger fishing define the experience"
+      "notes": "River-and-escarpment wilderness where canoeing, boat safaris, walking, and tiger fishing define the experience",
+      "bestMonths": [
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Lake Kariba",
       "lat": -16.5382,
       "lng": 28.7087,
-      "notes": "Siavonga-side lake escape for dam views, houseboat sunsets, fishing, and a softer final day after bush flights and game drives"
+      "notes": "Siavonga-side lake escape for dam views, houseboat sunsets, fishing, and a softer final day after bush flights and game drives",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -159,6 +205,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Waterfalls",
+          "Adventure Sports"
+        ],
         "days": [
           {
             "theme": "Victoria Falls viewpoints, local history, and the classic first sunset on the Zambezi",
@@ -255,6 +305,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Fly into Mfuwe, settle into the Luangwa Valley, and start with the classic sunset safari rhythm",
@@ -351,6 +405,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks",
+          "Adventure Sports"
+        ],
         "days": [
           {
             "theme": "Bush flight arrival, river frontage, and the signature canoe-and-sundowner pairing",
@@ -447,6 +506,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 1,
+        "experiences": [
+          "Lakes"
+        ],
         "days": [
           {
             "theme": "End with Siavonga views, the lakefront, and a lighter Zambia finale after the park-heavy middle stretch",

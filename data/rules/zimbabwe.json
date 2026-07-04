@@ -25,11 +25,12 @@
     "family4": "₹5.8L–₹8.9L"
   },
   "experiences": [
-    "Victoria Falls rainforest walk",
-    "Zambezi sunset cruise",
-    "Hwange safari",
-    "Matobo rhino tracking",
-    "Great Zimbabwe ruins"
+    "Wildlife & Safari",
+    "National Parks",
+    "Waterfalls",
+    "History",
+    "Ancient Ruins",
+    "Hiking"
   ],
   "avoid": [
     "November to March brings hotter weather, storms, muddier roads, and weaker safari visibility in many parks",
@@ -53,31 +54,76 @@
       "name": "Harare",
       "lat": -17.8292,
       "lng": 31.0522,
-      "notes": "Capital gateway for museums, jacaranda-lined suburbs, wildlife sanctuaries, and the cleanest Fastjet or Air Zimbabwe jump to Victoria Falls"
+      "notes": "Capital gateway for museums, jacaranda-lined suburbs, wildlife sanctuaries, and the cleanest Fastjet or Air Zimbabwe jump to Victoria Falls",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Victoria Falls",
       "lat": -17.9243,
       "lng": 25.8572,
-      "notes": "Zimbabwe's signature stop for the rainforest trail, Zambezi cruises, helicopter flights, bridge bungee, and high-water rafting logistics"
+      "notes": "Zimbabwe's signature stop for the rainforest trail, Zambezi cruises, helicopter flights, bridge bungee, and high-water rafting logistics",
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "August"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Hwange National Park",
       "lat": -18.6292,
       "lng": 26.9414,
-      "notes": "Zimbabwe's classic big-game park with waterhole hides, elephant-heavy game drives, and easy lodge-based safaris from Main Camp or the eastern concessions"
+      "notes": "Zimbabwe's classic big-game park with waterhole hides, elephant-heavy game drives, and easy lodge-based safaris from Main Camp or the eastern concessions",
+      "bestMonths": [
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Matobo Hills",
       "lat": -20.5,
       "lng": 28.5,
-      "notes": "Granite kopjes, San rock art, Cecil Rhodes viewpoints, and one of southern Africa's best rhino-tracking reserves"
+      "notes": "Granite kopjes, San rock art, Cecil Rhodes viewpoints, and one of southern Africa's best rhino-tracking reserves",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Great Zimbabwe",
       "lat": -20.267,
       "lng": 30.933,
-      "notes": "The country's defining archaeological site near Masvingo, with the Hill Complex, Great Enclosure, and museum telling the Shona kingdom story"
+      "notes": "The country's defining archaeological site near Masvingo, with the Hill Complex, Great Enclosure, and museum telling the Shona kingdom story",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -158,6 +204,9 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Waterfalls"
+        ],
         "days": [
           {
             "theme": "Rainforest viewpoints, bridge history, and a Zambezi sunset on the first full day",
@@ -254,6 +303,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Road into safari country, first waterhole sightings, and a classic sunset drive",
@@ -346,6 +399,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Hiking",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Granite kopjes, San rock art, and Zimbabwe's signature rhino-on-foot experience",
@@ -398,6 +456,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Ancient Ruins",
+          "History"
+        ],
         "days": [
           {
             "theme": "Ancient stone architecture, hilltop history, and a quieter final chapter near Masvingo",

@@ -24,11 +24,12 @@
     "family4": "₹2.8L–₹4.6L"
   },
   "experiences": [
-    "Saint Sophia Cathedral",
-    "Kyiv Pechersk Lavra",
-    "Lviv Old Town",
-    "Odesa seafront",
-    "Kamianets-Podilskyi Castle"
+    "History",
+    "Architecture",
+    "Beaches",
+    "UNESCO Sites",
+    "Museums",
+    "Nightlife"
   ],
   "avoid": [
     "Ongoing conflict means advisories, curfews, and access rules can change quickly — travel only after checking current government guidance and local alerts.",
@@ -51,31 +52,76 @@
       "name": "Kyiv",
       "lat": 50.4501,
       "lng": 30.5234,
-      "notes": "Saint Sophia Cathedral, Lavra, Maidan, river viewpoints and one of Europe’s great metro systems"
+      "notes": "Saint Sophia Cathedral, Lavra, Maidan, river viewpoints and one of Europe’s great metro systems",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Lviv",
       "lat": 49.8397,
       "lng": 24.0297,
-      "notes": "UNESCO old town, coffee houses, opera, Armenian quarter and easy westbound rail links"
+      "notes": "UNESCO old town, coffee houses, opera, Armenian quarter and easy westbound rail links",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Odesa",
       "lat": 46.4825,
       "lng": 30.7233,
-      "notes": "Black Sea port city with Potemkin Stairs, opera architecture and long promenades"
+      "notes": "Black Sea port city with Potemkin Stairs, opera architecture and long promenades",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Chernivtsi",
       "lat": 48.2915,
       "lng": 25.9403,
-      "notes": "Austro-Hungarian facades, university complex and relaxed Bukovyna café culture"
+      "notes": "Austro-Hungarian facades, university complex and relaxed Bukovyna café culture",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Kamianets-Podilskyi",
       "lat": 48.674,
       "lng": 26.585,
-      "notes": "Dramatic canyon setting, fortress walls and one of Ukraine’s best preserved old towns"
+      "notes": "Dramatic canyon setting, fortress walls and one of Ukraine’s best preserved old towns",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -103,6 +149,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days covers the headline religious sites, central walks and metro-based neighborhoods well; keep a fourth day only as an alert buffer or for extra museums.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "UNESCO Kyiv, Golden Domes & the Upper Town",
@@ -223,6 +274,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is enough for the historic center, opera area and seafront; keep a third only if Black Sea weather and local conditions are stable enough for slower museum time.",
+        "experiences": [
+          "Beaches",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Historic Core, Opera District & Potemkin Steps",
@@ -304,6 +359,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days handles the old town, viewpoints and classic cafés well; use the third day only for a long Tunnel of Love excursion or a deeper museum day.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Rynok Square, Cathedrals & Opera House",
@@ -419,6 +479,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "One full day is enough for the university complex and elegant center; add a second only if you want a slower Bukovyna café-and-museum rhythm.",
+        "experiences": [
+          "Architecture",
+          "UNESCO Sites"
+        ],
         "days": [
           {
             "theme": "Bukovyna University & Austro-Hungarian Core",
@@ -464,6 +528,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "This works best as a single full day focused on the fortress and canyon viewpoints, with a second day only if you want a slower old-town stay.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Fortress Walls, Canyon Views & Old Town",

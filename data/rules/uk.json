@@ -21,16 +21,12 @@
     "family4": "₹7L–₹12L"
   },
   "experiences": [
-    "London",
-    "Stonehenge",
-    "Lake District",
-    "Yorkshire Dales",
-    "Harry Potter Studios",
-    "Edinburgh Castle",
-    "Isle of Skye",
-    "Highlands",
-    "Whisky Distilleries",
-    "Loch Ness"
+    "History",
+    "Architecture",
+    "Museums",
+    "Mountains",
+    "Islands",
+    "Hiking"
   ],
   "avoid": [
     "Rain (always) — pack layers"
@@ -50,67 +46,166 @@
       "name": "London",
       "lat": 51.5074,
       "lng": -0.1278,
-      "notes": "Big Ben, British Museum, Tower of London, West End theatre and markets"
+      "notes": "Big Ben, British Museum, Tower of London, West End theatre and markets",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Oxford",
       "lat": 51.752,
       "lng": -1.2577,
-      "notes": "Dreaming spires, Bodleian Library, punting on the Cherwell and Ashmolean"
+      "notes": "Dreaming spires, Bodleian Library, punting on the Cherwell and Ashmolean",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Cambridge",
       "lat": 52.2053,
       "lng": 0.1218,
-      "notes": "King's College Chapel, punting on the Cam and Mathematical Bridge"
+      "notes": "King's College Chapel, punting on the Cam and Mathematical Bridge",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Bath",
       "lat": 51.3811,
       "lng": -2.359,
-      "notes": "Roman Baths, Georgian Royal Crescent and Thermae Bath Spa"
+      "notes": "Roman Baths, Georgian Royal Crescent and Thermae Bath Spa",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "York",
       "lat": 53.96,
       "lng": -1.0873,
-      "notes": "Viking Jorvik museum, York Minster and 13th-century city walls walk"
+      "notes": "Viking Jorvik museum, York Minster and 13th-century city walls walk",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Stonehenge",
       "lat": 51.1789,
       "lng": -1.8262,
-      "notes": "Prehistoric megalith monument on Salisbury Plain, 5000 years old"
+      "notes": "Prehistoric megalith monument on Salisbury Plain, 5000 years old",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Edinburgh",
       "lat": 55.9533,
       "lng": -3.1883,
-      "notes": "Edinburgh Castle, Royal Mile, Arthur's Seat hike and Fringe Festival"
+      "notes": "Edinburgh Castle, Royal Mile, Arthur's Seat hike and Fringe Festival",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Glasgow",
       "lat": 55.8642,
       "lng": -4.2518,
-      "notes": "Mackintosh architecture, Kelvingrove museum, vibrant music scene"
+      "notes": "Mackintosh architecture, Kelvingrove museum, vibrant music scene",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Inverness",
       "lat": 57.4778,
       "lng": -4.2247,
-      "notes": "Gateway to Loch Ness, Culloden Battlefield and Highland drives"
+      "notes": "Gateway to Loch Ness, Culloden Battlefield and Highland drives",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Isle of Skye",
       "lat": 57.2736,
       "lng": -6.2154,
-      "notes": "Old Man of Storr, Fairy Pools and Dunvegan Castle landscapes"
+      "notes": "Old Man of Storr, Fairy Pools and Dunvegan Castle landscapes",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "St Andrews",
       "lat": 56.3398,
       "lng": -2.7967,
-      "notes": "Home of golf, medieval cathedral ruins and seaside cliff walks"
+      "notes": "Home of golf, medieval cathedral ruins and seaside cliff walks",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -145,6 +240,11 @@
         "recDays": 3,
         "maxDays": 5,
         "note": "Start in London for arrival ease, iconic sights, and the UK's best free museums before branching into day trips.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Arrival + Thames Icons",
@@ -265,6 +365,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Best done as a focused rail day trip for colleges, libraries, and classic pub lunch stops.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Dreaming Spires Day Trip",
@@ -310,6 +414,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Use Cambridge as a compact university-city day trip centered on the river and King's College.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Colleges + River Cam",
@@ -355,6 +463,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Bath works best as a two-night stop pairing Roman history with Georgian architecture and a restorative spa session.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Roman Baths + Abbey Core",
@@ -437,6 +549,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat Stonehenge as a dedicated heritage stop, ideally paired with Salisbury for cathedral views and smoother transport.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Prehistoric Monument + Salisbury Stop",
@@ -483,6 +598,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "York is a one-night medieval stop with enough density for cathedral, walls, Viking history, and great tea rooms.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Minster + Medieval Streets",
@@ -528,6 +647,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Edinburgh deserves two full days for the castle spine, volcanic viewpoints, royal sites, and whisky culture.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Castle, Royal Mile + Skyline",
@@ -609,6 +732,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "This is a rewarding day trip or overnight stop for golf heritage, sea views, and compact medieval ruins.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Golf Heritage + Seaside Ruins",
@@ -654,6 +780,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Use Glasgow for a culture-heavy day of museums, architecture, and one of the UK's strongest food scenes.",
+        "experiences": [
+          "History",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Design City + Museum Circuit",
@@ -699,6 +829,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Inverness is the practical Highland hub for Loch Ness, Culloden, and scenic drives without changing hotels constantly.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Loch Ness + Highland History",
@@ -781,6 +914,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Skye needs at least two days to mix Trotternish drama with western coastal viewpoints and castle stops.",
+        "experiences": [
+          "Mountains",
+          "Islands",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Trotternish Peninsula Highlights",

@@ -21,11 +21,12 @@
     "family4": "₹4.2L–₹6.2L"
   },
   "experiences": [
-    "Ciudad Vieja & Mercado del Puerto",
-    "Colonia del Sacramento UNESCO quarter",
-    "Punta del Este beaches & Casapueblo",
-    "Cabo Polonio dunes and sea lions",
-    "Salto thermal springs"
+    "Beaches",
+    "History",
+    "UNESCO Sites",
+    "Wine & Vineyards",
+    "Wildlife & Safari",
+    "Nightlife"
   ],
   "avoid": [
     "January is peak beach season, so Punta del Este and Cabo Polonio prices spike fast.",
@@ -46,31 +47,76 @@
       "name": "Montevideo",
       "lat": -34.9011,
       "lng": -56.1645,
-      "notes": "Historic Ciudad Vieja, long Rambla sunsets, parrillas, and Uruguay's most useful transit hub."
+      "notes": "Historic Ciudad Vieja, long Rambla sunsets, parrillas, and Uruguay's most useful transit hub.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Colonia del Sacramento",
       "lat": -34.4707,
       "lng": -57.8442,
-      "notes": "Cobblestone UNESCO quarter with river views and the easiest ferry link from Buenos Aires."
+      "notes": "Cobblestone UNESCO quarter with river views and the easiest ferry link from Buenos Aires.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Punta del Este",
       "lat": -34.9689,
       "lng": -54.95,
-      "notes": "Classic South Atlantic resort base for beaches, port strolls, and the Casapueblo sunset."
+      "notes": "Classic South Atlantic resort base for beaches, port strolls, and the Casapueblo sunset.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Cabo Polonio",
       "lat": -34.3992,
       "lng": -53.782,
-      "notes": "Remote dune-backed fishing hamlet with 4x4-only access, a lighthouse, and sea lion colony."
+      "notes": "Remote dune-backed fishing hamlet with 4x4-only access, a lighthouse, and sea lion colony.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Salto",
       "lat": -31.3833,
       "lng": -57.9667,
-      "notes": "Thermal-springs stop in northwest Uruguay, best for a slower inland break after the coast."
+      "notes": "Thermal-springs stop in northwest Uruguay, best for a slower inland break after the coast.",
+      "bestMonths": [
+        "March",
+        "April",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -99,6 +145,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "This is Uruguay's easiest soft landing from Buenos Aires. Stay inside or beside the Barrio Histórico so you can walk the quarter before and after day-trippers thin out.",
+        "experiences": [
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "UNESCO Quarter, Lighthouse & Riverfront Sunset",
@@ -142,6 +192,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Split your time between Ciudad Vieja and the east-side waterfront districts. Mercado del Puerto is best for lunch; evenings are ideal for the Rambla and Pocitos.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Ciudad Vieja, Plaza Independencia & Mercado del Puerto",
@@ -220,6 +274,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Base near Playa Mansa or the peninsula if you want easy access to the port, beaches, and Punta Ballena for Casapueblo at sunset.",
+        "experiences": [
+          "Beaches",
+          "Nightlife"
+        ],
         "days": [
           {
             "theme": "Peninsula Highlights, Port & Casapueblo",
@@ -296,6 +354,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Travel light because access is by official park truck over sand. Book simple lodging ahead in summer and carry cash plus a power bank because services are basic.",
+        "experiences": [
+          "Beaches",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Dunes, Lighthouse & Sea Lion Colony",

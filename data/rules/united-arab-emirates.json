@@ -18,13 +18,12 @@
     "family4": "₹3L–₹5L"
   },
   "experiences": [
-    "Burj Khalifa",
-    "Desert Safari",
-    "Shopping",
-    "Luxury Hotels",
-    "Skydiving",
-    "Abu Dhabi Grand Mosque",
-    "Louvre Abu Dhabi"
+    "Architecture",
+    "Deserts",
+    "Beaches",
+    "Markets & Shopping",
+    "Luxury & Resorts",
+    "Diving & Snorkeling"
   ],
   "avoid": [],
   "combo": [
@@ -42,25 +41,65 @@
       "name": "Dubai City",
       "lat": 25.2048,
       "lng": 55.2708,
-      "notes": "Burj Khalifa, Dubai Mall, Gold Souk, desert safari and Miracle Garden"
+      "notes": "Burj Khalifa, Dubai Mall, Gold Souk, desert safari and Miracle Garden",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Abu Dhabi",
       "lat": 24.4539,
       "lng": 54.3773,
-      "notes": "Sheikh Zayed Grand Mosque, Louvre Abu Dhabi and Ferrari World"
+      "notes": "Sheikh Zayed Grand Mosque, Louvre Abu Dhabi and Ferrari World",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Sharjah",
       "lat": 25.3463,
       "lng": 55.4209,
-      "notes": "UNESCO World Book Capital, Heritage Area and blue-tiled mosque"
+      "notes": "UNESCO World Book Capital, Heritage Area and blue-tiled mosque",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Fujairah",
       "lat": 25.1288,
       "lng": 56.3265,
-      "notes": "East coast beaches, Al Hayl Castle and snorkeling in the Indian Ocean"
+      "notes": "East coast beaches, Al Hayl Castle and snorkeling in the Indian Ocean",
+      "experiences": [
+        "Beaches",
+        "Diving & Snorkeling"
+      ],
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "March"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -83,6 +122,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Base yourself in central Dubai for the first half of the trip; Sharjah works best as a day trip before moving to Abu Dhabi.",
+        "experiences": [
+          "Architecture",
+          "Luxury & Resorts",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Downtown icons, skyline views, and an easy first-night Dubai reset",
@@ -200,6 +244,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Treat Sharjah as a day trip from Dubai, then return to the same Dubai hotel before moving onward.",
+        "experiences": [
+          "Markets & Shopping",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Heritage museums, Blue Souk browsing, and a lower-key emirate contrast to Dubai",
@@ -245,6 +293,11 @@
         "recDays": 3,
         "maxDays": 3,
         "note": "Plan two full Abu Dhabi city days plus one Al Ain day trip so the route lands at a complete 7-day UAE circuit.",
+        "experiences": [
+          "Architecture",
+          "Luxury & Resorts",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Grand mosque calm, cultural stops, and the capital’s cleaner waterfront pace",
