@@ -79,15 +79,14 @@ export function buildItineraryPdfBlob(plan: TripPlan, country: Country, homeCoun
     radius?: number;
     padX?: number;
     padY?: number;
-    accentBar?: RGB;
   };
 
-  // Draw a self-contained text block (optionally on a rounded background card
-  // with a left accent bar). Blocks never split across pages.
+  // Draw a self-contained text block (optionally on a rounded background card).
+  // Blocks never split across pages.
   const block = (text: string, opts: BlockOpts = {}): void => {
     const {
       size = 11, color = INK, bold = false, gap = 4, indent = 0,
-      bg, radius = 6, padX = 0, padY = 0, accentBar,
+      bg, radius = 6, padX = 0, padY = 0,
     } = opts;
     const x0 = MARGIN + indent;
     const boxW = CONTENT_W - indent;
@@ -99,10 +98,6 @@ export function buildItineraryPdfBlob(plan: TripPlan, country: Country, homeCoun
     if (bg) {
       doc.setFillColor(bg[0], bg[1], bg[2]);
       doc.roundedRect(x0, cursor.y, boxW, h, radius, radius, "F");
-    }
-    if (accentBar) {
-      doc.setFillColor(accentBar[0], accentBar[1], accentBar[2]);
-      doc.rect(x0, cursor.y, 3, h, "F");
     }
     doc.setTextColor(color[0], color[1], color[2]);
     let ty = cursor.y + padY + size * 0.95;
@@ -121,22 +116,140 @@ export function buildItineraryPdfBlob(plan: TripPlan, country: Country, homeCoun
     cursor.y += 14;
   };
 
-  // Activity line with a drawn accent dot and hanging indent.
-  const bullet = (text: string): void => {
-    const size = 11;
-    const textX = MARGIN + 12 + 12;
-    const lines = wrap(text, size, false, PAGE_W - MARGIN - textX);
-    const lineHeight = size * 1.35;
-    const h = lines.length * lineHeight;
-    ensureSpace(h + 3);
-    doc.setFillColor(ACCENT[0], ACCENT[1], ACCENT[2]);
-    doc.circle(MARGIN + 12 + 3, cursor.y + size * 0.5, 1.7, "F");
+  // Render one day as a cohesive bordered card: tinted header (label + theme
+  // pill) connected to a body of activity bullets and hotel chips — mirrors
+  // the on-screen itinerary card so the shared PDF matches the web view.
+  const drawDayCard = (day: TripPlan["days"][number]): void => {
+    const cardPadX = 14;
+    const headPadY = 10;
+    const innerW = CONTENT_W - cardPadX * 2;
+    const labelSize = 10, themeSize = 9, actSize = 11, hotelSize = 9;
+    const labelLH = labelSize * 1.35;
+    const actLH = actSize * 1.35;
+    const pillH = 15, pillPadX = 7, chipH = 16, chipPadX = 8, chipGap = 6, rowGap = 6;
+
+    const labelUpper = day.label.toUpperCase();
+    const labelLines = wrap(labelUpper, labelSize, true, innerW);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(labelSize);
+    const labelSingleW = doc.getTextWidth(pdfSafe(labelUpper));
+
+    const theme = day.theme ? pdfSafe(day.theme) : "";
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(themeSize);
+    const pillW = theme ? doc.getTextWidth(theme) + pillPadX * 2 : 0;
+
+    const inlineTheme = !!theme && labelLines.length === 1 && labelSingleW + 8 + pillW <= innerW;
+    const labelBlockH = labelLines.length * labelLH;
+    const headerContentH = inlineTheme
+      ? Math.max(labelBlockH, pillH)
+      : labelBlockH + (theme ? 5 + pillH : 0);
+    const headerH = headPadY * 2 + headerContentH;
+
+    const actTextX = MARGIN + cardPadX + 14;
+    const actMaxW = PAGE_W - MARGIN - actTextX;
+    const actLineSets = day.activities.map((a) => wrap(a, actSize, false, actMaxW));
+    let actsH = 0;
+    for (const set of actLineSets) actsH += set.length * actLH + 5;
+
+    const hotels = (day.hotels ?? []).map((h) => pdfSafe(h)).filter(Boolean);
     doc.setFont("helvetica", "normal");
-    doc.setFontSize(size);
+    doc.setFontSize(hotelSize);
+    const chipRows: { text: string; w: number }[][] = [];
+    if (hotels.length) {
+      let row: { text: string; w: number }[] = [];
+      let rowW = 0;
+      for (const h of hotels) {
+        const w = doc.getTextWidth(h) + chipPadX * 2;
+        if (row.length && rowW + w > innerW) { chipRows.push(row); row = []; rowW = 0; }
+        row.push({ text: h, w });
+        rowW += w + chipGap;
+      }
+      if (row.length) chipRows.push(row);
+    }
+    const stayLabelH = hotels.length ? 12 : 0;
+    const chipsH = hotels.length ? chipRows.length * chipH + (chipRows.length - 1) * rowGap : 0;
+    const hotelsBlockH = hotels.length ? 6 + stayLabelH + chipsH : 0;
+
+    const bodyTopGap = 10;
+    const bodyBottomPad = 12;
+    const totalH = headerH + bodyTopGap + actsH + hotelsBlockH + bodyBottomPad;
+
+    const usable = BOTTOM - MARGIN;
+    if (totalH <= usable) ensureSpace(totalH);
+    else if (cursor.y > MARGIN) { doc.addPage(); cursor.y = MARGIN; }
+
+    const y0 = cursor.y;
+
+    doc.setDrawColor(RULE[0], RULE[1], RULE[2]);
+    doc.setLineWidth(1);
+    doc.setFillColor(WHITE[0], WHITE[1], WHITE[2]);
+    doc.roundedRect(MARGIN, y0, CONTENT_W, totalH, 8, 8, "FD");
+
+    doc.setFillColor(DAY_BG[0], DAY_BG[1], DAY_BG[2]);
+    doc.roundedRect(MARGIN + 1, y0 + 1, CONTENT_W - 2, headerH - 2, 7, 7, "F");
+    doc.rect(MARGIN + 1, y0 + headerH - 9, CONTENT_W - 2, 7, "F");
+    doc.setDrawColor(RULE[0], RULE[1], RULE[2]);
+    doc.setLineWidth(0.75);
+    doc.line(MARGIN, y0 + headerH, PAGE_W - MARGIN, y0 + headerH);
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(labelSize);
     doc.setTextColor(SLATE[0], SLATE[1], SLATE[2]);
-    let ty = cursor.y + size * 0.95;
-    for (const line of lines) { doc.text(line, textX, ty); ty += lineHeight; }
-    cursor.y += h + 3;
+    let ly = y0 + headPadY + labelSize * 0.9;
+    for (const line of labelLines) {
+      doc.text(line, MARGIN + cardPadX, ly, { charSpace: 0.4 });
+      ly += labelLH;
+    }
+    if (theme) {
+      const pillX = inlineTheme ? MARGIN + cardPadX + labelSingleW + 8 : MARGIN + cardPadX;
+      const pillCenterY = inlineTheme
+        ? y0 + headPadY + headerContentH / 2
+        : y0 + headPadY + labelBlockH + 5 + pillH / 2;
+      const pillY = pillCenterY - pillH / 2;
+      doc.setFillColor(ACCENT_SOFT[0], ACCENT_SOFT[1], ACCENT_SOFT[2]);
+      doc.roundedRect(pillX, pillY, pillW, pillH, pillH / 2, pillH / 2, "F");
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(themeSize);
+      doc.setTextColor(ACCENT[0], ACCENT[1], ACCENT[2]);
+      doc.text(theme, pillX + pillPadX, pillY + pillH / 2 + themeSize * 0.34);
+    }
+
+    let by = y0 + headerH + bodyTopGap;
+    for (const set of actLineSets) {
+      doc.setFillColor(ACCENT[0], ACCENT[1], ACCENT[2]);
+      doc.circle(MARGIN + cardPadX + 3, by + actSize * 0.5, 1.7, "F");
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(actSize);
+      doc.setTextColor(SLATE[0], SLATE[1], SLATE[2]);
+      let ty = by + actSize * 0.95;
+      for (const line of set) { doc.text(line, actTextX, ty); ty += actLH; }
+      by += set.length * actLH + 5;
+    }
+
+    if (hotels.length) {
+      by += 6;
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(8);
+      doc.setTextColor(MUTED[0], MUTED[1], MUTED[2]);
+      doc.text("STAY", MARGIN + cardPadX, by + 8, { charSpace: 0.6 });
+      by += stayLabelH;
+      for (const row of chipRows) {
+        let cx = MARGIN + cardPadX;
+        for (const chip of row) {
+          doc.setFillColor(CARD_BG[0], CARD_BG[1], CARD_BG[2]);
+          doc.roundedRect(cx, by, chip.w, chipH, chipH / 2, chipH / 2, "F");
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(hotelSize);
+          doc.setTextColor(SLATE[0], SLATE[1], SLATE[2]);
+          doc.text(chip.text, cx + chipPadX, by + chipH / 2 + hotelSize * 0.34);
+          cx += chip.w + chipGap;
+        }
+        by += chipH + rowGap;
+      }
+    }
+
+    cursor.y = y0 + totalH + 12;
   };
 
   // ── Header band ──
@@ -188,16 +301,7 @@ export function buildItineraryPdfBlob(plan: TripPlan, country: Country, homeCoun
 
   // ── Days ──
   for (const day of plan.days) {
-    ensureSpace(46);
-    const heading = day.theme ? `${day.label}     ${day.theme}` : day.label;
-    block(heading, { size: 12, bold: true, color: ACCENT, bg: DAY_BG, accentBar: ACCENT, padX: 12, padY: 8, radius: 6, gap: 6 });
-    for (const activity of day.activities) {
-      bullet(activity);
-    }
-    if (day.hotels?.length) {
-      block(`Stay:  ${day.hotels.join(", ")}`, { size: 10, color: MUTED, indent: 12, gap: 3 });
-    }
-    cursor.y += 10;
+    drawDayCard(day);
   }
 
   // ── Note + footer ──
