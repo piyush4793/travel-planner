@@ -1,10 +1,11 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { beforeEach, afterEach, describe, expect, it, vi } from "vitest";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "../../App";
 import { setHashRoute } from "../testUtils";
 import type { Country } from "../../core/types";
 import { isEnabled } from "../../core/featureFlags";
+import { hasAnyLocalData, canAutoImport, restoreFromTarget } from "../../utils/backup";
 
 const COUNTRY_NAMES = {
   JAPAN: "Japan",
@@ -196,11 +197,11 @@ vi.mock("../../hooks/useInstallPrompt", () => ({
 }));
 
 vi.mock("../../utils/backup", () => ({
-  isBackupOverdue: () => false,
-  autoBackupToTargetIfOverdue: () => Promise.resolve(false),
-  hasAnyLocalData: () => true,
-  canAutoImport: () => Promise.resolve(false),
-  restoreFromTarget: () => Promise.resolve({ ok: false, msg: "" }),
+  isBackupOverdue: vi.fn(() => false),
+  autoBackupToTargetIfOverdue: vi.fn(() => Promise.resolve(false)),
+  hasAnyLocalData: vi.fn(() => true),
+  canAutoImport: vi.fn(() => Promise.resolve(false)),
+  restoreFromTarget: vi.fn(() => Promise.resolve({ ok: false, msg: "" })),
 }));
 
 vi.mock("../../hooks/useCountryStore", () => ({
@@ -345,5 +346,86 @@ describe("App orchestration", () => {
 
     expect(addToListMock).toHaveBeenCalledWith(COUNTRY_NAMES.CHILE);
     expect(removeFromListMock).toHaveBeenCalledWith(COUNTRY_NAMES.JAPAN);
+  });
+});
+
+describe("App fresh-device restore offer", () => {
+  const realLocation = window.location;
+
+  function stubLocationReload(): ReturnType<typeof vi.fn> {
+    const reload = vi.fn();
+    Object.defineProperty(window, "location", {
+      configurable: true,
+      value: {
+        href: realLocation.href,
+        hash: realLocation.hash,
+        pathname: realLocation.pathname,
+        search: realLocation.search,
+        origin: realLocation.origin,
+        host: realLocation.host,
+        hostname: realLocation.hostname,
+        protocol: realLocation.protocol,
+        reload,
+        assign: vi.fn(),
+        replace: vi.fn(),
+      },
+    });
+    return reload;
+  }
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(isEnabled).mockImplementation(() => false);
+  });
+
+  afterEach(() => {
+    Object.defineProperty(window, "location", { configurable: true, value: realLocation });
+  });
+
+  it("offers to restore when the device has no local data but a backup is importable, and dismisses", async () => {
+    const user = userEvent.setup();
+    vi.mocked(hasAnyLocalData).mockReturnValueOnce(false);
+    vi.mocked(canAutoImport).mockResolvedValueOnce(true);
+
+    render(<App />);
+
+    const banner = await screen.findByText(/We found a saved backup/i);
+    expect(banner).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /dismiss restore offer/i }));
+    expect(screen.queryByText(/We found a saved backup/i)).not.toBeInTheDocument();
+  });
+
+  it("restores and reloads when the user accepts the offer", async () => {
+    const user = userEvent.setup();
+    vi.mocked(hasAnyLocalData).mockReturnValueOnce(false);
+    vi.mocked(canAutoImport).mockResolvedValueOnce(true);
+    vi.mocked(restoreFromTarget).mockResolvedValueOnce({ ok: true, msg: "Restored" });
+    const reload = stubLocationReload();
+
+    render(<App />);
+
+    await user.click(await screen.findByRole("button", { name: /^restore$/i }));
+
+    await waitFor(() => expect(reload).toHaveBeenCalledOnce());
+    expect(restoreFromTarget).toHaveBeenCalledOnce();
+  });
+
+  it("keeps the offer dismissed and does not reload when restore fails", async () => {
+    const user = userEvent.setup();
+    vi.mocked(hasAnyLocalData).mockReturnValueOnce(false);
+    vi.mocked(canAutoImport).mockResolvedValueOnce(true);
+    vi.mocked(restoreFromTarget).mockResolvedValueOnce({ ok: false, msg: "boom" });
+    const reload = stubLocationReload();
+
+    render(<App />);
+
+    await user.click(await screen.findByRole("button", { name: /^restore$/i }));
+
+    await waitFor(() => expect(restoreFromTarget).toHaveBeenCalledOnce());
+    expect(reload).not.toHaveBeenCalled();
+    await waitFor(() =>
+      expect(screen.queryByText(/We found a saved backup/i)).not.toBeInTheDocument(),
+    );
   });
 });
