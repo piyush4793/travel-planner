@@ -197,7 +197,10 @@ vi.mock("../../hooks/useInstallPrompt", () => ({
 
 vi.mock("../../utils/backup", () => ({
   isBackupOverdue: () => false,
-  autoBackupIfOverdue: () => false,
+  autoBackupToTargetIfOverdue: () => Promise.resolve(false),
+  hasAnyLocalData: () => true,
+  canAutoImport: () => Promise.resolve(false),
+  restoreFromTarget: () => Promise.resolve({ ok: false, msg: "" }),
 }));
 
 vi.mock("../../hooks/useCountryStore", () => ({
