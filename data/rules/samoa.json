@@ -26,12 +26,12 @@
     "family4": "₹4.6L–₹7.4L"
   },
   "experiences": [
-    "Beach Fales",
-    "Coastal Drives",
-    "Snorkeling",
-    "Blowholes",
-    "Village Culture",
-    "Volcanic Landscapes"
+    "Beaches",
+    "Islands",
+    "Waterfalls",
+    "Diving & Snorkeling",
+    "Surfing",
+    "Hiking"
   ],
   "avoid": [
     "November–April is wetter and overlaps the South Pacific cyclone season, so swimming conditions, road plans, and ferry schedules are less predictable.",
@@ -55,19 +55,46 @@
       "name": "Apia",
       "lat": -13.8333,
       "lng": -171.7667,
-      "notes": "Apia is the best practical base for museums, markets, harbour sunsets, and north-coast day trips before you head to Samoa's beach and ferry legs."
+      "notes": "Apia is the best practical base for museums, markets, harbour sunsets, and north-coast day trips before you head to Samoa's beach and ferry legs.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Lalomanu",
       "lat": -14.0056,
       "lng": -171.3858,
-      "notes": "Lalomanu is Samoa's classic east-Upolu beach stretch for fale stays, To Sua access, and slower lagoon time on the island's drier-season south coast."
+      "notes": "Lalomanu is Samoa's classic east-Upolu beach stretch for fale stays, To Sua access, and slower lagoon time on the island's drier-season south coast.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Savai'i",
       "lat": -13.58,
       "lng": -172.44,
-      "notes": "Savai'i rewards the extra ferry with lava fields, blowholes, village beaches, and a more spacious, less-developed island rhythm than Upolu."
+      "notes": "Savai'i rewards the extra ferry with lava fields, blowholes, village beaches, and a more spacious, less-developed island rhythm than Upolu.",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -91,6 +118,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Apia as the practical landing base for culture, food, and light day trips before shifting to Samoa's beach and ferry segments.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Museum Morning, Market Stops and a Harbour-Side First Day",
@@ -179,6 +209,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Lalomanu works best as Samoa's slow-beach pause: one scenic transfer day anchored by To Sua, then an easy lagoon-and-fale reset.",
+        "experiences": [
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "South-Coast Drive, To Sua Swim and a Classic Beach-Fale Check-In",
@@ -265,6 +299,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Give Savai'i at least two nights so the ferry effort pays off with one volcanic west-coast day and one slower beach-or-waterfall day.",
+        "experiences": [
+          "Islands",
+          "Waterfalls",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Lady Samoa Crossing, Lava Fields and the Blowholes",

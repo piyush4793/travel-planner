@@ -26,11 +26,12 @@
     "family4": "₹1.6L–₹2.6L"
   },
   "experiences": [
-    "Three Towers ridge walk",
-    "Palazzo Pubblico and Piazza della Liberta",
-    "State Museum",
-    "Borgo Maggiore cable car views",
-    "Serravalle shopping and stadium district"
+    "History",
+    "Architecture",
+    "UNESCO Sites",
+    "Museums",
+    "Markets & Shopping",
+    "Mountains"
   ],
   "avoid": [
     "Midday summer weekends when day-trippers from the Riviera crowd the historic center and tower path.",
@@ -53,45 +54,45 @@
       "lat": 43.9367,
       "lng": 12.4464,
       "bestMonths": [
-        "April",
         "May",
         "June",
         "July",
-        "August",
-        "September",
-        "October"
+        "September"
       ],
-      "notes": "UNESCO-listed hilltop capital for the Three Towers path, Palazzo Pubblico, basilica viewpoints and the republic's densest cluster of museums."
+      "notes": "UNESCO-listed hilltop capital for the Three Towers path, Palazzo Pubblico, basilica viewpoints and the republic's densest cluster of museums.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Borgo Maggiore",
       "lat": 43.9419,
       "lng": 12.4473,
       "bestMonths": [
-        "April",
         "May",
         "June",
         "July",
-        "August",
-        "September",
-        "October"
+        "September"
       ],
-      "notes": "Lower town at the foot of Mount Titano with the cable car, Piazza Grande market area and some of the easiest-value stays in the republic."
+      "notes": "Lower town at the foot of Mount Titano with the cable car, Piazza Grande market area and some of the easiest-value stays in the republic.",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Serravalle",
       "lat": 43.9683,
       "lng": 12.4814,
       "bestMonths": [
-        "April",
         "May",
         "June",
         "July",
-        "August",
-        "September",
-        "October"
+        "September"
       ],
-      "notes": "San Marino's biggest castello, practical for shopping, football at Stadio Olimpico and a last-night stay closer to the Rimini side of the border."
+      "notes": "San Marino's biggest castello, practical for shopping, football at Stadio Olimpico and a last-night stay closer to the Rimini side of the border.",
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -116,6 +117,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Give the capital a full day for the core monuments and ridge walk; add a second only if you want a slower museum pace, sunset viewpoints and a nicer dinner.",
+        "experiences": [
+          "History",
+          "UNESCO Sites",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Three Towers, state history and the classic Mount Titano skyline",
@@ -178,6 +184,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Borgo Maggiore works best as a slower half- to full-day extension: ride the cable car, browse the lower town and stay here if you want easier parking or better-value hotels.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Cable car panoramas, Friday market energy and lower-town local life",
@@ -230,6 +240,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Use Serravalle for a practical last day before heading back to Rimini: shopping, sports venues and a lower-altitude overnight near the border road.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Modern San Marino: shopping district, stadium stop and easy exit day",

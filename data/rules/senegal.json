@@ -23,11 +23,12 @@
     "family4": "₹3.4L–₹5.2L"
   },
   "experiences": [
-    "Gorée Island history",
-    "Djoudj bird sanctuary",
-    "Petite Côte beach downtime",
-    "Casamance pirogue villages",
-    "Lac Rose dunes and salt flats"
+    "Beaches",
+    "History",
+    "Wildlife & Safari",
+    "Markets & Shopping",
+    "Festivals",
+    "National Parks"
   ],
   "avoid": [
     "June to October gets wetter and more humid, with August-September the messiest stretch for Casamance roads, pirogue timing and beach days",
@@ -50,31 +51,76 @@
       "name": "Dakar",
       "lat": 14.7167,
       "lng": -17.4677,
-      "notes": "Atlantic capital for Gorée Island ferries, Corniche viewpoints, monumental museums, lively markets and Senegal's easiest food scene"
+      "notes": "Atlantic capital for Gorée Island ferries, Corniche viewpoints, monumental museums, lively markets and Senegal's easiest food scene",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Saint-Louis",
       "lat": 16.0326,
       "lng": -16.4818,
-      "notes": "Old French colonial island city that pairs heritage walks and river sunsets with the classic Djoudj birding day trip"
+      "notes": "Old French colonial island city that pairs heritage walks and river sunsets with the classic Djoudj birding day trip",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Saly / Petite Côte",
       "lat": 14.4433,
       "lng": -17.0053,
-      "notes": "Resort-and-beach base for slow ocean days plus easy side trips to Bandia Reserve, Mbour and Joal-Fadiouth"
+      "notes": "Resort-and-beach base for slow ocean days plus easy side trips to Bandia Reserve, Mbour and Joal-Fadiouth",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Casamance (Ziguinchor)",
       "lat": 12.5833,
       "lng": -16.2719,
-      "notes": "Southern river region for mangrove pirogues, Diola villages, Carabane island outings and Senegal's greenest landscapes"
+      "notes": "Southern river region for mangrove pirogues, Diola villages, Carabane island outings and Senegal's greenest landscapes",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Lac Rose",
       "lat": 14.8347,
       "lng": -17.234,
-      "notes": "Lake Retba's salt shorelines, dune circuits and low-key lodges make an easy final stop close to Dakar"
+      "notes": "Lake Retba's salt shorelines, dune circuits and low-key lodges make an easy final stop close to Dakar",
+      "bestMonths": [
+        "November",
+        "December",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -101,6 +147,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Markets & Shopping",
+          "Festivals"
+        ],
         "days": [
           {
             "theme": "Gorée's memorial weight, Plateau walking, and a first taste of Dakar's coast-facing rhythm",
@@ -193,6 +244,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Festivals"
+        ],
         "days": [
           {
             "theme": "A northbound road transfer into Senegal's most atmospheric colonial town, with river light and old-quarter walking",
@@ -285,6 +340,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Swap the north for the coast with simple beach time, fishing-port energy and a resort reset",
@@ -377,6 +435,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "Fly south for river breezes, shady hotel gardens and the easiest introduction to Casamance life",

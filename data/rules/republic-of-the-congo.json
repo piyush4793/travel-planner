@@ -26,10 +26,12 @@
     "family4": "₹9.1L–₹14.8L"
   },
   "experiences": [
-    "Brazzaville's Congo River corniche, Basilique Sainte-Anne du Congo, and the Pierre Savorgnan de Brazza Memorial",
-    "Odzala-Kokoua rainforest stays split between Ngaga, Mboko, and Lango with western lowland gorilla tracking",
-    "Pointe-Noire's Atlantic coast, Gorges de Diosso viewpoints, and seafood-heavy dining scene",
-    "Loango Bay and the former Loango Kingdom coast for beach downtime, Ma-Loango heritage, and pre-arranged small-boat outings"
+    "Wildlife & Safari",
+    "National Parks",
+    "Beaches",
+    "History",
+    "Hiking",
+    "Markets & Shopping"
   ],
   "avoid": [
     "October to May is much wetter, so rainforest trails, Diosso road conditions, and beach plans around Pointe-Noire are less predictable than in the June to September dry season.",
@@ -58,7 +60,10 @@
         "August",
         "September"
       ],
-      "notes": "Basilique Sainte-Anne du Congo, the Brazza Memorial, Congo River viewpoints, strong hotel base, and the easiest place to set up flights and park logistics."
+      "notes": "Basilique Sainte-Anne du Congo, the Brazza Memorial, Congo River viewpoints, strong hotel base, and the easiest place to set up flights and park logistics.",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Odzala-Kokoua National Park",
@@ -70,7 +75,10 @@
         "August",
         "September"
       ],
-      "notes": "Ngaga, Mboko, and Lango camp circuit with western lowland gorilla tracking, baï wildlife walks, and mokoro or motor-boat moves on the Lekoli system."
+      "notes": "Ngaga, Mboko, and Lango camp circuit with western lowland gorilla tracking, baï wildlife walks, and mokoro or motor-boat moves on the Lekoli system.",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Pointe-Noire",
@@ -82,7 +90,10 @@
         "August",
         "September"
       ],
-      "notes": "Republic of the Congo's coastal hub for the Gorges de Diosso, Côte Sauvage beaches, seafood restaurants, and easy taxi links north toward Loango Bay."
+      "notes": "Republic of the Congo's coastal hub for the Gorges de Diosso, Côte Sauvage beaches, seafood restaurants, and easy taxi links north toward Loango Bay.",
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Loango Bay",
@@ -94,7 +105,10 @@
         "August",
         "September"
       ],
-      "notes": "Quiet Atlantic shoreline north of Pointe-Noire with Malonda Lodge stays, Ma-Loango heritage visits, and small-boat or fishing departures arranged in advance."
+      "notes": "Quiet Atlantic shoreline north of Pointe-Noire with Malonda Lodge stays, Ma-Loango heritage visits, and small-boat or fishing departures arranged in advance.",
+      "worstMonths": [
+        "November"
+      ]
     }
   ],
   "itinerary": {
@@ -118,6 +132,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "History",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "Riverfront arrival, landmark churches, and the core Brazzaville orientation loop",
@@ -202,6 +220,10 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Fly-in rainforest transfer and the first baï or river experience",
@@ -355,6 +377,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Domestic flight south, red-earth canyon scenery, and Atlantic sunset time",
@@ -439,6 +464,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Quiet coast, Loango heritage, and a small-boat or fishing outing",

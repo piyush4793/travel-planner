@@ -21,12 +21,12 @@
     "family4": "₹4.5L–₹7L"
   },
   "experiences": [
-    "Beaches",
-    "Wine",
     "History",
-    "Palaces",
-    "Surf",
-    "Food"
+    "Architecture",
+    "Beaches",
+    "Wine & Vineyards",
+    "UNESCO Sites",
+    "Surfing"
   ],
   "avoid": [
     "July-August crowds push up Algarve and Lisbon hotel prices",
@@ -48,37 +48,91 @@
       "name": "Lisbon",
       "lat": 38.7223,
       "lng": -9.1393,
-      "notes": "Alfama lanes, Belém monuments, yellow trams, tiled facades and sunset miradouros"
+      "notes": "Alfama lanes, Belém monuments, yellow trams, tiled facades and sunset miradouros",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Porto",
       "lat": 41.1579,
       "lng": -8.6291,
-      "notes": "Ribeira riverfront, port wine cellars, azulejo stations and Atlantic sunsets"
+      "notes": "Ribeira riverfront, port wine cellars, azulejo stations and Atlantic sunsets",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Sintra",
       "lat": 38.8029,
       "lng": -9.3817,
-      "notes": "Pena Palace, misty hills, romantic estates and storybook castles"
+      "notes": "Pena Palace, misty hills, romantic estates and storybook castles",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Lagos",
       "lat": 37.1028,
       "lng": -8.6742,
-      "notes": "Golden cliffs, cave boat tours, beach coves and laid-back Algarve evenings"
+      "notes": "Golden cliffs, cave boat tours, beach coves and laid-back Algarve evenings",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Faro",
       "lat": 37.0194,
       "lng": -7.9304,
-      "notes": "Walled old town, Ria Formosa lagoon boats and easy Algarve transport links"
+      "notes": "Walled old town, Ria Formosa lagoon boats and easy Algarve transport links",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Évora",
       "lat": 38.5714,
       "lng": -7.9135,
-      "notes": "Roman ruins, Alentejo food, whitewashed lanes and the Chapel of Bones"
+      "notes": "Roman ruins, Alentejo food, whitewashed lanes and the Chapel of Bones",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -107,6 +161,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History",
+          "Wine & Vineyards",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Ribeira, Baroque Towers & Bookshop Icons",
@@ -199,6 +258,10 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Alfama, Castles & Classic Tram Views",
@@ -331,6 +394,11 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "UNESCO Sites",
+          "Architecture",
+          "History"
+        ],
         "days": [
           {
             "theme": "Storybook Palaces in the Hills",
@@ -383,6 +451,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "UNESCO Sites",
+          "History"
+        ],
         "days": [
           {
             "theme": "Roman Ruins & Alentejo Heritage",
@@ -435,6 +507,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Lagoon Gateways & Walled Old Town",
@@ -487,6 +562,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches",
+          "Surfing"
+        ],
         "days": [
           {
             "theme": "Clifftop Beaches & Old Lagos",

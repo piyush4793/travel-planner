@@ -23,11 +23,12 @@
     "family4": "₹2.4L–₹3.8L"
   },
   "experiences": [
-    "Belgrade",
-    "Petrovaradin Fortress",
-    "Niš History",
-    "Zlatibor Mountains",
-    "Art Nouveau Subotica"
+    "History",
+    "Architecture",
+    "Nightlife",
+    "Mountains",
+    "Hiking",
+    "Festivals"
   ],
   "avoid": [],
   "combo": [
@@ -45,31 +46,76 @@
       "name": "Belgrade",
       "lat": 44.7866,
       "lng": 20.4489,
-      "notes": "Big-city base for Kalemegdan, Saint Sava Temple, riverfront neighborhoods and Serbia's best museum mix"
+      "notes": "Big-city base for Kalemegdan, Saint Sava Temple, riverfront neighborhoods and Serbia's best museum mix",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Novi Sad",
       "lat": 45.2671,
       "lng": 19.8335,
-      "notes": "Relaxed Danube city with Petrovaradin Fortress, museums and easy day-trip potential toward Fruška Gora"
+      "notes": "Relaxed Danube city with Petrovaradin Fortress, museums and easy day-trip potential toward Fruška Gora",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Niš",
       "lat": 43.3209,
       "lng": 21.8958,
-      "notes": "Southern Serbia stop for Roman ruins, Ottoman walls and sobering WWII and uprising-era memorials"
+      "notes": "Southern Serbia stop for Roman ruins, Ottoman walls and sobering WWII and uprising-era memorials",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Zlatibor",
       "lat": 43.7296,
       "lng": 19.6987,
-      "notes": "Mountain resort base for gondola rides, village museums and cave stops in western Serbia"
+      "notes": "Mountain resort base for gondola rides, village museums and cave stops in western Serbia",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Subotica",
       "lat": 46.1,
       "lng": 19.6651,
-      "notes": "Elegant northern city known for Hungarian Secession architecture, the synagogue and Palić side trips"
+      "notes": "Elegant northern city known for Hungarian Secession architecture, the synagogue and Palić side trips",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -97,6 +143,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two full days cover the essentials; keep a third if you want a slower Zemun afternoon or a museum-heavy Sunday when the National Museum is free.",
+        "experiences": [
+          "History",
+          "Nightlife",
+          "Festivals"
+        ],
         "days": [
           {
             "theme": "Kalemegdan views, republic-square museums and old-town energy",
@@ -179,6 +230,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "A single day works well on the high-speed rail from Belgrade, but add a second if you want a fortress tunnel tour plus a slower Danube evening or Fruška Gora detour.",
+        "experiences": [
+          "History",
+          "Festivals",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Soko rail hop, Petrovaradin ramparts and Vojvodina art",
@@ -224,6 +280,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Subotica is compact enough for a focused old-town day, especially if you stay central and book the midday City Hall tour.",
+        "experiences": [
+          "Architecture",
+          "History"
+        ],
         "days": [
           {
             "theme": "Regional train north, Art Nouveau landmarks and synagogue interiors",
@@ -269,6 +329,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Niš can be seen quickly, but the city lands better with an extra night if you want Mediana, the Red Cross memorial and an unhurried dinner in Tinkers Alley.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Cross-country rail day, Roman ruins and Serbia's hardest history stop",
@@ -318,6 +381,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Use Zlatibor as the nature reset at the end of the route; two nights are ideal because the Gold Gondola, cave and village museum are weather-dependent and spread out.",
+        "experiences": [
+          "Mountains",
+          "Hiking"
+        ],
         "days": [
           {
             "theme": "Niš Ekspres bus, lakefront strolls and the long Gold Gondola ride",

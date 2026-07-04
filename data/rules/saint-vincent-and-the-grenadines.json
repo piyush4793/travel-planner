@@ -26,12 +26,12 @@
     "family4": "₹5.45L–₹8.1L"
   },
   "experiences": [
-    "Volcano Hikes",
-    "Island Ferries",
-    "Snorkeling",
-    "Yachting",
-    "Botanical Gardens",
-    "Beach Hops"
+    "Beaches",
+    "Islands",
+    "Diving & Snorkeling",
+    "Water Sports",
+    "Cruises & Boat Trips",
+    "Luxury & Resorts"
   ],
   "avoid": [
     "June–November is wetter and overlaps the main Caribbean storm season, so ferry crossings, Tobago Cays day sails, and La Soufrière summit attempts are more likely to be disrupted.",
@@ -54,25 +54,61 @@
       "name": "Kingstown",
       "lat": 13.1603,
       "lng": -61.2248,
-      "notes": "The capital is the most practical first base for Fort Charlotte, the Botanical Gardens, market walks, and early departures toward the Rabacca side for La Soufrière hikes."
+      "notes": "The capital is the most practical first base for Fort Charlotte, the Botanical Gardens, market walks, and early departures toward the Rabacca side for La Soufrière hikes.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Bequia",
       "lat": 13.0066,
       "lng": -61.2422,
-      "notes": "Use Port Elizabeth and Admiralty Bay as the easy-going Grenadines base for ferry arrivals, water-taxi beach hops, and day sails toward Mustique or the Tobago Cays."
+      "notes": "Use Port Elizabeth and Admiralty Bay as the easy-going Grenadines base for ferry arrivals, water-taxi beach hops, and day sails toward Mustique or the Tobago Cays.",
+      "bestMonths": [
+        "December",
+        "January",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Mustique",
       "lat": 12.8866,
       "lng": -61.1805,
-      "notes": "Mustique is the polished private-island detour for Macaroni Beach, Britannia Bay, Basil's Bar, and a classic one-day or one-night luxury break between other Grenadines stops."
+      "notes": "Mustique is the polished private-island detour for Macaroni Beach, Britannia Bay, Basil's Bar, and a classic one-day or one-night luxury break between other Grenadines stops.",
+      "bestMonths": [
+        "December",
+        "January",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Tobago Cays",
       "lat": 12.6315,
       "lng": -61.3565,
-      "notes": "The marine park is a boat-access highlight rather than a town; most travelers visit by day cruise and sleep on nearby Bequia, Mayreau, or Canouan after snorkeling with turtles."
+      "notes": "The marine park is a boat-access highlight rather than a town; most travelers visit by day cruise and sleep on nearby Bequia, Mayreau, or Canouan after snorkeling with turtles.",
+      "bestMonths": [
+        "December",
+        "January",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     }
   ],
   "itinerary": {
@@ -97,6 +133,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Stay near Kingstown, Villa, or the Blue Lagoon side if you want easier airport access, stronger restaurant options, and a cleaner pre-dawn start for the volcano-hike day.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Fort views, Botanical Gardens, and the compact capital core",
@@ -181,6 +220,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Port Elizabeth is the simplest base because ferries dock here, most taxis and water taxis start here, and you can still reach Princess Margaret Beach or Lower Bay without changing hotels.",
+        "experiences": [
+          "Islands",
+          "Cruises & Boat Trips",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Ferry arrival, Admiralty Bay orientation, and beach time close to Port Elizabeth",
@@ -264,6 +308,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Mustique is best treated as a splurge stop or day sail from Bequia unless you specifically want a luxury overnight at Cotton House or Firefly.",
+        "experiences": [
+          "Islands",
+          "Luxury & Resorts",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Macaroni Beach, Britannia Bay, and the island's iconic lunch stop",
@@ -310,6 +359,11 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "There are no conventional hotels inside the marine park itself, so use a day boat from Bequia or sleep on nearby Mayreau or Canouan if you want an early start on the water.",
+        "experiences": [
+          "Diving & Snorkeling",
+          "Islands",
+          "Water Sports"
+        ],
         "days": [
           {
             "theme": "Marine-park sail, turtle snorkeling, and a Salt Whistle Bay stop",

@@ -22,11 +22,12 @@
     "family4": "₹3.5L–₹7L"
   },
   "experiences": [
-    "Red Square",
-    "Hermitage Museum",
-    "Trans-Siberian Railway",
-    "White Nights",
-    "Black Sea"
+    "History",
+    "Architecture",
+    "Museums",
+    "Northern Lights",
+    "Beaches",
+    "Mountains"
   ],
   "avoid": [
     "Check current travel advisories",
@@ -51,53 +52,69 @@
         "May",
         "June",
         "July",
-        "August",
         "September"
       ],
-      "notes": "Red Square, Kremlin, world-class metro art, Bolshoi Theatre"
+      "notes": "Red Square, Kremlin, world-class metro art, Bolshoi Theatre",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "St Petersburg",
       "lat": 59.9311,
       "lng": 30.3609,
       "bestMonths": [
-        "May",
         "June",
         "July",
         "August"
       ],
-      "notes": "Hermitage Museum, White Nights festival (Jun–Jul), canal walks"
+      "notes": "Hermitage Museum, White Nights festival (Jun–Jul), canal walks",
+      "worstMonths": [
+        "December"
+      ]
     },
     {
       "name": "Sochi",
       "lat": 43.6028,
       "lng": 39.7342,
       "bestMonths": [
+        "June",
+        "July",
         "August",
         "September"
       ],
-      "notes": "Black Sea resort town, beaches, Olympic Park, Caucasus mountains nearby"
+      "notes": "Black Sea resort town, beaches, Olympic Park, Caucasus mountains nearby",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Krasnodar",
       "lat": 45.0355,
       "lng": 38.9753,
       "bestMonths": [
-        "August",
+        "May",
+        "June",
         "September"
       ],
-      "notes": "Gateway to Krasnodar Krai, Russian vineyards, local culture hub"
+      "notes": "Gateway to Krasnodar Krai, Russian vineyards, local culture hub",
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Murmansk",
       "lat": 68.9585,
       "lng": 33.0827,
       "bestMonths": [
+        "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "Above Arctic Circle — best Northern Lights in Russia, polar bears, nuclear icebreaker tours"
+      "notes": "Above Arctic Circle — best Northern Lights in Russia, polar bears, nuclear icebreaker tours",
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -125,6 +142,11 @@
         "recDays": 4,
         "maxDays": 5,
         "note": "The strongest first stop for most Russia trips. Research-backed core covers Red Square, Kremlin, Tretyakov, metro architecture, and a Bolshoi or neighbourhood culture night.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Red Square, Kremlin Walls & Zaryadye",
@@ -351,6 +373,11 @@
         "recDays": 4,
         "maxDays": 5,
         "note": "Most atmospheric from late May to July during White Nights. Core route combines the Hermitage, imperial day trips, canals, and a Mariinsky or river-cruise evening.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Nevsky Prospekt & Palace Square Arrival Day",
@@ -560,6 +587,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Best as a culture-and-food stop before or after the Black Sea. Easy to combine with Sochi by Lastochka train or private transfer.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Krasnaya Street, Catherine Square & Kuban Evenings",
@@ -685,6 +715,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Best in late spring to early autumn for sea-and-city time. Use Adler / Sirius for Olympic Park, and Rosa Khutor for mountain scenery.",
+        "experiences": [
+          "Beaches",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Sochi Seaport, Riviera & Arboretum",
@@ -850,6 +884,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Best from late November to March for aurora trips and snowy Arctic landscapes. Build in a flexible night for weather because clear skies matter more than activity count.",
+        "experiences": [
+          "Northern Lights"
+        ],
         "days": [
           {
             "theme": "Icebreaker Lenin, Arctic City & Alyosha",

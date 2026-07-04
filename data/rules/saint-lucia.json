@@ -25,12 +25,12 @@
     "family4": "₹4.8L–₹7.1L"
   },
   "experiences": [
-    "Pitons",
     "Beaches",
-    "Volcano & Mud Baths",
-    "Sailing",
-    "Snorkeling",
-    "Creole Food"
+    "Islands",
+    "Hiking",
+    "Diving & Snorkeling",
+    "Hot Springs & Wellness",
+    "Luxury & Resorts"
   ],
   "avoid": [
     "June–November is wetter and overlaps the Caribbean hurricane season, so catamaran cruises, the Gros Piton trail, and west-coast viewpoints are more likely to be affected by rain or choppy seas.",
@@ -54,25 +54,61 @@
       "name": "Castries",
       "lat": 14.0101,
       "lng": -60.9875,
-      "notes": "The capital is the most practical arrival base for markets, harbor views, Morne Fortune lookouts, and easy onward links to both Marigot Bay and the north-island resorts."
+      "notes": "The capital is the most practical arrival base for markets, harbor views, Morne Fortune lookouts, and easy onward links to both Marigot Bay and the north-island resorts.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Soufrière",
       "lat": 13.8571,
       "lng": -61.0573,
-      "notes": "Saint Lucia's signature Pitons base for Sulphur Springs, Diamond Falls, hiking, cocoa-estate dining, and the island's most dramatic scenery."
+      "notes": "Saint Lucia's signature Pitons base for Sulphur Springs, Diamond Falls, hiking, cocoa-estate dining, and the island's most dramatic scenery.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Gros Islet",
       "lat": 14.0865,
       "lng": -60.945,
-      "notes": "Best north-island stop for Pigeon Island, Rodney Bay Marina, Reduit Beach, and the famous Friday night street party."
+      "notes": "Best north-island stop for Pigeon Island, Rodney Bay Marina, Reduit Beach, and the famous Friday night street party.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Marigot Bay",
       "lat": 13.9669,
       "lng": -61.0275,
-      "notes": "A postcard marina cove between Castries and Soufrière, known for yacht views, short water-taxi hops, and a quieter boutique-resort feel."
+      "notes": "A postcard marina cove between Castries and Soufrière, known for yacht views, short water-taxi hops, and a quieter boutique-resort feel.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September"
+      ]
     }
   ],
   "itinerary": {
@@ -97,6 +133,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Markets, cathedral core, and harborfront orientation",
@@ -177,6 +216,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Beaches",
+          "Luxury & Resorts"
+        ],
         "days": [
           {
             "theme": "Marina views, water-taxi hops, and a relaxed bay day",
@@ -222,6 +265,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Hiking",
+          "Hot Springs & Wellness",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Sulphur Springs, Diamond Falls, and the classic Soufrière circuit",
@@ -308,6 +356,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Pigeon Island, Rodney Bay Marina, and a beach-first north coast day",

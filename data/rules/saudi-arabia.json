@@ -25,12 +25,12 @@
     "family4": "₹3.7L–₹5.4L"
   },
   "experiences": [
-    "Hegra tombs in Al-Ula",
-    "Edge of the World desert escarpment",
-    "Al-Balad heritage lanes in Jeddah",
-    "Prophet's Mosque courtyard in Medina",
-    "Soudah mountain viewpoints near Abha",
-    "Wadi Disah canyon drive from Tabuk"
+    "Deserts",
+    "History",
+    "Ancient Ruins",
+    "Architecture",
+    "Mountains",
+    "Diving & Snorkeling"
   ],
   "avoid": [
     "Inland summer heat from May to September, especially Riyadh and Al-Ula afternoons",
@@ -53,84 +53,90 @@
       "lat": 24.7136,
       "lng": 46.6753,
       "bestMonths": [
-        "October",
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "National Museum, Al Masmak, Diriyah, modern skyline viewpoints and Edge of the World desert day trips"
+      "notes": "National Museum, Al Masmak, Diriyah, modern skyline viewpoints and Edge of the World desert day trips",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Jeddah",
       "lat": 21.4858,
       "lng": 39.1925,
       "bestMonths": [
-        "October",
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Al-Balad coral houses, Corniche sunsets, seafood, museums and the kingdom's easiest Red Sea city break"
+      "notes": "Al-Balad coral houses, Corniche sunsets, seafood, museums and the kingdom's easiest Red Sea city break",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Medina",
       "lat": 24.5247,
       "lng": 39.5692,
       "bestMonths": [
-        "October",
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Prophet's Mosque precinct, Quba Mosque, Uhud history and compact museum stops with easier pacing than Riyadh"
+      "notes": "Prophet's Mosque precinct, Quba Mosque, Uhud history and compact museum stops with easier pacing than Riyadh",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Al-Ula",
       "lat": 26.6084,
       "lng": 37.923,
       "bestMonths": [
-        "October",
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Hegra, Dadan, Jabal Ikmah, Elephant Rock and old-town desert heritage landscapes"
+      "notes": "Hegra, Dadan, Jabal Ikmah, Elephant Rock and old-town desert heritage landscapes",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Tabuk",
       "lat": 28.3998,
       "lng": 36.5715,
       "bestMonths": [
-        "October",
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Gateway to Wadi Disah, Hisma desert, Tabuk Castle and the broader NEOM northwest corridor"
+      "notes": "Gateway to Wadi Disah, Hisma desert, Tabuk Castle and the broader NEOM northwest corridor",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Abha",
       "lat": 18.2465,
       "lng": 42.5117,
       "bestMonths": [
-        "October",
-        "November",
-        "December",
-        "January",
-        "February",
-        "March"
+        "June",
+        "July",
+        "August",
+        "September"
       ],
-      "notes": "Cooler Asir highlands, Soudah peaks, Art Street and Rijal Almaa heritage stone villages"
+      "notes": "Cooler Asir highlands, Soudah peaks, Art Street and Rijal Almaa heritage stone villages",
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -160,6 +166,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Riyadh as the soft landing city for museums, cash, SIM setup and one headline desert excursion before shifting west.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Saudi history anchors, old-city lanes and a first skyline reset",
@@ -289,6 +299,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Jeddah works best as the Red Sea breathing space between Riyadh's urban pace and the religious corridor north to Medina.",
+        "experiences": [
+          "History",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Al-Balad heritage walks, old merchant houses and classic Jeddah food stops",
@@ -378,6 +392,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Keep Medina compact unless you are specifically extending for worship; the Haramain rail makes it easy to slot in as a one-night stop.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Sacred-city courtyards, early Islamic landmarks and a gentle museum stop",
@@ -427,6 +445,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Al-Ula needs at least two well-planned days because Hegra, Dadan and the rock sites all run on timed slots or desert-light windows.",
+        "experiences": [
+          "Ancient Ruins",
+          "Deserts",
+          "History"
+        ],
         "days": [
           {
             "theme": "Nabataean icons first: Hegra tombs with sunset at Elephant Rock",
@@ -556,6 +579,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Tabuk is the practical northwest base for Wadi Disah and NEOM-side landscapes; rent a car if you want the day to work smoothly.",
+        "experiences": [
+          "Deserts",
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Big-canyon desert scenery with a lighter city return in the evening",
@@ -645,6 +672,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Abha is the cool-climate contrast city; even one day changes the overall Saudi route by adding mountains and Asir heritage.",
+        "experiences": [
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Asir highlands, village heritage and a cooler end to the trip",

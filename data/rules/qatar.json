@@ -24,12 +24,12 @@
     "family4": "₹2.6L–₹3.95L"
   },
   "experiences": [
-    "Museum of Islamic Art waterfront galleries",
-    "National Museum of Qatar desert-rose architecture",
-    "Souq Waqif evenings and falcon souq lanes",
-    "Katara Cultural Village and beach promenade",
-    "The Pearl-Qatar marina walk",
-    "Richard Serra's East-West/West-East in Zekreet"
+    "Architecture",
+    "Museums",
+    "Deserts",
+    "Markets & Shopping",
+    "Beaches",
+    "History"
   ],
   "avoid": [
     "Long outdoor afternoons from May to September because heat and humidity rise fast",
@@ -55,11 +55,13 @@
       "bestMonths": [
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Museum-heavy waterfront capital with Souq Waqif, Katara, The Pearl, Doha Metro and the country's easiest hotel base"
+      "notes": "Museum-heavy waterfront capital with Souq Waqif, Katara, The Pearl, Doha Metro and the country's easiest hotel base",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Al Wakrah",
@@ -68,11 +70,13 @@
       "bestMonths": [
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Relaxed southern coastal town with a restored souq, dhow-lined seafront and direct Doha Metro access"
+      "notes": "Relaxed southern coastal town with a restored souq, dhow-lined seafront and direct Doha Metro access",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Al Khor",
@@ -81,11 +85,13 @@
       "bestMonths": [
         "November",
         "December",
-        "January",
         "February",
         "March"
       ],
-      "notes": "Northern coast base for Purple Island, Al Thakira mangroves, the corniche and easy resort stays"
+      "notes": "Northern coast base for Purple Island, Al Thakira mangroves, the corniche and easy resort stays",
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Zekreet",
@@ -95,10 +101,12 @@
         "November",
         "December",
         "January",
-        "February",
-        "March"
+        "February"
       ],
-      "notes": "West-coast desert outpost for Richard Serra's sculpture, Film City, limestone formations and Ras Abrouq sunsets"
+      "notes": "West-coast desert outpost for Richard Serra's sculpture, Film City, limestone formations and Ras Abrouq sunsets",
+      "worstMonths": [
+        "June"
+      ]
     }
   ],
   "itinerary": {
@@ -128,6 +136,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Use Doha as the core base because metro coverage, museum density and the biggest hotel range make the rest of Qatar much easier.",
+        "experiences": [
+          "Architecture",
+          "Museums",
+          "Markets & Shopping"
+        ],
         "days": [
           {
             "theme": "National Museum storytelling, Corniche air, and a first-night Souq Waqif reset",
@@ -297,6 +310,10 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Most travelers do Al Wakrah as a metro-and-taxi day trip from Doha, though the souq hotel area works well for a quieter overnight.",
+        "experiences": [
+          "Markets & Shopping",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Beachfront souq wandering and an easy coastal change of pace south of Doha",
@@ -342,6 +359,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "A rental car makes Al Khor easiest because Purple Island and Al Thakira are awkward without your own wheels.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Mangroves, Purple Island, and a resort-backed northern coast day",
@@ -387,6 +407,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Go early, carry water, and do not count on public transport; this is the part of Qatar where a rental car or guided 4x4 is essential.",
+        "experiences": [
+          "Deserts"
+        ],
         "days": [
           {
             "theme": "West-coast sculpture, film-set ruins, and desert-sea light near Ras Abrouq",

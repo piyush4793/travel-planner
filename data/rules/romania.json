@@ -21,11 +21,12 @@
     "family4": "₹2.5L–₹4L"
   },
   "experiences": [
-    "Transylvania",
-    "Bran Castle",
-    "Painted Monasteries",
-    "Bucovina",
-    "Carpathians"
+    "History",
+    "Architecture",
+    "Mountains",
+    "UNESCO Sites",
+    "Hiking",
+    "Museums"
   ],
   "avoid": [],
   "combo": [
@@ -43,31 +44,80 @@
       "name": "Bucharest",
       "lat": 44.4268,
       "lng": 26.1025,
-      "notes": "Palace of Parliament, Strada Franceza cafe culture and vibrant art scene"
+      "notes": "Palace of Parliament, Strada Franceza cafe culture and vibrant art scene",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Brasov",
       "lat": 45.6569,
       "lng": 25.6112,
-      "notes": "Gothic Black Church, medieval walls and gateway to Dracula's Bran Castle"
+      "notes": "Gothic Black Church, medieval walls and gateway to Dracula's Bran Castle",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Cluj-Napoca",
       "lat": 46.7712,
       "lng": 23.6236,
-      "notes": "University city with UNTOLD festival, St Michael's Church and nightlife"
+      "notes": "University city with UNTOLD festival, St Michael's Church and nightlife",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Sibiu",
       "lat": 45.7983,
       "lng": 24.1256,
-      "notes": "Beautifully preserved medieval Saxon town with Brukenthal museum"
+      "notes": "Beautifully preserved medieval Saxon town with Brukenthal museum",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Timisoara",
       "lat": 45.7489,
       "lng": 21.2087,
-      "notes": "First European city with public electric lighting and 1989 revolution start"
+      "notes": "First European city with public electric lighting and 1989 revolution start",
+      "experiences": [
+        "History",
+        "Architecture"
+      ],
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -95,6 +145,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days gives you the essential Communist-era landmarks, Belle Époque boulevards, and Old Town museum circuit without making the city feel rushed.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Communist Grandeur & Belle Époque Boulevards",
@@ -185,6 +240,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days lets you cover Brașov properly and still do Bran Castle as a comfortable day trip instead of a rushed transfer stop.",
+        "experiences": [
+          "History",
+          "Mountains",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Council Square, Gothic Landmarks & Medieval Lanes",
@@ -315,6 +375,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is the sweet spot for Sibiu: one day for the Upper Town highlights and one for the excellent ASTRA museum and medieval wall walk.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Piata Mare, Council Tower & the Town with Eyes",
@@ -405,6 +469,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days works well here: spend one day in central Cluj and use the second for Turda Salt Mine plus an easy evening back in the city.",
+        "experiences": [
+          "History",
+          "Architecture"
+        ],
         "days": [
           {
             "theme": "Union Square, Gothic Cluj & Baroque Museums",

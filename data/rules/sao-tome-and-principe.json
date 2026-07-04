@@ -26,11 +26,12 @@
     "family4": "₹5.0L–₹7.6L"
   },
   "experiences": [
-    "Roça Heritage",
-    "Equator Snorkeling",
-    "Rainforest Hikes",
-    "Volcanic Coast",
-    "Island Hopping"
+    "Beaches",
+    "Islands",
+    "Wildlife & Safari",
+    "Hiking",
+    "Diving & Snorkeling",
+    "National Parks"
   ],
   "avoid": [
     "October through May is the wetter stretch, so south-coast road days, Pico de São Tomé trail conditions, and small-boat departures to Ilhéu das Rolas are all less predictable than in the June-September gravana season.",
@@ -54,19 +55,46 @@
       "name": "São Tomé City",
       "lat": 0.336,
       "lng": 6.727,
-      "notes": "The capital is the practical landing base for cash, SIMs, market walks, the fort, and the easiest day loop to Boca do Inferno and the north-coast roças."
+      "notes": "The capital is the practical landing base for cash, SIMs, market walks, the fort, and the easiest day loop to Boca do Inferno and the north-coast roças.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "March"
+      ]
     },
     {
       "name": "Príncipe",
       "lat": 1.613,
       "lng": 7.412,
-      "notes": "Príncipe is the quieter, pricier second island for Praia Banana, Roça heritage, and low-density beach-and-biosphere stays around Santo António."
+      "notes": "Príncipe is the quieter, pricier second island for Praia Banana, Roça heritage, and low-density beach-and-biosphere stays around Santo António.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "March"
+      ]
     },
     {
       "name": "Obo National Park",
       "lat": 0.279,
       "lng": 6.595,
-      "notes": "Use the south and central forest belt for roça lunches, Ilhéu das Rolas boat days, and the serious guided hiking logistics around São Tomé's rainforest core."
+      "notes": "Use the south and central forest belt for roça lunches, Ilhéu das Rolas boat days, and the serious guided hiking logistics around São Tomé's rainforest core.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "March"
+      ]
     }
   ],
   "itinerary": {
@@ -91,6 +119,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Give the capital two nights for arrival admin, an easy old-town day, and one north-coast outing before you move into the slower south-coast or inter-island section.",
+        "experiences": [
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Arrival, Fort Views and the Capital Waterfront",
@@ -186,6 +217,11 @@
         "recDays": 3,
         "maxDays": 3,
         "note": "The park works best from a south-coast eco-lodge or Angolares base: one cultural day, one Ilhéu das Rolas boat day, and one full rainforest day.",
+        "experiences": [
+          "National Parks",
+          "Hiking",
+          "Wildlife & Safari"
+        ],
         "days": [
           {
             "theme": "South-Coast Transfer, Roça Lunch and Black-Sand Beaches",
@@ -309,6 +345,11 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Príncipe is best kept to two or three nights because flights are expensive; use that time for one beach-and-view day and one heritage-and-biosphere day.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Diving & Snorkeling"
+        ],
         "days": [
           {
             "theme": "Flight to Príncipe, Santo António and Praia Banana",

@@ -25,11 +25,12 @@
     "family4": "₹11.5L–₹18L"
   },
   "experiences": [
-    "Volcanoes gorilla trekking",
-    "Golden monkey tracking",
-    "Lake Kivu boat days",
-    "Nyungwe canopy walk and chimps",
-    "Akagera Big Five safari"
+    "Wildlife & Safari",
+    "National Parks",
+    "Lakes",
+    "Hiking",
+    "History",
+    "Volcanoes"
   ],
   "avoid": [
     "March to May and much of November bring the heaviest rain, muddier park tracks and slower road transfers",
@@ -52,31 +53,76 @@
       "name": "Kigali",
       "lat": -1.9441,
       "lng": 30.0619,
-      "notes": "Clean, easy capital for the genocide memorial, design cafés, moto-taxi hops and the launch point for every national-park leg"
+      "notes": "Clean, easy capital for the genocide memorial, design cafés, moto-taxi hops and the launch point for every national-park leg",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Volcanoes National Park",
       "lat": -1.4833,
       "lng": 29.55,
-      "notes": "Kinigi trailheads for gorilla trekking, golden monkeys, Dian Fossey history and misty Virunga lodge country"
+      "notes": "Kinigi trailheads for gorilla trekking, golden monkeys, Dian Fossey history and misty Virunga lodge country",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Lake Kivu",
       "lat": -2.0606,
       "lng": 29.3476,
-      "notes": "Rubavu and Karongi lake stops for boat rides, coffee views, Congo Nile Trail fragments and an easy scenic reset"
+      "notes": "Rubavu and Karongi lake stops for boat rides, coffee views, Congo Nile Trail fragments and an easy scenic reset",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Nyungwe Forest",
       "lat": -2.4817,
       "lng": 29.2147,
-      "notes": "Ancient montane rainforest with chimp treks, canopy walkways, orchid-rich trails and tea-estate viewpoints"
+      "notes": "Ancient montane rainforest with chimp treks, canopy walkways, orchid-rich trails and tea-estate viewpoints",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     },
     {
       "name": "Akagera National Park",
       "lat": -1.8657,
       "lng": 30.704,
-      "notes": "Savannah, lakes, big-game drives and boat safaris that balance Rwanda's primate-heavy west with classic East African wildlife"
+      "notes": "Savannah, lakes, big-game drives and boat safaris that balance Rwanda's primate-heavy west with classic East African wildlife",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "April"
+      ]
     }
   ],
   "itinerary": {
@@ -104,6 +150,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Memorial history, easy café-hopping, and a soft landing into one of Africa's most orderly capitals",
@@ -196,6 +245,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks",
+          "Volcanoes"
+        ],
         "days": [
           {
             "theme": "The big Rwanda day: pre-dawn check-in, steep bamboo climbs and the once-in-a-lifetime gorilla hour",
@@ -288,6 +342,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Lakes"
+        ],
         "days": [
           {
             "theme": "Rubavu lake air, easy waterfront time and the first true slow day after Volcanoes trekking",
@@ -380,6 +437,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Wildlife & Safari",
+          "Hiking",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Tea-estate scenery, one of Africa's best canopy walks and a cooler high-forest night",
@@ -472,6 +534,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Eastern Rwanda savannah, Lake Ihema wildlife and the clean contrast to the western primate parks",

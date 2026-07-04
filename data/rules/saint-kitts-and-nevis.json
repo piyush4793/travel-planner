@@ -26,12 +26,12 @@
     "family4": "₹5.8L–₹8.1L"
   },
   "experiences": [
-    "Fortresses",
-    "Island Ferries",
-    "Beach Time",
-    "Scenic Rail",
-    "Rainforest Hikes",
-    "Plantation Heritage"
+    "Beaches",
+    "Islands",
+    "History",
+    "Diving & Snorkeling",
+    "Hiking",
+    "Water Sports"
   ],
   "avoid": [
     "May–November is warmer, wetter, and more humid, so ferry crossings, fort viewpoints, and the Nevis Peak trail are more likely to be disrupted by squalls or muddy conditions.",
@@ -58,10 +58,12 @@
         "December",
         "January",
         "February",
-        "March",
-        "April"
+        "March"
       ],
-      "notes": "Capital base for cruise-port walks, Brimstone Hill day trips, Romney Manor, ferry departures, and the easiest first-night logistics after landing on St. Kitts."
+      "notes": "Capital base for cruise-port walks, Brimstone Hill day trips, Romney Manor, ferry departures, and the easiest first-night logistics after landing on St. Kitts.",
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Frigate Bay",
@@ -71,10 +73,12 @@
         "December",
         "January",
         "February",
-        "March",
-        "April"
+        "March"
       ],
-      "notes": "St. Kitts' main resort strip for beach time, Timothy Hill views, scenic railway pickups, and easy taxi access back to Basseterre."
+      "notes": "St. Kitts' main resort strip for beach time, Timothy Hill views, scenic railway pickups, and easy taxi access back to Basseterre.",
+      "worstMonths": [
+        "September"
+      ]
     },
     {
       "name": "Charlestown",
@@ -84,10 +88,12 @@
         "December",
         "January",
         "February",
-        "March",
-        "April"
+        "March"
       ],
-      "notes": "Nevis base for ferry arrivals, Bath Hotel heritage stops, Pinney's Beach sunsets, and guided departures for the Nevis Peak trail."
+      "notes": "Nevis base for ferry arrivals, Bath Hotel heritage stops, Pinney's Beach sunsets, and guided departures for the Nevis Peak trail.",
+      "worstMonths": [
+        "September"
+      ]
     }
   ],
   "itinerary": {
@@ -111,6 +117,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Stay near Basseterre or the airport corridor if you want the simplest arrival, fort day-trip, and ferry-terminal logistics before moving to a beach base.",
+        "experiences": [
+          "History"
+        ],
         "days": [
           {
             "theme": "Historic Basseterre core, Romney Manor, and waterfront orientation",
@@ -195,6 +204,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Use Frigate Bay if you want the classic resort stretch, easier beach time, and nightlife without being far from Basseterre's taxi and ferry links.",
+        "experiences": [
+          "Beaches",
+          "Water Sports"
+        ],
         "days": [
           {
             "theme": "Scenic Railway splurge, Timothy Hill views, and the beach strip",
@@ -277,6 +290,10 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Charlestown works best as your Nevis base because the ferry, heritage quarter, Bath Hotel ruins, and Pinney's Beach hotels are all close enough for short taxi rides.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Charlestown heritage, Bath Hotel ruins, and Pinney's Beach",
