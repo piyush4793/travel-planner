@@ -26,11 +26,11 @@
   },
   "experiences": [
     "Beaches",
-    "Island Hopping",
-    "Snorkeling",
-    "Blue Holes",
-    "Water Parks",
-    "Pig Beach"
+    "Islands",
+    "Diving & Snorkeling",
+    "Water Sports",
+    "Luxury & Resorts",
+    "Cruises & Boat Trips"
   ],
   "avoid": [
     "June–November is hurricane season, with the highest risk of flight disruptions, rough seas, and closed water activities.",
@@ -54,31 +54,81 @@
       "name": "Nassau",
       "lat": 25.047984,
       "lng": -77.355413,
-      "notes": "Historic arrival hub on New Providence for forts, museums, Fish Fry dinners, and easy jitney access to beaches and downtown sights."
+      "notes": "Historic arrival hub on New Providence for forts, museums, Fish Fry dinners, and easy jitney access to beaches and downtown sights.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Paradise Island",
       "lat": 25.0846,
       "lng": -77.3186,
-      "notes": "Best for Atlantis, Aquaventure, Cabbage Beach, and a polished resort day only minutes from downtown Nassau by water taxi or bridge."
+      "notes": "Best for Atlantis, Aquaventure, Cabbage Beach, and a polished resort day only minutes from downtown Nassau by water taxi or bridge.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Eleuthera",
       "lat": 25.1943,
       "lng": -76.2439,
-      "notes": "Long pink-sand island best known for Glass Window Bridge, Queen's Bath, Governor's Harbour beaches, and blue-hole excursions."
+      "notes": "Long pink-sand island best known for Glass Window Bridge, Queen's Bath, Governor's Harbour beaches, and blue-hole excursions.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "April"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Exuma",
       "lat": 23.5167,
       "lng": -75.786,
-      "notes": "George Town and Great Exuma are the practical base for Pig Beach tours, Thunderball Grotto, Stocking Island, and clear-water sandbars."
+      "notes": "George Town and Great Exuma are the practical base for Pig Beach tours, Thunderball Grotto, Stocking Island, and clear-water sandbars.",
+      "bestMonths": [
+        "December",
+        "January",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Grand Bahama",
       "lat": 26.5333,
       "lng": -78.6967,
-      "notes": "Freeport and Port Lucaya combine caves, national-park boardwalks, easier hotel pricing, and a straightforward flight finish from Grand Bahama International."
+      "notes": "Freeport and Port Lucaya combine caves, national-park boardwalks, easier hotel pricing, and a straightforward flight finish from Grand Bahama International.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     }
   ],
   "itinerary": {
@@ -107,7 +157,8 @@
         "note": "Use Nassau as your arrival buffer and cultural day; jitneys are cheapest inside town, but taxis are still the practical airport transfer after dark.",
         "experiences": [
           "Beaches",
-          "Island Hopping"
+          "Luxury & Resorts",
+          "Cruises & Boat Trips"
         ],
         "days": [
           {
@@ -197,7 +248,8 @@
         "note": "Paradise Island works best as a single full resort-and-beach day unless you are staying on-site at Atlantis for multiple park sessions.",
         "experiences": [
           "Beaches",
-          "Water Parks"
+          "Luxury & Resorts",
+          "Water Sports"
         ],
         "days": [
           {
@@ -251,8 +303,8 @@
         "note": "Base around Governor's Harbour if you want easier food choices, or around Gregory Town/North Eleuthera if Sapphire Blue Hole and Harbour Island are the priority.",
         "experiences": [
           "Beaches",
-          "Snorkeling",
-          "Blue Holes"
+          "Islands",
+          "Diving & Snorkeling"
         ],
         "days": [
           {
@@ -342,10 +394,10 @@
         "maxDays": 3,
         "note": "George Town is the most practical base if you want to keep Pig Beach, Stocking Island and beach time all within easy reach without paying luxury-cay rates.",
         "experiences": [
+          "Islands",
           "Beaches",
-          "Island Hopping",
-          "Snorkeling",
-          "Pig Beach"
+          "Cruises & Boat Trips",
+          "Diving & Snorkeling"
         ],
         "days": [
           {
@@ -435,8 +487,8 @@
         "note": "Grand Bahama is the easiest Out Island to end on if you want gentler hotel pricing, cave walks and a direct flight finish from Freeport.",
         "experiences": [
           "Beaches",
-          "Snorkeling",
-          "Blue Holes"
+          "Diving & Snorkeling",
+          "Water Sports"
         ],
         "days": [
           {

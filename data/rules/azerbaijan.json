@@ -23,11 +23,12 @@
     "family4": "₹2.2L–₹3.6L"
   },
   "experiences": [
-    "Baku Old City",
-    "Heydar Aliyev Center",
-    "Gobustan Petroglyphs",
-    "Sheki Khan's Palace",
-    "Lahij Copper Workshops"
+    "History",
+    "Architecture",
+    "Ancient Ruins",
+    "Mountains",
+    "Museums",
+    "Markets & Shopping"
   ],
   "avoid": [
     "Mountain drives around Lahij in heavy rain or winter snow"
@@ -47,31 +48,77 @@
       "name": "Baku",
       "lat": 40.3756,
       "lng": 49.8325,
-      "notes": "Caspian capital with Icherisheher lanes, design-led museums, boulevard walks and skyline viewpoints"
+      "notes": "Caspian capital with Icherisheher lanes, design-led museums, boulevard walks and skyline viewpoints",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "August"
+      ]
     },
     {
       "name": "Gobustan",
       "lat": 40.0833,
       "lng": 49.3833,
-      "notes": "Petroglyph reserve, museum and mud volcano day trip zone southwest of Baku"
+      "notes": "Petroglyph reserve, museum and mud volcano day trip zone southwest of Baku",
+      "bestMonths": [
+        "April",
+        "May",
+        "October"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     },
     {
       "name": "Gabala",
       "lat": 40.9833,
       "lng": 47.85,
-      "notes": "Forest-edged resort town with Tufandag cable cars, Nohur Lake and easy mountain access"
+      "notes": "Forest-edged resort town with Tufandag cable cars, Nohur Lake and easy mountain access",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Lahij",
       "lat": 40.85,
       "lng": 48.3833,
-      "notes": "Historic mountain craft village known for copper workshops, cobbled lanes and stone houses"
+      "notes": "Historic mountain craft village known for copper workshops, cobbled lanes and stone houses",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "December",
+        "January"
+      ]
     },
     {
       "name": "Sheki",
       "lat": 41.2,
       "lng": 47.1667,
-      "notes": "Silk Road town of caravanserais, stained shebeke windows and the ornate Khan's Palace"
+      "notes": "Silk Road town of caravanserais, stained shebeke windows and the ornate Khan's Palace",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -98,8 +145,9 @@
         "maxDays": 3,
         "note": "Stay in or near Icherisheher so you can walk the Old City at dawn and still reach the bus terminal or airport easily.",
         "experiences": [
-          "Baku Old City",
-          "Heydar Aliyev Center"
+          "History",
+          "Architecture",
+          "Museums"
         ],
         "days": [
           {
@@ -181,7 +229,8 @@
         "maxDays": 1,
         "note": "Treat Gobustan as a full day trip from Baku; there is little reason to sleep here unless you have your own car.",
         "experiences": [
-          "Gobustan Petroglyphs"
+          "Ancient Ruins",
+          "History"
         ],
         "days": [
           {
@@ -218,6 +267,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "If the seasonal AZAL flight operates on your dates, Gabala is the one inland stop where flying can meaningfully save time.",
+        "experiences": [
+          "Mountains"
+        ],
         "days": [
           {
             "theme": "Tufandag Cable Cars, Nohur Lake & Resort-Air Mountain Scenery",
@@ -264,7 +316,9 @@
         "maxDays": 1,
         "note": "Road conditions matter here — leave early and avoid arriving after dark if you are using shared transport.",
         "experiences": [
-          "Lahij Copper Workshops"
+          "Mountains",
+          "Markets & Shopping",
+          "History"
         ],
         "days": [
           {
@@ -316,7 +370,9 @@
         "maxDays": 2,
         "note": "End the inland loop here so you can enjoy the palace quarter slowly and take the comfortable bus or shared taxi back to Baku.",
         "experiences": [
-          "Sheki Khan's Palace"
+          "History",
+          "Architecture",
+          "Markets & Shopping"
         ],
         "days": [
           {

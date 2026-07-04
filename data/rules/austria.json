@@ -18,12 +18,12 @@
     "family4": "₹5L–₹9L"
   },
   "experiences": [
-    "Vienna",
-    "Hallstatt",
-    "Salzburg",
-    "Alps Skiing",
-    "Christmas Markets",
-    "Mozart"
+    "History",
+    "Architecture",
+    "Skiing",
+    "Mountains",
+    "Museums",
+    "Coffee & Cafés"
   ],
   "avoid": [
     "Crowds at Hallstatt in peak summer"
@@ -43,31 +43,74 @@
       "name": "Vienna",
       "lat": 48.2082,
       "lng": 16.3738,
-      "notes": "Schonbrunn Palace, Kunsthistorisches Museum, coffee house culture and opera"
+      "notes": "Schonbrunn Palace, Kunsthistorisches Museum, coffee house culture and opera",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "December"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Salzburg",
       "lat": 47.8095,
       "lng": 13.055,
-      "notes": "Mozart's birthplace, Hohensalzburg fortress and Sound of Music scenery"
+      "notes": "Mozart's birthplace, Hohensalzburg fortress and Sound of Music scenery",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "December"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Innsbruck",
       "lat": 47.2682,
       "lng": 11.3923,
-      "notes": "Golden Roof, Nordkette cable car and gateway to Tyrolean ski resorts"
+      "notes": "Golden Roof, Nordkette cable car and gateway to Tyrolean ski resorts",
+      "bestMonths": [
+        "January",
+        "February",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Hallstatt",
       "lat": 47.5622,
       "lng": 13.6493,
-      "notes": "Postcard lakeside village with salt mine and Dachstein ice cave"
+      "notes": "Postcard lakeside village with salt mine and Dachstein ice cave",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "November"
+      ]
     },
     {
       "name": "Graz",
       "lat": 47.0707,
       "lng": 15.4395,
-      "notes": "Schlossberg clock tower, Kunsthaus bubble and Styrian pumpkin oil"
+      "notes": "Schlossberg clock tower, Kunsthaus bubble and Styrian pumpkin oil",
+      "bestMonths": [
+        "May",
+        "June",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -99,8 +142,10 @@
         "maxDays": 4,
         "note": "Plan at least 3 days to cover the imperial core properly; a fourth day works well for an opera evening or a slower museum day.",
         "experiences": [
-          "Vienna",
-          "Christmas Markets"
+          "History",
+          "Architecture",
+          "Museums",
+          "Coffee & Cafés"
         ],
         "days": [
           {
@@ -231,6 +276,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Use Graz as a one-night Styrian stop between Vienna and Salzburg, or stretch it with a second day for slower museum time and cafés.",
+        "experiences": [
+          "Architecture",
+          "History",
+          "Museums"
+        ],
         "days": [
           {
             "theme": "Medieval Hill Town & Avant-Garde Architecture",
@@ -281,8 +331,9 @@
         "maxDays": 3,
         "note": "Two days covers the baroque core plus either Hellbrunn or a Sound of Music outing; add a third day for Salzkammergut side trips.",
         "experiences": [
-          "Salzburg",
-          "Mozart"
+          "History",
+          "Architecture",
+          "Museums"
         ],
         "days": [
           {
@@ -374,7 +425,8 @@
         "maxDays": 2,
         "note": "Best handled as an early-start day trip from Salzburg unless you want sunrise photos and a quieter overnight in the village.",
         "experiences": [
-          "Hallstatt"
+          "Mountains",
+          "Architecture"
         ],
         "days": [
           {
@@ -426,7 +478,8 @@
         "maxDays": 3,
         "note": "Two days gives you one historic-core day and one Alps-and-castles day; add a third for nearby Tyrolean valleys or ski lifts.",
         "experiences": [
-          "Alps Skiing"
+          "Skiing",
+          "Mountains"
         ],
         "days": [
           {

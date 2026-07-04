@@ -22,11 +22,12 @@
     "family4": "₹1.6L–₹2.7L"
   },
   "experiences": [
-    "Yerevan café culture",
-    "Ancient monasteries",
-    "Garni–Geghard day trip",
-    "Lake Sevan trout lunches",
-    "Wings of Tatev cable car"
+    "History",
+    "Temples & Religious Sites",
+    "Mountains",
+    "Lakes",
+    "Food",
+    "Hiking"
   ],
   "avoid": [
     "Icy mountain roads and fog in deep winter",
@@ -47,31 +48,77 @@
       "name": "Yerevan",
       "lat": 40.1792,
       "lng": 44.4991,
-      "notes": "Republic Square, Cascade, pink-tuff architecture, markets and Armenia’s best food scene"
+      "notes": "Republic Square, Cascade, pink-tuff architecture, markets and Armenia’s best food scene",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January",
+        "August"
+      ]
     },
     {
       "name": "Dilijan",
       "lat": 40.7417,
       "lng": 44.863,
-      "notes": "Forest-town base for Haghartsin, craft streets, easy hikes and cooler weather"
+      "notes": "Forest-town base for Haghartsin, craft streets, easy hikes and cooler weather",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Tatev",
       "lat": 39.3793,
       "lng": 46.2481,
-      "notes": "Dramatic monastery reached by the Wings of Tatev cable car above the Vorotan Gorge"
+      "notes": "Dramatic monastery reached by the Wings of Tatev cable car above the Vorotan Gorge",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Garni",
       "lat": 40.1193,
       "lng": 44.7344,
-      "notes": "Pagan temple, gorge landscapes, lavash baking and the Geghard monastery side trip"
+      "notes": "Pagan temple, gorge landscapes, lavash baking and the Geghard monastery side trip",
+      "bestMonths": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Lake Sevan",
       "lat": 40.5627,
       "lng": 45.0109,
-      "notes": "Big blue lake with Sevanavank views, fish grills, breezy summer swims and peninsula sunsets"
+      "notes": "Big blue lake with Sevanavank views, fish grills, breezy summer swims and peninsula sunsets",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -97,7 +144,8 @@
         "maxDays": 3,
         "note": "Best arrival base for cash, SIM cards, museums, and the easiest onward marshrutka links.",
         "experiences": [
-          "Yerevan café culture"
+          "Food",
+          "History"
         ],
         "days": [
           {
@@ -179,7 +227,8 @@
         "maxDays": 1,
         "note": "Usually done as a day trip from Yerevan, but staying overnight makes the gorge quieter by evening.",
         "experiences": [
-          "Garni–Geghard day trip"
+          "History",
+          "Temples & Religious Sites"
         ],
         "days": [
           {
@@ -231,7 +280,9 @@
         "maxDays": 2,
         "note": "A cool-weather forest break that works well after Yerevan before heading to Sevan.",
         "experiences": [
-          "Ancient monasteries"
+          "Temples & Religious Sites",
+          "Mountains",
+          "Hiking"
         ],
         "days": [
           {
@@ -279,7 +330,8 @@
         "maxDays": 2,
         "note": "Best in summer and early autumn when the peninsula is lively and fish restaurants are fully open.",
         "experiences": [
-          "Lake Sevan trout lunches"
+          "Lakes",
+          "Temples & Religious Sites"
         ],
         "days": [
           {
@@ -327,7 +379,8 @@
         "maxDays": 2,
         "note": "Long transfer day, but the gorge scenery and cable car ride justify an overnight if you can spare it.",
         "experiences": [
-          "Wings of Tatev cable car"
+          "Temples & Religious Sites",
+          "Mountains"
         ],
         "days": [
           {

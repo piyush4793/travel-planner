@@ -22,11 +22,12 @@
     "family4": "₹7L–₹12L"
   },
   "experiences": [
-    "Great Barrier Reef",
-    "Sydney Opera House",
-    "Uluru",
-    "Melbourne Food",
-    "Gold Coast"
+    "Beaches",
+    "Diving & Snorkeling",
+    "Food",
+    "Wildlife & Safari",
+    "Deserts",
+    "Surfing"
   ],
   "avoid": [
     "December-February in the north (cyclone/wet season)",
@@ -47,37 +48,94 @@
       "name": "Sydney",
       "lat": -33.8688,
       "lng": 151.2093,
-      "notes": "Opera House, Bondi Beach, Harbour Bridge climb and Blue Mountains"
+      "notes": "Opera House, Bondi Beach, Harbour Bridge climb and Blue Mountains",
+      "bestMonths": [
+        "March",
+        "April",
+        "November",
+        "December"
+      ],
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Melbourne",
       "lat": -37.8136,
       "lng": 144.9631,
-      "notes": "Coffee culture, Hosier Lane street art, Great Ocean Road and galleries"
+      "notes": "Coffee culture, Hosier Lane street art, Great Ocean Road and galleries",
+      "bestMonths": [
+        "March",
+        "April",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Cairns",
       "lat": -16.9186,
       "lng": 145.7781,
-      "notes": "Great Barrier Reef snorkeling, Daintree Rainforest and Cape Tribulation"
+      "notes": "Great Barrier Reef snorkeling, Daintree Rainforest and Cape Tribulation",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Brisbane",
       "lat": -27.4698,
       "lng": 153.0251,
-      "notes": "South Bank beach, Lone Pine koala sanctuary and gateway to Gold Coast"
+      "notes": "South Bank beach, Lone Pine koala sanctuary and gateway to Gold Coast",
+      "bestMonths": [
+        "April",
+        "September",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Perth",
       "lat": -31.9505,
       "lng": 115.8605,
-      "notes": "Fremantle port, Rottnest Island quokkas and Swan Valley wine region"
+      "notes": "Fremantle port, Rottnest Island quokkas and Swan Valley wine region",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Uluru",
       "lat": -25.3444,
       "lng": 131.0369,
-      "notes": "Sacred Anangu red rock monolith at sunset and sunrise in the Red Centre"
+      "notes": "Sacred Anangu red rock monolith at sunset and sunrise in the Red Centre",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "December",
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -111,7 +169,9 @@
         "recDays": 3,
         "maxDays": 4,
         "experiences": [
-          "Sydney Opera House"
+          "Beaches",
+          "Food",
+          "Surfing"
         ],
         "days": [
           {
@@ -230,7 +290,8 @@
         "recDays": 3,
         "maxDays": 4,
         "experiences": [
-          "Melbourne Food"
+          "Food",
+          "Beaches"
         ],
         "days": [
           {
@@ -349,7 +410,9 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Gold Coast"
+          "Beaches",
+          "Surfing",
+          "Food"
         ],
         "days": [
           {
@@ -432,7 +495,9 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Great Barrier Reef"
+          "Diving & Snorkeling",
+          "Beaches",
+          "Wildlife & Safari"
         ],
         "days": [
           {
@@ -515,7 +580,8 @@
         "recDays": 1,
         "maxDays": 2,
         "experiences": [
-          "Uluru"
+          "Deserts",
+          "Wildlife & Safari"
         ],
         "days": [
           {
@@ -565,6 +631,11 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beaches",
+          "Food",
+          "Surfing"
+        ],
         "days": [
           {
             "theme": "Kings Park, Quays & Fremantle",
