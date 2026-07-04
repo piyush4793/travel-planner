@@ -101,6 +101,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Sleep centrally in Sopocachi or near the cable cars, keep day one lighter for altitude, and slot Tiwanaku on a separate early start if you want the archaeology without rushing.",
+        "experiences": [
+          "La Paz & Tiwanaku"
+        ],
         "days": [
           {
             "theme": "Historic Center, Cable Cars & Valle de la Luna",
@@ -176,6 +179,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Copacabana is best as a slower lake break between big transit legs, and it also works well if you plan to continue onward to Peru after Bolivia.",
+        "experiences": [
+          "Lake Titicaca at Copacabana"
+        ],
         "days": [
           {
             "theme": "Basilica, Cerro Calvario & Lakefront",
@@ -246,6 +252,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Sucre is gentler for acclimatization than La Paz or Potosí, so it works well as a reset city for longer café mornings and museum-heavy afternoons.",
+        "experiences": [
+          "Sucre colonial core"
+        ],
         "days": [
           {
             "theme": "Colonial Core & Independence History",
@@ -316,6 +325,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Potosí is colder and higher than Sucre, so layer up for morning mine tours and book a reputable operator that includes proper helmets, boots and masks for Cerro Rico.",
+        "experiences": [
+          "Potosí silver history"
+        ],
         "days": [
           {
             "theme": "Casa de la Moneda & Colonial Potosí",
@@ -386,6 +398,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Lock your Uyuni tour operator, vehicle condition and English-guide needs before arrival, and pack sun protection because the salt glare is intense even in cool dry-season weather.",
+        "experiences": [
+          "Salar de Uyuni"
+        ],
         "days": [
           {
             "theme": "Train Cemetery & Salar de Uyuni Classic Circuit",

@@ -91,6 +91,10 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days lets you cover Minsk's Stalinist avenues, museums, and cultural stops before using the city as the practical gateway for the Mir-Nesvizh castle belt.",
+        "experiences": [
+          "Minsk Architecture",
+          "Soviet Heritage"
+        ],
         "days": [
           {
             "theme": "Arrival, Stalinist Grandeur & Skyline Views",
@@ -223,6 +227,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Mir works best as a focused castle day with an optional overnight stay inside the UNESCO complex if you want the village at its quietest.",
+        "experiences": [
+          "Mir Castle"
+        ],
         "days": [
           {
             "theme": "UNESCO Castle Towers, Courtyard & Lakeside Walks",
@@ -273,6 +280,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "One day covers the Radziwiłł residence, the historic center, and the lake-ringed parklands without making Nesvizh feel like a rushed photo stop.",
+        "experiences": [
+          "Nesvizh Palace"
+        ],
         "days": [
           {
             "theme": "Radziwiłł Palace Interiors, Parkland & Old Town",
@@ -323,6 +333,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is the sweet spot for Brest: one for the fortress and Soviet memorial core, and one for Belovezhskaya Pushcha plus the city's evening lamplighter ritual.",
+        "experiences": [
+          "Forests",
+          "Soviet Heritage"
+        ],
         "days": [
           {
             "theme": "Brest Fortress, Rail Heritage & Sovietskaya Street",

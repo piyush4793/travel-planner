@@ -183,6 +183,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Maya Ruins",
+          "Caves",
+          "Wildlife"
+        ],
         "days": [
           {
             "theme": "ATM Cave Adventure Day",
@@ -264,6 +269,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "This is a pre-dawn guided border run from San Ignacio into Guatemala; carry passport, some cash, and expect a very long but rewarding day.",
+        "experiences": [
+          "Maya Ruins"
+        ],
         "days": [
           {
             "theme": "Cross-Border Tikal Ruins Marathon",
@@ -306,6 +314,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Reef Snorkeling",
+          "Island Time"
+        ],
         "days": [
           {
             "theme": "The Split, Lazy Lizard & Go-Slow Island Day",
@@ -418,6 +430,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Beach Towns",
+          "Reef Snorkeling"
+        ],
         "days": [
           {
             "theme": "Placencia Sidewalk, Beach Time & Creole Food",

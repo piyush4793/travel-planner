@@ -108,6 +108,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Brussels as your arrival and departure base; add a third day if you want the Magritte Museum, European Quarter museums, or a slower café-and-comics day.",
+        "experiences": [
+          "Grand-Place",
+          "Belgian Beer & Chocolate"
+        ],
         "days": [
           {
             "theme": "Grand-Place, Galeries & Old Centre",
@@ -187,6 +191,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Bruges is compact enough for a full day, but an overnight stay gives you quieter early-morning canals and time for another museum.",
+        "experiences": [
+          "Bruges Canals",
+          "Belgian Beer & Chocolate"
+        ],
         "days": [
           {
             "theme": "Belfry, Canals & Chocolate",
@@ -234,6 +242,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Ghent works brilliantly as an overnight between Bruges and Antwerp; add a second day if you want museums beyond the castle and altarpiece.",
+        "experiences": [
+          "Ghent Castles & Belfries"
+        ],
         "days": [
           {
             "theme": "Gravensteen, Graslei & Mystic Lamb",
@@ -278,6 +289,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Stay a second day if you want both museums and fashion shopping without rushing Antwerp Central, the old town and the riverside.",
+        "experiences": [
+          "Antwerp Fashion & Diamonds"
+        ],
         "days": [
           {
             "theme": "Station Icons, MAS & Old Town",
@@ -325,6 +339,9 @@
         "recDays": 1,
         "maxDays": 1,
         "note": "Leuven is best as a compact overnight or long day trip, especially if you enjoy university towns, beguinages and easy food-and-beer hopping.",
+        "experiences": [
+          "Belgian Beer & Chocolate"
+        ],
         "days": [
           {
             "theme": "University Heritage & Beer Streets",
@@ -368,6 +385,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Dinant is easy as a final Wallonia stop; add a second day for river kayaking, abbey detours or the nearby caves and viewpoints.",
+        "experiences": [
+          "Dinant Meuse Valley"
+        ],
         "days": [
           {
             "theme": "Citadel, Sax Heritage & Meuse Views",

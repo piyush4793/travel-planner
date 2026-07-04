@@ -102,6 +102,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Fondation Zinsou and Cotonou markets"
+        ],
         "days": [
           {
             "theme": "Land in Benin with market energy, museum context, and a first coastal evening without straying far from the airport.",
@@ -194,6 +197,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Route des Esclaves in Ouidah"
+        ],
         "days": [
           {
             "theme": "Follow Benin's most important heritage trail from town shrines to the Atlantic slave-route memorials.",
@@ -282,6 +288,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 1,
+        "experiences": [
+          "Ganvié stilt village pirogue ride"
+        ],
         "days": [
           {
             "theme": "Trade roads for water and spend a full day understanding Benin's famous stilt village by pirogue.",
@@ -330,6 +339,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Royal Palaces of Abomey UNESCO complex"
+        ],
         "days": [
           {
             "theme": "Move inland for Dahomey royal history, UNESCO palace courtyards, and a slower provincial evening.",
@@ -414,6 +426,9 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Pendjari wildlife safari"
+        ],
         "days": [
           {
             "theme": "Commit to the long northern transfer, then use the late afternoon for your first Pendjari wildlife session.",

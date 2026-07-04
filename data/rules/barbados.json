@@ -96,6 +96,10 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Colonial History",
+          "Rum Heritage"
+        ],
         "days": [
           {
             "theme": "Historic Bridgetown, Garrison & Carlisle Bay",
@@ -179,6 +183,10 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Surf",
+          "Scenic Drives"
+        ],
         "days": [
           {
             "theme": "Soup Bowl Surf Coast & Garden Views",
@@ -224,6 +232,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Colonial History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "West Coast Heritage, Abbey Rum & Beach Time",
@@ -306,6 +318,10 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Seafood",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Miami Beach, Parish Landmarks & Fish Fry",
