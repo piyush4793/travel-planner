@@ -132,6 +132,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Douala's street art, cathedral quarter, and Cameroon gateway energy"
+        ],
         "days": [
           {
             "theme": "Bonanjo landmarks, public art, and a soft landing in Cameroon’s busiest gateway city",
@@ -180,6 +183,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Limbe black-sand coast with the Limbe Wildlife Centre and Buea hike access"
+        ],
         "days": [
           {
             "theme": "Wildlife rescue, botanical gardens, and Limbe’s laid-back black-sand coast",
@@ -264,6 +270,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Yaoundé museums, reunion monument, and easy long-distance bus links"
+        ],
         "days": [
           {
             "theme": "Capital museums, reunion landmarks, and practical city logistics",
@@ -348,6 +357,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "Bamenda highlands culture with Mankon heritage and optional Foumban detours"
+        ],
         "days": [
           {
             "theme": "Market energy, Mankon heritage, and a first look at the Northwest highlands",
@@ -431,6 +443,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Kribi beach days around Lobé Falls where the river meets the Atlantic"
+        ],
         "days": [
           {
             "theme": "Atlantic beach time and the signature Lobé Falls pirogue ride",

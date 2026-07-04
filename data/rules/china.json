@@ -106,6 +106,11 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days covers imperial Beijing well with one full Great Wall day and one slower temple-and-garden day.",
+        "experiences": [
+          "Great Wall",
+          "History",
+          "Temples"
+        ],
         "days": [
           {
             "theme": "Imperial Axis & Old Beijing",
@@ -230,6 +235,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is ideal for the Terracotta Army, the old walls and the Tang-era core without rushing.",
+        "experiences": [
+          "History",
+          "Food"
+        ],
         "days": [
           {
             "theme": "Terracotta Army & Muslim Quarter",
@@ -319,6 +328,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days gives you pandas, Sichuan culture and a solid mix of Buddhist and local food stops.",
+        "experiences": [
+          "Food",
+          "Nature"
+        ],
         "days": [
           {
             "theme": "Pandas, Wuhou Shrine & Lantern Streets",
@@ -405,6 +418,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days works well for the classic Li River cruise plus a slower Yangshuo countryside day before heading east.",
+        "experiences": [
+          "Nature"
+        ],
         "days": [
           {
             "theme": "Li River Cruise to Yangshuo",
@@ -492,6 +508,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Hangzhou works perfectly as a one-day West Lake and tea-culture stop before Shanghai.",
+        "experiences": [
+          "Temples",
+          "Nature"
+        ],
         "days": [
           {
             "theme": "West Lake, Tea Villages & Temple Calm",
@@ -539,6 +559,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is enough for the skyline, museums, old-city landmarks and one flexible water-town-or-concession day.",
+        "experiences": [
+          "Shanghai Skyline",
+          "Food"
+        ],
         "days": [
           {
             "theme": "The Bund, Pudong & Old Shanghai",

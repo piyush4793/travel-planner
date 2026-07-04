@@ -122,6 +122,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 2,
+        "experiences": [
+          "N'Djamena city days around the National Museum, Grand Marché, Gaoui pottery village, and Chari River sunsets."
+        ],
         "days": [
           {
             "theme": "Museum, market, and Chari River orientation before heading into remote Chad",
@@ -210,6 +213,9 @@
         "minDays": 2,
         "recDays": 3,
         "maxDays": 4,
+        "experiences": [
+          "Zakouma National Park safaris with elephant herds, birdlife, and ranger-led drives based from Tinga Camp or seasonal Camp Nomade."
+        ],
         "days": [
           {
             "theme": "Get into the park and use the first afternoon for a classic Zakouma game drive",
@@ -354,6 +360,9 @@
         "minDays": 3,
         "recDays": 4,
         "maxDays": 6,
+        "experiences": [
+          "Ennedi Plateau expedition travel to Aloba Arch, Bachikélé, prehistoric rock art shelters, and the crocodile-haunted Guelta d'Archei."
+        ],
         "days": [
           {
             "theme": "Reach Fada, settle into camp, and start understanding how remote Ennedi really is",
@@ -502,6 +511,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Lake Chad boat outings from the Baga Sola side for fishing-village views, reed channels, and dry-season birding."
+        ],
         "days": [
           {
             "theme": "Baga Sola transfer, fishing-port atmosphere, and the first dry-season boat ride",

@@ -1,7 +1,7 @@
 {
   "name": "Cape Verde",
   "seed": false,
-  "lat": 16.0,
+  "lat": 16,
   "lng": -24.01,
   "region": "Africa",
   "bestMonths": [
@@ -100,6 +100,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Keep Santiago short and efficient: one capital day and one Cidade Velha day gives you Cape Verde's strongest historical stop before you move into the island-hopping stretch.",
+        "experiences": [
+          "Inter-Island Hopping"
+        ],
         "days": [
           {
             "theme": "Plateau, Sucupira Market and a First Evening by the Sea",
@@ -192,6 +195,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Sal works best as the easiest low-friction beach base: one Santa Maria day and one crater-and-coast day is enough unless you specifically want extra resort time or watersports lessons.",
+        "experiences": [
+          "Beach Time"
+        ],
         "days": [
           {
             "theme": "Flight to Sal, Santa Maria Beach and an Easy Resort-Town Evening",
@@ -285,6 +291,9 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Mindelo deserves two nights for its music-city atmosphere, Monte Verde views, and easy positioning before the early Santo Antão ferry.",
+        "experiences": [
+          "Creole Music"
+        ],
         "days": [
           {
             "theme": "Flight to Mindelo, Waterfront Walks and Laginha Beach",
@@ -377,6 +386,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "This is the hiking island, so keep two full days for the classic crater-to-valley scenery and one flexible village-and-viewpoint day if you have extra time.",
+        "experiences": [
+          "Coastal Hikes",
+          "Volcanic Islands"
+        ],
         "days": [
           {
             "theme": "CV Interilhas Ferry, Cova Crater and the Paúl Valley Descent",

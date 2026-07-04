@@ -185,6 +185,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Go as a day trip or one-night stay from Santiago; the city is steep, so pack light and use funiculars or quick Ubers between cerros after dark.",
+        "experiences": [
+          "Valparaíso street art"
+        ],
         "days": [
           {
             "theme": "Street Art Hills, Port Views & Neruda House",
@@ -228,6 +231,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "The town sits around 2,400 m, so hydrate hard, go easy on alcohol the first night, and keep sunrise tours for after you’ve had at least one acclimatisation evening.",
+        "experiences": [
+          "Atacama Desert"
+        ],
         "days": [
           {
             "theme": "Arrival, Desert Town & Valle de la Luna",
@@ -341,6 +347,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Book park entry online before you go, carry full windproof layers even on sunny days, and keep a spare weather-flex day if Base Torres is a priority hike.",
+        "experiences": [
+          "Torres del Paine"
+        ],
         "days": [
           {
             "theme": "Puerto Natales Waterfront & Milodón Intro",
@@ -453,6 +462,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Pucón is easy to do without a car, but adventure tours fill up in summer; reserve volcano slots or hot-spring transfers a day or two ahead.",
+        "experiences": [
+          "Lakes & volcanoes"
+        ],
         "days": [
           {
             "theme": "Villarrica Volcano & Lakeside Town",
@@ -532,6 +544,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Base yourself in Hanga Roa, keep cash for smaller family-run places, and hire a local guide if you want the deeper archaeological context at the quarry and ceremonial sites.",
+        "experiences": [
+          "Rapa Nui moai"
+        ],
         "days": [
           {
             "theme": "Rano Raraku, Tongariki & East Coast Moai",

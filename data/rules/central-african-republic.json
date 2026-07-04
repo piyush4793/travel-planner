@@ -105,6 +105,9 @@
         "minDays": 1,
         "recDays": 2,
         "maxDays": 2,
+        "experiences": [
+          "Bangui's cathedral quarter, Boganda National Museum, and practical riverfront base for arranging vetted transport"
+        ],
         "days": [
           {
             "theme": "Cathedral quarter, museum stop, and settling into the capital's safest hotel zones before any onward travel",
@@ -193,6 +196,9 @@
         "minDays": 1,
         "recDays": 1,
         "maxDays": 1,
+        "experiences": [
+          "Boali Falls and the hydro gorge on a dry-season day trip where a 4x4 is the sensible choice"
+        ],
         "days": [
           {
             "theme": "Dry-season waterfall day trip from Bangui with a 4x4, viewpoint stops, and no pressure to overnight locally",
@@ -241,6 +247,11 @@
         "minDays": 2,
         "recDays": 2,
         "maxDays": 3,
+        "experiences": [
+          "Dzanga Bai forest-elephant viewing from the raised platform in one of Central Africa's signature wildlife sites",
+          "Western lowland gorilla tracking in Dzanga-Sangha with mandatory official guides and porters",
+          "Pirogue rides on the Sangha and Ba'Aka cultural encounters around Bayanga when arranged through trusted lodges"
+        ],
         "days": [
           {
             "theme": "Reach Bayanga by lodge-arranged charter or expedition 4x4, then head out to the bai for forest-elephant viewing",

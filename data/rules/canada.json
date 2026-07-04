@@ -114,6 +114,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days covers the skyline icons, one major museum cluster, and neighbourhood food stops without rushing.",
+        "experiences": [
+          "CN Tower"
+        ],
         "days": [
           {
             "theme": "Downtown Arrival, Skyline & Market",
@@ -225,6 +228,9 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "An overnight stop works well for Parliament Hill, a major museum, and ByWard Market; add a second day only for extra museum time.",
+        "experiences": [
+          "Rideau Canal"
+        ],
         "days": [
           {
             "theme": "Parliament, ByWard & Capital Sights",
@@ -299,6 +305,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days gives a strong Old Montreal plus Plateau/Mount Royal pairing; add a third if you want nature-space museums too.",
+        "experiences": [
+          "Notre-Dame Basilica"
+        ],
         "days": [
           {
             "theme": "Old Montreal & Basilica Core",
@@ -406,6 +415,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Two days is ideal for the old city plus Montmorency Falls without turning the stay into a pure museum stop.",
+        "experiences": [
+          "Old Quebec"
+        ],
         "days": [
           {
             "theme": "Walled City, Frontenac & Petit-Champlain",
@@ -515,6 +527,9 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use Banff town as the base; two days covers Sulphur Mountain plus the Lake Louise corridor, while a third day can go to winter sports or extra lakes.",
+        "experiences": [
+          "Banff Gondola"
+        ],
         "days": [
           {
             "theme": "Banff Town, Gondola & Hot Springs",
@@ -623,6 +638,9 @@
         "recDays": 3,
         "maxDays": 4,
         "note": "Three days balances classic city sights with one big bridge-or-mountain ticketed day and a lighter waterfront finish.",
+        "experiences": [
+          "Stanley Park"
+        ],
         "days": [
           {
             "theme": "Stanley Park, Seawall & Granville Island",
