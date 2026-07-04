@@ -24,12 +24,14 @@
     "family4": "₹7.5L–₹12L"
   },
   "experiences": [
-    "Rio Icons",
-    "São Paulo Food Scene",
-    "Iguaçu Falls",
-    "Salvador Heritage",
-    "Florianópolis Beaches",
-    "Paraty Colonial Coast"
+    "Beaches",
+    "Waterfalls",
+    "Wildlife & Safari",
+    "Nightlife",
+    "Islands",
+    "Festivals",
+    "History",
+    "Surfing"
   ],
   "avoid": [
     "Carnival, New Year, and July school-holiday weeks push up flights and hotel prices fast.",
@@ -51,37 +53,94 @@
       "name": "Rio de Janeiro",
       "lat": -22.9068,
       "lng": -43.1729,
-      "notes": "Christ the Redeemer, Sugarloaf, samba nights, and beach-to-mountain scenery in one compact city."
+      "notes": "Christ the Redeemer, Sugarloaf, samba nights, and beach-to-mountain scenery in one compact city.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June"
+      ]
     },
     {
       "name": "São Paulo",
       "lat": -23.5505,
       "lng": -46.6333,
-      "notes": "Brazil’s biggest food and culture capital with Paulista museums, markets, and design-heavy neighbourhoods."
+      "notes": "Brazil’s biggest food and culture capital with Paulista museums, markets, and design-heavy neighbourhoods.",
+      "bestMonths": [
+        "March",
+        "April",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Iguaçu Falls",
       "lat": -25.6953,
       "lng": -54.4367,
-      "notes": "Brazil’s panoramic side of the falls pairs huge viewpoints with bird park and Itaipu add-ons."
+      "notes": "Brazil’s panoramic side of the falls pairs huge viewpoints with bird park and Itaipu add-ons.",
+      "bestMonths": [
+        "August",
+        "September",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Salvador",
       "lat": -12.9777,
       "lng": -38.5016,
-      "notes": "Afro-Brazilian music, colonial Pelourinho lanes, and bay sunsets with strong Bahian food culture."
+      "notes": "Afro-Brazilian music, colonial Pelourinho lanes, and bay sunsets with strong Bahian food culture.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "May",
+        "June"
+      ]
     },
     {
       "name": "Florianópolis",
       "lat": -27.5949,
       "lng": -48.5482,
-      "notes": "Island city mixing surf beaches, seafood villages, dunes, and a mellow south-Brazil pace."
+      "notes": "Island city mixing surf beaches, seafood villages, dunes, and a mellow south-Brazil pace.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Paraty",
       "lat": -23.22,
       "lng": -44.717,
-      "notes": "Car-free colonial centre, cachaça distilleries, and boat days through emerald islands on the Costa Verde."
+      "notes": "Car-free colonial centre, cachaça distilleries, and boat days through emerald islands on the Costa Verde.",
+      "bestMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -115,7 +174,9 @@
         "maxDays": 4,
         "note": "Stay in Copacabana, Ipanema, or Flamengo, pre-book Christ and Sugarloaf timed entries, and lean on Uber after dark instead of wandering between nightlife districts.",
         "experiences": [
-          "Rio Icons"
+          "Beaches",
+          "Nightlife",
+          "Festivals"
         ],
         "days": [
           {
@@ -231,7 +292,8 @@
         "maxDays": 3,
         "note": "Base yourself around Paulista or Jardins for quick metro access; Sunday mornings are great for Avenida Paulista car-free time, while museums are busiest on rainy weekends.",
         "experiences": [
-          "São Paulo Food Scene"
+          "Nightlife",
+          "History"
         ],
         "days": [
           {
@@ -311,7 +373,8 @@
         "maxDays": 3,
         "note": "Sleep in Foz do Iguaçu, start the national park early before tour buses arrive, and keep a dry bag ready if you add Macuco Safari or any catwalk viewpoint after rain.",
         "experiences": [
-          "Iguaçu Falls"
+          "Waterfalls",
+          "Wildlife & Safari"
         ],
         "days": [
           {
@@ -393,7 +456,10 @@
         "maxDays": 3,
         "note": "Stay near Pelourinho or Barra for short transfers, dress lightly for the humidity, and plan Pelourinho walks by day or with a guided evening food/music circuit.",
         "experiences": [
-          "Salvador Heritage"
+          "History",
+          "Beaches",
+          "Festivals",
+          "Nightlife"
         ],
         "days": [
           {
@@ -475,7 +541,10 @@
         "maxDays": 3,
         "note": "Without a car, split time between the central bridge area and one beach cluster; ride-hailing is easy, but beach-to-beach transfers take longer than they look on the map.",
         "experiences": [
-          "Florianópolis Beaches"
+          "Beaches",
+          "Surfing",
+          "Islands",
+          "Nightlife"
         ],
         "days": [
           {
@@ -555,7 +624,9 @@
         "maxDays": 2,
         "note": "Historic-centre pousadas let you explore on foot, but the stone streets flood after very heavy rain, so keep shoes with grip and avoid wheeled luggage inside the old town.",
         "experiences": [
-          "Paraty Colonial Coast"
+          "History",
+          "Beaches",
+          "Islands"
         ],
         "days": [
           {

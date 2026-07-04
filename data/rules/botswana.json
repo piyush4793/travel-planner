@@ -23,11 +23,11 @@
     "family4": "₹8.4L–₹12.8L"
   },
   "experiences": [
-    "Okavango Delta mokoro ride",
-    "Chobe River sunset safari",
-    "Moremi game drive",
-    "Makgadikgadi salt pans",
-    "Nata Bird Sanctuary"
+    "Wildlife & Safari",
+    "National Parks",
+    "Deserts",
+    "Cruises & Boat Trips",
+    "Adventure Sports"
   ],
   "avoid": [
     "November-March rains can flood tracks, raise delta water unpredictably, and make self-drive sections slow",
@@ -51,31 +51,79 @@
       "name": "Gaborone",
       "lat": -24.6282,
       "lng": 25.9231,
-      "notes": "Capital-city reset with Three Dikgosi Monument, the National Museum district, and Mokolodi Nature Reserve before flying north"
+      "notes": "Capital-city reset with Three Dikgosi Monument, the National Museum district, and Mokolodi Nature Reserve before flying north",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Maun",
       "lat": -19.9833,
       "lng": 23.4167,
-      "notes": "Botswana's safari gateway for Okavango Delta mokoro trips, Moremi drives, scenic flights, and lodge-charter connections"
+      "notes": "Botswana's safari gateway for Okavango Delta mokoro trips, Moremi drives, scenic flights, and lodge-charter connections",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Chobe National Park",
       "lat": -18.6646,
       "lng": 24.6849,
-      "notes": "Kasane-based river-and-savanna safari hub known for elephant herds, Chobe River boat cruises, and easy park access"
+      "notes": "Kasane-based river-and-savanna safari hub known for elephant herds, Chobe River boat cruises, and easy park access",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Makgadikgadi Pans",
       "lat": -20.495,
       "lng": 25.257,
-      "notes": "Immense salt-pan landscapes with baobabs, meerkats, quad-bike desert routes, and Boteti River wildlife edges"
+      "notes": "Immense salt-pan landscapes with baobabs, meerkats, quad-bike desert routes, and Boteti River wildlife edges",
+      "bestMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "worstMonths": [
+        "February"
+      ]
     },
     {
       "name": "Nata",
       "lat": -20.2167,
       "lng": 26.1833,
-      "notes": "Roadside gateway to Sua Pan and Nata Bird Sanctuary, especially rewarding for flamingos after seasonal water fills"
+      "notes": "Roadside gateway to Sua Pan and Nata Bird Sanctuary, especially rewarding for flamingos after seasonal water fills",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "August"
+      ]
     }
   ],
   "itinerary": {
@@ -157,8 +205,8 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Okavango Delta mokoro ride",
-          "Moremi game drive"
+          "Wildlife & Safari",
+          "Adventure Sports"
         ],
         "days": [
           {
@@ -253,7 +301,9 @@
         "recDays": 2,
         "maxDays": 3,
         "experiences": [
-          "Chobe River sunset safari"
+          "Wildlife & Safari",
+          "National Parks",
+          "Cruises & Boat Trips"
         ],
         "days": [
           {
@@ -348,7 +398,7 @@
         "recDays": 1,
         "maxDays": 2,
         "experiences": [
-          "Nata Bird Sanctuary"
+          "Wildlife & Safari"
         ],
         "days": [
           {
@@ -403,7 +453,9 @@
         "recDays": 1,
         "maxDays": 2,
         "experiences": [
-          "Makgadikgadi salt pans"
+          "Deserts",
+          "Wildlife & Safari",
+          "National Parks"
         ],
         "days": [
           {

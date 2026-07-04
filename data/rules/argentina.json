@@ -20,11 +20,14 @@
     "family4": "₹5L–₹9L"
   },
   "experiences": [
-    "Patagonia",
-    "Buenos Aires",
-    "Iguazu Falls",
-    "Tango",
-    "Wine (Mendoza)"
+    "Mountains",
+    "Glaciers",
+    "Waterfalls",
+    "Wine & Vineyards",
+    "Hiking",
+    "Skiing",
+    "Wildlife & Safari",
+    "Nightlife"
   ],
   "avoid": [
     "Argentine summer (Dec-Feb) is hot in Buenos Aires"
@@ -44,37 +47,93 @@
       "name": "Buenos Aires",
       "lat": -34.6037,
       "lng": -58.3816,
-      "notes": "Tango in La Boca, asado steaks, Palermo parks and Casa Rosada pink palace"
+      "notes": "Tango in La Boca, asado steaks, Palermo parks and Casa Rosada pink palace",
+      "bestMonths": [
+        "September",
+        "October",
+        "November",
+        "April"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     },
     {
       "name": "Patagonia",
       "lat": -49.3167,
       "lng": -72.3167,
-      "notes": "Torres del Paine trekking, Perito Moreno glacier walk and end-of-world drama"
+      "notes": "Torres del Paine trekking, Perito Moreno glacier walk and end-of-world drama",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Mendoza",
       "lat": -32.8895,
       "lng": -68.8458,
-      "notes": "Malbec wine country at the foot of the Andes with bodega tours"
+      "notes": "Malbec wine country at the foot of the Andes with bodega tours",
+      "bestMonths": [
+        "March",
+        "April",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July"
+      ]
     },
     {
       "name": "Iguazu Falls",
       "lat": -25.6953,
       "lng": -54.4367,
-      "notes": "World's largest waterfall system — 275 falls wider than Niagara"
+      "notes": "World's largest waterfall system — 275 falls wider than Niagara",
+      "bestMonths": [
+        "August",
+        "September",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January",
+        "February"
+      ]
     },
     {
       "name": "Bariloche",
       "lat": -41.1335,
       "lng": -71.3103,
-      "notes": "Patagonian lake district with Swiss-style chocolate shops and ski slopes"
+      "notes": "Patagonian lake district with Swiss-style chocolate shops and ski slopes",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "July"
+      ],
+      "worstMonths": [
+        "May"
+      ]
     },
     {
       "name": "Salta",
       "lat": -24.7859,
       "lng": -65.4117,
-      "notes": "Colonial churches, Cachi and Salinas Grandes salt flat day trips"
+      "notes": "Colonial churches, Cachi and Salinas Grandes salt flat day trips",
+      "bestMonths": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "worstMonths": [
+        "January"
+      ]
     }
   ],
   "itinerary": {
@@ -107,8 +166,7 @@
         "maxDays": 4,
         "note": "Base yourself in Palermo or Recoleta, use Cabify after dark, and pre-book any paid tango show or football tour at least a few days ahead.",
         "experiences": [
-          "Buenos Aires",
-          "Tango"
+          "Nightlife"
         ],
         "days": [
           {
@@ -222,7 +280,8 @@
         "maxDays": 3,
         "note": "Stay in Puerto Iguazú, carry a dry bag for the boat ride, and keep passport plus Brazil visa status ready if you plan to cross for the panoramic side.",
         "experiences": [
-          "Iguazu Falls"
+          "Waterfalls",
+          "Wildlife & Safari"
         ],
         "days": [
           {
@@ -302,6 +361,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Salta works best as a northern Argentina detour; nights are cooler than Buenos Aires, and a guided day trip helps if you want salt flats or Quebrada scenery without driving.",
+        "experiences": [
+          "Mountains",
+          "Wine & Vineyards"
+        ],
         "days": [
           {
             "theme": "Colonial Center & Hilltop Views",
@@ -380,7 +443,9 @@
         "maxDays": 3,
         "note": "Use Mendoza city as a sleep base and split time between Maipú or Luján de Cuyo wineries and one Andes landscape day.",
         "experiences": [
-          "Wine (Mendoza)"
+          "Wine & Vineyards",
+          "Mountains",
+          "Hiking"
         ],
         "days": [
           {
@@ -461,7 +526,9 @@
         "maxDays": 3,
         "note": "Bariloche is best in shoulder-season summer or autumn; keep one day flexible for lake weather and mountain visibility.",
         "experiences": [
-          "Patagonia"
+          "Mountains",
+          "Skiing",
+          "Hiking"
         ],
         "days": [
           {
@@ -544,7 +611,10 @@
         "maxDays": 4,
         "note": "Treat Patagonia here as the El Calafate plus Ushuaia combo: one glacier-heavy section and one end-of-the-world finale. Book flights early and keep buffer time for wind delays.",
         "experiences": [
-          "Patagonia"
+          "Glaciers",
+          "Hiking",
+          "Mountains",
+          "Wildlife & Safari"
         ],
         "days": [
           {

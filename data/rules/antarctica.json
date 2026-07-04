@@ -23,11 +23,12 @@
     "family4": "₹30L–₹55L"
   },
   "experiences": [
-    "Penguin Colonies",
-    "Iceberg Scenery",
-    "Polar Night",
-    "Zodiac Expeditions",
-    "Drake Passage"
+    "Wildlife & Safari",
+    "Cruises & Boat Trips",
+    "Glaciers",
+    "Islands",
+    "Adventure Sports",
+    "National Parks"
   ],
   "avoid": [
     "Outside Nov-Mar — ice-locked and inaccessible"
@@ -47,11 +48,16 @@
       "lat": -58,
       "lng": -65,
       "bestMonths": [
+        "November",
         "December",
         "January",
         "February"
       ],
-      "notes": "2-day sea crossing between South America and Antarctica"
+      "notes": "2-day sea crossing between South America and Antarctica",
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Ushuaia",
@@ -63,25 +69,67 @@
         "January",
         "February"
       ],
-      "notes": "Gateway city in Argentina — departure point for all Antarctic expeditions"
+      "notes": "Gateway city in Argentina — departure point for all Antarctic expeditions",
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "Antarctic Peninsula",
       "lat": -64.2347,
       "lng": -57.6658,
-      "notes": "Best access point — Zodiac landings with penguins and leopard seals"
+      "notes": "Best access point — Zodiac landings with penguins and leopard seals",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "South Georgia",
       "lat": -54.4295,
       "lng": -36.584,
-      "notes": "King penguin colonies by the millions and Shackleton's grave at Grytviken"
+      "notes": "King penguin colonies by the millions and Shackleton's grave at Grytviken",
+      "experiences": [
+        "Wildlife & Safari",
+        "Islands",
+        "Glaciers"
+      ],
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     },
     {
       "name": "McMurdo Station",
       "lat": -77.8419,
       "lng": 166.6863,
-      "notes": "Main research hub with Dry Valleys and Scott's Discovery Hut nearby"
+      "notes": "Main research hub with Dry Valleys and Scott's Discovery Hut nearby",
+      "experiences": [
+        "Glaciers",
+        "Adventure Sports"
+      ],
+      "bestMonths": [
+        "November",
+        "December",
+        "January"
+      ],
+      "worstMonths": [
+        "June",
+        "July"
+      ]
     }
   ],
   "itinerary": {
@@ -103,6 +151,10 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Gateway city — most expeditions depart from here",
+        "experiences": [
+          "Adventure Sports",
+          "National Parks"
+        ],
         "days": [
           {
             "theme": "Gateway to Antarctica",
@@ -147,7 +199,8 @@
         "maxDays": 2,
         "note": "2 days crossing each way — lectures, wildlife spotting from deck",
         "experiences": [
-          "Drake Passage"
+          "Cruises & Boat Trips",
+          "Wildlife & Safari"
         ],
         "days": [
           {
@@ -193,10 +246,9 @@
         "maxDays": 7,
         "note": "Zodiac landings twice daily, weather permitting. Flexible itinerary based on ice conditions.",
         "experiences": [
-          "Penguin Colonies",
-          "Iceberg Scenery",
-          "Polar Night",
-          "Zodiac Expeditions"
+          "Wildlife & Safari",
+          "Glaciers",
+          "Cruises & Boat Trips"
         ],
         "days": [
           {

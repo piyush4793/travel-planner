@@ -26,11 +26,11 @@
   },
   "experiences": [
     "Beaches",
-    "Sailing Heritage",
-    "Snorkeling",
-    "Historic Forts",
-    "Wildlife",
-    "Island Hopping"
+    "Diving & Snorkeling",
+    "History",
+    "Islands",
+    "Water Sports",
+    "Wildlife & Safari"
   ],
   "avoid": [
     "June–November overlaps the wetter hurricane-risk season, so ferries to Barbuda, stingray trips, and exposed beach days are more likely to be disrupted by wind or rough seas.",
@@ -53,19 +53,49 @@
       "name": "St. John's",
       "lat": 17.1274,
       "lng": -61.8468,
-      "notes": "The capital is the practical base for museum stops, market walks, Fort James sunsets, taxi logistics, and onward transport to English Harbour or the Barbuda Express terminal."
+      "notes": "The capital is the practical base for museum stops, market walks, Fort James sunsets, taxi logistics, and onward transport to English Harbour or the Barbuda Express terminal.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "English Harbour",
       "lat": 17.0096,
       "lng": -61.768,
-      "notes": "Best base for Nelson's Dockyard, Shirley Heights, Pigeon Beach, yacht-marina dining, and Antigua's most rewarding concentration of historic naval sights."
+      "notes": "Best base for Nelson's Dockyard, Shirley Heights, Pigeon Beach, yacht-marina dining, and Antigua's most rewarding concentration of historic naval sights.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     },
     {
       "name": "Barbuda (Codrington)",
       "lat": 17.6333,
       "lng": -61.8333,
-      "notes": "Codrington is the jumping-off point for the Frigate Bird Sanctuary, pink-sand beaches, and the laid-back Barbuda pace that feels very different from Antigua."
+      "notes": "Codrington is the jumping-off point for the Frigate Bird Sanctuary, pink-sand beaches, and the laid-back Barbuda pace that feels very different from Antigua.",
+      "bestMonths": [
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "September",
+        "October"
+      ]
     }
   ],
   "itinerary": {
@@ -89,6 +119,10 @@
         "recDays": 2,
         "maxDays": 3,
         "note": "Use St. John's as the arrival-and-logistics base because taxis, bus stations, supermarkets, and the Barbuda Express dock are all easiest from here.",
+        "experiences": [
+          "History",
+          "Beaches"
+        ],
         "days": [
           {
             "theme": "Heritage Quay, cathedral views and a classic west-coast sunset",
@@ -173,6 +207,11 @@
         "recDays": 2,
         "maxDays": 2,
         "note": "Switch here for Antigua's best historical cluster and marina atmosphere; this is where a rental car becomes more useful than relying on buses.",
+        "experiences": [
+          "History",
+          "Beaches",
+          "Water Sports"
+        ],
         "days": [
           {
             "theme": "Nelson's Dockyard, Dow's Hill and Shirley Heights",
@@ -255,6 +294,11 @@
         "recDays": 1,
         "maxDays": 2,
         "note": "Treat Barbuda as a weather-sensitive extension: catch the earliest workable ferry, keep luggage light, and expect boat trips to dictate the day's rhythm.",
+        "experiences": [
+          "Beaches",
+          "Wildlife & Safari",
+          "Islands"
+        ],
         "days": [
           {
             "theme": "Codrington Lagoon birds, pink sand and a classic Barbuda beach day",
