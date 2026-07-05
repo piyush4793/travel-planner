@@ -1,0 +1,307 @@
+import { useState, useMemo, useRef, useEffect } from "react";
+import type { TripPlan, DayEntry } from "../../../core/utils/tripPlans";
+import { extractCityFromLabel } from "../../../core/utils/tripPlans";
+import type { CountryRule } from "../../../core/data/itineraryRules";
+import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../../core/utils/transport";
+import { buildRoute } from "../../../core/utils/googleMapsRoute";
+import { parseNoteItems } from "../../../core/utils/practicalNotes";
+
+// ─── Day grouping ─────────────────────────────────────────────────────────────
+
+export type CityGroup = {
+  name: string;
+  days: DayEntry[];
+  transport?: { type: TransportType; label: string; cost?: string };
+};
+
+/**
+ * Collapse a flat day list into consecutive per-city groups and annotate the
+ * inter-city transport from the rule connections. Shared by the itinerary body
+ * and the modal's jump-to-city navigation so both agree on the city sequence.
+ */
+export function groupDays(days: DayEntry[], rule?: CountryRule | null): CityGroup[] {
+  const groups: CityGroup[] = [];
+  for (const day of days) {
+    const city = extractCityFromLabel(day.label);
+    if (!city) continue;
+    const last = groups[groups.length - 1];
+    if (last && last.name === city) {
+      last.days.push(day);
+    } else {
+      groups.push({ name: city, days: [day] });
+    }
+  }
+
+  if (rule) {
+    groups.forEach((g, i) => {
+      if (i === 0) return;
+      const prev = groups[i - 1];
+      const conn = rule.connections.find(
+        (c) => (c.from === prev.name && c.to === g.name) || (c.from === g.name && c.to === prev.name)
+      );
+      if (conn) {
+        g.transport = { type: detectTransport(conn.method), label: conn.method, cost: conn.cost };
+      }
+    });
+  }
+  return groups;
+}
+
+// ─── Itinerary body (shared by the modal and the guided Plan tab) ─────────────
+
+interface ItineraryViewProps {
+  plan: TripPlan;
+  rule?: CountryRule | null;
+}
+
+/**
+ * The reusable day-by-day itinerary body: transport separators, per-city
+ * headers (with `city-<name>` scroll anchors), expandable day cards and the
+ * parsed practical notes. Contains no modal chrome (header/close/warnings) so it
+ * can be embedded in the modal's scroll body or the guided Plan tab's preview.
+ */
+export default function ItineraryView({ plan, rule }: ItineraryViewProps) {
+  const groups = useMemo(() => groupDays(plan.days, rule), [plan.days, rule]);
+
+  return (
+    <>
+      {groups.map((group, gi) => (
+        <div key={group.name}>
+          {/* Transport separator between cities */}
+          {gi > 0 && (
+            <div className="mx-4 md:mx-6 my-3 md:my-4 flex items-center gap-3 px-3 md:px-4 py-2.5 md:py-3 bg-slate-50 rounded-xl border border-slate-100">
+              <span className="text-lg md:text-xl shrink-0">{group.transport ? TRANSPORT_EMOJI[group.transport.type] : "→"}</span>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-bold text-slate-700">
+                  {groups[gi - 1].name} → {group.name}
+                </p>
+                {group.transport && (
+                  <p className="text-[11px] text-slate-500 truncate">{group.transport.label}</p>
+                )}
+              </div>
+              {group.transport?.cost && (
+                <span className="text-xs font-bold text-slate-700 shrink-0 bg-white border border-slate-200 px-2 py-0.5 rounded-full">
+                  {group.transport.cost}
+                </span>
+              )}
+            </div>
+          )}
+
+          {/* City header */}
+          <div id={`city-${group.name}`} className="px-4 md:px-6 pt-4 md:pt-5 pb-2 flex items-center gap-3 scroll-mt-2">
+            <h3 className="text-base font-black text-slate-900">{group.name}</h3>
+            <span className="text-[11px] text-slate-400 font-semibold bg-slate-100 px-2 py-0.5 rounded-full">
+              {group.days.length} day{group.days.length !== 1 ? "s" : ""}
+            </span>
+          </div>
+
+          {/* Day cards */}
+          <div className="px-4 md:px-6 pb-2 space-y-3">
+            {group.days.map((day, di) => (
+              <DayCard key={di} day={day} city={group.name} rule={rule} />
+            ))}
+          </div>
+        </div>
+      ))}
+
+      {/* Practical notes — parsed into structured items */}
+      {plan.note && <PracticalNotes note={plan.note} />}
+    </>
+  );
+}
+
+// ─── Activity parsing + link helpers ──────────────────────────────────────────
+
+/** Parse activity string into name and cost/detail parts */
+function parseActivity(a: string): { name: string; cost?: string; detail?: string } {
+  const costMatch = a.match(/^(.+?)\s*\(([₹$€£][\d,.]+[^)]*)\)\s*$/);
+  if (costMatch) return { name: costMatch[1].trim(), cost: costMatch[2] };
+  const dashIdx = a.indexOf(" — ");
+  if (dashIdx > 0) return { name: a.slice(0, dashIdx), detail: a.slice(dashIdx + 3) };
+  return { name: a };
+}
+
+function searchUrl(query: string, city: string): string {
+  return `https://www.google.com/search?q=${encodeURIComponent(`${query} ${city}`)}`;
+}
+
+function mapsUrl(query: string, city: string): string {
+  return `https://www.google.com/maps/search/${encodeURIComponent(`${query}, ${city}`)}`;
+}
+
+// ─── Practical Notes ──────────────────────────────────────────────────────────
+
+function PracticalNotes({ note }: { note: string }) {
+  const items = parseNoteItems(note);
+  const isSingle = items.length === 1 && !items[0].label;
+
+  if (isSingle) {
+    return (
+      <div className="mx-4 md:mx-6 my-4 px-4 py-3 bg-slate-50 rounded-xl border border-slate-100">
+        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Practical Notes</p>
+        <p className="text-xs text-slate-500 leading-relaxed">{note}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-4 md:mx-6 my-4 px-4 py-3 bg-slate-50 rounded-xl border border-slate-100">
+      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2.5">Practical Notes</p>
+      <div className="space-y-2">
+        {items.map((item, i) => (
+          <div key={i} className="flex items-start gap-2.5">
+            <span className="text-sm shrink-0 mt-px">{item.icon}</span>
+            <div className="min-w-0">
+              {item.label && (
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wide mr-1.5">{item.label}</span>
+              )}
+              <span className="text-xs text-slate-600 leading-relaxed">{item.value}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── Day card ─────────────────────────────────────────────────────────────────
+
+function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: CountryRule | null }) {
+  const [expanded, setExpanded] = useState(true);
+
+  const cityRule = rule?.cities[city];
+  const ruleDay = day.theme && cityRule
+    ? cityRule.days.find((d) => d.theme === day.theme)
+    : undefined;
+
+  const routeInfo = buildRoute(day.activities, city);
+
+  return (
+    <div className="border border-slate-150 rounded-xl overflow-hidden shadow-sm">
+      <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border-b border-slate-100">
+        <button
+          onClick={() => setExpanded((e) => !e)}
+          aria-expanded={expanded}
+          className="flex items-center gap-2 flex-1 min-w-0 text-left hover:opacity-70 transition-opacity focus-ring rounded"
+        >
+          <span className={`text-[9px] text-slate-400 motion-safe:transition-transform motion-safe:duration-200 ${expanded ? "rotate-90" : ""}`}>▸</span>
+          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide truncate">
+            {day.label}
+          </p>
+          {!expanded && (
+            <span className="hidden sm:inline text-[9px] text-slate-400 font-medium shrink-0">
+              {day.activities.length} activities
+            </span>
+          )}
+        </button>
+        {day.theme && (
+          <span className="text-[9px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full min-w-0 max-w-[40%] truncate shrink" title={day.theme}>
+            {day.theme}
+          </span>
+        )}
+        {routeInfo && (
+          <span className="flex items-center gap-1 shrink-0">
+            <a
+              href={routeInfo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[9px] font-semibold text-blue-500 bg-blue-50 hover:bg-blue-100 px-2 py-0.5 rounded-full transition-colors focus-ring"
+              title="Open day route in Google Maps"
+            >
+              🗺️ Route
+            </a>
+            <CopyLinkButton url={routeInfo.url} />
+          </span>
+        )}
+      </div>
+
+      <div className={`grid motion-safe:transition-[grid-template-rows] motion-safe:duration-200 ease-out ${expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+        <div className="overflow-hidden">
+          <div className="px-4 py-3">
+            <ul className="space-y-2">
+              {day.activities.map((a, ai) => {
+                const parsed = parseActivity(a);
+                const letter = routeInfo?.labels.get(ai);
+                return (
+                  <li key={ai} className="flex gap-2.5 leading-snug group">
+                    {letter ? (
+                      <span className="w-[18px] h-[18px] rounded-full bg-blue-500 text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{letter}</span>
+                    ) : (
+                      <span className="text-slate-300 shrink-0 mt-0.5 text-sm">›</span>
+                    )}
+                    <span className="text-sm text-slate-700 flex-1">
+                      {parsed.name}
+                      {parsed.cost && (
+                        <span className="text-emerald-600 text-xs font-semibold ml-1.5">({parsed.cost})</span>
+                      )}
+                      {parsed.detail && (
+                        <span className="text-slate-400 text-xs font-medium ml-1.5">{parsed.detail}</span>
+                      )}
+                    </span>
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 shrink-0">
+                      <a href={mapsUrl(parsed.name, city)} target="_blank" rel="noopener noreferrer"
+                        className="text-[9px] text-blue-400 hover:text-blue-600 px-1" title="View on Google Maps">📍</a>
+                      <a href={searchUrl(parsed.name, city)} target="_blank" rel="noopener noreferrer"
+                        className="text-[9px] text-blue-400 hover:text-blue-600 px-1" title="Search for booking/info">🔍</a>
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+
+            {ruleDay && ruleDay.meals && ruleDay.meals.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mt-3 pt-2.5 border-t border-slate-100">
+                <span className="text-[10px] text-slate-400 font-bold uppercase mr-1">🍽 Eat:</span>
+                {ruleDay.meals.map((m) => (
+                  <a key={m} href={mapsUrl(m, city)} target="_blank" rel="noopener noreferrer"
+                    className="text-[10px] text-orange-600 bg-orange-50 border border-orange-200 px-2 py-0.5 rounded-full hover:bg-orange-100 transition-colors">
+                    {m}
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {day.hotels && day.hotels.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mt-3 pt-2.5 border-t border-slate-100">
+                {day.hotels.map((h) => {
+                  const hotelName = h.split(" — ")[0];
+                  return (
+                    <a key={h} href={searchUrl(`${hotelName} hotel booking`, city)} target="_blank" rel="noopener noreferrer"
+                      className="text-[10px] text-slate-500 bg-slate-50 border border-slate-200 px-2 py-0.5 rounded-full hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 transition-colors">
+                      🏨 {h}
+                    </a>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CopyLinkButton({ url }: { url: string }) {
+  const [copied, setCopied] = useState(false);
+  const copyTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  useEffect(() => () => clearTimeout(copyTimerRef.current), []);
+  return (
+    <button
+      onClick={() => {
+        navigator.clipboard.writeText(url).then(() => {
+          setCopied(true);
+          clearTimeout(copyTimerRef.current);
+          copyTimerRef.current = setTimeout(() => setCopied(false), 1500);
+        });
+      }}
+      className={`text-[10px] font-semibold px-2 py-1 min-h-[24px] rounded-full transition-colors focus-ring ${
+        copied
+          ? "text-emerald-600 bg-emerald-50"
+          : "text-slate-400 bg-slate-50 hover:bg-slate-100 hover:text-slate-600"
+      }`}
+      title={copied ? "Copied!" : "Copy route link"}
+    >
+      {copied ? "✓" : "📋"}
+    </button>
+  );
+}
