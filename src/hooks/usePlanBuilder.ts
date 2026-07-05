@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Country, CityEntry, TravelStyle } from "../core/types";
 import type { CountryRule } from "../core/data/itineraryRules";
 import {
@@ -52,20 +52,31 @@ export interface PlanBuilder {
   resetDays: () => void;
 }
 
+/** Restorable funnel selections — rehydrated from a persisted draft on refresh. */
+export type PlanBuilderInitial = {
+  selectedCities?: string[];
+  selectedExperiences?: string[];
+  customDays?: number;
+  daysPinned?: boolean;
+};
+
 /**
  * Encapsulates the Plan-tab intent funnel: rule loading, day auto-seed + pin,
  * and live plan generation. Data flows one way — party/vibe/length/cities shape
  * the plan; cities are a result you edit, never a filter that fights vibe.
  *
  * Purely local to the caller — never touches App/Calendar/global state.
+ *
+ * `initial` rehydrates the funnel for the current `country` (from a persisted
+ * draft). It only seeds the first render; switching destinations still resets.
  */
-export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis): PlanBuilder {
+export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis, initial?: PlanBuilderInitial): PlanBuilder {
   const { data: consolidated, rule, loading: ruleLoading } = useCountryRule(country?.name);
 
-  const [selectedCities, setSelectedCities] = useState<string[]>([]);
-  const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
-  const [customDays, setCustomDays] = useState(7);
-  const [daysPinned, setDaysPinned] = useState(false);
+  const [selectedCities, setSelectedCities] = useState<string[]>(initial?.selectedCities ?? []);
+  const [selectedExperiences, setSelectedExperiences] = useState<string[]>(initial?.selectedExperiences ?? []);
+  const [customDays, setCustomDays] = useState(initial?.customDays ?? 7);
+  const [daysPinned, setDaysPinned] = useState(initial?.daysPinned ?? false);
 
   const maxDays = getMaxRuleDays(rule) ?? 30;
   const recDays = getRecRuleDays(rule) ?? 7;
@@ -77,8 +88,12 @@ export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis
   );
   const primaryStyle = displayCountry?.travelStyle?.[0];
 
-  // Reset the funnel when switching destinations.
+  // Reset the funnel when switching destinations — but not on the first mount for
+  // the initial country, so a rehydrated draft survives a page refresh.
+  const prevName = useRef(country?.name);
   useEffect(() => {
+    if (prevName.current === country?.name) return;
+    prevName.current = country?.name;
     setDaysPinned(false);
     setSelectedCities([]);
     setSelectedExperiences([]);

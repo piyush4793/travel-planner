@@ -3,22 +3,37 @@ import type { Country } from "../../../core/types";
 import type { CountryRule } from "../../../core/data/itineraryRules";
 import type { TripPlan } from "../../../core/utils/tripPlans";
 import { extractPlanCities, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
-import ItineraryView from "../../country/itinerary/ItineraryView";
+import { isEnabled } from "../../../core/featureFlags";
+import { exportItineraryAsPdf } from "../../../utils/pdfExport";
+import { useItineraryShare } from "../../../hooks/useItineraryShare";
+import ItineraryView, { groupDays } from "../../country/itinerary/ItineraryView";
+import PlanCityJumpNav from "./PlanCityJumpNav";
 
 type Props = {
   country: Country;
   plan: TripPlan;
   rule: CountryRule | null;
-  onOpenDetails: () => void;
+  homeCountry: string;
   onPlanWithAi?: () => void;
+  onCinematic?: () => void;
 };
 
 /**
  * Live itinerary preview for the guided planner. Reuses the shared ItineraryView
  * day renderer so the guided tab and the Country Panel stay in lock-step.
  */
-function PlanPreviewPaneInner({ country, plan, rule, onOpenDetails, onPlanWithAi }: Props) {
-  const planCities = extractPlanCities(plan.days);
+function PlanPreviewPaneInner({ country, plan, rule, homeCountry, onPlanWithAi, onCinematic }: Props) {
+  const groups = groupDays(plan.days, rule);
+  const { share, prefetch, status } = useItineraryShare(country, homeCountry, plan);
+  const shareLabel = status === "working" ? "…" : status === "copied" ? "Copied!" : "Share";
+  const shareIcon = status === "working" ? "⏳" : status === "copied" ? "✓" : "📤";
+
+  // Cinematic needs a mappable route: rule data + at least two plan cities the
+  // country actually knows (so the fly-through has real coordinates to visit).
+  const knownCityNames = new Set((country.cities ?? []).map((c) => c.name));
+  const matchedCities = extractPlanCities(plan.days).filter((c) => knownCityNames.has(c));
+  const canCinematic = !!onCinematic && !!rule && matchedCities.length >= 2;
+  const canExportPdf = isEnabled("pdfExport");
 
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#e4dece] bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
@@ -37,38 +52,56 @@ function PlanPreviewPaneInner({ country, plan, rule, onOpenDetails, onPlanWithAi
         </div>
       )}
 
-      {planCities.length > 1 && (
-        <div className="scrollbar-hide overflow-x-auto border-b border-[#e6e1d4] px-4 py-2">
-          <div className="flex min-w-max items-center gap-1.5">
-            {planCities.map((city, i) => (
-              <span key={city} className="flex items-center gap-1">
-                <span className="rounded-full bg-[#f4f1e8] px-2 py-1 text-[10px] font-semibold text-[#1e2a25]">{city}</span>
-                {i < planCities.length - 1 && <span className="text-[10px] text-[#cfc9b8]">→</span>}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
+      <PlanCityJumpNav groups={groups} />
 
       {/* Day-by-day body */}
       <div className="flex-1 overflow-y-auto px-3 py-3">
         <ItineraryView plan={plan} rule={rule} variant="luxury" />
       </div>
 
-      {/* Actions */}
-      <div className="grid gap-2 border-t border-[#e6e1d4] p-3 sm:grid-cols-2">
+      {/* Actions — one slim, low-emphasis toolbar. Peers, not a wall of CTAs:
+          icon + tiny label (matching the app's icon-control convention), evenly
+          distributed, with Share lightly emphasised as the suggested action. */}
+      <div className="flex items-stretch gap-0.5 border-t border-[#e6e1d4] p-1.5">
         <button
-          onClick={onOpenDetails}
-          className="focus-ring-emerald flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-[#e4dece] bg-white px-3 py-2.5 text-xs font-bold text-[#1e2a25] shadow-sm transition-colors hover:bg-[#f4f1e8]"
+          onClick={() => void share()}
+          onPointerEnter={prefetch}
+          onFocus={prefetch}
+          disabled={status === "working"}
+          aria-label={status === "copied" ? "Plan copied to clipboard" : "Share your trip plan"}
+          className="focus-ring-emerald flex flex-1 flex-col items-center gap-0.5 rounded-lg py-2 text-[10px] font-bold text-emerald-800 transition-colors hover:bg-emerald-50 disabled:cursor-wait disabled:opacity-60"
         >
-          🔎 Full details for {country.name}
+          <span aria-hidden="true" className="text-lg leading-none">{shareIcon}</span>
+          {shareLabel}
         </button>
+        {canCinematic && (
+          <button
+            onClick={onCinematic}
+            aria-label="Watch the animated cinematic journey"
+            className="focus-ring-emerald flex flex-1 flex-col items-center gap-0.5 rounded-lg py-2 text-[10px] font-semibold text-[#6f6a5d] transition-colors hover:bg-[#f4f1e8]"
+          >
+            <span aria-hidden="true" className="text-lg leading-none">🎬</span>
+            Cinematic
+          </button>
+        )}
+        {canExportPdf && (
+          <button
+            onClick={() => exportItineraryAsPdf(plan, country, homeCountry)}
+            aria-label="Export this itinerary as a PDF"
+            className="focus-ring-emerald flex flex-1 flex-col items-center gap-0.5 rounded-lg py-2 text-[10px] font-semibold text-[#6f6a5d] transition-colors hover:bg-[#f4f1e8]"
+          >
+            <span aria-hidden="true" className="text-lg leading-none">📄</span>
+            PDF
+          </button>
+        )}
         {onPlanWithAi && (
           <button
             onClick={onPlanWithAi}
-            className="focus-ring-emerald flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2.5 text-xs font-bold text-emerald-800 shadow-sm transition-colors hover:bg-emerald-100"
+            aria-label="Plan this trip with your own AI provider"
+            className="focus-ring-emerald flex flex-1 flex-col items-center gap-0.5 rounded-lg py-2 text-[10px] font-semibold text-[#6f6a5d] transition-colors hover:bg-[#f4f1e8]"
           >
-            ✨ Plan with your own AI
+            <span aria-hidden="true" className="text-lg leading-none">✨</span>
+            AI plan
           </button>
         )}
       </div>

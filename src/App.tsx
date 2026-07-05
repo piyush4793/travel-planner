@@ -193,6 +193,11 @@ export default function App() {
     return aiPlanStore.getPlans(selectedCountry.name);
   }, [selectedCountry, aiPlanStore]);
 
+  const aiPlanCountFor = useCallback(
+    (name: string) => aiPlanStore.getPlans(name).length,
+    [aiPlanStore],
+  );
+
   const handleSaveAiToList = useCallback((destinationName: string): "saved" | "exists" => {
     if (store.myList.set.has(destinationName)) return "exists";
     store.addToList(destinationName);
@@ -359,10 +364,17 @@ export default function App() {
             visitedNames={store.visited.set}
             budgetBasis={activeBasis}
             setBudgetBasis={setActiveBasis}
-            onOpenCountry={setSelectedCountry}
+            homeCountry={homeCountry}
             onGoDiscover={() => setView("discover")}
             onAddToList={store.addToList}
             onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
+            onToggleVisited={store.visited.toggle}
+            favoriteNames={store.favorites.set}
+            onToggleFavorite={store.favorites.toggle}
+            onUpdateNotes={store.updateNotes}
+            aiPlanCountFor={isEnabled("llmPlanning") ? aiPlanCountFor : undefined}
+            mainMapRef={mainMapRef}
+            onCinematicChange={setCinematicActive}
           />
         ) : activeView === "trips" ? (
           <TripsView

@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 import PlanView from "../../components/views/plan/PlanView";
 import type { Country } from "../../core/types";
@@ -19,22 +19,21 @@ const COUNTRY: Country = {
 
 function renderView(props: Partial<React.ComponentProps<typeof PlanView>> = {}) {
   const setBudgetBasis = vi.fn();
-  const onOpenCountry = vi.fn();
   const onGoDiscover = vi.fn();
   const onAddToList = vi.fn();
-  render(
+  const utils = render(
     <PlanView
       countries={[COUNTRY]}
       visitedNames={new Set()}
       budgetBasis="couple"
       setBudgetBasis={setBudgetBasis}
-      onOpenCountry={onOpenCountry}
+      homeCountry="India"
       onGoDiscover={onGoDiscover}
       onAddToList={onAddToList}
       {...props}
     />,
   );
-  return { setBudgetBasis, onOpenCountry, onGoDiscover, onAddToList };
+  return { setBudgetBasis, onGoDiscover, onAddToList, ...utils };
 }
 
 /** Advance the wizard to the review step by clicking the primary button. */
@@ -47,6 +46,8 @@ function goToReview() {
 }
 
 describe("PlanView — guided planner", () => {
+  beforeEach(() => localStorage.clear());
+
   it("shows the 'Where next?' picker with both tiers", () => {
     renderView();
     expect(screen.getByText(/Where do you plan to go next/i)).toBeInTheDocument();
@@ -97,7 +98,7 @@ describe("PlanView — guided planner", () => {
     expect(await screen.findByText(/Who's going\?/i)).toBeInTheDocument();
     // Later steps are not on screen yet.
     expect(screen.queryByText(/Which places\?/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/Step 1 of/i)).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /Step 1:/i, selected: true })).toBeInTheDocument();
   });
 
   it("combines party size and vibe on the first 'basics' step", async () => {
@@ -116,18 +117,26 @@ describe("PlanView — guided planner", () => {
     await screen.findByText(/Who's going\?/i);
     goToReview();
     await waitFor(() =>
-      expect(screen.getByRole("button", { name: /Full details for Testland/i })).toBeInTheDocument(),
+      expect(screen.getByRole("button", { name: /Share your trip plan/i })).toBeInTheDocument(),
     );
   });
 
-  it("opens full details from the review step", async () => {
-    const { onOpenCountry } = renderView();
-    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
-    await screen.findByText(/Who's going\?/i);
-    goToReview();
-    const details = await screen.findByRole("button", { name: /Full details for Testland/i });
-    fireEvent.click(details);
-    expect(onOpenCountry).toHaveBeenCalledWith(expect.objectContaining({ name: COUNTRY.name }));
+  it("shares the plan from the review step", async () => {
+    const shareMock = vi.fn().mockResolvedValue(undefined);
+    const original = navigator.share;
+    Object.defineProperty(navigator, "share", { value: shareMock, configurable: true, writable: true });
+    try {
+      renderView();
+      fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+      await screen.findByText(/Who's going\?/i);
+      goToReview();
+      const shareBtn = await screen.findByRole("button", { name: /Share your trip plan/i });
+      fireEvent.click(shareBtn);
+      await waitFor(() => expect(shareMock).toHaveBeenCalled());
+    } finally {
+      if (original) Object.defineProperty(navigator, "share", { value: original, configurable: true, writable: true });
+      else delete (navigator as { share?: unknown }).share;
+    }
   });
 
   it("lets the user change the destination from the first step", async () => {
@@ -144,18 +153,55 @@ describe("PlanView — guided planner", () => {
     await screen.findByText(/Who's going\?/i);
     fireEvent.click(screen.getByRole("button", { name: /Continue/i }));
     expect(await screen.findByText(/Which places\?/i)).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /Step 2:/i, selected: true })).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /Back/i }));
     expect(await screen.findByText(/Who's going\?/i)).toBeInTheDocument();
   });
 
-  it("shows the AI fork on review when onPlanWithAi is provided", async () => {
-    const onPlanWithAi = vi.fn();
-    renderView({ onPlanWithAi });
+  it("resumes the saved destination and step after a page refresh", async () => {
+    const { unmount } = renderView();
+    // Enter the wizard and advance to Review so a draft is written.
     fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     await screen.findByText(/Who's going\?/i);
     goToReview();
-    const aiBtn = await screen.findByRole("button", { name: /Plan with your own AI/i });
-    fireEvent.click(aiBtn);
-    expect(onPlanWithAi).toHaveBeenCalledWith(COUNTRY.name);
+    await screen.findByRole("tab", { name: /Step 3:/i, selected: true });
+
+    // Simulate a refresh: fresh mount reading the persisted draft.
+    unmount();
+    renderView();
+    // Back on the wizard (not the picker) at the same destination + step.
+    expect(await screen.findByRole("tab", { name: /Step 3:/i, selected: true })).toBeInTheDocument();
+    expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Testland (no rule)" })).toBeInTheDocument();
+  });
+
+  it("clears the saved draft when the user backs out to change destination", async () => {
+    const { unmount } = renderView();
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+    await screen.findByText(/Who's going\?/i);
+    fireEvent.click(screen.getByRole("button", { name: /Change/i }));
+    // Draft cleared → a fresh mount lands on the picker, not the wizard.
+    unmount();
+    renderView();
+    expect(screen.getByText(/Where do you plan to go next/i)).toBeInTheDocument();
+  });
+
+  it("shows a Places step with a city card per destination city", async () => {
+    renderView();
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+    await screen.findByText(/Who's going\?/i);
+    fireEvent.click(screen.getByRole("button", { name: /Continue/i }));
+    expect(await screen.findByText(/Which places\?/i)).toBeInTheDocument();
+    expect(screen.getByText("Alpha")).toBeInTheDocument();
+    expect(screen.getByText("Beta")).toBeInTheDocument();
+  });
+
+  it("toggles visited from the header when a handler is wired", async () => {
+    const onToggleVisited = vi.fn();
+    renderView({ onToggleVisited });
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+    await screen.findByText(/Who's going\?/i);
+    fireEvent.click(screen.getByRole("button", { name: /Mark as visited/i }));
+    expect(onToggleVisited).toHaveBeenCalledWith("Testland (no rule)");
   });
 });

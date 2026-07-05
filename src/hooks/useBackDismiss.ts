@@ -13,7 +13,7 @@ import { useCallback, useEffect, useRef } from "react";
 // stack never drifts no matter how an overlay is dismissed (Back button, X
 // button, Escape, backdrop tap, or a reactive parent state change).
 
-type OverlayEntry = { id: number; dismiss: () => void };
+type OverlayEntry = { id: number; dismiss: () => void; persistent: boolean };
 
 const SENTINEL = { tpOverlay: true } as const;
 const stack: OverlayEntry[] = [];
@@ -43,9 +43,18 @@ function handlePop() {
     ignorePops--;
     return;
   }
-  const entry = stack.pop();
-  if (!entry) return;
-  entry.dismiss();
+  const top = stack[stack.length - 1];
+  if (!top) return;
+  top.dismiss();
+  if (top.persistent) {
+    // A persistent guard (e.g. the wizard step-back) stays registered across
+    // dismissals — its `dismiss` steps one level back and its `open` flag flips
+    // only once the last level is left. Re-arm the sentinel so the next Back is
+    // still guarded; the effect cleanup rewinds it when `open` finally goes false.
+    pushSentinel();
+    return;
+  }
+  stack.pop();
   // Keep guarding the overlays that are still open.
   if (stack.length > 0) pushSentinel();
 }
@@ -56,10 +65,10 @@ function ensureListener() {
   window.addEventListener("popstate", handlePop);
 }
 
-function register(dismiss: () => void): number {
+function register(dismiss: () => void, persistent: boolean): number {
   ensureListener();
   const id = ++counter;
-  stack.push({ id, dismiss });
+  stack.push({ id, dismiss, persistent });
   pushSentinel();
   return id;
 }
@@ -76,20 +85,26 @@ function unregister(id: number) {
 /**
  * Register an overlay for Back-button dismissal while `open` is true.
  *
- * @param open      Whether the overlay is currently shown.
- * @param onDismiss Called to close the overlay (Back button or programmatic).
+ * @param open       Whether the overlay is currently shown.
+ * @param onDismiss  Called to close the overlay (Back button or programmatic).
+ * @param persistent When true the guard survives repeated Back presses while
+ *                   `open` stays true — each Back invokes `onDismiss` (which
+ *                   should step one level back) and the guard re-arms itself.
+ *                   Use for multi-step flows (e.g. a wizard) where a single
+ *                   `open` window spans several dismissable levels. Defaults to
+ *                   the transient open/close behaviour.
  * @returns A `close` function to funnel programmatic closes (X / Escape /
  *          backdrop) through the same path, keeping the history stack balanced.
  */
-export function useBackDismiss(open: boolean, onDismiss: () => void): () => void {
+export function useBackDismiss(open: boolean, onDismiss: () => void, persistent = false): () => void {
   const onDismissRef = useRef(onDismiss);
   onDismissRef.current = onDismiss;
 
   useEffect(() => {
     if (!open) return;
-    const id = register(() => onDismissRef.current());
+    const id = register(() => onDismissRef.current(), persistent);
     return () => unregister(id);
-  }, [open]);
+  }, [open, persistent]);
 
   return useCallback(() => onDismissRef.current(), []);
 }

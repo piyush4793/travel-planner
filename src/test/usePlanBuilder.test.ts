@@ -34,6 +34,23 @@ describe("usePlanBuilder", () => {
     expect(result.current.displayCountry?.name).toBe(COUNTRY.name);
   });
 
+  it("hydrates from an initial draft and keeps it through the first mount", () => {
+    const { result } = renderHook(() =>
+      usePlanBuilder(COUNTRY, "couple", {
+        selectedExperiences: ["Beaches"],
+        selectedCities: ["Alpha"],
+        customDays: 12,
+        daysPinned: true,
+      }),
+    );
+    // The destination-change reset must NOT fire on the first mount for the
+    // hydrated country, so restored selections survive a refresh.
+    expect(result.current.selectedExperiences).toEqual(["Beaches"]);
+    expect(result.current.selectedCities).toEqual(["Alpha"]);
+    expect(result.current.customDays).toBe(12);
+    expect(result.current.daysPinned).toBe(true);
+  });
+
   it("toggles experiences and cities", () => {
     const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple"));
     act(() => result.current.toggleExperience("Beaches"));

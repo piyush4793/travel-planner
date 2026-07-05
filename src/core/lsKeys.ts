@@ -19,4 +19,6 @@ export const LS_KEYS = {
   BACKUP_TARGET: "tp_backup_target",
   FRE_DONE: "tp_fre_done",
   SCHEMA_VERSION: "tp_schema_version",
+  PLAN_DRAFT: "tp_plan_draft",
+  PLAN_UI: "tp_plan_ui",
 } as const;

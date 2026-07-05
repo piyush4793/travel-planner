@@ -85,4 +85,46 @@ describe("useBackDismiss", () => {
     expect(backSpy).toHaveBeenCalledTimes(1);
     unmount();
   });
+
+  it("persistent guard survives repeated Back presses while open, then rewinds when closed", () => {
+    // Model a 2-level wizard: Back steps one level down each press; `open` flips
+    // to false only once the last level is left.
+    let level = 2;
+    const { rerender, unmount } = renderHook(
+      ({ open }) => useBackDismiss(open, () => { level -= 1; }, true),
+      { initialProps: { open: true } },
+    );
+    expect((window.history.state as { tpOverlay?: boolean } | null)?.tpOverlay).toBe(true);
+
+    // First Back: 2 -> 1, still open, guard re-arms its sentinel.
+    act(() => window.dispatchEvent(new PopStateEvent("popstate")));
+    expect(level).toBe(1);
+    expect((window.history.state as { tpOverlay?: boolean } | null)?.tpOverlay).toBe(true);
+
+    // Second Back: 1 -> 0, caller now closes the guard.
+    act(() => window.dispatchEvent(new PopStateEvent("popstate")));
+    expect(level).toBe(0);
+    backSpy.mockClear();
+    rerender({ open: false });
+    expect(backSpy).toHaveBeenCalledTimes(1);
+    unmount();
+  });
+
+  it("dismisses a transient overlay stacked above a persistent guard first", () => {
+    const step = vi.fn();
+    const drawer = vi.fn();
+    const persistent = renderHook(() => useBackDismiss(true, step, true));
+    const transient = renderHook(() => useBackDismiss(true, drawer));
+
+    act(() => window.dispatchEvent(new PopStateEvent("popstate")));
+    expect(drawer).toHaveBeenCalledTimes(1);
+    expect(step).not.toHaveBeenCalled();
+
+    transient.rerender();
+    act(() => window.dispatchEvent(new PopStateEvent("popstate")));
+    expect(step).toHaveBeenCalledTimes(1);
+
+    transient.unmount();
+    persistent.unmount();
+  });
 });
