@@ -22,6 +22,7 @@ const DAY_BG: RGB = [248, 250, 252];
 const WHITE: RGB = [255, 255, 255];
 const AMBER_BG: RGB = [255, 251, 235];
 const AMBER_INK: RGB = [146, 64, 14];
+const NOTE_BG: RGB = [238, 242, 255];
 
 // jsPDF's built-in fonts only cover Latin-1, so map the glyphs our content
 // commonly uses (rupee sign, arrows, smart quotes, dashes) to safe equivalents
@@ -253,34 +254,73 @@ export function buildItineraryPdfBlob(plan: TripPlan, country: Country, homeCoun
   };
 
   // ── Header band ──
-  const meta = [
-    `From ${homeCountry}`,
-    country.budget,
-    country.bestMonths.length ? `Best months: ${country.bestMonths.join(", ")}` : "",
-  ].filter(Boolean).join("   \u00B7   ");
+  {
+    const padX = 22, padTop = 20, padBottom = 20;
+    const nameSize = 26, nameLH = nameSize * 1.2;
+    const nameLines = wrap(country.name, nameSize, true, CONTENT_W - padX * 2);
 
-  const padX = 18;
-  const nameLines = wrap(country.name, 24, true, CONTENT_W - padX * 2);
-  const metaLines = meta ? wrap(meta, 10, false, CONTENT_W - padX * 2) : [];
-  const nameLH = 24 * 1.28;
-  const metaLH = 10 * 1.4;
-  const bandH = 18 + nameLines.length * nameLH + (metaLines.length ? 6 + metaLines.length * metaLH : 0) + 18;
-  ensureSpace(bandH);
-  doc.setFillColor(ACCENT[0], ACCENT[1], ACCENT[2]);
-  doc.roundedRect(MARGIN, cursor.y, CONTENT_W, bandH, 12, 12, "F");
-  let hy = cursor.y + 18 + 24 * 0.9;
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(24);
-  doc.setTextColor(WHITE[0], WHITE[1], WHITE[2]);
-  for (const line of nameLines) { doc.text(line, MARGIN + padX, hy); hy += nameLH; }
-  if (metaLines.length) {
-    hy += 6;
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(10);
+    const metaItems = [
+      `From ${homeCountry}`,
+      country.budget ? country.budget : "",
+      country.bestMonths.length ? `Best: ${country.bestMonths.join(", ")}` : "",
+    ].filter(Boolean);
+
+    const pillSize = 9, pillH = 17, pillPadX = 9, pillGap = 7, pillRowGap = 7;
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(pillSize);
+    const maxPillW = CONTENT_W - padX * 2;
+    const pillRows: { text: string; w: number }[][] = [];
+    {
+      let row: { text: string; w: number }[] = [];
+      let rowW = 0;
+      for (const item of metaItems) {
+        const text = pdfSafe(item);
+        const w = doc.getTextWidth(text) + pillPadX * 2;
+        if (row.length && rowW + w > maxPillW) { pillRows.push(row); row = []; rowW = 0; }
+        row.push({ text, w });
+        rowW += w + pillGap;
+      }
+      if (row.length) pillRows.push(row);
+    }
+    const pillsH = pillRows.length ? pillRows.length * pillH + (pillRows.length - 1) * pillRowGap : 0;
+    const eyebrowBlock = 18;
+    const bandH = padTop + eyebrowBlock + nameLines.length * nameLH + (pillsH ? 12 + pillsH : 0) + padBottom;
+    ensureSpace(bandH);
+
+    const bx = MARGIN, byTop = cursor.y;
+    doc.setFillColor(ACCENT[0], ACCENT[1], ACCENT[2]);
+    doc.roundedRect(bx, byTop, CONTENT_W, bandH, 14, 14, "F");
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(8.5);
     doc.setTextColor(ACCENT_SOFT[0], ACCENT_SOFT[1], ACCENT_SOFT[2]);
-    for (const line of metaLines) { doc.text(line, MARGIN + padX, hy); hy += metaLH; }
+    doc.text("TRAVEL ITINERARY", bx + padX, byTop + padTop + 8.5, { charSpace: 1.4 });
+
+    let y = byTop + padTop + eyebrowBlock;
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(nameSize);
+    doc.setTextColor(WHITE[0], WHITE[1], WHITE[2]);
+    for (const line of nameLines) { doc.text(line, bx + padX, y + nameSize * 0.82); y += nameLH; }
+
+    if (pillsH) {
+      y += 12;
+      for (const row of pillRows) {
+        let px = bx + padX;
+        for (const pill of row) {
+          doc.setFillColor(ACCENT_SOFT[0], ACCENT_SOFT[1], ACCENT_SOFT[2]);
+          doc.roundedRect(px, y, pill.w, pillH, pillH / 2, pillH / 2, "F");
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(pillSize);
+          doc.setTextColor(ACCENT[0], ACCENT[1], ACCENT[2]);
+          doc.text(pill.text, px + pillPadX, y + pillH / 2 + pillSize * 0.34);
+          px += pill.w + pillGap;
+        }
+        y += pillH + pillRowGap;
+      }
+    }
+
+    cursor.y = byTop + bandH + 16;
   }
-  cursor.y += bandH + 16;
 
   // ── Summary card ──
   const route = extractPlanCities(plan.days);
@@ -304,18 +344,44 @@ export function buildItineraryPdfBlob(plan: TripPlan, country: Country, homeCoun
     drawDayCard(day);
   }
 
-  // ── Note + footer ──
+  // ── Note callout ──
   if (plan.note) {
-    rule();
-    block(plan.note, { size: 10, color: MUTED, bg: CARD_BG, padX: 14, padY: 10, radius: 8, gap: 8 });
+    const cardPadX = 16, cardPadY = 12;
+    const titleH = 15, bodySize = 10, bodyLH = bodySize * 1.4;
+    const innerW = CONTENT_W - cardPadX * 2;
+    const bodyLines = wrap(plan.note, bodySize, false, innerW);
+    const totalH = cardPadY + titleH + bodyLines.length * bodyLH + cardPadY;
+    ensureSpace(totalH + 10);
+    cursor.y += 4;
+    const y0 = cursor.y;
+
+    doc.setFillColor(NOTE_BG[0], NOTE_BG[1], NOTE_BG[2]);
+    doc.roundedRect(MARGIN, y0, CONTENT_W, totalH, 8, 8, "F");
+    doc.setFillColor(ACCENT[0], ACCENT[1], ACCENT[2]);
+    doc.rect(MARGIN, y0 + 9, 3, totalH - 18, "F");
+
+    const tx = MARGIN + cardPadX;
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(8.5);
+    doc.setTextColor(ACCENT[0], ACCENT[1], ACCENT[2]);
+    doc.text("GOOD TO KNOW", tx, y0 + cardPadY + 8.5, { charSpace: 1 });
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(bodySize);
+    doc.setTextColor(SLATE[0], SLATE[1], SLATE[2]);
+    let ny = y0 + cardPadY + titleH + bodySize * 0.9;
+    for (const line of bodyLines) { doc.text(line, tx, ny); ny += bodyLH; }
+    cursor.y = y0 + totalH + 8;
   }
 
+  // ── Footer ──
+  rule();
   const stamp = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
   ensureSpace(16);
   doc.setFont("helvetica", "normal");
   doc.setFontSize(9);
   doc.setTextColor(MUTED[0], MUTED[1], MUTED[2]);
-  doc.text(pdfSafe(`Generated by Roamwise  \u00B7  ${stamp}`), PAGE_W / 2, cursor.y + 8, { align: "center" });
+  doc.text(pdfSafe(`Generated by Roamwise  \u00B7  ${stamp}`), PAGE_W / 2, cursor.y + 2, { align: "center" });
 
   return doc.output("blob");
 }
