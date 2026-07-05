@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { ALL_REGIONS, type Region, type TripGroupDef } from "../../../core/data/tripGroups";
 
 type TripEditorProps = {
@@ -57,6 +57,11 @@ function TripEditorBase({
 
   const canSave = main.trim() !== "";
 
+  const rootRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    rootRef.current?.focus();
+  }, []);
+
   // Dirty check: don't save if nothing changed (avoids marking seed trips as custom)
   const isDirty = !initial ||
     main !== initial.main ||
@@ -77,7 +82,7 @@ function TripEditorBase({
     <div
       className="rounded-xl border-2 border-blue-300 bg-blue-50/50 p-4 space-y-3"
       tabIndex={-1}
-      ref={(el) => el?.focus()}
+      ref={rootRef}
       onKeyDown={(e) => { if (e.key === "Escape") { e.stopPropagation(); onCancel(); } }}
     >
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">

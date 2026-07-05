@@ -255,6 +255,8 @@ export default function App() {
           data-tour="mobile-menu"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
+          aria-haspopup="true"
+          aria-controls="mobile-nav-menu"
           className="md:hidden flex items-center justify-center w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-base transition-colors shrink-0 focus-ring"
         >
           {menuOpen ? "✕" : "☰"}
@@ -263,7 +265,7 @@ export default function App() {
 
       {/* Mobile menu slide-down */}
       {menuOpen && isMobile && (
-        <div className="md:hidden bg-gradient-to-b from-indigo-600 to-indigo-700 text-white px-4 py-3 space-y-3 shrink-0 shadow-lg">
+        <div id="mobile-nav-menu" className="md:hidden bg-gradient-to-b from-indigo-600 to-indigo-700 text-white px-4 py-3 space-y-3 shrink-0 shadow-lg">
           <div className="flex items-center gap-2 flex-wrap">
             <AppInstallShare
               canInstall={installPrompt.canPrompt}

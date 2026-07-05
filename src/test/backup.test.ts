@@ -160,6 +160,42 @@ describe("backup import/export helpers — P0", () => {
     expect(bad.msg).toMatch(/Unsupported backup version/);
   });
 
+  it("skips malformed keys on apply so corrupt data can't poison storage", () => {
+    localStorage.setItem(LS_KEYS.VISITED, JSON.stringify(["Japan"]));
+    const result = applyBackup({
+      version: 1,
+      exportedAt: "2026-06-15T00:00:00.000Z",
+      data: {
+        [LS_KEYS.MY_LIST]: ["Japan", "Peru"],          // valid string[]
+        [LS_KEYS.VISITED]: { not: "an array" },        // invalid — must be skipped
+        [LS_KEYS.CUSTOMS]: [{ noName: true }],         // invalid — entries need a name
+        [LS_KEYS.FAVORITES]: [1, 2, 3],                // invalid — not strings
+      },
+    });
+    expect(result.ok).toBe(true);
+    expect(result.msg).toMatch(/Restored 1 items \(3 skipped — invalid format\)/);
+    // Valid key written; malformed keys left untouched
+    expect(JSON.parse(localStorage.getItem(LS_KEYS.MY_LIST) ?? "[]")).toEqual(["Japan", "Peru"]);
+    expect(JSON.parse(localStorage.getItem(LS_KEYS.VISITED) ?? "[]")).toEqual(["Japan"]);
+    expect(localStorage.getItem(LS_KEYS.CUSTOMS)).toBeNull();
+    expect(localStorage.getItem(LS_KEYS.FAVORITES)).toBeNull();
+  });
+
+  it("skips malformed keys on file import", async () => {
+    const backup = {
+      version: 1,
+      exportedAt: "2026-06-15T00:00:00.000Z",
+      data: {
+        [LS_KEYS.MY_LIST]: ["Japan"],
+        [LS_KEYS.AI_PLANS]: "corrupt-string",          // invalid — must be a record of arrays
+      },
+    };
+    const result = await importFullBackup(createFile(JSON.stringify(backup), "backup.json"));
+    expect(result.ok).toBe(true);
+    expect(result.msg).toMatch(/Restored 1 items \(1 skipped — invalid format\)/);
+    expect(localStorage.getItem(LS_KEYS.AI_PLANS)).toBeNull();
+  });
+
   it("gets and sets backup frequency with a monthly default", () => {
     expect(getBackupFrequency()).toBe("monthly");
 

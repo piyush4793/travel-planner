@@ -41,6 +41,51 @@ const BACKUP_KEYS = [
   // LLM_KEYS intentionally excluded — sensitive API keys shouldn't be in backup files
 ] as const;
 
+// ─── Per-key schema validation ────────────────────────────────────────────────
+// A corrupt/tampered import must never poison localStorage: every restored key is
+// shape-checked and silently skipped if it doesn't match its expected structure.
+
+const isStringArray = (v: unknown): v is string[] => Array.isArray(v) && v.every((x) => typeof x === "string");
+const isObjectRecord = (v: unknown): v is Record<string, unknown> => !!v && typeof v === "object" && !Array.isArray(v);
+const isNamedObjectArray = (v: unknown): boolean => Array.isArray(v) && v.every((x) => isObjectRecord(x) && typeof (x as { name?: unknown }).name === "string");
+const isAiPlanMap = (v: unknown): boolean => isObjectRecord(v) && Object.values(v).every((arr) => Array.isArray(arr));
+
+const BACKUP_VALIDATORS: Record<string, (v: unknown) => boolean> = {
+  [LS_KEYS.MY_LIST]: isStringArray,
+  [LS_KEYS.VISITED]: isStringArray,
+  [LS_KEYS.FAVORITES]: isStringArray,
+  [LS_KEYS.CUSTOMS]: isNamedObjectArray,
+  [LS_KEYS.DELETED]: isStringArray,
+  [LS_KEYS.HOME_COUNTRY]: (v) => typeof v === "string",
+  [LS_KEYS.TRIP_CUSTOMS]: isNamedObjectArray,
+  [LS_KEYS.TRIP_DELETED]: isStringArray,
+  [LS_KEYS.FEATURES]: isObjectRecord,
+  [LS_KEYS.LLM_PROVIDER]: (v) => typeof v === "string",
+  [LS_KEYS.AI_PLANS]: isAiPlanMap,
+};
+
+function isValidBackupValue(key: string, value: unknown): boolean {
+  const validate = BACKUP_VALIDATORS[key];
+  return validate ? validate(value) : false;
+}
+
+/** Writes only shape-valid keys to storage; returns how many were restored vs skipped. */
+function writeValidatedBackup(data: Record<string, unknown>): { restored: number; skipped: number } {
+  const storage = getStorageAdapter();
+  let restored = 0;
+  let skipped = 0;
+  for (const key of BACKUP_KEYS) {
+    if (!(key in data)) continue;
+    if (isValidBackupValue(key, data[key])) {
+      storage.setItem(key, JSON.stringify(data[key]));
+      restored++;
+    } else {
+      skipped++;
+    }
+  }
+  return { restored, skipped };
+}
+
 // ─── JSON Full Backup ─────────────────────────────────────────────────────────
 
 function buildBackupJson(): string {
@@ -144,17 +189,10 @@ export function applyBackup(backup: BackupData): { ok: boolean; msg: string } {
     return { ok: false, msg: `Unsupported backup version (${backup.version}). Please update the app.` };
   }
   try {
-    const storage = getStorageAdapter();
-    const data = backup.data;
-    let restored = 0;
-    for (const key of BACKUP_KEYS) {
-      if (key in data) {
-        storage.setItem(key, JSON.stringify(data[key]));
-        restored++;
-      }
-    }
+    const { restored, skipped } = writeValidatedBackup(backup.data);
     saveLS(LS_KEYS.LAST_BACKUP, new Date().toISOString());
-    return { ok: true, msg: `Restored ${restored} items. Reload the page to see changes.` };
+    const suffix = skipped > 0 ? ` (${skipped} skipped — invalid format)` : "";
+    return { ok: true, msg: `Restored ${restored} items${suffix}. Reload the page to see changes.` };
   } catch {
     return { ok: false, msg: "Failed to apply backup" };
   }
@@ -176,18 +214,11 @@ export function importFullBackup(file: File): Promise<{ ok: boolean; msg: string
         }
 
         const data = parsed.data as Record<string, unknown>;
-        const storage = getStorageAdapter();
-        let restored = 0;
-
-        for (const key of BACKUP_KEYS) {
-          if (key in data) {
-            storage.setItem(key, JSON.stringify(data[key]));
-            restored++;
-          }
-        }
+        const { restored, skipped } = writeValidatedBackup(data);
 
         saveLS(LS_KEYS.LAST_BACKUP, new Date().toISOString());
-        resolve({ ok: true, msg: `Restored ${restored} items. Reload the page to see changes.` });
+        const suffix = skipped > 0 ? ` (${skipped} skipped — invalid format)` : "";
+        resolve({ ok: true, msg: `Restored ${restored} items${suffix}. Reload the page to see changes.` });
       } catch {
         resolve({ ok: false, msg: "Could not parse backup file — invalid JSON" });
       }

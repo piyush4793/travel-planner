@@ -34,6 +34,7 @@ function SearchableSelector({ value, onChange, variant = "header" }: Props) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [alignRight, setAlignRight] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
@@ -75,6 +76,22 @@ function SearchableSelector({ value, onChange, variant = "header" }: Props) {
       inputRef.current?.focus();
       setActiveIndex(-1);
     }
+  }, [open]);
+
+  // Flip the dropdown's horizontal anchor to whichever side won't clip the viewport.
+  useEffect(() => {
+    if (!open) return;
+    const PANEL_WIDTH = 208; // min-w-52
+    const measure = () => {
+      const rect = ref.current?.getBoundingClientRect();
+      if (!rect) return;
+      const rightAlignedFits = rect.right >= PANEL_WIDTH;
+      const leftAlignedFits = rect.left + PANEL_WIDTH <= window.innerWidth;
+      setAlignRight(rightAlignedFits ? true : !leftAlignedFits);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
   }, [open]);
 
   // Reset active index when filtered list changes
@@ -130,7 +147,7 @@ function SearchableSelector({ value, onChange, variant = "header" }: Props) {
     <div ref={ref} className="relative" onKeyDown={handleKeyDown}>
       <TriggerButton value={value} open={open} variant={variant} onClick={() => setOpen((o) => !o)} />
       {open && (
-        <div className="absolute right-0 top-full mt-1 bg-white rounded-xl shadow-xl border border-gray-200 z-50 min-w-52 overflow-hidden">
+        <div className={`absolute ${alignRight ? "right-0" : "left-0"} top-full mt-1 bg-white rounded-xl shadow-xl border border-gray-200 z-50 min-w-52 max-w-[calc(100vw-1rem)] overflow-hidden`}>
           <div className="p-2 border-b border-gray-100">
             <input
               ref={inputRef}

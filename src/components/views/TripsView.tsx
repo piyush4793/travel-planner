@@ -400,6 +400,8 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
               }`}
               aria-label="View stats"
               aria-expanded={statsOpen}
+              aria-haspopup="dialog"
+              aria-controls="trips-stats-sheet"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M3 3v18h18"/><path d="M7 16V8"/><path d="M11 16V11"/><path d="M15 16V5"/><path d="M19 16V9"/></svg>
             </button>
@@ -416,6 +418,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
               }`}
               aria-label="Toggle filters"
               aria-expanded={mobileFiltersOpen}
+              aria-controls="trips-mobile-filters"
             >
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M3 4h18l-7 8v5l-4 2V12z"/></svg>
               Filters
@@ -454,7 +457,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
 
           {/* Expandable unified filter panel */}
           {mobileFiltersOpen && (
-            <div className="rounded-2xl border border-gray-200 bg-gradient-to-b from-gray-50 to-white p-3 space-y-3 shadow-sm">
+            <div id="trips-mobile-filters" role="region" aria-label="Filters" className="rounded-2xl border border-gray-200 bg-gradient-to-b from-gray-50 to-white p-3 space-y-3 shadow-sm">
               <div className="flex items-center justify-between">
                 <p className="text-xs font-bold text-gray-700">Filters</p>
                 {activeFilterCount > 0 && (
@@ -616,7 +619,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
       {isMobile && statsOpen && (
         <>
           <div className="fixed inset-0 z-40 bg-black/20" onClick={() => setStatsOpen(false)} />
-          <div className="fixed left-3 right-3 bottom-3 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-4">
+          <div id="trips-stats-sheet" role="dialog" aria-modal="true" aria-label="Travel Progress" className="fixed left-3 right-3 bottom-3 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-4">
             <div className="flex items-center justify-between mb-3">
               <p className="text-sm font-semibold text-slate-700">Travel Progress</p>
               <button onClick={() => setStatsOpen(false)} className="text-gray-400 hover:text-gray-600 p-1 focus-ring rounded" aria-label="Close stats">✕</button>

@@ -126,10 +126,7 @@ function TripCardBase({
 
   return (
     <article
-      onClick={() => onSelect(trip.main)}
-      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelect(trip.main); } }}
-      tabIndex={0}
-      className={`rounded-xl border border-l-[3px] overflow-hidden transition group cursor-pointer focus-ring ${accent} ${
+      className={`relative rounded-xl border border-l-[3px] overflow-hidden transition group cursor-pointer ${accent} ${
         trip.allVisited
           ? "bg-emerald-50/60 border-emerald-200"
           : "bg-white border-gray-200 hover:border-blue-200 hover:shadow-md hover:-translate-y-0.5"
@@ -146,7 +143,7 @@ function TripCardBase({
             <button
               onClick={() => onSelect(trip.main)}
               aria-label={`Open ${trip.main.name}`}
-              className="text-sm font-bold text-gray-800 hover:text-blue-600 transition-colors truncate"
+              className="text-sm font-bold text-gray-800 hover:text-blue-600 transition-colors truncate focus-ring rounded after:absolute after:content-[''] after:inset-0 after:z-[1]"
             >
               {trip.allVisited ? "✅ " : ""}{trip.main.name}
             </button>
@@ -154,7 +151,7 @@ function TripCardBase({
              {onEdit && (
                <button
                  onClick={(e) => { e.stopPropagation(); onEdit(trip.main.name); }}
-                 className="text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-1 rounded hover:bg-blue-50 transition-colors focus-ring"
+                 className="relative z-[2] text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-1 rounded hover:bg-blue-50 transition-colors focus-ring"
                  aria-label="Edit trip"
                >
                  ✏️
@@ -177,7 +174,7 @@ function TripCardBase({
                 <button
                   key={c.name}
                   onClick={(e) => { e.stopPropagation(); onSelect(c); }}
-                  className="text-[10px] font-medium text-gray-600 bg-gray-100 hover:bg-blue-50 hover:text-blue-700 px-2 py-0.5 rounded-full transition-colors"
+                  className="relative z-[2] text-[10px] font-medium text-gray-600 bg-gray-100 hover:bg-blue-50 hover:text-blue-700 px-2 py-0.5 rounded-full transition-colors"
                 >
                   {c.name}
                 </button>
@@ -197,7 +194,7 @@ function TripCardBase({
                         const match = countryByName.get(name);
                         if (match) onSelect(match);
                       }}
-                      className="text-[10px] font-medium text-gray-500 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-100 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                      className="relative z-[2] text-[10px] font-medium text-gray-500 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-100 hover:bg-blue-50 hover:text-blue-700 transition-colors"
                     >
                       {name}
                     </button>
@@ -229,7 +226,7 @@ function TripCardBase({
           <button
             onClick={() => onSelect(trip.main)}
             aria-label={`Open ${trip.main.name}`}
-            className="text-sm font-bold text-gray-800 hover:text-blue-600 transition-colors truncate"
+            className="text-sm font-bold text-gray-800 hover:text-blue-600 transition-colors truncate focus-ring rounded after:absolute after:content-[''] after:inset-0 after:z-[1]"
           >
             {trip.main.name}
           </button>
@@ -247,7 +244,7 @@ function TripCardBase({
           {onEdit && (
             <button
               onClick={(e) => { e.stopPropagation(); onEdit(trip.main.name); }}
-              className="md:opacity-0 md:group-hover:opacity-100 text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-0.5 rounded hover:bg-blue-50 transition"
+              className="relative z-[2] md:opacity-0 md:group-hover:opacity-100 text-[11px] text-gray-400 hover:text-blue-600 px-1.5 py-0.5 rounded hover:bg-blue-50 transition"
               aria-label="Edit trip"
             >
               ✏️
@@ -295,7 +292,7 @@ function TripCardBase({
                 const match = countryByName.get(name);
                 if (match) onSelect(match);
               }}
-              className="text-[10px] font-medium text-gray-500 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-100 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+              className="relative z-[2] text-[10px] font-medium text-gray-500 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-100 hover:bg-blue-50 hover:text-blue-700 transition-colors"
             >
               {name}
             </button>
@@ -313,7 +310,7 @@ function TripCardBase({
               <button
                 key={c.name}
                 onClick={(e) => { e.stopPropagation(); onSelect(c); }}
-                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors cursor-pointer ${
+                className={`relative z-[2] inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors cursor-pointer ${
                   isVisited
                     ? "bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
                     : "bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-700"

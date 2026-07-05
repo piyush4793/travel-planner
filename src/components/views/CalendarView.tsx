@@ -165,6 +165,9 @@ export default function CalendarView({ countries, onSelect, visitedNames, select
           <button
             ref={mobileFilterBtnRef}
             onClick={() => setFiltersOpen((o) => !o)}
+            aria-expanded={filtersOpen}
+            aria-controls="cal-filters-mobile"
+            aria-label="Month filter"
             className={`flex items-center justify-center w-8 h-8 rounded-lg border text-xs focus-ring ${
               filtersOpen || hasFilters
                 ? "bg-blue-50 text-blue-700 border-blue-200"
@@ -177,7 +180,7 @@ export default function CalendarView({ countries, onSelect, visitedNames, select
         </div>
 
         {filtersOpen && (
-          <div className="rounded-xl border border-gray-200 bg-gray-50 p-2.5 space-y-2">
+          <div id="cal-filters-mobile" role="region" aria-label="Month filters" className="rounded-xl border border-gray-200 bg-gray-50 p-2.5 space-y-2">
             <div className="flex items-center justify-between">
               <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Primary filters</p>
               {hasFilters && (
@@ -231,6 +234,9 @@ export default function CalendarView({ countries, onSelect, visitedNames, select
           <div className="relative" ref={popoverRef}>
             <button
               onClick={() => setFiltersOpen((o) => !o)}
+              aria-expanded={filtersOpen}
+              aria-haspopup="true"
+              aria-controls="cal-filters-desktop"
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-medium transition-colors focus-ring ${
                 hasFilters
                   ? "bg-blue-50 text-blue-700 border-blue-200"
@@ -243,7 +249,7 @@ export default function CalendarView({ countries, onSelect, visitedNames, select
               </svg>
             </button>
             {filtersOpen && (
-              <div className="absolute top-full left-0 mt-1 z-50 w-56 rounded-xl border border-gray-200 bg-white shadow-lg p-3 space-y-2">
+              <div id="cal-filters-desktop" role="region" aria-label="Select months" className="absolute top-full left-0 mt-1 z-50 w-56 rounded-xl border border-gray-200 bg-white shadow-lg p-3 space-y-2">
                 <div className="flex items-center justify-between">
                   <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Select months</p>
                   {hasFilters && (

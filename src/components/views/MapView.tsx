@@ -92,13 +92,19 @@ export default function MapView({
           }
         }, { signal });
 
-        el.addEventListener("mouseenter", () => {
+        const showHover = () => {
           if (!containerRef.current) return;
           const cRect = containerRef.current.getBoundingClientRect();
           const eRect = el.getBoundingClientRect();
           setHovered({ country, ...computeHoverPosition(cRect, eRect) });
-        }, { signal });
-        el.addEventListener("mouseleave", () => setHovered(null), { signal });
+        };
+        const hideHover = () => setHovered(null);
+        // Pointer + keyboard parity: focus/blur mirror mouseenter/mouseleave so
+        // keyboard users tabbing between markers get the same preview card.
+        el.addEventListener("mouseenter", showHover, { signal });
+        el.addEventListener("mouseleave", hideHover, { signal });
+        el.addEventListener("focus", showHover, { signal });
+        el.addEventListener("blur", hideHover, { signal });
 
         markersRef.current.push(marker);
       });

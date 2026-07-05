@@ -196,6 +196,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
               }`}
               aria-label="Filters"
               aria-expanded={filtersOpen}
+              aria-controls="discover-filters-mobile"
             >
               🎚️
             </button>
@@ -203,7 +204,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
 
           {/* Expandable filter panel */}
           {filtersOpen && (
-            <div className="rounded-xl border border-gray-200 bg-gray-50 p-2.5 space-y-2.5">
+            <div id="discover-filters-mobile" role="region" aria-label="Filters" className="rounded-xl border border-gray-200 bg-gray-50 p-2.5 space-y-2.5">
               <div className="flex items-center justify-between">
                 <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Filters</p>
                 {hasFilters && (
@@ -264,12 +265,14 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
                 region !== "All" ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-600 border-gray-200 hover:bg-gray-50"
               }`}
               aria-expanded={regionOpen}
+              aria-haspopup="true"
+              aria-controls="discover-region-pop"
             >
               {region === "All" ? "Region" : region}
               <svg className={`w-3 h-3 transition-transform ${regionOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
             </button>
             {regionOpen && (
-              <div className="absolute top-full left-0 mt-1 z-50 w-48 rounded-xl border border-gray-200 bg-white shadow-lg p-2 space-y-0.5">
+              <div id="discover-region-pop" aria-label="Region" className="absolute top-full left-0 mt-1 z-50 w-48 rounded-xl border border-gray-200 bg-white shadow-lg p-2 space-y-0.5">
                 {REGIONS.map((r) => (
                   <button key={r} onClick={() => { setRegion(r); setRegionOpen(false); }}
                     className={`w-full text-left px-3 py-1.5 rounded-lg text-xs transition-colors focus-ring ${region === r ? "bg-blue-50 text-blue-700 font-semibold" : "text-gray-600 hover:bg-gray-50"}`}
@@ -287,12 +290,14 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
                 listFilter !== "all" ? "bg-blue-50 text-blue-700 border-blue-200" : "text-gray-600 border-gray-200 hover:bg-gray-50"
               }`}
               aria-expanded={statusOpen}
+              aria-haspopup="true"
+              aria-controls="discover-status-pop"
             >
               {listFilter === "all" ? "Status" : listFilter === "in-list" ? "In List" : "Not Added"}
               <svg className={`w-3 h-3 transition-transform ${statusOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
             </button>
             {statusOpen && (
-              <div className="absolute top-full left-0 mt-1 z-50 w-36 rounded-xl border border-gray-200 bg-white shadow-lg p-2 space-y-0.5">
+              <div id="discover-status-pop" aria-label="Status" className="absolute top-full left-0 mt-1 z-50 w-36 rounded-xl border border-gray-200 bg-white shadow-lg p-2 space-y-0.5">
                 {([["all", "Any"], ["in-list", "In My List"], ["not-in-list", "Not Added"]] as const).map(([k, label]) => (
                   <button key={k} onClick={() => { setListFilter(k); setStatusOpen(false); }}
                     className={`w-full text-left px-3 py-1.5 rounded-lg text-xs transition-colors focus-ring ${listFilter === k ? "bg-blue-50 text-blue-700 font-semibold" : "text-gray-600 hover:bg-gray-50"}`}

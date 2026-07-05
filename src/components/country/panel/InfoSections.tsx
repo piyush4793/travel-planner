@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, useId } from "react";
 import type { CountryInfo } from "../../../utils/countryInfo";
 import { fetchCountryInfo } from "../../../utils/countryInfo";
 import { getPlanningLinks } from "../../../utils/planningLinks";
@@ -26,6 +26,7 @@ export function LearnAboutSection({ countryName, currentCountryNameRef }: {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [fetched, setFetched] = useState(false);
+  const contentId = useId();
 
   // Reset state on country change
   useEffect(() => {
@@ -70,11 +71,11 @@ export function LearnAboutSection({ countryName, currentCountryNameRef }: {
 
   return (
     <div className="rounded-xl bg-gray-50/50 p-3.5">
-      <button onClick={handleToggle} aria-expanded={open} className="group flex w-full items-center gap-2 text-left focus-ring rounded">
+      <button onClick={handleToggle} aria-expanded={open} aria-controls={contentId} className="group flex w-full items-center gap-2 text-left focus-ring rounded">
         <span className={`text-xs text-gray-400 motion-safe:transition-transform motion-safe:duration-300 ease-out ${open ? "rotate-90 text-blue-500" : ""}`}>▸</span>
         <span className="flex-1 text-[11px] font-semibold text-gray-500">Learn about {countryName} 🌐</span>
       </button>
-      <div className={`grid motion-safe:transition-[grid-template-rows,opacity,margin] motion-safe:duration-300 ease-out ${open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+      <div id={contentId} role="region" aria-label={`Learn about ${countryName}`} className={`grid motion-safe:transition-[grid-template-rows,opacity,margin] motion-safe:duration-300 ease-out ${open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
         <div className="overflow-hidden">
           <div className={`border-l pl-3 transition-colors duration-300 ${open ? "border-blue-200" : "border-transparent"}`} aria-live="polite" aria-busy={loading}>
             {loading && (

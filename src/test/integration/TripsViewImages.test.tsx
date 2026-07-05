@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, within, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, within, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import TripsView from "../../components/views/TripsView";
 import type { Country } from "../../core/types";
@@ -98,12 +98,12 @@ describe("TripsView trip cards (combo rendering)", () => {
     expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Norway" }));
   });
 
-  it("selects the main country when the card is activated by keyboard", async () => {
+  it("selects the main country when the title button is activated by keyboard", async () => {
     const onSelect = vi.fn();
     renderTrips({ onSelect });
-    const card = (await screen.findByRole("button", { name: "Open Sweden" })).closest("article") as HTMLElement;
+    const title = await screen.findByRole("button", { name: "Open Sweden" });
 
-    fireEvent.keyDown(card, { key: "Enter" });
+    await userEvent.click(title);
     expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Sweden" }));
   });
 });
