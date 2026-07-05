@@ -11,13 +11,25 @@ function setServiceWorker(value: unknown): void {
   });
 }
 
-function mockRegistrations(count: number) {
+function mockRegistrations(
+  count: number,
+  opts: { controller?: boolean; update?: ReturnType<typeof vi.fn> } = {},
+) {
   const unregister = vi.fn().mockResolvedValue(true);
   const regs = Array.from({ length: count }, () => ({ unregister }));
   const getRegistrations = vi.fn().mockResolvedValue(regs);
-  const register = vi.fn().mockResolvedValue({});
-  setServiceWorker({ getRegistrations, register });
-  return { unregister, getRegistrations, register };
+  const update = opts.update ?? vi.fn().mockResolvedValue(undefined);
+  const register = vi.fn().mockResolvedValue({ update });
+  const swListeners: Record<string, (event: unknown) => void> = {};
+  setServiceWorker({
+    getRegistrations,
+    register,
+    controller: opts.controller ? {} : null,
+    addEventListener: (type: string, cb: (event: unknown) => void) => {
+      swListeners[type] = cb;
+    },
+  });
+  return { unregister, getRegistrations, register, update, swListeners };
 }
 
 function mockCaches(keys: string[]) {
@@ -85,5 +97,58 @@ describe("initServiceWorker", () => {
 
     window.dispatchEvent(new Event("load"));
     expect(register).toHaveBeenCalledOnce();
+  });
+
+  it("auto-reloads once when a new worker takes control of a controlled page", () => {
+    vi.stubEnv("PROD", true);
+    vi.stubEnv("DEV", false);
+    const reload = vi.fn();
+    const original = window.location;
+    Object.defineProperty(window, "location", {
+      configurable: true,
+      value: { ...original, reload },
+    });
+    try {
+      const { swListeners } = mockRegistrations(0, { controller: true });
+
+      initServiceWorker();
+      expect(swListeners.controllerchange).toBeTypeOf("function");
+
+      swListeners.controllerchange({});
+      swListeners.controllerchange({});
+      expect(reload).toHaveBeenCalledOnce();
+    } finally {
+      Object.defineProperty(window, "location", {
+        configurable: true,
+        value: original,
+      });
+    }
+  });
+
+  it("does not arm auto-reload on the first-ever install (no controller)", () => {
+    vi.stubEnv("PROD", true);
+    vi.stubEnv("DEV", false);
+    const { swListeners } = mockRegistrations(0, { controller: false });
+
+    initServiceWorker();
+    expect(swListeners.controllerchange).toBeUndefined();
+  });
+
+  it("checks for updates when the tab regains focus", async () => {
+    vi.stubEnv("PROD", true);
+    vi.stubEnv("DEV", false);
+    const update = vi.fn().mockResolvedValue(undefined);
+    mockRegistrations(0, { controller: true, update });
+
+    initServiceWorker();
+    window.dispatchEvent(new Event("load"));
+    await Promise.resolve();
+
+    Object.defineProperty(document, "visibilityState", {
+      configurable: true,
+      value: "visible",
+    });
+    document.dispatchEvent(new Event("visibilitychange"));
+    expect(update).toHaveBeenCalled();
   });
 });

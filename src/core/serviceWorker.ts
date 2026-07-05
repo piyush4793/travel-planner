@@ -21,6 +21,22 @@ export async function unregisterServiceWorkers(): Promise<void> {
 }
 
 /**
+ * Auto-reload the page once a newly-installed worker takes control, so a fresh
+ * deploy is applied without a manual cache clear. Only armed when the page is
+ * already controlled (an update), never on the very first install — that would
+ * reload every first visit for no benefit. A latch prevents reload loops.
+ */
+function reloadOnWorkerActivation(): void {
+  if (!navigator.serviceWorker.controller) return;
+  let reloading = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (reloading) return;
+    reloading = true;
+    window.location.reload();
+  });
+}
+
+/**
  * Registers the service worker in production only.
  *
  * In dev we must NOT register it: a cache-first worker shadows the Vite dev
@@ -31,10 +47,20 @@ export function initServiceWorker(): void {
   if (!("serviceWorker" in navigator)) return;
 
   if (import.meta.env.PROD) {
+    reloadOnWorkerActivation();
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register(SW_URL).catch(() => {
-        // Registration failed — app still works without offline support.
-      });
+      navigator.serviceWorker
+        .register(SW_URL)
+        .then((reg) => {
+          // Long-lived tabs won't navigate for hours; re-check for a new
+          // deploy whenever the tab regains focus so updates land promptly.
+          document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "visible") void reg.update();
+          });
+        })
+        .catch(() => {
+          // Registration failed — app still works without offline support.
+        });
     });
     return;
   }
