@@ -6,6 +6,11 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
+  /* App-shell lock: the shell owns the viewport and inner regions scroll
+     themselves, so the page must never scroll (horizontally or vertically) or
+     rubber-band. This keeps the Plan flow feeling crisp on mobile. */
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 /* Viewport-height shell: 100% fallback (always bounded to #root) then dynamic
