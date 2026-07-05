@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-export type AppView = "trips" | "calendar" | "discover";
+export type AppView = "plan" | "trips" | "calendar" | "discover";
 
-const VALID_VIEWS: AppView[] = ["trips", "calendar", "discover"];
+const VALID_VIEWS: AppView[] = ["plan", "trips", "calendar", "discover"];
 
 function parseHash(): AppView {
   const h = window.location.hash.slice(1);

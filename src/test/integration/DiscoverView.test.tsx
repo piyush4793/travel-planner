@@ -47,6 +47,8 @@ describe("DiscoverView", () => {
         myListNames={new Set(["Japan", "France"])}
         onAddToList={vi.fn()}
         onRemoveFromList={vi.fn()}
+        onAddMany={vi.fn()}
+        onResetList={vi.fn()}
       />,
     );
 
@@ -64,6 +66,8 @@ describe("DiscoverView", () => {
         myListNames={new Set()}
         onAddToList={vi.fn()}
         onRemoveFromList={vi.fn()}
+        onAddMany={vi.fn()}
+        onResetList={vi.fn()}
       />,
     );
 
@@ -85,6 +89,8 @@ describe("DiscoverView", () => {
         myListNames={new Set()}
         onAddToList={vi.fn()}
         onRemoveFromList={vi.fn()}
+        onAddMany={vi.fn()}
+        onResetList={vi.fn()}
       />,
     );
 
@@ -107,6 +113,8 @@ describe("DiscoverView", () => {
         myListNames={new Set()}
         onAddToList={onAddToList}
         onRemoveFromList={vi.fn()}
+        onAddMany={vi.fn()}
+        onResetList={vi.fn()}
       />,
     );
 
@@ -127,6 +135,8 @@ describe("DiscoverView", () => {
         myListNames={new Set(["Japan"])}
         onAddToList={vi.fn()}
         onRemoveFromList={onRemoveFromList}
+        onAddMany={vi.fn()}
+        onResetList={vi.fn()}
       />,
     );
 

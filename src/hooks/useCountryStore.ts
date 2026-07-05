@@ -203,15 +203,54 @@ export function useCountryStore() {
     } else {
       setCustoms((prev) => {
         if (prev.some((c) => c.name === name)) return prev;
-        const cat = CATALOG.find((c) => c.name === name);
-        if (!cat) return prev;
+        const src = CATALOG.find((c) => c.name === name) ?? MANIFEST_BY_NAME.get(name);
+        if (!src) return prev;
         const minimal: Country = {
-          name: cat.name, lat: cat.lat, lng: cat.lng,
+          name: src.name, lat: src.lat, lng: src.lng,
           bestMonths: [], budget: "", experiences: [],
         };
         return [...prev, minimal];
       });
     }
+  }, [myList]);
+
+  // One-click bulk add (e.g. the creator's wishlist). Batches every state
+  // update so N destinations cost a single re-render, not N.
+  const addManyToList = useCallback((names: string[]) => {
+    if (names.length === 0) return;
+    myList.setSet((prev) => {
+      const next = new Set(prev);
+      for (const n of names) next.add(n);
+      return next;
+    });
+    const seedNames = names.filter((n) => SEED_NAMES.has(n));
+    if (seedNames.length) {
+      const revive = new Set(seedNames);
+      setDeleted((prev) => prev.filter((n) => !revive.has(n)));
+    }
+    const nonSeed = names.filter((n) => !SEED_NAMES.has(n));
+    if (nonSeed.length) {
+      setCustoms((prev) => {
+        const existing = new Set(prev.map((c) => c.name));
+        const additions: Country[] = [];
+        for (const n of nonSeed) {
+          if (existing.has(n)) continue;
+          const src = CATALOG.find((c) => c.name === n) ?? MANIFEST_BY_NAME.get(n);
+          if (!src) continue;
+          existing.add(n);
+          additions.push({ name: src.name, lat: src.lat, lng: src.lng, bestMonths: [], budget: "", experiences: [] });
+        }
+        return additions.length ? [...prev, ...additions] : prev;
+      });
+    }
+  }, [myList]);
+
+  // Restore My List to the default starter set (the auto-seeded countries).
+  // Non-destructive to authored data: custom country edits stay in CUSTOMS and
+  // reappear if re-added, but the visible list resets to defaults.
+  const resetToDefaultList = useCallback(() => {
+    myList.setSet(() => new Set(SEED_NAMES));
+    setDeleted([]);
   }, [myList]);
 
   return {
@@ -225,6 +264,8 @@ export function useCountryStore() {
     deleteCountry,
     updateNotes,
     addToList,
+    addManyToList,
+    resetToDefaultList,
     catalog: CATALOG,
   } as const;
 }

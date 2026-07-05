@@ -2,12 +2,17 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { CatalogEntry } from "../../core/types";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { getCountryFlag } from "../../utils/countryFlags";
+import { creatorWishlistNames } from "../../core/data/creatorWishlist";
+import { useConfirm } from "../shared/ConfirmDialog";
+import CreatorWishlistDialog from "./discover/CreatorWishlistDialog";
 
 type Props = {
   catalog: CatalogEntry[];
   myListNames: Set<string>;
   onAddToList: (name: string) => void;
   onRemoveFromList: (name: string) => void;
+  onAddMany: (names: string[]) => void;
+  onResetList: () => void;
 };
 
 const REGIONS = ["All", "Asia", "Europe", "Middle East", "Africa", "Americas", "Oceania"];
@@ -26,7 +31,7 @@ const REGION_COLORS: Record<string, string> = {
 
 
 
-export default function DiscoverView({ catalog, myListNames, onAddToList, onRemoveFromList }: Props) {
+export default function DiscoverView({ catalog, myListNames, onAddToList, onRemoveFromList, onAddMany, onResetList }: Props) {
   const [search, setSearch] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const debounceRef = useRef<ReturnType<typeof setTimeout>>();
@@ -101,6 +106,54 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
     setSearch(""); setDebouncedSearch(""); clearTimeout(debounceRef.current);
     setRegion("All"); setListFilter("all");
   };
+
+  /* ── Starter-list journey: creator's wishlist + reset to default ── */
+  const [wishlistOpen, setWishlistOpen] = useState(false);
+  const wishlist = useMemo(() => creatorWishlistNames(), []);
+  const wishlistRemaining = useMemo(
+    () => wishlist.filter((n) => !myListNames.has(n)).length,
+    [wishlist, myListNames],
+  );
+  const [confirm, ResetConfirm] = useConfirm();
+
+  const handleAddWishlist = useCallback((toAdd: string[]) => {
+    onAddMany(toAdd);
+    setWishlistOpen(false);
+  }, [onAddMany]);
+
+  const handleReset = useCallback(async () => {
+    const ok = await confirm({
+      title: "Reset to starter list?",
+      message: "Your list will go back to the default starter destinations. Countries you added are removed from the list (your edits are kept if you re-add them).",
+      confirmLabel: "Reset list",
+      cancelLabel: "Keep my list",
+      variant: "warning",
+    });
+    if (ok) onResetList();
+  }, [confirm, onResetList]);
+
+  const starterActions = (
+    <div className="flex items-center gap-1.5">
+      <button
+        onClick={() => setWishlistOpen(true)}
+        className="focus-ring flex items-center gap-1 min-h-[32px] px-2.5 py-1.5 rounded-lg text-[11px] font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
+        aria-haspopup="dialog"
+        aria-label="Open creator's wishlist"
+      >
+        ✨ <span className="hidden sm:inline">Wishlist</span>
+        {wishlistRemaining > 0 && (
+          <span className="ml-0.5 px-1 rounded-full bg-white/25 text-[10px] tabular-nums">{wishlistRemaining}</span>
+        )}
+      </button>
+      <button
+        onClick={handleReset}
+        className="focus-ring min-h-[32px] px-2.5 py-1.5 rounded-lg text-[11px] font-medium text-gray-500 border border-gray-200 hover:bg-gray-50 transition-colors"
+        aria-label="Reset to starter list"
+      >
+        ↺ <span className="hidden sm:inline">Reset</span>
+      </button>
+    </div>
+  );
 
   const toggleCard = (name: string) => {
     if (myListNames.has(name)) onRemoveFromList(name);
@@ -223,10 +276,11 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
           )}
 
           {/* Summary line */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2">
             <p className="text-[10px] text-gray-400">
               {filtered.length} of {catalog.length} • {inListCount} in list ({pct}%)
             </p>
+            {starterActions}
           </div>
         </div>
       )}
@@ -308,6 +362,8 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
           </div>
 
           <div className="flex-1" />
+
+          {starterActions}
 
           {hasFilters && (
             <button onClick={clearAll} className="text-[10px] text-red-500 hover:text-red-700 font-medium px-2 py-1 rounded hover:bg-red-50 transition-colors focus-ring">
@@ -391,6 +447,15 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
           ↑
         </button>
       )}
+
+      <CreatorWishlistDialog
+        open={wishlistOpen}
+        onClose={() => setWishlistOpen(false)}
+        names={wishlist}
+        inListNames={myListNames}
+        onConfirm={handleAddWishlist}
+      />
+      <ResetConfirm />
     </div>
   );
 }

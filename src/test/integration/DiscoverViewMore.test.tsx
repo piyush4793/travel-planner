@@ -62,6 +62,8 @@ describe("DiscoverView additional coverage", () => {
         myListNames={new Set(["France", "Japan"])}
         onAddToList={vi.fn()}
         onRemoveFromList={vi.fn()}
+        onAddMany={vi.fn()}
+        onResetList={vi.fn()}
       />,
     );
 
@@ -86,6 +88,8 @@ describe("DiscoverView additional coverage", () => {
         myListNames={new Set(["Japan"])}
         onAddToList={vi.fn()}
         onRemoveFromList={vi.fn()}
+        onAddMany={vi.fn()}
+        onResetList={vi.fn()}
       />,
     );
 
@@ -111,6 +115,8 @@ describe("DiscoverView additional coverage", () => {
         myListNames={new Set()}
         onAddToList={vi.fn()}
         onRemoveFromList={vi.fn()}
+        onAddMany={vi.fn()}
+        onResetList={vi.fn()}
       />,
     );
 
@@ -136,6 +142,8 @@ describe("DiscoverView additional coverage", () => {
         myListNames={new Set(["Japan", "Oman"])}
         onAddToList={vi.fn()}
         onRemoveFromList={vi.fn()}
+        onAddMany={vi.fn()}
+        onResetList={vi.fn()}
       />,
     );
 
@@ -162,6 +170,8 @@ describe("DiscoverView additional coverage", () => {
         myListNames={new Set()}
         onAddToList={vi.fn()}
         onRemoveFromList={vi.fn()}
+        onAddMany={vi.fn()}
+        onResetList={vi.fn()}
       />,
     );
 

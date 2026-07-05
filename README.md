@@ -9,11 +9,12 @@ A personal, map-based travel planner with a catalog of 197 world countries, 44 c
 ### Views
 | View | What it does |
 |---|---|
+| **🧭 Plan** (guided) | Flag-gated (`guidedPlanning`) luxury emerald/ivory **guided planning wizard** — a one-way funnel: **Trip basics** (who's going + what you're into) → **Which places?** (auto-picked from your vibe, add/drop to curate) → **Your trip** (inferred trip length tunable via a consequence-aware slider, day-by-day itinerary, and a "Good to know" card with when-to-go / stopover / watch-outs / pairs-with). Pick a destination from your list or the popular set to begin. |
 | **✈ Trips** (home) | Dashboard with progress ring, stats, and "Next trip" highlight. **One card per My List country** (so card count always matches list size), with image collages, budget, and best months. Grouped sections: ⭐ Favorites → 📋 Planning → ✅ Completed. Tablet/desktop now use a collapsible left filter rail + right results workspace (icon-only view toggle + sort in results toolbar). Mobile defaults to list (grid toggle appears only on wider phones). Paginated. Click any card to open country detail. |
 | **📅 Calendar** | Heatmap grid — rows are destinations, columns are months. Emerald = best, red = avoid, blue = current month. |
-| **🌍 Discover** | Browse all 197 world countries. Filter by region and list status. Add countries to your list or remove them. |
+| **🌍 Discover** | Browse all 197 world countries. Filter by region and list status. Add countries to your list or remove them. One-click **creator's wishlist** starter pack and **reset to starter list** (both confirm first). |
 
-View persists in the URL hash (`#trips`, `#calendar`, `#discover`) — refresh returns to the same view. Trips is the default home view.
+View persists in the URL hash (`#plan`, `#trips`, `#calendar`, `#discover`) — refresh returns to the same view. Trips is the default home view; Plan appears when `guidedPlanning` is enabled.
 
 ### Responsive Design
 Mobile-first responsive layout — works on phones (375px+), tablets (768px+), and desktops (1024px+):
@@ -29,7 +30,8 @@ Mobile-first responsive layout — works on phones (375px+), tablets (768px+), a
 
 ### My List & Discover
 - **197 countries** in the world catalog (`data/worldCatalog.json`), organized by 6 regions
-- **44 curated seed destinations** with rich data (budget, best months, experiences, cities) pre-added to your list — and **all 198 itinerary-backed destinations** now have offline planning data available on demand
+- **5 curated seed destinations** (Japan, Thailand, Switzerland, France, Italy — the `inSeed` set) pre-added to your list — and **all 198 itinerary-backed destinations** now have offline planning data available on demand
+- **Creator's wishlist** — 43 famous rule-backed destinations (`creatorPick`) offered as a one-click starter pack in Discover (preview + confirm before filling My List); plus **reset to starter list** to return to the curated seed (confirmed via dialog)
 - Only countries in **My List** appear on Map, Calendar, List, and Trips views
 - Add from Discover → creates a minimal Country entry that can be enriched via edit
 - Remove from list without losing custom data — re-add anytime
@@ -238,6 +240,8 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 | `llmPlanning` | `true` | paid | AI trip planning (chat, itinerary generation, save plans). Hidden unless `paidFeatures=true`. |
 | `pdfExport` | `true` | paid | Export itineraries as PDF from country panel. Hidden unless `paidFeatures=true`. |
 | `searchableHomeCountry` | `false` | free | Searchable dropdown with all 197 countries for home country selection |
+| `guidedPlanning` | `true` | free | Guided planning wizard `#plan` view (Basics → Places → Review). Hidden when disabled. |
+| `tripGroups` | `false` | free | Multi-country trip group annotations |
 
 **Payment flow (future):** A payment page will set `paidFeatures=true` in localStorage upon successful purchase, unlocking all premium features for the user.
 

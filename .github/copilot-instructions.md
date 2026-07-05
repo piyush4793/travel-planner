@@ -91,11 +91,16 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | Cinematic pure engine (paths, bearings, markers, rAF) | `src/components/country/cinematic/engine.ts` |
 | Plan comparison modal | `src/components/country/PlanCompareModal.tsx` |
 | AI chat/settings modals | `src/components/ai/ChatModal.tsx`, `src/components/ai/SettingsModal.tsx` |
+| Guided planning wizard (view) | `src/components/views/plan/PlanView.tsx` |
+| Guided planning funnel hook | `src/hooks/usePlanBuilder.ts` |
+| Plan wizard subcomponents | `src/components/views/plan/{DestinationPicker,DayLengthControl,PlanProgressSummary,PlanInsights,PlanPreviewPane}.tsx` |
+| Creator's wishlist (starter pack) | `src/core/data/creatorWishlist.ts` |
+| Popular destinations (Plan picker) | `src/core/data/popularDestinations.ts` |
 | Trip planner engine | `src/utils/tripPlans.ts` |
 | City↔experience matching (shared) | `src/core/utils/cityExperiences.ts` |
 | City selection + day allocation (DP) | `src/core/utils/citySelection.ts` |
 | Budget basis (party size) source of truth | `src/core/utils/budget.ts` |
-| Feature flags | `src/utils/featureFlags.ts` |
+| Feature flags | `src/core/featureFlags.ts` |
 | Platform capability profile | `src/core/platform/platformProfile.ts` |
 | Platform backup defaults + target selection | `src/core/platform/defaults.ts`, `src/core/platform/selectBackupTarget.ts` |
 | Backup target port + adapters | `src/core/ports/BackupTargetPort.ts`, `src/core/adapters/backup/*` |
@@ -108,13 +113,14 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 
 ## Features & Views
 
-3 hash-routed views (`#trips`, `#calendar`, `#discover`):
+4 hash-routed views (`#plan`, `#trips`, `#calendar`, `#discover`) — `#plan` is gated behind the `guidedPlanning` flag:
 
 | View | Purpose |
 |---|---|
+| **Plan** (guided, flag-gated) | Luxury emerald/ivory guided planning wizard — a one-way funnel **Basics → Places → Review** (`src/components/views/plan/`, orchestrated by `PlanView` + `usePlanBuilder`). Basics = party size (`PillGroup accent="emerald"`) + vibe/experience chips + live `PlanProgressSummary`. Places = `CityCard variant="luxury"` list; auto-picked cities show pre-checked via `autoSelectedCities`, first `toggleCity` materializes the auto set + pins length. Review = `DayLengthControl` (inferred length, consequence-aware slider, confirm only on hand-picked drop), `PlanInsights` ("Good to know": when-to-go/stopover/watch-outs/pairs-with), and `PlanPreviewPane` (day-by-day via `ItineraryView variant="luxury"`). No standalone "how many days" step — length is inferred and tuned on Review only. |
 | **Trips** (default) | Dashboard — progress ring, stats, “Next trip” highlight. **One card per My List country** (card count should match list size) with image collages, budget, best months. Sections: ⭐ Favorites → 📋 Planning → ✅ Completed. Tablet/desktop use a collapsible left filter rail + right results toolbar (icon-only list/grid toggle + sort); the rail's secondary "Trip filters" (type/status/region) collapse behind a disclosure by default (auto-expand when active) for a lighter default density; mobile defaults to list (grid toggle on wider phones). Popularity sort uses per-country `popularityScore` metadata (1-100 **leisure-only** composite over all 198 destinations: experiences 35%, city depth 20%, seasonality 20%, affordability/value 15%, combo breadth 5%, landmark presence 5%; then favorites, then name). |
 | **Calendar** | Heatmap grid — rows = destinations, columns = months. Green = best, red = avoid, blue = current month. |
-| **Discover** | Browse the 197-country sovereign catalog by region. Add/remove destinations from My List. Uses its own filter bar. |
+| **Discover** | Browse the 197-country sovereign catalog by region. Add/remove destinations from My List. Uses its own filter bar. One-click **creator's wishlist** starter pack (`creatorWishlistNames()`, preview + confirm) and **reset to starter list** (confirm), wired via `onAddMany` / `onResetList`. |
 
 **MapView** is not a standalone route anymore — it stays mounted behind the UI and becomes visible for Cinematic mode.
 
@@ -150,7 +156,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 ```
 App.tsx  (thin orchestrator — wires hooks to views)
 ├── Header (brand, nav pills, home country selector, settings/menu only)
-├── TripsView / CalendarView / DiscoverView
+├── PlanView / TripsView / CalendarView / DiscoverView
 ├── CountryPanel
 │   ├── default panel render path
 │   ├── CountryForm
@@ -168,11 +174,13 @@ App.tsx  (thin orchestrator — wires hooks to views)
 ```
 src/components/
   ai/       — AiItineraryModal, ChatModal, SettingsModal
-  country/  — CountryPanel, CountryForm, ItineraryCinematic, ItineraryModal, PlanCompareModal, cinematic/engine.ts (pure fly-through engine)
+  country/  — CountryPanel, CountryForm, ItineraryCinematic, ItineraryModal, PlanCompareModal, cinematic/engine.ts (pure fly-through engine), itinerary/ItineraryView (shared day renderer, variant="default"|"luxury"), panel/CityCard (variant="default"|"luxury")
   map/      — HoverCard and map internals
-  shared/   — PillGroup, FilterChip, Filters, Tooltip, HomeCountrySelector, DevFlagPanel, ExperienceDropdown, AppInstallShare, FreTour
+  shared/   — PillGroup (accent="blue"|"emerald"), FilterChip, Filters, Tooltip, HomeCountrySelector, DevFlagPanel, ExperienceDropdown, AppInstallShare, FreTour, ConfirmDialog (useConfirm)
   views/    — CalendarView, DiscoverView, TripsView
   views/trips/ — TripsView subcomponents: types (Trip + buildTrips), TripCard (memo'd), TripEditor (memo'd), TripSection (collapsible + paginated wrappers)
+  views/plan/ — Guided wizard: PlanView + DestinationPicker, DayLengthControl, PlanProgressSummary, PlanInsights, PlanPreviewPane (all luxury emerald/ivory)
+  views/discover/ — DiscoverView subcomponents (CreatorWishlistDialog starter-pack preview)
 ```
 
 ### Hooks (state management)
@@ -187,9 +195,10 @@ All state is hooks-based — no Redux, no context providers. `App.tsx` calls hoo
 | `useChatSession` | `src/hooks/useChatSession.ts` | LLM chat state machine, token tracking, finalize flow |
 | `useCountryRule` | `src/hooks/useCountryRule.ts` | Lazy-loads consolidated country data from `data/rules/*.json` |
 | `usePersistedSet` | `src/hooks/usePersistedSet.ts` | Reusable `Set<string>` backed by localStorage |
-| `useHashView` | `src/hooks/useHashView.ts` | Hash-based URL routing for the 3 top-level views |
+| `useHashView` | `src/hooks/useHashView.ts` | Hash-based URL routing for the 4 top-level views (`plan`/`trips`/`calendar`/`discover`) |
 | `useBreakpoint` | `src/hooks/useBreakpoint.ts` | Reactive `mobile` / `tablet` / `desktop` state |
 | `usePanelDrag` | `src/hooks/usePanelDrag.ts` | Resizable desktop country panel drag behavior |
+| `usePlanBuilder` | `src/hooks/usePlanBuilder.ts` | Guided `#plan` wizard funnel state — party/vibe/cities/length, `autoSelectedCities` materialization, inferred+pinned day count |
 | `useBudgetBasis` | `src/hooks/useBudgetBasis.ts` | Two-layer budget party size: persisted global default + transient active |
 
 ### Shared UI components — reuse, don't recreate
@@ -216,7 +225,7 @@ Tier 1: World Catalog (data/worldCatalog.json)
 
 Tier 2: Rule Manifest (data/rules/index.json)
   198 itinerary-backed destinations
-  Adds: inSeed, hasItinerary, recDays, maxDays, popularityScore
+  Adds: inSeed, creatorPick, hasItinerary, recDays, maxDays, popularityScore
   Used by: initial My List population, slider bounds, lazy-load routing
 
 Tier 3: Consolidated Rules (data/rules/*.json)
@@ -225,7 +234,7 @@ Tier 3: Consolidated Rules (data/rules/*.json)
   Loaded lazily via import.meta.glob in useCountryRule
 ```
 
-Curated starter destinations are controlled by the manifest's `inSeed` flag. Special non-catalog destinations live only in the rule system and still participate in offline itinerary generation.
+Curated starter destinations are controlled by two manifest flags: **`inSeed`** (5 destinations auto-seeded into My List on first run — Japan, Thailand, Switzerland, France, Italy) and **`creatorPick`** (43-destination **creator's wishlist**, an opt-in one-click starter pack in Discover via `creatorWishlistNames()` in `src/core/data/creatorWishlist.ts`). Discover also offers a **reset to starter list** action. Special non-catalog destinations live only in the rule system and still participate in offline itinerary generation.
 
 ### Trip groups
 
@@ -416,14 +425,16 @@ The 198-country ruleset was built with batched, parallel content passes. When do
 
 ## Feature Flags
 
-System in `src/utils/featureFlags.ts`. Stored in `tp_features` localStorage key.
+System in `src/core/featureFlags.ts`. Stored in `tp_features` localStorage key.
 
 | Flag | Default | Tier | Description |
 |---|---|---|---|
-| `paidFeatures` | `false` | system | Master gate — enables premium features |
+| `paidFeatures` | `true` | system | Master gate — enables premium features |
 | `llmPlanning` | `true` | paid | AI trip planning flow |
 | `pdfExport` | `true` | paid | Export itineraries as PDF |
 | `searchableHomeCountry` | `false` | free | Searchable home-country dropdown |
+| `guidedPlanning` | `true` | free | Guided planning wizard (`#plan` view) |
+| `tripGroups` | `false` | free | Multi-country trip group annotations |
 
 **Adding a new flag:**
 1. Add to `FeatureFlags` type in `featureFlags.ts`
@@ -435,7 +446,7 @@ System in `src/utils/featureFlags.ts`. Stored in `tp_features` localStorage key.
 
 ## Routing
 
-Hash-based, no library. `AppView` + `VALID_VIEWS` live in `src/hooks/useHashView.ts`. Current top-level routes are `trips`, `calendar`, and `discover`.
+Hash-based, no library. `AppView` + `VALID_VIEWS` live in `src/hooks/useHashView.ts`. Current top-level routes are `plan` (flag-gated by `guidedPlanning`), `trips`, `calendar`, and `discover`.
 
 **Adding a new view:**
 1. Add to `AppView` type in `useHashView.ts`

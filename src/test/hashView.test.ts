@@ -57,8 +57,8 @@ describe("useHashView — P1", () => {
     expect(result.current[0]).toBe("discover");
   });
 
-  it("recognizes all 3 valid views", async () => {
-    const views = ["trips", "calendar", "discover"];
+  it("recognizes all 4 valid views", async () => {
+    const views = ["plan", "trips", "calendar", "discover"];
     const { useHashView } = await importHook();
 
     for (const v of views) {

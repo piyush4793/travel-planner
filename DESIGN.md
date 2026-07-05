@@ -158,6 +158,7 @@ public/
 | `useCountryRule` | Lazy-loading and caching consolidated per-country rule JSON |
 | `usePersistedSet` | Reusable `Set<string>` + localStorage (DRY); reconciles cross-tab via `storage` events |
 | `useHashView` | URL hash routing |
+| `usePlanBuilder` | Guided planning funnel: rule loading, day auto-seed + pin, live plan, auto→explicit city materialization |
 | `useBreakpoint` | Responsive breakpoint state |
 | `useInstallPrompt` | PWA install prompt capture, installed-in-browser detection (`getInstalledRelatedApps`) + `openApp`, iOS detection |
 | `useItineraryShare` | Country/itinerary share: native PDF file (lazy jsPDF) → native text → clipboard |
@@ -231,6 +232,18 @@ Two-tier gating lives in `src/core/featureFlags.ts`. Paid features require both 
 | `llmPlanning` | `true` | paid | AI trip planning flow |
 | `pdfExport` | `true` | paid | PDF export from itinerary views |
 | `searchableHomeCountry` | `false` | free | Searchable home-country picker |
+| `guidedPlanning` | `true` | free | Guided planning wizard (`#plan` view) |
+| `tripGroups` | `false` | free | Multi-country trip group annotations |
+
+### Guided planning wizard (`#plan`)
+
+Flag-gated (`guidedPlanning`) one-way planning funnel, distinct from the Country Panel's Plan tab. Lives in `src/components/views/plan/` and is orchestrated by `PlanView.tsx` + `usePlanBuilder`.
+
+- **Steps**: **Basics** (party size via `PillGroup accent="emerald"` + vibe/experience chips, with a live `PlanProgressSummary`) → **Which places?** (city cards) → **Your trip** (Review). Places is optional/skippable; steps are `["basics", (cities?), "review"]`.
+- **Inferred length, tuned on Review**: there is no standalone "how many days" step — length is inferred (`recommendedDaysForSelection`) and adjusted on Review by `DayLengthControl`, a slider that commits on release, previews consequences inline (`projectCities`), and only opens a confirm dialog when shortening would drop a *hand-picked* city.
+- **Auto→explicit city materialization**: while `selectedCities` is empty the plan auto-selects cities (DP fit); the Places step shows those as checked via `autoSelectedCities` (the country's real cities the auto plan visits, filtered from route labels). The first `toggleCity` **materializes** the auto set and applies the toggle (so tapping a pre-checked city removes it) and **pins the day count** so curating doesn't silently inflate length. "Reset to auto" clears the picks and unpins.
+- **Good to know** (`PlanInsights`): distills the Country Panel's decision info (when-to-go, stopover tip, watch-outs, pairs-with) into the luxury theme; renders nothing when a country carries none.
+- **Luxury emerald/ivory theme**: the whole Plan surface (wizard chrome, `DestinationPicker`, `CityCard variant="luxury"`, `ItineraryView variant="luxury"`, `PlanPreviewPane`, app header) uses an emerald/ivory palette. `CityCard` and `ItineraryView` take a `variant` prop (default = the Country Panel's slate/blue look, unchanged) so the shared renderers wear either skin without forking. `PillGroup` gained an `accent?: "blue" | "emerald"` prop (default blue preserves existing usages).
 
 ### Portal pattern
 
@@ -300,7 +313,7 @@ Playback controls are ref-backed so the imperative animation reads live values w
 | **Manifest** | `data/rules/index.json` | 198 | Browse metadata + `inSeed`, `hasItinerary`, `recDays`, `maxDays`, `popularityScore` |
 | **Rule JSON** | `data/rules/{name}.json` | 198 | Consolidated country data + day-by-day itinerary rules |
 
-The Discover catalog remains a 197-country sovereign browse list. The manifest expands coverage to 198 itinerary-backed destinations, and curated starter destinations are identified via `inSeed` for first-run My List population.
+The Discover catalog remains a 197-country sovereign browse list (now including Antarctica for completeness). The manifest expands coverage to 198 itinerary-backed destinations. Two manifest flags drive starter population: **`inSeed`** identifies the small curated auto-seed (5 destinations — Japan, Thailand, Switzerland, France, Italy) added on first run, and **`creatorPick`** marks the 43-destination **creator's wishlist** offered as an opt-in one-click starter pack in Discover (`src/core/data/creatorWishlist.ts`). Discover also exposes a **reset to starter list** action; both wishlist-fill and reset confirm via dialog and go through `useCountryStore` (`onAddMany` / `onResetList`).
 
 ### Core types
 

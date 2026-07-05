@@ -9,6 +9,7 @@ const MapView = lazy(() => import("./components/views/MapView"));
 const CalendarView = lazy(() => import("./components/views/CalendarView"));
 const DiscoverView = lazy(() => import("./components/views/DiscoverView"));
 const TripsView = lazy(() => import("./components/views/TripsView"));
+const PlanView = lazy(() => import("./components/views/plan/PlanView"));
 const CountryPanel = lazy(() => import("./components/country/CountryPanel"));
 import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
 import { applyFilters, type BudgetTier } from "./core/utils/filterLogic";
@@ -34,7 +35,7 @@ const AiItineraryModal = lazy(() => import("./components/ai/AiItineraryModal"));
 const FreTour = lazy(() => import("./components/shared/FreTour"));
 
 const VIEW_LABELS: Record<AppView, string> = {
-  trips: "✈ Trips", calendar: "📅 Calendar", discover: "🌍 Discover",
+  plan: "🧭 Plan", trips: "✈ Trips", calendar: "📅 Calendar", discover: "🌍 Discover",
 };
 
 export default function App() {
@@ -44,6 +45,13 @@ export default function App() {
   const isMobile = bp === "mobile";
   const installPrompt = useInstallPrompt();
   const [view, setView] = useHashView();
+  // The guided planner is flag-gated; hide its nav pill and route when disabled.
+  const guidedPlanning = isEnabled("guidedPlanning");
+  const activeView: AppView = view === "plan" && !guidedPlanning ? "trips" : view;
+  const navViews = useMemo(
+    () => (Object.keys(VIEW_LABELS) as AppView[]).filter((v) => v !== "plan" || guidedPlanning),
+    [guidedPlanning],
+  );
   const [homeCountry, setHomeCountry] = useState(() => loadLS(LS_KEYS.HOME_COUNTRY, "India"));
   const [selectedMonth, setSelectedMonth] = useState<string[]>([]);
   const [visitedFilter, setVisitedFilter] = useState<VisitedFilter>("all");
@@ -194,7 +202,7 @@ export default function App() {
   return (
     <div className="flex flex-col h-dvh overflow-hidden bg-slate-50">
       {/* Header */}
-      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 text-white shrink-0 shadow-md">
+      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-900 text-white shrink-0 shadow-md">
         <button onClick={() => setView("trips")} className="flex items-center gap-2 shrink-0 hover:opacity-90 transition-opacity" aria-label="Home">
           {/* Brand icon — all screens */}
           <img src="icon-192.svg" alt="Roamwise" className="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-lg" />
@@ -203,12 +211,12 @@ export default function App() {
 
         {/* Desktop nav pills */}
         <div className="hidden md:flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto" role="navigation" aria-label="Main navigation">
-          {(Object.keys(VIEW_LABELS) as AppView[]).map((v) => (
+          {navViews.map((v) => (
             <button key={v} onClick={() => setView(v)}
               data-tour={`nav-${v}`}
-              aria-current={view === v ? "page" : undefined}
+              aria-current={activeView === v ? "page" : undefined}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors focus-ring ${
-                view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
+                activeView === v ? "bg-white text-emerald-800 shadow-sm" : "text-white/80 hover:text-white"
               }`}>
               {VIEW_LABELS[v]}
             </button>
@@ -217,12 +225,12 @@ export default function App() {
 
         {/* Mobile nav pills — compact */}
         <div className="flex md:hidden items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto overflow-x-auto max-w-[56vw]" role="navigation" aria-label="Main navigation">
-          {(Object.keys(VIEW_LABELS) as AppView[]).map((v) => (
+          {navViews.map((v) => (
             <button key={v} onClick={() => setView(v)}
               data-tour={isMobile ? `nav-${v}` : undefined}
-              aria-current={view === v ? "page" : undefined}
+              aria-current={activeView === v ? "page" : undefined}
               className={`px-2.5 py-1.5 rounded-full text-[11px] font-semibold transition-colors min-h-[36px] focus-ring ${
-                view === v ? "bg-white text-blue-700 shadow-sm" : "text-white/80 hover:text-white"
+                activeView === v ? "bg-white text-emerald-800 shadow-sm" : "text-white/80 hover:text-white"
               }`}>
               {VIEW_LABELS[v]}
             </button>
@@ -265,7 +273,7 @@ export default function App() {
 
       {/* Mobile menu slide-down */}
       {menuOpen && isMobile && (
-        <div id="mobile-nav-menu" className="md:hidden bg-gradient-to-b from-indigo-600 to-indigo-700 text-white px-4 py-3 space-y-3 shrink-0 shadow-lg">
+        <div id="mobile-nav-menu" className="md:hidden bg-gradient-to-b from-emerald-700 to-emerald-800 text-white px-4 py-3 space-y-3 shrink-0 shadow-lg">
           <div className="flex items-center gap-2 flex-wrap">
             <AppInstallShare
               canInstall={installPrompt.canPrompt}
@@ -345,7 +353,18 @@ export default function App() {
         </div>
 
         <Suspense fallback={<div className="flex items-center justify-center h-full"><span className="text-sm text-gray-400">Loading…</span></div>}>
-        {view === "trips" ? (
+        {activeView === "plan" ? (
+          <PlanView
+            countries={store.myListCountries}
+            visitedNames={store.visited.set}
+            budgetBasis={activeBasis}
+            setBudgetBasis={setActiveBasis}
+            onOpenCountry={setSelectedCountry}
+            onGoDiscover={() => setView("discover")}
+            onAddToList={store.addToList}
+            onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
+          />
+        ) : activeView === "trips" ? (
           <TripsView
             countries={filteredForTrips}
             visitedNames={store.visited.set}
@@ -364,7 +383,7 @@ export default function App() {
             onSaveTrip={trips.saveTrip}
             onDeleteTrip={trips.deleteTrip}
           />
-        ) : view === "calendar" ? (
+        ) : activeView === "calendar" ? (
           <CalendarView
             countries={filtered}
             onSelect={setSelectedCountry}
@@ -378,6 +397,8 @@ export default function App() {
             myListNames={store.myList.set}
             onAddToList={store.addToList}
             onRemoveFromList={store.myList.remove}
+            onAddMany={store.addManyToList}
+            onResetList={store.resetToDefaultList}
           />
         )}
         </Suspense>

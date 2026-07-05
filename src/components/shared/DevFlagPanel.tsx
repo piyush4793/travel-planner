@@ -16,6 +16,7 @@ const FLAG_META: Record<keyof FeatureFlags, FlagMeta> = {
   pdfExport:             { label: "PDF Export", description: "Export itineraries as PDF from country panel" },
   searchableHomeCountry: { label: "Searchable Home Country", description: "Dropdown with all 197 countries" },
   tripGroups:            { label: "Trip Groups", description: "Create multi-country trip groups" },
+  guidedPlanning:        { label: "Guided Planning", description: "One-way Plan tab funnel (Who → Vibe → Length → Cities)" },
 };
 
 // Derived from PAID_FLAGS — single source of truth in featureFlags.ts

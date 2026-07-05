@@ -17,6 +17,7 @@ export type FeatureFlags = {
   pdfExport: boolean;
   paidFeatures: boolean;
   tripGroups: boolean;
+  guidedPlanning: boolean;
 };
 
 // Which individual flags require paidFeatures to be true
@@ -28,6 +29,7 @@ const DEFAULTS: FeatureFlags = {
   pdfExport: true,
   paidFeatures: true,
   tripGroups: false,
+  guidedPlanning: true,
 };
 
 let _cache: FeatureFlags | null = null;

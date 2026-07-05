@@ -66,6 +66,9 @@ describe("useTripStore integration", () => {
     const customTrip: TripGroupDef = { main: COUNTRY.BRAZIL, addOns: [COUNTRY.ARGENTINA], region: REGION.AMERICAS };
 
     act(() => {
+      result.current.addToList(COUNTRY.ARGENTINA);
+    });
+    act(() => {
       result.current.saveTrip(null, customTrip);
     });
 
