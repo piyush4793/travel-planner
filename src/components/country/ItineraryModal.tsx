@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import type { Country } from "../../core/types";
 import type { TripPlan, DayEntry } from "../../core/utils/tripPlans";
 import { extractCityFromLabel, planCostBasisIcon, planCostBasisLabel } from "../../core/utils/tripPlans";
@@ -381,12 +381,15 @@ function DayCard({ day, city, rule }: { day: DayEntry; city: string; rule?: Coun
 
 function CopyLinkButton({ url }: { url: string }) {
   const [copied, setCopied] = useState(false);
+  const copyTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  useEffect(() => () => clearTimeout(copyTimerRef.current), []);
   return (
     <button
       onClick={() => {
         navigator.clipboard.writeText(url).then(() => {
           setCopied(true);
-          setTimeout(() => setCopied(false), 1500);
+          clearTimeout(copyTimerRef.current);
+          copyTimerRef.current = setTimeout(() => setCopied(false), 1500);
         });
       }}
       className={`text-[10px] font-semibold px-2 py-1 min-h-[24px] rounded-full transition-colors focus-ring ${

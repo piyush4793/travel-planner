@@ -494,6 +494,9 @@ Hash-based, no library. `AppView` + `VALID_VIEWS` live in `src/hooks/useHashView
 - ❌ Direct state mutation
 - ❌ Eager importing of all rule JSON files
 - ❌ Dead files / unused exports / unused imports
+- ❌ `setTimeout`/`setInterval` that calls `setState` without cleanup — store the id in a `useRef` and clear it in `useEffect(() => () => clearTimeout(ref.current), [])` (class components: clear in `componentWillUnmount`). This is the established convention; a `setCopied(false)` reset timer with no cleanup is a stale-setState bug.
+- ❌ `window.open(url, "_blank")` or `<a target="_blank">` without `rel="noopener noreferrer"` / the `"noopener,noreferrer"` window feature — tab-nabbing vector. (Exception: an intentionally-retained same-origin window handle, e.g. the print window in `pdfExport.ts`.)
+- ❌ Animating layout-triggering properties (`left`/`top`/`right`/`bottom`) — use `transition-transform` + `translate-*` instead. (Progress bars animating `width` are an accepted exception; `scaleX` distorts gradients/rounded ends.)
 
 ---
 
@@ -508,6 +511,7 @@ Hash-based, no library. `AppView` + `VALID_VIEWS` live in `src/hooks/useHashView
 | **Text floor** | Interactive text minimum `text-[10px]`; prefer `text-[11px]` or `text-xs` for buttons |
 | **ARIA on popups** | Trigger needs `aria-expanded` + `aria-haspopup`; popup needs `role` |
 | **ARIA on icon buttons** | Icon-only buttons MUST have `aria-label` |
+| **External links** | `<a target="_blank">` and `window.open(..., "_blank")` MUST set `rel="noopener noreferrer"` / the `"noopener,noreferrer"` feature string |
 | **Keyboard nav** | Anything clickable must be reachable via Tab; custom widgets need arrow-key support |
 
 ### Portals & popups — MANDATORY
@@ -525,6 +529,8 @@ Hash-based, no library. `AppView` + `VALID_VIEWS` live in `src/hooks/useHashView
 | **Reduced motion** | All animations respect `prefers-reduced-motion: reduce` (global rule in index.css) |
 | **Consistent timing** | Use standard durations: 0.15s (fast), 0.25s (normal), 0.4s (slow) |
 | **No transition-all** | Use specific properties (`transition-colors`, `transition-opacity`, `transition-transform`) |
+| **No layout animation** | Animate `transform`/`opacity`, never `left`/`top`/`right`/`bottom` (compositor-friendly). Progress-bar `width` is the one accepted exception |
+| **Timers cleaned up** | Every `setTimeout`/`setInterval` is stored in a ref and cleared on unmount — no stale-setState after teardown |
 | **No dead keyframes** | Remove unused `@keyframes` from index.css |
 
 ### Component quality gate — verify before PR

@@ -116,6 +116,8 @@ describe("useInstallPrompt", () => {
     });
     expect(open).toHaveBeenCalledTimes(1);
     expect(String(open.mock.calls[0][0])).toContain("http");
+    expect(open.mock.calls[0][1]).toBe("_blank");
+    expect(open.mock.calls[0][2]).toBe("noopener,noreferrer");
     open.mockRestore();
   });
 });

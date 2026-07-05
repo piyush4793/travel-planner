@@ -18,9 +18,14 @@ function isChunkLoadError(error: Error | null): boolean {
  */
 export default class ErrorBoundary extends Component<Props, State> {
   state: State = { error: null, errorInfo: "", copied: false };
+  private copiedTimer: ReturnType<typeof setTimeout> | null = null;
 
   static getDerivedStateFromError(error: Error): Partial<State> {
     return { error };
+  }
+
+  componentWillUnmount() {
+    if (this.copiedTimer) clearTimeout(this.copiedTimer);
   }
 
   componentDidCatch(error: Error, info: { componentStack?: string | null }) {
@@ -52,7 +57,8 @@ export default class ErrorBoundary extends Component<Props, State> {
     const text = `## Bug Report — Roamwise\n\n**What happened?**\n\n<!-- Describe what you were doing when this error occurred -->\n\n**Debug info**\n\n\`\`\`\n${this.state.errorInfo}\n\`\`\``;
     navigator.clipboard.writeText(text).then(() => {
       this.setState({ copied: true });
-      setTimeout(() => this.setState({ copied: false }), 2500);
+      if (this.copiedTimer) clearTimeout(this.copiedTimer);
+      this.copiedTimer = setTimeout(() => this.setState({ copied: false }), 2500);
     }).catch(() => {});
   };
 
@@ -61,7 +67,7 @@ export default class ErrorBoundary extends Component<Props, State> {
     const body = encodeURIComponent(
       `## What happened?\n\n<!-- Describe what you were doing -->\n\n## Debug info\n\n\`\`\`\n${this.state.errorInfo}\n\`\`\``,
     );
-    window.open(`https://github.com/piyush4793/travel-planner/issues/new?title=${title}&body=${body}`, "_blank");
+    window.open(`https://github.com/piyush4793/travel-planner/issues/new?title=${title}&body=${body}`, "_blank", "noopener,noreferrer");
   };
 
   handleEmail = () => {

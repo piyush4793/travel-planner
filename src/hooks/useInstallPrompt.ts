@@ -89,7 +89,7 @@ export function useInstallPrompt() {
   // route to (and focus) the app window via `launch_handler`/link capturing.
   const openApp = useCallback(() => {
     const url = appUrl();
-    if (url) window.open(url, "_blank", "noopener");
+    if (url) window.open(url, "_blank", "noopener,noreferrer");
   }, []);
 
   const canPrompt = deferredPrompt !== null && !isInstalled;

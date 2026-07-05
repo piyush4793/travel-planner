@@ -119,6 +119,7 @@ describe("ErrorBoundary", () => {
       expect(open).toHaveBeenCalledWith(
         expect.stringContaining("https://github.com/piyush4793/travel-planner/issues/new"),
         "_blank",
+        "noopener,noreferrer",
       );
       expect(open.mock.calls[0][0]).toContain("Bug%3A%20boom");
 
