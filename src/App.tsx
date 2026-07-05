@@ -239,7 +239,7 @@ export default function App() {
     selectedCountry !== null || settingsOpen || chatOpen || aiPlanResult !== null || formTarget !== null;
 
   return (
-    <div className="flex flex-col h-dvh overflow-hidden bg-slate-50">
+    <div className="flex flex-col h-viewport overflow-hidden bg-slate-50">
       {/* Header */}
       <header className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-900 text-white shrink-0 shadow-md">
         <button onClick={() => setView(guidedPlanning ? "plan" : "trips")} className="flex items-center gap-2 shrink-0 hover:opacity-90 transition-opacity" aria-label="Home">

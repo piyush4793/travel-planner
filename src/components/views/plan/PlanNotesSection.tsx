@@ -1,4 +1,5 @@
 import { memo, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 type Props = {
   notes: string;
@@ -85,9 +86,9 @@ function PlanNotesSectionInner({ notes, onSave }: Props) {
         <span className="text-[11px] text-[#a8a293]">{value.length.toLocaleString()} / 4,000</span>
       </div>
 
-      {expanded && (
+      {expanded && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-end justify-center bg-[#16241d]/40 p-0 sm:items-center sm:p-4"
+          className="fixed inset-0 z-[60] flex items-end justify-center bg-[#16241d]/40 p-0 sm:items-center sm:p-4"
           onClick={() => setExpanded(false)}
           role="dialog"
           aria-modal="true"
@@ -122,7 +123,8 @@ function PlanNotesSectionInner({ notes, onSave }: Props) {
               <span className="text-[11px] text-[#a8a293]">{value.length.toLocaleString()} / 4,000</span>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
     </div>
   );

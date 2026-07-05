@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef, useCallback, Suspense } from "react";
+import { createPortal } from "react-dom";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../core/types";
@@ -624,9 +625,9 @@ export default function CountryPanel({
                 </div>
 
                 {/* Notes expand modal */}
-                {notesExpanded && (
+                {notesExpanded && createPortal(
                   <div
-                    className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4"
+                    className="fixed inset-0 z-[60] flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4"
                     onClick={() => setNotesExpanded(false)}
                     role="dialog"
                     aria-modal="true"
@@ -656,7 +657,8 @@ export default function CountryPanel({
                         <span className="text-[11px] text-gray-400">{notes.length.toLocaleString()} / 4,000</span>
                       </div>
                     </div>
-                  </div>
+                  </div>,
+                  document.body,
                 )}
               </div>
             )}
