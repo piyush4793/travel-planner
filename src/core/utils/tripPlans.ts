@@ -205,59 +205,121 @@ export const EXPERIENCE_CITY_LIMIT = 2;
  * nothing matches. Pure — shared by the day estimator and the engine's
  * auto-selection so they agree on which cities an experience focus implies.
  */
-export function topExperienceCities(
+/**
+ * Confidence that a city delivers an experience, highest wins:
+ *  3 — signature: the city is THE iconic place for it (authored `signatureExperiences`),
+ *  2 — authored: listed in the city's authored `experiences` array,
+ *  1 — derived: no authored array, matched from the city's content keywords,
+ *  0 — no match. An authored `experiences` array is authoritative: an experience
+ * omitted from it scores 0 and is never re-derived, so a genuine Fjords city
+ * stays ahead of one that merely name-drops one (e.g. Oslo → "Oslofjord").
+ * Pure. Exported so the day estimator, ranking and coverage checks share one
+ * definition of "how strongly does this city deliver this experience".
+ */
+export function cityExperienceStrength(
   rule: CountryRule,
-  selectedExperiences: string[],
-  limit: number = EXPERIENCE_CITY_LIMIT,
-): string[] {
-  if (selectedExperiences.length === 0) return [];
-  const byImportance = [...scoreCities(rule)].sort((a, b) => b.value - a.value);
-  // Confidence that a city delivers an experience: an authored `experiences`
-  // array is authoritative (2 = listed, 0 = deliberately not listed — never
-  // derive over it), otherwise fall back to deriving from the city's content
-  // (1 = keyword match). This keeps a genuine Fjords city (authored) ahead of a
-  // city that merely name-drops one (e.g. Oslo → "Oslofjord").
-  const strength = (cityName: string, exp: string): number => {
-    const cr = rule.cities[cityName];
-    if (Array.isArray(cr.experiences)) return cr.experiences.includes(exp) ? 2 : 0;
-    return matchCityExperiences(ruleCityText(cr), [exp]).includes(exp) ? 1 : 0;
-  };
-  // Cities delivering `exp`, strongest first (authored over derived, then base
-  // importance). Shared by both the single- and multi-experience paths.
-  const ranked = (exp: string): string[] =>
-    byImportance
-      .map((c) => ({ name: c.name, s: strength(c.name, exp), value: c.value }))
-      .filter((c) => c.s > 0)
-      .sort((a, b) => b.s - a.s || b.value - a.value)
-      .map((c) => c.name);
+  cityName: string,
+  experience: string,
+): number {
+  const cr = rule.cities[cityName];
+  if (!cr) return 0;
+  if (Array.isArray(cr.signatureExperiences) && cr.signatureExperiences.includes(experience)) return 3;
+  if (Array.isArray(cr.experiences)) return cr.experiences.includes(experience) ? 2 : 0;
+  return matchCityExperiences(ruleCityText(cr), [experience]).includes(experience) ? 1 : 0;
+}
 
-  if (selectedExperiences.length === 1) {
-    return ranked(selectedExperiences[0]).slice(0, Math.max(1, limit));
-  }
+/**
+ * Cities delivering `experience`, strongest first: by `cityExperienceStrength`
+ * (signature > authored > derived) then base importance (`scoreCities`).
+ */
+function rankedExperienceCities(rule: CountryRule, experience: string): string[] {
+  return scoreCities(rule)
+    .map((c) => ({ name: c.name, s: cityExperienceStrength(rule, c.name, experience), value: c.value }))
+    .filter((c) => c.s > 0)
+    .sort((a, b) => b.s - a.s || b.value - a.value)
+    .map((c) => c.name);
+}
 
+/**
+ * One champion city per experience (coverage-first): each experience contributes
+ * its single strongest city, and a city already covering an earlier experience
+ * is not added twice (a city satisfying several selected tags counts once). This
+ * is what makes Fjords + Northern Lights return one top fjords city AND one top
+ * northern-lights city, rather than the two biggest cities of a single theme.
+ */
+function experienceChampions(rule: CountryRule, experiences: string[]): string[] {
   const picked: string[] = [];
-  for (const exp of selectedExperiences) {
-    if (picked.some((name) => strength(name, exp) > 0)) continue;
-    const champion = ranked(exp)[0];
+  for (const exp of experiences) {
+    if (picked.some((name) => cityExperienceStrength(rule, name, exp) > 0)) continue;
+    const champion = rankedExperienceCities(rule, exp)[0];
     if (champion && !picked.includes(champion)) picked.push(champion);
   }
   return picked;
 }
 
 /**
- * Recommended trip length (days) for the current Plan-tab selections. Scope is
- * driven by, in priority order:
- *  1. explicitly picked cities → sum of their recommended days,
- *  2. focus experiences (no explicit cities) → sum of the top one or two cities
- *     that deliver those experiences best (via `topExperienceCities`), never every
- *     city that lists them,
- *  3. otherwise the travel-style default across the whole country.
- * The budget-tier factor (premium longer, budget shorter) only applies once the
- * user has actually scoped the plan (picked cities or experiences) — a pristine,
- * unscoped panel seeds to the style default so it lines up with the static
- * "Recommended" marker instead of silently diverging. Clamped to [1, maxDays].
- * Pure and side-effect free so the panel can re-seed its day slider whenever any
- * of these inputs change.
+ * Pick the cities that best deliver the selected experiences.
+ *
+ * With a single experience, returns its top `limit` cities, strongest first.
+ * With several, delegates to `experienceChampions` (one champion per theme) so
+ * the trip covers every chosen experience rather than piling onto whichever
+ * theme owns the highest-importance cities. Returns [] when nothing matches.
+ * Pure — shared by the day estimator and the engine's auto-selection so they
+ * agree on which cities an experience focus implies.
+ */
+export function topExperienceCities(
+  rule: CountryRule,
+  selectedExperiences: string[],
+  limit: number = EXPERIENCE_CITY_LIMIT,
+): string[] {
+  if (selectedExperiences.length === 0) return [];
+  if (selectedExperiences.length === 1) {
+    return rankedExperienceCities(rule, selectedExperiences[0]).slice(0, Math.max(1, limit));
+  }
+  return experienceChampions(rule, selectedExperiences);
+}
+
+/**
+ * Resolve the cities a plan is built around from composable intents (the single
+ * source of truth for both the engine pool and the day estimator, so suggested
+ * length always matches the cities actually planned):
+ *  - no experiences → just the picked cities,
+ *  - no picked cities → the experience champions,
+ *  - both → user picks are always kept, and every selected experience is
+ *    guaranteed a strong city. An experience already covered by a picked city
+ *    (authored or signature, i.e. strength >= 2 — NOT a loose derived match)
+ *    adds nothing; each uncovered experience contributes its champion.
+ * This is the "honor cities AND experiences together" union, and the reason a
+ * hand-picked city never wipes the vibe (and vice-versa). Returns [] when
+ * nothing is scoped. Pure.
+ */
+export function resolvePlannedCities(
+  rule: CountryRule,
+  selectedCities: string[],
+  selectedExperiences: string[],
+): string[] {
+  const picked = selectedCities.filter((n) => rule.cities[n]);
+  if (selectedExperiences.length === 0) return picked;
+  if (picked.length === 0) return topExperienceCities(rule, selectedExperiences);
+  const uncovered = selectedExperiences.filter(
+    (exp) => !picked.some((n) => cityExperienceStrength(rule, n, exp) >= 2),
+  );
+  if (uncovered.length === 0) return picked;
+  const champions = experienceChampions(rule, uncovered).filter((n) => !picked.includes(n));
+  return [...picked, ...champions];
+}
+
+/**
+ * Recommended trip length (days) for the current Plan-tab selections. The scope
+ * is the unified `resolvePlannedCities` set — picked cities together with a
+ * champion city for every uncovered experience — so the estimate always matches
+ * the cities the engine actually plans. When nothing is scoped, falls back to
+ * the travel-style default across the whole country. The budget-tier factor
+ * (premium longer, budget shorter) only applies once the user has actually
+ * scoped the plan — a pristine, unscoped panel seeds to the style default so it
+ * lines up with the static "Recommended" marker instead of silently diverging.
+ * Clamped to [1, maxDays]. Pure and side-effect free so the panel can re-seed
+ * its day slider whenever any of these inputs change.
  */
 export function recommendedDaysForSelection(opts: {
   rule: CountryRule | null | undefined;
@@ -273,14 +335,10 @@ export function recommendedDaysForSelection(opts: {
   const scoped = selectedCities.length > 0 || selectedExperiences.length > 0;
 
   let base: number;
-  if (rule && selectedCities.length > 0) {
-    base = selectedCities.reduce((s, n) => s + (rule.cities[n]?.recDays ?? 0), 0);
-  } else if (rule && selectedExperiences.length > 0) {
-    const matchDays = topExperienceCities(rule, selectedExperiences).reduce(
-      (s, n) => s + (rule.cities[n]?.recDays ?? 0),
-      0,
-    );
-    base = matchDays > 0 ? matchDays : defaultDaysForStyle(style, recDays, safeMax);
+  if (rule && scoped) {
+    const planned = resolvePlannedCities(rule, selectedCities, selectedExperiences);
+    const plannedDays = planned.reduce((s, n) => s + (rule.cities[n]?.recDays ?? 0), 0);
+    base = plannedDays > 0 ? plannedDays : defaultDaysForStyle(style, recDays, safeMax);
   } else {
     base = defaultDaysForStyle(style, recDays, safeMax);
   }
@@ -324,20 +382,16 @@ function getRuledItinerary(
           return hits > 0 ? { ...c, value: c.value * (1 + Math.min(0.6, 0.3 * hits)) } : c;
         })
       : scored;
-  const pool =
-    selectedCities.length > 0
-      ? boosted.filter((c) => selectedCities.includes(c.name))
-      : selectedExperiences.length > 0
-        ? (() => {
-            // Anchor an experience-only trip on the one or two cities that deliver
-            // it best, rather than every city that lists it. Fall back to the full
-            // pool if nothing matches so we always return a usable itinerary.
-            const top = topExperienceCities(effectiveRule, selectedExperiences);
-            return top.length > 0 ? boosted.filter((c) => top.includes(c.name)) : boosted;
-          })()
-        : boosted;
+  // Resolve the intended city set from the composable intents: picked cities are
+  // always kept, and each uncovered experience contributes its champion (so
+  // cities AND experiences are honored together). Empty → whole country (auto).
+  const planned = resolvePlannedCities(effectiveRule, selectedCities, selectedExperiences);
+  const pool = planned.length > 0 ? boosted.filter((c) => planned.includes(c.name)) : boosted;
   if (pool.length === 0) return null;
 
+  // Force-keep every city when the user explicitly picked cities (allocate only);
+  // an experience-only focus stays auto so the DP can drop the weaker champion to
+  // fit a short day budget.
   const allocation = planItinerary(pool, customDays, {
     includeAll: selectedCities.length > 0,
   });

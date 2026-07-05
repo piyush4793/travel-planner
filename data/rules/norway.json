@@ -452,6 +452,9 @@
               }
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Fjords"
         ]
       },
       "Gudvangen": {
@@ -701,6 +704,9 @@
               }
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Northern Lights"
         ]
       },
       "Voss": {
@@ -900,6 +906,10 @@
               }
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Fjords",
+          "Waterfalls"
         ]
       },
       "Tromso": {
@@ -1009,6 +1019,9 @@
               }
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Northern Lights"
         ]
       }
     },

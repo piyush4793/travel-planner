@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { generateTripPlan, getMaxRuleDays, getRecRuleDays, recommendedDaysForSelection, topExperienceCities, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../core/utils/tripPlans";
+import { generateTripPlan, getMaxRuleDays, getRecRuleDays, recommendedDaysForSelection, topExperienceCities, cityExperienceStrength, resolvePlannedCities, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../core/utils/tripPlans";
 import type { Country } from "../core/types";
 
 const COUNTRY_WITH_CITIES: Country = {
@@ -611,5 +611,116 @@ describe("topExperienceCities", () => {
       connections: [],
     } as never;
     expect(topExperienceCities(authoredVsDerived, ["Fjords"], 1)).toEqual(["Cove"]);
+  });
+})
+
+describe("cityExperienceStrength", () => {
+  // Signature ⊆ authored ⊆ derivable. Fixture exercises all four tiers.
+  const RULE = {
+    cityOrder: ["Icon", "Listed", "Derived", "Denied"],
+    cities: {
+      // Signature: authored Fjords AND flagged as THE iconic fjords place.
+      Icon: { name: "Icon", minDays: 1, recDays: 2, maxDays: 3, experiences: ["Fjords", "Waterfalls"], signatureExperiences: ["Fjords"], days: [{ theme: "Fjord", activities: [{ name: "Cruise" }] }] },
+      // Authored but not signature.
+      Listed: { name: "Listed", minDays: 1, recDays: 2, maxDays: 3, experiences: ["Fjords"], days: [{ theme: "Fjord day", activities: [{ name: "Boat" }] }] },
+      // No authored array → derive from content ("fjord" keyword).
+      Derived: { name: "Derived", minDays: 1, recDays: 2, maxDays: 3, days: [{ theme: "Walk by the fjord", activities: [{ name: "Stroll" }] }] },
+      // Authored array present but Fjords deliberately omitted → strength 0.
+      Denied: { name: "Denied", minDays: 1, recDays: 2, maxDays: 3, experiences: ["Food"], days: [{ theme: "Stroll by the fjord promenade", activities: [{ name: "Cafe" }] }] },
+    },
+    connections: [],
+  } as never;
+
+  it("ranks signature > authored > derived > none", () => {
+    expect(cityExperienceStrength(RULE, "Icon", "Fjords")).toBe(3);
+    expect(cityExperienceStrength(RULE, "Listed", "Fjords")).toBe(2);
+    expect(cityExperienceStrength(RULE, "Derived", "Fjords")).toBe(1);
+  });
+
+  it("treats an authored array as authoritative — omitted tags score 0 even if content mentions them", () => {
+    expect(cityExperienceStrength(RULE, "Denied", "Fjords")).toBe(0);
+  });
+
+  it("returns 0 for an unknown city", () => {
+    expect(cityExperienceStrength(RULE, "Nowhere", "Fjords")).toBe(0);
+  });
+
+  it("lets a signature city win its theme over a higher-importance authored city", () => {
+    // Hub is far more important (recDays 4) and authors Fjords, but Gem is the
+    // signature fjords place → Gem must rank first.
+    const rule = {
+      cityOrder: ["Hub", "Gem"],
+      cities: {
+        Hub: { name: "Hub", minDays: 1, recDays: 4, maxDays: 5, experiences: ["Fjords"], days: [{ theme: "City", activities: [{ name: "Walk" }] }] },
+        Gem: { name: "Gem", minDays: 1, recDays: 1, maxDays: 2, experiences: ["Fjords"], signatureExperiences: ["Fjords"], days: [{ theme: "Fjord", activities: [{ name: "Cruise" }] }] },
+      },
+      connections: [],
+    } as never;
+    expect(topExperienceCities(rule, ["Fjords"], 1)).toEqual(["Gem"]);
+  });
+})
+
+describe("resolvePlannedCities — composable intent union", () => {
+  // Oslo derives (not authors) Fjords via a name-drop; Flam is the signature
+  // fjords city; Lofoten/Tromso author Northern Lights (Lofoten is signature).
+  const RULE = {
+    cityOrder: ["Oslo", "Flam", "Lofoten", "Tromso"],
+    cities: {
+      Oslo: { name: "Oslo", minDays: 1, recDays: 2, maxDays: 3, days: [{ theme: "Stroll the Oslofjord waterfront", activities: [{ name: "Walk" }] }] },
+      Flam: { name: "Flam", minDays: 1, recDays: 2, maxDays: 3, experiences: ["Fjords"], signatureExperiences: ["Fjords"], days: [{ theme: "Fjord cruise", activities: [{ name: "Boat" }] }] },
+      Lofoten: { name: "Lofoten", minDays: 1, recDays: 3, maxDays: 4, experiences: ["Northern Lights"], signatureExperiences: ["Northern Lights"], days: [{ theme: "Aurora", activities: [{ name: "Sky" }] }] },
+      Tromso: { name: "Tromso", minDays: 1, recDays: 3, maxDays: 4, experiences: ["Northern Lights"], days: [{ theme: "Aurora hunt", activities: [{ name: "Camp" }] }] },
+    },
+    connections: [],
+  } as never;
+
+  it("returns only picked cities when no experiences are selected", () => {
+    expect(resolvePlannedCities(RULE, ["Oslo", "Flam"], [])).toEqual(["Oslo", "Flam"]);
+  });
+
+  it("falls back to experience champions when no cities are picked", () => {
+    expect(resolvePlannedCities(RULE, [], ["Fjords", "Northern Lights"])).toEqual(["Flam", "Lofoten"]);
+  });
+
+  it("honors picked cities AND experiences together (the union)", () => {
+    // Oslo is kept; Fjords is uncovered (Oslo only DERIVES it) → Flam added;
+    // Northern Lights uncovered → Lofoten added.
+    expect(resolvePlannedCities(RULE, ["Oslo"], ["Fjords", "Northern Lights"])).toEqual(["Oslo", "Flam", "Lofoten"]);
+  });
+
+  it("does not let a loose derived match suppress a genuine champion", () => {
+    // Oslo derives Fjords (strength 1) but that must NOT count as coverage —
+    // the real fjords champion Flam still joins.
+    expect(resolvePlannedCities(RULE, ["Oslo"], ["Fjords"])).toEqual(["Oslo", "Flam"]);
+  });
+
+  it("adds nothing when a picked city already authors the experience", () => {
+    expect(resolvePlannedCities(RULE, ["Flam"], ["Fjords"])).toEqual(["Flam"]);
+  });
+
+  it("adds exactly one champion for a single uncovered experience", () => {
+    // Northern Lights has two matching cities, but only one champion is added.
+    expect(resolvePlannedCities(RULE, ["Flam"], ["Northern Lights"])).toEqual(["Flam", "Lofoten"]);
+  });
+
+  it("ignores unknown picked cities", () => {
+    expect(resolvePlannedCities(RULE, ["Atlantis", "Flam"], [])).toEqual(["Flam"]);
+  });
+
+  it("keeps the day estimate in step with the resolved union", () => {
+    // Oslo(2) + Flam(2, added champion) = 4 recommended days.
+    const planned = resolvePlannedCities(RULE, ["Oslo"], ["Fjords"]);
+    const expected = planned.reduce((s, n) => s + (RULE as never as { cities: Record<string, { recDays: number }> }).cities[n].recDays, 0);
+    expect(
+      recommendedDaysForSelection({ rule: RULE, style: "explorer", recDays: 10, maxDays: 20, selectedCities: ["Oslo"], selectedExperiences: ["Fjords"] }),
+    ).toBe(expected);
+  });
+
+  it("builds an itinerary that visits both the picked city and the experience champion", () => {
+    const country = { name: "Fjordland", lat: 0, lng: 0, bestMonths: ["Jun"], budget: "₹1L–₹2L", experiences: ["Fjords"] } as never;
+    const plan = generateTripPlan(country, "custom" as never, ["Oslo"], 4, RULE, "couple", ["Fjords"]);
+    const labels = plan.days.map((d) => d.label).join();
+    expect(labels).toContain("Oslo");
+    expect(labels).toContain("Flam");
   });
 })

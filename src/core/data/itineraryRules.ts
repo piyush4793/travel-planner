@@ -19,6 +19,12 @@ export type CityRule = {
   note?: string;
   /** Optional authored override for the experiences this city satisfies. */
   experiences?: string[];
+  /**
+   * Subset of `experiences` for which this city is THE iconic place (e.g.
+   * Geirangerfjord for Fjords). Signature matches outrank ordinary authored
+   * matches so a natural wonder wins its theme over a bigger hub city.
+   */
+  signatureExperiences?: string[];
   days: RuleDayPlan[];
 };
 
