@@ -61,6 +61,31 @@ function hasItems<T>(v: T[] | undefined): v is T[] {
 }
 
 /**
+ * Merge freshly-enriched rule fields onto user-authored cities. Cities are
+ * matched by normalised name; for each match, seasonality/experience fields the
+ * user left empty are backfilled from the rule while any authored value wins.
+ * User-only cities (absent from the rule) and city order are preserved.
+ *
+ * Without this, a country edited before these fields existed would keep its
+ * stale cities forever, since `mergeCountryData` otherwise treats `cities` as
+ * all-or-nothing and discards the enriched copy whenever the base has any.
+ */
+function mergeCities(base: CityEntry[], rich: CityEntry[] | undefined): CityEntry[] {
+  if (!hasItems(rich)) return base;
+  const byName = new Map(rich.map((c) => [c.name.trim().toLowerCase(), c]));
+  return base.map((c) => {
+    const r = byName.get(c.name.trim().toLowerCase());
+    if (!r) return c;
+    return {
+      ...c,
+      bestMonths: hasItems(c.bestMonths) ? c.bestMonths : r.bestMonths,
+      worstMonths: hasItems(c.worstMonths) ? c.worstMonths : r.worstMonths,
+      experiences: hasItems(c.experiences) ? c.experiences : r.experiences,
+    };
+  });
+}
+
+/**
  * Overlay loaded rule data onto a (possibly minimal) Country, filling only the
  * fields the base is missing. User-authored values on the base always win, so
  * this safely hydrates catalog stubs and combine-with targets without clobbering
@@ -81,7 +106,7 @@ export function mergeCountryData(base: Country, data: ConsolidatedCountry | null
     combo: hasItems(base.combo) ? base.combo : rich.combo,
     landmark: base.landmark ?? rich.landmark,
     travelStyle: base.travelStyle ?? rich.travelStyle,
-    cities: hasItems(base.cities) ? base.cities : rich.cities,
+    cities: hasItems(base.cities) ? mergeCities(base.cities, rich.cities) : rich.cities,
     stopoverNote: base.stopoverNote ?? rich.stopoverNote,
     links: hasItems(base.links) ? base.links : rich.links,
   };

@@ -133,4 +133,51 @@ describe("mergeCountryData", () => {
     // still fills fields the user left empty
     expect(merged.combo).toEqual(["India", "Maldives"]);
   });
+
+  it("backfills empty per-city seasonality/experience fields from the rule", () => {
+    const rich: ConsolidatedCountry = {
+      ...CONSOLIDATED,
+      cities: [
+        {
+          name: "Colombo",
+          lat: 6.9,
+          lng: 79.8,
+          bestMonths: ["January"],
+          worstMonths: ["May"],
+          experiences: ["Beaches"],
+        },
+      ],
+    };
+    const edited: Country = {
+      ...MINIMAL_STUB,
+      cities: [{ name: "Colombo", lat: 6.9, lng: 79.8, notes: "user note" }],
+    };
+    const merged = mergeCountryData(edited, rich);
+    const colombo = merged.cities?.[0];
+    expect(colombo?.notes).toBe("user note");
+    expect(colombo?.bestMonths).toEqual(["January"]);
+    expect(colombo?.worstMonths).toEqual(["May"]);
+    expect(colombo?.experiences).toEqual(["Beaches"]);
+  });
+
+  it("keeps authored per-city values and preserves user-only cities", () => {
+    const rich: ConsolidatedCountry = {
+      ...CONSOLIDATED,
+      cities: [
+        { name: "Colombo", lat: 6.9, lng: 79.8, worstMonths: ["May"], experiences: ["Beaches"] },
+      ],
+    };
+    const edited: Country = {
+      ...MINIMAL_STUB,
+      cities: [
+        { name: "Colombo", lat: 6.9, lng: 79.8, worstMonths: ["December"], experiences: ["Nightlife"] },
+        { name: "My Village", lat: 7.0, lng: 80.0 },
+      ],
+    };
+    const merged = mergeCountryData(edited, rich);
+    expect(merged.cities?.[0].worstMonths).toEqual(["December"]);
+    expect(merged.cities?.[0].experiences).toEqual(["Nightlife"]);
+    expect(merged.cities?.[1].name).toBe("My Village");
+    expect(merged.cities).toHaveLength(2);
+  });
 });
