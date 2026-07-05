@@ -78,7 +78,7 @@ src/
 │   ├── ai/
 │   │   └── llmProvider.ts         # LLM provider abstraction (OpenAI/Claude/Gemini)
 │   ├── pdfExport.ts               # Print-to-PDF via hidden iframe (mobile: new tab)
-│   ├── pdfDocument.ts             # Styled PDF Blob via jsPDF (lazy chunk) for native file share; pdfSafe() sanitizes to Latin-1
+│   ├── pdfDocument.ts             # Styled PDF Blob via jsPDF (lazy chunk) for native file share; pdfSafe() sanitizes to Latin-1; notes reuse parseNoteItems (practicalNotes.ts)
 │   ├── importParser.ts            # Multi-strategy text/link plan parser
 │   ├── wikiImages.ts              # Wikimedia Commons image fetch + cache
 │   ├── vehicleMarkers.ts          # Cinematic vehicle SVG assets + DOMParser-based node builder (no innerHTML)

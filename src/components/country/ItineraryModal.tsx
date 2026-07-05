@@ -5,6 +5,7 @@ import { extractCityFromLabel, planCostBasisIcon, planCostBasisLabel } from "../
 import type { CountryRule } from "../../core/data/itineraryRules";
 import { type TransportType, TRANSPORT_EMOJI, detectTransport } from "../../core/utils/transport";
 import { buildRoute } from "../../core/utils/googleMapsRoute";
+import { parseNoteItems } from "../../core/utils/practicalNotes";
 import ModalShell from "../shared/ModalShell";
 
 // ─── Day grouping ─────────────────────────────────────────────────────────────
@@ -229,21 +230,6 @@ function mapsUrl(query: string, city: string): string {
 }
 
 // ─── Practical Notes ──────────────────────────────────────────────────────────
-
-type NoteItem = { icon: string; label: string; value: string };
-
-function parseNoteItems(note: string): NoteItem[] {
-  const parts = note.split(" | ").map((s) => s.trim()).filter(Boolean);
-  if (parts.length <= 1) return [{ icon: "📝", label: "", value: note }];
-  return parts.map((part) => {
-    if (part.includes("→") && part.includes(":")) return { icon: "🚆", label: "Route", value: part };
-    if (/^SIM:/i.test(part)) return { icon: "📱", label: "SIM", value: part.replace(/^SIM:\s*/i, "") };
-    if (/^Extras?:/i.test(part)) return { icon: "💡", label: "Tips", value: part.replace(/^Extras?:\s*/i, "") };
-    if (part.includes("·")) return { icon: "📲", label: "Apps", value: part };
-    if (/best\s+(month|for|time)/i.test(part)) return { icon: "📅", label: "Timing", value: part };
-    return { icon: "📝", label: "Note", value: part };
-  });
-}
 
 function PracticalNotes({ note }: { note: string }) {
   const items = parseNoteItems(note);

@@ -1,6 +1,7 @@
 import { jsPDF } from "jspdf";
 import type { TripPlan } from "../core/utils/tripPlans";
 import { extractPlanCities } from "../core/utils/tripPlans";
+import { parseNoteItems } from "../core/utils/practicalNotes";
 import type { Country } from "../core/types";
 
 // A4 in points (jsPDF unit: "pt").
@@ -22,7 +23,6 @@ const DAY_BG: RGB = [248, 250, 252];
 const WHITE: RGB = [255, 255, 255];
 const AMBER_BG: RGB = [255, 251, 235];
 const AMBER_INK: RGB = [146, 64, 14];
-const NOTE_BG: RGB = [238, 242, 255];
 
 // jsPDF's built-in fonts only cover Latin-1, so map the glyphs our content
 // commonly uses (rupee sign, arrows, smart quotes, dashes) to safe equivalents
@@ -68,6 +68,29 @@ export function buildItineraryPdfBlob(plan: TripPlan, country: Country, homeCoun
     doc.setFont("helvetica", bold ? "bold" : "normal");
     doc.setFontSize(size);
     return doc.splitTextToSize(pdfSafe(text), maxW) as string[];
+  };
+
+  // Word-wrap where the first line has a narrower width (to make room for an
+  // inline label prefix) and continuation lines use the full block width.
+  const wrapWithIndent = (text: string, size: number, firstMaxW: number, restMaxW: number): string[] => {
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(size);
+    const words = pdfSafe(text).split(/\s+/).filter(Boolean);
+    const lines: string[] = [];
+    let cur = "";
+    let maxW = firstMaxW;
+    for (const word of words) {
+      const trial = cur ? `${cur} ${word}` : word;
+      if (cur && doc.getTextWidth(trial) > maxW) {
+        lines.push(cur);
+        cur = word;
+        maxW = restMaxW;
+      } else {
+        cur = trial;
+      }
+    }
+    if (cur) lines.push(cur);
+    return lines.length ? lines : [""];
   };
 
   type BlockOpts = {
@@ -344,33 +367,77 @@ export function buildItineraryPdfBlob(plan: TripPlan, country: Country, homeCoun
     drawDayCard(day);
   }
 
-  // ── Note callout ──
+  // ── Practical notes ──
+  // Mirror the on-screen itinerary: parse the note into labelled items and lay
+  // each out as an accent dot + bold label + value (dropping the web's emoji,
+  // which the Latin-1 core font can't render).
   if (plan.note) {
-    const cardPadX = 16, cardPadY = 12;
-    const titleH = 15, bodySize = 10, bodyLH = bodySize * 1.4;
+    const cardPadX = 16, cardPadY = 14;
+    const titleSize = 8.5, titleH = 16;
+    const labelSize = 8, valueSize = 10, valueLH = valueSize * 1.4;
+    const rowGap = 9, dotGap = 14, labelGap = 6;
     const innerW = CONTENT_W - cardPadX * 2;
-    const bodyLines = wrap(plan.note, bodySize, false, innerW);
-    const totalH = cardPadY + titleH + bodyLines.length * bodyLH + cardPadY;
+    const contentX = MARGIN + cardPadX;
+    const items = parseNoteItems(plan.note);
+    const single = items.length === 1 && !items[0].label;
+
+    type Row = { label: string; labelW: number; textX: number; firstIndent: number; lines: string[] };
+    const rows: Row[] = items.map((item) => {
+      if (single || !item.label) {
+        const lines = wrap(item.value, valueSize, false, innerW);
+        return { label: "", labelW: 0, textX: contentX, firstIndent: 0, lines };
+      }
+      const label = item.label.toUpperCase();
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(labelSize);
+      const labelW = doc.getTextWidth(pdfSafe(label));
+      const textX = contentX + dotGap;
+      const blockW = innerW - dotGap;
+      const firstIndent = labelW + labelGap;
+      const lines = wrapWithIndent(item.value, valueSize, blockW - firstIndent, blockW);
+      return { label, labelW, textX, firstIndent, lines };
+    });
+
+    let bodyH = 0;
+    rows.forEach((r, i) => { bodyH += r.lines.length * valueLH + (i < rows.length - 1 ? rowGap : 0); });
+    const totalH = cardPadY + titleH + bodyH + cardPadY;
+
     ensureSpace(totalH + 10);
     cursor.y += 4;
     const y0 = cursor.y;
 
-    doc.setFillColor(NOTE_BG[0], NOTE_BG[1], NOTE_BG[2]);
-    doc.roundedRect(MARGIN, y0, CONTENT_W, totalH, 8, 8, "F");
-    doc.setFillColor(ACCENT[0], ACCENT[1], ACCENT[2]);
-    doc.rect(MARGIN, y0 + 9, 3, totalH - 18, "F");
+    doc.setFillColor(DAY_BG[0], DAY_BG[1], DAY_BG[2]);
+    doc.setDrawColor(RULE[0], RULE[1], RULE[2]);
+    doc.setLineWidth(0.75);
+    doc.roundedRect(MARGIN, y0, CONTENT_W, totalH, 8, 8, "FD");
 
-    const tx = MARGIN + cardPadX;
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(8.5);
-    doc.setTextColor(ACCENT[0], ACCENT[1], ACCENT[2]);
-    doc.text("GOOD TO KNOW", tx, y0 + cardPadY + 8.5, { charSpace: 1 });
+    doc.setFontSize(titleSize);
+    doc.setTextColor(MUTED[0], MUTED[1], MUTED[2]);
+    doc.text("PRACTICAL NOTES", contentX, y0 + cardPadY + titleSize * 0.9, { charSpace: 1.2 });
 
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(bodySize);
-    doc.setTextColor(SLATE[0], SLATE[1], SLATE[2]);
-    let ny = y0 + cardPadY + titleH + bodySize * 0.9;
-    for (const line of bodyLines) { doc.text(line, tx, ny); ny += bodyLH; }
+    let ry = y0 + cardPadY + titleH;
+    for (const r of rows) {
+      const baseline = ry + valueSize * 0.9;
+      if (r.label) {
+        doc.setFillColor(ACCENT[0], ACCENT[1], ACCENT[2]);
+        doc.circle(contentX + 3, ry + valueSize * 0.5, 1.7, "F");
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(labelSize);
+        doc.setTextColor(MUTED[0], MUTED[1], MUTED[2]);
+        doc.text(r.label, r.textX, baseline, { charSpace: 0.4 });
+      }
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(valueSize);
+      doc.setTextColor(SLATE[0], SLATE[1], SLATE[2]);
+      let ly = baseline;
+      r.lines.forEach((line, li) => {
+        const lx = li === 0 ? r.textX + r.firstIndent : r.textX;
+        doc.text(line, lx, ly);
+        ly += valueLH;
+      });
+      ry += r.lines.length * valueLH + rowGap;
+    }
     cursor.y = y0 + totalH + 8;
   }
 
