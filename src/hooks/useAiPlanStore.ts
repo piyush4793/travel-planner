@@ -142,5 +142,10 @@ export function useAiPlanStore() {
     [getPlans],
   );
 
-  return { getPlans, savePlan, replacePlan, deletePlan, getAllDestinations, canAddNew, maxPlans: MAX_CUSTOM_PLANS };
+  // Soft refresh: re-read saved AI plans from localStorage.
+  const reload = useCallback(() => {
+    setStore(loadStore());
+  }, []);
+
+  return { getPlans, savePlan, replacePlan, deletePlan, getAllDestinations, canAddNew, reload, maxPlans: MAX_CUSTOM_PLANS };
 }

@@ -181,4 +181,20 @@ describe("useTripStore — P0", () => {
     });
     expect(result.current.mergedTripGroups.some((g) => g.main === COUNTRY.CUSTOM)).toBe(false);
   });
+
+  it("reload re-hydrates custom + deleted overrides from localStorage (soft refresh)", async () => {
+    const { result } = renderHook(() => useTripStore([], []));
+
+    expect(result.current.mergedTripGroups.some((g) => g.main === COUNTRY.CUSTOM)).toBe(false);
+
+    localStorage.setItem(
+      LS_KEYS.TRIP_CUSTOMS,
+      JSON.stringify([{ main: COUNTRY.CUSTOM, addOns: [], region: REGION.EUROPE }]),
+    );
+    act(() => { result.current.reload(); });
+
+    await waitFor(() => {
+      expect(result.current.mergedTripGroups.some((g) => g.main === COUNTRY.CUSTOM)).toBe(true);
+    });
+  });
 });

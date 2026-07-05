@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { saveLS } from "../core/storage";
+import { loadLS, saveLS } from "../core/storage";
 
 /**
  * Persisted Set<string> backed by localStorage.
@@ -49,5 +49,15 @@ export function usePersistedSet(key: string, init: () => Set<string>) {
     });
   }, []);
 
-  return { set, setSet, toggle, add, remove } as const;
+  // Re-hydrate from localStorage (soft refresh — e.g. pull-to-refresh, or after
+  // an external import wrote new data). Guards against non-string-array payloads.
+  const reload = useCallback(() => {
+    const raw = loadLS<unknown>(key, []);
+    const next = Array.isArray(raw)
+      ? raw.filter((v): v is string => typeof v === "string")
+      : [];
+    setSet(new Set(next));
+  }, [key]);
+
+  return { set, setSet, toggle, add, remove, reload } as const;
 }

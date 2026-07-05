@@ -131,3 +131,26 @@ describe("usePersistedSet — cross-tab sync", () => {
     removeSpy.mockRestore();
   });
 });
+
+describe("usePersistedSet — reload (soft refresh)", () => {
+  it("re-hydrates the set from localStorage on reload", () => {
+    const { result } = renderHook(() => usePersistedSet("reload_set", () => new Set(["Japan"])));
+
+    localStorage.setItem("reload_set", JSON.stringify(["Vietnam", "Thailand"]));
+    act(() => { result.current.reload(); });
+
+    expect([...result.current.set]).toEqual(["Vietnam", "Thailand"]);
+  });
+
+  it("filters non-string members and tolerates a missing/invalid payload", () => {
+    const { result } = renderHook(() => usePersistedSet("reload_set2", () => new Set(["Japan"])));
+
+    localStorage.setItem("reload_set2", JSON.stringify(["Peru", 42, null, "Chile"]));
+    act(() => { result.current.reload(); });
+    expect([...result.current.set]).toEqual(["Peru", "Chile"]);
+
+    localStorage.setItem("reload_set2", JSON.stringify({ not: "an array" }));
+    act(() => { result.current.reload(); });
+    expect([...result.current.set]).toEqual([]);
+  });
+});

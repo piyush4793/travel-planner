@@ -12,6 +12,8 @@ export type BudgetBasisState = {
   setGlobalBasis: (basis: BudgetBasis) => void;
   /** Temporarily change the active basis (e.g. Trips "play around"); not persisted. */
   setActiveBasis: (basis: BudgetBasis) => void;
+  /** Re-read the persisted default from localStorage (soft refresh). */
+  reload: () => void;
 };
 
 /**
@@ -35,5 +37,12 @@ export function useBudgetBasis(): BudgetBasisState {
     setActiveBasis(basis);
   }, []);
 
-  return { globalBasis, activeBasis, setGlobalBasis, setActiveBasis };
+  const reload = useCallback(() => {
+    const stored = loadLS<BudgetBasis>(LS_KEYS.BUDGET_BASIS, DEFAULT_BUDGET_BASIS);
+    const next = isBudgetBasis(stored) ? stored : DEFAULT_BUDGET_BASIS;
+    setGlobalBasisState(next);
+    setActiveBasis(next);
+  }, []);
+
+  return { globalBasis, activeBasis, setGlobalBasis, setActiveBasis, reload };
 }

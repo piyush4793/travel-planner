@@ -279,6 +279,16 @@ export function useCountryStore() {
     setDeleted([]);
   }, [myList]);
 
+  // Soft refresh: re-read persisted country data from localStorage without a
+  // full page reload (drives pull-to-refresh and post-import re-hydration).
+  const reload = useCallback(() => {
+    setCustoms(loadLS(LS_KEYS.CUSTOMS, []));
+    setDeleted(loadLS(LS_KEYS.DELETED, []));
+    myList.reload();
+    visited.reload();
+    favorites.reload();
+  }, [myList.reload, visited.reload, favorites.reload]);
+
   return {
     allCountries,
     myListCountries,
@@ -292,6 +302,7 @@ export function useCountryStore() {
     addToList,
     addManyToList,
     resetToDefaultList,
+    reload,
     catalog: CATALOG,
   } as const;
 }

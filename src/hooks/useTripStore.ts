@@ -45,5 +45,11 @@ export function useTripStore(myListNames: string[], countries: Country[]) {
     setTripCustoms((prev) => prev.filter((g) => g.main !== main));
   }, []);
 
-  return { mergedTripGroups, saveTrip, deleteTrip } as const;
+  // Soft refresh: re-read persisted trip overrides from localStorage.
+  const reload = useCallback(() => {
+    setTripCustoms(loadLS(LS_KEYS.TRIP_CUSTOMS, []));
+    setTripDeleted(loadLS(LS_KEYS.TRIP_DELETED, []));
+  }, []);
+
+  return { mergedTripGroups, saveTrip, deleteTrip, reload } as const;
 }

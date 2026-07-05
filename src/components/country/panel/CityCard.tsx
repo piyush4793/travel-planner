@@ -103,11 +103,11 @@ function CityCardInner({ city, selectable, selected, onToggle, activeExperiences
         }
       >
         <div className="flex items-center justify-between gap-2">
-          <span className={`flex items-center gap-1 text-sm font-bold ${t.title(on)}`}>
-            {city.name}
+          <span className={`flex min-w-0 flex-1 items-center gap-1 text-sm font-bold ${t.title(on)}`}>
+            <span className="truncate">{city.name}</span>
             {matchesFocus && (
               <span
-                className={`text-[10px] ${t.star(on)}`}
+                className={`shrink-0 text-[10px] ${t.star(on)}`}
                 aria-hidden="true"
                 title="Matches your focus experiences"
               >
@@ -168,9 +168,9 @@ function CityCardInner({ city, selectable, selected, onToggle, activeExperiences
   return (
     <div className="rounded-xl border border-gray-100 bg-white/80 px-3.5 py-2.5 shadow-sm shadow-slate-100">
       <div className="flex items-center justify-between gap-2">
-        <p className="text-sm font-bold text-gray-800">{city.name}</p>
+        <p className="min-w-0 flex-1 truncate text-sm font-bold text-gray-800">{city.name}</p>
         {bestMonths.length > 0 && (
-          <div className="flex gap-1">
+          <div className="flex shrink-0 gap-1">
             {bestMonths.slice(0, 3).map((month) => (
               <span key={month} className="rounded bg-emerald-100 px-1.5 py-0.5 text-[9px] font-bold text-emerald-700">
                 {month.slice(0, 3)}

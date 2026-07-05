@@ -14,6 +14,7 @@ const CountryPanel = lazy(() => import("./components/country/CountryPanel"));
 import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
 import { applyFilters, type BudgetTier } from "./core/utils/filterLogic";
 import { useBudgetBasis } from "./hooks/useBudgetBasis";
+import { usePullToRefresh } from "./hooks/usePullToRefresh";
 import { loadLS, saveLS } from "./core/storage";
 import { LS_KEYS } from "./core/lsKeys";
 import { useHashView, type AppView } from "./hooks/useHashView";
@@ -61,7 +62,7 @@ export default function App() {
   const [selectedMonth, setSelectedMonth] = useState<string[]>([]);
   const [visitedFilter, setVisitedFilter] = useState<VisitedFilter>("all");
   const [budgetFilter, setBudgetFilter] = useState<BudgetTier>("all");
-  const { globalBasis, activeBasis, setGlobalBasis, setActiveBasis } = useBudgetBasis();
+  const { globalBasis, activeBasis, setGlobalBasis, setActiveBasis, reload: reloadBudgetBasis } = useBudgetBasis();
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const closeCountryPanel = useBackDismiss(selectedCountry !== null, () => setSelectedCountry(null));
   const [formTarget, setFormTarget] = useState<Country | null>(null);
@@ -134,6 +135,28 @@ export default function App() {
   }, []);
 
   const trips = useTripStore(store.myListNames, store.myListCountries);
+
+  // Soft refresh (pull-to-refresh): re-hydrate every persisted store from
+  // localStorage without a full page reload — picks up edits made in another
+  // tab or by an external import/restore.
+  const softRefresh = useCallback(() => {
+    store.reload();
+    trips.reload();
+    aiPlanStore.reload();
+    reloadBudgetBasis();
+    setHomeCountry(loadLS(LS_KEYS.HOME_COUNTRY, "India"));
+    setLastBackupAt(loadLS<string>(LS_KEYS.LAST_BACKUP, ""));
+  }, [store.reload, trips.reload, aiPlanStore.reload, reloadBudgetBasis]);
+
+  // Disable the pull gesture while an overlay owns the screen, so its own
+  // scrolling/gestures aren't hijacked.
+  const overlayOpen =
+    selectedCountry !== null || formTarget !== null || settingsOpen ||
+    chatOpen || aiPlanResult !== null || menuOpen || cinematicActive;
+  const { containerRef: pullRef, pullDistance, refreshing, threshold: pullThreshold } = usePullToRefresh({
+    onRefresh: softRefresh,
+    enabled: isMobile && !overlayOpen,
+  });
 
   const filtered = useMemo(
     () => applyFilters(store.myListCountries, selectedMonth, [], store.visited.set, visitedFilter, budgetFilter, activeBasis),
@@ -379,7 +402,29 @@ export default function App() {
       )}
 
 
-      <div className="flex-1 relative overflow-hidden">
+      <div className="flex-1 relative overflow-hidden" ref={pullRef}>
+        {/* Pull-to-refresh indicator (mobile) — soft re-hydrate, no page reload */}
+        {(pullDistance > 0 || refreshing) && (
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 z-30 flex justify-center"
+            style={{
+              transform: `translateY(${refreshing ? 10 : Math.max(0, pullDistance - 20)}px)`,
+              opacity: refreshing ? 1 : Math.min(1, pullDistance / pullThreshold),
+            }}
+            aria-live="polite"
+          >
+            <div className="mt-1 flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 shadow-md ring-1 ring-black/5">
+              <span
+                className={`inline-block h-4 w-4 rounded-full border-2 border-emerald-600 border-t-transparent ${refreshing ? "motion-safe:animate-spin" : ""}`}
+                style={refreshing ? undefined : { transform: `rotate(${pullDistance * 3}deg)` }}
+                aria-hidden="true"
+              />
+              <span className="text-[11px] font-semibold text-emerald-800">
+                {refreshing ? "Refreshing…" : pullDistance >= pullThreshold ? "Release to refresh" : "Pull to refresh"}
+              </span>
+            </div>
+          </div>
+        )}
         {/* MapView — hidden by default, shown during Cinematic mode */}
         <div className={`absolute inset-0 transition-opacity duration-300 ${
           cinematicActive ? "z-10 opacity-100" : "-z-10 opacity-0 pointer-events-none"

@@ -27,9 +27,9 @@ function PlanProgressSummaryInner({ plan }: Props) {
         </span>
       </div>
       {cities.length > 0 && (
-        <div className="scrollbar-hide mt-2.5 flex items-center gap-1.5 overflow-x-auto">
+        <div className="mt-2.5 flex flex-wrap items-center gap-x-1.5 gap-y-1.5">
           {cities.map((city, i) => (
-            <span key={city} className="flex shrink-0 items-center gap-1.5">
+            <span key={city} className="flex items-center gap-x-1.5">
               <span className="rounded-full bg-[#f4f1e8] px-2.5 py-1 text-[10px] font-semibold text-[#1e2a25]">{city}</span>
               {i < cities.length - 1 && <span aria-hidden="true" className="text-[10px] text-[#cfc9b8]">→</span>}
             </span>
