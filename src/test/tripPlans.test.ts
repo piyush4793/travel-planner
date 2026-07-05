@@ -563,4 +563,53 @@ describe("topExperienceCities", () => {
     expect(labels).toContain("Bb");
     expect(labels).not.toContain("Cc");
   });
+
+  // Two experiences that never co-occur in one city — mirrors Norway's
+  // Fjords vs Northern Lights. Coverage must include the best city of EACH.
+  const COVERAGE_RULE = {
+    cityOrder: ["Fjordly", "Auroraville", "Auroratown"],
+    cities: {
+      // Best fjords city, but modest importance (recDays 2).
+      Fjordly: { name: "Fjordly", minDays: 1, recDays: 2, maxDays: 3, experiences: ["Fjords"], days: [{ theme: "Fjord cruise", activities: [{ name: "Boat" }] }] },
+      // Two high-importance aurora cities (recDays 3) that would monopolise a
+      // global top-2 ranking and shut fjords out entirely.
+      Auroraville: { name: "Auroraville", minDays: 1, recDays: 3, maxDays: 4, experiences: ["Northern Lights"], days: [{ theme: "Aurora hunt", activities: [{ name: "Sky" }] }] },
+      Auroratown: { name: "Auroratown", minDays: 1, recDays: 3, maxDays: 4, experiences: ["Northern Lights"], days: [{ theme: "Aurora camp", activities: [{ name: "Camp" }] }] },
+    },
+    connections: [],
+  } as never;
+
+  it("covers every selected experience, not just the highest-importance theme", () => {
+    const cities = topExperienceCities(COVERAGE_RULE, ["Fjords", "Northern Lights"]);
+    expect(cities).toContain("Fjordly");
+    expect(cities.some((c) => c === "Auroraville" || c === "Auroratown")).toBe(true);
+    expect(cities).toHaveLength(2);
+  });
+
+  it("counts a city once when it satisfies multiple selected experiences", () => {
+    const combo = {
+      cityOrder: ["Both", "Solo"],
+      cities: {
+        Both: { name: "Both", minDays: 1, recDays: 3, maxDays: 4, experiences: ["Fjords", "Northern Lights"], days: [{ theme: "Both", activities: [{ name: "X" }] }] },
+        Solo: { name: "Solo", minDays: 1, recDays: 1, maxDays: 2, experiences: ["Northern Lights"], days: [{ theme: "Aurora", activities: [{ name: "Y" }] }] },
+      },
+      connections: [],
+    } as never;
+    // "Both" champions Fjords AND Northern Lights → single city, no duplicate.
+    expect(topExperienceCities(combo, ["Fjords", "Northern Lights"])).toEqual(["Both"]);
+  });
+
+  it("trusts authored city tags over a higher-importance derived match", () => {
+    // Hub is the most important city and its content name-drops "fjord", but it
+    // does NOT author Fjords; Cove authors it. Authored must win.
+    const authoredVsDerived = {
+      cityOrder: ["Hub", "Cove"],
+      cities: {
+        Hub: { name: "Hub", minDays: 1, recDays: 3, maxDays: 4, days: [{ theme: "Stroll along the Hubfjord", activities: [{ name: "Walk" }] }] },
+        Cove: { name: "Cove", minDays: 1, recDays: 1, maxDays: 2, experiences: ["Fjords"], days: [{ theme: "Cruise", activities: [{ name: "Boat" }] }] },
+      },
+      connections: [],
+    } as never;
+    expect(topExperienceCities(authoredVsDerived, ["Fjords"], 1)).toEqual(["Cove"]);
+  });
 })

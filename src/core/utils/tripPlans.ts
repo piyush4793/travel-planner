@@ -190,12 +190,20 @@ export const BUDGET_DAY_FACTOR: Record<"budget" | "mid" | "premium", number> = {
 export const EXPERIENCE_CITY_LIMIT = 2;
 
 /**
- * Rank a rule's cities by how strongly they deliver the selected experiences and
- * return the best `limit` names, strongest first. Strength = number of matched
- * experiences, then the city's base importance (`scoreCities`: rec days + content
- * depth + route prominence, a popularity proxy). Returns [] when nothing matches.
- * Pure — shared by the day estimator and the engine's auto-selection so they agree
- * on which cities an experience focus implies.
+ * Pick the cities that best deliver the selected experiences.
+ *
+ * Coverage-first: with several experiences selected, each one contributes its
+ * strongest city (a city that satisfies multiple selected tags counts once), so
+ * the trip covers every chosen theme rather than piling onto whichever theme
+ * happens to own the highest-importance cities. Example: Fjords + Northern
+ * Lights returns one top fjords city AND one top northern-lights city, not the
+ * two biggest northern-lights cities.
+ *
+ * With a single experience selected, returns the top `limit` cities delivering
+ * it, strongest first. Strength ranks by the city's base importance
+ * (`scoreCities`: rec days + content depth + route prominence). Returns [] when
+ * nothing matches. Pure — shared by the day estimator and the engine's
+ * auto-selection so they agree on which cities an experience focus implies.
  */
 export function topExperienceCities(
   rule: CountryRule,
@@ -203,17 +211,37 @@ export function topExperienceCities(
   limit: number = EXPERIENCE_CITY_LIMIT,
 ): string[] {
   if (selectedExperiences.length === 0) return [];
-  return scoreCities(rule)
-    .map((c) => {
-      const cr = rule.cities[c.name];
-      const tags = cr.experiences ?? matchCityExperiences(ruleCityText(cr), selectedExperiences);
-      const hits = tags.filter((t) => selectedExperiences.includes(t)).length;
-      return { name: c.name, value: c.value, hits };
-    })
-    .filter((c) => c.hits > 0)
-    .sort((a, b) => b.hits - a.hits || b.value - a.value)
-    .slice(0, Math.max(1, limit))
-    .map((c) => c.name);
+  const byImportance = [...scoreCities(rule)].sort((a, b) => b.value - a.value);
+  // Confidence that a city delivers an experience: an authored `experiences`
+  // array is authoritative (2 = listed, 0 = deliberately not listed — never
+  // derive over it), otherwise fall back to deriving from the city's content
+  // (1 = keyword match). This keeps a genuine Fjords city (authored) ahead of a
+  // city that merely name-drops one (e.g. Oslo → "Oslofjord").
+  const strength = (cityName: string, exp: string): number => {
+    const cr = rule.cities[cityName];
+    if (Array.isArray(cr.experiences)) return cr.experiences.includes(exp) ? 2 : 0;
+    return matchCityExperiences(ruleCityText(cr), [exp]).includes(exp) ? 1 : 0;
+  };
+  // Cities delivering `exp`, strongest first (authored over derived, then base
+  // importance). Shared by both the single- and multi-experience paths.
+  const ranked = (exp: string): string[] =>
+    byImportance
+      .map((c) => ({ name: c.name, s: strength(c.name, exp), value: c.value }))
+      .filter((c) => c.s > 0)
+      .sort((a, b) => b.s - a.s || b.value - a.value)
+      .map((c) => c.name);
+
+  if (selectedExperiences.length === 1) {
+    return ranked(selectedExperiences[0]).slice(0, Math.max(1, limit));
+  }
+
+  const picked: string[] = [];
+  for (const exp of selectedExperiences) {
+    if (picked.some((name) => strength(name, exp) > 0)) continue;
+    const champion = ranked(exp)[0];
+    if (champion && !picked.includes(champion)) picked.push(champion);
+  }
+  return picked;
 }
 
 /**
