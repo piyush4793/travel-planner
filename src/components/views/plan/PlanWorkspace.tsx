@@ -143,7 +143,7 @@ function PlanWorkspaceInner({ builder, budgetBasis, setBudgetBasis, homeCountry,
     <div className="relative flex h-full w-full flex-col overflow-hidden">
       <main className="min-h-0 flex-1 overflow-hidden">{center}</main>
 
-      <div className="grid shrink-0 grid-cols-2 gap-2 pt-2.5">
+      <div className="grid shrink-0 grid-cols-2 gap-2 pb-safe pt-2.5">
         <button
           type="button"
           onClick={() => setSheet("shape")}

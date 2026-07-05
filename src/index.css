@@ -13,6 +13,15 @@ html, body, #root {
   overscroll-behavior: none;
 }
 
+/* Safe-area insets for edge-to-edge (viewport-fit=cover): keep the sticky
+   header below the status bar and fixed bottom bars above the gesture/home
+   bar. `.safe-bottom` was previously referenced but never defined (a no-op). */
+@layer utilities {
+  .pt-safe { padding-top: max(0.5rem, env(safe-area-inset-top)); }
+  .pb-safe { padding-bottom: max(0.75rem, env(safe-area-inset-bottom)); }
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+}
+
 /* Viewport-height shell: 100% fallback (always bounded to #root) then dynamic
    viewport units where supported. Guards against browsers/in-app webviews that
    don't support `dvh` collapsing `h-dvh` to `height:auto` and letting the whole

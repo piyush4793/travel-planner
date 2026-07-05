@@ -384,7 +384,7 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
       )}
 
       {/* ─── COUNTRY GRID ─── */}
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-3 md:px-5 py-4">
+      <div ref={scrollRef} className="flex-1 overflow-y-auto px-3 md:px-5 pt-4 pb-safe">
         <div className={`grid gap-2.5 max-w-6xl mx-auto ${
           isMobile ? "grid-cols-2" : isDesktop ? "grid-cols-4 lg:grid-cols-5" : "grid-cols-3"
         }`}>

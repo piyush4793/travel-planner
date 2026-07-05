@@ -405,7 +405,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
 
       {/* Sticky footer nav. On the Review step below lg, the workspace's mobile
           bar owns Back (merged with the rail triggers), so hide this there. */}
-      <div className={`shrink-0 border-t border-[#e6e1d4] bg-[#f7f4ec]/90 px-4 py-3 backdrop-blur ${isReview ? "hidden lg:block" : ""}`}>
+      <div className={`shrink-0 border-t border-[#e6e1d4] bg-[#f7f4ec]/90 px-4 pt-3 pb-safe backdrop-blur ${isReview ? "hidden lg:block" : ""}`}>
         <div className="mx-auto flex max-w-md items-center gap-3">
           <button
             onClick={() => (safeIndex === 0 ? changeDestination() : goTo(safeIndex - 1))}
@@ -421,7 +421,12 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
               {nextIsReview ? "See my plan 🗺️" : "Continue →"}
             </button>
           ) : (
-            <span className="ml-auto text-[11px] font-semibold text-[#a09a89]">Tweak any step above to update your plan</span>
+            <button
+              onClick={changeDestination}
+              className="focus-ring-emerald ml-auto flex min-h-[44px] flex-1 items-center justify-center gap-1.5 rounded-full bg-emerald-700 px-5 py-2 text-sm font-bold text-white shadow-sm transition-colors hover:bg-emerald-800"
+            >
+              Plan another trip 🧭
+            </button>
           )}
         </div>
       </div>

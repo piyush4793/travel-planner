@@ -244,7 +244,7 @@ export default function App() {
   return (
     <div className="flex flex-col h-viewport overflow-hidden bg-slate-50">
       {/* Header */}
-      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-900 text-white shrink-0 shadow-md">
+      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-4 pt-safe pb-2 md:pb-2.5 md:pt-2.5 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-900 text-white shrink-0 shadow-md">
         <button onClick={() => setView(guidedPlanning ? "plan" : "trips")} className="flex items-center gap-2 shrink-0 hover:opacity-90 transition-opacity" aria-label="Home">
           {/* Brand icon — all screens */}
           <img src="icon-192.svg" alt="Roamwise" className="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-lg" />

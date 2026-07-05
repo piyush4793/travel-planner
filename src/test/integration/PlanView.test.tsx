@@ -121,6 +121,17 @@ describe("PlanView — guided planner", () => {
     );
   });
 
+  it("returns to the destination picker via 'Plan another trip' on the review step", async () => {
+    renderView();
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+    await screen.findByText(/Who's going\?/i);
+    goToReview();
+    await screen.findByRole("button", { name: /Share your trip plan/i });
+    // Footer is hidden below lg (jsdom has no media query), so include hidden.
+    fireEvent.click(screen.getByRole("button", { name: /Plan another trip/i, hidden: true }));
+    await screen.findByText(/Where do you plan to go next/i);
+  });
+
   it("shares the plan from the review step", async () => {
     const shareMock = vi.fn().mockResolvedValue(undefined);
     const original = navigator.share;

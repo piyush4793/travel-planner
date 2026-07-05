@@ -290,7 +290,7 @@ export default function CalendarView({ countries, onSelect, visitedNames, select
       </div>
 
       {/* ─── MOBILE TABLE ─── */}
-      <div className="md:hidden flex-1 overflow-auto">
+      <div className="md:hidden flex-1 overflow-auto pb-safe">
         <CalendarTable filtered={filtered} compact={true} nowIdx={nowIdx} selectedCountry={selectedCountry} focusedRow={focusedRow} visitedNames={visitedNames} filterMonths={filterMonths} budgetBasis={budgetBasis} onSelect={onSelect} handleKeyDown={handleKeyDown} setFocusedRow={setFocusedRow} tbodyRef={tbodyRef} colWidth={mobileColWidth} onColResize={setMobileColWidth} onClearFilters={clearAll} />
       </div>
     </div>

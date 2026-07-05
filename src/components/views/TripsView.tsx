@@ -689,7 +689,7 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
       )}
 
       {isMobile ? (
-        <div className="flex-1 overflow-y-auto px-3 py-3">
+        <div className="flex-1 overflow-y-auto px-3 pt-3 pb-safe">
           {renderTripsContent("max-w-5xl")}
         </div>
       ) : (
