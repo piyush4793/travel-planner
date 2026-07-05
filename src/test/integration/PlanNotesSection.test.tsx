@@ -26,4 +26,14 @@ describe("PlanNotesSection", () => {
     rerender(<PlanNotesSection notes="Japan note" onSave={vi.fn()} />);
     expect(screen.getByRole("textbox")).toHaveValue("Japan note");
   });
+
+  it("opens and closes an expanded editor that shares the same value", () => {
+    render(<PlanNotesSection notes="Shared note" onSave={vi.fn()} />);
+    fireEvent.click(screen.getByRole("button", { name: /Expand notes/i }));
+    const dialog = screen.getByRole("dialog", { name: /Expanded notes/i });
+    expect(dialog).toBeInTheDocument();
+    expect(screen.getAllByRole("textbox").every((t) => (t as HTMLTextAreaElement).value === "Shared note")).toBe(true);
+    fireEvent.click(screen.getByRole("button", { name: /^Close$/i }));
+    expect(screen.queryByRole("dialog", { name: /Expanded notes/i })).not.toBeInTheDocument();
+  });
 });

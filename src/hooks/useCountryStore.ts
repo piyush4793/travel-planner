@@ -23,6 +23,7 @@ type ManifestEntry = {
 const MANIFEST = manifestData as ManifestEntry[];
 const CATALOG = catalogData as CatalogEntry[];
 const MANIFEST_BY_NAME = new Map(MANIFEST.map((m) => [m.name, m]));
+const CATALOG_BY_NAME = new Map(CATALOG.map((c) => [c.name, c]));
 
 // Seed country names from manifest
 const SEED_NAMES = new Set(MANIFEST.filter((m) => m.inSeed).map((m) => m.name));
@@ -32,6 +33,19 @@ function buildSeedCountry(m: ManifestEntry): Country {
   return {
     name: m.name, lat: m.lat, lng: m.lng, region: m.region,
     popularityScore: m.popularityScore,
+    bestMonths: [], budget: "", experiences: [],
+  };
+}
+
+// Build a minimal Country from catalog/manifest for a My List name that has no
+// seed or custom backing entry (e.g. legacy data added before add-to-list began
+// creating custom stubs). Guarantees My List names never silently vanish.
+function buildCatalogCountry(name: string): Country | null {
+  const src = CATALOG_BY_NAME.get(name) ?? MANIFEST_BY_NAME.get(name);
+  if (!src) return null;
+  return {
+    name: src.name, lat: src.lat, lng: src.lng, region: src.region,
+    popularityScore: MANIFEST_BY_NAME.get(name)?.popularityScore,
     bestMonths: [], budget: "", experiences: [],
   };
 }
@@ -144,14 +158,24 @@ export function useCountryStore() {
   const allCountries = useMemo(() => buildCountryList(customs, deleted, enriched), [customs, deleted, enriched]);
 
   const myListCountries = useMemo(() => {
-    const inList = allCountries.filter((c) => myList.set.has(c.name));
-    return [...inList].sort((a, b) => {
+    const byName = new Map(allCountries.map((c) => [c.name, c]));
+    const tombstoned = new Set(deleted);
+    // Resolve every My List name — prefer the fully-built entry, then any enriched
+    // rule data, then a catalog/manifest stub — so a name is never dropped just
+    // because it lacks a seed/custom backing entry. Deleted seeds stay tombstoned.
+    const inList: Country[] = [];
+    for (const name of myList.set) {
+      if (tombstoned.has(name) && !byName.has(name)) continue;
+      const resolved = byName.get(name) ?? enriched.get(name) ?? buildCatalogCountry(name);
+      if (resolved) inList.push(resolved);
+    }
+    return inList.sort((a, b) => {
       const aFav = favorites.set.has(a.name) ? 0 : 1;
       const bFav = favorites.set.has(b.name) ? 0 : 1;
       if (aFav !== bFav) return aFav - bFav;
       return a.name.localeCompare(b.name);
     });
-  }, [allCountries, myList.set, favorites.set]);
+  }, [allCountries, enriched, deleted, myList.set, favorites.set]);
 
   const myListNames = useMemo(() => myListCountries.map((c) => c.name), [myListCountries]);
 
@@ -166,9 +190,11 @@ export function useCountryStore() {
     let cancelled = false;
     Promise.all(pending.map(enrichCountry)).then((results) => {
       if (cancelled) return;
+      const resolved = results.filter((c): c is Country => c !== null);
+      if (resolved.length === 0) return;
       setEnriched((prev) => {
         const next = new Map(prev);
-        for (const c of results) { if (c) next.set(c.name, c); }
+        for (const c of resolved) next.set(c.name, c);
         return next;
       });
     });

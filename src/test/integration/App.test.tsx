@@ -36,6 +36,7 @@ const TEST_IDS = {
   CALENDAR_SELECT_COUNTRY: "calendar-select-country",
   CALENDAR_COUNT: "calendar-count",
   TRIPS_COUNT: "trips-count",
+  TRIPS_FILTER_MONTH: "trips-filter-month",
   DISCOVER_ADD_COUNTRY: "discover-add-country",
   DISCOVER_REMOVE_COUNTRY: "discover-remove-country",
 } as const;
@@ -92,6 +93,7 @@ vi.mock("../../components/views/TripsView", () => ({
   default: (props: Record<string, unknown>) => {
     const countries = (props.countries as Country[]) ?? [];
     const onSelect = props.onSelect as ((c: Country) => void) | undefined;
+    const setMonth = props.setMonth as ((m: string[]) => void) | undefined;
     return (
       <div data-testid="trips-view">
         <div data-testid={TEST_IDS.TRIPS_COUNT}>{countries.length}</div>
@@ -101,6 +103,13 @@ vi.mock("../../components/views/TripsView", () => ({
           onClick={() => onSelect?.(countries[0])}
         >
           Select trip country
+        </button>
+        <button
+          type="button"
+          data-testid={TEST_IDS.TRIPS_FILTER_MONTH}
+          onClick={() => setMonth?.(["December"])}
+        >
+          Filter December
         </button>
       </div>
     );
@@ -277,6 +286,7 @@ vi.mock("../../hooks/useAiPlanStore", () => ({
     maxPlans: 3,
     savePlan: vi.fn(),
     replacePlan: vi.fn(),
+    getAllDestinations: () => [],
   }),
 }));
 
@@ -313,6 +323,16 @@ describe("App orchestration", () => {
     expect(window.location.hash).toBe(ROUTES.DISCOVER);
   });
 
+  it("lands on the guided Plan view when guided planning is enabled", async () => {
+    vi.mocked(isEnabled).mockImplementation((flag) => flag === "guidedPlanning");
+    window.history.pushState(null, "", ROUTES.INVALID);
+
+    render(<App />);
+
+    expect(await screen.findByRole("heading", { name: /Where do you plan to go next\?/i })).toBeInTheDocument();
+    expect(window.location.hash).toBe("#plan");
+  });
+
   it("navigates to trips (home) when brand icon is clicked", async () => {
     const user = userEvent.setup();
     setHashRoute("discover");
@@ -340,6 +360,20 @@ describe("App orchestration", () => {
     await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
     await user.click(screen.getByTestId(TEST_IDS.CALENDAR_SELECT_COUNTRY));
     expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent(COUNTRY_NAMES.JAPAN);
+  });
+
+  it("shows the whole My List in Calendar even when a Trips month filter is active", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    // A month filter that matches neither seeded country empties the Trips list…
+    await user.click(screen.getByTestId(TEST_IDS.TRIPS_FILTER_MONTH));
+    expect(screen.getByTestId(TEST_IDS.TRIPS_COUNT)).toHaveTextContent("0");
+
+    // …but Calendar is a heatmap of the full My List and must ignore that filter.
+    await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
+    expect(await screen.findByTestId(TEST_IDS.CALENDAR_VIEW)).toBeInTheDocument();
+    expect(screen.getByTestId(TEST_IDS.CALENDAR_COUNT)).toHaveTextContent("2");
   });
 
   it("passes AI planning handlers to CountryPanel only when llmPlanning is enabled", () => {

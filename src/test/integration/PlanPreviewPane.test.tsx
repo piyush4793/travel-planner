@@ -88,4 +88,16 @@ describe("PlanPreviewPane — plan actions", () => {
     render(<PlanPreviewPane country={COUNTRY} plan={PLAN} rule={RULE} homeCountry="India" />);
     expect(screen.getByRole("button", { name: /Export.*PDF/i })).toBeInTheDocument();
   });
+
+  it("surfaces the plan's warning banner when present", () => {
+    render(<PlanPreviewPane country={COUNTRY} plan={{ ...PLAN, warning: "Too few days for this route" }} rule={RULE} homeCountry="India" />);
+    expect(screen.getByText(/Too few days for this route/i)).toBeInTheDocument();
+  });
+
+  it("offers an AI-plan action that invokes the handler", () => {
+    const onPlanWithAi = vi.fn();
+    render(<PlanPreviewPane country={COUNTRY} plan={PLAN} rule={RULE} homeCountry="India" onPlanWithAi={onPlanWithAi} />);
+    fireEvent.click(screen.getByRole("button", { name: /Plan this trip with your own AI/i }));
+    expect(onPlanWithAi).toHaveBeenCalledTimes(1);
+  });
 });

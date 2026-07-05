@@ -160,6 +160,20 @@ export default function CountryPanel({
     }, 300);
   }, [onUpdateNotes]);
 
+  // Shared note editing handlers (reused by the inline + expanded textareas)
+  const handleNotesChange = useCallback((value: string) => {
+    setNotes(value);
+    setNotesSaved(false);
+    debouncedSave(value);
+  }, [debouncedSave]);
+
+  const handleNotesBlur = useCallback(() => {
+    onUpdateNotes(notes);
+    setNotesSaved(true);
+    if (notesSaveTimerRef.current) window.clearTimeout(notesSaveTimerRef.current);
+    notesSaveTimerRef.current = window.setTimeout(() => setNotesSaved(false), 2000);
+  }, [onUpdateNotes, notes]);
+
   // Cleanup timers on unmount or country change
   useEffect(() => {
     return () => {
@@ -577,28 +591,32 @@ export default function CountryPanel({
 
             {/* ─── NOTES TAB ─── */}
             {panelTab === "notes" && (
-              <>
-                <div className="relative">
-                  <textarea
-                    className="w-full resize-none rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-gray-700 outline-none transition-colors placeholder:text-gray-400 focus:border-amber-400 focus-ring"
-                    rows={8}
-                    maxLength={4000}
-                    placeholder="Jot down ideas, reminders, or anything to remember about this destination..."
-                    value={notes}
-                    onChange={(e) => { setNotes(e.target.value); setNotesSaved(false); debouncedSave(e.target.value); }}
-                    onBlur={() => { onUpdateNotes(notes); setNotesSaved(true); if (notesSaveTimerRef.current) window.clearTimeout(notesSaveTimerRef.current); notesSaveTimerRef.current = window.setTimeout(() => setNotesSaved(false), 2000); }}
-                    autoFocus
-                  />
+              <div className="flex h-full flex-col">
+                <div className="mb-2 flex items-center justify-between">
+                  <div>
+                    <h3 className="text-sm font-bold text-gray-800">📝 Your notes</h3>
+                    <p className="text-[11px] text-gray-400">Auto-saved as you type</p>
+                  </div>
                   <button
                     onClick={() => setNotesExpanded(true)}
-                    className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors focus-ring rounded p-1"
+                    className="focus-ring flex min-h-[32px] items-center gap-1 rounded-lg border border-gray-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-gray-500 transition-colors hover:bg-gray-50"
                     title="Expand notes"
                     aria-label="Expand notes"
                   >
-                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2L9 7M2 14l5-5"/></svg>
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2L9 7M2 14l5-5"/></svg>
+                    Expand
                   </button>
                 </div>
-                <div className="flex items-center justify-between mt-1.5">
+                <textarea
+                  className="min-h-[40vh] w-full flex-1 resize-none rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-gray-700 outline-none transition-colors placeholder:text-gray-400 focus:border-amber-400 focus-ring"
+                  maxLength={4000}
+                  placeholder="Jot down ideas, reminders, or anything to remember about this destination..."
+                  value={notes}
+                  onChange={(e) => handleNotesChange(e.target.value)}
+                  onBlur={handleNotesBlur}
+                  autoFocus
+                />
+                <div className="mt-1.5 flex items-center justify-between">
                   <span className={`text-[11px] font-medium transition-opacity duration-300 ${notesSaved ? "text-emerald-500 opacity-100" : "opacity-0"}`}>
                     ✓ Saved
                   </span>
@@ -608,30 +626,30 @@ export default function CountryPanel({
                 {/* Notes expand modal */}
                 {notesExpanded && (
                   <div
-                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40"
+                    className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4"
                     onClick={() => setNotesExpanded(false)}
                     role="dialog"
                     aria-modal="true"
                     aria-label={`Expanded notes for ${country?.name}`}
                     onKeyDown={(e) => { if (e.key === "Escape") setNotesExpanded(false); }}
                   >
-                    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[80vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
-                      <div className="flex items-center justify-between px-5 py-3 border-b">
+                    <div className="flex h-[90vh] w-full max-w-2xl flex-col rounded-t-2xl bg-white shadow-2xl sm:h-[80vh] sm:rounded-2xl" onClick={(e) => e.stopPropagation()}>
+                      <div className="flex items-center justify-between border-b px-5 py-3">
                         <h3 className="text-sm font-bold text-gray-800">📝 Notes — {country?.name}</h3>
-                        <button onClick={() => setNotesExpanded(false)} className="text-gray-400 hover:text-gray-600 text-xl leading-none focus-ring rounded min-h-[32px] min-w-[32px] flex items-center justify-center" aria-label="Close">×</button>
+                        <button onClick={() => setNotesExpanded(false)} className="focus-ring flex min-h-[32px] min-w-[32px] items-center justify-center rounded text-xl leading-none text-gray-400 hover:text-gray-600" aria-label="Close">×</button>
                       </div>
-                      <div className="flex-1 p-5 overflow-y-auto">
+                      <div className="flex flex-1 flex-col p-5">
                         <textarea
-                          className="w-full resize-none rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-gray-700 outline-none focus:border-amber-400 focus-ring"
-                          rows={12}
+                          className="w-full flex-1 resize-none rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-gray-700 outline-none focus:border-amber-400 focus-ring"
                           maxLength={4000}
+                          placeholder="Jot down ideas, reminders, or anything to remember about this destination..."
                           value={notes}
-                          onChange={(e) => { setNotes(e.target.value); setNotesSaved(false); debouncedSave(e.target.value); }}
-                          onBlur={() => { onUpdateNotes(notes); setNotesSaved(true); if (notesSaveTimerRef.current) window.clearTimeout(notesSaveTimerRef.current); notesSaveTimerRef.current = window.setTimeout(() => setNotesSaved(false), 2000); }}
+                          onChange={(e) => handleNotesChange(e.target.value)}
+                          onBlur={handleNotesBlur}
                           autoFocus
                         />
                       </div>
-                      <div className="flex items-center justify-between px-5 py-3 border-t">
+                      <div className="flex items-center justify-between border-t px-5 py-3">
                         <span className={`text-[11px] font-medium transition-opacity duration-300 ${notesSaved ? "text-emerald-500 opacity-100" : "opacity-0"}`}>
                           ✓ Saved
                         </span>
@@ -640,7 +658,7 @@ export default function CountryPanel({
                     </div>
                   </div>
                 )}
-              </>
+              </div>
             )}
 
           </div>

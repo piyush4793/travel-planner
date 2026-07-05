@@ -21,4 +21,6 @@ export const LS_KEYS = {
   SCHEMA_VERSION: "tp_schema_version",
   PLAN_DRAFT: "tp_plan_draft",
   PLAN_UI: "tp_plan_ui",
+  LIFECYCLE_DISMISSED: "tp_lifecycle_dismissed",
+  LIFECYCLE_BASELINE: "tp_lifecycle_baseline",
 } as const;

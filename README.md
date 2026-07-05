@@ -9,12 +9,12 @@ A personal, map-based travel planner with a catalog of 197 world countries, 44 c
 ### Views
 | View | What it does |
 |---|---|
-| **🧭 Plan** (guided) | Flag-gated (`guidedPlanning`) luxury emerald/ivory **guided planning wizard** — a streamlined **Trip basics** (who's going + what you're into) → **Which places?** (auto-picked city cards you can add/drop; shown only when the destination has cities) → **Your trip** funnel. The header carries a **travel-style badge** (🏃/🔭/🌿) and a **Visited** toggle. The "Your trip" step is a **two-rail planning workspace**: a left **"Shape your trip"** rail (focus experiences, city picker, trip-length slider — the levers that regenerate the plan live), a centre **itinerary** (pinned duration·cost summary, clickable jump-to-city route strip — wrapped pills on desktop, a compact dropdown on mobile — day-by-day plan, and a slim action toolbar: **📤 Share** · **🎬 Cinematic** fly-through · **📄 PDF** · **✨ AI plan**), and a right **"Good to know"** rail (**Trip readiness** checklist, per-party-size budget with clickable basis, when-to-go heatmap, stopover/watch-outs/pairs-with, private **Notes**, and learn/visa/links). Rails are collapsible on desktop and open as bottom-sheet drawers on tablet/mobile. Pick a destination from your list or the popular set to begin — a **labeled step progress** (Basics · Places · Review) is tappable to revisit any step, your device Back button walks back one step at a time, and progress is saved so a refresh returns you to the same step. |
-| **✈ Trips** (home) | Dashboard with progress ring, stats, and "Next trip" highlight. **One card per My List country** (so card count always matches list size), with image collages, budget, and best months. Grouped sections: ⭐ Favorites → 📋 Planning → ✅ Completed. Tablet/desktop now use a collapsible left filter rail + right results workspace (icon-only view toggle + sort in results toolbar). Mobile defaults to list (grid toggle appears only on wider phones). Paginated. Click any card to open country detail. |
-| **📅 Calendar** | Heatmap grid — rows are destinations, columns are months. Emerald = best, red = avoid, blue = current month. |
+| **🧭 Plan** (default landing) | Flag-gated (`guidedPlanning`, enabled by default — the app's landing view) luxury emerald/ivory **guided planning wizard** — a streamlined **Trip basics** (who's going + what you're into) → **Which places?** (auto-picked city cards you can add/drop; shown only when the destination has cities) → **Your trip** funnel. The header carries a **travel-style badge** (🏃/🔭/🌿) and a **Visited** toggle. The "Your trip" step is a **two-rail planning workspace**: a left **"Shape your trip"** rail (focus experiences, city picker, trip-length slider — the levers that regenerate the plan live), a centre **itinerary** (pinned duration·cost summary, clickable jump-to-city route strip — wrapped pills on desktop, a compact dropdown on mobile — day-by-day plan, and a slim action toolbar: **📤 Share** · **🎬 Cinematic** fly-through · **📄 PDF** · **✨ AI plan**), and a right **"Good to know"** rail (**Trip readiness** checklist, per-party-size budget with clickable basis, when-to-go heatmap, stopover/watch-outs/pairs-with, private **Notes**, and learn/visa/links). Rails are collapsible on desktop and open as bottom-sheet drawers on tablet/mobile. Pick a destination from your list or the popular set to begin — a **labeled step progress** (Basics · Places · Review) is tappable to revisit any step, your device Back button walks back one step at a time, and progress is saved so a refresh returns you to the same step. |
+| **✈ Trips** | Dashboard with progress ring, stats, and "Next trip" highlight. **One card per My List country** (so card count always matches list size), with image collages, budget, and best months. Grouped sections: ⭐ Favorites → 📋 Planning → ✅ Completed. Tablet/desktop now use a collapsible left filter rail + right results workspace (icon-only view toggle + sort in results toolbar). Mobile defaults to list (grid toggle appears only on wider phones). Paginated. Click any card to open country detail. |
+| **📅 Calendar** | Heatmap grid — rows are **every destination in My List** (independent of the Trips filter bar; it has its own Month filter), columns are months. Emerald = best, red = avoid, blue = current month. |
 | **🌍 Discover** | Browse all 197 world countries. Filter by region and list status. Add countries to your list or remove them. One-click **creator's wishlist** starter pack and **reset to starter list** (both confirm first). |
 
-View persists in the URL hash (`#plan`, `#trips`, `#calendar`, `#discover`) — refresh returns to the same view. Trips is the default home view; Plan appears when `guidedPlanning` is enabled.
+View persists in the URL hash (`#plan`, `#trips`, `#calendar`, `#discover`) — refresh returns to the same view. **Plan is the default landing view** when `guidedPlanning` is enabled (the default); Trips is the landing fallback when it's disabled.
 
 ### Responsive Design
 Mobile-first responsive layout — works on phones (375px+), tablets (768px+), and desktops (1024px+):
@@ -39,7 +39,7 @@ Mobile-first responsive layout — works on phones (375px+), tablets (768px+), a
 
 ---
 
-### Filters (Trips + Calendar; hidden on Discover)
+### Filters (Trips only; Calendar and Discover have their own)
 All filters combine with AND logic:
 
 | Filter | Behaviour |
@@ -217,6 +217,13 @@ Guided 8-step onboarding tour for new users:
 - **Mobile-responsive** — spotlight steps render as centered hero cards on mobile (<768px) since nav items have no room for tooltips
 - **Dismiss anytime** — ✕ button on every card + Escape key closes tour; progress bar shows step count
 - **One-time** — stored in localStorage (`tp_fre_done`), never shown again after completion or dismissal
+
+### Lifecycle nudges
+Soft, non-blocking prompts that appear at the right moment as a bottom-centre toast (never a modal, never steals focus). At most one shows at a time, priority-ordered, and each is debounced so it never flashes:
+- **Add to list** — the first time you search with an empty My List, inviting you to add a destination
+- **Favorite** — after you save an AI plan for a place that isn't already a favorite, offering a one-tap ★
+- **Back up** — once your data has grown a few changes past your last backup, offering a one-click backup
+Onboarding nudges (add-to-list / favorite) dismiss **permanently**; the backup nudge **snoozes** and returns only after more changes accumulate (a completed backup re-baselines it). Suppressed while any panel or modal is open.
 
 ---
 

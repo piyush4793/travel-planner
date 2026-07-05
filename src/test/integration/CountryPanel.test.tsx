@@ -203,4 +203,30 @@ describe("CountryPanel", () => {
 
     expect(onUpdateNotes).toHaveBeenCalledWith("Pack adapter");
   });
+
+  it("opens and closes the expanded notes editor", async () => {
+    const user = userEvent.setup();
+    render(
+      <CountryPanel
+        country={makeCountry({ notes: "Initial note" })}
+        onClose={vi.fn()}
+        onSelectCountry={vi.fn()}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+        isVisited={false}
+        onToggleVisited={vi.fn()}
+        onEdit={vi.fn()}
+        onUpdateNotes={vi.fn()}
+        homeCountry="India"
+        budgetBasis="couple"
+        allCountries={[makeCountry({ notes: "Initial note" })]}
+      />,
+    );
+
+    await user.click(screen.getByRole("tab", { name: /Notes/i }));
+    await user.click(screen.getByRole("button", { name: /Expand notes/i }));
+    expect(screen.getByRole("dialog", { name: /Expanded notes/i })).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: /^Close$/i }));
+    expect(screen.queryByRole("dialog", { name: /Expanded notes/i })).not.toBeInTheDocument();
+  });
 });

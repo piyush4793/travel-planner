@@ -44,6 +44,49 @@ describe("DestinationPicker", () => {
     expect(names).toEqual(["Unvisited-High", "Unvisited-Low", "Visited-High"]);
   });
 
+  it("orders your list favorites → remaining → visited, each by popularity", () => {
+    const countries = [
+      mk("Fav-Low", 5),
+      mk("Fav-High", 95),
+      mk("Plain-High", 80),
+      mk("Visited-High", 99),
+    ];
+    render(
+      <DestinationPicker
+        countries={countries}
+        exploreCountries={explore}
+        visitedNames={new Set(["Visited-High"])}
+        favoriteNames={new Set(["Fav-Low", "Fav-High"])}
+        onPick={vi.fn()}
+        onGoDiscover={vi.fn()}
+      />,
+    );
+    const section = screen.getByText(/From your list/i).closest("section")!;
+    const names = within(section).getAllByRole("button").map((b) => b.textContent?.replace(/[^\x00-\x7F]/g, "").trim());
+    expect(names).toEqual(["Fav-High", "Fav-Low", "Plain-High", "Visited-High"]);
+  });
+
+  it("caps the list at 8, reveals all, then collapses back", () => {
+    const many = Array.from({ length: 11 }, (_, i) => mk(`Dest-${String(i).padStart(2, "0")}`, 100 - i));
+    render(
+      <DestinationPicker
+        countries={many}
+        exploreCountries={explore}
+        visitedNames={new Set()}
+        onPick={vi.fn()}
+        onGoDiscover={vi.fn()}
+      />,
+    );
+    const section = () => screen.getByText(/From your list/i).closest("section")!;
+    // Capped at 8 chips + a "Show all 11" affordance.
+    expect(within(section()).getByText("Dest-00")).toBeInTheDocument();
+    expect(within(section()).queryByText("Dest-08")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /Show all 11/i }));
+    expect(within(section()).getByText("Dest-10")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /Show less/i }));
+    expect(within(section()).queryByText("Dest-08")).not.toBeInTheDocument();
+  });
+
   it("searches across both tiers and picks a result", () => {
     const onPick = vi.fn();
     render(

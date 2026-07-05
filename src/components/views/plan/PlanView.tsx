@@ -132,6 +132,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
         countries={countries}
         exploreCountries={exploreCountries}
         visitedNames={visitedNames}
+        favoriteNames={favoriteNames}
         onPick={(c) => { setPicked(c); setStepIndex(0); }}
         onGoDiscover={onGoDiscover}
       />
@@ -187,6 +188,20 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
             </div>
           </div>
           <div className="ml-auto flex shrink-0 items-center gap-2">
+            {planActions.onToggleFavorite && (
+              <button
+                onClick={planActions.onToggleFavorite}
+                aria-pressed={planActions.isFavorite}
+                aria-label={planActions.isFavorite ? "Remove from favorites" : "Add to favorites"}
+                className={`focus-ring-emerald flex min-h-[32px] items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-bold shadow-sm transition-colors sm:px-3 ${
+                  planActions.isFavorite
+                    ? "border-amber-300 bg-amber-100 text-amber-700"
+                    : "border-[#e4dece] bg-white text-[#6f6a5d] hover:bg-[#f4f1e8]"
+                }`}
+              >
+                <span aria-hidden="true">{planActions.isFavorite ? "★" : "☆"}</span> <span className="hidden sm:inline">Favorite</span>
+              </button>
+            )}
             {planActions.onToggleVisited && (
               <button
                 onClick={planActions.onToggleVisited}

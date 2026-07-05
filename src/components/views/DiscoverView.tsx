@@ -13,6 +13,7 @@ type Props = {
   onRemoveFromList: (name: string) => void;
   onAddMany: (names: string[]) => void;
   onResetList: () => void;
+  onSearchActivity?: () => void;
 };
 
 const REGIONS = ["All", "Asia", "Europe", "Middle East", "Africa", "Americas", "Oceania"];
@@ -31,15 +32,20 @@ const REGION_COLORS: Record<string, string> = {
 
 
 
-export default function DiscoverView({ catalog, myListNames, onAddToList, onRemoveFromList, onAddMany, onResetList }: Props) {
+export default function DiscoverView({ catalog, myListNames, onAddToList, onRemoveFromList, onAddMany, onResetList, onSearchActivity }: Props) {
   const [search, setSearch] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const debounceRef = useRef<ReturnType<typeof setTimeout>>();
+  const searchNotifiedRef = useRef(false);
   const handleSearch = useCallback((value: string) => {
     setSearch(value);
+    if (value.trim() && !searchNotifiedRef.current) {
+      searchNotifiedRef.current = true;
+      onSearchActivity?.();
+    }
     clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => setDebouncedSearch(value), 200);
-  }, []);
+  }, [onSearchActivity]);
 
   // Clear debounce timer on unmount
   useEffect(() => () => clearTimeout(debounceRef.current), []);

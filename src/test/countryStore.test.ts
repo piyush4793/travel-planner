@@ -131,6 +131,17 @@ describe("useCountryStore — P0", () => {
     expect(names.indexOf("Thailand")).toBeLessThan(names.indexOf("France"));
   });
 
+  it("surfaces My List names that lack a seed or custom entry (legacy data resilience)", async () => {
+    // Simulate a My List persisted by an older build: a non-seed name is tracked
+    // but there is no matching CUSTOMS stub to back it.
+    localStorage.setItem(LS_KEYS.MY_LIST, JSON.stringify([...seedNames, "Brazil"]));
+    const { result } = await renderCountryStore();
+
+    const names = result.current.myListCountries.map((country) => country.name);
+    expect(names).toContain("Brazil");
+    expect(result.current.myListCountries.length).toBe(seedNames.length + 1);
+  });
+
   it("addManyToList adds several destinations in one call", async () => {
     const { result } = await renderCountryStore();
 

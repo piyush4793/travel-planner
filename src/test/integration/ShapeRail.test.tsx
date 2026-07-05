@@ -80,4 +80,20 @@ describe("ShapeRail — left levers", () => {
     render(<ShapeRail builder={makeBuilder({ displayCountry: { ...COUNTRY, experiences: [] } })} />);
     expect(screen.queryByRole("button", { name: /Focus/i })).not.toBeInTheDocument();
   });
+
+  it("toggles a city card in the Cities section", () => {
+    const toggleCity = vi.fn();
+    render(<ShapeRail builder={makeBuilder({ toggleCity })} />);
+    fireEvent.click(screen.getByRole("button", { name: "Beta" }));
+    expect(toggleCity).toHaveBeenCalledWith("Beta");
+  });
+
+  it("shows hand-picked count and resets cities to auto", () => {
+    const clearCities = vi.fn();
+    render(<ShapeRail builder={makeBuilder({ selectedCities: ["Alpha", "Beta"], clearCities })} />);
+    expect(screen.getByText(/2 hand-picked/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Alpha" })).toHaveAttribute("aria-pressed", "true");
+    fireEvent.click(screen.getByRole("button", { name: /Reset to auto/i }));
+    expect(clearCities).toHaveBeenCalled();
+  });
 });

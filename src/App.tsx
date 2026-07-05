@@ -22,10 +22,12 @@ import { useTripStore } from "./hooks/useTripStore";
 import { useAiPlanStore } from "./hooks/useAiPlanStore";
 import { useBreakpoint } from "./hooks/useBreakpoint";
 import { useBackDismiss } from "./hooks/useBackDismiss";
+import { useLifecyclePrompts } from "./hooks/useLifecyclePrompts";
+import LifecyclePromptToast from "./components/shared/LifecyclePromptToast";
 import { isEnabled } from "./core/featureFlags";
 import { useInstallPrompt } from "./hooks/useInstallPrompt";
 import AppInstallShare from "./components/shared/AppInstallShare";
-import { isBackupOverdue, autoBackupToTargetIfOverdue, hasAnyLocalData, canAutoImport, restoreFromTarget } from "./utils/backup";
+import { isBackupOverdue, autoBackupToTargetIfOverdue, hasAnyLocalData, canAutoImport, restoreFromTarget, backupToTarget } from "./utils/backup";
 
 // Lazy-load heavy modals/overlays — only fetched when first opened
 const CountryForm = lazy(() => import("./components/country/CountryForm"));
@@ -44,9 +46,9 @@ export default function App() {
   const bp = useBreakpoint();
   const isMobile = bp === "mobile";
   const installPrompt = useInstallPrompt();
-  const [view, setView] = useHashView();
-  // The guided planner is flag-gated; hide its nav pill and route when disabled.
+  // The guided planner is flag-gated; it's the landing view when enabled.
   const guidedPlanning = isEnabled("guidedPlanning");
+  const [view, setView] = useHashView(guidedPlanning ? "plan" : "trips");
   const activeView: AppView = view === "plan" && !guidedPlanning ? "trips" : view;
   const navViews = useMemo(
     () => (Object.keys(VIEW_LABELS) as AppView[]).filter((v) => v !== "plan" || guidedPlanning),
@@ -71,6 +73,7 @@ export default function App() {
   const [backupBannerDismissed, setBackupBannerDismissed] = useState(false);
   const [restoreAvailable, setRestoreAvailable] = useState(false);
   const [restoreBusy, setRestoreBusy] = useState(false);
+  const [lastBackupAt, setLastBackupAt] = useState(() => loadLS<string>(LS_KEYS.LAST_BACKUP, ""));
 
   useEffect(() => { saveLS(LS_KEYS.HOME_COUNTRY, homeCountry); }, [homeCountry]);
 
@@ -84,7 +87,10 @@ export default function App() {
     (async () => {
       if (hasAnyLocalData()) {
         if (await autoBackupToTargetIfOverdue()) {
-          if (!cancelled) setBackupBannerDismissed(true);
+          if (!cancelled) {
+            setBackupBannerDismissed(true);
+            setLastBackupAt(loadLS<string>(LS_KEYS.LAST_BACKUP, ""));
+          }
         }
         return;
       }
@@ -204,11 +210,39 @@ export default function App() {
     return "saved";
   }, [store]);
 
+  // ── Lifecycle nudges (soft, non-blocking) ──────────────────────────────────
+  // A coarse gauge of how much travel data the user has accrued; its growth
+  // since the last backup drives the backup nudge.
+  const dataFingerprint = useMemo(
+    () =>
+      store.myListCountries.length +
+      store.favorites.set.size +
+      store.visited.set.size +
+      aiPlanStore.getAllDestinations().length,
+    [store.myListCountries.length, store.favorites.set, store.visited.set, aiPlanStore],
+  );
+  const handleLifecycleBackup = useCallback(async () => {
+    await backupToTarget();
+    setLastBackupAt(loadLS<string>(LS_KEYS.LAST_BACKUP, ""));
+  }, []);
+  const isFavoriteName = useCallback((name: string) => store.favorites.set.has(name), [store.favorites.set]);
+  const lifecycle = useLifecyclePrompts({
+    myListCount: store.myList.set.size,
+    dataFingerprint,
+    lastBackupAt,
+    isFavorite: isFavoriteName,
+    onToggleFavorite: store.favorites.toggle,
+    onBackup: handleLifecycleBackup,
+    onExplore: () => setView("discover"),
+  });
+  const lifecycleOverlayOpen =
+    selectedCountry !== null || settingsOpen || chatOpen || aiPlanResult !== null || formTarget !== null;
+
   return (
     <div className="flex flex-col h-dvh overflow-hidden bg-slate-50">
       {/* Header */}
       <header className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-900 text-white shrink-0 shadow-md">
-        <button onClick={() => setView("trips")} className="flex items-center gap-2 shrink-0 hover:opacity-90 transition-opacity" aria-label="Home">
+        <button onClick={() => setView(guidedPlanning ? "plan" : "trips")} className="flex items-center gap-2 shrink-0 hover:opacity-90 transition-opacity" aria-label="Home">
           {/* Brand icon — all screens */}
           <img src="icon-192.svg" alt="Roamwise" className="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-lg" />
           <span className="hidden md:inline text-lg font-black tracking-tight">Roamwise</span>
@@ -394,10 +428,11 @@ export default function App() {
             tripGroups={trips.mergedTripGroups}
             onSaveTrip={trips.saveTrip}
             onDeleteTrip={trips.deleteTrip}
+            onSearchActivity={lifecycle.notifySearch}
           />
         ) : activeView === "calendar" ? (
           <CalendarView
-            countries={filtered}
+            countries={store.myListCountries}
             onSelect={setSelectedCountry}
             visitedNames={store.visited.set}
             selectedCountry={selectedCountry}
@@ -411,6 +446,7 @@ export default function App() {
             onRemoveFromList={store.myList.remove}
             onAddMany={store.addManyToList}
             onResetList={store.resetToDefaultList}
+            onSearchActivity={lifecycle.notifySearch}
           />
         )}
         </Suspense>
@@ -438,6 +474,10 @@ export default function App() {
         />
         </Suspense>
       </div>
+
+      {!lifecycleOverlayOpen && (
+        <LifecyclePromptToast prompt={lifecycle.prompt} onAct={lifecycle.act} onDismiss={lifecycle.dismiss} />
+      )}
 
       <Suspense fallback={null}>
         {formTarget !== null && (
@@ -475,8 +515,8 @@ export default function App() {
             existingPlans={aiPlanStore.getPlans(aiPlanResult.destinationName)}
             canAddNew={aiPlanStore.canAddNew(aiPlanResult.destinationName)}
             maxPlans={aiPlanStore.maxPlans}
-            onSavePlan={() => aiPlanResult && aiPlanStore.savePlan(aiPlanResult)}
-            onReplacePlan={(id) => aiPlanResult && aiPlanStore.replacePlan(id, aiPlanResult)}
+            onSavePlan={() => { if (aiPlanResult) { aiPlanStore.savePlan(aiPlanResult); lifecycle.notifyPlanCreated(aiPlanResult.destinationName); } }}
+            onReplacePlan={(id) => { if (aiPlanResult) { aiPlanStore.replacePlan(id, aiPlanResult); lifecycle.notifyPlanCreated(aiPlanResult.destinationName); } }}
           />
         )}
 

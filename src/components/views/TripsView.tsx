@@ -31,6 +31,7 @@ type Props = {
   tripGroups: TripGroupDef[];
   onSaveTrip: (originalMain: string | null, group: TripGroupDef) => void;
   onDeleteTrip: (main: string) => void;
+  onSearchActivity?: () => void;
 };
 
 type ViewMode = "all" | "combo" | "solo";
@@ -55,6 +56,7 @@ export default function TripsView({
   tripGroups,
   onSaveTrip,
   onDeleteTrip,
+  onSearchActivity,
 }: Props) {
   
 const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string }[] = [
@@ -74,6 +76,14 @@ const BUDGET_BASIS_OPTIONS: { value: BudgetBasis; label: string }[] = BUDGET_BAS
   const [sortMode, setSortMode] = useState<SortMode>("popular");
   const [regionFilter, setRegionFilter] = useState<Region | "all">("all");
   const [search, setSearch] = useState("");
+  // Arm the add-to-list lifecycle nudge once the traveller starts searching.
+  const searchNotifiedRef = useRef(false);
+  useEffect(() => {
+    if (search.trim() && !searchNotifiedRef.current) {
+      searchNotifiedRef.current = true;
+      onSearchActivity?.();
+    }
+  }, [search, onSearchActivity]);
   const [editingMain, setEditingMain] = useState<string | null>(null);
   const [creatingNew, setCreatingNew] = useState(false);
   const [layout, setLayout] = useState<"list" | "grid">(

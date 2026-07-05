@@ -196,6 +196,38 @@ describe("PlanView — guided planner", () => {
     expect(screen.getByText("Beta")).toBeInTheDocument();
   });
 
+  it("selects a vibe on the basics step then clears it", async () => {
+    renderView();
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+    await screen.findByText(/What are you into\?/i);
+
+    fireEvent.click(screen.getByRole("button", { name: "Beaches" }));
+    const clear = await screen.findByRole("button", { name: /Clear \(1\)/i });
+    fireEvent.click(clear);
+    await waitFor(() => expect(screen.queryByRole("button", { name: /Clear \(1\)/i })).not.toBeInTheDocument());
+  });
+
+  it("hand-picks a city then resets back to the auto selection", async () => {
+    renderView();
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+    await screen.findByText(/Who's going\?/i);
+    fireEvent.click(screen.getByRole("button", { name: /Continue/i }));
+    await screen.findByText(/Which places\?/i);
+
+    // Pristine: auto-picked, no reset control yet.
+    expect(screen.getByText(/tap to fine-tune/i)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /Reset to auto/i })).not.toBeInTheDocument();
+
+    // Hand-pick a city → switches to the manual "hand-picked" branch + reset appears.
+    fireEvent.click(screen.getByRole("button", { name: "Alpha" }));
+    expect(await screen.findByText(/hand-picked/i)).toBeInTheDocument();
+    const reset = screen.getByRole("button", { name: /Reset to auto/i });
+
+    fireEvent.click(reset);
+    await waitFor(() => expect(screen.getByText(/tap to fine-tune/i)).toBeInTheDocument());
+    expect(screen.queryByRole("button", { name: /Reset to auto/i })).not.toBeInTheDocument();
+  });
+
   it("toggles visited from the header when a handler is wired", async () => {
     const onToggleVisited = vi.fn();
     renderView({ onToggleVisited });
@@ -203,5 +235,21 @@ describe("PlanView — guided planner", () => {
     await screen.findByText(/Who's going\?/i);
     fireEvent.click(screen.getByRole("button", { name: /Mark as visited/i }));
     expect(onToggleVisited).toHaveBeenCalledWith("Testland (no rule)");
+  });
+
+  it("toggles favorite from the header when a handler is wired", async () => {
+    const onToggleFavorite = vi.fn();
+    renderView({ onToggleFavorite, favoriteNames: new Set() });
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+    await screen.findByText(/Who's going\?/i);
+    fireEvent.click(screen.getByRole("button", { name: /Add to favorites/i }));
+    expect(onToggleFavorite).toHaveBeenCalledWith("Testland (no rule)");
+  });
+
+  it("reflects an already-favorited destination in the header toggle", async () => {
+    renderView({ onToggleFavorite: vi.fn(), favoriteNames: new Set(["Testland (no rule)"]) });
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+    await screen.findByText(/Who's going\?/i);
+    expect(screen.getByRole("button", { name: /Remove from favorites/i })).toBeInTheDocument();
   });
 });

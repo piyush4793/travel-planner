@@ -4,13 +4,18 @@ export type AppView = "plan" | "trips" | "calendar" | "discover";
 
 const VALID_VIEWS: AppView[] = ["plan", "trips", "calendar", "discover"];
 
-function parseHash(): AppView {
+function parseHash(fallback: AppView): AppView {
   const h = window.location.hash.slice(1);
-  return VALID_VIEWS.includes(h as AppView) ? (h as AppView) : "trips";
+  return VALID_VIEWS.includes(h as AppView) ? (h as AppView) : fallback;
 }
 
-export function useHashView() {
-  const [view, setView] = useState<AppView>(parseHash);
+/**
+ * Hash-based routing for the top-level views. `fallback` is the landing view used
+ * when the hash is empty or invalid — the app passes `plan` when guided planning
+ * is enabled (its default home) and `trips` otherwise.
+ */
+export function useHashView(fallback: AppView = "plan") {
+  const [view, setView] = useState<AppView>(() => parseHash(fallback));
 
   useEffect(() => {
     const hash = `#${view}`;
@@ -18,10 +23,10 @@ export function useHashView() {
   }, [view]);
 
   useEffect(() => {
-    const handle = () => setView(parseHash());
+    const handle = () => setView(parseHash(fallback));
     window.addEventListener("popstate", handle);
     return () => window.removeEventListener("popstate", handle);
-  }, []);
+  }, [fallback]);
 
   return [view, setView] as const;
 }

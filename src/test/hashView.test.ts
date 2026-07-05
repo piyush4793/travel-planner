@@ -18,11 +18,11 @@ async function importHook() {
 }
 
 describe("useHashView — P1", () => {
-  it("defaults to 'trips' when hash is empty", async () => {
+  it("defaults to 'plan' when hash is empty", async () => {
     window.location.hash = "";
     const { useHashView } = await importHook();
     const { result } = renderHook(() => useHashView());
-    expect(result.current[0]).toBe("trips");
+    expect(result.current[0]).toBe("plan");
   });
 
   it("parses valid hash into view", async () => {
@@ -32,19 +32,19 @@ describe("useHashView — P1", () => {
     expect(result.current[0]).toBe("calendar");
   });
 
-  it("falls back to 'trips' for invalid hash", async () => {
+  it("falls back to 'plan' for invalid hash", async () => {
     window.location.hash = "#invalid-view";
     const { useHashView } = await importHook();
     const { result } = renderHook(() => useHashView());
-    expect(result.current[0]).toBe("trips");
+    expect(result.current[0]).toBe("plan");
   });
 
-  it("falls back to 'trips' for removed views (map, list)", async () => {
+  it("falls back to 'plan' for removed views (map, list)", async () => {
     for (const removed of ["map", "list"]) {
       window.location.hash = `#${removed}`;
       const { useHashView } = await importHook();
       const { result } = renderHook(() => useHashView());
-      expect(result.current[0]).toBe("trips");
+      expect(result.current[0]).toBe("plan");
     }
   });
 

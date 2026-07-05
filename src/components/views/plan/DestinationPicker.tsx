@@ -9,6 +9,7 @@ type Props = {
   /** Plannable destinations NOT in My List, most popular first. */
   exploreCountries: Country[];
   visitedNames: Set<string>;
+  favoriteNames?: Set<string>;
   onPick: (country: Country) => void;
   onGoDiscover: () => void;
 };
@@ -34,7 +35,7 @@ function filterByQuery(list: Country[], q: string): Country[] {
     .map((s) => s.c);
 }
 
-function Chip({ country, visited, index, onPick }: { country: Country; visited?: boolean; index: number; onPick: () => void }) {
+function Chip({ country, visited, favorite, index, onPick }: { country: Country; visited?: boolean; favorite?: boolean; index: number; onPick: () => void }) {
   return (
     <button
       onClick={onPick}
@@ -47,6 +48,7 @@ function Chip({ country, visited, index, onPick }: { country: Country; visited?:
     >
       <span aria-hidden="true" className="text-base leading-none">{getCountryFlag(country.name)}</span>
       <span className="truncate">{country.name}</span>
+      {favorite && <span aria-hidden="true" className="text-amber-400">★</span>}
       {visited && <span aria-hidden="true" className="text-emerald-700/60">✓</span>}
     </button>
   );
@@ -54,20 +56,23 @@ function Chip({ country, visited, index, onPick }: { country: Country; visited?:
 
 /**
  * Empty-state "Where next?" — a fast search over a popularity-ranked destination
- * board. Your list comes first (unvisited before visited), then popular rule-backed
- * destinations to explore. Routes to Discover when nothing matches.
+ * board. Your list is ordered favorites → remaining (unvisited) → visited, each
+ * group most-popular first, then popular rule-backed destinations to explore.
+ * Routes to Discover when nothing matches.
  */
-export default function DestinationPicker({ countries, exploreCountries, visitedNames, onPick, onGoDiscover }: Props) {
+export default function DestinationPicker({ countries, exploreCountries, visitedNames, favoriteNames, onPick, onGoDiscover }: Props) {
   const [query, setQuery] = useState("");
   const [showAllMine, setShowAllMine] = useState(false);
   const q = query.trim().toLowerCase();
 
-  // Your list: unvisited first, each group most-popular first.
+  // Your list: favorites → remaining (unvisited) → visited, each group most-popular first.
   const mine = useMemo(() => {
-    const unvisited = countries.filter((c) => !visitedNames.has(c.name)).sort(byPopularity);
-    const visited = countries.filter((c) => visitedNames.has(c.name)).sort(byPopularity);
-    return [...unvisited, ...visited];
-  }, [countries, visitedNames]);
+    const isFav = (c: Country) => favoriteNames?.has(c.name) ?? false;
+    const favorites = countries.filter(isFav).sort(byPopularity);
+    const remaining = countries.filter((c) => !isFav(c) && !visitedNames.has(c.name)).sort(byPopularity);
+    const visited = countries.filter((c) => !isFav(c) && visitedNames.has(c.name)).sort(byPopularity);
+    return [...favorites, ...remaining, ...visited];
+  }, [countries, visitedNames, favoriteNames]);
 
   const mineFiltered = useMemo(() => filterByQuery(mine, q), [mine, q]);
   const exploreFiltered = useMemo(() => {
@@ -121,7 +126,7 @@ export default function DestinationPicker({ countries, exploreCountries, visited
             <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#a09a89]">From your list</h2>
             <div className="flex flex-wrap gap-2.5">
               {mineCapped.map((c, i) => (
-                <Chip key={c.name} country={c} index={i} visited={visitedNames.has(c.name)} onPick={() => onPick(c)} />
+                <Chip key={c.name} country={c} index={i} visited={visitedNames.has(c.name)} favorite={favoriteNames?.has(c.name)} onPick={() => onPick(c)} />
               ))}
               {mineHidden > 0 && (
                 <button
