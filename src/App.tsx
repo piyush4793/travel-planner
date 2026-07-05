@@ -36,8 +36,11 @@ const ChatModal = lazy(() => import("./components/ai/ChatModal"));
 const AiItineraryModal = lazy(() => import("./components/ai/AiItineraryModal"));
 const FreTour = lazy(() => import("./components/shared/FreTour"));
 
-const VIEW_LABELS: Record<AppView, string> = {
-  plan: "🧭 Plan", trips: "✈ Trips", calendar: "📅 Calendar", discover: "🌍 Discover",
+const VIEW_META: Record<AppView, { icon: string; label: string }> = {
+  plan: { icon: "🧭", label: "Plan" },
+  trips: { icon: "✈", label: "Trips" },
+  calendar: { icon: "📅", label: "Calendar" },
+  discover: { icon: "🌍", label: "Discover" },
 };
 
 export default function App() {
@@ -51,7 +54,7 @@ export default function App() {
   const [view, setView] = useHashView(guidedPlanning ? "plan" : "trips");
   const activeView: AppView = view === "plan" && !guidedPlanning ? "trips" : view;
   const navViews = useMemo(
-    () => (Object.keys(VIEW_LABELS) as AppView[]).filter((v) => v !== "plan" || guidedPlanning),
+    () => (Object.keys(VIEW_META) as AppView[]).filter((v) => v !== "plan" || guidedPlanning),
     [guidedPlanning],
   );
   const [homeCountry, setHomeCountry] = useState(() => loadLS(LS_KEYS.HOME_COUNTRY, "India"));
@@ -257,21 +260,22 @@ export default function App() {
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors focus-ring ${
                 activeView === v ? "bg-white text-emerald-800 shadow-sm" : "text-white/80 hover:text-white"
               }`}>
-              {VIEW_LABELS[v]}
+              <span aria-hidden="true">{VIEW_META[v].icon}</span> {VIEW_META[v].label}
             </button>
           ))}
         </div>
 
-        {/* Mobile nav pills — compact */}
-        <div className="flex md:hidden items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto overflow-x-auto max-w-[56vw]" role="navigation" aria-label="Main navigation">
+        {/* Mobile nav pills — icon over label to stay compact (no horizontal scroll) */}
+        <div className="flex md:hidden min-w-0 items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto" role="navigation" aria-label="Main navigation">
           {navViews.map((v) => (
             <button key={v} onClick={() => setView(v)}
               data-tour={isMobile ? `nav-${v}` : undefined}
               aria-current={activeView === v ? "page" : undefined}
-              className={`px-2.5 py-1.5 rounded-full text-[11px] font-semibold transition-colors min-h-[36px] focus-ring ${
+              className={`flex min-h-[36px] flex-col items-center justify-center gap-0.5 whitespace-nowrap rounded-full px-2 py-1 text-[9px] font-bold leading-none transition-colors focus-ring ${
                 activeView === v ? "bg-white text-emerald-800 shadow-sm" : "text-white/80 hover:text-white"
               }`}>
-              {VIEW_LABELS[v]}
+              <span aria-hidden="true" className="text-sm leading-none">{VIEW_META[v].icon}</span>
+              {VIEW_META[v].label}
             </button>
           ))}
         </div>
