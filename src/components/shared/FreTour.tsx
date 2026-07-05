@@ -473,7 +473,7 @@ function FloatingEmoji({ emojis }: { emojis: string[] }) {
         const duration = 6 + (i % 4) * 2;
         return (
           <span
-            key={i}
+            key={`${emoji}-${i}`}
             className="absolute opacity-[0.08] animate-[freFloat_ease-in-out_infinite]"
             style={{
               fontSize: size,

@@ -439,7 +439,7 @@ function MetaSection({ meta }: { meta: LLMTripPlanResult["meta"] }) {
           <p className="text-[9px] font-bold text-amber-600 uppercase tracking-wider mb-1">Things to Avoid</p>
           <ul className="space-y-0.5">
             {meta.thingsToAvoid.map((t, i) => (
-              <li key={i} className="text-[10px] text-amber-700">⚠ {t}</li>
+              <li key={`${t}-${i}`} className="text-[10px] text-amber-700">⚠ {t}</li>
             ))}
           </ul>
         </div>
@@ -450,7 +450,7 @@ function MetaSection({ meta }: { meta: LLMTripPlanResult["meta"] }) {
       {meta.highlights.length > 0 && (
         <div className="flex flex-wrap gap-1.5">
           {meta.highlights.map((h, i) => (
-            <span key={i} className="text-[10px] text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full">✨ {h}</span>
+            <span key={`${h}-${i}`} className="text-[10px] text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full">✨ {h}</span>
           ))}
         </div>
       )}

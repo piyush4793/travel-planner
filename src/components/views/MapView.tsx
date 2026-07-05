@@ -68,6 +68,9 @@ export default function MapView({
     const map = mapRef.current;
     if (!map) return;
 
+    const controller = new AbortController();
+    const { signal } = controller;
+
     const addMarkers = () => {
       markersRef.current.forEach((m) => m.remove());
       markersRef.current = [];
@@ -81,21 +84,21 @@ export default function MapView({
           .setLngLat([country.lng, country.lat])
           .addTo(map);
 
-        el.addEventListener("click", () => onSelectRef.current(country));
+        el.addEventListener("click", () => onSelectRef.current(country), { signal });
         el.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             onSelectRef.current(country);
           }
-        });
+        }, { signal });
 
         el.addEventListener("mouseenter", () => {
           if (!containerRef.current) return;
           const cRect = containerRef.current.getBoundingClientRect();
           const eRect = el.getBoundingClientRect();
           setHovered({ country, ...computeHoverPosition(cRect, eRect) });
-        });
-        el.addEventListener("mouseleave", () => setHovered(null));
+        }, { signal });
+        el.addEventListener("mouseleave", () => setHovered(null), { signal });
 
         markersRef.current.push(marker);
       });
@@ -103,6 +106,13 @@ export default function MapView({
 
     if (map.isStyleLoaded()) addMarkers();
     else map.once("load", addMarkers);
+
+    return () => {
+      controller.abort();
+      map.off("load", addMarkers);
+      markersRef.current.forEach((m) => m.remove());
+      markersRef.current = [];
+    };
   }, [countries, highlightedNames, visitedNames]);
 
   return (
