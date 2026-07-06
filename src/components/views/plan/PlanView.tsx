@@ -2,25 +2,34 @@ import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../../core/types";
-import { BUDGET_BASIS_ORDER, BUDGET_BASIS_META, type BudgetBasis } from "../../../core/utils/budget";
+import { type BudgetBasis } from "../../../core/utils/budget";
 import { STYLE_META } from "../../../core/utils/travelStyles";
 import type { TripPlan } from "../../../core/utils/tripPlans";
 import { usePlanBuilder } from "../../../hooks/usePlanBuilder";
 import { useBackDismiss } from "../../../hooks/useBackDismiss";
 import { getCountryFlag } from "../../../utils/countryFlags";
-import PillGroup from "../../shared/PillGroup";
+import Tooltip from "../../shared/Tooltip";
 import CityCard from "../../country/panel/CityCard";
 import DestinationPicker from "./DestinationPicker";
 import PlanWorkspace from "./PlanWorkspace";
 import PlanProgressSummary from "./PlanProgressSummary";
-import PlanRouteSummary from "./PlanRouteSummary";
+import PlanBasicsStep from "./PlanBasicsStep";
 import type { PlanActions } from "./planActions";
 import { loadPlanDraft, savePlanDraft, clearPlanDraft } from "./planDraft";
 import { isEnabled } from "../../../core/featureFlags";
 import { MAX_TRIP_UNITS } from "../../../core/utils/multiCountry";
 import { getDestinationSource } from "../../../core/trip/getDestinationSource";
+import { useTripExperiences } from "../../../hooks/useTripExperiences";
 
 const ItineraryCinematic = lazy(() => import("../../country/ItineraryCinematic"));
+
+/**
+ * How many route stops the header names explicitly before collapsing the rest
+ * into a "+N" pill. The step's route timeline enumerates every stop, so the
+ * header only needs a concise, overflow-proof anchor — this keeps it stable for
+ * any number of long country names.
+ */
+const HEADER_ROUTE_STOPS = 2;
 
 type Props = {
   countries: Country[];
@@ -117,6 +126,15 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   );
 
   const experiences = displayCountry?.experiences ?? [];
+  // A multi-unit route sources its vibe pills from the union of every selected
+  // unit's experiences; a single unit keeps its own tags. Names are only passed
+  // when multi so the single-unit path never triggers the extra union load.
+  const multiUnitNames = useMemo(
+    () => (selection.length > 1 ? selection.map((c) => c.name) : []),
+    [selection],
+  );
+  const { experiences: tripExperiences } = useTripExperiences(multiUnitNames, source);
+  const basicsExperiences = selection.length > 1 ? tripExperiences : experiences;
   const cities = builder.orderedCities;
 
   // Basics → (Places, when the destination has cities) → Your trip. Cities are
@@ -159,6 +177,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   // are hidden until the wizard plans each country individually downstream.
   const isMulti = selection.length > 1;
   const unsavedSelection = selection.filter((c) => !myListNames.has(c.name));
+  const routeLabel = selection.map((c) => `${getCountryFlag(c.name)} ${c.name}`).join("  →  ");
 
   const safeIndex = Math.min(stepIndex, steps.length - 1);
   const current = STEP_META[steps[safeIndex]];
@@ -196,14 +215,32 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-700/80">Planning</p>
             <div className="flex items-center gap-2">
               {isMulti ? (
-                <h1 className="truncate font-display text-lg font-semibold tracking-tight text-[#16241d] sm:text-xl">
-                  {selection.map((c, i) => (
-                    <span key={c.name}>
-                      {i > 0 && <span aria-hidden="true" className="mx-1 text-[#cfc9b8]">→</span>}
-                      <span aria-hidden="true" className="mr-1">{getCountryFlag(c.name)}</span>
-                      {c.name}
-                    </span>
-                  ))}
+                <h1
+                  aria-label={`Planning a route through ${selection.map((c) => c.name).join(", ")}`}
+                  className="flex min-w-0 items-center font-display text-lg font-semibold tracking-tight text-[#16241d] sm:text-xl"
+                >
+                  <span className="truncate">
+                    {selection.slice(0, HEADER_ROUTE_STOPS).map((c, i) => (
+                      <span key={c.name}>
+                        {i > 0 && <span aria-hidden="true" className="mx-1 text-[#cfc9b8]">→</span>}
+                        <span aria-hidden="true" className="mr-1">{getCountryFlag(c.name)}</span>
+                        {c.name}
+                      </span>
+                    ))}
+                  </span>
+                  {selection.length > HEADER_ROUTE_STOPS && (
+                    <Tooltip
+                      variant="wrap"
+                      text={routeLabel}
+                      triggerClassName="ml-1.5 shrink-0"
+                    >
+                      <span
+                        className="rounded-full bg-[#ece7d8] px-1.5 py-0.5 text-[11px] font-bold text-[#6f6a5d]"
+                      >
+                        +{selection.length - HEADER_ROUTE_STOPS}
+                      </span>
+                    </Tooltip>
+                  )}
                 </h1>
               ) : (
                 <>
@@ -359,68 +396,25 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                     <span className="rounded-full bg-[#efeadd] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#a09a89]">Optional</span>
                   )}
                 </div>
-                <p className="mx-auto mt-1.5 max-w-sm text-xs text-[#6f6a5d]">{current.subtitle}</p>
+                <p className="mx-auto mt-1.5 max-w-sm text-xs text-[#6f6a5d]">
+                  {current.key === "basics" && isMulti
+                    ? "Who's going and what you love — we'll tailor each stop next."
+                    : current.subtitle}
+                </p>
               </div>
 
               {current.key === "basics" && (
-                <div className="mx-auto w-full max-w-md space-y-6">
-                  {/* Party size */}
-                  <section>
-                    <p className="mb-2.5 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800">Who's going?</p>
-                    <div className="flex justify-center">
-                      <PillGroup
-                        options={BUDGET_BASIS_ORDER.map((b) => ({ key: b, label: `${BUDGET_BASIS_META[b].icon} ${BUDGET_BASIS_META[b].label}` }))}
-                        value={budgetBasis}
-                        onChange={(v) => setBudgetBasis(v as BudgetBasis)}
-                        accent="emerald"
-                      />
-                    </div>
-                  </section>
-
-                  {/* Vibe — single-country only (multi-country vibe composes per
-                      country downstream, so it's omitted from the route Basics). */}
-                  {!isMulti && experiences.length > 0 && (
-                    <section>
-                      <p className="mb-2.5 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800">What are you into?</p>
-                      <div className="flex flex-wrap justify-center gap-2">
-                        {experiences.map((exp) => {
-                          const active = builder.selectedExperiences.includes(exp);
-                          return (
-                            <button
-                              key={exp}
-                              onClick={() => builder.toggleExperience(exp)}
-                              aria-pressed={active}
-                              className={`focus-ring-emerald min-h-[38px] rounded-full border px-3.5 py-1.5 text-[13px] transition-[transform,box-shadow,border-color,color] ${
-                                active
-                                  ? "border-emerald-700 bg-emerald-700 font-semibold text-white shadow-sm"
-                                  : "border-[#e7e1d2] bg-white font-medium text-[#3c463f] hover:border-emerald-500 hover:text-emerald-800"
-                              }`}
-                            >
-                              {exp}
-                            </button>
-                          );
-                        })}
-                      </div>
-                      {/* Fixed-height slot so toggling selection never changes the block height. */}
-                      <div className="mt-3 flex h-5 items-center justify-center">
-                        {builder.selectedExperiences.length > 0 && (
-                          <button
-                            onClick={builder.clearExperiences}
-                            className="focus-ring-emerald rounded text-[11px] font-semibold text-[#a09a89] transition-colors hover:text-[#6f6a5d]"
-                          >
-                            Clear ({builder.selectedExperiences.length})
-                          </button>
-                        )}
-                      </div>
-                    </section>
-                  )}
-
-                  {/* Live feedback so the step feels substantial, not empty.
-                      Multi-country shows the summed route; single shows the plan. */}
-                  {isMulti
-                    ? <PlanRouteSummary selection={selection} source={source} />
-                    : plan && <PlanProgressSummary plan={plan} />}
-                </div>
+                <PlanBasicsStep
+                  selection={selection}
+                  source={source}
+                  budgetBasis={budgetBasis}
+                  setBudgetBasis={setBudgetBasis}
+                  experiences={basicsExperiences}
+                  selectedExperiences={builder.selectedExperiences}
+                  onToggleExperience={builder.toggleExperience}
+                  onClearExperiences={builder.clearExperiences}
+                  plan={plan}
+                />
               )}
 
               {current.key === "cities" && (

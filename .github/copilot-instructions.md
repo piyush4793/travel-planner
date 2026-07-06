@@ -93,8 +93,10 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | AI chat/settings modals | `src/components/ai/ChatModal.tsx`, `src/components/ai/SettingsModal.tsx` |
 | Guided planning wizard (view) | `src/components/views/plan/PlanView.tsx` |
 | Guided planning funnel hook | `src/hooks/usePlanBuilder.ts` |
-| Plan wizard subcomponents | `src/components/views/plan/{DestinationPicker,DayLengthControl,PlanProgressSummary,PlanPreviewPane,PlanCityJumpNav,planDraft}.tsx` |
-| Multi-country selection config + helpers | `src/core/utils/multiCountry.ts` (`MAX_TRIP_COUNTRIES`, `toggleTripSelection`) |
+| Plan wizard subcomponents | `src/components/views/plan/{DestinationPicker,DayLengthControl,PlanProgressSummary,PlanPreviewPane,PlanCityJumpNav,PlanBasicsStep,PlanRouteSummary,planDraft}.tsx` |
+| Multi-country selection config + helpers | `src/core/utils/multiCountry.ts` (`MAX_TRIP_UNITS`, `toggleTripSelection`) |
+| Destination scope seam (int'l today, domestic next) | `src/core/trip/{destinationSource,internationalSource,getDestinationSource}.ts` (`experiencesFor`, `dayBounds`, `comboRecommendations`) |
+| Multi-country vibe union loader | `src/hooks/useTripExperiences.ts` |
 | Plan "Your trip" two-rail workspace | `src/components/views/plan/{PlanWorkspace,ShapeRail,ContextRail,PlanBudgetPanel,RailSection,PlanNotesSection,planActions}.tsx` |
 | Creator's wishlist (starter pack) | `src/core/data/creatorWishlist.ts` |
 | Popular destinations (Plan picker) | `src/core/data/popularDestinations.ts` |
@@ -125,6 +127,8 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | **Discover** | Browse the 197-country sovereign catalog by region. Add/remove destinations from My List. Uses its own filter bar. One-click **creator's wishlist** starter pack (`creatorWishlistNames()`, preview + confirm) and **reset to starter list** (confirm), wired via `onAddMany` / `onResetList`. |
 
 **MapView** is not a standalone route anymore — it stays mounted behind the UI and becomes visible for Cinematic mode.
+
+**Multi-country Plan (`multiCountryPlanning`, default ON)** — `DestinationPicker` chips toggle an ordered `selection` (≤ `MAX_TRIP_UNITS`=4, `toggleTripSelection`), confirmed via a sticky "Plan trip →" tray → `onStart(countries)` seeds `PlanView.selection` (`picked = selection[0]`). Every wizard surface **molds from that selection via the `DestinationSource` seam** (`core/trip/`), so switching to a future `domestic`/India scope is a source swap, not a rewrite — no surface assumes "country". Molded surfaces: (1) **`PlanRouteSummary`** (multi only) — route timeline summing per-stop *recommended* baseline days (`source.dayBounds(name).rec`), explicitly labelled **recommended** (ⓘ tooltip; real tuning is downstream), longest stop badged **Anchor** (`Math.max`); single selections show `PlanProgressSummary` instead. (2) **`PlanBasicsStep`** vibe pills — single unit's tags, or the **union** across the route via `useTripExperiences(names, source)` (stale-guarded, over `source.experiencesFor`); overflow base-safeguarded by a height-bounded scroll container (NOT a hard cap) + UX-only `visibleCap` (default 10, `Infinity` disables) with "+N more" toggle outside the scroll; selected tags always visible. (3) **Header** — names first `HEADER_ROUTE_STOPS`=2 stops + a **+N** pill (shared portal `Tooltip`) revealing the full ordered route; `<h1 aria-label>` carries the complete route for SR. Basics subhead avoids promising controls the step lacks (no "how long" — length is auto-recommended). The wizard plans the primary destination today; full cross-country itinerary composition is the next phase.
 
 **Country Detail Panel** — slides in from right (full-screen on mobile):
 - Header: name, visited toggle, favorite ★, dedicated edit/delete actions
@@ -181,7 +185,7 @@ src/components/
   shared/   — PillGroup (accent="blue"|"emerald"), FilterChip, Filters, Tooltip, HomeCountrySelector, DevFlagPanel, ExperienceDropdown, AppInstallShare, FreTour, ConfirmDialog (useConfirm)
   views/    — CalendarView, DiscoverView, TripsView
   views/trips/ — TripsView subcomponents: types (Trip + buildTrips), TripCard (memo'd), TripEditor (memo'd), TripSection (collapsible + paginated wrappers)
-  views/plan/ — Guided wizard: PlanView + DestinationPicker (landing board ordered favorites → remaining → visited, each popularity desc), DayLengthControl, PlanProgressSummary, PlanPreviewPane, PlanCityJumpNav; "Your trip" two-rail workspace (PlanWorkspace, ShapeRail, ContextRail, PlanBudgetPanel, RailSection, PlanNotesSection, planActions) — all luxury emerald/ivory
+  views/plan/ — Guided wizard: PlanView + DestinationPicker (landing board ordered favorites → remaining → visited, each popularity desc), DayLengthControl, PlanProgressSummary, PlanPreviewPane, PlanCityJumpNav, PlanBasicsStep, PlanRouteSummary; "Your trip" two-rail workspace (PlanWorkspace, ShapeRail, ContextRail, PlanBudgetPanel, RailSection, PlanNotesSection, planActions) — all luxury emerald/ivory
   views/discover/ — DiscoverView subcomponents (CreatorWishlistDialog starter-pack preview)
 ```
 
@@ -443,7 +447,7 @@ System in `src/core/featureFlags.ts`. Stored in `tp_features` localStorage key.
 | `pdfExport` | `true` | paid | Export itineraries as PDF |
 | `searchableHomeCountry` | `false` | free | Searchable home-country dropdown |
 | `guidedPlanning` | `true` | free | Guided planning wizard (`#plan` view) |
-| `multiCountryPlanning` | `false` | free | Multi-country planning on `#plan` (multi-select picker + tray, up to `MAX_TRIP_COUNTRIES`=4); phased rollout, off by default |
+| `multiCountryPlanning` | `true` | free | Multi-country planning on `#plan` (multi-select picker + tray, up to `MAX_TRIP_UNITS`=4); enabled by default. Wizard surfaces mold from the selection via the `DestinationSource` seam |
 | `tripGroups` | `false` | free | Multi-country trip group annotations |
 
 **Adding a new flag:**

@@ -307,8 +307,61 @@ describe("PlanView — multi-country Basics", () => {
     // Country-scoped controls are suppressed in multi mode.
     expect(screen.queryByRole("button", { name: /Add to favorites/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /Mark as visited/i })).not.toBeInTheDocument();
-    // No single-country vibe pills in multi mode.
+    // No vibe pills: neither fake unit has rule data, so the union is empty.
     expect(screen.queryByText(/What are you into\?/i)).not.toBeInTheDocument();
+  });
+
+  it("summarizes a long route in the header with a '+N' pill and full aria-label", async () => {
+    const units: Country[] = ["Alphaland", "Betaland", "Gammaland", "Deltaland"].map((name) => ({
+      name, lat: 0, lng: 0, budget: "₹1L", bestMonths: ["June"], experiences: [],
+    }));
+    render(
+      <PlanView
+        countries={units}
+        visitedNames={new Set()}
+        budgetBasis="couple"
+        setBudgetBasis={vi.fn()}
+        homeCountry="India"
+        onGoDiscover={vi.fn()}
+        onAddToList={vi.fn()}
+      />,
+    );
+    for (const u of units) fireEvent.click(screen.getByRole("button", { name: new RegExp(u.name, "i") }));
+    fireEvent.click(screen.getByRole("button", { name: /Plan trip with 4 countries/i }));
+    await screen.findByText(/Who's going\?/i);
+    // Header names only the first two stops, then collapses the rest.
+    const heading = screen.getByRole("heading", {
+      name: /Planning a route through Alphaland, Betaland, Gammaland, Deltaland/i,
+    });
+    expect(heading).toHaveTextContent("+2");
+    expect(heading).not.toHaveTextContent("Gammaland");
+    // The "+N" pill is an interactive affordance: revealing it exposes the full
+    // ordered route so a sighted user can recall every stop at any step.
+    const morePill = screen.getByRole("button", { name: /Alphaland.*Betaland.*Gammaland.*Deltaland/i });
+    fireEvent.click(morePill);
+    expect(await screen.findByRole("tooltip")).toHaveTextContent(/Gammaland/);
+  });
+
+  it("shows union vibe pills for a multi-unit route with rule-backed data", async () => {
+    render(
+      <PlanView
+        countries={[
+          { name: "Norway", lat: 60, lng: 8, budget: "₹1L", bestMonths: ["June"], experiences: [] },
+          { name: "Sweden", lat: 60, lng: 15, budget: "₹1L", bestMonths: ["June"], experiences: [] },
+        ]}
+        visitedNames={new Set()}
+        budgetBasis="couple"
+        setBudgetBasis={vi.fn()}
+        homeCountry="India"
+        onGoDiscover={vi.fn()}
+        onAddToList={vi.fn()}
+      />,
+    );
+    fireEvent.click(screen.getByRole("button", { name: /^Norway/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^Sweden/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Plan trip with 2 countries/i }));
+    // Vibe section appears once the union of both countries' experiences loads.
+    expect(await screen.findByText(/What are you into\?/i)).toBeInTheDocument();
   });
 
   it("adds all unsaved destinations to the list from the route banner", async () => {

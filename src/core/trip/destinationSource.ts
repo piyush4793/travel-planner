@@ -39,4 +39,11 @@ export interface DestinationSource {
   comboRecommendations(chosen: string[], exclude?: Set<string>): Country[];
   /** Recommended/max trip-day bounds for a unit (synchronous, manifest-backed). */
   dayBounds(name: string): DayBounds;
+  /**
+   * Union of experience tags offered by the given units, in first-seen order.
+   * Async because it reads each unit's detail data (loaded on demand). The
+   * international scope derives this from country rule data; a future domestic
+   * scope derives the same shape from its state/city data.
+   */
+  experiencesFor(names: string[]): Promise<string[]>;
 }

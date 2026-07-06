@@ -36,6 +36,23 @@ describe("internationalSource", () => {
   it("falls back to safe day bounds for unknown units", () => {
     expect(dayBoundsFor("Nowhereland")).toEqual({ rec: 7, max: 14 });
   });
+
+  it("unions selected units' experiences in first-seen order without duplicates", async () => {
+    const single = await internationalSource.experiencesFor(["Norway"]);
+    expect(single.length).toBeGreaterThan(0);
+    expect(new Set(single).size).toBe(single.length);
+
+    const union = await internationalSource.experiencesFor(["Norway", "Sweden"]);
+    expect(new Set(union).size).toBe(union.length);
+    // Every tag the first unit offers is present in the multi-unit union.
+    for (const exp of single) expect(union).toContain(exp);
+  });
+
+  it("ignores unknown units when unioning experiences", async () => {
+    const union = await internationalSource.experiencesFor(["Norway", "Nowhereland"]);
+    const norway = await internationalSource.experiencesFor(["Norway"]);
+    expect(union).toEqual(norway);
+  });
 });
 
 describe("getDestinationSource", () => {

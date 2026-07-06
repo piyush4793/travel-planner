@@ -4,6 +4,7 @@ import {
   comboRecommendations,
   dayBoundsFor,
 } from "../data/popularDestinations";
+import { loadConsolidatedCountry } from "../../data/consolidatedCountry";
 import type { DestinationSource } from "./destinationSource";
 
 /**
@@ -19,4 +20,18 @@ export const internationalSource: DestinationSource = {
   resolveUnit: resolvePlannable,
   comboRecommendations,
   dayBounds: dayBoundsFor,
+  async experiencesFor(names) {
+    const loaded = await Promise.all(names.map((n) => loadConsolidatedCountry(n)));
+    const seen = new Set<string>();
+    const union: string[] = [];
+    for (const country of loaded) {
+      for (const exp of country?.experiences ?? []) {
+        if (!seen.has(exp)) {
+          seen.add(exp);
+          union.push(exp);
+        }
+      }
+    }
+    return union;
+  },
 };

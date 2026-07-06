@@ -248,7 +248,7 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 | `pdfExport` | `true` | paid | Export itineraries as PDF from country panel. Hidden unless `paidFeatures=true`. |
 | `searchableHomeCountry` | `false` | free | Searchable dropdown with all 197 countries for home country selection |
 | `guidedPlanning` | `true` | free | Guided planning wizard `#plan` view (Basics → Places → Your trip, with a two-rail workspace). Hidden when disabled. |
-| `multiCountryPlanning` | `false` | free | Multi-country planning on `#plan`: the destination picker becomes multi-select (up to `MAX_TRIP_COUNTRIES` = 4) with a "Plan trip →" tray, and the wizard composes one trip across the selection. Off by default (phased rollout). |
+| `multiCountryPlanning` | `true` | free | Multi-country planning on `#plan`: the destination picker becomes multi-select (up to `MAX_TRIP_UNITS` = 4) with a "Plan trip →" tray. Every wizard surface **molds itself from the selection** — Basics shows a route timeline (per-stop *recommended* days with the longest stop badged **Anchor**) and vibe pills unioned from every chosen country; the header names the first stops and reveals the full route from a **+N** pill. Enabled by default. Full cross-country itinerary composition is a later phase. |
 | `tripGroups` | `false` | free | Multi-country trip group annotations |
 
 **Payment flow (future):** A payment page will set `paidFeatures=true` in localStorage upon successful purchase, unlocking all premium features for the user.
