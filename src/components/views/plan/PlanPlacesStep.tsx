@@ -14,6 +14,7 @@ import {
 import { getCountryFlag } from "../../../utils/countryFlags";
 import PlanMenu from "./PlanMenu";
 import PlanFilters from "./PlanFilters";
+import CityDetailModal from "./CityDetailModal";
 
 /**
  * One stop's city-picking state, normalised so the step is agnostic to whether
@@ -75,39 +76,60 @@ const CARET = (
  */
 const MAX_CHIPS = 4;
 
-const DecisionCard = memo(function DecisionCard({ d, onToggle }: { d: CityDecision; onToggle: () => void }) {
+const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d: CityDecision; onToggle: () => void; onDetails: () => void }) {
   const focusLabel = d.focusMatches.length > 0 ? ` — matches ${d.focusMatches.join(", ")}` : "";
   const mutedChips = d.otherExperiences.slice(0, Math.max(0, MAX_CHIPS - d.focusMatches.length));
   const hasRail = d.recDays > 0 || d.bestWindow !== null || d.avoidWindow !== null;
   return (
-    <button
-      onClick={onToggle}
-      aria-pressed={d.included}
-      aria-label={`${d.name}${focusLabel}`}
-      className={`focus-ring-emerald flex w-full items-start gap-3 rounded-xl border px-3.5 py-3 text-left transition-colors ${
+    <div
+      className={`relative flex w-full items-start gap-3.5 rounded-xl border px-3.5 py-3 text-left transition-colors ${
         d.included
           ? "border-emerald-200 bg-emerald-50/70 hover:border-emerald-300"
           : "border-[#e6e1d4] bg-white/70 hover:border-[#cfc9b8]"
       }`}
     >
+      {/* Full-card toggle target sits beneath the content so a tap anywhere adds/drops the stop. */}
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-pressed={d.included}
+        aria-label={`${d.name}${focusLabel}`}
+        className="focus-ring-emerald absolute inset-0 rounded-xl"
+      />
+
       <span
         aria-hidden="true"
-        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 text-[11px] font-bold transition-colors ${
+        className={`pointer-events-none mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 text-[11px] font-bold transition-colors ${
           d.included ? "border-emerald-600 bg-emerald-600 text-white" : "border-[#cfc9b8] text-[#cfc9b8]"
         }`}
       >
         {d.included ? "✓" : "+"}
       </span>
 
-      <span className="flex min-w-0 flex-1 flex-col gap-1">
-        <span className="flex items-center gap-2">
-          <span className="min-w-0 flex-1 truncate text-sm font-semibold text-[#16241d]">{d.name}</span>
-          {d.signal && (
-            <span className="shrink-0 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">{d.signal}</span>
-          )}
+      <span className="pointer-events-none flex min-w-0 flex-1 flex-col gap-1">
+        <span className="flex items-start gap-x-2">
+          <span className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-0.5">
+            <span className="max-w-full truncate text-sm font-semibold text-[#16241d]">{d.name}</span>
+            {d.signal && (
+              <span className="shrink-0 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">{d.signal}</span>
+            )}
+          </span>
+          <button
+            type="button"
+            onClick={onDetails}
+            aria-label={`${d.name} details`}
+            aria-haspopup="dialog"
+            className="focus-ring-emerald pointer-events-auto relative z-10 -mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#dfdac9] bg-white text-emerald-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50"
+          >
+            <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 11v5" />
+              <path d="M12 7.6h.01" />
+            </svg>
+          </button>
         </span>
 
-        {d.brief && <span className="line-clamp-1 text-[11.5px] leading-snug text-[#6f6a5d]">{d.brief}</span>}
+        {d.brief && <span title={d.brief} className="line-clamp-1 text-[11.5px] leading-snug text-[#6f6a5d]">{d.brief}</span>}
 
         {(d.focusMatches.length > 0 || mutedChips.length > 0) && (
           <span className="mt-0.5 flex flex-wrap gap-1">
@@ -122,13 +144,13 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle }: { d: CityDecisi
       </span>
 
       {hasRail && (
-        <span className="flex shrink-0 flex-col items-end gap-0.5 self-stretch border-l border-[#ece7d8] pl-3 text-right">
+        <span className="pointer-events-none flex w-[84px] shrink-0 flex-col items-end gap-0.5 self-stretch border-l border-[#ece7d8] pl-3 text-right">
           {d.recDays > 0 && <span className="font-display text-[15px] font-bold text-[#16241d]">≈{d.recDays}d</span>}
           {d.bestWindow && <span className="whitespace-nowrap text-[10.5px] text-[#8a8577]">☀ {d.bestWindow}</span>}
           {d.avoidWindow && <span className="whitespace-nowrap text-[10.5px] text-amber-700">⚠ {d.avoidWindow}</span>}
         </span>
       )}
-    </button>
+    </div>
   );
 });
 
@@ -257,11 +279,13 @@ function SortMenu({ sort, onChange }: { sort: CitySort; onChange: (s: CitySort) 
 /** Card grid for one stop, split into "in plan" then a revealable "more options". */
 function UnitCities({ unit, sort }: { unit: PlacesUnit; sort: CitySort }) {
   const [showAll, setShowAll] = useState(false);
-  useEffect(() => { setShowAll(false); }, [unit.name]);
+  const [detailName, setDetailName] = useState<string | null>(null);
+  useEffect(() => { setShowAll(false); setDetailName(null); }, [unit.name]);
 
   const decisions = useMemo(() => sortDecisions(decideCities(unit), sort), [unit, sort]);
   const included = decisions.filter((d) => d.included);
   const rest = decisions.filter((d) => !d.included);
+  const detail = detailName ? decisions.find((d) => d.name === detailName) ?? null : null;
 
   return (
     <div className="space-y-4">
@@ -270,7 +294,7 @@ function UnitCities({ unit, sort }: { unit: PlacesUnit; sort: CitySort }) {
           <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#a8a291]">In your plan</p>
           <div className="grid gap-2 lg:grid-cols-2">
             {included.map((d) => (
-              <DecisionCard key={d.name} d={d} onToggle={() => unit.onToggleCity(d.name)} />
+              <DecisionCard key={d.name} d={d} onToggle={() => unit.onToggleCity(d.name)} onDetails={() => setDetailName(d.name)} />
             ))}
           </div>
         </div>
@@ -284,7 +308,7 @@ function UnitCities({ unit, sort }: { unit: PlacesUnit; sort: CitySort }) {
             )}
             <div className="grid gap-2 lg:grid-cols-2">
               {rest.map((d) => (
-                <DecisionCard key={d.name} d={d} onToggle={() => unit.onToggleCity(d.name)} />
+                <DecisionCard key={d.name} d={d} onToggle={() => unit.onToggleCity(d.name)} onDetails={() => setDetailName(d.name)} />
               ))}
             </div>
           </div>
@@ -296,6 +320,14 @@ function UnitCities({ unit, sort }: { unit: PlacesUnit; sort: CitySort }) {
             Show {rest.length} more {rest.length === 1 ? "place" : "places"} in {unit.name} ↓
           </button>
         )
+      )}
+
+      {detail && (
+        <CityDetailModal
+          decision={detail}
+          onToggle={() => unit.onToggleCity(detail.name)}
+          onClose={() => setDetailName(null)}
+        />
       )}
     </div>
   );
@@ -331,7 +363,7 @@ function PlanPlacesStep({ units, plan, budgetBasis, setBudgetBasis }: Props) {
   return (
     <div className="space-y-5">
       {/* Consolidated header card */}
-      <div className="rounded-2xl bg-[#16241d] px-4 py-3.5 text-white sm:px-5 sm:py-4">
+      <div className="rounded-2xl bg-[#123a2b] px-4 py-3.5 text-white sm:px-5 sm:py-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           {multi ? (
             <CountrySwitcher units={units} activeIndex={activeIndex} onSelect={setActiveIndex} />

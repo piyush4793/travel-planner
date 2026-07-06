@@ -141,12 +141,42 @@ describe("PlanPlacesStep", () => {
       activeExperiences: ["Northern Lights"],
     });
     renderStep([unit]);
-    const card = screen.getByRole("button", { name: /Tromso — matches Northern Lights/i });
+    // The card is a container; the toggle keeps the decision's accessible name.
+    const card = screen.getByRole("button", { name: /Tromso — matches Northern Lights/i }).parentElement as HTMLElement;
     expect(within(card).getByText("Arctic aurora gateway")).toBeInTheDocument();
     expect(within(card).getByText(/⚠/)).toBeInTheDocument();
     expect(within(card).getByText(/☀/)).toBeInTheDocument();
     // The focus-matched experience is surfaced as a chip on the card.
     expect(within(card).getByText("Northern Lights")).toBeInTheDocument();
+  });
+
+  it("opens a city detail modal from the card's info affordance and toggles from it", () => {
+    const onToggleCity = vi.fn();
+    renderStep([
+      makeUnit("Norway", ["Tromso"], {
+        orderedCities: [
+          {
+            name: "Tromso",
+            lat: 0,
+            lng: 0,
+            notes: "Arctic aurora gateway with the Arctic Cathedral",
+            bestMonths: ["December", "January"],
+            worstMonths: ["June"],
+            experiences: ["Northern Lights"],
+          },
+        ],
+        autoSelectedCities: ["Tromso"],
+        rule: ruleFor([{ name: "Tromso", recDays: 3 }]),
+        onToggleCity,
+      }),
+    ]);
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Tromso details" }));
+    const dialog = screen.getByRole("dialog", { name: /Tromso details/i });
+    expect(within(dialog).getByText("Arctic aurora gateway with the Arctic Cathedral")).toBeInTheDocument();
+    expect(within(dialog).getByText(/3 nights/i)).toBeInTheDocument();
+    fireEvent.click(within(dialog).getByRole("button", { name: /In your plan — tap to remove/i }));
+    expect(onToggleCity).toHaveBeenCalledWith("Tromso");
   });
 
   it("collapses non-included cities behind a Show-more tail and reveals them", () => {
@@ -166,10 +196,10 @@ describe("PlanPlacesStep", () => {
         rule: ruleFor([{ name: "Bergen", recDays: 2, signature: ["Fjords"] }]),
       }),
     ]);
-    const card = screen.getByRole("button", { name: /Bergen/i });
-    expect(within(card).getByText(/≈2d/)).toBeInTheDocument();
-    expect(within(card).getByText(/☀ May–Jul/)).toBeInTheDocument();
-    expect(within(card).getByText(/Top for Fjords/)).toBeInTheDocument();
+    const card = screen.getByRole("button", { name: /Bergen — matches Fjords/i });
+    expect(within(card.parentElement as HTMLElement).getByText(/≈2d/)).toBeInTheDocument();
+    expect(screen.getByText(/☀ May–Jul/)).toBeInTheDocument();
+    expect(screen.getByText(/Top for Fjords/)).toBeInTheDocument();
   });
 
   it("re-sorts cities to fewest days on demand", () => {
