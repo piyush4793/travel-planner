@@ -12,6 +12,13 @@ describe("featureFlags — P0", () => {
     expect(flags).toHaveProperty("llmPlanning");
     expect(flags).toHaveProperty("pdfExport");
     expect(flags).toHaveProperty("paidFeatures");
+    expect(flags).toHaveProperty("multiCountryPlanning");
+  });
+
+  it("multiCountryPlanning is a free flag, on by default", () => {
+    expect(isEnabled("multiCountryPlanning")).toBe(true);
+    setFeatureFlag("multiCountryPlanning", false);
+    expect(isEnabled("multiCountryPlanning")).toBe(false);
   });
 
   it("isEnabled returns true for paid flags by default (paidFeatures enabled)", () => {

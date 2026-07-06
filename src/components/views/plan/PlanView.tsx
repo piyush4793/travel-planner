@@ -4,18 +4,21 @@ import type maplibregl from "maplibre-gl";
 import type { Country } from "../../../core/types";
 import { BUDGET_BASIS_ORDER, BUDGET_BASIS_META, type BudgetBasis } from "../../../core/utils/budget";
 import { STYLE_META } from "../../../core/utils/travelStyles";
-import { popularDestinations } from "../../../core/data/popularDestinations";
-import { planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
 import type { TripPlan } from "../../../core/utils/tripPlans";
 import { usePlanBuilder } from "../../../hooks/usePlanBuilder";
 import { useBackDismiss } from "../../../hooks/useBackDismiss";
+import { getCountryFlag } from "../../../utils/countryFlags";
 import PillGroup from "../../shared/PillGroup";
 import CityCard from "../../country/panel/CityCard";
 import DestinationPicker from "./DestinationPicker";
 import PlanWorkspace from "./PlanWorkspace";
 import PlanProgressSummary from "./PlanProgressSummary";
+import PlanRouteSummary from "./PlanRouteSummary";
 import type { PlanActions } from "./planActions";
 import { loadPlanDraft, savePlanDraft, clearPlanDraft } from "./planDraft";
+import { isEnabled } from "../../../core/featureFlags";
+import { MAX_TRIP_UNITS } from "../../../core/utils/multiCountry";
+import { getDestinationSource } from "../../../core/trip/getDestinationSource";
 
 const ItineraryCinematic = lazy(() => import("../../country/ItineraryCinematic"));
 
@@ -58,16 +61,25 @@ const STEP_META: Record<StepKey, StepMeta> = {
 export default function PlanView({ countries, visitedNames, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onAddToList, onPlanWithAi, onToggleVisited, favoriteNames, onToggleFavorite, onUpdateNotes, aiPlanCountFor, mainMapRef, onCinematicChange }: Props) {
   // Rehydrate a saved draft once so a refresh resumes where the user left off.
   const draft0 = useRef(loadPlanDraft()).current;
-  const [picked, setPicked] = useState<Country | null>(() => {
-    if (!draft0) return null;
-    return countries.find((c) => c.name === draft0.country)
-      ?? popularDestinations().find((c) => c.name === draft0.country)
-      ?? null;
+  const multiCountry = isEnabled("multiCountryPlanning");
+  // Scope data source. International (world countries) today; a future Domestic
+  // (India cities) scope slots in via getDestinationSource without wizard changes.
+  const source = getDestinationSource("international");
+  const resolveCountry = (name: string): Country | null =>
+    countries.find((c) => c.name === name)
+    ?? source.resolveUnit(name)
+    ?? null;
+  // The ordered trip selection. The first entry is the active/primary destination
+  // the wizard currently plans; multi-country composition builds on the rest.
+  const [selection, setSelection] = useState<Country[]>(() => {
+    if (!draft0) return [];
+    return draft0.countries.map(resolveCountry).filter((c): c is Country => c !== null);
   });
+  const picked = selection[0] ?? null;
   const [stepIndex, setStepIndex] = useState(() => (picked && draft0 ? draft0.step : 0));
 
   const builderInitial =
-    draft0 && picked && draft0.country === picked.name
+    draft0 && picked && draft0.countries[0] === picked.name
       ? { selectedCities: draft0.cities, selectedExperiences: draft0.experiences, customDays: draft0.days, daysPinned: draft0.pinned }
       : undefined;
   const builder = usePlanBuilder(picked, budgetBasis, builderInitial);
@@ -76,19 +88,19 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   // Persist the funnel so a refresh resumes it; clear once the user backs out.
   const { selectedCities: selCities, selectedExperiences: selExp } = builder;
   useEffect(() => {
-    if (!picked) {
+    if (selection.length === 0) {
       clearPlanDraft();
       return;
     }
     savePlanDraft({
-      country: picked.name,
+      countries: selection.map((c) => c.name),
       step: stepIndex,
       cities: selCities,
       experiences: selExp,
       days: customDays,
       pinned: daysPinned,
     });
-  }, [picked, stepIndex, selCities, selExp, customDays, daysPinned]);
+  }, [selection, stepIndex, selCities, selExp, customDays, daysPinned]);
 
   // Cinematic fly-through overlay. Lives here (not in the pane) so it can drive
   // the always-mounted MapView behind the whole app via onCinematicChange, and
@@ -100,8 +112,8 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
 
   const myListNames = useMemo(() => new Set(countries.map((c) => c.name)), [countries]);
   const exploreCountries = useMemo(
-    () => popularDestinations().filter((c) => !myListNames.has(c.name)),
-    [myListNames],
+    () => source.popular().filter((c) => !myListNames.has(c.name)),
+    [myListNames, source],
   );
 
   const experiences = displayCountry?.experiences ?? [];
@@ -129,17 +141,24 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   if (!picked) {
     return (
       <DestinationPicker
+        source={source}
         countries={countries}
         exploreCountries={exploreCountries}
         visitedNames={visitedNames}
         favoriteNames={favoriteNames}
-        onPick={(c) => { setPicked(c); setStepIndex(0); }}
+        onStart={(cs) => { setSelection(cs); setStepIndex(0); }}
         onGoDiscover={onGoDiscover}
+        multiSelect={multiCountry}
+        maxSelection={MAX_TRIP_UNITS}
       />
     );
   }
-
   const notInList = !myListNames.has(picked.name);
+  // Multi-country trip: the Basics step summarizes the whole route rather than a
+  // single destination. Country-scoped controls (style badge, favorite, visited)
+  // are hidden until the wizard plans each country individually downstream.
+  const isMulti = selection.length > 1;
+  const unsavedSelection = selection.filter((c) => !myListNames.has(c.name));
 
   const safeIndex = Math.min(stepIndex, steps.length - 1);
   const current = STEP_META[steps[safeIndex]];
@@ -151,7 +170,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   const nextIsReview = steps[safeIndex + 1] === "review";
 
   const goTo = (i: number) => setStepIndex(Math.max(0, Math.min(i, steps.length - 1)));
-  const changeDestination = () => { setPicked(null); setStepIndex(0); };
+  const changeDestination = () => { setSelection([]); setStepIndex(0); };
 
   // Country-bound feature actions shared by the header, right rail, and pane.
   const activeName = displayCountry?.name ?? picked.name;
@@ -176,17 +195,32 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
           <div className="min-w-0">
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-700/80">Planning</p>
             <div className="flex items-center gap-2">
-              <h1 className="truncate font-display text-lg font-semibold tracking-tight text-[#16241d] sm:text-xl">{picked.name}</h1>
-              {styleMeta && (
-                <span
-                  title={styleMeta.description}
-                  className={`hidden shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold sm:inline-flex ${styleMeta.badge}`}
-                >
-                  <span aria-hidden="true">{styleMeta.icon}</span> {styleMeta.label}
-                </span>
+              {isMulti ? (
+                <h1 className="truncate font-display text-lg font-semibold tracking-tight text-[#16241d] sm:text-xl">
+                  {selection.map((c, i) => (
+                    <span key={c.name}>
+                      {i > 0 && <span aria-hidden="true" className="mx-1 text-[#cfc9b8]">→</span>}
+                      <span aria-hidden="true" className="mr-1">{getCountryFlag(c.name)}</span>
+                      {c.name}
+                    </span>
+                  ))}
+                </h1>
+              ) : (
+                <>
+                  <h1 className="truncate font-display text-lg font-semibold tracking-tight text-[#16241d] sm:text-xl">{picked.name}</h1>
+                  {styleMeta && (
+                    <span
+                      title={styleMeta.description}
+                      className={`hidden shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold sm:inline-flex ${styleMeta.badge}`}
+                    >
+                      <span aria-hidden="true">{styleMeta.icon}</span> {styleMeta.label}
+                    </span>
+                  )}
+                </>
               )}
             </div>
           </div>
+          {!isMulti && (
           <div className="ml-auto flex shrink-0 items-center gap-2">
             {planActions.onToggleFavorite && (
               <button
@@ -216,22 +250,46 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                 <span aria-hidden="true">{isVisited ? "✅" : "○"}</span> <span className="hidden sm:inline">Visited</span>
               </button>
             )}
-            {!isReview && plan && (
-              <span className="flex items-center gap-1 rounded-full border border-[#e4dece] bg-white px-3 py-1 text-[11px] font-bold text-[#1e2a25] shadow-[0_1px_2px_rgba(20,40,30,0.05)]">
-                📅 {plan.days.length}d · {plan.costPerPerson}
-                <span title={planCostBasisLabel(plan)} aria-label={planCostBasisLabel(plan)}>{planCostBasisIcon(plan)}</span>
-              </span>
-            )}
           </div>
+          )}
         </div>
 
-        {notInList && onAddToList && (
-          <button
-            onClick={() => onAddToList(picked.name)}
-            className="focus-ring-emerald mt-2 inline-flex min-h-[36px] items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-[11px] font-bold text-emerald-700 shadow-sm transition-colors hover:bg-emerald-100"
-          >
-            ＋ Add {picked.name} to your list
-          </button>
+        {isMulti ? (
+          unsavedSelection.length > 0 && onAddToList && (
+            <div className="mt-2.5 flex items-center gap-2.5 rounded-xl border border-emerald-200/70 bg-emerald-50/60 px-3 py-2">
+              <span aria-hidden="true" className="text-base leading-none">🔖</span>
+              <p className="min-w-0 flex-1 text-[11px] leading-snug text-emerald-900/80">
+                <span className="font-bold text-emerald-900">
+                  {unsavedSelection.length} {unsavedSelection.length === 1 ? "stop" : "stops"} not saved.
+                </span>{" "}
+                Add them to keep this trip and track it in Trips.
+              </p>
+              <button
+                onClick={() => unsavedSelection.forEach((c) => onAddToList(c.name))}
+                aria-label={`Add ${unsavedSelection.length} ${unsavedSelection.length === 1 ? "destination" : "destinations"} to your list`}
+                className="focus-ring-emerald inline-flex min-h-[32px] shrink-0 items-center gap-1 rounded-full bg-emerald-600 px-3 py-1 text-[11px] font-bold text-white shadow-sm transition-colors hover:bg-emerald-700"
+              >
+                ＋ Add all
+              </button>
+            </div>
+          )
+        ) : (
+          notInList && onAddToList && (
+          <div className="mt-2.5 flex items-center gap-2.5 rounded-xl border border-emerald-200/70 bg-emerald-50/60 px-3 py-2">
+            <span aria-hidden="true" className="text-base leading-none">🔖</span>
+            <p className="min-w-0 flex-1 text-[11px] leading-snug text-emerald-900/80">
+              <span className="font-bold text-emerald-900">Not saved yet.</span>{" "}
+              Add {picked.name} to keep this plan and track it in Trips.
+            </p>
+            <button
+              onClick={() => onAddToList(picked.name)}
+              aria-label={`Add ${picked.name} to your list`}
+              className="focus-ring-emerald inline-flex min-h-[32px] shrink-0 items-center gap-1 rounded-full bg-emerald-600 px-3 py-1 text-[11px] font-bold text-white shadow-sm transition-colors hover:bg-emerald-700"
+            >
+              ＋ Add
+            </button>
+          </div>
+          )
         )}
 
         {/* Labeled, tappable stepper — doubles as back navigation (tap an
@@ -319,8 +377,9 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                     </div>
                   </section>
 
-                  {/* Vibe — only when the destination carries experience tags */}
-                  {experiences.length > 0 && (
+                  {/* Vibe — single-country only (multi-country vibe composes per
+                      country downstream, so it's omitted from the route Basics). */}
+                  {!isMulti && experiences.length > 0 && (
                     <section>
                       <p className="mb-2.5 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800">What are you into?</p>
                       <div className="flex flex-wrap justify-center gap-2">
@@ -331,10 +390,10 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                               key={exp}
                               onClick={() => builder.toggleExperience(exp)}
                               aria-pressed={active}
-                              className={`focus-ring-emerald min-h-[40px] rounded-full border px-4 py-2 text-sm font-semibold transition-[transform,box-shadow,border-color,color] ${
+                              className={`focus-ring-emerald min-h-[38px] rounded-full border px-3.5 py-1.5 text-[13px] transition-[transform,box-shadow,border-color,color] ${
                                 active
-                                  ? "border-emerald-700 bg-emerald-700 text-white shadow-sm"
-                                  : "border-[#e4dece] bg-white text-[#1e2a25] hover:border-emerald-600 hover:text-emerald-800"
+                                  ? "border-emerald-700 bg-emerald-700 font-semibold text-white shadow-sm"
+                                  : "border-[#e7e1d2] bg-white font-medium text-[#3c463f] hover:border-emerald-500 hover:text-emerald-800"
                               }`}
                             >
                               {exp}
@@ -356,8 +415,11 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                     </section>
                   )}
 
-                  {/* Live feedback so the step feels substantial, not empty */}
-                  {plan && <PlanProgressSummary plan={plan} />}
+                  {/* Live feedback so the step feels substantial, not empty.
+                      Multi-country shows the summed route; single shows the plan. */}
+                  {isMulti
+                    ? <PlanRouteSummary selection={selection} source={source} />
+                    : plan && <PlanProgressSummary plan={plan} />}
                 </div>
               )}
 

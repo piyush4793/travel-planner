@@ -3,11 +3,14 @@ import { LS_KEYS } from "../../../core/lsKeys";
 
 /**
  * A resumable snapshot of the guided planner so a page refresh drops the user
- * back where they left off (same destination, step and selections) instead of
+ * back where they left off (same destinations, step and selections) instead of
  * restarting the wizard. Purely local convenience state — safe to discard.
+ *
+ * `countries` is the ordered trip selection (>= 1). The first entry is the
+ * active/primary destination; multi-country composition builds on the rest.
  */
 export type PlanDraft = {
-  country: string;
+  countries: string[];
   step: number;
   cities: string[];
   experiences: string[];
@@ -15,8 +18,25 @@ export type PlanDraft = {
   pinned: boolean;
 };
 
+/** Pre-multi-country persisted shape (single `country` string). */
+type StoredPlanDraft = Partial<PlanDraft> & { country?: string };
+
 export function loadPlanDraft(): PlanDraft | null {
-  return loadLS<PlanDraft | null>(LS_KEYS.PLAN_DRAFT, null);
+  const raw = loadLS<StoredPlanDraft | null>(LS_KEYS.PLAN_DRAFT, null);
+  if (!raw) return null;
+  // Normalize the legacy single-country shape to an ordered list so a refresh
+  // mid-wizard survives the upgrade. The draft is throwaway convenience state,
+  // so we migrate here rather than through the global schema-version runner.
+  const countries = raw.countries ?? (raw.country ? [raw.country] : []);
+  if (countries.length === 0) return null;
+  return {
+    countries,
+    step: raw.step ?? 0,
+    cities: raw.cities ?? [],
+    experiences: raw.experiences ?? [],
+    days: raw.days ?? 0,
+    pinned: raw.pinned ?? false,
+  };
 }
 
 export function savePlanDraft(draft: PlanDraft): void {

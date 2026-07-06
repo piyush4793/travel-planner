@@ -1,17 +1,26 @@
 import { useMemo, useState } from "react";
 import type { Country } from "../../../core/types";
 import { byPopularity } from "../../../core/data/popularDestinations";
+import type { DestinationSource } from "../../../core/trip/destinationSource";
 import { getCountryFlag } from "../../../utils/countryFlags";
+import { MAX_TRIP_UNITS, toggleTripSelection } from "../../../core/utils/multiCountry";
 
 type Props = {
+  /** Scope data source — provides combo suggestions, unit nouns and resolution. */
+  source: DestinationSource;
   /** The user's My List destinations. */
   countries: Country[];
   /** Plannable destinations NOT in My List, most popular first. */
   exploreCountries: Country[];
   visitedNames: Set<string>;
   favoriteNames?: Set<string>;
-  onPick: (country: Country) => void;
+  /** Start the wizard with an ordered selection (1 unit = single-destination trip). */
+  onStart: (countries: Country[]) => void;
   onGoDiscover: () => void;
+  /** When true, chips accumulate into a multi-unit selection confirmed via a Go arrow. */
+  multiSelect?: boolean;
+  /** Max units per trip (multi-select only). */
+  maxSelection?: number;
 };
 
 const EXPLORE_LIMIT = 12;
@@ -35,16 +44,18 @@ function filterByQuery(list: Country[], q: string): Country[] {
     .map((s) => s.c);
 }
 
-function Chip({ country, visited, favorite, index, onPick }: { country: Country; visited?: boolean; favorite?: boolean; index: number; onPick: () => void }) {
+function Chip({ country, visited, favorite, index, disabled, onPick }: { country: Country; visited?: boolean; favorite?: boolean; index: number; disabled?: boolean; onPick: () => void }) {
+  const base =
+    "focus-ring-emerald group inline-flex min-h-[44px] items-center gap-2 rounded-full border px-4 py-2.5 text-sm shadow-[0_1px_2px_rgba(20,40,30,0.05)] transition-[transform,box-shadow,border-color,color] motion-safe:animate-[fadeInUp_0.28s_ease-out_both] hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0 disabled:hover:shadow-[0_1px_2px_rgba(20,40,30,0.05)]";
+  const tone = visited
+    ? "border-[#e6e1d4] bg-[#f4f1e8] text-[#a39d8c] hover:border-[#cfc9b8]"
+    : "border-[#e4dece] bg-white font-medium text-[#1e2a25] hover:border-emerald-600 hover:text-emerald-800";
   return (
     <button
       onClick={onPick}
+      disabled={disabled}
       style={{ animationDelay: `${Math.min(index, 14) * 25}ms` }}
-      className={`focus-ring-emerald group inline-flex min-h-[44px] items-center gap-2 rounded-full border px-4 py-2.5 text-sm shadow-[0_1px_2px_rgba(20,40,30,0.05)] transition-[transform,box-shadow,border-color,color] motion-safe:animate-[fadeInUp_0.28s_ease-out_both] hover:-translate-y-0.5 hover:shadow-md ${
-        visited
-          ? "border-[#e6e1d4] bg-[#f4f1e8] text-[#a39d8c] hover:border-[#cfc9b8]"
-          : "border-[#e4dece] bg-white font-medium text-[#1e2a25] hover:border-emerald-600 hover:text-emerald-800"
-      }`}
+      className={`${base} ${tone}`}
     >
       <span aria-hidden="true" className="text-base leading-none">{getCountryFlag(country.name)}</span>
       <span className="truncate">{country.name}</span>
@@ -60,10 +71,36 @@ function Chip({ country, visited, favorite, index, onPick }: { country: Country;
  * group most-popular first, then popular rule-backed destinations to explore.
  * Routes to Discover when nothing matches.
  */
-export default function DestinationPicker({ countries, exploreCountries, visitedNames, favoriteNames, onPick, onGoDiscover }: Props) {
+export default function DestinationPicker({ source, countries, exploreCountries, visitedNames, favoriteNames, onStart, onGoDiscover, multiSelect = false, maxSelection = MAX_TRIP_UNITS }: Props) {
   const [query, setQuery] = useState("");
   const [showAllMine, setShowAllMine] = useState(false);
+  const [selectedNames, setSelectedNames] = useState<string[]>([]);
   const q = query.trim().toLowerCase();
+
+  // Name → Country lookup across both tiers, so the tray can resolve selections
+  // (which are stored as names) back to full countries when starting the trip.
+  const byName = useMemo(() => {
+    const map = new Map<string, Country>();
+    for (const c of [...countries, ...exploreCountries]) map.set(c.name, c);
+    return map;
+  }, [countries, exploreCountries]);
+
+  const selectedSet = useMemo(() => new Set(selectedNames), [selectedNames]);
+  const atCap = selectedNames.length >= maxSelection;
+
+  // A chip tap starts the trip immediately in single-select mode; in multi-select
+  // it toggles the country in the selection, which is confirmed with the Go arrow.
+  const pickCountry = (c: Country) => {
+    if (!multiSelect) { onStart([c]); return; }
+    setSelectedNames((prev) => toggleTripSelection(prev, c.name, maxSelection));
+  };
+
+  const startTrip = () => {
+    const chosen = selectedNames
+      .map((n) => byName.get(n) ?? source.resolveUnit(n))
+      .filter((c): c is Country => c !== null && c !== undefined);
+    if (chosen.length > 0) onStart(chosen);
+  };
 
   // Your list: favorites → remaining (unvisited) → visited, each group most-popular first.
   const mine = useMemo(() => {
@@ -74,44 +111,98 @@ export default function DestinationPicker({ countries, exploreCountries, visited
     return [...favorites, ...remaining, ...visited];
   }, [countries, visitedNames, favoriteNames]);
 
-  const mineFiltered = useMemo(() => filterByQuery(mine, q), [mine, q]);
+  // In multi-select, a chosen country lives in the token field — so it's dropped
+  // from the browse grids below to avoid echoing the same option twice.
+  const mineFiltered = useMemo(() => {
+    const list = filterByQuery(mine, q);
+    return multiSelect ? list.filter((c) => !selectedSet.has(c.name)) : list;
+  }, [mine, q, multiSelect, selectedSet]);
   const exploreFiltered = useMemo(() => {
-    const filtered = filterByQuery(exploreCountries, q);
-    return q ? filtered : filtered.slice(0, EXPLORE_LIMIT);
-  }, [exploreCountries, q]);
+    let list = filterByQuery(exploreCountries, q);
+    if (multiSelect) list = list.filter((c) => !selectedSet.has(c.name));
+    return q ? list : list.slice(0, EXPLORE_LIMIT);
+  }, [exploreCountries, q, multiSelect, selectedSet]);
 
   // Cap the list on the pristine hero view; search or "show all" reveals everything.
   const mineCapped = q || showAllMine ? mineFiltered : mineFiltered.slice(0, MINE_LIMIT);
   const mineHidden = mineFiltered.length - mineCapped.length;
 
+  // Contextual "pairs well with" suggestions — the combo targets of the chosen
+  // countries, resolved to full seeds. Only surfaced mid-selection (multi-select,
+  // at least one pick, room to spare) to guide a great multi-country route.
+  const recommendations = useMemo(() => {
+    if (!multiSelect || selectedNames.length === 0 || atCap || q) return [];
+    return source.comboRecommendations(selectedNames, selectedSet)
+      .map((c) => byName.get(c.name) ?? c)
+      .slice(0, EXPLORE_LIMIT);
+  }, [multiSelect, selectedNames, selectedSet, atCap, q, byName, source]);
+
   const nothing = mineFiltered.length === 0 && exploreFiltered.length === 0;
 
   return (
     <div className="h-full w-full overflow-y-auto bg-[#f7f4ec]">
-      <div className="mx-auto flex min-h-full w-full max-w-2xl flex-col justify-center px-5 py-12">
+      <div className={`mx-auto flex min-h-full w-full max-w-2xl flex-col px-5 pt-12 pb-12 ${q ? "" : "justify-center"}`}>
         <div className="text-center">
           <div className="mb-3 text-3xl opacity-80" aria-hidden="true">🧭</div>
           <h1 className="font-display text-3xl font-semibold tracking-tight text-[#16241d] sm:text-4xl">
             Where do you plan to go next?
           </h1>
           <p className="mx-auto mt-3 max-w-md text-sm text-[#6f6a5d]">
-            Pick a destination and we'll shape a trip around what you love.
+            {multiSelect
+              ? "Pick up to " + maxSelection + " " + source.unitNounPlural + " and we'll shape one trip across them."
+              : "Pick a destination and we'll shape a trip around what you love."}
           </p>
         </div>
 
-        <div className="relative mt-8">
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search destinations…"
-            aria-label="Search destinations"
-            className="focus-ring-emerald w-full rounded-2xl border border-[#e4dece] bg-white px-5 py-4 text-[15px] text-[#1e2a25] shadow-[0_1px_3px_rgba(20,40,30,0.05)] outline-none transition-[border-color,box-shadow] placeholder:text-[#a8a293] focus:border-emerald-600 focus:shadow-[0_0_0_3px_rgba(4,120,87,0.12)]"
-            autoFocus
-          />
+        <div className="mt-8">
+          <div className="focus-within:border-emerald-600 focus-within:shadow-[0_0_0_3px_rgba(4,120,87,0.12)] flex items-center gap-2 rounded-2xl border border-[#e4dece] bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-[border-color,box-shadow]">
+            <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
+              {multiSelect && selectedNames.map((name) => (
+                <span key={name} className="inline-flex min-h-[32px] items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 py-0.5 pl-2.5 pr-1 text-sm font-medium text-emerald-800">
+                  <span aria-hidden="true">{getCountryFlag(name)}</span>
+                  <span className="max-w-[8rem] truncate">{name}</span>
+                  <button
+                    onClick={() => setSelectedNames((prev) => prev.filter((n) => n !== name))}
+                    aria-label={`Remove ${name}`}
+                    className="focus-ring-emerald flex h-5 w-5 items-center justify-center rounded-full text-xs text-emerald-500 transition-colors hover:bg-emerald-100 hover:text-emerald-700"
+                  >
+                    ✕
+                  </button>
+                </span>
+              ))}
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (multiSelect && e.key === "Backspace" && query === "" && selectedNames.length > 0) {
+                    setSelectedNames((prev) => prev.slice(0, -1));
+                  }
+                }}
+                placeholder={multiSelect && selectedNames.length > 0 ? "Add another…" : "Search destinations…"}
+                aria-label="Search destinations"
+                className="min-w-[7rem] flex-1 bg-transparent py-1.5 text-[15px] text-[#1e2a25] outline-none placeholder:text-[#a8a293]"
+                autoFocus
+              />
+            </div>
+            {multiSelect && selectedNames.length > 0 && (
+              <button
+                onClick={startTrip}
+                aria-label={`Plan trip with ${selectedNames.length} ${selectedNames.length === 1 ? source.unitNoun : source.unitNounPlural}`}
+                className="focus-ring-emerald flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white shadow-sm transition-[transform,background-color,box-shadow] hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-md motion-safe:animate-[fadeInUp_0.2s_ease-out]"
+              >
+                <span aria-hidden="true" className="text-xl leading-none">→</span>
+              </button>
+            )}
+          </div>
+          {multiSelect && selectedNames.length > 0 && (
+            <p className="mt-2 text-center text-[11px] font-medium text-[#a09a89]" aria-live="polite">
+              {selectedNames.length}/{maxSelection} selected{atCap ? " · max reached" : " · tap the arrow when ready"}
+            </p>
+          )}
         </div>
 
-        {countries.length === 0 && !q && (
+        {countries.length === 0 && !q && selectedNames.length === 0 && (
           <p className="mt-4 text-center text-xs text-[#6f6a5d]">
             Your list is empty — plan any popular destination below, or{" "}
             <button onClick={onGoDiscover} className="focus-ring-emerald rounded font-semibold text-emerald-700 hover:underline">
@@ -121,12 +212,27 @@ export default function DestinationPicker({ countries, exploreCountries, visited
           </p>
         )}
 
+        {recommendations.length > 0 && (
+          <section className="mt-8 rounded-2xl border border-emerald-100 bg-emerald-50/50 p-4 motion-safe:animate-[fadeInUp_0.28s_ease-out]">
+            <h2 className="mb-1 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-800">
+              <span aria-hidden="true">✨</span>
+              {selectedNames.length === 1 ? `Pairs well with ${selectedNames[0]}` : "Great additions to your trip"}
+            </h2>
+            <p className="mb-3 text-[11px] text-emerald-700/80">Travellers often combine these into one seamless route.</p>
+            <div className="flex flex-wrap gap-2.5">
+              {recommendations.map((c, i) => (
+                <Chip key={c.name} country={c} index={i} visited={visitedNames.has(c.name)} favorite={favoriteNames?.has(c.name)} onPick={() => pickCountry(c)} />
+              ))}
+            </div>
+          </section>
+        )}
+
         {mineCapped.length > 0 && (
           <section className="mt-8">
             <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#a09a89]">From your list</h2>
             <div className="flex flex-wrap gap-2.5">
               {mineCapped.map((c, i) => (
-                <Chip key={c.name} country={c} index={i} visited={visitedNames.has(c.name)} favorite={favoriteNames?.has(c.name)} onPick={() => onPick(c)} />
+                <Chip key={c.name} country={c} index={i} visited={visitedNames.has(c.name)} favorite={favoriteNames?.has(c.name)} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
               ))}
               {mineHidden > 0 && (
                 <button
@@ -155,7 +261,7 @@ export default function DestinationPicker({ countries, exploreCountries, visited
             </h2>
             <div className="flex flex-wrap gap-2.5">
               {exploreFiltered.map((c, i) => (
-                <Chip key={c.name} country={c} index={i} onPick={() => onPick(c)} />
+                <Chip key={c.name} country={c} index={i} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
               ))}
             </div>
           </section>

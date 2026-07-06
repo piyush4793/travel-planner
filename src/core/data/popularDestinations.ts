@@ -11,6 +11,7 @@ type ManifestEntry = {
   recDays: number | null;
   maxDays: number | null;
   popularityScore?: number;
+  combo?: string[];
 };
 
 const MANIFEST = manifestData as ManifestEntry[];
@@ -23,6 +24,7 @@ function seedFromManifest(m: ManifestEntry): Country {
     lng: m.lng,
     region: m.region,
     popularityScore: m.popularityScore,
+    combo: m.combo,
     bestMonths: [],
     budget: "",
     experiences: [],
@@ -48,4 +50,48 @@ const POPULAR_DESTINATIONS: Country[] = MANIFEST.filter((m) => m.hasItinerary)
  */
 export function popularDestinations(): Country[] {
   return POPULAR_DESTINATIONS;
+}
+
+// Fast name → seed lookup for combo resolution (manifest is static).
+const BY_NAME = new Map(POPULAR_DESTINATIONS.map((c) => [c.name, c]));
+
+// Recommended/max trip-day bounds per plannable destination (manifest-backed).
+const DAY_BOUNDS = new Map(
+  MANIFEST.filter((m) => m.hasItinerary).map((m) => {
+    const rec = m.recDays ?? 7;
+    return [m.name, { rec, max: Math.max(m.maxDays ?? rec, rec) }] as const;
+  }),
+);
+
+/** Recommended/max trip-day bounds for a plannable destination, with safe defaults. */
+export function dayBoundsFor(name: string): { rec: number; max: number } {
+  return DAY_BOUNDS.get(name) ?? { rec: 7, max: 14 };
+}
+
+/** Resolve a plannable destination name to its manifest seed, or null. */
+export function resolvePlannable(name: string): Country | null {
+  return BY_NAME.get(name) ?? null;
+}
+
+/**
+ * Plannable "pairs well with" destinations for a set of already-chosen countries,
+ * most popular first. Unions the `combo` targets of every chosen country, drops
+ * anything already chosen (or excluded), and resolves each to a plannable seed.
+ * Pure + synchronous — combo is denormalized into the manifest.
+ */
+export function comboRecommendations(chosen: string[], exclude?: Set<string>): Country[] {
+  const skip = new Set(chosen);
+  const seen = new Set<string>();
+  const out: Country[] = [];
+  for (const name of chosen) {
+    const source = BY_NAME.get(name);
+    for (const target of source?.combo ?? []) {
+      if (skip.has(target) || seen.has(target) || exclude?.has(target)) continue;
+      const seed = BY_NAME.get(target);
+      if (!seed) continue;
+      seen.add(target);
+      out.push(seed);
+    }
+  }
+  return out.sort(byPopularity);
 }

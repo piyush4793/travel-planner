@@ -17,6 +17,7 @@ const FLAG_META: Record<keyof FeatureFlags, FlagMeta> = {
   searchableHomeCountry: { label: "Searchable Home Country", description: "Dropdown with all 197 countries" },
   tripGroups:            { label: "Trip Groups", description: "Create multi-country trip groups" },
   guidedPlanning:        { label: "Guided Planning", description: "One-way Plan tab funnel (Who → Vibe → Length → Cities)" },
+  multiCountryPlanning:  { label: "Multi-Country Planning", description: "Select multiple countries on the Plan page to build one multi-country trip" },
 };
 
 // Derived from PAID_FLAGS — single source of truth in featureFlags.ts

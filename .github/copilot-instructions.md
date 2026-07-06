@@ -94,6 +94,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | Guided planning wizard (view) | `src/components/views/plan/PlanView.tsx` |
 | Guided planning funnel hook | `src/hooks/usePlanBuilder.ts` |
 | Plan wizard subcomponents | `src/components/views/plan/{DestinationPicker,DayLengthControl,PlanProgressSummary,PlanPreviewPane,PlanCityJumpNav,planDraft}.tsx` |
+| Multi-country selection config + helpers | `src/core/utils/multiCountry.ts` (`MAX_TRIP_COUNTRIES`, `toggleTripSelection`) |
 | Plan "Your trip" two-rail workspace | `src/components/views/plan/{PlanWorkspace,ShapeRail,ContextRail,PlanBudgetPanel,RailSection,PlanNotesSection,planActions}.tsx` |
 | Creator's wishlist (starter pack) | `src/core/data/creatorWishlist.ts` |
 | Popular destinations (Plan picker) | `src/core/data/popularDestinations.ts` |
@@ -341,7 +342,7 @@ All persistence uses `loadLS()` / `saveLS()` from `src/utils/storage.ts`. Keys a
 | `BACKUP_SCHEDULE` | `tp_backup_schedule` | Backup scheduling metadata |
 | `BACKUP_TARGET` | `tp_backup_target` | Platform backup destination override (`filesystem`/`opfs`/`download`) |
 | `FRE_DONE` | `tp_fre_done` | First-run experience completed/dismissed |
-| `PLAN_DRAFT` | `tp_plan_draft` | Guided Plan wizard draft (country/step/cities/experiences/days/pinned) — resumes the funnel on refresh |
+| `PLAN_DRAFT` | `tp_plan_draft` | Guided Plan wizard draft (ordered `countries`/step/cities/experiences/days/pinned) — resumes the funnel on refresh; `loadPlanDraft` migrates the legacy single-`country` shape |
 | `PLAN_UI` | `tp_plan_ui` | Guided Plan workspace UI state — desktop left/right rail collapse |
 | `LIFECYCLE_DISMISSED` | `tp_lifecycle_dismissed` | `string[]` — permanently dismissed lifecycle nudge ids (`add-to-list`, `favorite:{country}`) |
 | `LIFECYCLE_BASELINE` | `tp_lifecycle_baseline` | `{ backupAt, fingerprint }` — backup-nudge baseline (resets on backup, advances on snooze) |
@@ -442,6 +443,7 @@ System in `src/core/featureFlags.ts`. Stored in `tp_features` localStorage key.
 | `pdfExport` | `true` | paid | Export itineraries as PDF |
 | `searchableHomeCountry` | `false` | free | Searchable home-country dropdown |
 | `guidedPlanning` | `true` | free | Guided planning wizard (`#plan` view) |
+| `multiCountryPlanning` | `false` | free | Multi-country planning on `#plan` (multi-select picker + tray, up to `MAX_TRIP_COUNTRIES`=4); phased rollout, off by default |
 | `tripGroups` | `false` | free | Multi-country trip group annotations |
 
 **Adding a new flag:**

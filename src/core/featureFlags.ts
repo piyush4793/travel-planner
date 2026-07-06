@@ -18,6 +18,7 @@ export type FeatureFlags = {
   paidFeatures: boolean;
   tripGroups: boolean;
   guidedPlanning: boolean;
+  multiCountryPlanning: boolean;
 };
 
 // Which individual flags require paidFeatures to be true
@@ -30,6 +31,7 @@ const DEFAULTS: FeatureFlags = {
   paidFeatures: true,
   tripGroups: false,
   guidedPlanning: true,
+  multiCountryPlanning: true,
 };
 
 let _cache: FeatureFlags | null = null;

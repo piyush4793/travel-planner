@@ -9,7 +9,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 35
+    "popularityScore": 35,
+    "combo": [
+      "South Korea",
+      "China"
+    ]
   },
   {
     "name": "South Korea",
@@ -21,7 +25,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 38
+    "popularityScore": 38,
+    "combo": [
+      "Japan",
+      "China"
+    ]
   },
   {
     "name": "China",
@@ -33,7 +41,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 41
+    "popularityScore": 41,
+    "combo": [
+      "Japan",
+      "South Korea"
+    ]
   },
   {
     "name": "Thailand",
@@ -45,7 +57,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 33
+    "popularityScore": 33,
+    "combo": [
+      "Cambodia",
+      "Malaysia"
+    ]
   },
   {
     "name": "Malaysia",
@@ -57,7 +73,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 53
+    "popularityScore": 53,
+    "combo": [
+      "Singapore",
+      "Indonesia"
+    ]
   },
   {
     "name": "Singapore",
@@ -69,7 +89,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 40
+    "popularityScore": 40,
+    "combo": [
+      "Malaysia",
+      "Indonesia"
+    ]
   },
   {
     "name": "Cambodia",
@@ -81,7 +105,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 32
+    "popularityScore": 32,
+    "combo": [
+      "Laos",
+      "Thailand"
+    ]
   },
   {
     "name": "Laos",
@@ -93,7 +121,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 32
+    "popularityScore": 32,
+    "combo": [
+      "Thailand",
+      "Cambodia"
+    ]
   },
   {
     "name": "Vietnam",
@@ -105,7 +137,11 @@
     "hasItinerary": true,
     "recDays": 12,
     "maxDays": 16,
-    "popularityScore": 35
+    "popularityScore": 35,
+    "combo": [
+      "Cambodia",
+      "Thailand"
+    ]
   },
   {
     "name": "Nepal",
@@ -117,7 +153,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 32
+    "popularityScore": 32,
+    "combo": [
+      "Bhutan",
+      "India"
+    ]
   },
   {
     "name": "Bhutan",
@@ -129,7 +169,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 30
+    "popularityScore": 30,
+    "combo": [
+      "Nepal",
+      "India"
+    ]
   },
   {
     "name": "Indonesia",
@@ -141,7 +185,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 43
+    "popularityScore": 43,
+    "combo": [
+      "Malaysia",
+      "Philippines"
+    ]
   },
   {
     "name": "Philippines",
@@ -153,7 +201,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 43
+    "popularityScore": 43,
+    "combo": [
+      "Indonesia",
+      "Malaysia"
+    ]
   },
   {
     "name": "Maldives",
@@ -165,7 +217,10 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 29
+    "popularityScore": 29,
+    "combo": [
+      "India"
+    ]
   },
   {
     "name": "India",
@@ -177,7 +232,11 @@
     "hasItinerary": true,
     "recDays": 12,
     "maxDays": 18,
-    "popularityScore": 42
+    "popularityScore": 42,
+    "combo": [
+      "Nepal",
+      "Sri Lanka"
+    ]
   },
   {
     "name": "Sri Lanka",
@@ -189,7 +248,11 @@
     "hasItinerary": true,
     "recDays": 12,
     "maxDays": 18,
-    "popularityScore": 62
+    "popularityScore": 62,
+    "combo": [
+      "India",
+      "Maldives"
+    ]
   },
   {
     "name": "Bangladesh",
@@ -201,7 +264,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 15,
-    "popularityScore": 40
+    "popularityScore": 40,
+    "combo": [
+      "India",
+      "Nepal"
+    ]
   },
   {
     "name": "Pakistan",
@@ -213,7 +280,10 @@
     "hasItinerary": true,
     "recDays": 12,
     "maxDays": 18,
-    "popularityScore": 57
+    "popularityScore": 57,
+    "combo": [
+      "Turkey"
+    ]
   },
   {
     "name": "Afghanistan",
@@ -225,7 +295,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 20
+    "popularityScore": 20,
+    "combo": [
+      "Uzbekistan",
+      "Iran"
+    ]
   },
   {
     "name": "Myanmar",
@@ -237,7 +311,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 30
+    "popularityScore": 30,
+    "combo": [
+      "Thailand",
+      "Laos"
+    ]
   },
   {
     "name": "Mongolia",
@@ -249,7 +327,11 @@
     "hasItinerary": true,
     "recDays": 13,
     "maxDays": 18,
-    "popularityScore": 28
+    "popularityScore": 28,
+    "combo": [
+      "Russia",
+      "China"
+    ]
   },
   {
     "name": "North Korea",
@@ -261,7 +343,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 38
+    "popularityScore": 38,
+    "combo": [
+      "China",
+      "Russia"
+    ]
   },
   {
     "name": "Taiwan",
@@ -273,7 +359,11 @@
     "hasItinerary": true,
     "recDays": 11,
     "maxDays": 14,
-    "popularityScore": 51
+    "popularityScore": 51,
+    "combo": [
+      "Japan",
+      "South Korea"
+    ]
   },
   {
     "name": "Brunei",
@@ -285,7 +375,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 5,
-    "popularityScore": 18
+    "popularityScore": 18,
+    "combo": [
+      "Malaysia",
+      "Singapore"
+    ]
   },
   {
     "name": "Timor-Leste",
@@ -297,7 +391,11 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 12,
-    "popularityScore": 41
+    "popularityScore": 41,
+    "combo": [
+      "Indonesia",
+      "Australia"
+    ]
   },
   {
     "name": "Uzbekistan",
@@ -309,7 +407,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 16,
-    "popularityScore": 47
+    "popularityScore": 47,
+    "combo": [
+      "Kazakhstan",
+      "Kyrgyzstan"
+    ]
   },
   {
     "name": "Kazakhstan",
@@ -321,7 +423,11 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 13,
-    "popularityScore": 43
+    "popularityScore": 43,
+    "combo": [
+      "Uzbekistan",
+      "Kyrgyzstan"
+    ]
   },
   {
     "name": "Kyrgyzstan",
@@ -333,7 +439,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 14,
-    "popularityScore": 39
+    "popularityScore": 39,
+    "combo": [
+      "Kazakhstan",
+      "Uzbekistan"
+    ]
   },
   {
     "name": "Tajikistan",
@@ -345,7 +455,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 14,
-    "popularityScore": 28
+    "popularityScore": 28,
+    "combo": [
+      "Uzbekistan",
+      "Kyrgyzstan"
+    ]
   },
   {
     "name": "Turkmenistan",
@@ -357,7 +471,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 34
+    "popularityScore": 34,
+    "combo": [
+      "Uzbekistan",
+      "Kazakhstan"
+    ]
   },
   {
     "name": "Greece",
@@ -369,7 +487,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 26
+    "popularityScore": 26,
+    "combo": [
+      "Turkey",
+      "Italy"
+    ]
   },
   {
     "name": "Iceland",
@@ -381,7 +503,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 20
+    "popularityScore": 20,
+    "combo": [
+      "Norway",
+      "Greenland"
+    ]
   },
   {
     "name": "Georgia",
@@ -393,7 +519,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 30
+    "popularityScore": 30,
+    "combo": [
+      "Turkey",
+      "Armenia"
+    ]
   },
   {
     "name": "Russia",
@@ -405,7 +535,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 33
+    "popularityScore": 33,
+    "combo": [
+      "Belarus",
+      "Georgia"
+    ]
   },
   {
     "name": "Belarus",
@@ -417,7 +551,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 31
+    "popularityScore": 31,
+    "combo": [
+      "Russia",
+      "Poland"
+    ]
   },
   {
     "name": "Poland",
@@ -429,7 +567,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 34
+    "popularityScore": 34,
+    "combo": [
+      "Czech Republic",
+      "Germany"
+    ]
   },
   {
     "name": "Czech Republic",
@@ -441,7 +583,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 30
+    "popularityScore": 30,
+    "combo": [
+      "Austria",
+      "Poland"
+    ]
   },
   {
     "name": "Hungary",
@@ -453,7 +599,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 30
+    "popularityScore": 30,
+    "combo": [
+      "Austria",
+      "Czech Republic"
+    ]
   },
   {
     "name": "Romania",
@@ -465,7 +615,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 34
+    "popularityScore": 34,
+    "combo": [
+      "Hungary",
+      "Bulgaria"
+    ]
   },
   {
     "name": "Austria",
@@ -477,7 +631,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 42
+    "popularityScore": 42,
+    "combo": [
+      "Germany",
+      "Switzerland"
+    ]
   },
   {
     "name": "Germany",
@@ -489,7 +647,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 36
+    "popularityScore": 36,
+    "combo": [
+      "Austria",
+      "Switzerland"
+    ]
   },
   {
     "name": "Switzerland",
@@ -501,7 +663,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 38
+    "popularityScore": 38,
+    "combo": [
+      "Germany",
+      "Austria"
+    ]
   },
   {
     "name": "France",
@@ -513,7 +679,11 @@
     "hasItinerary": true,
     "recDays": 11,
     "maxDays": 11,
-    "popularityScore": 45
+    "popularityScore": 45,
+    "combo": [
+      "Spain",
+      "Italy"
+    ]
   },
   {
     "name": "Spain",
@@ -525,7 +695,10 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 42
+    "popularityScore": 42,
+    "combo": [
+      "France"
+    ]
   },
   {
     "name": "Netherlands",
@@ -537,7 +710,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 27
+    "popularityScore": 27,
+    "combo": [
+      "Germany",
+      "Belgium"
+    ]
   },
   {
     "name": "UK",
@@ -549,7 +726,11 @@
     "hasItinerary": true,
     "recDays": 11,
     "maxDays": 15,
-    "popularityScore": 100
+    "popularityScore": 100,
+    "combo": [
+      "Ireland",
+      "France"
+    ]
   },
   {
     "name": "Denmark",
@@ -561,7 +742,11 @@
     "hasItinerary": true,
     "recDays": 3,
     "maxDays": 5,
-    "popularityScore": 22
+    "popularityScore": 22,
+    "combo": [
+      "Norway",
+      "Sweden"
+    ]
   },
   {
     "name": "Norway",
@@ -573,7 +758,11 @@
     "hasItinerary": true,
     "recDays": 19,
     "maxDays": 24,
-    "popularityScore": 73
+    "popularityScore": 73,
+    "combo": [
+      "Iceland",
+      "Denmark"
+    ]
   },
   {
     "name": "Italy",
@@ -585,7 +774,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 44
+    "popularityScore": 44,
+    "combo": [
+      "Greece",
+      "France"
+    ]
   },
   {
     "name": "Greenland",
@@ -597,7 +790,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 19
+    "popularityScore": 19,
+    "combo": [
+      "Iceland",
+      "Denmark"
+    ]
   },
   {
     "name": "Portugal",
@@ -609,7 +806,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 16,
-    "popularityScore": 46
+    "popularityScore": 46,
+    "combo": [
+      "Spain",
+      "Morocco"
+    ]
   },
   {
     "name": "Sweden",
@@ -621,7 +822,12 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 16,
-    "popularityScore": 58
+    "popularityScore": 58,
+    "combo": [
+      "Norway",
+      "Finland",
+      "Denmark"
+    ]
   },
   {
     "name": "Finland",
@@ -633,7 +839,12 @@
     "hasItinerary": true,
     "recDays": 11,
     "maxDays": 17,
-    "popularityScore": 58
+    "popularityScore": 58,
+    "combo": [
+      "Estonia",
+      "Sweden",
+      "Norway"
+    ]
   },
   {
     "name": "Ireland",
@@ -645,7 +856,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 12,
-    "popularityScore": 54
+    "popularityScore": 54,
+    "combo": [
+      "UK",
+      "Portugal"
+    ]
   },
   {
     "name": "Belgium",
@@ -657,7 +872,12 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 12,
-    "popularityScore": 50
+    "popularityScore": 50,
+    "combo": [
+      "Netherlands",
+      "Luxembourg",
+      "France"
+    ]
   },
   {
     "name": "Luxembourg",
@@ -669,7 +889,12 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 43
+    "popularityScore": 43,
+    "combo": [
+      "Belgium",
+      "France",
+      "Germany"
+    ]
   },
   {
     "name": "Croatia",
@@ -681,7 +906,11 @@
     "hasItinerary": true,
     "recDays": 12,
     "maxDays": 18,
-    "popularityScore": 45
+    "popularityScore": 45,
+    "combo": [
+      "Slovenia",
+      "Montenegro"
+    ]
   },
   {
     "name": "Serbia",
@@ -693,7 +922,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 10,
-    "popularityScore": 39
+    "popularityScore": 39,
+    "combo": [
+      "Hungary",
+      "Bosnia and Herzegovina"
+    ]
   },
   {
     "name": "Bosnia and Herzegovina",
@@ -705,7 +938,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 10,
-    "popularityScore": 48
+    "popularityScore": 48,
+    "combo": [
+      "Croatia",
+      "Montenegro",
+      "Serbia"
+    ]
   },
   {
     "name": "Montenegro",
@@ -717,7 +955,12 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 14,
-    "popularityScore": 51
+    "popularityScore": 51,
+    "combo": [
+      "Croatia",
+      "Albania",
+      "Bosnia and Herzegovina"
+    ]
   },
   {
     "name": "North Macedonia",
@@ -729,7 +972,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 10,
-    "popularityScore": 49
+    "popularityScore": 49,
+    "combo": [
+      "Albania",
+      "Kosovo",
+      "Greece"
+    ]
   },
   {
     "name": "Albania",
@@ -741,7 +989,12 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 15,
-    "popularityScore": 52
+    "popularityScore": 52,
+    "combo": [
+      "Montenegro",
+      "North Macedonia",
+      "Greece"
+    ]
   },
   {
     "name": "Kosovo",
@@ -753,7 +1006,12 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 6,
-    "popularityScore": 45
+    "popularityScore": 45,
+    "combo": [
+      "Albania",
+      "North Macedonia",
+      "Montenegro"
+    ]
   },
   {
     "name": "Slovenia",
@@ -765,7 +1023,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 11,
-    "popularityScore": 51
+    "popularityScore": 51,
+    "combo": [
+      "Austria",
+      "Croatia",
+      "Italy"
+    ]
   },
   {
     "name": "Slovakia",
@@ -777,7 +1040,12 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 14,
-    "popularityScore": 57
+    "popularityScore": 57,
+    "combo": [
+      "Austria",
+      "Hungary",
+      "Poland"
+    ]
   },
   {
     "name": "Bulgaria",
@@ -789,7 +1057,12 @@
     "hasItinerary": true,
     "recDays": 11,
     "maxDays": 15,
-    "popularityScore": 71
+    "popularityScore": 71,
+    "combo": [
+      "Romania",
+      "Greece",
+      "Turkey"
+    ]
   },
   {
     "name": "Moldova",
@@ -801,7 +1074,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 31
+    "popularityScore": 31,
+    "combo": [
+      "Romania",
+      "Ukraine"
+    ]
   },
   {
     "name": "Ukraine",
@@ -813,7 +1090,12 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 38
+    "popularityScore": 38,
+    "combo": [
+      "Poland",
+      "Romania",
+      "Moldova"
+    ]
   },
   {
     "name": "Lithuania",
@@ -825,7 +1107,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 11,
-    "popularityScore": 34
+    "popularityScore": 34,
+    "combo": [
+      "Latvia",
+      "Poland"
+    ]
   },
   {
     "name": "Latvia",
@@ -837,7 +1123,12 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 13,
-    "popularityScore": 37
+    "popularityScore": 37,
+    "combo": [
+      "Estonia",
+      "Lithuania",
+      "Finland"
+    ]
   },
   {
     "name": "Estonia",
@@ -849,7 +1140,12 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 15,
-    "popularityScore": 50
+    "popularityScore": 50,
+    "combo": [
+      "Finland",
+      "Latvia",
+      "Sweden"
+    ]
   },
   {
     "name": "Cyprus",
@@ -861,7 +1157,11 @@
     "hasItinerary": true,
     "recDays": 12,
     "maxDays": 14,
-    "popularityScore": 42
+    "popularityScore": 42,
+    "combo": [
+      "Greece",
+      "Jordan"
+    ]
   },
   {
     "name": "Malta",
@@ -885,7 +1185,11 @@
     "hasItinerary": true,
     "recDays": 2,
     "maxDays": 2,
-    "popularityScore": 37
+    "popularityScore": 37,
+    "combo": [
+      "France",
+      "Italy"
+    ]
   },
   {
     "name": "Liechtenstein",
@@ -897,7 +1201,11 @@
     "hasItinerary": true,
     "recDays": 3,
     "maxDays": 4,
-    "popularityScore": 49
+    "popularityScore": 49,
+    "combo": [
+      "Switzerland",
+      "Austria"
+    ]
   },
   {
     "name": "Andorra",
@@ -909,7 +1217,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 5,
-    "popularityScore": 45
+    "popularityScore": 45,
+    "combo": [
+      "Spain",
+      "France"
+    ]
   },
   {
     "name": "San Marino",
@@ -921,7 +1233,10 @@
     "hasItinerary": true,
     "recDays": 2,
     "maxDays": 3,
-    "popularityScore": 33
+    "popularityScore": 33,
+    "combo": [
+      "Italy"
+    ]
   },
   {
     "name": "Vatican City",
@@ -933,7 +1248,10 @@
     "hasItinerary": true,
     "recDays": 1,
     "maxDays": 2,
-    "popularityScore": 23
+    "popularityScore": 23,
+    "combo": [
+      "Italy"
+    ]
   },
   {
     "name": "Armenia",
@@ -945,7 +1263,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 10,
-    "popularityScore": 40
+    "popularityScore": 40,
+    "combo": [
+      "Georgia",
+      "Turkey"
+    ]
   },
   {
     "name": "Azerbaijan",
@@ -957,7 +1279,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 34
+    "popularityScore": 34,
+    "combo": [
+      "Georgia",
+      "Turkey"
+    ]
   },
   {
     "name": "Egypt",
@@ -969,7 +1295,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 47
+    "popularityScore": 47,
+    "combo": [
+      "Turkey",
+      "United Arab Emirates"
+    ]
   },
   {
     "name": "Turkey",
@@ -981,7 +1311,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 42
+    "popularityScore": 42,
+    "combo": [
+      "Greece",
+      "Georgia"
+    ]
   },
   {
     "name": "United Arab Emirates",
@@ -993,7 +1327,11 @@
     "hasItinerary": true,
     "recDays": 3,
     "maxDays": 5,
-    "popularityScore": 42
+    "popularityScore": 42,
+    "combo": [
+      "Egypt",
+      "Jordan"
+    ]
   },
   {
     "name": "Saudi Arabia",
@@ -1005,7 +1343,11 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 13,
-    "popularityScore": 51
+    "popularityScore": 51,
+    "combo": [
+      "United Arab Emirates",
+      "Jordan"
+    ]
   },
   {
     "name": "Israel",
@@ -1017,7 +1359,12 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 14,
-    "popularityScore": 46
+    "popularityScore": 46,
+    "combo": [
+      "Jordan",
+      "Egypt",
+      "United Arab Emirates"
+    ]
   },
   {
     "name": "Jordan",
@@ -1029,7 +1376,11 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 13,
-    "popularityScore": 42
+    "popularityScore": 42,
+    "combo": [
+      "Egypt",
+      "United Arab Emirates"
+    ]
   },
   {
     "name": "Lebanon",
@@ -1041,7 +1392,12 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 10,
-    "popularityScore": 43
+    "popularityScore": 43,
+    "combo": [
+      "Jordan",
+      "Cyprus",
+      "Turkey"
+    ]
   },
   {
     "name": "Iraq",
@@ -1053,7 +1409,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 40
+    "popularityScore": 40,
+    "combo": [
+      "Jordan",
+      "Turkey"
+    ]
   },
   {
     "name": "Iran",
@@ -1065,7 +1425,11 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 15,
-    "popularityScore": 53
+    "popularityScore": 53,
+    "combo": [
+      "Turkey",
+      "Armenia"
+    ]
   },
   {
     "name": "Syria",
@@ -1077,7 +1441,12 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 8,
-    "popularityScore": 39
+    "popularityScore": 39,
+    "combo": [
+      "Lebanon",
+      "Jordan",
+      "Turkey"
+    ]
   },
   {
     "name": "Yemen",
@@ -1089,7 +1458,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 10,
-    "popularityScore": 32
+    "popularityScore": 32,
+    "combo": [
+      "Oman",
+      "Jordan"
+    ]
   },
   {
     "name": "Oman",
@@ -1101,7 +1474,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 13,
-    "popularityScore": 52
+    "popularityScore": 52,
+    "combo": [
+      "United Arab Emirates",
+      "Jordan"
+    ]
   },
   {
     "name": "Kuwait",
@@ -1113,7 +1490,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 6,
-    "popularityScore": 37
+    "popularityScore": 37,
+    "combo": [
+      "Bahrain",
+      "United Arab Emirates"
+    ]
   },
   {
     "name": "Bahrain",
@@ -1125,7 +1506,11 @@
     "hasItinerary": true,
     "recDays": 4,
     "maxDays": 4,
-    "popularityScore": 47
+    "popularityScore": 47,
+    "combo": [
+      "Saudi Arabia",
+      "United Arab Emirates"
+    ]
   },
   {
     "name": "Qatar",
@@ -1137,7 +1522,12 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 7,
-    "popularityScore": 45
+    "popularityScore": 45,
+    "combo": [
+      "United Arab Emirates",
+      "Oman",
+      "Bahrain"
+    ]
   },
   {
     "name": "Palestine",
@@ -1149,7 +1539,12 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 40
+    "popularityScore": 40,
+    "combo": [
+      "Jordan",
+      "Israel",
+      "Egypt"
+    ]
   },
   {
     "name": "South Africa",
@@ -1161,7 +1556,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 36
+    "popularityScore": 36,
+    "combo": [
+      "Zimbabwe",
+      "Botswana"
+    ]
   },
   {
     "name": "Morocco",
@@ -1173,7 +1572,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 15,
-    "popularityScore": 52
+    "popularityScore": 52,
+    "combo": [
+      "Spain",
+      "Portugal"
+    ]
   },
   {
     "name": "Tunisia",
@@ -1185,7 +1588,10 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 14,
-    "popularityScore": 44
+    "popularityScore": 44,
+    "combo": [
+      "Malta"
+    ]
   },
   {
     "name": "Algeria",
@@ -1197,7 +1603,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 15,
-    "popularityScore": 38
+    "popularityScore": 38,
+    "combo": [
+      "Tunisia",
+      "Morocco"
+    ]
   },
   {
     "name": "Libya",
@@ -1209,7 +1619,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 9,
-    "popularityScore": 34
+    "popularityScore": 34,
+    "combo": [
+      "Tunisia",
+      "Egypt"
+    ]
   },
   {
     "name": "Nigeria",
@@ -1221,7 +1635,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 13,
-    "popularityScore": 33
+    "popularityScore": 33,
+    "combo": [
+      "Ghana",
+      "Benin"
+    ]
   },
   {
     "name": "Ghana",
@@ -1233,7 +1651,10 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 12,
-    "popularityScore": 33
+    "popularityScore": 33,
+    "combo": [
+      "Togo"
+    ]
   },
   {
     "name": "Kenya",
@@ -1245,7 +1666,11 @@
     "hasItinerary": true,
     "recDays": 11,
     "maxDays": 16,
-    "popularityScore": 40
+    "popularityScore": 40,
+    "combo": [
+      "Tanzania",
+      "Uganda"
+    ]
   },
   {
     "name": "Tanzania",
@@ -1257,7 +1682,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 15,
-    "popularityScore": 41
+    "popularityScore": 41,
+    "combo": [
+      "Kenya",
+      "Rwanda"
+    ]
   },
   {
     "name": "Ethiopia",
@@ -1269,7 +1698,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 13,
-    "popularityScore": 39
+    "popularityScore": 39,
+    "combo": [
+      "Kenya",
+      "Uganda"
+    ]
   },
   {
     "name": "Uganda",
@@ -1281,7 +1714,11 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 14,
-    "popularityScore": 37
+    "popularityScore": 37,
+    "combo": [
+      "Rwanda",
+      "Kenya"
+    ]
   },
   {
     "name": "Rwanda",
@@ -1293,7 +1730,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 12,
-    "popularityScore": 36
+    "popularityScore": 36,
+    "combo": [
+      "Uganda",
+      "Tanzania"
+    ]
   },
   {
     "name": "Madagascar",
@@ -1305,7 +1746,10 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 14,
-    "popularityScore": 42
+    "popularityScore": 42,
+    "combo": [
+      "Mauritius"
+    ]
   },
   {
     "name": "Mauritius",
@@ -1317,7 +1761,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 11,
-    "popularityScore": 47
+    "popularityScore": 47,
+    "combo": [
+      "South Africa",
+      "Madagascar"
+    ]
   },
   {
     "name": "Seychelles",
@@ -1329,7 +1777,12 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 11,
-    "popularityScore": 28
+    "popularityScore": 28,
+    "combo": [
+      "Mauritius",
+      "Kenya",
+      "United Arab Emirates"
+    ]
   },
   {
     "name": "Senegal",
@@ -1341,7 +1794,11 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 12,
-    "popularityScore": 43
+    "popularityScore": 43,
+    "combo": [
+      "Gambia",
+      "Mauritania"
+    ]
   },
   {
     "name": "Ivory Coast",
@@ -1353,7 +1810,11 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 12,
-    "popularityScore": 33
+    "popularityScore": 33,
+    "combo": [
+      "Ghana",
+      "Liberia"
+    ]
   },
   {
     "name": "Cameroon",
@@ -1365,7 +1826,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 11,
-    "popularityScore": 29
+    "popularityScore": 29,
+    "combo": [
+      "Gabon",
+      "Equatorial Guinea"
+    ]
   },
   {
     "name": "Democratic Republic of the Congo",
@@ -1377,7 +1842,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 11,
-    "popularityScore": 15
+    "popularityScore": 15,
+    "combo": [
+      "Rwanda",
+      "Uganda"
+    ]
   },
   {
     "name": "Republic of the Congo",
@@ -1389,7 +1858,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 10,
-    "popularityScore": 11
+    "popularityScore": 11,
+    "combo": [
+      "Gabon",
+      "Democratic Republic of the Congo"
+    ]
   },
   {
     "name": "Angola",
@@ -1401,7 +1874,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 10,
-    "popularityScore": 36
+    "popularityScore": 36,
+    "combo": [
+      "Namibia",
+      "South Africa",
+      "Zambia"
+    ]
   },
   {
     "name": "Mozambique",
@@ -1413,7 +1891,12 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 13,
-    "popularityScore": 50
+    "popularityScore": 50,
+    "combo": [
+      "South Africa",
+      "Zimbabwe",
+      "Tanzania"
+    ]
   },
   {
     "name": "Zimbabwe",
@@ -1425,7 +1908,12 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 10,
-    "popularityScore": 41
+    "popularityScore": 41,
+    "combo": [
+      "Botswana",
+      "Zambia",
+      "South Africa"
+    ]
   },
   {
     "name": "Zambia",
@@ -1437,7 +1925,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 12,
-    "popularityScore": 39
+    "popularityScore": 39,
+    "combo": [
+      "Zimbabwe",
+      "Botswana",
+      "Malawi"
+    ]
   },
   {
     "name": "Malawi",
@@ -1449,7 +1942,12 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 10,
-    "popularityScore": 39
+    "popularityScore": 39,
+    "combo": [
+      "Zambia",
+      "Mozambique",
+      "Tanzania"
+    ]
   },
   {
     "name": "Botswana",
@@ -1461,7 +1959,12 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 10,
-    "popularityScore": 38
+    "popularityScore": 38,
+    "combo": [
+      "Zimbabwe",
+      "Namibia",
+      "South Africa"
+    ]
   },
   {
     "name": "Namibia",
@@ -1473,7 +1976,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 14,
-    "popularityScore": 35
+    "popularityScore": 35,
+    "combo": [
+      "Botswana",
+      "South Africa"
+    ]
   },
   {
     "name": "Somalia",
@@ -1485,7 +1992,12 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 6,
-    "popularityScore": 15
+    "popularityScore": 15,
+    "combo": [
+      "Djibouti",
+      "Ethiopia",
+      "United Arab Emirates"
+    ]
   },
   {
     "name": "Sudan",
@@ -1497,7 +2009,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 25
+    "popularityScore": 25,
+    "combo": [
+      "Egypt",
+      "Eritrea"
+    ]
   },
   {
     "name": "South Sudan",
@@ -1509,7 +2025,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 15
+    "popularityScore": 15,
+    "combo": [
+      "Uganda",
+      "Ethiopia"
+    ]
   },
   {
     "name": "Mali",
@@ -1521,7 +2041,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 25
+    "popularityScore": 25,
+    "combo": [
+      "Senegal",
+      "Mauritania"
+    ]
   },
   {
     "name": "Niger",
@@ -1533,7 +2057,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 24
+    "popularityScore": 24,
+    "combo": [
+      "Benin",
+      "Nigeria"
+    ]
   },
   {
     "name": "Burkina Faso",
@@ -1545,7 +2073,10 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 26
+    "popularityScore": 26,
+    "combo": [
+      "Ghana"
+    ]
   },
   {
     "name": "Chad",
@@ -1557,7 +2088,11 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 14,
-    "popularityScore": 14
+    "popularityScore": 14,
+    "combo": [
+      "Cameroon",
+      "Egypt"
+    ]
   },
   {
     "name": "Guinea",
@@ -1569,7 +2104,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 10,
-    "popularityScore": 35
+    "popularityScore": 35,
+    "combo": [
+      "Sierra Leone",
+      "Guinea-Bissau"
+    ]
   },
   {
     "name": "Benin",
@@ -1581,7 +2120,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 10,
-    "popularityScore": 33
+    "popularityScore": 33,
+    "combo": [
+      "Togo",
+      "Ghana"
+    ]
   },
   {
     "name": "Togo",
@@ -1593,7 +2136,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 30
+    "popularityScore": 30,
+    "combo": [
+      "Ghana",
+      "Benin"
+    ]
   },
   {
     "name": "Sierra Leone",
@@ -1605,7 +2152,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 10,
-    "popularityScore": 35
+    "popularityScore": 35,
+    "combo": [
+      "Guinea",
+      "Liberia"
+    ]
   },
   {
     "name": "Liberia",
@@ -1617,7 +2168,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 8,
-    "popularityScore": 34
+    "popularityScore": 34,
+    "combo": [
+      "Sierra Leone",
+      "Guinea"
+    ]
   },
   {
     "name": "Central African Republic",
@@ -1629,7 +2184,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 6,
-    "popularityScore": 19
+    "popularityScore": 19,
+    "combo": [
+      "Cameroon",
+      "Republic of the Congo"
+    ]
   },
   {
     "name": "Eritrea",
@@ -1641,7 +2200,12 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 10,
-    "popularityScore": 39
+    "popularityScore": 39,
+    "combo": [
+      "Ethiopia",
+      "Djibouti",
+      "Sudan"
+    ]
   },
   {
     "name": "Djibouti",
@@ -1653,7 +2217,12 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 30
+    "popularityScore": 30,
+    "combo": [
+      "Ethiopia",
+      "Kenya",
+      "United Arab Emirates"
+    ]
   },
   {
     "name": "Gabon",
@@ -1665,7 +2234,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 12
+    "popularityScore": 12,
+    "combo": [
+      "Cameroon",
+      "Equatorial Guinea"
+    ]
   },
   {
     "name": "Equatorial Guinea",
@@ -1677,7 +2250,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 7,
-    "popularityScore": 12
+    "popularityScore": 12,
+    "combo": [
+      "Cameroon",
+      "Gabon"
+    ]
   },
   {
     "name": "Eswatini",
@@ -1689,7 +2266,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 7,
-    "popularityScore": 31
+    "popularityScore": 31,
+    "combo": [
+      "South Africa",
+      "Mozambique"
+    ]
   },
   {
     "name": "Lesotho",
@@ -1701,7 +2282,10 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 26
+    "popularityScore": 26,
+    "combo": [
+      "South Africa"
+    ]
   },
   {
     "name": "Gambia",
@@ -1713,7 +2297,10 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 36
+    "popularityScore": 36,
+    "combo": [
+      "Senegal"
+    ]
   },
   {
     "name": "Guinea-Bissau",
@@ -1725,7 +2312,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 7,
-    "popularityScore": 31
+    "popularityScore": 31,
+    "combo": [
+      "Senegal",
+      "Guinea"
+    ]
   },
   {
     "name": "Mauritania",
@@ -1737,7 +2328,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 10,
-    "popularityScore": 29
+    "popularityScore": 29,
+    "combo": [
+      "Senegal",
+      "Morocco"
+    ]
   },
   {
     "name": "Comoros",
@@ -1749,7 +2344,12 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 35
+    "popularityScore": 35,
+    "combo": [
+      "Madagascar",
+      "Mauritius",
+      "Tanzania"
+    ]
   },
   {
     "name": "Cape Verde",
@@ -1761,7 +2361,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 10,
-    "popularityScore": 48
+    "popularityScore": 48,
+    "combo": [
+      "Senegal",
+      "Portugal",
+      "Morocco"
+    ]
   },
   {
     "name": "São Tomé and Príncipe",
@@ -1773,7 +2378,12 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 25
+    "popularityScore": 25,
+    "combo": [
+      "Portugal",
+      "Ghana",
+      "Angola"
+    ]
   },
   {
     "name": "Argentina",
@@ -1785,7 +2395,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 30
+    "popularityScore": 30,
+    "combo": [
+      "Antarctica",
+      "Chile"
+    ]
   },
   {
     "name": "United States",
@@ -1797,7 +2411,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 11,
-    "popularityScore": 81
+    "popularityScore": 81,
+    "combo": [
+      "Canada",
+      "Mexico"
+    ]
   },
   {
     "name": "Canada",
@@ -1809,7 +2427,11 @@
     "hasItinerary": true,
     "recDays": 13,
     "maxDays": 19,
-    "popularityScore": 59
+    "popularityScore": 59,
+    "combo": [
+      "United States",
+      "Greenland"
+    ]
   },
   {
     "name": "Mexico",
@@ -1821,7 +2443,12 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 55
+    "popularityScore": 55,
+    "combo": [
+      "Guatemala",
+      "Belize",
+      "United States"
+    ]
   },
   {
     "name": "Brazil",
@@ -1833,7 +2460,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 48
+    "popularityScore": 48,
+    "combo": [
+      "Argentina",
+      "Uruguay"
+    ]
   },
   {
     "name": "Colombia",
@@ -1845,7 +2476,11 @@
     "hasItinerary": true,
     "recDays": 16,
     "maxDays": 21,
-    "popularityScore": 50
+    "popularityScore": 50,
+    "combo": [
+      "Ecuador",
+      "Peru"
+    ]
   },
   {
     "name": "Peru",
@@ -1857,7 +2492,11 @@
     "hasItinerary": true,
     "recDays": 13,
     "maxDays": 17,
-    "popularityScore": 36
+    "popularityScore": 36,
+    "combo": [
+      "Bolivia",
+      "Chile"
+    ]
   },
   {
     "name": "Chile",
@@ -1869,7 +2508,11 @@
     "hasItinerary": true,
     "recDays": 13,
     "maxDays": 18,
-    "popularityScore": 35
+    "popularityScore": 35,
+    "combo": [
+      "Argentina",
+      "Peru"
+    ]
   },
   {
     "name": "Ecuador",
@@ -1881,7 +2524,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 69
+    "popularityScore": 69,
+    "combo": [
+      "Colombia",
+      "Peru"
+    ]
   },
   {
     "name": "Bolivia",
@@ -1893,7 +2540,11 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 13,
-    "popularityScore": 38
+    "popularityScore": 38,
+    "combo": [
+      "Peru",
+      "Chile"
+    ]
   },
   {
     "name": "Venezuela",
@@ -1905,7 +2556,11 @@
     "hasItinerary": true,
     "recDays": 11,
     "maxDays": 15,
-    "popularityScore": 30
+    "popularityScore": 30,
+    "combo": [
+      "Colombia",
+      "Brazil"
+    ]
   },
   {
     "name": "Paraguay",
@@ -1917,7 +2572,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 10,
-    "popularityScore": 30
+    "popularityScore": 30,
+    "combo": [
+      "Brazil",
+      "Argentina"
+    ]
   },
   {
     "name": "Uruguay",
@@ -1929,7 +2588,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 11,
-    "popularityScore": 28
+    "popularityScore": 28,
+    "combo": [
+      "Argentina",
+      "Brazil"
+    ]
   },
   {
     "name": "Guyana",
@@ -1941,7 +2604,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 10,
-    "popularityScore": 45
+    "popularityScore": 45,
+    "combo": [
+      "Suriname",
+      "Trinidad and Tobago",
+      "Brazil"
+    ]
   },
   {
     "name": "Suriname",
@@ -1953,7 +2621,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 50
+    "popularityScore": 50,
+    "combo": [
+      "Guyana",
+      "Trinidad and Tobago"
+    ]
   },
   {
     "name": "Cuba",
@@ -1965,7 +2637,12 @@
     "hasItinerary": true,
     "recDays": 12,
     "maxDays": 16,
-    "popularityScore": 56
+    "popularityScore": 56,
+    "combo": [
+      "Mexico",
+      "Jamaica",
+      "Dominican Republic"
+    ]
   },
   {
     "name": "Jamaica",
@@ -1977,7 +2654,12 @@
     "hasItinerary": true,
     "recDays": 10,
     "maxDays": 13,
-    "popularityScore": 52
+    "popularityScore": 52,
+    "combo": [
+      "Cuba",
+      "Mexico",
+      "Dominican Republic"
+    ]
   },
   {
     "name": "Haiti",
@@ -1989,7 +2671,12 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 12,
-    "popularityScore": 23
+    "popularityScore": 23,
+    "combo": [
+      "Dominican Republic",
+      "Jamaica",
+      "Cuba"
+    ]
   },
   {
     "name": "Dominican Republic",
@@ -2001,7 +2688,11 @@
     "hasItinerary": true,
     "recDays": 11,
     "maxDays": 15,
-    "popularityScore": 49
+    "popularityScore": 49,
+    "combo": [
+      "Cuba",
+      "Jamaica"
+    ]
   },
   {
     "name": "Trinidad and Tobago",
@@ -2013,7 +2704,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 10,
-    "popularityScore": 45
+    "popularityScore": 45,
+    "combo": [
+      "Barbados",
+      "Grenada",
+      "Guyana"
+    ]
   },
   {
     "name": "Costa Rica",
@@ -2025,7 +2721,11 @@
     "hasItinerary": true,
     "recDays": 14,
     "maxDays": 21,
-    "popularityScore": 44
+    "popularityScore": 44,
+    "combo": [
+      "Panama",
+      "Nicaragua"
+    ]
   },
   {
     "name": "Panama",
@@ -2037,7 +2737,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 32
+    "popularityScore": 32,
+    "combo": [
+      "Costa Rica",
+      "Colombia"
+    ]
   },
   {
     "name": "Guatemala",
@@ -2049,7 +2753,12 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 56
+    "popularityScore": 56,
+    "combo": [
+      "Belize",
+      "Mexico",
+      "El Salvador"
+    ]
   },
   {
     "name": "Honduras",
@@ -2061,7 +2770,12 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 47
+    "popularityScore": 47,
+    "combo": [
+      "Guatemala",
+      "Belize",
+      "El Salvador"
+    ]
   },
   {
     "name": "El Salvador",
@@ -2073,7 +2787,11 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 10,
-    "popularityScore": 39
+    "popularityScore": 39,
+    "combo": [
+      "Guatemala",
+      "Honduras"
+    ]
   },
   {
     "name": "Nicaragua",
@@ -2085,7 +2803,11 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 13,
-    "popularityScore": 33
+    "popularityScore": 33,
+    "combo": [
+      "Costa Rica",
+      "Guatemala"
+    ]
   },
   {
     "name": "Belize",
@@ -2097,7 +2819,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 12,
-    "popularityScore": 51
+    "popularityScore": 51,
+    "combo": [
+      "Guatemala",
+      "Mexico",
+      "Honduras"
+    ]
   },
   {
     "name": "Barbados",
@@ -2109,7 +2836,12 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 48
+    "popularityScore": 48,
+    "combo": [
+      "Saint Lucia",
+      "Grenada",
+      "Trinidad and Tobago"
+    ]
   },
   {
     "name": "Bahamas",
@@ -2121,7 +2853,11 @@
     "hasItinerary": true,
     "recDays": 9,
     "maxDays": 14,
-    "popularityScore": 46
+    "popularityScore": 46,
+    "combo": [
+      "United States",
+      "Cuba"
+    ]
   },
   {
     "name": "Antigua and Barbuda",
@@ -2133,7 +2869,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 39
+    "popularityScore": 39,
+    "combo": [
+      "Barbados",
+      "Saint Kitts and Nevis"
+    ]
   },
   {
     "name": "Saint Lucia",
@@ -2145,7 +2885,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 43
+    "popularityScore": 43,
+    "combo": [
+      "Barbados",
+      "Grenada"
+    ]
   },
   {
     "name": "Grenada",
@@ -2157,7 +2901,12 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 44
+    "popularityScore": 44,
+    "combo": [
+      "Barbados",
+      "Saint Vincent and the Grenadines",
+      "Trinidad and Tobago"
+    ]
   },
   {
     "name": "Saint Vincent and the Grenadines",
@@ -2169,7 +2918,12 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 47
+    "popularityScore": 47,
+    "combo": [
+      "Grenada",
+      "Saint Lucia",
+      "Barbados"
+    ]
   },
   {
     "name": "Dominica",
@@ -2181,7 +2935,10 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 10,
-    "popularityScore": 42
+    "popularityScore": 42,
+    "combo": [
+      "Saint Lucia"
+    ]
   },
   {
     "name": "Saint Kitts and Nevis",
@@ -2193,7 +2950,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 6,
-    "popularityScore": 39
+    "popularityScore": 39,
+    "combo": [
+      "Antigua and Barbuda",
+      "Barbados"
+    ]
   },
   {
     "name": "Australia",
@@ -2205,7 +2966,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 39
+    "popularityScore": 39,
+    "combo": [
+      "New Zealand",
+      "Fiji"
+    ]
   },
   {
     "name": "New Zealand",
@@ -2217,7 +2982,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 29
+    "popularityScore": 29,
+    "combo": [
+      "Australia",
+      "Fiji"
+    ]
   },
   {
     "name": "Fiji",
@@ -2229,7 +2998,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 12,
-    "popularityScore": 51
+    "popularityScore": 51,
+    "combo": [
+      "Australia",
+      "New Zealand",
+      "Vanuatu"
+    ]
   },
   {
     "name": "Papua New Guinea",
@@ -2241,7 +3015,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 12,
-    "popularityScore": 36
+    "popularityScore": 36,
+    "combo": [
+      "Australia",
+      "Solomon Islands",
+      "Indonesia"
+    ]
   },
   {
     "name": "Samoa",
@@ -2253,7 +3032,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 45
+    "popularityScore": 45,
+    "combo": [
+      "Fiji",
+      "Tonga"
+    ]
   },
   {
     "name": "Tonga",
@@ -2265,7 +3048,12 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 9,
-    "popularityScore": 44
+    "popularityScore": 44,
+    "combo": [
+      "Fiji",
+      "Samoa",
+      "New Zealand"
+    ]
   },
   {
     "name": "Vanuatu",
@@ -2277,7 +3065,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 12,
-    "popularityScore": 53
+    "popularityScore": 53,
+    "combo": [
+      "Australia",
+      "Fiji",
+      "New Zealand"
+    ]
   },
   {
     "name": "Solomon Islands",
@@ -2289,7 +3082,12 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 11,
-    "popularityScore": 51
+    "popularityScore": 51,
+    "combo": [
+      "Australia",
+      "Papua New Guinea",
+      "Vanuatu"
+    ]
   },
   {
     "name": "Micronesia",
@@ -2301,7 +3099,11 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 9,
-    "popularityScore": 38
+    "popularityScore": 38,
+    "combo": [
+      "Palau",
+      "Marshall Islands"
+    ]
   },
   {
     "name": "Kiribati",
@@ -2313,7 +3115,11 @@
     "hasItinerary": true,
     "recDays": 7,
     "maxDays": 10,
-    "popularityScore": 47
+    "popularityScore": 47,
+    "combo": [
+      "Fiji",
+      "Samoa"
+    ]
   },
   {
     "name": "Marshall Islands",
@@ -2325,7 +3131,12 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 10,
-    "popularityScore": 35
+    "popularityScore": 35,
+    "combo": [
+      "Palau",
+      "Japan",
+      "Fiji"
+    ]
   },
   {
     "name": "Palau",
@@ -2337,7 +3148,11 @@
     "hasItinerary": true,
     "recDays": 5,
     "maxDays": 7,
-    "popularityScore": 49
+    "popularityScore": 49,
+    "combo": [
+      "Philippines",
+      "Taiwan"
+    ]
   },
   {
     "name": "Tuvalu",
@@ -2349,7 +3164,12 @@
     "hasItinerary": true,
     "recDays": 6,
     "maxDays": 8,
-    "popularityScore": 44
+    "popularityScore": 44,
+    "combo": [
+      "Fiji",
+      "Samoa",
+      "Kiribati"
+    ]
   },
   {
     "name": "Nauru",
@@ -2361,7 +3181,12 @@
     "hasItinerary": true,
     "recDays": 2,
     "maxDays": 2,
-    "popularityScore": 53
+    "popularityScore": 53,
+    "combo": [
+      "Australia",
+      "Fiji",
+      "Kiribati"
+    ]
   },
   {
     "name": "Antarctica",
@@ -2373,6 +3198,9 @@
     "hasItinerary": true,
     "recDays": 3,
     "maxDays": 5,
-    "popularityScore": 1
+    "popularityScore": 1,
+    "combo": [
+      "Argentina"
+    ]
   }
 ]
