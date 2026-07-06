@@ -1,4 +1,17 @@
 import type { Country } from "../types";
+import type { CountryRule } from "../data/itineraryRules";
+
+/**
+ * A single destination unit resolved to everything the itinerary engine needs:
+ * a fully-merged {@link Country} (seed overlaid with detail data) and its rule
+ * chunk (null when the unit has no offline itinerary). Returned by
+ * {@link DestinationSource.loadUnit} so multi-unit planners can compose one plan
+ * per unit without importing scope-specific loaders.
+ */
+export interface LoadedUnit {
+  country: Country;
+  rule: CountryRule | null;
+}
 
 /**
  * The scope a trip is planned in. `international` composes a trip across world
@@ -46,4 +59,11 @@ export interface DestinationSource {
    * scope derives the same shape from its state/city data.
    */
   experiencesFor(names: string[]): Promise<string[]>;
+  /**
+   * Resolve a unit name to its plan-ready {@link LoadedUnit} (merged country +
+   * rule), or null if the unit isn't plannable in this scope. Async because it
+   * reads the unit's detail data on demand. Used by multi-unit planners to build
+   * one itinerary per unit before composing them into a single route.
+   */
+  loadUnit(name: string): Promise<LoadedUnit | null>;
 }

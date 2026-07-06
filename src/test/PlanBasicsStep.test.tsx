@@ -13,6 +13,7 @@ const SOURCE: DestinationSource = {
   comboRecommendations: () => [],
   dayBounds: () => ({ rec: 7, max: 14 }),
   experiencesFor: async () => [],
+  loadUnit: async () => null,
 };
 
 const UNIT: Country = { name: "Testland", lat: 0, lng: 0, budget: "₹1L", bestMonths: ["June"], experiences: [] };

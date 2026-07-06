@@ -477,6 +477,55 @@ function getRuledItinerary(
   };
 }
 
+/**
+ * One unit's contribution to a composed multi-unit trip. `name` is the unit's
+ * display name (a country today; a state/city for the future domestic scope) and
+ * `plan` is that unit's own itinerary from {@link generateTripPlan}.
+ */
+export type TripSegment = { name: string; plan: TripPlan };
+
+/**
+ * Compose several single-unit itineraries into one multi-unit trip plan, in visit
+ * order. Days are concatenated (each unit keeps its own per-unit day numbering —
+ * continuous renumbering and rendered inter-unit connectors are a Review-phase
+ * concern, kept out of `days` so `days.length` stays an honest day count), costs
+ * sum across units, and the total duration is the summed day count.
+ *
+ * A single segment returns its plan unchanged, so the single-destination path is
+ * byte-for-byte identical to today. Nothing here assumes "country" — the same
+ * composition serves a future domestic route of cities/states.
+ */
+export function composeTripPlan(segments: TripSegment[], basis: BudgetBasis): TripPlan {
+  if (segments.length === 1) return segments[0].plan;
+  if (segments.length === 0) {
+    return { duration: "0 days", costPerPerson: costRange(0, 0), days: [], note: "", costBasis: basis };
+  }
+
+  const days: DayEntry[] = [];
+  const warnings: string[] = [];
+  let low = 0;
+  let high = 0;
+  for (const seg of segments) {
+    days.push(...seg.plan.days);
+    const parsed = parseBudgetRange(seg.plan.costPerPerson);
+    if (parsed) {
+      low += parsed[0];
+      high += parsed[1];
+    }
+    if (seg.plan.warning) warnings.push(seg.plan.warning);
+  }
+
+  const route = segments.map((s) => s.name).join(" → ");
+  return {
+    duration: `${days.length} day${days.length !== 1 ? "s" : ""}`,
+    costPerPerson: costRange(low, high),
+    days,
+    note: `A ${segments.length}-stop route: ${route}.`,
+    warning: warnings.length > 0 ? warnings.join(" ") : undefined,
+    costBasis: basis,
+  };
+}
+
 export function generateTripPlan(
   country: Country,
   style: PlanStyle,

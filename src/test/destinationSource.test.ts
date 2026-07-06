@@ -53,6 +53,18 @@ describe("internationalSource", () => {
     const norway = await internationalSource.experiencesFor(["Norway"]);
     expect(union).toEqual(norway);
   });
+
+  it("loads a plannable unit as a merged country plus rule", async () => {
+    const unit = await internationalSource.loadUnit("Norway");
+    expect(unit).not.toBeNull();
+    expect(unit!.country.name).toBe("Norway");
+    expect(unit!.country.cities?.length ?? 0).toBeGreaterThan(0);
+    expect(unit!.rule).not.toBeNull();
+  });
+
+  it("returns null when loading a unit that isn't plannable", async () => {
+    expect(await internationalSource.loadUnit("Nowhereland")).toBeNull();
+  });
 });
 
 describe("getDestinationSource", () => {

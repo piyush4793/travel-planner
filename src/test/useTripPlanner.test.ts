@@ -1,0 +1,149 @@
+import { describe, it, expect } from "vitest";
+import { renderHook, act } from "@testing-library/react";
+import { useTripPlanner } from "../hooks/useTripPlanner";
+import type { LoadedUnit } from "../core/trip/destinationSource";
+import type { Country } from "../core/types";
+import type { TripSegment } from "../core/utils/tripPlans";
+
+function unit(name: string, cities: string[]): LoadedUnit {
+  const country: Country = {
+    name,
+    lat: 0,
+    lng: 0,
+    bestMonths: ["March"],
+    budget: "₹1L–₹2L",
+    experiences: ["Food"],
+    cities: cities.map((c, i) => ({ name: c, lat: i, lng: i, notes: "x" })),
+  };
+  return { country, rule: null };
+}
+
+const primarySegment: TripSegment = {
+  name: "Primary",
+  plan: {
+    duration: "3 days",
+    costPerPerson: "₹1L – ₹2L",
+    days: [
+      { label: "Day 1 — Home", activities: ["a"] },
+      { label: "Day 2 — Home", activities: ["a"] },
+      { label: "Day 3 — Home", activities: ["a"] },
+    ],
+    note: "primary",
+    costBasis: "couple",
+  },
+};
+
+describe("useTripPlanner", () => {
+  it("derives one plan per unit, in selection order", () => {
+    const units = [unit("Norway", ["Oslo", "Bergen"]), unit("Denmark", ["Copenhagen"])];
+    const { result } = renderHook(() => useTripPlanner(units, [], "couple"));
+    expect(result.current.unitPlans.map((u) => u.name)).toEqual(["Norway", "Denmark"]);
+    for (const up of result.current.unitPlans) {
+      expect(up.plan.days.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("toggling a city pins it as hand-picked for that unit only", () => {
+    const units = [unit("Norway", ["Oslo", "Bergen"]), unit("Denmark", ["Copenhagen"])];
+    const { result } = renderHook(() => useTripPlanner(units, [], "couple"));
+
+    act(() => result.current.unitPlans[0].toggleCity("Bergen"));
+    expect(result.current.unitPlans[0].selectedCities).toEqual(["Bergen"]);
+    // The sibling unit is untouched.
+    expect(result.current.unitPlans[1].selectedCities).toEqual([]);
+  });
+
+  it("clearCities reverts a unit back to the auto plan", () => {
+    const units = [unit("Norway", ["Oslo", "Bergen"])];
+    const { result } = renderHook(() => useTripPlanner(units, [], "couple"));
+
+    act(() => result.current.unitPlans[0].toggleCity("Bergen"));
+    expect(result.current.unitPlans[0].selectedCities).toEqual(["Bergen"]);
+    act(() => result.current.unitPlans[0].clearCities());
+    expect(result.current.unitPlans[0].selectedCities).toEqual([]);
+  });
+
+  it("composes the primary segment ahead of every unit into one honest plan", () => {
+    const units = [unit("Norway", ["Oslo", "Bergen"]), unit("Denmark", ["Copenhagen"])];
+    const { result } = renderHook(() => useTripPlanner(units, [], "couple"));
+
+    const composed = result.current.composedPlan(primarySegment);
+    const unitDays = result.current.unitPlans.reduce((n, u) => n + u.plan.days.length, 0);
+    expect(composed.days.length).toBe(3 + unitDays);
+    expect(composed.note).toBe("A 3-stop route: Primary → Norway → Denmark.");
+  });
+
+  it("prunes dropped units so they can't leak into a later composition", () => {
+    const both = [unit("Norway", ["Oslo"]), unit("Denmark", ["Copenhagen"])];
+    const { result, rerender } = renderHook(({ units }) => useTripPlanner(units, [], "couple"), {
+      initialProps: { units: both },
+    });
+    expect(result.current.unitPlans).toHaveLength(2);
+    rerender({ units: [both[0]] });
+    expect(result.current.unitPlans.map((u) => u.name)).toEqual(["Norway"]);
+  });
+});
+
+/** A unit whose cities carry experience tags, for per-country focus tests. */
+function tagged(name: string, cities: { city: string; tags: string[] }[]): LoadedUnit {
+  const country: Country = {
+    name,
+    lat: 0,
+    lng: 0,
+    bestMonths: ["March"],
+    budget: "₹1L–₹2L",
+    experiences: ["Food"],
+    cities: cities.map((c, i) => ({ name: c.city, lat: i, lng: i, notes: "x", experiences: c.tags })),
+  };
+  return { country, rule: null };
+}
+
+describe("useTripPlanner per-country experiences", () => {
+  it("inherits the trip seed (clamped to what the stop offers) until it diverges", () => {
+    const units = [
+      tagged("Norway", [{ city: "Bergen", tags: ["Fjords", "Food"] }]),
+      tagged("Denmark", [{ city: "Copenhagen", tags: ["Design", "Food"] }]),
+    ];
+    const { result } = renderHook(() => useTripPlanner(units, ["Food"], "couple"));
+    expect(result.current.unitPlans[0].experiences).toEqual(["Food"]);
+    expect(result.current.unitPlans[1].experiences).toEqual(["Food"]);
+  });
+
+  it("drops seed tags a stop can't deliver from its surfaced focus", () => {
+    const units = [tagged("Norway", [{ city: "Bergen", tags: ["Fjords"] }])];
+    // "Beaches" isn't offered by any Norwegian city here, so it's inert and hidden.
+    const { result } = renderHook(() => useTripPlanner(units, ["Beaches"], "couple"));
+    expect(result.current.unitPlans[0].experiences).toEqual([]);
+  });
+
+  it("toggling a stop's experience diverges only that stop from the seed", () => {
+    const units = [
+      tagged("Norway", [{ city: "Bergen", tags: ["Fjords", "Food"] }]),
+      tagged("Denmark", [{ city: "Copenhagen", tags: ["Design", "Food"] }]),
+    ];
+    const { result } = renderHook(() => useTripPlanner(units, ["Food"], "couple"));
+    act(() => result.current.unitPlans[0].toggleExperience("Fjords"));
+    expect(result.current.unitPlans[0].experiences).toEqual(["Food", "Fjords"]);
+    // The sibling still inherits the untouched seed.
+    expect(result.current.unitPlans[1].experiences).toEqual(["Food"]);
+  });
+
+  it("clearExperiences sets an explicit none, independent of the seed", () => {
+    const units = [tagged("Norway", [{ city: "Bergen", tags: ["Fjords", "Food"] }])];
+    const { result } = renderHook(() => useTripPlanner(units, ["Food"], "couple"));
+    expect(result.current.unitPlans[0].experiences).toEqual(["Food"]);
+    act(() => result.current.unitPlans[0].clearExperiences());
+    expect(result.current.unitPlans[0].experiences).toEqual([]);
+  });
+
+  it("exposes each stop's distinct experience tags as Filters options", () => {
+    const units = [
+      tagged("Norway", [
+        { city: "Bergen", tags: ["Fjords", "Food"] },
+        { city: "Oslo", tags: ["Food", "History"] },
+      ]),
+    ];
+    const { result } = renderHook(() => useTripPlanner(units, [], "couple"));
+    expect(result.current.unitPlans[0].experienceOptions).toEqual(["Fjords", "Food", "History"]);
+  });
+});

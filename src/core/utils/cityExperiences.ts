@@ -49,3 +49,21 @@ export function matchCityExperiences(text: string, candidates: string[]): string
   const t = text.toLowerCase();
   return candidates.filter((exp) => experienceTokens([exp]).some((tok) => t.includes(tok)));
 }
+
+/**
+ * Distinct experience tags a set of cities offer, in first-seen order — the
+ * per-country "Filters" options. Single source of truth so the primary funnel
+ * ({@link usePlanBuilder}) and the additional-stop planner ({@link useTripPlanner})
+ * derive the same option set from the same authored per-city `experiences`,
+ * keeping the Places-step Filters consistent with the cards' "Top for X" signal.
+ */
+export function cityExperienceOptions(cities: { experiences?: string[] }[] | undefined): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const c of cities ?? []) {
+    for (const e of c.experiences ?? []) {
+      if (!seen.has(e)) { seen.add(e); out.push(e); }
+    }
+  }
+  return out;
+}

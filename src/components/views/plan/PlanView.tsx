@@ -3,23 +3,25 @@ import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../../core/types";
 import { type BudgetBasis } from "../../../core/utils/budget";
+import { cityExperienceOptions } from "../../../core/utils/cityExperiences";
 import { STYLE_META } from "../../../core/utils/travelStyles";
-import type { TripPlan } from "../../../core/utils/tripPlans";
+import type { TripPlan, TripSegment } from "../../../core/utils/tripPlans";
 import { usePlanBuilder } from "../../../hooks/usePlanBuilder";
 import { useBackDismiss } from "../../../hooks/useBackDismiss";
 import { getCountryFlag } from "../../../utils/countryFlags";
 import Tooltip from "../../shared/Tooltip";
-import CityCard from "../../country/panel/CityCard";
 import DestinationPicker from "./DestinationPicker";
 import PlanWorkspace from "./PlanWorkspace";
-import PlanProgressSummary from "./PlanProgressSummary";
 import PlanBasicsStep from "./PlanBasicsStep";
+import PlanPlacesStep, { type PlacesUnit } from "./PlanPlacesStep";
 import type { PlanActions } from "./planActions";
 import { loadPlanDraft, savePlanDraft, clearPlanDraft } from "./planDraft";
 import { isEnabled } from "../../../core/featureFlags";
 import { MAX_TRIP_UNITS } from "../../../core/utils/multiCountry";
 import { getDestinationSource } from "../../../core/trip/getDestinationSource";
 import { useTripExperiences } from "../../../hooks/useTripExperiences";
+import { useTripRules } from "../../../hooks/useTripRules";
+import { useTripPlanner } from "../../../hooks/useTripPlanner";
 
 const ItineraryCinematic = lazy(() => import("../../country/ItineraryCinematic"));
 
@@ -135,17 +137,69 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   );
   const { experiences: tripExperiences } = useTripExperiences(multiUnitNames, source);
   const basicsExperiences = selection.length > 1 ? tripExperiences : experiences;
-  const cities = builder.orderedCities;
 
-  // Basics → (Places, when the destination has cities) → Your trip. Cities are
-  // also editable in the Review workspace's Shape rail (same builder state), so
-  // the step seeds the picks and the rail keeps them tunable beside the plan.
+  // Additional stops (everything after the primary) get their own per-unit funnel
+  // sharing the route's vibe + basis; the primary stays on `builder`. Composing
+  // primary + additional stops yields one honest trip plan for the Places summary.
+  const secondaryNames = useMemo(() => selection.slice(1).map((c) => c.name), [selection]);
+  const { units: secondaryUnits } = useTripRules(secondaryNames, source);
+  const tripPlanner = useTripPlanner(secondaryUnits, builder.selectedExperiences, budgetBasis);
+
+  const placesUnits = useMemo<PlacesUnit[]>(() => {
+    if (!displayCountry) return [];
+    // Primary Filters options come from the same authored per-city tags as the
+    // additional stops (not the broader country-level `experiences`), and the
+    // active focus is clamped to them so the badge/subline/chips stay in sync.
+    const primaryOptions = cityExperienceOptions(builder.orderedCities);
+    const primary: PlacesUnit = {
+      name: displayCountry.name,
+      orderedCities: builder.orderedCities,
+      selectedCities: builder.selectedCities,
+      autoSelectedCities: builder.autoSelectedCities,
+      customDays: builder.customDays,
+      activeExperiences: builder.selectedExperiences.filter((e) => primaryOptions.includes(e)),
+      experienceOptions: primaryOptions,
+      rule: builder.rule,
+      onToggleCity: builder.toggleCity,
+      onClearCities: builder.clearCities,
+      onToggleExperience: builder.toggleExperience,
+      onClearExperiences: builder.clearExperiences,
+    };
+    const rest = tripPlanner.unitPlans.map<PlacesUnit>((u) => ({
+      name: u.name,
+      orderedCities: u.orderedCities,
+      selectedCities: u.selectedCities,
+      autoSelectedCities: u.autoSelectedCities,
+      customDays: u.customDays,
+      activeExperiences: u.experiences,
+      experienceOptions: u.experienceOptions,
+      rule: u.rule,
+      onToggleCity: u.toggleCity,
+      onClearCities: u.clearCities,
+      onToggleExperience: u.toggleExperience,
+      onClearExperiences: u.clearExperiences,
+    }));
+    return [primary, ...rest];
+  }, [displayCountry, builder, tripPlanner.unitPlans]);
+
+  // The Places-step summary reflects the whole route; single-stop stays as-is.
+  const placesPlan = useMemo(() => {
+    if (!plan || !displayCountry || selection.length <= 1) return plan;
+    const primarySegment: TripSegment = { name: displayCountry.name, plan };
+    return tripPlanner.composedPlan(primarySegment);
+  }, [plan, displayCountry, selection.length, tripPlanner]);
+
+  const anyUnitHasCities = placesUnits.some((u) => u.orderedCities.length > 0);
+
+  // Basics → (Places, when any stop has cities) → Your trip. Cities are also
+  // editable in the Review workspace's Shape rail (same builder state), so the
+  // step seeds the picks and the rail keeps them tunable beside the plan.
   const steps = useMemo<StepKey[]>(() => {
     const keys: StepKey[] = ["basics"];
-    if (cities.length > 0) keys.push("cities");
+    if (anyUnitHasCities) keys.push("cities");
     keys.push("review");
     return keys;
-  }, [cities.length]);
+  }, [anyUnitHasCities]);
 
   // Device / browser Back walks back one wizard step (persistent guard) before
   // leaving #plan — but any open rail drawer (registered on top of this) is
@@ -182,9 +236,11 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   const safeIndex = Math.min(stepIndex, steps.length - 1);
   const current = STEP_META[steps[safeIndex]];
   const isReview = current.key === "review";
+  const isPlaces = current.key === "cities";
   // Non-review steps center vertically when short but scroll from the top when tall,
-  // so they never float in blank space nor clip on small screens.
-  const centerStep = !isReview;
+  // so they never float in blank space nor clip on small screens. Places breaks out
+  // to a wide two-column workspace on desktop, so it top-aligns like Review.
+  const centerStep = !isReview && !isPlaces;
   const atLast = safeIndex === steps.length - 1;
   const nextIsReview = steps[safeIndex + 1] === "review";
 
@@ -363,7 +419,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
       </div>
 
       {/* Step body */}
-      <div className={`mx-auto w-full px-4 ${isReview ? "max-w-[1400px] min-h-0 flex-1 overflow-hidden py-3" : "max-w-2xl flex-1 overflow-y-auto py-4"}`}>
+      <div className={`mx-auto w-full px-4 ${isReview ? "max-w-[1400px] min-h-0 flex-1 overflow-hidden py-3" : isPlaces ? "max-w-5xl flex-1 overflow-y-auto overflow-x-hidden py-4" : "max-w-2xl flex-1 overflow-y-auto overflow-x-hidden py-4"}`}>
         <div key={current.key} className={`plan-step-in w-full ${isReview ? "h-full" : centerStep ? "flex min-h-full flex-col justify-center" : ""}`}>
           {isReview ? (
             ruleLoading && !plan ? (
@@ -418,41 +474,12 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
               )}
 
               {current.key === "cities" && (
-                <div className="mx-auto max-w-md space-y-2">
-                  {plan && <div className="pb-0.5"><PlanProgressSummary plan={plan} /></div>}
-                  <div className="flex items-center justify-between px-0.5 pb-0.5">
-                    <p className="text-[11px] font-medium text-[#6f6a5d]">
-                      {builder.selectedCities.length > 0
-                        ? `${builder.selectedCities.length} hand-picked`
-                        : `Auto-picked ${builder.autoSelectedCities.length} · tap to fine-tune`}
-                    </p>
-                    {builder.selectedCities.length > 0 && (
-                      <button
-                        onClick={builder.clearCities}
-                        className="focus-ring-emerald rounded text-[11px] font-semibold text-[#6f6a5d] transition-colors hover:text-emerald-800"
-                      >
-                        Reset to auto
-                      </button>
-                    )}
-                  </div>
-                  {cities.map((city) => {
-                    const checked =
-                      builder.selectedCities.length > 0
-                        ? builder.selectedCities.includes(city.name)
-                        : builder.autoSelectedCities.includes(city.name);
-                    return (
-                      <CityCard
-                        key={city.name}
-                        city={city}
-                        selectable
-                        variant="luxury"
-                        selected={checked}
-                        onToggle={() => builder.toggleCity(city.name)}
-                        activeExperiences={builder.selectedExperiences}
-                      />
-                    );
-                  })}
-                </div>
+                <PlanPlacesStep
+                  units={placesUnits}
+                  plan={placesPlan}
+                  budgetBasis={budgetBasis}
+                  setBudgetBasis={setBudgetBasis}
+                />
               )}
             </>
           )}

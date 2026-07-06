@@ -25,6 +25,7 @@ function fakeSource(days: Record<string, number>): DestinationSource {
     comboRecommendations: () => [],
     dayBounds: (name: string): DayBounds => ({ rec: days[name] ?? 7, max: (days[name] ?? 7) + 3 }),
     experiencesFor: async () => [],
+    loadUnit: async () => null,
   };
 }
 

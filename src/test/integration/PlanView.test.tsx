@@ -209,8 +209,11 @@ describe("PlanView — guided planner", () => {
     await screen.findByText(/Who's going\?/i);
     fireEvent.click(screen.getByRole("button", { name: /Continue/i }));
     expect(await screen.findByText(/Which places\?/i)).toBeInTheDocument();
-    expect(screen.getByText("Alpha")).toBeInTheDocument();
-    expect(screen.getByText("Beta")).toBeInTheDocument();
+    // Non-included cities sit behind a Show-more tail; reveal them to assert both.
+    const showMore = screen.queryByRole("button", { name: /Show \d+ more places/i });
+    if (showMore) fireEvent.click(showMore);
+    expect(screen.getByRole("button", { name: "Alpha" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Beta" })).toBeInTheDocument();
   });
 
   it("selects a vibe on the basics step then clears it", async () => {
@@ -232,17 +235,16 @@ describe("PlanView — guided planner", () => {
     await screen.findByText(/Which places\?/i);
 
     // Pristine: auto-picked, no reset control yet.
-    expect(screen.getByText(/tap to fine-tune/i)).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: /Reset to auto/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /Reset to suggested/i })).not.toBeInTheDocument();
 
-    // Hand-pick a city → switches to the manual "hand-picked" branch + reset appears.
+    // Hand-pick a city → manual selection appears with a reset affordance.
+    const showMore = screen.queryByRole("button", { name: /Show \d+ more places/i });
+    if (showMore) fireEvent.click(showMore);
     fireEvent.click(screen.getByRole("button", { name: "Alpha" }));
-    expect(await screen.findByText(/hand-picked/i)).toBeInTheDocument();
-    const reset = screen.getByRole("button", { name: /Reset to auto/i });
+    const reset = await screen.findByRole("button", { name: /Reset to suggested/i });
 
     fireEvent.click(reset);
-    await waitFor(() => expect(screen.getByText(/tap to fine-tune/i)).toBeInTheDocument());
-    expect(screen.queryByRole("button", { name: /Reset to auto/i })).not.toBeInTheDocument();
+    await waitFor(() => expect(screen.queryByRole("button", { name: /Reset to suggested/i })).not.toBeInTheDocument());
   });
 
   it("toggles visited from the header when a handler is wired", async () => {

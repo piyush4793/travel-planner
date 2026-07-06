@@ -15,6 +15,7 @@ function makeSource(
     comboRecommendations: () => [],
     dayBounds: () => ({ rec: 7, max: 14 }),
     experiencesFor,
+    loadUnit: async () => null,
   };
 }
 

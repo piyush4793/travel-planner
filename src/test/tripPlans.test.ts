@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { generateTripPlan, getMaxRuleDays, getRecRuleDays, recommendedDaysForSelection, topExperienceCities, cityExperienceStrength, resolvePlannedCities, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../core/utils/tripPlans";
+import { generateTripPlan, composeTripPlan, getMaxRuleDays, getRecRuleDays, recommendedDaysForSelection, topExperienceCities, cityExperienceStrength, resolvePlannedCities, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../core/utils/tripPlans";
+import type { TripSegment } from "../core/utils/tripPlans";
 import type { Country } from "../core/types";
 
 const COUNTRY_WITH_CITIES: Country = {
@@ -722,5 +723,65 @@ describe("resolvePlannedCities — composable intent union", () => {
     const labels = plan.days.map((d) => d.label).join();
     expect(labels).toContain("Oslo");
     expect(labels).toContain("Flam");
+  });
+})
+
+describe("composeTripPlan (multi-unit)", () => {
+  const day = (label: string): { label: string; activities: string[] } => ({ label, activities: ["x"] });
+  const norway: TripSegment = {
+    name: "Norway",
+    plan: {
+      duration: "2 days",
+      costPerPerson: "₹1L – ₹2L",
+      days: [day("Day 1 — Oslo"), day("Day 2 — Flam")],
+      note: "Norway note",
+      costBasis: "couple",
+    },
+  };
+  const denmark: TripSegment = {
+    name: "Denmark",
+    plan: {
+      duration: "3 days",
+      costPerPerson: "₹2L – ₹3L",
+      days: [day("Day 1 — Copenhagen"), day("Day 2 — Copenhagen"), day("Day 3 — Aarhus")],
+      note: "Denmark note",
+      warning: "⚠️ tight",
+      costBasis: "couple",
+    },
+  };
+
+  it("returns the single segment's plan unchanged (single-destination path)", () => {
+    expect(composeTripPlan([norway], "couple")).toBe(norway.plan);
+  });
+
+  it("returns an empty plan for no segments", () => {
+    const plan = composeTripPlan([], "solo");
+    expect(plan.days).toHaveLength(0);
+    expect(plan.duration).toBe("0 days");
+    expect(plan.costBasis).toBe("solo");
+  });
+
+  it("concatenates days in visit order with an honest total day count", () => {
+    const plan = composeTripPlan([norway, denmark], "couple");
+    expect(plan.days).toHaveLength(5);
+    expect(plan.duration).toBe("5 days");
+    expect(extractPlanCities(plan.days)).toEqual(["Oslo", "Flam", "Copenhagen", "Aarhus"]);
+  });
+
+  it("sums each unit's cost range and carries the basis", () => {
+    const plan = composeTripPlan([norway, denmark], "couple");
+    // 1L–2L + 2L–3L = 3L–5L
+    expect(plan.costPerPerson).toBe("₹3L – ₹5L");
+    expect(plan.costBasis).toBe("couple");
+  });
+
+  it("names the route in the note and aggregates unit warnings", () => {
+    const plan = composeTripPlan([norway, denmark], "couple");
+    expect(plan.note).toBe("A 2-stop route: Norway → Denmark.");
+    expect(plan.warning).toBe("⚠️ tight");
+  });
+
+  it("omits the warning when no unit warns", () => {
+    expect(composeTripPlan([norway, norway], "couple").warning).toBeUndefined();
   });
 })
