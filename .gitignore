@@ -9,4 +9,5 @@ coverage/
 
 # Scratch / audit artifacts (never commit)
 tmp-*.html
+tmp-*
 Untitled-*

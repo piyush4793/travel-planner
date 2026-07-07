@@ -143,6 +143,31 @@ describe("DiscoverView", () => {
     const japanCard = screen.getByRole("button", { name: /Japan/i });
     await user.click(japanCard);
 
+    // Removal now asks for confirmation before firing.
+    const confirmBtn = await screen.findByRole("button", { name: "Remove" });
+    await user.click(confirmBtn);
+
     expect(onRemoveFromList).toHaveBeenCalledWith("Japan");
+  });
+
+  it("does not remove a listed country when the confirmation is cancelled", async () => {
+    const user = userEvent.setup();
+    const onRemoveFromList = vi.fn();
+
+    render(
+      <DiscoverView
+        catalog={catalog}
+        myListNames={new Set(["Japan"])}
+        onAddToList={vi.fn()}
+        onRemoveFromList={onRemoveFromList}
+        onAddMany={vi.fn()}
+        onResetList={vi.fn()}
+      />,
+    );
+
+    await user.click(screen.getByRole("button", { name: /Japan/i }));
+    await user.click(await screen.findByRole("button", { name: "Keep" }));
+
+    expect(onRemoveFromList).not.toHaveBeenCalled();
   });
 });

@@ -225,13 +225,22 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
       />
     );
   }
-  const notInList = !myListNames.has(picked.name);
   // Multi-country trip: the Basics step summarizes the whole route rather than a
-  // single destination. Country-scoped controls (style badge, favorite, visited)
-  // are hidden until the wizard plans each country individually downstream.
+  // single destination. The style badge stays hidden until the wizard plans each
+  // country individually downstream; favorite/visited actions live on the review
+  // step (PlanWorkspace), and saving is offered via the "Add to favorites" banner.
   const isMulti = selection.length > 1;
   const unsavedSelection = selection.filter((c) => !myListNames.has(c.name));
   const routeLabel = selection.map((c) => `${getCountryFlag(c.name)} ${c.name}`).join("  →  ");
+
+  // "Add to favorites" is a single, friendly save action: it adds the
+  // destination to My List (so it drives Trips/Calendar/budget) and stars it as
+  // a favorite. Favoriting is idempotent — skip it when already starred so the
+  // action never accidentally un-favorites an existing pick.
+  const saveAsFavorite = (name: string) => {
+    onAddToList?.(name);
+    if (onToggleFavorite && !favoriteNames?.has(name)) onToggleFavorite(name);
+  };
 
   const safeIndex = Math.min(stepIndex, steps.length - 1);
   const current = STEP_META[steps[safeIndex]];
@@ -313,76 +322,26 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
               )}
             </div>
           </div>
-          {!isMulti && (
-          <div className="ml-auto flex shrink-0 items-center gap-2">
-            {planActions.onToggleFavorite && (
-              <button
-                onClick={planActions.onToggleFavorite}
-                aria-pressed={planActions.isFavorite}
-                aria-label={planActions.isFavorite ? "Remove from favorites" : "Add to favorites"}
-                className={`focus-ring-emerald flex min-h-[32px] items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-bold shadow-sm transition-colors sm:px-3 ${
-                  planActions.isFavorite
-                    ? "border-amber-300 bg-amber-100 text-amber-700"
-                    : "border-[#e4dece] bg-white text-[#6f6a5d] hover:bg-[#f4f1e8]"
-                }`}
-              >
-                <span aria-hidden="true">{planActions.isFavorite ? "★" : "☆"}</span> <span className="hidden sm:inline">Favorite</span>
-              </button>
-            )}
-            {planActions.onToggleVisited && (
-              <button
-                onClick={planActions.onToggleVisited}
-                aria-pressed={isVisited}
-                aria-label={isVisited ? "Mark as not visited" : "Mark as visited"}
-                className={`focus-ring-emerald flex min-h-[32px] items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-bold shadow-sm transition-colors sm:px-3 ${
-                  isVisited
-                    ? "border-emerald-300 bg-emerald-100 text-emerald-800"
-                    : "border-[#e4dece] bg-white text-[#6f6a5d] hover:bg-[#f4f1e8]"
-                }`}
-              >
-                <span aria-hidden="true">{isVisited ? "✅" : "○"}</span> <span className="hidden sm:inline">Visited</span>
-              </button>
-            )}
-          </div>
-          )}
         </div>
 
-        {isMulti ? (
-          unsavedSelection.length > 0 && onAddToList && (
-            <div className="mt-2.5 flex items-center gap-2.5 rounded-xl border border-emerald-200/70 bg-emerald-50/60 px-3 py-2">
-              <span aria-hidden="true" className="text-base leading-none">🔖</span>
-              <p className="min-w-0 flex-1 text-[11px] leading-snug text-emerald-900/80">
-                <span className="font-bold text-emerald-900">
-                  {unsavedSelection.length} {unsavedSelection.length === 1 ? "stop" : "stops"} not saved.
-                </span>{" "}
-                Add them to keep this trip and track it in Trips.
-              </p>
-              <button
-                onClick={() => unsavedSelection.forEach((c) => onAddToList(c.name))}
-                aria-label={`Add ${unsavedSelection.length} ${unsavedSelection.length === 1 ? "destination" : "destinations"} to your list`}
-                className="focus-ring-emerald inline-flex min-h-[32px] shrink-0 items-center gap-1 rounded-full bg-emerald-600 px-3 py-1 text-[11px] font-bold text-white shadow-sm transition-colors hover:bg-emerald-700"
-              >
-                ＋ Add all
-              </button>
-            </div>
-          )
-        ) : (
-          notInList && onAddToList && (
-          <div className="mt-2.5 flex items-center gap-2.5 rounded-xl border border-emerald-200/70 bg-emerald-50/60 px-3 py-2">
-            <span aria-hidden="true" className="text-base leading-none">🔖</span>
-            <p className="min-w-0 flex-1 text-[11px] leading-snug text-emerald-900/80">
-              <span className="font-bold text-emerald-900">Not saved yet.</span>{" "}
-              Add {picked.name} to keep this plan and track it in Trips.
+        {unsavedSelection.length > 0 && onAddToList && (
+          <div className="mt-2.5 flex items-center gap-2.5 rounded-xl border border-amber-200/70 bg-amber-50/60 px-3 py-2">
+            <span aria-hidden="true" className="text-base leading-none">☆</span>
+            <p className="min-w-0 flex-1 text-[11px] leading-snug text-amber-900/80">
+              Favorite {unsavedSelection.length === 1 ? "this destination" : `these ${unsavedSelection.length} destinations`} so {isMulti ? "this trip is" : "it's"} easy to find later.
             </p>
             <button
-              onClick={() => onAddToList(picked.name)}
-              aria-label={`Add ${picked.name} to your list`}
-              className="focus-ring-emerald inline-flex min-h-[32px] shrink-0 items-center gap-1 rounded-full bg-emerald-600 px-3 py-1 text-[11px] font-bold text-white shadow-sm transition-colors hover:bg-emerald-700"
+              onClick={() => unsavedSelection.forEach((c) => saveAsFavorite(c.name))}
+              aria-label={
+                unsavedSelection.length === 1
+                  ? `Add ${unsavedSelection[0].name} to favorites`
+                  : `Add ${unsavedSelection.length} destinations to favorites`
+              }
+              className="focus-ring inline-flex min-h-[32px] shrink-0 items-center gap-1 rounded-full bg-amber-500 px-3 py-1 text-[11px] font-bold text-white shadow-sm transition-colors hover:bg-amber-600"
             >
-              ＋ Add
+              ☆ Add to favorites
             </button>
           </div>
-          )
         )}
 
         {/* Labeled, tappable stepper — doubles as back navigation (tap an

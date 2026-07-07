@@ -79,16 +79,19 @@ describe("PlanView — guided planner", () => {
   });
 
   it("offers to add an explore (non-list) destination to the list", async () => {
-    const { onAddToList } = renderView();
+    const onToggleFavorite = vi.fn();
+    const { onAddToList } = renderView({ onToggleFavorite });
     const exploreSection = screen.getByText(/Popular to explore/i).closest("section")!;
     const firstExplore = within(exploreSection).getAllByRole("button")[0];
     const name = firstExplore.textContent?.replace(/[^\x00-\x7F]/g, "").trim() ?? "";
     fireEvent.click(firstExplore);
     await screen.findByText(/Who's going\?/i);
     const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const addBtn = await screen.findByRole("button", { name: new RegExp(`Add ${escaped} to your list`, "i") });
+    const addBtn = await screen.findByRole("button", { name: new RegExp(`Add ${escaped} to favorites`, "i") });
     fireEvent.click(addBtn);
+    // "Add to favorites" both saves to My List and stars the destination.
     expect(onAddToList).toHaveBeenCalledWith(name);
+    expect(onToggleFavorite).toHaveBeenCalledWith(name);
   });
 
   it("does not offer add-to-list for a destination already in the list", async () => {
@@ -246,31 +249,6 @@ describe("PlanView — guided planner", () => {
     fireEvent.click(reset);
     await waitFor(() => expect(screen.queryByRole("button", { name: /Reset to suggested/i })).not.toBeInTheDocument());
   });
-
-  it("toggles visited from the header when a handler is wired", async () => {
-    const onToggleVisited = vi.fn();
-    renderView({ onToggleVisited });
-    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
-    await screen.findByText(/Who's going\?/i);
-    fireEvent.click(screen.getByRole("button", { name: /Mark as visited/i }));
-    expect(onToggleVisited).toHaveBeenCalledWith("Testland (no rule)");
-  });
-
-  it("toggles favorite from the header when a handler is wired", async () => {
-    const onToggleFavorite = vi.fn();
-    renderView({ onToggleFavorite, favoriteNames: new Set() });
-    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
-    await screen.findByText(/Who's going\?/i);
-    fireEvent.click(screen.getByRole("button", { name: /Add to favorites/i }));
-    expect(onToggleFavorite).toHaveBeenCalledWith("Testland (no rule)");
-  });
-
-  it("reflects an already-favorited destination in the header toggle", async () => {
-    renderView({ onToggleFavorite: vi.fn(), favoriteNames: new Set(["Testland (no rule)"]) });
-    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
-    await screen.findByText(/Who's going\?/i);
-    expect(screen.getByRole("button", { name: /Remove from favorites/i })).toBeInTheDocument();
-  });
 });
 
 describe("PlanView — multi-country Basics", () => {
@@ -387,7 +365,7 @@ describe("PlanView — multi-country Basics", () => {
     fireEvent.click(chips[1]);
     fireEvent.click(screen.getByRole("button", { name: /Plan trip with 2 countries/i }));
     await screen.findByText(/Who's going\?/i);
-    const addAll = screen.getByRole("button", { name: /Add 2 destinations to your list/i });
+    const addAll = screen.getByRole("button", { name: /Add 2 destinations to favorites/i });
     fireEvent.click(addAll);
     expect(onAddToList).toHaveBeenCalledWith(names[0]);
     expect(onAddToList).toHaveBeenCalledWith(names[1]);

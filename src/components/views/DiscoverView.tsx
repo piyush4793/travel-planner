@@ -161,10 +161,20 @@ export default function DiscoverView({ catalog, myListNames, onAddToList, onRemo
     </div>
   );
 
-  const toggleCard = (name: string) => {
-    if (myListNames.has(name)) onRemoveFromList(name);
-    else onAddToList(name);
-  };
+  const toggleCard = useCallback(async (name: string) => {
+    if (myListNames.has(name)) {
+      const ok = await confirm({
+        title: `Remove ${name}?`,
+        message: "This removes it from your list and Trips. Your edits are kept if you re-add it.",
+        confirmLabel: "Remove",
+        cancelLabel: "Keep",
+        variant: "warning",
+      });
+      if (ok) onRemoveFromList(name);
+    } else {
+      onAddToList(name);
+    }
+  }, [myListNames, confirm, onRemoveFromList, onAddToList]);
 
   /* ── Progress ring SVG ── */
   const ProgressRing = ({ size = 36, stroke = 3 }: { size?: number; stroke?: number }) => {
