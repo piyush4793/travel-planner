@@ -55,7 +55,9 @@ export default function App() {
   const [view, setView] = useHashView(guidedPlanning ? "plan" : "trips");
   const activeView: AppView = view === "plan" && !guidedPlanning ? "trips" : view;
   const navViews = useMemo(
-    () => (Object.keys(VIEW_META) as AppView[]).filter((v) => v !== "plan" || guidedPlanning),
+    // Trips is being phased out of navigation as the app pivots to a Plan-first
+    // model; the view still exists (reachable by hash) but is no longer a header pill.
+    () => (Object.keys(VIEW_META) as AppView[]).filter((v) => (v !== "plan" || guidedPlanning) && v !== "trips"),
     [guidedPlanning],
   );
   const [homeCountry, setHomeCountry] = useState(() => loadLS(LS_KEYS.HOME_COUNTRY, "India"));

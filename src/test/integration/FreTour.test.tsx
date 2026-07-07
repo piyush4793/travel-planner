@@ -87,8 +87,8 @@ describe("FreTour", () => {
     const { user } = await openTour();
 
     await user.click(screen.getByRole("button", { name: /Next/i }));
-    expect(screen.getByRole("heading", { name: /Your Trip Dashboard/i })).toBeInTheDocument();
-    expect(screen.getByText(/All your trips at a glance/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Plan Your Trip/i })).toBeInTheDocument();
+    expect(screen.getByText(/shape a day-by-day itinerary/i)).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: /Back/i }));
     expect(screen.getByRole("heading", { name: /Welcome to Roamwise/i })).toBeInTheDocument();
@@ -187,7 +187,7 @@ describe("FreTour", () => {
 
   it("renders a spotlight backdrop over a visible target element", async () => {
     const target = document.createElement("button");
-    target.setAttribute("data-tour", "nav-trips");
+    target.setAttribute("data-tour", "nav-plan");
     target.getBoundingClientRect = () =>
       ({ left: 20, top: 30, width: 100, height: 40, right: 120, bottom: 70, x: 20, y: 30, toJSON: () => ({}) }) as DOMRect;
     document.body.appendChild(target);
@@ -195,7 +195,7 @@ describe("FreTour", () => {
     const { user } = await openTour();
     await user.click(screen.getByRole("button", { name: /Next/i }));
 
-    expect(screen.getByRole("heading", { name: /Your Trip Dashboard/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Plan Your Trip/i })).toBeInTheDocument();
     const dialog = screen.getByRole("dialog", { name: /welcome tour/i });
     await waitFor(() => expect(dialog.querySelector("svg mask#fre-mask")).not.toBeNull());
 
