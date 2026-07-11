@@ -103,11 +103,16 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   const picked = selection[0] ?? null;
   const [stepIndex, setStepIndex] = useState(() => (picked && draft0 ? draft0.step : 0));
 
-  // A reopened saved trip's per-stop snapshot (cities + tuned length), applied
-  // once per nonce to rehydrate the funnel: the primary stop through
-  // `usePlanBuilder`, the additional stops through `useTripPlanner`.
+  // A reopened saved trip's per-stop snapshot (cities + honest length +
+  // experience focus), applied once per nonce to rehydrate the funnel: the
+  // primary stop through `usePlanBuilder`, the additional stops through
+  // `useTripPlanner`.
   const [restoreSeed, setRestoreSeed] = useState<
-    { nonce: number; primary: { cities: string[]; days: number }; byCountry: Record<string, { cities: string[]; days: number }> } | null
+    {
+      nonce: number;
+      primary: { cities: string[]; days: number; experiences: string[] };
+      byCountry: Record<string, { cities: string[]; days: number; experiences: string[] }>;
+    } | null
   >(null);
   const primarySeed = useMemo<PlanBuilderSeed | null>(
     () => (restoreSeed ? { nonce: restoreSeed.nonce, ...restoreSeed.primary } : null),
@@ -174,14 +179,16 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     // Align the restore payload to the *resolved* order, so an unresolvable stop
     // never shifts the primary/secondary split.
     const primaryStop = stopByName.get(resolved[0].name);
-    const byCountry: Record<string, { cities: string[]; days: number }> = {};
+    const byCountry: Record<string, { cities: string[]; days: number; experiences: string[] }> = {};
     for (const c of resolved.slice(1)) {
       const s = stopByName.get(c.name);
-      if (s) byCountry[c.name] = { cities: s.cities, days: s.days };
+      if (s) byCountry[c.name] = { cities: s.cities, days: s.days, experiences: s.experiences };
     }
     setRestoreSeed({
       nonce: pendingOpen.nonce,
-      primary: primaryStop ? { cities: primaryStop.cities, days: primaryStop.days } : { cities: [], days: 7 },
+      primary: primaryStop
+        ? { cities: primaryStop.cities, days: primaryStop.days, experiences: primaryStop.experiences }
+        : { cities: [], days: 7, experiences: [] },
       byCountry,
     });
     // Re-runs when the open request changes or destination data lands, but the
@@ -290,15 +297,17 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     return [primary, ...rest];
   }, [displayCountry, builder, tripPlanner.unitPlans]);
 
-  // Live per-stop day counts keyed by unit name, mirroring the forming plan (each
-  // unit's tuned length). Fed to the Basics route card so its per-stop days + total
-  // track the header's composed plan and react to vibe/experience changes, instead
-  // of showing a static recommended baseline that drifts from the header.
+  // Live per-stop day counts keyed by unit name, mirroring the forming plan's
+  // *rendered* length per stop (not the requested pin, which the planner may
+  // expand for tight city counts). Fed to the Basics route card so its per-stop
+  // days + total exactly match the header's composed plan, instead of a pin/
+  // recommended baseline that visibly drifts from the header total.
   const routeStopDays = useMemo<Record<string, number>>(() => {
     const map: Record<string, number> = {};
-    for (const u of placesUnits) map[u.name] = u.customDays;
+    if (displayCountry && plan) map[displayCountry.name] = plan.days.length;
+    for (const u of tripPlanner.unitPlans) map[u.name] = u.plan.days.length;
     return map;
-  }, [placesUnits]);
+  }, [displayCountry, plan, tripPlanner.unitPlans]);
 
   // Keep the lifted Places active-country index valid as the route grows/shrinks.
   useEffect(() => {
@@ -354,16 +363,16 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     // where the destination has itinerary data (primary always does).
     const planByName = new Map(tripPlanner.unitPlans.map((u) => [u.name, u]));
     const stops: SnapshotStop[] = selection.map((c, i) => {
-      if (i === 0) return { country: displayCountry.name, days: builder.customDays, plan };
+      if (i === 0) return { country: displayCountry.name, days: builder.customDays, plan, experiences: builder.selectedExperiences };
       const u = planByName.get(c.name);
-      return u ? { country: u.name, days: u.customDays, plan: u.plan } : { country: c.name, days: 0 };
+      return u ? { country: u.name, days: u.customDays, plan: u.plan, experiences: u.experiences } : { country: c.name, days: 0 };
     });
     const snapshot = buildTripSnapshot({ stops, composed: composedTripPlan ?? plan, basis: budgetBasis });
     const sig = JSON.stringify(snapshot.stops) + snapshot.totalDays + snapshot.costPerPerson + snapshot.basis;
     if (savedTripSig.current === sig) return;
     savedTripSig.current = sig;
     onSaveTrip(snapshot);
-  }, [onSaveTrip, onReviewStep, plan, displayCountry, selection, tripPlanner.unitPlans, composedTripPlan, budgetBasis, builder.customDays]);
+  }, [onSaveTrip, onReviewStep, plan, displayCountry, selection, tripPlanner.unitPlans, composedTripPlan, budgetBasis, builder.customDays, builder.selectedExperiences]);
 
   if (!picked) {
     return (

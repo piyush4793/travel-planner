@@ -83,13 +83,30 @@ describe("useTripPlanner", () => {
     expect(result.current.unitPlans.map((u) => u.name)).toEqual(["Norway"]);
   });
 
-  it("restores each reopened stop's snapshot cities + pinned length via seed", () => {
-    const units = [unit("Norway", ["Oslo", "Bergen"]), unit("Denmark", ["Copenhagen"])];
+  it("restores each reopened stop's snapshot cities + pinned length + experiences via seed", () => {
+    // Norway's Bergen offers "Fjords" so the restored override survives the
+    // city-options clamp; Denmark keeps a deliberate empty override.
+    const norway: LoadedUnit = {
+      country: {
+        name: "Norway",
+        lat: 0,
+        lng: 0,
+        bestMonths: ["March"],
+        budget: "₹1L–₹2L",
+        experiences: ["Fjords"],
+        cities: [
+          { name: "Oslo", lat: 0, lng: 0, notes: "x" },
+          { name: "Bergen", lat: 1, lng: 1, notes: "x", experiences: ["Fjords"] },
+        ],
+      },
+      rule: null,
+    };
+    const units = [norway, unit("Denmark", ["Copenhagen"])];
     const seed = {
       nonce: 1,
       byCountry: {
-        Norway: { cities: ["Bergen", "Ghost"], days: 9 },
-        Denmark: { cities: ["Copenhagen"], days: 4 },
+        Norway: { cities: ["Bergen", "Ghost"], days: 9, experiences: ["Fjords"] },
+        Denmark: { cities: ["Copenhagen"], days: 4, experiences: [] },
       },
     };
     const { result } = renderHook(() => useTripPlanner(units, [], "couple", seed));
@@ -98,13 +115,16 @@ describe("useTripPlanner", () => {
     expect(nor.selectedCities).toEqual(["Bergen"]);
     expect(nor.customDays).toBe(9);
     expect(nor.daysPinned).toBe(true);
+    // Norway's saved per-stop experience override is restored.
+    expect(nor.experiences).toEqual(["Fjords"]);
     expect(den.selectedCities).toEqual(["Copenhagen"]);
     expect(den.customDays).toBe(4);
     expect(den.daysPinned).toBe(true);
+    expect(den.experiences).toEqual([]);
   });
 
   it("waits for every seeded stop to load before applying a saved-trip seed", () => {
-    const seed = { nonce: 1, byCountry: { Norway: { cities: ["Bergen"], days: 9 }, Denmark: { cities: ["Copenhagen"], days: 4 } } };
+    const seed = { nonce: 1, byCountry: { Norway: { cities: ["Bergen"], days: 9, experiences: [] }, Denmark: { cities: ["Copenhagen"], days: 4, experiences: [] } } };
     // Only Norway has loaded — the seed must not apply yet (Denmark still pending),
     // so Norway keeps its auto-seeded length rather than the snapshot's.
     const { result, rerender } = renderHook(({ units }) => useTripPlanner(units, [], "couple", seed), {

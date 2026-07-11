@@ -67,7 +67,7 @@ export type PlanBuilderInitial = {
  * re-seeds the live funnel after mount, waiting for the country's rules to load so
  * a restored city list isn't dropped before its cities exist.
  */
-export type PlanBuilderSeed = { nonce: number; cities: string[]; days: number };
+export type PlanBuilderSeed = { nonce: number; cities: string[]; days: number; experiences: string[] };
 
 /**
  * Encapsulates the Plan-tab intent funnel: rule loading, day auto-seed + pin,
@@ -144,7 +144,7 @@ export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis
     appliedSeedNonce.current = seed.nonce;
     const cityNames = new Set((displayCountry?.cities ?? []).map((c) => c.name));
     setSelectedCities(seed.cities.filter((c) => cityNames.has(c)));
-    setSelectedExperiences([]);
+    setSelectedExperiences(seed.experiences);
     setCustomDays(seed.days);
     setDaysPinned(true);
     // `displayCountry` identity churns as rule data lands; the nonce guard makes

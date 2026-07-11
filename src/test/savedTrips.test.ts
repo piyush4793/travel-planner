@@ -26,16 +26,28 @@ describe("tripSignature", () => {
 describe("buildTripSnapshot", () => {
   const now = () => "2026-01-02T03:04:05.000Z";
 
-  it("snapshots single-country stops, cities, totals and time", () => {
+  it("snapshots single-country stops with honest rendered days, cities, totals and time", () => {
     const stops: SnapshotStop[] = [{ country: "Japan", days: 5, plan: plan(["Tokyo", "Kyoto"]) }];
     const composed = plan(["Tokyo", "Kyoto"], "₹3L–₹4L");
     const snap = buildTripSnapshot({ stops, composed, basis: "couple" }, now);
     expect(snap.name).toBe("Japan");
-    expect(snap.stops).toEqual([{ country: "Japan", days: 5, cities: ["Tokyo", "Kyoto"] }]);
+    // days is the honest rendered length (plan.days.length = 2), not the pre-expansion pin (5).
+    expect(snap.stops).toEqual([{ country: "Japan", days: 2, cities: ["Tokyo", "Kyoto"] }]);
     expect(snap.totalDays).toBe(2);
     expect(snap.costPerPerson).toBe("₹3L–₹4L");
     expect(snap.basis).toBe("couple");
     expect(snap.savedAt).toBe("2026-01-02T03:04:05.000Z");
+  });
+
+  it("stores a stop's experience focus only when present", () => {
+    const stops: SnapshotStop[] = [
+      { country: "Norway", days: 3, plan: plan(["Oslo", "Bergen"]), experiences: ["Fjords"] },
+      { country: "Denmark", days: 2, plan: plan(["Copenhagen"]), experiences: [] },
+    ];
+    const snap = buildTripSnapshot({ stops, composed: plan(["Oslo", "Bergen", "Copenhagen"]), basis: "couple" }, now);
+    expect(snap.stops[0].experiences).toEqual(["Fjords"]);
+    // An empty focus is omitted rather than persisted as [].
+    expect(snap.stops[1].experiences).toBeUndefined();
   });
 
   it("composes a multi-country route name, per-stop cities and composed totals", () => {
@@ -47,6 +59,9 @@ describe("buildTripSnapshot", () => {
     const snap = buildTripSnapshot({ stops, composed, basis: "family4" }, now);
     expect(snap.name).toBe("Norway → Denmark");
     expect(snap.stops.map((s) => s.country)).toEqual(["Norway", "Denmark"]);
+    // Honest rendered lengths: Norway plan = 2 days, Denmark plan = 1 day.
+    expect(snap.stops[0].days).toBe(2);
+    expect(snap.stops[1].days).toBe(1);
     expect(snap.stops[0].cities).toEqual(["Oslo", "Bergen"]);
     expect(snap.stops[1].cities).toEqual(["Copenhagen"]);
     expect(snap.totalDays).toBe(3);
@@ -75,10 +90,10 @@ function savedTrip(stops: SavedTripStop[], overrides: Partial<SavedTrip> = {}): 
 }
 
 describe("toOpenRequest", () => {
-  it("carries stops (country/days/cities), basis and the given nonce", () => {
+  it("carries stops (country/days/cities/experiences), basis and the given nonce", () => {
     const trip = savedTrip(
       [
-        { country: "Norway", days: 3, cities: ["Oslo", "Bergen"] },
+        { country: "Norway", days: 3, cities: ["Oslo", "Bergen"], experiences: ["Fjords"] },
         { country: "Denmark", days: 2, cities: ["Copenhagen"] },
       ],
       { basis: "family4" },
@@ -87,8 +102,9 @@ describe("toOpenRequest", () => {
     expect(req.nonce).toBe(42);
     expect(req.basis).toBe("family4");
     expect(req.stops).toEqual([
-      { country: "Norway", days: 3, cities: ["Oslo", "Bergen"] },
-      { country: "Denmark", days: 2, cities: ["Copenhagen"] },
+      { country: "Norway", days: 3, cities: ["Oslo", "Bergen"], experiences: ["Fjords"] },
+      // A stop with no saved focus defaults to an empty override.
+      { country: "Denmark", days: 2, cities: ["Copenhagen"], experiences: [] },
     ]);
   });
 });

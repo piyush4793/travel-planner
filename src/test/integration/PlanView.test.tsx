@@ -338,8 +338,10 @@ describe("PlanView — multi-country Basics", () => {
     // Route header + summary list both destinations.
     expect(screen.getAllByText(/Testland \(no rule\)/).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Otherland \(no rule\)/).length).toBeGreaterThan(0);
-    // Summed day estimate (7 + 7 fallback rec days).
-    expect(screen.getByText(/~14 days/)).toBeInTheDocument();
+    // Summed *planned* days — the route now tracks the header's composed plan
+    // (4-day fallback plan per no-rule stop) instead of the recommended baseline,
+    // so Basics "Your route" and the header total agree.
+    expect(screen.getByText(/~8 days/)).toBeInTheDocument();
     // Country-scoped controls are suppressed in multi mode.
     expect(screen.queryByRole("button", { name: /Add to favorites/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /Mark as visited/i })).not.toBeInTheDocument();
@@ -438,7 +440,7 @@ describe("PlanView — multi-country Basics", () => {
   });
 
   it("jumps to the review step when opening a saved trip", async () => {
-    renderView({ openTrip: { stops: [{ country: "Testland (no rule)", days: 6, cities: [] }], basis: "couple", nonce: 1 } });
+    renderView({ openTrip: { stops: [{ country: "Testland (no rule)", days: 6, cities: [], experiences: [] }], basis: "couple", nonce: 1 } });
     await waitFor(() => {
       expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
     });
@@ -446,7 +448,7 @@ describe("PlanView — multi-country Basics", () => {
 
   it("restores a saved trip's tuned length and cities on open", async () => {
     renderView({
-      openTrip: { stops: [{ country: "Testland (no rule)", days: 9, cities: ["Beta"] }], basis: "couple", nonce: 3 },
+      openTrip: { stops: [{ country: "Testland (no rule)", days: 9, cities: ["Beta"], experiences: [] }], basis: "couple", nonce: 3 },
     });
     await waitFor(() => {
       expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
@@ -457,8 +459,49 @@ describe("PlanView — multi-country Basics", () => {
     });
   });
 
+  it("restores a saved trip's experience focus on open", async () => {
+    renderView({
+      openTrip: { stops: [{ country: "Testland (no rule)", days: 9, cities: ["Beta"], experiences: ["Mountains"] }], basis: "couple", nonce: 31 },
+    });
+    await waitFor(() => {
+      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    });
+    // Stepping back to Basics shows the restored vibe chip pressed.
+    fireEvent.click(screen.getByRole("tab", { name: /Step 1: Trip basics/i }));
+    await waitFor(() => {
+      expect(screen.getByRole("button", { name: /Mountains/i })).toHaveAttribute("aria-pressed", "true");
+    });
+  });
+
+  it("preserves the saved route order across reopen (reordered stops)", async () => {
+    const onSaveTrip = vi.fn();
+    // Saved as Otherland → Testland; the rehydrated + re-saved route keeps order.
+    renderView({
+      countries: [COUNTRY, COUNTRY_B],
+      onSaveTrip,
+      openTrip: {
+        stops: [
+          { country: "Otherland (no rule)", days: 4, cities: [], experiences: [] },
+          { country: "Testland (no rule)", days: 5, cities: [], experiences: [] },
+        ],
+        basis: "couple",
+        nonce: 41,
+      },
+    });
+    await waitFor(() => {
+      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    });
+    await waitFor(() => {
+      const last = onSaveTrip.mock.calls[onSaveTrip.mock.calls.length - 1]?.[0];
+      expect(last?.stops.map((s: { country: string }) => s.country)).toEqual([
+        "Otherland (no rule)",
+        "Testland (no rule)",
+      ]);
+    });
+  });
+
   it("defers opening a saved trip until its destination data resolves", async () => {
-    const openTrip = { stops: [{ country: "Testland (no rule)", days: 6, cities: [] }], basis: "couple" as const, nonce: 7 };
+    const openTrip = { stops: [{ country: "Testland (no rule)", days: 6, cities: [], experiences: [] }], basis: "couple" as const, nonce: 7 };
     // Destination data not ready yet: the name resolves to nothing, so the open
     // must NOT be consumed — the landing picker stays put.
     const { rerender } = renderView({ countries: [], openTrip });

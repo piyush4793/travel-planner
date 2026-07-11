@@ -65,7 +65,7 @@ type UnitState = { selectedCities: string[]; customDays: number; pinned: boolean
  * country name and applied once per `nonce`. Mirrors {@link PlanBuilderSeed} for
  * the primary stop: each seeded stop is pinned to its snapshot cities + length.
  */
-export type TripPlannerSeed = { nonce: number; byCountry: Record<string, { cities: string[]; days: number }> };
+export type TripPlannerSeed = { nonce: number; byCountry: Record<string, { cities: string[]; days: number; experiences: string[] }> };
 
 /**
  * Owns the per-unit funnel for the *additional* stops of a multi-unit route
@@ -143,13 +143,14 @@ export function useTripPlanner(
             selectedCities: restore.cities.filter((c) => cityNames.has(c)),
             customDays: restore.days,
             pinned: true,
-            experiences: null,
+            experiences: restore.experiences,
           };
           next[country.name] = restored;
           if (
             !cur ||
             !cur.pinned ||
             cur.customDays !== restored.customDays ||
+            (cur.experiences ?? []).join("\u0000") !== restored.experiences!.join("\u0000") ||
             cur.selectedCities.join("\u0000") !== restored.selectedCities.join("\u0000")
           ) {
             changed = true;

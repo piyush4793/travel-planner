@@ -4,8 +4,11 @@ import { extractPlanCities, type TripPlan } from "./tripPlans";
 /** One country leg of a saved trip, snapshotted at save time. */
 export type SavedTripStop = {
   country: string;
+  /** Honest planned length (the stop's rendered itinerary day count). */
   days: number;
   cities: string[];
+  /** The stop's effective experience focus at save time (empty = no focus). */
+  experiences?: string[];
 };
 
 /**
@@ -44,7 +47,7 @@ export function tripSignature(countries: string[]): string {
  * clobbers in-progress edits.
  */
 export type OpenTripRequest = {
-  stops: { country: string; days: number; cities: string[] }[];
+  stops: { country: string; days: number; cities: string[]; experiences: string[] }[];
   basis: BudgetBasis;
   nonce: number;
 };
@@ -52,7 +55,7 @@ export type OpenTripRequest = {
 /** Build an {@link OpenTripRequest} from a saved trip (My Trips reopen / resume). */
 export function toOpenRequest(trip: SavedTrip, nonce: number): OpenTripRequest {
   return {
-    stops: trip.stops.map((s) => ({ country: s.country, days: s.days, cities: s.cities })),
+    stops: trip.stops.map((s) => ({ country: s.country, days: s.days, cities: s.cities, experiences: s.experiences ?? [] })),
     basis: trip.basis,
     nonce,
   };
@@ -74,8 +77,10 @@ export function findSavedTripForCountries(trips: SavedTrip[], countries: string[
 
 /** Per-stop input for a snapshot — the stop's tuned length + its own plan (if
  * the destination has itinerary data; a stop without a loaded plan still counts
- * toward the route identity so the saved trip name stays honest). */
-export type SnapshotStop = { country: string; days: number; plan?: TripPlan };
+ * toward the route identity so the saved trip name stays honest). The stored day
+ * count is the plan's honest rendered length (which may exceed the requested
+ * `days` when the cities need more room), so a reopened trip's numbers add up. */
+export type SnapshotStop = { country: string; days: number; plan?: TripPlan; experiences?: string[] };
 
 export type SnapshotInput = {
   /** Stops in visit order (primary first). */
@@ -89,6 +94,10 @@ export type SnapshotInput = {
  * Build the persistable fields of a saved trip from the wizard's live plan
  * state. Pure (time injected) so it is trivially unit-testable; `id`/`favorite`
  * are owned by the store's upsert, which preserves them across re-saves.
+ *
+ * Each stop's `days` is taken from its *rendered* plan length (not the requested
+ * length), so the per-stop numbers sum to the composed total and a reopened trip
+ * shows the same lengths it was saved with — no "8d pinned vs 11d shown" drift.
  */
 export function buildTripSnapshot(
   input: SnapshotInput,
@@ -96,8 +105,9 @@ export function buildTripSnapshot(
 ): Omit<SavedTrip, "id" | "favorite"> {
   const stops: SavedTripStop[] = input.stops.map((s) => ({
     country: s.country,
-    days: s.days,
+    days: s.plan ? s.plan.days.length : s.days,
     cities: s.plan ? extractPlanCities(s.plan.days) : [],
+    experiences: s.experiences && s.experiences.length > 0 ? s.experiences : undefined,
   }));
   return {
     name: tripSignature(stops.map((s) => s.country)),
