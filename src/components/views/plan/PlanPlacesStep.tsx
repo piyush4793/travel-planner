@@ -1,8 +1,6 @@
 import { memo, useEffect, useMemo, useState } from "react";
 import type { CityEntry } from "../../../core/types";
 import type { CountryRule } from "../../../core/data/itineraryRules";
-import { type TripPlan, extractPlanCities, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
-import { type BudgetBasis, BUDGET_BASIS_META, BUDGET_BASIS_ORDER } from "../../../core/utils/budget";
 import {
   decideCities,
   sortDecisions,
@@ -11,7 +9,6 @@ import {
   type CityDecision,
   type CitySort,
 } from "../../../core/utils/decideCities";
-import { getCountryFlag } from "../../../utils/countryFlags";
 import PlanMenu from "./PlanMenu";
 import PlanFilters from "./PlanFilters";
 import CityDetailModal from "./CityDetailModal";
@@ -44,18 +41,15 @@ export interface PlacesUnit {
 
 interface Props {
   units: PlacesUnit[];
-  /** Composed itinerary across every stop — drives the trip stats strip. */
-  plan: TripPlan | null;
-  /** Trip-scoped "who's going" basis (drives the budget figure). */
-  budgetBasis: BudgetBasis;
-  setBudgetBasis: (b: BudgetBasis) => void;
+  /** Controlled active-country index (shared with the header switcher). */
+  activeIndex: number;
 }
 
 function pluralize(n: number, word: string): string {
   return `${n} ${word}${n === 1 ? "" : "s"}`;
 }
 
-function includedCount(unit: PlacesUnit): number {
+export function includedCount(unit: PlacesUnit): number {
   return unit.selectedCities.length > 0 ? unit.selectedCities.length : unit.autoSelectedCities.length;
 }
 
@@ -85,7 +79,7 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
       className={`relative flex w-full items-start gap-3.5 rounded-xl border px-3.5 py-3 text-left transition-colors ${
         d.included
           ? "border-emerald-200 bg-emerald-50/70 hover:border-emerald-300"
-          : "border-[#e6e1d4] bg-white/70 hover:border-[#cfc9b8]"
+          : "border-line bg-white/70 hover:border-line-strong"
       }`}
     >
       {/* Full-card toggle target sits beneath the content so a tap anywhere adds/drops the stop. */}
@@ -100,7 +94,7 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
       <span
         aria-hidden="true"
         className={`pointer-events-none mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 text-[11px] font-bold transition-colors ${
-          d.included ? "border-emerald-600 bg-emerald-600 text-white" : "border-[#cfc9b8] text-[#cfc9b8]"
+          d.included ? "border-emerald-600 bg-emerald-600 text-white" : "border-line-strong text-line-strong"
         }`}
       >
         {d.included ? "✓" : "+"}
@@ -109,7 +103,7 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
       <span className="pointer-events-none flex min-w-0 flex-1 flex-col gap-1">
         <span className="flex items-start gap-x-2">
           <span className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-0.5">
-            <span className="max-w-full truncate text-sm font-semibold text-[#16241d]">{d.name}</span>
+            <span className="max-w-full truncate text-sm font-semibold text-ink-1">{d.name}</span>
             {d.signal && (
               <span className="shrink-0 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">{d.signal}</span>
             )}
@@ -119,7 +113,7 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
             onClick={onDetails}
             aria-label={`${d.name} details`}
             aria-haspopup="dialog"
-            className="focus-ring-emerald pointer-events-auto relative z-10 -mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#dfdac9] bg-white text-emerald-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50"
+            className="focus-ring-emerald pointer-events-auto relative z-10 -mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-line bg-white text-emerald-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50"
           >
             <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="9" />
@@ -129,7 +123,7 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
           </button>
         </span>
 
-        {d.brief && <span title={d.brief} className="line-clamp-1 text-[11.5px] leading-snug text-[#6f6a5d]">{d.brief}</span>}
+        {d.brief && <span title={d.brief} className="line-clamp-1 text-[11.5px] leading-snug text-ink-2">{d.brief}</span>}
 
         {(d.focusMatches.length > 0 || mutedChips.length > 0) && (
           <span className="mt-0.5 flex flex-wrap gap-1">
@@ -137,16 +131,16 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
               <span key={e} className="rounded-full border border-emerald-600 bg-emerald-600 px-2 py-0.5 text-[10px] font-semibold text-white">{e}</span>
             ))}
             {mutedChips.map((e) => (
-              <span key={e} className="rounded-full border border-[#e0dccb] bg-[#faf8f1] px-2 py-0.5 text-[10px] font-semibold text-[#8a8577]">{e}</span>
+              <span key={e} className="rounded-full border border-line bg-surface-1 px-2 py-0.5 text-[10px] font-semibold text-ink-3">{e}</span>
             ))}
           </span>
         )}
       </span>
 
       {hasRail && (
-        <span className="pointer-events-none flex w-[84px] shrink-0 flex-col items-end gap-0.5 self-stretch border-l border-[#ece7d8] pl-3 text-right">
-          {d.recDays > 0 && <span className="font-display text-[15px] font-bold text-[#16241d]">≈{d.recDays}d</span>}
-          {d.bestWindow && <span className="whitespace-nowrap text-[10.5px] text-[#8a8577]">☀ {d.bestWindow}</span>}
+        <span className="pointer-events-none flex w-[84px] shrink-0 flex-col items-end gap-0.5 self-stretch border-l border-surface-3 pl-3 text-right">
+          {d.recDays > 0 && <span className="font-display text-[15px] font-bold text-ink-1">≈{d.recDays}d</span>}
+          {d.bestWindow && <span className="whitespace-nowrap text-[10.5px] text-ink-3">☀ {d.bestWindow}</span>}
           {d.avoidWindow && <span className="whitespace-nowrap text-[10.5px] text-amber-700">⚠ {d.avoidWindow}</span>}
         </span>
       )}
@@ -154,101 +148,17 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
   );
 });
 
-function CountrySwitcher({ units, activeIndex, onSelect }: { units: PlacesUnit[]; activeIndex: number; onSelect: (i: number) => void }) {
-  const active = units[activeIndex];
-  return (
-    <PlanMenu
-      ariaLabel="Switch country"
-      width={340}
-      triggerClassName="flex min-w-0 max-w-full items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-white transition-colors hover:bg-white/15 focus-ring-emerald"
-      trigger={
-        <>
-          <span aria-hidden="true">{getCountryFlag(active.name)}</span>
-          <span className="min-w-0 line-clamp-1 font-display text-base font-semibold">{active.name}</span>
-          {CARET}
-        </>
-      }
-    >
-      {(close) => (
-        <ul className="max-h-[60vh] overflow-y-auto py-1">
-          {units.map((u, i) => (
-            <li key={u.name}>
-              <button
-                role="menuitemradio"
-                aria-checked={i === activeIndex}
-                onClick={() => { onSelect(i); close(); }}
-                className={`flex w-full items-center gap-3 px-4 py-3 text-left transition-colors focus-ring-emerald ${
-                  i === activeIndex ? "bg-emerald-50" : "hover:bg-[#faf8f1]"
-                }`}
-              >
-                <span className="w-4 shrink-0 text-emerald-600" aria-hidden="true">{i === activeIndex ? "✓" : ""}</span>
-                <span aria-hidden="true">{getCountryFlag(u.name)}</span>
-                <span className="min-w-0 flex-1 line-clamp-1 font-display text-[15px] font-semibold text-[#16241d]">{u.name}</span>
-                <span className="shrink-0 whitespace-nowrap text-[12px] font-medium text-[#8a8577]">
-                  {pluralize(includedCount(u), "place")} · {u.customDays}d
-                </span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </PlanMenu>
-  );
-}
-
-function WhoGoingMenu({ basis, setBasis }: { basis: BudgetBasis; setBasis: (b: BudgetBasis) => void }) {
-  const meta = BUDGET_BASIS_META[basis];
-  return (
-    <PlanMenu
-      ariaLabel="Who's going"
-      width={220}
-      triggerClassName="flex shrink-0 items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[13px] text-white transition-colors hover:bg-white/15 focus-ring-emerald"
-      trigger={
-        <>
-          <span aria-hidden="true">{meta.icon}</span>
-          <span className="font-semibold">{meta.label}</span>
-          {CARET}
-        </>
-      }
-    >
-      {(close) => (
-        <ul className="py-1">
-          {BUDGET_BASIS_ORDER.map((b) => {
-            const m = BUDGET_BASIS_META[b];
-            return (
-              <li key={b}>
-                <button
-                  role="menuitemradio"
-                  aria-checked={b === basis}
-                  onClick={() => { setBasis(b); close(); }}
-                  className={`flex w-full items-center gap-2.5 px-4 py-2.5 text-left text-[13px] transition-colors focus-ring-emerald ${
-                    b === basis ? "bg-emerald-50 font-semibold text-emerald-800" : "text-[#3c463f] hover:bg-[#faf8f1]"
-                  }`}
-                >
-                  <span className="w-3 text-emerald-600" aria-hidden="true">{b === basis ? "✓" : ""}</span>
-                  <span aria-hidden="true">{m.icon}</span>
-                  {m.label}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </PlanMenu>
-  );
-}
-
 function SortMenu({ sort, onChange }: { sort: CitySort; onChange: (s: CitySort) => void }) {
   const label = CITY_SORT_META.find((s) => s.key === sort)?.label ?? "Best match";
   return (
     <PlanMenu
       ariaLabel="Sort places"
       width={200}
-      triggerClassName="flex min-h-[36px] items-center gap-1.5 rounded-full border border-[#d9d3c4] bg-white px-3.5 py-2 text-[13px] focus-ring-emerald"
+      triggerClassName="flex min-h-[36px] items-center gap-1.5 rounded-full border border-line-strong bg-white px-3.5 py-2 text-[13px] focus-ring-emerald"
       trigger={
         <>
-          <span className="text-[#8a8577]">Sort</span>
-          <span className="font-semibold text-[#16241d]">{label}</span>
+          <span className="text-ink-3">Sort</span>
+          <span className="font-semibold text-ink-1">{label}</span>
           {CARET}
         </>
       }
@@ -262,7 +172,7 @@ function SortMenu({ sort, onChange }: { sort: CitySort; onChange: (s: CitySort) 
                 aria-checked={s.key === sort}
                 onClick={() => { onChange(s.key); close(); }}
                 className={`flex w-full items-center gap-2 px-4 py-2.5 text-left text-[13px] transition-colors focus-ring-emerald ${
-                  s.key === sort ? "bg-emerald-50 font-semibold text-emerald-800" : "text-[#3c463f] hover:bg-[#faf8f1]"
+                  s.key === sort ? "bg-emerald-50 font-semibold text-emerald-800" : "text-ink-body hover:bg-surface-1"
                 }`}
               >
                 <span className="w-3 text-emerald-600" aria-hidden="true">{s.key === sort ? "✓" : ""}</span>
@@ -291,7 +201,7 @@ function UnitCities({ unit, sort }: { unit: PlacesUnit; sort: CitySort }) {
     <div className="space-y-4">
       {included.length > 0 && (
         <div>
-          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#a8a291]">In your plan</p>
+          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-ink-4">In your plan</p>
           <div className="grid gap-2 lg:grid-cols-2">
             {included.map((d) => (
               <DecisionCard key={d.name} d={d} onToggle={() => unit.onToggleCity(d.name)} onDetails={() => setDetailName(d.name)} />
@@ -304,7 +214,7 @@ function UnitCities({ unit, sort }: { unit: PlacesUnit; sort: CitySort }) {
         showAll ? (
           <div>
             {included.length > 0 && (
-              <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#a8a291]">More options</p>
+              <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-ink-4">More options</p>
             )}
             <div className="grid gap-2 lg:grid-cols-2">
               {rest.map((d) => (
@@ -315,7 +225,7 @@ function UnitCities({ unit, sort }: { unit: PlacesUnit; sort: CitySort }) {
         ) : (
           <button
             onClick={() => setShowAll(true)}
-            className="focus-ring-emerald min-h-[44px] w-full rounded-xl border border-dashed border-[#cfc9b8] bg-transparent px-3 py-2.5 text-[13px] font-semibold text-emerald-800 transition-colors hover:border-emerald-400 hover:bg-emerald-50/40"
+            className="focus-ring-emerald min-h-[44px] w-full rounded-xl border border-dashed border-line-strong bg-transparent px-3 py-2.5 text-[13px] font-semibold text-emerald-800 transition-colors hover:border-emerald-400 hover:bg-emerald-50/40"
           >
             Show {rest.length} more {rest.length === 1 ? "place" : "places"} in {unit.name} ↓
           </button>
@@ -335,70 +245,30 @@ function UnitCities({ unit, sort }: { unit: PlacesUnit; sort: CitySort }) {
 
 /**
  * Places step — pick the cities for each stop as *decisions*, not checkboxes.
- * A consolidated dark header card carries identity (country switcher for a
- * multi-stop route, static name for one) + trip stats + the trip-scoped "who's
- * going" basis. Below it, a section title with an overflow-safe focus subline,
- * a single per-country "Filters" control (experiences today, extensible) and a
- * Sort control, then a two-up decision grid on wide screens. The step molds to
- * its data: a single stop hides the switcher and the countries stat. Experiences
- * are per-country — Basics seeds the trip vibe, Filters here diverges one stop.
+ * Identity, trip stats and the "who's going" basis now live in the shared
+ * {@link PlanTripHeader} (the header hosts the country switcher for a multi-stop
+ * route), so this step focuses purely on the decision surface: a section title
+ * with an overflow-safe focus subline, a single per-country "Filters" control
+ * (experiences today, extensible) and a Sort control, then a two-up decision
+ * grid on wide screens. The active country is controlled by the parent so the
+ * header switcher and this body stay in lock-step. Experiences are per-country —
+ * Basics seeds the trip vibe, Filters here diverges one stop.
  */
-function PlanPlacesStep({ units, plan, budgetBasis, setBudgetBasis }: Props) {
-  const multi = units.length > 1;
+function PlanPlacesStep({ units, activeIndex }: Props) {
   const [sort, setSort] = useState<CitySort>("best");
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  // Keep the active country valid as the route grows or shrinks.
-  useEffect(() => {
-    setActiveIndex((i) => Math.min(i, Math.max(0, units.length - 1)));
-  }, [units.length]);
 
   if (units.length === 0) return null;
-  const activeUnit = units[Math.min(activeIndex, units.length - 1)];
-
-  const totalDays = plan ? plan.days.length : units.reduce((sum, u) => sum + u.customDays, 0);
-  const totalPlaces = plan ? extractPlanCities(plan.days).length : units.reduce((sum, u) => sum + includedCount(u), 0);
+  const safeIndex = Math.min(Math.max(0, activeIndex), units.length - 1);
+  const activeUnit = units[safeIndex];
   const focus = summarizeFocus(activeUnit.activeExperiences);
 
   return (
     <div className="space-y-5">
-      {/* Consolidated header card */}
-      <div className="rounded-2xl bg-[#123a2b] px-4 py-3.5 text-white sm:px-5 sm:py-4">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          {multi ? (
-            <CountrySwitcher units={units} activeIndex={activeIndex} onSelect={setActiveIndex} />
-          ) : (
-            <div className="flex min-w-0 items-center gap-2">
-              <span aria-hidden="true">{getCountryFlag(activeUnit.name)}</span>
-              <span className="min-w-0 line-clamp-1 font-display text-lg font-semibold">{activeUnit.name}</span>
-            </div>
-          )}
-          <WhoGoingMenu basis={budgetBasis} setBasis={setBudgetBasis} />
-        </div>
-        <div className="mt-3 flex flex-wrap items-baseline gap-x-2.5 gap-y-1 text-[13px] text-white/80">
-          <span><span className="font-semibold text-white">{totalDays}</span> {totalDays === 1 ? "day" : "days"}</span>
-          <span aria-hidden="true" className="text-white/30">·</span>
-          <span><span className="font-semibold text-white">{totalPlaces}</span> {totalPlaces === 1 ? "place" : "places"}</span>
-          {multi && (
-            <>
-              <span aria-hidden="true" className="text-white/30">·</span>
-              <span><span className="font-semibold text-white">{units.length}</span> countries</span>
-            </>
-          )}
-          {plan && (
-            <span className="ml-auto whitespace-nowrap font-bold text-emerald-300">
-              {plan.costPerPerson}{" "}
-              <span title={planCostBasisLabel(plan)} aria-label={planCostBasisLabel(plan)}>{planCostBasisIcon(plan)}</span>
-            </span>
-          )}
-        </div>
-      </div>
-
       {/* Section header + controls */}
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div className="min-w-0">
-          <h3 className="line-clamp-1 font-display text-base font-semibold text-[#16241d]">Cities in {activeUnit.name}</h3>
-          <p className="mt-0.5 text-[11px] font-medium text-[#8a8577]">
+          <h3 className="line-clamp-1 font-display text-base font-semibold text-ink-1">Cities in {activeUnit.name}</h3>
+          <p className="mt-0.5 text-[11px] font-medium text-ink-3">
             {includedCount(activeUnit)} in plan · {pluralize(activeUnit.orderedCities.length, "option")}
             {focus && (
               <>

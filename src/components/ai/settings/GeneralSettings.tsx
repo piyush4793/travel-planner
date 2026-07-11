@@ -26,7 +26,7 @@ export default function GeneralSettings({
       <SectionCard
         title="Home country"
         icon={"\u{1F3E0}"}
-        accent="bg-blue-100 text-blue-600"
+        accent="bg-emerald-100 text-emerald-700"
         desc="Where your trips depart from — used for travel estimates."
       >
         <HomeCountrySelector value={homeCountry} onChange={onHomeCountryChange} variant="light" />
@@ -47,8 +47,8 @@ export default function GeneralSettings({
         />
       </SectionCard>
 
-      <div className="flex items-center justify-center gap-2 pt-1 text-[11px] text-slate-400">
-        <span className="font-semibold text-slate-500">Roamwise</span>
+      <div className="flex items-center justify-center gap-2 pt-1 text-[11px] text-[#a8a293]">
+        <span className="font-semibold text-[#6f6a5d]">Roamwise</span>
         <span aria-hidden="true">·</span>
         <span>v{__APP_VERSION__}</span>
         <span aria-hidden="true">·</span>

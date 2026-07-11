@@ -12,4 +12,3 @@ export { isEnabled, getFeatureFlags } from "./featureFlags";
 // Utils
 export { generateTripPlan, extractCityFromLabel } from "./utils/tripPlans";
 export { applyFilters as filterCountries } from "./utils/filterLogic";
-export { buildMergedTripGroups, ALL_REGIONS } from "./data/tripGroups";

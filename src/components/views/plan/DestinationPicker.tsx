@@ -48,8 +48,8 @@ function Chip({ country, visited, favorite, index, disabled, onPick }: { country
   const base =
     "focus-ring-emerald group inline-flex min-h-[44px] items-center gap-2 rounded-full border px-4 py-2.5 text-sm shadow-[0_1px_2px_rgba(20,40,30,0.05)] transition-[transform,box-shadow,border-color,color] motion-safe:animate-[fadeInUp_0.28s_ease-out_both] hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0 disabled:hover:shadow-[0_1px_2px_rgba(20,40,30,0.05)]";
   const tone = visited
-    ? "border-[#e6e1d4] bg-[#f4f1e8] text-[#a39d8c] hover:border-[#cfc9b8]"
-    : "border-[#e4dece] bg-white font-medium text-[#1e2a25] hover:border-emerald-600 hover:text-emerald-800";
+    ? "border-line bg-surface-2 text-ink-4 hover:border-line-strong"
+    : "border-line bg-white font-medium text-ink-1 hover:border-emerald-600 hover:text-emerald-800";
   return (
     <button
       onClick={onPick}
@@ -140,14 +140,14 @@ export default function DestinationPicker({ source, countries, exploreCountries,
   const nothing = mineFiltered.length === 0 && exploreFiltered.length === 0;
 
   return (
-    <div className="h-full w-full overflow-y-auto bg-[#f7f4ec]">
+    <div className="h-full w-full overflow-y-auto bg-surface-2">
       <div className={`mx-auto flex min-h-full w-full max-w-2xl flex-col px-5 pt-12 pb-12 ${q ? "" : "justify-center"}`}>
         <div className="text-center">
           <div className="mb-3 text-3xl opacity-80" aria-hidden="true">🧭</div>
-          <h1 className="font-display text-3xl font-semibold tracking-tight text-[#16241d] sm:text-4xl">
+          <h1 className="font-display text-3xl font-semibold tracking-tight text-ink-1 sm:text-4xl">
             Where do you plan to go next?
           </h1>
-          <p className="mx-auto mt-3 max-w-md text-sm text-[#6f6a5d]">
+          <p className="mx-auto mt-3 max-w-md text-sm text-ink-2">
             {multiSelect
               ? "Pick up to " + maxSelection + " " + source.unitNounPlural + " and we'll shape one trip across them."
               : "Pick a destination and we'll shape a trip around what you love."}
@@ -155,7 +155,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
         </div>
 
         <div className="mt-8">
-          <div className="focus-within:border-emerald-600 focus-within:shadow-[0_0_0_3px_rgba(4,120,87,0.12)] flex items-center gap-2 rounded-2xl border border-[#e4dece] bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-[border-color,box-shadow]">
+          <div className="focus-within:border-emerald-600 focus-within:shadow-[0_0_0_3px_rgba(4,120,87,0.12)] flex items-center gap-2 rounded-2xl border border-line bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-[border-color,box-shadow]">
             <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
               {multiSelect && selectedNames.map((name) => (
                 <span key={name} className="inline-flex min-h-[32px] items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 py-0.5 pl-2.5 pr-1 text-sm font-medium text-emerald-800">
@@ -181,7 +181,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
                 }}
                 placeholder={multiSelect && selectedNames.length > 0 ? "Add another…" : "Search destinations…"}
                 aria-label="Search destinations"
-                className="min-w-[7rem] flex-1 bg-transparent py-1.5 text-[15px] text-[#1e2a25] outline-none placeholder:text-[#a8a293]"
+                className="min-w-[7rem] flex-1 bg-transparent py-1.5 text-[15px] text-ink-1 outline-none placeholder:text-ink-4"
                 autoFocus
               />
             </div>
@@ -196,14 +196,14 @@ export default function DestinationPicker({ source, countries, exploreCountries,
             )}
           </div>
           {multiSelect && selectedNames.length > 0 && (
-            <p className="mt-2 text-center text-[11px] font-medium text-[#a09a89]" aria-live="polite">
+            <p className="mt-2 text-center text-[11px] font-medium text-ink-4" aria-live="polite">
               {selectedNames.length}/{maxSelection} selected{atCap ? " · max reached" : " · tap the arrow when ready"}
             </p>
           )}
         </div>
 
         {countries.length === 0 && !q && selectedNames.length === 0 && (
-          <p className="mt-4 text-center text-xs text-[#6f6a5d]">
+          <p className="mt-4 text-center text-xs text-ink-2">
             Your list is empty — plan any popular destination below, or{" "}
             <button onClick={onGoDiscover} className="focus-ring-emerald rounded font-semibold text-emerald-700 hover:underline">
               browse Discover
@@ -229,7 +229,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
 
         {mineCapped.length > 0 && (
           <section className="mt-8">
-            <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#a09a89]">From your list</h2>
+            <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-ink-4">From your list</h2>
             <div className="flex flex-wrap gap-2.5">
               {mineCapped.map((c, i) => (
                 <Chip key={c.name} country={c} index={i} visited={visitedNames.has(c.name)} favorite={favoriteNames?.has(c.name)} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
@@ -237,7 +237,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
               {mineHidden > 0 && (
                 <button
                   onClick={() => setShowAllMine(true)}
-                  className="focus-ring-emerald min-h-[44px] rounded-full border border-dashed border-[#cfc9b8] px-4 py-2.5 text-sm font-medium text-[#6f6a5d] transition-colors hover:border-emerald-600 hover:text-emerald-800"
+                  className="focus-ring-emerald min-h-[44px] rounded-full border border-dashed border-line-strong px-4 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:border-emerald-600 hover:text-emerald-800"
                 >
                   Show all {mineFiltered.length}
                 </button>
@@ -245,7 +245,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
               {showAllMine && !q && mineFiltered.length > MINE_LIMIT && (
                 <button
                   onClick={() => setShowAllMine(false)}
-                  className="focus-ring-emerald min-h-[44px] rounded-full px-4 py-2.5 text-sm font-medium text-[#6f6a5d] transition-colors hover:text-emerald-800"
+                  className="focus-ring-emerald min-h-[44px] rounded-full px-4 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:text-emerald-800"
                 >
                   Show less
                 </button>
@@ -256,7 +256,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
 
         {exploreFiltered.length > 0 && (
           <section className="mt-8">
-            <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#a09a89]">
+            <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-ink-4">
               {q ? "More destinations" : "Popular to explore"}
             </h2>
             <div className="flex flex-wrap gap-2.5">
@@ -268,7 +268,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
         )}
 
         {nothing && (
-          <p className="mt-10 text-center text-sm text-[#6f6a5d]">
+          <p className="mt-10 text-center text-sm text-ink-2">
             No destination matches “{query}”.{" "}
             <button onClick={onGoDiscover} className="focus-ring-emerald rounded font-semibold text-emerald-700 hover:underline">
               Browse Discover

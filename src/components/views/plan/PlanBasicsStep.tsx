@@ -26,6 +26,13 @@ type Props = {
    * the layout safe regardless).
    */
   visibleCap?: number;
+  /**
+   * Live per-stop day counts keyed by unit name (the forming plan's tuned
+   * lengths). Passed to the multi-unit route card so its per-stop days + total
+   * mirror the header and update with vibe/experience changes. Stops missing
+   * here fall back to their recommended baseline until their plan loads.
+   */
+  stopDays?: Record<string, number>;
   /** Live single-destination plan for immediate feedback (null while loading). */
   plan: TripPlan | null;
 };
@@ -54,6 +61,7 @@ export default function PlanBasicsStep({
   onToggleExperience,
   onClearExperiences,
   visibleCap = DEFAULT_VIBE_CAP,
+  stopDays,
   plan,
 }: Props) {
   const isMulti = selection.length > 1;
@@ -91,7 +99,7 @@ export default function PlanBasicsStep({
       {/* Live feedback so the step feels substantial, not empty. Multi-unit shows
           the summed route timeline; single shows the live plan. */}
       {isMulti
-        ? <PlanRouteSummary selection={selection} source={source} />
+        ? <PlanRouteSummary selection={selection} source={source} stopDays={stopDays} />
         : plan && <PlanProgressSummary plan={plan} />}
     </div>
   );

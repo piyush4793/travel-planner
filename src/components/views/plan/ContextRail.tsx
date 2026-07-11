@@ -85,12 +85,12 @@ function ContextRailInner({ country, activeBasis, onBasisChange, homeCountry, ac
             )}
             {combo.length > 0 && (
               <div>
-                <p className="mb-1.5 text-[10px] font-bold uppercase tracking-wide text-[#a8a293]">Pairs well with</p>
+                <p className="mb-1.5 text-[10px] font-bold uppercase tracking-wide text-ink-4">Pairs well with</p>
                 <div className="flex flex-wrap gap-1.5">
                   {combo.map((name) => (
                     <span
                       key={name}
-                      className="rounded-full border border-[#e4dece] bg-[#f4f1e8] px-2.5 py-1 text-[11px] font-semibold text-[#6f6a5d]"
+                      className="rounded-full border border-line bg-surface-2 px-2.5 py-1 text-[11px] font-semibold text-ink-2"
                     >
                       {name}
                     </span>

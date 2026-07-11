@@ -22,7 +22,7 @@ describe("DevFlagPanel", () => {
       llmPlanning: true,
       pdfExport: true,
       searchableHomeCountry: false,
-      tripGroups: false,
+      multiCountryPlanning: true,
     });
   });
 
@@ -35,7 +35,7 @@ describe("DevFlagPanel", () => {
 
     await user.click(screen.getByRole("button", { name: "Dev: Feature Flags" }));
     expect(screen.getByText("🛠 Feature Flags")).toBeInTheDocument();
-    expect(screen.getByText("Trip Groups")).toBeInTheDocument();
+    expect(screen.getByText("Multi-Country Planning")).toBeInTheDocument();
 
     const switches = screen.getAllByRole("switch");
     expect(switches.length).toBeGreaterThan(0);

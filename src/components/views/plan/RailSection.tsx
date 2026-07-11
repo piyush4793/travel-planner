@@ -21,22 +21,22 @@ export default function RailSection({ title, hint, count, defaultOpen = false, c
   const bodyId = useId();
 
   return (
-    <section className="overflow-hidden rounded-2xl border border-[#e4dece] bg-white/85 shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
+    <section className="overflow-hidden rounded-2xl border border-line bg-white/85 shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-controls={bodyId}
-        className="focus-ring-emerald flex min-h-[44px] w-full items-center gap-2 px-3.5 py-2.5 text-left transition-colors hover:bg-[#f4f1e8]/60"
+        className="focus-ring-emerald flex min-h-[44px] w-full items-center gap-2 px-3.5 py-2.5 text-left transition-colors hover:bg-surface-2/60"
       >
         <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800">{title}</span>
         {count != null && (
           <span className="rounded-full bg-emerald-50 px-1.5 py-0.5 text-[10px] font-bold text-emerald-700">{count}</span>
         )}
-        {hint && <span className="truncate text-[10px] font-semibold text-[#a8a293]">· {hint}</span>}
+        {hint && <span className="truncate text-[10px] font-semibold text-ink-4">· {hint}</span>}
         <span
           aria-hidden="true"
-          className={`ml-auto text-[10px] text-[#a8a293] motion-safe:transition-transform motion-safe:duration-200 ${open ? "rotate-90" : ""}`}
+          className={`ml-auto text-[10px] text-ink-4 motion-safe:transition-transform motion-safe:duration-200 ${open ? "rotate-90" : ""}`}
         >
           ▸
         </span>

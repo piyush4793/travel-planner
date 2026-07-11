@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { generateTripPlan, composeTripPlan, getMaxRuleDays, getRecRuleDays, recommendedDaysForSelection, topExperienceCities, cityExperienceStrength, resolvePlannedCities, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../core/utils/tripPlans";
+import { generateTripPlan, composeTripPlan, shiftDayNumbers, shiftPlanDays, getMaxRuleDays, getRecRuleDays, recommendedDaysForSelection, topExperienceCities, cityExperienceStrength, resolvePlannedCities, extractCityFromLabel, extractPlanCities, isRealCity, normalizeCityName } from "../core/utils/tripPlans";
 import type { TripSegment } from "../core/utils/tripPlans";
 import type { Country } from "../core/types";
 
@@ -123,6 +123,7 @@ describe("tripPlans — P0", () => {
       const plan = generateTripPlan(COUNTRY_WITH_CITIES, "custom", ["CityA", "CityB", "CityC"], 2);
 
       expect(plan.warning).toContain("tight");
+      expect(plan.warning).not.toContain("⚠️");
       expect(plan.duration).toBe("3 days");
     });
   });
@@ -783,5 +784,50 @@ describe("composeTripPlan (multi-unit)", () => {
 
   it("omits the warning when no unit warns", () => {
     expect(composeTripPlan([norway, norway], "couple").warning).toBeUndefined();
+  });
+
+  it("renumbers days continuously across the route (no per-stop restart)", () => {
+    const plan = composeTripPlan([norway, denmark], "couple");
+    expect(plan.days.map((d) => d.label)).toEqual([
+      "Day 1 — Oslo",
+      "Day 2 — Flam",
+      "Day 3 — Copenhagen",
+      "Day 4 — Copenhagen",
+      "Day 5 — Aarhus",
+    ]);
+  });
+})
+
+describe("shiftDayNumbers / shiftPlanDays", () => {
+  it("returns the input unchanged for a zero offset", () => {
+    expect(shiftDayNumbers("Day 1 — Oslo", 0)).toBe("Day 1 — Oslo");
+    const days = [{ label: "Day 1 — Oslo", activities: ["x"] }];
+    expect(shiftPlanDays(days, 0)).toBe(days);
+  });
+
+  it("shifts a single-day label without touching the ' — City' separator", () => {
+    expect(shiftDayNumbers("Day 1 — Oslo", 11)).toBe("Day 12 — Oslo");
+  });
+
+  it("shifts both ends of a ranged label", () => {
+    expect(shiftDayNumbers("Day 3–4 — Bergen", 10)).toBe("Day 13–14 — Bergen");
+    expect(shiftDayNumbers("Day 1 – 2 — City", 5)).toBe("Day 6 – 7 — City");
+  });
+
+  it("shifts day numbers embedded in activity copy", () => {
+    expect(shiftDayNumbers("Day 2: local food and markets", 4)).toBe("Day 6: local food and markets");
+  });
+
+  it("never treats 'Day trip' as a numbered day", () => {
+    expect(shiftDayNumbers("Day trip to Nara", 4)).toBe("Day trip to Nara");
+  });
+
+  it("renumbers a plan's labels and activities by the offset", () => {
+    const shifted = shiftPlanDays(
+      [{ label: "Day 1 — Oslo", activities: ["Day 1: arrive"] }],
+      3,
+    );
+    expect(shifted[0].label).toBe("Day 4 — Oslo");
+    expect(shifted[0].activities).toEqual(["Day 4: arrive"]);
   });
 })

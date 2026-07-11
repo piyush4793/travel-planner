@@ -110,7 +110,7 @@ describe("backup import/export helpers — P0", () => {
       data: {
         [LS_KEYS.MY_LIST]: ["Japan", "Vietnam", "Peru"],
         [LS_KEYS.CUSTOMS]: [{ name: "Brazil" }],
-        [LS_KEYS.TRIP_CUSTOMS]: [{ main: "Japan", addOns: [] }],
+        [LS_KEYS.SAVED_TRIPS]: [{ id: "t1", name: "Japan", stops: [] }],
         [LS_KEYS.AI_PLANS]: { Japan: [{ id: "a" }, { id: "b" }], Peru: [{ id: "c" }] },
       },
     };
@@ -362,6 +362,7 @@ describe("backup import/export helpers — P0", () => {
     const picker = installSavePicker();
     localStorage.setItem(LS_KEYS.MY_LIST, JSON.stringify(["Japan"]));
     localStorage.setItem(LS_KEYS.CUSTOMS, JSON.stringify([{ name: "Japan" }]));
+    localStorage.setItem(LS_KEYS.BUDGET_BASIS, JSON.stringify("family4"));
     localStorage.setItem(LS_KEYS.LLM_KEYS, JSON.stringify({ openai: "secret" }));
 
     const country: Country = {
@@ -387,6 +388,7 @@ describe("backup import/export helpers — P0", () => {
     };
     expect(backupJson.data[LS_KEYS.MY_LIST]).toEqual(["Japan"]);
     expect(backupJson.data[LS_KEYS.CUSTOMS]).toEqual([{ name: "Japan" }]);
+    expect(backupJson.data[LS_KEYS.BUDGET_BASIS]).toBe("family4");
     expect(backupJson.data[LS_KEYS.LLM_KEYS]).toBeUndefined();
 
     const csvText = await readBlobAsText(picker.blobs[1]);

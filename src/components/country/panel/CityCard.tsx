@@ -58,28 +58,21 @@ const THEMES: Record<Variant, SelectableTheme> = {
     focusRing: "focus-ring-emerald",
     card: (selected, matchesFocus) =>
       selected
-        ? "border-[#14432f] bg-[#14432f] text-[#f7f4ec] shadow-md"
+        ? "border-emerald-500 bg-emerald-50 text-[#16241d] shadow-sm ring-1 ring-emerald-500/30"
         : matchesFocus
           ? "border-emerald-300 bg-emerald-50/70 text-[#1e2a25] shadow-sm hover:border-emerald-400 hover:shadow"
           : "border-[#e6e1d4] bg-white/85 text-[#1e2a25] shadow-[0_1px_2px_rgba(20,40,30,0.05)] hover:border-[#cfc9b8] hover:shadow",
-    title: (selected) => (selected ? "text-[#f7f4ec]" : "text-[#16241d]"),
-    star: (selected) => (selected ? "text-emerald-200" : "text-emerald-600"),
+    title: (selected) => (selected ? "text-emerald-900" : "text-[#16241d]"),
+    star: () => "text-emerald-600",
     check: (selected) =>
       selected
-        ? "border-[#f7f4ec] bg-[#f7f4ec] text-[#14432f]"
+        ? "border-emerald-600 bg-emerald-600 text-white"
         : "border-[#cfc9b8] text-transparent",
-    best: (selected) =>
-      selected ? "bg-white/15 text-emerald-100" : "bg-emerald-100/80 text-emerald-800",
-    worst: (selected) => (selected ? "bg-white/15 text-rose-100" : "bg-rose-50 text-rose-600"),
-    exp: (selected, on) =>
-      selected
-        ? on
-          ? "bg-[#f7f4ec] text-[#14432f]"
-          : "bg-white/10 text-[#cdd8d1]"
-        : on
-          ? "bg-emerald-700 text-white"
-          : "bg-[#eef1ec] text-emerald-800",
-    notes: (selected) => (selected ? "text-[#cdd8d1]" : "text-[#6f6a5d]"),
+    best: () => "bg-emerald-100/80 text-emerald-800",
+    worst: () => "bg-rose-50 text-rose-600",
+    exp: (_selected, on) =>
+      on ? "bg-emerald-700 text-white" : "bg-[#eef1ec] text-emerald-800",
+    notes: () => "text-[#6f6a5d]",
   },
 };
 

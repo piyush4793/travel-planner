@@ -97,8 +97,8 @@ export default function StorageLocationCard({ onStatus }: { onStatus: (s: Status
     >
       <div className="space-y-3">
         <div className="flex items-center justify-between gap-2">
-          <span className="text-[11px] text-slate-500">This device</span>
-          <span className="text-[11px] font-semibold text-slate-800">
+          <span className="text-[11px] text-[#6f6a5d]">This device</span>
+          <span className="text-[11px] font-semibold text-[#1e2a25]">
             {OS_LABEL[profile.os] ?? "Web"} · {profile.formFactor === "mobile" ? "Mobile" : "Desktop"}
           </span>
         </div>
@@ -117,7 +117,7 @@ export default function StorageLocationCard({ onStatus }: { onStatus: (s: Status
               className={`focus-ring min-h-[32px] w-full px-3 py-2 rounded-xl text-left text-[11px] font-medium transition-colors flex items-center justify-between gap-2 ${
                 kind === t.kind
                   ? "bg-emerald-600 text-white"
-                  : "bg-slate-100 hover:bg-slate-200 text-slate-700"
+                  : "bg-[#efe9db] hover:bg-[#e5dfce] text-[#3c463f]"
               }`}
             >
               <span>{KIND_LABEL[t.kind]}</span>
@@ -126,24 +126,24 @@ export default function StorageLocationCard({ onStatus }: { onStatus: (s: Status
           ))}
         </div>
 
-        <p className="text-[10px] leading-relaxed text-slate-500 px-0.5">{KIND_HINT[kind]}</p>
+        <p className="text-[10px] leading-relaxed text-[#6f6a5d] px-0.5">{KIND_HINT[kind]}</p>
 
-        <div className="flex items-center justify-between gap-2 rounded-lg bg-slate-50 px-3 py-2">
-          <span className="text-[10px] text-slate-500">Current location</span>
-          <span className="text-[10px] font-semibold text-slate-800 truncate max-w-[60%] text-right">{location}</span>
+        <div className="flex items-center justify-between gap-2 rounded-lg bg-[#f7f4ec] px-3 py-2">
+          <span className="text-[10px] text-[#6f6a5d]">Current location</span>
+          <span className="text-[10px] font-semibold text-[#1e2a25] truncate max-w-[60%] text-right">{location}</span>
         </div>
 
         {kind === "filesystem" && (
           <div className="flex gap-2">
             <button
               onClick={changeFolder}
-              className="focus-ring flex-1 min-h-[32px] px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold transition-colors"
+              className="focus-ring flex-1 min-h-[32px] px-3 py-2 rounded-xl bg-[#efe9db] hover:bg-[#e5dfce] text-[#3c463f] text-[11px] font-semibold transition-colors"
             >
               Change folder
             </button>
             <button
               onClick={forgetFolder}
-              className="focus-ring flex-1 min-h-[32px] px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold transition-colors"
+              className="focus-ring flex-1 min-h-[32px] px-3 py-2 rounded-xl bg-[#efe9db] hover:bg-[#e5dfce] text-[#3c463f] text-[11px] font-semibold transition-colors"
             >
               Forget folder
             </button>
@@ -161,7 +161,7 @@ export default function StorageLocationCard({ onStatus }: { onStatus: (s: Status
           <button
             onClick={restoreNow}
             disabled={busy}
-            className="focus-ring flex-1 min-h-[32px] px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 disabled:opacity-60 text-slate-700 text-[11px] font-semibold transition-colors"
+            className="focus-ring flex-1 min-h-[32px] px-3 py-2 rounded-xl bg-[#efe9db] hover:bg-[#e5dfce] disabled:opacity-60 text-[#3c463f] text-[11px] font-semibold transition-colors"
           >
             Restore from here
           </button>

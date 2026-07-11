@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import PlanView from "../../components/views/plan/PlanView";
 import { setFeatureFlag } from "../../core/featureFlags";
 import type { Country } from "../../core/types";
@@ -21,7 +21,7 @@ const COUNTRY: Country = {
 function renderView(props: Partial<React.ComponentProps<typeof PlanView>> = {}) {
   const setBudgetBasis = vi.fn();
   const onGoDiscover = vi.fn();
-  const onAddToList = vi.fn();
+  const onToggleTripFavorite = vi.fn();
   const utils = render(
     <PlanView
       countries={[COUNTRY]}
@@ -30,11 +30,11 @@ function renderView(props: Partial<React.ComponentProps<typeof PlanView>> = {}) 
       setBudgetBasis={setBudgetBasis}
       homeCountry="India"
       onGoDiscover={onGoDiscover}
-      onAddToList={onAddToList}
+      onToggleTripFavorite={onToggleTripFavorite}
       {...props}
     />,
   );
-  return { setBudgetBasis, onGoDiscover, onAddToList, ...utils };
+  return { setBudgetBasis, onGoDiscover, onToggleTripFavorite, ...utils };
 }
 
 /** Advance the wizard to the review step by clicking the primary button. */
@@ -78,27 +78,18 @@ describe("PlanView — guided planner", () => {
     expect(onGoDiscover).toHaveBeenCalled();
   });
 
-  it("offers to add an explore (non-list) destination to the list", async () => {
+  it("favorites the saved trip from the Review save bar (acts on the trip, not countries)", async () => {
     const onToggleFavorite = vi.fn();
-    const { onAddToList } = renderView({ onToggleFavorite });
-    const exploreSection = screen.getByText(/Popular to explore/i).closest("section")!;
-    const firstExplore = within(exploreSection).getAllByRole("button")[0];
-    const name = firstExplore.textContent?.replace(/[^\x00-\x7F]/g, "").trim() ?? "";
-    fireEvent.click(firstExplore);
+    const { onToggleTripFavorite } = renderView({ onToggleFavorite });
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     await screen.findByText(/Who's going\?/i);
-    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const addBtn = await screen.findByRole("button", { name: new RegExp(`Add ${escaped} to favorites`, "i") });
-    fireEvent.click(addBtn);
-    // "Add to favorites" both saves to My List and stars the destination.
-    expect(onAddToList).toHaveBeenCalledWith(name);
-    expect(onToggleFavorite).toHaveBeenCalledWith(name);
-  });
-
-  it("does not offer add-to-list for a destination already in the list", async () => {
-    renderView();
-    fireEvent.click(screen.getByRole("button", { name: /Testland \(no rule\)/i }));
-    await screen.findByText(/Who's going\?/i);
-    expect(screen.queryByRole("button", { name: /to your list/i })).not.toBeInTheDocument();
+    // Advance to Review, where the trip auto-saves and the favorite toggle shows.
+    goToReview();
+    const favBtn = await screen.findByRole("button", { name: /Favorite this trip/i });
+    fireEvent.click(favBtn);
+    // Favoriting acts on the saved trip snapshot — never the country favorite set.
+    expect(onToggleTripFavorite).toHaveBeenCalledWith("Testland (no rule)");
+    expect(onToggleFavorite).not.toHaveBeenCalled();
   });
 
   it("starts the wizard on the first question after picking a country", async () => {
@@ -137,7 +128,7 @@ describe("PlanView — guided planner", () => {
     goToReview();
     await screen.findByRole("button", { name: /Share your trip plan/i });
     // Footer is hidden below lg (jsdom has no media query), so include hidden.
-    fireEvent.click(screen.getByRole("button", { name: /Plan another trip/i, hidden: true }));
+    fireEvent.click(screen.getByRole("button", { name: /Plan another/i, hidden: true }));
     await screen.findByText(/Where do you plan to go next/i);
   });
 
@@ -249,6 +240,72 @@ describe("PlanView — guided planner", () => {
     fireEvent.click(reset);
     await waitFor(() => expect(screen.queryByRole("button", { name: /Reset to suggested/i })).not.toBeInTheDocument());
   });
+
+  it("prompts to resume when the picked country matches a saved trip; Resume opens it", async () => {
+    const matchSavedTrip = vi.fn(() => ({
+      id: "t1",
+      name: "Testland (no rule)",
+      stops: [{ country: "Testland (no rule)", days: 9, cities: ["Beta"] }],
+      basis: "couple" as const,
+      totalDays: 9,
+      costPerPerson: "₹1L–₹2L",
+      savedAt: "2026-01-01T00:00:00.000Z",
+    }));
+    renderView({ matchSavedTrip });
+    fireEvent.click(screen.getByRole("button", { name: /Testland \(no rule\)/i }));
+    const resumeBtn = await screen.findByRole("button", { name: /Resume saved plan/i });
+    expect(screen.getByRole("button", { name: /Start fresh/i })).toBeInTheDocument();
+    expect(matchSavedTrip).toHaveBeenCalledWith(["Testland (no rule)"]);
+    fireEvent.click(resumeBtn);
+    await waitFor(() => {
+      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    });
+    await waitFor(() => {
+      expect(screen.getAllByText(/Beta/).length).toBeGreaterThan(0);
+    });
+  });
+
+  it("starts fresh (basics) when 'Start fresh' is clicked on the resume prompt", async () => {
+    const matchSavedTrip = vi.fn(() => ({
+      id: "t1",
+      name: "Testland (no rule)",
+      stops: [{ country: "Testland (no rule)", days: 9, cities: ["Beta"] }],
+      basis: "couple" as const,
+      totalDays: 9,
+      costPerPerson: "₹1L–₹2L",
+      savedAt: "2026-01-01T00:00:00.000Z",
+    }));
+    renderView({ matchSavedTrip });
+    fireEvent.click(screen.getByRole("button", { name: /Testland \(no rule\)/i }));
+    const freshBtn = await screen.findByRole("button", { name: /Start fresh/i });
+    fireEvent.click(freshBtn);
+    // Fresh start leaves the landing picker for Basics (party size prompt).
+    await waitFor(() => {
+      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    });
+  });
+
+  it("stays on the landing picker when the resume prompt is dismissed (Escape)", async () => {
+    const matchSavedTrip = vi.fn(() => ({
+      id: "t1",
+      name: "Testland (no rule)",
+      stops: [{ country: "Testland (no rule)", days: 9, cities: ["Beta"] }],
+      basis: "couple" as const,
+      totalDays: 9,
+      costPerPerson: "₹1L–₹2L",
+      savedAt: "2026-01-01T00:00:00.000Z",
+    }));
+    renderView({ matchSavedTrip });
+    fireEvent.click(screen.getByRole("button", { name: /Testland \(no rule\)/i }));
+    const resumeBtn = await screen.findByRole("button", { name: /Resume saved plan/i });
+    // Dismiss via Escape on the dialog: neither resume nor start-fresh happens.
+    fireEvent.keyDown(resumeBtn, { key: "Escape" });
+    await waitFor(() => {
+      expect(screen.queryByRole("button", { name: /Resume saved plan/i })).not.toBeInTheDocument();
+    });
+    // Still on the landing picker — no plan was started.
+    expect(screen.getByText(/Where do you plan to go next/i)).toBeInTheDocument();
+  });
 });
 
 describe("PlanView — multi-country Basics", () => {
@@ -268,7 +325,6 @@ describe("PlanView — multi-country Basics", () => {
         setBudgetBasis={vi.fn()}
         homeCountry="India"
         onGoDiscover={vi.fn()}
-        onAddToList={vi.fn()}
       />,
     );
     fireEvent.click(screen.getByRole("button", { name: /Testland \(no rule\)/i }));
@@ -282,8 +338,10 @@ describe("PlanView — multi-country Basics", () => {
     // Route header + summary list both destinations.
     expect(screen.getAllByText(/Testland \(no rule\)/).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Otherland \(no rule\)/).length).toBeGreaterThan(0);
-    // Summed day estimate (7 + 7 fallback rec days).
-    expect(screen.getByText(/~14 days/)).toBeInTheDocument();
+    // Summed *planned* days — the route now tracks the header's composed plan
+    // (4-day fallback plan per no-rule stop) instead of the recommended baseline,
+    // so Basics "Your route" and the header total agree.
+    expect(screen.getByText(/~8 days/)).toBeInTheDocument();
     // Country-scoped controls are suppressed in multi mode.
     expect(screen.queryByRole("button", { name: /Add to favorites/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /Mark as visited/i })).not.toBeInTheDocument();
@@ -303,7 +361,6 @@ describe("PlanView — multi-country Basics", () => {
         setBudgetBasis={vi.fn()}
         homeCountry="India"
         onGoDiscover={vi.fn()}
-        onAddToList={vi.fn()}
       />,
     );
     for (const u of units) fireEvent.click(screen.getByRole("button", { name: new RegExp(u.name, "i") }));
@@ -334,7 +391,6 @@ describe("PlanView — multi-country Basics", () => {
         setBudgetBasis={vi.fn()}
         homeCountry="India"
         onGoDiscover={vi.fn()}
-        onAddToList={vi.fn()}
       />,
     );
     fireEvent.click(screen.getByRole("button", { name: /^Norway/i }));
@@ -344,30 +400,127 @@ describe("PlanView — multi-country Basics", () => {
     expect(await screen.findByText(/What are you into\?/i)).toBeInTheDocument();
   });
 
-  it("adds all unsaved destinations to the list from the route banner", async () => {
-    const onAddToList = vi.fn();
-    // Empty My List → picks come from the explore tier, so they're all unsaved.
+  it("persists the whole route as a saved trip snapshot once it reaches Review", async () => {
+    const onSaveTrip = vi.fn();
     render(
       <PlanView
-        countries={[]}
+        countries={[COUNTRY, COUNTRY_B]}
         visitedNames={new Set()}
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
         onGoDiscover={vi.fn()}
-        onAddToList={onAddToList}
+        onSaveTrip={onSaveTrip}
       />,
     );
-    const exploreSection = screen.getByText(/Popular to explore/i).closest("section")!;
-    const chips = within(exploreSection).getAllByRole("button").slice(0, 2);
-    const names = chips.map((c) => c.textContent?.replace(/[^\x00-\x7F]/g, "").trim() ?? "");
-    fireEvent.click(chips[0]);
-    fireEvent.click(chips[1]);
+    fireEvent.click(screen.getByRole("button", { name: /Testland \(no rule\)/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Otherland \(no rule\)/i }));
     fireEvent.click(screen.getByRole("button", { name: /Plan trip with 2 countries/i }));
     await screen.findByText(/Who's going\?/i);
-    const addAll = screen.getByRole("button", { name: /Add 2 destinations to favorites/i });
-    fireEvent.click(addAll);
-    expect(onAddToList).toHaveBeenCalledWith(names[0]);
-    expect(onAddToList).toHaveBeenCalledWith(names[1]);
+    // Advance to Review; the route persists as a snapshot on arrival.
+    for (let i = 0; i < 5; i++) {
+      const btn = screen.queryByRole("button", { name: /Continue|See my plan|Review my trip/i });
+      if (!btn) break;
+      fireEvent.click(btn);
+    }
+    await waitFor(() => {
+      const calls = onSaveTrip.mock.calls;
+      const last = calls[calls.length - 1]?.[0];
+      expect(last?.stops.map((s: { country: string }) => s.country)).toEqual([
+        "Testland (no rule)",
+        "Otherland (no rule)",
+      ]);
+    });
+    const calls = onSaveTrip.mock.calls;
+    const snap = calls[calls.length - 1][0];
+    expect(snap).toMatchObject({
+      name: "Testland (no rule) → Otherland (no rule)",
+      basis: "couple",
+    });
+  });
+
+  it("jumps to the review step when opening a saved trip", async () => {
+    renderView({ openTrip: { stops: [{ country: "Testland (no rule)", days: 6, cities: [], experiences: [] }], basis: "couple", nonce: 1 } });
+    await waitFor(() => {
+      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    });
+  });
+
+  it("restores a saved trip's tuned length and cities on open", async () => {
+    renderView({
+      openTrip: { stops: [{ country: "Testland (no rule)", days: 9, cities: ["Beta"], experiences: [] }], basis: "couple", nonce: 3 },
+    });
+    await waitFor(() => {
+      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    });
+    // The restored, hand-picked city surfaces in the plan (Beta was snapshotted).
+    await waitFor(() => {
+      expect(screen.getAllByText(/Beta/).length).toBeGreaterThan(0);
+    });
+  });
+
+  it("restores a saved trip's experience focus on open", async () => {
+    renderView({
+      openTrip: { stops: [{ country: "Testland (no rule)", days: 9, cities: ["Beta"], experiences: ["Mountains"] }], basis: "couple", nonce: 31 },
+    });
+    await waitFor(() => {
+      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    });
+    // Stepping back to Basics shows the restored vibe chip pressed.
+    fireEvent.click(screen.getByRole("tab", { name: /Step 1: Trip basics/i }));
+    await waitFor(() => {
+      expect(screen.getByRole("button", { name: /Mountains/i })).toHaveAttribute("aria-pressed", "true");
+    });
+  });
+
+  it("preserves the saved route order across reopen (reordered stops)", async () => {
+    const onSaveTrip = vi.fn();
+    // Saved as Otherland → Testland; the rehydrated + re-saved route keeps order.
+    renderView({
+      countries: [COUNTRY, COUNTRY_B],
+      onSaveTrip,
+      openTrip: {
+        stops: [
+          { country: "Otherland (no rule)", days: 4, cities: [], experiences: [] },
+          { country: "Testland (no rule)", days: 5, cities: [], experiences: [] },
+        ],
+        basis: "couple",
+        nonce: 41,
+      },
+    });
+    await waitFor(() => {
+      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    });
+    await waitFor(() => {
+      const last = onSaveTrip.mock.calls[onSaveTrip.mock.calls.length - 1]?.[0];
+      expect(last?.stops.map((s: { country: string }) => s.country)).toEqual([
+        "Otherland (no rule)",
+        "Testland (no rule)",
+      ]);
+    });
+  });
+
+  it("defers opening a saved trip until its destination data resolves", async () => {
+    const openTrip = { stops: [{ country: "Testland (no rule)", days: 6, cities: [], experiences: [] }], basis: "couple" as const, nonce: 7 };
+    // Destination data not ready yet: the name resolves to nothing, so the open
+    // must NOT be consumed — the landing picker stays put.
+    const { rerender } = renderView({ countries: [], openTrip });
+    expect(screen.getByText(/Where do you plan to go next/i)).toBeInTheDocument();
+    // Data lands (same nonce): the effect re-runs and finally opens to review.
+    rerender(
+      <PlanView
+        countries={[COUNTRY]}
+        visitedNames={new Set()}
+        budgetBasis="couple"
+        setBudgetBasis={vi.fn()}
+        homeCountry="India"
+        onGoDiscover={vi.fn()}
+        onToggleTripFavorite={vi.fn()}
+        openTrip={openTrip}
+      />,
+    );
+    await waitFor(() => {
+      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    });
   });
 });

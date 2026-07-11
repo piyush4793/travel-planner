@@ -39,7 +39,10 @@ function PlanPreviewInner({ country, plan, homeCountry, onCinematic, onItinerary
 
       {plan.warning && (
         <div className="px-3 py-2 bg-amber-50 border-b border-amber-100">
-          <p className="text-[11px] text-amber-700 leading-snug">{plan.warning}</p>
+          <p className="flex gap-1.5 text-[11px] text-amber-700 leading-snug">
+            <span aria-hidden="true" className="shrink-0">⚠️</span>
+            <span>{plan.warning}</span>
+          </p>
         </div>
       )}
 

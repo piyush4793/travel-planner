@@ -9,20 +9,19 @@ A personal, map-based travel planner with a catalog of 197 world countries, 44 c
 ### Views
 | View | What it does |
 |---|---|
-| **🧭 Plan** (default landing) | Flag-gated (`guidedPlanning`, enabled by default — the app's landing view) luxury emerald/ivory **guided planning wizard** — a streamlined **Trip basics** (who's going + what you're into) → **Which places?** (a *decision surface* built around a consolidated **header card** — country identity (a dropdown **country switcher** with a place-count badge on a multi-stop route, scaling to any count / long names; a static name for a single stop), trip stats (days · places · countries · budget) and a trip-scoped **"Who's going"** dropdown; shown only when a stop has cities. Below it, rich **decision cards** (design "D3": a ✓/+ affordance, the city name + a one-line "known for" brief + experience chips with the traveller's focus lit and a few others muted on the left; a stay/season rail — ≈recommended nights · ☀best window · ⚠avoid window — on the right; plus a sparse "Top for X" signal; each card also carries an **ⓘ** that opens a responsive **city detail** — a bottom-sheet on mobile / centered modal on desktop — with the full "known for" brief, every experience tag, and the ≈stay · ☀best · ⚠avoid windows) laid out two-up on wide screens; non-included cities collapse behind a "Show N more" tail. A single per-country **Filters** control (anchored popover on desktop, bottom-sheet on mobile) hosts that stop's **experiences** — Basics seeds a trip-wide vibe and each country inherits it until you diverge it here — alongside an inline **Sort** dropdown (Best match / Most iconic / Fewest days); an overflow-safe subline summarizes the active focus and, once a stop is hand-picked, gains an **Edited** flag + an inline **↺ Reset to suggested** revert) → **Your trip** funnel. The header carries a **travel-style badge** (🏃/🔭/🌿) and a **Visited** toggle. The "Your trip" step is a **two-rail planning workspace**: a left **"Shape your trip"** rail (focus experiences, city picker, trip-length slider — the levers that regenerate the plan live), a centre **itinerary** (pinned duration·cost summary, clickable jump-to-city route strip — wrapped pills on desktop, a compact dropdown on mobile — day-by-day plan, and a slim action toolbar: **📤 Share** · **🎬 Cinematic** fly-through · **📄 PDF** · **✨ AI plan**), and a right **"Good to know"** rail (**Trip readiness** checklist, per-party-size budget with clickable basis, when-to-go heatmap, stopover/watch-outs/pairs-with, private **Notes**, and learn/visa/links). Rails are collapsible on desktop and open as bottom-sheet drawers on tablet/mobile. Pick a destination from your list or the popular set to begin — a **labeled step progress** (Basics · Places · Review) is tappable to revisit any step, your device Back button walks back one step at a time, and progress is saved so a refresh returns you to the same step. |
-| **✈ Trips** | Dashboard with progress ring, stats, and "Next trip" highlight. **One card per My List country** (so card count always matches list size), with image collages, budget, and best months. Grouped sections: ⭐ Favorites → 📋 Planning → ✅ Completed. Tablet/desktop now use a collapsible left filter rail + right results workspace (icon-only view toggle + sort in results toolbar). Mobile defaults to list (grid toggle appears only on wider phones). Paginated. Click any card to open country detail. |
-| **📅 Calendar** | Heatmap grid — rows are **every destination in My List** (independent of the Trips filter bar; it has its own Month filter), columns are months. Emerald = best, red = avoid, blue = current month. |
+| **🧭 Plan** (default landing) | Luxury emerald/ivory **guided planning wizard** (the app's landing view) — a streamlined **Trip basics** (who's going + what you're into) → **Which places?** (a *decision surface* built around a consolidated **header card** — country identity (a dropdown **country switcher** with a place-count badge on a multi-stop route, scaling to any count / long names; a static name for a single stop), trip stats (days · places · countries · budget) and a trip-scoped **"Who's going"** dropdown; shown only when a stop has cities. Below it, rich **decision cards** (design "D3": a ✓/+ affordance, the city name + a one-line "known for" brief + experience chips with the traveller's focus lit and a few others muted on the left; a stay/season rail — ≈recommended nights · ☀best window · ⚠avoid window — on the right; plus a sparse "Top for X" signal; each card also carries an **ⓘ** that opens a responsive **city detail** — a bottom-sheet on mobile / centered modal on desktop — with the full "known for" brief, every experience tag, and the ≈stay · ☀best · ⚠avoid windows) laid out two-up on wide screens; non-included cities collapse behind a "Show N more" tail. A single per-country **Filters** control (anchored popover on desktop, bottom-sheet on mobile) hosts that stop's **experiences** — Basics seeds a trip-wide vibe and each country inherits it until you diverge it here — alongside an inline **Sort** dropdown (Best match / Most iconic / Fewest days); an overflow-safe subline summarizes the active focus and, once a stop is hand-picked, gains an **Edited** flag + an inline **↺ Reset to suggested** revert) → **Your trip** funnel. The header carries a **travel-style badge** (🏃/🔭/🌿) and a **Visited** toggle. The "Your trip" step is a **two-rail planning workspace**: a left **"Shape your trip"** rail (focus experiences, city picker, trip-length slider — the levers that regenerate the plan live), a centre **itinerary** (a slim route-label bar with a jump-to-top control, clickable jump-to-city route strip — wrapped pills on desktop, a compact dropdown on mobile — day-by-day plan, and a slim action toolbar: **📤 Share** · **🎬 Cinematic** fly-through · **📄 PDF** · **✨ AI plan**), and a right **"Good to know"** rail (**Trip readiness** checklist, per-party-size budget with clickable basis, when-to-go heatmap, stopover/watch-outs/pairs-with, private **Notes**, and learn/visa/links). Rails are collapsible on desktop and open as bottom-sheet drawers on tablet/mobile. Pick a destination from your list or the popular set to begin — a **labeled step progress** (Basics · Places · Review) is tappable to revisit any step, your device Back button walks back one step at a time, and progress is saved so a refresh returns you to the same step. When you reach the plan, it's **saved to My Trips automatically** (as a self-contained snapshot) so it's never lost, and stays fresh as you keep tuning it; a compact **"✓ Saved" + ★ Favorite** control in the header stars that saved trip (one consistent meaning of "favorite" — the Plan journey no longer adds countries to My List), and a modest **Plan another** sits in the footer as a secondary restart. |
+| **🧳 Trips** | **My Trips** — a lightweight gallery of the trips you've planned. Each trip is saved automatically when you reach the wizard's Review step and kept fresh as you tune it; the tab lists them newest-first with ★ favorites pinned on top. Each card shows the ordered route (with flags), city chips, total days · places · cost (for the trip's saved budget basis), and when it was saved. **Tap a card to reopen that route in the Plan wizard** (jumps straight to Review); favorite ★ or delete (with confirm) any trip. Empty state offers a "Plan a trip" CTA. Saved trips are self-contained snapshots — independent of My List and rule data — and are included in backups. |
+| **📅 Calendar** | Heatmap grid — rows are **every destination in My List** (it has its own Month filter), columns are months. Emerald = best, red = avoid, blue = current month. |
 | **🌍 Discover** | Browse all 197 world countries. Filter by region and list status. Add countries to your list or remove them. One-click **creator's wishlist** starter pack and **reset to starter list** (both confirm first). |
 
-View persists in the URL hash (`#plan`, `#trips`, `#calendar`, `#discover`) — refresh returns to the same view. **Plan is the default landing view** when `guidedPlanning` is enabled (the default); Trips is the landing fallback when it's disabled.
+View persists in the URL hash (`#plan`, `#trips`, `#calendar`, `#discover`) — refresh returns to the same view. **Plan is the default landing view** (the brand/Home button routes there too).
 
 ### Responsive Design
 Mobile-first responsive layout — works on phones (375px+), tablets (768px+), and desktops (1024px+):
-- **Header**: decluttered top bar (brand + route pills + home country + settings); mobile uses hamburger drawer with compact utility actions (icon-first, no oversized CTA), while list/favorite/visited counts stay in Trips context
-- **Trips view controls**: mobile uses compact icon-triggered filter panels; tablet/desktop uses persistent left filter rail + right results toolbar
+- **Navigation**: desktop uses a slim **luxury ivory/emerald** top bar (emerald wordmark + centered view pills — active pill emerald-filled — + Install/Share + Settings); **mobile uses a fixed bottom tab bar** (🗺️ Plan · 🧳 Trips · 📅 Calendar · 🧭 Discover, active tab an emerald-tinted pill) with a minimal ivory top strip for brand + Install/Share + Settings (no hamburger menu). The PWA `theme-color`/manifest match the ivory bar for a seamless status-bar blend
 - **Country detail panel**: full-screen overlay on mobile; resizable side panel on desktop
 - **All modals**: full-screen on mobile (no rounded corners, full height); centered cards on desktop
-- **Trip cards grid**: 1 col mobile → 2 col tablet → 3 col desktop
+- **Saved-trip cards grid**: 1 col mobile → 2 col tablet → 3 col desktop
 - **Plan comparison**: stacked columns on mobile; side-by-side on desktop
 - **Touch targets**: minimum 44px on all interactive elements
 
@@ -32,28 +31,17 @@ Mobile-first responsive layout — works on phones (375px+), tablets (768px+), a
 - **197 countries** in the world catalog (`data/worldCatalog.json`), organized by 6 regions
 - **5 curated seed destinations** (Japan, Thailand, Switzerland, France, Italy — the `inSeed` set) pre-added to your list — and **all 198 itinerary-backed destinations** now have offline planning data available on demand
 - **Creator's wishlist** — 43 famous rule-backed destinations (`creatorPick`) offered as a one-click starter pack in Discover (preview + confirm before filling My List); plus **reset to starter list** to return to the curated seed (confirmed via dialog)
-- Only countries in **My List** appear on Map, Calendar, List, and Trips views
+- Only countries in **My List** appear on Calendar and in the hidden cinematic Map
 - Add from Discover → creates a minimal Country entry that can be enriched via edit
 - Remove from list without losing custom data — re-add anytime
 - **Favorites always sort to the top** across all views
 
 ---
 
-### Filters (Trips only; Calendar and Discover have their own)
-All filters combine with AND logic:
+### Filters (Calendar and Discover have their own)
+The **Calendar** view has its own Month filter over the full My List; **Discover** has its own region + list-status filter bar. Budget tiering (used in Discover and cost badges) buckets a `₹`-range string by its **midpoint** using the active budget basis: ₹ Budget (< ₹1.5L) / ₹₹ Mid (₹1.5L–₹3L) / ₹₹₹ Premium (₹3L+).
 
-| Filter | Behaviour |
-|---|---|
-| **Month** | Multi-select — shows countries with best-time overlap |
-| **Budget** | Choose **basis** first (Solo / Couple / Family), then tier: ₹ Budget (< ₹1.5L) / ₹₹ Mid (₹1.5L–₹3L) / ₹₹₹ Premium (₹3L+) |
-| **Visited** | Dropdown: All Countries / Not Visited / ✓ Visited — on Trips, filters country cards directly |
-| **Sort (Trips)** | Popularity / A to Z / Z to A. Popularity uses `popularityScore` from `data/rules/index.json` (tie-break: favorites, then name), calibrated across all 198 destinations on a 1–100 **leisure-only** scale (no arrivals/receipts/business proxies): experiences depth (35%), city depth (20%), seasonality viability (20%), affordability/value from budget (15%), combo-network breadth (5%), and landmark presence (5%). When a search query is active, relevance ranking takes precedence. |
-
-On **mobile Trips view**, filter controls are grouped behind two icon toggles:
-- **Primary filters panel**: Month, Budget, Visited
-- **Secondary filters panel**: View mode, Status, Region
-
-On **tablet/desktop Trips view**, these controls live in a **left filter rail** (collapsible), with search + icon-only list/grid toggle + sort + result count in the **right results toolbar**.
+The `popularityScore` in `data/rules/index.json` (a 1–100 **leisure-only** composite: experiences 35%, city depth 20%, seasonality 20%, affordability/value 15%, combo breadth 5%, landmark presence 5%) still backs Discover/plan ordering.
 
 ---
 
@@ -143,25 +131,16 @@ Full-screen animated experience for rule-based countries:
 
 ---
 
-### Trip Groups (Editable)
-- Curated seed groups define optimal multi-country combinations
-- Inline editor: change main country, add-ons (max 2), region
-- Create custom trip groups from the + New Trip button
-- Delete trips (seed trips are tombstoned, custom trips removed)
-- One-trip-per-country invariant enforced in editor
-- Trips view still renders one card per My List country even when country is part of a trip group (group metadata no longer hides standalone cards)
-- **Collapsible sections** — Favorites, Planning, and Completed sections can be toggled open/closed for quick scanning
-- **Skeleton loading** — image collages show a shimmer placeholder while wiki images load (no layout jump)
-- **Mobile FAB** — floating "+" button to create new trips on mobile (since header button is hidden)
-- **Always-visible edit** — ✏️ button visible on mobile (hover-only on desktop)
-- **Combo suggestions** — solo trip cards show "Pair with…" hints when available, or a "No combo yet" placeholder chip to preserve layout rhythm
-- **Search intent priority** — search prioritizes the card’s primary country name (including word-prefix matches like `kore`/`swit`) over combine/related hits, and active search keeps relevance order instead of re-sorting by popularity
-- **Results context line** — desktop toolbar now shows an always-visible status line (current sort + active budget basis icon/label) so ranking and pricing context stay explicit
-- **One-click reset** — desktop results toolbar includes a `Clear all` action that resets search + Trips filters in one tap
-- **Grid alignment consistency** — compact cards reserve the combo-row slot so progress rows align even when no combo/suggestion pills exist
-- **No duplicate combine labels** — list cards show combine countries once (as chips only), without repeating them inline next to the main country
-- **Budget basis clarity** — list card budget chips show traveler-basis icons (👤 solo / 👫 couple / 👨‍👩‍👧‍👦 family4) matching the active Trips budget basis filter
-- **Global + local budget basis** — a Header pill (👤/👫/👨‍👩‍👧‍👦) sets your **persisted default** party size; the Trips pill is a **temporary override** for quick what-if exploration (resets to your default on refresh). The active basis drives every cost/budget figure — Trips cards, Country Panel budget chips, Plan-tab and itinerary cost, and the Calendar budget cue — so all surfaces stay linked. Plan cost equals that basis's chip at the recommended length and scales with trip length.
+### My Trips (saved trips)
+Every trip you plan in the guided wizard is **saved automatically** the moment you reach the Review step, and kept fresh as you tune it — no explicit "save" needed. The **🧳 Trips** tab is a lightweight gallery of these saved trips.
+
+- **Self-contained snapshots** — each saved trip records its ordered route, per-stop days/cities, budget basis, total length and cost at save time. Snapshots are independent of My List and the rule data, so a saved trip stays viewable even if you later edit or remove the underlying destinations.
+- **Keyed by route** — re-planning the same ordered route (e.g. `Japan → Thailand`) updates the existing saved trip in place (preserving its favourite and original save time) rather than piling up duplicates.
+- **Favorites float to the top** — star a trip to pin it into a ★ Favorites section; everything else is newest-first.
+- **Delete with confirm** — removing a trip asks for confirmation (can't be undone).
+- **Empty state** — a friendly prompt with a "Plan a trip" call-to-action when nothing is saved yet.
+- **Backup-recoverable** — saved trips are part of the JSON backup set, so they restore with the rest of your travel data.
+- **Responsive** — a card grid on desktop/tablet, single column on mobile; reachable from the mobile bottom tab bar.
 
 ---
 
@@ -169,6 +148,9 @@ Full-screen animated experience for rule-based countries:
 📍 button in header — changes budget "from X" labels. Persists in localStorage.
 
 Default: static "India" label. With `searchableHomeCountry` feature flag enabled: searchable dropdown with all 197 countries (max 10 visible, scroll-enabled).
+
+### Budget basis (party size)
+A Header pill (👤 solo / 👫 couple / 👨‍👩‍👧‍👦 family4) sets your **persisted default** party size; the Plan wizard's "Who's going" control is a **temporary override** for quick what-if exploration (resets to your default on refresh). The active basis drives every cost/budget figure — Country Panel budget chips, Plan-tab and itinerary cost, saved-trip cost, and the Calendar budget cue — so all surfaces stay linked. Plan cost equals that basis's chip at the recommended length and scales with trip length.
 
 ### Backup & Restore
 All travel data lives in localStorage. The Settings modal (⚙️) includes a full backup section:
@@ -247,9 +229,7 @@ Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel i
 | `llmPlanning` | `true` | paid | AI trip planning (chat, itinerary generation, save plans). Hidden unless `paidFeatures=true`. |
 | `pdfExport` | `true` | paid | Export itineraries as PDF from country panel. Hidden unless `paidFeatures=true`. |
 | `searchableHomeCountry` | `false` | free | Searchable dropdown with all 197 countries for home country selection |
-| `guidedPlanning` | `true` | free | Guided planning wizard `#plan` view (Basics → Places → Your trip, with a two-rail workspace). Hidden when disabled. |
-| `multiCountryPlanning` | `true` | free | Multi-country planning on `#plan`: the destination picker becomes multi-select (up to `MAX_TRIP_UNITS` = 4) with a "Plan trip →" tray. Every wizard surface **molds itself from the selection** — Basics shows a route timeline (per-stop *recommended* days with the longest stop badged **Anchor**) and vibe pills unioned from every chosen country; **Which places?** presents a consolidated **header card** (a **dropdown country switcher** with a place-count badge — one stop at a time, scaling to any count / long names — trip-wide stats *days · places · countries · budget*, and a **"Who's going"** basis dropdown) over rich per-stop *decision cards* (design "D3": name + "known for" brief + focus-lit experience chips, and a ≈nights · ☀best window · ⚠avoid-window rail, plus a "Top for X" signal, and an **ⓘ** opening a responsive **city detail** — bottom-sheet on mobile / centered modal on desktop — with the full brief, all experience tags and the stay/season windows) in a two-up grid; a single per-country **Filters** control (experiences, popover/bottom-sheet) plus an inline **Sort** dropdown sit above them. Experiences are **per-country** — Basics seeds the trip vibe and each stop inherits it until diverged in Filters; the header stats span the whole route.; the header names the first stops and reveals the full route from a **+N** pill. Enabled by default. Full cross-country composition in the **Your trip** review workspace is a later phase. |
-| `tripGroups` | `false` | free | Multi-country trip group annotations |
+| `multiCountryPlanning` | `true` | free | Multi-country planning on `#plan`: the destination picker becomes multi-select (up to `MAX_TRIP_UNITS` = 4) with a "Plan trip →" tray. Every wizard surface **molds itself from the selection** — Basics shows a route timeline (per-stop *recommended* days with the longest stop badged **Anchor**) and vibe pills unioned from every chosen country; **Which places?** presents a consolidated **header card** (a **dropdown country switcher** with a place-count badge — one stop at a time, scaling to any count / long names — trip-wide stats *days · places · countries · budget*, and a **"Who's going"** basis dropdown) over rich per-stop *decision cards* (design "D3": name + "known for" brief + focus-lit experience chips, and a ≈nights · ☀best window · ⚠avoid-window rail, plus a "Top for X" signal, and an **ⓘ** opening a responsive **city detail** — bottom-sheet on mobile / centered modal on desktop — with the full brief, all experience tags and the stay/season windows) in a two-up grid; a single per-country **Filters** control (experiences, popover/bottom-sheet) plus an inline **Sort** dropdown sit above them. Experiences are **per-country** — Basics seeds the trip vibe and each stop inherits it until diverged in Filters; the header stats span the whole route.; the header names the first stops and reveals the full route from a **+N** pill. Enabled by default. The **Your trip** review composes and renders **every** stop as a segmented **"Route Canvas"**: a cross-route jump nav over per-country segments (each with its full rich day-by-day itinerary, an **Adjust drawer** (Shape · Details) for that stop, a cumulative day range, and a collapsible body — the **anchor** stop opens by default while the rest fold into a scannable overview). A single trip-level **levers bar** sits above the stops so each stop header stays clean: a **Route order** control (reorder stops by **drag-and-drop** or keyboard, promote any stop to **anchor**, or one-tap **✨ Auto-arrange** into a sensible nearest-neighbour route from the anchor), the **jump-to-city** dropdown inline on the same row, and a **↑ Top** jump (the route label already lives in the header; total trip length is a header stat you retune per stop, not a whole-trip lever). Transitions between countries render as **honest border-hop rows** that expand to an informational mode picker (a distance-derived indicative flight time, rail/road marked "varies" since we don't fake per-pair transit data, and a note that hops cost no itinerary days). The cross-route **jump-to-city** menu groups cities by country and, on a dense route, jumping into a collapsed country expands it first so it always lands. The trip-level **"Good to know"** rail carries a **Trip readiness** checklist (border-crossing count + honest visa reminder), an **honest budget ledger** (per-country ×nights line items, an italic inter-country legs estimate, and a "flights extra" subtotal caveat) with a who's-going switch, per-country seasonality and watch-outs, and a **Notes** scratchpad. |
 
 **Payment flow (future):** A payment page will set `paidFeatures=true` in localStorage upon successful purchase, unlocking all premium features for the user.
 
@@ -365,6 +345,6 @@ Deploy `dist/` to Netlify, Vercel, or GitHub Pages (free tier — no server need
 | 🔴 Long | ⭐⭐⭐ | Community itineraries | Social | Import/export rule data for sharing |
 | 🔴 Long | ⭐⭐ | Seasonal flight cost hints | Data | Rough fare ranges from public sources |
 | 🔴 Long | ⭐⭐ | Voice input for chat | AI | Speak trip requests instead of typing |
-| 🔴 Long | ⭐⭐ | Drag-and-drop trip reorder | UX | Reorder trip group add-ons |
+| 🔴 Long | ⭐⭐ | Reopen a saved trip in the wizard | UX | Rehydrate the Plan wizard from a saved-trip snapshot |
 | 🔴 Long | ⭐ | Real-time pricing | Integration | Flights/hotels API integration |
 | 🔴 Long | ⭐ | Social layer | Social | Follow friends, see where they've been |

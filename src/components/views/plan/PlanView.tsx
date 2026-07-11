@@ -1,27 +1,31 @@
-import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../../core/types";
 import { type BudgetBasis } from "../../../core/utils/budget";
 import { cityExperienceOptions } from "../../../core/utils/cityExperiences";
 import { STYLE_META } from "../../../core/utils/travelStyles";
-import type { TripPlan, TripSegment } from "../../../core/utils/tripPlans";
-import { usePlanBuilder } from "../../../hooks/usePlanBuilder";
+import { type TripPlan, type TripSegment, extractPlanCities, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
+import { usePlanBuilder, type PlanBuilderSeed } from "../../../hooks/usePlanBuilder";
 import { useBackDismiss } from "../../../hooks/useBackDismiss";
-import { getCountryFlag } from "../../../utils/countryFlags";
-import Tooltip from "../../shared/Tooltip";
 import DestinationPicker from "./DestinationPicker";
+import PlanTripHeader, { type HeaderStats } from "./PlanTripHeader";
+import TripSaveBar from "./TripSaveBar";
+import PlanCountrySwitcher from "./PlanCountrySwitcher";
 import PlanWorkspace from "./PlanWorkspace";
+import TripReviewWorkspace from "./TripReviewWorkspace";
 import PlanBasicsStep from "./PlanBasicsStep";
-import PlanPlacesStep, { type PlacesUnit } from "./PlanPlacesStep";
+import PlanPlacesStep, { type PlacesUnit, includedCount } from "./PlanPlacesStep";
 import type { PlanActions } from "./planActions";
 import { loadPlanDraft, savePlanDraft, clearPlanDraft } from "./planDraft";
 import { isEnabled } from "../../../core/featureFlags";
 import { MAX_TRIP_UNITS } from "../../../core/utils/multiCountry";
+import { buildTripSnapshot, tripSignature, toOpenRequest, type SavedTrip, type SnapshotStop, type OpenTripRequest } from "../../../core/utils/savedTrips";
+import { useConfirm } from "../../shared/ConfirmDialog";
 import { getDestinationSource } from "../../../core/trip/getDestinationSource";
 import { useTripExperiences } from "../../../hooks/useTripExperiences";
 import { useTripRules } from "../../../hooks/useTripRules";
-import { useTripPlanner } from "../../../hooks/useTripPlanner";
+import { useTripPlanner, type TripPlannerSeed } from "../../../hooks/useTripPlanner";
 
 const ItineraryCinematic = lazy(() => import("../../country/ItineraryCinematic"));
 
@@ -40,7 +44,12 @@ type Props = {
   setBudgetBasis: (b: BudgetBasis) => void;
   homeCountry: string;
   onGoDiscover: () => void;
-  onAddToList?: (countryName: string) => void;
+  /** Persist the composed trip (single or multi) as a self-contained snapshot. */
+  onSaveTrip?: (snapshot: Omit<SavedTrip, "id" | "favorite">) => void;
+  /** Whether the saved trip with this route signature is favourited. */
+  isTripFavorite?: (routeName: string) => boolean;
+  /** Toggle the saved trip's favourite by route signature (acts on the trip). */
+  onToggleTripFavorite?: (routeName: string) => void;
   onPlanWithAi?: (countryName: string) => void;
   /** Feature actions shared with the Country Panel, threaded by destination name. */
   onToggleVisited?: (name: string) => void;
@@ -50,6 +59,11 @@ type Props = {
   aiPlanCountFor?: (name: string) => number;
   mainMapRef?: RefObject<maplibregl.Map | null>;
   onCinematicChange?: (active: boolean) => void;
+  /** Open a saved route in the wizard (jumps to Review) and rehydrate each stop's
+   *  snapshot cities + length. Bump `nonce` to re-open. */
+  openTrip?: OpenTripRequest | null;
+  /** Resolve a saved trip for a picked country set (resume-vs-fresh prompt). */
+  matchSavedTrip?: (countries: string[]) => SavedTrip | null;
 };
 
 type StepKey = "basics" | "cities" | "review";
@@ -69,7 +83,7 @@ const STEP_META: Record<StepKey, StepMeta> = {
  * is inferred behind the scenes and tunable on Review; cities are a result you
  * edit, never a filter that fights vibe.
  */
-export default function PlanView({ countries, visitedNames, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onAddToList, onPlanWithAi, onToggleVisited, favoriteNames, onToggleFavorite, onUpdateNotes, aiPlanCountFor, mainMapRef, onCinematicChange }: Props) {
+export default function PlanView({ countries, visitedNames, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onToggleVisited, favoriteNames, onToggleFavorite, onUpdateNotes, aiPlanCountFor, mainMapRef, onCinematicChange, openTrip, matchSavedTrip }: Props) {
   // Rehydrate a saved draft once so a refresh resumes where the user left off.
   const draft0 = useRef(loadPlanDraft()).current;
   const multiCountry = isEnabled("multiCountryPlanning");
@@ -89,11 +103,31 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   const picked = selection[0] ?? null;
   const [stepIndex, setStepIndex] = useState(() => (picked && draft0 ? draft0.step : 0));
 
+  // A reopened saved trip's per-stop snapshot (cities + honest length +
+  // experience focus), applied once per nonce to rehydrate the funnel: the
+  // primary stop through `usePlanBuilder`, the additional stops through
+  // `useTripPlanner`.
+  const [restoreSeed, setRestoreSeed] = useState<
+    {
+      nonce: number;
+      primary: { cities: string[]; days: number; experiences: string[] };
+      byCountry: Record<string, { cities: string[]; days: number; experiences: string[] }>;
+    } | null
+  >(null);
+  const primarySeed = useMemo<PlanBuilderSeed | null>(
+    () => (restoreSeed ? { nonce: restoreSeed.nonce, ...restoreSeed.primary } : null),
+    [restoreSeed],
+  );
+  const tripSeed = useMemo<TripPlannerSeed | null>(
+    () => (restoreSeed ? { nonce: restoreSeed.nonce, byCountry: restoreSeed.byCountry } : null),
+    [restoreSeed],
+  );
+
   const builderInitial =
     draft0 && picked && draft0.countries[0] === picked.name
       ? { selectedCities: draft0.cities, selectedExperiences: draft0.experiences, customDays: draft0.days, daysPinned: draft0.pinned }
       : undefined;
-  const builder = usePlanBuilder(picked, budgetBasis, builderInitial);
+  const builder = usePlanBuilder(picked, budgetBasis, builderInitial, primarySeed);
   const { displayCountry, ruleLoading, customDays, daysPinned, plan } = builder;
 
   // Persist the funnel so a refresh resumes it; clear once the user backs out.
@@ -113,6 +147,83 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     });
   }, [selection, stepIndex, selCities, selExp, customDays, daysPinned]);
 
+  // A saved route to rehydrate into the wizard — fed either by the `openTrip`
+  // prop (My Trips reopen) or by the same-set "Resume" prompt on the landing
+  // picker. Both paths share this one restore pipeline (DRY).
+  const [pendingOpen, setPendingOpen] = useState<OpenTripRequest | null>(null);
+  useEffect(() => {
+    if (openTrip) setPendingOpen(openTrip);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openTrip?.nonce]);
+
+  // Open a saved route: reseed the ordered selection, jump to Review, restore the
+  // saved budget basis, and stage a per-stop restore (snapshot cities + tuned
+  // length) that `usePlanBuilder` (primary) and `useTripPlanner` (additional
+  // stops) apply. Review is the last step; index 2 lands there whether or not the
+  // cities step is present yet (safeIndex clamps while rules load, then the
+  // 3-step review shares the same index). Applied once per nonce so re-opening
+  // the same trip works but a stale prop never clobbers in-progress edits.
+  const appliedOpenNonce = useRef<number | null>(null);
+  useEffect(() => {
+    if (!pendingOpen || appliedOpenNonce.current === pendingOpen.nonce) return;
+    const stopByName = new Map(pendingOpen.stops.map((s) => [s.country, s]));
+    const resolved = pendingOpen.stops.map((s) => resolveCountry(s.country)).filter((c): c is Country => c !== null);
+    // Only mark this open request as handled once the names actually resolve, so
+    // an open that arrives before destination data is ready is retried rather than
+    // permanently swallowed by a prematurely-stamped nonce.
+    if (resolved.length === 0) return;
+    appliedOpenNonce.current = pendingOpen.nonce;
+    setSelection(resolved);
+    setStepIndex(2);
+    setBudgetBasis(pendingOpen.basis);
+    // Align the restore payload to the *resolved* order, so an unresolvable stop
+    // never shifts the primary/secondary split.
+    const primaryStop = stopByName.get(resolved[0].name);
+    const byCountry: Record<string, { cities: string[]; days: number; experiences: string[] }> = {};
+    for (const c of resolved.slice(1)) {
+      const s = stopByName.get(c.name);
+      if (s) byCountry[c.name] = { cities: s.cities, days: s.days, experiences: s.experiences };
+    }
+    setRestoreSeed({
+      nonce: pendingOpen.nonce,
+      primary: primaryStop
+        ? { cities: primaryStop.cities, days: primaryStop.days, experiences: primaryStop.experiences }
+        : { cities: [], days: 7, experiences: [] },
+      byCountry,
+    });
+    // Re-runs when the open request changes or destination data lands, but the
+    // nonce guard above makes it idempotent per open, so it applies exactly once
+    // and never clobbers in-progress edits. resolveCountry/setBudgetBasis stable.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pendingOpen, countries]);
+
+  // Landing "Start trip": if the picked country set matches a saved trip, offer to
+  // resume it (primary) or start fresh (secondary); otherwise start fresh.
+  const [confirmResume, ResumeDialog] = useConfirm();
+  const handleStartSelection = useCallback(async (chosen: Country[]) => {
+    const match = matchSavedTrip?.(chosen.map((c) => c.name)) ?? null;
+    if (match) {
+      // Esc / click-outside = dismiss → stay on the landing picker (do nothing).
+      // Only the explicit "Start fresh" button falls through to a fresh plan.
+      let dismissed = false;
+      const resume = await confirmResume({
+        variant: "emerald",
+        title: "Resume your saved plan?",
+        message: `You've already planned “${match.name}”. Resume it with your saved places and trip lengths, or start fresh?`,
+        confirmLabel: "Resume saved plan",
+        cancelLabel: "Start fresh",
+        onDismiss: () => { dismissed = true; },
+      });
+      if (resume) {
+        setPendingOpen(toOpenRequest(match, Date.now()));
+        return;
+      }
+      if (dismissed) return;
+    }
+    setSelection(chosen);
+    setStepIndex(0);
+  }, [matchSavedTrip, confirmResume]);
+
   // Cinematic fly-through overlay. Lives here (not in the pane) so it can drive
   // the always-mounted MapView behind the whole app via onCinematicChange, and
   // auto-closes when the traveller switches destinations.
@@ -120,6 +231,10 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   useEffect(() => { onCinematicChange?.(cinematicPlan !== null); }, [cinematicPlan, onCinematicChange]);
   useEffect(() => { setCinematicPlan(null); }, [picked?.name]);
   useEffect(() => () => onCinematicChange?.(false), [onCinematicChange]);
+
+  // Active country on the Places step — lifted here so the header's country
+  // switcher and the Places body stay in lock-step (single source of truth).
+  const [placesActiveIndex, setPlacesActiveIndex] = useState(0);
 
   const myListNames = useMemo(() => new Set(countries.map((c) => c.name)), [countries]);
   const exploreCountries = useMemo(
@@ -143,7 +258,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   // primary + additional stops yields one honest trip plan for the Places summary.
   const secondaryNames = useMemo(() => selection.slice(1).map((c) => c.name), [selection]);
   const { units: secondaryUnits } = useTripRules(secondaryNames, source);
-  const tripPlanner = useTripPlanner(secondaryUnits, builder.selectedExperiences, budgetBasis);
+  const tripPlanner = useTripPlanner(secondaryUnits, builder.selectedExperiences, budgetBasis, tripSeed);
 
   const placesUnits = useMemo<PlacesUnit[]>(() => {
     if (!displayCountry) return [];
@@ -182,12 +297,35 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     return [primary, ...rest];
   }, [displayCountry, builder, tripPlanner.unitPlans]);
 
-  // The Places-step summary reflects the whole route; single-stop stays as-is.
-  const placesPlan = useMemo(() => {
+  // Live per-stop day counts keyed by unit name, mirroring the forming plan's
+  // *rendered* length per stop (not the requested pin, which the planner may
+  // expand for tight city counts). Fed to the Basics route card so its per-stop
+  // days + total exactly match the header's composed plan, instead of a pin/
+  // recommended baseline that visibly drifts from the header total.
+  const routeStopDays = useMemo<Record<string, number>>(() => {
+    const map: Record<string, number> = {};
+    if (displayCountry && plan) map[displayCountry.name] = plan.days.length;
+    for (const u of tripPlanner.unitPlans) map[u.name] = u.plan.days.length;
+    return map;
+  }, [displayCountry, plan, tripPlanner.unitPlans]);
+
+  // Keep the lifted Places active-country index valid as the route grows/shrinks.
+  useEffect(() => {
+    setPlacesActiveIndex((i) => Math.min(i, Math.max(0, placesUnits.length - 1)));
+  }, [placesUnits.length]);
+
+  // The composed plan across every stop (single-stop returns the primary plan
+  // unchanged). Drives both the Places-step stats strip and the Review canvas.
+  const composedTripPlan = useMemo(() => {
     if (!plan || !displayCountry || selection.length <= 1) return plan;
     const primarySegment: TripSegment = { name: displayCountry.name, plan };
     return tripPlanner.composedPlan(primarySegment);
   }, [plan, displayCountry, selection.length, tripPlanner]);
+
+  const secondaryCountries = useMemo(
+    () => secondaryUnits.map((u) => u.country),
+    [secondaryUnits],
+  );
 
   const anyUnitHasCities = placesUnits.some((u) => u.orderedCities.length > 0);
 
@@ -210,37 +348,57 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     true,
   );
 
+  // Auto-save the composed trip (single or multi) as a self-contained snapshot
+  // the moment the traveller reaches Review, and keep it fresh as they tune the
+  // plan there. Guarded by a content signature so identical renders don't re-write
+  // localStorage; the store upserts by route name, so edits update the same trip
+  // in place (preserving its id, favourite and original save time) rather than
+  // duplicating. A finished trip is therefore never lost and stays browsable.
+  const onReviewStep = steps[Math.min(stepIndex, steps.length - 1)] === "review";
+  const savedTripSig = useRef<string | null>(null);
+  useEffect(() => {
+    if (!onSaveTrip || !onReviewStep || !plan || !displayCountry || selection.length === 0) return;
+    // Build stops from the ordered selection so the saved route's identity always
+    // matches what the traveller picked, attaching each stop's own loaded plan
+    // where the destination has itinerary data (primary always does).
+    const planByName = new Map(tripPlanner.unitPlans.map((u) => [u.name, u]));
+    const stops: SnapshotStop[] = selection.map((c, i) => {
+      if (i === 0) return { country: displayCountry.name, days: builder.customDays, plan, experiences: builder.selectedExperiences };
+      const u = planByName.get(c.name);
+      return u ? { country: u.name, days: u.customDays, plan: u.plan, experiences: u.experiences } : { country: c.name, days: 0 };
+    });
+    const snapshot = buildTripSnapshot({ stops, composed: composedTripPlan ?? plan, basis: budgetBasis });
+    const sig = JSON.stringify(snapshot.stops) + snapshot.totalDays + snapshot.costPerPerson + snapshot.basis;
+    if (savedTripSig.current === sig) return;
+    savedTripSig.current = sig;
+    onSaveTrip(snapshot);
+  }, [onSaveTrip, onReviewStep, plan, displayCountry, selection, tripPlanner.unitPlans, composedTripPlan, budgetBasis, builder.customDays, builder.selectedExperiences]);
+
   if (!picked) {
     return (
-      <DestinationPicker
-        source={source}
-        countries={countries}
-        exploreCountries={exploreCountries}
-        visitedNames={visitedNames}
-        favoriteNames={favoriteNames}
-        onStart={(cs) => { setSelection(cs); setStepIndex(0); }}
-        onGoDiscover={onGoDiscover}
-        multiSelect={multiCountry}
-        maxSelection={MAX_TRIP_UNITS}
-      />
+      <>
+        <DestinationPicker
+          source={source}
+          countries={countries}
+          exploreCountries={exploreCountries}
+          visitedNames={visitedNames}
+          favoriteNames={favoriteNames}
+          onStart={handleStartSelection}
+          onGoDiscover={onGoDiscover}
+          multiSelect={multiCountry}
+          maxSelection={MAX_TRIP_UNITS}
+        />
+        <ResumeDialog />
+      </>
     );
   }
   // Multi-country trip: the Basics step summarizes the whole route rather than a
   // single destination. The style badge stays hidden until the wizard plans each
   // country individually downstream; favorite/visited actions live on the review
-  // step (PlanWorkspace), and saving is offered via the "Add to favorites" banner.
+  // step (PlanWorkspace). The composed trip auto-saves to My Trips on Review; the
+  // header's TripSaveBar confirms that and offers a single trip-favourite toggle.
   const isMulti = selection.length > 1;
-  const unsavedSelection = selection.filter((c) => !myListNames.has(c.name));
-  const routeLabel = selection.map((c) => `${getCountryFlag(c.name)} ${c.name}`).join("  →  ");
-
-  // "Add to favorites" is a single, friendly save action: it adds the
-  // destination to My List (so it drives Trips/Calendar/budget) and stars it as
-  // a favorite. Favoriting is idempotent — skip it when already starred so the
-  // action never accidentally un-favorites an existing pick.
-  const saveAsFavorite = (name: string) => {
-    onAddToList?.(name);
-    if (onToggleFavorite && !favoriteNames?.has(name)) onToggleFavorite(name);
-  };
+  const routeName = tripSignature(selection.map((c) => c.name));
 
   const safeIndex = Math.min(stepIndex, steps.length - 1);
   const current = STEP_META[steps[safeIndex]];
@@ -271,133 +429,94 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     onSaveNotes: onUpdateNotes ? (notes: string) => onUpdateNotes(activeName, notes) : undefined,
   };
 
+  // Progressive header stats — the composed plan across every stop (single-stop
+  // returns the primary unchanged). Basics shows a forming estimate; Places and
+  // Review are live. Hidden until an itinerary exists so the strip never lies.
+  const statsPlan = composedTripPlan ?? plan;
+  const headerStats: HeaderStats | undefined = statsPlan
+    ? {
+        days: statsPlan.days.length,
+        countries: selection.length,
+        cities: extractPlanCities(statsPlan.days).length,
+        cost: statsPlan.costPerPerson,
+        costIcon: planCostBasisIcon(statsPlan),
+        costLabel: planCostBasisLabel(statsPlan),
+        estimate: current.key === "basics",
+      }
+    : undefined;
+
+  // On the Places step the header hosts the country switcher (multi) so identity
+  // and the body's active country stay in lock-step from a single source.
+  const placesActive = Math.min(placesActiveIndex, Math.max(0, placesUnits.length - 1));
+  const switcherNode =
+    isPlaces && isMulti ? (
+      <PlanCountrySwitcher
+        units={placesUnits.map((u) => ({ name: u.name, places: includedCount(u), days: u.customDays }))}
+        activeIndex={placesActive}
+        onSelect={setPlacesActiveIndex}
+        variant="light"
+      />
+    ) : undefined;
+
   return (
-    <div className="flex h-full w-full flex-col overflow-hidden bg-[#f7f4ec]">
-      {/* Header: destination + progress */}
-      <div className={`mx-auto w-full shrink-0 px-4 pt-3 sm:pt-4 ${isReview ? "max-w-[1400px]" : "max-w-2xl"}`}>
-        <div className="flex items-center gap-3">
-          <div className="min-w-0">
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-700/80">Planning</p>
-            <div className="flex items-center gap-2">
-              {isMulti ? (
-                <h1
-                  aria-label={`Planning a route through ${selection.map((c) => c.name).join(", ")}`}
-                  className="flex min-w-0 items-center font-display text-lg font-semibold tracking-tight text-[#16241d] sm:text-xl"
-                >
-                  <span className="truncate">
-                    {selection.slice(0, HEADER_ROUTE_STOPS).map((c, i) => (
-                      <span key={c.name}>
-                        {i > 0 && <span aria-hidden="true" className="mx-1 text-[#cfc9b8]">→</span>}
-                        <span aria-hidden="true" className="mr-1">{getCountryFlag(c.name)}</span>
-                        {c.name}
-                      </span>
-                    ))}
-                  </span>
-                  {selection.length > HEADER_ROUTE_STOPS && (
-                    <Tooltip
-                      variant="wrap"
-                      text={routeLabel}
-                      triggerClassName="ml-1.5 shrink-0"
-                    >
-                      <span
-                        className="rounded-full bg-[#ece7d8] px-1.5 py-0.5 text-[11px] font-bold text-[#6f6a5d]"
-                      >
-                        +{selection.length - HEADER_ROUTE_STOPS}
-                      </span>
-                    </Tooltip>
-                  )}
-                </h1>
-              ) : (
-                <>
-                  <h1 className="truncate font-display text-lg font-semibold tracking-tight text-[#16241d] sm:text-xl">{picked.name}</h1>
-                  {styleMeta && (
-                    <span
-                      title={styleMeta.description}
-                      className={`hidden shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold sm:inline-flex ${styleMeta.badge}`}
-                    >
-                      <span aria-hidden="true">{styleMeta.icon}</span> {styleMeta.label}
-                    </span>
-                  )}
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {unsavedSelection.length > 0 && onAddToList && (
-          <div className="mt-2.5 flex items-center gap-2.5 rounded-xl border border-amber-200/70 bg-amber-50/60 px-3 py-2">
-            <span aria-hidden="true" className="text-base leading-none">☆</span>
-            <p className="min-w-0 flex-1 text-[11px] leading-snug text-amber-900/80">
-              Favorite {unsavedSelection.length === 1 ? "this destination" : `these ${unsavedSelection.length} destinations`} so {isMulti ? "this trip is" : "it's"} easy to find later.
-            </p>
-            <button
-              onClick={() => unsavedSelection.forEach((c) => saveAsFavorite(c.name))}
-              aria-label={
-                unsavedSelection.length === 1
-                  ? `Add ${unsavedSelection[0].name} to favorites`
-                  : `Add ${unsavedSelection.length} destinations to favorites`
-              }
-              className="focus-ring inline-flex min-h-[32px] shrink-0 items-center gap-1 rounded-full bg-amber-500 px-3 py-1 text-[11px] font-bold text-white shadow-sm transition-colors hover:bg-amber-600"
-            >
-              ☆ Add to favorites
-            </button>
-          </div>
-        )}
-
-        {/* Labeled, tappable stepper — doubles as back navigation (tap an
-            earlier step to revisit it). Device/gesture Back walks steps too. */}
-        <div className="mt-3 flex items-stretch gap-1.5" role="tablist" aria-label="Planning steps">
-          {steps.map((s, i) => {
-            const done = i < safeIndex;
-            const active = i === safeIndex;
-            return (
-              <button
-                key={s}
-                role="tab"
-                aria-selected={active}
-                aria-label={`Step ${i + 1}: ${STEP_META[s].title}`}
-                onClick={() => goTo(i)}
-                className="focus-ring-emerald group flex flex-1 flex-col gap-1 rounded-lg py-1"
-              >
-                <span
-                  className={`block h-1.5 rounded-full transition-colors ${
-                    active ? "bg-emerald-700" : done ? "bg-emerald-500" : "bg-[#e0dacb] group-hover:bg-[#cfc9b8]"
-                  }`}
-                />
-                <span
-                  className={`text-left text-[10px] font-bold uppercase tracking-[0.1em] transition-colors ${
-                    active ? "text-emerald-700" : done ? "text-emerald-600 group-hover:text-emerald-700" : "text-[#b3ad9c]"
-                  }`}
-                >
-                  {STEP_META[s].short}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
+    <div className="flex h-full w-full flex-col overflow-hidden bg-surface-2">
+      <PlanTripHeader
+        selection={selection}
+        routeStopLimit={HEADER_ROUTE_STOPS}
+        styleMeta={styleMeta}
+        saveSlot={
+          isReview ? (
+            <TripSaveBar
+              isMulti={isMulti}
+              favorite={isTripFavorite?.(routeName) ?? false}
+              onToggleFavorite={onToggleTripFavorite ? () => onToggleTripFavorite(routeName) : undefined}
+            />
+          ) : undefined
+        }
+        steps={steps.map((s) => ({ key: s, short: STEP_META[s].short, title: STEP_META[s].title }))}
+        activeStep={safeIndex}
+        onGoToStep={goTo}
+        wide={isReview}
+        identitySlot={switcherNode}
+        stats={headerStats}
+        basis={isPlaces || isReview ? budgetBasis : undefined}
+        onBasisChange={isPlaces || isReview ? setBudgetBasis : undefined}
+      />
 
       {/* Step body */}
       <div className={`mx-auto w-full px-4 ${isReview ? "max-w-[1400px] min-h-0 flex-1 overflow-hidden py-3" : isPlaces ? "max-w-5xl flex-1 overflow-y-auto overflow-x-hidden py-4" : "max-w-2xl flex-1 overflow-y-auto overflow-x-hidden py-4"}`}>
         <div key={current.key} className={`plan-step-in w-full ${isReview ? "h-full" : centerStep ? "flex min-h-full flex-col justify-center" : ""}`}>
           {isReview ? (
             ruleLoading && !plan ? (
-              <div className="flex h-64 items-center justify-center rounded-2xl border border-[#e4dece] bg-white">
-                <span className="text-sm text-[#a09a89]">Building your plan…</span>
+              <div className="flex h-64 items-center justify-center rounded-2xl border border-line bg-white">
+                <span className="text-sm text-ink-4">Building your plan…</span>
               </div>
             ) : plan && displayCountry ? (
-              <PlanWorkspace
-                builder={builder}
-                budgetBasis={budgetBasis}
-                setBudgetBasis={setBudgetBasis}
-                homeCountry={homeCountry}
-                actions={planActions}
-                onPlanWithAi={onPlanWithAi ? () => onPlanWithAi(displayCountry.name) : undefined}
-                onCinematic={() => setCinematicPlan(plan)}
-              />
+              isMulti ? (
+                <TripReviewWorkspace
+                  builder={builder}
+                  unitPlans={tripPlanner.unitPlans}
+                  secondaryCountries={secondaryCountries}
+                  budgetBasis={budgetBasis}
+                  homeCountry={homeCountry}
+                  onPlanWithAi={onPlanWithAi ? () => onPlanWithAi(displayCountry.name) : undefined}
+                  notes={planActions.notes}
+                  onSaveNotes={planActions.onSaveNotes}
+                />
+              ) : (
+                <PlanWorkspace
+                  builder={builder}
+                  budgetBasis={budgetBasis}
+                  setBudgetBasis={setBudgetBasis}
+                  homeCountry={homeCountry}
+                  actions={planActions}
+                  onPlanWithAi={onPlanWithAi ? () => onPlanWithAi(displayCountry.name) : undefined}
+                  onCinematic={() => setCinematicPlan(plan)}
+                />
+              )
             ) : (
-              <div className="flex h-64 items-center justify-center rounded-2xl border border-[#e4dece] bg-white">
-                <span className="text-sm text-[#a09a89]">No itinerary available.</span>
+              <div className="flex h-64 items-center justify-center rounded-2xl border border-line bg-white">
+                <span className="text-sm text-ink-4">No itinerary available.</span>
               </div>
             )
           ) : (
@@ -406,12 +525,12 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
               <div className="mb-5 text-center">
                 <div className="mb-1 text-4xl" aria-hidden="true">{current.icon}</div>
                 <div className="flex items-center justify-center gap-2">
-                  <h2 className="font-display text-2xl font-semibold tracking-tight text-[#16241d]">{current.title}</h2>
+                  <h2 className="font-display text-2xl font-semibold tracking-tight text-ink-1">{current.title}</h2>
                   {current.optional && (
-                    <span className="rounded-full bg-[#efeadd] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#a09a89]">Optional</span>
+                    <span className="rounded-full bg-surface-3 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ink-4">Optional</span>
                   )}
                 </div>
-                <p className="mx-auto mt-1.5 max-w-sm text-xs text-[#6f6a5d]">
+                <p className="mx-auto mt-1.5 max-w-sm text-xs text-ink-2">
                   {current.key === "basics" && isMulti
                     ? "Who's going and what you love — we'll tailor each stop next."
                     : current.subtitle}
@@ -428,17 +547,13 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                   selectedExperiences={builder.selectedExperiences}
                   onToggleExperience={builder.toggleExperience}
                   onClearExperiences={builder.clearExperiences}
+                  stopDays={routeStopDays}
                   plan={plan}
                 />
               )}
 
               {current.key === "cities" && (
-                <PlanPlacesStep
-                  units={placesUnits}
-                  plan={placesPlan}
-                  budgetBasis={budgetBasis}
-                  setBudgetBasis={setBudgetBasis}
-                />
+                <PlanPlacesStep units={placesUnits} activeIndex={placesActive} />
               )}
             </>
           )}
@@ -447,11 +562,11 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
 
       {/* Sticky footer nav. On the Review step below lg, the workspace's mobile
           bar owns Back (merged with the rail triggers), so hide this there. */}
-      <div className={`shrink-0 border-t border-[#e6e1d4] bg-[#f7f4ec]/90 px-4 pt-3 pb-safe backdrop-blur ${isReview ? "hidden lg:block" : ""}`}>
+      <div className={`shrink-0 border-t border-line bg-surface-2/90 px-4 pt-3 pb-safe backdrop-blur ${isReview ? "hidden lg:block" : ""}`}>
         <div className="mx-auto flex max-w-md items-center gap-3">
           <button
             onClick={() => (safeIndex === 0 ? changeDestination() : goTo(safeIndex - 1))}
-            className="focus-ring-emerald min-h-[44px] rounded-full border border-[#e4dece] bg-white px-4 py-2 text-sm font-semibold text-[#6f6a5d] shadow-sm transition-colors hover:bg-[#f4f1e8]"
+            className="focus-ring-emerald min-h-[44px] rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-2 shadow-sm transition-colors hover:bg-surface-2"
           >
             {safeIndex === 0 ? "↺ Change" : "← Back"}
           </button>
@@ -465,9 +580,9 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
           ) : (
             <button
               onClick={changeDestination}
-              className="focus-ring-emerald ml-auto flex min-h-[44px] flex-1 items-center justify-center gap-1.5 rounded-full bg-emerald-700 px-5 py-2 text-sm font-bold text-white shadow-sm transition-colors hover:bg-emerald-800"
+              className="focus-ring-emerald ml-auto inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm transition-colors hover:bg-surface-2"
             >
-              Plan another trip 🧭
+              <span aria-hidden="true">＋</span> Plan another
             </button>
           )}
         </div>

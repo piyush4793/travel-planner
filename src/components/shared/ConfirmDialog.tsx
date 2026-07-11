@@ -22,7 +22,14 @@ type ConfirmOptions = {
   message: string;
   confirmLabel?: string;
   cancelLabel?: string;
-  variant?: "danger" | "warning" | "info";
+  variant?: "danger" | "warning" | "info" | "emerald";
+  /**
+   * Called when the dialog is dismissed via Escape or backdrop click (NOT the
+   * explicit cancel button). The promise still resolves `false` either way, so
+   * boolean callers are unaffected; callers that need to tell "cancel button" from
+   * "dismissed" can observe this side-channel.
+   */
+  onDismiss?: () => void;
 };
 
 type ConfirmState = ConfirmOptions & { resolve: (v: boolean) => void };
@@ -46,7 +53,8 @@ export function useConfirm() {
     });
   }, []);
 
-  const handleResult = useCallback((result: boolean) => {
+  const handleResult = useCallback((result: boolean, dismissed = false) => {
+    if (dismissed) state?.onDismiss?.();
     state?.resolve(result);
     setState(null);
   }, [state]);
@@ -58,6 +66,7 @@ export function useConfirm() {
         {...state}
         onConfirm={() => handleResult(true)}
         onCancel={() => handleResult(false)}
+        onDismiss={() => handleResult(false, true)}
       />
     );
   }, [state, handleResult]);
@@ -82,6 +91,11 @@ const VARIANT_STYLES = {
     confirm: "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-400",
     iconBg: "bg-blue-100 text-blue-600",
   },
+  emerald: {
+    icon: "🧳",
+    confirm: "bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-400",
+    iconBg: "bg-emerald-100 text-emerald-700",
+  },
 };
 
 function ConfirmDialogView({
@@ -92,13 +106,14 @@ function ConfirmDialogView({
   variant = "danger",
   onConfirm,
   onCancel,
-}: ConfirmOptions & { onConfirm: () => void; onCancel: () => void }) {
+  onDismiss,
+}: ConfirmOptions & { onConfirm: () => void; onCancel: () => void; onDismiss: () => void }) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const style = VARIANT_STYLES[variant];
   const isMobile = useBreakpoint() === "mobile";
 
-  // On mobile, the device Back button cancels the dialog before navigating.
-  useBackDismiss(isMobile, onCancel);
+  // On mobile, the device Back button dismisses the dialog before navigating.
+  useBackDismiss(isMobile, onDismiss);
 
   // Auto-focus cancel button (safer default) + Escape to cancel
   const cancelRef = useRef<HTMLButtonElement>(null);
@@ -114,8 +129,8 @@ function ConfirmDialogView({
   return createPortal(
     <div
       className={BACKDROP_CLASS}
-      onClick={(e) => { if (e.target === e.currentTarget) onCancel(); }}
-      onKeyDown={(e) => { if (e.key === ESCAPE_KEY) { e.stopPropagation(); onCancel(); } }}
+      onClick={(e) => { if (e.target === e.currentTarget) onDismiss(); }}
+      onKeyDown={(e) => { if (e.key === ESCAPE_KEY) { e.stopPropagation(); onDismiss(); } }}
     >
       <div
         ref={dialogRef}
