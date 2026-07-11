@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Country } from "../core/types";
 import type { TripPlan } from "../core/utils/tripPlans";
+import type { PdfRouteStop } from "../utils/pdfModel";
 import { isEnabled } from "../core/featureFlags";
 import { appUrl } from "../core/utils/appUrl";
 import { buildShareText } from "../components/country/panel/shareText";
@@ -40,6 +41,7 @@ export function useItineraryShare(
   country: Country,
   homeCountry: string,
   plan?: TripPlan | null,
+  routeStops?: PdfRouteStop[],
 ): ItineraryShare {
   const [status, setStatus] = useState<ShareStatus>("idle");
   const timerRef = useRef<number>(0);
@@ -89,7 +91,7 @@ export function useItineraryShare(
       setStatus("working");
       try {
         const { buildItineraryPdfBlob, itineraryPdfName } = await import("../utils/pdfDocument");
-        const file = new File([buildItineraryPdfBlob(plan, country, homeCountry)], itineraryPdfName(country), {
+        const file = new File([buildItineraryPdfBlob(plan, country, homeCountry, routeStops)], itineraryPdfName(country), {
           type: "application/pdf",
         });
         if (navigator.canShare({ files: [file] })) {
@@ -117,7 +119,7 @@ export function useItineraryShare(
 
     // 3. Clipboard fallback (desktop).
     await copyText(`${text}\n\n${url}`);
-  }, [country, homeCountry, plan, canAttachPdf, copyText]);
+  }, [country, homeCountry, plan, routeStops, canAttachPdf, copyText]);
 
   return { share, prefetch, status };
 }

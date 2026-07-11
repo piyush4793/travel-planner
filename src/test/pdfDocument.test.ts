@@ -41,4 +41,25 @@ describe("pdfDocument", () => {
     expect(itineraryPdfName(COUNTRY)).toBe("India-itinerary.pdf");
     expect(itineraryPdfName({ ...COUNTRY, name: "Côte d'Ivoire" })).toMatch(/^[\w-]+-itinerary\.pdf$/);
   });
+
+  it("builds a multi-stop route PDF with per-stop sections", () => {
+    const multiPlan: TripPlan = {
+      ...PLAN,
+      duration: "4 days",
+      days: [
+        { label: "Day 1 — Delhi", activities: ["Red Fort"] },
+        { label: "Day 2 — Agra", activities: ["Taj Mahal"] },
+        { label: "Day 3 — Kathmandu", activities: ["Boudhanath"] },
+        { label: "Day 4 — Pokhara", activities: ["Phewa Lake"] },
+      ],
+    };
+    const stops = [
+      { name: "India", dayCount: 2, cost: "₹40K", bestMonths: ["October"], note: "SIM: Airtel | Ola · Uber" },
+      { name: "Nepal", dayCount: 2, cost: "₹30K", bestMonths: ["March"], note: "SIM: Ncell | Pathao" },
+    ];
+    const blob = buildItineraryPdfBlob(multiPlan, COUNTRY, "India", stops);
+    expect(blob).toBeInstanceOf(Blob);
+    expect(blob.type).toBe("application/pdf");
+    expect(blob.size).toBeGreaterThan(0);
+  });
 });

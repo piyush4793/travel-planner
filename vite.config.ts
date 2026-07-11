@@ -10,6 +10,11 @@ export default defineConfig({
   },
   build: {
     chunkSizeWarningLimit: 850,
+    // Force-inline the brand mark as a base64 data URL so the PDF generator can
+    // stamp it synchronously via jsPDF addImage (offline, no fetch). Everything
+    // else keeps Vite's default 4KB threshold. (Vite 5 has no `?inline` query.)
+    assetsInlineLimit: (filePath: string) =>
+      filePath.includes("brandMark") ? true : undefined,
     rollupOptions: {
       output: {
         manualChunks: {

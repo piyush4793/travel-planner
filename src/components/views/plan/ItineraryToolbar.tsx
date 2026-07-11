@@ -1,6 +1,7 @@
 import { memo } from "react";
 import type { Country } from "../../../core/types";
 import type { TripPlan } from "../../../core/utils/tripPlans";
+import type { PdfRouteStop } from "../../../utils/pdfModel";
 import { isEnabled } from "../../../core/featureFlags";
 import { exportItineraryAsPdf } from "../../../utils/pdfExport";
 import { useItineraryShare } from "../../../hooks/useItineraryShare";
@@ -10,6 +11,12 @@ type Props = {
   country: Country;
   plan: TripPlan;
   homeCountry: string;
+  /**
+   * Per-stop breakdown for a multi-stop route, in visit order. When present with
+   * more than one stop the PDF renders per-country sections; omit (or single) for
+   * a single-destination PDF. Scope-agnostic — any future domestic route works.
+   */
+  routeStops?: PdfRouteStop[];
   /** Enable the cinematic control (caller owns the route-mappable guard). */
   canCinematic?: boolean;
   onCinematic?: () => void;
@@ -23,8 +30,8 @@ type Props = {
  * Canvas so the actions stay identical across both. Each optional control renders
  * only when its capability/flag is available, so the bar never shows dead CTAs.
  */
-function ItineraryToolbarInner({ country, plan, homeCountry, canCinematic, onCinematic, onPlanWithAi }: Props) {
-  const { share, prefetch, status } = useItineraryShare(country, homeCountry, plan);
+function ItineraryToolbarInner({ country, plan, homeCountry, routeStops, canCinematic, onCinematic, onPlanWithAi }: Props) {
+  const { share, prefetch, status } = useItineraryShare(country, homeCountry, plan, routeStops);
   const shareLabel = status === "working" ? "…" : status === "copied" ? "Copied!" : "Share";
   const shareIcon = status === "working" ? "⏳" : status === "copied" ? "✓" : "📤";
   const showCinematic = !!canCinematic && !!onCinematic;
@@ -55,7 +62,7 @@ function ItineraryToolbarInner({ country, plan, homeCountry, canCinematic, onCin
       )}
       {canExportPdf && (
         <button
-          onClick={() => exportItineraryAsPdf(plan, country, homeCountry)}
+          onClick={() => exportItineraryAsPdf(plan, country, homeCountry, routeStops)}
           aria-label="Export this itinerary as a PDF"
           className="focus-ring-emerald flex flex-1 flex-col items-center gap-0.5 rounded-lg py-2 text-[10px] font-semibold text-ink-2 transition-colors hover:bg-surface-2"
         >

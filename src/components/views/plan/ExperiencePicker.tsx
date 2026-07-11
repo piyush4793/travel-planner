@@ -84,13 +84,13 @@ export default function ExperiencePicker({
           </button>
         </div>
       )}
-      <div className="mt-3 flex h-5 items-center justify-center">
+      <div className="mt-3 flex min-h-[32px] items-center justify-center">
         {selectedExperiences.length > 0 && (
           <button
             onClick={onClearExperiences}
-            className="focus-ring-emerald rounded text-[11px] font-semibold text-ink-4 transition-colors hover:text-ink-2"
+            className="focus-ring-emerald inline-flex min-h-[30px] items-center gap-1 rounded-full border border-line-strong bg-white px-3 py-1 text-[11px] font-semibold text-ink-2 transition-colors hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-800"
           >
-            Clear ({selectedExperiences.length})
+            <span aria-hidden="true" className="text-[10px]">✕</span> Clear ({selectedExperiences.length})
           </button>
         )}
       </div>

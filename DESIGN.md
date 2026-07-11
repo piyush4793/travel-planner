@@ -77,8 +77,11 @@ src/
 ├── utils/                         # Web/browser utilities
 │   ├── ai/
 │   │   └── llmProvider.ts         # LLM provider abstraction (OpenAI/Claude/Gemini)
-│   ├── pdfExport.ts               # Print-to-PDF via hidden iframe (mobile: new tab)
-│   ├── pdfDocument.ts             # Styled PDF Blob via jsPDF (lazy chunk) for native file share; pdfSafe() sanitizes to Latin-1; notes reuse parseNoteItems (practicalNotes.ts)
+│   ├── pdfExport.ts               # Print-to-PDF via hidden iframe (mobile: new tab); emerald/serif theme; brand logo letterhead; multi-stop section bands with per-country practical notes; emoji flags + icons in header/section titles; footer "Plan your own trip" app link
+│   ├── pdfModel.ts                # Pure shared model both PDF paths consume: slices composed days into per-stop sections carrying each stop's own note (scope-agnostic, unbounded)
+│   ├── pdfDocument.ts             # Styled PDF Blob via jsPDF (lazy chunk) for native file share; emerald theme + Times-serif titles; vector-drawn icons (drawIcon) on pills/summary/day/warning + rasterised country flags & the Roamwise logo (drawImageTile ← flagImage.ts / brandLogo.ts) in header/footer/STOP N bands; per-country practical notes (drawNotesCard) for multi routes; footer app link (appUrl); pdfSafe() sanitizes to Latin-1; notes reuse parseNoteItems (practicalNotes.ts)
+│   ├── flagImage.ts              # Rasterises a country's flag emoji (getCountryFlag) to a PNG data URL for jsPDF addImage; memoised; null when no canvas (falls back to vector pin)
+│   ├── brandLogo.ts              # Roamwise brand mark (src/assets/brandMark.png) as an inlined base64 data URL for the PDF letterhead; force-inlined by vite.config assetsInlineLimit (Vite 5 has no ?inline query)
 │   ├── importParser.ts            # Multi-strategy text/link plan parser
 │   ├── wikiImages.ts              # Wikimedia Commons image fetch + cache
 │   ├── vehicleMarkers.ts          # Cinematic vehicle SVG assets + DOMParser-based node builder (no innerHTML)

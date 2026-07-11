@@ -10,6 +10,7 @@ import PlanCityJumpNav, { type JumpSection } from "./PlanCityJumpNav";
 import RouteLeversBar, { type LeverStop } from "./RouteLeversBar";
 import { ITINERARY_TOP_ID } from "./ItinerarySummaryBar";
 import ItineraryToolbar from "./ItineraryToolbar";
+import type { PdfRouteStop } from "../../../utils/pdfModel";
 import SegmentAdjustDrawer from "./SegmentAdjustDrawer";
 import BorderHop from "./BorderHop";
 import type { GeoPoint } from "../../../core/utils/routeOrder";
@@ -280,6 +281,17 @@ function TripReviewCanvasInner({
   // Stops fed to the trip-level levers bar (route order + anchor).
   const leverStops: LeverStop[] = segments.map((s) => ({ name: s.name }));
 
+  // Per-stop breakdown for the shared PDF/share model: the composed plan's
+  // continuously-numbered days are sliced back per stop by these day counts,
+  // giving each country its own PDF section. Scope-agnostic via ReviewSegment.
+  const routeStops: PdfRouteStop[] = segments.map((s) => ({
+    name: s.name,
+    dayCount: s.plan.days.length,
+    cost: s.plan.costPerPerson,
+    bestMonths: s.country?.bestMonths,
+    note: s.plan.note,
+  }));
+
   // Jumping to a city inside a collapsed stop must first expand that stop —
   // otherwise its day nodes aren't rendered and the scroll target doesn't exist.
   const [pendingCity, setPendingCity] = useState<string | null>(null);
@@ -348,6 +360,7 @@ function TripReviewCanvasInner({
         country={country}
         plan={composedPlan}
         homeCountry={homeCountry}
+        routeStops={routeStops}
         onPlanWithAi={onPlanWithAi}
       />
     </div>

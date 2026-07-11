@@ -50,7 +50,7 @@ function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAuto
         triggerLabel={
           <>
             <span aria-hidden="true">🧭</span> Route order
-            <span className="rounded-full bg-surface-3 px-1.5 text-[10px] font-bold text-ink-2">{stops.length}</span>
+            <span className="rounded-full bg-emerald-100 px-1.5 text-[10px] font-bold text-emerald-700">{stops.length}</span>
           </>
         }
       >

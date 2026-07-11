@@ -59,7 +59,7 @@ describe("ShareButton — native PDF file share", () => {
     fireEvent.click(screen.getByRole("button", { name: /share/i }));
 
     await waitFor(() => expect(shareMock).toHaveBeenCalledTimes(1));
-    expect(buildPdfMock).toHaveBeenCalledWith(PLAN, COUNTRY, "India");
+    expect(buildPdfMock).toHaveBeenCalledWith(PLAN, COUNTRY, "India", undefined);
     const arg = shareMock.mock.calls[0][0] as { files: File[]; text: string };
     expect(arg.files).toHaveLength(1);
     expect(arg.files[0].name).toBe("India-itinerary.pdf");

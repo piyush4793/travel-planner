@@ -110,6 +110,69 @@ describe("pdfExport — P1", () => {
     Object.defineProperty(navigator, "userAgent", { value: originalUA, configurable: true });
   });
 
+  it("mobile multi-stop path renders a route title and per-stop section headers", async () => {
+    const { exportItineraryAsPdf } = await import("../utils/pdfExport");
+
+    const originalUA = navigator.userAgent;
+    Object.defineProperty(navigator, "userAgent", {
+      value: "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)",
+      configurable: true,
+    });
+
+    let written = "";
+    const fakeWin = {
+      document: {
+        open: () => {},
+        write: (html: string) => { written += html; },
+        close: () => {},
+      },
+    } as unknown as Window;
+    const openSpy = vi.spyOn(window, "open").mockReturnValue(fakeWin);
+
+    const plan: TripPlan = {
+      duration: "4 days",
+      costPerPerson: "₹1L",
+      note: "Nordic loop",
+      days: [
+        { label: "Day 1 — Oslo", activities: ["Opera House"] },
+        { label: "Day 2 — Bergen", activities: ["Bryggen"] },
+        { label: "Day 3 — Stockholm", activities: ["Gamla Stan"] },
+        { label: "Day 4 — Stockholm", activities: ["Vasa Museum"] },
+      ],
+    };
+    const country: Country = {
+      name: "Norway",
+      lat: 60.47,
+      lng: 8.47,
+      bestMonths: ["June"],
+      budget: "₹1.5L",
+      experiences: ["Fjords"],
+    };
+    const stops = [
+      { name: "Norway", dayCount: 2, cost: "₹60K", bestMonths: ["June"], note: "SIM: Telenor | Vy · DNB" },
+      { name: "Sweden", dayCount: 2, cost: "₹40K", bestMonths: ["May"], note: "SIM: Comviq | SL" },
+    ];
+
+    exportItineraryAsPdf(plan, country, "India", stops);
+
+    expect(written).toContain("Norway → Sweden");
+    expect(written).toContain("section-header");
+    expect(written).toContain("Stop 1");
+    expect(written).toContain("Stop 2");
+    expect(written).toContain("2 countries");
+    // Each stop's own practical note is rendered (not the generic composed note).
+    expect(written).toContain("Practical notes · Norway");
+    expect(written).toContain("Practical notes · Sweden");
+    expect(written).toContain("Telenor");
+    expect(written).toContain("Comviq");
+    expect(written).not.toContain("Nordic loop");
+    // A shareable link back to the app.
+    expect(written).toContain("Plan your own trip");
+
+    openSpy.mockRestore();
+    Object.defineProperty(navigator, "userAgent", { value: originalUA, configurable: true });
+  });
+
   it("desktop path does not inject the interactive Save-as-PDF button", async () => {
     const { exportItineraryAsPdf } = await import("../utils/pdfExport");
 

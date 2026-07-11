@@ -55,21 +55,23 @@ export default function PlanFilters({ country, options, selected, onToggle, onCl
   }`;
 
   const panel = (
-    <div className="px-4 py-3.5">
-      <div className="mb-2.5 flex items-center gap-2">
-        <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink-3">Experiences for {country}</p>
+    <div>
+      <div className="flex items-center gap-2 border-b border-emerald-100 bg-gradient-to-b from-emerald-50/90 to-white px-4 py-3">
+        <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-800">Experiences for {country}</p>
         {count > 0 && (
           <span className="rounded-full bg-emerald-600 px-1.5 py-0.5 text-[10px] font-bold leading-none text-white">{count}</span>
         )}
       </div>
-      <ExperiencePicker
-        experiences={options}
-        selectedExperiences={selected}
-        onToggleExperience={onToggle}
-        onClearExperiences={onClear}
-        visibleCap={Number.POSITIVE_INFINITY}
-        dense
-      />
+      <div className="px-4 py-3.5">
+        <ExperiencePicker
+          experiences={options}
+          selectedExperiences={selected}
+          onToggleExperience={onToggle}
+          onClearExperiences={onClear}
+          visibleCap={Number.POSITIVE_INFINITY}
+          dense
+        />
+      </div>
     </div>
   );
 
@@ -126,7 +128,7 @@ function FilterSheet({
             onClick={() => close()}
             className="absolute inset-0 bg-black/40 motion-safe:animate-[fadeInUp_0.15s_ease-out]"
           />
-          <div className="relative max-h-[80vh] w-full overflow-y-auto rounded-t-3xl border-t border-line bg-surface-2 px-2 pb-6 pt-3 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]">
+          <div className="relative max-h-[80vh] w-full overflow-y-auto rounded-t-3xl border-t border-line bg-white pb-6 pt-3 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]">
             <div className="mx-auto mb-2.5 h-1 w-10 rounded-full bg-line-strong" aria-hidden="true" />
             {children}
           </div>
