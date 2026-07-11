@@ -29,6 +29,7 @@ function renderRail(props: Partial<React.ComponentProps<typeof TripContextRail>>
       countries={countries}
       composedPlan={composed}
       perCountryCost={perCountryCost}
+      homeCountry="India"
       notes=""
       {...props}
     />,
@@ -76,6 +77,7 @@ describe("TripContextRail", () => {
         countries={countries}
         composedPlan={composed}
         perCountryCost={perCountryCost}
+        homeCountry="India"
         notes="remember passports"
         onSaveNotes={vi.fn()}
       />,

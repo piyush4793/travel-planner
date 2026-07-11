@@ -42,32 +42,37 @@ const TRIGGER =
 function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAutoArrange, canAutoArrange, children, topAnchorId }: Props) {
   // "Route order" → "Route" on mobile so the levers stay a single row at 375px.
   const compact = useBreakpoint() === "mobile";
+  // A single-stop route has nothing to reorder or anchor — mold the lever away so
+  // N=1 Review never shows an inert "Route order 1" control.
+  const showRouteOrder = stops.length >= 2;
   return (
     <div className="flex flex-wrap items-center gap-2 border-b border-surface-3 bg-surface-1 px-4 py-1.5">
-      <PlanPopover
-        title="Route order"
-        icon="🧭"
-        subtitle="Drag to reorder · ★ sets your anchor"
-        triggerAriaLabel="Edit route order"
-        triggerClassName={TRIGGER}
-        triggerLabel={
-          <>
-            <span aria-hidden="true">🧭</span> {compact ? "Route" : "Route order"}
-            <span className="rounded-full bg-emerald-100 px-1.5 text-[10px] font-bold text-emerald-700">{stops.length}</span>
-          </>
-        }
-      >
-        {() => (
-          <RouteOrderEditor
-            stops={stops}
-            anchorName={anchorName}
-            onSetAnchor={onSetAnchor}
-            onReorder={onReorder}
-            onAutoArrange={onAutoArrange}
-            canAutoArrange={canAutoArrange}
-          />
-        )}
-      </PlanPopover>
+      {showRouteOrder && (
+        <PlanPopover
+          title="Route order"
+          icon="🧭"
+          subtitle="Drag to reorder · ★ sets your anchor"
+          triggerAriaLabel="Edit route order"
+          triggerClassName={TRIGGER}
+          triggerLabel={
+            <>
+              <span aria-hidden="true">🧭</span> {compact ? "Route" : "Route order"}
+              <span className="rounded-full bg-emerald-100 px-1.5 text-[10px] font-bold text-emerald-700">{stops.length}</span>
+            </>
+          }
+        >
+          {() => (
+            <RouteOrderEditor
+              stops={stops}
+              anchorName={anchorName}
+              onSetAnchor={onSetAnchor}
+              onReorder={onReorder}
+              onAutoArrange={onAutoArrange}
+              canAutoArrange={canAutoArrange}
+            />
+          )}
+        </PlanPopover>
+      )}
 
       {children}
 

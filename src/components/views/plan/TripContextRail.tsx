@@ -1,10 +1,11 @@
-import { memo } from "react";
+import { memo, useEffect, useRef } from "react";
 import type { Country } from "../../../core/types";
 import type { TripPlan } from "../../../core/utils/tripPlans";
 import { planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
 import { tripReadiness, READINESS_ICON, type ReadinessTone } from "../../../core/utils/tripReadiness";
 import { getCountryFlag } from "../../../utils/countryFlags";
 import MonthHeatmap from "../../country/panel/MonthHeatmap";
+import { LearnAboutSection, PlanningResourcesSection, UsefulLinksSection } from "../../country/panel/InfoSections";
 import RailSection from "./RailSection";
 import PlanNotesSection from "./PlanNotesSection";
 
@@ -16,6 +17,8 @@ type Props = {
   countries: Country[];
   composedPlan: TripPlan;
   perCountryCost: TripCostRow[];
+  /** Departure country, for visa/route planning links. */
+  homeCountry: string;
   /** Primary destination notes (the trip's scratchpad). */
   notes: string;
   onSaveNotes?: (notes: string) => void;
@@ -28,20 +31,47 @@ const READINESS_TONE_CLASS: Record<ReadinessTone, string> = {
 };
 
 /**
- * The multi-country "Good to know" rail — trip-level reference the traveller
- * reads (never a lever): trip readiness (honest visa/border fallback), an honest
- * per-country budget ledger (×nights line items + an italic inter-country caveat,
- * never a faked leg total), per-country seasonality and watch-outs, and the trip
- * notes scratchpad. The who's-going basis and headline stats live once in the
- * persistent Trip Header — the ledger only reflects the active basis, it never
- * duplicates the switch. Molds to its data — each section/row renders only when a
- * country carries it, so the rail never shows empty chrome. Single-country Review
- * uses the richer per-country ContextRail instead; this is the route-level companion.
+ * Per-country "Before you go" block (learn snapshot, visa/planning links, useful
+ * links). Owns its own name ref so LearnAboutSection can drop stale async results
+ * when the route changes. The country subheading only renders on a multi-stop
+ * route — a single-country trip already names the destination in the header, so
+ * N=1 stays byte-identical to the old single-country rail.
  */
-function TripContextRailInner({ countries, composedPlan, perCountryCost, notes, onSaveNotes }: Props) {
+function CountryBeforeYouGo({ country, homeCountry, showHeading }: { country: Country; homeCountry: string; showHeading: boolean }) {
+  const nameRef = useRef<string | null>(country.name);
+  useEffect(() => { nameRef.current = country.name; }, [country.name]);
+  return (
+    <div className="space-y-2.5">
+      {showHeading && (
+        <p className="flex items-center gap-1.5 text-[11px] font-bold text-ink-1">
+          <span aria-hidden="true">{getCountryFlag(country.name)}</span>
+          {country.name}
+        </p>
+      )}
+      <LearnAboutSection countryName={country.name} currentCountryNameRef={nameRef} />
+      <PlanningResourcesSection countryName={country.name} homeCountry={homeCountry} />
+      <UsefulLinksSection links={country.links} />
+    </div>
+  );
+}
+
+/**
+ * The unified "Good to know" rail — trip-level reference the traveller reads
+ * (never a lever), shared by single- and multi-country Review. Molds to its data:
+ * trip readiness (honest visa/border fallback), an honest per-country budget
+ * ledger (×nights line items + an italic inter-country caveat, never a faked leg
+ * total), per-country seasonality, watch-outs & pairings, the trip notes
+ * scratchpad, and a per-country "Before you go" (learn snapshot, visa/planning
+ * links, useful links). The who's-going basis and headline stats live once in the
+ * persistent Trip Header — the ledger only reflects the active basis, it never
+ * duplicates the switch. Each section/row renders only when a country carries it,
+ * so a single-country trip (N=1) stays byte-identical to the old single rail.
+ */
+function TripContextRailInner({ countries, composedPlan, perCountryCost, homeCountry, notes, onSaveNotes }: Props) {
   const readiness = tripReadiness(countries);
   const seasonCountries = countries.filter((c) => (c.bestMonths?.length ?? 0) > 0 || (c.worstMonths?.length ?? 0) > 0);
   const tipCountries = countries.filter((c) => !!c.stopoverNote || (c.avoid?.length ?? 0) > 0 || (c.combo?.length ?? 0) > 0);
+  const multi = countries.length > 1;
 
   return (
     <div className="space-y-2.5">
@@ -142,6 +172,21 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, notes, 
                     </ul>
                   </div>
                 )}
+                {(c.combo?.length ?? 0) > 0 && (
+                  <div>
+                    <p className="mb-1.5 text-[10px] font-bold uppercase tracking-wide text-ink-4">Pairs well with</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {(c.combo ?? []).map((name) => (
+                        <span
+                          key={name}
+                          className="inline-flex items-center gap-1 rounded-full border border-line bg-surface-2 px-2.5 py-1 text-[11px] font-semibold text-ink-2"
+                        >
+                          <span aria-hidden="true">{getCountryFlag(name)}</span> {name}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -151,6 +196,16 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, notes, 
       {onSaveNotes && (
         <RailSection title="Notes" hint="just for you">
           <PlanNotesSection notes={notes} onSave={onSaveNotes} />
+        </RailSection>
+      )}
+
+      {countries.length > 0 && (
+        <RailSection title="Before you go" hint="learn, visas, links">
+          <div className={multi ? "space-y-4" : undefined}>
+            {countries.map((c) => (
+              <CountryBeforeYouGo key={c.name} country={c} homeCountry={homeCountry} showHeading={multi} />
+            ))}
+          </div>
         </RailSection>
       )}
     </div>

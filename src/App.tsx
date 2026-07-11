@@ -424,8 +424,6 @@ export default function App() {
             onToggleFavorite={store.favorites.toggle}
             onUpdateNotes={store.updateNotes}
             aiPlanCountFor={isEnabled("llmPlanning") ? aiPlanCountFor : undefined}
-            mainMapRef={mainMapRef}
-            onCinematicChange={setCinematicActive}
             openTrip={planSeed}
             matchSavedTrip={matchSavedTrip}
           />

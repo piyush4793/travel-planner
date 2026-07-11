@@ -26,15 +26,17 @@ type Props = {
 };
 
 /**
- * Multi-country Review workspace — the "Route Canvas". Normalises the primary
- * funnel + each additional stop into one ordered {@link ReviewSegment} list, folds
- * them into one plan in the current visit order, and lays out the composed
- * segmented itinerary (centre, levers tuned in place, stops reorderable) beside a
- * trip-level "Good to know" rail via the shared {@link PlanWorkspaceShell}. Route
- * order and anchor are independent display layers over the pick-ordered segments,
- * so reordering never unpicks the primary stop. There is no Shape rail here — each
- * stop is shaped inline — so the shell renders the itinerary full-width with a
- * single reference rail.
+ * The unified Review workspace — the "Route Canvas" — shared by single- and
+ * multi-country trips. Normalises the primary funnel + each additional stop into
+ * one ordered {@link ReviewSegment} list, folds them into one plan in the current
+ * visit order, and lays out the composed segmented itinerary (centre, levers tuned
+ * in place, stops reorderable) beside the unified "Good to know" rail via the
+ * shared {@link PlanWorkspaceShell}. Route order and anchor are independent display
+ * layers over the pick-ordered segments, so reordering never unpicks the primary
+ * stop. At N=1 the list is just the primary stop: the reorder/anchor levers mold
+ * away and the workspace renders the single itinerary full-width with one reference
+ * rail, so a single-country trip stays byte-identical to before. Each stop is
+ * shaped inline (the ✏️ Adjust drawer) — there is no separate Shape rail.
  */
 function TripReviewWorkspaceInner({
   builder,
@@ -189,6 +191,7 @@ function TripReviewWorkspaceInner({
         countries={orderedCountries}
         composedPlan={orderedComposed}
         perCountryCost={perCountryCost}
+        homeCountry={homeCountry}
         notes={notes}
         onSaveNotes={onSaveNotes}
       />

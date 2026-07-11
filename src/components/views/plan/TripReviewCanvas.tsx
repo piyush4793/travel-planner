@@ -152,7 +152,7 @@ function SegmentBlock({
             <h3 className="min-w-0 flex-1 truncate font-display text-base font-bold text-emerald-900">{segment.name}</h3>
 
             <div className="pointer-events-auto flex shrink-0 items-center gap-1.5">
-              {isAnchor && (
+              {isAnchor && total > 1 && (
                 <span className="flex items-center gap-1 rounded-full border border-amber-300 bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-amber-800 sm:px-2">
                   <span aria-hidden="true">★</span>
                   <span className="hidden sm:inline">Anchor</span>
@@ -247,8 +247,9 @@ function SegmentBlock({
  * place, its position reorderable (accessible up/down, plus one-tap auto-arrange),
  * and its body collapsible (the anchor opens by default while the rest fold into a
  * scannable overview). A composed summary + cross-route jump nav + shared toolbar
- * wrap the whole thing. N=1 never reaches here — the single-country preview owns
- * that — so this is the multi-country surface only.
+ * wrap the whole thing. Shared by single- and multi-country Review: at N=1 the
+ * reorder/anchor levers mold away (nothing to sequence) and the lone stop reads as
+ * a plain itinerary, so a single-country trip stays byte-identical to before.
  */
 function TripReviewCanvasInner({
   segments,

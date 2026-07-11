@@ -183,7 +183,7 @@ describe("PlanView — guided planner", () => {
     // Back on the wizard (not the picker) at the same destination + step.
     expect(await screen.findByRole("tab", { name: /Step 3:/i, selected: true })).toBeInTheDocument();
     expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Testland (no rule)" })).toBeInTheDocument();
+    expect(screen.getAllByRole("heading", { name: "Testland (no rule)" }).length).toBeGreaterThan(0);
   });
 
   it("clears the saved draft when the user backs out to change destination", async () => {

@@ -1,17 +1,14 @@
-import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { RefObject } from "react";
-import type maplibregl from "maplibre-gl";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Country } from "../../../core/types";
 import { type BudgetBasis } from "../../../core/utils/budget";
 import { cityExperienceOptions } from "../../../core/utils/cityExperiences";
-import { type TripPlan, type TripSegment, extractPlanCities, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
+import { type TripSegment, extractPlanCities, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
 import { usePlanBuilder, type PlanBuilderSeed } from "../../../hooks/usePlanBuilder";
 import { useBackDismiss } from "../../../hooks/useBackDismiss";
 import DestinationPicker from "./DestinationPicker";
 import PlanTripHeader, { buildHeaderStats } from "./PlanTripHeader";
 import TripSaveBar from "./TripSaveBar";
 import PlanCountrySwitcher from "./PlanCountrySwitcher";
-import PlanWorkspace from "./PlanWorkspace";
 import TripReviewWorkspace from "./TripReviewWorkspace";
 import PlanBasicsStep from "./PlanBasicsStep";
 import PlanPlacesStep, { type PlacesUnit, includedCount } from "./PlanPlacesStep";
@@ -25,8 +22,6 @@ import { getDestinationSource } from "../../../core/trip/getDestinationSource";
 import { useTripExperiences } from "../../../hooks/useTripExperiences";
 import { useTripRules } from "../../../hooks/useTripRules";
 import { useTripPlanner, type TripPlannerSeed } from "../../../hooks/useTripPlanner";
-
-const ItineraryCinematic = lazy(() => import("../../country/ItineraryCinematic"));
 
 /**
  * How many route stops the header names explicitly before collapsing the rest
@@ -56,8 +51,6 @@ type Props = {
   onToggleFavorite?: (name: string) => void;
   onUpdateNotes?: (name: string, notes: string) => void;
   aiPlanCountFor?: (name: string) => number;
-  mainMapRef?: RefObject<maplibregl.Map | null>;
-  onCinematicChange?: (active: boolean) => void;
   /** Open a saved route in the wizard (jumps to Review) and rehydrate each stop's
    *  snapshot cities + length. Bump `nonce` to re-open. */
   openTrip?: OpenTripRequest | null;
@@ -82,7 +75,7 @@ const STEP_META: Record<StepKey, StepMeta> = {
  * is inferred behind the scenes and tunable on Review; cities are a result you
  * edit, never a filter that fights vibe.
  */
-export default function PlanView({ countries, visitedNames, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onToggleVisited, favoriteNames, onToggleFavorite, onUpdateNotes, aiPlanCountFor, mainMapRef, onCinematicChange, openTrip, matchSavedTrip }: Props) {
+export default function PlanView({ countries, visitedNames, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onToggleVisited, favoriteNames, onToggleFavorite, onUpdateNotes, aiPlanCountFor, openTrip, matchSavedTrip }: Props) {
   // Rehydrate a saved draft once so a refresh resumes where the user left off.
   const draft0 = useRef(loadPlanDraft()).current;
   const multiCountry = isEnabled("multiCountryPlanning");
@@ -222,14 +215,6 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     setSelection(chosen);
     setStepIndex(0);
   }, [matchSavedTrip, confirmResume]);
-
-  // Cinematic fly-through overlay. Lives here (not in the pane) so it can drive
-  // the always-mounted MapView behind the whole app via onCinematicChange, and
-  // auto-closes when the traveller switches destinations.
-  const [cinematicPlan, setCinematicPlan] = useState<TripPlan | null>(null);
-  useEffect(() => { onCinematicChange?.(cinematicPlan !== null); }, [cinematicPlan, onCinematicChange]);
-  useEffect(() => { setCinematicPlan(null); }, [picked?.name]);
-  useEffect(() => () => onCinematicChange?.(false), [onCinematicChange]);
 
   // Active country on the Places step — lifted here so the header's country
   // switcher and the Places body stay in lock-step (single source of truth).
@@ -496,30 +481,17 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                 <span className="text-sm text-ink-4">Building your plan…</span>
               </div>
             ) : plan && displayCountry ? (
-              isMulti ? (
-                <TripReviewWorkspace
-                  builder={builder}
-                  unitPlans={tripPlanner.unitPlans}
-                  secondaryCountries={secondaryCountries}
-                  budgetBasis={budgetBasis}
-                  homeCountry={homeCountry}
-                  onPlanWithAi={onPlanWithAi ? () => onPlanWithAi(displayCountry.name) : undefined}
-                  notes={planActions.notes}
-                  onSaveNotes={planActions.onSaveNotes}
-                  nav={reviewNav}
-                />
-              ) : (
-                <PlanWorkspace
-                  builder={builder}
-                  budgetBasis={budgetBasis}
-                  setBudgetBasis={setBudgetBasis}
-                  homeCountry={homeCountry}
-                  actions={planActions}
-                  onPlanWithAi={onPlanWithAi ? () => onPlanWithAi(displayCountry.name) : undefined}
-                  onCinematic={() => setCinematicPlan(plan)}
-                  nav={reviewNav}
-                />
-              )
+              <TripReviewWorkspace
+                builder={builder}
+                unitPlans={tripPlanner.unitPlans}
+                secondaryCountries={secondaryCountries}
+                budgetBasis={budgetBasis}
+                homeCountry={homeCountry}
+                onPlanWithAi={onPlanWithAi ? () => onPlanWithAi(displayCountry.name) : undefined}
+                notes={planActions.notes}
+                onSaveNotes={planActions.onSaveNotes}
+                nav={reviewNav}
+              />
             ) : (
               <div className="flex h-64 items-center justify-center rounded-2xl border border-line bg-white">
                 <span className="text-sm text-ink-4">No itinerary available.</span>
@@ -615,20 +587,6 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
           )}
         </div>
       </div>
-
-      {/* Cinematic fly-through overlay (drives the always-mounted MapView) */}
-      {cinematicPlan && displayCountry && (
-        <Suspense fallback={null}>
-          <ItineraryCinematic
-            plan={cinematicPlan}
-            country={displayCountry}
-            homeCountry={homeCountry}
-            mainMapRef={mainMapRef}
-            rule={builder.rule}
-            onClose={() => setCinematicPlan(null)}
-          />
-        </Suspense>
-      )}
     </div>
   );
 }
