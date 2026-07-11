@@ -175,9 +175,12 @@ describe("TripReviewCanvas", () => {
       anchorName: "Norway",
     });
     expect(screen.getByText("Day 1 — Oslo")).toBeInTheDocument();
-    expect(screen.queryByText("Day 1 — Copenhagen")).not.toBeInTheDocument();
+    expect(screen.queryByText(/Day \d+ — Copenhagen/)).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Expand Denmark itinerary" }));
-    expect(screen.getByText("Day 1 — Copenhagen")).toBeInTheDocument();
+    // Second stop's day cards continue the route timeline (Norway = 3 days), so
+    // Copenhagen starts at Day 4, not a per-stop restart at Day 1.
+    expect(screen.getByText("Day 4 — Copenhagen")).toBeInTheDocument();
+    expect(screen.queryByText("Day 1 — Copenhagen")).not.toBeInTheDocument();
   });
 
   it("shows cumulative route-relative day ranges per stop", () => {

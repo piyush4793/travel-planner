@@ -1,9 +1,9 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 import type { Country } from "../../../core/types";
 import type { CityEntry } from "../../../core/types";
 import type { CountryRule } from "../../../core/data/itineraryRules";
 import type { TripPlan } from "../../../core/utils/tripPlans";
-import { extractPlanCities } from "../../../core/utils/tripPlans";
+import { extractPlanCities, shiftPlanDays } from "../../../core/utils/tripPlans";
 import { getCountryFlag } from "../../../utils/countryFlags";
 import ItineraryView, { groupDays } from "../../country/itinerary/ItineraryView";
 import PlanCityJumpNav, { type JumpSection } from "./PlanCityJumpNav";
@@ -102,6 +102,14 @@ function SegmentBlock({
   const bodyId = `segment-body-${segment.name.replace(/\s+/g, "-")}`;
   const dayRange = dayStart === dayEnd ? `Day ${dayStart}` : `Days ${dayStart}–${dayEnd}`;
 
+  // The day cards renumber to the route timeline (Day 1..N across all stops) so
+  // the cards match this stop's cumulative "Days 12–15" header instead of each
+  // country restarting at Day 1. The first stop (offset 0) is unchanged.
+  const displayPlan = useMemo<TripPlan>(
+    () => ({ ...segment.plan, days: shiftPlanDays(segment.plan.days, dayStart - 1) }),
+    [segment.plan, dayStart],
+  );
+
   return (
     <section aria-label={`${segment.name} — stop ${position + 1} of ${total}`} className="scroll-mt-2">
       {/* Border hop between countries — honest, expandable to an informational mode picker. */}
@@ -189,7 +197,7 @@ function SegmentBlock({
         </button>
       ) : (
         <div id={bodyId} className="mx-3 mb-1 rounded-b-2xl border border-t-0 border-[#e4dece] bg-white py-3">
-          <ItineraryView plan={segment.plan} rule={segment.rule} variant="luxury" />
+          <ItineraryView plan={displayPlan} rule={segment.rule} variant="luxury" />
         </div>
       )}
     </section>

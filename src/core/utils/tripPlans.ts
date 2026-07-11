@@ -38,6 +38,39 @@ export function extractCityFromLabel(label: string): string {
   return m ? m[1].trim() : "";
 }
 
+/**
+ * Shift every "Day N" / "Day N–M" number in a piece of itinerary text by
+ * `offset`, leaving the surrounding text (city, theme, activity copy) untouched.
+ * The range separator class is en-dash/hyphen only, so the " — City" em-dash that
+ * follows a single-day label is never mistaken for a range. `offset === 0` returns
+ * the input unchanged so the single-country path stays byte-identical.
+ */
+export function shiftDayNumbers(text: string, offset: number): string {
+  if (!offset) return text;
+  return text.replace(
+    /Day\s+(\d+)(?:(\s*[–-]\s*)(\d+))?/g,
+    (_m, a: string, sep: string | undefined, b: string | undefined) =>
+      sep !== undefined && b !== undefined
+        ? `Day ${Number(a) + offset}${sep}${Number(b) + offset}`
+        : `Day ${Number(a) + offset}`,
+  );
+}
+
+/**
+ * Renumber a stop's days for a route-continuous view: shifts the "Day N" numbers
+ * in each day's label and activity copy by `offset` (the count of days that
+ * precede this stop on the route). Returns a new array; `offset === 0` returns the
+ * original reference so composing a single stop is a no-op.
+ */
+export function shiftPlanDays(days: DayEntry[], offset: number): DayEntry[] {
+  if (!offset) return days;
+  return days.map((d) => ({
+    ...d,
+    label: shiftDayNumbers(d.label, offset),
+    activities: d.activities.map((a) => shiftDayNumbers(a, offset)),
+  }));
+}
+
 /** Extract unique ordered city route from plan days */
 export function extractPlanCities(days: DayEntry[]): string[] {
   const cities: string[] = [];
@@ -486,10 +519,11 @@ export type TripSegment = { name: string; plan: TripPlan };
 
 /**
  * Compose several single-unit itineraries into one multi-unit trip plan, in visit
- * order. Days are concatenated (each unit keeps its own per-unit day numbering —
- * continuous renumbering and rendered inter-unit connectors are a Review-phase
- * concern, kept out of `days` so `days.length` stays an honest day count), costs
- * sum across units, and the total duration is the summed day count.
+ * order. Days are concatenated and **renumbered continuously** across the route
+ * (via {@link shiftPlanDays}) so the composed plan reads Day 1..N end-to-end — the
+ * share/PDF/context surfaces all consume this. `days.length` stays an honest total
+ * day count (renumbering rewrites labels only). Costs sum across units and the
+ * total duration is the summed day count.
  *
  * A single segment returns its plan unchanged, so the single-destination path is
  * byte-for-byte identical to today. Nothing here assumes "country" — the same
@@ -506,7 +540,9 @@ export function composeTripPlan(segments: TripSegment[], basis: BudgetBasis): Tr
   let low = 0;
   let high = 0;
   for (const seg of segments) {
-    days.push(...seg.plan.days);
+    // Renumber each stop's days so the composed plan reads Day 1..N across the
+    // whole route (share/PDF/context all consume this), not per-stop restarts.
+    days.push(...shiftPlanDays(seg.plan.days, days.length));
     const parsed = parseBudgetRange(seg.plan.costPerPerson);
     if (parsed) {
       low += parsed[0];
