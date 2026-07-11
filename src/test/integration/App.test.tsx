@@ -31,12 +31,10 @@ const TEST_IDS = {
   CALENDAR_VIEW: "calendar-view",
   DISCOVER_VIEW: "discover-view",
   SELECTED_COUNTRY: "selected-country",
-  TRIPS_SELECT_COUNTRY: "trips-select-country",
   COUNTRY_PANEL_CLOSE: "country-panel-close",
   CALENDAR_SELECT_COUNTRY: "calendar-select-country",
   CALENDAR_COUNT: "calendar-count",
   TRIPS_COUNT: "trips-count",
-  TRIPS_FILTER_MONTH: "trips-filter-month",
   DISCOVER_ADD_COUNTRY: "discover-add-country",
   DISCOVER_REMOVE_COUNTRY: "discover-remove-country",
 } as const;
@@ -78,8 +76,6 @@ const deleteCountryMock = vi.fn();
 const updateNotesMock = vi.fn();
 const visitedToggleMock = vi.fn();
 const favoritesToggleMock = vi.fn();
-const saveTripMock = vi.fn();
-const deleteTripMock = vi.fn();
 
 const visitedSet = new Set<string>();
 const favoritesSet = new Set<string>();
@@ -89,27 +85,15 @@ vi.mock("../../components/views/MapView", () => ({
   default: () => <div data-testid="map-view" />,
 }));
 
-vi.mock("../../components/views/TripsView", () => ({
+vi.mock("../../components/views/MyTripsView", () => ({
   default: (props: Record<string, unknown>) => {
-    const countries = (props.countries as Country[]) ?? [];
-    const onSelect = props.onSelect as ((c: Country) => void) | undefined;
-    const setMonth = props.setMonth as ((m: string[]) => void) | undefined;
+    const savedTrips = (props.savedTrips as Array<{ id: string; name: string }>) ?? [];
+    const onGoPlan = props.onGoPlan as (() => void) | undefined;
     return (
       <div data-testid="trips-view">
-        <div data-testid={TEST_IDS.TRIPS_COUNT}>{countries.length}</div>
-        <button
-          type="button"
-          data-testid={TEST_IDS.TRIPS_SELECT_COUNTRY}
-          onClick={() => onSelect?.(countries[0])}
-        >
-          Select trip country
-        </button>
-        <button
-          type="button"
-          data-testid={TEST_IDS.TRIPS_FILTER_MONTH}
-          onClick={() => setMonth?.(["December"])}
-        >
-          Filter December
+        <div data-testid={TEST_IDS.TRIPS_COUNT}>{savedTrips.length}</div>
+        <button type="button" data-testid="trips-go-plan" onClick={() => onGoPlan?.()}>
+          Plan a trip
         </button>
       </div>
     );
@@ -270,14 +254,6 @@ vi.mock("../../hooks/useCountryStore", () => ({
   }),
 }));
 
-vi.mock("../../hooks/useTripStore", () => ({
-  useTripStore: () => ({
-    mergedTripGroups: [],
-    saveTrip: saveTripMock,
-    deleteTrip: deleteTripMock,
-  }),
-}));
-
 vi.mock("../../hooks/useAiPlanStore", () => ({
   useAiPlanStore: () => ({
     getPlans: () => [],
@@ -345,35 +321,18 @@ describe("App orchestration", () => {
     expect(window.location.hash).toBe(ROUTES.TRIPS);
   });
 
-  it("wires country selection from Trips and Calendar into CountryPanel", async () => {
+  it("wires country selection from Calendar into CountryPanel", async () => {
     const user = userEvent.setup();
     render(<App />);
 
-    expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent("none");
-
-    await user.click(screen.getByTestId(TEST_IDS.TRIPS_SELECT_COUNTRY));
-    expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent(COUNTRY_NAMES.JAPAN);
-
-    await user.click(screen.getByTestId(TEST_IDS.COUNTRY_PANEL_CLOSE));
     expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent("none");
 
     await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
     await user.click(screen.getByTestId(TEST_IDS.CALENDAR_SELECT_COUNTRY));
     expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent(COUNTRY_NAMES.JAPAN);
-  });
 
-  it("shows the whole My List in Calendar even when a Trips month filter is active", async () => {
-    const user = userEvent.setup();
-    render(<App />);
-
-    // A month filter that matches neither seeded country empties the Trips list…
-    await user.click(screen.getByTestId(TEST_IDS.TRIPS_FILTER_MONTH));
-    expect(screen.getByTestId(TEST_IDS.TRIPS_COUNT)).toHaveTextContent("0");
-
-    // …but Calendar is a heatmap of the full My List and must ignore that filter.
-    await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
-    expect(await screen.findByTestId(TEST_IDS.CALENDAR_VIEW)).toBeInTheDocument();
-    expect(screen.getByTestId(TEST_IDS.CALENDAR_COUNT)).toHaveTextContent("2");
+    await user.click(screen.getByTestId(TEST_IDS.COUNTRY_PANEL_CLOSE));
+    expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent("none");
   });
 
   it("passes AI planning handlers to CountryPanel only when llmPlanning is enabled", () => {
@@ -415,7 +374,8 @@ describe("App handler wiring", () => {
   });
 
   async function selectJapan(user: ReturnType<typeof userEvent.setup>) {
-    await user.click(await screen.findByTestId(TEST_IDS.TRIPS_SELECT_COUNTRY));
+    await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
+    await user.click(await screen.findByTestId(TEST_IDS.CALENDAR_SELECT_COUNTRY));
     expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent(COUNTRY_NAMES.JAPAN);
   }
 

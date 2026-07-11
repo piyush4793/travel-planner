@@ -84,6 +84,51 @@ describe("useTripPlanner", () => {
   });
 });
 
+describe("useTripPlanner per-stop length levers", () => {
+  it("seeds each stop's length from its recommendation and reports its bounds", () => {
+    const units = [unit("Norway", ["Oslo", "Bergen"])];
+    const { result } = renderHook(() => useTripPlanner(units, [], "couple"));
+    const up = result.current.unitPlans[0];
+    expect(up.customDays).toBe(up.recommendedDays);
+    expect(up.daysPinned).toBe(false);
+    expect(up.maxDays).toBeGreaterThanOrEqual(1);
+  });
+
+  it("setDays pins one stop's length without touching its siblings", () => {
+    const units = [unit("Norway", ["Oslo", "Bergen"]), unit("Denmark", ["Copenhagen"])];
+    const { result } = renderHook(() => useTripPlanner(units, [], "couple"));
+    const siblingBefore = result.current.unitPlans[1].customDays;
+
+    act(() => result.current.unitPlans[0].setDays(9));
+    expect(result.current.unitPlans[0].customDays).toBe(9);
+    expect(result.current.unitPlans[0].daysPinned).toBe(true);
+    expect(result.current.unitPlans[1].customDays).toBe(siblingBefore);
+    expect(result.current.unitPlans[1].daysPinned).toBe(false);
+  });
+
+  it("resetDays clears the pin so the recommendation re-seeds", () => {
+    const units = [unit("Norway", ["Oslo", "Bergen"])];
+    const { result } = renderHook(() => useTripPlanner(units, [], "couple"));
+    const rec = result.current.unitPlans[0].recommendedDays;
+
+    act(() => result.current.unitPlans[0].setDays(rec + 4));
+    expect(result.current.unitPlans[0].customDays).toBe(rec + 4);
+    act(() => result.current.unitPlans[0].resetDays());
+    expect(result.current.unitPlans[0].daysPinned).toBe(false);
+    expect(result.current.unitPlans[0].customDays).toBe(rec);
+  });
+
+  it("projectCities previews a candidate length without committing it", () => {
+    const units = [unit("Norway", ["Oslo", "Bergen"])];
+    const { result } = renderHook(() => useTripPlanner(units, [], "couple"));
+    const up = result.current.unitPlans[0];
+    const projected = up.projectCities(up.maxDays);
+    expect(Array.isArray(projected)).toBe(true);
+    // Projection must not mutate committed state.
+    expect(result.current.unitPlans[0].daysPinned).toBe(false);
+  });
+});
+
 /** A unit whose cities carry experience tags, for per-country focus tests. */
 function tagged(name: string, cities: { city: string; tags: string[] }[]): LoadedUnit {
   const country: Country = {

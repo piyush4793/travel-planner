@@ -11,8 +11,6 @@ type TourStep = {
   kind: StepKind;
   /** CSS selector for spotlight target */
   target?: string;
-  /** Alternate target for mobile (if different from desktop) */
-  mobileTarget?: string;
   position?: "top" | "bottom" | "left" | "right";
   emoji: string;
   title: string;
@@ -67,11 +65,10 @@ const STEPS: TourStep[] = [
   {
     kind: "spotlight",
     target: "[data-tour='settings']",
-    mobileTarget: "[data-tour='mobile-menu']",
     position: "bottom",
     emoji: "\u2699\uFE0F",
     title: "Settings & Backup",
-    body: "Tap the menu to access settings. Export your data, set up auto-backups, and configure AI providers for smart trip planning.",
+    body: "Open Settings to export your data, set up auto-backups, and configure AI providers for smart trip planning.",
   },
   {
     kind: "install",
@@ -161,7 +158,7 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
     if (!visible) return;
     const s = STEPS[step];
     if (s.kind !== "spotlight" || !s.target) { setRect(null); return; }
-    const selector = (isMobile && s.mobileTarget) ? s.mobileTarget : s.target;
+    const selector = s.target;
     // Find visible target — skip hidden elements (e.g. desktop nav when on mobile)
     const allMatches = document.querySelectorAll(selector);
     let el: Element | null = null;
@@ -567,6 +564,11 @@ function getPositionStyle(rect: DOMRect, position: string): React.CSSProperties 
 
   // On mobile, if the target is inside the header, place card below the full header
   if (isMobileView) {
+    // A target in the lower half of the viewport (e.g. the bottom tab bar) needs
+    // its card placed above it, or the card would render off the bottom edge.
+    if (rect.top > window.innerHeight / 2) {
+      return { bottom: window.innerHeight - rect.top + gap, left: centerX };
+    }
     const header = document.querySelector("header");
     const headerBottom = header ? header.getBoundingClientRect().bottom : rect.bottom;
     const cardTop = Math.max(rect.bottom, headerBottom) + gap;

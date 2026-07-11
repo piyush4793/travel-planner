@@ -1,8 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent, within } from "@testing-library/react";
 import PlanPlacesStep, { type PlacesUnit } from "../components/views/plan/PlanPlacesStep";
-import type { BudgetBasis } from "../core/utils/budget";
-import type { TripPlan } from "../core/utils/tripPlans";
 import type { CountryRule } from "../core/data/itineraryRules";
 
 type RuleDay = CountryRule["cities"][string]["days"][number];
@@ -41,30 +39,12 @@ function makeUnit(name: string, cities: string[], over: Partial<PlacesUnit> = {}
   };
 }
 
-const PLAN: TripPlan = {
-  duration: "10 days",
-  costPerPerson: "₹3L – ₹5L",
-  days: [{ label: "Day 1 — Somewhere", activities: ["x"] }],
-  note: "route",
-  costBasis: "couple",
-};
-
-function renderStep(
-  units: PlacesUnit[],
-  opts: { basis?: BudgetBasis; setBudgetBasis?: (b: BudgetBasis) => void } = {},
-) {
-  return render(
-    <PlanPlacesStep
-      units={units}
-      plan={PLAN}
-      budgetBasis={opts.basis ?? "couple"}
-      setBudgetBasis={opts.setBudgetBasis ?? vi.fn()}
-    />,
-  );
+function renderStep(units: PlacesUnit[], activeIndex = 0) {
+  return render(<PlanPlacesStep units={units} activeIndex={activeIndex} />);
 }
 
 describe("PlanPlacesStep", () => {
-  it("renders a single stop with its static name, heading, and no country switcher", () => {
+  it("renders a single stop with its heading and no country switcher (switcher lives in the header)", () => {
     renderStep([makeUnit("Norway", ["Oslo", "Bergen"])]);
     expect(screen.queryByRole("button", { name: /Switch country/i })).not.toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Cities in Norway/i })).toBeInTheDocument();
@@ -72,42 +52,25 @@ describe("PlanPlacesStep", () => {
     expect(screen.getByRole("button", { name: "Bergen" })).toBeInTheDocument();
   });
 
-  it("shows one country at a time in a multi-stop route and switches on demand", () => {
-    renderStep([
+  it("renders only the controlled active country's cities in a multi-stop route", () => {
+    const units = [
       makeUnit("Norway", ["Oslo"], { customDays: 8 }),
       makeUnit("Denmark", ["Copenhagen"], { customDays: 4 }),
-    ]);
+    ];
+    const { rerender } = renderStep(units, 0);
     expect(screen.getByRole("heading", { name: /Cities in Norway/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Oslo" })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Copenhagen" })).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("button", { name: /Switch country/i }));
-    fireEvent.click(screen.getByRole("menuitemradio", { name: /Denmark/i }));
+    rerender(<PlanPlacesStep units={units} activeIndex={1} />);
     expect(screen.getByRole("heading", { name: /Cities in Denmark/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Copenhagen" })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Oslo" })).not.toBeInTheDocument();
   });
 
-  it("shows the countries stat only for a multi-stop route", () => {
-    const { rerender } = renderStep([makeUnit("Norway", ["Oslo"])]);
-    expect(screen.queryByText(/countries/i)).not.toBeInTheDocument();
-    rerender(
-      <PlanPlacesStep
-        units={[makeUnit("Norway", ["Oslo"]), makeUnit("Denmark", ["Copenhagen"])]}
-        plan={PLAN}
-        budgetBasis="couple"
-        setBudgetBasis={vi.fn()}
-      />,
-    );
-    expect(screen.getByText(/countries/i)).toBeInTheDocument();
-  });
-
-  it("changes the trip-scoped who's-going basis", () => {
-    const setBudgetBasis = vi.fn();
-    renderStep([makeUnit("Norway", ["Oslo"])], { setBudgetBasis });
-    fireEvent.click(screen.getByRole("button", { name: /Who's going/i }));
-    fireEvent.click(screen.getByRole("menuitemradio", { name: /Solo/i }));
-    expect(setBudgetBasis).toHaveBeenCalledWith("solo");
+  it("clamps an out-of-range active index to the last stop", () => {
+    renderStep([makeUnit("Norway", ["Oslo"]), makeUnit("Denmark", ["Copenhagen"])], 9);
+    expect(screen.getByRole("heading", { name: /Cities in Denmark/i })).toBeInTheDocument();
   });
 
   it("shows Reset-to-suggested only for a hand-picked active stop and wires it", () => {

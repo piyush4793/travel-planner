@@ -33,8 +33,8 @@ const BACKUP_KEYS = [
   LS_KEYS.CUSTOMS,
   LS_KEYS.DELETED,
   LS_KEYS.HOME_COUNTRY,
-  LS_KEYS.TRIP_CUSTOMS,
-  LS_KEYS.TRIP_DELETED,
+  LS_KEYS.BUDGET_BASIS,
+  LS_KEYS.SAVED_TRIPS,
   LS_KEYS.FEATURES,
   LS_KEYS.LLM_PROVIDER,
   LS_KEYS.AI_PLANS,
@@ -49,6 +49,15 @@ const isStringArray = (v: unknown): v is string[] => Array.isArray(v) && v.every
 const isObjectRecord = (v: unknown): v is Record<string, unknown> => !!v && typeof v === "object" && !Array.isArray(v);
 const isNamedObjectArray = (v: unknown): boolean => Array.isArray(v) && v.every((x) => isObjectRecord(x) && typeof (x as { name?: unknown }).name === "string");
 const isAiPlanMap = (v: unknown): boolean => isObjectRecord(v) && Object.values(v).every((arr) => Array.isArray(arr));
+const isSavedTripArray = (v: unknown): boolean =>
+  Array.isArray(v) &&
+  v.every(
+    (x) =>
+      isObjectRecord(x) &&
+      typeof (x as { id?: unknown }).id === "string" &&
+      typeof (x as { name?: unknown }).name === "string" &&
+      Array.isArray((x as { stops?: unknown }).stops),
+  );
 
 const BACKUP_VALIDATORS: Record<string, (v: unknown) => boolean> = {
   [LS_KEYS.MY_LIST]: isStringArray,
@@ -57,8 +66,8 @@ const BACKUP_VALIDATORS: Record<string, (v: unknown) => boolean> = {
   [LS_KEYS.CUSTOMS]: isNamedObjectArray,
   [LS_KEYS.DELETED]: isStringArray,
   [LS_KEYS.HOME_COUNTRY]: (v) => typeof v === "string",
-  [LS_KEYS.TRIP_CUSTOMS]: isNamedObjectArray,
-  [LS_KEYS.TRIP_DELETED]: isStringArray,
+  [LS_KEYS.BUDGET_BASIS]: (v) => v === "solo" || v === "couple" || v === "family4",
+  [LS_KEYS.SAVED_TRIPS]: isSavedTripArray,
   [LS_KEYS.FEATURES]: isObjectRecord,
   [LS_KEYS.LLM_PROVIDER]: (v) => typeof v === "string",
   [LS_KEYS.AI_PLANS]: isAiPlanMap,
@@ -161,7 +170,7 @@ export function parseBackupFile(file: File): Promise<BackupPreview> {
         }
         const myList = Array.isArray(data[LS_KEYS.MY_LIST]) ? (data[LS_KEYS.MY_LIST] as unknown[]).length : 0;
         const customs = Array.isArray(data[LS_KEYS.CUSTOMS]) ? (data[LS_KEYS.CUSTOMS] as unknown[]).length : 0;
-        const trips = Array.isArray(data[LS_KEYS.TRIP_CUSTOMS]) ? (data[LS_KEYS.TRIP_CUSTOMS] as unknown[]).length : 0;
+        const trips = Array.isArray(data[LS_KEYS.SAVED_TRIPS]) ? (data[LS_KEYS.SAVED_TRIPS] as unknown[]).length : 0;
         const aiPlans = data[LS_KEYS.AI_PLANS] && typeof data[LS_KEYS.AI_PLANS] === "object"
           ? Object.values(data[LS_KEYS.AI_PLANS] as Record<string, unknown[]>).reduce((sum, arr) => sum + (Array.isArray(arr) ? arr.length : 0), 0)
           : 0;
@@ -487,7 +496,7 @@ export function isBackupOverdue(): boolean {
   if (!last) {
     // First launch or no backup ever — only nag if user has actual data
     const hasCustoms = (loadLS<unknown[]>(LS_KEYS.CUSTOMS, [])?.length ?? 0) > 0;
-    const hasTrips = (loadLS<unknown[]>(LS_KEYS.TRIP_CUSTOMS, [])?.length ?? 0) > 0;
+    const hasTrips = (loadLS<unknown[]>(LS_KEYS.SAVED_TRIPS, [])?.length ?? 0) > 0;
     const hasPlans = Object.keys(loadLS<Record<string, unknown>>(LS_KEYS.AI_PLANS, {}) ?? {}).length > 0;
     if (!hasCustoms && !hasTrips && !hasPlans) return false;
     return true;
@@ -544,7 +553,7 @@ export function autoBackupIfOverdue(): boolean {
 export function hasAnyLocalData(): boolean {
   const hasList = (loadLS<unknown[]>(LS_KEYS.MY_LIST, [])?.length ?? 0) > 0;
   const hasCustoms = (loadLS<unknown[]>(LS_KEYS.CUSTOMS, [])?.length ?? 0) > 0;
-  const hasTrips = (loadLS<unknown[]>(LS_KEYS.TRIP_CUSTOMS, [])?.length ?? 0) > 0;
+  const hasTrips = (loadLS<unknown[]>(LS_KEYS.SAVED_TRIPS, [])?.length ?? 0) > 0;
   const hasPlans = Object.keys(loadLS<Record<string, unknown>>(LS_KEYS.AI_PLANS, {}) ?? {}).length > 0;
   return hasList || hasCustoms || hasTrips || hasPlans;
 }

@@ -16,7 +16,6 @@ export type FeatureFlags = {
   llmPlanning: boolean;
   pdfExport: boolean;
   paidFeatures: boolean;
-  tripGroups: boolean;
   guidedPlanning: boolean;
   multiCountryPlanning: boolean;
 };
@@ -29,7 +28,6 @@ const DEFAULTS: FeatureFlags = {
   llmPlanning: true,
   pdfExport: true,
   paidFeatures: true,
-  tripGroups: false,
   guidedPlanning: true,
   multiCountryPlanning: true,
 };

@@ -15,7 +15,6 @@ const FLAG_META: Record<keyof FeatureFlags, FlagMeta> = {
   llmPlanning:           { label: "AI Trip Planning", description: "Chat, itinerary generation, save plans" },
   pdfExport:             { label: "PDF Export", description: "Export itineraries as PDF from country panel" },
   searchableHomeCountry: { label: "Searchable Home Country", description: "Dropdown with all 197 countries" },
-  tripGroups:            { label: "Trip Groups", description: "Create multi-country trip groups" },
   guidedPlanning:        { label: "Guided Planning", description: "One-way Plan tab funnel (Who → Vibe → Length → Cities)" },
   multiCountryPlanning:  { label: "Multi-Country Planning", description: "Select multiple countries on the Plan page to build one multi-country trip" },
 };

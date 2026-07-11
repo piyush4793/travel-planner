@@ -1,6 +1,6 @@
 import { useState, useCallback, useMemo, useRef, useEffect, Suspense } from "react";
 import type maplibregl from "maplibre-gl";
-import type { Country, VisitedFilter } from "./core/types";
+import type { Country } from "./core/types";
 import DevFlagPanel from "./components/shared/DevFlagPanel";
 import { lazyWithRetry as lazy } from "./utils/lazyWithRetry";
 
@@ -8,18 +8,18 @@ import { lazyWithRetry as lazy } from "./utils/lazyWithRetry";
 const MapView = lazy(() => import("./components/views/MapView"));
 const CalendarView = lazy(() => import("./components/views/CalendarView"));
 const DiscoverView = lazy(() => import("./components/views/DiscoverView"));
-const TripsView = lazy(() => import("./components/views/TripsView"));
+const MyTripsView = lazy(() => import("./components/views/MyTripsView"));
 const PlanView = lazy(() => import("./components/views/plan/PlanView"));
 const CountryPanel = lazy(() => import("./components/country/CountryPanel"));
 import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
-import { applyFilters, type BudgetTier } from "./core/utils/filterLogic";
 import { useBudgetBasis } from "./hooks/useBudgetBasis";
 import { usePullToRefresh } from "./hooks/usePullToRefresh";
 import { loadLS, saveLS } from "./core/storage";
 import { LS_KEYS } from "./core/lsKeys";
 import { useHashView, type AppView } from "./hooks/useHashView";
 import { useCountryStore } from "./hooks/useCountryStore";
-import { useTripStore } from "./hooks/useTripStore";
+import { useSavedTrips } from "./hooks/useSavedTrips";
+import type { SavedTrip } from "./core/utils/savedTrips";
 import { useAiPlanStore } from "./hooks/useAiPlanStore";
 import { useBreakpoint } from "./hooks/useBreakpoint";
 import { useBackDismiss } from "./hooks/useBackDismiss";
@@ -39,7 +39,7 @@ const FreTour = lazy(() => import("./components/shared/FreTour"));
 
 const VIEW_META: Record<AppView, { icon: string; label: string }> = {
   plan: { icon: "🧭", label: "Plan" },
-  trips: { icon: "✈", label: "Trips" },
+  trips: { icon: "🧳", label: "Trips" },
   calendar: { icon: "📅", label: "Calendar" },
   discover: { icon: "🌍", label: "Discover" },
 };
@@ -55,15 +55,10 @@ export default function App() {
   const [view, setView] = useHashView(guidedPlanning ? "plan" : "trips");
   const activeView: AppView = view === "plan" && !guidedPlanning ? "trips" : view;
   const navViews = useMemo(
-    // Trips is being phased out of navigation as the app pivots to a Plan-first
-    // model; the view still exists (reachable by hash) but is no longer a header pill.
-    () => (Object.keys(VIEW_META) as AppView[]).filter((v) => (v !== "plan" || guidedPlanning) && v !== "trips"),
+    () => (Object.keys(VIEW_META) as AppView[]).filter((v) => v !== "plan" || guidedPlanning),
     [guidedPlanning],
   );
   const [homeCountry, setHomeCountry] = useState(() => loadLS(LS_KEYS.HOME_COUNTRY, "India"));
-  const [selectedMonth, setSelectedMonth] = useState<string[]>([]);
-  const [visitedFilter, setVisitedFilter] = useState<VisitedFilter>("all");
-  const [budgetFilter, setBudgetFilter] = useState<BudgetTier>("all");
   const { globalBasis, activeBasis, setGlobalBasis, setActiveBasis, reload: reloadBudgetBasis } = useBudgetBasis();
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const closeCountryPanel = useBackDismiss(selectedCountry !== null, () => setSelectedCountry(null));
@@ -74,7 +69,6 @@ export default function App() {
   const [chatAutoSend, setChatAutoSend] = useState(true);
   const [aiPlanResult, setAiPlanResult] = useState<LLMTripPlanResult | null>(null);
   const [cinematicActive, setCinematicActive] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const mainMapRef = useRef<maplibregl.Map | null>(null);
   const [backupBannerDismissed, setBackupBannerDismissed] = useState(false);
   const [restoreAvailable, setRestoreAvailable] = useState(false);
@@ -136,39 +130,41 @@ export default function App() {
     return () => window.removeEventListener("storage", handler);
   }, []);
 
-  const trips = useTripStore(store.myListNames, store.myListCountries);
+  const savedTrips = useSavedTrips();
+
+  // Opening a saved trip reseeds the Plan wizard. The nonce makes re-opening the
+  // same route re-apply (the wizard applies each nonce once).
+  const [planSeed, setPlanSeed] = useState<{ countries: string[]; nonce: number } | null>(null);
+  const openSavedTrip = useCallback((trip: SavedTrip) => {
+    setPlanSeed({ countries: trip.stops.map((s) => s.country), nonce: Date.now() });
+    setView("plan");
+  }, []);
 
   // Soft refresh (pull-to-refresh): re-hydrate every persisted store from
   // localStorage without a full page reload — picks up edits made in another
   // tab or by an external import/restore.
   const softRefresh = useCallback(() => {
     store.reload();
-    trips.reload();
+    savedTrips.reload();
     aiPlanStore.reload();
     reloadBudgetBasis();
     setHomeCountry(loadLS(LS_KEYS.HOME_COUNTRY, "India"));
     setLastBackupAt(loadLS<string>(LS_KEYS.LAST_BACKUP, ""));
-  }, [store.reload, trips.reload, aiPlanStore.reload, reloadBudgetBasis]);
+  }, [store.reload, savedTrips.reload, aiPlanStore.reload, reloadBudgetBasis]);
 
   // Disable the pull gesture while an overlay owns the screen, so its own
   // scrolling/gestures aren't hijacked.
   const overlayOpen =
     selectedCountry !== null || formTarget !== null || settingsOpen ||
-    chatOpen || aiPlanResult !== null || menuOpen || cinematicActive;
+    chatOpen || aiPlanResult !== null || cinematicActive;
   const { containerRef: pullRef, pullDistance, refreshing, threshold: pullThreshold } = usePullToRefresh({
     onRefresh: softRefresh,
     enabled: isMobile && !overlayOpen,
   });
 
-  const filtered = useMemo(
-    () => applyFilters(store.myListCountries, selectedMonth, [], store.visited.set, visitedFilter, budgetFilter, activeBasis),
-    [store.myListCountries, selectedMonth, store.visited.set, visitedFilter, budgetFilter, activeBasis],
-  );
-  // For Trips: apply all filters EXCEPT visited (Trips filters at trip-card level)
-  const filteredForTrips = useMemo(
-    () => applyFilters(store.myListCountries, selectedMonth, [], store.visited.set, "all", budgetFilter, activeBasis),
-    [store.myListCountries, selectedMonth, store.visited.set, budgetFilter, activeBasis],
-  );
+  // The hidden cinematic MapView shows every My List destination; the former
+  // app-level Trips filters were retired along with the old Trips dashboard.
+  const filtered = store.myListCountries;
   const comboNames = selectedCountry?.combo ?? [];
 
   // Resolve any country by name (My List → all seed/custom → catalog stub) so
@@ -268,42 +264,30 @@ export default function App() {
 
   return (
     <div className="flex flex-col h-viewport overflow-hidden bg-slate-50">
-      {/* Header */}
-      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-4 pt-safe pb-2 md:pb-2.5 md:pt-2.5 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-900 text-white shrink-0 shadow-md">
-        <button onClick={() => setView(guidedPlanning ? "plan" : "trips")} className="flex items-center gap-2 shrink-0 hover:opacity-90 transition-opacity" aria-label="Home">
+      {/* Header — luxury ivory/emerald top bar */}
+      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-5 pt-safe pb-2 md:pb-2.5 md:pt-2.5 bg-[#fbf9f3]/90 backdrop-blur-md border-b border-[#e7e1d2] text-[#2c2a24] shrink-0">
+        <button onClick={() => setView(guidedPlanning ? "plan" : "trips")} className="flex items-center gap-2 shrink-0 rounded-lg hover:opacity-80 transition-opacity focus-ring" aria-label="Home">
           {/* Brand icon — all screens */}
           <img src="icon-192.svg" alt="Roamwise" className="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-lg" />
-          <span className="hidden md:inline text-lg font-black tracking-tight">Roamwise</span>
+          <span className="hidden md:inline text-lg font-black tracking-tight text-emerald-900">Roamwise</span>
         </button>
 
         {/* Desktop nav pills */}
-        <div className="hidden md:flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto" role="navigation" aria-label="Main navigation">
+        <div className="hidden md:flex items-center gap-0.5 bg-[#efe9db] rounded-full p-0.5 mx-auto" role="navigation" aria-label="Main navigation">
           {navViews.map((v) => (
             <button key={v} onClick={() => setView(v)}
               data-tour={`nav-${v}`}
               aria-current={activeView === v ? "page" : undefined}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors focus-ring ${
-                activeView === v ? "bg-white text-emerald-800 shadow-sm" : "text-white/80 hover:text-white"
+                activeView === v ? "bg-emerald-700 text-white shadow-sm" : "text-[#6f6a5d] hover:text-emerald-800"
               }`}>
               <span aria-hidden="true">{VIEW_META[v].icon}</span> {VIEW_META[v].label}
             </button>
           ))}
         </div>
 
-        {/* Mobile nav pills — icon over label to stay compact (no horizontal scroll) */}
-        <div className="flex md:hidden min-w-0 items-center gap-0.5 bg-black/20 rounded-full p-0.5 mx-auto" role="navigation" aria-label="Main navigation">
-          {navViews.map((v) => (
-            <button key={v} onClick={() => setView(v)}
-              data-tour={isMobile ? `nav-${v}` : undefined}
-              aria-current={activeView === v ? "page" : undefined}
-              className={`flex min-h-[36px] flex-col items-center justify-center gap-0.5 whitespace-nowrap rounded-full px-2 py-1 text-[9px] font-bold leading-none transition-colors focus-ring ${
-                activeView === v ? "bg-white text-emerald-800 shadow-sm" : "text-white/80 hover:text-white"
-              }`}>
-              <span aria-hidden="true" className="text-sm leading-none">{VIEW_META[v].icon}</span>
-              {VIEW_META[v].label}
-            </button>
-          ))}
-        </div>
+        {/* Mobile spacer — navigation lives in the bottom tab bar; pushes actions right */}
+        <div className="md:hidden flex-1" aria-hidden="true" />
 
         {/* Desktop actions */}
         <div className="hidden md:flex items-center gap-2 shrink-0">
@@ -318,54 +302,32 @@ export default function App() {
           />
           <button onClick={() => setSettingsOpen(true)}
             data-tour="settings"
-            className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15 focus-ring"
+            className="flex items-center justify-center w-8 h-8 bg-[#efe9db] hover:bg-[#e5dfce] rounded-full text-sm transition-colors border border-[#e0dac9] focus-ring"
             aria-label="Settings">
             ⚙️
           </button>
           <DevFlagPanel />
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMenuOpen((o) => !o)}
-          data-tour="mobile-menu"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-          aria-haspopup="true"
-          aria-controls="mobile-nav-menu"
-          className="md:hidden flex items-center justify-center w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-base transition-colors shrink-0 focus-ring"
-        >
-          {menuOpen ? "✕" : "☰"}
-        </button>
-      </header>
-
-      {/* Mobile menu slide-down */}
-      {menuOpen && isMobile && (
-        <div id="mobile-nav-menu" className="md:hidden bg-gradient-to-b from-emerald-700 to-emerald-800 text-white px-4 py-3 space-y-3 shrink-0 shadow-lg">
-          <div className="flex items-center gap-2 flex-wrap">
-            <AppInstallShare
-              canInstall={installPrompt.canPrompt}
-              isIOS={installPrompt.isIOS}
-              isStandalone={installPrompt.isInstalled}
-              installedInBrowser={installPrompt.installedInBrowser}
-              onInstall={() => { void installPrompt.promptInstall(); setMenuOpen(false); }}
-              onOpenApp={() => { installPrompt.openApp(); setMenuOpen(false); }}
-              variant="menu"
-            />
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => { setSettingsOpen(true); setMenuOpen(false); }}
-              className="flex items-center gap-2 min-h-[36px] pl-1 pr-3 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors border border-white/15 focus-ring"
-              aria-label="Settings"
-            >
-              <span className="flex items-center justify-center w-8 h-8 rounded-full text-sm" aria-hidden="true">⚙️</span>
-              <span className="text-xs font-medium text-white/85">Settings</span>
-            </button>
-            <DevFlagPanel />
-          </div>
+        {/* Mobile actions — compact Install/Share + Settings (no hamburger menu) */}
+        <div className="flex md:hidden items-center gap-1.5 shrink-0">
+          <AppInstallShare
+            canInstall={installPrompt.canPrompt}
+            isIOS={installPrompt.isIOS}
+            isStandalone={installPrompt.isInstalled}
+            installedInBrowser={installPrompt.installedInBrowser}
+            onInstall={installPrompt.promptInstall}
+            onOpenApp={installPrompt.openApp}
+            variant="header"
+          />
+          <button onClick={() => setSettingsOpen(true)}
+            data-tour="settings"
+            className="flex items-center justify-center w-9 h-9 bg-[#efe9db] hover:bg-[#e5dfce] rounded-full text-base transition-colors border border-[#e0dac9] focus-ring"
+            aria-label="Settings">
+            ⚙️
+          </button>
         </div>
-      )}
+      </header>
 
       {/* Fresh-device restore offer — data found in the backup location */}
       {restoreAvailable && (
@@ -451,7 +413,9 @@ export default function App() {
             setBudgetBasis={setActiveBasis}
             homeCountry={homeCountry}
             onGoDiscover={() => setView("discover")}
-            onAddToList={store.addToList}
+            onSaveTrip={savedTrips.upsert}
+            isTripFavorite={(name) => savedTrips.savedTrips.some((t) => t.name === name && !!t.favorite)}
+            onToggleTripFavorite={savedTrips.toggleFavoriteByName}
             onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
             onToggleVisited={store.visited.toggle}
             favoriteNames={store.favorites.set}
@@ -460,26 +424,15 @@ export default function App() {
             aiPlanCountFor={isEnabled("llmPlanning") ? aiPlanCountFor : undefined}
             mainMapRef={mainMapRef}
             onCinematicChange={setCinematicActive}
+            openTrip={planSeed}
           />
         ) : activeView === "trips" ? (
-          <TripsView
-            countries={filteredForTrips}
-            visitedNames={store.visited.set}
-            favorites={store.favorites.set}
-            visitedFilter={visitedFilter}
-            setVisitedFilter={setVisitedFilter}
-            selectedMonth={selectedMonth}
-            setMonth={setSelectedMonth}
-            budgetFilter={budgetFilter}
-            setBudgetFilter={setBudgetFilter}
-            budgetBasis={activeBasis}
-            setBudgetBasis={setActiveBasis}
-            defaultBasis={globalBasis}
-            onSelect={setSelectedCountry}
-            tripGroups={trips.mergedTripGroups}
-            onSaveTrip={trips.saveTrip}
-            onDeleteTrip={trips.deleteTrip}
-            onSearchActivity={lifecycle.notifySearch}
+          <MyTripsView
+            savedTrips={savedTrips.savedTrips}
+            onToggleFavorite={savedTrips.toggleFavorite}
+            onRemove={savedTrips.remove}
+            onOpen={openSavedTrip}
+            onGoPlan={() => setView("plan")}
           />
         ) : activeView === "calendar" ? (
           <CalendarView
@@ -525,6 +478,35 @@ export default function App() {
         />
         </Suspense>
       </div>
+
+      {/* Mobile bottom tab bar — primary navigation on small screens */}
+      <nav
+        className="md:hidden shrink-0 flex items-stretch border-t border-[#e7e1d2] bg-[#fbf9f3] pb-safe shadow-[0_-1px_6px_rgba(0,0,0,0.05)]"
+        aria-label="Main navigation"
+      >
+        {navViews.map((v) => {
+          const active = activeView === v;
+          return (
+            <button
+              key={v}
+              onClick={() => setView(v)}
+              data-tour={isMobile ? `nav-${v}` : undefined}
+              aria-current={active ? "page" : undefined}
+              className={`flex flex-1 min-h-[52px] flex-col items-center justify-center gap-1 py-1.5 text-[10px] font-semibold leading-none transition-colors focus-ring ${
+                active ? "text-emerald-800" : "text-[#8a8577] hover:text-[#5f5b50]"
+              }`}
+            >
+              <span
+                aria-hidden="true"
+                className={`flex h-6 w-11 items-center justify-center rounded-full text-lg leading-none transition-colors ${active ? "bg-emerald-100" : ""}`}
+              >
+                {VIEW_META[v].icon}
+              </span>
+              {VIEW_META[v].label}
+            </button>
+          );
+        })}
+      </nav>
 
       {!lifecycleOverlayOpen && (
         <LifecyclePromptToast prompt={lifecycle.prompt} onAct={lifecycle.act} onDismiss={lifecycle.dismiss} />

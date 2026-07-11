@@ -123,6 +123,7 @@ describe("tripPlans — P0", () => {
       const plan = generateTripPlan(COUNTRY_WITH_CITIES, "custom", ["CityA", "CityB", "CityC"], 2);
 
       expect(plan.warning).toContain("tight");
+      expect(plan.warning).not.toContain("⚠️");
       expect(plan.duration).toBe("3 days");
     });
   });

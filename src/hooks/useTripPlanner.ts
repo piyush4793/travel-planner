@@ -24,6 +24,12 @@ export interface UnitPlan {
   orderedCities: CityEntry[];
   /** Committed length for this stop (auto-seeded, or pinned by editing). */
   customDays: number;
+  /** Recommended length for this stop from its vibe/style/budget (the auto-seed). */
+  recommendedDays: number;
+  /** Max plannable days for this stop (rule bound, clamped ≥ 1). */
+  maxDays: number;
+  /** Whether the length was pinned by the traveller (auto-seed stops overriding). */
+  daysPinned: boolean;
   /** Hand-picked cities; empty means "follow the auto plan". */
   selectedCities: string[];
   /** The unit's own cities the auto plan visits — pre-checked when not curated. */
@@ -36,6 +42,12 @@ export interface UnitPlan {
   plan: TripPlan;
   toggleCity: (city: string) => void;
   clearCities: () => void;
+  /** Pin this stop's length (the auto-seed effect stops overriding it). */
+  setDays: (days: number) => void;
+  /** Clear this stop's length pin so the recommended length re-seeds. */
+  resetDays: () => void;
+  /** Cities this stop's plan WOULD visit at a candidate length, without committing. */
+  projectCities: (days: number) => string[];
   /** Toggle one experience for THIS stop only (diverges from the trip seed). */
   toggleExperience: (exp: string) => void;
   /** Clear THIS stop's experience focus (explicit none, independent of others). */
@@ -138,6 +150,21 @@ export function useTripPlanner(
     });
   }, []);
 
+  const setDays = useCallback((unitName: string, days: number) => {
+    setState((prev) => {
+      const cur = prev[unitName] ?? { selectedCities: [], customDays: days, pinned: false, experiences: null };
+      return { ...prev, [unitName]: { ...cur, customDays: days, pinned: true } };
+    });
+  }, []);
+
+  const resetDays = useCallback((unitName: string) => {
+    setState((prev) => {
+      const cur = prev[unitName];
+      if (!cur || !cur.pinned) return prev;
+      return { ...prev, [unitName]: { ...cur, pinned: false } };
+    });
+  }, []);
+
   // Diverge one stop's focus from the trip seed. Starts from its effective focus
   // so the first toggle behaves predictably, then persists as an explicit override.
   const toggleExperience = useCallback((unitName: string, exp: string) => {
@@ -160,7 +187,10 @@ export function useTripPlanner(
     return units.map(({ country, rule }) => {
       const cur = state[country.name];
       const selectedCities = cur?.selectedCities ?? [];
-      const customDays = cur?.customDays ?? recommendedByName[country.name] ?? 7;
+      const recommendedDays = recommendedByName[country.name] ?? 7;
+      const customDays = cur?.customDays ?? recommendedDays;
+      const maxDays = Math.max(getMaxRuleDays(rule) ?? 30, 1);
+      const daysPinned = cur?.pinned ?? false;
 
       const cities = country.cities ?? [];
       const experienceOptions = cityExperienceOptions(cities);
@@ -185,6 +215,9 @@ export function useTripPlanner(
         rule,
         orderedCities,
         customDays,
+        recommendedDays,
+        maxDays,
+        daysPinned,
         selectedCities,
         autoSelectedCities,
         experiences,
@@ -192,11 +225,15 @@ export function useTripPlanner(
         plan,
         toggleCity: (city: string) => toggleCity(country.name, city),
         clearCities: () => clearCities(country.name),
+        setDays: (days: number) => setDays(country.name, days),
+        resetDays: () => resetDays(country.name),
+        projectCities: (days: number) =>
+          extractPlanCities(generateTripPlan(country, "custom", selectedCities, days, rule, basis, experiences).days),
         toggleExperience: (exp: string) => toggleExperience(country.name, exp),
         clearExperiences: () => clearExperiences(country.name),
       };
     });
-  }, [units, state, recommendedByName, seedExperiences, basis, toggleCity, clearCities, toggleExperience, clearExperiences]);
+  }, [units, state, recommendedByName, seedExperiences, basis, toggleCity, clearCities, setDays, resetDays, toggleExperience, clearExperiences]);
 
   const composedPlan = useCallback(
     (primary: TripSegment) =>

@@ -1,8 +1,6 @@
 import { memo, useEffect, useMemo, useState } from "react";
 import type { CityEntry } from "../../../core/types";
 import type { CountryRule } from "../../../core/data/itineraryRules";
-import { type TripPlan, extractPlanCities, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
-import { type BudgetBasis, BUDGET_BASIS_META, BUDGET_BASIS_ORDER } from "../../../core/utils/budget";
 import {
   decideCities,
   sortDecisions,
@@ -11,7 +9,6 @@ import {
   type CityDecision,
   type CitySort,
 } from "../../../core/utils/decideCities";
-import { getCountryFlag } from "../../../utils/countryFlags";
 import PlanMenu from "./PlanMenu";
 import PlanFilters from "./PlanFilters";
 import CityDetailModal from "./CityDetailModal";
@@ -44,18 +41,15 @@ export interface PlacesUnit {
 
 interface Props {
   units: PlacesUnit[];
-  /** Composed itinerary across every stop — drives the trip stats strip. */
-  plan: TripPlan | null;
-  /** Trip-scoped "who's going" basis (drives the budget figure). */
-  budgetBasis: BudgetBasis;
-  setBudgetBasis: (b: BudgetBasis) => void;
+  /** Controlled active-country index (shared with the header switcher). */
+  activeIndex: number;
 }
 
 function pluralize(n: number, word: string): string {
   return `${n} ${word}${n === 1 ? "" : "s"}`;
 }
 
-function includedCount(unit: PlacesUnit): number {
+export function includedCount(unit: PlacesUnit): number {
   return unit.selectedCities.length > 0 ? unit.selectedCities.length : unit.autoSelectedCities.length;
 }
 
@@ -154,90 +148,6 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
   );
 });
 
-function CountrySwitcher({ units, activeIndex, onSelect }: { units: PlacesUnit[]; activeIndex: number; onSelect: (i: number) => void }) {
-  const active = units[activeIndex];
-  return (
-    <PlanMenu
-      ariaLabel="Switch country"
-      width={340}
-      triggerClassName="flex min-w-0 max-w-full items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-white transition-colors hover:bg-white/15 focus-ring-emerald"
-      trigger={
-        <>
-          <span aria-hidden="true">{getCountryFlag(active.name)}</span>
-          <span className="min-w-0 line-clamp-1 font-display text-base font-semibold">{active.name}</span>
-          {CARET}
-        </>
-      }
-    >
-      {(close) => (
-        <ul className="max-h-[60vh] overflow-y-auto py-1">
-          {units.map((u, i) => (
-            <li key={u.name}>
-              <button
-                role="menuitemradio"
-                aria-checked={i === activeIndex}
-                onClick={() => { onSelect(i); close(); }}
-                className={`flex w-full items-center gap-3 px-4 py-3 text-left transition-colors focus-ring-emerald ${
-                  i === activeIndex ? "bg-emerald-50" : "hover:bg-[#faf8f1]"
-                }`}
-              >
-                <span className="w-4 shrink-0 text-emerald-600" aria-hidden="true">{i === activeIndex ? "✓" : ""}</span>
-                <span aria-hidden="true">{getCountryFlag(u.name)}</span>
-                <span className="min-w-0 flex-1 line-clamp-1 font-display text-[15px] font-semibold text-[#16241d]">{u.name}</span>
-                <span className="shrink-0 whitespace-nowrap text-[12px] font-medium text-[#8a8577]">
-                  {pluralize(includedCount(u), "place")} · {u.customDays}d
-                </span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </PlanMenu>
-  );
-}
-
-function WhoGoingMenu({ basis, setBasis }: { basis: BudgetBasis; setBasis: (b: BudgetBasis) => void }) {
-  const meta = BUDGET_BASIS_META[basis];
-  return (
-    <PlanMenu
-      ariaLabel="Who's going"
-      width={220}
-      triggerClassName="flex shrink-0 items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[13px] text-white transition-colors hover:bg-white/15 focus-ring-emerald"
-      trigger={
-        <>
-          <span aria-hidden="true">{meta.icon}</span>
-          <span className="font-semibold">{meta.label}</span>
-          {CARET}
-        </>
-      }
-    >
-      {(close) => (
-        <ul className="py-1">
-          {BUDGET_BASIS_ORDER.map((b) => {
-            const m = BUDGET_BASIS_META[b];
-            return (
-              <li key={b}>
-                <button
-                  role="menuitemradio"
-                  aria-checked={b === basis}
-                  onClick={() => { setBasis(b); close(); }}
-                  className={`flex w-full items-center gap-2.5 px-4 py-2.5 text-left text-[13px] transition-colors focus-ring-emerald ${
-                    b === basis ? "bg-emerald-50 font-semibold text-emerald-800" : "text-[#3c463f] hover:bg-[#faf8f1]"
-                  }`}
-                >
-                  <span className="w-3 text-emerald-600" aria-hidden="true">{b === basis ? "✓" : ""}</span>
-                  <span aria-hidden="true">{m.icon}</span>
-                  {m.label}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </PlanMenu>
-  );
-}
-
 function SortMenu({ sort, onChange }: { sort: CitySort; onChange: (s: CitySort) => void }) {
   const label = CITY_SORT_META.find((s) => s.key === sort)?.label ?? "Best match";
   return (
@@ -335,65 +245,25 @@ function UnitCities({ unit, sort }: { unit: PlacesUnit; sort: CitySort }) {
 
 /**
  * Places step — pick the cities for each stop as *decisions*, not checkboxes.
- * A consolidated dark header card carries identity (country switcher for a
- * multi-stop route, static name for one) + trip stats + the trip-scoped "who's
- * going" basis. Below it, a section title with an overflow-safe focus subline,
- * a single per-country "Filters" control (experiences today, extensible) and a
- * Sort control, then a two-up decision grid on wide screens. The step molds to
- * its data: a single stop hides the switcher and the countries stat. Experiences
- * are per-country — Basics seeds the trip vibe, Filters here diverges one stop.
+ * Identity, trip stats and the "who's going" basis now live in the shared
+ * {@link PlanTripHeader} (the header hosts the country switcher for a multi-stop
+ * route), so this step focuses purely on the decision surface: a section title
+ * with an overflow-safe focus subline, a single per-country "Filters" control
+ * (experiences today, extensible) and a Sort control, then a two-up decision
+ * grid on wide screens. The active country is controlled by the parent so the
+ * header switcher and this body stay in lock-step. Experiences are per-country —
+ * Basics seeds the trip vibe, Filters here diverges one stop.
  */
-function PlanPlacesStep({ units, plan, budgetBasis, setBudgetBasis }: Props) {
-  const multi = units.length > 1;
+function PlanPlacesStep({ units, activeIndex }: Props) {
   const [sort, setSort] = useState<CitySort>("best");
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  // Keep the active country valid as the route grows or shrinks.
-  useEffect(() => {
-    setActiveIndex((i) => Math.min(i, Math.max(0, units.length - 1)));
-  }, [units.length]);
 
   if (units.length === 0) return null;
-  const activeUnit = units[Math.min(activeIndex, units.length - 1)];
-
-  const totalDays = plan ? plan.days.length : units.reduce((sum, u) => sum + u.customDays, 0);
-  const totalPlaces = plan ? extractPlanCities(plan.days).length : units.reduce((sum, u) => sum + includedCount(u), 0);
+  const safeIndex = Math.min(Math.max(0, activeIndex), units.length - 1);
+  const activeUnit = units[safeIndex];
   const focus = summarizeFocus(activeUnit.activeExperiences);
 
   return (
     <div className="space-y-5">
-      {/* Consolidated header card */}
-      <div className="rounded-2xl bg-[#123a2b] px-4 py-3.5 text-white sm:px-5 sm:py-4">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          {multi ? (
-            <CountrySwitcher units={units} activeIndex={activeIndex} onSelect={setActiveIndex} />
-          ) : (
-            <div className="flex min-w-0 items-center gap-2">
-              <span aria-hidden="true">{getCountryFlag(activeUnit.name)}</span>
-              <span className="min-w-0 line-clamp-1 font-display text-lg font-semibold">{activeUnit.name}</span>
-            </div>
-          )}
-          <WhoGoingMenu basis={budgetBasis} setBasis={setBudgetBasis} />
-        </div>
-        <div className="mt-3 flex flex-wrap items-baseline gap-x-2.5 gap-y-1 text-[13px] text-white/80">
-          <span><span className="font-semibold text-white">{totalDays}</span> {totalDays === 1 ? "day" : "days"}</span>
-          <span aria-hidden="true" className="text-white/30">·</span>
-          <span><span className="font-semibold text-white">{totalPlaces}</span> {totalPlaces === 1 ? "place" : "places"}</span>
-          {multi && (
-            <>
-              <span aria-hidden="true" className="text-white/30">·</span>
-              <span><span className="font-semibold text-white">{units.length}</span> countries</span>
-            </>
-          )}
-          {plan && (
-            <span className="ml-auto whitespace-nowrap font-bold text-emerald-300">
-              {plan.costPerPerson}{" "}
-              <span title={planCostBasisLabel(plan)} aria-label={planCostBasisLabel(plan)}>{planCostBasisIcon(plan)}</span>
-            </span>
-          )}
-        </div>
-      </div>
-
       {/* Section header + controls */}
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div className="min-w-0">

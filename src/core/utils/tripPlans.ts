@@ -444,7 +444,7 @@ function getRuledItinerary(
   // to be expanded to each city's minimum stay.
   const warning =
     totalDays > customDays
-      ? `⚠️ ${customDays} day${customDays !== 1 ? "s" : ""} is tight for ${allocation.length} ${allocation.length !== 1 ? "cities" : "city"} — expanded to ${totalDays} days (minimum needed).`
+      ? `${customDays} day${customDays !== 1 ? "s" : ""} is tight for ${allocation.length} ${allocation.length !== 1 ? "cities" : "city"} — expanded to ${totalDays} days (minimum needed).`
       : undefined;
 
   // Note: key connections + practical tips
@@ -606,7 +606,7 @@ export function generateTripPlan(
     // Cities selected
     const minDays = selectedCities.length;
     const warning = customDays < minDays
-      ? `⚠️ ${customDays} days is tight for ${selectedCities.length} cities — consider adding ${minDays - customDays} more day${minDays - customDays !== 1 ? "s" : ""} or dropping a city.`
+      ? `${customDays} days is tight for ${selectedCities.length} cities — consider adding ${minDays - customDays} more day${minDays - customDays !== 1 ? "s" : ""} or dropping a city.`
       : undefined;
 
     return cityBasedPlan(country, selectedCities, Math.max(customDays, minDays), low, high, warning);
@@ -620,7 +620,7 @@ export function generateTripPlan(
 
     if (selectedCities.length > 0) {
       const warning = selectedCities.length > 3
-        ? `⚠️ ${selectedCities.length} cities in ~4 days is rushed — Touch & Go works best with 1–3 cities.`
+        ? `${selectedCities.length} cities in ~4 days is rushed — Touch & Go works best with 1–3 cities.`
         : undefined;
       return cityBasedPlan(country, selectedCities, totalDays, low, high, warning);
     }
@@ -667,7 +667,7 @@ export function generateTripPlan(
 
     if (selectedCities.length > 0) {
       const warning = selectedCities.length > 8
-        ? `⚠️ ${selectedCities.length} cities across ~10 days will feel rushed. Consider trimming to 4–6 cities.`
+        ? `${selectedCities.length} cities across ~10 days will feel rushed. Consider trimming to 4–6 cities.`
         : undefined;
       return cityBasedPlan(country, selectedCities, totalDays, low, high, warning);
     }

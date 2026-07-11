@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import PlanView from "../../components/views/plan/PlanView";
 import { setFeatureFlag } from "../../core/featureFlags";
 import type { Country } from "../../core/types";
@@ -21,7 +21,7 @@ const COUNTRY: Country = {
 function renderView(props: Partial<React.ComponentProps<typeof PlanView>> = {}) {
   const setBudgetBasis = vi.fn();
   const onGoDiscover = vi.fn();
-  const onAddToList = vi.fn();
+  const onToggleTripFavorite = vi.fn();
   const utils = render(
     <PlanView
       countries={[COUNTRY]}
@@ -30,11 +30,11 @@ function renderView(props: Partial<React.ComponentProps<typeof PlanView>> = {}) 
       setBudgetBasis={setBudgetBasis}
       homeCountry="India"
       onGoDiscover={onGoDiscover}
-      onAddToList={onAddToList}
+      onToggleTripFavorite={onToggleTripFavorite}
       {...props}
     />,
   );
-  return { setBudgetBasis, onGoDiscover, onAddToList, ...utils };
+  return { setBudgetBasis, onGoDiscover, onToggleTripFavorite, ...utils };
 }
 
 /** Advance the wizard to the review step by clicking the primary button. */
@@ -78,27 +78,18 @@ describe("PlanView — guided planner", () => {
     expect(onGoDiscover).toHaveBeenCalled();
   });
 
-  it("offers to add an explore (non-list) destination to the list", async () => {
+  it("favorites the saved trip from the Review save bar (acts on the trip, not countries)", async () => {
     const onToggleFavorite = vi.fn();
-    const { onAddToList } = renderView({ onToggleFavorite });
-    const exploreSection = screen.getByText(/Popular to explore/i).closest("section")!;
-    const firstExplore = within(exploreSection).getAllByRole("button")[0];
-    const name = firstExplore.textContent?.replace(/[^\x00-\x7F]/g, "").trim() ?? "";
-    fireEvent.click(firstExplore);
+    const { onToggleTripFavorite } = renderView({ onToggleFavorite });
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     await screen.findByText(/Who's going\?/i);
-    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const addBtn = await screen.findByRole("button", { name: new RegExp(`Add ${escaped} to favorites`, "i") });
-    fireEvent.click(addBtn);
-    // "Add to favorites" both saves to My List and stars the destination.
-    expect(onAddToList).toHaveBeenCalledWith(name);
-    expect(onToggleFavorite).toHaveBeenCalledWith(name);
-  });
-
-  it("does not offer add-to-list for a destination already in the list", async () => {
-    renderView();
-    fireEvent.click(screen.getByRole("button", { name: /Testland \(no rule\)/i }));
-    await screen.findByText(/Who's going\?/i);
-    expect(screen.queryByRole("button", { name: /to your list/i })).not.toBeInTheDocument();
+    // Advance to Review, where the trip auto-saves and the favorite toggle shows.
+    goToReview();
+    const favBtn = await screen.findByRole("button", { name: /Favorite this trip/i });
+    fireEvent.click(favBtn);
+    // Favoriting acts on the saved trip snapshot — never the country favorite set.
+    expect(onToggleTripFavorite).toHaveBeenCalledWith("Testland (no rule)");
+    expect(onToggleFavorite).not.toHaveBeenCalled();
   });
 
   it("starts the wizard on the first question after picking a country", async () => {
@@ -137,7 +128,7 @@ describe("PlanView — guided planner", () => {
     goToReview();
     await screen.findByRole("button", { name: /Share your trip plan/i });
     // Footer is hidden below lg (jsdom has no media query), so include hidden.
-    fireEvent.click(screen.getByRole("button", { name: /Plan another trip/i, hidden: true }));
+    fireEvent.click(screen.getByRole("button", { name: /Plan another/i, hidden: true }));
     await screen.findByText(/Where do you plan to go next/i);
   });
 
@@ -268,7 +259,6 @@ describe("PlanView — multi-country Basics", () => {
         setBudgetBasis={vi.fn()}
         homeCountry="India"
         onGoDiscover={vi.fn()}
-        onAddToList={vi.fn()}
       />,
     );
     fireEvent.click(screen.getByRole("button", { name: /Testland \(no rule\)/i }));
@@ -303,7 +293,6 @@ describe("PlanView — multi-country Basics", () => {
         setBudgetBasis={vi.fn()}
         homeCountry="India"
         onGoDiscover={vi.fn()}
-        onAddToList={vi.fn()}
       />,
     );
     for (const u of units) fireEvent.click(screen.getByRole("button", { name: new RegExp(u.name, "i") }));
@@ -334,7 +323,6 @@ describe("PlanView — multi-country Basics", () => {
         setBudgetBasis={vi.fn()}
         homeCountry="India"
         onGoDiscover={vi.fn()}
-        onAddToList={vi.fn()}
       />,
     );
     fireEvent.click(screen.getByRole("button", { name: /^Norway/i }));
@@ -344,30 +332,49 @@ describe("PlanView — multi-country Basics", () => {
     expect(await screen.findByText(/What are you into\?/i)).toBeInTheDocument();
   });
 
-  it("adds all unsaved destinations to the list from the route banner", async () => {
-    const onAddToList = vi.fn();
-    // Empty My List → picks come from the explore tier, so they're all unsaved.
+  it("persists the whole route as a saved trip snapshot once it reaches Review", async () => {
+    const onSaveTrip = vi.fn();
     render(
       <PlanView
-        countries={[]}
+        countries={[COUNTRY, COUNTRY_B]}
         visitedNames={new Set()}
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
         onGoDiscover={vi.fn()}
-        onAddToList={onAddToList}
+        onSaveTrip={onSaveTrip}
       />,
     );
-    const exploreSection = screen.getByText(/Popular to explore/i).closest("section")!;
-    const chips = within(exploreSection).getAllByRole("button").slice(0, 2);
-    const names = chips.map((c) => c.textContent?.replace(/[^\x00-\x7F]/g, "").trim() ?? "");
-    fireEvent.click(chips[0]);
-    fireEvent.click(chips[1]);
+    fireEvent.click(screen.getByRole("button", { name: /Testland \(no rule\)/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Otherland \(no rule\)/i }));
     fireEvent.click(screen.getByRole("button", { name: /Plan trip with 2 countries/i }));
     await screen.findByText(/Who's going\?/i);
-    const addAll = screen.getByRole("button", { name: /Add 2 destinations to favorites/i });
-    fireEvent.click(addAll);
-    expect(onAddToList).toHaveBeenCalledWith(names[0]);
-    expect(onAddToList).toHaveBeenCalledWith(names[1]);
+    // Advance to Review; the route persists as a snapshot on arrival.
+    for (let i = 0; i < 5; i++) {
+      const btn = screen.queryByRole("button", { name: /Continue|See my plan|Review my trip/i });
+      if (!btn) break;
+      fireEvent.click(btn);
+    }
+    await waitFor(() => {
+      const calls = onSaveTrip.mock.calls;
+      const last = calls[calls.length - 1]?.[0];
+      expect(last?.stops.map((s: { country: string }) => s.country)).toEqual([
+        "Testland (no rule)",
+        "Otherland (no rule)",
+      ]);
+    });
+    const calls = onSaveTrip.mock.calls;
+    const snap = calls[calls.length - 1][0];
+    expect(snap).toMatchObject({
+      name: "Testland (no rule) → Otherland (no rule)",
+      basis: "couple",
+    });
+  });
+
+  it("jumps to the review step when opening a saved trip", async () => {
+    renderView({ openTrip: { countries: ["Testland (no rule)"], nonce: 1 } });
+    await waitFor(() => {
+      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    });
   });
 });
