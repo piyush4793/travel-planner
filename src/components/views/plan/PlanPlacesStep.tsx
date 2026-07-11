@@ -76,7 +76,7 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
   const hasRail = d.recDays > 0 || d.bestWindow !== null || d.avoidWindow !== null;
   return (
     <div
-      className={`relative flex w-full items-start gap-3.5 rounded-xl border px-3.5 py-3 text-left transition-colors ${
+      className={`relative flex w-full flex-wrap items-start gap-3.5 rounded-xl border px-3.5 py-3 text-left transition-colors ${
         d.included
           ? "border-emerald-200 bg-emerald-50/70 hover:border-emerald-300"
           : "border-line bg-white/70 hover:border-line-strong"
@@ -137,11 +137,14 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
         )}
       </span>
 
+      {/* One rail element, two layouts: a full-width strip below the content on
+          mobile, a right-hand column on ≥sm — so the brief never fights the
+          season rail for width at 375px, with no duplicated DOM. */}
       {hasRail && (
-        <span className="pointer-events-none flex w-[84px] shrink-0 flex-col items-end gap-0.5 self-stretch border-l border-surface-3 pl-3 text-right">
-          {d.recDays > 0 && <span className="font-display text-[15px] font-bold text-ink-1">≈{d.recDays}d</span>}
-          {d.bestWindow && <span className="whitespace-nowrap text-[10.5px] text-ink-3">☀ {d.bestWindow}</span>}
-          {d.avoidWindow && <span className="whitespace-nowrap text-[10.5px] text-amber-700">⚠ {d.avoidWindow}</span>}
+        <span className="pointer-events-none order-last mt-1.5 flex w-full flex-wrap items-center gap-x-3 gap-y-0.5 border-t border-surface-3 pt-1.5 sm:mt-0 sm:w-[84px] sm:flex-col sm:items-end sm:gap-0.5 sm:self-stretch sm:border-l sm:border-t-0 sm:pl-3 sm:pt-0 sm:text-right">
+          {d.recDays > 0 && <span className="font-display text-[13px] font-bold text-ink-1 sm:text-[15px]">≈{d.recDays}d</span>}
+          {d.bestWindow && <span className="text-[10.5px] text-ink-3 sm:whitespace-nowrap">☀ {d.bestWindow}</span>}
+          {d.avoidWindow && <span className="text-[10.5px] text-amber-700 sm:whitespace-nowrap">⚠ {d.avoidWindow}</span>}
         </span>
       )}
     </div>
@@ -153,6 +156,8 @@ function SortMenu({ sort, onChange }: { sort: CitySort; onChange: (s: CitySort) 
   return (
     <PlanMenu
       ariaLabel="Sort places"
+      title="Sort places"
+      icon="↕"
       width={200}
       triggerClassName="flex min-h-[36px] items-center gap-1.5 rounded-full border border-line-strong bg-white px-3.5 py-2 text-[13px] focus-ring-emerald"
       trigger={

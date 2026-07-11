@@ -9,7 +9,7 @@ import { type TripPlan, type TripSegment, extractPlanCities, planCostBasisIcon, 
 import { usePlanBuilder, type PlanBuilderSeed } from "../../../hooks/usePlanBuilder";
 import { useBackDismiss } from "../../../hooks/useBackDismiss";
 import DestinationPicker from "./DestinationPicker";
-import PlanTripHeader, { type HeaderStats } from "./PlanTripHeader";
+import PlanTripHeader, { buildHeaderStats } from "./PlanTripHeader";
 import TripSaveBar from "./TripSaveBar";
 import PlanCountrySwitcher from "./PlanCountrySwitcher";
 import PlanWorkspace from "./PlanWorkspace";
@@ -404,6 +404,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   const current = STEP_META[steps[safeIndex]];
   const isReview = current.key === "review";
   const isPlaces = current.key === "cities";
+  const isBasics = current.key === "basics";
   // Non-review steps center vertically when short but scroll from the top when tall,
   // so they never float in blank space nor clip on small screens. Places breaks out
   // to a wide two-column workspace on desktop, so it top-aligns like Review.
@@ -433,16 +434,15 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   // returns the primary unchanged). Basics shows a forming estimate; Places and
   // Review are live. Hidden until an itinerary exists so the strip never lies.
   const statsPlan = composedTripPlan ?? plan;
-  const headerStats: HeaderStats | undefined = statsPlan
-    ? {
-        days: statsPlan.days.length,
-        countries: selection.length,
-        cities: extractPlanCities(statsPlan.days).length,
-        cost: statsPlan.costPerPerson,
-        costIcon: planCostBasisIcon(statsPlan),
-        costLabel: planCostBasisLabel(statsPlan),
-        estimate: current.key === "basics",
-      }
+  const headerStats = statsPlan
+    ? buildHeaderStats(
+        statsPlan,
+        extractPlanCities(statsPlan.days).length,
+        selection.length,
+        planCostBasisIcon(statsPlan),
+        planCostBasisLabel(statsPlan),
+        current.key === "basics",
+      )
     : undefined;
 
   // On the Places step the header hosts the country switcher (multi) so identity
@@ -478,7 +478,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
         onGoToStep={goTo}
         wide={isReview}
         identitySlot={switcherNode}
-        stats={headerStats}
+        stats={isBasics ? undefined : headerStats}
         basis={isPlaces || isReview ? budgetBasis : undefined}
         onBasisChange={isPlaces || isReview ? setBudgetBasis : undefined}
       />
@@ -548,6 +548,9 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                   onToggleExperience={builder.toggleExperience}
                   onClearExperiences={builder.clearExperiences}
                   stopDays={routeStopDays}
+                  routeCost={statsPlan?.costPerPerson}
+                  routeCostIcon={statsPlan ? planCostBasisIcon(statsPlan) : undefined}
+                  routeCostLabel={statsPlan ? planCostBasisLabel(statsPlan) : undefined}
                   plan={plan}
                 />
               )}
@@ -568,7 +571,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
             onClick={() => (safeIndex === 0 ? changeDestination() : goTo(safeIndex - 1))}
             className="focus-ring-emerald min-h-[44px] rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-2 shadow-sm transition-colors hover:bg-surface-2"
           >
-            {safeIndex === 0 ? "↺ Change" : "← Back"}
+            {safeIndex === 0 ? "↺ Destinations" : "← Back"}
           </button>
           {!atLast ? (
             <button

@@ -22,6 +22,39 @@ export type HeaderStats = {
   estimate?: boolean;
 };
 
+/** The minimal plan shape the header stats read — keeps the builder decoupled
+ *  from the full {@link TripPlan} type. */
+export type HeaderStatsPlan = {
+  days: unknown[];
+  costPerPerson: string;
+};
+
+/**
+ * Builds the progressive header stats from the composed plan. Pure + exported so
+ * the mapping (and its "hidden until an itinerary exists" contract) is unit
+ * tested independently of the orchestrator. Returns `undefined` when nothing is
+ * planned yet, so the strip never renders a lie.
+ */
+export function buildHeaderStats(
+  plan: HeaderStatsPlan | null | undefined,
+  cityCount: number,
+  countries: number,
+  costIcon: string,
+  costLabel: string,
+  estimate: boolean,
+): HeaderStats | undefined {
+  if (!plan) return undefined;
+  return {
+    days: plan.days.length,
+    countries,
+    cities: cityCount,
+    cost: plan.costPerPerson,
+    costIcon,
+    costLabel,
+    estimate,
+  };
+}
+
 type Props = {
   /** Ordered trip selection (route stops). */
   selection: Country[];
@@ -78,7 +111,7 @@ function PlanTripHeaderInner({
       <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-700/80">Planning</p>
       <div className="mt-0.5 flex items-center gap-3">
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2">
+          <div className="flex min-w-0 items-center gap-2">
             {identitySlot ? (
               identitySlot
             ) : isMulti ? (
@@ -86,7 +119,7 @@ function PlanTripHeaderInner({
                 aria-label={`Planning a route through ${selection.map((c) => c.name).join(", ")}`}
                 className="flex min-w-0 items-center font-display text-lg font-semibold tracking-tight text-ink-1 sm:text-xl"
               >
-                <span className="truncate">
+                <span className="min-w-0 truncate">
                   {selection.slice(0, routeStopLimit).map((c, i) => (
                     <span key={c.name}>
                       {i > 0 && <span aria-hidden="true" className="mx-1 text-line-strong">→</span>}

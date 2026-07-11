@@ -38,6 +38,8 @@ export default function PlanCountrySwitcher({ units, activeIndex, onSelect, vari
   return (
     <PlanMenu
       ariaLabel="Switch country"
+      title="Switch country"
+      icon="🗺️"
       width={340}
       triggerClassName={trigger}
       trigger={

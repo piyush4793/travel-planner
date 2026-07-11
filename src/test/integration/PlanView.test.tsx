@@ -154,7 +154,7 @@ describe("PlanView — guided planner", () => {
     renderView();
     fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     await screen.findByText(/Who's going\?/i);
-    fireEvent.click(screen.getByRole("button", { name: /Change/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Destinations/i }));
     expect(screen.getByText(/Where do you plan to go next/i)).toBeInTheDocument();
   });
 
@@ -190,7 +190,7 @@ describe("PlanView — guided planner", () => {
     const { unmount } = renderView();
     fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     await screen.findByText(/Who's going\?/i);
-    fireEvent.click(screen.getByRole("button", { name: /Change/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Destinations/i }));
     // Draft cleared → a fresh mount lands on the picker, not the wizard.
     unmount();
     renderView();

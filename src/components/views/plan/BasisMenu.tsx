@@ -37,6 +37,8 @@ export default function BasisMenu({ basis, setBasis, variant = "dark", labelled 
   return (
     <PlanMenu
       ariaLabel="Who's going"
+      title="Who's going"
+      icon="👥"
       width={220}
       triggerClassName={TRIGGER[variant]}
       trigger={

@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import PlanTripHeader, { type HeaderStep } from "../components/views/plan/PlanTripHeader";
+import PlanTripHeader, { type HeaderStep, buildHeaderStats } from "../components/views/plan/PlanTripHeader";
 import type { Country } from "../core/types";
 import type { StyleMeta } from "../core/utils/travelStyles";
 
@@ -109,5 +109,31 @@ describe("PlanTripHeader", () => {
     });
     expect(screen.getByRole("button", { name: "Switch country" })).toBeInTheDocument();
     expect(screen.queryByRole("heading", { level: 1 })).not.toBeInTheDocument();
+  });
+});
+
+describe("buildHeaderStats", () => {
+  const plan = { days: [{}, {}, {}], costPerPerson: "₹2L – ₹3L" };
+
+  it("returns undefined when nothing is planned yet, so the strip never lies", () => {
+    expect(buildHeaderStats(null, 0, 0, "👫", "per couple", true)).toBeUndefined();
+    expect(buildHeaderStats(undefined, 2, 2, "👫", "per couple", false)).toBeUndefined();
+  });
+
+  it("maps a composed plan into the progressive stats shape", () => {
+    expect(buildHeaderStats(plan, 4, 2, "👫", "per couple", false)).toEqual({
+      days: 3,
+      countries: 2,
+      cities: 4,
+      cost: "₹2L – ₹3L",
+      costIcon: "👫",
+      costLabel: "per couple",
+      estimate: false,
+    });
+  });
+
+  it("flags Basics as an estimate while later steps stay live", () => {
+    expect(buildHeaderStats(plan, 4, 2, "👤", "per person", true)?.estimate).toBe(true);
+    expect(buildHeaderStats(plan, 4, 2, "👤", "per person", false)?.estimate).toBe(false);
   });
 });

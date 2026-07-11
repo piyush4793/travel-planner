@@ -26,6 +26,22 @@ type Props = {
 const EXPLORE_LIMIT = 12;
 const MINE_LIMIT = 8;
 
+const CHIP_BASE =
+  "focus-ring-emerald group inline-flex min-h-[44px] items-center gap-2 rounded-full border px-4 py-2.5 text-sm shadow-[0_1px_2px_rgba(20,40,30,0.05)] transition-[transform,box-shadow,border-color,color] motion-safe:animate-[fadeInUp_0.28s_ease-out_both] hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0 disabled:hover:shadow-[0_1px_2px_rgba(20,40,30,0.05)]";
+const CHIP_TONE_VISITED = "border-line bg-surface-2 text-ink-4 hover:border-line-strong";
+const CHIP_TONE_DEFAULT = "border-line bg-white font-medium text-ink-1 hover:border-emerald-600 hover:text-emerald-800";
+
+/**
+ * Auto-focusing the search field is a welcome shortcut with a physical keyboard,
+ * but on touch devices it force-opens the on-screen keyboard and jumps the
+ * scroll — so we only claim focus for fine pointers. Guarded for non-DOM/test
+ * environments where `matchMedia` may be absent.
+ */
+function prefersAutoFocus(): boolean {
+  if (typeof window === "undefined" || typeof window.matchMedia !== "function") return false;
+  return !window.matchMedia("(pointer: coarse)").matches;
+}
+
 /** Word-prefix > any-substring match ranking; -1 means no match. */
 function matchRank(name: string, q: string): number {
   const n = name.toLowerCase();
@@ -45,17 +61,13 @@ function filterByQuery(list: Country[], q: string): Country[] {
 }
 
 function Chip({ country, visited, favorite, index, disabled, onPick }: { country: Country; visited?: boolean; favorite?: boolean; index: number; disabled?: boolean; onPick: () => void }) {
-  const base =
-    "focus-ring-emerald group inline-flex min-h-[44px] items-center gap-2 rounded-full border px-4 py-2.5 text-sm shadow-[0_1px_2px_rgba(20,40,30,0.05)] transition-[transform,box-shadow,border-color,color] motion-safe:animate-[fadeInUp_0.28s_ease-out_both] hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0 disabled:hover:shadow-[0_1px_2px_rgba(20,40,30,0.05)]";
-  const tone = visited
-    ? "border-line bg-surface-2 text-ink-4 hover:border-line-strong"
-    : "border-line bg-white font-medium text-ink-1 hover:border-emerald-600 hover:text-emerald-800";
+  const tone = visited ? CHIP_TONE_VISITED : CHIP_TONE_DEFAULT;
   return (
     <button
       onClick={onPick}
       disabled={disabled}
       style={{ animationDelay: `${Math.min(index, 14) * 25}ms` }}
-      className={`${base} ${tone}`}
+      className={`${CHIP_BASE} ${tone}`}
     >
       <span aria-hidden="true" className="text-base leading-none">{getCountryFlag(country.name)}</span>
       <span className="truncate">{country.name}</span>
@@ -182,7 +194,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
                 placeholder={multiSelect && selectedNames.length > 0 ? "Add another…" : "Search destinations…"}
                 aria-label="Search destinations"
                 className="min-w-[7rem] flex-1 bg-transparent py-1.5 text-[15px] text-ink-1 outline-none placeholder:text-ink-4"
-                autoFocus
+                autoFocus={prefersAutoFocus()}
               />
             </div>
             {multiSelect && selectedNames.length > 0 && (

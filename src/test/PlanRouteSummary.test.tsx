@@ -56,9 +56,26 @@ describe("PlanRouteSummary", () => {
     expect(within(item).getByText("Norway")).toBeInTheDocument();
   });
 
-  it("uses the source unit nouns in the footer", () => {
+  it("reassures the traveller in the footer without repeating the country count", () => {
     render(<PlanRouteSummary selection={selection} source={source} />);
-    expect(screen.getByText(/3 countries · we'll fine-tune each stop next/)).toBeInTheDocument();
+    expect(screen.getByText(/^We'll fine-tune each stop next$/)).toBeInTheDocument();
+    // The country count is implied by the timeline rows, so it is not repeated.
+    expect(screen.queryByText(/3 countries/)).not.toBeInTheDocument();
+  });
+
+  it("shows the composed budget as the totals home, replacing the 'planned so far' caption", () => {
+    render(
+      <PlanRouteSummary
+        selection={selection}
+        source={source}
+        cost="₹5.2L – ₹8.7L"
+        costIcon="👫"
+        costLabel="per couple"
+      />,
+    );
+    expect(screen.getByText(/~₹5.2L – ₹8.7L/)).toBeInTheDocument();
+    expect(screen.getByLabelText("per couple")).toBeInTheDocument();
+    expect(screen.queryByText("planned so far")).not.toBeInTheDocument();
   });
 
   it("frames the totals as the plan so far and updates with live per-stop days", () => {
@@ -96,5 +113,24 @@ describe("PlanRouteSummary", () => {
     );
     // Norway live (5) + Denmark/Sweden baseline (3 + 10) = 18.
     expect(screen.getByText("~18 days")).toBeInTheDocument();
+  });
+
+  it("keeps the timeline height unbounded at or below the current max stops", () => {
+    render(<PlanRouteSummary selection={selection} source={source} />);
+    // 3 stops → no scroll container so the totals always reconcile on screen.
+    expect(screen.getByRole("list").className).not.toMatch(/overflow-y-auto/);
+  });
+
+  it("bounds the timeline height and scrolls once the route exceeds the current max", () => {
+    const many = [
+      mk("Norway", "Europe"),
+      mk("Denmark", "Europe"),
+      mk("Sweden", "Europe"),
+      mk("Finland", "Europe"),
+      mk("Iceland", "Europe"),
+    ];
+    const src = fakeSource({ Norway: 4, Denmark: 3, Sweden: 5, Finland: 6, Iceland: 7 });
+    render(<PlanRouteSummary selection={many} source={src} />);
+    expect(screen.getByRole("list").className).toMatch(/overflow-y-auto/);
   });
 });

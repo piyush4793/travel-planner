@@ -33,6 +33,14 @@ type Props = {
    * here fall back to their recommended baseline until their plan loads.
    */
   stopDays?: Record<string, number>;
+  /**
+   * Composed-route budget (per active party size) for the multi-unit route
+   * card, which is the single home for trip totals on Basics. Ignored for a
+   * single unit (its live `plan` already carries cost).
+   */
+  routeCost?: string;
+  routeCostIcon?: string;
+  routeCostLabel?: string;
   /** Live single-destination plan for immediate feedback (null while loading). */
   plan: TripPlan | null;
 };
@@ -62,6 +70,9 @@ export default function PlanBasicsStep({
   onClearExperiences,
   visibleCap = DEFAULT_VIBE_CAP,
   stopDays,
+  routeCost,
+  routeCostIcon,
+  routeCostLabel,
   plan,
 }: Props) {
   const isMulti = selection.length > 1;
@@ -99,7 +110,7 @@ export default function PlanBasicsStep({
       {/* Live feedback so the step feels substantial, not empty. Multi-unit shows
           the summed route timeline; single shows the live plan. */}
       {isMulti
-        ? <PlanRouteSummary selection={selection} source={source} stopDays={stopDays} />
+        ? <PlanRouteSummary selection={selection} source={source} stopDays={stopDays} cost={routeCost} costIcon={routeCostIcon} costLabel={routeCostLabel} />
         : plan && <PlanProgressSummary plan={plan} />}
     </div>
   );

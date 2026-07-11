@@ -1,29 +1,45 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { useBackDismiss } from "../../../hooks/useBackDismiss";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 
 type Props = {
   /** Trigger button content (label / flag / caret handled by caller). */
-  trigger: React.ReactNode;
+  trigger: ReactNode;
   ariaLabel: string;
   /** Preferred menu width in px; clamped to the viewport. */
   width?: number;
   triggerClassName?: string;
-  children: (close: () => void) => React.ReactNode;
+  /** Heading for the mobile bottom-sheet (defaults to {@link ariaLabel}). */
+  title?: string;
+  /** Small glyph shown in the mobile sheet's header tile. */
+  icon?: ReactNode;
+  children: (close: () => void) => ReactNode;
 };
 
 /**
- * Theme-matched, portal-based dropdown for the Plan surface — shared by the
- * country switcher and the sort control so both behave identically (viewport
- * collision, Escape + outside-click close, focus into the panel, mobile Back
- * dismiss). Portalled to `document.body` so it never clips inside the step's
- * inner scroll container.
+ * Theme-matched, portal-based menu for the Plan surface — shared by the country
+ * switcher, sort control and basis picker so all behave identically. Two
+ * responsive presentations behind one API: an edge-aware anchored dropdown on
+ * tablet/desktop (viewport collision, outside-click close) and a branded
+ * bottom-sheet with a dimming scrim on mobile — mirroring the sheet pattern used
+ * by every other Plan overlay so a menu never floats over undimmed content.
+ * Shared across both: Escape + mobile Back close, focus into the panel, and WAI
+ * roving keyboard navigation. Portalled to `document.body` so it is never
+ * clipped by an `overflow-hidden` ancestor.
  */
-export default function PlanMenu({ trigger, ariaLabel, width = 260, triggerClassName, children }: Props) {
+export default function PlanMenu({ trigger, ariaLabel, width = 260, triggerClassName, title, icon, children }: Props) {
   const [open, setOpen] = useState(false);
   const [pos, setPos] = useState({ top: 0, left: 0, width });
   const btnRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const bp = useBreakpoint();
+  const isMobile = bp === "mobile";
+
+  const close = useCallback(() => {
+    setOpen(false);
+    btnRef.current?.focus();
+  }, []);
 
   useBackDismiss(open, () => setOpen(false));
 
@@ -38,7 +54,7 @@ export default function PlanMenu({ trigger, ariaLabel, width = 260, triggerClass
   }, [width]);
 
   function toggle() {
-    if (!open) place();
+    if (!open && !isMobile) place();
     setOpen((o) => !o);
   }
 
@@ -67,24 +83,35 @@ export default function PlanMenu({ trigger, ariaLabel, width = 260, triggerClass
     requestAnimationFrame(() => {
       panelRef.current?.querySelector<HTMLElement>('[role="menuitemradio"], button, [tabindex]')?.focus();
     });
-    function onDown(e: MouseEvent) {
-      if (!btnRef.current?.contains(e.target as Node) && !panelRef.current?.contains(e.target as Node)) setOpen(false);
-    }
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") { setOpen(false); btnRef.current?.focus(); }
     }
+    document.addEventListener("keydown", onKey);
+    // Outside-click dismiss + reflow only apply to the anchored desktop dropdown;
+    // the mobile sheet is dismissed by its scrim and Back button instead.
+    if (isMobile) {
+      return () => document.removeEventListener("keydown", onKey);
+    }
+    function onDown(e: MouseEvent) {
+      if (!btnRef.current?.contains(e.target as Node) && !panelRef.current?.contains(e.target as Node)) setOpen(false);
+    }
     const onReflow = () => place();
     document.addEventListener("mousedown", onDown);
-    document.addEventListener("keydown", onKey);
     window.addEventListener("resize", onReflow);
     window.addEventListener("scroll", onReflow, true);
     return () => {
-      document.removeEventListener("mousedown", onDown);
       document.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onDown);
       window.removeEventListener("resize", onReflow);
       window.removeEventListener("scroll", onReflow, true);
     };
-  }, [open, place]);
+  }, [open, isMobile, place]);
+
+  const menuItems = (
+    <div ref={panelRef} role="menu" aria-label={ariaLabel} onKeyDown={onPanelKey}>
+      {children(() => setOpen(false))}
+    </div>
+  );
 
   return (
     <>
@@ -99,16 +126,50 @@ export default function PlanMenu({ trigger, ariaLabel, width = 260, triggerClass
       >
         {trigger}
       </button>
-      {open && createPortal(
+
+      {open && isMobile && createPortal(
+        <div className="fixed inset-0 z-[99999] flex flex-col justify-end" role="dialog" aria-modal="true" aria-label={ariaLabel}>
+          <button
+            type="button"
+            aria-label="Dismiss"
+            onClick={close}
+            className="absolute inset-0 bg-black/40 motion-safe:animate-[fadeInUp_0.15s_ease-out]"
+          />
+          <div className="relative flex max-h-[70vh] flex-col overflow-hidden rounded-t-3xl border-t border-emerald-100 bg-white shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]">
+            <div className="mx-auto mt-2.5 h-1 w-10 shrink-0 rounded-full bg-line-strong" aria-hidden="true" />
+            <div className="flex shrink-0 items-center gap-2.5 border-b border-emerald-100 bg-gradient-to-b from-emerald-50 to-white px-4 py-3">
+              {icon != null && (
+                <span
+                  aria-hidden="true"
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-base shadow-sm ring-1 ring-emerald-100"
+                >
+                  {icon}
+                </span>
+              )}
+              <h3 className="min-w-0 flex-1 font-display text-[15px] font-bold leading-tight tracking-tight text-emerald-950">
+                {title ?? ariaLabel}
+              </h3>
+              <button
+                type="button"
+                onClick={close}
+                aria-label="Close"
+                className="focus-ring-emerald flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 text-sm font-bold text-emerald-800 ring-1 ring-emerald-100 transition-colors hover:bg-white"
+              >
+                <span aria-hidden="true">✕</span>
+              </button>
+            </div>
+            <div className="min-h-0 overflow-y-auto pb-4">{menuItems}</div>
+          </div>
+        </div>,
+        document.body,
+      )}
+
+      {open && !isMobile && createPortal(
         <div
-          ref={panelRef}
-          role="menu"
-          aria-label={ariaLabel}
-          onKeyDown={onPanelKey}
           style={{ position: "fixed", top: pos.top, left: pos.left, width: pos.width, zIndex: 99999 }}
           className="overflow-hidden rounded-2xl border border-line bg-white shadow-xl motion-safe:animate-[fadeInUp_0.12s_ease-out]"
         >
-          {children(() => setOpen(false))}
+          {menuItems}
         </div>,
         document.body,
       )}

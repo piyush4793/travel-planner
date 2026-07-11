@@ -129,6 +129,49 @@ describe("DestinationPicker", () => {
     expect(onStart).toHaveBeenCalledWith([expect.objectContaining({ name: "Explora" })]);
   });
 
+  it("does not throw when matchMedia is unavailable (auto-focus guard)", () => {
+    const original = window.matchMedia;
+    // @ts-expect-error — simulate an environment without matchMedia.
+    delete window.matchMedia;
+    try {
+      render(
+        <DestinationPicker
+          source={internationalSource}
+          countries={[mk("Testland", 50)]}
+          exploreCountries={[]}
+          visitedNames={new Set()}
+          onStart={vi.fn()}
+          onGoDiscover={vi.fn()}
+        />,
+      );
+      // The field renders but does not steal focus without a pointer signal.
+      expect(screen.getByRole("searchbox")).not.toHaveFocus();
+    } finally {
+      window.matchMedia = original;
+    }
+  });
+
+  it("ranks matches word-prefix > substring below a whole-name prefix", () => {
+    render(
+      <DestinationPicker
+        source={internationalSource}
+        countries={[mk("Makorland", 90), mk("South Korazone", 80), mk("Koraland", 70)]}
+        exploreCountries={[]}
+        visitedNames={new Set()}
+        onStart={vi.fn()}
+        onGoDiscover={vi.fn()}
+      />,
+    );
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "kor" } });
+    const section = screen.getByText(/From your list/i).closest("section")!;
+    const names = within(section)
+      .getAllByRole("button")
+      .map((b) => b.textContent?.replace(/[^\x00-\x7F ]/g, "").trim());
+    // Whole-name prefix first, then word-prefix, then bare substring — despite
+    // popularity ordering the other way, relevance wins.
+    expect(names).toEqual(["Koraland", "South Korazone", "Makorland"]);
+  });
+
   describe("multi-select", () => {
     const many = [mk("Aland", 90), mk("Bland", 80), mk("Cland", 70), mk("Dland", 60), mk("Eland", 50)];
 

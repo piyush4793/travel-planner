@@ -17,6 +17,15 @@ type Props = {
    * instantly from the manifest.
    */
   stopDays?: Record<string, number>;
+  /**
+   * Composed-plan budget for the whole route (per the active party size). The
+   * card is the single home for trip totals on Basics — the header omits its
+   * stats strip there — so days + budget both live here. Absent until the plan
+   * has composed.
+   */
+  cost?: string;
+  costIcon?: string;
+  costLabel?: string;
 };
 
 /**
@@ -29,7 +38,7 @@ type Props = {
  * The longest stay is marked as the trip's anchor to give the route a focal
  * point, and a footer reassures the traveller that each stop is fine-tuned next.
  */
-function PlanRouteSummaryInner({ selection, source, stopDays }: Props) {
+function PlanRouteSummaryInner({ selection, source, stopDays, cost, costIcon, costLabel }: Props) {
   const legs = selection.map((c) => {
     const live = stopDays?.[c.name];
     return {
@@ -41,44 +50,63 @@ function PlanRouteSummaryInner({ selection, source, stopDays }: Props) {
   });
   const total = legs.reduce((sum, leg) => sum + leg.days, 0);
   const anchorDays = Math.max(...legs.map((l) => l.days));
-  const unitCount = `${legs.length} ${legs.length === 1 ? source.unitNoun : source.unitNounPlural}`;
+  // Hard-bound the list height so the card can't grow unbounded. The cap fits
+  // today's max stops (MAX_TRIP_UNITS) fully — so visible days always reconcile
+  // with the route total — and scrolls only if that cap is ever raised.
+  const scrolls = legs.length > 3;
 
   return (
     <div className="rounded-2xl border border-line bg-white/70 p-4 shadow-[0_1px_3px_rgba(20,40,30,0.05)] sm:p-5">
-      <div className="flex items-center gap-1.5">
-        <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-2">Your route</p>
-        <Tooltip text="Your trip so far, summed across every stop. It updates as you change what you're into; fine-tune the exact days per stop in the next steps." />
-        <div className="ml-auto text-right leading-none">
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex items-center gap-1.5">
+          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-2">Your route</p>
+          <Tooltip
+            variant="wrap"
+            text="Your trip so far, summed across every stop. It updates as you change what you're into; fine-tune the exact days per stop in the next steps."
+            triggerClassName="focus-ring-emerald inline-flex h-4 w-4 items-center justify-center rounded-full bg-surface-3 text-[9px] font-bold text-ink-4"
+          >
+            <span aria-hidden="true">ⓘ</span>
+          </Tooltip>
+        </div>
+        <div className="text-right leading-tight">
           <span className="font-display text-xl font-semibold text-ink-1">~{total} days</span>
-          <span className="mt-0.5 block text-[9px] font-bold uppercase tracking-[0.14em] text-ink-4">planned so far</span>
+          {cost ? (
+            <span className="mt-0.5 block whitespace-nowrap text-[13px] font-bold text-emerald-800">
+              ~{cost}{" "}
+              <span title={costLabel} aria-label={costLabel}>{costIcon}</span>
+            </span>
+          ) : (
+            <span className="mt-0.5 block text-[9px] font-bold uppercase tracking-[0.14em] text-ink-4">planned so far</span>
+          )}
         </div>
       </div>
 
-      <ol className="mt-3.5">
+      <ol className={`mt-3.5 ${scrolls ? "max-h-[12.5rem] overflow-y-auto overflow-x-hidden overscroll-contain pr-1" : ""}`}>
         {legs.map((leg, i) => {
           const isAnchor = leg.days === anchorDays;
           const last = i === legs.length - 1;
           return (
-            <li key={leg.name} className="relative flex gap-3 pb-4 last:pb-0">
-              {/* Timeline rail: dot + connector to the next stop. */}
-              <div className="relative flex flex-col items-center">
+            <li key={leg.name} className="flex gap-3">
+              {/* Timeline rail: dot aligned to the stop name, with a continuous
+                  connector that grows through the row gap to the next dot. */}
+              <div className="flex flex-col items-center">
                 <span
-                  className={`mt-0.5 h-2.5 w-2.5 shrink-0 rounded-full ring-4 ring-white ${isAnchor ? "bg-emerald-600" : "bg-line-strong"}`}
+                  className={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full ${isAnchor ? "bg-emerald-600" : "bg-ink-4"}`}
                   aria-hidden="true"
                 />
-                {!last && <span className="mt-0.5 w-px flex-1 bg-line" aria-hidden="true" />}
+                {!last && <span className="mt-1 w-px grow bg-line-strong" aria-hidden="true" />}
               </div>
 
-              <div className="-mt-0.5 flex min-w-0 flex-1 items-center gap-2">
-                <span aria-hidden="true" className="text-lg leading-none">{getCountryFlag(leg.name)}</span>
+              <div className={`flex min-w-0 flex-1 items-start gap-2 ${last ? "" : "pb-4"}`}>
+                <span aria-hidden="true" className="text-lg leading-tight">{getCountryFlag(leg.name)}</span>
                 <div className="min-w-0">
-                  <p className="flex items-center gap-1.5 truncate text-[15px] font-semibold text-ink-1">
+                  <p className="flex items-center gap-1.5 truncate text-[15px] font-semibold leading-tight text-ink-1">
                     {leg.name}
                     {isAnchor && legs.length > 1 && (
                       <span className="rounded-full bg-emerald-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-emerald-700">Anchor</span>
                     )}
                   </p>
-                  <p className="truncate text-[11px] text-ink-3">{leg.region}</p>
+                  <p className="mt-0.5 truncate text-[11px] text-ink-3">{leg.region}</p>
                 </div>
                 <span
                   title={leg.live ? `${leg.days} days planned` : `Recommended ${leg.days} days`}
@@ -93,7 +121,7 @@ function PlanRouteSummaryInner({ selection, source, stopDays }: Props) {
       </ol>
 
       <p className="mt-1 border-t border-surface-3 pt-3 text-center text-[11px] text-ink-3">
-        {unitCount} · we'll fine-tune each stop next
+        We'll fine-tune each stop next
       </p>
     </div>
   );

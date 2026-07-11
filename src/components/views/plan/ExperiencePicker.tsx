@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 /**
  * Default number of vibe pills to reveal before the rest collapse behind a
@@ -41,6 +41,11 @@ export default function ExperiencePicker({
   dense = false,
 }: Props) {
   const [expanded, setExpanded] = useState(false);
+  // Collapse the disclosure whenever the underlying tag set changes (e.g. the
+  // route selection diverges), so a stale "Show less" never persists over a
+  // freshly-capped, unrelated list.
+  const tagKey = experiences.join("\u0000");
+  useEffect(() => setExpanded(false), [tagKey]);
   const overflow = experiences.length > visibleCap;
   const visible =
     expanded || !overflow
@@ -73,27 +78,31 @@ export default function ExperiencePicker({
           })}
         </div>
       </div>
-      {toggleLabel && (
-        <div className="mt-2 flex justify-center">
-          <button
-            onClick={() => setExpanded((v) => !v)}
-            aria-expanded={expanded}
-            className="focus-ring-emerald min-h-[32px] rounded-full border border-dashed border-line-strong bg-transparent px-3.5 py-1.5 text-[12px] font-semibold text-ink-2 transition-colors hover:border-emerald-500 hover:text-emerald-800"
-          >
-            {toggleLabel}
-          </button>
+      {(toggleLabel || selectedExperiences.length > 0) && (
+        <div
+          className={`mt-3 flex min-h-[32px] items-center gap-2 ${
+            toggleLabel && selectedExperiences.length > 0 ? "justify-between" : "justify-center"
+          }`}
+        >
+          {toggleLabel && (
+            <button
+              onClick={() => setExpanded((v) => !v)}
+              aria-expanded={expanded}
+              className="focus-ring-emerald min-h-[32px] rounded-full border border-dashed border-line-strong bg-transparent px-3.5 py-1.5 text-[12px] font-semibold text-ink-2 transition-colors hover:border-emerald-500 hover:text-emerald-800"
+            >
+              {toggleLabel}
+            </button>
+          )}
+          {selectedExperiences.length > 0 && (
+            <button
+              onClick={onClearExperiences}
+              className="focus-ring-emerald inline-flex min-h-[30px] items-center gap-1 rounded-full border border-emerald-300 bg-white px-3 py-1 text-[11px] font-semibold text-emerald-800 transition-colors hover:border-emerald-400 hover:bg-emerald-50"
+            >
+              <span aria-hidden="true" className="text-[10px]">✕</span> Clear ({selectedExperiences.length})
+            </button>
+          )}
         </div>
       )}
-      <div className="mt-3 flex min-h-[32px] items-center justify-center">
-        {selectedExperiences.length > 0 && (
-          <button
-            onClick={onClearExperiences}
-            className="focus-ring-emerald inline-flex min-h-[30px] items-center gap-1 rounded-full border border-line-strong bg-white px-3 py-1 text-[11px] font-semibold text-ink-2 transition-colors hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-800"
-          >
-            <span aria-hidden="true" className="text-[10px]">✕</span> Clear ({selectedExperiences.length})
-          </button>
-        )}
-      </div>
     </div>
   );
 }

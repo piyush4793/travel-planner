@@ -284,7 +284,7 @@ function DayCard({ day, city, rule, t }: { day: DayEntry; city: string; rule?: C
 
   return (
     <div className={`border rounded-xl overflow-hidden shadow-sm ${t.cardBorder}`}>
-      <div className={`flex items-center gap-2 px-4 py-2.5 border-b ${t.cardHead}`}>
+      <div className={`flex flex-wrap sm:flex-nowrap items-center gap-2 px-4 py-2.5 border-b ${t.cardHead}`}>
         <button
           onClick={() => setExpanded((e) => !e)}
           aria-expanded={expanded}
@@ -300,24 +300,28 @@ function DayCard({ day, city, rule, t }: { day: DayEntry; city: string; rule?: C
             </span>
           )}
         </button>
-        {day.theme && (
-          <span className={`text-[9px] font-semibold px-2 py-0.5 rounded-full min-w-0 max-w-[40%] truncate shrink ${t.themePill}`} title={day.theme}>
-            {day.theme}
-          </span>
-        )}
-        {routeInfo && (
-          <span className="flex items-center gap-1 shrink-0">
-            <a
-              href={routeInfo.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`text-[9px] font-semibold px-2 py-0.5 rounded-full transition-colors ${t.routeLink} ${t.focusRing}`}
-              title="Open day route in Google Maps"
-            >
-              🗺️<span className="hidden sm:inline"> Route</span>
-            </a>
-            <CopyLinkButton url={routeInfo.url} t={t} />
-          </span>
+        {(day.theme || routeInfo) && (
+          <div className="flex w-full items-center gap-2 order-last sm:contents">
+            {day.theme && (
+              <span className={`text-[9px] font-semibold px-2 py-0.5 rounded-full min-w-0 max-w-[70%] truncate shrink sm:max-w-[40%] ${t.themePill}`} title={day.theme}>
+                {day.theme}
+              </span>
+            )}
+            {routeInfo && (
+              <span className="flex items-center gap-1 shrink-0">
+                <a
+                  href={routeInfo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-[9px] font-semibold px-2 py-0.5 rounded-full transition-colors ${t.routeLink} ${t.focusRing}`}
+                  title="Open day route in Google Maps"
+                >
+                  🗺️<span className="hidden sm:inline"> Route</span>
+                </a>
+                <CopyLinkButton url={routeInfo.url} t={t} />
+              </span>
+            )}
+          </div>
         )}
       </div>
 

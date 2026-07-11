@@ -3,6 +3,7 @@ import type { Country } from "../../../core/types";
 import type { CountryRule } from "../../../core/data/itineraryRules";
 import type { TripPlan } from "../../../core/utils/tripPlans";
 import { extractPlanCities } from "../../../core/utils/tripPlans";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import ItineraryView, { groupDays } from "../../country/itinerary/ItineraryView";
 import PlanCityJumpNav from "./PlanCityJumpNav";
 import ItinerarySummaryBar, { ITINERARY_TOP_ID } from "./ItinerarySummaryBar";
@@ -23,12 +24,27 @@ type Props = {
  */
 function PlanPreviewPaneInner({ country, plan, rule, homeCountry, onPlanWithAi, onCinematic }: Props) {
   const groups = groupDays(plan.days, rule);
+  // Mobile stacks a rail bar + app tab-bar below this card, so pin the action
+  // toolbar only on larger screens; on mobile it scrolls in at the plan's end to
+  // free vertical space (the audit's "un-stick the toolbar" fix).
+  const pinToolbar = useBreakpoint() !== "mobile";
 
   // Cinematic needs a mappable route: rule data + at least two plan cities the
   // country actually knows (so the fly-through has real coordinates to visit).
   const knownCityNames = new Set((country.cities ?? []).map((c) => c.name));
   const matchedCities = extractPlanCities(plan.days).filter((c) => knownCityNames.has(c));
   const canCinematic = !!rule && matchedCities.length >= 2;
+
+  const toolbar = (
+    <ItineraryToolbar
+      country={country}
+      plan={plan}
+      homeCountry={homeCountry}
+      canCinematic={canCinematic}
+      onCinematic={onCinematic}
+      onPlanWithAi={onPlanWithAi}
+    />
+  );
 
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
@@ -49,16 +65,10 @@ function PlanPreviewPaneInner({ country, plan, rule, homeCountry, onPlanWithAi, 
       <div className="flex-1 overflow-y-auto px-3 py-3">
         <span id={ITINERARY_TOP_ID} aria-hidden="true" />
         <ItineraryView plan={plan} rule={rule} variant="luxury" />
+        {!pinToolbar && <div className="-mx-3 mt-4">{toolbar}</div>}
       </div>
 
-      <ItineraryToolbar
-        country={country}
-        plan={plan}
-        homeCountry={homeCountry}
-        canCinematic={canCinematic}
-        onCinematic={onCinematic}
-        onPlanWithAi={onPlanWithAi}
-      />
+      {pinToolbar && toolbar}
     </div>
   );
 }

@@ -13,6 +13,7 @@ import ItineraryToolbar from "./ItineraryToolbar";
 import type { PdfRouteStop } from "../../../utils/pdfModel";
 import SegmentAdjustDrawer from "./SegmentAdjustDrawer";
 import BorderHop from "./BorderHop";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import type { GeoPoint } from "../../../core/utils/routeOrder";
 
 /**
@@ -316,6 +317,20 @@ function TripReviewCanvasInner({
   // Cumulative day ranges follow visit order (banners are route-relative).
   let dayCursor = 0;
 
+  // On mobile a rail bar + app tab-bar already sit below this card; pin the
+  // action toolbar only on larger screens and let it scroll in at the route's
+  // end on mobile (the audit's "un-stick the toolbar" fix).
+  const pinToolbar = useBreakpoint() !== "mobile";
+  const toolbar = (
+    <ItineraryToolbar
+      country={country}
+      plan={composedPlan}
+      homeCountry={homeCountry}
+      routeStops={routeStops}
+      onPlanWithAi={onPlanWithAi}
+    />
+  );
+
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
       {/* Trip-level toolbar — route order + jump-to-city + back-to-top on one
@@ -354,15 +369,10 @@ function TripReviewCanvasInner({
             />
           );
         })}
+        {!pinToolbar && <div className="mt-2">{toolbar}</div>}
       </div>
 
-      <ItineraryToolbar
-        country={country}
-        plan={composedPlan}
-        homeCountry={homeCountry}
-        routeStops={routeStops}
-        onPlanWithAi={onPlanWithAi}
-      />
+      {pinToolbar && toolbar}
     </div>
   );
 }

@@ -165,4 +165,19 @@ describe("usePlanBuilder", () => {
     act(() => result.current.toggleExperience("Food"));
     expect(result.current.orderedCities[0]?.name).toBe("Gamma");
   });
+
+  it("projects the cities a candidate day count would visit without committing", async () => {
+    const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple"));
+    await waitFor(() => expect(result.current.plan).not.toBeNull());
+    const before = result.current.customDays;
+    const projected = result.current.projectCities(before + 6);
+    expect(Array.isArray(projected)).toBe(true);
+    // Pure projection — it must not mutate the committed day count.
+    expect(result.current.customDays).toBe(before);
+  });
+
+  it("projects an empty city list when there is no country", () => {
+    const { result } = renderHook(() => usePlanBuilder(null, "couple"));
+    expect(result.current.projectCities(10)).toEqual([]);
+  });
 });

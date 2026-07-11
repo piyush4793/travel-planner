@@ -90,3 +90,38 @@ describe("PlanBasicsStep — vibe overflow", () => {
     expect(screen.getByRole("button", { name: "+2 more" })).toBeInTheDocument();
   });
 });
+
+describe("PlanBasicsStep — summary branch", () => {
+  it("renders the single-destination progress readout when one unit has a live plan", () => {
+    renderStep({
+      plan: {
+        duration: "3 days",
+        costPerPerson: "₹1.2L – ₹2L",
+        days: [
+          { label: "Day 1 — Oslo", activities: [] },
+          { label: "Day 2 — Bergen", activities: [] },
+        ],
+        note: "",
+        costBasis: "couple",
+      },
+    });
+    expect(screen.getByText("Your trip so far")).toBeInTheDocument();
+    expect(screen.getByText("2 days")).toBeInTheDocument();
+    expect(screen.getByText("Oslo")).toBeInTheDocument();
+  });
+
+  it("renders the multi-stop route timeline when the selection has more than one unit", () => {
+    renderStep({ selection: [UNIT, { ...UNIT, name: "Otherland" }], plan: null });
+    expect(screen.getByText("Your route")).toBeInTheDocument();
+    expect(screen.getByText("Testland")).toBeInTheDocument();
+    expect(screen.getByText("Otherland")).toBeInTheDocument();
+  });
+
+  it("changes the party size through the 'Who's going?' control", () => {
+    const setBudgetBasis = vi.fn();
+    renderStep({ budgetBasis: "solo", setBudgetBasis });
+    const section = screen.getByText(/Who's going\?/i).closest("section")!;
+    fireEvent.click(within(section).getByRole("radio", { name: /Couple/i }));
+    expect(setBudgetBasis).toHaveBeenCalledWith("couple");
+  });
+});
