@@ -67,7 +67,7 @@ export default function CityDetailModal({ decision: d, onToggle, onClose }: Prop
         {d.brief && <p className="text-[13.5px] leading-relaxed text-ink-body">{d.brief}</p>}
 
         {(d.recDays > 0 || d.bestWindow || d.avoidWindow) && (
-          <div className="mt-5 flex flex-wrap gap-x-8 gap-y-3">
+          <div className="mt-5 grid grid-cols-3 gap-3 rounded-xl border border-line bg-surface-1 px-4 py-3.5">
             {d.recDays > 0 && <Stat label="≈ Recommended stay" value={`${d.recDays} ${d.recDays === 1 ? "night" : "nights"}`} />}
             {d.bestWindow && <Stat label="☀ Best time" value={d.bestWindow} />}
             {d.avoidWindow && <Stat label="⚠ Avoid" value={d.avoidWindow} tone="warn" />}
@@ -75,8 +75,8 @@ export default function CityDetailModal({ decision: d, onToggle, onClose }: Prop
         )}
 
         {(d.focusMatches.length > 0 || d.otherExperiences.length > 0) && (
-          <div className="mt-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.06em] text-ink-3">Experiences</p>
+          <div className="mt-5 border-t border-line pt-4">
+            <p className="text-[11px] font-bold uppercase tracking-[0.07em] text-ink-3">Experiences</p>
             <div className="mt-2 flex flex-wrap gap-1.5">
               {d.focusMatches.map((e) => (
                 <span key={e} className="rounded-full border border-emerald-600 bg-emerald-600 px-2.5 py-1 text-[11px] font-semibold text-white">{e}</span>

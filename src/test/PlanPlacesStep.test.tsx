@@ -47,7 +47,7 @@ describe("PlanPlacesStep", () => {
   it("renders a single stop with its heading and no country switcher (switcher lives in the header)", () => {
     renderStep([makeUnit("Norway", ["Oslo", "Bergen"])]);
     expect(screen.queryByRole("button", { name: /Switch country/i })).not.toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /Cities in Norway/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Which places in Norway/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Oslo" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Bergen" })).toBeInTheDocument();
   });
@@ -58,19 +58,19 @@ describe("PlanPlacesStep", () => {
       makeUnit("Denmark", ["Copenhagen"], { customDays: 4 }),
     ];
     const { rerender } = renderStep(units, 0);
-    expect(screen.getByRole("heading", { name: /Cities in Norway/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Which places in Norway/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Oslo" })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Copenhagen" })).not.toBeInTheDocument();
 
     rerender(<PlanPlacesStep units={units} activeIndex={1} />);
-    expect(screen.getByRole("heading", { name: /Cities in Denmark/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Which places in Denmark/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Copenhagen" })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Oslo" })).not.toBeInTheDocument();
   });
 
   it("clamps an out-of-range active index to the last stop", () => {
     renderStep([makeUnit("Norway", ["Oslo"]), makeUnit("Denmark", ["Copenhagen"])], 9);
-    expect(screen.getByRole("heading", { name: /Cities in Denmark/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Which places in Denmark/i })).toBeInTheDocument();
   });
 
   it("shows Reset-to-suggested only for a hand-picked active stop and wires it", () => {

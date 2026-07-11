@@ -97,7 +97,7 @@ describe("PlanView — guided planner", () => {
     fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     expect(await screen.findByText(/Who's going\?/i)).toBeInTheDocument();
     // Later steps are not on screen yet.
-    expect(screen.queryByText(/Which places\?/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Which places in/i)).not.toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /Step 1:/i, selected: true })).toBeInTheDocument();
   });
 
@@ -163,7 +163,7 @@ describe("PlanView — guided planner", () => {
     fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     await screen.findByText(/Who's going\?/i);
     fireEvent.click(screen.getByRole("button", { name: /Continue/i }));
-    expect(await screen.findByText(/Which places\?/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Which places in/i)).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /Step 2:/i, selected: true })).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /Back/i }));
     expect(await screen.findByText(/Who's going\?/i)).toBeInTheDocument();
@@ -202,7 +202,7 @@ describe("PlanView — guided planner", () => {
     fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     await screen.findByText(/Who's going\?/i);
     fireEvent.click(screen.getByRole("button", { name: /Continue/i }));
-    expect(await screen.findByText(/Which places\?/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Which places in/i)).toBeInTheDocument();
     // Non-included cities sit behind a Show-more tail; reveal them to assert both.
     const showMore = screen.queryByRole("button", { name: /Show \d+ more places/i });
     if (showMore) fireEvent.click(showMore);
@@ -226,7 +226,7 @@ describe("PlanView — guided planner", () => {
     fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     await screen.findByText(/Who's going\?/i);
     fireEvent.click(screen.getByRole("button", { name: /Continue/i }));
-    await screen.findByText(/Which places\?/i);
+    await screen.findByText(/Which places in/i);
 
     // Pristine: auto-picked, no reset control yet.
     expect(screen.queryByRole("button", { name: /Reset to suggested/i })).not.toBeInTheDocument();

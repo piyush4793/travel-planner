@@ -521,21 +521,24 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
             )
           ) : (
             <>
-              {/* Question header */}
-              <div className="mb-5 text-center">
-                <div className="mb-1 text-4xl" aria-hidden="true">{current.icon}</div>
-                <div className="flex items-center justify-center gap-2">
-                  <h2 className="font-display text-2xl font-semibold tracking-tight text-ink-1">{current.title}</h2>
-                  {current.optional && (
-                    <span className="rounded-full bg-surface-3 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ink-4">Optional</span>
-                  )}
+              {/* Question header — Basics uses the centered hero; Places owns its
+                  own editorial title (merged with the section), so skip it there. */}
+              {current.key === "basics" && (
+                <div className="mb-5 text-center">
+                  <div className="mb-1 text-4xl" aria-hidden="true">{current.icon}</div>
+                  <div className="flex items-center justify-center gap-2">
+                    <h2 className="font-display text-2xl font-semibold tracking-tight text-ink-1">{current.title}</h2>
+                    {current.optional && (
+                      <span className="rounded-full bg-surface-3 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ink-4">Optional</span>
+                    )}
+                  </div>
+                  <p className="mx-auto mt-1.5 max-w-sm text-xs text-ink-2">
+                    {isMulti
+                      ? "Who's going and what you love — we'll tailor each stop next."
+                      : current.subtitle}
+                  </p>
                 </div>
-                <p className="mx-auto mt-1.5 max-w-sm text-xs text-ink-2">
-                  {current.key === "basics" && isMulti
-                    ? "Who's going and what you love — we'll tailor each stop next."
-                    : current.subtitle}
-                </p>
-              </div>
+              )}
 
               {current.key === "basics" && (
                 <PlanBasicsStep

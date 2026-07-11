@@ -3,6 +3,7 @@ import type { Country } from "../../../core/types";
 import type { StyleMeta } from "../../../core/utils/travelStyles";
 import type { BudgetBasis } from "../../../core/utils/budget";
 import { getCountryFlag } from "../../../utils/countryFlags";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import Tooltip from "../../shared/Tooltip";
 import BasisMenu from "./BasisMenu";
 
@@ -103,13 +104,13 @@ function PlanTripHeaderInner({
   onBasisChange,
 }: Props) {
   const isMulti = selection.length > 1;
+  const compact = useBreakpoint() === "mobile";
   const routeLabel = selection.map((c) => `${getCountryFlag(c.name)} ${c.name}`).join("  →  ");
   const primary = selection[0];
 
   return (
     <div className={`mx-auto w-full shrink-0 px-4 pt-3 sm:pt-4 ${wide ? "max-w-[1400px]" : "max-w-2xl"}`}>
-      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-700/80">Planning</p>
-      <div className="mt-0.5 flex items-center gap-3">
+      <div className="flex items-center gap-3">
         <div className="min-w-0 flex-1">
           <div className="flex min-w-0 items-center gap-2">
             {identitySlot ? (
@@ -161,23 +162,49 @@ function PlanTripHeaderInner({
       </div>
 
       {stats && (
-        <div className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-[12px] text-ink-2">
-          <span><span className="font-bold text-ink-1">{stats.days}</span> {stats.days === 1 ? "day" : "days"}</span>
-          {isMulti && (
-            <>
-              <span aria-hidden="true" className="text-line-strong">·</span>
-              <span><span className="font-bold text-ink-1">{stats.countries}</span> countries</span>
-            </>
-          )}
-          <span aria-hidden="true" className="text-line-strong">·</span>
-          <span><span className="font-bold text-ink-1">{stats.cities}</span> {stats.cities === 1 ? "place" : "places"}</span>
-          <span aria-hidden="true" className="text-line-strong">·</span>
-          <span className="whitespace-nowrap font-bold text-emerald-800">
-            {stats.estimate && <span className="mr-0.5 font-medium text-ink-4">~</span>}
-            {stats.cost}{" "}
-            <span title={stats.costLabel} aria-label={stats.costLabel}>{stats.costIcon}</span>
-          </span>
-        </div>
+        compact ? (
+          /* Mobile: one condensed line so the header never wraps to a second row
+             of pills — days · places · countries as text, budget kept as the single
+             emphasized pill pinned right. Same data as the desktop pills
+             (buildHeaderStats); only the presentation branches on width. */
+          <div className="mt-2.5 flex items-center gap-2">
+            <span className="min-w-0 flex-1 truncate text-[12px] text-ink-2">
+              <span className="font-bold text-ink-1">{stats.days}</span>&nbsp;{stats.days === 1 ? "day" : "days"}
+              <span className="mx-1 text-ink-4">·</span>
+              <span className="font-bold text-ink-1">{stats.cities}</span>&nbsp;{stats.cities === 1 ? "place" : "places"}
+              {isMulti && (
+                <>
+                  <span className="mx-1 text-ink-4">·</span>
+                  <span className="font-bold text-ink-1">{stats.countries}</span>&nbsp;countries
+                </>
+              )}
+            </span>
+            <span className="ml-auto inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-emerald-100 bg-emerald-50 px-2 py-1 text-[11px] font-bold text-emerald-800">
+              {stats.estimate && <span className="mr-0.5 font-medium text-emerald-700/70">~</span>}
+              {stats.cost}
+            </span>
+          </div>
+        ) : (
+          /* Tablet/desktop: scannable pill row (space to fill a wide header). */
+          <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
+            <span className="inline-flex items-center rounded-full border border-line bg-white px-2.5 py-1 text-[11px] text-ink-2">
+              <span className="font-bold text-ink-1">{stats.days}</span>&nbsp;{stats.days === 1 ? "day" : "days"}
+            </span>
+            {isMulti && (
+              <span className="inline-flex items-center rounded-full border border-line bg-white px-2.5 py-1 text-[11px] text-ink-2">
+                <span className="font-bold text-ink-1">{stats.countries}</span>&nbsp;countries
+              </span>
+            )}
+            <span className="inline-flex items-center rounded-full border border-line bg-white px-2.5 py-1 text-[11px] text-ink-2">
+              <span className="font-bold text-ink-1">{stats.cities}</span>&nbsp;{stats.cities === 1 ? "place" : "places"}
+            </span>
+            <span className="inline-flex items-center whitespace-nowrap rounded-full border border-emerald-100 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-800">
+              {stats.estimate && <span className="mr-0.5 font-medium text-emerald-700/70">~</span>}
+              {stats.cost}
+              <span className="ml-1" title={stats.costLabel} aria-label={stats.costLabel}>{stats.costIcon}</span>
+            </span>
+          </div>
+        )
       )}
 
       {/* Labeled, tappable stepper — doubles as back navigation (tap an

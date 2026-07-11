@@ -45,10 +45,6 @@ interface Props {
   activeIndex: number;
 }
 
-function pluralize(n: number, word: string): string {
-  return `${n} ${word}${n === 1 ? "" : "s"}`;
-}
-
 export function includedCount(unit: PlacesUnit): number {
   return unit.selectedCities.length > 0 ? unit.selectedCities.length : unit.autoSelectedCities.length;
 }
@@ -269,36 +265,52 @@ function PlanPlacesStep({ units, activeIndex }: Props) {
 
   return (
     <div className="space-y-5">
-      {/* Section header + controls */}
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div className="min-w-0">
-          <h3 className="line-clamp-1 font-display text-base font-semibold text-ink-1">Cities in {activeUnit.name}</h3>
-          <p className="mt-0.5 text-[11px] font-medium text-ink-3">
-            {includedCount(activeUnit)} in plan · {pluralize(activeUnit.orderedCities.length, "option")}
+      {/* Editorial step header — merges the step question ("Which places?") with
+          the country section title into one breathing headline, so there's a
+          single title instead of two stacked ones. */}
+      <div className="space-y-3.5">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <h2 className="font-display text-xl font-bold leading-tight text-ink-1 sm:text-2xl">
+              Which places in {activeUnit.name}?
+            </h2>
+            <p className="mt-1.5 text-[13px] leading-snug text-ink-3">
+              Auto-picked from your vibe — add or drop any to make it yours.
+            </p>
+          </div>
+          <span
+            aria-label={`${includedCount(activeUnit)} of ${activeUnit.orderedCities.length} places selected`}
+            className="mt-1 shrink-0 whitespace-nowrap rounded-full border border-emerald-100 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-800"
+          >
+            {includedCount(activeUnit)} of {activeUnit.orderedCities.length}
+          </span>
+        </div>
+
+        {(focus || activeUnit.selectedCities.length > 0) && (
+          <div className="flex items-center gap-2 text-[11px] font-medium text-ink-3">
             {focus && (
-              <>
-                {" "}· focus:{" "}
+              <p className="min-w-0 flex-1 truncate">
+                focus:{" "}
                 <span className="text-emerald-700" title={activeUnit.activeExperiences.join(", ")}>{focus}</span>
-              </>
+              </p>
             )}
             {activeUnit.selectedCities.length > 0 && (
-              <>
-                {" "}· <span className="font-bold text-emerald-700">Edited</span> ·{" "}
-                <button
-                  onClick={activeUnit.onClearCities}
-                  className="focus-ring-emerald -my-1 inline-flex min-h-[28px] items-center gap-1 rounded px-1 py-1 align-baseline font-bold text-emerald-700 underline-offset-2 transition-colors hover:text-emerald-800 hover:underline"
-                >
-                  <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M3 12a9 9 0 1 0 3-6.7" />
-                    <path d="M3 3v4.5H7.5" />
-                  </svg>
-                  Reset to suggested
-                </button>
-              </>
+              <button
+                onClick={activeUnit.onClearCities}
+                title="Reset to the auto-suggested places"
+                className="focus-ring-emerald -my-1 ml-auto inline-flex min-h-[32px] shrink-0 items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 font-bold text-emerald-800 transition-colors hover:border-emerald-300 hover:bg-emerald-100"
+              >
+                <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M3 12a9 9 0 1 0 3-6.7" />
+                  <path d="M3 3v4.5H7.5" />
+                </svg>
+                Reset to suggested
+              </button>
             )}
-          </p>
-        </div>
-        <div className="flex shrink-0 items-center gap-2">
+          </div>
+        )}
+
+        <div className="flex items-center gap-2">
           <PlanFilters
             country={activeUnit.name}
             options={activeUnit.experienceOptions}

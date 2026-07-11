@@ -23,6 +23,12 @@ type Props = {
   visibleCap?: number;
   /** Tighter pills for compact hosts (e.g. the Places-step Filters popover). */
   dense?: boolean;
+  /**
+   * Suppress the inline "Clear (N)" pill. Hosts that own a dedicated clear
+   * affordance (e.g. the Filters overlay footer) set this so the control isn't
+   * duplicated; the "+N more" disclosure is unaffected.
+   */
+  hideClear?: boolean;
 };
 
 /**
@@ -39,6 +45,7 @@ export default function ExperiencePicker({
   onClearExperiences,
   visibleCap = DEFAULT_VIBE_CAP,
   dense = false,
+  hideClear = false,
 }: Props) {
   const [expanded, setExpanded] = useState(false);
   // Collapse the disclosure whenever the underlying tag set changes (e.g. the
@@ -53,6 +60,7 @@ export default function ExperiencePicker({
       : experiences.filter((exp, i) => i < visibleCap || selectedExperiences.includes(exp));
   const hiddenCount = experiences.length - visible.length;
   const toggleLabel = expanded ? "Show less" : hiddenCount > 0 ? `+${hiddenCount} more` : null;
+  const showClear = !hideClear && selectedExperiences.length > 0;
   const pillSize = dense ? "min-h-[32px] px-3 py-1 text-[12px]" : "min-h-[38px] px-3.5 py-1.5 text-[13px]";
 
   return (
@@ -78,10 +86,10 @@ export default function ExperiencePicker({
           })}
         </div>
       </div>
-      {(toggleLabel || selectedExperiences.length > 0) && (
+      {(toggleLabel || showClear) && (
         <div
           className={`mt-3 flex min-h-[32px] items-center gap-2 ${
-            toggleLabel && selectedExperiences.length > 0 ? "justify-between" : "justify-center"
+            toggleLabel && showClear ? "justify-between" : "justify-center"
           }`}
         >
           {toggleLabel && (
@@ -93,7 +101,7 @@ export default function ExperiencePicker({
               {toggleLabel}
             </button>
           )}
-          {selectedExperiences.length > 0 && (
+          {showClear && (
             <button
               onClick={onClearExperiences}
               className="focus-ring-emerald inline-flex min-h-[30px] items-center gap-1 rounded-full border border-emerald-300 bg-white px-3 py-1 text-[11px] font-semibold text-emerald-800 transition-colors hover:border-emerald-400 hover:bg-emerald-50"
