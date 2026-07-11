@@ -2,7 +2,6 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import PlanTripHeader, { type HeaderStep, buildHeaderStats } from "../components/views/plan/PlanTripHeader";
 import type { Country } from "../core/types";
-import type { StyleMeta } from "../core/utils/travelStyles";
 
 const steps: HeaderStep[] = [
   { key: "basics", short: "Basics", title: "The basics" },
@@ -12,20 +11,11 @@ const steps: HeaderStep[] = [
 
 const c = (name: string): Country => ({ name, lat: 0, lng: 0, bestMonths: [], budget: "", experiences: [] });
 
-const styleMeta: StyleMeta = {
-  label: "Explorer",
-  icon: "🔭",
-  badge: "bg-emerald-100",
-  description: "A balanced pace",
-  activeForm: "bg-emerald-700",
-};
-
 function renderHeader(props: Partial<React.ComponentProps<typeof PlanTripHeader>> = {}) {
   return render(
     <PlanTripHeader
       selection={[c("Japan")]}
       routeStopLimit={2}
-      styleMeta={null}
       steps={steps}
       activeStep={0}
       onGoToStep={vi.fn()}
@@ -36,10 +26,9 @@ function renderHeader(props: Partial<React.ComponentProps<typeof PlanTripHeader>
 }
 
 describe("PlanTripHeader", () => {
-  it("shows a single destination name and its style badge", () => {
-    renderHeader({ selection: [c("Japan")], styleMeta });
+  it("shows a single destination name", () => {
+    renderHeader({ selection: [c("Japan")] });
     expect(screen.getByRole("heading", { name: "Japan", level: 1 })).toBeInTheDocument();
-    expect(screen.getByText("Explorer")).toBeInTheDocument();
   });
 
   it("names the first stops and collapses the rest into a +N pill for a route", () => {

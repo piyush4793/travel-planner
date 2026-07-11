@@ -23,7 +23,6 @@ function renderHeader(props: Partial<React.ComponentProps<typeof PlanTripHeader>
     <PlanTripHeader
       selection={[c("Norway"), c("Denmark"), c("Sweden")]}
       routeStopLimit={2}
-      styleMeta={null}
       steps={steps}
       activeStep={2}
       onGoToStep={vi.fn()}
@@ -61,7 +60,6 @@ describe("mobile Plan header (compact chrome)", () => {
       <PlanTripHeader
         selection={[c("Norway"), c("Denmark"), c("Sweden")]}
         routeStopLimit={2}
-        styleMeta={null}
         steps={steps}
         activeStep={0}
         onGoToStep={vi.fn()}

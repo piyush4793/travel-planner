@@ -4,7 +4,6 @@ import type maplibregl from "maplibre-gl";
 import type { Country } from "../../../core/types";
 import { type BudgetBasis } from "../../../core/utils/budget";
 import { cityExperienceOptions } from "../../../core/utils/cityExperiences";
-import { STYLE_META } from "../../../core/utils/travelStyles";
 import { type TripPlan, type TripSegment, extractPlanCities, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
 import { usePlanBuilder, type PlanBuilderSeed } from "../../../hooks/usePlanBuilder";
 import { useBackDismiss } from "../../../hooks/useBackDismiss";
@@ -425,8 +424,6 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
 
   // Country-bound feature actions shared by the header, right rail, and pane.
   const activeName = displayCountry?.name ?? picked.name;
-  const primaryStyle = displayCountry?.travelStyle?.[0];
-  const styleMeta = primaryStyle ? STYLE_META[primaryStyle] : null;
   const isVisited = visitedNames.has(activeName);
   const planActions: PlanActions = {
     isVisited,
@@ -471,7 +468,6 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
       <PlanTripHeader
         selection={selection}
         routeStopLimit={HEADER_ROUTE_STOPS}
-        styleMeta={styleMeta}
         saveSlot={
           isReview ? (
             <TripSaveBar

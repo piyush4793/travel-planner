@@ -1,6 +1,5 @@
 import { memo, type ReactNode } from "react";
 import type { Country } from "../../../core/types";
-import type { StyleMeta } from "../../../core/utils/travelStyles";
 import type { BudgetBasis } from "../../../core/utils/budget";
 import { getCountryFlag } from "../../../utils/countryFlags";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
@@ -61,8 +60,6 @@ type Props = {
   selection: Country[];
   /** How many stops the header names before collapsing into a "+N" pill. */
   routeStopLimit: number;
-  /** Travel-style badge for a single-country trip (hidden for multi). */
-  styleMeta: StyleMeta | null;
   /** Save-trip control (slotted so the header stays layout-only). */
   saveSlot?: ReactNode;
   steps: HeaderStep[];
@@ -85,14 +82,13 @@ type Props = {
  * doubles as back-navigation. Shared across every wizard step so identity, stats
  * and basis read identically whether the traveller is on Basics, Places, or
  * Review — the one place trip identity + progress live (DRY: no per-step stats
- * card or summary heading). Molds to its data: a single stop shows its name +
- * style badge; a route shows the ordered flags with a "+N" overflow pill; the
- * Places step swaps in a country switcher via {@link Props.identitySlot}.
+ * card or summary heading). Molds to its data: a single stop shows its name; a
+ * route shows the ordered flags with a "+N" overflow pill; the Places step swaps
+ * in a country switcher via {@link Props.identitySlot}.
  */
 function PlanTripHeaderInner({
   selection,
   routeStopLimit,
-  styleMeta,
   saveSlot,
   steps,
   activeStep,
@@ -142,17 +138,7 @@ function PlanTripHeaderInner({
                 )}
               </h1>
             ) : (
-              <>
-                <h1 className="truncate font-display text-lg font-semibold tracking-tight text-ink-1 sm:text-xl">{primary?.name}</h1>
-                {styleMeta && (
-                  <span
-                    title={styleMeta.description}
-                    className={`hidden shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold sm:inline-flex ${styleMeta.badge}`}
-                  >
-                    <span aria-hidden="true">{styleMeta.icon}</span> {styleMeta.label}
-                  </span>
-                )}
-              </>
+              <h1 className="truncate font-display text-lg font-semibold tracking-tight text-ink-1 sm:text-xl">{primary?.name}</h1>
             )}
           </div>
         </div>
@@ -226,7 +212,7 @@ function PlanTripHeaderInner({
               >
                 <span
                   className={`block h-1.5 rounded-full transition-colors ${
-                    active ? "bg-emerald-700" : done ? "bg-emerald-500" : "bg-line group-hover:bg-line-strong"
+                    active ? "bg-emerald-700" : done ? "bg-emerald-500" : "bg-emerald-100 group-hover:bg-emerald-200"
                   }`}
                 />
                 <span
