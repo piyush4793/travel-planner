@@ -76,7 +76,8 @@ describe("SegmentAdjustDrawer", () => {
     render(<SegmentAdjustDrawer segment={segment({ country })} onClose={vi.fn()} />);
     fireEvent.click(screen.getByRole("tab", { name: "Details" }));
     const panel = screen.getByRole("tabpanel");
-    expect(within(panel).getByText("June · July")).toBeInTheDocument();
+    expect(within(panel).getByText("June")).toBeInTheDocument();
+    expect(within(panel).getByText("July")).toBeInTheDocument();
     expect(within(panel).getByText("Peak-season crowds")).toBeInTheDocument();
     expect(within(panel).getByText("Great add-on from Copenhagen.")).toBeInTheDocument();
     expect(within(panel).getByText(/Sweden/)).toBeInTheDocument();

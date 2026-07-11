@@ -28,6 +28,24 @@ describe("PlanCountrySwitcher", () => {
     expect(screen.getByRole("button", { name: /Switch country/i })).toHaveTextContent("Thailand");
   });
 
+  it("roves focus across menu items with arrow / Home / End keys", () => {
+    render(<PlanCountrySwitcher units={units} activeIndex={0} onSelect={vi.fn()} />);
+    fireEvent.click(screen.getByRole("button", { name: /Switch country/i }));
+    const menu = screen.getByRole("menu", { name: /Switch country/i });
+    const items = screen.getAllByRole("menuitemradio");
+    items[0].focus(); // deterministic start (independent of rAF auto-focus)
+    fireEvent.keyDown(menu, { key: "ArrowDown" });
+    expect(items[1]).toHaveFocus();
+    fireEvent.keyDown(menu, { key: "ArrowDown" });
+    expect(items[0]).toHaveFocus(); // wraps around
+    fireEvent.keyDown(menu, { key: "End" });
+    expect(items[1]).toHaveFocus();
+    fireEvent.keyDown(menu, { key: "Home" });
+    expect(items[0]).toHaveFocus();
+    fireEvent.keyDown(menu, { key: "ArrowUp" });
+    expect(items[1]).toHaveFocus(); // wraps backward
+  });
+
   it("renders nothing when there are no units", () => {
     const { container } = render(<PlanCountrySwitcher units={[]} activeIndex={0} onSelect={vi.fn()} />);
     expect(container).toBeEmptyDOMElement();

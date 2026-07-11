@@ -31,7 +31,7 @@ function ItineraryToolbarInner({ country, plan, homeCountry, canCinematic, onCin
   const canExportPdf = isEnabled("pdfExport");
 
   return (
-    <div className="flex items-stretch gap-0.5 border-t border-[#e6e1d4] p-1.5">
+    <div className="flex items-stretch gap-0.5 border-t border-line p-1.5">
       <button
         onClick={() => void share()}
         onPointerEnter={prefetch}
@@ -47,7 +47,7 @@ function ItineraryToolbarInner({ country, plan, homeCountry, canCinematic, onCin
         <button
           onClick={onCinematic}
           aria-label="Watch the animated cinematic journey"
-          className="focus-ring-emerald flex flex-1 flex-col items-center gap-0.5 rounded-lg py-2 text-[10px] font-semibold text-[#6f6a5d] transition-colors hover:bg-[#f4f1e8]"
+          className="focus-ring-emerald flex flex-1 flex-col items-center gap-0.5 rounded-lg py-2 text-[10px] font-semibold text-ink-2 transition-colors hover:bg-surface-2"
         >
           <span aria-hidden="true" className="text-lg leading-none">🎬</span>
           Cinematic
@@ -57,7 +57,7 @@ function ItineraryToolbarInner({ country, plan, homeCountry, canCinematic, onCin
         <button
           onClick={() => exportItineraryAsPdf(plan, country, homeCountry)}
           aria-label="Export this itinerary as a PDF"
-          className="focus-ring-emerald flex flex-1 flex-col items-center gap-0.5 rounded-lg py-2 text-[10px] font-semibold text-[#6f6a5d] transition-colors hover:bg-[#f4f1e8]"
+          className="focus-ring-emerald flex flex-1 flex-col items-center gap-0.5 rounded-lg py-2 text-[10px] font-semibold text-ink-2 transition-colors hover:bg-surface-2"
         >
           <span aria-hidden="true" className="text-lg leading-none">📄</span>
           PDF
@@ -67,7 +67,7 @@ function ItineraryToolbarInner({ country, plan, homeCountry, canCinematic, onCin
         <button
           onClick={onPlanWithAi}
           aria-label="Plan this trip with your own AI provider"
-          className="focus-ring-emerald flex flex-1 flex-col items-center gap-0.5 rounded-lg py-2 text-[10px] font-semibold text-[#6f6a5d] transition-colors hover:bg-[#f4f1e8]"
+          className="focus-ring-emerald flex flex-1 flex-col items-center gap-0.5 rounded-lg py-2 text-[10px] font-semibold text-ink-2 transition-colors hover:bg-surface-2"
         >
           <span aria-hidden="true" className="text-lg leading-none">✨</span>
           AI plan

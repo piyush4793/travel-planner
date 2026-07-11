@@ -129,6 +129,35 @@ describe("usePlanBuilder", () => {
     expect(result.current.daysPinned).toBe(false);
   });
 
+  it("restores a reopened saved trip's cities + pinned length via seed", async () => {
+    const { result } = renderHook(
+      ({ seed }: { seed?: { nonce: number; cities: string[]; days: number } | null }) =>
+        usePlanBuilder(COUNTRY, "couple", undefined, seed),
+      { initialProps: { seed: { nonce: 1, cities: ["Beta", "Ghost"], days: 11 } } },
+    );
+    await waitFor(() => expect(result.current.customDays).toBe(11));
+    // Snapshot cities are restored (unknown "Ghost" is dropped) and pinned.
+    expect(result.current.selectedCities).toEqual(["Beta"]);
+    expect(result.current.daysPinned).toBe(true);
+  });
+
+  it("re-applies a saved-trip seed only when its nonce changes", async () => {
+    const { result, rerender } = renderHook(
+      ({ seed }: { seed?: { nonce: number; cities: string[]; days: number } | null }) =>
+        usePlanBuilder(COUNTRY, "couple", undefined, seed),
+      { initialProps: { seed: { nonce: 1, cities: ["Alpha"], days: 8 } } },
+    );
+    await waitFor(() => expect(result.current.customDays).toBe(8));
+    // A user edit after the restore must survive an unchanged seed (same nonce).
+    act(() => result.current.setDays(15));
+    rerender({ seed: { nonce: 1, cities: ["Alpha"], days: 8 } });
+    expect(result.current.customDays).toBe(15);
+    // A new nonce re-applies the (new) snapshot.
+    rerender({ seed: { nonce: 2, cities: ["Beta"], days: 5 } });
+    await waitFor(() => expect(result.current.customDays).toBe(5));
+    expect(result.current.selectedCities).toEqual(["Beta"]);
+  });
+
   it("orders experience-matching cities first", () => {
     const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple"));
     act(() => result.current.toggleExperience("Food"));

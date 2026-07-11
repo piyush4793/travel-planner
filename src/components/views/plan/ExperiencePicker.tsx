@@ -64,7 +64,7 @@ export default function ExperiencePicker({
                 className={`focus-ring-emerald rounded-full border ${pillSize} transition-[transform,box-shadow,border-color,color] ${
                   active
                     ? "border-emerald-700 bg-emerald-700 font-semibold text-white shadow-sm"
-                    : "border-[#e7e1d2] bg-white font-medium text-[#3c463f] hover:border-emerald-500 hover:text-emerald-800"
+                    : "border-line bg-white font-medium text-ink-body hover:border-emerald-500 hover:text-emerald-800"
                 }`}
               >
                 {exp}
@@ -78,7 +78,7 @@ export default function ExperiencePicker({
           <button
             onClick={() => setExpanded((v) => !v)}
             aria-expanded={expanded}
-            className="focus-ring-emerald min-h-[32px] rounded-full border border-dashed border-[#cbbfa6] bg-transparent px-3.5 py-1.5 text-[12px] font-semibold text-[#6f6a5d] transition-colors hover:border-emerald-500 hover:text-emerald-800"
+            className="focus-ring-emerald min-h-[32px] rounded-full border border-dashed border-line-strong bg-transparent px-3.5 py-1.5 text-[12px] font-semibold text-ink-2 transition-colors hover:border-emerald-500 hover:text-emerald-800"
           >
             {toggleLabel}
           </button>
@@ -88,7 +88,7 @@ export default function ExperiencePicker({
         {selectedExperiences.length > 0 && (
           <button
             onClick={onClearExperiences}
-            className="focus-ring-emerald rounded text-[11px] font-semibold text-[#a09a89] transition-colors hover:text-[#6f6a5d]"
+            className="focus-ring-emerald rounded text-[11px] font-semibold text-ink-4 transition-colors hover:text-ink-2"
           >
             Clear ({selectedExperiences.length})
           </button>

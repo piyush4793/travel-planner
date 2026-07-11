@@ -35,7 +35,7 @@ export default function TripSaveBar({ isMulti, favorite, onToggleFavorite }: Pro
           className={`focus-ring inline-flex min-h-[32px] shrink-0 items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] font-bold transition-colors ${
             favorite
               ? "border-amber-300 bg-amber-50 text-amber-800 hover:bg-amber-100"
-              : "border-[#e0dac9] bg-white text-emerald-800 hover:bg-[#f4f1e8]"
+              : "border-line bg-white text-emerald-800 hover:bg-surface-2"
           }`}
         >
           <span aria-hidden="true">{favorite ? "★" : "☆"}</span>

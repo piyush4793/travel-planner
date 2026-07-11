@@ -24,7 +24,7 @@ function PlanBudgetPanelInner({ country, activeBasis, onBasisChange }: Props) {
   // Fall back to the single, basis-less budget when no breakdown exists.
   if (perBasis.length === 0) {
     return (
-      <p className="text-sm font-semibold text-[#1e2a25]">
+      <p className="text-sm font-semibold text-ink-1">
         <span aria-hidden="true">{badges[0]?.icon} </span>
         {badges[0]?.label ?? "—"}
       </p>
@@ -34,11 +34,11 @@ function PlanBudgetPanelInner({ country, activeBasis, onBasisChange }: Props) {
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-1.5">
-        <p className="text-[10px] font-semibold uppercase tracking-wide text-[#a8a293]">Who's paying?</p>
+        <p className="text-[10px] font-semibold uppercase tracking-wide text-ink-4">Who's paying?</p>
         <Tooltip
           variant="wrap"
           text="Typical full-trip budget per traveller basis — a static reference. The centre summary shows the live figure for the length you pick."
-          triggerClassName="focus-ring-emerald inline-flex h-4 w-4 items-center justify-center rounded-full bg-[#efeadd] text-[9px] font-bold text-[#a09a89]"
+          triggerClassName="focus-ring-emerald inline-flex h-4 w-4 items-center justify-center rounded-full bg-surface-3 text-[9px] font-bold text-ink-4"
         >
           <span aria-hidden="true">ⓘ</span>
         </Tooltip>
@@ -58,11 +58,11 @@ function PlanBudgetPanelInner({ country, activeBasis, onBasisChange }: Props) {
               className={`focus-ring-emerald flex min-h-[56px] flex-col items-center justify-center gap-0.5 rounded-xl border px-1.5 py-2 text-center transition-colors ${
                 active
                   ? "border-emerald-700 bg-emerald-700 text-white shadow-sm"
-                  : "border-[#e4dece] bg-white text-[#1e2a25] hover:border-emerald-500 hover:bg-emerald-50"
+                  : "border-line bg-white text-ink-1 hover:border-emerald-500 hover:bg-emerald-50"
               }`}
             >
               <span aria-hidden="true" className="text-sm leading-none">{BUDGET_BASIS_META[basis].icon}</span>
-              <span className={`text-[9px] font-bold uppercase tracking-wide ${active ? "text-emerald-50" : "text-[#a09a89]"}`}>
+              <span className={`text-[9px] font-bold uppercase tracking-wide ${active ? "text-emerald-50" : "text-ink-4"}`}>
                 {BUDGET_BASIS_META[basis].label}
               </span>
               <span className="text-[10px] font-bold leading-tight tabular-nums">{badge.label}</span>

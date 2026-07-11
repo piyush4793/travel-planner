@@ -82,6 +82,41 @@ describe("useTripPlanner", () => {
     rerender({ units: [both[0]] });
     expect(result.current.unitPlans.map((u) => u.name)).toEqual(["Norway"]);
   });
+
+  it("restores each reopened stop's snapshot cities + pinned length via seed", () => {
+    const units = [unit("Norway", ["Oslo", "Bergen"]), unit("Denmark", ["Copenhagen"])];
+    const seed = {
+      nonce: 1,
+      byCountry: {
+        Norway: { cities: ["Bergen", "Ghost"], days: 9 },
+        Denmark: { cities: ["Copenhagen"], days: 4 },
+      },
+    };
+    const { result } = renderHook(() => useTripPlanner(units, [], "couple", seed));
+    const [nor, den] = result.current.unitPlans;
+    // Snapshot cities restored (unknown "Ghost" dropped), length pinned.
+    expect(nor.selectedCities).toEqual(["Bergen"]);
+    expect(nor.customDays).toBe(9);
+    expect(nor.daysPinned).toBe(true);
+    expect(den.selectedCities).toEqual(["Copenhagen"]);
+    expect(den.customDays).toBe(4);
+    expect(den.daysPinned).toBe(true);
+  });
+
+  it("waits for every seeded stop to load before applying a saved-trip seed", () => {
+    const seed = { nonce: 1, byCountry: { Norway: { cities: ["Bergen"], days: 9 }, Denmark: { cities: ["Copenhagen"], days: 4 } } };
+    // Only Norway has loaded — the seed must not apply yet (Denmark still pending),
+    // so Norway keeps its auto-seeded length rather than the snapshot's.
+    const { result, rerender } = renderHook(({ units }) => useTripPlanner(units, [], "couple", seed), {
+      initialProps: { units: [unit("Norway", ["Oslo", "Bergen"])] },
+    });
+    expect(result.current.unitPlans[0].daysPinned).toBe(false);
+    // Denmark lands: now the whole snapshot applies at once.
+    rerender({ units: [unit("Norway", ["Oslo", "Bergen"]), unit("Denmark", ["Copenhagen"])] });
+    expect(result.current.unitPlans[0].customDays).toBe(9);
+    expect(result.current.unitPlans[0].daysPinned).toBe(true);
+    expect(result.current.unitPlans[1].customDays).toBe(4);
+  });
 });
 
 describe("useTripPlanner per-stop length levers", () => {

@@ -37,6 +37,41 @@ export function tripSignature(countries: string[]): string {
   return countries.join(" → ");
 }
 
+/**
+ * A saved trip reopened into the Plan wizard: ordered stops (each with its
+ * snapshot cities + tuned length) plus the basis it was saved for. Applied once
+ * per `nonce`, so re-opening the same trip re-applies but a stale prop never
+ * clobbers in-progress edits.
+ */
+export type OpenTripRequest = {
+  stops: { country: string; days: number; cities: string[] }[];
+  basis: BudgetBasis;
+  nonce: number;
+};
+
+/** Build an {@link OpenTripRequest} from a saved trip (My Trips reopen / resume). */
+export function toOpenRequest(trip: SavedTrip, nonce: number): OpenTripRequest {
+  return {
+    stops: trip.stops.map((s) => ({ country: s.country, days: s.days, cities: s.cities })),
+    basis: trip.basis,
+    nonce,
+  };
+}
+
+/**
+ * Find a saved trip for the picked country set. Prefers an exact ordered
+ * signature match; falls back to the newest trip with the same *set* of stops
+ * (order-insensitive), so a reordered pick of the same countries still resumes a
+ * saved plan. Assumes `trips` is newest-first (as {@link SavedTrip} stores it).
+ */
+export function findSavedTripForCountries(trips: SavedTrip[], countries: string[]): SavedTrip | null {
+  if (countries.length === 0) return null;
+  const exact = trips.find((t) => t.name === tripSignature(countries));
+  if (exact) return exact;
+  const setKey = [...countries].sort().join("\u0000");
+  return trips.find((t) => [...t.stops.map((s) => s.country)].sort().join("\u0000") === setKey) ?? null;
+}
+
 /** Per-stop input for a snapshot — the stop's tuned length + its own plan (if
  * the destination has itinerary data; a stop without a loaded plan still counts
  * toward the route identity so the saved trip name stays honest). */

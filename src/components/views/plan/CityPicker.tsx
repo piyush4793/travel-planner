@@ -26,14 +26,14 @@ function CityPickerInner({ cities, selectedCities, autoSelectedCities, activeExp
   return (
     <>
       <div className="mb-2 flex items-center justify-between">
-        <p className="text-[11px] font-medium text-[#6f6a5d]">
+        <p className="text-[11px] font-medium text-ink-2">
           {handPicked ? `${selectedCities.length} hand-picked` : `Auto-picked ${autoSelectedCities.length}`}
         </p>
         {handPicked && (
           <button
             type="button"
             onClick={onClear}
-            className="focus-ring-emerald rounded text-[11px] font-semibold text-[#6f6a5d] transition-colors hover:text-emerald-800"
+            className="focus-ring-emerald -my-1 inline-flex min-h-[32px] items-center rounded px-1.5 text-[11px] font-semibold text-ink-2 transition-colors hover:text-emerald-800"
           >
             Reset to auto
           </button>

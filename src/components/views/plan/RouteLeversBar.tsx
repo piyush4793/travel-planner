@@ -24,7 +24,7 @@ type Props = {
 };
 
 const TRIGGER =
-  "focus-ring-emerald flex min-h-[34px] items-center gap-1.5 rounded-full border border-[#d8d2c2] bg-white px-3 py-1 text-[11px] font-semibold text-[#1e2a25] transition-colors hover:border-emerald-500 hover:bg-emerald-50";
+  "focus-ring-emerald flex min-h-[34px] items-center gap-1.5 rounded-full border border-line-strong bg-white px-3 py-1 text-[11px] font-semibold text-ink-1 transition-colors hover:border-emerald-500 hover:bg-emerald-50";
 
 /**
  * Trip-level "levers bar" for the multi-country Route Canvas — the one place the
@@ -40,15 +40,17 @@ const TRIGGER =
  */
 function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAutoArrange, canAutoArrange, children, topAnchorId }: Props) {
   return (
-    <div className="flex flex-wrap items-center gap-2 border-b border-[#efeadd] bg-[#faf8f1] px-4 py-1.5">
+    <div className="flex flex-wrap items-center gap-2 border-b border-surface-3 bg-surface-1 px-4 py-1.5">
       <PlanPopover
         title="Route order"
+        icon="🧭"
+        subtitle="Drag to reorder · ★ sets your anchor"
         triggerAriaLabel="Edit route order"
         triggerClassName={TRIGGER}
         triggerLabel={
           <>
             <span aria-hidden="true">🧭</span> Route order
-            <span className="rounded-full bg-[#ece7d8] px-1.5 text-[10px] font-bold text-[#6f6a5d]">{stops.length}</span>
+            <span className="rounded-full bg-surface-3 px-1.5 text-[10px] font-bold text-ink-2">{stops.length}</span>
           </>
         }
       >

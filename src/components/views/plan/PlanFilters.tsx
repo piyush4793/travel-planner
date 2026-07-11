@@ -40,7 +40,7 @@ export default function PlanFilters({ country, options, selected, onToggle, onCl
 
   const triggerInner = (
     <>
-      <span className="text-[#8a8577]">Filters</span>
+      <span className="text-ink-3">Filters</span>
       {count > 0 && (
         <span className="rounded-full bg-emerald-600 px-1.5 py-0.5 text-[10px] font-bold leading-none text-white">{count}</span>
       )}
@@ -51,13 +51,13 @@ export default function PlanFilters({ country, options, selected, onToggle, onCl
   const triggerClass = `flex min-h-[36px] items-center gap-1.5 rounded-full border px-3.5 py-2 text-[13px] font-semibold transition-colors focus-ring-emerald ${
     count > 0
       ? "border-emerald-200 bg-emerald-50 text-emerald-800 hover:border-emerald-300"
-      : "border-[#d9d3c4] bg-white text-[#16241d] hover:border-[#cfc9b8]"
+      : "border-line-strong bg-white text-ink-1 hover:border-line-strong"
   }`;
 
   const panel = (
     <div className="px-4 py-3.5">
       <div className="mb-2.5 flex items-center gap-2">
-        <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#8a8577]">Experiences for {country}</p>
+        <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink-3">Experiences for {country}</p>
         {count > 0 && (
           <span className="rounded-full bg-emerald-600 px-1.5 py-0.5 text-[10px] font-bold leading-none text-white">{count}</span>
         )}
@@ -126,8 +126,8 @@ function FilterSheet({
             onClick={() => close()}
             className="absolute inset-0 bg-black/40 motion-safe:animate-[fadeInUp_0.15s_ease-out]"
           />
-          <div className="relative max-h-[80vh] w-full overflow-y-auto rounded-t-3xl border-t border-[#e4dece] bg-[#f7f4ec] px-2 pb-6 pt-3 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]">
-            <div className="mx-auto mb-2.5 h-1 w-10 rounded-full bg-[#d8d2c2]" aria-hidden="true" />
+          <div className="relative max-h-[80vh] w-full overflow-y-auto rounded-t-3xl border-t border-line bg-surface-2 px-2 pb-6 pt-3 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]">
+            <div className="mx-auto mb-2.5 h-1 w-10 rounded-full bg-line-strong" aria-hidden="true" />
             {children}
           </div>
         </div>,

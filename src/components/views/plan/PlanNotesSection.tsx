@@ -47,7 +47,7 @@ function PlanNotesSectionInner({ notes, onSave }: Props) {
   };
 
   const textareaClass =
-    "focus-ring-emerald w-full resize-none rounded-xl border border-[#e4dece] bg-[#faf8f2] text-[13px] leading-relaxed text-[#2c2a24] outline-none transition-colors placeholder:text-[#b3ad9d] focus:border-emerald-400";
+    "focus-ring-emerald w-full resize-none rounded-xl border border-line bg-surface-1 text-[13px] leading-relaxed text-ink-1 outline-none transition-colors placeholder:text-ink-4 focus:border-emerald-400";
 
   const savedFlash = (
     <span className={`text-[11px] font-medium text-emerald-600 transition-opacity duration-300 ${saved ? "opacity-100" : "opacity-0"}`}>
@@ -58,11 +58,11 @@ function PlanNotesSectionInner({ notes, onSave }: Props) {
   return (
     <div>
       <div className="mb-1.5 flex items-center justify-between">
-        <span className="text-[11px] text-[#a8a293]">Auto-saved as you type</span>
+        <span className="text-[11px] text-ink-4">Auto-saved as you type</span>
         <button
           type="button"
           onClick={() => setExpanded(true)}
-          className="focus-ring-emerald flex min-h-[28px] items-center gap-1 rounded-lg px-1.5 py-1 text-[11px] font-semibold text-emerald-700 transition-colors hover:bg-emerald-50"
+          className="focus-ring-emerald flex min-h-[32px] items-center gap-1 rounded-lg px-1.5 py-1 text-[11px] font-semibold text-emerald-700 transition-colors hover:bg-emerald-50"
           aria-label="Expand notes"
           title="Expand notes"
         >
@@ -83,25 +83,25 @@ function PlanNotesSectionInner({ notes, onSave }: Props) {
       />
       <div className="mt-1.5 flex items-center justify-between">
         {savedFlash}
-        <span className="text-[11px] text-[#a8a293]">{value.length.toLocaleString()} / 4,000</span>
+        <span className="text-[11px] text-ink-4">{value.length.toLocaleString()} / 4,000</span>
       </div>
 
       {expanded && createPortal(
         <div
-          className="fixed inset-0 z-[60] flex items-end justify-center bg-[#16241d]/40 p-0 sm:items-center sm:p-4"
+          className="fixed inset-0 z-[60] flex items-end justify-center bg-ink-1/60 p-0 backdrop-blur-sm sm:items-center sm:p-4"
           onClick={() => setExpanded(false)}
           role="dialog"
           aria-modal="true"
           aria-label="Expanded notes"
           onKeyDown={(e) => { if (e.key === "Escape") setExpanded(false); }}
         >
-          <div className="flex h-[90vh] w-full max-w-2xl flex-col rounded-t-2xl bg-[#f7f4ec] shadow-2xl sm:h-[80vh] sm:rounded-2xl" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between border-b border-[#e4dece] px-5 py-3">
+          <div className="flex h-[90vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-line bg-white shadow-2xl sm:h-[80vh] sm:rounded-2xl" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between border-b border-line bg-surface-2 px-5 py-3">
               <h3 className="text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800">Notes · private to you</h3>
               <button
                 type="button"
                 onClick={() => setExpanded(false)}
-                className="focus-ring-emerald flex min-h-[32px] min-w-[32px] items-center justify-center rounded text-xl leading-none text-[#a8a293] hover:text-[#2c2a24]"
+                className="focus-ring-emerald flex min-h-[32px] min-w-[32px] items-center justify-center rounded text-xl leading-none text-ink-4 hover:text-ink-1"
                 aria-label="Close"
               >
                 ×
@@ -118,9 +118,9 @@ function PlanNotesSectionInner({ notes, onSave }: Props) {
                 autoFocus
               />
             </div>
-            <div className="flex items-center justify-between border-t border-[#e4dece] px-5 py-3">
+            <div className="flex items-center justify-between border-t border-line bg-surface-2 px-5 py-3">
               {savedFlash}
-              <span className="text-[11px] text-[#a8a293]">{value.length.toLocaleString()} / 4,000</span>
+              <span className="text-[11px] text-ink-4">{value.length.toLocaleString()} / 4,000</span>
             </div>
           </div>
         </div>,

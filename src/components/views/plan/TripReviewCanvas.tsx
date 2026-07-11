@@ -3,7 +3,7 @@ import type { Country } from "../../../core/types";
 import type { CityEntry } from "../../../core/types";
 import type { CountryRule } from "../../../core/data/itineraryRules";
 import type { TripPlan } from "../../../core/utils/tripPlans";
-import { extractPlanCities, shiftPlanDays } from "../../../core/utils/tripPlans";
+import { extractPlanCities, shiftPlanDays, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
 import { getCountryFlag } from "../../../utils/countryFlags";
 import ItineraryView, { groupDays } from "../../country/itinerary/ItineraryView";
 import PlanCityJumpNav, { type JumpSection } from "./PlanCityJumpNav";
@@ -122,47 +122,81 @@ function SegmentBlock({
         />
       )}
 
-      {/* Stop header: identity + anchor badge · stats + range · adjust · collapse.
-          Reorder + anchor selection live in the trip-level levers bar. */}
-      <div className="mx-3 rounded-t-2xl border border-b-0 border-[#e4dece] bg-gradient-to-r from-[#123a2b] to-[#0f2f23] px-3 py-2.5 text-white">
-        <div className="flex items-center gap-2">
-          <span aria-hidden="true" className="text-lg leading-none">{getCountryFlag(segment.name)}</span>
-          <h3 className="min-w-0 flex-1 truncate font-display text-base font-semibold">{segment.name}</h3>
+      {/* Stop header — a branded "country section" title bar: soft emerald tint +
+          a numbered stop badge + prominent name, distinct from the white itinerary
+          body below (a titled-card look) so each country reads as its own section,
+          yet stays light (not a heavy dark band) so the itinerary still leads on
+          mobile. Reorder + anchor live in the levers bar. */}
+      <div className="relative mx-3 rounded-t-2xl border border-b-0 border-emerald-200/70 bg-emerald-50/70 px-3 py-2.5 text-ink-1">
+        {/* Full-bleed toggle behind the header content, so the whole band (name,
+            stats, and the empty gap) collapses/expands the itinerary — not just a
+            tiny chevron. The identity content is inert to pointer events; the
+            interactive controls float above with pointer-events re-enabled. */}
+        <button
+          type="button"
+          onClick={onToggleCollapsed}
+          aria-expanded={!collapsed}
+          aria-controls={bodyId}
+          aria-label={collapsed ? `Expand ${segment.name} itinerary` : `Collapse ${segment.name} itinerary`}
+          className="focus-ring-emerald absolute inset-0 rounded-t-2xl transition-colors hover:bg-emerald-100/50"
+        />
+        <div className="pointer-events-none relative">
+          {/* Two-gutter grid: a fixed left gutter carries the row icon (flag / pin),
+              so the name, stats, and city strip all share one content column; a
+              matching right gutter carries the collapse chevron, so the day-pill,
+              budget, and "Expand" share one right edge. */}
+          <div className="flex items-center gap-2">
+            <span aria-hidden="true" className="w-5 shrink-0 text-center text-base leading-none">{getCountryFlag(segment.name)}</span>
+            <h3 className="min-w-0 flex-1 truncate font-display text-base font-bold text-emerald-900">{segment.name}</h3>
 
-          {isAnchor && (
-            <span className="flex shrink-0 items-center gap-1 rounded-full bg-amber-300/90 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#3a2c05]">
-              <span aria-hidden="true">★</span> Anchor
+            <div className="pointer-events-auto flex shrink-0 items-center gap-1.5">
+              {isAnchor && (
+                <span className="flex items-center gap-1 rounded-full border border-amber-300 bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-amber-800 sm:px-2">
+                  <span aria-hidden="true">★</span>
+                  <span className="hidden sm:inline">Anchor</span>
+                </span>
+              )}
+
+              <button
+                type="button"
+                onClick={() => setAdjusting(true)}
+                aria-haspopup="dialog"
+                aria-label={`Adjust ${segment.name}`}
+                className="focus-ring-emerald flex items-center gap-1 rounded-full border border-emerald-300 bg-white px-2.5 py-1 text-[11px] font-semibold text-emerald-800 transition-colors hover:bg-emerald-100"
+              >
+                <span aria-hidden="true">✏️</span> {segment.customDays}d
+              </button>
+            </div>
+
+            {/* Decorative collapse indicator — the full-bleed button above owns the
+                interaction and the a11y semantics, so this is hidden from the a11y
+                tree (pointer clicks fall through to that button). Fixed-width gutter
+                so the day-pill above and the budget below share a right edge. */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none w-5 shrink-0 text-center text-[11px] leading-none text-emerald-700"
+            >
+              {collapsed ? "▾" : "▴"}
             </span>
-          )}
-
-          <button
-            type="button"
-            onClick={() => setAdjusting(true)}
-            aria-haspopup="dialog"
-            aria-label={`Adjust ${segment.name}`}
-            className="focus-ring-emerald flex shrink-0 items-center gap-1 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-[11px] font-semibold text-white transition-colors hover:bg-white/20"
-          >
-            <span aria-hidden="true">✏️</span> {segment.customDays}d
-          </button>
-
-          <button
-            type="button"
-            onClick={onToggleCollapsed}
-            aria-expanded={!collapsed}
-            aria-controls={bodyId}
-            aria-label={collapsed ? `Expand ${segment.name} itinerary` : `Collapse ${segment.name} itinerary`}
-            className="focus-ring-emerald flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/15 hover:text-white"
-          >
-            <span aria-hidden="true" className="text-[11px] leading-none">{collapsed ? "▾" : "▴"}</span>
-          </button>
-        </div>
-        <div className="mt-1.5 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-[12px] text-white/80">
-          <span><span className="font-semibold text-white">{segment.customDays}</span> {segment.customDays === 1 ? "night" : "nights"}</span>
-          <span aria-hidden="true" className="text-white/30">·</span>
-          <span><span className="font-semibold text-white">{placeCount}</span> {placeCount === 1 ? "place" : "places"}</span>
-          <span aria-hidden="true" className="text-white/30">·</span>
-          <span className="text-white/70">{dayRange}</span>
-          <span className="ml-auto whitespace-nowrap font-bold text-emerald-300">{cost}</span>
+          </div>
+          {/* Row 2 mirrors the grid: empty left gutter · stats (content column) ·
+              budget + basis icon · empty right gutter — so stats align under the
+              name and the budget aligns under the day-pill. */}
+          <div className="mt-1 flex items-baseline gap-2 text-[11px] text-emerald-800/70">
+            <span aria-hidden="true" className="w-5 shrink-0" />
+            <div className="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-2 gap-y-0.5">
+              <span><span className="font-semibold text-emerald-900">{segment.customDays}</span> {segment.customDays === 1 ? "night" : "nights"}</span>
+              <span aria-hidden="true" className="text-emerald-600/40">·</span>
+              <span><span className="font-semibold text-emerald-900">{placeCount}</span> {placeCount === 1 ? "place" : "places"}</span>
+              <span aria-hidden="true" className="text-emerald-600/40">·</span>
+              <span>{dayRange}</span>
+            </div>
+            <span className="flex shrink-0 items-baseline gap-1 whitespace-nowrap text-[12px] font-bold text-emerald-700" title={planCostBasisLabel(segment.plan)}>
+              {cost}
+              <span aria-hidden="true" className="text-[11px] font-normal text-emerald-700/60">{planCostBasisIcon(segment.plan)}</span>
+            </span>
+            <span aria-hidden="true" className="w-5 shrink-0" />
+          </div>
         </div>
       </div>
 
@@ -188,15 +222,16 @@ function SegmentBlock({
           type="button"
           id={bodyId}
           onClick={onToggleCollapsed}
-          className="focus-ring-emerald mx-3 mb-1 flex w-[calc(100%-1.5rem)] items-center justify-between gap-2 rounded-b-2xl border border-t-0 border-[#e4dece] bg-white px-4 py-2.5 text-left transition-colors hover:bg-[#faf8f1]"
+          className="focus-ring-emerald mx-3 mb-1 flex w-[calc(100%-1.5rem)] items-center gap-2 rounded-b-2xl border border-t-0 border-emerald-200/70 bg-emerald-50/40 px-3 py-2.5 text-left transition-colors hover:bg-emerald-50"
         >
-          <span className="min-w-0 truncate text-[11px] text-[#6f6a5d]">
-            {planCities.length > 0 ? planCities.join(" · ") : "Tap to view the day-by-day plan"}
+          <span aria-hidden="true" className="w-5 shrink-0 text-center text-[11px] leading-none text-emerald-600">📍</span>
+          <span className="min-w-0 flex-1 truncate text-[11px] font-medium text-ink-body">
+            {planCities.length > 0 ? planCities.join("  ·  ") : "Tap to view the day-by-day plan"}
           </span>
-          <span aria-hidden="true" className="shrink-0 text-[11px] font-semibold text-emerald-700">Expand ▾</span>
+          <span aria-hidden="true" className="shrink-0 whitespace-nowrap text-[11px] font-semibold text-emerald-700">Expand ▾</span>
         </button>
       ) : (
-        <div id={bodyId} className="mx-3 mb-1 rounded-b-2xl border border-t-0 border-[#e4dece] bg-white py-3">
+        <div id={bodyId} className="mx-3 mb-1 rounded-b-2xl border border-t-0 border-line bg-white py-3">
           <ItineraryView plan={displayPlan} rule={segment.rule} variant="luxury" />
         </div>
       )}
@@ -270,7 +305,7 @@ function TripReviewCanvasInner({
   let dayCursor = 0;
 
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#e4dece] bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
+    <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
       {/* Trip-level toolbar — route order + jump-to-city + back-to-top on one
           row, so each stop header stays uncluttered. Party size + route label
           live in the persistent header (no duplicate summary band). */}
@@ -286,7 +321,7 @@ function TripReviewCanvasInner({
         <PlanCityJumpNav sections={sections} onJump={handleJump} embedded />
       </RouteLeversBar>
 
-      <div className="flex-1 overflow-y-auto bg-[#f7f4ec] py-2">
+      <div className="flex-1 overflow-y-auto bg-surface-2 py-2">
         <span id={ITINERARY_TOP_ID} aria-hidden="true" />
         {segments.map((segment, i) => {
           const start = dayCursor + 1;

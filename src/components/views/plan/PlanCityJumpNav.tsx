@@ -91,6 +91,13 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
 
   useEffect(() => {
     if (!open) return;
+    // Move focus into the list on open so the selected (or first) option is the
+    // keyboard start point — arrow keys then rove immediately (listbox pattern).
+    const raf = requestAnimationFrame(() => {
+      const opts = popRef.current?.querySelectorAll<HTMLElement>('[role="option"]');
+      const selected = popRef.current?.querySelector<HTMLElement>('[role="option"][aria-selected="true"]');
+      (selected ?? opts?.[0])?.focus();
+    });
     const onDown = (e: PointerEvent) => {
       const t = e.target as Node;
       if (popRef.current?.contains(t) || triggerRef.current?.contains(t)) return;
@@ -105,6 +112,7 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
     document.addEventListener("pointerdown", onDown);
     window.addEventListener("keydown", onKey);
     return () => {
+      cancelAnimationFrame(raf);
       document.removeEventListener("pointerdown", onDown);
       window.removeEventListener("keydown", onKey);
     };
@@ -119,18 +127,43 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
   };
 
   const list = (
-    <div role="listbox" aria-label="Jump to city" className="py-1">
+    <div
+      role="listbox"
+      aria-label="Jump to city"
+      className="py-1"
+      onKeyDown={(e) => {
+        if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(e.key)) return;
+        const opts = Array.from(popRef.current?.querySelectorAll<HTMLElement>('[role="option"]') ?? []);
+        if (opts.length === 0) return;
+        e.preventDefault();
+        const idx = opts.indexOf(document.activeElement as HTMLElement);
+        const next =
+          e.key === "Home" ? 0
+          : e.key === "End" ? opts.length - 1
+          : e.key === "ArrowDown" ? (idx + 1 + opts.length) % opts.length
+          : (idx - 1 + opts.length) % opts.length;
+        opts[next]?.focus();
+      }}
+    >
       {sections.map((sec, si) => (
         <div
           key={sec.country}
           role="group"
           aria-label={sec.country}
-          className={si > 0 ? "mt-1 border-t border-[#efeadd] pt-1" : ""}
+          className={si > 0 ? "mt-1 border-t border-surface-3 pt-1" : ""}
         >
           {grouped && (
-            <p className="flex items-center gap-1.5 bg-[#faf8f1] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide text-[#7a7466]">
-              <span aria-hidden="true">{getCountryFlag(sec.country)}</span>
-              {sec.country}
+            <p className="sticky top-0 z-[1] flex items-center gap-2 border-b border-emerald-100 bg-gradient-to-r from-emerald-50 to-white px-3 py-2 text-[10px] font-bold uppercase tracking-wide text-emerald-800">
+              <span
+                aria-hidden="true"
+                className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-white text-[11px] shadow-sm ring-1 ring-emerald-100"
+              >
+                {getCountryFlag(sec.country)}
+              </span>
+              <span className="truncate">{sec.country}</span>
+              <span className="ml-auto shrink-0 rounded-full bg-emerald-100 px-1.5 py-0.5 text-[9px] font-bold text-emerald-700">
+                {sec.cities.length}
+              </span>
             </p>
           )}
           {sec.cities.map((g) => (
@@ -140,7 +173,7 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
               role="option"
               aria-selected={current === g.name}
               onClick={() => select(g.name)}
-              className="focus-ring-emerald flex min-h-[40px] w-full items-center justify-between gap-2 px-3 py-2 text-left text-xs font-semibold text-[#1e2a25] transition-colors hover:bg-emerald-50 hover:text-emerald-800"
+              className="focus-ring-emerald flex min-h-[40px] w-full items-center justify-between gap-2 px-3 py-2 text-left text-xs font-semibold text-ink-1 transition-colors hover:bg-emerald-50 hover:text-emerald-800"
             >
               <span className="flex items-center gap-1.5">
                 <span aria-hidden="true" className="w-4 shrink-0 text-center opacity-70">
@@ -148,7 +181,7 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
                 </span>
                 {g.name}
               </span>
-              <span className="shrink-0 text-[9px] font-bold text-[#a8a293]">{g.days.length}d</span>
+              <span className="shrink-0 rounded-md bg-surface-2 px-1.5 py-0.5 text-[9px] font-bold text-ink-3">{g.days.length}d</span>
             </button>
           ))}
         </div>
@@ -163,7 +196,7 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
       onClick={() => setOpen((o) => !o)}
       aria-haspopup="listbox"
       aria-expanded={open}
-      className="focus-ring-emerald flex min-h-[34px] items-center gap-1.5 rounded-full border border-[#d8d2c2] bg-white px-3 py-1 text-[11px] font-semibold text-[#1e2a25] transition-colors hover:border-emerald-500 hover:bg-emerald-50 hover:text-emerald-800"
+      className="focus-ring-emerald flex min-h-[34px] items-center gap-1.5 rounded-full border border-line-strong bg-white px-3 py-1 text-[11px] font-semibold text-ink-1 transition-colors hover:border-emerald-500 hover:bg-emerald-50 hover:text-emerald-800"
     >
       <span aria-hidden="true">📍</span>
       <span>{current ?? (grouped ? "Jump to country / city…" : "Jump to city…")}</span>
@@ -190,9 +223,9 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
             />
             <div
               ref={popRef}
-              className="relative max-h-[70vh] overflow-y-auto rounded-t-3xl border-t border-[#e4dece] bg-white px-1 pb-8 pt-3 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
+              className="relative max-h-[70vh] overflow-y-auto rounded-t-3xl border-t border-line bg-white px-1 pb-8 pt-3 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
             >
-              <div className="mx-auto mb-1 h-1 w-10 rounded-full bg-[#d8d2c2]" aria-hidden="true" />
+              <div className="mx-auto mb-1 h-1 w-10 rounded-full bg-line-strong" aria-hidden="true" />
               {list}
             </div>
           </div>,
@@ -205,7 +238,7 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
         createPortal(
           <div
             ref={popRef}
-            className="fixed z-50 overflow-y-auto rounded-xl border border-[#e4dece] bg-white shadow-xl motion-safe:animate-[fadeInUp_0.15s_ease-out]"
+            className="fixed z-50 overflow-y-auto rounded-xl border border-line bg-white shadow-xl motion-safe:animate-[fadeInUp_0.15s_ease-out]"
             style={{ left: pos.left, width: pos.width, top: pos.top, bottom: pos.bottom, maxHeight: pos.maxH }}
           >
             {list}
@@ -226,7 +259,7 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
   }
 
   return (
-    <nav aria-label="Jump to city" className="border-b border-[#e6e1d4] bg-white px-4 py-2">
+    <nav aria-label="Jump to city" className="border-b border-line bg-white px-4 py-2">
       {/* Desktop pills — short single-country routes only. */}
       {!manyStops && (
         <div className="hidden flex-wrap items-center gap-x-1.5 gap-y-1.5 md:flex">
@@ -236,7 +269,7 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
                 type="button"
                 onClick={() => jump(g.name)}
                 aria-label={`Jump to ${g.name}`}
-                className="focus-ring-emerald rounded-full bg-[#f4f1e8] px-2.5 py-1 text-[10px] font-semibold text-[#1e2a25] transition-colors hover:bg-emerald-50 hover:text-emerald-800"
+                className="focus-ring-emerald rounded-full bg-surface-2 px-2.5 py-1 text-[10px] font-semibold text-ink-1 transition-colors hover:bg-emerald-50 hover:text-emerald-800"
               >
                 {g.name}
               </button>
@@ -250,7 +283,7 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
                     {TRANSPORT_EMOJI[allCities[i + 1].transport!.type]}
                   </span>
                 ) : (
-                  <span className="text-[10px] text-[#cfc9b8]" aria-hidden="true">→</span>
+                  <span className="text-[10px] text-line-strong" aria-hidden="true">→</span>
                 ))}
             </span>
           ))}

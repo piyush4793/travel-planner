@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../../core/types";
@@ -6,7 +6,7 @@ import { type BudgetBasis } from "../../../core/utils/budget";
 import { cityExperienceOptions } from "../../../core/utils/cityExperiences";
 import { STYLE_META } from "../../../core/utils/travelStyles";
 import { type TripPlan, type TripSegment, extractPlanCities, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
-import { usePlanBuilder } from "../../../hooks/usePlanBuilder";
+import { usePlanBuilder, type PlanBuilderSeed } from "../../../hooks/usePlanBuilder";
 import { useBackDismiss } from "../../../hooks/useBackDismiss";
 import DestinationPicker from "./DestinationPicker";
 import PlanTripHeader, { type HeaderStats } from "./PlanTripHeader";
@@ -20,11 +20,12 @@ import type { PlanActions } from "./planActions";
 import { loadPlanDraft, savePlanDraft, clearPlanDraft } from "./planDraft";
 import { isEnabled } from "../../../core/featureFlags";
 import { MAX_TRIP_UNITS } from "../../../core/utils/multiCountry";
-import { buildTripSnapshot, tripSignature, type SavedTrip, type SnapshotStop } from "../../../core/utils/savedTrips";
+import { buildTripSnapshot, tripSignature, toOpenRequest, type SavedTrip, type SnapshotStop, type OpenTripRequest } from "../../../core/utils/savedTrips";
+import { useConfirm } from "../../shared/ConfirmDialog";
 import { getDestinationSource } from "../../../core/trip/getDestinationSource";
 import { useTripExperiences } from "../../../hooks/useTripExperiences";
 import { useTripRules } from "../../../hooks/useTripRules";
-import { useTripPlanner } from "../../../hooks/useTripPlanner";
+import { useTripPlanner, type TripPlannerSeed } from "../../../hooks/useTripPlanner";
 
 const ItineraryCinematic = lazy(() => import("../../country/ItineraryCinematic"));
 
@@ -58,8 +59,11 @@ type Props = {
   aiPlanCountFor?: (name: string) => number;
   mainMapRef?: RefObject<maplibregl.Map | null>;
   onCinematicChange?: (active: boolean) => void;
-  /** Open a saved route in the wizard (jumps to Review). Bump `nonce` to re-open. */
-  openTrip?: { countries: string[]; nonce: number } | null;
+  /** Open a saved route in the wizard (jumps to Review) and rehydrate each stop's
+   *  snapshot cities + length. Bump `nonce` to re-open. */
+  openTrip?: OpenTripRequest | null;
+  /** Resolve a saved trip for a picked country set (resume-vs-fresh prompt). */
+  matchSavedTrip?: (countries: string[]) => SavedTrip | null;
 };
 
 type StepKey = "basics" | "cities" | "review";
@@ -79,7 +83,7 @@ const STEP_META: Record<StepKey, StepMeta> = {
  * is inferred behind the scenes and tunable on Review; cities are a result you
  * edit, never a filter that fights vibe.
  */
-export default function PlanView({ countries, visitedNames, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onToggleVisited, favoriteNames, onToggleFavorite, onUpdateNotes, aiPlanCountFor, mainMapRef, onCinematicChange, openTrip }: Props) {
+export default function PlanView({ countries, visitedNames, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onToggleVisited, favoriteNames, onToggleFavorite, onUpdateNotes, aiPlanCountFor, mainMapRef, onCinematicChange, openTrip, matchSavedTrip }: Props) {
   // Rehydrate a saved draft once so a refresh resumes where the user left off.
   const draft0 = useRef(loadPlanDraft()).current;
   const multiCountry = isEnabled("multiCountryPlanning");
@@ -99,11 +103,26 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   const picked = selection[0] ?? null;
   const [stepIndex, setStepIndex] = useState(() => (picked && draft0 ? draft0.step : 0));
 
+  // A reopened saved trip's per-stop snapshot (cities + tuned length), applied
+  // once per nonce to rehydrate the funnel: the primary stop through
+  // `usePlanBuilder`, the additional stops through `useTripPlanner`.
+  const [restoreSeed, setRestoreSeed] = useState<
+    { nonce: number; primary: { cities: string[]; days: number }; byCountry: Record<string, { cities: string[]; days: number }> } | null
+  >(null);
+  const primarySeed = useMemo<PlanBuilderSeed | null>(
+    () => (restoreSeed ? { nonce: restoreSeed.nonce, ...restoreSeed.primary } : null),
+    [restoreSeed],
+  );
+  const tripSeed = useMemo<TripPlannerSeed | null>(
+    () => (restoreSeed ? { nonce: restoreSeed.nonce, byCountry: restoreSeed.byCountry } : null),
+    [restoreSeed],
+  );
+
   const builderInitial =
     draft0 && picked && draft0.countries[0] === picked.name
       ? { selectedCities: draft0.cities, selectedExperiences: draft0.experiences, customDays: draft0.days, daysPinned: draft0.pinned }
       : undefined;
-  const builder = usePlanBuilder(picked, budgetBasis, builderInitial);
+  const builder = usePlanBuilder(picked, budgetBasis, builderInitial, primarySeed);
   const { displayCountry, ruleLoading, customDays, daysPinned, plan } = builder;
 
   // Persist the funnel so a refresh resumes it; clear once the user backs out.
@@ -123,22 +142,80 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     });
   }, [selection, stepIndex, selCities, selExp, customDays, daysPinned]);
 
-  // Open a saved route from My Trips: reseed the ordered selection and jump to
-  // Review. Review is the last step; index 2 lands there whether or not the
+  // A saved route to rehydrate into the wizard — fed either by the `openTrip`
+  // prop (My Trips reopen) or by the same-set "Resume" prompt on the landing
+  // picker. Both paths share this one restore pipeline (DRY).
+  const [pendingOpen, setPendingOpen] = useState<OpenTripRequest | null>(null);
+  useEffect(() => {
+    if (openTrip) setPendingOpen(openTrip);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openTrip?.nonce]);
+
+  // Open a saved route: reseed the ordered selection, jump to Review, restore the
+  // saved budget basis, and stage a per-stop restore (snapshot cities + tuned
+  // length) that `usePlanBuilder` (primary) and `useTripPlanner` (additional
+  // stops) apply. Review is the last step; index 2 lands there whether or not the
   // cities step is present yet (safeIndex clamps while rules load, then the
   // 3-step review shares the same index). Applied once per nonce so re-opening
   // the same trip works but a stale prop never clobbers in-progress edits.
   const appliedOpenNonce = useRef<number | null>(null);
   useEffect(() => {
-    if (!openTrip || appliedOpenNonce.current === openTrip.nonce) return;
-    appliedOpenNonce.current = openTrip.nonce;
-    const resolved = openTrip.countries.map(resolveCountry).filter((c): c is Country => c !== null);
+    if (!pendingOpen || appliedOpenNonce.current === pendingOpen.nonce) return;
+    const stopByName = new Map(pendingOpen.stops.map((s) => [s.country, s]));
+    const resolved = pendingOpen.stops.map((s) => resolveCountry(s.country)).filter((c): c is Country => c !== null);
+    // Only mark this open request as handled once the names actually resolve, so
+    // an open that arrives before destination data is ready is retried rather than
+    // permanently swallowed by a prematurely-stamped nonce.
     if (resolved.length === 0) return;
+    appliedOpenNonce.current = pendingOpen.nonce;
     setSelection(resolved);
     setStepIndex(2);
-    // resolveCountry is a stable lookup over props; re-running only on nonce is intended.
+    setBudgetBasis(pendingOpen.basis);
+    // Align the restore payload to the *resolved* order, so an unresolvable stop
+    // never shifts the primary/secondary split.
+    const primaryStop = stopByName.get(resolved[0].name);
+    const byCountry: Record<string, { cities: string[]; days: number }> = {};
+    for (const c of resolved.slice(1)) {
+      const s = stopByName.get(c.name);
+      if (s) byCountry[c.name] = { cities: s.cities, days: s.days };
+    }
+    setRestoreSeed({
+      nonce: pendingOpen.nonce,
+      primary: primaryStop ? { cities: primaryStop.cities, days: primaryStop.days } : { cities: [], days: 7 },
+      byCountry,
+    });
+    // Re-runs when the open request changes or destination data lands, but the
+    // nonce guard above makes it idempotent per open, so it applies exactly once
+    // and never clobbers in-progress edits. resolveCountry/setBudgetBasis stable.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [openTrip?.nonce]);
+  }, [pendingOpen, countries]);
+
+  // Landing "Start trip": if the picked country set matches a saved trip, offer to
+  // resume it (primary) or start fresh (secondary); otherwise start fresh.
+  const [confirmResume, ResumeDialog] = useConfirm();
+  const handleStartSelection = useCallback(async (chosen: Country[]) => {
+    const match = matchSavedTrip?.(chosen.map((c) => c.name)) ?? null;
+    if (match) {
+      // Esc / click-outside = dismiss → stay on the landing picker (do nothing).
+      // Only the explicit "Start fresh" button falls through to a fresh plan.
+      let dismissed = false;
+      const resume = await confirmResume({
+        variant: "emerald",
+        title: "Resume your saved plan?",
+        message: `You've already planned “${match.name}”. Resume it with your saved places and trip lengths, or start fresh?`,
+        confirmLabel: "Resume saved plan",
+        cancelLabel: "Start fresh",
+        onDismiss: () => { dismissed = true; },
+      });
+      if (resume) {
+        setPendingOpen(toOpenRequest(match, Date.now()));
+        return;
+      }
+      if (dismissed) return;
+    }
+    setSelection(chosen);
+    setStepIndex(0);
+  }, [matchSavedTrip, confirmResume]);
 
   // Cinematic fly-through overlay. Lives here (not in the pane) so it can drive
   // the always-mounted MapView behind the whole app via onCinematicChange, and
@@ -174,7 +251,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   // primary + additional stops yields one honest trip plan for the Places summary.
   const secondaryNames = useMemo(() => selection.slice(1).map((c) => c.name), [selection]);
   const { units: secondaryUnits } = useTripRules(secondaryNames, source);
-  const tripPlanner = useTripPlanner(secondaryUnits, builder.selectedExperiences, budgetBasis);
+  const tripPlanner = useTripPlanner(secondaryUnits, builder.selectedExperiences, budgetBasis, tripSeed);
 
   const placesUnits = useMemo<PlacesUnit[]>(() => {
     if (!displayCountry) return [];
@@ -212,6 +289,16 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     }));
     return [primary, ...rest];
   }, [displayCountry, builder, tripPlanner.unitPlans]);
+
+  // Live per-stop day counts keyed by unit name, mirroring the forming plan (each
+  // unit's tuned length). Fed to the Basics route card so its per-stop days + total
+  // track the header's composed plan and react to vibe/experience changes, instead
+  // of showing a static recommended baseline that drifts from the header.
+  const routeStopDays = useMemo<Record<string, number>>(() => {
+    const map: Record<string, number> = {};
+    for (const u of placesUnits) map[u.name] = u.customDays;
+    return map;
+  }, [placesUnits]);
 
   // Keep the lifted Places active-country index valid as the route grows/shrinks.
   useEffect(() => {
@@ -280,17 +367,20 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
 
   if (!picked) {
     return (
-      <DestinationPicker
-        source={source}
-        countries={countries}
-        exploreCountries={exploreCountries}
-        visitedNames={visitedNames}
-        favoriteNames={favoriteNames}
-        onStart={(cs) => { setSelection(cs); setStepIndex(0); }}
-        onGoDiscover={onGoDiscover}
-        multiSelect={multiCountry}
-        maxSelection={MAX_TRIP_UNITS}
-      />
+      <>
+        <DestinationPicker
+          source={source}
+          countries={countries}
+          exploreCountries={exploreCountries}
+          visitedNames={visitedNames}
+          favoriteNames={favoriteNames}
+          onStart={handleStartSelection}
+          onGoDiscover={onGoDiscover}
+          multiSelect={multiCountry}
+          maxSelection={MAX_TRIP_UNITS}
+        />
+        <ResumeDialog />
+      </>
     );
   }
   // Multi-country trip: the Basics step summarizes the whole route rather than a
@@ -360,7 +450,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     ) : undefined;
 
   return (
-    <div className="flex h-full w-full flex-col overflow-hidden bg-[#f7f4ec]">
+    <div className="flex h-full w-full flex-col overflow-hidden bg-surface-2">
       <PlanTripHeader
         selection={selection}
         routeStopLimit={HEADER_ROUTE_STOPS}
@@ -389,8 +479,8 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
         <div key={current.key} className={`plan-step-in w-full ${isReview ? "h-full" : centerStep ? "flex min-h-full flex-col justify-center" : ""}`}>
           {isReview ? (
             ruleLoading && !plan ? (
-              <div className="flex h-64 items-center justify-center rounded-2xl border border-[#e4dece] bg-white">
-                <span className="text-sm text-[#a09a89]">Building your plan…</span>
+              <div className="flex h-64 items-center justify-center rounded-2xl border border-line bg-white">
+                <span className="text-sm text-ink-4">Building your plan…</span>
               </div>
             ) : plan && displayCountry ? (
               isMulti ? (
@@ -416,8 +506,8 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                 />
               )
             ) : (
-              <div className="flex h-64 items-center justify-center rounded-2xl border border-[#e4dece] bg-white">
-                <span className="text-sm text-[#a09a89]">No itinerary available.</span>
+              <div className="flex h-64 items-center justify-center rounded-2xl border border-line bg-white">
+                <span className="text-sm text-ink-4">No itinerary available.</span>
               </div>
             )
           ) : (
@@ -426,12 +516,12 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
               <div className="mb-5 text-center">
                 <div className="mb-1 text-4xl" aria-hidden="true">{current.icon}</div>
                 <div className="flex items-center justify-center gap-2">
-                  <h2 className="font-display text-2xl font-semibold tracking-tight text-[#16241d]">{current.title}</h2>
+                  <h2 className="font-display text-2xl font-semibold tracking-tight text-ink-1">{current.title}</h2>
                   {current.optional && (
-                    <span className="rounded-full bg-[#efeadd] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#a09a89]">Optional</span>
+                    <span className="rounded-full bg-surface-3 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ink-4">Optional</span>
                   )}
                 </div>
-                <p className="mx-auto mt-1.5 max-w-sm text-xs text-[#6f6a5d]">
+                <p className="mx-auto mt-1.5 max-w-sm text-xs text-ink-2">
                   {current.key === "basics" && isMulti
                     ? "Who's going and what you love — we'll tailor each stop next."
                     : current.subtitle}
@@ -448,6 +538,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                   selectedExperiences={builder.selectedExperiences}
                   onToggleExperience={builder.toggleExperience}
                   onClearExperiences={builder.clearExperiences}
+                  stopDays={routeStopDays}
                   plan={plan}
                 />
               )}
@@ -462,11 +553,11 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
 
       {/* Sticky footer nav. On the Review step below lg, the workspace's mobile
           bar owns Back (merged with the rail triggers), so hide this there. */}
-      <div className={`shrink-0 border-t border-[#e6e1d4] bg-[#f7f4ec]/90 px-4 pt-3 pb-safe backdrop-blur ${isReview ? "hidden lg:block" : ""}`}>
+      <div className={`shrink-0 border-t border-line bg-surface-2/90 px-4 pt-3 pb-safe backdrop-blur ${isReview ? "hidden lg:block" : ""}`}>
         <div className="mx-auto flex max-w-md items-center gap-3">
           <button
             onClick={() => (safeIndex === 0 ? changeDestination() : goTo(safeIndex - 1))}
-            className="focus-ring-emerald min-h-[44px] rounded-full border border-[#e4dece] bg-white px-4 py-2 text-sm font-semibold text-[#6f6a5d] shadow-sm transition-colors hover:bg-[#f4f1e8]"
+            className="focus-ring-emerald min-h-[44px] rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-2 shadow-sm transition-colors hover:bg-surface-2"
           >
             {safeIndex === 0 ? "↺ Change" : "← Back"}
           </button>
@@ -480,7 +571,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
           ) : (
             <button
               onClick={changeDestination}
-              className="focus-ring-emerald ml-auto inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[#e4dece] bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm transition-colors hover:bg-[#f4f1e8]"
+              className="focus-ring-emerald ml-auto inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm transition-colors hover:bg-surface-2"
             >
               <span aria-hidden="true">＋</span> Plan another
             </button>

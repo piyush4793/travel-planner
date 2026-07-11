@@ -61,6 +61,15 @@ export type PlanBuilderInitial = {
 };
 
 /**
+ * A one-shot restore of a reopened saved trip's *primary* stop — applied once per
+ * `nonce` (so re-opening the same trip re-applies, but a stale prop never clobbers
+ * in-progress edits). Unlike {@link PlanBuilderInitial} (first-render only), this
+ * re-seeds the live funnel after mount, waiting for the country's rules to load so
+ * a restored city list isn't dropped before its cities exist.
+ */
+export type PlanBuilderSeed = { nonce: number; cities: string[]; days: number };
+
+/**
  * Encapsulates the Plan-tab intent funnel: rule loading, day auto-seed + pin,
  * and live plan generation. Data flows one way — party/vibe/length/cities shape
  * the plan; cities are a result you edit, never a filter that fights vibe.
@@ -70,7 +79,7 @@ export type PlanBuilderInitial = {
  * `initial` rehydrates the funnel for the current `country` (from a persisted
  * draft). It only seeds the first render; switching destinations still resets.
  */
-export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis, initial?: PlanBuilderInitial): PlanBuilder {
+export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis, initial?: PlanBuilderInitial, seed?: PlanBuilderSeed | null): PlanBuilder {
   const { data: consolidated, rule, loading: ruleLoading } = useCountryRule(country?.name);
 
   const [selectedCities, setSelectedCities] = useState<string[]>(initial?.selectedCities ?? []);
@@ -122,6 +131,26 @@ export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis
   useEffect(() => {
     if (!daysPinned) setCustomDays(recommendedDays);
   }, [recommendedDays, daysPinned]);
+
+  // Restore a reopened saved trip's primary stop: pin its snapshot cities + length.
+  // Declared AFTER the recommendation re-seed effect so, in the mount flush, the
+  // recommendation writes first and this snapshot value wins (otherwise the
+  // still-unpinned recommendation would clobber the restored length). Waits for
+  // the rules to load so a restored city list isn't filtered away before the
+  // country's cities exist; the nonce guard keeps it idempotent (applied once).
+  const appliedSeedNonce = useRef<number | null>(null);
+  useEffect(() => {
+    if (!seed || appliedSeedNonce.current === seed.nonce || ruleLoading) return;
+    appliedSeedNonce.current = seed.nonce;
+    const cityNames = new Set((displayCountry?.cities ?? []).map((c) => c.name));
+    setSelectedCities(seed.cities.filter((c) => cityNames.has(c)));
+    setSelectedExperiences([]);
+    setCustomDays(seed.days);
+    setDaysPinned(true);
+    // `displayCountry` identity churns as rule data lands; the nonce guard makes
+    // re-runs idempotent, so this applies once the cities are available.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [seed?.nonce, ruleLoading]);
 
   const orderedCities = useMemo(() => {
     const cities = displayCountry?.cities ?? [];

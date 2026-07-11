@@ -38,20 +38,20 @@ function BorderHopInner({ fromName, toName, fromPoint, toPoint }: Props) {
   const panelId = `hop-${fromName.replace(/\s+/g, "-")}-${toName.replace(/\s+/g, "-")}`;
 
   return (
-    <div className="mx-3 my-3 rounded-xl border border-dashed border-[#d9d3c4] bg-[#faf8f1]">
+    <div className="mx-3 my-3 rounded-xl border border-dashed border-line-strong bg-surface-1">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-controls={panelId}
-        className="focus-ring-emerald flex w-full items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-left transition-colors hover:bg-[#f4f0e5]"
+        className="focus-ring-emerald flex w-full items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-left transition-colors hover:bg-surface-2"
       >
         <span aria-hidden="true" className="text-lg leading-none">✈️</span>
         <div className="min-w-0 flex-1">
-          <p className="text-[11px] font-bold text-[#1e2a25]">
+          <p className="text-[11px] font-bold text-ink-1">
             Travel from {fromName} to {toName}
           </p>
-          <p className="text-[10px] text-[#8a8577]">
+          <p className="text-[10px] text-ink-3">
             Cross-country hop · plan flights/rail separately
           </p>
         </div>
@@ -61,27 +61,27 @@ function BorderHopInner({ fromName, toName, fromPoint, toPoint }: Props) {
       </button>
 
       {open && (
-        <div id={panelId} className="border-t border-dashed border-[#e2dccc] px-3.5 py-2.5">
-          <ul className="space-y-1.5 text-[11px] text-[#3a4640]">
+        <div id={panelId} className="border-t border-dashed border-line px-3.5 py-2.5">
+          <ul className="space-y-1.5 text-[11px] text-ink-body">
             <li className="flex items-center gap-2">
               <span aria-hidden="true">✈</span>
               <span className="flex-1">Flight</span>
-              <span className="font-semibold text-[#1e2a25]">
+              <span className="font-semibold text-ink-1">
                 {km != null ? `~${flightHours(km)}h` : "check operators"}
               </span>
             </li>
             <li className="flex items-center gap-2">
               <span aria-hidden="true">🚆</span>
               <span className="flex-1">Rail</span>
-              <span className="text-[#8a8577]">varies</span>
+              <span className="text-ink-3">varies</span>
             </li>
             <li className="flex items-center gap-2">
               <span aria-hidden="true">🚌</span>
               <span className="flex-1">Road</span>
-              <span className="text-[#8a8577]">varies</span>
+              <span className="text-ink-3">varies</span>
             </li>
           </ul>
-          <p className="mt-2 text-[10px] leading-snug text-[#8a8577]">
+          <p className="mt-2 text-[10px] leading-snug text-ink-3">
             {km != null ? `~${km.toLocaleString()} km apart · ` : ""}times are indicative — confirm
             with an operator. Hops cost no itinerary days.
           </p>

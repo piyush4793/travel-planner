@@ -83,6 +83,22 @@ describe("PlanCityJumpNav — jump-to-city", () => {
     expect(within(listbox).getByRole("group", { name: "Sweden" })).toBeInTheDocument();
   });
 
+  it("roves focus across options with arrow / Home / End keys", () => {
+    renderWithAnchors();
+    fireEvent.click(screen.getByRole("button", { name: /Jump to city…/i }));
+    const listbox = screen.getByRole("listbox", { name: /Jump to city/i });
+    const options = within(listbox).getAllByRole("option");
+    options[0].focus(); // deterministic start (independent of rAF auto-focus)
+    fireEvent.keyDown(listbox, { key: "ArrowDown" });
+    expect(options[1]).toHaveFocus();
+    fireEvent.keyDown(listbox, { key: "ArrowDown" });
+    expect(options[0]).toHaveFocus(); // wraps around
+    fireEvent.keyDown(listbox, { key: "End" });
+    expect(options[options.length - 1]).toHaveFocus();
+    fireEvent.keyDown(listbox, { key: "Home" });
+    expect(options[0]).toHaveFocus();
+  });
+
   it("caps the desktop dropdown height so it stays compact as cities scale", () => {
     const many = Array.from({ length: 20 }, (_, i) => ({
       name: `City${i}`,

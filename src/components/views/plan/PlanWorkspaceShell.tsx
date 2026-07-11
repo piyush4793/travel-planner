@@ -31,12 +31,12 @@ function RailHeader({ title, side, onCollapse }: { title: string; side: "left" |
   const chevron = side === "left" ? "‹" : "›";
   return (
     <div className="flex shrink-0 items-center gap-2 px-1 pb-2">
-      <h2 className="font-display text-sm font-semibold tracking-tight text-[#16241d]">{title}</h2>
+      <h2 className="font-display text-sm font-semibold tracking-tight text-ink-1">{title}</h2>
       <button
         type="button"
         onClick={onCollapse}
         aria-label={`Collapse ${title} panel`}
-        className="focus-ring-emerald ml-auto flex h-7 w-7 items-center justify-center rounded-full border border-[#e4dece] bg-white text-sm font-bold text-[#6f6a5d] transition-colors hover:bg-[#f4f1e8]"
+        className="focus-ring-emerald ml-auto flex h-7 w-7 items-center justify-center rounded-full border border-line bg-white text-sm font-bold text-ink-2 transition-colors hover:bg-surface-2"
       >
         <span aria-hidden="true">{chevron}</span>
       </button>
@@ -52,7 +52,7 @@ function ReopenTab({ label, side, onOpen }: { label: string; side: "left" | "rig
       onClick={onOpen}
       aria-label={`Show ${label} panel`}
       aria-expanded={false}
-      className="focus-ring-emerald flex w-9 shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border border-[#e4dece] bg-white py-3 text-[#6f6a5d] shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-colors hover:bg-[#f4f1e8]"
+      className="focus-ring-emerald flex w-9 shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border border-line bg-white py-3 text-ink-2 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-colors hover:bg-surface-2"
     >
       <span aria-hidden="true" className="text-sm font-bold">{chevron}</span>
       <span className="text-[10px] font-bold uppercase tracking-[0.16em] [writing-mode:vertical-rl]">{label}</span>
@@ -131,7 +131,7 @@ function PlanWorkspaceShellInner({ center, shape, context }: Props) {
             onClick={() => setSheet(r.key)}
             aria-haspopup="dialog"
             aria-expanded={sheet === r.key}
-            className="focus-ring-emerald flex min-h-[44px] items-center justify-center gap-1.5 rounded-full border border-[#e4dece] bg-white px-3 py-2 text-xs font-bold text-[#1e2a25] shadow-sm transition-colors hover:bg-[#f4f1e8]"
+            className="focus-ring-emerald flex min-h-[44px] items-center justify-center gap-1.5 rounded-full border border-line bg-white px-3 py-2 text-xs font-bold text-ink-1 shadow-sm transition-colors hover:bg-surface-2"
           >
             {r.mobileLabel}
           </button>
@@ -146,15 +146,15 @@ function PlanWorkspaceShellInner({ center, shape, context }: Props) {
             onClick={() => closeSheet()}
             className="absolute inset-0 bg-black/40 motion-safe:animate-[fadeInUp_0.15s_ease-out]"
           />
-          <div className="relative max-h-[82vh] overflow-y-auto rounded-t-3xl border-t border-[#e4dece] bg-[#f7f4ec] px-3 pb-8 pt-3 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]">
-            <div className="mx-auto mb-2.5 h-1 w-10 rounded-full bg-[#d8d2c2]" aria-hidden="true" />
+          <div className="relative max-h-[82vh] overflow-y-auto rounded-t-3xl border-t border-line bg-surface-2 px-3 pb-8 pt-3 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]">
+            <div className="mx-auto mb-2.5 h-1 w-10 rounded-full bg-line-strong" aria-hidden="true" />
             <div className="mb-2.5 flex items-center justify-between px-1">
-              <h3 className="font-display text-base font-semibold tracking-tight text-[#16241d]">{activeRail.title}</h3>
+              <h3 className="font-display text-base font-semibold tracking-tight text-ink-1">{activeRail.title}</h3>
               <button
                 type="button"
                 onClick={() => closeSheet()}
                 aria-label="Close panel"
-                className="focus-ring-emerald flex h-8 w-8 items-center justify-center rounded-full border border-[#e4dece] bg-white text-sm font-bold text-[#6f6a5d] transition-colors hover:bg-[#f4f1e8]"
+                className="focus-ring-emerald flex h-8 w-8 items-center justify-center rounded-full border border-line bg-white text-sm font-bold text-ink-2 transition-colors hover:bg-surface-2"
               >
                 <span aria-hidden="true">✕</span>
               </button>

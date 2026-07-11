@@ -19,7 +19,18 @@ type Props = {
 function FocusChipsInner({ options, selected, onToggle, onClear }: Props) {
   return (
     <>
-      <p className="mb-2 text-[11px] text-[#6f6a5d]">Shapes the itinerary toward what you pick.</p>
+      <div className="mb-2 flex items-center justify-between gap-2">
+        <p className="min-w-0 text-[11px] text-ink-2">Shapes the itinerary toward what you pick.</p>
+        {selected.length > 0 && (
+          <button
+            type="button"
+            onClick={onClear}
+            className="focus-ring-emerald -my-1 inline-flex min-h-[32px] shrink-0 items-center rounded px-1.5 text-[11px] font-semibold text-ink-2 transition-colors hover:text-emerald-800"
+          >
+            Clear ({selected.length})
+          </button>
+        )}
+      </div>
       <div className="flex flex-wrap gap-1.5">
         {options.map((exp) => {
           const active = selected.includes(exp);
@@ -32,7 +43,7 @@ function FocusChipsInner({ options, selected, onToggle, onClear }: Props) {
               className={`focus-ring-emerald min-h-[32px] rounded-full border px-2.5 py-1 text-xs font-semibold transition-colors ${
                 active
                   ? "border-emerald-700 bg-emerald-700 text-white shadow-sm"
-                  : "border-[#e4dece] bg-white text-[#1e2a25] hover:border-emerald-500 hover:text-emerald-800"
+                  : "border-line bg-white text-ink-1 hover:border-emerald-500 hover:text-emerald-800"
               }`}
             >
               {exp}
@@ -40,15 +51,6 @@ function FocusChipsInner({ options, selected, onToggle, onClear }: Props) {
           );
         })}
       </div>
-      {selected.length > 0 && (
-        <button
-          type="button"
-          onClick={onClear}
-          className="focus-ring-emerald mt-2 rounded text-[11px] font-semibold text-[#a09a89] transition-colors hover:text-[#6f6a5d]"
-        >
-          Clear ({selected.length})
-        </button>
-      )}
     </>
   );
 }

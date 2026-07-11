@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildTripSnapshot, tripSignature, type SnapshotStop } from "../core/utils/savedTrips";
+import { buildTripSnapshot, tripSignature, toOpenRequest, findSavedTripForCountries, type SnapshotStop, type SavedTrip, type SavedTripStop } from "../core/utils/savedTrips";
 import type { TripPlan } from "../core/utils/tripPlans";
 
 function plan(cities: string[], cost = "₹1L–₹2L"): TripPlan {
@@ -58,5 +58,95 @@ describe("buildTripSnapshot", () => {
     const snap = buildTripSnapshot({ stops: [{ country: "Italy", days: 4, plan: plan(["Rome"]) }], composed: plan(["Rome"]), basis: "solo" });
     expect(() => new Date(snap.savedAt).toISOString()).not.toThrow();
     expect(new Date(snap.savedAt).getTime()).toBeGreaterThan(0);
+  });
+});
+
+function savedTrip(stops: SavedTripStop[], overrides: Partial<SavedTrip> = {}): SavedTrip {
+  return {
+    id: overrides.id ?? stops.map((s) => s.country).join("-"),
+    name: overrides.name ?? tripSignature(stops.map((s) => s.country)),
+    stops,
+    basis: overrides.basis ?? "couple",
+    totalDays: overrides.totalDays ?? stops.reduce((n, s) => n + s.days, 0),
+    costPerPerson: overrides.costPerPerson ?? "₹1L–₹2L",
+    savedAt: overrides.savedAt ?? "2026-01-01T00:00:00.000Z",
+    favorite: overrides.favorite,
+  };
+}
+
+describe("toOpenRequest", () => {
+  it("carries stops (country/days/cities), basis and the given nonce", () => {
+    const trip = savedTrip(
+      [
+        { country: "Norway", days: 3, cities: ["Oslo", "Bergen"] },
+        { country: "Denmark", days: 2, cities: ["Copenhagen"] },
+      ],
+      { basis: "family4" },
+    );
+    const req = toOpenRequest(trip, 42);
+    expect(req.nonce).toBe(42);
+    expect(req.basis).toBe("family4");
+    expect(req.stops).toEqual([
+      { country: "Norway", days: 3, cities: ["Oslo", "Bergen"] },
+      { country: "Denmark", days: 2, cities: ["Copenhagen"] },
+    ]);
+  });
+});
+
+describe("findSavedTripForCountries", () => {
+  const norwayDenmark = savedTrip([
+    { country: "Norway", days: 3, cities: ["Oslo"] },
+    { country: "Denmark", days: 2, cities: ["Copenhagen"] },
+  ]);
+  const japan = savedTrip([{ country: "Japan", days: 5, cities: ["Tokyo"] }]);
+
+  it("returns null for an empty selection", () => {
+    expect(findSavedTripForCountries([norwayDenmark], [])).toBeNull();
+  });
+
+  it("matches on exact ordered signature", () => {
+    expect(findSavedTripForCountries([norwayDenmark, japan], ["Norway", "Denmark"])).toBe(norwayDenmark);
+    expect(findSavedTripForCountries([norwayDenmark, japan], ["Japan"])).toBe(japan);
+  });
+
+  it("falls back to an order-insensitive set match when no ordered signature matches", () => {
+    // Query order (Denmark → Norway) matches no saved signature, so the set
+    // fallback resolves the same-countries trip regardless of order.
+    expect(findSavedTripForCountries([norwayDenmark], ["Denmark", "Norway"])).toBe(norwayDenmark);
+  });
+
+  it("prefers an exact ordered match over a set match, and the newest on a set tie", () => {
+    const reordered = savedTrip(
+      [
+        { country: "Denmark", days: 2, cities: ["Copenhagen"] },
+        { country: "Norway", days: 3, cities: ["Oslo"] },
+      ],
+      { id: "dk-no", name: "Denmark → Norway" },
+    );
+    // Exact ordered signature wins even when a set-equal trip is newer (first).
+    expect(findSavedTripForCountries([reordered, norwayDenmark], ["Norway", "Denmark"])).toBe(norwayDenmark);
+
+    // No exact signature for this order → newest (first) set-equal trip wins.
+    const abc = savedTrip(
+      [
+        { country: "A", days: 1, cities: [] },
+        { country: "B", days: 1, cities: [] },
+        { country: "C", days: 1, cities: [] },
+      ],
+      { id: "abc", name: "A → B → C" },
+    );
+    const cba = savedTrip(
+      [
+        { country: "C", days: 1, cities: [] },
+        { country: "B", days: 1, cities: [] },
+        { country: "A", days: 1, cities: [] },
+      ],
+      { id: "cba", name: "C → B → A" },
+    );
+    expect(findSavedTripForCountries([cba, abc], ["B", "A", "C"])).toBe(cba);
+  });
+
+  it("returns null when no saved trip covers the set", () => {
+    expect(findSavedTripForCountries([norwayDenmark, japan], ["France", "Italy"])).toBeNull();
   });
 });

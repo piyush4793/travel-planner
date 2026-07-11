@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { CityEntry } from "../core/types";
 import type { CountryRule } from "../core/data/itineraryRules";
 import type { LoadedUnit } from "../core/trip/destinationSource";
@@ -61,6 +61,13 @@ export interface UnitPlan {
 type UnitState = { selectedCities: string[]; customDays: number; pinned: boolean; experiences: string[] | null };
 
 /**
+ * A one-shot restore of a reopened saved trip's *additional* stops, keyed by
+ * country name and applied once per `nonce`. Mirrors {@link PlanBuilderSeed} for
+ * the primary stop: each seeded stop is pinned to its snapshot cities + length.
+ */
+export type TripPlannerSeed = { nonce: number; byCountry: Record<string, { cities: string[]; days: number }> };
+
+/**
  * Owns the per-unit funnel for the *additional* stops of a multi-unit route
  * (the primary stop stays on {@link usePlanBuilder}). Given the loaded units, the
  * trip's *seed* vibe (from Basics) and the budget basis, it derives each stop's
@@ -78,8 +85,10 @@ export function useTripPlanner(
   units: LoadedUnit[],
   seedExperiences: string[],
   basis: BudgetBasis,
+  seed?: TripPlannerSeed | null,
 ): { unitPlans: UnitPlan[]; composedPlan: (primary: TripSegment) => TripPlan } {
   const [state, setState] = useState<Record<string, UnitState>>({});
+  const appliedSeedNonce = useRef<number | null>(null);
 
   // A stop's effective focus: its explicit override, else the trip seed.
   const effectiveExperiences = useCallback(
@@ -110,15 +119,42 @@ export function useTripPlanner(
   }, [units, effectiveExperiences, basis]);
 
   // Re-seed each unpinned stop from its recommendation, and prune state for units
-  // no longer selected so a dropped stop can't leak into a later composition.
+  // no longer selected so a dropped stop can't leak into a later composition. When
+  // a saved trip is reopened, restore each additional stop to its snapshot cities
+  // + length (pinned) — but only once every seeded stop has loaded, so a stop
+  // whose rules arrive late still gets its snapshot (mirrors the primary restore).
   useEffect(() => {
+    const unitNames = new Set(units.map((u) => u.country.name));
+    const seedReady =
+      seed != null &&
+      appliedSeedNonce.current !== seed.nonce &&
+      Object.keys(seed.byCountry).every((n) => unitNames.has(n));
+
     setState((prev) => {
       const next: Record<string, UnitState> = {};
       let changed = false;
       for (const { country } of units) {
         const rec = recommendedByName[country.name] ?? 7;
         const cur = prev[country.name];
-        if (!cur) {
+        const restore = seedReady ? seed!.byCountry[country.name] : undefined;
+        if (restore) {
+          const cityNames = new Set((country.cities ?? []).map((c) => c.name));
+          const restored: UnitState = {
+            selectedCities: restore.cities.filter((c) => cityNames.has(c)),
+            customDays: restore.days,
+            pinned: true,
+            experiences: null,
+          };
+          next[country.name] = restored;
+          if (
+            !cur ||
+            !cur.pinned ||
+            cur.customDays !== restored.customDays ||
+            cur.selectedCities.join("\u0000") !== restored.selectedCities.join("\u0000")
+          ) {
+            changed = true;
+          }
+        } else if (!cur) {
           next[country.name] = { selectedCities: [], customDays: rec, pinned: false, experiences: null };
           changed = true;
         } else if (!cur.pinned && cur.customDays !== rec) {
@@ -131,7 +167,9 @@ export function useTripPlanner(
       if (!changed && Object.keys(prev).length === Object.keys(next).length) return prev;
       return next;
     });
-  }, [units, recommendedByName]);
+
+    if (seedReady) appliedSeedNonce.current = seed!.nonce;
+  }, [units, recommendedByName, seed]);
 
   const toggleCity = useCallback((unitName: string, city: string) => {
     setState((prev) => {

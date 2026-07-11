@@ -19,7 +19,7 @@ import { LS_KEYS } from "./core/lsKeys";
 import { useHashView, type AppView } from "./hooks/useHashView";
 import { useCountryStore } from "./hooks/useCountryStore";
 import { useSavedTrips } from "./hooks/useSavedTrips";
-import type { SavedTrip } from "./core/utils/savedTrips";
+import { findSavedTripForCountries, toOpenRequest, type OpenTripRequest, type SavedTrip } from "./core/utils/savedTrips";
 import { useAiPlanStore } from "./hooks/useAiPlanStore";
 import { useBreakpoint } from "./hooks/useBreakpoint";
 import { useBackDismiss } from "./hooks/useBackDismiss";
@@ -127,13 +127,19 @@ export default function App() {
 
   const savedTrips = useSavedTrips();
 
-  // Opening a saved trip reseeds the Plan wizard. The nonce makes re-opening the
-  // same route re-apply (the wizard applies each nonce once).
-  const [planSeed, setPlanSeed] = useState<{ countries: string[]; nonce: number } | null>(null);
+  // Opening a saved trip reseeds the Plan wizard with its full snapshot (ordered
+  // stops + per-stop cities/length + basis). The nonce makes re-opening the same
+  // route re-apply (the wizard applies each nonce once, and restores the basis).
+  const [planSeed, setPlanSeed] = useState<OpenTripRequest | null>(null);
   const openSavedTrip = useCallback((trip: SavedTrip) => {
-    setPlanSeed({ countries: trip.stops.map((s) => s.country), nonce: Date.now() });
+    setPlanSeed(toOpenRequest(trip, Date.now()));
     setView("plan");
   }, []);
+  // Resolve a saved trip for a picked country set (Plan landing resume prompt).
+  const matchSavedTrip = useCallback(
+    (names: string[]) => findSavedTripForCountries(savedTrips.savedTrips, names),
+    [savedTrips.savedTrips],
+  );
 
   // Soft refresh (pull-to-refresh): re-hydrate every persisted store from
   // localStorage without a full page reload — picks up edits made in another
@@ -421,6 +427,7 @@ export default function App() {
             mainMapRef={mainMapRef}
             onCinematicChange={setCinematicActive}
             openTrip={planSeed}
+            matchSavedTrip={matchSavedTrip}
           />
         ) : view === "trips" ? (
           <MyTripsView

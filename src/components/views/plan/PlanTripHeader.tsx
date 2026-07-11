@@ -84,12 +84,12 @@ function PlanTripHeaderInner({
             ) : isMulti ? (
               <h1
                 aria-label={`Planning a route through ${selection.map((c) => c.name).join(", ")}`}
-                className="flex min-w-0 items-center font-display text-lg font-semibold tracking-tight text-[#16241d] sm:text-xl"
+                className="flex min-w-0 items-center font-display text-lg font-semibold tracking-tight text-ink-1 sm:text-xl"
               >
                 <span className="truncate">
                   {selection.slice(0, routeStopLimit).map((c, i) => (
                     <span key={c.name}>
-                      {i > 0 && <span aria-hidden="true" className="mx-1 text-[#cfc9b8]">→</span>}
+                      {i > 0 && <span aria-hidden="true" className="mx-1 text-line-strong">→</span>}
                       <span aria-hidden="true" className="mr-1">{getCountryFlag(c.name)}</span>
                       {c.name}
                     </span>
@@ -97,7 +97,7 @@ function PlanTripHeaderInner({
                 </span>
                 {selection.length > routeStopLimit && (
                   <Tooltip variant="wrap" text={routeLabel} triggerClassName="ml-1.5 shrink-0">
-                    <span className="rounded-full bg-[#ece7d8] px-1.5 py-0.5 text-[11px] font-bold text-[#6f6a5d]">
+                    <span className="rounded-full bg-surface-3 px-1.5 py-0.5 text-[11px] font-bold text-ink-2">
                       +{selection.length - routeStopLimit}
                     </span>
                   </Tooltip>
@@ -105,7 +105,7 @@ function PlanTripHeaderInner({
               </h1>
             ) : (
               <>
-                <h1 className="truncate font-display text-lg font-semibold tracking-tight text-[#16241d] sm:text-xl">{primary?.name}</h1>
+                <h1 className="truncate font-display text-lg font-semibold tracking-tight text-ink-1 sm:text-xl">{primary?.name}</h1>
                 {styleMeta && (
                   <span
                     title={styleMeta.description}
@@ -128,19 +128,19 @@ function PlanTripHeaderInner({
       </div>
 
       {stats && (
-        <div className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-[12px] text-[#6f6a5d]">
-          <span><span className="font-bold text-[#16241d]">{stats.days}</span> {stats.days === 1 ? "day" : "days"}</span>
+        <div className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-[12px] text-ink-2">
+          <span><span className="font-bold text-ink-1">{stats.days}</span> {stats.days === 1 ? "day" : "days"}</span>
           {isMulti && (
             <>
-              <span aria-hidden="true" className="text-[#cfc9b8]">·</span>
-              <span><span className="font-bold text-[#16241d]">{stats.countries}</span> countries</span>
+              <span aria-hidden="true" className="text-line-strong">·</span>
+              <span><span className="font-bold text-ink-1">{stats.countries}</span> countries</span>
             </>
           )}
-          <span aria-hidden="true" className="text-[#cfc9b8]">·</span>
-          <span><span className="font-bold text-[#16241d]">{stats.cities}</span> {stats.cities === 1 ? "place" : "places"}</span>
-          <span aria-hidden="true" className="text-[#cfc9b8]">·</span>
+          <span aria-hidden="true" className="text-line-strong">·</span>
+          <span><span className="font-bold text-ink-1">{stats.cities}</span> {stats.cities === 1 ? "place" : "places"}</span>
+          <span aria-hidden="true" className="text-line-strong">·</span>
           <span className="whitespace-nowrap font-bold text-emerald-800">
-            {stats.estimate && <span className="mr-0.5 font-medium text-[#a09a89]">~</span>}
+            {stats.estimate && <span className="mr-0.5 font-medium text-ink-4">~</span>}
             {stats.cost}{" "}
             <span title={stats.costLabel} aria-label={stats.costLabel}>{stats.costIcon}</span>
           </span>
@@ -164,12 +164,12 @@ function PlanTripHeaderInner({
             >
               <span
                 className={`block h-1.5 rounded-full transition-colors ${
-                  active ? "bg-emerald-700" : done ? "bg-emerald-500" : "bg-[#e0dacb] group-hover:bg-[#cfc9b8]"
+                  active ? "bg-emerald-700" : done ? "bg-emerald-500" : "bg-line group-hover:bg-line-strong"
                 }`}
               />
               <span
                 className={`text-left text-[10px] font-bold uppercase tracking-[0.1em] transition-colors ${
-                  active ? "text-emerald-700" : done ? "text-emerald-600 group-hover:text-emerald-700" : "text-[#b3ad9c]"
+                  active ? "text-emerald-700" : done ? "text-emerald-600 group-hover:text-emerald-700" : "text-ink-4"
                 }`}
               >
                 {s.short}

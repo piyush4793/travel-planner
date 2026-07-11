@@ -61,11 +61,40 @@ describe("PlanRouteSummary", () => {
     expect(screen.getByText(/3 countries · we'll fine-tune each stop next/)).toBeInTheDocument();
   });
 
-  it("frames the day totals as a recommended baseline", () => {
+  it("frames the totals as the plan so far and updates with live per-stop days", () => {
     render(<PlanRouteSummary selection={selection} source={source} />);
-    expect(screen.getByText("recommended")).toBeInTheDocument();
+    expect(screen.getByText("planned so far")).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /recommended starting lengths for each stop/i }),
+      screen.getByRole("button", { name: /your trip so far, summed across every stop/i }),
     ).toBeInTheDocument();
+  });
+
+  it("prefers live per-stop days over the recommended baseline, re-totalling and re-anchoring", () => {
+    render(
+      <PlanRouteSummary
+        selection={selection}
+        source={source}
+        stopDays={{ Norway: 5, Denmark: 3, Sweden: 12 }}
+      />,
+    );
+    // Live days win over the 19/3/10 baseline → total 20, Sweden becomes anchor.
+    expect(screen.getByText("~20 days")).toBeInTheDocument();
+    const items = screen.getAllByRole("listitem");
+    expect(within(items[0]).getByText("5d")).toBeInTheDocument();
+    expect(within(items[2]).getByText("12d")).toBeInTheDocument();
+    const anchorItem = screen.getByText("Anchor").closest("li")!;
+    expect(within(anchorItem).getByText("Sweden")).toBeInTheDocument();
+  });
+
+  it("falls back to the recommended baseline for stops not yet loaded", () => {
+    render(
+      <PlanRouteSummary
+        selection={selection}
+        source={source}
+        stopDays={{ Norway: 5 }}
+      />,
+    );
+    // Norway live (5) + Denmark/Sweden baseline (3 + 10) = 18.
+    expect(screen.getByText("~18 days")).toBeInTheDocument();
   });
 });

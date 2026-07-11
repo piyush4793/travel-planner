@@ -26,4 +26,12 @@ describe("FocusChips", () => {
     fireEvent.click(screen.getByRole("button", { name: "Clear (1)" }));
     expect(onClear).toHaveBeenCalledTimes(1);
   });
+
+  it("renders Clear as a top action, ahead of the chips (not orphaned below)", () => {
+    render(<FocusChips options={["Fjords", "Food"]} selected={["Fjords"]} onToggle={vi.fn()} onClear={vi.fn()} />);
+    const clear = screen.getByRole("button", { name: "Clear (1)" });
+    const firstChip = screen.getByRole("button", { name: "Fjords" });
+    // DOCUMENT_POSITION_FOLLOWING (4) means the chip comes after Clear in the DOM.
+    expect(clear.compareDocumentPosition(firstChip) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
 });

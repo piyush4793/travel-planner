@@ -42,6 +42,26 @@ export default function PlanMenu({ trigger, ariaLabel, width = 260, triggerClass
     setOpen((o) => !o);
   }
 
+  // Roving keyboard navigation for the menu items (WAI-ARIA menu pattern), shared
+  // by every PlanMenu consumer so the country switcher and basis menu behave
+  // identically. Items are real buttons (Tab-reachable); arrows/Home/End move
+  // focus without leaving the open menu.
+  const onPanelKey = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(e.key)) return;
+    const items = Array.from(
+      panelRef.current?.querySelectorAll<HTMLElement>('[role="menuitemradio"],[role="menuitem"],button') ?? [],
+    );
+    if (items.length === 0) return;
+    e.preventDefault();
+    const idx = items.indexOf(document.activeElement as HTMLElement);
+    const next =
+      e.key === "Home" ? 0
+      : e.key === "End" ? items.length - 1
+      : e.key === "ArrowDown" ? (idx + 1 + items.length) % items.length
+      : (idx - 1 + items.length) % items.length;
+    items[next]?.focus();
+  }, []);
+
   useEffect(() => {
     if (!open) return;
     requestAnimationFrame(() => {
@@ -84,8 +104,9 @@ export default function PlanMenu({ trigger, ariaLabel, width = 260, triggerClass
           ref={panelRef}
           role="menu"
           aria-label={ariaLabel}
+          onKeyDown={onPanelKey}
           style={{ position: "fixed", top: pos.top, left: pos.left, width: pos.width, zIndex: 99999 }}
-          className="overflow-hidden rounded-2xl border border-[#e6e1d4] bg-white shadow-xl motion-safe:animate-[fadeInUp_0.12s_ease-out]"
+          className="overflow-hidden rounded-2xl border border-line bg-white shadow-xl motion-safe:animate-[fadeInUp_0.12s_ease-out]"
         >
           {children(() => setOpen(false))}
         </div>,

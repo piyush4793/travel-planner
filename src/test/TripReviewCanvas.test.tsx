@@ -189,6 +189,13 @@ describe("TripReviewCanvas", () => {
     expect(screen.getByText("Days 4–8")).toBeInTheDocument();
   });
 
+  it("surfaces the per-stop budget in the header row", () => {
+    renderCanvas({ segments: [segment("Norway", "Oslo", 3), segment("Denmark", "Copenhagen", 5)], composedPlan: composed });
+    const norway = screen.getByRole("region", { name: /Norway — stop 1 of 2/ });
+    // Cost moved into the balanced row-2 stats line (was crowding row 1 before).
+    expect(within(norway).getByText("₹1L – ₹2L")).toBeInTheDocument();
+  });
+
   it("reorders a stop via the route-order lever", () => {
     const onReorder = vi.fn();
     renderCanvas({ segments: [segment("Norway", "Oslo", 3), segment("Denmark", "Copenhagen", 3)], composedPlan: composed, onReorder });

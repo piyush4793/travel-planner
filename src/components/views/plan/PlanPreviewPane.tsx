@@ -31,7 +31,7 @@ function PlanPreviewPaneInner({ country, plan, rule, homeCountry, onPlanWithAi, 
   const canCinematic = !!rule && matchedCities.length >= 2;
 
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#e4dece] bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
+    <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
       <ItinerarySummaryBar label={country.name} topAnchorId={ITINERARY_TOP_ID} />
 
       {plan.warning && (

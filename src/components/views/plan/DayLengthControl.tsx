@@ -112,12 +112,12 @@ export default function DayLengthControl({
   };
 
   return (
-    <div className="rounded-2xl border border-[#e4dece] bg-white p-4 shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
+    <div className="rounded-2xl border border-line bg-white p-4 shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
       <div className="flex items-baseline justify-between">
-        <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#a09a89]">Trip length</span>
+        <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink-4">Trip length</span>
         <span>
-          <span className="text-2xl font-black tracking-tight text-[#16241d]">{draft}</span>
-          <span className="ml-1 text-xs font-bold text-[#a09a89]">days</span>
+          <span className="text-2xl font-black tracking-tight text-ink-1">{draft}</span>
+          <span className="ml-1 text-xs font-bold text-ink-4">days</span>
         </span>
       </div>
 
@@ -136,12 +136,12 @@ export default function DayLengthControl({
           style={{ background: `linear-gradient(to right, #047857 ${sliderPercent}%, #e4dece ${sliderPercent}%)` }}
         />
         <div
-          className="pointer-events-none absolute -top-0.5 h-3 w-0.5 bg-[#a09a89]"
+          className="pointer-events-none absolute -top-0.5 h-3 w-0.5 bg-ink-4"
           style={{ left: `${recPercent}%` }}
           aria-hidden="true"
         />
       </div>
-      <div className="mt-1 flex items-center justify-between text-[10px] font-medium text-[#a09a89]">
+      <div className="mt-1 flex items-center justify-between text-[10px] font-medium text-ink-4">
         <span>1 day</span>
         <span>{maxDays} days</span>
       </div>
@@ -150,14 +150,14 @@ export default function DayLengthControl({
         {feedback ? (
           <span
             className={`text-[11px] font-semibold ${
-              feedback.tone === "drop" ? "text-amber-600" : feedback.tone === "add" ? "text-emerald-700" : "text-[#6f6a5d]"
+              feedback.tone === "drop" ? "text-amber-600" : feedback.tone === "add" ? "text-emerald-700" : "text-ink-2"
             }`}
           >
             {feedback.tone === "drop" ? "⚠️ " : feedback.tone === "add" ? "✨ " : "· "}
             {feedback.text}
           </span>
         ) : (
-          <span className="text-[11px] font-medium text-[#a09a89]">
+          <span className="text-[11px] font-medium text-ink-4">
             {daysPinned ? "Custom length" : "✨ Auto-tuned to your choices"}
           </span>
         )}

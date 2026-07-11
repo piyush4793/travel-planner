@@ -23,7 +23,7 @@ type Props = {
 
 const READINESS_TONE_CLASS: Record<ReadinessTone, string> = {
   ok: "text-emerald-700",
-  info: "text-[#6f6a5d]",
+  info: "text-ink-2",
   warn: "text-amber-600",
 };
 
@@ -52,7 +52,7 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, notes, 
               <span aria-hidden="true" className={`mt-px shrink-0 font-bold ${READINESS_TONE_CLASS[item.tone]}`}>
                 {READINESS_ICON[item.tone]}
               </span>
-              <span className="text-[#3c463f]">{item.text}</span>
+              <span className="text-ink-body">{item.text}</span>
             </li>
           ))}
         </ul>
@@ -70,23 +70,23 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, notes, 
         <ul className="space-y-1">
           {perCountryCost.map((row) => (
             <li key={row.name} className="flex items-center justify-between gap-2 text-[11px]">
-              <span className="flex min-w-0 items-center gap-1.5 text-[#6f6a5d]">
+              <span className="flex min-w-0 items-center gap-1.5 text-ink-2">
                 <span aria-hidden="true">{getCountryFlag(row.name)}</span>
                 <span className="truncate">{row.name}</span>
-                <span className="shrink-0 text-[#b3ad9d]">×{row.nights}n</span>
+                <span className="shrink-0 text-ink-4">×{row.nights}n</span>
               </span>
-              <span className="shrink-0 font-semibold text-[#1e2a25]">{row.cost}</span>
+              <span className="shrink-0 font-semibold text-ink-1">{row.cost}</span>
             </li>
           ))}
           {countries.length > 1 && (
-            <li className="flex items-center justify-between gap-2 text-[11px] italic text-[#a8a293]">
+            <li className="flex items-center justify-between gap-2 text-[11px] italic text-ink-4">
               <span className="flex items-center gap-1.5">
                 <span aria-hidden="true">✈</span> Inter-country legs
               </span>
               <span className="shrink-0">estimate separately</span>
             </li>
           )}
-          <li className="flex items-center justify-between gap-2 border-t border-[#efeadd] pt-1.5 text-[11px] font-bold text-[#16241d]">
+          <li className="flex items-center justify-between gap-2 border-t border-surface-3 pt-1.5 text-[11px] font-bold text-ink-1">
             <span>Subtotal · flights extra</span>
             <span className="flex shrink-0 items-center gap-1 text-emerald-800">
               {composedPlan.costPerPerson}
@@ -103,7 +103,7 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, notes, 
           <div className="space-y-3">
             {seasonCountries.map((c) => (
               <div key={c.name}>
-                <p className="mb-1 flex items-center gap-1.5 text-[11px] font-bold text-[#16241d]">
+                <p className="mb-1 flex items-center gap-1.5 text-[11px] font-bold text-ink-1">
                   <span aria-hidden="true">{getCountryFlag(c.name)}</span>
                   {c.name}
                 </p>
@@ -119,7 +119,7 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, notes, 
           <div className="space-y-3">
             {tipCountries.map((c) => (
               <div key={c.name} className="space-y-1.5">
-                <p className="flex items-center gap-1.5 text-[11px] font-bold text-[#16241d]">
+                <p className="flex items-center gap-1.5 text-[11px] font-bold text-ink-1">
                   <span aria-hidden="true">{getCountryFlag(c.name)}</span>
                   {c.name}
                 </p>

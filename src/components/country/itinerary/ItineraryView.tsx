@@ -314,7 +314,7 @@ function DayCard({ day, city, rule, t }: { day: DayEntry; city: string; rule?: C
               className={`text-[9px] font-semibold px-2 py-0.5 rounded-full transition-colors ${t.routeLink} ${t.focusRing}`}
               title="Open day route in Google Maps"
             >
-              🗺️ Route
+              🗺️<span className="hidden sm:inline"> Route</span>
             </a>
             <CopyLinkButton url={routeInfo.url} t={t} />
           </span>

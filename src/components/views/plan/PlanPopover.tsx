@@ -10,8 +10,12 @@ type Props = {
   triggerAriaLabel?: string;
   /** ARIA popup kind for the trigger. */
   haspopup?: "listbox" | "dialog" | "menu";
-  /** Heading shown on the mobile bottom-sheet. */
+  /** Heading shown in the popover's branded header (desktop + mobile). */
   title: string;
+  /** Small glyph shown in the header's icon tile (e.g. "🧭"). */
+  icon?: ReactNode;
+  /** One-line helper under the title (e.g. "Drag to reorder"). */
+  subtitle?: string;
   triggerClassName?: string;
   /** Min popover width (desktop); the popover never exceeds the viewport. */
   minWidth?: number;
@@ -31,6 +35,8 @@ export default function PlanPopover({
   triggerAriaLabel,
   haspopup = "dialog",
   title,
+  icon,
+  subtitle,
   triggerClassName,
   minWidth = 240,
   children,
@@ -94,6 +100,33 @@ export default function PlanPopover({
     };
   }, [open]);
 
+  const header = (withClose: boolean) => (
+    <div className="flex shrink-0 items-center gap-2.5 border-b border-emerald-100 bg-gradient-to-b from-emerald-50 to-white px-4 py-3">
+      {icon != null && (
+        <span
+          aria-hidden="true"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-base shadow-sm ring-1 ring-emerald-100"
+        >
+          {icon}
+        </span>
+      )}
+      <div className="min-w-0 flex-1">
+        <h3 className="font-display text-[15px] font-bold leading-tight tracking-tight text-emerald-950">{title}</h3>
+        {subtitle && <p className="mt-0.5 text-[11px] leading-tight text-emerald-700/80">{subtitle}</p>}
+      </div>
+      {withClose && (
+        <button
+          type="button"
+          onClick={close}
+          aria-label="Close"
+          className="focus-ring-emerald flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 text-sm font-bold text-emerald-800 ring-1 ring-emerald-100 transition-colors hover:bg-white"
+        >
+          <span aria-hidden="true">✕</span>
+        </button>
+      )}
+    </div>
+  );
+
   return (
     <>
       <button
@@ -120,21 +153,11 @@ export default function PlanPopover({
             />
             <div
               ref={popRef}
-              className="relative max-h-[70vh] overflow-y-auto rounded-t-3xl border-t border-[#e4dece] bg-white px-3 pb-8 pt-3 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
+              className="relative flex max-h-[70vh] flex-col overflow-hidden rounded-t-3xl border-t border-emerald-100 bg-white shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
             >
-              <div className="mx-auto mb-2 h-1 w-10 rounded-full bg-[#d8d2c2]" aria-hidden="true" />
-              <div className="mb-2 flex items-center justify-between px-1">
-                <h3 className="font-display text-base font-semibold tracking-tight text-[#16241d]">{title}</h3>
-                <button
-                  type="button"
-                  onClick={close}
-                  aria-label="Close"
-                  className="focus-ring-emerald flex h-8 w-8 items-center justify-center rounded-full border border-[#e4dece] bg-white text-sm font-bold text-[#6f6a5d] transition-colors hover:bg-[#f4f1e8]"
-                >
-                  <span aria-hidden="true">✕</span>
-                </button>
-              </div>
-              {children(close)}
+              <div className="mx-auto mt-2.5 h-1 w-10 shrink-0 rounded-full bg-line-strong" aria-hidden="true" />
+              {header(true)}
+              <div className="min-h-0 overflow-y-auto px-3 pb-8 pt-3">{children(close)}</div>
             </div>
           </div>,
           document.body,
@@ -146,10 +169,11 @@ export default function PlanPopover({
         createPortal(
           <div
             ref={popRef}
-            className="fixed z-50 overflow-y-auto rounded-xl border border-[#e4dece] bg-white p-1 shadow-xl motion-safe:animate-[fadeInUp_0.15s_ease-out]"
+            className="fixed z-50 flex flex-col overflow-hidden rounded-xl border border-emerald-100 bg-white shadow-xl ring-1 ring-emerald-50 motion-safe:animate-[fadeInUp_0.15s_ease-out]"
             style={{ left: pos.left, width: pos.width, top: pos.top, bottom: pos.bottom, maxHeight: pos.maxH }}
           >
-            {children(close)}
+            {header(false)}
+            <div className="min-h-0 overflow-y-auto p-1">{children(close)}</div>
           </div>,
           document.body,
         )}
