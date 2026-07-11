@@ -478,15 +478,12 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
               {nextIsReview ? "See my plan 🗺️" : "Continue →"}
             </button>
           ) : (
-            <span className="ml-auto flex items-center gap-2">
-              <span className="hidden text-[11px] font-medium text-[#8a8577] sm:inline">Trip saved to My Trips</span>
-              <button
-                onClick={changeDestination}
-                className="focus-ring-emerald inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[#e4dece] bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm transition-colors hover:bg-[#f4f1e8]"
-              >
-                <span aria-hidden="true">＋</span> Plan another
-              </button>
-            </span>
+            <button
+              onClick={changeDestination}
+              className="focus-ring-emerald ml-auto inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[#e4dece] bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm transition-colors hover:bg-[#f4f1e8]"
+            >
+              <span aria-hidden="true">＋</span> Plan another
+            </button>
           )}
         </div>
       </div>

@@ -14,6 +14,10 @@ type Props = {
   /** Jump handler — defaults to a plain scroll. The multi-country canvas passes
    *  a handler that first expands a collapsed stop, then scrolls to the city. */
   onJump?: (cityName: string) => void;
+  /** Render only the compact dropdown trigger (no full-width `<nav>` band or
+   *  desktop pill strip) so it can sit inline inside another toolbar row — e.g.
+   *  beside "Route order" in the Route Canvas levers bar. */
+  embedded?: boolean;
 };
 
 /** Hard cap on the dropdown height so it stays compact + scannable no matter how
@@ -34,7 +38,7 @@ type PopoverPos = { left: number; width: number; top?: number; bottom?: number; 
  * (anchored popover on desktop/tablet, bottom-sheet on mobile) so it is never
  * clipped by the itinerary's `overflow-hidden` container.
  */
-export default function PlanCityJumpNav({ sections, onJump }: Props) {
+export default function PlanCityJumpNav({ sections, onJump, embedded = false }: Props) {
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState<string | null>(null);
   const [pos, setPos] = useState<PopoverPos | null>(null);
@@ -140,7 +144,7 @@ export default function PlanCityJumpNav({ sections, onJump }: Props) {
             >
               <span className="flex items-center gap-1.5">
                 <span aria-hidden="true" className="w-4 shrink-0 text-center opacity-70">
-                  {g.transport ? TRANSPORT_EMOJI[g.transport.type] : ""}
+                  {g.transport ? TRANSPORT_EMOJI[g.transport.type] : "📍"}
                 </span>
                 {g.name}
               </span>
@@ -152,54 +156,23 @@ export default function PlanCityJumpNav({ sections, onJump }: Props) {
     </div>
   );
 
-  return (
-    <nav aria-label="Jump to city" className="border-b border-[#e6e1d4] bg-white px-4 py-2.5">
-      {/* Desktop pills — short single-country routes only. */}
-      {!manyStops && (
-        <div className="hidden flex-wrap items-center gap-x-1.5 gap-y-1.5 md:flex">
-          {allCities.map((g, i) => (
-            <span key={g.name} className="flex items-center gap-1.5">
-              <button
-                type="button"
-                onClick={() => jump(g.name)}
-                aria-label={`Jump to ${g.name}`}
-                className="focus-ring-emerald rounded-full bg-[#f4f1e8] px-2.5 py-1 text-[10px] font-semibold text-[#1e2a25] transition-colors hover:bg-emerald-50 hover:text-emerald-800"
-              >
-                {g.name}
-              </button>
-              {i < allCities.length - 1 &&
-                (allCities[i + 1].transport ? (
-                  <span
-                    className="text-sm leading-none opacity-70"
-                    title={allCities[i + 1].transport!.label}
-                    aria-hidden="true"
-                  >
-                    {TRANSPORT_EMOJI[allCities[i + 1].transport!.type]}
-                  </span>
-                ) : (
-                  <span className="text-[10px] text-[#cfc9b8]" aria-hidden="true">→</span>
-                ))}
-            </span>
-          ))}
-        </div>
-      )}
+  const trigger = (
+    <button
+      ref={triggerRef}
+      type="button"
+      onClick={() => setOpen((o) => !o)}
+      aria-haspopup="listbox"
+      aria-expanded={open}
+      className="focus-ring-emerald flex min-h-[34px] items-center gap-1.5 rounded-full border border-[#d8d2c2] bg-white px-3 py-1 text-[11px] font-semibold text-[#1e2a25] transition-colors hover:border-emerald-500 hover:bg-emerald-50 hover:text-emerald-800"
+    >
+      <span aria-hidden="true">📍</span>
+      <span>{current ?? (grouped ? "Jump to country / city…" : "Jump to city…")}</span>
+      <span aria-hidden="true" className={`transition-transform ${open ? "rotate-180" : ""}`}>▾</span>
+    </button>
+  );
 
-      {/* Trigger — always on mobile, and on desktop for dense/multi routes. */}
-      <div className={manyStops ? "" : "md:hidden"}>
-        <button
-          ref={triggerRef}
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          aria-haspopup="listbox"
-          aria-expanded={open}
-          className="focus-ring-emerald flex min-h-[36px] items-center gap-1.5 rounded-full bg-[#f4f1e8] px-3 py-1.5 text-[11px] font-semibold text-[#1e2a25] transition-colors hover:bg-emerald-50 hover:text-emerald-800"
-        >
-          <span aria-hidden="true">🧭</span>
-          <span>{current ?? (grouped ? "Jump to country / city…" : "Jump to city…")}</span>
-          <span aria-hidden="true" className={`transition-transform ${open ? "rotate-180" : ""}`}>▾</span>
-        </button>
-      </div>
-
+  const portals = (
+    <>
       {open &&
         isMobile &&
         createPortal(
@@ -239,6 +212,55 @@ export default function PlanCityJumpNav({ sections, onJump }: Props) {
           </div>,
           document.body,
         )}
+    </>
+  );
+
+  // Inline in another toolbar row (Route Canvas levers bar): trigger only, no band.
+  if (embedded) {
+    return (
+      <>
+        {trigger}
+        {portals}
+      </>
+    );
+  }
+
+  return (
+    <nav aria-label="Jump to city" className="border-b border-[#e6e1d4] bg-white px-4 py-2">
+      {/* Desktop pills — short single-country routes only. */}
+      {!manyStops && (
+        <div className="hidden flex-wrap items-center gap-x-1.5 gap-y-1.5 md:flex">
+          {allCities.map((g, i) => (
+            <span key={g.name} className="flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => jump(g.name)}
+                aria-label={`Jump to ${g.name}`}
+                className="focus-ring-emerald rounded-full bg-[#f4f1e8] px-2.5 py-1 text-[10px] font-semibold text-[#1e2a25] transition-colors hover:bg-emerald-50 hover:text-emerald-800"
+              >
+                {g.name}
+              </button>
+              {i < allCities.length - 1 &&
+                (allCities[i + 1].transport ? (
+                  <span
+                    className="text-sm leading-none opacity-70"
+                    title={allCities[i + 1].transport!.label}
+                    aria-hidden="true"
+                  >
+                    {TRANSPORT_EMOJI[allCities[i + 1].transport!.type]}
+                  </span>
+                ) : (
+                  <span className="text-[10px] text-[#cfc9b8]" aria-hidden="true">→</span>
+                ))}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Trigger — always on mobile, and on desktop for dense/multi routes. */}
+      <div className={manyStops ? "" : "md:hidden"}>{trigger}</div>
+
+      {portals}
     </nav>
   );
 }

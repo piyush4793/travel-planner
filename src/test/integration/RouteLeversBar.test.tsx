@@ -2,13 +2,13 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import RouteLeversBar, { type LeverStop } from "../../components/views/plan/RouteLeversBar";
 
-function stop(name: string, customDays: number, over: Partial<LeverStop> = {}): LeverStop {
-  return { name, customDays, daysPinned: false, maxDays: 10, setDays: vi.fn(), ...over };
+function stop(name: string): LeverStop {
+  return { name };
 }
 
 function renderBar(over: Partial<React.ComponentProps<typeof RouteLeversBar>> = {}) {
   const props: React.ComponentProps<typeof RouteLeversBar> = {
-    stops: [stop("Norway", 3), stop("Denmark", 3)],
+    stops: [stop("Norway"), stop("Denmark")],
     anchorName: "Norway",
     onSetAnchor: vi.fn(),
     onReorder: vi.fn(),
@@ -54,29 +54,5 @@ describe("RouteLeversBar", () => {
     rerender(<RouteLeversBar {...props} canAutoArrange />);
     fireEvent.click(screen.getByRole("button", { name: /Auto-arrange/ }));
     expect(onAutoArrange).toHaveBeenCalled();
-  });
-
-  it("adds a night to the shortest unpinned stop", () => {
-    const setNorway = vi.fn();
-    renderBar({ stops: [stop("Norway", 2, { setDays: setNorway }), stop("Denmark", 4)] });
-    fireEvent.click(screen.getByRole("button", { name: "Adjust total trip length" }));
-    fireEvent.click(screen.getByRole("button", { name: "Add a night" }));
-    expect(setNorway).toHaveBeenCalledWith(3);
-  });
-
-  it("removes a night from the longest unpinned stop", () => {
-    const setDenmark = vi.fn();
-    renderBar({ stops: [stop("Norway", 2), stop("Denmark", 4, { setDays: setDenmark })] });
-    fireEvent.click(screen.getByRole("button", { name: "Adjust total trip length" }));
-    fireEvent.click(screen.getByRole("button", { name: "Remove a night" }));
-    expect(setDenmark).toHaveBeenCalledWith(3);
-  });
-
-  it("disables + when every stop is pinned or maxed", () => {
-    renderBar({
-      stops: [stop("Norway", 10, { maxDays: 10 }), stop("Denmark", 5, { daysPinned: true })],
-    });
-    fireEvent.click(screen.getByRole("button", { name: "Adjust total trip length" }));
-    expect(screen.getByRole("button", { name: "Add a night" })).toBeDisabled();
   });
 });

@@ -202,15 +202,15 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
       backdropClassName="bg-black/40 backdrop-blur-sm"
     >
         {/* Hero header */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 px-5 md:px-6 py-5 text-white">
+        <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 via-emerald-800 to-[#0f2f23] px-5 md:px-6 py-5 text-white">
           <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-16 h-40 w-40 rounded-full bg-white/15 blur-2xl" />
-          <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 left-1/3 h-40 w-40 rounded-full bg-violet-300/20 blur-2xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 left-1/3 h-40 w-40 rounded-full bg-emerald-300/20 blur-2xl" />
           <div className="relative flex items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <span className="flex items-center justify-center w-11 h-11 rounded-2xl bg-white/15 ring-1 ring-white/25 text-xl backdrop-blur-sm shadow-inner" aria-hidden="true">{"\u2699\uFE0F"}</span>
               <div>
                 <h2 className="text-lg font-bold leading-tight tracking-tight">Settings</h2>
-                <p className="text-[11px] text-blue-100/90">Preferences, AI keys &amp; backups</p>
+                <p className="text-[11px] text-emerald-100/90">Preferences, AI keys &amp; backups</p>
               </div>
             </div>
             <button onClick={onClose} className="text-white/80 hover:text-white hover:bg-white/15 text-lg leading-none p-1.5 min-w-[32px] min-h-[32px] rounded-xl focus-ring transition-colors" aria-label="Close settings">{"\u2715"}</button>
@@ -218,7 +218,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
         </div>
 
         {/* Sidebar + content */}
-        <div className="flex flex-col md:flex-row flex-1 min-h-0 bg-slate-50 px-4 md:px-5 pt-4">
+        <div className="flex flex-col md:flex-row flex-1 min-h-0 bg-[#f7f4ec] px-4 md:px-5 pt-4">
           <SettingsNav items={navItems} active={section} onSelect={setSection} />
 
           <div className="flex-1 min-h-0 overflow-y-auto md:pl-5 pb-5 md:pb-6 space-y-4">
@@ -237,34 +237,34 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
         {/* AI */}
         {section === "ai" && showAi && (
           <div className="space-y-4" role="tabpanel" id="settings-panel-ai" aria-labelledby="settings-tab-ai">
-            <SectionCard title="AI provider" icon={"\u{1F916}"} accent="bg-blue-100 text-blue-600" desc="Choose which model powers AI trip planning. Add a key for each provider you want to use.">
+            <SectionCard title="AI provider" icon={"\u{1F916}"} accent="bg-emerald-100 text-emerald-700" desc="Choose which model powers AI trip planning. Add a key for each provider you want to use.">
               <ProviderPicker value={provider} onChange={handleProviderChange} connected={keys} />
             </SectionCard>
 
             {currentKey && (
               <SectionCard title="Current key" icon={"\u{1F511}"} accent="bg-emerald-100 text-emerald-600">
-                <div className="flex items-center gap-2 rounded-xl bg-slate-50 ring-1 ring-slate-200 px-3 py-2">
+                <div className="flex items-center gap-2 rounded-xl bg-[#f7f4ec] ring-1 ring-[#e0dac9] px-3 py-2">
                   <code className="text-xs text-emerald-600 flex-1 font-mono truncate">{showKey ? currentKey : masked}</code>
-                  <button onClick={() => setShowKey(!showKey)} className="text-[11px] px-2 py-1 min-h-[32px] rounded-lg text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition-colors focus-ring">{showKey ? "Hide" : "Show"}</button>
+                  <button onClick={() => setShowKey(!showKey)} className="text-[11px] px-2 py-1 min-h-[32px] rounded-lg text-[#6f6a5d] hover:text-[#3c463f] hover:bg-[#efe9db] transition-colors focus-ring">{showKey ? "Hide" : "Show"}</button>
                   <button onClick={handleDelete} className="text-[11px] px-2 py-1 min-h-[32px] rounded-lg text-red-500 hover:text-red-600 hover:bg-red-50 transition-colors focus-ring">Delete</button>
                 </div>
               </SectionCard>
             )}
 
-            <SectionCard title={currentKey ? "Replace key" : PROVIDER_LABELS[provider] + " API key"} icon={"\u2795"} accent="bg-indigo-100 text-indigo-600">
+            <SectionCard title={currentKey ? "Replace key" : PROVIDER_LABELS[provider] + " API key"} icon={"\u2795"} accent="bg-emerald-100 text-emerald-800">
               <div className="flex gap-2">
                 <input
                   type="password"
                   value={draft}
                   onChange={(e) => setDraft(e.target.value)}
                   placeholder={help.placeholder}
-                  className="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-xs text-slate-800 placeholder:text-slate-300 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-shadow"
+                  className="flex-1 bg-[#f7f4ec] border border-[#e0dac9] rounded-lg px-3 py-2.5 text-xs text-[#1e2a25] placeholder:text-emerald-200/80 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-shadow"
                   onKeyDown={(e) => e.key === "Enter" && handleSave()}
                 />
                 <button
                   onClick={handleSave}
                   disabled={!draft.trim() || validating}
-                  className="px-4 py-2 min-h-[32px] bg-blue-600 hover:bg-blue-500 disabled:bg-slate-200 disabled:text-slate-400 text-white text-xs font-semibold rounded-lg transition-colors focus-ring"
+                  className="px-4 py-2 min-h-[32px] bg-emerald-700 hover:bg-emerald-600 disabled:bg-[#e5dfce] disabled:text-[#a8a293] text-white text-xs font-semibold rounded-lg transition-colors focus-ring"
                 >
                   {validating ? "Verifying\u2026" : "Save"}
                 </button>
@@ -286,19 +286,19 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
             {currentKey && onOpenChat && (
               <button
                 onClick={() => { onClose(); onOpenChat(); }}
-                className="w-full flex items-center justify-center gap-2 py-2.5 min-h-[32px] bg-gradient-to-br from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-semibold rounded-xl shadow-sm transition-colors focus-ring"
+                className="w-full flex items-center justify-center gap-2 py-2.5 min-h-[32px] bg-gradient-to-br from-emerald-700 to-emerald-800 hover:from-emerald-600 hover:to-emerald-700 text-white text-xs font-semibold rounded-xl shadow-sm transition-colors focus-ring"
               >
                 {"\u2728"} Start Planning with AI
               </button>
             )}
 
             <SectionCard className="space-y-3">
-              <details className="text-[11px] text-slate-500 cursor-pointer">
-                <summary className="hover:text-slate-700 font-semibold focus-ring rounded">{"\u{1F4B0}"} Token pricing reference</summary>
-                <div className="mt-2 rounded-lg overflow-hidden border border-slate-200">
+              <details className="text-[11px] text-[#6f6a5d] cursor-pointer">
+                <summary className="hover:text-[#3c463f] font-semibold focus-ring rounded">{"\u{1F4B0}"} Token pricing reference</summary>
+                <div className="mt-2 rounded-lg overflow-hidden border border-[#e0dac9]">
                   <table className="w-full text-[10px]">
                     <thead>
-                      <tr className="bg-slate-50 text-slate-600">
+                      <tr className="bg-[#f7f4ec] text-[#4a5249]">
                         <th className="px-3 py-1.5 text-left font-bold">Provider</th>
                         <th className="px-3 py-1.5 text-left font-bold">Model</th>
                         <th className="px-3 py-1.5 text-right font-bold">Input $/1M</th>
@@ -309,7 +309,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                       {PROVIDERS.map((p) => {
                         const pr = PROVIDER_PRICING[p];
                         return (
-                          <tr key={p} className={"border-t border-slate-100 " + (p === provider ? "bg-blue-50 text-slate-700" : "text-slate-500")}>
+                          <tr key={p} className={"border-t border-[#efeadd] " + (p === provider ? "bg-emerald-50 text-[#3c463f]" : "text-[#6f6a5d]")}>
                             <td className="px-3 py-1.5">{PROVIDER_ICONS[p]} {PROVIDER_LABELS[p]}</td>
                             <td className="px-3 py-1.5">{pr.model}</td>
                             <td className="px-3 py-1.5 text-right font-mono">${pr.inputPer1M}</td>
@@ -320,12 +320,12 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                     </tbody>
                   </table>
                 </div>
-                <p className="text-[9px] text-slate-400 mt-1">Approximate pricing {"\u2014"} check provider dashboards for exact rates</p>
+                <p className="text-[9px] text-[#a8a293] mt-1">Approximate pricing {"\u2014"} check provider dashboards for exact rates</p>
               </details>
 
-              <details className="text-[11px] text-slate-400 cursor-pointer">
-                <summary className="hover:text-slate-600 focus-ring rounded">How to get a {PROVIDER_LABELS[provider]} API key</summary>
-                <ol className="mt-2 space-y-1 text-[10px] text-slate-400 list-decimal list-inside leading-relaxed">
+              <details className="text-[11px] text-[#a8a293] cursor-pointer">
+                <summary className="hover:text-[#4a5249] focus-ring rounded">How to get a {PROVIDER_LABELS[provider]} API key</summary>
+                <ol className="mt-2 space-y-1 text-[10px] text-[#a8a293] list-decimal list-inside leading-relaxed">
                   {help.steps.map((step, i) => (
                     <li key={i}>{step}</li>
                   ))}
@@ -347,23 +347,23 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
         {/* Backup */}
         {section === "backup" && (
           <div className="space-y-4" role="tabpanel" id="settings-panel-backup" aria-labelledby="settings-tab-backup">
-            <p className="text-[11px] text-slate-500 leading-relaxed px-0.5">
+            <p className="text-[11px] text-[#6f6a5d] leading-relaxed px-0.5">
               All your travel data lives in this browser. Export backups to keep it safe.
             </p>
 
             {/* Status hero */}
-            <div className="rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 text-white p-4 md:p-5 shadow-sm">
+            <div className="rounded-2xl bg-gradient-to-br from-[#123a2b] to-[#0f2f23] text-white p-4 md:p-5 shadow-sm">
               <div className="flex items-center gap-3">
                 <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-xl" aria-hidden="true">{"\u{1F4BE}"}</span>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-[11px] text-slate-300">Last backup</span>
+                    <span className="text-[11px] text-emerald-200/80">Last backup</span>
                     <span className="text-[11px] font-semibold text-white">{getLastBackupLabel()}</span>
                   </div>
                   {backupFreq !== "never" && (
                     <div className="flex items-center justify-between gap-2 mt-1">
-                      <span className="text-[11px] text-slate-300">Next auto-backup</span>
-                      <span className="text-[11px] font-semibold text-blue-300">{getNextBackupLabel()}</span>
+                      <span className="text-[11px] text-emerald-200/80">Next auto-backup</span>
+                      <span className="text-[11px] font-semibold text-emerald-300">{getNextBackupLabel()}</span>
                     </div>
                   )}
                 </div>
@@ -372,24 +372,24 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
 
             <StorageLocationCard onStatus={setBackupStatus} />
 
-            <SectionCard title="Export" icon={"\u{1F4E4}"} accent="bg-blue-100 text-blue-600" desc="Full backup includes everything. CSV/XLSX export only countries (human-editable).">
+            <SectionCard title="Export" icon={"\u{1F4E4}"} accent="bg-emerald-100 text-emerald-700" desc="Full backup includes everything. CSV/XLSX export only countries (human-editable).">
               <div className="space-y-2">
                 <button
                   onClick={async () => { await exportFullBackup(); setBackupStatus({ ok: true, msg: "Full backup downloaded!" }); }}
-                  className="w-full px-3 py-2.5 min-h-[32px] bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-semibold rounded-xl transition-colors focus-ring flex items-center justify-center gap-2"
+                  className="w-full px-3 py-2.5 min-h-[32px] bg-emerald-700 hover:bg-emerald-600 text-white text-[11px] font-semibold rounded-xl transition-colors focus-ring flex items-center justify-center gap-2"
                 >
                   {"\u{1F4E6}"} Full Backup (JSON)
                 </button>
                 <div className="flex gap-2">
                   <button
                     onClick={async () => { if (countries?.length) { await exportCountriesCSV(countries); setBackupStatus({ ok: true, msg: "CSV exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
-                    className="flex-1 px-3 py-2 min-h-[32px] bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-slate-200"
+                    className="flex-1 px-3 py-2 min-h-[32px] bg-[#efe9db] hover:bg-[#e5dfce] text-[#3c463f] text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-[#e0dac9]"
                   >
                     {"\u{1F4C4}"} Countries CSV
                   </button>
                   <button
                     onClick={async () => { if (countries?.length) { await exportCountriesXLSX(countries); setBackupStatus({ ok: true, msg: "XLSX exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
-                    className="flex-1 px-3 py-2 min-h-[32px] bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-slate-200"
+                    className="flex-1 px-3 py-2 min-h-[32px] bg-[#efe9db] hover:bg-[#e5dfce] text-[#3c463f] text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-[#e0dac9]"
                   >
                     {"\u{1F4CA}"} Countries XLSX
                   </button>
@@ -401,13 +401,13 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
               <div className="flex gap-2">
                 <button
                   onClick={() => restoreRef.current?.click()}
-                  className="flex-1 px-3 py-2 min-h-[32px] bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-slate-200"
+                  className="flex-1 px-3 py-2 min-h-[32px] bg-[#efe9db] hover:bg-[#e5dfce] text-[#3c463f] text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-[#e0dac9]"
                 >
                   {"\u{1F4E6}"} Restore Backup (JSON)
                 </button>
                 <button
                   onClick={() => importRef.current?.click()}
-                  className="flex-1 px-3 py-2 min-h-[32px] bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-slate-200"
+                  className="flex-1 px-3 py-2 min-h-[32px] bg-[#efe9db] hover:bg-[#e5dfce] text-[#3c463f] text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-[#e0dac9]"
                 >
                   {"\u{1F4C4}"} Import (CSV)
                 </button>
@@ -416,13 +416,13 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
               <input ref={importRef} type="file" accept=".csv" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) handleImportCSV(f); e.target.value = ""; }} />
             </SectionCard>
 
-            <SectionCard title="Auto-backup schedule" icon={"\u23F0"} accent="bg-violet-100 text-violet-600">
+            <SectionCard title="Auto-backup schedule" icon={"\u23F0"} accent="bg-emerald-100 text-emerald-700">
               <div className="flex gap-1.5">
                 {(["daily", "weekly", "monthly", "never"] as BackupFrequency[]).map((f) => (
                   <button
                     key={f}
                     onClick={() => handleFreqChange(f)}
-                    className={"flex-1 px-2 py-2 min-h-[32px] text-[11px] font-semibold rounded-xl transition-colors focus-ring " + (backupFreq === f ? "bg-blue-600 text-white shadow-sm" : "bg-slate-100 text-slate-500 hover:bg-slate-200 ring-1 ring-slate-200")}
+                    className={"flex-1 px-2 py-2 min-h-[32px] text-[11px] font-semibold rounded-xl transition-colors focus-ring " + (backupFreq === f ? "bg-emerald-700 text-white shadow-sm" : "bg-[#efe9db] text-[#6f6a5d] hover:bg-[#e5dfce] ring-1 ring-[#e0dac9]")}
                   >
                     {f.charAt(0).toUpperCase() + f.slice(1)}
                   </button>
@@ -435,7 +435,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                   <select
                     value={backupSched.weekday ?? 0}
                     onChange={(e) => handleSchedChange({ weekday: parseInt(e.target.value) })}
-                    className="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1.5 text-[11px] text-slate-700 appearance-none cursor-pointer focus:outline-none focus:border-blue-400"
+                    className="bg-[#f7f4ec] border border-[#e0dac9] rounded-lg px-2 py-1.5 text-[11px] text-[#3c463f] appearance-none cursor-pointer focus:outline-none focus:border-emerald-500"
                   >
                     {["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].map((day, i) => (
                       <option key={i} value={i}>{day}</option>
@@ -450,7 +450,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                   <select
                     value={backupSched.monthDay ?? 1}
                     onChange={(e) => handleSchedChange({ monthDay: parseInt(e.target.value) })}
-                    className="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1.5 text-[11px] text-slate-700 appearance-none cursor-pointer focus:outline-none focus:border-blue-400"
+                    className="bg-[#f7f4ec] border border-[#e0dac9] rounded-lg px-2 py-1.5 text-[11px] text-[#3c463f] appearance-none cursor-pointer focus:outline-none focus:border-emerald-500"
                   >
                     {Array.from({ length: 28 }, (_, i) => (
                       <option key={i + 1} value={i + 1}>{i + 1}</option>
@@ -459,7 +459,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                 </div>
               )}
 
-              <p className="text-[9px] text-slate-400 mt-2.5">
+              <p className="text-[9px] text-[#a8a293] mt-2.5">
                 {backupFreq === "never"
                   ? "Auto-backup disabled. Use the buttons above to back up manually."
                   : "A backup file will auto-download to your browser\u2019s download folder when overdue."}
@@ -468,20 +468,20 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
 
             <StatusBanner status={backupStatus} />
 
-            <div className="bg-blue-50 border border-blue-200 rounded-xl px-3 py-2.5 space-y-1.5">
-              <p className="text-[10px] text-blue-600/80 leading-relaxed">
-                {"\u{1F4A1}"} API keys are <span className="text-blue-700 font-medium">never</span> included in backups for security.
+            <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2.5 space-y-1.5">
+              <p className="text-[10px] text-emerald-700/80 leading-relaxed">
+                {"\u{1F4A1}"} API keys are <span className="text-emerald-800 font-medium">never</span> included in backups for security.
                 Full backup restores everything else {"\u2014"} reload the page after restoring.
               </p>
-              <p className="text-[10px] text-blue-600/80 leading-relaxed">
-                {"\u{1F4C2}"} Manual exports open a <span className="text-blue-700 font-medium">Save As</span> dialog so you can choose where to save.
+              <p className="text-[10px] text-emerald-700/80 leading-relaxed">
+                {"\u{1F4C2}"} Manual exports open a <span className="text-emerald-800 font-medium">Save As</span> dialog so you can choose where to save.
                 Auto-backups download silently to your browser{"\u2019"}s default folder.
               </p>
-              <div className="flex items-start gap-1.5 mt-1 bg-blue-100/60 rounded-md px-2 py-1.5">
+              <div className="flex items-start gap-1.5 mt-1 bg-emerald-100/60 rounded-md px-2 py-1.5">
                 <span className="text-[10px] leading-none mt-px">{"\u{1F4C1}"}</span>
-                <div className="text-[10px] text-blue-700 leading-relaxed">
+                <div className="text-[10px] text-emerald-800 leading-relaxed">
                   <span className="font-medium">Default download location:</span>{" "}
-                  <code className="bg-blue-100 px-1 py-0.5 rounded text-[9px] font-mono">
+                  <code className="bg-emerald-100 px-1 py-0.5 rounded text-[9px] font-mono">
                     {navigator.platform?.toLowerCase().includes("mac")
                       ? "~/Downloads"
                       : navigator.platform?.toLowerCase().includes("win")
@@ -489,7 +489,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                       : "~/Downloads"}
                   </code>
                   <br />
-                  <span className="text-blue-600/70">
+                  <span className="text-emerald-700/70">
                     Change it in your browser{"\u2019"}s{" "}
                     <span className="font-medium">Settings {"\u2192"} Downloads</span>
                     {" "}or enable {"\u201C"}Ask where to save{"\u201D"} for every download.
@@ -505,17 +505,17 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
           <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50" onClick={() => setRestorePreview(null)}>
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
               <div className="px-5 py-4 border-b">
-                <h3 className="text-sm font-bold text-gray-900">📦 Restore Backup</h3>
+                <h3 className="text-sm font-bold text-[#16241d]">📦 Restore Backup</h3>
               </div>
               <div className="px-5 py-4 space-y-3">
-                <div className="bg-slate-50 rounded-xl p-3 space-y-1.5">
-                  <p className="text-[11px] text-slate-500">Backup from</p>
-                  <p className="text-xs font-semibold text-slate-800">
+                <div className="bg-[#f7f4ec] rounded-xl p-3 space-y-1.5">
+                  <p className="text-[11px] text-[#6f6a5d]">Backup from</p>
+                  <p className="text-xs font-semibold text-[#1e2a25]">
                     {new Date(restorePreview.exportedAt).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {restorePreview.countryCount > 0 && (
-                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">
+                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
                         🌍 {restorePreview.countryCount} countries
                       </span>
                     )}
@@ -525,11 +525,11 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                       </span>
                     )}
                     {restorePreview.aiPlanCount > 0 && (
-                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-violet-50 text-violet-600">
+                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
                         ✨ {restorePreview.aiPlanCount} AI plans
                       </span>
                     )}
-                    <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">
+                    <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-[#efe9db] text-[#6f6a5d]">
                       {restorePreview.totalKeys} data keys
                     </span>
                   </div>
@@ -543,7 +543,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
               <div className="flex gap-2 px-5 py-3 border-t">
                 <button
                   onClick={() => setRestorePreview(null)}
-                  className="flex-1 px-3 py-2 text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
+                  className="flex-1 px-3 py-2 text-xs font-medium text-[#4a5249] bg-[#efe9db] hover:bg-[#e5dfce] rounded-lg transition-colors"
                 >
                   Cancel
                 </button>

@@ -8,7 +8,7 @@ import { getCountryFlag } from "../../../utils/countryFlags";
 import ItineraryView, { groupDays } from "../../country/itinerary/ItineraryView";
 import PlanCityJumpNav, { type JumpSection } from "./PlanCityJumpNav";
 import RouteLeversBar, { type LeverStop } from "./RouteLeversBar";
-import ItinerarySummaryBar, { ITINERARY_TOP_ID } from "./ItinerarySummaryBar";
+import { ITINERARY_TOP_ID } from "./ItinerarySummaryBar";
 import ItineraryToolbar from "./ItineraryToolbar";
 import SegmentAdjustDrawer from "./SegmentAdjustDrawer";
 import BorderHop from "./BorderHop";
@@ -116,7 +116,7 @@ function SegmentBlock({
 
       {/* Stop header: identity + anchor badge · stats + range · adjust · collapse.
           Reorder + anchor selection live in the trip-level levers bar. */}
-      <div className="mx-3 rounded-t-2xl border border-b-0 border-[#e4dece] bg-gradient-to-r from-[#123a2b] to-[#0f2f23] px-3 py-3 text-white">
+      <div className="mx-3 rounded-t-2xl border border-b-0 border-[#e4dece] bg-gradient-to-r from-[#123a2b] to-[#0f2f23] px-3 py-2.5 text-white">
         <div className="flex items-center gap-2">
           <span aria-hidden="true" className="text-lg leading-none">{getCountryFlag(segment.name)}</span>
           <h3 className="min-w-0 flex-1 truncate font-display text-base font-semibold">{segment.name}</h3>
@@ -233,16 +233,9 @@ function TripReviewCanvasInner({
     country: s.name,
     cities: groupDays(s.plan.days, s.rule),
   }));
-  const routeLabel = segments.map((s) => s.name).join(" → ");
 
-  // Stops fed to the trip-level levers bar (route order + total length).
-  const leverStops: LeverStop[] = segments.map((s) => ({
-    name: s.name,
-    customDays: s.customDays,
-    daysPinned: s.daysPinned,
-    maxDays: s.maxDays,
-    setDays: s.setDays,
-  }));
+  // Stops fed to the trip-level levers bar (route order + anchor).
+  const leverStops: LeverStop[] = segments.map((s) => ({ name: s.name }));
 
   // Jumping to a city inside a collapsed stop must first expand that stop —
   // otherwise its day nodes aren't rendered and the scroll target doesn't exist.
@@ -270,10 +263,9 @@ function TripReviewCanvasInner({
 
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#e4dece] bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
-      <ItinerarySummaryBar label={routeLabel} topAnchorId={ITINERARY_TOP_ID} />
-
-      {/* Trip-level levers — route order + total length, one place, so each stop
-          header stays uncluttered. Party size lives in the persistent header. */}
+      {/* Trip-level toolbar — route order + jump-to-city + back-to-top on one
+          row, so each stop header stays uncluttered. Party size + route label
+          live in the persistent header (no duplicate summary band). */}
       <RouteLeversBar
         stops={leverStops}
         anchorName={anchorName}
@@ -281,9 +273,10 @@ function TripReviewCanvasInner({
         onReorder={onReorder}
         onAutoArrange={onAutoArrange}
         canAutoArrange={canAutoArrange}
-      />
-
-      <PlanCityJumpNav sections={sections} onJump={handleJump} />
+        topAnchorId={ITINERARY_TOP_ID}
+      >
+        <PlanCityJumpNav sections={sections} onJump={handleJump} embedded />
+      </RouteLeversBar>
 
       <div className="flex-1 overflow-y-auto bg-[#f7f4ec] py-2">
         <span id={ITINERARY_TOP_ID} aria-hidden="true" />

@@ -16,20 +16,20 @@ type SectionCardProps = {
  */
 export function SectionCard({ title, icon, desc, children, className, accent }: SectionCardProps) {
   return (
-    <section className={"rounded-2xl bg-white ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_24px_-12px_rgba(15,23,42,0.12)] p-4 md:p-5 " + (className ?? "")}>
+    <section className={"rounded-2xl bg-white ring-1 ring-[#e4dece] shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_24px_-12px_rgba(15,23,42,0.12)] p-4 md:p-5 " + (className ?? "")}>
       {title && (
         <header className={"mb-4 flex gap-3 " + (desc ? "items-start" : "items-center")}>
           {icon && (
             <span
               aria-hidden="true"
-              className={"flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-lg " + (desc ? "mt-0.5" : "") + " " + (accent ?? "bg-slate-100 text-slate-600")}
+              className={"flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-lg " + (desc ? "mt-0.5" : "") + " " + (accent ?? "bg-[#efe9db] text-[#4a5249]")}
             >
               {icon}
             </span>
           )}
           <div className="min-w-0 space-y-0.5">
-            <h3 className="text-sm font-bold tracking-tight text-slate-800">{title}</h3>
-            {desc && <p className="text-[11px] leading-relaxed text-slate-500">{desc}</p>}
+            <h3 className="text-sm font-bold tracking-tight text-[#1e2a25]">{title}</h3>
+            {desc && <p className="text-[11px] leading-relaxed text-[#6f6a5d]">{desc}</p>}
           </div>
         </header>
       )}
@@ -69,7 +69,7 @@ export function StatusBanner({ status }: { status: { ok: boolean; msg: string } 
 /** Small uppercase field label used above inputs/controls inside cards. */
 export function FieldLabel({ children }: { children: ReactNode }) {
   return (
-    <span className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+    <span className="block text-[11px] font-semibold uppercase tracking-wide text-[#6f6a5d]">
       {children}
     </span>
   );

@@ -1,16 +1,10 @@
-import { memo } from "react";
-import { getCountryFlag } from "../../../utils/countryFlags";
-import { pickNightTarget, canAdjustLength, type LengthStop } from "../../../core/utils/tripLength";
+import { memo, type ReactNode } from "react";
 import PlanPopover from "./PlanPopover";
 import RouteOrderEditor from "./RouteOrderEditor";
 
-/** One route stop the levers can reorder, re-anchor, and retune the length of. */
+/** One route stop the levers can reorder and re-anchor. */
 export type LeverStop = {
   name: string;
-  customDays: number;
-  daysPinned: boolean;
-  maxDays: number;
-  setDays: (days: number) => void;
 };
 
 type Props = {
@@ -22,6 +16,11 @@ type Props = {
   onReorder: (from: number, to: number) => void;
   onAutoArrange: () => void;
   canAutoArrange: boolean;
+  /** Inline controls rendered on the same row, right after "Route order"
+   *  (e.g. the compact "Jump to city" dropdown) so the toolbar stays one line. */
+  children?: ReactNode;
+  /** When set, a right-aligned "Top" control scrolls this anchor into view. */
+  topAnchorId?: string;
 };
 
 const TRIGGER =
@@ -30,25 +29,18 @@ const TRIGGER =
 /**
  * Trip-level "levers bar" for the multi-country Route Canvas — the one place the
  * whole-trip axes live, so each stop's header stays uncluttered (identity + adjust
- * + collapse only). Party size stays in the persistent header (single source);
- * here we expose **Route order** (drag/keyboard reorder · anchor ★ · auto-arrange)
- * and **Trip length** (total nights ± spread across unpinned stops). Both open
+ * + collapse only). Party size stays in the persistent header (single source) and
+ * total trip length is a read-only header stat retuned per stop via each stop's
+ * ✏️ Adjust drawer; here we expose **Route order** (drag/keyboard reorder · anchor
+ * ★ · auto-arrange), an inline slot for a co-located control (the compact
+ * "Jump to city" dropdown, so the toolbar stays one row), plus an optional
+ * right-aligned **↑ Top** jump (the route label already lives in the shared
+ * header, so the canvas drops the redundant summary band). The popover opens
  * through the shared {@link PlanPopover} (anchored desktop, bottom-sheet mobile).
  */
-function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAutoArrange, canAutoArrange }: Props) {
-  const totalNights = stops.reduce((sum, s) => sum + s.customDays, 0);
-  const lengthStops: LengthStop[] = stops.map((s) => ({ days: s.customDays, maxDays: s.maxDays, pinned: s.daysPinned }));
-
-  const adjust = (dir: 1 | -1) => {
-    const idx = pickNightTarget(lengthStops, dir);
-    if (idx === null) return;
-    stops[idx].setDays(stops[idx].customDays + dir);
-  };
-
+function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAutoArrange, canAutoArrange, children, topAnchorId }: Props) {
   return (
-    <div className="flex flex-wrap items-center gap-2 border-b border-[#efeadd] bg-[#faf8f1] px-4 py-2">
-      <span className="text-[10px] font-bold uppercase tracking-wide text-[#a8a293]">Trip levers</span>
-
+    <div className="flex flex-wrap items-center gap-2 border-b border-[#efeadd] bg-[#faf8f1] px-4 py-1.5">
       <PlanPopover
         title="Route order"
         triggerAriaLabel="Edit route order"
@@ -72,60 +64,18 @@ function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAuto
         )}
       </PlanPopover>
 
-      <PlanPopover
-        title="Trip length"
-        triggerAriaLabel="Adjust total trip length"
-        triggerClassName={TRIGGER}
-        triggerLabel={
-          <>
-            <span aria-hidden="true">📅</span> {totalNights}n
-          </>
-        }
-      >
-        {() => (
-          <div className="min-w-[236px] p-2">
-            <div className="flex items-center justify-between">
-              <button
-                type="button"
-                onClick={() => adjust(-1)}
-                disabled={!canAdjustLength(lengthStops, -1)}
-                aria-label="Remove a night"
-                className="focus-ring-emerald flex h-9 w-9 items-center justify-center rounded-full border border-[#d8d2c2] bg-white text-lg font-bold text-[#1e2a25] transition-colors hover:border-emerald-500 hover:bg-emerald-50 disabled:opacity-30 disabled:hover:border-[#d8d2c2] disabled:hover:bg-white"
-              >
-                <span aria-hidden="true">−</span>
-              </button>
-              <span className="text-center">
-                <span className="block font-display text-xl font-semibold text-[#16241d]">{totalNights}</span>
-                <span className="text-[10px] font-medium uppercase tracking-wide text-[#a8a293]">nights total</span>
-              </span>
-              <button
-                type="button"
-                onClick={() => adjust(1)}
-                disabled={!canAdjustLength(lengthStops, 1)}
-                aria-label="Add a night"
-                className="focus-ring-emerald flex h-9 w-9 items-center justify-center rounded-full border border-[#d8d2c2] bg-white text-lg font-bold text-[#1e2a25] transition-colors hover:border-emerald-500 hover:bg-emerald-50 disabled:opacity-30 disabled:hover:border-[#d8d2c2] disabled:hover:bg-white"
-              >
-                <span aria-hidden="true">+</span>
-              </button>
-            </div>
-            <p className="mt-2 text-[10px] leading-snug text-[#8a8577]">
-              Spreads across unpinned stops. Pinned stops (✎) hold their length.
-            </p>
-            <ul className="mt-2 space-y-0.5">
-              {stops.map((s) => (
-                <li key={s.name} className="flex items-center justify-between gap-2 text-[11px] text-[#6f6a5d]">
-                  <span className="flex min-w-0 items-center gap-1.5">
-                    <span aria-hidden="true">{getCountryFlag(s.name)}</span>
-                    <span className="truncate">{s.name}</span>
-                    {s.daysPinned && <span aria-hidden="true" title="Pinned length">✎</span>}
-                  </span>
-                  <span className="shrink-0 font-semibold text-[#1e2a25]">{s.customDays}n</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </PlanPopover>
+      {children}
+
+      {topAnchorId && (
+        <button
+          type="button"
+          onClick={() => document.getElementById(topAnchorId)?.scrollIntoView({ behavior: "smooth", block: "start" })}
+          aria-label="Jump to the top of the itinerary"
+          className="focus-ring-emerald ml-auto flex min-h-[34px] shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold text-emerald-800 transition-colors hover:bg-emerald-50"
+        >
+          <span aria-hidden="true">↑</span> Top
+        </button>
+      )}
     </div>
   );
 }

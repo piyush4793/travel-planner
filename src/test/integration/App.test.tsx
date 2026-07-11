@@ -281,14 +281,14 @@ describe("App orchestration", () => {
     vi.mocked(isEnabled).mockImplementation(() => false);
   });
 
-  it("defaults to trips view when hash is invalid and supports top-level view switching", async () => {
+  it("defaults to the Plan view when hash is invalid and supports top-level view switching", async () => {
     const user = userEvent.setup();
     window.history.pushState(null, "", ROUTES.INVALID);
 
     render(<App />);
 
-    expect(await screen.findByTestId(TEST_IDS.TRIPS_VIEW)).toBeInTheDocument();
-    expect(window.location.hash).toBe(ROUTES.TRIPS);
+    expect(await screen.findByRole("heading", { name: /Where do you plan to go next\?/i })).toBeInTheDocument();
+    expect(window.location.hash).toBe("#plan");
 
     await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
     expect(await screen.findByTestId(TEST_IDS.CALENDAR_VIEW)).toBeInTheDocument();
@@ -299,17 +299,7 @@ describe("App orchestration", () => {
     expect(window.location.hash).toBe(ROUTES.DISCOVER);
   });
 
-  it("lands on the guided Plan view when guided planning is enabled", async () => {
-    vi.mocked(isEnabled).mockImplementation((flag) => flag === "guidedPlanning");
-    window.history.pushState(null, "", ROUTES.INVALID);
-
-    render(<App />);
-
-    expect(await screen.findByRole("heading", { name: /Where do you plan to go next\?/i })).toBeInTheDocument();
-    expect(window.location.hash).toBe("#plan");
-  });
-
-  it("navigates to trips (home) when brand icon is clicked", async () => {
+  it("navigates to the Plan view (home) when the brand icon is clicked", async () => {
     const user = userEvent.setup();
     setHashRoute("discover");
     render(<App />);
@@ -317,8 +307,8 @@ describe("App orchestration", () => {
     expect(await screen.findByTestId(TEST_IDS.DISCOVER_VIEW)).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "Home" }));
-    expect(await screen.findByTestId(TEST_IDS.TRIPS_VIEW)).toBeInTheDocument();
-    expect(window.location.hash).toBe(ROUTES.TRIPS);
+    expect(await screen.findByRole("heading", { name: /Where do you plan to go next\?/i })).toBeInTheDocument();
+    expect(window.location.hash).toBe("#plan");
   });
 
   it("wires country selection from Calendar into CountryPanel", async () => {
@@ -454,6 +444,7 @@ describe("App handler wiring", () => {
 
   it("surfaces a cross-tab storage conflict banner and dismisses it", async () => {
     const user = userEvent.setup();
+    setHashRoute("trips");
     render(<App />);
     expect(await screen.findByTestId(TEST_IDS.TRIPS_VIEW)).toBeInTheDocument();
 

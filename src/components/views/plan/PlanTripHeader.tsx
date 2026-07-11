@@ -75,9 +75,9 @@ function PlanTripHeaderInner({
 
   return (
     <div className={`mx-auto w-full shrink-0 px-4 pt-3 sm:pt-4 ${wide ? "max-w-[1400px]" : "max-w-2xl"}`}>
-      <div className="flex items-start gap-3">
+      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-700/80">Planning</p>
+      <div className="mt-0.5 flex items-center gap-3">
         <div className="min-w-0 flex-1">
-          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-700/80">Planning</p>
           <div className="flex items-center gap-2">
             {identitySlot ? (
               identitySlot
@@ -120,7 +120,7 @@ function PlanTripHeaderInner({
         </div>
 
         {(saveSlot || (basis && onBasisChange)) && (
-          <div className="flex shrink-0 items-center gap-2 pt-0.5">
+          <div className="flex shrink-0 items-center gap-2">
             {saveSlot}
             {basis && onBasisChange && <BasisMenu basis={basis} setBasis={onBasisChange} variant="light" />}
           </div>

@@ -44,20 +44,15 @@ const VIEW_META: Record<AppView, { icon: string; label: string }> = {
   discover: { icon: "🌍", label: "Discover" },
 };
 
+const NAV_VIEWS = Object.keys(VIEW_META) as AppView[];
+
 export default function App() {
   const store = useCountryStore();
   const aiPlanStore = useAiPlanStore();
   const bp = useBreakpoint();
   const isMobile = bp === "mobile";
   const installPrompt = useInstallPrompt();
-  // The guided planner is flag-gated; it's the landing view when enabled.
-  const guidedPlanning = isEnabled("guidedPlanning");
-  const [view, setView] = useHashView(guidedPlanning ? "plan" : "trips");
-  const activeView: AppView = view === "plan" && !guidedPlanning ? "trips" : view;
-  const navViews = useMemo(
-    () => (Object.keys(VIEW_META) as AppView[]).filter((v) => v !== "plan" || guidedPlanning),
-    [guidedPlanning],
-  );
+  const [view, setView] = useHashView("plan");
   const [homeCountry, setHomeCountry] = useState(() => loadLS(LS_KEYS.HOME_COUNTRY, "India"));
   const { globalBasis, activeBasis, setGlobalBasis, setActiveBasis, reload: reloadBudgetBasis } = useBudgetBasis();
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
@@ -266,7 +261,7 @@ export default function App() {
     <div className="flex flex-col h-viewport overflow-hidden bg-slate-50">
       {/* Header — luxury ivory/emerald top bar */}
       <header className="flex items-center gap-2 md:gap-3 px-3 md:px-5 pt-safe pb-2 md:pb-2.5 md:pt-2.5 bg-[#fbf9f3]/90 backdrop-blur-md border-b border-[#e7e1d2] text-[#2c2a24] shrink-0">
-        <button onClick={() => setView(guidedPlanning ? "plan" : "trips")} className="flex items-center gap-2 shrink-0 rounded-lg hover:opacity-80 transition-opacity focus-ring" aria-label="Home">
+        <button onClick={() => setView("plan")} className="flex items-center gap-2 shrink-0 rounded-lg hover:opacity-80 transition-opacity focus-ring" aria-label="Home">
           {/* Brand icon — all screens */}
           <img src="icon-192.svg" alt="Roamwise" className="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-lg" />
           <span className="hidden md:inline text-lg font-black tracking-tight text-emerald-900">Roamwise</span>
@@ -274,12 +269,12 @@ export default function App() {
 
         {/* Desktop nav pills */}
         <div className="hidden md:flex items-center gap-0.5 bg-[#efe9db] rounded-full p-0.5 mx-auto" role="navigation" aria-label="Main navigation">
-          {navViews.map((v) => (
+          {NAV_VIEWS.map((v) => (
             <button key={v} onClick={() => setView(v)}
               data-tour={`nav-${v}`}
-              aria-current={activeView === v ? "page" : undefined}
+              aria-current={view === v ? "page" : undefined}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors focus-ring ${
-                activeView === v ? "bg-emerald-700 text-white shadow-sm" : "text-[#6f6a5d] hover:text-emerald-800"
+                view === v ? "bg-emerald-700 text-white shadow-sm" : "text-[#6f6a5d] hover:text-emerald-800"
               }`}>
               <span aria-hidden="true">{VIEW_META[v].icon}</span> {VIEW_META[v].label}
             </button>
@@ -326,6 +321,7 @@ export default function App() {
             aria-label="Settings">
             ⚙️
           </button>
+          <DevFlagPanel size="md" />
         </div>
       </header>
 
@@ -405,7 +401,7 @@ export default function App() {
         </div>
 
         <Suspense fallback={<div className="flex items-center justify-center h-full"><span className="text-sm text-gray-400">Loading…</span></div>}>
-        {activeView === "plan" ? (
+        {view === "plan" ? (
           <PlanView
             countries={store.myListCountries}
             visitedNames={store.visited.set}
@@ -426,7 +422,7 @@ export default function App() {
             onCinematicChange={setCinematicActive}
             openTrip={planSeed}
           />
-        ) : activeView === "trips" ? (
+        ) : view === "trips" ? (
           <MyTripsView
             savedTrips={savedTrips.savedTrips}
             onToggleFavorite={savedTrips.toggleFavorite}
@@ -434,7 +430,7 @@ export default function App() {
             onOpen={openSavedTrip}
             onGoPlan={() => setView("plan")}
           />
-        ) : activeView === "calendar" ? (
+        ) : view === "calendar" ? (
           <CalendarView
             countries={store.myListCountries}
             onSelect={setSelectedCountry}
@@ -484,8 +480,8 @@ export default function App() {
         className="md:hidden shrink-0 flex items-stretch border-t border-[#e7e1d2] bg-[#fbf9f3] pb-safe shadow-[0_-1px_6px_rgba(0,0,0,0.05)]"
         aria-label="Main navigation"
       >
-        {navViews.map((v) => {
-          const active = activeView === v;
+        {NAV_VIEWS.map((v) => {
+          const active = view === v;
           return (
             <button
               key={v}

@@ -11,8 +11,8 @@ function parseHash(fallback: AppView): AppView {
 
 /**
  * Hash-based routing for the top-level views. `fallback` is the landing view used
- * when the hash is empty or invalid — the app passes `plan` when guided planning
- * is enabled (its default home) and `trips` otherwise.
+ * when the hash is empty or invalid — the app passes `plan`, the default landing
+ * view (the brand/Home button routes there too).
  */
 export function useHashView(fallback: AppView = "plan") {
   const [view, setView] = useState<AppView>(() => parseHash(fallback));

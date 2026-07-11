@@ -96,9 +96,8 @@ describe("TripReviewCanvas", () => {
     expect(screen.getByText(/times are indicative/)).toBeInTheDocument();
   });
 
-  it("shows the composed route label and a jump-to-top control", () => {
+  it("exposes a jump-to-top control (route label lives in the shared header)", () => {
     renderCanvas({ segments: [segment("Norway", "Oslo", 3), segment("Denmark", "Copenhagen", 3)], composedPlan: composed });
-    expect(screen.getByText("Norway → Denmark")).toBeInTheDocument();
     expect(screen.getByLabelText("Jump to the top of the itinerary")).toBeInTheDocument();
   });
 

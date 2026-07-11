@@ -43,7 +43,7 @@ export default function BasisMenu({ basis, setBasis, variant = "dark", labelled 
         <>
           {labelled && <span className="text-[11px] font-medium uppercase tracking-wide opacity-60">Who's going</span>}
           <span aria-hidden="true">{meta.icon}</span>
-          <span className="font-semibold">{meta.label}</span>
+          <span className="font-semibold sr-only sm:not-sr-only">{meta.label}</span>
           {CARET}
         </>
       }
