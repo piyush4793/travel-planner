@@ -21,13 +21,17 @@ type TourStep = {
   floaters?: string[];
 };
 
+/** Luxury emerald/ivory gradient palette — one on-brand hero look with subtle
+ *  hue shifts per card, matching the app's Plan/Trips surfaces. */
+const HERO_GRADIENT = "from-emerald-700 via-emerald-800 to-teal-900";
+
 const STEPS: TourStep[] = [
   {
     kind: "hero",
     emoji: "\u{1F9ED}",
     title: "Welcome to Roamwise",
-    body: "Your personal travel companion for 197 countries. Plan trips, explore itineraries, and discover your next adventure \u2014 all offline, all free.",
-    gradient: "from-blue-600 via-indigo-600 to-violet-700",
+    body: "Your personal travel companion for 197 countries. Plan single or multi-country trips, save them to revisit anytime, and discover your next adventure \u2014 all offline, all free.",
+    gradient: HERO_GRADIENT,
     floaters: ["\u2708\uFE0F", "\u{1F30D}", "\u{1F3D4}\uFE0F", "\u{1F3D6}\uFE0F", "\u{1F5FC}", "\u{1F30A}", "\u26F0\uFE0F", "\u{1F308}"],
   },
   {
@@ -36,7 +40,15 @@ const STEPS: TourStep[] = [
     position: "bottom",
     emoji: "\u{1F9ED}",
     title: "Plan Your Trip",
-    body: "Pick a destination and we'll shape a day-by-day itinerary \u2014 pick one country or chain several into a multi-stop route, all with the same planner.",
+    body: "Start here. Pick a destination and we'll shape a day-by-day itinerary \u2014 pick one country or chain several into a multi-stop route, all with the same planner.",
+  },
+  {
+    kind: "spotlight",
+    target: "[data-tour='nav-trips']",
+    position: "bottom",
+    emoji: "\u{1F9F3}",
+    title: "Your Saved Trips",
+    body: "Every trip you plan is saved here automatically. Reopen a route to keep tuning it, favourite the ones you love, and pick up right where you left off.",
   },
   {
     kind: "spotlight",
@@ -59,7 +71,7 @@ const STEPS: TourStep[] = [
     emoji: "\u{1F3AC}",
     title: "Cinematic Fly-throughs",
     body: "Generate an itinerary for any country, then watch an animated 3D fly-through of your entire trip on the map \u2014 city by city, with realistic vehicles and route trails.",
-    gradient: "from-orange-500 via-rose-500 to-pink-600",
+    gradient: "from-emerald-800 via-teal-800 to-cyan-900",
     floaters: ["\u{1F3A5}", "\u{1F30C}", "\u{1F681}", "\u{1F682}", "\u{1F697}", "\u26F5", "\u{1F3DE}\uFE0F", "\u{1F304}"],
   },
   {
@@ -75,7 +87,7 @@ const STEPS: TourStep[] = [
     emoji: "\u{1F4F2}",
     title: "Take Roamwise Anywhere",
     body: "",
-    gradient: "from-emerald-500 via-teal-500 to-cyan-600",
+    gradient: "from-teal-600 via-emerald-700 to-emerald-900",
     floaters: ["\u{1F4F1}", "\u2708\uFE0F", "\u{1F5FA}\uFE0F", "\u{1F9F3}", "\u{1F30E}", "\u{1F3DD}\uFE0F"],
   },
   {
@@ -83,7 +95,7 @@ const STEPS: TourStep[] = [
     emoji: "\u2728",
     title: "You\u2019re Ready to Explore!",
     body: "Start by planning your next trip or discovering new countries. Your next adventure is waiting.",
-    gradient: "from-blue-600 via-sky-500 to-cyan-500",
+    gradient: "from-emerald-600 via-teal-600 to-cyan-700",
     floaters: ["\u{1F389}", "\u{1F30F}", "\u2708\uFE0F", "\u{1F5FA}\uFE0F", "\u26F0\uFE0F", "\u{1F3D6}\uFE0F", "\u{1F30A}", "\u2B50"],
   },
 ];
@@ -236,7 +248,7 @@ export default function FreTour({ canPromptInstall, isInstalled, isIOS, onInstal
       <div ref={cardRef} className="absolute inset-0 fre-slide-next">
         {renderAsHero && (
           <HeroCard
-            step={{ ...current, gradient: current.gradient || "from-blue-600 via-indigo-600 to-violet-700" }}
+            step={{ ...current, gradient: current.gradient || HERO_GRADIENT }}
             index={step}
             total={STEPS.length}
             isLast={isLast}
@@ -298,7 +310,7 @@ function HeroCard({ step, index, total, isLast, onNext, onPrev, onSkip }: {
             {isLast && (
               <button
                 onClick={onNext}
-                className="w-full py-3 bg-white text-slate-800 text-sm font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] active:scale-95 focus-ring"
+                className="w-full py-3 bg-white text-emerald-900 text-sm font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] active:scale-95 focus-ring"
               >
                 {"Let\u2019s Go! \u{1F30D}"}
               </button>
@@ -314,7 +326,7 @@ function HeroCard({ step, index, total, isLast, onNext, onPrev, onSkip }: {
                 {!isLast && (
                   <button
                     onClick={onNext}
-                    className="px-6 py-2.5 bg-white text-slate-800 text-xs font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-105 transition-[transform,box-shadow] active:scale-95 focus-ring"
+                    className="px-6 py-2.5 bg-white text-emerald-900 text-xs font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-105 transition-[transform,box-shadow] active:scale-95 focus-ring"
                   >
                     {"Next →"}
                   </button>
@@ -347,23 +359,25 @@ function SpotlightCard({ step, targetRect, index, total, onNext, onPrev, onSkip 
       className={`absolute ${targetRect ? "" : "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"} w-[280px] max-w-[calc(100vw-24px)]`}
       style={targetRect ? style : undefined}
     >
-      <div className="rounded-2xl shadow-2xl shadow-blue-900/30 overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-700 p-5 text-white">
-          <div className="relative">
-            <div className="text-2xl mb-2 drop-shadow-lg">{step.emoji}</div>
-            <h3 className="text-sm font-bold text-white drop-shadow mb-1.5">{step.title}</h3>
-            <p className="text-xs text-white/85 leading-relaxed">{step.body}</p>
-            <button onClick={onSkip} className="absolute top-0 right-0 text-white/40 hover:text-white/80 text-lg transition-colors p-1 leading-none focus-ring" aria-label="Skip tour">
-              {"✕"}
-            </button>
+      <div className="rounded-2xl shadow-2xl shadow-emerald-950/25 overflow-hidden bg-surface-1 border border-line p-5 text-ink-body" style={{ backgroundColor: "#faf8f1" }}>
+          <div>
+            <div className="flex items-center justify-between gap-3 mb-2">
+              <div className="text-2xl leading-none" aria-hidden="true">{step.emoji}</div>
+              <button onClick={onSkip} className="-mr-1 -mt-1 flex items-center justify-center min-h-[32px] min-w-[32px] text-ink-4 hover:text-ink-1 text-lg transition-colors leading-none focus-ring-emerald rounded-lg" aria-label="Skip tour">
+                {"✕"}
+              </button>
+            </div>
+            <h3 className="text-sm font-bold text-ink-1 mb-1.5">{step.title}</h3>
+            <p className="text-xs text-ink-body leading-relaxed">{step.body}</p>
           </div>
 
-          <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/15">
-            <ProgressBar current={index} total={total} light />
+          <div className="flex items-center justify-between mt-4 pt-3 border-t border-line">
+            <ProgressBar current={index} total={total} />
             <div className="flex gap-2">
-              <button onClick={onPrev} className="px-3 py-1.5 text-[11px] font-semibold text-white/60 hover:text-white transition-colors focus-ring rounded">
+              <button onClick={onPrev} className="px-3 py-1.5 text-[11px] font-semibold text-ink-3 hover:text-ink-1 transition-colors focus-ring-emerald rounded">
                 Back
               </button>
-              <button onClick={onNext} className="px-5 py-1.5 bg-white text-slate-800 text-[11px] font-bold rounded-full whitespace-nowrap transition-[transform,box-shadow] shadow-sm hover:shadow hover:scale-105 active:scale-95 focus-ring">
+              <button onClick={onNext} className="px-5 py-1.5 bg-emerald-700 text-white text-[11px] font-bold rounded-full whitespace-nowrap transition-[transform,box-shadow,background-color] shadow-sm hover:bg-emerald-800 hover:shadow hover:scale-105 active:scale-95 focus-ring-emerald">
                 {"Next →"}
               </button>
             </div>
@@ -404,10 +418,10 @@ function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstal
               <button
                 onClick={onInstall}
                 disabled={installing}
-                className="w-full mb-4 px-5 py-3 bg-white text-slate-800 text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] active:scale-95 flex items-center justify-center gap-2 disabled:opacity-70 focus-ring"
+                className="w-full mb-4 px-5 py-3 bg-white text-emerald-900 text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] active:scale-95 flex items-center justify-center gap-2 disabled:opacity-70 focus-ring"
               >
                 {installing ? (
-                  <><span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-slate-800 border-t-transparent" /> {"Installing\u2026"}</>
+                  <><span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-emerald-800 border-t-transparent" /> {"Installing\u2026"}</>
                 ) : (
                   <>{"\u2B07\uFE0F"} Install Roamwise</>
                 )}
@@ -498,53 +512,65 @@ function SpotlightBackdrop({ rect }: { rect: DOMRect }) {
   const w = rect.width + pad * 2;
   const h = rect.height + pad * 2;
 
+  // Robust "spotlight" dim: a single fixed box whose huge box-shadow spread
+  // darkens the entire viewport while its own rounded rect stays clear — the
+  // cutout. No SVG mask / no backdrop-filter (both composite unreliably across
+  // browsers), so the target reads crisply and the ivory card pops everywhere.
   return (
-    <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: "none" }}>
-      <defs>
-        <mask id="fre-mask">
-          <rect width="100%" height="100%" fill="white" />
-          <rect x={x} y={y} width={w} height={h} rx={r} fill="black" />
-        </mask>
-        <filter id="fre-glow">
-          <feGaussianBlur stdDeviation="4" />
-        </filter>
-      </defs>
-      <rect width="100%" height="100%" fill="rgba(0,0,0,0.7)" mask="url(#fre-mask)" style={{ pointerEvents: "all" }} />
-      {/* Bright highlight behind target so it pops on dark headers */}
-      <rect x={x} y={y} width={w} height={h} rx={r} fill="rgba(255,255,255,0.15)" />
-      {/* Pulsing glow ring — disabled when reduced-motion */}
-      <rect x={x - 3} y={y - 3} width={w + 6} height={h + 6} rx={r + 3} fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2" filter="url(#fre-glow)" className="motion-safe:animate-pulse" />
-      <rect x={x - 1} y={y - 1} width={w + 2} height={h + 2} rx={r + 1} fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2" />
-      {/* Arrow pointing down from target to card */}
-      <polygon
-        points={`${rect.left + rect.width / 2 - 8},${y + h + 4} ${rect.left + rect.width / 2 + 8},${y + h + 4} ${rect.left + rect.width / 2},${y + h + 16}`}
-        fill="rgba(255,255,255,0.7)"
+    <>
+      <div
+        aria-hidden="true"
+        className="fixed"
+        style={{
+          left: x,
+          top: y,
+          width: w,
+          height: h,
+          borderRadius: r,
+          boxShadow:
+            "0 0 0 1.5px rgba(255,255,255,0.9), 0 0 0 9999px rgba(0,0,0,0.72)",
+          pointerEvents: "none",
+        }}
       />
-    </svg>
+      {/* Emerald brand glow ring — pulses unless reduced-motion */}
+      <div
+        aria-hidden="true"
+        className="fixed motion-safe:animate-pulse"
+        style={{
+          left: x - 3,
+          top: y - 3,
+          width: w + 6,
+          height: h + 6,
+          borderRadius: r + 3,
+          boxShadow:
+            "0 0 0 2px rgba(16,185,129,0.7), 0 0 16px 3px rgba(16,185,129,0.45)",
+          pointerEvents: "none",
+        }}
+      />
+    </>
   );
 }
 
 // ─── Progress bar ────────────────────────────────────────────────────────────
 
 function ProgressBar({ current, total, light }: { current: number; total: number; light?: boolean }) {
+  const pct = total > 0 ? ((current + 1) / total) * 100 : 0;
   return (
-    <div className="flex items-center gap-1.5">
-      <span className={`text-[10px] font-semibold ${light ? "text-white/60" : "text-slate-400"}`}>
+    <div className="flex items-center gap-2">
+      <span className={`text-[10px] font-semibold tabular-nums ${light ? "text-white/70" : "text-ink-4"}`}>
         {current + 1}/{total}
       </span>
-      <div className={`flex gap-1 ${light ? "opacity-80" : ""}`}>
-        {Array.from({ length: total }, (_, i) => (
-          <span
-            key={i}
-            className={`h-1 rounded-full transition-[width,background-color] duration-500 ${
-              i === current
-                ? `w-5 ${light ? "bg-white" : "bg-blue-600"}`
-                : i < current
-                ? `w-1.5 ${light ? "bg-white/50" : "bg-blue-300"}`
-                : `w-1.5 ${light ? "bg-white/20" : "bg-slate-200"}`
-            }`}
-          />
-        ))}
+      <div
+        className={`h-1 w-14 rounded-full overflow-hidden ${light ? "bg-white/25" : "bg-line"}`}
+        role="progressbar"
+        aria-valuemin={1}
+        aria-valuemax={total}
+        aria-valuenow={current + 1}
+      >
+        <div
+          className={`h-full rounded-full transition-[width] duration-500 ${light ? "bg-white" : "bg-emerald-700"}`}
+          style={{ width: `${pct}%` }}
+        />
       </div>
     </div>
   );

@@ -119,7 +119,7 @@ src/
 │       ├── HomeCountrySelector.tsx# Home country dropdown
 │       ├── DevFlagPanel.tsx       # Dev-only feature flag panel
 │       ├── AppInstallShare.tsx    # Header/menu Install / Open-app / Share controls
-│       ├── FreTour.tsx            # First-run guided tour (hero/spotlight/install cards)
+│       ├── FreTour.tsx            # First-run guided tour (luxury emerald/ivory hero·spotlight·install cards; Plan-first nav walkthrough incl. Trips)
 │       └── Tooltip.tsx            # Portal-based tooltip
 
 data/
@@ -276,7 +276,7 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 - **Mobile**: a **fixed bottom tab bar** (ivory `bg-[#fbf9f3]`, `border-[#e7e1d2]`) owns primary navigation (the 4 views, icon-over-label with an emerald-tinted active pill behind the icon, `safe-bottom`); the top strip shrinks to brand + a compact **Install/Share + Settings** cluster (no hamburger menu / slide-down drawer — both retired). The bottom bar sits in the flex column so content scrolls above it.
 - The install slot is context-aware: it shows **Install app** when the browser offers `beforeinstallprompt` (or iOS A2HS guidance), and swaps to a best-effort **Open app** action once `navigator.getInstalledRelatedApps()` reports the PWA is already installed but running in a browser tab. Nothing shows when running standalone.
 - App-wide defaults (home country, default budget party size) live inside **Settings → General**, not in the header.
-- `FreTour` spotlight targets (`data-tour="nav-*"`, `data-tour="settings"`) resolve to whichever element is visible per breakpoint (desktop pills vs. bottom bar tabs); its mobile positioning places a card above targets in the lower half of the viewport (e.g. the bottom tab bar).
+- `FreTour` is the **luxury emerald/ivory** first-run guided tour: immersive emerald-gradient **hero/install** cards (Welcome → Cinematic → Install → Ready) interleaved with light **ivory spotlight** tooltips (`bg-surface-1` + emerald accents + emerald pulsing target ring) that walk the four nav destinations in Plan-first order — **Plan → Trips (saved trips) → Discover → Calendar** — plus Settings/Backup. Spotlight targets (`data-tour="nav-*"`, `data-tour="settings"`) resolve to whichever element is visible per breakpoint (desktop pills vs. bottom bar tabs); its mobile positioning places a card above targets in the lower half of the viewport (e.g. the bottom tab bar).
 
 ### Saved Trips (My Trips)
 

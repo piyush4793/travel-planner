@@ -44,7 +44,7 @@ async function openTour(props: Partial<FreTourProps> = {}) {
 }
 
 async function goToInstallStep(user: ReturnType<typeof userEvent.setup>) {
-  for (let i = 0; i < 6; i += 1) {
+  for (let i = 0; i < 7; i += 1) {
     await user.click(screen.getByRole("button", { name: /Next/i }));
   }
   expect(screen.getByRole("heading", { name: /Take Roamwise Anywhere/i })).toBeInTheDocument();
@@ -94,6 +94,15 @@ describe("FreTour", () => {
     expect(screen.getByRole("heading", { name: /Welcome to Roamwise/i })).toBeInTheDocument();
   });
 
+  it("surfaces the saved-trips step in the Plan-first journey", async () => {
+    const { user } = await openTour();
+
+    await user.click(screen.getByRole("button", { name: /Next/i })); // Plan
+    await user.click(screen.getByRole("button", { name: /Next/i })); // Trips
+    expect(screen.getByRole("heading", { name: /Your Saved Trips/i })).toBeInTheDocument();
+    expect(screen.getByText(/pick up right where you left off/i)).toBeInTheDocument();
+  });
+
   it("skip closes the tour and persists the seen flag", async () => {
     const { user, rerender } = await openTour();
 
@@ -111,7 +120,7 @@ describe("FreTour", () => {
   it("completing the final step closes the tour and persists the seen flag", async () => {
     const { user } = await openTour();
 
-    for (let i = 0; i < 7; i += 1) {
+    for (let i = 0; i < 8; i += 1) {
       await user.click(screen.getByRole("button", { name: /Next/i }));
     }
 
@@ -197,7 +206,12 @@ describe("FreTour", () => {
 
     expect(screen.getByRole("heading", { name: /Plan Your Trip/i })).toBeInTheDocument();
     const dialog = screen.getByRole("dialog", { name: /welcome tour/i });
-    await waitFor(() => expect(dialog.querySelector("svg mask#fre-mask")).not.toBeNull());
+    await waitFor(() => {
+      const cutout = [...dialog.querySelectorAll<HTMLElement>('div[aria-hidden="true"]')].find(
+        (el) => el.style.boxShadow.includes("9999px"),
+      );
+      expect(cutout).toBeTruthy();
+    });
 
     target.remove();
   });
