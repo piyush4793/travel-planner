@@ -29,7 +29,7 @@ function renderHeader(props: Partial<React.ComponentProps<typeof PlanTripHeader>
       steps={steps}
       activeStep={0}
       onGoToStep={vi.fn()}
-      wide={false}
+      width="narrow"
       {...props}
     />,
   );

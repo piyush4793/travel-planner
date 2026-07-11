@@ -1,6 +1,6 @@
 import { memo, useEffect, useState, type ReactNode } from "react";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
-import { useBackDismiss } from "../../../hooks/useBackDismiss";
+import ModalShell from "../../shared/ModalShell";
 import { loadLS, saveLS } from "../../../core/storage";
 import { LS_KEYS } from "../../../core/lsKeys";
 
@@ -19,12 +19,19 @@ export type RailDef = {
 type RailUiState = { left: boolean; right: boolean };
 const DEFAULT_UI: RailUiState = { left: true, right: true };
 
+/** Mobile-only itinerary navigation, rendered in the workspace's bottom bar
+ *  beside the rail triggers. On desktop these live in the wizard footer, so the
+ *  shell only needs them below `lg`, where that footer is hidden. */
+export type WorkspaceNav = { onBack: () => void; onPlanAnother: () => void };
+
 type Props = {
   center: ReactNode;
   /** Left "levers" rail (optional — the multi-country canvas tunes in place). */
   shape?: RailDef;
   /** Right "reference" rail. */
   context: RailDef;
+  /** Mobile bottom-bar Back / Plan-another (desktop uses the wizard footer). */
+  nav?: WorkspaceNav;
 };
 
 function RailHeader({ title, side, onCollapse }: { title: string; side: "left" | "right"; onCollapse: () => void }) {
@@ -69,7 +76,7 @@ function ReopenTab({ label, side, onOpen }: { label: string; side: "left" | "rig
  * Route Canvas (levers inline, no Shape rail) reuse one layout without forking
  * the responsive chrome.
  */
-function PlanWorkspaceShellInner({ center, shape, context }: Props) {
+function PlanWorkspaceShellInner({ center, shape, context, nav }: Props) {
   const bp = useBreakpoint();
   const isDesktop = bp === "desktop";
 
@@ -77,14 +84,7 @@ function PlanWorkspaceShellInner({ center, shape, context }: Props) {
   useEffect(() => { saveLS(LS_KEYS.PLAN_UI, ui); }, [ui]);
 
   const [sheet, setSheet] = useState<string | null>(null);
-  const closeSheet = useBackDismiss(sheet !== null, () => setSheet(null));
-
-  useEffect(() => {
-    if (!sheet) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") closeSheet(); };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [sheet, closeSheet]);
+  const closeSheet = () => setSheet(null);
 
   useEffect(() => { if (isDesktop) setSheet(null); }, [isDesktop]);
 
@@ -123,7 +123,17 @@ function PlanWorkspaceShellInner({ center, shape, context }: Props) {
     <div className="relative flex h-full w-full flex-col overflow-hidden">
       <main className="min-h-0 flex-1 overflow-hidden">{center}</main>
 
-      <div className={`grid shrink-0 gap-2 pb-safe pt-2.5 ${rails.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}>
+      <div className="flex shrink-0 items-center gap-2 pb-safe pt-2.5">
+        {nav && (
+          <button
+            type="button"
+            onClick={nav.onBack}
+            aria-label="Back to the previous step"
+            className="focus-ring-emerald flex min-h-[44px] shrink-0 items-center gap-1 rounded-full border border-line bg-white px-3.5 text-xs font-bold text-ink-2 shadow-sm transition-colors hover:bg-surface-2"
+          >
+            <span aria-hidden="true">←</span> Back
+          </button>
+        )}
         {rails.map((r) => (
           <button
             key={r.key}
@@ -131,38 +141,45 @@ function PlanWorkspaceShellInner({ center, shape, context }: Props) {
             onClick={() => setSheet(r.key)}
             aria-haspopup="dialog"
             aria-expanded={sheet === r.key}
-            className="focus-ring-emerald flex min-h-[44px] items-center justify-center gap-1.5 rounded-full border border-line bg-white px-3 py-2 text-xs font-bold text-ink-1 shadow-sm transition-colors hover:bg-surface-2"
+            className="focus-ring-emerald flex min-h-[44px] min-w-0 flex-1 items-center justify-center gap-1.5 truncate rounded-full border border-line bg-white px-3 py-2 text-xs font-bold text-ink-1 shadow-sm transition-colors hover:bg-surface-2"
           >
             {r.mobileLabel}
           </button>
         ))}
-      </div>
-
-      {activeRail && (
-        <div className="fixed inset-0 z-40 flex flex-col justify-end" role="dialog" aria-modal="true" aria-label={activeRail.title}>
+        {nav && (
           <button
             type="button"
-            aria-label="Dismiss panel"
-            onClick={() => closeSheet()}
-            className="absolute inset-0 bg-black/40 motion-safe:animate-[fadeInUp_0.15s_ease-out]"
-          />
-          <div className="relative max-h-[82vh] overflow-y-auto rounded-t-3xl border-t border-line bg-surface-2 px-3 pb-8 pt-3 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]">
-            <div className="mx-auto mb-2.5 h-1 w-10 rounded-full bg-line-strong" aria-hidden="true" />
-            <div className="mb-2.5 flex items-center justify-between px-1">
-              <h3 className="font-display text-base font-semibold tracking-tight text-ink-1">{activeRail.title}</h3>
-              <button
-                type="button"
-                onClick={() => closeSheet()}
-                aria-label="Close panel"
-                className="focus-ring-emerald flex h-8 w-8 items-center justify-center rounded-full border border-line bg-white text-sm font-bold text-ink-2 transition-colors hover:bg-surface-2"
-              >
-                <span aria-hidden="true">✕</span>
-              </button>
-            </div>
-            {activeRail.node}
-          </div>
+            onClick={nav.onPlanAnother}
+            aria-label="Plan another trip"
+            className="focus-ring-emerald flex min-h-[44px] shrink-0 items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 text-xs font-bold text-emerald-800 shadow-sm transition-colors hover:bg-emerald-100"
+          >
+            <span aria-hidden="true">＋</span>
+            <span className={rails.length > 1 ? "sr-only" : undefined}>Plan another</span>
+          </button>
+        )}
+      </div>
+
+      <ModalShell
+        open={activeRail !== null}
+        onClose={closeSheet}
+        label={activeRail?.title}
+        backdropClassName="bg-black/50 backdrop-blur-sm"
+        className="relative flex max-h-[85vh] w-full flex-col self-end overflow-hidden rounded-t-3xl border-t border-emerald-100 bg-white shadow-2xl focus:outline-none safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
+      >
+        <div className="mx-auto mt-2.5 h-1 w-10 shrink-0 rounded-full bg-line-strong" aria-hidden="true" />
+        <div className="flex shrink-0 items-center gap-2.5 border-b border-emerald-100 bg-gradient-to-b from-emerald-50 to-white px-4 py-3">
+          <h3 className="min-w-0 flex-1 font-display text-[15px] font-bold leading-tight text-emerald-950">{activeRail?.title}</h3>
+          <button
+            type="button"
+            onClick={closeSheet}
+            aria-label="Close panel"
+            className="focus-ring-emerald flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 text-sm font-bold text-emerald-800 ring-1 ring-emerald-100 transition-colors hover:bg-white"
+          >
+            <span aria-hidden="true">✕</span>
+          </button>
         </div>
-      )}
+        <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">{activeRail?.node}</div>
+      </ModalShell>
     </div>
   );
 }

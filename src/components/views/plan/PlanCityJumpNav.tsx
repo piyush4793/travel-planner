@@ -196,11 +196,12 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
       onClick={() => setOpen((o) => !o)}
       aria-haspopup="listbox"
       aria-expanded={open}
-      className="focus-ring-emerald flex min-h-[34px] items-center gap-1.5 rounded-full border border-line-strong bg-white px-3 py-1 text-[11px] font-semibold text-ink-1 transition-colors hover:border-emerald-500 hover:bg-emerald-50 hover:text-emerald-800"
+      aria-label={grouped ? "Jump to country / city…" : "Jump to city…"}
+      className={`focus-ring-emerald flex min-h-[34px] min-w-0 items-center gap-1.5 rounded-full border border-line-strong bg-white px-3 py-1 text-[11px] font-semibold text-ink-1 transition-colors hover:border-emerald-500 hover:bg-emerald-50 hover:text-emerald-800${embedded ? " max-w-[8rem] shrink-0" : ""}`}
     >
-      <span aria-hidden="true">📍</span>
-      <span>{current ?? (grouped ? "Jump to country / city…" : "Jump to city…")}</span>
-      <span aria-hidden="true" className={`transition-transform ${open ? "rotate-180" : ""}`}>▾</span>
+      <span aria-hidden="true" className="shrink-0">📍</span>
+      <span className={embedded ? "truncate" : undefined}>{current ?? (isMobile ? "Jump" : grouped ? "Jump to country / city…" : "Jump to city…")}</span>
+      <span aria-hidden="true" className={`shrink-0 transition-transform ${open ? "rotate-180" : ""}`}>▾</span>
     </button>
   );
 
@@ -223,10 +224,10 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
             />
             <div
               ref={popRef}
-              className="relative max-h-[70vh] overflow-y-auto rounded-t-3xl border-t border-line bg-white px-1 pb-8 pt-3 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
+              className="relative flex max-h-[70vh] flex-col overflow-hidden rounded-t-3xl border-t border-line bg-white shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
             >
-              <div className="mx-auto mb-1 h-1 w-10 rounded-full bg-line-strong" aria-hidden="true" />
-              {list}
+              <div className="mx-auto mb-1 mt-3 h-1 w-10 shrink-0 rounded-full bg-line-strong" aria-hidden="true" />
+              <div className="min-h-0 flex-1 overflow-y-auto px-1 pb-8">{list}</div>
             </div>
           </div>,
           document.body,

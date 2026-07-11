@@ -4,7 +4,6 @@ import type { CountryRule } from "../../../core/data/itineraryRules";
 import {
   decideCities,
   sortDecisions,
-  summarizeFocus,
   CITY_SORT_META,
   type CityDecision,
   type CitySort,
@@ -202,7 +201,20 @@ function UnitCities({ unit, sort }: { unit: PlacesUnit; sort: CitySort }) {
     <div className="space-y-4">
       {included.length > 0 && (
         <div>
-          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-ink-4">In your plan</p>
+          <div className="mb-2 flex items-center gap-2">
+            <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-ink-4">In your plan</p>
+            <span
+              aria-label={`${included.length} of ${decisions.length} places selected`}
+              className="shrink-0 whitespace-nowrap rounded-full border border-emerald-100 bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-800"
+            >
+              {included.length} of {decisions.length}
+            </span>
+            {rest.length > 0 && !showAll && (
+              <span className="ml-auto hidden text-[11px] font-medium text-ink-4 lg:inline" aria-hidden="true">
+                More options below ↓
+              </span>
+            )}
+          </div>
           <div className="grid gap-2 lg:grid-cols-2">
             {included.map((d) => (
               <DecisionCard key={d.name} d={d} onToggle={() => unit.onToggleCity(d.name)} onDetails={() => setDetailName(d.name)} />
@@ -261,56 +273,44 @@ function PlanPlacesStep({ units, activeIndex }: Props) {
   if (units.length === 0) return null;
   const safeIndex = Math.min(Math.max(0, activeIndex), units.length - 1);
   const activeUnit = units[safeIndex];
-  const focus = summarizeFocus(activeUnit.activeExperiences);
+  const isEdited = activeUnit.selectedCities.length > 0;
 
   return (
     <div className="space-y-5">
-      {/* Editorial step header — merges the step question ("Which places?") with
-          the country section title into one breathing headline, so there's a
-          single title instead of two stacked ones. */}
-      <div className="space-y-3.5">
-        <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <h2 className="font-display text-xl font-bold leading-tight text-ink-1 sm:text-2xl">
-              Which places in {activeUnit.name}?
-            </h2>
-            <p className="mt-1.5 text-[13px] leading-snug text-ink-3">
-              Auto-picked from your vibe — add or drop any to make it yours.
-            </p>
-          </div>
-          <span
-            aria-label={`${includedCount(activeUnit)} of ${activeUnit.orderedCities.length} places selected`}
-            className="mt-1 shrink-0 whitespace-nowrap rounded-full border border-emerald-100 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-800"
-          >
-            {includedCount(activeUnit)} of {activeUnit.orderedCities.length}
-          </span>
+      {/* Editorial step header — a country-named question, then a subline that
+          shows the suggested picks until the traveller diverges, then flips to an
+          inline Edited · Reset affordance (no separate Reset pill). */}
+      <div className="space-y-3.5 lg:flex lg:items-end lg:justify-between lg:gap-4 lg:space-y-0 lg:border-b lg:border-line lg:pb-4">
+        <div className="min-w-0 lg:flex-1">
+          <h2 className="flex items-baseline whitespace-nowrap font-display text-xl font-bold leading-tight text-ink-1 sm:text-2xl">
+            <span className="shrink-0">Which places in&nbsp;</span>
+            <span className="min-w-0 truncate text-emerald-700" title={activeUnit.name}>{activeUnit.name}</span>
+            <span className="shrink-0">?</span>
+          </h2>
+          <p className="mt-1.5 text-[13px] leading-snug text-ink-3">
+            {isEdited ? (
+              <>
+                <span className="font-semibold text-emerald-700">Edited</span>
+                {" · "}
+                <button
+                  onClick={activeUnit.onClearCities}
+                  title="Reset to the auto-suggested places"
+                  className="focus-ring-emerald inline-flex items-center gap-1 rounded font-semibold text-emerald-700 underline decoration-emerald-300 underline-offset-2 transition-colors hover:text-emerald-800 hover:decoration-emerald-500"
+                >
+                  <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M3 12a9 9 0 1 0 3-6.7" />
+                    <path d="M3 3v4.5H7.5" />
+                  </svg>
+                  Reset to suggested
+                </button>
+              </>
+            ) : (
+              "Suggested picks — add or drop any."
+            )}
+          </p>
         </div>
 
-        {(focus || activeUnit.selectedCities.length > 0) && (
-          <div className="flex items-center gap-2 text-[11px] font-medium text-ink-3">
-            {focus && (
-              <p className="min-w-0 flex-1 truncate">
-                focus:{" "}
-                <span className="text-emerald-700" title={activeUnit.activeExperiences.join(", ")}>{focus}</span>
-              </p>
-            )}
-            {activeUnit.selectedCities.length > 0 && (
-              <button
-                onClick={activeUnit.onClearCities}
-                title="Reset to the auto-suggested places"
-                className="focus-ring-emerald -my-1 ml-auto inline-flex min-h-[32px] shrink-0 items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 font-bold text-emerald-800 transition-colors hover:border-emerald-300 hover:bg-emerald-100"
-              >
-                <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M3 12a9 9 0 1 0 3-6.7" />
-                  <path d="M3 3v4.5H7.5" />
-                </svg>
-                Reset to suggested
-              </button>
-            )}
-          </div>
-        )}
-
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2 lg:shrink-0">
           <PlanFilters
             country={activeUnit.name}
             options={activeUnit.experienceOptions}

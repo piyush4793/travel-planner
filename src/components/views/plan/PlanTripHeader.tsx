@@ -68,8 +68,8 @@ type Props = {
   steps: HeaderStep[];
   activeStep: number;
   onGoToStep: (index: number) => void;
-  /** Widen to match the Review breakout; narrow for Basics/Places. */
-  wide: boolean;
+  /** Content width — aligns the header with each step's body container. */
+  width: "narrow" | "wide" | "review";
   /** Overrides the default identity (e.g. the Places country switcher). */
   identitySlot?: ReactNode;
   /** Progressive stats strip — hidden when absent (e.g. nothing planned yet). */
@@ -97,7 +97,7 @@ function PlanTripHeaderInner({
   steps,
   activeStep,
   onGoToStep,
-  wide,
+  width,
   identitySlot,
   stats,
   basis,
@@ -107,9 +107,13 @@ function PlanTripHeaderInner({
   const compact = useBreakpoint() === "mobile";
   const routeLabel = selection.map((c) => `${getCountryFlag(c.name)} ${c.name}`).join("  →  ");
   const primary = selection[0];
+  // Mobile names only the first stop + a "+N" pill for the rest, so the row stays
+  // on one line at 375px; desktop names up to `routeStopLimit` stops.
+  const namedStops = compact ? 1 : routeStopLimit;
+  const maxWidth = width === "review" ? "max-w-[1400px]" : width === "wide" ? "max-w-5xl" : "max-w-2xl";
 
   return (
-    <div className={`mx-auto w-full shrink-0 px-4 pt-3 sm:pt-4 ${wide ? "max-w-[1400px]" : "max-w-2xl"}`}>
+    <div className={`mx-auto w-full shrink-0 px-4 pt-3 sm:pt-4 ${maxWidth}`}>
       <div className="flex items-center gap-3">
         <div className="min-w-0 flex-1">
           <div className="flex min-w-0 items-center gap-2">
@@ -121,7 +125,7 @@ function PlanTripHeaderInner({
                 className="flex min-w-0 items-center font-display text-lg font-semibold tracking-tight text-ink-1 sm:text-xl"
               >
                 <span className="min-w-0 truncate">
-                  {selection.slice(0, routeStopLimit).map((c, i) => (
+                  {selection.slice(0, namedStops).map((c, i) => (
                     <span key={c.name}>
                       {i > 0 && <span aria-hidden="true" className="mx-1 text-line-strong">→</span>}
                       <span aria-hidden="true" className="mr-1">{getCountryFlag(c.name)}</span>
@@ -129,10 +133,10 @@ function PlanTripHeaderInner({
                     </span>
                   ))}
                 </span>
-                {selection.length > routeStopLimit && (
+                {selection.length > namedStops && (
                   <Tooltip variant="wrap" text={routeLabel} triggerClassName="ml-1.5 shrink-0">
                     <span className="rounded-full bg-surface-3 px-1.5 py-0.5 text-[11px] font-bold text-ink-2">
-                      +{selection.length - routeStopLimit}
+                      +{selection.length - namedStops}
                     </span>
                   </Tooltip>
                 )}
@@ -156,7 +160,7 @@ function PlanTripHeaderInner({
         {(saveSlot || (basis && onBasisChange)) && (
           <div className="flex shrink-0 items-center gap-2">
             {saveSlot}
-            {basis && onBasisChange && <BasisMenu basis={basis} setBasis={onBasisChange} variant="light" />}
+            {basis && onBasisChange && <BasisMenu basis={basis} setBasis={onBasisChange} variant="light" iconOnly={compact} />}
           </div>
         )}
       </div>
@@ -171,13 +175,7 @@ function PlanTripHeaderInner({
             <span className="min-w-0 flex-1 truncate text-[12px] text-ink-2">
               <span className="font-bold text-ink-1">{stats.days}</span>&nbsp;{stats.days === 1 ? "day" : "days"}
               <span className="mx-1 text-ink-4">·</span>
-              <span className="font-bold text-ink-1">{stats.cities}</span>&nbsp;{stats.cities === 1 ? "place" : "places"}
-              {isMulti && (
-                <>
-                  <span className="mx-1 text-ink-4">·</span>
-                  <span className="font-bold text-ink-1">{stats.countries}</span>&nbsp;countries
-                </>
-              )}
+              <span className="font-bold text-ink-1">{stats.cities}</span>&nbsp;{stats.cities === 1 ? "stop" : "stops"}
             </span>
             <span className="ml-auto inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-emerald-100 bg-emerald-50 px-2 py-1 text-[11px] font-bold text-emerald-800">
               {stats.estimate && <span className="mr-0.5 font-medium text-emerald-700/70">~</span>}
@@ -196,7 +194,7 @@ function PlanTripHeaderInner({
               </span>
             )}
             <span className="inline-flex items-center rounded-full border border-line bg-white px-2.5 py-1 text-[11px] text-ink-2">
-              <span className="font-bold text-ink-1">{stats.cities}</span>&nbsp;{stats.cities === 1 ? "place" : "places"}
+              <span className="font-bold text-ink-1">{stats.cities}</span>&nbsp;{stats.cities === 1 ? "stop" : "stops"}
             </span>
             <span className="inline-flex items-center whitespace-nowrap rounded-full border border-emerald-100 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-800">
               {stats.estimate && <span className="mr-0.5 font-medium text-emerald-700/70">~</span>}
@@ -207,37 +205,42 @@ function PlanTripHeaderInner({
         )
       )}
 
-      {/* Labeled, tappable stepper — doubles as back navigation (tap an
-          earlier step to revisit it). Device/gesture Back walks steps too. */}
-      <div className="mt-3 flex items-stretch gap-1.5" role="tablist" aria-label="Planning steps">
-        {steps.map((s, i) => {
-          const done = i < activeStep;
-          const active = i === activeStep;
-          return (
-            <button
-              key={s.key}
-              role="tab"
-              aria-selected={active}
-              aria-label={`Step ${i + 1}: ${s.title}`}
-              onClick={() => onGoToStep(i)}
-              className="focus-ring-emerald group flex flex-1 flex-col gap-1 rounded-lg py-1"
-            >
-              <span
-                className={`block h-1.5 rounded-full transition-colors ${
-                  active ? "bg-emerald-700" : done ? "bg-emerald-500" : "bg-line group-hover:bg-line-strong"
-                }`}
-              />
-              <span
-                className={`text-left text-[10px] font-bold uppercase tracking-[0.1em] transition-colors ${
-                  active ? "text-emerald-700" : done ? "text-emerald-600 group-hover:text-emerald-700" : "text-ink-4"
-                }`}
+      {/* Labeled, tappable stepper — doubles as back navigation on desktop (tap
+          an earlier step to revisit it). Hidden on mobile across every step to
+          reclaim vertical space; there the sticky footer (Back/Continue) and
+          device Back own step navigation, and the Review canvas surfaces Back /
+          Plan another in the workspace's mobile bar. */}
+      {!compact && (
+        <div className="mt-3 flex items-stretch gap-1.5" role="tablist" aria-label="Planning steps">
+          {steps.map((s, i) => {
+            const done = i < activeStep;
+            const active = i === activeStep;
+            return (
+              <button
+                key={s.key}
+                role="tab"
+                aria-selected={active}
+                aria-label={`Step ${i + 1}: ${s.title}`}
+                onClick={() => onGoToStep(i)}
+                className="focus-ring-emerald group flex flex-1 flex-col gap-1 rounded-lg py-1"
               >
-                {s.short}
-              </span>
-            </button>
-          );
-        })}
-      </div>
+                <span
+                  className={`block h-1.5 rounded-full transition-colors ${
+                    active ? "bg-emerald-700" : done ? "bg-emerald-500" : "bg-line group-hover:bg-line-strong"
+                  }`}
+                />
+                <span
+                  className={`text-left text-[10px] font-bold uppercase tracking-[0.1em] transition-colors ${
+                    active ? "text-emerald-700" : done ? "text-emerald-600 group-hover:text-emerald-700" : "text-ink-4"
+                  }`}
+                >
+                  {s.short}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

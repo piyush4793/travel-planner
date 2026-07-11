@@ -5,7 +5,7 @@ import type { PlanActions } from "./planActions";
 import ShapeRail from "./ShapeRail";
 import ContextRail from "./ContextRail";
 import PlanPreviewPane from "./PlanPreviewPane";
-import PlanWorkspaceShell, { type RailDef } from "./PlanWorkspaceShell";
+import PlanWorkspaceShell, { type RailDef, type WorkspaceNav } from "./PlanWorkspaceShell";
 
 type Props = {
   builder: PlanBuilder;
@@ -15,6 +15,8 @@ type Props = {
   actions: PlanActions;
   onPlanWithAi?: () => void;
   onCinematic?: () => void;
+  /** Mobile bottom-bar Back / Plan-another (desktop uses the wizard footer). */
+  nav?: WorkspaceNav;
 };
 
 /**
@@ -23,7 +25,7 @@ type Props = {
  * The multi-country route uses {@link TripReviewWorkspace} instead; both share the
  * shell so the responsive chrome never forks.
  */
-function PlanWorkspaceInner({ builder, budgetBasis, setBudgetBasis, homeCountry, actions, onPlanWithAi, onCinematic }: Props) {
+function PlanWorkspaceInner({ builder, budgetBasis, setBudgetBasis, homeCountry, actions, onPlanWithAi, onCinematic, nav }: Props) {
   const { displayCountry, plan, rule } = builder;
   if (!displayCountry || !plan) return null;
 
@@ -61,7 +63,7 @@ function PlanWorkspaceInner({ builder, budgetBasis, setBudgetBasis, homeCountry,
     ),
   };
 
-  return <PlanWorkspaceShell center={center} shape={shape} context={context} />;
+  return <PlanWorkspaceShell center={center} shape={shape} context={context} nav={nav} />;
 }
 
 const PlanWorkspace = memo(PlanWorkspaceInner);

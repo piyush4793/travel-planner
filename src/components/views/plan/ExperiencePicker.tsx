@@ -24,6 +24,13 @@ type Props = {
   /** Tighter pills for compact hosts (e.g. the Places-step Filters popover). */
   dense?: boolean;
   /**
+   * Pill alignment. `"center"` (default) centers on every breakpoint; `"start"`
+   * centers on mobile but left-aligns from `lg` up — for hosts that switch to a
+   * left-aligned column on desktop (e.g. the Basics two-column layout) while
+   * keeping the mobile baseline centered.
+   */
+  align?: "center" | "start";
+  /**
    * Suppress the inline "Clear (N)" pill. Hosts that own a dedicated clear
    * affordance (e.g. the Filters overlay footer) set this so the control isn't
    * duplicated; the "+N more" disclosure is unaffected.
@@ -45,6 +52,7 @@ export default function ExperiencePicker({
   onClearExperiences,
   visibleCap = DEFAULT_VIBE_CAP,
   dense = false,
+  align = "center",
   hideClear = false,
 }: Props) {
   const [expanded, setExpanded] = useState(false);
@@ -62,11 +70,12 @@ export default function ExperiencePicker({
   const toggleLabel = expanded ? "Show less" : hiddenCount > 0 ? `+${hiddenCount} more` : null;
   const showClear = !hideClear && selectedExperiences.length > 0;
   const pillSize = dense ? "min-h-[32px] px-3 py-1 text-[12px]" : "min-h-[38px] px-3.5 py-1.5 text-[13px]";
+  const justify = align === "start" ? "justify-center lg:justify-start" : "justify-center";
 
   return (
     <div>
       <div className="-mx-1 max-h-56 overflow-y-auto overscroll-contain px-1">
-        <div className="flex flex-wrap justify-center gap-2">
+        <div className={`flex flex-wrap gap-2 ${justify}`}>
           {visible.map((exp) => {
             const active = selectedExperiences.includes(exp);
             return (
@@ -89,7 +98,7 @@ export default function ExperiencePicker({
       {(toggleLabel || showClear) && (
         <div
           className={`mt-3 flex min-h-[32px] items-center gap-2 ${
-            toggleLabel && showClear ? "justify-between" : "justify-center"
+            toggleLabel && showClear ? "justify-between" : justify
           }`}
         >
           {toggleLabel && (

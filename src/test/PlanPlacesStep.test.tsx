@@ -47,9 +47,15 @@ describe("PlanPlacesStep", () => {
   it("renders a single stop with its heading and no country switcher (switcher lives in the header)", () => {
     renderStep([makeUnit("Norway", ["Oslo", "Bergen"])]);
     expect(screen.queryByRole("button", { name: /Switch country/i })).not.toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /Which places in Norway/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Which places in\s*Norway/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Oslo" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Bergen" })).toBeInTheDocument();
+  });
+
+  it("names the active country in the heading for a multi-stop route", () => {
+    const units = [makeUnit("Norway", ["Oslo"]), makeUnit("Denmark", ["Copenhagen"]), makeUnit("Sweden", ["Stockholm"])];
+    renderStep(units, 1);
+    expect(screen.getByRole("heading", { name: /Which places in\s*Denmark/i })).toBeInTheDocument();
   });
 
   it("renders only the controlled active country's cities in a multi-stop route", () => {
@@ -58,19 +64,21 @@ describe("PlanPlacesStep", () => {
       makeUnit("Denmark", ["Copenhagen"], { customDays: 4 }),
     ];
     const { rerender } = renderStep(units, 0);
-    expect(screen.getByRole("heading", { name: /Which places in Norway/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Which places in/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Oslo" })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Copenhagen" })).not.toBeInTheDocument();
 
     rerender(<PlanPlacesStep units={units} activeIndex={1} />);
-    expect(screen.getByRole("heading", { name: /Which places in Denmark/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Which places in/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Copenhagen" })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Oslo" })).not.toBeInTheDocument();
   });
 
   it("clamps an out-of-range active index to the last stop", () => {
     renderStep([makeUnit("Norway", ["Oslo"]), makeUnit("Denmark", ["Copenhagen"])], 9);
-    expect(screen.getByRole("heading", { name: /Which places in Denmark/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Which places in/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Copenhagen" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Oslo" })).not.toBeInTheDocument();
   });
 
   it("shows Reset-to-suggested only for a hand-picked active stop and wires it", () => {
@@ -173,11 +181,26 @@ describe("PlanPlacesStep", () => {
     expect(cards[0]).toHaveAccessibleName("Oslo");
   });
 
-  it("summarizes the active stop's focus in the section subline", () => {
-    renderStep([
-      makeUnit("Norway", ["Oslo"], { activeExperiences: ["Fjords", "Food", "History", "Hiking"] }),
-    ]);
-    expect(screen.getByText(/Fjords, Food, History \+1 more/)).toBeInTheDocument();
+  it("shows the selected/total place count on the 'In your plan' row", () => {
+    renderStep([makeUnit("Norway", ["Oslo", "Bergen"])]);
+    expect(screen.getByText("In your plan")).toBeInTheDocument();
+    expect(screen.getByText("2 of 2")).toBeInTheDocument();
+  });
+
+  it("shows the suggested-picks subline when pristine", () => {
+    renderStep([makeUnit("Norway", ["Oslo", "Bergen"])]);
+    expect(screen.getByText(/Suggested picks/i)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /Reset to suggested/i })).not.toBeInTheDocument();
+  });
+
+  it("flips the subline to an inline Edited · Reset affordance once hand-picked", () => {
+    const onClearCities = vi.fn();
+    renderStep([makeUnit("Norway", ["Oslo", "Bergen"], { selectedCities: ["Oslo"], onClearCities })]);
+    expect(screen.queryByText(/Suggested picks/i)).not.toBeInTheDocument();
+    expect(screen.getByText(/Edited/)).toBeInTheDocument();
+    const reset = screen.getByRole("button", { name: /Reset to suggested/i });
+    fireEvent.click(reset);
+    expect(onClearCities).toHaveBeenCalled();
   });
 
   it("opens per-country Filters and toggles an experience for that stop", () => {

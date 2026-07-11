@@ -21,4 +21,15 @@ describe("BasisMenu", () => {
     render(<BasisMenu basis="couple" setBasis={vi.fn()} labelled />);
     expect(screen.getByText("Who's going")).toBeInTheDocument();
   });
+
+  it("collapses to an icon-only trigger while keeping the basis in its accessible name", () => {
+    render(<BasisMenu basis="couple" setBasis={vi.fn()} iconOnly />);
+    const trigger = screen.getByRole("button", { name: /Who's going/i });
+    // The visible label text is dropped, but the party size stays announced.
+    expect(trigger).toHaveAccessibleName("Who's going — Couple");
+    expect(trigger).not.toHaveTextContent("Couple");
+    // Still a working menu button.
+    fireEvent.click(trigger);
+    expect(screen.getByRole("menuitemradio", { name: /Solo/i })).toBeInTheDocument();
+  });
 });

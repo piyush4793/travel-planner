@@ -1,4 +1,5 @@
 import { memo, type ReactNode } from "react";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import PlanPopover from "./PlanPopover";
 import RouteOrderEditor from "./RouteOrderEditor";
 
@@ -39,6 +40,8 @@ const TRIGGER =
  * through the shared {@link PlanPopover} (anchored desktop, bottom-sheet mobile).
  */
 function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAutoArrange, canAutoArrange, children, topAnchorId }: Props) {
+  // "Route order" → "Route" on mobile so the levers stay a single row at 375px.
+  const compact = useBreakpoint() === "mobile";
   return (
     <div className="flex flex-wrap items-center gap-2 border-b border-surface-3 bg-surface-1 px-4 py-1.5">
       <PlanPopover
@@ -49,7 +52,7 @@ function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAuto
         triggerClassName={TRIGGER}
         triggerLabel={
           <>
-            <span aria-hidden="true">🧭</span> Route order
+            <span aria-hidden="true">🧭</span> {compact ? "Route" : "Route order"}
             <span className="rounded-full bg-emerald-100 px-1.5 text-[10px] font-bold text-emerald-700">{stops.length}</span>
           </>
         }

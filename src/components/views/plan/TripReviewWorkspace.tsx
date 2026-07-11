@@ -5,10 +5,9 @@ import { composeTripPlan } from "../../../core/utils/tripPlans";
 import { moveIndex, orderByProximity } from "../../../core/utils/routeOrder";
 import type { PlanBuilder } from "../../../hooks/usePlanBuilder";
 import type { UnitPlan } from "../../../hooks/useTripPlanner";
-import PlanWorkspaceShell, { type RailDef } from "./PlanWorkspaceShell";
+import PlanWorkspaceShell, { type RailDef, type WorkspaceNav } from "./PlanWorkspaceShell";
 import TripReviewCanvas, { type ReviewSegment } from "./TripReviewCanvas";
 import TripContextRail, { type TripCostRow } from "./TripContextRail";
-
 type Props = {
   /** Primary stop (route start). */
   builder: PlanBuilder;
@@ -22,6 +21,8 @@ type Props = {
   /** Primary destination notes (trip scratchpad in the rail). */
   notes: string;
   onSaveNotes?: (notes: string) => void;
+  /** Mobile bottom-bar Back / Plan-another (desktop uses the wizard footer). */
+  nav?: WorkspaceNav;
 };
 
 /**
@@ -44,6 +45,7 @@ function TripReviewWorkspaceInner({
   onPlanWithAi,
   notes,
   onSaveNotes,
+  nav,
 }: Props) {
   const { displayCountry, plan } = builder;
 
@@ -193,7 +195,7 @@ function TripReviewWorkspaceInner({
     ),
   };
 
-  return <PlanWorkspaceShell center={center} context={context} />;
+  return <PlanWorkspaceShell center={center} context={context} nav={nav} />;
 }
 
 const TripReviewWorkspace = memo(TripReviewWorkspaceInner);

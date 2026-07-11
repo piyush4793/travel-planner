@@ -79,39 +79,46 @@ export default function PlanBasicsStep({
   const showVibe = experiences.length > 0;
 
   return (
-    <div className="mx-auto w-full max-w-md space-y-6">
-      {/* Party size */}
-      <section>
-        <p className="mb-2.5 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800">Who's going?</p>
-        <div className="flex justify-center">
-          <PillGroup
-            options={BUDGET_BASIS_ORDER.map((b) => ({ key: b, label: `${BUDGET_BASIS_META[b].icon} ${BUDGET_BASIS_META[b].label}` }))}
-            value={budgetBasis}
-            onChange={(v) => setBudgetBasis(v as BudgetBasis)}
-            accent="emerald"
-          />
-        </div>
-      </section>
-
-      {/* Vibe — shown whenever the selection offers experience tags */}
-      {showVibe && (
+    <div className="mx-auto w-full max-w-md space-y-6 lg:grid lg:max-w-none lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start lg:gap-8 lg:space-y-0">
+      {/* Questions column */}
+      <div className="space-y-6">
+        {/* Party size */}
         <section>
-          <p className="mb-2.5 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800">What are you into?</p>
-          <ExperiencePicker
-            experiences={experiences}
-            selectedExperiences={selectedExperiences}
-            onToggleExperience={onToggleExperience}
-            onClearExperiences={onClearExperiences}
-            visibleCap={visibleCap}
-          />
+          <p className="mb-2.5 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800 lg:text-left">Who's going?</p>
+          <div className="flex justify-center lg:justify-start">
+            <PillGroup
+              options={BUDGET_BASIS_ORDER.map((b) => ({ key: b, label: `${BUDGET_BASIS_META[b].icon} ${BUDGET_BASIS_META[b].label}` }))}
+              value={budgetBasis}
+              onChange={(v) => setBudgetBasis(v as BudgetBasis)}
+              accent="emerald"
+            />
+          </div>
         </section>
-      )}
+
+        {/* Vibe — shown whenever the selection offers experience tags */}
+        {showVibe && (
+          <section>
+            <p className="mb-2.5 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800 lg:text-left">What are you into?</p>
+            <ExperiencePicker
+              experiences={experiences}
+              selectedExperiences={selectedExperiences}
+              onToggleExperience={onToggleExperience}
+              onClearExperiences={onClearExperiences}
+              visibleCap={visibleCap}
+              align="start"
+            />
+          </section>
+        )}
+      </div>
 
       {/* Live feedback so the step feels substantial, not empty. Multi-unit shows
-          the summed route timeline; single shows the live plan. */}
-      {isMulti
-        ? <PlanRouteSummary selection={selection} source={source} stopDays={stopDays} cost={routeCost} costIcon={routeCostIcon} costLabel={routeCostLabel} />
-        : plan && <PlanProgressSummary plan={plan} />}
+          the summed route timeline; single shows the live plan. On desktop this
+          becomes the companion column beside the questions. */}
+      <div>
+        {isMulti
+          ? <PlanRouteSummary selection={selection} source={source} stopDays={stopDays} cost={routeCost} costIcon={routeCostIcon} costLabel={routeCostLabel} />
+          : plan && <PlanProgressSummary plan={plan} />}
+      </div>
     </div>
   );
 }

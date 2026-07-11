@@ -22,6 +22,15 @@ type Props = {
   variant?: Variant;
   /** Prefix the trigger with a small "Who's going" hint (header context). */
   labelled?: boolean;
+  /** Collapse the trigger to the party-size emoji only (compact mobile header) —
+   *  the label is dropped visually but stays available via the aria-label. */
+  iconOnly?: boolean;
+};
+
+const ICON_TRIGGER: Record<Variant, string> = {
+  dark: "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/10 text-[15px] text-white transition-colors hover:bg-white/15 focus-ring-emerald",
+  light:
+    "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-line-strong bg-white text-[15px] text-ink-1 transition-colors hover:border-emerald-500 hover:bg-emerald-50 focus-ring-emerald",
 };
 
 /**
@@ -32,22 +41,26 @@ type Props = {
  * Reuses the portal `PlanMenu` for viewport-collision, Escape/back close, and
  * focus return.
  */
-export default function BasisMenu({ basis, setBasis, variant = "dark", labelled = false }: Props) {
+export default function BasisMenu({ basis, setBasis, variant = "dark", labelled = false, iconOnly = false }: Props) {
   const meta = BUDGET_BASIS_META[basis];
   return (
     <PlanMenu
-      ariaLabel="Who's going"
+      ariaLabel={`Who's going — ${meta.label}`}
       title="Who's going"
       icon="👥"
       width={220}
-      triggerClassName={TRIGGER[variant]}
+      triggerClassName={iconOnly ? ICON_TRIGGER[variant] : TRIGGER[variant]}
       trigger={
-        <>
-          {labelled && <span className="text-[11px] font-medium uppercase tracking-wide opacity-60">Who's going</span>}
+        iconOnly ? (
           <span aria-hidden="true">{meta.icon}</span>
-          <span className="font-semibold">{meta.label}</span>
-          {CARET}
-        </>
+        ) : (
+          <>
+            {labelled && <span className="text-[11px] font-medium uppercase tracking-wide opacity-60">Who's going</span>}
+            <span aria-hidden="true">{meta.icon}</span>
+            <span className="font-semibold">{meta.label}</span>
+            {CARET}
+          </>
+        )
       }
     >
       {(close) => (

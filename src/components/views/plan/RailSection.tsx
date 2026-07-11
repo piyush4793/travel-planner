@@ -21,7 +21,7 @@ export default function RailSection({ title, hint, count, defaultOpen = false, c
   const bodyId = useId();
 
   return (
-    <section className="overflow-hidden rounded-2xl border border-line bg-white/85 shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
+    <section className="overflow-hidden rounded-2xl border border-line bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}

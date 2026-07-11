@@ -405,15 +405,23 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   const isReview = current.key === "review";
   const isPlaces = current.key === "cities";
   const isBasics = current.key === "basics";
-  // Non-review steps center vertically when short but scroll from the top when tall,
-  // so they never float in blank space nor clip on small screens. Places breaks out
-  // to a wide two-column workspace on desktop, so it top-aligns like Review.
-  const centerStep = !isReview && !isPlaces;
+  // Basics + Places sit on an elevated "stage" on desktop (a bordered white
+  // panel centred in the canvas) so short steps read as an intentional, luxe
+  // focal surface instead of floating on empty ivory. Basics still centres its
+  // content vertically on mobile; Places top-aligns. Review keeps its own
+  // full-width workspace. `centerStep` covers any future narrow step.
+  const staged = isBasics || isPlaces;
+  const stageCard =
+    "lg:my-auto lg:rounded-[28px] lg:border lg:border-line lg:bg-white lg:px-10 lg:py-9 lg:shadow-[0_14px_46px_rgba(20,40,30,0.07)]";
+  const centerStep = !isReview && !isPlaces && !isBasics;
   const atLast = safeIndex === steps.length - 1;
   const nextIsReview = steps[safeIndex + 1] === "review";
 
   const goTo = (i: number) => setStepIndex(Math.max(0, Math.min(i, steps.length - 1)));
   const changeDestination = () => { setSelection([]); setStepIndex(0); };
+  // Mobile Review has no wizard footer (hidden below lg), so the workspace's own
+  // bottom bar owns Back + Plan another there; desktop keeps the footer.
+  const reviewNav = { onBack: () => goTo(safeIndex - 1), onPlanAnother: changeDestination };
 
   // Country-bound feature actions shared by the header, right rail, and pane.
   const activeName = displayCountry?.name ?? picked.name;
@@ -476,7 +484,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
         steps={steps.map((s) => ({ key: s, short: STEP_META[s].short, title: STEP_META[s].title }))}
         activeStep={safeIndex}
         onGoToStep={goTo}
-        wide={isReview}
+        width={isReview ? "review" : isPlaces || isBasics ? "wide" : "narrow"}
         identitySlot={switcherNode}
         stats={isBasics ? undefined : headerStats}
         basis={isPlaces || isReview ? budgetBasis : undefined}
@@ -484,8 +492,8 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
       />
 
       {/* Step body */}
-      <div className={`mx-auto w-full px-4 ${isReview ? "max-w-[1400px] min-h-0 flex-1 overflow-hidden py-3" : isPlaces ? "max-w-5xl flex-1 overflow-y-auto overflow-x-hidden py-4" : "max-w-2xl flex-1 overflow-y-auto overflow-x-hidden py-4"}`}>
-        <div key={current.key} className={`plan-step-in w-full ${isReview ? "h-full" : centerStep ? "flex min-h-full flex-col justify-center" : ""}`}>
+      <div className={`mx-auto w-full px-4 ${isReview ? "max-w-[1400px] min-h-0 flex-1 overflow-hidden py-3" : staged ? "max-w-5xl flex-1 overflow-y-auto overflow-x-hidden py-4 lg:flex lg:flex-col lg:py-8" : "max-w-2xl flex-1 overflow-y-auto overflow-x-hidden py-4"}`}>
+        <div key={current.key} className={`plan-step-in w-full ${isReview ? "h-full" : isBasics ? `flex min-h-full flex-col justify-center lg:block lg:min-h-0 ${stageCard}` : isPlaces ? stageCard : centerStep ? "flex min-h-full flex-col justify-center lg:justify-start" : ""}`}>
           {isReview ? (
             ruleLoading && !plan ? (
               <div className="flex h-64 items-center justify-center rounded-2xl border border-line bg-white">
@@ -502,6 +510,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                   onPlanWithAi={onPlanWithAi ? () => onPlanWithAi(displayCountry.name) : undefined}
                   notes={planActions.notes}
                   onSaveNotes={planActions.onSaveNotes}
+                  nav={reviewNav}
                 />
               ) : (
                 <PlanWorkspace
@@ -512,6 +521,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                   actions={planActions}
                   onPlanWithAi={onPlanWithAi ? () => onPlanWithAi(displayCountry.name) : undefined}
                   onCinematic={() => setCinematicPlan(plan)}
+                  nav={reviewNav}
                 />
               )
             ) : (
@@ -521,23 +531,39 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
             )
           ) : (
             <>
-              {/* Question header — Basics uses the centered hero; Places owns its
-                  own editorial title (merged with the section), so skip it there. */}
+              {/* Question header — Basics uses a centered hero on mobile and a
+                  left editorial header on desktop (consistent with Places);
+                  Places owns its own editorial title, so skip it there. */}
               {current.key === "basics" && (
-                <div className="mb-5 text-center">
-                  <div className="mb-1 text-4xl" aria-hidden="true">{current.icon}</div>
-                  <div className="flex items-center justify-center gap-2">
-                    <h2 className="font-display text-2xl font-semibold tracking-tight text-ink-1">{current.title}</h2>
-                    {current.optional && (
-                      <span className="rounded-full bg-surface-3 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ink-4">Optional</span>
-                    )}
+                <>
+                  <div className="mb-5 text-center lg:hidden">
+                    <div className="mb-1 text-4xl" aria-hidden="true">{current.icon}</div>
+                    <div className="flex items-center justify-center gap-2">
+                      <h2 className="font-display text-2xl font-semibold tracking-tight text-ink-1">{current.title}</h2>
+                      {current.optional && (
+                        <span className="rounded-full bg-surface-3 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ink-4">Optional</span>
+                      )}
+                    </div>
+                    <p className="mx-auto mt-1.5 max-w-sm text-xs text-ink-2">
+                      {isMulti
+                        ? "Who's going and what you love — we'll tailor each stop next."
+                        : current.subtitle}
+                    </p>
                   </div>
-                  <p className="mx-auto mt-1.5 max-w-sm text-xs text-ink-2">
-                    {isMulti
-                      ? "Who's going and what you love — we'll tailor each stop next."
-                      : current.subtitle}
-                  </p>
-                </div>
+                  <div className="mb-5 hidden lg:block">
+                    <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-700">
+                      <span aria-hidden="true">{current.icon}</span> {current.title}
+                    </p>
+                    <h2 className="mt-1.5 font-display text-2xl font-bold leading-tight text-ink-1">
+                      Who's going &amp; what you love?
+                    </h2>
+                    <p className="mt-1 text-[13px] leading-snug text-ink-3">
+                      {isMulti
+                        ? "Set the essentials — we'll tailor each stop from here."
+                        : "Set the essentials — we'll shape the rest from here."}
+                    </p>
+                  </div>
+                </>
               )}
 
               {current.key === "basics" && (

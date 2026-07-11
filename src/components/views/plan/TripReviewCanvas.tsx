@@ -187,8 +187,6 @@ function SegmentBlock({
           <div className="mt-1 flex items-baseline gap-2 text-[11px] text-emerald-800/70">
             <span aria-hidden="true" className="w-5 shrink-0" />
             <div className="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-2 gap-y-0.5">
-              <span><span className="font-semibold text-emerald-900">{segment.customDays}</span> {segment.customDays === 1 ? "night" : "nights"}</span>
-              <span aria-hidden="true" className="text-emerald-600/40">·</span>
               <span><span className="font-semibold text-emerald-900">{placeCount}</span> {placeCount === 1 ? "place" : "places"}</span>
               <span aria-hidden="true" className="text-emerald-600/40">·</span>
               <span>{dayRange}</span>
