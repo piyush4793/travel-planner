@@ -1,0 +1,246 @@
+{
+  "name": "Ladakh",
+  "seed": false,
+  "lat": 34.2268,
+  "lng": 77.5619,
+  "region": "North India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": ["May", "June", "July", "August", "September"],
+  "worstMonths": ["November", "December", "January", "February", "March", "April"],
+  "budget": {
+    "solo": "₹30K–₹90K",
+    "couple": "₹55K–₹1.6L",
+    "family4": "₹1.2L–₹3.8L"
+  },
+  "experiences": [
+    "Mountains",
+    "Road Trips",
+    "Lakes",
+    "Temples & Religious Sites",
+    "Hiking",
+    "Wildlife & Safari",
+    "Adventure Sports",
+    "Deserts",
+    "History",
+    "Markets & Shopping"
+  ],
+  "avoid": ["November", "December", "January", "February", "March", "April"],
+  "combo": ["Jammu & Kashmir", "Himachal Pradesh", "Uttarakhand"],
+  "landmark": "Pangong Tso, a sapphire-blue high-altitude lake at 4,350m",
+  "travelStyle": ["explorer"],
+  "stopoverNote": "Fly into Leh only if you can keep Day 1 completely relaxed for altitude acclimatization. Overland approaches via Srinagar–Leh or Manali–Leh are scenic but seasonal; the Manali road usually opens June–October and the Srinagar road around May–October.",
+  "diet": {
+    "vegetarian": "Leh is veg-friendly with Tibetan, North Indian and café menus; veg thukpa, veg momos, dal-rice and sabzi-roti are easy. In Nubra and Pangong, options narrow to guesthouse meals, dal, rice, aloo dishes and veg momos, so request vegetarian food while booking camps or homestays.",
+    "vegan": "Vegan food is feasible in Leh but limited at altitude. Ask clearly for no milk, butter, paneer or ghee; butter tea is not vegan. Carry nuts, energy bars and dry fruit for the Nubra–Pangong stretch where dairy-heavy camp meals are common.",
+    "phrases": [
+      "Doodh, makhan, paneer, ghee nahi = no milk, butter, paneer or ghee",
+      "Sirf sabzi ke momos = vegetable momos only",
+      "Black tea dena, butter tea nahi = black tea, not butter tea"
+    ]
+  },
+  "links": [
+    { "label": "Ladakh Permit Portal (official)", "url": "https://www.lahdclehpermit.in/" },
+    { "label": "Ladakh Tourism / Leh district", "url": "https://www.leh.nic.in/" },
+    { "label": "Leh–Ladakh live road status", "url": "https://chalbanjare.com/road-status/leh-ladakh-live-road-status-leh-manali-highway-update-today" }
+  ],
+  "cities": [
+    {
+      "name": "Leh",
+      "lat": 34.1526,
+      "lng": 77.5771,
+      "notes": "Ladakh's high-altitude capital at 3,524m — a Silk Road trading town, monastery base and mandatory acclimatization hub before Nubra or Pangong.",
+      "bestMonths": ["May", "June", "July", "August", "September"],
+      "worstMonths": ["November", "December", "January", "February", "March", "April"],
+      "experiences": ["Temples & Religious Sites", "History", "Mountains", "Markets & Shopping", "Hiking"]
+    },
+    {
+      "name": "Nubra Valley",
+      "lat": 34.5593,
+      "lng": 77.5843,
+      "notes": "A wide cold-desert valley around Diskit and Hunder, reached via Khardung La, with Bactrian camels, dunes, monasteries and Balti culture toward Turtuk.",
+      "bestMonths": ["June", "July", "August", "September"],
+      "worstMonths": ["November", "December", "January", "February", "March", "April", "May"],
+      "experiences": ["Mountains", "Road Trips", "Deserts", "Temples & Religious Sites", "Wildlife & Safari"]
+    },
+    {
+      "name": "Pangong Tso",
+      "lat": 33.784,
+      "lng": 78.673,
+      "notes": "A 134-km glacial finger lake at 4,350m, famous for turquoise-to-cobalt color shifts, wild skies and severe high-altitude cold nights.",
+      "bestMonths": ["June", "July", "August", "September"],
+      "worstMonths": ["November", "December", "January", "February", "March", "April", "May"],
+      "experiences": ["Lakes", "Mountains", "Wildlife & Safari", "Road Trips", "Hiking"]
+    }
+  ],
+  "itinerary": {
+    "sim": "Use an Indian postpaid connection; Jio and BSNL postpaid are the most useful in Leh, while prepaid SIMs from outside Jammu & Kashmir/Ladakh may not work. Expect patchy or no signal in Nubra and Pangong; download offline maps and carry printed permits.",
+    "apps": ["Google Maps", "Maps.me", "Airtel Thanks", "MyJio", "BHIM UPI", "Ladakh Taxi Union rate sheet"],
+    "cityOrder": ["Leh", "Nubra Valley", "Pangong Tso"],
+    "cities": {
+      "Leh": {
+        "name": "Leh",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Keep the first 24 hours gentle: flying straight to 3,524m is the highest AMS-risk approach. Use Leh as the base for permits, monastery drives and a final Sham Valley or market half-day.",
+        "experiences": ["Temples & Religious Sites", "History", "Mountains", "Markets & Shopping", "Hiking"],
+        "signatureExperiences": ["Temples & Religious Sites", "Mountains"],
+        "days": [
+          {
+            "theme": "Arrive, rest and acclimatize",
+            "pace": "relaxed",
+            "note": "CRITICAL: Day 1 must be rest for AMS prevention — no Khardung La, monastery circuits, hikes or altitude gain. Hydrate, eat light, avoid alcohol, and consult a doctor before using Diamox.",
+            "activities": [
+              { "name": "Hotel rest and acclimatization in Leh", "duration": "full day", "priority": "must-see", "tip": "Stay horizontal for the first 4–6 hours after landing; book a central hotel or guesthouse that can arrange oxygen if needed." },
+              { "name": "Leh Main Bazaar short flat walk", "duration": "~45m", "priority": "recommended", "cost": "Free", "tip": "Only if you feel well after 4pm; keep it flat and brief." },
+              { "name": "Shanti Stupa viewpoint by car", "duration": "~30m", "priority": "optional", "cost": "₹30/person", "tip": "Drive up for sunset views; do not climb the steps on Day 1." },
+              { "name": "Light dinner at Gesmo or The Tibetan Kitchen", "duration": "~1h", "priority": "recommended", "cost": "₹300–₹600/person", "tip": "Choose thukpa, rice or veg momos; avoid alcohol and heavy meals." }
+            ],
+            "hotels": [
+              { "name": "Leh family guesthouse near Main Bazaar", "budget": "₹1,500–₹3,000/night" },
+              { "name": "Mid-range Leh hotel", "budget": "₹4,000–₹8,000/night" },
+              { "name": "The Grand Dragon / Stok Palace Heritage", "budget": "₹10,000–₹25,000+/night" }
+            ],
+            "meals": ["Veg thukpa and momos at Gesmo", "Light rice bowl at The Tibetan Kitchen", "Plain black tea instead of butter tea"]
+          },
+          {
+            "theme": "Indus Valley monasteries and Leh heritage",
+            "pace": "moderate",
+            "note": "Stay around Leh's altitude on Day 2. If headache or nausea persists, cut the circuit short and rest instead of pushing through the full monastery run.",
+            "activities": [
+              { "name": "Thiksey Monastery rooftop and assembly hall", "duration": "~1.5–2h", "priority": "must-see", "cost": "₹40–₹50/person", "tip": "The 6:30am puja is memorable but optional; avoid rushing if still acclimatizing." },
+              { "name": "Hemis Monastery and museum", "duration": "~1.5–2h", "priority": "must-see", "cost": "₹50–₹100 Indian / ₹200 foreign", "tip": "Ladakh's largest monastery; ask locally about Hemis Festival dates." },
+              { "name": "Shey Palace and Monastery", "duration": "~45m", "priority": "recommended", "cost": "~₹50/person" },
+              { "name": "Sangam — Indus and Zanskar confluence", "duration": "~30m", "priority": "recommended", "cost": "Free" },
+              { "name": "Hall of Fame Museum or Leh Palace", "duration": "~45m", "priority": "optional", "cost": "₹40–₹100/person" }
+            ],
+            "hotels": [
+              { "name": "Leh family guesthouse near Main Bazaar", "budget": "₹1,500–₹3,000/night" },
+              { "name": "Mid-range Leh hotel", "budget": "₹4,000–₹8,000/night" }
+            ],
+            "meals": ["Lamayuru Restaurant veg thali", "Chopsticks Noodle Bar", "Bon Appetit café"]
+          },
+          {
+            "theme": "Alchi, Likir and farewell shopping",
+            "pace": "moderate",
+            "note": "Use this as the final Leh half-day after returning from Pangong if your flight timing allows; otherwise keep it as a relaxed market-and-rest buffer.",
+            "activities": [
+              { "name": "Alchi Monastery frescoes in Sham Valley", "duration": "~1.5–2h", "priority": "must-see", "cost": "₹50 Indian / ₹100 foreign", "tip": "The 11th-century Indo-Kashmiri murals are unique in Ladakh; leave Leh early for the 67km drive." },
+              { "name": "Likir Monastery and 25m Maitreya statue", "duration": "~45m", "priority": "recommended", "cost": "₹50/person" },
+              { "name": "Leh Main Bazaar for pashmina, apricot products and prayer flags", "duration": "~1h", "priority": "optional", "cost": "Shopping varies", "tip": "Withdraw cash in Leh before leaving for Nubra/Pangong; ATMs outside Leh are unreliable." },
+              { "name": "Café stop at Bon Appetit or Lehvenda Café", "duration": "~45m", "priority": "optional", "cost": "₹400–₹800/person" }
+            ],
+            "hotels": [
+              { "name": "Leh family guesthouse near Main Bazaar", "budget": "₹1,500–₹3,000/night" },
+              { "name": "Mid-range Leh hotel", "budget": "₹4,000–₹8,000/night" }
+            ],
+            "meals": ["Bon Appetit Ladakhi-fusion plates", "Lehvenda Café coffee and apple pie", "Main Bazaar Tibetan snacks"]
+          }
+        ]
+      },
+      "Nubra Valley": {
+        "name": "Nubra Valley",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days lets you cross Khardung La safely, see Diskit and Hunder at a lower altitude than Leh, and add Turtuk or Sumur/Panamik without making every stop feel rushed.",
+        "experiences": ["Mountains", "Road Trips", "Deserts", "Temples & Religious Sites", "Wildlife & Safari"],
+        "signatureExperiences": ["Road Trips", "Deserts"],
+        "days": [
+          {
+            "theme": "Khardung La, Diskit Buddha and Hunder dunes",
+            "pace": "moderate",
+            "note": "Start Leh by 7–8am. Stop at Khardung La only briefly — it is above 5,300m and thin-air symptoms can appear fast.",
+            "activities": [
+              { "name": "Khardung La pass photo stop", "duration": "~15–20m", "priority": "must-see", "cost": "Free", "tip": "Walk slowly, take photos quickly, and descend toward Nubra rather than lingering at the pass." },
+              { "name": "Diskit Monastery and 32m Maitreya Buddha", "duration": "~1.5h", "priority": "must-see", "cost": "₹40/person", "tip": "The monastery dates to 1420 and has wide Shyok Valley views." },
+              { "name": "Hunder Sand Dunes and Bactrian camel ride", "duration": "~1–1.5h", "priority": "must-see", "cost": "Free entry; camel ride ₹200–₹500/person", "tip": "Golden hour is best; choose short rides and treat animals responsibly." },
+              { "name": "Hunder village apricot-orchard walk", "duration": "~30m", "priority": "optional", "cost": "Free" }
+            ],
+            "hotels": [
+              { "name": "Diskit/Hunder homestay", "budget": "₹800–₹3,000/night" },
+              { "name": "Lotus Eco Resort / Karma Inn", "budget": "₹3,500–₹7,000/night" },
+              { "name": "Nubra Ecolodge / Lchang Nang Retreat", "budget": "₹7,000–₹20,000+/night" }
+            ],
+            "meals": ["Homestay dal-rice and aloo sabzi", "Veg momos in Hunder", "Apricots in season (July–August)"]
+          },
+          {
+            "theme": "Turtuk's Balti culture or Sumur hot-spring loop",
+            "pace": "moderate",
+            "note": "Turtuk is a long but rewarding day trip from Hunder. If roads or permits are uncertain, switch to a relaxed Sumur–Panamik loop instead.",
+            "activities": [
+              { "name": "Turtuk village and Balti heritage walk", "duration": "~3–4h including local walk", "priority": "must-see", "cost": "₹50 village conservation fee", "tip": "Start by 8am; a local guide for ₹200–₹500 adds context on Balti homes, orchards and border history." },
+              { "name": "Tyakshi hamlet and orchard views", "duration": "~45m", "priority": "recommended", "cost": "Free" },
+              { "name": "Panamik Hot Springs", "duration": "~1h", "priority": "optional", "cost": "₹50–₹100/person", "tip": "Use this as the gentler alternative if skipping Turtuk." },
+              { "name": "Sumur Samtanling Monastery", "duration": "~1h", "priority": "optional", "cost": "Free" }
+            ],
+            "hotels": [
+              { "name": "Diskit/Hunder homestay", "budget": "₹800–₹3,000/night" },
+              { "name": "Nubra Ecolodge / Lchang Nang Retreat", "budget": "₹7,000–₹20,000+/night" }
+            ],
+            "meals": ["Homestay thali requested vegetarian in advance", "Simple dhaba dal-rice", "Carry snacks for the Turtuk road"]
+          }
+        ]
+      },
+      "Pangong Tso": {
+        "name": "Pangong Tso",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Stay one night to see sunset, stars and sunrise, but treat the 4,350m altitude seriously. Camps are seasonal and shoreline camping is not allowed; sleep in village-boundary camps or cottages.",
+        "experiences": ["Lakes", "Mountains", "Wildlife & Safari", "Road Trips", "Hiking"],
+        "signatureExperiences": ["Lakes", "Mountains"],
+        "days": [
+          {
+            "theme": "Shyok road arrival, blue lake and sunset",
+            "pace": "moderate",
+            "note": "Drive from Nubra early so Shyok water crossings are done before afternoon snowmelt rises. Pangong is higher than Leh; avoid strenuous walking on arrival.",
+            "activities": [
+              { "name": "Pangong Tso lakeside walk and photography", "duration": "~2–3h", "priority": "must-see", "cost": "Free", "tip": "Walk slowly near Spangmik; the color shifts from turquoise to cobalt through the afternoon." },
+              { "name": "Sunset at Spangmik shore", "duration": "~1.5h", "priority": "must-see", "cost": "Free", "tip": "September often gives calm reflections and clear skies." },
+              { "name": "Bar-headed geese, Brahminee ducks and marmot spotting", "duration": "~1h", "priority": "recommended", "cost": "Free", "tip": "Bring binoculars and keep distance from nesting birds." },
+              { "name": "Stargazing from camp", "duration": "~1h", "priority": "recommended", "cost": "Free", "tip": "Temperatures can drop to 2–5°C even in summer; layer up after dinner." }
+            ],
+            "hotels": [
+              { "name": "Basic Spangmik camp", "budget": "₹1,200–₹3,500/night" },
+              { "name": "Mid-range Swiss tent", "budget": "₹4,000–₹8,000/night" },
+              { "name": "Pangong Retreat / Pangong Delight Cottages", "budget": "₹9,000–₹20,000/night" }
+            ],
+            "meals": ["Camp buffet dal-rice", "Aloo sabzi and roti requested vegetarian", "Carry vegan snacks from Leh"]
+          },
+          {
+            "theme": "Pangong sunrise and Chang La return to Leh",
+            "pace": "moderate",
+            "note": "Leave after sunrise for the 5–6 hour drive back to Leh via Chang La. The pass is around 5,360m, so keep stops short and warm.",
+            "activities": [
+              { "name": "Pangong sunrise before departure", "duration": "~1h", "priority": "must-see", "cost": "Free", "tip": "Set a 5:30am alarm; dawn light is the payoff for the overnight stay." },
+              { "name": "Chang La pass photo stop", "duration": "~15–20m", "priority": "must-see", "cost": "Free", "tip": "Do not run or climb; get back in the vehicle quickly if breathless." },
+              { "name": "Hemis Monastery en route if missed earlier", "duration": "~1.5h", "priority": "recommended", "cost": "₹50–₹100/person" },
+              { "name": "Leh market buffer on return", "duration": "~1h", "priority": "optional", "cost": "Shopping varies" }
+            ],
+            "hotels": [
+              { "name": "Basic Spangmik camp", "budget": "₹1,200–₹3,500/night" },
+              { "name": "Mid-range Swiss tent", "budget": "₹4,000–₹8,000/night" }
+            ],
+            "meals": ["Early camp breakfast", "Tea stop at Chang La", "Leh dinner after return"]
+          }
+        ]
+      }
+    },
+    "connections": [
+      { "from": "Leh", "to": "Nubra Valley", "method": "Private SUV/Innova via North Pullu, Khardung La, Khalsar and Diskit", "cost": "₹9,744–₹11,807 per vehicle; part of ₹22,410 3-day Nubra–Pangong circuit", "distanceKm": 125, "durationHrs": 5, "sameDayFeasible": true },
+      { "from": "Nubra Valley", "to": "Pangong Tso", "method": "Private SUV via Khalsar, Shyok Valley Road, Agham, Tangtse and Spangmik", "cost": "Included in ₹22,410 3-day circuit; standalone leg often ₹12,000–₹14,000", "distanceKm": 160, "durationHrs": 6, "sameDayFeasible": true },
+      { "from": "Pangong Tso", "to": "Leh", "method": "Private SUV via Tangtse, Chang La and Karu", "cost": "Included in ₹22,410 circuit; standalone ₹10,470–₹12,464 per vehicle", "distanceKm": 160, "durationHrs": 6, "sameDayFeasible": true }
+    ],
+    "extras": [
+      "Inner Line / Protected Area permit formalities are mandatory for Nubra and Pangong. Indian citizens pay the online environmental/conservation fees: ₹400 environmental fee + ₹100 Red Cross fee + ₹20 wildlife fee per person per day, about ₹520–₹660 for a 7-day trip; foreign nationals need PAP through a registered Leh agent.",
+      "Carry 5–6 printed permit copies for North Pullu, South Pullu, Tangtse, Spangmik and other army/police checkposts; mobile signal can be absent when you need to show paperwork.",
+      "Roads to Nubra and Pangong are reliable only around May–October, with the best operating window June–September. November–April brings extreme cold, high-pass closures and closed camps; May and October can still see snow-related disruptions.",
+      "The standard 3-day Leh→Nubra→Pangong→Leh private SUV circuit is about ₹22,410 per vehicle in the 2025–26 Ladakh Taxi Union season; costs are per vehicle and become much cheaper per person for groups of 4–6.",
+      "Direct shoreline camping at Pangong is banned; use camps/cottages set back in village boundaries and do not drive onto fragile lake edges.",
+      "Vegetarian meals are workable everywhere, but vegan and varied veg options are limited at altitude outside Leh. Book meals in advance for Nubra/Pangong and carry dry fruit, bars and cash.",
+      "Acute Mountain Sickness is the main feasibility constraint: Day 1 in Leh must be relaxed, high-pass stops at Khardung La and Chang La should be 15–20 minutes max, and worsening symptoms require descent and medical help.",
+      "Flights from Delhi to Leh typically run about ₹4,700–₹9,720 one-way when booked ahead, but peak July–August or last-minute fares can rise to ₹10,000–₹17,000. Most overall budgets above include return flights from Delhi."
+    ]
+  }
+}

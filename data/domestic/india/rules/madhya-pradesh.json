@@ -1,0 +1,279 @@
+{
+  "name": "Madhya Pradesh",
+  "seed": false,
+  "lat": 23.5,
+  "lng": 77.95,
+  "region": "Central India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": ["October", "November", "December", "January", "February", "March"],
+  "worstMonths": ["April", "May", "June", "July", "August", "September"],
+  "budget": {
+    "solo": "₹18K–₹35K",
+    "couple": "₹25K–₹50K",
+    "family4": "₹40K–₹80K"
+  },
+  "experiences": [
+    "Architecture",
+    "History",
+    "Temples & Religious Sites",
+    "UNESCO Sites",
+    "Wildlife & Safari",
+    "National Parks",
+    "Food"
+  ],
+  "avoid": ["April", "May", "June", "July", "August", "September"],
+  "combo": ["Uttar Pradesh", "Rajasthan", "Maharashtra"],
+  "landmark": "Khajuraho Western Group of Temples",
+  "travelStyle": ["explorer"],
+  "stopoverNote": "Gwalior is a natural northern gateway from Delhi or Agra by rail, Khajuraho has a domestic airport with Delhi links, and Bhopal is the practical exit hub for Mumbai, Delhi and Hyderabad flights.",
+  "diet": {
+    "vegetarian": "Madhya Pradesh is very vegetarian-friendly: poha-jalebi, dal bafla, bhutte ka kees, sabudana khichdi, Indori namkeen and Malwi thalis are easy to find across the route.",
+    "vegan": "Vegan travel is possible with care because ghee, curd and milk are common. Ask for food bilkul bina doodh, ghee, makhan, dahi ke; namkeen, garadu, rice, dal and sabzi are often adaptable.",
+    "phrases": [
+      "Bilkul bina doodh, ghee, makhan, dahi ke = strictly without milk, ghee, butter or curd",
+      "Sirf tel mein banao = cook only in oil",
+      "Shakahari khana chahiye = I want vegetarian food"
+    ]
+  },
+  "links": [
+    { "label": "MP Tourism (official)", "url": "https://www.mptourism.com" },
+    { "label": "MP Forest Safari Booking", "url": "https://forest.mponline.gov.in" },
+    { "label": "ASI Ticket Portal", "url": "https://asi.payumoney.com" }
+  ],
+  "cities": [
+    {
+      "name": "Gwalior",
+      "lat": 26.2183,
+      "lng": 78.1828,
+      "notes": "The Gibraltar of India — an 8th-century hilltop fort with palaces, Jain rock sculptures, temples and the opulent Jai Vilas Palace below.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["April", "May", "June", "July", "August"],
+      "experiences": ["Architecture", "History", "Ancient Ruins", "Museums", "Temples & Religious Sites"]
+    },
+    {
+      "name": "Orchha",
+      "lat": 25.3519,
+      "lng": 78.642,
+      "notes": "A time-frozen Bundela capital on the Betwa River — palaces, riverside cenotaphs and a temple where Ram is worshipped as king.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["May", "June", "July", "August"],
+      "experiences": ["Architecture", "History", "Temples & Religious Sites", "Ancient Ruins", "Road Trips"]
+    },
+    {
+      "name": "Khajuraho",
+      "lat": 24.8318,
+      "lng": 79.9199,
+      "notes": "India's best-known Chandela temple cluster — UNESCO-listed medieval stone carving, celestial sculpture and late-winter dance festival energy.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["May", "June", "July", "August", "September"],
+      "experiences": ["UNESCO Sites", "Architecture", "Temples & Religious Sites", "History", "Ancient Ruins"]
+    },
+    {
+      "name": "Bhopal",
+      "lat": 23.2599,
+      "lng": 77.4126,
+      "notes": "The City of Lakes — MP's leafy capital pairs Nawabi mosques and bazaars with superb tribal and contemporary art museums.",
+      "bestMonths": ["November", "December", "January", "February"],
+      "worstMonths": ["May", "June", "July", "August"],
+      "experiences": ["Museums", "Lakes", "History", "Architecture", "Food", "National Parks"]
+    },
+    {
+      "name": "Sanchi",
+      "lat": 23.4793,
+      "lng": 77.7398,
+      "notes": "Ashoka's 3rd-century Buddhist stupa and carved gateways — one of India's oldest surviving stone monuments and a UNESCO World Heritage Site.",
+      "bestMonths": ["November", "December", "January", "February", "March"],
+      "worstMonths": ["May", "June", "July", "August"],
+      "experiences": ["UNESCO Sites", "History", "Ancient Ruins", "Temples & Religious Sites"]
+    }
+  ],
+  "itinerary": {
+    "sim": "Any Indian prepaid SIM such as Jio or Airtel works well across the main route; buy at the airport or an operator store with photo ID. Coverage is solid in Gwalior, Khajuraho and Bhopal, but weaker inside forest reserves.",
+    "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "Ola", "Uber", "Zomato", "MP Tourism"],
+    "cityOrder": ["Gwalior", "Orchha", "Khajuraho", "Bhopal", "Sanchi"],
+    "cities": {
+      "Gwalior": {
+        "name": "Gwalior",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day covers the fort, palace and old-city tombs; add a morning if Jai Vilas Palace closure or heat slows the plan.",
+        "experiences": ["Architecture", "History", "Ancient Ruins", "Museums", "Temples & Religious Sites"],
+        "signatureExperiences": ["History", "Architecture"],
+        "days": [
+          {
+            "theme": "Royal Gwalior — hilltop fort to Scindia grandeur",
+            "pace": "moderate",
+            "note": "The fort and palace are 7–8 km apart by auto or cab. Start at the fort early, then move to the palace and old-city tombs; Jai Vilas Palace is closed Mondays.",
+            "activities": [
+              { "name": "Gwalior Fort Complex — Man Singh Palace, Sas Bahu Temple, Teli Ka Mandir and Jain rock sculptures", "duration": "3–4h", "priority": "must-see", "cost": "₹40/person (ASI, Indian)", "tip": "Enter via Urwahi Gate by vehicle; a guide for ₹200–₹400 helps decode Man Singh Palace and the underground rooms." },
+              { "name": "Jai Vilas Palace & Scindia Museum", "duration": "1.5–2h", "priority": "must-see", "cost": "₹200–₹300 estimate; verify at site", "tip": "See the Durbar Hall chandeliers and miniature rail dining table; some rooms restrict photography." },
+              { "name": "Tansen Tomb & Gaus Muhammad's Tomb", "duration": "45m", "priority": "recommended", "cost": "Free", "tip": "Visit near sunset; Tansen Samaroh is usually held in Nov–Dec." },
+              { "name": "Light & Sound Show at Gwalior Fort", "duration": "1h", "priority": "recommended", "cost": "₹75–₹250", "tip": "Hindi and English shows usually run after dark; reconfirm timing at the fort gate." },
+              { "name": "Gujari Mahal Archaeological Museum", "duration": "1h", "priority": "optional", "cost": "Included in fort ticket" }
+            ],
+            "hotels": [
+              { "name": "Budget guesthouse near railway station", "budget": "₹800–₹1,500/night" },
+              { "name": "Mid-range city hotel", "budget": "₹2,000–₹4,000/night" }
+            ],
+            "meals": ["Poha-jalebi breakfast", "Local kachori and samosa stalls", "Vegetarian thali near Sarafa Bazaar"]
+          }
+        ]
+      },
+      "Orchha": {
+        "name": "Orchha",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A compact, walkable heritage stop — afternoon arrival plus an overnight covers the fort, temples, chhatris and aarti.",
+        "experiences": ["Architecture", "History", "Temples & Religious Sites", "Ancient Ruins", "Road Trips"],
+        "signatureExperiences": ["Architecture", "Temples & Religious Sites"],
+        "days": [
+          {
+            "theme": "Bundela palaces, Betwa chhatris & Ram Raja rituals",
+            "pace": "relaxed",
+            "note": "The core sights sit within a 1–2 km walking loop. Keep the palace complex for daylight, then time Ram Raja Temple for aarti.",
+            "activities": [
+              { "name": "Orchha Fort Complex — Raja Mahal, Jahangir Mahal and Rai Praveen Mahal", "duration": "2–2.5h", "priority": "must-see", "cost": "₹10–₹25 Indian; ₹250 foreign", "tip": "Camera fee around ₹25; hire a guide for the 17th-century wall murals." },
+              { "name": "Ram Raja Temple Aarti", "duration": "30m", "priority": "must-see", "cost": "Free", "tip": "Ram is worshipped here as king; dress modestly and expect police-guard ceremony." },
+              { "name": "Chhatris — riverside cenotaphs on the Betwa", "duration": "1h", "priority": "recommended", "cost": "Free", "tip": "Best light is 5–6:30 PM." },
+              { "name": "Chaturbhuj Temple terrace climb", "duration": "45m", "priority": "recommended", "cost": "Included in fort ticket" },
+              { "name": "Betwa River boat ride or Orchha Nature Reserve walk", "duration": "45m–1.5h", "priority": "optional", "cost": "Boat ₹100–₹200", "tip": "Avoid river activities when the Betwa runs high in monsoon." }
+            ],
+            "hotels": [
+              { "name": "Budget homestay near fort road", "budget": "₹800–₹1,500/night" },
+              { "name": "Heritage-style riverside stay", "budget": "₹2,500–₹5,000/night" }
+            ],
+            "meals": ["Simple vegetarian thali near Ram Raja Temple", "Bundeli-style dal and roti", "Rooftop café overlooking the fort"]
+          }
+        ]
+      },
+      "Khajuraho": {
+        "name": "Khajuraho",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days lets you see the UNESCO Western Group properly, then add the eastern/southern temples and a nature excursion.",
+        "experiences": ["UNESCO Sites", "Architecture", "Temples & Religious Sites", "History", "Ancient Ruins"],
+        "signatureExperiences": ["UNESCO Sites", "Architecture"],
+        "days": [
+          {
+            "theme": "Western Group temples & evening projection show",
+            "pace": "moderate",
+            "note": "The Western Group is the core UNESCO sight. Go early for cooler weather and fewer groups; ASI tickets are best pre-booked or bought before peak hours.",
+            "activities": [
+              { "name": "Western Group of Temples — Kandariya Mahadeva, Lakshmana, Chitragupta and Vishvanatha", "duration": "2.5–3h", "priority": "must-see", "cost": "₹40/person Indian, ₹600 foreign (ASI); children under 15 free", "tip": "Enter around 6:30–9 AM for golden light; use an ASI-licensed guide for iconography." },
+              { "name": "Khajuraho Sound & Light Show", "duration": "35m", "priority": "recommended", "cost": "₹300 Indian adult, ₹150 child; ₹800 foreign adult", "tip": "English show timing shifts by season; arrive 20 minutes early." },
+              { "name": "Khajuraho Archaeological Museum", "duration": "45m", "priority": "optional", "cost": "₹5 nominal", "tip": "Useful context for sculptures recovered from the site." },
+              { "name": "Village lanes and craft shops around the temple approach", "duration": "1h", "priority": "optional" }
+            ],
+            "hotels": [
+              { "name": "Budget guesthouse near Western Group", "budget": "₹800–₹1,500/night" },
+              { "name": "Mid-range resort-style hotel", "budget": "₹3,000–₹6,000/night" }
+            ],
+            "meals": ["Vegetarian thali near Western Group", "Poha and chai breakfast", "North Indian restaurant on Jain Temple Road"]
+          },
+          {
+            "theme": "Eastern Jain temples, southern temples & Ken River gorge",
+            "pace": "packed",
+            "note": "Eastern and Southern Groups are free and quieter. Raneh Falls is 25 km away and works as a half-day nature excursion, best Oct–Jan.",
+            "activities": [
+              { "name": "Eastern Group — Parsvanatha, Adinatha and Brahma temples", "duration": "1.5–2h", "priority": "must-see", "cost": "Free", "tip": "Parsvanatha has some of the finest Jain carving in Khajuraho." },
+              { "name": "Southern Group — Chaturbhuja and Duladeo temples", "duration": "45m", "priority": "recommended", "cost": "Free" },
+              { "name": "Raneh Falls & Ken River Gorge", "duration": "3–4h", "priority": "recommended", "cost": "₹50–₹100 entry; verify at site", "tip": "Seasonal waterfalls peak after monsoon; road access can be muddy in heavy rain." },
+              { "name": "Pandav Falls add-on near Panna", "duration": "3h", "priority": "optional", "cost": "₹50 entry" }
+            ],
+            "hotels": [
+              { "name": "Budget guesthouse near Western Group", "budget": "₹800–₹1,500/night" },
+              { "name": "Mid-range resort-style hotel", "budget": "₹3,000–₹6,000/night" }
+            ],
+            "meals": ["Café lunch near Western Group", "Simple Jain-friendly dinner", "Fresh lime soda and snacks after Raneh Falls"]
+          }
+        ]
+      },
+      "Bhopal": {
+        "name": "Bhopal",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days balances lakes, museums and either a UNESCO excursion or a packed Sanchi–Bhimbetka car day.",
+        "experiences": ["Museums", "Lakes", "History", "Architecture", "Food", "National Parks"],
+        "signatureExperiences": ["Museums", "Lakes"],
+        "days": [
+          {
+            "theme": "City of Lakes — Bhojtal, tribal art & Van Vihar",
+            "pace": "moderate",
+            "note": "Upper Lake, Van Vihar and the museum cluster are close; Old Bhopal is a separate drive. Van Vihar closes Fridays and museums may close Mondays.",
+            "activities": [
+              { "name": "Upper Lake (Bhojtal / Bada Talab) boating and lakeside walk", "duration": "1.5–2h", "priority": "must-see", "cost": "Entry free; cruise boat ₹100, paddle boat ₹80, motor boat ₹240", "tip": "Sunrise along VIP Road is the prettiest hour; Boat Club usually runs 6 AM–7 PM." },
+              { "name": "Madhya Pradesh Tribal Museum / museum cluster", "duration": "2h", "priority": "must-see", "cost": "₹20–₹30 nominal", "tip": "Excellent Gond, Bhil and Baiga art; check Monday closures." },
+              { "name": "Van Vihar National Park", "duration": "2h", "priority": "recommended", "cost": "₹25/person on foot, ₹300/car; cycle tour ₹40/person", "tip": "Closed Fridays; morning and late afternoon give better animal activity." },
+              { "name": "Bharat Bhavan contemporary art space", "duration": "1.5h", "priority": "recommended", "cost": "₹20 estimate; verify at venue" },
+              { "name": "Chowk Bazaar, Taj-ul-Masajid and Moti Masjid", "duration": "1.5h", "priority": "optional", "cost": "Free" }
+            ],
+            "hotels": [
+              { "name": "Budget hotel near MP Nagar", "budget": "₹1,000–₹2,000/night" },
+              { "name": "Lake-facing mid-range hotel", "budget": "₹3,000–₹6,000/night" }
+            ],
+            "meals": ["Poha-jalebi breakfast", "Bhopali vegetarian thali", "Old-city snacks around Chowk Bazaar"]
+          },
+          {
+            "theme": "Bhimbetka rock shelters & Old Bhopal culture",
+            "pace": "moderate",
+            "note": "Bhimbetka is 45 km south of Bhopal. Keep it as a half-day unless you have a private car and want to combine Sanchi on a very long UNESCO day.",
+            "activities": [
+              { "name": "Bhimbetka Rock Shelters (UNESCO WHS)", "duration": "1.5–2h", "priority": "must-see", "cost": "₹50/person Indian, ₹600 foreign; video camera ₹100", "tip": "Open 7 AM–6 PM; wear sturdy shoes for rocky terrain." },
+              { "name": "Drive through Ratapani forest belt viewpoints", "duration": "1h", "priority": "recommended", "cost": "Taxi included", "tip": "Do not plan a tiger-style safari here; this is a heritage-focused excursion." },
+              { "name": "Old Bhopal food walk — chowk lanes and sweets", "duration": "1.5h", "priority": "recommended", "tip": "Vegetarian snacks are easy; ask for no ghee or dahi for vegan versions." },
+              { "name": "Taj-ul-Masajid dawn or sunset photo stop", "duration": "45m", "priority": "optional", "cost": "Free" }
+            ],
+            "hotels": [
+              { "name": "Budget hotel near MP Nagar", "budget": "₹1,000–₹2,000/night" },
+              { "name": "Lake-facing mid-range hotel", "budget": "₹3,000–₹6,000/night" }
+            ],
+            "meals": ["Sabudana khichdi", "Dal bafla with ghee on the side", "Indori-style namkeen snacks"]
+          }
+        ]
+      },
+      "Sanchi": {
+        "name": "Sanchi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "A classic Bhopal day trip — combine the stupa complex with Udaigiri Caves if using a taxi.",
+        "experiences": ["UNESCO Sites", "History", "Ancient Ruins", "Temples & Religious Sites"],
+        "signatureExperiences": ["UNESCO Sites", "History"],
+        "days": [
+          {
+            "theme": "Sanchi Stupa, Ashokan gateways & Udaigiri detour",
+            "pace": "relaxed",
+            "note": "Sanchi is 50 km from Bhopal. Train is fastest, but a taxi gives flexibility for Udaigiri Caves 7 km away.",
+            "activities": [
+              { "name": "Sanchi Stupa Complex (UNESCO WHS)", "duration": "2–2.5h", "priority": "must-see", "cost": "₹40/person Indian, ₹600 foreign (ASI); children under 15 free", "tip": "Open daily around 8 AM–7 PM; the museum is usually closed Tuesday. Hire a guide for the Torana narratives." },
+              { "name": "Udaigiri Caves — Gupta-era Varaha and Vishnu panels", "duration": "1h", "priority": "recommended", "cost": "₹25 Indian, ₹300 foreign (ASI standard; verify at site)" },
+              { "name": "Sanchi Archaeological Museum", "duration": "45m", "priority": "optional", "cost": "₹20 estimate", "tip": "See original gateway fragments and Ashokan material if the museum is open." },
+              { "name": "Return to Bhopal for Upper Lake sunset", "duration": "1h", "priority": "optional", "cost": "Taxi/train return extra" }
+            ],
+            "hotels": [
+              { "name": "Stay in Bhopal and visit Sanchi by day trip", "budget": "₹1,000–₹6,000/night" }
+            ],
+            "meals": ["Packed breakfast from Bhopal", "Simple vegetarian lunch near Sanchi station", "Bhopal dinner after return"]
+          }
+        ]
+      }
+    },
+    "connections": [
+      { "from": "Gwalior", "to": "Orchha", "method": "Train to Jhansi plus taxi/auto to Orchha, or direct road taxi", "cost": "Train + taxi ₹550–₹900; direct taxi ₹1,200–₹2,500", "distanceKm": 117, "durationHrs": 2.5, "sameDayFeasible": true },
+      { "from": "Orchha", "to": "Khajuraho", "method": "Road taxi is most practical; train via Mahoba is slower", "cost": "Taxi ₹1,800–₹3,200; train ₹200–₹800", "distanceKm": 170, "durationHrs": 3.5, "sameDayFeasible": true },
+      { "from": "Khajuraho", "to": "Bhopal", "method": "Train such as Mahamana Express or road taxi", "cost": "Train ₹350–₹1,800; taxi ₹3,500–₹5,500", "distanceKm": 370, "durationHrs": 6.5, "sameDayFeasible": false },
+      { "from": "Bhopal", "to": "Sanchi", "method": "Train or road taxi/car", "cost": "Train ₹30–₹150; taxi ₹600–₹900 return", "distanceKm": 50, "durationHrs": 1.5, "sameDayFeasible": true }
+    ],
+    "extras": [
+      "Primary 7-day route: Gwalior → Orchha → Khajuraho → Bhopal → Sanchi, using Sanchi as a Bhopal-side day trip but keeping it as its own rule-backed stop.",
+      "Khajuraho Western Group, Sanchi Stupa, Gwalior Fort and Bhimbetka are ASI-ticketed; pre-book where possible on the ASI ticket portal and carry ID. Khajuraho Western Group is ₹40 Indian / ₹600 foreign as verified for 2025.",
+      "If adding Bandhavgarh or Kanha Tiger Reserve, pre-book safaris 120 days ahead on forest.mponline.gov.in. Core zones close for monsoon from July 1 to about October 14, and safari days should not be combined with heavy sightseeing. Typical jeep cost is ₹4,700–₹5,200 for Indians and ₹5,700–₹6,200 for foreign nationals, subject to the forest portal's live rate.",
+      "April–June can reach 42–46°C across the plateau. July–September brings monsoon disruption and reserve closures; Pachmarhi is the main cooler exception but is outside this 7-day route.",
+      "Madhya Pradesh is highly vegetarian-friendly. Poha-jalebi, dal bafla, bhutte ka kees, sabudana khichdi and namkeen make easy snacks between heritage stops; vegan travelers should explicitly request no ghee, milk, butter or curd."
+    ]
+  }
+}

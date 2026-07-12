@@ -1,0 +1,525 @@
+{
+  "name": "Chhattisgarh",
+  "seed": false,
+  "lat": 21.2787,
+  "lng": 81.8661,
+  "region": "Central India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June"
+  ],
+  "budget": {
+    "solo": "₹8,000–₹30,000",
+    "couple": "₹14,000–₹50,000",
+    "family4": "₹25,000–₹90,000"
+  },
+  "experiences": [
+    "Waterfalls",
+    "National Parks",
+    "Wildlife & Safari",
+    "Temples & Religious Sites",
+    "Ancient Ruins",
+    "Festivals",
+    "Hiking",
+    "Road Trips",
+    "Food"
+  ],
+  "avoid": [
+    "April",
+    "May",
+    "June",
+    "Remote interior forest areas of southern Bastar, especially outside marked tourism zones, should be planned only after checking current local advisories; Jagdalpur, Chitrakote, Kanger Valley and Dantewada remain standard, well-visited tourism circuits."
+  ],
+  "combo": [
+    "Odisha",
+    "Madhya Pradesh",
+    "Telangana"
+  ],
+  "landmark": "Chitrakote Falls, Bastar",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Raipur is the practical air gateway. The Raipur→Jagdalpur/Bastar road leg is a long 295–300 km, 6–7 hr drive via Kanker/Kondagaon; night buses save time, but self-drives after dark on forest roads are not recommended.",
+  "diet": {
+    "vegetarian": "Chhattisgarh is easy for vegetarians: rice-based chila, faraa/phara, bafauri, muthiya, dubki kadhi, angakar roti and seasonal saag are common, with veg thalis widely available in Raipur and Jagdalpur. Dairy and ghee are common, so ask before ordering.",
+    "vegan": "Many local staples can be vegan if cooked in oil: chila, faraa, bafauri, muthiya, angakar roti and vegetable bhaji. Dedicated vegan restaurants are rare outside Raipur, so request 'bina ghee, doodh, dahi' and carry snacks on Bastar road days.",
+    "phrases": [
+      "Bina ghee = without ghee",
+      "Bina doodh/dahi = without milk or curd",
+      "Sirf tel mein banao = cook only in oil"
+    ]
+  },
+  "links": [
+    {
+      "label": "Chhattisgarh Tourism Board (official)",
+      "url": "https://tourism.cgstate.gov.in/"
+    },
+    {
+      "label": "Kanger Valley National Park Official Tariff",
+      "url": "https://www.forest.cg.gov.in/KVNP/tariff.html"
+    },
+    {
+      "label": "Bastar Dussehra Festival Official Site",
+      "url": "https://bastardussehra.com/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Raipur",
+      "lat": 21.2514,
+      "lng": 81.6296,
+      "notes": "Chhattisgarh's capital and sole major air gateway — a practical first-day base for tribal heritage, museums, zoo-safari and local food before the Bastar road leg.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "experiences": [
+        "Wildlife & Safari",
+        "Temples & Religious Sites",
+        "Markets & Shopping",
+        "Food"
+      ]
+    },
+    {
+      "name": "Sirpur",
+      "lat": 21.3361,
+      "lng": 82.196,
+      "notes": "A quiet 5th–8th century archaeological complex by the Mahanadi with Buddhist monasteries, Hindu temples and Jain remains, usually done as a Raipur day trip.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "experiences": [
+        "Ancient Ruins",
+        "History",
+        "Architecture",
+        "Temples & Religious Sites",
+        "Road Trips"
+      ]
+    },
+    {
+      "name": "Jagdalpur / Bastar",
+      "lat": 19.0753,
+      "lng": 82.0284,
+      "notes": "The offbeat heart of the trip — Chitrakote Falls, Kanger Valley caves, Tirathgarh Falls, Danteshwari Temple, tribal haats and Bastar Dussehra culture.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "experiences": [
+        "Waterfalls",
+        "National Parks",
+        "Wildlife & Safari",
+        "Festivals",
+        "Temples & Religious Sites",
+        "Hiking",
+        "Ancient Ruins"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Any Indian prepaid SIM works; Jio and Airtel are strongest around Raipur, Sirpur and Jagdalpur. Download offline maps before Bastar forest drives because coverage can turn patchy inside Kanger Valley and remote village roads.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "MakeMyTrip",
+      "Ola",
+      "Uber",
+      "Zomato"
+    ],
+    "cityOrder": [
+      "Raipur",
+      "Sirpur",
+      "Jagdalpur / Bastar"
+    ],
+    "cities": {
+      "Raipur": {
+        "name": "Raipur",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Use Raipur as the arrival base and cultural orientation stop before heading east to Sirpur and south to Bastar.",
+        "experiences": [
+          "Wildlife & Safari",
+          "Temples & Religious Sites",
+          "Markets & Shopping",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "Food",
+          "Wildlife & Safari"
+        ],
+        "days": [
+          {
+            "theme": "Capital orientation — culture, safari and local food",
+            "pace": "moderate",
+            "note": "All stops are within a short city drive; avoid the outdoor sites at midday in Apr–Jun and note that the zoo/safari and Purkhouti Muktangan close on Mondays.",
+            "activities": [
+              {
+                "name": "Purkhouti Muktangan open-air tribal heritage museum",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "~₹20/adult",
+                "tip": "Best first stop for understanding Chhattisgarh's folk, tribal and craft context before Bastar. Open roughly 8am–6pm; closed Monday."
+              },
+              {
+                "name": "Mahant Ghasidas Memorial Museum",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "~₹20/person",
+                "tip": "One of the state's oldest museums, with tribal artefacts, natural history and prehistoric finds; verify current government hours."
+              },
+              {
+                "name": "Nandan Van Zoo & Safari",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "₹100/adult, ₹50/child; safari ₹200 non-AC or ₹300 AC extra",
+                "tip": "Good family stop for white tiger and Asiatic lion exhibits. Arrive by 3pm to allow safari time; closed Monday."
+              },
+              {
+                "name": "Telibandha Talab / Marine Drive evening walk",
+                "duration": "~45m",
+                "priority": "optional",
+                "cost": "Free",
+                "tip": "Pleasant lake promenade for sunset and street snacks; try chila or local samosas nearby."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "OYO / Hotel Chandra / Hotel Meera",
+                "budget": "₹700–₹1,200/night"
+              },
+              {
+                "name": "Hotel Babylon Inn / Golden Oak",
+                "budget": "₹1,200–₹3,500/night"
+              },
+              {
+                "name": "Mayfair Lake Resort / Hyatt Place",
+                "budget": "₹5,400+/night"
+              }
+            ],
+            "meals": [
+              "Chila and faraa at local breakfast stalls",
+              "Veg thali near Civil Lines",
+              "Telibandha street snacks"
+            ]
+          }
+        ]
+      },
+      "Sirpur": {
+        "name": "Sirpur",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "A full day is enough for the archaeological zone; most travelers day-trip from Raipur or stay near Mahasamund for early light.",
+        "experiences": [
+          "Ancient Ruins",
+          "History",
+          "Architecture",
+          "Temples & Religious Sites",
+          "Road Trips"
+        ],
+        "signatureExperiences": [
+          "Ancient Ruins",
+          "Temples & Religious Sites"
+        ],
+        "days": [
+          {
+            "theme": "Ancient Sirpur — Buddhist monasteries, temples and the Mahanadi",
+            "pace": "relaxed",
+            "note": "The site is compact and walkable but exposed; leave Raipur around 7:30am, carry water/snacks and aim for morning light before the fields heat up.",
+            "activities": [
+              {
+                "name": "Lakshmana Temple and Surang Tila archaeological complex",
+                "duration": "2–2.5h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "The 7th-century brick Lakshmana Temple and tiered Surang Tila are the headline monuments; start before 10am for cooler weather."
+              },
+              {
+                "name": "Sirpur Buddhist monasteries — Anand Prabha Vihara and Swastika Vihara",
+                "duration": "~1h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Look for ASI labels, monastery layouts and inscriptions from the 5th–8th century excavations."
+              },
+              {
+                "name": "Sirpur Museum / site sculpture collection",
+                "duration": "30–45m",
+                "priority": "recommended",
+                "cost": "Free or nominal — verify at gate",
+                "tip": "Small but useful context for sculptures, coins and Buddhist finds excavated from the complex."
+              },
+              {
+                "name": "Mahanadi River ghat walk",
+                "duration": "~30m",
+                "priority": "optional",
+                "cost": "Free",
+                "tip": "A peaceful riverside finish; occasional boatmen may offer short local rides."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mahasamund budget guesthouses",
+                "budget": "₹500–₹1,200/night"
+              },
+              {
+                "name": "Raipur hotel base",
+                "budget": "₹700–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Carry snacks and water from Raipur",
+              "Mahasamund dhaba lunch",
+              "Simple veg thali on the Raipur return"
+            ]
+          }
+        ]
+      },
+      "Jagdalpur / Bastar": {
+        "name": "Jagdalpur / Bastar",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three nights is the sweet spot for Chitrakote, Kanger Valley and a Dantewada/tribal-culture day. Waterfalls peak Jul–Oct, but Oct–Mar gives the best balance of flow, access and weather.",
+        "experiences": [
+          "Waterfalls",
+          "National Parks",
+          "Wildlife & Safari",
+          "Festivals",
+          "Temples & Religious Sites",
+          "Hiking",
+          "Ancient Ruins"
+        ],
+        "signatureExperiences": [
+          "Waterfalls",
+          "National Parks"
+        ],
+        "days": [
+          {
+            "theme": "Arrival and Chitrakote Falls",
+            "pace": "moderate",
+            "note": "After the long Raipur/Sirpur transfer, keep the day focused on Jagdalpur arrival and the 38 km run to Chitrakote for afternoon light.",
+            "activities": [
+              {
+                "name": "Chitrakote Falls on the Indravati River",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Entry free; boat ride ₹25–₹50/person",
+                "tip": "India's widest waterfall. Post-monsoon Sep–Oct has the biggest flow; Oct–Jan balances water volume and access. Carry a waterproof bag for the base boat ride."
+              },
+              {
+                "name": "Jagdalpur local market and Bastar handicrafts browse",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "Free to browse; purchases vary",
+                "tip": "Look for dhokra bell-metal, wrought iron and terracotta; Kondagaon is the deeper craft hub if you have extra time."
+              },
+              {
+                "name": "Evening at Dalpat Sagar / city food crawl",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "Free; snacks extra",
+                "tip": "Keep dinner simple after the road leg; ask for chila, faraa or a local thali."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jagdalpur budget city hotels",
+                "budget": "₹1,500–₹1,800/night"
+              },
+              {
+                "name": "Bastar Jungle Resort / Bastar Greens Eco Stays",
+                "budget": "₹2,900–₹3,800/night"
+              },
+              {
+                "name": "River Park Resort / Swastik Anandam near Chitrakote",
+                "budget": "₹2,200–₹7,200/night"
+              }
+            ],
+            "meals": [
+              "Jagdalpur veg thali",
+              "Local chila/faraa snacks",
+              "Hotel dinner after Chitrakote"
+            ]
+          },
+          {
+            "theme": "Kanger Valley — caves, forest and Tirathgarh Falls",
+            "pace": "packed",
+            "note": "Start early. Kutumsar/Kailash caves are seasonal and usually closed in monsoon; entry cutoffs are early, and Kutumsar has narrow, slippery sections unsuitable for claustrophobic travelers.",
+            "activities": [
+              {
+                "name": "Kutumsar Cave — stalactites and blind cave fish",
+                "duration": "1.5–2h including jeep transit",
+                "priority": "must-see",
+                "cost": "₹25 Indians / ₹150 foreigners; forest jeep ₹1,500 shared; guide ₹300 for 8 persons",
+                "tip": "Official Kanger Valley tariff applies. Closed shoes and a small torch help; guide is mandatory."
+              },
+              {
+                "name": "Tirathgarh Falls inside Kanger Valley National Park",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "₹25/person + ₹25/vehicle",
+                "tip": "Multi-tier waterfall in lush forest, generally open 8am–6pm. Best Oct–Feb for flow and safe access."
+              },
+              {
+                "name": "Kailash Cave and Kanger Dhara nature stop",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Covered by park entry; jeep/guide charges may apply",
+                "tip": "Combine with Kutumsar if timings work; Kanger Dhara is a gentle stream/birding stop."
+              },
+              {
+                "name": "Anthropological Museum, Jagdalpur",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "Nominal/free — verify at gate",
+                "tip": "Evening context on Bastar communities, instruments, costumes and ritual objects."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jagdalpur budget city hotels",
+                "budget": "₹1,500–₹1,800/night"
+              },
+              {
+                "name": "Bastar Jungle Resort / Bastar Greens Eco Stays",
+                "budget": "₹2,900–₹3,800/night"
+              }
+            ],
+            "meals": [
+              "Packed breakfast before Kanger Valley",
+              "Simple dhaba lunch near park gates",
+              "Jagdalpur dinner"
+            ]
+          },
+          {
+            "theme": "Dantewada, Bastar culture and tribal crafts",
+            "pace": "moderate",
+            "note": "Dantewada is ~82 km from Jagdalpur and makes a long but rewarding half/full-day excursion. Confirm weekly haat locations locally because schedules rotate by village.",
+            "activities": [
+              {
+                "name": "Danteshwari Temple, Dantewada",
+                "duration": "1.5–2h including local context",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "A revered Shakti Peetha and the spiritual heart of Bastar Dussehra; morning aarti is atmospheric. Dress modestly."
+              },
+              {
+                "name": "Bastar Palace and Dussehra chariot context",
+                "duration": "~45m",
+                "priority": "recommended",
+                "cost": "Nominal/free — verify",
+                "tip": "The 600-year Bastar Dussehra tradition centers on goddess Danteshwari rather than a Ravana effigy; book Jagdalpur stays 6–8 weeks ahead for the October climax."
+              },
+              {
+                "name": "Weekly tribal haat or Kondagaon dhokra craft village",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "Free; crafts ₹200–₹5,000+",
+                "tip": "Ask your hotel/guide for the nearest market day. Buy bell-metal, wrought iron or terracotta directly from artisans where possible."
+              },
+              {
+                "name": "Optional return stop at a local waterfall viewpoint",
+                "duration": "~45m",
+                "priority": "optional",
+                "cost": "Free or nominal",
+                "tip": "Use only marked tourism zones and daylight hours; do not detour into remote forest interiors without local confirmation."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jagdalpur budget city hotels",
+                "budget": "₹1,500–₹1,800/night"
+              },
+              {
+                "name": "Forest department rest house",
+                "budget": "₹1,000–₹2,000/night"
+              }
+            ],
+            "meals": [
+              "Dantewada temple-area vegetarian meal",
+              "Local market snacks",
+              "Jagdalpur farewell thali"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Raipur",
+        "to": "Sirpur",
+        "method": "Road by private taxi/rented car via Abhanpur and Mahasamund",
+        "cost": "₹2,500–₹3,500 full-day cab; Raipur→Mahasamund bus ₹60–₹100 + auto/jeep ~₹150",
+        "distanceKm": 85,
+        "durationHrs": 2,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Sirpur",
+        "to": "Jagdalpur / Bastar",
+        "method": "Long road transfer; recommended practical routing is Sirpur→Raipur overnight, then Raipur→Jagdalpur by bus/taxi",
+        "cost": "Raipur→Jagdalpur bus ₹515–₹900; sedan taxi ₹4,000–₹4,600 one way; SUV ₹6,300–₹9,000",
+        "distanceKm": 380,
+        "durationHrs": 7,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Jagdalpur / Bastar",
+        "to": "Raipur",
+        "method": "Return by NH30 bus/taxi or overnight AC sleeper bus",
+        "cost": "Bus ₹515–₹900; taxi ₹4,000–₹9,000 depending vehicle",
+        "distanceKm": 295,
+        "durationHrs": 7,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "Barnawapara Wildlife Sanctuary is a worthwhile optional Raipur-side add-on from November to June only; it closes July–October for monsoon. Budget roughly ₹55–₹100/person entry, ₹1,300–₹1,800 per gypsy safari and ₹200–₹250 compulsory guide.",
+      "Waterfalls are most dramatic July–October, especially Chitrakote, but first-time travelers should prefer September/October to March because caves, roads and forest access are more reliable outside peak monsoon.",
+      "Bastar Dussehra 2026 runs roughly mid-July to around October 20, with the October climax in Jagdalpur; accommodation can sell out weeks ahead.",
+      "The Raipur–Jagdalpur leg is the itinerary's main feasibility constraint: allow 7+ hours with breaks, download offline maps, and avoid unplanned post-dark forest-road driving.",
+      "Interior/deep forest zones in parts of southern Bastar such as Bijapur and Sukma are not standard tourism circuits; verify current conditions with local operators or official advisories before venturing beyond marked sites.",
+      "Most quoted entry fees are verified from 2025–2026 sources and can change at the gate; carry cash for small tickets, parking, guides and boats."
+    ]
+  }
+}
