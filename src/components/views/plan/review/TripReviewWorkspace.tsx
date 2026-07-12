@@ -1,10 +1,10 @@
 import { memo } from "react";
-import type { Country } from "../../../core/types";
-import PlanWorkspaceShell, { type RailDef, type WorkspaceNav } from "./PlanWorkspaceShell";
+import type { Country } from "@/core/types";
+import PlanWorkspaceShell, { type RailDef, type WorkspaceNav } from "../shell/PlanWorkspaceShell";
 import TripReviewCanvas from "./TripReviewCanvas";
 import TripContextRail from "./TripContextRail";
-import ItineraryToolbar from "./ItineraryToolbar";
-import type { CinematicRoute } from "../../country/cinematic/engine";
+import ItineraryToolbar from "../ui/ItineraryToolbar";
+import type { CinematicRoute } from "@/components/country/cinematic/engine";
 import type { ReviewRoute } from "./useReviewRoute";
 
 type Props = {

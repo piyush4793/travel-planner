@@ -1,12 +1,12 @@
 import { memo, useEffect, useRef } from "react";
-import { useBreakpoint } from "../../../hooks/useBreakpoint";
-import type { Country } from "../../../core/types";
-import type { TripPlan } from "../../../core/utils/tripPlans";
-import { planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
-import { tripReadiness, READINESS_ICON, type ReadinessTone } from "../../../core/utils/tripReadiness";
-import { getCountryFlag } from "../../../utils/countryFlags";
-import MonthHeatmap from "../../country/panel/MonthHeatmap";
-import { LearnAboutSection, PlanningResourcesSection, UsefulLinksSection } from "../../country/panel/InfoSections";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+import type { Country } from "@/core/types";
+import type { TripPlan } from "@/core/utils/tripPlans";
+import { planCostBasisIcon, planCostBasisLabel } from "@/core/utils/tripPlans";
+import { tripReadiness, READINESS_ICON, type ReadinessTone } from "@/core/utils/tripReadiness";
+import { getCountryFlag } from "@/utils/countryFlags";
+import MonthHeatmap from "@/components/country/panel/MonthHeatmap";
+import { LearnAboutSection, PlanningResourcesSection, UsefulLinksSection } from "@/components/country/panel/InfoSections";
 import RailSection from "./RailSection";
 import PlanNotesSection from "./PlanNotesSection";
 

@@ -1,6 +1,6 @@
 import { memo } from "react";
-import type { CityEntry } from "../../../core/types";
-import CityCard from "../../country/panel/CityCard";
+import type { CityEntry } from "@/core/types";
+import CityCard from "@/components/country/panel/CityCard";
 
 type Props = {
   /** Cities in vibe-first order (experience matches surface first). */

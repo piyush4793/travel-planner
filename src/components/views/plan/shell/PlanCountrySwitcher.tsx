@@ -1,5 +1,5 @@
-import { getCountryFlag } from "../../../utils/countryFlags";
-import PlanMenu from "./PlanMenu";
+import { getCountryFlag } from "@/utils/countryFlags";
+import PlanMenu from "../ui/PlanMenu";
 
 /** Minimal per-stop summary the switcher needs — decoupled from PlacesUnit. */
 export type SwitcherUnit = { name: string; places: number; days: number };

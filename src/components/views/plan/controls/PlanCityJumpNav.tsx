@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { TRANSPORT_EMOJI } from "../../../core/utils/transport";
-import { getCountryFlag } from "../../../utils/countryFlags";
-import { useBreakpoint } from "../../../hooks/useBreakpoint";
-import { SheetGrip } from "./sheetChrome";
-import type { CityGroup } from "../../country/itinerary/ItineraryView";
+import { TRANSPORT_EMOJI } from "@/core/utils/transport";
+import { getCountryFlag } from "@/utils/countryFlags";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+import { SheetGrip } from "../ui/sheetChrome";
+import type { CityGroup } from "@/components/country/itinerary/ItineraryView";
 
 /** One country's ordered cities. A single-country plan passes exactly one
  *  section; a multi-country route passes one per stop, in visit order. */

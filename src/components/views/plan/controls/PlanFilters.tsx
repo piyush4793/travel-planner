@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useBreakpoint } from "../../../hooks/useBreakpoint";
-import { useBackDismiss } from "../../../hooks/useBackDismiss";
-import PlanMenu from "./PlanMenu";
-import { SheetGrip, SheetCloseButton } from "./sheetChrome";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+import { useBackDismiss } from "@/hooks/useBackDismiss";
+import PlanMenu from "../ui/PlanMenu";
+import { SheetGrip, SheetCloseButton } from "../ui/sheetChrome";
 import ExperiencePicker from "./ExperiencePicker";
 
 type Props = {

@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { haversineKm, type GeoPoint } from "../../../core/utils/routeOrder";
+import { haversineKm, type GeoPoint } from "@/core/utils/routeOrder";
 
 type Props = {
   fromName: string;

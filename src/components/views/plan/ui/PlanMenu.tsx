@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback, type ReactNode } from "react";
 import { createPortal } from "react-dom";
-import { useBackDismiss } from "../../../hooks/useBackDismiss";
-import { useBreakpoint } from "../../../hooks/useBreakpoint";
+import { useBackDismiss } from "@/hooks/useBackDismiss";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
 import { SheetGrip, SheetCloseButton } from "./sheetChrome";
 
 type Props = {

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { getCountryFlag } from "../../../utils/countryFlags";
+import { getCountryFlag } from "@/utils/countryFlags";
 
 export type RouteOrderStop = {
   name: string;

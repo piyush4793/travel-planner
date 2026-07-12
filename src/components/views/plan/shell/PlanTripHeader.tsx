@@ -1,10 +1,10 @@
 import { memo, type ReactNode } from "react";
-import type { Country } from "../../../core/types";
-import type { BudgetBasis } from "../../../core/utils/budget";
-import { getCountryFlag } from "../../../utils/countryFlags";
-import { useBreakpoint } from "../../../hooks/useBreakpoint";
-import Tooltip from "../../shared/Tooltip";
-import BasisMenu from "./BasisMenu";
+import type { Country } from "@/core/types";
+import type { BudgetBasis } from "@/core/utils/budget";
+import { getCountryFlag } from "@/utils/countryFlags";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+import Tooltip from "@/components/shared/Tooltip";
+import BasisMenu from "../controls/BasisMenu";
 
 /** One step as the header's stepper needs it — resolved labels, no coupling to
  *  the wizard's internal step keys. */

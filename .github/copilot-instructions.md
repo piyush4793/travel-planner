@@ -93,26 +93,26 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | AI chat/settings modals | `src/components/ai/ChatModal.tsx`, `src/components/ai/SettingsModal.tsx` |
 | Guided planning wizard (view) | `src/components/views/plan/PlanView.tsx` |
 | Guided planning funnel hook | `src/hooks/usePlanBuilder.ts` |
-| Plan wizard subcomponents | `src/components/views/plan/{DestinationPicker,DayLengthControl,PlanCityJumpNav,PlanBasicsStep,PlanRouteSummary}.tsx` |
+| Plan wizard subcomponents | `src/components/views/plan/steps/{DestinationPicker,PlanBasicsStep,PlanRouteSummary}.tsx · controls/{DayLengthControl,PlanCityJumpNav}.tsx` |
 | Multi-country selection config + helpers | `src/core/utils/multiCountry.ts` (`MAX_TRIP_UNITS`, `toggleTripSelection`) |
 | Destination scope seam (int'l today, domestic next) | `src/core/trip/{destinationSource,internationalSource,getDestinationSource}.ts` (`experiencesFor`, `dayBounds`, `comboRecommendations`, `loadUnit`) |
 | Multi-country vibe union loader | `src/hooks/useTripExperiences.ts` |
 | Multi-unit rule loader + funnel | `src/hooks/{useTripRules,useTripPlanner}.ts`; compose engine `composeTripPlan` in `src/core/utils/tripPlans.ts` |
 | Shared per-stop derivation engine (single = N=1) | `src/core/utils/stopPlan.ts` (`deriveStop`, `projectStopCities`, `orderCitiesByExperience`) — both `usePlanBuilder` + `useTripPlanner` delegate to it |
-| Multi-country Places step (Design D decision surface) | `src/components/views/plan/PlanPlacesStep.tsx` |
-| Per-country Filters (experiences) popover/sheet | `src/components/views/plan/PlanFilters.tsx` |
-| Route Canvas reference-rail atoms | `src/components/views/plan/{RailSection,PlanNotesSection}.tsx` (`RailSection` has a `variant`: `card` for the desktop rail, `flat` — no border/shadow — inside the "Insights" bottom-sheet so it matches the Adjust/Filters sheets; `TripContextRail` picks the variant by breakpoint. The old two-rail "Your trip" workspace — `PlanWorkspace`/`ShapeRail`/`ContextRail`/`PlanBudgetPanel`/`PlanPreviewPane` — was retired when single+multi unified onto the Route Canvas) |
-| Plan workspace shell (shared single+multi layout) | `src/components/views/plan/PlanWorkspaceShell.tsx` |
-| Multi-country Review "Route Canvas" | `src/components/views/plan/{TripReviewWorkspace,TripReviewCanvas,TripContextRail,BorderHop,RouteLeversBar,RouteOrderEditor,SegmentAdjustDrawer}.tsx` |
-| Order-aware composed route model (shared by header Share + Route Canvas) | `src/components/views/plan/useReviewRoute.ts` |
-| Header Share chip (Plan wizard) | `src/components/views/plan/PlanShareButton.tsx` |
-| Shared bottom-sheet/drawer chrome atoms (grip band + SVG close) | `src/components/views/plan/sheetChrome.tsx` |
-| Trip-level levers (route order DnD + inline jump-to-city) | `src/components/views/plan/{RouteLeversBar,RouteOrderEditor}.tsx` (via shared `PlanPopover`; drag/keyboard reorder → pure `moveIndex` in `core/utils/routeOrder.ts`; the compact `PlanCityJumpNav embedded` sits inline on the same row) |
-| Shared portal popover (anchored desktop / bottom-sheet mobile) | `src/components/views/plan/PlanPopover.tsx` |
-| Cross-route city jump nav (grouped, portaled) | `src/components/views/plan/PlanCityJumpNav.tsx` |
+| Multi-country Places step (Design D decision surface) | `src/components/views/plan/steps/PlanPlacesStep.tsx` |
+| Per-country Filters (experiences) popover/sheet | `src/components/views/plan/controls/PlanFilters.tsx` |
+| Route Canvas reference-rail atoms | `src/components/views/plan/review/{RailSection,PlanNotesSection}.tsx` (`RailSection` has a `variant`: `card` for the desktop rail, `flat` — no border/shadow — inside the "Insights" bottom-sheet so it matches the Adjust/Filters sheets; `TripContextRail` picks the variant by breakpoint. The old two-rail "Your trip" workspace — `PlanWorkspace`/`ShapeRail`/`ContextRail`/`PlanBudgetPanel`/`PlanPreviewPane` — was retired when single+multi unified onto the Route Canvas) |
+| Plan workspace shell (shared single+multi layout) | `src/components/views/plan/shell/PlanWorkspaceShell.tsx` |
+| Multi-country Review "Route Canvas" | `src/components/views/plan/review/{TripReviewWorkspace,TripReviewCanvas,TripContextRail,BorderHop,RouteLeversBar,RouteOrderEditor,SegmentAdjustDrawer}.tsx` |
+| Order-aware composed route model (shared by header Share + Route Canvas) | `src/components/views/plan/review/useReviewRoute.ts` |
+| Header Share chip (Plan wizard) | `src/components/views/plan/save/PlanShareButton.tsx` |
+| Shared bottom-sheet/drawer chrome atoms (grip band + SVG close) | `src/components/views/plan/ui/sheetChrome.tsx` |
+| Trip-level levers (route order DnD + inline jump-to-city) | `src/components/views/plan/review/{RouteLeversBar,RouteOrderEditor}.tsx` (via shared `PlanPopover`; drag/keyboard reorder → pure `moveIndex` in `core/utils/routeOrder.ts`; the compact `PlanCityJumpNav embedded` sits inline on the same row) |
+| Shared portal popover (anchored desktop / bottom-sheet mobile) | `src/components/views/plan/ui/PlanPopover.tsx` |
+| Cross-route city jump nav (grouped, portaled) | `src/components/views/plan/controls/PlanCityJumpNav.tsx` |
 | Route order/anchor + honest readiness (pure) | `src/core/utils/{routeOrder,tripReadiness}.ts` |
-| Shared itinerary atoms (composed toolbar) | `src/components/views/plan/ItineraryToolbar.tsx` |
-| Unified Plan-journey header (identity + stats + basis + stepper) | `src/components/views/plan/{PlanTripHeader,BasisMenu,PlanCountrySwitcher}.tsx` |
+| Shared itinerary atoms (composed toolbar) | `src/components/views/plan/ui/ItineraryToolbar.tsx` |
+| Unified Plan-journey header (identity + stats + basis + stepper) | `src/components/views/plan/shell/{PlanTripHeader,PlanCountrySwitcher}.tsx · controls/{BasisMenu}.tsx` |
 | Creator's wishlist (starter pack) | `src/core/data/creatorWishlist.ts` |
 | Popular destinations (Plan picker) | `src/core/data/popularDestinations.ts` |
 | Trip planner engine | `src/utils/tripPlans.ts` |
@@ -202,9 +202,20 @@ src/components/
   map/      — HoverCard and map internals
   shared/   — PillGroup (accent="blue"|"emerald"), FilterChip, Filters, Tooltip, HomeCountrySelector, DevFlagPanel, ExperienceDropdown, AppInstallShare, FreTour, ConfirmDialog (useConfirm)
   views/    — CalendarView, DiscoverView, MyTripsView (saved-trip gallery + SavedTripCard)
-  views/plan/ — Guided wizard: PlanView + PlanTripHeader (shared identity + stats + basis + stepper; save control slotted via `saveSlot`, Share via `shareSlot`) + PlanShareButton (header Share chip, order-aware via useReviewRoute) + TripSaveBar (Review-only refined ★ favourite icon → `useSavedTrips.toggleFavoriteByName`) + PlanReviewReveal (one-time first-Review celebration) + PlanSavedToast (transient save confirmation) + DestinationPicker (landing board ordered favorites → remaining → visited, each popularity desc), DayLengthControl, PlanCityJumpNav, PlanBasicsStep, PlanRouteSummary; shared shaping levers (FocusChips, CityPicker) + shared itinerary atoms (ItineraryToolbar) + shared portal popover (PlanPopover) + shared sheet chrome atoms (sheetChrome: SheetGrip + SheetCloseButton); the unified "Your trip" Review renders through PlanWorkspaceShell + the Route Canvas (TripReviewWorkspace [presentational, consumes useReviewRoute], TripReviewCanvas, TripContextRail with RailSection/PlanNotesSection, BorderHop, RouteLeversBar, RouteOrderEditor drag/keyboard reorder, SegmentAdjustDrawer per-stop Shape·Details drawer) for BOTH single- and multi-country trips (single = N=1) — all luxury emerald/ivory
+  views/plan/ — Guided wizard, grouped into cohesive subfolders (PlanView stays at the folder root as the entry orchestrator):
+    PlanView.tsx           — entry orchestrator (owns auto-save + engagement + useReviewRoute)
+    shell/    — PlanWorkspaceShell (shared single+multi layout), PlanTripHeader (shared identity + stats + basis + stepper; save/Share slotted via `saveSlot`/`shareSlot`), PlanCountrySwitcher, planActions.ts, planDraft.ts
+    steps/    — PlanBasicsStep, PlanPlacesStep, DestinationPicker (landing board), PlanRouteSummary
+    review/   — Route Canvas: TripReviewWorkspace (presentational, consumes useReviewRoute), TripReviewCanvas, TripContextRail (RailSection/PlanNotesSection), BorderHop, RouteLeversBar, RouteOrderEditor (drag/keyboard reorder), SegmentAdjustDrawer (per-stop Shape·Details drawer), useReviewRoute.ts (order-aware composed route model)
+    save/     — TripSaveBar (Review-only ★ favourite → `useSavedTrips.toggleFavoriteByName`), PlanReviewReveal (one-time first-Review celebration), PlanSavedToast (transient save confirmation), PlanShareButton (header Share chip, order-aware)
+    controls/ — CityPicker, ExperiencePicker, FocusChips, DayLengthControl, BasisMenu, PlanFilters, PlanCityJumpNav, CityDetailModal
+    ui/       — PlanPopover (shared portal popover), PlanMenu, sheetChrome (SheetGrip + SheetCloseButton), ItineraryToolbar (shared itinerary atoms)
   views/discover/ — DiscoverView subcomponents (CreatorWishlistDialog starter-pack preview)
 ```
+
+**Module boundaries & imports.** A `@/*` path alias maps to `src/*` (declared in `tsconfig.json` `paths` + `vite.config.ts` `resolve.alias`; vitest inherits the Vite alias). Convention: imports **within** a cohesive module (e.g. across `views/plan/*`) stay **relative** (`./`, `../`); imports **reaching outside** the module use the **`@/` alias** so moving a file never churns `../../../` chains. Test files import source exclusively via `@/…`, so a test can live anywhere without breaking its imports.
+
+**Test layout mirrors source.** `src/test/` mirrors the source tree (e.g. `src/test/components/views/plan/review/TripReviewCanvas.test.tsx` covers `src/components/views/plan/review/TripReviewCanvas.tsx`); shared helpers stay at the root (`src/test/testUtils.ts`, `src/test/setup.ts`, `src/test/support/`). Vitest discovers `*.test.*` anywhere and coverage globs key on **source** paths, so relocating a test never affects the coverage gate.
 
 ### Hooks (state management)
 
@@ -477,7 +488,7 @@ System in `src/core/featureFlags.ts`. Stored in `tp_features` localStorage key.
 
 ## Routing
 
-Hash-based, no library. `AppView` + `VALID_VIEWS` live in `src/hooks/useHashView.ts`. Current top-level routes are `plan`, `trips`, `calendar`, and `discover`. `useHashView(fallback)` takes the landing view for an empty/invalid hash; `App.tsx` passes `"plan"` so **Plan is the default landing**. The brand/Home button routes to that same landing. The navigation `pushState` runs in a **`useLayoutEffect`** (not passive) so it commits before any passive cleanup elsewhere — a view that owns a persistent `useBackDismiss` guard (e.g. `PlanView`) rewinds its history sentinel via `history.back()` in a passive unmount cleanup, and React runs all passive destroys before passive creates; a passive push would land after that rewind and get clobbered (nav bounced back). Regression: `src/test/navBackDismiss.test.tsx`.
+Hash-based, no library. `AppView` + `VALID_VIEWS` live in `src/hooks/useHashView.ts`. Current top-level routes are `plan`, `trips`, `calendar`, and `discover`. `useHashView(fallback)` takes the landing view for an empty/invalid hash; `App.tsx` passes `"plan"` so **Plan is the default landing**. The brand/Home button routes to that same landing. The navigation `pushState` runs in a **`useLayoutEffect`** (not passive) so it commits before any passive cleanup elsewhere — a view that owns a persistent `useBackDismiss` guard (e.g. `PlanView`) rewinds its history sentinel via `history.back()` in a passive unmount cleanup, and React runs all passive destroys before passive creates; a passive push would land after that rewind and get clobbered (nav bounced back). Regression: `src/test/hooks/navBackDismiss.test.tsx`.
 
 **Adding a new view:**
 1. Add to `AppView` type in `useHashView.ts`
@@ -503,6 +514,8 @@ Hash-based, no library. `AppView` + `VALID_VIEWS` live in `src/hooks/useHashView
 - Install npm packages unless absolutely necessary
 - Add a routing library — hash routing is intentional
 - Hardcode localStorage key strings — use `LS_KEYS`
+- Deep-import across modules with long `../../../` chains — use the `@/` alias for out-of-module imports (keep intra-module imports relative)
+- Add a new `views/plan/` file at the folder root — place it in the matching subfolder (`shell`/`steps`/`review`/`save`/`controls`/`ui`); mirror its test under `src/test/components/views/plan/<subfolder>/`
 - Split `CountryPanel` into a separate file without a concrete maintenance reason
 - Add comments explaining WHAT code does — only comment non-obvious WHY
 - Touch `settings.local.json` — user's local permission overrides

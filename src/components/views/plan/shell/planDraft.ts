@@ -1,5 +1,5 @@
-import { loadLS, saveLS } from "../../../core/storage";
-import { LS_KEYS } from "../../../core/lsKeys";
+import { loadLS, saveLS } from "@/core/storage";
+import { LS_KEYS } from "@/core/lsKeys";
 
 /**
  * A resumable snapshot of the guided planner so a page refresh drops the user

@@ -1,8 +1,8 @@
 import { memo } from "react";
-import type { Country } from "../../../core/types";
-import type { DestinationSource } from "../../../core/trip/destinationSource";
-import { getCountryFlag } from "../../../utils/countryFlags";
-import Tooltip from "../../shared/Tooltip";
+import type { Country } from "@/core/types";
+import type { DestinationSource } from "@/core/trip/destinationSource";
+import { getCountryFlag } from "@/utils/countryFlags";
+import Tooltip from "@/components/shared/Tooltip";
 
 type Props = {
   /** Ordered trip selection (visit order). */

@@ -1,6 +1,6 @@
-import type { CityDecision } from "../../../core/utils/decideCities";
-import { useBreakpoint } from "../../../hooks/useBreakpoint";
-import ModalShell from "../../shared/ModalShell";
+import type { CityDecision } from "@/core/utils/decideCities";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+import ModalShell from "@/components/shared/ModalShell";
 
 type Props = {
   decision: CityDecision;

@@ -1,9 +1,9 @@
 import { memo } from "react";
-import type { Country } from "../../../core/types";
-import type { TripPlan } from "../../../core/utils/tripPlans";
-import type { PdfRouteStop } from "../../../utils/pdfModel";
-import { isEnabled } from "../../../core/featureFlags";
-import { exportItineraryAsPdf } from "../../../utils/pdfExport";
+import type { Country } from "@/core/types";
+import type { TripPlan } from "@/core/utils/tripPlans";
+import type { PdfRouteStop } from "@/utils/pdfModel";
+import { isEnabled } from "@/core/featureFlags";
+import { exportItineraryAsPdf } from "@/utils/pdfExport";
 
 type Props = {
   /** Destination the share/PDF name after (the primary stop for a composed trip). */

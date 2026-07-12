@@ -1,7 +1,7 @@
-import type { Country } from "../../../core/types";
-import type { TripPlan } from "../../../core/utils/tripPlans";
-import type { PdfRouteStop } from "../../../utils/pdfModel";
-import { useItineraryShare } from "../../../hooks/useItineraryShare";
+import type { Country } from "@/core/types";
+import type { TripPlan } from "@/core/utils/tripPlans";
+import type { PdfRouteStop } from "@/utils/pdfModel";
+import { useItineraryShare } from "@/hooks/useItineraryShare";
 
 type Props = {
   /** Destination the share names after (the primary stop for a composed route). */

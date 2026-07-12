@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { useConfirm } from "../../shared/ConfirmDialog";
-import { getRangePercent } from "../../country/panel/utils";
+import { useConfirm } from "@/components/shared/ConfirmDialog";
+import { getRangePercent } from "@/components/country/panel/utils";
 
 type Props = {
   /** Committed day count driving the live plan. */

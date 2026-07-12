@@ -1,6 +1,6 @@
 import { memo, type ReactNode } from "react";
-import { useBreakpoint } from "../../../hooks/useBreakpoint";
-import PlanPopover from "./PlanPopover";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+import PlanPopover from "../ui/PlanPopover";
 import RouteOrderEditor from "./RouteOrderEditor";
 
 /** One route stop the levers can reorder and re-anchor. */

@@ -1,5 +1,5 @@
-import { BUDGET_BASIS_META, BUDGET_BASIS_ORDER, type BudgetBasis } from "../../../core/utils/budget";
-import PlanMenu from "./PlanMenu";
+import { BUDGET_BASIS_META, BUDGET_BASIS_ORDER, type BudgetBasis } from "@/core/utils/budget";
+import PlanMenu from "../ui/PlanMenu";
 
 const CARET = (
   <svg viewBox="0 0 24 24" aria-hidden="true" className="h-3.5 w-3.5 shrink-0 opacity-70">

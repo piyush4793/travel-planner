@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
-import type { Country } from "../../../core/types";
-import { byPopularity } from "../../../core/data/popularDestinations";
-import type { DestinationSource } from "../../../core/trip/destinationSource";
-import { getCountryFlag } from "../../../utils/countryFlags";
-import { MAX_TRIP_UNITS, toggleTripSelection } from "../../../core/utils/multiCountry";
+import type { Country } from "@/core/types";
+import { byPopularity } from "@/core/data/popularDestinations";
+import type { DestinationSource } from "@/core/trip/destinationSource";
+import { getCountryFlag } from "@/utils/countryFlags";
+import { MAX_TRIP_UNITS, toggleTripSelection } from "@/core/utils/multiCountry";
 
 type Props = {
   /** Scope data source — provides combo suggestions, unit nouns and resolution. */

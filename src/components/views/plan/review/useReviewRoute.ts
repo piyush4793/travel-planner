@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import type { Country } from "../../../core/types";
-import { type BudgetBasis } from "../../../core/utils/budget";
-import { composeTripPlan, type TripPlan } from "../../../core/utils/tripPlans";
-import { moveIndex, orderByProximity } from "../../../core/utils/routeOrder";
+import type { Country } from "@/core/types";
+import { type BudgetBasis } from "@/core/utils/budget";
+import { composeTripPlan, type TripPlan } from "@/core/utils/tripPlans";
+import { moveIndex, orderByProximity } from "@/core/utils/routeOrder";
 import {
   buildCinematicRoute,
   resolveHomeOrigin,
   type CinematicRoute,
   type CinematicSegment,
-} from "../../country/cinematic/engine";
-import type { PlanBuilder } from "../../../hooks/usePlanBuilder";
-import type { UnitPlan } from "../../../hooks/useTripPlanner";
-import type { PdfRouteStop } from "../../../utils/pdfModel";
+} from "@/components/country/cinematic/engine";
+import type { PlanBuilder } from "@/hooks/usePlanBuilder";
+import type { UnitPlan } from "@/hooks/useTripPlanner";
+import type { PdfRouteStop } from "@/utils/pdfModel";
 import type { ReviewSegment } from "./TripReviewCanvas";
 import type { TripCostRow } from "./TripContextRail";
 

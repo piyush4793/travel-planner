@@ -1,4 +1,4 @@
-import ModalShell from "../../shared/ModalShell";
+import ModalShell from "@/components/shared/ModalShell";
 
 type Props = {
   open: boolean;

@@ -1,16 +1,16 @@
 import { memo, useEffect, useMemo, useState } from "react";
-import type { CityEntry } from "../../../core/types";
-import type { CountryRule } from "../../../core/data/itineraryRules";
+import type { CityEntry } from "@/core/types";
+import type { CountryRule } from "@/core/data/itineraryRules";
 import {
   decideCities,
   sortDecisions,
   CITY_SORT_META,
   type CityDecision,
   type CitySort,
-} from "../../../core/utils/decideCities";
-import PlanMenu from "./PlanMenu";
-import PlanFilters from "./PlanFilters";
-import CityDetailModal from "./CityDetailModal";
+} from "@/core/utils/decideCities";
+import PlanMenu from "../ui/PlanMenu";
+import PlanFilters from "../controls/PlanFilters";
+import CityDetailModal from "../controls/CityDetailModal";
 
 /**
  * One stop's city-picking state, normalised so the step is agnostic to whether

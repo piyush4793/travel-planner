@@ -1,9 +1,9 @@
 import { memo, useEffect, useState, type ReactNode } from "react";
-import { useBreakpoint } from "../../../hooks/useBreakpoint";
-import ModalShell from "../../shared/ModalShell";
-import { SheetGrip, SheetCloseButton } from "./sheetChrome";
-import { loadLS, saveLS } from "../../../core/storage";
-import { LS_KEYS } from "../../../core/lsKeys";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+import ModalShell from "@/components/shared/ModalShell";
+import { SheetGrip, SheetCloseButton } from "../ui/sheetChrome";
+import { loadLS, saveLS } from "@/core/storage";
+import { LS_KEYS } from "@/core/lsKeys";
 
 /** A collapsible reference rail: a stable key, a heading, and its content. */
 export type RailDef = {

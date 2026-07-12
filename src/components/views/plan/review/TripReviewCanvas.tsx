@@ -1,17 +1,17 @@
 import { memo, useEffect, useMemo, useState, type ReactNode } from "react";
-import type { Country } from "../../../core/types";
-import type { CityEntry } from "../../../core/types";
-import type { CountryRule } from "../../../core/data/itineraryRules";
-import type { TripPlan } from "../../../core/utils/tripPlans";
-import { extractPlanCities, shiftPlanDays, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
-import { getCountryFlag } from "../../../utils/countryFlags";
-import ItineraryView, { groupDays } from "../../country/itinerary/ItineraryView";
-import PlanCityJumpNav, { type JumpSection } from "./PlanCityJumpNav";
+import type { Country } from "@/core/types";
+import type { CityEntry } from "@/core/types";
+import type { CountryRule } from "@/core/data/itineraryRules";
+import type { TripPlan } from "@/core/utils/tripPlans";
+import { extractPlanCities, shiftPlanDays, planCostBasisIcon, planCostBasisLabel } from "@/core/utils/tripPlans";
+import { getCountryFlag } from "@/utils/countryFlags";
+import ItineraryView, { groupDays } from "@/components/country/itinerary/ItineraryView";
+import PlanCityJumpNav, { type JumpSection } from "../controls/PlanCityJumpNav";
 import RouteLeversBar, { type LeverStop } from "./RouteLeversBar";
 import SegmentAdjustDrawer from "./SegmentAdjustDrawer";
 import BorderHop from "./BorderHop";
-import { useBreakpoint } from "../../../hooks/useBreakpoint";
-import type { GeoPoint } from "../../../core/utils/routeOrder";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+import type { GeoPoint } from "@/core/utils/routeOrder";
 
 /**
  * One stop on a composed multi-country route, normalised so the Route Canvas is

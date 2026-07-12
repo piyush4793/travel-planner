@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useBreakpoint } from "../../../hooks/useBreakpoint";
-import { getCountryFlag } from "../../../utils/countryFlags";
-import { extractPlanCities } from "../../../core/utils/tripPlans";
-import ModalShell from "../../shared/ModalShell";
-import { SheetCloseButton } from "./sheetChrome";
-import DayLengthControl from "./DayLengthControl";
-import FocusChips from "./FocusChips";
-import CityPicker from "./CityPicker";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+import { getCountryFlag } from "@/utils/countryFlags";
+import { extractPlanCities } from "@/core/utils/tripPlans";
+import ModalShell from "@/components/shared/ModalShell";
+import { SheetCloseButton } from "../ui/sheetChrome";
+import DayLengthControl from "../controls/DayLengthControl";
+import FocusChips from "../controls/FocusChips";
+import CityPicker from "../controls/CityPicker";
 import type { ReviewSegment } from "./TripReviewCanvas";
 
 type Tab = "shape" | "details";

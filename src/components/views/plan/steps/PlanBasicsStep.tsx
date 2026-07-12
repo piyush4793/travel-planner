@@ -1,9 +1,9 @@
-import type { Country } from "../../../core/types";
-import type { DestinationSource } from "../../../core/trip/destinationSource";
-import { BUDGET_BASIS_ORDER, BUDGET_BASIS_META, type BudgetBasis } from "../../../core/utils/budget";
-import PillGroup from "../../shared/PillGroup";
+import type { Country } from "@/core/types";
+import type { DestinationSource } from "@/core/trip/destinationSource";
+import { BUDGET_BASIS_ORDER, BUDGET_BASIS_META, type BudgetBasis } from "@/core/utils/budget";
+import PillGroup from "@/components/shared/PillGroup";
 import PlanRouteSummary from "./PlanRouteSummary";
-import ExperiencePicker, { DEFAULT_VIBE_CAP } from "./ExperiencePicker";
+import ExperiencePicker, { DEFAULT_VIBE_CAP } from "../controls/ExperiencePicker";
 
 type Props = {
   /** Ordered trip selection — one unit is single-destination, many is a route. */
