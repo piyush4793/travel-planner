@@ -75,6 +75,52 @@ export function findSavedTripForCountries(trips: SavedTrip[], countries: string[
   return trips.find((t) => [...t.stops.map((s) => s.country)].sort().join("\u0000") === setKey) ?? null;
 }
 
+/** Runtime guard for a single persisted stop (storage may be corrupt/tampered). */
+function isSavedTripStop(v: unknown): v is SavedTripStop {
+  if (!v || typeof v !== "object") return false;
+  const o = v as Record<string, unknown>;
+  return (
+    typeof o.country === "string" &&
+    typeof o.days === "number" &&
+    Number.isFinite(o.days) &&
+    Array.isArray(o.cities) &&
+    o.cities.every((c) => typeof c === "string") &&
+    (o.experiences === undefined || (Array.isArray(o.experiences) && o.experiences.every((e) => typeof e === "string")))
+  );
+}
+
+const VALID_BASES = new Set(["solo", "couple", "family4"]);
+
+/** Runtime guard for a persisted {@link SavedTrip}. */
+export function isSavedTrip(v: unknown): v is SavedTrip {
+  if (!v || typeof v !== "object") return false;
+  const o = v as Record<string, unknown>;
+  return (
+    typeof o.id === "string" &&
+    typeof o.name === "string" &&
+    Array.isArray(o.stops) &&
+    o.stops.length > 0 &&
+    o.stops.every(isSavedTripStop) &&
+    typeof o.basis === "string" &&
+    VALID_BASES.has(o.basis) &&
+    typeof o.totalDays === "number" &&
+    Number.isFinite(o.totalDays) &&
+    typeof o.costPerPerson === "string" &&
+    typeof o.savedAt === "string" &&
+    (o.favorite === undefined || typeof o.favorite === "boolean")
+  );
+}
+
+/**
+ * Sanitize a raw persisted value into a clean `SavedTrip[]`. Drops individual
+ * malformed entries rather than discarding the whole list, so one corrupt record
+ * can't wipe every saved trip. Returns `[]` when the blob isn't even an array.
+ */
+export function sanitizeSavedTrips(raw: unknown): SavedTrip[] {
+  if (!Array.isArray(raw)) return [];
+  return raw.filter(isSavedTrip);
+}
+
 /** Per-stop input for a snapshot — the stop's tuned length + its own plan (if
  * the destination has itinerary data; a stop without a loaded plan still counts
  * toward the route identity so the saved trip name stays honest). The stored day

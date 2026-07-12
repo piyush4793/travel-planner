@@ -301,6 +301,9 @@ function analyzeGaps(
 // TODO: Replace with a first-party CORS proxy (Cloudflare Worker / Vercel Edge Function).
 const CORS_PROXY = "https://api.codetabs.com/v1/proxy/?quest=";
 
+/** Upper bound for the shared-link proxy fetch so a hung request can't stall the UI. */
+const CHAT_LINK_TIMEOUT_MS = 20_000;
+
 /** Clean ChatGPT HTML artifacts: unescape JSON, remove entity/image/cite markers */
 function cleanChatGPTText(html: string): string {
   return html
@@ -344,7 +347,14 @@ export async function fetchChatLink(url: string): Promise<{ text: string } | { e
   }
 
   try {
-    const res = await fetch(`${CORS_PROXY}${trimmed}`);
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(new DOMException("Request timed out", "TimeoutError")), CHAT_LINK_TIMEOUT_MS);
+    let res: Response;
+    try {
+      res = await fetch(`${CORS_PROXY}${trimmed}`, { signal: controller.signal });
+    } finally {
+      clearTimeout(timer);
+    }
     if (!res.ok) return { error: `Failed to fetch link (${res.status}). Try pasting the conversation text manually instead.` };
 
     const html = await res.text();

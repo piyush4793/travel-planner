@@ -33,6 +33,18 @@ describe("storage — P0", () => {
     saveLS("key", "second");
     expect(loadLS("key", "")).toBe("second");
   });
+
+  it("returns fallback when the validator rejects the parsed value", () => {
+    saveLS("validated_key", { shape: "wrong" });
+    const isNumberArray = (v: unknown): v is number[] => Array.isArray(v) && v.every((x) => typeof x === "number");
+    expect(loadLS<number[]>("validated_key", [], isNumberArray)).toEqual([]);
+  });
+
+  it("returns the parsed value when the validator accepts it", () => {
+    saveLS("validated_ok", [1, 2, 3]);
+    const isNumberArray = (v: unknown): v is number[] => Array.isArray(v) && v.every((x) => typeof x === "number");
+    expect(loadLS<number[]>("validated_ok", [], isNumberArray)).toEqual([1, 2, 3]);
+  });
 });
 
 describe("storage — adapter injection & quota handling", () => {

@@ -85,7 +85,16 @@ function isValidPlan(p: unknown): p is LLMTripPlan {
 function isValidCityInfo(c: unknown): c is LLMCityInfo {
   if (!c || typeof c !== "object") return false;
   const o = c as Record<string, unknown>;
-  return typeof o.name === "string" && typeof o.lat === "number" && typeof o.lng === "number";
+  return (
+    typeof o.name === "string" &&
+    typeof o.lat === "number" && Number.isFinite(o.lat) &&
+    typeof o.lng === "number" && Number.isFinite(o.lng)
+  );
+}
+
+/** Coerce a value to a positive integer, or undefined when it can't be trusted. */
+function positiveInt(v: unknown): number | undefined {
+  return typeof v === "number" && Number.isFinite(v) && v > 0 ? Math.round(v) : undefined;
 }
 
 function parseMeta(obj: Record<string, unknown>): LLMDestinationMeta {
@@ -146,8 +155,8 @@ export function extractTripPlanResult(raw: string): { result: LLMTripPlanResult 
     result: {
       destinationName: obj.destinationName,
       originCountry: typeof obj.originCountry === "string" ? obj.originCountry : "Unknown",
-      travelers: typeof obj.travelers === "number" ? obj.travelers : 2,
-      durationDays: typeof obj.durationDays === "number" ? obj.durationDays : obj.plan.days.length,
+      travelers: positiveInt(obj.travelers) ?? 2,
+      durationDays: positiveInt(obj.durationDays) ?? obj.plan.days.length,
       budgetLevel: ["budget", "mid-range", "luxury"].includes(obj.budgetLevel as string)
         ? (obj.budgetLevel as LLMTripPlanResult["budgetLevel"])
         : "mid-range",

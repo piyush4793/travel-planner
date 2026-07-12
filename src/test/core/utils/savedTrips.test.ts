@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildTripSnapshot, tripSignature, toOpenRequest, findSavedTripForCountries, type SnapshotStop, type SavedTrip, type SavedTripStop } from "@/core/utils/savedTrips.ts";
+import { buildTripSnapshot, tripSignature, toOpenRequest, findSavedTripForCountries, isSavedTrip, sanitizeSavedTrips, type SnapshotStop, type SavedTrip, type SavedTripStop } from "@/core/utils/savedTrips.ts";
 import type { TripPlan } from "@/core/utils/tripPlans.ts";
 
 function plan(cities: string[], cost = "₹1L–₹2L"): TripPlan {
@@ -164,5 +164,33 @@ describe("findSavedTripForCountries", () => {
 
   it("returns null when no saved trip covers the set", () => {
     expect(findSavedTripForCountries([norwayDenmark, japan], ["France", "Italy"])).toBeNull();
+  });
+});
+
+describe("isSavedTrip / sanitizeSavedTrips", () => {
+  const valid = savedTrip([{ country: "Norway", days: 3, cities: ["Oslo"] }]);
+
+  it("accepts a well-formed saved trip", () => {
+    expect(isSavedTrip(valid)).toBe(true);
+  });
+
+  it("rejects malformed records", () => {
+    expect(isSavedTrip(null)).toBe(false);
+    expect(isSavedTrip({ ...valid, id: 42 })).toBe(false);
+    expect(isSavedTrip({ ...valid, stops: [] })).toBe(false);
+    expect(isSavedTrip({ ...valid, basis: "party" })).toBe(false);
+    expect(isSavedTrip({ ...valid, stops: [{ country: "X", days: "3", cities: [] }] })).toBe(false);
+    expect(isSavedTrip({ ...valid, totalDays: Number.NaN })).toBe(false);
+  });
+
+  it("drops only the corrupt entries, keeping valid ones", () => {
+    const raw = [valid, { id: "bad" }, { ...valid, id: "n2", name: "Japan", stops: [{ country: "Japan", days: 5, cities: ["Tokyo"] }] }];
+    const clean = sanitizeSavedTrips(raw);
+    expect(clean.map((t) => t.id)).toEqual([valid.id, "n2"]);
+  });
+
+  it("returns [] when the blob is not an array", () => {
+    expect(sanitizeSavedTrips({ not: "an array" })).toEqual([]);
+    expect(sanitizeSavedTrips(null)).toEqual([]);
   });
 });

@@ -1,7 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { loadLS, saveLS } from "../core/storage";
 import { LS_KEYS } from "../core/lsKeys";
-import type { SavedTrip } from "../core/utils/savedTrips";
+import { sanitizeSavedTrips, type SavedTrip } from "../core/utils/savedTrips";
+
+/** Load + validate the persisted trips, dropping any corrupt entries. */
+function loadSavedTrips(): SavedTrip[] {
+  return sanitizeSavedTrips(loadLS<unknown>(LS_KEYS.SAVED_TRIPS, []));
+}
 
 function newId(): string {
   try {
@@ -21,7 +26,7 @@ function newId(): string {
  * duplicating. The list stays newest-first.
  */
 export function useSavedTrips() {
-  const [savedTrips, setSavedTrips] = useState<SavedTrip[]>(() => loadLS(LS_KEYS.SAVED_TRIPS, []));
+  const [savedTrips, setSavedTrips] = useState<SavedTrip[]>(loadSavedTrips);
 
   useEffect(() => { saveLS(LS_KEYS.SAVED_TRIPS, savedTrips); }, [savedTrips]);
 
@@ -51,7 +56,7 @@ export function useSavedTrips() {
     setSavedTrips((prev) => prev.map((t) => (t.name === name ? { ...t, favorite: !t.favorite } : t)));
   }, []);
 
-  const reload = useCallback(() => setSavedTrips(loadLS(LS_KEYS.SAVED_TRIPS, [])), []);
+  const reload = useCallback(() => setSavedTrips(loadSavedTrips()), []);
 
   return { savedTrips, upsert, remove, toggleFavorite, toggleFavoriteByName, reload } as const;
 }

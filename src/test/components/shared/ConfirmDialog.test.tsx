@@ -105,21 +105,16 @@ describe("ConfirmDialog", () => {
     await waitFor(() => expect(result).toBe(false));
   });
 
-  it("resolves false on backdrop click", async () => {
-    let result: boolean | null = null;
-    render(<TestHarness onResult={(v) => (result = v)} />);
+  it("restores focus to the opener after dismissal", async () => {
+    render(<TestHarness onResult={() => {}} />);
+    const trigger = screen.getByText("trigger-default");
+    trigger.focus();
+    fireEvent.click(trigger);
 
-    fireEvent.click(screen.getByText("trigger-default"));
+    await waitFor(() => expect(screen.getByText("Delete this?")).toBeTruthy());
 
-    await waitFor(() => {
-      expect(screen.getByText("Delete this?")).toBeTruthy();
-    });
-
-    // Click the backdrop (the fixed overlay parent of the dialog)
-    const dialog = screen.getByRole("alertdialog");
-    const backdrop = dialog.parentElement!;
-    fireEvent.click(backdrop);
-    await waitFor(() => expect(result).toBe(false));
+    fireEvent.click(screen.getByText("Cancel"));
+    await waitFor(() => expect(document.activeElement).toBe(trigger));
   });
 });
 

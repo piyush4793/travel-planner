@@ -142,5 +142,48 @@ describe("llmProvider — P1", () => {
         usage: { inputTokens: 10, outputTokens: 5, totalTokens: 15 },
       });
     });
+
+    it("passes the caller's AbortSignal through to fetch", async () => {
+      vi.mocked(globalThis.fetch).mockResolvedValueOnce(mockResponse({
+        ok: true,
+        json: { choices: [{ message: { content: "ok" } }] },
+      }));
+      const controller = new AbortController();
+      const provider = createProvider("openai", "key");
+      await provider.chat([{ role: "user", content: "hi" }], { signal: controller.signal });
+
+      const init = vi.mocked(globalThis.fetch).mock.calls[0][1] as RequestInit;
+      expect(init.signal).toBeInstanceOf(AbortSignal);
+    });
+
+    it("rejects with a timeout error when the request exceeds timeoutMs", async () => {
+      // fetch that rejects only when its signal aborts (mimics a hung request).
+      vi.mocked(globalThis.fetch).mockImplementationOnce((_url, init?: RequestInit) =>
+        new Promise((_resolve, reject) => {
+          init?.signal?.addEventListener("abort", () =>
+            reject((init.signal as AbortSignal).reason ?? new DOMException("Aborted", "AbortError")),
+          );
+        }) as Promise<Response>,
+      );
+      const provider = createProvider("openai", "key");
+      await expect(
+        provider.chat([{ role: "user", content: "hi" }], { timeoutMs: 10 }),
+      ).rejects.toThrow(/timed out/i);
+    });
+
+    it("aborts the in-flight fetch when the caller signal aborts", async () => {
+      const controller = new AbortController();
+      vi.mocked(globalThis.fetch).mockImplementationOnce((_url, init?: RequestInit) =>
+        new Promise((_resolve, reject) => {
+          init?.signal?.addEventListener("abort", () =>
+            reject((init.signal as AbortSignal).reason ?? new DOMException("Aborted", "AbortError")),
+          );
+        }) as Promise<Response>,
+      );
+      const provider = createProvider("openai", "key");
+      const p = provider.chat([{ role: "user", content: "hi" }], { signal: controller.signal });
+      controller.abort();
+      await expect(p).rejects.toBeInstanceOf(DOMException);
+    });
   });
 });

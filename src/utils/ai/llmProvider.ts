@@ -4,11 +4,45 @@ type LLMConfig = {
   model?: string;
   temperature?: number;
   maxTokens?: number;
+  /** Caller cancellation (e.g. unmount / superseded send). */
+  signal?: AbortSignal;
+  /** Overall request budget; defaults to {@link DEFAULT_TIMEOUT_MS}. */
+  timeoutMs?: number;
 };
 
 export interface LLMProvider {
   name: LLMProviderType;
   chat(messages: ChatMessage[], config?: LLMConfig): Promise<LLMChatResult>;
+}
+
+/** Upper bound for a single LLM round-trip; webview networks can stall silently. */
+const DEFAULT_TIMEOUT_MS = 90_000;
+
+/**
+ * Merge an optional caller {@link AbortSignal} with an internal timeout so every
+ * request is both bounded and cancellable. Returns the combined signal plus a
+ * `done()` that MUST run in a `finally` to release the timer + listener. A
+ * timeout aborts with a `TimeoutError` (surfaced as a user-facing message),
+ * while a caller cancel propagates its own reason (an `AbortError`), letting
+ * consumers tell an intentional cancel from a genuine failure.
+ */
+function withTimeout(config?: LLMConfig): { signal: AbortSignal; done: () => void } {
+  const controller = new AbortController();
+  const external = config?.signal;
+  const relay = () => controller.abort(external?.reason);
+  if (external) {
+    if (external.aborted) controller.abort(external.reason);
+    else external.addEventListener("abort", relay, { once: true });
+  }
+  const timer = setTimeout(
+    () => controller.abort(new DOMException("Request timed out. Check your connection and try again.", "TimeoutError")),
+    config?.timeoutMs ?? DEFAULT_TIMEOUT_MS,
+  );
+  const done = () => {
+    clearTimeout(timer);
+    external?.removeEventListener("abort", relay);
+  };
+  return { signal: controller.signal, done };
 }
 
 /* ── OpenAI ──────────────────────────────────────────────────────────────────── */
@@ -25,6 +59,8 @@ class OpenAIProvider implements LLMProvider {
   }
 
   async chat(messages: ChatMessage[], config?: LLMConfig): Promise<LLMChatResult> {
+    const { signal, done } = withTimeout(config);
+    try {
     const res = await fetch(OPENAI_URL, {
       method: "POST",
       headers: {
@@ -37,6 +73,7 @@ class OpenAIProvider implements LLMProvider {
         temperature: config?.temperature ?? 0.7,
         max_tokens: config?.maxTokens ?? 16384,
       }),
+      signal,
     });
 
     if (!res.ok) {
@@ -58,6 +95,9 @@ class OpenAIProvider implements LLMProvider {
 
     const usage = parseUsage(json.usage?.prompt_tokens, json.usage?.completion_tokens);
     return { content, usage };
+    } finally {
+      done();
+    }
   }
 }
 
@@ -88,6 +128,8 @@ class ClaudeProvider implements LLMProvider {
       }
     }
 
+    const { signal, done } = withTimeout(config);
+    try {
     const res = await fetch(CLAUDE_URL, {
       method: "POST",
       headers: {
@@ -103,6 +145,7 @@ class ClaudeProvider implements LLMProvider {
         temperature: config?.temperature ?? 0.7,
         max_tokens: config?.maxTokens ?? 16384,
       }),
+      signal,
     });
 
     if (!res.ok) {
@@ -125,6 +168,9 @@ class ClaudeProvider implements LLMProvider {
 
     const usage = parseUsage(json.usage?.input_tokens, json.usage?.output_tokens);
     return { content: textBlock.text, usage };
+    } finally {
+      done();
+    }
   }
 }
 
@@ -175,10 +221,13 @@ class GeminiProvider implements LLMProvider {
       body.systemInstruction = { parts: [{ text: systemParts.join("\n\n") }] };
     }
 
+    const { signal, done } = withTimeout(config);
+    try {
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
+      signal,
     });
 
     if (!res.ok) {
@@ -198,6 +247,9 @@ class GeminiProvider implements LLMProvider {
     const meta = json.usageMetadata;
     const usage = parseUsage(meta?.promptTokenCount, meta?.candidatesTokenCount);
     return { content: text, usage };
+    } finally {
+      done();
+    }
   }
 }
 

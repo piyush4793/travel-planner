@@ -11,8 +11,14 @@ type Props = {
   className?: string;
   backdropClassName?: string;
   children: React.ReactNode;
-  /** aria-label for the dialog */
+  /** aria-label for the dialog (ignored when {@link labelledBy} is set). */
   label?: string;
+  /** ARIA role — use "alertdialog" for confirm/destructive prompts. */
+  role?: "dialog" | "alertdialog";
+  /** id of the element labelling the dialog (takes precedence over {@link label}). */
+  labelledBy?: string;
+  /** id of the element describing the dialog. */
+  describedBy?: string;
 };
 
 /**
@@ -27,6 +33,9 @@ export default function ModalShell({
   backdropClassName = "",
   children,
   label,
+  role = "dialog",
+  labelledBy,
+  describedBy,
 }: Props) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<Element | null>(null);
@@ -109,9 +118,11 @@ export default function ModalShell({
     >
       <div
         ref={dialogRef}
-        role="dialog"
+        role={role}
         aria-modal="true"
-        aria-label={label}
+        aria-label={labelledBy ? undefined : label}
+        aria-labelledby={labelledBy}
+        aria-describedby={describedBy}
         className={className}
         onClick={(e) => e.stopPropagation()}
       >

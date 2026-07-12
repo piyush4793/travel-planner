@@ -122,7 +122,7 @@ export function useChatSession(homeCountry: string) {
       abortRef.current = controller;
       const provider = createProvider(resolved.provider, resolved.key);
       const condensed = condenseMessages(fullHistory.current, briefRef.current);
-      const { content, usage } = await provider.chat(condensed, { maxTokens: 16384 });
+      const { content, usage } = await provider.chat(condensed, { maxTokens: 16384, signal: controller.signal });
 
       if (controller.signal.aborted) return;
       const assistantMsg: ChatMessage = { role: "assistant", content };
@@ -159,7 +159,7 @@ export function useChatSession(homeCountry: string) {
       abortRef.current = controller;
       const provider = createProvider(resolved.provider, resolved.key);
       const condensed = condenseMessages(fullHistory.current, briefRef.current);
-      const { content, usage } = await provider.chat(condensed, { maxTokens: 16384, temperature: 0.3 });
+      const { content, usage } = await provider.chat(condensed, { maxTokens: 16384, temperature: 0.3, signal: controller.signal });
 
       if (controller.signal.aborted) return;
       const { result, error } = extractTripPlanResult(content);

@@ -14,10 +14,22 @@ export function getStorageAdapter(): StoragePort {
   return _storage;
 }
 
-export function loadLS<T>(key: string, fallback: T): T {
+/**
+ * Read + JSON-parse a persisted value, falling back on any failure.
+ *
+ * @param validate optional type guard; when it rejects the parsed value (e.g.
+ *   corrupted or tampered storage, or a shape from an older schema), the
+ *   `fallback` is returned instead of letting malformed data poison runtime
+ *   state. Callers persisting non-trivial shapes (arrays/objects/enums) should
+ *   pass one.
+ */
+export function loadLS<T>(key: string, fallback: T, validate?: (v: unknown) => v is T): T {
   try {
     const raw = _storage.getItem(key);
-    return raw ? (JSON.parse(raw) as T) : fallback;
+    if (!raw) return fallback;
+    const parsed = JSON.parse(raw) as unknown;
+    if (validate && !validate(parsed)) return fallback;
+    return parsed as T;
   } catch {
     return fallback;
   }
