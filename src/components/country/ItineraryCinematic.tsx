@@ -2,6 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import type { RefObject } from "react";
 import { createPortal } from "react-dom";
 import maplibregl from "maplibre-gl";
+import CinematicOverview from "./cinematic/CinematicOverview";
+import CinematicControls from "./cinematic/CinematicControls";
+import CinematicDayPanel from "./cinematic/CinematicDayPanel";
+import CinematicIntro from "./cinematic/CinematicIntro";
+import CinematicDone from "./cinematic/CinematicDone";
 import { planCostBasisIcon } from "../../core/utils/tripPlans";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { getWikiImage } from "../../utils/wikiImages";
@@ -67,39 +72,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
     && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (prefersReducedMotion) {
-    const cityStopsStatic = route.stops;
-    return createPortal(
-      <div className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-        <div className="w-full max-w-lg bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden">
-          <div className="p-5 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
-            <h2 className="text-base font-bold text-slate-800 dark:text-white">🎬 {title} — Itinerary Overview</h2>
-            <button onClick={onClose} className="text-slate-400 hover:text-slate-600 dark:hover:text-white text-xl leading-none focus-ring rounded p-1" aria-label="Close">✕</button>
-          </div>
-          <div className="p-5 space-y-4 max-h-[70vh] overflow-y-auto">
-            <p className="text-xs text-slate-500 dark:text-slate-400">Animated fly-through disabled (reduced-motion preference). Here's your route:</p>
-            {cityStopsStatic.map((stop, i) => (
-              <div key={stop.name} className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-xs font-bold text-blue-700 dark:text-blue-300">{i + 1}</div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-semibold text-slate-800 dark:text-white">{stop.name}</div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400">{stop.days.length} day{stop.days.length > 1 ? "s" : ""}</div>
-                  {stop.transportToNext && (
-                    <div className="text-[10px] text-slate-400 mt-1">→ {stop.transportToNext.label}</div>
-                  )}
-                </div>
-              </div>
-            ))}
-            {cityStopsStatic.length === 0 && (
-              <p className="text-xs text-slate-400 text-center py-4">No city route data available for this plan.</p>
-            )}
-          </div>
-          <div className="p-4 border-t border-slate-200 dark:border-slate-700 flex justify-end">
-            <button onClick={onClose} className="px-5 py-2 text-xs font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus-ring">Close</button>
-          </div>
-        </div>
-      </div>,
-      document.body
-    );
+    return <CinematicOverview title={title} stops={route.stops} onClose={onClose} />;
   }
 
   const pausedRef = useRef(false);
@@ -1055,173 +1028,47 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
         <div className="flex-1 overflow-y-auto px-5 py-4">
 
           {phase === "intro" && (
-            <div className="h-full flex flex-col items-center justify-center gap-4 text-center pb-8">
-              <span className="text-6xl" style={{ animation: "pulse 2s ease-in-out infinite" }}>🌍</span>
-              <div>
-                {origin && (
-                  <>
-                    <p className="text-base font-bold text-white">{homeCity}</p>
-                    <p className="text-[11px] text-gray-600 -mt-0.5">{homeLabel}</p>
-                    <p className="text-gray-500 text-sm mt-2">✈</p>
-                  </>
-                )}
-                <p className="text-base font-bold text-white mt-2">{title}</p>
-              </div>
-              <p className="text-[11px] text-gray-400">{plan.duration} · {plan.costPerPerson} {planCostBasisIcon(plan)}</p>
-              {comboCountries && comboCountries.length > 0 && (
-                <div className="mt-1">
-                  <p className="text-[10px] text-gray-600 uppercase tracking-widest mb-1.5">Also pairs with</p>
-                  <div className="flex flex-wrap justify-center gap-1.5">
-                    {comboCountries.map((c) => (
-                      <span key={c.name} className="text-[10px] font-semibold text-purple-400 bg-purple-950/60 border border-purple-800/50 px-2 py-0.5 rounded-full">
-                        {c.name}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-              <div className="flex items-center gap-2 mt-1">
-                <div className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <div
-                      key={i}
-                      className="w-1.5 h-1.5 rounded-full bg-blue-400"
-                      style={{
-                        animation: "pulse 1.2s ease-in-out infinite",
-                        animationDelay: `${i * 0.2}s`,
-                      }}
-                    />
-                  ))}
-                </div>
-                <p className="text-xs text-gray-500">{statusMsg}</p>
-              </div>
-              {!mapAvailable && (
-                <p className="text-xs text-amber-400 mt-2">⚠ Switch to Map view to start the cinematic journey</p>
-              )}
-            </div>
+            <CinematicIntro
+              showOrigin={!!origin}
+              homeCity={homeCity}
+              homeLabel={homeLabel}
+              title={title}
+              plan={plan}
+              comboCountries={comboCountries}
+              statusMsg={statusMsg}
+              mapAvailable={mapAvailable}
+            />
           )}
 
           {phase === "city" && activeStop && activeDay && (
-            <div key={`${activeCityIdx}-${activeDayIdx}`} className="itinerary-card">
-
-              {/* City + stop info */}
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-[9px] font-bold text-blue-400 uppercase tracking-widest">
-                  Stop {activeCityIdx + 1} of {cityStops.length}
-                </span>
-                {activeStop.days.length > 1 && (
-                  <span className="text-[9px] text-gray-600">
-                    · Day {activeDayIdx + 1}/{activeStop.days.length}
-                  </span>
-                )}
-              </div>
-
-              <h3 className="text-2xl font-black leading-tight">{activeStop.name}</h3>
-              <div className="flex items-center gap-2 flex-wrap mt-1 mb-4">
-                <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">
-                  {activeDay.label.split("—")[0].trim()}
-                </p>
-                {activeDay.theme && (
-                  <span className="text-[9px] font-semibold text-blue-300 bg-blue-950 px-2 py-0.5 rounded-full">
-                    {activeDay.theme}
-                  </span>
-                )}
-              </div>
-
-              {/* Next transport hint */}
-              {activeStop.transportToNext && (
-                <p className="text-[10px] text-gray-600 mb-3">
-                  {TRANSPORT_EMOJI[activeStop.transportToNext.type]} Next: {activeStop.transportToNext.label}
-                </p>
-              )}
-
-              {/* Activities */}
-              <ul className="space-y-3">
-                {activeDay.activities.slice(0, visibleActs).map((a, ai) => {
-                  const [main, ...rest] = a.split(" (");
-                  const detail = rest.join(" (");
-                  return (
-                    <li key={ai} className="itinerary-day flex gap-2 leading-snug" style={{ animationDelay: "0ms" }}>
-                      <span className="text-blue-400 shrink-0 mt-0.5 text-sm">›</span>
-                      <span className="text-xs text-gray-300">
-                        {main}
-                        {detail && <span className="text-gray-500 ml-1">({detail}</span>}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-
-              {/* Hotels */}
-              {visibleActs >= activeDay.activities.length && activeDay.hotels && activeDay.hotels.length > 0 && (
-                <div className="flex flex-wrap gap-1.5 mt-4 pt-3 border-t border-white/10 itinerary-day" style={{ animationDelay: "0ms" }}>
-                  {activeDay.hotels.map((h) => (
-                    <span key={h} className="text-[10px] text-gray-400 bg-white/5 border border-white/10 px-2 py-0.5 rounded-full">
-                      🏨 {h}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
+            <CinematicDayPanel
+              stop={activeStop}
+              day={activeDay}
+              stopIndex={activeCityIdx}
+              stopCount={cityStops.length}
+              dayIndex={activeDayIdx}
+              visibleActs={visibleActs}
+            />
           )}
 
           {phase === "done" && (
-            <div className="h-full flex flex-col items-center justify-center gap-3 text-center pb-8">
-              <span className="text-5xl mb-2">🎉</span>
-              <h3 className="text-lg font-black">{origin ? `Back in ${homeCity}!` : "Trip complete!"}</h3>
-              <p className="text-xs text-gray-400">{plan.duration} · {plan.costPerPerson} {planCostBasisIcon(plan)}</p>
-              <div className="mt-3 text-[11px] text-gray-500 leading-relaxed text-left bg-white/5 rounded-xl px-4 py-3">
-                {plan.note}
-              </div>
-            </div>
+            <CinematicDone showOrigin={!!origin} homeCity={homeCity} plan={plan} />
           )}
         </div>
 
         {/* Footer */}
         <div className={`${isMobile ? "px-4 py-3" : "px-5 py-4"} border-t border-white/10 flex items-center justify-between shrink-0`}>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={prevStep}
-              disabled={activeCityIdx <= 0}
-              className={`${ctrlBtnSize} flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors focus-ring disabled:opacity-30 disabled:cursor-not-allowed`}
-              title="Back to previous stop"
-              aria-label="Back to previous stop"
-            >
-              ⏮
-            </button>
-            <button
-              onClick={() => setPaused((p) => !p)}
-              className={`${ctrlBtnSize} flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors focus-ring`}
-              title={paused ? "Resume" : "Pause"}
-              aria-label={paused ? "Resume" : "Pause"}
-            >
-              {paused ? "▶" : "⏸"}
-            </button>
-            <button
-              onClick={skipStep}
-              className={`${ctrlBtnSize} flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors focus-ring`}
-              title="Skip to next stop"
-              aria-label="Skip to next stop"
-            >
-              ⏭
-            </button>
-            <button
-              onClick={cycleSpeed}
-              className={`${ctrlBtnSize} flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-xs font-bold transition-colors tabular-nums focus-ring`}
-              title="Playback speed"
-              aria-label={`Playback speed ${speed}×`}
-            >
-              {speed}×
-            </button>
-          </div>
-          <button
-            onClick={onClose}
-            className={`${ctrlBtnSize} flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors text-gray-400 hover:text-white focus-ring`}
-            title="Close"
-            aria-label="Close"
-          >
-            ✕
-          </button>
+          <CinematicControls
+            ctrlBtnSize={ctrlBtnSize}
+            canGoPrev={activeCityIdx > 0}
+            paused={paused}
+            speed={speed}
+            onPrev={prevStep}
+            onTogglePause={() => setPaused((p) => !p)}
+            onSkip={skipStep}
+            onCycleSpeed={cycleSpeed}
+            onClose={onClose}
+          />
         </div>
       </div>
     </div>,
