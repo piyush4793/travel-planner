@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Rajasthan",
+    "lat": 27.0238,
+    "lng": 74.2179,
+    "region": "North India",
+    "inSeed": true,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 12,
+    "popularityScore": 95,
+    "bestMonths": ["October", "November", "December", "January", "February", "March"],
+    "worstMonths": ["April", "May", "June"],
+    "combo": ["Delhi", "Gujarat", "Uttar Pradesh", "Punjab", "Madhya Pradesh"]
+  },
+  {
+    "name": "Kerala",
+    "lat": 10.8505,
+    "lng": 76.2711,
+    "region": "South India",
+    "inSeed": true,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 9,
+    "popularityScore": 90,
+    "bestMonths": ["October", "November", "December", "January", "February", "March"],
+    "worstMonths": ["June", "July", "August", "September"],
+    "combo": ["Tamil Nadu", "Karnataka"]
+  },
+  {
+    "name": "Goa",
+    "lat": 15.2993,
+    "lng": 74.124,
+    "region": "West India",
+    "inSeed": true,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 5,
+    "maxDays": 8,
+    "popularityScore": 92,
+    "bestMonths": ["November", "December", "January", "February", "March"],
+    "worstMonths": ["June", "July", "August", "September"],
+    "combo": ["Maharashtra", "Karnataka"]
+  },
+  {
+    "name": "Himachal Pradesh",
+    "lat": 31.1048,
+    "lng": 77.1734,
+    "region": "North India",
+    "inSeed": true,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 11,
+    "popularityScore": 88,
+    "bestMonths": ["March", "April", "May", "June", "September", "October", "November"],
+    "worstMonths": ["July", "August"],
+    "combo": ["Punjab", "Uttarakhand", "Chandigarh", "Jammu and Kashmir"]
+  }
+]

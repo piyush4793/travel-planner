@@ -1,0 +1,218 @@
+{
+  "name": "Kerala",
+  "seed": false,
+  "lat": 10.8505,
+  "lng": 76.2711,
+  "region": "South India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": ["October", "November", "December", "January", "February", "March"],
+  "worstMonths": ["June", "July", "August", "September"],
+  "budget": {
+    "solo": "₹25K–₹45K",
+    "couple": "₹45K–₹85K",
+    "family4": "₹90K–₹1.6L"
+  },
+  "experiences": [
+    "Lakes",
+    "Wildlife & Safari",
+    "Mountains",
+    "Beaches",
+    "Food",
+    "Temples & Religious Sites",
+    "Cruises & Boat Trips",
+    "History"
+  ],
+  "avoid": ["June", "July", "August"],
+  "combo": ["Tamil Nadu", "Karnataka"],
+  "landmark": "Alleppey backwater houseboats",
+  "travelStyle": ["immersive"],
+  "stopoverNote": "Kerala's hill and backwater legs are scenic but slow — the Kochi→Munnar→Thekkady→Alleppey loop drives are 3–5 hours each, so plan a travel morning between stops.",
+  "diet": {
+    "vegetarian": "Kerala is deeply vegetarian-friendly. The banana-leaf sadya feast, appam, puttu & kadala curry, idiyappam, avial and dosa/idli are staples; coconut does the heavy lifting rather than dairy.",
+    "vegan": "Ask for 'sadya without ghee or curd'. Puttu-kadala, appam with veg stew (no ghee), and coconut-milk payasam are naturally vegan; confirm banana/jackfruit chips are fried in coconut oil, not ghee.",
+    "phrases": [
+      "Ghee illa / ney illa = no ghee",
+      "Paal illa = no milk",
+      "Thairu illa = no curd"
+    ]
+  },
+  "links": [
+    { "label": "Kerala Tourism (official)", "url": "https://www.keralatourism.org/" }
+  ],
+  "cities": [
+    {
+      "name": "Kochi",
+      "lat": 9.9312,
+      "lng": 76.2673,
+      "notes": "Historic port city — Fort Kochi's Chinese fishing nets, colonial churches, Mattancherry Palace and a lively arts scene.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["June", "July", "August"],
+      "experiences": ["History", "Food", "Temples & Religious Sites"]
+    },
+    {
+      "name": "Munnar",
+      "lat": 10.0889,
+      "lng": 77.0595,
+      "notes": "Rolling tea-carpeted hills, Eravikulam National Park's Nilgiri tahr, waterfalls and cool mountain air.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March", "April"],
+      "worstMonths": ["June", "July", "August"],
+      "experiences": ["Mountains", "Wildlife & Safari", "Waterfalls"]
+    },
+    {
+      "name": "Thekkady",
+      "lat": 9.5916,
+      "lng": 77.1663,
+      "notes": "Gateway to Periyar Tiger Reserve — lake boat safaris, spice plantations and bamboo rafting.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["June", "July", "August"],
+      "experiences": ["Wildlife & Safari", "National Parks", "Cruises & Boat Trips"]
+    },
+    {
+      "name": "Alleppey",
+      "lat": 9.4981,
+      "lng": 76.3388,
+      "notes": "The 'Venice of the East' — palm-fringed backwater canals best explored on an overnight houseboat.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["June", "July", "August"],
+      "experiences": ["Lakes", "Cruises & Boat Trips", "Beaches"]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel both have strong coverage across Kerala's towns; it thins out inside Periyar reserve and remote tea estates. Buy a prepaid SIM at Kochi airport with photo ID.",
+    "apps": ["Google Maps", "Kerala Tourism", "IRCTC Rail Connect", "Uber", "Zomato"],
+    "cityOrder": ["Kochi", "Munnar", "Thekkady", "Alleppey"],
+    "cities": {
+      "Kochi": {
+        "name": "Kochi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A day covers Fort Kochi and Mattancherry on foot; the sights are close and walkable.",
+        "experiences": ["History", "Food", "Temples & Religious Sites"],
+        "signatureExperiences": ["History"],
+        "days": [
+          {
+            "theme": "Fort Kochi heritage walk",
+            "pace": "relaxed",
+            "note": "Fort Kochi and Mattancherry are a compact, walkable quarter — hire a cycle or stroll rather than a car.",
+            "activities": [
+              { "name": "Chinese fishing nets at sunset", "duration": "~45m", "priority": "must-see", "cost": "Free (₹50–₹100 tip to operate one)" },
+              { "name": "Mattancherry (Dutch) Palace murals", "duration": "~45m", "priority": "recommended", "cost": "₹20 (Indian) / ₹50 (foreign)", "tip": "Closed Fridays." },
+              { "name": "St. Francis Church & Santa Cruz Basilica", "duration": "~40m", "priority": "recommended", "cost": "Free" },
+              { "name": "Jew Town & Paradesi Synagogue, antique lanes", "duration": "~1h", "priority": "optional", "cost": "₹10 synagogue" },
+              { "name": "Kathakali performance (evening)", "duration": "~1.5h", "priority": "optional", "cost": "₹300–₹500" }
+            ],
+            "hotels": [
+              { "name": "Fort Kochi homestays", "budget": "₹1,500–₹3,000/night" },
+              { "name": "Brunton Boatyard (heritage)", "budget": "₹9,000–₹15,000/night" }
+            ],
+            "meals": ["Kashi Art Café (veg-friendly)", "Dal Roti", "Sadya at a local mess"]
+          }
+        ]
+      },
+      "Munnar": {
+        "name": "Munnar",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Two days lets you do the national park early and the tea-country viewpoints without rushing the winding roads.",
+        "experiences": ["Mountains", "Wildlife & Safari", "Waterfalls"],
+        "signatureExperiences": ["Mountains"],
+        "days": [
+          {
+            "theme": "Eravikulam park & tea country",
+            "pace": "moderate",
+            "note": "Do Eravikulam first thing — entry is by timed shuttle and slots sell out; the park closes Feb–Mar for tahr breeding.",
+            "activities": [
+              { "name": "Eravikulam National Park (Nilgiri tahr)", "duration": "~2.5h", "priority": "must-see", "cost": "₹200 (Indian) / ₹400+ (foreign), incl. shuttle" },
+              { "name": "Tea Museum (KDHP) & tasting", "duration": "~1h", "priority": "recommended", "cost": "₹125 (adult)" },
+              { "name": "Photo Point & tea-estate viewpoints", "duration": "~45m", "priority": "optional" }
+            ],
+            "hotels": [
+              { "name": "Munnar budget hill-view stays", "budget": "₹1,800–₹3,500/night" },
+              { "name": "Tea estate bungalow", "budget": "₹7,000–₹14,000/night" }
+            ],
+            "meals": ["SN Restaurant (veg)", "Saravana Bhavan", "Estate-view café"]
+          },
+          {
+            "theme": "Waterfalls, dams & echo points",
+            "pace": "relaxed",
+            "activities": [
+              { "name": "Mattupetty Dam & Echo Point", "duration": "~1.5h", "priority": "recommended", "cost": "Free; boating extra" },
+              { "name": "Kundala Lake & Top Station viewpoint", "duration": "~2h", "priority": "recommended", "cost": "Free" },
+              { "name": "Attukal & Cheeyappara waterfalls", "duration": "~1h", "priority": "optional" }
+            ],
+            "hotels": [
+              { "name": "Munnar budget hill-view stays", "budget": "₹1,800–₹3,500/night" }
+            ],
+            "meals": ["Rapsy Restaurant", "Local Kerala meals (sadya)"]
+          }
+        ]
+      },
+      "Thekkady": {
+        "name": "Thekkady",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day covers the Periyar lake safari and a spice plantation; add a night for a jungle activity.",
+        "experiences": ["Wildlife & Safari", "National Parks", "Cruises & Boat Trips"],
+        "signatureExperiences": ["Wildlife & Safari"],
+        "days": [
+          {
+            "theme": "Periyar lake safari & spice trail",
+            "pace": "moderate",
+            "note": "Book the first morning boat slot for the best wildlife odds — tickets are limited and go online early.",
+            "activities": [
+              { "name": "Periyar Lake boat safari", "duration": "~1.5h", "priority": "must-see", "cost": "₹250–₹500 pp", "tip": "Morning slots have far better animal sightings." },
+              { "name": "Spice plantation guided tour", "duration": "~1.5h", "priority": "recommended", "cost": "₹300–₹500" },
+              { "name": "Bamboo rafting / border hiking (KFDC)", "duration": "half day", "priority": "optional", "cost": "₹1,500–₹2,000" }
+            ],
+            "hotels": [
+              { "name": "Kumily budget homestays", "budget": "₹1,500–₹3,000/night" },
+              { "name": "Spice Village (CGH)", "budget": "₹10,000–₹18,000/night" }
+            ],
+            "meals": ["Ebony's Café", "Grandma's Restaurant", "Spice-garden lunch"]
+          }
+        ]
+      },
+      "Alleppey": {
+        "name": "Alleppey",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "The highlight is a single overnight houseboat cruise — board around noon, cruise the canals, moor overnight.",
+        "experiences": ["Lakes", "Cruises & Boat Trips", "Beaches"],
+        "signatureExperiences": ["Cruises & Boat Trips"],
+        "days": [
+          {
+            "theme": "Overnight backwater houseboat",
+            "pace": "relaxed",
+            "note": "Boats check in ~noon and moor by evening (cruising is restricted at night) — it's a slow, do-nothing day by design.",
+            "activities": [
+              { "name": "Private houseboat backwater cruise", "duration": "overnight", "priority": "must-see", "cost": "From ₹8,500/night (2 adults, all meals); luxury ₹16,000–₹22,000" },
+              { "name": "Village canoe / canal walk stop", "duration": "~1h", "priority": "recommended" },
+              { "name": "Marari or Alleppey beach (if staying on land)", "duration": "~2h", "priority": "optional" }
+            ],
+            "hotels": [
+              { "name": "Deluxe 1-bedroom houseboat", "budget": "₹8,500–₹12,000/night (all meals)" },
+              { "name": "Premium AC houseboat", "budget": "₹16,000–₹22,000/night" }
+            ],
+            "meals": ["On-board Kerala meals (karimeen for non-veg; veg thali on request)", "Coconut water & tender fruit"]
+          }
+        ]
+      }
+    },
+    "connections": [
+      { "from": "Kochi", "to": "Munnar", "method": "Car/taxi via Neriamangalam ghat road", "cost": "₹2,800–₹3,800 taxi", "distanceKm": 130, "durationHrs": 4.5, "sameDayFeasible": true },
+      { "from": "Munnar", "to": "Thekkady", "method": "Car/taxi through the Western Ghats", "cost": "₹2,500–₹3,200 taxi", "distanceKm": 100, "durationHrs": 3.5, "sameDayFeasible": true },
+      { "from": "Thekkady", "to": "Alleppey", "method": "Car/taxi down to the coast", "cost": "₹3,000–₹4,000 taxi", "distanceKm": 138, "durationHrs": 4.5, "sameDayFeasible": true },
+      { "from": "Alleppey", "to": "Kochi", "method": "Car/taxi or train (NH-66)", "cost": "₹1,500–₹2,200 taxi", "distanceKm": 58, "durationHrs": 1.75, "sameDayFeasible": true }
+    ],
+    "extras": [
+      "Book Alleppey houseboats and Periyar boat safaris weeks ahead for the Dec–Jan and April holiday peaks.",
+      "Eravikulam National Park closes roughly February–March for the Nilgiri tahr breeding season — check before planning Munnar around it.",
+      "Quoted fees are for Indian nationals as of Jul 2026; foreign-national fees are higher where noted — reconfirm on-site.",
+      "Monsoon (Jun–Sep) turns the hills lush but brings landslides on ghat roads and rough seas — great for Ayurveda retreats, poor for tight sightseeing."
+    ]
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "name": "Himachal Pradesh",
+  "seed": false,
+  "lat": 31.1048,
+  "lng": 77.1734,
+  "region": "North India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": ["March", "April", "May", "June", "September", "October", "November"],
+  "worstMonths": ["July", "August"],
+  "budget": {
+    "solo": "₹22K–₹42K",
+    "couple": "₹42K–₹78K",
+    "family4": "₹80K–₹1.5L"
+  },
+  "experiences": [
+    "Mountains",
+    "Hiking",
+    "Adventure Sports",
+    "Temples & Religious Sites",
+    "Waterfalls",
+    "History",
+    "Road Trips",
+    "Skiing"
+  ],
+  "avoid": ["July", "August"],
+  "combo": ["Punjab", "Uttarakhand", "Chandigarh", "Jammu and Kashmir"],
+  "landmark": "Kalka–Shimla toy train",
+  "travelStyle": ["explorer"],
+  "stopoverNote": "Himachal's legs are long mountain drives — Shimla→Manali and Manali→Dharamshala are each 7–8 hours, so treat those as full travel days with no sightseeing tacked on.",
+  "diet": {
+    "vegetarian": "Himachal is very vegetarian-friendly — the festive 'dham' thali, siddu (steamed stuffed bread), madra and babru, plus Tibetan veg momos and thukpa in McLeodganj.",
+    "vegan": "Hill food leans on ghee and dairy — ask for 'bina ghee, bina makhan'. Tibetan veg momos, thukpa and rice-dal are easily made vegan; McLeodganj has several vegan cafés.",
+    "phrases": [
+      "Bina ghee, bina makhan = no ghee, no butter",
+      "Doodh/dahi nahi = no milk/curd",
+      "Sirf veg momo = only veg momos"
+    ]
+  },
+  "links": [
+    { "label": "Himachal Tourism (HPTDC)", "url": "https://himachaltourism.gov.in/" }
+  ],
+  "cities": [
+    {
+      "name": "Shimla",
+      "lat": 31.1048,
+      "lng": 77.1734,
+      "notes": "The colonial hill-station capital — the Ridge, Mall Road, Jakhoo temple and the UNESCO Kalka–Shimla toy train.",
+      "bestMonths": ["March", "April", "May", "June", "September", "October", "November", "December"],
+      "worstMonths": ["July", "August"],
+      "experiences": ["Mountains", "History", "Temples & Religious Sites"]
+    },
+    {
+      "name": "Manali",
+      "lat": 32.2432,
+      "lng": 77.1892,
+      "notes": "Adventure hub of the Kullu valley — Solang Valley sports, the Atal Tunnel to Sissu, Hadimba temple and old Manali cafés.",
+      "bestMonths": ["March", "April", "May", "June", "September", "October", "November", "December", "January"],
+      "worstMonths": ["July", "August"],
+      "experiences": ["Mountains", "Adventure Sports", "Skiing", "Temples & Religious Sites"]
+    },
+    {
+      "name": "Dharamshala",
+      "lat": 32.219,
+      "lng": 76.3234,
+      "notes": "Seat of the Dalai Lama — McLeodganj's Tibetan monasteries, Bhagsu waterfall, Triund trek and cricket's highest stadium.",
+      "bestMonths": ["March", "April", "May", "June", "September", "October", "November"],
+      "worstMonths": ["July", "August"],
+      "experiences": ["Mountains", "Temples & Religious Sites", "Hiking", "Waterfalls"]
+    }
+  ],
+  "itinerary": {
+    "sim": "Postpaid SIMs work best in Himachal — prepaid data can be patchy in the higher valleys, and coverage drops beyond the Atal Tunnel. Jio and Airtel are the safest bets.",
+    "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "HRTC / HimBus", "Weather (mountain)"],
+    "cityOrder": ["Shimla", "Manali", "Dharamshala"],
+    "cities": {
+      "Shimla": {
+        "name": "Shimla",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the Mall/Ridge and a Kufri excursion; the famous toy train arrival can be a day in itself.",
+        "experiences": ["Mountains", "History", "Temples & Religious Sites"],
+        "signatureExperiences": ["History"],
+        "days": [
+          {
+            "theme": "The Ridge, Mall Road & Jakhoo",
+            "pace": "relaxed",
+            "note": "Shimla's core is a pedestrian promenade — the Ridge, Mall and Jakhoo temple are all walkable (Jakhoo is a steep uphill or short ropeway).",
+            "activities": [
+              { "name": "The Ridge & Christ Church", "duration": "~1h", "priority": "must-see", "cost": "Free" },
+              { "name": "Jakhoo Temple (Hanuman) by ropeway", "duration": "~1.5h", "priority": "recommended", "cost": "Ropeway ₹500 round trip", "tip": "Guard your belongings from the monkeys." },
+              { "name": "Mall Road stroll & Scandal Point", "duration": "~1.5h", "priority": "recommended" },
+              { "name": "Viceregal Lodge (Rashtrapati Niwas)", "duration": "~1h", "priority": "optional", "cost": "₹100 (Indian)" }
+            ],
+            "hotels": [
+              { "name": "Shimla Mall-area budget hotels", "budget": "₹1,800–₹3,500/night" },
+              { "name": "Wildflower Hall / Clarkes (heritage)", "budget": "₹9,000–₹20,000/night" }
+            ],
+            "meals": ["Café Sol", "Ashiana & Goofa (HPTDC)", "Wake & Bake Café"]
+          },
+          {
+            "theme": "Kufri & the toy train experience",
+            "pace": "moderate",
+            "note": "Kufri is ~30min out for valley views; the Kalka–Shimla narrow-gauge ride is best done as a scenic segment, not the full 5–6h haul.",
+            "activities": [
+              { "name": "Kalka–Shimla toy train scenic ride (UNESCO)", "duration": "~2h segment", "priority": "must-see", "cost": "₹300–₹900 depending on class", "tip": "Book on IRCTC well ahead in peak season." },
+              { "name": "Kufri viewpoint & Himalayan Nature Park", "duration": "~2h", "priority": "recommended", "cost": "₹250 park" },
+              { "name": "Green Valley & Fagu viewpoints", "duration": "~1h", "priority": "optional" }
+            ],
+            "hotels": [
+              { "name": "Shimla Mall-area budget hotels", "budget": "₹1,800–₹3,500/night" }
+            ],
+            "meals": ["Himachali dham thali", "Local siddu stall"]
+          }
+        ]
+      },
+      "Manali": {
+        "name": "Manali",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days: one for local temples and old Manali, one for the Solang Valley and Atal Tunnel excursion.",
+        "experiences": ["Mountains", "Adventure Sports", "Skiing", "Temples & Religious Sites"],
+        "signatureExperiences": ["Adventure Sports"],
+        "days": [
+          {
+            "theme": "Hadimba, old Manali & Mall",
+            "pace": "relaxed",
+            "note": "A gentle arrival-and-acclimatise day — Hadimba temple, old Manali cafés and the riverside are all close together.",
+            "activities": [
+              { "name": "Hadimba Devi Temple in the cedar forest", "duration": "~1h", "priority": "must-see", "cost": "Free" },
+              { "name": "Old Manali cafés & Manu Temple", "duration": "~1.5h", "priority": "recommended" },
+              { "name": "Vashisht hot springs & Mall Road", "duration": "~1.5h", "priority": "optional", "cost": "Free" }
+            ],
+            "hotels": [
+              { "name": "Old Manali hostels & guesthouses", "budget": "₹900–₹2,000/night" },
+              { "name": "Riverside resort", "budget": "₹5,000–₹10,000/night" }
+            ],
+            "meals": ["Café 1947", "Drifters' Café", "Johnson's Café (veg + trout)"]
+          },
+          {
+            "theme": "Solang Valley & Atal Tunnel to Sissu",
+            "pace": "moderate",
+            "note": "Solang is ~13km/30min out for adventure sports; continue through the Atal Tunnel to Sissu for snow and Lahaul views — a full excursion day.",
+            "activities": [
+              { "name": "Solang Valley — paragliding, ropeway, zorbing", "duration": "~3h", "priority": "must-see", "cost": "Paragliding ₹1,500–₹3,500; ropeway ₹700" },
+              { "name": "Atal Tunnel drive to Sissu & waterfall", "duration": "~2h", "priority": "recommended", "cost": "Free (tunnel toll-free)", "tip": "Carry warm layers; snow lingers even in summer." },
+              { "name": "Anjani Mahadev / Solang short hikes", "duration": "~1.5h", "priority": "optional" }
+            ],
+            "hotels": [
+              { "name": "Old Manali hostels & guesthouses", "budget": "₹900–₹2,000/night" }
+            ],
+            "meals": ["Sissu roadside dhaba (Maggi + rajma-chawal)", "Solang snack stalls"]
+          }
+        ]
+      },
+      "Dharamshala": {
+        "name": "Dharamshala",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "One day for McLeodganj's monasteries and Bhagsu; add a second for the Triund trek if you have the legs.",
+        "experiences": ["Mountains", "Temples & Religious Sites", "Hiking", "Waterfalls"],
+        "signatureExperiences": ["Temples & Religious Sites"],
+        "days": [
+          {
+            "theme": "McLeodganj monasteries & Bhagsu",
+            "pace": "moderate",
+            "note": "McLeodganj is compact and walkable; Bhagsu waterfall and Dal Lake are short auto rides away.",
+            "activities": [
+              { "name": "Tsuglagkhang (Dalai Lama Temple) complex", "duration": "~1.5h", "priority": "must-see", "cost": "Free" },
+              { "name": "Bhagsu waterfall & Bhagsunag temple", "duration": "~2h", "priority": "recommended", "cost": "Free" },
+              { "name": "Namgyal Monastery & Tibetan market", "duration": "~1h", "priority": "recommended" },
+              { "name": "St. John in the Wilderness church", "duration": "~45m", "priority": "optional", "cost": "Free" }
+            ],
+            "hotels": [
+              { "name": "McLeodganj hostels & cafés-with-rooms", "budget": "₹800–₹1,800/night" },
+              { "name": "Norbulingka / boutique stays", "budget": "₹4,000–₹8,000/night" }
+            ],
+            "meals": ["Tibet Kitchen (momos, thukpa)", "Nick's Italian Kitchen (veg)", "Moonpeak Café"]
+          },
+          {
+            "theme": "Triund trek or Norbulingka & tea trails",
+            "pace": "packed",
+            "note": "Triund is a ~9km/4–5h ascent with big Dhauladhar views — start early; if you'd rather go easy, do Norbulingka and the Kangra tea gardens instead.",
+            "activities": [
+              { "name": "Triund day trek (Dhauladhar ridge)", "duration": "half day", "priority": "must-see", "cost": "Free (guide optional ₹1,000–₹1,500)" },
+              { "name": "Norbulingka Institute (Tibetan arts)", "duration": "~1.5h", "priority": "optional", "cost": "Free" },
+              { "name": "HPCA Cricket Stadium viewpoint", "duration": "~45m", "priority": "optional" }
+            ],
+            "hotels": [
+              { "name": "McLeodganj hostels & cafés-with-rooms", "budget": "₹800–₹1,800/night" }
+            ],
+            "meals": ["Triund top Maggi point", "Bhagsu café breakfast"]
+          }
+        ]
+      }
+    },
+    "connections": [
+      { "from": "Shimla", "to": "Manali", "method": "Car/taxi or HRTC bus via Mandi (NH-3/205)", "cost": "₹5,000–₹6,500 taxi", "distanceKm": 250, "durationHrs": 7.5, "sameDayFeasible": true },
+      { "from": "Manali", "to": "Dharamshala", "method": "Car/taxi or bus via Mandi & Kangra valley", "cost": "₹5,500–₹7,000 taxi", "distanceKm": 215, "durationHrs": 7.5, "sameDayFeasible": true },
+      { "from": "Dharamshala", "to": "Shimla", "method": "Car/taxi or overnight bus", "cost": "₹6,000–₹7,500 taxi", "distanceKm": 235, "durationHrs": 7.5, "sameDayFeasible": true }
+    ],
+    "extras": [
+      "Both inter-town legs are 7–8 hour mountain drives — book them as travel days and don't schedule sightseeing at the far end.",
+      "Avoid July–August: the monsoon triggers landslides and road closures across the Kullu and Kangra valleys.",
+      "Quoted fees are as of Jul 2026; adventure-sport prices (paragliding, ropeways) are seasonal and negotiable — confirm operator safety and rates first.",
+      "Rohtang Pass needs a permit and stays snow-closed part of the year; the toll-free Atal Tunnel gives easy year-round access to Sissu/Lahaul instead."
+    ]
+  }
+}

@@ -286,6 +286,32 @@ describe("DestinationPicker", () => {
       expect(screen.getByText(/Popular to explore/i)).toBeInTheDocument();
       expect(screen.queryByText(/Best in July/i)).not.toBeInTheDocument();
     });
+
+    it("flags each selected token good/off-season when a month is chosen after selecting", () => {
+      render(
+        <DestinationPicker
+          source={internationalSource}
+          countries={[]}
+          exploreCountries={seasonal}
+          onStart={vi.fn()}
+          multiSelect
+        />,
+      );
+      // Select both destinations first, THEN pick the month (the reported flow).
+      fireEvent.click(screen.getByRole("button", { name: /SummerLand/i }));
+      fireEvent.click(screen.getByRole("button", { name: /WinterLand/i }));
+      fireEvent.click(screen.getByRole("button", { name: /travel month/i }));
+      fireEvent.click(screen.getByRole("button", { name: /^July$/i }));
+
+      // Each token carries its own seasonality cue (scoped to the token, not the board).
+      const summerToken = screen.getByRole("button", { name: "Remove SummerLand" }).closest("span")!;
+      expect(within(summerToken).getByRole("img", { name: /great in July/i })).toBeInTheDocument();
+      const winterToken = screen.getByRole("button", { name: "Remove WinterLand" }).closest("span")!;
+      expect(within(winterToken).getByRole("img", { name: /avoid July/i })).toBeInTheDocument();
+      // The off-season token is tinted amber; the good one is not.
+      expect(winterToken.className).toMatch(/amber/);
+      expect(summerToken.className).not.toMatch(/amber/);
+    });
   });
 
   describe("region browse", () => {

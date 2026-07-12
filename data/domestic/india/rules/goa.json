@@ -1,0 +1,207 @@
+{
+  "name": "Goa",
+  "seed": false,
+  "lat": 15.2993,
+  "lng": 74.124,
+  "region": "West India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": ["November", "December", "January", "February", "March"],
+  "worstMonths": ["June", "July", "August", "September"],
+  "budget": {
+    "solo": "₹20K–₹40K",
+    "couple": "₹40K–₹75K",
+    "family4": "₹75K–₹1.4L"
+  },
+  "experiences": [
+    "Beaches",
+    "Nightlife",
+    "History",
+    "Temples & Religious Sites",
+    "Food",
+    "Water Sports",
+    "Waterfalls",
+    "UNESCO Sites"
+  ],
+  "avoid": ["June", "July", "August"],
+  "combo": ["Maharashtra", "Karnataka"],
+  "landmark": "Basilica of Bom Jesus, Old Goa",
+  "travelStyle": ["explorer"],
+  "stopoverNote": "Goa is small — North and South are ~1.5 hours apart — so base yourself in one zone at a time rather than shuffling hotels daily.",
+  "diet": {
+    "vegetarian": "Beyond the seafood reputation, Goa has hearty veg Goan dishes — veg xacuti, mushroom cafreal, sol kadhi, poi bread and Konkani thalis — plus a big café scene in the north.",
+    "vegan": "Goan gravies often use ghee or butter — ask for 'no butter, no ghee'. Sol kadhi (kokum + coconut milk) is naturally vegan. North Goa (Anjuna, Arambol, Assagao) has dedicated vegan cafés like Bean Me Up.",
+    "phrases": [
+      "No butter, no ghee",
+      "Coconut milk only, no dairy",
+      "Fakto bhaji jevan = only vegetable food (Konkani)"
+    ]
+  },
+  "links": [
+    { "label": "Goa Tourism (official)", "url": "https://www.goa-tourism.com/" }
+  ],
+  "cities": [
+    {
+      "name": "North Goa",
+      "lat": 15.543,
+      "lng": 73.7554,
+      "notes": "The lively side — Calangute, Baga, Anjuna and Vagator beaches, flea markets, clifftop forts and buzzing nightlife.",
+      "bestMonths": ["November", "December", "January", "February", "March"],
+      "worstMonths": ["June", "July", "August"],
+      "experiences": ["Beaches", "Nightlife", "Water Sports", "History"]
+    },
+    {
+      "name": "Panaji",
+      "lat": 15.4909,
+      "lng": 73.8278,
+      "notes": "The Latin-quarter capital — Fontainhas' Portuguese lanes and, next door, the UNESCO churches of Old Goa.",
+      "bestMonths": ["November", "December", "January", "February", "March"],
+      "worstMonths": ["June", "July", "August"],
+      "experiences": ["History", "UNESCO Sites", "Temples & Religious Sites", "Food"]
+    },
+    {
+      "name": "South Goa",
+      "lat": 15.01,
+      "lng": 74.0233,
+      "notes": "The calm side — crescent Palolem, quiet Agonda and Colva beaches, and the Dudhsagar Falls trip inland.",
+      "bestMonths": ["November", "December", "January", "February", "March"],
+      "worstMonths": ["June", "July", "August"],
+      "experiences": ["Beaches", "Waterfalls", "Water Sports"]
+    }
+  ],
+  "itinerary": {
+    "sim": "All Indian networks work across Goa; rent a scooter or self-drive car since public transport to beaches and forts is sparse. Buy a prepaid SIM at Dabolim/Mopa airport.",
+    "apps": ["Google Maps", "Goa Miles (taxi)", "Uber", "Zomato", "HappyCow"],
+    "cityOrder": ["North Goa", "Panaji", "South Goa"],
+    "cities": {
+      "North Goa": {
+        "name": "North Goa",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days balances beach time with the forts and flea markets; the beaches are strung along one coast road.",
+        "experiences": ["Beaches", "Nightlife", "Water Sports", "History"],
+        "signatureExperiences": ["Beaches"],
+        "days": [
+          {
+            "theme": "Beaches, shacks & nightlife",
+            "pace": "relaxed",
+            "note": "Beach-hop by scooter along the coast — Calangute to Baga is a short ride; save the evening for a shack and Tito's Lane.",
+            "activities": [
+              { "name": "Calangute & Baga beaches, water sports", "duration": "~3h", "priority": "must-see", "cost": "Free beach; jet-ski/parasail ₹500–₹1,500" },
+              { "name": "Candolim / Sinquerim quieter stretch", "duration": "~1.5h", "priority": "optional" },
+              { "name": "Tito's Lane & Baga nightlife (evening)", "duration": "~2h", "priority": "recommended" }
+            ],
+            "hotels": [
+              { "name": "North Goa hostels (Calangute/Anjuna)", "budget": "₹700–₹1,500/night" },
+              { "name": "Boutique beach resort", "budget": "₹4,000–₹9,000/night" }
+            ],
+            "meals": ["Infantaria (bakery)", "Bean Me Up (vegan, Vagator)", "Beach-shack Goan thali"]
+          },
+          {
+            "theme": "Forts & flea markets",
+            "pace": "moderate",
+            "activities": [
+              { "name": "Fort Aguada & lighthouse", "duration": "~1h", "priority": "must-see", "cost": "Free" },
+              { "name": "Chapora Fort (Dil Chahta Hai) sunset", "duration": "~1h", "priority": "recommended", "cost": "Free" },
+              { "name": "Anjuna Flea Market (Wednesdays) / Saturday Night Market", "duration": "~2h", "priority": "recommended" },
+              { "name": "Vagator & Ozran beach", "duration": "~1.5h", "priority": "optional" }
+            ],
+            "hotels": [
+              { "name": "North Goa hostels (Calangute/Anjuna)", "budget": "₹700–₹1,500/night" }
+            ],
+            "meals": ["Thalassa (Greek, Vagator)", "Artjuna Café (veg/vegan)", "Curlies beach shack"]
+          }
+        ]
+      },
+      "Panaji": {
+        "name": "Panaji",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A half-day covers Old Goa's churches and a stroll through Fontainhas — easily paired with a Dudhsagar day trip.",
+        "experiences": ["History", "UNESCO Sites", "Temples & Religious Sites", "Food"],
+        "signatureExperiences": ["UNESCO Sites"],
+        "days": [
+          {
+            "theme": "Old Goa churches & Latin quarter",
+            "pace": "relaxed",
+            "note": "The Old Goa churches sit in one cluster; Fontainhas is a short hop into Panaji — both are compact and walkable.",
+            "activities": [
+              { "name": "Basilica of Bom Jesus (UNESCO, St. Francis Xavier)", "duration": "~45m", "priority": "must-see", "cost": "Free" },
+              { "name": "Sé Cathedral & St. Augustine Tower", "duration": "~45m", "priority": "recommended", "cost": "Free" },
+              { "name": "Fontainhas Latin-quarter walk", "duration": "~1h", "priority": "recommended" },
+              { "name": "Mangeshi Temple (Ponda) detour", "duration": "~45m", "priority": "optional", "cost": "Free" }
+            ],
+            "hotels": [
+              { "name": "Panaji / Fontainhas guesthouses", "budget": "₹1,500–₹3,500/night" }
+            ],
+            "meals": ["Ritz Classic (Goan thali)", "Café Bhonsle", "Viva Panjim"]
+          },
+          {
+            "theme": "Dudhsagar Falls day trip",
+            "pace": "moderate",
+            "note": "Falls are ~60km inland via Collem — no private vehicles past the gate, so book the mandatory forest jeep; start early before the 10–11am crowd.",
+            "activities": [
+              { "name": "Dudhsagar Falls jeep safari & base pool", "duration": "half day", "priority": "must-see", "cost": "~₹550 pp (forest ₹50 + jeep ₹400–₹500 + life jacket ₹30–₹50)" },
+              { "name": "Spice plantation lunch near Ponda", "duration": "~1.5h", "priority": "optional", "cost": "₹400–₹600" }
+            ],
+            "hotels": [
+              { "name": "Panaji / Fontainhas guesthouses", "budget": "₹1,500–₹3,500/night" }
+            ],
+            "meals": ["Plantation buffet (veg-friendly)", "Collem roadside café"]
+          }
+        ]
+      },
+      "South Goa": {
+        "name": "South Goa",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two slow days on the southern beaches — Palolem for kayaking and Agonda for quiet; the south is about doing less.",
+        "experiences": ["Beaches", "Waterfalls", "Water Sports"],
+        "signatureExperiences": ["Beaches"],
+        "days": [
+          {
+            "theme": "Palolem & Agonda beaches",
+            "pace": "relaxed",
+            "note": "The south's beaches are cleaner and calmer — pick one base and kayak, swim and café-hop rather than chasing sights.",
+            "activities": [
+              { "name": "Palolem Beach — kayaking & dolphin trip", "duration": "~3h", "priority": "must-see", "cost": "Kayak ₹300–₹500; dolphin boat ₹500–₹800" },
+              { "name": "Agonda Beach (quiet swim)", "duration": "~2h", "priority": "recommended" },
+              { "name": "Butterfly / Honeymoon Beach boat hop", "duration": "~1.5h", "priority": "optional", "cost": "₹600–₹1,000 boat" }
+            ],
+            "hotels": [
+              { "name": "Palolem beach huts", "budget": "₹1,200–₹3,000/night" },
+              { "name": "Agonda eco-resort", "budget": "₹4,000–₹8,000/night" }
+            ],
+            "meals": ["Soul Booster (vegan, Palolem)", "Café Inn", "Beach-hut Goan curry-rice"]
+          },
+          {
+            "theme": "Colva, Benaulim & Latin south",
+            "pace": "relaxed",
+            "activities": [
+              { "name": "Colva & Benaulim beaches", "duration": "~2.5h", "priority": "recommended" },
+              { "name": "Cabo de Rama Fort viewpoint", "duration": "~1h", "priority": "optional", "cost": "Free" },
+              { "name": "Cotigao Wildlife Sanctuary short trail", "duration": "~2h", "priority": "optional", "cost": "₹40 + camera fee" }
+            ],
+            "hotels": [
+              { "name": "Palolem beach huts", "budget": "₹1,200–₹3,000/night" }
+            ],
+            "meals": ["Fernando's Nostalgia (Goan)", "Zeebop by the Sea"]
+          }
+        ]
+      }
+    },
+    "connections": [
+      { "from": "North Goa", "to": "Panaji", "method": "Scooter/taxi via Mandovi bridge", "cost": "₹500–₹800 taxi", "distanceKm": 15, "durationHrs": 0.5, "sameDayFeasible": true },
+      { "from": "Panaji", "to": "South Goa", "method": "Taxi/self-drive down NH-66", "cost": "₹1,500–₹2,200 taxi", "distanceKm": 60, "durationHrs": 1.5, "sameDayFeasible": true },
+      { "from": "South Goa", "to": "North Goa", "method": "Taxi/self-drive up the coast", "cost": "₹1,800–₹2,500 taxi", "distanceKm": 70, "durationHrs": 1.75, "sameDayFeasible": true }
+    ],
+    "extras": [
+      "Rent a scooter (₹300–₹500/day) or self-drive — Goa's sights are spread out and cabs are pricey; carry your licence.",
+      "Dudhsagar Falls runs on mandatory forest jeeps from Collem and often closes at the monsoon peak — go Oct–Feb and book ahead.",
+      "Quoted fees are as of Jul 2026; beach water-sports and shack prices are negotiable and seasonal — agree before you start.",
+      "Monsoon (Jun–Sep) means rough seas, no water sports and many shacks shut; peak season (Dec) is the priciest and most crowded."
+    ]
+  }
+}

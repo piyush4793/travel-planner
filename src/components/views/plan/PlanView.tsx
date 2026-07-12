@@ -1,17 +1,19 @@
-import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, lazy, useEffect, useMemo, useRef, useState } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../../core/types";
 import { type BudgetBasis } from "../../../core/utils/budget";
 import { cityExperienceOptions } from "../../../core/utils/cityExperiences";
 import { type TripSegment, extractPlanCities, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
-import { usePlanBuilder, type PlanBuilderSeed } from "../../../hooks/usePlanBuilder";
+import { usePlanBuilder } from "../../../hooks/usePlanBuilder";
 import { useBackDismiss } from "../../../hooks/useBackDismiss";
 import DestinationPicker from "./steps/DestinationPicker";
 import PlanTripHeader, { buildHeaderStats } from "./shell/PlanTripHeader";
 import TripSaveBar from "./save/TripSaveBar";
 import PlanReviewReveal from "./save/PlanReviewReveal";
 import PlanSavedToast from "./save/PlanSavedToast";
+import { usePlanTripRestore } from "./save/usePlanTripRestore";
+import { usePlanAutoSave } from "./save/usePlanAutoSave";
 import PlanCountrySwitcher from "./shell/PlanCountrySwitcher";
 import TripReviewWorkspace from "./review/TripReviewWorkspace";
 import { useReviewRoute } from "./review/useReviewRoute";
@@ -22,14 +24,11 @@ import type { PlanActions } from "./shell/planActions";
 import { loadPlanDraft, savePlanDraft, clearPlanDraft } from "./shell/planDraft";
 import { isEnabled } from "../../../core/featureFlags";
 import { MAX_TRIP_UNITS } from "../../../core/utils/multiCountry";
-import { buildTripSnapshot, tripSignature, toOpenRequest, type SavedTrip, type SnapshotStop, type OpenTripRequest } from "../../../core/utils/savedTrips";
-import { useConfirm } from "../../shared/ConfirmDialog";
+import { tripSignature, type SavedTrip, type OpenTripRequest } from "../../../core/utils/savedTrips";
 import { getDestinationSource } from "../../../core/trip/getDestinationSource";
-import { loadLS, saveLS } from "../../../core/storage";
-import { LS_KEYS } from "../../../core/lsKeys";
 import { useTripExperiences } from "../../../hooks/useTripExperiences";
 import { useTripRules } from "../../../hooks/useTripRules";
-import { useTripPlanner, type TripPlannerSeed } from "../../../hooks/useTripPlanner";
+import { useTripPlanner } from "../../../hooks/useTripPlanner";
 import type { CinematicRoute } from "../../country/cinematic/engine";
 
 const ItineraryCinematic = lazy(() => import("../../country/ItineraryCinematic"));
@@ -41,11 +40,6 @@ const ItineraryCinematic = lazy(() => import("../../country/ItineraryCinematic")
  * any number of long country names.
  */
 const HEADER_ROUTE_STOPS = 2;
-
-// Grace window after the first Review auto-save during which async plan hydration
-// (lazy rules, auto-city / recommended-day settling) is absorbed silently — so a
-// page refresh never shows a "saved" toast without the traveller changing anything.
-const SAVE_SETTLE_MS = 2500;
 
 type Props = {
   countries: Country[];
@@ -120,31 +114,27 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
   // One overlay serves single and multi (the route model is scope-agnostic).
   const [cinematicRoute, setCinematicRoute] = useState<CinematicRoute | null>(null);
 
-  // A reopened saved trip's per-stop snapshot (cities + honest length +
-  // experience focus), applied once per nonce to rehydrate the funnel: the
-  // primary stop through `usePlanBuilder`, the additional stops through
-  // `useTripPlanner`.
-  const [restoreSeed, setRestoreSeed] = useState<
-    {
-      nonce: number;
-      primary: { cities: string[]; days: number; experiences: string[] };
-      byCountry: Record<string, { cities: string[]; days: number; experiences: string[] }>;
-    } | null
-  >(null);
-  const primarySeed = useMemo<PlanBuilderSeed | null>(
-    () => (restoreSeed ? { nonce: restoreSeed.nonce, ...restoreSeed.primary } : null),
-    [restoreSeed],
-  );
-  const tripSeed = useMemo<TripPlannerSeed | null>(
-    () => (restoreSeed ? { nonce: restoreSeed.nonce, byCountry: restoreSeed.byCountry } : null),
-    [restoreSeed],
-  );
+  // Open / resume / reset lifecycle: reopening a saved trip (My Trips or a
+  // same-set "Resume" prompt), the "+ New trip" reset, and the per-stop restore
+  // seeds that `usePlanBuilder` (primary) and `useTripPlanner` (additional stops)
+  // apply. `reopenedRef` is shared with the auto-save hook so "resume" stays silent.
+  const restore = usePlanTripRestore({
+    countries,
+    resolveCountry,
+    openTrip,
+    startNewNonce,
+    matchSavedTrip,
+    onRecordPlanned,
+    setSelection,
+    setStepIndex,
+    setBudgetBasis,
+  });
 
   const builderInitial =
     draft0 && picked && draft0.countries[0] === picked.name
       ? { selectedCities: draft0.cities, selectedExperiences: draft0.experiences, customDays: draft0.days, daysPinned: draft0.pinned }
       : undefined;
-  const builder = usePlanBuilder(picked, budgetBasis, builderInitial, primarySeed);
+  const builder = usePlanBuilder(picked, budgetBasis, builderInitial, restore.primarySeed);
   const { displayCountry, ruleLoading, customDays, daysPinned, plan } = builder;
 
   // Persist the funnel so a refresh resumes it; clear once the user backs out.
@@ -163,103 +153,6 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
       pinned: daysPinned,
     });
   }, [selection, stepIndex, selCities, selExp, customDays, daysPinned]);
-
-  // "+ New trip" from My Trips: discard any in-progress selection + draft and
-  // drop back to a fresh landing picker. Nonce-guarded so it fires only on an
-  // explicit request, never on the initial mount (the draft resume owns that).
-  const startNewNonceRef = useRef(startNewNonce);
-  useEffect(() => {
-    if (startNewNonce === undefined || startNewNonce === startNewNonceRef.current) return;
-    startNewNonceRef.current = startNewNonce;
-    setSelection([]);
-    setStepIndex(0);
-    setRestoreSeed(null);
-    clearPlanDraft();
-  }, [startNewNonce]);
-
-  // A saved route to rehydrate into the wizard — fed either by the `openTrip`
-  // prop (My Trips reopen) or by the same-set "Resume" prompt on the landing
-  // picker. Both paths share this one restore pipeline (DRY).
-  const [pendingOpen, setPendingOpen] = useState<OpenTripRequest | null>(null);
-  useEffect(() => {
-    if (openTrip) setPendingOpen(openTrip);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [openTrip?.nonce]);
-
-  // Open a saved route: reseed the ordered selection, jump to Review, restore the
-  // saved budget basis, and stage a per-stop restore (snapshot cities + tuned
-  // length) that `usePlanBuilder` (primary) and `useTripPlanner` (additional
-  // stops) apply. Review is the last step; index 2 lands there whether or not the
-  // cities step is present yet (safeIndex clamps while rules load, then the
-  // 3-step review shares the same index). Applied once per nonce so re-opening
-  // the same trip works but a stale prop never clobbers in-progress edits.
-  const appliedOpenNonce = useRef<number | null>(null);
-  const reopenedRef = useRef(false);
-  useEffect(() => {
-    if (!pendingOpen || appliedOpenNonce.current === pendingOpen.nonce) return;
-    const stopByName = new Map(pendingOpen.stops.map((s) => [s.country, s]));
-    const resolved = pendingOpen.stops.map((s) => resolveCountry(s.country)).filter((c): c is Country => c !== null);
-    // Only mark this open request as handled once the names actually resolve, so
-    // an open that arrives before destination data is ready is retried rather than
-    // permanently swallowed by a prematurely-stamped nonce.
-    if (resolved.length === 0) return;
-    appliedOpenNonce.current = pendingOpen.nonce;
-    reopenedRef.current = true;
-    setSelection(resolved);
-    setStepIndex(2);
-    setBudgetBasis(pendingOpen.basis);
-    // Reopening a saved route is an act of planning it again, so it joins the
-    // implicit Recents ledger (same as starting fresh). Nonce-guarded above, so
-    // this records once per reopen.
-    onRecordPlanned?.(resolved.map((c) => c.name));
-    // Align the restore payload to the *resolved* order, so an unresolvable stop
-    // never shifts the primary/secondary split.
-    const primaryStop = stopByName.get(resolved[0].name);
-    const byCountry: Record<string, { cities: string[]; days: number; experiences: string[] }> = {};
-    for (const c of resolved.slice(1)) {
-      const s = stopByName.get(c.name);
-      if (s) byCountry[c.name] = { cities: s.cities, days: s.days, experiences: s.experiences };
-    }
-    setRestoreSeed({
-      nonce: pendingOpen.nonce,
-      primary: primaryStop
-        ? { cities: primaryStop.cities, days: primaryStop.days, experiences: primaryStop.experiences }
-        : { cities: [], days: 7, experiences: [] },
-      byCountry,
-    });
-    // Re-runs when the open request changes or destination data lands, but the
-    // nonce guard above makes it idempotent per open, so it applies exactly once
-    // and never clobbers in-progress edits. resolveCountry/setBudgetBasis stable.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pendingOpen, countries]);
-
-  // Landing "Start trip": if the picked country set matches a saved trip, offer to
-  // resume it (primary) or start fresh (secondary); otherwise start fresh.
-  const [confirmResume, ResumeDialog] = useConfirm();
-  const handleStartSelection = useCallback(async (chosen: Country[]) => {
-    const match = matchSavedTrip?.(chosen.map((c) => c.name)) ?? null;
-    if (match) {
-      // Esc / click-outside = dismiss → stay on the landing picker (do nothing).
-      // Only the explicit "Start fresh" button falls through to a fresh plan.
-      let dismissed = false;
-      const resume = await confirmResume({
-        variant: "emerald",
-        title: "Resume your saved plan?",
-        message: `You've already planned “${match.name}”. Resume it with your saved places and trip lengths, or start fresh?`,
-        confirmLabel: "Resume saved plan",
-        cancelLabel: "Start fresh",
-        onDismiss: () => { dismissed = true; },
-      });
-      if (resume) {
-        setPendingOpen(toOpenRequest(match, Date.now()));
-        return;
-      }
-      if (dismissed) return;
-    }
-    setSelection(chosen);
-    setStepIndex(0);
-    onRecordPlanned?.(chosen.map((c) => c.name));
-  }, [matchSavedTrip, confirmResume, onRecordPlanned]);
 
   // Active country on the Places step — lifted here so the header's country
   // switcher and the Places body stay in lock-step (single source of truth).
@@ -287,7 +180,7 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
   // primary + additional stops yields one honest trip plan for the Places summary.
   const secondaryNames = useMemo(() => selection.slice(1).map((c) => c.name), [selection]);
   const { units: secondaryUnits } = useTripRules(secondaryNames, source);
-  const tripPlanner = useTripPlanner(secondaryUnits, builder.selectedExperiences, budgetBasis, tripSeed);
+  const tripPlanner = useTripPlanner(secondaryUnits, builder.selectedExperiences, budgetBasis, restore.tripSeed);
 
   const placesUnits = useMemo<PlacesUnit[]>(() => {
     if (!displayCountry) return [];
@@ -407,109 +300,23 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
     true,
   );
 
-  // Auto-save the composed trip (single or multi) as a self-contained snapshot
-  // the moment the traveller reaches Review, and keep it fresh as they tune the
-  // plan there. Guarded by a content signature so identical renders don't re-write
-  // localStorage; the store upserts by route name, so edits update the same trip
-  // in place (preserving its id, favourite and original save time) rather than
-  // duplicating. A finished trip is therefore never lost and stays browsable.
+  // Auto-save the composed trip to My Trips on Review and celebrate the
+  // first-ever Review, delegated to a dedicated hook (signature guard, silent
+  // resume/hydration handling, first-run reveal + saved toast).
   const onReviewStep = steps[Math.min(stepIndex, steps.length - 1)] === "review";
-  const savedTripSig = useRef<string | null>(null);
-  // The plan hydrates asynchronously (lazy rule JSON, auto-city + recommended-day
-  // materialisation), so after the first silent save the signature settles a few
-  // times on its own. We absorb those within a short grace window after the first
-  // save so a page refresh never pops a "saved" toast; only a change after the
-  // plan has settled (or an explicit budget-basis switch) is treated as an edit.
-  const firstSaveAtRef = useRef<number | null>(null);
-  const prevBasisRef = useRef(budgetBasis);
-
-  // First-time engagement. The reveal celebrates the first-ever Review once (a
-  // persisted seen-flag guards repeats, and reopened saved trips skip it — they
-  // were already celebrated). The saved toast quietly confirms the auto-save the
-  // first time it writes each mount, replacing the old always-on header tick.
-  const planStartRef = useRef<number>(Date.now());
-  const revealSeenRef = useRef<boolean>(loadLS<boolean>(LS_KEYS.PLAN_REVEAL_SEEN, false));
-  const revealShownRef = useRef(false);
-  const toastTimerRef = useRef<number | null>(null);
-  const reopenSettleTimerRef = useRef<number | null>(null);
-  const [showReveal, setShowReveal] = useState(false);
-  const [revealSeconds, setRevealSeconds] = useState<number | undefined>(undefined);
-  const [showSavedToast, setShowSavedToast] = useState(false);
-  useEffect(() => () => {
-    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-    if (reopenSettleTimerRef.current) clearTimeout(reopenSettleTimerRef.current);
-  }, []);
-  const dismissSavedToast = useCallback(() => {
-    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-    toastTimerRef.current = null;
-    setShowSavedToast(false);
-  }, []);
-
-  useEffect(() => {
-    if (!onSaveTrip || !onReviewStep || !plan || !displayCountry || selection.length === 0) return;
-    // Build stops from the ordered selection so the saved route's identity always
-    // matches what the traveller picked, attaching each stop's own loaded plan
-    // where the destination has itinerary data (primary always does).
-    const planByName = new Map(tripPlanner.unitPlans.map((u) => [u.name, u]));
-    const stops: SnapshotStop[] = selection.map((c, i) => {
-      if (i === 0) return { country: displayCountry.name, days: builder.customDays, plan, experiences: builder.selectedExperiences };
-      const u = planByName.get(c.name);
-      return u ? { country: u.name, days: u.customDays, plan: u.plan, experiences: u.experiences } : { country: c.name, days: 0 };
-    });
-    const snapshot = buildTripSnapshot({ stops, composed: composedTripPlan ?? plan, basis: budgetBasis });
-    const sig = JSON.stringify(snapshot.stops) + snapshot.totalDays + snapshot.costPerPerson + snapshot.basis;
-    // Signature guard: identical content (e.g. a spurious re-render) is a no-op —
-    // never re-saves, never re-toasts.
-    const prevSig = savedTripSig.current;
-    if (prevSig === sig) return;
-    savedTripSig.current = sig;
-    onSaveTrip(snapshot);
-
-    const basisChanged = prevBasisRef.current !== budgetBasis;
-    prevBasisRef.current = budgetBasis;
-
-    // A reopened/restored trip settles asynchronously — the basis restore plus
-    // (multi-stop) rule hydration re-materialise the plan over several frames.
-    // None of that is a user edit, so stay silent and keep re-arming a short
-    // timer; only once the plan stops changing does reopen mode clear, after
-    // which genuine edits toast normally. This makes "resume" never pop a
-    // "saved" toast, regardless of how long hydration takes.
-    if (reopenedRef.current) {
-      if (prevSig === null) firstSaveAtRef.current = Date.now();
-      if (reopenSettleTimerRef.current) clearTimeout(reopenSettleTimerRef.current);
-      reopenSettleTimerRef.current = window.setTimeout(() => {
-        reopenedRef.current = false;
-        reopenSettleTimerRef.current = null;
-      }, SAVE_SETTLE_MS);
-      return;
-    }
-
-    // First save of this mount: record the settle baseline, celebrate the
-    // first-ever Review once, and stay silent — merely arriving or refreshing
-    // never pops a toast.
-    if (prevSig === null) {
-      firstSaveAtRef.current = Date.now();
-      if (!revealSeenRef.current && !revealShownRef.current) {
-        revealShownRef.current = true;
-        revealSeenRef.current = true;
-        saveLS(LS_KEYS.PLAN_REVEAL_SEEN, true);
-        setRevealSeconds(Math.round((Date.now() - planStartRef.current) / 1000));
-        setShowReveal(true);
-      }
-      return;
-    }
-
-    // Subsequent saves: the content changed. Absorb async hydration that settles
-    // shortly after the first save (a page refresh restores at Review and the plan
-    // re-materialises over a few frames) — only a change once settled, or an
-    // explicit budget-basis switch (never a hydration side-effect), is a real edit.
-    const settling = firstSaveAtRef.current !== null && Date.now() - firstSaveAtRef.current < SAVE_SETTLE_MS;
-    if (basisChanged || !settling) {
-      setShowSavedToast(true);
-      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-      toastTimerRef.current = window.setTimeout(() => setShowSavedToast(false), 4000);
-    }
-  }, [onSaveTrip, onReviewStep, plan, displayCountry, selection, tripPlanner.unitPlans, composedTripPlan, budgetBasis, builder.customDays, builder.selectedExperiences]);
+  const { showReveal, closeReveal, revealSeconds, showSavedToast, dismissSavedToast } = usePlanAutoSave({
+    onSaveTrip,
+    onReviewStep,
+    plan,
+    displayCountry,
+    selection,
+    unitPlans: tripPlanner.unitPlans,
+    composedTripPlan,
+    budgetBasis,
+    primaryCustomDays: builder.customDays,
+    primaryExperiences: builder.selectedExperiences,
+    reopenedRef: restore.reopenedRef,
+  });
 
   if (!picked) {
     return (
@@ -518,11 +325,11 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
           source={source}
           countries={countries}
           exploreCountries={exploreCountries}
-          onStart={handleStartSelection}
+          onStart={restore.handleStartSelection}
           multiSelect={multiCountry}
           maxSelection={MAX_TRIP_UNITS}
         />
-        <ResumeDialog />
+        <restore.ResumeDialog />
       </>
     );
   }
@@ -753,7 +560,7 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
 
       <PlanReviewReveal
         open={showReveal}
-        onClose={() => setShowReveal(false)}
+        onClose={closeReveal}
         routeName={routeName}
         days={headerStats?.days ?? plan?.days.length ?? 0}
         cities={headerStats?.cities ?? 0}

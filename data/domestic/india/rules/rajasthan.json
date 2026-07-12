@@ -1,0 +1,343 @@
+{
+  "name": "Rajasthan",
+  "seed": false,
+  "lat": 27.0238,
+  "lng": 74.2179,
+  "region": "North India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": ["October", "November", "December", "January", "February", "March"],
+  "worstMonths": ["April", "May", "June"],
+  "budget": {
+    "solo": "₹25K–₹45K",
+    "couple": "₹45K–₹80K",
+    "family4": "₹85K–₹1.5L"
+  },
+  "experiences": [
+    "History",
+    "Architecture",
+    "Deserts",
+    "UNESCO Sites",
+    "Temples & Religious Sites",
+    "Markets & Shopping",
+    "Lakes",
+    "Food",
+    "Festivals"
+  ],
+  "avoid": ["April", "May", "June"],
+  "combo": ["Delhi", "Gujarat", "Uttar Pradesh", "Punjab", "Madhya Pradesh"],
+  "landmark": "Hawa Mahal, Jaipur",
+  "travelStyle": ["explorer"],
+  "stopoverNote": "The Jaisalmer→Udaipur leg is a 9-hour haul — break it at Jodhpur or Ranakpur, or take a train/flight, rather than driving it in one day.",
+  "diet": {
+    "vegetarian": "Rajasthan is one of India's most vegetarian-friendly states. Thalis, dal baati churma, gatte ki sabzi and street snacks (pyaaz kachori, mirchi vada) are almost all pure vegetarian; many towns like Pushkar are strictly veg and alcohol-free.",
+    "vegan": "Ask for food 'bina ghee, doodh, dahi' (no ghee, milk or curd). Ker sangri, bajra roti with garlic chutney and oil-cooked dal are naturally vegan. Millets of Mewar (Udaipur) has a strong dedicated vegan menu.",
+    "phrases": [
+      "Sirf tel mein banao = cook only in oil, no ghee",
+      "Bina dahi/doodh = without curd/milk",
+      "Bina pyaaz-lehsun = without onion/garlic (Jain/temple towns)"
+    ]
+  },
+  "links": [
+    { "label": "Rajasthan Tourism (official)", "url": "https://www.tourism.rajasthan.gov.in/" }
+  ],
+  "cities": [
+    {
+      "name": "Jaipur",
+      "lat": 26.9124,
+      "lng": 75.7873,
+      "notes": "The Pink City — Amber Fort, City Palace, Hawa Mahal and buzzing bazaars, all UNESCO-listed old town.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["April", "May", "June"],
+      "experiences": ["History", "Architecture", "UNESCO Sites", "Markets & Shopping", "Food"]
+    },
+    {
+      "name": "Pushkar",
+      "lat": 26.4899,
+      "lng": 74.5511,
+      "notes": "Compact holy lakeside town with the rare Brahma Temple, ghats and boho cafés; vegetarian and alcohol-free by custom.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["April", "May", "June"],
+      "experiences": ["Temples & Religious Sites", "Lakes", "Markets & Shopping", "Festivals"]
+    },
+    {
+      "name": "Jodhpur",
+      "lat": 26.2389,
+      "lng": 73.0243,
+      "notes": "The Blue City below the mighty Mehrangarh Fort — indigo lanes, stepwells and a lively clock-tower bazaar.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["April", "May", "June"],
+      "experiences": ["History", "Architecture", "Markets & Shopping", "Food"]
+    },
+    {
+      "name": "Jaisalmer",
+      "lat": 26.9157,
+      "lng": 70.9083,
+      "notes": "The Golden City — a living sandstone fort, ornate havelis and the Thar desert dunes at Sam.",
+      "bestMonths": ["November", "December", "January", "February", "March"],
+      "worstMonths": ["April", "May", "June", "July", "August"],
+      "experiences": ["Deserts", "History", "Architecture"]
+    },
+    {
+      "name": "Udaipur",
+      "lat": 24.5854,
+      "lng": 73.7125,
+      "notes": "The City of Lakes — Lake Pichola, the sprawling City Palace, garden retreats and hilltop sunset views.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["April", "May", "June"],
+      "experiences": ["Lakes", "History", "Architecture", "Temples & Religious Sites"]
+    }
+  ],
+  "itinerary": {
+    "sim": "Any Indian prepaid SIM (Jio or Airtel) works well; buy one at the airport or a store with photo ID. Coverage is strong across cities but patchy in the deep desert around Sam.",
+    "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "Ola", "Uber", "Zomato"],
+    "cityOrder": ["Jaipur", "Pushkar", "Jodhpur", "Jaisalmer", "Udaipur"],
+    "cities": {
+      "Jaipur": {
+        "name": "Jaipur",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is ideal — one for Amber Fort and the old-city monuments, one for forts, bazaars and culture.",
+        "experiences": ["History", "Architecture", "UNESCO Sites", "Markets & Shopping", "Food"],
+        "signatureExperiences": ["Architecture", "UNESCO Sites"],
+        "days": [
+          {
+            "theme": "Amber Fort & the Pink City",
+            "pace": "packed",
+            "note": "The old-city monuments are clustered and walkable — start Amber by 8am to beat the heat and crowds; four adjacent stops is the realistic maximum for one day.",
+            "activities": [
+              { "name": "Amber (Amer) Fort — Sheesh Mahal & ramparts", "duration": "~2h", "priority": "must-see", "cost": "₹200 (Indian) / ₹1,000 (foreign)", "tip": "Walk up or take a jeep; skip the elephant rides on welfare grounds." },
+              { "name": "Panna Meena ka Kund stepwell + Jal Mahal photo stop", "duration": "~30m", "priority": "optional" },
+              { "name": "Hawa Mahal façade", "duration": "~40m", "priority": "must-see", "cost": "₹100 (Indian) / ₹600 (foreign)", "tip": "The best view is from a Wind View Café terrace across the street." },
+              { "name": "Jantar Mantar observatory (UNESCO)", "duration": "~1h", "priority": "recommended", "cost": "₹200 (Indian); free on the ₹550 composite ticket" },
+              { "name": "City Palace museum & courtyards", "duration": "~1.5h", "priority": "must-see", "cost": "₹300 (Indian) / ₹600 (foreign)", "tip": "Not part of the composite ticket — buy separately." }
+            ],
+            "hotels": [
+              { "name": "Zostel Jaipur", "budget": "₹700–₹1,200/night" },
+              { "name": "Hotel Pearl Palace", "budget": "₹2,000–₹3,500/night" }
+            ],
+            "meals": ["LMB (Laxmi Misthan Bhandar) veg thali", "Rawat Kachori (pyaaz kachori)", "Tapri Central rooftop chai"]
+          },
+          {
+            "theme": "Forts, bazaars & Rajasthani culture",
+            "pace": "moderate",
+            "note": "A relaxed second day — pair a morning fort with an afternoon bazaar crawl and an optional cultural evening.",
+            "activities": [
+              { "name": "Nahargarh Fort — city and sunset views", "duration": "~1.5h", "priority": "recommended", "cost": "₹50 (Indian); on the composite ticket" },
+              { "name": "Albert Hall Museum", "duration": "~1h", "priority": "optional", "cost": "₹40 (Indian); on the composite ticket" },
+              { "name": "Johari & Bapu Bazaar — bandhani, juttis, gemstones", "duration": "~2h", "priority": "recommended" },
+              { "name": "Chokhi Dhani cultural village (evening)", "duration": "~3h", "priority": "optional", "cost": "₹900–₹1,100 with dinner" }
+            ],
+            "hotels": [
+              { "name": "Zostel Jaipur", "budget": "₹700–₹1,200/night" },
+              { "name": "Hotel Pearl Palace", "budget": "₹2,000–₹3,500/night" }
+            ],
+            "meals": ["Spice Court (Rajasthani)", "Handi Restaurant (veg + non-veg)", "Bapu Bazaar chaat stalls"]
+          },
+          {
+            "theme": "Day trip — Abhaneri stepwell & Bhangarh",
+            "pace": "relaxed",
+            "note": "Only if you have a spare day and a car — Abhaneri's Chand Baori is ~95km/2h out, on the way toward Agra.",
+            "activities": [
+              { "name": "Chand Baori stepwell, Abhaneri", "duration": "~1h", "priority": "recommended", "cost": "Free (Indian)" },
+              { "name": "Bhangarh Fort (the 'haunted' ruins)", "duration": "~1.5h", "priority": "optional", "cost": "₹25 (Indian)", "tip": "Closes at sunset — entry is prohibited after dark." }
+            ],
+            "hotels": [
+              { "name": "Zostel Jaipur", "budget": "₹700–₹1,200/night" }
+            ],
+            "meals": ["Midway dhaba lunch on NH-21"]
+          }
+        ]
+      },
+      "Pushkar": {
+        "name": "Pushkar",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A compact holy town — half a day covers the sacred core; stay a night for the sunset aarti and café culture.",
+        "experiences": ["Temples & Religious Sites", "Lakes", "Markets & Shopping", "Festivals"],
+        "signatureExperiences": ["Temples & Religious Sites"],
+        "days": [
+          {
+            "theme": "Sacred lake, Brahma Temple & sunset ghats",
+            "pace": "relaxed",
+            "note": "Everything sits around the small lake and is walkable; go barefoot near the ghats and dress modestly.",
+            "activities": [
+              { "name": "Pushkar Lake ghats & evening aarti", "duration": "~1h", "priority": "must-see", "cost": "Free", "tip": "Beware 'Pushkar Passport' flower-offering scams at the ghats — agree on nothing." },
+              { "name": "Brahma Temple (one of the world's few)", "duration": "~45m", "priority": "must-see", "cost": "Free", "tip": "No photography inside; leather items aren't allowed near the temple." },
+              { "name": "Savitri Mata Temple by ropeway — hilltop views", "duration": "~1h", "priority": "recommended", "cost": "₹120 ropeway (Indian)" },
+              { "name": "Pushkar bazaar — rose products, boho cafés", "duration": "~1h", "priority": "optional" }
+            ],
+            "hotels": [
+              { "name": "Zostel Pushkar", "budget": "₹700–₹1,200/night" },
+              { "name": "Inn Seventh Heaven", "budget": "₹2,500–₹4,000/night" }
+            ],
+            "meals": ["Honey & Spice (vegan-friendly)", "Laughing Buddha Café", "Sixth Sense at Inn Seventh Heaven"]
+          }
+        ]
+      },
+      "Jodhpur": {
+        "name": "Jodhpur",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "One full day covers Mehrangarh and the Blue City; add a second for Umaid Bhawan and the desert-edge parks.",
+        "experiences": ["History", "Architecture", "Markets & Shopping", "Food"],
+        "signatureExperiences": ["History"],
+        "days": [
+          {
+            "theme": "Mehrangarh Fort & the Blue City",
+            "pace": "moderate",
+            "note": "The fort, Jaswant Thada and the old city are close together — comfortably a single day on foot and short autos.",
+            "activities": [
+              { "name": "Mehrangarh Fort & museum", "duration": "~2.5h", "priority": "must-see", "cost": "₹100 (Indian) / ₹600 (foreign); audio guide ₹180", "tip": "Enter early; the zip-line over the ramparts is a fun optional add-on." },
+              { "name": "Jaswant Thada marble cenotaph", "duration": "~40m", "priority": "recommended", "cost": "₹50 (Indian)" },
+              { "name": "Toorji Ka Jhalra stepwell & cafés", "duration": "~45m", "priority": "optional" },
+              { "name": "Clock Tower & Sardar Market — mirchi vada, makhaniya lassi", "duration": "~1.5h", "priority": "recommended" }
+            ],
+            "hotels": [
+              { "name": "Zostel Jodhpur", "budget": "₹700–₹1,300/night" },
+              { "name": "Pal Haveli", "budget": "₹4,000–₹7,000/night" }
+            ],
+            "meals": ["Shri Mishrilal Hotel (makhaniya lassi)", "Gypsy Dining Hall (Rajasthani thali)", "Janta Sweet Home"]
+          },
+          {
+            "theme": "Palace, parks & the desert edge",
+            "pace": "relaxed",
+            "activities": [
+              { "name": "Umaid Bhawan Palace museum", "duration": "~1h", "priority": "recommended", "cost": "₹30–₹100 (Indian)" },
+              { "name": "Rao Jodha Desert Rock Park walk", "duration": "~1.5h", "priority": "optional", "cost": "₹100 (Indian)" },
+              { "name": "Mandore Gardens & cenotaphs", "duration": "~1h", "priority": "optional", "cost": "Free" }
+            ],
+            "hotels": [
+              { "name": "Zostel Jodhpur", "budget": "₹700–₹1,300/night" },
+              { "name": "Pal Haveli", "budget": "₹4,000–₹7,000/night" }
+            ],
+            "meals": ["Indique rooftop (fort views)", "Nirvana Restaurant"]
+          }
+        ]
+      },
+      "Jaisalmer": {
+        "name": "Jaisalmer",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two nights is the sweet spot — one for the fort and havelis, one for the Sam dunes and an overnight desert camp.",
+        "experiences": ["Deserts", "History", "Architecture"],
+        "signatureExperiences": ["Deserts"],
+        "days": [
+          {
+            "theme": "Golden Fort, havelis & Gadisar Lake",
+            "pace": "moderate",
+            "note": "The fort is a living town you can wander freely; the palace museum and havelis are the ticketed highlights.",
+            "activities": [
+              { "name": "Jaisalmer Fort & Raj Mahal palace museum", "duration": "~2h", "priority": "must-see", "cost": "Fort free; palace museum ₹50 (Indian) / ₹250 (foreign)" },
+              { "name": "Patwon Ki Haveli — carved sandstone mansions", "duration": "~45m", "priority": "must-see", "cost": "₹150 (Indian)" },
+              { "name": "Gadisar Lake at sunset", "duration": "~45m", "priority": "recommended", "cost": "Free" }
+            ],
+            "hotels": [
+              { "name": "Zostel Jaisalmer", "budget": "₹800–₹1,400/night" },
+              { "name": "Hotel Killa Bhawan (fort)", "budget": "₹4,000–₹8,000/night" }
+            ],
+            "meals": ["The Trio rooftop (fort views)", "Desert Boy's Dhani (Rajasthani)", "Saffron at Nachana Haveli"]
+          },
+          {
+            "theme": "Sam Sand Dunes camel safari & desert camp",
+            "pace": "relaxed",
+            "note": "Sam is ~40km/1h from town — head out by mid-afternoon for a sunset camel ride and an overnight camp with folk music and dinner.",
+            "activities": [
+              { "name": "Kuldhara abandoned village (en route)", "duration": "~45m", "priority": "optional", "cost": "₹10–₹100 (Indian)" },
+              { "name": "Sam Sand Dunes camel safari at sunset", "duration": "~1.5h", "priority": "must-see", "cost": "Camel ride ₹400–₹700; jeep safari ₹1,000–₹1,600 pp" },
+              { "name": "Overnight desert camp — folk dance & dinner", "duration": "evening", "priority": "must-see", "cost": "Standard camp ₹1,500–₹2,500 pp; luxury ₹3,000–₹6,000 pp", "tip": "Book ahead for Oct–Mar peak season; confirm veg/vegan meals in advance." }
+            ],
+            "hotels": [
+              { "name": "Sam desert camp (standard, incl. dinner)", "budget": "₹1,500–₹2,500 pp" },
+              { "name": "Luxury Swiss-tent camp", "budget": "₹3,000–₹6,000 pp" }
+            ],
+            "meals": ["Camp buffet dinner (veg thali)", "Dal baati churma cooked on site"]
+          },
+          {
+            "theme": "Havelis, war memorial & Desert National Park",
+            "pace": "relaxed",
+            "activities": [
+              { "name": "Salim Singh & Nathmal Ki Haveli", "duration": "~1h", "priority": "optional", "cost": "₹20–₹100 (Indian)" },
+              { "name": "Longewala / Jaisalmer War Museum", "duration": "~1.5h", "priority": "optional", "cost": "Free" },
+              { "name": "Desert National Park (Great Indian Bustard)", "duration": "half day", "priority": "optional", "cost": "Permit + jeep ~₹2,000/group" }
+            ],
+            "hotels": [
+              { "name": "Zostel Jaisalmer", "budget": "₹800–₹1,400/night" }
+            ],
+            "meals": ["Free Tibet café", "1st Gate Home Fusion (Italian + Indian)"]
+          }
+        ]
+      },
+      "Udaipur": {
+        "name": "Udaipur",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the lake, palace and gardens; add a third for the Kumbhalgarh and Ranakpur day trip.",
+        "experiences": ["Lakes", "History", "Architecture", "Temples & Religious Sites"],
+        "signatureExperiences": ["Lakes"],
+        "days": [
+          {
+            "theme": "City of Lakes — palace & Pichola sunset cruise",
+            "pace": "moderate",
+            "note": "The old city, City Palace and ghats hug Lake Pichola and are walkable — save the boat ride for the golden sunset hour.",
+            "activities": [
+              { "name": "Jagdish Temple", "duration": "~30m", "priority": "recommended", "cost": "Free" },
+              { "name": "City Palace complex & museums", "duration": "~2.5h", "priority": "must-see", "cost": "₹300 (Indian) / ₹600 (foreign)" },
+              { "name": "Lake Pichola boat ride to Jag Mandir", "duration": "~1h", "priority": "must-see", "cost": "Regular ₹400–₹600; sunset ₹700–₹900", "tip": "Book the sunset slot early in peak season — it sells out." },
+              { "name": "Bagore Ki Haveli Dharohar folk dance (evening)", "duration": "~1h", "priority": "recommended", "cost": "₹150 show + ₹100 entry" }
+            ],
+            "hotels": [
+              { "name": "Zostel Udaipur", "budget": "₹800–₹1,400/night" },
+              { "name": "Jagat Niwas Palace Hotel", "budget": "₹4,500–₹8,000/night" }
+            ],
+            "meals": ["Millets of Mewar (strong vegan menu)", "Ambrai (lakeside, palace views)", "Natraj Dining Hall (unlimited thali)"]
+          },
+          {
+            "theme": "Gardens, monsoon palace & lake promenades",
+            "pace": "relaxed",
+            "activities": [
+              { "name": "Saheliyon Ki Bari fountain garden", "duration": "~45m", "priority": "recommended", "cost": "₹10 (Indian)" },
+              { "name": "Sajjangarh Monsoon Palace — sunset city & lake views", "duration": "~1.5h", "priority": "recommended", "cost": "₹100 (Indian) + ₹80 sanctuary vehicle" },
+              { "name": "Fateh Sagar Lake promenade & Nehru Garden", "duration": "~1h", "priority": "optional" }
+            ],
+            "hotels": [
+              { "name": "Zostel Udaipur", "budget": "₹800–₹1,400/night" },
+              { "name": "Jagat Niwas Palace Hotel", "budget": "₹4,500–₹8,000/night" }
+            ],
+            "meals": ["Jaiwana Haveli rooftop", "O'Zen Café (vegan options)"]
+          },
+          {
+            "theme": "Day trip — Kumbhalgarh fort & Ranakpur temples",
+            "pace": "moderate",
+            "note": "Both are ~2h from Udaipur on the same road — leave early and combine them in one full day.",
+            "activities": [
+              { "name": "Kumbhalgarh Fort — the 'Great Wall of India' (UNESCO Hill Fort)", "duration": "~2h", "priority": "must-see", "cost": "₹40 (Indian) / ₹600 (foreign)" },
+              { "name": "Ranakpur Jain Temple — 1,444 carved marble pillars", "duration": "~1.5h", "priority": "must-see", "cost": "₹200 donation for non-worshippers", "tip": "Open to tourists roughly 12pm–5pm; no leather allowed inside." }
+            ],
+            "hotels": [
+              { "name": "Zostel Udaipur", "budget": "₹800–₹1,400/night" }
+            ],
+            "meals": ["Aodhi Hotel restaurant near Kumbhalgarh", "Ranakpur roadside thali dhaba"]
+          }
+        ]
+      }
+    },
+    "connections": [
+      { "from": "Jaipur", "to": "Pushkar", "method": "Car/taxi or bus via Ajmer (NH-48)", "cost": "₹2,500–₹3,500 taxi", "distanceKm": 145, "durationHrs": 3, "sameDayFeasible": true },
+      { "from": "Pushkar", "to": "Jodhpur", "method": "Car/taxi or state bus", "cost": "₹3,000–₹4,000 taxi", "distanceKm": 185, "durationHrs": 4, "sameDayFeasible": true },
+      { "from": "Jodhpur", "to": "Jaisalmer", "method": "Car/taxi or overnight train", "cost": "₹4,000–₹5,000 taxi; ₹300–₹900 train", "distanceKm": 285, "durationHrs": 5.5, "sameDayFeasible": true },
+      { "from": "Jaisalmer", "to": "Udaipur", "method": "Long drive (break at Jodhpur/Ranakpur) or train/flight", "cost": "₹7,000–₹9,000 taxi", "distanceKm": 500, "durationHrs": 9, "sameDayFeasible": false },
+      { "from": "Udaipur", "to": "Jaipur", "method": "Car/taxi, train, or 1h flight", "cost": "₹6,000–₹7,500 taxi; from ₹3,000 flight", "distanceKm": 395, "durationHrs": 7, "sameDayFeasible": true }
+    ],
+    "extras": [
+      "Jaipur's ₹550 composite ticket (valid 2 days) covers Amber Fort, Hawa Mahal, Jantar Mantar, Nahargarh, Albert Hall and more — worth it if you'll see 3+ monuments; City Palace is sold separately.",
+      "Book Jaisalmer desert camps and Sam dune safaris in advance for the Oct–Mar peak season.",
+      "Quoted fees are for Indian nationals as of Jul 2026; foreign-national fees are higher and noted where relevant — always reconfirm on-site.",
+      "Summers (Apr–Jun) hit 45°C+ in the desert — schedule sightseeing for early morning and after 4pm, and carry water."
+    ]
+  }
+}

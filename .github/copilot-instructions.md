@@ -171,11 +171,11 @@ src/components/
   shared/   — PillGroup, FilterChip, Tooltip, HomeCountrySelector, DevFlagPanel, ExperienceDropdown, AppInstallShare, FreTour, ConfirmDialog (useConfirm)
   views/    — MyTripsView (saved-trip gallery + SavedTripCard) + views/plan guided wizard
   views/plan/ — Guided wizard, grouped into cohesive subfolders (PlanView stays at the folder root as the entry orchestrator):
-    PlanView.tsx           — entry orchestrator (owns auto-save + engagement + useReviewRoute)
+    PlanView.tsx           — entry orchestrator (wires draft/steps/header; delegates open-resume-reset to usePlanTripRestore, auto-save + engagement to usePlanAutoSave, and the composed route to useReviewRoute)
     shell/    — PlanWorkspaceShell (shared single+multi layout), PlanTripHeader (shared identity + stats + basis + stepper; save/Share slotted via `saveSlot`/`shareSlot`), PlanCountrySwitcher, planActions.ts, planDraft.ts
     steps/    — PlanBasicsStep, PlanPlacesStep, DestinationPicker (landing board), PlanRouteSummary
     review/   — Route Canvas: TripReviewWorkspace (presentational, consumes useReviewRoute), TripReviewCanvas, TripContextRail (RailSection/PlanNotesSection), BorderHop, RouteLeversBar, RouteOrderEditor (drag/keyboard reorder), SegmentAdjustDrawer (per-stop Shape·Details drawer), useReviewRoute.ts (order-aware composed route model)
-    save/     — TripSaveBar (Review-only ★ favourite → `useSavedTrips.toggleFavoriteByName`), PlanReviewReveal (one-time first-Review celebration), PlanSavedToast (transient save confirmation), PlanShareButton (header Share chip, order-aware)
+    save/     — TripSaveBar (Review-only ★ favourite → `useSavedTrips.toggleFavoriteByName`), PlanReviewReveal (one-time first-Review celebration), PlanSavedToast (transient save confirmation), PlanShareButton (header Share chip, order-aware), usePlanTripRestore.ts (open/resume/reset lifecycle + per-stop restore seeds), usePlanAutoSave.ts (Review auto-save signature guard + first-run reveal/toast)
     controls/ — CityPicker, ExperiencePicker, FocusChips, DayLengthControl, BasisMenu, PlanFilters, PlanCityJumpNav, CityDetailModal
     ui/       — PlanPopover (shared portal popover), PlanMenu, sheetChrome (SheetGrip + SheetCloseButton), ItineraryToolbar (shared itinerary atoms)
 ```

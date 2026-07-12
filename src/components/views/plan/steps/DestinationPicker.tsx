@@ -4,7 +4,7 @@ import type { DestinationSource } from "@/core/trip/destinationSource";
 import { getCountryFlag } from "@/utils/countryFlags";
 import { MAX_TRIP_UNITS, toggleTripSelection } from "@/core/utils/multiCountry";
 import { MONTHS, expandMonth } from "@/core/utils/months";
-import { monthFit, rankByMonthFit } from "@/core/utils/monthFit";
+import { monthFit, rankByMonthFit, type MonthFit } from "@/core/utils/monthFit";
 import PlanPopover from "@/components/views/plan/ui/PlanPopover";
 
 type Props = {
@@ -32,6 +32,23 @@ const CHIP_BASE =
   "focus-ring-emerald group inline-flex min-h-[44px] items-center gap-2 rounded-full border px-4 py-2.5 text-sm shadow-[0_1px_2px_rgba(20,40,30,0.05)] transition-[transform,box-shadow,border-color,color] motion-safe:animate-[fadeInUp_0.28s_ease-out_both] hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0 disabled:hover:shadow-[0_1px_2px_rgba(20,40,30,0.05)]";
 const CHIP_TONE_DEFAULT = "border-line bg-white font-medium text-ink-1 hover:border-emerald-600 hover:text-emerald-800";
 const CHIP_TONE_AVOID = "border-amber-200 bg-amber-50/40 font-medium text-ink-2 hover:border-amber-400 hover:text-amber-800";
+
+const TOKEN_TONE_DEFAULT = "border-emerald-200 bg-emerald-50 text-emerald-800";
+const TOKEN_TONE_AVOID = "border-amber-300 bg-amber-100/70 text-amber-900";
+const TOKEN_REMOVE_DEFAULT = "text-emerald-500 hover:bg-emerald-100 hover:text-emerald-700";
+const TOKEN_REMOVE_AVOID = "text-amber-600 hover:bg-amber-200/70 hover:text-amber-800";
+
+/**
+ * Seasonality cue shared by the browse chips and the selected tokens, so a
+ * chosen destination reads the same good/off-season signal whether it's on the
+ * board or already in the trip. Returns `null` when there's no lens or no data.
+ */
+function monthCue(fit: MonthFit, month: string | null): { icon: string; label: string } | null {
+  if (!month || fit === "neutral") return null;
+  return fit === "best"
+    ? { icon: "☀️", label: `great in ${expandMonth(month)}` }
+    : { icon: "⚠️", label: `avoid ${expandMonth(month)}` };
+}
 
 /**
  * Auto-focusing the search field is a welcome shortcut with a physical keyboard,
@@ -64,8 +81,7 @@ function filterByQuery(list: Country[], q: string): Country[] {
 
 function Chip({ country, index, disabled, month, onPick }: { country: Country; index: number; disabled?: boolean; month?: string | null; onPick: () => void }) {
   const fit = month ? monthFit(country, month) : "neutral";
-  const cue = fit === "best" ? "☀️" : fit === "avoid" ? "⚠️" : null;
-  const cueLabel = fit === "best" ? `great in ${expandMonth(month!)}` : fit === "avoid" ? `avoid ${expandMonth(month!)}` : "";
+  const cue = monthCue(fit, month ?? null);
   return (
     <button
       onClick={onPick}
@@ -76,7 +92,7 @@ function Chip({ country, index, disabled, month, onPick }: { country: Country; i
       <span aria-hidden="true" className="text-base leading-none">{getCountryFlag(country.name)}</span>
       <span className="truncate">{country.name}</span>
       {cue && (
-        <span className="text-xs leading-none" title={cueLabel} aria-label={cueLabel} role="img">{cue}</span>
+        <span className="text-xs leading-none" title={cue.label} aria-label={cue.label} role="img">{cue.icon}</span>
       )}
     </button>
   );
@@ -241,19 +257,30 @@ export default function DestinationPicker({ source, countries, exploreCountries,
           <div className="flex items-stretch gap-2">
             <div className="focus-within:border-emerald-600 focus-within:shadow-[0_0_0_3px_rgba(4,120,87,0.12)] flex min-w-0 flex-1 items-center gap-2 rounded-2xl border border-line bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-[border-color,box-shadow]">
               <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
-                {multiSelect && selectedNames.map((name) => (
-                  <span key={name} className="inline-flex min-h-[32px] items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 py-0.5 pl-2.5 pr-1 text-sm font-medium text-emerald-800">
-                    <span aria-hidden="true">{getCountryFlag(name)}</span>
-                    <span className="max-w-[8rem] truncate">{name}</span>
-                    <button
-                      onClick={() => setSelectedNames((prev) => prev.filter((n) => n !== name))}
-                      aria-label={`Remove ${name}`}
-                      className="focus-ring-emerald flex h-5 w-5 items-center justify-center rounded-full text-xs text-emerald-500 transition-colors hover:bg-emerald-100 hover:text-emerald-700"
+                {multiSelect && selectedNames.map((name) => {
+                  const fit = month ? monthFit(byName.get(name) ?? { bestMonths: [], worstMonths: [] }, month) : "neutral";
+                  const cue = monthCue(fit, month);
+                  const avoid = fit === "avoid";
+                  return (
+                    <span
+                      key={name}
+                      className={`inline-flex min-h-[32px] items-center gap-1.5 rounded-full border py-0.5 pl-2.5 pr-1 text-sm font-medium ${avoid ? TOKEN_TONE_AVOID : TOKEN_TONE_DEFAULT}`}
                     >
-                      ✕
-                    </button>
-                  </span>
-                ))}
+                      <span aria-hidden="true">{getCountryFlag(name)}</span>
+                      <span className="max-w-[8rem] truncate">{name}</span>
+                      {cue && (
+                        <span className="text-[11px] leading-none" title={cue.label} aria-label={cue.label} role="img">{cue.icon}</span>
+                      )}
+                      <button
+                        onClick={() => setSelectedNames((prev) => prev.filter((n) => n !== name))}
+                        aria-label={`Remove ${name}`}
+                        className={`focus-ring-emerald flex h-5 w-5 items-center justify-center rounded-full text-xs transition-colors ${avoid ? TOKEN_REMOVE_AVOID : TOKEN_REMOVE_DEFAULT}`}
+                      >
+                        ✕
+                      </button>
+                    </span>
+                  );
+                })}
                 <input
                   type="search"
                   value={query}

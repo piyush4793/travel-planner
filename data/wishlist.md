@@ -11,6 +11,7 @@
   - Murmansk
 - South Korea
 - Belarus
+- Belgium
 - Laos
 - Hawaii
 - Indonesia
