@@ -7,6 +7,7 @@ import { lazyWithRetry as lazy } from "./utils/lazyWithRetry";
 const MapView = lazy(() => import("./components/views/MapView"));
 const MyTripsView = lazy(() => import("./components/views/MyTripsView"));
 const PlanView = lazy(() => import("./components/views/plan/PlanView"));
+import { clearPlanDraft } from "./components/views/plan/shell/planDraft";
 import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
 import { useBudgetBasis } from "./hooks/useBudgetBasis";
 import { usePullToRefresh } from "./hooks/usePullToRefresh";
@@ -125,12 +126,15 @@ export default function App() {
     setView("plan");
   }, []);
   // "+ New trip" / "Plan a trip" from My Trips: always land on a fresh Plan
-  // landing picker rather than resuming the persisted draft. The nonce signals
-  // PlanView to clear its in-progress selection/draft (the saved trip snapshot
-  // in My Trips is untouched — only the wizard's working state resets).
+  // landing picker rather than resuming the persisted draft. PlanView unmounts
+  // on the Trips tab, so its in-mount nonce reset can't fire on remount — clear
+  // the persisted draft here so the fresh mount has nothing to resume. The nonce
+  // still covers the stay-mounted case; the saved My Trips snapshots are
+  // untouched (only the wizard's working draft resets).
   const [newPlanNonce, setNewPlanNonce] = useState(0);
   const startNewPlan = useCallback(() => {
     setPlanSeed(null);
+    clearPlanDraft();
     setNewPlanNonce((n) => n + 1);
     setView("plan");
   }, [setView]);

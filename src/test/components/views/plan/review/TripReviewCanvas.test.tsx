@@ -153,6 +153,15 @@ describe("TripReviewCanvas", () => {
     expect(within(denmark).getByRole("button", { name: "Adjust Denmark" })).toHaveTextContent("5d");
   });
 
+  it("shows the honest rendered length on the Adjust pill when the planner expands past the requested days", () => {
+    // customDays is the requested knob (8); the DP planner rendered 10 days.
+    // The pill must match the rendered plan + day range, not the requested value.
+    const expanded = segment("Italy", "Rome", 10, { customDays: 8 });
+    renderCanvas({ segments: [expanded], composedPlan: composed });
+    const italy = screen.getByRole("region", { name: /Italy — stop 1 of 1/ });
+    expect(within(italy).getByRole("button", { name: "Adjust Italy" })).toHaveTextContent("10d");
+  });
+
   it("badges the anchor stop and offers to promote a non-anchor stop", () => {
     const onSetAnchor = vi.fn();
     renderCanvas({

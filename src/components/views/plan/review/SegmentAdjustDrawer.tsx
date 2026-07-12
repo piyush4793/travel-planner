@@ -78,7 +78,7 @@ export default function SegmentAdjustDrawer({ segment, onClose }: Props) {
           <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-xl leading-none shadow-sm ring-1 ring-emerald-100">{getCountryFlag(segment.name)}</span>
           <h2 className="min-w-0 flex-1 truncate font-display text-lg font-bold text-emerald-950">{segment.name}</h2>
           <span className="shrink-0 rounded-full border border-emerald-200 bg-white/80 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700">
-            {segment.customDays}{segment.customDays === 1 ? " night" : " nights"}
+            {segment.plan.days.length}{segment.plan.days.length === 1 ? " day" : " days"}
           </span>
         </div>
 

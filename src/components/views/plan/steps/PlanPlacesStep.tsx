@@ -136,10 +136,10 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
           mobile, a right-hand column on ≥sm — so the brief never fights the
           season rail for width at 375px, with no duplicated DOM. */}
       {hasRail && (
-        <span className="pointer-events-none order-last mt-1.5 flex w-full flex-wrap items-center gap-x-3 gap-y-0.5 border-t border-surface-3 pt-1.5 sm:mt-0 sm:w-[84px] sm:flex-col sm:items-end sm:gap-0.5 sm:self-stretch sm:border-l sm:border-t-0 sm:pl-3 sm:pt-0 sm:text-right">
+        <span className="pointer-events-none order-last mt-1.5 flex w-full flex-wrap items-center gap-x-3 gap-y-0.5 border-t border-surface-3 pt-1.5 sm:mt-0 sm:w-[104px] sm:flex-col sm:items-end sm:gap-0.5 sm:self-stretch sm:border-l sm:border-t-0 sm:pl-3 sm:pt-0 sm:text-right">
           {d.recDays > 0 && <span className="font-display text-[13px] font-bold text-ink-1 sm:text-[15px]">≈{d.recDays}d</span>}
-          {d.bestWindow && <span className="text-[10.5px] text-ink-3 sm:whitespace-nowrap">☀ {d.bestWindow}</span>}
-          {d.avoidWindow && <span className="text-[10.5px] text-amber-700 sm:whitespace-nowrap">⚠ {d.avoidWindow}</span>}
+          {d.bestWindow && <span className="text-[10.5px] leading-tight text-ink-3">☀ {d.bestWindow}</span>}
+          {d.avoidWindow && <span className="text-[10.5px] leading-tight text-amber-700">⚠ {d.avoidWindow}</span>}
         </span>
       )}
     </div>

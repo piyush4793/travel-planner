@@ -169,7 +169,7 @@ function SegmentBlock({
               aria-label={`Adjust ${segment.name}`}
               className="focus-ring-emerald pointer-events-auto flex min-h-[32px] shrink-0 items-center gap-1 rounded-full border border-emerald-300 bg-white px-2.5 py-1 text-[11px] font-semibold text-emerald-800 transition-colors hover:bg-emerald-100"
             >
-              <span aria-hidden="true">✏️</span> {segment.customDays}d
+              <span aria-hidden="true">✏️</span> {segment.plan.days.length}d
             </button>
 
             {/* Decorative collapse indicator — the full-bleed button above owns the

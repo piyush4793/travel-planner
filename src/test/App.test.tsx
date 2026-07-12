@@ -7,6 +7,7 @@ import type { Country } from "@/core/types.ts";
 import { isEnabled } from "@/core/featureFlags.ts";
 import { useBreakpoint } from "@/hooks/useBreakpoint.ts";
 import { hasAnyLocalData, canAutoImport, restoreFromTarget, isBackupOverdue } from "@/utils/backup.ts";
+import { loadPlanDraft, savePlanDraft } from "@/components/views/plan/shell/planDraft.ts";
 
 const COUNTRY_NAMES = {
   JAPAN: "Japan",
@@ -236,6 +237,22 @@ describe("App orchestration", () => {
 
     expect(lastPlanViewProps?.onPlanWithAi).toBeUndefined();
     expect(lastPlanViewProps?.aiPlanCountFor).toBeUndefined();
+  });
+  it("clears the persisted Plan draft when 'New trip' is clicked from My Trips (fresh landing, not a resume)", async () => {
+    const user = userEvent.setup();
+    savePlanDraft({ countries: [COUNTRY_NAMES.JAPAN], step: 2, cities: ["Tokyo"], experiences: [FOOD_EXPERIENCE], days: 7, pinned: true });
+    expect(loadPlanDraft()).not.toBeNull();
+    setHashRoute("trips");
+    render(<App />);
+
+    const goPlan = await screen.findByTestId("trips-go-plan");
+    const nonceBefore = lastPlanViewProps?.startNewNonce;
+    await user.click(goPlan);
+
+    expect(await screen.findByTestId("plan-view")).toBeInTheDocument();
+    expect(loadPlanDraft()).toBeNull();
+    expect(lastPlanViewProps?.startNewNonce).not.toBe(nonceBefore);
+    expect(lastPlanViewProps?.openTrip).toBeNull();
   });
 });
 

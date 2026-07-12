@@ -83,6 +83,11 @@ describe("SegmentAdjustDrawer", () => {
     expect(within(panel).getByText(/Sweden/)).toBeInTheDocument();
   });
 
+  it("shows the honest rendered length badge when the planner expands past the requested days", () => {
+    render(<SegmentAdjustDrawer segment={segment({ plan: plan(10), customDays: 8 })} onClose={vi.fn()} />);
+    expect(screen.getByText("10 days")).toBeInTheDocument();
+  });
+
   it("closes via the close button", () => {
     const onClose = vi.fn();
     render(<SegmentAdjustDrawer segment={segment()} onClose={onClose} />);
