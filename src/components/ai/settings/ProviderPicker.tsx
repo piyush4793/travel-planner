@@ -53,7 +53,7 @@ export default function ProviderPicker({ value, onChange, connected }: Props) {
               "group relative flex flex-col items-center gap-1.5 rounded-2xl px-2 py-3.5 min-h-[32px] transition-[background-color,box-shadow,border-color,transform] focus-ring ring-1 " +
               (selected
                 ? "bg-gradient-to-b from-emerald-50 to-emerald-100/60 ring-2 ring-emerald-400 shadow-sm -translate-y-0.5"
-                : "bg-white ring-[#e0dac9] hover:bg-surface-2 hover:ring-line-strong hover:-translate-y-0.5")
+                : "bg-white ring-line hover:bg-surface-2 hover:ring-line-strong hover:-translate-y-0.5")
             }
           >
             {hasKey && (
@@ -65,7 +65,7 @@ export default function ProviderPicker({ value, onChange, connected }: Props) {
               </span>
             )}
             <span aria-hidden="true" className="text-[26px] leading-none transition-transform group-hover:scale-110">{PROVIDER_ICONS[p]}</span>
-            <span className={"text-[11px] font-bold " + (selected ? "text-emerald-800" : "text-[#4a5249]")}>
+            <span className={"text-[11px] font-bold " + (selected ? "text-emerald-800" : "text-ink-body")}>
               {PROVIDER_LABELS[p]}
             </span>
             <span className={"inline-flex items-center gap-1 text-[9px] font-semibold " + (hasKey ? "text-emerald-600" : "text-ink-4")}>

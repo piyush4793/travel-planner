@@ -202,7 +202,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
       backdropClassName="bg-black/40 backdrop-blur-sm"
     >
         {/* Hero header */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 via-emerald-800 to-[#0f2f23] px-5 md:px-6 py-5 text-white">
+        <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 via-emerald-800 to-brand-950 px-5 md:px-6 py-5 text-white">
           <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-16 h-40 w-40 rounded-full bg-white/15 blur-2xl" />
           <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 left-1/3 h-40 w-40 rounded-full bg-emerald-300/20 blur-2xl" />
           <div className="relative flex items-center justify-between gap-3">
@@ -243,9 +243,9 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
 
             {currentKey && (
               <SectionCard title="Current key" icon={"\u{1F511}"} accent="bg-emerald-100 text-emerald-600">
-                <div className="flex items-center gap-2 rounded-xl bg-surface-2 ring-1 ring-[#e0dac9] px-3 py-2">
+                <div className="flex items-center gap-2 rounded-xl bg-surface-2 ring-1 ring-line px-3 py-2">
                   <code className="text-xs text-emerald-600 flex-1 font-mono truncate">{showKey ? currentKey : masked}</code>
-                  <button onClick={() => setShowKey(!showKey)} className="text-[11px] px-2 py-1 min-h-[32px] rounded-lg text-ink-2 hover:text-ink-body hover:bg-[#efe9db] transition-colors focus-ring">{showKey ? "Hide" : "Show"}</button>
+                  <button onClick={() => setShowKey(!showKey)} className="text-[11px] px-2 py-1 min-h-[32px] rounded-lg text-ink-2 hover:text-ink-body hover:bg-surface-track transition-colors focus-ring">{showKey ? "Hide" : "Show"}</button>
                   <button onClick={handleDelete} className="text-[11px] px-2 py-1 min-h-[32px] rounded-lg text-red-500 hover:text-red-600 hover:bg-red-50 transition-colors focus-ring">Delete</button>
                 </div>
               </SectionCard>
@@ -258,7 +258,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                   value={draft}
                   onChange={(e) => setDraft(e.target.value)}
                   placeholder={help.placeholder}
-                  className="flex-1 bg-surface-2 border border-[#e0dac9] rounded-lg px-3 py-2.5 text-xs text-[#1e2a25] placeholder:text-emerald-200/80 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-shadow"
+                  className="flex-1 bg-surface-2 border border-line rounded-lg px-3 py-2.5 text-xs text-ink-1 placeholder:text-emerald-200/80 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-shadow"
                   onKeyDown={(e) => e.key === "Enter" && handleSave()}
                 />
                 <button
@@ -295,10 +295,10 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
             <SectionCard className="space-y-3">
               <details className="text-[11px] text-ink-2 cursor-pointer">
                 <summary className="hover:text-ink-body font-semibold focus-ring rounded">{"\u{1F4B0}"} Token pricing reference</summary>
-                <div className="mt-2 rounded-lg overflow-hidden border border-[#e0dac9]">
+                <div className="mt-2 rounded-lg overflow-hidden border border-line">
                   <table className="w-full text-[10px]">
                     <thead>
-                      <tr className="bg-surface-2 text-[#4a5249]">
+                      <tr className="bg-surface-2 text-ink-body">
                         <th className="px-3 py-1.5 text-left font-bold">Provider</th>
                         <th className="px-3 py-1.5 text-left font-bold">Model</th>
                         <th className="px-3 py-1.5 text-right font-bold">Input $/1M</th>
@@ -309,7 +309,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                       {PROVIDERS.map((p) => {
                         const pr = PROVIDER_PRICING[p];
                         return (
-                          <tr key={p} className={"border-t border-[#efeadd] " + (p === provider ? "bg-emerald-50 text-ink-body" : "text-ink-2")}>
+                          <tr key={p} className={"border-t border-surface-track " + (p === provider ? "bg-emerald-50 text-ink-body" : "text-ink-2")}>
                             <td className="px-3 py-1.5">{PROVIDER_ICONS[p]} {PROVIDER_LABELS[p]}</td>
                             <td className="px-3 py-1.5">{pr.model}</td>
                             <td className="px-3 py-1.5 text-right font-mono">${pr.inputPer1M}</td>
@@ -324,7 +324,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
               </details>
 
               <details className="text-[11px] text-ink-4 cursor-pointer">
-                <summary className="hover:text-[#4a5249] focus-ring rounded">How to get a {PROVIDER_LABELS[provider]} API key</summary>
+                <summary className="hover:text-ink-body focus-ring rounded">How to get a {PROVIDER_LABELS[provider]} API key</summary>
                 <ol className="mt-2 space-y-1 text-[10px] text-ink-4 list-decimal list-inside leading-relaxed">
                   {help.steps.map((step, i) => (
                     <li key={i}>{step}</li>
@@ -352,7 +352,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
             </p>
 
             {/* Status hero */}
-            <div className="rounded-2xl bg-gradient-to-br from-[#123a2b] to-[#0f2f23] text-white p-4 md:p-5 shadow-sm">
+            <div className="rounded-2xl bg-gradient-to-br from-brand-900 to-brand-950 text-white p-4 md:p-5 shadow-sm">
               <div className="flex items-center gap-3">
                 <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-xl" aria-hidden="true">{"\u{1F4BE}"}</span>
                 <div className="min-w-0 flex-1">
@@ -383,13 +383,13 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                 <div className="flex gap-2">
                   <button
                     onClick={async () => { if (countries?.length) { await exportCountriesCSV(countries); setBackupStatus({ ok: true, msg: "CSV exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
-                    className="flex-1 px-3 py-2 min-h-[32px] bg-[#efe9db] hover:bg-line text-ink-body text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-[#e0dac9]"
+                    className="flex-1 px-3 py-2 min-h-[32px] bg-surface-track hover:bg-line text-ink-body text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-line"
                   >
                     {"\u{1F4C4}"} Countries CSV
                   </button>
                   <button
                     onClick={async () => { if (countries?.length) { await exportCountriesXLSX(countries); setBackupStatus({ ok: true, msg: "XLSX exported!" }); } else { setBackupStatus({ ok: false, msg: "No countries to export" }); } }}
-                    className="flex-1 px-3 py-2 min-h-[32px] bg-[#efe9db] hover:bg-line text-ink-body text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-[#e0dac9]"
+                    className="flex-1 px-3 py-2 min-h-[32px] bg-surface-track hover:bg-line text-ink-body text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-line"
                   >
                     {"\u{1F4CA}"} Countries XLSX
                   </button>
@@ -401,13 +401,13 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
               <div className="flex gap-2">
                 <button
                   onClick={() => restoreRef.current?.click()}
-                  className="flex-1 px-3 py-2 min-h-[32px] bg-[#efe9db] hover:bg-line text-ink-body text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-[#e0dac9]"
+                  className="flex-1 px-3 py-2 min-h-[32px] bg-surface-track hover:bg-line text-ink-body text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-line"
                 >
                   {"\u{1F4E6}"} Restore Backup (JSON)
                 </button>
                 <button
                   onClick={() => importRef.current?.click()}
-                  className="flex-1 px-3 py-2 min-h-[32px] bg-[#efe9db] hover:bg-line text-ink-body text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-[#e0dac9]"
+                  className="flex-1 px-3 py-2 min-h-[32px] bg-surface-track hover:bg-line text-ink-body text-[11px] font-semibold rounded-xl transition-colors focus-ring ring-1 ring-line"
                 >
                   {"\u{1F4C4}"} Import (CSV)
                 </button>
@@ -422,7 +422,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                   <button
                     key={f}
                     onClick={() => handleFreqChange(f)}
-                    className={"flex-1 px-2 py-2 min-h-[32px] text-[11px] font-semibold rounded-xl transition-colors focus-ring " + (backupFreq === f ? "bg-emerald-700 text-white shadow-sm" : "bg-[#efe9db] text-ink-2 hover:bg-line ring-1 ring-[#e0dac9]")}
+                    className={"flex-1 px-2 py-2 min-h-[32px] text-[11px] font-semibold rounded-xl transition-colors focus-ring " + (backupFreq === f ? "bg-emerald-700 text-white shadow-sm" : "bg-surface-track text-ink-2 hover:bg-line ring-1 ring-line")}
                   >
                     {f.charAt(0).toUpperCase() + f.slice(1)}
                   </button>
@@ -435,7 +435,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                   <select
                     value={backupSched.weekday ?? 0}
                     onChange={(e) => handleSchedChange({ weekday: parseInt(e.target.value) })}
-                    className="bg-surface-2 border border-[#e0dac9] rounded-lg px-2 py-1.5 text-[11px] text-ink-body appearance-none cursor-pointer focus:outline-none focus:border-emerald-500"
+                    className="bg-surface-2 border border-line rounded-lg px-2 py-1.5 text-[11px] text-ink-body appearance-none cursor-pointer focus:outline-none focus:border-emerald-500"
                   >
                     {["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].map((day, i) => (
                       <option key={i} value={i}>{day}</option>
@@ -450,7 +450,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                   <select
                     value={backupSched.monthDay ?? 1}
                     onChange={(e) => handleSchedChange({ monthDay: parseInt(e.target.value) })}
-                    className="bg-surface-2 border border-[#e0dac9] rounded-lg px-2 py-1.5 text-[11px] text-ink-body appearance-none cursor-pointer focus:outline-none focus:border-emerald-500"
+                    className="bg-surface-2 border border-line rounded-lg px-2 py-1.5 text-[11px] text-ink-body appearance-none cursor-pointer focus:outline-none focus:border-emerald-500"
                   >
                     {Array.from({ length: 28 }, (_, i) => (
                       <option key={i + 1} value={i + 1}>{i + 1}</option>
@@ -510,7 +510,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
               <div className="px-5 py-4 space-y-3">
                 <div className="bg-surface-2 rounded-xl p-3 space-y-1.5">
                   <p className="text-[11px] text-ink-2">Backup from</p>
-                  <p className="text-xs font-semibold text-[#1e2a25]">
+                  <p className="text-xs font-semibold text-ink-1">
                     {new Date(restorePreview.exportedAt).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-2">
@@ -529,7 +529,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                         ✨ {restorePreview.aiPlanCount} AI plans
                       </span>
                     )}
-                    <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-[#efe9db] text-ink-2">
+                    <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-surface-track text-ink-2">
                       {restorePreview.totalKeys} data keys
                     </span>
                   </div>
@@ -543,7 +543,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
               <div className="flex gap-2 px-5 py-3 border-t">
                 <button
                   onClick={() => setRestorePreview(null)}
-                  className="flex-1 px-3 py-2 text-xs font-medium text-[#4a5249] bg-[#efe9db] hover:bg-line rounded-lg transition-colors"
+                  className="flex-1 px-3 py-2 text-xs font-medium text-ink-body bg-surface-track hover:bg-line rounded-lg transition-colors"
                 >
                   Cancel
                 </button>

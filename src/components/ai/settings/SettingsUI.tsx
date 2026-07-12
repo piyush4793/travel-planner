@@ -22,13 +22,13 @@ export function SectionCard({ title, icon, desc, children, className, accent }: 
           {icon && (
             <span
               aria-hidden="true"
-              className={"flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-lg " + (desc ? "mt-0.5" : "") + " " + (accent ?? "bg-[#efe9db] text-[#4a5249]")}
+              className={"flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-lg " + (desc ? "mt-0.5" : "") + " " + (accent ?? "bg-surface-track text-ink-body")}
             >
               {icon}
             </span>
           )}
           <div className="min-w-0 space-y-0.5">
-            <h3 className="text-sm font-bold tracking-tight text-[#1e2a25]">{title}</h3>
+            <h3 className="text-sm font-bold tracking-tight text-ink-1">{title}</h3>
             {desc && <p className="text-[11px] leading-relaxed text-ink-2">{desc}</p>}
           </div>
         </header>

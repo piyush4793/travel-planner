@@ -22,6 +22,12 @@ export default {
           1: "#faf8f1", // lightest card / raised surface
           2: "#f7f4ec", // panel / section fill
           3: "#f2efe6", // subtle inset tint
+          track: "#efe9db", // sunken well / pill track / button fill
+        },
+        // Deep-emerald brand gradient tails (paired with emerald-700/800).
+        brand: {
+          900: "#123a2b",
+          950: "#0f2f23",
         },
       },
     },

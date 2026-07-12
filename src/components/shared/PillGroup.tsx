@@ -10,9 +10,9 @@ const ACCENT: Record<Accent, { container: string; active: string; idle: string; 
     focus: "focus-ring",
   },
   emerald: {
-    container: "bg-[#efeadd]",
+    container: "bg-surface-track",
     active: "bg-white text-emerald-800 shadow-sm",
-    idle: "text-ink-2 hover:text-[#1e2a25]",
+    idle: "text-ink-2 hover:text-ink-1",
     focus: "focus-ring-emerald",
   },
 };

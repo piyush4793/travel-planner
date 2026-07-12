@@ -523,7 +523,7 @@ Per phase:
 
 ## Tailwind Conventions
 
-- **Color tokens (source of truth in `tailwind.config.js`)** — the luxury warm-ivory neutral ramp is centralized as semantic tokens; **use these, never raw `[#hex]` neutrals** (they had drifted into ~40 near-duplicate hexes across the Plan journey): ink `ink-1` (headings) / `ink-body` / `ink-2` (muted) / `ink-3` / `ink-4`; borders `line` / `line-strong`; surfaces `surface-1` / `surface-2` / `surface-3`. Accents stay Tailwind palette: **emerald = primary** (`emerald-800` CTA text, `emerald-700` links/values, `emerald-200` hairlines), **amber = anchor/warnings**. Add a token rather than a bespoke hex when a new neutral is needed.
+- **Color tokens (source of truth in `tailwind.config.js`)** — the luxury warm-ivory neutral ramp is centralized as semantic tokens; **use these, never raw `[#hex]` neutrals** (they had drifted into ~40 near-duplicate hexes across the Plan journey; components now carry **zero raw `[#hex]` class literals**): ink `ink-1` (headings) / `ink-body` / `ink-2` (muted) / `ink-3` / `ink-4`; borders `line` / `line-strong`; surfaces `surface-1` / `surface-2` / `surface-3` / `surface-track` (sunken well / pill track / button fill); deep-emerald brand gradient tails `brand-900` / `brand-950`. Accents stay Tailwind palette: **emerald = primary** (`emerald-800` CTA text, `emerald-700` links/values, `emerald-200` hairlines), **amber = anchor/warnings**. Add a token rather than a bespoke hex when a new neutral is needed.
 - Text: labels `text-[10px]`, body `text-[11px]`/`text-xs`, headings `text-sm`/`text-base`
 - Rounded: cards `rounded-xl`, chips `rounded-full`, inputs `rounded-lg`
 - Spacing: section gaps `space-y-5`, inner card `space-y-3.5`

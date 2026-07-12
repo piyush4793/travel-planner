@@ -25,7 +25,7 @@ function LifecyclePromptToastInner({ prompt, onAct, onDismiss }: Props) {
     >
       <div className="pointer-events-auto flex max-w-md items-center gap-3 rounded-2xl border border-emerald-200 bg-white/95 px-4 py-2.5 shadow-lg backdrop-blur motion-safe:animate-[slideUp_0.2s_ease-out]">
         <span aria-hidden="true" className="text-base leading-none text-emerald-700">{ICON[prompt.kind]}</span>
-        <p className="flex-1 text-xs font-medium text-[#1e2a25]">{prompt.message}</p>
+        <p className="flex-1 text-xs font-medium text-ink-1">{prompt.message}</p>
         {prompt.actionLabel && (
           <button
             type="button"

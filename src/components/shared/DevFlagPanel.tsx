@@ -55,7 +55,7 @@ function DevFlagPanelInner({ size }: { size: "sm" | "md" }) {
     <>
       <button
         onClick={() => setOpen((o) => !o)}
-        className={`flex items-center justify-center ${dims} bg-[#efe9db] hover:bg-line rounded-full transition-colors border border-[#e0dac9] focus-ring`}
+        className={`flex items-center justify-center ${dims} bg-surface-track hover:bg-line rounded-full transition-colors border border-line focus-ring`}
         aria-label="Dev: Feature Flags"
         aria-expanded={open}
       >
@@ -73,7 +73,7 @@ function DevFlagPanelInner({ size }: { size: "sm" | "md" }) {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="px-6 py-4 bg-gradient-to-r from-[#123a2b] to-[#0f2f23] flex items-center justify-between">
+            <div className="px-6 py-4 bg-gradient-to-r from-brand-900 to-brand-950 flex items-center justify-between">
               <div>
                 <h3 className="text-sm font-bold text-white">🛠 Feature Flags</h3>
                 <p className="text-[10px] text-emerald-200/70 mt-0.5">Dev panel · localhost only</p>
@@ -117,7 +117,7 @@ function DevFlagPanelInner({ size }: { size: "sm" | "md" }) {
             </div>
 
             {/* Footer */}
-            <div className="px-6 py-3 border-t border-[#efeadd] bg-surface-2 flex items-center justify-between">
+            <div className="px-6 py-3 border-t border-surface-track bg-surface-2 flex items-center justify-between">
               <p className="text-[10px] text-ink-4">Changes apply instantly · paid children require master gate on</p>
               <button
                 onClick={() => { localStorage.removeItem(LS_KEYS.FRE_DONE); window.location.reload(); }}
