@@ -49,7 +49,8 @@ const country: Country = {
 function renderCinematic() {
   // No mainMapRef → map unavailable, but the header/footer controls still render.
   const route = buildSingleCountryRoute(plan, country, null, "India");
-  return render(<ItineraryCinematic route={route} onClose={vi.fn()} />);
+  const onClose = vi.fn();
+  return { ...render(<ItineraryCinematic route={route} onClose={onClose} />), onClose };
 }
 
 describe("ItineraryCinematic controls", () => {
@@ -110,6 +111,34 @@ describe("ItineraryCinematic controls", () => {
     await user.click(skip());
     await user.click(skip());
     await expect(user.click(skip())).resolves.not.toThrow();
+  });
+
+  it("closes on Escape", async () => {
+    const user = userEvent.setup();
+    const { onClose } = renderCinematic();
+    await user.keyboard("{Escape}");
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
+  it("restores focus to the trigger on unmount", () => {
+    const trigger = document.createElement("button");
+    document.body.appendChild(trigger);
+    trigger.focus();
+    expect(document.activeElement).toBe(trigger);
+
+    const { unmount } = renderCinematic();
+    unmount();
+
+    expect(document.activeElement).toBe(trigger);
+    document.body.removeChild(trigger);
+  });
+
+  it("renders a single playback control cluster (no header/footer duplication)", () => {
+    renderCinematic();
+    // Deduped to the footer bar only — one of each control, on every screen.
+    expect(screen.getAllByLabelText("Skip to next stop")).toHaveLength(1);
+    expect(screen.getAllByLabelText("Back to previous stop")).toHaveLength(1);
+    expect(screen.getAllByLabelText(/Playback speed/)).toHaveLength(1);
   });
 });
 

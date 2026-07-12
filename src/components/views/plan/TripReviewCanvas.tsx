@@ -1,4 +1,4 @@
-import { memo, useEffect, useMemo, useState } from "react";
+import { memo, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { Country } from "../../../core/types";
 import type { CityEntry } from "../../../core/types";
 import type { CountryRule } from "../../../core/data/itineraryRules";
@@ -8,8 +8,6 @@ import { getCountryFlag } from "../../../utils/countryFlags";
 import ItineraryView, { groupDays } from "../../country/itinerary/ItineraryView";
 import PlanCityJumpNav, { type JumpSection } from "./PlanCityJumpNav";
 import RouteLeversBar, { type LeverStop } from "./RouteLeversBar";
-import ItineraryToolbar from "./ItineraryToolbar";
-import type { PdfRouteStop } from "../../../utils/pdfModel";
 import SegmentAdjustDrawer from "./SegmentAdjustDrawer";
 import BorderHop from "./BorderHop";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
@@ -56,12 +54,6 @@ export interface ReviewSegment {
 type Props = {
   /** The stops in visit order (already reordered by the workspace). */
   segments: ReviewSegment[];
-  /** The whole route folded into one plan (in visit order). */
-  composedPlan: TripPlan;
-  /** Primary destination the share/PDF name after. */
-  country: Country;
-  homeCountry: string;
-  onPlanWithAi?: () => void;
   /** Which stop is the anchor (importance ★) — expanded by default. */
   anchorName: string;
   onSetAnchor: (name: string) => void;
@@ -70,9 +62,12 @@ type Props = {
   /** Re-sort the route into a sensible nearest-neighbour chain from the anchor. */
   onAutoArrange: () => void;
   canAutoArrange: boolean;
-  /** Play the composed route as a cinematic fly-through (≥2 stops). */
-  canCinematic?: boolean;
-  onCinematic?: () => void;
+  /**
+   * The composed itinerary's action toolbar (Share/Cinematic/PDF/AI), built by the
+   * workspace so it can also live in the mobile/tablet Actions sheet. The canvas
+   * only pins it at the card foot on desktop; below `lg` the shell renders it.
+   */
+  toolbar: ReactNode;
 };
 
 type SegmentBlockProps = {
@@ -260,17 +255,12 @@ function SegmentBlock({
  */
 function TripReviewCanvasInner({
   segments,
-  composedPlan,
-  country,
-  homeCountry,
-  onPlanWithAi,
   anchorName,
   onSetAnchor,
   onReorder,
   onAutoArrange,
   canAutoArrange,
-  canCinematic,
-  onCinematic,
+  toolbar,
 }: Props) {
   // Anchor opens by default; the rest fold. An explicit toggle overrides per stop,
   // reset whenever the route identity or the anchor changes.
@@ -289,17 +279,6 @@ function TripReviewCanvasInner({
 
   // Stops fed to the trip-level levers bar (route order + anchor).
   const leverStops: LeverStop[] = segments.map((s) => ({ name: s.name }));
-
-  // Per-stop breakdown for the shared PDF/share model: the composed plan's
-  // continuously-numbered days are sliced back per stop by these day counts,
-  // giving each country its own PDF section. Scope-agnostic via ReviewSegment.
-  const routeStops: PdfRouteStop[] = segments.map((s) => ({
-    name: s.name,
-    dayCount: s.plan.days.length,
-    cost: s.plan.costPerPerson,
-    bestMonths: s.country?.bestMonths,
-    note: s.plan.note,
-  }));
 
   // Jumping to a city inside a collapsed stop must first expand that stop —
   // otherwise its day nodes aren't rendered and the scroll target doesn't exist.
@@ -325,21 +304,10 @@ function TripReviewCanvasInner({
   // Cumulative day ranges follow visit order (banners are route-relative).
   let dayCursor = 0;
 
-  // On mobile a rail bar + app tab-bar already sit below this card; pin the
-  // action toolbar only on larger screens and let it scroll in at the route's
-  // end on mobile (the audit's "un-stick the toolbar" fix).
-  const pinToolbar = useBreakpoint() !== "mobile";
-  const toolbar = (
-    <ItineraryToolbar
-      country={country}
-      plan={composedPlan}
-      homeCountry={homeCountry}
-      routeStops={routeStops}
-      onPlanWithAi={onPlanWithAi}
-      canCinematic={canCinematic}
-      onCinematic={onCinematic}
-    />
-  );
+  // Desktop pins the action toolbar at the card foot; below `lg` the workspace
+  // shell surfaces the same toolbar in an "Actions" bottom-sheet (so it is never
+  // buried at the route's scroll end, and the mobile bar owns all trip actions).
+  const pinToolbar = useBreakpoint() === "desktop";
 
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
@@ -378,10 +346,9 @@ function TripReviewCanvasInner({
             />
           );
         })}
-        {!pinToolbar && <div className="mt-2">{toolbar}</div>}
       </div>
 
-      {pinToolbar && toolbar}
+      {pinToolbar && <div className="border-t border-line">{toolbar}</div>}
     </div>
   );
 }

@@ -72,9 +72,9 @@ describe("mobile Plan header (compact chrome)", () => {
 
 const context: RailDef = {
   key: "context",
-  title: "Good to know",
-  reopenLabel: "Details",
-  mobileLabel: "📌 Good to know",
+  title: "Insights",
+  reopenLabel: "Insights",
+  mobileLabel: "Insights",
   node: <p>context-content</p>,
 };
 
@@ -89,29 +89,64 @@ const shape: RailDef = {
 describe("mobile Review bottom bar", () => {
   beforeEach(() => window.localStorage.clear());
 
-  it("renders Back + Plan another beside the rail trigger and wires them", () => {
+  it("renders Back + Plan another as compact icon buttons beside the rail trigger and wires them", () => {
     const onBack = vi.fn();
     const onPlanAnother = vi.fn();
     render(
       <PlanWorkspaceShell center={<p>route-canvas</p>} context={context} nav={{ onBack, onPlanAnother }} />,
     );
-    fireEvent.click(screen.getByRole("button", { name: "Back to the previous step" }));
-    fireEvent.click(screen.getByRole("button", { name: "Plan another trip" }));
+    const back = screen.getByRole("button", { name: "Back to the previous step" });
+    const planAnother = screen.getByRole("button", { name: "Plan another trip" });
+    // Compact icon-only so the bar stays one line at 375px — the label lives in aria-label.
+    expect(back).not.toHaveTextContent("Back");
+    expect(planAnother).not.toHaveTextContent("Plan another");
+    fireEvent.click(back);
+    fireEvent.click(planAnother);
     expect(onBack).toHaveBeenCalledTimes(1);
     expect(onPlanAnother).toHaveBeenCalledTimes(1);
-    expect(screen.getByRole("button", { name: /Good to know/ })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Insights/ })).toBeInTheDocument();
   });
 
-  it("keeps the Plan-another label visible with a single rail (multi-country)", () => {
+  it("keeps the Plan-another button reachable by its accessible name (multi-country)", () => {
     render(
       <PlanWorkspaceShell center={<p>route</p>} context={context} nav={{ onBack: vi.fn(), onPlanAnother: vi.fn() }} />,
     );
-    expect(screen.getByRole("button", { name: "Plan another trip" })).toHaveTextContent("Plan another");
+    expect(screen.getByRole("button", { name: "Plan another trip" })).toBeInTheDocument();
   });
 
   it("omits the nav buttons when no nav is supplied", () => {
     render(<PlanWorkspaceShell center={<p>route</p>} shape={shape} context={context} />);
     expect(screen.queryByRole("button", { name: "Back to the previous step" })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Plan another trip" })).not.toBeInTheDocument();
+  });
+});
+
+describe("mobile Actions sheet", () => {
+  beforeEach(() => window.localStorage.clear());
+
+  it("does not render a More trigger when no actions node is supplied", () => {
+    render(<PlanWorkspaceShell center={<p>route</p>} context={context} nav={{ onBack: vi.fn(), onPlanAnother: vi.fn() }} />);
+    expect(screen.queryByRole("button", { name: /Tools/ })).not.toBeInTheDocument();
+  });
+
+  it("opens the More bottom-sheet with its actions node and closes on ✕", () => {
+    render(
+      <PlanWorkspaceShell
+        center={<p>route</p>}
+        context={context}
+        actions={<button type="button">Export this itinerary as a PDF</button>}
+        nav={{ onBack: vi.fn(), onPlanAnother: vi.fn() }}
+      />,
+    );
+    const trigger = screen.getByRole("button", { name: "Tools — PDF export, AI plan, cinematic" });
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+
+    fireEvent.click(trigger);
+    expect(trigger).toHaveAttribute("aria-expanded", "true");
+    expect(screen.getByRole("heading", { name: "Tools" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Export this itinerary as a PDF" })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: "Close panel" }));
+    expect(screen.getByRole("button", { name: "Tools — PDF export, AI plan, cinematic" })).toHaveAttribute("aria-expanded", "false");
   });
 });

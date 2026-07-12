@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
+import { SheetGrip, SheetCloseButton } from "./sheetChrome";
 
 type Pos = { left: number; width: number; top?: number; bottom?: number; maxH: number };
 
@@ -114,16 +115,7 @@ export default function PlanPopover({
         <h3 className="font-display text-[15px] font-bold leading-tight tracking-tight text-emerald-950">{title}</h3>
         {subtitle && <p className="mt-0.5 text-[11px] leading-tight text-emerald-700/80">{subtitle}</p>}
       </div>
-      {withClose && (
-        <button
-          type="button"
-          onClick={close}
-          aria-label="Close"
-          className="focus-ring-emerald flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 text-sm font-bold text-emerald-800 ring-1 ring-emerald-100 transition-colors hover:bg-white"
-        >
-          <span aria-hidden="true">✕</span>
-        </button>
-      )}
+      {withClose && <SheetCloseButton onClick={close} />}
     </div>
   );
 
@@ -155,7 +147,7 @@ export default function PlanPopover({
               ref={popRef}
               className="relative flex max-h-[70vh] flex-col overflow-hidden rounded-t-3xl border-t border-emerald-100 bg-white shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
             >
-              <div className="mx-auto mt-2.5 h-1 w-10 shrink-0 rounded-full bg-line-strong" aria-hidden="true" />
+              <SheetGrip />
               {header(true)}
               <div className="min-h-0 overflow-y-auto px-3 pb-8 pt-3">{children(close)}</div>
             </div>

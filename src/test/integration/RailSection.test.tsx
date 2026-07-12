@@ -40,4 +40,24 @@ describe("RailSection — luxury collapsible", () => {
     expect(screen.getByText("5")).toBeInTheDocument();
     expect(screen.getByText(/auto-picked/)).toBeInTheDocument();
   });
+
+  it("drops the card chrome in the flat variant (for in-sheet use)", () => {
+    const { container: card } = render(
+      <RailSection title="Notes" variant="card">
+        <p>card body</p>
+      </RailSection>,
+    );
+    expect(card.querySelector("section")?.className).toContain("border-line");
+
+    const { container: flat } = render(
+      <RailSection title="Notes" variant="flat">
+        <p>flat body</p>
+      </RailSection>,
+    );
+    const section = flat.querySelector("section");
+    expect(section?.className).not.toContain("border-line");
+    expect(section?.className).not.toContain("rounded-2xl");
+    // Still collapsible + content reachable.
+    expect(screen.getByText("flat body")).toBeInTheDocument();
+  });
 });

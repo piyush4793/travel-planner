@@ -1,4 +1,5 @@
 import { memo, useEffect, useRef } from "react";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import type { Country } from "../../../core/types";
 import type { TripPlan } from "../../../core/utils/tripPlans";
 import { planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
@@ -56,7 +57,7 @@ function CountryBeforeYouGo({ country, homeCountry, showHeading }: { country: Co
 }
 
 /**
- * The unified "Good to know" rail — trip-level reference the traveller reads
+ * The unified "Insights" rail — trip-level reference the traveller reads
  * (never a lever), shared by single- and multi-country Review. Molds to its data:
  * trip readiness (honest visa/border fallback), an honest per-country budget
  * ledger (×nights line items + an italic inter-country caveat, never a faked leg
@@ -68,14 +69,21 @@ function CountryBeforeYouGo({ country, homeCountry, showHeading }: { country: Co
  * so a single-country trip (N=1) stays byte-identical to the old single rail.
  */
 function TripContextRailInner({ countries, composedPlan, perCountryCost, homeCountry, notes, onSaveNotes }: Props) {
+  // The same rail node is rendered inline on the desktop aside (discrete cards)
+  // and inside the mobile "Insights" bottom-sheet. In the sheet the parent
+  // already supplies the emerald surface, so bordered cards would read as
+  // cards-inside-a-card; there we switch to flat, hairline-divided sections that
+  // match the Adjust/Filters sheets. Reactive to the breakpoint.
+  const flat = useBreakpoint() !== "desktop";
+  const v = flat ? "flat" : "card";
   const readiness = tripReadiness(countries);
   const seasonCountries = countries.filter((c) => (c.bestMonths?.length ?? 0) > 0 || (c.worstMonths?.length ?? 0) > 0);
   const tipCountries = countries.filter((c) => !!c.stopoverNote || (c.avoid?.length ?? 0) > 0 || (c.combo?.length ?? 0) > 0);
   const multi = countries.length > 1;
 
   return (
-    <div className="space-y-2.5">
-      <RailSection title="Trip readiness" hint="before you book" defaultOpen>
+    <div className={flat ? "divide-y divide-line" : "space-y-2.5"}>
+      <RailSection title="Trip readiness" hint="before you book" variant={v} defaultOpen>
         <ul className="space-y-1.5">
           {readiness.map((item) => (
             <li key={item.text} className="flex gap-1.5 text-[11px] leading-snug">
@@ -91,6 +99,7 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, homeCou
       <RailSection
         title="Budget"
         hint={planCostBasisLabel(composedPlan)}
+        variant={v}
         defaultOpen
       >
         {/* Honest budget ledger — per-country line items are real; the legs line
@@ -129,7 +138,7 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, homeCou
       </RailSection>
 
       {seasonCountries.length > 0 && (
-        <RailSection title="When to go" hint="by country" count={seasonCountries.length}>
+        <RailSection title="When to go" hint="by country" variant={v} count={seasonCountries.length}>
           <div className="space-y-3">
             {seasonCountries.map((c) => (
               <div key={c.name}>
@@ -145,7 +154,7 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, homeCou
       )}
 
       {tipCountries.length > 0 && (
-        <RailSection title="Watch-outs & tips" hint="by country" count={tipCountries.length}>
+        <RailSection title="Watch-outs & tips" hint="by country" variant={v} count={tipCountries.length}>
           <div className="space-y-3">
             {tipCountries.map((c) => (
               <div key={c.name} className="space-y-1.5">
@@ -194,13 +203,13 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, homeCou
       )}
 
       {onSaveNotes && (
-        <RailSection title="Notes" hint="just for you">
+        <RailSection title="Notes" hint="just for you" variant={v}>
           <PlanNotesSection notes={notes} onSave={onSaveNotes} />
         </RailSection>
       )}
 
       {countries.length > 0 && (
-        <RailSection title="Before you go" hint="learn, visas, links">
+        <RailSection title="Before you go" hint="learn, visas, links" variant={v}>
           <div className={multi ? "space-y-4" : undefined}>
             {countries.map((c) => (
               <CountryBeforeYouGo key={c.name} country={c} homeCountry={homeCountry} showHeading={multi} />

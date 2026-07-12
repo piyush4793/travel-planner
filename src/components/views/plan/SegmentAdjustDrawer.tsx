@@ -3,6 +3,7 @@ import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import { getCountryFlag } from "../../../utils/countryFlags";
 import { extractPlanCities } from "../../../core/utils/tripPlans";
 import ModalShell from "../../shared/ModalShell";
+import { SheetCloseButton } from "./sheetChrome";
 import DayLengthControl from "./DayLengthControl";
 import FocusChips from "./FocusChips";
 import CityPicker from "./CityPicker";
@@ -61,26 +62,17 @@ export default function SegmentAdjustDrawer({ segment, onClose }: Props) {
       label={`Adjust ${segment.name}`}
       className={
         isMobile
-          ? "relative flex h-[80vh] w-full flex-col self-end overflow-hidden rounded-t-2xl bg-white shadow-2xl focus:outline-none motion-safe:animate-[slideUp_0.25s_ease-out]"
+          ? "relative flex h-[80vh] w-full flex-col self-end overflow-hidden rounded-t-3xl bg-white shadow-2xl focus:outline-none motion-safe:animate-[slideUp_0.25s_ease-out]"
           : "relative flex h-[560px] max-h-[85vh] w-[440px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl focus:outline-none motion-safe:animate-[scaleIn_0.18s_ease-out]"
       }
     >
-      <button
-        type="button"
-        onClick={onClose}
-        aria-label={`Close adjust ${segment.name}`}
-        className="focus-ring-emerald absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-emerald-800 ring-1 ring-emerald-100 transition-colors hover:bg-white"
-      >
-        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
-          <path d="M6 6l12 12M18 6L6 18" />
-        </svg>
-      </button>
+      <SheetCloseButton onClick={onClose} label={`Close adjust ${segment.name}`} className="absolute right-4 top-4 z-10" />
 
       {/* Premium header band — an emerald-tinted, full-bleed header (flag tile +
           name + nights pill + on-band tabs) so the modal reads as a branded
           "adjust this stop" surface instead of plain text floating on white. */}
-      <div className="shrink-0 border-b border-emerald-100 bg-gradient-to-b from-emerald-50/90 to-white px-5 pb-3 pt-3 sm:px-6 sm:pt-5">
-        {isMobile && <span aria-hidden="true" className="mx-auto mb-3 block h-1 w-9 rounded-full bg-line-strong" />}
+      <div className="shrink-0 border-b border-emerald-100 bg-gradient-to-b from-emerald-50 to-white px-5 pb-3 pt-3 sm:px-6 sm:pt-5">
+        {isMobile && <span aria-hidden="true" className="mx-auto mb-3 block h-1 w-10 rounded-full bg-emerald-300/70" />}
 
         <div className="flex items-center gap-2.5 pr-10">
           <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-xl leading-none shadow-sm ring-1 ring-emerald-100">{getCountryFlag(segment.name)}</span>

@@ -5,13 +5,14 @@ import TripSaveBar from "../components/views/plan/TripSaveBar";
 describe("TripSaveBar", () => {
   it("confirms the trip is saved via a compact status with the details in a tooltip", () => {
     render(<TripSaveBar isMulti={false} favorite={false} onToggleFavorite={vi.fn()} />);
-    expect(screen.getByText(/Saved/i)).toBeInTheDocument();
-    expect(screen.getByTitle(/Saved to My Trips — reopen this trip/i)).toBeInTheDocument();
+    // The old always-on "Saved" badge is gone — confirmation is a transient toast.
+    expect(screen.queryByText(/^Saved$/)).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Favorite this trip/i })).toBeInTheDocument();
   });
 
   it("uses route copy for a multi-stop trip", () => {
     render(<TripSaveBar isMulti favorite={false} onToggleFavorite={vi.fn()} />);
-    expect(screen.getByTitle(/reopen this route/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Favorite this route/i })).toBeInTheDocument();
   });
 
   it("toggles the trip favorite", () => {
@@ -27,7 +28,7 @@ describe("TripSaveBar", () => {
     render(<TripSaveBar isMulti={false} favorite onToggleFavorite={vi.fn()} />);
     const btn = screen.getByRole("button", { name: /Remove this trip from favorites/i });
     expect(btn).toHaveAttribute("aria-pressed", "true");
-    expect(btn).toHaveTextContent("Favorited");
+    expect(btn).toHaveTextContent("★");
   });
 
   it("hides the favorite control when no handler is provided", () => {

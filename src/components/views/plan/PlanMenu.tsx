@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useCallback, type ReactNode } from "react"
 import { createPortal } from "react-dom";
 import { useBackDismiss } from "../../../hooks/useBackDismiss";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
+import { SheetGrip, SheetCloseButton } from "./sheetChrome";
 
 type Props = {
   /** Trigger button content (label / flag / caret handled by caller). */
@@ -136,7 +137,7 @@ export default function PlanMenu({ trigger, ariaLabel, width = 260, triggerClass
             className="absolute inset-0 bg-black/40 motion-safe:animate-[fadeInUp_0.15s_ease-out]"
           />
           <div className="relative flex max-h-[70vh] flex-col overflow-hidden rounded-t-3xl border-t border-emerald-100 bg-white shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]">
-            <div className="mx-auto mt-2.5 h-1 w-10 shrink-0 rounded-full bg-line-strong" aria-hidden="true" />
+            <SheetGrip />
             <div className="flex shrink-0 items-center gap-2.5 border-b border-emerald-100 bg-gradient-to-b from-emerald-50 to-white px-4 py-3">
               {icon != null && (
                 <span
@@ -149,14 +150,7 @@ export default function PlanMenu({ trigger, ariaLabel, width = 260, triggerClass
               <h3 className="min-w-0 flex-1 font-display text-[15px] font-bold leading-tight tracking-tight text-emerald-950">
                 {title ?? ariaLabel}
               </h3>
-              <button
-                type="button"
-                onClick={close}
-                aria-label="Close"
-                className="focus-ring-emerald flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 text-sm font-bold text-emerald-800 ring-1 ring-emerald-100 transition-colors hover:bg-white"
-              >
-                <span aria-hidden="true">✕</span>
-              </button>
+              <SheetCloseButton onClick={close} />
             </div>
             <div className="min-h-0 overflow-y-auto pb-4">{menuItems}</div>
           </div>

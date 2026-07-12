@@ -1,6 +1,7 @@
 import { memo, useEffect, useState, type ReactNode } from "react";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import ModalShell from "../../shared/ModalShell";
+import { SheetGrip, SheetCloseButton } from "./sheetChrome";
 import { loadLS, saveLS } from "../../../core/storage";
 import { LS_KEYS } from "../../../core/lsKeys";
 
@@ -18,6 +19,8 @@ export type RailDef = {
 
 type RailUiState = { left: boolean; right: boolean };
 const DEFAULT_UI: RailUiState = { left: true, right: true };
+/** Sheet key for the composed-actions bottom-sheet (distinct from rail keys). */
+const ACTIONS_KEY = "__actions";
 
 /** Mobile-only itinerary navigation, rendered in the workspace's bottom bar
  *  beside the rail triggers. On desktop these live in the wizard footer, so the
@@ -32,6 +35,12 @@ type Props = {
   context: RailDef;
   /** Mobile bottom-bar Back / Plan-another (desktop uses the wizard footer). */
   nav?: WorkspaceNav;
+  /**
+   * Composed itinerary actions (Cinematic/PDF/AI). Below `lg` they surface
+   * as a "More" bottom-sheet from the mobile bar (never buried at scroll end);
+   * on desktop the canvas pins the same toolbar itself, so the shell ignores this.
+   */
+  actions?: ReactNode;
 };
 
 function RailHeader({ title, side, onCollapse }: { title: string; side: "left" | "right"; onCollapse: () => void }) {
@@ -76,7 +85,7 @@ function ReopenTab({ label, side, onOpen }: { label: string; side: "left" | "rig
  * Route Canvas (levers inline, no Shape rail) reuse one layout without forking
  * the responsive chrome.
  */
-function PlanWorkspaceShellInner({ center, shape, context, nav }: Props) {
+function PlanWorkspaceShellInner({ center, shape, context, nav, actions }: Props) {
   const bp = useBreakpoint();
   const isDesktop = bp === "desktop";
 
@@ -89,7 +98,13 @@ function PlanWorkspaceShellInner({ center, shape, context, nav }: Props) {
   useEffect(() => { if (isDesktop) setSheet(null); }, [isDesktop]);
 
   const rails: RailDef[] = shape ? [shape, context] : [context];
+  // The composed-actions sheet is not a reference rail (no desktop aside), so it
+  // is keyed separately and only ever surfaces from the mobile bar.
+  const actionsOpen = sheet === ACTIONS_KEY && !!actions;
   const activeRail = rails.find((r) => r.key === sheet) ?? null;
+  const sheetOpen = activeRail !== null || actionsOpen;
+  const sheetTitle = actionsOpen ? "Tools" : activeRail?.title;
+  const sheetNode = actionsOpen ? actions : activeRail?.node;
 
   if (isDesktop) {
     return (
@@ -123,62 +138,72 @@ function PlanWorkspaceShellInner({ center, shape, context, nav }: Props) {
     <div className="relative flex h-full w-full flex-col overflow-hidden">
       <main className="min-h-0 flex-1 overflow-hidden">{center}</main>
 
-      <div className="flex shrink-0 items-center gap-2 pb-safe pt-2.5">
-        {nav && (
-          <button
-            type="button"
-            onClick={nav.onBack}
-            aria-label="Back to the previous step"
-            className="focus-ring-emerald flex min-h-[44px] shrink-0 items-center gap-1 rounded-full border border-line bg-white px-3.5 text-xs font-bold text-ink-2 shadow-sm transition-colors hover:bg-surface-2"
-          >
-            <span aria-hidden="true">←</span> Back
-          </button>
-        )}
-        {rails.map((r) => (
-          <button
-            key={r.key}
-            type="button"
-            onClick={() => setSheet(r.key)}
-            aria-haspopup="dialog"
-            aria-expanded={sheet === r.key}
-            className="focus-ring-emerald flex min-h-[44px] min-w-0 flex-1 items-center justify-center gap-1.5 truncate rounded-full border border-line bg-white px-3 py-2 text-xs font-bold text-ink-1 shadow-sm transition-colors hover:bg-surface-2"
-          >
-            {r.mobileLabel}
-          </button>
-        ))}
-        {nav && (
-          <button
-            type="button"
-            onClick={nav.onPlanAnother}
-            aria-label="Plan another trip"
-            className="focus-ring-emerald flex min-h-[44px] shrink-0 items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 text-xs font-bold text-emerald-800 shadow-sm transition-colors hover:bg-emerald-100"
-          >
-            <span aria-hidden="true">＋</span>
-            <span className={rails.length > 1 ? "sr-only" : undefined}>Plan another</span>
-          </button>
-        )}
+      <div className="shrink-0 pb-safe pt-2.5">
+        {/* One continuous segmented toolbar (hairline dividers) so the wizard nav
+            reads as a cohesive bar — echoing the app tab bar below it — instead of
+            four mismatched floating buttons. Flanking icon cells (Back / ＋) frame
+            the two labelled action cells. */}
+        <div className="flex h-12 items-stretch divide-x divide-line rounded-full border border-line bg-white shadow-sm">
+          {nav && (
+            <button
+              type="button"
+              onClick={nav.onBack}
+              aria-label="Back to the previous step"
+              className="focus-ring-emerald flex w-14 shrink-0 items-center justify-center rounded-l-full text-lg font-bold text-ink-2 transition-colors first:rounded-l-full last:rounded-r-full hover:bg-surface-2"
+            >
+              <span aria-hidden="true">←</span>
+            </button>
+          )}
+          {rails.map((r) => (
+            <button
+              key={r.key}
+              type="button"
+              onClick={() => setSheet(r.key)}
+              aria-haspopup="dialog"
+              aria-expanded={sheet === r.key}
+              className="focus-ring-emerald flex min-w-0 flex-1 items-center justify-center gap-1.5 truncate px-2 text-xs font-bold text-ink-1 transition-colors first:rounded-l-full last:rounded-r-full hover:bg-surface-2"
+            >
+              {r.mobileLabel}
+            </button>
+          ))}
+          {actions && (
+            <button
+              type="button"
+              onClick={() => setSheet(ACTIONS_KEY)}
+              aria-haspopup="dialog"
+              aria-expanded={actionsOpen}
+              aria-label="Tools — PDF export, AI plan, cinematic"
+              className="focus-ring-emerald flex min-w-0 flex-1 items-center justify-center gap-1.5 truncate px-2 text-xs font-bold text-ink-1 transition-colors first:rounded-l-full last:rounded-r-full hover:bg-surface-2"
+            >
+              Tools
+            </button>
+          )}
+          {nav && (
+            <button
+              type="button"
+              onClick={nav.onPlanAnother}
+              aria-label="Plan another trip"
+              className="focus-ring-emerald flex w-14 shrink-0 items-center justify-center rounded-r-full text-xl font-bold text-ink-2 transition-colors first:rounded-l-full last:rounded-r-full hover:bg-surface-2"
+            >
+              <span aria-hidden="true">＋</span>
+            </button>
+          )}
+        </div>
       </div>
 
       <ModalShell
-        open={activeRail !== null}
+        open={sheetOpen}
         onClose={closeSheet}
-        label={activeRail?.title}
+        label={sheetTitle}
         backdropClassName="bg-black/50 backdrop-blur-sm"
         className="relative flex max-h-[85vh] w-full flex-col self-end overflow-hidden rounded-t-3xl border-t border-emerald-100 bg-white shadow-2xl focus:outline-none safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
       >
-        <div className="mx-auto mt-2.5 h-1 w-10 shrink-0 rounded-full bg-line-strong" aria-hidden="true" />
+        <SheetGrip />
         <div className="flex shrink-0 items-center gap-2.5 border-b border-emerald-100 bg-gradient-to-b from-emerald-50 to-white px-4 py-3">
-          <h3 className="min-w-0 flex-1 font-display text-[15px] font-bold leading-tight text-emerald-950">{activeRail?.title}</h3>
-          <button
-            type="button"
-            onClick={closeSheet}
-            aria-label="Close panel"
-            className="focus-ring-emerald flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 text-sm font-bold text-emerald-800 ring-1 ring-emerald-100 transition-colors hover:bg-white"
-          >
-            <span aria-hidden="true">✕</span>
-          </button>
+          <h3 className="min-w-0 flex-1 font-display text-[15px] font-bold leading-tight text-emerald-950">{sheetTitle}</h3>
+          <SheetCloseButton onClick={closeSheet} label="Close panel" />
         </div>
-        <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">{activeRail?.node}</div>
+        <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">{sheetNode}</div>
       </ModalShell>
     </div>
   );

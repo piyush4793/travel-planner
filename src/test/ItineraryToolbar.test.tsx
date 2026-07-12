@@ -17,12 +17,12 @@ const plan: TripPlan = {
 afterEach(() => setFeatureFlag("pdfExport", true));
 
 describe("ItineraryToolbar", () => {
-  it("always shows Share and gates Cinematic behind capability + handler", () => {
+  it("gates Cinematic behind capability + handler (Share now lives in the header)", () => {
     const onCinematic = vi.fn();
     render(
       <ItineraryToolbar country={country} plan={plan} homeCountry="India" canCinematic onCinematic={onCinematic} />,
     );
-    expect(screen.getByRole("button", { name: "Share your trip plan" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Share your trip plan" })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Watch the animated cinematic journey" }));
     expect(onCinematic).toHaveBeenCalled();
   });
@@ -47,5 +47,11 @@ describe("ItineraryToolbar", () => {
     rerender(<ItineraryToolbar country={country} plan={plan} homeCountry="India" onPlanWithAi={onPlanWithAi} />);
     fireEvent.click(screen.getByRole("button", { name: /Plan this trip with your own AI/ }));
     expect(onPlanWithAi).toHaveBeenCalled();
+  });
+
+  it("renders nothing when no action is available", () => {
+    setFeatureFlag("pdfExport", false);
+    const { container } = render(<ItineraryToolbar country={country} plan={plan} homeCountry="India" />);
+    expect(container).toBeEmptyDOMElement();
   });
 });

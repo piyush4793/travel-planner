@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import { useBackDismiss } from "../../../hooks/useBackDismiss";
 import PlanMenu from "./PlanMenu";
+import { SheetGrip, SheetCloseButton } from "./sheetChrome";
 import ExperiencePicker from "./ExperiencePicker";
 
 type Props = {
@@ -75,16 +76,7 @@ export default function PlanFilters({ country, options, selected, onToggle, onCl
       {count > 0 && (
         <span className="shrink-0 rounded-full bg-emerald-600 px-1.5 py-0.5 text-[10px] font-bold leading-none text-white">{count}</span>
       )}
-      {onClose && (
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close"
-          className="focus-ring-emerald flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 text-sm font-bold text-emerald-800 ring-1 ring-emerald-100 transition-colors hover:bg-white"
-        >
-          <span aria-hidden="true">✕</span>
-        </button>
-      )}
+      {onClose && <SheetCloseButton onClick={onClose} />}
     </div>
   );
 
@@ -236,7 +228,7 @@ function FilterSheet({
             className="absolute inset-0 bg-black/40 motion-safe:animate-[fadeInUp_0.15s_ease-out]"
           />
           <div className="relative flex max-h-[80vh] w-full flex-col overflow-hidden rounded-t-3xl border-t border-emerald-100 bg-white shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]">
-            <div className="mx-auto mt-2.5 h-1 w-10 shrink-0 rounded-full bg-line-strong" aria-hidden="true" />
+            <SheetGrip />
             {renderHeader(close)}
             <div className="min-h-0 flex-1 overflow-y-auto">{children}</div>
             {renderFooter(close)}

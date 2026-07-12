@@ -62,6 +62,8 @@ type Props = {
   routeStopLimit: number;
   /** Save-trip control (slotted so the header stays layout-only). */
   saveSlot?: ReactNode;
+  /** Share control (slotted, sits left of the save/favourite cluster on Review). */
+  shareSlot?: ReactNode;
   steps: HeaderStep[];
   activeStep: number;
   onGoToStep: (index: number) => void;
@@ -90,6 +92,7 @@ function PlanTripHeaderInner({
   selection,
   routeStopLimit,
   saveSlot,
+  shareSlot,
   steps,
   activeStep,
   onGoToStep,
@@ -143,8 +146,9 @@ function PlanTripHeaderInner({
           </div>
         </div>
 
-        {(saveSlot || (basis && onBasisChange)) && (
+        {(shareSlot || saveSlot || (basis && onBasisChange)) && (
           <div className="flex shrink-0 items-center gap-2">
+            {shareSlot}
             {saveSlot}
             {basis && onBasisChange && <BasisMenu basis={basis} setBasis={onBasisChange} variant="light" iconOnly={compact} />}
           </div>

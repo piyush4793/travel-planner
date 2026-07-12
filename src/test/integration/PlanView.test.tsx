@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 import PlanView from "../../components/views/plan/PlanView";
 import { setFeatureFlag } from "../../core/featureFlags";
 import type { Country } from "../../core/types";
@@ -37,6 +37,9 @@ function renderView(props: Partial<React.ComponentProps<typeof PlanView>> = {}) 
   );
   return { setBudgetBasis, onGoDiscover, onToggleTripFavorite, ...utils };
 }
+
+// Must exceed the component's SAVE_SETTLE_MS (2500) so an edit "after" it counts.
+const SAVE_SETTLE_MS_TEST = 2600;
 
 /** Advance the wizard to the review step by clicking the primary button. */
 function goToReview() {
@@ -120,6 +123,75 @@ describe("PlanView — guided planner", () => {
     await waitFor(() =>
       expect(screen.getByRole("button", { name: /Share your trip plan/i })).toBeInTheDocument(),
     );
+  });
+
+  it("celebrates the first-ever Review once, then persists the seen flag", async () => {
+    renderView({ onSaveTrip: vi.fn() });
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+    await screen.findByText(/Who's going\?/i);
+    goToReview();
+    expect(await screen.findByRole("dialog", { name: /Your trip is ready/i })).toBeInTheDocument();
+    expect(localStorage.getItem("tp_plan_reveal_seen")).toBeTruthy();
+    fireEvent.click(screen.getByRole("button", { name: /Explore your itinerary/i }));
+    expect(screen.queryByRole("dialog", { name: /Your trip is ready/i })).not.toBeInTheDocument();
+  });
+
+  it("stays silent on arrival, then confirms a real edit with a transient toast", async () => {
+    localStorage.setItem("tp_plan_reveal_seen", "true");
+    const onSaveTrip = vi.fn();
+    const baseProps = {
+      countries: [COUNTRY],
+      visitedNames: new Set<string>(),
+      setBudgetBasis: vi.fn(),
+      homeCountry: "India",
+      onGoDiscover: vi.fn(),
+      onToggleTripFavorite: vi.fn(),
+      onSaveTrip,
+    };
+    const { rerender } = render(<PlanView {...baseProps} budgetBasis="couple" />);
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+    await screen.findByText(/Who's going\?/i);
+    goToReview();
+    await screen.findByRole("button", { name: /Share your trip plan/i });
+    // First-ever reveal already seen → no celebration; and merely ARRIVING at
+    // Review (the initial auto-save) must not pop a toast — nothing changed.
+    expect(screen.queryByRole("dialog", { name: /Your trip is ready/i })).not.toBeInTheDocument();
+    expect(screen.queryByText(/saved to My Trips/i)).not.toBeInTheDocument();
+    // A real edit — switching the budget basis — changes the saved signature, so
+    // now the transient toast confirms the save.
+    rerender(<PlanView {...baseProps} budgetBasis="solo" />);
+    expect(await screen.findByText(/saved to My Trips/i)).toBeInTheDocument();
+  });
+
+  it("absorbs post-arrival hydration silently but toasts a settled edit", async () => {
+    // A page refresh restores at Review and the plan re-materialises over a few
+    // frames (lazy rules, auto-city/day settling). Those signature changes must
+    // NOT pop a "saved" toast; only an edit made after the plan has settled does.
+    localStorage.setItem("tp_plan_reveal_seen", "true");
+    let now = 1_000_000;
+    const nowSpy = vi.spyOn(Date, "now").mockImplementation(() => now);
+    try {
+      renderView({ onSaveTrip: vi.fn() });
+      fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+      await screen.findByText(/Who's going\?/i);
+      goToReview();
+      await screen.findByRole("button", { name: /Share your trip plan/i });
+      expect(screen.queryByText(/saved to My Trips/i)).not.toBeInTheDocument();
+
+      // Edit within the settle window (same wall-clock as the first save) — the
+      // refresh case — is absorbed silently.
+      fireEvent.click(screen.getByRole("button", { name: /Adjust Testland \(no rule\)/i }));
+      const dialog = await screen.findByRole("dialog", { name: /Adjust Testland \(no rule\)/i });
+      fireEvent.click(within(dialog).getByRole("button", { name: "Mountains" }));
+      expect(screen.queryByText(/saved to My Trips/i)).not.toBeInTheDocument();
+
+      // Once past the settle window, a real edit confirms with the transient toast.
+      now += SAVE_SETTLE_MS_TEST;
+      fireEvent.click(within(dialog).getByRole("button", { name: "Beaches" }));
+      expect(await screen.findByText(/saved to My Trips/i)).toBeInTheDocument();
+    } finally {
+      nowSpy.mockRestore();
+    }
   });
 
   it("returns to the destination picker via 'Plan another trip' on the review step", async () => {

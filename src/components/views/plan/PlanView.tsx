@@ -10,8 +10,12 @@ import { useBackDismiss } from "../../../hooks/useBackDismiss";
 import DestinationPicker from "./DestinationPicker";
 import PlanTripHeader, { buildHeaderStats } from "./PlanTripHeader";
 import TripSaveBar from "./TripSaveBar";
+import PlanReviewReveal from "./PlanReviewReveal";
+import PlanSavedToast from "./PlanSavedToast";
 import PlanCountrySwitcher from "./PlanCountrySwitcher";
 import TripReviewWorkspace from "./TripReviewWorkspace";
+import { useReviewRoute } from "./useReviewRoute";
+import PlanShareButton from "./PlanShareButton";
 import PlanBasicsStep from "./PlanBasicsStep";
 import PlanPlacesStep, { type PlacesUnit, includedCount } from "./PlanPlacesStep";
 import type { PlanActions } from "./planActions";
@@ -21,6 +25,8 @@ import { MAX_TRIP_UNITS } from "../../../core/utils/multiCountry";
 import { buildTripSnapshot, tripSignature, toOpenRequest, type SavedTrip, type SnapshotStop, type OpenTripRequest } from "../../../core/utils/savedTrips";
 import { useConfirm } from "../../shared/ConfirmDialog";
 import { getDestinationSource } from "../../../core/trip/getDestinationSource";
+import { loadLS, saveLS } from "../../../core/storage";
+import { LS_KEYS } from "../../../core/lsKeys";
 import { useTripExperiences } from "../../../hooks/useTripExperiences";
 import { useTripRules } from "../../../hooks/useTripRules";
 import { useTripPlanner, type TripPlannerSeed } from "../../../hooks/useTripPlanner";
@@ -35,6 +41,11 @@ const ItineraryCinematic = lazy(() => import("../../country/ItineraryCinematic")
  * any number of long country names.
  */
 const HEADER_ROUTE_STOPS = 2;
+
+// Grace window after the first Review auto-save during which async plan hydration
+// (lazy rules, auto-city / recommended-day settling) is absorbed silently — so a
+// page refresh never shows a "saved" toast without the traveller changing anything.
+const SAVE_SETTLE_MS = 2500;
 
 type Props = {
   countries: Country[];
@@ -169,6 +180,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   // 3-step review shares the same index). Applied once per nonce so re-opening
   // the same trip works but a stale prop never clobbers in-progress edits.
   const appliedOpenNonce = useRef<number | null>(null);
+  const reopenedRef = useRef(false);
   useEffect(() => {
     if (!pendingOpen || appliedOpenNonce.current === pendingOpen.nonce) return;
     const stopByName = new Map(pendingOpen.stops.map((s) => [s.country, s]));
@@ -178,6 +190,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     // permanently swallowed by a prematurely-stamped nonce.
     if (resolved.length === 0) return;
     appliedOpenNonce.current = pendingOpen.nonce;
+    reopenedRef.current = true;
     setSelection(resolved);
     setStepIndex(2);
     setBudgetBasis(pendingOpen.basis);
@@ -324,6 +337,18 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     [secondaryUnits],
   );
 
+  // The order-aware composed route — the single source of truth for the Review
+  // canvas AND the header Share, so a reordered route shares exactly what's on
+  // screen. Runs on every step (safe at empty/no-plan), obeying hook rules.
+  const route = useReviewRoute({
+    builder,
+    unitPlans: tripPlanner.unitPlans,
+    secondaryCountries,
+    budgetBasis,
+    homeCountry,
+    canStartCinematic: !!mainMapRef,
+  });
+
   // Cinematic overlay lifecycle. Report open/close so App reveals the hidden
   // MapView, and auto-close when the route identity changes (a different
   // selection means the played route no longer matches what's on screen).
@@ -335,6 +360,12 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     setCinematicRoute(null);
   }, [selectionSig]);
   useEffect(() => () => onCinematicChange?.(false), [onCinematicChange]);
+
+  // Device / browser Back closes an open cinematic overlay first. It opens only
+  // after the wizard is on Review (where the step guard is already registered),
+  // so it lands on top of the LIFO back-stack — Back dismisses the cinematic
+  // before it walks the wizard steps.
+  useBackDismiss(cinematicRoute !== null, () => setCinematicRoute(null));
 
   const anyUnitHasCities = placesUnits.some((u) => u.orderedCities.length > 0);
 
@@ -365,6 +396,32 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   // duplicating. A finished trip is therefore never lost and stays browsable.
   const onReviewStep = steps[Math.min(stepIndex, steps.length - 1)] === "review";
   const savedTripSig = useRef<string | null>(null);
+  // The plan hydrates asynchronously (lazy rule JSON, auto-city + recommended-day
+  // materialisation), so after the first silent save the signature settles a few
+  // times on its own. We absorb those within a short grace window after the first
+  // save so a page refresh never pops a "saved" toast; only a change after the
+  // plan has settled (or an explicit budget-basis switch) is treated as an edit.
+  const firstSaveAtRef = useRef<number | null>(null);
+  const prevBasisRef = useRef(budgetBasis);
+
+  // First-time engagement. The reveal celebrates the first-ever Review once (a
+  // persisted seen-flag guards repeats, and reopened saved trips skip it — they
+  // were already celebrated). The saved toast quietly confirms the auto-save the
+  // first time it writes each mount, replacing the old always-on header tick.
+  const planStartRef = useRef<number>(Date.now());
+  const revealSeenRef = useRef<boolean>(loadLS<boolean>(LS_KEYS.PLAN_REVEAL_SEEN, false));
+  const revealShownRef = useRef(false);
+  const toastTimerRef = useRef<number | null>(null);
+  const [showReveal, setShowReveal] = useState(false);
+  const [revealSeconds, setRevealSeconds] = useState<number | undefined>(undefined);
+  const [showSavedToast, setShowSavedToast] = useState(false);
+  useEffect(() => () => { if (toastTimerRef.current) clearTimeout(toastTimerRef.current); }, []);
+  const dismissSavedToast = useCallback(() => {
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = null;
+    setShowSavedToast(false);
+  }, []);
+
   useEffect(() => {
     if (!onSaveTrip || !onReviewStep || !plan || !displayCountry || selection.length === 0) return;
     // Build stops from the ordered selection so the saved route's identity always
@@ -378,9 +435,41 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     });
     const snapshot = buildTripSnapshot({ stops, composed: composedTripPlan ?? plan, basis: budgetBasis });
     const sig = JSON.stringify(snapshot.stops) + snapshot.totalDays + snapshot.costPerPerson + snapshot.basis;
-    if (savedTripSig.current === sig) return;
+    // Signature guard: identical content (e.g. a spurious re-render) is a no-op —
+    // never re-saves, never re-toasts.
+    const prevSig = savedTripSig.current;
+    if (prevSig === sig) return;
     savedTripSig.current = sig;
     onSaveTrip(snapshot);
+
+    const basisChanged = prevBasisRef.current !== budgetBasis;
+    prevBasisRef.current = budgetBasis;
+
+    // First save of this mount (incl. reopened trips): record the settle baseline,
+    // celebrate the first-ever Review once, and stay silent — merely arriving or
+    // refreshing never pops a toast.
+    if (prevSig === null) {
+      firstSaveAtRef.current = Date.now();
+      if (!revealSeenRef.current && !reopenedRef.current && !revealShownRef.current) {
+        revealShownRef.current = true;
+        revealSeenRef.current = true;
+        saveLS(LS_KEYS.PLAN_REVEAL_SEEN, true);
+        setRevealSeconds(Math.round((Date.now() - planStartRef.current) / 1000));
+        setShowReveal(true);
+      }
+      return;
+    }
+
+    // Subsequent saves: the content changed. Absorb async hydration that settles
+    // shortly after the first save (a page refresh restores at Review and the plan
+    // re-materialises over a few frames) — only a change once settled, or an
+    // explicit budget-basis switch (never a hydration side-effect), is a real edit.
+    const settling = firstSaveAtRef.current !== null && Date.now() - firstSaveAtRef.current < SAVE_SETTLE_MS;
+    if (basisChanged || !settling) {
+      setShowSavedToast(true);
+      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+      toastTimerRef.current = window.setTimeout(() => setShowSavedToast(false), 4000);
+    }
   }, [onSaveTrip, onReviewStep, plan, displayCountry, selection, tripPlanner.unitPlans, composedTripPlan, budgetBasis, builder.customDays, builder.selectedExperiences]);
 
   if (!picked) {
@@ -491,6 +580,16 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
             />
           ) : undefined
         }
+        shareSlot={
+          isReview && displayCountry && route.ready ? (
+            <PlanShareButton
+              country={displayCountry}
+              homeCountry={homeCountry}
+              plan={route.orderedComposed}
+              routeStops={route.routeStops}
+            />
+          ) : undefined
+        }
         steps={steps.map((s) => ({ key: s, short: STEP_META[s].short, title: STEP_META[s].title }))}
         activeStep={safeIndex}
         onGoToStep={goTo}
@@ -511,10 +610,8 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
               </div>
             ) : plan && displayCountry ? (
               <TripReviewWorkspace
-                builder={builder}
-                unitPlans={tripPlanner.unitPlans}
-                secondaryCountries={secondaryCountries}
-                budgetBasis={budgetBasis}
+                route={route}
+                displayCountry={displayCountry}
                 homeCountry={homeCountry}
                 onPlanWithAi={onPlanWithAi ? () => onPlanWithAi(displayCountry.name) : undefined}
                 notes={planActions.notes}
@@ -622,6 +719,16 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
           />
         </Suspense>
       )}
+
+      <PlanReviewReveal
+        open={showReveal}
+        onClose={() => setShowReveal(false)}
+        routeName={routeName}
+        days={headerStats?.days ?? plan?.days.length ?? 0}
+        cities={headerStats?.cities ?? 0}
+        seconds={revealSeconds}
+      />
+      <PlanSavedToast open={showSavedToast} message={isMulti ? "Route saved to My Trips" : "Trip saved to My Trips"} onClose={dismissSavedToast} />
     </div>
   );
 }

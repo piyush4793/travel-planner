@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent, within } from "@testing-library/react";
 import TripReviewCanvas, { type ReviewSegment } from "../components/views/plan/TripReviewCanvas";
+import ItineraryToolbar from "../components/views/plan/ItineraryToolbar";
 import type { Country } from "../core/types";
 import type { CityEntry } from "../core/types";
 import type { TripPlan } from "../core/utils/tripPlans";
@@ -55,18 +56,23 @@ const composed: TripPlan = {
 
 type CanvasProps = React.ComponentProps<typeof TripReviewCanvas>;
 
-function renderCanvas(props: Partial<CanvasProps> & Pick<CanvasProps, "segments" | "composedPlan">) {
-  const anchorName = props.anchorName ?? props.segments[0]?.name ?? "";
+// The canvas no longer builds the toolbar (the workspace does, so it can also
+// live in the mobile "Actions" sheet). Tests pass a real ItineraryToolbar as the
+// `toolbar` prop; `composedPlan` here only feeds that default toolbar.
+function renderCanvas(
+  props: Partial<CanvasProps> & Pick<CanvasProps, "segments"> & { composedPlan?: TripPlan },
+) {
+  const { composedPlan, toolbar, ...rest } = props;
+  const anchorName = rest.anchorName ?? rest.segments[0]?.name ?? "";
   return render(
     <TripReviewCanvas
-      country={country}
-      homeCountry="India"
       anchorName={anchorName}
       onSetAnchor={vi.fn()}
       onReorder={vi.fn()}
       onAutoArrange={vi.fn()}
       canAutoArrange={false}
-      {...props}
+      toolbar={toolbar ?? <ItineraryToolbar country={country} plan={composedPlan ?? plan("Oslo", 3)} homeCountry="India" />}
+      {...rest}
     />,
   );
 }
@@ -136,29 +142,9 @@ describe("TripReviewCanvas", () => {
     expect(screen.getByText(/8 days is tight for 8 cities/)).toBeInTheDocument();
   });
 
-  it("renders the shared toolbar (Share) on the composed plan", () => {
+  it("pins the provided action toolbar on desktop", () => {
     renderCanvas({ segments: [segment("Norway", "Oslo", 3), segment("Denmark", "Copenhagen", 3)], composedPlan: composed });
-    expect(screen.getByRole("button", { name: "Share your trip plan" })).toBeInTheDocument();
-  });
-
-  it("passes the Cinematic action through to the toolbar when supplied", () => {
-    const onCinematic = vi.fn();
-    renderCanvas({
-      segments: [segment("Norway", "Oslo", 3), segment("Denmark", "Copenhagen", 3)],
-      composedPlan: composed,
-      canCinematic: true,
-      onCinematic,
-    });
-    fireEvent.click(screen.getByRole("button", { name: "Watch the animated cinematic journey" }));
-    expect(onCinematic).toHaveBeenCalled();
-  });
-
-  it("hides the Cinematic action when not enabled", () => {
-    renderCanvas({
-      segments: [segment("Norway", "Oslo", 3), segment("Denmark", "Copenhagen", 3)],
-      composedPlan: composed,
-    });
-    expect(screen.queryByRole("button", { name: "Watch the animated cinematic journey" })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Export this itinerary as a PDF" })).toBeInTheDocument();
   });
 
   it("names each stop with its own day count in its header", () => {

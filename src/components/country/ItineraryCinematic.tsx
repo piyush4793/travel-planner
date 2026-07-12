@@ -41,6 +41,27 @@ type Phase = "intro" | "city" | "done";
 
 export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props) {
   const { title, plan, origin, comboCountries } = route;
+
+  // Escape closes the overlay and focus returns to the trigger on unmount
+  // (mandatory overlay a11y). Registered before any conditional return so it
+  // guards both the reduced-motion summary and the full fly-through render.
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+  useEffect(() => {
+    const prevFocus = document.activeElement as HTMLElement | null;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.stopPropagation();
+        onCloseRef.current();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      prevFocus?.focus?.();
+    };
+  }, []);
+
   // Reduced-motion: show static itinerary summary instead of fly-through
   const prefersReducedMotion = typeof window !== "undefined"
     && window.matchMedia("(prefers-reduced-motion: reduce)").matches;

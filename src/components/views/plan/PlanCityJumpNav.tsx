@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { TRANSPORT_EMOJI } from "../../../core/utils/transport";
 import { getCountryFlag } from "../../../utils/countryFlags";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
+import { SheetGrip } from "./sheetChrome";
 import type { CityGroup } from "../../country/itinerary/ItineraryView";
 
 /** One country's ordered cities. A single-country plan passes exactly one
@@ -226,7 +227,7 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
               ref={popRef}
               className="relative flex max-h-[70vh] flex-col overflow-hidden rounded-t-3xl border-t border-line bg-white shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
             >
-              <div className="mx-auto mb-1 mt-3 h-1 w-10 shrink-0 rounded-full bg-line-strong" aria-hidden="true" />
+              <SheetGrip className="pt-3" />
               <div className="min-h-0 flex-1 overflow-y-auto px-1 pb-8">{list}</div>
             </div>
           </div>,

@@ -5,7 +5,7 @@ import type { Country } from "../../core/types";
 import type { TripPlan } from "../../core/utils/tripPlans";
 
 const { buildPdfMock, isEnabledMock } = vi.hoisted(() => ({
-  buildPdfMock: vi.fn(() => new Blob(["%PDF-1.7"], { type: "application/pdf" })),
+  buildPdfMock: vi.fn(async () => new Blob(["%PDF-1.7"], { type: "application/pdf" })),
   isEnabledMock: vi.fn(),
 }));
 
