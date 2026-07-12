@@ -86,7 +86,7 @@ export default function FilterChip({ label, active, children }: Props) {
         aria-haspopup="true"
         className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold whitespace-nowrap transition-colors border focus-ring ${
           active
-            ? "bg-blue-600 text-white border-blue-600 shadow-sm"
+            ? "bg-emerald-700 text-white border-emerald-700 shadow-sm"
             : open
             ? "bg-gray-100 text-gray-700 border-gray-300"
             : "bg-white text-gray-600 border-gray-200 hover:border-gray-300 hover:bg-gray-50"

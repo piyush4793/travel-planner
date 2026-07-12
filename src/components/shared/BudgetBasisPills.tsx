@@ -37,15 +37,15 @@ export default function BudgetBasisPills({
   const isHeader = variant === "header";
   const groupClass = isHeader
     ? "flex items-center gap-0.5 bg-black/20 rounded-full p-0.5 shrink-0"
-    : "flex items-center gap-0.5 bg-gray-100 rounded-full p-0.5 shrink-0";
+    : "flex items-center gap-0.5 bg-surface-track rounded-full p-0.5 shrink-0";
 
   return (
     <div className={groupClass} role="radiogroup" aria-label={ariaLabel} aria-orientation="horizontal">
       {BUDGET_BASIS_ORDER.map((basis, i) => {
         const meta = BUDGET_BASIS_META[basis];
         const selected = value === basis;
-        const activeClass = isHeader ? "bg-white text-blue-700 shadow-sm" : "bg-white text-blue-700 shadow-sm";
-        const idleClass = isHeader ? "text-white/80 hover:text-white" : "text-gray-500 hover:text-gray-700";
+        const activeClass = "bg-white text-emerald-800 shadow-sm";
+        const idleClass = isHeader ? "text-white/80 hover:text-white" : "text-ink-2 hover:text-ink-1";
         return (
           <button
             key={basis}

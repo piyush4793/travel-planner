@@ -58,7 +58,7 @@ export default function AppInstallShare({
     : "flex items-center justify-center gap-1.5 h-8 px-2.5 min-w-[32px] bg-surface-track hover:bg-line text-emerald-800 rounded-full text-sm transition-colors border border-line focus-ring";
 
   const installBtnClass = isMenu
-    ? "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold bg-white text-blue-700 hover:bg-blue-50 transition-colors focus-ring"
+    ? "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold bg-white text-emerald-700 hover:bg-emerald-50 transition-colors focus-ring"
     : "flex items-center gap-1.5 px-3 h-8 rounded-full text-xs font-bold bg-emerald-700 text-white hover:bg-emerald-800 transition-colors focus-ring";
 
   return (
@@ -97,7 +97,7 @@ export default function AppInstallShare({
         aria-label={shareLabel}
         title={shareLabel}
       >
-        <span aria-hidden="true">{copied ? "✓" : useNativeShare ? "📤" : "🔗"}</span>
+        <span aria-hidden="true">{copied ? "✓" : "🔗"}</span>
         {isMenu ? (
           <span>{copied ? "Copied!" : "Share app"}</span>
         ) : (
@@ -118,7 +118,7 @@ export default function AppInstallShare({
           </ol>
           <button
             onClick={() => setShowIosHint(false)}
-            className="mt-2 text-blue-600 font-semibold focus-ring rounded"
+            className="mt-2 text-emerald-700 font-semibold focus-ring rounded"
           >
             Got it
           </button>

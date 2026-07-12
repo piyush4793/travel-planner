@@ -85,7 +85,6 @@ export default function PlanBasicsStep({
               options={BUDGET_BASIS_ORDER.map((b) => ({ key: b, label: `${BUDGET_BASIS_META[b].icon} ${BUDGET_BASIS_META[b].label}` }))}
               value={budgetBasis}
               onChange={(v) => setBudgetBasis(v as BudgetBasis)}
-              accent="emerald"
             />
           </div>
         </section>

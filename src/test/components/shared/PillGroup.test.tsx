@@ -35,16 +35,9 @@ describe("PillGroup", () => {
   it("applies active styling to the selected pill", () => {
     render(<PillGroup options={options} value="asia" onChange={vi.fn()} />);
 
-    expect(screen.getByRole("radio", { name: "Asia" })).toHaveClass("bg-white", "text-blue-700");
-    expect(screen.getByRole("radio", { name: "All" })).not.toHaveClass("bg-white", "text-blue-700");
-  });
-
-  it("uses the emerald accent when requested", () => {
-    render(<PillGroup options={options} value="asia" onChange={vi.fn()} accent="emerald" />);
-
     const active = screen.getByRole("radio", { name: "Asia" });
     expect(active).toHaveClass("bg-white", "text-emerald-800", "focus-ring-emerald");
-    expect(active).not.toHaveClass("text-blue-700");
+    expect(screen.getByRole("radio", { name: "All" })).not.toHaveClass("bg-white", "text-emerald-800");
   });
 
   it("calls onChange with the clicked key", async () => {

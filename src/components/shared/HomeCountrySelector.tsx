@@ -155,7 +155,7 @@ function SearchableSelector({ value, onChange, variant = "header" }: Props) {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search countries…"
-              className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-300 focus:outline-none transition-colors"
+              className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-emerald-300 focus:outline-none transition-colors"
               role="combobox"
               aria-expanded={true}
               aria-controls={listId}
@@ -218,8 +218,8 @@ function CountryOption({ id, name, selected, active, onClick }: { id: string; na
       aria-selected={selected}
       onClick={onClick}
       className={`w-full text-left px-3 py-2 min-h-[36px] text-xs transition-colors focus-ring ${
-        active ? "bg-blue-50 text-blue-700" :
-        selected ? "text-blue-600 font-bold bg-blue-50/50" : "text-gray-700 hover:bg-gray-50"
+        active ? "bg-emerald-50 text-emerald-700" :
+        selected ? "text-emerald-600 font-bold bg-emerald-50/50" : "text-gray-700 hover:bg-gray-50"
       }`}
     >
       {selected ? "✓ " : "  "}{name}

@@ -1,32 +1,20 @@
 type PillOption = { key: string; label: string };
 
-type Accent = "blue" | "emerald";
-
-const ACCENT: Record<Accent, { container: string; active: string; idle: string; focus: string }> = {
-  blue: {
-    container: "bg-gray-100",
-    active: "bg-white text-blue-700 shadow-sm",
-    idle: "text-gray-500 hover:text-gray-700",
-    focus: "focus-ring",
-  },
-  emerald: {
-    container: "bg-surface-track",
-    active: "bg-white text-emerald-800 shadow-sm",
-    idle: "text-ink-2 hover:text-ink-1",
-    focus: "focus-ring-emerald",
-  },
-};
+const ACCENT = {
+  container: "bg-surface-track",
+  active: "bg-white text-emerald-800 shadow-sm",
+  idle: "text-ink-2 hover:text-ink-1",
+  focus: "focus-ring-emerald",
+} as const;
 
 type Props = {
   options: PillOption[];
   value: string;
   onChange: (v: string) => void;
-  /** Visual accent. Defaults to the app-wide blue; use "emerald" inside the luxury Plan surfaces. */
-  accent?: Accent;
 };
 
-export default function PillGroup({ options, value, onChange, accent = "blue" }: Props) {
-  const theme = ACCENT[accent];
+export default function PillGroup({ options, value, onChange }: Props) {
+  const theme = ACCENT;
 
   function handleKeyDown(e: React.KeyboardEvent, idx: number) {
     let next = idx;
