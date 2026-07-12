@@ -138,11 +138,13 @@ function PlanWorkspaceShellInner({ center, shape, context, nav, actions }: Props
     <div className="relative flex h-full w-full flex-col overflow-hidden">
       <main className="min-h-0 flex-1 overflow-hidden">{center}</main>
 
-      <div className="shrink-0 pb-safe pt-2.5">
+      <div className="shrink-0 pt-2.5 pb-2">
         {/* One continuous segmented toolbar (hairline dividers) so the wizard nav
             reads as a cohesive bar — echoing the app tab bar below it — instead of
             four mismatched floating buttons. Flanking icon cells (Back / ＋) frame
-            the two labelled action cells. */}
+            the two labelled action cells. No pb-safe here: the app tab bar directly
+            below already reserves the home-indicator inset, so adding it here too
+            would double the bottom gap on notched devices. */}
         <div className="flex h-12 items-stretch divide-x divide-line rounded-full border border-line bg-white shadow-sm">
           {nav && (
             <button
