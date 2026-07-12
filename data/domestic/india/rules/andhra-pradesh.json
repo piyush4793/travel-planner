@@ -1,0 +1,795 @@
+{
+  "name": "Andhra Pradesh",
+  "seed": false,
+  "lat": 15.9129,
+  "lng": 79.74,
+  "region": "South India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June"
+  ],
+  "budget": {
+    "solo": "₹15K–₹60K",
+    "couple": "₹25K–₹1L",
+    "family4": "₹50K–₹1.7L"
+  },
+  "experiences": [
+    "Temples & Religious Sites",
+    "Beaches",
+    "Ancient Ruins",
+    "Architecture",
+    "History",
+    "Hiking",
+    "Food"
+  ],
+  "avoid": [
+    "April",
+    "May",
+    "June"
+  ],
+  "combo": [
+    "Telangana",
+    "Tamil Nadu",
+    "Odisha",
+    "Karnataka"
+  ],
+  "landmark": "Sri Venkateswara Temple, Tirumala",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Andhra Pradesh is large: fly into Visakhapatnam, use train to Vijayawada, then a hired car for the Vijayawada→Gandikota→Tirupati arc; the Vijayawada→Gandikota leg is the trip's long, public-transport-light stretch and should not be paired with sightseeing the same day.",
+  "diet": {
+    "vegetarian": "Andhra Pradesh is very vegetarian-friendly: temple towns, tiffin houses and Andhra meals serve rice, pappu, sambar, rasam, vegetable curries, gongura pachadi, pesarattu and pulihora. Tirupati and Tirumala are especially pure-vegetarian; expect very spicy food and ask clearly for less chilli.",
+    "vegan": "Vegan travel is manageable with care. Pulihora, coconut rice, many chutneys and street snacks can be vegan, but ask for no ghee, butter, milk or curd. Tirumala laddu prasadam and many sweets contain ghee, and some temple meals use ghee, so confirm before eating.",
+    "phrases": [
+      "Kaaram takkuva cheyyandi = please make it less spicy",
+      "Neyyi, paalu, perugu vaddu = no ghee, milk or curd",
+      "Naku shakaharam kavali = I want vegetarian food"
+    ]
+  },
+  "links": [
+    {
+      "label": "AP Tourism Official",
+      "url": "https://tourism.ap.gov.in"
+    },
+    {
+      "label": "Tirumala Tirupati Devasthanams",
+      "url": "https://ttdevasthanams.ap.gov.in"
+    },
+    {
+      "label": "IRCTC Train Booking",
+      "url": "https://www.irctc.co.in"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Visakhapatnam",
+      "lat": 17.6868,
+      "lng": 83.2185,
+      "notes": "Andhra's largest coastal city — beaches, naval history, hilltop sea views and the gateway to the Araku Valley mountain railway.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June",
+        "October"
+      ],
+      "experiences": [
+        "Beaches",
+        "History",
+        "Museums",
+        "Water Sports",
+        "Food",
+        "Hiking"
+      ]
+    },
+    {
+      "name": "Vijayawada & Amaravati",
+      "lat": 16.5062,
+      "lng": 80.648,
+      "notes": "Krishna River hub pairing Kanaka Durga Temple, Prakasam Barrage, Undavalli Caves and Amaravati's ancient Buddhist stupa landscape.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "experiences": [
+        "Temples & Religious Sites",
+        "Ancient Ruins",
+        "Architecture",
+        "History",
+        "Food"
+      ]
+    },
+    {
+      "name": "Gandikota",
+      "lat": 14.8167,
+      "lng": 78.25,
+      "notes": "A 13th-century fort and sandstone gorge above the Pennar River — Andhra's 'Grand Canyon' and the route's rugged overnight stop.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "experiences": [
+        "Ancient Ruins",
+        "Hiking",
+        "History",
+        "Adventure Sports"
+      ]
+    },
+    {
+      "name": "Tirupati",
+      "lat": 13.6288,
+      "lng": 79.4192,
+      "notes": "Pilgrim heart of Andhra Pradesh, anchored by Tirumala's Sri Venkateswara Temple and nearby Vijayanagara-era heritage.",
+      "bestMonths": [
+        "September",
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "experiences": [
+        "Temples & Religious Sites",
+        "History",
+        "Architecture",
+        "Food"
+      ]
+    },
+    {
+      "name": "Lepakshi",
+      "lat": 13.8048,
+      "lng": 77.6072,
+      "notes": "Compact Vijayanagara masterpiece near the Karnataka border, known for frescoed pillars, a hanging pillar and a giant Nandi monolith.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "experiences": [
+        "Temples & Religious Sites",
+        "Ancient Ruins",
+        "Architecture",
+        "History"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel both work well in Visakhapatnam, Vijayawada and Tirupati; coverage can thin out around Araku, Gandikota and Lepakshi, so download maps and carry cash before leaving the cities.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "TTD Devasthanams",
+      "RedBus",
+      "Ola",
+      "Uber",
+      "Zomato"
+    ],
+    "cityOrder": [
+      "Visakhapatnam",
+      "Vijayawada & Amaravati",
+      "Gandikota",
+      "Tirupati",
+      "Lepakshi"
+    ],
+    "cities": {
+      "Visakhapatnam": {
+        "name": "Visakhapatnam",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 4,
+        "note": "Two days covers the beach city and Araku as a long excursion; add a third if you want to overnight in Araku instead of rushing the train day.",
+        "experiences": [
+          "Beaches",
+          "History",
+          "Museums",
+          "Water Sports",
+          "Food",
+          "Hiking"
+        ],
+        "signatureExperiences": [
+          "Beaches",
+          "Hiking"
+        ],
+        "days": [
+          {
+            "theme": "Beach promenade, naval history & hilltop views",
+            "pace": "moderate",
+            "note": "The coast sights sit close together; check INS Kursura's Monday closure and keep Rushikonda water sports before late afternoon if seas are calm.",
+            "activities": [
+              {
+                "name": "RK Beach sunrise walk and Beach Road",
+                "duration": "~1h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Go early or at golden hour; avoid swimming in rough surf."
+              },
+              {
+                "name": "INS Kursura Submarine Museum",
+                "duration": "~1.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Closed Mondays; the tight submarine interior is the memorable part."
+              },
+              {
+                "name": "Kailasagiri Hill Park and ropeway views",
+                "duration": "~2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Weekends bring ropeway queues; afternoon light is best for the coastline."
+              },
+              {
+                "name": "Rushikonda Beach water-sports window",
+                "duration": "~1.5h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Activity availability depends on sea conditions and season."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "APTDC Haritha / city mid-range hotel",
+                "budget": "varies"
+              },
+              {
+                "name": "Beach Road hotel or guesthouse",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Andhra thali on Beach Road",
+              "Pesarattu and filter coffee",
+              "Local seafood or veg meals"
+            ]
+          },
+          {
+            "theme": "Araku Valley mountain train & Borra Caves",
+            "pace": "packed",
+            "note": "This is a 12–14 hour day if returning to Vizag. Book the Vistadome train early, start before dawn, and consider overnighting in Araku for a calmer pace.",
+            "activities": [
+              {
+                "name": "Vistadome train Visakhapatnam → Araku",
+                "duration": "~3.5–4h one-way",
+                "priority": "must-see",
+                "cost": "₹738 Vistadome/EV class; ₹150–₹205 sleeper option",
+                "tip": "Book on IRCTC 60–90 days ahead; train 08551 is the signature scenic ride through tunnels and bridges."
+              },
+              {
+                "name": "Borra Caves",
+                "duration": "~2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Hire a local jeep or auto from Araku; caves can be slippery, so wear proper shoes."
+              },
+              {
+                "name": "Araku Tribal Museum and Padmapuram Gardens",
+                "duration": "~1.5h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Do this before Borra if you arrive by late morning."
+              },
+              {
+                "name": "Araku organic coffee tasting",
+                "duration": "~45m",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Carry cash; smaller cafes may not reliably accept cards or UPI."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Visakhapatnam base hotel",
+                "budget": "varies"
+              },
+              {
+                "name": "Araku overnight guesthouse if slowing down",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Packed breakfast for the train",
+              "Araku coffee and snacks",
+              "Late dinner back in Vizag or Araku"
+            ]
+          },
+          {
+            "theme": "Buffer day — Simhachalam and quiet beaches",
+            "pace": "relaxed",
+            "note": "Use this day if you overnighted in Araku, need cyclone/rail buffer, or want a gentler Vizag finish before the train south.",
+            "activities": [
+              {
+                "name": "Return from Araku by train or road",
+                "duration": "~3–4h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Morning return keeps the afternoon free."
+              },
+              {
+                "name": "Simhachalam Narasimha Temple",
+                "duration": "~1.5h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Visit early morning or evening for cooler weather and shorter queues."
+              },
+              {
+                "name": "Yarada Beach photo stop",
+                "duration": "~2h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Beautiful but not ideal for swimming because of currents."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Visakhapatnam city hotel",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Veg tiffin breakfast",
+              "Andhra meals before boarding the Vijayawada train"
+            ]
+          }
+        ]
+      },
+      "Vijayawada & Amaravati": {
+        "name": "Vijayawada & Amaravati",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "A compact Krishna River and heritage stop: one arrival evening for Kanaka Durga, one half-day circuit for Amaravati and Undavalli.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "Ancient Ruins",
+          "Architecture",
+          "History",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "Temples & Religious Sites",
+          "Ancient Ruins"
+        ],
+        "days": [
+          {
+            "theme": "Krishna riverfront and Kanaka Durga darshan",
+            "pace": "moderate",
+            "note": "Arrive by midday from Vizag if possible. Evening darshan is atmospheric, but paid queues and temple timing still need buffer.",
+            "activities": [
+              {
+                "name": "Kanaka Durga Temple on Indrakeeladri Hill",
+                "duration": "~2–3h including queue",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Paid darshan tiers exist, but verify current rates before booking; dress modestly."
+              },
+              {
+                "name": "Prakasam Barrage dusk walk",
+                "duration": "~45m",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Pair it with the temple base; city lights reflect beautifully on the Krishna River."
+              },
+              {
+                "name": "Bhavani Island boat and gardens",
+                "duration": "~2h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Skip if arrival is late because boat timings can close early."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vijayawada railway-station or riverfront hotel",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Andhra meals",
+              "Pesarattu",
+              "Local sweets such as kaja or Bandar halwa"
+            ]
+          },
+          {
+            "theme": "Amaravati Buddhist circuit and Undavalli Caves",
+            "pace": "moderate",
+            "note": "Leave Vijayawada early; Amaravati is roughly an hour away and the museum/stupa schedule can be affected by weekly closures.",
+            "activities": [
+              {
+                "name": "Amaravati Mahachaitya Buddhist stupa",
+                "duration": "~1.5–2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "A guide adds context for the 2nd-century BCE Buddhist remains."
+              },
+              {
+                "name": "Amaravati Archaeological Site Museum",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Visit before the stupa for context; confirm Friday closure locally."
+              },
+              {
+                "name": "Undavalli Caves",
+                "duration": "~1–1.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "The rock-cut Vishnu shrine works well on the return from Amaravati."
+              },
+              {
+                "name": "Vijayawada food stop",
+                "duration": "~45m",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Ghee is common in sweets, so vegan travellers should ask carefully."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Vijayawada hotel before early Gandikota start",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Pulihora",
+              "Andhra thali",
+              "Kaja or Bandar halwa"
+            ]
+          }
+        ]
+      },
+      "Gandikota": {
+        "name": "Gandikota",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Basic but spectacular. Arrive by early afternoon for the fort and sunset; stay overnight for sunrise before driving to Tirupati.",
+        "experiences": [
+          "Ancient Ruins",
+          "Hiking",
+          "History",
+          "Adventure Sports"
+        ],
+        "signatureExperiences": [
+          "Hiking",
+          "Ancient Ruins"
+        ],
+        "days": [
+          {
+            "theme": "Gorge, fort ruins and canyon sunset",
+            "pace": "moderate",
+            "note": "Depart Vijayawada very early. The road day is long, facilities are basic, and sunset at the gorge is the non-negotiable anchor.",
+            "activities": [
+              {
+                "name": "Gandikota Gorge viewpoint over the Pennar River",
+                "duration": "~1.5–2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Reach 30 minutes before sunset and stay away from cliff edges."
+              },
+              {
+                "name": "Gandikota Fort ruins, temples and Jama Masjid",
+                "duration": "~1.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Wear sturdy shoes for uneven stone paths."
+              },
+              {
+                "name": "Overnight camping or APTDC stay and stargazing",
+                "duration": "evening",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Book limited rooms or tents early for weekends; carry cash, water and a torch."
+              },
+              {
+                "name": "Belum Caves detour en route",
+                "duration": "~2h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Only feasible if leaving Vijayawada around 6am; otherwise skip to protect the sunset."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "APTDC Haritha Gandikota",
+                "budget": "varies"
+              },
+              {
+                "name": "Swiss tent or basic camping",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Simple resort meals",
+              "Packed snacks from Vijayawada",
+              "Tea and breakfast before departure"
+            ]
+          },
+          {
+            "theme": "Sunrise at the canyon and road to Tirupati",
+            "pace": "relaxed",
+            "note": "Treat this as a dawn buffer rather than a full sightseeing day; leave by 8–9am to keep the Tirupati arrival easy.",
+            "activities": [
+              {
+                "name": "Gandikota sunrise viewpoint",
+                "duration": "~1h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "The gorge glows amber at dawn and is quieter than sunset."
+              },
+              {
+                "name": "Breakfast and road departure to Tirupati",
+                "duration": "~4h drive",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Use the same hired taxi; public transport is too slow for this route."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tirupati hotel after arrival",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Packed breakfast",
+              "Simple highway lunch",
+              "Tirupati vegetarian dinner"
+            ]
+          }
+        ]
+      },
+      "Tirupati": {
+        "name": "Tirupati",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Book Tirumala darshan before locking dates. Even paid darshan needs hours of logistics, strict dress code and early starts.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History",
+          "Architecture",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "Temples & Religious Sites"
+        ],
+        "days": [
+          {
+            "theme": "Arrival heritage and Tirumala preparation",
+            "pace": "relaxed",
+            "note": "Arrive from Gandikota by noon if possible. Keep the evening light and sleep early if Tirumala is scheduled before dawn.",
+            "activities": [
+              {
+                "name": "Chandragiri Fort and Raja Mahal Museum",
+                "duration": "~2.5h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Confirm weekly closure before going; it is an easy taxi ride from Tirupati."
+              },
+              {
+                "name": "Kapila Theertham waterfall temple",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "A gentle evening stop at the base of the Tirumala hills."
+              },
+              {
+                "name": "TTD ticket, ID, dress-code and cloak-room prep",
+                "duration": "~45m",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Keep Aadhaar or accepted original ID for every adult and avoid carrying restricted items uphill."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tirupati town hotel near bus/rail access",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Pure-veg Andhra meals",
+              "Idli-vada and pongal",
+              "Pulihora"
+            ]
+          },
+          {
+            "theme": "Sri Venkateswara Temple darshan at Tirumala",
+            "pace": "packed",
+            "note": "Pre-book the ₹300 Special Entry Darshan if possible; even then allow 4–6 hours total for uphill travel, queues, darshan and prasadam. Free SSD tokens can mean much longer waits.",
+            "activities": [
+              {
+                "name": "Sri Venkateswara Swamy Darshan at Tirumala",
+                "duration": "~4–6h total",
+                "priority": "must-see",
+                "cost": "₹300/person Special Entry Darshan; free SSD token with longer queue; laddu prasadam ₹50/piece",
+                "tip": "The inner sanctum view is brief; book online, carry original ID, follow dress code and expect strict no-photography rules."
+              },
+              {
+                "name": "Swami Pushkarini and Tirumala hill surroundings",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Do this after darshan only if the group still has energy."
+              },
+              {
+                "name": "Srikalahasti Temple afternoon extension",
+                "duration": "~2–3h including transit",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Skip if darshan queues ran long or travellers are tired."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tirupati hotel or TTD accommodation",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Temple-area vegetarian food",
+              "Tirupati laddu prasadam (contains ghee)",
+              "Simple dinner in Tirupati town"
+            ]
+          }
+        ]
+      },
+      "Lepakshi": {
+        "name": "Lepakshi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Best as a half-day architectural finale from Tirupati or on the onward road to Bangalore; facilities are limited in the village.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "Ancient Ruins",
+          "Architecture",
+          "History"
+        ],
+        "signatureExperiences": [
+          "Architecture",
+          "Ancient Ruins"
+        ],
+        "days": [
+          {
+            "theme": "Vijayanagara frescoes, hanging pillar and Nandi",
+            "pace": "relaxed",
+            "note": "Start early from Tirupati to avoid heat. The complex is compact, but the one-way drive is long enough that same-day return or onward flight timing must be protected.",
+            "activities": [
+              {
+                "name": "Veerabhadra Temple murals, hanging pillar and Nagalinga",
+                "duration": "~2–2.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Hire a local guide if available; fresco details and pillar legends are easy to miss."
+              },
+              {
+                "name": "Giant Nandi monolith",
+                "duration": "~30m",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "It sits a short walk from the main temple and is one of the site's best photo stops."
+              },
+              {
+                "name": "Unfinished Kalyana Mandapam columns",
+                "duration": "~30m",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Visit before midday for cooler stone floors and better light."
+              },
+              {
+                "name": "Continue to Tirupati airport or Bangalore exit",
+                "duration": "varies",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Bangalore has more flights but adds another long road leg."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Return to Tirupati or continue to Bangalore",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Carry snacks and water",
+              "Eat in Hindupur or back in Tirupati"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Visakhapatnam",
+        "to": "Vijayawada & Amaravati",
+        "method": "Train (Vande Bharat or express) or short flight",
+        "cost": "varies",
+        "distanceKm": 340,
+        "durationHrs": 4,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Vijayawada & Amaravati",
+        "to": "Gandikota",
+        "method": "Road by hired taxi or self-drive; optional Belum Caves detour",
+        "cost": "varies",
+        "distanceKm": 330,
+        "durationHrs": 6,
+        "sameDayFeasible": false
+      },
+      {
+        "from": "Gandikota",
+        "to": "Tirupati",
+        "method": "Road by the same hired taxi",
+        "cost": "varies",
+        "distanceKm": 220,
+        "durationHrs": 4,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Tirupati",
+        "to": "Lepakshi",
+        "method": "Road day trip via Hindupur, or continue onward toward Bangalore",
+        "cost": "varies",
+        "distanceKm": 130,
+        "durationHrs": 2.75,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "Book Tirumala darshan before finalising the route; ₹300 Special Entry Darshan quotas open months ahead and can sell out quickly.",
+      "Book the Visakhapatnam→Araku Vistadome train early for Oct–Feb weekends; the Araku day is the easiest place to lose the itinerary if train tickets sell out.",
+      "The coast can face Bay of Bengal cyclone disruption in Oct–Dec; inland legs are less affected, but monitor alerts before Vizag and train segments.",
+      "Gandikota, Araku and Lepakshi have limited cash and food options; carry water, snacks, downloaded maps and enough cash.",
+      "April–June heat is severe across the route, especially Gandikota and Vijayawada, so keep this itinerary to Oct–Mar whenever possible."
+    ]
+  }
+}

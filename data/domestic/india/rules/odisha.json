@@ -1,0 +1,762 @@
+{
+  "name": "Odisha",
+  "seed": false,
+  "lat": 20.9517,
+  "lng": 85.0985,
+  "region": "East India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹12K–₹28K",
+    "couple": "₹22K–₹45K",
+    "family4": "₹38K–₹75K"
+  },
+  "experiences": [
+    "Temples & Religious Sites",
+    "UNESCO Sites",
+    "Ancient Ruins",
+    "Architecture",
+    "Beaches",
+    "Wildlife & Safari",
+    "Cruises & Boat Trips",
+    "Festivals",
+    "Art & Design",
+    "History"
+  ],
+  "avoid": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November"
+  ],
+  "combo": [
+    "West Bengal",
+    "Andhra Pradesh",
+    "Chhattisgarh"
+  ],
+  "landmark": "Konark Sun Temple and Jagannath Temple, Puri",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Bhubaneswar (BBI) is the practical gateway. Puri is the best base for Konark and Chilika; if this route is followed as separate stops, treat Konark→Chilika as a longer reposition via Puri rather than a sightseeing-heavy day.",
+  "diet": {
+    "vegetarian": "Odisha is easy for vegetarians: dalma, pakhala, saag bhaja, temple-style thalis and Jagannath Mahaprasad are vegetarian. Puri also has many pure-veg restaurants, though coastal menus lean heavily toward seafood.",
+    "vegan": "Ask for preparations without ghee, milk, curd or chhena. Rice, pakhala, dalma without ghee tadka, besara and simple vegetable curries can be vegan, but rasgulla, chhena poda, chhena gaja and many sweets are dairy-based.",
+    "phrases": [
+      "Aama khadya niramisha = our food is vegetarian",
+      "Daya kari ghia/dudha/dahi/chhena debenu nahi = please do not add ghee, milk, curd or chhena",
+      "Machha nahi, mangsa nahi = no fish, no meat"
+    ]
+  },
+  "links": [
+    {
+      "label": "Odisha Tourism (official)",
+      "url": "https://www.odishatourism.gov.in"
+    },
+    {
+      "label": "OTDC Odisha Tourism Development Corporation",
+      "url": "https://otdc.odisha.gov.in"
+    },
+    {
+      "label": "Chilika Development Authority",
+      "url": "https://www.chilika.com"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Bhubaneswar",
+      "lat": 20.2961,
+      "lng": 85.8245,
+      "notes": "The Temple City of India — ancient Kalinga temples, Jain rock-cut caves and the easiest airport gateway for the Odisha Golden Triangle.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Temples & Religious Sites",
+        "Ancient Ruins",
+        "Architecture",
+        "History",
+        "Museums"
+      ]
+    },
+    {
+      "name": "Puri",
+      "lat": 19.8135,
+      "lng": 85.8312,
+      "notes": "One of India's four sacred dhams — Jagannath Temple, Grand Road rituals, beach sunsets and craft villages nearby.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November"
+      ],
+      "experiences": [
+        "Temples & Religious Sites",
+        "Beaches",
+        "Festivals",
+        "Art & Design",
+        "History"
+      ]
+    },
+    {
+      "name": "Konark",
+      "lat": 19.8876,
+      "lng": 86.0945,
+      "notes": "The 13th-century Sun Temple — a UNESCO-listed stone chariot of 24 wheels, seven horses and masterful Kalinga sculpture.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "UNESCO Sites",
+        "Ancient Ruins",
+        "Architecture",
+        "Temples & Religious Sites",
+        "Festivals"
+      ]
+    },
+    {
+      "name": "Chilika Lake",
+      "lat": 19.7459,
+      "lng": 85.3482,
+      "notes": "Asia's largest brackish-water lagoon — Satapada boat rides, Irrawaddy dolphins and winter migratory birds around Nalabana.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Lakes",
+        "Wildlife & Safari",
+        "Cruises & Boat Trips",
+        "Temples & Religious Sites"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Any Indian prepaid SIM (Jio or Airtel) works well in Bhubaneswar, Puri and Konark; coverage can become patchier around Chilika boat routes.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "Ola",
+      "Uber",
+      "Zomato"
+    ],
+    "cityOrder": [
+      "Bhubaneswar",
+      "Puri",
+      "Konark",
+      "Chilika Lake"
+    ],
+    "cities": {
+      "Bhubaneswar": {
+        "name": "Bhubaneswar",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is ideal: one for the old-town temple circuit and Jain caves, one for Dhauli, museums and a gentler transfer toward the coast.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "Ancient Ruins",
+          "Architecture",
+          "History",
+          "Museums"
+        ],
+        "signatureExperiences": [
+          "Temples & Religious Sites",
+          "Architecture"
+        ],
+        "days": [
+          {
+            "theme": "Temple City & Jain caves",
+            "pace": "moderate",
+            "note": "The temple cluster and caves fit in one day with a cab or auto loop. Non-Hindus cannot enter Lingaraj Temple; use the Curzon viewing platform outside the compound.",
+            "activities": [
+              {
+                "name": "Lingaraj Temple exterior and Curzon Platform viewpoint",
+                "duration": "~1h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Hindu visitors can join the temple queue; non-Hindu visitors should view from the designated platform outside."
+              },
+              {
+                "name": "Mukteswar Temple and nearby Kalinga shrines",
+                "duration": "~45m",
+                "priority": "must-see",
+                "cost": "varies"
+              },
+              {
+                "name": "Udayagiri and Khandagiri Jain caves",
+                "duration": "~1.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Wear shoes with grip for the cave steps and viewpoints."
+              },
+              {
+                "name": "Rajarani Temple sculpture stop",
+                "duration": "~45m",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Odisha State Museum or tribal craft galleries",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bhubaneswar budget guesthouse near railway station",
+                "budget": "₹800–₹1,500/night"
+              },
+              {
+                "name": "Mid-range hotel near Jaydev Vihar or Old Town",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Dalma for Odia thali",
+              "Pakhala and saag bhaja at a local restaurant",
+              "Chhena poda from a sweet shop"
+            ]
+          },
+          {
+            "theme": "Dhauli, crafts and coastal transfer",
+            "pace": "relaxed",
+            "note": "Use this as a buffer day if arriving late or before driving to Puri. Dhauli is an easy detour on the Bhubaneswar–Puri road.",
+            "activities": [
+              {
+                "name": "Dhauli Peace Pagoda and Ashokan edicts",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Ekamra Haat or local craft market",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Nandankanan or museum buffer if travelling with family",
+                "duration": "half day",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bhubaneswar budget guesthouse near railway station",
+                "budget": "₹800–₹1,500/night"
+              },
+              {
+                "name": "Mid-range hotel near Jaydev Vihar or Old Town",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Odia thali",
+              "Temple-style dalma",
+              "Chhena sweets if not avoiding dairy"
+            ]
+          },
+          {
+            "theme": "Slow capital day",
+            "pace": "relaxed",
+            "note": "Only add this day for a softer pace, extra museums or family-friendly wildlife time before the coast.",
+            "activities": [
+              {
+                "name": "Regional Museum of Natural History",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Kalinga Stadium district café break",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Old Town evening temple walk from outside the shrines",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mid-range hotel near Jaydev Vihar or Old Town",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Dalma",
+              "Pakhala",
+              "Local sweets"
+            ]
+          }
+        ]
+      },
+      "Puri": {
+        "name": "Puri",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 4,
+        "note": "Puri is the emotional centre and the most practical base for the route: temple rituals, beach time, Raghurajpur crafts and easy day trips.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "Beaches",
+          "Festivals",
+          "Art & Design",
+          "History"
+        ],
+        "signatureExperiences": [
+          "Temples & Religious Sites",
+          "Beaches"
+        ],
+        "days": [
+          {
+            "theme": "Jagannath, Grand Road and Puri Beach",
+            "pace": "moderate",
+            "note": "Jagannath Temple and the beach are close enough for one day. Non-Hindus are not permitted inside the Jagannath Temple main sanctum or complex; view the temple from the Raghunandan Library rooftop instead.",
+            "activities": [
+              {
+                "name": "Jagannath Temple exterior, Grand Road and Raghunandan Library rooftop viewpoint",
+                "duration": "~1.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Hindu visitors can enter via the proper queue; non-Hindu visitors should use the rooftop view outside."
+              },
+              {
+                "name": "Ananda Bazaar Mahaprasad experience",
+                "duration": "~45m",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Mahaprasad is vegetarian; vegans should avoid ghee and chhena-based items."
+              },
+              {
+                "name": "Puri Beach sunrise or Swargadwar sunset walk",
+                "duration": "~1h",
+                "priority": "must-see",
+                "cost": "varies"
+              },
+              {
+                "name": "Gundicha Temple and Rath Yatra route context",
+                "duration": "~45m",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Sea Beach Road craft shops and sand art stroll",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget guesthouse near Grand Road",
+                "budget": "₹900–₹1,800/night"
+              },
+              {
+                "name": "Beach-facing mid-range hotel",
+                "budget": "₹2,500–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Mahaprasad if accessible",
+              "Odia veg thali",
+              "Seafood restaurants along the beach for non-vegetarians"
+            ]
+          },
+          {
+            "theme": "Raghurajpur craft village and relaxed beach time",
+            "pace": "relaxed",
+            "note": "Raghurajpur is close to Puri, so keep the day light and buy directly from artist households where possible.",
+            "activities": [
+              {
+                "name": "Raghurajpur Heritage Craft Village — pattachitra and palm-leaf etching",
+                "duration": "~2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Arrive in the morning and purchase directly from families rather than commission shops."
+              },
+              {
+                "name": "Pipili appliqué craft stop if transferring onward",
+                "duration": "~45m",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Blue Flag beach facilities or quieter north beach",
+                "duration": "~1.5h",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Evening temple-town food walk",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget guesthouse near Grand Road",
+                "budget": "₹900–₹1,800/night"
+              },
+              {
+                "name": "Beach-facing mid-range hotel",
+                "budget": "₹2,500–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Dalma and rice",
+              "Chhena poda",
+              "Pakhala in warm weather"
+            ]
+          },
+          {
+            "theme": "Festival buffer or slow coast day",
+            "pace": "relaxed",
+            "note": "Use this day during Rath Yatra, beach-heavy trips or if weather delays a Konark or Chilika excursion.",
+            "activities": [
+              {
+                "name": "Rath Yatra route and chariot-building context around Grand Road",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Long beach morning and sand-art viewing",
+                "duration": "~2h",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Local market for khaja and temple souvenirs",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Beach-facing mid-range hotel",
+                "budget": "₹2,500–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Khaja",
+              "Vegetarian temple-town meals",
+              "Seafood if desired"
+            ]
+          }
+        ]
+      },
+      "Konark": {
+        "name": "Konark",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A focused one-day UNESCO stop from Puri; stay overnight only for the dance festival, light-and-sound show or a very relaxed photography pace.",
+        "experiences": [
+          "UNESCO Sites",
+          "Ancient Ruins",
+          "Architecture",
+          "Temples & Religious Sites",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "UNESCO Sites",
+          "Architecture"
+        ],
+        "days": [
+          {
+            "theme": "Sun Temple, museum and Chandrabhaga coast",
+            "pace": "moderate",
+            "note": "Leave Puri early. The Sun Temple needs unhurried time for the wheels, horses and sculptural panels; the beach is a short hop afterward.",
+            "activities": [
+              {
+                "name": "Konark Sun Temple — UNESCO stone chariot complex",
+                "duration": "~2.5h",
+                "priority": "must-see",
+                "cost": "₹40 online / ₹50 counter (Indian); ₹600 foreign; children under 15 free",
+                "tip": "Arrive early for lower heat and better light; hire a licensed guide if you want iconographic context."
+              },
+              {
+                "name": "Konark ASI Museum",
+                "duration": "~45m",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Chandrabhaga Beach",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Konark Light and Sound Show",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Timings shift seasonally; verify the same day before staying back."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Return to Puri beach hotel",
+                "budget": "₹2,500–₹5,000/night"
+              },
+              {
+                "name": "Simple Konark guesthouse during festival nights",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Simple Odia thali near Konark market",
+              "Beachside snacks near Chandrabhaga",
+              "Dinner back in Puri"
+            ]
+          },
+          {
+            "theme": "Festival and photography buffer",
+            "pace": "relaxed",
+            "note": "Only add this day for Konark Dance Festival, dawn photography or a no-rush beach-and-temple revisit.",
+            "activities": [
+              {
+                "name": "Sunrise photography around Chandrabhaga Beach",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Second slow walk around Sun Temple sculpture panels",
+                "duration": "~1.5h",
+                "priority": "recommended",
+                "cost": "₹40 online / ₹50 counter (Indian); ₹600 foreign; children under 15 free"
+              },
+              {
+                "name": "Konark Dance Festival evening if dates align",
+                "duration": "~2h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Simple Konark guesthouse during festival nights",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Odia thali",
+              "Tea and snacks near temple market"
+            ]
+          }
+        ]
+      },
+      "Chilika Lake": {
+        "name": "Chilika Lake",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A one-day lagoon and wildlife stop is enough for most travellers; winter mornings are best for birds and calmer dolphin-spotting boat rides.",
+        "experiences": [
+          "Lakes",
+          "Wildlife & Safari",
+          "Cruises & Boat Trips",
+          "Temples & Religious Sites"
+        ],
+        "signatureExperiences": [
+          "Lakes",
+          "Cruises & Boat Trips"
+        ],
+        "days": [
+          {
+            "theme": "Satapada lagoon cruise, dolphins and birdlife",
+            "pace": "moderate",
+            "note": "Start early from Puri or Konark and keep the boat ride to daylight hours. Monsoon can suspend or disrupt boat services, so avoid July to September.",
+            "activities": [
+              {
+                "name": "Chilika Lake Satapada boat ride for Irrawaddy dolphins",
+                "duration": "~1.5–3h",
+                "priority": "must-see",
+                "cost": "₹800–₹1,500/boat for ~1.5h dolphin route; ₹2,500–₹3,500/boat for longer ~3h route"
+              },
+              {
+                "name": "Nalabana birdlife viewpoint or winter migratory-bird route",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Birding is strongest November to January."
+              },
+              {
+                "name": "Sea-mouth or lagoon-island stop, subject to boat route",
+                "duration": "~45m",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Kalijai island temple if taking the longer route",
+                "duration": "~45m",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Return to Puri hotel",
+                "budget": "₹900–₹5,000/night"
+              },
+              {
+                "name": "Basic lakeside lodge near Satapada",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Packed breakfast from Puri",
+              "Simple Odia lunch near Satapada",
+              "Seafood meals for non-vegetarians"
+            ]
+          },
+          {
+            "theme": "Slow lagoon morning",
+            "pace": "relaxed",
+            "note": "Add only for birders, photographers or travellers who want a second attempt at dolphins in calm morning light.",
+            "activities": [
+              {
+                "name": "Early repeat boat ride or birding route",
+                "duration": "~2h",
+                "priority": "recommended",
+                "cost": "₹800–₹1,500/boat for ~1.5h dolphin route; ₹2,500–₹3,500/boat for longer ~3h route"
+              },
+              {
+                "name": "Village-side lagoon walk and fish landing observation",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Return drive to Puri or Bhubaneswar",
+                "duration": "~2–3h",
+                "priority": "recommended",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Basic lakeside lodge near Satapada",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Simple Odia lunch",
+              "Vegetarian dalma and rice",
+              "Seafood if desired"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bhubaneswar",
+        "to": "Puri",
+        "method": "Taxi/cab via NH-316, bus or train",
+        "cost": "₹1,045–₹1,500 taxi; ₹81–₹150 bus; ₹40–₹120 train",
+        "distanceKm": 65,
+        "durationHrs": 2,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Puri",
+        "to": "Konark",
+        "method": "Taxi/auto or bus via Marine Drive",
+        "cost": "₹843–₹1,200 one-way taxi; ₹30–₹100 bus",
+        "distanceKm": 37,
+        "durationHrs": 1,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Konark",
+        "to": "Chilika Lake",
+        "method": "Taxi via Puri/Satapada road",
+        "cost": "varies",
+        "distanceKm": 85,
+        "durationHrs": 3,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "Odisha's coastal belt has cyclone risk in October and November; check IMD advisories before coastal transfers or boat rides.",
+      "Puri is the practical base for both Konark and Chilika even when they are modelled as route stops; avoid changing hotels unless you want a slower pace.",
+      "Non-Hindus cannot enter Jagannath Temple in Puri or Lingaraj Temple in Bhubaneswar; use the designated outside viewpoints and treat the restriction respectfully.",
+      "Chilika boat rides are best in calm winter mornings and can be disrupted in monsoon months; confirm locally before travelling to Satapada.",
+      "Quoted exact activity fees are limited to the verified Konark ASI ticket and Chilika boat ranges from the research; other activity costs are marked as varies."
+    ]
+  }
+}

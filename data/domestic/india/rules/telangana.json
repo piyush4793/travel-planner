@@ -1,0 +1,621 @@
+{
+  "name": "Telangana",
+  "seed": false,
+  "lat": 17.8495,
+  "lng": 79.1151,
+  "region": "South India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹12K–₹22K",
+    "couple": "₹22K–₹40K",
+    "family4": "₹42K–₹75K"
+  },
+  "experiences": [
+    "History",
+    "Architecture",
+    "Ancient Ruins",
+    "Temples & Religious Sites",
+    "UNESCO Sites",
+    "Food",
+    "Markets & Shopping",
+    "Museums",
+    "Cruises & Boat Trips",
+    "Lakes",
+    "Waterfalls"
+  ],
+  "avoid": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Andhra Pradesh",
+    "Karnataka",
+    "Maharashtra"
+  ],
+  "landmark": "Charminar, Hyderabad",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Hyderabad Rajiv Gandhi International Airport (HYD) is the natural entry and exit hub; allow 45–60 minutes by cab between the airport and central Hyderabad, and use Secunderabad station for the fast train to Warangal.",
+  "diet": {
+    "vegetarian": "Hyderabadi cuisine is famous for meat-heavy biryani, haleem and nihari, but vegetarian travellers are well covered in Hyderabad with paneer or mushroom biryani, South Indian tiffin, Mirchi ka Salan, Bagara Baingan and veg chains such as Chutneys, Kamat and Bikanervala. In Warangal and Nagarjuna Sagar, stick to South Indian meals, tiffin and hotel restaurants for the safest veg choice.",
+    "vegan": "Vegan options are easiest in Hyderabad, where dedicated or vegan-friendly cafés exist, but Irani chai, sweets such as Qubani ka Meetha and double ka meetha, paneer dishes and many biryanis use dairy or ghee. Ask clearly for no ghee, butter, paneer, curd or milk; outside Hyderabad, carry snacks and choose idli, dosa, rice meals or simple dal made without ghee.",
+    "phrases": [
+      "Neyyi, venna, paalu, perugu vaddu = no ghee, butter, milk or curd",
+      "Naaku shakaharam kavali = I want vegetarian food",
+      "Guddu kuda vaddu = no egg also"
+    ]
+  },
+  "links": [
+    {
+      "label": "Telangana Tourism (official)",
+      "url": "https://www.tourism.telangana.gov.in"
+    },
+    {
+      "label": "Telangana State Tourism Development Corporation",
+      "url": "https://tgtdc.in"
+    },
+    {
+      "label": "Archaeological Survey of India",
+      "url": "https://asi.nic.in"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Hyderabad",
+      "lat": 17.385,
+      "lng": 78.4867,
+      "notes": "A city of Nizams and tech giants — Charminar bazaars, Golconda's ramparts, Qutb Shahi tombs, museums and biryani sit beside modern cafés and film-city spectacle.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "experiences": [
+        "History",
+        "Architecture",
+        "Food",
+        "Markets & Shopping",
+        "Ancient Ruins",
+        "Museums"
+      ]
+    },
+    {
+      "name": "Warangal",
+      "lat": 17.9784,
+      "lng": 79.5941,
+      "notes": "The former Kakatiya capital — an open-air heritage circuit of fort gateways, Thousand Pillar Temple and Ramappa Temple, Telangana's UNESCO-listed masterpiece.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "experiences": [
+        "Ancient Ruins",
+        "Architecture",
+        "History",
+        "Temples & Religious Sites",
+        "UNESCO Sites"
+      ]
+    },
+    {
+      "name": "Nagarjuna Sagar",
+      "lat": 16.5745,
+      "lng": 79.3174,
+      "notes": "A reservoir-and-ruins finale where Nagarjunakonda island preserves Buddhist stupas and museum treasures rescued from the valley before the dam filled.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Ancient Ruins",
+        "History",
+        "Museums",
+        "Cruises & Boat Trips",
+        "Lakes",
+        "Waterfalls"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Any Indian prepaid SIM from Jio or Airtel works well across Hyderabad, Warangal and the highway towns; carry offline maps for the Warangal→Nagarjuna Sagar road and around the dam area.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "TSRTC",
+      "Ola",
+      "Uber",
+      "Zomato"
+    ],
+    "cityOrder": [
+      "Hyderabad",
+      "Warangal",
+      "Nagarjuna Sagar"
+    ],
+    "cities": {
+      "Hyderabad": {
+        "name": "Hyderabad",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days is ideal: one for Old City monuments and bazaars, one for the Golconda-Qutb Shahi cluster, and one full day for Ramoji Film City.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Food",
+          "Markets & Shopping",
+          "Ancient Ruins",
+          "Museums"
+        ],
+        "signatureExperiences": [
+          "Architecture",
+          "Food"
+        ],
+        "days": [
+          {
+            "theme": "Old City heritage trail",
+            "pace": "moderate",
+            "note": "Start with the indoor museum, then walk the Charminar cluster after lunch; add the Golconda sound-and-light show only if you leave Old City by about 5:30pm.",
+            "activities": [
+              {
+                "name": "Salar Jung Museum",
+                "duration": "~2.5–3h",
+                "priority": "must-see",
+                "cost": "₹50/adult Indian",
+                "tip": "Closed Fridays; arrive near opening for the Veiled Rebecca and Tipu Sultan galleries."
+              },
+              {
+                "name": "Charminar climb and arcade",
+                "duration": "~1–1.5h",
+                "priority": "must-see",
+                "cost": "₹25/adult Indian",
+                "tip": "Friday afternoons are crowded around prayers; keep valuables close in the bazaar lanes."
+              },
+              {
+                "name": "Laad Bazaar bangles and Old City lanes",
+                "duration": "~1h",
+                "priority": "must-see",
+                "cost": "Free"
+              },
+              {
+                "name": "Mecca Masjid",
+                "duration": "~30m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Dress modestly; it sits beside Charminar."
+              },
+              {
+                "name": "Chowmahalla Palace",
+                "duration": "~1.5h",
+                "priority": "recommended",
+                "cost": "₹100/adult Indian",
+                "tip": "Closed Fridays; pair it with Charminar and Laad Bazaar."
+              },
+              {
+                "name": "Golconda Sound & Light Show",
+                "duration": "~1.5h including transfer",
+                "priority": "recommended",
+                "cost": "₹80 normal / ₹140 executive",
+                "tip": "English show timing shifts by season; buy at the fort counter from late afternoon."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget hotel around Abids/Lakdikapul",
+                "budget": "₹800–₹2,500/night"
+              },
+              {
+                "name": "Banjara Hills or Jubilee Hills mid-range hotel",
+                "budget": "₹3,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Hotel Shadab or Nayaab for biryani/nihari",
+              "Chutneys or Kamat for vegetarian South Indian",
+              "Irani chai and Osmania biscuits near Charminar"
+            ]
+          },
+          {
+            "theme": "Golconda Fort, tombs & lakefront sunset",
+            "pace": "moderate",
+            "note": "Qutb Shahi Tombs and Golconda are under 2km apart, but the fort is large and hot; keep the afternoon flexible for Birla Mandir or Hussain Sagar.",
+            "activities": [
+              {
+                "name": "Qutb Shahi Tombs",
+                "duration": "~1.5–2h",
+                "priority": "must-see",
+                "cost": "₹20/adult Indian",
+                "tip": "Go early for cooler weather and better light on the restored domes."
+              },
+              {
+                "name": "Golconda Fort",
+                "duration": "~3–3.5h",
+                "priority": "must-see",
+                "cost": "₹25/adult Indian cash / ₹20 cashless",
+                "tip": "Wear grippy shoes; the acoustic clap at Fateh Darwaza is the classic guide demo."
+              },
+              {
+                "name": "Birla Mandir and Planetarium",
+                "duration": "~1–1.5h",
+                "priority": "recommended",
+                "cost": "Temple free / Planetarium ₹50",
+                "tip": "The temple terrace is best at sunset."
+              },
+              {
+                "name": "Hussain Sagar Lake and Necklace Road",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "Boating ₹70–₹120"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget hotel around Abids/Lakdikapul",
+                "budget": "₹800–₹2,500/night"
+              },
+              {
+                "name": "Banjara Hills or Jubilee Hills mid-range hotel",
+                "budget": "₹3,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Paradise or Café Bahar for biryani",
+              "Smart Alec or Terrassen Café for vegan-friendly options",
+              "Bikanervala for reliable vegetarian meals"
+            ]
+          },
+          {
+            "theme": "Ramoji Film City full-day spectacle",
+            "pace": "packed",
+            "note": "Treat Ramoji as the only major plan for the day: it is 30km east of central Hyderabad, opens around 9am and usually fills the day until late afternoon.",
+            "activities": [
+              {
+                "name": "Ramoji Film City full-day tour",
+                "duration": "~7–8h",
+                "priority": "must-see",
+                "cost": "Weekday ₹1,550/adult, ₹1,350/child; weekend ₹1,650/adult, ₹1,450/child",
+                "tip": "Book online and arrive at opening; Star Experience packages cost more and include added comforts."
+              },
+              {
+                "name": "Live shows, gardens and film sets",
+                "duration": "Included",
+                "priority": "recommended",
+                "cost": "Included in ticket",
+                "tip": "Check show timings at the gate and prioritise 3–4 headline shows."
+              },
+              {
+                "name": "Sahas Adventure add-on",
+                "duration": "Half day",
+                "priority": "optional",
+                "cost": "₹1,199/adult, ₹999/child"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget hotel around Abids/Lakdikapul",
+                "budget": "₹800–₹2,500/night"
+              },
+              {
+                "name": "Banjara Hills or Jubilee Hills mid-range hotel",
+                "budget": "₹3,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Ramoji in-park restaurants",
+              "Return to Jubilee Hills for cafés",
+              "Veg biryani or South Indian tiffin near your hotel"
+            ]
+          }
+        ]
+      },
+      "Warangal": {
+        "name": "Warangal",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A packed but feasible one-day Kakatiya circuit if you pre-hire a cab for Ramappa; add a second day for Laknavaram Lake or slower temple time.",
+        "experiences": [
+          "Ancient Ruins",
+          "Architecture",
+          "History",
+          "Temples & Religious Sites",
+          "UNESCO Sites"
+        ],
+        "signatureExperiences": [
+          "UNESCO Sites",
+          "Ancient Ruins"
+        ],
+        "days": [
+          {
+            "theme": "Kakatiya heritage and Ramappa UNESCO",
+            "pace": "packed",
+            "note": "Start in Warangal by 8am for Thousand Pillar Temple and the fort, then drive 70km to Ramappa after lunch; it is tight but realistic with a pre-booked cab.",
+            "activities": [
+              {
+                "name": "Ramappa Temple (Rudreshwara), Palampet",
+                "duration": "~2–2.5h",
+                "priority": "must-see",
+                "cost": "₹25/adult Indian, ₹300 foreign",
+                "tip": "UNESCO World Heritage Site; hire an on-site guide for the floating-brick and Madanika details."
+              },
+              {
+                "name": "Warangal Fort and Kakatiya Kala Thoranam",
+                "duration": "~1.5–2h",
+                "priority": "must-see",
+                "cost": "₹25/adult Indian cash / ₹20 cashless; Sound & Light ₹40",
+                "tip": "Focus on the four gateways and central temple ruins if time is short."
+              },
+              {
+                "name": "Thousand Pillar Temple",
+                "duration": "~1–1.5h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "A 12th-century trikuta temple with Shiva, Vishnu and Surya shrines."
+              },
+              {
+                "name": "Bhadrakali Temple and lake",
+                "duration": "~45m",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Kakatiya Musical Garden",
+                "duration": "~30m",
+                "priority": "optional",
+                "cost": "₹20–₹30"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Haritha Hotel Warangal",
+                "budget": "varies"
+              },
+              {
+                "name": "Mid-range hotel near Kazipet or Hanamkonda",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Simple South Indian meals in Hanamkonda",
+              "Carry snacks and water for the Ramappa drive",
+              "Hotel restaurant dinner near Kazipet"
+            ]
+          },
+          {
+            "theme": "Laknavaram Lake slow extension",
+            "pace": "relaxed",
+            "note": "Use this only if you add a second night in Warangal; Laknavaram is about 85km away and does not fit comfortably into the packed UNESCO day.",
+            "activities": [
+              {
+                "name": "Laknavaram Lake and suspension bridge",
+                "duration": "Half day",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Best after monsoon but check road conditions in heavy rain."
+              },
+              {
+                "name": "Extra time at Ramappa Temple or local museums",
+                "duration": "~1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Hanamkonda local food crawl",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Haritha Hotel Warangal",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "South Indian tiffin",
+              "Local thali",
+              "Tea and snacks near Hanamkonda"
+            ]
+          }
+        ]
+      },
+      "Nagarjuna Sagar": {
+        "name": "Nagarjuna Sagar",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Two days lets you arrive from Warangal, see the dam and Ethipothala, then take the mandatory morning boat to Nagarjunakonda before returning to Hyderabad.",
+        "experiences": [
+          "Ancient Ruins",
+          "History",
+          "Museums",
+          "Cruises & Boat Trips",
+          "Lakes",
+          "Waterfalls"
+        ],
+        "signatureExperiences": [
+          "Cruises & Boat Trips",
+          "Ancient Ruins"
+        ],
+        "days": [
+          {
+            "theme": "Dam arrival and Ethipothala Waterfalls",
+            "pace": "relaxed",
+            "note": "Leave Warangal by 9am and reach around lunch; keep the afternoon to dam viewpoints and Ethipothala so you are rested for the next morning's island boat.",
+            "activities": [
+              {
+                "name": "Nagarjuna Sagar Dam viewpoint",
+                "duration": "~1h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Golden hour is best; ask locally whether the crest walk is open."
+              },
+              {
+                "name": "Ethipothala Waterfalls",
+                "duration": "~2–2.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Carry cash; the research found only unverified ₹10–₹20 references."
+              },
+              {
+                "name": "Buddhavanam Buddhist Heritage Park",
+                "duration": "~1.5–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "A useful backup if the island boat is unavailable."
+              },
+              {
+                "name": "Reservoir sunset stroll",
+                "duration": "~30m",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Haritha Hotel Nagarjuna Sagar",
+                "budget": "varies"
+              },
+              {
+                "name": "Basic lodge near the dam",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Haritha hotel restaurant",
+              "Simple South Indian meals near the dam",
+              "Carry snacks for limited late-evening options"
+            ]
+          },
+          {
+            "theme": "Nagarjunakonda island and return to Hyderabad",
+            "pace": "moderate",
+            "note": "Buy boat tickets at the tourism counter by 9am and take the 9:30am sailing; after the island museum and ruins, depart by mid-afternoon for Hyderabad.",
+            "activities": [
+              {
+                "name": "Boat ride to Nagarjunakonda Island",
+                "duration": "~1.5h return sailing",
+                "priority": "must-see",
+                "cost": "₹150–₹180/adult, ₹120/child",
+                "tip": "Last practical boat is early afternoon; arrive early on weekends."
+              },
+              {
+                "name": "Nagarjunakonda Archaeological Museum",
+                "duration": "~1–1.5h",
+                "priority": "must-see",
+                "cost": "₹20/adult Indian, ₹250 foreign",
+                "tip": "Look for Buddhist sculpture and Ikshvaku-period artefacts."
+              },
+              {
+                "name": "Island ruins walk — stupas, viharas and amphitheatre",
+                "duration": "~1h",
+                "priority": "must-see",
+                "cost": "Included with museum",
+                "tip": "Carry water and sun protection; shade is limited."
+              },
+              {
+                "name": "Return drive to Hyderabad",
+                "duration": "~3–3.5h",
+                "priority": "recommended",
+                "cost": "Cab ₹3,500–₹5,000 or TSRTC ₹200–₹280"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Return to Hyderabad hotel or airport hotel",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Early breakfast before the boat",
+              "Packed snacks for the island",
+              "Dinner back in Hyderabad"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Hyderabad",
+        "to": "Warangal",
+        "method": "Train from Secunderabad or AC cab",
+        "cost": "Train ₹180–₹600; AC cab ₹2,500–₹3,500",
+        "distanceKm": 148,
+        "durationHrs": 2.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Warangal",
+        "to": "Nagarjuna Sagar",
+        "method": "AC cab/self-drive via Jangaon, Nalgonda and NH 565",
+        "cost": "AC cab ₹3,000–₹4,500; bus via Nalgonda ₹180–₹250",
+        "distanceKm": 225,
+        "durationHrs": 4,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Nagarjuna Sagar",
+        "to": "Hyderabad",
+        "method": "AC cab or TSRTC bus via Ibrahimpatnam and ORR",
+        "cost": "Cab ₹3,500–₹5,000; bus ₹200–₹280",
+        "distanceKm": 165,
+        "durationHrs": 3.5,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "Book Ramoji Film City online and keep it as a standalone Hyderabad day; it is not realistic to combine with Old City or Golconda sightseeing.",
+      "For Warangal, pre-arrange a cab for Ramappa Temple because public transport is unreliable for the 70km Palampet detour.",
+      "At Nagarjuna Sagar, buy Nagarjunakonda boat tickets early from the tourism counter, not at the jetty; boats can sell out or pause in rough monsoon weather.",
+      "Avoid April–June heat for forts and exposed ruins; July–September can disrupt Nagarjuna Sagar boat services and rural roads."
+    ]
+  }
+}

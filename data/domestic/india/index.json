@@ -569,5 +569,101 @@
       "Madhya Pradesh",
       "Telangana"
     ]
+  },
+  {
+    "name": "Andhra Pradesh",
+    "lat": 15.9129,
+    "lng": 79.74,
+    "region": "South India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 12,
+    "popularityScore": 78,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June"
+    ],
+    "combo": [
+      "Telangana",
+      "Tamil Nadu",
+      "Odisha",
+      "Karnataka"
+    ]
+  },
+  {
+    "name": "Telangana",
+    "lat": 17.8495,
+    "lng": 79.1151,
+    "region": "South India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8,
+    "popularityScore": 76,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Andhra Pradesh",
+      "Karnataka",
+      "Maharashtra"
+    ]
+  },
+  {
+    "name": "Odisha",
+    "lat": 20.9517,
+    "lng": 85.0985,
+    "region": "East India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 11,
+    "popularityScore": 72,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "West Bengal",
+      "Andhra Pradesh",
+      "Chhattisgarh"
+    ]
   }
 ]
