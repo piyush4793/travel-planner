@@ -57,7 +57,7 @@ describe("PlanView — guided planner", () => {
 
   it("shows the 'Where next?' picker with both tiers", () => {
     renderView();
-    expect(screen.getByText(/Where do you plan to go next/i)).toBeInTheDocument();
+    expect(screen.getByText(/Plan your next escape/i)).toBeInTheDocument();
     expect(screen.getByText(/Jump back in/i)).toBeInTheDocument();
     expect(screen.getByText(/Popular to explore/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /Testland \(no rule\)/i })).toBeInTheDocument();
@@ -191,7 +191,7 @@ describe("PlanView — guided planner", () => {
     await screen.findByRole("button", { name: /Share your trip plan/i });
     // Footer is hidden below lg (jsdom has no media query), so include hidden.
     fireEvent.click(screen.getByRole("button", { name: /Plan another/i, hidden: true }));
-    await screen.findByText(/Where do you plan to go next/i);
+    await screen.findByText(/Plan your next escape/i);
   });
 
   it("does not offer a Cinematic fly-through for a route with no mappable cities", async () => {
@@ -233,7 +233,7 @@ describe("PlanView — guided planner", () => {
     fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     await screen.findByText(/Who's going\?/i);
     fireEvent.click(screen.getByRole("button", { name: /Destinations/i }));
-    expect(screen.getByText(/Where do you plan to go next/i)).toBeInTheDocument();
+    expect(screen.getByText(/Plan your next escape/i)).toBeInTheDocument();
   });
 
   it("navigates forward then back through steps", async () => {
@@ -260,7 +260,7 @@ describe("PlanView — guided planner", () => {
     renderView();
     // Back on the wizard (not the picker) at the same destination + step.
     expect(await screen.findByRole("tab", { name: /Step 3:/i, selected: true })).toBeInTheDocument();
-    expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Plan your next escape/i)).not.toBeInTheDocument();
     expect(screen.getAllByRole("heading", { name: "Testland (no rule)" }).length).toBeGreaterThan(0);
   });
 
@@ -272,7 +272,7 @@ describe("PlanView — guided planner", () => {
     // Draft cleared → a fresh mount lands on the picker, not the wizard.
     unmount();
     renderView();
-    expect(screen.getByText(/Where do you plan to go next/i)).toBeInTheDocument();
+    expect(screen.getByText(/Plan your next escape/i)).toBeInTheDocument();
   });
 
   it("resets to a fresh landing picker when startNewNonce changes", async () => {
@@ -280,7 +280,7 @@ describe("PlanView — guided planner", () => {
     // Enter the wizard for a destination.
     fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     await screen.findByText(/Who's going\?/i);
-    expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Plan your next escape/i)).not.toBeInTheDocument();
 
     // "+ New trip" bumps the nonce → wizard discards its selection + draft.
     rerender(
@@ -293,7 +293,7 @@ describe("PlanView — guided planner", () => {
         startNewNonce={1}
       />,
     );
-    expect(await screen.findByText(/Where do you plan to go next/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Plan your next escape/i)).toBeInTheDocument();
     // Draft was cleared, so a fresh mount also lands on the picker.
     expect(loadPlanDraft()).toBeNull();
   });
@@ -359,7 +359,7 @@ describe("PlanView — guided planner", () => {
     expect(matchSavedTrip).toHaveBeenCalledWith(["Testland (no rule)"]);
     fireEvent.click(resumeBtn);
     await waitFor(() => {
-      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/Plan your next escape/i)).not.toBeInTheDocument();
     });
     await waitFor(() => {
       expect(screen.getAllByText(/Beta/).length).toBeGreaterThan(0);
@@ -382,7 +382,7 @@ describe("PlanView — guided planner", () => {
     fireEvent.click(freshBtn);
     // Fresh start leaves the landing picker for Basics (party size prompt).
     await waitFor(() => {
-      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/Plan your next escape/i)).not.toBeInTheDocument();
     });
   });
 
@@ -405,7 +405,7 @@ describe("PlanView — guided planner", () => {
       expect(screen.queryByRole("button", { name: /Resume saved plan/i })).not.toBeInTheDocument();
     });
     // Still on the landing picker — no plan was started.
-    expect(screen.getByText(/Where do you plan to go next/i)).toBeInTheDocument();
+    expect(screen.getByText(/Plan your next escape/i)).toBeInTheDocument();
   });
 });
 
@@ -535,7 +535,7 @@ describe("PlanView — multi-country Basics", () => {
   it("jumps to the review step when opening a saved trip", async () => {
     renderView({ openTrip: { stops: [{ country: "Testland (no rule)", days: 6, cities: [], experiences: [] }], basis: "couple", nonce: 1 } });
     await waitFor(() => {
-      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/Plan your next escape/i)).not.toBeInTheDocument();
     });
   });
 
@@ -555,7 +555,7 @@ describe("PlanView — multi-country Basics", () => {
       openTrip: { stops: [{ country: "Testland (no rule)", days: 9, cities: ["Beta"], experiences: [] }], basis: "couple", nonce: 3 },
     });
     await waitFor(() => {
-      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/Plan your next escape/i)).not.toBeInTheDocument();
     });
     // The restored, hand-picked city surfaces in the plan (Beta was snapshotted).
     await waitFor(() => {
@@ -568,7 +568,7 @@ describe("PlanView — multi-country Basics", () => {
       openTrip: { stops: [{ country: "Testland (no rule)", days: 9, cities: ["Beta"], experiences: ["Mountains"] }], basis: "couple", nonce: 31 },
     });
     await waitFor(() => {
-      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/Plan your next escape/i)).not.toBeInTheDocument();
     });
     // Stepping back to Basics shows the restored vibe chip pressed.
     fireEvent.click(screen.getByRole("tab", { name: /Step 1: Trip basics/i }));
@@ -593,7 +593,7 @@ describe("PlanView — multi-country Basics", () => {
       },
     });
     await waitFor(() => {
-      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/Plan your next escape/i)).not.toBeInTheDocument();
     });
     await waitFor(() => {
       const last = onSaveTrip.mock.calls[onSaveTrip.mock.calls.length - 1]?.[0];
@@ -609,7 +609,7 @@ describe("PlanView — multi-country Basics", () => {
     // Destination data not ready yet: the name resolves to nothing, so the open
     // must NOT be consumed — the landing picker stays put.
     const { rerender } = renderView({ countries: [], openTrip });
-    expect(screen.getByText(/Where do you plan to go next/i)).toBeInTheDocument();
+    expect(screen.getByText(/Plan your next escape/i)).toBeInTheDocument();
     // Data lands (same nonce): the effect re-runs and finally opens to review.
     rerender(
       <PlanView
@@ -622,7 +622,7 @@ describe("PlanView — multi-country Basics", () => {
       />,
     );
     await waitFor(() => {
-      expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/Plan your next escape/i)).not.toBeInTheDocument();
     });
   });
 });

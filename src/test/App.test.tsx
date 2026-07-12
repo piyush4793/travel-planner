@@ -93,7 +93,7 @@ vi.mock("@/components/views/plan/PlanView.tsx", () => ({
     lastPlanViewProps = props;
     return (
       <div data-testid="plan-view">
-        <h1>Where do you plan to go next?</h1>
+        <h1>Plan your next escape?</h1>
       </div>
     );
   },
@@ -202,7 +202,7 @@ describe("App orchestration", () => {
 
     render(<App />);
 
-    expect(await screen.findByRole("heading", { name: /Where do you plan to go next\?/i })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: /Plan your next escape\?/i })).toBeInTheDocument();
     expect(window.location.hash).toBe("#plan");
 
     await user.click(navButton(NAV_TOUR_IDS.TRIPS));
@@ -218,7 +218,7 @@ describe("App orchestration", () => {
     expect(await screen.findByTestId(TEST_IDS.TRIPS_VIEW)).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "Home" }));
-    expect(await screen.findByRole("heading", { name: /Where do you plan to go next\?/i })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: /Plan your next escape\?/i })).toBeInTheDocument();
     expect(window.location.hash).toBe("#plan");
   });
 

@@ -267,7 +267,8 @@ describe("DestinationPicker", () => {
 
     it("re-ranks the explore board by month fit and heads it 'Best in <month>'", () => {
       renderPicker();
-      fireEvent.click(screen.getByRole("button", { name: /^July/i }));
+      fireEvent.click(screen.getByRole("button", { name: /travel month/i }));
+      fireEvent.click(screen.getByRole("button", { name: /^July$/i }));
       const section = screen.getByText(/Best in July/i).closest("section")!;
       const names = within(section).getAllByRole("button").map((b) => b.textContent?.replace(/[^\x00-\x7F]/g, "").trim());
       // Best-window destination sorts ahead of the avoid-window one (never hidden).
@@ -278,7 +279,9 @@ describe("DestinationPicker", () => {
 
     it("clears the month back to any-month order", () => {
       renderPicker();
-      fireEvent.click(screen.getByRole("button", { name: /^July/i }));
+      fireEvent.click(screen.getByRole("button", { name: /travel month/i }));
+      fireEvent.click(screen.getByRole("button", { name: /^July$/i }));
+      fireEvent.click(screen.getByRole("button", { name: /travel month/i }));
       fireEvent.click(screen.getByRole("button", { name: /Any month/i }));
       expect(screen.getByText(/Popular to explore/i)).toBeInTheDocument();
       expect(screen.queryByText(/Best in July/i)).not.toBeInTheDocument();
@@ -303,8 +306,8 @@ describe("DestinationPicker", () => {
       const section = screen.getByText(/Explore Asia/i).closest("section")!;
       const names = within(section).getAllByRole("button").map((b) => b.textContent?.replace(/[^\x00-\x7F]/g, "").trim());
       expect(names).toEqual(["Asiana"]);
-      // Back to all regions restores both.
-      fireEvent.click(screen.getByRole("button", { name: /All regions/i }));
+      // Back to the popular (all-region) board restores both.
+      fireEvent.click(screen.getByRole("button", { name: /^Popular$/ }));
       expect(screen.getByText("Europa")).toBeInTheDocument();
     });
   });

@@ -6,7 +6,7 @@ const TABLET_QUERY = "(min-width: 768px)";
 const DESKTOP_QUERY = "(min-width: 1024px)";
 
 function getBreakpoint(): Breakpoint {
-  if (typeof window === "undefined") return "desktop";
+  if (typeof window === "undefined" || typeof window.matchMedia !== "function") return "desktop";
   if (window.matchMedia(DESKTOP_QUERY).matches) return "desktop";
   if (window.matchMedia(TABLET_QUERY).matches) return "tablet";
   return "mobile";
@@ -17,6 +17,7 @@ export function useBreakpoint(): Breakpoint {
   const [bp, setBp] = useState(getBreakpoint);
 
   useEffect(() => {
+    if (typeof window.matchMedia !== "function") return;
     const tabletMq = window.matchMedia(TABLET_QUERY);
     const desktopMq = window.matchMedia(DESKTOP_QUERY);
     const handler = () => setBp(getBreakpoint());

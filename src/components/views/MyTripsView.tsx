@@ -200,7 +200,8 @@ export default function MyTripsView({ savedTrips, onToggleFavorite, onRemove, on
   }
 
   return (
-    <div className="mx-auto w-full max-w-[1100px] px-4 py-5 sm:px-6">
+    <div className="h-full overflow-y-auto">
+      <div className="mx-auto w-full max-w-[1100px] px-4 py-5 sm:px-6">
       <ConfirmDialog />
       <header className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
@@ -288,6 +289,7 @@ export default function MyTripsView({ savedTrips, onToggleFavorite, onRemove, on
           )}
         </>
       )}
+      </div>
     </div>
   );
 }

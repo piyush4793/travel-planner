@@ -279,7 +279,7 @@ This pattern applies to countries (saved trips use an independent snapshot store
 
 Portal-based dropdowns/tooltips use `createPortal()` to prevent clipping in overflow/scroll containers (shared chips/tooltips and modal/sheet overlays).
 Trips view intentionally does not apply app-level experience tags, so Trips filtering always matches visible Trips controls.
-The Plan landing owns browse-style filtering: region pills narrow the full 198-destination board, while `src/core/utils/monthFit.ts` re-ranks by selected month (best → neutral → avoid) without hiding off-season destinations. There is no cross-view Plan handoff seam; `DestinationPicker`'s own multi-select tray calls `onStart(countries)`. The hidden `MapView` is cinematic-only.
+The Plan landing owns browse-style filtering: an editorial hero over a search row (search box + inline month dropdown reusing `PlanPopover`) and a scrollable **region tab strip** (`Popular` (=All) default, `aria-pressed` toggles) narrow the full 198-destination board, while `src/core/utils/monthFit.ts` re-ranks by selected month (best → neutral → avoid) without hiding off-season destinations. Region filters the explore board only — never the "Jump back in" recents; month may reorder recents. There is no cross-view Plan handoff seam; `DestinationPicker`'s own multi-select tray calls `onStart(countries)`. The hidden `MapView` is cinematic-only.
 
 ---
 

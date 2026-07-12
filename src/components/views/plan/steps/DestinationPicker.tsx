@@ -5,6 +5,7 @@ import { getCountryFlag } from "@/utils/countryFlags";
 import { MAX_TRIP_UNITS, toggleTripSelection } from "@/core/utils/multiCountry";
 import { MONTHS, expandMonth } from "@/core/utils/months";
 import { monthFit, rankByMonthFit } from "@/core/utils/monthFit";
+import PlanPopover from "@/components/views/plan/ui/PlanPopover";
 
 type Props = {
   /** Scope data source — provides combo suggestions, unit nouns and resolution. */
@@ -82,10 +83,72 @@ function Chip({ country, index, disabled, month, onPick }: { country: Country; i
 }
 
 /**
- * Empty-state "Where next?" — a fast search over a popularity-ranked destination
- * board. Your list surfaces the destinations you recently planned (most-recent
- * first), then popular rule-backed destinations to explore. A month "When?"
- * filter re-ranks by seasonality and a region filter folds in browse-by-region.
+ * Inline month lens — collapses the old 12-pill row into a single dropdown that
+ * reuses {@link PlanPopover} (anchored popover on desktop / bottom-sheet on
+ * mobile, portaled so it's never clipped, Escape-to-close). Picking a month
+ * re-ranks the board by seasonality; "Any month" clears the lens.
+ */
+function MonthPicker({ month, onChange }: { month: string | null; onChange: (m: string | null) => void }) {
+  return (
+    <PlanPopover
+      title="When are you going?"
+      icon="📅"
+      subtitle="Sorts destinations by season"
+      haspopup="listbox"
+      minWidth={260}
+      triggerAriaLabel={month ? `Travel month: ${expandMonth(month)}. Change month` : "Choose travel month"}
+      triggerClassName="focus-ring-emerald flex min-h-[46px] shrink-0 items-center gap-1.5 rounded-2xl border border-line bg-white px-3.5 text-[13px] font-semibold text-ink-1 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-colors hover:border-emerald-600 hover:text-emerald-800"
+      triggerLabel={
+        <>
+          <span aria-hidden="true">📅</span>
+          <span className={month ? "text-emerald-800" : "text-ink-2"}>{month ? expandMonth(month) : "Anytime"}</span>
+          <span aria-hidden="true" className="text-[10px] text-ink-4">▾</span>
+        </>
+      }
+    >
+      {(close) => (
+        <div className="w-full">
+          <div className="grid grid-cols-4 gap-1.5">
+            {MONTHS.map((m) => {
+              const active = month === m;
+              return (
+                <button
+                  key={m}
+                  type="button"
+                  onClick={() => { onChange(active ? null : m); close(); }}
+                  aria-pressed={active}
+                  aria-label={expandMonth(m)}
+                  className={`focus-ring-emerald min-h-[40px] rounded-xl border text-[12px] font-semibold transition-colors ${
+                    active
+                      ? "border-emerald-600 bg-emerald-700 text-white"
+                      : "border-line bg-white text-ink-2 hover:border-emerald-600 hover:text-emerald-800"
+                  }`}
+                >
+                  {m}
+                </button>
+              );
+            })}
+          </div>
+          {month && (
+            <button
+              type="button"
+              onClick={() => { onChange(null); close(); }}
+              className="focus-ring-emerald mt-2.5 w-full rounded-xl px-3 py-2 text-center text-[12px] font-semibold text-emerald-800 transition-colors hover:bg-emerald-50"
+            >
+              Any month
+            </button>
+          )}
+        </div>
+      )}
+    </PlanPopover>
+  );
+}
+
+/**
+ * Empty-state "Where next?" — an editorial hero over a fast search across a
+ * popularity-ranked destination board. "Jump back in" surfaces the destinations
+ * you recently planned (most-recent first); a region tab strip and an inline
+ * month lens fold in browse-by-region and seasonality without burying the board.
  */
 export default function DestinationPicker({ source, countries, exploreCountries, onStart, multiSelect = false, maxSelection = MAX_TRIP_UNITS }: Props) {
   const [query, setQuery] = useState("");
@@ -159,123 +222,102 @@ export default function DestinationPicker({ source, countries, exploreCountries,
 
   return (
     <div className="h-full w-full overflow-y-auto bg-surface-2">
-      <div className={`mx-auto flex min-h-full w-full max-w-2xl flex-col px-5 pt-12 pb-12 ${q ? "" : "justify-center"}`}>
-        <div className="text-center">
-          <div className="mb-3 text-3xl opacity-80" aria-hidden="true">🧭</div>
-          <h1 className="font-display text-3xl font-semibold tracking-tight text-ink-1 sm:text-4xl">
-            Where do you plan to go next?
+      <div className="mx-auto flex min-h-full w-full max-w-2xl flex-col px-5 pt-6 pb-12">
+        {/* Editorial hero — sets tone on every breakpoint without burying the board. */}
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-700 via-emerald-800 to-emerald-900 px-5 py-5 shadow-sm sm:px-6 sm:py-6">
+          <span aria-hidden="true" className="pointer-events-none absolute -right-3 -top-5 select-none text-[86px] leading-none opacity-20">🌍</span>
+          <p className="relative text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-200">Plan your next escape</p>
+          <h1 className="relative mt-1 font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+            {multiSelect ? "Where will your journey take you?" : "Where will you wander next?"}
           </h1>
-          <p className="mx-auto mt-3 max-w-md text-sm text-ink-2">
+          <p className="relative mt-1.5 max-w-md text-[13px] text-emerald-100/90">
             {multiSelect
-              ? "Pick up to " + maxSelection + " " + source.unitNounPlural + " and we'll shape one trip across them."
+              ? `Pick up to ${maxSelection} ${source.unitNounPlural} and we'll shape one trip across them.`
               : "Pick a destination and we'll shape a trip around what you love."}
           </p>
         </div>
 
-        <div className="mt-8">
-          <div className="focus-within:border-emerald-600 focus-within:shadow-[0_0_0_3px_rgba(4,120,87,0.12)] flex items-center gap-2 rounded-2xl border border-line bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-[border-color,box-shadow]">
-            <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
-              {multiSelect && selectedNames.map((name) => (
-                <span key={name} className="inline-flex min-h-[32px] items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 py-0.5 pl-2.5 pr-1 text-sm font-medium text-emerald-800">
-                  <span aria-hidden="true">{getCountryFlag(name)}</span>
-                  <span className="max-w-[8rem] truncate">{name}</span>
-                  <button
-                    onClick={() => setSelectedNames((prev) => prev.filter((n) => n !== name))}
-                    aria-label={`Remove ${name}`}
-                    className="focus-ring-emerald flex h-5 w-5 items-center justify-center rounded-full text-xs text-emerald-500 transition-colors hover:bg-emerald-100 hover:text-emerald-700"
-                  >
-                    ✕
-                  </button>
-                </span>
-              ))}
-              <input
-                type="search"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={(e) => {
-                  if (multiSelect && e.key === "Backspace" && query === "" && selectedNames.length > 0) {
-                    setSelectedNames((prev) => prev.slice(0, -1));
-                  }
-                }}
-                placeholder={multiSelect && selectedNames.length > 0 ? "Add another…" : "Search destinations…"}
-                aria-label="Search destinations"
-                className="min-w-[7rem] flex-1 bg-transparent py-1.5 text-[15px] text-ink-1 outline-none placeholder:text-ink-4"
-                autoFocus={prefersAutoFocus()}
-              />
+        <div className="mt-4">
+          <div className="flex items-stretch gap-2">
+            <div className="focus-within:border-emerald-600 focus-within:shadow-[0_0_0_3px_rgba(4,120,87,0.12)] flex min-w-0 flex-1 items-center gap-2 rounded-2xl border border-line bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-[border-color,box-shadow]">
+              <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
+                {multiSelect && selectedNames.map((name) => (
+                  <span key={name} className="inline-flex min-h-[32px] items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 py-0.5 pl-2.5 pr-1 text-sm font-medium text-emerald-800">
+                    <span aria-hidden="true">{getCountryFlag(name)}</span>
+                    <span className="max-w-[8rem] truncate">{name}</span>
+                    <button
+                      onClick={() => setSelectedNames((prev) => prev.filter((n) => n !== name))}
+                      aria-label={`Remove ${name}`}
+                      className="focus-ring-emerald flex h-5 w-5 items-center justify-center rounded-full text-xs text-emerald-500 transition-colors hover:bg-emerald-100 hover:text-emerald-700"
+                    >
+                      ✕
+                    </button>
+                  </span>
+                ))}
+                <input
+                  type="search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (multiSelect && e.key === "Backspace" && query === "" && selectedNames.length > 0) {
+                      setSelectedNames((prev) => prev.slice(0, -1));
+                    }
+                  }}
+                  placeholder={multiSelect && selectedNames.length > 0 ? "Add another…" : "Search destinations…"}
+                  aria-label="Search destinations"
+                  className="min-w-[7rem] flex-1 bg-transparent py-1.5 text-[15px] text-ink-1 outline-none placeholder:text-ink-4"
+                  autoFocus={prefersAutoFocus()}
+                />
+              </div>
+              {multiSelect && selectedNames.length > 0 && (
+                <button
+                  onClick={startTrip}
+                  aria-label={`Plan trip with ${selectedNames.length} ${selectedNames.length === 1 ? source.unitNoun : source.unitNounPlural}`}
+                  className="focus-ring-emerald flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white shadow-sm transition-[transform,background-color,box-shadow] hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-md motion-safe:animate-[fadeInUp_0.2s_ease-out]"
+                >
+                  <span aria-hidden="true" className="text-xl leading-none">→</span>
+                </button>
+              )}
             </div>
-            {multiSelect && selectedNames.length > 0 && (
-              <button
-                onClick={startTrip}
-                aria-label={`Plan trip with ${selectedNames.length} ${selectedNames.length === 1 ? source.unitNoun : source.unitNounPlural}`}
-                className="focus-ring-emerald flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white shadow-sm transition-[transform,background-color,box-shadow] hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-md motion-safe:animate-[fadeInUp_0.2s_ease-out]"
-              >
-                <span aria-hidden="true" className="text-xl leading-none">→</span>
-              </button>
-            )}
+            <MonthPicker month={month} onChange={setMonth} />
           </div>
           {multiSelect && selectedNames.length > 0 && (
             <p className="mt-2 text-center text-[11px] font-medium text-ink-4" aria-live="polite">
               {selectedNames.length}/{maxSelection} selected{atCap ? " · max reached" : " · tap the arrow when ready"}
             </p>
           )}
+          {month && (
+            <p className="mt-2 text-[11px] text-ink-2" aria-live="polite">
+              Sorted for <span className="font-semibold text-emerald-800">{expandMonth(month)}</span> — ☀️ great · ⚠️ off-season.
+            </p>
+          )}
 
-          <div className="mt-4">
-            <div className="mb-2 flex items-center justify-center gap-2">
-              <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink-4">When are you going?</span>
-              {month && (
+          {/* Region browse — one swipeable strip of toggle buttons (folds in
+              Discover's by-region). Styled like tabs but semantically buttons:
+              there's no tabpanel below, so `role="tab"` would mislead SRs. */}
+          <div
+            role="group"
+            aria-label="Browse destinations by region"
+            className="mt-3 flex gap-4 overflow-x-auto border-b border-line [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {REGIONS.map((r) => {
+              const active = region === r;
+              return (
                 <button
-                  onClick={() => setMonth(null)}
-                  className="focus-ring-emerald rounded-full px-2 py-0.5 text-[11px] font-semibold text-emerald-700 transition-colors hover:bg-emerald-50 hover:underline"
+                  key={r}
+                  type="button"
+                  onClick={() => setRegion(r)}
+                  aria-pressed={active}
+                  className={`focus-ring-emerald shrink-0 whitespace-nowrap border-b-2 px-1 py-2 text-[12.5px] font-bold transition-colors ${
+                    active
+                      ? "border-emerald-700 text-emerald-800"
+                      : "border-transparent text-ink-4 hover:text-emerald-800"
+                  }`}
                 >
-                  Any month
+                  {r === "All" ? "Popular" : r}
                 </button>
-              )}
-            </div>
-            <div role="group" aria-label="Filter destinations by travel month" className="flex flex-wrap justify-center gap-1.5">
-              {MONTHS.map((m) => {
-                const active = month === m;
-                return (
-                  <button
-                    key={m}
-                    onClick={() => setMonth((cur) => (cur === m ? null : m))}
-                    aria-pressed={active}
-                    aria-label={`${expandMonth(m)}${active ? " (selected)" : ""}`}
-                    className={`focus-ring-emerald min-h-[32px] min-w-[44px] rounded-full border px-2.5 py-1 text-[11px] font-semibold transition-colors ${
-                      active
-                        ? "border-emerald-600 bg-emerald-700 text-white"
-                        : "border-line bg-white text-ink-2 hover:border-emerald-600 hover:text-emerald-800"
-                    }`}
-                  >
-                    {m}
-                  </button>
-                );
-              })}
-            </div>
-            {month && (
-              <p className="mt-2 text-center text-[11px] text-ink-2" aria-live="polite">
-                Sorted for <span className="font-semibold text-emerald-800">{expandMonth(month)}</span> — ☀️ great · ⚠️ off-season.
-              </p>
-            )}
-
-            <div className="mt-3 flex flex-wrap justify-center gap-1.5" role="group" aria-label="Browse destinations by region">
-              {REGIONS.map((r) => {
-                const active = region === r;
-                return (
-                  <button
-                    key={r}
-                    onClick={() => setRegion(r)}
-                    aria-pressed={active}
-                    className={`focus-ring-emerald min-h-[32px] rounded-full border px-3 py-1 text-[11px] font-semibold transition-colors ${
-                      active
-                        ? "border-emerald-600 bg-emerald-50 text-emerald-800"
-                        : "border-line bg-white text-ink-2 hover:border-emerald-600 hover:text-emerald-800"
-                    }`}
-                  >
-                    {r === "All" ? "🌍 All regions" : r}
-                  </button>
-                );
-              })}
-            </div>
+              );
+            })}
           </div>
         </div>
 
