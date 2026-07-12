@@ -45,14 +45,39 @@ export function useItineraryShare(
 ): ItineraryShare {
   const [status, setStatus] = useState<ShareStatus>("idle");
   const timerRef = useRef<number>(0);
+  // Cache of the rendered PDF blob keyed by a content signature, so the expensive
+  // html2canvas render happens on prefetch (pointer/focus) and the click awaits an
+  // already-resolved promise — keeping navigator.share within the user gesture
+  // (iOS requires transient activation, which a slow await would consume).
+  const pdfCacheRef = useRef<{ sig: string; blob: Promise<Blob> } | null>(null);
 
   useEffect(() => () => clearTimeout(timerRef.current), []);
 
   const canAttachPdf = !!plan && isEnabled("pdfExport") && supportsFileShare();
 
+  const contentSig = useCallback((): string => {
+    const stops = routeStops?.map((s) => `${s.name}:${s.dayCount}`).join("|") ?? "";
+    return [country.name, homeCountry, plan?.duration, plan?.costPerPerson, plan?.days.length, stops].join("~");
+  }, [country.name, homeCountry, plan, routeStops]);
+
+  // Render + cache the PDF blob for the current content, reusing an in-flight or
+  // matching render. Returns the blob promise so callers can await it.
+  const ensurePdfBlob = useCallback((): Promise<Blob> | null => {
+    if (!canAttachPdf || !plan) return null;
+    const sig = contentSig();
+    const cached = pdfCacheRef.current;
+    if (cached && cached.sig === sig) return cached.blob;
+    const blob = import("../utils/pdfDocument").then(({ buildItineraryPdfBlob }) =>
+      buildItineraryPdfBlob(plan, country, homeCountry, routeStops),
+    );
+    blob.catch(() => {}); // mark handled so warming rejections aren't unhandled
+    pdfCacheRef.current = { sig, blob };
+    return blob;
+  }, [canAttachPdf, plan, country, homeCountry, routeStops, contentSig]);
+
   const prefetch = useCallback(() => {
-    if (canAttachPdf) void import("../utils/pdfDocument").catch(() => {});
-  }, [canAttachPdf]);
+    void ensurePdfBlob();
+  }, [ensurePdfBlob]);
 
   const flagCopied = useCallback(() => {
     setStatus("copied");
@@ -90,14 +115,16 @@ export function useItineraryShare(
     if (canAttachPdf && plan) {
       setStatus("working");
       try {
-        const { buildItineraryPdfBlob, itineraryPdfName } = await import("../utils/pdfDocument");
-        const file = new File([buildItineraryPdfBlob(plan, country, homeCountry, routeStops)], itineraryPdfName(country), {
-          type: "application/pdf",
-        });
-        if (navigator.canShare({ files: [file] })) {
-          await navigator.share({ files: [file], title, text });
-          setStatus("idle");
-          return;
+        const blobPromise = ensurePdfBlob();
+        const { itineraryPdfName } = await import("../utils/pdfDocument");
+        const blob = await blobPromise;
+        if (blob) {
+          const file = new File([blob], itineraryPdfName(country), { type: "application/pdf" });
+          if (navigator.canShare({ files: [file] })) {
+            await navigator.share({ files: [file], title, text });
+            setStatus("idle");
+            return;
+          }
         }
       } catch (err) {
         setStatus("idle");
@@ -119,7 +146,7 @@ export function useItineraryShare(
 
     // 3. Clipboard fallback (desktop).
     await copyText(`${text}\n\n${url}`);
-  }, [country, homeCountry, plan, routeStops, canAttachPdf, copyText]);
+  }, [country, homeCountry, plan, canAttachPdf, ensurePdfBlob, copyText]);
 
   return { share, prefetch, status };
 }

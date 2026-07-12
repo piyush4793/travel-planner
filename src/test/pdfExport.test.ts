@@ -202,3 +202,57 @@ describe("pdfExport — P1", () => {
     Object.defineProperty(navigator, "userAgent", { value: originalUA, configurable: true });
   });
 });
+
+describe("buildItineraryHtml — shared Export/Share template", () => {
+  const country: Country = {
+    name: "Norway",
+    lat: 60.47,
+    lng: 10.75,
+    bestMonths: ["June"],
+    budget: "₹1L",
+    experiences: ["Fjords"],
+  };
+
+  it("renders a single-destination document with the country title and day labels", async () => {
+    const { buildItineraryHtml } = await import("../utils/pdfExport");
+    const plan: TripPlan = {
+      duration: "2 days",
+      costPerPerson: "₹1L",
+      note: "note",
+      days: [
+        { label: "Day 1 — Oslo", activities: ["Vigeland Park"] },
+        { label: "Day 2 — Bergen", activities: ["Bryggen Wharf"] },
+      ],
+    };
+    const html = buildItineraryHtml(plan, country, "India");
+    expect(html).toContain("<!DOCTYPE html>");
+    expect(html).toContain("Norway");
+    expect(html).toContain("Day 1 — Oslo");
+    expect(html).toContain("Vigeland Park");
+    // Non-interactive: no auto-print button/script (that's Export-mobile only).
+    expect(html).not.toContain("Save as PDF");
+  });
+
+  it("renders per-stop section headers for a multi-stop route", async () => {
+    const { buildItineraryHtml } = await import("../utils/pdfExport");
+    const plan: TripPlan = {
+      duration: "3 days",
+      costPerPerson: "₹1.5L",
+      note: "note",
+      days: [
+        { label: "Day 1 — Oslo", activities: ["Fjords"] },
+        { label: "Day 2 — Stockholm", activities: ["Gamla Stan"] },
+        { label: "Day 3 — Copenhagen", activities: ["Nyhavn"] },
+      ],
+    };
+    const stops = [
+      { name: "Norway", dayCount: 1, cost: "₹50K" },
+      { name: "Sweden", dayCount: 1, cost: "₹50K" },
+      { name: "Denmark", dayCount: 1, cost: "₹50K" },
+    ];
+    const html = buildItineraryHtml(plan, country, "India", stops);
+    expect(html).toContain("Stop 1");
+    expect(html).toContain("Sweden");
+    expect(html).toContain("Denmark");
+  });
+});

@@ -59,6 +59,21 @@ export function exportItineraryAsPdf(
   }, 300);
 }
 
+/**
+ * The full, non-interactive itinerary HTML document — the single source of
+ * truth for the itinerary's visual layout. Consumed both by the print-based
+ * Export (this file) and by the Share flow (`pdfDocument.ts`), which rasterises
+ * it to a real PDF Blob so the shared file is pixel-identical to Export.
+ */
+export function buildItineraryHtml(
+  plan: TripPlan,
+  country: Country,
+  homeCountry: string,
+  stops?: PdfRouteStop[],
+): string {
+  return buildPrintHtml(buildPdfModel(plan, country, homeCountry, stops), false);
+}
+
 function extractCityRoute(days: DayEntry[]): string[] {
   const cities: string[] = [];
   for (const day of days) {
