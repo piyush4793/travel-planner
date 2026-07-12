@@ -72,6 +72,10 @@ type Props = {
    *  tap). Resolves into the ordered selection and jumps to Basics. Bump `nonce`
    *  to re-trigger the same set. */
   intake?: { countries: Country[]; nonce: number } | null;
+  /** Reset the wizard to a fresh landing picker (My Trips "+ New trip" / "Plan a
+   *  trip"). Bump the nonce to discard the in-progress selection + persisted
+   *  draft; the saved trip snapshots in My Trips are untouched. */
+  startNewNonce?: number;
   /** Resolve a saved trip for a picked country set (resume-vs-fresh prompt). */
   matchSavedTrip?: (countries: string[]) => SavedTrip | null;
   /** Shared always-mounted MapView the cinematic overlay animates over. */
@@ -97,7 +101,7 @@ const STEP_META: Record<StepKey, StepMeta> = {
  * is inferred behind the scenes and tunable on Review; cities are a result you
  * edit, never a filter that fights vibe.
  */
-export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onRecordPlanned, onUpdateNotes, aiPlanCountFor, openTrip, intake, matchSavedTrip, mainMapRef, onCinematicChange }: Props) {
+export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onRecordPlanned, onUpdateNotes, aiPlanCountFor, openTrip, intake, startNewNonce, matchSavedTrip, mainMapRef, onCinematicChange }: Props) {
   // Rehydrate a saved draft once so a refresh resumes where the user left off.
   const draft0 = useRef(loadPlanDraft()).current;
   const multiCountry = isEnabled("multiCountryPlanning");
@@ -165,6 +169,19 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
     });
   }, [selection, stepIndex, selCities, selExp, customDays, daysPinned]);
 
+  // "+ New trip" from My Trips: discard any in-progress selection + draft and
+  // drop back to a fresh landing picker. Nonce-guarded so it fires only on an
+  // explicit request, never on the initial mount (the draft resume owns that).
+  const startNewNonceRef = useRef(startNewNonce);
+  useEffect(() => {
+    if (startNewNonce === undefined || startNewNonce === startNewNonceRef.current) return;
+    startNewNonceRef.current = startNewNonce;
+    setSelection([]);
+    setStepIndex(0);
+    setRestoreSeed(null);
+    clearPlanDraft();
+  }, [startNewNonce]);
+
   // A saved route to rehydrate into the wizard — fed either by the `openTrip`
   // prop (My Trips reopen) or by the same-set "Resume" prompt on the landing
   // picker. Both paths share this one restore pipeline (DRY).
@@ -196,6 +213,10 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
     setSelection(resolved);
     setStepIndex(2);
     setBudgetBasis(pendingOpen.basis);
+    // Reopening a saved route is an act of planning it again, so it joins the
+    // implicit Recents ledger (same as starting fresh). Nonce-guarded above, so
+    // this records once per reopen.
+    onRecordPlanned?.(resolved.map((c) => c.name));
     // Align the restore payload to the *resolved* order, so an unresolvable stop
     // never shifts the primary/secondary split.
     const primaryStop = stopByName.get(resolved[0].name);
@@ -425,10 +446,14 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
   const revealSeenRef = useRef<boolean>(loadLS<boolean>(LS_KEYS.PLAN_REVEAL_SEEN, false));
   const revealShownRef = useRef(false);
   const toastTimerRef = useRef<number | null>(null);
+  const reopenSettleTimerRef = useRef<number | null>(null);
   const [showReveal, setShowReveal] = useState(false);
   const [revealSeconds, setRevealSeconds] = useState<number | undefined>(undefined);
   const [showSavedToast, setShowSavedToast] = useState(false);
-  useEffect(() => () => { if (toastTimerRef.current) clearTimeout(toastTimerRef.current); }, []);
+  useEffect(() => () => {
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    if (reopenSettleTimerRef.current) clearTimeout(reopenSettleTimerRef.current);
+  }, []);
   const dismissSavedToast = useCallback(() => {
     if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
     toastTimerRef.current = null;
@@ -458,12 +483,28 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
     const basisChanged = prevBasisRef.current !== budgetBasis;
     prevBasisRef.current = budgetBasis;
 
-    // First save of this mount (incl. reopened trips): record the settle baseline,
-    // celebrate the first-ever Review once, and stay silent — merely arriving or
-    // refreshing never pops a toast.
+    // A reopened/restored trip settles asynchronously — the basis restore plus
+    // (multi-stop) rule hydration re-materialise the plan over several frames.
+    // None of that is a user edit, so stay silent and keep re-arming a short
+    // timer; only once the plan stops changing does reopen mode clear, after
+    // which genuine edits toast normally. This makes "resume" never pop a
+    // "saved" toast, regardless of how long hydration takes.
+    if (reopenedRef.current) {
+      if (prevSig === null) firstSaveAtRef.current = Date.now();
+      if (reopenSettleTimerRef.current) clearTimeout(reopenSettleTimerRef.current);
+      reopenSettleTimerRef.current = window.setTimeout(() => {
+        reopenedRef.current = false;
+        reopenSettleTimerRef.current = null;
+      }, SAVE_SETTLE_MS);
+      return;
+    }
+
+    // First save of this mount: record the settle baseline, celebrate the
+    // first-ever Review once, and stay silent — merely arriving or refreshing
+    // never pops a toast.
     if (prevSig === null) {
       firstSaveAtRef.current = Date.now();
-      if (!revealSeenRef.current && !reopenedRef.current && !revealShownRef.current) {
+      if (!revealSeenRef.current && !revealShownRef.current) {
         revealShownRef.current = true;
         revealSeenRef.current = true;
         saveLS(LS_KEYS.PLAN_REVEAL_SEEN, true);

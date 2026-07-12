@@ -79,12 +79,32 @@ describe("migrations — runMigrations", () => {
     expect(storage.getItem(LS_KEYS.SCHEMA_VERSION)).toBe(String(SCHEMA_VERSION));
   });
 
-  it("stamps pre-versioning data (existing data, no version) as the baseline version", () => {
-    const storage = fakeStorage({ [LS_KEYS.MY_LIST]: JSON.stringify(["Japan"]) });
+  it("migrates pre-versioning data through every step and stamps the current version", () => {
+    const storage = fakeStorage({
+      "tp_visited": JSON.stringify(["Japan"]),
+      "tp_favorites": JSON.stringify(["Italy"]),
+      [LS_KEYS.MY_LIST]: JSON.stringify(["Japan", "Thailand"]),
+      [LS_KEYS.CUSTOMS]: JSON.stringify([{ name: "Japan" }]),
+    });
     runMigrations(storage);
     expect(storage.getItem(LS_KEYS.SCHEMA_VERSION)).toBe(String(SCHEMA_VERSION));
-    // Baseline stamping must not touch existing data.
-    expect(JSON.parse(storage.getItem(LS_KEYS.MY_LIST)!)).toEqual(["Japan"]);
+    // v2 drops retired favorite/visited keys; v3 clears the legacy My List so
+    // Recents starts empty. Unrelated persisted data (customs) is preserved.
+    expect(storage.getItem("tp_visited")).toBeNull();
+    expect(storage.getItem("tp_favorites")).toBeNull();
+    expect(storage.getItem(LS_KEYS.MY_LIST)).toBeNull();
+    expect(JSON.parse(storage.getItem(LS_KEYS.CUSTOMS)!)).toEqual([{ name: "Japan" }]);
+  });
+
+  it("does not clear a My List that predates v3 again once already at the current version", () => {
+    // A user already at the current schema who legitimately re-populated Recents
+    // must keep it — migrations only run for versions below SCHEMA_VERSION.
+    const storage = fakeStorage({
+      [LS_KEYS.SCHEMA_VERSION]: String(SCHEMA_VERSION),
+      [LS_KEYS.MY_LIST]: JSON.stringify(["France"]),
+    });
+    runMigrations(storage);
+    expect(JSON.parse(storage.getItem(LS_KEYS.MY_LIST)!)).toEqual(["France"]);
   });
 
   it("does not rewrite the version when already current", () => {

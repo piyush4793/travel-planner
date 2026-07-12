@@ -9,7 +9,7 @@ import swSource from "../../../public/sw.js?raw";
 
 const ORIGIN = "http://localhost";
 const SW_SCOPE = "/travel-planner/";
-const CACHE_NAME = "roamwise-v4";
+const CACHE_NAME = "roamwise-v5";
 
 type AnyResponse = FakeResponse;
 
@@ -139,14 +139,14 @@ describe("sw.js — lifecycle", () => {
   });
 
   it("purges outdated caches and claims clients on activate", async () => {
-    h.caches.stores.set("roamwise-v3", new Map());
+    h.caches.stores.set("roamwise-v4", new Map());
     h.caches.stores.set(CACHE_NAME, new Map());
     const event = { waitUntil: vi.fn() };
 
     h.self.listeners.activate(event);
     await event.waitUntil.mock.calls[0][0];
 
-    expect(h.caches.stores.has("roamwise-v3")).toBe(false);
+    expect(h.caches.stores.has("roamwise-v4")).toBe(false);
     expect(h.caches.stores.has(CACHE_NAME)).toBe(true);
     expect(h.self.clients.claim).toHaveBeenCalledOnce();
   });

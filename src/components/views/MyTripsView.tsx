@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import type { SavedTrip } from "../../core/utils/savedTrips";
 import { BUDGET_BASIS_META } from "../../core/utils/budget";
 import { getCountryFlag } from "../../utils/countryFlags";
@@ -29,6 +29,17 @@ function savedAgo(iso: string): string {
 
 function placeCount(trip: SavedTrip): number {
   return trip.stops.reduce((n, s) => n + s.cities.length, 0);
+}
+
+/** Case-insensitive match across the trip name, its countries, and its cities. */
+function tripMatchesQuery(trip: SavedTrip, q: string): boolean {
+  if (!q) return true;
+  if (trip.name.toLowerCase().includes(q)) return true;
+  return trip.stops.some(
+    (s) =>
+      s.country.toLowerCase().includes(q) ||
+      s.cities.some((city) => city.toLowerCase().includes(q)),
+  );
 }
 
 function SavedTripCard({
@@ -147,12 +158,15 @@ function SavedTripCard({
  */
 export default function MyTripsView({ savedTrips, onToggleFavorite, onRemove, onOpen, onGoPlan }: Props) {
   const [confirm, ConfirmDialog] = useConfirm();
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
 
   const { favorites, rest } = useMemo(() => {
-    const favorites = savedTrips.filter((t) => t.favorite);
-    const rest = savedTrips.filter((t) => !t.favorite);
+    const matched = q ? savedTrips.filter((t) => tripMatchesQuery(t, q)) : savedTrips;
+    const favorites = matched.filter((t) => t.favorite);
+    const rest = matched.filter((t) => !t.favorite);
     return { favorites, rest };
-  }, [savedTrips]);
+  }, [savedTrips, q]);
 
   const handleRemove = async (trip: SavedTrip) => {
     const ok = await confirm({
@@ -188,59 +202,92 @@ export default function MyTripsView({ savedTrips, onToggleFavorite, onRemove, on
   return (
     <div className="mx-auto w-full max-w-[1100px] px-4 py-5 sm:px-6">
       <ConfirmDialog />
-      <header className="mb-5 flex items-end justify-between gap-3">
+      <header className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h1 className="text-xl font-semibold text-emerald-950 sm:text-2xl">My Trips</h1>
           <p className="mt-0.5 text-sm text-emerald-800/70">
             {savedTrips.length} saved {savedTrips.length === 1 ? "trip" : "trips"}
           </p>
         </div>
-        <button
-          type="button"
-          onClick={onGoPlan}
-          className="focus-ring min-h-[40px] shrink-0 rounded-full bg-emerald-700 px-4 text-sm font-semibold text-white transition-colors hover:bg-emerald-800"
-        >
-          + New trip
-        </button>
+        <div className="flex items-center gap-2">
+          <div className="relative flex-1 sm:w-64 sm:flex-none">
+            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-emerald-900/40" aria-hidden="true">🔍</span>
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search trips…"
+              aria-label="Search saved trips by name, country, or city"
+              className="focus-ring min-h-[40px] w-full rounded-full border border-emerald-900/15 bg-white pl-9 pr-3 text-sm text-emerald-950 placeholder:text-emerald-900/40"
+            />
+          </div>
+          <button
+            type="button"
+            onClick={onGoPlan}
+            className="focus-ring min-h-[40px] shrink-0 rounded-full bg-emerald-700 px-4 text-sm font-semibold text-white transition-colors hover:bg-emerald-800"
+          >
+            + New trip
+          </button>
+        </div>
       </header>
 
-      {favorites.length > 0 && (
-        <section className="mb-6" aria-labelledby="favorites-heading">
-          <h2 id="favorites-heading" className="mb-2 text-xs font-semibold uppercase tracking-wide text-amber-600">
-            ★ Favorites
-          </h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {favorites.map((trip) => (
-              <SavedTripCard
-                key={trip.id}
-                trip={trip}
-                onToggleFavorite={onToggleFavorite}
-                onOpen={onOpen}
-                onRemove={() => handleRemove(trip)}
-              />
-            ))}
-          </div>
-        </section>
-      )}
-
-      <section aria-labelledby="all-trips-heading">
-        {favorites.length > 0 && (
-          <h2 id="all-trips-heading" className="mb-2 text-xs font-semibold uppercase tracking-wide text-emerald-800/60">
-            All trips
-          </h2>
-        )}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {rest.map((trip) => (
-            <SavedTripCard
-              key={trip.id}
-              trip={trip}
-              onToggleFavorite={onToggleFavorite}
-                onOpen={onOpen}
-              onRemove={() => handleRemove(trip)}
-            />
-          ))}
+      {favorites.length === 0 && rest.length === 0 ? (
+        <div className="flex flex-col items-center justify-center gap-3 py-16 text-center">
+          <div className="text-4xl" aria-hidden="true">🔍</div>
+          <p className="text-sm text-emerald-800/70">
+            No trips match “{query.trim()}”.
+          </p>
+          <button
+            type="button"
+            onClick={() => setQuery("")}
+            className="focus-ring min-h-[36px] rounded-full border border-emerald-900/15 px-4 text-sm font-medium text-emerald-800 transition-colors hover:bg-emerald-50"
+          >
+            Clear search
+          </button>
         </div>
-      </section>
+      ) : (
+        <>
+          {favorites.length > 0 && (
+            <section className="mb-6" aria-labelledby="favorites-heading">
+              <h2 id="favorites-heading" className="mb-2 text-xs font-semibold uppercase tracking-wide text-amber-600">
+                ★ Favorites
+              </h2>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {favorites.map((trip) => (
+                  <SavedTripCard
+                    key={trip.id}
+                    trip={trip}
+                    onToggleFavorite={onToggleFavorite}
+                    onOpen={onOpen}
+                    onRemove={() => handleRemove(trip)}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
+
+          {rest.length > 0 && (
+            <section aria-labelledby="all-trips-heading">
+              {favorites.length > 0 && (
+                <h2 id="all-trips-heading" className="mb-2 text-xs font-semibold uppercase tracking-wide text-emerald-800/60">
+                  All trips
+                </h2>
+              )}
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {rest.map((trip) => (
+                  <SavedTripCard
+                    key={trip.id}
+                    trip={trip}
+                    onToggleFavorite={onToggleFavorite}
+                    onOpen={onOpen}
+                    onRemove={() => handleRemove(trip)}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
+        </>
+      )}
     </div>
   );
 }

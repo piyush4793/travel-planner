@@ -73,4 +73,30 @@ describe("MyTripsView", () => {
     expect(screen.getByText("All trips")).toBeInTheDocument();
     expect(screen.getByText("2 saved trips")).toBeInTheDocument();
   });
+
+  it("filters trips by the search box (name, country, or city)", () => {
+    const trips = [
+      trip({ id: "a", name: "Japan → Thailand" }),
+      trip({ id: "b", name: "Peru", stops: [{ country: "Peru", days: 6, cities: ["Cusco"] }] }),
+    ];
+    render(<MyTripsView savedTrips={trips} onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={vi.fn()} />);
+    const search = screen.getByRole("searchbox", { name: /search saved trips/i });
+
+    fireEvent.change(search, { target: { value: "cusco" } });
+    expect(screen.getByRole("heading", { name: "Peru" })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "Japan → Thailand" })).not.toBeInTheDocument();
+
+    fireEvent.change(search, { target: { value: "japan" } });
+    expect(screen.getByRole("heading", { name: "Japan → Thailand" })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "Peru" })).not.toBeInTheDocument();
+  });
+
+  it("shows a no-results state that clears the search", () => {
+    render(<MyTripsView savedTrips={[trip()]} onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={vi.fn()} />);
+    const search = screen.getByRole("searchbox", { name: /search saved trips/i });
+    fireEvent.change(search, { target: { value: "zzz" } });
+    expect(screen.getByText(/No trips match/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Clear search" }));
+    expect(screen.getByRole("heading", { name: "Japan → Thailand" })).toBeInTheDocument();
+  });
 });

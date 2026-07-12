@@ -1,6 +1,6 @@
 // Roamwise Service Worker — cache-first for immutable hashed build assets,
 // network-first for navigations and unhashed assets (manifest, icons, data).
-const CACHE_NAME = "roamwise-v4";
+const CACHE_NAME = "roamwise-v5";
 
 // Base path is derived from the worker's own URL (…/sw.js) so this file stays
 // in sync with Vite's `base` without a duplicated string literal.

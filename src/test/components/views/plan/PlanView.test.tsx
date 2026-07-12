@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 import PlanView from "@/components/views/plan/PlanView.tsx";
 import { setFeatureFlag } from "@/core/featureFlags.ts";
+import { loadPlanDraft } from "@/components/views/plan/shell/planDraft.ts";
 import type { Country } from "@/core/types.ts";
 import type maplibregl from "maplibre-gl";
 
@@ -307,6 +308,30 @@ describe("PlanView — guided planner", () => {
     expect(screen.getByText(/Where do you plan to go next/i)).toBeInTheDocument();
   });
 
+  it("resets to a fresh landing picker when startNewNonce changes", async () => {
+    const { rerender } = renderView({ startNewNonce: 0 });
+    // Enter the wizard for a destination.
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+    await screen.findByText(/Who's going\?/i);
+    expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+
+    // "+ New trip" bumps the nonce → wizard discards its selection + draft.
+    rerender(
+      <PlanView
+        countries={[COUNTRY]}
+        budgetBasis="couple"
+        setBudgetBasis={vi.fn()}
+        homeCountry="India"
+        onGoDiscover={vi.fn()}
+        onToggleTripFavorite={vi.fn()}
+        startNewNonce={1}
+      />,
+    );
+    expect(await screen.findByText(/Where do you plan to go next/i)).toBeInTheDocument();
+    // Draft was cleared, so a fresh mount also lands on the picker.
+    expect(loadPlanDraft()).toBeNull();
+  });
+
   it("shows a Places step with a city card per destination city", async () => {
     renderView();
     fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
@@ -549,6 +574,17 @@ describe("PlanView — multi-country Basics", () => {
     renderView({ openTrip: { stops: [{ country: "Testland (no rule)", days: 6, cities: [], experiences: [] }], basis: "couple", nonce: 1 } });
     await waitFor(() => {
       expect(screen.queryByText(/Where do you plan to go next/i)).not.toBeInTheDocument();
+    });
+  });
+
+  it("records a reopened trip into Recents (implicit My List)", async () => {
+    const onRecordPlanned = vi.fn();
+    renderView({
+      onRecordPlanned,
+      openTrip: { stops: [{ country: "Testland (no rule)", days: 6, cities: [], experiences: [] }], basis: "couple", nonce: 42 },
+    });
+    await waitFor(() => {
+      expect(onRecordPlanned).toHaveBeenCalledWith(["Testland (no rule)"]);
     });
   });
 

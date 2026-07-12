@@ -129,6 +129,16 @@ export default function App() {
     setPlanSeed(toOpenRequest(trip, Date.now()));
     setView("plan");
   }, []);
+  // "+ New trip" / "Plan a trip" from My Trips: always land on a fresh Plan
+  // landing picker rather than resuming the persisted draft. The nonce signals
+  // PlanView to clear its in-progress selection/draft (the saved trip snapshot
+  // in My Trips is untouched — only the wizard's working state resets).
+  const [newPlanNonce, setNewPlanNonce] = useState(0);
+  const startNewPlan = useCallback(() => {
+    setPlanSeed(null);
+    setNewPlanNonce((n) => n + 1);
+    setView("plan");
+  }, [setView]);
   // Resolve a saved trip for a picked country set (Plan landing resume prompt).
   const matchSavedTrip = useCallback(
     (names: string[]) => findSavedTripForCountries(savedTrips.savedTrips, names),
@@ -395,6 +405,7 @@ export default function App() {
             aiPlanCountFor={isEnabled("llmPlanning") ? aiPlanCountFor : undefined}
             openTrip={planSeed}
             intake={planIntake}
+            startNewNonce={newPlanNonce}
             matchSavedTrip={matchSavedTrip}
             mainMapRef={mainMapRef}
             onCinematicChange={setCinematicActive}
@@ -405,7 +416,7 @@ export default function App() {
             onToggleFavorite={savedTrips.toggleFavorite}
             onRemove={savedTrips.remove}
             onOpen={openSavedTrip}
-            onGoPlan={() => setView("plan")}
+            onGoPlan={startNewPlan}
           />
         ) : view === "calendar" ? (
           <CalendarView

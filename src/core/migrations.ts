@@ -10,7 +10,7 @@ import type { StoragePort } from "./ports/StoragePort";
  * existed is defined as v1, so pre-versioning stores are simply stamped as v1
  * (no data transform needed).
  */
-export const SCHEMA_VERSION = 2;
+export const SCHEMA_VERSION = 3;
 
 export interface Migration {
   /** Target version this migration upgrades the persisted data TO. */
@@ -29,6 +29,13 @@ export interface Migration {
  * v2: country-level Favorite/Visited were retired (My List became implicit
  * Recents). Delete the now-dead `tp_visited` / `tp_favorites` keys so they stop
  * lingering in storage and in backups.
+ *
+ * v3: "My List" changed meaning from a hand-curated/seeded set into an implicit
+ * "Recents" planning history that reuses the same `tp_my_list` key. The legacy
+ * value (auto-seeded `inSeed` countries + anything manually added under the old
+ * model) was never a record of planning intent, so it would masquerade as
+ * "recently planned". Clear it once so Recents starts from an honest clean slate
+ * and only genuine planning actions populate it going forward.
  */
 export const MIGRATIONS: Migration[] = [
   {
@@ -37,6 +44,13 @@ export const MIGRATIONS: Migration[] = [
     migrate: (storage) => {
       storage.removeItem("tp_visited");
       storage.removeItem("tp_favorites");
+    },
+  },
+  {
+    version: 3,
+    description: "Clear legacy My List so Recents starts empty",
+    migrate: (storage) => {
+      storage.removeItem("tp_my_list");
     },
   },
 ];
