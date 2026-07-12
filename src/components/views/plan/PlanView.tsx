@@ -347,14 +347,14 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
   const isPlaces = current.key === "cities";
   const isBasics = current.key === "basics";
   // Basics + Places sit on an elevated "stage" on desktop (a bordered white
-  // panel centred in the canvas) so short steps read as an intentional, luxe
-  // focal surface instead of floating on empty ivory. The canvas centres the
-  // stage with the `stage-center-safe` utility (`justify-content: safe center`)
-  // so a tall panel on a short viewport (e.g. devtools open) top-aligns and
-  // stays scrollable instead of clipping — plain flex centering / `my-auto`
-  // would cut off the unreachable top. Basics still centres its content
-  // vertically on mobile; Places top-aligns. Review keeps its own full-width
-  // workspace. `centerStep` covers any future narrow step.
+  // panel in the canvas) so short steps read as an intentional, luxe focal
+  // surface instead of floating on empty ivory. The stage top-aligns under the
+  // header/stepper (rather than vertical-centering) so the eye flows
+  // header → stepper → content without a large floating void above the card;
+  // the canvas stays scrollable via overflow-y-auto on tall panels/short
+  // viewports. Basics still centres its content vertically on mobile; Places
+  // top-aligns. Review keeps its own full-width workspace. `centerStep` covers
+  // any future narrow step.
   const staged = isBasics || isPlaces;
   const stageCard =
     "lg:rounded-[28px] lg:border lg:border-line lg:bg-white lg:px-10 lg:py-9 lg:shadow-[0_14px_46px_rgba(20,40,30,0.07)]";
@@ -439,7 +439,7 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
       />
 
       {/* Step body */}
-      <div className={`mx-auto w-full px-4 ${isReview ? "max-w-[1400px] min-h-0 flex-1 overflow-hidden py-3" : staged ? "stage-center-safe max-w-5xl flex-1 overflow-y-auto overflow-x-hidden py-4 lg:flex lg:flex-col lg:py-8" : "max-w-2xl flex-1 overflow-y-auto overflow-x-hidden py-4"}`}>
+      <div className={`mx-auto w-full px-4 ${isReview ? "max-w-[1400px] min-h-0 flex-1 overflow-hidden py-3" : staged ? "max-w-5xl flex-1 overflow-y-auto overflow-x-hidden py-4 lg:py-8" : "max-w-2xl flex-1 overflow-y-auto overflow-x-hidden py-4"}`}>
         <div key={current.key} className={`plan-step-in w-full ${isReview ? "h-full" : isBasics ? `flex min-h-full flex-col justify-center lg:block lg:min-h-0 ${stageCard}` : isPlaces ? stageCard : centerStep ? "flex min-h-full flex-col justify-center lg:justify-start" : ""}`}>
           {isReview ? (
             ruleLoading && !plan ? (

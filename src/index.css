@@ -110,14 +110,6 @@ html, body, #root {
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Vertically centre a flex child, but fall back to top-aligned + scrollable
-   when the content is taller than the container (short viewport, devtools open)
-   instead of clipping the unreachable top. Only takes effect where the element
-   is a flex container (e.g. the Plan stage at `lg`); inert otherwise. Older
-   engines that don't support the `safe` keyword drop the rule and default to
-   top-aligned — also non-clipping. */
-.stage-center-safe { justify-content: safe center; }
-
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }

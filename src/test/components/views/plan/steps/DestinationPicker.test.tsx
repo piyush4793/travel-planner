@@ -277,6 +277,17 @@ describe("DestinationPicker", () => {
       expect(within(section).getByRole("img", { name: /avoid July/i })).toBeInTheDocument();
     });
 
+    it("shows a compact 3-letter month label on the pill (Any → Jul)", () => {
+      renderPicker();
+      const trigger = () => screen.getByRole("button", { name: /travel month|choose travel month/i });
+      expect(trigger()).toHaveTextContent("Any");
+      fireEvent.click(trigger());
+      fireEvent.click(screen.getByRole("button", { name: /^July$/i }));
+      // Compact abbreviation, never the full month name (keeps the pill width stable).
+      expect(trigger()).toHaveTextContent("Jul");
+      expect(trigger()).not.toHaveTextContent("July");
+    });
+
     it("clears the month back to any-month order", () => {
       renderPicker();
       fireEvent.click(screen.getByRole("button", { name: /travel month/i }));

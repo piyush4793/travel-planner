@@ -117,7 +117,7 @@ function MonthPicker({ month, onChange }: { month: string | null; onChange: (m: 
       triggerLabel={
         <>
           <span aria-hidden="true">📅</span>
-          <span className={month ? "text-emerald-800" : "text-ink-2"}>{month ? expandMonth(month) : "Anytime"}</span>
+          <span className={`w-[2.25rem] text-left tabular-nums ${month ? "text-emerald-800" : "text-ink-2"}`}>{month ?? "Any"}</span>
           <span aria-hidden="true" className="text-[10px] text-ink-4">▾</span>
         </>
       }
@@ -253,68 +253,71 @@ export default function DestinationPicker({ source, countries, exploreCountries,
           </p>
         </div>
 
-        <div className="mt-4">
-          <div className="flex items-stretch gap-2">
-            <div className="focus-within:border-emerald-600 focus-within:shadow-[0_0_0_3px_rgba(4,120,87,0.12)] flex min-w-0 flex-1 items-center gap-2 rounded-2xl border border-line bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-[border-color,box-shadow]">
-              <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
-                {multiSelect && selectedNames.map((name) => {
-                  const fit = month ? monthFit(byName.get(name) ?? { bestMonths: [], worstMonths: [] }, month) : "neutral";
-                  const cue = monthCue(fit, month);
-                  const avoid = fit === "avoid";
-                  return (
-                    <span
-                      key={name}
-                      className={`inline-flex min-h-[32px] items-center gap-1.5 rounded-full border py-0.5 pl-2.5 pr-1 text-sm font-medium ${avoid ? TOKEN_TONE_AVOID : TOKEN_TONE_DEFAULT}`}
+        <div className="mt-4 space-y-2.5">
+          <div className="focus-within:border-emerald-600 focus-within:shadow-[0_0_0_3px_rgba(4,120,87,0.12)] flex min-w-0 items-end gap-2 rounded-2xl border border-line bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-[border-color,box-shadow] sm:items-center">
+            <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
+              {multiSelect && selectedNames.map((name) => {
+                const fit = month ? monthFit(byName.get(name) ?? { bestMonths: [], worstMonths: [] }, month) : "neutral";
+                const cue = monthCue(fit, month);
+                const avoid = fit === "avoid";
+                return (
+                  <span
+                    key={name}
+                    className={`inline-flex min-h-[32px] items-center gap-1.5 rounded-full border py-0.5 pl-2.5 pr-1 text-sm font-medium ${avoid ? TOKEN_TONE_AVOID : TOKEN_TONE_DEFAULT}`}
+                  >
+                    <span aria-hidden="true">{getCountryFlag(name)}</span>
+                    <span className="max-w-[8rem] truncate">{name}</span>
+                    {cue && (
+                      <span className="text-[11px] leading-none" title={cue.label} aria-label={cue.label} role="img">{cue.icon}</span>
+                    )}
+                    <button
+                      onClick={() => setSelectedNames((prev) => prev.filter((n) => n !== name))}
+                      aria-label={`Remove ${name}`}
+                      className={`focus-ring-emerald flex h-5 w-5 items-center justify-center rounded-full text-xs transition-colors ${avoid ? TOKEN_REMOVE_AVOID : TOKEN_REMOVE_DEFAULT}`}
                     >
-                      <span aria-hidden="true">{getCountryFlag(name)}</span>
-                      <span className="max-w-[8rem] truncate">{name}</span>
-                      {cue && (
-                        <span className="text-[11px] leading-none" title={cue.label} aria-label={cue.label} role="img">{cue.icon}</span>
-                      )}
-                      <button
-                        onClick={() => setSelectedNames((prev) => prev.filter((n) => n !== name))}
-                        aria-label={`Remove ${name}`}
-                        className={`focus-ring-emerald flex h-5 w-5 items-center justify-center rounded-full text-xs transition-colors ${avoid ? TOKEN_REMOVE_AVOID : TOKEN_REMOVE_DEFAULT}`}
-                      >
-                        ✕
-                      </button>
-                    </span>
-                  );
-                })}
-                <input
-                  type="search"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (multiSelect && e.key === "Backspace" && query === "" && selectedNames.length > 0) {
-                      setSelectedNames((prev) => prev.slice(0, -1));
-                    }
-                  }}
-                  placeholder={multiSelect && selectedNames.length > 0 ? "Add another…" : "Search destinations…"}
-                  aria-label="Search destinations"
-                  className="min-w-[7rem] flex-1 bg-transparent py-1.5 text-[15px] text-ink-1 outline-none placeholder:text-ink-4"
-                  autoFocus={prefersAutoFocus()}
-                />
-              </div>
-              {multiSelect && selectedNames.length > 0 && (
-                <button
-                  onClick={startTrip}
-                  aria-label={`Plan trip with ${selectedNames.length} ${selectedNames.length === 1 ? source.unitNoun : source.unitNounPlural}`}
-                  className="focus-ring-emerald flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white shadow-sm transition-[transform,background-color,box-shadow] hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-md motion-safe:animate-[fadeInUp_0.2s_ease-out]"
-                >
-                  <span aria-hidden="true" className="text-xl leading-none">→</span>
-                </button>
-              )}
+                      ✕
+                    </button>
+                  </span>
+                );
+              })}
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (multiSelect && e.key === "Backspace" && query === "" && selectedNames.length > 0) {
+                    setSelectedNames((prev) => prev.slice(0, -1));
+                  }
+                }}
+                placeholder={multiSelect && selectedNames.length > 0 ? "Add another…" : "Search destinations…"}
+                aria-label="Search destinations"
+                className="min-w-[7rem] flex-1 bg-transparent py-1.5 text-[15px] text-ink-1 outline-none placeholder:text-ink-4"
+                autoFocus={prefersAutoFocus()}
+              />
             </div>
-            <MonthPicker month={month} onChange={setMonth} />
+            {multiSelect && selectedNames.length > 0 && (
+              <button
+                onClick={startTrip}
+                aria-label={`Plan trip with ${selectedNames.length} ${selectedNames.length === 1 ? source.unitNoun : source.unitNounPlural}`}
+                className="focus-ring-emerald flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white shadow-sm transition-[transform,background-color,box-shadow] hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-md motion-safe:animate-[fadeInUp_0.2s_ease-out]"
+              >
+                <span aria-hidden="true" className="text-xl leading-none">→</span>
+              </button>
+            )}
           </div>
-          {multiSelect && selectedNames.length > 0 && (
-            <p className="mt-2 text-center text-[11px] font-medium text-ink-4" aria-live="polite">
-              {selectedNames.length}/{maxSelection} selected{atCap ? " · max reached" : " · tap the arrow when ready"}
-            </p>
-          )}
+          {/* Secondary controls sit on their own row so the growing token field
+              never has to height-match the compact month lens (fixed the
+              mismatched side-by-side boxes on desktop + mobile). */}
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+            <MonthPicker month={month} onChange={setMonth} />
+            {multiSelect && selectedNames.length > 0 && (
+              <p className="text-[11px] font-medium text-ink-4" aria-live="polite">
+                {selectedNames.length}/{maxSelection} selected{atCap ? " · max reached" : " · tap the arrow when ready"}
+              </p>
+            )}
+          </div>
           {month && (
-            <p className="mt-2 text-[11px] text-ink-2" aria-live="polite">
+            <p className="text-[11px] text-ink-2" aria-live="polite">
               Sorted for <span className="font-semibold text-emerald-800">{expandMonth(month)}</span> — ☀️ great · ⚠️ off-season.
             </p>
           )}
