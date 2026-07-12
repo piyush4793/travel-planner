@@ -17,6 +17,8 @@ type Props = {
   onReorder: (from: number, to: number) => void;
   onAutoArrange: () => void;
   canAutoArrange: boolean;
+  /** Scope-aware flag resolver (domestic stops read the home-country flag). */
+  flagFor?: (name: string) => string;
   /** Inline controls rendered on the same row, right after "Route order"
    *  (e.g. the compact "Jump to city" dropdown) so the toolbar stays one line. */
   children?: ReactNode;
@@ -39,7 +41,7 @@ const TRIGGER =
  * band. The popover opens through the shared {@link PlanPopover} (anchored
  * desktop, bottom-sheet mobile).
  */
-function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAutoArrange, canAutoArrange, children }: Props) {
+function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAutoArrange, canAutoArrange, flagFor, children }: Props) {
   // "Route order" → "Route" on mobile so the levers stay a single row at 375px.
   const compact = useBreakpoint() === "mobile";
   // A single-stop route has nothing to reorder or anchor — mold the lever away so
@@ -69,6 +71,7 @@ function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAuto
               onReorder={onReorder}
               onAutoArrange={onAutoArrange}
               canAutoArrange={canAutoArrange}
+              flagFor={flagFor}
             />
           )}
         </PlanPopover>

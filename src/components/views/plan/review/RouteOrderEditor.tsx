@@ -14,6 +14,8 @@ type Props = {
   onReorder: (from: number, to: number) => void;
   onAutoArrange: () => void;
   canAutoArrange: boolean;
+  /** Scope-aware flag resolver (domestic stops read the home-country flag). */
+  flagFor?: (name: string) => string;
 };
 
 /** Row index directly under the pointer, or null. Pure so it stays testable. */
@@ -35,7 +37,7 @@ function indexFromPoint(container: HTMLElement | null, x: number, y: number): nu
  * to a pure `onReorder(from,to)` in the parent; focus is restored to the moved
  * stop's grip after a keyboard move so a screen-reader user can keep nudging it.
  */
-export default function RouteOrderEditor({ stops, anchorName, onSetAnchor, onReorder, onAutoArrange, canAutoArrange }: Props) {
+export default function RouteOrderEditor({ stops, anchorName, onSetAnchor, onReorder, onAutoArrange, canAutoArrange, flagFor = getCountryFlag }: Props) {
   const listRef = useRef<HTMLUListElement>(null);
   const gripRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const [dragIndex, setDragIndex] = useState<number | null>(null);
@@ -122,7 +124,7 @@ export default function RouteOrderEditor({ stops, anchorName, onSetAnchor, onReo
                 aria-hidden="true"
                 className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-white text-sm shadow-sm ring-1 ring-line"
               >
-                {getCountryFlag(s.name)}
+                {flagFor(s.name)}
               </span>
               <span className="min-w-0 flex-1 truncate text-xs font-semibold text-ink-1">{s.name}</span>
               {isAnchor ? (

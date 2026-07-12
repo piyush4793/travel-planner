@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../../core/types";
@@ -22,10 +22,13 @@ import PlanBasicsStep from "./steps/PlanBasicsStep";
 import PlanPlacesStep, { type PlacesUnit, includedCount } from "./steps/PlanPlacesStep";
 import type { PlanActions } from "./shell/planActions";
 import { loadPlanDraft, savePlanDraft, clearPlanDraft } from "./shell/planDraft";
+import { usePlanScope } from "./shell/usePlanScope";
 import { isEnabled } from "../../../core/featureFlags";
 import { MAX_TRIP_UNITS } from "../../../core/utils/multiCountry";
 import { tripSignature, type SavedTrip, type OpenTripRequest } from "../../../core/utils/savedTrips";
 import { getDestinationSource } from "../../../core/trip/getDestinationSource";
+import { hasDomesticScope } from "../../../core/trip/domesticScope";
+import { unitFlag } from "../../../core/trip/unitFlag";
 import { useTripExperiences } from "../../../hooks/useTripExperiences";
 import { useTripRules } from "../../../hooks/useTripRules";
 import { useTripPlanner } from "../../../hooks/useTripPlanner";
@@ -43,6 +46,10 @@ const HEADER_ROUTE_STOPS = 2;
 
 type Props = {
   countries: Country[];
+  /** All saved-trip snapshots — used to surface domestic "recents" in the picker
+   *  (domestic states have no curated My List, so previously-planned ones stand
+   *  in as "Jump back in"). */
+  savedTrips?: SavedTrip[];
   budgetBasis: BudgetBasis;
   setBudgetBasis: (b: BudgetBasis) => void;
   homeCountry: string;
@@ -90,13 +97,24 @@ const STEP_META: Record<StepKey, StepMeta> = {
  * is inferred behind the scenes and tunable on Review; cities are a result you
  * edit, never a filter that fights vibe.
  */
-export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeCountry, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onRecordPlanned, onUpdateNotes, aiPlanCountFor, openTrip, startNewNonce, matchSavedTrip, mainMapRef, onCinematicChange }: Props) {
+export default function PlanView({ countries, savedTrips, budgetBasis, setBudgetBasis, homeCountry, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onRecordPlanned, onUpdateNotes, aiPlanCountFor, openTrip, startNewNonce, matchSavedTrip, mainMapRef, onCinematicChange }: Props) {
   // Rehydrate a saved draft once so a refresh resumes where the user left off.
   const draft0 = useRef(loadPlanDraft()).current;
   const multiCountry = isEnabled("multiCountryPlanning");
-  // Scope data source. International (world countries) today; a future Domestic
-  // (India cities) scope slots in via getDestinationSource without wizard changes.
-  const source = getDestinationSource("international");
+  // The Domestic (within-country) scope is only offered where a domestic dataset
+  // exists for the traveller's home country (registry-driven — no country literal
+  // here). Reopening an existing domestic trip still works regardless (the scope
+  // rides on the saved snapshot).
+  const domesticAllowed = hasDomesticScope(homeCountry);
+  // Scope data source. International (world countries) or Domestic (India states);
+  // both flow through the same DestinationSource seam, so the wizard is unchanged.
+  const [scope, setScope] = usePlanScope(draft0?.scope);
+  const source = getDestinationSource(scope);
+  // A single scope-aware flag resolver, threaded to every Plan surface that shows
+  // a stop's flag. Domestic units are states/UTs (no ISO code → globe fallback),
+  // so within a domestic trip every stop reads the home-country flag; international
+  // stops keep their own. One source of truth — no per-surface getCountryFlag.
+  const flagFor = useCallback((name: string) => unitFlag(name, scope, homeCountry), [scope, homeCountry]);
   const resolveCountry = (name: string): Country | null =>
     countries.find((c) => c.name === name)
     ?? source.resolveUnit(name)
@@ -128,13 +146,15 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
     setSelection,
     setStepIndex,
     setBudgetBasis,
+    scope,
+    setScope,
   });
 
   const builderInitial =
     draft0 && picked && draft0.countries[0] === picked.name
       ? { selectedCities: draft0.cities, selectedExperiences: draft0.experiences, customDays: draft0.days, daysPinned: draft0.pinned }
       : undefined;
-  const builder = usePlanBuilder(picked, budgetBasis, builderInitial, restore.primarySeed);
+  const builder = usePlanBuilder(picked, budgetBasis, source, builderInitial, restore.primarySeed);
   const { displayCountry, ruleLoading, customDays, daysPinned, plan } = builder;
 
   // Persist the funnel so a refresh resumes it; clear once the user backs out.
@@ -151,14 +171,31 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
       experiences: selExp,
       days: customDays,
       pinned: daysPinned,
+      scope,
     });
-  }, [selection, stepIndex, selCities, selExp, customDays, daysPinned]);
+  }, [selection, stepIndex, selCities, selExp, customDays, daysPinned, scope]);
 
   // Active country on the Places step — lifted here so the header's country
   // switcher and the Places body stay in lock-step (single source of truth).
   const [placesActiveIndex, setPlacesActiveIndex] = useState(0);
 
-  const myListNames = useMemo(() => new Set(countries.map((c) => c.name)), [countries]);
+  // "Jump back in" recents for the picker. International uses the curated My List;
+  // domestic has no My List, so previously-planned domestic states stand in —
+  // derived from saved domestic-scoped trips and resolved through the source, so
+  // it molds by scope with no hardcoded country/state assumption.
+  const pickerRecents = useMemo(() => {
+    if (scope !== "domestic") return countries;
+    const names = new Set<string>();
+    for (const t of savedTrips ?? []) {
+      if (t.scope !== "domestic") continue;
+      for (const s of t.stops) names.add(s.country);
+    }
+    return [...names]
+      .map((n) => source.resolveUnit(n))
+      .filter((c): c is Country => c !== null);
+  }, [scope, countries, savedTrips, source]);
+
+  const myListNames = useMemo(() => new Set(pickerRecents.map((c) => c.name)), [pickerRecents]);
   const exploreCountries = useMemo(
     () => source.popular().filter((c) => !myListNames.has(c.name)),
     [myListNames, source],
@@ -316,6 +353,7 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
     primaryCustomDays: builder.customDays,
     primaryExperiences: builder.selectedExperiences,
     reopenedRef: restore.reopenedRef,
+    scope,
   });
 
   if (!picked) {
@@ -323,11 +361,14 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
       <>
         <DestinationPicker
           source={source}
-          countries={countries}
+          countries={pickerRecents}
           exploreCountries={exploreCountries}
           onStart={restore.handleStartSelection}
           multiSelect={multiCountry}
           maxSelection={MAX_TRIP_UNITS}
+          showScopeToggle={domesticAllowed}
+          onScopeChange={setScope}
+          homeCountry={homeCountry}
         />
         <restore.ResumeDialog />
       </>
@@ -401,6 +442,7 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
         activeIndex={placesActive}
         onSelect={setPlacesActiveIndex}
         variant="light"
+        flagFor={flagFor}
       />
     ) : undefined;
 
@@ -409,6 +451,7 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
       <PlanTripHeader
         selection={selection}
         routeStopLimit={HEADER_ROUTE_STOPS}
+        flagFor={flagFor}
         saveSlot={
           isReview ? (
             <TripSaveBar
@@ -451,6 +494,8 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
                 route={route}
                 displayCountry={displayCountry}
                 homeCountry={homeCountry}
+                scope={scope}
+                flagFor={flagFor}
                 onPlanWithAi={onPlanWithAi ? () => onPlanWithAi(displayCountry.name) : undefined}
                 notes={planActions.notes}
                 onSaveNotes={planActions.onSaveNotes}
@@ -509,6 +554,7 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
                   routeCost={statsPlan?.costPerPerson}
                   routeCostIcon={statsPlan ? planCostBasisIcon(statsPlan) : undefined}
                   routeCostLabel={statsPlan ? planCostBasisLabel(statsPlan) : undefined}
+                  flagFor={flagFor}
                 />
               )}
 

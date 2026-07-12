@@ -39,6 +39,8 @@ type Props = {
   routeCost?: string;
   routeCostIcon?: string;
   routeCostLabel?: string;
+  /** Scope-aware flag resolver (domestic stops read the home-country flag). */
+  flagFor?: (name: string) => string;
 };
 
 /**
@@ -70,6 +72,7 @@ export default function PlanBasicsStep({
   routeCost,
   routeCostIcon,
   routeCostLabel,
+  flagFor,
 }: Props) {
   const showVibe = experiences.length > 0;
 
@@ -120,7 +123,7 @@ export default function PlanBasicsStep({
           route timeline for both single (N=1, one stop) and multi (N>1). On
           desktop this becomes the companion column beside the questions. */}
       <div>
-        <PlanRouteSummary selection={selection} source={source} stopDays={stopDays} cost={routeCost} costIcon={routeCostIcon} costLabel={routeCostLabel} />
+        <PlanRouteSummary selection={selection} source={source} stopDays={stopDays} cost={routeCost} costIcon={routeCostIcon} costLabel={routeCostLabel} flagFor={flagFor} />
       </div>
     </div>
   );

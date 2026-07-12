@@ -2,19 +2,9 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent, within } from "@testing-library/react";
 import PlanBasicsStep from "@/components/views/plan/steps/PlanBasicsStep";
 import type { Country } from "@/core/types.ts";
-import type { DestinationSource } from "@/core/trip/destinationSource.ts";
+import { fakeDestinationSource } from "@/test/support/fakeDestinationSource.ts";
 
-const SOURCE: DestinationSource = {
-  scope: "international",
-  unitNoun: "country",
-  unitNounPlural: "countries",
-  popular: () => [],
-  resolveUnit: () => null,
-  comboRecommendations: () => [],
-  dayBounds: () => ({ rec: 7, max: 14 }),
-  experiencesFor: async () => [],
-  loadUnit: async () => null,
-};
+const SOURCE = fakeDestinationSource();
 
 const UNIT: Country = { name: "Testland", lat: 0, lng: 0, budget: "₹1L", bestMonths: ["June"], experiences: [] };
 

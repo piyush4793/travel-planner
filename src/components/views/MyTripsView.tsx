@@ -1,11 +1,15 @@
 import { useCallback, useMemo, useState, memo } from "react";
-import type { SavedTrip } from "../../core/utils/savedTrips";
+import { type SavedTrip, tripScopeOf } from "../../core/utils/savedTrips";
+import type { TripScope } from "../../core/trip/destinationSource";
 import { BUDGET_BASIS_META } from "../../core/utils/budget";
-import { getCountryFlag } from "../../utils/countryFlags";
+import { unitFlag } from "../../core/trip/unitFlag";
+import FilterChip from "../shared/FilterChip";
 import { useConfirm } from "../shared/ConfirmDialog";
 
 type Props = {
   savedTrips: SavedTrip[];
+  /** Home country — labels + flags domestic (within-home) saved trips. */
+  homeCountry: string;
   onToggleFavorite: (id: string) => void;
   onRemove: (id: string) => void;
   onOpen: (trip: SavedTrip) => void;
@@ -44,11 +48,13 @@ function tripMatchesQuery(trip: SavedTrip, q: string): boolean {
 
 const SavedTripCard = memo(function SavedTripCard({
   trip,
+  homeCountry,
   onToggleFavorite,
   onRemove,
   onOpen,
 }: {
   trip: SavedTrip;
+  homeCountry: string;
   onToggleFavorite: (id: string) => void;
   onRemove: (trip: SavedTrip) => void;
   onOpen: (trip: SavedTrip) => void;
@@ -56,6 +62,8 @@ const SavedTripCard = memo(function SavedTripCard({
   const basis = BUDGET_BASIS_META[trip.basis];
   const places = placeCount(trip);
   const multi = trip.stops.length > 1;
+  const scope = tripScopeOf(trip);
+  const domestic = scope === "domestic";
   return (
     <article className="group relative flex flex-col gap-3 rounded-2xl border border-emerald-900/10 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5">
       {/* Stretched primary action — opens the trip in the Plan wizard. Secondary
@@ -70,17 +78,18 @@ const SavedTripCard = memo(function SavedTripCard({
         <div className="min-w-0">
           <div className="flex items-center gap-1.5 text-lg" aria-hidden="true">
             {trip.stops.map((s) => (
-              <span key={s.country}>{getCountryFlag(s.country)}</span>
+              <span key={s.country}>{unitFlag(s.country, scope, homeCountry)}</span>
             ))}
           </div>
           <h3 className="mt-1 truncate text-sm font-semibold text-emerald-950 group-hover:text-emerald-700 sm:text-base" title={trip.name}>
             {trip.name}
           </h3>
-          {multi && (
-            <p className="mt-0.5 text-[11px] text-emerald-800/70">
-              {trip.stops.length}-stop route
-            </p>
-          )}
+          <p className="mt-0.5 flex items-center gap-1.5 text-[11px] text-emerald-800/70">
+            <span className={`inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 font-medium ${domestic ? "bg-amber-50 text-amber-800" : "bg-emerald-50 text-emerald-800"}`}>
+              {domestic ? `🏠 ${homeCountry}` : "🌍 International"}
+            </span>
+            {multi && <span>{trip.stops.length}-stop route</span>}
+          </p>
         </div>
         <div className="relative z-20 flex shrink-0 items-center gap-1">
           <button
@@ -156,17 +165,45 @@ const SavedTripCard = memo(function SavedTripCard({
  * independent of My List, so trips stay viewable even after the underlying
  * destinations or rules change.
  */
-export default function MyTripsView({ savedTrips, onToggleFavorite, onRemove, onOpen, onGoPlan }: Props) {
+export default function MyTripsView({ savedTrips, homeCountry, onToggleFavorite, onRemove, onOpen, onGoPlan }: Props) {
   const [confirm, ConfirmDialog] = useConfirm();
   const [query, setQuery] = useState("");
+  const [scopeFilter, setScopeFilter] = useState<TripScope | "all">("all");
   const q = query.trim().toLowerCase();
 
+  // Offer the India/International/All filter only when the gallery actually spans
+  // both scopes — a single-scope library needs no filter (design around scale).
+  const scopeCounts = useMemo(() => {
+    let domestic = 0;
+    let international = 0;
+    for (const t of savedTrips) {
+      if (tripScopeOf(t) === "domestic") domestic += 1;
+      else international += 1;
+    }
+    return { domestic, international, all: domestic + international };
+  }, [savedTrips]);
+  const hasMixedScopes = scopeCounts.domestic > 0 && scopeCounts.international > 0;
+  const activeScope = hasMixedScopes ? scopeFilter : "all";
+
+  // Options mold from the home country (no "India" literal) so the same control
+  // works for any home country, and each carries its live count.
+  const scopeOptions = useMemo(
+    () => [
+      { key: "all" as const, label: "All trips", count: scopeCounts.all },
+      { key: "domestic" as const, label: `🏠 ${homeCountry}`, count: scopeCounts.domestic },
+      { key: "international" as const, label: "🌍 International", count: scopeCounts.international },
+    ],
+    [homeCountry, scopeCounts],
+  );
+  const scopeFilterLabel = scopeOptions.find((o) => o.key === activeScope)?.label ?? "All trips";
+
   const { favorites, rest } = useMemo(() => {
-    const matched = q ? savedTrips.filter((t) => tripMatchesQuery(t, q)) : savedTrips;
+    const scoped = activeScope === "all" ? savedTrips : savedTrips.filter((t) => tripScopeOf(t) === activeScope);
+    const matched = q ? scoped.filter((t) => tripMatchesQuery(t, q)) : scoped;
     const favorites = matched.filter((t) => t.favorite);
     const rest = matched.filter((t) => !t.favorite);
     return { favorites, rest };
-  }, [savedTrips, q]);
+  }, [savedTrips, q, activeScope]);
 
   const handleRemove = useCallback(async (trip: SavedTrip) => {
     const ok = await confirm({
@@ -232,6 +269,36 @@ export default function MyTripsView({ savedTrips, onToggleFavorite, onRemove, on
         </div>
       </header>
 
+      {hasMixedScopes && (
+        <div className="mb-5">
+          <FilterChip label={scopeFilterLabel} active={activeScope !== "all"}>
+            {(close) => (
+              <ul className="min-w-[200px] py-1" role="menu" aria-label="Filter trips by scope">
+                {scopeOptions.map((o) => (
+                  <li key={o.key} role="none">
+                    <button
+                      type="button"
+                      role="menuitemradio"
+                      aria-checked={activeScope === o.key}
+                      onClick={() => { setScopeFilter(o.key); close(); }}
+                      className={`focus-ring flex w-full items-center justify-between gap-3 px-4 py-2.5 text-left text-sm transition-colors hover:bg-emerald-50 ${
+                        activeScope === o.key ? "font-semibold text-emerald-800" : "text-ink-body"
+                      }`}
+                    >
+                      <span className="flex items-center gap-2">
+                        {o.label}
+                        <span className="text-[11px] text-ink-4">({o.count})</span>
+                      </span>
+                      {activeScope === o.key && <span aria-hidden="true" className="text-emerald-700">✓</span>}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </FilterChip>
+        </div>
+      )}
+
       {favorites.length === 0 && rest.length === 0 ? (
         <div className="flex flex-col items-center justify-center gap-3 py-16 text-center">
           <div className="text-4xl" aria-hidden="true">🔍</div>
@@ -258,6 +325,7 @@ export default function MyTripsView({ savedTrips, onToggleFavorite, onRemove, on
                   <SavedTripCard
                     key={trip.id}
                     trip={trip}
+                    homeCountry={homeCountry}
                     onToggleFavorite={onToggleFavorite}
                     onOpen={onOpen}
                     onRemove={handleRemove}
@@ -279,6 +347,7 @@ export default function MyTripsView({ savedTrips, onToggleFavorite, onRemove, on
                   <SavedTripCard
                     key={trip.id}
                     trip={trip}
+                    homeCountry={homeCountry}
                     onToggleFavorite={onToggleFavorite}
                     onOpen={onOpen}
                     onRemove={handleRemove}

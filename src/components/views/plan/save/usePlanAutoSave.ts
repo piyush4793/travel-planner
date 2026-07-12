@@ -4,6 +4,7 @@ import type { Country } from "@/core/types";
 import type { BudgetBasis } from "@/core/utils/budget";
 import { buildTripSnapshot, type SavedTrip, type SnapshotStop } from "@/core/utils/savedTrips";
 import type { TripPlan } from "@/core/utils/tripPlans";
+import type { TripScope } from "@/core/trip/destinationSource";
 import type { UnitPlan } from "@/hooks/useTripPlanner";
 import { loadLS, saveLS } from "@/core/storage";
 import { LS_KEYS } from "@/core/lsKeys";
@@ -29,6 +30,8 @@ type Params = {
   /** The folded plan across every stop (primary plan when single-stop). */
   composedTripPlan: TripPlan | null | undefined;
   budgetBasis: BudgetBasis;
+  /** The active trip scope (world countries vs India states) — saved on the snapshot. */
+  scope: TripScope;
   /** The primary stop's tuned day count. */
   primaryCustomDays: number;
   /** The primary stop's experience focus. */
@@ -64,6 +67,7 @@ export function usePlanAutoSave({
   unitPlans,
   composedTripPlan,
   budgetBasis,
+  scope,
   primaryCustomDays,
   primaryExperiences,
   reopenedRef,
@@ -111,8 +115,8 @@ export function usePlanAutoSave({
       const u = planByName.get(c.name);
       return u ? { country: u.name, days: u.customDays, plan: u.plan, experiences: u.experiences } : { country: c.name, days: 0 };
     });
-    const snapshot = buildTripSnapshot({ stops, composed: composedTripPlan ?? plan, basis: budgetBasis });
-    const sig = JSON.stringify(snapshot.stops) + snapshot.totalDays + snapshot.costPerPerson + snapshot.basis;
+    const snapshot = buildTripSnapshot({ stops, composed: composedTripPlan ?? plan, basis: budgetBasis, scope });
+    const sig = JSON.stringify(snapshot.stops) + snapshot.totalDays + snapshot.costPerPerson + snapshot.basis + snapshot.scope;
     // Signature guard: identical content (e.g. a spurious re-render) is a no-op —
     // never re-saves, never re-toasts.
     const prevSig = savedTripSig.current;
@@ -164,7 +168,7 @@ export function usePlanAutoSave({
       if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
       toastTimerRef.current = window.setTimeout(() => setShowSavedToast(false), 4000);
     }
-  }, [onSaveTrip, onReviewStep, plan, displayCountry, selection, unitPlans, composedTripPlan, budgetBasis, primaryCustomDays, primaryExperiences, reopenedRef]);
+  }, [onSaveTrip, onReviewStep, plan, displayCountry, selection, unitPlans, composedTripPlan, budgetBasis, scope, primaryCustomDays, primaryExperiences, reopenedRef]);
 
   return { showReveal, closeReveal, revealSeconds, showSavedToast, dismissSavedToast };
 }

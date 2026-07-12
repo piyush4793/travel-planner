@@ -36,6 +36,7 @@ function baseParams(overrides: Partial<Parameters<typeof usePlanAutoSave>[0]> = 
     primaryCustomDays: 2,
     primaryExperiences: ["Food"],
     reopenedRef: { current: false },
+    scope: "international" as const,
     ...overrides,
   };
 }

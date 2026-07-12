@@ -1,4 +1,5 @@
 import type { BudgetBasis } from "./budget";
+import type { TripScope } from "../trip/destinationSource";
 import { extractPlanCities, type TripPlan } from "./tripPlans";
 
 /** One country leg of a saved trip, snapshotted at save time. */
@@ -29,6 +30,13 @@ export type SavedTrip = {
   /** ISO timestamp the trip was first saved. */
   savedAt: string;
   favorite?: boolean;
+  /**
+   * The trip scope this snapshot was planned in. Determines which destination
+   * source resolves its stops on reopen (world countries vs India states), and
+   * drives the International/India identifier on the My Trips card. Optional for
+   * back-compat: trips saved before scopes existed are treated as international.
+   */
+  scope?: TripScope;
 };
 
 /**
@@ -49,14 +57,23 @@ export function tripSignature(countries: string[]): string {
 export type OpenTripRequest = {
   stops: { country: string; days: number; cities: string[]; experiences: string[] }[];
   basis: BudgetBasis;
+  /** Scope the trip was saved in, so reopen restores the right destination
+   *  source. Optional for back-compat; readers default to international. */
+  scope?: TripScope;
   nonce: number;
 };
+
+/** The scope a saved trip was planned in, defaulting legacy trips to international. */
+export function tripScopeOf(trip: Pick<SavedTrip, "scope">): TripScope {
+  return trip.scope ?? "international";
+}
 
 /** Build an {@link OpenTripRequest} from a saved trip (My Trips reopen / resume). */
 export function toOpenRequest(trip: SavedTrip, nonce: number): OpenTripRequest {
   return {
     stops: trip.stops.map((s) => ({ country: s.country, days: s.days, cities: s.cities, experiences: s.experiences ?? [] })),
     basis: trip.basis,
+    scope: tripScopeOf(trip),
     nonce,
   };
 }
@@ -107,7 +124,8 @@ export function isSavedTrip(v: unknown): v is SavedTrip {
     Number.isFinite(o.totalDays) &&
     typeof o.costPerPerson === "string" &&
     typeof o.savedAt === "string" &&
-    (o.favorite === undefined || typeof o.favorite === "boolean")
+    (o.favorite === undefined || typeof o.favorite === "boolean") &&
+    (o.scope === undefined || o.scope === "international" || o.scope === "domestic")
   );
 }
 
@@ -134,6 +152,9 @@ export type SnapshotInput = {
   /** The whole route folded into one plan (single-stop = the primary plan). */
   composed: TripPlan;
   basis: BudgetBasis;
+  /** Scope the trip was planned in (world countries vs India states). Optional
+   *  for back-compat; omitted ⇒ international. */
+  scope?: TripScope;
 };
 
 /**
@@ -162,5 +183,6 @@ export function buildTripSnapshot(
     totalDays: input.composed.days.length,
     costPerPerson: input.composed.costPerPerson,
     savedAt: now(),
+    scope: input.scope ?? "international",
   };
 }

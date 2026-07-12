@@ -14,6 +14,8 @@ type Tab = "shape" | "details";
 type Props = {
   segment: ReviewSegment;
   onClose: () => void;
+  /** Scope-aware flag resolver (domestic stops read the home-country flag). */
+  flagFor?: (name: string) => string;
 };
 
 const TAB_BASE =
@@ -47,7 +49,7 @@ function MonthPills({ months, tone }: { months: string[]; tone: "good" | "avoid"
  * Renders as a bottom-sheet on mobile and a centered modal on tablet/desktop via
  * {@link ModalShell} (focus-trap, Escape, scroll-lock, focus return, device Back).
  */
-export default function SegmentAdjustDrawer({ segment, onClose }: Props) {
+export default function SegmentAdjustDrawer({ segment, onClose, flagFor = getCountryFlag }: Props) {
   const isMobile = useBreakpoint() === "mobile";
   const [tab, setTab] = useState<Tab>("shape");
   const planCities = extractPlanCities(segment.plan.days);
@@ -75,7 +77,7 @@ export default function SegmentAdjustDrawer({ segment, onClose }: Props) {
         {isMobile && <span aria-hidden="true" className="mx-auto mb-3 block h-1 w-10 rounded-full bg-emerald-300/70" />}
 
         <div className="flex items-center gap-2.5 pr-10">
-          <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-xl leading-none shadow-sm ring-1 ring-emerald-100">{getCountryFlag(segment.name)}</span>
+          <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-xl leading-none shadow-sm ring-1 ring-emerald-100">{flagFor(segment.name)}</span>
           <h2 className="min-w-0 flex-1 truncate font-display text-lg font-bold text-emerald-950">{segment.name}</h2>
           <span className="shrink-0 rounded-full border border-emerald-200 bg-white/80 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700">
             {segment.plan.days.length}{segment.plan.days.length === 1 ? " day" : " days"}
@@ -196,7 +198,7 @@ export default function SegmentAdjustDrawer({ segment, onClose }: Props) {
               <div className="flex flex-wrap gap-1.5">
                 {c.combo!.map((x) => (
                   <span key={x} className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[12px] font-semibold text-emerald-800">
-                    <span aria-hidden="true">{getCountryFlag(x)}</span> {x}
+                    <span aria-hidden="true">{flagFor(x)}</span> {x}
                   </span>
                 ))}
               </div>

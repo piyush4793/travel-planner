@@ -16,6 +16,8 @@ type Props = {
   onSelect: (index: number) => void;
   /** Visual skin: `dark` on emerald surfaces, `light` on the ivory header. */
   variant?: "dark" | "light";
+  /** Scope-aware flag resolver (domestic stops read the home-country flag). */
+  flagFor?: (name: string) => string;
 };
 
 /**
@@ -25,7 +27,7 @@ type Props = {
  * any stop count / long names (place-count badge, `line-clamp`). Reuses the portal
  * `PlanMenu` for collision handling, Escape/back close and focus return.
  */
-export default function PlanCountrySwitcher({ units, activeIndex, onSelect, variant = "light" }: Props) {
+export default function PlanCountrySwitcher({ units, activeIndex, onSelect, variant = "light", flagFor = getCountryFlag }: Props) {
   const safe = Math.min(activeIndex, Math.max(0, units.length - 1));
   const active = units[safe];
   if (!active) return null;
@@ -44,7 +46,7 @@ export default function PlanCountrySwitcher({ units, activeIndex, onSelect, vari
       triggerClassName={trigger}
       trigger={
         <>
-          <span aria-hidden="true">{getCountryFlag(active.name)}</span>
+          <span aria-hidden="true">{flagFor(active.name)}</span>
           <span className="min-w-0 line-clamp-1 font-display text-base font-semibold">{active.name}</span>
           {units.length > 1 && (
             <span
@@ -73,7 +75,7 @@ export default function PlanCountrySwitcher({ units, activeIndex, onSelect, vari
                 }`}
               >
                 <span className="w-4 shrink-0 text-emerald-600" aria-hidden="true">{i === safe ? "✓" : ""}</span>
-                <span aria-hidden="true">{getCountryFlag(u.name)}</span>
+                <span aria-hidden="true">{flagFor(u.name)}</span>
                 <span className="min-w-0 flex-1 line-clamp-1 font-display text-[15px] font-semibold text-ink-1">{u.name}</span>
                 <span className="shrink-0 whitespace-nowrap text-[12px] font-medium text-ink-3">
                   {u.places} {u.places === 1 ? "place" : "places"} · {u.days}d

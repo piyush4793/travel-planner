@@ -60,6 +60,8 @@ type Props = {
   selection: Country[];
   /** How many stops the header names before collapsing into a "+N" pill. */
   routeStopLimit: number;
+  /** Scope-aware flag resolver (domestic stops read the home-country flag). */
+  flagFor?: (name: string) => string;
   /** Save-trip control (slotted so the header stays layout-only). */
   saveSlot?: ReactNode;
   /** Share control (slotted, sits left of the save/favourite cluster on Review). */
@@ -91,6 +93,7 @@ type Props = {
 function PlanTripHeaderInner({
   selection,
   routeStopLimit,
+  flagFor = getCountryFlag,
   saveSlot,
   shareSlot,
   steps,
@@ -104,7 +107,7 @@ function PlanTripHeaderInner({
 }: Props) {
   const isMulti = selection.length > 1;
   const compact = useBreakpoint() === "mobile";
-  const routeLabel = selection.map((c) => `${getCountryFlag(c.name)} ${c.name}`).join("  →  ");
+  const routeLabel = selection.map((c) => `${flagFor(c.name)} ${c.name}`).join("  →  ");
   const primary = selection[0];
   // Mobile names only the first stop + a "+N" pill for the rest, so the row stays
   // on one line at 375px; desktop names up to `routeStopLimit` stops.
@@ -127,7 +130,7 @@ function PlanTripHeaderInner({
                   {selection.slice(0, namedStops).map((c, i) => (
                     <span key={c.name}>
                       {i > 0 && <span aria-hidden="true" className="mx-1 text-line-strong">→</span>}
-                      <span aria-hidden="true" className="mr-1">{getCountryFlag(c.name)}</span>
+                      <span aria-hidden="true" className="mr-1">{flagFor(c.name)}</span>
                       {c.name}
                     </span>
                   ))}

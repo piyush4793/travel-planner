@@ -25,6 +25,8 @@ function baseParams(overrides: Partial<Parameters<typeof usePlanTripRestore>[0]>
     setSelection: vi.fn(),
     setStepIndex: vi.fn(),
     setBudgetBasis: vi.fn(),
+    scope: "international" as const,
+    setScope: vi.fn(),
     ...overrides,
   };
 }
@@ -55,6 +57,43 @@ describe("usePlanTripRestore", () => {
       nonce: 1,
       byCountry: { Thailand: { cities: ["Bangkok"], days: 4, experiences: ["Beaches"] } },
     });
+  });
+
+  it("aligns scope to the saved trip before resolving, then applies", () => {
+    // A domestic trip reopened while the wizard is in international scope: the
+    // hook must switch scope first (so the domestic source can resolve the state
+    // names) and defer applying until scope matches. Modelled with a scoped
+    // resolver that only resolves when the active scope is domestic.
+    const domesticReq: OpenTripRequest = {
+      nonce: 5,
+      basis: "solo",
+      scope: "domestic",
+      stops: [{ country: "Rajasthan", days: 6, cities: ["Jaipur"], experiences: ["History"] }],
+    };
+    const rajasthan = mk("Rajasthan");
+    const setScope = vi.fn();
+    const intlParams = baseParams({
+      openTrip: domesticReq,
+      scope: "international",
+      setScope,
+      // International scope can't resolve the state name.
+      resolveCountry: () => null,
+    });
+    const { rerender } = renderHook((p) => usePlanTripRestore(p), { initialProps: intlParams });
+    // First pass: scope mismatch → request the switch, do not apply yet.
+    expect(setScope).toHaveBeenCalledWith("domestic");
+    expect(intlParams.setSelection).not.toHaveBeenCalled();
+
+    // Re-render as if the scope switched and the domestic source now resolves.
+    const domesticParams = baseParams({
+      openTrip: domesticReq,
+      scope: "domestic",
+      setScope,
+      resolveCountry: (n: string) => (n === "Rajasthan" ? rajasthan : null),
+    });
+    rerender(domesticParams);
+    expect(domesticParams.setSelection).toHaveBeenCalledWith([rajasthan]);
+    expect(domesticParams.setStepIndex).toHaveBeenCalledWith(2);
   });
 
   it("applies an open request exactly once per nonce", () => {

@@ -1,5 +1,7 @@
 import { describe, it, expect } from "vitest";
-import { fileKey } from "@/data/consolidatedCountry.ts";
+import { internationalRuleStore } from "@/data/consolidatedCountry.ts";
+
+const fileKey = (name: string) => internationalRuleStore.fileKey(name);
 
 describe("fileKey — P1", () => {
   it("builds the expected path for a basic country name", () => {

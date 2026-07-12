@@ -348,4 +348,40 @@ describe("DestinationPicker", () => {
       expect(screen.getByText("Europa")).toBeInTheDocument();
     });
   });
+
+  describe("scope toggle", () => {
+    it("is hidden unless showScopeToggle is set", () => {
+      render(
+        <DestinationPicker
+          source={internationalSource}
+          countries={[]}
+          exploreCountries={explore}
+          onStart={vi.fn()}
+        />,
+      );
+      expect(screen.queryByRole("radiogroup", { name: /trip scope/i })).toBeNull();
+    });
+
+    it("renders the scope toggle and reports a scope change", () => {
+      const onScopeChange = vi.fn();
+      render(
+        <DestinationPicker
+          source={internationalSource}
+          countries={[]}
+          exploreCountries={explore}
+          onStart={vi.fn()}
+          showScopeToggle
+          onScopeChange={onScopeChange}
+          homeCountry="India"
+        />,
+      );
+      const group = screen.getByRole("radiogroup", { name: /trip scope/i });
+      const intl = within(group).getByRole("radio", { name: /international/i });
+      const domestic = within(group).getByRole("radio", { name: /within india/i });
+      expect(intl).toHaveAttribute("aria-checked", "true");
+      expect(domestic).toHaveAttribute("aria-checked", "false");
+      fireEvent.click(domestic);
+      expect(onScopeChange).toHaveBeenCalledWith("domestic");
+    });
+  });
 });

@@ -3,6 +3,7 @@ import { renderHook, waitFor } from "@testing-library/react";
 import { useTripRules } from "@/hooks/useTripRules.ts";
 import type { DestinationSource, LoadedUnit } from "@/core/trip/destinationSource.ts";
 import type { Country } from "@/core/types.ts";
+import { fakeDestinationSource } from "@/test/support/fakeDestinationSource.ts";
 
 function unit(name: string): LoadedUnit {
   return { country: { name, lat: 0, lng: 0 } as Country, rule: null };
@@ -11,17 +12,7 @@ function unit(name: string): LoadedUnit {
 function makeSource(
   loadUnit: DestinationSource["loadUnit"],
 ): DestinationSource {
-  return {
-    scope: "international",
-    unitNoun: "country",
-    unitNounPlural: "countries",
-    popular: () => [],
-    resolveUnit: () => null,
-    comboRecommendations: () => [],
-    dayBounds: () => ({ rec: 7, max: 14 }),
-    experiencesFor: async () => [],
-    loadUnit,
-  };
+  return fakeDestinationSource({ loadUnit });
 }
 
 describe("useTripRules", () => {

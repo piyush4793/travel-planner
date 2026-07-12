@@ -2,21 +2,12 @@ import { describe, it, expect, vi } from "vitest";
 import { renderHook, waitFor } from "@testing-library/react";
 import { useTripExperiences } from "@/hooks/useTripExperiences.ts";
 import type { DestinationSource } from "@/core/trip/destinationSource.ts";
+import { fakeDestinationSource } from "@/test/support/fakeDestinationSource.ts";
 
 function makeSource(
   experiencesFor: DestinationSource["experiencesFor"],
 ): DestinationSource {
-  return {
-    scope: "international",
-    unitNoun: "country",
-    unitNounPlural: "countries",
-    popular: () => [],
-    resolveUnit: () => null,
-    comboRecommendations: () => [],
-    dayBounds: () => ({ rec: 7, max: 14 }),
-    experiencesFor,
-    loadUnit: async () => null,
-  };
+  return fakeDestinationSource({ experiencesFor });
 }
 
 describe("useTripExperiences", () => {

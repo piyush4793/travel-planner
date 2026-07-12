@@ -11,6 +11,7 @@ import { deriveStop, projectStopCities } from "../core/utils/stopPlan";
 import { budgetForBasis, type BudgetBasis } from "../core/utils/budget";
 import { getBudgetTier } from "../core/utils/filterLogic";
 import { mergeCountryData } from "../core/utils/countryData";
+import type { DestinationSource } from "../core/trip/destinationSource";
 import { useCountryRule } from "./useCountryRule";
 
 export interface PlanBuilder {
@@ -77,8 +78,8 @@ export type PlanBuilderSeed = { nonce: number; cities: string[]; days: number; e
  * `initial` rehydrates the funnel for the current `country` (from a persisted
  * draft). It only seeds the first render; switching destinations still resets.
  */
-export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis, initial?: PlanBuilderInitial, seed?: PlanBuilderSeed | null): PlanBuilder {
-  const { data: consolidated, rule, loading: ruleLoading } = useCountryRule(country?.name);
+export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis, source: DestinationSource, initial?: PlanBuilderInitial, seed?: PlanBuilderSeed | null): PlanBuilder {
+  const { data: consolidated, rule, loading: ruleLoading } = useCountryRule(country?.name, source.ruleStore);
 
   const [selectedCities, setSelectedCities] = useState<string[]>(initial?.selectedCities ?? []);
   const [selectedExperiences, setSelectedExperiences] = useState<string[]>(initial?.selectedExperiences ?? []);

@@ -62,6 +62,16 @@ describe("TripContextRail", () => {
     expect(screen.getByText(/1 border crossing —/)).toBeInTheDocument();
   });
 
+  it("molds readiness + leg framing for a domestic trip (no visa/border wording)", () => {
+    renderRail({ scope: "domestic" });
+    expect(screen.queryByText(/visa rules/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/border crossing/i)).not.toBeInTheDocument();
+    expect(screen.getByText(/No visa or border checks/i)).toBeInTheDocument();
+    expect(screen.getByText(/1 leg between stops/i)).toBeInTheDocument();
+    expect(screen.getByText(/Inter-city legs/)).toBeInTheDocument();
+    expect(screen.queryByText(/Inter-country legs/)).not.toBeInTheDocument();
+  });
+
   it("renders per-country watch-outs and stopover tips", () => {
     renderRail();
     expect(screen.getByText("Fly via Oslo")).toBeInTheDocument();

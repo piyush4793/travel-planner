@@ -224,7 +224,7 @@ export default function App() {
   return (
     <div className="flex flex-col h-viewport overflow-hidden bg-slate-50">
       {/* Header — luxury ivory/emerald top bar */}
-      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-5 pt-safe pb-2 md:pb-2.5 md:pt-2.5 bg-surface-1/90 backdrop-blur-md border-b border-line text-ink-1 shrink-0">
+      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-5 pt-safe pb-2 md:pb-2.5 md:pt-2.5 bg-gradient-to-b from-surface-1/95 to-surface-3/95 backdrop-blur-md border-b border-line-strong shadow-[0_2px_10px_rgba(20,40,30,0.05)] text-ink-1 shrink-0">
         <button onClick={() => setView("plan")} className="flex items-center gap-2 shrink-0 rounded-lg hover:opacity-80 transition-opacity focus-ring" aria-label="Home">
           {/* Brand icon — all screens */}
           <img src="icon-192.svg" alt="Roamwise" className="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-lg" />
@@ -365,6 +365,7 @@ export default function App() {
         {view === "plan" ? (
           <PlanView
             countries={store.myListCountries}
+            savedTrips={savedTrips.savedTrips}
             budgetBasis={activeBasis}
             setBudgetBasis={setActiveBasis}
             homeCountry={homeCountry}
@@ -384,6 +385,7 @@ export default function App() {
         ) : (
           <MyTripsView
             savedTrips={savedTrips.savedTrips}
+            homeCountry={homeCountry}
             onToggleFavorite={savedTrips.toggleFavorite}
             onRemove={savedTrips.remove}
             onOpen={openSavedTrip}
@@ -395,7 +397,7 @@ export default function App() {
 
       {/* Mobile bottom tab bar — primary navigation on small screens */}
       <nav
-        className="md:hidden shrink-0 flex items-stretch border-t border-line bg-surface-1 pb-safe shadow-[0_-1px_6px_rgba(0,0,0,0.05)]"
+        className="md:hidden shrink-0 flex items-stretch border-t border-line-strong bg-surface-2 pb-safe shadow-[0_-1px_6px_rgba(0,0,0,0.05)]"
         aria-label="Main navigation"
       >
         {NAV_VIEWS.map((v) => {

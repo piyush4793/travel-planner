@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { internationalSource } from "@/core/trip/internationalSource.ts";
+import { domesticIndiaSource } from "@/core/trip/domesticIndiaSource.ts";
 import { getDestinationSource } from "@/core/trip/getDestinationSource.ts";
 import {
   popularDestinations,
@@ -72,7 +73,7 @@ describe("getDestinationSource", () => {
     expect(getDestinationSource("international")).toBe(internationalSource);
   });
 
-  it("falls back to international for an unregistered scope", () => {
-    expect(getDestinationSource("domestic")).toBe(internationalSource);
+  it("returns the domestic India source for the domestic scope", () => {
+    expect(getDestinationSource("domestic")).toBe(domesticIndiaSource);
   });
 });

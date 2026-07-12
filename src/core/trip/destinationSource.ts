@@ -1,5 +1,6 @@
 import type { Country } from "../types";
 import type { CountryRule } from "../data/itineraryRules";
+import type { ConsolidatedLoader } from "../../data/consolidatedLoader";
 
 /**
  * A single destination unit resolved to everything the itinerary engine needs:
@@ -44,6 +45,13 @@ export interface DestinationSource {
   readonly unitNoun: string;
   /** Plural unit noun for scope-aware copy, e.g. "countries". */
   readonly unitNounPlural: string;
+  /**
+   * This scope's on-demand consolidated rule store. Exposed so the primary-stop
+   * hook (`usePlanBuilder` → `useCountryRule`) loads detail data from the correct
+   * dataset (world countries vs. domestic states) through the same seam the
+   * multi-unit `loadUnit` path uses — no scope-specific loader import.
+   */
+  readonly ruleStore: ConsolidatedLoader;
   /** All plannable units for this scope, ranked most-popular first. */
   popular(): Country[];
   /** Resolve a unit name to its seed, or null if not plannable in this scope. */

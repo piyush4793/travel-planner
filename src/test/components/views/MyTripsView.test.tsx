@@ -16,20 +16,21 @@ function trip(over: Partial<SavedTrip> = {}): SavedTrip {
     costPerPerson: over.costPerPerson ?? "₹1.2L – ₹1.8L",
     savedAt: over.savedAt ?? new Date().toISOString(),
     favorite: over.favorite,
+    scope: over.scope,
   };
 }
 
 describe("MyTripsView", () => {
   it("shows an empty state with a plan CTA when there are no saved trips", () => {
     const onGoPlan = vi.fn();
-    render(<MyTripsView savedTrips={[]} onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={onGoPlan} />);
+    render(<MyTripsView savedTrips={[]} homeCountry="India" onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={onGoPlan} />);
     expect(screen.getByText("No saved trips yet")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Plan a trip" }));
     expect(onGoPlan).toHaveBeenCalled();
   });
 
   it("renders a saved trip with route name, cities and stats", () => {
-    render(<MyTripsView savedTrips={[trip()]} onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={vi.fn()} />);
+    render(<MyTripsView savedTrips={[trip()]} homeCountry="India" onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={vi.fn()} />);
     expect(screen.getByRole("heading", { name: "Japan → Thailand" })).toBeInTheDocument();
     expect(screen.getByText("2-stop route")).toBeInTheDocument();
     expect(screen.getByText("Tokyo")).toBeInTheDocument();
@@ -37,16 +38,42 @@ describe("MyTripsView", () => {
     expect(screen.getByText("3 places")).toBeInTheDocument();
   });
 
+  it("badges an international trip and a domestic (India) trip distinctly", () => {
+    render(
+      <MyTripsView
+        homeCountry="India"
+        savedTrips={[
+          trip({ id: "intl" }),
+          trip({
+            id: "dom",
+            name: "Rajasthan → Kerala",
+            scope: "domestic",
+            stops: [
+              { country: "Rajasthan", days: 6, cities: ["Jaipur"] },
+              { country: "Kerala", days: 4, cities: ["Kochi"] },
+            ],
+          }),
+        ]}
+        onToggleFavorite={vi.fn()}
+        onRemove={vi.fn()}
+        onOpen={vi.fn()}
+        onGoPlan={vi.fn()}
+      />,
+    );
+    expect(screen.getByText(/🌍 International/)).toBeInTheDocument();
+    expect(screen.getByText(/🏠 India/)).toBeInTheDocument();
+  });
+
   it("toggles favorite through the callback", () => {
     const onToggleFavorite = vi.fn();
-    render(<MyTripsView savedTrips={[trip()]} onToggleFavorite={onToggleFavorite} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={vi.fn()} />);
+    render(<MyTripsView savedTrips={[trip()]} homeCountry="India" onToggleFavorite={onToggleFavorite} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={vi.fn()} />);
     fireEvent.click(screen.getByRole("button", { name: /Favorite Japan → Thailand/i }));
     expect(onToggleFavorite).toHaveBeenCalledWith("t1");
   });
 
   it("confirms before removing a trip", async () => {
     const onRemove = vi.fn();
-    render(<MyTripsView savedTrips={[trip()]} onToggleFavorite={vi.fn()} onRemove={onRemove} onOpen={vi.fn()} onGoPlan={vi.fn()} />);
+    render(<MyTripsView savedTrips={[trip()]} homeCountry="India" onToggleFavorite={vi.fn()} onRemove={onRemove} onOpen={vi.fn()} onGoPlan={vi.fn()} />);
     fireEvent.click(screen.getByRole("button", { name: /Delete Japan → Thailand/i }));
     const confirmBtn = await screen.findByRole("button", { name: "Delete" });
     fireEvent.click(confirmBtn);
@@ -55,7 +82,7 @@ describe("MyTripsView", () => {
 
   it("opens a trip via the stretched card action", () => {
     const onOpen = vi.fn();
-    render(<MyTripsView savedTrips={[trip()]} onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={onOpen} onGoPlan={vi.fn()} />);
+    render(<MyTripsView savedTrips={[trip()]} homeCountry="India" onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={onOpen} onGoPlan={vi.fn()} />);
     fireEvent.click(screen.getByRole("button", { name: "Open Japan → Thailand" }));
     expect(onOpen).toHaveBeenCalledWith(expect.objectContaining({ id: "t1" }));
   });
@@ -63,6 +90,7 @@ describe("MyTripsView", () => {
   it("groups favorites into their own section", () => {
     render(
       <MyTripsView
+        homeCountry="India"
         savedTrips={[trip({ id: "a", name: "Norway", favorite: true, stops: [{ country: "Norway", days: 4, cities: [] }] }), trip({ id: "b", name: "Peru", stops: [{ country: "Peru", days: 6, cities: [] }] })]}
         onToggleFavorite={vi.fn()}
         onRemove={vi.fn()}
@@ -79,7 +107,7 @@ describe("MyTripsView", () => {
       trip({ id: "a", name: "Japan → Thailand" }),
       trip({ id: "b", name: "Peru", stops: [{ country: "Peru", days: 6, cities: ["Cusco"] }] }),
     ];
-    render(<MyTripsView savedTrips={trips} onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={vi.fn()} />);
+    render(<MyTripsView savedTrips={trips} homeCountry="India" onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={vi.fn()} />);
     const search = screen.getByRole("searchbox", { name: /search saved trips/i });
 
     fireEvent.change(search, { target: { value: "cusco" } });
@@ -91,12 +119,48 @@ describe("MyTripsView", () => {
     expect(screen.queryByRole("heading", { name: "Peru" })).not.toBeInTheDocument();
   });
 
-  it("shows a no-results state that clears the search", () => {
-    render(<MyTripsView savedTrips={[trip()]} onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={vi.fn()} />);
-    const search = screen.getByRole("searchbox", { name: /search saved trips/i });
-    fireEvent.change(search, { target: { value: "zzz" } });
-    expect(screen.getByText(/No trips match/)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: "Clear search" }));
+  it("hides the scope filter for a single-scope library and shows it when mixed", () => {
+    const { rerender } = render(
+      <MyTripsView savedTrips={[trip()]} homeCountry="India" onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={vi.fn()} />,
+    );
+    expect(screen.queryByRole("button", { name: "All trips" })).not.toBeInTheDocument();
+
+    rerender(
+      <MyTripsView
+        homeCountry="India"
+        savedTrips={[
+          trip({ id: "intl" }),
+          trip({ id: "dom", name: "Rajasthan", scope: "domestic", stops: [{ country: "Rajasthan", days: 6, cities: ["Jaipur"] }] }),
+        ]}
+        onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={vi.fn()}
+      />,
+    );
+    expect(screen.getByRole("button", { name: "All trips" })).toBeInTheDocument();
+  });
+
+  it("filters the gallery to a single scope via the dropdown", () => {
+    render(
+      <MyTripsView
+        homeCountry="India"
+        savedTrips={[
+          trip({ id: "intl", name: "Japan → Thailand" }),
+          trip({ id: "dom", name: "Rajasthan", scope: "domestic", stops: [{ country: "Rajasthan", days: 6, cities: ["Jaipur"] }] }),
+        ]}
+        onToggleFavorite={vi.fn()} onRemove={vi.fn()} onOpen={vi.fn()} onGoPlan={vi.fn()}
+      />,
+    );
+    // Both visible by default.
     expect(screen.getByRole("heading", { name: "Japan → Thailand" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Rajasthan" })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: "All trips" }));
+    fireEvent.click(screen.getByRole("menuitemradio", { name: /🏠 India/ }));
+    expect(screen.getByRole("heading", { name: "Rajasthan" })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "Japan → Thailand" })).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: /🏠 India/ }));
+    fireEvent.click(screen.getByRole("menuitemradio", { name: /🌍 International/ }));
+    expect(screen.getByRole("heading", { name: "Japan → Thailand" })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "Rajasthan" })).not.toBeInTheDocument();
   });
 });

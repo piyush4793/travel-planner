@@ -68,6 +68,8 @@ type Props = {
    * only pins it at the card foot on desktop; below `lg` the shell renders it.
    */
   toolbar: ReactNode;
+  /** Scope-aware flag resolver (domestic stops read the home-country flag). */
+  flagFor?: (name: string) => string;
 };
 
 type SegmentBlockProps = {
@@ -81,6 +83,7 @@ type SegmentBlockProps = {
   isAnchor: boolean;
   collapsed: boolean;
   onToggleCollapsed: () => void;
+  flagFor: (name: string) => string;
 };
 
 function SegmentBlock({
@@ -93,6 +96,7 @@ function SegmentBlock({
   isAnchor,
   collapsed,
   onToggleCollapsed,
+  flagFor,
 }: SegmentBlockProps) {
   const [adjusting, setAdjusting] = useState(false);
   const planCities = extractPlanCities(segment.plan.days);
@@ -156,7 +160,7 @@ function SegmentBlock({
               the single ✏️ action so the country name leads (anchor status is the
               amber left accent bar, not a pill that outshouts the name). */}
           <div className="flex items-center gap-2">
-            <span aria-hidden="true" className="w-5 shrink-0 text-center text-base leading-none">{getCountryFlag(segment.name)}</span>
+            <span aria-hidden="true" className="w-5 shrink-0 text-center text-base leading-none">{flagFor(segment.name)}</span>
             <h3 className="min-w-0 flex-1 truncate font-display text-[17px] font-bold leading-tight text-emerald-900">
               {segment.name}
               {isAnchor && total > 1 && <span className="sr-only"> — anchor stop</span>}
@@ -216,7 +220,7 @@ function SegmentBlock({
       {/* Per-stop shaping now lives in a focused drawer (Shape · Details), so the
           segment card never grows unboundedly and the controls sit beside their
           own decision context. Opened by the ✏️ Adjust trigger above. */}
-      {adjusting && <SegmentAdjustDrawer segment={segment} onClose={() => setAdjusting(false)} />}
+      {adjusting && <SegmentAdjustDrawer segment={segment} onClose={() => setAdjusting(false)} flagFor={flagFor} />}
 
       {/* Rich day-by-day body — collapsible; the anchor opens by default. */}
       {collapsed ? (
@@ -261,6 +265,7 @@ function TripReviewCanvasInner({
   onAutoArrange,
   canAutoArrange,
   toolbar,
+  flagFor = getCountryFlag,
 }: Props) {
   // Anchor opens by default; the rest fold. An explicit toggle overrides per stop,
   // reset whenever the route identity or the anchor changes.
@@ -322,8 +327,9 @@ function TripReviewCanvasInner({
         onReorder={onReorder}
         onAutoArrange={onAutoArrange}
         canAutoArrange={canAutoArrange}
+        flagFor={flagFor}
       >
-        <PlanCityJumpNav sections={sections} onJump={handleJump} embedded />
+        <PlanCityJumpNav sections={sections} onJump={handleJump} embedded flagFor={flagFor} />
       </RouteLeversBar>
 
       <div className="flex-1 overflow-y-auto bg-surface-2 py-2">
@@ -343,6 +349,7 @@ function TripReviewCanvasInner({
               isAnchor={segment.name === anchorName}
               collapsed={isCollapsed(segment.name)}
               onToggleCollapsed={() => toggle(segment.name)}
+              flagFor={flagFor}
             />
           );
         })}

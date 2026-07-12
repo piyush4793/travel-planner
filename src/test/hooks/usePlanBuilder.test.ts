@@ -2,6 +2,8 @@ import { describe, it, expect } from "vitest";
 import { renderHook, act, waitFor } from "@testing-library/react";
 import { usePlanBuilder } from "@/hooks/usePlanBuilder.ts";
 import type { Country } from "@/core/types.ts";
+import { internationalSource } from "@/core/trip/internationalSource.ts";
+import { domesticIndiaSource } from "@/core/trip/domesticIndiaSource.ts";
 
 // A rule-less country (no matching data/rules file) keeps useCountryRule resolving
 // to null synchronously, so the builder runs the deterministic generic path.
@@ -21,21 +23,42 @@ const COUNTRY: Country = {
 
 describe("usePlanBuilder", () => {
   it("returns null plan for a null country", () => {
-    const { result } = renderHook(() => usePlanBuilder(null, "couple"));
+    const { result } = renderHook(() => usePlanBuilder(null, "couple", internationalSource));
     expect(result.current.plan).toBeNull();
     expect(result.current.displayCountry).toBeNull();
   });
 
   it("generates a live plan for a selected country", async () => {
-    const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple"));
+    const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple", internationalSource));
     await waitFor(() => expect(result.current.plan).not.toBeNull());
     expect(result.current.plan?.days.length).toBeGreaterThan(0);
     expect(result.current.displayCountry?.name).toBe(COUNTRY.name);
   });
 
+  // Regression: the primary stop must load its rule from the ACTIVE scope's store,
+  // not the international one. A domestic state (Rajasthan) resolves no cities via
+  // the international store, so passing the domestic source is what makes the
+  // Places step non-empty for a within-India trip.
+  it("loads a domestic state's cities via the domestic source", async () => {
+    const rajasthan = domesticIndiaSource.resolveUnit("Rajasthan");
+    expect(rajasthan).not.toBeNull();
+    const { result } = renderHook(() => usePlanBuilder(rajasthan, "couple", domesticIndiaSource));
+    await waitFor(() => expect(result.current.orderedCities.length).toBeGreaterThan(0));
+    const cityNames = result.current.orderedCities.map((c) => c.name);
+    expect(cityNames).toContain("Jaipur");
+    expect(result.current.plan?.days.length).toBeGreaterThan(0);
+  });
+
+  it("finds no cities for a domestic state when using the international source", async () => {
+    const rajasthan = domesticIndiaSource.resolveUnit("Rajasthan");
+    const { result } = renderHook(() => usePlanBuilder(rajasthan, "couple", internationalSource));
+    await waitFor(() => expect(result.current.ruleLoading).toBe(false));
+    expect(result.current.rule).toBeNull();
+  });
+
   it("hydrates from an initial draft and keeps it through the first mount", () => {
     const { result } = renderHook(() =>
-      usePlanBuilder(COUNTRY, "couple", {
+      usePlanBuilder(COUNTRY, "couple", internationalSource, {
         selectedExperiences: ["Beaches"],
         selectedCities: ["Alpha"],
         customDays: 12,
@@ -51,7 +74,7 @@ describe("usePlanBuilder", () => {
   });
 
   it("toggles experiences and cities", () => {
-    const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple"));
+    const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple", internationalSource));
     act(() => result.current.toggleExperience("Beaches"));
     expect(result.current.selectedExperiences).toEqual(["Beaches"]);
     act(() => result.current.toggleExperience("Beaches"));
@@ -73,7 +96,7 @@ describe("usePlanBuilder", () => {
       budget: "₹3L",
       experiences: ["Fjords"],
     };
-    const { result } = renderHook(() => usePlanBuilder(norway, "couple"));
+    const { result } = renderHook(() => usePlanBuilder(norway, "couple", internationalSource));
     await waitFor(() => expect(result.current.autoSelectedCities.length).toBeGreaterThan(0));
 
     const auto = result.current.autoSelectedCities;
@@ -94,7 +117,7 @@ describe("usePlanBuilder", () => {
   });
 
   it("pins the day count once set and unpins on reset", async () => {
-    const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple"));
+    const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple", internationalSource));
     await waitFor(() => expect(result.current.plan).not.toBeNull());
     const seeded = result.current.customDays;
 
@@ -111,7 +134,7 @@ describe("usePlanBuilder", () => {
   });
 
   it("resets funnel state when the country changes", async () => {
-    const { result, rerender } = renderHook(({ c }: { c: Country | null }) => usePlanBuilder(c, "couple"), {
+    const { result, rerender } = renderHook(({ c }: { c: Country | null }) => usePlanBuilder(c, "couple", internationalSource), {
       initialProps: { c: COUNTRY },
     });
     act(() => {
@@ -130,7 +153,7 @@ describe("usePlanBuilder", () => {
   it("restores a reopened saved trip's cities + pinned length + experiences via seed", async () => {
     const { result } = renderHook(
       ({ seed }: { seed?: { nonce: number; cities: string[]; days: number; experiences: string[] } | null }) =>
-        usePlanBuilder(COUNTRY, "couple", undefined, seed),
+        usePlanBuilder(COUNTRY, "couple", internationalSource, undefined, seed),
       { initialProps: { seed: { nonce: 1, cities: ["Beta", "Ghost"], days: 11, experiences: ["Mountains"] } } },
     );
     await waitFor(() => expect(result.current.customDays).toBe(11));
@@ -144,7 +167,7 @@ describe("usePlanBuilder", () => {
   it("re-applies a saved-trip seed only when its nonce changes", async () => {
     const { result, rerender } = renderHook(
       ({ seed }: { seed?: { nonce: number; cities: string[]; days: number; experiences: string[] } | null }) =>
-        usePlanBuilder(COUNTRY, "couple", undefined, seed),
+        usePlanBuilder(COUNTRY, "couple", internationalSource, undefined, seed),
       { initialProps: { seed: { nonce: 1, cities: ["Alpha"], days: 8, experiences: [] } } },
     );
     await waitFor(() => expect(result.current.customDays).toBe(8));
@@ -159,13 +182,13 @@ describe("usePlanBuilder", () => {
   });
 
   it("orders experience-matching cities first", () => {
-    const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple"));
+    const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple", internationalSource));
     act(() => result.current.toggleExperience("Food"));
     expect(result.current.orderedCities[0]?.name).toBe("Gamma");
   });
 
   it("projects the cities a candidate day count would visit without committing", async () => {
-    const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple"));
+    const { result } = renderHook(() => usePlanBuilder(COUNTRY, "couple", internationalSource));
     await waitFor(() => expect(result.current.plan).not.toBeNull());
     const before = result.current.customDays;
     const projected = result.current.projectCities(before + 6);
@@ -175,7 +198,7 @@ describe("usePlanBuilder", () => {
   });
 
   it("projects an empty city list when there is no country", () => {
-    const { result } = renderHook(() => usePlanBuilder(null, "couple"));
+    const { result } = renderHook(() => usePlanBuilder(null, "couple", internationalSource));
     expect(result.current.projectCities(10)).toEqual([]);
   });
 });

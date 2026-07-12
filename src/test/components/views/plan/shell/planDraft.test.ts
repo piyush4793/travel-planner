@@ -10,7 +10,7 @@ describe("planDraft", () => {
   });
 
   it("round-trips an array-shaped draft", () => {
-    savePlanDraft({ countries: ["Japan", "Peru"], step: 2, cities: ["Kyoto"], experiences: ["Food"], days: 12, pinned: true });
+    savePlanDraft({ countries: ["Japan", "Peru"], step: 2, cities: ["Kyoto"], experiences: ["Food"], days: 12, pinned: true, scope: "international" });
     expect(loadPlanDraft()).toEqual({
       countries: ["Japan", "Peru"],
       step: 2,
@@ -18,6 +18,7 @@ describe("planDraft", () => {
       experiences: ["Food"],
       days: 12,
       pinned: true,
+      scope: "international",
     });
   });
 
@@ -30,6 +31,7 @@ describe("planDraft", () => {
     expect(draft?.countries).toEqual(["Japan"]);
     expect(draft?.step).toBe(1);
     expect(draft?.cities).toEqual(["Tokyo"]);
+    expect(draft?.scope).toBe("international");
   });
 
   it("treats an empty selection as no draft", () => {
@@ -38,7 +40,7 @@ describe("planDraft", () => {
   });
 
   it("clears the stored draft", () => {
-    savePlanDraft({ countries: ["Japan"], step: 0, cities: [], experiences: [], days: 5, pinned: false });
+    savePlanDraft({ countries: ["Japan"], step: 0, cities: [], experiences: [], days: 5, pinned: false, scope: "international" });
     clearPlanDraft();
     expect(loadPlanDraft()).toBeNull();
   });

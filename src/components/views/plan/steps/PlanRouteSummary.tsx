@@ -26,6 +26,8 @@ type Props = {
   cost?: string;
   costIcon?: string;
   costLabel?: string;
+  /** Scope-aware flag resolver (domestic stops read the home-country flag). */
+  flagFor?: (name: string) => string;
 };
 
 /**
@@ -38,7 +40,7 @@ type Props = {
  * The longest stay is marked as the trip's anchor to give the route a focal
  * point, and a footer reassures the traveller that each stop is fine-tuned next.
  */
-function PlanRouteSummaryInner({ selection, source, stopDays, cost, costIcon, costLabel }: Props) {
+function PlanRouteSummaryInner({ selection, source, stopDays, cost, costIcon, costLabel, flagFor = getCountryFlag }: Props) {
   const legs = selection.map((c) => {
     const live = stopDays?.[c.name];
     return {
@@ -50,6 +52,10 @@ function PlanRouteSummaryInner({ selection, source, stopDays, cost, costIcon, co
   });
   const total = legs.reduce((sum, leg) => sum + leg.days, 0);
   const anchorDays = Math.max(...legs.map((l) => l.days));
+  // Exactly one anchor — the first (visit-order) stop reaching the longest stay.
+  // Several stops can share the max length (common in domestic city routes), so
+  // guard against badging more than one.
+  const anchorIndex = legs.findIndex((l) => l.days === anchorDays);
   const multi = legs.length > 1;
   // Hard-bound the list height so the card can't grow unbounded. The cap fits
   // today's max stops (MAX_TRIP_UNITS) fully — so visible days always reconcile
@@ -84,7 +90,7 @@ function PlanRouteSummaryInner({ selection, source, stopDays, cost, costIcon, co
 
       <ol className={`mt-3.5 ${scrolls ? "max-h-[12.5rem] overflow-y-auto overflow-x-hidden overscroll-contain pr-1" : ""}`}>
         {legs.map((leg, i) => {
-          const isAnchor = leg.days === anchorDays;
+          const isAnchor = i === anchorIndex;
           const last = i === legs.length - 1;
           return (
             <li key={leg.name} className="flex gap-3">
@@ -99,7 +105,7 @@ function PlanRouteSummaryInner({ selection, source, stopDays, cost, costIcon, co
               </div>
 
               <div className={`flex min-w-0 flex-1 items-start gap-2 ${last ? "" : "pb-4"}`}>
-                <span aria-hidden="true" className="text-lg leading-tight">{getCountryFlag(leg.name)}</span>
+                <span aria-hidden="true" className="text-lg leading-tight">{flagFor(leg.name)}</span>
                 <div className="min-w-0">
                   <p className="flex items-center gap-1.5 truncate text-[15px] font-semibold leading-tight text-ink-1">
                     {leg.name}

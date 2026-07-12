@@ -4,7 +4,7 @@ import {
   comboRecommendations,
   dayBoundsFor,
 } from "../data/popularDestinations";
-import { loadConsolidatedCountry } from "../../data/consolidatedCountry";
+import { internationalRuleStore, loadConsolidatedCountry } from "../../data/consolidatedCountry";
 import { consolidatedToCountry, mergeCountryData } from "../utils/countryData";
 import type { DestinationSource } from "./destinationSource";
 
@@ -17,6 +17,7 @@ export const internationalSource: DestinationSource = {
   scope: "international",
   unitNoun: "country",
   unitNounPlural: "countries",
+  ruleStore: internationalRuleStore,
   popular: popularDestinations,
   resolveUnit: resolvePlannable,
   comboRecommendations,

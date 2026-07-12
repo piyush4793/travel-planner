@@ -1,5 +1,6 @@
 import { loadLS, saveLS } from "@/core/storage";
 import { LS_KEYS } from "@/core/lsKeys";
+import type { TripScope } from "@/core/trip/destinationSource";
 
 /**
  * A resumable snapshot of the guided planner so a page refresh drops the user
@@ -16,6 +17,8 @@ export type PlanDraft = {
   experiences: string[];
   days: number;
   pinned: boolean;
+  /** Trip scope the draft was built in, so a refresh resumes the right source. */
+  scope: TripScope;
 };
 
 /** Pre-multi-country persisted shape (single `country` string). */
@@ -36,6 +39,8 @@ export function loadPlanDraft(): PlanDraft | null {
     experiences: raw.experiences ?? [],
     days: raw.days ?? 0,
     pinned: raw.pinned ?? false,
+    // Drafts saved before scopes existed are international.
+    scope: raw.scope === "domestic" ? "domestic" : "international",
   };
 }
 

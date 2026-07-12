@@ -19,6 +19,8 @@ type Props = {
    *  desktop pill strip) so it can sit inline inside another toolbar row — e.g.
    *  beside "Route order" in the Route Canvas levers bar. */
   embedded?: boolean;
+  /** Scope-aware flag resolver (domestic stops read the home-country flag). */
+  flagFor?: (name: string) => string;
 };
 
 /** Hard cap on the dropdown height so it stays compact + scannable no matter how
@@ -39,7 +41,7 @@ type PopoverPos = { left: number; width: number; top?: number; bottom?: number; 
  * (anchored popover on desktop/tablet, bottom-sheet on mobile) so it is never
  * clipped by the itinerary's `overflow-hidden` container.
  */
-export default function PlanCityJumpNav({ sections, onJump, embedded = false }: Props) {
+export default function PlanCityJumpNav({ sections, onJump, embedded = false, flagFor = getCountryFlag }: Props) {
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState<string | null>(null);
   const [pos, setPos] = useState<PopoverPos | null>(null);
@@ -159,7 +161,7 @@ export default function PlanCityJumpNav({ sections, onJump, embedded = false }: 
                 aria-hidden="true"
                 className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-white text-[11px] shadow-sm ring-1 ring-emerald-100"
               >
-                {getCountryFlag(sec.country)}
+                {flagFor(sec.country)}
               </span>
               <span className="truncate">{sec.country}</span>
               <span className="ml-auto shrink-0 rounded-full bg-emerald-100 px-1.5 py-0.5 text-[9px] font-bold text-emerald-700">

@@ -5,6 +5,7 @@ import type { BudgetBasis } from "@/core/utils/budget";
 import type { PlanBuilderSeed } from "@/hooks/usePlanBuilder";
 import type { TripPlannerSeed } from "@/hooks/useTripPlanner";
 import { toOpenRequest, type SavedTrip, type OpenTripRequest } from "@/core/utils/savedTrips";
+import type { TripScope } from "@/core/trip/destinationSource";
 import { useConfirm } from "@/components/shared/ConfirmDialog";
 import { clearPlanDraft } from "../shell/planDraft";
 
@@ -31,6 +32,10 @@ type Params = {
   setSelection: Dispatch<SetStateAction<Country[]>>;
   setStepIndex: Dispatch<SetStateAction<number>>;
   setBudgetBasis: (b: BudgetBasis) => void;
+  /** The active trip scope, so reopen can align it to the saved trip's scope. */
+  scope: TripScope;
+  /** Switch the active scope (before resolving a reopened trip's stop names). */
+  setScope: (s: TripScope) => void;
 };
 
 export type PlanTripRestore = {
@@ -65,6 +70,8 @@ export function usePlanTripRestore({
   setSelection,
   setStepIndex,
   setBudgetBasis,
+  scope,
+  setScope,
 }: Params): PlanTripRestore {
   // A reopened saved trip's per-stop snapshot (cities + honest length +
   // experience focus), applied once per nonce to rehydrate the funnel: the
@@ -113,6 +120,16 @@ export function usePlanTripRestore({
   const reopenedRef = useRef(false);
   useEffect(() => {
     if (!pendingOpen || appliedOpenNonce.current === pendingOpen.nonce) return;
+    // Align the scope/source to the saved trip *before* resolving stop names: a
+    // domestic route's units only resolve against the domestic manifest. Setting
+    // scope re-renders with the right source, then this effect re-runs (scope is
+    // in deps) and the names resolve. Idempotent when already aligned. Legacy
+    // requests without a scope are international.
+    const targetScope = pendingOpen.scope ?? "international";
+    if (targetScope !== scope) {
+      setScope(targetScope);
+      return;
+    }
     const stopByName = new Map(pendingOpen.stops.map((s) => [s.country, s]));
     const resolved = pendingOpen.stops.map((s) => resolveCountry(s.country)).filter((c): c is Country => c !== null);
     // Only mark this open request as handled once the names actually resolve, so
@@ -147,7 +164,7 @@ export function usePlanTripRestore({
     // nonce guard above makes it idempotent per open, so it applies exactly once
     // and never clobbers in-progress edits. resolveCountry/setBudgetBasis stable.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pendingOpen, countries]);
+  }, [pendingOpen, countries, scope]);
 
   // Landing "Start trip": if the picked country set matches a saved trip, offer to
   // resume it (primary) or start fresh (secondary); otherwise start fresh.

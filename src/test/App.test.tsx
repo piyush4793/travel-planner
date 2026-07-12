@@ -240,7 +240,7 @@ describe("App orchestration", () => {
   });
   it("clears the persisted Plan draft when 'New trip' is clicked from My Trips (fresh landing, not a resume)", async () => {
     const user = userEvent.setup();
-    savePlanDraft({ countries: [COUNTRY_NAMES.JAPAN], step: 2, cities: ["Tokyo"], experiences: [FOOD_EXPERIENCE], days: 7, pinned: true });
+    savePlanDraft({ countries: [COUNTRY_NAMES.JAPAN], step: 2, cities: ["Tokyo"], experiences: [FOOD_EXPERIENCE], days: 7, pinned: true, scope: "international" });
     expect(loadPlanDraft()).not.toBeNull();
     setHashRoute("trips");
     render(<App />);

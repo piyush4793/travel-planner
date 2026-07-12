@@ -3,6 +3,7 @@ import { render, screen, within } from "@testing-library/react";
 import PlanRouteSummary from "@/components/views/plan/steps/PlanRouteSummary";
 import type { Country } from "@/core/types.ts";
 import type { DestinationSource, DayBounds } from "@/core/trip/destinationSource.ts";
+import { fakeDestinationSource } from "@/test/support/fakeDestinationSource.ts";
 
 const mk = (name: string, region: string): Country => ({
   name,
@@ -16,17 +17,9 @@ const mk = (name: string, region: string): Country => ({
 
 /** Fake source with per-name recommended days, so the timeline is deterministic. */
 function fakeSource(days: Record<string, number>): DestinationSource {
-  return {
-    scope: "international",
-    unitNoun: "country",
-    unitNounPlural: "countries",
-    popular: () => [],
-    resolveUnit: () => null,
-    comboRecommendations: () => [],
+  return fakeDestinationSource({
     dayBounds: (name: string): DayBounds => ({ rec: days[name] ?? 7, max: (days[name] ?? 7) + 3 }),
-    experiencesFor: async () => [],
-    loadUnit: async () => null,
-  };
+  });
 }
 
 describe("PlanRouteSummary", () => {
@@ -54,6 +47,16 @@ describe("PlanRouteSummary", () => {
     expect(anchors).toHaveLength(1);
     const item = anchors[0].closest("li")!;
     expect(within(item).getByText("Norway")).toBeInTheDocument();
+  });
+
+  it("badges only the first stop when several share the longest stay", () => {
+    // Domestic city routes commonly tie on length; only one anchor may show.
+    const tied = [mk("Jaipur", "Rajasthan"), mk("Udaipur", "Rajasthan"), mk("Jodhpur", "Rajasthan")];
+    const tiedSource = fakeSource({ Jaipur: 5, Udaipur: 5, Jodhpur: 3 });
+    render(<PlanRouteSummary selection={tied} source={tiedSource} />);
+    const anchors = screen.getAllByText("Anchor");
+    expect(anchors).toHaveLength(1);
+    expect(within(anchors[0].closest("li")!).getByText("Jaipur")).toBeInTheDocument();
   });
 
   it("reassures the traveller in the footer without repeating the country count", () => {

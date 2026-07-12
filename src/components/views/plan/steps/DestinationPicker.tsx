@@ -1,11 +1,12 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Country } from "@/core/types";
-import type { DestinationSource } from "@/core/trip/destinationSource";
-import { getCountryFlag } from "@/utils/countryFlags";
+import type { DestinationSource, TripScope } from "@/core/trip/destinationSource";
+import { unitFlag } from "@/core/trip/unitFlag";
 import { MAX_TRIP_UNITS, toggleTripSelection } from "@/core/utils/multiCountry";
 import { MONTHS, expandMonth } from "@/core/utils/months";
 import { monthFit, rankByMonthFit, type MonthFit } from "@/core/utils/monthFit";
 import PlanPopover from "@/components/views/plan/ui/PlanPopover";
+import ScopeToggle from "./ScopeToggle";
 
 type Props = {
   /** Scope data source — provides combo suggestions, unit nouns and resolution. */
@@ -20,13 +21,21 @@ type Props = {
   multiSelect?: boolean;
   /** Max units per trip (multi-select only). */
   maxSelection?: number;
+  /** Show the International/Within-home scope toggle (home-country travellers). */
+  showScopeToggle?: boolean;
+  /** Switch the active scope (landing only). */
+  onScopeChange?: (scope: TripScope) => void;
+  /** The traveller's home country — labels the domestic scope + flags its units. */
+  homeCountry?: string;
 };
 
 const EXPLORE_LIMIT = 12;
 const MINE_LIMIT = 8;
 
-/** Sovereign-catalog regions, "All" first — folds Discover's browse-by-region into Plan. */
-const REGIONS = ["All", "Asia", "Europe", "Middle East", "Africa", "Americas", "Oceania"] as const;
+/** International sovereign-catalog region order — used to keep the world regions
+ *  in a familiar order. Domestic (or any other scope) derives its own regions
+ *  from the data, so this is only a display-order hint, never a hard list. */
+const INTL_REGION_ORDER = ["Asia", "Europe", "Middle East", "Africa", "Americas", "Oceania"];
 
 const CHIP_BASE =
   "focus-ring-emerald group inline-flex min-h-[44px] items-center gap-2 rounded-full border px-4 py-2.5 text-sm shadow-[0_1px_2px_rgba(20,40,30,0.05)] transition-[transform,box-shadow,border-color,color] motion-safe:animate-[fadeInUp_0.28s_ease-out_both] hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0 disabled:hover:shadow-[0_1px_2px_rgba(20,40,30,0.05)]";
@@ -79,7 +88,7 @@ function filterByQuery(list: Country[], q: string): Country[] {
     .map((s) => s.c);
 }
 
-function Chip({ country, index, disabled, month, onPick }: { country: Country; index: number; disabled?: boolean; month?: string | null; onPick: () => void }) {
+function Chip({ country, index, disabled, month, scope, homeCountry, onPick }: { country: Country; index: number; disabled?: boolean; month?: string | null; scope: TripScope; homeCountry?: string; onPick: () => void }) {
   const fit = month ? monthFit(country, month) : "neutral";
   const cue = monthCue(fit, month ?? null);
   return (
@@ -89,7 +98,7 @@ function Chip({ country, index, disabled, month, onPick }: { country: Country; i
       style={{ animationDelay: `${Math.min(index, 14) * 25}ms` }}
       className={`${CHIP_BASE} ${fit === "avoid" ? CHIP_TONE_AVOID : CHIP_TONE_DEFAULT}`}
     >
-      <span aria-hidden="true" className="text-base leading-none">{getCountryFlag(country.name)}</span>
+      <span aria-hidden="true" className="text-base leading-none">{unitFlag(country.name, scope, homeCountry)}</span>
       <span className="truncate">{country.name}</span>
       {cue && (
         <span className="text-xs leading-none" title={cue.label} aria-label={cue.label} role="img">{cue.icon}</span>
@@ -166,7 +175,7 @@ function MonthPicker({ month, onChange }: { month: string | null; onChange: (m: 
  * you recently planned (most-recent first); a region tab strip and an inline
  * month lens fold in browse-by-region and seasonality without burying the board.
  */
-export default function DestinationPicker({ source, countries, exploreCountries, onStart, multiSelect = false, maxSelection = MAX_TRIP_UNITS }: Props) {
+export default function DestinationPicker({ source, countries, exploreCountries, onStart, multiSelect = false, maxSelection = MAX_TRIP_UNITS, showScopeToggle = false, onScopeChange, homeCountry }: Props) {
   const [query, setQuery] = useState("");
   const [showAllMine, setShowAllMine] = useState(false);
   const [selectedNames, setSelectedNames] = useState<string[]>([]);
@@ -184,6 +193,25 @@ export default function DestinationPicker({ source, countries, exploreCountries,
 
   const selectedSet = useMemo(() => new Set(selectedNames), [selectedNames]);
   const atCap = selectedNames.length >= maxSelection;
+
+  // Region tabs are derived from whatever the active scope actually offers, so
+  // the strip is scope-agnostic: International shows world regions in a familiar
+  // order; Domestic (India) shows its own regions (North/South India, …). "All"
+  // is always first; unknown regions keep their first-seen order after the known
+  // ones. The strip hides itself when a scope has fewer than two regions.
+  const regions = useMemo(() => {
+    const present = new Set<string>();
+    for (const c of exploreCountries) if (c.region) present.add(c.region);
+    const ordered = [
+      ...INTL_REGION_ORDER.filter((r) => present.has(r)),
+      ...[...present].filter((r) => !INTL_REGION_ORDER.includes(r)),
+    ];
+    return ["All", ...ordered];
+  }, [exploreCountries]);
+  // A scope switch can leave the previously-picked region absent; fall back to All.
+  useEffect(() => {
+    if (!regions.includes(region)) setRegion("All");
+  }, [regions, region]);
 
   // A chip tap starts the trip immediately in single-select mode; in multi-select
   // it toggles the country in the selection, which is confirmed with the Go arrow.
@@ -251,6 +279,9 @@ export default function DestinationPicker({ source, countries, exploreCountries,
               ? `Pick up to ${maxSelection} ${source.unitNounPlural} and we'll shape one trip across them.`
               : "Pick a destination and we'll shape a trip around what you love."}
           </p>
+          {showScopeToggle && onScopeChange && (
+            <ScopeToggle scope={source.scope} onChange={onScopeChange} homeCountry={homeCountry ?? "home"} />
+          )}
         </div>
 
         <div className="mt-4 space-y-2.5">
@@ -265,7 +296,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
                     key={name}
                     className={`inline-flex min-h-[32px] items-center gap-1.5 rounded-full border py-0.5 pl-2.5 pr-1 text-sm font-medium ${avoid ? TOKEN_TONE_AVOID : TOKEN_TONE_DEFAULT}`}
                   >
-                    <span aria-hidden="true">{getCountryFlag(name)}</span>
+                    <span aria-hidden="true">{unitFlag(name, source.scope, homeCountry)}</span>
                     <span className="max-w-[8rem] truncate">{name}</span>
                     {cue && (
                       <span className="text-[11px] leading-none" title={cue.label} aria-label={cue.label} role="img">{cue.icon}</span>
@@ -324,13 +355,15 @@ export default function DestinationPicker({ source, countries, exploreCountries,
 
           {/* Region browse — one swipeable strip of toggle buttons (folds in
               Discover's by-region). Styled like tabs but semantically buttons:
-              there's no tabpanel below, so `role="tab"` would mislead SRs. */}
+              there's no tabpanel below, so `role="tab"` would mislead SRs.
+              Hidden when the scope has no meaningful region split. */}
+          {regions.length > 1 && (
           <div
             role="group"
             aria-label="Browse destinations by region"
             className="mt-3 flex gap-4 overflow-x-auto border-b border-line [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            {REGIONS.map((r) => {
+            {regions.map((r) => {
               const active = region === r;
               return (
                 <button
@@ -349,6 +382,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
               );
             })}
           </div>
+          )}
         </div>
 
         {countries.length === 0 && !q && selectedNames.length === 0 && (
@@ -366,7 +400,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
             <p className="mb-3 text-[11px] text-emerald-700/80">Travellers often combine these into one seamless route.</p>
             <div className="flex flex-wrap gap-2.5">
               {recommendations.map((c, i) => (
-                <Chip key={c.name} country={c} index={i} month={month} onPick={() => pickCountry(c)} />
+                <Chip key={c.name} country={c} index={i} month={month} scope={source.scope} homeCountry={homeCountry} onPick={() => pickCountry(c)} />
               ))}
             </div>
           </section>
@@ -377,7 +411,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
             <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-ink-4">Jump back in</h2>
             <div className="flex flex-wrap gap-2.5">
               {mineCapped.map((c, i) => (
-                <Chip key={c.name} country={c} index={i} month={month} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
+                <Chip key={c.name} country={c} index={i} month={month} scope={source.scope} homeCountry={homeCountry} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
               ))}
               {mineHidden > 0 && (
                 <button
@@ -414,7 +448,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
             </h2>
             <div className="flex flex-wrap gap-2.5">
               {exploreFiltered.map((c, i) => (
-                <Chip key={c.name} country={c} index={i} month={month} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
+                <Chip key={c.name} country={c} index={i} month={month} scope={source.scope} homeCountry={homeCountry} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
               ))}
             </div>
           </section>

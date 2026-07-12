@@ -1,4 +1,5 @@
 import type { Country } from "../types";
+import type { TripScope } from "../trip/destinationSource";
 
 /** Visual tone for a readiness line — maps to an icon in the rail. */
 export type ReadinessTone = "ok" | "info" | "warn";
@@ -16,18 +17,33 @@ export const READINESS_ICON: Record<ReadinessTone, string> = {
 };
 
 /**
- * Trip-level readiness for a multi-country route, kept honest at every N.
+ * Trip-level readiness for a route, kept honest at every N and molded by scope.
  *
- * The data model has no per-country `visaZone` yet, so this returns the atlas's
- * "unknown data" fallback tier: a generic visa caveat plus a real, derived
- * border-crossing count (stops − 1). It is written as a pure function over the
- * ordered countries so that, when `visaZone` data lands, richer tiers (single
- * zone dedupe / grouped zones) are a data swap here — not a rewrite of the rail.
- * Never fabricates precision: no invented visa categories, no fake leg counts.
+ * International routes carry a cross-border framing (visa caveat + a real,
+ * derived border-crossing count). Domestic routes have no visas or border
+ * control, so they surface a reassuring "no visa" line plus the same honest
+ * inter-stop leg count framed as travel to book, not a border to clear.
+ *
+ * The data model has no per-country `visaZone` yet, so the international path
+ * returns the atlas's "unknown data" fallback tier. It stays a pure function
+ * over the ordered stops so that, when `visaZone` data lands, richer tiers are a
+ * data swap here — not a rewrite of the rail. Never fabricates precision: no
+ * invented visa categories, no fake leg counts.
  */
-export function tripReadiness(countries: Country[]): ReadinessItem[] {
+export function tripReadiness(countries: Country[], scope: TripScope = "international"): ReadinessItem[] {
   const items: ReadinessItem[] = [];
   const hops = Math.max(0, countries.length - 1);
+
+  if (scope === "domestic") {
+    items.push({ tone: "ok", text: "No visa or border checks — domestic trip" });
+    if (hops > 0) {
+      items.push({
+        tone: "info",
+        text: `${hops} ${hops === 1 ? "leg" : "legs"} between stops — book travel early`,
+      });
+    }
+    return items;
+  }
 
   // Visa: honest fallback until per-country visaZone data exists.
   items.push({ tone: "warn", text: "Check visa rules per country before booking" });

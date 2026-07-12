@@ -1,9 +1,11 @@
 import { memo } from "react";
 import type { Country } from "@/core/types";
+import type { TripScope } from "@/core/trip/destinationSource";
 import PlanWorkspaceShell, { type RailDef, type WorkspaceNav } from "../shell/PlanWorkspaceShell";
 import TripReviewCanvas from "./TripReviewCanvas";
 import TripContextRail from "./TripContextRail";
 import ItineraryToolbar from "../ui/ItineraryToolbar";
+import { getCountryFlag } from "@/utils/countryFlags";
 import type { CinematicRoute } from "@/components/country/cinematic/engine";
 import type { ReviewRoute } from "./useReviewRoute";
 
@@ -13,6 +15,10 @@ type Props = {
   /** Primary destination the PDF/AI name after. */
   displayCountry: Country;
   homeCountry: string;
+  /** Trip scope — molds readiness + leg framing in the rail. */
+  scope?: TripScope;
+  /** Scope-aware flag resolver (domestic stops read the home-country flag). */
+  flagFor?: (name: string) => string;
   onPlanWithAi?: () => void;
   /** Primary destination notes (trip scratchpad in the rail). */
   notes: string;
@@ -42,6 +48,8 @@ function TripReviewWorkspaceInner({
   route,
   displayCountry,
   homeCountry,
+  scope = "international",
+  flagFor = getCountryFlag,
   onPlanWithAi,
   notes,
   onSaveNotes,
@@ -91,6 +99,7 @@ function TripReviewWorkspaceInner({
       onAutoArrange={autoArrange}
       canAutoArrange={canAutoArrange}
       toolbar={toolbar}
+      flagFor={flagFor}
     />
   );
 
@@ -105,8 +114,10 @@ function TripReviewWorkspaceInner({
         composedPlan={orderedComposed}
         perCountryCost={perCountryCost}
         homeCountry={homeCountry}
+        scope={scope}
         notes={notes}
         onSaveNotes={onSaveNotes}
+        flagFor={flagFor}
       />
     ),
   };

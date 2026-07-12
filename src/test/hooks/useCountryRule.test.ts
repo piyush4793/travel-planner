@@ -13,10 +13,12 @@ const {
 }));
 
 vi.mock("@/data/consolidatedCountry.ts", () => ({
-  fileKey: vi.fn(),
-  hasConsolidatedCountry: hasConsolidatedCountryMock,
-  loadConsolidatedCountry: loadConsolidatedCountryMock,
-  getCachedConsolidatedCountry: getCachedConsolidatedCountryMock,
+  internationalRuleStore: {
+    fileKey: vi.fn(),
+    has: hasConsolidatedCountryMock,
+    load: loadConsolidatedCountryMock,
+    getCached: getCachedConsolidatedCountryMock,
+  },
 }));
 
 type Deferred<T> = {

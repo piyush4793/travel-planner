@@ -24,4 +24,26 @@ describe("tripReadiness", () => {
       expect(READINESS_ICON[item.tone]).toBeTruthy();
     }
   });
+
+  describe("domestic scope", () => {
+    it("replaces the visa caveat with a reassuring no-visa line", () => {
+      const items = tripReadiness([c("Rajasthan")], "domestic");
+      expect(items.some((i) => /visa rules/i.test(i.text))).toBe(false);
+      expect(items.some((i) => i.tone === "ok" && /no visa/i.test(i.text))).toBe(true);
+    });
+
+    it("frames inter-stop travel as legs to book, never border crossings", () => {
+      const items = tripReadiness([c("Rajasthan"), c("Kerala")], "domestic");
+      expect(items.some((i) => /border crossing/i.test(i.text))).toBe(false);
+      expect(items.some((i) => i.tone === "info" && /1 leg between stops/i.test(i.text))).toBe(true);
+      expect(
+        tripReadiness([c("A"), c("B"), c("C")], "domestic").some((i) => /2 legs between stops/i.test(i.text)),
+      ).toBe(true);
+    });
+
+    it("omits the legs line for a single-stop domestic trip", () => {
+      const items = tripReadiness([c("Rajasthan")], "domestic");
+      expect(items.some((i) => /between stops/i.test(i.text))).toBe(false);
+    });
+  });
 });
