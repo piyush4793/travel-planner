@@ -1,0 +1,1001 @@
+{
+  "name": "Meghalaya",
+  "seed": false,
+  "lat": 25.467,
+  "lng": 91.3662,
+  "region": "Northeast India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹28K–₹45K",
+    "couple": "₹50K–₹80K",
+    "family4": "₹90K–₹1.45L"
+  },
+  "experiences": [
+    "Waterfalls",
+    "Hiking",
+    "National Parks",
+    "Mountains",
+    "Cruises & Boat Trips",
+    "Road Trips",
+    "Festivals",
+    "Food",
+    "Adventure Sports",
+    "Museums",
+    "Markets & Shopping"
+  ],
+  "avoid": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Assam",
+    "Arunachal Pradesh",
+    "Nagaland"
+  ],
+  "landmark": "Nongriat double-decker living root bridge and Nohkalikai Falls",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Use Guwahati airport/rail as the reliable gateway, then drive 3–4 hours to Shillong via Umiam Lake; Shillong airport is closer but has limited weather-sensitive flights. Meghalaya currently needs no ILP for Indian tourists, but carry photo ID for hotels, Shillong Peak security checks and Bangladesh-border zones. Internal travel is almost entirely by hired taxi on narrow, winding hill roads, so transfer days should stay light.",
+  "diet": {
+    "vegetarian": "Shillong has the easiest vegetarian food: cafés, South/North Indian thalis, veg momos, jhur sideh rice, putharo rice cakes, ja stem and tungrymbai-style fermented soybean dishes. Outside Shillong, Khasi homestays and roadside kitchens are very pork, chicken, fish and egg heavy, so pre-order simple dal, rice, vegetables, noodles or veg momos before arrival.",
+    "vegan": "Vegan travel is possible but takes effort outside Shillong. Ask for food cooked in oil, not ghee or butter, and watch for dairy in tea, paneer, curd-based gravies and egg in noodles; remote Sohra, Nongriat, Mawlynnong, Dawki and Mawsynram homestays often serve fixed meals, so request rice, plain vegetables, dal, boiled potatoes, fruit and black tea in advance.",
+    "phrases": [
+      "Nga bam jhur, ym bam doh = I eat vegetables, not meat",
+      "Sngewbha ym buh ghee, dud ne paneer = please do not add ghee, milk or paneer",
+      "Sirf tel mein banaiye, anda aur meat nahi = please cook only in oil, no egg or meat"
+    ]
+  },
+  "links": [
+    {
+      "label": "Meghalaya Tourism (official)",
+      "url": "https://www.meghalayatourism.in/"
+    },
+    {
+      "label": "Incredible India — Meghalaya",
+      "url": "https://www.incredibleindia.gov.in/en/meghalaya"
+    },
+    {
+      "label": "Meghalaya Tourism — Nongriat",
+      "url": "https://www.meghalayatourism.in/explore/destinations/by-region/khasi-hills/nongriat/"
+    },
+    {
+      "label": "Meghalaya Government Portal",
+      "url": "https://meghalaya.gov.in/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Shillong",
+      "lat": 25.5788,
+      "lng": 91.8933,
+      "notes": "The hill capital is the logistics, food and culture base: Umiam Lake, museums, cafés, Police Bazaar, Shillong Peak, Elephant Falls and Laitlum are all easier from here than from Sohra.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "National Parks",
+        "Museums",
+        "Markets & Shopping",
+        "Food",
+        "Cruises & Boat Trips",
+        "Festivals"
+      ]
+    },
+    {
+      "name": "Sohra",
+      "lat": 25.2702,
+      "lng": 91.7323,
+      "notes": "Sohra/Cherrapunji is the waterfall-and-cave hub for Nohkalikai, Seven Sisters, Mawsmai, Arwah, Wei Sawdong and the Tyrna trailhead for Nongriat.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Waterfalls",
+        "Hiking",
+        "National Parks",
+        "Road Trips",
+        "Adventure Sports",
+        "Festivals"
+      ]
+    },
+    {
+      "name": "Dawki-Shnongpdeng",
+      "lat": 25.2012,
+      "lng": 92.0195,
+      "notes": "The Umngot river belt is best for clear-water boating and riverside camping in dry months; the Shillong/Sohra approach is slow, so keep sightseeing light on transfer days.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Cruises & Boat Trips",
+        "Water Sports",
+        "National Parks",
+        "Road Trips",
+        "Festivals"
+      ]
+    },
+    {
+      "name": "Mawlynnong",
+      "lat": 25.2024,
+      "lng": 91.9153,
+      "notes": "Mawlynnong is a compact Khasi village stop with Nohwet living root bridge, sky-view platforms, homestays and a cleaner, gentler root-bridge alternative to Nongriat.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Festivals",
+        "National Parks",
+        "Hiking",
+        "Food",
+        "Road Trips"
+      ]
+    },
+    {
+      "name": "Mawsynram",
+      "lat": 25.2996,
+      "lng": 91.5822,
+      "notes": "The current wettest-place claimant is a quieter geology-and-rain landscape with Mawjymbuin Cave, Krem Puri access, Mawlyngbna fossils and dramatic Bangladesh-view drives.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "National Parks",
+        "Hiking",
+        "Adventure Sports",
+        "Road Trips",
+        "Mountains",
+        "Festivals"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel work well in Shillong and larger towns, but coverage drops in deep valleys, Nongriat, Shnongpdeng camps, cave areas and parts of Mawsynram. Download offline maps, carry cash, and keep your driver/homestay numbers written down.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "MakeMyTrip",
+      "Zomato",
+      "WhatsApp"
+    ],
+    "cityOrder": [
+      "Shillong",
+      "Sohra",
+      "Dawki-Shnongpdeng",
+      "Mawlynnong",
+      "Mawsynram"
+    ],
+    "cities": {
+      "Shillong": {
+        "name": "Shillong",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers arrival, the city culture loop and one outer viewpoint day. Add the third day if you want David Scott Trail or a rain buffer before driving to Sohra.",
+        "experiences": [
+          "Mountains",
+          "National Parks",
+          "Museums",
+          "Markets & Shopping",
+          "Food",
+          "Cruises & Boat Trips",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "Museums",
+          "Markets & Shopping",
+          "National Parks"
+        ],
+        "days": [
+          {
+            "theme": "Guwahati arrival, Umiam Lake and Shillong evening",
+            "pace": "relaxed",
+            "note": "Guwahati to Shillong is a winding 3–4 hour hill transfer, longer on weekends or in rain. Treat the drive and Umiam stop as real day content, then keep the evening close to Police Bazaar.",
+            "activities": [
+              {
+                "name": "Guwahati to Shillong hill drive",
+                "duration": "3–4h",
+                "priority": "must-see",
+                "cost": "₹3,500–₹5,500 taxi",
+                "tip": "Shared sumos are cheaper but slower; hotel/taxi rates were not verifiably recent, so reconfirm locally before booking."
+              },
+              {
+                "name": "Umiam Lake viewpoint or short boat pause",
+                "duration": "45–90m",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Good midway break; skip boating if you are arriving late or rain is building."
+              },
+              {
+                "name": "Police Bazaar orientation walk",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Best place to buy rain gear, snacks and cash before remote valleys."
+              },
+              {
+                "name": "Khasi café or live-music dinner",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Shillong is the easiest place for pure-veg and vegan requests."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Police Bazaar budget hotel",
+                "budget": "₹2,000–₹4,000/night"
+              },
+              {
+                "name": "Boutique Shillong hill hotel",
+                "budget": "₹5,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Veg momos near Police Bazaar",
+              "Putharo rice cakes with tea",
+              "Dal-rice or veg thali"
+            ]
+          },
+          {
+            "theme": "Museums, falls and Shillong viewpoints",
+            "pace": "moderate",
+            "note": "Cluster the city core in the morning, then use one taxi loop for Elephant Falls and Shillong Peak. Shillong Peak sits inside an Air Force area, so carry photo ID and expect camera restrictions.",
+            "activities": [
+              {
+                "name": "Don Bosco Museum",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "A strong first stop for Northeast tribal context; verify the current ticket at the counter."
+              },
+              {
+                "name": "Ward's Lake garden walk",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "A light city break; boating is optional and weather-dependent."
+              },
+              {
+                "name": "Elephant Falls",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Stairs are wet and slippery after rain; older entry-fee figures vary, so verify locally."
+              },
+              {
+                "name": "Shillong Peak",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Photo ID is required; cameras may need to be surrendered at the security gate."
+              },
+              {
+                "name": "Iewduh or Police Bazaar market browse",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Police Bazaar budget hotel",
+                "budget": "₹2,000–₹4,000/night"
+              },
+              {
+                "name": "Boutique Shillong hill hotel",
+                "budget": "₹5,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Tungrymbai-style soybean with rice",
+              "Veg chowmein with no egg",
+              "Black tea and local bakery snacks"
+            ]
+          },
+          {
+            "theme": "Laitlum Canyons or David Scott Trail buffer",
+            "pace": "moderate",
+            "note": "Use this optional day only if you want a proper hike or need a weather buffer. Laitlum is short but exposed; David Scott Trail is a longer trek and should not be squeezed before a Sohra transfer.",
+            "activities": [
+              {
+                "name": "Laitlum Canyons viewpoint and ridge walk",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "Free / local parking",
+                "tip": "Avoid foggy afternoons and slippery monsoon edges."
+              },
+              {
+                "name": "Mawphlang Sacred Grove add-on",
+                "duration": "1.5–2h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Go with a local guide and do not remove plants or stones."
+              },
+              {
+                "name": "Shillong café recovery evening",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Police Bazaar budget hotel",
+                "budget": "₹2,000–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "Packed veg sandwiches for the hike",
+              "Rice and seasonal vegetables",
+              "Cafe dinner in Shillong"
+            ]
+          }
+        ]
+      },
+      "Sohra": {
+        "name": "Sohra",
+        "minDays": 3,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days is the feasibility floor because the Nongriat double-decker root bridge trek is a full, physically demanding day by itself. Add a fourth day if you want slow waterfalls or if rain/landslides delay drives.",
+        "experiences": [
+          "Waterfalls",
+          "Hiking",
+          "National Parks",
+          "Road Trips",
+          "Adventure Sports",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "Waterfalls",
+          "Hiking",
+          "National Parks"
+        ],
+        "days": [
+          {
+            "theme": "Shillong to Sohra: Mawkdok, Nohkalikai and Mawsmai",
+            "pace": "moderate",
+            "note": "Shillong to Sohra is only about 55 km but can take 2–3 hours with viewpoints, fog and roadworks. Keep the first Sohra day to the main accessible waterfall/cave cluster.",
+            "activities": [
+              {
+                "name": "Mawkdok Dympep Valley viewpoint drive",
+                "duration": "30–45m",
+                "priority": "recommended",
+                "cost": "Free / local parking",
+                "tip": "Good leg-stretch stop between Shillong and Sohra; ziplining is optional and weather-dependent."
+              },
+              {
+                "name": "Nohkalikai Falls viewpoint",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Official tourism describes a 340 m plunge; entry/parking fees change, so verify locally. Clearer views usually come after rain breaks."
+              },
+              {
+                "name": "Mawsmai Cave",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Short, lit and accessible but narrow in places; older traveller reports cite small entry/camera fees, not recently verified."
+              },
+              {
+                "name": "Seven Sisters Falls viewpoint",
+                "duration": "30–45m",
+                "priority": "recommended",
+                "cost": "Free / local parking",
+                "tip": "The falls are strongest in monsoon, but fog can erase the view."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sohra homestay",
+                "budget": "₹1,800–₹4,000/night"
+              },
+              {
+                "name": "Cherrapunji resort or view hotel",
+                "budget": "₹5,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Putharo with black tea",
+              "Rice with seasonal greens",
+              "Veg noodles without egg"
+            ]
+          },
+          {
+            "theme": "Nongriat double-decker living root bridge trek",
+            "pace": "packed",
+            "note": "This is a strenuous full day: drive early to Tyrna, descend roughly 3,500 steps to Nongriat, cross suspension bridges, visit the double-decker bridge, then climb the same steps back unless staying overnight. Do not combine it with Nohkalikai, Dawki or Mawlynnong on the same day.",
+            "activities": [
+              {
+                "name": "Sohra to Tyrna trailhead",
+                "duration": "30–45m drive",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Start by 7am with water, snacks, rain cover and a headlamp backup."
+              },
+              {
+                "name": "Tyrna to Nongriat descent",
+                "duration": "1.5–2.5h down",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "About 3,500 steps down; knees and calves take a beating on the return climb."
+              },
+              {
+                "name": "Double-decker living root bridge",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Local bridge/village/camera fees are small but not recently verified; pay at the village counter and avoid crowding the bridge."
+              },
+              {
+                "name": "Blue pools or short forest rest near Nongriat",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free / local guide optional",
+                "tip": "Skip Rainbow Falls unless you are very fit and staying overnight; it adds a demanding extension."
+              },
+              {
+                "name": "Return climb to Tyrna and Sohra",
+                "duration": "2.5–4h up + drive",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Avoid starting the climb late; wet steps are slow and there is little lighting."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sohra homestay",
+                "budget": "₹1,800–₹4,000/night"
+              },
+              {
+                "name": "Basic Nongriat homestay if splitting trek",
+                "budget": "₹1,000–₹2,500/night"
+              }
+            ],
+            "meals": [
+              "Packed bananas and peanuts",
+              "Simple veg rice at Nongriat if pre-ordered",
+              "Early Sohra dinner after the climb"
+            ]
+          },
+          {
+            "theme": "Arwah Cave, Dainthlen and Wei Sawdong",
+            "pace": "moderate",
+            "note": "This is the second Sohra nature day and should stay local after the Nongriat trek. Wei Sawdong has a steep, slippery descent; skip it in heavy rain or if legs are sore.",
+            "activities": [
+              {
+                "name": "Arwah Cave fossil walk",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Official tourism notes fossils in the cave; the path is scenic, wet and uneven. Verify current ticket/camera fees locally."
+              },
+              {
+                "name": "Dainthlen Falls",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free / local parking",
+                "tip": "Stay away from slick rock edges; flash runoff is real after rain."
+              },
+              {
+                "name": "Wei Sawdong Falls viewpoint descent",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "The ladders and mud path are not suitable for small children, elderly travellers or heavy-rain days."
+              },
+              {
+                "name": "Sohra local market and rest",
+                "duration": "1h",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sohra homestay",
+                "budget": "₹1,800–₹4,000/night"
+              },
+              {
+                "name": "Cherrapunji resort or view hotel",
+                "budget": "₹5,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Jhur sideh rice and vegetables",
+              "Pumaloi rice cake",
+              "Simple dal-rice dinner"
+            ]
+          },
+          {
+            "theme": "Sohra rain buffer or slow waterfall repeat",
+            "pace": "relaxed",
+            "note": "Use this optional day for fog/rain delays, a gentler recovery after Nongriat, or one extra waterfall. It is intentionally light because Sohra weather can make roads and steps slow.",
+            "activities": [
+              {
+                "name": "Weather buffer for Nohkalikai or Seven Sisters",
+                "duration": "half day",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Thangkharang Park viewpoint",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Useful if Bangladesh plains views are clear; verify ticket locally."
+              },
+              {
+                "name": "Café and laundry recovery",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sohra homestay",
+                "budget": "₹1,800–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "Homestay rice meal",
+              "Veg thukpa-style noodle soup",
+              "Black tea and snacks"
+            ]
+          }
+        ]
+      },
+      "Dawki-Shnongpdeng": {
+        "name": "Dawki-Shnongpdeng",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One carefully planned day covers the Umngot boat ride and border-river scenery. Add a second day only for riverside camping, kayaking or a relaxed return, because the road from Sohra/Shillong is winding and slow.",
+        "experiences": [
+          "Cruises & Boat Trips",
+          "Water Sports",
+          "National Parks",
+          "Road Trips",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "Cruises & Boat Trips",
+          "National Parks"
+        ],
+        "days": [
+          {
+            "theme": "Umngot River boating and Shnongpdeng riverside",
+            "pace": "moderate",
+            "note": "Sohra to Dawki/Shnongpdeng takes around 3–4 hours on narrow roads; start early and keep the day river-focused. The water is clearest roughly November to March and can turn muddy in monsoon.",
+            "activities": [
+              {
+                "name": "Sohra or Shillong to Dawki drive",
+                "duration": "3–4h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Do not add a Nongriat trek or Mawsynram on the same day."
+              },
+              {
+                "name": "Umngot River boat ride at Dawki",
+                "duration": "30–45m",
+                "priority": "must-see",
+                "cost": "₹800/boat for ~30m",
+                "tip": "A 2026 Tripadvisor traveller report cites ₹800 per boat for up to three people; counter rates can vary by season, queue and route, so verify before boarding."
+              },
+              {
+                "name": "Shnongpdeng riverside walk or kayak window",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Wear life jackets and avoid water sports if rain has raised the river."
+              },
+              {
+                "name": "India-Bangladesh border viewpoint pause",
+                "duration": "20–30m",
+                "priority": "optional",
+                "cost": "Free",
+                "tip": "Carry photo ID and follow local/security instructions near the border."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Shnongpdeng riverside camp",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Dawki/Shnongpdeng cottage or homestay",
+                "budget": "₹3,500–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Packed veg lunch from Sohra or Shillong",
+              "Rice and potatoes at riverside camp",
+              "Black tea and snacks"
+            ]
+          },
+          {
+            "theme": "Slow riverside camp morning",
+            "pace": "relaxed",
+            "note": "Use this optional day if you camp overnight or want a calmer return via Mawlynnong. It is intentionally light because riverside activities are weather and water-level dependent.",
+            "activities": [
+              {
+                "name": "Early clear-water photography",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Kayaking or cliff-river activity with local operator",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Use licensed local operators, life jackets and weather judgement; prices were not verifiably recent."
+              },
+              {
+                "name": "Drive onward toward Mawlynnong or Shillong",
+                "duration": "2–4h",
+                "priority": "must-see",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Shnongpdeng riverside camp",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Camp breakfast",
+              "Simple rice and vegetables",
+              "Packed fruit"
+            ]
+          }
+        ]
+      },
+      "Mawlynnong": {
+        "name": "Mawlynnong",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One day is enough for the clean-village walk, Nohwet root bridge and Riwai/Mawlynnong cultural pause. Add a second only for homestay immersion or a gentler route between Dawki and Shillong.",
+        "experiences": [
+          "Festivals",
+          "National Parks",
+          "Hiking",
+          "Food",
+          "Road Trips"
+        ],
+        "signatureExperiences": [
+          "Festivals",
+          "National Parks",
+          "Hiking"
+        ],
+        "days": [
+          {
+            "theme": "Clean village, Nohwet root bridge and Khasi homestay culture",
+            "pace": "relaxed",
+            "note": "Mawlynnong is compact but visitor pressure is high; keep it slow, stay on marked paths and do not treat village homes as photo props. This is a gentle root-bridge alternative to Nongriat.",
+            "activities": [
+              {
+                "name": "Mawlynnong village cleanliness walk",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Official tourism calls it Asia's cleanest village; village upkeep/parking fees change, so verify locally."
+              },
+              {
+                "name": "Nohwet living root bridge at Riwai",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Short forest walk, much easier than Nongriat; small local entry fees are not recently verified."
+              },
+              {
+                "name": "Church of the Epiphany and village lanes",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Sky-view bamboo platform or Bangladesh plains viewpoint",
+                "duration": "30–45m",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Climb only if dry and comfortable with heights."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mawlynnong homestay",
+                "budget": "₹1,800–₹4,000/night"
+              },
+              {
+                "name": "Riwai/Mawlynnong cottage",
+                "budget": "₹4,000–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Organic rice and seasonal greens",
+              "Tungrymbai if prepared vegetarian",
+              "Putharo with tea"
+            ]
+          },
+          {
+            "theme": "Village immersion or return buffer",
+            "pace": "relaxed",
+            "note": "Use this optional day for a slow homestay morning or if road timing from Dawki ran late. Pure-veg/vegan meals must be requested before the host cooks the fixed meal.",
+            "activities": [
+              {
+                "name": "Homestay garden and village craft time",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Repeat Nohwet bridge before crowds",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Drive back to Shillong or onward to Sohra",
+                "duration": "2.5–4h",
+                "priority": "recommended",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mawlynnong homestay",
+                "budget": "₹1,800–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "Pre-ordered veg homestay meal",
+              "Rice and boiled vegetables",
+              "Fruit and black tea"
+            ]
+          }
+        ]
+      },
+      "Mawsynram": {
+        "name": "Mawsynram",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One long but feasible day covers Mawjymbuin Cave and the rain-country drive from Shillong. Add a second for Mawlyngbna/Krem Puri-style geology experiences with local guides rather than cramming them into a transfer day.",
+        "experiences": [
+          "National Parks",
+          "Hiking",
+          "Adventure Sports",
+          "Road Trips",
+          "Mountains",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "National Parks",
+          "Road Trips",
+          "Adventure Sports"
+        ],
+        "days": [
+          {
+            "theme": "Wettest-place landscapes and Mawjymbuin Cave",
+            "pace": "moderate",
+            "note": "Mawsynram is best as a Shillong-based day or one-night quiet stop. Roads are scenic but slow, and in monsoon heavy rain can trigger landslides or make cave/rock areas unsafe.",
+            "activities": [
+              {
+                "name": "Shillong to Mawsynram scenic drive",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Start early and keep fuel/cash sorted in Shillong."
+              },
+              {
+                "name": "Mawjymbuin Cave",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Official tourism highlights Mawsynram's caves and rock formations; ticket figures were not recently verified."
+              },
+              {
+                "name": "Mawsynram rain-country viewpoint stops",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Carry waterproof bags year-round; clouds can move in very fast."
+              },
+              {
+                "name": "Local village tea and return/rest",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mawsynram community homestay",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Return-to-Shillong hotel",
+                "budget": "₹2,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Packed veg lunch from Shillong",
+              "Rice and boiled vegetables if pre-ordered",
+              "Black tea and local snacks"
+            ]
+          },
+          {
+            "theme": "Mawlyngbna fossils, pools and guided geology",
+            "pace": "moderate",
+            "note": "Use a local guide and do this only in stable weather. The point is slow geology and nature interpretation, not ticking off another long-drive attraction.",
+            "activities": [
+              {
+                "name": "Mawlyngbna fossil and rock landscape walk",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Guide/activity prices were not verifiably recent; agree inclusions before starting."
+              },
+              {
+                "name": "Natural pools or village nature trail",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Avoid swimming after rain or if water is fast/cloudy."
+              },
+              {
+                "name": "Return drive to Shillong",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mawsynram community homestay",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Homestay rice breakfast",
+              "Packed fruit and nuts",
+              "Shillong dinner after return"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Shillong",
+        "to": "Sohra",
+        "method": "Private taxi via Mawkdok Dympep Valley on winding Khasi Hills roads",
+        "cost": "₹2,500–₹4,500 taxi",
+        "distanceKm": 55,
+        "durationHrs": 2.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Sohra",
+        "to": "Dawki-Shnongpdeng",
+        "method": "Private taxi via Pynursla/Jaintia border roads depending on routing",
+        "cost": "₹4,000–₹6,500 taxi",
+        "distanceKm": 90,
+        "durationHrs": 3.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Dawki-Shnongpdeng",
+        "to": "Mawlynnong",
+        "method": "Private taxi on narrow village roads via Riwai",
+        "cost": "₹1,500–₹3,000 taxi",
+        "distanceKm": 35,
+        "durationHrs": 1.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Mawlynnong",
+        "to": "Mawsynram",
+        "method": "Private taxi via Shillong/Smit-side hill roads; better broken in Shillong if starting late",
+        "cost": "₹5,000–₹8,000 taxi",
+        "distanceKm": 125,
+        "durationHrs": 5,
+        "sameDayFeasible": false
+      }
+    ],
+    "extras": [
+      "Meghalaya does not require an ILP for Indian tourists as of this authoring pass, but rules can change; carry government photo ID, especially for hotels, Shillong Peak and the Bangladesh-border belt around Dawki.",
+      "Monsoon lovers get the biggest waterfalls from June to September, but this is also landslide, leech, fog and muddy-river season; the planner marks it as worst for first-time feasibility, not for scenery.",
+      "Nongriat is not a casual add-on: the double-decker bridge trek is roughly 3,500 steps each way as a full strenuous day, with Rainbow Falls only for very fit travellers or an overnight split.",
+      "Dawki/Umngot's famous glass-clear water is a dry-season phenomenon; after heavy rain the river often turns cloudy or unsafe for water activities.",
+      "Pure-veg and vegan travellers should stock snacks in Shillong and pre-order homestay meals; pork, fish, chicken, eggs and dairy are common in remote Khasi kitchens."
+    ]
+  }
+}

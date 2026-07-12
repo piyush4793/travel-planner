@@ -1,0 +1,880 @@
+{
+  "name": "Arunachal Pradesh",
+  "seed": false,
+  "lat": 28.218,
+  "lng": 94.7278,
+  "region": "Northeast India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "January",
+    "February",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹45K–₹75K",
+    "couple": "₹80K–₹1.3L",
+    "family4": "₹1.35L–₹2.25L"
+  },
+  "experiences": [
+    "Mountains",
+    "Temples & Religious Sites",
+    "Road Trips",
+    "Festivals",
+    "UNESCO Sites",
+    "Lakes",
+    "Waterfalls",
+    "Hot Springs & Wellness",
+    "National Parks",
+    "Food"
+  ],
+  "avoid": [
+    "January",
+    "February",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Assam",
+    "Nagaland",
+    "Meghalaya"
+  ],
+  "landmark": "Tawang Monastery and Sela Pass",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Arunachal is a permit-first, road-first trip: Indian citizens must obtain a Tourist eILP before entry (official eILP site says ₹300 up to 3 days, ₹500 beyond 3 and up to 14 days; longer stays use provisional eILP), while foreign nationals need PAP/RAP via FRRO/authorized channels. Use Guwahati, Tezpur or Hollongi/Itanagar as gateways, but treat Tezpur/Bhalukpong→Dirang→Tawang as a two-day mountain approach over Sela Pass; snow, rain, landslides, army controls and altitude can delay plans.",
+  "diet": {
+    "vegetarian": "Vegetarian food is workable in Bomdila, Dirang, Tawang and Ziro if requested early: veg thukpa, momos, dal-rice, noodles, khura pancakes, butter tea and simple potato/greens are common. Remote Monpa and tribal homestays may default to pork, yak, chicken, fish or fermented meat, so confirm meals before booking and carry snacks for long drives.",
+    "vegan": "Vegan travel needs advance notice because butter tea, ghee, curd, paneer and meat stock appear in fixed homestay meals, especially around Tawang, Sangti and Ziro villages. Ask for oil-only dal, rice, steamed vegetables, veg momos without butter, black tea and no egg/meat stock; options are easier in larger towns than on Sela/Bum La road days.",
+    "phrases": [
+      "Maas aur anda ke bina shakahari khana chahiye = I need vegetarian food without meat or egg",
+      "Dudh, ghee, makkhan ya paneer mat daliye = please do not add milk, ghee, butter or paneer",
+      "Nga veg khana chahiye, meat stock nahi = I need veg food, no meat stock"
+    ]
+  },
+  "links": [
+    {
+      "label": "Arunachal Tourism — official",
+      "url": "https://arunachaltourism.com/"
+    },
+    {
+      "label": "Arunachal eILP portal — official",
+      "url": "https://eilp.arunachal.gov.in/"
+    },
+    {
+      "label": "Incredible India — Arunachal Pradesh",
+      "url": "https://www.incredibleindia.gov.in/en/arunachal-pradesh"
+    },
+    {
+      "label": "UNESCO Tentative List — Apatani cultural landscape",
+      "url": "https://whc.unesco.org/en/tentativelists/5893/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Bomdila",
+      "lat": 27.2648,
+      "lng": 92.4247,
+      "notes": "West Kameng transit ridge with monasteries, craft centres and Himalayan viewpoints; the right place to break the long Assam-to-Tawang climb.",
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "October",
+        "November",
+        "December"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "Temples & Religious Sites",
+        "Markets & Shopping",
+        "Road Trips",
+        "Festivals"
+      ]
+    },
+    {
+      "name": "Dirang",
+      "lat": 27.3509,
+      "lng": 92.2416,
+      "notes": "A lower-altitude Monpa valley base for Sangti Valley, hot springs, orchards and a safer acclimatization night before Sela Pass.",
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "October",
+        "November",
+        "December"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "Hot Springs & Wellness",
+        "Road Trips",
+        "Festivals",
+        "Food"
+      ]
+    },
+    {
+      "name": "Tawang",
+      "lat": 27.5861,
+      "lng": 91.8594,
+      "notes": "High Himalayan Monpa town anchored by Tawang Monastery, Sela Pass, war memorials, glacier lakes and altitude-sensitive Bum La excursions.",
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "January",
+        "February",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "Temples & Religious Sites",
+        "Lakes",
+        "Waterfalls",
+        "Glaciers",
+        "Road Trips",
+        "History"
+      ]
+    },
+    {
+      "name": "Ziro Valley",
+      "lat": 27.5449,
+      "lng": 93.8197,
+      "notes": "Apatani cultural landscape and music-festival valley with paddy-fish farms, pine hills, village walks and a UNESCO tentative-list story.",
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "September",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "experiences": [
+        "Festivals",
+        "UNESCO Sites",
+        "Hiking",
+        "National Parks",
+        "Food",
+        "Road Trips"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel work in the larger towns, while BSNL often survives in remote valleys; expect dead zones around Sela Pass, Bum La, Sangti side roads and long forested stretches. Download maps, carry hotel/driver numbers offline and keep paper/eILP copies because checkposts may not have reliable data.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "MakeMyTrip",
+      "Zomato",
+      "WhatsApp",
+      "DigiLocker"
+    ],
+    "cityOrder": [
+      "Bomdila",
+      "Dirang",
+      "Tawang",
+      "Ziro Valley"
+    ],
+    "cities": {
+      "Bomdila": {
+        "name": "Bomdila",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Use Bomdila as a genuine overnight break, not a photo stop: Guwahati to Bomdila can take most of a day, and pushing onward toward Tawang the same evening is unsafe and exhausting.",
+        "experiences": [
+          "Mountains",
+          "Temples & Religious Sites",
+          "Markets & Shopping",
+          "Road Trips",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "Road Trips",
+          "Mountains",
+          "Temples & Religious Sites"
+        ],
+        "days": [
+          {
+            "theme": "Permit check, West Kameng climb & Bomdila gompas",
+            "pace": "relaxed",
+            "note": "Enter Arunachal only after your eILP is approved and printed/saved offline; the Tezpur/Bhalukpong checkpost may ask for ID and permit. Guwahati→Bomdila is often 8–10 hours and Tezpur→Bomdila about 5–6 hours, so keep sightseeing light.",
+            "activities": [
+              {
+                "name": "Bhalukpong/Arunachal entry checkpost and eILP verification",
+                "duration": "20–45m",
+                "priority": "must-see",
+                "cost": "Tourist eILP ₹300 up to 3 days; ₹500 for 4–14 days",
+                "tip": "Carry the same photo ID used online, permit print/PDF and multiple copies; children below 14 travel with an adult's paperwork per eILP guidance."
+              },
+              {
+                "name": "Bomdila Upper Gompa and prayer hall",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "Reach before dusk; respect monastery photography restrictions."
+              },
+              {
+                "name": "Bomdila viewpoint and RR Hill sunset",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Views of Kangto/Gorichen depend on clear post-monsoon or spring mornings."
+              },
+              {
+                "name": "Craft centre and local market browse",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bomdila budget lodge or homestay",
+                "budget": "₹1,800–₹3,500/night"
+              },
+              {
+                "name": "Mid-range West Kameng hotel",
+                "budget": "₹4,000–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Veg thukpa after the drive",
+              "Khura pancake with tea",
+              "Simple dal-rice thali"
+            ]
+          },
+          {
+            "theme": "Optional Bomdila buffer and orchid detour",
+            "pace": "relaxed",
+            "note": "Use this only if the Assam approach was delayed or you want a slower West Kameng acclimatization day before Dirang and Sela Pass.",
+            "activities": [
+              {
+                "name": "Lower and Middle Gompa circuit",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Apple orchard or craft shopping pause",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Tipi Orchid Centre detour if approaching from Bhalukpong",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Only do this if it fits the road direction; do not backtrack from Bomdila on a Tawang-bound day."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bomdila budget lodge or homestay",
+                "budget": "₹1,800–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Veg noodles",
+              "Momos",
+              "Local tea and snacks"
+            ]
+          }
+        ]
+      },
+      "Dirang": {
+        "name": "Dirang",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Two days lets you avoid a rushed Sela crossing: one gentle valley day after Bomdila, then one honest transfer day to Tawang over the 13,700-ft pass.",
+        "experiences": [
+          "Mountains",
+          "Hot Springs & Wellness",
+          "Road Trips",
+          "Festivals",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "Road Trips",
+          "Hot Springs & Wellness",
+          "Festivals"
+        ],
+        "days": [
+          {
+            "theme": "Dirang Dzong, hot springs & Sangti Valley",
+            "pace": "moderate",
+            "note": "Dirang sits far lower than Tawang, making it the most comfortable acclimatization base before Sela Pass. Keep the day valley-focused and avoid late-night driving on narrow roads.",
+            "activities": [
+              {
+                "name": "Dirang Dzong village walk",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Walk respectfully through lived-in lanes; ask before photographing residents."
+              },
+              {
+                "name": "Dirang hot water spring",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free / donation",
+                "tip": "Carry sandals and a towel; facilities are basic."
+              },
+              {
+                "name": "Sangti Valley river and village loop",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Taxi cost varies",
+                "tip": "Black-necked crane sightings are seasonal and never guaranteed; keep the valley quiet."
+              },
+              {
+                "name": "National Yak Research Centre viewpoint stop",
+                "duration": "30–45m",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dirang homestay",
+                "budget": "₹2,000–₹4,000/night"
+              },
+              {
+                "name": "Sangti/Dirang valley resort",
+                "budget": "₹5,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Veg momos",
+              "Thukpa or thenthuk",
+              "Khura with local greens"
+            ]
+          },
+          {
+            "theme": "Dirang to Tawang via Sela Pass and Jaswant Garh",
+            "pace": "relaxed",
+            "note": "This is a transfer day across Sela Pass at roughly 13,700 ft. Start early, layer up, avoid alcohol the previous night, walk slowly at the pass and expect snow, fog, army convoys or roadwork to stretch a 5–6 hour drive.",
+            "activities": [
+              {
+                "name": "Sela Pass and Sela Lake halt",
+                "duration": "30–45m",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Do not linger if anyone has headache, nausea or breathlessness; descend toward Tawang."
+              },
+              {
+                "name": "Jaswant Garh War Memorial",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "A practical warm tea and restroom stop between Sela and Tawang."
+              },
+              {
+                "name": "Nuranang/Jang Falls detour if roads are clear",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free / donation",
+                "tip": "Skip in fog, heavy rain or if the Sela crossing already ran late."
+              },
+              {
+                "name": "Tawang check-in and rest",
+                "duration": "evening",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Hydrate and keep the first Tawang evening low-effort for altitude."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dirang homestay before departure",
+                "budget": "₹2,000–₹4,000/night"
+              },
+              {
+                "name": "Tawang mid-range hotel on arrival",
+                "budget": "₹3,500–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Packed breakfast",
+              "Tea at Jaswant Garh",
+              "Simple Tawang dinner"
+            ]
+          }
+        ]
+      },
+      "Tawang": {
+        "name": "Tawang",
+        "minDays": 3,
+        "recDays": 4,
+        "maxDays": 5,
+        "note": "Tawang needs time: one monastery/culture day, one lake-and-war-memorial day, one high-altitude Bum La buffer, and one flexible day because Sela/Bum La roads are weather- and army-control dependent.",
+        "experiences": [
+          "Mountains",
+          "Temples & Religious Sites",
+          "Lakes",
+          "Waterfalls",
+          "Glaciers",
+          "Road Trips",
+          "History"
+        ],
+        "signatureExperiences": [
+          "Temples & Religious Sites",
+          "Mountains",
+          "Lakes"
+        ],
+        "days": [
+          {
+            "theme": "Tawang Monastery, Ani Gompa & acclimatized town day",
+            "pace": "moderate",
+            "note": "Keep the first full day in and around town. Tawang is around 10,000 ft, so this culture day helps before attempting Bum La or high lakes.",
+            "activities": [
+              {
+                "name": "Tawang Monastery",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "Go early for prayer ambience; follow no-photo rules inside halls and libraries."
+              },
+              {
+                "name": "Tawang War Memorial",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "Evening light-and-sound schedules vary; verify locally before planning dinner around it."
+              },
+              {
+                "name": "Buddha Park viewpoint",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Old market and Monpa craft browse",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tawang guesthouse or homestay",
+                "budget": "₹2,500–₹5,000/night"
+              },
+              {
+                "name": "Heated mid-range Tawang hotel",
+                "budget": "₹5,500–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Veg thukpa",
+              "Khura with butter tea if you take dairy",
+              "Momos and local greens"
+            ]
+          },
+          {
+            "theme": "Pankang Teng Tso, Urgelling & quiet monastery circuit",
+            "pace": "moderate",
+            "note": "This stays closer to town than Bum La and works as a weather-flex day. Lakes can be icy in winter and muddy in monsoon; carry warm layers year-round.",
+            "activities": [
+              {
+                "name": "Pankang Teng Tso (PT Tso Lake)",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free / local taxi varies",
+                "tip": "Road access depends on weather; skip if your driver advises against it."
+              },
+              {
+                "name": "Urgelling Monastery",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Khinmey or Gyangong Ani Gompa",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free / donation",
+                "tip": "Confirm access with locals because smaller gompas may close without notice."
+              },
+              {
+                "name": "Local café and altitude rest block",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tawang guesthouse or homestay",
+                "budget": "₹2,500–₹5,000/night"
+              },
+              {
+                "name": "Heated mid-range Tawang hotel",
+                "budget": "₹5,500–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Veg noodles",
+              "Thenthuk",
+              "Tea and local bakery snacks"
+            ]
+          },
+          {
+            "theme": "Bum La, Sangetsar Lake & high-altitude border route",
+            "pace": "packed",
+            "note": "Bum La is a serious high-altitude excursion near 15,000 ft and requires a local vehicle plus army/local permit paperwork; foreigners are generally not allowed. Leave before sunrise, carry ID/eILP, skip if unwell, and accept same-day cancellation for snow or army restrictions.",
+            "activities": [
+              {
+                "name": "Bum La Pass permit and army checkpost route",
+                "duration": "full-day loop",
+                "priority": "must-see",
+                "cost": "Permit/vehicle cost varies; verify locally",
+                "tip": "Only local Tawang vehicles normally run this road; arrange paperwork a day earlier through your hotel/driver."
+              },
+              {
+                "name": "Sangetsar (Madhuri) Lake",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Included in local vehicle loop / varies",
+                "tip": "Walk slowly and avoid running for photos at altitude."
+              },
+              {
+                "name": "Nagula lake-view stops",
+                "duration": "30–45m",
+                "priority": "recommended",
+                "cost": "Included in local vehicle loop / varies"
+              },
+              {
+                "name": "Early return and warm rest in Tawang",
+                "duration": "evening",
+                "priority": "recommended",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tawang guesthouse or homestay",
+                "budget": "₹2,500–₹5,000/night"
+              },
+              {
+                "name": "Heated mid-range Tawang hotel",
+                "budget": "₹5,500–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Packed breakfast",
+              "Hot tea at route stops",
+              "Early veg thukpa dinner"
+            ]
+          },
+          {
+            "theme": "Buffer day for Sela/Bum La delays or Nuranang Falls",
+            "pace": "relaxed",
+            "note": "Do not plan a tight flight or Ziro transfer immediately after a must-do Bum La day. Use this buffer for weather slippage, monastery revisits, laundry and rest before the long exit drive.",
+            "activities": [
+              {
+                "name": "Reserve day for cancelled Bum La or lake route",
+                "duration": "full day",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "This is the difference between a feasible Arunachal plan and a paper itinerary."
+              },
+              {
+                "name": "Nuranang Falls if missed on arrival",
+                "duration": "2–3h including drive",
+                "priority": "recommended",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Tawang market, monastery revisit or rest",
+                "duration": "2–3h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tawang guesthouse or homestay",
+                "budget": "₹2,500–₹5,000/night"
+              },
+              {
+                "name": "Heated mid-range Tawang hotel",
+                "budget": "₹5,500–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Momos",
+              "Dal-rice comfort meal",
+              "Monpa tea and snacks"
+            ]
+          },
+          {
+            "theme": "Optional slow Monpa culture day",
+            "pace": "relaxed",
+            "note": "Add this only for a slower trip or festival timing such as Losar/Torgya; it is not needed if roads are clear and you are exiting after four Tawang nights.",
+            "activities": [
+              {
+                "name": "Monpa village or craft visit with local guide",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "Guide/vehicle varies"
+              },
+              {
+                "name": "Second Tawang Monastery morning prayers",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Café, rest and permit/route reconfirmation",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Tawang guesthouse or homestay",
+                "budget": "₹2,500–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Khura",
+              "Veg thukpa",
+              "Local greens and rice"
+            ]
+          }
+        ]
+      },
+      "Ziro Valley": {
+        "name": "Ziro Valley",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Ziro is a separate central-Arunachal leg, best reached from Naharlagun/Itanagar or after breaking the Tawang exit in Assam; do not attempt Tawang-to-Ziro as a same-day tourist transfer.",
+        "experiences": [
+          "Festivals",
+          "UNESCO Sites",
+          "Hiking",
+          "National Parks",
+          "Food",
+          "Road Trips"
+        ],
+        "signatureExperiences": [
+          "Festivals",
+          "UNESCO Sites"
+        ],
+        "days": [
+          {
+            "theme": "Apatani villages, paddy-fish farms & Old Ziro",
+            "pace": "moderate",
+            "note": "If coming from Tawang, arrive only after an overnight road break via Tezpur/Itanagar/Naharlagun. Ziro's value is slow cultural context, so hire a local guide and avoid treating villages like photo sets.",
+            "activities": [
+              {
+                "name": "Hong/Hari Apatani village walk with local guide",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Guide cost varies",
+                "tip": "Ask permission before entering homes or photographing people."
+              },
+              {
+                "name": "Tarin Fish Farm and paddy-cum-pisciculture fields",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free / guide cost varies",
+                "tip": "This is the living landscape behind the UNESCO tentative-list story."
+              },
+              {
+                "name": "Pine Grove and Old Ziro viewpoints",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Local market and Apatani food tasting",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ziro homestay",
+                "budget": "₹2,000–₹4,000/night"
+              },
+              {
+                "name": "Comfortable Ziro boutique stay",
+                "budget": "₹5,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Rice with local greens",
+              "Veg momos or noodles",
+              "Black tea; avoid apong if you do not drink"
+            ]
+          },
+          {
+            "theme": "Dolo Mando hike, Meghna Cave Temple & festival valley",
+            "pace": "moderate",
+            "note": "March–May and October–November have the best hiking weather; September can be rewarding for Ziro Festival but roads, stays and permits must be booked early and rain remains possible.",
+            "activities": [
+              {
+                "name": "Dolo Mando viewpoint hike",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Free / guide optional",
+                "tip": "Trails are slippery after rain; wear shoes with grip."
+              },
+              {
+                "name": "Meghna Cave Temple",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Ziro Festival of Music grounds or artisan visit",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "Festival ticket varies by year",
+                "tip": "Festival dates/tickets change annually; September is not the driest month, so pack rain gear."
+              },
+              {
+                "name": "Departure toward Naharlagun/Hollongi/Itanagar",
+                "duration": "3–5h",
+                "priority": "optional",
+                "cost": "Shared cab/taxi varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ziro homestay",
+                "budget": "₹2,000–₹4,000/night"
+              },
+              {
+                "name": "Comfortable Ziro boutique stay",
+                "budget": "₹5,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Vegetable rice plate",
+              "Apatani-style greens without meat stock",
+              "Tea and local snacks"
+            ]
+          },
+          {
+            "theme": "Optional Talley Valley or slow Apatani immersion",
+            "pace": "relaxed",
+            "note": "Add a third day only if you want a deeper nature/culture stay or festival recovery; Talley Valley access and guide logistics should be confirmed locally.",
+            "activities": [
+              {
+                "name": "Talley Valley nature excursion with local guide",
+                "duration": "half to full day",
+                "priority": "recommended",
+                "cost": "Guide/vehicle cost varies"
+              },
+              {
+                "name": "Midey pine and bamboo walk",
+                "duration": "1.5–2h",
+                "priority": "optional",
+                "cost": "Free / guide optional"
+              },
+              {
+                "name": "Homestay cooking conversation and rest",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Confirm vegetarian/vegan ingredients before the homestay shops for dinner."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ziro homestay",
+                "budget": "₹2,000–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "Homestay rice meal",
+              "Seasonal vegetables",
+              "Simple dal if requested"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bomdila",
+        "to": "Dirang",
+        "method": "Private/shared Sumo on the West Kameng mountain road",
+        "cost": "₹2,500–₹4,000 private taxi segment; shared Sumo varies",
+        "distanceKm": 42,
+        "durationHrs": 2.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Dirang",
+        "to": "Tawang",
+        "method": "Private/local taxi via Sela Pass, Jaswant Garh and Jang",
+        "cost": "₹5,000–₹8,000 vehicle segment; verify in season",
+        "distanceKm": 135,
+        "durationHrs": 6,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Tawang",
+        "to": "Ziro Valley",
+        "method": "Two-day road exit via Bomdila/Tezpur or Itanagar/Naharlagun, then Ziro taxi/shared Sumo",
+        "cost": "Multi-day vehicle cost varies widely; do not price as a same-day transfer",
+        "distanceKm": 560,
+        "durationHrs": 16,
+        "sameDayFeasible": false
+      }
+    ],
+    "extras": [
+      "ILP is not optional: Indian citizens need eILP before entering Arunachal; the official tourist form shows ₹300 up to 3 days and ₹500 for 4–14 days, with provisional eILP used for longer visits.",
+      "Foreign nationals need PAP/RAP, not ILP; the eILP site points foreigners to FRRO/e-services, and PAP conditions can restrict solo/route travel, so verify before booking remote areas.",
+      "Sela Pass is high enough for altitude symptoms and winter snow closures; keep the Bomdila/Dirang overnight breaks and never plan Guwahati/Tezpur to Tawang as one comfortable sightseeing day.",
+      "Bum La and high lakes depend on army/local permit controls and weather; arrange through a Tawang hotel/driver at least a day ahead and keep a buffer day.",
+      "Monsoon months bring landslides and slow roads across West Kameng and Lower Subansiri; Oct–Nov and Mar–May are the most reliable windows for this combined Tawang–Ziro route."
+    ]
+  }
+}

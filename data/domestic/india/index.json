@@ -763,5 +763,102 @@
       "Assam",
       "Meghalaya"
     ]
+  },
+  {
+    "name": "Assam",
+    "lat": 26.2006,
+    "lng": 92.9376,
+    "region": "Northeast India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 11,
+    "maxDays": 15,
+    "popularityScore": 80,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Meghalaya",
+      "Arunachal Pradesh",
+      "Nagaland",
+      "West Bengal",
+      "Sikkim"
+    ]
+  },
+  {
+    "name": "Meghalaya",
+    "lat": 25.467,
+    "lng": 91.3662,
+    "region": "Northeast India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 11,
+    "popularityScore": 82,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Assam",
+      "Arunachal Pradesh",
+      "Nagaland"
+    ]
+  },
+  {
+    "name": "Arunachal Pradesh",
+    "lat": 28.218,
+    "lng": 94.7278,
+    "region": "Northeast India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 9,
+    "maxDays": 13,
+    "popularityScore": 76,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "January",
+      "February",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Assam",
+      "Nagaland",
+      "Meghalaya"
+    ]
   }
 ]

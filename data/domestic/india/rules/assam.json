@@ -1,0 +1,925 @@
+{
+  "name": "Assam",
+  "seed": false,
+  "lat": 26.2006,
+  "lng": 92.9376,
+  "region": "Northeast India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹34K–₹55K",
+    "couple": "₹62K–₹95K",
+    "family4": "₹1.05L–₹1.75L"
+  },
+  "experiences": [
+    "Wildlife & Safari",
+    "National Parks",
+    "UNESCO Sites",
+    "Cruises & Boat Trips",
+    "Temples & Religious Sites",
+    "History",
+    "Architecture",
+    "Festivals",
+    "Food",
+    "Road Trips"
+  ],
+  "avoid": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Meghalaya",
+    "Arunachal Pradesh",
+    "Nagaland",
+    "West Bengal",
+    "Sikkim"
+  ],
+  "landmark": "Kaziranga's one-horned rhinoceros and the Brahmaputra river-island culture of Majuli",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Guwahati (GAU) is the main flight and rail gateway, with Jorhat useful for Majuli/Sivasagar and Dibrugarh for upper Assam. Assam itself does not require an Inner Line Permit, but neighbouring Arunachal Pradesh, Nagaland and Mizoram do; carry ID for hotels, ferries and safari bookings. Internal travel is road-heavy, with Brahmaputra ferries for Majuli and long transfers between wildlife parks.",
+  "diet": {
+    "vegetarian": "Vegetarian travel is practical in Guwahati, Jorhat/Sivasagar and most resorts: ask for Assamese veg thali with rice, dal, aloo pitika, khar made with papaya or bottle gourd, xaak bhaji, tomato/ou tenga and pitha. In Kaziranga, Manas and Majuli homestays, pre-request vegetarian meals because fixed thalis often default to fish or meat sides.",
+    "vegan": "Vegan is manageable but needs clear requests. Many Assamese vegetable dishes use mustard oil and are naturally dairy-free, but thalis may include curd, ghee, paneer, egg, fish stock, fermented fish chutney or meat/fish cooked in the same kitchen. Remote island and park stays can have fixed menus, so request oil-only cooking, no dairy and no fish/meat when booking.",
+    "phrases": [
+      "Moi niramis kham, maas-mangxo-nidibo = I eat vegetarian food, please do not give fish or meat",
+      "Dudh, ghee, paneer aru doi nidibo = please do not add milk, ghee, paneer or curd",
+      "Telot randhibo, maasor jhol nalage = please cook in oil; I do not want fish gravy"
+    ]
+  },
+  "links": [
+    {
+      "label": "Assam Tourism (official)",
+      "url": "https://assamtourism.gov.in/"
+    },
+    {
+      "label": "Incredible India — Assam",
+      "url": "https://www.incredibleindia.gov.in/en/assam"
+    },
+    {
+      "label": "Kaziranga National Park safari timings and rates",
+      "url": "https://kazirangasafari.in/rateandtiming"
+    },
+    {
+      "label": "Manas Tiger Reserve official portal",
+      "url": "https://www.manasnptr.in/faq"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Guwahati",
+      "lat": 26.1445,
+      "lng": 91.7362,
+      "notes": "Assam's practical gateway for Kamakhya Temple, Brahmaputra cruises, museums, markets and onward road or rail connections across the state.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Temples & Religious Sites",
+        "Cruises & Boat Trips",
+        "Museums",
+        "Markets & Shopping",
+        "Food",
+        "Festivals"
+      ]
+    },
+    {
+      "name": "Kaziranga National Park",
+      "lat": 26.5775,
+      "lng": 93.1711,
+      "notes": "UNESCO-listed floodplain wilderness and India's classic one-horned rhino safari base, best planned around Kohora/Bagori with early starts.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October"
+      ],
+      "experiences": [
+        "Wildlife & Safari",
+        "National Parks",
+        "UNESCO Sites",
+        "Food"
+      ]
+    },
+    {
+      "name": "Majuli",
+      "lat": 27.0016,
+      "lng": 94.2243,
+      "notes": "Brahmaputra river-island culture base for satras, mask-making, Mising villages, cycling and slow homestay travel reached by ferry from the Jorhat side.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Festivals",
+        "Cruises & Boat Trips",
+        "Temples & Religious Sites",
+        "National Parks",
+        "Food"
+      ]
+    },
+    {
+      "name": "Sivasagar / Jorhat",
+      "lat": 26.9826,
+      "lng": 94.6425,
+      "notes": "Upper Assam heritage-and-tea base pairing Ahom-era Sivasagar monuments with Jorhat logistics, tea estates and the Nimati ferry approach to Majuli.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "History",
+        "Architecture",
+        "Temples & Religious Sites",
+        "Museums",
+        "Food",
+        "Festivals"
+      ]
+    },
+    {
+      "name": "Manas National Park",
+      "lat": 26.6594,
+      "lng": 91.0011,
+      "notes": "Less-crowded UNESCO wildlife base on the Bhutan foothills, with jeep safaris, birding, village stays and Manas River landscapes.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Wildlife & Safari",
+        "National Parks",
+        "UNESCO Sites",
+        "Cruises & Boat Trips",
+        "Festivals"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel work well in Guwahati, Jorhat and Sivasagar; coverage is patchier inside Kaziranga/Manas ranges, on Majuli interiors and along river/forest roads. Download maps, keep ferry/safari contacts offline, and carry cash for islands, village stays and park gates.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "MakeMyTrip",
+      "Zomato",
+      "WhatsApp",
+      "Uber",
+      "Ola"
+    ],
+    "cityOrder": [
+      "Guwahati",
+      "Kaziranga National Park",
+      "Majuli",
+      "Sivasagar / Jorhat",
+      "Manas National Park"
+    ],
+    "cities": {
+      "Guwahati": {
+        "name": "Guwahati",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives one temple-and-river gateway day plus one city-culture day before the long Kaziranga road transfer.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "Cruises & Boat Trips",
+          "Museums",
+          "Markets & Shopping",
+          "Food",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "Temples & Religious Sites",
+          "Cruises & Boat Trips",
+          "Food"
+        ],
+        "days": [
+          {
+            "theme": "Arrival, Kamakhya and Brahmaputra sunset",
+            "pace": "relaxed",
+            "note": "Use this as a soft landing after the flight/train. Kamakhya queues can be long, and evening river cruises are weather-dependent, so avoid stacking too much on arrival day.",
+            "activities": [
+              {
+                "name": "Kamakhya Temple on Nilachal Hill",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "Go early for general darshan; paid/special access rules change during festivals, so verify only with the official temple counter/site. Ambubachi in late June is extremely crowded and falls in the monsoon avoid window."
+              },
+              {
+                "name": "Umananda Island ferry and temple",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Ferries depend on river conditions; skip if the Brahmaputra is running high."
+              },
+              {
+                "name": "Brahmaputra sunset cruise from Uzan Bazar/Jahajghat",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "₹699–₹1,899/person",
+                "tip": "2026 public fares vary by deck and dinner package; book ahead in peak winter and verify departure jetty."
+              },
+              {
+                "name": "Assamese thali dinner",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Ask for veg khar, aloo pitika, xaak and tomato/ou tenga if avoiding fish."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Paltan Bazaar/Beltola budget hotel",
+                "budget": "₹1,800–₹4,000/night"
+              },
+              {
+                "name": "Uzan Bazar or Khanapara mid-range hotel",
+                "budget": "₹5,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Veg Assamese thali with aloo pitika",
+              "Pitha and laal saah",
+              "Khar with rice"
+            ]
+          },
+          {
+            "theme": "Museums, markets and northeast gateway logistics",
+            "pace": "moderate",
+            "note": "Keep the sightseeing within central Guwahati so you can also confirm Kaziranga safari timing, driver details and onward luggage plans.",
+            "activities": [
+              {
+                "name": "Assam State Museum",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Useful primer for Ahom, tribal and textile history before Sivasagar/Majuli."
+              },
+              {
+                "name": "Navagraha Temple or Basistha Ashram",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Fancy Bazaar and Pan Bazaar walk",
+                "duration": "2h",
+                "priority": "optional",
+                "cost": "Free",
+                "tip": "Buy tea, gamocha and snacks here; lanes are busy, so keep valuables secure."
+              },
+              {
+                "name": "Kaziranga safari booking and ID check",
+                "duration": "~30m",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Carry photo ID for every traveller; elephant safari seats are limited and often confirmed only close to the date."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Paltan Bazaar/Beltola budget hotel",
+                "budget": "₹1,800–₹4,000/night"
+              },
+              {
+                "name": "Uzan Bazar or Khanapara mid-range hotel",
+                "budget": "₹5,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Doi chira if you take dairy",
+              "Xaak bhaji with rice",
+              "Til pitha"
+            ]
+          }
+        ]
+      },
+      "Kaziranga National Park": {
+        "name": "Kaziranga National Park",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days covers the Guwahati transfer, two safari windows and a lighter culture/nature buffer; park operations are usually November–April and monsoon closures/floods are normal.",
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks",
+          "UNESCO Sites",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "Wildlife & Safari",
+          "UNESCO Sites",
+          "National Parks"
+        ],
+        "days": [
+          {
+            "theme": "Guwahati to Kohora/Bagori transfer",
+            "pace": "relaxed",
+            "note": "The 4.5–5.5 hour road transfer is the day's main content. Arrive before dark, check into the resort belt and reconfirm next-morning safari zone and pickup.",
+            "activities": [
+              {
+                "name": "Drive Guwahati to Kaziranga via Nagaon",
+                "duration": "4.5–5.5h",
+                "priority": "must-see",
+                "cost": "₹6,000–₹9,000 private cab; verify locally",
+                "tip": "Roadworks, rain and animal-corridor speed controls can slow the drive."
+              },
+              {
+                "name": "Kaziranga Orchid and Biodiversity Park",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "A good non-safari introduction to Assamese dance, crafts and food if you arrive by afternoon."
+              },
+              {
+                "name": "Safari permit, guide and pickup confirmation",
+                "duration": "~30m",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Keep original ID handy; timings and zones can change by season and forest orders."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kohora budget lodge or eco camp",
+                "budget": "₹1,500–₹3,000/night"
+              },
+              {
+                "name": "Kaziranga mid-range wildlife resort",
+                "budget": "₹3,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Resort veg thali",
+              "Khar with rice",
+              "Aloo pitika"
+            ]
+          },
+          {
+            "theme": "Rhino safari in Central/Western ranges",
+            "pace": "packed",
+            "note": "Do one early wildlife window and one afternoon window rather than chasing every range. Morning light and cooler hours are best for rhino, elephant, buffalo and bird sightings.",
+            "activities": [
+              {
+                "name": "Jeep safari in Central or Western range",
+                "duration": "2.5–3h",
+                "priority": "must-see",
+                "cost": "₹4,000–₹5,500/jeep for Indians; ₹7,500–₹8,500/jeep for foreigners",
+                "tip": "2026 rates vary by range; official timings list 7:30–10:00am and 1:30–3:00pm slots."
+              },
+              {
+                "name": "Bagori/Kohora viewpoint and interpretation stop",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "included/varies",
+                "tip": "Ask your guide to prioritise safe distance from rhinos and elephants."
+              },
+              {
+                "name": "Elephant safari if ethically comfortable and seats are available",
+                "duration": "1h",
+                "priority": "optional",
+                "cost": "₹1,800–₹2,000/person for Indians; ₹4,000/person for foreigners",
+                "tip": "Limited early slots; verify welfare practices and current forest-department policy before booking."
+              },
+              {
+                "name": "Afternoon jeep safari in a different range",
+                "duration": "2–2.5h",
+                "priority": "recommended",
+                "cost": "₹4,000–₹5,500/jeep; verify current zone rate",
+                "tip": "Choose Agoratoli for birds/open wetlands if you already did Central/Bagori."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kohora budget lodge or eco camp",
+                "budget": "₹1,500–₹3,000/night"
+              },
+              {
+                "name": "Kaziranga mid-range wildlife resort",
+                "budget": "₹3,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Packed breakfast after safari",
+              "Assamese veg thali",
+              "Pitha with black tea"
+            ]
+          },
+          {
+            "theme": "Eastern range birds, Kakochang or transfer buffer",
+            "pace": "moderate",
+            "note": "Use the day for a second distinct habitat, nearby waterfall/tea landscapes, or as a weather buffer before the long Jorhat/Majuli move.",
+            "activities": [
+              {
+                "name": "Agoratoli/Eastern range birding safari",
+                "duration": "2.5–3h",
+                "priority": "recommended",
+                "cost": "₹5,000–₹5,500/jeep for Indians; verify locally",
+                "tip": "Best for birders and quieter wetland sightings; it is farther from central Kohora hotels."
+              },
+              {
+                "name": "Kakochang Waterfalls or tea-garden viewpoint",
+                "duration": "2–3h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Skip in heavy rain; paths can be slippery."
+              },
+              {
+                "name": "Karbi/Assamese cultural evening at resort",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Prepare early road transfer toward Jorhat/Nimati",
+                "duration": "~30m",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Majuli ferries stop by late afternoon, so do not leave packing/logistics to the morning."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kohora budget lodge or eco camp",
+                "budget": "₹1,500–₹3,000/night"
+              },
+              {
+                "name": "Kaziranga mid-range wildlife resort",
+                "budget": "₹3,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Veg bamboo shoot curry",
+              "Joha rice thali",
+              "Laal saah"
+            ]
+          }
+        ]
+      },
+      "Majuli": {
+        "name": "Majuli",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is enough for the ferry, satras and village/cycling rhythm; add a third for Raas festival or a slower homestay stay.",
+        "experiences": [
+          "Festivals",
+          "Cruises & Boat Trips",
+          "Temples & Religious Sites",
+          "National Parks",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "Festivals",
+          "Cruises & Boat Trips"
+        ],
+        "days": [
+          {
+            "theme": "Nimati ferry, satras and island arrival",
+            "pace": "relaxed",
+            "note": "Kaziranga to Nimati plus ferry makes this a transfer-heavy day. Catch a morning/early-afternoon ferry and keep the island sightseeing close to Kamalabari/Garamur.",
+            "activities": [
+              {
+                "name": "Drive Kaziranga to Nimati Ghat near Jorhat",
+                "duration": "2.5–3.5h",
+                "priority": "must-see",
+                "cost": "₹3,500–₹5,500 private cab; verify locally",
+                "tip": "Start early; ferry timings can shift with Brahmaputra levels."
+              },
+              {
+                "name": "Nimati–Kamalabari Majuli ferry",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "₹15/person one-way; car about ₹800; verify locally",
+                "tip": "Recent public guides list daytime ferries roughly 7:30am–4:00pm; monsoon suspensions are common."
+              },
+              {
+                "name": "Auniati Satra or Dakhinpat Satra",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "Dress modestly and ask before photographing monks, manuscripts or prayer halls."
+              },
+              {
+                "name": "Garamur village and sunset by the wetlands",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Majuli bamboo cottage/homestay",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Comfort island eco-stay",
+                "budget": "₹3,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Homestay veg thali",
+              "Pitha and black tea",
+              "Aloo pitika with mustard oil"
+            ]
+          },
+          {
+            "theme": "Mask-making, Mising villages and cycling",
+            "pace": "moderate",
+            "note": "Distances are flat but spread out; hire cycles/scooters locally and avoid riding after dark on unlit embankment roads.",
+            "activities": [
+              {
+                "name": "Samaguri Satra mask-making workshop",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free / donation; workshop purchases vary",
+                "tip": "Call ahead during festival season because artists may be rehearsing or travelling."
+              },
+              {
+                "name": "Mising village weaving and stilt-house walk",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Use a local guide or homestay host rather than entering homes uninvited."
+              },
+              {
+                "name": "Island cycling loop",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "₹200–₹500/cycle or scooter; verify locally",
+                "tip": "Carry water and sun protection; roads can be broken after floods."
+              },
+              {
+                "name": "Kamalabari Satra music/dance if available",
+                "duration": "1h",
+                "priority": "optional",
+                "cost": "Free / donation"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Majuli bamboo cottage/homestay",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Comfort island eco-stay",
+                "budget": "₹3,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Rice, dal and xaak bhaji",
+              "Veg tenga with tomato/ou",
+              "Til pitha"
+            ]
+          }
+        ]
+      },
+      "Sivasagar / Jorhat": {
+        "name": "Sivasagar / Jorhat",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days lets you return from Majuli, cover the Ahom monuments without rushing, and use Jorhat as the onward rail/air/road base.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Temples & Religious Sites",
+          "Museums",
+          "Food",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "History",
+          "Architecture",
+          "Temples & Religious Sites"
+        ],
+        "days": [
+          {
+            "theme": "Majuli ferry return and Jorhat tea-town pause",
+            "pace": "relaxed",
+            "note": "The ferry and road return can absorb the morning, so keep the day around Jorhat rather than forcing Sivasagar monuments immediately.",
+            "activities": [
+              {
+                "name": "Morning ferry Majuli to Nimati and transfer to Jorhat",
+                "duration": "2–3h including waits",
+                "priority": "must-see",
+                "cost": "₹15/person ferry; taxi/auto varies",
+                "tip": "Do not rely on the last ferry if you have a same-day train or flight."
+              },
+              {
+                "name": "Dhekiakhowa Bornamghar",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Jorhat tea-estate or Tocklai Tea Research area drive-by",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Formal factory access changes by estate; ask your hotel to arrange a verified visit."
+              },
+              {
+                "name": "Jorhat market snack walk",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Jorhat budget hotel",
+                "budget": "₹1,800–₹3,500/night"
+              },
+              {
+                "name": "Jorhat heritage/tea-town stay",
+                "budget": "₹4,500–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Jorhat veg thali",
+              "Laal saah with pitha",
+              "Khar and joha rice"
+            ]
+          },
+          {
+            "theme": "Sivasagar Ahom monuments loop",
+            "pace": "moderate",
+            "note": "Sivasagar's main monuments are clusterable around the tanks and palace sites. Start early from Jorhat or sleep in Sivasagar to avoid midday heat.",
+            "activities": [
+              {
+                "name": "Rang Ghar royal amphitheatre",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "₹20/adult; verify current ASI ticketing locally",
+                "tip": "Recent visitor reports mention QR/online ticketing and free entry for children up to 15; confirm at the gate."
+              },
+              {
+                "name": "Talatal Ghar palace complex",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free / verify locally",
+                "tip": "A local guide helps explain the Ahom military architecture."
+              },
+              {
+                "name": "Sivadol, Vishnudol and Devidol by Sivasagar Tank",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Kareng Ghar / Garhgaon Palace extension",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Add only if you have a private cab; it sits outside the tight Sivasagar tank cluster."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sivasagar/Jorhat budget hotel",
+                "budget": "₹1,800–₹3,500/night"
+              },
+              {
+                "name": "Jorhat heritage/tea-town stay",
+                "budget": "₹4,500–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Assamese veg thali",
+              "Ou tenga chutney",
+              "Pitha and tea"
+            ]
+          }
+        ]
+      },
+      "Manas National Park": {
+        "name": "Manas National Park",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days works as a focused wildlife extension from Guwahati; add a third only for slower birding, rafting conditions or a village stay buffer.",
+        "experiences": [
+          "Wildlife & Safari",
+          "National Parks",
+          "UNESCO Sites",
+          "Cruises & Boat Trips",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "Wildlife & Safari",
+          "UNESCO Sites",
+          "National Parks"
+        ],
+        "days": [
+          {
+            "theme": "Upper Assam to Manas via Guwahati/Bansbari",
+            "pace": "relaxed",
+            "note": "This is a long repositioning leg if coming from Jorhat/Sivasagar; many travellers break in Guwahati. Keep the day to travel, check-in and riverside orientation.",
+            "activities": [
+              {
+                "name": "Train/flight/road reposition toward Guwahati and Bansbari",
+                "duration": "6–9h depending route",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "If driving from Guwahati, Bansbari is usually 4–5 hours; avoid night arrival on rural roads."
+              },
+              {
+                "name": "Manas resort check-in and safari booking confirmation",
+                "duration": "~45m",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Official portal slots can sell out in winter weekends; carry ID for every traveller."
+              },
+              {
+                "name": "Manas River sunset walk near Bansbari",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Stay outside restricted forest areas without a guide."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bansbari budget lodge/homestay",
+                "budget": "₹2,000–₹4,000/night"
+              },
+              {
+                "name": "Manas jungle resort",
+                "budget": "₹5,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Resort veg thali",
+              "Rice with xaak bhaji",
+              "Simple dal and aloo pitika"
+            ]
+          },
+          {
+            "theme": "Manas jeep safari and river-edge wildlife",
+            "pace": "moderate",
+            "note": "Plan one jeep safari plus a low-key afternoon rather than overscheduling. Manas is quieter than Kaziranga but distances inside and around the reserve are meaningful.",
+            "activities": [
+              {
+                "name": "Manas jeep safari in Bansbari or Bhuyanpara zone",
+                "duration": "3h",
+                "priority": "must-see",
+                "cost": "₹5,200–₹5,900/jeep for Indians; ₹8,500–₹9,000/jeep for foreigners",
+                "tip": "2026 official slots are typically 6:30–9:30am, 10:00am–1:00pm and 2:00–5:00pm; book through the official portal where possible."
+              },
+              {
+                "name": "Elephant safari if available and ethically acceptable",
+                "duration": "1h",
+                "priority": "optional",
+                "cost": "₹1,850/person for Indians; ₹3,500/person for foreigners",
+                "tip": "Elephant safaris are limited and may be closed on Tuesdays; verify current rules."
+              },
+              {
+                "name": "Bodo village/craft interaction outside the park",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Use a local guide and pay directly for crafts or performances."
+              },
+              {
+                "name": "Manas River rafting/boat option if running",
+                "duration": "1.5–2h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Seasonal water levels decide operations; never attempt during flood advisories."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bansbari budget lodge/homestay",
+                "budget": "₹2,000–₹4,000/night"
+              },
+              {
+                "name": "Manas jungle resort",
+                "budget": "₹5,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Packed safari breakfast",
+              "Bodo-style veg rice meal",
+              "Tea and pitha"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Guwahati",
+        "to": "Kaziranga National Park",
+        "method": "Private cab or tourist coach via Nagaon to Kohora/Bagori",
+        "cost": "₹6,000–₹9,000 private cab; bus/shared options vary",
+        "distanceKm": 195,
+        "durationHrs": 5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Kaziranga National Park",
+        "to": "Majuli",
+        "method": "Road to Nimati Ghat near Jorhat, then government/private ferry to Kamalabari",
+        "cost": "Cab ₹3,500–₹5,500 + ferry ₹15/person; vehicle ferry about ₹800",
+        "distanceKm": 125,
+        "durationHrs": 5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Majuli",
+        "to": "Sivasagar / Jorhat",
+        "method": "Ferry back to Nimati, then road via Jorhat toward Sivasagar",
+        "cost": "Ferry ₹15/person + taxi/auto varies; Jorhat–Sivasagar cab ₹2,500–₹4,000",
+        "distanceKm": 75,
+        "durationHrs": 4,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Sivasagar / Jorhat",
+        "to": "Manas National Park",
+        "method": "Long rail/flight/road reposition via Guwahati, then road to Bansbari",
+        "cost": "varies",
+        "distanceKm": 520,
+        "durationHrs": 10.5,
+        "sameDayFeasible": false
+      }
+    ],
+    "extras": [
+      "Assam does not require an Inner Line Permit for normal tourism, but neighbouring Arunachal Pradesh, Nagaland and Mizoram do; do not extrapolate Assam rules to onward Northeast travel.",
+      "Avoid June–September for leisure trips: Brahmaputra floods disrupt Majuli ferries, Kaziranga/Manas safaris close or restrict movement, and road/rail delays are common.",
+      "Kaziranga and Manas safari prices, zones and timings can change by forest order; use official portals/range offices and verify locally before quoting final costs to travellers.",
+      "Majuli ferry timings and vehicle capacity change with river levels. Do not plan last-ferry arrivals, and keep a Jorhat buffer if you have a same-day train or flight.",
+      "Foreign tourists do not need ILP for Assam but should follow current visa/FRRO rules and hotel registration requirements; carry passport and visa copies."
+    ]
+  }
+}
