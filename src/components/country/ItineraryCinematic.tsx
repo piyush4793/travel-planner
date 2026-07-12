@@ -7,6 +7,8 @@ import CinematicControls from "./cinematic/CinematicControls";
 import CinematicDayPanel from "./cinematic/CinematicDayPanel";
 import CinematicIntro from "./cinematic/CinematicIntro";
 import CinematicDone from "./cinematic/CinematicDone";
+import CinematicPhotoCard from "./cinematic/CinematicPhotoCard";
+import CinematicHeader from "./cinematic/CinematicHeader";
 import { planCostBasisIcon } from "../../core/utils/tripPlans";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { getWikiImage } from "../../utils/wikiImages";
@@ -843,84 +845,16 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
 
         {/* ── Photo card — appears during city phase ───────────────────────── */}
         {phase === "city" && (
-          <div
-            className="absolute rounded-2xl overflow-hidden shadow-2xl"
-            style={{
-              top: "5%", left: "4%", right: "4%", bottom: "38%",
-              opacity: showCard ? 1 : 0,
-              transition: "opacity 0.9s ease",
-              border: "1px solid rgba(255,255,255,0.12)",
-            }}
-          >
-            {/* Slideshow layers — fade between images */}
-            {cityPhotos.map((url, i) => (
-              <div
-                key={url}
-                className="absolute inset-0"
-                style={{
-                  opacity: i === slideIdx % Math.max(1, cityPhotos.length) ? 1 : 0,
-                  transition: "opacity 1.2s ease",
-                }}
-              >
-                <img
-                  src={url}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover"
-                  onError={() => setBrokenImgs((s) => new Set(s).add(url))}
-                />
-              </div>
-            ))}
-
-            {/* Fallback gradient when no photos */}
-            {cityPhotos.length === 0 && (
-              <div
-                className="absolute inset-0"
-                style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0f172a 100%)" }}
-              />
-            )}
-
-            {/* Bottom gradient + caption */}
-            <div className="absolute bottom-0 left-0 right-0 px-5 pt-16 pb-4 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none">
-              <p className="text-white font-black text-2xl leading-tight drop-shadow">
-                {activeStop?.name}
-              </p>
-              {activeDay?.theme && (
-                <p className="text-white/70 text-sm mt-0.5 font-medium drop-shadow">
-                  {activeDay.theme}
-                </p>
-              )}
-            </div>
-
-            {/* Day progress indicator (top-left) */}
-            {activeStop && activeStop.days.length > 1 && (
-              <div className="absolute top-3 left-4 flex gap-1.5 pointer-events-none">
-                {activeStop.days.map((_, di) => (
-                  <div
-                    key={di}
-                    className="rounded-full transition-[width,background] duration-500"
-                    style={{
-                      width: di === activeDayIdx ? "20px" : "6px",
-                      height: "6px",
-                      background: di === activeDayIdx ? "white" : di < activeDayIdx ? "#60a5fa" : "rgba(255,255,255,0.3)",
-                    }}
-                  />
-                ))}
-              </div>
-            )}
-
-            {/* Slide dots (top-right) */}
-            {cityPhotos.length > 1 && (
-              <div className="absolute top-3.5 right-4 flex gap-1 pointer-events-none">
-                {cityPhotos.map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-1.5 h-1.5 rounded-full transition-colors"
-                    style={{ background: i === slideIdx % cityPhotos.length ? "white" : "rgba(255,255,255,0.35)" }}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
+          <CinematicPhotoCard
+            show={showCard}
+            photos={cityPhotos}
+            slideIdx={slideIdx}
+            stopName={activeStop?.name ?? ""}
+            theme={activeDay?.theme}
+            dayCount={activeStop?.days.length ?? 0}
+            activeDayIdx={activeDayIdx}
+            onBrokenImage={(url) => setBrokenImgs((s) => new Set(s).add(url))}
+          />
         )}
 
         {/* Status pill (transit / intro phases) */}
@@ -974,55 +908,16 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
         )}
 
         {/* Header */}
-        <div className={`${isMobile ? "px-4 pt-0 pb-2" : "px-5 pt-5 pb-4"} border-b border-white/10 shrink-0`}>
-          <div className="flex items-center justify-between gap-2 mb-2">
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2">
-                <h2 className={`${isMobile ? "text-base" : "text-xl"} font-black truncate`}>{title}</h2>
-                <span className="text-[10px] text-gray-400 shrink-0">{plan.duration}</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-1.5 shrink-0">
-              {/* Playback controls live once in the persistent footer bar (all screens); the header keeps only Close so there's no duplicate control cluster. */}
-              <button
-                onClick={onClose}
-                className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm focus-ring"
-                aria-label="Close"
-              >✕</button>
-            </div>
-          </div>
-
-          {/* Route progress trail */}
-          <div className="flex items-center gap-1 flex-wrap">
-            {origin && (
-              <>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mr-1">{homeCity}</span>
-                <span className="text-[10px] text-gray-600">✈</span>
-              </>
-            )}
-            {cityStops.map((stop, i) => (
-              <span key={stop.name} className="flex items-center gap-1">
-                <span
-                  title={stop.name}
-                  className={`inline-block rounded-full transition-[width,height,background-color,box-shadow] duration-500 ${
-                    i < activeCityIdx   ? "w-2 h-2 bg-blue-400" :
-                    i === activeCityIdx ? "w-3 h-3 bg-white ring-2 ring-blue-400 ring-offset-1 ring-offset-gray-950" :
-                                         "w-2 h-2 bg-white/15"
-                  }`}
-                />
-                {i < cityStops.length - 1 && stop.transportToNext && (
-                  <span className="text-[10px] opacity-30">{TRANSPORT_EMOJI[stop.transportToNext.type]}</span>
-                )}
-              </span>
-            ))}
-            {origin && (
-              <>
-                <span className="text-[10px] text-gray-600 ml-0.5">✈</span>
-                <span className="text-[10px] font-bold text-gray-500 ml-0.5">{homeCity}</span>
-              </>
-            )}
-          </div>
-        </div>
+        <CinematicHeader
+          title={title}
+          duration={plan.duration}
+          isMobile={isMobile}
+          homeCity={homeCity}
+          showOrigin={!!origin}
+          stops={cityStops}
+          activeCityIdx={activeCityIdx}
+          onClose={onClose}
+        />
 
         {/* Body */}
         <div className="flex-1 overflow-y-auto px-5 py-4">
