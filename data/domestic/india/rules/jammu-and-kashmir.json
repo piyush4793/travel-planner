@@ -1,0 +1,281 @@
+{
+  "name": "Jammu and Kashmir",
+  "seed": false,
+  "lat": 33.7782,
+  "lng": 76.5762,
+  "region": "North India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": ["April", "May", "June", "September", "October"],
+  "worstMonths": ["January", "February", "July", "August"],
+  "budget": {
+    "solo": "₹35K–₹60K",
+    "couple": "₹60K–₹1.1L",
+    "family4": "₹1.1L–₹2L"
+  },
+  "experiences": [
+    "Mountains",
+    "Lakes",
+    "Skiing",
+    "Hiking",
+    "Temples & Religious Sites",
+    "Architecture",
+    "Cruises & Boat Trips",
+    "Road Trips",
+    "Luxury & Resorts",
+    "Food"
+  ],
+  "avoid": [
+    "January",
+    "February",
+    "July",
+    "August",
+    "Check current travel advisories before booking. Mainstream tourist circuits such as Srinagar, Gulmarg, Pahalgam and Sonamarg are operating with enhanced security, but avoid Line of Control areas and verify local conditions for Baisaran and remote treks. Winter snow and monsoon landslides can close or delay mountain roads."
+  ],
+  "combo": ["Ladakh", "Himachal Pradesh", "Punjab", "Delhi", "Jammu"],
+  "landmark": "Dal Lake, Srinagar",
+  "travelStyle": ["explorer"],
+  "stopoverNote": "Srinagar (SXR) is the easiest gateway for the Kashmir Valley. Add Katra/Vaishno Devi only as a separate Jammu-side extension via flight or a full-day NH44 transfer, not as a casual mid-trip detour.",
+  "diet": {
+    "vegetarian": "Kashmiri Wazwan is meat-heavy, especially lamb and mutton courses, but vegetarians can eat well with dum aloo, nadru yakhni or dum nadru, chaman kaliya, haaq saag, rajma-gogji, tamatar chaman, Kashmiri pulao and nadru monje. Ask clearly for a shakahari or vegetarian thali rather than a standard Wazwan platter.",
+    "vegan": "Vegan food needs care because yogurt, milk, ghee and paneer are common. Haaq saag, rajma, rice, fruit, nuts and some breads can work if cooked in oil. Kahwa is naturally milk-free when served as green tea with saffron, spices and nuts; ask for no milk or cream. Avoid noon chai/pink tea because it uses milk.",
+    "phrases": [
+      "Shakahari khana = vegetarian food",
+      "Bina gosht = without meat",
+      "Bina ghee, doodh, dahi = without ghee, milk or curd",
+      "Sirf tel mein banao = cook only in oil",
+      "Kahwa bina doodh = kahwa without milk"
+    ]
+  },
+  "links": [
+    { "label": "J&K Tourism (official)", "url": "https://jktourism.jk.gov.in" },
+    { "label": "Gulmarg Gondola official booking", "url": "https://www.jammukashmircablecar.com" },
+    { "label": "Vaishno Devi Shrine Board", "url": "https://www.maavaishnodevi.org" }
+  ],
+  "cities": [
+    {
+      "name": "Srinagar",
+      "lat": 34.0837,
+      "lng": 74.7973,
+      "notes": "The Kashmir Valley hub — Dal Lake houseboats, shikara rides, Mughal gardens, Sufi shrines, old-city crafts and chinar-lined viewpoints.",
+      "bestMonths": ["April", "May", "June", "September", "October"],
+      "worstMonths": ["December", "January", "February"],
+      "experiences": ["Lakes", "Architecture", "History", "Temples & Religious Sites", "Markets & Shopping", "Cruises & Boat Trips", "Food"]
+    },
+    {
+      "name": "Gulmarg",
+      "lat": 34.0484,
+      "lng": 74.3805,
+      "notes": "High-altitude meadow and ski base with the Gulmarg Gondola to Kongdoori and Apharwat Peak, plus alpine walks in summer.",
+      "bestMonths": ["May", "June", "July", "August", "September", "December", "January", "February"],
+      "worstMonths": ["March", "April"],
+      "experiences": ["Skiing", "Mountains", "Hiking", "Adventure Sports", "Luxury & Resorts"]
+    },
+    {
+      "name": "Pahalgam",
+      "lat": 34.0161,
+      "lng": 75.3149,
+      "notes": "The Valley of Shepherds — Lidder River walks, Betaab Valley, Aru Valley, Chandanwari and the Amarnath Yatra route.",
+      "bestMonths": ["April", "May", "June", "September", "October"],
+      "worstMonths": ["January", "February"],
+      "experiences": ["Mountains", "Hiking", "National Parks", "Temples & Religious Sites", "Lakes", "Road Trips"]
+    },
+    {
+      "name": "Sonamarg",
+      "lat": 34.301,
+      "lng": 75.296,
+      "notes": "The Meadow of Gold on the Srinagar–Leh highway — a day-trip valley for Thajiwas Glacier, Sindh River views and high mountain scenery.",
+      "bestMonths": ["May", "June", "July", "August", "September"],
+      "worstMonths": ["November", "December", "January", "February", "March", "April"],
+      "experiences": ["Mountains", "Hiking", "Glaciers", "Road Trips", "Lakes"]
+    }
+  ],
+  "itinerary": {
+    "sim": "Indian prepaid SIMs from Jio or Airtel work in Srinagar and the main towns; coverage gets patchy in valleys, on high passes and during bad weather. Carry offline maps and hotel/cab numbers because mountain-road delays are common.",
+    "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "Ola", "Uber", "Zomato"],
+    "cityOrder": ["Srinagar", "Gulmarg", "Pahalgam", "Sonamarg"],
+    "cities": {
+      "Srinagar": {
+        "name": "Srinagar",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 5,
+        "note": "Three days gives a calm arrival on Dal Lake, a full Mughal-gardens and old-city day, and a craft/market morning before the short drive to Gulmarg.",
+        "experiences": ["Lakes", "Architecture", "History", "Temples & Religious Sites", "Markets & Shopping", "Cruises & Boat Trips", "Food"],
+        "signatureExperiences": ["Lakes", "Cruises & Boat Trips"],
+        "days": [
+          {
+            "theme": "Arrival, Dal Lake & houseboat evening",
+            "pace": "relaxed",
+            "note": "Treat this as a soft landing day — Srinagar airport is close to Dal Lake, and the lake is best enjoyed slowly around sunset.",
+            "activities": [
+              { "name": "Check into a Dal Lake or Nagin Lake houseboat", "duration": "1–2h", "priority": "must-see", "cost": "Standard ₹2,000–₹3,500/night; deluxe ₹4,000–₹8,000/night; luxury ₹8,000–₹15,000+/night", "tip": "Nagin Lake is quieter; inspect the room and heating before paying in full." },
+              { "name": "Sunset shikara ride on Dal Lake", "duration": "1.5–2h", "priority": "must-see", "cost": "₹770–₹790/boat for 1h government rate; sunset rides often ₹1,200–₹1,800/boat", "tip": "Agree the route and price before boarding; the government-rate board is posted at main ghats." },
+              { "name": "Hazratbal Shrine exterior and lakefront", "duration": "45m", "priority": "recommended", "cost": "Free", "tip": "Dress modestly; Fridays are busiest." },
+              { "name": "Houseboat or Dal-side Kashmiri dinner", "duration": "1.5h", "priority": "recommended", "cost": "₹400–₹800/person", "tip": "Vegetarians should ask for dum aloo, nadru yakhni, haaq saag or a veg thali rather than standard Wazwan." }
+            ],
+            "hotels": [
+              { "name": "Standard Dal Lake houseboat", "budget": "₹2,000–₹3,500/night" },
+              { "name": "Deluxe Dal or Nagin Lake houseboat", "budget": "₹4,000–₹8,000/night" }
+            ],
+            "meals": ["Houseboat dinner", "Ahdoos-style Kashmiri meal", "Kahwa with saffron and almonds"]
+          },
+          {
+            "theme": "Mughal gardens, hill temple & old city",
+            "pace": "moderate",
+            "note": "The gardens sit along the eastern side of Dal Lake and combine neatly with Shankaracharya Temple and a late-afternoon old-city craft walk.",
+            "activities": [
+              { "name": "Floating vegetable market by early shikara", "duration": "45–60m", "priority": "must-see", "cost": "₹400–₹600/boat bargained for a short early ride", "tip": "Start around 6:30–7:00am; the market winds down by 8:30am." },
+              { "name": "Nishat Bagh, Shalimar Bagh and Chashme Shahi", "duration": "3–3.5h", "priority": "must-see", "cost": "₹24/adult per garden (Indian); ₹100/adult per garden (foreign)", "tip": "Visit 9–11am before bus groups; a cab circuit is usually ₹600–₹800." },
+              { "name": "Shankaracharya Temple viewpoint", "duration": "1.5h", "priority": "must-see", "cost": "Free; taxi to base ~₹200–₹300", "tip": "There are 243 steps from the parking area and photography is restricted inside." },
+              { "name": "Old City, Lal Chowk and Khanqah-e-Moula", "duration": "2h", "priority": "recommended", "cost": "Free; shopping varies", "tip": "Look for papier-mâché, copperware and pashmina only from trusted or government-backed sellers." }
+            ],
+            "hotels": [
+              { "name": "Dal Lake guesthouse", "budget": "₹1,200–₹2,500/night" },
+              { "name": "Mid-range Srinagar hotel", "budget": "₹3,000–₹7,000/night" }
+            ],
+            "meals": ["Dum aloo and haaq saag", "Nadru monje street snack", "Kahwa without milk for vegan travellers"]
+          },
+          {
+            "theme": "Tulips or Pari Mahal, crafts & drive to Gulmarg",
+            "pace": "moderate",
+            "note": "Keep the morning light and leave for Gulmarg after lunch so the mountain road is completed before dark.",
+            "activities": [
+              { "name": "Indira Gandhi Memorial Tulip Garden in April or Pari Mahal otherwise", "duration": "1–1.5h", "priority": "optional", "cost": "Tulip Garden about ₹50 (Indian adult); Pari Mahal about ₹24/person", "tip": "The tulip garden is seasonal from mid-March to late April; do not plan around it outside bloom weeks." },
+              { "name": "Polo View Market and J&K Government Arts Emporium", "duration": "1.5h", "priority": "recommended", "cost": "Shopping varies; saffron often ₹200–₹500/gram", "tip": "Government emporiums are safer for certified pashmina than commission-heavy private stops." },
+              { "name": "Drive Srinagar to Gulmarg via Tangmarg", "duration": "1.5–2h", "priority": "must-see", "cost": "Private cab ₹2,000–₹2,500 one-way; shared taxi ₹200–₹300/person", "tip": "Fill fuel in Srinagar; there is no fuel station after Tangmarg." }
+            ],
+            "hotels": [
+              { "name": "Budget Gulmarg guesthouse", "budget": "₹1,500–₹3,000/night" },
+              { "name": "Hotel Highlands Park or similar", "budget": "₹4,000–₹10,000/night" }
+            ],
+            "meals": ["Srinagar bakery breakfast", "Roadside lunch near Tangmarg", "Gulmarg hotel dinner"]
+          }
+        ]
+      },
+      "Gulmarg": {
+        "name": "Gulmarg",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days reduces gondola weather risk and lets you pair Apharwat or Kongdoori with a slower meadow, ski or Khilanmarg day.",
+        "experiences": ["Skiing", "Mountains", "Hiking", "Adventure Sports", "Luxury & Resorts"],
+        "signatureExperiences": ["Skiing", "Mountains"],
+        "days": [
+          {
+            "theme": "Gulmarg meadow and Gondola Phase 1",
+            "pace": "moderate",
+            "note": "Start early and keep plans flexible because gondola queues and weather closures can reshape the day.",
+            "activities": [
+              { "name": "Gulmarg Gondola Phase 1 to Kongdoori", "duration": "2–3h", "priority": "must-see", "cost": "₹800–₹900/person round trip", "tip": "Book on the official JKCCC website 1–2 days ahead; reach the base 30 minutes before the slot." },
+              { "name": "Kongdoori meadow viewpoint and cafeteria stop", "duration": "1h", "priority": "recommended", "cost": "Snacks extra", "tip": "Carry a warm layer even in summer; the temperature drops quickly above Gulmarg." },
+              { "name": "Gulmarg Golf Course and meadow walk", "duration": "1.5h", "priority": "optional", "cost": "Meadow walk free; golf green fee varies", "tip": "Golden hour is the prettiest time for photos around the meadow." }
+            ],
+            "hotels": [
+              { "name": "Hotel Affarwat or Heevan-style mid-range stay", "budget": "₹4,000–₹10,000/night" },
+              { "name": "The Khyber Himalayan Resort & Spa", "budget": "₹15,000–₹50,000+/night" }
+            ],
+            "meals": ["Hotel breakfast before gondola", "Kongdoori cafeteria snacks", "Kashmiri dinner at the hotel"]
+          },
+          {
+            "theme": "Apharwat Peak, skiing or Khilanmarg",
+            "pace": "moderate",
+            "note": "Choose the winter ski version or the summer walking version; Phase 2 is weather-dependent and should be attempted early.",
+            "activities": [
+              { "name": "Gulmarg Gondola Phase 2 to Apharwat Peak", "duration": "1.5–2h", "priority": "must-see", "cost": "₹1,000–₹1,200/person round trip; both phases about ₹1,800–₹2,100/person", "tip": "Phase 2 can close for wind, cloud or avalanche risk. Go first thing and buy/confirm tickets only when conditions look viable." },
+              { "name": "Winter ski lesson or equipment rental", "duration": "2–3h", "priority": "recommended", "cost": "Ski rental ₹800–₹1,500/day; lessons ₹1,000–₹2,000/hr", "tip": "Best snow is usually December–February, with February a strong balance of powder and steadier weather." },
+              { "name": "Khilanmarg summer walk from Kongdoori", "duration": "3–4h round trip", "priority": "recommended", "cost": "Free; pony option ₹600–₹800", "tip": "In non-ski months, walk rather than pony if fit; carry water and a windproof layer." }
+            ],
+            "hotels": [
+              { "name": "Basic guesthouse near gondola", "budget": "₹1,500–₹3,000/night" },
+              { "name": "The Khyber Himalayan Resort & Spa", "budget": "₹15,000–₹50,000+/night" }
+            ],
+            "meals": ["Packed snacks for Apharwat", "Gulmarg hotel lunch", "Kahwa after the meadow walk"]
+          }
+        ]
+      },
+      "Pahalgam": {
+        "name": "Pahalgam",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers Betaab and Aru valleys, the Lidder River and a conditional Chandanwari or Baisaran outing while respecting local taxi rules.",
+        "experiences": ["Mountains", "Hiking", "National Parks", "Temples & Religious Sites", "Lakes", "Road Trips"],
+        "signatureExperiences": ["Mountains", "Hiking"],
+        "days": [
+          {
+            "theme": "Betaab Valley, Aru Valley and Lidder River",
+            "pace": "moderate",
+            "note": "Outside vehicles cannot enter the inner valley sightseeing routes, so use the Pahalgam union taxi stand and budget for the local transfer.",
+            "activities": [
+              { "name": "Betaab Valley", "duration": "2–2.5h", "priority": "must-see", "cost": "Entry ₹100/adult, ₹50/child; Pahalgam union taxi sedan round trip about ₹1,250", "tip": "Go early for quieter meadows and clearer mountain light." },
+              { "name": "Aru Valley", "duration": "2–2.5h", "priority": "must-see", "cost": "Entry usually free or nominal ₹25–₹50; union taxi sedan round trip about ₹1,450", "tip": "Aru is quieter than Betaab and is the start point for several longer treks." },
+              { "name": "Lidder River walk in Pahalgam town", "duration": "1–1.5h", "priority": "recommended", "cost": "Free", "tip": "Walk near dawn or dusk for a calmer riverside experience." },
+              { "name": "Pahalgam bazaar dinner", "duration": "1.5h", "priority": "recommended", "cost": "₹300–₹600/person", "tip": "Vegetarians can find rajma-chawal, dum aloo and simple dhaba meals; non-vegetarians often try trout." }
+            ],
+            "hotels": [
+              { "name": "Pahalgam bazaar guesthouse", "budget": "₹1,000–₹2,500/night" },
+              { "name": "Hotel Heevan or Pine Palace style stay", "budget": "₹3,000–₹7,000/night" }
+            ],
+            "meals": ["Rajma-chawal", "Dum aloo", "Fresh trout restaurant if non-vegetarian"]
+          },
+          {
+            "theme": "Chandanwari and conditional Baisaran",
+            "pace": "moderate",
+            "note": "Chandanwari is the dependable mountain outing. Baisaran is beautiful but should be treated as conditional: check the current security and access situation locally before going.",
+            "activities": [
+              { "name": "Chandanwari snow point and Amarnath Yatra base", "duration": "3–4h total", "priority": "must-see", "cost": "Union taxi round trip about ₹1,800–₹2,000; entry free", "tip": "Start by 8am. Snow patches and sled rides vary by season." },
+              { "name": "Baisaran Valley trek or pony ride", "duration": "3h", "priority": "optional", "cost": "Pony round trip ₹800–₹1,200; walking is free", "tip": "Confirm access and local safety guidance first; the area reopened with enhanced security after the 2025 incident but conditions can change." },
+              { "name": "Return toward Srinagar with Avantipur ruins stop", "duration": "2.5–3h drive plus 30m stop", "priority": "recommended", "cost": "Private cab Pahalgam→Srinagar ₹2,000–₹2,500; shared taxi ₹250–₹350/person", "tip": "Leave by mid-afternoon to avoid entering Srinagar in late traffic." }
+            ],
+            "hotels": [
+              { "name": "Swiss Cottage Resort style mid-range stay", "budget": "₹3,000–₹7,000/night" },
+              { "name": "The Pahalgam Hotel or Mountain Retreat", "budget": "₹12,000–₹25,000/night" }
+            ],
+            "meals": ["Pahalgam dhaba lunch", "Kahwa and bakery snacks", "Simple rice-and-dal dinner"]
+          }
+        ]
+      },
+      "Sonamarg": {
+        "name": "Sonamarg",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Best as a long day trip from Srinagar unless continuing to Ladakh; accommodation is limited and the road is highly seasonal beyond town.",
+        "experiences": ["Mountains", "Hiking", "Glaciers", "Road Trips", "Lakes"],
+        "signatureExperiences": ["Glaciers", "Mountains"],
+        "days": [
+          {
+            "theme": "Thajiwas Glacier and Meadow of Gold",
+            "pace": "packed",
+            "note": "Start early from Srinagar, use the daylight well and return before dark because the Sindh Valley road is scenic but slow in mountain traffic.",
+            "activities": [
+              { "name": "Drive Srinagar to Sonamarg along the Sindh River", "duration": "2.5–3h one way", "priority": "must-see", "cost": "Full-day private cab round trip ₹3,500–₹4,500", "tip": "Leave around 7:30am and carry snacks; direct public transport is limited for tourists." },
+              { "name": "Thajiwas Glacier trek or pony ride", "duration": "3–4h", "priority": "must-see", "cost": "Pony round trip ₹800–₹1,600/person; walking is free", "tip": "Pony rates vary by season. Walk if fit and conditions are clear; wear grippy shoes." },
+              { "name": "Sonamarg main meadow and Sindh River picnic", "duration": "1.5h", "priority": "recommended", "cost": "Free", "tip": "This is the calm counterpoint to the glacier crowds; keep buffer time for the drive back." }
+            ],
+            "hotels": [
+              { "name": "Srinagar base hotel or houseboat", "budget": "₹3,000–₹7,000/night" },
+              { "name": "Basic Sonamarg camp or resort if staying over", "budget": "₹2,000–₹5,000/night, varies" }
+            ],
+            "meals": ["Packed picnic lunch", "Tea stall near Sonamarg meadow", "Srinagar dinner after return"]
+          }
+        ]
+      }
+    },
+    "connections": [
+      { "from": "Srinagar", "to": "Gulmarg", "method": "Private cab or shared taxi via Tangmarg", "cost": "Private cab ₹2,000–₹2,500 one-way; shared taxi ₹200–₹300/person", "distanceKm": 50, "durationHrs": 2, "sameDayFeasible": true },
+      { "from": "Gulmarg", "to": "Pahalgam", "method": "Private cab via Tangmarg, Srinagar bypass and Anantnag", "cost": "₹4,000–₹5,000 one-way; returning via Srinagar and changing cabs is similar", "distanceKm": 140, "durationHrs": 5, "sameDayFeasible": false },
+      { "from": "Pahalgam", "to": "Sonamarg", "method": "Private cab via Srinagar, best treated as a transfer with overnight in Srinagar if not starting early", "cost": "₹5,500–₹7,000 depending on routing and wait time", "distanceKm": 170, "durationHrs": 6, "sameDayFeasible": false },
+      { "from": "Sonamarg", "to": "Srinagar", "method": "Private cab return along NH1/Sindh River valley", "cost": "Included in full-day Sonamarg cab or ₹3,500–₹4,500 round trip", "distanceKm": 83, "durationHrs": 3, "sameDayFeasible": true }
+    ],
+    "extras": [
+      "Gulmarg Gondola fares verified for 2026 sources: Phase 1 round trip ₹800–₹900/person; Phase 2 round trip ₹1,000–₹1,200/person; both phases about ₹1,800–₹2,100/person. Reconfirm on the official JKCCC website before booking because weather closures and fare revisions happen.",
+      "Mountain roads are slow. Gulmarg→Pahalgam and Pahalgam→Sonamarg are technically possible with an early start but not recommended as casual same-day sightseeing legs; use Srinagar as a buffer base when possible.",
+      "For Katra/Vaishno Devi, plan a separate Jammu-side extension: Srinagar→Katra by NH44 is about 270 km and 7–9 hours, or fly Srinagar→Jammu and taxi 43 km to Katra. Official helicopter fare Katra→Sanjichhat is ₹2,320 one-way or ₹4,640 round trip for Oct 2025–Oct 2026.",
+      "No Inner Line Permit is needed for mainstream Kashmir Valley tourism, but remote treks, border-adjacent areas and routes near the Line of Control may require local clearance or may be restricted. Check current advisories and travel insurance exclusions.",
+      "July–August can bring landslides and long NH44 delays, especially near the Jammu/Ramban sections. January–February are excellent for Gulmarg skiing but can disrupt roads to Sonamarg, Pahalgam side valleys and high-altitude viewpoints.",
+      "Pahalgam inner valleys require local union taxis; outside private vehicles are not allowed into Betaab Valley, Aru Valley and Chandanwari sightseeing routes. Budget ₹1,800–₹2,500 for a combined local circuit.",
+      "Wazwan is meat-heavy. Vegetarians should ask for shakahari Kashmiri dishes; vegans should avoid ghee, curd, milk and paneer, and can usually drink kahwa if ordered without milk."
+    ]
+  }
+}

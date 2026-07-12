@@ -1,0 +1,636 @@
+{
+  "name": "Haryana",
+  "seed": false,
+  "lat": 29.0588,
+  "lng": 76.0856,
+  "region": "North India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June"
+  ],
+  "budget": {
+    "solo": "₹7K–₹14K",
+    "couple": "₹14K–₹28K",
+    "family4": "₹28K–₹50K"
+  },
+  "experiences": [
+    "History",
+    "Temples & Religious Sites",
+    "Festivals",
+    "Museums",
+    "Ancient Ruins",
+    "Wildlife & Safari",
+    "Road Trips",
+    "Markets & Shopping",
+    "Architecture",
+    "Lakes",
+    "Hiking",
+    "Adventure Sports",
+    "Mountains"
+  ],
+  "avoid": [
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Delhi",
+    "Punjab",
+    "Himachal Pradesh",
+    "Rajasthan"
+  ],
+  "landmark": "Brahma Sarovar, Kurukshetra",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Haryana sits directly on NH-44 between Delhi and Chandigarh. Panipat is only 90 km from Delhi and Kurukshetra is 160 km, so the heritage corridor can be driven as Delhi NCR day-trips; overnighting in Kurukshetra and Pinjore/Morni Hills makes the route more immersive. Chandigarh is the natural exit for Himachal Pradesh or Punjab.",
+  "diet": {
+    "vegetarian": "Excellent for vegetarians. Haryanvi food is built around bajra roti, missi roti, saag, dal, kachri chutney and filling vegetarian thalis; even small-town dhabas usually serve veg meals for ₹80–₹150.",
+    "vegan": "Dairy is central to Haryanvi food: lassi, ghee, dahi, kadhi, kheer, malpua and churma are common. Vegans must clearly ask for 'bina ghee, bina dahi, bina doodh' at every meal; Gurugram has more vegan-friendly cafés, but Kurukshetra, Panipat and Morni Hills are limited. Safer choices are plain sabzi, dal, kachri chutney and tandoori roti without ghee.",
+    "phrases": [
+      "Bina ghee = without clarified butter",
+      "Bina dahi/doodh = without curd or milk",
+      "Sirf tel mein banao = cook only in oil"
+    ]
+  },
+  "links": [
+    {
+      "label": "Haryana Tourism Official Portal",
+      "url": "https://haryanatourism.gov.in/"
+    },
+    {
+      "label": "Kurukshetra Development Board",
+      "url": "https://kdb.kurukshetra.gov.in/"
+    },
+    {
+      "label": "Surajkund Mela Official Info",
+      "url": "https://surajkundmela.in/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Panipat",
+      "lat": 29.3876,
+      "lng": 76.9714,
+      "notes": "Three decisive battles shaped Indian history on these plains; best as a compact half-day heritage stop between Delhi and Kurukshetra.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "experiences": [
+        "History",
+        "Ancient Ruins",
+        "Temples & Religious Sites",
+        "Museums",
+        "Markets & Shopping"
+      ]
+    },
+    {
+      "name": "Kurukshetra",
+      "lat": 29.9696,
+      "lng": 76.8783,
+      "notes": "Mahabharata battlefield and Bhagavad Gita pilgrimage city, anchored by Brahma Sarovar and Jyotisar.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June"
+      ],
+      "experiences": [
+        "History",
+        "Temples & Religious Sites",
+        "Festivals",
+        "Museums",
+        "Ancient Ruins"
+      ]
+    },
+    {
+      "name": "Pinjore",
+      "lat": 30.7988,
+      "lng": 76.9217,
+      "notes": "A half-day heritage stop for Yadavindra Mughal Gardens and the open-air Bhima Devi temple sculpture museum near Panchkula.",
+      "bestMonths": [
+        "October",
+        "November",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "May",
+        "June"
+      ],
+      "experiences": [
+        "Architecture",
+        "History",
+        "Museums",
+        "Ancient Ruins",
+        "Temples & Religious Sites"
+      ]
+    },
+    {
+      "name": "Morni Hills",
+      "lat": 30.6847,
+      "lng": 77.0658,
+      "notes": "Haryana's only hill station — twin lakes, a ruined hilltop fort and modest Shivalik adventure activities after the heritage corridor.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Hiking",
+        "Adventure Sports",
+        "Lakes",
+        "Wildlife & Safari",
+        "Mountains"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Any Indian prepaid SIM (Jio or Airtel) works well across NH-44, Panipat, Kurukshetra, Pinjore and Panchkula. Coverage is generally strong; Morni Hills can have weak data in valleys, so download maps before the climb.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "Ola",
+      "Uber",
+      "Zomato"
+    ],
+    "cityOrder": [
+      "Panipat",
+      "Kurukshetra",
+      "Pinjore",
+      "Morni Hills"
+    ],
+    "cities": {
+      "Panipat": {
+        "name": "Panipat",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "A morning arrival from Delhi covers the key battle monuments by early afternoon; overnight only if textile shopping matters.",
+        "experiences": [
+          "History",
+          "Ancient Ruins",
+          "Temples & Religious Sites",
+          "Museums",
+          "Markets & Shopping"
+        ],
+        "signatureExperiences": [
+          "History",
+          "Ancient Ruins"
+        ],
+        "days": [
+          {
+            "theme": "Battlefields & mosques of Panipat",
+            "pace": "moderate",
+            "note": "Arrive by 9am from Delhi. The main sites are within roughly 5 km, so this is a realistic half-day before continuing to Kurukshetra.",
+            "activities": [
+              {
+                "name": "Ibrahim Lodhi Tomb",
+                "duration": "30–45m",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Tomb of the last Sultan of Delhi, defeated in the First Battle of Panipat in 1526; go first while the garden is quiet."
+              },
+              {
+                "name": "Kabuli Bagh Mosque & Garden",
+                "duration": "30–45m",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Built by Babur after his 1526 victory; one of North India's early Mughal mosques and only about 200m from Ibrahim Lodhi Tomb."
+              },
+              {
+                "name": "Panipat Museum",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "₹5–₹10 per adult",
+                "tip": "Closed Mondays; timings are roughly 10am–5pm. Visit before the battlefield memorials for battle maps, weapons and context."
+              },
+              {
+                "name": "Kala Amb Memorial",
+                "duration": "20–30m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Small garden memorial linked to the Second Battle of Panipat; timings are typically 9am–6pm."
+              },
+              {
+                "name": "Devi Temple & Panipat Textile Market",
+                "duration": "30–45m",
+                "priority": "optional",
+                "cost": "Free / shopping varies",
+                "tip": "Panipat is the City of Weavers; the textile market is best Monday–Saturday mornings if you want fabrics or home textiles."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget hotels near Panipat bus stand",
+                "budget": "₹1,000–₹2,000/night"
+              },
+              {
+                "name": "Mid-range highway hotels",
+                "budget": "₹2,500–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "Highway dhaba paratha with curd",
+              "Simple veg thali near museum",
+              "Textile-market chaat stalls"
+            ]
+          }
+        ]
+      },
+      "Kurukshetra": {
+        "name": "Kurukshetra",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is honest: one for Brahma Sarovar, temples and museums; one for Jyotisar, Thanesar and quieter Mahabharata sites.",
+        "experiences": [
+          "History",
+          "Temples & Religious Sites",
+          "Festivals",
+          "Museums",
+          "Ancient Ruins"
+        ],
+        "signatureExperiences": [
+          "Temples & Religious Sites",
+          "History"
+        ],
+        "days": [
+          {
+            "theme": "Sacred waters of the Kuru land",
+            "pace": "relaxed",
+            "note": "Start at sunrise for Brahma Sarovar aarti. Most sights are within a short radius, but keep the Jyotisar show for the evening.",
+            "activities": [
+              {
+                "name": "Brahma Sarovar — sunrise aarti & morning walk",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Open roughly 5am–9pm. The tank circuit is about 3.6 km; Oct–Feb brings migratory birds."
+              },
+              {
+                "name": "Sannihit Sarovar & Sthaneshwar Mahadev Temple",
+                "duration": "1h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "About 2 km from Brahma Sarovar; expect a more local pilgrimage feel than the headline tank."
+              },
+              {
+                "name": "Sri Krishna Museum",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "₹30/adult, ₹10/child",
+                "tip": "Closed Mondays, usually 10am–4:15pm; photography is not allowed inside galleries."
+              },
+              {
+                "name": "Kurukshetra Panorama & Science Centre",
+                "duration": "1h",
+                "priority": "recommended",
+                "cost": "Typically ₹30–₹50; check on-site",
+                "tip": "The 360-degree battlefield cyclorama pairs well with Sri Krishna Museum next door."
+              },
+              {
+                "name": "Jyotisar evening Light & Sound Show",
+                "duration": "1.5–2h including travel",
+                "priority": "recommended",
+                "cost": "Free to nominal; verify on-site",
+                "tip": "Arrive 30 minutes early. During Gita Mahotsav, an additional Vishwaroop projection-mapping show may run."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget lodges near Brahma Sarovar",
+                "budget": "₹900–₹1,800/night"
+              },
+              {
+                "name": "Mid-range Kurukshetra hotels",
+                "budget": "₹2,000–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Sattvic thali near Brahma Sarovar",
+              "Pipli Road dhaba lunch",
+              "Kadhi-rice and lassi (non-vegan)"
+            ]
+          },
+          {
+            "theme": "Jyotisar, battle ruins & Thanesar",
+            "pace": "moderate",
+            "note": "Sites are spread 5–15 km from town. Hire an auto for ₹400–₹600 or a cab; avoid Harsha Ka Tila in heavy monsoon mud.",
+            "activities": [
+              {
+                "name": "Jyotisar sacred grove by daylight",
+                "duration": "45m",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "See the sacred tree, stone chariot and temple calmly; it feels different from the evening show."
+              },
+              {
+                "name": "Bhishma Kund (Narkatari Tirth)",
+                "duration": "45m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Small tank associated with Bhishma Pitamaha; less crowded and atmospheric."
+              },
+              {
+                "name": "Harsha Ka Tila, Thanesar",
+                "duration": "30–45m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Outdoor ASI mound linked to Harsha's 7th-century capital; infrastructure is limited but the history is strong."
+              },
+              {
+                "name": "Birla Gita Mandir & Sheikh Chilli's Tomb",
+                "duration": "1h",
+                "priority": "optional",
+                "cost": "Mandir free; Sheikh Chilli Tomb ₹15–₹25",
+                "tip": "Both sit near Brahma Sarovar; the tomb is a well-kept Mughal-era structure with a small museum."
+              },
+              {
+                "name": "Local Haryanvi thali lunch",
+                "duration": "45m",
+                "priority": "recommended",
+                "cost": "₹120–₹200/person",
+                "tip": "Try bajra roti with ghee, kadhi-rice and lassi; vegans must ask for bina ghee and bina dahi."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget lodges near Brahma Sarovar",
+                "budget": "₹900–₹1,800/night"
+              },
+              {
+                "name": "Mid-range Kurukshetra hotels",
+                "budget": "₹2,000–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Dhaba thali on Pipli Road",
+              "Temple-area sattvic meals",
+              "Bajra roti with kachri chutney"
+            ]
+          }
+        ]
+      },
+      "Pinjore": {
+        "name": "Pinjore",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Pinjore's two major attractions are adjacent, so it is best as a half-day stop before Morni Hills or Chandigarh.",
+        "experiences": [
+          "Architecture",
+          "History",
+          "Museums",
+          "Ancient Ruins",
+          "Temples & Religious Sites"
+        ],
+        "signatureExperiences": [
+          "Architecture",
+          "Museums"
+        ],
+        "days": [
+          {
+            "theme": "Mughal gardens & forgotten temple sculptures",
+            "pace": "relaxed",
+            "note": "Visit the gardens in early light, then walk next door to Bhima Devi Museum; continue onward by afternoon if you are not staying in Chandigarh.",
+            "activities": [
+              {
+                "name": "Yadavindra Gardens (Pinjore Gardens)",
+                "duration": "2–2.5h",
+                "priority": "must-see",
+                "cost": "₹25/adult, ₹10/child; parking ₹20–₹50",
+                "tip": "Open roughly 7am–9:30pm. Seven terraced levels, fountains and palace pavilions are most photogenic from 7–10am; evening illumination is worthwhile if staying late."
+              },
+              {
+                "name": "Bhima Devi Temple Museum",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "₹25/adult",
+                "tip": "Closed Mondays, usually 9am–5pm. This open-air sculpture park displays 8th–12th century temple fragments and is genuinely undervisited."
+              },
+              {
+                "name": "Mughal-era Shish Mahal",
+                "duration": "30m",
+                "priority": "recommended",
+                "cost": "Included in garden ticket",
+                "tip": "A small mirrored palace inside the garden complex; worth a slow look for architectural details."
+              },
+              {
+                "name": "Pinjore Heritage Festival",
+                "duration": "half to full day",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Seasonal festival around Baisakhi/April in some years; verify 2026 dates before planning around it."
+              },
+              {
+                "name": "Pinjore–Chandigarh dhaba snack stop",
+                "duration": "20–30m",
+                "priority": "optional",
+                "cost": "₹60–₹100/person",
+                "tip": "The border-road dhabas are good for Amritsari kulcha or chai before the Morni climb."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Haryana Tourism Pinjore Garden Resort",
+                "budget": "₹1,500–₹4,000/night"
+              },
+              {
+                "name": "Panchkula/Chandigarh mid-range hotels",
+                "budget": "₹2,500–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Garden café snacks",
+              "Amritsari kulcha at Chandigarh-border dhabas",
+              "Simple Punjabi thali in Panchkula"
+            ]
+          }
+        ]
+      },
+      "Morni Hills": {
+        "name": "Morni Hills",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Morni is modest but refreshing. Stay overnight for sunrise; roads are narrow and should be avoided in heavy monsoon.",
+        "experiences": [
+          "Hiking",
+          "Adventure Sports",
+          "Lakes",
+          "Wildlife & Safari",
+          "Mountains"
+        ],
+        "signatureExperiences": [
+          "Lakes",
+          "Hiking"
+        ],
+        "days": [
+          {
+            "theme": "Lakes, fort ruins & Shivalik panoramas",
+            "pace": "moderate",
+            "note": "Arrive by noon from Pinjore. Adventure activities close by early evening, and the fort path needs proper shoes.",
+            "activities": [
+              {
+                "name": "Tikkar Taal — boating & water sports",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "~₹800/person package; varies by season",
+                "tip": "The package may include boating, kayaking and rope activities; confirm what is operating on arrival."
+              },
+              {
+                "name": "Morni Fort hilltop walk",
+                "duration": "1.5–2h including hike",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "The 30–45 minute uphill walk reaches ruined fort walls and twin-lake views. Avoid fog, heavy rain and slippery monsoon paths."
+              },
+              {
+                "name": "Morni Village walk & local market",
+                "duration": "30–45m",
+                "priority": "recommended",
+                "cost": "Free / local purchases",
+                "tip": "Look for local honey and pickles; carry cash as ATMs are limited."
+              },
+              {
+                "name": "Chidiyapur Lake",
+                "duration": "45m",
+                "priority": "optional",
+                "cost": "Free",
+                "tip": "Quieter than Tikkar Taal and good for winter bird photography."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Haryana Tourism Morni Hills Resort",
+                "budget": "₹2,000–₹4,500/night"
+              },
+              {
+                "name": "Morni homestays and camps",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Resort dinner",
+              "Simple hill dhaba dal-roti",
+              "Carry snacks and water from Panchkula"
+            ]
+          },
+          {
+            "theme": "Sunrise trail & Chandigarh exit",
+            "pace": "relaxed",
+            "note": "A light half-day makes the overnight worthwhile before descending toward Chandigarh airport or railway station.",
+            "activities": [
+              {
+                "name": "Sunrise nature walk / Shivalik trail",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Leave around 6am for a 2–3 km forest trail; watch for monkeys, deer and winter birds."
+              },
+              {
+                "name": "Breakfast at resort or dhaba",
+                "duration": "1h",
+                "priority": "recommended",
+                "cost": "₹150–₹300",
+                "tip": "Depart by 10–11am if connecting onward from Chandigarh."
+              },
+              {
+                "name": "Optional second stop at Tikkar Taal viewpoint",
+                "duration": "30m",
+                "priority": "optional",
+                "cost": "Free",
+                "tip": "Good final photo stop in clear weather before the descent."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Haryana Tourism Morni Hills Resort",
+                "budget": "₹2,000–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Breakfast paratha or poha",
+              "Packed fruit for the road",
+              "Chandigarh lunch after descent"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Panipat",
+        "to": "Kurukshetra",
+        "method": "Road by cab or Haryana Roadways bus on NH-44",
+        "cost": "₹120–₹200 bus; ₹700–₹1,000 private cab",
+        "distanceKm": 70,
+        "durationHrs": 1.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Kurukshetra",
+        "to": "Pinjore",
+        "method": "Road via Ambala toward Panchkula",
+        "cost": "₹100–₹150 bus with change at Ambala; ₹1,200–₹1,800 private cab",
+        "distanceKm": 100,
+        "durationHrs": 2.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Pinjore",
+        "to": "Morni Hills",
+        "method": "Pre-booked cab or own vehicle on hilly road",
+        "cost": "₹600–₹900 private cab; limited direct bus service",
+        "distanceKm": 35,
+        "durationHrs": 1.5,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "This is an honest 4–5 day add-on, not a marquee standalone circuit: many Haryana sights work as Delhi NCR or Chandigarh day-trips.",
+      "Recommended route: Delhi → Panipat → Kurukshetra → Pinjore → Morni Hills → Chandigarh, about 350 km total including entry/exit drives.",
+      "International Gita Mahotsav usually runs late November to early December; Gita Jayanti in 2026 falls on December 20. Book Kurukshetra rooms early around festival dates.",
+      "Faridabad's Surajkund Mela is excellent only when running; the 2026 edition ran January 31–February 15 with entry around ₹120 weekdays / ₹180 weekends.",
+      "Sultanpur National Park is a strong birding half-day from Delhi or Gurugram, with ₹5 Indian adult entry, but it is off the main Panipat–Kurukshetra–Morni corridor and closes June 1–September 30.",
+      "Gurugram's Kingdom of Dreams is not an active attraction: it has been closed since 2022 and was gutted by fire in March 2025.",
+      "April–June heat can reach 40–46°C; July–September monsoon makes Morni roads slippery and outdoor sightseeing unpleasant.",
+      "Entry fees are tiny; budget is dominated by transport, hotels and food. Carry cash for Morni Hills and small-town sites."
+    ]
+  }
+}

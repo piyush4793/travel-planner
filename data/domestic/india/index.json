@@ -381,5 +381,98 @@
       "Odisha",
       "Assam"
     ]
+  },
+  {
+    "name": "Punjab",
+    "lat": 31.1471,
+    "lng": 75.3412,
+    "region": "North India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8,
+    "popularityScore": 82,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June"
+    ],
+    "combo": [
+      "Himachal Pradesh",
+      "Delhi",
+      "Haryana",
+      "Rajasthan",
+      "Uttar Pradesh"
+    ]
+  },
+  {
+    "name": "Jammu and Kashmir",
+    "lat": 33.7782,
+    "lng": 76.5762,
+    "region": "North India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 13,
+    "popularityScore": 89,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "January",
+      "February",
+      "July",
+      "August"
+    ],
+    "combo": [
+      "Ladakh",
+      "Himachal Pradesh",
+      "Punjab",
+      "Delhi",
+      "Jammu"
+    ]
+  },
+  {
+    "name": "Haryana",
+    "lat": 29.0588,
+    "lng": 76.0856,
+    "region": "North India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 7,
+    "popularityScore": 70,
+    "bestMonths": [
+      "October",
+      "November",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June"
+    ],
+    "combo": [
+      "Delhi",
+      "Punjab",
+      "Himachal Pradesh",
+      "Rajasthan"
+    ]
   }
 ]
