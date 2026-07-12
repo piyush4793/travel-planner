@@ -97,6 +97,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
   const { panelWidth, startPanelDrag }  = usePanelDrag(300, 300);
   const bp = useBreakpoint();
   const isMobile = bp === "mobile";
+  const ctrlBtnSize = isMobile ? "w-11 h-11" : "w-9 h-9";
 
   const [cityStops]      = useState<CityStop[]>(() => route.stops);
   const [phase, setPhase]                 = useState<Phase>("intro");
@@ -988,31 +989,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
               </div>
             </div>
             <div className="flex items-center gap-1.5 shrink-0">
-              <button
-                onClick={cycleSpeed}
-                className="text-gray-300 hover:text-white hover:bg-white/10 h-8 min-w-[36px] px-1.5 flex items-center justify-center rounded-lg transition-colors text-xs font-bold tabular-nums focus-ring"
-                title="Playback speed"
-                aria-label={`Playback speed ${speed}×`}
-              >{speed}×</button>
-              <button
-                onClick={prevStep}
-                disabled={activeCityIdx <= 0}
-                className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm focus-ring disabled:opacity-30 disabled:cursor-not-allowed"
-                title="Back to previous stop"
-                aria-label="Back to previous stop"
-              >⏮</button>
-              <button
-                onClick={() => setPaused((p) => !p)}
-                className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm focus-ring"
-                title="Pause / Resume"
-                aria-label={paused ? "Resume" : "Pause"}
-              >⏯</button>
-              <button
-                onClick={skipStep}
-                className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm focus-ring"
-                title="Skip to next stop"
-                aria-label="Skip to next stop"
-              >⏭</button>
+              {/* Playback controls live once in the persistent footer bar (all screens); the header keeps only Close so there's no duplicate control cluster. */}
               <button
                 onClick={onClose}
                 className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm focus-ring"
@@ -1180,12 +1157,12 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
         </div>
 
         {/* Footer */}
-        <div className="px-5 py-4 border-t border-white/10 flex items-center justify-between shrink-0">
+        <div className={`${isMobile ? "px-4 py-3" : "px-5 py-4"} border-t border-white/10 flex items-center justify-between shrink-0`}>
           <div className="flex items-center gap-2">
             <button
               onClick={prevStep}
               disabled={activeCityIdx <= 0}
-              className="w-9 h-9 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors focus-ring disabled:opacity-30 disabled:cursor-not-allowed"
+              className={`${ctrlBtnSize} flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors focus-ring disabled:opacity-30 disabled:cursor-not-allowed`}
               title="Back to previous stop"
               aria-label="Back to previous stop"
             >
@@ -1193,7 +1170,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
             </button>
             <button
               onClick={() => setPaused((p) => !p)}
-              className="w-9 h-9 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors focus-ring"
+              className={`${ctrlBtnSize} flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors focus-ring`}
               title={paused ? "Resume" : "Pause"}
               aria-label={paused ? "Resume" : "Pause"}
             >
@@ -1201,7 +1178,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
             </button>
             <button
               onClick={skipStep}
-              className="w-9 h-9 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors focus-ring"
+              className={`${ctrlBtnSize} flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors focus-ring`}
               title="Skip to next stop"
               aria-label="Skip to next stop"
             >
@@ -1209,7 +1186,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
             </button>
             <button
               onClick={cycleSpeed}
-              className="w-9 h-9 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-xs font-bold transition-colors tabular-nums focus-ring"
+              className={`${ctrlBtnSize} flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-xs font-bold transition-colors tabular-nums focus-ring`}
               title="Playback speed"
               aria-label={`Playback speed ${speed}×`}
             >
@@ -1218,7 +1195,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
           </div>
           <button
             onClick={onClose}
-            className="w-9 h-9 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors text-gray-400 hover:text-white focus-ring"
+            className={`${ctrlBtnSize} flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors text-gray-400 hover:text-white focus-ring`}
             title="Close"
             aria-label="Close"
           >
