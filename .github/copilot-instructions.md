@@ -314,7 +314,7 @@ The Plan landing owns browse-style filtering: an editorial hero over a search ro
 
 ## State Persistence (localStorage)
 
-All persistence uses `loadLS()` / `saveLS()` from `src/utils/storage.ts`. Keys are centralized in `src/utils/lsKeys.ts` — always use `LS_KEYS.X`, never hardcode strings.
+All persistence uses `loadLS()` / `saveLS()` / `removeLS()` from `src/core/storage.ts`. Keys are centralized in `src/core/lsKeys.ts` — always use `LS_KEYS.X`, never hardcode strings. Never call `localStorage.*` directly (use `removeLS` to delete a key).
 
 | Key constant | localStorage key | Content |
 |---|---|---|
@@ -499,7 +499,7 @@ Hash-based, no library. `AppView = "plan" | "trips"` and `VALID_VIEWS = ["plan",
 - `usePersistedSet` for any `Set<string>` stored in localStorage
 - `LS_KEYS` as the single source of truth for key names
 - `PillGroup` / `FilterChip` / `Tooltip` as shared UI primitives
-- `loadLS` / `saveLS` for all localStorage access
+- `loadLS` / `saveLS` / `removeLS` for all localStorage access
 - `applyFilters()` as the single composable filter pipeline
 
 ### Anti-patterns — never introduce these

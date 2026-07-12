@@ -97,7 +97,7 @@ export default function PlanBasicsStep({
               {selectedExperiences.length > 0 && (
                 <button
                   onClick={onClearExperiences}
-                  className="focus-ring-emerald inline-flex min-h-[30px] items-center gap-1 rounded-full border border-emerald-300 bg-white px-3 py-1 text-[11px] font-semibold text-emerald-800 transition-colors hover:border-emerald-400 hover:bg-emerald-50"
+                  className="focus-ring-emerald inline-flex min-h-[36px] items-center gap-1 rounded-full border border-emerald-300 bg-white px-3.5 py-1.5 text-[11px] font-semibold text-emerald-800 transition-colors hover:border-emerald-400 hover:bg-emerald-50"
                 >
                   <span aria-hidden="true" className="text-[10px]">✕</span> Clear ({selectedExperiences.length})
                 </button>

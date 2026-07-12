@@ -34,7 +34,7 @@ export default function PillGroup({ options, value, onChange }: Props) {
           tabIndex={value === o.key ? 0 : -1}
           onClick={() => onChange(o.key)}
           onKeyDown={(e) => handleKeyDown(e, i)}
-          className={`px-2.5 py-1.5 rounded-full text-[11px] font-semibold transition-colors whitespace-nowrap ${theme.focus} ${
+          className={`inline-flex min-h-[36px] items-center justify-center px-3.5 py-2 rounded-full text-xs font-semibold transition-colors whitespace-nowrap ${theme.focus} ${
             value === o.key ? theme.active : theme.idle
           }`}
         >

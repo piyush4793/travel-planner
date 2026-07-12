@@ -47,3 +47,12 @@ export function saveLS<T>(key: string, value: T): boolean {
     return false;
   }
 }
+
+/** Remove a persisted key via the storage adapter (never throws). */
+export function removeLS(key: string): void {
+  try {
+    _storage.removeItem(key);
+  } catch {
+    /* ignore — storage unavailable */
+  }
+}

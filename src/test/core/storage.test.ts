@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
-import { loadLS, saveLS, getStorageAdapter, setStorageAdapter } from "@/core/storage.ts";
+import { loadLS, saveLS, removeLS, getStorageAdapter, setStorageAdapter } from "@/core/storage.ts";
 import type { StoragePort } from "@/core/ports/StoragePort.ts";
 
 describe("storage — P0", () => {
@@ -93,5 +93,30 @@ describe("storage — adapter injection & quota handling", () => {
 
     expect(saveLS("k", "v")).toBe(false);
     expect(warn).not.toHaveBeenCalled();
+  });
+
+  it("removeLS deletes a key through the adapter", () => {
+    const backing = new Map<string, string>([["gone", "\"x\""]]);
+    const fake: StoragePort = {
+      getItem: (k) => backing.get(k) ?? null,
+      setItem: (k, v) => { backing.set(k, v); },
+      removeItem: (k) => { backing.delete(k); },
+    };
+    setStorageAdapter(fake);
+
+    removeLS("gone");
+    expect(backing.has("gone")).toBe(false);
+    expect(loadLS("gone", "fallback")).toBe("fallback");
+  });
+
+  it("removeLS swallows adapter errors", () => {
+    const throwingAdapter: StoragePort = {
+      getItem: () => null,
+      setItem: () => {},
+      removeItem: () => { throw new Error("no storage"); },
+    };
+    setStorageAdapter(throwingAdapter);
+
+    expect(() => removeLS("any")).not.toThrow();
   });
 });

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, within } from "@testing-library/react";
 import PlanTripHeader, { type HeaderStep, buildHeaderStats } from "@/components/views/plan/shell/PlanTripHeader";
 import type { Country } from "@/core/types.ts";
 
@@ -43,13 +43,15 @@ describe("PlanTripHeader", () => {
     expect(screen.getByText("+1")).toBeInTheDocument();
   });
 
-  it("renders one tappable tab per step and routes taps to the handler", () => {
+  it("renders one tappable step button per step and routes taps to the handler", () => {
     const onGoToStep = vi.fn();
     renderHeader({ activeStep: 2, onGoToStep });
-    const tabs = screen.getAllByRole("tab");
-    expect(tabs).toHaveLength(3);
-    expect(tabs[2]).toHaveAttribute("aria-selected", "true");
-    fireEvent.click(tabs[0]);
+    const nav = screen.getByRole("navigation", { name: "Planning steps" });
+    const steps = within(nav).getAllByRole("button");
+    expect(steps).toHaveLength(3);
+    expect(steps[2]).toHaveAttribute("aria-current", "step");
+    expect(steps[0]).not.toHaveAttribute("aria-current");
+    fireEvent.click(steps[0]);
     expect(onGoToStep).toHaveBeenCalledWith(0);
   });
 

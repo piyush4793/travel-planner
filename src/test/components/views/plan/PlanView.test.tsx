@@ -93,7 +93,7 @@ describe("PlanView — guided planner", () => {
     expect(await screen.findByText(/Who's going\?/i)).toBeInTheDocument();
     // Later steps are not on screen yet.
     expect(screen.queryByText(/Which places in/i)).not.toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: /Step 1:/i, selected: true })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Step 1 of \d+:/i, current: "step" })).toBeInTheDocument();
   });
 
   it("combines party size and vibe on the first 'basics' step", async () => {
@@ -242,7 +242,7 @@ describe("PlanView — guided planner", () => {
     await screen.findByText(/Who's going\?/i);
     fireEvent.click(screen.getByRole("button", { name: /Continue/i }));
     expect(await screen.findByText(/Which places in/i)).toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: /Step 2:/i, selected: true })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Step 2 of \d+:/i, current: "step" })).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /Back/i }));
     expect(await screen.findByText(/Who's going\?/i)).toBeInTheDocument();
   });
@@ -253,13 +253,13 @@ describe("PlanView — guided planner", () => {
     fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     await screen.findByText(/Who's going\?/i);
     goToReview();
-    await screen.findByRole("tab", { name: /Step 3:/i, selected: true });
+    await screen.findByRole("button", { name: /Step 3 of \d+:/i, current: "step" });
 
     // Simulate a refresh: fresh mount reading the persisted draft.
     unmount();
     renderView();
     // Back on the wizard (not the picker) at the same destination + step.
-    expect(await screen.findByRole("tab", { name: /Step 3:/i, selected: true })).toBeInTheDocument();
+    expect(await screen.findByRole("button", { name: /Step 3 of \d+:/i, current: "step" })).toBeInTheDocument();
     expect(screen.queryByText(/Plan your next escape/i)).not.toBeInTheDocument();
     expect(screen.getAllByRole("heading", { name: "Testland (no rule)" }).length).toBeGreaterThan(0);
   });
@@ -571,7 +571,7 @@ describe("PlanView — multi-country Basics", () => {
       expect(screen.queryByText(/Plan your next escape/i)).not.toBeInTheDocument();
     });
     // Stepping back to Basics shows the restored vibe chip pressed.
-    fireEvent.click(screen.getByRole("tab", { name: /Step 1: Trip basics/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Step 1 of \d+: Trip basics/i }));
     await waitFor(() => {
       expect(screen.getByRole("button", { name: /Mountains/i })).toHaveAttribute("aria-pressed", "true");
     });

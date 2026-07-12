@@ -201,16 +201,16 @@ function PlanTripHeaderInner({
           device Back own step navigation, and the Review canvas surfaces Back /
           Plan another in the workspace's mobile bar. */}
       {!compact && (
-        <div className="mt-3 flex items-stretch gap-1.5" role="tablist" aria-label="Planning steps">
+        <nav className="mt-3 flex items-stretch gap-1.5" aria-label="Planning steps">
           {steps.map((s, i) => {
             const done = i < activeStep;
             const active = i === activeStep;
             return (
               <button
                 key={s.key}
-                role="tab"
-                aria-selected={active}
-                aria-label={`Step ${i + 1}: ${s.title}`}
+                type="button"
+                aria-current={active ? "step" : undefined}
+                aria-label={`Step ${i + 1} of ${steps.length}: ${s.title}`}
                 onClick={() => onGoToStep(i)}
                 className="focus-ring-emerald group flex flex-1 flex-col gap-1 rounded-lg py-1"
               >
@@ -229,7 +229,7 @@ function PlanTripHeaderInner({
               </button>
             );
           })}
-        </div>
+        </nav>
       )}
     </div>
   );

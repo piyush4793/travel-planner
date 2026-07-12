@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState, memo } from "react";
 import type { SavedTrip } from "../../core/utils/savedTrips";
 import { BUDGET_BASIS_META } from "../../core/utils/budget";
 import { getCountryFlag } from "../../utils/countryFlags";
@@ -42,7 +42,7 @@ function tripMatchesQuery(trip: SavedTrip, q: string): boolean {
   );
 }
 
-function SavedTripCard({
+const SavedTripCard = memo(function SavedTripCard({
   trip,
   onToggleFavorite,
   onRemove,
@@ -50,7 +50,7 @@ function SavedTripCard({
 }: {
   trip: SavedTrip;
   onToggleFavorite: (id: string) => void;
-  onRemove: (id: string) => void;
+  onRemove: (trip: SavedTrip) => void;
   onOpen: (trip: SavedTrip) => void;
 }) {
   const basis = BUDGET_BASIS_META[trip.basis];
@@ -96,7 +96,7 @@ function SavedTripCard({
           </button>
           <button
             type="button"
-            onClick={() => onRemove(trip.id)}
+            onClick={() => onRemove(trip)}
             aria-label={`Delete ${trip.name}`}
             className="focus-ring flex min-h-[32px] min-w-[32px] items-center justify-center rounded-full text-sm text-emerald-900/40 transition-colors hover:bg-red-50 hover:text-red-600"
           >
@@ -147,7 +147,7 @@ function SavedTripCard({
       <p className="text-[10px] uppercase tracking-wide text-emerald-800/40">{savedAgo(trip.savedAt)}</p>
     </article>
   );
-}
+});
 
 /**
  * My Trips — a lightweight gallery of the self-contained trip snapshots the
@@ -168,7 +168,7 @@ export default function MyTripsView({ savedTrips, onToggleFavorite, onRemove, on
     return { favorites, rest };
   }, [savedTrips, q]);
 
-  const handleRemove = async (trip: SavedTrip) => {
+  const handleRemove = useCallback(async (trip: SavedTrip) => {
     const ok = await confirm({
       title: "Delete this trip?",
       message: `"${trip.name}" will be removed from My Trips. This can't be undone.`,
@@ -176,7 +176,7 @@ export default function MyTripsView({ savedTrips, onToggleFavorite, onRemove, on
       variant: "danger",
     });
     if (ok) onRemove(trip.id);
-  };
+  }, [confirm, onRemove]);
 
   if (savedTrips.length === 0) {
     return (
@@ -260,7 +260,7 @@ export default function MyTripsView({ savedTrips, onToggleFavorite, onRemove, on
                     trip={trip}
                     onToggleFavorite={onToggleFavorite}
                     onOpen={onOpen}
-                    onRemove={() => handleRemove(trip)}
+                    onRemove={handleRemove}
                   />
                 ))}
               </div>
@@ -281,7 +281,7 @@ export default function MyTripsView({ savedTrips, onToggleFavorite, onRemove, on
                     trip={trip}
                     onToggleFavorite={onToggleFavorite}
                     onOpen={onOpen}
-                    onRemove={() => handleRemove(trip)}
+                    onRemove={handleRemove}
                   />
                 ))}
               </div>

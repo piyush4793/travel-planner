@@ -379,7 +379,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
       // City dot markers — start hidden, revealed progressively during animation
       for (const stop of cityStops) {
         const el = document.createElement("div");
-        el.style.cssText = "width:10px;height:10px;background:white;border:2.5px solid #94a3b8;border-radius:50%;transition:all 0.6s ease;box-sizing:border-box;pointer-events:none;opacity:0;transform:scale(0);";
+        el.style.cssText = "width:10px;height:10px;background:white;border:2.5px solid #94a3b8;border-radius:50%;transition:transform 0.6s ease, opacity 0.6s ease;box-sizing:border-box;pointer-events:none;opacity:0;transform:scale(0);";
         allMarkers.push(new maplibregl.Marker({ element: el }).setLngLat(stop.coords).addTo(map));
       }
 
@@ -537,7 +537,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
         // Activate city dot with pulse
         const dotEl = allMarkers[i]?.getElement();
         if (dotEl) {
-          dotEl.style.cssText = "width:16px;height:16px;background:#3b82f6;border:3px solid white;border-radius:50%;box-shadow:0 0 0 4px rgba(59,130,246,0.35);transition:all 0.5s ease;box-sizing:border-box;pointer-events:none;animation:cityPulse 0.6s ease-out;";
+          dotEl.style.cssText = "width:16px;height:16px;background:#3b82f6;border:3px solid white;border-radius:50%;box-shadow:0 0 0 4px rgba(59,130,246,0.35);transition:transform 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease;box-sizing:border-box;pointer-events:none;animation:cityPulse 0.6s ease-out;";
         }
 
         // Transit between cities (i > 0)

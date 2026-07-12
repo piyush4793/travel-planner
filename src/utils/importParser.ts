@@ -351,7 +351,7 @@ export async function fetchChatLink(url: string): Promise<{ text: string } | { e
     const timer = setTimeout(() => controller.abort(new DOMException("Request timed out", "TimeoutError")), CHAT_LINK_TIMEOUT_MS);
     let res: Response;
     try {
-      res = await fetch(`${CORS_PROXY}${trimmed}`, { signal: controller.signal });
+      res = await fetch(`${CORS_PROXY}${encodeURIComponent(trimmed)}`, { signal: controller.signal });
     } finally {
       clearTimeout(timer);
     }
