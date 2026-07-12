@@ -118,13 +118,13 @@ Bring-your-own-key integration with OpenAI and Claude. Chat with an AI assistant
 ---
 
 ### Cinematic Itinerary (🎬)
-Full-screen animated experience for rule-based countries:
-1. World overview with complete route drawn on map
-2. Departure arc from home city with ✈️ animation
-3. City-by-city transit with transport emoji riding route lines
-4. City photo slideshows (Wikipedia images, cross-fade, slide dots)
+Full-screen animated experience — works for **single- and multi-country** trips (and is domestic-ready), driven by a scope-agnostic route model:
+1. World overview with the complete route drawn on the map
+2. Departure arc from your home city with ✈️ animation (skipped for domestic scopes with no international gateway)
+3. City-by-city transit with transport emoji riding route lines; between countries an honest **border hop** (flight for long legs, rail/road otherwise)
+4. City photo slideshows (Wikipedia images, cross-fade, slide dots) merged across every stop
 5. Staggered activity cards on resizable right panel
-6. Return arc with "Welcome back!" screen
+6. Return arc with "Welcome back!" screen (international trips)
 7. Pause/resume, close to restore original camera
 8. Pause/resume stays reliable across re-renders because playback control is state-driven
 9. **Prev / Skip stops** — ⏮ replays to the previous stop (forward-only engine replays from start and fast-forwards to the target), ⏭ fast-forwards the current segment to the next stop; **playback speed** toggle cycles 1× → 1.5× → 2× and scales every fly-through, sleep, and route-draw segment

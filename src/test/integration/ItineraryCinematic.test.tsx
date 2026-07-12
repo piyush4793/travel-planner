@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ItineraryCinematic from "../../components/country/ItineraryCinematic";
-import { cleanJumpOptions } from "../../components/country/cinematic/engine";
+import { cleanJumpOptions, buildSingleCountryRoute } from "../../components/country/cinematic/engine";
 import type { TripPlan } from "../../core/utils/tripPlans";
 import type { Country } from "../../core/types";
 
@@ -48,7 +48,8 @@ const country: Country = {
 
 function renderCinematic() {
   // No mainMapRef → map unavailable, but the header/footer controls still render.
-  return render(<ItineraryCinematic plan={plan} country={country} homeCountry="India" onClose={vi.fn()} />);
+  const route = buildSingleCountryRoute(plan, country, null, "India");
+  return render(<ItineraryCinematic route={route} onClose={vi.fn()} />);
 }
 
 describe("ItineraryCinematic controls", () => {

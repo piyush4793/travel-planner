@@ -3,6 +3,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import PlanView from "../../components/views/plan/PlanView";
 import { setFeatureFlag } from "../../core/featureFlags";
 import type { Country } from "../../core/types";
+import type maplibregl from "maplibre-gl";
 
 const COUNTRY: Country = {
   name: "Testland (no rule)",
@@ -130,6 +131,22 @@ describe("PlanView — guided planner", () => {
     // Footer is hidden below lg (jsdom has no media query), so include hidden.
     fireEvent.click(screen.getByRole("button", { name: /Plan another/i, hidden: true }));
     await screen.findByText(/Where do you plan to go next/i);
+  });
+
+  it("does not offer a Cinematic fly-through for a route with no mappable cities", async () => {
+    // A rule-less destination generates a themed (non-city) itinerary, so there
+    // are no coordinates to fly between and the Cinematic action stays hidden even
+    // when a map surface is available. The route-building + gating logic itself is
+    // covered deterministically in cinematicEngine + TripReviewCanvas tests.
+    const mainMapRef = { current: null } as unknown as React.RefObject<maplibregl.Map | null>;
+    renderView({ mainMapRef, onCinematicChange: vi.fn() });
+    fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
+    await screen.findByText(/Who's going\?/i);
+    goToReview();
+    await screen.findByRole("button", { name: /Share your trip plan/i });
+    expect(
+      screen.queryByRole("button", { name: /Watch the animated cinematic journey/i }),
+    ).not.toBeInTheDocument();
   });
 
   it("shares the plan from the review step", async () => {

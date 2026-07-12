@@ -24,6 +24,7 @@ import ShareButton from "./panel/ShareButton";
 import { CollapsibleSection } from "./panel/PanelSection";
 import { LearnAboutSection, PlanningResourcesSection, UsefulLinksSection } from "./panel/InfoSections";
 import { getRangePercent } from "./panel/utils";
+import { buildSingleCountryRoute } from "./cinematic/engine";
 import { lazyWithRetry as lazy } from "../../utils/lazyWithRetry";
 
 // Lazy-load heavy sub-components — only fetched when user triggers them
@@ -670,15 +671,17 @@ export default function CountryPanel({
       <Suspense fallback={null}>
         {cinematicPlan && displayCountry && (
           <ItineraryCinematic
-            plan={cinematicPlan}
-            country={displayCountry}
-            homeCountry={homeCountry}
+            route={buildSingleCountryRoute(
+              cinematicPlan,
+              displayCountry,
+              rule,
+              homeCountry,
+              displayCountry.combo
+                ?.map((name) => allCountries?.find((item) => item.name === name) ?? resolveCountry?.(name))
+                .filter((item): item is Country => !!item)
+                .map(({ name, lat, lng }) => ({ name, lat, lng })),
+            )}
             mainMapRef={mainMapRef}
-            rule={rule}
-            comboCountries={displayCountry.combo
-              ?.map((name) => allCountries?.find((item) => item.name === name) ?? resolveCountry?.(name))
-              .filter((item): item is Country => !!item)
-              .map(({ name, lat, lng }) => ({ name, lat, lng }))}
             onClose={() => setCinematicPlan(null)}
           />
         )}

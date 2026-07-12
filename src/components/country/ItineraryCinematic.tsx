@@ -2,19 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import type { RefObject } from "react";
 import { createPortal } from "react-dom";
 import maplibregl from "maplibre-gl";
-import type { Country } from "../../core/types";
-import type { TripPlan } from "../../core/utils/tripPlans";
 import { planCostBasisIcon } from "../../core/utils/tripPlans";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
-import type { CountryRule } from "../../core/data/itineraryRules";
 import { getWikiImage } from "../../utils/wikiImages";
 import { type TransportType, TRANSPORT_EMOJI } from "../../core/utils/transport";
 import { usePanelDrag } from "../../hooks/usePanelDrag";
 import {
   type CityStop,
-  buildCityStops,
-  HOME_COORDS,
-  HOME_CITY,
+  type CinematicRoute,
   easeInOut,
   generateRoadPath,
   generateRailPath,
@@ -37,30 +32,26 @@ import {
 // ─── Component ────────────────────────────────────────────────────────────────
 
 interface Props {
-  plan: TripPlan;
-  country: Country;
-  homeCountry: string;
+  route: CinematicRoute;
   mainMapRef?: RefObject<maplibregl.Map | null>;
-  rule?: CountryRule | null;
-  comboCountries?: Array<{ name: string; lat: number; lng: number }>;
   onClose: () => void;
 }
 
 type Phase = "intro" | "city" | "done";
 
-export default function ItineraryCinematic({ plan, country, homeCountry, mainMapRef, rule, comboCountries, onClose }: Props) {
+export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props) {
+  const { title, plan, origin, comboCountries } = route;
   // Reduced-motion: show static itinerary summary instead of fly-through
   const prefersReducedMotion = typeof window !== "undefined"
     && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const cityStopsStatic = prefersReducedMotion ? buildCityStops(plan, country, rule) : [];
-
   if (prefersReducedMotion) {
+    const cityStopsStatic = route.stops;
     return createPortal(
       <div className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
         <div className="w-full max-w-lg bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-5 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
-            <h2 className="text-base font-bold text-slate-800 dark:text-white">🎬 {country.name} — Itinerary Overview</h2>
+            <h2 className="text-base font-bold text-slate-800 dark:text-white">🎬 {title} — Itinerary Overview</h2>
             <button onClick={onClose} className="text-slate-400 hover:text-slate-600 dark:hover:text-white text-xl leading-none focus-ring rounded p-1" aria-label="Close">✕</button>
           </div>
           <div className="p-5 space-y-4 max-h-[70vh] overflow-y-auto">
@@ -107,7 +98,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
   const bp = useBreakpoint();
   const isMobile = bp === "mobile";
 
-  const [cityStops]      = useState<CityStop[]>(() => buildCityStops(plan, country, rule));
+  const [cityStops]      = useState<CityStop[]>(() => route.stops);
   const [phase, setPhase]                 = useState<Phase>("intro");
   const [activeCityIdx, setActiveCityIdx] = useState(-1);
   const [activeDayIdx, setActiveDayIdx]   = useState(0);
@@ -158,8 +149,10 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
     const map = mapRaw as maplibregl.Map;
 
     let cancelled = false;
-    const homeCoords = HOME_COORDS[homeCountry] ?? [20, 20];
-    const homeCity   = HOME_CITY[homeCountry]   ?? homeCountry;
+    // Origin is optional: international trips depart/return via a home arc;
+    // domestic (in-country) routes pass `origin: null` and skip those arcs.
+    const homeCoords = origin?.coords ?? null;
+    const homeCity   = origin?.city ?? "";
 
     // Disable user interaction
     map.dragPan.disable();
@@ -426,10 +419,8 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       if (cityStops.length === 0) { setStatusMsg("No city data"); return; }
 
       // ── World overview: fly to mid-globe showing city + combo dots ──────────
-      const midLng = (homeCoords[0] + country.lng) / 2;
-      const midLat = (homeCoords[1] + country.lat) / 2;
-      setStatusMsg(`${homeCity} → ${country.name}`);
-      await flyAndWait({ center: [midLng, midLat], zoom: 1.8, duration: 1800 });
+      setStatusMsg(origin ? `${homeCity} → ${title}` : title);
+      await flyAndWait({ center: route.overviewCenter, zoom: 1.8, duration: 1800 });
       if (cancelled) return;
       await waitForIdle();
       await sleep(500);
@@ -440,9 +431,9 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         : "";
       setStatusMsg(`${plan.duration} · ${plan.costPerPerson} ${planCostBasisIcon(plan)}${comboLine}`);
 
-      // Pre-fetch city images during overview hold (parallel, with timeout)
-      // rule passed as prop
-      const cityImgKeys = rule?.cityImages ?? {};
+      // Pre-fetch city images during overview hold (parallel, with timeout).
+      // Merged across every unit on the route, so multi-country stops get photos too.
+      const cityImgKeys = route.cityImages;
       const fetchedPhotos: Record<string, string[]> = {};
 
       setStatusMsg("📸 Loading city photos…");
@@ -468,33 +459,37 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       await sleep(400);
       if (cancelled) return;
 
-      // ── Fly into home country ──────────────────────────────────────────────
-      setStatusMsg(`Starting in ${homeCity}…`);
-      await flyAndWait({ center: homeCoords, zoom: 4, duration: 1600 });
-      if (cancelled) return;
-      await waitForIdle();
-      await sleep(500);
-
-      // ── Departure arc: home → first city ──────────────────────────────────
-      const completedCoords: [number, number][] = [homeCoords];
       const firstStop = cityStops[0];
-      const depBearing = calcBearing(homeCoords, firstStop.coords);
+      // Route line accumulates from the origin (int'l trips) or the first stop
+      // (domestic, no departure arc).
+      const completedCoords: [number, number][] = [homeCoords ?? firstStop.coords];
 
-      // Reveal first destination dot
-      showCityDots(- 1, 0);
+      // ── Departure arc: home → first city (international origin only) ────────
+      if (homeCoords) {
+        // ── Fly into home country ──
+        setStatusMsg(`Starting in ${homeCity}…`);
+        await flyAndWait({ center: homeCoords, zoom: 4, duration: 1600 });
+        if (cancelled) return;
+        await waitForIdle();
+        await sleep(500);
 
-      setStatusMsg(`✈️  ${homeCity} → ${firstStop.name}`);
-      fly({
-        center: homeCoords,
-        zoom: 4.5, pitch: 45, bearing: depBearing,
-        duration: 1200, essential: true,
-      });
-      await sleep(1200);
-      await waitForIdle();
-      if (cancelled) return;
+        const depBearing = calcBearing(homeCoords, firstStop.coords);
 
-      // Departure flight with camera tracking
-      {
+        // Reveal first destination dot
+        showCityDots(- 1, 0);
+
+        setStatusMsg(`✈️  ${homeCity} → ${firstStop.name}`);
+        fly({
+          center: homeCoords,
+          zoom: 4.5, pitch: 45, bearing: depBearing,
+          duration: 1200, essential: true,
+        });
+        await sleep(1200);
+        await waitForIdle();
+        if (cancelled) return;
+
+        // Departure flight with camera tracking
+        {
         resetRouteStyle(); // Use thicker plane line style
         const depMx = (homeCoords[0] + firstStop.coords[0]) / 2;
         const depMy = (homeCoords[1] + firstStop.coords[1]) / 2;
@@ -525,6 +520,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         }, () => cancelled, () => pausedRef.current, () => skipActiveRef.current);
         removeTransportMarker(depMarker);
         completedCoords.push(...depSeg.slice(1));
+        }
       }
       if (cancelled) return;
       setRouteDone(completedCoords);
@@ -736,8 +732,9 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
         }
       }
 
-      // ── Return arc: last city → home ────────────────────────────────────────
+      // ── Return arc: last city → home (international origin only) ─────────────
       const lastStop = cityStops[cityStops.length - 1];
+      if (homeCoords) {
       const retBearing = calcBearing(lastStop.coords, homeCoords);
       setStatusMsg(`✈️  ${lastStop.name} → ${homeCity}`);
 
@@ -799,6 +796,12 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
       await flyAndWait({ center: homeCoords, zoom: 5, pitch: 0, bearing: 0, duration: 2000 });
       if (cancelled) return;
       await sleep(500);
+      } else {
+        // Domestic (no origin): settle over the final stop instead of flying home.
+        await flyAndWait({ center: lastStop.coords, zoom: 6, pitch: 0, bearing: 0, duration: 1600 });
+        if (cancelled) return;
+        await sleep(500);
+      }
 
       setStatusMsg("Trip complete!");
       skipActiveRef.current = false;
@@ -827,6 +830,9 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
   const activeDay   = activeStop?.days[activeDayIdx] ?? null;
   const cityPhotos  = (cityPhotoMap[activeStop?.name ?? ""] ?? []).filter((u) => !brokenImgs.has(u));
   const mapAvailable = !!mainMapRef?.current;
+  // Departure identity for the panel chrome — absent for domestic (no-origin) routes.
+  const homeCity  = origin?.city ?? "";
+  const homeLabel = origin?.label ?? "";
 
   return createPortal(
     <div className="fixed inset-0 z-[200]" style={{ fontFamily: "inherit" }}>
@@ -977,7 +983,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
           <div className="flex items-center justify-between gap-2 mb-2">
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
-                <h2 className={`${isMobile ? "text-base" : "text-xl"} font-black truncate`}>{country.name}</h2>
+                <h2 className={`${isMobile ? "text-base" : "text-xl"} font-black truncate`}>{title}</h2>
                 <span className="text-[10px] text-gray-400 shrink-0">{plan.duration}</span>
               </div>
             </div>
@@ -1017,8 +1023,12 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
 
           {/* Route progress trail */}
           <div className="flex items-center gap-1 flex-wrap">
-            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mr-1">{HOME_CITY[homeCountry] ?? homeCountry}</span>
-            <span className="text-[10px] text-gray-600">✈</span>
+            {origin && (
+              <>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mr-1">{homeCity}</span>
+                <span className="text-[10px] text-gray-600">✈</span>
+              </>
+            )}
             {cityStops.map((stop, i) => (
               <span key={stop.name} className="flex items-center gap-1">
                 <span
@@ -1034,8 +1044,12 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
                 )}
               </span>
             ))}
-            <span className="text-[10px] text-gray-600 ml-0.5">✈</span>
-            <span className="text-[10px] font-bold text-gray-500 ml-0.5">{HOME_CITY[homeCountry] ?? homeCountry}</span>
+            {origin && (
+              <>
+                <span className="text-[10px] text-gray-600 ml-0.5">✈</span>
+                <span className="text-[10px] font-bold text-gray-500 ml-0.5">{homeCity}</span>
+              </>
+            )}
           </div>
         </div>
 
@@ -1046,10 +1060,14 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
             <div className="h-full flex flex-col items-center justify-center gap-4 text-center pb-8">
               <span className="text-6xl" style={{ animation: "pulse 2s ease-in-out infinite" }}>🌍</span>
               <div>
-                <p className="text-base font-bold text-white">{HOME_CITY[homeCountry] ?? homeCountry}</p>
-                <p className="text-[11px] text-gray-600 -mt-0.5">{homeCountry}</p>
-                <p className="text-gray-500 text-sm mt-2">✈</p>
-                <p className="text-base font-bold text-white mt-2">{country.name}</p>
+                {origin && (
+                  <>
+                    <p className="text-base font-bold text-white">{homeCity}</p>
+                    <p className="text-[11px] text-gray-600 -mt-0.5">{homeLabel}</p>
+                    <p className="text-gray-500 text-sm mt-2">✈</p>
+                  </>
+                )}
+                <p className="text-base font-bold text-white mt-2">{title}</p>
               </div>
               <p className="text-[11px] text-gray-400">{plan.duration} · {plan.costPerPerson} {planCostBasisIcon(plan)}</p>
               {comboCountries && comboCountries.length > 0 && (
@@ -1152,7 +1170,7 @@ export default function ItineraryCinematic({ plan, country, homeCountry, mainMap
           {phase === "done" && (
             <div className="h-full flex flex-col items-center justify-center gap-3 text-center pb-8">
               <span className="text-5xl mb-2">🎉</span>
-              <h3 className="text-lg font-black">Back in {HOME_CITY[homeCountry] ?? homeCountry}!</h3>
+              <h3 className="text-lg font-black">{origin ? `Back in ${homeCity}!` : "Trip complete!"}</h3>
               <p className="text-xs text-gray-400">{plan.duration} · {plan.costPerPerson} {planCostBasisIcon(plan)}</p>
               <div className="mt-3 text-[11px] text-gray-500 leading-relaxed text-left bg-white/5 rounded-xl px-4 py-3">
                 {plan.note}

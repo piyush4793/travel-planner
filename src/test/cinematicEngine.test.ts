@@ -8,6 +8,10 @@ import {
   generateRailPath,
   cleanJumpOptions,
   buildCityStops,
+  buildCinematicRoute,
+  buildSingleCountryRoute,
+  resolveHomeOrigin,
+  interUnitTransport,
   createTransportEl,
   rotateIconToHeading,
   removeTransportMarker,
@@ -141,6 +145,118 @@ describe("buildCityStops", () => {
   it("drops cities without coordinates", () => {
     const p = { days: [{ label: "Day 1 — Ghost", activities: [] }] } as unknown as TripPlan;
     expect(buildCityStops(p, country)).toHaveLength(0);
+  });
+});
+
+describe("interUnitTransport", () => {
+  it("uses flight for far inter-unit hops", () => {
+    // Tokyo → Bangkok is thousands of km apart.
+    const leg = interUnitTransport([139.7, 35.6], [100.5, 13.7]);
+    expect(leg.type).toBe("flight");
+  });
+  it("uses rail/road for near inter-unit hops", () => {
+    const leg = interUnitTransport([2.35, 48.85], [2.4, 48.9]);
+    expect(leg.type).toBe("train");
+  });
+});
+
+describe("resolveHomeOrigin", () => {
+  it("resolves a known gateway", () => {
+    const o = resolveHomeOrigin("India");
+    expect(o.coords).toEqual(HOME_COORDS["India"]);
+    expect(o.city).toBe(HOME_CITY["India"]);
+    expect(o.label).toBe("India");
+  });
+  it("falls back to a neutral origin for an unknown home country", () => {
+    const o = resolveHomeOrigin("Atlantis");
+    expect(o.coords).toEqual([20, 20]);
+    expect(o.city).toBe("Atlantis");
+  });
+});
+
+describe("buildCinematicRoute", () => {
+  const jp = {
+    name: "Japan",
+    lat: 35.68,
+    lng: 139.69,
+    cities: [
+      { name: "Tokyo", lat: 35.68, lng: 139.69 },
+      { name: "Kyoto", lat: 35.01, lng: 135.77 },
+    ],
+  } as unknown as Country;
+  const th = {
+    name: "Thailand",
+    lat: 13.75,
+    lng: 100.5,
+    cities: [{ name: "Bangkok", lat: 13.75, lng: 100.5 }],
+  } as unknown as Country;
+  const jpPlan = {
+    costPerPerson: "₹1L",
+    days: [
+      { label: "Day 1 — Tokyo", activities: [] },
+      { label: "Day 2 — Kyoto", activities: [] },
+    ],
+  } as unknown as TripPlan;
+  const thPlan = {
+    costPerPerson: "₹50K",
+    days: [{ label: "Day 1 — Bangkok", activities: [] }],
+  } as unknown as TripPlan;
+
+  const seg = (c: Country, plan: TripPlan) => ({
+    name: c.name,
+    center: [c.cities![0].lng, c.cities![0].lat] as [number, number],
+    plan,
+    cities: c.cities ?? [],
+  });
+
+  it("single-country route matches buildSingleCountryRoute (byte-identical path)", () => {
+    const route = buildSingleCountryRoute(jpPlan, jp, null, "India");
+    expect(route.title).toBe("Japan");
+    expect(route.stops.map((s) => s.name)).toEqual(["Tokyo", "Kyoto"]);
+    expect(route.origin?.label).toBe("India");
+    // Overview blends origin with the country centroid.
+    const home = resolveHomeOrigin("India").coords;
+    expect(route.overviewCenter[0]).toBeCloseTo((home[0] + jp.lng) / 2, 6);
+  });
+
+  it("composes multiple units and stamps a border hop between them", () => {
+    const route = buildCinematicRoute([seg(jp, jpPlan), seg(th, thPlan)], {
+      title: "Japan → Thailand",
+      plan: jpPlan,
+      origin: resolveHomeOrigin("India"),
+    });
+    expect(route.stops.map((s) => s.name)).toEqual(["Tokyo", "Kyoto", "Bangkok"]);
+    // Last stop of Japan bridges to Thailand — a long hop → flight.
+    const kyoto = route.stops[1];
+    expect(kyoto.transportToNext?.type).toBe("flight");
+    // The final stop has no onward leg.
+    expect(route.stops[2].transportToNext).toBeUndefined();
+  });
+
+  it("supports a domestic-shaped route with no origin (no international arc)", () => {
+    const route = buildCinematicRoute([seg(jp, jpPlan)], {
+      title: "Japan",
+      plan: jpPlan,
+      origin: null,
+    });
+    expect(route.origin).toBeNull();
+    // With no origin the overview centers on the units, not a blended midpoint.
+    expect(route.overviewCenter).toEqual([jp.cities![0].lng, jp.cities![0].lat]);
+  });
+
+  it("skips units whose stops resolve to no coordinates", () => {
+    const ghost = {
+      name: "Ghostland",
+      center: [0, 0] as [number, number],
+      plan: { days: [{ label: "Day 1 — Nowhere", activities: [] }] } as unknown as TripPlan,
+      cities: [],
+    };
+    const route = buildCinematicRoute([seg(jp, jpPlan), ghost], {
+      title: "Japan",
+      plan: jpPlan,
+      origin: resolveHomeOrigin("India"),
+    });
+    expect(route.stops.map((s) => s.name)).toEqual(["Tokyo", "Kyoto"]);
   });
 });
 

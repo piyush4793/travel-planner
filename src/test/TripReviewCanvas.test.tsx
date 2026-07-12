@@ -141,6 +141,26 @@ describe("TripReviewCanvas", () => {
     expect(screen.getByRole("button", { name: "Share your trip plan" })).toBeInTheDocument();
   });
 
+  it("passes the Cinematic action through to the toolbar when supplied", () => {
+    const onCinematic = vi.fn();
+    renderCanvas({
+      segments: [segment("Norway", "Oslo", 3), segment("Denmark", "Copenhagen", 3)],
+      composedPlan: composed,
+      canCinematic: true,
+      onCinematic,
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Watch the animated cinematic journey" }));
+    expect(onCinematic).toHaveBeenCalled();
+  });
+
+  it("hides the Cinematic action when not enabled", () => {
+    renderCanvas({
+      segments: [segment("Norway", "Oslo", 3), segment("Denmark", "Copenhagen", 3)],
+      composedPlan: composed,
+    });
+    expect(screen.queryByRole("button", { name: "Watch the animated cinematic journey" })).not.toBeInTheDocument();
+  });
+
   it("names each stop with its own day count in its header", () => {
     renderCanvas({ segments: [segment("Norway", "Oslo", 3), segment("Denmark", "Copenhagen", 5)], composedPlan: composed });
     const denmark = screen.getByRole("region", { name: /Denmark — stop 2 of 2/ });

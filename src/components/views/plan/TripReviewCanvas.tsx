@@ -70,6 +70,9 @@ type Props = {
   /** Re-sort the route into a sensible nearest-neighbour chain from the anchor. */
   onAutoArrange: () => void;
   canAutoArrange: boolean;
+  /** Play the composed route as a cinematic fly-through (≥2 stops). */
+  canCinematic?: boolean;
+  onCinematic?: () => void;
 };
 
 type SegmentBlockProps = {
@@ -266,6 +269,8 @@ function TripReviewCanvasInner({
   onReorder,
   onAutoArrange,
   canAutoArrange,
+  canCinematic,
+  onCinematic,
 }: Props) {
   // Anchor opens by default; the rest fold. An explicit toggle overrides per stop,
   // reset whenever the route identity or the anchor changes.
@@ -331,6 +336,8 @@ function TripReviewCanvasInner({
       homeCountry={homeCountry}
       routeStops={routeStops}
       onPlanWithAi={onPlanWithAi}
+      canCinematic={canCinematic}
+      onCinematic={onCinematic}
     />
   );
 

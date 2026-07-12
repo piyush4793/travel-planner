@@ -34,6 +34,12 @@ export function planCostBasisLabel(plan: TripPlan): string {
 
 /** Extract city name from a day label like "Day 1 — Oslo" */
 export function extractCityFromLabel(label: string): string {
+  // Strip a leading "Day N" / "Day N–M" counter and its separator; the remainder
+  // is the place. Handling the counter explicitly stops a hyphen/en-dash day range
+  // (e.g. "Day 1–5 — Alpha") from being mistaken for the city separator, which
+  // would otherwise capture "5 — Alpha".
+  const stripped = label.replace(/^\s*Day\s+\d+(?:\s*[–-]\s*\d+)?\s*[—–-]\s*/, "");
+  if (stripped !== label) return stripped.trim();
   const m = label.match(/[—\-–]\s*(.+)$/);
   return m ? m[1].trim() : "";
 }

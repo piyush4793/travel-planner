@@ -1,4 +1,6 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { RefObject } from "react";
+import type maplibregl from "maplibre-gl";
 import type { Country } from "../../../core/types";
 import { type BudgetBasis } from "../../../core/utils/budget";
 import { cityExperienceOptions } from "../../../core/utils/cityExperiences";
@@ -22,6 +24,9 @@ import { getDestinationSource } from "../../../core/trip/getDestinationSource";
 import { useTripExperiences } from "../../../hooks/useTripExperiences";
 import { useTripRules } from "../../../hooks/useTripRules";
 import { useTripPlanner, type TripPlannerSeed } from "../../../hooks/useTripPlanner";
+import type { CinematicRoute } from "../../country/cinematic/engine";
+
+const ItineraryCinematic = lazy(() => import("../../country/ItineraryCinematic"));
 
 /**
  * How many route stops the header names explicitly before collapsing the rest
@@ -56,6 +61,10 @@ type Props = {
   openTrip?: OpenTripRequest | null;
   /** Resolve a saved trip for a picked country set (resume-vs-fresh prompt). */
   matchSavedTrip?: (countries: string[]) => SavedTrip | null;
+  /** Shared always-mounted MapView the cinematic overlay animates over. */
+  mainMapRef?: RefObject<maplibregl.Map | null>;
+  /** Report cinematic open/close so App can reveal the hidden MapView. */
+  onCinematicChange?: (active: boolean) => void;
 };
 
 type StepKey = "basics" | "cities" | "review";
@@ -75,7 +84,7 @@ const STEP_META: Record<StepKey, StepMeta> = {
  * is inferred behind the scenes and tunable on Review; cities are a result you
  * edit, never a filter that fights vibe.
  */
-export default function PlanView({ countries, visitedNames, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onToggleVisited, favoriteNames, onToggleFavorite, onUpdateNotes, aiPlanCountFor, openTrip, matchSavedTrip }: Props) {
+export default function PlanView({ countries, visitedNames, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onToggleVisited, favoriteNames, onToggleFavorite, onUpdateNotes, aiPlanCountFor, openTrip, matchSavedTrip, mainMapRef, onCinematicChange }: Props) {
   // Rehydrate a saved draft once so a refresh resumes where the user left off.
   const draft0 = useRef(loadPlanDraft()).current;
   const multiCountry = isEnabled("multiCountryPlanning");
@@ -94,6 +103,10 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
   });
   const picked = selection[0] ?? null;
   const [stepIndex, setStepIndex] = useState(() => (picked && draft0 ? draft0.step : 0));
+
+  // The prebuilt route the cinematic overlay plays. Non-null ⇒ overlay open.
+  // One overlay serves single and multi (the route model is scope-agnostic).
+  const [cinematicRoute, setCinematicRoute] = useState<CinematicRoute | null>(null);
 
   // A reopened saved trip's per-stop snapshot (cities + honest length +
   // experience focus), applied once per nonce to rehydrate the funnel: the
@@ -311,6 +324,18 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     [secondaryUnits],
   );
 
+  // Cinematic overlay lifecycle. Report open/close so App reveals the hidden
+  // MapView, and auto-close when the route identity changes (a different
+  // selection means the played route no longer matches what's on screen).
+  useEffect(() => {
+    onCinematicChange?.(cinematicRoute !== null);
+  }, [cinematicRoute, onCinematicChange]);
+  const selectionSig = selection.map((c) => c.name).join(" → ");
+  useEffect(() => {
+    setCinematicRoute(null);
+  }, [selectionSig]);
+  useEffect(() => () => onCinematicChange?.(false), [onCinematicChange]);
+
   const anyUnitHasCities = placesUnits.some((u) => u.orderedCities.length > 0);
 
   // Basics → (Places, when any stop has cities) → Your trip. Cities are also
@@ -495,6 +520,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
                 notes={planActions.notes}
                 onSaveNotes={planActions.onSaveNotes}
                 nav={reviewNav}
+                onStartCinematic={mainMapRef ? setCinematicRoute : undefined}
               />
             ) : (
               <div className="flex h-64 items-center justify-center rounded-2xl border border-line bg-white">
@@ -586,6 +612,16 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
           )}
         </div>
       </div>
+
+      {mainMapRef && cinematicRoute && (
+        <Suspense fallback={null}>
+          <ItineraryCinematic
+            route={cinematicRoute}
+            mainMapRef={mainMapRef}
+            onClose={() => setCinematicRoute(null)}
+          />
+        </Suspense>
+      )}
     </div>
   );
 }

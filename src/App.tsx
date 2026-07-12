@@ -426,6 +426,8 @@ export default function App() {
             aiPlanCountFor={isEnabled("llmPlanning") ? aiPlanCountFor : undefined}
             openTrip={planSeed}
             matchSavedTrip={matchSavedTrip}
+            mainMapRef={mainMapRef}
+            onCinematicChange={setCinematicActive}
           />
         ) : view === "trips" ? (
           <MyTripsView

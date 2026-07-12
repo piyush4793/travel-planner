@@ -1,8 +1,9 @@
 import maplibregl from "maplibre-gl";
-import type { Country } from "../../../core/types";
+import type { Country, CityEntry } from "../../../core/types";
 import type { TripPlan, DayEntry } from "../../../core/utils/tripPlans";
 import { extractCityFromLabel } from "../../../core/utils/tripPlans";
 import type { CountryRule } from "../../../core/data/itineraryRules";
+import { haversineKm } from "../../../core/utils/routeOrder";
 import { VEHICLE_SVG, TRANSPORT_COLORS, buildVehicleSvgNode } from "../../../utils/vehicleMarkers";
 import { type TransportType, detectTransport } from "../../../core/utils/transport";
 
@@ -14,9 +15,23 @@ export type CityStop = {
   transportToNext?: { type: TransportType; label: string };
 };
 
-export function buildCityStops(plan: TripPlan, country: Country, rule?: CountryRule | null): CityStop[] {
+/** Minimal coordinate-bearing city shape the stop builder needs (scope-agnostic). */
+type CityCoord = Pick<CityEntry, "name" | "lat" | "lng">;
+
+/**
+ * Group a single plan's days into ordered city stops, resolving coordinates from
+ * the supplied city list and inter-city transport from the unit's rule. The
+ * lower-level primitive behind {@link buildCityStops} and the multi-unit
+ * {@link buildCinematicRoute} — it knows nothing about "country", so a future
+ * domestic (state/city) unit flows through unchanged.
+ */
+export function buildSegmentStops(
+  plan: TripPlan,
+  cities: readonly CityCoord[],
+  rule?: CountryRule | null,
+): CityStop[] {
   const coordsMap = new Map<string, [number, number]>();
-  (country.cities ?? []).forEach((c) => coordsMap.set(c.name, [c.lng, c.lat]));
+  cities.forEach((c) => coordsMap.set(c.name, [c.lng, c.lat]));
 
   const groups: { name: string; days: DayEntry[] }[] = [];
   for (const day of plan.days) {
@@ -27,7 +42,6 @@ export function buildCityStops(plan: TripPlan, country: Country, rule?: CountryR
     else groups.push({ name: city, days: [day] });
   }
 
-  // rule passed as prop
   return groups
     .filter((g) => coordsMap.has(g.name))
     .map((g, i, arr) => {
@@ -41,6 +55,151 @@ export function buildCityStops(plan: TripPlan, country: Country, rule?: CountryR
       }
       return { name: g.name, coords: coordsMap.get(g.name)!, days: g.days, transportToNext };
     });
+}
+
+export function buildCityStops(plan: TripPlan, country: Country, rule?: CountryRule | null): CityStop[] {
+  return buildSegmentStops(plan, country.cities ?? [], rule);
+}
+
+// ─── Scope-agnostic cinematic route model ─────────────────────────────────────
+
+/**
+ * One plannable unit on a cinematic route — a country today, a state/city under a
+ * future domestic scope. Carries everything the fly-through needs to render this
+ * unit's stops without knowing what kind of unit it is.
+ */
+export interface CinematicSegment {
+  /** Unit display name (country/state). */
+  name: string;
+  /** Unit centroid `[lng, lat]` — used for the world-overview framing. */
+  center: [number, number];
+  /** This unit's itinerary. */
+  plan: TripPlan;
+  /** Coordinate source for the unit's cities. */
+  cities: readonly CityCoord[];
+  /** Rule chunk (connections + city images); null when the unit has no offline data. */
+  rule?: CountryRule | null;
+}
+
+/** Where the journey departs from (and returns to). Null → no intro/return arc. */
+export interface CinematicOrigin {
+  coords: [number, number];
+  /** Departure city label, e.g. "New Delhi". */
+  city: string;
+  /** Origin region label, e.g. "India". */
+  label: string;
+}
+
+/**
+ * The fully-resolved route the fly-through animates. Flattens N units into one
+ * ordered stop list (border hops between units encoded as the previous stop's
+ * `transportToNext`), merges every unit's city images, and carries the composed
+ * plan for the headline stats. Single-unit routes are byte-identical to the old
+ * single-country path; multi-unit and future domestic routes reuse the same shape.
+ */
+export interface CinematicRoute {
+  title: string;
+  /** Composed (or single) plan — drives duration / cost / note / basis icon. */
+  plan: TripPlan;
+  stops: CityStop[];
+  origin: CinematicOrigin | null;
+  cityImages: Record<string, string[]>;
+  /** Camera target for the opening world overview. */
+  overviewCenter: [number, number];
+  comboCountries?: Array<{ name: string; lat: number; lng: number }>;
+}
+
+/** Beyond this great-circle distance an inter-unit hop is animated as a flight. */
+const INTER_UNIT_FLIGHT_KM = 300;
+
+/** Indicative transport for an inter-unit (border) hop, derived only from distance. */
+export function interUnitTransport(
+  from: [number, number],
+  to: [number, number],
+): { type: TransportType; label: string } {
+  const km = haversineKm({ lat: from[1], lng: from[0] }, { lat: to[1], lng: to[0] });
+  return km >= INTER_UNIT_FLIGHT_KM
+    ? { type: "flight", label: "Flight" }
+    : { type: "train", label: "Rail / road" };
+}
+
+function centroid(points: [number, number][]): [number, number] | null {
+  if (points.length === 0) return null;
+  const sum = points.reduce((acc, p) => [acc[0] + p[0], acc[1] + p[1]] as [number, number], [0, 0]);
+  return [sum[0] / points.length, sum[1] / points.length];
+}
+
+/**
+ * The international departure origin for a home country, with the same fallbacks
+ * the single-country cinematic always used. A future domestic scope passes
+ * `origin: null` to {@link buildCinematicRoute} instead (no international arc).
+ */
+export function resolveHomeOrigin(homeCountry: string): CinematicOrigin {
+  return {
+    coords: HOME_COORDS[homeCountry] ?? [20, 20],
+    city: HOME_CITY[homeCountry] ?? homeCountry,
+    label: homeCountry,
+  };
+}
+
+/**
+ * Compose one cinematic route from ordered units. Border hops between consecutive
+ * units are stamped onto the previous stop's `transportToNext` (distance-derived),
+ * city images are merged, and the overview frames the origin against the units'
+ * centroid. N=1 yields the same stops/overview as the legacy single-country path.
+ */
+export function buildCinematicRoute(
+  segments: CinematicSegment[],
+  opts: {
+    title: string;
+    plan: TripPlan;
+    origin: CinematicOrigin | null;
+    comboCountries?: Array<{ name: string; lat: number; lng: number }>;
+  },
+): CinematicRoute {
+  const stops: CityStop[] = [];
+  const cityImages: Record<string, string[]> = {};
+  const activeCenters: [number, number][] = [];
+
+  for (const seg of segments) {
+    const segStops = buildSegmentStops(seg.plan, seg.cities, seg.rule);
+    if (segStops.length === 0) continue;
+    // Bridge the previous unit's last stop to this unit's first stop (border hop).
+    const prev = stops[stops.length - 1];
+    if (prev) prev.transportToNext = interUnitTransport(prev.coords, segStops[0].coords);
+    stops.push(...segStops);
+    activeCenters.push(seg.center);
+    if (seg.rule?.cityImages) Object.assign(cityImages, seg.rule.cityImages);
+  }
+
+  const unitsCentroid = centroid(activeCenters) ?? centroid(stops.map((s) => s.coords)) ?? opts.origin?.coords ?? [20, 20];
+  const overviewCenter: [number, number] = opts.origin
+    ? [(opts.origin.coords[0] + unitsCentroid[0]) / 2, (opts.origin.coords[1] + unitsCentroid[1]) / 2]
+    : unitsCentroid;
+
+  return {
+    title: opts.title,
+    plan: opts.plan,
+    stops,
+    origin: opts.origin,
+    cityImages,
+    overviewCenter,
+    comboCountries: opts.comboCountries,
+  };
+}
+
+/** Convenience: a single-country cinematic route (international origin). */
+export function buildSingleCountryRoute(
+  plan: TripPlan,
+  country: Country,
+  rule: CountryRule | null | undefined,
+  homeCountry: string,
+  comboCountries?: Array<{ name: string; lat: number; lng: number }>,
+): CinematicRoute {
+  return buildCinematicRoute(
+    [{ name: country.name, center: [country.lng, country.lat], plan, cities: country.cities ?? [], rule }],
+    { title: country.name, plan, origin: resolveHomeOrigin(homeCountry), comboCountries },
+  );
 }
 
 // ─── Home departure city coords + names ──────────────────────────────────────

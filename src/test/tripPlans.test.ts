@@ -261,6 +261,13 @@ describe("tripPlans — P0", () => {
     it("returns empty for label without city", () => {
       expect(extractCityFromLabel("Day 5")).toBe("");
     });
+    it("handles a day-range counter without mistaking the range for the separator", () => {
+      expect(extractCityFromLabel("Day 1–5 — Alpha")).toBe("Alpha");
+      expect(extractCityFromLabel("Day 1-5 - Tokyo")).toBe("Tokyo");
+    });
+    it("preserves hyphenated city names", () => {
+      expect(extractCityFromLabel("Day 2 — Aix-en-Provence")).toBe("Aix-en-Provence");
+    });
   });
 
   describe("extractPlanCities", () => {

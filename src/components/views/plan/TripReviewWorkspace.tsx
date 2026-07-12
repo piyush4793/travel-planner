@@ -3,6 +3,7 @@ import type { Country } from "../../../core/types";
 import { type BudgetBasis } from "../../../core/utils/budget";
 import { composeTripPlan } from "../../../core/utils/tripPlans";
 import { moveIndex, orderByProximity } from "../../../core/utils/routeOrder";
+import { buildCinematicRoute, resolveHomeOrigin, type CinematicRoute, type CinematicSegment } from "../../country/cinematic/engine";
 import type { PlanBuilder } from "../../../hooks/usePlanBuilder";
 import type { UnitPlan } from "../../../hooks/useTripPlanner";
 import PlanWorkspaceShell, { type RailDef, type WorkspaceNav } from "./PlanWorkspaceShell";
@@ -23,6 +24,8 @@ type Props = {
   onSaveNotes?: (notes: string) => void;
   /** Mobile bottom-bar Back / Plan-another (desktop uses the wizard footer). */
   nav?: WorkspaceNav;
+  /** Play the composed route as a cinematic fly-through (single + multi). */
+  onStartCinematic?: (route: CinematicRoute) => void;
 };
 
 /**
@@ -48,6 +51,7 @@ function TripReviewWorkspaceInner({
   notes,
   onSaveNotes,
   nav,
+  onStartCinematic,
 }: Props) {
   const { displayCountry, plan } = builder;
 
@@ -146,6 +150,29 @@ function TripReviewWorkspaceInner({
     [orderedSegments],
   );
 
+  // The composed route as a scope-agnostic cinematic model, in visit order. One
+  // builder serves single + multi (border hops derived per inter-unit leg); a
+  // future domestic scope reuses it by swapping the origin. Guarded to ≥2 stops.
+  const cinematicRoute = useMemo<CinematicRoute>(() => {
+    const segs: CinematicSegment[] = orderedSegments.map((s) => ({
+      name: s.name,
+      center: s.country
+        ? [s.country.lng, s.country.lat]
+        : s.point
+          ? [s.point.lng, s.point.lat]
+          : [0, 0],
+      plan: s.plan,
+      cities: s.country?.cities ?? [],
+      rule: s.rule,
+    }));
+    return buildCinematicRoute(segs, {
+      title: orderedSegments.map((s) => s.name).join(" → "),
+      plan: orderedComposed,
+      origin: resolveHomeOrigin(homeCountry),
+    });
+  }, [orderedSegments, orderedComposed, homeCountry]);
+  const canCinematic = !!onStartCinematic && cinematicRoute.stops.length >= 2;
+
   const reorderStop = useCallback(
     (from: number, to: number) => {
       setOrder((prev) => {
@@ -178,6 +205,8 @@ function TripReviewWorkspaceInner({
       onReorder={reorderStop}
       onAutoArrange={autoArrange}
       canAutoArrange={canAutoArrange}
+      canCinematic={canCinematic}
+      onCinematic={canCinematic ? () => onStartCinematic?.(cinematicRoute) : undefined}
     />
   );
 
