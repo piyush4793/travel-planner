@@ -222,15 +222,15 @@ export default function DestinationPicker({ source, countries, exploreCountries,
 
   return (
     <div className="h-full w-full overflow-y-auto bg-surface-2">
-      <div className="mx-auto flex min-h-full w-full max-w-2xl flex-col px-5 pt-6 pb-12">
+      <div className="mx-auto flex min-h-full w-full max-w-2xl flex-col px-5 pt-6 pb-12 lg:max-w-5xl lg:px-8">
         {/* Editorial hero — sets tone on every breakpoint without burying the board. */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-700 via-emerald-800 to-emerald-900 px-5 py-5 shadow-sm sm:px-6 sm:py-6">
-          <span aria-hidden="true" className="pointer-events-none absolute -right-3 -top-5 select-none text-[86px] leading-none opacity-20">🌍</span>
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-700 via-emerald-800 to-emerald-900 px-5 py-5 shadow-sm sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+          <span aria-hidden="true" className="pointer-events-none absolute -right-3 -top-5 select-none text-[86px] leading-none opacity-20 lg:text-[120px]">🌍</span>
           <p className="relative text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-200">Plan your next escape</p>
-          <h1 className="relative mt-1 font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+          <h1 className="relative mt-1 font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-4xl">
             {multiSelect ? "Where will your journey take you?" : "Where will you wander next?"}
           </h1>
-          <p className="relative mt-1.5 max-w-md text-[13px] text-emerald-100/90">
+          <p className="relative mt-1.5 max-w-md text-[13px] text-emerald-100/90 lg:text-sm">
             {multiSelect
               ? `Pick up to ${maxSelection} ${source.unitNounPlural} and we'll shape one trip across them.`
               : "Pick a destination and we'll shape a trip around what you love."}
