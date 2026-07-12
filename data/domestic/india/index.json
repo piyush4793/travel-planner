@@ -283,5 +283,103 @@
       "Himachal Pradesh",
       "Uttar Pradesh"
     ]
+  },
+  {
+    "name": "Uttar Pradesh",
+    "lat": 26.8467,
+    "lng": 80.9462,
+    "region": "North India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 11,
+    "popularityScore": 91,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Delhi",
+      "Rajasthan",
+      "Bihar",
+      "Madhya Pradesh",
+      "Uttarakhand"
+    ]
+  },
+  {
+    "name": "Delhi",
+    "lat": 28.6139,
+    "lng": 77.209,
+    "region": "North India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 6,
+    "popularityScore": 90,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June"
+    ],
+    "combo": [
+      "Rajasthan",
+      "Uttar Pradesh",
+      "Himachal Pradesh"
+    ]
+  },
+  {
+    "name": "West Bengal",
+    "lat": 22.9868,
+    "lng": 87.855,
+    "region": "East India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 10,
+    "maxDays": 16,
+    "popularityScore": 83,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Sikkim",
+      "Odisha",
+      "Assam"
+    ]
   }
 ]

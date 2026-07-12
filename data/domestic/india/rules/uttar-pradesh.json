@@ -1,0 +1,264 @@
+{
+  "name": "Uttar Pradesh",
+  "seed": false,
+  "lat": 26.8467,
+  "lng": 80.9462,
+  "region": "North India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": ["October", "November", "December", "January", "February", "March"],
+  "worstMonths": ["April", "May", "June", "July", "August", "September"],
+  "budget": {
+    "solo": "₹35K–₹55K",
+    "couple": "₹60K–₹90K",
+    "family4": "₹1L–₹1.6L"
+  },
+  "experiences": [
+    "History",
+    "Architecture",
+    "UNESCO Sites",
+    "Temples & Religious Sites",
+    "Festivals",
+    "Food",
+    "Ancient Ruins",
+    "Museums",
+    "Cruises & Boat Trips",
+    "Markets & Shopping"
+  ],
+  "avoid": ["April", "May", "June", "July", "August", "September"],
+  "combo": ["Delhi", "Rajasthan", "Bihar", "Madhya Pradesh", "Uttarakhand"],
+  "landmark": "Taj Mahal, Agra",
+  "travelStyle": ["explorer"],
+  "stopoverNote": "Uttar Pradesh is the natural bridge between Delhi and Bihar: Delhi→Agra is 2–3 hours by fast train, Jaipur is about 4 hours from Agra, and Varanasi→Patna/Bodhgaya continues the eastern pilgrimage circuit.",
+  "diet": {
+    "vegetarian": "Uttar Pradesh is extremely vegetarian-friendly. Mathura, Vrindavan, Ayodhya and Varanasi have large pure-veg zones around temples; Agra's bedai-sabzi, petha and chaat are vegetarian classics, while Lucknow has strong vegetarian Awadhi options alongside its famous kebabs.",
+    "vegan": "Vegan travel is possible but dairy is everywhere: ghee, curd, lassi, rabri, malaiyo and makkhan are defaults. Ask clearly for 'bina ghee, bina dahi, bina makhan, bina doodh — tel mein banana'. Pani puri, tamatar chaat, dal fry cooked in oil, sabzi, litti-chokha and fruit juices are the safest everyday options.",
+    "phrases": [
+      "Bina ghee, bina makhan = no ghee or butter",
+      "Bina dahi/doodh = without curd or milk",
+      "Tel mein banana = cook it in oil",
+      "Sirf shakahari khana = vegetarian food only"
+    ]
+  },
+  "links": [
+    { "label": "UP Tourism (official)", "url": "https://www.uptourism.gov.in/en" },
+    { "label": "ASI ticket booking", "url": "https://asi.payumoney.com/" },
+    { "label": "Ram Janmabhoomi Teerth Kshetra", "url": "https://srjbtkshetra.org" }
+  ],
+  "cities": [
+    {
+      "name": "Agra",
+      "lat": 27.1767,
+      "lng": 78.0081,
+      "notes": "Mughal glory at its zenith — the Taj Mahal, Agra Fort and Fatehpur Sikri make Agra one of India's densest UNESCO heritage clusters.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["April", "May", "June", "July", "August", "September"],
+      "experiences": ["UNESCO Sites", "Architecture", "History", "Ancient Ruins", "Museums"]
+    },
+    {
+      "name": "Mathura-Vrindavan",
+      "lat": 27.4924,
+      "lng": 77.6737,
+      "notes": "Krishna's birthplace and the sacred landscape of his youth — compact twin towns of temples, ghats, devotional music and pure-veg food.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["May", "June", "August"],
+      "experiences": ["Temples & Religious Sites", "History", "Festivals", "Food", "Architecture"]
+    },
+    {
+      "name": "Lucknow",
+      "lat": 26.8467,
+      "lng": 80.9462,
+      "notes": "The City of Nawabs — Imambaras, Rumi Darwaza, 1857 history, chikankari markets and one of India's most celebrated food cultures, with Ayodhya as an easy day trip.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["May", "June", "July", "August", "September"],
+      "experiences": ["Architecture", "History", "Food", "Markets & Shopping", "Festivals", "Temples & Religious Sites"]
+    },
+    {
+      "name": "Varanasi",
+      "lat": 25.3176,
+      "lng": 82.9739,
+      "notes": "One of the world's oldest continuously inhabited cities — dawn boat rides, sacred ghats, Kashi Vishwanath and Sarnath form the spiritual finale.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["May", "June", "July", "August", "September"],
+      "experiences": ["Temples & Religious Sites", "History", "Cruises & Boat Trips", "Ancient Ruins", "Food"]
+    }
+  ],
+  "itinerary": {
+    "sim": "Any Indian prepaid SIM (Jio or Airtel) works well across Uttar Pradesh; carry photo ID for purchase. Coverage is strong in Agra, Lucknow and Varanasi, but old-city lanes and crowded ghats can have patchy data.",
+    "apps": ["Google Maps", "IRCTC Rail Connect", "Ola", "Uber", "Rapido", "Zomato", "Paytm"],
+    "cityOrder": ["Agra", "Mathura-Vrindavan", "Lucknow", "Varanasi"],
+    "cities": {
+      "Agra": {
+        "name": "Agra",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is ideal: sunrise Taj Mahal and Agra Fort first, then Fatehpur Sikri and the smaller Mughal monuments. The Taj Mahal is closed every Friday — never schedule the core Taj day then.",
+        "experiences": ["UNESCO Sites", "Architecture", "History", "Ancient Ruins", "Museums"],
+        "signatureExperiences": ["UNESCO Sites", "Architecture"],
+        "days": [
+          {
+            "theme": "Taj Mahal at sunrise & Agra Fort",
+            "pace": "packed",
+            "note": "Start before dawn: the Taj is best at sunrise and gates usually open about 30 minutes before sunrise. It is closed Fridays, so move this day if needed.",
+            "activities": [
+              { "name": "Taj Mahal — sunrise visit with mausoleum add-on", "duration": "~3h", "priority": "must-see", "cost": "Indian ₹250 (₹50 entry + ₹200 mausoleum); foreign ₹1,300 (₹1,100 + ₹200); children <15 free", "tip": "Book online at ASI, carry photo ID and pack light. No tripods, food or tobacco; closed Fridays." },
+              { "name": "Taj Museum inside the complex", "duration": "~45m", "priority": "recommended", "cost": "Included in Taj ticket", "tip": "Often missed — it adds context through Mughal plans, artefacts and archival material." },
+              { "name": "Agra Fort — Diwan-i-Am, Khas Mahal and Taj views", "duration": "~2h", "priority": "must-see", "cost": "Indian ₹50 / foreign ₹650; children <15 free", "tip": "The fort is only about 2.5km from the Taj; go before the afternoon heat." },
+              { "name": "Mehtab Bagh sunset view across the Yamuna", "duration": "~1h", "priority": "recommended", "cost": "Indian ₹20 / foreign ₹200", "tip": "This is the classic opposite-bank sunset view of the Taj." }
+            ],
+            "hotels": [
+              { "name": "Joey's Hostel Agra", "budget": "₹600–₹1,200/night" },
+              { "name": "Hotel Taj Resorts", "budget": "₹3,500–₹6,000/night" }
+            ],
+            "meals": ["Bedai-sabzi and jalebi breakfast", "Petha from Panchhi or a fixed-price shop", "Sadar Bazaar chaat and North Indian dinner"]
+          },
+          {
+            "theme": "Fatehpur Sikri, Baby Taj & old bazaars",
+            "pace": "moderate",
+            "note": "Do Fatehpur Sikri as a dedicated morning excursion — combining it with sunrise Taj makes the day too rushed.",
+            "activities": [
+              { "name": "Fatehpur Sikri — Mughal ghost capital", "duration": "~2.5h", "priority": "must-see", "cost": "Indian ₹50 / foreign ₹610; children <15 free", "tip": "Leave Agra around 8am; hire a guide at the gate for ₹400–₹600 if you want the palace stories." },
+              { "name": "Itmad-ud-Daula (Baby Taj)", "duration": "~1.5h", "priority": "recommended", "cost": "Indian ₹30 / foreign ₹310", "tip": "The marble inlay here foreshadows the Taj and it is much quieter." },
+              { "name": "Kinari Bazaar or Sadar Bazaar", "duration": "~1h", "priority": "optional", "tip": "Look for marble inlay, leather goods and petha; bargain in street markets." },
+              { "name": "Akbar's Tomb, Sikandra", "duration": "~1h", "priority": "optional", "cost": "Indian ₹30 / foreign ₹310", "tip": "A good add-on if you are driving toward Mathura next." }
+            ],
+            "hotels": [
+              { "name": "Joey's Hostel Agra", "budget": "₹600–₹1,200/night" },
+              { "name": "Hotel Taj Resorts", "budget": "₹3,500–₹6,000/night" }
+            ],
+            "meals": ["Pinch of Spice", "Mama Chicken Mama Franky House for casual food", "Deviram Sweets for bedai and jalebi"]
+          }
+        ]
+      },
+      "Mathura-Vrindavan": {
+        "name": "Mathura-Vrindavan",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day is enough for the essential Krishna circuit if you start early. Most temples close around midday and reopen late afternoon; plan morning and evening darshan windows.",
+        "experiences": ["Temples & Religious Sites", "History", "Festivals", "Food", "Architecture"],
+        "signatureExperiences": ["Temples & Religious Sites", "Festivals"],
+        "days": [
+          {
+            "theme": "Krishna's sacred twin cities",
+            "pace": "moderate",
+            "note": "Start in Mathura, shift to Vrindavan by auto or e-rickshaw, and use the hot midday temple closure window for lunch and transfers. Holi is spectacular but extremely crowded.",
+            "activities": [
+              { "name": "Krishna Janmabhoomi Temple, Mathura", "duration": "~1.5h", "priority": "must-see", "cost": "Free; museum ₹10–₹50", "tip": "High security: no phones or cameras inside, and carry photo ID." },
+              { "name": "Vishram Ghat and Yamuna boat ride", "duration": "~45m", "priority": "recommended", "cost": "Boat ₹100–₹200/person", "tip": "Evening aarti is atmospheric if you are not rushing onward." },
+              { "name": "Banke Bihari Temple, Vrindavan", "duration": "~1h", "priority": "must-see", "cost": "Free", "tip": "Go early; the curtain darshan creates sudden crowd surges." },
+              { "name": "Prem Mandir and evening light show", "duration": "~1h", "priority": "must-see", "cost": "Free", "tip": "The white-marble temple is most photogenic after sunset." },
+              { "name": "ISKCON Temple, Vrindavan", "duration": "~45m", "priority": "optional", "cost": "Free" }
+            ],
+            "hotels": [
+              { "name": "MVT Guesthouse Vrindavan", "budget": "₹2,000–₹4,000/night" },
+              { "name": "Nidhivan Sarovar Portico", "budget": "₹4,500–₹8,000/night" }
+            ],
+            "meals": ["Brijwasi peda in Mathura", "Kachori-sabzi and lassi", "Pure-veg thali near Banke Bihari"]
+          }
+        ]
+      },
+      "Lucknow": {
+        "name": "Lucknow",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days works well: one for Nawabi Lucknow's monuments and food, one as a packed Ayodhya day trip by early train.",
+        "experiences": ["Architecture", "History", "Food", "Markets & Shopping", "Festivals", "Temples & Religious Sites"],
+        "signatureExperiences": ["Architecture", "Food"],
+        "days": [
+          {
+            "theme": "Nawabi grandeur & Lucknow food walk",
+            "pace": "moderate",
+            "note": "Bara Imambara, Rumi Darwaza and Chota Imambara are clustered and walkable; the Residency is a short auto ride away.",
+            "activities": [
+              { "name": "Bara Imambara and Bhool Bhulaiya labyrinth", "duration": "~2h", "priority": "must-see", "cost": "Indian adult ₹50, child ₹20 / foreign ₹200", "tip": "Hire an official guide for the labyrinth — it is genuinely confusing." },
+              { "name": "Rumi Darwaza photo stop", "duration": "~30m", "priority": "must-see", "cost": "Free", "tip": "Best photographed at golden hour or with the Imambara cluster." },
+              { "name": "Chota Imambara (Hussainabad Imambara)", "duration": "~1h", "priority": "recommended", "cost": "Indian ₹25–₹50 / foreign ₹150–₹200", "tip": "Known as the Palace of Lights for its chandeliers." },
+              { "name": "British Residency ruins and museum", "duration": "~1.5h", "priority": "recommended", "cost": "Indian ₹25 / foreign ₹300", "tip": "The 1857 siege context is strongest if you use the museum first." },
+              { "name": "Hazratganj, Chowk or Aminabad food-and-market walk", "duration": "~1.5h", "priority": "optional", "cost": "Food ₹50–₹200/item", "tip": "Try basket chaat, kulfi and chikankari browsing; Tunday Kababi is the non-veg icon." }
+            ],
+            "hotels": [
+              { "name": "goSTOPS Lucknow", "budget": "₹700–₹1,300/night" },
+              { "name": "La Place Sarovar Portico", "budget": "₹4,000–₹7,000/night" }
+            ],
+            "meals": ["Royal Café or Shukla Chaat House basket chaat", "Prakash Kulfi", "Awadhi vegetarian korma or biryani"]
+          },
+          {
+            "theme": "Ayodhya day trip — Ram Mandir and Sarayu ghats",
+            "pace": "packed",
+            "note": "Take an early train from Lucknow; Vande Bharat is under 2 hours when available. Demand is high since the 2024 Ram Mandir consecration, so book ahead and expect queues on weekends and festivals.",
+            "activities": [
+              { "name": "Hanuman Garhi Temple", "duration": "~1h", "priority": "must-see", "cost": "Free", "tip": "Tradition says visit Hanuman Garhi before Ram Mandir; there are 76 steps." },
+              { "name": "Ram Janmabhoomi Temple (Ram Mandir)", "duration": "~1.5h", "priority": "must-see", "cost": "Free; general darshan is free", "tip": "Book an online slot for smoother entry. Phones are not allowed inside; lockers near the gate cost about ₹10–₹20." },
+              { "name": "Kanak Bhawan", "duration": "~45m", "priority": "recommended", "cost": "Free", "tip": "A calmer temple stop after the main Ram Mandir queues." },
+              { "name": "Sarayu Ghat and evening aarti", "duration": "~1h", "priority": "recommended", "cost": "Free; boat ₹100–₹200/person", "tip": "Return to Lucknow after aarti if train timings permit; otherwise leave before dusk." }
+            ],
+            "hotels": [
+              { "name": "goSTOPS Lucknow", "budget": "₹700–₹1,300/night" },
+              { "name": "La Place Sarovar Portico", "budget": "₹4,000–₹7,000/night" }
+            ],
+            "meals": ["Ayodhya pure-veg dhaba meal", "Temple-area peda and kachori", "Late dinner back in Lucknow"]
+          }
+        ]
+      },
+      "Varanasi": {
+        "name": "Varanasi",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives the essential arc: arrive for evening Ganga Aarti, then do the dawn boat ride, Kashi Vishwanath and Sarnath. Add a third day for a slower old-city and BHU rhythm.",
+        "experiences": ["Temples & Religious Sites", "History", "Cruises & Boat Trips", "Ancient Ruins", "Food"],
+        "signatureExperiences": ["Temples & Religious Sites", "Cruises & Boat Trips"],
+        "days": [
+          {
+            "theme": "Sacred ghats and evening Ganga Aarti",
+            "pace": "relaxed",
+            "note": "If arriving by afternoon train from Lucknow, keep the first evening focused on the river rather than over-scheduling monuments.",
+            "activities": [
+              { "name": "Ganga Aarti at Dashashwamedh Ghat", "duration": "~1.5h", "priority": "must-see", "cost": "Free from steps; shared boat ₹250–₹500/person; private boat ₹1,500+", "tip": "Arrive 45 minutes early for steps; a boat gives a better river-facing view." },
+              { "name": "Ghat walk from Dashashwamedh to Manikarnika", "duration": "~1.5h", "priority": "must-see", "cost": "Free", "tip": "Be respectful around cremation ghats — photography is not permitted." },
+              { "name": "Old City laneways and Vishwanatha Gali", "duration": "~1h", "priority": "recommended", "cost": "Street food ₹50–₹200", "tip": "Try tamatar chaat, paan and seasonal malaiyo if visiting Oct–Feb." },
+              { "name": "Kashi Vishwanath Corridor evening orientation", "duration": "~1h", "priority": "optional", "cost": "Free", "tip": "Use lockers for bags and leather; the main darshan is better early next morning." }
+            ],
+            "hotels": [
+              { "name": "Moustache Varanasi", "budget": "₹700–₹1,400/night" },
+              { "name": "Ganpati Guest House", "budget": "₹3,000–₹6,000/night" }
+            ],
+            "meals": ["Kashi Chaat Bhandar tamatar chaat", "Blue Lassi (dairy, not vegan)", "Banarasi paan near Dashashwamedh"]
+          },
+          {
+            "theme": "Dawn boat ride, Kashi Vishwanath & Sarnath",
+            "pace": "packed",
+            "note": "This is a high-reward but early-start day. Sarnath is about 10km from the ghats and its archaeological museum is closed Fridays.",
+            "activities": [
+              { "name": "Sunrise boat ride on the Ganga", "duration": "~1.5h", "priority": "must-see", "cost": "Shared boat ₹150–₹300/person; private ₹800–₹1,500", "tip": "Start around 5:00–6:30am depending on season; pre-negotiate the route and price." },
+              { "name": "Kashi Vishwanath Temple morning darshan", "duration": "~1.5h", "priority": "must-see", "cost": "Free", "tip": "Morning is calmer than evening; foreign visitors should carry photo ID." },
+              { "name": "Sarnath — Dhamek Stupa and ASI site", "duration": "~2h", "priority": "must-see", "cost": "ASI site Indian ₹25 / foreign ₹300; museum Indian ₹5 / foreign ₹100", "tip": "The museum holds the original Ashoka Lion Capital and is closed Fridays." },
+              { "name": "Assi Ghat evening or BHU campus", "duration": "~1h", "priority": "recommended", "cost": "Free", "tip": "Assi is easier and quieter than Dashashwamedh; BHU is a green campus break." }
+            ],
+            "hotels": [
+              { "name": "Moustache Varanasi", "budget": "₹700–₹1,400/night" },
+              { "name": "Ganpati Guest House", "budget": "₹3,000–₹6,000/night" }
+            ],
+            "meals": ["Kachori Gali breakfast", "Brown Bread Bakery near the ghats (vegan-friendly options)", "Shree Ram Jalebi near Dashashwamedh"]
+          }
+        ]
+      }
+    },
+    "connections": [
+      { "from": "Agra", "to": "Mathura-Vrindavan", "method": "Train Agra Cantt→Mathura Jn, then auto/e-rickshaw to Vrindavan", "cost": "Train ₹120–₹1,000; Mathura auto/e-rickshaw ₹30–₹60", "distanceKm": 55, "durationHrs": 1, "sameDayFeasible": true },
+      { "from": "Mathura-Vrindavan", "to": "Lucknow", "method": "Express or overnight train from Mathura Jn to Lucknow NR/Charbagh", "cost": "Sleeper ₹200–₹300; 3AC ₹600–₹900; 2AC ₹900–₹1,400", "distanceKm": 420, "durationHrs": 8.5, "sameDayFeasible": false },
+      { "from": "Lucknow", "to": "Varanasi", "method": "Morning train, ideally Vande Bharat / Intercity / Kashi Express", "cost": "Chair Car ₹700–₹1,200; 3AC ₹400–₹700; sleeper ₹210–₹350", "distanceKm": 290, "durationHrs": 4.75, "sameDayFeasible": true },
+      { "from": "Agra", "to": "Varanasi", "method": "Long direct train, morning Vande Bharat where available, overnight train, or flight via Delhi/Lucknow", "cost": "Train ₹800–₹2,000; flights vary widely", "distanceKm": 590, "durationHrs": 10, "sameDayFeasible": false }
+    ],
+    "extras": [
+      "Taj Mahal ticket tiers verified for 2025/26: Indian ₹50 entry + ₹200 mausoleum = ₹250 total; foreign ₹1,100 entry + ₹200 mausoleum = ₹1,300 total; children under 15 free. The monument is closed every Friday and is best at sunrise.",
+      "Agra→Varanasi is a long leg of roughly 575–600km. Do not treat it like a casual same-day road transfer; use an overnight train, a fast morning train if seats exist, or a flight connection.",
+      "Most Mathura-Vrindavan temples close around noon and reopen around 4pm; leave bags at the hotel/station cloakroom and avoid leather items in temple queues.",
+      "Book IRCTC trains 2–4 weeks ahead in Oct–Mar, especially Lucknow→Ayodhya and Lucknow→Varanasi Vande Bharat routes.",
+      "Varanasi's lower ghats can flood in the monsoon and summer heat is severe across UP — Oct–Mar is the practical season for first-time travellers.",
+      "Quoted monument fees are as researched for Jul 2026 planning; ASI and local authority supplements can change, so reconfirm on official booking pages before travel."
+    ]
+  }
+}

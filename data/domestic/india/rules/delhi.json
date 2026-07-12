@@ -1,0 +1,164 @@
+{
+  "name": "Delhi",
+  "seed": false,
+  "lat": 28.6139,
+  "lng": 77.209,
+  "region": "North India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": ["October", "November", "December", "January", "February", "March"],
+  "worstMonths": ["April", "May", "June"],
+  "budget": {
+    "solo": "₹6K–₹1.2L",
+    "couple": "₹10K–₹2.2L",
+    "family4": "₹18K–₹4L"
+  },
+  "experiences": [
+    "History",
+    "Architecture",
+    "Temples & Religious Sites",
+    "UNESCO Sites",
+    "Food",
+    "Markets & Shopping",
+    "Museums"
+  ],
+  "avoid": ["April", "May", "June"],
+  "combo": ["Rajasthan", "Uttar Pradesh", "Himachal Pradesh"],
+  "landmark": "Red Fort, Delhi",
+  "travelStyle": ["explorer"],
+  "stopoverNote": "Indira Gandhi International Airport (DEL) is India's busiest hub and the classic Golden Triangle gateway. The Airport Express Metro reaches New Delhi Railway Station in ~19 min for ₹64, making a 24–72h stopover feasible.",
+  "diet": {
+    "vegetarian": "Delhi is one of India's strongest vegetarian cities: chole bhature, aloo paratha, samosas, chaat, jalebi, dahi bhalla and pure-veg thalis are easy to find. Reliable stops include Paranthe Wali Gali, Haldiram's/Bikanervala, Café Lota, Saravana Bhavan and Rajdhani.",
+    "vegan": "Vegan travel is possible but requires asking for no ghee, milk, cream, butter or paneer. Greenr Café, Burma Burma, Canvas V and Getafix Café are strong options; South Indian meals can often be made vegan with minor changes.",
+    "phrases": [
+      "Ghee, doodh, malai, makkhan, paneer nahi = no clarified butter, milk, cream, butter or cottage cheese",
+      "Tel mein banao = cook in oil",
+      "Dahi nahi = no curd/yogurt"
+    ]
+  },
+  "links": [
+    { "label": "Delhi Tourism Official", "url": "https://delhitourism.gov.in" },
+    { "label": "ASI Ticketing Portal", "url": "https://asi.paygov.in" },
+    { "label": "Delhi Metro Rail Corporation", "url": "https://delhimetrorail.com" }
+  ],
+  "cities": [
+    {
+      "name": "Old Delhi",
+      "lat": 28.6562,
+      "lng": 77.2311,
+      "notes": "Mughal-era Shahjahanabad — Red Fort, Jama Masjid, Chandni Chowk bazaars and legendary street food clustered around the Yellow Line.",
+      "bestMonths": ["October", "November", "December", "January", "February"],
+      "worstMonths": ["April", "May", "June", "July", "August"],
+      "experiences": ["History", "Architecture", "UNESCO Sites", "Food", "Markets & Shopping"]
+    },
+    {
+      "name": "New Delhi",
+      "lat": 28.6139,
+      "lng": 77.209,
+      "notes": "Lutyens' imperial capital and South Delhi culture belt — India Gate, museums, garden tombs, Qutub Minar, Lotus Temple and Akshardham.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["May", "June", "November"],
+      "experiences": ["History", "Architecture", "UNESCO Sites", "Museums", "Temples & Religious Sites"]
+    }
+  ],
+  "itinerary": {
+    "sim": "Any Indian prepaid SIM (Jio or Airtel) works well; buy at the airport or an authorised store with photo ID. Metro Wi-Fi and app cabs are reliable across central Delhi.",
+    "apps": ["Google Maps", "Delhi Metro Rail", "DMRC Momentum", "Uber", "Ola", "Rapido", "Zomato", "Swiggy"],
+    "cityOrder": ["Old Delhi", "New Delhi"],
+    "cities": {
+      "Old Delhi": {
+        "name": "Old Delhi",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One clustered day covers the Red Fort, Jama Masjid, Chandni Chowk and Raj Ghat. Start by 9:30am, use the metro/cycle rickshaws and avoid bringing a car into the lanes.",
+        "experiences": ["History", "Architecture", "UNESCO Sites", "Food", "Markets & Shopping"],
+        "signatureExperiences": ["UNESCO Sites", "Food"],
+        "days": [
+          {
+            "theme": "Mughal grandeur, bazaars & street food",
+            "pace": "moderate",
+            "note": "All core sights sit within ~1.5 km of Chandni Chowk Metro. Red Fort → Jama Masjid → Chandni Chowk is the natural sweep; finish with Raj Ghat by auto or Uber.",
+            "activities": [
+              { "name": "Red Fort (Lal Qila) — UNESCO World Heritage Site", "duration": "2–2.5h", "priority": "must-see", "cost": "₹35 online / ₹40 cash Indian; ₹550 online / ₹600 cash foreign; ₹56 Indian / ₹870 foreign museum combo", "tip": "Book on asi.paygov.in to save queue time and the ₹5–₹15 counter premium. Museums include Diwan-i-Khas and Rang Mahal; avoid Independence Day closures/crowds." },
+              { "name": "Jama Masjid and south minaret view", "duration": "45m–1h", "priority": "must-see", "cost": "Free entry; camera fee around ₹300 for non-Muslims; minaret ₹100", "tip": "Closed to visitors during Friday prayer roughly 12:00–1:45pm. Dress modestly; scarves/sarongs are available at entry." },
+              { "name": "Chandni Chowk street food, spice lanes and bazaar walk", "duration": "1.5–2h", "priority": "must-see", "cost": "₹100–₹400 for street food; cycle rickshaw ₹30–₹60", "tip": "Try Paranthe Wali Gali, Old Famous Jalebi Wala, Natraj Dahi Bhalle and Khari Baoli. Vegan travellers should request oil instead of ghee." },
+              { "name": "Raj Ghat Gandhi Memorial", "duration": "30–45m", "priority": "recommended", "cost": "Free", "tip": "Take an auto ₹40–₹70 from Chandni Chowk. Gandhi Smriti Museum nearby is free but closed Mondays." }
+            ],
+            "hotels": [
+              { "name": "Stops Hostel Delhi", "budget": "₹700–₹1,500/night" },
+              { "name": "Haveli Dharampura", "budget": "₹15,000–₹30,000/night" }
+            ],
+            "meals": ["Paranthe Wali Gali stuffed parathas", "Natraj Dahi Bhalle", "Old Famous Jalebi Wala", "Karim's or Al Jawahar for Mughlai classics"]
+          }
+        ]
+      },
+      "New Delhi": {
+        "name": "New Delhi",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days let you cluster the Lutyens' core, South Delhi UNESCO monuments and a temple/neighbourhood day without zig-zagging through heavy traffic.",
+        "experiences": ["History", "Architecture", "UNESCO Sites", "Museums", "Temples & Religious Sites"],
+        "signatureExperiences": ["Architecture", "UNESCO Sites"],
+        "days": [
+          {
+            "theme": "Imperial avenues, national museums & Connaught Place",
+            "pace": "moderate",
+            "note": "India Gate, Kartavya Path, Rashtrapati Bhavan and the National Museum cluster within 1–2 km of Central Secretariat/Mandi House metro. Walk in cool weather, then continue to Connaught Place.",
+            "activities": [
+              { "name": "India Gate, National War Memorial & Kartavya Path", "duration": "1–1.5h", "priority": "must-see", "cost": "Free", "tip": "Best at sunrise or after dark illumination. Republic Day parade uses this road on January 26 — plan around it or book tickets months ahead." },
+              { "name": "National Museum, New Delhi", "duration": "1.5–2.5h", "priority": "recommended", "cost": "₹20 Indian; ₹500–₹650 foreign", "tip": "Closed Mondays. Highlights include Harappan seals, Mughal miniatures, Buddhist sculpture and Chola bronzes; audio guides are around ₹150." },
+              { "name": "Connaught Place and Janpath Market", "duration": "1–2h", "priority": "recommended", "cost": "Free to browse; budget meal ₹150–₹400; café ₹200–₹600", "tip": "Rajiv Chowk Metro is the city's most connected interchange. Shops usually run 10:30am–9pm and many close Sundays." }
+            ],
+            "hotels": [
+              { "name": "Bloomrooms @ New Delhi Railway Station", "budget": "₹3,500–₹6,500/night" },
+              { "name": "The Imperial New Delhi", "budget": "₹25,000–₹45,000/night" }
+            ],
+            "meals": ["Saravana Bhavan, Connaught Place", "Bengali Sweet House", "Café Lota near the Crafts Museum"]
+          },
+          {
+            "theme": "South Delhi UNESCO trail",
+            "pace": "moderate",
+            "note": "Humayun's Tomb and Qutub Minar are 14 km apart; use Uber/Ola for the monument hop (₹150–₹250, ~25–35 min without traffic). Morning light is best at Humayun's Tomb; Qutub glows in late afternoon.",
+            "activities": [
+              { "name": "Humayun's Tomb — UNESCO World Heritage Site", "duration": "1.5–2h", "priority": "must-see", "cost": "₹35 online / ₹40 cash Indian; ₹550 online / ₹600 cash foreign", "tip": "Open 6am–6pm daily. Visit at opening or golden hour; add Isa Khan's Tomb in the same complex and Thursday evening Qawwali at nearby Nizamuddin Dargah if timing works." },
+              { "name": "Lodhi Garden and Lodhi Art District", "duration": "1–1.5h", "priority": "recommended", "cost": "Free", "tip": "Lodhi Garden is open 6am–8pm; the art district is effectively 24h. Combine 15th-century tombs with 50+ open-air murals in Lodhi Colony." },
+              { "name": "Qutub Minar & Mehrauli Archaeological Complex — UNESCO World Heritage Site", "duration": "1.5–2h", "priority": "must-see", "cost": "₹35 online / ₹40 cash Indian; ₹550 online / ₹600 cash foreign", "tip": "Open 7am–5pm daily. Climbing is not allowed; explore Quwwat-ul-Islam Mosque, Iron Pillar, Alai Darwaza and the adjacent free Mehrauli Archaeological Park." },
+              { "name": "Dilli Haat INA food and craft market", "duration": "1–1.5h", "priority": "optional", "cost": "₹30 Indian adult / ₹20 child; ₹100 foreign; food/craft budget ₹500–₹1,000", "tip": "Open 10:30am–10pm daily. Clean state-tourism food stalls make this an easy vegetarian and solo-traveller stop." }
+            ],
+            "hotels": [
+              { "name": "The Lodhi", "budget": "₹30,000–₹60,000/night" },
+              { "name": "FabHotel Prime Sage", "budget": "₹3,500–₹7,000/night" }
+            ],
+            "meals": ["Indian Accent for a splurge", "Naivedyam for South Indian vegetarian", "Dilli Haat state food stalls"]
+          },
+          {
+            "theme": "Spiritual architecture, Hauz Khas or Akshardham",
+            "pace": "relaxed",
+            "note": "Do not combine Lotus Temple and Akshardham unless using a hired car. Choose Lotus Temple + Hauz Khas for a South Delhi day, or make Akshardham a standalone half-day with evening water show.",
+            "activities": [
+              { "name": "Lotus Temple (Bahá'í House of Worship)", "duration": "45m–1h", "priority": "must-see", "cost": "Free", "tip": "Closed Mondays. Hours are roughly 9am–5:30pm Oct–Mar and 9am–7pm Apr–Sep; photography is allowed in gardens but not inside the silent prayer hall." },
+              { "name": "Hauz Khas Village, lake and fort ruins", "duration": "2–3h", "priority": "recommended", "cost": "Free ruins; cafés/restaurants ₹400–₹1,500 per meal", "tip": "Medieval reservoir and madrasa ruins meet designer boutiques, rooftop cafés and nightlife. Ruins run roughly 9am–5pm; cafés/shops usually 11am–11pm." },
+              { "name": "Swaminarayan Akshardham standalone half-day alternative", "duration": "3.5–5h", "priority": "optional", "cost": "Temple free; exhibitions ₹250–₹260 adults, ₹200–₹210 seniors, ₹150–₹160 children 4–11; water show ₹90–₹110 adults/seniors, ₹60–₹110 children", "tip": "Closed Mondays. No mobiles, cameras or electronics inside — deposit at the free cloakroom. Carry cash; individual tickets are bought at the counter. Pure vegetarian food court on premises." }
+            ],
+            "hotels": [
+              { "name": "Moustache Delhi", "budget": "₹700–₹1,500/night" },
+              { "name": "The Leela Palace New Delhi", "budget": "₹25,000–₹55,000/night" }
+            ],
+            "meals": ["Greenr Café for vegan bowls", "Burma Burma in Saket", "Naivedyam near Hauz Khas"]
+          }
+        ]
+      }
+    },
+    "connections": [
+      { "from": "Old Delhi", "to": "New Delhi", "method": "Delhi Metro Yellow Line direct: Chandni Chowk to Central Secretariat", "cost": "₹30–₹40 per person; smart card about 10% off", "distanceKm": 8, "durationHrs": 0.37, "sameDayFeasible": true }
+    ],
+    "extras": [
+      "Delhi's three UNESCO World Heritage Sites are Red Fort, Humayun's Tomb and Qutub Minar; ASI tickets are verified at ₹35 online / ₹40 cash for Indians and ₹550 online / ₹600 cash for foreigners, with children under 15 free.",
+      "November can bring severe post-Diwali smog with AQI 300–500+. Check AQI daily, carry N95 masks and move outdoor sightseeing to mornings when conditions allow.",
+      "April–June can reach 40–48°C; plan only early mornings, shaded/indoor museums and air-conditioned transport in peak summer.",
+      "Delhi Metro fares are typically ₹11–₹64; Airport Express from IGI T3 to New Delhi Station is ₹64 and ~19 min. Old Delhi cycle rickshaws cost roughly ₹30–₹80; app cabs for 5 km hops are about ₹80–₹150.",
+      "Metro tourist cards are around ₹200 for 1 day and ₹500 for 3 days, but confirm at a DMRC counter because fare revisions may change exact prices."
+    ]
+  }
+}
