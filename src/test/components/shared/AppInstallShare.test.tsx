@@ -1,6 +1,11 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import AppInstallShare from "@/components/shared/AppInstallShare.tsx";
 
+let breakpoint: "mobile" | "tablet" | "desktop" = "desktop";
+vi.mock("@/hooks/useBreakpoint", () => ({
+  useBreakpoint: () => breakpoint,
+}));
+
 const baseProps = {
   canInstall: false,
   isIOS: false,
@@ -10,6 +15,7 @@ const baseProps = {
 
 afterEach(() => {
   vi.restoreAllMocks();
+  breakpoint = "desktop";
   Object.defineProperty(navigator, "share", { value: undefined, configurable: true });
 });
 
@@ -69,6 +75,25 @@ describe("AppInstallShare", () => {
   it("falls back to a WhatsApp deep link in the menu variant when Web Share is unavailable", async () => {
     const open = vi.spyOn(window, "open").mockReturnValue({} as Window);
     render(<AppInstallShare {...baseProps} variant="menu" />);
+    fireEvent.click(screen.getByRole("button", { name: /share app/i }));
+    await waitFor(() => expect(open).toHaveBeenCalledTimes(1));
+    expect(open.mock.calls[0][0]).toContain("wa.me");
+  });
+
+  it("uses the native share sheet in the header variant on a phone (WhatsApp etc.)", async () => {
+    breakpoint = "mobile";
+    const share = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, "share", { value: share, configurable: true });
+    render(<AppInstallShare {...baseProps} />);
+    fireEvent.click(screen.getByRole("button", { name: /share app/i }));
+    await waitFor(() => expect(share).toHaveBeenCalledTimes(1));
+    expect(share.mock.calls[0][0].url).toContain("http");
+  });
+
+  it("falls back to a WhatsApp deep link in the header on a phone without Web Share", async () => {
+    breakpoint = "mobile";
+    const open = vi.spyOn(window, "open").mockReturnValue({} as Window);
+    render(<AppInstallShare {...baseProps} />);
     fireEvent.click(screen.getByRole("button", { name: /share app/i }));
     await waitFor(() => expect(open).toHaveBeenCalledTimes(1));
     expect(open.mock.calls[0][0]).toContain("wa.me");

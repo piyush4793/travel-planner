@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { useAppShare } from "../../hooks/useAppShare";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 type Variant = "header" | "menu";
 
@@ -17,8 +18,10 @@ type Props = {
  * Persistent app-level Install + Share controls.
  * Install triggers the captured beforeinstallprompt (Android/desktop Chrome); iOS shows A2HS guidance.
  * When the PWA is already installed but viewed in a browser tab, Install is replaced by "Open app".
- * Share uses the shared useAppShare hook: the header copies the link (avoids the
- * off-position desktop native share popover); the mobile menu uses the native share sheet.
+ * Share adapts to context: on a phone/tablet (and the Settings menu) it opens the
+ * native share sheet (Web Share → WhatsApp deep link → clipboard) so the app can be
+ * shared to WhatsApp etc.; on desktop it copies the link (the desktop native share
+ * popover is off-position, so a clean clipboard copy is friendlier there).
  */
 export default function AppInstallShare({
   canInstall,
@@ -30,6 +33,7 @@ export default function AppInstallShare({
   variant = "header",
 }: Props) {
   const { share, copyLink, copied } = useAppShare();
+  const breakpoint = useBreakpoint();
   const [showIosHint, setShowIosHint] = useState(false);
 
   const handleInstall = useCallback(() => {
@@ -43,12 +47,15 @@ export default function AppInstallShare({
   const isMenu = variant === "menu";
   const showOpenApp = !isStandalone && installedInBrowser && !!onOpenApp;
   const showInstall = !isStandalone && !installedInBrowser && (canInstall || isIOS);
-  const onShare = isMenu ? share : copyLink;
-  const shareLabel = isMenu ? (copied ? "Copied!" : "Share app") : (copied ? "Link copied" : "Copy app link");
+  // Native share sheet on touch surfaces (mobile/tablet) + the Settings menu;
+  // clipboard copy only on desktop where the native popover is mispositioned.
+  const useNativeShare = isMenu || breakpoint !== "desktop";
+  const onShare = useNativeShare ? share : copyLink;
+  const shareLabel = copied ? "Link copied" : useNativeShare ? "Share app" : "Copy app link";
 
   const shareBtnClass = isMenu
     ? "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 border border-white/15 transition-colors focus-ring"
-    : "flex items-center justify-center gap-1.5 h-8 px-2.5 min-w-[32px] bg-[#efe9db] hover:bg-line text-emerald-800 rounded-full text-sm transition-colors border border-[#e0dac9] focus-ring";
+    : "flex items-center justify-center gap-1.5 h-8 px-2.5 min-w-[32px] bg-surface-track hover:bg-line text-emerald-800 rounded-full text-sm transition-colors border border-line focus-ring";
 
   const installBtnClass = isMenu
     ? "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold bg-white text-blue-700 hover:bg-blue-50 transition-colors focus-ring"
@@ -90,7 +97,7 @@ export default function AppInstallShare({
         aria-label={shareLabel}
         title={shareLabel}
       >
-        <span aria-hidden="true">{copied ? "✓" : "🔗"}</span>
+        <span aria-hidden="true">{copied ? "✓" : useNativeShare ? "📤" : "🔗"}</span>
         {isMenu ? (
           <span>{copied ? "Copied!" : "Share app"}</span>
         ) : (
