@@ -20,8 +20,6 @@ type Props = {
   /** Inline controls rendered on the same row, right after "Route order"
    *  (e.g. the compact "Jump to city" dropdown) so the toolbar stays one line. */
   children?: ReactNode;
-  /** When set, a right-aligned "Top" control scrolls this anchor into view. */
-  topAnchorId?: string;
 };
 
 const TRIGGER =
@@ -33,13 +31,15 @@ const TRIGGER =
  * + collapse only). Party size stays in the persistent header (single source) and
  * total trip length is a read-only header stat retuned per stop via each stop's
  * ✏️ Adjust drawer; here we expose **Route order** (drag/keyboard reorder · anchor
- * ★ · auto-arrange), an inline slot for a co-located control (the compact
- * "Jump to city" dropdown, so the toolbar stays one row), plus an optional
- * right-aligned **↑ Top** jump (the route label already lives in the shared
- * header, so the canvas drops the redundant summary band). The popover opens
- * through the shared {@link PlanPopover} (anchored desktop, bottom-sheet mobile).
+ * ★ · auto-arrange) plus an inline slot for a co-located control (the compact
+ * "Jump to city" dropdown, so the toolbar stays one row). The bar renders pinned
+ * above the itinerary scroll area on every breakpoint, so Jump is always reachable
+ * (there is no separate "back to top" control — it would be redundant). The route
+ * label lives in the shared header, so the canvas drops the redundant summary
+ * band. The popover opens through the shared {@link PlanPopover} (anchored
+ * desktop, bottom-sheet mobile).
  */
-function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAutoArrange, canAutoArrange, children, topAnchorId }: Props) {
+function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAutoArrange, canAutoArrange, children }: Props) {
   // "Route order" → "Route" on mobile so the levers stay a single row at 375px.
   const compact = useBreakpoint() === "mobile";
   // A single-stop route has nothing to reorder or anchor — mold the lever away so
@@ -75,17 +75,6 @@ function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAuto
       )}
 
       {children}
-
-      {topAnchorId && (
-        <button
-          type="button"
-          onClick={() => document.getElementById(topAnchorId)?.scrollIntoView({ behavior: "smooth", block: "start" })}
-          aria-label="Jump to the top of the itinerary"
-          className="focus-ring-emerald ml-auto flex min-h-[34px] shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold text-emerald-800 transition-colors hover:bg-emerald-50"
-        >
-          <span aria-hidden="true">↑</span> Top
-        </button>
-      )}
     </div>
   );
 }

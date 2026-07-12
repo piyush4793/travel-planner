@@ -27,6 +27,27 @@ describe("FocusChips", () => {
     expect(onClear).toHaveBeenCalledTimes(1);
   });
 
+  it("counts only selected tags the destination can deliver (selected ∩ options)", () => {
+    // A stop inherits the trip vibe seed (5 tags) but only 3 exist here, so 3
+    // chips light up — the Clear count must read 3, not 5.
+    render(
+      <FocusChips
+        options={["Fjords", "Northern Lights", "Hiking", "Skiing", "Cruises"]}
+        selected={["Fjords", "Northern Lights", "Hiking", "Beaches", "Safari"]}
+        onToggle={vi.fn()}
+        onClear={vi.fn()}
+      />,
+    );
+    expect(screen.getByRole("button", { name: "Clear (3)" })).toBeInTheDocument();
+  });
+
+  it("hides Clear when no selected tag applies to this destination", () => {
+    render(
+      <FocusChips options={["Fjords"]} selected={["Beaches", "Safari"]} onToggle={vi.fn()} onClear={vi.fn()} />,
+    );
+    expect(screen.queryByRole("button", { name: /Clear/ })).not.toBeInTheDocument();
+  });
+
   it("renders Clear as a top action, ahead of the chips (not orphaned below)", () => {
     render(<FocusChips options={["Fjords", "Food"]} selected={["Fjords"]} onToggle={vi.fn()} onClear={vi.fn()} />);
     const clear = screen.getByRole("button", { name: "Clear (1)" });

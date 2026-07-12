@@ -2,6 +2,9 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import RouteLeversBar, { type LeverStop } from "../../components/views/plan/RouteLeversBar";
 
+const { bpRef } = vi.hoisted(() => ({ bpRef: { current: "desktop" as "desktop" | "tablet" | "mobile" } }));
+vi.mock("../../hooks/useBreakpoint", () => ({ useBreakpoint: () => bpRef.current }));
+
 function stop(name: string): LeverStop {
   return { name };
 }

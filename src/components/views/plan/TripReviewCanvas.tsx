@@ -8,7 +8,6 @@ import { getCountryFlag } from "../../../utils/countryFlags";
 import ItineraryView, { groupDays } from "../../country/itinerary/ItineraryView";
 import PlanCityJumpNav, { type JumpSection } from "./PlanCityJumpNav";
 import RouteLeversBar, { type LeverStop } from "./RouteLeversBar";
-import { ITINERARY_TOP_ID } from "./ItinerarySummaryBar";
 import ItineraryToolbar from "./ItineraryToolbar";
 import type { PdfRouteStop } from "../../../utils/pdfModel";
 import SegmentAdjustDrawer from "./SegmentAdjustDrawer";
@@ -129,7 +128,7 @@ function SegmentBlock({
           body below (a titled-card look) so each country reads as its own section,
           yet stays light (not a heavy dark band) so the itinerary still leads on
           mobile. Reorder + anchor live in the levers bar. */}
-      <div className="relative mx-3 rounded-t-2xl border border-b-0 border-emerald-200/70 bg-emerald-50/70 px-3 py-2.5 text-ink-1">
+      <div className={`relative mx-3 rounded-t-2xl border border-b-0 bg-emerald-50/70 px-3 py-2.5 text-ink-1 ${isAnchor && total > 1 ? "border-emerald-200/70 border-l-transparent" : "border-emerald-200/70"}`}>
         {/* Full-bleed toggle behind the header content, so the whole band (name,
             stats, and the empty gap) collapses/expands the itinerary — not just a
             tiny chevron. The identity content is inert to pointer events; the
@@ -142,38 +141,43 @@ function SegmentBlock({
           aria-label={collapsed ? `Expand ${segment.name} itinerary` : `Collapse ${segment.name} itinerary`}
           className="focus-ring-emerald absolute inset-0 rounded-t-2xl transition-colors hover:bg-emerald-100/50"
         />
+        {/* Anchor cue = a slim amber left accent bar (Option B). It marks the trip's
+            longest stop without a pill/word competing with the country name. Purely
+            decorative: absolutely positioned so it never shifts the content grid,
+            rounded only at the top-left to follow the band, and above the toggle so
+            it stays crisp on hover. The status is conveyed to assistive tech via the
+            sr-only label on the name row below. */}
+        {isAnchor && total > 1 && (
+          <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 w-1 rounded-tl-2xl bg-amber-500" />
+        )}
         <div className="pointer-events-none relative">
           {/* Two-gutter grid: a fixed left gutter carries the row icon (flag / pin),
               so the name, stats, and city strip all share one content column; a
-              matching right gutter carries the collapse chevron, so the day-pill,
-              budget, and "Expand" share one right edge. */}
+              matching right gutter carries the collapse chevron, so the ✏️ action,
+              budget, and "Expand" share one right edge. Row 1 is pure identity +
+              the single ✏️ action so the country name leads (anchor status is the
+              amber left accent bar, not a pill that outshouts the name). */}
           <div className="flex items-center gap-2">
             <span aria-hidden="true" className="w-5 shrink-0 text-center text-base leading-none">{getCountryFlag(segment.name)}</span>
-            <h3 className="min-w-0 flex-1 truncate font-display text-base font-bold text-emerald-900">{segment.name}</h3>
+            <h3 className="min-w-0 flex-1 truncate font-display text-[17px] font-bold leading-tight text-emerald-900">
+              {segment.name}
+              {isAnchor && total > 1 && <span className="sr-only"> — anchor stop</span>}
+            </h3>
 
-            <div className="pointer-events-auto flex shrink-0 items-center gap-1.5">
-              {isAnchor && total > 1 && (
-                <span className="flex items-center gap-1 rounded-full border border-amber-300 bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-amber-800 sm:px-2">
-                  <span aria-hidden="true">★</span>
-                  <span className="hidden sm:inline">Anchor</span>
-                </span>
-              )}
-
-              <button
-                type="button"
-                onClick={() => setAdjusting(true)}
-                aria-haspopup="dialog"
-                aria-label={`Adjust ${segment.name}`}
-                className="focus-ring-emerald flex items-center gap-1 rounded-full border border-emerald-300 bg-white px-2.5 py-1 text-[11px] font-semibold text-emerald-800 transition-colors hover:bg-emerald-100"
-              >
-                <span aria-hidden="true">✏️</span> {segment.customDays}d
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={() => setAdjusting(true)}
+              aria-haspopup="dialog"
+              aria-label={`Adjust ${segment.name}`}
+              className="focus-ring-emerald pointer-events-auto flex min-h-[32px] shrink-0 items-center gap-1 rounded-full border border-emerald-300 bg-white px-2.5 py-1 text-[11px] font-semibold text-emerald-800 transition-colors hover:bg-emerald-100"
+            >
+              <span aria-hidden="true">✏️</span> {segment.customDays}d
+            </button>
 
             {/* Decorative collapse indicator — the full-bleed button above owns the
                 interaction and the a11y semantics, so this is hidden from the a11y
                 tree (pointer clicks fall through to that button). Fixed-width gutter
-                so the day-pill above and the budget below share a right edge. */}
+                so the ✏️ action above and the budget below share a right edge. */}
             <span
               aria-hidden="true"
               className="pointer-events-none w-5 shrink-0 text-center text-[11px] leading-none text-emerald-700"
@@ -182,8 +186,9 @@ function SegmentBlock({
             </span>
           </div>
           {/* Row 2 mirrors the grid: empty left gutter · stats (content column) ·
-              budget + basis icon · empty right gutter — so stats align under the
-              name and the budget aligns under the day-pill. */}
+              budget + basis icon. Stats align under the name; the budget runs to
+              the band's right padding edge (no trailing gutter) so it keeps clear
+              of the day range on narrow / dev-tools-open viewports. */}
           <div className="mt-1 flex items-baseline gap-2 text-[11px] text-emerald-800/70">
             <span aria-hidden="true" className="w-5 shrink-0" />
             <div className="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-2 gap-y-0.5">
@@ -195,7 +200,6 @@ function SegmentBlock({
               {cost}
               <span aria-hidden="true" className="text-[11px] font-normal text-emerald-700/60">{planCostBasisIcon(segment.plan)}</span>
             </span>
-            <span aria-hidden="true" className="w-5 shrink-0" />
           </div>
         </div>
       </div>
@@ -332,9 +336,10 @@ function TripReviewCanvasInner({
 
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
-      {/* Trip-level toolbar — route order + jump-to-city + back-to-top on one
-          row, so each stop header stays uncluttered. Party size + route label
-          live in the persistent header (no duplicate summary band). */}
+      {/* Trip-level toolbar — route order + jump-to-city on one row, so each
+          stop header stays uncluttered. The bar is pinned above the scroll area
+          (Jump is always reachable). Party size + route label live in the
+          persistent header (no duplicate summary band). */}
       <RouteLeversBar
         stops={leverStops}
         anchorName={anchorName}
@@ -342,13 +347,11 @@ function TripReviewCanvasInner({
         onReorder={onReorder}
         onAutoArrange={onAutoArrange}
         canAutoArrange={canAutoArrange}
-        topAnchorId={ITINERARY_TOP_ID}
       >
         <PlanCityJumpNav sections={sections} onJump={handleJump} embedded />
       </RouteLeversBar>
 
       <div className="flex-1 overflow-y-auto bg-surface-2 py-2">
-        <span id={ITINERARY_TOP_ID} aria-hidden="true" />
         {segments.map((segment, i) => {
           const start = dayCursor + 1;
           const end = dayCursor + segment.plan.days.length;

@@ -1,7 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import TripContextRail, { type TripCostRow } from "../components/views/plan/TripContextRail";
-import ItinerarySummaryBar from "../components/views/plan/ItinerarySummaryBar";
 import type { Country } from "../core/types";
 import type { TripPlan } from "../core/utils/tripPlans";
 
@@ -83,19 +82,5 @@ describe("TripContextRail", () => {
       />,
     );
     expect(screen.getByText("Notes")).toBeInTheDocument();
-  });
-});
-
-describe("ItinerarySummaryBar", () => {
-  it("shows the route label and a jump-to-top control", () => {
-    render(<ItinerarySummaryBar label="Norway → Denmark" topAnchorId="plan-itinerary-top" />);
-    expect(screen.getByText("Norway → Denmark")).toBeInTheDocument();
-    expect(screen.getByLabelText("Jump to the top of the itinerary")).toBeInTheDocument();
-  });
-
-  it("omits the jump-to-top control when no anchor is supplied", () => {
-    render(<ItinerarySummaryBar label="Japan" />);
-    expect(screen.getByText("Japan")).toBeInTheDocument();
-    expect(screen.queryByLabelText("Jump to the top of the itinerary")).not.toBeInTheDocument();
   });
 });

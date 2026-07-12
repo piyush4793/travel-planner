@@ -74,7 +74,7 @@ function renderCanvas(props: Partial<CanvasProps> & Pick<CanvasProps, "segments"
 describe("TripReviewCanvas", () => {
   it("renders one block per stop with an honest border hop between countries", () => {
     renderCanvas({ segments: [segment("Norway", "Oslo", 3), segment("Denmark", "Copenhagen", 3)], composedPlan: composed });
-    expect(screen.getByRole("heading", { name: "Norway", level: 3 })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^Norway/, level: 3 })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Denmark", level: 3 })).toBeInTheDocument();
     expect(screen.getByText("Travel from Norway to Denmark")).toBeInTheDocument();
     expect(screen.queryByText(/Travel from .* to Norway/)).not.toBeInTheDocument();
@@ -94,11 +94,6 @@ describe("TripReviewCanvas", () => {
     expect(hop).toHaveAttribute("aria-expanded", "true");
     expect(screen.getByText("Flight")).toBeInTheDocument();
     expect(screen.getByText(/times are indicative/)).toBeInTheDocument();
-  });
-
-  it("exposes a jump-to-top control (route label lives in the shared header)", () => {
-    renderCanvas({ segments: [segment("Norway", "Oslo", 3), segment("Denmark", "Copenhagen", 3)], composedPlan: composed });
-    expect(screen.getByLabelText("Jump to the top of the itinerary")).toBeInTheDocument();
   });
 
   it("opens a stop's Adjust drawer on demand", () => {
@@ -161,7 +156,7 @@ describe("TripReviewCanvas", () => {
       onSetAnchor,
     });
     const norway = screen.getByRole("region", { name: /Norway — stop 1 of 2/ });
-    expect(within(norway).getByText("Anchor")).toBeInTheDocument();
+    expect(within(norway).getByText(/anchor stop/i)).toBeInTheDocument();
     // Anchor selection lives in the trip-level route-order lever.
     fireEvent.click(screen.getByRole("button", { name: "Edit route order" }));
     fireEvent.click(screen.getByRole("button", { name: "Make Denmark the anchor" }));
