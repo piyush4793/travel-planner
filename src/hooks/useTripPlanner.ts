@@ -3,8 +3,6 @@ import type { CityEntry } from "../core/types";
 import type { CountryRule } from "../core/data/itineraryRules";
 import type { LoadedUnit } from "../core/trip/destinationSource";
 import {
-  extractPlanCities,
-  generateTripPlan,
   getMaxRuleDays,
   getRecRuleDays,
   recommendedDaysForSelection,
@@ -12,6 +10,7 @@ import {
   type TripPlan,
   type TripSegment,
 } from "../core/utils/tripPlans";
+import { deriveStop, projectStopCities } from "../core/utils/stopPlan";
 import { budgetForBasis, type BudgetBasis } from "../core/utils/budget";
 import { getBudgetTier } from "../core/utils/filterLogic";
 import { cityExperienceOptions } from "../core/utils/cityExperiences";
@@ -101,22 +100,22 @@ export function useTripPlanner(
     for (const { country, rule } of units) {
       const recDays = getRecRuleDays(rule) ?? 7;
       const maxDays = Math.max(getMaxRuleDays(rule) ?? 30, 1);
-      // Seeds only unpinned stops, which have no hand-picked cities, so the
-      // recommendation is independent of curation state (keeps this off the
-      // state→reseed effect loop). Uses the stop's effective focus so changing a
-      // country's vibe re-seeds its length.
+      // Mirror usePlanBuilder exactly: fold in this stop's hand-picked cities and
+      // effective focus so the recommendation (and the "reset to recommended"
+      // target) matches the single-country engine. An unpinned stop always has
+      // no hand-picks, so this stays off the state→reseed effect loop.
       rec[country.name] = recommendedDaysForSelection({
         rule,
         style: country.travelStyle?.[0],
         recDays,
         maxDays,
-        selectedCities: [],
+        selectedCities: state[country.name]?.selectedCities ?? [],
         selectedExperiences: effectiveExperiences(country.name),
         budgetTier: getBudgetTier(budgetForBasis(country, basis)),
       });
     }
     return rec;
-  }, [units, effectiveExperiences, basis]);
+  }, [units, state, effectiveExperiences, basis]);
 
   // Re-seed each unpinned stop from its recommendation, and prune state for units
   // no longer selected so a dropped stop can't leak into a later composition. When
@@ -238,16 +237,14 @@ export function useTripPlanner(
       // (badge, subline, chips) would mislead. Clamp to the country's options.
       const experiences = (cur?.experiences ?? seedExperiences).filter((e) => experienceOptions.includes(e));
 
-      const matches = (c: CityEntry) => (c.experiences ?? []).some((e) => experiences.includes(e));
-      const orderedCities =
-        experiences.length === 0
-          ? cities
-          : [...cities].sort((a, b) => Number(matches(b)) - Number(matches(a)));
-
-      const plan = generateTripPlan(country, "custom", selectedCities, customDays, rule, basis, experiences);
-      const planCities = new Set(extractPlanCities(plan.days));
-      const autoSelectedCities =
-        selectedCities.length > 0 ? [] : orderedCities.map((c) => c.name).filter((n) => planCities.has(n));
+      const { orderedCities, plan, autoSelectedCities } = deriveStop({
+        country,
+        rule,
+        selectedCities,
+        days: customDays,
+        experiences,
+        basis,
+      });
 
       return {
         name: country.name,
@@ -267,7 +264,7 @@ export function useTripPlanner(
         setDays: (days: number) => setDays(country.name, days),
         resetDays: () => resetDays(country.name),
         projectCities: (days: number) =>
-          extractPlanCities(generateTripPlan(country, "custom", selectedCities, days, rule, basis, experiences).days),
+          projectStopCities({ country, rule, selectedCities, days, experiences, basis }),
         toggleExperience: (exp: string) => toggleExperience(country.name, exp),
         clearExperiences: () => clearExperiences(country.name),
       };

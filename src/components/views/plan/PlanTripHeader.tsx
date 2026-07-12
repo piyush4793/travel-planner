@@ -161,7 +161,7 @@ function PlanTripHeaderInner({
             <span className="min-w-0 flex-1 truncate text-[12px] text-ink-2">
               <span className="font-bold text-ink-1">{stats.days}</span>&nbsp;{stats.days === 1 ? "day" : "days"}
               <span className="mx-1 text-ink-4">·</span>
-              <span className="font-bold text-ink-1">{stats.cities}</span>&nbsp;{stats.cities === 1 ? "stop" : "stops"}
+              <span className="font-bold text-ink-1">{stats.cities}</span>&nbsp;{stats.cities === 1 ? "city" : "cities"}
             </span>
             <span className="ml-auto inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-emerald-100 bg-emerald-50 px-2 py-1 text-[11px] font-bold text-emerald-800">
               {stats.estimate && <span className="mr-0.5 font-medium text-emerald-700/70">~</span>}
@@ -180,7 +180,7 @@ function PlanTripHeaderInner({
               </span>
             )}
             <span className="inline-flex items-center rounded-full border border-line bg-white px-2.5 py-1 text-[11px] text-ink-2">
-              <span className="font-bold text-ink-1">{stats.cities}</span>&nbsp;{stats.cities === 1 ? "stop" : "stops"}
+              <span className="font-bold text-ink-1">{stats.cities}</span>&nbsp;{stats.cities === 1 ? "city" : "cities"}
             </span>
             <span className="inline-flex items-center whitespace-nowrap rounded-full border border-emerald-100 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-800">
               {stats.estimate && <span className="mr-0.5 font-medium text-emerald-700/70">~</span>}

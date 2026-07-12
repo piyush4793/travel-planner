@@ -108,7 +108,7 @@ describe("PlanView — guided planner", () => {
     expect(await screen.findByText(/Who's going\?/i)).toBeInTheDocument();
     expect(screen.getByText(/What are you into\?/i)).toBeInTheDocument();
     // Live feedback keeps the step substantial.
-    expect(screen.getByText(/Your trip so far/i)).toBeInTheDocument();
+    expect(screen.getByText("Your trip")).toBeInTheDocument();
   });
 
   it("walks the funnel and reveals the itinerary on the review step", async () => {

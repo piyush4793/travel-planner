@@ -32,7 +32,6 @@ function renderStep(props: Partial<React.ComponentProps<typeof PlanBasicsStep>> 
       selectedExperiences={[]}
       onToggleExperience={vi.fn()}
       onClearExperiences={vi.fn()}
-      plan={null}
       {...props}
     />,
   );
@@ -91,28 +90,18 @@ describe("PlanBasicsStep — vibe overflow", () => {
   });
 });
 
-describe("PlanBasicsStep — summary branch", () => {
-  it("renders the single-destination progress readout when one unit has a live plan", () => {
-    renderStep({
-      plan: {
-        duration: "3 days",
-        costPerPerson: "₹1.2L – ₹2L",
-        days: [
-          { label: "Day 1 — Oslo", activities: [] },
-          { label: "Day 2 — Bergen", activities: [] },
-        ],
-        note: "",
-        costBasis: "couple",
-      },
-    });
-    expect(screen.getByText("Your trip so far")).toBeInTheDocument();
-    expect(screen.getByText("2 days")).toBeInTheDocument();
-    expect(screen.getByText("Oslo")).toBeInTheDocument();
+describe("PlanBasicsStep — summary", () => {
+  it("renders one molding route timeline for a single unit (N=1, no anchor badge)", () => {
+    renderStep();
+    expect(screen.getByText("Your trip")).toBeInTheDocument();
+    expect(screen.getByText("Testland")).toBeInTheDocument();
+    // A single stop has no anchor badge (nothing to anchor against).
+    expect(screen.queryByText("Anchor")).not.toBeInTheDocument();
   });
 
-  it("renders the multi-stop route timeline when the selection has more than one unit", () => {
-    renderStep({ selection: [UNIT, { ...UNIT, name: "Otherland" }], plan: null });
-    expect(screen.getByText("Your route")).toBeInTheDocument();
+  it("renders the same route timeline with every stop when the selection is a route", () => {
+    renderStep({ selection: [UNIT, { ...UNIT, name: "Otherland" }] });
+    expect(screen.getByText("Your trip")).toBeInTheDocument();
     expect(screen.getByText("Testland")).toBeInTheDocument();
     expect(screen.getByText("Otherland")).toBeInTheDocument();
   });

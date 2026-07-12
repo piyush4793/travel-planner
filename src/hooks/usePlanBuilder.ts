@@ -2,13 +2,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Country, CityEntry, TravelStyle } from "../core/types";
 import type { CountryRule } from "../core/data/itineraryRules";
 import {
-  extractPlanCities,
-  generateTripPlan,
   getMaxRuleDays,
   getRecRuleDays,
   recommendedDaysForSelection,
   type TripPlan,
 } from "../core/utils/tripPlans";
+import { deriveStop, projectStopCities } from "../core/utils/stopPlan";
 import { budgetForBasis, type BudgetBasis } from "../core/utils/budget";
 import { getBudgetTier } from "../core/utils/filterLogic";
 import { mergeCountryData } from "../core/utils/countryData";
@@ -152,39 +151,41 @@ export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seed?.nonce, ruleLoading]);
 
-  const orderedCities = useMemo(() => {
-    const cities = displayCountry?.cities ?? [];
-    if (selectedExperiences.length === 0) return cities;
-    const matches = (c: CityEntry) => (c.experiences ?? []).some((e) => selectedExperiences.includes(e));
-    return [...cities].sort((a, b) => Number(matches(b)) - Number(matches(a)));
-  }, [displayCountry?.cities, selectedExperiences]);
-
-  const plan = useMemo(
+  // One shared per-stop derivation — single-country is the N=1 case of the same
+  // engine that plans every stop on a multi-country route (see stopPlan.ts).
+  const derivation = useMemo(
     () =>
       displayCountry
-        ? generateTripPlan(displayCountry, "custom", selectedCities, customDays, rule, budgetBasis, selectedExperiences)
+        ? deriveStop({
+            country: displayCountry,
+            rule,
+            selectedCities,
+            days: customDays,
+            experiences: selectedExperiences,
+            basis: budgetBasis,
+          })
         : null,
-    [displayCountry, selectedCities, customDays, rule, budgetBasis, selectedExperiences],
+    [displayCountry, rule, selectedCities, customDays, selectedExperiences, budgetBasis],
   );
 
-  const planCities = useMemo(() => (plan ? extractPlanCities(plan.days) : []), [plan]);
-
-  // The country's real cities that the auto plan visits — filters plan-route
-  // labels down to actual city names so the Places step can pre-check them.
-  // Only meaningful while in auto mode (no hand-picks yet).
-  const autoSelectedCities = useMemo(() => {
-    if (selectedCities.length > 0) return [];
-    const names = new Set(planCities);
-    return orderedCities.map((c) => c.name).filter((n) => names.has(n));
-  }, [selectedCities.length, planCities, orderedCities]);
+  const orderedCities: CityEntry[] = derivation?.orderedCities ?? [];
+  const plan = derivation?.plan ?? null;
+  const planCities = derivation?.planCities ?? [];
+  const autoSelectedCities = derivation?.autoSelectedCities ?? [];
 
   const projectCities = useCallback(
-    (days: number) => {
-      if (!displayCountry) return [];
-      const projected = generateTripPlan(displayCountry, "custom", selectedCities, days, rule, budgetBasis, selectedExperiences);
-      return extractPlanCities(projected.days);
-    },
-    [displayCountry, selectedCities, rule, budgetBasis, selectedExperiences],
+    (days: number) =>
+      displayCountry
+        ? projectStopCities({
+            country: displayCountry,
+            rule,
+            selectedCities,
+            days,
+            experiences: selectedExperiences,
+            basis: budgetBasis,
+          })
+        : [],
+    [displayCountry, rule, selectedCities, budgetBasis, selectedExperiences],
   );
 
   const toggleCity = useCallback((name: string) => {

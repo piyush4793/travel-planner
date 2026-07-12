@@ -50,6 +50,7 @@ function PlanRouteSummaryInner({ selection, source, stopDays, cost, costIcon, co
   });
   const total = legs.reduce((sum, leg) => sum + leg.days, 0);
   const anchorDays = Math.max(...legs.map((l) => l.days));
+  const multi = legs.length > 1;
   // Hard-bound the list height so the card can't grow unbounded. The cap fits
   // today's max stops (MAX_TRIP_UNITS) fully — so visible days always reconcile
   // with the route total — and scrolls only if that cap is ever raised.
@@ -59,7 +60,7 @@ function PlanRouteSummaryInner({ selection, source, stopDays, cost, costIcon, co
     <div className="rounded-2xl border border-line bg-white/70 p-4 shadow-[0_1px_3px_rgba(20,40,30,0.05)] sm:p-5">
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-1.5">
-          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-2">Your route</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-2">Your trip</p>
           <Tooltip
             variant="wrap"
             text="Your trip so far, summed across every stop. It updates as you change what you're into; fine-tune the exact days per stop in the next steps."
@@ -102,7 +103,7 @@ function PlanRouteSummaryInner({ selection, source, stopDays, cost, costIcon, co
                 <div className="min-w-0">
                   <p className="flex items-center gap-1.5 truncate text-[15px] font-semibold leading-tight text-ink-1">
                     {leg.name}
-                    {isAnchor && legs.length > 1 && (
+                    {isAnchor && multi && (
                       <span className="rounded-full bg-emerald-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-emerald-700">Anchor</span>
                     )}
                   </p>
