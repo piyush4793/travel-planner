@@ -44,7 +44,7 @@ async function openTour(props: Partial<FreTourProps> = {}) {
 }
 
 async function goToInstallStep(user: ReturnType<typeof userEvent.setup>) {
-  for (let i = 0; i < 7; i += 1) {
+  for (let i = 0; i < 5; i += 1) {
     await user.click(screen.getByRole("button", { name: /Next/i }));
   }
   expect(screen.getByRole("heading", { name: /Take Roamwise Anywhere/i })).toBeInTheDocument();
@@ -120,7 +120,7 @@ describe("FreTour", () => {
   it("completing the final step closes the tour and persists the seen flag", async () => {
     const { user } = await openTour();
 
-    for (let i = 0; i < 8; i += 1) {
+    for (let i = 0; i < 6; i += 1) {
       await user.click(screen.getByRole("button", { name: /Next/i }));
     }
 

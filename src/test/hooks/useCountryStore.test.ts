@@ -165,8 +165,8 @@ describe("useCountryStore — recents (implicit My List)", () => {
     localStorage.setItem(LS_KEYS.MY_LIST, JSON.stringify(["Antarctica"]));
     const { result } = await renderCountryStore();
 
-    expect(result.current.catalog.some((c) => c.name === "Antarctica")).toBe(false);
     expect(result.current.myListNames).toContain("Antarctica");
+    expect(result.current.myListCountries.some((c) => c.name === "Antarctica")).toBe(true);
   });
 
   it("recordPlanned ignores empty and whitespace-only names", async () => {

@@ -1,10 +1,11 @@
 import { beforeEach, afterEach, describe, expect, it, vi } from "vitest";
-import { render, screen, waitFor, act } from "@testing-library/react";
+import { render, screen, waitFor, act, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "@/App.tsx";
 import { setHashRoute } from "@/test/testUtils.ts";
 import type { Country } from "@/core/types.ts";
 import { isEnabled } from "@/core/featureFlags.ts";
+import { useBreakpoint } from "@/hooks/useBreakpoint.ts";
 import { hasAnyLocalData, canAutoImport, restoreFromTarget, isBackupOverdue } from "@/utils/backup.ts";
 
 const COUNTRY_NAMES = {
@@ -17,27 +18,15 @@ const COUNTRY_NAMES = {
 const ROUTES = {
   INVALID: "#invalid",
   TRIPS: "#trips",
-  CALENDAR: "#calendar",
-  DISCOVER: "#discover",
 } as const;
 
 const NAV_TOUR_IDS = {
   TRIPS: "nav-trips",
-  CALENDAR: "nav-calendar",
-  DISCOVER: "nav-discover",
 } as const;
 
 const TEST_IDS = {
   TRIPS_VIEW: "trips-view",
-  CALENDAR_VIEW: "calendar-view",
-  DISCOVER_VIEW: "discover-view",
-  CALENDAR_SELECT_COUNTRY: "calendar-select-country",
-  CALENDAR_COUNT: "calendar-count",
   TRIPS_COUNT: "trips-count",
-  DISCOVER_ADD_COUNTRY: "discover-add-country",
-  DISCOVER_REMOVE_COUNTRY: "discover-remove-country",
-  DISCOVER_PLAN_TRIP: "discover-plan-trip",
-  DISCOVER_PLAN_UNKNOWN: "discover-plan-unknown",
 } as const;
 
 const FOOD_EXPERIENCE = "Food";
@@ -72,6 +61,7 @@ let lastPlanViewProps: Record<string, unknown> | null = null;
 
 const recordPlannedMock = vi.fn();
 const updateNotesMock = vi.fn();
+const storeReloadMock = vi.fn();
 
 const recentsSet = new Set<string>([japan.name, brazil.name]);
 
@@ -88,50 +78,6 @@ vi.mock("@/components/views/MyTripsView.tsx", () => ({
         <div data-testid={TEST_IDS.TRIPS_COUNT}>{savedTrips.length}</div>
         <button type="button" data-testid="trips-go-plan" onClick={() => onGoPlan?.()}>
           Plan a trip
-        </button>
-      </div>
-    );
-  },
-}));
-
-vi.mock("@/components/views/CalendarView.tsx", () => ({
-  default: (props: Record<string, unknown>) => {
-    const countries = (props.countries as Country[]) ?? [];
-    const onPlanTrip = props.onPlanTrip as ((names: string[]) => void) | undefined;
-    return (
-      <div data-testid="calendar-view">
-        <div data-testid={TEST_IDS.CALENDAR_COUNT}>{countries.length}</div>
-        <button
-          type="button"
-          data-testid={TEST_IDS.CALENDAR_SELECT_COUNTRY}
-          onClick={() => onPlanTrip?.([countries[0].name])}
-        >
-          Plan calendar country
-        </button>
-      </div>
-    );
-  },
-}));
-
-vi.mock("@/components/views/DiscoverView.tsx", () => ({
-  default: (props: Record<string, unknown>) => {
-    const onPlanTrip = props.onPlanTrip as ((names: string[]) => void) | undefined;
-    return (
-      <div data-testid={TEST_IDS.DISCOVER_VIEW}>
-        Discover View
-        <button
-          type="button"
-          data-testid={TEST_IDS.DISCOVER_PLAN_TRIP}
-          onClick={() => onPlanTrip?.([COUNTRY_NAMES.JAPAN, COUNTRY_NAMES.PERU])}
-        >
-          Plan Discover trip
-        </button>
-        <button
-          type="button"
-          data-testid={TEST_IDS.DISCOVER_PLAN_UNKNOWN}
-          onClick={() => onPlanTrip?.(["Atlantis"])}
-        >
-          Plan unknown trip
         </button>
       </div>
     );
@@ -218,12 +164,7 @@ vi.mock("@/hooks/useCountryStore.ts", () => ({
     recentsSet,
     recordPlanned: recordPlannedMock,
     updateNotes: updateNotesMock,
-    reload: vi.fn(),
-    catalog: [
-      { name: japan.name, lat: japan.lat, lng: japan.lng, region: "Asia" },
-      { name: brazil.name, lat: brazil.lat, lng: brazil.lng, region: "Americas" },
-      { name: COUNTRY_NAMES.PERU, lat: -12, lng: -77, region: "Americas" },
-    ],
+    reload: storeReloadMock,
   }),
 }));
 
@@ -236,11 +177,12 @@ vi.mock("@/hooks/useAiPlanStore.ts", () => ({
     savePlan: vi.fn(),
     replacePlan: vi.fn(),
     getAllDestinations: () => [],
+    reload: vi.fn(),
   }),
 }));
 
 vi.mock("@/hooks/useBreakpoint.ts", () => ({
-  useBreakpoint: () => "desktop",
+  useBreakpoint: vi.fn(() => "desktop"),
 }));
 
 vi.mock("@/core/featureFlags.ts", () => ({
@@ -263,38 +205,21 @@ describe("App orchestration", () => {
     expect(await screen.findByRole("heading", { name: /Where do you plan to go next\?/i })).toBeInTheDocument();
     expect(window.location.hash).toBe("#plan");
 
-    await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
-    expect(await screen.findByTestId(TEST_IDS.CALENDAR_VIEW)).toBeInTheDocument();
-    expect(window.location.hash).toBe(ROUTES.CALENDAR);
-
-    await user.click(navButton(NAV_TOUR_IDS.DISCOVER));
-    expect(await screen.findByTestId(TEST_IDS.DISCOVER_VIEW)).toBeInTheDocument();
-    expect(window.location.hash).toBe(ROUTES.DISCOVER);
+    await user.click(navButton(NAV_TOUR_IDS.TRIPS));
+    expect(await screen.findByTestId(TEST_IDS.TRIPS_VIEW)).toBeInTheDocument();
+    expect(window.location.hash).toBe(ROUTES.TRIPS);
   });
 
   it("navigates to the Plan view (home) when the brand icon is clicked", async () => {
     const user = userEvent.setup();
-    setHashRoute("discover");
+    setHashRoute("trips");
     render(<App />);
 
-    expect(await screen.findByTestId(TEST_IDS.DISCOVER_VIEW)).toBeInTheDocument();
+    expect(await screen.findByTestId(TEST_IDS.TRIPS_VIEW)).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "Home" }));
     expect(await screen.findByRole("heading", { name: /Where do you plan to go next\?/i })).toBeInTheDocument();
     expect(window.location.hash).toBe("#plan");
-  });
-
-  it("routes Calendar taps into the Plan intake", async () => {
-    const user = userEvent.setup();
-    render(<App />);
-
-    await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
-    await user.click(screen.getByTestId(TEST_IDS.CALENDAR_SELECT_COUNTRY));
-
-    expect(await screen.findByTestId("plan-view")).toBeInTheDocument();
-    expect(window.location.hash).toBe("#plan");
-    const intake = lastPlanViewProps?.intake as { countries: Country[] } | null;
-    expect(intake?.countries[0]?.name).toBe(COUNTRY_NAMES.JAPAN);
   });
 
   it("passes AI planning handlers to PlanView only when llmPlanning is enabled", () => {
@@ -312,30 +237,64 @@ describe("App orchestration", () => {
     expect(lastPlanViewProps?.onPlanWithAi).toBeUndefined();
     expect(lastPlanViewProps?.aiPlanCountFor).toBeUndefined();
   });
+});
 
-  it("seeds the Plan intake from a Discover trip selection, resolving catalog-only stubs", async () => {
-    const user = userEvent.setup();
-    render(<App />);
-
-    await user.click(navButton(NAV_TOUR_IDS.DISCOVER));
-    await user.click(screen.getByTestId(TEST_IDS.DISCOVER_PLAN_TRIP));
-
-    expect(await screen.findByTestId("plan-view")).toBeInTheDocument();
-    expect(window.location.hash).toBe("#plan");
-    const intake = lastPlanViewProps?.intake as { countries: Country[] } | null;
-    expect(intake?.countries.map((c) => c.name)).toEqual([COUNTRY_NAMES.JAPAN, COUNTRY_NAMES.PERU]);
+describe("App shell — pull-to-refresh, storage sync & mobile nav", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    lastPlanViewProps = null;
+    vi.mocked(isEnabled).mockImplementation(() => false);
+    vi.mocked(useBreakpoint).mockReturnValue("desktop");
   });
 
-  it("ignores a Plan intake when no names resolve to a destination", async () => {
+  function pullContainer() {
+    return document.querySelector("div.flex-1.relative.overflow-hidden") as HTMLElement;
+  }
+
+  it("shows the pull-to-refresh indicator while dragging and soft-refreshes past the threshold", async () => {
+    vi.mocked(useBreakpoint).mockReturnValue("mobile");
+    render(<App />);
+    await screen.findByTestId("plan-view");
+    const el = pullContainer();
+
+    // A short pull surfaces the hint but stays below the trigger threshold.
+    fireEvent.touchStart(el, { touches: [{ clientY: 0 }] });
+    fireEvent.touchMove(el, { touches: [{ clientY: 60 }] });
+    expect(screen.getByText(/Pull to refresh/i)).toBeInTheDocument();
+
+    // Pulling further crosses the threshold and, on release, re-hydrates stores.
+    fireEvent.touchMove(el, { touches: [{ clientY: 400 }] });
+    expect(screen.getByText(/Release to refresh/i)).toBeInTheDocument();
+    fireEvent.touchEnd(el);
+
+    await waitFor(() => expect(storeReloadMock).toHaveBeenCalled());
+    expect(screen.getByText(/Refreshing/i)).toBeInTheDocument();
+  });
+
+  it("surfaces a cross-tab storage-conflict banner and dismisses it", async () => {
+    render(<App />);
+    await screen.findByTestId("plan-view");
+
+    act(() => {
+      window.dispatchEvent(new StorageEvent("storage", { key: "tp_my_list", newValue: "[]" }));
+    });
+
+    expect(await screen.findByText(/changed in another tab/i)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Dismiss" }));
+    expect(screen.queryByText(/changed in another tab/i)).not.toBeInTheDocument();
+  });
+
+  it("renders the mobile bottom tab bar and switches views on tap", async () => {
+    vi.mocked(useBreakpoint).mockReturnValue("mobile");
     const user = userEvent.setup();
     render(<App />);
+    await screen.findByTestId("plan-view");
 
-    await user.click(navButton(NAV_TOUR_IDS.DISCOVER));
-    await user.click(screen.getByTestId(TEST_IDS.DISCOVER_PLAN_UNKNOWN));
-
-    // Unresolved intake never leaves the Discover view.
-    expect(screen.getByTestId(TEST_IDS.DISCOVER_VIEW)).toBeInTheDocument();
-    expect(window.location.hash).toBe(ROUTES.DISCOVER);
+    const tripsTab = document.querySelector("nav button[data-tour='nav-trips']") as HTMLButtonElement;
+    expect(tripsTab).toBeTruthy();
+    await user.click(tripsTab);
+    expect(await screen.findByTestId("trips-view")).toBeInTheDocument();
+    expect(window.location.hash).toBe("#trips");
   });
 });
 

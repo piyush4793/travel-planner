@@ -69,4 +69,28 @@ describe("PillGroup", () => {
     expect(onChange).toHaveBeenCalledWith("asia");
     expect(onChange).toHaveBeenCalledTimes(1);
   });
+
+  it("moves selection with Arrow keys (wrapping) and ignores non-arrow keys", async () => {
+    const { fireEvent } = await import("@testing-library/react");
+    const onChange = vi.fn();
+    render(<PillGroup options={options} value="all" onChange={onChange} />);
+    const first = screen.getByRole("radio", { name: "All" });
+
+    fireEvent.keyDown(first, { key: "ArrowRight" });
+    expect(onChange).toHaveBeenLastCalledWith("asia");
+
+    fireEvent.keyDown(first, { key: "ArrowDown" });
+    expect(onChange).toHaveBeenLastCalledWith("asia");
+
+    // Wrap backwards from the first option to the last.
+    fireEvent.keyDown(first, { key: "ArrowLeft" });
+    expect(onChange).toHaveBeenLastCalledWith("europe");
+
+    fireEvent.keyDown(first, { key: "ArrowUp" });
+    expect(onChange).toHaveBeenLastCalledWith("europe");
+
+    onChange.mockClear();
+    fireEvent.keyDown(first, { key: "Home" });
+    expect(onChange).not.toHaveBeenCalled();
+  });
 });

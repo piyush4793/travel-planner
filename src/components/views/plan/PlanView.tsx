@@ -52,7 +52,6 @@ type Props = {
   budgetBasis: BudgetBasis;
   setBudgetBasis: (b: BudgetBasis) => void;
   homeCountry: string;
-  onGoDiscover: () => void;
   /** Persist the composed trip (single or multi) as a self-contained snapshot. */
   onSaveTrip?: (snapshot: Omit<SavedTrip, "id" | "favorite">) => void;
   /** Whether the saved trip with this route signature is favourited. */
@@ -68,10 +67,6 @@ type Props = {
   /** Open a saved route in the wizard (jumps to Review) and rehydrate each stop's
    *  snapshot cities + length. Bump `nonce` to re-open. */
   openTrip?: OpenTripRequest | null;
-  /** Start a fresh plan from a picked destination set (Discover tray / Calendar
-   *  tap). Resolves into the ordered selection and jumps to Basics. Bump `nonce`
-   *  to re-trigger the same set. */
-  intake?: { countries: Country[]; nonce: number } | null;
   /** Reset the wizard to a fresh landing picker (My Trips "+ New trip" / "Plan a
    *  trip"). Bump the nonce to discard the in-progress selection + persisted
    *  draft; the saved trip snapshots in My Trips are untouched. */
@@ -101,7 +96,7 @@ const STEP_META: Record<StepKey, StepMeta> = {
  * is inferred behind the scenes and tunable on Review; cities are a result you
  * edit, never a filter that fights vibe.
  */
-export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onRecordPlanned, onUpdateNotes, aiPlanCountFor, openTrip, intake, startNewNonce, matchSavedTrip, mainMapRef, onCinematicChange }: Props) {
+export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeCountry, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onRecordPlanned, onUpdateNotes, aiPlanCountFor, openTrip, startNewNonce, matchSavedTrip, mainMapRef, onCinematicChange }: Props) {
   // Rehydrate a saved draft once so a refresh resumes where the user left off.
   const draft0 = useRef(loadPlanDraft()).current;
   const multiCountry = isEnabled("multiCountryPlanning");
@@ -265,16 +260,6 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
     setStepIndex(0);
     onRecordPlanned?.(chosen.map((c) => c.name));
   }, [matchSavedTrip, confirmResume, onRecordPlanned]);
-
-  // Discover tray / Calendar tap → start a fresh plan from the picked set. Runs
-  // the same resume-vs-fresh flow as the landing picker, once per nonce.
-  const lastIntakeNonce = useRef<number | null>(null);
-  useEffect(() => {
-    if (!intake || intake.nonce === lastIntakeNonce.current) return;
-    lastIntakeNonce.current = intake.nonce;
-    if (intake.countries.length === 0) return;
-    void handleStartSelection(intake.countries);
-  }, [intake, handleStartSelection]);
 
   // Active country on the Places step — lifted here so the header's country
   // switcher and the Places body stay in lock-step (single source of truth).
@@ -534,7 +519,6 @@ export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeC
           countries={countries}
           exploreCountries={exploreCountries}
           onStart={handleStartSelection}
-          onGoDiscover={onGoDiscover}
           multiSelect={multiCountry}
           maxSelection={MAX_TRIP_UNITS}
         />

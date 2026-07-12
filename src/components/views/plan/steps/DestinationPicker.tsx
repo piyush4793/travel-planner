@@ -3,6 +3,8 @@ import type { Country } from "@/core/types";
 import type { DestinationSource } from "@/core/trip/destinationSource";
 import { getCountryFlag } from "@/utils/countryFlags";
 import { MAX_TRIP_UNITS, toggleTripSelection } from "@/core/utils/multiCountry";
+import { MONTHS, expandMonth } from "@/core/utils/months";
+import { monthFit, rankByMonthFit } from "@/core/utils/monthFit";
 
 type Props = {
   /** Scope data source — provides combo suggestions, unit nouns and resolution. */
@@ -13,7 +15,6 @@ type Props = {
   exploreCountries: Country[];
   /** Start the wizard with an ordered selection (1 unit = single-destination trip). */
   onStart: (countries: Country[]) => void;
-  onGoDiscover: () => void;
   /** When true, chips accumulate into a multi-unit selection confirmed via a Go arrow. */
   multiSelect?: boolean;
   /** Max units per trip (multi-select only). */
@@ -23,9 +24,13 @@ type Props = {
 const EXPLORE_LIMIT = 12;
 const MINE_LIMIT = 8;
 
+/** Sovereign-catalog regions, "All" first — folds Discover's browse-by-region into Plan. */
+const REGIONS = ["All", "Asia", "Europe", "Middle East", "Africa", "Americas", "Oceania"] as const;
+
 const CHIP_BASE =
   "focus-ring-emerald group inline-flex min-h-[44px] items-center gap-2 rounded-full border px-4 py-2.5 text-sm shadow-[0_1px_2px_rgba(20,40,30,0.05)] transition-[transform,box-shadow,border-color,color] motion-safe:animate-[fadeInUp_0.28s_ease-out_both] hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0 disabled:hover:shadow-[0_1px_2px_rgba(20,40,30,0.05)]";
 const CHIP_TONE_DEFAULT = "border-line bg-white font-medium text-ink-1 hover:border-emerald-600 hover:text-emerald-800";
+const CHIP_TONE_AVOID = "border-amber-200 bg-amber-50/40 font-medium text-ink-2 hover:border-amber-400 hover:text-amber-800";
 
 /**
  * Auto-focusing the search field is a welcome shortcut with a physical keyboard,
@@ -56,16 +61,22 @@ function filterByQuery(list: Country[], q: string): Country[] {
     .map((s) => s.c);
 }
 
-function Chip({ country, index, disabled, onPick }: { country: Country; index: number; disabled?: boolean; onPick: () => void }) {
+function Chip({ country, index, disabled, month, onPick }: { country: Country; index: number; disabled?: boolean; month?: string | null; onPick: () => void }) {
+  const fit = month ? monthFit(country, month) : "neutral";
+  const cue = fit === "best" ? "☀️" : fit === "avoid" ? "⚠️" : null;
+  const cueLabel = fit === "best" ? `great in ${expandMonth(month!)}` : fit === "avoid" ? `avoid ${expandMonth(month!)}` : "";
   return (
     <button
       onClick={onPick}
       disabled={disabled}
       style={{ animationDelay: `${Math.min(index, 14) * 25}ms` }}
-      className={`${CHIP_BASE} ${CHIP_TONE_DEFAULT}`}
+      className={`${CHIP_BASE} ${fit === "avoid" ? CHIP_TONE_AVOID : CHIP_TONE_DEFAULT}`}
     >
       <span aria-hidden="true" className="text-base leading-none">{getCountryFlag(country.name)}</span>
       <span className="truncate">{country.name}</span>
+      {cue && (
+        <span className="text-xs leading-none" title={cueLabel} aria-label={cueLabel} role="img">{cue}</span>
+      )}
     </button>
   );
 }
@@ -73,13 +84,15 @@ function Chip({ country, index, disabled, onPick }: { country: Country; index: n
 /**
  * Empty-state "Where next?" — a fast search over a popularity-ranked destination
  * board. Your list surfaces the destinations you recently planned (most-recent
- * first), then popular rule-backed destinations to explore. Routes to Discover
- * when nothing matches.
+ * first), then popular rule-backed destinations to explore. A month "When?"
+ * filter re-ranks by seasonality and a region filter folds in browse-by-region.
  */
-export default function DestinationPicker({ source, countries, exploreCountries, onStart, onGoDiscover, multiSelect = false, maxSelection = MAX_TRIP_UNITS }: Props) {
+export default function DestinationPicker({ source, countries, exploreCountries, onStart, multiSelect = false, maxSelection = MAX_TRIP_UNITS }: Props) {
   const [query, setQuery] = useState("");
   const [showAllMine, setShowAllMine] = useState(false);
   const [selectedNames, setSelectedNames] = useState<string[]>([]);
+  const [month, setMonth] = useState<string | null>(null);
+  const [region, setRegion] = useState<string>("All");
   const q = query.trim().toLowerCase();
 
   // Name → Country lookup across both tiers, so the tray can resolve selections
@@ -115,13 +128,18 @@ export default function DestinationPicker({ source, countries, exploreCountries,
   // from the browse grids below to avoid echoing the same option twice.
   const mineFiltered = useMemo(() => {
     const list = filterByQuery(mine, q);
-    return multiSelect ? list.filter((c) => !selectedSet.has(c.name)) : list;
-  }, [mine, q, multiSelect, selectedSet]);
+    const scoped = multiSelect ? list.filter((c) => !selectedSet.has(c.name)) : list;
+    return rankByMonthFit(scoped, month);
+  }, [mine, q, multiSelect, selectedSet, month]);
   const exploreFiltered = useMemo(() => {
     let list = filterByQuery(exploreCountries, q);
+    if (region !== "All") list = list.filter((c) => c.region === region);
     if (multiSelect) list = list.filter((c) => !selectedSet.has(c.name));
-    return q ? list : list.slice(0, EXPLORE_LIMIT);
-  }, [exploreCountries, q, multiSelect, selectedSet]);
+    list = rankByMonthFit(list, month);
+    // Any active lens (search / region browse) reveals the full set; the pristine
+    // popularity board (optionally month-ranked) stays capped to a tidy preview.
+    return q || region !== "All" ? list : list.slice(0, EXPLORE_LIMIT);
+  }, [exploreCountries, q, region, multiSelect, selectedSet, month]);
 
   // Cap the list on the pristine hero view; search or "show all" reveals everything.
   const mineCapped = q || showAllMine ? mineFiltered : mineFiltered.slice(0, MINE_LIMIT);
@@ -200,15 +218,70 @@ export default function DestinationPicker({ source, countries, exploreCountries,
               {selectedNames.length}/{maxSelection} selected{atCap ? " · max reached" : " · tap the arrow when ready"}
             </p>
           )}
+
+          <div className="mt-4">
+            <div className="mb-2 flex items-center justify-center gap-2">
+              <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink-4">When are you going?</span>
+              {month && (
+                <button
+                  onClick={() => setMonth(null)}
+                  className="focus-ring-emerald rounded-full px-2 py-0.5 text-[11px] font-semibold text-emerald-700 transition-colors hover:bg-emerald-50 hover:underline"
+                >
+                  Any month
+                </button>
+              )}
+            </div>
+            <div role="group" aria-label="Filter destinations by travel month" className="flex flex-wrap justify-center gap-1.5">
+              {MONTHS.map((m) => {
+                const active = month === m;
+                return (
+                  <button
+                    key={m}
+                    onClick={() => setMonth((cur) => (cur === m ? null : m))}
+                    aria-pressed={active}
+                    aria-label={`${expandMonth(m)}${active ? " (selected)" : ""}`}
+                    className={`focus-ring-emerald min-h-[32px] min-w-[44px] rounded-full border px-2.5 py-1 text-[11px] font-semibold transition-colors ${
+                      active
+                        ? "border-emerald-600 bg-emerald-700 text-white"
+                        : "border-line bg-white text-ink-2 hover:border-emerald-600 hover:text-emerald-800"
+                    }`}
+                  >
+                    {m}
+                  </button>
+                );
+              })}
+            </div>
+            {month && (
+              <p className="mt-2 text-center text-[11px] text-ink-2" aria-live="polite">
+                Sorted for <span className="font-semibold text-emerald-800">{expandMonth(month)}</span> — ☀️ great · ⚠️ off-season.
+              </p>
+            )}
+
+            <div className="mt-3 flex flex-wrap justify-center gap-1.5" role="group" aria-label="Browse destinations by region">
+              {REGIONS.map((r) => {
+                const active = region === r;
+                return (
+                  <button
+                    key={r}
+                    onClick={() => setRegion(r)}
+                    aria-pressed={active}
+                    className={`focus-ring-emerald min-h-[32px] rounded-full border px-3 py-1 text-[11px] font-semibold transition-colors ${
+                      active
+                        ? "border-emerald-600 bg-emerald-50 text-emerald-800"
+                        : "border-line bg-white text-ink-2 hover:border-emerald-600 hover:text-emerald-800"
+                    }`}
+                  >
+                    {r === "All" ? "🌍 All regions" : r}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
         {countries.length === 0 && !q && selectedNames.length === 0 && (
           <p className="mt-4 text-center text-xs text-ink-2">
-            Search a destination above to start planning, or{" "}
-            <button onClick={onGoDiscover} className="focus-ring-emerald rounded font-semibold text-emerald-700 hover:underline">
-              browse Discover
-            </button>
-            .
+            Search a destination above, or browse by region, to start planning.
           </p>
         )}
 
@@ -221,7 +294,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
             <p className="mb-3 text-[11px] text-emerald-700/80">Travellers often combine these into one seamless route.</p>
             <div className="flex flex-wrap gap-2.5">
               {recommendations.map((c, i) => (
-                <Chip key={c.name} country={c} index={i} onPick={() => pickCountry(c)} />
+                <Chip key={c.name} country={c} index={i} month={month} onPick={() => pickCountry(c)} />
               ))}
             </div>
           </section>
@@ -232,7 +305,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
             <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-ink-4">Jump back in</h2>
             <div className="flex flex-wrap gap-2.5">
               {mineCapped.map((c, i) => (
-                <Chip key={c.name} country={c} index={i} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
+                <Chip key={c.name} country={c} index={i} month={month} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
               ))}
               {mineHidden > 0 && (
                 <button
@@ -257,11 +330,19 @@ export default function DestinationPicker({ source, countries, exploreCountries,
         {exploreFiltered.length > 0 && (
           <section className="mt-8">
             <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-ink-4">
-              {q ? "More destinations" : "Popular to explore"}
+              {month && region !== "All"
+                ? `Best in ${expandMonth(month)} · ${region}`
+                : month
+                  ? `Best in ${expandMonth(month)}`
+                  : region !== "All"
+                    ? `Explore ${region}`
+                    : q
+                      ? "More destinations"
+                      : "Popular to explore"}
             </h2>
             <div className="flex flex-wrap gap-2.5">
               {exploreFiltered.map((c, i) => (
-                <Chip key={c.name} country={c} index={i} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
+                <Chip key={c.name} country={c} index={i} month={month} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
               ))}
             </div>
           </section>
@@ -269,10 +350,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
 
         {nothing && (
           <p className="mt-10 text-center text-sm text-ink-2">
-            No destination matches “{query}”.{" "}
-            <button onClick={onGoDiscover} className="focus-ring-emerald rounded font-semibold text-emerald-700 hover:underline">
-              Browse Discover
-            </button>
+            No destination matches “{query}”. Try a different name or region.
           </p>
         )}
       </div>

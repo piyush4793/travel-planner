@@ -11,6 +11,8 @@ type ManifestEntry = {
   recDays: number | null;
   maxDays: number | null;
   popularityScore?: number;
+  bestMonths?: string[];
+  worstMonths?: string[];
   combo?: string[];
 };
 
@@ -25,7 +27,8 @@ function seedFromManifest(m: ManifestEntry): Country {
     region: m.region,
     popularityScore: m.popularityScore,
     combo: m.combo,
-    bestMonths: [],
+    bestMonths: m.bestMonths ?? [],
+    worstMonths: m.worstMonths,
     budget: "",
     experiences: [],
   };

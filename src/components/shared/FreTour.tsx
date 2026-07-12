@@ -51,22 +51,6 @@ const STEPS: TourStep[] = [
     body: "Every trip you plan is saved here automatically. Reopen a route to keep tuning it, favourite the ones you love, and pick up right where you left off.",
   },
   {
-    kind: "spotlight",
-    target: "[data-tour='nav-discover']",
-    position: "bottom",
-    emoji: "\u{1F30D}",
-    title: "Discover the World",
-    body: "Browse all 197 countries by region. Find hidden gems, check best months, and add destinations to your list with one tap.",
-  },
-  {
-    kind: "spotlight",
-    target: "[data-tour='nav-calendar']",
-    position: "bottom",
-    emoji: "\u{1F4C5}",
-    title: "When to Travel",
-    body: "A heatmap of the best months for every destination. Green means go, red means avoid \u2014 plan your timing perfectly.",
-  },
-  {
     kind: "hero",
     emoji: "\u{1F3AC}",
     title: "Cinematic Fly-throughs",

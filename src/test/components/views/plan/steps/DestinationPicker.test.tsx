@@ -59,7 +59,6 @@ describe("DestinationPicker", () => {
         countries={countries}
         exploreCountries={explore}
         onStart={vi.fn()}
-        onGoDiscover={vi.fn()}
       />,
     );
     const section = screen.getByText(/Jump back in/i).closest("section")!;
@@ -75,7 +74,6 @@ describe("DestinationPicker", () => {
         countries={many}
         exploreCountries={explore}
         onStart={vi.fn()}
-        onGoDiscover={vi.fn()}
       />,
     );
     const section = () => screen.getByText(/Jump back in/i).closest("section")!;
@@ -96,7 +94,6 @@ describe("DestinationPicker", () => {
         countries={[mk("Testland", 50)]}
         exploreCountries={explore}
         onStart={onStart}
-        onGoDiscover={vi.fn()}
       />,
     );
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "explo" } });
@@ -116,7 +113,6 @@ describe("DestinationPicker", () => {
           countries={[mk("Testland", 50)]}
           exploreCountries={[]}
           onStart={vi.fn()}
-          onGoDiscover={vi.fn()}
         />,
       );
       // The field renders but does not steal focus without a pointer signal.
@@ -133,7 +129,6 @@ describe("DestinationPicker", () => {
         countries={[mk("Makorland", 90), mk("South Korazone", 80), mk("Koraland", 70)]}
         exploreCountries={[]}
         onStart={vi.fn()}
-        onGoDiscover={vi.fn()}
       />,
     );
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "kor" } });
@@ -157,7 +152,6 @@ describe("DestinationPicker", () => {
           countries={many}
           exploreCountries={explore}
           onStart={onStart}
-          onGoDiscover={vi.fn()}
           multiSelect
         />,
       );
@@ -178,7 +172,6 @@ describe("DestinationPicker", () => {
           countries={many}
           exploreCountries={explore}
           onStart={onStart}
-          onGoDiscover={vi.fn()}
           multiSelect
         />,
       );
@@ -199,7 +192,6 @@ describe("DestinationPicker", () => {
           countries={many}
           exploreCountries={[]}
           onStart={vi.fn()}
-          onGoDiscover={vi.fn()}
           multiSelect
           maxSelection={2}
         />,
@@ -217,7 +209,6 @@ describe("DestinationPicker", () => {
           countries={many}
           exploreCountries={[]}
           onStart={vi.fn()}
-          onGoDiscover={vi.fn()}
           multiSelect
         />,
       );
@@ -239,7 +230,6 @@ describe("DestinationPicker", () => {
           countries={[mk("Norway", 40)]}
           exploreCountries={[]}
           onStart={onStart}
-          onGoDiscover={vi.fn()}
           multiSelect
         />,
       );
@@ -251,6 +241,71 @@ describe("DestinationPicker", () => {
       fireEvent.click(add);
       fireEvent.click(screen.getByRole("button", { name: /Plan trip/i }));
       expect(onStart.mock.calls[0][0].map((c: { name: string }) => c.name)).toEqual(["Norway", "Iceland"]);
+    });
+  });
+
+  describe("month filter", () => {
+    // Explore list in popularity order; month fit should re-rank without hiding.
+    const seasonal = [
+      mk("SummerLand", 90),
+      mk("WinterLand", 80),
+    ];
+    seasonal[0].bestMonths = ["June", "July", "August"];
+    seasonal[1].bestMonths = ["December", "January"];
+    seasonal[1].worstMonths = ["July"];
+
+    function renderPicker() {
+      return render(
+        <DestinationPicker
+          source={internationalSource}
+          countries={[]}
+          exploreCountries={seasonal}
+          onStart={vi.fn()}
+        />,
+      );
+    }
+
+    it("re-ranks the explore board by month fit and heads it 'Best in <month>'", () => {
+      renderPicker();
+      fireEvent.click(screen.getByRole("button", { name: /^July/i }));
+      const section = screen.getByText(/Best in July/i).closest("section")!;
+      const names = within(section).getAllByRole("button").map((b) => b.textContent?.replace(/[^\x00-\x7F]/g, "").trim());
+      // Best-window destination sorts ahead of the avoid-window one (never hidden).
+      expect(names).toEqual(["SummerLand", "WinterLand"]);
+      expect(within(section).getByRole("img", { name: /great in July/i })).toBeInTheDocument();
+      expect(within(section).getByRole("img", { name: /avoid July/i })).toBeInTheDocument();
+    });
+
+    it("clears the month back to any-month order", () => {
+      renderPicker();
+      fireEvent.click(screen.getByRole("button", { name: /^July/i }));
+      fireEvent.click(screen.getByRole("button", { name: /Any month/i }));
+      expect(screen.getByText(/Popular to explore/i)).toBeInTheDocument();
+      expect(screen.queryByText(/Best in July/i)).not.toBeInTheDocument();
+    });
+  });
+
+  describe("region browse", () => {
+    it("filters the explore board to the chosen region and heads it 'Explore <region>'", () => {
+      const asia = mk("Asiana", 90);
+      const europe = mk("Europa", 80);
+      asia.region = "Asia";
+      europe.region = "Europe";
+      render(
+        <DestinationPicker
+          source={internationalSource}
+          countries={[]}
+          exploreCountries={[asia, europe]}
+          onStart={vi.fn()}
+        />,
+      );
+      fireEvent.click(screen.getByRole("button", { name: /^Asia$/ }));
+      const section = screen.getByText(/Explore Asia/i).closest("section")!;
+      const names = within(section).getAllByRole("button").map((b) => b.textContent?.replace(/[^\x00-\x7F]/g, "").trim());
+      expect(names).toEqual(["Asiana"]);
+      // Back to all regions restores both.
+      fireEvent.click(screen.getByRole("button", { name: /All regions/i }));
+      expect(screen.getByText("Europa")).toBeInTheDocument();
     });
   });
 });

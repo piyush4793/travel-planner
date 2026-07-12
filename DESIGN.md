@@ -57,7 +57,8 @@ src/
 │       │   └── llmTransform.ts    # LLM JSON → TripPlan extraction + validation
 │       ├── tripPlans.ts           # Itinerary generation (rule engine + generic)
 │       ├── citySelection.ts       # DP city selection + day allocation (bounded knapsack)
-│       ├── filterLogic.ts         # Pure filter functions (month/budget/experience)
+│       ├── filterLogic.ts         # Pure filter functions (budget/experience)
+│       ├── monthFit.ts            # Plan landing month-fit ranking (best → neutral → avoid)
 │       ├── transport.ts           # TransportType enum, emoji map, detection
 │       ├── googleMapsRoute.ts     # Google Maps Directions URL builder
 │       ├── planDiff.ts            # Plan summary + diff labels
@@ -90,8 +91,6 @@ src/
 ├── components/
 │   ├── views/
 │   │   ├── MyTripsView.tsx        # Saved-trip gallery (My Trips) + SavedTripCard
-│   │   ├── CalendarView.tsx       # Month × destination heatmap grid + row-to-Plan intake
-│   │   ├── DiscoverView.tsx       # 197-country catalog browser + Plan trip intake tray
 │   │   └── plan/                  # Guided #plan wizard (grouped by responsibility)
 │   │       ├── PlanView.tsx       # Entry orchestrator (auto-save, engagement, useReviewRoute)
 │   │       ├── shell/             # PlanWorkspaceShell, PlanTripHeader, PlanCountrySwitcher, planActions, planDraft
@@ -131,7 +130,7 @@ data/
 ├── rules/
 │   ├── index.json                 # Manifest: 198 itinerary-backed destinations
 │   └── {country}.json             # 198 lazy-loaded per-country rule files
-└── worldCatalog.json              # 197-country sovereign catalog for Discover
+└── worldCatalog.json              # 197-country sovereign coordinate/region fallback used by catalog seed builders
 
 public/
 ├── manifest.json                  # PWA manifest (name, PNG+SVG icons, display mode)
@@ -251,7 +250,7 @@ One-way planning funnel and the app's primary planning surface. Lives in `src/co
 - **Auto→explicit city materialization**: while `selectedCities` is empty the plan auto-selects cities (DP fit); the Adjust drawer's `CityPicker` shows those as checked via `autoSelectedCities` (the country's real cities the auto plan visits, filtered from route labels). The first `toggleCity` **materializes** the auto set and applies the toggle (so tapping a pre-checked city removes it) and **pins the day count** so curating doesn't silently inflate length. "Reset to auto" clears the picks and unpins. The picker caps its height and scrolls locally, so a many-city country never makes the drawer endless.
 - **Insights** (`TripContextRail`): the trip-level reference rail — an **honest budget ledger** (per-country ×nights line items + inter-country legs estimate + "flights extra" caveat, labelled with the active basis), a **Trip readiness** checklist, per-country `MonthHeatmap` "When to go", stopover/watch-outs/pairs-with tips, per-country **Before you go** (lazy `LearnAboutSection`/`PlanningResourcesSection`/`UsefulLinksSection`), and the **Notes** scratchpad (above). Each section renders only when a country carries that data, so the rail never shows empty chrome. The who's-going basis + headline stats live once in `PlanTripHeader`; the rail only reflects the active basis in the ledger. Sections use `RailSection`'s `variant`: on **desktop** each is a discrete bordered **`card`**; inside the tablet/mobile **"Insights" bottom-sheet** they switch to a **`flat`**, hairline-divided variant (no border/shadow) so the sheet body matches the Adjust/Filters sheets instead of nesting cards-inside-a-card. `TripContextRail` picks the variant by breakpoint.
 - **Self-contained, no Country-Panel coupling**: the Plan page owns all destination detail and itinerary shaping; the former single-country panel was removed, so combine-with pills render as plain informational chips and there is no panel handoff.
-- **Landing picker ordering** (`DestinationPicker`): the **Jump back in** board shows implicit Recents in MRU order (recorded when a destination enters Basics via `recordPlanned`, or when a saved trip is reopened, capped by `MAX_RECENTS=24`). Fresh users have no recents, so the board falls back to **Popular destinations** sorted by `popularityScore` desc.
+- **Landing picker ordering** (`DestinationPicker`): the **Jump back in** board shows implicit Recents in MRU order (recorded when a destination enters Basics via `recordPlanned`, or when a saved trip is reopened, capped by `MAX_RECENTS=24`). Fresh users have no recents, so the board falls back to **Popular destinations** sorted by `popularityScore` desc. The picker is now the only destination-entry path: its own ordered multi-select tray (`onStart(countries)`) starts single- or multi-stop plans. It searches all 198 rule-backed destinations, includes a region pill row (`All`, `Asia`, `Europe`, `Middle East`, `Africa`, `Americas`, `Oceania`) to browse the board by region, and has a **When are you going?** month pill row that re-ranks the entire board by seasonality via `monthFit(country, month)` and `rankByMonthFit(list, month|null)`. Month ranking is stable best → neutral → avoid, best-window destinations get a ☀ cue, and avoid-window destinations get a muted ⚠ cue but remain visible.
 - **Resumable draft**: the funnel persists to `LS_KEYS.PLAN_DRAFT` via `planDraft.ts` (`load/save/clearPlanDraft`) — the ordered **`countries`** selection, step, cities, experiences, days, and pin survive refresh (`loadPlanDraft` migrates the legacy single-`country` shape to `countries: [name]`). `usePlanBuilder` takes an optional `initial` seed and guards its reset-on-country-change effect (skips first mount) so a hydrated draft isn't wiped. Backing out of destination selection clears the draft. Desktop rail collapse persists separately to `LS_KEYS.PLAN_UI`.
 - **Multi-country selection (flag `multiCountryPlanning`, on by default)**: with the flag on, `DestinationPicker` chips toggle into an ordered selection (capped at `MAX_TRIP_UNITS` from `core/utils/multiCountry.ts`; pure `toggleTripSelection` helper) confirmed via a sticky **"Plan trip →"** tray; `onStart(countries)` seeds `PlanView`'s `selection` state (`picked = selection[0]`). With the flag off, a chip tap starts a single-country trip immediately (`onStart([c])`) — unchanged behaviour. The multi-country **Review** step composes and renders every stop as a segmented "Route Canvas" (see below).
 - **Surfaces mold from the selection via the `DestinationSource` seam** (`src/core/trip/destinationSource.ts`): a scope-keyed port `{scope, unitNoun(Plural), popular(), resolveUnit(), comboRecommendations(), dayBounds(), experiencesFor(names), loadUnit(name)}`. `getDestinationSource(scope)` returns the registered source — only `international` today (`internationalSource.ts`); a future `domestic`/India scope implements the same port over cities and every wizard surface renders unchanged. Nothing in the surfaces assumes "country". Key molded surfaces:
@@ -277,11 +276,11 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 
 ### App navigation & header layout
 
-- **Desktop**: a slim **luxury ivory/emerald** top bar (`bg-[#fbf9f3]/90` + backdrop-blur + `border-b border-[#e7e1d2]`) carrying an emerald wordmark + centered view pills (`Plan · Trips · Calendar · Discover`, in an `#efe9db` track — the active pill is `bg-emerald-700 text-white`) + a right cluster of **Install/Open app · Share · Settings (⚙️) · Dev flag panel (dev-only)** (all restyled to the ivory palette: `#efe9db` chips, emerald-filled Install). The PWA `theme-color` (`index.html`) + manifest `theme_color`/`background_color` were aligned to the ivory bar so the mobile status bar/splash blend seamlessly.
-- **Mobile**: a **fixed bottom tab bar** (ivory `bg-[#fbf9f3]`, `border-[#e7e1d2]`) owns primary navigation (the 4 views, icon-over-label with an emerald-tinted active pill behind the icon, `safe-bottom`); the top strip shrinks to brand + a compact **Install/Share + Settings** cluster (no hamburger menu / slide-down drawer — both retired). The bottom bar sits in the flex column so content scrolls above it.
+- **Desktop**: a slim **luxury ivory/emerald** top bar (`bg-[#fbf9f3]/90` + backdrop-blur + `border-b border-[#e7e1d2]`) carrying an emerald wordmark + centered view pills (`Plan · Trips`, in an `#efe9db` track — the active pill is `bg-emerald-700 text-white`) + a right cluster of **Install/Open app · Share · Settings (⚙️) · Dev flag panel (dev-only)** (all restyled to the ivory palette: `#efe9db` chips, emerald-filled Install). The PWA `theme-color` (`index.html`) + manifest `theme_color`/`background_color` were aligned to the ivory bar so the mobile status bar/splash blend seamlessly.
+- **Mobile**: a **fixed bottom tab bar** (ivory `bg-[#fbf9f3]`, `border-[#e7e1d2]`) owns primary navigation (the 2 views, Plan · Trips, icon-over-label with an emerald-tinted active pill behind the icon, `safe-bottom`); the top strip shrinks to brand + a compact **Install/Share + Settings** cluster (no hamburger menu / slide-down drawer — both retired). The bottom bar sits in the flex column so content scrolls above it.
 - The install slot is context-aware: it shows **Install app** when the browser offers `beforeinstallprompt` (or iOS A2HS guidance), and swaps to a best-effort **Open app** action once `navigator.getInstalledRelatedApps()` reports the PWA is already installed but running in a browser tab. Nothing shows when running standalone.
 - App-wide defaults (home country, default budget party size) live inside **Settings → General**, not in the header.
-- `FreTour` is the **luxury emerald/ivory** first-run guided tour: immersive emerald-gradient **hero/install** cards (Welcome → Cinematic → Install → Ready) interleaved with light **ivory spotlight** tooltips (`bg-surface-1` + emerald accents + emerald pulsing target ring) that walk the four nav destinations in Plan-first order — **Plan → Trips (saved trips) → Discover → Calendar** — plus Settings/Backup. Spotlight targets (`data-tour="nav-*"`, `data-tour="settings"`) resolve to whichever element is visible per breakpoint (desktop pills vs. bottom bar tabs); its mobile positioning places a card above targets in the lower half of the viewport (e.g. the bottom tab bar).
+- `FreTour` is the **luxury emerald/ivory** first-run guided tour: immersive emerald-gradient **hero/install** cards (Welcome → Cinematic → Install → Ready) interleaved with light **ivory spotlight** tooltips (`bg-surface-1` + emerald accents + emerald pulsing target ring) that walk the remaining nav/settings targets in Plan-first order — **Plan → Trips → Settings**. Spotlight targets (`data-tour="nav-plan"`, `data-tour="nav-trips"`, `data-tour="settings"`) resolve to whichever element is visible per breakpoint (desktop pills vs. bottom bar tabs); its mobile positioning places a card above targets in the lower half of the viewport (e.g. the bottom tab bar).
 
 ### Saved Trips (My Trips)
 
@@ -298,7 +297,7 @@ Filter dropdowns, tooltips, and experience picker use `createPortal` to avoid cl
 - **Budget tiering**: `getBudgetTier` classifies a budget string by its **range midpoint** — `parseBudgetRange` averages low+high so a `₹1.5L–₹3L` band reads as `mid` (₹2.25L) rather than `budget` off the lower bound alone. Buckets: midpoint ≤₹1.5L `budget`, ≤₹3L `mid`, else `premium`; unparseable strings fall back to `budget` (inclusive). Drives both the Trips budget filter and the Plan-tab day nudge (`BUDGET_DAY_FACTOR`).
 - **Two-layer state** (`useBudgetBasis`): a persisted **global default** (`tp_budget_basis`) plus a transient in-session **active** value seeded from it. `setGlobalBasis` persists and resets active to it; `setActiveBasis` is temporary (not persisted). A corrupt stored value is guarded by `isBudgetBasis` and falls back to `couple`.
 - **Controls**: **Settings → General** hosts the app-wide defaults — the home-country selector and a `BudgetBasisPills` segmented control (`variant="light"`, with label) bound to the **global** default. The Plan wizard's "who's going" basis pill (`PlanTripHeader` / `PlanPlacesStep`) edits only the **active** value (quick "play around") for the in-session itinerary cost.
-- **Consumers of active basis**: `PlanView`/Route Canvas cost figures, PDF/share output, Discover budget cues, Calendar timing context, and `MyTripsView` (each trip's *saved* basis, captured in the snapshot, not the live active basis). The App threads `activeBasis` to each planning surface.
+- **Consumers of active basis**: `PlanView`/Route Canvas cost figures, PDF/share output, and `MyTripsView` (each trip's *saved* basis, captured in the snapshot, not the live active basis). The App threads `activeBasis` to each planning surface.
 - **Cost model**: `generateTripPlan(..., basis)` computes plan cost from `budgetForBasis(country, basis)` scaled by `days / recommendedDays` (floor 0.2), so at the recommended length the plan cost equals that basis's budget chip. The resulting `TripPlan.costBasis` records the party basis; `planCostBasisIcon` renders the basis icon (👤/👫/👨‍👩‍👧‍👦) beside the cost, with `planCostBasisLabel` supplying an accessible `title`/`aria-label` (never shown as visible text). AI plans omit `costBasis` and fall back to the 👤 (per-person) icon.
 
 ### Destination detail surfaces
@@ -332,11 +331,11 @@ Playback controls are ref-backed so the imperative animation reads live values w
 
 | Tier | Source | Count | Content |
 |---|---|---|---|
-| **Catalog** | `data/worldCatalog.json` | 197 | `{ name, lat, lng, region }` — Discover view |
-| **Manifest** | `data/rules/index.json` | 198 | Browse metadata + `inSeed`, `hasItinerary`, `recDays`, `maxDays`, `popularityScore` |
+| **Catalog** | `data/worldCatalog.json` | 197 | `{ name, lat, lng, region }` — coordinate/region fallback for seed builders |
+| **Manifest** | `data/rules/index.json` | 198 | Browse metadata + `inSeed`, `hasItinerary`, `recDays`, `maxDays`, `popularityScore`, `bestMonths`, `worstMonths` |
 | **Rule JSON** | `data/rules/{name}.json` | 198 | Consolidated country data + day-by-day itinerary rules |
 
-The Discover catalog remains a 197-country sovereign browse list (now including Antarctica for completeness). The manifest expands coverage to 198 itinerary-backed destinations. The **`inSeed`** flag still identifies 5 richer seed entries (Japan, Thailand, Switzerland, France, Italy) for catalog/enrichment, but fresh users no longer receive an auto-populated visible list. Discover is pure browse → Plan: region/search discovery plus a trip-selection tray that calls `onPlanTrip`.
+`data/worldCatalog.json` remains a 197-country sovereign coordinate/region fallback used internally by catalog seed builders; it is not a top-level view. The manifest expands coverage to 198 itinerary-backed destinations and now bakes `bestMonths`/`worstMonths` into every entry, enabling fully offline full-catalog month-fit ranking on the Plan landing without lazy rule loads. `ManifestEntry` and seed builders surface those windows onto `Country` objects. The **`inSeed`** flag still identifies 5 richer seed entries (Japan, Thailand, Switzerland, France, Italy) for catalog/enrichment, but fresh users no longer receive an auto-populated visible list.
 
 ### Core types
 
@@ -494,11 +493,9 @@ Reusable coverage slash command:
 ### Testing expansion plan (Phase 2 complete)
 
 - Expanded App orchestration integration tests to cover:
-  - default-hash landing (Plan) and route switching across top-level views
-  - Discover/Calendar `onPlanTrip` intake wiring into `PlanView`
-  - Calendar month-filter pipeline (fed the whole Recents/MRU list, independent of other views)
+  - default-hash landing (Plan) and route switching across the two top-level views
+  - Plan landing destination selection, region filtering, and month-fit ranking (`monthFit` / `rankByMonthFit`)
   - feature-flag-driven AI prop wiring at the top shell boundary
-  - Discover trip-selection tray wiring into the Plan intake path
 
 ### Coverage-improvement agent model
 

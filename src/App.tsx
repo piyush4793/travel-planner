@@ -1,13 +1,10 @@
 import { useState, useCallback, useMemo, useRef, useEffect, Suspense } from "react";
 import type maplibregl from "maplibre-gl";
-import type { Country } from "./core/types";
 import DevFlagPanel from "./components/shared/DevFlagPanel";
 import { lazyWithRetry as lazy } from "./utils/lazyWithRetry";
 
 // Lazy-load view and panel components — only fetched when first navigated/opened
 const MapView = lazy(() => import("./components/views/MapView"));
-const CalendarView = lazy(() => import("./components/views/CalendarView"));
-const DiscoverView = lazy(() => import("./components/views/DiscoverView"));
 const MyTripsView = lazy(() => import("./components/views/MyTripsView"));
 const PlanView = lazy(() => import("./components/views/plan/PlanView"));
 import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
@@ -37,8 +34,6 @@ const FreTour = lazy(() => import("./components/shared/FreTour"));
 const VIEW_META: Record<AppView, { icon: string; label: string }> = {
   plan: { icon: "🧭", label: "Plan" },
   trips: { icon: "🧳", label: "Trips" },
-  calendar: { icon: "📅", label: "Calendar" },
-  discover: { icon: "🌍", label: "Discover" },
 };
 
 const NAV_VIEWS = Object.keys(VIEW_META) as AppView[];
@@ -170,32 +165,6 @@ export default function App() {
   // The hidden cinematic MapView shows every My List destination; the former
   // app-level Trips filters were retired along with the old Trips dashboard.
   const filtered = store.myListCountries;
-
-  // Resolve any country by name (My List → all seed/custom → catalog stub) so the
-  // Discover/Calendar "start a plan" intake can seed the Plan wizard's selection.
-  const resolveCountry = useCallback((name: string): Country | null => {
-    const tracked = store.myListCountries.find((c) => c.name === name)
-      ?? store.allCountries.find((c) => c.name === name);
-    if (tracked) return tracked;
-    const cat = store.catalog.find((c) => c.name === name);
-    if (cat) {
-      return { name: cat.name, lat: cat.lat, lng: cat.lng, region: cat.region, bestMonths: [], budget: "", experiences: [] };
-    }
-    return null;
-  }, [store.myListCountries, store.allCountries, store.catalog]);
-
-  // Start-a-plan intake from Discover (multi-select tray) or Calendar (tap a
-  // destination): resolve the picked names into the wizard's ordered selection
-  // and route to #plan. The nonce makes re-triggering the same set re-seed.
-  const [planIntake, setPlanIntake] = useState<{ countries: Country[]; nonce: number } | null>(null);
-  const handlePlanIntake = useCallback((names: string[]) => {
-    const resolved = names
-      .map((n) => resolveCountry(n))
-      .filter((c): c is Country => c !== null);
-    if (resolved.length === 0) return;
-    setPlanIntake({ countries: resolved, nonce: Date.now() });
-    setView("plan");
-  }, [resolveCountry, setView]);
 
   const handleAiPlanReady = useCallback((result: LLMTripPlanResult) => {
     setAiPlanResult(result);
@@ -395,7 +364,6 @@ export default function App() {
             budgetBasis={activeBasis}
             setBudgetBasis={setActiveBasis}
             homeCountry={homeCountry}
-            onGoDiscover={() => setView("discover")}
             onSaveTrip={savedTrips.upsert}
             isTripFavorite={(name) => savedTrips.savedTrips.some((t) => t.name === name && !!t.favorite)}
             onToggleTripFavorite={savedTrips.toggleFavoriteByName}
@@ -404,30 +372,18 @@ export default function App() {
             onUpdateNotes={store.updateNotes}
             aiPlanCountFor={isEnabled("llmPlanning") ? aiPlanCountFor : undefined}
             openTrip={planSeed}
-            intake={planIntake}
             startNewNonce={newPlanNonce}
             matchSavedTrip={matchSavedTrip}
             mainMapRef={mainMapRef}
             onCinematicChange={setCinematicActive}
           />
-        ) : view === "trips" ? (
+        ) : (
           <MyTripsView
             savedTrips={savedTrips.savedTrips}
             onToggleFavorite={savedTrips.toggleFavorite}
             onRemove={savedTrips.remove}
             onOpen={openSavedTrip}
             onGoPlan={startNewPlan}
-          />
-        ) : view === "calendar" ? (
-          <CalendarView
-            countries={store.myListCountries}
-            onPlanTrip={handlePlanIntake}
-            budgetBasis={activeBasis}
-          />
-        ) : (
-          <DiscoverView
-            catalog={store.catalog}
-            onPlanTrip={handlePlanIntake}
           />
         )}
         </Suspense>

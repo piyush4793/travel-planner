@@ -17,6 +17,8 @@ type ManifestEntry = {
   recDays: number | null;
   maxDays: number | null;
   popularityScore?: number;
+  bestMonths?: string[];
+  worstMonths?: string[];
 };
 
 const MANIFEST = manifestData as ManifestEntry[];
@@ -32,7 +34,8 @@ function buildSeedCountry(m: ManifestEntry): Country {
   return {
     name: m.name, lat: m.lat, lng: m.lng, region: m.region,
     popularityScore: m.popularityScore,
-    bestMonths: [], budget: "", experiences: [],
+    bestMonths: m.bestMonths ?? [], worstMonths: m.worstMonths,
+    budget: "", experiences: [],
   };
 }
 
@@ -42,10 +45,12 @@ function buildSeedCountry(m: ManifestEntry): Country {
 function buildCatalogCountry(name: string): Country | null {
   const src = CATALOG_BY_NAME.get(name) ?? MANIFEST_BY_NAME.get(name);
   if (!src) return null;
+  const manifestEntry = MANIFEST_BY_NAME.get(name);
   return {
     name: src.name, lat: src.lat, lng: src.lng, region: src.region,
-    popularityScore: MANIFEST_BY_NAME.get(name)?.popularityScore,
-    bestMonths: [], budget: "", experiences: [],
+    popularityScore: manifestEntry?.popularityScore,
+    bestMonths: manifestEntry?.bestMonths ?? [], worstMonths: manifestEntry?.worstMonths,
+    budget: "", experiences: [],
   };
 }
 
@@ -245,6 +250,5 @@ export function useCountryStore() {
     recordPlanned,
     updateNotes,
     reload,
-    catalog: CATALOG,
   } as const;
 }

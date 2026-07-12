@@ -8,7 +8,7 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (1160 tests)
+npm test                # Vitest suite (1159 tests)
 npm run test:coverage   # coverage report (must stay ≥ 90% total statements/lines)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests(+coverage) + knip + build
@@ -20,7 +20,7 @@ Before committing, ensure adequate test coverage for the behavior you changed (a
 **Coverage gate (hard):** the pre-commit hook and `npm run validate` run `vitest run --coverage`, which enforces a **global floor of 90% statements/lines** (set in `vite.config.ts` `coverage.thresholds`). A commit is blocked if total coverage drops below 90%. Per-directory thresholds also apply (`src/utils/**` 60/50/60, `src/core/utils/**` 80/70/80, etc.). Raise the floor when coverage rises; never lower it to force a commit through.
 
 Current testing priority:
-- Total statement coverage is ~90% (1160 tests). Plan/itinerary surfaces and the `ai` folder (`ChatModal` import/link/finalize flows, `SettingsModal` backup/restore/CSV flows) are now covered; the Trips view covers sort/filter plus saved-trip open/favorite/delete flows; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; `importParser` (incl. `fetchChatLink`), `useChatSession`, `core/storage`, and `App.tsx` orchestration handlers are covered; the platform-backup stack (`core/platform/*`, `core/adapters/backup/*`, `StorageLocationCard`) is covered via a reusable fake File System helper (`src/test/support/fakeFileSystem.ts`); remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` (need a real WebGL context).
+- Total statement coverage is 90.01% (1159 tests). Plan/itinerary surfaces and the `ai` folder (`ChatModal` import/link/finalize flows, `SettingsModal` backup/restore/CSV flows) are now covered; the Trips view covers sort/filter plus saved-trip open/favorite/delete flows; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; `importParser` (incl. `fetchChatLink`), `useChatSession`, `core/storage`, and `App.tsx` orchestration handlers are covered; the platform-backup stack (`core/platform/*`, `core/adapters/backup/*`, `StorageLocationCard`) is covered via a reusable fake File System helper (`src/test/support/fakeFileSystem.ts`); remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` (need a real WebGL context).
 - Reuse `src/test/testUtils.ts` helpers for localStorage seeding, route setup, and deterministic timers in timing-sensitive UI tests.
 - Prefer `fireEvent` over `userEvent.tab()` for focus-trap/timing-sensitive assertions (jsdom focus timing is flaky).
 - `src/components/**` thresholds remain intentionally low in `vite.config.ts`; tighten them now that broad integration coverage exists.
@@ -110,6 +110,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | Shared itinerary atoms (composed toolbar) | `src/components/views/plan/ui/ItineraryToolbar.tsx` |
 | Unified Plan-journey header (identity + stats + basis + stepper) | `src/components/views/plan/shell/{PlanTripHeader,PlanCountrySwitcher}.tsx · controls/{BasisMenu}.tsx` |
 | Popular destinations (Plan picker) | `src/core/data/popularDestinations.ts` |
+| Plan landing month-fit ranking | `src/core/utils/monthFit.ts` |
 | Trip planner engine | `src/utils/tripPlans.ts` |
 | City↔experience matching (shared) | `src/core/utils/cityExperiences.ts` |
 | City selection + day allocation (DP) | `src/core/utils/citySelection.ts` |
@@ -122,20 +123,18 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | Saved-trip snapshot model (types + pure builder) | `src/core/utils/savedTrips.ts` |
 | My Trips gallery view | `src/components/views/MyTripsView.tsx` |
 | Rule manifest + lazy JSON chunks | `data/rules/index.json`, `data/rules/*.json` |
-| Discover catalog | `data/worldCatalog.json` |
+| World catalog fallback | `data/worldCatalog.json` |
 
 ---
 
 ## Features & Views
 
-4 hash-routed views (`#plan`, `#trips`, `#calendar`, `#discover`). **`#plan` is the default landing view** (`useHashView("plan")`; the brand/Home button routes to the same landing):
+2 hash-routed views (`#plan`, `#trips`). **`#plan` is the default landing view** (`useHashView("plan")`; the brand/Home button routes to the same landing):
 
 | View | Purpose |
 |---|---|
 | **Plan** (default landing) | Luxury emerald/ivory guided planning wizard — a streamlined funnel **Basics → Places (conditional) → Your trip** (`src/components/views/plan/`, orchestrated by `PlanView` + `usePlanBuilder`; steps are `["basics", ...(anyUnitHasCities ? ["cities"] : []), "review"]`). Basics = party size (`PillGroup accent="emerald"`) + vibe/experience chips + live `PlanRouteSummary`. On desktop Basics + Places sit on an elevated **"stage"** — a bordered white panel centred in the canvas (`lg:my-auto` + card styling in `PlanView`), so short steps read as an intentional luxe focal surface instead of floating on empty ivory (mobile stays full-bleed; Basics still centres its hero vertically, Places top-aligns). Basics also swaps its centred hero for a **left editorial header** ("Trip basics" eyebrow → "Who's going & what you love?" → subline) and a **two-column layout** (questions left, live summary as a companion card right) from `lg` up; the shared `PlanTripHeader` `width` prop (`narrow`/`wide`/`review`) keeps the header aligned to each step's body (Basics + Places share `wide`/`max-w-5xl`). **Places** (`PlanPlacesStep`) is a conditional step (skipped when no stop has cities) rendered as a **Design D decision surface**: a consolidated dark **header card** (country identity — a dropdown **country switcher** with a place-count badge for a multi-stop route via `PlanMenu` (breakpoint-aware: anchored dropdown desktop / scrimmed bottom-sheet mobile — same for Sort + basis), static name for one stop — trip stats *days · places · countries[multi] · budget*, and a trip-scoped **"Who's going"** basis dropdown) over rich **D3 decision cards** (a two-column card: ✓/+ affordance · name · one-line "known for" brief · experience chips with focus lit + a few muted [capped at `MAX_CHIPS`] on the left; a ≈nights · ☀best window · ⚠avoid-window rail + sparse "Top for X" signal on the right; plus an **ⓘ** opening `CityDetailModal` — a responsive detail surface [bottom-sheet mobile / centered modal desktop via `ModalShell`] with the full brief, uncapped tags and stay/season windows) in a two-up grid on `lg`; a single per-country **`PlanFilters`** control (experiences, anchored popover desktop / bottom-sheet mobile via `useBreakpoint`, count badge, hidden when the stop has no tags) and a **Sort** dropdown sit above them. The header is editorial: a single-row, truncating **"Which places in {Country}?"** question (country name lit emerald; `whitespace-nowrap` + `truncate` so long names stay one line with the trailing `?` preserved) + a short subline — pristine **"Suggested picks — add or drop any."**, flipping to an inline **Edited · ↺ Reset to suggested** affordance once a stop is hand-picked (no separate Reset pill). The selected/total count renders as an **`{N} of {M}`** badge beside the body's **"In your plan"** row (no "places" word — deduped, since the heading + top stat already read as places/stops). The primary stop shares the same `usePlanBuilder` city state as the Review canvas's per-stop Adjust drawer (lock-step); a multi-stop route loads additional stops via `useTripRules` + `useTripPlanner` and the header stats span the whole composed route. **Experiences are per-country** — Basics seeds the trip vibe; each stop inherits it until diverged in Filters. On desktop the step breaks out to `max-w-5xl`. The shared `PlanTripHeader` carries route identity, stats, party-size basis, Share, and the saved-trip ★ favorite control; the redundant duration·cost chip is hidden on Review. **"Your trip" is one unified Route Canvas** (`TripReviewWorkspace` → `TripReviewCanvas` + `TripContextRail`, laid out by `PlanWorkspaceShell`) for **both single- and multi-country trips**: it normalises the primary funnel (`usePlanBuilder`) + each additional stop (`useTripPlanner`) into one ordered `ReviewSegment[]` and folds them into a single plan (`composeTripPlan`, **N=1 byte-identical**). The centre renders a **segmented composed itinerary** — a composed summary strip + cross-route `PlanCityJumpNav` over per-country segment blocks, each keeping its own rich `ItineraryView(seg.plan, seg.rule, "luxury")` (transport separators, route/search/maps links, eat/hotel pills), collapsible (anchor open by default) with route-relative day ranges (`shiftPlanDays`), and honest `BorderHop` rows between countries (great-circle flight estimate; rail/road "varies"; hops cost no days). Route order + anchor are display layers tuned from a single trip-level `RouteLeversBar` (drag-and-drop `RouteOrderEditor` via pure `moveIndex`/`orderByProximity`, keyboard reorder, ✨ Auto-arrange) with the inline jump-to-city dropdown on the same row. Each stop is shaped in its own ✏️ **Adjust drawer** (`SegmentAdjustDrawer`, `ModalShell` bottom-sheet mobile / centered modal desktop) — a Shape tab (`FocusChips`/`CityPicker`/`DayLengthControl` over `usePlanBuilder`|`useTripPlanner`) + a data-gated Details tab — so there is **no Shape rail**. Each segment header is a full-bleed collapse toggle: row 1 = flag · bold emerald name (hero) · ✏️ Adjust · collapse chevron; row 2 = places · day range · budget; the **anchor cue is a slim amber left accent bar** (sr-only "— anchor stop"), never a competing pill. The single right **`TripContextRail`** is trip-level reference only (Trip readiness, honest budget ledger with active basis, per-country `MonthHeatmap`/watch-outs/stopover tips, `PlanNotesSection` notes; sections render only when data exists); on desktop it renders inline + collapses to a reopen tab (persisted to `LS_KEYS.PLAN_UI`), on tablet/mobile it opens as a bottom-sheet drawer from a sticky "Insights" bar (`useBackDismiss` + Escape). Editing a stop’s levers regenerates the composed plan live — no stepping back. The composed toolbar (`ItineraryToolbar`, built once in `TripReviewWorkspace`) carries **📄 PDF** (`pdfExport`), **✨ AI plan** (`llmPlanning`); **📤 Share** is promoted to the wizard header (`PlanShareButton`, left of the ★ favourite) reading the order-aware composed plan from the shared `useReviewRoute` hook, so it is never buried and always shares the on-screen route order; **Cinematic launches from the Plan wizard** using the cinematic-only `MapView` backdrop. The toolbar node is handed to **both** surfaces so it mounts exactly once per breakpoint: on **desktop** `TripReviewCanvas` pins it as a foot below the itinerary (`pinToolbar = useBreakpoint() === "desktop"`); on **tablet/mobile** it lives in a neutral **"Tools" bottom-sheet** (`PlanWorkspaceShell` `actions` prop, reusing the "Insights" sheet pattern) opened from the mobile bottom bar. The funnel persists to `LS_KEYS.PLAN_DRAFT` (`planDraft.ts`) so refresh resumes the same step/selections. **Step navigation**: the header shows a **labeled, tappable stepper** (`Basics · Places · Review`, active/done/upcoming states) that doubles as back-nav — tap an earlier step to revisit it; there is no separate "Step N of M" caption. Device/gesture **Back walks one step back** at a time before leaving `#plan`, via a **persistent** `useBackDismiss` guard registered in `PlanView` (kept above the early return). Any open rail drawer registers on top of that guard, so Back closes the drawer first (LIFO), then steps. **On mobile the shared header compacts** (`PlanTripHeader`, `useBreakpoint`): the route title names only the first stop + a **+N** pill (full route in the `aria-label`), the "who's going" basis collapses to an **icon-only** `BasisMenu` (`iconOnly`, party size kept in the accessible name), and the **stepper is dropped on the Review canvas** (`hideStepperOnCompact`) to free itinerary real-estate. Since the review footer is hidden below `lg` (`hidden lg:block`), the workspace's mobile bottom bar (`PlanWorkspaceShell` `nav`) carries the wizard nav there as **one unified segmented toolbar** (a single rounded-full bar with hairline `divide-x` dividers so it reads as a cohesive bar echoing the app tab bar below it, not four floating buttons) — `[← Back] [Insights] [Tools] [＋ Plan another]` (flanking icon cells frame the two labelled action cells; the middle cells share one `text-ink-1` weight; renamed from the vague "Good to know"/"⋯ More" to content-indicating **Insights** / **Tools**; the primary 📤 Share now lives in the header; ＋ Plan another is neutral so they don't compete). The Route Canvas levers also shorten on mobile (`Route order`→`Route`, `Jump to country / city…`→`Jump`, aria-labels unchanged). The Plan page is self-contained — the former single-country panel was removed; Cinematic is the shared overlay it reuses, and combine-with pills are plain informational chips. |
 | **Trips** (My Trips) | Gallery of **saved-trip snapshots** built when a plan reaches the Review step (`useSavedTrips` over `LS_KEYS.SAVED_TRIPS`). A **search box** (`tripMatchesQuery` — name/country/city, with a clear-search no-results state) sits above the ★ favorites section then newest-first; each `SavedTripCard` shows flags + route name (`tripSignature`, e.g. "Japan → Thailand"), city chips, `days · places · cost` (with the trip's *saved* basis icon) and a relative "saved" label, plus favorite ★ and delete (`useConfirm`) actions. **Each card is a stretched-action** — a full-card overlay `<button aria-label="Open {name}">` (z-10) reopens the route in the Plan wizard (`onOpen` → `App` sets `planSeed` via `toOpenRequest(trip, nonce)` (an `OpenTripRequest`), passes it as `PlanView openTrip` and switches to `#plan`; a nonce-guarded restore effect snaps the active budget basis back to the saved one, reseeds `selection`, jumps to Review, **records the route into Recents** (`onRecordPlanned`), stays **save-toast-silent** during hydration (`reopenedRef`), and **rehydrates each stop's snapshot cities + tuned length + experience focus, pinned** — primary via `usePlanBuilder`'s `PlanBuilderSeed`, additional stops via `useTripPlanner`'s `TripPlannerSeed`; applied once per nonce, aligned to resolved order, dropping cities absent from current rules, and — multi-stop — waiting for every seeded stop's rules to load first). Each stop's snapshot `days` is the **honest rendered length** (`plan.days.length`), not the pre-expansion pin, so a stop the DP planner expanded (e.g. 8→11 days) reopens to 11d.; favorite/delete sit above it (z-20) as **siblings** (not nested) to keep valid interactive HTML. **+ New trip** and the empty-state "Plan a trip" CTA call `App.startNewPlan` (`startNewNonce` bump → nonce-guarded reset effect clears `selection`/step/`restoreSeed` + `clearPlanDraft()`), landing a **fresh Plan landing picker** (discards the in-progress draft, keeps saved snapshots) → `#plan`. Snapshots are **self-contained** (independent of Recents + rule data), so a saved trip stays viewable even if destinations change. Backup-recoverable via `BACKUP_KEYS`. |
-| **Calendar** | Heatmap grid — rows = **recently planned destinations** (fed `store.myListCountries`/Recents directly; it owns its own Month filter), columns = months. Green = best, red = avoid, blue = current month. Clicking a row, or pressing Enter/Space on the focused row, calls `onPlanTrip([country.name])` and routes into the Plan wizard. |
-| **Discover** | Browse the 197-country sovereign catalog by region/search. Cards expose a `＋ Plan trip` / `✓ In trip` toggle; the sticky tray holds up to `MAX_TRIP_UNITS` picks, offers Clear, and calls `onPlanTrip(names)` before clearing. There is no manual list-management UI. |
 
 **MapView** is not a standalone route anymore — it stays mounted behind the UI and becomes visible for Cinematic mode.
 
@@ -143,7 +142,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 
 **Destination details are Plan-first** — the former single-country island was removed. Manual per-country editing and panel-based AI-plan browse/compare are not currently available. City choice and per-stop shaping live in Plan Places/Route Canvas; trip reference lives in `TripContextRail` using surviving `panel/InfoSections`, `PanelSection`, `MonthHeatmap`, `CityCard`, and share text helpers. Travel style was removed for now and may return later.
 
-**Navigation** — desktop uses a slim **luxury ivory/emerald** top bar (`bg-[#fbf9f3]/90` + backdrop-blur + `border-b border-[#e7e1d2]`; emerald wordmark + centered view pills in an `#efe9db` track, active = `bg-emerald-700 text-white` + Install/Share/Settings cluster restyled to the ivory palette); mobile uses a **fixed bottom tab bar** (`md:hidden`, `pb-safe`, ivory bg, the 4 views icon-over-label with an emerald-tinted active pill) with the top strip shrunk to brand + compact Install/Share + Settings. `AppInstallShare` header variant is styled for the light bar (ivory `#efe9db` share chip, emerald-filled Install — not the old dark `white/10`/blue). The PWA `theme-color` + manifest `theme_color`/`background_color` match the ivory bar. The hamburger menu / slide-down drawer were retired. `FreTour` is the **luxury emerald/ivory** first-run tour (emerald-gradient hero/install cards + ivory spotlight tooltips) that walks the nav in Plan-first order — Plan → Trips → Discover → Calendar → Settings; its targets (`data-tour="nav-*"`/`"settings"`) resolve to whichever element is visible per breakpoint.
+**Navigation** — desktop uses a slim **luxury ivory/emerald** top bar (`bg-[#fbf9f3]/90` + backdrop-blur + `border-b border-[#e7e1d2]`; emerald wordmark + centered view pills in an `#efe9db` track, active = `bg-emerald-700 text-white` + Install/Share/Settings cluster restyled to the ivory palette); mobile uses a **fixed bottom tab bar** (`md:hidden`, `pb-safe`, ivory bg, the 2 views (Plan · Trips) icon-over-label with an emerald-tinted active pill) with the top strip shrunk to brand + compact Install/Share + Settings. `AppInstallShare` header variant is styled for the light bar (ivory `#efe9db` share chip, emerald-filled Install — not the old dark `white/10`/blue). The PWA `theme-color` + manifest `theme_color`/`background_color` match the ivory bar. The hamburger menu / slide-down drawer were retired. `FreTour` is the **luxury emerald/ivory** first-run tour (emerald-gradient hero/install cards + ivory spotlight tooltips) that walks the nav in Plan-first order — Plan → Trips → Settings; its targets (`data-tour="nav-plan"`/`"nav-trips"`/`"settings"`) resolve to whichever element is visible per breakpoint.
 
 ---
 
@@ -154,7 +153,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 ```
 App.tsx  (thin orchestrator — wires hooks to views)
 ├── Header (brand, desktop nav pills / mobile bottom tab bar, app actions only)
-├── PlanView / MyTripsView / CalendarView / DiscoverView
+├── PlanView / MyTripsView
 ├── ItineraryCinematic (Plan overlay)
 ├── ChatModal
 ├── AiItineraryModal
@@ -170,7 +169,7 @@ src/components/
   country/  — ItineraryCinematic, cinematic/engine.ts (pure fly-through engine), itinerary/ItineraryView (shared day renderer, variant="luxury"), panel/CityCard, panel/PanelSection, panel/InfoSections, panel/MonthHeatmap, panel/ShareButton/shareText
   map/      — HoverCard and map internals
   shared/   — PillGroup (accent="blue"|"emerald"), FilterChip, Tooltip, HomeCountrySelector, DevFlagPanel, ExperienceDropdown, AppInstallShare, FreTour, ConfirmDialog (useConfirm)
-  views/    — CalendarView, DiscoverView, MyTripsView (saved-trip gallery + SavedTripCard)
+  views/    — MyTripsView (saved-trip gallery + SavedTripCard) + views/plan guided wizard
   views/plan/ — Guided wizard, grouped into cohesive subfolders (PlanView stays at the folder root as the entry orchestrator):
     PlanView.tsx           — entry orchestrator (owns auto-save + engagement + useReviewRoute)
     shell/    — PlanWorkspaceShell (shared single+multi layout), PlanTripHeader (shared identity + stats + basis + stepper; save/Share slotted via `saveSlot`/`shareSlot`), PlanCountrySwitcher, planActions.ts, planDraft.ts
@@ -197,7 +196,7 @@ All state is hooks-based — no Redux, no context providers. `App.tsx` calls hoo
 | `useChatSession` | `src/hooks/useChatSession.ts` | LLM chat state machine, token tracking, finalize flow |
 | `useCountryRule` | `src/hooks/useCountryRule.ts` | Lazy-loads consolidated country data from `data/rules/*.json` |
 | `usePersistedSet` | `src/hooks/usePersistedSet.ts` | Reusable `Set<string>` backed by localStorage |
-| `useHashView` | `src/hooks/useHashView.ts` | Hash-based URL routing for the 4 top-level views (`plan`/`trips`/`calendar`/`discover`) |
+| `useHashView` | `src/hooks/useHashView.ts` | Hash-based URL routing for the 2 top-level views (`plan`/`trips`) |
 | `useBreakpoint` | `src/hooks/useBreakpoint.ts` | Reactive `mobile` / `tablet` / `desktop` state |
 | `usePlanBuilder` | `src/hooks/usePlanBuilder.ts` | Guided `#plan` wizard funnel state (primary stop) — party/vibe/cities/length, `autoSelectedCities` materialization, inferred+pinned day count; per-stop derivation delegated to `core/utils/stopPlan.ts` |
 | `useBudgetBasis` | `src/hooks/useBudgetBasis.ts` | Two-layer budget party size: persisted global default + transient active |
@@ -224,12 +223,12 @@ All state is hooks-based — no Redux, no context providers. `App.tsx` calls hoo
 ```
 Tier 1: World Catalog (data/worldCatalog.json)
   197 sovereign-country entries: { name, lat, lng, region }
-  Used by: Discover view, catalog lookups for new additions
+  Used internally as coordinate/region fallback for catalog seed builders
 
 Tier 2: Rule Manifest (data/rules/index.json)
   198 itinerary-backed destinations
-  Adds: inSeed, hasItinerary, recDays, maxDays, popularityScore
-  Used by: allCountries enrichment, slider bounds, lazy-load routing
+  Adds: inSeed, hasItinerary, recDays, maxDays, popularityScore, bestMonths, worstMonths
+  Used by: Plan landing search/region/month-fit ranking, allCountries enrichment, slider bounds, lazy-load routing
 
 Tier 3: Consolidated Rules (data/rules/*.json)
   198 per-country JSON files + index.json manifest (199 total JSON files in data/rules)
@@ -237,7 +236,7 @@ Tier 3: Consolidated Rules (data/rules/*.json)
   Loaded lazily via import.meta.glob in useCountryRule
 ```
 
-The **`inSeed`** manifest flag still marks 5 richer seed entries (Japan, Thailand, Switzerland, France, Italy) for catalog/enrichment, but fresh users start with an empty Recents list. Special non-catalog destinations live only in the rule system and still participate in offline itinerary generation.
+The **`inSeed`** manifest flag still marks 5 richer seed entries (Japan, Thailand, Switzerland, France, Italy) for catalog/enrichment, but fresh users start with an empty Recents list. The manifest's baked `bestMonths`/`worstMonths` cover all 198 entries; `ManifestEntry` plus seed builders populate those windows onto `Country` objects so the Plan landing's `monthFit`/`rankByMonthFit` seasonality re-rank works over the full catalog without loading rule chunks. Special non-catalog destinations live only in the rule system and still participate in offline itinerary generation.
 
 ### Saved trips (My Trips)
 
@@ -259,9 +258,8 @@ All in `src/types.ts`: `Country`, `CityEntry`, `CatalogEntry`, `TripBrief`, `Cha
 3. useCountryRule.loadConsolidatedCountry()  ← async loads data/rules/{name}.json
 4. useCountryStore.enrichCountry()  ← converts consolidated data → Country shape
 5. useCountryStore.buildCountryList()  ← overlays customs on enriched/seed, skips deleted
-6. App.tsx: applyFilters()  ← narrows by month/budget/experience
-7. View component renders filtered list
-8. Views render destination cards; `handlePlanIntake` routes Discover/Calendar selections into Plan
+6. App.tsx / Plan landing render destination boards from Recents + manifest-backed popular/all destinations
+7. DestinationPicker region/month controls filter or re-rank the board; its own `onStart(countries)` tray is the only start-a-plan path
 ```
 
 ### Seed + Overrides pattern (critical invariant)
@@ -275,14 +273,13 @@ This pattern applies to countries (saved trips use an independent snapshot store
 
 ### Filter composition
 
-`src/utils/filterLogic.ts` — filters compose with AND logic in this order:
-1. `filterByMonth()` — expands abbreviations, matches `country.bestMonths`
-2. `filterByExperiences()` — requires ALL selected tags present
-3. Budget tiering — `getBudgetTier` parses a `₹150K`/`₹2L`/`₹1.5L–₹3L` string via the canonical `parseBudgetRange` (`budget.ts`) and buckets by the **range midpoint** (fairer than the lower bound): ≤₹1.5L `budget`, ≤₹3L `mid`, else `premium`. Uses the selected basis (`solo` / `couple` / `family4`) when available
+`src/utils/filterLogic.ts` — shared destination filters compose with AND logic where still used:
+1. `filterByExperiences()` — requires ALL selected tags present
+2. Budget tiering — `getBudgetTier` parses a `₹150K`/`₹2L`/`₹1.5L–₹3L` string via the canonical `parseBudgetRange` (`budget.ts`) and buckets by the **range midpoint** (fairer than the lower bound): ≤₹1.5L `budget`, ≤₹3L `mid`, else `premium`. Uses the selected basis (`solo` / `couple` / `family4`) when available
 
 Portal-based dropdowns/tooltips use `createPortal()` to prevent clipping in overflow/scroll containers (shared chips/tooltips and modal/sheet overlays).
 Trips view intentionally does not apply app-level experience tags, so Trips filtering always matches visible Trips controls.
-The remaining shared filtering is month/budget/experience only. **Calendar is fed `store.myListCountries` directly** (the Recents/MRU list) and owns its own Month filter. Calendar row activation calls `onPlanTrip([country.name])`. Discover cards collect up to `MAX_TRIP_UNITS` picks and call the same `onPlanTrip(names)` seam. The hidden `MapView` is cinematic-only.
+The Plan landing owns browse-style filtering: region pills narrow the full 198-destination board, while `src/core/utils/monthFit.ts` re-ranks by selected month (best → neutral → avoid) without hiding off-season destinations. There is no cross-view Plan handoff seam; `DestinationPicker`'s own multi-select tray calls `onStart(countries)`. The hidden `MapView` is cinematic-only.
 
 ---
 
@@ -451,7 +448,7 @@ System in `src/core/featureFlags.ts`. Stored in `tp_features` localStorage key.
 
 ## Routing
 
-Hash-based, no library. `AppView` + `VALID_VIEWS` live in `src/hooks/useHashView.ts`. Current top-level routes are `plan`, `trips`, `calendar`, and `discover`. `useHashView(fallback)` takes the landing view for an empty/invalid hash; `App.tsx` passes `"plan"` so **Plan is the default landing**. The brand/Home button routes to that same landing. The navigation `pushState` runs in a **`useLayoutEffect`** (not passive) so it commits before any passive cleanup elsewhere — a view that owns a persistent `useBackDismiss` guard (e.g. `PlanView`) rewinds its history sentinel via `history.back()` in a passive unmount cleanup, and React runs all passive destroys before passive creates; a passive push would land after that rewind and get clobbered (nav bounced back). Regression: `src/test/hooks/navBackDismiss.test.tsx`.
+Hash-based, no library. `AppView = "plan" | "trips"` and `VALID_VIEWS = ["plan", "trips"]` live in `src/hooks/useHashView.ts`. Current top-level routes are `#plan` and `#trips`. `useHashView(fallback)` takes the landing view for an empty/invalid hash; `App.tsx` passes `"plan"` so **Plan is the default landing**. The brand/Home button routes to that same landing. The navigation `pushState` runs in a **`useLayoutEffect`** (not passive) so it commits before any passive cleanup elsewhere — a view that owns a persistent `useBackDismiss` guard (e.g. `PlanView`) rewinds its history sentinel via `history.back()` in a passive unmount cleanup, and React runs all passive destroys before passive creates; a passive push would land after that rewind and get clobbered (nav bounced back). Regression: `src/test/hooks/navBackDismiss.test.tsx`.
 
 **Adding a new view:**
 1. Add to `AppView` type in `useHashView.ts`

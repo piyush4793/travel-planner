@@ -26,10 +26,10 @@ describe("useHashView — P1", () => {
   });
 
   it("parses valid hash into view", async () => {
-    window.location.hash = "#calendar";
+    window.location.hash = "#trips";
     const { useHashView } = await importHook();
     const { result } = renderHook(() => useHashView());
-    expect(result.current[0]).toBe("calendar");
+    expect(result.current[0]).toBe("trips");
   });
 
   it("falls back to 'plan' for invalid hash", async () => {
@@ -39,8 +39,8 @@ describe("useHashView — P1", () => {
     expect(result.current[0]).toBe("plan");
   });
 
-  it("falls back to 'plan' for removed views (map, list)", async () => {
-    for (const removed of ["map", "list"]) {
+  it("falls back to 'plan' for removed views (map, list, calendar, discover)", async () => {
+    for (const removed of ["map", "list", "calendar", "discover"]) {
       window.location.hash = `#${removed}`;
       const { useHashView } = await importHook();
       const { result } = renderHook(() => useHashView());
@@ -53,12 +53,12 @@ describe("useHashView — P1", () => {
     const { useHashView } = await importHook();
     const { result } = renderHook(() => useHashView());
 
-    act(() => { result.current[1]("discover"); });
-    expect(result.current[0]).toBe("discover");
+    act(() => { result.current[1]("trips"); });
+    expect(result.current[0]).toBe("trips");
   });
 
-  it("recognizes all 4 valid views", async () => {
-    const views = ["plan", "trips", "calendar", "discover"];
+  it("recognizes all valid views", async () => {
+    const views = ["plan", "trips"];
     const { useHashView } = await importHook();
 
     for (const v of views) {

@@ -1,6 +1,6 @@
 import userEvent from "@testing-library/user-event";
 
-export function setHashRoute(view: "trips" | "calendar" | "discover") {
+export function setHashRoute(view: "trips") {
   window.history.pushState(null, "", `#${view}`);
 }
 

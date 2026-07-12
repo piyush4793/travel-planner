@@ -10,6 +10,15 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 35,
+    "bestMonths": [
+      "March",
+      "April",
+      "November"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "South Korea",
       "China"
@@ -26,6 +35,16 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 38,
+    "bestMonths": [
+      "April",
+      "May",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Japan",
       "China"
@@ -42,6 +61,16 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 41,
+    "bestMonths": [
+      "April",
+      "May",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Japan",
       "South Korea"
@@ -58,6 +87,19 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 33,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Cambodia",
       "Malaysia"
@@ -74,6 +116,20 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 53,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December"
+    ],
     "combo": [
       "Singapore",
       "Indonesia"
@@ -90,6 +146,15 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 40,
+    "bestMonths": [
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Malaysia",
       "Indonesia"
@@ -106,6 +171,20 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 32,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Laos",
       "Thailand"
@@ -122,6 +201,19 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 32,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Thailand",
       "Cambodia"
@@ -138,6 +230,15 @@
     "recDays": 12,
     "maxDays": 16,
     "popularityScore": 35,
+    "bestMonths": [
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "September",
+      "October"
+    ],
     "combo": [
       "Cambodia",
       "Thailand"
@@ -154,6 +255,18 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 32,
+    "bestMonths": [
+      "October",
+      "November",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Bhutan",
       "India"
@@ -170,6 +283,18 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 30,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Nepal",
       "India"
@@ -186,6 +311,19 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 43,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Malaysia",
       "Philippines"
@@ -202,6 +340,21 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 43,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Indonesia",
       "Malaysia"
@@ -218,6 +371,21 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 29,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "India"
     ]
@@ -233,6 +401,22 @@
     "recDays": 12,
     "maxDays": 18,
     "popularityScore": 42,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Nepal",
       "Sri Lanka"
@@ -249,6 +433,22 @@
     "recDays": 12,
     "maxDays": 18,
     "popularityScore": 62,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "October",
+      "November"
+    ],
     "combo": [
       "India",
       "Maldives"
@@ -265,6 +465,22 @@
     "recDays": 10,
     "maxDays": 15,
     "popularityScore": 40,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "India",
       "Nepal"
@@ -281,6 +497,22 @@
     "recDays": 12,
     "maxDays": 18,
     "popularityScore": 57,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June"
+    ],
+    "worstMonths": [
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Turkey"
     ]
@@ -296,6 +528,20 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 20,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "December",
+      "January",
+      "February",
+      "July",
+      "August"
+    ],
     "combo": [
       "Uzbekistan",
       "Iran"
@@ -312,6 +558,18 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 30,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Thailand",
       "Laos"
@@ -328,6 +586,22 @@
     "recDays": 13,
     "maxDays": 18,
     "popularityScore": 28,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
     "combo": [
       "Russia",
       "China"
@@ -344,6 +618,19 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 38,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "January",
+      "February",
+      "July",
+      "August"
+    ],
     "combo": [
       "China",
       "Russia"
@@ -360,6 +647,18 @@
     "recDays": 11,
     "maxDays": 14,
     "popularityScore": 51,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Japan",
       "South Korea"
@@ -376,6 +675,17 @@
     "recDays": 4,
     "maxDays": 5,
     "popularityScore": 18,
+    "bestMonths": [
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "October",
+      "November",
+      "December",
+      "January"
+    ],
     "combo": [
       "Malaysia",
       "Singapore"
@@ -392,6 +702,22 @@
     "recDays": 9,
     "maxDays": 12,
     "popularityScore": 41,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "Indonesia",
       "Australia"
@@ -408,6 +734,18 @@
     "recDays": 10,
     "maxDays": 16,
     "popularityScore": 47,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "January",
+      "July",
+      "August"
+    ],
     "combo": [
       "Kazakhstan",
       "Kyrgyzstan"
@@ -424,6 +762,18 @@
     "recDays": 9,
     "maxDays": 13,
     "popularityScore": 43,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Uzbekistan",
       "Kyrgyzstan"
@@ -440,6 +790,20 @@
     "recDays": 10,
     "maxDays": 14,
     "popularityScore": 39,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "Kazakhstan",
       "Uzbekistan"
@@ -456,6 +820,20 @@
     "recDays": 10,
     "maxDays": 14,
     "popularityScore": 28,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "Uzbekistan",
       "Kyrgyzstan"
@@ -472,6 +850,18 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 34,
+    "bestMonths": [
+      "April",
+      "May",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "January",
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Uzbekistan",
       "Kazakhstan"
@@ -488,6 +878,15 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 26,
+    "bestMonths": [
+      "May",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Turkey",
       "Italy"
@@ -504,6 +903,11 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 20,
+    "bestMonths": [
+      "June",
+      "July",
+      "February"
+    ],
     "combo": [
       "Norway",
       "Greenland"
@@ -520,6 +924,16 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 30,
+    "bestMonths": [
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "January",
+      "February"
+    ],
     "combo": [
       "Turkey",
       "Armenia"
@@ -536,6 +950,18 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 33,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Belarus",
       "Georgia"
@@ -552,6 +978,18 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 31,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Russia",
       "Poland"
@@ -568,6 +1006,17 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 34,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "December",
+      "January"
+    ],
     "combo": [
       "Czech Republic",
       "Germany"
@@ -584,6 +1033,13 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 30,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
     "combo": [
       "Austria",
       "Poland"
@@ -600,6 +1056,13 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 30,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
     "combo": [
       "Austria",
       "Czech Republic"
@@ -616,6 +1079,17 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 34,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "December",
+      "January"
+    ],
     "combo": [
       "Hungary",
       "Bulgaria"
@@ -632,6 +1106,13 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 42,
+    "bestMonths": [
+      "April",
+      "May",
+      "September",
+      "October",
+      "December"
+    ],
     "combo": [
       "Germany",
       "Switzerland"
@@ -648,6 +1129,13 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 36,
+    "bestMonths": [
+      "May",
+      "June",
+      "September",
+      "October",
+      "December"
+    ],
     "combo": [
       "Austria",
       "Switzerland"
@@ -664,6 +1152,14 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 38,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Germany",
       "Austria"
@@ -680,6 +1176,17 @@
     "recDays": 11,
     "maxDays": 11,
     "popularityScore": 45,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Spain",
       "Italy"
@@ -696,6 +1203,17 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 42,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "France"
     ]
@@ -711,6 +1229,16 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 27,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September"
+    ],
+    "worstMonths": [
+      "December",
+      "January"
+    ],
     "combo": [
       "Germany",
       "Belgium"
@@ -727,6 +1255,17 @@
     "recDays": 11,
     "maxDays": 15,
     "popularityScore": 100,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December"
+    ],
     "combo": [
       "Ireland",
       "France"
@@ -743,6 +1282,16 @@
     "recDays": 3,
     "maxDays": 5,
     "popularityScore": 22,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August"
+    ],
+    "worstMonths": [
+      "December",
+      "January"
+    ],
     "combo": [
       "Norway",
       "Sweden"
@@ -759,6 +1308,17 @@
     "recDays": 19,
     "maxDays": 24,
     "popularityScore": 73,
+    "bestMonths": [
+      "February",
+      "March",
+      "May",
+      "June",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "July"
+    ],
     "combo": [
       "Iceland",
       "Denmark"
@@ -775,6 +1335,16 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 44,
+    "bestMonths": [
+      "April",
+      "May",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Greece",
       "France"
@@ -791,6 +1361,18 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 19,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "October",
+      "November",
+      "December"
+    ],
     "combo": [
       "Iceland",
       "Denmark"
@@ -807,6 +1389,17 @@
     "recDays": 10,
     "maxDays": 16,
     "popularityScore": 46,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Spain",
       "Morocco"
@@ -823,6 +1416,19 @@
     "recDays": 10,
     "maxDays": 16,
     "popularityScore": 58,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "October",
+      "November"
+    ],
     "combo": [
       "Norway",
       "Finland",
@@ -840,6 +1446,19 @@
     "recDays": 11,
     "maxDays": 17,
     "popularityScore": 58,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "October",
+      "November"
+    ],
     "combo": [
       "Estonia",
       "Sweden",
@@ -857,6 +1476,17 @@
     "recDays": 10,
     "maxDays": 12,
     "popularityScore": 54,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "January",
+      "February"
+    ],
     "combo": [
       "UK",
       "Portugal"
@@ -873,6 +1503,18 @@
     "recDays": 7,
     "maxDays": 12,
     "popularityScore": 50,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "January",
+      "February"
+    ],
     "combo": [
       "Netherlands",
       "Luxembourg",
@@ -890,6 +1532,19 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 43,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Belgium",
       "France",
@@ -907,6 +1562,16 @@
     "recDays": 12,
     "maxDays": 18,
     "popularityScore": 45,
+    "bestMonths": [
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Slovenia",
       "Montenegro"
@@ -923,6 +1588,19 @@
     "recDays": 7,
     "maxDays": 10,
     "popularityScore": 39,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "December"
+    ],
+    "worstMonths": [
+      "January",
+      "February",
+      "November"
+    ],
     "combo": [
       "Hungary",
       "Bosnia and Herzegovina"
@@ -939,6 +1617,17 @@
     "recDays": 8,
     "maxDays": 10,
     "popularityScore": 48,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "January",
+      "February"
+    ],
     "combo": [
       "Croatia",
       "Montenegro",
@@ -956,6 +1645,19 @@
     "recDays": 10,
     "maxDays": 14,
     "popularityScore": 51,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Croatia",
       "Albania",
@@ -973,6 +1675,19 @@
     "recDays": 8,
     "maxDays": 10,
     "popularityScore": 49,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Albania",
       "Kosovo",
@@ -990,6 +1705,19 @@
     "recDays": 10,
     "maxDays": 15,
     "popularityScore": 52,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "January",
+      "February",
+      "November",
+      "December"
+    ],
     "combo": [
       "Montenegro",
       "North Macedonia",
@@ -1007,6 +1735,19 @@
     "recDays": 4,
     "maxDays": 6,
     "popularityScore": 45,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Albania",
       "North Macedonia",
@@ -1024,6 +1765,19 @@
     "recDays": 8,
     "maxDays": 11,
     "popularityScore": 51,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Austria",
       "Croatia",
@@ -1041,6 +1795,20 @@
     "recDays": 9,
     "maxDays": 14,
     "popularityScore": 57,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "November"
+    ],
     "combo": [
       "Austria",
       "Hungary",
@@ -1058,6 +1826,20 @@
     "recDays": 11,
     "maxDays": 15,
     "popularityScore": 71,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "November"
+    ],
     "combo": [
       "Romania",
       "Greece",
@@ -1075,6 +1857,18 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 31,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Romania",
       "Ukraine"
@@ -1091,6 +1885,20 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 38,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "Poland",
       "Romania",
@@ -1108,6 +1916,19 @@
     "recDays": 8,
     "maxDays": 11,
     "popularityScore": 34,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Latvia",
       "Poland"
@@ -1124,6 +1945,19 @@
     "recDays": 9,
     "maxDays": 13,
     "popularityScore": 37,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Estonia",
       "Lithuania",
@@ -1141,6 +1975,20 @@
     "recDays": 10,
     "maxDays": 15,
     "popularityScore": 50,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "Finland",
       "Latvia",
@@ -1158,6 +2006,18 @@
     "recDays": 12,
     "maxDays": 14,
     "popularityScore": 42,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Greece",
       "Jordan"
@@ -1173,7 +2033,19 @@
     "hasItinerary": true,
     "recDays": 8,
     "maxDays": 11,
-    "popularityScore": 39
+    "popularityScore": 39,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ]
   },
   {
     "name": "Monaco",
@@ -1186,6 +2058,21 @@
     "recDays": 2,
     "maxDays": 2,
     "popularityScore": 37,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "France",
       "Italy"
@@ -1202,6 +2089,21 @@
     "recDays": 3,
     "maxDays": 4,
     "popularityScore": 49,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "November",
+      "April"
+    ],
     "combo": [
       "Switzerland",
       "Austria"
@@ -1218,6 +2120,22 @@
     "recDays": 4,
     "maxDays": 5,
     "popularityScore": 45,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "October",
+      "November",
+      "April",
+      "May"
+    ],
     "combo": [
       "Spain",
       "France"
@@ -1234,6 +2152,22 @@
     "recDays": 2,
     "maxDays": 3,
     "popularityScore": 33,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "Italy"
     ]
@@ -1249,6 +2183,20 @@
     "recDays": 1,
     "maxDays": 2,
     "popularityScore": 23,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "July",
+      "August",
+      "December",
+      "January"
+    ],
     "combo": [
       "Italy"
     ]
@@ -1264,6 +2212,18 @@
     "recDays": 6,
     "maxDays": 10,
     "popularityScore": 40,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "January",
+      "February"
+    ],
     "combo": [
       "Georgia",
       "Turkey"
@@ -1280,6 +2240,19 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 34,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "January",
+      "February",
+      "July",
+      "August"
+    ],
     "combo": [
       "Georgia",
       "Turkey"
@@ -1296,6 +2269,20 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 47,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Turkey",
       "United Arab Emirates"
@@ -1312,6 +2299,16 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 42,
+    "bestMonths": [
+      "April",
+      "May",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Greece",
       "Georgia"
@@ -1328,6 +2325,13 @@
     "recDays": 3,
     "maxDays": 5,
     "popularityScore": 42,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "Egypt",
       "Jordan"
@@ -1344,6 +2348,21 @@
     "recDays": 9,
     "maxDays": 13,
     "popularityScore": 51,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "United Arab Emirates",
       "Jordan"
@@ -1360,6 +2379,19 @@
     "recDays": 9,
     "maxDays": 14,
     "popularityScore": 46,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Jordan",
       "Egypt",
@@ -1377,6 +2409,19 @@
     "recDays": 9,
     "maxDays": 13,
     "popularityScore": 42,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Egypt",
       "United Arab Emirates"
@@ -1393,6 +2438,19 @@
     "recDays": 6,
     "maxDays": 10,
     "popularityScore": 43,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "July",
+      "August",
+      "January"
+    ],
     "combo": [
       "Jordan",
       "Cyprus",
@@ -1410,6 +2468,22 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 40,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Jordan",
       "Turkey"
@@ -1426,6 +2500,19 @@
     "recDays": 9,
     "maxDays": 15,
     "popularityScore": 53,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Turkey",
       "Armenia"
@@ -1442,6 +2529,22 @@
     "recDays": 5,
     "maxDays": 8,
     "popularityScore": 39,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Lebanon",
       "Jordan",
@@ -1459,6 +2562,22 @@
     "recDays": 7,
     "maxDays": 10,
     "popularityScore": 32,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Oman",
       "Jordan"
@@ -1475,6 +2594,21 @@
     "recDays": 10,
     "maxDays": 13,
     "popularityScore": 52,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "United Arab Emirates",
       "Jordan"
@@ -1491,6 +2625,20 @@
     "recDays": 5,
     "maxDays": 6,
     "popularityScore": 37,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Bahrain",
       "United Arab Emirates"
@@ -1507,6 +2655,19 @@
     "recDays": 4,
     "maxDays": 4,
     "popularityScore": 47,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Saudi Arabia",
       "United Arab Emirates"
@@ -1523,6 +2684,20 @@
     "recDays": 6,
     "maxDays": 7,
     "popularityScore": 45,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "United Arab Emirates",
       "Oman",
@@ -1540,6 +2715,19 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 40,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Jordan",
       "Israel",
@@ -1557,6 +2745,13 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 36,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Zimbabwe",
       "Botswana"
@@ -1573,6 +2768,18 @@
     "recDays": 10,
     "maxDays": 15,
     "popularityScore": 52,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Spain",
       "Portugal"
@@ -1589,6 +2796,19 @@
     "recDays": 9,
     "maxDays": 14,
     "popularityScore": 44,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "June",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Malta"
     ]
@@ -1604,6 +2824,18 @@
     "recDays": 10,
     "maxDays": 15,
     "popularityScore": 38,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "July",
+      "August"
+    ],
     "combo": [
       "Tunisia",
       "Morocco"
@@ -1620,6 +2852,22 @@
     "recDays": 6,
     "maxDays": 9,
     "popularityScore": 34,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Tunisia",
       "Egypt"
@@ -1636,6 +2884,22 @@
     "recDays": 8,
     "maxDays": 13,
     "popularityScore": 33,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Ghana",
       "Benin"
@@ -1652,6 +2916,20 @@
     "recDays": 8,
     "maxDays": 12,
     "popularityScore": 33,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
     "combo": [
       "Togo"
     ]
@@ -1667,6 +2945,18 @@
     "recDays": 11,
     "maxDays": 16,
     "popularityScore": 40,
+    "bestMonths": [
+      "January",
+      "February",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "April",
+      "May"
+    ],
     "combo": [
       "Tanzania",
       "Uganda"
@@ -1683,6 +2973,20 @@
     "recDays": 10,
     "maxDays": 15,
     "popularityScore": 41,
+    "bestMonths": [
+      "January",
+      "February",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "March",
+      "April",
+      "May"
+    ],
     "combo": [
       "Kenya",
       "Rwanda"
@@ -1699,6 +3003,20 @@
     "recDays": 8,
     "maxDays": 13,
     "popularityScore": 39,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Kenya",
       "Uganda"
@@ -1715,6 +3033,22 @@
     "recDays": 9,
     "maxDays": 14,
     "popularityScore": 37,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "March",
+      "April",
+      "May",
+      "October",
+      "November"
+    ],
     "combo": [
       "Rwanda",
       "Kenya"
@@ -1731,6 +3065,21 @@
     "recDays": 10,
     "maxDays": 12,
     "popularityScore": 36,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "March",
+      "April",
+      "May",
+      "November"
+    ],
     "combo": [
       "Uganda",
       "Tanzania"
@@ -1747,6 +3096,22 @@
     "recDays": 10,
     "maxDays": 14,
     "popularityScore": 42,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "Mauritius"
     ]
@@ -1762,6 +3127,22 @@
     "recDays": 8,
     "maxDays": 11,
     "popularityScore": 47,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "worstMonths": [
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "South Africa",
       "Madagascar"
@@ -1778,6 +3159,18 @@
     "recDays": 7,
     "maxDays": 11,
     "popularityScore": 28,
+    "bestMonths": [
+      "April",
+      "May",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "January",
+      "February",
+      "July",
+      "August"
+    ],
     "combo": [
       "Mauritius",
       "Kenya",
@@ -1795,6 +3188,19 @@
     "recDays": 9,
     "maxDays": 12,
     "popularityScore": 43,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "August",
+      "September"
+    ],
     "combo": [
       "Gambia",
       "Mauritania"
@@ -1811,6 +3217,20 @@
     "recDays": 9,
     "maxDays": 12,
     "popularityScore": 33,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
     "combo": [
       "Ghana",
       "Liberia"
@@ -1827,6 +3247,22 @@
     "recDays": 8,
     "maxDays": 11,
     "popularityScore": 29,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
+    "worstMonths": [
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Gabon",
       "Equatorial Guinea"
@@ -1843,6 +3279,19 @@
     "recDays": 8,
     "maxDays": 11,
     "popularityScore": 15,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "March",
+      "April",
+      "May",
+      "October",
+      "November"
+    ],
     "combo": [
       "Rwanda",
       "Uganda"
@@ -1859,6 +3308,22 @@
     "recDays": 8,
     "maxDays": 10,
     "popularityScore": 11,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
     "combo": [
       "Gabon",
       "Democratic Republic of the Congo"
@@ -1875,6 +3340,22 @@
     "recDays": 8,
     "maxDays": 10,
     "popularityScore": 36,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "Namibia",
       "South Africa",
@@ -1892,6 +3373,22 @@
     "recDays": 10,
     "maxDays": 13,
     "popularityScore": 50,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "South Africa",
       "Zimbabwe",
@@ -1909,6 +3406,21 @@
     "recDays": 7,
     "maxDays": 10,
     "popularityScore": 41,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "Botswana",
       "Zambia",
@@ -1926,6 +3438,22 @@
     "recDays": 8,
     "maxDays": 12,
     "popularityScore": 39,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "Zimbabwe",
       "Botswana",
@@ -1943,6 +3471,22 @@
     "recDays": 7,
     "maxDays": 10,
     "popularityScore": 39,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "Zambia",
       "Mozambique",
@@ -1960,6 +3504,19 @@
     "recDays": 7,
     "maxDays": 10,
     "popularityScore": 38,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "Zimbabwe",
       "Namibia",
@@ -1977,6 +3534,20 @@
     "recDays": 10,
     "maxDays": 14,
     "popularityScore": 35,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "Botswana",
       "South Africa"
@@ -1993,6 +3564,18 @@
     "recDays": 5,
     "maxDays": 6,
     "popularityScore": 15,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "October",
+      "November"
+    ],
     "combo": [
       "Djibouti",
       "Ethiopia",
@@ -2010,6 +3593,22 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 25,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
+    "worstMonths": [
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Egypt",
       "Eritrea"
@@ -2026,6 +3625,22 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 15,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Uganda",
       "Ethiopia"
@@ -2042,6 +3657,18 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 25,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Senegal",
       "Mauritania"
@@ -2058,6 +3685,20 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 24,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Benin",
       "Nigeria"
@@ -2074,6 +3715,18 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 26,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Ghana"
     ]
@@ -2089,6 +3742,22 @@
     "recDays": 10,
     "maxDays": 14,
     "popularityScore": 14,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Cameroon",
       "Egypt"
@@ -2105,6 +3774,21 @@
     "recDays": 7,
     "maxDays": 10,
     "popularityScore": 35,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Sierra Leone",
       "Guinea-Bissau"
@@ -2121,6 +3805,21 @@
     "recDays": 7,
     "maxDays": 10,
     "popularityScore": 33,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "September",
+      "October"
+    ],
     "combo": [
       "Togo",
       "Ghana"
@@ -2137,6 +3836,22 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 30,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Ghana",
       "Benin"
@@ -2153,6 +3868,22 @@
     "recDays": 8,
     "maxDays": 10,
     "popularityScore": 35,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Guinea",
       "Liberia"
@@ -2169,6 +3900,22 @@
     "recDays": 7,
     "maxDays": 8,
     "popularityScore": 34,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Sierra Leone",
       "Guinea"
@@ -2185,6 +3932,22 @@
     "recDays": 5,
     "maxDays": 6,
     "popularityScore": 19,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Cameroon",
       "Republic of the Congo"
@@ -2201,6 +3964,22 @@
     "recDays": 7,
     "maxDays": 10,
     "popularityScore": 39,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Ethiopia",
       "Djibouti",
@@ -2218,6 +3997,19 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 30,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Ethiopia",
       "Kenya",
@@ -2235,6 +4027,19 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 12,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "March",
+      "April",
+      "May",
+      "October",
+      "November"
+    ],
     "combo": [
       "Cameroon",
       "Equatorial Guinea"
@@ -2251,6 +4056,22 @@
     "recDays": 6,
     "maxDays": 7,
     "popularityScore": 12,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
     "combo": [
       "Cameroon",
       "Gabon"
@@ -2267,6 +4088,18 @@
     "recDays": 6,
     "maxDays": 7,
     "popularityScore": 31,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "South Africa",
       "Mozambique"
@@ -2283,6 +4116,20 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 26,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "South Africa"
     ]
@@ -2298,6 +4145,22 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 36,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Senegal"
     ]
@@ -2313,6 +4176,21 @@
     "recDays": 6,
     "maxDays": 7,
     "popularityScore": 31,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Senegal",
       "Guinea"
@@ -2329,6 +4207,19 @@
     "recDays": 8,
     "maxDays": 10,
     "popularityScore": 29,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
     "combo": [
       "Senegal",
       "Morocco"
@@ -2345,6 +4236,22 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 35,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "Madagascar",
       "Mauritius",
@@ -2362,6 +4269,22 @@
     "recDays": 8,
     "maxDays": 10,
     "popularityScore": 48,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June"
+    ],
+    "worstMonths": [
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Senegal",
       "Portugal",
@@ -2379,6 +4302,22 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 25,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
     "combo": [
       "Portugal",
       "Ghana",
@@ -2396,6 +4335,16 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 30,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "March"
+    ],
+    "worstMonths": [
+      "June",
+      "July"
+    ],
     "combo": [
       "Antarctica",
       "Chile"
@@ -2412,6 +4361,13 @@
     "recDays": 8,
     "maxDays": 11,
     "popularityScore": 81,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
     "combo": [
       "Canada",
       "Mexico"
@@ -2428,6 +4384,20 @@
     "recDays": 13,
     "maxDays": 19,
     "popularityScore": 59,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "November"
+    ],
     "combo": [
       "United States",
       "Greenland"
@@ -2444,6 +4414,21 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 55,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Guatemala",
       "Belize",
@@ -2461,6 +4446,20 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 48,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "Argentina",
       "Uruguay"
@@ -2477,6 +4476,20 @@
     "recDays": 16,
     "maxDays": 21,
     "popularityScore": 50,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "July",
+      "August"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "October",
+      "November"
+    ],
     "combo": [
       "Ecuador",
       "Peru"
@@ -2493,6 +4506,17 @@
     "recDays": 13,
     "maxDays": 17,
     "popularityScore": 36,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "January",
+      "February"
+    ],
     "combo": [
       "Bolivia",
       "Chile"
@@ -2509,6 +4533,18 @@
     "recDays": 13,
     "maxDays": 18,
     "popularityScore": 35,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Argentina",
       "Peru"
@@ -2525,6 +4561,22 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 69,
+    "bestMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "October",
+      "November"
+    ],
     "combo": [
       "Colombia",
       "Peru"
@@ -2541,6 +4593,18 @@
     "recDays": 9,
     "maxDays": 13,
     "popularityScore": 38,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "January",
+      "February"
+    ],
     "combo": [
       "Peru",
       "Chile"
@@ -2557,6 +4621,22 @@
     "recDays": 11,
     "maxDays": 15,
     "popularityScore": 30,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Colombia",
       "Brazil"
@@ -2573,6 +4653,18 @@
     "recDays": 8,
     "maxDays": 10,
     "popularityScore": 30,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "worstMonths": [
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Brazil",
       "Argentina"
@@ -2589,6 +4681,17 @@
     "recDays": 8,
     "maxDays": 11,
     "popularityScore": 28,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Argentina",
       "Brazil"
@@ -2605,6 +4708,22 @@
     "recDays": 8,
     "maxDays": 10,
     "popularityScore": 45,
+    "bestMonths": [
+      "February",
+      "March",
+      "April",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "December",
+      "January"
+    ],
     "combo": [
       "Suriname",
       "Trinidad and Tobago",
@@ -2622,6 +4741,22 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 50,
+    "bestMonths": [
+      "February",
+      "March",
+      "April",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "January",
+      "May",
+      "June",
+      "July",
+      "December"
+    ],
     "combo": [
       "Guyana",
       "Trinidad and Tobago"
@@ -2638,6 +4773,21 @@
     "recDays": 12,
     "maxDays": 16,
     "popularityScore": 56,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Mexico",
       "Jamaica",
@@ -2655,6 +4805,22 @@
     "recDays": 10,
     "maxDays": 13,
     "popularityScore": 52,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Cuba",
       "Mexico",
@@ -2672,6 +4838,22 @@
     "recDays": 9,
     "maxDays": 12,
     "popularityScore": 23,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Dominican Republic",
       "Jamaica",
@@ -2689,6 +4871,20 @@
     "recDays": 11,
     "maxDays": 15,
     "popularityScore": 49,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Cuba",
       "Jamaica"
@@ -2705,6 +4901,21 @@
     "recDays": 8,
     "maxDays": 10,
     "popularityScore": 45,
+    "bestMonths": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Barbados",
       "Grenada",
@@ -2722,6 +4933,19 @@
     "recDays": 14,
     "maxDays": 21,
     "popularityScore": 44,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Panama",
       "Nicaragua"
@@ -2738,6 +4962,20 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 32,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Costa Rica",
       "Colombia"
@@ -2754,6 +4992,22 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 56,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Belize",
       "Mexico",
@@ -2771,6 +5025,22 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 47,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Guatemala",
       "Belize",
@@ -2788,6 +5058,22 @@
     "recDays": 8,
     "maxDays": 10,
     "popularityScore": 39,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Guatemala",
       "Honduras"
@@ -2804,6 +5090,22 @@
     "recDays": 9,
     "maxDays": 13,
     "popularityScore": 33,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Costa Rica",
       "Guatemala"
@@ -2820,6 +5122,21 @@
     "recDays": 8,
     "maxDays": 12,
     "popularityScore": 51,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Guatemala",
       "Mexico",
@@ -2837,6 +5154,22 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 48,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Saint Lucia",
       "Grenada",
@@ -2854,6 +5187,21 @@
     "recDays": 9,
     "maxDays": 14,
     "popularityScore": 46,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "United States",
       "Cuba"
@@ -2870,6 +5218,21 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 39,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Barbados",
       "Saint Kitts and Nevis"
@@ -2886,6 +5249,21 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 43,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Barbados",
       "Grenada"
@@ -2902,6 +5280,22 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 44,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Barbados",
       "Saint Vincent and the Grenadines",
@@ -2919,6 +5313,22 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 47,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Grenada",
       "Saint Lucia",
@@ -2936,6 +5346,20 @@
     "recDays": 7,
     "maxDays": 10,
     "popularityScore": 42,
+    "bestMonths": [
+      "February",
+      "March",
+      "April",
+      "May",
+      "June"
+    ],
+    "worstMonths": [
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Saint Lucia"
     ]
@@ -2951,6 +5375,22 @@
     "recDays": 5,
     "maxDays": 6,
     "popularityScore": 39,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Antigua and Barbuda",
       "Barbados"
@@ -2967,6 +5407,18 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 39,
+    "bestMonths": [
+      "September",
+      "October",
+      "November",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "December",
+      "January"
+    ],
     "combo": [
       "New Zealand",
       "Fiji"
@@ -2983,6 +5435,16 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 29,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "June",
+      "July"
+    ],
     "combo": [
       "Australia",
       "Fiji"
@@ -2999,6 +5461,22 @@
     "recDays": 8,
     "maxDays": 12,
     "popularityScore": 51,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "Australia",
       "New Zealand",
@@ -3016,6 +5494,22 @@
     "recDays": 8,
     "maxDays": 12,
     "popularityScore": 36,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "Australia",
       "Solomon Islands",
@@ -3033,6 +5527,22 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 45,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "Fiji",
       "Tonga"
@@ -3049,6 +5559,22 @@
     "recDays": 7,
     "maxDays": 9,
     "popularityScore": 44,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "Fiji",
       "Samoa",
@@ -3066,6 +5592,22 @@
     "recDays": 8,
     "maxDays": 12,
     "popularityScore": 53,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "Australia",
       "Fiji",
@@ -3083,6 +5625,22 @@
     "recDays": 8,
     "maxDays": 11,
     "popularityScore": 51,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "Australia",
       "Papua New Guinea",
@@ -3100,6 +5658,22 @@
     "recDays": 6,
     "maxDays": 9,
     "popularityScore": 38,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Palau",
       "Marshall Islands"
@@ -3116,6 +5690,22 @@
     "recDays": 7,
     "maxDays": 10,
     "popularityScore": 47,
+    "bestMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
     "combo": [
       "Fiji",
       "Samoa"
@@ -3132,6 +5722,20 @@
     "recDays": 6,
     "maxDays": 10,
     "popularityScore": 35,
+    "bestMonths": [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "July",
+      "August",
+      "September",
+      "October",
+      "November"
+    ],
     "combo": [
       "Palau",
       "Japan",
@@ -3149,6 +5753,22 @@
     "recDays": 5,
     "maxDays": 7,
     "popularityScore": 49,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
     "combo": [
       "Philippines",
       "Taiwan"
@@ -3165,6 +5785,22 @@
     "recDays": 6,
     "maxDays": 8,
     "popularityScore": 44,
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
     "combo": [
       "Fiji",
       "Samoa",
@@ -3182,6 +5818,22 @@
     "recDays": 2,
     "maxDays": 2,
     "popularityScore": 53,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October"
+    ],
+    "worstMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
     "combo": [
       "Australia",
       "Fiji",
@@ -3199,6 +5851,19 @@
     "recDays": 3,
     "maxDays": 5,
     "popularityScore": 1,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August"
+    ],
     "combo": [
       "Argentina"
     ]

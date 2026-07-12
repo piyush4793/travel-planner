@@ -21,7 +21,6 @@ const COUNTRY: Country = {
 
 function renderView(props: Partial<React.ComponentProps<typeof PlanView>> = {}) {
   const setBudgetBasis = vi.fn();
-  const onGoDiscover = vi.fn();
   const onToggleTripFavorite = vi.fn();
   const utils = render(
     <PlanView
@@ -29,12 +28,11 @@ function renderView(props: Partial<React.ComponentProps<typeof PlanView>> = {}) 
       budgetBasis="couple"
       setBudgetBasis={setBudgetBasis}
       homeCountry="India"
-      onGoDiscover={onGoDiscover}
       onToggleTripFavorite={onToggleTripFavorite}
       {...props}
     />,
   );
-  return { setBudgetBasis, onGoDiscover, onToggleTripFavorite, ...utils };
+  return { setBudgetBasis, onToggleTripFavorite, ...utils };
 }
 
 // Must exceed the component's SAVE_SETTLE_MS (2500) so an edit "after" it counts.
@@ -65,46 +63,16 @@ describe("PlanView — guided planner", () => {
     expect(screen.getByRole("button", { name: /Testland \(no rule\)/i })).toBeInTheDocument();
   });
 
-  it("still offers Discover when the list is empty (explore tier only)", () => {
-    const { onGoDiscover } = renderView({ countries: [] });
+  it("shows the explore tier only when the list is empty", () => {
+    renderView({ countries: [] });
     expect(screen.queryByText(/From your list/i)).not.toBeInTheDocument();
     expect(screen.getByText(/Popular to explore/i)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: /browse Discover/i }));
-    expect(onGoDiscover).toHaveBeenCalled();
   });
 
-  it("auto-starts a plan from an intake handoff (Discover tray / Calendar tap)", async () => {
-    renderView({ intake: { countries: [COUNTRY], nonce: 1 } });
-    // Skips the landing picker and lands on the Basics step for the picked set.
-    expect(await screen.findByText(/Who's going\?/i)).toBeInTheDocument();
-  });
-
-  it("ignores a repeated intake nonce and an empty intake set", async () => {
-    const { rerender } = renderView({ intake: { countries: [COUNTRY], nonce: 7 } });
-    await screen.findByText(/Who's going\?/i);
-
-    // Same nonce re-render must not re-trigger; an empty set is a no-op.
-    rerender(
-      <PlanView
-        countries={[COUNTRY]}
-        budgetBasis="couple"
-        setBudgetBasis={vi.fn()}
-        homeCountry="India"
-        onGoDiscover={vi.fn()}
-        onToggleTripFavorite={vi.fn()}
-        intake={{ countries: [], nonce: 8 }}
-      />,
-    );
-    // Still on Basics for the original selection, not reset to the picker.
-    expect(screen.getByText(/Who's going\?/i)).toBeInTheDocument();
-  });
-
-  it("shows a no-match state with a Discover fallback", () => {
-    const { onGoDiscover } = renderView();
+  it("shows a no-match state hint", () => {
+    renderView();
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "zzzzz" } });
     expect(screen.getByText(/No destination matches/i)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: /Browse Discover/i }));
-    expect(onGoDiscover).toHaveBeenCalled();
   });
 
   it("favorites the saved trip from the Review save bar (acts on the trip, not countries)", async () => {
@@ -166,7 +134,6 @@ describe("PlanView — guided planner", () => {
       countries: [COUNTRY],
       setBudgetBasis: vi.fn(),
       homeCountry: "India",
-      onGoDiscover: vi.fn(),
       onToggleTripFavorite: vi.fn(),
       onSaveTrip,
     };
@@ -322,7 +289,6 @@ describe("PlanView — guided planner", () => {
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
-        onGoDiscover={vi.fn()}
         onToggleTripFavorite={vi.fn()}
         startNewNonce={1}
       />,
@@ -458,7 +424,6 @@ describe("PlanView — multi-country Basics", () => {
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
-        onGoDiscover={vi.fn()}
       />,
     );
     fireEvent.click(screen.getByRole("button", { name: /Testland \(no rule\)/i }));
@@ -493,7 +458,6 @@ describe("PlanView — multi-country Basics", () => {
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
-        onGoDiscover={vi.fn()}
       />,
     );
     for (const u of units) fireEvent.click(screen.getByRole("button", { name: new RegExp(u.name, "i") }));
@@ -522,7 +486,6 @@ describe("PlanView — multi-country Basics", () => {
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
-        onGoDiscover={vi.fn()}
       />,
     );
     fireEvent.click(screen.getByRole("button", { name: /^Norway/i }));
@@ -540,7 +503,6 @@ describe("PlanView — multi-country Basics", () => {
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
-        onGoDiscover={vi.fn()}
         onSaveTrip={onSaveTrip}
       />,
     );
@@ -655,7 +617,6 @@ describe("PlanView — multi-country Basics", () => {
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
-        onGoDiscover={vi.fn()}
         onToggleTripFavorite={vi.fn()}
         openTrip={openTrip}
       />,
