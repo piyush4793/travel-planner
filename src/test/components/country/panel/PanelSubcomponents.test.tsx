@@ -241,10 +241,10 @@ describe("CityCard", () => {
     expect(screen.queryByLabelText(/Best avoided/i)).not.toBeInTheDocument();
   });
 
-  it("applies the luxury variant with emerald selection styling and best+worst months on one row", () => {
+  it("applies emerald selection styling with best+worst months on one row", () => {
     const withWorst: CityEntry = { ...city, worstMonths: ["June"], experiences: ["Temples"] };
     render(
-      <CityCard city={withWorst} selectable selected variant="luxury" onToggle={vi.fn()} activeExperiences={["Temples"]} />,
+      <CityCard city={withWorst} selectable selected onToggle={vi.fn()} activeExperiences={["Temples"]} />,
     );
 
     const button = screen.getByRole("button", { name: /Kyoto — matches your focus experiences/i });

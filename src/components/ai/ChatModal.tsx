@@ -133,7 +133,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
       className="bg-white border border-slate-200 md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-2xl md:mx-4 flex flex-col h-dvh md:h-auto"
     >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-200 shrink-0 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-200 shrink-0 bg-gradient-to-r from-emerald-50 to-teal-50">
           <div className="flex items-center gap-2.5">
             <span className="text-lg">✈️</span>
             <div>
@@ -203,7 +203,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
               <div className="max-w-md space-y-4">
                 <p className="text-sm font-bold text-slate-700 text-center">Choose how to plan your trip</p>
                 <button onClick={() => { onClose(); onOpenSettings(); }}
-                  className="w-full border border-slate-200 rounded-xl p-4 hover:border-blue-300 hover:bg-blue-50/30 transition-colors text-left">
+                  className="w-full border border-slate-200 rounded-xl p-4 hover:border-emerald-300 hover:bg-emerald-50/30 transition-colors text-left">
                   <div className="flex items-start gap-3">
                     <span className="text-xl">🔑</span>
                     <div>
@@ -251,7 +251,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
               <div
                 className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-[13px] leading-relaxed ${
                   msg.role === "user"
-                    ? "bg-blue-600 text-white rounded-br-md"
+                    ? "bg-emerald-700 text-white rounded-br-md"
                     : "bg-slate-100 text-slate-700 border border-slate-200 rounded-bl-md"
                 }`}
               >
@@ -292,7 +292,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
                       const lastUserMsg = [...messages].reverse().find(m => m.role === "user");
                       if (lastUserMsg) sendMessage(lastUserMsg.content);
                     }}
-                    className="text-[11px] text-blue-600 hover:text-blue-500 font-medium"
+                    className="text-[11px] text-emerald-700 hover:text-emerald-600 font-medium"
                     disabled={loading}
                   >
                     ↻ Retry
@@ -331,14 +331,14 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
                 onKeyDown={handleKeyDown}
                 placeholder="Describe your trip…"
                 rows={3}
-                className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-400 resize-none max-h-40"
+                className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-emerald-400 resize-none max-h-40"
                 style={{ minHeight: 72 }}
                 disabled={loading}
               />
               <button
                 onClick={handleSend}
                 disabled={!input.trim() || loading}
-                className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 disabled:bg-slate-100 disabled:text-slate-300 text-white text-sm font-semibold rounded-xl transition-colors shrink-0"
+                className="px-4 py-2.5 bg-emerald-700 hover:bg-emerald-600 disabled:bg-slate-100 disabled:text-slate-300 text-white text-sm font-semibold rounded-xl transition-colors shrink-0"
               >
                 Send
               </button>
@@ -555,18 +555,18 @@ function PromptSuggestions({ suggestions }: { suggestions: string[] }) {
   }
   useEffect(() => () => clearTimeout(copyTimerRef.current), []);
   return (
-    <div className="bg-blue-50 border border-blue-200 rounded-xl p-3">
+    <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3">
       <div className="flex items-center justify-between mb-2">
-        <p className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">Improve Your Prompt</p>
+        <p className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider">Improve Your Prompt</p>
         <button onClick={copyAll}
           className={`text-[10px] font-semibold px-2.5 py-1 rounded-md transition-colors ${
-            copied ? "bg-emerald-100 text-emerald-700" : "bg-blue-100 text-blue-600 hover:bg-blue-200"
+            copied ? "bg-emerald-600 text-white" : "bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
           }`}>
           {copied ? "✓ Copied" : "📋 Copy All"}
         </button>
       </div>
       {suggestions.map((s, i) => (
-        <p key={i} className="text-[11px] text-blue-700 mb-1 last:mb-0">💡 {s}</p>
+        <p key={i} className="text-[11px] text-emerald-800 mb-1 last:mb-0">💡 {s}</p>
       ))}
     </div>
   );

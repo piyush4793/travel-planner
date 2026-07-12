@@ -234,7 +234,7 @@ function SegmentBlock({
         </button>
       ) : (
         <div id={bodyId} className="mx-3 mb-1 rounded-b-2xl border border-t-0 border-line bg-white py-3">
-          <ItineraryView plan={displayPlan} rule={segment.rule} variant="luxury" />
+          <ItineraryView plan={displayPlan} rule={segment.rule} />
         </div>
       )}
     </section>

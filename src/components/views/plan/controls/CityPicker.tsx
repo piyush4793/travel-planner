@@ -47,7 +47,6 @@ function CityPickerInner({ cities, selectedCities, autoSelectedCities, activeExp
               key={city.name}
               city={city}
               selectable
-              variant="luxury"
               selected={checked}
               onToggle={() => onToggle(city.name)}
               activeExperiences={activeExperiences}

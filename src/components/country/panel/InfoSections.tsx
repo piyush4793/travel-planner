@@ -9,7 +9,7 @@ type CountryLink = { label: string; url: string };
 // Shared "open in new tab" arrow — used by every outbound link row below.
 function ExternalLinkIcon() {
   return (
-    <svg className="h-3 w-3 shrink-0 text-gray-400 transition-colors group-hover:text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="h-3 w-3 shrink-0 text-gray-400 transition-colors group-hover:text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
     </svg>
   );
@@ -72,22 +72,22 @@ export function LearnAboutSection({ countryName, currentCountryNameRef }: {
   return (
     <div className="rounded-xl bg-gray-50/50 p-3.5">
       <button onClick={handleToggle} aria-expanded={open} aria-controls={contentId} className="group flex w-full items-center gap-2 text-left focus-ring rounded">
-        <span className={`text-xs text-gray-400 motion-safe:transition-transform motion-safe:duration-300 ease-out ${open ? "rotate-90 text-blue-500" : ""}`}>▸</span>
+        <span className={`text-xs text-gray-400 motion-safe:transition-transform motion-safe:duration-300 ease-out ${open ? "rotate-90 text-emerald-600" : ""}`}>▸</span>
         <span className="flex-1 text-[11px] font-semibold text-gray-500">Learn about {countryName} 🌐</span>
       </button>
       <div id={contentId} role="region" aria-label={`Learn about ${countryName}`} className={`grid motion-safe:transition-[grid-template-rows,opacity,margin] motion-safe:duration-300 ease-out ${open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
         <div className="overflow-hidden">
-          <div className={`border-l pl-3 transition-colors duration-300 ${open ? "border-blue-200" : "border-transparent"}`} aria-live="polite" aria-busy={loading}>
+          <div className={`border-l pl-3 transition-colors duration-300 ${open ? "border-emerald-200" : "border-transparent"}`} aria-live="polite" aria-busy={loading}>
             {loading && (
               <div className="flex items-center gap-2 py-2">
-                <span className="inline-block h-3 w-3 animate-spin rounded-full border-2 border-blue-400 border-t-transparent" />
-                <span className="text-[11px] text-blue-500">Loading info…</span>
+                <span className="inline-block h-3 w-3 animate-spin rounded-full border-2 border-emerald-400 border-t-transparent" />
+                <span className="text-[11px] text-emerald-700">Loading info…</span>
               </div>
             )}
             {!loading && error && (
               <div className="flex items-center gap-2 py-2">
                 <span className="text-[11px] text-gray-500">Failed to load info</span>
-                <button onClick={handleRetry} className="text-[11px] font-semibold text-blue-600 hover:text-blue-700 focus-ring rounded px-1.5 py-0.5">
+                <button onClick={handleRetry} className="text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 focus-ring rounded px-1.5 py-0.5">
                   Retry
                 </button>
               </div>
@@ -129,7 +129,7 @@ export function LearnAboutSection({ countryName, currentCountryNameRef }: {
                   href={`https://en.wikipedia.org/wiki/${encodeURIComponent(countryName.replace(/ /g, "_"))}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-[10px] font-semibold text-blue-500 hover:text-blue-700 transition-colors"
+                  className="inline-block text-[10px] font-semibold text-emerald-700 hover:text-emerald-800 transition-colors"
                 >
                   Read more on Wikipedia →
                 </a>
@@ -163,7 +163,7 @@ export function PlanningResourcesSection({ countryName, homeCountry }: { country
           >
             <span className="text-base mt-0.5">{link.emoji}</span>
             <div className="flex-1 min-w-0">
-              <span className="text-xs font-semibold text-blue-700 group-hover:text-blue-800">{link.label}</span>
+              <span className="text-xs font-semibold text-emerald-700 group-hover:text-emerald-800">{link.label}</span>
               <p className="text-[10px] text-gray-400 leading-snug mt-0.5">{link.description}</p>
             </div>
             <span className="mt-1"><ExternalLinkIcon /></span>
@@ -188,7 +188,7 @@ export function UsefulLinksSection({ links }: { links?: CountryLink[] }) {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 rounded-xl bg-white/80 px-3 py-2 text-xs font-semibold text-blue-700 shadow-sm shadow-slate-100 transition-colors hover:bg-slate-100 focus-ring"
+            className="group flex items-center gap-2 rounded-xl bg-white/80 px-3 py-2 text-xs font-semibold text-emerald-700 shadow-sm shadow-slate-100 transition-colors hover:bg-slate-100 focus-ring"
           >
             <span className="text-base" aria-hidden>🔗</span>
             <span className="flex-1 truncate">{link.label}</span>

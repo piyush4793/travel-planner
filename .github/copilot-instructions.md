@@ -166,7 +166,7 @@ App.tsx  (thin orchestrator — wires hooks to views)
 ```
 src/components/
   ai/       — AiItineraryModal, ChatModal, SettingsModal
-  country/  — ItineraryCinematic, cinematic/engine.ts (pure fly-through engine), cinematic/{CinematicOverview,CinematicControls,CinematicDayPanel,CinematicIntro,CinematicDone,CinematicPhotoCard,CinematicHeader} (pure phase/control/chrome leaves — reduced-motion summary, playback footer, city-phase day card, intro + done phases, map photo slideshow, title + route-trail header — extracted from the shell + unit-tested), itinerary/ItineraryView (shared day renderer, variant="luxury"), panel/CityCard, panel/PanelSection, panel/InfoSections, panel/MonthHeatmap, panel/ShareButton/shareText
+  country/  — ItineraryCinematic, cinematic/engine.ts (pure fly-through engine), cinematic/{CinematicOverview,CinematicControls,CinematicDayPanel,CinematicIntro,CinematicDone,CinematicPhotoCard,CinematicHeader} (pure phase/control/chrome leaves — reduced-motion summary, playback footer, city-phase day card, intro + done phases, map photo slideshow, title + route-trail header — extracted from the shell + unit-tested), itinerary/ItineraryView (shared day renderer, emerald/ivory), panel/CityCard, panel/PanelSection, panel/InfoSections, panel/MonthHeatmap, panel/ShareButton/shareText
   map/      — HoverCard and map internals
   shared/   — PillGroup, FilterChip, Tooltip, HomeCountrySelector, DevFlagPanel, ExperienceDropdown, AppInstallShare, FreTour, ConfirmDialog (useConfirm)
   views/    — MyTripsView (saved-trip gallery + SavedTripCard) + views/plan guided wizard

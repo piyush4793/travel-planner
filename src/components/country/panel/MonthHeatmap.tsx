@@ -28,14 +28,25 @@ function MonthHeatmapInner({ bestMonths, worstMonths }: Props) {
 
   if (rows.length === 0) return null;
 
+  const currentShort = SHORT[currentMonthIndex];
+  const bestList = rows.filter((r) => r.best).map((r) => r.full);
+  const worstList = rows.filter((r) => r.worst).map((r) => r.full);
+  const summary = [
+    bestList.length ? `Best months: ${bestList.join(", ")}.` : "",
+    worstList.length ? `Months to avoid: ${worstList.join(", ")}.` : "",
+    `Current month: ${currentShort}.`,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div className="space-y-1" role="img" aria-label="Monthly travel suitability">
+    <div className="space-y-1" role="img" aria-label={`Monthly travel suitability. ${summary}`}>
       {rows.map((row) => {
         const isCurrent = row.index === currentMonthIndex;
         return (
           <div key={row.full} className="flex items-center gap-2">
             <span className={`w-8 shrink-0 text-[10px] font-bold tabular-nums ${
-              isCurrent ? "text-blue-600" : "text-gray-500"
+              isCurrent ? "text-emerald-700" : "text-gray-500"
             }`}>
               {row.short}
             </span>

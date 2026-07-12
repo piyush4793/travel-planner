@@ -39,7 +39,7 @@ describe("ItineraryView", () => {
   afterEach(() => cleanup());
 
   it("renders per-city groups, the transport separator, meals and hotels", () => {
-    render(<ItineraryView plan={plan} rule={rule} variant="luxury" />);
+    render(<ItineraryView plan={plan} rule={rule} />);
 
     expect(screen.getByText("Tokyo")).toBeInTheDocument();
     expect(screen.getByText("Kyoto")).toBeInTheDocument();

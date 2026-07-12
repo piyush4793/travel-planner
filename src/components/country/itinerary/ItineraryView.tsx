@@ -49,10 +49,7 @@ export function groupDays(days: DayEntry[], rule?: CountryRule | null): CityGrou
 
 // ─── Itinerary body (shared by the modal and the guided Plan tab) ─────────────
 
-export type ItineraryVariant = "default" | "luxury";
-
-/** Per-variant colour tokens so the shared renderer can wear the Country Panel
- *  (slate/blue) or the guided-plan luxury (emerald/ivory) skin without forking. */
+/** Colour tokens for the guided-plan luxury (emerald/ivory) skin. */
 type ItinTheme = {
   focusRing: string;
   sepBox: string;
@@ -86,77 +83,42 @@ type ItinTheme = {
   copyDone: string;
 };
 
-const ITIN_THEMES: Record<ItineraryVariant, ItinTheme> = {
-  default: {
-    focusRing: "focus-ring",
-    sepBox: "bg-slate-50 border-slate-100",
-    sepTitle: "text-slate-700",
-    sepSub: "text-slate-500",
-    sepCost: "text-slate-700 bg-white border-slate-200",
-    cityTitle: "text-slate-900",
-    cityBadge: "text-slate-400 bg-slate-100",
-    cardBorder: "border-slate-150",
-    cardHead: "bg-slate-50 border-slate-100",
-    chevron: "text-slate-400",
-    dayLabel: "text-slate-500",
-    dayCount: "text-slate-400",
-    themePill: "text-indigo-600 bg-indigo-50",
-    routeLink: "text-blue-500 bg-blue-50 hover:bg-blue-100",
-    marker: "bg-blue-500 text-white",
-    bullet: "text-slate-300",
-    actText: "text-slate-700",
-    actDetail: "text-slate-400",
-    actLink: "text-blue-400 hover:text-blue-600",
-    divider: "border-slate-100",
-    eatLabel: "text-slate-400",
-    eatPill: "text-orange-600 bg-orange-50 border-orange-200 hover:bg-orange-100",
-    hotelPill: "text-slate-500 bg-slate-50 border-slate-200 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600",
-    noteBox: "bg-slate-50 border-slate-100",
-    noteLabel: "text-slate-400",
-    noteText: "text-slate-500",
-    noteItemLabel: "text-slate-500",
-    noteItemText: "text-slate-600",
-    copyIdle: "text-slate-400 bg-slate-50 hover:bg-slate-100 hover:text-slate-600",
-    copyDone: "text-emerald-600 bg-emerald-50",
-  },
-  luxury: {
-    focusRing: "focus-ring-emerald",
-    sepBox: "bg-surface-3 border-line",
-    sepTitle: "text-ink-1",
-    sepSub: "text-ink-2",
-    sepCost: "text-emerald-800 bg-white border-line",
-    cityTitle: "text-ink-1",
-    cityBadge: "text-ink-2 bg-surface-track",
-    cardBorder: "border-line",
-    cardHead: "bg-surface-3 border-line",
-    chevron: "text-ink-4",
-    dayLabel: "text-ink-2",
-    dayCount: "text-ink-4",
-    themePill: "text-emerald-700 bg-emerald-50",
-    routeLink: "text-emerald-700 bg-emerald-50 hover:bg-emerald-100",
-    marker: "bg-emerald-700 text-white",
-    bullet: "text-line-strong",
-    actText: "text-ink-1",
-    actDetail: "text-ink-2",
-    actLink: "text-emerald-500 hover:text-emerald-700",
-    divider: "border-line",
-    eatLabel: "text-ink-4",
-    eatPill: "text-orange-700 bg-orange-50 border-orange-200 hover:bg-orange-100",
-    hotelPill: "text-ink-2 bg-surface-3 border-line hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-700",
-    noteBox: "bg-surface-3 border-line",
-    noteLabel: "text-ink-4",
-    noteText: "text-ink-2",
-    noteItemLabel: "text-ink-2",
-    noteItemText: "text-ink-body",
-    copyIdle: "text-ink-4 bg-surface-3 hover:bg-surface-track hover:text-ink-2",
-    copyDone: "text-emerald-600 bg-emerald-50",
-  },
+const ITIN_THEME: ItinTheme = {
+  focusRing: "focus-ring-emerald",
+  sepBox: "bg-surface-3 border-line",
+  sepTitle: "text-ink-1",
+  sepSub: "text-ink-2",
+  sepCost: "text-emerald-800 bg-white border-line",
+  cityTitle: "text-ink-1",
+  cityBadge: "text-ink-2 bg-surface-track",
+  cardBorder: "border-line",
+  cardHead: "bg-surface-3 border-line",
+  chevron: "text-ink-4",
+  dayLabel: "text-ink-2",
+  dayCount: "text-ink-4",
+  themePill: "text-emerald-700 bg-emerald-50",
+  routeLink: "text-emerald-700 bg-emerald-50 hover:bg-emerald-100",
+  marker: "bg-emerald-700 text-white",
+  bullet: "text-line-strong",
+  actText: "text-ink-1",
+  actDetail: "text-ink-2",
+  actLink: "text-emerald-500 hover:text-emerald-700",
+  divider: "border-line",
+  eatLabel: "text-ink-4",
+  eatPill: "text-orange-700 bg-orange-50 border-orange-200 hover:bg-orange-100",
+  hotelPill: "text-ink-2 bg-surface-3 border-line hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-700",
+  noteBox: "bg-surface-3 border-line",
+  noteLabel: "text-ink-4",
+  noteText: "text-ink-2",
+  noteItemLabel: "text-ink-2",
+  noteItemText: "text-ink-body",
+  copyIdle: "text-ink-4 bg-surface-3 hover:bg-surface-track hover:text-ink-2",
+  copyDone: "text-emerald-600 bg-emerald-50",
 };
 
 interface ItineraryViewProps {
   plan: TripPlan;
   rule?: CountryRule | null;
-  variant?: ItineraryVariant;
 }
 
 /**
@@ -165,9 +127,9 @@ interface ItineraryViewProps {
  * parsed practical notes. Contains no modal chrome (header/close/warnings) so it
  * can be embedded in the modal's scroll body or the guided Plan tab's preview.
  */
-export default function ItineraryView({ plan, rule, variant = "default" }: ItineraryViewProps) {
+export default function ItineraryView({ plan, rule }: ItineraryViewProps) {
   const groups = useMemo(() => groupDays(plan.days, rule), [plan.days, rule]);
-  const t = ITIN_THEMES[variant];
+  const t = ITIN_THEME;
 
   return (
     <>

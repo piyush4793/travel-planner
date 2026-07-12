@@ -145,9 +145,9 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
 
           {/* Assumptions */}
           {result.assumptions.length > 0 && (
-            <div className="px-6 py-2.5 bg-blue-50 border-b border-blue-100">
-              <p className="text-[10px] font-bold text-blue-500 uppercase tracking-wide mb-1">Assumptions Made</p>
-              <p className="text-[11px] text-blue-600 leading-relaxed">{result.assumptions.join(" · ")}</p>
+            <div className="px-6 py-2.5 bg-emerald-50 border-b border-emerald-100">
+              <p className="text-[10px] font-bold text-emerald-600 uppercase tracking-wide mb-1">Assumptions Made</p>
+              <p className="text-[11px] text-emerald-700 leading-relaxed">{result.assumptions.join(" · ")}</p>
             </div>
           )}
 
@@ -204,7 +204,7 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
                         {day.label}
                       </p>
                       {day.theme && (
-                        <span className="text-[10px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full shrink-0">
+                        <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-full shrink-0">
                           {day.theme}
                         </span>
                       )}
@@ -214,7 +214,7 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
                             href={route.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[10px] font-semibold text-blue-500 bg-blue-50 hover:bg-blue-100 px-2.5 py-1 rounded-full transition-colors focus-ring"
+                            className="text-[10px] font-semibold text-emerald-600 bg-emerald-50 hover:bg-emerald-100 px-2.5 py-1 rounded-full transition-colors focus-ring"
                             title="Open day route in Google Maps"
                           >
                             🗺️ Route
@@ -233,7 +233,7 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
                           return (
                             <li key={ai} className="flex gap-2.5 leading-snug">
                               {letter ? (
-                                <span className="w-[18px] h-[18px] rounded-full bg-blue-500 text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{letter}</span>
+                                <span className="w-[18px] h-[18px] rounded-full bg-emerald-600 text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{letter}</span>
                               ) : (
                                 <span className="text-slate-300 shrink-0 mt-0.5 text-sm">›</span>
                               )}
@@ -288,7 +288,7 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
                           <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Recommended Tours</p>
                           <div className="space-y-1">
                             {day.bookingSuggestions.map((s, si) => (
-                              <p key={si} className="text-[10px] text-blue-600 bg-blue-50 px-2.5 py-1 rounded-lg">
+                              <p key={si} className="text-[10px] text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg">
                                 🎟️ {s}
                               </p>
                             ))}
@@ -307,8 +307,8 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
 
         {/* Plan comparison panel */}
         {showComparison && existingPlans.length > 0 && (
-          <div className="px-6 py-3 bg-indigo-50 border-t border-indigo-100 shrink-0 space-y-2">
-            <p className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">
+          <div className="px-6 py-3 bg-emerald-50 border-t border-emerald-100 shrink-0 space-y-2">
+            <p className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider">
               {existingPlans.length} existing plan{existingPlans.length !== 1 ? "s" : ""} for {result.destinationName}
             </p>
 
@@ -402,7 +402,7 @@ export default function AiItineraryModal({ result, onClose, onSaveToList, existi
                       const status = onSaveToList(result.destinationName);
                       setSaveStatus(status);
                     }}
-                    className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-semibold rounded-lg transition-colors"
+                    className="px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white text-[11px] font-semibold rounded-lg transition-colors"
                   >
                     📋 Save to My List
                   </button>
@@ -461,7 +461,7 @@ function MetaSection({ meta }: { meta: LLMTripPlanResult["meta"] }) {
 const META_COLORS = {
   emerald: { heading: "text-emerald-600", chip: "text-emerald-700 bg-emerald-50" },
   red: { heading: "text-red-500", chip: "text-red-600 bg-red-50" },
-  indigo: { heading: "text-indigo-500", chip: "text-indigo-600 bg-indigo-50" },
+  indigo: { heading: "text-amber-600", chip: "text-amber-700 bg-amber-50" },
 } as const;
 
 function MetaChips({ label, items, color }: { label: string; items: string[]; color: keyof typeof META_COLORS }) {
