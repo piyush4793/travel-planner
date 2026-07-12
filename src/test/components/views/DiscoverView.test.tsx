@@ -40,36 +40,14 @@ describe("DiscoverView", () => {
     cleanup();
   });
 
-  it("renders the count and progress stats", () => {
-    render(
-      <DiscoverView
-        catalog={catalog}
-        myListNames={new Set(["Japan", "France"])}
-        onAddToList={vi.fn()}
-        onRemoveFromList={vi.fn()}
-        onAddMany={vi.fn()}
-        onResetList={vi.fn()}
-      />,
-    );
-
-    // Desktop toolbar shows "2 / 3 (67%)"
-    expect(screen.getByText("2")).toBeInTheDocument();
-    expect(screen.getByText(/67%/)).toBeInTheDocument();
+  it("renders the visible-country count", () => {
+    render(<DiscoverView catalog={catalog} onPlanTrip={vi.fn()} />);
+    expect(screen.getAllByText(/Showing 3/).length).toBeGreaterThan(0);
   });
 
   it("filters countries by search text", async () => {
     const user = userEvent.setup();
-
-    render(
-      <DiscoverView
-        catalog={catalog}
-        myListNames={new Set()}
-        onAddToList={vi.fn()}
-        onRemoveFromList={vi.fn()}
-        onAddMany={vi.fn()}
-        onResetList={vi.fn()}
-      />,
-    );
+    render(<DiscoverView catalog={catalog} onPlanTrip={vi.fn()} />);
 
     await user.type(screen.getByPlaceholderText(/search countries/i), "Jap");
 
@@ -82,19 +60,8 @@ describe("DiscoverView", () => {
 
   it("filters countries by region popover", async () => {
     const user = userEvent.setup();
+    render(<DiscoverView catalog={catalog} onPlanTrip={vi.fn()} />);
 
-    render(
-      <DiscoverView
-        catalog={catalog}
-        myListNames={new Set()}
-        onAddToList={vi.fn()}
-        onRemoveFromList={vi.fn()}
-        onAddMany={vi.fn()}
-        onResetList={vi.fn()}
-      />,
-    );
-
-    // Open region popover, then click Asia
     await user.click(screen.getByRole("button", { name: /Region/i }));
     await user.click(screen.getByRole("button", { name: "Asia" }));
 
@@ -103,71 +70,56 @@ describe("DiscoverView", () => {
     expect(screen.queryByText("Brazil")).not.toBeInTheDocument();
   });
 
-  it("calls onAddToList when clicking an un-listed country card", async () => {
+  it("starts a single-country plan from a card's Plan button", async () => {
     const user = userEvent.setup();
-    const onAddToList = vi.fn();
+    const onPlanTrip = vi.fn();
+    render(<DiscoverView catalog={catalog} onPlanTrip={onPlanTrip} />);
 
-    render(
-      <DiscoverView
-        catalog={catalog}
-        myListNames={new Set()}
-        onAddToList={onAddToList}
-        onRemoveFromList={vi.fn()}
-        onAddMany={vi.fn()}
-        onResetList={vi.fn()}
-      />,
-    );
+    await user.click(screen.getByRole("button", { name: "Plan a trip to Brazil" }));
 
-    // Each card is a <button> now — find the one containing "Brazil"
-    const brazilCard = screen.getByRole("button", { name: /Brazil/i });
-    await user.click(brazilCard);
-
-    expect(onAddToList).toHaveBeenCalledWith("Brazil");
+    expect(onPlanTrip).toHaveBeenCalledWith(["Brazil"]);
   });
 
-  it("calls onRemoveFromList when clicking a listed country card", async () => {
+  it("builds a multi-destination trip selection and starts a plan from the tray", async () => {
     const user = userEvent.setup();
-    const onRemoveFromList = vi.fn();
+    const onPlanTrip = vi.fn();
+    render(<DiscoverView catalog={catalog} onPlanTrip={onPlanTrip} />);
 
-    render(
-      <DiscoverView
-        catalog={catalog}
-        myListNames={new Set(["Japan"])}
-        onAddToList={vi.fn()}
-        onRemoveFromList={onRemoveFromList}
-        onAddMany={vi.fn()}
-        onResetList={vi.fn()}
-      />,
-    );
+    await user.click(screen.getByRole("button", { name: "Add Japan to trip" }));
+    await user.click(screen.getByRole("button", { name: "Add France to trip" }));
 
-    const japanCard = screen.getByRole("button", { name: /Japan/i });
-    await user.click(japanCard);
+    expect(screen.getByText("Japan → France")).toBeInTheDocument();
+    expect(screen.getByText(/2 of 4/)).toBeInTheDocument();
 
-    // Removal now asks for confirmation before firing.
-    const confirmBtn = await screen.findByRole("button", { name: "Remove" });
-    await user.click(confirmBtn);
+    await user.click(screen.getByRole("button", { name: /Plan trip/ }));
 
-    expect(onRemoveFromList).toHaveBeenCalledWith("Japan");
+    expect(onPlanTrip).toHaveBeenCalledWith(["Japan", "France"]);
+    // Tray clears after starting the plan.
+    expect(screen.queryByText("Japan → France")).not.toBeInTheDocument();
   });
 
-  it("does not remove a listed country when the confirmation is cancelled", async () => {
+  it("clears the trip selection tray without starting a plan", async () => {
     const user = userEvent.setup();
-    const onRemoveFromList = vi.fn();
+    const onPlanTrip = vi.fn();
+    render(<DiscoverView catalog={catalog} onPlanTrip={onPlanTrip} />);
 
-    render(
-      <DiscoverView
-        catalog={catalog}
-        myListNames={new Set(["Japan"])}
-        onAddToList={vi.fn()}
-        onRemoveFromList={onRemoveFromList}
-        onAddMany={vi.fn()}
-        onResetList={vi.fn()}
-      />,
-    );
+    await user.click(screen.getByRole("button", { name: "Add Japan to trip" }));
+    expect(screen.getByRole("button", { name: "Remove Japan from trip" })).toBeInTheDocument();
 
-    await user.click(screen.getByRole("button", { name: /Japan/i }));
-    await user.click(await screen.findByRole("button", { name: "Keep" }));
+    await user.click(screen.getByRole("button", { name: "Clear" }));
 
-    expect(onRemoveFromList).not.toHaveBeenCalled();
+    expect(onPlanTrip).not.toHaveBeenCalled();
+    expect(screen.queryByRole("button", { name: /Plan trip/ })).not.toBeInTheDocument();
+  });
+
+  it("clears active filters via the Clear control and shows an empty state", async () => {
+    const user = userEvent.setup();
+    render(<DiscoverView catalog={catalog} onPlanTrip={vi.fn()} />);
+
+    await user.type(screen.getByPlaceholderText(/search countries/i), "Zzz");
+    await waitFor(() => expect(screen.getByText(/No countries match/)).toBeInTheDocument());
+
+    await user.click(screen.getByRole("button", { name: "Clear all filters" }));
+    expect(screen.getByText("Japan")).toBeInTheDocument();
   });
 });

@@ -2,7 +2,6 @@ import { describe, it, expect } from "vitest";
 import {
   filterByMonth,
   filterByExperiences,
-  filterByVisited,
   filterByBudget,
   getBudgetTier,
   applyFilters,
@@ -78,25 +77,6 @@ describe("filterLogic — P0", () => {
     });
   });
 
-  describe("filterByVisited", () => {
-    const visited = new Set(["Thailand"]);
-
-    it("returns all when filter is 'all'", () => {
-      expect(filterByVisited(COUNTRIES, visited, "all")).toHaveLength(3);
-    });
-
-    it("returns only visited", () => {
-      const result = filterByVisited(COUNTRIES, visited, "visited");
-      expect(result).toHaveLength(1);
-      expect(result[0].name).toBe("Thailand");
-    });
-
-    it("returns only unvisited", () => {
-      const result = filterByVisited(COUNTRIES, visited, "unvisited");
-      expect(result).toHaveLength(2);
-    });
-  });
-
   describe("getBudgetTier", () => {
     it("classifies by the range midpoint", () => {
       expect(getBudgetTier("₹50K–₹1L")).toBe("budget"); // mid ₹75K
@@ -132,12 +112,12 @@ describe("filterLogic — P0", () => {
 
   describe("applyFilters", () => {
     it("combines all filters with AND logic", () => {
-      const result = applyFilters(COUNTRIES, ["Jun"], ["Hiking"], new Set<string>(), "all", "all");
+      const result = applyFilters(COUNTRIES, ["Jun"], ["Hiking"], "all");
       expect(result).toHaveLength(2); // Norway, Switzerland
     });
 
     it("returns empty when filters are incompatible", () => {
-      const result = applyFilters(COUNTRIES, ["Nov"], ["Skiing"], new Set<string>(), "all", "all");
+      const result = applyFilters(COUNTRIES, ["Nov"], ["Skiing"], "all");
       expect(result).toHaveLength(0);
     });
   });

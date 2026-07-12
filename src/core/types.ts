@@ -1,7 +1,3 @@
-export type TravelStyle = "touch-and-go" | "explorer" | "immersive";
-export type PlanStyle = "custom";
-export type VisitedFilter = "all" | "visited" | "unvisited";
-
 export type CityEntry = {
   name: string;
   lat: number;
@@ -76,7 +72,6 @@ export type Country = {
   avoid?: string[];
   combo?: string[];
   landmark?: string;
-  travelStyle?: TravelStyle[];
   cities?: CityEntry[];
   stopoverNote?: string;
   links?: { label: string; url: string }[];

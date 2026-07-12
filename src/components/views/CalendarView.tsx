@@ -21,13 +21,11 @@ const MONTH_FULL = [
 
 type Props = {
   countries: Country[];
-  onSelect: (c: Country) => void;
-  visitedNames: Set<string>;
-  selectedCountry: Country | null;
+  onPlanTrip: (names: string[]) => void;
   budgetBasis: BudgetBasis;
 };
 
-export default function CalendarView({ countries, onSelect, visitedNames, selectedCountry, budgetBasis }: Props) {
+export default function CalendarView({ countries, onPlanTrip, budgetBasis }: Props) {
   const nowIdx = new Date().getMonth();
   useBreakpoint(); // triggers re-render on breakpoint change for md: classes
   const [focusedRow, setFocusedRow] = useState(-1);
@@ -71,10 +69,10 @@ export default function CalendarView({ countries, onSelect, visitedNames, select
     (e: React.KeyboardEvent, rowIdx: number) => {
       if (e.key === "ArrowDown") { e.preventDefault(); setFocusedRow(Math.min(rowIdx + 1, countries.length - 1)); }
       else if (e.key === "ArrowUp") { e.preventDefault(); setFocusedRow(Math.max(rowIdx - 1, 0)); }
-      else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelect(countries[rowIdx]); }
+      else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onPlanTrip([countries[rowIdx].name]); }
       else if (e.key === "Escape") { setFiltersOpen(false); }
     },
-    [countries, onSelect],
+    [countries, onPlanTrip],
   );
 
   // Auto-focus row when focusedRow changes via keyboard
@@ -285,13 +283,13 @@ export default function CalendarView({ countries, onSelect, visitedNames, select
 
         {/* Table */}
         <div className="flex-1 overflow-auto">
-          <CalendarTable filtered={filtered} compact={false} nowIdx={nowIdx} selectedCountry={selectedCountry} focusedRow={focusedRow} visitedNames={visitedNames} filterMonths={filterMonths} budgetBasis={budgetBasis} onSelect={onSelect} handleKeyDown={handleKeyDown} setFocusedRow={setFocusedRow} tbodyRef={tbodyRef} colWidth={desktopColWidth} onColResize={setDesktopColWidth} onClearFilters={clearAll} />
+          <CalendarTable filtered={filtered} compact={false} nowIdx={nowIdx} focusedRow={focusedRow} filterMonths={filterMonths} budgetBasis={budgetBasis} onPlanTrip={onPlanTrip} handleKeyDown={handleKeyDown} setFocusedRow={setFocusedRow} tbodyRef={tbodyRef} colWidth={desktopColWidth} onColResize={setDesktopColWidth} onClearFilters={clearAll} />
         </div>
       </div>
 
       {/* ─── MOBILE TABLE ─── */}
       <div className="md:hidden flex-1 overflow-auto pb-safe">
-        <CalendarTable filtered={filtered} compact={true} nowIdx={nowIdx} selectedCountry={selectedCountry} focusedRow={focusedRow} visitedNames={visitedNames} filterMonths={filterMonths} budgetBasis={budgetBasis} onSelect={onSelect} handleKeyDown={handleKeyDown} setFocusedRow={setFocusedRow} tbodyRef={tbodyRef} colWidth={mobileColWidth} onColResize={setMobileColWidth} onClearFilters={clearAll} />
+        <CalendarTable filtered={filtered} compact={true} nowIdx={nowIdx} focusedRow={focusedRow} filterMonths={filterMonths} budgetBasis={budgetBasis} onPlanTrip={onPlanTrip} handleKeyDown={handleKeyDown} setFocusedRow={setFocusedRow} tbodyRef={tbodyRef} colWidth={mobileColWidth} onColResize={setMobileColWidth} onClearFilters={clearAll} />
       </div>
     </div>
   );
@@ -299,17 +297,15 @@ export default function CalendarView({ countries, onSelect, visitedNames, select
 
 /* ── Table component (shared between mobile and desktop) ── */
 function CalendarTable({
-  filtered, compact, nowIdx, selectedCountry, focusedRow, visitedNames, filterMonths, budgetBasis, onSelect, handleKeyDown, setFocusedRow, tbodyRef, colWidth, onColResize, onClearFilters,
+  filtered, compact, nowIdx, focusedRow, filterMonths, budgetBasis, onPlanTrip, handleKeyDown, setFocusedRow, tbodyRef, colWidth, onColResize, onClearFilters,
 }: {
   filtered: Country[];
   compact: boolean;
   nowIdx: number;
-  selectedCountry: Country | null;
   focusedRow: number;
-  visitedNames: Set<string>;
   filterMonths: string[];
   budgetBasis: BudgetBasis;
-  onSelect: (c: Country) => void;
+  onPlanTrip: (names: string[]) => void;
   handleKeyDown: (e: React.KeyboardEvent, idx: number) => void;
   setFocusedRow: (idx: number) => void;
   tbodyRef: React.RefObject<HTMLTableSectionElement | null>;
@@ -403,8 +399,6 @@ function CalendarTable({
           </tr>
         ) : (
           filtered.map((country, rowIdx) => {
-            const isVisited = visitedNames.has(country.name);
-            const isSelected = selectedCountry?.name === country.name;
             const isFocused = focusedRow === rowIdx;
             const stripe = rowIdx % 2 === 0 ? "bg-white" : "bg-gray-50";
 
@@ -413,16 +407,12 @@ function CalendarTable({
                 key={country.name}
                 tabIndex={0}
                 role="row"
-                aria-selected={isSelected}
-                onClick={() => onSelect(country)}
+                title={`Plan a trip to ${country.name}`}
+                onClick={() => onPlanTrip([country.name])}
                 onKeyDown={(e) => handleKeyDown(e, rowIdx)}
                 onFocus={() => setFocusedRow(rowIdx)}
                 className={`cursor-pointer group transition-colors ${
-                  isSelected
-                    ? "!bg-blue-50 ring-1 ring-inset ring-blue-200"
-                    : isFocused
-                    ? "!bg-blue-50"
-                    : ""
+                  isFocused ? "!bg-blue-50" : ""
                 } focus-ring`}
               >
                 {/* Country name — sticky, fully opaque bg prevents color bleed */}
@@ -430,9 +420,7 @@ function CalendarTable({
                   className={`sticky left-0 z-10 border-b border-r border-gray-100 ${
                     compact ? "px-2.5 py-2" : "px-4 py-2.5"
                   } ${
-                    isSelected
-                      ? "bg-blue-50"
-                      : isFocused
+                    isFocused
                       ? "bg-blue-50"
                       : `${stripe} group-hover:bg-gray-100`
                   }`}
@@ -440,25 +428,16 @@ function CalendarTable({
                 >
                   <div className={`flex items-center ${compact ? "gap-1.5" : "gap-2"}`}>
                     {!compact && (
-                      <span
-                        className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 ${
-                          isVisited
-                            ? "bg-emerald-100 text-emerald-600"
-                            : "bg-gray-100 text-gray-400"
-                        }`}
-                      >
-                        {isVisited ? "✓" : country.name[0]}
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 bg-gray-100 text-gray-400">
+                        {country.name[0]}
                       </span>
                     )}
                     <div className="min-w-0">
                       <p
-                        className={`font-semibold leading-tight truncate ${
+                        className={`font-semibold leading-tight truncate text-gray-800 ${
                           compact ? "text-[11px]" : "text-xs"
-                        } ${isVisited ? "text-emerald-800" : "text-gray-800"}`}
+                        }`}
                       >
-                        {compact && isVisited && (
-                          <span className="text-emerald-500 mr-0.5">✓ </span>
-                        )}
                         {country.name}
                       </p>
                       {country.budget && (

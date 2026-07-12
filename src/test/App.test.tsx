@@ -11,6 +11,7 @@ const COUNTRY_NAMES = {
   JAPAN: "Japan",
   BRAZIL: "Brazil",
   CHILE: "Chile",
+  PERU: "Peru",
 } as const;
 
 const ROUTES = {
@@ -30,13 +31,13 @@ const TEST_IDS = {
   TRIPS_VIEW: "trips-view",
   CALENDAR_VIEW: "calendar-view",
   DISCOVER_VIEW: "discover-view",
-  SELECTED_COUNTRY: "selected-country",
-  COUNTRY_PANEL_CLOSE: "country-panel-close",
   CALENDAR_SELECT_COUNTRY: "calendar-select-country",
   CALENDAR_COUNT: "calendar-count",
   TRIPS_COUNT: "trips-count",
   DISCOVER_ADD_COUNTRY: "discover-add-country",
   DISCOVER_REMOVE_COUNTRY: "discover-remove-country",
+  DISCOVER_PLAN_TRIP: "discover-plan-trip",
+  DISCOVER_PLAN_UNKNOWN: "discover-plan-unknown",
 } as const;
 
 const FOOD_EXPERIENCE = "Food";
@@ -67,19 +68,12 @@ const brazil: Country = {
   experiences: ["Beach"],
 };
 
-let lastCountryPanelProps: Record<string, unknown> | null = null;
+let lastPlanViewProps: Record<string, unknown> | null = null;
 
-const addToListMock = vi.fn();
-const removeFromListMock = vi.fn();
-const saveCountryMock = vi.fn();
-const deleteCountryMock = vi.fn();
+const recordPlannedMock = vi.fn();
 const updateNotesMock = vi.fn();
-const visitedToggleMock = vi.fn();
-const favoritesToggleMock = vi.fn();
 
-const visitedSet = new Set<string>();
-const favoritesSet = new Set<string>();
-const myListSet = new Set<string>([japan.name, brazil.name]);
+const recentsSet = new Set<string>([japan.name, brazil.name]);
 
 vi.mock("@/components/views/MapView.tsx", () => ({
   default: () => <div data-testid="map-view" />,
@@ -103,16 +97,16 @@ vi.mock("@/components/views/MyTripsView.tsx", () => ({
 vi.mock("@/components/views/CalendarView.tsx", () => ({
   default: (props: Record<string, unknown>) => {
     const countries = (props.countries as Country[]) ?? [];
-    const onSelect = props.onSelect as ((c: Country) => void) | undefined;
+    const onPlanTrip = props.onPlanTrip as ((names: string[]) => void) | undefined;
     return (
       <div data-testid="calendar-view">
         <div data-testid={TEST_IDS.CALENDAR_COUNT}>{countries.length}</div>
         <button
           type="button"
           data-testid={TEST_IDS.CALENDAR_SELECT_COUNTRY}
-          onClick={() => onSelect?.(countries[0])}
+          onClick={() => onPlanTrip?.([countries[0].name])}
         >
-          Select calendar country
+          Plan calendar country
         </button>
       </div>
     );
@@ -121,24 +115,23 @@ vi.mock("@/components/views/CalendarView.tsx", () => ({
 
 vi.mock("@/components/views/DiscoverView.tsx", () => ({
   default: (props: Record<string, unknown>) => {
-    const onAddToList = props.onAddToList as ((name: string) => void) | undefined;
-    const onRemoveFromList = props.onRemoveFromList as ((name: string) => void) | undefined;
+    const onPlanTrip = props.onPlanTrip as ((names: string[]) => void) | undefined;
     return (
       <div data-testid={TEST_IDS.DISCOVER_VIEW}>
         Discover View
         <button
           type="button"
-          data-testid={TEST_IDS.DISCOVER_ADD_COUNTRY}
-          onClick={() => onAddToList?.(COUNTRY_NAMES.CHILE)}
+          data-testid={TEST_IDS.DISCOVER_PLAN_TRIP}
+          onClick={() => onPlanTrip?.([COUNTRY_NAMES.JAPAN, COUNTRY_NAMES.PERU])}
         >
-          Add {COUNTRY_NAMES.CHILE}
+          Plan Discover trip
         </button>
         <button
           type="button"
-          data-testid={TEST_IDS.DISCOVER_REMOVE_COUNTRY}
-          onClick={() => onRemoveFromList?.(COUNTRY_NAMES.JAPAN)}
+          data-testid={TEST_IDS.DISCOVER_PLAN_UNKNOWN}
+          onClick={() => onPlanTrip?.(["Atlantis"])}
         >
-          Remove {COUNTRY_NAMES.JAPAN}
+          Plan unknown trip
         </button>
       </div>
     );
@@ -149,17 +142,12 @@ vi.mock("@/components/shared/DevFlagPanel.tsx", () => ({
   default: () => <div data-testid="dev-flag-panel" />,
 }));
 
-vi.mock("@/components/country/CountryPanel.tsx", () => ({
+vi.mock("@/components/views/plan/PlanView.tsx", () => ({
   default: (props: Record<string, unknown>) => {
-    lastCountryPanelProps = props;
-    const country = props.country as Country | null;
-    const onClose = props.onClose as (() => void) | undefined;
+    lastPlanViewProps = props;
     return (
-      <div data-testid="country-panel">
-      <div data-testid={TEST_IDS.SELECTED_COUNTRY}>{country?.name ?? "none"}</div>
-      <button type="button" data-testid={TEST_IDS.COUNTRY_PANEL_CLOSE} onClick={() => onClose?.()}>
-          Close
-        </button>
+      <div data-testid="plan-view">
+        <h1>Where do you plan to go next?</h1>
       </div>
     );
   },
@@ -167,20 +155,6 @@ vi.mock("@/components/country/CountryPanel.tsx", () => ({
 
 vi.mock("@/components/shared/FreTour.tsx", () => ({
   default: () => null,
-}));
-
-vi.mock("@/components/country/CountryForm.tsx", () => ({
-  default: (props: Record<string, unknown>) => {
-    const initial = props.initial as Country;
-    const onSave = props.onSave as ((c: Country) => void) | undefined;
-    const onClose = props.onClose as (() => void) | undefined;
-    return (
-      <div data-testid="country-form">
-        <button type="button" data-testid="form-save" onClick={() => onSave?.({ ...initial, budget: "₹3L" })}>Save</button>
-        <button type="button" data-testid="form-close" onClick={() => onClose?.()}>Close</button>
-      </div>
-    );
-  },
 }));
 
 vi.mock("@/components/ai/ChatModal.tsx", () => ({
@@ -240,16 +214,15 @@ vi.mock("@/hooks/useCountryStore.ts", () => ({
     allCountries: [japan, brazil],
     myListCountries: [japan, brazil],
     myListNames: [japan.name, brazil.name],
-    visited: { set: visitedSet, toggle: visitedToggleMock },
-    favorites: { set: favoritesSet, toggle: favoritesToggleMock },
-    myList: { set: myListSet, add: addToListMock, remove: removeFromListMock },
-    saveCountry: saveCountryMock,
-    deleteCountry: deleteCountryMock,
+    recents: [japan.name, brazil.name],
+    recentsSet,
+    recordPlanned: recordPlannedMock,
     updateNotes: updateNotesMock,
-    addToList: addToListMock,
+    reload: vi.fn(),
     catalog: [
       { name: japan.name, lat: japan.lat, lng: japan.lng, region: "Asia" },
       { name: brazil.name, lat: brazil.lat, lng: brazil.lng, region: "Americas" },
+      { name: COUNTRY_NAMES.PERU, lat: -12, lng: -77, region: "Americas" },
     ],
   }),
 }));
@@ -277,7 +250,7 @@ vi.mock("@/core/featureFlags.ts", () => ({
 describe("App orchestration", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    lastCountryPanelProps = null;
+    lastPlanViewProps = null;
     vi.mocked(isEnabled).mockImplementation(() => false);
   });
 
@@ -311,123 +284,89 @@ describe("App orchestration", () => {
     expect(window.location.hash).toBe("#plan");
   });
 
-  it("wires country selection from Calendar into CountryPanel", async () => {
+  it("routes Calendar taps into the Plan intake", async () => {
     const user = userEvent.setup();
     render(<App />);
 
-    expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent("none");
-
     await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
     await user.click(screen.getByTestId(TEST_IDS.CALENDAR_SELECT_COUNTRY));
-    expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent(COUNTRY_NAMES.JAPAN);
 
-    await user.click(screen.getByTestId(TEST_IDS.COUNTRY_PANEL_CLOSE));
-    expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent("none");
+    expect(await screen.findByTestId("plan-view")).toBeInTheDocument();
+    expect(window.location.hash).toBe("#plan");
+    const intake = lastPlanViewProps?.intake as { countries: Country[] } | null;
+    expect(intake?.countries[0]?.name).toBe(COUNTRY_NAMES.JAPAN);
   });
 
-  it("passes AI planning handlers to CountryPanel only when llmPlanning is enabled", () => {
+  it("passes AI planning handlers to PlanView only when llmPlanning is enabled", () => {
     vi.mocked(isEnabled).mockImplementation((flag) => flag === "llmPlanning");
     render(<App />);
 
-    expect(lastCountryPanelProps?.onPlanWithAi).toBeTypeOf("function");
-    expect(lastCountryPanelProps?.aiPlans).toEqual([]);
-    expect(lastCountryPanelProps?.onDeleteAiPlan).toBeTypeOf("function");
+    expect(lastPlanViewProps?.onPlanWithAi).toBeTypeOf("function");
+    expect(lastPlanViewProps?.aiPlanCountFor).toBeTypeOf("function");
   });
 
-  it("hides AI planning handlers on CountryPanel when llmPlanning is disabled", () => {
+  it("hides AI planning handlers on PlanView when llmPlanning is disabled", () => {
     vi.mocked(isEnabled).mockImplementation(() => false);
     render(<App />);
 
-    expect(lastCountryPanelProps?.onPlanWithAi).toBeUndefined();
-    expect(lastCountryPanelProps?.aiPlans).toBeUndefined();
-    expect(lastCountryPanelProps?.onDeleteAiPlan).toBeUndefined();
+    expect(lastPlanViewProps?.onPlanWithAi).toBeUndefined();
+    expect(lastPlanViewProps?.aiPlanCountFor).toBeUndefined();
   });
 
-  it("wires Discover add/remove actions to country store callbacks", async () => {
+  it("seeds the Plan intake from a Discover trip selection, resolving catalog-only stubs", async () => {
     const user = userEvent.setup();
     render(<App />);
 
     await user.click(navButton(NAV_TOUR_IDS.DISCOVER));
-    await user.click(screen.getByTestId(TEST_IDS.DISCOVER_ADD_COUNTRY));
-    await user.click(screen.getByTestId(TEST_IDS.DISCOVER_REMOVE_COUNTRY));
+    await user.click(screen.getByTestId(TEST_IDS.DISCOVER_PLAN_TRIP));
 
-    expect(addToListMock).toHaveBeenCalledWith(COUNTRY_NAMES.CHILE);
-    expect(removeFromListMock).toHaveBeenCalledWith(COUNTRY_NAMES.JAPAN);
+    expect(await screen.findByTestId("plan-view")).toBeInTheDocument();
+    expect(window.location.hash).toBe("#plan");
+    const intake = lastPlanViewProps?.intake as { countries: Country[] } | null;
+    expect(intake?.countries.map((c) => c.name)).toEqual([COUNTRY_NAMES.JAPAN, COUNTRY_NAMES.PERU]);
+  });
+
+  it("ignores a Plan intake when no names resolve to a destination", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(navButton(NAV_TOUR_IDS.DISCOVER));
+    await user.click(screen.getByTestId(TEST_IDS.DISCOVER_PLAN_UNKNOWN));
+
+    // Unresolved intake never leaves the Discover view.
+    expect(screen.getByTestId(TEST_IDS.DISCOVER_VIEW)).toBeInTheDocument();
+    expect(window.location.hash).toBe(ROUTES.DISCOVER);
   });
 });
 
 describe("App handler wiring", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    lastCountryPanelProps = null;
+    lastPlanViewProps = null;
     vi.mocked(isEnabled).mockImplementation(() => false);
   });
 
-  async function selectJapan(user: ReturnType<typeof userEvent.setup>) {
-    await user.click(navButton(NAV_TOUR_IDS.CALENDAR));
-    await user.click(await screen.findByTestId(TEST_IDS.CALENDAR_SELECT_COUNTRY));
-    expect(screen.getByTestId(TEST_IDS.SELECTED_COUNTRY)).toHaveTextContent(COUNTRY_NAMES.JAPAN);
-  }
-
-  it("saves note edits through the country store and keeps the panel in sync", async () => {
-    const user = userEvent.setup();
+  it("wires store-backed handlers into PlanView", async () => {
     render(<App />);
-    await selectJapan(user);
+    await screen.findByTestId("plan-view");
 
-    await act(async () => {
-      (lastCountryPanelProps?.onUpdateNotes as (n: string) => void)("Bring a jacket");
+    act(() => {
+      (lastPlanViewProps?.onUpdateNotes as (name: string, n: string) => void)(COUNTRY_NAMES.JAPAN, "Bring a jacket");
+      (lastPlanViewProps?.onRecordPlanned as (names: string[]) => void)([COUNTRY_NAMES.JAPAN]);
     });
 
     expect(updateNotesMock).toHaveBeenCalledWith(COUNTRY_NAMES.JAPAN, "Bring a jacket");
-  });
-
-  it("toggles favorite and visited state via the store", async () => {
-    const user = userEvent.setup();
-    render(<App />);
-    await selectJapan(user);
-
-    act(() => {
-      (lastCountryPanelProps?.onToggleFavorite as () => void)();
-      (lastCountryPanelProps?.onToggleVisited as () => void)();
-    });
-
-    expect(favoritesToggleMock).toHaveBeenCalledWith(COUNTRY_NAMES.JAPAN);
-    expect(visitedToggleMock).toHaveBeenCalledWith(COUNTRY_NAMES.JAPAN);
-  });
-
-  it("resolveCountry returns tracked countries and null for unknown names", async () => {
-    const user = userEvent.setup();
-    render(<App />);
-    await selectJapan(user);
-
-    const resolve = lastCountryPanelProps?.resolveCountry as (n: string) => Country | null;
-    expect(resolve(COUNTRY_NAMES.JAPAN)?.name).toBe(COUNTRY_NAMES.JAPAN);
-    expect(resolve("Atlantis")).toBeNull();
-  });
-
-  it("opens the edit form and persists edits via handleSave", async () => {
-    const user = userEvent.setup();
-    render(<App />);
-    await selectJapan(user);
-
-    act(() => {
-      (lastCountryPanelProps?.onEdit as () => void)();
-    });
-
-    await user.click(await screen.findByTestId("form-save"));
-
-    expect(saveCountryMock).toHaveBeenCalledWith(expect.objectContaining({ name: COUNTRY_NAMES.JAPAN, budget: "₹3L" }));
-    expect(screen.queryByTestId("country-form")).not.toBeInTheDocument();
+    expect(recordPlannedMock).toHaveBeenCalledWith([COUNTRY_NAMES.JAPAN]);
   });
 
   it("routes Plan-with-AI into the chat modal, then imports a plan and saves it to the list", async () => {
     const user = userEvent.setup();
     vi.mocked(isEnabled).mockImplementation((flag) => flag === "llmPlanning");
     render(<App />);
-    await selectJapan(user);
+    await screen.findByTestId("plan-view");
 
     act(() => {
-      (lastCountryPanelProps?.onPlanWithAi as (n: string) => void)(COUNTRY_NAMES.JAPAN);
+      (lastPlanViewProps?.onPlanWithAi as (n: string) => void)(COUNTRY_NAMES.JAPAN);
     });
 
     const chat = await screen.findByTestId("chat-modal");
@@ -439,7 +378,7 @@ describe("App handler wiring", () => {
 
     expect(await screen.findByTestId("ai-dest")).toHaveTextContent("Chile");
     await user.click(screen.getByTestId("ai-save-to-list"));
-    expect(addToListMock).toHaveBeenCalledWith("Chile");
+    expect(recordPlannedMock).toHaveBeenCalledWith(["Chile"]);
   });
 
   it("surfaces a cross-tab storage conflict banner and dismisses it", async () => {

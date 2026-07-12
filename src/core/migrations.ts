@@ -10,7 +10,7 @@ import type { StoragePort } from "./ports/StoragePort";
  * existed is defined as v1, so pre-versioning stores are simply stamped as v1
  * (no data transform needed).
  */
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 
 export interface Migration {
   /** Target version this migration upgrades the persisted data TO. */
@@ -26,10 +26,20 @@ export interface Migration {
  * its `version`. APPEND new migrations only — never renumber or reorder, and
  * never drop an entry, or older stores will skip a step.
  *
- * Empty today: the current shapes are the v1 baseline, so pre-versioning data
- * is already v1-shaped and needs no transform.
+ * v2: country-level Favorite/Visited were retired (My List became implicit
+ * Recents). Delete the now-dead `tp_visited` / `tp_favorites` keys so they stop
+ * lingering in storage and in backups.
  */
-export const MIGRATIONS: Migration[] = [];
+export const MIGRATIONS: Migration[] = [
+  {
+    version: 2,
+    description: "Remove retired country-level visited/favorites keys",
+    migrate: (storage) => {
+      storage.removeItem("tp_visited");
+      storage.removeItem("tp_favorites");
+    },
+  },
+];
 
 /** Read the persisted schema version. Returns 0 when never stamped/invalid. */
 export function readStoredVersion(storage: StoragePort): number {

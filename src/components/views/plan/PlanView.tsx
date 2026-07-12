@@ -49,7 +49,6 @@ const SAVE_SETTLE_MS = 2500;
 
 type Props = {
   countries: Country[];
-  visitedNames: Set<string>;
   budgetBasis: BudgetBasis;
   setBudgetBasis: (b: BudgetBasis) => void;
   homeCountry: string;
@@ -61,15 +60,18 @@ type Props = {
   /** Toggle the saved trip's favourite by route signature (acts on the trip). */
   onToggleTripFavorite?: (routeName: string) => void;
   onPlanWithAi?: (countryName: string) => void;
-  /** Feature actions shared with the Country Panel, threaded by destination name. */
-  onToggleVisited?: (name: string) => void;
-  favoriteNames?: Set<string>;
-  onToggleFavorite?: (name: string) => void;
+  /** Record destinations as "recently planned" (implicit My List) when they
+   *  enter the funnel. Pre-bound in App to the country store. */
+  onRecordPlanned?: (names: string[]) => void;
   onUpdateNotes?: (name: string, notes: string) => void;
   aiPlanCountFor?: (name: string) => number;
   /** Open a saved route in the wizard (jumps to Review) and rehydrate each stop's
    *  snapshot cities + length. Bump `nonce` to re-open. */
   openTrip?: OpenTripRequest | null;
+  /** Start a fresh plan from a picked destination set (Discover tray / Calendar
+   *  tap). Resolves into the ordered selection and jumps to Basics. Bump `nonce`
+   *  to re-trigger the same set. */
+  intake?: { countries: Country[]; nonce: number } | null;
   /** Resolve a saved trip for a picked country set (resume-vs-fresh prompt). */
   matchSavedTrip?: (countries: string[]) => SavedTrip | null;
   /** Shared always-mounted MapView the cinematic overlay animates over. */
@@ -95,7 +97,7 @@ const STEP_META: Record<StepKey, StepMeta> = {
  * is inferred behind the scenes and tunable on Review; cities are a result you
  * edit, never a filter that fights vibe.
  */
-export default function PlanView({ countries, visitedNames, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onToggleVisited, favoriteNames, onToggleFavorite, onUpdateNotes, aiPlanCountFor, openTrip, matchSavedTrip, mainMapRef, onCinematicChange }: Props) {
+export default function PlanView({ countries, budgetBasis, setBudgetBasis, homeCountry, onGoDiscover, onSaveTrip, isTripFavorite, onToggleTripFavorite, onPlanWithAi, onRecordPlanned, onUpdateNotes, aiPlanCountFor, openTrip, intake, matchSavedTrip, mainMapRef, onCinematicChange }: Props) {
   // Rehydrate a saved draft once so a refresh resumes where the user left off.
   const draft0 = useRef(loadPlanDraft()).current;
   const multiCountry = isEnabled("multiCountryPlanning");
@@ -240,7 +242,18 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
     }
     setSelection(chosen);
     setStepIndex(0);
-  }, [matchSavedTrip, confirmResume]);
+    onRecordPlanned?.(chosen.map((c) => c.name));
+  }, [matchSavedTrip, confirmResume, onRecordPlanned]);
+
+  // Discover tray / Calendar tap → start a fresh plan from the picked set. Runs
+  // the same resume-vs-fresh flow as the landing picker, once per nonce.
+  const lastIntakeNonce = useRef<number | null>(null);
+  useEffect(() => {
+    if (!intake || intake.nonce === lastIntakeNonce.current) return;
+    lastIntakeNonce.current = intake.nonce;
+    if (intake.countries.length === 0) return;
+    void handleStartSelection(intake.countries);
+  }, [intake, handleStartSelection]);
 
   // Active country on the Places step — lifted here so the header's country
   // switcher and the Places body stay in lock-step (single source of truth).
@@ -479,8 +492,6 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
           source={source}
           countries={countries}
           exploreCountries={exploreCountries}
-          visitedNames={visitedNames}
-          favoriteNames={favoriteNames}
           onStart={handleStartSelection}
           onGoDiscover={onGoDiscover}
           multiSelect={multiCountry}
@@ -527,12 +538,7 @@ export default function PlanView({ countries, visitedNames, budgetBasis, setBudg
 
   // Country-bound feature actions shared by the header, right rail, and pane.
   const activeName = displayCountry?.name ?? picked.name;
-  const isVisited = visitedNames.has(activeName);
   const planActions: PlanActions = {
-    isVisited,
-    onToggleVisited: onToggleVisited ? () => onToggleVisited(activeName) : undefined,
-    isFavorite: favoriteNames?.has(activeName) ?? false,
-    onToggleFavorite: onToggleFavorite ? () => onToggleFavorite(activeName) : undefined,
     aiPlanCount: aiPlanCountFor?.(activeName) ?? 0,
     notes: displayCountry?.notes ?? "",
     onSaveNotes: onUpdateNotes ? (notes: string) => onUpdateNotes(activeName, notes) : undefined,

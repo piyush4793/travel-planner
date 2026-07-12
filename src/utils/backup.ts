@@ -28,8 +28,6 @@ const CURRENT_BACKUP_VERSION = 1;
 // Keys to include in full backup (exclude backup-meta keys themselves)
 const BACKUP_KEYS = [
   LS_KEYS.MY_LIST,
-  LS_KEYS.VISITED,
-  LS_KEYS.FAVORITES,
   LS_KEYS.CUSTOMS,
   LS_KEYS.DELETED,
   LS_KEYS.HOME_COUNTRY,
@@ -61,8 +59,6 @@ const isSavedTripArray = (v: unknown): boolean =>
 
 const BACKUP_VALIDATORS: Record<string, (v: unknown) => boolean> = {
   [LS_KEYS.MY_LIST]: isStringArray,
-  [LS_KEYS.VISITED]: isStringArray,
-  [LS_KEYS.FAVORITES]: isStringArray,
   [LS_KEYS.CUSTOMS]: isNamedObjectArray,
   [LS_KEYS.DELETED]: isStringArray,
   [LS_KEYS.HOME_COUNTRY]: (v) => typeof v === "string",
@@ -241,7 +237,7 @@ export function importFullBackup(file: File): Promise<{ ok: boolean; msg: string
 
 const CSV_COLUMNS = [
   "name", "region", "lat", "lng", "bestMonths", "worstMonths",
-  "budget", "experiences", "travelStyle", "combo", "avoid",
+  "budget", "experiences", "combo", "avoid",
   "landmark", "stopoverNote", "notes", "cities",
 ] as const;
 
@@ -328,7 +324,6 @@ function rowToCountry(headers: string[], row: string[]): Country {
 
   const region = get("region"); if (region) country.region = region;
   const worstMonths = getArray("worstmonths"); if (worstMonths.length) country.worstMonths = worstMonths;
-  const travelStyle = getArray("travelstyle"); if (travelStyle.length) country.travelStyle = travelStyle as Country["travelStyle"];
   const combo = getArray("combo"); if (combo.length) country.combo = combo;
   const avoid = getArray("avoid"); if (avoid.length) country.avoid = avoid;
   const landmark = get("landmark"); if (landmark) country.landmark = landmark;

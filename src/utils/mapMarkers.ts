@@ -7,10 +7,9 @@
 type RectLike = { left: number; top: number; width: number };
 
 // Compose the marker element's class list from destination state.
-export function markerClassName(isVisited: boolean, isCombo: boolean): string {
+export function markerClassName(isCombo: boolean): string {
   return [
     "travel-marker",
-    isVisited ? "travel-marker--visited" : "",
     isCombo ? "travel-marker--combo" : "",
   ]
     .filter(Boolean)
@@ -21,10 +20,10 @@ export function markerClassName(isVisited: boolean, isCombo: boolean): string {
 // keyboard-focusable button role, labelled by the destination name.
 export function buildMarkerElement(
   name: string,
-  opts: { isVisited: boolean; isCombo: boolean },
+  opts: { isCombo: boolean },
 ): HTMLDivElement {
   const el = document.createElement("div");
-  el.className = markerClassName(opts.isVisited, opts.isCombo);
+  el.className = markerClassName(opts.isCombo);
   const label = document.createElement("span");
   label.textContent = name[0] ?? "";
   el.replaceChildren(label);

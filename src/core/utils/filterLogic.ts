@@ -1,4 +1,4 @@
-import type { Country, VisitedFilter } from "../types";
+import type { Country } from "../types";
 import { expandMonth } from "./months";
 import { budgetForBasis, parseBudgetRange, DEFAULT_BUDGET_BASIS, type BudgetBasis } from "./budget";
 
@@ -15,16 +15,6 @@ export function filterByMonth(countries: Country[], months: string[]): Country[]
 export function filterByExperiences(countries: Country[], tags: string[]): Country[] {
   if (tags.length === 0) return countries;
   return countries.filter((c) => tags.every((tag) => c.experiences.includes(tag)));
-}
-
-export function filterByVisited(
-  countries: Country[],
-  visited: Set<string>,
-  show: VisitedFilter
-): Country[] {
-  if (show === "visited") return countries.filter((c) => visited.has(c.name));
-  if (show === "unvisited") return countries.filter((c) => !visited.has(c.name));
-  return countries;
 }
 
 export type BudgetTier = "all" | "budget" | "mid" | "premium";
@@ -52,17 +42,11 @@ export function applyFilters(
   countries: Country[],
   month: string[],
   experiences: string[],
-  visited: Set<string>,
-  visitedFilter: VisitedFilter,
   budget: BudgetTier,
   budgetBasis: BudgetBasis = DEFAULT_BUDGET_BASIS,
 ): Country[] {
   return filterByBudget(
-    filterByVisited(
-      filterByExperiences(filterByMonth(countries, month), experiences),
-      visited,
-      visitedFilter
-    ),
+    filterByExperiences(filterByMonth(countries, month), experiences),
     budget,
     budgetBasis,
   );

@@ -14,7 +14,6 @@ export type ConsolidatedCountry = {
   avoid: string[];
   combo: string[];
   landmark: string | null;
-  travelStyle: string[];
   stopoverNote: string | null;
   links: { label: string; url: string }[];
   cities: { name: string; lat: number; lng: number; bestMonths?: string[]; worstMonths?: string[]; notes?: string; experiences?: string[] }[];

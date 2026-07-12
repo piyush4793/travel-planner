@@ -5,10 +5,6 @@
  * scope-aware seam ready for the future multi-country trip composite.
  */
 export type PlanActions = {
-  isVisited: boolean;
-  onToggleVisited?: () => void;
-  isFavorite: boolean;
-  onToggleFavorite?: () => void;
   aiPlanCount: number;
   notes: string;
   onSaveNotes?: (notes: string) => void;

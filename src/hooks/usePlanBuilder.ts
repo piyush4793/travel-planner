@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { Country, CityEntry, TravelStyle } from "../core/types";
+import type { Country, CityEntry } from "../core/types";
 import type { CountryRule } from "../core/data/itineraryRules";
 import {
   getMaxRuleDays,
@@ -20,7 +20,6 @@ export interface PlanBuilder {
   maxDays: number;
   recDays: number;
   safeMaxDays: number;
-  primaryStyle: TravelStyle | undefined;
   selectedCities: string[];
   selectedExperiences: string[];
   customDays: number;
@@ -94,7 +93,6 @@ export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis
     () => (country ? mergeCountryData(country, consolidated) : null),
     [country, consolidated],
   );
-  const primaryStyle = displayCountry?.travelStyle?.[0];
 
   // Reset the funnel when switching destinations — but not on the first mount for
   // the initial country, so a rehydrated draft survives a page refresh.
@@ -116,14 +114,13 @@ export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis
     () =>
       recommendedDaysForSelection({
         rule,
-        style: primaryStyle,
         recDays,
         maxDays: safeMaxDays,
         selectedCities,
         selectedExperiences,
         budgetTier,
       }),
-    [rule, primaryStyle, recDays, safeMaxDays, selectedCities, selectedExperiences, budgetTier],
+    [rule, recDays, safeMaxDays, selectedCities, selectedExperiences, budgetTier],
   );
 
   // Re-seed the day count from the recommendation until the user pins it.
@@ -223,7 +220,6 @@ export function usePlanBuilder(country: Country | null, budgetBasis: BudgetBasis
     maxDays,
     recDays,
     safeMaxDays,
-    primaryStyle,
     selectedCities,
     selectedExperiences,
     customDays,

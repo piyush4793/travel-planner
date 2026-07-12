@@ -10,7 +10,6 @@ const CalendarView = lazy(() => import("./components/views/CalendarView"));
 const DiscoverView = lazy(() => import("./components/views/DiscoverView"));
 const MyTripsView = lazy(() => import("./components/views/MyTripsView"));
 const PlanView = lazy(() => import("./components/views/plan/PlanView"));
-const CountryPanel = lazy(() => import("./components/country/CountryPanel"));
 import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
 import { useBudgetBasis } from "./hooks/useBudgetBasis";
 import { usePullToRefresh } from "./hooks/usePullToRefresh";
@@ -22,7 +21,6 @@ import { useSavedTrips } from "./hooks/useSavedTrips";
 import { findSavedTripForCountries, toOpenRequest, type OpenTripRequest, type SavedTrip } from "./core/utils/savedTrips";
 import { useAiPlanStore } from "./hooks/useAiPlanStore";
 import { useBreakpoint } from "./hooks/useBreakpoint";
-import { useBackDismiss } from "./hooks/useBackDismiss";
 import { useLifecyclePrompts } from "./hooks/useLifecyclePrompts";
 import LifecyclePromptToast from "./components/shared/LifecyclePromptToast";
 import { isEnabled } from "./core/featureFlags";
@@ -31,7 +29,6 @@ import AppInstallShare from "./components/shared/AppInstallShare";
 import { isBackupOverdue, autoBackupToTargetIfOverdue, hasAnyLocalData, canAutoImport, restoreFromTarget, backupToTarget } from "./utils/backup";
 
 // Lazy-load heavy modals/overlays — only fetched when first opened
-const CountryForm = lazy(() => import("./components/country/CountryForm"));
 const SettingsModal = lazy(() => import("./components/ai/SettingsModal"));
 const ChatModal = lazy(() => import("./components/ai/ChatModal"));
 const AiItineraryModal = lazy(() => import("./components/ai/AiItineraryModal"));
@@ -55,9 +52,6 @@ export default function App() {
   const [view, setView] = useHashView("plan");
   const [homeCountry, setHomeCountry] = useState(() => loadLS(LS_KEYS.HOME_COUNTRY, "India"));
   const { globalBasis, activeBasis, setGlobalBasis, setActiveBasis, reload: reloadBudgetBasis } = useBudgetBasis();
-  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
-  const closeCountryPanel = useBackDismiss(selectedCountry !== null, () => setSelectedCountry(null));
-  const [formTarget, setFormTarget] = useState<Country | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
   const [chatInitialPrompt, setChatInitialPrompt] = useState<string | undefined>();
@@ -156,7 +150,7 @@ export default function App() {
   // Disable the pull gesture while an overlay owns the screen, so its own
   // scrolling/gestures aren't hijacked.
   const overlayOpen =
-    selectedCountry !== null || formTarget !== null || settingsOpen ||
+    settingsOpen ||
     chatOpen || aiPlanResult !== null || cinematicActive;
   const { containerRef: pullRef, pullDistance, refreshing, threshold: pullThreshold } = usePullToRefresh({
     onRefresh: softRefresh,
@@ -166,10 +160,9 @@ export default function App() {
   // The hidden cinematic MapView shows every My List destination; the former
   // app-level Trips filters were retired along with the old Trips dashboard.
   const filtered = store.myListCountries;
-  const comboNames = selectedCountry?.combo ?? [];
 
-  // Resolve any country by name (My List → all seed/custom → catalog stub) so
-  // combine-with pills open even for destinations the user hasn't added yet.
+  // Resolve any country by name (My List → all seed/custom → catalog stub) so the
+  // Discover/Calendar "start a plan" intake can seed the Plan wizard's selection.
   const resolveCountry = useCallback((name: string): Country | null => {
     const tracked = store.myListCountries.find((c) => c.name === name)
       ?? store.allCountries.find((c) => c.name === name);
@@ -181,19 +174,18 @@ export default function App() {
     return null;
   }, [store.myListCountries, store.allCountries, store.catalog]);
 
-  const handleSave = useCallback((country: Country) => {
-    store.saveCountry(country);
-    setFormTarget(null);
-    setSelectedCountry(country);
-  }, [store]);
-
-  const handleUpdateNotes = useCallback((notes: string) => {
-    setSelectedCountry((current) => {
-      if (!current) return current;
-      store.updateNotes(current.name, notes);
-      return { ...current, notes: notes.trim() || undefined };
-    });
-  }, [store]);
+  // Start-a-plan intake from Discover (multi-select tray) or Calendar (tap a
+  // destination): resolve the picked names into the wizard's ordered selection
+  // and route to #plan. The nonce makes re-triggering the same set re-seed.
+  const [planIntake, setPlanIntake] = useState<{ countries: Country[]; nonce: number } | null>(null);
+  const handlePlanIntake = useCallback((names: string[]) => {
+    const resolved = names
+      .map((n) => resolveCountry(n))
+      .filter((c): c is Country => c !== null);
+    if (resolved.length === 0) return;
+    setPlanIntake({ countries: resolved, nonce: Date.now() });
+    setView("plan");
+  }, [resolveCountry, setView]);
 
   const handleAiPlanReady = useCallback((result: LLMTripPlanResult) => {
     setAiPlanResult(result);
@@ -214,24 +206,14 @@ export default function App() {
     setChatOpen(true);
   }, [store.myListCountries]);
 
-  const handleDeleteAiPlan = useCallback((planId: string) => {
-    if (!selectedCountry) return;
-    aiPlanStore.deletePlan(selectedCountry.name, planId);
-  }, [selectedCountry, aiPlanStore]);
-
-  const selectedCountryAiPlans = useMemo(() => {
-    if (!selectedCountry) return [];
-    return aiPlanStore.getPlans(selectedCountry.name);
-  }, [selectedCountry, aiPlanStore]);
-
   const aiPlanCountFor = useCallback(
     (name: string) => aiPlanStore.getPlans(name).length,
     [aiPlanStore],
   );
 
   const handleSaveAiToList = useCallback((destinationName: string): "saved" | "exists" => {
-    if (store.myList.set.has(destinationName)) return "exists";
-    store.addToList(destinationName);
+    if (store.recentsSet.has(destinationName)) return "exists";
+    store.recordPlanned([destinationName]);
     return "saved";
   }, [store]);
 
@@ -241,27 +223,20 @@ export default function App() {
   const dataFingerprint = useMemo(
     () =>
       store.myListCountries.length +
-      store.favorites.set.size +
-      store.visited.set.size +
       aiPlanStore.getAllDestinations().length,
-    [store.myListCountries.length, store.favorites.set, store.visited.set, aiPlanStore],
+    [store.myListCountries.length, aiPlanStore],
   );
   const handleLifecycleBackup = useCallback(async () => {
     await backupToTarget();
     setLastBackupAt(loadLS<string>(LS_KEYS.LAST_BACKUP, ""));
   }, []);
-  const isFavoriteName = useCallback((name: string) => store.favorites.set.has(name), [store.favorites.set]);
   const lifecycle = useLifecyclePrompts({
-    myListCount: store.myList.set.size,
     dataFingerprint,
     lastBackupAt,
-    isFavorite: isFavoriteName,
-    onToggleFavorite: store.favorites.toggle,
     onBackup: handleLifecycleBackup,
-    onExplore: () => setView("discover"),
   });
   const lifecycleOverlayOpen =
-    selectedCountry !== null || settingsOpen || chatOpen || aiPlanResult !== null || formTarget !== null;
+    settingsOpen || chatOpen || aiPlanResult !== null;
 
   return (
     <div className="flex flex-col h-viewport overflow-hidden bg-slate-50">
@@ -398,9 +373,6 @@ export default function App() {
           <Suspense fallback={<div className="flex items-center justify-center h-full"><span className="text-sm text-gray-400">Loading map…</span></div>}>
           <MapView
             countries={filtered}
-            onSelect={setSelectedCountry}
-            highlightedNames={comboNames}
-            visitedNames={store.visited.set}
             onMapReady={(m) => { mainMapRef.current = m; }}
           />
           </Suspense>
@@ -410,7 +382,6 @@ export default function App() {
         {view === "plan" ? (
           <PlanView
             countries={store.myListCountries}
-            visitedNames={store.visited.set}
             budgetBasis={activeBasis}
             setBudgetBasis={setActiveBasis}
             homeCountry={homeCountry}
@@ -419,12 +390,11 @@ export default function App() {
             isTripFavorite={(name) => savedTrips.savedTrips.some((t) => t.name === name && !!t.favorite)}
             onToggleTripFavorite={savedTrips.toggleFavoriteByName}
             onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
-            onToggleVisited={store.visited.toggle}
-            favoriteNames={store.favorites.set}
-            onToggleFavorite={store.favorites.toggle}
+            onRecordPlanned={store.recordPlanned}
             onUpdateNotes={store.updateNotes}
             aiPlanCountFor={isEnabled("llmPlanning") ? aiPlanCountFor : undefined}
             openTrip={planSeed}
+            intake={planIntake}
             matchSavedTrip={matchSavedTrip}
             mainMapRef={mainMapRef}
             onCinematicChange={setCinematicActive}
@@ -440,45 +410,15 @@ export default function App() {
         ) : view === "calendar" ? (
           <CalendarView
             countries={store.myListCountries}
-            onSelect={setSelectedCountry}
-            visitedNames={store.visited.set}
-            selectedCountry={selectedCountry}
+            onPlanTrip={handlePlanIntake}
             budgetBasis={activeBasis}
           />
         ) : (
           <DiscoverView
             catalog={store.catalog}
-            myListNames={store.myList.set}
-            onAddToList={store.addToList}
-            onRemoveFromList={store.myList.remove}
-            onAddMany={store.addManyToList}
-            onResetList={store.resetToDefaultList}
-            onSearchActivity={lifecycle.notifySearch}
+            onPlanTrip={handlePlanIntake}
           />
         )}
-        </Suspense>
-
-        <Suspense fallback={null}>
-        <CountryPanel
-          country={selectedCountry}
-          onClose={closeCountryPanel}
-          onSelectCountry={setSelectedCountry}
-          isFavorite={selectedCountry ? store.favorites.set.has(selectedCountry.name) : false}
-          onToggleFavorite={() => selectedCountry && store.favorites.toggle(selectedCountry.name)}
-          isVisited={selectedCountry ? store.visited.set.has(selectedCountry.name) : false}
-          onToggleVisited={() => selectedCountry && store.visited.toggle(selectedCountry.name)}
-          onEdit={() => selectedCountry && setFormTarget(selectedCountry)}
-          onUpdateNotes={handleUpdateNotes}
-          homeCountry={homeCountry}
-          budgetBasis={activeBasis}
-          mainMapRef={mainMapRef}
-          allCountries={store.myListCountries}
-          resolveCountry={resolveCountry}
-          onPlanWithAi={isEnabled("llmPlanning") ? handlePlanWithAi : undefined}
-          aiPlans={isEnabled("llmPlanning") ? selectedCountryAiPlans : undefined}
-          onDeleteAiPlan={isEnabled("llmPlanning") ? handleDeleteAiPlan : undefined}
-          onCinematicChange={setCinematicActive}
-        />
         </Suspense>
       </div>
 
@@ -516,14 +456,6 @@ export default function App() {
       )}
 
       <Suspense fallback={null}>
-        {formTarget !== null && (
-          <CountryForm
-            initial={formTarget}
-            onSave={handleSave}
-            onClose={() => setFormTarget(null)}
-          />
-        )}
-
         {settingsOpen && (
           <SettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} onOpenChat={() => { setChatInitialPrompt(undefined); setChatOpen(true); }} countries={store.myListCountries} homeCountry={homeCountry} onHomeCountryChange={setHomeCountry} budgetBasis={globalBasis} onBudgetBasisChange={setGlobalBasis} />
         )}
@@ -544,15 +476,15 @@ export default function App() {
             result={aiPlanResult}
             onClose={() => setAiPlanResult(null)}
             onSaveToList={
-              store.myList.set.has(aiPlanResult.destinationName) ||
+              store.recentsSet.has(aiPlanResult.destinationName) ||
               store.myListNames.some((n) => n.toLowerCase() === aiPlanResult.destinationName.toLowerCase())
                 ? undefined : handleSaveAiToList
             }
             existingPlans={aiPlanStore.getPlans(aiPlanResult.destinationName)}
             canAddNew={aiPlanStore.canAddNew(aiPlanResult.destinationName)}
             maxPlans={aiPlanStore.maxPlans}
-            onSavePlan={() => { if (aiPlanResult) { aiPlanStore.savePlan(aiPlanResult); lifecycle.notifyPlanCreated(aiPlanResult.destinationName); } }}
-            onReplacePlan={(id) => { if (aiPlanResult) { aiPlanStore.replacePlan(id, aiPlanResult); lifecycle.notifyPlanCreated(aiPlanResult.destinationName); } }}
+            onSavePlan={() => { if (aiPlanResult) { aiPlanStore.savePlan(aiPlanResult); } }}
+            onReplacePlan={(id) => { if (aiPlanResult) { aiPlanStore.replacePlan(id, aiPlanResult); } }}
           />
         )}
 

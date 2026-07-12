@@ -49,44 +49,22 @@ describe("comboRecommendations", () => {
 describe("DestinationPicker", () => {
   const explore = [mk("Explora", 80), mk("Wanderland", 70)];
 
-  it("orders your list unvisited-first, each group by popularity", () => {
-    const countries = [mk("Visited-High", 99), mk("Unvisited-Low", 5), mk("Unvisited-High", 90)];
+  it("renders your recents in the given most-recent-first order", () => {
+    // The store hands `countries` in MRU order; the picker preserves it verbatim
+    // (no visited/favorite re-sorting anymore).
+    const countries = [mk("Recent-1", 5), mk("Recent-2", 99), mk("Recent-3", 40)];
     render(
       <DestinationPicker
         source={internationalSource}
         countries={countries}
         exploreCountries={explore}
-        visitedNames={new Set(["Visited-High"])}
         onStart={vi.fn()}
         onGoDiscover={vi.fn()}
       />,
     );
-    const section = screen.getByText(/From your list/i).closest("section")!;
+    const section = screen.getByText(/Jump back in/i).closest("section")!;
     const names = within(section).getAllByRole("button").map((b) => b.textContent?.replace(/[^\x00-\x7F]/g, "").trim());
-    expect(names).toEqual(["Unvisited-High", "Unvisited-Low", "Visited-High"]);
-  });
-
-  it("orders your list favorites → remaining → visited, each by popularity", () => {
-    const countries = [
-      mk("Fav-Low", 5),
-      mk("Fav-High", 95),
-      mk("Plain-High", 80),
-      mk("Visited-High", 99),
-    ];
-    render(
-      <DestinationPicker
-        source={internationalSource}
-        countries={countries}
-        exploreCountries={explore}
-        visitedNames={new Set(["Visited-High"])}
-        favoriteNames={new Set(["Fav-Low", "Fav-High"])}
-        onStart={vi.fn()}
-        onGoDiscover={vi.fn()}
-      />,
-    );
-    const section = screen.getByText(/From your list/i).closest("section")!;
-    const names = within(section).getAllByRole("button").map((b) => b.textContent?.replace(/[^\x00-\x7F]/g, "").trim());
-    expect(names).toEqual(["Fav-High", "Fav-Low", "Plain-High", "Visited-High"]);
+    expect(names).toEqual(["Recent-1", "Recent-2", "Recent-3"]);
   });
 
   it("caps the list at 8, reveals all, then collapses back", () => {
@@ -96,12 +74,11 @@ describe("DestinationPicker", () => {
         source={internationalSource}
         countries={many}
         exploreCountries={explore}
-        visitedNames={new Set()}
         onStart={vi.fn()}
         onGoDiscover={vi.fn()}
       />,
     );
-    const section = () => screen.getByText(/From your list/i).closest("section")!;
+    const section = () => screen.getByText(/Jump back in/i).closest("section")!;
     // Capped at 8 chips + a "Show all 11" affordance.
     expect(within(section()).getByText("Dest-00")).toBeInTheDocument();
     expect(within(section()).queryByText("Dest-08")).not.toBeInTheDocument();
@@ -118,7 +95,6 @@ describe("DestinationPicker", () => {
         source={internationalSource}
         countries={[mk("Testland", 50)]}
         exploreCountries={explore}
-        visitedNames={new Set()}
         onStart={onStart}
         onGoDiscover={vi.fn()}
       />,
@@ -139,7 +115,6 @@ describe("DestinationPicker", () => {
           source={internationalSource}
           countries={[mk("Testland", 50)]}
           exploreCountries={[]}
-          visitedNames={new Set()}
           onStart={vi.fn()}
           onGoDiscover={vi.fn()}
         />,
@@ -157,13 +132,12 @@ describe("DestinationPicker", () => {
         source={internationalSource}
         countries={[mk("Makorland", 90), mk("South Korazone", 80), mk("Koraland", 70)]}
         exploreCountries={[]}
-        visitedNames={new Set()}
         onStart={vi.fn()}
         onGoDiscover={vi.fn()}
       />,
     );
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "kor" } });
-    const section = screen.getByText(/From your list/i).closest("section")!;
+    const section = screen.getByText(/Jump back in/i).closest("section")!;
     const names = within(section)
       .getAllByRole("button")
       .map((b) => b.textContent?.replace(/[^\x00-\x7F ]/g, "").trim());
@@ -182,7 +156,6 @@ describe("DestinationPicker", () => {
           source={internationalSource}
           countries={many}
           exploreCountries={explore}
-          visitedNames={new Set()}
           onStart={onStart}
           onGoDiscover={vi.fn()}
           multiSelect
@@ -204,7 +177,6 @@ describe("DestinationPicker", () => {
           source={internationalSource}
           countries={many}
           exploreCountries={explore}
-          visitedNames={new Set()}
           onStart={onStart}
           onGoDiscover={vi.fn()}
           multiSelect
@@ -226,7 +198,6 @@ describe("DestinationPicker", () => {
           source={internationalSource}
           countries={many}
           exploreCountries={[]}
-          visitedNames={new Set()}
           onStart={vi.fn()}
           onGoDiscover={vi.fn()}
           multiSelect
@@ -245,7 +216,6 @@ describe("DestinationPicker", () => {
           source={internationalSource}
           countries={many}
           exploreCountries={[]}
-          visitedNames={new Set()}
           onStart={vi.fn()}
           onGoDiscover={vi.fn()}
           multiSelect
@@ -268,7 +238,6 @@ describe("DestinationPicker", () => {
           source={internationalSource}
           countries={[mk("Norway", 40)]}
           exploreCountries={[]}
-          visitedNames={new Set()}
           onStart={onStart}
           onGoDiscover={vi.fn()}
           multiSelect

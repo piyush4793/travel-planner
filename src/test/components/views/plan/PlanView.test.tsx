@@ -12,7 +12,6 @@ const COUNTRY: Country = {
   bestMonths: ["June"],
   budget: "₹1L",
   experiences: ["Beaches", "Mountains"],
-  travelStyle: ["explorer"],
   cities: [
     { name: "Alpha", lat: 1, lng: 1, experiences: ["Beaches"] },
     { name: "Beta", lat: 2, lng: 2, experiences: ["Mountains"] },
@@ -26,7 +25,6 @@ function renderView(props: Partial<React.ComponentProps<typeof PlanView>> = {}) 
   const utils = render(
     <PlanView
       countries={[COUNTRY]}
-      visitedNames={new Set()}
       budgetBasis="couple"
       setBudgetBasis={setBudgetBasis}
       homeCountry="India"
@@ -61,7 +59,7 @@ describe("PlanView — guided planner", () => {
   it("shows the 'Where next?' picker with both tiers", () => {
     renderView();
     expect(screen.getByText(/Where do you plan to go next/i)).toBeInTheDocument();
-    expect(screen.getByText(/From your list/i)).toBeInTheDocument();
+    expect(screen.getByText(/Jump back in/i)).toBeInTheDocument();
     expect(screen.getByText(/Popular to explore/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /Testland \(no rule\)/i })).toBeInTheDocument();
   });
@@ -74,6 +72,32 @@ describe("PlanView — guided planner", () => {
     expect(onGoDiscover).toHaveBeenCalled();
   });
 
+  it("auto-starts a plan from an intake handoff (Discover tray / Calendar tap)", async () => {
+    renderView({ intake: { countries: [COUNTRY], nonce: 1 } });
+    // Skips the landing picker and lands on the Basics step for the picked set.
+    expect(await screen.findByText(/Who's going\?/i)).toBeInTheDocument();
+  });
+
+  it("ignores a repeated intake nonce and an empty intake set", async () => {
+    const { rerender } = renderView({ intake: { countries: [COUNTRY], nonce: 7 } });
+    await screen.findByText(/Who's going\?/i);
+
+    // Same nonce re-render must not re-trigger; an empty set is a no-op.
+    rerender(
+      <PlanView
+        countries={[COUNTRY]}
+        budgetBasis="couple"
+        setBudgetBasis={vi.fn()}
+        homeCountry="India"
+        onGoDiscover={vi.fn()}
+        onToggleTripFavorite={vi.fn()}
+        intake={{ countries: [], nonce: 8 }}
+      />,
+    );
+    // Still on Basics for the original selection, not reset to the picker.
+    expect(screen.getByText(/Who's going\?/i)).toBeInTheDocument();
+  });
+
   it("shows a no-match state with a Discover fallback", () => {
     const { onGoDiscover } = renderView();
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "zzzzz" } });
@@ -83,17 +107,15 @@ describe("PlanView — guided planner", () => {
   });
 
   it("favorites the saved trip from the Review save bar (acts on the trip, not countries)", async () => {
-    const onToggleFavorite = vi.fn();
-    const { onToggleTripFavorite } = renderView({ onToggleFavorite });
+    const { onToggleTripFavorite } = renderView();
     fireEvent.click(screen.getByRole("button", { name: "Testland (no rule)" }));
     await screen.findByText(/Who's going\?/i);
     // Advance to Review, where the trip auto-saves and the favorite toggle shows.
     goToReview();
     const favBtn = await screen.findByRole("button", { name: /Favorite this trip/i });
     fireEvent.click(favBtn);
-    // Favoriting acts on the saved trip snapshot — never the country favorite set.
+    // Favoriting acts on the saved trip snapshot.
     expect(onToggleTripFavorite).toHaveBeenCalledWith("Testland (no rule)");
-    expect(onToggleFavorite).not.toHaveBeenCalled();
   });
 
   it("starts the wizard on the first question after picking a country", async () => {
@@ -141,7 +163,6 @@ describe("PlanView — guided planner", () => {
     const onSaveTrip = vi.fn();
     const baseProps = {
       countries: [COUNTRY],
-      visitedNames: new Set<string>(),
       setBudgetBasis: vi.fn(),
       homeCountry: "India",
       onGoDiscover: vi.fn(),
@@ -409,7 +430,6 @@ describe("PlanView — multi-country Basics", () => {
     render(
       <PlanView
         countries={[COUNTRY, COUNTRY_B]}
-        visitedNames={new Set()}
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
@@ -445,7 +465,6 @@ describe("PlanView — multi-country Basics", () => {
     render(
       <PlanView
         countries={units}
-        visitedNames={new Set()}
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
@@ -475,7 +494,6 @@ describe("PlanView — multi-country Basics", () => {
           { name: "Norway", lat: 60, lng: 8, budget: "₹1L", bestMonths: ["June"], experiences: [] },
           { name: "Sweden", lat: 60, lng: 15, budget: "₹1L", bestMonths: ["June"], experiences: [] },
         ]}
-        visitedNames={new Set()}
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
@@ -494,7 +512,6 @@ describe("PlanView — multi-country Basics", () => {
     render(
       <PlanView
         countries={[COUNTRY, COUNTRY_B]}
-        visitedNames={new Set()}
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
@@ -599,7 +616,6 @@ describe("PlanView — multi-country Basics", () => {
     rerender(
       <PlanView
         countries={[COUNTRY]}
-        visitedNames={new Set()}
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"

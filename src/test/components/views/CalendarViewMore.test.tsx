@@ -72,13 +72,11 @@ describe("CalendarView additional coverage", () => {
     vi.useRealTimers();
   });
 
-  it("renders legend, current month highlight, visited marker, selected row, and budget basis", () => {
+  it("renders legend, current month highlight, and budget basis", () => {
     render(
       <CalendarView
         countries={countries}
-        onSelect={vi.fn()}
-        visitedNames={new Set(["Japan"])}
-        selectedCountry={countries[1]}
+        onPlanTrip={vi.fn()}
         budgetBasis="family4"
       />,
     );
@@ -91,11 +89,7 @@ describe("CalendarView additional coverage", () => {
     expect(desktopHeader).toHaveClass("bg-blue-600", "text-white");
 
     const japanRow = screen.getAllByText("Japan")[0].closest("tr")!;
-    expect(within(japanRow).getByText("✓")).toBeInTheDocument();
     expect(within(japanRow).getByText(/₹4L/)).toBeInTheDocument();
-
-    const icelandRows = screen.getAllByRole("row", { selected: true });
-    expect(icelandRows[0]).toHaveTextContent("Iceland");
   });
 
   it("filters rows by selected best month and clears the month filter", async () => {
@@ -104,9 +98,7 @@ describe("CalendarView additional coverage", () => {
     render(
       <CalendarView
         countries={countries}
-        onSelect={vi.fn()}
-        visitedNames={new Set()}
-        selectedCountry={null}
+        onPlanTrip={vi.fn()}
         budgetBasis="couple"
       />,
     );
@@ -130,9 +122,7 @@ describe("CalendarView additional coverage", () => {
     render(
       <CalendarView
         countries={countries}
-        onSelect={vi.fn()}
-        visitedNames={new Set()}
-        selectedCountry={null}
+        onPlanTrip={vi.fn()}
         budgetBasis="couple"
       />,
     );
@@ -147,29 +137,27 @@ describe("CalendarView additional coverage", () => {
     expect(screen.getAllByText("Iceland").length).toBeGreaterThan(0);
   });
 
-  it("selects destinations with keyboard navigation", async () => {
+  it("starts a plan for a destination reached with keyboard navigation", async () => {
     const user = userEvent.setup();
-    const onSelect = vi.fn();
+    const onPlanTrip = vi.fn();
 
     render(
       <CalendarView
         countries={countries}
-        onSelect={onSelect}
-        visitedNames={new Set()}
-        selectedCountry={null}
+        onPlanTrip={onPlanTrip}
         budgetBasis="couple"
       />,
     );
 
     const firstRow = screen.getAllByText("Japan")[0].closest("tr")!;
     await user.click(firstRow);
-    onSelect.mockClear();
+    onPlanTrip.mockClear();
 
     await user.keyboard("{ArrowDown}");
     await waitFor(() => expect(document.activeElement).toHaveTextContent("Iceland"));
     await user.keyboard("{Enter}");
 
-    expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Iceland" }));
+    expect(onPlanTrip).toHaveBeenCalledWith(["Iceland"]);
   });
 
   it("closes the month popover with Escape", async () => {
@@ -178,9 +166,7 @@ describe("CalendarView additional coverage", () => {
     render(
       <CalendarView
         countries={countries}
-        onSelect={vi.fn()}
-        visitedNames={new Set()}
-        selectedCountry={null}
+        onPlanTrip={vi.fn()}
         budgetBasis="couple"
       />,
     );

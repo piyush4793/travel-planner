@@ -4,7 +4,6 @@ import catalogData from "../../data/worldCatalog.json";
 import type { Country, CatalogEntry } from "../core/types";
 import { loadLS, saveLS } from "../core/storage";
 import { LS_KEYS } from "../core/lsKeys";
-import { usePersistedSet } from "./usePersistedSet";
 import { loadConsolidatedCountry } from "../data/consolidatedCountry";
 import { consolidatedToCountry } from "../core/utils/countryData";
 
@@ -78,9 +77,9 @@ function isBareStub(c: Country): boolean {
     && (!c.cities || c.cities.length === 0);
 }
 
-function buildCountryList(customs: Country[], deleted: string[], enriched: Map<string, Country>): Country[] {
+function buildCountryList(customs: Country[], enriched: Map<string, Country>): Country[] {
   const overrides = new Map(customs.map((c) => [c.name, c]));
-  const seedEntries = MANIFEST.filter((m) => m.inSeed && !deleted.includes(m.name));
+  const seedEntries = MANIFEST.filter((m) => m.inSeed);
   const base = seedEntries.map((m) => {
     if (overrides.has(m.name)) return overrides.get(m.name)!;
     if (enriched.has(m.name)) return enriched.get(m.name)!;
@@ -92,22 +91,35 @@ function buildCountryList(customs: Country[], deleted: string[], enriched: Map<s
   return [...base, ...added];
 }
 
-function initMyList(): Set<string> {
-  const stored = loadLS<string[] | null>(LS_KEYS.MY_LIST, null);
-  if (stored !== null) return new Set(stored);
-  const customNames = loadLS<Country[]>(LS_KEYS.CUSTOMS, []).map((c) => c.name);
-  const deletedNames = loadLS<string[]>(LS_KEYS.DELETED, []);
-  const seedNames = [...SEED_NAMES].filter((n) => !deletedNames.includes(n));
-  return new Set([...seedNames, ...customNames]);
+/**
+ * "My List" is now an implicit **recents** ledger — an MRU of the destinations a
+ * traveller has actually started planning, most-recent first. It is written
+ * automatically (never hand-curated), deduped, and capped. Reuses the legacy
+ * MY_LIST key; any previously-stored set migrates in as the initial order.
+ */
+const MAX_RECENTS = 24;
+
+function loadRecents(): string[] {
+  const stored = loadLS<unknown>(LS_KEYS.MY_LIST, null);
+  if (!Array.isArray(stored)) return [];
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const n of stored) {
+    if (typeof n === "string" && n && !seen.has(n)) {
+      seen.add(n);
+      out.push(n);
+    }
+  }
+  return out.slice(0, MAX_RECENTS);
 }
 
 export function useCountryStore() {
   const [customs, setCustoms] = useState<Country[]>(() => loadLS(LS_KEYS.CUSTOMS, []));
-  const [deleted, setDeleted] = useState<string[]>(() => loadLS(LS_KEYS.DELETED, []));
   const [enriched, setEnriched] = useState<Map<string, Country>>(() => new Map());
+  const [recents, setRecents] = useState<string[]>(loadRecents);
 
   useEffect(() => { saveLS(LS_KEYS.CUSTOMS, customs); }, [customs]);
-  useEffect(() => { saveLS(LS_KEYS.DELETED, deleted); }, [deleted]);
+  useEffect(() => { saveLS(LS_KEYS.MY_LIST, recents); }, [recents]);
 
   // Enrich seed countries in idle-time chunks to avoid blocking first render
   const enrichTimerRef = useRef<number>(0);
@@ -151,31 +163,22 @@ export function useCountryStore() {
     };
   }, []);
 
-  const visited = usePersistedSet(LS_KEYS.VISITED, () => new Set(loadLS<string[]>(LS_KEYS.VISITED, [])));
-  const favorites = usePersistedSet(LS_KEYS.FAVORITES, () => new Set(loadLS<string[]>(LS_KEYS.FAVORITES, [])));
-  const myList = usePersistedSet(LS_KEYS.MY_LIST, initMyList);
+  const allCountries = useMemo(() => buildCountryList(customs, enriched), [customs, enriched]);
 
-  const allCountries = useMemo(() => buildCountryList(customs, deleted, enriched), [customs, deleted, enriched]);
+  const recentsSet = useMemo(() => new Set(recents), [recents]);
 
   const myListCountries = useMemo(() => {
     const byName = new Map(allCountries.map((c) => [c.name, c]));
-    const tombstoned = new Set(deleted);
-    // Resolve every My List name — prefer the fully-built entry, then any enriched
-    // rule data, then a catalog/manifest stub — so a name is never dropped just
-    // because it lacks a seed/custom backing entry. Deleted seeds stay tombstoned.
-    const inList: Country[] = [];
-    for (const name of myList.set) {
-      if (tombstoned.has(name) && !byName.has(name)) continue;
+    // Resolve each recents name to the richest available Country, preserving
+    // most-recent-first order. A name is never dropped just because it lacks a
+    // seed/custom backing entry (falls back to enriched, then a catalog stub).
+    const out: Country[] = [];
+    for (const name of recents) {
       const resolved = byName.get(name) ?? enriched.get(name) ?? buildCatalogCountry(name);
-      if (resolved) inList.push(resolved);
+      if (resolved) out.push(resolved);
     }
-    return inList.sort((a, b) => {
-      const aFav = favorites.set.has(a.name) ? 0 : 1;
-      const bFav = favorites.set.has(b.name) ? 0 : 1;
-      if (aFav !== bFav) return aFav - bFav;
-      return a.name.localeCompare(b.name);
-    });
-  }, [allCountries, enriched, deleted, myList.set, favorites.set]);
+    return out;
+  }, [allCountries, enriched, recents]);
 
   const myListNames = useMemo(() => myListCountries.map((c) => c.name), [myListCountries]);
 
@@ -201,18 +204,6 @@ export function useCountryStore() {
     return () => { cancelled = true; };
   }, [myListNames, enriched]);
 
-  const saveCountry = useCallback((country: Country) => {
-    setCustoms((prev) => [...prev.filter((c) => c.name !== country.name), country]);
-    myList.add(country.name);
-  }, [myList]);
-
-  const deleteCountry = useCallback((country: Country) => {
-    setCustoms((prev) => prev.filter((c) => c.name !== country.name));
-    if (SEED_NAMES.has(country.name)) {
-      setDeleted((prev) => [...prev, country.name]);
-    }
-  }, []);
-
   const updateNotes = useCallback((name: string, notes: string) => {
     setCustoms((prev) => {
       const existing = allCountries.find((c) => c.name === name) ?? prev.find((c) => c.name === name);
@@ -222,86 +213,37 @@ export function useCountryStore() {
     });
   }, [allCountries]);
 
-  const addToList = useCallback((name: string) => {
-    myList.add(name);
-    if (SEED_NAMES.has(name)) {
-      setDeleted((prev) => prev.filter((n) => n !== name));
-    } else {
-      setCustoms((prev) => {
-        if (prev.some((c) => c.name === name)) return prev;
-        const src = CATALOG.find((c) => c.name === name) ?? MANIFEST_BY_NAME.get(name);
-        if (!src) return prev;
-        const minimal: Country = {
-          name: src.name, lat: src.lat, lng: src.lng,
-          bestMonths: [], budget: "", experiences: [],
-        };
-        return [...prev, minimal];
-      });
-    }
-  }, [myList]);
-
-  // One-click bulk add (e.g. the creator's wishlist). Batches every state
-  // update so N destinations cost a single re-render, not N.
-  const addManyToList = useCallback((names: string[]) => {
-    if (names.length === 0) return;
-    myList.setSet((prev) => {
-      const next = new Set(prev);
-      for (const n of names) next.add(n);
-      return next;
+  // Record that the traveller started planning these destinations — prepends them
+  // (most-recent first), dedupes, and caps the ledger. This is the sole writer of
+  // "My List", which is now an implicit recents history, not a hand-curated set.
+  const recordPlanned = useCallback((names: string[]) => {
+    const clean = names.map((n) => n.trim()).filter(Boolean);
+    if (clean.length === 0) return;
+    setRecents((prev) => {
+      const seen = new Set(clean);
+      const next = [...clean];
+      for (const n of prev) {
+        if (!seen.has(n)) { seen.add(n); next.push(n); }
+      }
+      return next.slice(0, MAX_RECENTS);
     });
-    const seedNames = names.filter((n) => SEED_NAMES.has(n));
-    if (seedNames.length) {
-      const revive = new Set(seedNames);
-      setDeleted((prev) => prev.filter((n) => !revive.has(n)));
-    }
-    const nonSeed = names.filter((n) => !SEED_NAMES.has(n));
-    if (nonSeed.length) {
-      setCustoms((prev) => {
-        const existing = new Set(prev.map((c) => c.name));
-        const additions: Country[] = [];
-        for (const n of nonSeed) {
-          if (existing.has(n)) continue;
-          const src = CATALOG.find((c) => c.name === n) ?? MANIFEST_BY_NAME.get(n);
-          if (!src) continue;
-          existing.add(n);
-          additions.push({ name: src.name, lat: src.lat, lng: src.lng, bestMonths: [], budget: "", experiences: [] });
-        }
-        return additions.length ? [...prev, ...additions] : prev;
-      });
-    }
-  }, [myList]);
-
-  // Restore My List to the default starter set (the auto-seeded countries).
-  // Non-destructive to authored data: custom country edits stay in CUSTOMS and
-  // reappear if re-added, but the visible list resets to defaults.
-  const resetToDefaultList = useCallback(() => {
-    myList.setSet(() => new Set(SEED_NAMES));
-    setDeleted([]);
-  }, [myList]);
+  }, []);
 
   // Soft refresh: re-read persisted country data from localStorage without a
   // full page reload (drives pull-to-refresh and post-import re-hydration).
   const reload = useCallback(() => {
     setCustoms(loadLS(LS_KEYS.CUSTOMS, []));
-    setDeleted(loadLS(LS_KEYS.DELETED, []));
-    myList.reload();
-    visited.reload();
-    favorites.reload();
-  }, [myList.reload, visited.reload, favorites.reload]);
+    setRecents(loadRecents());
+  }, []);
 
   return {
     allCountries,
     myListCountries,
     myListNames,
-    visited,
-    favorites,
-    myList,
-    saveCountry,
-    deleteCountry,
+    recents,
+    recentsSet,
+    recordPlanned,
     updateNotes,
-    addToList,
-    addManyToList,
-    resetToDefaultList,
     reload,
     catalog: CATALOG,
   } as const;

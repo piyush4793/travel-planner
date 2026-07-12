@@ -10,7 +10,6 @@ const COUNTRY: Country = {
   bestMonths: ["June", "July"],
   budget: "₹1L",
   experiences: ["Beaches", "Mountains", "Food"],
-  travelStyle: ["explorer"],
   cities: [
     { name: "Alpha", lat: 1, lng: 1, experiences: ["Food"] },
     { name: "Beta", lat: 2, lng: 2, experiences: ["Beaches"] },

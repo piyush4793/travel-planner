@@ -7,9 +7,8 @@ import { buildMarkerElement, computeHoverPosition } from "../../utils/mapMarkers
 
 type Props = {
   countries: Country[];
-  onSelect: (c: Country) => void;
+  onSelect?: (c: Country) => void;
   highlightedNames?: string[];
-  visitedNames?: Set<string>;
   onMapReady?: (map: maplibregl.Map | null) => void;
 };
 
@@ -23,7 +22,6 @@ export default function MapView({
   countries,
   onSelect,
   highlightedNames = [],
-  visitedNames = new Set(),
   onMapReady,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -76,19 +74,18 @@ export default function MapView({
       markersRef.current = [];
 
       countries.forEach((country) => {
-        const isVisited = visitedNames.has(country.name);
         const isCombo = highlightedNames.includes(country.name);
-        const el = buildMarkerElement(country.name, { isVisited, isCombo });
+        const el = buildMarkerElement(country.name, { isCombo });
 
         const marker = new maplibregl.Marker({ element: el })
           .setLngLat([country.lng, country.lat])
           .addTo(map);
 
-        el.addEventListener("click", () => onSelectRef.current(country), { signal });
+        el.addEventListener("click", () => onSelectRef.current?.(country), { signal });
         el.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            onSelectRef.current(country);
+            onSelectRef.current?.(country);
           }
         }, { signal });
 
@@ -119,7 +116,7 @@ export default function MapView({
       markersRef.current.forEach((m) => m.remove());
       markersRef.current = [];
     };
-  }, [countries, highlightedNames, visitedNames]);
+  }, [countries, highlightedNames]);
 
   return (
     <div ref={containerRef} className="w-full h-full relative">
@@ -128,7 +125,6 @@ export default function MapView({
           country={hovered.country}
           x={hovered.x}
           y={hovered.y}
-          isVisited={visitedNames.has(hovered.country.name)}
         />
       )}
     </div>

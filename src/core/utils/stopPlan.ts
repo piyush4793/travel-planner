@@ -47,7 +47,7 @@ export function orderCitiesByExperience(cities: CityEntry[], experiences: string
 /** Generate this stop's itinerary from its committed intent. */
 export function stopPlan(input: StopDerivationInput): TripPlan {
   const { country, selectedCities, days, rule, basis, experiences } = input;
-  return generateTripPlan(country, "custom", selectedCities, days, rule, basis, experiences);
+  return generateTripPlan(country, selectedCities, days, rule, basis, experiences);
 }
 
 /** Cities this stop's plan WOULD visit at a candidate length, without committing. */

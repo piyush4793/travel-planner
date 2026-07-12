@@ -4,10 +4,10 @@ import LifecyclePromptToast from "@/components/shared/LifecyclePromptToast.tsx";
 import type { LifecyclePrompt } from "@/hooks/useLifecyclePrompts.ts";
 
 const prompt: LifecyclePrompt = {
-  id: "favorite:Norway",
-  kind: "favorite",
-  message: "Loved planning Norway? Save it to your favorites for quick access.",
-  actionLabel: "★ Favorite",
+  id: "backup",
+  kind: "backup",
+  message: "You've made a few changes since your last backup. Keep them safe?",
+  actionLabel: "Back up now",
   onAction: () => {},
 };
 
@@ -24,9 +24,9 @@ describe("LifecyclePromptToast", () => {
     const onDismiss = vi.fn();
     render(<LifecyclePromptToast prompt={prompt} onAct={onAct} onDismiss={onDismiss} />);
 
-    expect(screen.getByText(/Loved planning Norway/)).toBeInTheDocument();
+    expect(screen.getByText(/changes since your last backup/)).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("button", { name: "★ Favorite" }));
+    fireEvent.click(screen.getByRole("button", { name: "Back up now" }));
     expect(onAct).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByRole("button", { name: "Dismiss" }));
@@ -41,7 +41,7 @@ describe("LifecyclePromptToast", () => {
         onDismiss={() => {}}
       />,
     );
-    expect(screen.queryByRole("button", { name: "★ Favorite" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Back up now" })).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Dismiss" })).toBeInTheDocument();
   });
 });

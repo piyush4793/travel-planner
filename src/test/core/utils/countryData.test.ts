@@ -16,7 +16,6 @@ const CONSOLIDATED: ConsolidatedCountry = {
   avoid: ["Monsoon flooding"],
   combo: ["India", "Maldives"],
   landmark: "Sigiriya",
-  travelStyle: ["explorer"],
   stopoverNote: "Great add-on to South India",
   links: [{ label: "Tourism", url: "https://example.com" }],
   cities: [{ name: "Colombo", lat: 6.9, lng: 79.8 }],

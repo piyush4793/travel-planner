@@ -59,9 +59,7 @@ describe("CalendarView", () => {
     render(
       <CalendarView
         countries={countries}
-        onSelect={vi.fn()}
-        visitedNames={new Set()}
-        selectedCountry={null}
+        onPlanTrip={vi.fn()}
         budgetBasis="couple"
       />,
     );
@@ -72,32 +70,28 @@ describe("CalendarView", () => {
     MONTHS.forEach((month) => expect(screen.getAllByRole("columnheader", { name: month }).length).toBeGreaterThan(0));
   });
 
-  it("calls onSelect when a country row is clicked", async () => {
+  it("starts a plan when a country row is clicked", async () => {
     const user = userEvent.setup();
-    const onSelect = vi.fn();
+    const onPlanTrip = vi.fn();
 
     render(
       <CalendarView
         countries={countries}
-        onSelect={onSelect}
-        visitedNames={new Set()}
-        selectedCountry={null}
+        onPlanTrip={onPlanTrip}
         budgetBasis="couple"
       />,
     );
 
     await user.click(screen.getAllByText("Japan")[0].closest("tr")!);
 
-    expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ name: "Japan" }));
+    expect(onPlanTrip).toHaveBeenCalledWith(["Japan"]);
   });
 
   it("styles best months in green and worst months in red", () => {
     render(
       <CalendarView
         countries={countries}
-        onSelect={vi.fn()}
-        visitedNames={new Set()}
-        selectedCountry={null}
+        onPlanTrip={vi.fn()}
         budgetBasis="couple"
       />,
     );

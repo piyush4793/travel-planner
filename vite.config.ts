@@ -47,6 +47,9 @@ export default defineConfig({
         "src/core/types.ts",
         // CountryRule/CityRule declarations are type-only; runtime coverage is not meaningful.
         "src/core/data/itineraryRules.ts",
+        // DestinationSource is the pure interface/type seam; PlanActions is a type bundle — no runtime logic.
+        "src/core/trip/destinationSource.ts",
+        "src/components/views/plan/shell/planActions.ts",
         "src/core/ports/**",
         "src/core/index.ts",
         // Data loader uses import.meta.glob (Vite-only, not unit-testable)

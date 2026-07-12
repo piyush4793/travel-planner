@@ -106,7 +106,6 @@ export function useTripPlanner(
       // no hand-picks, so this stays off the state→reseed effect loop.
       rec[country.name] = recommendedDaysForSelection({
         rule,
-        style: country.travelStyle?.[0],
         recDays,
         maxDays,
         selectedCities: state[country.name]?.selectedCities ?? [],

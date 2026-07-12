@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import type { Country } from "@/core/types";
-import { byPopularity } from "@/core/data/popularDestinations";
 import type { DestinationSource } from "@/core/trip/destinationSource";
 import { getCountryFlag } from "@/utils/countryFlags";
 import { MAX_TRIP_UNITS, toggleTripSelection } from "@/core/utils/multiCountry";
@@ -8,12 +7,10 @@ import { MAX_TRIP_UNITS, toggleTripSelection } from "@/core/utils/multiCountry";
 type Props = {
   /** Scope data source — provides combo suggestions, unit nouns and resolution. */
   source: DestinationSource;
-  /** The user's My List destinations. */
+  /** Recently-planned destinations, most-recent first (implicit My List). */
   countries: Country[];
-  /** Plannable destinations NOT in My List, most popular first. */
+  /** Plannable destinations NOT recently planned, most popular first. */
   exploreCountries: Country[];
-  visitedNames: Set<string>;
-  favoriteNames?: Set<string>;
   /** Start the wizard with an ordered selection (1 unit = single-destination trip). */
   onStart: (countries: Country[]) => void;
   onGoDiscover: () => void;
@@ -28,7 +25,6 @@ const MINE_LIMIT = 8;
 
 const CHIP_BASE =
   "focus-ring-emerald group inline-flex min-h-[44px] items-center gap-2 rounded-full border px-4 py-2.5 text-sm shadow-[0_1px_2px_rgba(20,40,30,0.05)] transition-[transform,box-shadow,border-color,color] motion-safe:animate-[fadeInUp_0.28s_ease-out_both] hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0 disabled:hover:shadow-[0_1px_2px_rgba(20,40,30,0.05)]";
-const CHIP_TONE_VISITED = "border-line bg-surface-2 text-ink-4 hover:border-line-strong";
 const CHIP_TONE_DEFAULT = "border-line bg-white font-medium text-ink-1 hover:border-emerald-600 hover:text-emerald-800";
 
 /**
@@ -60,30 +56,27 @@ function filterByQuery(list: Country[], q: string): Country[] {
     .map((s) => s.c);
 }
 
-function Chip({ country, visited, favorite, index, disabled, onPick }: { country: Country; visited?: boolean; favorite?: boolean; index: number; disabled?: boolean; onPick: () => void }) {
-  const tone = visited ? CHIP_TONE_VISITED : CHIP_TONE_DEFAULT;
+function Chip({ country, index, disabled, onPick }: { country: Country; index: number; disabled?: boolean; onPick: () => void }) {
   return (
     <button
       onClick={onPick}
       disabled={disabled}
       style={{ animationDelay: `${Math.min(index, 14) * 25}ms` }}
-      className={`${CHIP_BASE} ${tone}`}
+      className={`${CHIP_BASE} ${CHIP_TONE_DEFAULT}`}
     >
       <span aria-hidden="true" className="text-base leading-none">{getCountryFlag(country.name)}</span>
       <span className="truncate">{country.name}</span>
-      {favorite && <span aria-hidden="true" className="text-amber-400">★</span>}
-      {visited && <span aria-hidden="true" className="text-emerald-700/60">✓</span>}
     </button>
   );
 }
 
 /**
  * Empty-state "Where next?" — a fast search over a popularity-ranked destination
- * board. Your list is ordered favorites → remaining (unvisited) → visited, each
- * group most-popular first, then popular rule-backed destinations to explore.
- * Routes to Discover when nothing matches.
+ * board. Your list surfaces the destinations you recently planned (most-recent
+ * first), then popular rule-backed destinations to explore. Routes to Discover
+ * when nothing matches.
  */
-export default function DestinationPicker({ source, countries, exploreCountries, visitedNames, favoriteNames, onStart, onGoDiscover, multiSelect = false, maxSelection = MAX_TRIP_UNITS }: Props) {
+export default function DestinationPicker({ source, countries, exploreCountries, onStart, onGoDiscover, multiSelect = false, maxSelection = MAX_TRIP_UNITS }: Props) {
   const [query, setQuery] = useState("");
   const [showAllMine, setShowAllMine] = useState(false);
   const [selectedNames, setSelectedNames] = useState<string[]>([]);
@@ -114,14 +107,9 @@ export default function DestinationPicker({ source, countries, exploreCountries,
     if (chosen.length > 0) onStart(chosen);
   };
 
-  // Your list: favorites → remaining (unvisited) → visited, each group most-popular first.
-  const mine = useMemo(() => {
-    const isFav = (c: Country) => favoriteNames?.has(c.name) ?? false;
-    const favorites = countries.filter(isFav).sort(byPopularity);
-    const remaining = countries.filter((c) => !isFav(c) && !visitedNames.has(c.name)).sort(byPopularity);
-    const visited = countries.filter((c) => !isFav(c) && visitedNames.has(c.name)).sort(byPopularity);
-    return [...favorites, ...remaining, ...visited];
-  }, [countries, visitedNames, favoriteNames]);
+  // Your list: the destinations you recently planned, most-recent first (the
+  // `countries` prop already arrives in MRU order from the store).
+  const mine = countries;
 
   // In multi-select, a chosen country lives in the token field — so it's dropped
   // from the browse grids below to avoid echoing the same option twice.
@@ -216,7 +204,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
 
         {countries.length === 0 && !q && selectedNames.length === 0 && (
           <p className="mt-4 text-center text-xs text-ink-2">
-            Your list is empty — plan any popular destination below, or{" "}
+            Search a destination above to start planning, or{" "}
             <button onClick={onGoDiscover} className="focus-ring-emerald rounded font-semibold text-emerald-700 hover:underline">
               browse Discover
             </button>
@@ -233,7 +221,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
             <p className="mb-3 text-[11px] text-emerald-700/80">Travellers often combine these into one seamless route.</p>
             <div className="flex flex-wrap gap-2.5">
               {recommendations.map((c, i) => (
-                <Chip key={c.name} country={c} index={i} visited={visitedNames.has(c.name)} favorite={favoriteNames?.has(c.name)} onPick={() => pickCountry(c)} />
+                <Chip key={c.name} country={c} index={i} onPick={() => pickCountry(c)} />
               ))}
             </div>
           </section>
@@ -241,10 +229,10 @@ export default function DestinationPicker({ source, countries, exploreCountries,
 
         {mineCapped.length > 0 && (
           <section className="mt-8">
-            <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-ink-4">From your list</h2>
+            <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-ink-4">Jump back in</h2>
             <div className="flex flex-wrap gap-2.5">
               {mineCapped.map((c, i) => (
-                <Chip key={c.name} country={c} index={i} visited={visitedNames.has(c.name)} favorite={favoriteNames?.has(c.name)} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
+                <Chip key={c.name} country={c} index={i} disabled={multiSelect && atCap} onPick={() => pickCountry(c)} />
               ))}
               {mineHidden > 0 && (
                 <button

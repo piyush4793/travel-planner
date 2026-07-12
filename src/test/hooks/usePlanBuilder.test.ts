@@ -12,7 +12,6 @@ const COUNTRY: Country = {
   bestMonths: ["June", "July"],
   budget: "₹1L",
   experiences: ["Beaches", "Mountains", "Food"],
-  travelStyle: ["explorer"],
   cities: [
     { name: "Alpha", lat: 1, lng: 1, experiences: ["Beaches"] },
     { name: "Beta", lat: 2, lng: 2, experiences: ["Mountains"] },
@@ -73,7 +72,6 @@ describe("usePlanBuilder", () => {
       bestMonths: ["June", "July"],
       budget: "₹3L",
       experiences: ["Fjords"],
-      travelStyle: ["explorer"],
     };
     const { result } = renderHook(() => usePlanBuilder(norway, "couple"));
     await waitFor(() => expect(result.current.autoSelectedCities.length).toBeGreaterThan(0));

@@ -43,10 +43,6 @@ function createSearchDocument(trip: Searchable): {
 
     if (country.landmark) extras.push(normalizeKey(country.landmark));
 
-    if (country.travelStyle?.length) {
-      extras.push(...country.travelStyle.map(normalizeKey));
-    }
-
     if (country.stopoverNote) extras.push(normalizeKey(country.stopoverNote));
 
     if (country.avoid?.length) extras.push(...country.avoid.map(normalizeKey));

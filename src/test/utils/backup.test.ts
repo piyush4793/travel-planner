@@ -148,7 +148,7 @@ describe("backup import/export helpers — P0", () => {
     const ok = applyBackup({
       version: 1,
       exportedAt: "2026-06-15T00:00:00.000Z",
-      data: { [LS_KEYS.MY_LIST]: ["Japan"], [LS_KEYS.FAVORITES]: ["Japan"] },
+      data: { [LS_KEYS.MY_LIST]: ["Japan"], [LS_KEYS.HOME_COUNTRY]: "India" },
     });
     expect(ok.ok).toBe(true);
     expect(ok.msg).toMatch(/Restored 2 items/);
@@ -161,24 +161,24 @@ describe("backup import/export helpers — P0", () => {
   });
 
   it("skips malformed keys on apply so corrupt data can't poison storage", () => {
-    localStorage.setItem(LS_KEYS.VISITED, JSON.stringify(["Japan"]));
+    localStorage.setItem(LS_KEYS.DELETED, JSON.stringify(["Japan"]));
     const result = applyBackup({
       version: 1,
       exportedAt: "2026-06-15T00:00:00.000Z",
       data: {
         [LS_KEYS.MY_LIST]: ["Japan", "Peru"],          // valid string[]
-        [LS_KEYS.VISITED]: { not: "an array" },        // invalid — must be skipped
+        [LS_KEYS.DELETED]: { not: "an array" },        // invalid — must be skipped
         [LS_KEYS.CUSTOMS]: [{ noName: true }],         // invalid — entries need a name
-        [LS_KEYS.FAVORITES]: [1, 2, 3],                // invalid — not strings
+        [LS_KEYS.BUDGET_BASIS]: "bogus",               // invalid — not a known basis
       },
     });
     expect(result.ok).toBe(true);
     expect(result.msg).toMatch(/Restored 1 items \(3 skipped — invalid format\)/);
     // Valid key written; malformed keys left untouched
     expect(JSON.parse(localStorage.getItem(LS_KEYS.MY_LIST) ?? "[]")).toEqual(["Japan", "Peru"]);
-    expect(JSON.parse(localStorage.getItem(LS_KEYS.VISITED) ?? "[]")).toEqual(["Japan"]);
+    expect(JSON.parse(localStorage.getItem(LS_KEYS.DELETED) ?? "[]")).toEqual(["Japan"]);
     expect(localStorage.getItem(LS_KEYS.CUSTOMS)).toBeNull();
-    expect(localStorage.getItem(LS_KEYS.FAVORITES)).toBeNull();
+    expect(localStorage.getItem(LS_KEYS.BUDGET_BASIS)).toBeNull();
   });
 
   it("skips malformed keys on file import", async () => {
@@ -326,8 +326,8 @@ describe("backup import/export helpers — P0", () => {
 
   it("parses quoted CSV rows and maps them into country objects", async () => {
     const csv = [
-      "name,region,lat,lng,bestMonths,worstMonths,budget,experiences,travelStyle,combo,avoid,landmark,stopoverNote,notes,cities",
-      'Japan,Asia,35.6762,139.6503,"March; April","June; July",₹180K,"Food; Temples","touch-and-go; explorer","South Korea; Taiwan","Typhoon season",Fuji,"Great stopover","Line 1, with comma\nLine 2","[{""name"":""Tokyo"",""lat"":35.6,""lng"":139.7,""bestMonths"":[""March""],""notes"":""Big city""}]"',
+      "name,region,lat,lng,bestMonths,worstMonths,budget,experiences,combo,avoid,landmark,stopoverNote,notes,cities",
+      'Japan,Asia,35.6762,139.6503,"March; April","June; July",₹180K,"Food; Temples","South Korea; Taiwan","Typhoon season",Fuji,"Great stopover","Line 1, with comma\nLine 2","[{""name"":""Tokyo"",""lat"":35.6,""lng"":139.7,""bestMonths"":[""March""],""notes"":""Big city""}]"',
       ',Asia,0,0,,,,,,,,,,',
     ].join("\n");
 
@@ -346,7 +346,6 @@ describe("backup import/export helpers — P0", () => {
           worstMonths: ["June", "July"],
           budget: "₹180K",
           experiences: ["Food", "Temples"],
-          travelStyle: ["touch-and-go", "explorer"],
           combo: ["South Korea", "Taiwan"],
           avoid: ["Typhoon season"],
           landmark: "Fuji",

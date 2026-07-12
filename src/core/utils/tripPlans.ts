@@ -1,9 +1,8 @@
-import type { Country, CityEntry, PlanStyle, TravelStyle } from "../types";
+import type { Country, CityEntry } from "../types";
 import type { CountryRule } from "../data/itineraryRules";
 import { scoreCities, planItinerary } from "./citySelection";
 import { budgetForBasis, parseBudgetRange, BUDGET_BASIS_META, DEFAULT_BUDGET_BASIS, type BudgetBasis } from "./budget";
 import { experienceTokens, tokenHits, matchCityExperiences, ruleCityText } from "./cityExperiences";
-import { defaultDaysForStyle } from "./travelStyles";
 
 export type DayEntry = {
   label: string;
@@ -353,23 +352,22 @@ export function resolvePlannedCities(
  * is the unified `resolvePlannedCities` set — picked cities together with a
  * champion city for every uncovered experience — so the estimate always matches
  * the cities the engine actually plans. When nothing is scoped, falls back to
- * the travel-style default across the whole country. The budget-tier factor
+ * the country's recommended length. The budget-tier factor
  * (premium longer, budget shorter) only applies once the user has actually
- * scoped the plan — a pristine, unscoped panel seeds to the style default so it
- * lines up with the static "Recommended" marker instead of silently diverging.
- * Clamped to [1, maxDays]. Pure and side-effect free so the panel can re-seed
- * its day slider whenever any of these inputs change.
+ * scoped the plan — a pristine, unscoped plan seeds to the recommended length so
+ * it lines up with the static "Recommended" marker instead of silently diverging.
+ * Clamped to [1, maxDays]. Pure and side-effect free so callers can re-seed
+ * their day slider whenever any of these inputs change.
  */
 export function recommendedDaysForSelection(opts: {
   rule: CountryRule | null | undefined;
-  style: TravelStyle | undefined;
   recDays: number;
   maxDays: number;
   selectedCities: string[];
   selectedExperiences: string[];
   budgetTier?: "budget" | "mid" | "premium";
 }): number {
-  const { rule, style, recDays, maxDays, selectedCities, selectedExperiences, budgetTier } = opts;
+  const { rule, recDays, maxDays, selectedCities, selectedExperiences, budgetTier } = opts;
   const safeMax = Math.max(1, maxDays);
   const scoped = selectedCities.length > 0 || selectedExperiences.length > 0;
 
@@ -377,9 +375,9 @@ export function recommendedDaysForSelection(opts: {
   if (rule && scoped) {
     const planned = resolvePlannedCities(rule, selectedCities, selectedExperiences);
     const plannedDays = planned.reduce((s, n) => s + (rule.cities[n]?.recDays ?? 0), 0);
-    base = plannedDays > 0 ? plannedDays : defaultDaysForStyle(style, recDays, safeMax);
+    base = plannedDays > 0 ? plannedDays : recDays;
   } else {
-    base = defaultDaysForStyle(style, recDays, safeMax);
+    base = recDays;
   }
 
   const factor = scoped && budgetTier ? BUDGET_DAY_FACTOR[budgetTier] : 1;
@@ -393,7 +391,6 @@ export function recommendedDaysForSelection(opts: {
  */
 function getRuledItinerary(
   country: Country,
-  _style: PlanStyle,
   selectedCities: string[],
   customDays: number,
   rule: CountryRule | undefined,
@@ -570,7 +567,6 @@ export function composeTripPlan(segments: TripSegment[], basis: BudgetBasis): Tr
 
 export function generateTripPlan(
   country: Country,
-  style: PlanStyle,
   selectedCities: string[] = [],
   customDays = 7,
   externalRule?: CountryRule | null,
@@ -580,230 +576,73 @@ export function generateTripPlan(
   // Use explicit rule if provided
   const rule = externalRule;
   if (rule) {
-    const ruled = getRuledItinerary(country, style, selectedCities, customDays, rule, basis, selectedExperiences);
+    const ruled = getRuledItinerary(country, selectedCities, customDays, rule, basis, selectedExperiences);
     if (ruled) return ruled;
   }
 
   const exps = country.experiences;
-  const cities = country.cities ?? [];
   const [baseLow, baseHigh] = parseCostRange(budgetForBasis(country, basis));
   const landmark = country.landmark ?? exps[0] ?? country.name;
-  const comboSuggestion = country.combo?.slice(0, 2).join(" & ") ?? "nearby countries";
   const bestTime = country.bestMonths.slice(0, 3).join(", ");
 
-  // ── Custom style ─────────────────────────────────────────────────────────
-  if (style === "custom") {
-    const scaleFactor = customDays / 10;
-    const low = Math.round(baseLow * Math.max(0.3, scaleFactor));
-    const high = Math.round(baseHigh * Math.max(0.4, scaleFactor));
+  // ── Generic day-count fallback (no rule coverage) ──────────────────────────
+  const scaleFactor = customDays / 10;
+  const low = Math.round(baseLow * Math.max(0.3, scaleFactor));
+  const high = Math.round(baseHigh * Math.max(0.4, scaleFactor));
 
-    if (selectedCities.length === 0) {
-      // No cities selected — generic day-count plan
-      const weeks = Math.floor(customDays / 7);
-      const remainder = customDays % 7;
-      const dayChunks: DayEntry[] = [];
+  if (selectedCities.length === 0) {
+    // No cities selected — generic day-count plan
+    const weeks = Math.floor(customDays / 7);
+    const remainder = customDays % 7;
+    const dayChunks: DayEntry[] = [];
 
-      if (weeks > 0) {
-        dayChunks.push({
-          label: `Day 1–${Math.min(7, customDays)} — Arrival & Core Highlights`,
-          activities: [
-            `Arrive, check in, first look at ${landmark}`,
-            act(exps[0] ?? landmark),
-            act(exps[1] ?? exps[0]),
-          ],
-        });
-      }
-      if (weeks > 1) {
-        dayChunks.push({
-          label: `Day 8–${Math.min(14, customDays)} — Deeper Exploration`,
-          activities: exps.slice(2, 5).map(act),
-        });
-      }
-      if (weeks > 2 || remainder > 0) {
-        dayChunks.push({
-          label: `Day ${customDays - Math.min(2, customDays - 1)}–${customDays} — Final Days`,
-          activities: [
-            exps.length > 5 ? act(exps[5]) : "Revisit your favourite spot",
-            "Local food run and last-minute shopping",
-            "Depart",
-          ],
-        });
-      }
-      if (dayChunks.length === 0) {
-        dayChunks.push({
-          label: `Day 1–${customDays} — Your Trip`,
-          activities: [act(exps[0] ?? landmark), act(exps[1] ?? exps[0]), "Explore at your own pace"],
-        });
-      }
-
-      return {
-        duration: `${customDays} day${customDays !== 1 ? "s" : ""}`,
-        costPerPerson: costRange(low, high),
-        costBasis: basis,
-        days: dayChunks,
-        note: `Flexible custom itinerary. Best months: ${bestTime}.`,
-      };
+    if (weeks > 0) {
+      dayChunks.push({
+        label: `Day 1–${Math.min(7, customDays)} — Arrival & Core Highlights`,
+        activities: [
+          `Arrive, check in, first look at ${landmark}`,
+          act(exps[0] ?? landmark),
+          act(exps[1] ?? exps[0]),
+        ],
+      });
     }
-
-    // Cities selected
-    const minDays = selectedCities.length;
-    const warning = customDays < minDays
-      ? `${customDays} days is tight for ${selectedCities.length} cities — consider adding ${minDays - customDays} more day${minDays - customDays !== 1 ? "s" : ""} or dropping a city.`
-      : undefined;
-
-    return cityBasedPlan(country, selectedCities, Math.max(customDays, minDays), low, high, warning);
-  }
-
-  // ── Touch & Go ───────────────────────────────────────────────────────────
-  if (style === "touch-and-go") {
-    const totalDays = 4;
-    const low = Math.round(baseLow * 0.38);
-    const high = Math.round(baseHigh * 0.52);
-
-    if (selectedCities.length > 0) {
-      const warning = selectedCities.length > 3
-        ? `${selectedCities.length} cities in ~4 days is rushed — Touch & Go works best with 1–3 cities.`
-        : undefined;
-      return cityBasedPlan(country, selectedCities, totalDays, low, high, warning);
+    if (weeks > 1) {
+      dayChunks.push({
+        label: `Day 8–${Math.min(14, customDays)} — Deeper Exploration`,
+        activities: exps.slice(2, 5).map(act),
+      });
+    }
+    if (weeks > 2 || remainder > 0) {
+      dayChunks.push({
+        label: `Day ${customDays - Math.min(2, customDays - 1)}–${customDays} — Final Days`,
+        activities: [
+          exps.length > 5 ? act(exps[5]) : "Revisit your favourite spot",
+          "Local food run and last-minute shopping",
+          "Depart",
+        ],
+      });
+    }
+    if (dayChunks.length === 0) {
+      dayChunks.push({
+        label: `Day 1–${customDays} — Your Trip`,
+        activities: [act(exps[0] ?? landmark), act(exps[1] ?? exps[0]), "Explore at your own pace"],
+      });
     }
 
     return {
-      duration: "3 – 4 days",
+      duration: `${customDays} day${customDays !== 1 ? "s" : ""}`,
       costPerPerson: costRange(low, high),
       costBasis: basis,
-      days: [
-        {
-          label: "Day 1 — Arrive & First Look",
-          activities: [
-            "Arrive, check in, shake off the flight",
-            act(exps[0] ?? landmark),
-            `Evening: ${act(exps[1] ?? "local neighbourhood stroll")}`,
-          ],
-        },
-        {
-          label: "Day 2 — Main Highlights",
-          activities: [
-            `${act(exps[2] ?? landmark)} — the centrepiece`,
-            act(exps[3] ?? exps[0]),
-            "Afternoon: street food or souvenir run",
-          ],
-        },
-        {
-          label: "Day 3 – 4 — Last Bites & Depart",
-          activities: [
-            act(exps[4] ?? exps[1] ?? "final iconic spot"),
-            "Quick last-minute shopping",
-            `Depart — pair with ${comboSuggestion} for a multi-country run`,
-          ],
-        },
-      ],
-      note: `Best for a quick stopover or long weekend. Fly in and squeeze the highlights before moving on to ${comboSuggestion}.`,
+      days: dayChunks,
+      note: `Flexible custom itinerary. Best months: ${bestTime}.`,
     };
   }
 
-  // ── Explorer ─────────────────────────────────────────────────────────────
-  if (style === "explorer") {
-    const totalDays = 10;
-    const low = baseLow;
-    const high = baseHigh;
+  // Cities selected
+  const minDays = selectedCities.length;
+  const warning = customDays < minDays
+    ? `${customDays} days is tight for ${selectedCities.length} cities — consider adding ${minDays - customDays} more day${minDays - customDays !== 1 ? "s" : ""} or dropping a city.`
+    : undefined;
 
-    if (selectedCities.length > 0) {
-      const warning = selectedCities.length > 8
-        ? `${selectedCities.length} cities across ~10 days will feel rushed. Consider trimming to 4–6 cities.`
-        : undefined;
-      return cityBasedPlan(country, selectedCities, totalDays, low, high, warning);
-    }
-
-    const half = Math.ceil(exps.length / 2);
-    const firstHalf = exps.slice(0, half);
-    const secondHalf = exps.slice(half);
-    const cityDays = cities
-      .slice(0, 2)
-      .map((c) => `Day trip to ${c.name}${c.notes ? ` — ${c.notes.split(",")[0]}` : ""}`);
-
-    return {
-      duration: "7 – 12 days",
-      costPerPerson: costRange(low, high),
-      costBasis: basis,
-      days: [
-        {
-          label: "Day 1 – 2 — Arrival & City Base",
-          activities: ["Settle in, orient yourself", act(firstHalf[0] ?? landmark), act(firstHalf[1] ?? exps[0])],
-        },
-        {
-          label: "Day 3 – 5 — Core Attractions",
-          activities: [...firstHalf.slice(2).map(act), `Full day at ${landmark}`],
-        },
-        {
-          label: "Day 6 – 9 — Deeper Exploration",
-          activities: [...secondHalf.slice(0, 4).map(act), ...cityDays],
-        },
-        {
-          label: "Day 10 – 12 — Wind Down & Depart",
-          activities: [
-            secondHalf.length > 4 ? act(secondHalf[4]) : "Revisit your favourite spot",
-            "Local neighbourhood walk, final dinner",
-            "Depart",
-          ],
-        },
-      ],
-      note: `Ideal for a proper holiday covering the full country. Best months: ${bestTime}.`,
-    };
-  }
-
-  // ── Month Long ───────────────────────────────────────────────────────────
-  const totalDays = 30;
-  const low = Math.round(baseLow * 1.8);
-  const high = Math.round(baseHigh * 2.2);
-
-  if (selectedCities.length > 0) {
-    return cityBasedPlan(country, selectedCities, totalDays, low, high);
-  }
-
-  const regionEntries =
-    cities.length > 0
-      ? cities.map((c) => `${c.name}${c.notes ? ` (${c.notes.split(",")[0]})` : ""}`)
-      : [`Rural ${country.name}`, "Smaller towns", "Local villages"];
-
-  return {
-    duration: "30 days",
-    costPerPerson: costRange(low, high),
-    costBasis: basis,
-    days: [
-      {
-        label: "Week 1 — Capital Deep Dive",
-        activities: [
-          "Secure a monthly rental — cut hotel costs significantly",
-          ...exps.slice(0, 3).map(act),
-          "Groceries, local cafés, neighbourhood routines",
-        ],
-      },
-      {
-        label: "Week 2 — Regional Cities",
-        activities: [
-          ...regionEntries.slice(0, 3).map((r) => `Explore ${r}`),
-          ...exps.slice(3, 5).map(act),
-        ],
-      },
-      {
-        label: "Week 3 — Off the Beaten Path",
-        activities: [
-          ...exps.slice(5).map(act),
-          regionEntries.length > 3 ? `Visit ${regionEntries[3]}` : "Rural day trips",
-          "Cooking class & local market tour",
-          "Cultural event or local festival",
-        ],
-      },
-      {
-        label: "Week 4 — Slow Living & Depart",
-        activities: [
-          "Revisit your favourite corner of the country",
-          country.combo?.length ? `Day trip to ${country.combo[0]}` : "Countryside or coastal escape",
-          "Final meals, wrap up, pack",
-          `Continue to ${comboSuggestion} — or just stay longer`,
-        ],
-      },
-    ],
-    note: `Monthly rentals save 40–50% on accommodation. Works well for remote workers. Best months: ${bestTime}.`,
-  };
+  return cityBasedPlan(country, selectedCities, Math.max(customDays, minDays), low, high, warning);
 }

@@ -2,8 +2,6 @@ import { memo } from "react";
 import type { LifecyclePrompt, LifecyclePromptKind } from "../../hooks/useLifecyclePrompts";
 
 const ICON: Record<LifecyclePromptKind, string> = {
-  "add-to-list": "🧭",
-  favorite: "★",
   backup: "💾",
 };
 

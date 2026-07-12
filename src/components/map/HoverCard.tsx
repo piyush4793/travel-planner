@@ -6,10 +6,9 @@ type Props = {
   country: Country;
   x: number;
   y: number;
-  isVisited: boolean;
 };
 
-export default function HoverCard({ country, x, y, isVisited }: Props) {
+export default function HoverCard({ country, x, y }: Props) {
   const [imgSrc, setImgSrc] = useState<string | null>(null);
 
   useEffect(() => {
@@ -27,7 +26,7 @@ export default function HoverCard({ country, x, y, isVisited }: Props) {
         transform: "translate(-50%, calc(-100% - 52px))",
       }}
       role="tooltip"
-      aria-label={`${country.name} — ${country.budget ?? ""}${isVisited ? " (Visited)" : ""}`}
+      aria-label={`${country.name} — ${country.budget ?? ""}`}
     >
       <div className="relative h-28 bg-gradient-to-br from-slate-700 to-slate-900">
         {imgSrc ? (
@@ -43,11 +42,6 @@ export default function HoverCard({ country, x, y, isVisited }: Props) {
               {country.name[0]}
             </span>
           </div>
-        )}
-        {isVisited && (
-          <span className="absolute top-2 right-2 bg-green-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
-            Visited
-          </span>
         )}
         {/* small arrow pointing down to the pin */}
         <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 shadow" />
