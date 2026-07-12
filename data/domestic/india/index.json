@@ -665,5 +665,103 @@
       "Andhra Pradesh",
       "Chhattisgarh"
     ]
+  },
+  {
+    "name": "Bihar",
+    "lat": 25.0961,
+    "lng": 85.3131,
+    "region": "East India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 9,
+    "popularityScore": 68,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Uttar Pradesh",
+      "Jharkhand",
+      "West Bengal"
+    ]
+  },
+  {
+    "name": "Jharkhand",
+    "lat": 23.6102,
+    "lng": 85.2799,
+    "region": "East India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 9,
+    "popularityScore": 58,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Bihar",
+      "West Bengal",
+      "Odisha",
+      "Chhattisgarh",
+      "Uttar Pradesh"
+    ]
+  },
+  {
+    "name": "Sikkim",
+    "lat": 27.533,
+    "lng": 88.5122,
+    "region": "Northeast India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 8,
+    "maxDays": 12,
+    "popularityScore": 82,
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "West Bengal",
+      "Assam",
+      "Meghalaya"
+    ]
   }
 ]

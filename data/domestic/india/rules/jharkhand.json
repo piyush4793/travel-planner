@@ -1,0 +1,278 @@
+{
+  "name": "Jharkhand",
+  "seed": false,
+  "lat": 23.6102,
+  "lng": 85.2799,
+  "region": "East India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": ["October", "November", "December", "January", "February", "March"],
+  "worstMonths": ["April", "May", "June", "July", "August", "September"],
+  "budget": {
+    "solo": "₹7K–₹32K",
+    "couple": "₹12K–₹48K",
+    "family4": "₹22K–₹85K"
+  },
+  "experiences": [
+    "Waterfalls",
+    "Wildlife & Safari",
+    "Temples & Religious Sites",
+    "National Parks",
+    "Hiking",
+    "Road Trips",
+    "Festivals"
+  ],
+  "avoid": ["April", "May", "June", "July", "August", "September"],
+  "combo": ["Bihar", "West Bengal", "Odisha", "Chhattisgarh", "Uttar Pradesh"],
+  "landmark": "Baba Baidyanath Dham, Deoghar",
+  "travelStyle": ["explorer"],
+  "stopoverNote": "Ranchi is the practical gateway; the western Netarhat-Betla forest cluster works best as one continuous car circuit before the long haul east to Deoghar.",
+  "diet": {
+    "vegetarian": "Vegetarian food is widely available across Jharkhand, with dal-bhat, dhuska, litti chokha, pitha, ghughni and saag common in simple eateries. Deoghar is especially vegetarian-friendly because of the Baidyanath Dham pilgrimage precinct.",
+    "vegan": "Vegan travel is feasible with care: dhuska, chokha, saag and many tribal-style preparations are plant-based, but ghee, curd, milk sweets and milky tea are common. Ask for litti and dal to be made without ghee, milk or curd, and brief guesthouse kitchens in Netarhat and Betla in advance.",
+    "phrases": [
+      "Ghee nahi, sirf tel mein banao = no ghee, cook only in oil",
+      "Doodh aur dahi nahi chahiye = I do not want milk or curd",
+      "Shakahari khana milega? = is vegetarian food available?"
+    ]
+  },
+  "links": [
+    { "label": "Jharkhand Tourism (official)", "url": "https://tourism.jharkhand.gov.in/" },
+    { "label": "JTDC bookings and rest houses", "url": "https://jtdcl.jharkhand.gov.in/" },
+    { "label": "Palamau Tiger Reserve", "url": "https://www.palamautigerreserve.in/" }
+  ],
+  "cities": [
+    {
+      "name": "Ranchi",
+      "lat": 23.3441,
+      "lng": 85.3096,
+      "notes": "Jharkhand's capital and main gateway — a Chotanagpur plateau city ringed by Dassam, Jonha and Hundru waterfalls plus easy valley drives.",
+      "bestMonths": ["October", "November", "December", "January", "February"],
+      "worstMonths": ["May", "June", "July", "August"],
+      "experiences": ["Waterfalls", "Hiking", "Road Trips", "Temples & Religious Sites"]
+    },
+    {
+      "name": "Netarhat",
+      "lat": 23.4845,
+      "lng": 84.2667,
+      "notes": "The Queen of Chotanagpur — a sal-forest hill station known for plateau-edge sunrise, sunset and cool forest trails.",
+      "bestMonths": ["November", "December", "January", "February"],
+      "worstMonths": ["April", "May", "June", "July", "August", "September"],
+      "experiences": ["Hiking", "Road Trips", "Waterfalls", "Mountains"]
+    },
+    {
+      "name": "Betla National Park",
+      "lat": 23.645,
+      "lng": 84.08,
+      "notes": "The Palamau tiger-reserve gateway — sal and bamboo forest, elephant country, Chero fort ruins and dawn/evening jeep safaris.",
+      "bestMonths": ["November", "December", "January", "February"],
+      "worstMonths": ["June", "July", "August", "September"],
+      "experiences": ["Wildlife & Safari", "National Parks", "Hiking", "History"]
+    },
+    {
+      "name": "Deoghar",
+      "lat": 24.4854,
+      "lng": 86.6946,
+      "notes": "A major Shiva pilgrimage city anchored by Baba Baidyanath Jyotirlinga, with Trikut Hill and Basukinath as nearby extensions.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["May", "June", "July", "August"],
+      "experiences": ["Temples & Religious Sites", "Festivals", "Hiking", "Architecture", "Road Trips"]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel work well in Ranchi and Deoghar; coverage becomes patchy around Netarhat forest roads and the Betla core, so download offline maps before leaving Ranchi.",
+    "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "Ola", "Uber", "Zomato"],
+    "cityOrder": ["Ranchi", "Netarhat", "Betla National Park", "Deoghar"],
+    "cities": {
+      "Ranchi": {
+        "name": "Ranchi",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days lets you split the waterfall ring from the city-and-valley sights without overloading plateau driving time.",
+        "experiences": ["Waterfalls", "Hiking", "Road Trips", "Temples & Religious Sites"],
+        "signatureExperiences": ["Waterfalls", "Road Trips"],
+        "days": [
+          {
+            "theme": "Waterfall circuit — Dassam, Jonha & Hundru",
+            "pace": "moderate",
+            "note": "Dassam and Jonha sit in the same south-east arc, while Hundru is a separate north-east run; start by 7am and keep this to a private-cab day rather than adding more stops.",
+            "activities": [
+              { "name": "Dassam Falls — wide Kanchi river cascade near Taimara", "duration": "~1.5h", "priority": "must-see", "cost": "varies", "tip": "The rocks are slippery after rain; wear grip shoes and avoid entering the water." },
+              { "name": "Jonha Falls / Gautamdhara — gorge descent and temple viewpoint", "duration": "~1.5h", "priority": "must-see", "cost": "varies", "tip": "Budget time for the steep step climb back from the base." },
+              { "name": "Hundru Falls — Subarnarekha river plunge", "duration": "~2h", "priority": "must-see", "cost": "varies", "tip": "Best Oct-Jan; currents remain dangerous after monsoon even when the pool looks calm." },
+              { "name": "Tagore Hill sunset viewpoint", "duration": "~45m", "priority": "recommended", "cost": "varies", "tip": "A short city climb that works well after returning from Hundru." }
+            ],
+            "hotels": [
+              { "name": "Ranchi city guesthouse", "budget": "varies" },
+              { "name": "Mid-range Ranchi hotel near station or airport road", "budget": "varies" }
+            ],
+            "meals": ["Dhuska with aloo sabzi", "Litti chokha", "Dal-bhat and saag"]
+          },
+          {
+            "theme": "City heritage, Kanke side & Patratu Valley",
+            "pace": "relaxed",
+            "note": "Keep the morning within central Ranchi, then use the afternoon for Patratu's 40 km valley drive; do not combine Rajrappa unless you skip Patratu and start early.",
+            "activities": [
+              { "name": "Jagannath Temple, Ranchi — hilltop Puri-style shrine", "duration": "~1h", "priority": "must-see", "cost": "varies", "tip": "Go before late-morning crowds and dress modestly." },
+              { "name": "Rock Garden and Kanke Dam viewpoint", "duration": "~1.5h", "priority": "recommended", "cost": "varies", "tip": "Pair the garden with a short reservoir walk rather than treating it as a full-day stop." },
+              { "name": "Patratu Valley and Lake scenic drive", "duration": "~3h return", "priority": "must-see", "cost": "varies", "tip": "Leave by mid-afternoon for golden light on the hairpin valley road." },
+              { "name": "Rajrappa Temple and Damodar-Bhairavi confluence", "duration": "~2.5h", "priority": "optional", "cost": "varies", "tip": "Choose this as a separate extension or substitute, not as an add-on to Patratu." }
+            ],
+            "hotels": [
+              { "name": "Ranchi city guesthouse", "budget": "varies" },
+              { "name": "Airport-road business hotel", "budget": "varies" }
+            ],
+            "meals": ["Dhuska and ghughni", "Vegetarian thali", "Thekua or local sweets"]
+          },
+          {
+            "theme": "Optional slower Ranchi buffer",
+            "pace": "relaxed",
+            "note": "Use a third day only if you want a lighter waterfall schedule or a Rajrappa detour before the forest-road section to Netarhat.",
+            "activities": [
+              { "name": "Rajrappa Temple day trip", "duration": "half day", "priority": "recommended", "cost": "varies", "tip": "Leave early; the confluence and temple work best before midday heat." },
+              { "name": "Ranchi local markets for snacks and supplies", "duration": "~1.5h", "priority": "optional", "cost": "varies", "tip": "Stock water, snacks and offline maps before the Netarhat-Betla stretch." }
+            ],
+            "hotels": [
+              { "name": "Ranchi city guesthouse", "budget": "varies" }
+            ],
+            "meals": ["Dal-bhat", "Litti chokha"]
+          }
+        ]
+      },
+      "Netarhat": {
+        "name": "Netarhat",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A one-night hill-station stop is enough if you arrive for sunset, sleep locally, watch sunrise and continue toward Betla.",
+        "experiences": ["Hiking", "Road Trips", "Waterfalls", "Mountains"],
+        "signatureExperiences": ["Mountains", "Road Trips"],
+        "days": [
+          {
+            "theme": "Sunset, dawn light & forest viewpoints",
+            "pace": "relaxed",
+            "note": "Netarhat is compact, but the magic depends on timing: arrive by afternoon, do Magnolia Point at sunset, sleep locally, then wake before dawn before driving to Betla.",
+            "activities": [
+              { "name": "Magnolia Point sunset over the Chotanagpur plateau", "duration": "~1.5h", "priority": "must-see", "cost": "varies", "tip": "Arrive at least 30 minutes before sunset and carry a light jacket in winter." },
+              { "name": "Netarhat Plateau sunrise viewpoint", "duration": "~1.5h", "priority": "must-see", "cost": "varies", "tip": "Set a pre-dawn alarm; clear winter mornings are the key reason to stay overnight." },
+              { "name": "Upper Ghaghri Falls en route toward Betla", "duration": "~1h", "priority": "recommended", "cost": "varies", "tip": "Best Oct-Dec; combine with departure morning rather than adding a late-night forest drive." },
+              { "name": "Koel View Point short forest vista", "duration": "~45m", "priority": "optional", "cost": "varies", "tip": "Use only if the morning is clear and the Betla departure is not slipping." }
+            ],
+            "hotels": [
+              { "name": "JTDC Tourist Lodge Netarhat", "budget": "varies" },
+              { "name": "Netarhat private guesthouse", "budget": "varies" }
+            ],
+            "meals": ["Guesthouse dal-bhat", "Simple vegetarian thali", "Packed breakfast for the dawn departure"]
+          },
+          {
+            "theme": "Extra Netarhat forest buffer",
+            "pace": "relaxed",
+            "note": "Add this only for slow travel or photography; lodging is limited, so book ahead before extending.",
+            "activities": [
+              { "name": "Lower Ghaghri Falls forest walk", "duration": "~1.5h", "priority": "recommended", "cost": "varies", "tip": "Avoid in heavy rain or fog; paths can be slippery." },
+              { "name": "Netarhat town and sal-forest walks", "duration": "~2h", "priority": "optional", "cost": "varies", "tip": "Stay on known paths and return before dark because connectivity is patchy." }
+            ],
+            "hotels": [
+              { "name": "JTDC Tourist Lodge Netarhat", "budget": "varies" }
+            ],
+            "meals": ["Guesthouse thali", "Tea and local snacks"]
+          }
+        ]
+      },
+      "Betla National Park": {
+        "name": "Betla National Park",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One night gives you an evening safari and a dawn safari; two safaris are strongly preferable because sightings are never guaranteed.",
+        "experiences": ["Wildlife & Safari", "National Parks", "Hiking", "History"],
+        "signatureExperiences": ["Wildlife & Safari", "National Parks"],
+        "days": [
+          {
+            "theme": "Palamau tiger reserve safari & Chero forts",
+            "pace": "moderate",
+            "note": "Arrive from Netarhat by late morning, take the fixed 2-5pm safari, sleep near the gate, then do a 6-10am safari before the long Deoghar drive.",
+            "activities": [
+              { "name": "Evening jeep safari in Palamau Tiger Reserve", "duration": "~3h", "priority": "must-see", "cost": "Entry ₹10/person; Gypsy ₹1,200–₹1,500/vehicle; camera ₹50", "tip": "Book the next morning's safari at the same time; elephants, deer and birds are more reliable than tiger sightings." },
+              { "name": "Betla Fort and Chero ruins inside the forest route", "duration": "~45m", "priority": "recommended", "cost": "Included with safari route", "tip": "Ask your guide to route via the fort; do not attempt it on foot." },
+              { "name": "Lodha or Mirchaia Falls in the buffer zone", "duration": "~1h", "priority": "optional", "cost": "varies", "tip": "Only fit this in before safari check-in if the Netarhat drive arrives on schedule." },
+              { "name": "Elephant safari if operating", "duration": "~1h", "priority": "optional", "cost": "~₹400 for up to 4 persons", "tip": "Availability is seasonal and depends on trained elephants at camp." }
+            ],
+            "hotels": [
+              { "name": "JTDC Forest Resort Betla", "budget": "varies" },
+              { "name": "Palamau Tiger Reserve eco-cottage", "budget": "varies" }
+            ],
+            "meals": ["Guesthouse dinner", "Packed breakfast for safari", "Simple dal-bhat"]
+          },
+          {
+            "theme": "Dawn safari before Deoghar drive",
+            "pace": "packed",
+            "note": "The second safari is best for wildlife, but the Betla-Deoghar transfer is 5.5-6.5 hours; leave the park by about 9:30am after breakfast.",
+            "activities": [
+              { "name": "Morning jeep safari in Palamau Tiger Reserve", "duration": "~4h", "priority": "must-see", "cost": "Entry ₹10/person; Gypsy ₹1,200–₹1,500/vehicle; camera ₹50", "tip": "Reach the gate before 6am and pack breakfast the night before." },
+              { "name": "Forest interpretation stop near Betla gate", "duration": "~30m", "priority": "optional", "cost": "varies", "tip": "Skip if the Deoghar departure is delayed." }
+            ],
+            "hotels": [
+              { "name": "JTDC Forest Resort Betla", "budget": "varies" }
+            ],
+            "meals": ["Packed breakfast", "Roadside lunch on the Daltonganj-Koderma corridor"]
+          }
+        ]
+      },
+      "Deoghar": {
+        "name": "Deoghar",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Two days is ideal after the long Betla transfer: evening darshan on arrival, then Trikut Hill and temple-town extensions the next day.",
+        "experiences": ["Temples & Religious Sites", "Festivals", "Hiking", "Architecture", "Road Trips"],
+        "signatureExperiences": ["Temples & Religious Sites"],
+        "days": [
+          {
+            "theme": "Evening arrival & Baidyanath Dham darshan",
+            "pace": "relaxed",
+            "note": "The long Betla drive typically reaches Deoghar around late afternoon, matching the temple's evening reopening and avoiding an unrealistic full sightseeing day.",
+            "activities": [
+              { "name": "Baba Baidyanath Jyotirlinga evening darshan", "duration": "~2h", "priority": "must-see", "cost": "Free general darshan; VIP ₹500/Indian and ₹1,000/foreigner", "tip": "Avoid Shravan Mela in July-August unless pilgrimage crowds are the purpose of the trip." },
+              { "name": "Sandhya aarti in the Baidyanath temple complex", "duration": "~45m", "priority": "recommended", "cost": "Free", "tip": "Be inside the complex before the ceremony begins to get a better position." },
+              { "name": "Shivganga Tank and temple lanes", "duration": "~30m", "priority": "optional", "cost": "Free", "tip": "Observe respectfully; many pilgrims bathe here before darshan." }
+            ],
+            "hotels": [
+              { "name": "Deoghar temple-area guesthouse", "budget": "varies" },
+              { "name": "Mid-range Deoghar hotel", "budget": "varies" }
+            ],
+            "meals": ["Pure-veg thali", "Dhuska or litti chokha", "Temple-town sweets with dairy common"]
+          },
+          {
+            "theme": "Trikut Hill & temple-town circuit",
+            "pace": "moderate",
+            "note": "Do morning darshan or Trikut first; the ropeway operates in daytime and Basukinath works as an afternoon detour before departure.",
+            "activities": [
+              { "name": "Morning Baidyanath darshan", "duration": "~1.5h", "priority": "must-see", "cost": "Free general darshan; VIP ₹500/Indian and ₹1,000/foreigner", "tip": "The 7-10am window is often more manageable than the earliest rush." },
+              { "name": "Trikut Ropeway and hill walk", "duration": "~3h", "priority": "must-see", "cost": "₹130/person round trip", "tip": "Ropeway hours are limited; arrive early and wear good footwear for the rocky summit path." },
+              { "name": "Basukinath Temple afternoon extension", "duration": "~1.5h", "priority": "recommended", "cost": "Free", "tip": "A logical continuation of the Shiva pilgrimage circuit on the Dumka road." },
+              { "name": "Nandan Pahar family hill park", "duration": "~1.5h", "priority": "optional", "cost": "varies", "tip": "Use as a relaxed wind-down if travelling with children." }
+            ],
+            "hotels": [
+              { "name": "Deoghar temple-area guesthouse", "budget": "varies" },
+              { "name": "Mid-range Deoghar hotel", "budget": "varies" }
+            ],
+            "meals": ["Pure-veg restaurant meal", "Litti chokha without ghee on request", "Tea and snacks near the temple lanes"]
+          }
+        ]
+      }
+    },
+    "connections": [
+      { "from": "Ranchi", "to": "Netarhat", "method": "Private car/taxi via the Chotanagpur plateau roads", "cost": "₹3,500–₹4,500 private cab", "distanceKm": 155, "durationHrs": 4.5, "sameDayFeasible": true },
+      { "from": "Netarhat", "to": "Betla National Park", "method": "Private car/taxi via forest and plateau roads", "cost": "₹1,500–₹2,500 local hire or same car", "distanceKm": 85, "durationHrs": 3, "sameDayFeasible": true },
+      { "from": "Betla National Park", "to": "Deoghar", "method": "Private car via Daltonganj, Hazaribagh/Koderma and Giridih", "cost": "₹4,000–₹6,000 full-day cab", "distanceKm": 250, "durationHrs": 6.5, "sameDayFeasible": true }
+    ],
+    "extras": [
+      "The full Ranchi-Netarhat-Betla-Deoghar circuit is roughly 5-6 days and best done with a Ranchi-based car for the forest and plateau legs.",
+      "Avoid July-September for casual travel: Betla safaris are closed or disrupted, waterfall approaches are slippery, and Deoghar's Shravan Mela creates extreme crowding.",
+      "Download offline maps for Netarhat and Betla; mobile data can drop in forest corridors and inside the park.",
+      "For Betla, confirm safari slots through Palamau Tiger Reserve or the gate before committing to the long onward drive to Deoghar.",
+      "Costs are listed only where the research report provided verified figures; otherwise the JSON uses 'varies' to avoid stale pricing."
+    ]
+  }
+}

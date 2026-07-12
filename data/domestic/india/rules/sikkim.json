@@ -1,0 +1,864 @@
+{
+  "name": "Sikkim",
+  "seed": false,
+  "lat": 27.533,
+  "lng": 88.5122,
+  "region": "Northeast India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "March",
+    "April",
+    "May",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹22K–₹35K",
+    "couple": "₹40K–₹60K",
+    "family4": "₹70K–₹1.05L"
+  },
+  "experiences": [
+    "Mountains",
+    "Temples & Religious Sites",
+    "Hiking",
+    "National Parks",
+    "Lakes",
+    "UNESCO Sites",
+    "Waterfalls",
+    "Hot Springs & Wellness",
+    "Markets & Shopping",
+    "Food",
+    "Road Trips"
+  ],
+  "avoid": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "West Bengal",
+    "Assam",
+    "Meghalaya"
+  ],
+  "landmark": "Kanchenjunga views and Khangchendzonga National Park",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Use Bagdogra (IXB) or New Jalpaiguri (NJP) as the reliable gateway; Pakyong is closer to Gangtok but mountain-weather cancellations are common. All travel inside Sikkim is by narrow mountain roads, and North/East Sikkim permit zones must be handled by registered operators.",
+  "diet": {
+    "vegetarian": "Vegetarian food is widely available across Sikkim: veg momos, thukpa, dal bhat, aloo dum, sel roti and gundruk are common in Gangtok, Pelling and most homestays. Butter tea and paneer dishes are vegetarian but dairy-heavy, so clarify if you avoid milk products.",
+    "vegan": "Vegan travel is manageable in Gangtok and Pelling but harder in remote North Sikkim, where package homestays serve fixed meals and often use ghee, butter tea or paneer. Pre-request oil-only cooking and simple rice, gundruk jhol, aloo dum and steamed veg momos when booking Lachung/North Sikkim stays.",
+    "phrases": [
+      "Maas bina, shakahari khana dinuhos = please give vegetarian food without meat",
+      "Ghee, dudh, paneer narakhnu hola = please do not add ghee, milk or paneer",
+      "Tel ma matra pakaunu hola = please cook only in oil"
+    ]
+  },
+  "links": [
+    {
+      "label": "Sikkim Tourism Department (official)",
+      "url": "https://sikkimtourism.gov.in"
+    },
+    {
+      "label": "e-FRRO portal for foreign nationals",
+      "url": "https://indianfrro.gov.in/eservices/"
+    },
+    {
+      "label": "Khangchendzonga National Park — UNESCO",
+      "url": "https://whc.unesco.org/en/list/1513"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Gangtok",
+      "lat": 27.3389,
+      "lng": 88.6065,
+      "notes": "Sikkim's energetic capital — MG Marg, monasteries, ropeway views and the logistics base for Tsomgo Lake, Baba Mandir and Nathula Pass permits.",
+      "bestMonths": [
+        "March",
+        "April",
+        "May",
+        "October",
+        "November",
+        "December"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "Temples & Religious Sites",
+        "Markets & Shopping",
+        "Festivals",
+        "Hiking",
+        "Lakes"
+      ]
+    },
+    {
+      "name": "Lachung",
+      "lat": 27.6888,
+      "lng": 88.748,
+      "notes": "Remote North Sikkim village used as the permitted base for Yumthang Valley, hot springs, Zero Point and optional Gurudongmar/Lachen extensions.",
+      "bestMonths": [
+        "April",
+        "May",
+        "June",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "July",
+        "August",
+        "September",
+        "December",
+        "January",
+        "February"
+      ],
+      "experiences": [
+        "Mountains",
+        "Glaciers",
+        "Hiking",
+        "Lakes",
+        "National Parks",
+        "Hot Springs & Wellness",
+        "Waterfalls",
+        "Road Trips"
+      ]
+    },
+    {
+      "name": "Ravangla",
+      "lat": 27.3063,
+      "lng": 88.3596,
+      "notes": "Quiet South Sikkim ridge town with the giant Tathagata Buddha, monasteries and broad Kanchenjunga views; works well as a one-night scenic bridge toward Pelling.",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Temples & Religious Sites",
+        "Mountains",
+        "Hiking",
+        "Architecture"
+      ]
+    },
+    {
+      "name": "Pelling",
+      "lat": 27.3023,
+      "lng": 88.2348,
+      "notes": "West Sikkim's classic Kanchenjunga-view base — Skywalk, Chenrezig statue, Pemayangtse Monastery, Rabdentse ruins and sacred Khecheopalri Lake.",
+      "bestMonths": [
+        "October",
+        "November",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "Temples & Religious Sites",
+        "Lakes",
+        "Architecture",
+        "Hiking",
+        "History"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Indian prepaid SIMs from Jio or Airtel work well in Gangtok and Pelling; coverage becomes patchy in North Sikkim valleys, so download maps and keep operator/driver numbers offline.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "MakeMyTrip",
+      "Zomato",
+      "WhatsApp"
+    ],
+    "cityOrder": [
+      "Gangtok",
+      "Lachung",
+      "Ravangla",
+      "Pelling"
+    ],
+    "cities": {
+      "Gangtok": {
+        "name": "Gangtok",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days gives one easy arrival/acclimatization day, one monastery-and-city day, and one high-altitude Tsomgo/Nathula permit excursion.",
+        "experiences": [
+          "Mountains",
+          "Temples & Religious Sites",
+          "Markets & Shopping",
+          "Festivals",
+          "Hiking",
+          "Lakes"
+        ],
+        "signatureExperiences": [
+          "Mountains",
+          "Temples & Religious Sites",
+          "Lakes"
+        ],
+        "days": [
+          {
+            "theme": "Arrival, MG Marg & gentle acclimatization",
+            "pace": "relaxed",
+            "note": "Bagdogra/NJP to Gangtok is a 4–5 hour mountain transfer, so keep the first day light. Confirm East/North Sikkim permit paperwork with a registered operator before attempting Tsomgo, Nathula or North Sikkim.",
+            "activities": [
+              {
+                "name": "MG Marg pedestrian promenade",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Use the car-free promenade for food, ATMs and cash before remote North Sikkim."
+              },
+              {
+                "name": "Hotel check-in and permit document check",
+                "duration": "~30m",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Carry Voter ID or Passport and passport photos; Aadhaar is rejected at army checkposts."
+              },
+              {
+                "name": "Do Drul Chorten Stupa",
+                "duration": "~45m",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Lal Bazaar local market browse",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget/MG Marg guesthouse",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Mid-range Gangtok hotel",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "MG Marg veg momos",
+              "Thukpa café dinner",
+              "Dal bhat thali"
+            ]
+          },
+          {
+            "theme": "Monasteries, ropeway & city panoramas",
+            "pace": "moderate",
+            "note": "Rumtek is about 24 km from central Gangtok, so start early and use a local taxi for the monastery circuit. This is the easiest culture day before high-altitude travel.",
+            "activities": [
+              {
+                "name": "Rumtek Monastery",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Photography may be restricted inside the prayer hall."
+              },
+              {
+                "name": "Gangtok Ropeway",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "₹161/adult round-trip + 5% GST",
+                "tip": "Runs roughly 9am–6pm from Deorali station; views are weather-dependent."
+              },
+              {
+                "name": "Enchey Monastery",
+                "duration": "~45m",
+                "priority": "recommended",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Tashi View Point",
+                "duration": "~30m",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Namgyal Institute of Tibetology",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget/MG Marg guesthouse",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Mid-range Gangtok hotel",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Veg momos",
+              "Gundruk soup",
+              "Sel roti with tea"
+            ]
+          },
+          {
+            "theme": "Tsomgo Lake, Baba Mandir & Nathula Pass",
+            "pace": "packed",
+            "note": "Inner Line/Protected Area Permit is mandatory and must be arranged through a registered Sikkim operator; no same-day walk-in permits. Nathula is closed Mon/Tue, foreigners cannot visit Nathula/Baba Mandir, and the 14,140 ft altitude can cause breathlessness — walk slowly and descend if unwell.",
+            "activities": [
+              {
+                "name": "Tsomgo (Changu) Lake",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Shared cab+permit ₹800–₹1,500/person; private SUV ₹6,000–₹8,000/vehicle",
+                "tip": "Carry warm layers even in May; yak rides are optional and extra."
+              },
+              {
+                "name": "Baba Harbhajan Mandir",
+                "duration": "30–45m",
+                "priority": "must-see",
+                "cost": "Included in permit+cab cost",
+                "tip": "Indian nationals only; follow army instructions."
+              },
+              {
+                "name": "Nathula Pass",
+                "duration": "~45m",
+                "priority": "must-see",
+                "cost": "Included in permit+cab; additional permit fee ~₹200/person",
+                "tip": "Closed Mon/Tue and subject to military/weather closures."
+              },
+              {
+                "name": "Himalayan Zoological Park on return",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget/MG Marg guesthouse",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Mid-range Gangtok hotel",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Hot tea at Tsomgo stalls",
+              "Simple MG Marg dinner after return"
+            ]
+          },
+          {
+            "theme": "Buffer day for weather or permit slippage",
+            "pace": "relaxed",
+            "note": "Keep this day only if you are travelling in shoulder season or want a safety buffer; high passes and NH-10 can close after snow, rain, landslides or military movement.",
+            "activities": [
+              {
+                "name": "Reserve day for delayed Tsomgo/Nathula permit trip",
+                "duration": "full day",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "MG Marg cafés and shopping",
+                "duration": "2–3h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Local taxi viewpoint loop",
+                "duration": "half day",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget/MG Marg guesthouse",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Café lunch",
+              "Veg thukpa",
+              "Aloo dum"
+            ]
+          }
+        ]
+      },
+      "Lachung": {
+        "name": "Lachung",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the classic Gangtok–Lachung–Yumthang loop; a third day is only for fit travellers adding Lachen/Gurudongmar with a proper PAP extension.",
+        "experiences": [
+          "Mountains",
+          "Glaciers",
+          "Hiking",
+          "Lakes",
+          "National Parks",
+          "Hot Springs & Wellness",
+          "Waterfalls",
+          "Road Trips"
+        ],
+        "signatureExperiences": [
+          "Mountains",
+          "Glaciers",
+          "National Parks"
+        ],
+        "days": [
+          {
+            "theme": "Gangtok to Lachung mountain drive",
+            "pace": "moderate",
+            "note": "Protected Area Permit is mandatory for North Sikkim and must be QR-issued through a registered operator. Expect 5–7 hours of winding mountain roads, permit checkposts, landslide delays and basic but warm homestay accommodation.",
+            "activities": [
+              {
+                "name": "Teesta Valley and Singhik viewpoint drive",
+                "duration": "5–7h with stops",
+                "priority": "must-see",
+                "cost": "North Sikkim package ₹10,000–₹15,000/person",
+                "tip": "Start by 7am; carry cash because Lachung has no reliable ATM."
+              },
+              {
+                "name": "Seven Sisters Waterfalls photo stop",
+                "duration": "15–20m",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Lachung Monastery evening walk",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Meal-inclusive Lachung homestay night",
+                "duration": "overnight",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Confirm vegetarian/vegan needs when booking the package."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lachung homestay/package hotel",
+                "budget": "usually included in North Sikkim package"
+              }
+            ],
+            "meals": [
+              "Homestay dal bhat",
+              "Veg momos",
+              "Butter tea if you take dairy"
+            ]
+          },
+          {
+            "theme": "Yumthang Valley & optional Zero Point",
+            "pace": "moderate",
+            "note": "Yumthang sits around 11,693 ft; Zero Point is about 15,300 ft and should be attempted only in clear weather by acclimatized travellers. Return to Gangtok/Ravangla routing makes this a very long day if you do not spend another night.",
+            "activities": [
+              {
+                "name": "Yumthang Valley",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Included in North Sikkim package ₹10,000–₹15,000/person",
+                "tip": "April–May is the rhododendron bloom; walk slowly at altitude."
+              },
+              {
+                "name": "Yumthang Hot Springs",
+                "duration": "30–45m",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Zero Point (Yumesamdong)",
+                "duration": "2–3h additional",
+                "priority": "optional",
+                "cost": "₹1,000–₹2,000 extra",
+                "tip": "Skip if roads are snowy, if you feel unwell, or if travelling with young children/elderly visitors."
+              },
+              {
+                "name": "Return drive toward Gangtok",
+                "duration": "5–7h",
+                "priority": "recommended",
+                "cost": "Included in package",
+                "tip": "Build buffer time for checkposts and landslides."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lachung homestay/package hotel",
+                "budget": "usually included in North Sikkim package"
+              },
+              {
+                "name": "Gangtok transit hotel if breaking the return",
+                "budget": "₹1,500–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Packed breakfast",
+              "Simple homestay lunch",
+              "Tea stops on the return"
+            ]
+          },
+          {
+            "theme": "Optional Lachen and Gurudongmar Lake extension",
+            "pace": "packed",
+            "note": "Gurudongmar Lake at about 17,800 ft is a serious AMS risk and requires a separate Lachen overnight plus PAP extension. Spend only 20–30 minutes at the lake, avoid exertion, and descend immediately with headache, vomiting, confusion or breathlessness; foreigners are not allowed.",
+            "activities": [
+              {
+                "name": "Lachen overnight for Gurudongmar departure",
+                "duration": "overnight",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Gurudongmar Lake",
+                "duration": "20–30m at lake",
+                "priority": "must-see",
+                "cost": "Included in extended 3N package",
+                "tip": "Carry oxygen if high-risk and consult a doctor for children, elderly, pregnant travellers or cardiac/respiratory conditions."
+              },
+              {
+                "name": "High-altitude descent to safer elevation",
+                "duration": "several hours",
+                "priority": "must-see",
+                "cost": "Included in package"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Lachen/Lachung package homestay",
+                "budget": "varies"
+              }
+            ],
+            "meals": [
+              "Early packed breakfast",
+              "Hot tea after descent",
+              "Simple homestay dinner"
+            ]
+          }
+        ]
+      },
+      "Ravangla": {
+        "name": "Ravangla",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One night is enough for Buddha Park, Ralang Monastery and a Namchi stop en route; add a second only for a slower ridge-town break.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "Mountains",
+          "Hiking",
+          "Architecture"
+        ],
+        "signatureExperiences": [
+          "Temples & Religious Sites",
+          "Mountains"
+        ],
+        "days": [
+          {
+            "theme": "Buddha Park, Namchi & South Sikkim views",
+            "pace": "relaxed",
+            "note": "No permit is required for Indian nationals on the South Sikkim/Ravangla route. If coming from Lachung the same day, this leg is tiring because you normally return via Gangtok first; start early or break the journey in Gangtok if roads are delayed.",
+            "activities": [
+              {
+                "name": "Tathagata Tsal (Buddha Park)",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "₹50/adult, ₹25/child",
+                "tip": "Open roughly 9am–5pm; morning light is best for mountain views."
+              },
+              {
+                "name": "Ralang Monastery",
+                "duration": "~45m",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Namchi Siddheshwar Dham (Char Dham) en route",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "₹50/adult",
+                "tip": "Better as a stop on the Gangtok/Ravangla approach than as a separate day."
+              },
+              {
+                "name": "Samdruptse Guru Padmasambhava statue",
+                "duration": "~1h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ravangla homestay",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Mid-range ridge-view hotel",
+                "budget": "₹4,000–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Veg momos",
+              "Dal bhat",
+              "Local tea and snacks"
+            ]
+          },
+          {
+            "theme": "Slow Ravangla ridge morning",
+            "pace": "relaxed",
+            "note": "Use this optional day only if you want a quiet mountain pause or if roads/weather pushed your previous transfer late.",
+            "activities": [
+              {
+                "name": "Repeat Buddha Park for clear Kanchenjunga views",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "₹50/adult, ₹25/child"
+              },
+              {
+                "name": "Short local ridge walk",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "Free"
+              },
+              {
+                "name": "Café and rest before Pelling transfer",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ravangla homestay",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Homestay breakfast",
+              "Local thali"
+            ]
+          }
+        ]
+      },
+      "Pelling": {
+        "name": "Pelling",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers sunrise views, the Skywalk/monastery/ruins cluster and Khecheopalri Lake; a third is for Yuksom or a slower departure.",
+        "experiences": [
+          "Mountains",
+          "Temples & Religious Sites",
+          "Lakes",
+          "Architecture",
+          "Hiking",
+          "History"
+        ],
+        "signatureExperiences": [
+          "Mountains",
+          "Lakes",
+          "Temples & Religious Sites"
+        ],
+        "days": [
+          {
+            "theme": "Kanchenjunga sunrise, Skywalk & Pemayangtse",
+            "pace": "moderate",
+            "note": "All major sights are within about 5 km, but Rabdentse requires a short uphill forest walk. Clear sunrise views are never guaranteed; Oct–Nov and Mar–May mornings are the best odds.",
+            "activities": [
+              {
+                "name": "Kanchenjunga sunrise from hotel terrace/viewpoint",
+                "duration": "~1h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Book a west/northwest-facing room if views matter."
+              },
+              {
+                "name": "Pelling Skywalk and Chenrezig Statue",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "₹50–₹100/adult; parking ₹30",
+                "tip": "Open roughly 8am–5pm; wear non-slip shoes."
+              },
+              {
+                "name": "Pemayangtse Monastery",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Do not miss the Zangdopelri model on the top floor."
+              },
+              {
+                "name": "Rabdentse Ruins",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget Pelling hotel",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Kanchenjunga-view resort",
+                "budget": "₹4,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Pelling thali",
+              "Veg momos",
+              "Sel roti"
+            ]
+          },
+          {
+            "theme": "Khecheopalri Lake & Singshore Bridge",
+            "pace": "moderate",
+            "note": "Khecheopalri is about 45 minutes from Pelling and Singshore Bridge is another mountain-road excursion; combine them if starting by 8am. For same-day NJP departure, do Khecheopalri only and leave early.",
+            "activities": [
+              {
+                "name": "Khecheopalri Lake",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "No motorboats; keep the sacred lake quiet and clean."
+              },
+              {
+                "name": "Singshore Bridge",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "The suspension bridge can feel wobbly and crowded on weekends."
+              },
+              {
+                "name": "Yuksom and Norbugang Throne extension",
+                "duration": "2–3h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Pelling local market farewell dinner",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget Pelling hotel",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Kanchenjunga-view resort",
+                "budget": "₹4,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Gundruk jhol",
+              "Veg thukpa",
+              "Local Sikkimese dinner"
+            ]
+          },
+          {
+            "theme": "Yuksom history or departure buffer",
+            "pace": "relaxed",
+            "note": "Use this optional day for a deeper West Sikkim history loop, or keep it as a buffer before the 5–6 hour road transfer back to NJP/Bagdogra.",
+            "activities": [
+              {
+                "name": "Yuksom first-capital heritage loop",
+                "duration": "half day",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Dubdi Monastery walk",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Pelling to NJP/Bagdogra taxi departure",
+                "duration": "5–6h",
+                "priority": "optional",
+                "cost": "₹4,500–₹6,500 to NJP; ₹3,500–₹5,000 to Bagdogra/Siliguri"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget Pelling hotel",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Packed breakfast",
+              "Roadside vegetarian lunch"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Gangtok",
+        "to": "Lachung",
+        "method": "Private taxi/Sikkim-registered package SUV via Mangan and Chungthang",
+        "cost": "₹4,500–₹7,000/vehicle one-way or ₹10,000–₹15,000/person package",
+        "distanceKm": 115,
+        "durationHrs": 6,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Lachung",
+        "to": "Ravangla",
+        "method": "Return package vehicle to Gangtok, then private taxi toward Ravangla via Namchi",
+        "cost": "Lachung return included in package; Gangtok→Ravangla ₹2,500–₹4,500",
+        "distanceKm": 197,
+        "durationHrs": 9.5,
+        "sameDayFeasible": false
+      },
+      {
+        "from": "Ravangla",
+        "to": "Pelling",
+        "method": "Private taxi on South/West Sikkim mountain roads",
+        "cost": "₹2,000–₹2,500 taxi",
+        "distanceKm": 57,
+        "durationHrs": 2.5,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "All East/North Sikkim protected areas — Tsomgo, Nathula, Baba Mandir, Lachung, Yumthang, Zero Point and Gurudongmar — require permits arranged by registered operators; no walk-in same-day permit should be assumed.",
+      "Carry Voter ID or Passport plus passport photos for permits; Aadhaar is rejected at army checkposts according to the 2026 permit guidance in the research.",
+      "North Sikkim, Tsomgo and Nathula are weather- and army-control dependent; landslides, snow or military movement can close routes without warning, so keep a buffer day if these are must-do experiences.",
+      "Gurudongmar is an optional extension, not part of the core route: it needs a Lachen overnight, PAP extension and careful AMS judgement at 17,800 ft.",
+      "For departure, Pelling to NJP/Bagdogra is a 5–6 hour mountain-road transfer; leave by 6–7am for afternoon trains or flights."
+    ]
+  }
+}
