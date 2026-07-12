@@ -48,7 +48,7 @@ export default function AppInstallShare({
 
   const shareBtnClass = isMenu
     ? "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 border border-white/15 transition-colors focus-ring"
-    : "flex items-center justify-center gap-1.5 h-8 px-2.5 min-w-[32px] bg-[#efe9db] hover:bg-[#e5dfce] text-emerald-800 rounded-full text-sm transition-colors border border-[#e0dac9] focus-ring";
+    : "flex items-center justify-center gap-1.5 h-8 px-2.5 min-w-[32px] bg-[#efe9db] hover:bg-line text-emerald-800 rounded-full text-sm transition-colors border border-[#e0dac9] focus-ring";
 
   const installBtnClass = isMenu
     ? "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold bg-white text-blue-700 hover:bg-blue-50 transition-colors focus-ring"

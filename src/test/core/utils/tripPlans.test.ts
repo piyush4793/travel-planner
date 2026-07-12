@@ -133,6 +133,13 @@ describe("tripPlans — P0", () => {
       expect(plan.days).toHaveLength(2);
       expect(plan.days.every((day) => /CityA|CityB/.test(day.label))).toBe(true);
     });
+
+    it("does not emit Infinity when selected cities match no rule city", () => {
+      // A stale saved trip can carry city names absent from current data.
+      const plan = generateTripPlan(COUNTRY_WITH_CITIES, ["GhostTown"], 6);
+      expect(plan.note).not.toMatch(/Infinity|NaN/);
+      expect(plan.days).toEqual([]);
+    });
   });
 
   it("formats generic plan cost ranges as rupee ranges", () => {

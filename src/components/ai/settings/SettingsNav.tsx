@@ -48,8 +48,8 @@ export default function SettingsNav<K extends string>({ items, active, onSelect 
             className={
               "flex items-center gap-2 shrink-0 whitespace-nowrap px-3 py-2 min-h-[36px] rounded-xl text-xs font-semibold transition-[background-color,color,box-shadow] focus-ring " +
               (selected
-                ? "bg-white text-emerald-800 shadow-sm ring-1 ring-[#e4dece]"
-                : "text-[#6f6a5d] hover:text-[#3c463f] hover:bg-white/60")
+                ? "bg-white text-emerald-800 shadow-sm ring-1 ring-line"
+                : "text-ink-2 hover:text-ink-body hover:bg-white/60")
             }
           >
             <span aria-hidden="true">{item.icon}</span>

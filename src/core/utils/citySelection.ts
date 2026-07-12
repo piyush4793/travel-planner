@@ -93,7 +93,9 @@ export function planItinerary(
   opts: { includeAll?: boolean } = {},
 ): CityAllocation[] {
   const n = cities.length;
-  const D = Math.max(0, Math.floor(totalDays));
+  // Coerce non-finite/negative day budgets to 0 so a NaN can't slip past the
+  // guard below (Math.max(0, NaN) is NaN) and size a Float64Array with NaN.
+  const D = Number.isFinite(totalDays) ? Math.max(0, Math.floor(totalDays)) : 0;
   if (n === 0 || D === 0) return [];
 
   // dp[t] = best value using processed cities with exactly t days (NEG = unreachable).

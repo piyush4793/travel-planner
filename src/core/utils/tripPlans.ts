@@ -133,6 +133,7 @@ function act(exp?: string): string {
 }
 
 function allocateDays(total: number, n: number): number[] {
+  if (n <= 0) return [];
   const base = Math.floor(total / n);
   const extra = total % n;
   return Array.from({ length: n }, (_, i) => base + (i < extra ? 1 : 0));
@@ -185,7 +186,9 @@ function cityBasedPlan(
   });
 
   const bestTime = country.bestMonths.slice(0, 3).join(", ");
-  const avgPerCity = (totalDays / chosen.length).toFixed(1);
+  // Guard against selected city names that match no rule city (e.g. a stale
+  // saved trip): chosen can be empty even when selectedCities isn't.
+  const avgPerCity = chosen.length > 0 ? (totalDays / chosen.length).toFixed(1) : "0";
 
   return {
     duration: `${totalDays} day${totalDays !== 1 ? "s" : ""}`,

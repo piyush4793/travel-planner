@@ -111,7 +111,7 @@ Keep the three docs in sync; if one changes terminology or counts, the others sh
 | Unified Plan-journey header (identity + stats + basis + stepper) | `src/components/views/plan/shell/{PlanTripHeader,PlanCountrySwitcher}.tsx · controls/{BasisMenu}.tsx` |
 | Popular destinations (Plan picker) | `src/core/data/popularDestinations.ts` |
 | Plan landing month-fit ranking | `src/core/utils/monthFit.ts` |
-| Trip planner engine | `src/utils/tripPlans.ts` |
+| Trip planner engine | `src/core/utils/tripPlans.ts` |
 | City↔experience matching (shared) | `src/core/utils/cityExperiences.ts` |
 | City selection + day allocation (DP) | `src/core/utils/citySelection.ts` |
 | Budget basis (party size) source of truth | `src/core/utils/budget.ts` |
@@ -376,7 +376,7 @@ No server sync — refresh survival is purely localStorage. `tp_my_list` now sto
 ### Flow
 
 ```
-generateTripPlan() in src/utils/tripPlans.ts
+generateTripPlan() in src/core/utils/tripPlans.ts
   └─ getRuledItinerary()
        ├─ found → planItinerary() (citySelection.ts) picks cities + allocates days
        │           via bounded-knapsack DP, then builds per-day plan from rule data

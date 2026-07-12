@@ -55,10 +55,17 @@ export function orderByProximity(points: GeoPoint[], startIndex = 0): number[] {
     for (let j = 0; j < n; j++) {
       if (visited[j]) continue;
       const d = haversineKm(points[current], points[j]);
-      if (d < bestDist) {
+      // A finite comparison also rejects NaN (non-finite coords), which would
+      // otherwise never beat Infinity and leave `best` at -1 → a corrupt order.
+      if (Number.isFinite(d) && d < bestDist) {
         bestDist = d;
         best = j;
       }
+    }
+    // Fallback when every remaining distance was non-finite: keep the first
+    // unvisited index in original order so the result stays a valid permutation.
+    if (best === -1) {
+      best = visited.indexOf(false);
     }
     visited[best] = true;
     order.push(best);

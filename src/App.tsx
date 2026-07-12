@@ -224,7 +224,7 @@ export default function App() {
   return (
     <div className="flex flex-col h-viewport overflow-hidden bg-slate-50">
       {/* Header — luxury ivory/emerald top bar */}
-      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-5 pt-safe pb-2 md:pb-2.5 md:pt-2.5 bg-[#fbf9f3]/90 backdrop-blur-md border-b border-[#e7e1d2] text-[#2c2a24] shrink-0">
+      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-5 pt-safe pb-2 md:pb-2.5 md:pt-2.5 bg-surface-1/90 backdrop-blur-md border-b border-line text-[#2c2a24] shrink-0">
         <button onClick={() => setView("plan")} className="flex items-center gap-2 shrink-0 rounded-lg hover:opacity-80 transition-opacity focus-ring" aria-label="Home">
           {/* Brand icon — all screens */}
           <img src="icon-192.svg" alt="Roamwise" className="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-lg" />
@@ -238,7 +238,7 @@ export default function App() {
               data-tour={`nav-${v}`}
               aria-current={view === v ? "page" : undefined}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors focus-ring ${
-                view === v ? "bg-emerald-700 text-white shadow-sm" : "text-[#6f6a5d] hover:text-emerald-800"
+                view === v ? "bg-emerald-700 text-white shadow-sm" : "text-ink-2 hover:text-emerald-800"
               }`}>
               <span aria-hidden="true">{VIEW_META[v].icon}</span> {VIEW_META[v].label}
             </button>
@@ -261,7 +261,7 @@ export default function App() {
           />
           <button onClick={() => setSettingsOpen(true)}
             data-tour="settings"
-            className="flex items-center justify-center w-8 h-8 bg-[#efe9db] hover:bg-[#e5dfce] rounded-full text-sm transition-colors border border-[#e0dac9] focus-ring"
+            className="flex items-center justify-center w-8 h-8 bg-[#efe9db] hover:bg-line rounded-full text-sm transition-colors border border-[#e0dac9] focus-ring"
             aria-label="Settings">
             ⚙️
           </button>
@@ -281,7 +281,7 @@ export default function App() {
           />
           <button onClick={() => setSettingsOpen(true)}
             data-tour="settings"
-            className="flex items-center justify-center w-9 h-9 bg-[#efe9db] hover:bg-[#e5dfce] rounded-full text-base transition-colors border border-[#e0dac9] focus-ring"
+            className="flex items-center justify-center w-9 h-9 bg-[#efe9db] hover:bg-line rounded-full text-base transition-colors border border-[#e0dac9] focus-ring"
             aria-label="Settings">
             ⚙️
           </button>
@@ -395,7 +395,7 @@ export default function App() {
 
       {/* Mobile bottom tab bar — primary navigation on small screens */}
       <nav
-        className="md:hidden shrink-0 flex items-stretch border-t border-[#e7e1d2] bg-[#fbf9f3] pb-safe shadow-[0_-1px_6px_rgba(0,0,0,0.05)]"
+        className="md:hidden shrink-0 flex items-stretch border-t border-line bg-surface-1 pb-safe shadow-[0_-1px_6px_rgba(0,0,0,0.05)]"
         aria-label="Main navigation"
       >
         {NAV_VIEWS.map((v) => {
@@ -407,7 +407,7 @@ export default function App() {
               data-tour={isMobile ? `nav-${v}` : undefined}
               aria-current={active ? "page" : undefined}
               className={`flex flex-1 min-h-[52px] flex-col items-center justify-center gap-1 py-1.5 text-[10px] font-semibold leading-none transition-colors focus-ring ${
-                active ? "text-emerald-800" : "text-[#8a8577] hover:text-[#5f5b50]"
+                active ? "text-emerald-800" : "text-ink-3 hover:text-[#5f5b50]"
               }`}
             >
               <span

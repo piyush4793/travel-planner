@@ -46,6 +46,17 @@ describe("orderByProximity", () => {
     const points: GeoPoint[] = [{ lat: 0, lng: 0 }, { lat: 0, lng: 5 }];
     expect(orderByProximity(points, 9)[0]).toBe(0);
   });
+
+  it("stays a valid permutation when some coords are non-finite", () => {
+    const points: GeoPoint[] = [
+      { lat: 0, lng: 0 },
+      { lat: Number.NaN, lng: 10 },
+      { lat: 0, lng: 5 },
+    ];
+    const order = orderByProximity(points, 0);
+    expect([...order].sort((a, b) => a - b)).toEqual([0, 1, 2]);
+    expect(order).toHaveLength(3);
+  });
 });
 
 describe("moveIndex", () => {

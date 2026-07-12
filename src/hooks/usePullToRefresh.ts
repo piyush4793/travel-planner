@@ -49,6 +49,9 @@ export function usePullToRefresh({
   const startY = useRef(0);
   const engaged = useRef(false);
   const scrollEl = useRef<HTMLElement | null>(null);
+  // Holds the pending min-spinner timer so it can be cleared on unmount,
+  // preventing a stale setState after teardown.
+  const spinnerTimer = useRef<number | null>(null);
   // Keep the latest values without re-binding native listeners every render.
   const refreshingRef = useRef(false);
   const enabledRef = useRef(enabled);
@@ -99,7 +102,8 @@ export function usePullToRefresh({
           .catch(() => {})
           .then(() => {
             const wait = Math.max(0, MIN_SPINNER_MS - (Date.now() - started));
-            window.setTimeout(() => {
+            spinnerTimer.current = window.setTimeout(() => {
+              spinnerTimer.current = null;
               refreshingRef.current = false;
               setRefreshing(false);
               setPullDistance(0);
@@ -120,6 +124,11 @@ export function usePullToRefresh({
       container.removeEventListener("touchcancel", reset);
     };
   }, [maxPull, threshold, reset]);
+
+  // Clear any pending min-spinner timer on unmount.
+  useEffect(() => () => {
+    if (spinnerTimer.current !== null) window.clearTimeout(spinnerTimer.current);
+  }, []);
 
   return { containerRef, pullDistance, refreshing, threshold } as const;
 }

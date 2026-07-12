@@ -39,7 +39,7 @@ function LifecyclePromptToastInner({ prompt, onAct, onDismiss }: Props) {
           type="button"
           onClick={onDismiss}
           aria-label="Dismiss"
-          className="focus-ring-emerald flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[#6f6a5d] transition-colors hover:bg-[#f4f1e8]"
+          className="focus-ring-emerald flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-ink-2 transition-colors hover:bg-surface-3"
         >
           <span aria-hidden="true">✕</span>
         </button>

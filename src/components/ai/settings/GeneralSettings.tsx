@@ -47,8 +47,8 @@ export default function GeneralSettings({
         />
       </SectionCard>
 
-      <div className="flex items-center justify-center gap-2 pt-1 text-[11px] text-[#a8a293]">
-        <span className="font-semibold text-[#6f6a5d]">Roamwise</span>
+      <div className="flex items-center justify-center gap-2 pt-1 text-[11px] text-ink-4">
+        <span className="font-semibold text-ink-2">Roamwise</span>
         <span aria-hidden="true">·</span>
         <span>v{__APP_VERSION__}</span>
         <span aria-hidden="true">·</span>

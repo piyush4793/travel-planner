@@ -174,4 +174,10 @@ describe("citySelection — planItinerary", () => {
     expect(planItinerary([], 5)).toEqual([]);
     expect(planItinerary(cities, 0)).toEqual([]);
   });
+
+  it("returns empty for a non-finite or negative day budget", () => {
+    expect(planItinerary(cities, Number.NaN)).toEqual([]);
+    expect(planItinerary(cities, Infinity)).toEqual([]);
+    expect(planItinerary(cities, -3)).toEqual([]);
+  });
 });
