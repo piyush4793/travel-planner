@@ -1,0 +1,740 @@
+{
+  "name": "Maharashtra",
+  "seed": false,
+  "lat": 19.75,
+  "lng": 75.71,
+  "region": "West India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹22K–₹38K",
+    "couple": "₹38K–₹65K",
+    "family4": "₹65K–₹1.10L"
+  },
+  "experiences": [
+    "UNESCO Sites",
+    "Ancient Ruins",
+    "Architecture",
+    "History",
+    "Wine & Vineyards",
+    "Temples & Religious Sites",
+    "Beaches",
+    "Art & Design",
+    "Food",
+    "Museums"
+  ],
+  "avoid": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Goa",
+    "Gujarat",
+    "Karnataka",
+    "Madhya Pradesh",
+    "Telangana"
+  ],
+  "landmark": "Ajanta & Ellora Caves",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Mumbai's Chhatrapati Shivaji Maharaj International Airport is Maharashtra's natural international gateway; spend 2 days in South Mumbai before continuing inland to Aurangabad, Nashik and Pune.",
+  "diet": {
+    "vegetarian": "Maharashtra is highly vegetarian-friendly. Misal pav, poha, sabudana khichdi, vada pav and Maharashtrian thalis are easy to find; local thalis usually run about ₹120–₹300 at simple restaurants.",
+    "vegan": "Ask for 'ghee nakko, butter nakko' and avoid shrikhand, curd, buttered pav and ghee-heavy puran poli. Solkadhi, poha, many chaats and oil-cooked bhakri-sabzi meals are often vegan when ordered without dairy.",
+    "phrases": [
+      "Mee shaakahari aahe = I am vegetarian",
+      "Doodh, dahi, toop, loni nako = no milk, curd, ghee or butter",
+      "Ghee nakko, butter nakko = no ghee, no butter"
+    ]
+  },
+  "links": [
+    {
+      "label": "Maharashtra Tourism (official)",
+      "url": "https://www.maharashtratourism.gov.in/"
+    },
+    {
+      "label": "MTDC — Maharashtra Tourism Development Corporation",
+      "url": "https://www.mtdc.co/en"
+    },
+    {
+      "label": "ASI Ticketing Portal",
+      "url": "https://asi.payumoney.com/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Mumbai",
+      "lat": 19.076,
+      "lng": 72.8777,
+      "notes": "India's financial capital and Bollywood heartland — Art Deco boulevards, colonial UNESCO heritage, museums, street food and Arabian Sea promenades.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "experiences": [
+        "Architecture",
+        "Beaches",
+        "Food",
+        "Museums",
+        "UNESCO Sites",
+        "Art & Design",
+        "Nightlife"
+      ]
+    },
+    {
+      "name": "Aurangabad",
+      "lat": 19.8762,
+      "lng": 75.3433,
+      "notes": "Gateway to Ajanta and Ellora, plus Bibi Ka Maqbara, Daulatabad Fort and Mughal-era Deccan heritage.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "experiences": [
+        "UNESCO Sites",
+        "Ancient Ruins",
+        "Architecture",
+        "History",
+        "Temples & Religious Sites"
+      ]
+    },
+    {
+      "name": "Nashik",
+      "lat": 19.9975,
+      "lng": 73.7898,
+      "notes": "India's wine capital around Sula Vineyards, with sacred Godavari ghats, Trimbakeshwar Jyotirlinga and Pandavleni Buddhist caves.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April",
+        "May"
+      ],
+      "experiences": [
+        "Wine & Vineyards",
+        "Temples & Religious Sites",
+        "History",
+        "Food",
+        "Ancient Ruins"
+      ]
+    },
+    {
+      "name": "Pune",
+      "lat": 18.5204,
+      "lng": 73.8567,
+      "notes": "Maharashtra's cultural capital — Peshwa heritage, Gandhi history, cafés, street food and hill-fort excursions before the Mumbai return.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May"
+      ],
+      "experiences": [
+        "History",
+        "Architecture",
+        "Food",
+        "Coffee & Cafés",
+        "Museums",
+        "Art & Design",
+        "Hiking"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Any Indian prepaid SIM from Jio or Airtel works well across Mumbai, Pune, Nashik and Aurangabad; carry offline maps for Ajanta/Ellora day trips where hill-road coverage can drop.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "Ola",
+      "Uber",
+      "Zomato",
+      "MakeMyTrip"
+    ],
+    "cityOrder": [
+      "Mumbai",
+      "Aurangabad",
+      "Nashik",
+      "Pune"
+    ],
+    "cities": {
+      "Mumbai": {
+        "name": "Mumbai",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days balances South Mumbai's heritage core with the half-day Elephanta ferry. Monsoon months can disrupt ferries, trains and seafront plans.",
+        "experiences": [
+          "Architecture",
+          "Beaches",
+          "Food",
+          "Museums",
+          "UNESCO Sites",
+          "Art & Design",
+          "Nightlife"
+        ],
+        "signatureExperiences": [
+          "Architecture",
+          "UNESCO Sites"
+        ],
+        "days": [
+          {
+            "theme": "Colonial heritage, waterfront & museum quarter",
+            "pace": "moderate",
+            "note": "Gateway of India, CST and CSMVS sit in the South Mumbai heritage belt; start early, then wander Colaba before traffic builds.",
+            "activities": [
+              {
+                "name": "Gateway of India at sunrise",
+                "duration": "~1h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Best from 7–9am before tour buses and ferry crowds arrive."
+              },
+              {
+                "name": "Chhatrapati Shivaji Maharaj Terminus — UNESCO Gothic station",
+                "duration": "~45m",
+                "priority": "must-see",
+                "cost": "Free to enter station; Heritage Gallery tour ₹200",
+                "tip": "View the façade from across the road; book the gallery if you want interior architecture context."
+              },
+              {
+                "name": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya museum",
+                "duration": "~2–3h",
+                "priority": "recommended",
+                "cost": "₹200 Indians / ₹700 foreigners; audio guide ₹50 Indians",
+                "tip": "Closed Mondays; the Indo-Saracenic building and sculpture galleries are the highlights."
+              },
+              {
+                "name": "Colaba Causeway Market & Leopold Café",
+                "duration": "~1.5h",
+                "priority": "optional",
+                "cost": "Free to browse; meals ₹300–₹600",
+                "tip": "Bargain gently for textiles, silver jewelry and vintage Bollywood posters."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Colaba hostel dorm",
+                "budget": "₹600–₹900/night"
+              },
+              {
+                "name": "Fort/Colaba budget hotel",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Kyani & Co. bun maska",
+              "Colaba Causeway street snacks",
+              "Kala Ghoda cafés"
+            ]
+          },
+          {
+            "theme": "Elephanta caves, temples & the sea promenade",
+            "pace": "moderate",
+            "note": "Elephanta is a half-day ferry trip from Gateway of India and is closed Mondays; ferries typically run from morning until mid-afternoon, with last returns around evening.",
+            "activities": [
+              {
+                "name": "Elephanta Caves — UNESCO Shiva rock-cut temples",
+                "duration": "~4–5h including ferry",
+                "priority": "must-see",
+                "cost": "Ferry ₹150–₹200 round-trip; entry ₹40 Indians / ₹600 foreigners; toy train ₹10",
+                "tip": "Take the earliest practical ferry, carry water, and pre-book ASI tickets if queues are heavy."
+              },
+              {
+                "name": "Siddhivinayak Temple",
+                "duration": "~1–1.5h",
+                "priority": "recommended",
+                "cost": "Free; VIP darshan about ₹100",
+                "tip": "Avoid Tuesdays and major festivals if you dislike long queues."
+              },
+              {
+                "name": "Marine Drive and Chowpatty evening stroll",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "Free; bhel puri about ₹50",
+                "tip": "Arrive at twilight for the Queen's Necklace lights."
+              },
+              {
+                "name": "Bandra Bandstand or Dharavi guided walk",
+                "duration": "~1.5h",
+                "priority": "optional",
+                "cost": "Bandstand free; Dharavi tour ₹700–₹1,200",
+                "tip": "Choose Bandra for sea views and street art, Dharavi only with an ethical guided operator."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Colaba hostel dorm",
+                "budget": "₹600–₹900/night"
+              },
+              {
+                "name": "South Mumbai mid-range hotel",
+                "budget": "₹4,000–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Chowpatty bhel puri",
+              "Bandra café dinner",
+              "Vada pav street stalls"
+            ]
+          }
+        ]
+      },
+      "Aurangabad": {
+        "name": "Aurangabad",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Plan three separate days: Aurangabad city, Ajanta, then Ellora. Ajanta and Ellora cannot be combined honestly — they are in opposite directions from Aurangabad, each needs 4–5 hours on-site, Ajanta closes Mondays and Ellora closes Tuesdays.",
+        "experiences": [
+          "UNESCO Sites",
+          "Ancient Ruins",
+          "Architecture",
+          "History",
+          "Temples & Religious Sites"
+        ],
+        "signatureExperiences": [
+          "UNESCO Sites",
+          "Ancient Ruins"
+        ],
+        "days": [
+          {
+            "theme": "Aurangabad city — Mughal tombs and medieval fort",
+            "pace": "moderate",
+            "note": "Keep city sights separate from the cave excursions; Bibi Ka Maqbara, Daulatabad and Panchakki make a full but realistic local day.",
+            "activities": [
+              {
+                "name": "Bibi Ka Maqbara — the 'Mini Taj Mahal'",
+                "duration": "~1.5–2h",
+                "priority": "must-see",
+                "cost": "₹25 Indians / ₹300 foreigners",
+                "tip": "Go in soft morning or golden-hour light; timings are usually 8am–8pm."
+              },
+              {
+                "name": "Daulatabad Fort",
+                "duration": "~2–2.5h",
+                "priority": "must-see",
+                "cost": "₹25 Indians / ₹300 foreigners",
+                "tip": "Bring a torch for the dark passage and expect a steep final climb."
+              },
+              {
+                "name": "Panchakki Water Mill & dargah complex",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "Small nominal fee, about ₹15",
+                "tip": "A calm Sufi complex and good low-effort stop after the fort climb."
+              },
+              {
+                "name": "Aurangabad Caves",
+                "duration": "~1.5h",
+                "priority": "optional",
+                "cost": "Free",
+                "tip": "A quiet Buddhist cave teaser if you still have afternoon energy."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aurangabad budget hotel near station",
+                "budget": "₹900–₹1,500/night"
+              },
+              {
+                "name": "Central Aurangabad mid-range hotel",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Hotel Bhoj veg thali",
+              "Aurangabadi veg biryani",
+              "Naan khaliya for non-vegetarians"
+            ]
+          },
+          {
+            "theme": "Ajanta Caves — Buddhist murals and horseshoe gorge",
+            "pace": "packed",
+            "note": "Ajanta is a full-day trip 105km from Aurangabad and is closed Mondays. Do not pair it with Ellora; the travel directions and on-site time make that unrealistic.",
+            "activities": [
+              {
+                "name": "Ajanta Caves — 30 Buddhist rock-cut caves",
+                "duration": "~4–5h on-site",
+                "priority": "must-see",
+                "cost": "₹40 Indians / ₹600 foreigners; MAHABUS shuttle ₹15–₹20; parking about ₹75",
+                "tip": "Prioritize Caves 1, 2, 16, 17 and 26; no flash photography because it damages ancient pigments."
+              },
+              {
+                "name": "Licensed guide for Ajanta narrative art",
+                "duration": "~2–3h",
+                "priority": "recommended",
+                "cost": "₹800–₹1,200",
+                "tip": "A guide makes the Jataka murals and Buddhist iconography far easier to understand."
+              },
+              {
+                "name": "Ajanta horseshoe-gorge viewpoint",
+                "duration": "~30m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Do the overlook before fatigue sets in; it frames the whole cliff arc."
+              },
+              {
+                "name": "Aurangabad–Ajanta round-trip transport",
+                "duration": "~2–2.5h each way",
+                "priority": "must-see",
+                "cost": "Taxi ₹2,500–₹3,600 round-trip; MSRTC bus about ₹100 each way",
+                "tip": "Leave by 8am and confirm the return pickup time before entering the site."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aurangabad budget hotel near station",
+                "budget": "₹900–₹1,500/night"
+              },
+              {
+                "name": "Central Aurangabad mid-range hotel",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Packed hotel breakfast",
+              "Simple canteen lunch near Ajanta",
+              "Aurangabad thali dinner"
+            ]
+          },
+          {
+            "theme": "Ellora Caves, Kailasa Temple & Grishneshwar",
+            "pace": "moderate",
+            "note": "Ellora is 30km from Aurangabad and closed Tuesdays. It is much closer than Ajanta, but still deserves its own day because Kailasa alone can absorb hours.",
+            "activities": [
+              {
+                "name": "Ellora Caves — Buddhist, Hindu and Jain complex",
+                "duration": "~4–5h",
+                "priority": "must-see",
+                "cost": "₹40 Indians / ₹600 foreigners",
+                "tip": "Start at Kailasa Temple, Cave 16 — the monolithic scale is the whole point of Ellora."
+              },
+              {
+                "name": "Kailasa Temple detailed circuit",
+                "duration": "~1.5–2h",
+                "priority": "must-see",
+                "cost": "Included in Ellora ticket",
+                "tip": "Walk the upper and lower levels to understand the top-down carving."
+              },
+              {
+                "name": "Grishneshwar Jyotirlinga Temple",
+                "duration": "~45m–1h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Active temple beside Ellora; dress modestly and avoid intrusive photography."
+              },
+              {
+                "name": "Ellora guide or audio context",
+                "duration": "~2h",
+                "priority": "optional",
+                "cost": "Guide ₹500–₹800",
+                "tip": "Helpful for distinguishing Buddhist, Hindu and Jain phases across the 34 caves."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aurangabad budget hotel near station",
+                "budget": "₹900–₹1,500/night"
+              },
+              {
+                "name": "Central Aurangabad mid-range hotel",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Aurangabad local lunch",
+              "Veg thali ₹150–₹300",
+              "Evening chai near station"
+            ]
+          }
+        ]
+      },
+      "Nashik": {
+        "name": "Nashik",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One focused day covers a dawn temple visit, Buddhist caves, Godavari ghats and a late-afternoon vineyard session; add a second only for more wineries or Brahmagiri hiking.",
+        "experiences": [
+          "Wine & Vineyards",
+          "Temples & Religious Sites",
+          "History",
+          "Food",
+          "Ancient Ruins"
+        ],
+        "signatureExperiences": [
+          "Wine & Vineyards",
+          "Temples & Religious Sites"
+        ],
+        "days": [
+          {
+            "theme": "Sacred Godavari, Buddhist caves & Sula sunset",
+            "pace": "packed",
+            "note": "Start at Trimbakeshwar before crowds, return through Nashik city sights, then save Sula for the softer 4–7pm vineyard light.",
+            "activities": [
+              {
+                "name": "Trimbakeshwar Jyotirlinga Temple",
+                "duration": "~1.5–2h including drive",
+                "priority": "must-see",
+                "cost": "Free darshan; VIP pass ₹200",
+                "tip": "Visit at dawn; men may need traditional dress near the sanctum."
+              },
+              {
+                "name": "Pandavleni / Trirashmi Buddhist Caves",
+                "duration": "~1.5–2h",
+                "priority": "recommended",
+                "cost": "₹25 Indians / ₹300 foreigners",
+                "tip": "Climb the steps before midday heat; verify local closure reports before going."
+              },
+              {
+                "name": "Panchavati and Ramkund Ghats",
+                "duration": "~1.5h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Combine Ramkund with nearby Kalaram Temple for a compact sacred-river circuit."
+              },
+              {
+                "name": "Sula Vineyards tour and tasting",
+                "duration": "~2–3h",
+                "priority": "must-see",
+                "cost": "Entry ₹600 weekdays / ₹1,000 weekends; Best of Sula tasting ₹600 weekdays / ₹700 weekends; personalized tasting ₹1,500 pp",
+                "tip": "Book the tasting in advance for Oct–Feb weekends; entry is usually redeemable against wine or food."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nashik city budget hotel",
+                "budget": "₹1,000–₹1,800/night"
+              },
+              {
+                "name": "Vineyard stay near Gangapur Road",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Misal pav breakfast",
+              "Sula vineyard restaurant",
+              "Maharashtrian thali ₹120–₹300"
+            ]
+          }
+        ]
+      },
+      "Pune": {
+        "name": "Pune",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives one city day for Peshwa and Gandhi sites, then one fort-and-viewpoint day before returning to Mumbai via the expressway or train.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Food",
+          "Coffee & Cafés",
+          "Museums",
+          "Art & Design",
+          "Hiking"
+        ],
+        "signatureExperiences": [
+          "History",
+          "Food"
+        ],
+        "days": [
+          {
+            "theme": "Peshwa heritage, Gandhi history & Pune cafés",
+            "pace": "moderate",
+            "note": "Old-city heritage sights cluster tightly, while Aga Khan Palace and Koregaon Park need short auto rides across town.",
+            "activities": [
+              {
+                "name": "Shaniwar Wada — Peshwa palace fortifications",
+                "duration": "~1.5–2h",
+                "priority": "must-see",
+                "cost": "₹20 Indians / ₹250 foreigners; light-and-sound show ₹25",
+                "tip": "Go early for the gates and ramparts; show timings vary seasonally."
+              },
+              {
+                "name": "Pataleshwar Cave Temple",
+                "duration": "~30–45m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "A compact 8th-century rock-cut Shiva temple hidden in central Pune."
+              },
+              {
+                "name": "Aga Khan Palace — Gandhi Memorial Museum",
+                "duration": "~1.5–2h",
+                "priority": "must-see",
+                "cost": "₹25 Indians / ₹300 foreigners",
+                "tip": "The gardens and Kasturba Gandhi memorial are as important as the museum rooms."
+              },
+              {
+                "name": "FC Road cafés, Joshi's Vadapav and Kayani Bakery",
+                "duration": "~1.5h",
+                "priority": "recommended",
+                "cost": "Vada pav ₹20–₹40; café meal ₹250–₹600; Shrewsbury biscuits about ₹300/tin",
+                "tip": "Kayani sells out; go earlier in the day if biscuits matter."
+              },
+              {
+                "name": "Osho International Meditation Resort area",
+                "duration": "~1–2h",
+                "priority": "optional",
+                "cost": "Day-pass access varies, about ₹600–₹1,200; verify at osho.com",
+                "tip": "Even without a session, Koregaon Park is a pleasant leafy café walk."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pune station/Deccan budget hotel",
+                "budget": "₹1,000–₹1,800/night"
+              },
+              {
+                "name": "Koregaon Park boutique stay",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Joshi's Vadapav",
+              "Vaishali or Goodluck Café",
+              "Kayani Bakery Shrewsbury biscuits"
+            ]
+          },
+          {
+            "theme": "Sinhagad Fort, Parvati Hill & Mumbai return prep",
+            "pace": "packed",
+            "note": "Sinhagad is a half-day hill-fort outing 30km southwest. Start early, then keep the afternoon flexible for Parvati Hill or onward Mumbai travel.",
+            "activities": [
+              {
+                "name": "Sinhagad Fort morning hike or jeep ride",
+                "duration": "~3h including travel",
+                "priority": "must-see",
+                "cost": "Entry about ₹35; shared jeep ₹100–₹150 from base",
+                "tip": "Weekends are crowded; arrive by 7am and try pitla bhakri at the top."
+              },
+              {
+                "name": "Parvati Hill and temple complex",
+                "duration": "~1h",
+                "priority": "recommended",
+                "cost": "About ₹10",
+                "tip": "A gentle 103-step climb with a broad city panorama."
+              },
+              {
+                "name": "Pune–Mumbai expressway or Deccan Queen planning",
+                "duration": "~30m",
+                "priority": "optional",
+                "cost": "Shivneri bus ₹200–₹700; train ₹170–₹1,400",
+                "tip": "Book a late-afternoon bus/train if flying out of Mumbai the next day."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Pune station/Deccan budget hotel",
+                "budget": "₹1,000–₹1,800/night"
+              },
+              {
+                "name": "Koregaon Park boutique stay",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Sinhagad pitla bhakri",
+              "FC Road snacks",
+              "Pune café dinner"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Mumbai",
+        "to": "Aurangabad",
+        "method": "Train (Tapovan/Devagiri) or 1h flight; overnight AC bus if needed",
+        "cost": "Train ₹255–₹710 (SL–3AC); flight ₹4,092–₹6,200; AC sleeper bus ₹570–₹860",
+        "distanceKm": 380,
+        "durationHrs": 7,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Aurangabad",
+        "to": "Nashik",
+        "method": "Train, MSRTC/private bus or hired taxi via Yeola",
+        "cost": "Train ₹90–₹1,250; bus ₹200–₹500; taxi ₹3,500–₹4,500",
+        "distanceKm": 190,
+        "durationHrs": 4,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Nashik",
+        "to": "Pune",
+        "method": "MSRTC/private AC bus, train or hired taxi",
+        "cost": "Bus ₹400–₹900; train ₹115–₹1,200; taxi ₹2,300–₹3,500",
+        "distanceKm": 210,
+        "durationHrs": 5.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Pune",
+        "to": "Mumbai",
+        "method": "MSRTC Shivneri/Volvo bus, Deccan Queen/Shatabdi train or short flight",
+        "cost": "Bus ₹200–₹700; train ₹170–₹1,400; flight ₹3,000–₹6,000+",
+        "distanceKm": 150,
+        "durationHrs": 3.5,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "Ajanta and Ellora are not same-day sights: Ajanta is 105km from Aurangabad and closed Mondays, while Ellora is 30km away in the opposite direction and closed Tuesdays. Keep them on separate days.",
+      "Pre-book ASI tickets for Elephanta, Ajanta and Ellora through the ASI portal when travelling in peak Oct–Mar season.",
+      "June–September is monsoon: Mumbai flooding can disrupt local trains and ferries, while cave roads may be slippery. Western Ghats waterfalls are beautiful, but this heritage circuit is smoother in winter.",
+      "Nashik's Sula Vineyards is busiest on weekends; the Best of Sula tour is ₹600 weekdays / ₹700 weekends, while entry is ₹600 weekdays / ₹1,000 weekends and typically redeemable.",
+      "Goa is the easiest beach add-on after Pune or Mumbai by overnight train/bus; Gujarat and Karnataka are better 3–5 day extensions for heritage and wildlife."
+    ]
+  }
+}

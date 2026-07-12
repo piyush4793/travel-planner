@@ -1,0 +1,261 @@
+{
+  "name": "Uttarakhand",
+  "seed": false,
+  "lat": 30.07,
+  "lng": 79.02,
+  "region": "North India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": ["March", "April", "May", "June", "October", "November"],
+  "worstMonths": ["July", "August", "January", "February"],
+  "budget": {
+    "solo": "₹18K–₹50K",
+    "couple": "₹32K–₹1L",
+    "family4": "₹55K–₹1.8L"
+  },
+  "experiences": [
+    "Adventure Sports",
+    "Hiking",
+    "Mountains",
+    "Temples & Religious Sites",
+    "Wildlife & Safari",
+    "National Parks",
+    "Waterfalls",
+    "Hot Springs & Wellness",
+    "Festivals",
+    "Road Trips",
+    "Markets & Shopping"
+  ],
+  "avoid": ["July", "August", "January", "February"],
+  "combo": ["Delhi", "Himachal Pradesh", "Uttar Pradesh"],
+  "landmark": "Har Ki Pauri Ghat and the Himalayan Char Dham gateways",
+  "travelStyle": ["explorer"],
+  "stopoverNote": "Most travellers enter via Delhi or Dehradun. Delhi to Haridwar is ~220km / 4.5–5h by road or ~3.5–4h by Shatabdi Express; Jolly Grant Airport (DED) is the best flight gateway for Rishikesh and Mussoorie.",
+  "diet": {
+    "vegetarian": "Haridwar and Rishikesh are legally and culturally pure-vegetarian zones with no meat, fish, eggs or alcohol inside city limits. Garhwali staples like kafuli, aloo ke gutke, phanu, chainsoo, mandua roti and Bal Mithai are widely available; Mussoorie and Corbett have non-veg options but vegetarian dhabas and thalis remain easy.",
+    "vegan": "Ask for food 'bina ghee, doodh, dahi' because ghee is often added at service. Kafuli, phanu, chainsoo, aloo ke gutke and mandua roti are often cooked in mustard oil and can be vegan; avoid jhangora ki kheer and most milk-based sweets unless clearly dairy-free.",
+    "phrases": [
+      "Bina ghee ke = without ghee",
+      "Bina doodh/dahi = without milk or curd",
+      "Sirf tel mein banao = cook only in oil"
+    ]
+  },
+  "links": [
+    { "label": "Uttarakhand Tourism (official)", "url": "https://uttarakhandtourism.gov.in/" },
+    { "label": "Jim Corbett Booking (official)", "url": "https://www.corbettonline.uk.gov.in/" },
+    { "label": "Haridwar/Rishikesh Temple & Ghat Guide", "url": "https://haridwarrishikeshtourism.in/" }
+  ],
+  "cities": [
+    {
+      "name": "Haridwar",
+      "lat": 29.9457,
+      "lng": 78.1642,
+      "notes": "One of Hinduism's seven sacred cities — where the Ganges leaves the Himalayas for the plains and Har Ki Pauri hosts the nightly Ganga Aarti.",
+      "bestMonths": ["March", "April", "October", "November"],
+      "worstMonths": ["July", "August", "January"],
+      "experiences": ["Temples & Religious Sites", "Festivals", "Hot Springs & Wellness", "Markets & Shopping", "Hiking"]
+    },
+    {
+      "name": "Rishikesh",
+      "lat": 30.0869,
+      "lng": 78.2676,
+      "notes": "The Yoga Capital of the World — suspension bridges, ashrams and North India's signature white-water rafting on the turquoise Ganges.",
+      "bestMonths": ["March", "April", "May", "September", "October", "November"],
+      "worstMonths": ["July", "August"],
+      "experiences": ["Adventure Sports", "Temples & Religious Sites", "Hot Springs & Wellness", "Hiking", "Festivals"]
+    },
+    {
+      "name": "Mussoorie",
+      "lat": 30.4598,
+      "lng": 78.0664,
+      "notes": "The Queen of Hills — a 2,000m colonial ridge town with Mall Road, Gun Hill views, Landour lanes and Kempty Falls.",
+      "bestMonths": ["March", "April", "May", "June", "October", "November"],
+      "worstMonths": ["July", "August", "January", "February"],
+      "experiences": ["Mountains", "Architecture", "Waterfalls", "Road Trips", "Hiking"]
+    },
+    {
+      "name": "Jim Corbett National Park",
+      "lat": 29.3947,
+      "lng": 78.7972,
+      "notes": "India's oldest national park and a premier tiger reserve based around Ramnagar, sal forest, grasslands and the Ramganga riverine habitat.",
+      "bestMonths": ["November", "December", "January", "February", "March", "April", "May", "June"],
+      "worstMonths": ["July", "August", "September"],
+      "experiences": ["Wildlife & Safari", "National Parks", "Road Trips", "Hiking", "Waterfalls"]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel prepaid SIMs work well in Haridwar, Rishikesh, Dehradun, Mussoorie and Ramnagar; signal weakens in forest zones and on mountain roads. Carry downloaded maps before driving hill routes.",
+    "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "Ola", "Uber", "Zomato", "MakeMyTrip"],
+    "cityOrder": ["Haridwar", "Rishikesh", "Mussoorie", "Jim Corbett National Park"],
+    "cities": {
+      "Haridwar": {
+        "name": "Haridwar",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One full day covers the sacred ghat corridor, Mansa Devi, Chandi Devi and the evening Har Ki Pauri aarti. The city is pure-vegetarian and alcohol-free.",
+        "experiences": ["Temples & Religious Sites", "Festivals", "Hot Springs & Wellness", "Markets & Shopping", "Hiking"],
+        "signatureExperiences": ["Temples & Religious Sites", "Festivals"],
+        "days": [
+          {
+            "theme": "Sacred Ganga Pilgrimage",
+            "pace": "moderate",
+            "note": "All key sites sit around the 2–3km ghat corridor, with the hill temples reached by ropeway. Arrive at Har Ki Pauri by 5:30pm for the 6–7pm Ganga Aarti.",
+            "activities": [
+              { "name": "Har Ki Pauri Ghat — morning holy dip and exploration", "duration": "~1.5h", "priority": "must-see", "cost": "Free", "tip": "The river is cold and fast — hold the chain rail during a dip and keep valuables dry." },
+              { "name": "Mansa Devi Temple via Udan Khatola ropeway", "duration": "~2h", "priority": "must-see", "cost": "Ropeway ₹165–₹170 round trip; temple entry free", "tip": "Go before 11am to avoid ropeway queues and get clear city views." },
+              { "name": "Chandi Devi Temple via ropeway", "duration": "~1.5h", "priority": "recommended", "cost": "Ropeway ₹268 round trip; combo both temples ₹439/adult", "tip": "Use the combo ticket if visiting both hill temples." },
+              { "name": "Evening Ganga Aarti at Har Ki Pauri", "duration": "~1h", "priority": "must-see", "cost": "Free; offerings ₹20–₹100 optional", "tip": "Arrive by 5:30pm for a viewing spot; carry small change for diyas." },
+              { "name": "Bara Bazaar — incense, rudraksha and local sweets", "duration": "~45m", "priority": "optional", "cost": "Free to browse", "tip": "Buy Bal Mithai, local pickle and puja items; bargain politely." }
+            ],
+            "hotels": [
+              { "name": "Haridwar guesthouse near Har Ki Pauri", "budget": "₹1,000–₹2,500/night" },
+              { "name": "Mid-range hotel near railway station", "budget": "₹2,500–₹5,000/night" }
+            ],
+            "meals": ["Mohan Ji Puri Wale", "Hoshiyar Puri veg thali", "Bara Bazaar sweets and lassi"]
+          }
+        ]
+      },
+      "Rishikesh": {
+        "name": "Rishikesh",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days balances the ashram-and-bridge corridor with rafting or yoga. Rafting is suspended in peak monsoon and the Neelkanth road is risky in heavy rain.",
+        "experiences": ["Adventure Sports", "Temples & Religious Sites", "Hot Springs & Wellness", "Hiking", "Festivals"],
+        "signatureExperiences": ["Adventure Sports", "Hot Springs & Wellness"],
+        "days": [
+          {
+            "theme": "Riverside spirituality and the bridge corridor",
+            "pace": "relaxed",
+            "note": "Laxman Jhula, Swarg Ashram and Beatles Ashram are walkable across the river; Triveni Ghat is a short auto ride away. Do not add Neelkanth Mahadev today — it is a half-day mountain detour.",
+            "activities": [
+              { "name": "Triveni Ghat — morning aarti and sunrise by the Ganges", "duration": "~1.5h", "priority": "must-see", "cost": "Free", "tip": "Arrive by 6am for a quieter ceremony than Haridwar." },
+              { "name": "Ram Jhula and Swarg Ashram complex", "duration": "~2h", "priority": "must-see", "cost": "Free", "tip": "Cross the suspension bridge, browse ashram bookshops and try a simple thali." },
+              { "name": "Beatles Ashram (Chaurasi Kutia)", "duration": "~2.5h", "priority": "must-see", "cost": "₹150 Indians / ₹600 foreigners", "tip": "Open roughly 10am–5pm; the forest ruins and murals are very photogenic." },
+              { "name": "Evening Ganga Aarti at Parmarth Niketan", "duration": "~1h", "priority": "recommended", "cost": "Free; donation optional ₹100+", "tip": "Arrive 30 minutes early for seating by the river." }
+            ],
+            "hotels": [
+              { "name": "Tapovan hostel or yoga guesthouse", "budget": "₹700–₹1,500/night" },
+              { "name": "Ganga-view boutique stay", "budget": "₹3,000–₹7,000/night" }
+            ],
+            "meals": ["Chotiwala pure-veg thali", "Swarg Ashram café strip", "Vegan-friendly cafés around Tapovan"]
+          },
+          {
+            "theme": "Adrenaline on the Ganges",
+            "pace": "packed",
+            "note": "The Shivpuri–Rishikesh 16km rafting run takes most of the morning including transfers. Add bungee only if pre-booked; otherwise choose a yoga session or Neelkanth Mahadev, not both.",
+            "activities": [
+              { "name": "White-water rafting — Shivpuri to Rishikesh (16km)", "duration": "~4h total", "priority": "must-see", "cost": "₹1,000–₹1,500 per person", "tip": "Book licensed operators only; best in Sept–Oct and Mar–May, never during the monsoon rafting ban." },
+              { "name": "Bungee jumping at Jumpin Heights (83m)", "duration": "~2–3h", "priority": "recommended", "cost": "~₹3,550 per person", "tip": "Book online in advance; confirm current tariff and weight rules before paying." },
+              { "name": "Yoga or meditation drop-in class", "duration": "~1.5h", "priority": "recommended", "cost": "₹300–₹500 donation or varies by school", "tip": "Choose an evening class after rafting rather than overloading the morning." },
+              { "name": "Neelkanth Mahadev Temple alternative", "duration": "~4h return", "priority": "optional", "cost": "Free entry; shared jeep ₹80–₹100 pp", "tip": "A winding 30km mountain drive; avoid during monsoon or after landslide alerts." }
+            ],
+            "hotels": [
+              { "name": "Tapovan hostel or yoga guesthouse", "budget": "₹700–₹1,500/night" },
+              { "name": "Ganga-view boutique stay", "budget": "₹3,000–₹7,000/night" }
+            ],
+            "meals": ["Little Buddha Café", "Ayurpak vegan-friendly café", "Simple ashram bhojan"]
+          }
+        ]
+      },
+      "Mussoorie": {
+        "name": "Mussoorie",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is enough for Mall Road, Gun Hill, Landour and Kempty Falls. Monsoon fog and landslides can slow the Dehradun road; winter snow can briefly close higher sections.",
+        "experiences": ["Mountains", "Architecture", "Waterfalls", "Road Trips", "Hiking"],
+        "signatureExperiences": ["Mountains", "Waterfalls"],
+        "days": [
+          {
+            "theme": "Colonial promenade and panoramic views",
+            "pace": "relaxed",
+            "note": "Mall Road, Gun Hill and Kulri Bazaar are walkable on the ridge. Lal Tibba is 6km away and needs a taxi or a long uphill walk; go early before clouds build.",
+            "activities": [
+              { "name": "Gun Hill via ropeway — Himalayan panorama", "duration": "~2h", "priority": "must-see", "cost": "Ropeway ₹180–₹200 round trip", "tip": "Take the first ride around 9am for the clearest views." },
+              { "name": "Mall Road and Kulri Bazaar walk", "duration": "~2h", "priority": "must-see", "cost": "Free", "tip": "The social heart of Mussoorie — snacks, woolens, books and Victorian shopfronts." },
+              { "name": "Lal Tibba — highest viewpoint in Mussoorie", "duration": "~2h incl. taxi", "priority": "recommended", "cost": "Free viewpoint; private telescope/tower ₹50–₹100", "tip": "On clear days, look for Badrinath, Kedarnath and Bandarpunch peaks." },
+              { "name": "Company Garden", "duration": "~1h", "priority": "optional", "cost": "₹50 entry", "tip": "Easy family stop with flower beds; combine with Gun Hill if traffic is light." }
+            ],
+            "hotels": [
+              { "name": "Mall Road guesthouse", "budget": "₹1,500–₹3,000/night" },
+              { "name": "Landour heritage stay", "budget": "₹4,000–₹8,000/night" }
+            ],
+            "meals": ["Kalsang Friends Corner", "Lovely Omelette Centre", "Mall Road chaat and corn stalls"]
+          },
+          {
+            "theme": "Waterfalls, forest roads and hill drives",
+            "pace": "moderate",
+            "note": "Kempty Falls is 15km from Mall Road and can take 1.5h one-way in season traffic. Start by 8–9am and avoid combining Kempty with a deep Benog walk unless you start very early.",
+            "activities": [
+              { "name": "Kempty Falls", "duration": "~3h total incl. travel", "priority": "must-see", "cost": "Free entry; ropeway to base pool ₹120–₹150 round trip", "tip": "Arrive before 10am; weekends and holidays get extremely crowded." },
+              { "name": "Mussoorie Lake", "duration": "~45m", "priority": "recommended", "cost": "Boating ₹40–₹100 pp", "tip": "Convenient stop on the route to Kempty Falls." },
+              { "name": "Jwala Devi Temple trail", "duration": "~1.5h", "priority": "recommended", "cost": "Free", "tip": "A modest 2km uphill trail with quiet views away from the main tourist rush." },
+              { "name": "Landour Bazaar and Char Dukan", "duration": "~1.5h", "priority": "optional", "cost": "Tea ~₹50; meals ₹150–₹300", "tip": "Historic cantonment cafés; note that Char Dukan is not pure-veg because omelettes are a signature." }
+            ],
+            "hotels": [
+              { "name": "Mall Road guesthouse", "budget": "₹1,500–₹3,000/night" },
+              { "name": "Landour heritage stay", "budget": "₹4,000–₹8,000/night" }
+            ],
+            "meals": ["Char Dukan ginger tea", "Anil's Café", "Chick Chocolate"]
+          }
+        ]
+      },
+      "Jim Corbett National Park": {
+        "name": "Jim Corbett National Park",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives one Bijrani jeep safari and one Dhikala canter or alternate zone. Book official safari permits well ahead; Dhikala and Bijrani close in monsoon.",
+        "experiences": ["Wildlife & Safari", "National Parks", "Road Trips", "Hiking", "Waterfalls"],
+        "signatureExperiences": ["Wildlife & Safari", "National Parks"],
+        "days": [
+          {
+            "theme": "First safari — Bijrani Zone",
+            "pace": "packed",
+            "note": "Morning jeeps leave around 6–6:30am from Amdanda Gate near Ramnagar. One safari plus a light museum or river-walk afternoon is enough; two safaris in a day is usually tiring and repetitive.",
+            "activities": [
+              { "name": "Morning Jeep Safari — Bijrani Zone", "duration": "~4h", "priority": "must-see", "cost": "₹4,500–₹7,500 per jeep + ₹200/person entry; guide ₹700–₹1,000", "tip": "Book at corbettonline.uk.gov.in 45–60 days ahead; a guide is mandatory." },
+              { "name": "Jim Corbett Museum at Kaladhungi", "duration": "~2h incl. travel", "priority": "recommended", "cost": "₹30–₹50 entry", "tip": "Corbett's winter home is 27km south of Ramnagar and gives useful conservation context." },
+              { "name": "Ramganga River walk near resort", "duration": "~1.5h", "priority": "recommended", "cost": "Free", "tip": "Ask your resort naturalist for safe access; evening light is good for birds and gharials." }
+            ],
+            "hotels": [
+              { "name": "Ramnagar safari lodge", "budget": "₹2,500–₹5,000/night" },
+              { "name": "Kosi riverside resort", "budget": "₹6,000–₹12,000/night" }
+            ],
+            "meals": ["Resort buffet with packed safari breakfast", "Ramnagar dhaba thali", "Kosi riverside café"]
+          },
+          {
+            "theme": "Deep wilderness — Dhikala Canter Safari",
+            "pace": "packed",
+            "note": "Dhikala canters leave Dhangarhi Gate, 18km from Ramnagar, around 6–6:30am and return mid-afternoon. This is a full-day commitment; pack layers, water and lunch. Use Jhirna or Dhela if Dhikala is closed or sold out.",
+            "activities": [
+              { "name": "Canter Safari — Dhikala Zone", "duration": "~6–7h total", "priority": "must-see", "cost": "₹1,500–₹2,600 per person Indian / ₹3,000–₹5,000 foreigner", "tip": "The most iconic Corbett grassland experience; book 30–45 days ahead and carry binoculars." },
+              { "name": "Bird watching — Dhela or Sitabani Zone alternative", "duration": "~3h", "priority": "recommended", "cost": "₹200–₹500 pp entry", "tip": "Best pre-dawn to 8am with a birding guide; Dhela is open year-round." },
+              { "name": "Garjiya Devi Temple and Corbett Waterfall", "duration": "~2h", "priority": "optional", "cost": "₹30–₹50 entry; waterfall free", "tip": "A gentle afternoon add-on after safari if energy remains." }
+            ],
+            "hotels": [
+              { "name": "Ramnagar safari lodge", "budget": "₹2,500–₹5,000/night" },
+              { "name": "Kosi riverside resort", "budget": "₹6,000–₹12,000/night" }
+            ],
+            "meals": ["Packed safari breakfast", "Resort Kumaoni thali", "Simple Ramnagar market dinner"]
+          }
+        ]
+      }
+    },
+    "connections": [
+      { "from": "Haridwar", "to": "Rishikesh", "method": "Road by taxi, shared auto or UPSRTC bus", "cost": "Taxi ₹500–₹800; shared auto ₹25–₹50 pp; bus ₹30–₹50 pp", "distanceKm": 25, "durationHrs": 1, "sameDayFeasible": true },
+      { "from": "Rishikesh", "to": "Mussoorie", "method": "Road by taxi via Bhaniyawala, Dehradun and Rajpur Road", "cost": "Taxi ₹1,500–₹2,500", "distanceKm": 77, "durationHrs": 3, "sameDayFeasible": true },
+      { "from": "Mussoorie", "to": "Jim Corbett National Park", "method": "Road by taxi via Dehradun, Haridwar, Najibabad, Kashipur and Ramnagar", "cost": "Sedan ₹3,500–₹5,000; SUV ₹5,500–₹7,000", "distanceKm": 210, "durationHrs": 5, "sameDayFeasible": true },
+      { "from": "Jim Corbett National Park", "to": "Nainital", "method": "Optional extension by road via Kaladhungi", "cost": "Taxi ₹1,800–₹2,500", "distanceKm": 66, "durationHrs": 3, "sameDayFeasible": true }
+    ],
+    "extras": [
+      "Monsoon caution is serious: July–August brings landslides on NH58/NH109, flooding near ghats, rafting suspension, and frequent Char Dham road blocks. Keep buffer days and avoid Neelkanth or high-altitude detours during heavy rain.",
+      "High-altitude winter routes beyond Rishikesh toward Auli, Chopta and Char Dham can be snow-locked from December to February; Mussoorie may also see short road closures after snowfall.",
+      "Haridwar and Rishikesh are alcohol-free and meat-free zones; respect local rules and do not carry alcohol into temple-town areas.",
+      "Book Jim Corbett safaris 45–60 days ahead through the official forest portal; Dhikala forest rest house bookings can need 90+ days and zone availability changes by season.",
+      "Nainital is best treated as a 2-day extension from Corbett (66km / 2–3h), not part of the 7-day core route; Auli needs a dedicated Garhwal snow itinerary.",
+      "All quoted activity and transport prices are verified or aggregated for 2025–26 and should be reconfirmed locally in peak season. Prices are current as of Jul 2026."
+    ]
+  }
+}

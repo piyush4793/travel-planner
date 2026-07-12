@@ -1,0 +1,298 @@
+{
+  "name": "Gujarat",
+  "seed": false,
+  "lat": 22.2587,
+  "lng": 71.1924,
+  "region": "West India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": ["October", "November", "December", "January", "February", "March"],
+  "worstMonths": ["April", "May", "June", "July", "August", "September"],
+  "budget": {
+    "solo": "₹15K–₹28K",
+    "couple": "₹28K–₹52K",
+    "family4": "₹52K–₹90K"
+  },
+  "experiences": [
+    "History",
+    "UNESCO Sites",
+    "Temples & Religious Sites",
+    "Wildlife & Safari",
+    "Architecture",
+    "Festivals",
+    "Food",
+    "Museums",
+    "Cruises & Boat Trips",
+    "Beaches",
+    "Deserts"
+  ],
+  "avoid": ["April", "May", "June", "July", "August", "September"],
+  "combo": ["Rajasthan", "Maharashtra", "Diu"],
+  "landmark": "Ahmedabad UNESCO Old City, Gir's Asiatic lions, and the Statue of Unity",
+  "travelStyle": ["explorer"],
+  "stopoverNote": "Ahmedabad is the best hub. The Kevadia→Gir and Dwarka→Ahmedabad legs are long; use the Kevadia evening train back to Ahmedabad plus an overnight bus/train toward Sasan Gir, and consider exiting Dwarka via Rajkot airport. Kutch/Rann of Kutch is a separate Nov–Feb winter add-on, not a year-round stop.",
+  "diet": {
+    "vegetarian": "Gujarat is overwhelmingly vegetarian and one of India's easiest states for pure-veg travel. Gujarati thali, dhokla, fafda-jalebi, khakhra, thepla, undhiyu and Jain food are widely available; Gujarat is also a dry state, so alcohol is prohibited without a tourist permit.",
+    "vegan": "Many Gujarati dishes use ghee, curd or milk, so ask clearly for food made without dairy. Fafda, khakhra, plain thepla, some farsan and oil-cooked undhiyu can be vegan when prepared without ghee; Ahmedabad and Vadodara have the best vegan-labelled options.",
+    "phrases": [
+      "Bina ghee, bina dahi, bina dudh = without ghee, curd or milk",
+      "Sirf tel mein banao = cook only in oil",
+      "Jain khana milega? = is Jain food available?"
+    ]
+  },
+  "links": [
+    { "label": "Gujarat Tourism (official)", "url": "https://www.gujarattourism.com/" },
+    { "label": "Gir Lion Safari Booking (official)", "url": "https://girlion.gujarat.gov.in/" },
+    { "label": "Statue of Unity Tickets", "url": "https://soutickets.in/" }
+  ],
+  "cities": [
+    {
+      "name": "Ahmedabad",
+      "lat": 23.0225,
+      "lng": 72.5714,
+      "notes": "India's first UNESCO World Heritage City — 600-year-old pol lanes, Sabarmati Ashram, stepwells and one of India's great vegetarian street-food cultures.",
+      "bestMonths": ["November", "December", "January", "February", "October", "March"],
+      "worstMonths": ["April", "May", "June"],
+      "experiences": ["UNESCO Sites", "Architecture", "History", "Food", "Museums"]
+    },
+    {
+      "name": "Statue of Unity / Kevadia",
+      "lat": 21.8383,
+      "lng": 73.7178,
+      "notes": "Ekta Nagar gateway to the world's tallest statue, Sardar Sarovar Dam viewpoints, the Narmada valley, Valley of Flowers and family-friendly ticketed attractions.",
+      "bestMonths": ["October", "November", "December", "January", "February"],
+      "worstMonths": ["July", "August", "September"],
+      "experiences": ["Architecture", "History", "National Parks", "Museums", "Cruises & Boat Trips"]
+    },
+    {
+      "name": "Gir / Sasan Gir",
+      "lat": 21.1397,
+      "lng": 70.5979,
+      "notes": "The last wild home of the Asiatic lion. Core-zone jeep safaris must be pre-booked on the official portal and the park closes for monsoon from mid-June to mid-October.",
+      "bestMonths": ["November", "December", "January", "February", "March", "April"],
+      "worstMonths": ["June", "July", "August", "September", "October"],
+      "experiences": ["Wildlife & Safari", "National Parks", "Hiking"]
+    },
+    {
+      "name": "Somnath",
+      "lat": 20.888,
+      "lng": 70.4012,
+      "notes": "Arabian Sea pilgrimage town anchored by Somnath Temple, the first Jyotirlinga, with coastal ghats, mythology sites and an evening light-and-sound show.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["May", "June", "July", "August", "September"],
+      "experiences": ["Temples & Religious Sites", "History", "Beaches"]
+    },
+    {
+      "name": "Dwarka",
+      "lat": 22.2374,
+      "lng": 68.9678,
+      "notes": "Char Dham pilgrimage city of Lord Krishna at the Arabian Sea and Gulf of Kutch, with Dwarkadhish Temple, Jyotirlinga shrines and Bet Dwarka island ferries.",
+      "bestMonths": ["October", "November", "December", "January", "February", "March"],
+      "worstMonths": ["May", "June", "July", "August", "September"],
+      "experiences": ["Temples & Religious Sites", "History", "Cruises & Boat Trips", "Beaches"]
+    }
+  ],
+  "itinerary": {
+    "sim": "Any Indian prepaid SIM (Jio or Airtel) works well in Ahmedabad, Kevadia, Somnath and Dwarka; Gir forest interiors can be patchy. Buy at Ahmedabad airport/store with ID.",
+    "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "GSRTC", "Ola", "Uber", "Zomato"],
+    "cityOrder": ["Ahmedabad", "Statue of Unity / Kevadia", "Gir / Sasan Gir", "Somnath", "Dwarka"],
+    "cities": {
+      "Ahmedabad": {
+        "name": "Ahmedabad",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days lets you split the UNESCO walled city from Gandhi sites, Adalaj Stepwell and riverfront time. Start heritage walks before 8am in hot months.",
+        "experiences": ["UNESCO Sites", "Architecture", "History", "Food", "Museums"],
+        "signatureExperiences": ["UNESCO Sites", "Food"],
+        "days": [
+          {
+            "theme": "Living heritage — UNESCO walled city",
+            "pace": "moderate",
+            "note": "Old-city lanes are clustered but uneven; start cool and early, then return for Manek Chowk's night-food scene if energy allows.",
+            "activities": [
+              { "name": "AMC Morning Heritage Walk from Kalupur Swaminarayan Temple", "duration": "~2–2.5h", "priority": "must-see", "cost": "₹200/person", "tip": "Starts around 7:45am; book ahead through the municipal heritage site for pol lanes, havelis, Manek Chowk and mosque stops." },
+              { "name": "Jama Masjid, Bhadra Fort and Teen Darwaza", "duration": "~1h", "priority": "must-see", "cost": "Jama Masjid free; Bhadra Fort nominal ₹15–₹25", "tip": "The 15th-century mosque and gateway sit close together; dress modestly and expect busy lanes." },
+              { "name": "Sidi Saiyyed Mosque jali", "duration": "~30m", "priority": "recommended", "cost": "Free", "tip": "Morning light is best for the famous stone tree-of-life lattice." },
+              { "name": "Manek Chowk street food crawl", "duration": "~45m–1.5h", "priority": "recommended", "cost": "₹50–₹150 pp", "tip": "Jewellers' market by day, vegetarian street-food zone by night; try khichu, sandwiches, kulfi and fafda-jalebi in the morning." }
+            ],
+            "hotels": [
+              { "name": "House of MG", "budget": "₹8,000–₹15,000/night" },
+              { "name": "French Haveli", "budget": "₹3,500–₹6,000/night" },
+              { "name": "Budget hotel near Ellisbridge or Ashram Road", "budget": "₹1,200–₹2,500/night" }
+            ],
+            "meals": ["Agashiye rooftop Gujarati thali (₹800–₹1,200 pp)", "Gordhan Thal (₹350–₹450 pp)", "Manek Chowk snacks"]
+          },
+          {
+            "theme": "Gandhi, stepwells and riverfront",
+            "pace": "moderate",
+            "note": "Adalaj is ~20km north; hire a cab/auto for the stepwell, then keep the evening flexible for Kankaria or the riverfront.",
+            "activities": [
+              { "name": "Sabarmati Ashram and Hridaya Kunj", "duration": "~1.5–2h", "priority": "must-see", "cost": "Free", "tip": "Open from morning to evening; the museum is strongest early before tour groups arrive." },
+              { "name": "Adalaj Stepwell (Vav)", "duration": "~1–1.5h", "priority": "must-see", "cost": "₹25 Indian / ₹200 foreign", "tip": "The 5-storey Indo-Islamic stepwell is most photogenic around 9–11am when shafts of light enter." },
+              { "name": "Kankaria Lake and zoo", "duration": "~2–3h", "priority": "recommended", "cost": "₹25/adult, ₹10/child; rides extra", "tip": "Closed Mondays; best for families, toy train and lake circuit walks." },
+              { "name": "Sabarmati Riverfront evening walk", "duration": "~1h", "priority": "optional", "cost": "Free", "tip": "Lively around 6–8pm with food vendors; skip if Kankaria runs long." }
+            ],
+            "hotels": [
+              { "name": "House of MG", "budget": "₹8,000–₹15,000/night" },
+              { "name": "Budget hotel near Ashram Road", "budget": "₹1,200–₹2,500/night" }
+            ],
+            "meals": ["Vishala village-style Gujarati dinner (₹400–₹500 pp)", "Swati Snacks", "Sev tameta and undhiyu in winter"]
+          }
+        ]
+      },
+      "Statue of Unity / Kevadia": {
+        "name": "Statue of Unity / Kevadia",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A long but efficient day trip from Ahmedabad by Jan Shatabdi train, or an overnight if you want slower family pacing around Ekta Nagar.",
+        "experiences": ["Architecture", "History", "National Parks", "Museums", "Cruises & Boat Trips"],
+        "signatureExperiences": ["Architecture", "Museums"],
+        "days": [
+          {
+            "theme": "World's tallest statue and Narmada valley",
+            "pace": "packed",
+            "note": "Book Statue of Unity viewing-gallery tickets online; standard queues can stretch on weekends. The full complex takes 5–7 hours.",
+            "activities": [
+              { "name": "Statue of Unity + museum + 153m viewing gallery", "duration": "~3–4h", "priority": "must-see", "cost": "₹350–₹380/adult, ₹200–₹230/child; Express ₹1,030", "tip": "Buy online at soutickets.in; the gallery views over Sardar Sarovar Dam and the Narmada gorge are the headline." },
+              { "name": "Valley of Flowers", "duration": "~45m", "priority": "recommended", "cost": "₹55/adult, ₹35/child", "tip": "Best bloom and colour from November to February, but pleasant for a short walk most dry-season days." },
+              { "name": "Ekta Cruise / boat tour", "duration": "~45m", "priority": "recommended", "cost": "₹200/adult, ₹150/child", "tip": "Choose afternoon light for statue views from the river." },
+              { "name": "Kevadia Jungle Safari", "duration": "~1.5h", "priority": "optional", "cost": "₹80/adult, ₹60/child", "tip": "A small wildlife zone; skip if you are heading to Gir and time is tight." }
+            ],
+            "hotels": [
+              { "name": "Tent City Narmada", "budget": "₹5,000–₹10,000/night" },
+              { "name": "Budget hotel in Ekta Nagar", "budget": "₹1,500–₹3,000/night" },
+              { "name": "Ahmedabad base hotel", "budget": "₹1,200–₹6,000/night" }
+            ],
+            "meals": ["Food court inside Statue of Unity complex", "Simple Gujarati thali in Ekta Nagar", "Packed snacks for the train"]
+          }
+        ]
+      },
+      "Gir / Sasan Gir": {
+        "name": "Gir / Sasan Gir",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Pre-book Gir Jungle Trail permits on the official portal up to 90 days ahead; the park closes mid-June to mid-October for monsoon, so replace Gir in that window.",
+        "experiences": ["Wildlife & Safari", "National Parks", "Hiking"],
+        "signatureExperiences": ["Wildlife & Safari", "National Parks"],
+        "days": [
+          {
+            "theme": "Asiatic lions at dawn and dusk",
+            "pace": "packed",
+            "note": "The safari day starts before sunrise; book both dawn and afternoon slots if lions are the trip priority, because sightings are likely but never guaranteed.",
+            "activities": [
+              { "name": "Dawn jeep safari — Gir Jungle Trail core zone", "duration": "~3h", "priority": "must-see", "cost": "₹800 weekday / ₹1,000 weekend permit + ₹3,500 jeep + ₹700 guide = ~₹5,000/jeep", "tip": "Official booking only at girlion.gujarat.gov.in; carry Aadhaar/passport, stay inside the jeep and bring binoculars/zoom lens." },
+              { "name": "Dusk jeep safari — core zone", "duration": "~3h", "priority": "must-see", "cost": "~₹5,000/jeep", "tip": "Golden-hour photography is better and lions often move near water in the afternoon heat." },
+              { "name": "Kamleshwar Dam crocodile and bird stop", "duration": "~1h", "priority": "optional", "cost": "Free", "tip": "Use the midday gap between safaris for marsh crocodiles and scenic water views near Sasan." }
+            ],
+            "hotels": [
+              { "name": "Budget lodge in Sasan Gir", "budget": "₹1,500–₹3,000/night" },
+              { "name": "Mid-range jungle resort", "budget": "₹4,000–₹8,000/night" }
+            ],
+            "meals": ["Resort Gujarati thali", "Packed early-morning tea and snacks", "Simple Sasan Gir dhaba meals"]
+          },
+          {
+            "theme": "Devaliya interpretation zone and onward to Somnath",
+            "pace": "relaxed",
+            "note": "A flexible second morning improves wildlife odds without delaying the easy 70km afternoon transfer to Somnath.",
+            "activities": [
+              { "name": "Devaliya Safari Park interpretation zone", "duration": "~1.5–2h", "priority": "recommended", "cost": "Jeep ~₹4,000/jeep; bus ~₹250–₹300 pp", "tip": "A smaller fenced area with near-guaranteed lion sightings; useful if the core safari was quiet or for families." },
+              { "name": "Gir Crocodile Breeding Centre", "duration": "~45m", "priority": "optional", "cost": "~₹20–₹30", "tip": "Short conservation stop near Sasan village, especially good with kids." },
+              { "name": "Maldhari community interaction", "duration": "~1h", "priority": "optional", "cost": "Free or guided resort tour ₹200–₹400 pp", "tip": "Go only with a responsible local guide and avoid intrusive photography." }
+            ],
+            "hotels": [
+              { "name": "Budget lodge in Sasan Gir", "budget": "₹1,500–₹3,000/night" },
+              { "name": "Somnath temple-area hotel after transfer", "budget": "₹1,200–₹3,500/night" }
+            ],
+            "meals": ["Simple Kathiawadi thali", "Packed snacks for the Gir→Somnath road", "Fresh lime soda without alcohol"]
+          }
+        ]
+      },
+      "Somnath": {
+        "name": "Somnath",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A relaxed coastal pilgrimage day: visit the temple at quiet dawn, return for evening aarti, then stay for the sea-facing light-and-sound show.",
+        "experiences": ["Temples & Religious Sites", "History", "Beaches"],
+        "signatureExperiences": ["Temples & Religious Sites", "History"],
+        "days": [
+          {
+            "theme": "Jyotirlinga by the Arabian Sea",
+            "pace": "relaxed",
+            "note": "All major Somnath stops sit within 5–10km. Temple security is strict: modest dress and no photography inside the sanctum.",
+            "activities": [
+              { "name": "Somnath Temple darshan + Sandhya Aarti", "duration": "~1.5h total", "priority": "must-see", "cost": "Free; VIP Darshan ₹500/person", "tip": "Go at 6am for quiet darshan and return around 7pm for the moving sea-facing aarti." },
+              { "name": "Somnath Light & Sound Show", "duration": "~1h", "priority": "must-see", "cost": "₹30/adult, ₹10/child", "tip": "Buy tickets as soon as you arrive; the 8pm show narrates temple history on the rear wall by the sea." },
+              { "name": "Bhalka Tirth", "duration": "~45m", "priority": "recommended", "cost": "Free", "tip": "A peaceful Krishna shrine 5km away; auto return is usually ₹50–₹80." },
+              { "name": "Triveni Sangam Ghat and Somnath Beach", "duration": "~1h", "priority": "optional", "cost": "Free", "tip": "Good sunset walk; beach camel rides usually cost ₹50–₹100." },
+              { "name": "Prabhas Patan Museum", "duration": "~1h", "priority": "optional", "cost": "₹25–₹50", "tip": "Best for history fans interested in old Somnath sculptures and Prabhasa Kshetra finds." }
+            ],
+            "hotels": [
+              { "name": "Temple Trust guesthouse", "budget": "₹800–₹2,000/night" },
+              { "name": "Somnath temple-area hotel", "budget": "₹1,200–₹3,500/night" }
+            ],
+            "meals": ["Temple-area vegetarian thali", "Kathiawadi thali", "Tea and snacks near the beach promenade"]
+          }
+        ]
+      },
+      "Dwarka": {
+        "name": "Dwarka",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Two days keeps temple timing sane: Dwarkadhish and nearby shrines first, then Bet Dwarka by ferry before a long return toward Ahmedabad or Rajkot airport.",
+        "experiences": ["Temples & Religious Sites", "History", "Cruises & Boat Trips", "Beaches"],
+        "signatureExperiences": ["Temples & Religious Sites", "Cruises & Boat Trips"],
+        "days": [
+          {
+            "theme": "Char Dham darshan and Jyotirlinga circuit",
+            "pace": "moderate",
+            "note": "Dwarkadhish Temple closes in the afternoon, so plan morning darshan, a lunch break, then evening aarti and sunset by the Gomti.",
+            "activities": [
+              { "name": "Dwarkadhish Temple darshan + Sandhya Aarti", "duration": "~2h total", "priority": "must-see", "cost": "Free; special poojas ₹100–₹500", "tip": "Mangala Aarti around 6:30am and Sandhya Aarti around 7:15pm are most atmospheric; no leather items in the sanctum." },
+              { "name": "Rukmini Devi Temple", "duration": "~30–45m", "priority": "recommended", "cost": "Free", "tip": "A 12th-century temple 2–3km from town; auto return usually ₹50–₹100." },
+              { "name": "Nageshwar Jyotirlinga Temple", "duration": "~1h", "priority": "recommended", "cost": "Free", "tip": "16km from Dwarka with a giant Shiva statue; hire auto/cab for ₹250–₹400 return." },
+              { "name": "Gomti Ghat and Dwarka Lighthouse sunset", "duration": "~45m", "priority": "optional", "cost": "Free", "tip": "Walk the riverfront after temple hours for sea breeze and sunset views." }
+            ],
+            "hotels": [
+              { "name": "Temple-area budget hotel", "budget": "₹1,000–₹2,500/night" },
+              { "name": "Mid-range hotel near Dwarkadhish Temple", "budget": "₹3,000–₹5,500/night" }
+            ],
+            "meals": ["Pure-veg temple-area thali", "Kathiawadi thali", "Farsan and chaas stalls"]
+          },
+          {
+            "theme": "Bet Dwarka island and departure",
+            "pace": "moderate",
+            "note": "Bet Dwarka ferries leave from Okha, 30km away. Start early, return by afternoon, then choose overnight train/bus or road transfer to Rajkot airport.",
+            "activities": [
+              { "name": "Bet Dwarka Island via Okha ferry", "duration": "~4–5h incl. transfers", "priority": "must-see", "cost": "Public ferry ₹10–₹30/person one-way; private boat ~₹2,000/boat", "tip": "Ferries usually run 6am–7pm every 15–20 minutes; monsoon seas can disrupt crossings." },
+              { "name": "Hanuman Dandi and Bet Dwarka shoreline", "duration": "~1h", "priority": "recommended", "cost": "Free", "tip": "Combine with the island temple visit before returning to Okha." },
+              { "name": "Shankhodhhar conch-shell vendor street", "duration": "~30m", "priority": "optional", "cost": "Free; shopping extra", "tip": "Browse marine handicrafts but avoid buying protected shells or coral." }
+            ],
+            "hotels": [
+              { "name": "Temple-area budget hotel", "budget": "₹1,000–₹2,500/night" },
+              { "name": "Overnight train/bus toward Ahmedabad", "budget": "₹300–₹1,200 train; ₹200–₹400 bus" }
+            ],
+            "meals": ["Packed snacks for Okha ferry morning", "Simple veg lunch in Dwarka", "Train/bus dinner pack"]
+          }
+        ]
+      }
+    },
+    "connections": [
+      { "from": "Ahmedabad", "to": "Statue of Unity / Kevadia", "method": "Jan Shatabdi train to Ekta Nagar, GSRTC bus or private cab", "cost": "Train ₹170–₹400; bus ₹170–₹500; cab ₹2,500–₹4,000 one-way", "distanceKm": 190, "durationHrs": 3, "sameDayFeasible": true },
+      { "from": "Statue of Unity / Kevadia", "to": "Gir / Sasan Gir", "method": "Evening train back to Ahmedabad, then overnight bus/train to Junagadh or Sasan Gir; direct car only if starting very early", "cost": "Via Ahmedabad ₹500–₹1,000 total; direct car ₹4,500–₹7,000", "distanceKm": 380, "durationHrs": 8, "sameDayFeasible": false },
+      { "from": "Gir / Sasan Gir", "to": "Somnath", "method": "Private taxi, GSRTC bus via Veraval, or shared jeep/auto", "cost": "Taxi ₹800–₹1,200; bus ₹50–₹80; shared jeep ₹30–₹60 pp", "distanceKm": 70, "durationHrs": 2, "sameDayFeasible": true },
+      { "from": "Somnath", "to": "Dwarka", "method": "Private car via Porbandar, GSRTC bus, or Veraval→Dwarka train", "cost": "Car ₹2,500–₹4,000; bus ₹150–₹300; train ₹150–₹500", "distanceKm": 235, "durationHrs": 6, "sameDayFeasible": true }
+    ],
+    "extras": [
+      "Gir lion safari is the highest-feasibility risk: permits should be pre-booked at girlion.gujarat.gov.in, carry original ID, and the park closes every year from mid-June to mid-October for monsoon.",
+      "Gujarat is a dry state under prohibition law. Tourists need a temporary alcohol permit from licensed hotels; most travellers simply plan an alcohol-free trip.",
+      "Rann of Kutch / white desert is not part of this main route because it is far northwest of Saurashtra and is honestly a Nov–Feb / Rann Utsav winter-only experience; outside the season the salt flats can be wet or inaccessible.",
+      "Dwarka→Ahmedabad is a long 440km return: overnight train/bus is cheapest, but time-pressed travellers should transfer 170km to Rajkot and fly onward.",
+      "If driving Somnath→Dwarka, stop at Porbandar for Kirti Mandir, Gandhi's birthplace, and optionally Madhavpur beach.",
+      "Quoted fees are verified or cross-checked for late 2025–Jul 2026 where available; reconfirm government tickets, ferry timings and temple show schedules on the day."
+    ]
+  }
+}

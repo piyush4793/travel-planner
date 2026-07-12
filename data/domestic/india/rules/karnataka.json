@@ -1,0 +1,842 @@
+{
+  "name": "Karnataka",
+  "seed": false,
+  "lat": 15.3173,
+  "lng": 75.7139,
+  "region": "South India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹18K–₹28K",
+    "couple": "₹30K–₹50K",
+    "family4": "₹55K–₹85K"
+  },
+  "experiences": [
+    "History",
+    "Temples & Religious Sites",
+    "UNESCO Sites",
+    "Coffee & Cafés",
+    "Waterfalls",
+    "Wildlife & Safari",
+    "Mountains",
+    "Architecture",
+    "Food",
+    "Hiking",
+    "Festivals",
+    "Markets & Shopping",
+    "Ancient Ruins"
+  ],
+  "avoid": [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Goa",
+    "Kerala",
+    "Tamil Nadu"
+  ],
+  "landmark": "Mysore Palace, Hampi ruins and the coffee estates of Coorg and Chikmagalur",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Bengaluru is the main gateway. The coherent 7-day road loop is Bengaluru→Mysuru→Coorg→Chikmagalur→Bengaluru; Hampi is a long overnight extension from Bengaluru/Hospet, not a natural same-day add-on from the hill circuit.",
+  "diet": {
+    "vegetarian": "Karnataka is very vegetarian-friendly: Udupi hotels and Darshini counters are everywhere, serving idli, dosa, vada, upma, bisi bele bath, akki rotti and thalis at budget prices.",
+    "vegan": "Many staples can be vegan, but ask clearly for no ghee, butter, curd or milk. Plain dosa, idli, sambar, rasam, coconut chutney, neer dosa and black filter coffee are usually safe when ordered without ghee or dairy.",
+    "phrases": [
+      "Ghee beda = no ghee",
+      "Haalu/mosaru beda = no milk/curd",
+      "Butter beda = no butter"
+    ]
+  },
+  "links": [
+    {
+      "label": "Karnataka Tourism (official)",
+      "url": "https://karnatakatourism.org"
+    },
+    {
+      "label": "Hampi official guide and timings",
+      "url": "https://hampi.in/hampi-monument-timings"
+    },
+    {
+      "label": "KSTDC tours and e-brochures",
+      "url": "https://kstdc.co/e-brochure/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Bengaluru",
+      "lat": 12.9716,
+      "lng": 77.5946,
+      "notes": "India's Silicon Valley and Garden City — royal-era palaces, botanical gardens, flower markets, cafés and microbreweries; the logical start and end point for Karnataka.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May"
+      ],
+      "experiences": [
+        "Architecture",
+        "Food",
+        "Coffee & Cafés",
+        "Markets & Shopping",
+        "History"
+      ]
+    },
+    {
+      "name": "Mysuru",
+      "lat": 12.2958,
+      "lng": 76.6394,
+      "notes": "The City of Palaces — illuminated Amba Vilas Palace, Chamundi Hill, sandalwood bazaars and the spectacular Dasara festival.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April",
+        "May"
+      ],
+      "experiences": [
+        "Architecture",
+        "History",
+        "Temples & Religious Sites",
+        "Markets & Shopping",
+        "Festivals"
+      ]
+    },
+    {
+      "name": "Coorg",
+      "lat": 12.4244,
+      "lng": 75.7382,
+      "notes": "Madikeri/Kodagu — misty Western Ghats, coffee estates, waterfalls, river gorges and Kodava culture best explored from plantation homestays.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August"
+      ],
+      "experiences": [
+        "Coffee & Cafés",
+        "Waterfalls",
+        "Wildlife & Safari",
+        "Mountains",
+        "Hiking"
+      ]
+    },
+    {
+      "name": "Chikmagalur",
+      "lat": 13.3161,
+      "lng": 75.772,
+      "notes": "Karnataka's coffee-and-trekking hill station — Mullayanagiri, Baba Budangiri, waterfalls, plantation stays and Western Ghats viewpoints.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "July",
+        "August"
+      ],
+      "experiences": [
+        "Mountains",
+        "Hiking",
+        "Coffee & Cafés",
+        "Waterfalls",
+        "Wildlife & Safari"
+      ]
+    },
+    {
+      "name": "Hampi",
+      "lat": 15.335,
+      "lng": 76.46,
+      "notes": "UNESCO-listed Vijayanagara ruins in a boulder-strewn Tungabhadra landscape; best treated as a 2-day standalone extension because it is a long overnight leg from Bengaluru/Hospet.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "worstMonths": [
+        "April",
+        "May"
+      ],
+      "experiences": [
+        "UNESCO Sites",
+        "Ancient Ruins",
+        "History",
+        "Temples & Religious Sites",
+        "Architecture"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Any Indian prepaid SIM (Jio or Airtel) works well from Bengaluru airport or city stores with ID. Coverage is strong on the Bengaluru–Mysuru corridor, fair in the hills, and good around Hospet/Hampi town.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "KSRTC",
+      "Ola",
+      "Uber",
+      "Zomato"
+    ],
+    "cityOrder": [
+      "Bengaluru",
+      "Mysuru",
+      "Coorg",
+      "Chikmagalur",
+      "Hampi"
+    ],
+    "cities": {
+      "Bengaluru": {
+        "name": "Bengaluru",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One focused day covers the botanical garden, palace and market core; add a second only for slower cafés, breweries and temple walks.",
+        "experiences": [
+          "Architecture",
+          "Food",
+          "Coffee & Cafés",
+          "Markets & Shopping",
+          "History"
+        ],
+        "signatureExperiences": [
+          "Coffee & Cafés",
+          "Markets & Shopping"
+        ],
+        "days": [
+          {
+            "theme": "Gardens, palace and the city's pulse",
+            "pace": "moderate",
+            "note": "Start early at Lalbagh, then use autos/Ola/Uber between palace, market and south Bengaluru sights; traffic gets heavy after 3pm.",
+            "activities": [
+              {
+                "name": "Lalbagh Botanical Garden and Glass House",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "₹25/adult; free for walkers 5–9am and 4–7pm",
+                "tip": "Arrive at 6am for cool weather and free walker entry; flower shows in Jan and Aug cost more."
+              },
+              {
+                "name": "Vidhana Soudha and Cubbon Park photo walk",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Vidhana Soudha photographs best from Cubbon Park; note Cubbon Park closures on Mondays and every 2nd Tuesday."
+              },
+              {
+                "name": "Bengaluru Palace",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "₹240/adult Indians; ₹480 foreigners; camera ₹300 extra",
+                "tip": "Tudor-Gothic Wadiyar-era palace, open roughly 10am–5:30pm."
+              },
+              {
+                "name": "KR Market flower market",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Go 6–9am for peak wholesale flower action; keep valuables close in the crowded aisles."
+              },
+              {
+                "name": "Bull Temple and Basavanagudi snacks",
+                "duration": "1h",
+                "priority": "optional",
+                "cost": "Free",
+                "tip": "Pair the 16th-century Nandi temple with dosa at CTR or a Darshini meal if you are nearby."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Locul.Uptown Bengaluru",
+                "budget": "₹700–₹1,400/night"
+              },
+              {
+                "name": "Bloomrooms Bengaluru",
+                "budget": "₹2,500–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "CTR or Vidyarthi Bhavan dosa",
+              "Darshini idli-vada breakfast",
+              "Blue Tokai or Third Wave Coffee",
+              "Toit/Indiranagar cafés for evening"
+            ]
+          }
+        ]
+      },
+      "Mysuru": {
+        "name": "Mysuru",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is ideal: one for palace, Chamundi Hill and markets; one for Srirangapatna, Brindavan Gardens and silk heritage.",
+        "experiences": [
+          "Architecture",
+          "History",
+          "Temples & Religious Sites",
+          "Markets & Shopping",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "Architecture",
+          "Festivals"
+        ],
+        "days": [
+          {
+            "theme": "Palace, sacred hill and Devaraja Market",
+            "pace": "moderate",
+            "note": "Do the palace 10am–1pm, Chamundi Hill in the afternoon, and return for Sunday illumination if your dates align.",
+            "activities": [
+              {
+                "name": "Mysore Palace (Amba Vilas Palace)",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "₹120/adult Indians; ₹70 children 10–18; free under 10; ₹1,000 foreigners; light show ₹70 Indian / ₹200 foreigners",
+                "tip": "Sunday 7–7:45pm illumination with 50,000 bulbs is worth planning around; book ahead for Dasara."
+              },
+              {
+                "name": "Chamundi Hill and Mahishasura statue",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Free temple entry; parking ₹20–₹30; cab up ~₹200–₹300 return",
+                "tip": "Climb the 1,000 steps if weather is cool, passing the Nandi statue midway."
+              },
+              {
+                "name": "Devaraja Market",
+                "duration": "1h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Look for jasmine, turmeric, sandal soap, incense and fixed-price KSIC silk nearby."
+              },
+              {
+                "name": "St. Philomena's Cathedral",
+                "duration": "45m",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Roambay Hostel Mysuru",
+                "budget": "₹600–₹1,200/night"
+              },
+              {
+                "name": "Royal Orchid Metropole",
+                "budget": "₹5,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Mylari dosa",
+              "Vinayaka Mylari",
+              "Hotel RRR meals",
+              "Guru Sweet Mart Mysore Pak"
+            ]
+          },
+          {
+            "theme": "Srirangapatna, Brindavan Gardens and silk",
+            "pace": "moderate",
+            "note": "Srirangapatna and Brindavan Gardens are short drives from Mysuru; time Brindavan for the evening light-and-fountain show.",
+            "activities": [
+              {
+                "name": "Srirangapatna Island Fort and Ranganathaswamy Temple",
+                "duration": "2.5–3h",
+                "priority": "must-see",
+                "cost": "Ranganathaswamy Temple free; Tipu's Summer Palace ₹25 Indians / ₹300 foreigners (verify at ASI)",
+                "tip": "Former capital of Hyder Ali and Tipu Sultan; include Gumbaz tombs if time allows."
+              },
+              {
+                "name": "Brindavan Gardens musical fountain",
+                "duration": "2h evening",
+                "priority": "must-see",
+                "cost": "₹50/adult; ₹30/children; musical fountain ₹50 extra",
+                "tip": "Arrive 45–90 minutes before sunset and verify current show timings at the gate."
+              },
+              {
+                "name": "KSIC Silk Factory and showroom",
+                "duration": "1h",
+                "priority": "recommended",
+                "cost": "Free tour; purchases optional",
+                "tip": "Best place for authentic fixed-price Mysore silk."
+              },
+              {
+                "name": "Mysuru Zoo",
+                "duration": "2h",
+                "priority": "optional",
+                "cost": "₹100/adult; ₹50 children 3–12 (verify current rate)"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Roambay Hostel Mysuru",
+                "budget": "₹600–₹1,200/night"
+              },
+              {
+                "name": "Royal Orchid Metropole",
+                "budget": "₹5,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Mahesh Prasad vegetarian meals",
+              "Sapa Bakery",
+              "Depth N Green vegan-friendly café"
+            ]
+          }
+        ]
+      },
+      "Coorg": {
+        "name": "Coorg",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives a coffee-estate day around Madikeri plus a river/elephant/sacred-source excursion; roads are slow in monsoon.",
+        "experiences": [
+          "Coffee & Cafés",
+          "Waterfalls",
+          "Wildlife & Safari",
+          "Mountains",
+          "Hiking"
+        ],
+        "signatureExperiences": [
+          "Coffee & Cafés",
+          "Waterfalls"
+        ],
+        "days": [
+          {
+            "theme": "Coffee estates, Abbey Falls and Madikeri viewpoints",
+            "pace": "moderate",
+            "note": "Abbey Falls and Raja's Seat are close to Madikeri; book plantation tours 24–48 hours ahead.",
+            "activities": [
+              {
+                "name": "Coffee plantation tour (Mercara Gold Estate or similar)",
+                "duration": "2h",
+                "priority": "must-see",
+                "cost": "₹350/adult standard tour; premium tours with lunch ₹1,200–₹2,000 pp",
+                "tip": "Oct–Jan harvest season lets you see red coffee cherries, pulping and processing."
+              },
+              {
+                "name": "Abbey Falls",
+                "duration": "1.5h",
+                "priority": "must-see",
+                "cost": "₹15/person; parking ₹10–₹50",
+                "tip": "Best flow is Oct–Jan; use the suspension-bridge viewpoint and avoid slippery edges."
+              },
+              {
+                "name": "Raja's Seat viewpoint",
+                "duration": "45m",
+                "priority": "recommended",
+                "cost": "₹5/person",
+                "tip": "Go for sunset over the valley; the toy train is useful with children."
+              },
+              {
+                "name": "Omkareshwara Temple and Madikeri Fort",
+                "duration": "1.5h",
+                "priority": "recommended",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Zostel Coorg",
+                "budget": "₹700–₹1,400/night"
+              },
+              {
+                "name": "Plantation homestay near Madikeri",
+                "budget": "₹2,500–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Coorg pandi curry for non-vegetarians",
+              "Akki rotti with vegetable curry",
+              "Black estate coffee",
+              "Udupi hotel breakfast in Madikeri"
+            ]
+          },
+          {
+            "theme": "Dubare elephants, sacred Cauvery source and rafting",
+            "pace": "packed",
+            "note": "Dubare is 30km from Madikeri; Bhagamandala and Talacauvery make a full-day hired-cab circuit. Rafting is seasonal and optional.",
+            "activities": [
+              {
+                "name": "Dubare Elephant Camp",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Entry ₹50–₹100/person; elephant bathing ₹200–₹500 extra",
+                "tip": "Arrive 8–9am for elephant bathing; book JDTCS activities ahead when possible."
+              },
+              {
+                "name": "Bhagamandala Triveni Sangama",
+                "duration": "1.5h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Sacred confluence of Cauvery, Kannike and mythical Sujyothi; dress modestly around the temple."
+              },
+              {
+                "name": "Talacauvery source of the Cauvery",
+                "duration": "1.5h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Climb about 200 steps for misty Western Ghats views; Tula Sankramana in Oct draws crowds."
+              },
+              {
+                "name": "Barapole River rafting",
+                "duration": "2–3h",
+                "priority": "optional",
+                "cost": "₹1,000–₹1,500/person",
+                "tip": "Seasonal Oct–May; most operators require advance booking and minimum group sizes."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Zostel Coorg",
+                "budget": "₹700–₹1,400/night"
+              },
+              {
+                "name": "Plantation homestay near Madikeri",
+                "budget": "₹2,500–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Coorg-style vegetarian thali",
+              "Estate lunch with coffee",
+              "Madikeri town cafés"
+            ]
+          }
+        ]
+      },
+      "Chikmagalur": {
+        "name": "Chikmagalur",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days cover Mullayanagiri/Baba Budangiri plus a waterfall-and-wildlife day; monsoon can close trails and slow roads.",
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "Coffee & Cafés",
+          "Waterfalls",
+          "Wildlife & Safari"
+        ],
+        "signatureExperiences": [
+          "Mountains",
+          "Coffee & Cafés"
+        ],
+        "days": [
+          {
+            "theme": "Mullayanagiri, Baba Budangiri and coffee origins",
+            "pace": "packed",
+            "note": "Start by 7am for clear mountain views; mist often reduces visibility after noon.",
+            "activities": [
+              {
+                "name": "Mullayanagiri Peak trek",
+                "duration": "3–4h including drive",
+                "priority": "must-see",
+                "cost": "Free entry; parking ₹30",
+                "tip": "Karnataka's highest peak at 1,930m; easy-to-moderate trail, best at sunrise."
+              },
+              {
+                "name": "Baba Budangiri shrine and coffee-origin landscape",
+                "duration": "2h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Linked to Baba Budan bringing coffee seeds from Mocha; the route passes aromatic estates."
+              },
+              {
+                "name": "Z Point viewpoint",
+                "duration": "45m",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Coffee estate walk via homestay",
+                "duration": "1.5h",
+                "priority": "recommended",
+                "cost": "₹200–₹500/person",
+                "tip": "Many plantation hosts include informal estate walks for guests."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Hosteller Chikmagalur",
+                "budget": "₹700–₹1,500/night"
+              },
+              {
+                "name": "Coffee-estate homestay",
+                "budget": "₹2,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Malnad meals",
+              "Akki rotti",
+              "Estate coffee tasting",
+              "Town café snacks"
+            ]
+          },
+          {
+            "theme": "Hebbe Falls, Kemmangundi and Bhadra wildlife",
+            "pace": "moderate",
+            "note": "Hebbe Falls requires a 4WD jeep plus a short walk; Bhadra safari needs advance booking and may be best swapped in for Kemmangundi.",
+            "activities": [
+              {
+                "name": "Hebbe Falls",
+                "duration": "4h round trip",
+                "priority": "must-see",
+                "cost": "Jeep ₹600–₹800 round trip; nominal estate entry ~₹50",
+                "tip": "A two-tier 551-ft waterfall; regular cars cannot use the estate road, so the jeep is mandatory."
+              },
+              {
+                "name": "Kemmangundi hill station",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "Free access; gardens ₹10",
+                "tip": "Rose gardens, viewpoints and a cool 1,434m hill-station feel."
+              },
+              {
+                "name": "Bhadra Wildlife Sanctuary safari",
+                "duration": "3–4h",
+                "priority": "recommended",
+                "cost": "Entry ₹200/adult; shared jeep ~₹1,500–₹2,500 (verify current rate)",
+                "tip": "Book forest safari ahead; morning slots are best for elephant, bison and birdlife."
+              },
+              {
+                "name": "Sringeri Sharada Peetham Temple",
+                "duration": "2h",
+                "priority": "optional",
+                "cost": "Free",
+                "tip": "A beautiful riverside Adi Shankaracharya mutt, better as a separate day trip or en-route stop."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "The Hosteller Chikmagalur",
+                "budget": "₹700–₹1,500/night"
+              },
+              {
+                "name": "Coffee-estate homestay",
+                "budget": "₹2,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Malnad thali",
+              "Homestay dinner",
+              "Filter coffee at estate cafés"
+            ]
+          }
+        ]
+      },
+      "Hampi": {
+        "name": "Hampi",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "A 2-day UNESCO extension requiring an overnight train/bus via Hospet; the long leg is worthwhile but should not be treated as a quick detour from Coorg or Chikmagalur.",
+        "experiences": [
+          "UNESCO Sites",
+          "Ancient Ruins",
+          "History",
+          "Temples & Religious Sites",
+          "Architecture"
+        ],
+        "signatureExperiences": [
+          "UNESCO Sites",
+          "Ancient Ruins"
+        ],
+        "days": [
+          {
+            "theme": "Sacred core, Hampi Bazaar and Matanga sunset",
+            "pace": "moderate",
+            "note": "Virupaksha, Hemakuta and the bazaar are walkable; rest during the hottest midday hours and climb Matanga for sunset.",
+            "activities": [
+              {
+                "name": "Virupaksha Temple morning abhishekam",
+                "duration": "1.5h",
+                "priority": "must-see",
+                "cost": "Free entry; special darshan ₹25; camera ₹50",
+                "tip": "One of India's oldest continuously functioning temples; no photography of the main deity."
+              },
+              {
+                "name": "Hampi Bazaar and Hemakuta Hill shrines",
+                "duration": "2h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "The colonnaded bazaar and hill shrines give the best close-up views of Virupaksha's tower."
+              },
+              {
+                "name": "Matanga Hill sunset",
+                "duration": "2h including climb/descent",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Carry a torch for the descent; the boulder path gets dark quickly."
+              },
+              {
+                "name": "Tungabhadra coracle ride",
+                "duration": "45m",
+                "priority": "optional",
+                "cost": "₹30–₹100/person (negotiable)",
+                "tip": "Traditional basket boats run from the ghats; prices vary by season and operator."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Zostel Hampi",
+                "budget": "₹700–₹1,500/night"
+              },
+              {
+                "name": "Heritage Resort Hampi",
+                "budget": "₹5,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Mango Tree-style thali cafés",
+              "South Indian breakfast near Hampi Bazaar",
+              "Simple guesthouse dinners"
+            ]
+          },
+          {
+            "theme": "Vittala Temple, Stone Chariot and royal enclosure",
+            "pace": "moderate",
+            "note": "Buy the ASI ticket early; it covers Vittala and Lotus Mahal/Zenana on the same day. Rent a bicycle or auto between clusters.",
+            "activities": [
+              {
+                "name": "Vittala Temple complex and Stone Chariot",
+                "duration": "2–2.5h",
+                "priority": "must-see",
+                "cost": "₹40/adult Indians/SAARC; ₹600 foreigners; free under 15",
+                "tip": "Arrive at 8:30am opening; electric vehicle from parking to temple is about ₹10."
+              },
+              {
+                "name": "Royal Enclosure, Lotus Mahal and Elephant Stables",
+                "duration": "2h",
+                "priority": "must-see",
+                "cost": "Included in the same-day Vittala ticket",
+                "tip": "Hire a local guide here for context on the Vijayanagara court and Zenana enclosure."
+              },
+              {
+                "name": "Hazara Rama Temple and Underground Shiva Temple",
+                "duration": "1.5h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Hazara Rama's carved Ramayana friezes are superb; the Underground Shiva Temple may partially flood in monsoon."
+              },
+              {
+                "name": "Daroji Sloth Bear Sanctuary",
+                "duration": "3h",
+                "priority": "optional",
+                "cost": "₹200/adults; ₹100/children; vehicle entry extra (verify current rate)",
+                "tip": "Best around 4:30–6:30pm when bears emerge near the viewing area."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Zostel Hampi",
+                "budget": "₹700–₹1,500/night"
+              },
+              {
+                "name": "Heritage Resort Hampi",
+                "budget": "₹5,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Banana-leaf meals in Hospet",
+              "Hampi Bazaar cafés",
+              "Carry water and snacks for ruin clusters"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Bengaluru",
+        "to": "Mysuru",
+        "method": "Train (preferred) or KSRTC/Volvo bus",
+        "cost": "₹150–₹320 train Sleeper/Chair Car; ₹300–₹600 AC Volvo bus",
+        "distanceKm": 139,
+        "durationHrs": 2.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Mysuru",
+        "to": "Coorg",
+        "method": "KSRTC/private bus to Madikeri or taxi",
+        "cost": "₹350–₹750 bus; ₹1,400–₹2,500 taxi",
+        "distanceKm": 118,
+        "durationHrs": 3,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Coorg",
+        "to": "Chikmagalur",
+        "method": "Taxi/private cab recommended; bus via Hassan",
+        "cost": "₹2,500–₹4,000 taxi; ₹300–₹600 bus via Hassan",
+        "distanceKm": 170,
+        "durationHrs": 4.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Chikmagalur",
+        "to": "Hampi",
+        "method": "Long extension via Bengaluru overnight train/bus or via Hubballi/Hospet; do not treat as a same-day hill-circuit hop",
+        "cost": "Chikmagalur→Bengaluru bus ₹343–₹1,500 + Bengaluru→Hampi overnight bus ₹449–₹1,200 or train ₹300–₹500",
+        "distanceKm": 590,
+        "durationHrs": 13,
+        "sameDayFeasible": false
+      },
+      {
+        "from": "Hampi",
+        "to": "Bengaluru",
+        "method": "Overnight train from Hospet or overnight bus",
+        "cost": "₹300–₹500 train Sleeper; ₹449–₹1,200 overnight bus",
+        "distanceKm": 350,
+        "durationHrs": 8,
+        "sameDayFeasible": false
+      }
+    ],
+    "extras": [
+      "The practical 7-day Karnataka loop is Bengaluru 1d + Mysuru 2d + Coorg 2d + Chikmagalur 2d, then return to Bengaluru; Hampi adds 2 more days plus an overnight transfer.",
+      "Hampi is a long leg: from Bengaluru it is ~350km and 8–10 hours overnight by train/bus to Hospet; from Mysuru it is ~395km and 10–13 hours. It is not a day trip from the hill circuit.",
+      "Belur and Halebidu are excellent Hoysala temple stops on the Coorg→Chikmagalur route via Hassan; add ~2 hours if using a private cab.",
+      "Oct–Mar is the best overall window. Apr–May is hot inland, especially Hampi; Jun–Sep brings heavy Western Ghats monsoon rain, landslides and trail closures around Coorg and Chikmagalur.",
+      "Verified 2025–2026 prices in this file include Mysore Palace ₹120/adult Indian, Hampi Vittala ₹40 Indian / ₹600 foreigner, Lalbagh ₹25, Bengaluru Palace ₹240 Indian, Abbey Falls ₹15, Raja's Seat ₹5 and Coorg coffee tours around ₹350/adult. Rates marked 'verify' vary by operator or government revision."
+    ]
+  }
+}
