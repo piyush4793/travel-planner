@@ -95,6 +95,44 @@ describe("AiItineraryModal", () => {
     expect(screen.getByText("Funicular")).toBeInTheDocument();
   });
 
+  it("renders optional cost breakdown, booking suggestions, and derives transport for cities without explicit routing", () => {
+    const result = makeResult({
+      cities: [
+        { name: "Oslo", lat: 59.9, lng: 10.7, nights: 1, transportToNext: { type: "train", label: "Oslo → Bergen", cost: "₹5K" } },
+        // Bergen lacks transportToNext → the engine derives it via detectTransport.
+        { name: "Bergen", lat: 60.4, lng: 5.3, nights: 1 },
+        { name: "Tromso", lat: 69.6, lng: 18.9, nights: 1 },
+      ],
+      plan: {
+        duration: "3 days",
+        costPerPerson: "₹1L",
+        note: "",
+        days: [
+          {
+            label: "Day 1 — Oslo",
+            activities: ["Opera House"],
+            hotels: ["Oslo Hotel"],
+            costBreakdown: { flights: "₹40K", hotels: "₹8K", excursions: "₹3K", transfers: "₹1K", total: "₹52K" },
+            bookingSuggestions: ["Oslo Fjord sunset cruise"],
+          },
+          { label: "Day 2 — Bergen", activities: ["Fjord cruise"] },
+          { label: "Day 3 — Tromso", activities: ["Northern lights"] },
+        ],
+      },
+    });
+    render(<AiItineraryModal result={result} onClose={vi.fn()} />);
+
+    // Optional cost-breakdown row (all five fields).
+    expect(screen.getByText("Cost Estimate")).toBeInTheDocument();
+    expect(screen.getByText(/₹40K/)).toBeInTheDocument();
+    expect(screen.getByText(/Total: ₹52K/)).toBeInTheDocument();
+    // Optional booking suggestions.
+    expect(screen.getByText("Recommended Tours")).toBeInTheDocument();
+    expect(screen.getByText(/Oslo Fjord sunset cruise/)).toBeInTheDocument();
+    // Derived transport label for the city that omitted transportToNext.
+    expect(screen.getAllByText("Bergen → Tromso").length).toBeGreaterThan(0);
+  });
+
   it("copies the day route link and unmounts cleanly without a pending-timer crash", async () => {
     const writeText = vi.fn().mockResolvedValue(undefined);
     Object.assign(navigator, { clipboard: { writeText } });

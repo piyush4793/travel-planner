@@ -41,4 +41,17 @@ describe("PlanWorkspaceShell (desktop)", () => {
     expect(screen.getByRole("button", { name: "Show Insights panel" })).toBeInTheDocument();
     expect(loadLS(LS_KEYS.PLAN_UI, { left: true, right: true }).right).toBe(false);
   });
+
+  it("re-expands a collapsed rail when its reopen tab is clicked", () => {
+    render(<PlanWorkspaceShell center={<p>itinerary</p>} shape={shape} context={context} />);
+    // Collapse the left (Shape) rail, then reopen it via its tab.
+    fireEvent.click(screen.getByRole("button", { name: "Collapse Shape your trip panel" }));
+    const reopen = screen.getByRole("button", { name: "Show Shape panel" });
+    expect(reopen).toHaveAttribute("aria-expanded", "false");
+
+    fireEvent.click(reopen);
+
+    expect(screen.getByRole("complementary", { name: "Shape your trip" })).toBeInTheDocument();
+    expect(loadLS(LS_KEYS.PLAN_UI, { left: true, right: true }).left).toBe(true);
+  });
 });

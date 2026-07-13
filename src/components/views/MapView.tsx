@@ -18,10 +18,14 @@ const MAP_STYLE = "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json"
 
 type HoverState = { country: Country; x: number; y: number } | null;
 
+// Stable empty default so omitting `highlightedNames` doesn't hand the marker
+// effect a fresh array reference on every render (which would rebuild all markers).
+const NO_HIGHLIGHTS: string[] = [];
+
 export default function MapView({
   countries,
   onSelect,
-  highlightedNames = [],
+  highlightedNames = NO_HIGHLIGHTS,
   onMapReady,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);

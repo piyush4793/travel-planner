@@ -100,6 +100,18 @@ describe("InfoSections", () => {
     expect(screen.queryByText("Stale Japan summary.")).not.toBeInTheDocument();
   });
 
+  it("shows a connection message when the info lookup resolves empty", async () => {
+    const user = setupUser();
+    mocks.fetchCountryInfo.mockResolvedValue(null);
+    const currentCountryNameRef = { current: "Japan" };
+
+    render(<LearnAboutSection countryName="Japan" currentCountryNameRef={currentCountryNameRef} />);
+
+    await user.click(screen.getByRole("button", { name: /Learn about Japan/i }));
+
+    expect(await screen.findByText(/Could not load info/i)).toBeInTheDocument();
+  });
+
   it("renders planning resources from the link provider and toggles the section", async () => {
     const user = setupUser();
 

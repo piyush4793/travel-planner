@@ -119,6 +119,20 @@ describe("mobile Review bottom bar", () => {
     expect(screen.queryByRole("button", { name: "Back to the previous step" })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Plan another trip" })).not.toBeInTheDocument();
   });
+
+  it("opens a reference rail as a bottom sheet from its mobile trigger and closes it", () => {
+    render(<PlanWorkspaceShell center={<p>route</p>} shape={shape} context={context} />);
+    const trigger = screen.getByRole("button", { name: "✏️ Shape trip" });
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+
+    fireEvent.click(trigger);
+    expect(screen.getByRole("heading", { name: "Shape your trip" })).toBeInTheDocument();
+    expect(screen.getByText("shape-content")).toBeInTheDocument();
+    expect(trigger).toHaveAttribute("aria-expanded", "true");
+
+    fireEvent.click(screen.getByRole("button", { name: "Close panel" }));
+    expect(screen.queryByRole("heading", { name: "Shape your trip" })).not.toBeInTheDocument();
+  });
 });
 
 describe("mobile Actions sheet", () => {
