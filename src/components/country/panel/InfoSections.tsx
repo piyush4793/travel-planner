@@ -159,7 +159,7 @@ export function PlanningResourcesSection({ countryName, homeCountry }: { country
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-start gap-2.5 rounded-xl bg-white/80 px-3 py-2.5 shadow-sm shadow-slate-100 transition-colors hover:bg-surface-track focus-ring"
+            className="group flex items-start gap-2.5 rounded-xl bg-white/80 px-3 py-2.5 shadow-sm shadow-brand-950/5 transition-colors hover:bg-surface-track focus-ring"
           >
             <span className="text-base mt-0.5">{link.emoji}</span>
             <div className="flex-1 min-w-0">
@@ -188,7 +188,7 @@ export function UsefulLinksSection({ links }: { links?: CountryLink[] }) {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 rounded-xl bg-white/80 px-3 py-2 text-xs font-semibold text-brand-700 shadow-sm shadow-slate-100 transition-colors hover:bg-surface-track focus-ring"
+            className="group flex items-center gap-2 rounded-xl bg-white/80 px-3 py-2 text-xs font-semibold text-brand-700 shadow-sm shadow-brand-950/5 transition-colors hover:bg-surface-track focus-ring"
           >
             <span className="text-base" aria-hidden>🔗</span>
             <span className="flex-1 truncate">{link.label}</span>

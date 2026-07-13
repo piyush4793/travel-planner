@@ -39,7 +39,7 @@ export default function CinematicIntro({ showOrigin, homeCity, homeLabel, title,
           <p className="text-[10px] text-stone-500 uppercase tracking-widest mb-1.5">Also pairs with</p>
           <div className="flex flex-wrap justify-center gap-1.5">
             {comboCountries.map((c) => (
-              <span key={c.name} className="text-[10px] font-semibold text-purple-400 bg-purple-950/60 border border-purple-800/50 px-2 py-0.5 rounded-full">
+              <span key={c.name} className="text-[10px] font-semibold text-accent-400 bg-accent-950/60 border border-accent-800/50 px-2 py-0.5 rounded-full">
                 {c.name}
               </span>
             ))}

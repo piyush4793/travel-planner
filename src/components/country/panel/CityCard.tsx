@@ -128,7 +128,7 @@ function CityCardInner({ city, selectable, selected, onToggle, activeExperiences
   }
 
   return (
-    <div className="rounded-xl border border-line bg-white/80 px-3.5 py-2.5 shadow-sm shadow-slate-100">
+    <div className="rounded-xl border border-line bg-white/80 px-3.5 py-2.5 shadow-sm shadow-brand-950/5">
       <div className="flex items-center justify-between gap-2">
         <p className="min-w-0 flex-1 truncate text-sm font-bold text-ink-1">{city.name}</p>
         {bestMonths.length > 0 && (
