@@ -184,4 +184,82 @@ describe("wikiImages — P0", () => {
     expect(second).toBe("https://images.example/recovered.jpg");
     vi.useRealTimers();
   });
+
+  it("does not cache a non-429 failure so a later attempt can recover", async () => {
+    const fetchMock = globalThis.fetch as unknown as ReturnType<typeof vi.fn>;
+    // A transient 503 must NOT poison the session cache — the same query later
+    // succeeds and returns the image (regression: previously null was latched).
+    fetchMock.mockResolvedValueOnce({ ok: false, status: 503 } as Response);
+
+    const { getWikiImage } = await importWikiImages();
+    const first = await getWikiImage("Flaky query");
+    expect(first).toBeNull();
+
+    fetchMock.mockResolvedValueOnce(
+      mockJsonResponse({
+        query: {
+          pages: {
+            "1": {
+              imageinfo: [
+                {
+                  mime: "image/jpeg",
+                  width: 1200,
+                  thumbwidth: 1024,
+                  thumburl: "https://images.example/recovered-503.jpg",
+                  url: "https://images.example/recovered-503.jpg",
+                },
+              ],
+            },
+          },
+        },
+      }),
+    );
+    const second = await getWikiImage("Flaky query");
+    expect(second).toBe("https://images.example/recovered-503.jpg");
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it("does not cache an empty (no suitable image) result so a later attempt can recover", async () => {
+    const fetchMock = globalThis.fetch as unknown as ReturnType<typeof vi.fn>;
+    // A search that momentarily returns only SVGs/tiny images yields null but is
+    // not cached, so a later search that returns a photo still populates.
+    fetchMock.mockResolvedValueOnce(
+      mockJsonResponse({
+        query: {
+          pages: {
+            "1": {
+              imageinfo: [{ mime: "image/svg+xml", width: 1600, url: "https://images.example/map.svg" }],
+            },
+          },
+        },
+      }),
+    );
+
+    const { getWikiImage } = await importWikiImages();
+    const first = await getWikiImage("Sparse query");
+    expect(first).toBeNull();
+
+    fetchMock.mockResolvedValueOnce(
+      mockJsonResponse({
+        query: {
+          pages: {
+            "1": {
+              imageinfo: [
+                {
+                  mime: "image/jpeg",
+                  width: 1200,
+                  thumbwidth: 1024,
+                  thumburl: "https://images.example/recovered-empty.jpg",
+                  url: "https://images.example/recovered-empty.jpg",
+                },
+              ],
+            },
+          },
+        },
+      }),
+    );
+    const second = await getWikiImage("Sparse query");
+    expect(second).toBe("https://images.example/recovered-empty.jpg");
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
 });

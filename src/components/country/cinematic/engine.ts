@@ -112,6 +112,21 @@ export interface CinematicRoute {
 /** Beyond this great-circle distance an inter-unit hop is animated as a flight. */
 const INTER_UNIT_FLIGHT_KM = 300;
 
+/**
+ * Wikimedia search queries for a stop that has no authored `cityImages` (all
+ * domestic-India states, plus the ~14 international rule files without the field).
+ * Pairing the city with its unit (country/state) disambiguates common place names
+ * — "Jaipur Rajasthan", "Kampala Uganda" — so the cinematic still shows a
+ * representative photo instead of the fallback gradient. Scope-agnostic: any
+ * future scope gets photos for free, no per-file content authoring.
+ */
+export function fallbackImageQueries(city: string, unit: string): string[] {
+  const c = city.trim();
+  if (!c) return [];
+  const u = unit.trim();
+  return u && u.toLowerCase() !== c.toLowerCase() ? [`${c} ${u}`] : [c];
+}
+
 /** Indicative transport for an inter-unit (border) hop, derived only from distance. */
 export function interUnitTransport(
   from: [number, number],
@@ -170,6 +185,15 @@ export function buildCinematicRoute(
     stops.push(...segStops);
     activeCenters.push(seg.center);
     if (seg.rule?.cityImages) Object.assign(cityImages, seg.rule.cityImages);
+    // Any stop the rule didn't author image queries for (every domestic state,
+    // some international files) gets a synthesized query from its city + unit, so
+    // photos are never silently empty for a whole scope.
+    for (const st of segStops) {
+      if (!cityImages[st.name]?.length) {
+        const queries = fallbackImageQueries(st.name, seg.name);
+        if (queries.length) cityImages[st.name] = queries;
+      }
+    }
   }
 
   const unitsCentroid = centroid(activeCenters) ?? centroid(stops.map((s) => s.coords)) ?? opts.origin?.coords ?? [20, 20];

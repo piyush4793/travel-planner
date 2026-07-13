@@ -26,7 +26,7 @@ import { usePlanScope } from "./shell/usePlanScope";
 import { isEnabled } from "../../../core/featureFlags";
 import { MAX_TRIP_UNITS } from "../../../core/utils/multiCountry";
 import { tripSignature, type SavedTrip, type OpenTripRequest } from "../../../core/utils/savedTrips";
-import { getDestinationSource } from "../../../core/trip/getDestinationSource";
+import { getDestinationSource, scopeForDestination } from "../../../core/trip/getDestinationSource";
 import { hasDomesticScope } from "../../../core/trip/domesticScope";
 import { unitFlag } from "../../../core/trip/unitFlag";
 import { useTripExperiences } from "../../../hooks/useTripExperiences";
@@ -108,7 +108,14 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
   const domesticAllowed = hasDomesticScope(homeCountry);
   // Scope data source. International (world countries) or Domestic (India states);
   // both flow through the same DestinationSource seam, so the wizard is unchanged.
-  const [scope, setScope] = usePlanScope(draft0?.scope);
+  // The resumed draft's scope is reconciled against its own destinations first, so
+  // a stale scope (e.g. international countries persisted under a domestic scope by
+  // a lingering `tp_plan_scope`) can't point rule loading at a store that lacks
+  // them — which would silently yield null rules (no cinematic photos, generic
+  // itineraries) with no error, since a missing rule file resolves to null.
+  const [scope, setScope] = usePlanScope(
+    draft0 ? scopeForDestination(draft0.countries[0] ?? "", draft0.scope) : undefined,
+  );
   const source = getDestinationSource(scope);
   // A single scope-aware flag resolver, threaded to every Plan surface that shows
   // a stop's flag. Domestic units are states/UTs (no ISO code → globe fallback),
@@ -127,6 +134,18 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
   });
   const picked = selection[0] ?? null;
   const [stepIndex, setStepIndex] = useState(() => (picked && draft0 ? draft0.step : 0));
+
+  // Safety net for any live scope/destination desync (e.g. a resume that seeded an
+  // international selection while a stale `tp_plan_scope` still read "domestic"):
+  // if the committed primary destination isn't recognised by the active scope but
+  // another registered scope owns it, correct the scope so rule loading targets
+  // the store that actually has it. No-op when already aligned or when the unit
+  // resolves nowhere (a custom destination), so it can't loop.
+  useEffect(() => {
+    if (!picked) return;
+    const correct = scopeForDestination(picked.name, scope);
+    if (correct !== scope) setScope(correct);
+  }, [picked, scope, setScope]);
 
   // The prebuilt route the cinematic overlay plays. Non-null ⇒ overlay open.
   // One overlay serves single and multi (the route model is scope-agnostic).

@@ -38,8 +38,9 @@ export async function getWikiImage(query: string): Promise<string | null> {
 
     const res = await fetchWithRetry(`https://commons.wikimedia.org/w/api.php?${params}`);
     if (!res.ok) {
-      // Don't cache throttle responses — allow retry on next render
-      if (res.status !== 429) cache.set(query, null);
+      // Never cache a failure — a transient 4xx/5xx (or throttle) must not
+      // poison the whole page session so the query is stuck returning null on
+      // every later render. Returning without caching lets the next attempt retry.
       return null;
     }
 
@@ -65,7 +66,9 @@ export async function getWikiImage(query: string): Promise<string | null> {
       : (info?.url ?? null);
     // Strip query params — upload.wikimedia.org CDN rejects them on image paths.
     const src = raw ? raw.split("?")[0] : null;
-    cache.set(query, src);
+    // Only cache a positive hit. A miss is left uncached so a later attempt can
+    // retry rather than being permanently latched to null for the session.
+    if (src) cache.set(query, src);
     return src;
   } catch {
     return null;

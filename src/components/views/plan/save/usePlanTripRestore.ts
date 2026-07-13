@@ -6,6 +6,7 @@ import type { PlanBuilderSeed } from "@/hooks/usePlanBuilder";
 import type { TripPlannerSeed } from "@/hooks/useTripPlanner";
 import { toOpenRequest, type SavedTrip, type OpenTripRequest } from "@/core/utils/savedTrips";
 import type { TripScope } from "@/core/trip/destinationSource";
+import { scopeForDestination } from "@/core/trip/getDestinationSource";
 import { useConfirm } from "@/components/shared/ConfirmDialog";
 import { clearPlanDraft } from "../shell/planDraft";
 
@@ -124,8 +125,14 @@ export function usePlanTripRestore({
     // domestic route's units only resolve against the domestic manifest. Setting
     // scope re-renders with the right source, then this effect re-runs (scope is
     // in deps) and the names resolve. Idempotent when already aligned. Legacy
-    // requests without a scope are international.
-    const targetScope = pendingOpen.scope ?? "international";
+    // requests without a scope are international. The saved scope is reconciled
+    // against its own destinations so a snapshot corrupted by a prior scope desync
+    // (international stops under a domestic scope) still reopens against the store
+    // that actually has them.
+    const targetScope = scopeForDestination(
+      pendingOpen.stops[0]?.country ?? "",
+      pendingOpen.scope ?? "international",
+    );
     if (targetScope !== scope) {
       setScope(targetScope);
       return;

@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { internationalSource } from "@/core/trip/internationalSource.ts";
 import { domesticIndiaSource } from "@/core/trip/domesticIndiaSource.ts";
-import { getDestinationSource } from "@/core/trip/getDestinationSource.ts";
+import { getDestinationSource, scopeForDestination, REGISTERED_SCOPES } from "@/core/trip/getDestinationSource.ts";
 import {
   popularDestinations,
   resolvePlannable,
@@ -75,5 +75,31 @@ describe("getDestinationSource", () => {
 
   it("returns the domestic India source for the domestic scope", () => {
     expect(getDestinationSource("domestic")).toBe(domesticIndiaSource);
+  });
+});
+
+describe("scopeForDestination", () => {
+  it("registers a source for every known scope", () => {
+    expect(REGISTERED_SCOPES).toContain("international");
+    expect(REGISTERED_SCOPES).toContain("domestic");
+  });
+
+  it("keeps the preferred scope when it resolves the destination", () => {
+    expect(scopeForDestination("Norway", "international")).toBe("international");
+  });
+
+  it("corrects an international destination stranded under the domestic scope", () => {
+    // The exact desync that silently broke cinematic photos: Nordic countries
+    // persisted under a domestic scope whose store has no such rule file.
+    expect(scopeForDestination("Norway", "domestic")).toBe("international");
+  });
+
+  it("keeps the preferred scope for a destination no source recognises", () => {
+    expect(scopeForDestination("Nowhereland", "domestic")).toBe("domestic");
+    expect(scopeForDestination("Nowhereland", "international")).toBe("international");
+  });
+
+  it("is a no-op for an empty destination name", () => {
+    expect(scopeForDestination("", "domestic")).toBe("domestic");
   });
 });

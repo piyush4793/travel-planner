@@ -10,6 +10,7 @@ import {
   buildCityStops,
   buildCinematicRoute,
   buildSingleCountryRoute,
+  fallbackImageQueries,
   resolveHomeOrigin,
   interUnitTransport,
   createTransportEl,
@@ -257,6 +258,43 @@ describe("buildCinematicRoute", () => {
       origin: resolveHomeOrigin("India"),
     });
     expect(route.stops.map((s) => s.name)).toEqual(["Tokyo", "Kyoto"]);
+  });
+
+  it("synthesizes fallback city-image queries when a unit's rule has none", () => {
+    // Domestic states (and some international files) ship no authored cityImages;
+    // without a fallback the cinematic shows the gradient for the whole scope.
+    const route = buildCinematicRoute([seg(jp, jpPlan)], {
+      title: "Japan",
+      plan: jpPlan,
+      origin: null,
+    });
+    expect(route.cityImages.Tokyo).toEqual(["Tokyo Japan"]);
+    expect(route.cityImages.Kyoto).toEqual(["Kyoto Japan"]);
+  });
+
+  it("prefers authored cityImages over the synthesized fallback", () => {
+    const withImages = {
+      ...seg(jp, jpPlan),
+      rule: { connections: [], cityImages: { Tokyo: ["Tokyo Tower skyline"] } },
+    } as unknown as Parameters<typeof buildCinematicRoute>[0][number];
+    const route = buildCinematicRoute([withImages], { title: "Japan", plan: jpPlan, origin: null });
+    expect(route.cityImages.Tokyo).toEqual(["Tokyo Tower skyline"]);
+    // The un-authored stop still falls back.
+    expect(route.cityImages.Kyoto).toEqual(["Kyoto Japan"]);
+  });
+});
+
+describe("fallbackImageQueries", () => {
+  it("pairs the city with its unit to disambiguate", () => {
+    expect(fallbackImageQueries("Jaipur", "Rajasthan")).toEqual(["Jaipur Rajasthan"]);
+  });
+
+  it("omits the unit when it matches the city (case-insensitive)", () => {
+    expect(fallbackImageQueries("Goa", "goa")).toEqual(["Goa"]);
+  });
+
+  it("returns nothing for an empty city name", () => {
+    expect(fallbackImageQueries("  ", "Kerala")).toEqual([]);
   });
 });
 

@@ -1,5 +1,6 @@
 import type { BudgetBasis } from "./budget";
 import type { TripScope } from "../trip/destinationSource";
+import { scopeForDestination } from "../trip/getDestinationSource";
 import { extractPlanCities, type TripPlan } from "./tripPlans";
 
 /** One country leg of a saved trip, snapshotted at save time. */
@@ -63,9 +64,18 @@ export type OpenTripRequest = {
   nonce: number;
 };
 
-/** The scope a saved trip was planned in, defaulting legacy trips to international. */
-export function tripScopeOf(trip: Pick<SavedTrip, "scope">): TripScope {
-  return trip.scope ?? "international";
+/**
+ * The scope a saved trip belongs to. A trip's scope is intrinsic to its
+ * destinations, not to whatever global plan scope happened to be active when it
+ * was saved — so we resolve it from the route's primary country (the source that
+ * actually recognises it wins), using the persisted `scope` only as a tiebreak.
+ * This self-heals trips whose stored `scope` was left stale by a transient
+ * global-scope/selection desync at save time, and defaults legacy trips
+ * (no stored scope, unknown primary) to international.
+ */
+export function tripScopeOf(trip: Pick<SavedTrip, "scope" | "stops">): TripScope {
+  const primary = trip.stops?.[0]?.country ?? "";
+  return scopeForDestination(primary, trip.scope ?? "international");
 }
 
 /** Build an {@link OpenTripRequest} from a saved trip (My Trips reopen / resume). */
@@ -183,6 +193,9 @@ export function buildTripSnapshot(
     totalDays: input.composed.days.length,
     costPerPerson: input.composed.costPerPerson,
     savedAt: now(),
-    scope: input.scope ?? "international",
+    // Derive the stored scope from the route's own primary destination (using the
+    // passed scope only as a tiebreak) so a transient global-scope/selection
+    // desync at save time can never persist the wrong scope onto this route.
+    scope: scopeForDestination(stops[0]?.country ?? "", input.scope ?? "international"),
   };
 }

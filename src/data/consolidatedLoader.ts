@@ -63,6 +63,7 @@ export interface ConsolidatedLoader {
  */
 export function createConsolidatedLoader(modules: RuleModuleMap, dirPrefix: string): ConsolidatedLoader {
   const cache = new Map<string, ConsolidatedCountry | null>();
+  const inflight = new Map<string, Promise<ConsolidatedCountry | null>>();
   const fileKey = (name: string) => `${dirPrefix}${slugify(name)}.json`;
 
   return {
@@ -71,19 +72,29 @@ export function createConsolidatedLoader(modules: RuleModuleMap, dirPrefix: stri
     getCached: (name) => cache.get(name),
     async load(name) {
       if (cache.has(name)) return cache.get(name)!;
+      // Share a single in-flight request across concurrent callers.
+      const pending = inflight.get(name);
+      if (pending) return pending;
+
       const loader = modules[fileKey(name)];
+      // Not in the manifest — a deterministic absence, safe to cache as null.
       if (!loader) {
         cache.set(name, null);
         return null;
       }
-      try {
-        const data = await loader();
-        cache.set(name, data);
-        return data;
-      } catch {
-        cache.set(name, null);
-        return null;
-      }
+
+      const promise = loader()
+        .then((data) => {
+          // Only cache a successful load. A transient import/network failure must
+          // NOT be latched as null, or the country's rule stays broken for the
+          // whole session (no cityImages → cinematic photos never load, etc.).
+          cache.set(name, data);
+          return data;
+        })
+        .catch(() => null)
+        .finally(() => { inflight.delete(name); });
+      inflight.set(name, promise);
+      return promise;
     },
   };
 }

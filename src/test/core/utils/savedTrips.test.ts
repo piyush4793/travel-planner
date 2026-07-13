@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildTripSnapshot, tripSignature, toOpenRequest, findSavedTripForCountries, isSavedTrip, sanitizeSavedTrips, type SnapshotStop, type SavedTrip, type SavedTripStop } from "@/core/utils/savedTrips.ts";
+import { buildTripSnapshot, tripSignature, tripScopeOf, toOpenRequest, findSavedTripForCountries, isSavedTrip, sanitizeSavedTrips, type SnapshotStop, type SavedTrip, type SavedTripStop } from "@/core/utils/savedTrips.ts";
 import type { TripPlan } from "@/core/utils/tripPlans.ts";
 
 function plan(cities: string[], cost = "₹1L–₹2L"): TripPlan {
@@ -74,6 +74,46 @@ describe("buildTripSnapshot", () => {
     expect(() => new Date(snap.savedAt).toISOString()).not.toThrow();
     expect(new Date(snap.savedAt).getTime()).toBeGreaterThan(0);
   });
+
+  it("derives the stored scope from the primary destination, not the passed global scope", () => {
+    // Simulates the save-time race: an international route composed while the
+    // global plan scope was transiently 'domestic'. The snapshot must resolve
+    // scope from its own primary country (Norway) — never persist 'domestic'.
+    const snap = buildTripSnapshot(
+      { stops: [{ country: "Norway", days: 3, plan: plan(["Oslo"]) }], composed: plan(["Oslo"]), basis: "couple", scope: "domestic" },
+      now,
+    );
+    expect(snap.scope).toBe("international");
+  });
+
+  it("keeps a genuinely domestic route domestic", () => {
+    const snap = buildTripSnapshot(
+      { stops: [{ country: "Rajasthan", days: 3, plan: plan(["Jaipur"]) }], composed: plan(["Jaipur"]), basis: "couple", scope: "domestic" },
+      now,
+    );
+    expect(snap.scope).toBe("domestic");
+  });
+});
+
+describe("tripScopeOf", () => {
+  it("resolves scope from the route's primary country", () => {
+    expect(tripScopeOf(savedTrip([{ country: "Norway", days: 3, cities: ["Oslo"] }]))).toBe("international");
+    expect(tripScopeOf(savedTrip([{ country: "Rajasthan", days: 3, cities: ["Jaipur"] }]))).toBe("domestic");
+  });
+
+  it("self-heals a stale/corrupt stored scope (ignores it when the country disagrees)", () => {
+    // A trip whose stored scope was corrupted to 'domestic' by an earlier
+    // save-time race still renders as international because France resolves there.
+    const corrupt = savedTrip([{ country: "France", days: 4, cities: ["Paris"] }], { scope: "domestic" });
+    expect(tripScopeOf(corrupt)).toBe("international");
+    // And a domestic route mis-stored as international heals the other way.
+    const corrupt2 = savedTrip([{ country: "Kerala", days: 4, cities: ["Kochi"] }], { scope: "international" });
+    expect(tripScopeOf(corrupt2)).toBe("domestic");
+  });
+
+  it("defaults a legacy trip (no stored scope, primary is a world country) to international", () => {
+    expect(tripScopeOf(savedTrip([{ country: "Japan", days: 5, cities: ["Tokyo"] }]))).toBe("international");
+  });
 });
 
 function savedTrip(stops: SavedTripStop[], overrides: Partial<SavedTrip> = {}): SavedTrip {
@@ -86,6 +126,7 @@ function savedTrip(stops: SavedTripStop[], overrides: Partial<SavedTrip> = {}): 
     costPerPerson: overrides.costPerPerson ?? "₹1L–₹2L",
     savedAt: overrides.savedAt ?? "2026-01-01T00:00:00.000Z",
     favorite: overrides.favorite,
+    scope: overrides.scope,
   };
 }
 

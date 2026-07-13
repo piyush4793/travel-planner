@@ -18,3 +18,22 @@ const SOURCES: Partial<Record<TripScope, DestinationSource>> = {
 export function getDestinationSource(scope: TripScope): DestinationSource {
   return SOURCES[scope] ?? internationalSource;
 }
+
+/** Every scope with a registered destination source. Registry-driven. */
+export const REGISTERED_SCOPES = Object.keys(SOURCES) as TripScope[];
+
+/**
+ * The scope whose source actually recognises `name`, guarding against a
+ * persisted scope/destination desync (e.g. international countries left under a
+ * domestic scope by a stale `tp_plan_scope` + a resume that repopulated the
+ * selection). If the `preferred` scope resolves the destination it wins;
+ * otherwise the first registered scope that resolves it does; failing that
+ * (e.g. a custom destination absent from every manifest) `preferred` stands.
+ */
+export function scopeForDestination(name: string, preferred: TripScope): TripScope {
+  if (!name || getDestinationSource(preferred).resolveUnit(name)) return preferred;
+  for (const scope of REGISTERED_SCOPES) {
+    if (scope !== preferred && getDestinationSource(scope).resolveUnit(name)) return scope;
+  }
+  return preferred;
+}
