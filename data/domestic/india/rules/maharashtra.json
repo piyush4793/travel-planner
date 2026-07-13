@@ -189,6 +189,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Mumbai": ["Gateway of India Mumbai", "Chhatrapati Shivaji Terminus Mumbai", "Marine Drive Mumbai"],
+      "Aurangabad": ["Ajanta Caves", "Ellora Caves", "Bibi Ka Maqbara Aurangabad"],
+      "Nashik": ["Trimbakeshwar Temple Nashik", "Sula Vineyards Nashik"],
+      "Pune": ["Shaniwar Wada Pune", "Aga Khan Palace Pune", "Sinhagad Fort Pune"]
+    },
     "sim": "Any Indian prepaid SIM from Jio or Airtel works well across Mumbai, Pune, Nashik and Aurangabad; carry offline maps for Ajanta/Ellora day trips where hill-road coverage can drop.",
     "apps": [
       "Google Maps",

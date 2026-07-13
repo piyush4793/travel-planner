@@ -202,6 +202,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Aizawl": ["Solomon's Temple Aizawl", "Aizawl Mizoram city"],
+      "Reiek": ["Reiek Peak Mizoram", "Reiek tlang Mizoram"],
+      "Hmuifang-Thenzawl": ["Thenzawl waterfall Mizoram", "Hmuifang Mizoram"],
+      "Champhai": ["Champhai Mizoram valley", "Rih Dil lake Mizoram"]
+    },
     "sim": "Jio and Airtel are usable in Aizawl and major towns, with BSNL often helpful in smaller settlements; expect patchy data and dead zones on Reiek, Hmuifang, Thenzawl and Champhai hill roads. Download maps, keep hotel/taxi numbers offline and do not rely on live routing after dark.",
     "apps": [
       "Google Maps",

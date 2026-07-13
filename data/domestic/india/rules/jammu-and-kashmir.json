@@ -90,6 +90,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Srinagar": ["Dal Lake Srinagar", "Shalimar Bagh Srinagar", "Nishat Bagh Srinagar"],
+      "Gulmarg": ["Gulmarg Gondola", "Gulmarg Kashmir snow"],
+      "Pahalgam": ["Betaab Valley Pahalgam", "Pahalgam Lidder river"],
+      "Sonamarg": ["Thajiwas Glacier Sonamarg", "Sonamarg Kashmir"]
+    },
     "sim": "Indian prepaid SIMs from Jio or Airtel work in Srinagar and the main towns; coverage gets patchy in valleys, on high passes and during bad weather. Carry offline maps and hotel/cab numbers because mountain-road delays are common.",
     "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "Ola", "Uber", "Zomato"],
     "cityOrder": ["Srinagar", "Gulmarg", "Pahalgam", "Sonamarg"],

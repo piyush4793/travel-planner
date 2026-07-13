@@ -83,6 +83,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Agra": ["Taj Mahal Agra", "Agra Fort", "Fatehpur Sikri"],
+      "Mathura-Vrindavan": ["Krishna Janmasthan Mathura", "Banke Bihari Temple Vrindavan", "Prem Mandir Vrindavan"],
+      "Lucknow": ["Bara Imambara Lucknow", "Rumi Darwaza Lucknow", "British Residency Lucknow"],
+      "Varanasi": ["Dashashwamedh Ghat Varanasi", "Kashi Vishwanath Temple Varanasi", "Varanasi ghats Ganga"]
+    },
     "sim": "Any Indian prepaid SIM (Jio or Airtel) works well across Uttar Pradesh; carry photo ID for purchase. Coverage is strong in Agra, Lucknow and Varanasi, but old-city lanes and crowded ghats can have patchy data.",
     "apps": ["Google Maps", "IRCTC Rail Connect", "Ola", "Uber", "Rapido", "Zomato", "Paytm"],
     "cityOrder": ["Agra", "Mathura-Vrindavan", "Lucknow", "Varanasi"],

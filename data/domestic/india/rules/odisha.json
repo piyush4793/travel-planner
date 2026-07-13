@@ -193,6 +193,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Bhubaneswar": ["Lingaraja Temple Bhubaneswar", "Udayagiri Khandagiri Caves", "Rajarani Temple Bhubaneswar"],
+      "Puri": ["Jagannath Temple Puri", "Puri Beach Odisha"],
+      "Konark": ["Konark Sun Temple", "Konark temple wheel"],
+      "Chilika Lake": ["Chilika Lake Odisha", "Chilika lake birds"]
+    },
     "sim": "Any Indian prepaid SIM (Jio or Airtel) works well in Bhubaneswar, Puri and Konark; coverage can become patchier around Chilika boat routes.",
     "apps": [
       "Google Maps",

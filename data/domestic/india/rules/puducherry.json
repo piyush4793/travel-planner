@@ -178,6 +178,11 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "White Town & Promenade": ["Promenade Beach Pondicherry", "French Quarter Pondicherry", "Our Lady of the Immaculate Conception Cathedral Pondicherry"],
+      "Auroville": ["Matrimandir Auroville", "Auroville Pondicherry"],
+      "Chunnambar & Beach Belt": ["Paradise Beach Pondicherry", "Chunnambar boat house Pondicherry"]
+    },
     "sim": "Jio and Airtel coverage is strong in Pondicherry town, Auroville and the beach belt; buy/activate before arrival if coming from Chennai. Download offline maps because Auroville's internal lanes and beach approaches can be confusing after dark.",
     "apps": [
       "Google Maps",

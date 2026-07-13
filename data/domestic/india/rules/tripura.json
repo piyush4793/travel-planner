@@ -234,6 +234,13 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Agartala": ["Ujjayanta Palace Agartala", "Tripura Sundari Temple Udaipur", "Neermahal Tripura"],
+      "Melaghar": ["Neermahal Melaghar Tripura", "Rudrasagar Lake Melaghar"],
+      "Udaipur (Tripura)": ["Tripura Sundari Temple Udaipur Tripura", "Bhuvaneswari Temple Udaipur Tripura"],
+      "Kailashahar": ["Unakoti Kailashahar", "Unakoti rock carvings Tripura"],
+      "Jampui Hills": ["Jampui Hills Tripura", "Jampui Hills orange Tripura"]
+    },
     "sim": "Jio and Airtel work well in Agartala, Udaipur and along major highways; BSNL can be useful in parts of North Tripura. Expect patchier data around Unakoti forest patches, Jampui Hills viewpoints and lake/forest zones, so download maps and keep hotel/driver numbers offline.",
     "apps": [
       "Google Maps",

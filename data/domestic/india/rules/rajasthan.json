@@ -88,6 +88,13 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Jaipur": ["Hawa Mahal Jaipur", "Amber Fort Jaipur", "City Palace Jaipur"],
+      "Pushkar": ["Pushkar Lake", "Brahma Temple Pushkar"],
+      "Jodhpur": ["Mehrangarh Fort Jodhpur", "Umaid Bhawan Palace Jodhpur", "Jodhpur blue city"],
+      "Jaisalmer": ["Jaisalmer Fort", "Patwon Ki Haveli Jaisalmer", "Sam Sand Dunes Jaisalmer"],
+      "Udaipur": ["City Palace Udaipur", "Lake Pichola Udaipur", "Jag Mandir Udaipur"]
+    },
     "sim": "Any Indian prepaid SIM (Jio or Airtel) works well; buy one at the airport or a store with photo ID. Coverage is strong across cities but patchy in the deep desert around Sam.",
     "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "Ola", "Uber", "Zomato"],
     "cityOrder": ["Jaipur", "Pushkar", "Jodhpur", "Jaisalmer", "Udaipur"],

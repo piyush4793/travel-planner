@@ -61,6 +61,10 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Old Delhi": ["Red Fort Delhi", "Jama Masjid Delhi", "Chandni Chowk Delhi"],
+      "New Delhi": ["India Gate New Delhi", "Qutub Minar Delhi", "Humayun's Tomb Delhi"]
+    },
     "sim": "Any Indian prepaid SIM (Jio or Airtel) works well; buy at the airport or an authorised store with photo ID. Metro Wi-Fi and app cabs are reliable across central Delhi.",
     "apps": ["Google Maps", "Delhi Metro Rail", "DMRC Momentum", "Uber", "Ola", "Rapido", "Zomato", "Swiggy"],
     "cityOrder": ["Old Delhi", "New Delhi"],

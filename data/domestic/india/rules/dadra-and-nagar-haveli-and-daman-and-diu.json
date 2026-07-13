@@ -171,6 +171,11 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Silvassa": ["Vanganga Lake Silvassa", "Silvassa tribal museum"],
+      "Daman": ["Moti Daman Fort", "Jampore Beach Daman"],
+      "Diu": ["Diu Fort", "Nagoa Beach Diu", "St Paul's Church Diu"]
+    },
     "sim": "Jio and Airtel work well in Silvassa, Daman, Diu town and the beach belts; expect weaker data around Dudhni/Khanvel forest edges, inside old forts, caves and on some Diu coastal stretches, so download maps and keep hotel/driver numbers offline.",
     "apps": [
       "Google Maps",

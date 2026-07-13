@@ -208,6 +208,13 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Bengaluru": ["Vidhana Soudha Bangalore", "Bangalore Palace", "Lalbagh Botanical Garden Bangalore"],
+      "Mysuru": ["Mysore Palace", "Chamundi Hills Mysore", "Brindavan Gardens Mysore"],
+      "Coorg": ["Abbey Falls Coorg", "Raja's Seat Madikeri Coorg"],
+      "Chikmagalur": ["Mullayanagiri Chikmagalur", "Chikmagalur coffee hills"],
+      "Hampi": ["Virupaksha Temple Hampi", "Vittala Temple Stone Chariot Hampi", "Hampi ruins"]
+    },
     "sim": "Any Indian prepaid SIM (Jio or Airtel) works well from Bengaluru airport or city stores with ID. Coverage is strong on the Bengaluru–Mysuru corridor, fair in the hills, and good around Hospet/Hampi town.",
     "apps": [
       "Google Maps",

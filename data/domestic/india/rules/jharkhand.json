@@ -79,6 +79,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Ranchi": ["Hundru Falls Ranchi", "Jagannath Temple Ranchi"],
+      "Netarhat": ["Netarhat sunrise Jharkhand", "Netarhat hills"],
+      "Betla National Park": ["Betla National Park Jharkhand", "Betla fort Palamu"],
+      "Deoghar": ["Baidyanath Temple Deoghar", "Deoghar Jharkhand"]
+    },
     "sim": "Jio and Airtel work well in Ranchi and Deoghar; coverage becomes patchy around Netarhat forest roads and the Betla core, so download offline maps before leaving Ranchi.",
     "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "Ola", "Uber", "Zomato"],
     "cityOrder": ["Ranchi", "Netarhat", "Betla National Park", "Deoghar"],

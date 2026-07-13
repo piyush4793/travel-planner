@@ -78,6 +78,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Kochi": ["Chinese fishing nets Kochi", "Fort Kochi", "Mattancherry Palace Kochi"],
+      "Munnar": ["Munnar tea gardens", "Munnar Kerala hills"],
+      "Thekkady": ["Periyar Lake Thekkady", "Periyar wildlife Thekkady"],
+      "Alleppey": ["Alleppey backwaters houseboat", "Alappuzha backwaters Kerala"]
+    },
     "sim": "Jio and Airtel both have strong coverage across Kerala's towns; it thins out inside Periyar reserve and remote tea estates. Buy a prepaid SIM at Kochi airport with photo ID.",
     "apps": ["Google Maps", "Kerala Tourism", "IRCTC Rail Connect", "Uber", "Zomato"],
     "cityOrder": ["Kochi", "Munnar", "Thekkady", "Alleppey"],

@@ -138,6 +138,10 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Chandigarh": ["Rock Garden Chandigarh", "Sukhna Lake Chandigarh", "Open Hand Monument Chandigarh"],
+      "Chandigarh & around": ["Zakir Hussain Rose Garden Chandigarh", "Capitol Complex Chandigarh"]
+    },
     "sim": "Jio and Airtel 4G/5G coverage is strong across Chandigarh, Sector 17, Sukhna Lake and the airport/railway station; coverage is also reliable toward Zirakpur and Pinjore, but download maps for hill-road extensions beyond Morni or into Himachal.",
     "apps": [
       "Google Maps",

@@ -196,6 +196,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Agatti": ["Agatti Island Lakshadweep lagoon", "Agatti aerial Lakshadweep"],
+      "Bangaram": ["Bangaram Island Lakshadweep", "Bangaram atoll"],
+      "Kadmat": ["Kadmat Island Lakshadweep", "Kadmat beach Lakshadweep"],
+      "Kavaratti": ["Kavaratti Lakshadweep lagoon", "Ujra Mosque Kavaratti"]
+    },
     "sim": "Connectivity is improving but remains uneven: BSNL is the fallback on many islands, Jio/Airtel may work around Agatti/Kavaratti, and resort Wi-Fi can be slow or rationed. Download permits, tickets, maps and operator contacts before boarding; expect dead zones on boats and smaller islands.",
     "apps": [
       "Google Maps",

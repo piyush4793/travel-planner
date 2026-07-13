@@ -197,6 +197,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Bomdila": ["Bomdila Monastery Arunachal", "Bomdila Arunachal Pradesh"],
+      "Dirang": ["Dirang Dzong Arunachal", "Dirang valley Arunachal"],
+      "Tawang": ["Tawang Monastery", "Tawang War Memorial"],
+      "Ziro Valley": ["Ziro Valley Arunachal Pradesh", "Ziro rice fields Apatani"]
+    },
     "sim": "Jio and Airtel work in the larger towns, while BSNL often survives in remote valleys; expect dead zones around Sela Pass, Bum La, Sangti side roads and long forested stretches. Download maps, carry hotel/driver numbers offline and keep paper/eILP copies because checkposts may not have reliable data.",
     "apps": [
       "Google Maps",

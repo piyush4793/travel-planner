@@ -172,6 +172,11 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Imphal": ["Kangla Fort Imphal", "Ima Keithel Imphal market", "Imphal War Cemetery"],
+      "Moirang and Loktak Lake": ["Loktak Lake Manipur", "Keibul Lamjao floating national park"],
+      "Ukhrul": ["Shirui Lily Ukhrul", "Ukhrul hills Manipur"]
+    },
     "sim": "Jio and Airtel are generally usable in Imphal and around Moirang/Loktak, while BSNL may help in hill pockets. Expect patchy data, shutdowns during security incidents and weak coverage on Ukhrul hill roads; download maps, permits and hotel contacts offline.",
     "apps": [
       "Google Maps",

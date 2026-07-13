@@ -155,6 +155,11 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Raipur": ["Mahant Ghasidas Museum Raipur", "Vivekananda Sarovar Raipur"],
+      "Sirpur": ["Laxman Temple Sirpur", "Sirpur Chhattisgarh archaeological"],
+      "Jagdalpur / Bastar": ["Chitrakote Falls Bastar", "Tirathgarh Falls Jagdalpur"]
+    },
     "sim": "Any Indian prepaid SIM works; Jio and Airtel are strongest around Raipur, Sirpur and Jagdalpur. Download offline maps before Bastar forest drives because coverage can turn patchy inside Kanger Valley and remote village roads.",
     "apps": [
       "Google Maps",

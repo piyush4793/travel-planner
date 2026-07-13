@@ -92,6 +92,13 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Ahmedabad": ["Sabarmati Ashram Ahmedabad", "Adalaj Stepwell", "Sidi Saiyyed Mosque Ahmedabad"],
+      "Statue of Unity / Kevadia": ["Statue of Unity Gujarat", "Statue of Unity Sardar Patel"],
+      "Gir / Sasan Gir": ["Gir National Park Asiatic lion", "Gir forest lion Gujarat"],
+      "Somnath": ["Somnath Temple Gujarat", "Somnath temple sea"],
+      "Dwarka": ["Dwarkadhish Temple Dwarka", "Bet Dwarka"]
+    },
     "sim": "Any Indian prepaid SIM (Jio or Airtel) works well in Ahmedabad, Kevadia, Somnath and Dwarka; Gir forest interiors can be patchy. Buy at Ahmedabad airport/store with ID.",
     "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "GSRTC", "Ola", "Uber", "Zomato"],
     "cityOrder": ["Ahmedabad", "Statue of Unity / Kevadia", "Gir / Sasan Gir", "Somnath", "Dwarka"],

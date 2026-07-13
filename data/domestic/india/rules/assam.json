@@ -222,6 +222,13 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Guwahati": ["Kamakhya Temple Guwahati", "Umananda Temple Guwahati", "Brahmaputra river Guwahati"],
+      "Kaziranga National Park": ["Kaziranga rhino", "Kaziranga National Park Assam"],
+      "Majuli": ["Majuli island satra Assam", "Majuli river island"],
+      "Sivasagar / Jorhat": ["Rang Ghar Sivasagar", "Talatal Ghar Sivasagar"],
+      "Manas National Park": ["Manas National Park Assam", "Manas tiger reserve"]
+    },
     "sim": "Jio and Airtel work well in Guwahati, Jorhat and Sivasagar; coverage is patchier inside Kaziranga/Manas ranges, on Majuli interiors and along river/forest roads. Download maps, keep ferry/safari contacts offline, and carry cash for islands, village stays and park gates.",
     "apps": [
       "Google Maps",

@@ -179,6 +179,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Panipat": ["Kala Amb Panipat", "Kabuli Bagh Mosque Panipat"],
+      "Kurukshetra": ["Brahma Sarovar Kurukshetra", "Jyotisar Kurukshetra"],
+      "Pinjore": ["Pinjore Gardens", "Yadavindra Gardens Pinjore"],
+      "Morni Hills": ["Morni Hills Haryana", "Tikkar Taal Morni"]
+    },
     "sim": "Any Indian prepaid SIM (Jio or Airtel) works well across NH-44, Panipat, Kurukshetra, Pinjore and Panchkula. Coverage is generally strong; Morni Hills can have weak data in valleys, so download maps before the climb.",
     "apps": [
       "Google Maps",

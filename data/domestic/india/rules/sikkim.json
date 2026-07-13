@@ -189,6 +189,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Gangtok": ["MG Marg Gangtok", "Rumtek Monastery Sikkim", "Tsomgo Lake Gangtok"],
+      "Lachung": ["Yumthang Valley Lachung", "Lachung Monastery Sikkim"],
+      "Ravangla": ["Buddha Park Ravangla", "Tathagata Tsal Ravangla"],
+      "Pelling": ["Pemayangtse Monastery Pelling", "Kanchenjunga Pelling", "Rabdentse ruins Pelling"]
+    },
     "sim": "Indian prepaid SIMs from Jio or Airtel work well in Gangtok and Pelling; coverage becomes patchy in North Sikkim valleys, so download maps and keep operator/driver numbers offline.",
     "apps": [
       "Google Maps",

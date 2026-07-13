@@ -69,6 +69,11 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Shimla": ["The Ridge Shimla", "Christ Church Shimla", "Mall Road Shimla"],
+      "Manali": ["Hidimba Devi Temple Manali", "Solang Valley Manali", "Rohtang Pass Manali"],
+      "Dharamshala": ["McLeod Ganj Dharamshala", "Namgyal Monastery Dharamshala", "Bhagsunag Waterfall Dharamshala"]
+    },
     "sim": "Postpaid SIMs work best in Himachal — prepaid data can be patchy in the higher valleys, and coverage drops beyond the Atal Tunnel. Jio and Airtel are the safest bets.",
     "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "HRTC / HimBus", "Weather (mountain)"],
     "cityOrder": ["Shimla", "Manali", "Dharamshala"],

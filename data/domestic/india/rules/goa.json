@@ -69,6 +69,11 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "North Goa": ["Fort Aguada Goa", "Baga Beach Goa", "Calangute Beach Goa"],
+      "Panaji": ["Church of Our Lady of the Immaculate Conception Panaji", "Fontainhas Panaji Goa"],
+      "South Goa": ["Palolem Beach Goa", "Basilica of Bom Jesus Goa", "Colva Beach Goa"]
+    },
     "sim": "All Indian networks work across Goa; rent a scooter or self-drive car since public transport to beaches and forts is sparse. Buy a prepaid SIM at Dabolim/Mopa airport.",
     "apps": ["Google Maps", "Goa Miles (taxi)", "Uber", "Zomato", "HappyCow"],
     "cityOrder": ["North Goa", "Panaji", "South Goa"],

@@ -193,6 +193,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Kolkata": ["Victoria Memorial Kolkata", "Howrah Bridge Kolkata", "Dakshineswar Kali Temple Kolkata"],
+      "Sundarbans": ["Sundarbans mangrove Bengal tiger", "Sundarbans National Park"],
+      "Darjeeling": ["Darjeeling Himalayan Railway", "Tiger Hill Darjeeling", "Batasia Loop Darjeeling"],
+      "Kalimpong": ["Durpin Monastery Kalimpong", "Kalimpong West Bengal"]
+    },
     "sim": "Any Indian prepaid SIM (Jio or Airtel) works well in Kolkata and the plains; buy at the airport or an authorised store with ID. Coverage weakens inside Sundarbans channels and on hill roads around Darjeeling/Kalimpong.",
     "apps": [
       "Google Maps",

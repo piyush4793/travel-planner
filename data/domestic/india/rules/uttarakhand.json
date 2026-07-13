@@ -83,6 +83,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Haridwar": ["Har Ki Pauri Haridwar", "Ganga Aarti Haridwar"],
+      "Rishikesh": ["Lakshman Jhula Rishikesh", "Ram Jhula Rishikesh", "Rishikesh Ganga"],
+      "Mussoorie": ["Kempty Falls Mussoorie", "Mussoorie Mall Road", "Gun Hill Mussoorie"],
+      "Jim Corbett National Park": ["Jim Corbett National Park tiger", "Corbett National Park Uttarakhand"]
+    },
     "sim": "Jio and Airtel prepaid SIMs work well in Haridwar, Rishikesh, Dehradun, Mussoorie and Ramnagar; signal weakens in forest zones and on mountain roads. Carry downloaded maps before driving hill routes.",
     "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "Ola", "Uber", "Zomato", "MakeMyTrip"],
     "cityOrder": ["Haridwar", "Rishikesh", "Mussoorie", "Jim Corbett National Park"],

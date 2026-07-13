@@ -164,6 +164,11 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Hyderabad": ["Charminar Hyderabad", "Golconda Fort Hyderabad", "Chowmahalla Palace Hyderabad"],
+      "Warangal": ["Warangal Fort", "Thousand Pillar Temple Warangal", "Ramappa Temple"],
+      "Nagarjuna Sagar": ["Nagarjuna Sagar Dam", "Nagarjunakonda"]
+    },
     "sim": "Any Indian prepaid SIM from Jio or Airtel works well across Hyderabad, Warangal and the highway towns; carry offline maps for the Warangal→Nagarjuna Sagar road and around the dam area.",
     "apps": [
       "Google Maps",

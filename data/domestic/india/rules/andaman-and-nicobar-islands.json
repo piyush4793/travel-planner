@@ -197,6 +197,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Port Blair": ["Cellular Jail Port Blair", "Ross Island Andaman", "Corbyn's Cove Beach Port Blair"],
+      "Swaraj Dweep": ["Radhanagar Beach Havelock", "Havelock Island Andaman beach"],
+      "Shaheed Dweep": ["Bharatpur Beach Neil Island", "Neil Island Andaman"],
+      "Baratang": ["Baratang limestone caves", "Baratang mud volcano Andaman"]
+    },
     "sim": "Jio and Airtel work well around Port Blair and main settlements on Swaraj/Shaheed Dweep, while BSNL can be useful in remote pockets. Expect weak data on ferries, at Elephant Beach, Baratang mangrove creeks and some beach resorts; download ferry tickets, maps and hotel contacts offline.",
     "apps": [
       "Google Maps",

@@ -189,6 +189,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Patna": ["Golghar Patna", "Takht Sri Patna Sahib", "Mahavir Mandir Patna"],
+      "Nalanda": ["Nalanda University ruins", "Nalanda Mahavihara"],
+      "Rajgir": ["Vishwa Shanti Stupa Rajgir", "Rajgir ropeway"],
+      "Bodh Gaya": ["Mahabodhi Temple Bodh Gaya", "Great Buddha Statue Bodh Gaya"]
+    },
     "sim": "Any Indian prepaid SIM (Jio or Airtel) works well in Patna, Nalanda, Rajgir and Bodh Gaya; buy at the airport or an authorised store with photo ID. Coverage is strongest in Patna and Bodh Gaya, with occasional weak patches on rural transfer roads.",
     "apps": [
       "Google Maps",

@@ -175,6 +175,12 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Amritsar": ["Golden Temple Amritsar", "Jallianwala Bagh Amritsar", "Wagah Border ceremony"],
+      "Kapurthala": ["Jagatjit Palace Kapurthala", "Moorish Mosque Kapurthala"],
+      "Anandpur Sahib": ["Takht Sri Keshgarh Sahib Anandpur", "Virasat-e-Khalsa Anandpur Sahib"],
+      "Patiala": ["Qila Mubarak Patiala", "Sheesh Mahal Patiala"]
+    },
     "sim": "Any Indian prepaid SIM (Jio or Airtel) works well across Punjab; buy at Amritsar or Chandigarh airport/store with photo ID. Coverage is strong in cities and along the highway corridor.",
     "apps": [
       "Google Maps",

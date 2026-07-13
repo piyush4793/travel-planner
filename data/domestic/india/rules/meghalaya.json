@@ -230,6 +230,13 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Shillong": ["Elephant Falls Shillong", "Umiam Lake Shillong", "Shillong Peak"],
+      "Sohra": ["Nohkalikai Falls Cherrapunji", "Mawsmai Cave Cherrapunji", "Seven Sisters Falls Cherrapunji"],
+      "Dawki-Shnongpdeng": ["Umngot river Dawki Meghalaya", "Dawki river Meghalaya"],
+      "Mawlynnong": ["Mawlynnong living root bridge", "Mawlynnong cleanest village Meghalaya"],
+      "Mawsynram": ["Mawjymbuin Cave Mawsynram", "Mawsynram Meghalaya"]
+    },
     "sim": "Jio and Airtel work well in Shillong and larger towns, but coverage drops in deep valleys, Nongriat, Shnongpdeng camps, cave areas and parts of Mawsynram. Download offline maps, carry cash, and keep your driver/homestay numbers written down.",
     "apps": [
       "Google Maps",

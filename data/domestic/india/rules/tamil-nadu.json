@@ -211,6 +211,13 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Chennai": ["Marina Beach Chennai", "Kapaleeshwarar Temple Chennai", "Fort St George Chennai"],
+      "Mahabalipuram": ["Shore Temple Mahabalipuram", "Pancha Rathas Mahabalipuram", "Arjuna's Penance Mahabalipuram"],
+      "Pondicherry": ["Promenade Beach Pondicherry", "French Quarter Pondicherry"],
+      "Thanjavur": ["Brihadeeswarar Temple Thanjavur", "Thanjavur Big Temple"],
+      "Madurai": ["Meenakshi Amman Temple Madurai", "Madurai temple gopuram"]
+    },
     "sim": "Any Indian prepaid SIM (Jio or Airtel) works well; buy at Chennai airport or an official store with photo ID. Coverage is strong across the Chennai–Madurai corridor, with only occasional patchiness on rural ECR and delta roads.",
     "apps": [
       "Google Maps",

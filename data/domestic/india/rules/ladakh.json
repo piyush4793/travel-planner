@@ -73,6 +73,11 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Leh": ["Leh Palace Ladakh", "Shanti Stupa Leh", "Thiksey Monastery Ladakh"],
+      "Nubra Valley": ["Diskit Monastery Nubra Valley", "Hunder sand dunes Nubra"],
+      "Pangong Tso": ["Pangong Lake Ladakh", "Pangong Tso"]
+    },
     "sim": "Use an Indian postpaid connection; Jio and BSNL postpaid are the most useful in Leh, while prepaid SIMs from outside Jammu & Kashmir/Ladakh may not work. Expect patchy or no signal in Nubra and Pangong; download offline maps and carry printed permits.",
     "apps": ["Google Maps", "Maps.me", "Airtel Thanks", "MyJio", "BHIM UPI", "Ladakh Taxi Union rate sheet"],
     "cityOrder": ["Leh", "Nubra Valley", "Pangong Tso"],

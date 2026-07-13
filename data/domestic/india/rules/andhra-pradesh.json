@@ -202,6 +202,13 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Visakhapatnam": ["Kailasagiri Visakhapatnam", "RK Beach Visakhapatnam", "Submarine Museum Visakhapatnam"],
+      "Vijayawada & Amaravati": ["Kanaka Durga Temple Vijayawada", "Prakasam Barrage Vijayawada", "Amaravati stupa"],
+      "Gandikota": ["Gandikota fort canyon", "Gandikota gorge Pennar river"],
+      "Tirupati": ["Tirumala Venkateswara Temple Tirupati", "Tirupati temple"],
+      "Lepakshi": ["Veerabhadra Temple Lepakshi", "Lepakshi Nandi bull"]
+    },
     "sim": "Jio and Airtel both work well in Visakhapatnam, Vijayawada and Tirupati; coverage can thin out around Araku, Gandikota and Lepakshi, so download maps and carry cash before leaving the cities.",
     "apps": [
       "Google Maps",

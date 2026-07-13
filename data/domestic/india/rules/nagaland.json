@@ -225,6 +225,13 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Dimapur": ["Kachari Ruins Dimapur", "Dimapur Nagaland"],
+      "Kohima": ["Kohima War Cemetery", "Kisama Heritage Village Kohima", "Hornbill Festival Kohima"],
+      "Khonoma": ["Khonoma green village Nagaland", "Khonoma Nagaland"],
+      "Mokokchung": ["Mokokchung Nagaland", "Longkhum Mokokchung"],
+      "Mon": ["Longwa village Mon Nagaland", "Konyak Naga Mon"]
+    },
     "sim": "Jio and Airtel work in Dimapur and Kohima, with patchier service on the Dzukou trail and long Mon/Mokokchung hill roads; BSNL can help in some remote pockets. Download offline maps, keep driver and homestay numbers saved, and carry cash because card/UPI reliability drops outside larger towns.",
     "apps": [
       "Google Maps",

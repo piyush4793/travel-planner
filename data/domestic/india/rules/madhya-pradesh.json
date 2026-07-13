@@ -88,6 +88,13 @@
     }
   ],
   "itinerary": {
+    "cityImages": {
+      "Gwalior": ["Gwalior Fort", "Jai Vilas Palace Gwalior"],
+      "Orchha": ["Orchha Fort", "Chaturbhuj Temple Orchha", "Orchha cenotaphs"],
+      "Khajuraho": ["Khajuraho temples", "Kandariya Mahadeva Temple Khajuraho"],
+      "Bhopal": ["Taj-ul-Masajid Bhopal", "Upper Lake Bhopal"],
+      "Sanchi": ["Sanchi Stupa", "Great Stupa Sanchi"]
+    },
     "sim": "Any Indian prepaid SIM such as Jio or Airtel works well across the main route; buy at the airport or an operator store with photo ID. Coverage is solid in Gwalior, Khajuraho and Bhopal, but weaker inside forest reserves.",
     "apps": ["Google Maps", "IRCTC Rail Connect", "RedBus", "Ola", "Uber", "Zomato", "MP Tourism"],
     "cityOrder": ["Gwalior", "Orchha", "Khajuraho", "Bhopal", "Sanchi"],
