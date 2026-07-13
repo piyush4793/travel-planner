@@ -33,5 +33,6 @@
   { "name": "Andaman and Nicobar Islands", "lat": 11.7401, "lng": 92.6586, "region": "Islands" },
   { "name": "Lakshadweep", "lat": 10.5667, "lng": 72.6417, "region": "Islands" },
   { "name": "Puducherry", "lat": 11.9416, "lng": 79.8083, "region": "South India" },
-  { "name": "Chandigarh", "lat": 30.7333, "lng": 76.7794, "region": "North India" }
+  { "name": "Chandigarh", "lat": 30.7333, "lng": 76.7794, "region": "North India" },
+  { "name": "Dadra and Nagar Haveli and Daman and Diu", "lat": 20.3974, "lng": 72.8328, "region": "West India" }
 ]

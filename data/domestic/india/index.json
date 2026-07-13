@@ -1051,5 +1051,99 @@
     "combo": [
       "Kerala"
     ]
+  },
+  {
+    "name": "Puducherry",
+    "lat": 11.9416,
+    "lng": 79.8083,
+    "region": "South India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 4,
+    "maxDays": 5,
+    "popularityScore": 82,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "April",
+      "May",
+      "June",
+      "October",
+      "November",
+      "December"
+    ],
+    "combo": [
+      "Tamil Nadu",
+      "Karnataka",
+      "Andhra Pradesh"
+    ]
+  },
+  {
+    "name": "Chandigarh",
+    "lat": 30.7333,
+    "lng": 76.7794,
+    "region": "North India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 3,
+    "maxDays": 4,
+    "popularityScore": 74,
+    "bestMonths": [
+      "February",
+      "March",
+      "September",
+      "October",
+      "November"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August"
+    ],
+    "combo": [
+      "Punjab",
+      "Himachal Pradesh",
+      "Haryana",
+      "Delhi"
+    ]
+  },
+  {
+    "name": "Dadra and Nagar Haveli and Daman and Diu",
+    "lat": 20.3974,
+    "lng": 72.8328,
+    "region": "West India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8,
+    "popularityScore": 60,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Gujarat",
+      "Maharashtra"
+    ]
   }
 ]

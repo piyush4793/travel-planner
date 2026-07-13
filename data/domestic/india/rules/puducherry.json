@@ -1,0 +1,612 @@
+{
+  "name": "Puducherry",
+  "seed": false,
+  "lat": 11.9416,
+  "lng": 79.8083,
+  "region": "South India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "April",
+    "May",
+    "June",
+    "October",
+    "November",
+    "December"
+  ],
+  "budget": {
+    "solo": "₹14K–₹28K",
+    "couple": "₹26K–₹50K",
+    "family4": "₹48K–₹90K"
+  },
+  "experiences": [
+    "Architecture",
+    "History",
+    "Beaches",
+    "Temples & Religious Sites",
+    "Coffee & Cafés",
+    "Food",
+    "Art & Design",
+    "Museums",
+    "Cruises & Boat Trips",
+    "Water Sports",
+    "Markets & Shopping"
+  ],
+  "avoid": [
+    "April",
+    "May",
+    "June",
+    "October",
+    "November",
+    "December"
+  ],
+  "combo": [
+    "Tamil Nadu",
+    "Karnataka",
+    "Andhra Pradesh"
+  ],
+  "landmark": "White Town and the Promenade Beach seafront",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": "Chennai airport is the most reliable gateway, with East Coast Road taxis/buses taking about 3.5–4.5 hours to Pondicherry; Puducherry airport has limited domestic flights and the rail station is useful but less frequent. The UT has four enclaves — Puducherry, Karaikal, Mahe and Yanam — but a short leisure trip should stay around Pondicherry town, Auroville and Chunnambar rather than attempting distant enclaves.",
+  "diet": {
+    "vegetarian": "Vegetarian travel is excellent: South Indian tiffin, meals, idli, dosa, pongal, lemon rice, filter coffee, Franco-Tamil café plates, bakery snacks and Auroville organic cafés are easy around White Town, Mission Street and Auroville. Many cafés can do eggless bakes or veg mains, but seafood restaurants dominate some beach stretches.",
+    "vegan": "Vegan travel is unusually manageable for India in Auroville and White Town, where organic and plant-forward cafés are common. Still ask clearly about ghee, butter, curd, cream, cheese and paneer in South Indian meals, pastries and café sauces; request oil-only dosas, coconut chutney without curd, rice dishes and vegan thalis.",
+    "phrases": [
+      "Nei, paal, thayir, paneer vendam = no ghee, milk, curd or paneer",
+      "Enakku saiva saapadu venum = I want vegetarian food",
+      "Sans beurre, sans lait, s'il vous plaît = without butter or milk, please"
+    ]
+  },
+  "links": [
+    {
+      "label": "Puducherry Tourism Department (official)",
+      "url": "https://pondytourism.py.gov.in/"
+    },
+    {
+      "label": "Puducherry District Tourism (official)",
+      "url": "https://puducherry-dt.gov.in/tourism/"
+    },
+    {
+      "label": "Incredible India — Puducherry",
+      "url": "https://www.incredibleindia.gov.in/en/puducherry/puducherry"
+    },
+    {
+      "label": "Matrimandir official site",
+      "url": "https://matrimandir.org/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "White Town & Promenade",
+      "lat": 11.9346,
+      "lng": 79.8358,
+      "notes": "The walkable French Quarter core — heritage lanes, cafés, churches, museums, the Ashram and the car-free evening Promenade/Rock Beach cluster within short walks or autos.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June",
+        "October",
+        "November",
+        "December"
+      ],
+      "experiences": [
+        "Architecture",
+        "History",
+        "Coffee & Cafés",
+        "Food",
+        "Museums",
+        "Temples & Religious Sites",
+        "Markets & Shopping",
+        "Beaches"
+      ]
+    },
+    {
+      "name": "Auroville",
+      "lat": 12.0053,
+      "lng": 79.8085,
+      "notes": "A separate half/full-day spiritual-design township north of town; Matrimandir viewing and inner-chamber visits require advance visitor booking rather than a casual walk-in plan.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June",
+        "October",
+        "November",
+        "December"
+      ],
+      "experiences": [
+        "Architecture",
+        "Art & Design",
+        "Temples & Religious Sites",
+        "Coffee & Cafés",
+        "Food",
+        "Markets & Shopping"
+      ]
+    },
+    {
+      "name": "Chunnambar & Beach Belt",
+      "lat": 11.8848,
+      "lng": 79.8099,
+      "notes": "The easy leisure loop south and north of town — Chunnambar backwater boats to Paradise Beach, plus Serenity and Auroville beaches for sunrise, surf schools and slower café time.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "April",
+        "May",
+        "June",
+        "October",
+        "November",
+        "December"
+      ],
+      "experiences": [
+        "Beaches",
+        "Cruises & Boat Trips",
+        "Water Sports",
+        "Food",
+        "Coffee & Cafés"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel coverage is strong in Pondicherry town, Auroville and the beach belt; buy/activate before arrival if coming from Chennai. Download offline maps because Auroville's internal lanes and beach approaches can be confusing after dark.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "MakeMyTrip",
+      "Zomato",
+      "Swiggy",
+      "WhatsApp"
+    ],
+    "cityOrder": [
+      "White Town & Promenade",
+      "Auroville",
+      "Chunnambar & Beach Belt"
+    ],
+    "cities": {
+      "White Town & Promenade": {
+        "name": "White Town & Promenade",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days lets you keep the French Quarter on foot, separate the Ashram/museum/church cluster from the café-and-seafront rhythm, and avoid sightseeing during the hottest afternoon hours.",
+        "experiences": [
+          "Architecture",
+          "History",
+          "Coffee & Cafés",
+          "Food",
+          "Museums",
+          "Temples & Religious Sites",
+          "Markets & Shopping",
+          "Beaches"
+        ],
+        "signatureExperiences": [
+          "Architecture",
+          "Coffee & Cafés",
+          "History"
+        ],
+        "days": [
+          {
+            "theme": "French Quarter heritage, Ashram calm & cafés",
+            "pace": "moderate",
+            "note": "Keep this day walkable: start early in White Town, pause indoors over lunch, then return to the promenade after the heat drops. Sri Aurobindo Ashram requires silence, modest dress and no photography around the Samadhi.",
+            "activities": [
+              {
+                "name": "White Town heritage walk on Rue Dumas, Rue Romain Rolland and Rue Suffren",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Free self-guided; guided walks vary",
+                "tip": "Go before 9am for soft light and quieter yellow façades; verify any guided-walk price locally."
+              },
+              {
+                "name": "Sri Aurobindo Ashram and Samadhi",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "Silence is expected; keep phones away and avoid peak queue periods around opening."
+              },
+              {
+                "name": "Manakula Vinayagar Temple",
+                "duration": "30–45m",
+                "priority": "recommended",
+                "cost": "Free / donation",
+                "tip": "Carry a light shawl and leave footwear at the stand."
+              },
+              {
+                "name": "French Quarter café lunch and bakery stop",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "₹500–₹1,500/person",
+                "tip": "Excellent for vegetarian and vegan café food, but confirm no butter, cream or cheese in sauces and pastries; 2026 menu prices should be checked locally."
+              },
+              {
+                "name": "Promenade / Rock Beach evening walk",
+                "duration": "1–2h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "The seafront is best at sunrise or after sunset; swimming is unsafe on the rocky stretch."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "White Town guesthouse or heritage B&B",
+                "budget": "₹2,500–₹5,500/night"
+              },
+              {
+                "name": "Boutique French Quarter hotel",
+                "budget": "₹7,000–₹14,000/night"
+              }
+            ],
+            "meals": [
+              "Masala dosa or pongal breakfast",
+              "French Quarter croissant/café lunch",
+              "Tamil vegetarian meals or Franco-Tamil dinner"
+            ]
+          },
+          {
+            "theme": "Churches, museum, gardens & Tamil town",
+            "pace": "moderate",
+            "note": "This is a low-transfer day within central Puducherry. Use autos for the Botanical Garden/Tamil Quarter leg if the heat is high, and keep churches outside service times.",
+            "activities": [
+              {
+                "name": "Basilica of the Sacred Heart of Jesus",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "A Gothic-style church near the rail station; dress respectfully and avoid interrupting Mass."
+              },
+              {
+                "name": "Puducherry Museum and Bharathi Park / Government Place exterior loop",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "Museum entry varies; verify locally",
+                "tip": "Useful for French-period artefacts and Chola bronzes; museum fees could not be verified from a Jan-2026 source."
+              },
+              {
+                "name": "Botanical Garden",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Entry varies; verify locally",
+                "tip": "Better for families and shade than as a must-see garden; confirm toy-train/entry operations on arrival."
+              },
+              {
+                "name": "Mission Street and Nehru Street shopping",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "Free to browse",
+                "tip": "Look for incense, handmade paper, leather goods, cottons and Auroville products."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Central Puducherry budget hotel",
+                "budget": "₹1,800–₹3,800/night"
+              },
+              {
+                "name": "White Town heritage stay",
+                "budget": "₹5,500–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Filter coffee and idli",
+              "South Indian veg thali",
+              "Crêpes, quiche or vegan bowl in White Town"
+            ]
+          },
+          {
+            "theme": "Slow café, art and bookshop buffer",
+            "pace": "relaxed",
+            "note": "Use this optional day if you want Pondicherry as a slow base rather than a checklist. It is also a weather buffer for Northeast-monsoon showers or a late Chennai transfer.",
+            "activities": [
+              {
+                "name": "Leisurely café-and-bookshop morning in White Town",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "₹400–₹1,200/person",
+                "tip": "Café prices vary heavily by venue and were not Jan-2026 verified; check menus locally."
+              },
+              {
+                "name": "Handmade paper / Auroville product shopping",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Sunrise or blue-hour repeat at Promenade Beach",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Central Puducherry budget hotel",
+                "budget": "₹1,800–₹3,800/night"
+              }
+            ],
+            "meals": [
+              "Café breakfast",
+              "Lemon rice or curd-free veg meals",
+              "Bakery snack and coffee"
+            ]
+          }
+        ]
+      },
+      "Auroville": {
+        "name": "Auroville",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Auroville is close on the map but logistically separate: book Matrimandir access in advance, hire a scooter/taxi, and do not assume you can enter the inner chamber without prior confirmation.",
+        "experiences": [
+          "Architecture",
+          "Art & Design",
+          "Temples & Religious Sites",
+          "Coffee & Cafés",
+          "Food",
+          "Markets & Shopping"
+        ],
+        "signatureExperiences": [
+          "Architecture",
+          "Art & Design",
+          "Coffee & Cafés"
+        ],
+        "days": [
+          {
+            "theme": "Matrimandir viewing, design stores & organic cafés",
+            "pace": "moderate",
+            "note": "Treat Matrimandir as a booked spiritual visit, not a casual photo stop. Combine it with nearby Auroville visitor-zone cafés and maker stores rather than rushing back and forth to White Town.",
+            "activities": [
+              {
+                "name": "Auroville Visitor Centre orientation and boutiques",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free to enter; shopping varies",
+                "tip": "Pick up maps, check same-day guidance and browse Auroville-made paper, pottery, clothing and food products."
+              },
+              {
+                "name": "Matrimandir viewing point or booked concentration visit",
+                "duration": "1.5–2.5h",
+                "priority": "must-see",
+                "cost": "Free / advance booking",
+                "tip": "Viewing and inner-chamber access are controlled by Auroville; book ahead and re-confirm current visitor rules before travelling."
+              },
+              {
+                "name": "Auroville organic/vegan café lunch",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "₹500–₹1,200/person",
+                "tip": "This is the UT's easiest vegan zone, but still ask about cheese, butter, curd and honey."
+              },
+              {
+                "name": "Svaram / artisan workshop or design-store loop",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Workshop access changes by day; confirm by phone or at the Visitor Centre."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auroville guesthouse",
+                "budget": "₹2,000–₹5,000/night"
+              },
+              {
+                "name": "Eco-boutique stay near Auroville",
+                "budget": "₹5,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Auroville vegan bowl",
+              "Wood-fired pizza or millet salad",
+              "Organic bakery snack"
+            ]
+          },
+          {
+            "theme": "Optional slow Auroville community day",
+            "pace": "relaxed",
+            "note": "Add this only if you have booked a specific workshop, yoga session or longer community visit; otherwise one focused day is enough for most travellers.",
+            "activities": [
+              {
+                "name": "Booked Auroville workshop, yoga or sound session",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Do not assume walk-in availability; confirm timing and contribution directly with the organiser."
+              },
+              {
+                "name": "Quiet cycle or scooter loop through Auroville lanes",
+                "duration": "1.5–2h",
+                "priority": "optional",
+                "cost": "Cycle/scooter rental varies; verify locally",
+                "tip": "Wear a helmet and avoid unlit lanes after dark."
+              },
+              {
+                "name": "Auroville beach sunset if staying north of town",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Auroville guesthouse",
+                "budget": "₹2,000–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Vegan café brunch",
+              "Organic thali",
+              "Bakery coffee"
+            ]
+          }
+        ]
+      },
+      "Chunnambar & Beach Belt": {
+        "name": "Chunnambar & Beach Belt",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One day is enough for the boat-and-beach loop if the sea and backwater operations are running; add a second only for surfing lessons or a true beach break.",
+        "experiences": [
+          "Beaches",
+          "Cruises & Boat Trips",
+          "Water Sports",
+          "Food",
+          "Coffee & Cafés"
+        ],
+        "signatureExperiences": [
+          "Beaches",
+          "Cruises & Boat Trips"
+        ],
+        "days": [
+          {
+            "theme": "Chunnambar backwater boat, Paradise Beach & Serenity sunset",
+            "pace": "moderate",
+            "note": "This is the only day where backtracking is likely: do Chunnambar/Paradise Beach in the morning south of town, rest at lunch, then go north to Serenity only if energy and weather allow.",
+            "activities": [
+              {
+                "name": "Chunnambar Boat House backwater ride to Paradise Beach",
+                "duration": "2.5–3.5h",
+                "priority": "must-see",
+                "cost": "Boat/entry varies; verify locally",
+                "tip": "Boat operations depend on weather, tides and crowding; recent official 2026 tariffs were not available, so confirm at the counter before committing."
+              },
+              {
+                "name": "Paradise Beach swim-and-shade time",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Included/varies with boat access",
+                "tip": "Swim only in marked safe zones and carry water, sunscreen and cash for beach facilities."
+              },
+              {
+                "name": "Serenity Beach or Auroville Beach evening",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Serenity is popular for surf schools; lesson prices change seasonally and should be checked directly."
+              },
+              {
+                "name": "Beach café dinner",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "₹400–₹1,200/person",
+                "tip": "Seafood menus are common; vegetarians should ask for veg thali, pasta, pizza or South Indian staples."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Town guesthouse with day-trip beach access",
+                "budget": "₹1,800–₹4,000/night"
+              },
+              {
+                "name": "Beachside resort north/south of town",
+                "budget": "₹5,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Packed idli/dosa breakfast",
+              "Beach café veg lunch",
+              "South Indian dinner back in town"
+            ]
+          },
+          {
+            "theme": "Optional surf lesson or lazy beach reset",
+            "pace": "relaxed",
+            "note": "Use this only in settled weather from roughly October to March; summer heat and Northeast-monsoon surf/rain make a long beach day less pleasant.",
+            "activities": [
+              {
+                "name": "Serenity Beach surf lesson or board rental",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Book directly with a local surf school and verify sea conditions, instructor ratio and 2026 price before paying."
+              },
+              {
+                "name": "Auroville Beach sunrise walk",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "Free"
+              },
+              {
+                "name": "Scooter/cycle café crawl between beach and White Town",
+                "duration": "2–3h",
+                "priority": "optional",
+                "cost": "Rental varies; verify locally",
+                "tip": "Scooters are common but prices and police checks vary; carry a valid licence, helmet and original/accepted ID."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Beachside resort north/south of town",
+                "budget": "₹5,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Café smoothie bowl",
+              "Veg pizza or pasta",
+              "Filter coffee and snacks"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "White Town & Promenade",
+        "to": "Auroville",
+        "method": "Scooter, auto or taxi via ECR/Auroville Road",
+        "cost": "Scooter/taxi varies; verify locally",
+        "distanceKm": 12,
+        "durationHrs": 0.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Auroville",
+        "to": "Chunnambar & Beach Belt",
+        "method": "Taxi or scooter via Puducherry town; avoid doing this late at night",
+        "cost": "varies",
+        "distanceKm": 24,
+        "durationHrs": 1,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "Best overall weather is October to March, but October to December overlaps the Northeast monsoon: keep beach/boat plans flexible during rain spells.",
+      "April to June is hot and humid; plan heritage walks at sunrise/evening and use cafés or museums in the afternoon.",
+      "Matrimandir access is controlled and should be booked or re-confirmed ahead; casual visitors should expect only the viewing-point experience unless confirmed otherwise.",
+      "Karaikal, Mahe and Yanam are real Puducherry enclaves but are not efficient add-ons to a 3–4 day Pondicherry-town trip; pair Karaikal only if already driving deeper into Tamil Nadu's temple coast.",
+      "Hard 2026 transport/activity tariffs for boats, rentals, surf lessons and several museums were not consistently published; use the conservative bands here and verify at counters or direct operators."
+    ]
+  }
+}

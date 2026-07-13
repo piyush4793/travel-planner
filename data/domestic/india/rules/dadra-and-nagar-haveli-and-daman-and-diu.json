@@ -1,0 +1,599 @@
+{
+  "name": "Dadra and Nagar Haveli and Daman and Diu",
+  "seed": false,
+  "lat": 20.3974,
+  "lng": 72.8328,
+  "region": "West India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹24K–₹38K",
+    "couple": "₹42K–₹68K",
+    "family4": "₹78K–₹1.18L"
+  },
+  "experiences": [
+    "Beaches",
+    "History",
+    "Architecture",
+    "Islands",
+    "Water Sports",
+    "Cruises & Boat Trips",
+    "Wildlife & Safari",
+    "Lakes",
+    "Temples & Religious Sites",
+    "Food",
+    "Nightlife",
+    "Road Trips"
+  ],
+  "avoid": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Gujarat",
+    "Maharashtra"
+  ],
+  "landmark": "Diu Fort over the Arabian Sea",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Treat this merged UT as two trip zones, not one compact circuit: Silvassa and Daman pair naturally via Vapi/Bhilad and a 25–40 km road hop, while Diu is a separate island leg about 700–770 km from Daman by road. Use Vapi railway station for Silvassa/Daman, Surat or Mumbai flights for that western-coast pair, and reach Diu separately via its small airport, Veraval/Delwada rail links, Rajkot/Ahmedabad road approaches, or the published Daman–Diu helicopter when operating.",
+  "diet": {
+    "vegetarian": "Vegetarian food is easy in Silvassa and Daman because Gujarati thalis, farsan, dal, kadhi, khichdi, rotli, thepla and simple North Indian meals are common. Diu and Daman's coasts are seafood-heavy, but most hotels can still arrange veg thali, pav bhaji, dal rice and paneer dishes; inland tribal belts may have simpler fixed meals.",
+    "vegan": "Vegan travel is manageable with advance requests but needs care: Gujarati food often uses ghee, curd, buttermilk or paneer, and coastal gravies may use butter or cream even when vegetarian. Ask for oil-only cooking, no dairy, no ghee and simple dal-rice/veg preparations; fixed homestay or safari-area meals around Dudhni/Khanvel can be harder than Daman or Diu town.",
+    "phrases": [
+      "Mane shakahari khavanu joie, maas nahi = I want vegetarian food, no meat",
+      "Ghee, doodh, dahi ane paneer na nakhsho = please do not add ghee, milk, curd or paneer",
+      "Tel ma banavo, dairy vagar = please cook in oil, without dairy"
+    ]
+  },
+  "links": [
+    {
+      "label": "Dadra and Nagar Haveli Tourism (official)",
+      "url": "https://dnh.gov.in/tourist-places/"
+    },
+    {
+      "label": "Daman District Places & Centres (official)",
+      "url": "https://ddd.gov.in/places-centres/"
+    },
+    {
+      "label": "Diu District Tourism (official)",
+      "url": "https://diu.gov.in/tourist-places/"
+    },
+    {
+      "label": "Diu how to reach (official)",
+      "url": "https://diu.gov.in/how-to-reach/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Silvassa",
+      "lat": 20.2763,
+      "lng": 73.0083,
+      "notes": "Inland Dadra and Nagar Haveli base for Vanganga Lake Garden, tribal culture, Vasona Lion Safari and the Dudhni backwater/watersports belt near the Gujarat-Maharashtra border.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Lakes",
+        "Cruises & Boat Trips",
+        "Water Sports",
+        "Wildlife & Safari",
+        "Temples & Religious Sites",
+        "Food",
+        "Road Trips"
+      ]
+    },
+    {
+      "name": "Daman",
+      "lat": 20.3974,
+      "lng": 72.8328,
+      "notes": "Compact Gujarat-coast heritage-and-beach base with Moti Daman's Portuguese fort precinct, Nani Daman, Jampore and Devka beaches, and permissive liquor rules compared with neighbouring Gujarat.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Beaches",
+        "History",
+        "Architecture",
+        "Temples & Religious Sites",
+        "Water Sports",
+        "Food",
+        "Nightlife"
+      ]
+    },
+    {
+      "name": "Diu",
+      "lat": 20.7144,
+      "lng": 70.9874,
+      "notes": "Island off Gujarat's Saurashtra coast, best planned as its own leg for Diu Fort, St Paul's Church, Naida Caves, INS Khukri Memorial, Nagoa and Ghoghla beaches.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Islands",
+        "Beaches",
+        "History",
+        "Architecture",
+        "Water Sports",
+        "Cruises & Boat Trips",
+        "Temples & Religious Sites",
+        "Food"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel work well in Silvassa, Daman, Diu town and the beach belts; expect weaker data around Dudhni/Khanvel forest edges, inside old forts, caves and on some Diu coastal stretches, so download maps and keep hotel/driver numbers offline.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "MakeMyTrip",
+      "Zomato",
+      "WhatsApp",
+      "GSRTC"
+    ],
+    "cityOrder": [
+      "Silvassa",
+      "Daman",
+      "Diu"
+    ],
+    "cities": {
+      "Silvassa": {
+        "name": "Silvassa",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the easy Silvassa gardens-and-culture day plus the Dudhni/Vasona nature belt. It pairs smoothly with Daman by road; do not try to add Diu as a casual day trip.",
+        "experiences": [
+          "Lakes",
+          "Cruises & Boat Trips",
+          "Water Sports",
+          "Wildlife & Safari",
+          "Temples & Religious Sites",
+          "Food",
+          "Road Trips"
+        ],
+        "signatureExperiences": [
+          "Lakes",
+          "Wildlife & Safari",
+          "Water Sports"
+        ],
+        "days": [
+          {
+            "theme": "Vapi arrival, Vanganga Lake Garden & Silvassa culture",
+            "pace": "relaxed",
+            "note": "Vapi to Silvassa is a short road transfer, so this works well as a first afternoon. Keep tickets and boating as locally verified because 2026 official tariff pages were not available during research.",
+            "activities": [
+              {
+                "name": "Transfer from Vapi/Bhilad to Silvassa",
+                "duration": "30–60m",
+                "priority": "must-see",
+                "cost": "₹800–₹1,500 taxi",
+                "tip": "Vapi is the practical railhead; pre-book a cab if arriving late at night."
+              },
+              {
+                "name": "Vanganga Lake Garden and island bridges",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Free–₹50; boating varies",
+                "tip": "Official tourism highlights paddle boats and the floating musical fountain; verify current entry/boating timings locally."
+              },
+              {
+                "name": "Tribal Museum / local Warli craft stop",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free–₹50",
+                "tip": "Use this to understand Dhodia, Kokna and Varli culture before the lake/forest belt."
+              },
+              {
+                "name": "Tadkeshwar Mahadev Temple",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "Free / donation",
+                "tip": "Dress modestly and avoid peak aarti crowding if you want a quiet visit."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Silvassa budget hotel",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Khanvel/Silvassa resort",
+                "budget": "₹4,000–₹8,500/night"
+              }
+            ],
+            "meals": [
+              "Gujarati veg thali with kadhi",
+              "Thepla and farsan snack plate",
+              "Simple dal-rice or khichdi dinner"
+            ]
+          },
+          {
+            "theme": "Vasona Lion Safari, Deer Park & Dudhni Lake",
+            "pace": "moderate",
+            "note": "Cluster this as a nature day north/east of Silvassa; Dudhni is far enough that it should not be squeezed into a Daman heritage day.",
+            "activities": [
+              {
+                "name": "Vasona Lion Safari Park",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "₹100–₹300 safari band",
+                "tip": "Official tourism lists 9am–5pm and a 10 km distance from Silvassa; verify the current 2026 safari fare and weekly closure locally."
+              },
+              {
+                "name": "Satmalia / Hilltop Deer Park",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "₹50–₹100",
+                "tip": "Best as a short stop adjacent to the safari zone, not a separate long detour."
+              },
+              {
+                "name": "Dudhni Lake boating and watersports",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "₹300–₹1,500 per ride/activity",
+                "tip": "Jet ski, kayak, speedboat and shikara-style rides are weather/operator dependent; monsoon operations can be restricted."
+              },
+              {
+                "name": "Hirwa Van Garden evening walk",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "Free–₹50"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Silvassa budget hotel",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Khanvel/Dudhni resort",
+                "budget": "₹4,000–₹9,000/night"
+              }
+            ],
+            "meals": [
+              "Packed veg lunch for Dudhni",
+              "Khandvi or dhokla snack",
+              "Gujarati thali back in Silvassa"
+            ]
+          }
+        ]
+      },
+      "Daman": {
+        "name": "Daman",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two relaxed days are enough for the heritage fort-and-church core plus one beach/watersports day. Daman is a natural add-on to Silvassa, but Diu is a separate long-haul leg.",
+        "experiences": [
+          "Beaches",
+          "History",
+          "Architecture",
+          "Temples & Religious Sites",
+          "Water Sports",
+          "Food",
+          "Nightlife"
+        ],
+        "signatureExperiences": [
+          "Beaches",
+          "History",
+          "Architecture"
+        ],
+        "days": [
+          {
+            "theme": "Moti Daman fort, churches & Nani Daman",
+            "pace": "moderate",
+            "note": "Silvassa to Daman is a short, practical transfer; do the heritage core on foot/auto after check-in. Daman's liquor rules draw weekend crowds from Gujarat, so expect busy evenings.",
+            "activities": [
+              {
+                "name": "Silvassa to Daman transfer via Vapi",
+                "duration": "45–90m",
+                "priority": "must-see",
+                "cost": "₹1,200–₹2,500 taxi",
+                "tip": "Silvassa and Daman are the only close natural pair in this UT itinerary."
+              },
+              {
+                "name": "Moti Daman Fort ramparts and lighthouse precinct",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Go in the morning or late afternoon; the sea-facing walls have little shade."
+              },
+              {
+                "name": "Bom Jesus / Our Lady of Rosary church cluster",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "Portuguese-era interiors are best visited quietly outside service times."
+              },
+              {
+                "name": "Nani Daman Fort and St Jerome gateway",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Pairs well with the jetty and local snack stops."
+              },
+              {
+                "name": "Daman jetty sunset walk",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nani Daman budget hotel",
+                "budget": "₹1,800–₹4,000/night"
+              },
+              {
+                "name": "Devka/Jampore beach resort",
+                "budget": "₹4,500–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Gujarati thali near Nani Daman",
+              "Veg pav bhaji or chaat",
+              "Portuguese-influenced coastal curry if you eat seafood"
+            ]
+          },
+          {
+            "theme": "Jampore, Devka & coastal leisure",
+            "pace": "relaxed",
+            "note": "This is a beach day rather than a heritage day; check tides because Devka is rocky and Jampore is better for long walks and casual watersports.",
+            "activities": [
+              {
+                "name": "Jampore Beach morning walk and camel/ATV zone",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Free; rides ₹200–₹800",
+                "tip": "Verify ride prices before boarding; avoid rough-sea monsoon windows."
+              },
+              {
+                "name": "Devka Beach promenade and amusement stretch",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "Free; amusements vary",
+                "tip": "Better for sunset and promenade time than swimming because the shore can be rocky."
+              },
+              {
+                "name": "Optional Daman watersports session",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "₹500–₹2,000 per ride/activity",
+                "tip": "Use licensed operators only; 2026 rate boards were not available online, so verify locally."
+              },
+              {
+                "name": "Low-key Daman bar/café evening",
+                "duration": "1.5–2h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Daman's permissive alcohol rules are a draw for Gujarat visitors; use safe transport after dark."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Nani Daman budget hotel",
+                "budget": "₹1,800–₹4,000/night"
+              },
+              {
+                "name": "Devka/Jampore beach resort",
+                "budget": "₹4,500–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Veg thali or dal fry rice",
+              "Daman seafood thali if non-vegetarian",
+              "Farsan, sev khamani and chai"
+            ]
+          }
+        ]
+      },
+      "Diu": {
+        "name": "Diu",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Plan Diu as its own island leg, not as an add-on day from Daman: official Diu guidance lists Daman at roughly 768 km by road, with air/helicopter options when operating.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "History",
+          "Architecture",
+          "Water Sports",
+          "Cruises & Boat Trips",
+          "Temples & Religious Sites",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "Islands",
+          "Beaches",
+          "History"
+        ],
+        "days": [
+          {
+            "theme": "Separate transfer to Diu, Naida Caves & Khukri sunset",
+            "pace": "relaxed",
+            "note": "This day exists because Diu is far from Daman: fly to Diu when flights run, come via Veraval/Delwada rail, or drive from Ahmedabad/Rajkot/Una. If arriving by long road, keep sightseeing light.",
+            "activities": [
+              {
+                "name": "Arrive in Diu via airport, Veraval/Delwada rail or Saurashtra road",
+                "duration": "varies",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Official Diu guidance lists Daman around 768 km by road; use Diu as a separate leg from Ahmedabad, Rajkot, Veraval or its airport."
+              },
+              {
+                "name": "Naida Caves",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Go before sunset for the best light shafts; paths can be uneven after rain."
+              },
+              {
+                "name": "INS Khukri Memorial and Chakratirth sunset",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "A respectful sunset stop; avoid rushing it after a long road arrival."
+              },
+              {
+                "name": "Diu town seafood/veg dinner walk",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Diu town budget guesthouse",
+                "budget": "₹1,800–₹4,500/night"
+              },
+              {
+                "name": "Nagoa/Ghoghla beach resort",
+                "budget": "₹5,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Gujarati veg thali in Diu town",
+              "Fresh fish curry if non-vegetarian",
+              "Coconut water and light snacks near the beach"
+            ]
+          },
+          {
+            "theme": "Diu Fort, churches, Nagoa & Ghoghla beaches",
+            "pace": "moderate",
+            "note": "This is the core Diu day: keep the fort and old-town churches together, then move to the beaches. Water sports are seasonal and should be avoided in rough monsoon seas.",
+            "activities": [
+              {
+                "name": "Diu Fort and sea-facing ramparts",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Morning light is best; Panikotha views are from across the water."
+              },
+              {
+                "name": "St Paul's Church and Diu Museum / St Thomas Church",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "St Paul's is the island's showpiece Portuguese church; keep shoulders/knees covered."
+              },
+              {
+                "name": "Gangeshwar Mahadev Temple",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free / donation",
+                "tip": "The sea-washed lingams are most atmospheric around tide movement; watch slippery rocks."
+              },
+              {
+                "name": "Nagoa Beach watersports",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "₹500–₹2,500 per ride/activity",
+                "tip": "Parasailing, jet ski and boat rides are operator/weather dependent; verify 2026 rate cards locally."
+              },
+              {
+                "name": "Ghoghla Beach blue-flag-style beach time",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free; activities vary"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Diu town budget guesthouse",
+                "budget": "₹1,800–₹4,500/night"
+              },
+              {
+                "name": "Nagoa/Ghoghla beach resort",
+                "budget": "₹5,000–₹12,000/night"
+              }
+            ],
+            "meals": [
+              "Veg Gujarati thali with kadhi",
+              "Portuguese-influenced fish or prawn curry",
+              "Diu bakery sweets and tea"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Silvassa",
+        "to": "Daman",
+        "method": "Private taxi via Vapi/Bhilad on the Gujarat coast approach",
+        "cost": "₹1,200–₹2,500 taxi",
+        "distanceKm": 30,
+        "durationHrs": 1,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Daman",
+        "to": "Diu",
+        "method": "Separate long road transfer across Gujarat, Daman–Diu helicopter when operating, or reposition via Ahmedabad/Rajkot/Veraval plus Diu airport/road",
+        "cost": "varies; long private taxi usually ₹18,000+",
+        "distanceKm": 768,
+        "durationHrs": 13,
+        "sameDayFeasible": false
+      }
+    ],
+    "extras": [
+      "Silvassa and Daman make a compact 3–4 day road pair via Vapi; Diu should be planned as a separate Saurashtra island leg or added with a flight/helicopter buffer.",
+      "Best season is October to March for forts, beaches, lake boating and Dudhni watersports; June to September brings monsoon rain, rougher seas, humidity and possible activity closures.",
+      "Carry cash for lake/safari/beach operators because official 2026 online tariff pages were not consistently available during research.",
+      "Daman's relaxed liquor rules compared with neighbouring Gujarat create weekend party traffic; families may prefer quieter weekday beach slots.",
+      "Diu's small airport and helicopter schedules can change, so verify operations before committing non-refundable bookings."
+    ]
+  }
+}

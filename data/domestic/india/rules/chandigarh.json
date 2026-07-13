@@ -1,0 +1,413 @@
+{
+  "name": "Chandigarh",
+  "seed": false,
+  "lat": 30.7333,
+  "lng": 76.7794,
+  "region": "North India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "February",
+    "March",
+    "September",
+    "October",
+    "November"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August"
+  ],
+  "budget": {
+    "solo": "₹9K–₹16K",
+    "couple": "₹16K–₹28K",
+    "family4": "₹28K–₹50K"
+  },
+  "experiences": [
+    "Architecture",
+    "Art & Design",
+    "UNESCO Sites",
+    "Lakes",
+    "Museums",
+    "Markets & Shopping",
+    "Food",
+    "History",
+    "Wildlife & Safari",
+    "Road Trips"
+  ],
+  "avoid": [
+    "May",
+    "June",
+    "July",
+    "August"
+  ],
+  "combo": [
+    "Punjab",
+    "Himachal Pradesh",
+    "Haryana",
+    "Delhi"
+  ],
+  "landmark": "Nek Chand's Rock Garden and Le Corbusier's Capitol Complex",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Chandigarh Airport (IXC) and Chandigarh Junction connect the city to Delhi, Mumbai and hill-state gateways; inside the UT, sector-grid distances are short and app cabs/autos work well. Capitol Complex is a security-sensitive UNESCO site: book/confirm the fixed guided tour slot in advance, carry original photo ID and expect bag restrictions.",
+  "diet": {
+    "vegetarian": "Chandigarh is very vegetarian-friendly: Punjabi staples such as chole bhature, paneer tikka, dal makhani, aloo paratha, kulcha, rajma-chawal and lassi are easy around Sector 17, Sector 35 and Sukhna Lake cafés. Pure-veg sweets/restaurants are common, and most hotel breakfasts have vegetarian options.",
+    "vegan": "Vegan eating is possible in urban cafés and simple dhabas but needs clear requests because Punjabi food often uses ghee, butter, cream, curd, paneer and dairy-based lassi. Ask for oil-only cooking, plain roti without butter, chole/rajma without ghee tadka, and skip paneer, curd, cream gravies and sweets unless confirmed dairy-free.",
+    "phrases": [
+      "Mujhe shakahari khana chahiye, bina meat aur anda = I want vegetarian food, without meat or egg",
+      "Kripya ghee, makkhan, dahi, doodh aur paneer na daalein = please do not add ghee, butter, curd, milk or paneer",
+      "Sirf tel mein bana dena, dairy nahi = please cook only in oil, no dairy"
+    ]
+  },
+  "links": [
+    {
+      "label": "Chandigarh Tourism (official)",
+      "url": "https://chandigarhtourism.gov.in/"
+    },
+    {
+      "label": "Rock Garden — Chandigarh Tourism",
+      "url": "https://chandigarhtourism.gov.in/pages/page/rock-garden"
+    },
+    {
+      "label": "Government Museum and Art Gallery — Chandigarh Tourism",
+      "url": "https://chandigarhtourism.gov.in/museums/government_museum_art_gallery"
+    },
+    {
+      "label": "The Architectural Work of Le Corbusier — UNESCO",
+      "url": "https://whc.unesco.org/en/list/1321"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Chandigarh",
+      "lat": 30.7333,
+      "lng": 76.7794,
+      "notes": "Compact planned city base for Sector 1's Capitol Complex, Rock Garden and Sukhna Lake, plus the museums, gardens and markets around Sectors 10, 16 and 17.",
+      "bestMonths": [
+        "February",
+        "March",
+        "September",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "experiences": [
+        "Architecture",
+        "Art & Design",
+        "UNESCO Sites",
+        "Lakes",
+        "Museums",
+        "Markets & Shopping",
+        "Food",
+        "History"
+      ]
+    },
+    {
+      "name": "Chandigarh & around",
+      "lat": 30.7398,
+      "lng": 76.8846,
+      "notes": "Optional day-trip base for families or slower travellers adding ChhatBir Zoo near Zirakpur and the Mughal-style Pinjore Gardens north of the city.",
+      "bestMonths": [
+        "February",
+        "March",
+        "September",
+        "October",
+        "November"
+      ],
+      "worstMonths": [
+        "May",
+        "June",
+        "July",
+        "August"
+      ],
+      "experiences": [
+        "Wildlife & Safari",
+        "Road Trips",
+        "History",
+        "Architecture",
+        "Food"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel 4G/5G coverage is strong across Chandigarh, Sector 17, Sukhna Lake and the airport/railway station; coverage is also reliable toward Zirakpur and Pinjore, but download maps for hill-road extensions beyond Morni or into Himachal.",
+    "apps": [
+      "Google Maps",
+      "Uber",
+      "Ola",
+      "IRCTC Rail Connect",
+      "MakeMyTrip",
+      "Zomato",
+      "WhatsApp"
+    ],
+    "cityOrder": [
+      "Chandigarh",
+      "Chandigarh & around"
+    ],
+    "cities": {
+      "Chandigarh": {
+        "name": "Chandigarh",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days covers the feasible city core: Sector 1's Capitol-Rock Garden-Sukhna cluster, then the museum-garden-market cluster across Sectors 10, 16 and 17. Add the third day only for a slower architecture/museum pace or bad summer heat breaks.",
+        "experiences": [
+          "Architecture",
+          "Art & Design",
+          "UNESCO Sites",
+          "Lakes",
+          "Museums",
+          "Markets & Shopping",
+          "Food",
+          "History"
+        ],
+        "signatureExperiences": [
+          "Architecture",
+          "UNESCO Sites",
+          "Art & Design"
+        ],
+        "days": [
+          {
+            "theme": "Sector 1 icons: Capitol, Rock Garden and Sukhna Lake",
+            "pace": "moderate",
+            "note": "Keep this as a tight Sector 1 day: distances are short, but the Capitol Complex is only possible with a confirmed guided slot and security checks. Carry original photo ID and avoid large bags.",
+            "activities": [
+              {
+                "name": "Capitol Complex guided UNESCO tour",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Fixed guided slots are commonly around 10am, 12pm and 3pm; register/confirm with Chandigarh Tourism, arrive early and carry original photo ID. Access can change on government working days and holidays."
+              },
+              {
+                "name": "Open Hand Monument and High Court exterior",
+                "duration": "30–45m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Best paired with the official Capitol tour because the complex is security controlled."
+              },
+              {
+                "name": "Nek Chand's Rock Garden",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "₹30/adult, ₹10/child",
+                "tip": "Official 2026 Chandigarh Tourism listing shows these fees; go before late afternoon in summer and keep water handy."
+              },
+              {
+                "name": "Sukhna Lake promenade and Garden of Silence",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Free; boating varies, verify at counter",
+                "tip": "Entry is free on the official listing; boating rates change by boat type, so confirm locally before paying. Sunset is the most comfortable slot."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget Sector 17/Sector 22 hotel",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Mid-range Sector 17/Sector 35 hotel",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Sector 17 chole bhature",
+              "Paneer tikka or dal makhani dinner",
+              "Sweet or salted lassi if you take dairy"
+            ]
+          },
+          {
+            "theme": "Museums, Rose Garden and Sector 17 plaza",
+            "pace": "moderate",
+            "note": "This day clusters the western/central sectors: start indoors at Sector 10, move to the open gardens when it is cooler, and finish with the pedestrian Sector 17 plaza for dinner and shopping.",
+            "activities": [
+              {
+                "name": "Government Museum and Art Gallery",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "₹30/adult; children below 18 free; camera ₹30",
+                "tip": "Official museum listing shows Tuesday–Sunday opening and Monday closure; confirm holiday closures before visiting."
+              },
+              {
+                "name": "Le Corbusier Centre or Architecture Museum",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Use this if the Capitol tour was shortened or you want more context on Chandigarh's planned-city design."
+              },
+              {
+                "name": "Zakir Hussain Rose Garden",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free; verify locally during events",
+                "tip": "February–March is the strongest bloom/Rose Festival window; in May–June go early or skip the midday heat."
+              },
+              {
+                "name": "Sector 17 pedestrian plaza",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Evenings are liveliest for shopping, fountains and old-school cafés; it is an easy dinner stop after the museum and gardens."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget Sector 22/Sector 35 stay",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Mid-range central Chandigarh hotel",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Stuffed kulcha with chole",
+              "Rajma-chawal or dal makhani",
+              "Aloo tikki chaat without curd for vegan travellers"
+            ]
+          },
+          {
+            "theme": "Slow city design buffer",
+            "pace": "relaxed",
+            "note": "Use this optional day if summer heat forced long breaks, if the Capitol tour moved to another slot, or if you want a slower museum-and-café pass without padding the core itinerary.",
+            "activities": [
+              {
+                "name": "International Dolls Museum",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Useful for families; verify current timings and ticket at the counter."
+              },
+              {
+                "name": "Leisure Valley and Shanti Kunj walk",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Best before 9am or after 5pm outside winter."
+              },
+              {
+                "name": "Sector 35 café and sweets crawl",
+                "duration": "2–3h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Good for vegetarian Punjabi food; vegans should clearly ask for no ghee, butter, curd, milk or paneer."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget central guesthouse",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Comfort hotel near Sector 17/Sector 35",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Amritsari kulcha",
+              "Vegetarian thali",
+              "Plain roti with chole for dairy-free travellers"
+            ]
+          }
+        ]
+      },
+      "Chandigarh & around": {
+        "name": "Chandigarh & around",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "One day is enough for a family-friendly outer loop. ChhatBir and Pinjore sit in opposite directions from central Chandigarh, so start early, use a private cab, and drop one stop if travelling with small children or in peak summer.",
+        "experiences": [
+          "Wildlife & Safari",
+          "Road Trips",
+          "History",
+          "Architecture",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "Wildlife & Safari",
+          "Road Trips"
+        ],
+        "days": [
+          {
+            "theme": "ChhatBir Zoo and Pinjore Gardens day trip",
+            "pace": "packed",
+            "note": "This is a practical taxi day rather than a sector-grid day: ChhatBir Zoo is southeast near Zirakpur and Pinjore Gardens are north near Kalka. Keep lunch flexible and check Monday/holiday closures before leaving.",
+            "activities": [
+              {
+                "name": "ChhatBir Zoo / Mahendra Chaudhary Zoological Park",
+                "duration": "3–4h",
+                "priority": "must-see",
+                "cost": "₹100/adult, ₹50/child; safari/e-vehicle extra",
+                "tip": "Official ticketing is online; the zoo closes Mondays and major national holidays. Verify add-on safari/e-cart prices while booking."
+              },
+              {
+                "name": "Zirakpur or Panchkula lunch break",
+                "duration": "1h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Choose a simple Punjabi vegetarian restaurant; vegans should ask for oil-only cooking and no dairy."
+              },
+              {
+                "name": "Pinjore / Yadavindra Gardens",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "₹25–₹125; verify locally",
+                "tip": "Recent public 2026 guides list low adult/child fees, but verify at the Haryana Tourism counter because event and foreigner pricing can differ."
+              },
+              {
+                "name": "Return to Chandigarh via Panchkula",
+                "duration": "45–75m",
+                "priority": "recommended",
+                "cost": "Taxi day-hire ₹2,500–₹4,500/vehicle",
+                "tip": "Avoid late-evening hill-road extensions unless continuing toward Himachal."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget Chandigarh/Zirakpur hotel",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Mid-range Panchkula/Chandigarh hotel",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Chole kulcha",
+              "Paneer paratha with curd if you take dairy",
+              "Plain dal-rice and roti for vegan travellers"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Chandigarh",
+        "to": "Chandigarh & around",
+        "method": "App cab or private taxi day-hire via Zirakpur/Panchkula depending on the chosen outer loop",
+        "cost": "₹2,500–₹4,500/vehicle day-hire; app-cab point-to-point varies",
+        "distanceKm": 55,
+        "durationHrs": 2.5,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "Capitol Complex is the one non-negotiable timing constraint: book or confirm the official guided tour, carry original government photo ID, arrive early and expect security restrictions on bags and access.",
+      "Chandigarh is compact and grid-planned; cluster by sector instead of zig-zagging across town. Sector 1 pairs Capitol Complex, Rock Garden and Sukhna Lake; Sectors 10/16/17 pair museums, Rose Garden and the plaza.",
+      "Avoid May–June midday sightseeing because temperatures can approach 40°C; schedule outdoor gardens and lake walks for early morning or sunset.",
+      "July–August monsoon showers are usually not mountain-road dangerous inside the city, but they can disrupt lake/garden walks and make the Pinjore/Morni side trip less pleasant.",
+      "Chandigarh works as a gateway to Punjab, Haryana and Himachal Pradesh: keep onward hill transfers in daylight and avoid assuming a same-day relaxed hill arrival after a full city sightseeing day."
+    ]
+  }
+}
