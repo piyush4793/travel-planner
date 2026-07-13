@@ -81,9 +81,10 @@ export default defineConfig({
           functions: 60,
         },
         "src/components/**": {
-          statements: 4,
-          branches: 2,
-          functions: 4,
+          statements: 80,
+          branches: 80,
+          functions: 75,
+          lines: 80,
         },
       },
     },
