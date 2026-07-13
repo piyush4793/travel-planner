@@ -262,4 +262,42 @@ describe("wikiImages — P0", () => {
     expect(second).toBe("https://images.example/recovered-empty.jpg");
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
+
+  it("bounds the cache so a long session cannot grow it without limit (evicts oldest)", async () => {
+    const fetchMock = globalThis.fetch as unknown as ReturnType<typeof vi.fn>;
+    // Every distinct query resolves to a valid photo, so each populates the cache.
+    fetchMock.mockResolvedValue(
+      mockJsonResponse({
+        query: {
+          pages: {
+            "1": {
+              imageinfo: [
+                {
+                  mime: "image/jpeg",
+                  width: 1200,
+                  thumbwidth: 1024,
+                  thumburl: "https://images.example/photo.jpg",
+                  url: "https://images.example/photo.jpg",
+                },
+              ],
+            },
+          },
+        },
+      }),
+    );
+
+    const { getWikiImage } = await importWikiImages();
+
+    // Fill past the 200-entry cap with 201 distinct queries.
+    for (let i = 0; i <= 200; i++) await getWikiImage(`query-${i}`);
+    expect(fetchMock).toHaveBeenCalledTimes(201);
+
+    // The most recent query stays cached (no extra fetch).
+    await getWikiImage("query-200");
+    expect(fetchMock).toHaveBeenCalledTimes(201);
+
+    // The oldest query was evicted, so it must re-fetch.
+    await getWikiImage("query-0");
+    expect(fetchMock).toHaveBeenCalledTimes(202);
+  });
 });

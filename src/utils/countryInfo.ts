@@ -4,6 +4,8 @@
  * Results are cached in-memory for the session.
  */
 
+import { setBounded } from "./boundedCache";
+
 export type CountryInfo = {
   summary: string;
   capital?: string;
@@ -40,7 +42,7 @@ export async function fetchCountryInfo(countryName: string): Promise<CountryInfo
       `https://en.wikipedia.org/api/rest_v1/page/summary/${encoded}`,
       { headers: { "Api-User-Agent": "Roamwise/1.0" } }
     );
-    if (!res.ok) { cache.set(key, null); return null; }
+    if (!res.ok) { setBounded(cache, key, null, MAX_CACHE_SIZE); return null; }
 
     const data = await res.json();
     const summary = data.extract ?? "";
@@ -56,15 +58,10 @@ export async function fetchCountryInfo(countryName: string): Promise<CountryInfo
       thumbnail: data.thumbnail?.source,
     };
 
-    cache.set(key, info);
-    // Evict oldest entries if cache exceeds cap
-    if (cache.size > MAX_CACHE_SIZE) {
-      const first = cache.keys().next().value;
-      if (first !== undefined) cache.delete(first);
-    }
+    setBounded(cache, key, info, MAX_CACHE_SIZE);
     return info;
   } catch {
-    cache.set(key, null);
+    setBounded(cache, key, null, MAX_CACHE_SIZE);
     return null;
   }
 }
