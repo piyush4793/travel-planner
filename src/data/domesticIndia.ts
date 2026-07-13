@@ -10,8 +10,9 @@ import {
  * store (each "unit" is a state whose `cities` are the plannable stops), so it
  * reuses the shared {@link createConsolidatedLoader} and flows through the exact
  * same itinerary engine. The extra practical fields the domestic JSON carries
- * (pricesAsOf, diet, per-day pace, per-activity priority) are a structural
- * superset the engine simply ignores until surfaced.
+ * (pricesAsOf, per-day pace, per-activity priority) are a structural superset the
+ * engine ignores; `diet` (veg/vegan) is enriched onto `Country` and surfaced in
+ * the Plan Insights rail + PDF, so it needs no engine involvement.
  */
 const DIR = "../../data/domestic/india/rules/";
 const ruleModules = import.meta.glob<ConsolidatedCountry>(

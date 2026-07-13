@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import MyTripsView from "@/components/views/MyTripsView.tsx";
+import { getCountryFlag } from "@/utils/countryFlags.ts";
 import type { SavedTrip } from "@/core/utils/savedTrips.ts";
 
 function trip(over: Partial<SavedTrip> = {}): SavedTrip {
@@ -62,6 +63,50 @@ describe("MyTripsView", () => {
     );
     expect(screen.getByText(/🌍 International/)).toBeInTheDocument();
     expect(screen.getByText(/🏠 India/)).toBeInTheDocument();
+  });
+
+  it("renders the home flag only once for a multi-stop domestic trip", () => {
+    const { container } = render(
+      <MyTripsView
+        homeCountry="India"
+        savedTrips={[
+          trip({
+            id: "dom",
+            name: "Rajasthan → Uttar Pradesh → Delhi",
+            scope: "domestic",
+            stops: [
+              { country: "Rajasthan", days: 3, cities: ["Jaipur"] },
+              { country: "Uttar Pradesh", days: 3, cities: ["Agra"] },
+              { country: "Delhi", days: 2, cities: ["New Delhi"] },
+            ],
+          }),
+        ]}
+        onToggleFavorite={vi.fn()}
+        onRemove={vi.fn()}
+        onOpen={vi.fn()}
+        onGoPlan={vi.fn()}
+      />,
+    );
+    const indiaFlag = getCountryFlag("India");
+    const occurrences = (container.textContent ?? "").split(indiaFlag).length - 1;
+    // Exactly one in the flag row; the "🏠 India" badge uses a house emoji, not the flag.
+    expect(occurrences).toBe(1);
+  });
+
+  it("renders a distinct flag per country for an international route", () => {
+    const { container } = render(
+      <MyTripsView
+        homeCountry="India"
+        savedTrips={[trip()]}
+        onToggleFavorite={vi.fn()}
+        onRemove={vi.fn()}
+        onOpen={vi.fn()}
+        onGoPlan={vi.fn()}
+      />,
+    );
+    const text = container.textContent ?? "";
+    expect(text.includes(getCountryFlag("Japan"))).toBe(true);
+    expect(text.includes(getCountryFlag("Thailand"))).toBe(true);
   });
 
   it("toggles favorite through the callback", () => {

@@ -1,6 +1,7 @@
 import { memo, type ReactNode } from "react";
 import type { Country } from "@/core/types";
 import type { BudgetBasis } from "@/core/utils/budget";
+import type { TripScope } from "@/core/trip/destinationSource";
 import { getCountryFlag } from "@/utils/countryFlags";
 import { useBreakpoint } from "@/hooks/useBreakpoint";
 import Tooltip from "@/components/shared/Tooltip";
@@ -62,6 +63,10 @@ type Props = {
   routeStopLimit: number;
   /** Scope-aware flag resolver (domestic stops read the home-country flag). */
   flagFor?: (name: string) => string;
+  /** Trip scope — drives a subtle domestic/international marker on the identity row. */
+  scope?: TripScope;
+  /** Home country label — names the domestic marker (never hardcoded). */
+  homeCountry?: string;
   /** Save-trip control (slotted so the header stays layout-only). */
   saveSlot?: ReactNode;
   /** Share control (slotted, sits left of the save/favourite cluster on Review). */
@@ -94,6 +99,8 @@ function PlanTripHeaderInner({
   selection,
   routeStopLimit,
   flagFor = getCountryFlag,
+  scope,
+  homeCountry,
   saveSlot,
   shareSlot,
   steps,
@@ -113,12 +120,30 @@ function PlanTripHeaderInner({
   // on one line at 375px; desktop names up to `routeStopLimit` stops.
   const namedStops = compact ? 1 : routeStopLimit;
   const maxWidth = width === "review" ? "max-w-[1400px]" : width === "wide" ? "max-w-5xl" : "max-w-2xl";
+  // Subtle scope marker (leading icon, not a pill) so every step reads as
+  // domestic vs international at a glance. Domestic is named after the home
+  // country (never hardcoded); international is a globe.
+  const scopeMarker = scope
+    ? scope === "domestic"
+      ? { icon: "🏠", label: homeCountry ? `Domestic trip in ${homeCountry}` : "Domestic trip" }
+      : { icon: "🌍", label: "International trip" }
+    : null;
 
   return (
     <div className={`mx-auto w-full shrink-0 px-4 pt-3 sm:pt-4 ${maxWidth}`}>
       <div className="flex items-center gap-3">
         <div className="min-w-0 flex-1">
           <div className="flex min-w-0 items-center gap-2">
+            {scopeMarker && (
+              <span
+                role="img"
+                aria-label={scopeMarker.label}
+                title={scopeMarker.label}
+                className="shrink-0 text-base leading-none sm:text-lg"
+              >
+                {scopeMarker.icon}
+              </span>
+            )}
             {identitySlot ? (
               identitySlot
             ) : isMulti ? (

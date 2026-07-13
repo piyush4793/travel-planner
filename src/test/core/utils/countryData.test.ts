@@ -42,6 +42,23 @@ describe("consolidatedToCountry", () => {
     expect(c.popularityScore).toBe(42);
   });
 
+  it("carries an authored diet block through to the Country", () => {
+    const withDiet: ConsolidatedCountry = {
+      ...CONSOLIDATED,
+      diet: { vegetarian: "Rice & curry veg options", vegan: "Coconut sambol is vegan", phrases: ["No katta"] },
+    };
+    const c = consolidatedToCountry(withDiet);
+    expect(c.diet).toEqual({
+      vegetarian: "Rice & curry veg options",
+      vegan: "Coconut sambol is vegan",
+      phrases: ["No katta"],
+    });
+  });
+
+  it("leaves diet undefined when the rule omits it", () => {
+    expect(consolidatedToCountry(CONSOLIDATED).diet).toBeUndefined();
+  });
+
   it("derives per-city experiences from notes and itinerary content", () => {
     const withRule: ConsolidatedCountry = {
       ...CONSOLIDATED,
@@ -116,6 +133,18 @@ describe("mergeCountryData", () => {
     expect(merged.bestMonths).toEqual(["January", "February"]);
     expect(merged.combo).toEqual(["India", "Maldives"]);
     expect(merged.cities).toHaveLength(1);
+  });
+
+  it("hydrates a diet block from rule data and lets the base win", () => {
+    const withDiet: ConsolidatedCountry = {
+      ...CONSOLIDATED,
+      diet: { vegetarian: "Veg from rule", vegan: "Vegan from rule", phrases: [] },
+    };
+    // stub has no diet → filled from rule
+    expect(mergeCountryData(MINIMAL_STUB, withDiet).diet?.vegetarian).toBe("Veg from rule");
+    // base diet always wins
+    const edited: Country = { ...MINIMAL_STUB, diet: { vegetarian: "Mine", vegan: "Mine", phrases: [] } };
+    expect(mergeCountryData(edited, withDiet).diet?.vegetarian).toBe("Mine");
   });
 
   it("never overwrites user-authored values", () => {

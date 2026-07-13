@@ -52,6 +52,7 @@ export function consolidatedToCountry(
     cities: withCityExperiences(data.cities, data.experiences ?? [], data.itinerary),
     stopoverNote: data.stopoverNote ?? undefined,
     links: data.links,
+    diet: data.diet,
   };
 }
 
@@ -107,5 +108,6 @@ export function mergeCountryData(base: Country, data: ConsolidatedCountry | null
     cities: hasItems(base.cities) ? mergeCities(base.cities, rich.cities) : rich.cities,
     stopoverNote: base.stopoverNote ?? rich.stopoverNote,
     links: hasItems(base.links) ? base.links : rich.links,
+    diet: base.diet ?? rich.diet,
   };
 }

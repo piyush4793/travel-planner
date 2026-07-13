@@ -255,4 +255,45 @@ describe("buildItineraryHtml — shared Export/Share template", () => {
     expect(html).toContain("Sweden");
     expect(html).toContain("Denmark");
   });
+
+  it("renders a Food & diet card for a single destination that carries diet data", async () => {
+    const { buildItineraryHtml } = await import("@/utils/pdfExport.ts");
+    const withDiet: Country = {
+      ...country,
+      diet: { vegetarian: "Veg thalis everywhere", vegan: "Ask for no ghee", phrases: ["Bina dahi"] },
+    };
+    const plan: TripPlan = {
+      duration: "1 day",
+      costPerPerson: "₹1L",
+      note: "note",
+      days: [{ label: "Day 1 — Jaipur", activities: ["Amber Fort"] }],
+    };
+    const html = buildItineraryHtml(plan, withDiet, "India");
+    expect(html).toContain("Food &amp; diet");
+    expect(html).toContain("Veg thalis everywhere");
+    expect(html).toContain("Ask for no ghee");
+    expect(html).toContain("Bina dahi");
+  });
+
+  it("renders per-stop Food & diet cards for a multi-stop route", async () => {
+    const { buildItineraryHtml } = await import("@/utils/pdfExport.ts");
+    const plan: TripPlan = {
+      duration: "2 days",
+      costPerPerson: "₹1.5L",
+      note: "note",
+      days: [
+        { label: "Day 1 — Jaipur", activities: ["Amber Fort"] },
+        { label: "Day 2 — Kochi", activities: ["Fort Kochi"] },
+      ],
+    };
+    const stops = [
+      { name: "Rajasthan", dayCount: 1, diet: { vegetarian: "Pure veg state", vegan: "No ghee", phrases: [] } },
+      { name: "Kerala", dayCount: 1, diet: { vegetarian: "Sadya veg feast", vegan: "Coconut oil", phrases: [] } },
+    ];
+    const html = buildItineraryHtml(plan, country, "India", stops);
+    expect(html).toContain("Food &amp; diet · Rajasthan");
+    expect(html).toContain("Food &amp; diet · Kerala");
+    expect(html).toContain("Pure veg state");
+    expect(html).toContain("Sadya veg feast");
+  });
 });

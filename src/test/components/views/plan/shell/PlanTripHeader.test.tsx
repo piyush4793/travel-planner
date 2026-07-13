@@ -101,6 +101,21 @@ describe("PlanTripHeader", () => {
     expect(screen.getByRole("button", { name: "Switch country" })).toBeInTheDocument();
     expect(screen.queryByRole("heading", { level: 1 })).not.toBeInTheDocument();
   });
+
+  it("shows a subtle domestic scope marker named after the home country", () => {
+    renderHeader({ selection: [c("Rajasthan")], scope: "domestic", homeCountry: "India" });
+    expect(screen.getByRole("img", { name: "Domestic trip in India" })).toBeInTheDocument();
+  });
+
+  it("shows an international scope marker for international trips", () => {
+    renderHeader({ selection: [c("Japan")], scope: "international", homeCountry: "India" });
+    expect(screen.getByRole("img", { name: "International trip" })).toBeInTheDocument();
+  });
+
+  it("omits the scope marker when no scope is supplied", () => {
+    renderHeader({ selection: [c("Japan")] });
+    expect(screen.queryByRole("img", { name: /trip/ })).not.toBeInTheDocument();
+  });
 });
 
 describe("buildHeaderStats", () => {

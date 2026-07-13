@@ -1,4 +1,5 @@
 import type { CountryRule } from "../core/data/itineraryRules";
+import type { DietNotes } from "../core/types";
 
 /**
  * Consolidated destination data — the per-unit detail chunk shared by the
@@ -24,6 +25,8 @@ export type ConsolidatedCountry = {
   links: { label: string; url: string }[];
   cities: { name: string; lat: number; lng: number; bestMonths?: string[]; worstMonths?: string[]; notes?: string; experiences?: string[] }[];
   itinerary: CountryRule | null;
+  /** Optional dietary guidance (veg/vegan). Present on domestic India rules. */
+  diet?: DietNotes;
 };
 
 /** A lazy `import.meta.glob` map of consolidated JSON chunks, keyed by module path. */

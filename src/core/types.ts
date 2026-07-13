@@ -58,6 +58,18 @@ export type BudgetBreakdown = {
   family4: string;
 };
 
+/**
+ * Dietary guidance for a destination — vegetarian/vegan availability plus a few
+ * local ordering phrases. Scope-agnostic: authored on rule data (domestic India
+ * today) and surfaced wherever present, so it lights up for any future scope
+ * that carries it without a rendering change.
+ */
+export type DietNotes = {
+  vegetarian: string;
+  vegan: string;
+  phrases: string[];
+};
+
 export type Country = {
   name: string;
   lat: number;
@@ -76,6 +88,7 @@ export type Country = {
   stopoverNote?: string;
   links?: { label: string; url: string }[];
   notes?: string;
+  diet?: DietNotes;
 };
 
 /** Get display string from budget (handles both string and breakdown) */

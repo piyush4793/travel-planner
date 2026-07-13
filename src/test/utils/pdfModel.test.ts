@@ -111,4 +111,27 @@ describe("buildPdfModel", () => {
     expect(m.sections[1].days).toHaveLength(0);
     expect(m.sections[1].dayStart).toBe(6);
   });
+
+  it("carries the country's diet block into the single-stop section", () => {
+    const withDiet: Country = {
+      ...COUNTRY,
+      diet: { vegetarian: "Very veg-friendly", vegan: "Ask no ghee", phrases: ["Bina ghee"] },
+    };
+    const m = buildPdfModel(PLAN, withDiet, "India");
+    expect(m.sections[0].diet).toEqual({
+      vegetarian: "Very veg-friendly",
+      vegan: "Ask no ghee",
+      phrases: ["Bina ghee"],
+    });
+  });
+
+  it("threads each stop's own diet block into its section", () => {
+    const stops: PdfRouteStop[] = [
+      { name: "Goa", dayCount: 3, diet: { vegetarian: "Seafood-heavy but veg thalis exist", vegan: "Coconut-based", phrases: [] } },
+      { name: "Rajasthan", dayCount: 2, diet: { vegetarian: "Almost all veg", vegan: "No ghee", phrases: ["Bina dahi"] } },
+    ];
+    const m = buildPdfModel(PLAN, COUNTRY, "India", stops);
+    expect(m.sections[0].diet?.vegetarian).toBe("Seafood-heavy but veg thalis exist");
+    expect(m.sections[1].diet?.phrases).toEqual(["Bina dahi"]);
+  });
 });

@@ -64,6 +64,15 @@ const SavedTripCard = memo(function SavedTripCard({
   const multi = trip.stops.length > 1;
   const scope = tripScopeOf(trip);
   const domestic = scope === "domestic";
+  // Domestic stops are states within the home country, so every stop resolves to
+  // the same home flag — rendering one per stop looks like a bug. Dedupe by flag
+  // so domestic shows a single home flag while international keeps one flag per
+  // distinct country (in visit order).
+  const flags = trip.stops.reduce<{ key: string; flag: string }[]>((acc, s) => {
+    const flag = unitFlag(s.country, scope, homeCountry);
+    if (!acc.some((f) => f.flag === flag)) acc.push({ key: s.country, flag });
+    return acc;
+  }, []);
   return (
     <article className="group relative flex flex-col gap-3 rounded-2xl border border-emerald-900/10 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5">
       {/* Stretched primary action — opens the trip in the Plan wizard. Secondary
@@ -77,8 +86,8 @@ const SavedTripCard = memo(function SavedTripCard({
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <div className="flex items-center gap-1.5 text-lg" aria-hidden="true">
-            {trip.stops.map((s) => (
-              <span key={s.country}>{unitFlag(s.country, scope, homeCountry)}</span>
+            {flags.map((f) => (
+              <span key={f.key}>{f.flag}</span>
             ))}
           </div>
           <h3 className="mt-1 truncate text-sm font-semibold text-emerald-950 group-hover:text-emerald-700 sm:text-base" title={trip.name}>

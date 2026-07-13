@@ -168,6 +168,7 @@ export function useReviewRoute({
         cost: s.plan.costPerPerson,
         bestMonths: s.country?.bestMonths,
         note: s.plan.note,
+        diet: s.country?.diet,
       })),
     [orderedSegments],
   );

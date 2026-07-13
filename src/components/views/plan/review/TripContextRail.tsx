@@ -1,6 +1,7 @@
 import { memo, useEffect, useRef } from "react";
 import { useBreakpoint } from "@/hooks/useBreakpoint";
 import type { Country } from "@/core/types";
+import type { DietNotes } from "@/core/types";
 import type { TripScope } from "@/core/trip/destinationSource";
 import type { TripPlan } from "@/core/utils/tripPlans";
 import { planCostBasisIcon, planCostBasisLabel } from "@/core/utils/tripPlans";
@@ -62,6 +63,48 @@ function CountryBeforeYouGo({ country, homeCountry, showHeading, flagFor }: { co
 }
 
 /**
+ * Per-stop dietary guidance (veg / vegan availability + a few local ordering
+ * phrases). Renders only when a destination carries a `diet` block (domestic
+ * India today; scope-agnostic, so it lights up for any future scope that adds
+ * it). Plain labelled text — no pills — matching the watch-outs section.
+ */
+function DietNotesCard({ name, diet, showHeading, flagFor }: { name: string; diet: DietNotes; showHeading: boolean; flagFor: (name: string) => string }) {
+  return (
+    <div className="space-y-1.5">
+      {showHeading && (
+        <p className="flex items-center gap-1.5 text-[11px] font-bold text-ink-1">
+          <span aria-hidden="true">{flagFor(name)}</span>
+          {name}
+        </p>
+      )}
+      <div className="rounded-xl border border-emerald-100 bg-emerald-50/70 px-3 py-2 space-y-2">
+        <div>
+          <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700">🥗 Vegetarian</p>
+          <p className="text-[11px] leading-relaxed text-emerald-900">{diet.vegetarian}</p>
+        </div>
+        <div>
+          <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700">🌱 Vegan</p>
+          <p className="text-[11px] leading-relaxed text-emerald-900">{diet.vegan}</p>
+        </div>
+        {diet.phrases.length > 0 && (
+          <div>
+            <p className="mb-1 text-[10px] font-bold uppercase tracking-wide text-ink-4">Handy phrases</p>
+            <ul className="space-y-1">
+              {diet.phrases.map((p) => (
+                <li key={p} className="flex gap-1.5 text-[11px] leading-snug text-ink-body">
+                  <span className="mt-0.5 shrink-0 text-emerald-600" aria-hidden="true">•</span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/**
  * The unified "Insights" rail — trip-level reference the traveller reads
  * (never a lever), shared by single- and multi-country Review. Molds to its data:
  * trip readiness (honest visa/border fallback), an honest per-country budget
@@ -84,6 +127,7 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, homeCou
   const readiness = tripReadiness(countries, scope);
   const seasonCountries = countries.filter((c) => (c.bestMonths?.length ?? 0) > 0 || (c.worstMonths?.length ?? 0) > 0);
   const tipCountries = countries.filter((c) => !!c.stopoverNote || (c.avoid?.length ?? 0) > 0 || (c.combo?.length ?? 0) > 0);
+  const dietCountries = countries.filter((c) => !!c.diet);
   const multi = countries.length > 1;
 
   return (
@@ -202,6 +246,16 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, homeCou
                   </div>
                 )}
               </div>
+            ))}
+          </div>
+        </RailSection>
+      )}
+
+      {dietCountries.length > 0 && (
+        <RailSection title="Food & diet" hint="veg & vegan" variant={v} count={dietCountries.length}>
+          <div className="space-y-3">
+            {dietCountries.map((c) => (
+              <DietNotesCard key={c.name} name={c.name} diet={c.diet!} showHeading={multi} flagFor={flagFor} />
             ))}
           </div>
         </RailSection>

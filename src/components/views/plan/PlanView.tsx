@@ -452,6 +452,8 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
         selection={selection}
         routeStopLimit={HEADER_ROUTE_STOPS}
         flagFor={flagFor}
+        scope={scope}
+        homeCountry={homeCountry}
         saveSlot={
           isReview ? (
             <TripSaveBar

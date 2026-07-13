@@ -78,6 +78,28 @@ describe("TripContextRail", () => {
     expect(screen.getByText("Peak summer crowds")).toBeInTheDocument();
   });
 
+  it("renders a Food & diet section only for countries that carry a diet block", () => {
+    renderRail();
+    expect(screen.queryByText("Food & diet")).not.toBeInTheDocument();
+
+    const withDiet: Country[] = [
+      {
+        name: "Rajasthan",
+        lat: 0,
+        lng: 0,
+        budget: "",
+        experiences: [],
+        bestMonths: [],
+        diet: { vegetarian: "Almost all pure veg", vegan: "Ask bina ghee", phrases: ["Bina dahi = without curd"] },
+      },
+    ];
+    renderRail({ countries: withDiet, perCountryCost: [{ name: "Rajasthan", nights: 4, cost: "₹1L" }] });
+    expect(screen.getByText("Food & diet")).toBeInTheDocument();
+    expect(screen.getByText("Almost all pure veg")).toBeInTheDocument();
+    expect(screen.getByText("Ask bina ghee")).toBeInTheDocument();
+    expect(screen.getByText("Bina dahi = without curd")).toBeInTheDocument();
+  });
+
   it("renders a notes scratchpad only when a save handler is supplied", () => {
     const { rerender } = renderRail();
     expect(screen.queryByRole("heading", { name: "Notes" })).not.toBeInTheDocument();

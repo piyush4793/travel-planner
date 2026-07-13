@@ -1,6 +1,6 @@
 import type { TripPlan, DayEntry } from "../core/utils/tripPlans";
 import { extractPlanCities } from "../core/utils/tripPlans";
-import type { Country } from "../core/types";
+import type { Country, DietNotes } from "../core/types";
 
 /**
  * One stop in a (possibly multi-country) itinerary, as the PDF surfaces need it.
@@ -17,6 +17,8 @@ export type PdfRouteStop = {
   bestMonths?: string[];
   /** This stop's own free-form practical note (SIM/apps/connections/tips). */
   note?: string;
+  /** Optional dietary guidance (veg/vegan) for this stop, when authored. */
+  diet?: DietNotes;
 };
 
 /** A contiguous, per-stop slice of the itinerary with its day range. */
@@ -30,6 +32,8 @@ export type PdfSection = {
   bestMonths?: string[];
   /** This stop's own practical note, rendered per-section for multi routes. */
   note?: string;
+  /** This stop's dietary guidance, rendered per-section when authored. */
+  diet?: DietNotes;
 };
 
 /** Normalised, render-ready view of an itinerary for both PDF paths. */
@@ -70,7 +74,7 @@ export function buildPdfModel(
   const norm: PdfRouteStop[] =
     stops && stops.length > 0
       ? stops
-      : [{ name: country.name, dayCount: total, cost: plan.costPerPerson, bestMonths: country.bestMonths }];
+      : [{ name: country.name, dayCount: total, cost: plan.costPerPerson, bestMonths: country.bestMonths, diet: country.diet }];
 
   const multi = norm.length > 1;
 
@@ -86,6 +90,7 @@ export function buildPdfModel(
       cost: stop.cost,
       bestMonths: stop.bestMonths,
       note: stop.note,
+      diet: stop.diet,
     });
     offset += count;
   }
