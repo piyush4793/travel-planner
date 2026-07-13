@@ -9,6 +9,7 @@ const MyTripsView = lazy(() => import("./components/views/MyTripsView"));
 const PlanView = lazy(() => import("./components/views/plan/PlanView"));
 import { clearPlanDraft } from "./components/views/plan/shell/planDraft";
 import type { LLMTripPlanResult } from "./core/utils/ai/llmTransform";
+import { buildRoutePlanPrompt, type AiPlanRequest } from "./core/utils/ai/llmPrompts";
 import { useBudgetBasis } from "./hooks/useBudgetBasis";
 import { usePullToRefresh } from "./hooks/usePullToRefresh";
 import { loadLS, saveLS } from "./core/storage";
@@ -53,6 +54,9 @@ export default function App() {
   const [chatInitialPrompt, setChatInitialPrompt] = useState<string | undefined>();
   const [chatAutoSend, setChatAutoSend] = useState(true);
   const [aiPlanResult, setAiPlanResult] = useState<LLMTripPlanResult | null>(null);
+  // The composed route last handed to the AI planner, so its result can be
+  // route-keyed (stamp signature) and all stops recorded on save-to-list.
+  const pendingAiRoute = useRef<AiPlanRequest | null>(null);
   const [cinematicActive, setCinematicActive] = useState(false);
   const mainMapRef = useRef<maplibregl.Map | null>(null);
   const [backupBannerDismissed, setBackupBannerDismissed] = useState(false);
@@ -171,23 +175,19 @@ export default function App() {
   const filtered = store.myListCountries;
 
   const handleAiPlanReady = useCallback((result: LLMTripPlanResult) => {
-    setAiPlanResult(result);
+    // Route-key the plan: stamp the composed route signature over the model's
+    // free-text destinationName so save/replace/count key by the whole route
+    // (N=1 signature == the single name, so single-country is byte-identical).
+    const route = pendingAiRoute.current;
+    setAiPlanResult(route ? { ...result, destinationName: route.signature } : result);
   }, []);
 
-  const handlePlanWithAi = useCallback((countryName: string) => {
-    const c = store.myListCountries.find((x) => x.name === countryName);
-    const parts = [`Plan a trip to ${countryName}`];
-    if (c) {
-      if (c.budget) parts.push(`Budget: ${c.budget}`);
-      if (c.bestMonths?.length) parts.push(`Best months: ${c.bestMonths.join(", ")}`);
-      if (c.cities?.length) parts.push(`Cities to consider: ${c.cities.map((x) => x.name).join(", ")}`);
-      if (c.experiences?.length) parts.push(`Experiences: ${c.experiences.slice(0, 5).join(", ")}`);
-      if (c.combo?.length) parts.push(`Can combine with: ${c.combo.join(", ")}`);
-    }
-    setChatInitialPrompt(parts.join(". "));
+  const handlePlanWithAi = useCallback((request: AiPlanRequest) => {
+    pendingAiRoute.current = request;
+    setChatInitialPrompt(buildRoutePlanPrompt(request));
     setChatAutoSend(false);
     setChatOpen(true);
-  }, [store.myListCountries]);
+  }, []);
 
   const aiPlanCountFor = useCallback(
     (name: string) => aiPlanStore.getPlans(name).length,
@@ -195,8 +195,16 @@ export default function App() {
   );
 
   const handleSaveAiToList = useCallback((destinationName: string): "saved" | "exists" => {
-    if (store.recentsSet.has(destinationName)) return "exists";
-    store.recordPlanned([destinationName]);
+    // Record every ordered stop of the composed route when this result came from
+    // the route planner (its stamped name matches the pending route signature);
+    // an imported plan for another destination records just its own name.
+    const route = pendingAiRoute.current;
+    const names = route && route.signature === destinationName
+      ? route.stops.map((s) => s.name)
+      : [destinationName];
+    const fresh = names.filter((n) => !store.recentsSet.has(n));
+    if (fresh.length === 0) return "exists";
+    store.recordPlanned(names);
     return "saved";
   }, [store]);
 

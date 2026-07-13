@@ -108,6 +108,7 @@ vi.mock("@/components/ai/ChatModal.tsx", () => ({
   default: (props: Record<string, unknown>) => {
     const onClose = props.onClose as (() => void) | undefined;
     const onSaveImportedPlan = props.onSaveImportedPlan as ((r: unknown) => void) | undefined;
+    const onPlanReady = props.onPlanReady as ((r: unknown) => void) | undefined;
     return (
       <div data-testid="chat-modal">
         <div data-testid="chat-initial">{(props.initialPrompt as string) ?? ""}</div>
@@ -116,6 +117,11 @@ vi.mock("@/components/ai/ChatModal.tsx", () => ({
           data-testid="chat-import"
           onClick={() => onSaveImportedPlan?.({ destinationName: "Chile", cities: [], plan: { duration: "", costPerPerson: "", days: [], note: "" } })}
         >Import</button>
+        <button
+          type="button"
+          data-testid="chat-plan-ready"
+          onClick={() => onPlanReady?.({ destinationName: "Japan", cities: [], plan: { duration: "", costPerPerson: "", days: [], note: "" } })}
+        >Ready</button>
         <button type="button" data-testid="chat-close" onClick={() => onClose?.()}>Close</button>
       </div>
     );
@@ -342,19 +348,56 @@ describe("App handler wiring", () => {
     await screen.findByTestId("plan-view");
 
     act(() => {
-      (lastPlanViewProps?.onPlanWithAi as (n: string) => void)(COUNTRY_NAMES.JAPAN);
+      (lastPlanViewProps?.onPlanWithAi as (r: { signature: string; stops: { name: string; days: number; cities: string[]; experiences: string[] }[]; totalDays: number; homeCountry: string }) => void)({
+        signature: COUNTRY_NAMES.JAPAN,
+        stops: [{ name: COUNTRY_NAMES.JAPAN, days: 7, cities: ["Tokyo"], experiences: [] }],
+        totalDays: 7,
+        homeCountry: "India",
+      });
     });
 
     const chat = await screen.findByTestId("chat-modal");
     expect(chat).toBeInTheDocument();
     expect(screen.getByTestId("chat-initial")).toHaveTextContent(/Plan a trip to Japan/);
 
-    // Import a plan for a destination not already in My List.
+    // Import a plan for a destination not already in My List — an imported plan
+    // keeps its own destinationName (Chile), unrelated to the pending route.
     await user.click(screen.getByTestId("chat-import"));
 
     expect(await screen.findByTestId("ai-dest")).toHaveTextContent("Chile");
     await user.click(screen.getByTestId("ai-save-to-list"));
     expect(recordPlannedMock).toHaveBeenCalledWith(["Chile"]);
+  });
+
+  it("route-keys a finalized AI plan by signature and records every ordered stop", async () => {
+    const user = userEvent.setup();
+    vi.mocked(isEnabled).mockImplementation((flag) => flag === "llmPlanning");
+    render(<App />);
+    await screen.findByTestId("plan-view");
+
+    act(() => {
+      (lastPlanViewProps?.onPlanWithAi as (r: { signature: string; stops: { name: string; days: number; cities: string[]; experiences: string[] }[]; totalDays: number; homeCountry: string }) => void)({
+        signature: "Japan → Thailand",
+        stops: [
+          { name: COUNTRY_NAMES.JAPAN, days: 7, cities: ["Tokyo"], experiences: [] },
+          { name: "Thailand", days: 7, cities: ["Bangkok"], experiences: [] },
+        ],
+        totalDays: 14,
+        homeCountry: "India",
+      });
+    });
+
+    // The prompt is the route-aware multi-stop brief, in visit order.
+    const initial = screen.getByTestId("chat-initial");
+    expect(initial).toHaveTextContent(/Japan → Thailand/);
+    expect(initial).toHaveTextContent(/Bangkok/);
+
+    // Finalize: the model returns destinationName "Japan"; App stamps the route
+    // signature so the plan keys by the whole route, and save records both stops.
+    await user.click(screen.getByTestId("chat-plan-ready"));
+    expect(await screen.findByTestId("ai-dest")).toHaveTextContent("Japan → Thailand");
+    await user.click(screen.getByTestId("ai-save-to-list"));
+    expect(recordPlannedMock).toHaveBeenCalledWith([COUNTRY_NAMES.JAPAN, "Thailand"]);
   });
 
   it("surfaces a cross-tab storage conflict banner and dismisses it", async () => {

@@ -44,7 +44,7 @@ src/
 │   ├── hooks/
 │   │   ├── useCountryStore.ts     # Country catalog, Recents/MRU, seed + lazy enrichment
 │   │   ├── useSavedTrips.ts       # Saved-trip snapshot store (My Trips)
-│   │   ├── useAiPlanStore.ts      # AI plan persistence (max 3 per destination)
+│   │   ├── useAiPlanStore.ts      # AI plan persistence (max 3 per route, keyed by route signature)
 │   │   └── usePersistedSet.ts     # Reusable Set<string> + storage persistence
 │   ├── data/
 │   │   ├── itineraryRules.ts      # Rule-backed itinerary types/data
@@ -399,7 +399,7 @@ All keys live in `src/core/lsKeys.ts` — never hardcode strings.
 | `tp_features` | Feature flag overrides |
 | `tp_llm_keys` | LLM API keys per provider |
 | `tp_llm_provider` | Active LLM provider |
-| `tp_ai_plans` | Saved AI plans (max 3 per destination) |
+| `tp_ai_plans` | Saved AI plans (max 3 per route, keyed by route signature) |
 | `tp_last_backup` | ISO timestamp of last backup |
 | `tp_backup_frequency` | Reminder cadence: daily / weekly / never |
 | `tp_backup_schedule` | Backup reminder schedule metadata |
@@ -454,10 +454,12 @@ PlanView / stopPlan.ts → generateTripPlan(country, cities, days, rule, basis, 
 
 ### AI plan flow
 ```
-PlanView "AI plan" → ChatModal (pre-filled prompt from active route)
-  → LLM conversation → "Finish & Generate" → extract JSON
-  → AiItineraryModal → save/replace
-  → useAiPlanStore persists generated plans
+PlanView "AI plan" (Review) → build AiPlanRequest from useReviewRoute (ordered route)
+  → App.handlePlanWithAi(request) → buildRoutePlanPrompt (scope-agnostic, N=1 = single brief)
+  → ChatModal (pre-filled, no auto-send) → LLM conversation → "Finish & Generate" → extract JSON
+  → App stamps destinationName = tripSignature(orderedNames) (route key; no migration)
+  → AiItineraryModal (one composed plan across the route) → save/replace
+  → useAiPlanStore persists generated plans, keyed by route signature
 ```
 
 ### Import flow

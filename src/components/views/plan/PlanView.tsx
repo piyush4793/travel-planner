@@ -2,7 +2,7 @@ import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } fro
 import type { RefObject } from "react";
 import type maplibregl from "maplibre-gl";
 import type { Country } from "../../../core/types";
-import { type BudgetBasis } from "../../../core/utils/budget";
+import { type BudgetBasis, BUDGET_BASIS_META } from "../../../core/utils/budget";
 import { cityExperienceOptions } from "../../../core/utils/cityExperiences";
 import { type TripSegment, extractPlanCities, planCostBasisIcon, planCostBasisLabel } from "../../../core/utils/tripPlans";
 import { usePlanBuilder } from "../../../hooks/usePlanBuilder";
@@ -33,6 +33,7 @@ import { useTripExperiences } from "../../../hooks/useTripExperiences";
 import { useTripRules } from "../../../hooks/useTripRules";
 import { useTripPlanner } from "../../../hooks/useTripPlanner";
 import type { CinematicRoute } from "../../country/cinematic/engine";
+import type { AiPlanRequest, AiPlanStop } from "../../../core/utils/ai/llmPrompts";
 
 const ItineraryCinematic = lazy(() => import("../../country/ItineraryCinematic"));
 
@@ -59,7 +60,7 @@ type Props = {
   isTripFavorite?: (routeName: string) => boolean;
   /** Toggle the saved trip's favourite by route signature (acts on the trip). */
   onToggleTripFavorite?: (routeName: string) => void;
-  onPlanWithAi?: (countryName: string) => void;
+  onPlanWithAi?: (request: AiPlanRequest) => void;
   /** Record destinations as "recently planned" (implicit My List) when they
    *  enter the funnel. Pre-bound in App to the country store. */
   onRecordPlanned?: (names: string[]) => void;
@@ -329,6 +330,30 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
   }, [selectionSig]);
   useEffect(() => () => onCinematicChange?.(false), [onCinematicChange]);
 
+  // The composed route handed to the AI planner — the SAME order-aware model the
+  // Route Canvas/Share/PDF read, so the AI plans exactly what's on screen. Built
+  // lazily on click; scope-agnostic via the active DestinationSource's unit nouns.
+  const buildAiRequest = useCallback((): AiPlanRequest => {
+    const stops: AiPlanStop[] = route.orderedSegments.map((s) => ({
+      name: s.name,
+      days: s.plan.days.length,
+      cities: extractPlanCities(s.plan.days),
+      experiences: s.selectedExperiences ?? [],
+      budget: s.plan.costPerPerson,
+      bestMonths: s.country?.bestMonths,
+    }));
+    return {
+      signature: route.signature,
+      stops,
+      totalDays: route.orderedComposed.days.length,
+      cost: route.orderedComposed.costPerPerson,
+      homeCountry,
+      travelersLabel: BUDGET_BASIS_META[budgetBasis].label,
+      unitNoun: source.unitNoun,
+      unitNounPlural: source.unitNounPlural,
+    };
+  }, [route.orderedSegments, route.signature, route.orderedComposed, homeCountry, budgetBasis, source]);
+
   // Device / browser Back closes an open cinematic overlay first. It opens only
   // after the wizard is on Review (where the step guard is already registered),
   // so it lands on top of the LIFO back-stack — Back dismisses the cinematic
@@ -431,7 +456,7 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
   // Country-bound feature actions shared by the header, right rail, and pane.
   const activeName = displayCountry?.name ?? picked.name;
   const planActions: PlanActions = {
-    aiPlanCount: aiPlanCountFor?.(activeName) ?? 0,
+    aiPlanCount: aiPlanCountFor?.(route.ready ? route.signature : activeName) ?? 0,
     notes: displayCountry?.notes ?? "",
     onSaveNotes: onUpdateNotes ? (notes: string) => onUpdateNotes(activeName, notes) : undefined,
   };
@@ -517,7 +542,7 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
                 homeCountry={homeCountry}
                 scope={scope}
                 flagFor={flagFor}
-                onPlanWithAi={onPlanWithAi ? () => onPlanWithAi(displayCountry.name) : undefined}
+                onPlanWithAi={onPlanWithAi ? () => onPlanWithAi(buildAiRequest()) : undefined}
                 notes={planActions.notes}
                 onSaveNotes={planActions.onSaveNotes}
                 nav={reviewNav}

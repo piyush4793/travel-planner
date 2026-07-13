@@ -117,6 +117,96 @@ export function buildFinalizationPrompt(): string {
   return `The user is satisfied with the plan. Now output the FINAL trip plan as a single valid JSON object. Follow the exact schema from your instructions. Output ONLY the JSON — no markdown code fences, no explanation, no extra text. Just the raw JSON object.`;
 }
 
+/** One ordered stop of a composed route handed to the AI planner. */
+export type AiPlanStop = {
+  name: string;
+  days: number;
+  cities: string[];
+  experiences: string[];
+  /** Per-person cost range for this stop, at the active basis. */
+  budget?: string;
+  bestMonths?: string[];
+};
+
+/**
+ * The order-aware composed route the AI planner should plan — scope-agnostic
+ * (no hardcoded "country"; the unit nouns come from the active DestinationSource,
+ * so a domestic route of states/cities reads correctly). Built from the same
+ * `useReviewRoute` model the Route Canvas, Share, PDF and Cinematic consume, so
+ * the AI plans exactly what's on screen. At N=1 the route is a single stop.
+ */
+export type AiPlanRequest = {
+  /** Ordered route identity (tripSignature) — also the AI-plan storage key. */
+  signature: string;
+  stops: AiPlanStop[];
+  totalDays: number;
+  /** Composed per-person cost range, at the active basis. */
+  cost?: string;
+  homeCountry: string;
+  /** Human basis label, e.g. "Couple" — omitted when unknown. */
+  travelersLabel?: string;
+  unitNoun?: string;
+  unitNounPlural?: string;
+};
+
+/**
+ * Build the initial AI planning prompt for a composed route. Pure and
+ * unit-testable. A single-stop route reads as a clean single-destination brief
+ * (and always contains "Plan a trip to <name>"); a multi-stop route lists every
+ * stop in visit order with per-stop cities/focus/budget and a border-crossing
+ * note so the model treats inter-unit travel as transport, not itinerary days.
+ */
+export function buildRoutePlanPrompt(req: AiPlanRequest): string {
+  const noun = req.unitNoun ?? "destination";
+  const nounPlural = req.unitNounPlural ?? "destinations";
+  const multi = req.stops.length > 1;
+  const route = req.stops.map((s) => s.name).join(" → ");
+
+  const stopLine = (s: AiPlanStop): string => {
+    const parts: string[] = [`~${s.days} day${s.days === 1 ? "" : "s"}`];
+    if (s.cities.length) parts.push(`cities: ${s.cities.join(", ")}`);
+    if (s.experiences.length) parts.push(`focus: ${s.experiences.join(", ")}`);
+    if (s.budget) parts.push(`budget: ${s.budget}`);
+    if (s.bestMonths?.length) parts.push(`best months: ${s.bestMonths.join(", ")}`);
+    return parts.join("; ");
+  };
+
+  const lines: string[] = [];
+  const head = req.stops[0]?.name ?? route;
+  lines.push(
+    multi
+      ? `Plan a multi-${noun} trip: ${req.homeCountry} → ${route}.`
+      : `Plan a trip to ${head}.`,
+  );
+
+  if (multi) {
+    lines.push("");
+    lines.push(`Visit these ${req.stops.length} ${nounPlural} in this order:`);
+    for (const s of req.stops) lines.push(`- ${s.name} — ${stopLine(s)}.`);
+    lines.push("");
+    lines.push(
+      `Include border-crossing transport (flight/train/bus) between each ${noun}; those travel legs are transport, not itinerary days.`,
+    );
+  } else {
+    const s = req.stops[0];
+    if (s) {
+      if (s.cities.length) lines.push(`Cities to visit: ${s.cities.join(", ")}.`);
+      if (s.experiences.length) lines.push(`Experiences: ${s.experiences.join(", ")}.`);
+      if (s.budget) lines.push(`Budget: ${s.budget}.`);
+      if (s.bestMonths?.length) lines.push(`Best months: ${s.bestMonths.join(", ")}.`);
+    }
+  }
+
+  const totals: string[] = [`Total: ~${req.totalDays} day${req.totalDays === 1 ? "" : "s"}`];
+  if (req.cost) totals.push(`estimated cost ${req.cost}`);
+  if (req.travelersLabel) totals.push(`travelers: ${req.travelersLabel}`);
+  totals.push(`starting from ${req.homeCountry}`);
+  lines.push("");
+  lines.push(`${totals.join(", ")}.`);
+
+  return lines.join("\n");
+}
+
 /**
  * Condense messages for token efficiency.
  * Strategy: keep system prompt + brief summary + last N messages.

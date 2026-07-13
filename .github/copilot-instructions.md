@@ -192,7 +192,7 @@ All state is hooks-based — no Redux, no context providers. `App.tsx` calls hoo
 |---|---|---|
 | `useCountryStore` | `src/hooks/useCountryStore.ts` | Country catalog, implicit Recents/MRU (`recordPlanned`), notes, reload, manifest enrichment |
 | `useSavedTrips` | `src/hooks/useSavedTrips.ts` | Saved-trip snapshot store (My Trips): upsert-by-route, favorite (by id), favorite-by-route-name (Plan wizard), remove, reload |
-| `useAiPlanStore` | `src/hooks/useAiPlanStore.ts` | Save/load/delete AI-generated plans (max 3 per destination) |
+| `useAiPlanStore` | `src/hooks/useAiPlanStore.ts` | Save/load/delete AI-generated plans (max 3 per route, keyed by route signature) |
 | `useChatSession` | `src/hooks/useChatSession.ts` | LLM chat state machine, token tracking, finalize flow |
 | `useCountryRule` | `src/hooks/useCountryRule.ts` | Lazy-loads consolidated country data from `data/rules/*.json` |
 | `usePersistedSet` | `src/hooks/usePersistedSet.ts` | Reusable `Set<string>` backed by localStorage |
@@ -288,14 +288,17 @@ The Plan landing owns browse-style filtering: an editorial hero over a search ro
 ### Full trace: user click → saved plan
 
 ```
-1. User clicks "AI plan" in the Plan wizard
-2. App.handlePlanWithAi(countryName) builds prompt from country data
-3. ChatModal opens with initialPrompt
+1. User clicks "AI plan" in the Plan wizard (Review)
+2. PlanView builds an AiPlanRequest from useReviewRoute (ordered stops + signature + totals + home + basis + scope unit nouns)
+3. App.handlePlanWithAi(request) builds the route-aware prompt via buildRoutePlanPrompt and opens ChatModal (autoSend=false)
 4. useChatSession manages the conversation
 5. Finalization extracts structured JSON via llmTransform
-6. AiItineraryModal displays the plan, allows save/replace
-7. useAiPlanStore persists to localStorage (max 3 plans per destination)
+6. App stamps result.destinationName = the route signature (tripSignature), so the plan keys by the whole ordered route
+7. AiItineraryModal displays one composed plan across the route, allows save/replace
+8. useAiPlanStore persists to localStorage, keyed by route signature (max 3 plans per route; N=1 == the single destination name, byte-identical)
 ```
+
+The AI planner reads the **same order-aware composed route** the Route Canvas / Share / PDF / Cinematic consume (`useReviewRoute`), so it plans exactly what's on screen. `buildRoutePlanPrompt` (pure, in `llmPrompts.ts`) is **scope-agnostic** — unit nouns come from the active `DestinationSource`, so a domestic route of states/cities reads correctly — and collapses to a clean single-destination brief at N=1. Route-keying reuses `tripSignature` (DRY with saved trips) and needs **no store schema change or migration**. Saving to Recents records **all** ordered stops. Currently wired from the Plan wizard only (not My Trips reopen).
 
 ### LLM provider abstraction
 
@@ -327,7 +330,7 @@ All persistence uses `loadLS()` / `saveLS()` / `removeLS()` from `src/core/stora
 | `FEATURES` | `tp_features` | `FeatureFlags` — feature flag overrides |
 | `LLM_KEYS` | `tp_llm_keys` | LLM API keys per provider |
 | `LLM_PROVIDER` | `tp_llm_provider` | Active LLM provider selection |
-| `AI_PLANS` | `tp_ai_plans` | `Record<string, SavedAiPlan[]>` — saved AI plans |
+| `AI_PLANS` | `tp_ai_plans` | `Record<string, SavedAiPlan[]>` — saved AI plans, keyed by route signature |
 | `LAST_BACKUP` | `tp_last_backup` | ISO timestamp of last backup |
 | `BACKUP_FREQUENCY` | `tp_backup_frequency` | Reminder cadence |
 | `BACKUP_SCHEDULE` | `tp_backup_schedule` | Backup scheduling metadata |

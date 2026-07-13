@@ -3,6 +3,7 @@ import type { Country } from "@/core/types";
 import { type BudgetBasis } from "@/core/utils/budget";
 import { composeTripPlan, type TripPlan } from "@/core/utils/tripPlans";
 import { moveIndex, orderByProximity } from "@/core/utils/routeOrder";
+import { tripSignature } from "@/core/utils/savedTrips";
 import {
   buildCinematicRoute,
   resolveHomeOrigin,
@@ -39,6 +40,10 @@ export type ReviewRoute = {
   segments: ReviewSegment[];
   orderedSegments: ReviewSegment[];
   orderedCountries: Country[];
+  /** Ordered stop names (visit order) — the route identity. */
+  orderedNames: string[];
+  /** `tripSignature(orderedNames)` — the shared route key (share/save/AI). */
+  signature: string;
   orderedComposed: TripPlan;
   perCountryCost: TripCostRow[];
   routeStops: PdfRouteStop[];
@@ -152,6 +157,9 @@ export function useReviewRoute({
     [orderedSegments, budgetBasis],
   );
 
+  const orderedNames = useMemo(() => orderedSegments.map((s) => s.name), [orderedSegments]);
+  const signature = useMemo(() => tripSignature(orderedNames), [orderedNames]);
+
   const perCountryCost = useMemo<TripCostRow[]>(
     () => orderedSegments.map((s) => ({ name: s.name, nights: s.customDays, cost: s.plan.costPerPerson })),
     [orderedSegments],
@@ -219,6 +227,8 @@ export function useReviewRoute({
     segments,
     orderedSegments,
     orderedCountries,
+    orderedNames,
+    signature,
     orderedComposed,
     perCountryCost,
     routeStops,
