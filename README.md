@@ -12,7 +12,7 @@ A personal, map-based travel planner with a catalog of 197 world countries, an M
 | **🧭 Plan** (default landing) | Luxury emerald/ivory **guided planning wizard** (the app's landing view) — a streamlined **Trip basics** (who's going + what you're into) → **Which places?** (a *decision surface* built around a consolidated **header card** — country identity (a dropdown **country switcher** with a place-count badge on a multi-stop route, scaling to any count / long names; a static name for a single stop), trip stats (days · places · countries · budget) and a trip-scoped **"Who's going"** dropdown; shown only when a stop has cities. Below it, rich **decision cards** (design "D3": a ✓/+ affordance, the city name + a one-line "known for" brief + experience chips with the traveller's focus lit and a few others muted on the left; a stay/season rail — ≈recommended nights · ☀best window · ⚠avoid window — on the right; plus a sparse "Top for X" signal; each card also carries an **ⓘ** that opens a responsive **city detail** — a bottom-sheet on mobile / centered modal on desktop — with the full "known for" brief, every experience tag, and the ≈stay · ☀best · ⚠avoid windows) laid out two-up on wide screens; non-included cities collapse behind a "Show N more" tail. A single per-country **Filters** control (anchored popover on desktop, bottom-sheet on mobile) hosts that stop's **experiences** — Basics seeds a trip-wide vibe and each country inherits it until you diverge it here — alongside an inline **Sort** dropdown (Best match / Most iconic / Fewest days); an overflow-safe subline summarizes the active focus and, once a stop is hand-picked, gains a compact inline **↺ Reset to suggested** pill) → **Your trip** funnel. The **landing picker** is the app's single destination-discovery surface: a fast search over all 198 rule-backed destinations, a **"When are you going?"** month row that re-ranks the board by seasonality (best-window destinations first with a ☀ cue, off-season ones greyed with a ⚠ cue but never hidden), and a **region** row that folds in browse-by-region. The "Your trip" step is a unified **Route Canvas** for single- and multi-country trips: each stop renders as a collapsible itinerary segment with its own **Adjust** drawer (focus experiences, city picker, trip-length slider), a cross-route jump nav, honest border-hop rows between countries, and a slim action toolbar for **🎬 Cinematic** fly-through · **📄 PDF** · **✨ AI plan**. A single **Insights** rail covers trip readiness, active-basis budget ledger, when-to-go heatmaps, stopover/watch-outs/pairs-with, private **Notes**, and learn/visa/links; it collapses on desktop and opens as a bottom-sheet drawer on tablet/mobile. Pick a destination from **Jump back in** recents or the popular set to begin — a **labeled step progress** (Basics · Places · Review) is tappable to revisit any step, your device Back button walks back one step at a time, and progress is saved so a refresh returns you to the same step. **On phones the review screen streamlines its chrome** — a compact one-line header (first stop + a **+N** pill, an icon-only "who's going" control, no step bar) hands most of the screen to the itinerary, with **← Back** and **＋ Plan another** moving into the bottom action bar beside **Insights** and a **Tools** button that opens the PDF/AI/Cinematic toolbar in a bottom-sheet (on desktop that toolbar stays pinned below the itinerary). The primary **📤 Share** action sits in the header itself (left of the ★ favourite), so sharing your trip is always one tap away. When you reach the plan, it's **saved to My Trips automatically** (as a self-contained snapshot) so it's never lost, and stays fresh as you keep tuning it. The **first time** you reach a finished plan a short **"Your trip is ready ✨"** celebration appears (once), and thereafter — **only when you actually change something** in a finished plan — a brief **"Saved to My Trips"** toast quietly confirms the update (it fades on its own after a few seconds, or dismiss it with ✕); merely arriving at the plan, refreshing the page, **or reopening a saved trip** never triggers it — so there's no permanent status badge cluttering the header. A single refined **★ Favorite** icon in the header stars that saved trip (one consistent meaning of "favorite" for saved trips), and a modest **Plan another** sits in the footer as a secondary restart. |
 | **🧳 Trips** | **My Trips** — a lightweight gallery of the trips you've planned. Each trip is saved automatically when you reach the wizard's Review step and kept fresh as you tune it; the tab lists them newest-first with ★ favorites pinned on top. A **search box** filters trips by route name, country, or city (with a clear-search empty state), and — when your library spans both **home-country (domestic)** and **international** trips — a scope **filter dropdown** (All / 🏠 *your home country* / 🌍 International, with live counts) narrows the gallery. Each card shows the ordered route (with flags), a scope badge (🏠 home / 🌍 International), city chips, total days · places · cost (for the trip's saved budget basis), and when it was saved. **Tap a card to reopen that route in the Plan wizard** (jumps straight to Review, and the reopened route joins your Recents); **+ New trip** (or the empty-state "Plan a trip") always starts a **fresh Plan landing picker** — it discards the in-progress wizard draft, never your saved snapshots. Favorite ★ or delete (with confirm) any trip. Saved trips are self-contained snapshots — independent of Recents and rule data — and are included in backups. |
 
-The app is a focused **two-tab** experience (Plan / Trips). Discover's full-catalog browse-by-region and Calendar's month-seasonality answer were **folded into the Plan landing picker** (search + "When?" month re-rank + region browse), so there's no separate Discover or Calendar tab.
+The app is a focused **two-tab** experience (Plan / Trips). The Plan landing picker is the single discovery surface — full-catalog browse-by-region and month-seasonality re-ranking both live there (search + "When?" month re-rank + region browse).
 
 View persists in the URL hash (`#plan`, `#trips`) — refresh returns to the same view. **Plan is the default landing view** (the brand/Home button routes there too).
 
@@ -27,7 +27,7 @@ Mobile-first responsive layout — works on phones (375px+), tablets (768px+), a
 
 ### Recents & the Plan landing picker
 - **197 countries** in the world catalog (`data/worldCatalog.json`), organized by 6 regions
-- **All 198 itinerary-backed destinations** have offline planning data available on demand; the 5 `inSeed` manifest entries still hydrate richer seed data but no longer auto-fill a visible list
+- **All 198 itinerary-backed destinations** have offline planning data available on demand; the 5 `inSeed` manifest entries hydrate richer seed data, and fresh users start with an empty Recents board
 - **Recents** are implicit: a destination is recorded when it enters the Plan wizard's Basics step **or when you reopen a saved trip** (`MAX_RECENTS=24`), stored in the existing `tp_my_list` key in MRU order
 - Fresh users start with an empty Recents board; the Plan landing header is **Jump back in**, and its empty state falls back to Popular destinations
 - The landing picker is the single discovery surface: full-catalog search, a **"When?" month** seasonality re-rank, and **region** browse; Cinematic uses the active Plan route as its map backdrop
@@ -36,14 +36,14 @@ Mobile-first responsive layout — works on phones (375px+), tablets (768px+), a
 ---
 
 ### The Plan landing picker's filters
-The landing picker opens on an **editorial gradient hero** (eyebrow + headline + subline, shown on all breakpoints) over a **search row** — a full-catalog search box plus an inline **month dropdown** (`📅 Anytime ▾`, reusing `PlanPopover`: an anchored popover on desktop / bottom-sheet on mobile) — and a **horizontally-scrollable region tab strip** (`Popular` (=All), `Asia`, `Europe`, `Middle East`, `Africa`, `Americas`, `Oceania`; `aria-pressed` toggle buttons, **Popular is the default**). This keeps destinations above the fold on mobile instead of the two always-on pill rows the Calendar/Discover fold originally shipped. Selecting a month re-ranks the whole board by seasonality via `monthFit`/`rankByMonthFit` (`src/core/utils/monthFit.ts`), reading `bestMonths`/`worstMonths` baked into `data/rules/index.json` so it works offline over the full 198 with no lazy rule loads. Region **filters** the explore board (never the "Jump back in" recents); month **re-ranks** (never hides — off-season stays visible with a muted ⚠ cue). Budget tiering (used in cost badges) buckets a `₹`-range string by its **midpoint** using the active budget basis: ₹ Budget (< ₹1.5L) / ₹₹ Mid (₹1.5L–₹3L) / ₹₹₹ Premium (₹3L+).
+The landing picker opens on an **editorial gradient hero** (eyebrow + headline + subline, shown on all breakpoints) over a **search row** — a full-catalog search box plus an inline **month dropdown** (`📅 Anytime ▾`, reusing `PlanPopover`: an anchored popover on desktop / bottom-sheet on mobile) — and a **horizontally-scrollable region tab strip** (`Popular` (=All), `Asia`, `Europe`, `Middle East`, `Africa`, `Americas`, `Oceania`; `aria-pressed` toggle buttons, **Popular is the default**). This keeps destinations above the fold on mobile. Selecting a month re-ranks the whole board by seasonality via `monthFit`/`rankByMonthFit` (`src/core/utils/monthFit.ts`), reading `bestMonths`/`worstMonths` baked into `data/rules/index.json` so it works offline over the full 198 with no lazy rule loads. Region **filters** the explore board (never the "Jump back in" recents); month **re-ranks** (never hides — off-season stays visible with a muted ⚠ cue). Budget tiering (used in cost badges) buckets a `₹`-range string by its **midpoint** using the active budget basis: ₹ Budget (< ₹1.5L) / ₹₹ Mid (₹1.5L–₹3L) / ₹₹₹ Premium (₹3L+).
 
-The `popularityScore` in `data/rules/index.json` (a 1–100 **leisure-only** composite: experiences 35%, city depth 20%, seasonality 20%, affordability/value 15%, combo breadth 5%, landmark presence 5%) still backs the popular/plan ordering.
+The `popularityScore` in `data/rules/index.json` (a 1–100 **leisure-only** composite: experiences 35%, city depth 20%, seasonality 20%, affordability/value 15%, combo breadth 5%, landmark presence 5%) backs the popular/plan ordering.
 
 ---
 
 ### Destination planning
-The old destination drawer and per-country edit form were retired in favor of the Plan-first flow. Start planning from the Plan landing picker (search / "When?" month / region browse / multi-select tray) or a saved trip; all itinerary shaping now happens inside the Plan wizard's Places step and Route Canvas. Per-country manual editing and panel-based AI-plan browse/compare are not currently available. Travel style was removed for now and may return later.
+All itinerary shaping happens inside the Plan wizard. Start planning from the Plan landing picker (search / "When?" month / region browse / multi-select tray) or a saved trip; destination detail and itinerary shaping live in the Plan wizard's Places step and Route Canvas.
 
 ---
 
@@ -85,7 +85,7 @@ Bring-your-own-key integration with OpenAI and Claude. Chat with an AI assistant
 - **Cost breakdowns** — per-day cost estimates for flights, hotels, excursions, and transfers
 - **Booking suggestions** — Klook/Viator-style tour recommendations with price, duration, and ratings
 - **Import plans from external AI** — paste a ChatGPT/Claude conversation or share link; multi-strategy parser extracts day-by-day itinerary with prompt improvement suggestions
-- **Save AI plans** — persist generated itineraries in localStorage; the old panel-based browse/compare UI has been removed
+- **Save AI plans** — persist generated itineraries in localStorage
 - **Token usage tracking** — running token counter with cost estimate in chat footer (color-coded: green <4K, amber 4K-12K, red >12K); hover for detailed breakdown (input/output tokens, per-provider pricing, estimated USD cost)
 - **Pre-finalization cost estimate** — "Finish & Generate" button shows estimated cost before generating; tooltip with expected additional token usage
 - **Provider pricing reference** — collapsible pricing table in Settings showing per-model input/output rates for all providers
@@ -170,9 +170,9 @@ Roamwise is a Progressive Web App — installable on desktop (Chrome/Edge) and m
 ---
 
 ### First Run Experience (FRE)
-Guided 8-step onboarding tour for new users:
+Guided 7-step onboarding tour for new users:
 - **Hero cards** — full-screen gradient cards with floating emoji decorations for immersive steps (Welcome, Cinematic, Finale)
-- **Spotlight cards** — positioned tooltips with blue glow highlight on target elements (Trips, Settings)
+- **Spotlight cards** — positioned tooltips with an emerald glow highlight on target elements (Plan, Trips, Settings)
 - **Install card** — PWA install prompt with platform-specific instructions (Chrome/Edge programmatic, iOS manual, fallback text)
 - **Mobile-responsive** — spotlight steps render as centered hero cards on mobile (<768px) since nav items have no room for tooltips
 - **Dismiss anytime** — ✕ button on every card + Escape key closes tour; progress bar shows step count
@@ -193,13 +193,13 @@ Soft, non-blocking backup prompts appear as a bottom-centre toast (never a modal
 Stored in `tp_features` localStorage key. On localhost, use the 🛠 dev panel in the header to toggle flags live.
 
 **Two-tier gating:**
-- `paidFeatures` — master gate for premium features (default: `false`)
+- `paidFeatures` — master gate for premium features (default: `true`)
 - Individual flags — fine-grained control within each tier
 - A paid feature requires BOTH `paidFeatures=true` AND its own flag enabled
 
 | Flag | Default | Tier | Description |
 |---|---|---|---|
-| `paidFeatures` | `false` | system | Master gate — enables all premium features. Set to `true` after payment. |
+| `paidFeatures` | `true` | system | Master gate — enables all premium features. |
 | `llmPlanning` | `true` | paid | AI trip planning (chat, itinerary generation, save plans). Hidden unless `paidFeatures=true`. |
 | `pdfExport` | `true` | paid | Export Plan itineraries as PDF. Hidden unless `paidFeatures=true`. |
 | `searchableHomeCountry` | `false` | free | Searchable dropdown with all 197 countries for home country selection |
