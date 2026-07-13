@@ -74,7 +74,7 @@ const SavedTripCard = memo(function SavedTripCard({
     return acc;
   }, []);
   return (
-    <article className="group relative flex flex-col gap-3 rounded-2xl border border-brand-900/10 bg-surface-1 p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5">
+    <article className="group relative flex min-w-0 flex-col gap-3 rounded-2xl border border-brand-900/10 bg-surface-1 p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5">
       {/* Stretched primary action — opens the trip in the Plan wizard. Secondary
           controls (favorite/delete) sit above it (z-20) so they stay clickable. */}
       <button
@@ -128,7 +128,7 @@ const SavedTripCard = memo(function SavedTripCard({
           {trip.stops.flatMap((s) => s.cities).slice(0, 8).map((city, i) => (
             <span
               key={`${city}-${i}`}
-              className="rounded-full bg-brand-50 px-2 py-0.5 text-[11px] text-brand-800"
+              className="max-w-full break-words rounded-full bg-brand-50 px-2 py-0.5 text-[11px] text-brand-800"
             >
               {city}
             </span>
@@ -246,7 +246,7 @@ export default function MyTripsView({ savedTrips, homeCountry, onToggleFavorite,
   }
 
   return (
-    <div className="h-full overflow-y-auto">
+    <div className="h-full overflow-x-hidden overflow-y-auto">
       <div className="mx-auto w-full max-w-[1100px] px-4 py-5 sm:px-6">
       <ConfirmDialog />
       <header className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">

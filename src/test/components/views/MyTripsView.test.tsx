@@ -39,6 +39,25 @@ describe("MyTripsView", () => {
     expect(screen.getByText("3 places")).toBeInTheDocument();
   });
 
+  it("guards against horizontal scroll: clips the page and lets long tokens wrap", () => {
+    const { container } = render(
+      <MyTripsView
+        homeCountry="India"
+        savedTrips={[trip({ name: "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch", stops: [{ country: "Wales", days: 8, cities: ["Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch"] }] })]}
+        onToggleFavorite={vi.fn()}
+        onRemove={vi.fn()}
+        onOpen={vi.fn()}
+        onGoPlan={vi.fn()}
+      />,
+    );
+    // Outer scroll container must never scroll horizontally.
+    expect(container.querySelector(".overflow-x-hidden")).not.toBeNull();
+    // The card and its long-token chip must be allowed to shrink/wrap so a
+    // no-space name can't force the card wider than its column.
+    expect(container.querySelector("article.min-w-0")).not.toBeNull();
+    expect(container.querySelector("article .break-words")).not.toBeNull();
+  });
+
   it("badges an international trip and a domestic (India) trip distinctly", () => {
     render(
       <MyTripsView
