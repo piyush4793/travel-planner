@@ -205,7 +205,17 @@ function PlanWorkspaceShellInner({ center, shape, context, nav, actions }: Props
           <h3 className="min-w-0 flex-1 font-display text-[15px] font-bold leading-tight text-brand-950">{sheetTitle}</h3>
           <SheetCloseButton onClick={closeSheet} label="Close panel" />
         </div>
-        <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">{sheetNode}</div>
+        <div
+          className="min-h-0 flex-1 overflow-y-auto px-3 py-3"
+          // Every "Tools" action either opens a full-screen overlay (Cinematic),
+          // a modal (AI plan), or a print flow (PDF) — in all cases the sheet
+          // should get out of the way once tapped. Delegated so the shared
+          // toolbar node needs no sheet-awareness. Scoped to the actions sheet;
+          // reference rails keep their own controls (accordions, notes, filters).
+          onClick={actionsOpen ? (e) => { if ((e.target as HTMLElement).closest("button")) closeSheet(); } : undefined}
+        >
+          {sheetNode}
+        </div>
       </ModalShell>
     </div>
   );

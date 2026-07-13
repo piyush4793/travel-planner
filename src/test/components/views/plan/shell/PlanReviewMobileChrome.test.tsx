@@ -149,4 +149,24 @@ describe("mobile Actions sheet", () => {
     fireEvent.click(screen.getByRole("button", { name: "Close panel" }));
     expect(screen.getByRole("button", { name: "Tools — PDF export, AI plan, cinematic" })).toHaveAttribute("aria-expanded", "false");
   });
+
+  it("closes the Tools sheet after a tool action is tapped (so it can't stay open over a launched overlay)", () => {
+    const onCinematic = vi.fn();
+    render(
+      <PlanWorkspaceShell
+        center={<p>route</p>}
+        context={context}
+        actions={<button type="button" onClick={onCinematic}>Watch the animated cinematic journey</button>}
+        nav={{ onBack: vi.fn(), onPlanAnother: vi.fn() }}
+      />,
+    );
+    const trigger = screen.getByRole("button", { name: "Tools — PDF export, AI plan, cinematic" });
+    fireEvent.click(trigger);
+    expect(trigger).toHaveAttribute("aria-expanded", "true");
+
+    fireEvent.click(screen.getByRole("button", { name: "Watch the animated cinematic journey" }));
+    // Action fires AND the sheet dismisses itself.
+    expect(onCinematic).toHaveBeenCalledTimes(1);
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+  });
 });
