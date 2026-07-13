@@ -1,0 +1,904 @@
+{
+  "name": "Nagaland",
+  "seed": false,
+  "lat": 26.1584,
+  "lng": 94.5624,
+  "region": "Northeast India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹38K–₹65K",
+    "couple": "₹68K–₹1.15L",
+    "family4": "₹1.2L–₹2.05L"
+  },
+  "experiences": [
+    "Festivals",
+    "Hiking",
+    "History",
+    "Mountains",
+    "Road Trips",
+    "Food",
+    "Markets & Shopping",
+    "Museums",
+    "Ancient Ruins",
+    "Wildlife & Safari"
+  ],
+  "avoid": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Assam",
+    "Manipur",
+    "Arunachal Pradesh",
+    "Meghalaya"
+  ],
+  "landmark": "Hornbill Festival at Kisama Heritage Village",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Dimapur airport/rail is the practical gateway, with road access onward to Kohima in about 3–4 hours and very long hill-road drives to Mokokchung and Mon. Indian visitors need a Nagaland Inner Line Permit before entry; the official portal lists online tourist ILP at ₹200/person valid 30 days, but verify the fee before travel. Hornbill Festival runs 1–10 December at Kisama near Kohima and sharply raises room/vehicle prices, so book Kohima/Kisama stays and taxis well ahead.",
+  "diet": {
+    "vegetarian": "Nagaland is meat-, pork-, smoked-meat, bamboo-shoot and axone-heavy, so vegetarian travel is easiest in Kohima and Dimapur cafés, hotels and Baptist/market-area eateries. Ask for rice, dal, boiled vegetables, aloo curry, veg thukpa, steamed veg momos and plain chow; in Khonoma, Mokokchung and Mon, pre-request vegetarian homestay meals before arrival.",
+    "vegan": "Vegan travel is possible but requires advance notice. Remote village homestays often cook one fixed meal for everyone and may use fermented fish, smoked meat stock, egg, milk tea or butter; ask for rice, dal, boiled greens and vegetables cooked only in oil. Axone is soybean-based but is often cooked with pork, and bamboo-shoot dishes may contain meat stock, so confirm clearly.",
+    "phrases": [
+      "Moi maas aru pork nakhai = I do not eat meat or pork",
+      "Shakahari khana, dim aru dudh bina dibo = please give vegetarian food without egg or milk",
+      "Oil te pakao, butter/ghee nidibo = cook in oil, do not add butter or ghee"
+    ]
+  },
+  "links": [
+    {
+      "label": "Nagaland Tourism (official)",
+      "url": "https://tourism.nagaland.gov.in/"
+    },
+    {
+      "label": "Nagaland Inner Line Permit portal (official)",
+      "url": "https://ilp.nagaland.gov.in/"
+    },
+    {
+      "label": "Incredible India — Nagaland",
+      "url": "https://www.incredibleindia.gov.in/en/nagaland"
+    },
+    {
+      "label": "Hornbill Festival",
+      "url": "https://hornbillfestival.com/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Dimapur",
+      "lat": 25.9091,
+      "lng": 93.7266,
+      "notes": "Nagaland's airport and rail gateway, useful for ILP checks, cash, Kachari ruins and a low-stress first or last night before hill-road travel.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Ancient Ruins",
+        "Markets & Shopping",
+        "Food",
+        "Road Trips"
+      ]
+    },
+    {
+      "name": "Kohima",
+      "lat": 25.6751,
+      "lng": 94.1086,
+      "notes": "The core Nagaland base for World War II history, State Museum, Kisama Heritage Village, Hornbill Festival and the Dzukou Valley trek approach.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Festivals",
+        "History",
+        "Museums",
+        "Hiking",
+        "Mountains",
+        "Food",
+        "Markets & Shopping"
+      ]
+    },
+    {
+      "name": "Khonoma",
+      "lat": 25.6516,
+      "lng": 94.0239,
+      "notes": "Angami green village near Kohima where homestays, terraced fields, conservation stories and village walks work best with a local guide.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "Hiking",
+        "History",
+        "Food"
+      ]
+    },
+    {
+      "name": "Mokokchung",
+      "lat": 26.322,
+      "lng": 94.5136,
+      "notes": "Ao Naga cultural base with Ungma, Longkhum, Chuchuyimlang, churches, shawls and a gentler alternative to the far Mon road.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Festivals",
+        "Markets & Shopping",
+        "Museums",
+        "Mountains",
+        "Food",
+        "Road Trips"
+      ]
+    },
+    {
+      "name": "Mon",
+      "lat": 26.725,
+      "lng": 95.035,
+      "notes": "Remote Konyak country for Longwa, Shangnyu and tattooed-elder heritage; rewarding but logistically demanding on rough, slow hill roads.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "History",
+        "Mountains",
+        "Road Trips",
+        "Markets & Shopping",
+        "Food"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel work in Dimapur and Kohima, with patchier service on the Dzukou trail and long Mon/Mokokchung hill roads; BSNL can help in some remote pockets. Download offline maps, keep driver and homestay numbers saved, and carry cash because card/UPI reliability drops outside larger towns.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "MakeMyTrip",
+      "Zomato",
+      "WhatsApp"
+    ],
+    "cityOrder": [
+      "Dimapur",
+      "Kohima",
+      "Khonoma",
+      "Mokokchung",
+      "Mon"
+    ],
+    "cities": {
+      "Dimapur": {
+        "name": "Dimapur",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 1,
+        "note": "Use Dimapur as a functional gateway day: finish ILP checks, withdraw cash, rest after flights/trains and avoid starting mountain roads late.",
+        "experiences": [
+          "Ancient Ruins",
+          "Markets & Shopping",
+          "Food",
+          "Road Trips"
+        ],
+        "signatureExperiences": [
+          "Ancient Ruins",
+          "Road Trips"
+        ],
+        "days": [
+          {
+            "theme": "Gateway arrival, ILP check & Kachari ruins",
+            "pace": "relaxed",
+            "note": "Do not treat Dimapur as a throwaway transfer if you land late. Confirm your Nagaland ILP before leaving the gateway and keep a printed/offline copy for checkposts and hotels.",
+            "activities": [
+              {
+                "name": "Arrive at Dimapur airport or railway station",
+                "duration": "1–2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Dimapur is the best place to withdraw cash and buy SIM/data top-ups before hill districts."
+              },
+              {
+                "name": "Nagaland ILP document check",
+                "duration": "~30m",
+                "priority": "must-see",
+                "cost": "₹200/person tourist ILP listed by official portal; verify before travel",
+                "tip": "Official guidance says online tourist ILP may be approved within hours during working time but can take 2–3 working days; apply before arrival."
+              },
+              {
+                "name": "Kachari Ruins",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free / verify locally",
+                "tip": "Go in daylight; the ruins are most useful as a history stop before the Kohima drive."
+              },
+              {
+                "name": "Hong Kong Market basics run",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Dimapur transit hotel",
+                "budget": "₹1,800–₹3,500/night"
+              },
+              {
+                "name": "Comfort airport/rail hotel",
+                "budget": "₹4,000–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Veg thukpa or noodles",
+              "Dal-rice thali",
+              "Tea and bakery snacks"
+            ]
+          }
+        ]
+      },
+      "Kohima": {
+        "name": "Kohima",
+        "minDays": 3,
+        "recDays": 4,
+        "maxDays": 5,
+        "note": "Four days gives an arrival/city day, one history-and-museum day, one Kisama/Hornbill day and one honest full Dzukou trek day; add a fifth for weather or festival crowds.",
+        "experiences": [
+          "Festivals",
+          "History",
+          "Museums",
+          "Hiking",
+          "Mountains",
+          "Food",
+          "Markets & Shopping"
+        ],
+        "signatureExperiences": [
+          "Festivals",
+          "History",
+          "Hiking"
+        ],
+        "days": [
+          {
+            "theme": "Dimapur to Kohima and gentle capital orientation",
+            "pace": "relaxed",
+            "note": "Dimapur to Kohima is a winding 3–4 hour hill-road transfer in good conditions and slower in rain or festival traffic. Keep the day light and avoid Dzukou or Kisama on arrival afternoon.",
+            "activities": [
+              {
+                "name": "Dimapur to Kohima road transfer",
+                "duration": "3–4h",
+                "priority": "must-see",
+                "cost": "Shared taxi ₹500–₹900/person; private vehicle ₹4,000–₹6,500",
+                "tip": "Start early in December because Hornbill traffic and hotel check-ins can add delays."
+              },
+              {
+                "name": "Kohima local market and supply stop",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Buy water, snacks and rain layers before Dzukou; veg snacks are easier here than on remote roads."
+              },
+              {
+                "name": "Evening at a Kohima café or viewpoint",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kohima guesthouse/homestay",
+                "budget": "₹2,000–₹4,500/night"
+              },
+              {
+                "name": "Comfort Kohima hotel",
+                "budget": "₹5,000–₹10,000/night; higher during Hornbill"
+              }
+            ],
+            "meals": [
+              "Veg momos",
+              "Rice with dal and local greens",
+              "Café noodles"
+            ]
+          },
+          {
+            "theme": "World War II history, State Museum & Kohima culture",
+            "pace": "moderate",
+            "note": "This day stays within Kohima and is intentionally clusterable. Visit solemn memorial spaces respectfully and ask before photographing people or church services.",
+            "activities": [
+              {
+                "name": "Kohima War Cemetery",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Morning light is best; keep voices low at the Commonwealth memorial."
+              },
+              {
+                "name": "Nagaland State Museum",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "varies; verify locally",
+                "tip": "Use this before village visits so textiles, morungs, ornaments and clan symbols make more sense."
+              },
+              {
+                "name": "Mary Help of Christians Cathedral",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Kohima handloom and handicraft browsing",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Buy directly from cooperatives or clearly priced shops where possible."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kohima guesthouse/homestay",
+                "budget": "₹2,000–₹4,500/night"
+              },
+              {
+                "name": "Comfort Kohima hotel",
+                "budget": "₹5,000–₹10,000/night; higher during Hornbill"
+              }
+            ],
+            "meals": [
+              "Alua curry with rice",
+              "Veg thukpa",
+              "Axone-free vegetable curry on request"
+            ]
+          },
+          {
+            "theme": "Kisama Heritage Village and Hornbill Festival focus",
+            "pace": "moderate",
+            "note": "Kisama is about 12 km from Kohima. During Hornbill Festival, 1–10 December, traffic, entry queues, room rates and taxi prices jump; outside festival dates the heritage village is quieter and may have fewer live performances.",
+            "activities": [
+              {
+                "name": "Kisama Heritage Village morung walk",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "varies; verify official counter",
+                "tip": "Ask before entering morungs or photographing performers, elders and ceremonial objects."
+              },
+              {
+                "name": "Hornbill Festival arena and tribal performances",
+                "duration": "3–5h",
+                "priority": "must-see",
+                "cost": "varies; verify 2026 ticketing locally",
+                "tip": "The festival runs annually 1–10 December and is the biggest trip driver for Nagaland. Book stays and vehicles months ahead."
+              },
+              {
+                "name": "Kisama craft stalls and food courts",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Vegetarians should ask about pork stock, dry fish and axone before ordering."
+              },
+              {
+                "name": "Return to Kohima before late-night traffic",
+                "duration": "45–90m",
+                "priority": "recommended",
+                "cost": "Included in day taxi / varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kohima guesthouse/homestay",
+                "budget": "₹2,000–₹5,500/night; verify Hornbill rates"
+              },
+              {
+                "name": "Festival-period hotel or camp",
+                "budget": "₹6,000–₹14,000/night; book early"
+              }
+            ],
+            "meals": [
+              "Rice and vegetable curry at festival stalls",
+              "Smoked bamboo-shoot dishes only if meat-free",
+              "Kohima café dinner after return"
+            ]
+          },
+          {
+            "theme": "Dzukou Valley trek from Viswema/Jakhama",
+            "pace": "packed",
+            "note": "Treat Dzukou as its own strenuous full day, not an add-on. Incredible India describes the trek as roughly 9 km and 5–6 hours with steep, slippery sections; start before dawn, hire a local guide, and skip in heavy rain or if knees/fitness are poor.",
+            "activities": [
+              {
+                "name": "Early drive to Viswema or Jakhama trailhead",
+                "duration": "45–75m",
+                "priority": "must-see",
+                "cost": "Day taxi ₹3,500–₹5,500; verify locally",
+                "tip": "Viswema is longer by road but generally clearer underfoot; Jakhama is steeper and can be slippery."
+              },
+              {
+                "name": "Dzukou Valley trek with local guide",
+                "duration": "5–7h walking",
+                "priority": "must-see",
+                "cost": "Guide/entry/camp fees vary; budget ₹1,500–₹3,000 extra and verify locally",
+                "tip": "Carry rain protection, packed food, warm layer and headlamp; network can disappear on the trail."
+              },
+              {
+                "name": "Valley viewpoint and stream rest",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Included / varies"
+              },
+              {
+                "name": "Descend and return to Kohima",
+                "duration": "2–3h descent plus drive",
+                "priority": "must-see",
+                "cost": "Included in taxi/guide arrangement"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kohima guesthouse/homestay",
+                "budget": "₹2,000–₹4,500/night"
+              },
+              {
+                "name": "Comfort Kohima hotel",
+                "budget": "₹5,000–₹10,000/night; higher during Hornbill"
+              }
+            ],
+            "meals": [
+              "Packed veg sandwiches or parathas",
+              "Trail snacks and tea",
+              "Simple rice-and-dal dinner after return"
+            ]
+          }
+        ]
+      },
+      "Khonoma": {
+        "name": "Khonoma",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Khonoma is close to Kohima but deserves a slow guided day or overnight because village etiquette, conservation history and terraces are the point.",
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "History",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "Mountains",
+          "Hiking",
+          "History"
+        ],
+        "days": [
+          {
+            "theme": "Khonoma green village, terraces & Angami stories",
+            "pace": "relaxed",
+            "note": "Hire a village guide and keep the route gentle after the Dzukou day. Ask before photographing homes, granaries, elders or weaving work, and dress modestly in village lanes.",
+            "activities": [
+              {
+                "name": "Kohima to Khonoma short hill drive",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "Taxi ₹1,500–₹2,500 round-trip; verify locally"
+              },
+              {
+                "name": "Guided Khonoma village and fort walk",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Guide fee varies; budget ₹800–₹1,500 and verify locally",
+                "tip": "A guide helps explain Angami conservation rules, clan spaces and the village's resistance history."
+              },
+              {
+                "name": "Terraced-field viewpoint and conservation area edge",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Homestay meal or tea with advance dietary request",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Vegetarian/vegan travellers should request meat-free stock and oil-only cooking when booking."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Khonoma homestay",
+                "budget": "₹1,500–₹3,500/night with meals; verify locally"
+              },
+              {
+                "name": "Return-to-Kohima hotel option",
+                "budget": "₹2,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Rice with boiled greens",
+              "Dal and vegetable curry by request",
+              "Local tea and seasonal produce"
+            ]
+          }
+        ]
+      },
+      "Mokokchung": {
+        "name": "Mokokchung",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days is the minimum: one honest transfer day from Kohima/Khonoma and one Ao-village culture day. Add a third for festival dates, Sunday church or slower village stays.",
+        "experiences": [
+          "Festivals",
+          "Markets & Shopping",
+          "Museums",
+          "Mountains",
+          "Food",
+          "Road Trips"
+        ],
+        "signatureExperiences": [
+          "Festivals",
+          "Markets & Shopping",
+          "Road Trips"
+        ],
+        "days": [
+          {
+            "theme": "Long road transfer to Ao country",
+            "pace": "relaxed",
+            "note": "Kohima/Khonoma to Mokokchung is a long hill-road day and can run 6–8 hours with roadwork, fog or rain. Keep sightseeing light and arrive before dark.",
+            "activities": [
+              {
+                "name": "Khonoma/Kohima to Mokokchung drive",
+                "duration": "6–8h",
+                "priority": "must-see",
+                "cost": "Private vehicle ₹7,000–₹11,000; shared options vary",
+                "tip": "Carry snacks, water and cash; do not plan a same-day Mon connection."
+              },
+              {
+                "name": "Mokokchung town orientation walk",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Town market for Ao shawls and supplies",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mokokchung guesthouse",
+                "budget": "₹1,800–₹3,500/night"
+              },
+              {
+                "name": "Mid-range town hotel",
+                "budget": "₹4,000–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Rice with dal and greens",
+              "Veg noodles",
+              "Tea and bakery snacks"
+            ]
+          },
+          {
+            "theme": "Ao villages, churches & handloom culture",
+            "pace": "moderate",
+            "note": "Focus on nearby Ao cultural sites rather than trying to cover distant districts. Sunday mornings are church-focused; be discreet and ask before entering services.",
+            "activities": [
+              {
+                "name": "Ungma village heritage walk",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Guide/donation varies",
+                "tip": "Ungma is one of the oldest Ao settlements; local interpretation makes the visit meaningful."
+              },
+              {
+                "name": "Longkhum village viewpoint and folklore stop",
+                "duration": "2–3h including drive",
+                "priority": "must-see",
+                "cost": "Taxi/guide varies; budget ₹2,000–₹3,500 for a local loop",
+                "tip": "Roads are narrow; return before fog or dusk."
+              },
+              {
+                "name": "Ao cultural museum or local craft stop",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "varies; verify locally"
+              },
+              {
+                "name": "Chuchuyimlang village extension",
+                "duration": "2–3h additional",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Add only if roads are dry and you are not driving onward the same day."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mokokchung guesthouse",
+                "budget": "₹1,800–₹3,500/night"
+              },
+              {
+                "name": "Mid-range town hotel",
+                "budget": "₹4,000–₹7,000/night"
+              }
+            ],
+            "meals": [
+              "Rice and vegetable stew",
+              "Meat-free bamboo-shoot curry by request",
+              "Local tea with snacks"
+            ]
+          }
+        ]
+      },
+      "Mon": {
+        "name": "Mon",
+        "minDays": 3,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Mon is remote enough to justify three days: a long transfer, one Longwa/Konyak heritage day and one buffer or onward-exit day. Do not cram it into a Kohima weekend.",
+        "experiences": [
+          "History",
+          "Mountains",
+          "Road Trips",
+          "Markets & Shopping",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "History",
+          "Road Trips",
+          "Mountains"
+        ],
+        "days": [
+          {
+            "theme": "Mokokchung to Mon remote hill-road transfer",
+            "pace": "relaxed",
+            "note": "This is one of the itinerary's hardest logistics days: roads are rough, distances are slow, and after-dark driving is a bad idea. Start early and keep only a light Mon-town orientation on arrival.",
+            "activities": [
+              {
+                "name": "Mokokchung to Mon drive",
+                "duration": "7–9h",
+                "priority": "must-see",
+                "cost": "Private vehicle ₹8,000–₹13,000; verify locally",
+                "tip": "Ask your driver about current road conditions; monsoon damage can change timings dramatically."
+              },
+              {
+                "name": "Mon town check-in and permit copy check",
+                "duration": "~30m",
+                "priority": "must-see",
+                "cost": "varies"
+              },
+              {
+                "name": "Mon bazaar orientation",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "Free",
+                "tip": "Use the market for snacks and water before village drives."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mon basic guesthouse",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Konyak-area homestay/simple lodge",
+                "budget": "₹2,500–₹5,000/night with meals; verify locally"
+              }
+            ],
+            "meals": [
+              "Rice with dal and greens by request",
+              "Plain noodles",
+              "Tea and packaged snacks"
+            ]
+          },
+          {
+            "theme": "Longwa and Konyak heritage with etiquette",
+            "pace": "moderate",
+            "note": "Longwa is close to the India–Myanmar border and needs a respectful local guide. Headhunting history is sensitive living heritage, not a costume show; ask before photos and avoid intrusive questions to elders.",
+            "activities": [
+              {
+                "name": "Mon to Longwa village drive",
+                "duration": "1.5–2.5h each way",
+                "priority": "must-see",
+                "cost": "Day vehicle ₹4,000–₹7,000; verify locally"
+              },
+              {
+                "name": "Longwa village guided walk",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Guide/donation varies; budget ₹800–₹1,500",
+                "tip": "Do not photograph tattooed elders, homes or ceremonial objects without explicit permission."
+              },
+              {
+                "name": "Angh house and border-ridge viewpoint",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Donation / verify locally"
+              },
+              {
+                "name": "Konyak craft and beadwork stop",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mon basic guesthouse",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Konyak-area homestay/simple lodge",
+                "budget": "₹2,500–₹5,000/night with meals; verify locally"
+              }
+            ],
+            "meals": [
+              "Pre-requested veg homestay rice meal",
+              "Boiled greens and dal if available",
+              "Packed fruit/snacks from Mon"
+            ]
+          },
+          {
+            "theme": "Shangnyu, Veda Peak option or Assam exit buffer",
+            "pace": "moderate",
+            "note": "Keep this as a flexible day because remote-road conditions decide whether Shangnyu/Veda Peak or an early Assam exit is wiser. If flying from Dibrugarh/Jorhat, leave a safety night outside Mon.",
+            "activities": [
+              {
+                "name": "Shangnyu village heritage stop",
+                "duration": "2–3h including drive",
+                "priority": "recommended",
+                "cost": "Guide/donation varies"
+              },
+              {
+                "name": "Veda Peak viewpoint if roads are clear",
+                "duration": "3–4h additional",
+                "priority": "optional",
+                "cost": "Vehicle cost varies",
+                "tip": "Skip in fog, rain or if you need to exit Mon the same day."
+              },
+              {
+                "name": "Mon to Assam exit planning",
+                "duration": "half day to full day",
+                "priority": "must-see",
+                "cost": "Mon→Dibrugarh/Jorhat side vehicle varies; verify locally",
+                "tip": "Use this as a logistics buffer rather than booking a tight same-evening flight."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Mon basic guesthouse",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Assam transit hotel after exit",
+                "budget": "₹2,000–₹5,000/night"
+              }
+            ],
+            "meals": [
+              "Simple rice and dal",
+              "Vegetable noodles",
+              "Packed snacks for the road"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Dimapur",
+        "to": "Kohima",
+        "method": "Shared taxi or private vehicle on NH-29 hill road",
+        "cost": "Shared taxi ₹500–₹900/person; private vehicle ₹4,000–₹6,500",
+        "distanceKm": 74,
+        "durationHrs": 4,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Kohima",
+        "to": "Khonoma",
+        "method": "Local taxi via short hill road",
+        "cost": "₹1,500–₹2,500 round-trip; verify locally",
+        "distanceKm": 20,
+        "durationHrs": 1,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Khonoma",
+        "to": "Mokokchung",
+        "method": "Private vehicle via Kohima/Wokha-side hill roads",
+        "cost": "₹7,000–₹11,000; verify locally",
+        "distanceKm": 200,
+        "durationHrs": 7,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Mokokchung",
+        "to": "Mon",
+        "method": "Private vehicle on slow, rough inter-district roads",
+        "cost": "₹8,000–₹13,000; verify locally",
+        "distanceKm": 170,
+        "durationHrs": 8,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "Nagaland ILP is mandatory for Indian visitors; apply online before travel and carry printed/offline copies with photo ID for hotels and checkposts.",
+      "The official ILP portal lists domestic tourist ILP at ₹200/person valid for 30 days and says online tourist approvals can be quick during working hours, but allow 2–3 working days as a buffer.",
+      "Hornbill Festival is held 1–10 December at Kisama and is the state's biggest demand spike: reserve Kohima/Kisama accommodation, vehicles and guides months ahead and expect premium pricing.",
+      "Dzukou Valley is a strenuous full-day trek with steep/slippery sections; use a local guide, do not combine it with Kisama or Khonoma, and skip in heavy monsoon rain.",
+      "Village etiquette matters: ask before photos, dress modestly, do not touch ceremonial objects, and treat Konyak headhunting history as sensitive living heritage.",
+      "Vegetarian and vegan meals are much easier in Dimapur/Kohima than in fixed-menu village homestays; pre-request meat-free, fish-free and dairy-free meals before remote stays."
+    ]
+  }
+}

@@ -1,0 +1,736 @@
+{
+  "name": "Manipur",
+  "seed": false,
+  "lat": 24.6637,
+  "lng": 93.9063,
+  "region": "Northeast India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹25K–₹42K",
+    "couple": "₹46K–₹76K",
+    "family4": "₹82K–₹1.35L"
+  },
+  "experiences": [
+    "Lakes",
+    "National Parks",
+    "Wildlife & Safari",
+    "History",
+    "Markets & Shopping",
+    "Museums",
+    "Temples & Religious Sites",
+    "Food",
+    "Festivals",
+    "Cruises & Boat Trips",
+    "Hiking",
+    "Mountains"
+  ],
+  "avoid": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Assam",
+    "Nagaland",
+    "Mizoram"
+  ],
+  "landmark": "Loktak Lake's floating phumdis and Keibul Lamjao National Park",
+  "travelStyle": [
+    "explorer"
+  ],
+  "stopoverNote": "Fly into Imphal (IMF), the only practical air gateway; Dimapur/Guwahati rail links mean very long road transfers. Indian visitors need a Manipur Inner Line Permit: the official portal issues Temporary ILP for short visits, with 2026 guidance showing a ₹100 fee after approval, plus kiosks at Imphal Airport and major entry gates. As of 2026, Manipur remains security-sensitive after the 2023–2024 ethnic unrest: keep plans flexible, check current government/hotel advisories daily, expect checkpoints or curfews, and treat Imphal Valley and Loktak as the practical core; hill-district trips such as Ukhrul should be attempted only with trusted local guidance and confirmed safe conditions.",
+  "diet": {
+    "vegetarian": "Vegetarian eating is manageable in Imphal, Moirang and larger hotels: ask for rice, dal, kangshoi/chamthong vegetable stew, ooti, singju without dried fish, veg momos, aloo dishes and chak-hao black-rice dessert. Traditional eromba usually uses ngari fermented fish, and many chutneys/salads add dried fish, so clarify before ordering.",
+    "vegan": "Vegan travel is possible but needs clear requests. Manipuri food uses many vegetables and mustard oil, but dairy can appear in tea, sweets and chak-hao kheer, while fish/fermented fish may be hidden in eromba, singju, morok metpa or broths. In Moirang, Loktak homestays and Ukhrul, pre-request rice, kangshoi/chamthong, boiled greens and oil-only cooking without fish, egg, milk, curd, butter, ghee or paneer.",
+    "phrases": [
+      "Meiteilon: Nga-ari yaodana chaak pithok-u = please serve food without fermented fish",
+      "Hindi: Maas, machhli, anda mat daliyega = please do not add meat, fish or egg",
+      "English/Hindi: Vegan food chahiye; doodh, ghee, paneer, dahi nahi = I need vegan food; no milk, ghee, paneer or curd"
+    ]
+  },
+  "links": [
+    {
+      "label": "Manipur Tourism — places to see",
+      "url": "https://manipurtourism.gov.in/places-to-see/"
+    },
+    {
+      "label": "Official Manipur ILP portal",
+      "url": "https://manipurilponline.mn.gov.in/"
+    },
+    {
+      "label": "Incredible India — Kangla Fort",
+      "url": "https://www.incredibleindia.gov.in/en/manipur/imphal/kangla-fort"
+    },
+    {
+      "label": "Incredible India — Keibul Lamjao National Park",
+      "url": "https://www.incredibleindia.gov.in/en/manipur/imphal/keibul-lamjao-national-park"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Imphal",
+      "lat": 24.817,
+      "lng": 93.9368,
+      "notes": "The valley capital is the safest logistics base for Kangla Fort, Ima Keithel, WWII sites, temples, museums, food and permit checks.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "History",
+        "Markets & Shopping",
+        "Museums",
+        "Temples & Religious Sites",
+        "Food",
+        "Festivals"
+      ]
+    },
+    {
+      "name": "Moirang and Loktak Lake",
+      "lat": 24.5034,
+      "lng": 93.7771,
+      "notes": "Moirang is the practical base for Loktak Lake, Sendra views, INA history and Keibul Lamjao's floating wetland habitat.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Lakes",
+        "Cruises & Boat Trips",
+        "National Parks",
+        "Wildlife & Safari",
+        "History",
+        "Food"
+      ]
+    },
+    {
+      "name": "Ukhrul",
+      "lat": 25.0954,
+      "lng": 94.3614,
+      "notes": "A highland Tangkhul Naga district known for Shirui lilies, hill walks and Longpi pottery, but it should be treated as conditional while hill-district advisories remain fluid.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "Hiking",
+        "Festivals",
+        "Food",
+        "Markets & Shopping",
+        "Museums"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel are generally usable in Imphal and around Moirang/Loktak, while BSNL may help in hill pockets. Expect patchy data, shutdowns during security incidents and weak coverage on Ukhrul hill roads; download maps, permits and hotel contacts offline.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "MakeMyTrip",
+      "Zomato",
+      "WhatsApp"
+    ],
+    "cityOrder": [
+      "Imphal",
+      "Moirang and Loktak Lake",
+      "Ukhrul"
+    ],
+    "cities": {
+      "Imphal": {
+        "name": "Imphal",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days gives one light arrival/permit day, one royal-market cluster day and one WWII/heritage loop. Keep movement daylight-oriented if curfews or checkpoints are active.",
+        "experiences": [
+          "History",
+          "Markets & Shopping",
+          "Museums",
+          "Temples & Religious Sites",
+          "Food",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "History",
+          "Markets & Shopping",
+          "Museums"
+        ],
+        "days": [
+          {
+            "theme": "Arrival, ILP check and Ima Keithel",
+            "pace": "relaxed",
+            "note": "Keep the first day central: complete ILP/admin checks, confirm the latest local advisory with your hotel and avoid late-evening road movement.",
+            "activities": [
+              {
+                "name": "Imphal arrival and Inner Line Permit check",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "Temporary ILP ₹100 after approval",
+                "tip": "Apply on the official portal before travel or use the airport kiosk; carry government ID, address proof and a passport-style photo. Verify fee/category before payment."
+              },
+              {
+                "name": "Ima Keithel / Khwairamband Bazaar",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Go in daylight, ask before photographing vendors and look for handloom sections as well as produce lanes."
+              },
+              {
+                "name": "Local Manipuri dinner around central Imphal",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Vegetarians should ask specifically for no ngari/fermented fish in eromba, singju or chutneys."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Central Imphal guesthouse",
+                "budget": "₹1,800–₹3,500/night"
+              },
+              {
+                "name": "Mid-range Imphal hotel",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Kangshoi vegetable stew",
+              "Singju without dried fish",
+              "Chak-hao black-rice kheer or coconut version"
+            ]
+          },
+          {
+            "theme": "Kangla Fort, temples and state heritage",
+            "pace": "moderate",
+            "note": "This is a compact central-Imphal culture day. Confirm Kangla closing day/timings locally before setting out, because security or maintenance closures can change access.",
+            "activities": [
+              {
+                "name": "Kangla Fort and Kangla Museum",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "₹10 entry; verify locally",
+                "tip": "Recent public guides still list ₹10 and Wednesday closure, but treat the fee as locally verified-on-arrival rather than guaranteed."
+              },
+              {
+                "name": "Shree Govindajee Temple",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free / donation",
+                "tip": "Morning aarti is the most atmospheric time; dress modestly."
+              },
+              {
+                "name": "Manipur State Museum",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Useful context for tribal textiles, royal history and polo culture; verify opening day locally."
+              },
+              {
+                "name": "Mapal Kangjeibung polo-ground photo stop",
+                "duration": "20–30m",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Central Imphal guesthouse",
+                "budget": "₹1,800–₹3,500/night"
+              },
+              {
+                "name": "Mid-range Imphal hotel",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Veg momos",
+              "Ooti with rice",
+              "Chamthong/kangshoi thali"
+            ]
+          },
+          {
+            "theme": "WWII memory and valley craft loop",
+            "pace": "moderate",
+            "note": "Keep the route to the Imphal valley and nearby villages; do not extend toward sensitive hill or border areas without fresh local clearance.",
+            "activities": [
+              {
+                "name": "Imphal War Cemetery",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Plan a quiet weekday visit and follow Commonwealth War Graves site etiquette."
+              },
+              {
+                "name": "Red Hill / India Peace Memorial",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free / donation",
+                "tip": "About 16 km from Imphal on the Tiddim Road; pair it with valley-only stops."
+              },
+              {
+                "name": "Mutua Museum at Andro",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Confirm access before going; it is about 26 km from Imphal and gives a compact Northeast craft-and-house-form overview."
+              },
+              {
+                "name": "Andro pottery or handloom shopping stop",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Central Imphal guesthouse",
+                "budget": "₹1,800–₹3,500/night"
+              },
+              {
+                "name": "Mid-range Imphal hotel",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Rice with kangshoi",
+              "Veg chow or noodles",
+              "Chak-hao dessert"
+            ]
+          },
+          {
+            "theme": "Safety buffer or light city reset",
+            "pace": "relaxed",
+            "note": "Use this optional day if an advisory, curfew or rain delay disrupts the valley itinerary. Do not force remote sightseeing when conditions are unclear.",
+            "activities": [
+              {
+                "name": "Advisory and transport buffer",
+                "duration": "half day",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Ask your hotel and driver about same-day checkpoints before any outing."
+              },
+              {
+                "name": "Ima Keithel handloom revisit",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "Free"
+              },
+              {
+                "name": "Café/rest afternoon in central Imphal",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Central Imphal guesthouse",
+                "budget": "₹1,800–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Simple veg thali",
+              "Tea with local snacks",
+              "Oil-only vegetables on request"
+            ]
+          }
+        ]
+      },
+      "Moirang and Loktak Lake": {
+        "name": "Moirang and Loktak Lake",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days lets you see Loktak at sunrise/sunset, the INA/Moirang cluster and Keibul Lamjao without making a tiring out-and-back from Imphal.",
+        "experiences": [
+          "Lakes",
+          "Cruises & Boat Trips",
+          "National Parks",
+          "Wildlife & Safari",
+          "History",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "Lakes",
+          "National Parks",
+          "Wildlife & Safari"
+        ],
+        "days": [
+          {
+            "theme": "Imphal to Moirang, INA history and Loktak sunset",
+            "pace": "moderate",
+            "note": "Imphal to Moirang/Loktak is about 45–50 km and usually 1.5–2 hours by road; leave after a daylight security check and avoid returning late at night.",
+            "activities": [
+              {
+                "name": "Drive from Imphal to Moirang / Sendra side",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Taxi ₹2,500–₹4,500; verify locally",
+                "tip": "Rates move with fuel, checkpoints and vehicle availability; fix return timing before departure."
+              },
+              {
+                "name": "INA Museum and Moirang INA flag site",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "nominal / verify locally",
+                "tip": "Public sources often list low entry fees but no recent official fee sheet; confirm timing at the gate."
+              },
+              {
+                "name": "Sendra viewpoint over Loktak Lake",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Late afternoon light is best for the phumdi patterns."
+              },
+              {
+                "name": "Short Loktak boat ride around phumdis",
+                "duration": "30–60m",
+                "priority": "recommended",
+                "cost": "₹800–₹1,500/boat; verify locally",
+                "tip": "Recent guide ranges vary widely; use life jackets and agree the route, duration and price before boarding."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Moirang/Loktak homestay",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Sendra or lakeside mid-range stay",
+                "budget": "₹4,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Rice with kangshoi",
+              "Chak-hao dessert",
+              "Veg noodles or momos"
+            ]
+          },
+          {
+            "theme": "Keibul Lamjao floating national park",
+            "pace": "moderate",
+            "note": "Sangai deer sightings are never guaranteed; go early and keep voices low. Roads, park access and boat movements may be affected by weather or security instructions.",
+            "activities": [
+              {
+                "name": "Keibul Lamjao National Park watchtower visit",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Forest Department watch towers overlook the floating grassland habitat; verify entry and guide rules locally."
+              },
+              {
+                "name": "Sangai deer and wetland birdwatching",
+                "duration": "1–2h",
+                "priority": "must-see",
+                "cost": "included with park/guide if arranged",
+                "tip": "November–March has better birding odds and cooler weather."
+              },
+              {
+                "name": "Lakeside fisher village / phumdi culture walk",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free / guide tip",
+                "tip": "Go with a local host and avoid stepping onto unstable phumdis without permission."
+              },
+              {
+                "name": "Return to Imphal or second Loktak sunset",
+                "duration": "1.5–2h drive / 1h sunset",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Moirang/Loktak homestay",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Central Imphal hotel after return",
+                "budget": "₹2,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Homestay rice and vegetables",
+              "Kangshoi without fish stock",
+              "Local black-rice sweet"
+            ]
+          },
+          {
+            "theme": "Slow lake morning and Bishnupur stop",
+            "pace": "relaxed",
+            "note": "Use this optional day only if you want slower lake time or need a weather/security buffer before returning to Imphal.",
+            "activities": [
+              {
+                "name": "Sunrise boat or lakeside photography",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "₹800–₹1,500/boat; verify locally"
+              },
+              {
+                "name": "Bishnupur Vishnu Temple stop",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Return drive to Imphal",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Moirang/Loktak homestay",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Packed breakfast",
+              "Veg thali in Bishnupur/Moirang",
+              "Imphal dinner"
+            ]
+          }
+        ]
+      },
+      "Ukhrul": {
+        "name": "Ukhrul",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Ukhrul is rewarding in Shirui lily season but conditional in the current security climate; skip it unless your hotel/local operator confirms safe road movement and accommodation before departure.",
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "Festivals",
+          "Food",
+          "Markets & Shopping",
+          "Museums"
+        ],
+        "signatureExperiences": [
+          "Mountains",
+          "Hiking",
+          "Festivals"
+        ],
+        "days": [
+          {
+            "theme": "Imphal to Ukhrul highland transfer",
+            "pace": "relaxed",
+            "note": "Only travel in daylight with a known local driver after checking the day's advisory. The hilly NH 202 drive is roughly 80–85 km and commonly 3–4 hours with stops, but delays can be longer.",
+            "activities": [
+              {
+                "name": "Daylight drive from Imphal to Ukhrul",
+                "duration": "3–4h",
+                "priority": "must-see",
+                "cost": "Taxi ₹3,000–₹5,000; verify locally",
+                "tip": "Avoid independent night movement and do not proceed through tense checkpoints or protest routes."
+              },
+              {
+                "name": "Ukhrul town orientation and market walk",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Ask before photographing people or church/community spaces."
+              },
+              {
+                "name": "Tangkhul food or homestay dinner",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Vegetarians/vegans must pre-request meals; meat and fermented fish can be default seasonings."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ukhrul guesthouse/homestay",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Better town hotel when available",
+                "budget": "₹3,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Rice with boiled greens",
+              "Veg noodles",
+              "Oil-only potatoes and seasonal vegetables"
+            ]
+          },
+          {
+            "theme": "Shirui Hills, lily season and Longpi craft",
+            "pace": "moderate",
+            "note": "April–June is the Shirui lily bloom window and the festival has recently run in May, but road/security conditions matter more than bloom timing. Keep the day flexible and return before dark.",
+            "activities": [
+              {
+                "name": "Shirui Hills / Shirui Kashong walk",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Free / local guide tip",
+                "tip": "Stay on trails and do not pluck lilies; carry rain protection in May."
+              },
+              {
+                "name": "Shirui Lily Festival venues if dates align",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "usually free / event-dependent",
+                "tip": "The 2025 official festival ran 20–24 May; check annual dates and security notices before planning around it."
+              },
+              {
+                "name": "Longpi black pottery village excursion",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Confirm road conditions and artisan availability locally before adding the detour."
+              },
+              {
+                "name": "Khangkhui limestone cave short visit",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Skip if rains or security updates make side roads unreliable."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Ukhrul guesthouse/homestay",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Better town hotel when available",
+                "budget": "₹3,500–₹6,500/night"
+              }
+            ],
+            "meals": [
+              "Simple rice and vegetable stew",
+              "Local tea and snacks",
+              "Pre-requested vegetarian homestay dinner"
+            ]
+          },
+          {
+            "theme": "Return to Imphal or safety buffer",
+            "pace": "relaxed",
+            "note": "Keep this optional day as a buffer. If the situation changes, return to Imphal early rather than adding hill-district detours.",
+            "activities": [
+              {
+                "name": "Morning advisory check and early departure",
+                "duration": "30–45m",
+                "priority": "must-see",
+                "cost": "varies"
+              },
+              {
+                "name": "Ukhrul to Imphal return drive",
+                "duration": "3–4h+",
+                "priority": "must-see",
+                "cost": "Taxi ₹3,000–₹5,000; verify locally"
+              },
+              {
+                "name": "Rest evening in central Imphal",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Central Imphal hotel after return",
+                "budget": "₹2,000–₹8,000/night"
+              }
+            ],
+            "meals": [
+              "Packed breakfast",
+              "Roadside veg noodles if available",
+              "Imphal veg thali"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Imphal",
+        "to": "Moirang and Loktak Lake",
+        "method": "Private taxi via Tiddim Road toward Moirang/Sendra",
+        "cost": "₹2,500–₹4,500/vehicle; verify locally",
+        "distanceKm": 48,
+        "durationHrs": 2,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Moirang and Loktak Lake",
+        "to": "Ukhrul",
+        "method": "Return via Imphal, then daylight taxi on NH 202 to Ukhrul",
+        "cost": "Loktak→Imphal ₹2,500–₹4,500; Imphal→Ukhrul ₹3,000–₹5,000",
+        "distanceKm": 132,
+        "durationHrs": 6,
+        "sameDayFeasible": false
+      },
+      {
+        "from": "Ukhrul",
+        "to": "Imphal",
+        "method": "Daylight private taxi/shared vehicle via NH 202",
+        "cost": "₹3,000–₹5,000 private taxi; shared vehicles vary",
+        "distanceKm": 83,
+        "durationHrs": 4,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "Manipur ILP is mandatory for Indian visitors; apply online before departure when possible and keep a digital/offline copy for checkpoints and hotel check-in.",
+      "Foreign nationals should check current PAP/registration rules and their embassy's Manipur advisory before planning, because international advisories in 2026 remain stricter than normal India guidance.",
+      "Current 2026 safety planning should prioritize Imphal Valley and Loktak Lake; avoid border areas, Moreh and tense buffer zones, and treat Ukhrul/hill districts as conditional rather than guaranteed itinerary content.",
+      "Loktak boat, park, museum and Kangla entry prices are not consistently published on official 2026 fee sheets; use the conservative bands above and verify locally before committing.",
+      "November–March is best for Loktak birding and comfortable valley travel; May is useful mainly for Shirui lily/festival planning in Ukhrul, with higher rain and security-dependence."
+    ]
+  }
+}

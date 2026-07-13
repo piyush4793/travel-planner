@@ -860,5 +860,103 @@
       "Nagaland",
       "Meghalaya"
     ]
+  },
+  {
+    "name": "Nagaland",
+    "lat": 26.1584,
+    "lng": 94.5624,
+    "region": "Northeast India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 11,
+    "maxDays": 14,
+    "popularityScore": 74,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Assam",
+      "Manipur",
+      "Arunachal Pradesh",
+      "Meghalaya"
+    ]
+  },
+  {
+    "name": "Manipur",
+    "lat": 24.6637,
+    "lng": 93.9063,
+    "region": "Northeast India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8,
+    "popularityScore": 62,
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Assam",
+      "Nagaland",
+      "Mizoram"
+    ]
+  },
+  {
+    "name": "Mizoram",
+    "lat": 23.1645,
+    "lng": 92.9376,
+    "region": "Northeast India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 10,
+    "popularityScore": 62,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Assam",
+      "Manipur",
+      "Tripura",
+      "Meghalaya"
+    ]
   }
 ]

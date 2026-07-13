@@ -1,0 +1,793 @@
+{
+  "name": "Mizoram",
+  "seed": false,
+  "lat": 23.1645,
+  "lng": 92.9376,
+  "region": "Northeast India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹24K–₹38K",
+    "couple": "₹44K–₹68K",
+    "family4": "₹78K–₹1.18L"
+  },
+  "experiences": [
+    "Mountains",
+    "Road Trips",
+    "Hiking",
+    "Waterfalls",
+    "Markets & Shopping",
+    "Temples & Religious Sites",
+    "Museums",
+    "Food",
+    "Festivals",
+    "Wine & Vineyards",
+    "Wildlife & Safari"
+  ],
+  "avoid": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Assam",
+    "Manipur",
+    "Tripura",
+    "Meghalaya"
+  ],
+  "landmark": "Vantawng Falls and the blue-green hills around Aizawl",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Fly into Lengpui Airport near Aizawl or arrive by the Silchar railhead plus a 6-hour hill-road drive. Indian visitors need an Inner Line Permit: apply on the official Mizoram ILP portal, through Mizoram liaison offices, or on arrival at Lengpui airport; the portal shows a 7-day Temporary ILP flow and releases payment only after verification. Carry the ILP, a photo ID and cash because Aizawl-Reiek-Hmuifang-Champhai roads are narrow, very winding and slow.",
+  "diet": {
+    "vegetarian": "Vegetarian travel is possible in Aizawl and larger towns but needs planning because everyday Mizo food is rice-led and often pork, smoked meat, fish or fermented-meat heavy. Ask for bai made without pork/fish, dal-rice, boiled vegetables, chhangban, bekang, veg momos and simple noodles; remote homestays around Reiek, Hmuifang, Thenzawl and Champhai should be told in advance.",
+    "vegan": "Vegan options are limited outside Aizawl. Clarify no meat, fish, egg, milk, paneer, butter, ghee or curd; fixed homestay meals may use animal stock or serve pork by default, so request rice, plain bai/boiled greens, potatoes, bamboo shoots and oil-only cooking before arrival. Mizoram remains a low-nightlife/prohibition-sensitive state, with tightly controlled exceptions for local fruit wine and licensed settings, so do not assume bars or easy alcohol access.",
+    "phrases": [
+      "Mizo: Sa leh sangha tel lovin ei tur ka duh = I want food without meat or fish",
+      "Hindi: Doodh, ghee, paneer, anda mat daliyega = please do not add milk, ghee, paneer or egg",
+      "English/Mizo: Vegetarian/vegan ka ni; oil chauh hmang rawh = I am vegetarian/vegan; please use only oil"
+    ]
+  },
+  "links": [
+    {
+      "label": "Mizoram Tourism — places of interest",
+      "url": "https://tourism.mizoram.gov.in/page/places-of-interest"
+    },
+    {
+      "label": "Mizoram Tourism — entry formality",
+      "url": "https://tourism.mizoram.gov.in/page/entry-formality"
+    },
+    {
+      "label": "Official Mizoram ILP portal",
+      "url": "https://ilp.mizoram.gov.in/"
+    },
+    {
+      "label": "Incredible India — Mizoram",
+      "url": "https://www.incredibleindia.gov.in/en/mizoram"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Aizawl",
+      "lat": 23.7271,
+      "lng": 92.7176,
+      "notes": "Ridge-top capital and logistics base for ILP, markets, museums, churches, Durtlang views and taxis into the rest of Mizoram.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "Markets & Shopping",
+        "Museums",
+        "Temples & Religious Sites",
+        "Food",
+        "Architecture"
+      ]
+    },
+    {
+      "name": "Reiek",
+      "lat": 23.6928,
+      "lng": 92.5307,
+      "notes": "Highland village west of Aizawl with the Reiek Tlang trek, heritage village, festival grounds and layered views toward the plains on clear days.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "Hiking",
+        "Festivals",
+        "History",
+        "Road Trips"
+      ]
+    },
+    {
+      "name": "Hmuifang-Thenzawl",
+      "lat": 23.4287,
+      "lng": 92.7577,
+      "notes": "Southern hill-and-waterfall base pairing Hmuifang's forests and Anthurium Festival setting with Thenzawl's Vantawng Falls, handloom clusters and quiet lodges.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "Hiking",
+        "Waterfalls",
+        "Festivals",
+        "Markets & Shopping",
+        "Road Trips"
+      ]
+    },
+    {
+      "name": "Champhai",
+      "lat": 23.4565,
+      "lng": 93.3289,
+      "notes": "Eastern borderland town known for paddy valleys, vineyards around Hnahlan/Tlangsam, Zokhawthar-Rih Dil access and heritage sites near Vangchhia.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "Road Trips",
+        "Wine & Vineyards",
+        "History",
+        "Markets & Shopping",
+        "Wildlife & Safari"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel are usable in Aizawl and major towns, with BSNL often helpful in smaller settlements; expect patchy data and dead zones on Reiek, Hmuifang, Thenzawl and Champhai hill roads. Download maps, keep hotel/taxi numbers offline and do not rely on live routing after dark.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "MakeMyTrip",
+      "Zomato",
+      "WhatsApp",
+      "Mizoram ILP portal"
+    ],
+    "cityOrder": [
+      "Aizawl",
+      "Reiek",
+      "Hmuifang-Thenzawl",
+      "Champhai"
+    ],
+    "cities": {
+      "Aizawl": {
+        "name": "Aizawl",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives one arrival/ILP-and-market day plus one city-view and church/museum day; add a third only as a buffer before long drives.",
+        "experiences": [
+          "Mountains",
+          "Markets & Shopping",
+          "Museums",
+          "Temples & Religious Sites",
+          "Food",
+          "Architecture"
+        ],
+        "signatureExperiences": [
+          "Mountains",
+          "Markets & Shopping",
+          "Museums"
+        ],
+        "days": [
+          {
+            "theme": "Arrival, ILP check and Bara Bazaar",
+            "pace": "relaxed",
+            "note": "Lengpui airport to central Aizawl is a slow hill-road transfer; use this day to settle in, confirm your Inner Line Permit and book reliable taxis for the next sectors.",
+            "activities": [
+              {
+                "name": "Lengpui arrival and ILP verification",
+                "duration": "1–2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Official guidance confirms ILP on arrival at Lengpui and online Temporary ILP application; current fee is shown only during portal/counter processing, so verify locally in 2026."
+              },
+              {
+                "name": "Bara Bazaar and Millennium Centre",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Best for textiles, bamboo products and seeing everyday Aizawl market life; go before late afternoon closures."
+              },
+              {
+                "name": "Zarkawt or Chanmari café dinner walk",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "This is the easiest place in the trip to find vegetarian meals and confirm vegan requests."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aizawl budget guesthouse or homestay",
+                "budget": "₹1,800–₹3,500/night"
+              },
+              {
+                "name": "Central Aizawl mid-range hotel",
+                "budget": "₹4,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Veg momos or noodles in Chanmari",
+              "Plain bai without pork/fish if pre-requested",
+              "Rice, dal and boiled greens"
+            ]
+          },
+          {
+            "theme": "Durtlang views, museum and Solomon's Temple",
+            "pace": "moderate",
+            "note": "Aizawl is built along steep ridges, so even short map distances take time. Keep the day to the north-city viewpoint cluster plus one western church stop rather than criss-crossing town repeatedly.",
+            "activities": [
+              {
+                "name": "Durtlang Hills viewpoint loop",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Morning haze is lower and road traffic is easier; viewpoints are exposed, so carry a light jacket in winter."
+              },
+              {
+                "name": "Mizoram State Museum",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "verify locally; small entry fee may apply",
+                "tip": "Use it as a compact primer on Mizo textiles, household objects and cultural history."
+              },
+              {
+                "name": "Solomon's Temple, Chawlhhmun",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free / donation",
+                "tip": "Check service/event timing and dress modestly; it is across town, so pair it with a taxi rather than walking."
+              },
+              {
+                "name": "Aizawl View or Sakei Khawthlir at Durtlang",
+                "duration": "30–45m",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aizawl budget guesthouse or homestay",
+                "budget": "₹1,800–₹3,500/night"
+              },
+              {
+                "name": "Central Aizawl mid-range hotel",
+                "budget": "₹4,000–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Chhangban with tea",
+              "Vegetable chow or veg momos",
+              "Bai without meat/fish stock"
+            ]
+          },
+          {
+            "theme": "Optional city buffer before the hill circuit",
+            "pace": "relaxed",
+            "note": "Use this only if a flight, ILP approval or vehicle booking slips; the route works better with buffers than with night driving on unfamiliar hill roads.",
+            "activities": [
+              {
+                "name": "Taxi and ILP paperwork buffer",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "varies"
+              },
+              {
+                "name": "Handloom and bamboo craft shopping",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Quiet ridge-view café afternoon",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Aizawl budget guesthouse or homestay",
+                "budget": "₹1,800–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Dal-rice thali",
+              "Veg noodles",
+              "Local tea and bakery snacks"
+            ]
+          }
+        ]
+      },
+      "Reiek": {
+        "name": "Reiek",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Reiek can be a long day trip from Aizawl, but one overnight makes the trek and heritage village more relaxed and avoids returning on dark, winding roads.",
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "Festivals",
+          "History",
+          "Road Trips"
+        ],
+        "signatureExperiences": [
+          "Mountains",
+          "Hiking",
+          "Festivals"
+        ],
+        "days": [
+          {
+            "theme": "Reiek Tlang trek and heritage village",
+            "pace": "moderate",
+            "note": "Aizawl to Reiek is short on the map but slow and curvy; start after breakfast, keep the trek unhurried and avoid descending the road after dark.",
+            "activities": [
+              {
+                "name": "Aizawl to Reiek hill-road drive",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "taxi ₹2,500–₹4,500 round-trip; verify locally",
+                "tip": "Rates depend on vehicle size and waiting time; the official rent-a-cab schedule is a useful baseline but not a tourist quote."
+              },
+              {
+                "name": "Reiek Tlang summit walk",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "verify locally; small eco/parking fee may apply",
+                "tip": "Trails can be slippery after rain; carry water because food stalls are not guaranteed."
+              },
+              {
+                "name": "Reiek Heritage Village",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "verify locally; small entry fee may apply",
+                "tip": "Best with a local guide or caretaker explanation of traditional Mizo house forms."
+              },
+              {
+                "name": "Festival ground and ridge sunset",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Anthurium Festival events usually use the Reiek/Hmuifang hill setting; dates vary, so check the tourism department calendar."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Reiek tourist lodge or homestay",
+                "budget": "₹1,500–₹3,000/night; verify locally"
+              },
+              {
+                "name": "Return-to-Aizawl hotel option",
+                "budget": "₹2,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Homestay rice and vegetables if pre-requested",
+              "Packed veg lunch from Aizawl",
+              "Tea with chhangban"
+            ]
+          },
+          {
+            "theme": "Optional slow Reiek nature morning",
+            "pace": "relaxed",
+            "note": "Add this only if you want a low-speed village stay or if weather hid the views on day one; otherwise move on toward Hmuifang/Thenzawl.",
+            "activities": [
+              {
+                "name": "Early ridge viewpoint repeat",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Local village walk",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "Free / guide tip"
+              },
+              {
+                "name": "Reiek to Aizawl/Hmuifang transfer",
+                "duration": "3–5h with Aizawl traffic",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "There is no fast cross-country shortcut; most practical routings return through Aizawl before heading south."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Reiek tourist lodge or homestay",
+                "budget": "₹1,500–₹3,000/night; verify locally"
+              }
+            ],
+            "meals": [
+              "Simple homestay breakfast",
+              "Packed fruit and snacks",
+              "Aizawl veg dinner after transfer"
+            ]
+          }
+        ]
+      },
+      "Hmuifang-Thenzawl": {
+        "name": "Hmuifang-Thenzawl",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 2,
+        "note": "Two days is the realistic minimum for the southbound ridge drive, Hmuifang's forest walks and the Thenzawl/Vantawng waterfall cluster without night-driving pressure.",
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "Waterfalls",
+          "Festivals",
+          "Markets & Shopping",
+          "Road Trips"
+        ],
+        "signatureExperiences": [
+          "Waterfalls",
+          "Mountains",
+          "Hiking"
+        ],
+        "days": [
+          {
+            "theme": "Aizawl/Reiek to Hmuifang forest ridge",
+            "pace": "relaxed",
+            "note": "This is a transfer-plus-nature day. Roads south of Aizawl are narrow and scenic but slow, so keep sightseeing to Hmuifang and nearby viewpoints.",
+            "activities": [
+              {
+                "name": "Drive to Hmuifang hill resort area",
+                "duration": "2–4h depending on start point",
+                "priority": "must-see",
+                "cost": "taxi ₹3,500–₹6,500/day; verify locally",
+                "tip": "If starting from Reiek, expect to route back via Aizawl and lose time in city traffic."
+              },
+              {
+                "name": "Hmuifang forest and meadow walks",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Free / verify local resort fee",
+                "tip": "Hmuifang sits around 1,600m; weather can change quickly, so carry a layer and rain cover."
+              },
+              {
+                "name": "Anthurium Festival setting or local cultural ground",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "event-dependent; verify locally",
+                "tip": "The flower-and-culture festival is seasonal; when not running, treat this as a quiet hill stop rather than an event day."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Hmuifang tourist resort/basic lodge",
+                "budget": "₹1,800–₹3,500/night; verify locally"
+              },
+              {
+                "name": "Thenzawl lodge or guesthouse",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Packed vegetarian lunch from Aizawl",
+              "Rice with plain bai by advance request",
+              "Tea and local snacks"
+            ]
+          },
+          {
+            "theme": "Vantawng Falls and Thenzawl handloom",
+            "pace": "moderate",
+            "note": "Vantawng is the state's signature waterfall, but it is viewed from a safe tower because the base is steep and unsafe. Keep the day around Thenzawl instead of trying to continue all the way to Champhai after sightseeing.",
+            "activities": [
+              {
+                "name": "Vantawng Falls viewpoint near Thenzawl",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "verify locally; small entry/parking fee may apply",
+                "tip": "Do not attempt to scramble to the base; monsoon makes paths slippery and dangerous."
+              },
+              {
+                "name": "Tuirihiau Falls side trip",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "verify locally",
+                "tip": "Skip in heavy rain or if roads are damaged; waterfall approaches can be muddy."
+              },
+              {
+                "name": "Thenzawl handloom and handicraft browse",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "Free to browse",
+                "tip": "Good place to buy woven textiles directly; carry cash and avoid aggressive bargaining."
+              },
+              {
+                "name": "Deer Park or quiet lodge evening",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "verify locally"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Thenzawl lodge or guesthouse",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Aizawl return hotel if looping back",
+                "budget": "₹2,000–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Rice, dal and stir-fried greens",
+              "Vegetable noodles",
+              "Homestay potatoes and bamboo shoots"
+            ]
+          }
+        ]
+      },
+      "Champhai": {
+        "name": "Champhai",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Champhai needs two nights because the Aizawl-Champhai road is a long, serpentine 6–8 hour drive each way. Treat transfer time as the main content, not a throwaway commute.",
+        "experiences": [
+          "Mountains",
+          "Road Trips",
+          "Wine & Vineyards",
+          "History",
+          "Markets & Shopping",
+          "Wildlife & Safari"
+        ],
+        "signatureExperiences": [
+          "Road Trips",
+          "Wine & Vineyards",
+          "Mountains"
+        ],
+        "days": [
+          {
+            "theme": "Long Aizawl/Thenzawl to Champhai drive",
+            "pace": "relaxed",
+            "note": "This is a full hill-road day with sharp bends, checkposts and weather delays. Start early, avoid night driving and keep sightseeing to a short valley orientation after arrival.",
+            "activities": [
+              {
+                "name": "Serpentine drive to Champhai",
+                "duration": "6–8h from Aizawl; longer from Thenzawl via practical routing",
+                "priority": "must-see",
+                "cost": "shared sumo/seat varies; private taxi ₹6,000–₹10,000/day, verify locally",
+                "tip": "Motion sickness is common; carry water, snacks and cash because facilities are sparse between towns."
+              },
+              {
+                "name": "Champhai valley viewpoint orientation",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "The paddy-bowl views are best in clear late afternoon light."
+              },
+              {
+                "name": "Champhai market walk",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "Free",
+                "tip": "Use this to buy snacks before the next day's border and vineyard circuit."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Champhai budget hotel or tourism-listed homestay",
+                "budget": "₹1,500–₹3,000/night"
+              },
+              {
+                "name": "Champhai mid-range town hotel",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Simple rice and vegetables by advance request",
+              "Veg noodles at town cafés",
+              "Fruit and packed snacks"
+            ]
+          },
+          {
+            "theme": "Rih Dil access, border villages and vineyards",
+            "pace": "moderate",
+            "note": "Rih Dil lies across the Myanmar border and access can change with security conditions, documents and local permissions. If cross-border movement is not available, substitute Zokhawthar viewpoints, Hnahlan/Tlangsam vineyards and Vangchhia heritage instead.",
+            "activities": [
+              {
+                "name": "Zokhawthar border and Rih Dil viewpoint/checkpoint attempt",
+                "duration": "3–5h round-trip or longer with formalities",
+                "priority": "must-see",
+                "cost": "permit/vehicle varies; verify locally",
+                "tip": "Do not assume same-day entry into Myanmar; check current security and border rules with Champhai authorities before leaving town."
+              },
+              {
+                "name": "Hnahlan or Tlangsam vineyard visit",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "varies; tastings/entry may be restricted",
+                "tip": "Mizoram's 2025 excise updates list functioning Champhai wineries, but alcohol rules remain controlled; buy or taste only where legally permitted."
+              },
+              {
+                "name": "Kawtchhuah Ropui / Vangchhia heritage stop",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "verify locally",
+                "tip": "Works best with a local driver-guide who knows road conditions and site access."
+              },
+              {
+                "name": "Champhai sunset over paddy fields",
+                "duration": "30–45m",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Champhai budget hotel or tourism-listed homestay",
+                "budget": "₹1,500–₹3,000/night"
+              },
+              {
+                "name": "Champhai mid-range town hotel",
+                "budget": "₹3,500–₹6,000/night"
+              }
+            ],
+            "meals": [
+              "Rice with pumpkin or greens",
+              "Bai without pork/fish stock",
+              "Vegetable momos or noodles"
+            ]
+          },
+          {
+            "theme": "Optional Murlen National Park or return buffer",
+            "pace": "packed",
+            "note": "Murlen and deeper Champhai district heritage sites add more slow mountain driving. Use this only with an experienced local driver and do not schedule an Aizawl flight the same evening.",
+            "activities": [
+              {
+                "name": "Murlen National Park approach",
+                "duration": "half to full day",
+                "priority": "recommended",
+                "cost": "permit/guide/vehicle varies; verify locally",
+                "tip": "Forest access and road condition are seasonal; confirm with local tourism/forest contacts before committing."
+              },
+              {
+                "name": "Alternative return drive to Aizawl",
+                "duration": "6–8h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Start at dawn; this is not a safe late-evening transfer."
+              },
+              {
+                "name": "Champhai town rest and laundry buffer",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Champhai budget hotel or tourism-listed homestay",
+                "budget": "₹1,500–₹3,000/night"
+              }
+            ],
+            "meals": [
+              "Packed breakfast",
+              "Roadside rice meal",
+              "Aizawl dinner after return"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Aizawl",
+        "to": "Reiek",
+        "method": "Private taxi on narrow hill roads via Aizawl western outskirts",
+        "cost": "₹2,500–₹4,500 round-trip taxi; verify locally",
+        "distanceKm": 30,
+        "durationHrs": 2,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Reiek",
+        "to": "Hmuifang-Thenzawl",
+        "method": "Return through/around Aizawl, then southbound taxi toward Hmuifang and Thenzawl",
+        "cost": "₹4,000–₹7,000 vehicle day; verify locally",
+        "distanceKm": 105,
+        "durationHrs": 4.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Hmuifang-Thenzawl",
+        "to": "Champhai",
+        "method": "Practical routing usually breaks back via Aizawl before the eastbound Champhai road",
+        "cost": "₹6,000–₹10,000/day private taxi or shared sumo seats vary",
+        "distanceKm": 250,
+        "durationHrs": 9,
+        "sameDayFeasible": false
+      },
+      {
+        "from": "Aizawl",
+        "to": "Champhai",
+        "method": "Shared sumo or private taxi on long winding hill road",
+        "cost": "shared seat/private taxi varies; verify locally",
+        "distanceKm": 185,
+        "durationHrs": 7,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "Inner Line Permit is mandatory for Indian visitors; the official tourism page lists liaison offices and Lengpui airport on-arrival ILP, while the official portal hosts the online Temporary ILP flow.",
+      "The online Temporary ILP flow visible in the 2026 portal is marked 7 days validity; fee payment appears only after office-hour verification and approval, so hard current fees could not be independently verified from a public Jan-2026-or-later schedule.",
+      "Chapchar Kut is normally in the first week of March; Anthurium Festival is associated with the Reiek/Hmuifang hill-flower belt but dates should be checked close to travel.",
+      "Mizoram roads are scenic but slow, with many bends and landslide-prone monsoon sections. Avoid night driving and keep long transfers light.",
+      "The alcohol situation is not standard nightlife: prohibition-era controls continue, but 2025 excise notifications and winery lists show tightly regulated tourist/wine/local-fruit-beer exceptions. Verify legal availability locally and do not carry alcohol casually across borders."
+    ]
+  }
+}
