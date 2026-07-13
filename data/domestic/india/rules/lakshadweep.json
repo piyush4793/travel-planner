@@ -1,0 +1,788 @@
+{
+  "name": "Lakshadweep",
+  "seed": false,
+  "lat": 10.5667,
+  "lng": 72.6417,
+  "region": "Islands",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹80K–₹1.35L",
+    "couple": "₹1.45L–₹2.45L",
+    "family4": "₹2.65L–₹4.40L"
+  },
+  "experiences": [
+    "Islands",
+    "Beaches",
+    "Water Sports",
+    "Cruises & Boat Trips",
+    "Adventure Sports",
+    "Luxury & Resorts",
+    "Wildlife & Safari",
+    "Food"
+  ],
+  "avoid": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Kerala"
+  ],
+  "landmark": "Bangaram lagoon and Lakshadweep coral atolls",
+  "travelStyle": [
+    "immersive"
+  ],
+  "stopoverNote": "Lakshadweep is a restricted, permit-first destination: every non-native visitor, including Indian citizens, needs an Entry Permit through the ePermit portal and must travel only on the islands/dates printed on the permit. Most tourism is package-only through SPORTS or authorised operators, with accommodation, meals, boats and permits bundled. Kochi is the gateway: fly Kochi–Agatti for the only airport, then use pre-arranged daylight boats, or take a Kochi ship package taking about 14–20 hours. Do not assume walk-in ferries, island-hopping or last-minute rooms; monsoon seas can disrupt ships, flights and inter-island boats, and alcohol is broadly prohibited except at Bangaram resort.",
+  "diet": {
+    "vegetarian": "Vegetarian meals are possible but must be requested before the package is confirmed because island kitchens are small and fixed menus lean heavily on rice, coconut, tuna and reef fish. Ask for rice, dal, chapati, vegetable coconut curry, appam/idiyappam, fruit and simple packed snacks; Agatti/Kavaratti are easier than remote resort islands.",
+    "vegan": "Vegan travel is workable only with advance notice to SPORTS/operator and the resort kitchen. Coconut is common, but clarify no ghee, butter, curd, milk, paneer, egg, fish stock or dried tuna; carry snacks and plant milk because dairy alternatives and fresh vegetables can be limited by boat supply.",
+    "phrases": [
+      "Enikku shakahari bhakshanam venam, meen/irachi venda = I need vegetarian food, no fish or meat",
+      "Ghee, paal, thairu, mutta venda; enna mathram = no ghee, milk, curd or egg; oil only",
+      "Vegetarian/vegan meal package advance mein confirm kar dijiye = please confirm my vegetarian/vegan meal package in advance"
+    ]
+  },
+  "links": [
+    {
+      "label": "Lakshadweep Tourism / SPORTS",
+      "url": "https://lakshadweeptourism.com/"
+    },
+    {
+      "label": "How to book SPORTS packages",
+      "url": "https://lakshadweeptourism.com/Htobook.html"
+    },
+    {
+      "label": "Lakshadweep ePermit portal",
+      "url": "https://epermit.utl.gov.in/pages"
+    },
+    {
+      "label": "Incredible India — Lakshadweep",
+      "url": "https://www.incredibleindia.gov.in/en/lakshadweep/kavaratti/lakshadweep-travel-guide"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Agatti",
+      "lat": 10.8576,
+      "lng": 72.1934,
+      "notes": "The only airport in Lakshadweep and the practical fly-in gateway; use it for permit checks, lagoon acclimatisation and pre-arranged boats to Bangaram or Kadmat.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Islands",
+        "Beaches",
+        "Water Sports",
+        "Cruises & Boat Trips"
+      ]
+    },
+    {
+      "name": "Bangaram",
+      "lat": 10.9365,
+      "lng": 72.2868,
+      "notes": "Uninhabited resort island paired with nearby Thinnakara for the clearest lagoon, premium cottages/tents, snorkelling, diving and the UT's only legal alcohol exception.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Islands",
+        "Beaches",
+        "Water Sports",
+        "Adventure Sports",
+        "Luxury & Resorts"
+      ]
+    },
+    {
+      "name": "Kadmat",
+      "lat": 11.2247,
+      "lng": 72.7792,
+      "notes": "Long, narrow diving-focused island with lagoon on both sides; best for scuba, snorkelling, kayaking and slower reef days when included in a SPORTS package.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Islands",
+        "Beaches",
+        "Water Sports",
+        "Adventure Sports",
+        "Wildlife & Safari"
+      ]
+    },
+    {
+      "name": "Kavaratti",
+      "lat": 10.5593,
+      "lng": 72.6358,
+      "notes": "The capital island and common cruise/day-tour stop, mixing lagoon activities with the Marine Aquarium, mosques and permit-controlled administrative services.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Islands",
+        "Beaches",
+        "Water Sports",
+        "Cruises & Boat Trips",
+        "Museums",
+        "Architecture"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Connectivity is improving but remains uneven: BSNL is the fallback on many islands, Jio/Airtel may work around Agatti/Kavaratti, and resort Wi-Fi can be slow or rationed. Download permits, tickets, maps and operator contacts before boarding; expect dead zones on boats and smaller islands.",
+    "apps": [
+      "Google Maps",
+      "MakeMyTrip",
+      "WhatsApp",
+      "DigiLocker",
+      "Aarogya Setu",
+      "IRCTC Rail Connect"
+    ],
+    "cityOrder": [
+      "Agatti",
+      "Bangaram",
+      "Kadmat",
+      "Kavaratti"
+    ],
+    "cities": {
+      "Agatti": {
+        "name": "Agatti",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Treat Agatti as the controlled arrival base: flight seats are limited, the permit is checked, boats run only when authorised and daylight/sea conditions allow, so the first day should stay very light.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Water Sports",
+          "Cruises & Boat Trips"
+        ],
+        "signatureExperiences": [
+          "Islands",
+          "Cruises & Boat Trips"
+        ],
+        "days": [
+          {
+            "theme": "Permit check, Agatti arrival and lagoon orientation",
+            "pace": "relaxed",
+            "note": "Kochi–Agatti is the only flight route into the UT and seats are scarce. Keep printed/digital permit copies ready, reconfirm the boat included in your package, and avoid scheduling a same-day dive after flight delays or rough seas.",
+            "activities": [
+              {
+                "name": "Kochi to Agatti flight or ship-arrival formalities",
+                "duration": "1.5h flight / 14–20h ship",
+                "priority": "must-see",
+                "cost": "flight/ship varies",
+                "tip": "Book only after permit and package confirmation; ships and flights can be rescheduled in monsoon or rough seas."
+              },
+              {
+                "name": "Entry Permit and island/date verification",
+                "duration": "30–60m",
+                "priority": "must-see",
+                "cost": "₹50 ePermit fee + ₹200 adult heritage fee",
+                "tip": "Official fee data is from the ePermit portal; print the permit and carry the same ID used in the application."
+              },
+              {
+                "name": "Agatti beach and lagoon acclimatisation walk",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Stay on permitted resort/public stretches; do not wander into residential or restricted areas without your operator."
+              },
+              {
+                "name": "Operator briefing for Bangaram/Kadmat/Kavaratti boats",
+                "duration": "~30m",
+                "priority": "must-see",
+                "cost": "included in package / varies",
+                "tip": "Confirm daylight-only boat timing, luggage limits, meal preferences and whether Thinnakara is day-visit or overnight on your permit."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Agatti package guesthouse/resort",
+                "budget": "₹5,000–₹10,000/night bundled"
+              },
+              {
+                "name": "Premium Agatti beach stay",
+                "budget": "₹10,000–₹18,000/night bundled"
+              }
+            ],
+            "meals": [
+              "Coconut vegetable curry with rice",
+              "Chapati and dal by request",
+              "Fresh fruit and tea"
+            ]
+          },
+          {
+            "theme": "Optional Agatti lagoon buffer",
+            "pace": "relaxed",
+            "note": "Use this only when your outbound boat is weather-delayed or when your package keeps you on Agatti for a second night. A buffer is often more valuable here than another rushed island hop.",
+            "activities": [
+              {
+                "name": "Beginner lagoon snorkel from permitted beach",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "package included / ₹500–₹1,500",
+                "tip": "Verify with the operator; avoid standing on coral and ask for a life jacket if not a confident swimmer."
+              },
+              {
+                "name": "Kayak or glass-bottom boat short ride",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "package included / ₹500–₹2,000",
+                "tip": "Rates vary by operator and sea state; confirm before launch."
+              },
+              {
+                "name": "Rest, reef-safe sunscreen and hydration stop",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Agatti package guesthouse/resort",
+                "budget": "₹5,000–₹10,000/night bundled"
+              }
+            ],
+            "meals": [
+              "Idiyappam with vegetable stew",
+              "Rice, dal and coconut chutney",
+              "Packed fruit/snack box"
+            ]
+          }
+        ]
+      },
+      "Bangaram": {
+        "name": "Bangaram",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Bangaram works best as a two-night lagoon stay, often with Thinnakara as a permitted day excursion. It is package-controlled, boat-dependent and the only island where alcohol is generally available to tourists at the resort.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Water Sports",
+          "Adventure Sports",
+          "Luxury & Resorts"
+        ],
+        "signatureExperiences": [
+          "Beaches",
+          "Water Sports",
+          "Adventure Sports"
+        ],
+        "days": [
+          {
+            "theme": "Agatti boat transfer and Bangaram lagoon",
+            "pace": "moderate",
+            "note": "Agatti to Bangaram is normally a pre-arranged daylight boat of about 45–90 minutes, but wind and swell decide the final timing. Plan only one island's lagoon after arrival.",
+            "activities": [
+              {
+                "name": "Pre-arranged Agatti to Bangaram boat",
+                "duration": "45–90m",
+                "priority": "must-see",
+                "cost": "included in package / verify",
+                "tip": "There are no casual night transfers; keep luggage soft and waterproof valuables."
+              },
+              {
+                "name": "Bangaram resort check-in and permit cross-check",
+                "duration": "~45m",
+                "priority": "must-see",
+                "cost": "Bangaram 2N/3D packages often ₹25,000–₹45,000/person",
+                "tip": "Recent operator rates vary by room and season; verify final inclusions with SPORTS/authorised operator."
+              },
+              {
+                "name": "House-reef snorkelling orientation",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "package included / ₹500–₹1,500",
+                "tip": "Use a guide for first entry; currents can be stronger than the lagoon looks."
+              },
+              {
+                "name": "Sunset beach walk",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bangaram standard cottage/package",
+                "budget": "₹9,000–₹16,000/person/night bundled"
+              },
+              {
+                "name": "Bangaram premium cottage/package",
+                "budget": "₹16,000–₹28,000/person/night bundled"
+              }
+            ],
+            "meals": [
+              "Vegetable coconut curry",
+              "Appam or chapati by request",
+              "Tuna curry for non-vegetarians"
+            ]
+          },
+          {
+            "theme": "Scuba, kayaking and Thinnakara sandbar day",
+            "pace": "moderate",
+            "note": "Keep the day centred on Bangaram/Thinnakara lagoon rather than adding another island. Dive slots, Thinnakara landing and kayaking all depend on your permit, package and sea state.",
+            "activities": [
+              {
+                "name": "Introductory scuba dive or guided snorkel",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "₹3,500–₹5,000 intro dive; snorkel lower/varies",
+                "tip": "2026 dive prices are mostly from operators, not a fresh official tariff; verify slot, medical form and weather cancellation rules."
+              },
+              {
+                "name": "Kayak or stand-up paddle in Bangaram lagoon",
+                "duration": "1h",
+                "priority": "recommended",
+                "cost": "package included / ₹500–₹2,000",
+                "tip": "Wear reef shoes only where allowed; never step on live coral."
+              },
+              {
+                "name": "Thinnakara day visit or sandbar photo stop",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "included in package / verify",
+                "tip": "Thinnakara may be day-visit or tented overnight only if named on your permit and package."
+              },
+              {
+                "name": "Bangaram resort evening",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Alcohol is generally legal only here within resort rules; do not carry it to other islands."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bangaram standard cottage/package",
+                "budget": "₹9,000–₹16,000/person/night bundled"
+              },
+              {
+                "name": "Thinnakara tented package if permitted",
+                "budget": "₹7,000–₹14,000/person/night bundled"
+              }
+            ],
+            "meals": [
+              "Rice with coconut veg kurma",
+              "Lemon rice packed lunch",
+              "Grilled fish/tuna optional"
+            ]
+          },
+          {
+            "theme": "Optional slow reef-rest day",
+            "pace": "relaxed",
+            "note": "Add this day only if you want a low-impact resort break or if the first dive/Thinnakara attempt was cancelled by weather. It is not a licence to hop to an unlisted island.",
+            "activities": [
+              {
+                "name": "Second snorkel window at slack tide",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "package included / verify"
+              },
+              {
+                "name": "Beach rest and marine-life spotting",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Reconfirm onward boat and permit dates",
+                "duration": "~30m",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Inter-island movement is not turn-up-and-go; missing the package boat can strand you."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Bangaram standard cottage/package",
+                "budget": "₹9,000–₹16,000/person/night bundled"
+              }
+            ],
+            "meals": [
+              "Vegetable pulao",
+              "Coconut chutney with dosa/appam",
+              "Fruit and tea"
+            ]
+          }
+        ]
+      },
+      "Kadmat": {
+        "name": "Kadmat",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Kadmat is the diver's island but should still be planned slowly: one day for transfer and lagoon orientation, one for a dive/snorkel block, and a third only for certification or weather buffer.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Water Sports",
+          "Adventure Sports",
+          "Wildlife & Safari"
+        ],
+        "signatureExperiences": [
+          "Adventure Sports",
+          "Water Sports",
+          "Wildlife & Safari"
+        ],
+        "days": [
+          {
+            "theme": "Package boat to Kadmat and long-lagoon settling in",
+            "pace": "relaxed",
+            "note": "Kadmat transfers are package/schedule dependent and can be by ship or speedboat via Agatti. Do not assume same-day onward movement after arrival.",
+            "activities": [
+              {
+                "name": "Pre-booked boat/ship transfer to Kadmat",
+                "duration": "2–6h depending route",
+                "priority": "must-see",
+                "cost": "included in package / varies",
+                "tip": "Verify exact routing with SPORTS/operator; weather can reverse the sequence of islands."
+              },
+              {
+                "name": "Kadmat resort check-in and water-sports desk briefing",
+                "duration": "~45m",
+                "priority": "must-see",
+                "cost": "Kadmat packages often ₹20,000–₹45,000/person for 4–5 days",
+                "tip": "Conservative 2026 band; confirm current SPORTS/operator rate, transfers and included activities."
+              },
+              {
+                "name": "East-west beach and lagoon walk",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Sunset swim in marked safe zone",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "Free",
+                "tip": "Swim only where resort staff mark safe currents."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kadmat standard package room",
+                "budget": "₹6,000–₹12,000/person/night bundled"
+              },
+              {
+                "name": "Kadmat AC beach cottage/package",
+                "budget": "₹12,000–₹20,000/person/night bundled"
+              }
+            ],
+            "meals": [
+              "Rice, dal and vegetable curry",
+              "Coconut-based local curry",
+              "Tuna fry/curry optional"
+            ]
+          },
+          {
+            "theme": "Dive centre, reef snorkel and kayak block",
+            "pace": "moderate",
+            "note": "This is a one-lagoon activity day: morning dive/snorkel, lunch/rest, then a gentle kayak. Avoid stacking multiple paid water sports if visibility or currents are poor.",
+            "activities": [
+              {
+                "name": "Kadmat introductory scuba or certified fun dive",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "₹3,500–₹7,500/dive",
+                "tip": "Operator-verified 2026-style band; medical and swimming comfort checks apply, and prices should be reconfirmed on booking."
+              },
+              {
+                "name": "Guided coral snorkel",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "package included / ₹500–₹1,500",
+                "tip": "Do not touch coral or chase turtles; reef damage rules are strict."
+              },
+              {
+                "name": "Kayaking or glass-bottom boat",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "package included / ₹500–₹2,000"
+              },
+              {
+                "name": "Marine-wealth awareness talk or beach clean-up",
+                "duration": "30–45m",
+                "priority": "optional",
+                "cost": "Free / donation"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kadmat standard package room",
+                "budget": "₹6,000–₹12,000/person/night bundled"
+              },
+              {
+                "name": "Kadmat AC beach cottage/package",
+                "budget": "₹12,000–₹20,000/person/night bundled"
+              }
+            ],
+            "meals": [
+              "Vegetable stew with appam",
+              "Curd-free coconut rice by request",
+              "Simple thali"
+            ]
+          },
+          {
+            "theme": "Optional dive course or weather buffer",
+            "pace": "relaxed",
+            "note": "Use this extra day only for a certification module, a missed dive due to weather, or a very slow beach break. Certification needs more than a casual one-day add-on.",
+            "activities": [
+              {
+                "name": "PADI/SSI course session or second fun dive",
+                "duration": "half day",
+                "priority": "recommended",
+                "cost": "course modules ₹25,000–₹40,000+",
+                "tip": "Recent public tariffs are not consistently official; verify exact course price, certification agency and duration before travel."
+              },
+              {
+                "name": "Lagoon rest and packing for onward transfer",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Confirm ship/boat departure manifest",
+                "duration": "~30m",
+                "priority": "must-see",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kadmat standard package room",
+                "budget": "₹6,000–₹12,000/person/night bundled"
+              }
+            ],
+            "meals": [
+              "Packed breakfast",
+              "Vegetable noodles/rice",
+              "Coconut water and fruit"
+            ]
+          }
+        ]
+      },
+      "Kavaratti": {
+        "name": "Kavaratti",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Kavaratti is best as a day-tour or one-night capital stop inside an approved package, not an independent city break. The lagoon, aquarium and mosque cluster are compact but access remains permit-controlled.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Water Sports",
+          "Cruises & Boat Trips",
+          "Museums",
+          "Architecture"
+        ],
+        "signatureExperiences": [
+          "Cruises & Boat Trips",
+          "Water Sports",
+          "Museums"
+        ],
+        "days": [
+          {
+            "theme": "Capital lagoon, Marine Aquarium and cruise-day rhythm",
+            "pace": "moderate",
+            "note": "SPORTS' ship itineraries often land guests for a day with lunch ashore before returning to the vessel. If staying overnight, reconfirm accommodation and onward transfer because casual independent movement is restricted.",
+            "activities": [
+              {
+                "name": "Package landing or resort transfer at Kavaratti",
+                "duration": "30–60m",
+                "priority": "must-see",
+                "cost": "included in package / verify",
+                "tip": "Ship-cruise island sequence can change by voyage schedule."
+              },
+              {
+                "name": "Glass-bottom boat and lagoon swim",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "package included / ₹500–₹2,000",
+                "tip": "Great fallback if you do not scuba dive; go early for clearer water."
+              },
+              {
+                "name": "Marine Aquarium / museum stop",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Useful for understanding coral and reef-fish conservation before more water sports."
+              },
+              {
+                "name": "Ujra Mosque exterior and village walk",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Dress modestly and check whether entry is allowed; avoid photographing people without permission."
+              },
+              {
+                "name": "Return to ship/resort and onward manifest check",
+                "duration": "30–45m",
+                "priority": "must-see",
+                "cost": "included in package"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kavaratti package beach resort",
+                "budget": "₹6,000–₹12,000/person/night bundled"
+              },
+              {
+                "name": "Ship-cabin cruise night",
+                "budget": "₹7,000–₹14,000/person/night bundled"
+              }
+            ],
+            "meals": [
+              "Package vegetarian lunch thali",
+              "Coconut rice",
+              "Fish curry optional"
+            ]
+          },
+          {
+            "theme": "Optional Kavaratti water-sports buffer",
+            "pace": "relaxed",
+            "note": "Add only when your package books a second Kavaratti night; otherwise depart with the ship/boat. Never extend beyond the permit dates printed for Kavaratti.",
+            "activities": [
+              {
+                "name": "Beginner scuba at Kavaratti dive centre",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "₹3,500–₹5,000 intro dive",
+                "tip": "Verify with SPORTS/operator; medical and weather conditions apply."
+              },
+              {
+                "name": "Lagoon kayaking or beach rest",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "package included / varies"
+              },
+              {
+                "name": "Early packing for ship/boat departure",
+                "duration": "~45m",
+                "priority": "must-see",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Kavaratti package beach resort",
+                "budget": "₹6,000–₹12,000/person/night bundled"
+              }
+            ],
+            "meals": [
+              "Vegetable curry with rice",
+              "Chapati and dal",
+              "Packed snacks for ship"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Agatti",
+        "to": "Bangaram",
+        "method": "Pre-arranged daylight resort/Sports boat",
+        "cost": "included in package / verify",
+        "distanceKm": 7,
+        "durationHrs": 1,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Bangaram",
+        "to": "Kadmat",
+        "method": "Package boat/ship routing via Agatti or scheduled inter-island transfer",
+        "cost": "included in package / varies",
+        "distanceKm": 60,
+        "durationHrs": 3,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Kadmat",
+        "to": "Kavaratti",
+        "method": "SPORTS ship itinerary or authorised inter-island boat when listed on permit",
+        "cost": "included in cruise/package / varies",
+        "distanceKm": 180,
+        "durationHrs": 6,
+        "sameDayFeasible": false
+      }
+    ],
+    "extras": [
+      "Every visitor needs an Entry Permit; tourist applications now run through the ePermit portal, and SPORTS/authorised operators normally bundle permit support into the package.",
+      "Only travel to islands printed on the permit. Agatti, Bangaram, Kadmat, Kavaratti, Minicoy and Thinnakara are the practical tourism names, but exact stay/day-visit rights change by package and permit.",
+      "Minicoy is culturally distinctive with its lighthouse and Lava dance, but it is far south and usually fits a Kochi ship/Samudram-style itinerary rather than a quick Agatti-Bangaram-Kadmat flight trip.",
+      "Alcohol is broadly prohibited across Lakshadweep except at Bangaram resort; do not carry alcohol between islands.",
+      "October to May is the reliable season. Avoid June to September unless you accept rough seas, disrupted ships/flights, cancelled water sports and possible package changes.",
+      "Reef rules matter: never stand on coral, collect shells/coral, chase turtles or ignore guide instructions; medical facilities are basic, so carry prescriptions and travel insurance."
+    ]
+  }
+}

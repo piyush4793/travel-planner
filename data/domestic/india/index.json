@@ -958,5 +958,98 @@
       "Tripura",
       "Meghalaya"
     ]
+  },
+  {
+    "name": "Tripura",
+    "lat": 23.9408,
+    "lng": 91.9882,
+    "region": "Northeast India",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 9,
+    "popularityScore": 64,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "worstMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Assam",
+      "Mizoram",
+      "Meghalaya",
+      "West Bengal"
+    ]
+  },
+  {
+    "name": "Andaman and Nicobar Islands",
+    "lat": 11.7401,
+    "lng": 92.6586,
+    "region": "Islands",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 7,
+    "maxDays": 11,
+    "popularityScore": 86,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": []
+  },
+  {
+    "name": "Lakshadweep",
+    "lat": 10.5667,
+    "lng": 72.6417,
+    "region": "Islands",
+    "inSeed": false,
+    "creatorPick": true,
+    "hasItinerary": true,
+    "recDays": 6,
+    "maxDays": 8,
+    "popularityScore": 72,
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May"
+    ],
+    "worstMonths": [
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "combo": [
+      "Kerala"
+    ]
   }
 ]

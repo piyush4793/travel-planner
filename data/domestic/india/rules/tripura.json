@@ -1,0 +1,745 @@
+{
+  "name": "Tripura",
+  "seed": false,
+  "lat": 23.9408,
+  "lng": 91.9882,
+  "region": "Northeast India",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ],
+  "worstMonths": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹20K–₹34K",
+    "couple": "₹36K–₹58K",
+    "family4": "₹64K–₹1.02L"
+  },
+  "experiences": [
+    "History",
+    "Architecture",
+    "Museums",
+    "Temples & Religious Sites",
+    "Ancient Ruins",
+    "UNESCO Sites",
+    "Lakes",
+    "Cruises & Boat Trips",
+    "Wildlife & Safari",
+    "Mountains",
+    "Road Trips",
+    "Food"
+  ],
+  "avoid": [
+    "May",
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [
+    "Assam",
+    "Mizoram",
+    "Meghalaya",
+    "West Bengal"
+  ],
+  "landmark": "Neermahal water palace on Rudrasagar Lake and the rock-cut Shaiva reliefs of Unakoti",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Fly into Maharaja Bir Bikram Airport at Agartala or arrive by rail at Agartala/Kumarghat; the airport is about 12 km from the city and is Tripura's reliable gateway. Indian tourists do not need an ILP for Tripura, but carry photo ID for hotels and border/heritage zones. Internal travel is road-heavy: Neermahal, Udaipur and Sepahijala are easy day-trip distances, while Unakoti and Jampui Hills are long drives that should be treated as separate transfer/light-sightseeing days.",
+  "diet": {
+    "vegetarian": "Vegetarian travel is easier in Tripura than in many parts of the Northeast because Agartala and Udaipur have Bengali-influenced thali restaurants, sweets shops and simple rice-dal-sabzi meals. Ask for veg thali, luchi-alur dom, khichuri, mudi/chanachur snacks, vegetable chop, dal, rice and seasonal greens; remote Jampui/Kailashahar lodges should be told in advance because fixed meals often default to fish, chicken, mutton or pork.",
+    "vegan": "Vegan is manageable in Agartala but needs clear requests elsewhere. Watch for ghee, butter, milk, paneer, curd and dairy-heavy sweets such as rasgulla, sandesh and payesh; many Bengali kitchens also cook fish curries by default. Pre-request oil-only rice, dal, vegetables, aloo bhaja, mudi, fruit and black tea at lodges, especially in Jampui Hills and Unakoti/Kailashahar.",
+    "phrases": [
+      "Bengali: Ami niramish khai, machh-mangsho deben na = I eat vegetarian food; please do not give fish or meat",
+      "Hindi: Doodh, ghee, paneer, dahi mat daliyega = please do not add milk, ghee, paneer or curd",
+      "Kokborok/Hindi: Ang vegetarian/vegan; sirf tel mein pakaiye = I am vegetarian/vegan; please cook only in oil"
+    ]
+  },
+  "links": [
+    {
+      "label": "Tripura Tourism — destinations",
+      "url": "https://tripuratourism.gov.in/destination.php"
+    },
+    {
+      "label": "Tripura Tourism — how to reach",
+      "url": "https://tripuratourism.gov.in/reach.php"
+    },
+    {
+      "label": "Incredible India — Tripura",
+      "url": "https://www.incredibleindia.gov.in/en/tripura"
+    },
+    {
+      "label": "UNESCO Tentative List — Unakoti",
+      "url": "https://whc.unesco.org/en/tentativelists/5898/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Agartala",
+      "lat": 23.8315,
+      "lng": 91.2868,
+      "notes": "Tripura's capital and practical gateway, with Ujjayanta Palace/State Museum, MBB College, old temples, markets and the easiest food and hotel base.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "History",
+        "Architecture",
+        "Museums",
+        "Markets & Shopping",
+        "Temples & Religious Sites",
+        "Food",
+        "Festivals"
+      ]
+    },
+    {
+      "name": "Melaghar",
+      "lat": 23.4915,
+      "lng": 91.3358,
+      "notes": "Rudrasagar Lake base for Neermahal water palace, boat rides and a sensible bridge between Agartala, Sepahijala and Udaipur.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Architecture",
+        "History",
+        "Lakes",
+        "Cruises & Boat Trips",
+        "Wildlife & Safari",
+        "Road Trips"
+      ]
+    },
+    {
+      "name": "Udaipur (Tripura)",
+      "lat": 23.5339,
+      "lng": 91.4813,
+      "notes": "Temple town around Tripura Sundari/Matabari, one of the 51 Shakti Peethas, plus Bhubaneswari Temple and the Gomati-side royal remains.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Temples & Religious Sites",
+        "History",
+        "Architecture",
+        "Festivals",
+        "Lakes",
+        "Food"
+      ]
+    },
+    {
+      "name": "Kailashahar",
+      "lat": 24.3318,
+      "lng": 92.0036,
+      "notes": "North Tripura base for Unakoti's 7th–9th century rock-cut Shaiva reliefs, waterfalls and the practical overnight before/after the long Agartala drive.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March"
+      ],
+      "worstMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Ancient Ruins",
+        "UNESCO Sites",
+        "Temples & Religious Sites",
+        "History",
+        "Waterfalls",
+        "Road Trips"
+      ]
+    },
+    {
+      "name": "Jampui Hills",
+      "lat": 24.0819,
+      "lng": 92.2804,
+      "notes": "Tripura's high hill range around Vanghmun, known for orange orchards, Eden Tourist Lodge, cloud views, Mizo/Reang villages and Betlingchhip peak.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Mountains",
+        "Hiking",
+        "Road Trips",
+        "Food",
+        "Festivals"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel work well in Agartala, Udaipur and along major highways; BSNL can be useful in parts of North Tripura. Expect patchier data around Unakoti forest patches, Jampui Hills viewpoints and lake/forest zones, so download maps and keep hotel/driver numbers offline.",
+    "apps": [
+      "Google Maps",
+      "IRCTC Rail Connect",
+      "RedBus",
+      "MakeMyTrip",
+      "Zomato",
+      "WhatsApp"
+    ],
+    "cityOrder": [
+      "Agartala",
+      "Melaghar",
+      "Udaipur (Tripura)",
+      "Kailashahar",
+      "Jampui Hills"
+    ],
+    "cities": {
+      "Agartala": {
+        "name": "Agartala",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days gives one gentle arrival/heritage day and one Sepahijala or city-buffer day before the road-heavy lake, temple and North Tripura legs.",
+        "experiences": [
+          "History",
+          "Architecture",
+          "Museums",
+          "Markets & Shopping",
+          "Temples & Religious Sites",
+          "Food",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "History",
+          "Architecture",
+          "Museums"
+        ],
+        "days": [
+          {
+            "theme": "Arrival, palace history & old Agartala",
+            "pace": "relaxed",
+            "note": "Flights and trains usually funnel through Agartala; keep the first day central because later transfers to Unakoti and Jampui are long. Confirm museum hours and any light-and-sound timing locally before planning the evening around it.",
+            "activities": [
+              {
+                "name": "Ujjayanta Palace and Tripura State Museum",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "₹20–₹100",
+                "tip": "Recent official ticket pages were not available; verify the palace/museum entry and camera fee locally before visiting. The palace is central and easiest in the morning."
+              },
+              {
+                "name": "Jagannath Bari and old palace temples",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free / donation"
+              },
+              {
+                "name": "Maharaja Bir Bikram College heritage stop",
+                "duration": "30–45m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Treat this as an exterior/architecture stop unless a local event or access permission is available."
+              },
+              {
+                "name": "Purbasa handicrafts emporium and local market snacks",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Good place to look for bamboo/cane craft and pick up mudi, chanachur or sweets for road days."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget Agartala guesthouse",
+                "budget": "₹1,200–₹2,800/night"
+              },
+              {
+                "name": "Mid-range central Agartala hotel",
+                "budget": "₹3,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Bengali veg thali",
+              "Luchi with alur dom",
+              "Mudi with chanachur and tea"
+            ]
+          },
+          {
+            "theme": "Sepahijala wildlife and soft city buffer",
+            "pace": "moderate",
+            "note": "Sepahijala is about 28 km from Agartala, so it works as a half-day wildlife excursion before returning to the capital. Start early for birds and primates; zoo-style enclosures and forest zones are mixed here, so set expectations honestly.",
+            "activities": [
+              {
+                "name": "Sepahijala Wildlife Sanctuary and Clouded Leopard National Park",
+                "duration": "3–4h",
+                "priority": "must-see",
+                "cost": "₹30–₹150",
+                "tip": "Recent 2026 entry/vehicle rates were not found; verify locally. The official tourism listing notes primates, clouded leopard, botanical garden, deer park, zoo, lake boating and toy train facilities."
+              },
+              {
+                "name": "Lake boating or botanical garden walk inside Sepahijala",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Boating and toy-train operations can be seasonal or maintenance-dependent."
+              },
+              {
+                "name": "Return to Agartala for rest and supplies",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Buy snacks and cash before the Unakoti/Jampui stretch."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Budget Agartala guesthouse",
+                "budget": "₹1,200–₹2,800/night"
+              },
+              {
+                "name": "Mid-range central Agartala hotel",
+                "budget": "₹3,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Dal-rice-sabzi lunch",
+              "Vegetable chop",
+              "Mishti doi or fruit if dairy-free"
+            ]
+          }
+        ]
+      },
+      "Melaghar": {
+        "name": "Melaghar",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One focused day is enough for Neermahal and Rudrasagar, with Sepahijala possible en route only if you start early from Agartala.",
+        "experiences": [
+          "Architecture",
+          "History",
+          "Lakes",
+          "Cruises & Boat Trips",
+          "Wildlife & Safari",
+          "Road Trips"
+        ],
+        "signatureExperiences": [
+          "Architecture",
+          "Lakes",
+          "Cruises & Boat Trips"
+        ],
+        "days": [
+          {
+            "theme": "Rudrasagar Lake and Neermahal water palace",
+            "pace": "moderate",
+            "note": "Agartala to Neermahal/Melaghar is about 53 km, usually 1.5–2 hours by road. The palace sits in Rudrasagar Lake, so boat availability and water levels matter; avoid trying to add Udaipur temple crowds and a long onward transfer on the same rushed afternoon.",
+            "activities": [
+              {
+                "name": "Drive from Agartala to Melaghar/Rudrasagar",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "₹2,500–₹4,000 private taxi day hire",
+                "tip": "Taxi bands are conservative 2026 planning estimates; confirm locally or through your hotel."
+              },
+              {
+                "name": "Boat across Rudrasagar Lake to Neermahal",
+                "duration": "30–45m round-trip",
+                "priority": "must-see",
+                "cost": "₹100–₹300/person shared boat or ₹800–₹1,500 private boat",
+                "tip": "No Jan-2026 official boat fare was found; verify at the jetty and agree the return wait time before boarding."
+              },
+              {
+                "name": "Neermahal Water Palace interiors and lakefront views",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "₹20–₹100",
+                "tip": "Entry and camera fees can change; verify locally. The palace was built in 1930 as Maharaja Bir Bikram's summer residence."
+              },
+              {
+                "name": "Rudrasagar birdwatching and sunset pause",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Winter has the best chance of migratory birds and cooler light."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Sagar Mahal/Melaghar tourist lodge or similar",
+                "budget": "₹1,500–₹3,500/night"
+              },
+              {
+                "name": "Return-to-Agartala mid-range hotel",
+                "budget": "₹3,500–₹7,500/night"
+              }
+            ],
+            "meals": [
+              "Veg thali near Melaghar",
+              "Khichuri and vegetables",
+              "Tea with muri/mudi snacks"
+            ]
+          }
+        ]
+      },
+      "Udaipur (Tripura)": {
+        "name": "Udaipur (Tripura)",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "A single day covers Matabari/Tripura Sundari, Kalyansagar and Bhubaneswari/Gunabati without rushing; stay overnight only if attending Diwali/temple festivals or adding Chabimura/Dumboor later.",
+        "experiences": [
+          "Temples & Religious Sites",
+          "History",
+          "Architecture",
+          "Festivals",
+          "Lakes",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "Temples & Religious Sites",
+          "History",
+          "Festivals"
+        ],
+        "days": [
+          {
+            "theme": "Tripura Sundari Shakti Peetha and Gomati-side temples",
+            "pace": "moderate",
+            "note": "Udaipur/Matabari is about 55–57 km from Agartala and pairs well after Melaghar. Temple crowds peak during Diwali; dress modestly, expect queues, and do not combine this with the far North Tripura drive.",
+            "activities": [
+              {
+                "name": "Tripura Sundari Temple (Matabari)",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "Official tourism describes it as one of the 51 Shakti Peethas, built in 1501 by Maharaja Dhanya Manikya."
+              },
+              {
+                "name": "Kalyansagar lake behind the temple",
+                "duration": "30–45m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Keep the sacred lake clean and avoid feeding wildlife unless local temple rules explicitly allow it."
+              },
+              {
+                "name": "Bhubaneswari Temple and old Rajbari remains",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free / donation",
+                "tip": "The ASI-supervised temple sits by the Gomati and is tied to Tagore's Rajarshi and Bisarjan."
+              },
+              {
+                "name": "Gunabati group of temples or Udaipur bazaar",
+                "duration": "45–60m",
+                "priority": "optional",
+                "cost": "Free / donation"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Matabari/Udaipur tourist lodge",
+                "budget": "₹1,200–₹3,000/night"
+              },
+              {
+                "name": "Simple Udaipur private hotel",
+                "budget": "₹2,500–₹5,500/night"
+              }
+            ],
+            "meals": [
+              "Temple-side vegetarian thali",
+              "Luchi and alur torkari",
+              "Rasgulla/sandesh or fruit for vegans"
+            ]
+          }
+        ]
+      },
+      "Kailashahar": {
+        "name": "Kailashahar",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One light day is the realistic minimum because Agartala to Unakoti/Kailashahar is a long 178 km road/rail-plus-road journey; add a second day only for slower heritage photography or Dharmanagar/Kumarghat rail timing.",
+        "experiences": [
+          "Ancient Ruins",
+          "UNESCO Sites",
+          "Temples & Religious Sites",
+          "History",
+          "Waterfalls",
+          "Road Trips"
+        ],
+        "signatureExperiences": [
+          "Ancient Ruins",
+          "UNESCO Sites",
+          "Temples & Religious Sites"
+        ],
+        "days": [
+          {
+            "theme": "Transfer to Unakoti and rock-cut Shaiva reliefs",
+            "pace": "packed",
+            "note": "Tripura Tourism lists Unakoti as 178 km from Agartala and 8 km from Kailashahar; this is a long drive, so treat the transfer as the day's main content. The rail option runs to Kumarghat, then a local road leg toward Kailashahar/Unakoti.",
+            "activities": [
+              {
+                "name": "Agartala to Kailashahar/Unakoti transfer",
+                "duration": "5–6.5h by road or rail-plus-road",
+                "priority": "must-see",
+                "cost": "₹5,000–₹8,000 private vehicle or train fare + local taxi",
+                "tip": "Start before sunrise if attempting a same-day return; overnighting in Kailashahar is more humane."
+              },
+              {
+                "name": "Unakoti rock-cut carvings and Unakotiswara Kal Bhairava",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "UNESCO lists Unakoti on India's Tentative List; Tripura Tourism dates the Shaiva reliefs broadly to the 7th–9th centuries and notes the central Shiva head is about 30 ft high."
+              },
+              {
+                "name": "Waterfall and forest steps inside the Unakoti site",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Wear grippy shoes; mossy stone steps get slippery after rain."
+              },
+              {
+                "name": "Kailashahar lodge check-in and early dinner",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "varies",
+                "tip": "Vegetarian/vegan meals should be requested before arrival."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Unakoti/Kailashahar tourist lodge",
+                "budget": "₹1,200–₹3,000/night"
+              },
+              {
+                "name": "Dharmanagar/Kumarghat transit hotel",
+                "budget": "₹1,500–₹3,500/night"
+              }
+            ],
+            "meals": [
+              "Packed veg paratha or poori-sabzi",
+              "Simple dal-rice dinner",
+              "Tea and muri snacks"
+            ]
+          }
+        ]
+      },
+      "Jampui Hills": {
+        "name": "Jampui Hills",
+        "minDays": 1,
+        "recDays": 2,
+        "maxDays": 3,
+        "note": "Two days are recommended because Jampui is about 220 km from Agartala and best enjoyed with a sunset/sunrise, orange-orchard village time and Betlingchhip viewpoint rather than a punishing day trip.",
+        "experiences": [
+          "Mountains",
+          "Hiking",
+          "Road Trips",
+          "Food",
+          "Festivals"
+        ],
+        "signatureExperiences": [
+          "Mountains",
+          "Hiking",
+          "Road Trips"
+        ],
+        "days": [
+          {
+            "theme": "North Tripura hills transfer to Vanghmun",
+            "pace": "relaxed",
+            "note": "Jampui Hills is listed by Tripura Tourism as about 220 km from Agartala, at roughly 3,000 ft, bordering Mizoram. From Kailashahar/Unakoti the drive is shorter but still winding; keep the day light and arrive before dark.",
+            "activities": [
+              {
+                "name": "Kailashahar/Unakoti to Vanghmun in Jampui Hills",
+                "duration": "4–5h",
+                "priority": "must-see",
+                "cost": "₹4,000–₹7,000 private vehicle",
+                "tip": "Confirm road condition locally; landslides and fog can slow the hill approach."
+              },
+              {
+                "name": "Eden Tourist Lodge check-in and hilltop rest",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "₹1,500–₹4,000/night",
+                "tip": "Official tourism names Eden Tourist Lodge at Vanghmun; book ahead in orange season."
+              },
+              {
+                "name": "Vanghmun sunset viewpoint",
+                "duration": "45–60m",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Carry a light jacket; evenings are cooler than Agartala even outside winter."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Eden Tourist Lodge, Vanghmun",
+                "budget": "₹1,500–₹4,000/night"
+              },
+              {
+                "name": "Village homestay/pay-and-stay room",
+                "budget": "₹1,000–₹2,500/night"
+              }
+            ],
+            "meals": [
+              "Rice, dal and seasonal vegetables",
+              "Orange-season fruit",
+              "Oil-only greens if pre-requested"
+            ]
+          },
+          {
+            "theme": "Orange orchards, Betlingchhip and cloud-country views",
+            "pace": "moderate",
+            "note": "October to December is the classic orange season, while March to May brings orchids and flowering trees. Monsoon has dramatic clouds but poorer road reliability, so winter remains the safest planning window.",
+            "activities": [
+              {
+                "name": "Betlingchhip highest-point viewpoint",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Tripura Tourism identifies Betlingchhip as the state's highest peak at about 3,600 ft, with views toward Mizoram, Tripura hills and the Chittagong Hill Tracts."
+              },
+              {
+                "name": "Orange orchard and village walk",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "Free / donation",
+                "tip": "Ask before entering private orchards; October–December is the most rewarding fruiting window."
+              },
+              {
+                "name": "Short ridge hike or orchid/forest walk",
+                "duration": "1–2h",
+                "priority": "recommended",
+                "cost": "Free / local guide varies",
+                "tip": "Hire a local guide if leaving the main village paths."
+              },
+              {
+                "name": "Optional paragliding season enquiry",
+                "duration": "30–60m",
+                "priority": "optional",
+                "cost": "varies",
+                "tip": "Tripura Tourism package terms mention paragliding at Jampui from September to April, but operations are weather/operator dependent; verify locally before promising it."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Eden Tourist Lodge, Vanghmun",
+                "budget": "₹1,500–₹4,000/night"
+              },
+              {
+                "name": "Village homestay/pay-and-stay room",
+                "budget": "₹1,000–₹2,500/night"
+              }
+            ],
+            "meals": [
+              "Simple veg thali",
+              "Boiled vegetables and rice",
+              "Local oranges with black tea"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Agartala",
+        "to": "Melaghar",
+        "method": "Private taxi or hired car via Bishalgarh/Sepahijala corridor to Rudrasagar Lake",
+        "cost": "₹2,500–₹4,000 day-hire band; verify locally",
+        "distanceKm": 53,
+        "durationHrs": 2,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Melaghar",
+        "to": "Udaipur (Tripura)",
+        "method": "Short private taxi hop toward Matabari/Udaipur",
+        "cost": "₹1,200–₹2,500 taxi band",
+        "distanceKm": 30,
+        "durationHrs": 1,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Udaipur (Tripura)",
+        "to": "Kailashahar",
+        "method": "Return via Agartala highway/rail corridor, or train toward Kumarghat plus local taxi",
+        "cost": "₹5,000–₹8,000 private vehicle or train fare + local taxi",
+        "distanceKm": 205,
+        "durationHrs": 7,
+        "sameDayFeasible": false
+      },
+      {
+        "from": "Kailashahar",
+        "to": "Jampui Hills",
+        "method": "Private hill-road vehicle toward Vanghmun/Jampui via North Tripura roads",
+        "cost": "₹4,000–₹7,000 private vehicle band",
+        "distanceKm": 125,
+        "durationHrs": 4.5,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "Tripura requires no Inner Line Permit for Indian tourists; carry government photo ID for hotels, airport/rail travel and border-adjacent sightseeing.",
+      "The official Tripura Tourism 8-day package routes Agartala, Jampui, Unakoti, Sepahijala, Neermahal, Udaipur and Dumboor, but it is very compressed; this rule intentionally models Unakoti and Jampui as their own light/transfer days.",
+      "No Jan-2026-or-later official entry-fee pages were found for Ujjayanta Palace/State Museum, Sepahijala, Neermahal entry or Neermahal boat fares; costs are conservative planning bands and should be verified at ticket counters.",
+      "Winter mornings can be misty around lakes and hills; build slack into Neermahal boat and Jampui viewpoint days.",
+      "If extending beyond the core route, Dumboor Lake/Chabimura adds another long south/east road day from Udaipur/Amarpur rather than an easy add-on to Agartala."
+    ]
+  }
+}

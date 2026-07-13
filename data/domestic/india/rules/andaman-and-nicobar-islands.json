@@ -1,0 +1,824 @@
+{
+  "name": "Andaman and Nicobar Islands",
+  "seed": false,
+  "lat": 11.7401,
+  "lng": 92.6586,
+  "region": "Islands",
+  "pricesAsOf": "2026-07",
+  "bestMonths": [
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May"
+  ],
+  "worstMonths": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "budget": {
+    "solo": "₹55K–₹85K",
+    "couple": "₹95K–₹1.55L",
+    "family4": "₹1.75L–₹2.75L"
+  },
+  "experiences": [
+    "Islands",
+    "Beaches",
+    "Water Sports",
+    "Cruises & Boat Trips",
+    "Adventure Sports",
+    "History",
+    "National Parks",
+    "Wildlife & Safari",
+    "Luxury & Resorts",
+    "Food"
+  ],
+  "avoid": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ],
+  "combo": [],
+  "landmark": "Cellular Jail and Radhanagar Beach",
+  "travelStyle": [
+    "explorer",
+    "immersive"
+  ],
+  "stopoverNote": "Fly into Sri Vijaya Puram/Port Blair (IXZ); there is no rail link and sea passenger ships are slow, infrequent and not practical for short holidays. Island-hopping depends on fixed ferry sailings by government ferries and private catamarans such as Makruzz, Nautika and Green Ocean, so book Port Blair–Swaraj Dweep–Shaheed Dweep sectors ahead and treat every ferry as a half-day transfer. Tourist travel is limited to permitted Andaman areas; Nicobar Islands, tribal reserves and any contact with protected tribes are restricted and must not be attempted.",
+  "diet": {
+    "vegetarian": "Seafood dominates local menus, but vegetarian travellers are comfortable in Port Blair, resort-heavy Swaraj Dweep and Shaheed Dweep: ask for veg thali, dal-rice, dosa/idli, poha, veg biryani, paneer/veg curries and tropical fruit. Baratang and jetty-side stops are basic, so carry snacks before early ferry or road departures.",
+    "vegan": "Vegan food is possible but needs clear requests because island kitchens often use ghee, butter, paneer, curd or mayonnaise, and remote day tours have fixed meals. In Port Blair and larger Havelock resorts, ask for oil-only dal, rice, roti without ghee, vegetable curry, coconut-based chutneys and fruit; on ferries and Baratang, carry backup snacks and confirm dairy-free cooking a day ahead.",
+    "phrases": [
+      "Shakahari khana chahiye, machhli ya meat nahi = I need vegetarian food, no fish or meat",
+      "Doodh, dahi, paneer, makkhan aur ghee mat daliye = please do not add milk, curd, paneer, butter or ghee",
+      "Sirf tel mein pakaiye, alag bartan ho to achha hai = please cook only in oil, separate utensils if possible"
+    ]
+  },
+  "links": [
+    {
+      "label": "Andaman Tourism (official)",
+      "url": "https://www.andamantourism.gov.in/"
+    },
+    {
+      "label": "Incredible India — Andaman and Nicobar Islands",
+      "url": "https://www.incredibleindia.gov.in/en/andaman-and-nicobar-islands"
+    },
+    {
+      "label": "Makruzz fares and schedule",
+      "url": "https://www.makruzz.com/web/cms/fares"
+    },
+    {
+      "label": "Go2Andaman ferry booking and island guides",
+      "url": "https://go2andaman.com/online-ferry-booking/"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Port Blair",
+      "lat": 11.6234,
+      "lng": 92.7265,
+      "notes": "Gateway town for IXZ flights, Cellular Jail, Netaji Subhash Chandra Bose Dweep/Ross Island, North Bay and the practical ferry buffer before or after island stays.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "History",
+        "Museums",
+        "Cruises & Boat Trips",
+        "Beaches",
+        "Water Sports",
+        "Food"
+      ]
+    },
+    {
+      "name": "Swaraj Dweep",
+      "lat": 11.9761,
+      "lng": 92.9876,
+      "notes": "Havelock/Swaraj Dweep is the main beach-and-dive base, anchored by Radhanagar Beach, Elephant Beach snorkelling and certified dive shops.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Islands",
+        "Beaches",
+        "Water Sports",
+        "Adventure Sports",
+        "Luxury & Resorts",
+        "Cruises & Boat Trips"
+      ]
+    },
+    {
+      "name": "Shaheed Dweep",
+      "lat": 11.8311,
+      "lng": 93.0376,
+      "notes": "Neil/Shaheed Dweep is smaller and quieter, with Bharatpur snorkelling, Laxmanpur sunset, Sitapur sunrise and the Natural Bridge coral-rock walk.",
+      "bestMonths": [
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Islands",
+        "Beaches",
+        "Water Sports",
+        "Cruises & Boat Trips",
+        "Food"
+      ]
+    },
+    {
+      "name": "Baratang",
+      "lat": 12.1211,
+      "lng": 92.7779,
+      "notes": "A long day-trip or one-night add-on from Port Blair for mangrove creeks, limestone caves and the mud volcano, feasible only with early convoy/boat logistics.",
+      "bestMonths": [
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "worstMonths": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "experiences": [
+        "Islands",
+        "Cruises & Boat Trips",
+        "National Parks",
+        "Wildlife & Safari",
+        "Adventure Sports"
+      ]
+    }
+  ],
+  "itinerary": {
+    "sim": "Jio and Airtel work well around Port Blair and main settlements on Swaraj/Shaheed Dweep, while BSNL can be useful in remote pockets. Expect weak data on ferries, at Elephant Beach, Baratang mangrove creeks and some beach resorts; download ferry tickets, maps and hotel contacts offline.",
+    "apps": [
+      "Google Maps",
+      "MakeMyTrip",
+      "WhatsApp",
+      "Zomato",
+      "Makruzz",
+      "Go2Andaman"
+    ],
+    "cityOrder": [
+      "Port Blair",
+      "Swaraj Dweep",
+      "Shaheed Dweep",
+      "Baratang"
+    ],
+    "cities": {
+      "Port Blair": {
+        "name": "Port Blair",
+        "minDays": 2,
+        "recDays": 3,
+        "maxDays": 4,
+        "note": "Three days covers a light arrival, the Cellular Jail/Ross/North Bay heritage-water loop, and a final ferry-buffer or Wandoor/Chidiya Tapu day; keep at least one Port Blair night before your flight because ferry delays happen.",
+        "experiences": [
+          "History",
+          "Museums",
+          "Cruises & Boat Trips",
+          "Beaches",
+          "Water Sports",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "History",
+          "Cruises & Boat Trips",
+          "Beaches"
+        ],
+        "days": [
+          {
+            "theme": "Arrival, Corbyn's Cove and Cellular Jail show",
+            "pace": "relaxed",
+            "note": "IXZ arrivals, hotel check-in and humidity make this a light first day. Buy Cellular Jail light-and-sound tickets early because evening shows sell out in peak season.",
+            "activities": [
+              {
+                "name": "Arrive at IXZ and confirm ferry tickets",
+                "duration": "1–2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Keep printed/digital ferry tickets and photo ID handy; private ferry check-in usually closes well before departure."
+              },
+              {
+                "name": "Corbyn's Cove Beach sunset walk",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free",
+                "tip": "Good for a gentle first evening, not the cleanest swimming beach after rain."
+              },
+              {
+                "name": "Cellular Jail light-and-sound show",
+                "duration": "~1h",
+                "priority": "must-see",
+                "cost": "₹400 show ticket via 2026 booking pages; verify slot locally",
+                "tip": "Hindi and English evening slots vary by season; closed Mondays/national holidays for the museum."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Port Blair budget hotel",
+                "budget": "₹2,000–₹4,000/night"
+              },
+              {
+                "name": "Sea-view or central mid-range hotel",
+                "budget": "₹5,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Veg thali near Aberdeen Bazaar",
+              "Dosa/idli breakfast",
+              "Tropical fruit and coconut water"
+            ]
+          },
+          {
+            "theme": "Cellular Jail, Ross Island and North Bay",
+            "pace": "moderate",
+            "note": "Cluster the morning museum with the Aberdeen/jetty area, then take the harbour boat loop. Sea conditions can cancel North Bay or make glass-bottom rides rough.",
+            "activities": [
+              {
+                "name": "Cellular Jail National Memorial museum",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "₹30 entry + camera fee; 2026 guide page still lists older government tariff",
+                "tip": "Go early or late afternoon; last museum tickets are commonly issued before closing."
+              },
+              {
+                "name": "Netaji Subhash Chandra Bose Dweep/Ross Island ruins",
+                "duration": "2–3h including boat",
+                "priority": "must-see",
+                "cost": "Boat/entry ₹500–₹900/person band; verify current jetty rate",
+                "tip": "Carry water; deer and ruins are best explored on foot or with the island buggy if available."
+              },
+              {
+                "name": "North Bay Island glass-bottom boat or snorkel",
+                "duration": "1.5–2h",
+                "priority": "recommended",
+                "cost": "₹600–₹1,500 activity band",
+                "tip": "Pick one water activity here if you are not doing Havelock/Neil snorkelling."
+              },
+              {
+                "name": "Aberdeen Bazaar dinner walk",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Port Blair budget hotel",
+                "budget": "₹2,000–₹4,000/night"
+              },
+              {
+                "name": "Sea-view or central mid-range hotel",
+                "budget": "₹5,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Veg biryani",
+              "South Indian tiffin",
+              "Dal-rice and sabzi"
+            ]
+          },
+          {
+            "theme": "Wandoor, Chidiya Tapu or ferry-buffer day",
+            "pace": "relaxed",
+            "note": "Use this day at the end of the route before your flight, or as a weather buffer if ferries shift. Jolly Buoy/Red Skin islands operate under seasonal permits and often close in monsoon or rotation periods.",
+            "activities": [
+              {
+                "name": "Wandoor Beach and Mahatma Gandhi Marine National Park gate area",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "Free; island permits/boats extra when operating",
+                "tip": "Do not assume Jolly Buoy is open; check the current island rotation before planning."
+              },
+              {
+                "name": "Chidiya Tapu sunset and birding drive",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "Taxi ₹2,000–₹3,500 round-trip band",
+                "tip": "Best in clear weather; return before it gets too dark on forest roads."
+              },
+              {
+                "name": "Ferry or flight buffer admin",
+                "duration": "1–2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Reconfirm the next morning's sailing/flight and keep a buffer night in Port Blair before flying home."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Port Blair budget hotel",
+                "budget": "₹2,000–₹4,000/night"
+              },
+              {
+                "name": "Sea-view or central mid-range hotel",
+                "budget": "₹5,000–₹10,000/night"
+              }
+            ],
+            "meals": [
+              "Vegetable curry with rice",
+              "Coconut water and fruit",
+              "Simple North Indian dinner"
+            ]
+          },
+          {
+            "theme": "Optional museum and shopping buffer",
+            "pace": "relaxed",
+            "note": "Add only if you want a slower Port Blair finish or need insurance against ferry disruption in rough-sea months.",
+            "activities": [
+              {
+                "name": "Samudrika Naval Marine Museum",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "₹50–₹100 band; verify locally"
+              },
+              {
+                "name": "Anthropological Museum",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "₹50–₹100 band; verify locally",
+                "tip": "Use the visit for context, but do not seek tribal contact or photography."
+              },
+              {
+                "name": "Sagarika/market souvenir stop",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Port Blair budget hotel",
+                "budget": "₹2,000–₹4,000/night"
+              }
+            ],
+            "meals": [
+              "Veg noodles",
+              "Paneer curry if dairy is OK",
+              "Fruit plate"
+            ]
+          }
+        ]
+      },
+      "Swaraj Dweep": {
+        "name": "Swaraj Dweep",
+        "minDays": 2,
+        "recDays": 2,
+        "maxDays": 4,
+        "note": "Two full days are the minimum for Radhanagar plus one serious water day; add nights if you want certification dives or a resort-focused beach break.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Water Sports",
+          "Adventure Sports",
+          "Luxury & Resorts",
+          "Cruises & Boat Trips"
+        ],
+        "signatureExperiences": [
+          "Beaches",
+          "Adventure Sports",
+          "Water Sports"
+        ],
+        "days": [
+          {
+            "theme": "Ferry to Havelock and Radhanagar Beach",
+            "pace": "relaxed",
+            "note": "The Port Blair to Swaraj Dweep ferry takes roughly 1.5–2.5 hours, but hotel transfers, reporting time and luggage make this a half-day move. Do not schedule a paid dive immediately after arrival.",
+            "activities": [
+              {
+                "name": "Port Blair to Swaraj Dweep private/government ferry",
+                "duration": "half day",
+                "priority": "must-see",
+                "cost": "Private catamaran ₹1,500–₹2,500/person band; government ferry usually cheaper but harder to book",
+                "tip": "Makruzz's Sep 2025–May 2026 schedule lists multiple Port Blair–Havelock sailings; fares are dynamic, so verify at booking."
+              },
+              {
+                "name": "Hotel check-in and scooter/taxi orientation",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Scooter ₹500–₹800/day band; taxi varies"
+              },
+              {
+                "name": "Radhanagar Beach sunset",
+                "duration": "2–3h",
+                "priority": "must-see",
+                "cost": "Free",
+                "tip": "Swim only inside safe zones and obey lifeguards; currents and closures change after rain."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Havelock guesthouse/cottage",
+                "budget": "₹2,500–₹5,000/night"
+              },
+              {
+                "name": "Beach resort or dive resort",
+                "budget": "₹7,000–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "Resort veg thali",
+              "Dosa or paratha breakfast",
+              "Coconut curry with rice"
+            ]
+          },
+          {
+            "theme": "Scuba, Elephant Beach snorkelling and beach recovery",
+            "pace": "moderate",
+            "note": "Water activities should stand alone because briefings, boat transfers, tides and no-fly-after-diving rules matter. Avoid scuba within 18–24 hours of a flight and skip if medically unfit.",
+            "activities": [
+              {
+                "name": "Beginner boat scuba dive",
+                "duration": "3h",
+                "priority": "must-see",
+                "cost": "₹6,500–₹8,000/person on 2026 booking pages",
+                "tip": "Use a certified dive centre; Go2Andaman's 2026 guide lists Havelock boat dives from ₹6,500 and courses from ₹32,000."
+              },
+              {
+                "name": "Elephant Beach snorkelling by boat",
+                "duration": "2–3h",
+                "priority": "recommended",
+                "cost": "Boat/activity ₹1,200–₹2,500/person band",
+                "tip": "Boats run only in safe sea conditions; some seasons switch to limited beach access or cancel."
+              },
+              {
+                "name": "Kalapathar Beach quiet hour",
+                "duration": "1–1.5h",
+                "priority": "optional",
+                "cost": "Free"
+              },
+              {
+                "name": "Dive log/certification paperwork and rest",
+                "duration": "~45m",
+                "priority": "recommended",
+                "cost": "Included with dive if offered"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Havelock guesthouse/cottage",
+                "budget": "₹2,500–₹5,000/night"
+              },
+              {
+                "name": "Beach resort or dive resort",
+                "budget": "₹7,000–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "Banana pancake or poha before dive",
+              "Veg fried rice",
+              "Dal tadka without ghee if vegan"
+            ]
+          },
+          {
+            "theme": "Optional certification or slow beach day",
+            "pace": "relaxed",
+            "note": "Add this only for Open Water certification, repeat dives, kayaking or a genuine beach-resort pause. Certification courses need multiple days and should not be squeezed into a transfer day.",
+            "activities": [
+              {
+                "name": "Second fun dive or Open Water course session",
+                "duration": "half day",
+                "priority": "recommended",
+                "cost": "Fun dives from ₹6,600; Open Water courses from ₹32,000 on 2026 pages",
+                "tip": "Keep your final dive at least 18–24 hours before flying."
+              },
+              {
+                "name": "Mangrove kayaking or night kayaking",
+                "duration": "2–3h",
+                "priority": "optional",
+                "cost": "₹3,000–₹4,500/person band",
+                "tip": "Bioluminescence depends on moon phase and tide."
+              },
+              {
+                "name": "Radhanagar repeat swim or resort downtime",
+                "duration": "2–3h",
+                "priority": "optional",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Havelock guesthouse/cottage",
+                "budget": "₹2,500–₹5,000/night"
+              },
+              {
+                "name": "Beach resort or dive resort",
+                "budget": "₹7,000–₹16,000/night"
+              }
+            ],
+            "meals": [
+              "Veg pasta at a resort café",
+              "Fruit smoothie without dairy",
+              "Rice and vegetable curry"
+            ]
+          }
+        ]
+      },
+      "Shaheed Dweep": {
+        "name": "Shaheed Dweep",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "One night covers the ferry transfer plus Bharatpur, Laxmanpur and Natural Bridge if tides cooperate; add a second for a very slow beach stay.",
+        "experiences": [
+          "Islands",
+          "Beaches",
+          "Water Sports",
+          "Cruises & Boat Trips",
+          "Food"
+        ],
+        "signatureExperiences": [
+          "Islands",
+          "Beaches",
+          "Water Sports"
+        ],
+        "days": [
+          {
+            "theme": "Ferry to Neil, Bharatpur snorkel and Laxmanpur sunset",
+            "pace": "moderate",
+            "note": "The Havelock–Neil ferry is short, but fixed timings control the whole day. Visit Natural Bridge only around low tide and keep reef shoes or sturdy sandals for sharp coral rock.",
+            "activities": [
+              {
+                "name": "Swaraj Dweep to Shaheed Dweep ferry",
+                "duration": "half day",
+                "priority": "must-see",
+                "cost": "Private ferry ₹1,200–₹2,000/person band; verify at booking",
+                "tip": "Makruzz's 2025–2026 schedule lists Havelock–Neil morning and afternoon connections on some rotations."
+              },
+              {
+                "name": "Bharatpur Beach snorkelling or glass-bottom boat",
+                "duration": "1.5–2h",
+                "priority": "must-see",
+                "cost": "₹600–₹1,500/activity band",
+                "tip": "Best in clear calm water; avoid stepping on coral."
+              },
+              {
+                "name": "Natural Bridge low-tide walk",
+                "duration": "1–1.5h",
+                "priority": "must-see",
+                "cost": "Free / local guide varies",
+                "tip": "Go only at low tide; guides help spot marine life without damaging tide pools."
+              },
+              {
+                "name": "Laxmanpur Beach sunset",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Neil guesthouse",
+                "budget": "₹2,000–₹4,500/night"
+              },
+              {
+                "name": "Beachside boutique stay",
+                "budget": "₹5,000–₹11,000/night"
+              }
+            ],
+            "meals": [
+              "Veg thali near the market",
+              "Fresh fruit and coconut water",
+              "Dal-rice dinner"
+            ]
+          },
+          {
+            "theme": "Optional Sitapur sunrise and slow Neil day",
+            "pace": "relaxed",
+            "note": "Use this optional second day if you want a quiet island pace or if ferry timings force an extra night; Neil is small and not a checklist destination.",
+            "activities": [
+              {
+                "name": "Sitapur Beach sunrise",
+                "duration": "1–1.5h",
+                "priority": "recommended",
+                "cost": "Free"
+              },
+              {
+                "name": "Cycle or scooter village loop",
+                "duration": "2–3h",
+                "priority": "optional",
+                "cost": "Cycle/scooter ₹200–₹800/day band"
+              },
+              {
+                "name": "Return ferry timing buffer",
+                "duration": "1–2h",
+                "priority": "must-see",
+                "cost": "varies",
+                "tip": "Do not miss the sailing; last-minute seats off Neil can be scarce in peak season."
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Neil guesthouse",
+                "budget": "₹2,000–₹4,500/night"
+              }
+            ],
+            "meals": [
+              "Poha breakfast",
+              "Vegetable noodles",
+              "Coconut-based curry if available"
+            ]
+          }
+        ]
+      },
+      "Baratang": {
+        "name": "Baratang",
+        "minDays": 1,
+        "recDays": 1,
+        "maxDays": 2,
+        "note": "Baratang is logistics-heavy: start before dawn from Port Blair, follow the convoy/ATR rules, take the mangrove boat to limestone caves, and avoid any stop or photography in tribal reserve areas.",
+        "experiences": [
+          "Islands",
+          "Cruises & Boat Trips",
+          "National Parks",
+          "Wildlife & Safari",
+          "Adventure Sports"
+        ],
+        "signatureExperiences": [
+          "Cruises & Boat Trips",
+          "National Parks",
+          "Islands"
+        ],
+        "days": [
+          {
+            "theme": "Limestone caves and mud volcano from Port Blair",
+            "pace": "packed",
+            "note": "This is a long controlled-route day, not a casual beach outing. Leave around 3:30–4:00am, carry ID, snacks and water, and never photograph or interact with protected tribal communities along the route.",
+            "activities": [
+              {
+                "name": "Port Blair to Baratang ATR/convoy transfer",
+                "duration": "3.5–4.5h each way",
+                "priority": "must-see",
+                "cost": "Shared day tour ₹4,500–₹7,500/person band",
+                "tip": "Convoy timings and road rules change; book through a responsible operator and expect a very early start."
+              },
+              {
+                "name": "Mangrove creek boat to limestone caves",
+                "duration": "1.5–2h including walk",
+                "priority": "must-see",
+                "cost": "Often included in tour; boat/permit component varies",
+                "tip": "Wear non-slip sandals; cave access can close in heavy rain or high water."
+              },
+              {
+                "name": "Baratang mud volcano",
+                "duration": "45–60m",
+                "priority": "recommended",
+                "cost": "Included/varies",
+                "tip": "Interesting but modest; treat it as an add-on, not the sole reason for the long day."
+              },
+              {
+                "name": "Return to Port Blair before late evening",
+                "duration": "3.5–4.5h",
+                "priority": "must-see",
+                "cost": "Included in tour"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Port Blair hotel after return",
+                "budget": "₹2,000–₹5,000/night"
+              },
+              {
+                "name": "Basic Baratang lodge if overnighting",
+                "budget": "₹1,500–₹3,000/night"
+              }
+            ],
+            "meals": [
+              "Packed vegetarian breakfast",
+              "Simple rice-dal lunch stop",
+              "Port Blair dinner after return"
+            ]
+          },
+          {
+            "theme": "Optional overnight Baratang buffer",
+            "pace": "relaxed",
+            "note": "Use only if you dislike very long same-day drives or if ferry/convoy timing makes the caves rushed. Accommodation and food are basic compared with Port Blair/Havelock.",
+            "activities": [
+              {
+                "name": "Slow mangrove creek repeat or local jetty walk",
+                "duration": "1–2h",
+                "priority": "optional",
+                "cost": "varies"
+              },
+              {
+                "name": "Rest and early return to Port Blair",
+                "duration": "half day",
+                "priority": "recommended",
+                "cost": "Taxi/tour varies"
+              },
+              {
+                "name": "Buffer for weather, road or boat disruption",
+                "duration": "half day",
+                "priority": "recommended",
+                "cost": "varies"
+              }
+            ],
+            "hotels": [
+              {
+                "name": "Basic Baratang lodge",
+                "budget": "₹1,500–₹3,000/night"
+              }
+            ],
+            "meals": [
+              "Simple veg thali",
+              "Tea and biscuits",
+              "Packed snacks"
+            ]
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "from": "Port Blair",
+        "to": "Swaraj Dweep",
+        "method": "Government ferry or private catamaran such as Makruzz/Nautika/Green Ocean from Haddo/Phoenix Bay jetty",
+        "cost": "Private ferry ₹1,500–₹2,500/person band; government ferry cheaper if tickets available",
+        "distanceKm": 54,
+        "durationHrs": 2,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Swaraj Dweep",
+        "to": "Shaheed Dweep",
+        "method": "Private/government inter-island ferry with fixed morning or afternoon sailing",
+        "cost": "₹1,200–₹2,000/person band; verify current operator fare",
+        "distanceKm": 18,
+        "durationHrs": 1,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Shaheed Dweep",
+        "to": "Port Blair",
+        "method": "Return private/government ferry; keep one Port Blair night before flights",
+        "cost": "₹1,200–₹2,000/person band; verify current operator fare",
+        "distanceKm": 37,
+        "durationHrs": 1.5,
+        "sameDayFeasible": true
+      },
+      {
+        "from": "Port Blair",
+        "to": "Baratang",
+        "method": "ATR road convoy plus vehicle ferry/creek boat, usually as a guided day tour",
+        "cost": "Shared day tour ₹4,500–₹7,500/person band",
+        "distanceKm": 100,
+        "durationHrs": 4,
+        "sameDayFeasible": true
+      }
+    ],
+    "extras": [
+      "Ferries dominate feasibility: private operators publish fixed seasonal schedules, government ferries are cheaper but harder to book, and rough seas or technical changes can alter sailings; reserve seats early and keep a Port Blair buffer before flights.",
+      "Only permitted Andaman areas should be planned for ordinary tourism. Nicobar Islands and tribal reserves are restricted; never attempt contact, photography or detours involving protected tribes.",
+      "Best weather is October to May. June to September brings heavy monsoon rain, rougher seas, cancelled boats and limited water sports, though hotels may be cheaper.",
+      "Scuba and snorkelling are safest with certified operators in calm seas; do not dive before flying, and avoid scuba if pregnant or with uncontrolled asthma, heart, blood-pressure or diabetes concerns unless cleared by a doctor.",
+      "Carry cash on smaller islands, reef-safe sun protection, dry bags for ferry luggage and backup vegetarian/vegan snacks for early transfers."
+    ]
+  }
+}
