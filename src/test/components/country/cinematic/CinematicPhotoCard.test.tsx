@@ -41,6 +41,25 @@ describe("CinematicPhotoCard", () => {
     expect(document.querySelectorAll("img")).toHaveLength(0);
   });
 
+  it("shows a loading shimmer over the fallback while photos are still loading", () => {
+    const { rerender } = render(
+      <CinematicPhotoCard show photos={[]} slideIdx={0} stopName="Nara" dayCount={1} activeDayIdx={0} loading onBrokenImage={() => {}} />,
+    );
+    expect(document.querySelector(".shimmer-sweep")).not.toBeNull();
+    // Once loading settles with genuinely no photos, the shimmer is gone.
+    rerender(
+      <CinematicPhotoCard show photos={[]} slideIdx={0} stopName="Nara" dayCount={1} activeDayIdx={0} loading={false} onBrokenImage={() => {}} />,
+    );
+    expect(document.querySelector(".shimmer-sweep")).toBeNull();
+  });
+
+  it("never shows the shimmer once real photos exist", () => {
+    render(
+      <CinematicPhotoCard show photos={photos} slideIdx={0} stopName="Kyoto" dayCount={1} activeDayIdx={0} loading onBrokenImage={() => {}} />,
+    );
+    expect(document.querySelector(".shimmer-sweep")).toBeNull();
+  });
+
   it("renders day-progress pips only when a stop spans multiple days", () => {
     const { rerender } = render(
       <CinematicPhotoCard show photos={photos} slideIdx={0} stopName="Kyoto" dayCount={1} activeDayIdx={0} onBrokenImage={() => {}} />,

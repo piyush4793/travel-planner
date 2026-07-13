@@ -8,6 +8,7 @@ import CinematicDayPanel from "./cinematic/CinematicDayPanel";
 import CinematicIntro from "./cinematic/CinematicIntro";
 import CinematicDone from "./cinematic/CinematicDone";
 import CinematicPhotoCard from "./cinematic/CinematicPhotoCard";
+import { loadCityPhotos } from "./cinematic/photoLoader";
 import CinematicHeader from "./cinematic/CinematicHeader";
 import { planCostBasisIcon } from "../../core/utils/tripPlans";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
@@ -90,6 +91,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
 
   // useState (not useRef) so React re-renders when photos arrive
   const [cityPhotoMap, setCityPhotoMap] = useState<Record<string, string[]>>({});
+  const [photosReady, setPhotosReady]   = useState(false);
   const [brokenImgs,  setBrokenImgs]    = useState<Set<string>>(() => new Set());
   const { panelWidth, startPanelDrag }  = usePanelDrag(300, 300);
   const bp = useBreakpoint();
@@ -362,6 +364,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
       // Reset visible state so replays (prev/jump) start from a clean intro.
       setPhase("intro");
       setShowCard(false);
+      setPhotosReady(false);
       setActiveCityIdx(-1);
       setActiveDayIdx(0);
       setVisibleActs(0);
@@ -433,27 +436,11 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
 
       // Pre-fetch city images during overview hold (parallel, with timeout).
       // Merged across every unit on the route, so multi-country stops get photos too.
-      const cityImgKeys = route.cityImages;
-      const fetchedPhotos: Record<string, string[]> = {};
-
       setStatusMsg("📸 Loading city photos…");
-      const photoPromises = Object.entries(cityImgKeys).map(async ([cityName, articles]) => {
-        const results = await Promise.allSettled(
-          articles.map((article) => getWikiImage(article)),
-        );
-        const valid = results
-          .filter((r): r is PromiseFulfilledResult<string | null> => r.status === "fulfilled")
-          .map((r) => r.value)
-          .filter((v): v is string => !!v);
-        if (valid.length > 0) fetchedPhotos[cityName] = valid;
-      });
-      // Cap photo fetch at 5s to prevent stalling the animation
-      await Promise.race([
-        Promise.allSettled(photoPromises),
-        sleep(5000),
-      ]);
+      const fetchedPhotos = await loadCityPhotos(route.cityImages, getWikiImage, { capMs: 5000 });
       if (cancelled) return;
       setCityPhotoMap((prev) => ({ ...prev, ...fetchedPhotos }));
+      setPhotosReady(true);
 
       setStatusMsg(`${plan.duration} · ${plan.costPerPerson} ${planCostBasisIcon(plan)}${comboLine}`);
       await sleep(400);
@@ -837,6 +824,11 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
   return createPortal(
     <div className="fixed inset-0 z-[200]" style={{ fontFamily: "inherit" }}>
 
+      {/* Polite live region — announces phase/loading changes to screen readers
+          without stealing focus. The visual status chips below are aria-hidden
+          so the message is announced exactly once. */}
+      <div className="sr-only" role="status" aria-live="polite">{statusMsg}</div>
+
       {/* ── Left area — transparent, main map shows through ─────────────────── */}
       <div className="absolute top-0 left-0 bottom-0" style={{ right: isMobile ? 0 : panelWidth }}>
 
@@ -856,13 +848,14 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
             theme={activeDay?.theme}
             dayCount={activeStop?.days.length ?? 0}
             activeDayIdx={activeDayIdx}
+            loading={!photosReady}
             onBrokenImage={(url) => setBrokenImgs((s) => new Set(s).add(url))}
           />
         )}
 
         {/* Status pill (transit / intro phases) */}
         {!showCard && (
-          <div className="absolute bottom-8 left-0 right-0 flex justify-center pointer-events-none">
+          <div className="absolute bottom-8 left-0 right-0 flex justify-center pointer-events-none" aria-hidden="true">
             <div className="bg-black/70 backdrop-blur-sm text-white text-sm font-semibold px-5 py-2.5 rounded-full max-w-sm text-center shadow-lg">
               {mapAvailable ? statusMsg : "⚠ Switch to Map view to start the cinematic journey"}
             </div>
@@ -871,7 +864,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
 
         {/* Small status chip during city phase (shows on map below card) */}
         {showCard && (
-          <div className="absolute bottom-4 left-4 pointer-events-none">
+          <div className="absolute bottom-4 left-4 pointer-events-none" aria-hidden="true">
             <div className="bg-black/60 backdrop-blur-sm text-white/80 text-xs font-semibold px-3 py-1.5 rounded-full">
               {statusMsg}
             </div>

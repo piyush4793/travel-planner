@@ -34,3 +34,36 @@ describe("ErrorBoundary copy-timeout cleanup", () => {
     expect(clearSpy).toHaveBeenCalled();
   });
 });
+
+// Scoped-fallback mode is used to drop a crashed overlay (e.g. the cinematic
+// fly-through) without the full-screen recovery takeover.
+describe("ErrorBoundary scoped fallback", () => {
+  beforeEach(() => {
+    vi.spyOn(console, "error").mockImplementation(() => {});
+  });
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it("renders the provided fallback instead of the recovery UI and fires onError", () => {
+    const onError = vi.fn();
+    render(
+      <ErrorBoundary fallback={null} onError={onError}>
+        <Boom />
+      </ErrorBoundary>,
+    );
+    // No full-screen recovery heading — the fallback (null) silently replaces it.
+    expect(screen.queryByText(/something went wrong/i)).not.toBeInTheDocument();
+    expect(onError).toHaveBeenCalledTimes(1);
+    expect(onError.mock.calls[0][0]).toBeInstanceOf(Error);
+  });
+
+  it("still shows the default recovery UI when no fallback is given", () => {
+    render(
+      <ErrorBoundary>
+        <Boom />
+      </ErrorBoundary>,
+    );
+    expect(screen.getByText(/something went wrong/i)).toBeInTheDocument();
+  });
+});

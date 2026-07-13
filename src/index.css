@@ -104,6 +104,9 @@ html, body, #root {
   .itinerary-day {
     animation: none;
   }
+  .shimmer-sweep {
+    animation: none;
+  }
 }
 
 /* Hide scrollbar but keep scroll */

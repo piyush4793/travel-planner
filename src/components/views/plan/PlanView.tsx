@@ -23,6 +23,7 @@ import PlanPlacesStep, { type PlacesUnit, includedCount } from "./steps/PlanPlac
 import type { PlanActions } from "./shell/planActions";
 import { loadPlanDraft, savePlanDraft, clearPlanDraft } from "./shell/planDraft";
 import { usePlanScope } from "./shell/usePlanScope";
+import ErrorBoundary from "../../shared/ErrorBoundary";
 import { isEnabled } from "../../../core/featureFlags";
 import { MAX_TRIP_UNITS } from "../../../core/utils/multiCountry";
 import { tripSignature, type SavedTrip, type OpenTripRequest } from "../../../core/utils/savedTrips";
@@ -32,7 +33,7 @@ import { unitFlag } from "../../../core/trip/unitFlag";
 import { useTripExperiences } from "../../../hooks/useTripExperiences";
 import { useTripRules } from "../../../hooks/useTripRules";
 import { useTripPlanner } from "../../../hooks/useTripPlanner";
-import type { CinematicRoute } from "../../country/cinematic/engine";
+import { usePlanCinematic } from "./usePlanCinematic";
 import type { AiPlanRequest, AiPlanStop } from "../../../core/utils/ai/llmPrompts";
 
 const ItineraryCinematic = lazy(() => import("../../country/ItineraryCinematic"));
@@ -150,7 +151,12 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
 
   // The prebuilt route the cinematic overlay plays. Non-null ⇒ overlay open.
   // One overlay serves single and multi (the route model is scope-agnostic).
-  const [cinematicRoute, setCinematicRoute] = useState<CinematicRoute | null>(null);
+  // usePlanCinematic owns the open/close/auto-reset/Back lifecycle so this
+  // orchestrator stays thin.
+  const { cinematicRoute, openCinematic, closeCinematic } = usePlanCinematic({
+    selectionSig: selection.map((c) => c.name).join(" → "),
+    onCinematicChange,
+  });
 
   // Open / resume / reset lifecycle: reopening a saved trip (My Trips or a
   // same-set "Resume" prompt), the "+ New trip" reset, and the per-stop restore
@@ -318,17 +324,6 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
     canStartCinematic: !!mainMapRef,
   });
 
-  // Cinematic overlay lifecycle. Report open/close so App reveals the hidden
-  // MapView, and auto-close when the route identity changes (a different
-  // selection means the played route no longer matches what's on screen).
-  useEffect(() => {
-    onCinematicChange?.(cinematicRoute !== null);
-  }, [cinematicRoute, onCinematicChange]);
-  const selectionSig = selection.map((c) => c.name).join(" → ");
-  useEffect(() => {
-    setCinematicRoute(null);
-  }, [selectionSig]);
-  useEffect(() => () => onCinematicChange?.(false), [onCinematicChange]);
 
   // The composed route handed to the AI planner — the SAME order-aware model the
   // Route Canvas/Share/PDF read, so the AI plans exactly what's on screen. Built
@@ -353,12 +348,6 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
       unitNounPlural: source.unitNounPlural,
     };
   }, [route.orderedSegments, route.signature, route.orderedComposed, homeCountry, budgetBasis, source]);
-
-  // Device / browser Back closes an open cinematic overlay first. It opens only
-  // after the wizard is on Review (where the step guard is already registered),
-  // so it lands on top of the LIFO back-stack — Back dismisses the cinematic
-  // before it walks the wizard steps.
-  useBackDismiss(cinematicRoute !== null, () => setCinematicRoute(null));
 
   const anyUnitHasCities = placesUnits.some((u) => u.orderedCities.length > 0);
 
@@ -546,7 +535,7 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
                 notes={planActions.notes}
                 onSaveNotes={planActions.onSaveNotes}
                 nav={reviewNav}
-                onStartCinematic={mainMapRef ? setCinematicRoute : undefined}
+                onStartCinematic={mainMapRef ? openCinematic : undefined}
               />
             ) : (
               <div className="flex h-64 items-center justify-center rounded-2xl border border-line bg-surface-1">
@@ -641,13 +630,15 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
       </div>
 
       {mainMapRef && cinematicRoute && (
-        <Suspense fallback={null}>
-          <ItineraryCinematic
-            route={cinematicRoute}
-            mainMapRef={mainMapRef}
-            onClose={() => setCinematicRoute(null)}
-          />
-        </Suspense>
+        <ErrorBoundary fallback={null} onError={closeCinematic}>
+          <Suspense fallback={null}>
+            <ItineraryCinematic
+              route={cinematicRoute}
+              mainMapRef={mainMapRef}
+              onClose={closeCinematic}
+            />
+          </Suspense>
+        </ErrorBoundary>
       )}
 
       <PlanReviewReveal

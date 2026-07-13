@@ -12,6 +12,8 @@ type Props = {
   /** Total days at the active stop (drives the day-progress pips). */
   dayCount: number;
   activeDayIdx: number;
+  /** Whether photo prefetch is still in flight (drives the loading skeleton). */
+  loading?: boolean;
   /** Called when a photo fails to load so the shell can prune it. */
   onBrokenImage: (url: string) => void;
 };
@@ -21,7 +23,7 @@ type Props = {
  * dots). Pure presentational leaf extracted from ItineraryCinematic — image
  * error handling is delegated up via onBrokenImage so this stays side-effect free.
  */
-export default function CinematicPhotoCard({ show, photos, slideIdx, stopName, theme, dayCount, activeDayIdx, onBrokenImage }: Props) {
+export default function CinematicPhotoCard({ show, photos, slideIdx, stopName, theme, dayCount, activeDayIdx, loading = false, onBrokenImage }: Props) {
   const slideCount = Math.max(1, photos.length);
   return (
     <div
@@ -52,12 +54,18 @@ export default function CinematicPhotoCard({ show, photos, slideIdx, stopName, t
         </div>
       ))}
 
-      {/* Fallback gradient when no photos */}
+      {/* Fallback gradient when no photos — with a loading shimmer while the
+          prefetch is still in flight so an empty card reads as "loading" not "broken". */}
       {photos.length === 0 && (
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 overflow-hidden"
           style={{ background: `linear-gradient(135deg, ${BRAND[950]} 0%, ${BRAND[900]} 60%, ${BRAND[950]} 100%)` }}
-        />
+          aria-hidden="true"
+        >
+          {loading && (
+            <div className="absolute inset-0 shimmer-sweep" role="presentation" />
+          )}
+        </div>
       )}
 
       {/* Bottom gradient + caption */}

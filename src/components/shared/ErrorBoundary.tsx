@@ -1,6 +1,14 @@
 import { Component, type ReactNode } from "react";
 
-type Props = { children: ReactNode };
+type Props = {
+  children: ReactNode;
+  /** Optional scoped fallback UI. When provided, it replaces the default
+   *  full-screen recovery view (e.g. render `null` to silently drop a crashed
+   *  overlay). Omit for the app-root recovery experience. */
+  fallback?: ReactNode;
+  /** Optional side-effect on catch — e.g. close the overlay that just crashed. */
+  onError?: (error: Error) => void;
+};
 type State = { error: Error | null; errorInfo: string; copied: boolean };
 
 /** Matches Vite/browser messages for a dynamic import that 404'd after a deploy. */
@@ -29,6 +37,7 @@ export default class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: { componentStack?: string | null }) {
+    this.props.onError?.(error);
     const debugInfo = [
       `Error: ${error.message}`,
       `Stack: ${error.stack?.split("\n").slice(0, 5).join("\n") ?? "N/A"}`,
@@ -80,6 +89,10 @@ export default class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (!this.state.error) return this.props.children;
+
+    // A scoped fallback (may be null) lets a crashed sub-tree be dropped without
+    // the full-screen recovery takeover — used for the cinematic overlay.
+    if (this.props.fallback !== undefined) return this.props.fallback;
 
     const chunkError = isChunkLoadError(this.state.error);
 
