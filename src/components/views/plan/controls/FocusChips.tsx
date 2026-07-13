@@ -31,7 +31,7 @@ function FocusChipsInner({ options, selected, onToggle, onClear }: Props) {
           <button
             type="button"
             onClick={onClear}
-            className="focus-ring-emerald -my-1 inline-flex min-h-[32px] shrink-0 items-center rounded px-1.5 text-[11px] font-semibold text-ink-2 transition-colors hover:text-emerald-800"
+            className="focus-ring-emerald -my-1 inline-flex min-h-[32px] shrink-0 items-center rounded px-1.5 text-[11px] font-semibold text-ink-2 transition-colors hover:text-brand-800"
           >
             Clear ({activeCount})
           </button>
@@ -48,8 +48,8 @@ function FocusChipsInner({ options, selected, onToggle, onClear }: Props) {
               aria-pressed={active}
               className={`focus-ring-emerald min-h-[32px] rounded-full border px-2.5 py-1 text-xs font-semibold transition-colors ${
                 active
-                  ? "border-emerald-700 bg-emerald-700 text-white shadow-sm"
-                  : "border-line bg-white text-ink-1 hover:border-emerald-500 hover:text-emerald-800"
+                  ? "border-brand-700 bg-brand-700 text-white shadow-sm"
+                  : "border-line bg-surface-1 text-ink-1 hover:border-brand-500 hover:bg-brand-50/40 hover:text-brand-800"
               }`}
             >
               {exp}

@@ -52,24 +52,24 @@ export default function ProviderPicker({ value, onChange, connected }: Props) {
             className={
               "group relative flex flex-col items-center gap-1.5 rounded-2xl px-2 py-3.5 min-h-[32px] transition-[background-color,box-shadow,border-color,transform] focus-ring ring-1 " +
               (selected
-                ? "bg-gradient-to-b from-emerald-50 to-emerald-100/60 ring-2 ring-emerald-400 shadow-sm -translate-y-0.5"
-                : "bg-white ring-line hover:bg-surface-2 hover:ring-line-strong hover:-translate-y-0.5")
+                ? "bg-gradient-to-b from-brand-50 to-brand-100/60 ring-2 ring-brand-400 shadow-sm -translate-y-0.5"
+                : "bg-surface-1 ring-line hover:bg-surface-2 hover:ring-line-strong hover:-translate-y-0.5")
             }
           >
             {hasKey && (
               <span
                 aria-hidden="true"
-                className="absolute right-1.5 top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-[9px] font-bold text-white shadow-sm ring-2 ring-white"
+                className="absolute right-1.5 top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-brand-500 text-[9px] font-bold text-white shadow-sm ring-2 ring-white"
               >
                 {"\u2713"}
               </span>
             )}
             <span aria-hidden="true" className="text-[26px] leading-none transition-transform group-hover:scale-110">{PROVIDER_ICONS[p]}</span>
-            <span className={"text-[11px] font-bold " + (selected ? "text-emerald-800" : "text-ink-body")}>
+            <span className={"text-[11px] font-bold " + (selected ? "text-brand-800" : "text-ink-body")}>
               {PROVIDER_LABELS[p]}
             </span>
-            <span className={"inline-flex items-center gap-1 text-[9px] font-semibold " + (hasKey ? "text-emerald-600" : "text-ink-4")}>
-              {hasKey && <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-emerald-500" />}
+            <span className={"inline-flex items-center gap-1 text-[9px] font-semibold " + (hasKey ? "text-brand-600" : "text-ink-4")}>
+              {hasKey && <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-brand-500" />}
               {hasKey ? "Connected" : "Not set"}
             </span>
           </button>

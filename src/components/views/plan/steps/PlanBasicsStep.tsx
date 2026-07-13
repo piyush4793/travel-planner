@@ -82,7 +82,7 @@ export default function PlanBasicsStep({
       <div className="space-y-6">
         {/* Party size */}
         <section>
-          <p className="mb-2.5 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800 lg:text-left">Who's going?</p>
+          <p className="mb-2.5 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-brand-800 lg:text-left">Who's going?</p>
           <div className="flex justify-center lg:justify-start">
             <PillGroup
               options={BUDGET_BASIS_ORDER.map((b) => ({ key: b, label: `${BUDGET_BASIS_META[b].icon} ${BUDGET_BASIS_META[b].label}` }))}
@@ -96,11 +96,11 @@ export default function PlanBasicsStep({
         {showVibe && (
           <section>
             <div className="mb-2.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 lg:justify-between">
-              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800">What are you into?</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-brand-800">What are you into?</p>
               {selectedExperiences.length > 0 && (
                 <button
                   onClick={onClearExperiences}
-                  className="focus-ring-emerald inline-flex min-h-[36px] items-center gap-1 rounded-full border border-emerald-300 bg-white px-3.5 py-1.5 text-[11px] font-semibold text-emerald-800 transition-colors hover:border-emerald-400 hover:bg-emerald-50"
+                  className="focus-ring-emerald inline-flex min-h-[36px] items-center gap-1 rounded-full border border-brand-300 bg-transparent px-3.5 py-1.5 text-[11px] font-semibold text-brand-800 transition-colors hover:border-brand-400 hover:bg-brand-50"
                 >
                   <span aria-hidden="true" className="text-[10px]">✕</span> Clear ({selectedExperiences.length})
                 </button>

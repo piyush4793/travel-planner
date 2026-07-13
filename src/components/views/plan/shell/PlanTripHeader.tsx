@@ -195,27 +195,27 @@ function PlanTripHeaderInner({
               <span className="mx-1 text-ink-4">·</span>
               <span className="font-bold text-ink-1">{stats.cities}</span>&nbsp;{stats.cities === 1 ? "city" : "cities"}
             </span>
-            <span className="ml-auto inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-emerald-100 bg-emerald-50 px-2 py-1 text-[11px] font-bold text-emerald-800">
-              {stats.estimate && <span className="mr-0.5 font-medium text-emerald-700/70">~</span>}
+            <span className="ml-auto inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-brand-100 bg-brand-50 px-2 py-1 text-[11px] font-bold text-brand-800">
+              {stats.estimate && <span className="mr-0.5 font-medium text-brand-700/70">~</span>}
               {stats.cost}
             </span>
           </div>
         ) : (
           /* Tablet/desktop: scannable pill row (space to fill a wide header). */
           <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
-            <span className="inline-flex items-center rounded-full border border-line bg-white px-2.5 py-1 text-[11px] text-ink-2">
+            <span className="inline-flex items-center rounded-full border border-line bg-surface-1 px-2.5 py-1 text-[11px] text-ink-2">
               <span className="font-bold text-ink-1">{stats.days}</span>&nbsp;{stats.days === 1 ? "day" : "days"}
             </span>
             {isMulti && (
-              <span className="inline-flex items-center rounded-full border border-line bg-white px-2.5 py-1 text-[11px] text-ink-2">
+              <span className="inline-flex items-center rounded-full border border-line bg-surface-1 px-2.5 py-1 text-[11px] text-ink-2">
                 <span className="font-bold text-ink-1">{stats.countries}</span>&nbsp;countries
               </span>
             )}
-            <span className="inline-flex items-center rounded-full border border-line bg-white px-2.5 py-1 text-[11px] text-ink-2">
+            <span className="inline-flex items-center rounded-full border border-line bg-surface-1 px-2.5 py-1 text-[11px] text-ink-2">
               <span className="font-bold text-ink-1">{stats.cities}</span>&nbsp;{stats.cities === 1 ? "city" : "cities"}
             </span>
-            <span className="inline-flex items-center whitespace-nowrap rounded-full border border-emerald-100 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-800">
-              {stats.estimate && <span className="mr-0.5 font-medium text-emerald-700/70">~</span>}
+            <span className="inline-flex items-center whitespace-nowrap rounded-full border border-brand-100 bg-brand-50 px-2.5 py-1 text-[11px] font-bold text-brand-800">
+              {stats.estimate && <span className="mr-0.5 font-medium text-brand-700/70">~</span>}
               {stats.cost}
               <span className="ml-1" title={stats.costLabel} aria-label={stats.costLabel}>{stats.costIcon}</span>
             </span>
@@ -244,12 +244,12 @@ function PlanTripHeaderInner({
               >
                 <span
                   className={`block h-1.5 rounded-full transition-colors ${
-                    active ? "bg-emerald-700" : done ? "bg-emerald-500" : "bg-emerald-100 group-hover:bg-emerald-200"
+                    active ? "bg-brand-700" : done ? "bg-brand-500" : "bg-brand-100 group-hover:bg-brand-200"
                   }`}
                 />
                 <span
                   className={`text-left text-[10px] font-bold uppercase tracking-[0.1em] transition-colors ${
-                    active ? "text-emerald-700" : done ? "text-emerald-600 group-hover:text-emerald-700" : "text-ink-4"
+                    active ? "text-brand-700" : done ? "text-brand-600 group-hover:text-brand-700" : "text-ink-4"
                   }`}
                 >
                   {s.short}

@@ -32,9 +32,9 @@ type Props = {
 };
 
 const READINESS_TONE_CLASS: Record<ReadinessTone, string> = {
-  ok: "text-emerald-700",
+  ok: "text-brand-700",
   info: "text-ink-2",
-  warn: "text-amber-600",
+  warn: "text-accent-600",
 };
 
 /**
@@ -77,14 +77,14 @@ function DietNotesCard({ name, diet, showHeading, flagFor }: { name: string; die
           {name}
         </p>
       )}
-      <div className="rounded-xl border border-emerald-100 bg-emerald-50/70 px-3 py-2 space-y-2">
+      <div className="rounded-xl border border-brand-100 bg-brand-50/70 px-3 py-2 space-y-2">
         <div>
-          <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700">🥗 Vegetarian</p>
-          <p className="text-[11px] leading-relaxed text-emerald-900">{diet.vegetarian}</p>
+          <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wide text-brand-700">🥗 Vegetarian</p>
+          <p className="text-[11px] leading-relaxed text-brand-900">{diet.vegetarian}</p>
         </div>
         <div>
-          <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700">🌱 Vegan</p>
-          <p className="text-[11px] leading-relaxed text-emerald-900">{diet.vegan}</p>
+          <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wide text-brand-700">🌱 Vegan</p>
+          <p className="text-[11px] leading-relaxed text-brand-900">{diet.vegan}</p>
         </div>
         {diet.phrases.length > 0 && (
           <div>
@@ -92,7 +92,7 @@ function DietNotesCard({ name, diet, showHeading, flagFor }: { name: string; die
             <ul className="space-y-1">
               {diet.phrases.map((p) => (
                 <li key={p} className="flex gap-1.5 text-[11px] leading-snug text-ink-body">
-                  <span className="mt-0.5 shrink-0 text-emerald-600" aria-hidden="true">•</span>
+                  <span className="mt-0.5 shrink-0 text-brand-600" aria-hidden="true">•</span>
                   <span>{p}</span>
                 </li>
               ))}
@@ -176,7 +176,7 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, homeCou
           )}
           <li className="flex items-center justify-between gap-2 border-t border-surface-3 pt-1.5 text-[11px] font-bold text-ink-1">
             <span>Subtotal · flights extra</span>
-            <span className="flex shrink-0 items-center gap-1 text-emerald-800">
+            <span className="flex shrink-0 items-center gap-1 text-brand-800">
               {composedPlan.costPerPerson}
               <span title={planCostBasisLabel(composedPlan)} aria-label={planCostBasisLabel(composedPlan)}>
                 {planCostBasisIcon(composedPlan)}
@@ -212,17 +212,17 @@ function TripContextRailInner({ countries, composedPlan, perCountryCost, homeCou
                   {c.name}
                 </p>
                 {c.stopoverNote && (
-                  <div className="rounded-xl border border-emerald-100 bg-emerald-50/70 px-3 py-2">
-                    <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700">✈️ Stopover</p>
-                    <p className="text-[11px] leading-relaxed text-emerald-900">{c.stopoverNote}</p>
+                  <div className="rounded-xl border border-brand-100 bg-brand-50/70 px-3 py-2">
+                    <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wide text-brand-700">✈️ Stopover</p>
+                    <p className="text-[11px] leading-relaxed text-brand-900">{c.stopoverNote}</p>
                   </div>
                 )}
                 {(c.avoid?.length ?? 0) > 0 && (
-                  <div className="rounded-xl border border-amber-100 bg-amber-50 px-3 py-2">
-                    <p className="mb-1 text-[10px] font-bold uppercase tracking-wide text-amber-600">⚠️ Watch out for</p>
+                  <div className="rounded-xl border border-accent-100 bg-accent-50 px-3 py-2">
+                    <p className="mb-1 text-[10px] font-bold uppercase tracking-wide text-accent-600">⚠️ Watch out for</p>
                     <ul className="space-y-1">
                       {(c.avoid ?? []).map((item) => (
-                        <li key={item} className="flex gap-1.5 text-[11px] leading-snug text-amber-800">
+                        <li key={item} className="flex gap-1.5 text-[11px] leading-snug text-accent-800">
                           <span className="mt-0.5 shrink-0" aria-hidden="true">•</span>
                           <span>{item}</span>
                         </li>

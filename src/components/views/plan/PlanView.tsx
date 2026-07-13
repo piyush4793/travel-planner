@@ -398,7 +398,7 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
   // any future narrow step.
   const staged = isBasics || isPlaces;
   const stageCard =
-    "lg:rounded-[28px] lg:border lg:border-line lg:bg-white lg:px-10 lg:py-9 lg:shadow-[0_14px_46px_rgba(20,40,30,0.07)]";
+    "lg:rounded-[28px] lg:border lg:border-line lg:bg-surface-1 lg:px-10 lg:py-9 lg:shadow-[0_14px_46px_rgba(20,40,30,0.07)]";
   const centerStep = !isReview && !isPlaces && !isBasics;
   const atLast = safeIndex === steps.length - 1;
   const nextIsReview = steps[safeIndex + 1] === "review";
@@ -447,7 +447,7 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
     ) : undefined;
 
   return (
-    <div className="flex h-full w-full flex-col overflow-hidden bg-surface-2">
+    <div className="flex h-full w-full flex-col overflow-hidden bg-surface-3">
       <PlanTripHeader
         selection={selection}
         routeStopLimit={HEADER_ROUTE_STOPS}
@@ -488,7 +488,7 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
         <div key={current.key} className={`plan-step-in w-full ${isReview ? "h-full" : isBasics ? `flex min-h-full flex-col justify-center lg:block lg:min-h-0 ${stageCard}` : isPlaces ? stageCard : centerStep ? "flex min-h-full flex-col justify-center lg:justify-start" : ""}`}>
           {isReview ? (
             ruleLoading && !plan ? (
-              <div className="flex h-64 items-center justify-center rounded-2xl border border-line bg-white">
+              <div className="flex h-64 items-center justify-center rounded-2xl border border-line bg-surface-1">
                 <span className="text-sm text-ink-4">Building your plan…</span>
               </div>
             ) : plan && displayCountry ? (
@@ -505,7 +505,7 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
                 onStartCinematic={mainMapRef ? setCinematicRoute : undefined}
               />
             ) : (
-              <div className="flex h-64 items-center justify-center rounded-2xl border border-line bg-white">
+              <div className="flex h-64 items-center justify-center rounded-2xl border border-line bg-surface-1">
                 <span className="text-sm text-ink-4">No itinerary available.</span>
               </div>
             )
@@ -529,7 +529,7 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
                     </p>
                   </div>
                   <div className="mb-5 hidden lg:block">
-                    <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-700">
+                    <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-brand-700">
                       <span aria-hidden="true">{current.icon}</span> {current.title}
                     </p>
                     <h2 className="mt-1.5 font-display text-2xl font-bold leading-tight text-ink-1">
@@ -574,21 +574,21 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
         <div className="mx-auto flex max-w-md items-center gap-3">
           <button
             onClick={() => (safeIndex === 0 ? changeDestination() : goTo(safeIndex - 1))}
-            className="focus-ring-emerald min-h-[44px] rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-2 shadow-sm transition-colors hover:bg-surface-2"
+            className="focus-ring-emerald min-h-[44px] rounded-full border border-line bg-surface-1 px-4 py-2 text-sm font-semibold text-ink-2 shadow-sm transition-colors hover:bg-surface-2"
           >
             {safeIndex === 0 ? "↺ Destinations" : "← Back"}
           </button>
           {!atLast ? (
             <button
               onClick={() => goTo(safeIndex + 1)}
-              className="focus-ring-emerald ml-auto flex min-h-[44px] flex-1 items-center justify-center gap-1.5 rounded-full bg-emerald-700 px-5 py-2 text-sm font-bold text-white shadow-sm transition-colors hover:bg-emerald-800"
+              className="focus-ring-emerald ml-auto flex min-h-[44px] flex-1 items-center justify-center gap-1.5 rounded-full bg-brand-700 px-5 py-2 text-sm font-bold text-white shadow-sm transition-colors hover:bg-brand-800"
             >
               {nextIsReview ? "See my plan 🗺️" : "Continue →"}
             </button>
           ) : (
             <button
               onClick={changeDestination}
-              className="focus-ring-emerald ml-auto inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm transition-colors hover:bg-surface-2"
+              className="focus-ring-emerald ml-auto inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-line bg-surface-1 px-4 py-2 text-sm font-semibold text-brand-800 shadow-sm transition-colors hover:bg-surface-2"
             >
               <span aria-hidden="true">＋</span> Plan another
             </button>

@@ -25,7 +25,7 @@ type Props = {
 };
 
 const TRIGGER =
-  "focus-ring-emerald flex min-h-[34px] items-center gap-1.5 rounded-full border border-line-strong bg-white px-3 py-1 text-[11px] font-semibold text-ink-1 transition-colors hover:border-emerald-500 hover:bg-emerald-50";
+  "focus-ring-emerald flex min-h-[34px] items-center gap-1.5 rounded-full border border-line-strong bg-surface-1 px-3 py-1 text-[11px] font-semibold text-ink-1 transition-colors hover:border-brand-500 hover:bg-brand-50";
 
 /**
  * Trip-level "levers bar" for the multi-country Route Canvas — the one place the
@@ -59,7 +59,7 @@ function RouteLeversBarInner({ stops, anchorName, onSetAnchor, onReorder, onAuto
           triggerLabel={
             <>
               <span aria-hidden="true">🧭</span> {compact ? "Route" : "Route order"}
-              <span className="rounded-full bg-emerald-100 px-1.5 text-[10px] font-bold text-emerald-700">{stops.length}</span>
+              <span className="rounded-full bg-brand-100 px-1.5 text-[10px] font-bold text-brand-700">{stops.length}</span>
             </>
           }
         >

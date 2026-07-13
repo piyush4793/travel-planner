@@ -18,7 +18,7 @@ export default function HomeCountrySelector({ value, onChange, variant = "header
     return <SearchableSelector value={value} onChange={onChange} variant={variant} />;
   }
   const staticClass = variant === "light"
-    ? "flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-slate-700 bg-slate-100 rounded-lg border border-slate-200"
+    ? "flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-ink-body bg-surface-track rounded-lg border border-line"
     : "flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-white bg-white/10 rounded-full border border-white/15";
   return (
     <span
@@ -147,15 +147,15 @@ function SearchableSelector({ value, onChange, variant = "header" }: Props) {
     <div ref={ref} className="relative" onKeyDown={handleKeyDown}>
       <TriggerButton value={value} open={open} variant={variant} onClick={() => setOpen((o) => !o)} />
       {open && (
-        <div className={`absolute ${alignRight ? "right-0" : "left-0"} top-full mt-1 bg-white rounded-xl shadow-xl border border-gray-200 z-50 min-w-52 max-w-[calc(100vw-1rem)] overflow-hidden`}>
-          <div className="p-2 border-b border-gray-100">
+        <div className={`absolute ${alignRight ? "right-0" : "left-0"} top-full mt-1 bg-surface-1 rounded-xl shadow-xl border border-line z-50 min-w-52 max-w-[calc(100vw-1rem)] overflow-hidden`}>
+          <div className="p-2 border-b border-line">
             <input
               ref={inputRef}
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search countries…"
-              className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-emerald-300 focus:outline-none transition-colors"
+              className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-line bg-surface-2 focus:bg-surface-1 focus:border-brand-300 focus:outline-none transition-colors"
               role="combobox"
               aria-expanded={true}
               aria-controls={listId}
@@ -175,12 +175,12 @@ function SearchableSelector({ value, onChange, variant = "header" }: Props) {
               />
             ))}
             {hasMore && (
-              <div className="px-3 py-1.5 text-[10px] text-gray-400 text-center">
+              <div className="px-3 py-1.5 text-[10px] text-ink-3 text-center">
                 {filtered.length - MAX_VISIBLE} more — type to narrow
               </div>
             )}
             {filtered.length === 0 && (
-              <div className="px-3 py-3 text-xs text-gray-400 text-center">
+              <div className="px-3 py-3 text-xs text-ink-3 text-center">
                 No countries match "{search}"
               </div>
             )}
@@ -193,9 +193,9 @@ function SearchableSelector({ value, onChange, variant = "header" }: Props) {
 
 function TriggerButton({ value, open, variant = "header", onClick }: { value: string; open: boolean; variant?: Variant; onClick: () => void }) {
   const cls = variant === "light"
-    ? "flex items-center gap-1 px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-xs font-semibold transition-colors border border-slate-200 text-slate-700 focus-ring"
+    ? "flex items-center gap-1 px-2.5 py-1.5 bg-surface-track hover:bg-line rounded-lg text-xs font-semibold transition-colors border border-line text-ink-body focus-ring"
     : "flex items-center gap-1 px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-full text-xs font-semibold transition-colors border border-white/20 text-white focus-ring";
-  const chevronCls = variant === "light" ? "text-slate-400" : "text-white/60";
+  const chevronCls = variant === "light" ? "text-ink-3" : "text-white/60";
   return (
     <button
       onClick={onClick}
@@ -218,8 +218,8 @@ function CountryOption({ id, name, selected, active, onClick }: { id: string; na
       aria-selected={selected}
       onClick={onClick}
       className={`w-full text-left px-3 py-2 min-h-[36px] text-xs transition-colors focus-ring ${
-        active ? "bg-emerald-50 text-emerald-700" :
-        selected ? "text-emerald-600 font-bold bg-emerald-50/50" : "text-gray-700 hover:bg-gray-50"
+        active ? "bg-brand-50 text-brand-700" :
+        selected ? "text-brand-600 font-bold bg-brand-50/50" : "text-ink-body hover:bg-surface-2"
       }`}
     >
       {selected ? "✓ " : "  "}{name}

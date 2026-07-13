@@ -55,7 +55,7 @@ function BorderHopInner({ fromName, toName, fromPoint, toPoint }: Props) {
             Cross-country hop · plan flights/rail separately
           </p>
         </div>
-        <span aria-hidden="true" className="shrink-0 text-[11px] font-semibold text-emerald-700">
+        <span aria-hidden="true" className="shrink-0 text-[11px] font-semibold text-brand-700">
           {open ? "Hide ▴" : "Options ▾"}
         </span>
       </button>

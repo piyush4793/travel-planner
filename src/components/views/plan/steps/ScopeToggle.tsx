@@ -36,7 +36,7 @@ export default function ScopeToggle({ scope, onChange, homeCountry }: Props) {
             aria-checked={active}
             onClick={() => onChange(opt.value)}
             className={`focus-ring inline-flex min-h-[32px] items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition-colors ${
-              active ? "bg-white text-emerald-800 shadow-sm" : "text-emerald-100/90 hover:text-white"
+              active ? "bg-surface-1 text-brand-800 shadow-sm" : "text-brand-100/90 hover:text-white"
             }`}
           >
             <span aria-hidden="true">{opt.icon}</span>

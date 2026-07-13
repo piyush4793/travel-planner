@@ -55,11 +55,11 @@ export default function AppInstallShare({
 
   const shareBtnClass = isMenu
     ? "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 border border-white/15 transition-colors focus-ring"
-    : "flex items-center justify-center gap-1.5 h-8 px-2.5 min-w-[32px] bg-surface-track hover:bg-line text-emerald-800 rounded-full text-sm transition-colors border border-line focus-ring";
+    : "flex items-center justify-center gap-1.5 h-8 px-2.5 min-w-[32px] bg-surface-2 hover:bg-surface-3 text-brand-800 rounded-full text-sm transition-colors border border-line focus-ring";
 
   const installBtnClass = isMenu
-    ? "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold bg-white text-emerald-700 hover:bg-emerald-50 transition-colors focus-ring"
-    : "flex items-center gap-1.5 px-3 h-8 rounded-full text-xs font-bold bg-emerald-700 text-white hover:bg-emerald-800 transition-colors focus-ring";
+    ? "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold bg-surface-1 text-brand-700 hover:bg-brand-50 transition-colors focus-ring"
+    : "flex items-center gap-1.5 px-3 h-8 rounded-full text-xs font-bold bg-brand-700 text-white hover:bg-brand-800 transition-colors focus-ring";
 
   return (
     <div className="relative flex items-center gap-2">
@@ -109,16 +109,16 @@ export default function AppInstallShare({
         <div
           role="dialog"
           aria-label="Install on iOS"
-          className="absolute right-0 top-full mt-2 z-50 w-60 rounded-xl bg-white text-gray-700 shadow-xl border border-gray-200 p-3 text-[11px] leading-relaxed"
+          className="absolute right-0 top-full mt-2 z-50 w-60 rounded-xl bg-surface-1 text-ink-body shadow-xl border border-line p-3 text-[11px] leading-relaxed"
         >
-          <p className="font-bold text-gray-900 mb-1">Install on iPhone / iPad</p>
+          <p className="font-bold text-ink-1 mb-1">Install on iPhone / iPad</p>
           <ol className="space-y-1 list-decimal list-inside">
             <li>Tap the <span className="font-semibold">Share</span> icon in Safari</li>
             <li>Choose <span className="font-semibold">Add to Home Screen</span></li>
           </ol>
           <button
             onClick={() => setShowIosHint(false)}
-            className="mt-2 text-emerald-700 font-semibold focus-ring rounded"
+            className="mt-2 text-brand-700 font-semibold focus-ring rounded"
           >
             Got it
           </button>

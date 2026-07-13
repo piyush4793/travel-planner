@@ -248,8 +248,8 @@ describe("CityCard", () => {
     );
 
     const button = screen.getByRole("button", { name: /Kyoto — matches your focus experiences/i });
-    expect(button.className).toContain("bg-emerald-50");
-    expect(button.className).toContain("border-emerald-500");
+    expect(button.className).toContain("bg-brand-50");
+    expect(button.className).toContain("border-brand-500");
     expect(button.className).toContain("focus-ring-emerald");
     expect(screen.getByText("Mar")).toBeInTheDocument();
     expect(screen.getByLabelText("Best avoided in June")).toBeInTheDocument();

@@ -22,14 +22,14 @@ const TAB_BASE =
   "focus-ring-emerald flex-1 rounded-lg px-3 py-2 text-[12px] font-semibold transition-colors";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <p className="mb-2 text-[11px] font-bold uppercase tracking-wide text-emerald-800">{children}</p>;
+  return <p className="mb-2 text-[11px] font-bold uppercase tracking-wide text-brand-800">{children}</p>;
 }
 
 function MonthPills({ months, tone }: { months: string[]; tone: "good" | "avoid" }) {
   const cls =
     tone === "good"
-      ? "border-emerald-200 bg-emerald-50 text-emerald-800"
-      : "border-amber-200 bg-amber-50 text-amber-800";
+      ? "border-brand-200 bg-brand-50 text-brand-800"
+      : "border-accent-200 bg-accent-50 text-accent-800";
   return (
     <div className="flex flex-wrap gap-1.5">
       {months.map((m) => (
@@ -64,8 +64,8 @@ export default function SegmentAdjustDrawer({ segment, onClose, flagFor = getCou
       label={`Adjust ${segment.name}`}
       className={
         isMobile
-          ? "relative flex h-[80vh] w-full flex-col self-end overflow-hidden rounded-t-3xl bg-white shadow-2xl focus:outline-none motion-safe:animate-[slideUp_0.25s_ease-out]"
-          : "relative flex h-[560px] max-h-[85vh] w-[440px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl focus:outline-none motion-safe:animate-[scaleIn_0.18s_ease-out]"
+          ? "relative flex h-[80vh] w-full flex-col self-end overflow-hidden rounded-t-3xl bg-surface-1 shadow-2xl focus:outline-none motion-safe:animate-[slideUp_0.25s_ease-out]"
+          : "relative flex h-[560px] max-h-[85vh] w-[440px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl bg-surface-1 shadow-2xl focus:outline-none motion-safe:animate-[scaleIn_0.18s_ease-out]"
       }
     >
       <SheetCloseButton onClick={onClose} label={`Close adjust ${segment.name}`} className="absolute right-4 top-4 z-10" />
@@ -73,19 +73,19 @@ export default function SegmentAdjustDrawer({ segment, onClose, flagFor = getCou
       {/* Premium header band — an emerald-tinted, full-bleed header (flag tile +
           name + nights pill + on-band tabs) so the modal reads as a branded
           "adjust this stop" surface instead of plain text floating on white. */}
-      <div className="shrink-0 border-b border-emerald-100 bg-gradient-to-b from-emerald-50 to-white px-5 pb-3 pt-3 sm:px-6 sm:pt-5">
-        {isMobile && <span aria-hidden="true" className="mx-auto mb-3 block h-1 w-10 rounded-full bg-emerald-300/70" />}
+      <div className="shrink-0 border-b border-brand-100 bg-gradient-to-b from-brand-50 to-white px-5 pb-3 pt-3 sm:px-6 sm:pt-5">
+        {isMobile && <span aria-hidden="true" className="mx-auto mb-3 block h-1 w-10 rounded-full bg-brand-300/70" />}
 
         <div className="flex items-center gap-2.5 pr-10">
-          <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-xl leading-none shadow-sm ring-1 ring-emerald-100">{flagFor(segment.name)}</span>
-          <h2 className="min-w-0 flex-1 truncate font-display text-lg font-bold text-emerald-950">{segment.name}</h2>
-          <span className="shrink-0 rounded-full border border-emerald-200 bg-white/80 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700">
+          <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-surface-1 text-xl leading-none shadow-sm ring-1 ring-brand-100">{flagFor(segment.name)}</span>
+          <h2 className="min-w-0 flex-1 truncate font-display text-lg font-bold text-brand-950">{segment.name}</h2>
+          <span className="shrink-0 rounded-full border border-brand-200 bg-white/80 px-2.5 py-0.5 text-[11px] font-semibold text-brand-700">
             {segment.plan.days.length}{segment.plan.days.length === 1 ? " day" : " days"}
           </span>
         </div>
 
         {hasDetails && (
-          <div role="tablist" aria-label="Adjust sections" className="mt-3.5 flex gap-1 rounded-xl bg-emerald-100/60 p-1">
+          <div role="tablist" aria-label="Adjust sections" className="mt-3.5 flex gap-1 rounded-xl bg-brand-100/60 p-1">
             <button
               type="button"
               role="tab"
@@ -93,7 +93,7 @@ export default function SegmentAdjustDrawer({ segment, onClose, flagFor = getCou
               aria-selected={tab === "shape"}
               aria-controls="adjust-panel-shape"
               onClick={() => setTab("shape")}
-              className={`${TAB_BASE} ${tab === "shape" ? "bg-white text-emerald-900 shadow-sm" : "text-emerald-700/70 hover:text-emerald-900"}`}
+              className={`${TAB_BASE} ${tab === "shape" ? "bg-surface-1 text-brand-900 shadow-sm" : "text-brand-700/70 hover:text-brand-900"}`}
             >
               <span aria-hidden="true">✦ </span>Shape
             </button>
@@ -104,7 +104,7 @@ export default function SegmentAdjustDrawer({ segment, onClose, flagFor = getCou
               aria-selected={tab === "details"}
               aria-controls="adjust-panel-details"
               onClick={() => setTab("details")}
-              className={`${TAB_BASE} ${tab === "details" ? "bg-white text-emerald-900 shadow-sm" : "text-emerald-700/70 hover:text-emerald-900"}`}
+              className={`${TAB_BASE} ${tab === "details" ? "bg-surface-1 text-brand-900 shadow-sm" : "text-brand-700/70 hover:text-brand-900"}`}
             >
               <span aria-hidden="true">ⓘ </span>Details
             </button>
@@ -179,7 +179,7 @@ export default function SegmentAdjustDrawer({ segment, onClose, flagFor = getCou
               <ul className="space-y-1.5">
                 {c.avoid!.map((a) => (
                   <li key={a} className="flex gap-2">
-                    <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
+                    <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-400" />
                     <span>{a}</span>
                   </li>
                 ))}
@@ -189,7 +189,7 @@ export default function SegmentAdjustDrawer({ segment, onClose, flagFor = getCou
           {c.stopoverNote && (
             <div className="py-4 first:pt-0 last:pb-0">
               <SectionLabel>Stopover tip</SectionLabel>
-              <p className="rounded-lg border border-emerald-100 bg-emerald-50/50 p-3 text-emerald-900">{c.stopoverNote}</p>
+              <p className="rounded-lg border border-brand-100 bg-brand-50/50 p-3 text-brand-900">{c.stopoverNote}</p>
             </div>
           )}
           {(c.combo?.length ?? 0) > 0 && (
@@ -197,7 +197,7 @@ export default function SegmentAdjustDrawer({ segment, onClose, flagFor = getCou
               <SectionLabel>Pairs well with</SectionLabel>
               <div className="flex flex-wrap gap-1.5">
                 {c.combo!.map((x) => (
-                  <span key={x} className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[12px] font-semibold text-emerald-800">
+                  <span key={x} className="inline-flex items-center gap-1 rounded-full border border-brand-200 bg-brand-50 px-2.5 py-1 text-[12px] font-semibold text-brand-800">
                     <span aria-hidden="true">{flagFor(x)}</span> {x}
                   </span>
                 ))}

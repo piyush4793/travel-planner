@@ -26,7 +26,7 @@ export default function GeneralSettings({
       <SectionCard
         title="Home country"
         icon={"\u{1F3E0}"}
-        accent="bg-emerald-100 text-emerald-700"
+        accent="bg-brand-100 text-brand-700"
         desc="Where your trips depart from — used for travel estimates."
       >
         <HomeCountrySelector value={homeCountry} onChange={onHomeCountryChange} variant="light" />
@@ -35,7 +35,7 @@ export default function GeneralSettings({
       <SectionCard
         title="Default budget party size"
         icon={"\u{1F4B0}"}
-        accent="bg-emerald-100 text-emerald-600"
+        accent="bg-brand-100 text-brand-600"
         desc="Sets the baseline for costs shown across the app. Trips can be switched temporarily without changing this default."
       >
         <BudgetBasisPills

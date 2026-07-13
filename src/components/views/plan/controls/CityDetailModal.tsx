@@ -12,7 +12,7 @@ function Stat({ label, value, tone = "default" }: { label: string; value: string
   return (
     <div className="min-w-0">
       <p className="text-[10px] font-semibold uppercase tracking-[0.06em] text-ink-3">{label}</p>
-      <p className={`mt-1 truncate text-[13px] font-semibold ${tone === "warn" ? "text-amber-700" : "text-ink-1"}`}>{value}</p>
+      <p className={`mt-1 truncate text-[13px] font-semibold ${tone === "warn" ? "text-accent-700" : "text-ink-1"}`}>{value}</p>
     </div>
   );
 }
@@ -36,15 +36,15 @@ export default function CityDetailModal({ decision: d, onToggle, onClose }: Prop
       label={`${d.name} details`}
       className={
         isMobile
-          ? "relative flex max-h-[88vh] w-full flex-col self-end overflow-hidden rounded-t-2xl bg-white shadow-2xl focus:outline-none motion-safe:animate-[slideUp_0.25s_ease-out]"
-          : "relative flex max-h-[85vh] w-[440px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl focus:outline-none motion-safe:animate-[scaleIn_0.18s_ease-out]"
+          ? "relative flex max-h-[88vh] w-full flex-col self-end overflow-hidden rounded-t-2xl bg-surface-1 shadow-2xl focus:outline-none motion-safe:animate-[slideUp_0.25s_ease-out]"
+          : "relative flex max-h-[85vh] w-[440px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl bg-surface-1 shadow-2xl focus:outline-none motion-safe:animate-[scaleIn_0.18s_ease-out]"
       }
     >
       <button
         type="button"
         onClick={onClose}
         aria-label="Close details"
-        className="focus-ring-emerald absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-emerald-800 ring-1 ring-emerald-100 transition-colors hover:bg-white"
+        className="focus-ring-emerald absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-brand-800 ring-1 ring-brand-100 transition-colors hover:bg-surface-1"
       >
         <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
           <path d="M6 6l12 12M18 6L6 18" />
@@ -53,12 +53,12 @@ export default function CityDetailModal({ decision: d, onToggle, onClose }: Prop
 
       {/* Premium header band — an emerald-tinted, full-bleed header so the detail
           modal reads as a branded surface, matching the Route Canvas Adjust drawer. */}
-      <div className="shrink-0 border-b border-emerald-100 bg-gradient-to-b from-emerald-50/90 to-white px-6 pb-4 pt-3 sm:pt-5">
+      <div className="shrink-0 border-b border-brand-100 bg-gradient-to-b from-brand-50/90 to-white px-6 pb-4 pt-3 sm:pt-5">
         {isMobile && <span aria-hidden="true" className="mx-auto mb-3 block h-1 w-9 rounded-full bg-line-strong" />}
         <div className="pr-10">
-          <h2 className="font-display text-2xl font-bold text-emerald-950">{d.name}</h2>
+          <h2 className="font-display text-2xl font-bold text-brand-950">{d.name}</h2>
           {d.signal && (
-            <span className="mt-2 inline-block rounded-full border border-emerald-200 bg-white/80 px-2.5 py-1 text-[10px] font-semibold text-emerald-700">{d.signal}</span>
+            <span className="mt-2 inline-block rounded-full border border-brand-200 bg-white/80 px-2.5 py-1 text-[10px] font-semibold text-brand-700">{d.signal}</span>
           )}
         </div>
       </div>
@@ -76,10 +76,10 @@ export default function CityDetailModal({ decision: d, onToggle, onClose }: Prop
 
         {(d.focusMatches.length > 0 || d.otherExperiences.length > 0) && (
           <div className="mt-5 border-t border-line pt-4">
-            <p className="text-[11px] font-bold uppercase tracking-[0.07em] text-ink-3">Experiences</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.07em] text-brand-800">Experiences</p>
             <div className="mt-2 flex flex-wrap gap-1.5">
               {d.focusMatches.map((e) => (
-                <span key={e} className="rounded-full border border-emerald-600 bg-emerald-600 px-2.5 py-1 text-[11px] font-semibold text-white">{e}</span>
+                <span key={e} className="rounded-full border border-brand-600 bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">{e}</span>
               ))}
               {d.otherExperiences.map((e) => (
                 <span key={e} className="rounded-full border border-line bg-surface-1 px-2.5 py-1 text-[11px] font-semibold text-ink-3">{e}</span>
@@ -94,8 +94,8 @@ export default function CityDetailModal({ decision: d, onToggle, onClose }: Prop
           aria-pressed={d.included}
           className={`focus-ring-emerald mt-6 min-h-[48px] w-full rounded-xl px-4 py-3.5 text-[15px] font-bold transition-colors ${
             d.included
-              ? "border border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-emerald-100"
-              : "bg-emerald-700 text-white hover:bg-emerald-800"
+              ? "border border-brand-300 bg-brand-50 text-brand-800 hover:bg-brand-100"
+              : "bg-brand-700 text-white hover:bg-brand-800"
           }`}
         >
           {d.included ? "✓ In your plan — tap to remove" : "+ Add to plan"}

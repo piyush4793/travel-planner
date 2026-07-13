@@ -130,7 +130,7 @@ function SegmentBlock({
           body below (a titled-card look) so each country reads as its own section,
           yet stays light (not a heavy dark band) so the itinerary still leads on
           mobile. Reorder + anchor live in the levers bar. */}
-      <div className={`relative mx-3 rounded-t-2xl border border-b-0 bg-emerald-50/70 px-3 py-2.5 text-ink-1 ${isAnchor && total > 1 ? "border-emerald-200/70 border-l-transparent" : "border-emerald-200/70"}`}>
+      <div className={`relative mx-3 rounded-t-2xl border border-b-0 bg-brand-50/70 px-3 py-2.5 text-ink-1 ${isAnchor && total > 1 ? "border-brand-200/70 border-l-transparent" : "border-brand-200/70"}`}>
         {/* Full-bleed toggle behind the header content, so the whole band (name,
             stats, and the empty gap) collapses/expands the itinerary — not just a
             tiny chevron. The identity content is inert to pointer events; the
@@ -141,7 +141,7 @@ function SegmentBlock({
           aria-expanded={!collapsed}
           aria-controls={bodyId}
           aria-label={collapsed ? `Expand ${segment.name} itinerary` : `Collapse ${segment.name} itinerary`}
-          className="focus-ring-emerald absolute inset-0 rounded-t-2xl transition-colors hover:bg-emerald-100/50"
+          className="focus-ring-emerald absolute inset-0 rounded-t-2xl transition-colors hover:bg-brand-100/50"
         />
         {/* Anchor cue = a slim amber left accent bar (Option B). It marks the trip's
             longest stop without a pill/word competing with the country name. Purely
@@ -150,7 +150,7 @@ function SegmentBlock({
             it stays crisp on hover. The status is conveyed to assistive tech via the
             sr-only label on the name row below. */}
         {isAnchor && total > 1 && (
-          <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 w-1 rounded-tl-2xl bg-amber-500" />
+          <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 w-1 rounded-tl-2xl bg-accent-500" />
         )}
         <div className="pointer-events-none relative">
           {/* Two-gutter grid: a fixed left gutter carries the row icon (flag / pin),
@@ -161,7 +161,7 @@ function SegmentBlock({
               amber left accent bar, not a pill that outshouts the name). */}
           <div className="flex items-center gap-2">
             <span aria-hidden="true" className="w-5 shrink-0 text-center text-base leading-none">{flagFor(segment.name)}</span>
-            <h3 className="min-w-0 flex-1 truncate font-display text-[17px] font-bold leading-tight text-emerald-900">
+            <h3 className="min-w-0 flex-1 truncate font-display text-[17px] font-bold leading-tight text-brand-900">
               {segment.name}
               {isAnchor && total > 1 && <span className="sr-only"> — anchor stop</span>}
             </h3>
@@ -171,7 +171,7 @@ function SegmentBlock({
               onClick={() => setAdjusting(true)}
               aria-haspopup="dialog"
               aria-label={`Adjust ${segment.name}`}
-              className="focus-ring-emerald pointer-events-auto flex min-h-[32px] shrink-0 items-center gap-1 rounded-full border border-emerald-300 bg-white px-2.5 py-1 text-[11px] font-semibold text-emerald-800 transition-colors hover:bg-emerald-100"
+              className="focus-ring-emerald pointer-events-auto flex min-h-[32px] shrink-0 items-center gap-1 rounded-full border border-brand-300 bg-surface-1 px-2.5 py-1 text-[11px] font-semibold text-brand-800 transition-colors hover:bg-brand-100"
             >
               <span aria-hidden="true">✏️</span> {segment.plan.days.length}d
             </button>
@@ -182,7 +182,7 @@ function SegmentBlock({
                 so the ✏️ action above and the budget below share a right edge. */}
             <span
               aria-hidden="true"
-              className="pointer-events-none w-5 shrink-0 text-center text-[11px] leading-none text-emerald-700"
+              className="pointer-events-none w-5 shrink-0 text-center text-[11px] leading-none text-brand-700"
             >
               {collapsed ? "▾" : "▴"}
             </span>
@@ -191,16 +191,16 @@ function SegmentBlock({
               budget + basis icon. Stats align under the name; the budget runs to
               the band's right padding edge (no trailing gutter) so it keeps clear
               of the day range on narrow / dev-tools-open viewports. */}
-          <div className="mt-1 flex items-baseline gap-2 text-[11px] text-emerald-800/70">
+          <div className="mt-1 flex items-baseline gap-2 text-[11px] text-brand-800/70">
             <span aria-hidden="true" className="w-5 shrink-0" />
             <div className="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-2 gap-y-0.5">
-              <span><span className="font-semibold text-emerald-900">{placeCount}</span> {placeCount === 1 ? "place" : "places"}</span>
-              <span aria-hidden="true" className="text-emerald-600/40">·</span>
+              <span><span className="font-semibold text-brand-900">{placeCount}</span> {placeCount === 1 ? "place" : "places"}</span>
+              <span aria-hidden="true" className="text-brand-600/40">·</span>
               <span>{dayRange}</span>
             </div>
-            <span className="flex shrink-0 items-baseline gap-1 whitespace-nowrap text-[12px] font-bold text-emerald-700" title={planCostBasisLabel(segment.plan)}>
+            <span className="flex shrink-0 items-baseline gap-1 whitespace-nowrap text-[12px] font-bold text-brand-700" title={planCostBasisLabel(segment.plan)}>
               {cost}
-              <span aria-hidden="true" className="text-[11px] font-normal text-emerald-700/60">{planCostBasisIcon(segment.plan)}</span>
+              <span aria-hidden="true" className="text-[11px] font-normal text-brand-700/60">{planCostBasisIcon(segment.plan)}</span>
             </span>
           </div>
         </div>
@@ -209,8 +209,8 @@ function SegmentBlock({
       {/* Stop-specific planning note (e.g. length auto-expanded) — attributed to
           this country so the traveller knows exactly which stop it applies to. */}
       {segment.plan.warning && (
-        <div className="mx-3 border-x border-amber-200 bg-amber-50 px-3 py-2">
-          <p className="flex gap-1.5 text-[11px] leading-snug text-amber-700">
+        <div className="mx-3 border-x border-accent-200 bg-accent-50 px-3 py-2">
+          <p className="flex gap-1.5 text-[11px] leading-snug text-accent-700">
             <span aria-hidden="true" className="shrink-0">⚠️</span>
             <span>{segment.plan.warning}</span>
           </p>
@@ -228,16 +228,16 @@ function SegmentBlock({
           type="button"
           id={bodyId}
           onClick={onToggleCollapsed}
-          className="focus-ring-emerald mx-3 mb-1 flex w-[calc(100%-1.5rem)] items-center gap-2 rounded-b-2xl border border-t-0 border-emerald-200/70 bg-emerald-50/40 px-3 py-2.5 text-left transition-colors hover:bg-emerald-50"
+          className="focus-ring-emerald mx-3 mb-1 flex w-[calc(100%-1.5rem)] items-center gap-2 rounded-b-2xl border border-t-0 border-brand-200/70 bg-brand-50/40 px-3 py-2.5 text-left transition-colors hover:bg-brand-50"
         >
-          <span aria-hidden="true" className="w-5 shrink-0 text-center text-[11px] leading-none text-emerald-600">📍</span>
+          <span aria-hidden="true" className="w-5 shrink-0 text-center text-[11px] leading-none text-brand-600">📍</span>
           <span className="min-w-0 flex-1 truncate text-[11px] font-medium text-ink-body">
             {planCities.length > 0 ? planCities.join("  ·  ") : "Tap to view the day-by-day plan"}
           </span>
-          <span aria-hidden="true" className="shrink-0 whitespace-nowrap text-[11px] font-semibold text-emerald-700">Expand ▾</span>
+          <span aria-hidden="true" className="shrink-0 whitespace-nowrap text-[11px] font-semibold text-brand-700">Expand ▾</span>
         </button>
       ) : (
-        <div id={bodyId} className="mx-3 mb-1 rounded-b-2xl border border-t-0 border-line bg-white py-3">
+        <div id={bodyId} className="mx-3 mb-1 rounded-b-2xl border border-t-0 border-line bg-surface-2 py-3">
           <ItineraryView plan={displayPlan} rule={segment.rule} />
         </div>
       )}
@@ -315,7 +315,7 @@ function TripReviewCanvasInner({
   const pinToolbar = useBreakpoint() === "desktop";
 
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
+    <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface-1 shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
       {/* Trip-level toolbar — route order + jump-to-city on one row, so each
           stop header stays uncluttered. The bar is pinned above the scroll area
           (Jump is always reachable). Party size + route label live in the

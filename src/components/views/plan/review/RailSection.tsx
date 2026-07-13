@@ -40,7 +40,7 @@ export default function RailSection({ title, hint, count, defaultOpen = false, v
       className={
         flat
           ? "overflow-hidden"
-          : "overflow-hidden rounded-2xl border border-line bg-white shadow-[0_1px_3px_rgba(20,40,30,0.05)]"
+          : "overflow-hidden rounded-2xl border border-line bg-surface-1 shadow-[0_1px_3px_rgba(20,40,30,0.05)]"
       }
     >
       <button
@@ -52,9 +52,9 @@ export default function RailSection({ title, hint, count, defaultOpen = false, v
           flat ? "px-0.5 py-3" : "px-3.5 py-2.5"
         }`}
       >
-        <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800">{title}</span>
+        <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-brand-800">{title}</span>
         {count != null && (
-          <span className="rounded-full bg-emerald-50 px-1.5 py-0.5 text-[10px] font-bold text-emerald-700">{count}</span>
+          <span className="rounded-full bg-brand-50 px-1.5 py-0.5 text-[10px] font-bold text-brand-700">{count}</span>
         )}
         {hint && <span className="truncate text-[10px] font-semibold text-ink-4">· {hint}</span>}
         <span

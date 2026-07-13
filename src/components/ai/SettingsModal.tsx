@@ -198,19 +198,19 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
       open={open}
       onClose={onClose}
       label="Settings"
-      className="bg-white md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-2xl md:mx-4 h-dvh md:h-[600px] md:max-h-[88vh] flex flex-col overflow-hidden"
+      className="bg-surface-1 md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-2xl md:mx-4 h-dvh md:h-[600px] md:max-h-[88vh] flex flex-col overflow-hidden"
       backdropClassName="bg-black/40 backdrop-blur-sm"
     >
         {/* Hero header */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 via-emerald-800 to-brand-950 px-5 md:px-6 py-5 text-white">
+        <div className="relative overflow-hidden bg-gradient-to-br from-brand-700 via-brand-800 to-brand-950 px-5 md:px-6 py-5 text-white">
           <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-16 h-40 w-40 rounded-full bg-white/15 blur-2xl" />
-          <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 left-1/3 h-40 w-40 rounded-full bg-emerald-300/20 blur-2xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 left-1/3 h-40 w-40 rounded-full bg-brand-300/20 blur-2xl" />
           <div className="relative flex items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <span className="flex items-center justify-center w-11 h-11 rounded-2xl bg-white/15 ring-1 ring-white/25 text-xl backdrop-blur-sm shadow-inner" aria-hidden="true">{"\u2699\uFE0F"}</span>
               <div>
                 <h2 className="text-lg font-bold leading-tight tracking-tight">Settings</h2>
-                <p className="text-[11px] text-emerald-100/90">Preferences, AI keys &amp; backups</p>
+                <p className="text-[11px] text-brand-100/90">Preferences, AI keys &amp; backups</p>
               </div>
             </div>
             <button onClick={onClose} className="text-white/80 hover:text-white hover:bg-white/15 text-lg leading-none p-1.5 min-w-[32px] min-h-[32px] rounded-xl focus-ring transition-colors" aria-label="Close settings">{"\u2715"}</button>
@@ -237,44 +237,44 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
         {/* AI */}
         {section === "ai" && showAi && (
           <div className="space-y-4" role="tabpanel" id="settings-panel-ai" aria-labelledby="settings-tab-ai">
-            <SectionCard title="AI provider" icon={"\u{1F916}"} accent="bg-emerald-100 text-emerald-700" desc="Choose which model powers AI trip planning. Add a key for each provider you want to use.">
+            <SectionCard title="AI provider" icon={"\u{1F916}"} accent="bg-brand-100 text-brand-700" desc="Choose which model powers AI trip planning. Add a key for each provider you want to use.">
               <ProviderPicker value={provider} onChange={handleProviderChange} connected={keys} />
             </SectionCard>
 
             {currentKey && (
-              <SectionCard title="Current key" icon={"\u{1F511}"} accent="bg-emerald-100 text-emerald-600">
+              <SectionCard title="Current key" icon={"\u{1F511}"} accent="bg-brand-100 text-brand-600">
                 <div className="flex items-center gap-2 rounded-xl bg-surface-2 ring-1 ring-line px-3 py-2">
-                  <code className="text-xs text-emerald-600 flex-1 font-mono truncate">{showKey ? currentKey : masked}</code>
+                  <code className="text-xs text-brand-600 flex-1 font-mono truncate">{showKey ? currentKey : masked}</code>
                   <button onClick={() => setShowKey(!showKey)} className="text-[11px] px-2 py-1 min-h-[32px] rounded-lg text-ink-2 hover:text-ink-body hover:bg-surface-track transition-colors focus-ring">{showKey ? "Hide" : "Show"}</button>
                   <button onClick={handleDelete} className="text-[11px] px-2 py-1 min-h-[32px] rounded-lg text-red-500 hover:text-red-600 hover:bg-red-50 transition-colors focus-ring">Delete</button>
                 </div>
               </SectionCard>
             )}
 
-            <SectionCard title={currentKey ? "Replace key" : PROVIDER_LABELS[provider] + " API key"} icon={"\u2795"} accent="bg-emerald-100 text-emerald-800">
+            <SectionCard title={currentKey ? "Replace key" : PROVIDER_LABELS[provider] + " API key"} icon={"\u2795"} accent="bg-brand-100 text-brand-800">
               <div className="flex gap-2">
                 <input
                   type="password"
                   value={draft}
                   onChange={(e) => setDraft(e.target.value)}
                   placeholder={help.placeholder}
-                  className="flex-1 bg-surface-2 border border-line rounded-lg px-3 py-2.5 text-xs text-ink-1 placeholder:text-emerald-200/80 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-shadow"
+                  className="flex-1 bg-surface-2 border border-line rounded-lg px-3 py-2.5 text-xs text-ink-1 placeholder:text-brand-200/80 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100 transition-shadow"
                   onKeyDown={(e) => e.key === "Enter" && handleSave()}
                 />
                 <button
                   onClick={handleSave}
                   disabled={!draft.trim() || validating}
-                  className="px-4 py-2 min-h-[32px] bg-emerald-700 hover:bg-emerald-600 disabled:bg-line disabled:text-ink-4 text-white text-xs font-semibold rounded-lg transition-colors focus-ring"
+                  className="px-4 py-2 min-h-[32px] bg-brand-700 hover:bg-brand-600 disabled:bg-line disabled:text-ink-4 text-white text-xs font-semibold rounded-lg transition-colors focus-ring"
                 >
                   {validating ? "Verifying\u2026" : "Save"}
                 </button>
               </div>
-              <div className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2">
-                <p className="text-[10px] leading-relaxed text-amber-700">
+              <div className="mt-3 rounded-lg border border-accent-200 bg-accent-50 px-3 py-2">
+                <p className="text-[10px] leading-relaxed text-accent-700">
                   {"\u26A0\uFE0F"} API keys are stored in your browser&apos;s local storage (unencrypted). Only use keys with spending limits set. Never share your browser profile.
                 </p>
                 {provider === "gemini" && (
-                  <p className="text-[10px] text-amber-600 leading-snug mt-1">
+                  <p className="text-[10px] text-accent-600 leading-snug mt-1">
                     {"\u{1F511}"} Gemini keys are sent as a URL parameter (Google&apos;s required pattern). Restrict your key to the Generative Language API and set IP/referrer restrictions in Google Cloud Console.
                   </p>
                 )}
@@ -286,7 +286,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
             {currentKey && onOpenChat && (
               <button
                 onClick={() => { onClose(); onOpenChat(); }}
-                className="w-full flex items-center justify-center gap-2 py-2.5 min-h-[32px] bg-gradient-to-br from-emerald-700 to-emerald-800 hover:from-emerald-600 hover:to-emerald-700 text-white text-xs font-semibold rounded-xl shadow-sm transition-colors focus-ring"
+                className="w-full flex items-center justify-center gap-2 py-2.5 min-h-[32px] bg-gradient-to-br from-brand-700 to-brand-800 hover:from-brand-600 hover:to-brand-700 text-white text-xs font-semibold rounded-xl shadow-sm transition-colors focus-ring"
               >
                 {"\u2728"} Start Planning with AI
               </button>
@@ -309,7 +309,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                       {PROVIDERS.map((p) => {
                         const pr = PROVIDER_PRICING[p];
                         return (
-                          <tr key={p} className={"border-t border-surface-track " + (p === provider ? "bg-emerald-50 text-ink-body" : "text-ink-2")}>
+                          <tr key={p} className={"border-t border-surface-track " + (p === provider ? "bg-brand-50 text-ink-body" : "text-ink-2")}>
                             <td className="px-3 py-1.5">{PROVIDER_ICONS[p]} {PROVIDER_LABELS[p]}</td>
                             <td className="px-3 py-1.5">{pr.model}</td>
                             <td className="px-3 py-1.5 text-right font-mono">${pr.inputPer1M}</td>
@@ -332,9 +332,9 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                 </ol>
               </details>
 
-              <div className="rounded-lg bg-amber-50 border border-amber-200 px-3 py-2.5 space-y-1">
-                <p className="text-[11px] text-amber-700 font-medium">{"\u26A0"} Security notice</p>
-                <p className="text-[10px] text-amber-600/80 leading-relaxed">
+              <div className="rounded-lg bg-accent-50 border border-accent-200 px-3 py-2.5 space-y-1">
+                <p className="text-[11px] text-accent-700 font-medium">{"\u26A0"} Security notice</p>
+                <p className="text-[10px] text-accent-600/80 leading-relaxed">
                   Your API key is stored in browser localStorage and used for direct API calls.
                   It is never sent to any server other than the selected provider ({PROVIDER_LABELS[provider]}).
                   However, it is accessible to browser extensions and dev tools. Use a key with appropriate spending limits.
@@ -357,13 +357,13 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                 <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-xl" aria-hidden="true">{"\u{1F4BE}"}</span>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-[11px] text-emerald-200/80">Last backup</span>
+                    <span className="text-[11px] text-brand-200/80">Last backup</span>
                     <span className="text-[11px] font-semibold text-white">{getLastBackupLabel()}</span>
                   </div>
                   {backupFreq !== "never" && (
                     <div className="flex items-center justify-between gap-2 mt-1">
-                      <span className="text-[11px] text-emerald-200/80">Next auto-backup</span>
-                      <span className="text-[11px] font-semibold text-emerald-300">{getNextBackupLabel()}</span>
+                      <span className="text-[11px] text-brand-200/80">Next auto-backup</span>
+                      <span className="text-[11px] font-semibold text-brand-300">{getNextBackupLabel()}</span>
                     </div>
                   )}
                 </div>
@@ -372,11 +372,11 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
 
             <StorageLocationCard onStatus={setBackupStatus} />
 
-            <SectionCard title="Export" icon={"\u{1F4E4}"} accent="bg-emerald-100 text-emerald-700" desc="Full backup includes everything. CSV/XLSX export only countries (human-editable).">
+            <SectionCard title="Export" icon={"\u{1F4E4}"} accent="bg-brand-100 text-brand-700" desc="Full backup includes everything. CSV/XLSX export only countries (human-editable).">
               <div className="space-y-2">
                 <button
                   onClick={async () => { await exportFullBackup(); setBackupStatus({ ok: true, msg: "Full backup downloaded!" }); }}
-                  className="w-full px-3 py-2.5 min-h-[32px] bg-emerald-700 hover:bg-emerald-600 text-white text-[11px] font-semibold rounded-xl transition-colors focus-ring flex items-center justify-center gap-2"
+                  className="w-full px-3 py-2.5 min-h-[32px] bg-brand-700 hover:bg-brand-600 text-white text-[11px] font-semibold rounded-xl transition-colors focus-ring flex items-center justify-center gap-2"
                 >
                   {"\u{1F4E6}"} Full Backup (JSON)
                 </button>
@@ -397,7 +397,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
               </div>
             </SectionCard>
 
-            <SectionCard title="Restore" icon={"\u{1F4E5}"} accent="bg-amber-100 text-amber-600">
+            <SectionCard title="Restore" icon={"\u{1F4E5}"} accent="bg-accent-100 text-accent-600">
               <div className="flex gap-2">
                 <button
                   onClick={() => restoreRef.current?.click()}
@@ -416,13 +416,13 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
               <input ref={importRef} type="file" accept=".csv" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) handleImportCSV(f); e.target.value = ""; }} />
             </SectionCard>
 
-            <SectionCard title="Auto-backup schedule" icon={"\u23F0"} accent="bg-emerald-100 text-emerald-700">
+            <SectionCard title="Auto-backup schedule" icon={"\u23F0"} accent="bg-brand-100 text-brand-700">
               <div className="flex gap-1.5">
                 {(["daily", "weekly", "monthly", "never"] as BackupFrequency[]).map((f) => (
                   <button
                     key={f}
                     onClick={() => handleFreqChange(f)}
-                    className={"flex-1 px-2 py-2 min-h-[32px] text-[11px] font-semibold rounded-xl transition-colors focus-ring " + (backupFreq === f ? "bg-emerald-700 text-white shadow-sm" : "bg-surface-track text-ink-2 hover:bg-line ring-1 ring-line")}
+                    className={"flex-1 px-2 py-2 min-h-[32px] text-[11px] font-semibold rounded-xl transition-colors focus-ring " + (backupFreq === f ? "bg-brand-700 text-white shadow-sm" : "bg-surface-track text-ink-2 hover:bg-line ring-1 ring-line")}
                   >
                     {f.charAt(0).toUpperCase() + f.slice(1)}
                   </button>
@@ -435,7 +435,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                   <select
                     value={backupSched.weekday ?? 0}
                     onChange={(e) => handleSchedChange({ weekday: parseInt(e.target.value) })}
-                    className="bg-surface-2 border border-line rounded-lg px-2 py-1.5 text-[11px] text-ink-body appearance-none cursor-pointer focus:outline-none focus:border-emerald-500"
+                    className="bg-surface-2 border border-line rounded-lg px-2 py-1.5 text-[11px] text-ink-body appearance-none cursor-pointer focus:outline-none focus:border-brand-500"
                   >
                     {["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].map((day, i) => (
                       <option key={i} value={i}>{day}</option>
@@ -450,7 +450,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                   <select
                     value={backupSched.monthDay ?? 1}
                     onChange={(e) => handleSchedChange({ monthDay: parseInt(e.target.value) })}
-                    className="bg-surface-2 border border-line rounded-lg px-2 py-1.5 text-[11px] text-ink-body appearance-none cursor-pointer focus:outline-none focus:border-emerald-500"
+                    className="bg-surface-2 border border-line rounded-lg px-2 py-1.5 text-[11px] text-ink-body appearance-none cursor-pointer focus:outline-none focus:border-brand-500"
                   >
                     {Array.from({ length: 28 }, (_, i) => (
                       <option key={i + 1} value={i + 1}>{i + 1}</option>
@@ -468,20 +468,20 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
 
             <StatusBanner status={backupStatus} />
 
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2.5 space-y-1.5">
-              <p className="text-[10px] text-emerald-700/80 leading-relaxed">
-                {"\u{1F4A1}"} API keys are <span className="text-emerald-800 font-medium">never</span> included in backups for security.
+            <div className="bg-brand-50 border border-brand-200 rounded-xl px-3 py-2.5 space-y-1.5">
+              <p className="text-[10px] text-brand-700/80 leading-relaxed">
+                {"\u{1F4A1}"} API keys are <span className="text-brand-800 font-medium">never</span> included in backups for security.
                 Full backup restores everything else {"\u2014"} reload the page after restoring.
               </p>
-              <p className="text-[10px] text-emerald-700/80 leading-relaxed">
-                {"\u{1F4C2}"} Manual exports open a <span className="text-emerald-800 font-medium">Save As</span> dialog so you can choose where to save.
+              <p className="text-[10px] text-brand-700/80 leading-relaxed">
+                {"\u{1F4C2}"} Manual exports open a <span className="text-brand-800 font-medium">Save As</span> dialog so you can choose where to save.
                 Auto-backups download silently to your browser{"\u2019"}s default folder.
               </p>
-              <div className="flex items-start gap-1.5 mt-1 bg-emerald-100/60 rounded-md px-2 py-1.5">
+              <div className="flex items-start gap-1.5 mt-1 bg-brand-100/60 rounded-md px-2 py-1.5">
                 <span className="text-[10px] leading-none mt-px">{"\u{1F4C1}"}</span>
-                <div className="text-[10px] text-emerald-800 leading-relaxed">
+                <div className="text-[10px] text-brand-800 leading-relaxed">
                   <span className="font-medium">Default download location:</span>{" "}
-                  <code className="bg-emerald-100 px-1 py-0.5 rounded text-[9px] font-mono">
+                  <code className="bg-brand-100 px-1 py-0.5 rounded text-[9px] font-mono">
                     {navigator.platform?.toLowerCase().includes("mac")
                       ? "~/Downloads"
                       : navigator.platform?.toLowerCase().includes("win")
@@ -489,7 +489,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                       : "~/Downloads"}
                   </code>
                   <br />
-                  <span className="text-emerald-700/70">
+                  <span className="text-brand-700/70">
                     Change it in your browser{"\u2019"}s{" "}
                     <span className="font-medium">Settings {"\u2192"} Downloads</span>
                     {" "}or enable {"\u201C"}Ask where to save{"\u201D"} for every download.
@@ -503,7 +503,7 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
         {/* Restore confirmation dialog */}
         {restorePreview && restorePreview.ok && (
           <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50" onClick={() => setRestorePreview(null)}>
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
+            <div className="bg-surface-1 rounded-2xl shadow-2xl w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
               <div className="px-5 py-4 border-b">
                 <h3 className="text-sm font-bold text-ink-1">📦 Restore Backup</h3>
               </div>
@@ -515,17 +515,17 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                   </p>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {restorePreview.countryCount > 0 && (
-                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
+                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-brand-50 text-brand-700">
                         🌍 {restorePreview.countryCount} countries
                       </span>
                     )}
                     {restorePreview.tripCount > 0 && (
-                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600">
+                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-brand-50 text-brand-600">
                         ✈️ {restorePreview.tripCount} trips
                       </span>
                     )}
                     {restorePreview.aiPlanCount > 0 && (
-                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
+                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-brand-50 text-brand-700">
                         ✨ {restorePreview.aiPlanCount} AI plans
                       </span>
                     )}
@@ -534,8 +534,8 @@ export default function SettingsModal({ open, onClose, onOpenChat, countries, ho
                     </span>
                   </div>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2.5">
-                  <p className="text-[11px] text-amber-700 font-medium leading-relaxed">
+                <div className="bg-accent-50 border border-accent-200 rounded-lg px-3 py-2.5">
+                  <p className="text-[11px] text-accent-700 font-medium leading-relaxed">
                     ⚠️ All changes not backed up will be lost upon restore. This cannot be undone.
                   </p>
                 </div>

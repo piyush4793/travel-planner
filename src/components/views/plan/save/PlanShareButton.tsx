@@ -35,7 +35,7 @@ export default function PlanShareButton({ country, homeCountry, plan, routeStops
       onFocus={prefetch}
       disabled={status === "working"}
       aria-label={status === "copied" ? "Plan copied to clipboard" : "Share your trip plan"}
-      className="focus-ring-emerald inline-flex min-h-[32px] items-center gap-1 rounded-full border border-emerald-200 bg-white px-2.5 py-1 text-[11px] font-bold text-emerald-800 transition-colors hover:bg-emerald-50 disabled:cursor-wait disabled:opacity-60"
+      className="focus-ring-emerald inline-flex min-h-[32px] items-center gap-1 rounded-full border border-brand-200 bg-surface-1 px-2.5 py-1 text-[11px] font-bold text-brand-800 transition-colors hover:bg-brand-50 disabled:cursor-wait disabled:opacity-60"
     >
       <span aria-hidden="true" className="text-sm leading-none">{icon}</span>
       <span className="hidden md:inline">{label}</span>

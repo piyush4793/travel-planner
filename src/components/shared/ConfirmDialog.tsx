@@ -5,9 +5,9 @@ const DEFAULT_TITLE = "Are you sure?";
 const DEFAULT_CONFIRM_LABEL = "Confirm";
 const DEFAULT_CANCEL_LABEL = "Cancel";
 const DIALOG_CONTAINER_CLASS =
-  "w-full max-w-sm self-end sm:self-auto rounded-t-2xl sm:rounded-2xl bg-white shadow-2xl overflow-hidden focus:outline-none motion-safe:animate-[slideUp_0.2s_ease-out] sm:motion-safe:animate-[scaleIn_0.15s_ease-out]";
+  "w-full max-w-sm self-end sm:self-auto rounded-t-2xl sm:rounded-2xl bg-surface-1 shadow-2xl overflow-hidden focus:outline-none motion-safe:animate-[slideUp_0.2s_ease-out] sm:motion-safe:animate-[scaleIn_0.15s_ease-out]";
 const CANCEL_BUTTON_CLASS =
-  "flex-1 min-h-[40px] px-4 py-2.5 text-xs font-semibold rounded-xl border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 transition-colors focus-ring";
+  "flex-1 min-h-[40px] px-4 py-2.5 text-xs font-semibold rounded-xl border border-line bg-surface-1 text-ink-body hover:bg-surface-2 transition-colors focus-ring";
 const CONFIRM_BUTTON_BASE_CLASS =
   "flex-1 min-h-[40px] px-4 py-2.5 text-xs font-semibold rounded-xl transition-colors focus-ring";
 
@@ -78,18 +78,18 @@ const VARIANT_STYLES = {
   },
   warning: {
     icon: "⚠️",
-    confirm: "bg-amber-600 text-white hover:bg-amber-700",
-    iconBg: "bg-amber-100 text-amber-600",
+    confirm: "bg-accent-600 text-white hover:bg-accent-700",
+    iconBg: "bg-accent-100 text-accent-600",
   },
   info: {
     icon: "ℹ️",
-    confirm: "bg-emerald-700 text-white hover:bg-emerald-800",
-    iconBg: "bg-emerald-100 text-emerald-700",
+    confirm: "bg-brand-700 text-white hover:bg-brand-800",
+    iconBg: "bg-brand-100 text-brand-700",
   },
   emerald: {
     icon: "🧳",
-    confirm: "bg-emerald-600 text-white hover:bg-emerald-700",
-    iconBg: "bg-emerald-100 text-emerald-700",
+    confirm: "bg-brand-600 text-white hover:bg-brand-700",
+    iconBg: "bg-brand-100 text-brand-700",
   },
 };
 
@@ -124,8 +124,8 @@ function ConfirmDialogView({
             {style.icon}
           </div>
           <div className="min-w-0">
-            <h3 id="confirm-title" className="text-sm font-bold text-gray-900">{title}</h3>
-            <p id="confirm-msg" className="mt-1 text-xs text-gray-500 leading-relaxed">{message}</p>
+            <h3 id="confirm-title" className="text-sm font-bold text-ink-1">{title}</h3>
+            <p id="confirm-msg" className="mt-1 text-xs text-ink-2 leading-relaxed">{message}</p>
           </div>
         </div>
       </div>

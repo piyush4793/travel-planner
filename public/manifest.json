@@ -5,8 +5,8 @@
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
-  "background_color": "#f7f4ec",
-  "theme_color": "#f7f4ec",
+  "background_color": "#eee6d3",
+  "theme_color": "#e7dcc4",
   "orientation": "any",
   "categories": ["travel", "lifestyle", "productivity"],
   "launch_handler": {

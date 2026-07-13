@@ -39,13 +39,13 @@ const INTL_REGION_ORDER = ["Asia", "Europe", "Middle East", "Africa", "Americas"
 
 const CHIP_BASE =
   "focus-ring-emerald group inline-flex min-h-[44px] items-center gap-2 rounded-full border px-4 py-2.5 text-sm shadow-[0_1px_2px_rgba(20,40,30,0.05)] transition-[transform,box-shadow,border-color,color] motion-safe:animate-[fadeInUp_0.28s_ease-out_both] hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0 disabled:hover:shadow-[0_1px_2px_rgba(20,40,30,0.05)]";
-const CHIP_TONE_DEFAULT = "border-line bg-white font-medium text-ink-1 hover:border-emerald-600 hover:text-emerald-800";
-const CHIP_TONE_AVOID = "border-amber-200 bg-amber-50/40 font-medium text-ink-2 hover:border-amber-400 hover:text-amber-800";
+const CHIP_TONE_DEFAULT = "border-line bg-surface-1 font-medium text-ink-1 hover:border-brand-600 hover:bg-brand-50/40 hover:text-brand-800";
+const CHIP_TONE_AVOID = "border-accent-200 bg-accent-50/40 font-medium text-ink-2 hover:border-accent-400 hover:text-accent-800";
 
-const TOKEN_TONE_DEFAULT = "border-emerald-200 bg-emerald-50 text-emerald-800";
-const TOKEN_TONE_AVOID = "border-amber-300 bg-amber-100/70 text-amber-900";
-const TOKEN_REMOVE_DEFAULT = "text-emerald-500 hover:bg-emerald-100 hover:text-emerald-700";
-const TOKEN_REMOVE_AVOID = "text-amber-600 hover:bg-amber-200/70 hover:text-amber-800";
+const TOKEN_TONE_DEFAULT = "border-brand-200 bg-brand-50 text-brand-800";
+const TOKEN_TONE_AVOID = "border-accent-300 bg-accent-100/70 text-accent-900";
+const TOKEN_REMOVE_DEFAULT = "text-brand-500 hover:bg-brand-100 hover:text-brand-700";
+const TOKEN_REMOVE_AVOID = "text-accent-600 hover:bg-accent-200/70 hover:text-accent-800";
 
 /**
  * Seasonality cue shared by the browse chips and the selected tokens, so a
@@ -122,11 +122,11 @@ function MonthPicker({ month, onChange }: { month: string | null; onChange: (m: 
       haspopup="listbox"
       minWidth={260}
       triggerAriaLabel={month ? `Travel month: ${expandMonth(month)}. Change month` : "Choose travel month"}
-      triggerClassName="focus-ring-emerald flex min-h-[46px] shrink-0 items-center gap-1.5 rounded-2xl border border-line bg-white px-3.5 text-[13px] font-semibold text-ink-1 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-colors hover:border-emerald-600 hover:text-emerald-800"
+      triggerClassName="focus-ring-emerald flex min-h-[46px] shrink-0 items-center gap-1.5 rounded-2xl border border-line bg-surface-1 px-3.5 text-[13px] font-semibold text-ink-1 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-colors hover:border-brand-600 hover:text-brand-800"
       triggerLabel={
         <>
           <span aria-hidden="true">📅</span>
-          <span className={`w-[2.25rem] text-left tabular-nums ${month ? "text-emerald-800" : "text-ink-2"}`}>{month ?? "Any"}</span>
+          <span className={`w-[2.25rem] text-left tabular-nums ${month ? "text-brand-800" : "text-ink-2"}`}>{month ?? "Any"}</span>
           <span aria-hidden="true" className="text-[10px] text-ink-4">▾</span>
         </>
       }
@@ -145,8 +145,8 @@ function MonthPicker({ month, onChange }: { month: string | null; onChange: (m: 
                   aria-label={expandMonth(m)}
                   className={`focus-ring-emerald min-h-[40px] rounded-xl border text-[12px] font-semibold transition-colors ${
                     active
-                      ? "border-emerald-600 bg-emerald-700 text-white"
-                      : "border-line bg-white text-ink-2 hover:border-emerald-600 hover:text-emerald-800"
+                      ? "border-brand-600 bg-brand-700 text-white"
+                      : "border-line bg-surface-1 text-ink-2 hover:border-brand-600 hover:text-brand-800"
                   }`}
                 >
                   {m}
@@ -158,7 +158,7 @@ function MonthPicker({ month, onChange }: { month: string | null; onChange: (m: 
             <button
               type="button"
               onClick={() => { onChange(null); close(); }}
-              className="focus-ring-emerald mt-2.5 w-full rounded-xl px-3 py-2 text-center text-[12px] font-semibold text-emerald-800 transition-colors hover:bg-emerald-50"
+              className="focus-ring-emerald mt-2.5 w-full rounded-xl px-3 py-2 text-center text-[12px] font-semibold text-brand-800 transition-colors hover:bg-brand-50"
             >
               Any month
             </button>
@@ -268,13 +268,13 @@ export default function DestinationPicker({ source, countries, exploreCountries,
     <div className="h-full w-full overflow-y-auto bg-surface-2">
       <div className="mx-auto flex min-h-full w-full max-w-2xl flex-col px-5 pt-6 pb-12 lg:max-w-5xl lg:px-8">
         {/* Editorial hero — sets tone on every breakpoint without burying the board. */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-700 via-emerald-800 to-emerald-900 px-5 py-5 shadow-sm sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-700 via-brand-800 to-brand-950 px-5 py-5 shadow-sm sm:px-6 sm:py-6 lg:px-8 lg:py-8">
           <span aria-hidden="true" className="pointer-events-none absolute -right-3 -top-5 select-none text-[86px] leading-none opacity-20 lg:text-[120px]">🌍</span>
-          <p className="relative text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-200">Plan your next escape</p>
+          <p className="relative text-[10px] font-bold uppercase tracking-[0.16em] text-brand-200">Plan your next escape</p>
           <h1 className="relative mt-1 font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-4xl">
             {multiSelect ? "Where will your journey take you?" : "Where will you wander next?"}
           </h1>
-          <p className="relative mt-1.5 max-w-md text-[13px] text-emerald-100/90 lg:text-sm">
+          <p className="relative mt-1.5 max-w-md text-[13px] text-brand-100/90 lg:text-sm">
             {multiSelect
               ? `Pick up to ${maxSelection} ${source.unitNounPlural} and we'll shape one trip across them.`
               : "Pick a destination and we'll shape a trip around what you love."}
@@ -285,7 +285,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
         </div>
 
         <div className="mt-4 space-y-2.5">
-          <div className="focus-within:border-emerald-600 focus-within:shadow-[0_0_0_3px_rgba(4,120,87,0.12)] flex min-w-0 items-end gap-2 rounded-2xl border border-line bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-[border-color,box-shadow] sm:items-center">
+          <div className="focus-within:border-brand-600 focus-within:shadow-[0_0_0_3px_rgba(4,120,87,0.12)] flex min-w-0 items-end gap-2 rounded-2xl border border-line bg-surface-1 px-3 py-2.5 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-[border-color,box-shadow] sm:items-center">
             <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
               {multiSelect && selectedNames.map((name) => {
                 const fit = month ? monthFit(byName.get(name) ?? { bestMonths: [], worstMonths: [] }, month) : "neutral";
@@ -330,7 +330,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
               <button
                 onClick={startTrip}
                 aria-label={`Plan trip with ${selectedNames.length} ${selectedNames.length === 1 ? source.unitNoun : source.unitNounPlural}`}
-                className="focus-ring-emerald flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white shadow-sm transition-[transform,background-color,box-shadow] hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-md motion-safe:animate-[fadeInUp_0.2s_ease-out]"
+                className="focus-ring-emerald flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white shadow-sm transition-[transform,background-color,box-shadow] hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-md motion-safe:animate-[fadeInUp_0.2s_ease-out]"
               >
                 <span aria-hidden="true" className="text-xl leading-none">→</span>
               </button>
@@ -349,7 +349,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
           </div>
           {month && (
             <p className="text-[11px] text-ink-2" aria-live="polite">
-              Sorted for <span className="font-semibold text-emerald-800">{expandMonth(month)}</span> — ☀️ great · ⚠️ off-season.
+              Sorted for <span className="font-semibold text-brand-800">{expandMonth(month)}</span> — ☀️ great · ⚠️ off-season.
             </p>
           )}
 
@@ -373,8 +373,8 @@ export default function DestinationPicker({ source, countries, exploreCountries,
                   aria-pressed={active}
                   className={`focus-ring-emerald shrink-0 whitespace-nowrap border-b-2 px-1 py-2 text-[12.5px] font-bold transition-colors ${
                     active
-                      ? "border-emerald-700 text-emerald-800"
-                      : "border-transparent text-ink-4 hover:text-emerald-800"
+                      ? "border-brand-700 text-brand-800"
+                      : "border-transparent text-ink-4 hover:text-brand-800"
                   }`}
                 >
                   {r === "All" ? "Popular" : r}
@@ -392,12 +392,12 @@ export default function DestinationPicker({ source, countries, exploreCountries,
         )}
 
         {recommendations.length > 0 && (
-          <section className="mt-8 rounded-2xl border border-emerald-100 bg-emerald-50/50 p-4 motion-safe:animate-[fadeInUp_0.28s_ease-out]">
-            <h2 className="mb-1 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-800">
+          <section className="mt-8 rounded-2xl border border-brand-100 bg-brand-50/50 p-4 motion-safe:animate-[fadeInUp_0.28s_ease-out]">
+            <h2 className="mb-1 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-800">
               <span aria-hidden="true">✨</span>
               {selectedNames.length === 1 ? `Pairs well with ${selectedNames[0]}` : "Great additions to your trip"}
             </h2>
-            <p className="mb-3 text-[11px] text-emerald-700/80">Travellers often combine these into one seamless route.</p>
+            <p className="mb-3 text-[11px] text-brand-700/80">Travellers often combine these into one seamless route.</p>
             <div className="flex flex-wrap gap-2.5">
               {recommendations.map((c, i) => (
                 <Chip key={c.name} country={c} index={i} month={month} scope={source.scope} homeCountry={homeCountry} onPick={() => pickCountry(c)} />
@@ -416,7 +416,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
               {mineHidden > 0 && (
                 <button
                   onClick={() => setShowAllMine(true)}
-                  className="focus-ring-emerald min-h-[44px] rounded-full border border-dashed border-line-strong px-4 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:border-emerald-600 hover:text-emerald-800"
+                  className="focus-ring-emerald min-h-[44px] rounded-full border border-dashed border-line-strong px-4 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:border-brand-600 hover:text-brand-800"
                 >
                   Show all {mineFiltered.length}
                 </button>
@@ -424,7 +424,7 @@ export default function DestinationPicker({ source, countries, exploreCountries,
               {showAllMine && !q && mineFiltered.length > MINE_LIMIT && (
                 <button
                   onClick={() => setShowAllMine(false)}
-                  className="focus-ring-emerald min-h-[44px] rounded-full px-4 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:text-emerald-800"
+                  className="focus-ring-emerald min-h-[44px] rounded-full px-4 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:text-brand-800"
                 >
                   Show less
                 </button>

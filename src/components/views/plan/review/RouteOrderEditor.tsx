@@ -96,11 +96,11 @@ export default function RouteOrderEditor({ stops, anchorName, onSetAnchor, onReo
               data-order-index={i}
               className={`flex items-center gap-1.5 rounded-lg px-1.5 py-1 transition-colors ${
                 isDragging
-                  ? "bg-emerald-50 opacity-60"
+                  ? "bg-brand-50 opacity-60"
                   : isDropTarget
-                    ? "bg-emerald-50 ring-1 ring-emerald-400"
+                    ? "bg-brand-50 ring-1 ring-brand-400"
                     : isAnchor
-                      ? "bg-amber-50/60"
+                      ? "bg-accent-50/60"
                       : "hover:bg-surface-2"
               }`}
             >
@@ -122,13 +122,13 @@ export default function RouteOrderEditor({ stops, anchorName, onSetAnchor, onReo
               </button>
               <span
                 aria-hidden="true"
-                className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-white text-sm shadow-sm ring-1 ring-line"
+                className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-surface-1 text-sm shadow-sm ring-1 ring-line"
               >
                 {flagFor(s.name)}
               </span>
               <span className="min-w-0 flex-1 truncate text-xs font-semibold text-ink-1">{s.name}</span>
               {isAnchor ? (
-                <span className="flex items-center gap-1 rounded-full bg-amber-100 px-2 py-1 text-[9px] font-bold uppercase text-amber-700 ring-1 ring-amber-200">
+                <span className="flex items-center gap-1 rounded-full bg-accent-100 px-2 py-1 text-[9px] font-bold uppercase text-accent-700 ring-1 ring-accent-200">
                   <span aria-hidden="true">★</span> Anchor
                 </span>
               ) : (
@@ -136,7 +136,7 @@ export default function RouteOrderEditor({ stops, anchorName, onSetAnchor, onReo
                   type="button"
                   onClick={() => onSetAnchor(s.name)}
                   aria-label={`Make ${s.name} the anchor`}
-                  className="focus-ring-emerald flex min-h-[32px] items-center gap-1 rounded-full border border-line px-2 py-1 text-[9px] font-semibold text-ink-3 transition-colors hover:border-amber-400 hover:bg-amber-50 hover:text-amber-700"
+                  className="focus-ring-emerald flex min-h-[32px] items-center gap-1 rounded-full border border-line px-2 py-1 text-[9px] font-semibold text-ink-3 transition-colors hover:border-accent-400 hover:bg-accent-50 hover:text-accent-700"
                 >
                   <span aria-hidden="true">☆</span> Anchor
                 </button>
@@ -149,7 +149,7 @@ export default function RouteOrderEditor({ stops, anchorName, onSetAnchor, onReo
         <button
           type="button"
           onClick={onAutoArrange}
-          className="focus-ring-emerald mt-1.5 flex min-h-[32px] w-full items-center justify-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-[11px] font-semibold text-emerald-800 transition-colors hover:border-emerald-300 hover:bg-emerald-100"
+          className="focus-ring-emerald mt-1.5 flex min-h-[32px] w-full items-center justify-center gap-1.5 rounded-lg border border-brand-200 bg-brand-50 px-3 py-1.5 text-[11px] font-semibold text-brand-800 transition-colors hover:border-brand-300 hover:bg-brand-100"
         >
           <span aria-hidden="true">✨</span> Auto-arrange from anchor
         </button>

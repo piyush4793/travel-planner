@@ -77,9 +77,9 @@ function DevFlagPanelInner({ size }: { size: "sm" | "md" }) {
             <div className="px-6 py-4 bg-gradient-to-r from-brand-900 to-brand-950 flex items-center justify-between">
               <div>
                 <h3 className="text-sm font-bold text-white">🛠 Feature Flags</h3>
-                <p className="text-[10px] text-emerald-200/70 mt-0.5">Dev panel · localhost only</p>
+                <p className="text-[10px] text-brand-200/70 mt-0.5">Dev panel · localhost only</p>
               </div>
-              <button onClick={() => setOpen(false)} className="text-emerald-200/70 hover:text-white text-lg p-1 rounded-lg transition-colors focus-ring" aria-label="Close">✕</button>
+              <button onClick={() => setOpen(false)} className="text-brand-200/70 hover:text-white text-lg p-1 rounded-lg transition-colors focus-ring" aria-label="Close">✕</button>
             </div>
 
             <div className="px-6 py-5 space-y-5">
@@ -99,7 +99,7 @@ function DevFlagPanelInner({ size }: { size: "sm" | "md" }) {
                 </div>
 
                 {paidGateOff && (
-                  <p className="text-[10px] text-amber-600 mt-2 ml-7 flex items-center gap-1">
+                  <p className="text-[10px] text-accent-600 mt-2 ml-7 flex items-center gap-1">
                     <span>⚠</span> Enable master gate to unlock paid features
                   </p>
                 )}
@@ -122,7 +122,7 @@ function DevFlagPanelInner({ size }: { size: "sm" | "md" }) {
               <p className="text-[10px] text-ink-4">Changes apply instantly · paid children require master gate on</p>
               <button
                 onClick={() => { removeLS(LS_KEYS.FRE_DONE); window.location.reload(); }}
-                className="text-[10px] font-semibold text-emerald-700 hover:text-emerald-900 whitespace-nowrap focus-ring rounded px-1"
+                className="text-[10px] font-semibold text-brand-700 hover:text-brand-900 whitespace-nowrap focus-ring rounded px-1"
               >
                 Reset FRE
               </button>
@@ -151,7 +151,7 @@ function FlagRow({ flag, flags, meta, onToggle, root, dimmed }: {
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
           <span className={`text-[13px] font-semibold ${root ? "text-ink-1" : "text-ink-body"}`}>{meta.label}</span>
-          {root && <span className="text-[9px] font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded-full">root</span>}
+          {root && <span className="text-[9px] font-bold text-brand-800 bg-brand-100 px-1.5 py-0.5 rounded-full">root</span>}
         </div>
         <p className="text-[10px] text-ink-4">{meta.description}</p>
       </div>
@@ -161,10 +161,10 @@ function FlagRow({ flag, flags, meta, onToggle, root, dimmed }: {
         aria-checked={enabled}
         aria-label={`${meta.label} ${enabled ? "on" : "off"}`}
         className={`relative w-11 h-7 rounded-full shrink-0 transition-colors duration-200 focus-ring ${
-          enabled ? "bg-emerald-600" : "bg-line-strong"
+          enabled ? "bg-brand-600" : "bg-line-strong"
         }`}
       >
-        <span className={`absolute top-1.5 left-1 w-4 h-4 rounded-full bg-white shadow-md transition-transform duration-200 ${
+        <span className={`absolute top-1.5 left-1 w-4 h-4 rounded-full bg-surface-1 shadow-md transition-transform duration-200 ${
           enabled ? "translate-x-5" : "translate-x-0"
         }`} />
       </button>

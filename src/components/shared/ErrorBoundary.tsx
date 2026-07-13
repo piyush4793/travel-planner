@@ -84,8 +84,8 @@ export default class ErrorBoundary extends Component<Props, State> {
     const chunkError = isChunkLoadError(this.state.error);
 
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center p-6">
-        <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 space-y-6 text-center">
+      <div className="min-h-screen bg-gradient-to-b from-surface-2 to-surface-3 flex items-center justify-center p-6">
+        <div className="max-w-md w-full bg-surface-1 rounded-2xl shadow-xl p-8 space-y-6 text-center">
           {/* Icon */}
           <div className="mx-auto w-16 h-16 rounded-full bg-red-50 flex items-center justify-center">
             <svg className="w-8 h-8 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -95,10 +95,10 @@ export default class ErrorBoundary extends Component<Props, State> {
 
           {/* Heading */}
           <div className="space-y-2">
-            <h1 className="text-xl font-bold text-gray-800">
+            <h1 className="text-xl font-bold text-ink-1">
               {chunkError ? "A new version is available" : "Something went wrong"}
             </h1>
-            <p className="text-sm text-gray-500 leading-relaxed">
+            <p className="text-sm text-ink-2 leading-relaxed">
               {chunkError ? (
                 <>Roamwise was updated while this tab was open.<br/>Reload to get the latest version — your data is safe.</>
               ) : (
@@ -110,16 +110,16 @@ export default class ErrorBoundary extends Component<Props, State> {
           {/* Primary action */}
           <button
             onClick={this.handleReset}
-            className="w-full px-5 py-3 bg-emerald-700 text-white rounded-xl text-sm font-semibold hover:bg-emerald-800 motion-safe:active:scale-[0.98] transition-colors shadow-sm focus-ring"
+            className="w-full px-5 py-3 bg-brand-700 text-white rounded-xl text-sm font-semibold hover:bg-brand-800 motion-safe:active:scale-[0.98] transition-colors shadow-sm focus-ring"
           >
             {chunkError ? "Reload App" : "Try Again"}
           </button>
 
           {/* Divider */}
           <div className="flex items-center gap-3">
-            <div className="flex-1 h-px bg-gray-200" />
-            <span className="text-[10px] font-medium text-gray-400 uppercase tracking-wider">Report this issue</span>
-            <div className="flex-1 h-px bg-gray-200" />
+            <div className="flex-1 h-px bg-line" />
+            <span className="text-[10px] font-medium text-ink-3 uppercase tracking-wider">Report this issue</span>
+            <div className="flex-1 h-px bg-line" />
           </div>
 
           {/* Report actions */}
@@ -128,32 +128,32 @@ export default class ErrorBoundary extends Component<Props, State> {
               onClick={this.handleCopy}
               className={`flex-1 px-3 py-2.5 rounded-xl text-xs font-semibold transition-colors focus-ring ${
                 this.state.copied
-                  ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                  : "bg-gray-50 text-gray-600 border border-gray-200 hover:bg-gray-100"
+                  ? "bg-brand-50 text-brand-700 border border-brand-200"
+                  : "bg-surface-2 text-ink-2 border border-line hover:bg-surface-track"
               }`}
             >
               {this.state.copied ? "✓ Copied!" : "📋 Copy Details"}
             </button>
             <button
               onClick={this.handleReport}
-              className="flex-1 px-3 py-2.5 bg-gray-50 text-gray-600 border border-gray-200 rounded-xl text-xs font-semibold hover:bg-gray-100 transition-colors focus-ring"
+              className="flex-1 px-3 py-2.5 bg-surface-2 text-ink-2 border border-line rounded-xl text-xs font-semibold hover:bg-surface-track transition-colors focus-ring"
             >
               GitHub Issue
             </button>
             <button
               onClick={this.handleEmail}
-              className="flex-1 px-3 py-2.5 bg-gray-50 text-gray-600 border border-gray-200 rounded-xl text-xs font-semibold hover:bg-gray-100 transition-colors focus-ring"
+              className="flex-1 px-3 py-2.5 bg-surface-2 text-ink-2 border border-line rounded-xl text-xs font-semibold hover:bg-surface-track transition-colors focus-ring"
             >
               ✉️ Email
             </button>
           </div>
 
           {/* Subtle hint */}
-          <p className="text-[10px] text-gray-400">
+          <p className="text-[10px] text-ink-3">
             Use "Copy Details" to include technical info when reporting this issue.
           </p>
 
-          <p className="text-[10px] text-gray-300">
+          <p className="text-[10px] text-ink-4">
             v{__APP_VERSION__} · {__BUILD_TIME__}
           </p>
         </div>

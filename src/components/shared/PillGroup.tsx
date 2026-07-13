@@ -2,7 +2,7 @@ type PillOption = { key: string; label: string };
 
 const ACCENT = {
   container: "bg-surface-track",
-  active: "bg-white text-emerald-800 shadow-sm",
+  active: "bg-brand-700 text-white shadow-sm",
   idle: "text-ink-2 hover:text-ink-1",
   focus: "focus-ring-emerald",
 } as const;

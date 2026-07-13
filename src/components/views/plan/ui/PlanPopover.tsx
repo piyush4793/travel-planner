@@ -102,18 +102,18 @@ export default function PlanPopover({
   }, [open]);
 
   const header = (withClose: boolean) => (
-    <div className="flex shrink-0 items-center gap-2.5 border-b border-emerald-100 bg-gradient-to-b from-emerald-50 to-white px-4 py-3">
+    <div className="flex shrink-0 items-center gap-2.5 border-b border-brand-100 bg-gradient-to-b from-brand-50 to-white px-4 py-3">
       {icon != null && (
         <span
           aria-hidden="true"
-          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-base shadow-sm ring-1 ring-emerald-100"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface-1 text-base shadow-sm ring-1 ring-brand-100"
         >
           {icon}
         </span>
       )}
       <div className="min-w-0 flex-1">
-        <h3 className="font-display text-[15px] font-bold leading-tight tracking-tight text-emerald-950">{title}</h3>
-        {subtitle && <p className="mt-0.5 text-[11px] leading-tight text-emerald-700/80">{subtitle}</p>}
+        <h3 className="font-display text-[15px] font-bold leading-tight tracking-tight text-brand-950">{title}</h3>
+        {subtitle && <p className="mt-0.5 text-[11px] leading-tight text-brand-700/80">{subtitle}</p>}
       </div>
       {withClose && <SheetCloseButton onClick={close} />}
     </div>
@@ -145,7 +145,7 @@ export default function PlanPopover({
             />
             <div
               ref={popRef}
-              className="relative flex max-h-[70vh] flex-col overflow-hidden rounded-t-3xl border-t border-emerald-100 bg-white shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
+              className="relative flex max-h-[70vh] flex-col overflow-hidden rounded-t-3xl border-t border-brand-100 bg-surface-1 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
             >
               <SheetGrip />
               {header(true)}
@@ -161,7 +161,7 @@ export default function PlanPopover({
         createPortal(
           <div
             ref={popRef}
-            className="fixed z-50 flex flex-col overflow-hidden rounded-xl border border-emerald-100 bg-white shadow-xl ring-1 ring-emerald-50 motion-safe:animate-[fadeInUp_0.15s_ease-out]"
+            className="fixed z-50 flex flex-col overflow-hidden rounded-xl border border-brand-100 bg-surface-1 shadow-xl ring-1 ring-brand-50 motion-safe:animate-[fadeInUp_0.15s_ease-out]"
             style={{ left: pos.left, width: pos.width, top: pos.top, bottom: pos.bottom, maxHeight: pos.maxH }}
           >
             {header(false)}

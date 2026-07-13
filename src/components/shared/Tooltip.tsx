@@ -73,14 +73,14 @@ export default function Tooltip({ text, children, triggerClassName, variant = "i
             zIndex: 99999,
             pointerEvents: "none",
           }}
-          className="bg-gray-900 text-white text-[11px] leading-snug rounded-xl px-3 py-2 shadow-2xl w-44 text-center"
+          className="bg-ink-1 text-surface-1 text-[11px] leading-snug rounded-xl px-3 py-2 shadow-2xl w-44 text-center"
         >
           {text}
           <span
             className={`absolute left-1/2 -translate-x-1/2 border-[5px] border-transparent ${
               below
-                ? "bottom-full border-b-gray-900"
-                : "top-full border-t-gray-900"
+                ? "bottom-full border-b-ink-1"
+                : "top-full border-t-ink-1"
             }`}
           />
         </div>,

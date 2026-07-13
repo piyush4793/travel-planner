@@ -73,7 +73,7 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
     <div
       className={`relative flex w-full flex-wrap items-start gap-3.5 rounded-xl border px-3.5 py-3 text-left transition-colors ${
         d.included
-          ? "border-emerald-200 bg-emerald-50/70 hover:border-emerald-300"
+          ? "border-brand-200 bg-brand-50/70 hover:border-brand-300"
           : "border-line bg-white/70 hover:border-line-strong"
       }`}
     >
@@ -89,7 +89,7 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
       <span
         aria-hidden="true"
         className={`pointer-events-none mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 text-[11px] font-bold transition-colors ${
-          d.included ? "border-emerald-600 bg-emerald-600 text-white" : "border-line-strong text-line-strong"
+          d.included ? "border-brand-600 bg-brand-600 text-white" : "border-line-strong text-line-strong"
         }`}
       >
         {d.included ? "✓" : "+"}
@@ -100,7 +100,7 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
           <span className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-0.5">
             <span className="max-w-full truncate text-sm font-semibold text-ink-1">{d.name}</span>
             {d.signal && (
-              <span className="shrink-0 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">{d.signal}</span>
+              <span className="shrink-0 rounded-full bg-brand-50 px-2 py-0.5 text-[10px] font-semibold text-brand-700">{d.signal}</span>
             )}
           </span>
           <button
@@ -108,7 +108,7 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
             onClick={onDetails}
             aria-label={`${d.name} details`}
             aria-haspopup="dialog"
-            className="focus-ring-emerald pointer-events-auto relative z-10 -mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-line bg-white text-emerald-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50"
+            className="focus-ring-emerald pointer-events-auto relative z-10 -mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-line bg-surface-1 text-brand-700 transition-colors hover:border-brand-300 hover:bg-brand-50"
           >
             <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="9" />
@@ -123,7 +123,7 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
         {(d.focusMatches.length > 0 || mutedChips.length > 0) && (
           <span className="mt-0.5 flex flex-wrap gap-1">
             {d.focusMatches.map((e) => (
-              <span key={e} className="rounded-full border border-emerald-600 bg-emerald-600 px-2 py-0.5 text-[10px] font-semibold text-white">{e}</span>
+              <span key={e} className="rounded-full border border-brand-600 bg-brand-600 px-2 py-0.5 text-[10px] font-semibold text-white">{e}</span>
             ))}
             {mutedChips.map((e) => (
               <span key={e} className="rounded-full border border-line bg-surface-1 px-2 py-0.5 text-[10px] font-semibold text-ink-3">{e}</span>
@@ -139,7 +139,7 @@ const DecisionCard = memo(function DecisionCard({ d, onToggle, onDetails }: { d:
         <span className="pointer-events-none order-last mt-1.5 flex w-full flex-wrap items-center gap-x-3 gap-y-0.5 border-t border-surface-3 pt-1.5 sm:mt-0 sm:w-[104px] sm:flex-col sm:items-end sm:gap-0.5 sm:self-stretch sm:border-l sm:border-t-0 sm:pl-3 sm:pt-0 sm:text-right">
           {d.recDays > 0 && <span className="font-display text-[13px] font-bold text-ink-1 sm:text-[15px]">≈{d.recDays}d</span>}
           {d.bestWindow && <span className="text-[10.5px] leading-tight text-ink-3">☀ {d.bestWindow}</span>}
-          {d.avoidWindow && <span className="text-[10.5px] leading-tight text-amber-700">⚠ {d.avoidWindow}</span>}
+          {d.avoidWindow && <span className="text-[10.5px] leading-tight text-accent-700">⚠ {d.avoidWindow}</span>}
         </span>
       )}
     </div>
@@ -154,7 +154,7 @@ function SortMenu({ sort, onChange }: { sort: CitySort; onChange: (s: CitySort) 
       title="Sort places"
       icon="↕"
       width={200}
-      triggerClassName="flex min-h-[36px] items-center gap-1.5 rounded-full border border-line-strong bg-white px-3.5 py-2 text-[13px] focus-ring-emerald"
+      triggerClassName="flex min-h-[36px] items-center gap-1.5 rounded-full border border-line-strong bg-surface-1 px-3.5 py-2 text-[13px] focus-ring-emerald"
       trigger={
         <>
           <span className="text-ink-3">Sort</span>
@@ -172,10 +172,10 @@ function SortMenu({ sort, onChange }: { sort: CitySort; onChange: (s: CitySort) 
                 aria-checked={s.key === sort}
                 onClick={() => { onChange(s.key); close(); }}
                 className={`flex w-full items-center gap-2 px-4 py-2.5 text-left text-[13px] transition-colors focus-ring-emerald ${
-                  s.key === sort ? "bg-emerald-50 font-semibold text-emerald-800" : "text-ink-body hover:bg-surface-1"
+                  s.key === sort ? "bg-brand-50 font-semibold text-brand-800" : "text-ink-body hover:bg-surface-1"
                 }`}
               >
-                <span className="w-3 text-emerald-600" aria-hidden="true">{s.key === sort ? "✓" : ""}</span>
+                <span className="w-3 text-brand-600" aria-hidden="true">{s.key === sort ? "✓" : ""}</span>
                 {s.label}
               </button>
             </li>
@@ -205,7 +205,7 @@ function UnitCities({ unit, sort }: { unit: PlacesUnit; sort: CitySort }) {
             <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-ink-4">In your plan</p>
             <span
               aria-label={`${included.length} of ${decisions.length} places selected`}
-              className="shrink-0 whitespace-nowrap rounded-full border border-emerald-100 bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-800"
+              className="shrink-0 whitespace-nowrap rounded-full border border-brand-100 bg-brand-50 px-2 py-0.5 text-[10px] font-bold text-brand-800"
             >
               {included.length} of {decisions.length}
             </span>
@@ -238,7 +238,7 @@ function UnitCities({ unit, sort }: { unit: PlacesUnit; sort: CitySort }) {
         ) : (
           <button
             onClick={() => setShowAll(true)}
-            className="focus-ring-emerald min-h-[44px] w-full rounded-xl border border-dashed border-line-strong bg-transparent px-3 py-2.5 text-[13px] font-semibold text-emerald-800 transition-colors hover:border-emerald-400 hover:bg-emerald-50/40"
+            className="focus-ring-emerald min-h-[44px] w-full rounded-xl border border-dashed border-line-strong bg-transparent px-3 py-2.5 text-[13px] font-semibold text-brand-800 transition-colors hover:border-brand-400 hover:bg-brand-50/40"
           >
             Show {rest.length} more {rest.length === 1 ? "place" : "places"} in {unit.name} ↓
           </button>
@@ -284,18 +284,18 @@ function PlanPlacesStep({ units, activeIndex }: Props) {
         <div className="min-w-0 lg:flex-1">
           <h2 className="flex items-baseline whitespace-nowrap font-display text-xl font-bold leading-tight text-ink-1 sm:text-2xl">
             <span className="shrink-0">Which places in&nbsp;</span>
-            <span className="min-w-0 truncate text-emerald-700" title={activeUnit.name}>{activeUnit.name}</span>
+            <span className="min-w-0 truncate text-brand-700" title={activeUnit.name}>{activeUnit.name}</span>
             <span className="shrink-0">?</span>
           </h2>
           <p className="mt-1.5 text-[13px] leading-snug text-ink-3">
             {isEdited ? (
               <>
-                <span className="font-semibold text-emerald-700">Edited</span>
+                <span className="font-semibold text-brand-700">Edited</span>
                 {" · "}
                 <button
                   onClick={activeUnit.onClearCities}
                   title="Reset to the auto-suggested places"
-                  className="focus-ring-emerald inline-flex items-center gap-1 rounded font-semibold text-emerald-700 underline decoration-emerald-300 underline-offset-2 transition-colors hover:text-emerald-800 hover:decoration-emerald-500"
+                  className="focus-ring-emerald inline-flex items-center gap-1 rounded font-semibold text-brand-700 underline decoration-brand-300 underline-offset-2 transition-colors hover:text-brand-800 hover:decoration-brand-500"
                 >
                   <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M3 12a9 9 0 1 0 3-6.7" />

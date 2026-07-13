@@ -46,24 +46,24 @@ function MonthHeatmapInner({ bestMonths, worstMonths }: Props) {
         return (
           <div key={row.full} className="flex items-center gap-2">
             <span className={`w-8 shrink-0 text-[10px] font-bold tabular-nums ${
-              isCurrent ? "text-emerald-700" : "text-gray-500"
+              isCurrent ? "text-brand-700" : "text-ink-2"
             }`}>
               {row.short}
             </span>
-            <div className="flex-1 h-4 relative rounded-full overflow-hidden bg-gray-100">
+            <div className="flex-1 h-4 relative rounded-full overflow-hidden bg-surface-track">
               <div
                 className={`absolute inset-0 rounded-full transition-colors ${
                   row.best
-                    ? "bg-gradient-to-r from-emerald-400 to-emerald-300"
+                    ? "bg-gradient-to-r from-brand-400 to-brand-300"
                     : "bg-gradient-to-r from-red-400 to-red-300"
                 }`}
               />
               {isCurrent && (
-                <div className="absolute right-1.5 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-white shadow-sm" />
+                <div className="absolute right-1.5 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-surface-1 shadow-sm" />
               )}
             </div>
             <span className={`shrink-0 text-[9px] font-semibold ${
-              row.best ? "text-emerald-600" : "text-red-500"
+              row.best ? "text-brand-600" : "text-red-500"
             }`}>
               {row.best ? "Best" : "Avoid"}
             </span>

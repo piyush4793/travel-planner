@@ -52,7 +52,7 @@ function RailHeader({ title, side, onCollapse }: { title: string; side: "left" |
         type="button"
         onClick={onCollapse}
         aria-label={`Collapse ${title} panel`}
-        className="focus-ring-emerald ml-auto flex h-7 w-7 items-center justify-center rounded-full border border-line bg-white text-sm font-bold text-ink-2 transition-colors hover:bg-surface-2"
+        className="focus-ring-emerald ml-auto flex h-7 w-7 items-center justify-center rounded-full border border-line bg-surface-1 text-sm font-bold text-ink-2 transition-colors hover:bg-surface-2"
       >
         <span aria-hidden="true">{chevron}</span>
       </button>
@@ -68,7 +68,7 @@ function ReopenTab({ label, side, onOpen }: { label: string; side: "left" | "rig
       onClick={onOpen}
       aria-label={`Show ${label} panel`}
       aria-expanded={false}
-      className="focus-ring-emerald flex w-9 shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border border-line bg-white py-3 text-ink-2 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-colors hover:bg-surface-2"
+      className="focus-ring-emerald flex w-9 shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border border-line bg-surface-1 py-3 text-ink-2 shadow-[0_1px_3px_rgba(20,40,30,0.05)] transition-colors hover:bg-surface-2"
     >
       <span aria-hidden="true" className="text-sm font-bold">{chevron}</span>
       <span className="text-[10px] font-bold uppercase tracking-[0.16em] [writing-mode:vertical-rl]">{label}</span>
@@ -145,7 +145,7 @@ function PlanWorkspaceShellInner({ center, shape, context, nav, actions }: Props
             the two labelled action cells. No pb-safe here: the app tab bar directly
             below already reserves the home-indicator inset, so adding it here too
             would double the bottom gap on notched devices. */}
-        <div className="flex h-12 items-stretch divide-x divide-line rounded-full border border-line bg-white shadow-sm">
+        <div className="flex h-12 items-stretch divide-x divide-line rounded-full border border-line bg-surface-1 shadow-sm">
           {nav && (
             <button
               type="button"
@@ -198,11 +198,11 @@ function PlanWorkspaceShellInner({ center, shape, context, nav, actions }: Props
         onClose={closeSheet}
         label={sheetTitle}
         backdropClassName="bg-black/50 backdrop-blur-sm"
-        className="relative flex max-h-[85vh] w-full flex-col self-end overflow-hidden rounded-t-3xl border-t border-emerald-100 bg-white shadow-2xl focus:outline-none safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
+        className="relative flex max-h-[85vh] w-full flex-col self-end overflow-hidden rounded-t-3xl border-t border-brand-100 bg-surface-1 shadow-2xl focus:outline-none safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]"
       >
         <SheetGrip />
-        <div className="flex shrink-0 items-center gap-2.5 border-b border-emerald-100 bg-gradient-to-b from-emerald-50 to-white px-4 py-3">
-          <h3 className="min-w-0 flex-1 font-display text-[15px] font-bold leading-tight text-emerald-950">{sheetTitle}</h3>
+        <div className="flex shrink-0 items-center gap-2.5 border-b border-brand-100 bg-gradient-to-b from-brand-50 to-white px-4 py-3">
+          <h3 className="min-w-0 flex-1 font-display text-[15px] font-bold leading-tight text-brand-950">{sheetTitle}</h3>
           <SheetCloseButton onClick={closeSheet} label="Close panel" />
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">{sheetNode}</div>

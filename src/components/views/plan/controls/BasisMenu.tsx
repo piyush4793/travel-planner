@@ -13,7 +13,7 @@ type Variant = "dark" | "light";
 const TRIGGER: Record<Variant, string> = {
   dark: "flex shrink-0 items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[13px] text-white transition-colors hover:bg-white/15 focus-ring-emerald",
   light:
-    "flex shrink-0 items-center gap-1.5 rounded-full border border-line-strong bg-white px-3 py-1.5 text-[13px] text-ink-1 transition-colors hover:border-emerald-500 hover:bg-emerald-50 focus-ring-emerald",
+    "flex shrink-0 items-center gap-1.5 rounded-full border border-line-strong bg-surface-1 px-3 py-1.5 text-[13px] text-ink-1 transition-colors hover:border-brand-500 hover:bg-brand-50 focus-ring-emerald",
 };
 
 type Props = {
@@ -30,7 +30,7 @@ type Props = {
 const ICON_TRIGGER: Record<Variant, string> = {
   dark: "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/10 text-[15px] text-white transition-colors hover:bg-white/15 focus-ring-emerald",
   light:
-    "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-line-strong bg-white text-[15px] text-ink-1 transition-colors hover:border-emerald-500 hover:bg-emerald-50 focus-ring-emerald",
+    "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-line-strong bg-surface-1 text-[15px] text-ink-1 transition-colors hover:border-brand-500 hover:bg-brand-50 focus-ring-emerald",
 };
 
 /**
@@ -74,10 +74,10 @@ export default function BasisMenu({ basis, setBasis, variant = "dark", labelled 
                   aria-checked={b === basis}
                   onClick={() => { setBasis(b); close(); }}
                   className={`flex w-full items-center gap-2.5 px-4 py-2.5 text-left text-[13px] transition-colors focus-ring-emerald ${
-                    b === basis ? "bg-emerald-50 font-semibold text-emerald-800" : "text-ink-body hover:bg-surface-1"
+                    b === basis ? "bg-brand-50 font-semibold text-brand-800" : "text-ink-body hover:bg-surface-1"
                   }`}
                 >
-                  <span className="w-3 text-emerald-600" aria-hidden="true">{b === basis ? "✓" : ""}</span>
+                  <span className="w-3 text-brand-600" aria-hidden="true">{b === basis ? "✓" : ""}</span>
                   <span aria-hidden="true">{m.icon}</span>
                   {m.label}
                   <span className="ml-auto text-[11px] font-normal text-ink-4">{m.long}</span>

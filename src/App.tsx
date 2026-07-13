@@ -222,23 +222,23 @@ export default function App() {
     settingsOpen || chatOpen || aiPlanResult !== null;
 
   return (
-    <div className="flex flex-col h-viewport overflow-hidden bg-slate-50">
+    <div className="flex flex-col h-viewport overflow-hidden bg-surface-3">
       {/* Header — luxury ivory/emerald top bar */}
-      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-5 pt-safe pb-2 md:pb-2.5 md:pt-2.5 bg-gradient-to-b from-surface-1/95 to-surface-3/95 backdrop-blur-md border-b border-line-strong shadow-[0_2px_10px_rgba(20,40,30,0.05)] text-ink-1 shrink-0">
+      <header className="flex items-center gap-2 md:gap-3 px-3 md:px-5 pt-safe pb-2 md:pb-2.5 md:pt-2.5 bg-surface-track backdrop-blur-md border-b border-line-strong shadow-[0_2px_10px_rgba(20,40,30,0.05)] text-ink-1 shrink-0">
         <button onClick={() => setView("plan")} className="flex items-center gap-2 shrink-0 rounded-lg hover:opacity-80 transition-opacity focus-ring" aria-label="Home">
           {/* Brand icon — all screens */}
           <img src="icon-192.svg" alt="Roamwise" className="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-lg" />
-          <span className="hidden md:inline text-lg font-black tracking-tight text-emerald-900">Roamwise</span>
+          <span className="hidden md:inline text-lg font-black tracking-tight text-brand-900">Roamwise</span>
         </button>
 
         {/* Desktop nav pills */}
-        <div className="hidden md:flex items-center gap-0.5 bg-surface-track rounded-full p-0.5 mx-auto" role="navigation" aria-label="Main navigation">
+        <div className="hidden md:flex items-center gap-0.5 bg-surface-2 ring-1 ring-line-strong rounded-full p-0.5 mx-auto" role="navigation" aria-label="Main navigation">
           {NAV_VIEWS.map((v) => (
             <button key={v} onClick={() => setView(v)}
               data-tour={`nav-${v}`}
               aria-current={view === v ? "page" : undefined}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors focus-ring ${
-                view === v ? "bg-emerald-700 text-white shadow-sm" : "text-ink-2 hover:text-emerald-800"
+                view === v ? "bg-brand-700 text-white shadow-sm" : "text-ink-2 hover:text-brand-800"
               }`}>
               <span aria-hidden="true">{VIEW_META[v].icon}</span> {VIEW_META[v].label}
             </button>
@@ -261,7 +261,7 @@ export default function App() {
           />
           <button onClick={() => setSettingsOpen(true)}
             data-tour="settings"
-            className="flex items-center justify-center w-8 h-8 bg-surface-track hover:bg-line rounded-full text-sm transition-colors border border-line focus-ring"
+            className="flex items-center justify-center w-8 h-8 bg-surface-2 hover:bg-surface-3 rounded-full text-sm transition-colors border border-line focus-ring"
             aria-label="Settings">
             ⚙️
           </button>
@@ -281,7 +281,7 @@ export default function App() {
           />
           <button onClick={() => setSettingsOpen(true)}
             data-tour="settings"
-            className="flex items-center justify-center w-9 h-9 bg-surface-track hover:bg-line rounded-full text-base transition-colors border border-line focus-ring"
+            className="flex items-center justify-center w-9 h-9 bg-surface-2 hover:bg-surface-3 rounded-full text-base transition-colors border border-line focus-ring"
             aria-label="Settings">
             ⚙️
           </button>
@@ -291,7 +291,7 @@ export default function App() {
 
       {/* Fresh-device restore offer — data found in the backup location */}
       {restoreAvailable && (
-        <div className="bg-emerald-600/90 text-white px-4 py-2 flex items-center gap-3 text-xs shrink-0">
+        <div className="bg-brand-600/90 text-white px-4 py-2 flex items-center gap-3 text-xs shrink-0">
           <span>📦 We found a saved backup for this app. Restore your travel data?</span>
           <button
             onClick={handleRestoreFromTarget}
@@ -310,7 +310,7 @@ export default function App() {
 
       {/* Backup reminder banner */}
       {!backupBannerDismissed && isBackupOverdue() && (
-        <div className="bg-amber-500/90 text-white px-4 py-2 flex items-center gap-3 text-xs shrink-0">
+        <div className="bg-accent-500/90 text-white px-4 py-2 flex items-center gap-3 text-xs shrink-0">
           <span>💾 You haven't backed up recently. Keep your travel data safe!</span>
           <button onClick={() => setSettingsOpen(true)} className="px-3 py-1 bg-white/20 hover:bg-white/30 rounded-lg font-semibold transition-colors">Backup Now</button>
           <button onClick={() => setBackupBannerDismissed(true)} className="ml-auto text-white/70 hover:text-white" aria-label="Dismiss">✕</button>
@@ -339,11 +339,11 @@ export default function App() {
           >
             <div className="mt-1 flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 shadow-md ring-1 ring-black/5">
               <span
-                className={`inline-block h-4 w-4 rounded-full border-2 border-emerald-600 border-t-transparent ${refreshing ? "motion-safe:animate-spin" : ""}`}
+                className={`inline-block h-4 w-4 rounded-full border-2 border-brand-600 border-t-transparent ${refreshing ? "motion-safe:animate-spin" : ""}`}
                 style={refreshing ? undefined : { transform: `rotate(${pullDistance * 3}deg)` }}
                 aria-hidden="true"
               />
-              <span className="text-[11px] font-semibold text-emerald-800">
+              <span className="text-[11px] font-semibold text-brand-800">
                 {refreshing ? "Refreshing…" : pullDistance >= pullThreshold ? "Release to refresh" : "Pull to refresh"}
               </span>
             </div>
@@ -353,7 +353,7 @@ export default function App() {
         <div className={`absolute inset-0 transition-opacity duration-300 ${
           cinematicActive ? "z-10 opacity-100" : "-z-10 opacity-0 pointer-events-none"
         }`}>
-          <Suspense fallback={<div className="flex items-center justify-center h-full"><span className="text-sm text-gray-400">Loading map…</span></div>}>
+          <Suspense fallback={<div className="flex items-center justify-center h-full"><span className="text-sm text-ink-3">Loading map…</span></div>}>
           <MapView
             countries={filtered}
             onMapReady={(m) => { mainMapRef.current = m; }}
@@ -361,7 +361,7 @@ export default function App() {
           </Suspense>
         </div>
 
-        <Suspense fallback={<div className="flex items-center justify-center h-full"><span className="text-sm text-gray-400">Loading…</span></div>}>
+        <Suspense fallback={<div className="flex items-center justify-center h-full"><span className="text-sm text-ink-3">Loading…</span></div>}>
         {view === "plan" ? (
           <PlanView
             countries={store.myListCountries}
@@ -397,7 +397,7 @@ export default function App() {
 
       {/* Mobile bottom tab bar — primary navigation on small screens */}
       <nav
-        className="md:hidden shrink-0 flex items-stretch border-t border-line-strong bg-surface-2 pb-safe shadow-[0_-1px_6px_rgba(0,0,0,0.05)]"
+        className="md:hidden shrink-0 flex items-stretch border-t border-line-strong bg-surface-track pb-safe shadow-[0_-1px_6px_rgba(0,0,0,0.05)]"
         aria-label="Main navigation"
       >
         {NAV_VIEWS.map((v) => {
@@ -409,12 +409,12 @@ export default function App() {
               data-tour={isMobile ? `nav-${v}` : undefined}
               aria-current={active ? "page" : undefined}
               className={`flex flex-1 min-h-[52px] flex-col items-center justify-center gap-1 py-1.5 text-[10px] font-semibold leading-none transition-colors focus-ring ${
-                active ? "text-emerald-800" : "text-ink-3 hover:text-ink-2"
+                active ? "text-brand-800" : "text-ink-3 hover:text-ink-2"
               }`}
             >
               <span
                 aria-hidden="true"
-                className={`flex h-6 w-11 items-center justify-center rounded-full text-lg leading-none transition-colors ${active ? "bg-emerald-100" : ""}`}
+                className={`flex h-6 w-11 items-center justify-center rounded-full text-lg leading-none transition-colors ${active ? "bg-brand-100" : ""}`}
               >
                 {VIEW_META[v].icon}
               </span>

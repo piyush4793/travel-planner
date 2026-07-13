@@ -86,10 +86,10 @@ export default function FilterChip({ label, active, children }: Props) {
         aria-haspopup="true"
         className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold whitespace-nowrap transition-colors border focus-ring ${
           active
-            ? "bg-emerald-700 text-white border-emerald-700 shadow-sm"
+            ? "bg-brand-700 text-white border-brand-700 shadow-sm"
             : open
-            ? "bg-gray-100 text-gray-700 border-gray-300"
-            : "bg-white text-gray-600 border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+            ? "bg-surface-track text-ink-body border-line-strong"
+            : "bg-surface-1 text-ink-2 border-line hover:border-line-strong hover:bg-surface-2"
         }`}
       >
         {label}
@@ -106,7 +106,7 @@ export default function FilterChip({ label, active, children }: Props) {
         <div
           ref={panelRef}
           style={{ position: "fixed", top: pos.top, left: pos.left, zIndex: 99999 }}
-          className="bg-white border border-gray-200 rounded-2xl shadow-xl"
+          className="bg-surface-1 border border-line rounded-2xl shadow-xl"
         >
           {children(() => setOpen(false))}
         </div>,

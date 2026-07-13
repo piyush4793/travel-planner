@@ -27,8 +27,8 @@ export default function TripSaveBar({ isMulti, favorite, onToggleFavorite }: Pro
       title={favorite ? "Favourited — saved in My Trips \u2605" : "Favourite this trip \u2014 save it to My Trips \u2605"}
       className={`focus-ring flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-base leading-none transition-colors ${
         favorite
-          ? "border-amber-300 bg-amber-50 text-amber-500 hover:bg-amber-100"
-          : "border-line bg-white text-ink-3 hover:border-amber-200 hover:text-amber-500"
+          ? "border-accent-300 bg-accent-50 text-accent-500 hover:bg-accent-100"
+          : "border-line bg-surface-1 text-ink-3 hover:border-accent-200 hover:text-accent-500"
       }`}
     >
       <span aria-hidden="true">{favorite ? "\u2605" : "\u2606"}</span>

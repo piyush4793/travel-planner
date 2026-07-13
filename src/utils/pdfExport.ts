@@ -4,6 +4,7 @@ import { buildPdfModel, type PdfModel, type PdfRouteStop, type PdfSection } from
 import { getCountryFlag } from "./countryFlags";
 import { parseNoteItems } from "../core/utils/practicalNotes";
 import { appUrl } from "../core/utils/appUrl";
+import { BRAND, ACCENT } from "../core/theme/palette";
 import { getBrandLogo } from "./brandLogo";
 
 /**
@@ -199,24 +200,24 @@ function buildPrintHtml(model: PdfModel, interactive: boolean): string {
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #1c2b26; background: #faf8f1; padding: 44px; max-width: 800px; margin: 0 auto; line-height: 1.5; position: relative; }
-    .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #059669; margin-bottom: 8px; }
-    h1 { font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: 32px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 6px; color: #064e3b; }
+    .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: ${BRAND[600]}; margin-bottom: 8px; }
+    h1 { font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: 32px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 6px; color: ${BRAND[900]}; }
     .meta { font-size: 13px; color: #5b6b64; margin-bottom: 6px; }
-    .summary { display: flex; flex-wrap: wrap; gap: 22px; padding: 13px 18px; background: #ecfdf5; border: 1px solid #d1fae5; border-radius: 10px; margin: 18px 0; font-size: 13px; font-weight: 600; }
-    .summary span { color: #065f46; }
+    .summary { display: flex; flex-wrap: wrap; gap: 22px; padding: 13px 18px; background: ${BRAND[50]}; border: 1px solid ${BRAND[100]}; border-radius: 10px; margin: 18px 0; font-size: 13px; font-weight: 600; }
+    .summary span { color: ${BRAND[800]}; }
     .route { font-size: 12px; color: #5b6b64; margin-bottom: 22px; }
-    .route strong { color: #065f46; }
-    .section-header { break-inside: avoid; break-after: avoid; margin: 26px 0 14px; padding: 12px 16px; background: #ecfdf5; border-left: 4px solid #059669; border-radius: 8px; }
-    .section-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #059669; }
-    .section-name { font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: 19px; font-weight: 700; color: #064e3b; margin: 2px 0; }
+    .route strong { color: ${BRAND[800]}; }
+    .section-header { break-inside: avoid; break-after: avoid; margin: 26px 0 14px; padding: 12px 16px; background: ${BRAND[50]}; border-left: 4px solid ${BRAND[600]}; border-radius: 8px; }
+    .section-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: ${BRAND[600]}; }
+    .section-name { font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: 19px; font-weight: 700; color: ${BRAND[900]}; margin: 2px 0; }
     .section-meta { font-size: 12px; color: #5b6b64; }
     .day { margin-bottom: 16px; break-inside: avoid; }
     .day-header { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f4f2ea; border: 1px solid #e6e2d5; border-radius: 6px 6px 0 0; }
     .day-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #3f4a44; }
-    .day-theme { font-size: 10px; font-weight: 600; color: #047857; background: #d1fae5; padding: 2px 8px; border-radius: 99px; }
+    .day-theme { font-size: 10px; font-weight: 600; color: ${BRAND[700]}; background: ${BRAND[100]}; padding: 2px 8px; border-radius: 99px; }
     .activities { list-style: none; padding: 10px 12px; border: 1px solid #e6e2d5; border-top: none; border-radius: 0 0 6px 6px; background: #fff; }
     .activities li { font-size: 13px; padding: 4px 0; padding-left: 16px; position: relative; color: #33403a; }
-    .activities li::before { content: "›"; position: absolute; left: 0; color: #10b981; font-weight: bold; }
+    .activities li::before { content: "›"; position: absolute; left: 0; color: ${BRAND[500]}; font-weight: bold; }
     .hotels { margin-top: 4px; padding: 6px 12px; }
     .hotel { font-size: 11px; color: #5b6b64; margin-right: 12px; }
     .note { margin-top: 16px; padding: 12px 16px; background: #f4f2ea; border-radius: 8px; font-size: 12px; color: #5b6b64; border: 1px solid #e6e2d5; }
@@ -224,18 +225,18 @@ function buildPrintHtml(model: PdfModel, interactive: boolean): string {
     .note-value { font-size: 12px; color: #33403a; }
     .note-list { list-style: none; padding: 0; }
     .note-list li { font-size: 12px; padding: 3px 0 3px 14px; position: relative; color: #33403a; }
-    .note-list li::before { content: "•"; position: absolute; left: 0; color: #10b981; font-weight: bold; }
+    .note-list li::before { content: "•"; position: absolute; left: 0; color: ${BRAND[500]}; font-weight: bold; }
     .note-label { font-weight: 700; color: #5b6b64; text-transform: uppercase; font-size: 10px; letter-spacing: 0.4px; }
-    .diet { margin-top: 16px; padding: 12px 16px; background: #ecfdf5; border-radius: 8px; font-size: 12px; color: #33403a; border: 1px solid #bbf7d0; }
+    .diet { margin-top: 16px; padding: 12px 16px; background: ${BRAND[50]}; border-radius: 8px; font-size: 12px; color: #33403a; border: 1px solid #bbf7d0; }
     .diet-line { font-size: 12px; color: #33403a; margin: 4px 0; }
-    .diet-label { font-weight: 700; color: #047857; text-transform: uppercase; font-size: 10px; letter-spacing: 0.4px; }
+    .diet-label { font-weight: 700; color: ${BRAND[700]}; text-transform: uppercase; font-size: 10px; letter-spacing: 0.4px; }
     .brand { position: absolute; top: 44px; right: 44px; width: 44px; height: 44px; border-radius: 10px; }
     .footer { margin-top: 24px; padding-top: 12px; border-top: 1px solid #e6e2d5; font-size: 10px; color: #9aa79f; text-align: center; }
-    .footer a { color: #059669; font-weight: 700; text-decoration: none; }
+    .footer a { color: ${BRAND[600]}; font-weight: 700; text-decoration: none; }
     .pdf-actions { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 9999; }
-    .pdf-actions button { font: inherit; font-size: 15px; font-weight: 700; color: #fff; background: #059669; border: none; border-radius: 999px; padding: 12px 24px; box-shadow: 0 4px 14px rgba(5,150,105,0.4); cursor: pointer; }
-    .pdf-actions button:active { background: #047857; }
-    ${model.warning ? `.warning { padding: 8px 12px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; font-size: 12px; color: #92400e; margin-bottom: 16px; }` : ""}
+    .pdf-actions button { font: inherit; font-size: 15px; font-weight: 700; color: #fff; background: ${BRAND[600]}; border: none; border-radius: 999px; padding: 12px 24px; box-shadow: 0 4px 14px ${BRAND[600]}66; cursor: pointer; }
+    .pdf-actions button:active { background: ${BRAND[700]}; }
+    ${model.warning ? `.warning { padding: 8px 12px; background: ${ACCENT[50]}; border: 1px solid ${ACCENT[200]}; border-radius: 6px; font-size: 12px; color: ${ACCENT[800]}; margin-bottom: 16px; }` : ""}
     @media print {
       body { padding: 20px; background: #fff; }
       .day, .section-header { break-inside: avoid; }

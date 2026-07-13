@@ -69,7 +69,7 @@ export default function CinematicControls({
       </div>
       <button
         onClick={onClose}
-        className={`${ctrlBtnSize} flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors text-gray-400 hover:text-white focus-ring`}
+        className={`${ctrlBtnSize} flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-colors text-stone-400 hover:text-white focus-ring`}
         title="Close"
         aria-label="Close"
       >

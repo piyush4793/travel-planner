@@ -85,8 +85,8 @@ export default function ExperiencePicker({
                 aria-pressed={active}
                 className={`focus-ring-emerald rounded-full border ${pillSize} transition-[transform,box-shadow,border-color,color] ${
                   active
-                    ? "border-emerald-700 bg-emerald-700 font-semibold text-white shadow-sm"
-                    : "border-line bg-white font-medium text-ink-body hover:border-emerald-500 hover:text-emerald-800"
+                    ? "border-brand-700 bg-brand-700 font-semibold text-white shadow-sm"
+                    : "border-line bg-surface-1 font-medium text-ink-body hover:border-brand-500 hover:bg-brand-50/40 hover:text-brand-800"
                 }`}
               >
                 {exp}
@@ -105,7 +105,7 @@ export default function ExperiencePicker({
             <button
               onClick={() => setExpanded((v) => !v)}
               aria-expanded={expanded}
-              className="focus-ring-emerald min-h-[32px] rounded-full border border-dashed border-line-strong bg-transparent px-3.5 py-1.5 text-[12px] font-semibold text-ink-2 transition-colors hover:border-emerald-500 hover:text-emerald-800"
+              className="focus-ring-emerald min-h-[32px] rounded-full border border-dashed border-line-strong bg-transparent px-3.5 py-1.5 text-[12px] font-semibold text-ink-2 transition-colors hover:border-brand-500 hover:text-brand-800"
             >
               {toggleLabel}
             </button>
@@ -113,7 +113,7 @@ export default function ExperiencePicker({
           {showClear && (
             <button
               onClick={onClearExperiences}
-              className="focus-ring-emerald inline-flex min-h-[30px] items-center gap-1 rounded-full border border-emerald-300 bg-white px-3 py-1 text-[11px] font-semibold text-emerald-800 transition-colors hover:border-emerald-400 hover:bg-emerald-50"
+              className="focus-ring-emerald inline-flex min-h-[30px] items-center gap-1 rounded-full border border-brand-300 bg-transparent px-3 py-1 text-[11px] font-semibold text-brand-800 transition-colors hover:border-brand-400 hover:bg-brand-50"
             >
               <span aria-hidden="true" className="text-[10px]">✕</span> Clear ({selectedExperiences.length})
             </button>

@@ -28,14 +28,14 @@ function PlanSavedToastInner({ open, message, onClose }: Props) {
       role="status"
       aria-live="polite"
     >
-      <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-emerald-200 bg-white/95 py-2 pl-4 pr-2 shadow-lg backdrop-blur motion-safe:animate-[slideUp_0.2s_ease-out]">
-        <span aria-hidden="true" className="text-sm leading-none text-emerald-600">✓</span>
-        <p className="text-xs font-semibold text-emerald-900">{message}</p>
+      <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-brand-200 bg-white/95 py-2 pl-4 pr-2 shadow-lg backdrop-blur motion-safe:animate-[slideUp_0.2s_ease-out]">
+        <span aria-hidden="true" className="text-sm leading-none text-brand-600">✓</span>
+        <p className="text-xs font-semibold text-brand-900">{message}</p>
         <button
           type="button"
           onClick={onClose}
           aria-label="Dismiss"
-          className="focus-ring-emerald flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-emerald-700 transition-colors hover:bg-emerald-50"
+          className="focus-ring-emerald flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-brand-700 transition-colors hover:bg-brand-50"
         >
           <span aria-hidden="true" className="text-xs leading-none">✕</span>
         </button>

@@ -16,7 +16,7 @@ type SectionCardProps = {
  */
 export function SectionCard({ title, icon, desc, children, className, accent }: SectionCardProps) {
   return (
-    <section className={"rounded-2xl bg-white ring-1 ring-line shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_24px_-12px_rgba(15,23,42,0.12)] p-4 md:p-5 " + (className ?? "")}>
+    <section className={"rounded-2xl bg-surface-1 ring-1 ring-line shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_24px_-12px_rgba(15,23,42,0.12)] p-4 md:p-5 " + (className ?? "")}>
       {title && (
         <header className={"mb-4 flex gap-3 " + (desc ? "items-start" : "items-center")}>
           {icon && (
@@ -51,13 +51,13 @@ export function StatusBanner({ status }: { status: { ok: boolean; msg: string } 
       className={
         "flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-xs font-semibold ring-1 " +
         (status.ok
-          ? "bg-emerald-50 text-emerald-700 ring-emerald-200"
+          ? "bg-brand-50 text-brand-700 ring-brand-200"
           : "bg-red-50 text-red-600 ring-red-200")
       }
     >
       <span
         aria-hidden="true"
-        className={"flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] text-white " + (status.ok ? "bg-emerald-500" : "bg-red-500")}
+        className={"flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] text-white " + (status.ok ? "bg-brand-500" : "bg-red-500")}
       >
         {status.ok ? "\u2713" : "!"}
       </span>

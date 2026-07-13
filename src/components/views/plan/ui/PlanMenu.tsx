@@ -136,18 +136,18 @@ export default function PlanMenu({ trigger, ariaLabel, width = 260, triggerClass
             onClick={close}
             className="absolute inset-0 bg-black/40 motion-safe:animate-[fadeInUp_0.15s_ease-out]"
           />
-          <div className="relative flex max-h-[70vh] flex-col overflow-hidden rounded-t-3xl border-t border-emerald-100 bg-white shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]">
+          <div className="relative flex max-h-[70vh] flex-col overflow-hidden rounded-t-3xl border-t border-brand-100 bg-surface-1 shadow-2xl safe-bottom motion-safe:animate-[slideUp_0.2s_ease-out]">
             <SheetGrip />
-            <div className="flex shrink-0 items-center gap-2.5 border-b border-emerald-100 bg-gradient-to-b from-emerald-50 to-white px-4 py-3">
+            <div className="flex shrink-0 items-center gap-2.5 border-b border-brand-100 bg-gradient-to-b from-brand-50 to-white px-4 py-3">
               {icon != null && (
                 <span
                   aria-hidden="true"
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-base shadow-sm ring-1 ring-emerald-100"
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface-1 text-base shadow-sm ring-1 ring-brand-100"
                 >
                   {icon}
                 </span>
               )}
-              <h3 className="min-w-0 flex-1 font-display text-[15px] font-bold leading-tight tracking-tight text-emerald-950">
+              <h3 className="min-w-0 flex-1 font-display text-[15px] font-bold leading-tight tracking-tight text-brand-950">
                 {title ?? ariaLabel}
               </h3>
               <SheetCloseButton onClick={close} />
@@ -161,7 +161,7 @@ export default function PlanMenu({ trigger, ariaLabel, width = 260, triggerClass
       {open && !isMobile && createPortal(
         <div
           style={{ position: "fixed", top: pos.top, left: pos.left, width: pos.width, zIndex: 99999 }}
-          className="overflow-hidden rounded-2xl border border-line bg-white shadow-xl motion-safe:animate-[fadeInUp_0.12s_ease-out]"
+          className="overflow-hidden rounded-2xl border border-line bg-surface-1 shadow-xl motion-safe:animate-[fadeInUp_0.12s_ease-out]"
         >
           {menuItems}
         </div>,

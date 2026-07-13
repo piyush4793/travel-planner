@@ -35,6 +35,7 @@ import {
   LYR_TRACKS,
   LYR_TRACKS_TIES,
 } from "./cinematic/engine";
+import { BRAND, ACCENT } from "../../core/theme/palette";
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -233,7 +234,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
         if (!map.getSource(SRC_DONE)) {
           map.addSource(SRC_DONE, { type: "geojson", data: EMPTY_FC });
           map.addLayer({ id: LYR_DONE, type: "line", source: SRC_DONE,
-            paint: { "line-color": "#94a3b8", "line-width": 2.5, "line-opacity": 0.45, "line-dasharray": [4, 3] } });
+            paint: { "line-color": "#a8a293", "line-width": 2.5, "line-opacity": 0.45, "line-dasharray": [4, 3] } });
         } else {
           (map.getSource(SRC_DONE) as maplibregl.GeoJSONSource).setData(EMPTY_FC);
         }
@@ -241,13 +242,13 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
           map.addSource(SRC_CURRENT, { type: "geojson", data: EMPTY_FC });
           // Outer halo (wide, soft)
           map.addLayer({ id: LYR_CURRENT + "-glow", type: "line", source: SRC_CURRENT,
-            paint: { "line-color": "#3b82f6", "line-width": 14, "line-opacity": 0.1, "line-blur": 6 } });
+            paint: { "line-color": BRAND[700], "line-width": 14, "line-opacity": 0.1, "line-blur": 6 } });
           // Inner glow (tighter)
           map.addLayer({ id: LYR_CURRENT + "-glow2", type: "line", source: SRC_CURRENT,
-            paint: { "line-color": "#60a5fa", "line-width": 6, "line-opacity": 0.25, "line-blur": 2 } });
+            paint: { "line-color": BRAND[500], "line-width": 6, "line-opacity": 0.25, "line-blur": 2 } });
           // Core route line
           map.addLayer({ id: LYR_CURRENT, type: "line", source: SRC_CURRENT,
-            paint: { "line-color": "#93c5fd", "line-width": 3, "line-opacity": 1 } });
+            paint: { "line-color": BRAND[300], "line-width": 3, "line-opacity": 1 } });
           // Railroad track layers (initially hidden) — dark steel rails + brown sleeper ties
           map.addLayer({ id: LYR_TRACKS, type: "line", source: SRC_CURRENT,
             paint: { "line-color": "#44403c", "line-width": 6, "line-opacity": 0, "line-gap-width": 2 } });
@@ -269,7 +270,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
           map.setPaintProperty(LYR_CURRENT + "-glow2", "line-width", 8);
           map.setPaintProperty(LYR_CURRENT + "-glow2", "line-opacity", 0.3);
           map.setPaintProperty(LYR_CURRENT, "line-width", 4);
-          map.setPaintProperty(LYR_CURRENT, "line-color", "#93c5fd");
+          map.setPaintProperty(LYR_CURRENT, "line-color", BRAND[300]);
           map.setPaintProperty(LYR_CURRENT, "line-dasharray", null);
           map.setPaintProperty(LYR_TRACKS, "line-opacity", 0);
           map.setPaintProperty(LYR_TRACKS_TIES, "line-opacity", 0);
@@ -277,7 +278,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
           // Train: dual rail lines + sleeper ties + warm underglow
           map.setPaintProperty(LYR_CURRENT + "-glow", "line-width", 16);
           map.setPaintProperty(LYR_CURRENT + "-glow", "line-opacity", 0.12);
-          map.setPaintProperty(LYR_CURRENT + "-glow", "line-color", "#f59e0b");
+          map.setPaintProperty(LYR_CURRENT + "-glow", "line-color", ACCENT[500]);
           map.setPaintProperty(LYR_CURRENT + "-glow2", "line-opacity", 0);
           map.setPaintProperty(LYR_CURRENT, "line-width", 2);
           map.setPaintProperty(LYR_CURRENT, "line-color", "#78716c");
@@ -288,12 +289,12 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
           // Car: warm amber/orange solid line — road feel
           map.setPaintProperty(LYR_CURRENT + "-glow", "line-width", 14);
           map.setPaintProperty(LYR_CURRENT + "-glow", "line-opacity", 0.12);
-          map.setPaintProperty(LYR_CURRENT + "-glow", "line-color", "#f59e0b");
+          map.setPaintProperty(LYR_CURRENT + "-glow", "line-color", ACCENT[500]);
           map.setPaintProperty(LYR_CURRENT + "-glow2", "line-width", 6);
           map.setPaintProperty(LYR_CURRENT + "-glow2", "line-opacity", 0.2);
-          map.setPaintProperty(LYR_CURRENT + "-glow2", "line-color", "#fbbf24");
+          map.setPaintProperty(LYR_CURRENT + "-glow2", "line-color", ACCENT[400]);
           map.setPaintProperty(LYR_CURRENT, "line-width", 3);
-          map.setPaintProperty(LYR_CURRENT, "line-color", "#f59e0b");
+          map.setPaintProperty(LYR_CURRENT, "line-color", ACCENT[500]);
           map.setPaintProperty(LYR_CURRENT, "line-dasharray", null);
           map.setPaintProperty(LYR_TRACKS, "line-opacity", 0);
           map.setPaintProperty(LYR_TRACKS_TIES, "line-opacity", 0);
@@ -301,12 +302,12 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
           // Bus: thick bright blue solid line (mult.dev style)
           map.setPaintProperty(LYR_CURRENT + "-glow", "line-width", 18);
           map.setPaintProperty(LYR_CURRENT + "-glow", "line-opacity", 0.15);
-          map.setPaintProperty(LYR_CURRENT + "-glow", "line-color", "#3b82f6");
+          map.setPaintProperty(LYR_CURRENT + "-glow", "line-color", BRAND[700]);
           map.setPaintProperty(LYR_CURRENT + "-glow2", "line-width", 8);
           map.setPaintProperty(LYR_CURRENT + "-glow2", "line-opacity", 0.3);
-          map.setPaintProperty(LYR_CURRENT + "-glow2", "line-color", "#60a5fa");
+          map.setPaintProperty(LYR_CURRENT + "-glow2", "line-color", BRAND[500]);
           map.setPaintProperty(LYR_CURRENT, "line-width", 4.5);
-          map.setPaintProperty(LYR_CURRENT, "line-color", "#60a5fa");
+          map.setPaintProperty(LYR_CURRENT, "line-color", BRAND[500]);
           map.setPaintProperty(LYR_CURRENT, "line-dasharray", null);
           map.setPaintProperty(LYR_TRACKS, "line-opacity", 0);
           map.setPaintProperty(LYR_TRACKS_TIES, "line-opacity", 0);
@@ -314,12 +315,12 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
           // Ferry/Cable car: subtle grey-blue dashed line
           map.setPaintProperty(LYR_CURRENT + "-glow", "line-width", 10);
           map.setPaintProperty(LYR_CURRENT + "-glow", "line-opacity", 0.08);
-          map.setPaintProperty(LYR_CURRENT + "-glow", "line-color", "#64748b");
+          map.setPaintProperty(LYR_CURRENT + "-glow", "line-color", "#78716c");
           map.setPaintProperty(LYR_CURRENT + "-glow2", "line-width", 5);
           map.setPaintProperty(LYR_CURRENT + "-glow2", "line-opacity", 0.15);
-          map.setPaintProperty(LYR_CURRENT + "-glow2", "line-color", "#94a3b8");
+          map.setPaintProperty(LYR_CURRENT + "-glow2", "line-color", "#a8a293");
           map.setPaintProperty(LYR_CURRENT, "line-width", 2.5);
-          map.setPaintProperty(LYR_CURRENT, "line-color", "#94a3b8");
+          map.setPaintProperty(LYR_CURRENT, "line-color", "#a8a293");
           map.setPaintProperty(LYR_CURRENT, "line-dasharray", [4, 3]);
           map.setPaintProperty(LYR_TRACKS, "line-opacity", 0);
           map.setPaintProperty(LYR_TRACKS_TIES, "line-opacity", 0);
@@ -332,12 +333,12 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
       try {
         map.setPaintProperty(LYR_CURRENT + "-glow", "line-width", 20);
         map.setPaintProperty(LYR_CURRENT + "-glow", "line-opacity", 0.15);
-        map.setPaintProperty(LYR_CURRENT + "-glow", "line-color", "#3b82f6");
+        map.setPaintProperty(LYR_CURRENT + "-glow", "line-color", BRAND[700]);
         map.setPaintProperty(LYR_CURRENT + "-glow2", "line-width", 8);
         map.setPaintProperty(LYR_CURRENT + "-glow2", "line-opacity", 0.3);
-        map.setPaintProperty(LYR_CURRENT + "-glow2", "line-color", "#60a5fa");
+        map.setPaintProperty(LYR_CURRENT + "-glow2", "line-color", BRAND[500]);
         map.setPaintProperty(LYR_CURRENT, "line-width", 4);
-        map.setPaintProperty(LYR_CURRENT, "line-color", "#93c5fd");
+        map.setPaintProperty(LYR_CURRENT, "line-color", BRAND[300]);
         map.setPaintProperty(LYR_CURRENT, "line-dasharray", null);
         map.setPaintProperty(LYR_TRACKS, "line-opacity", 0);
         map.setPaintProperty(LYR_TRACKS_TIES, "line-opacity", 0);
@@ -379,7 +380,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
       // City dot markers — start hidden, revealed progressively during animation
       for (const stop of cityStops) {
         const el = document.createElement("div");
-        el.style.cssText = "width:10px;height:10px;background:white;border:2.5px solid #94a3b8;border-radius:50%;transition:transform 0.6s ease, opacity 0.6s ease;box-sizing:border-box;pointer-events:none;opacity:0;transform:scale(0);";
+        el.style.cssText = "width:10px;height:10px;background:white;border:2.5px solid #a8a293;border-radius:50%;transition:transform 0.6s ease, opacity 0.6s ease;box-sizing:border-box;pointer-events:none;opacity:0;transform:scale(0);";
         allMarkers.push(new maplibregl.Marker({ element: el }).setLngLat(stop.coords).addTo(map));
       }
 
@@ -537,7 +538,7 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
         // Activate city dot with pulse
         const dotEl = allMarkers[i]?.getElement();
         if (dotEl) {
-          dotEl.style.cssText = "width:16px;height:16px;background:#3b82f6;border:3px solid white;border-radius:50%;box-shadow:0 0 0 4px rgba(59,130,246,0.35);transition:transform 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease;box-sizing:border-box;pointer-events:none;animation:cityPulse 0.6s ease-out;";
+          dotEl.style.cssText = `width:16px;height:16px;background:${BRAND[700]};border:3px solid white;border-radius:50%;box-shadow:0 0 0 4px ${BRAND[700]}59;transition:transform 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease;box-sizing:border-box;pointer-events:none;animation:cityPulse 0.6s ease-out;`;
         }
 
         // Transit between cities (i > 0)
@@ -883,10 +884,10 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
           style={{ right: panelWidth - 6, width: 12 }}
           onPointerDown={startPanelDrag}
         >
-          <div className="absolute inset-y-0 left-[5px] w-[2px] bg-white/10 group-hover:bg-blue-400/50 transition-colors" />
+          <div className="absolute inset-y-0 left-[5px] w-[2px] bg-white/10 group-hover:bg-brand-400/50 transition-colors" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[5px]">
             {[0,1,2,3].map((i) => (
-              <div key={i} className="w-[3px] h-[3px] rounded-full bg-white/30 group-hover:bg-blue-400/70 transition-colors" />
+              <div key={i} className="w-[3px] h-[3px] rounded-full bg-white/30 group-hover:bg-brand-400/70 transition-colors" />
             ))}
           </div>
         </div>
@@ -895,8 +896,8 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
       {/* ── Right panel (desktop) / Bottom sheet (mobile) ──────────────────── */}
       <div
         className={isMobile
-          ? "absolute bottom-0 left-0 right-0 bg-gray-950/95 backdrop-blur-md text-white flex flex-col max-h-[40dvh] rounded-t-2xl z-[205] shadow-[0_-4px_20px_rgba(0,0,0,0.3)]"
-          : "absolute top-0 right-0 bottom-0 bg-gray-950 text-white flex flex-col"
+          ? "absolute bottom-0 left-0 right-0 bg-stone-950/95 backdrop-blur-md text-white flex flex-col max-h-[40dvh] rounded-t-2xl z-[205] shadow-[0_-4px_20px_rgba(0,0,0,0.3)]"
+          : "absolute top-0 right-0 bottom-0 bg-stone-950 text-white flex flex-col"
         }
         style={isMobile ? undefined : { width: panelWidth }}
       >

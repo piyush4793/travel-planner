@@ -27,16 +27,16 @@ export default function CinematicIntro({ showOrigin, homeCity, homeLabel, title,
         {showOrigin && (
           <>
             <p className="text-base font-bold text-white">{homeCity}</p>
-            <p className="text-[11px] text-gray-600 -mt-0.5">{homeLabel}</p>
-            <p className="text-gray-500 text-sm mt-2">✈</p>
+            <p className="text-[11px] text-stone-500 -mt-0.5">{homeLabel}</p>
+            <p className="text-stone-400 text-sm mt-2">✈</p>
           </>
         )}
         <p className="text-base font-bold text-white mt-2">{title}</p>
       </div>
-      <p className="text-[11px] text-gray-400">{plan.duration} · {plan.costPerPerson} {planCostBasisIcon(plan)}</p>
+      <p className="text-[11px] text-stone-400">{plan.duration} · {plan.costPerPerson} {planCostBasisIcon(plan)}</p>
       {comboCountries && comboCountries.length > 0 && (
         <div className="mt-1">
-          <p className="text-[10px] text-gray-600 uppercase tracking-widest mb-1.5">Also pairs with</p>
+          <p className="text-[10px] text-stone-500 uppercase tracking-widest mb-1.5">Also pairs with</p>
           <div className="flex flex-wrap justify-center gap-1.5">
             {comboCountries.map((c) => (
               <span key={c.name} className="text-[10px] font-semibold text-purple-400 bg-purple-950/60 border border-purple-800/50 px-2 py-0.5 rounded-full">
@@ -51,7 +51,7 @@ export default function CinematicIntro({ showOrigin, homeCity, homeLabel, title,
           {[0, 1, 2].map((i) => (
             <div
               key={i}
-              className="w-1.5 h-1.5 rounded-full bg-blue-400"
+              className="w-1.5 h-1.5 rounded-full bg-brand-400"
               style={{
                 animation: "pulse 1.2s ease-in-out infinite",
                 animationDelay: `${i * 0.2}s`,
@@ -59,10 +59,10 @@ export default function CinematicIntro({ showOrigin, homeCity, homeLabel, title,
             />
           ))}
         </div>
-        <p className="text-xs text-gray-500">{statusMsg}</p>
+        <p className="text-xs text-stone-400">{statusMsg}</p>
       </div>
       {!mapAvailable && (
-        <p className="text-xs text-amber-400 mt-2">⚠ Switch to Map view to start the cinematic journey</p>
+        <p className="text-xs text-accent-400 mt-2">⚠ Switch to Map view to start the cinematic journey</p>
       )}
     </div>
   );

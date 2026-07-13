@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import { BRAND, ACCENT } from "./src/core/theme/palette";
+
 export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
@@ -15,20 +17,22 @@ export default {
           4: "#a8a293", // quaternary / faint hint
         },
         line: {
-          DEFAULT: "#e4dece", // hairline borders / dividers
-          strong: "#d8d2c2", // emphasized borders
+          DEFAULT: "#e0d6c0", // hairline borders / dividers
+          strong: "#cfc3a6", // emphasized borders
         },
         surface: {
-          1: "#faf8f1", // lightest card / raised surface
-          2: "#f7f4ec", // panel / section fill
-          3: "#f2efe6", // subtle inset tint
-          track: "#efe9db", // sunken well / pill track / button fill
+          1: "#fbf9f2", // lightest card / raised surface (ivory, lifts above canvas)
+          2: "#f4eede", // panel / section fill
+          3: "#eee6d3", // page canvas / subtle inset tint (visible warm cream)
+          track: "#e7dcc4", // sunken well / pill track / header / button fill
         },
-        // Deep-emerald brand gradient tails (paired with emerald-700/800).
-        brand: {
-          900: "#123a2b",
-          950: "#0f2f23",
-        },
+        // Primary brand accent ramp — semantic indirection over emerald so a
+        // future rebrand is a one-file swap. Sourced from the shared palette
+        // module (src/core/theme/palette.ts) so the same hex feeds Tailwind
+        // classes AND the runtime hex consumers (maplibre, PDF, gradients).
+        brand: BRAND,
+        // Secondary accent ramp — anchor/warnings (mirrors Tailwind amber today).
+        accent: ACCENT,
       },
     },
   },

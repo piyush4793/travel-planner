@@ -23,14 +23,14 @@ function LifecyclePromptToastInner({ prompt, onAct, onDismiss }: Props) {
       role="status"
       aria-live="polite"
     >
-      <div className="pointer-events-auto flex max-w-md items-center gap-3 rounded-2xl border border-emerald-200 bg-white/95 px-4 py-2.5 shadow-lg backdrop-blur motion-safe:animate-[slideUp_0.2s_ease-out]">
-        <span aria-hidden="true" className="text-base leading-none text-emerald-700">{ICON[prompt.kind]}</span>
+      <div className="pointer-events-auto flex max-w-md items-center gap-3 rounded-2xl border border-brand-200 bg-white/95 px-4 py-2.5 shadow-lg backdrop-blur motion-safe:animate-[slideUp_0.2s_ease-out]">
+        <span aria-hidden="true" className="text-base leading-none text-brand-700">{ICON[prompt.kind]}</span>
         <p className="flex-1 text-xs font-medium text-ink-1">{prompt.message}</p>
         {prompt.actionLabel && (
           <button
             type="button"
             onClick={onAct}
-            className="focus-ring-emerald min-h-[32px] shrink-0 rounded-full bg-emerald-700 px-3 py-1 text-[11px] font-bold text-white shadow-sm transition-colors hover:bg-emerald-800"
+            className="focus-ring-emerald min-h-[32px] shrink-0 rounded-full bg-brand-700 px-3 py-1 text-[11px] font-bold text-white shadow-sm transition-colors hover:bg-brand-800"
           >
             {prompt.actionLabel}
           </button>

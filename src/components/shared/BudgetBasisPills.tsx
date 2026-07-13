@@ -44,7 +44,7 @@ export default function BudgetBasisPills({
       {BUDGET_BASIS_ORDER.map((basis, i) => {
         const meta = BUDGET_BASIS_META[basis];
         const selected = value === basis;
-        const activeClass = "bg-white text-emerald-800 shadow-sm";
+        const activeClass = "bg-surface-1 text-brand-800 shadow-sm";
         const idleClass = isHeader ? "text-white/80 hover:text-white" : "text-ink-2 hover:text-ink-1";
         return (
           <button

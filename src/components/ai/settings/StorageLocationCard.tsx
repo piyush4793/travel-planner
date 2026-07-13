@@ -92,7 +92,7 @@ export default function StorageLocationCard({ onStatus }: { onStatus: (s: Status
     <SectionCard
       title="Storage location"
       icon={"\u{1F4CD}"}
-      accent="bg-emerald-100 text-emerald-600"
+      accent="bg-brand-100 text-brand-600"
       desc="Where auto-backups are saved on this device, so you can find and restore them later."
     >
       <div className="space-y-3">
@@ -116,7 +116,7 @@ export default function StorageLocationCard({ onStatus }: { onStatus: (s: Status
               onClick={() => chooseKind(t.kind)}
               className={`focus-ring min-h-[32px] w-full px-3 py-2 rounded-xl text-left text-[11px] font-medium transition-colors flex items-center justify-between gap-2 ${
                 kind === t.kind
-                  ? "bg-emerald-600 text-white"
+                  ? "bg-brand-600 text-white"
                   : "bg-surface-track hover:bg-line text-ink-body"
               }`}
             >
@@ -154,7 +154,7 @@ export default function StorageLocationCard({ onStatus }: { onStatus: (s: Status
           <button
             onClick={backupNow}
             disabled={busy}
-            className="focus-ring flex-1 min-h-[32px] px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white text-[11px] font-semibold transition-colors"
+            className="focus-ring flex-1 min-h-[32px] px-3 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 disabled:opacity-60 text-white text-[11px] font-semibold transition-colors"
           >
             {busy ? "Working…" : "Back up now"}
           </button>
@@ -171,7 +171,7 @@ export default function StorageLocationCard({ onStatus }: { onStatus: (s: Status
           <p
             role="status"
             aria-live="polite"
-            className={`text-[10px] leading-relaxed px-0.5 ${feedback.ok ? "text-emerald-600" : "text-rose-600"}`}
+            className={`text-[10px] leading-relaxed px-0.5 ${feedback.ok ? "text-brand-600" : "text-rose-600"}`}
           >
             {feedback.ok ? "\u2713 " : "\u26A0 "}{feedback.msg}
           </p>

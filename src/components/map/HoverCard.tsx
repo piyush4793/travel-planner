@@ -28,7 +28,7 @@ export default function HoverCard({ country, x, y }: Props) {
       role="tooltip"
       aria-label={`${country.name} — ${country.budget ?? ""}`}
     >
-      <div className="relative h-28 bg-gradient-to-br from-slate-700 to-slate-900">
+      <div className="relative h-28 bg-gradient-to-br from-brand-800 to-brand-950">
         {imgSrc ? (
           <img
             src={imgSrc}
@@ -44,11 +44,11 @@ export default function HoverCard({ country, x, y }: Props) {
           </div>
         )}
         {/* small arrow pointing down to the pin */}
-        <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 shadow" />
+        <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-surface-1 rotate-45 shadow" />
       </div>
-      <div className="bg-white px-3 py-2">
-        <p className="font-semibold text-gray-900 text-sm leading-tight">{country.name}</p>
-        <p className="text-[11px] text-gray-400 mt-0.5">{country.budget}</p>
+      <div className="bg-surface-1 px-3 py-2">
+        <p className="font-semibold text-ink-1 text-sm leading-tight">{country.name}</p>
+        <p className="text-[11px] text-ink-3 mt-0.5">{country.budget}</p>
       </div>
     </div>
   );

@@ -88,32 +88,32 @@ const ITIN_THEME: ItinTheme = {
   sepBox: "bg-surface-3 border-line",
   sepTitle: "text-ink-1",
   sepSub: "text-ink-2",
-  sepCost: "text-emerald-800 bg-white border-line",
+  sepCost: "text-brand-800 bg-surface-1 border-line",
   cityTitle: "text-ink-1",
   cityBadge: "text-ink-2 bg-surface-track",
   cardBorder: "border-line",
-  cardHead: "bg-surface-3 border-line",
-  chevron: "text-ink-4",
-  dayLabel: "text-ink-2",
-  dayCount: "text-ink-4",
-  themePill: "text-emerald-700 bg-emerald-50",
-  routeLink: "text-emerald-700 bg-emerald-50 hover:bg-emerald-100",
-  marker: "bg-emerald-700 text-white",
+  cardHead: "bg-brand-50 border-brand-100",
+  chevron: "text-brand-700/60",
+  dayLabel: "text-brand-800",
+  dayCount: "text-brand-700/70",
+  themePill: "text-brand-700 bg-brand-50",
+  routeLink: "text-brand-700 bg-brand-50 hover:bg-brand-100",
+  marker: "bg-brand-700 text-white",
   bullet: "text-line-strong",
   actText: "text-ink-1",
   actDetail: "text-ink-2",
-  actLink: "text-emerald-500 hover:text-emerald-700",
+  actLink: "text-brand-500 hover:text-brand-700",
   divider: "border-line",
   eatLabel: "text-ink-4",
   eatPill: "text-orange-700 bg-orange-50 border-orange-200 hover:bg-orange-100",
-  hotelPill: "text-ink-2 bg-surface-3 border-line hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-700",
+  hotelPill: "text-ink-2 bg-surface-3 border-line hover:bg-brand-50 hover:border-brand-200 hover:text-brand-700",
   noteBox: "bg-surface-3 border-line",
   noteLabel: "text-ink-4",
   noteText: "text-ink-2",
   noteItemLabel: "text-ink-2",
   noteItemText: "text-ink-body",
   copyIdle: "text-ink-4 bg-surface-3 hover:bg-surface-track hover:text-ink-2",
-  copyDone: "text-emerald-600 bg-emerald-50",
+  copyDone: "text-brand-600 bg-brand-50",
 };
 
 interface ItineraryViewProps {
@@ -245,7 +245,7 @@ function DayCard({ day, city, rule, t }: { day: DayEntry; city: string; rule?: C
   const routeInfo = buildRoute(day.activities, city);
 
   return (
-    <div className={`border rounded-xl overflow-hidden shadow-sm ${t.cardBorder}`}>
+    <div className={`border rounded-xl overflow-hidden shadow-sm bg-surface-1 ${t.cardBorder}`}>
       <div className={`flex flex-wrap sm:flex-nowrap items-center gap-2 px-4 py-2.5 border-b ${t.cardHead}`}>
         <button
           onClick={() => setExpanded((e) => !e)}
@@ -304,7 +304,7 @@ function DayCard({ day, city, rule, t }: { day: DayEntry; city: string; rule?: C
                     <span className={`text-sm flex-1 ${t.actText}`}>
                       {parsed.name}
                       {parsed.cost && (
-                        <span className="text-emerald-600 text-xs font-semibold ml-1.5">({parsed.cost})</span>
+                        <span className="text-brand-600 text-xs font-semibold ml-1.5">({parsed.cost})</span>
                       )}
                       {parsed.detail && (
                         <span className={`text-xs font-medium ml-1.5 ${t.actDetail}`}>{parsed.detail}</span>

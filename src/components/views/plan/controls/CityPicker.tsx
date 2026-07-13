@@ -33,7 +33,7 @@ function CityPickerInner({ cities, selectedCities, autoSelectedCities, activeExp
           <button
             type="button"
             onClick={onClear}
-            className="focus-ring-emerald -my-1 inline-flex min-h-[32px] items-center rounded px-1.5 text-[11px] font-semibold text-ink-2 transition-colors hover:text-emerald-800"
+            className="focus-ring-emerald -my-1 inline-flex min-h-[32px] items-center rounded px-1.5 text-[11px] font-semibold text-ink-2 transition-colors hover:text-brand-800"
           >
             Reset to auto
           </button>

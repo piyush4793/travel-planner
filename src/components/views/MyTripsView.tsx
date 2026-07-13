@@ -74,7 +74,7 @@ const SavedTripCard = memo(function SavedTripCard({
     return acc;
   }, []);
   return (
-    <article className="group relative flex flex-col gap-3 rounded-2xl border border-emerald-900/10 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5">
+    <article className="group relative flex flex-col gap-3 rounded-2xl border border-brand-900/10 bg-surface-1 p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5">
       {/* Stretched primary action — opens the trip in the Plan wizard. Secondary
           controls (favorite/delete) sit above it (z-20) so they stay clickable. */}
       <button
@@ -90,11 +90,11 @@ const SavedTripCard = memo(function SavedTripCard({
               <span key={f.key}>{f.flag}</span>
             ))}
           </div>
-          <h3 className="mt-1 truncate text-sm font-semibold text-emerald-950 group-hover:text-emerald-700 sm:text-base" title={trip.name}>
+          <h3 className="mt-1 truncate text-sm font-semibold text-brand-950 group-hover:text-brand-700 sm:text-base" title={trip.name}>
             {trip.name}
           </h3>
-          <p className="mt-0.5 flex items-center gap-1.5 text-[11px] text-emerald-800/70">
-            <span className={`inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 font-medium ${domestic ? "bg-amber-50 text-amber-800" : "bg-emerald-50 text-emerald-800"}`}>
+          <p className="mt-0.5 flex items-center gap-1.5 text-[11px] text-brand-800/70">
+            <span className={`inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 font-medium ${domestic ? "bg-accent-50 text-accent-800" : "bg-brand-50 text-brand-800"}`}>
               {domestic ? `🏠 ${homeCountry}` : "🌍 International"}
             </span>
             {multi && <span>{trip.stops.length}-stop route</span>}
@@ -107,7 +107,7 @@ const SavedTripCard = memo(function SavedTripCard({
             aria-pressed={!!trip.favorite}
             aria-label={trip.favorite ? `Unfavorite ${trip.name}` : `Favorite ${trip.name}`}
             className={`focus-ring flex min-h-[32px] min-w-[32px] items-center justify-center rounded-full text-base transition-colors ${
-              trip.favorite ? "text-amber-500" : "text-emerald-900/30 hover:text-amber-400"
+              trip.favorite ? "text-accent-500" : "text-brand-900/30 hover:text-accent-400"
             }`}
           >
             {trip.favorite ? "★" : "☆"}
@@ -116,7 +116,7 @@ const SavedTripCard = memo(function SavedTripCard({
             type="button"
             onClick={() => onRemove(trip)}
             aria-label={`Delete ${trip.name}`}
-            className="focus-ring flex min-h-[32px] min-w-[32px] items-center justify-center rounded-full text-sm text-emerald-900/40 transition-colors hover:bg-red-50 hover:text-red-600"
+            className="focus-ring flex min-h-[32px] min-w-[32px] items-center justify-center rounded-full text-sm text-brand-900/40 transition-colors hover:bg-red-50 hover:text-red-600"
           >
             🗑
           </button>
@@ -128,21 +128,21 @@ const SavedTripCard = memo(function SavedTripCard({
           {trip.stops.flatMap((s) => s.cities).slice(0, 8).map((city, i) => (
             <span
               key={`${city}-${i}`}
-              className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] text-emerald-800"
+              className="rounded-full bg-brand-50 px-2 py-0.5 text-[11px] text-brand-800"
             >
               {city}
             </span>
           ))}
           {places > 8 && (
-            <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] text-emerald-700/70">
+            <span className="rounded-full bg-brand-50 px-2 py-0.5 text-[11px] text-brand-700/70">
               +{places - 8} more
             </span>
           )}
         </div>
       )}
 
-      <div className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-emerald-900/70">
-        <span className="font-medium text-emerald-900">
+      <div className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-brand-900/70">
+        <span className="font-medium text-brand-900">
           {trip.totalDays} {trip.totalDays === 1 ? "day" : "days"}
         </span>
         {places > 0 && (
@@ -162,7 +162,7 @@ const SavedTripCard = memo(function SavedTripCard({
         )}
       </div>
 
-      <p className="text-[10px] uppercase tracking-wide text-emerald-800/40">{savedAgo(trip.savedAt)}</p>
+      <p className="text-[10px] uppercase tracking-wide text-brand-800/40">{savedAgo(trip.savedAt)}</p>
     </article>
   );
 });
@@ -229,15 +229,15 @@ export default function MyTripsView({ savedTrips, homeCountry, onToggleFavorite,
       <div className="flex h-full flex-col items-center justify-center gap-4 px-6 text-center">
         <div className="text-5xl" aria-hidden="true">🧳</div>
         <div>
-          <h2 className="text-lg font-semibold text-emerald-950">No saved trips yet</h2>
-          <p className="mt-1 max-w-sm text-sm text-emerald-800/70">
+          <h2 className="text-lg font-semibold text-brand-950">No saved trips yet</h2>
+          <p className="mt-1 max-w-sm text-sm text-brand-800/70">
             Plan a trip and it's saved here automatically — so you can come back to it anytime.
           </p>
         </div>
         <button
           type="button"
           onClick={onGoPlan}
-          className="focus-ring min-h-[44px] rounded-full bg-emerald-700 px-6 text-sm font-semibold text-white transition-colors hover:bg-emerald-800"
+          className="focus-ring min-h-[44px] rounded-full bg-brand-700 px-6 text-sm font-semibold text-white transition-colors hover:bg-brand-800"
         >
           Plan a trip
         </button>
@@ -251,27 +251,27 @@ export default function MyTripsView({ savedTrips, homeCountry, onToggleFavorite,
       <ConfirmDialog />
       <header className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="text-xl font-semibold text-emerald-950 sm:text-2xl">My Trips</h1>
-          <p className="mt-0.5 text-sm text-emerald-800/70">
+          <h1 className="text-xl font-semibold text-brand-950 sm:text-2xl">My Trips</h1>
+          <p className="mt-0.5 text-sm text-brand-800/70">
             {savedTrips.length} saved {savedTrips.length === 1 ? "trip" : "trips"}
           </p>
         </div>
         <div className="flex items-center gap-2">
           <div className="relative flex-1 sm:w-64 sm:flex-none">
-            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-emerald-900/40" aria-hidden="true">🔍</span>
+            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-brand-900/40" aria-hidden="true">🔍</span>
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search trips…"
               aria-label="Search saved trips by name, country, or city"
-              className="focus-ring min-h-[40px] w-full rounded-full border border-emerald-900/15 bg-white pl-9 pr-3 text-sm text-emerald-950 placeholder:text-emerald-900/40"
+              className="focus-ring min-h-[40px] w-full rounded-full border border-brand-900/15 bg-surface-1 pl-9 pr-3 text-sm text-brand-950 placeholder:text-brand-900/40"
             />
           </div>
           <button
             type="button"
             onClick={onGoPlan}
-            className="focus-ring min-h-[40px] shrink-0 rounded-full bg-emerald-700 px-4 text-sm font-semibold text-white transition-colors hover:bg-emerald-800"
+            className="focus-ring min-h-[40px] shrink-0 rounded-full bg-brand-700 px-4 text-sm font-semibold text-white transition-colors hover:bg-brand-800"
           >
             + New trip
           </button>
@@ -290,15 +290,15 @@ export default function MyTripsView({ savedTrips, homeCountry, onToggleFavorite,
                       role="menuitemradio"
                       aria-checked={activeScope === o.key}
                       onClick={() => { setScopeFilter(o.key); close(); }}
-                      className={`focus-ring flex w-full items-center justify-between gap-3 px-4 py-2.5 text-left text-sm transition-colors hover:bg-emerald-50 ${
-                        activeScope === o.key ? "font-semibold text-emerald-800" : "text-ink-body"
+                      className={`focus-ring flex w-full items-center justify-between gap-3 px-4 py-2.5 text-left text-sm transition-colors hover:bg-brand-50 ${
+                        activeScope === o.key ? "font-semibold text-brand-800" : "text-ink-body"
                       }`}
                     >
                       <span className="flex items-center gap-2">
                         {o.label}
                         <span className="text-[11px] text-ink-4">({o.count})</span>
                       </span>
-                      {activeScope === o.key && <span aria-hidden="true" className="text-emerald-700">✓</span>}
+                      {activeScope === o.key && <span aria-hidden="true" className="text-brand-700">✓</span>}
                     </button>
                   </li>
                 ))}
@@ -311,13 +311,13 @@ export default function MyTripsView({ savedTrips, homeCountry, onToggleFavorite,
       {favorites.length === 0 && rest.length === 0 ? (
         <div className="flex flex-col items-center justify-center gap-3 py-16 text-center">
           <div className="text-4xl" aria-hidden="true">🔍</div>
-          <p className="text-sm text-emerald-800/70">
+          <p className="text-sm text-brand-800/70">
             No trips match “{query.trim()}”.
           </p>
           <button
             type="button"
             onClick={() => setQuery("")}
-            className="focus-ring min-h-[36px] rounded-full border border-emerald-900/15 px-4 text-sm font-medium text-emerald-800 transition-colors hover:bg-emerald-50"
+            className="focus-ring min-h-[36px] rounded-full border border-brand-900/15 px-4 text-sm font-medium text-brand-800 transition-colors hover:bg-brand-50"
           >
             Clear search
           </button>
@@ -326,7 +326,7 @@ export default function MyTripsView({ savedTrips, homeCountry, onToggleFavorite,
         <>
           {favorites.length > 0 && (
             <section className="mb-6" aria-labelledby="favorites-heading">
-              <h2 id="favorites-heading" className="mb-2 text-xs font-semibold uppercase tracking-wide text-amber-600">
+              <h2 id="favorites-heading" className="mb-2 text-xs font-semibold uppercase tracking-wide text-accent-600">
                 ★ Favorites
               </h2>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -347,7 +347,7 @@ export default function MyTripsView({ savedTrips, homeCountry, onToggleFavorite,
           {rest.length > 0 && (
             <section aria-labelledby="all-trips-heading">
               {favorites.length > 0 && (
-                <h2 id="all-trips-heading" className="mb-2 text-xs font-semibold uppercase tracking-wide text-emerald-800/60">
+                <h2 id="all-trips-heading" className="mb-2 text-xs font-semibold uppercase tracking-wide text-brand-800/60">
                   All trips
                 </h2>
               )}

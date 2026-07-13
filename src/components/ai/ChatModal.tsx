@@ -130,26 +130,26 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
       onClose={handleClose}
       preventClose={finalizing}
       label="AI Trip Planner"
-      className="bg-white border border-slate-200 md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-2xl md:mx-4 flex flex-col h-dvh md:h-auto"
+      className="bg-surface-1 border border-line md:rounded-2xl shadow-2xl w-full max-w-none md:max-w-2xl md:mx-4 flex flex-col h-dvh md:h-auto"
     >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-200 shrink-0 bg-gradient-to-r from-emerald-50 to-teal-50">
+        <div className="flex items-center justify-between px-5 py-3.5 border-b border-line shrink-0 bg-gradient-to-r from-brand-50 to-brand-100">
           <div className="flex items-center gap-2.5">
             <span className="text-lg">✈️</span>
             <div>
-              <h2 className="text-sm font-semibold text-slate-800">AI Trip Planner</h2>
-              <p className="text-[10px] text-slate-400">Powered by {activeProviderLabel} · your key, your tokens</p>
+              <h2 className="text-sm font-semibold text-ink-1">AI Trip Planner</h2>
+              <p className="text-[10px] text-ink-3">Powered by {activeProviderLabel} · your key, your tokens</p>
             </div>
           </div>
           <div className="flex items-center gap-1.5">
             {!pasteMode && !linkMode && !finished && !finalizing && (
               <>
                 <button onClick={() => setPasteMode(true)}
-                  className="px-2.5 py-1.5 min-h-[32px] border border-violet-200 bg-violet-50 text-violet-700 hover:bg-violet-100 text-[11px] font-semibold rounded-lg transition-colors focus-ring">
+                  className="px-2.5 py-1.5 min-h-[32px] border border-brand-200 bg-brand-50 text-brand-700 hover:bg-brand-100 text-[11px] font-semibold rounded-lg transition-colors focus-ring">
                   📋 Paste
                 </button>
                 <button onClick={() => setLinkMode(true)}
-                  className="px-2.5 py-1.5 min-h-[32px] border border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 text-[11px] font-semibold rounded-lg transition-colors focus-ring">
+                  className="px-2.5 py-1.5 min-h-[32px] border border-accent-200 bg-accent-50 text-accent-700 hover:bg-accent-100 text-[11px] font-semibold rounded-lg transition-colors focus-ring">
                   🔗 Link
                 </button>
               </>
@@ -158,7 +158,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
               <FinishButton tokens={tokenUsage.totalTokens} loading={loading} onClick={finishChat} />
             )}
             <button onClick={handleClose} disabled={finalizing} aria-label="Close chat"
-              className={`text-lg leading-none p-2 min-w-[32px] min-h-[32px] rounded-lg focus-ring ${finalizing ? "text-slate-200 cursor-not-allowed" : "text-slate-400 hover:text-slate-700"}`}>✕</button>
+              className={`text-lg leading-none p-2 min-w-[32px] min-h-[32px] rounded-lg focus-ring ${finalizing ? "text-ink-4 cursor-not-allowed" : "text-ink-3 hover:text-ink-body"}`}>✕</button>
           </div>
         </div>
 
@@ -201,34 +201,34 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
           {!hasApiKey && messages.length === 0 && (
             <div className="flex items-center justify-center h-full">
               <div className="max-w-md space-y-4">
-                <p className="text-sm font-bold text-slate-700 text-center">Choose how to plan your trip</p>
+                <p className="text-sm font-bold text-ink-body text-center">Choose how to plan your trip</p>
                 <button onClick={() => { onClose(); onOpenSettings(); }}
-                  className="w-full border border-slate-200 rounded-xl p-4 hover:border-emerald-300 hover:bg-emerald-50/30 transition-colors text-left">
+                  className="w-full border border-line rounded-xl p-4 hover:border-brand-300 hover:bg-brand-50/30 transition-colors text-left">
                   <div className="flex items-start gap-3">
                     <span className="text-xl">🔑</span>
                     <div>
-                      <p className="text-sm font-semibold text-slate-700">Setup API key</p>
-                      <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">Add your OpenAI / Claude / Gemini key. Your key stays local. Be mindful of token costs.</p>
+                      <p className="text-sm font-semibold text-ink-body">Setup API key</p>
+                      <p className="text-[11px] text-ink-3 mt-0.5 leading-relaxed">Add your OpenAI / Claude / Gemini key. Your key stays local. Be mindful of token costs.</p>
                     </div>
                   </div>
                 </button>
                 <button onClick={() => setPasteMode(true)}
-                  className="w-full border border-slate-200 rounded-xl p-4 hover:border-violet-300 hover:bg-violet-50/30 transition-colors text-left">
+                  className="w-full border border-line rounded-xl p-4 hover:border-brand-300 hover:bg-brand-50/30 transition-colors text-left">
                   <div className="flex items-start gap-3">
                     <span className="text-xl">📋</span>
                     <div>
-                      <p className="text-sm font-semibold text-slate-700">Paste AI conversation</p>
-                      <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">Paste the full conversation from ChatGPT, Claude, or Gemini. Free, no key needed.</p>
+                      <p className="text-sm font-semibold text-ink-body">Paste AI conversation</p>
+                      <p className="text-[11px] text-ink-3 mt-0.5 leading-relaxed">Paste the full conversation from ChatGPT, Claude, or Gemini. Free, no key needed.</p>
                     </div>
                   </div>
                 </button>
                 <button onClick={() => setLinkMode(true)}
-                  className="w-full border border-slate-200 rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50/30 transition-colors text-left">
+                  className="w-full border border-line rounded-xl p-4 hover:border-accent-300 hover:bg-accent-50/30 transition-colors text-left">
                   <div className="flex items-start gap-3">
                     <span className="text-xl">🔗</span>
                     <div>
-                      <p className="text-sm font-semibold text-slate-700">Paste chat link</p>
-                      <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">Share a ChatGPT or Claude conversation link and we'll parse it automatically.</p>
+                      <p className="text-sm font-semibold text-ink-body">Paste chat link</p>
+                      <p className="text-[11px] text-ink-3 mt-0.5 leading-relaxed">Share a ChatGPT or Claude conversation link and we'll parse it automatically.</p>
                     </div>
                   </div>
                 </button>
@@ -240,8 +240,8 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
             <div className="flex items-center justify-center h-full">
               <div className="text-center space-y-3 max-w-md">
                 <span className="text-4xl">🌍</span>
-                <p className="text-sm text-slate-500 font-medium">Start planning your trip</p>
-                <p className="text-[11px] text-slate-400 leading-relaxed whitespace-pre-line">{PLACEHOLDER}</p>
+                <p className="text-sm text-ink-2 font-medium">Start planning your trip</p>
+                <p className="text-[11px] text-ink-3 leading-relaxed whitespace-pre-line">{PLACEHOLDER}</p>
               </div>
             </div>
           )}
@@ -251,8 +251,8 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
               <div
                 className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-[13px] leading-relaxed ${
                   msg.role === "user"
-                    ? "bg-emerald-700 text-white rounded-br-md"
-                    : "bg-slate-100 text-slate-700 border border-slate-200 rounded-bl-md"
+                    ? "bg-brand-700 text-white rounded-br-md"
+                    : "bg-surface-track text-ink-body border border-line rounded-bl-md"
                 }`}
               >
                 <MessageContent text={msg.content} isUser={msg.role === "user"} />
@@ -262,12 +262,12 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
 
           {loading && !finalizing && (
             <div className="flex justify-start">
-              <div className="bg-slate-100 border border-slate-200 rounded-2xl rounded-bl-md px-4 py-3">
+              <div className="bg-surface-track border border-line rounded-2xl rounded-bl-md px-4 py-3">
                 <div className="flex gap-1.5 items-center">
-                  <span className="w-2 h-2 bg-slate-300 rounded-full motion-safe:animate-bounce motion-reduce:hidden" style={{ animationDelay: "0ms" }} />
-                  <span className="w-2 h-2 bg-slate-300 rounded-full motion-safe:animate-bounce motion-reduce:hidden" style={{ animationDelay: "150ms" }} />
-                  <span className="w-2 h-2 bg-slate-300 rounded-full motion-safe:animate-bounce motion-reduce:hidden" style={{ animationDelay: "300ms" }} />
-                  <span className="hidden motion-reduce:inline text-[10px] text-slate-400 font-medium">Thinking…</span>
+                  <span className="w-2 h-2 bg-ink-3 rounded-full motion-safe:animate-bounce motion-reduce:hidden" style={{ animationDelay: "0ms" }} />
+                  <span className="w-2 h-2 bg-ink-3 rounded-full motion-safe:animate-bounce motion-reduce:hidden" style={{ animationDelay: "150ms" }} />
+                  <span className="w-2 h-2 bg-ink-3 rounded-full motion-safe:animate-bounce motion-reduce:hidden" style={{ animationDelay: "300ms" }} />
+                  <span className="hidden motion-reduce:inline text-[10px] text-ink-3 font-medium">Thinking…</span>
                 </div>
               </div>
             </div>
@@ -282,7 +282,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
                 {error.includes("API key") || error.includes("Invalid") ? (
                   <button
                     onClick={() => { onClose(); onOpenSettings(); }}
-                    className="text-[11px] text-emerald-600 hover:text-emerald-500 font-medium"
+                    className="text-[11px] text-brand-600 hover:text-brand-500 font-medium"
                   >
                     Open Settings →
                   </button>
@@ -292,7 +292,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
                       const lastUserMsg = [...messages].reverse().find(m => m.role === "user");
                       if (lastUserMsg) sendMessage(lastUserMsg.content);
                     }}
-                    className="text-[11px] text-emerald-700 hover:text-emerald-600 font-medium"
+                    className="text-[11px] text-brand-700 hover:text-brand-600 font-medium"
                     disabled={loading}
                   >
                     ↻ Retry
@@ -300,7 +300,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
                 )}
                 <button
                   onClick={() => clearError()}
-                  className="text-[11px] text-slate-400 hover:text-slate-600 font-medium"
+                  className="text-[11px] text-ink-3 hover:text-ink-2 font-medium"
                 >
                   Dismiss
                 </button>
@@ -312,7 +312,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
           <button
             onClick={scrollToLatest}
             aria-label="Scroll to latest message"
-            className="absolute bottom-3 right-4 z-10 flex items-center justify-center min-h-[32px] min-w-[32px] w-9 h-9 rounded-full bg-slate-800/90 text-white shadow-lg hover:bg-slate-700 transition-colors focus-ring"
+            className="absolute bottom-3 right-4 z-10 flex items-center justify-center min-h-[32px] min-w-[32px] w-9 h-9 rounded-full bg-ink-1/90 text-white shadow-lg hover:bg-ink-body transition-colors focus-ring"
           >
             <span aria-hidden="true" className="text-base leading-none">↓</span>
           </button>
@@ -322,7 +322,7 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
 
         {/* Input — only in regular chat mode */}
         {!pasteMode && !linkMode && !finished && !finalizing && hasApiKey && (
-          <div className="px-5 py-3.5 border-t border-slate-200 shrink-0">
+          <div className="px-5 py-3.5 border-t border-line shrink-0">
             <div className="flex gap-2.5 items-end">
               <textarea
                 ref={inputRef}
@@ -331,25 +331,25 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
                 onKeyDown={handleKeyDown}
                 placeholder="Describe your trip…"
                 rows={3}
-                className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-emerald-400 resize-none max-h-40"
+                className="flex-1 bg-surface-2 border border-line rounded-xl px-4 py-3 text-sm text-ink-1 placeholder:text-ink-3 focus:outline-none focus:border-brand-400 resize-none max-h-40"
                 style={{ minHeight: 72 }}
                 disabled={loading}
               />
               <button
                 onClick={handleSend}
                 disabled={!input.trim() || loading}
-                className="px-4 py-2.5 bg-emerald-700 hover:bg-emerald-600 disabled:bg-slate-100 disabled:text-slate-300 text-white text-sm font-semibold rounded-xl transition-colors shrink-0"
+                className="px-4 py-2.5 bg-brand-700 hover:bg-brand-600 disabled:bg-surface-track disabled:text-ink-4 text-white text-sm font-semibold rounded-xl transition-colors shrink-0"
               >
                 Send
               </button>
             </div>
             <div className="flex items-center gap-3 mt-1.5">
-              <p className="text-[10px] text-slate-400 flex-1">Shift+Enter for new line · Enter to send</p>
+              <p className="text-[10px] text-ink-3 flex-1">Shift+Enter for new line · Enter to send</p>
               {tokenUsage.totalTokens > 0 && (
                 <TokenBadge tokens={tokenUsage.totalTokens} inputTokens={tokenUsage.inputTokens} outputTokens={tokenUsage.outputTokens} />
               )}
               {usageWarning && (
-                <p className="text-[10px] text-amber-600 font-medium">{usageWarning}</p>
+                <p className="text-[10px] text-accent-600 font-medium">{usageWarning}</p>
               )}
             </div>
           </div>
@@ -357,19 +357,19 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
 
         {/* Finished state */}
         {finished && (
-          <div className="px-5 py-4 border-t border-emerald-200 shrink-0 bg-emerald-50">
+          <div className="px-5 py-4 border-t border-brand-200 shrink-0 bg-brand-50">
             <div className="flex items-center gap-3">
               <span className="text-lg">✅</span>
               <div className="flex-1">
-                <p className="text-sm text-emerald-700 font-medium">Plan generated!</p>
-                <p className="text-[11px] text-slate-500">
+                <p className="text-sm text-brand-700 font-medium">Plan generated!</p>
+                <p className="text-[11px] text-ink-2">
                   {finalResult?.destinationName} · {finalResult?.durationDays} days · {finalResult?.budgetLevel}
                   {tokenUsage.totalTokens > 0 && ` · ${formatTokens(tokenUsage.totalTokens)} tokens`}
                 </p>
               </div>
               <button
                 onClick={handleViewItinerary}
-                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition-colors"
+                className="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold rounded-lg transition-colors"
               >
                 View Itinerary
               </button>
@@ -385,9 +385,9 @@ export default function ChatModal({ open, onClose, homeCountry, onPlanReady, onO
 /** Render assistant messages with basic markdown-like formatting */
 function MessageContent({ text, isUser }: { text: string; isUser?: boolean }) {
   const lines = text.split("\n");
-  const headingClass = isUser ? "font-semibold text-white/90" : "font-semibold text-slate-800";
-  const bulletClass = isUser ? "text-white/50" : "text-slate-300";
-  const numClass = isUser ? "text-white/60" : "text-slate-400";
+  const headingClass = isUser ? "font-semibold text-white/90" : "font-semibold text-ink-1";
+  const bulletClass = isUser ? "text-white/50" : "text-ink-4";
+  const numClass = isUser ? "text-white/60" : "text-ink-3";
 
   return (
     <div className="space-y-1.5">
@@ -428,7 +428,7 @@ function MessageContent({ text, isUser }: { text: string; isUser?: boolean }) {
 }
 
 function renderInline(text: string, isUser?: boolean) {
-  const boldClass = isUser ? "font-semibold text-white" : "font-semibold text-slate-800";
+  const boldClass = isUser ? "font-semibold text-white" : "font-semibold text-ink-1";
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
@@ -465,14 +465,14 @@ function FinalizingSplash() {
         <span className="text-5xl block" key={step} style={{ animation: "fadeInUp 0.4s ease-out" }}>
           {current.emoji}
         </span>
-        <p className="text-sm text-slate-600 font-medium" key={`t-${step}`} style={{ animation: "fadeInUp 0.4s ease-out" }}>
+        <p className="text-sm text-ink-2 font-medium" key={`t-${step}`} style={{ animation: "fadeInUp 0.4s ease-out" }}>
           {current.text}
         </p>
         <div className="flex justify-center gap-1.5 pt-2">
           {SPLASH_STEPS.map((_, i) => (
             <span
               key={i}
-              className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${i === step ? "bg-emerald-500" : "bg-slate-200"}`}
+              className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${i === step ? "bg-brand-500" : "bg-line"}`}
             />
           ))}
         </div>
@@ -497,7 +497,7 @@ function FinishButton({ tokens, loading, onClick }: { tokens: number; loading: b
     <button
       onClick={onClick}
       disabled={loading}
-      className="px-3 py-1.5 min-h-[32px] bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-100 disabled:text-slate-300 text-white text-[11px] font-semibold rounded-lg transition-colors focus-ring"
+      className="px-3 py-1.5 min-h-[32px] bg-brand-600 hover:bg-brand-500 disabled:bg-surface-track disabled:text-ink-4 text-white text-[11px] font-semibold rounded-lg transition-colors focus-ring"
       aria-label={tokens > 0 ? `Finish and generate — estimated ${formatCost(estCost)}` : "Finish and generate"}
     >
       ✓ Finish & Generate{costLabel}
@@ -507,7 +507,7 @@ function FinishButton({ tokens, loading, onClick }: { tokens: number; loading: b
 
 function TokenBadge({ tokens, inputTokens, outputTokens }: { tokens: number; inputTokens?: number; outputTokens?: number }) {
   const [showTip, setShowTip] = useState(false);
-  const color = tokens < 4000 ? "text-emerald-600" : tokens < 12000 ? "text-amber-600" : "text-red-600";
+  const color = tokens < 4000 ? "text-brand-600" : tokens < 12000 ? "text-accent-600" : "text-red-600";
   const provider = getActiveProvider();
   const cost = estimateCost(provider, inputTokens ?? Math.round(tokens * 0.6), outputTokens ?? Math.round(tokens * 0.4));
   const pricing = PROVIDER_PRICING[provider];
@@ -525,7 +525,7 @@ function TokenBadge({ tokens, inputTokens, outputTokens }: { tokens: number; inp
     >
       ~{formatTokens(tokens)} tokens · {formatCost(cost)}
       {showTip && (
-        <span className="absolute bottom-full right-0 mb-1.5 bg-slate-900 text-white text-[10px] font-normal rounded-lg px-3 py-2 shadow-lg whitespace-nowrap z-50 leading-relaxed">
+        <span className="absolute bottom-full right-0 mb-1.5 bg-ink-1 text-white text-[10px] font-normal rounded-lg px-3 py-2 shadow-lg whitespace-nowrap z-50 leading-relaxed">
           <span className="block font-bold mb-1">{pricing.model} pricing</span>
           <span className="block">Input: ${pricing.inputPer1M}/1M tokens</span>
           <span className="block">Output: ${pricing.outputPer1M}/1M tokens</span>
@@ -534,7 +534,7 @@ function TokenBadge({ tokens, inputTokens, outputTokens }: { tokens: number; inp
               <span className="block mt-1 border-t border-white/20 pt-1">In: {formatTokens(inputTokens)} · Out: {formatTokens(outputTokens)}</span>
             </>
           )}
-          <span className="block mt-0.5 font-semibold text-emerald-400">Est. cost: {formatCost(cost)}</span>
+          <span className="block mt-0.5 font-semibold text-brand-400">Est. cost: {formatCost(cost)}</span>
         </span>
       )}
     </button>
@@ -555,18 +555,18 @@ function PromptSuggestions({ suggestions }: { suggestions: string[] }) {
   }
   useEffect(() => () => clearTimeout(copyTimerRef.current), []);
   return (
-    <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3">
+    <div className="bg-brand-50 border border-brand-200 rounded-xl p-3">
       <div className="flex items-center justify-between mb-2">
-        <p className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider">Improve Your Prompt</p>
+        <p className="text-[10px] font-bold text-brand-700 uppercase tracking-wider">Improve Your Prompt</p>
         <button onClick={copyAll}
           className={`text-[10px] font-semibold px-2.5 py-1 rounded-md transition-colors ${
-            copied ? "bg-emerald-600 text-white" : "bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
+            copied ? "bg-brand-600 text-white" : "bg-brand-100 text-brand-700 hover:bg-brand-200"
           }`}>
           {copied ? "✓ Copied" : "📋 Copy All"}
         </button>
       </div>
       {suggestions.map((s, i) => (
-        <p key={i} className="text-[11px] text-emerald-800 mb-1 last:mb-0">💡 {s}</p>
+        <p key={i} className="text-[11px] text-brand-800 mb-1 last:mb-0">💡 {s}</p>
       ))}
     </div>
   );
@@ -586,12 +586,12 @@ function ImportView({ mode, pasteText, setPasteText, linkUrl, setLinkUrl, linkLo
         {!importResult ? (
           <>
             <div className="flex items-center gap-2">
-              <button onClick={onBack} className="text-xs text-slate-400 hover:text-slate-600">← Back</button>
-              <p className="text-sm font-bold text-slate-700">
+              <button onClick={onBack} className="text-xs text-ink-3 hover:text-ink-2">← Back</button>
+              <p className="text-sm font-bold text-ink-body">
                 {mode === "paste" ? "Paste your AI conversation" : "Paste a chat share link"}
               </p>
             </div>
-            <p className="text-[11px] text-slate-400 leading-relaxed">
+            <p className="text-[11px] text-ink-3 leading-relaxed">
               {mode === "paste"
                 ? "Copy the full chat from ChatGPT, Claude, or Gemini and paste it below."
                 : "Paste a ChatGPT or Claude share link below. We'll fetch and parse it."}
@@ -599,19 +599,19 @@ function ImportView({ mode, pasteText, setPasteText, linkUrl, setLinkUrl, linkLo
             {mode === "paste" ? (
               <textarea value={pasteText} onChange={(e) => setPasteText(e.target.value)}
                 placeholder={"Paste conversation here...\n\nExample:\nDay 1 — Oslo: Vigeland Park, Opera House\nDay 2 — Bergen: Bryggen Wharf, Fløyen\n..."}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-violet-400 resize-none"
+                className="w-full bg-surface-2 border border-line rounded-xl px-4 py-3 text-sm text-ink-body placeholder:text-ink-3 focus:outline-none focus:border-brand-400 resize-none"
                 style={{ minHeight: 200 }} />
             ) : (
               <input type="url" value={linkUrl} onChange={(e) => setLinkUrl(e.target.value)}
                 placeholder="https://chatgpt.com/share/..."
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-amber-400" />
+                className="w-full bg-surface-2 border border-line rounded-xl px-4 py-3 text-sm text-ink-body placeholder:text-ink-3 focus:outline-none focus:border-accent-400" />
             )}
-            {linkLoading && <p className="text-xs text-slate-500 flex items-center gap-2"><span className="animate-spin">⏳</span>Fetching conversation...</p>}
+            {linkLoading && <p className="text-xs text-ink-2 flex items-center gap-2"><span className="animate-spin">⏳</span>Fetching conversation...</p>}
             {importError && (
               <div className="text-xs text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2 space-y-1">
                 <p>{importError}</p>
                 {mode === "link" && (
-                  <button onClick={onSwitchToPaste} className="text-[11px] text-violet-600 hover:text-violet-700 font-semibold">
+                  <button onClick={onSwitchToPaste} className="text-[11px] text-brand-700 hover:text-brand-700 font-semibold">
                     → Paste conversation text manually instead
                   </button>
                 )}
@@ -620,28 +620,28 @@ function ImportView({ mode, pasteText, setPasteText, linkUrl, setLinkUrl, linkLo
           </>
         ) : (
           <>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
-              <p className="text-sm font-bold text-emerald-800">{importResult.destinationName}</p>
+            <div className="bg-brand-50 border border-brand-200 rounded-xl p-4">
+              <p className="text-sm font-bold text-brand-800">{importResult.destinationName}</p>
               <div className="flex items-center gap-3 mt-1">
-                <span className="text-xs text-emerald-600">📅 {importResult.plan.duration}</span>
-                <span className="text-xs text-emerald-600">💰 {importResult.plan.costPerPerson}</span>
-                <span className="text-xs text-emerald-600">🏙 {importResult.cities.length} cities</span>
+                <span className="text-xs text-brand-600">📅 {importResult.plan.duration}</span>
+                <span className="text-xs text-brand-600">💰 {importResult.plan.costPerPerson}</span>
+                <span className="text-xs text-brand-600">🏙 {importResult.cities.length} cities</span>
               </div>
               {importResult.cities.length > 0 && (
-                <p className="text-[11px] text-emerald-600 mt-1">{importResult.cities.join(" → ")}</p>
+                <p className="text-[11px] text-brand-600 mt-1">{importResult.cities.join(" → ")}</p>
               )}
             </div>
             {importResult.promptSuggestions.length > 0 && (
               <PromptSuggestions suggestions={importResult.promptSuggestions} />
             )}
             {importResult.plan.days.map((day, i) => (
-              <div key={i} className="border border-slate-150 rounded-lg overflow-hidden">
-                <div className="px-3 py-1.5 bg-slate-50 border-b border-slate-100">
-                  <p className="text-[10px] font-bold text-slate-500 uppercase">{day.label}</p>
+              <div key={i} className="border border-line rounded-lg overflow-hidden">
+                <div className="px-3 py-1.5 bg-surface-2 border-b border-line">
+                  <p className="text-[10px] font-bold text-ink-2 uppercase">{day.label}</p>
                 </div>
                 <ul className="px-3 py-2 space-y-1">
                   {day.activities.map((a, j) => (
-                    <li key={j} className="text-xs text-slate-600 flex gap-2"><span className="text-slate-300">›</span>{a}</li>
+                    <li key={j} className="text-xs text-ink-2 flex gap-2"><span className="text-ink-4">›</span>{a}</li>
                   ))}
                 </ul>
               </div>
@@ -649,25 +649,25 @@ function ImportView({ mode, pasteText, setPasteText, linkUrl, setLinkUrl, linkLo
           </>
         )}
       </div>
-      <div className="px-5 py-4 border-t border-slate-100 shrink-0">
+      <div className="px-5 py-4 border-t border-line shrink-0">
         {!importResult ? (
           <button
             onClick={mode === "paste" ? onParse : onFetchLink}
             disabled={mode === "paste" ? !pasteText.trim() : !linkUrl.trim() || linkLoading}
-            className={`w-full py-2.5 text-white text-sm font-semibold rounded-xl transition-colors disabled:bg-slate-200 disabled:text-slate-400 ${
-              mode === "paste" ? "bg-violet-600 hover:bg-violet-500" : "bg-amber-600 hover:bg-amber-500"
+            className={`w-full py-2.5 text-white text-sm font-semibold rounded-xl transition-colors disabled:bg-line disabled:text-ink-3 ${
+              mode === "paste" ? "bg-brand-700 hover:bg-brand-600" : "bg-accent-600 hover:bg-accent-500"
             }`}>
             {mode === "link" && linkLoading ? "Fetching..." : mode === "paste" ? "Parse Conversation" : "Fetch & Parse"}
           </button>
         ) : saved ? (
           <div className="flex items-center gap-3">
-            <span className="text-emerald-600 text-sm font-semibold flex items-center gap-1.5">✅ Plan saved!</span>
-            <button onClick={onBack} className="flex-1 py-2.5 border border-slate-200 text-slate-600 text-sm font-semibold rounded-xl hover:bg-slate-50">Import Another</button>
+            <span className="text-brand-600 text-sm font-semibold flex items-center gap-1.5">✅ Plan saved!</span>
+            <button onClick={onBack} className="flex-1 py-2.5 border border-line text-ink-2 text-sm font-semibold rounded-xl hover:bg-surface-2">Import Another</button>
           </div>
         ) : (
           <div className="flex gap-2">
-            <button onClick={onBack} className="flex-1 py-2.5 border border-slate-200 text-slate-600 text-sm font-semibold rounded-xl hover:bg-slate-50">← Edit</button>
-            <button onClick={onAccept} className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-xl transition-colors">✨ Review & Save</button>
+            <button onClick={onBack} className="flex-1 py-2.5 border border-line text-ink-2 text-sm font-semibold rounded-xl hover:bg-surface-2">← Edit</button>
+            <button onClick={onAccept} className="flex-1 py-2.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold rounded-xl transition-colors">✨ Review & Save</button>
           </div>
         )}
       </div>

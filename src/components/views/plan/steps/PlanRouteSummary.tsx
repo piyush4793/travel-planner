@@ -78,7 +78,7 @@ function PlanRouteSummaryInner({ selection, source, stopDays, cost, costIcon, co
         <div className="text-right leading-tight">
           <span className="font-display text-xl font-semibold text-ink-1">~{total} days</span>
           {cost ? (
-            <span className="mt-0.5 block whitespace-nowrap text-[13px] font-bold text-emerald-800">
+            <span className="mt-0.5 block whitespace-nowrap text-[13px] font-bold text-brand-800">
               ~{cost}{" "}
               <span title={costLabel} aria-label={costLabel}>{costIcon}</span>
             </span>
@@ -98,7 +98,7 @@ function PlanRouteSummaryInner({ selection, source, stopDays, cost, costIcon, co
                   connector that grows through the row gap to the next dot. */}
               <div className="flex flex-col items-center">
                 <span
-                  className={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full ${isAnchor ? "bg-emerald-600" : "bg-ink-4"}`}
+                  className={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full ${isAnchor ? "bg-brand-600" : "bg-ink-4"}`}
                   aria-hidden="true"
                 />
                 {!last && <span className="mt-1 w-px grow bg-line-strong" aria-hidden="true" />}
@@ -110,7 +110,7 @@ function PlanRouteSummaryInner({ selection, source, stopDays, cost, costIcon, co
                   <p className="flex items-center gap-1.5 truncate text-[15px] font-semibold leading-tight text-ink-1">
                     {leg.name}
                     {isAnchor && multi && (
-                      <span className="rounded-full bg-emerald-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-emerald-700">Anchor</span>
+                      <span className="rounded-full bg-brand-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-brand-700">Anchor</span>
                     )}
                   </p>
                   <p className="mt-0.5 truncate text-[11px] text-ink-3">{leg.region}</p>

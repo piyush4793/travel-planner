@@ -27,14 +27,14 @@ export default function CinematicHeader({ title, duration, isMobile, homeCity, s
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             <h2 className={`${isMobile ? "text-base" : "text-xl"} font-black truncate`}>{title}</h2>
-            <span className="text-[10px] text-gray-400 shrink-0">{duration}</span>
+            <span className="text-[10px] text-stone-400 shrink-0">{duration}</span>
           </div>
         </div>
         <div className="flex items-center gap-1.5 shrink-0">
           {/* Playback controls live once in the persistent footer bar (all screens); the header keeps only Close so there's no duplicate control cluster. */}
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm focus-ring"
+            className="text-stone-400 hover:text-white hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-lg transition-colors text-sm focus-ring"
             aria-label="Close"
           >✕</button>
         </div>
@@ -44,8 +44,8 @@ export default function CinematicHeader({ title, duration, isMobile, homeCity, s
       <div className="flex items-center gap-1 flex-wrap">
         {showOrigin && (
           <>
-            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mr-1">{homeCity}</span>
-            <span className="text-[10px] text-gray-600">✈</span>
+            <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wide mr-1">{homeCity}</span>
+            <span className="text-[10px] text-stone-500">✈</span>
           </>
         )}
         {stops.map((stop, i) => (
@@ -53,8 +53,8 @@ export default function CinematicHeader({ title, duration, isMobile, homeCity, s
             <span
               title={stop.name}
               className={`inline-block rounded-full transition-[width,height,background-color,box-shadow] duration-500 ${
-                i < activeCityIdx   ? "w-2 h-2 bg-blue-400" :
-                i === activeCityIdx ? "w-3 h-3 bg-white ring-2 ring-blue-400 ring-offset-1 ring-offset-gray-950" :
+                i < activeCityIdx   ? "w-2 h-2 bg-brand-400" :
+                i === activeCityIdx ? "w-3 h-3 bg-white ring-2 ring-brand-400 ring-offset-1 ring-offset-stone-950" :
                                      "w-2 h-2 bg-white/15"
               }`}
             />
@@ -65,8 +65,8 @@ export default function CinematicHeader({ title, duration, isMobile, homeCity, s
         ))}
         {showOrigin && (
           <>
-            <span className="text-[10px] text-gray-600 ml-0.5">✈</span>
-            <span className="text-[10px] font-bold text-gray-500 ml-0.5">{homeCity}</span>
+            <span className="text-[10px] text-stone-500 ml-0.5">✈</span>
+            <span className="text-[10px] font-bold text-stone-400 ml-0.5">{homeCity}</span>
           </>
         )}
       </div>

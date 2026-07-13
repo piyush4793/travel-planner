@@ -36,8 +36,8 @@ describe("PillGroup", () => {
     render(<PillGroup options={options} value="asia" onChange={vi.fn()} />);
 
     const active = screen.getByRole("radio", { name: "Asia" });
-    expect(active).toHaveClass("bg-white", "text-emerald-800", "focus-ring-emerald");
-    expect(screen.getByRole("radio", { name: "All" })).not.toHaveClass("bg-white", "text-emerald-800");
+    expect(active).toHaveClass("bg-brand-700", "text-white", "focus-ring-emerald");
+    expect(screen.getByRole("radio", { name: "All" })).not.toHaveClass("bg-brand-700", "text-white");
   });
 
   it("calls onChange with the clicked key", async () => {

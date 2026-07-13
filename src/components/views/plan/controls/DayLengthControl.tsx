@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useConfirm } from "@/components/shared/ConfirmDialog";
 import { getRangePercent } from "@/components/country/panel/utils";
+import { BRAND } from "@/core/theme/palette";
 
 type Props = {
   /** Committed day count driving the live plan. */
@@ -112,7 +113,7 @@ export default function DayLengthControl({
   };
 
   return (
-    <div className="rounded-2xl border border-line bg-white p-4 shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
+    <div className="rounded-2xl border border-line bg-surface-1 p-4 shadow-[0_1px_3px_rgba(20,40,30,0.05)]">
       <div className="flex items-baseline justify-between">
         <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink-4">Trip length</span>
         <span>
@@ -132,8 +133,8 @@ export default function DayLengthControl({
           onTouchEnd={(e) => void commit(Number((e.target as HTMLInputElement).value))}
           onKeyUp={(e) => void commit(Number((e.target as HTMLInputElement).value))}
           aria-label="Trip length in days"
-          className="focus-ring-emerald w-full accent-emerald-700"
-          style={{ background: `linear-gradient(to right, #047857 ${sliderPercent}%, #e4dece ${sliderPercent}%)` }}
+          className="focus-ring-emerald w-full accent-brand-700"
+          style={{ background: `linear-gradient(to right, ${BRAND[700]} ${sliderPercent}%, #e4dece ${sliderPercent}%)` }}
         />
         <div
           className="pointer-events-none absolute -top-0.5 h-3 w-0.5 bg-ink-4"
@@ -150,7 +151,7 @@ export default function DayLengthControl({
         {feedback ? (
           <span
             className={`text-[11px] font-semibold ${
-              feedback.tone === "drop" ? "text-amber-600" : feedback.tone === "add" ? "text-emerald-700" : "text-ink-2"
+              feedback.tone === "drop" ? "text-accent-600" : feedback.tone === "add" ? "text-brand-700" : "text-ink-2"
             }`}
           >
             {feedback.tone === "drop" ? "⚠️ " : feedback.tone === "add" ? "✨ " : "· "}
@@ -164,7 +165,7 @@ export default function DayLengthControl({
         {daysPinned && (
           <button
             onClick={onReset}
-            className="focus-ring-emerald shrink-0 rounded text-[11px] font-semibold text-emerald-700 transition-colors hover:text-emerald-900"
+            className="focus-ring-emerald shrink-0 rounded text-[11px] font-semibold text-brand-700 transition-colors hover:text-brand-900"
           >
             ↺ Reset ({recommendedDays}d)
           </button>

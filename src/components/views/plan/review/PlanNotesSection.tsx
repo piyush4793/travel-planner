@@ -47,10 +47,10 @@ function PlanNotesSectionInner({ notes, onSave }: Props) {
   };
 
   const textareaClass =
-    "focus-ring-emerald w-full resize-none rounded-xl border border-line bg-surface-1 text-[13px] leading-relaxed text-ink-1 outline-none transition-colors placeholder:text-ink-4 focus:border-emerald-400";
+    "focus-ring-emerald w-full resize-none rounded-xl border border-line bg-surface-1 text-[13px] leading-relaxed text-ink-1 outline-none transition-colors placeholder:text-ink-4 focus:border-brand-400";
 
   const savedFlash = (
-    <span className={`text-[11px] font-medium text-emerald-600 transition-opacity duration-300 ${saved ? "opacity-100" : "opacity-0"}`}>
+    <span className={`text-[11px] font-medium text-brand-600 transition-opacity duration-300 ${saved ? "opacity-100" : "opacity-0"}`}>
       ✓ Saved
     </span>
   );
@@ -62,7 +62,7 @@ function PlanNotesSectionInner({ notes, onSave }: Props) {
         <button
           type="button"
           onClick={() => setExpanded(true)}
-          className="focus-ring-emerald flex min-h-[32px] items-center gap-1 rounded-lg px-1.5 py-1 text-[11px] font-semibold text-emerald-700 transition-colors hover:bg-emerald-50"
+          className="focus-ring-emerald flex min-h-[32px] items-center gap-1 rounded-lg px-1.5 py-1 text-[11px] font-semibold text-brand-700 transition-colors hover:bg-brand-50"
           aria-label="Expand notes"
           title="Expand notes"
         >
@@ -95,9 +95,9 @@ function PlanNotesSectionInner({ notes, onSave }: Props) {
           aria-label="Expanded notes"
           onKeyDown={(e) => { if (e.key === "Escape") setExpanded(false); }}
         >
-          <div className="flex h-[90vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-line bg-white shadow-2xl sm:h-[80vh] sm:rounded-2xl" onClick={(e) => e.stopPropagation()}>
+          <div className="flex h-[90vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-line bg-surface-1 shadow-2xl sm:h-[80vh] sm:rounded-2xl" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between border-b border-line bg-surface-2 px-5 py-3">
-              <h3 className="text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-800">Notes · private to you</h3>
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.16em] text-brand-800">Notes · private to you</h3>
               <button
                 type="button"
                 onClick={() => setExpanded(false)}

@@ -35,7 +35,7 @@ export default function PlanCountrySwitcher({ units, activeIndex, onSelect, vari
   const trigger =
     variant === "dark"
       ? "flex min-w-0 max-w-full items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-white transition-colors hover:bg-white/15 focus-ring-emerald"
-      : "flex min-w-0 max-w-full items-center gap-2 rounded-full border border-line-strong bg-white px-3.5 py-1.5 text-ink-1 transition-colors hover:border-emerald-500 hover:bg-emerald-50 focus-ring-emerald";
+      : "flex min-w-0 max-w-full items-center gap-2 rounded-full border border-line-strong bg-surface-1 px-3.5 py-1.5 text-ink-1 transition-colors hover:border-brand-500 hover:bg-brand-50 focus-ring-emerald";
 
   return (
     <PlanMenu
@@ -71,10 +71,10 @@ export default function PlanCountrySwitcher({ units, activeIndex, onSelect, vari
                 aria-checked={i === safe}
                 onClick={() => { onSelect(i); close(); }}
                 className={`flex w-full items-center gap-3 px-4 py-3 text-left transition-colors focus-ring-emerald ${
-                  i === safe ? "bg-emerald-50" : "hover:bg-surface-1"
+                  i === safe ? "bg-brand-50" : "hover:bg-surface-1"
                 }`}
               >
-                <span className="w-4 shrink-0 text-emerald-600" aria-hidden="true">{i === safe ? "✓" : ""}</span>
+                <span className="w-4 shrink-0 text-brand-600" aria-hidden="true">{i === safe ? "✓" : ""}</span>
                 <span aria-hidden="true">{flagFor(u.name)}</span>
                 <span className="min-w-0 flex-1 line-clamp-1 font-display text-[15px] font-semibold text-ink-1">{u.name}</span>
                 <span className="shrink-0 whitespace-nowrap text-[12px] font-medium text-ink-3">

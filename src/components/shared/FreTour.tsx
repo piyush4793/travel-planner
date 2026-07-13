@@ -23,7 +23,7 @@ type TourStep = {
 
 /** Luxury emerald/ivory gradient palette — one on-brand hero look with subtle
  *  hue shifts per card, matching the app's Plan/Trips surfaces. */
-const HERO_GRADIENT = "from-emerald-700 via-emerald-800 to-teal-900";
+const HERO_GRADIENT = "from-brand-700 via-brand-800 to-brand-950";
 
 const STEPS: TourStep[] = [
   {
@@ -55,7 +55,7 @@ const STEPS: TourStep[] = [
     emoji: "\u{1F3AC}",
     title: "Cinematic Fly-throughs",
     body: "Generate an itinerary for any country, then watch an animated 3D fly-through of your entire trip on the map \u2014 city by city, with realistic vehicles and route trails.",
-    gradient: "from-emerald-800 via-teal-800 to-cyan-900",
+    gradient: "from-brand-800 via-brand-900 to-brand-950",
     floaters: ["\u{1F3A5}", "\u{1F30C}", "\u{1F681}", "\u{1F682}", "\u{1F697}", "\u26F5", "\u{1F3DE}\uFE0F", "\u{1F304}"],
   },
   {
@@ -71,7 +71,7 @@ const STEPS: TourStep[] = [
     emoji: "\u{1F4F2}",
     title: "Take Roamwise Anywhere",
     body: "",
-    gradient: "from-teal-600 via-emerald-700 to-emerald-900",
+    gradient: "from-brand-600 via-brand-700 to-brand-900",
     floaters: ["\u{1F4F1}", "\u2708\uFE0F", "\u{1F5FA}\uFE0F", "\u{1F9F3}", "\u{1F30E}", "\u{1F3DD}\uFE0F"],
   },
   {
@@ -79,7 +79,7 @@ const STEPS: TourStep[] = [
     emoji: "\u2728",
     title: "You\u2019re Ready to Explore!",
     body: "Start by planning your next trip or discovering new countries. Your next adventure is waiting.",
-    gradient: "from-emerald-600 via-teal-600 to-cyan-700",
+    gradient: "from-brand-600 via-brand-700 to-brand-800",
     floaters: ["\u{1F389}", "\u{1F30F}", "\u2708\uFE0F", "\u{1F5FA}\uFE0F", "\u26F0\uFE0F", "\u{1F3D6}\uFE0F", "\u{1F30A}", "\u2B50"],
   },
 ];
@@ -294,7 +294,7 @@ function HeroCard({ step, index, total, isLast, onNext, onPrev, onSkip }: {
             {isLast && (
               <button
                 onClick={onNext}
-                className="w-full py-3 bg-white text-emerald-900 text-sm font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] active:scale-95 focus-ring"
+                className="w-full py-3 bg-surface-1 text-brand-900 text-sm font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] active:scale-95 focus-ring"
               >
                 {"Let\u2019s Go! \u{1F30D}"}
               </button>
@@ -310,7 +310,7 @@ function HeroCard({ step, index, total, isLast, onNext, onPrev, onSkip }: {
                 {!isLast && (
                   <button
                     onClick={onNext}
-                    className="px-6 py-2.5 bg-white text-emerald-900 text-xs font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-105 transition-[transform,box-shadow] active:scale-95 focus-ring"
+                    className="px-6 py-2.5 bg-surface-1 text-brand-900 text-xs font-bold rounded-full whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-105 transition-[transform,box-shadow] active:scale-95 focus-ring"
                   >
                     {"Next →"}
                   </button>
@@ -343,7 +343,7 @@ function SpotlightCard({ step, targetRect, index, total, onNext, onPrev, onSkip 
       className={`absolute ${targetRect ? "" : "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"} w-[280px] max-w-[calc(100vw-24px)]`}
       style={targetRect ? style : undefined}
     >
-      <div className="rounded-2xl shadow-2xl shadow-emerald-950/25 overflow-hidden bg-surface-1 border border-line p-5 text-ink-body" style={{ backgroundColor: "#faf8f1" }}>
+      <div className="rounded-2xl shadow-2xl shadow-brand-950/25 overflow-hidden bg-surface-1 border border-line p-5 text-ink-body" style={{ backgroundColor: "#faf8f1" }}>
           <div>
             <div className="flex items-center justify-between gap-3 mb-2">
               <div className="text-2xl leading-none" aria-hidden="true">{step.emoji}</div>
@@ -361,7 +361,7 @@ function SpotlightCard({ step, targetRect, index, total, onNext, onPrev, onSkip 
               <button onClick={onPrev} className="px-3 py-1.5 text-[11px] font-semibold text-ink-3 hover:text-ink-1 transition-colors focus-ring-emerald rounded">
                 Back
               </button>
-              <button onClick={onNext} className="px-5 py-1.5 bg-emerald-700 text-white text-[11px] font-bold rounded-full whitespace-nowrap transition-[transform,box-shadow,background-color] shadow-sm hover:bg-emerald-800 hover:shadow hover:scale-105 active:scale-95 focus-ring-emerald">
+              <button onClick={onNext} className="px-5 py-1.5 bg-brand-700 text-white text-[11px] font-bold rounded-full whitespace-nowrap transition-[transform,box-shadow,background-color] shadow-sm hover:bg-brand-800 hover:shadow hover:scale-105 active:scale-95 focus-ring-emerald">
                 {"Next →"}
               </button>
             </div>
@@ -402,10 +402,10 @@ function InstallCard({ step, canPrompt, isInstalled, isIOS, installing, onInstal
               <button
                 onClick={onInstall}
                 disabled={installing}
-                className="w-full mb-4 px-5 py-3 bg-white text-emerald-900 text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] active:scale-95 flex items-center justify-center gap-2 disabled:opacity-70 focus-ring"
+                className="w-full mb-4 px-5 py-3 bg-surface-1 text-brand-900 text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] active:scale-95 flex items-center justify-center gap-2 disabled:opacity-70 focus-ring"
               >
                 {installing ? (
-                  <><span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-emerald-800 border-t-transparent" /> {"Installing\u2026"}</>
+                  <><span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-brand-800 border-t-transparent" /> {"Installing\u2026"}</>
                 ) : (
                   <>{"\u2B07\uFE0F"} Install Roamwise</>
                 )}
@@ -552,7 +552,7 @@ function ProgressBar({ current, total, light }: { current: number; total: number
         aria-valuenow={current + 1}
       >
         <div
-          className={`h-full rounded-full transition-[width] duration-500 ${light ? "bg-white" : "bg-emerald-700"}`}
+          className={`h-full rounded-full transition-[width] duration-500 ${light ? "bg-surface-1" : "bg-brand-700"}`}
           style={{ width: `${pct}%` }}
         />
       </div>

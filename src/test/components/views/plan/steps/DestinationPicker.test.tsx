@@ -319,9 +319,9 @@ describe("DestinationPicker", () => {
       expect(within(summerToken).getByRole("img", { name: /great in July/i })).toBeInTheDocument();
       const winterToken = screen.getByRole("button", { name: "Remove WinterLand" }).closest("span")!;
       expect(within(winterToken).getByRole("img", { name: /avoid July/i })).toBeInTheDocument();
-      // The off-season token is tinted amber; the good one is not.
-      expect(winterToken.className).toMatch(/amber/);
-      expect(summerToken.className).not.toMatch(/amber/);
+      // The off-season token is tinted with the accent (amber) color; the good one is not.
+      expect(winterToken.className).toMatch(/accent/);
+      expect(summerToken.className).not.toMatch(/accent/);
     });
   });
 
