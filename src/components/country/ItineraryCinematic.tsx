@@ -407,10 +407,12 @@ export default function ItineraryCinematic({ route, mainMapRef, onClose }: Props
         }
       }
 
-      // Combo country markers (purple glow dots)
+      // Combo country markers — amber (the app's secondary accent) so the
+      // optional "pairs-with" stops read as on-theme and stay distinct from the
+      // emerald primary-route dots.
       for (const c of (comboCountries ?? [])) {
         const el = document.createElement("div");
-        el.style.cssText = "width:12px;height:12px;background:#a855f7;border:2.5px solid white;border-radius:50%;pointer-events:none;box-shadow:0 0 0 4px rgba(168,85,247,0.3);";
+        el.style.cssText = `width:12px;height:12px;background:${ACCENT[500]};border:2.5px solid white;border-radius:50%;pointer-events:none;box-shadow:0 0 0 4px ${ACCENT[500]}4d;`;
         allMarkers.push(new maplibregl.Marker({ element: el }).setLngLat([c.lng, c.lat]).addTo(map));
       }
 

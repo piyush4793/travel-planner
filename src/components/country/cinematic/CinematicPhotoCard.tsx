@@ -1,3 +1,5 @@
+import { BRAND } from "../../../core/theme/palette";
+
 type Props = {
   /** Whether the city card is revealed (fades in after arrival). */
   show: boolean;
@@ -54,7 +56,7 @@ export default function CinematicPhotoCard({ show, photos, slideIdx, stopName, t
       {photos.length === 0 && (
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0f172a 100%)" }}
+          style={{ background: `linear-gradient(135deg, ${BRAND[950]} 0%, ${BRAND[900]} 60%, ${BRAND[950]} 100%)` }}
         />
       )}
 
@@ -80,7 +82,7 @@ export default function CinematicPhotoCard({ show, photos, slideIdx, stopName, t
               style={{
                 width: di === activeDayIdx ? "20px" : "6px",
                 height: "6px",
-                background: di === activeDayIdx ? "white" : di < activeDayIdx ? "#60a5fa" : "rgba(255,255,255,0.3)",
+                background: di === activeDayIdx ? "white" : di < activeDayIdx ? BRAND[300] : "rgba(255,255,255,0.3)",
               }}
             />
           ))}

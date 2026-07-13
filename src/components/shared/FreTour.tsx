@@ -343,7 +343,7 @@ function SpotlightCard({ step, targetRect, index, total, onNext, onPrev, onSkip 
       className={`absolute ${targetRect ? "" : "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"} w-[280px] max-w-[calc(100vw-24px)]`}
       style={targetRect ? style : undefined}
     >
-      <div className="rounded-2xl shadow-2xl shadow-brand-950/25 overflow-hidden bg-surface-1 border border-line p-5 text-ink-body" style={{ backgroundColor: "#faf8f1" }}>
+      <div className="rounded-2xl shadow-2xl shadow-brand-950/25 overflow-hidden bg-surface-1 border border-line p-5 text-ink-body">
           <div>
             <div className="flex items-center justify-between gap-3 mb-2">
               <div className="text-2xl leading-none" aria-hidden="true">{step.emoji}</div>
