@@ -296,4 +296,44 @@ describe("buildItineraryHtml — shared Export/Share template", () => {
     expect(html).toContain("Pure veg state");
     expect(html).toContain("Sadya veg feast");
   });
+
+  it("renders the complete static feasibility pattern for an enriched day", async () => {
+    const { buildItineraryHtml } = await import("@/utils/pdfExport.ts");
+    const plan: TripPlan = {
+      duration: "1 day",
+      costPerPerson: "₹1L",
+      note: "note",
+      days: [
+        {
+          label: "Day 1 — Oslo",
+          theme: "City Icons",
+          pace: "moderate",
+          planNote: "All walkable — buy a 24h Ruter ticket.",
+          activities: ["Vigeland Park (Free)"],
+          details: [
+            { name: "Vigeland Park — 212 works", priority: "must-see", duration: "1.5–2h", cost: "Free", tip: "Go by 9am." },
+            { name: "Karl Johans Gate", priority: "optional", duration: "45min", cost: "Free" },
+          ],
+          stays: [
+            { name: "Citybox Oslo", price: "₹9–14k", tier: "budget" },
+            { name: "Thon Opera", price: "₹16–24k", tier: "mid" },
+            { name: "The Thief", price: "₹40–70k", tier: "premium" },
+          ],
+        },
+      ],
+    };
+    const html = buildItineraryHtml(plan, country, "India");
+    // Pace badge, plan note, priority tag, duration/cost, tip.
+    expect(html).toContain("Moderate");
+    expect(html).toContain("buy a 24h Ruter ticket");
+    expect(html).toContain("MUST-SEE");
+    expect(html).toContain("OPTIONAL");
+    expect(html).toContain("1.5–2h · Free");
+    expect(html).toContain("💡 Go by 9am.");
+    // All six tiered stays, grouped.
+    expect(html).toContain("Where to stay · 3 options");
+    expect(html).toContain("Budget");
+    expect(html).toContain("Premium");
+    expect(html).toContain("The Thief (₹40–70k)");
+  });
 });

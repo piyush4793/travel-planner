@@ -1,4 +1,4 @@
-import type { TripPlan, DayEntry } from "../core/utils/tripPlans";
+import type { TripPlan, DayEntry, ActivityDetail, ActivityPriority, HotelStay } from "../core/utils/tripPlans";
 import type { Country, DietNotes } from "../core/types";
 import { buildPdfModel, type PdfModel, type PdfRouteStop, type PdfSection } from "./pdfModel";
 import { getCountryFlag } from "./countryFlags";
@@ -85,20 +85,85 @@ function extractCityRoute(days: DayEntry[]): string[] {
   return cities;
 }
 
+const PACE_LABEL: Record<string, string> = { relaxed: "Relaxed", moderate: "Moderate", packed: "Packed" };
+const PRI_TAG: Record<ActivityPriority, string> = {
+  "must-see": "MUST-SEE",
+  recommended: "RECOMMENDED",
+  optional: "OPTIONAL",
+};
+
+function paceHtml(pace: string): string {
+  const label = PACE_LABEL[pace.toLowerCase()] ?? pace.charAt(0).toUpperCase() + pace.slice(1);
+  const key = PACE_LABEL[pace.toLowerCase()] ? pace.toLowerCase() : "other";
+  return `<span class="pace pace-${key}">${esc(label)}</span>`;
+}
+
+/** One rich activity row: priority tag · name · duration/cost · tip. */
+function activityHtml(act: ActivityDetail): string {
+  const dash = act.name.indexOf(" — ");
+  const name = dash > 0 ? act.name.slice(0, dash) : act.name;
+  const desc = dash > 0 ? act.name.slice(dash + 3) : "";
+  const tag = act.priority ? `<span class="pri pri-${act.priority}">${PRI_TAG[act.priority]}</span>` : "";
+  const right = [act.duration, act.cost].filter(Boolean).map((s) => esc(s as string)).join(" · ");
+  return `<li class="act">
+        <div class="act-main">
+          <span class="act-name">${tag}<strong>${esc(name)}</strong>${desc ? ` — ${esc(desc)}` : ""}</span>
+          ${right ? `<span class="act-meta">${right}</span>` : ""}
+        </div>
+        ${act.tip ? `<div class="act-tip">💡 ${esc(act.tip)}</div>` : ""}
+      </li>`;
+}
+
+/** Group tiered stays budget → mid → premium (untiered kept last). */
+function groupStays(stays: HotelStay[]): { label: string; items: HotelStay[] }[] {
+  const groups: { label: string; items: HotelStay[] }[] = [];
+  for (const [tier, label] of [["budget", "Budget"], ["mid", "Mid"], ["premium", "Premium"]] as const) {
+    const items = stays.filter((s) => s.tier === tier);
+    if (items.length) groups.push({ label, items });
+  }
+  const untiered = stays.filter((s) => !s.tier);
+  if (untiered.length) groups.push({ label: "Stays", items: untiered });
+  return groups;
+}
+
+/** The complete, static "Where to stay" block (all tiers) — or the flat pill fallback. */
+function staysHtml(day: DayEntry): string {
+  if (day.stays && day.stays.length > 0) {
+    const rows = groupStays(day.stays)
+      .map(
+        (g) =>
+          `<p class="stay-row"><span class="stay-tier">${esc(g.label)}</span> ${g.items
+            .map((s) => `${esc(s.name)} (${esc(s.price)})`)
+            .join(" · ")}</p>`,
+      )
+      .join("");
+    return `<div class="stays"><span class="stays-title">Where to stay · ${day.stays.length} options</span>${rows}</div>`;
+  }
+  if (day.hotels?.length) {
+    return `<div class="hotels">${day.hotels.map((h) => `<span class="hotel">🏨 ${esc(h)}</span>`).join(" ")}</div>`;
+  }
+  return "";
+}
+
 function dayHtml(day: DayEntry): string {
+  const rich = day.details && day.details.length > 0;
+  const items = rich
+    ? day.details!.map(activityHtml).join("\n        ")
+    : day.activities.map((a) => `<li class="act-simple">${esc(a)}</li>`).join("\n        ");
   return `
     <div class="day">
       <div class="day-header">
         <span class="day-label">${esc(day.label)}</span>
         ${day.theme ? `<span class="day-theme">${esc(day.theme)}</span>` : ""}
+        ${day.pace ? paceHtml(day.pace) : ""}
       </div>
-      <ul class="activities">
-        ${day.activities.map((a) => `<li>${esc(a)}</li>`).join("\n        ")}
-      </ul>
-      ${day.hotels?.length ? `
-      <div class="hotels">
-        ${day.hotels.map((h) => `<span class="hotel">🏨 ${esc(h)}</span>`).join(" ")}
-      </div>` : ""}
+      <div class="day-body">
+        ${day.planNote ? `<p class="plan-note"><span class="plan-note-label">Plan</span> ${esc(day.planNote)}</p>` : ""}
+        <ul class="activities${rich ? " activities-rich" : ""}">
+        ${items}
+        </ul>
+      </div>
+      ${staysHtml(day)}
     </div>
   `;
 }
@@ -211,13 +276,34 @@ function buildPrintHtml(model: PdfModel, interactive: boolean): string {
     .section-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: ${BRAND[600]}; }
     .section-name { font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: 19px; font-weight: 700; color: ${BRAND[900]}; margin: 2px 0; }
     .section-meta { font-size: 12px; color: #5b6b64; }
-    .day { margin-bottom: 16px; break-inside: avoid; }
-    .day-header { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f4f2ea; border: 1px solid #e6e2d5; border-radius: 6px 6px 0 0; }
+    .day { margin-bottom: 16px; break-inside: avoid; border: 1px solid #e6e2d5; border-radius: 8px; overflow: hidden; }
+    .day-header { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f4f2ea; border-bottom: 1px solid #e6e2d5; }
     .day-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #3f4a44; }
     .day-theme { font-size: 10px; font-weight: 600; color: ${BRAND[700]}; background: ${BRAND[100]}; padding: 2px 8px; border-radius: 99px; }
-    .activities { list-style: none; padding: 10px 12px; border: 1px solid #e6e2d5; border-top: none; border-radius: 0 0 6px 6px; background: #fff; }
-    .activities li { font-size: 13px; padding: 4px 0; padding-left: 16px; position: relative; color: #33403a; }
-    .activities li::before { content: "›"; position: absolute; left: 0; color: ${BRAND[500]}; font-weight: bold; }
+    .pace { margin-left: auto; font-size: 9px; font-weight: 700; letter-spacing: 0.3px; padding: 2px 9px; border-radius: 99px; }
+    .pace-relaxed { color: ${BRAND[800]}; background: ${BRAND[50]}; border: 1px solid ${BRAND[200]}; }
+    .pace-moderate, .pace-packed, .pace-other { color: ${ACCENT[800]}; background: ${ACCENT[50]}; border: 1px solid ${ACCENT[200]}; }
+    .day-body { padding: 10px 12px; background: #fff; }
+    .plan-note { font-size: 12px; font-style: italic; color: #5b6b64; margin-bottom: 9px; line-height: 1.45; }
+    .plan-note-label { font-style: normal; font-weight: 700; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: #8a968f; margin-right: 6px; }
+    .activities { list-style: none; }
+    .activities li.act-simple { font-size: 13px; padding: 4px 0; padding-left: 16px; position: relative; color: #33403a; }
+    .activities li.act-simple::before { content: "›"; position: absolute; left: 0; color: ${BRAND[500]}; font-weight: bold; }
+    .activities-rich li.act { padding: 6px 0; border-bottom: 1px solid #f0ede3; }
+    .activities-rich li.act:last-child { border-bottom: none; }
+    .act-main { display: flex; align-items: baseline; gap: 10px; }
+    .act-name { font-size: 13px; color: #33403a; flex: 1; }
+    .act-name strong { color: #1c2b26; }
+    .act-meta { font-size: 11px; color: #5b6b64; white-space: nowrap; }
+    .pri { display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.5px; padding: 1px 6px; border-radius: 4px; margin-right: 7px; vertical-align: middle; }
+    .pri-must-see { color: #fff; background: ${BRAND[700]}; }
+    .pri-recommended { color: ${BRAND[800]}; background: ${BRAND[100]}; }
+    .pri-optional { color: #5b6b64; background: #ece9de; }
+    .act-tip { font-size: 11px; font-style: italic; color: #5b6b64; margin-top: 3px; padding-left: 2px; }
+    .stays { padding: 10px 12px; background: #faf8f1; border-top: 1px solid #e6e2d5; }
+    .stays-title { display: block; font-size: 9px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #5b6b64; margin-bottom: 6px; }
+    .stay-row { font-size: 12px; color: #33403a; margin: 3px 0; }
+    .stay-tier { display: inline-block; min-width: 60px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: ${BRAND[700]}; }
     .hotels { margin-top: 4px; padding: 6px 12px; }
     .hotel { font-size: 11px; color: #5b6b64; margin-right: 12px; }
     .note { margin-top: 16px; padding: 12px 16px; background: #f4f2ea; border-radius: 8px; font-size: 12px; color: #5b6b64; border: 1px solid #e6e2d5; }

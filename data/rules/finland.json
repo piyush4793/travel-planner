@@ -46,7 +46,96 @@
     "explorer"
   ],
   "stopoverNote": null,
-  "links": [],
+  "links": [
+    {
+      "label": "VR — Finnish rail, including Helsinki–Rovaniemi night train",
+      "url": "https://www.vr.fi/en"
+    },
+    {
+      "label": "Matkahuolto — intercity buses and Lapland coach tickets",
+      "url": "https://www.matkahuolto.fi/en"
+    },
+    {
+      "label": "HSL — Helsinki metro, tram, bus and Suomenlinna ferry tickets",
+      "url": "https://www.hsl.fi/en"
+    },
+    {
+      "label": "Finnair — domestic flights to Rovaniemi, Kittilä and Ivalo",
+      "url": "https://www.finnair.com/"
+    },
+    {
+      "label": "Bolt — ride-hailing in Helsinki and major Finnish cities",
+      "url": "https://bolt.eu/en/cities/helsinki/"
+    },
+    {
+      "label": "Yango — taxi / ride-hailing in Finland",
+      "url": "https://yango.com/en_fi/"
+    },
+    {
+      "label": "Taksi Helsinki — official Helsinki taxi dispatch",
+      "url": "https://www.taksihelsinki.fi/en/"
+    },
+    {
+      "label": "Rentalcars — compare Finland car hire; winter tyres are essential in Lapland",
+      "url": "https://www.rentalcars.com/"
+    },
+    {
+      "label": "GetYourGuide Finland — city tickets, saunas and Lapland experiences",
+      "url": "https://www.getyourguide.com/finland-l168007/"
+    },
+    {
+      "label": "Lapland Safaris — husky, reindeer, snowmobile and aurora tours",
+      "url": "https://www.laplandsafaris.com/"
+    },
+    {
+      "label": "Apukka Resort — Rovaniemi husky, reindeer and aurora activities",
+      "url": "https://apukkaresort.fi/activities/"
+    },
+    {
+      "label": "Levi Ski Resort — lift passes, slope status and rentals",
+      "url": "https://www.levi.ski/en/"
+    },
+    {
+      "label": "Saariselkä Ski & Sport Resort — lift passes and winter activities",
+      "url": "https://skisaariselka.com/"
+    },
+    {
+      "label": "HappyCow Finland — vegetarian and vegan restaurants",
+      "url": "https://www.happycow.net/europe/finland/"
+    },
+    {
+      "label": "K-Ruoka — K-market grocery locations and online range",
+      "url": "https://www.k-ruoka.fi/"
+    },
+    {
+      "label": "S-market — supermarket finder and groceries",
+      "url": "https://www.s-market.fi/"
+    },
+    {
+      "label": "Prisma — hypermarkets for self-catering supplies",
+      "url": "https://www.prisma.fi/"
+    },
+    {
+      "label": "FMI — Finnish Meteorological Institute weather and warnings",
+      "url": "https://en.ilmatieteenlaitos.fi/"
+    },
+    {
+      "label": "Yr — Norway/Finland weather and cloud forecast backup",
+      "url": "https://www.yr.no/en"
+    },
+    {
+      "label": "FMI Auroras Now! — real-time aurora alerts for Finnish Lapland",
+      "url": "https://aurorasnow.fmi.fi/public_service/"
+    },
+    {
+      "label": "FMI aurora forecast — space weather and cloud guidance",
+      "url": "https://en.ilmatieteenlaitos.fi/auroras-forecast"
+    },
+    {
+      "label": "Visit Finland — official Finland travel guide",
+      "url": "https://www.visitfinland.com/"
+    }
+  ],
   "cities": [
     {
       "name": "Helsinki",
@@ -171,112 +260,164 @@
         "days": [
           {
             "theme": "Senate Square, Market Halls & Harbour Icons",
+            "pace": "relaxed",
+            "note": "All stops sit within the compact harbour core: start at Senate Square, walk downhill to Market Square and the Old Market Hall, then loop Uspenski and Esplanadi. Use HSL trams only if the weather turns; Mondays can affect museum add-ons, not the free sights.",
             "activities": [
               {
-                "name": "Senate Square and Helsinki Cathedral",
-                "cost": "Free"
+                "name": "Senate Square and Helsinki Cathedral — neoclassical capital icon",
+                "priority": "must-see",
+                "duration": "45min–1h",
+                "cost": "Free",
+                "tip": "Go before 9:30am for the cleanest photos from the cathedral steps before tour groups arrive."
               },
               {
-                "name": "Market Square and Old Market Hall snack crawl",
-                "cost": "Free"
+                "name": "Market Square and Old Market Hall — harbour snack crawl",
+                "priority": "recommended",
+                "duration": "1–1.5h",
+                "cost": "Free",
+                "tip": "Browse first, then choose one stall lunch; vegetarian soups and pastries are easiest in the hall."
               },
               {
-                "name": "Uspenski Cathedral",
-                "cost": "Free"
+                "name": "Uspenski Cathedral — red-brick Orthodox landmark above the port",
+                "priority": "recommended",
+                "duration": "30–45min",
+                "cost": "Free",
+                "tip": "Check opening hours before climbing the hill; exterior views over the harbour are worthwhile even if closed."
               },
               {
-                "name": "Esplanadi walk and harbour-front coffee break",
-                "cost": "Free"
+                "name": "Esplanadi and South Harbour evening walk",
+                "priority": "optional",
+                "duration": "45min–1h",
+                "cost": "Free",
+                "tip": "End here for café terraces and easy tram access back to most central hotels."
               }
             ],
             "hotels": [
               {
                 "name": "Omena Hotel Helsinki Lönnrotinkatu",
-                "budget": "₹7,000–₹11,000/night"
+                "budget": "₹7,000–₹14,500/night",
+                "tier": "budget"
               },
               {
                 "name": "Hotel Arthur",
-                "budget": "₹10,000–₹16,000/night"
+                "budget": "₹11,000–₹19,500/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Hotel Helka",
+                "budget": "₹13,500–₹21,500/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Hotel Indigo Helsinki – Boulevard",
+                "budget": "₹17,000–₹29,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Hotel St. George Helsinki",
+                "budget": "₹34,000–₹66,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Hotel Kämp",
+                "budget": "₹39,000–₹78,000/night",
+                "tier": "premium"
               }
             ],
             "meals": [
+              "Old Market Hall (veg-friendly stalls)",
               "Savotta",
-              "Old Market Hall",
+              "Yes Yes Yes (vegetarian)",
               "Café Regatta"
             ]
           },
           {
             "theme": "Rock Church, Ateneum & Finnish Design",
+            "pace": "moderate",
+            "note": "Keep this as a central culture day: Rock Church, Ateneum and Oodi are short tram/walk hops, then the Design District is a flexible stroll rather than another ticketed museum. Pre-book Rock Church if a concert blocks public entry.",
             "activities": [
               {
-                "name": "Temppeliaukio Church (Rock Church)",
-                "cost": "₹720"
+                "name": "Temppeliaukio Church (Rock Church) — church carved into granite",
+                "priority": "must-see",
+                "duration": "45min",
+                "cost": "₹1,100",
+                "tip": "Concerts and services change access; check the same-day calendar before crossing town."
               },
               {
-                "name": "Ateneum Art Museum",
-                "cost": "₹1,800"
+                "name": "Ateneum Art Museum — Finnish classics and changing exhibitions",
+                "priority": "must-see",
+                "duration": "1.5–2h",
+                "cost": "₹2,200",
+                "tip": "Head straight to the Finnish Golden Age rooms first, then choose one temporary exhibition."
               },
               {
-                "name": "Oodi Central Library",
-                "cost": "Free"
+                "name": "Oodi Central Library — timber landmark by the civic square",
+                "priority": "recommended",
+                "duration": "45min–1h",
+                "cost": "Free",
+                "tip": "The top-floor terrace is the free city-view payoff; combine with nearby Parliament and Music Centre exteriors."
               },
               {
-                "name": "Design District Helsinki boutiques and galleries",
-                "cost": "Free"
-              }
-            ],
-            "hotels": [
-              {
-                "name": "Omena Hotel Helsinki Lönnrotinkatu",
-                "budget": "₹7,000–₹11,000/night"
-              },
-              {
-                "name": "Hotel Arthur",
-                "budget": "₹10,000–₹16,000/night"
+                "name": "Design District Helsinki — boutiques, galleries and Arabia/Iittala browsing",
+                "priority": "optional",
+                "duration": "1–1.5h",
+                "cost": "Free",
+                "tip": "Use it as a relaxed shopping loop; many small galleries close Sunday or Monday."
               }
             ],
             "meals": [
-              "Löyly Helsinki",
+              "Löyly Helsinki restaurant",
               "Ravintola Kappeli",
+              "Sandro (veg-friendly)",
               "Café Regatta"
             ]
           },
           {
             "theme": "Suomenlinna Sea Fortress & Sauna Evening",
+            "pace": "moderate",
+            "note": "A realistic sea day: take the HSL ferry to Suomenlinna for the fortress and one museum, return mid-afternoon, then book a fixed Löyly sauna slot for early evening. Windproof layers matter on the ferry even in summer.",
             "activities": [
               {
-                "name": "HSL ferry to Suomenlinna and self-guided fortress walk",
-                "cost": "₹270"
+                "name": "HSL ferry to Suomenlinna — public ferry across the harbour",
+                "priority": "must-see",
+                "duration": "15min each way",
+                "cost": "₹400",
+                "tip": "A normal HSL AB ticket works; board 10 minutes early in July queues."
               },
               {
-                "name": "Suomenlinna Museum",
-                "cost": "₹720"
+                "name": "Suomenlinna Sea Fortress walk — UNESCO ramparts, dry docks and sea walls",
+                "priority": "must-see",
+                "duration": "2–3h",
+                "cost": "Free",
+                "tip": "Walk to King’s Gate first, then return through the village lanes for cafés and toilets."
               },
               {
-                "name": "Löyly public sauna session",
-                "cost": "₹2,340"
+                "name": "Suomenlinna Museum — compact fortress history primer",
+                "priority": "recommended",
+                "duration": "45min–1h",
+                "cost": "₹1,300",
+                "tip": "Best if rain hits; otherwise the outdoor fortress walk is the priority."
               },
               {
-                "name": "Evening waterfront walk around Kaivopuisto",
-                "cost": "Free"
-              }
-            ],
-            "hotels": [
-              {
-                "name": "Omena Hotel Helsinki Lönnrotinkatu",
-                "budget": "₹7,000–₹11,000/night"
-              },
-              {
-                "name": "Hotel Arthur",
-                "budget": "₹10,000–₹16,000/night"
+                "name": "Löyly public sauna and Baltic dip — modern Finnish sauna ritual",
+                "priority": "must-see",
+                "duration": "2h",
+                "cost": "₹3,200",
+                "tip": "Book a timed session; bring swimwear and arrive 15 minutes early for lockers."
               }
             ],
             "meals": [
               "Restaurant Nokka",
               "Löyly Helsinki",
-              "Story"
+              "Story in the Old Market Hall",
+              "Suomenlinna cafés"
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Architecture",
+          "Art & Design",
+          "History"
         ]
       },
       "Turku": {
@@ -292,40 +433,81 @@
         "days": [
           {
             "theme": "Castle, Cathedral & Aura Riverside",
+            "pace": "moderate",
+            "note": "Do the castle first because it is west of the centre, then tram/bus or taxi back toward the cathedral and Aboa Vetus Ars Nova. The Aura River promenade makes an easy no-ticket evening; do not add Naantali unless you have a second day.",
             "activities": [
               {
-                "name": "Turku Castle",
-                "cost": "₹1,620"
+                "name": "Turku Castle — medieval rooms, banqueting halls and prison cells",
+                "priority": "must-see",
+                "duration": "1.5–2h",
+                "cost": "₹2,000",
+                "tip": "Start here at opening; the castle is the one sight that can sprawl if you linger in every room."
               },
               {
-                "name": "Turku Cathedral",
-                "cost": "Free"
+                "name": "Turku Cathedral — Finland’s national shrine",
+                "priority": "recommended",
+                "duration": "30–45min",
+                "cost": "Free",
+                "tip": "Pair it with the old university quarter outside; interiors may close for services."
               },
               {
-                "name": "Aboa Vetus Ars Nova",
-                "cost": "₹1,530"
+                "name": "Aboa Vetus Ars Nova — archaeology under modern art galleries",
+                "priority": "recommended",
+                "duration": "1.5h",
+                "cost": "₹2,200",
+                "tip": "The underground medieval streets are the unique part; use the museum café if weather is poor."
               },
               {
                 "name": "Aura River promenade and riverboat cafés",
-                "cost": "Free"
+                "priority": "optional",
+                "duration": "1–1.5h",
+                "cost": "Free",
+                "tip": "Best from late afternoon; riverboats are atmospheric but menus can be meat-heavy, so check first if vegan."
               }
             ],
             "hotels": [
               {
                 "name": "Omena Hotel Turku Humalistonkatu",
-                "budget": "₹5,500–₹9,000/night"
+                "budget": "₹6,500–₹12,000/night",
+                "tier": "budget"
               },
               {
-                "name": "Centro Hotel Turku",
-                "budget": "₹9,000–₹14,000/night"
+                "name": "Forenom Aparthotel Turku",
+                "budget": "₹7,000–₹13,500/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Scandic Julia",
+                "budget": "₹13,500–₹21,500/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Original Sokos Hotel Wiklund",
+                "budget": "₹14,500–₹23,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Radisson Blu Marina Palace Hotel, Turku",
+                "budget": "₹19,500–₹34,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Hotel Kakola",
+                "budget": "₹20,500–₹36,000/night",
+                "tier": "premium"
               }
             ],
             "meals": [
               "Tintå",
               "Pub Niska",
-              "Smör"
+              "Smör",
+              "VG Wok (veg-friendly quick meal)"
             ]
           }
+        ],
+        "signatureExperiences": [
+          "History",
+          "Architecture"
         ]
       },
       "Tampere": {
@@ -341,40 +523,81 @@
         "days": [
           {
             "theme": "Moomins, Museum Quarter & Sauna",
+            "pace": "moderate",
+            "note": "Keep to the walkable centre and Pyynikki/Rauhaniemi edge: Moomin Museum and Vapriikki are the two paid anchors, then choose Pyynikki tower before a sauna. Do not combine far lakeside hikes with this one-day city stop.",
             "activities": [
               {
-                "name": "Moomin Museum at Tampere Hall",
-                "cost": "₹1,260"
+                "name": "Moomin Museum at Tampere Hall — original Tove Jansson art and tableaux",
+                "priority": "must-see",
+                "duration": "1–1.5h",
+                "cost": "₹1,800",
+                "tip": "Best first stop from the station; the shop is excellent for gifts but photography is limited."
               },
               {
-                "name": "Vapriikki Museum Centre",
-                "cost": "₹1,350"
+                "name": "Vapriikki Museum Centre — history, games, natural history and changing shows",
+                "priority": "recommended",
+                "duration": "1.5–2h",
+                "cost": "₹1,700",
+                "tip": "Pick two sections rather than trying every gallery; the Finnish Hockey Hall is a local favourite."
               },
               {
-                "name": "Pyynikki Observation Tower and doughnut stop",
-                "cost": "Free"
+                "name": "Pyynikki Observation Tower and doughnut café",
+                "priority": "recommended",
+                "duration": "1h",
+                "cost": "₹400",
+                "tip": "Take bus/taxi uphill if icy; the munkki doughnuts are the real reason locals queue."
               },
               {
-                "name": "Rauhaniemi Folk Spa public sauna",
-                "cost": "₹720"
+                "name": "Rauhaniemi Folk Spa public sauna and lake dip",
+                "priority": "must-see",
+                "duration": "1.5–2h",
+                "cost": "₹1,100",
+                "tip": "Bring swimwear and sandals; winter ice-swimming is memorable but slippery after dark."
               }
             ],
             "hotels": [
               {
                 "name": "Omena Hotel Tampere",
-                "budget": "₹5,500–₹8,500/night"
+                "budget": "₹6,500–₹12,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Dream Hostel & Hotel Tampere",
+                "budget": "₹5,500–₹11,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Courtyard by Marriott Tampere City",
+                "budget": "₹12,000–₹20,500/night",
+                "tier": "mid"
               },
               {
                 "name": "Lapland Hotels Tampere",
-                "budget": "₹10,000–₹15,500/night"
+                "budget": "₹14,500–₹24,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Solo Sokos Hotel Torni Tampere",
+                "budget": "₹19,500–₹34,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Lapland Hotels Arena",
+                "budget": "₹21,500–₹39,000/night",
+                "tier": "premium"
               }
             ],
             "meals": [
               "Plevna",
               "Pyynikin Brewhouse",
-              "Ravintola C"
+              "Ravintola C",
+              "Gopal (vegetarian lunch)"
             ]
           }
+        ],
+        "signatureExperiences": [
+          "History",
+          "Lakes"
         ]
       },
       "Rovaniemi": {
@@ -390,76 +613,122 @@
         "days": [
           {
             "theme": "Arctic Culture & Santa Claus Village",
+            "pace": "moderate",
+            "note": "Split the day cleanly: Arktikum in town first, then bus/taxi 8 km to Santa Claus Village for the Arctic Circle cluster. In Dec–Jan daylight is short, so keep the bridge as a quick blue-hour stop and save aurora chasing for a later night.",
             "activities": [
               {
-                "name": "Arktikum Science Centre and Museum",
-                "cost": "₹1,620"
+                "name": "Arktikum Science Centre and Museum — Arctic nature, Sámi context and Lapland history",
+                "priority": "must-see",
+                "duration": "1.5–2h",
+                "cost": "₹2,500",
+                "tip": "Do this before outdoor safaris; it explains the region, polar night and northern lights science."
               },
               {
                 "name": "Santa Claus Village and Arctic Circle crossing",
-                "cost": "Free"
+                "priority": "must-see",
+                "duration": "2–3h",
+                "cost": "Free",
+                "tip": "The village is free to enter; photos, letters and rides cost extra, so set a family budget before arrival."
               },
               {
-                "name": "Santa Claus Main Post Office",
-                "cost": "Free"
+                "name": "Santa Claus Main Post Office — Arctic Circle postcards",
+                "priority": "recommended",
+                "duration": "30–45min",
+                "cost": "Free",
+                "tip": "Use the Christmas delivery box if you want cards held until December."
               },
               {
-                "name": "Lumberjack's Candle Bridge evening stop",
-                "cost": "Free"
+                "name": "Lumberjack’s Candle Bridge evening stop",
+                "priority": "optional",
+                "duration": "30min",
+                "cost": "Free",
+                "tip": "Walk only if paths are gritted; otherwise taxi to the viewpoint and keep the evening warm."
               }
             ],
             "hotels": [
               {
                 "name": "Hostel Café Koti",
-                "budget": "₹7,000–₹11,500/night"
+                "budget": "₹8,500–₹14,500/night",
+                "tier": "budget"
               },
               {
-                "name": "Santa's Igloos Arctic Circle",
-                "budget": "₹34,000–₹63,000/night"
+                "name": "GuestHouse Arctic Heart",
+                "budget": "₹7,000–₹13,500/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Arctic City Hotel",
+                "budget": "₹15,500–₹26,500/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Santa Claus Holiday Village",
+                "budget": "₹17,000–₹31,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Arctic TreeHouse Hotel",
+                "budget": "₹43,000–₹90,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Santa’s Igloos Arctic Circle",
+                "budget": "₹46,000–₹102,000/night",
+                "tier": "premium"
               }
             ],
             "meals": [
               "Roka Street Bistro",
               "Nili Restaurant",
-              "Gustav Kitchen & Bar"
+              "Gustav Kitchen & Bar",
+              "Hostel Café Koti (veg-friendly)"
             ]
           },
           {
-            "theme": "Lapland Safaris, Huskies & Reindeer",
+            "theme": "Lapland Safaris, Huskies & Aurora Skies",
+            "pace": "packed",
+            "note": "Winter-only adventure day. Pick one big paid safari (husky OR snowmobile) and one lighter Santa Village/Reindeer add-on; most tours include transfers and thermal suits. Check FMI Auroras Now plus cloud cover before committing to a late-night chase.",
             "activities": [
               {
-                "name": "SantaPark indoor winter attraction",
-                "cost": "₹3,735"
+                "name": "SantaPark indoor Christmas cavern — elf school and family shows",
+                "priority": "optional",
+                "duration": "2–3h",
+                "cost": "₹4,900",
+                "tip": "Best for families in Nov–Jan; adults without children may prefer another outdoor safari."
               },
               {
-                "name": "Apukka Resort short husky safari",
-                "cost": "₹14,400"
+                "name": "Apukka Resort husky adventure — 6 km sled ride through snowy forest",
+                "priority": "must-see",
+                "duration": "2h",
+                "cost": "₹21,900–₹24,200",
+                "tip": "Book the self-drive option early; thermal gear and transfers are usually included."
               },
               {
-                "name": "Arctic Circle Husky Park or Santa Claus Village reindeer sleigh ride",
-                "cost": "₹2,700–₹4,950"
+                "name": "Arctic Circle Husky Park or Santa Village reindeer sleigh ride",
+                "priority": "recommended",
+                "duration": "30min–1.5h",
+                "cost": "₹4,900–₹9,900",
+                "tip": "Choose the short reindeer ride if you already did a long husky safari; it keeps the day humane."
               },
               {
-                "name": "Aurora hunt outside the city if skies are clear",
-                "cost": "Free"
-              }
-            ],
-            "hotels": [
-              {
-                "name": "Hostel Café Koti",
-                "budget": "₹7,000–₹11,500/night"
-              },
-              {
-                "name": "Santa's Igloos Arctic Circle",
-                "budget": "₹34,000–₹63,000/night"
+                "name": "Aurora hunt outside city lights — guided minibus or self-drive lay-by",
+                "priority": "must-see",
+                "duration": "2–5h",
+                "cost": "₹10,800–₹16,900",
+                "tip": "Clear sky beats high KP; keep the booking flexible or chase north/east with a guide."
               }
             ],
             "meals": [
               "Roka Street Bistro",
               "Nili Restaurant",
-              "Hostel Café Koti"
+              "Santa Claus Village cafés",
+              "Gustav Kitchen & Bar"
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Northern Lights",
+          "Skiing"
         ]
       },
       "Levi": {
@@ -475,68 +744,115 @@
         "days": [
           {
             "theme": "Ski Slopes, Fell Views & Village Core",
+            "pace": "moderate",
+            "note": "Keep the first Levi day slope-focused: rent gear, ski one area well, then use the gondola/viewpoints only if visibility is good. In polar night, plan the main ski block around the brightest midday hours.",
             "activities": [
               {
-                "name": "Levi Ski Resort day lift pass",
-                "cost": "₹4,950"
+                "name": "Levi Ski Resort day lift pass — Finland’s biggest ski village feel",
+                "priority": "must-see",
+                "duration": "4–6h",
+                "cost": "₹6,600",
+                "tip": "Reserve rentals online in peak weeks; beginners should start on the front slopes before crossing the fell."
               },
               {
-                "name": "Levi Summit scenic gondola or slope viewpoints",
-                "cost": "₹2,160"
+                "name": "Levi scenic gondola and fell viewpoints",
+                "priority": "recommended",
+                "duration": "1–1.5h",
+                "cost": "₹1,700",
+                "tip": "Go only if clouds lift; otherwise swap for a café and save the viewpoint for tomorrow."
               },
               {
-                "name": "Levi village walk and winter gear shopping",
-                "cost": "Free"
+                "name": "Levi village walk and winter gear shops",
+                "priority": "optional",
+                "duration": "45min–1h",
+                "cost": "Free",
+                "tip": "Use this to buy hand warmers, merino layers and reflective straps before night activities."
               }
             ],
             "hotels": [
               {
                 "name": "Hotel Hullu Poro",
-                "budget": "₹10,500–₹18,000/night"
+                "budget": "₹12,000–₹21,500/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Levilehto Apartments",
+                "budget": "₹11,000–₹20,500/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Break Sokos Hotel Levi",
+                "budget": "₹18,000–₹30,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Hotel Levi Panorama",
+                "budget": "₹19,500–₹34,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Design Hotel Levi",
+                "budget": "₹29,000–₹54,000/night",
+                "tier": "premium"
               },
               {
                 "name": "Northern Lights Ranch",
-                "budget": "₹32,000–₹55,000/night"
+                "budget": "₹46,000–₹96,000/night",
+                "tier": "premium"
               }
             ],
             "meals": [
-              "KingCrab House",
               "Ravintola Ämmilä",
-              "Saamen Kammi"
+              "KingCrab House",
+              "Saamen Kammi",
+              "Coffee House Levi"
             ]
           },
           {
             "theme": "Husky Park, Reindeer Farm & Aurora Cabin Night",
+            "pace": "moderate",
+            "note": "Do not stack every safari: a husky ride plus a gentle reindeer visit is enough before a late aurora watch. Snowmobile safaris can replace the reindeer activity if everyone has licences and warm layers.",
             "activities": [
               {
-                "name": "Levi Huskypark safari",
-                "cost": "₹10,800"
+                "name": "Levi Huskypark safari — huskies on forest trails near the resort",
+                "priority": "must-see",
+                "duration": "2–3h",
+                "cost": "₹13,300–₹22,300",
+                "tip": "Choose a morning departure for the happiest dogs and best light for photos."
               },
               {
-                "name": "Elves Village reindeer sleigh experience",
-                "cost": "₹4,050"
+                "name": "Elves Village or local reindeer farm sleigh experience",
+                "priority": "recommended",
+                "duration": "1.5–2h",
+                "cost": "₹8,300–₹12,200",
+                "tip": "A quieter cultural counterpoint to huskies; wear insulated boots because you stand around feeding animals."
               },
               {
-                "name": "Evening aurora watch from your glass-roof stay or open fell viewpoint",
-                "cost": "Free"
-              }
-            ],
-            "hotels": [
-              {
-                "name": "Hotel Hullu Poro",
-                "budget": "₹10,500–₹18,000/night"
+                "name": "Snowmobile safari across snowy fells",
+                "priority": "optional",
+                "duration": "2–3h",
+                "cost": "₹12,200–₹16,600",
+                "tip": "Swap this in for reindeer only; drivers need a valid licence and passengers are usually cheaper."
               },
               {
-                "name": "Northern Lights Ranch",
-                "budget": "₹32,000–₹55,000/night"
+                "name": "Evening aurora watch from a glass-roof cabin or open fell viewpoint",
+                "priority": "must-see",
+                "duration": "1–3h",
+                "cost": "Free",
+                "tip": "Face north, dim cabin lights, and check FMI cloud cover; aurora alarms are useful but not magic."
               }
             ],
             "meals": [
-              "KingCrab House",
               "Ravintola Ämmilä",
-              "Saamen Kammi"
+              "Saamen Kammi",
+              "KingCrab House",
+              "Northern Lights Ranch dinner"
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Skiing",
+          "Northern Lights"
         ]
       },
       "Saariselkä": {
@@ -554,68 +870,124 @@
         "days": [
           {
             "theme": "Urho Kekkonen National Park & Fell Panorama",
+            "pace": "moderate",
+            "note": "Keep this as a compact Saariselkä/Kaunispää day: national-park trails, the fell viewpoint and optional ski pass are all local. In winter, stay on marked tracks and ask about avalanche/weather conditions before leaving village trails.",
             "activities": [
               {
-                "name": "Urho Kekkonen National Park marked winter or summer trails",
-                "cost": "Free"
+                "name": "Urho Kekkonen National Park marked trails — taiga forest and open fell routes",
+                "priority": "must-see",
+                "duration": "2–3h",
+                "cost": "Free",
+                "tip": "Use Kiilopää or Saariselkä marked loops; whiteout can erase tracks above the treeline."
               },
               {
-                "name": "Kaunispää fell viewpoint",
-                "cost": "Free"
+                "name": "Kaunispää fell viewpoint — drive, ski lift or walk to a broad Lapland panorama",
+                "priority": "recommended",
+                "duration": "45min–1h",
+                "cost": "Free",
+                "tip": "Go near sunset/blue hour; the road can be icy but the view is the best low-effort panorama."
               },
               {
-                "name": "Saariselkä Ski & Sport Resort day lift pass",
-                "cost": "₹4,500"
+                "name": "Saariselkä Ski & Sport Resort day pass",
+                "priority": "optional",
+                "duration": "3–5h",
+                "cost": "₹5,900",
+                "tip": "A good small-resort ski day; add the reusable Axess card cost if you do not already have one."
+              },
+              {
+                "name": "Chairlift round trip over Kaunispää and Iisakkipää",
+                "priority": "optional",
+                "duration": "30–45min",
+                "cost": "₹2,000",
+                "tip": "Non-skiers can use the chairlift on operating days; skip if wind closes lifts."
               }
             ],
             "hotels": [
               {
-                "name": "Santa's Hotel Tunturi",
-                "budget": "₹9,000–₹15,500/night"
+                "name": "Kuukkeli Apartments Saarisatu",
+                "budget": "₹9,500–₹18,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Fell Centre Kiilopää Hotel Niilanpää",
+                "budget": "₹11,000–₹19,500/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Santa’s Hotel Tunturi",
+                "budget": "₹14,500–₹26,500/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Holiday Club Saariselkä",
+                "budget": "₹15,500–₹29,000/night",
+                "tier": "mid"
               },
               {
                 "name": "Northern Lights Village Saariselkä",
-                "budget": "₹24,000–₹42,000/night"
+                "budget": "₹45,000–₹72,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Aurora Collection Saariselkä",
+                "budget": "₹54,000–₹114,000/night",
+                "tier": "premium"
               }
             ],
             "meals": [
               "Restaurant Kuukkeli",
               "Teerenpesä",
-              "Laanilan Kievari"
+              "Laanilan Kievari",
+              "Kiilopää Fell Centre café"
             ]
           },
           {
             "theme": "Inari Culture Day Trip & Final Aurora Night",
+            "pace": "moderate",
+            "note": "Inari is a real day trip: about 70 km each way from Saariselkä, so keep the paid anchor to Siida plus one lakeside stop. Return before dark if self-driving in winter, then aurora-watch from your cabin or a marked lay-by.",
             "activities": [
               {
-                "name": "Siida Museum in Inari",
-                "cost": "₹1,350"
+                "name": "Siida Museum in Inari — Sámi culture and northern nature",
+                "priority": "must-see",
+                "duration": "1.5–2h",
+                "cost": "₹1,700",
+                "tip": "Book the museum first, then leave time for the shop’s Sámi-made crafts; winter roads need extra buffer."
               },
               {
-                "name": "Reindeer sleigh ride near Saariselkä or Inari",
-                "cost": "₹4,950"
+                "name": "Lake Inari shoreline and village walk",
+                "priority": "recommended",
+                "duration": "45min–1h",
+                "cost": "Free",
+                "tip": "Use it as a daylight leg-stretch, not a long hike; lake ice conditions vary and must be respected."
+              },
+              {
+                "name": "Reindeer or snowmobile add-on near Saariselkä/Inari",
+                "priority": "optional",
+                "duration": "1.5–2h",
+                "cost": "₹9,600–₹16,300",
+                "tip": "Only add this if you skipped Levi/Rovaniemi safaris; otherwise keep the day lighter."
               },
               {
                 "name": "Final northern lights watch from an aurora cabin or dark-sky lay-by",
-                "cost": "Free"
-              }
-            ],
-            "hotels": [
-              {
-                "name": "Santa's Hotel Tunturi",
-                "budget": "₹9,000–₹15,500/night"
-              },
-              {
-                "name": "Northern Lights Village Saariselkä",
-                "budget": "₹24,000–₹42,000/night"
+                "priority": "must-see",
+                "duration": "1–3h",
+                "cost": "Free",
+                "tip": "Saariselkä has darker skies than city bases; switch off cabin lights and check FMI Auroras Now before heading out."
               }
             ],
             "meals": [
               "Restaurant Kuukkeli",
               "Teerenpesä",
-              "Laanilan Kievari"
+              "Laanilan Kievari",
+              "Siida Sarrit café"
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Skiing",
+          "Northern Lights",
+          "Hiking",
+          "National Parks"
         ]
       }
     },
@@ -623,38 +995,147 @@
       {
         "from": "Helsinki",
         "to": "Turku",
-        "method": "VR InterCity train from Helsinki Central to Turku, about 2 hours",
-        "cost": "₹1,350"
+        "method": "VR InterCity train from Helsinki Central to Turku, about 1 hr 50 min to 2 hrs",
+        "cost": "₹700–₹2,700 pp",
+        "modes": [
+          {
+            "mode": "train",
+            "duration": "1.75–2 hrs",
+            "cost": "₹700–₹2,700 pp",
+            "note": "VR InterCity is the simplest city-centre to city-centre option; lowest fares appear early."
+          },
+          {
+            "mode": "bus",
+            "duration": "2.25–2.5 hrs",
+            "cost": "₹600–₹1,900 pp",
+            "note": "Onnibus/Matkahuolto can be cheapest but drops you at bus stations."
+          },
+          {
+            "mode": "drive",
+            "duration": "~2 hrs (170 km)",
+            "cost": "₹2,500–₹3,500 fuel, no tolls (per car)",
+            "note": "Useful only if continuing to archipelago villages; parking in both centres costs extra."
+          }
+        ]
       },
       {
         "from": "Turku",
         "to": "Tampere",
-        "method": "Onnibus coach from Turku bus station to Tampere, about 2 to 2.5 hours",
-        "cost": "₹900"
+        "method": "VR train or Onnibus coach from Turku to Tampere, about 2 hrs",
+        "cost": "₹1,000–₹3,000 pp",
+        "modes": [
+          {
+            "mode": "train",
+            "duration": "1.75–2 hrs",
+            "cost": "₹1,000–₹3,000 pp",
+            "note": "Direct VR services are comfortable and weather-proof in winter."
+          },
+          {
+            "mode": "bus",
+            "duration": "2–2.5 hrs",
+            "cost": "₹1,000–₹2,000 pp",
+            "note": "Often cheaper than rail if booked ahead."
+          },
+          {
+            "mode": "drive",
+            "duration": "~2 hrs (160 km)",
+            "cost": "₹2,500–₹3,500 fuel, no tolls (per car)"
+          }
+        ]
       },
       {
         "from": "Tampere",
         "to": "Helsinki",
-        "method": "VR train from Tampere to Helsinki Airport or Central, about 1.5 to 2 hours",
-        "cost": "₹1,350"
+        "method": "VR train from Tampere to Helsinki Central or Airport, about 1.5 to 2 hrs",
+        "cost": "₹700–₹2,700 pp",
+        "modes": [
+          {
+            "mode": "train",
+            "duration": "1.5–2 hrs",
+            "cost": "₹700–₹2,700 pp",
+            "note": "Frequent VR InterCity/Pendolino trains; choose Airport routing if flying north the same day."
+          },
+          {
+            "mode": "bus",
+            "duration": "2–2.5 hrs",
+            "cost": "₹700–₹1,900 pp",
+            "note": "Budget fallback, slower than the train."
+          },
+          {
+            "mode": "drive",
+            "duration": "~2 hrs (180 km)",
+            "cost": "₹2,500–₹4,000 fuel, no tolls (per car)"
+          }
+        ]
       },
       {
         "from": "Helsinki",
         "to": "Rovaniemi",
-        "method": "Finnair domestic flight, about 1 hour 20 minutes",
-        "cost": "₹8,100"
+        "method": "VR day/night train or Finnair flight; night train saves a hotel night, flight saves a travel day",
+        "cost": "₹3,000–₹22,000 pp",
+        "modes": [
+          {
+            "mode": "train",
+            "duration": "8–12 hrs",
+            "cost": "₹3,000–₹22,000 pp",
+            "note": "VR day train is fastest by rail; Santa Claus Express night train sleepers cost more but replace one hotel night."
+          },
+          {
+            "mode": "flight",
+            "duration": "1 hr 20 min",
+            "cost": "₹8,000–₹20,000 pp",
+            "note": "Finnair is the practical choice for short trips; winter holiday dates sell out and spike."
+          },
+          {
+            "mode": "drive",
+            "duration": "~9.5–10.5 hrs (825 km)",
+            "cost": "₹12,000–₹16,000 fuel, no tolls (per car)",
+            "note": "Long but viable for road trips; split overnight in winter rather than driving tired on icy roads."
+          }
+        ],
+        "skipped": "Long-distance bus takes roughly 11–13 hrs and is rarely better than the VR train for comfort, price or weather resilience."
       },
       {
         "from": "Rovaniemi",
         "to": "Levi",
-        "method": "Airport bus or Lapland coach via Kittilä, about 2.5 to 3 hours",
-        "cost": "₹2,700"
+        "method": "Matkahuolto/Lapland coach via Kittilä or rental car, about 2.5 to 3 hrs",
+        "cost": "₹3,500–₹4,500 pp",
+        "modes": [
+          {
+            "mode": "bus",
+            "duration": "2.5–3 hrs",
+            "cost": "₹3,500–₹4,500 pp",
+            "note": "Seasonal airport/village coaches align with flights and ski weeks; check same-week timetables."
+          },
+          {
+            "mode": "drive",
+            "duration": "~2.25 hrs (170 km)",
+            "cost": "₹2,500–₹4,000 fuel, no tolls (per car)",
+            "note": "Most flexible for aurora stops; winter tyres and cautious speeds are non-negotiable."
+          }
+        ],
+        "skipped": "No train reaches Levi; the nearest airport is Kittilä, useful only if you fly in directly rather than starting in Rovaniemi."
       },
       {
         "from": "Levi",
         "to": "Saariselkä",
-        "method": "Prebooked transfer or rental car via Ivalo, about 3.5 to 4.5 hours",
-        "cost": "₹4,500"
+        "method": "Rental car or seasonal Matkahuolto bus with a transfer, about 3.5 to 5.5 hrs",
+        "cost": "₹3,500–₹5,500 pp",
+        "modes": [
+          {
+            "mode": "drive",
+            "duration": "~3.5–4 hrs (260 km)",
+            "cost": "₹4,000–₹5,500 fuel, no tolls (per car)",
+            "note": "Best option if roads are clear; fill fuel in Levi/Kittilä before the long forest stretches."
+          },
+          {
+            "mode": "bus",
+            "duration": "4–5.5 hrs",
+            "cost": "₹3,500–₹5,500 pp",
+            "note": "Seasonal services often require a Kittilä/Ivalo-side connection; verify winter timetables before locking hotels."
+          }
+        ],
+        "skipped": "Flying between Kittilä and Ivalo requires backtracking via Helsinki and is not a practical transfer."
       }
     ],
     "extras": [
@@ -697,5 +1178,18 @@
         "Northern Lights Village Saariselka"
       ]
     }
+  },
+  "pricesAsOf": "2026-07",
+  "diet": {
+    "vegetarian": "Easy in Helsinki, Turku and Tampere: supermarkets and cafés routinely label kasvis/vegetar dishes, oat milk is normal, and vegetarian lunch buffets are common. Lapland restaurants are more reindeer/fish-led, so check menus before booking and self-cater from K-market, S-market or Prisma when staying in cabins.",
+    "vegan": "Good in Helsinki and workable in the other southern cities with HappyCow; look for vegaani labels, oat milk (kauramaito) and plant-based ready meals. In Rovaniemi, Levi and Saariselkä, vegan choices exist but are thinner, so message restaurants ahead and carry supermarket backup for late safari returns.",
+    "phrases": [
+      "Olen kasvissyöjä — I am vegetarian",
+      "Olen vegaani — I am vegan",
+      "Ei lihaa eikä kalaa, kiitos — no meat or fish, please",
+      "Ei maitotuotteita eikä kananmunia — no dairy products or eggs",
+      "Onko tämä vegaanista? — is this vegan?",
+      "Sisältääkö tämä lihaa tai kalaa? — does this contain meat or fish?"
+    ]
   }
 }

@@ -88,6 +88,15 @@ describe("SegmentAdjustDrawer", () => {
     expect(screen.getByText("10 days")).toBeInTheDocument();
   });
 
+  // Regression: after deselecting cities the requested `customDays` can exceed what
+  // the picked cities can fill. The slider must track the honest rendered length so
+  // it agrees with the header day badge (they used to diverge: badge 4d, slider 7d).
+  it("keeps the length slider in step with the honest rendered day badge", () => {
+    render(<SegmentAdjustDrawer segment={segment({ plan: plan(4), customDays: 7 })} onClose={vi.fn()} />);
+    expect(screen.getByText("4 days")).toBeInTheDocument();
+    expect(screen.getByRole("slider")).toHaveValue("4");
+  });
+
   it("closes via the close button", () => {
     const onClose = vi.fn();
     render(<SegmentAdjustDrawer segment={segment()} onClose={onClose} />);

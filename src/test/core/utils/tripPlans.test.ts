@@ -801,3 +801,74 @@ describe("shiftDayNumbers / shiftPlanDays", () => {
     expect(shifted[0].activities).toEqual(["Day 4: arrive"]);
   });
 })
+
+describe("tripPlans — enriched feasibility schema (pace / priority / stays)", () => {
+  const RICH_RULE = {
+    cityOrder: ["Oslo"],
+    cities: {
+      Oslo: {
+        name: "Oslo",
+        minDays: 1,
+        recDays: 2,
+        maxDays: 3,
+        days: [
+          {
+            theme: "City Icons",
+            pace: "moderate",
+            note: "All walkable — buy a 24h Ruter ticket.",
+            activities: [
+              { name: "Vigeland Park — 212 works", priority: "must-see", duration: "1.5–2h", cost: "Free", tip: "Go by 9am." },
+              { name: "Akershus Fortress", priority: "recommended", duration: "1h", cost: "Free grounds" },
+            ],
+            hotels: [
+              { name: "Citybox Oslo", budget: "₹9–14k", tier: "budget" },
+              { name: "Thon Opera", budget: "₹16–24k", tier: "mid" },
+              { name: "The Thief", budget: "₹40–70k", tier: "premium" },
+            ],
+          },
+        ],
+      },
+    },
+    connections: [],
+  };
+
+  const COUNTRY = {
+    name: "Norway",
+    lat: 60,
+    lng: 10,
+    bestMonths: ["June"],
+    budget: "₹1L–₹2L",
+    experiences: ["Fjords"],
+  };
+
+  it("carries pace, planNote, structured details and tiered stays onto the day", () => {
+    const plan = generateTripPlan(COUNTRY as never, [], 1, RICH_RULE as never);
+    const day = plan.days[0];
+    expect(day.pace).toBe("moderate");
+    expect(day.planNote).toContain("Ruter ticket");
+    expect(day.details).toBeTruthy();
+    expect(day.details?.[0]).toMatchObject({ name: "Vigeland Park — 212 works", priority: "must-see", duration: "1.5–2h", cost: "Free" });
+    expect(day.stays?.map((s) => s.tier)).toEqual(["budget", "mid", "premium"]);
+    // Back-compat flat strings still present.
+    expect(day.activities[0]).toContain("Vigeland Park");
+  });
+
+  it("leaves details/pace/stays undefined for un-enriched rule days", () => {
+    const plainRule = {
+      cityOrder: ["Bare"],
+      cities: { Bare: { name: "Bare", minDays: 1, recDays: 1, maxDays: 2, days: [{ theme: "T", activities: [{ name: "Walk" }] }] } },
+      connections: [],
+    };
+    const plan = generateTripPlan(COUNTRY as never, [], 1, plainRule as never);
+    expect(plan.days[0].details).toBeUndefined();
+    expect(plan.days[0].pace).toBeUndefined();
+    expect(plan.days[0].stays).toBeUndefined();
+  });
+
+  it("shiftPlanDays preserves structured details while renumbering", () => {
+    const plan = generateTripPlan(COUNTRY as never, [], 1, RICH_RULE as never);
+    const shifted = shiftPlanDays(plan.days, 4);
+    expect(shifted[0].label).toBe("Day 5 — Oslo");
+    expect(shifted[0].details?.[0].priority).toBe("must-see");
+  });
+});

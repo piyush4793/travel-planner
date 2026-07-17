@@ -4,11 +4,46 @@ import { scoreCities, planItinerary } from "./citySelection";
 import { budgetForBasis, parseBudgetRange, BUDGET_BASIS_META, DEFAULT_BUDGET_BASIS, type BudgetBasis } from "./budget";
 import { experienceTokens, tokenHits, matchCityExperiences, ruleCityText } from "./cityExperiences";
 
+/** Priority tier for an activity — drives the colour-blind-safe dot + word. */
+export type ActivityPriority = "must-see" | "recommended" | "optional";
+
+/**
+ * A single activity with its feasibility metadata. Populated only on rule-backed
+ * days (the enriched schema); when absent the renderer falls back to the flat
+ * `activities` strings, so AI plans / generic fallback / un-enriched countries
+ * degrade gracefully.
+ */
+export type ActivityDetail = {
+  name: string;
+  priority?: ActivityPriority;
+  duration?: string;
+  cost?: string;
+  tip?: string;
+};
+
+/** A tiered recommended stay (budget / mid / premium) for the day's city. */
+export type HotelStay = {
+  name: string;
+  price: string;
+  tier?: "budget" | "mid" | "premium";
+};
+
 export type DayEntry = {
   label: string;
   activities: string[];
   theme?: string;
   hotels?: string[];
+  /** Overall day tempo — "relaxed" | "moderate" | "packed" (rule-backed only). */
+  pace?: string;
+  /** One-line logistics/feasibility note for the day (rule-backed only). */
+  planNote?: string;
+  /**
+   * Rich, parallel view of `activities` with feasibility metadata. Same order as
+   * `activities`; present only on enriched rule-backed days.
+   */
+  details?: ActivityDetail[];
+  /** Tiered recommended stays for this day's city; present only when authored. */
+  stays?: HotelStay[];
 };
 
 export type TripPlan = {
@@ -73,6 +108,7 @@ export function shiftPlanDays(days: DayEntry[], offset: number): DayEntry[] {
     ...d,
     label: shiftDayNumbers(d.label, offset),
     activities: d.activities.map((a) => shiftDayNumbers(a, offset)),
+    details: d.details?.map((det) => ({ ...det, name: shiftDayNumbers(det.name, offset) })),
   }));
 }
 
@@ -97,6 +133,27 @@ export function isRealCity(name: string): boolean {
 /** Normalize city name for case-insensitive comparison */
 export function normalizeCityName(name: string): string {
   return name.replace(/^stay:\s*/i, "").trim().toLowerCase();
+}
+
+/**
+ * Pick the hotels to surface on a day card. Stops now author a tiered set
+ * (budget / mid / premium); when tiers are present we show one option per tier
+ * so a traveller sees a price spread, otherwise fall back to the first couple.
+ */
+type RuleHotel = { name: string; budget: string; tier?: "budget" | "mid" | "premium" };
+function pickDisplayHotels(hotels?: RuleHotel[]): RuleHotel[] {
+  if (!hotels || hotels.length === 0) return [];
+  if (!hotels.some((h) => h.tier)) return hotels.slice(0, 2);
+  const seen = new Set<string>();
+  const spread: RuleHotel[] = [];
+  for (const tier of ["budget", "mid", "premium"] as const) {
+    const hit = hotels.find((h) => h.tier === tier);
+    if (hit && !seen.has(hit.name)) {
+      seen.add(hit.name);
+      spread.push(hit);
+    }
+  }
+  return spread.length > 0 ? spread : hotels.slice(0, 2);
 }
 
 function parseCostRange(budget: string | { solo: string; couple: string; family4: string }): [number, number] {
@@ -456,13 +513,21 @@ function getRuledItinerary(
               .sort((a, b) => b.hits - a.hits || a.i - b.i)
               .map((x) => x.act)
           : rulePlan.activities;
+      const shownActs = orderedActs.slice(0, 5);
+      const hasRichActs = shownActs.some((act) => act.priority || act.duration || act.tip);
+      const allStays = (rulePlan.hotels ?? []).map((h) => ({ name: h.name, price: h.budget, tier: h.tier }));
       days.push({
         label: `Day ${dayNum} — ${a.name}`,
         theme: rulePlan.theme,
-        activities: orderedActs
-          .slice(0, 5)
-          .map((act) => (act.cost ? `${act.name} (${act.cost})` : act.name)),
-        hotels: rulePlan.hotels?.slice(0, 2).map((h) => `${h.name} — ${h.budget}`),
+        pace: rulePlan.pace,
+        planNote: rulePlan.note,
+        activities: shownActs.map((act) => (act.cost ? `${act.name} (${act.cost})` : act.name)),
+        // Parallel rich view — only when the day carries feasibility metadata.
+        details: hasRichActs
+          ? shownActs.map((act) => ({ name: act.name, priority: act.priority, duration: act.duration, cost: act.cost, tip: act.tip }))
+          : undefined,
+        hotels: pickDisplayHotels(rulePlan.hotels).map((h) => `${h.name} — ${h.budget}`),
+        stays: allStays.length > 0 ? allStays : undefined,
       });
     }
     dayIdx += a.days;

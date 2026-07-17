@@ -86,7 +86,7 @@ describe("TripReviewCanvas", () => {
     expect(screen.queryByText(/Travel from .* to Norway/)).not.toBeInTheDocument();
   });
 
-  it("expands a border hop into an informational mode picker", () => {
+  it("expands a border hop into live-search links", () => {
     renderCanvas({
       segments: [
         segment("Norway", "Oslo", 3, { point: { lat: 60, lng: 10 } }),
@@ -98,8 +98,8 @@ describe("TripReviewCanvas", () => {
     expect(hop).toHaveAttribute("aria-expanded", "false");
     fireEvent.click(hop);
     expect(hop).toHaveAttribute("aria-expanded", "true");
-    expect(screen.getByText("Flight")).toBeInTheDocument();
-    expect(screen.getByText(/times are indicative/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Search flights/ })).toBeInTheDocument();
+    expect(screen.getByText(/km apart/)).toBeInTheDocument();
   });
 
   it("opens a stop's Adjust drawer on demand", () => {

@@ -101,6 +101,8 @@ function SegmentBlock({
   const [adjusting, setAdjusting] = useState(false);
   const planCities = extractPlanCities(segment.plan.days);
   const placeCount = planCities.length;
+  const prevCities = prevSegment ? extractPlanCities(prevSegment.plan.days) : [];
+  const hopFromCity = prevCities[prevCities.length - 1];
   const cost = segment.plan.costPerPerson;
   const bodyId = `segment-body-${segment.name.replace(/\s+/g, "-")}`;
   const dayRange = dayStart === dayEnd ? `Day ${dayStart}` : `Days ${dayStart}–${dayEnd}`;
@@ -120,6 +122,8 @@ function SegmentBlock({
         <BorderHop
           fromName={prevSegment.name}
           toName={segment.name}
+          fromCity={hopFromCity}
+          toCity={planCities[0]}
           fromPoint={prevSegment.point}
           toPoint={segment.point}
         />
@@ -238,7 +242,7 @@ function SegmentBlock({
         </button>
       ) : (
         <div id={bodyId} className="mx-3 mb-1 rounded-b-2xl border border-t-0 border-line bg-surface-2 py-3">
-          <ItineraryView plan={displayPlan} rule={segment.rule} />
+          <ItineraryView plan={displayPlan} rule={segment.rule} country={segment.name} />
         </div>
       )}
     </section>

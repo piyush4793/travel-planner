@@ -144,7 +144,7 @@ export default function SegmentAdjustDrawer({ segment, onClose, flagFor = getCou
           <div className="py-4 first:pt-0 last:pb-0">
             <SectionLabel>Trip length</SectionLabel>
             <DayLengthControl
-              days={segment.customDays}
+              days={segment.plan.days.length || segment.customDays}
               maxDays={segment.maxDays}
               recommendedDays={segment.recommendedDays}
               daysPinned={segment.daysPinned}

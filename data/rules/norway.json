@@ -43,7 +43,64 @@
     "explorer"
   ],
   "stopoverNote": null,
-  "links": [],
+  "links": [
+    {
+      "label": "Entur — plan & book all buses, trains & ferries",
+      "url": "https://entur.no/"
+    },
+    {
+      "label": "Vy — national train tickets",
+      "url": "https://www.vy.no/en"
+    },
+    {
+      "label": "Yr — Norway's accurate weather & cloud forecast",
+      "url": "https://www.yr.no/en"
+    },
+    {
+      "label": "Norway's Best — Flåm Railway & Nærøyfjord cruise booking",
+      "url": "https://www.norwaysbest.com/"
+    },
+    {
+      "label": "Fjord Tours — fjord cruises & Norway-in-a-Nutshell",
+      "url": "https://www.fjordtours.com/en"
+    },
+    {
+      "label": "Bolt — taxi / ride-hailing (Oslo, Bergen, Tromsø)",
+      "url": "https://bolt.eu/en/cities/"
+    },
+    {
+      "label": "KAYAK — compare Norway car hire (winter tyres incl. Oct–Apr, book AWD early)",
+      "url": "https://www.kayak.com/cars"
+    },
+    {
+      "label": "Oda — online groceries delivered (Oslo/Bergen); Rema 1000/Kiwi/Coop everywhere",
+      "url": "https://oda.com/no/"
+    },
+    {
+      "label": "Aurora forecast — UiT Tromsø space-weather (KP & cloud)",
+      "url": "https://site.uit.no/spaceweather/"
+    },
+    {
+      "label": "NOAA aurora 30-minute forecast (Ovation)",
+      "url": "https://www.swpc.noaa.gov/products/aurora-30-minute-forecast"
+    },
+    {
+      "label": "HappyCow — vegetarian & vegan restaurants",
+      "url": "https://www.happycow.net/europe/norway/"
+    },
+    {
+      "label": "UT.no — official hiking trails & conditions",
+      "url": "https://ut.no/"
+    },
+    {
+      "label": "Visit Tromsø — book Arctic adventures (aurora, husky, whales)",
+      "url": "https://www.visittromso.no/"
+    },
+    {
+      "label": "Visit Norway — official travel guide",
+      "url": "https://www.visitnorway.com/"
+    }
+  ],
   "cities": [
     {
       "name": "Oslo",
@@ -230,79 +287,168 @@
         "days": [
           {
             "theme": "City Icons & Viking Heritage",
+            "pace": "moderate",
+            "note": "All of today is walkable or one tram/metro hop apart in the compact centre — start at Vigeland (west) and drift east toward the harbour. Buy a 24h Ruter ticket; most sights here are free.",
             "activities": [
               {
-                "name": "Vigeland Sculpture Park — 212 bronze & granite works across 80 acres, free all day"
+                "name": "Vigeland Sculpture Park — 212 bronze & granite works across 80 acres",
+                "priority": "must-see",
+                "duration": "1.5–2h",
+                "cost": "Free",
+                "tip": "Open 24/7; go by 9am to have the Monolith and fountain almost to yourself."
               },
               {
-                "name": "Akershus Fortress — free grounds, medieval ramparts, Oslo harbour panorama"
+                "name": "Akershus Fortress — medieval ramparts & Oslofjord harbour panorama",
+                "priority": "recommended",
+                "duration": "1–1.5h",
+                "cost": "Free grounds (museums ~₹1,200)",
+                "tip": "Grounds are free to roam; the fortress lawns are the best free harbour viewpoint."
               },
               {
-                "name": "Oslo Opera House — free rooftop walk on the marble-clad sloping roof"
+                "name": "Oslo Opera House — walk up the marble sloping roof",
+                "priority": "must-see",
+                "duration": "45min",
+                "cost": "Free",
+                "tip": "The rooftop is free and open late — superb at sunset over the fjord."
               },
               {
-                "name": "Aker Brygge waterfront — fresh shrimp sandwich, harbour atmosphere, evening bars"
+                "name": "Aker Brygge & Tjuvholmen waterfront",
+                "priority": "recommended",
+                "duration": "1–1.5h",
+                "cost": "Free (shrimp sandwich ~₹1,800)",
+                "tip": "Grab a rekesmørbrød (shrimp sandwich); the Astrup Fearnley museum sculpture beach is free to walk."
               },
               {
-                "name": "Karl Johans Gate — pedestrian street from Central Station to Royal Palace"
+                "name": "Karl Johans Gate stroll to the Royal Palace",
+                "priority": "optional",
+                "duration": "45min",
+                "cost": "Free",
+                "tip": "Ends at the palace — catch the 1:30pm guard change in summer."
               }
             ],
             "hotels": [
               {
-                "name": "Thon Hotel Opera (central, near station)",
-                "budget": "₹18,000–26,000/night"
+                "name": "Citybox Oslo",
+                "budget": "₹9,000–₹14,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Anker Hotel Oslo",
+                "budget": "₹10,000–₹15,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Thon Hotel Opera (by Central Station)",
+                "budget": "₹16,000–₹24,000/night",
+                "tier": "mid"
               },
               {
                 "name": "Comfort Hotel Grand Central",
-                "budget": "₹14,000–20,000/night"
+                "budget": "₹14,000–₹20,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Amerikalinjen",
+                "budget": "₹28,000–₹45,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "The Thief (Tjuvholmen)",
+                "budget": "₹40,000–₹70,000/night",
+                "tier": "premium"
               }
+            ],
+            "meals": [
+              "Vippa harbour food hall (veg-friendly)",
+              "Aker Brygge shrimp sandwich",
+              "Nordvegan / Dirty V (vegan)",
+              "Tim Wendelboe coffee, Grünerløkka"
             ]
           },
           {
             "theme": "Bygdøy Peninsula & World-Class Art",
+            "pace": "moderate",
+            "note": "Note: the Viking Ship Museum is CLOSED for rebuild until ~2027 — see the Viking ships' treasures at the Historical Museum in the centre instead. Take the seasonal Bygdøy ferry (~₹900) from Rådhusbrygge for the Fram/Kon-Tiki cluster.",
             "activities": [
               {
-                "name": "National Museum — Munch's The Scream original + Norway's largest art collection",
-                "cost": "₹2,000 pp"
+                "name": "National Museum — Munch's 'The Scream' + Norway's largest art collection",
+                "priority": "must-see",
+                "duration": "2h",
+                "cost": "₹2,200",
+                "tip": "Vast — head straight to the Scream room and the Light Hall first; closed Mondays."
               },
               {
-                "name": "Ferry Aker Brygge → Bygdøy (10 min, seasonal)",
-                "cost": "₹310 pp"
+                "name": "Fram Museum (Bygdøy) — polar ship you can walk inside",
+                "priority": "recommended",
+                "duration": "1.5h",
+                "cost": "₹1,800",
+                "tip": "Best of the Bygdøy museums with the Viking hall closed; pair with neighbouring Kon-Tiki."
               },
               {
-                "name": "Viking Age Museum (Bygdøy) — 1,200-yr-old Oseberg & Gokstad ships",
-                "cost": "₹2,000 pp"
+                "name": "Historical Museum — the Oseberg/Gokstad Viking treasures on show during the ship museum's closure",
+                "priority": "recommended",
+                "duration": "1–1.5h",
+                "cost": "₹1,200",
+                "tip": "Central location; this is where the Viking gold and artefacts live until the Bygdøy museum reopens in 2027."
               },
               {
-                "name": "Fram Museum — polar ship that reached both poles, walk inside the hull",
-                "cost": "₹1,900 pp"
-              },
-              {
-                "name": "Holmenkollen ski jump viewpoint + Ski Museum (T-bane line 1)",
-                "cost": "₹500 metro + ₹1,200 museum"
+                "name": "Holmenkollen ski jump & Ski Museum viewpoint (T-bane line 1)",
+                "priority": "optional",
+                "duration": "1.5h",
+                "cost": "₹2,000 (viewpoint), free to the base",
+                "tip": "The metro ride up is scenic; the platform view over Oslo is worth it even without the museum."
               }
+            ],
+            "meals": [
+              "Kon-Tiki café, Bygdøy",
+              "Lofoten Fiskerestaurant (seafood)",
+              "Fiskeriet Youngstorget",
+              "Munchmuseet rooftop café"
             ]
           },
           {
             "theme": "Fjord, Art & Neighbourhoods",
+            "pace": "relaxed",
+            "note": "An easy final day mixing water and neighbourhoods — the fjord cruise and Munch museum are both by the Opera; end in Grünerløkka for coffee and dinner.",
             "activities": [
               {
-                "name": "Oslofjord sightseeing cruise (2 hrs, summer)",
-                "cost": "₹2,000 pp"
+                "name": "Oslofjord sightseeing cruise (electric boat, ~2h)",
+                "priority": "must-see",
+                "duration": "2h",
+                "cost": "₹5,000",
+                "tip": "Summer only; the silent electric boat glides past island cabins — sit on the open rear deck."
               },
               {
-                "name": "Sørenga sea pool — outdoor fjord swimming on floating pontoon, free (summer)"
+                "name": "MUNCH museum — 13 floors of Edvard Munch, Deichman library rooftop next door",
+                "priority": "recommended",
+                "duration": "1.5h",
+                "cost": "₹2,200",
+                "tip": "The 13th-floor bar has a free-to-enter city view; Deichman library rooftop beside it is free."
               },
               {
-                "name": "Munch Museum — 28,000 works, Deichman Library rooftop views",
-                "cost": "₹1,500 pp"
+                "name": "Sørenga sea pool — floating fjord swimming",
+                "priority": "optional",
+                "duration": "1h",
+                "cost": "Free",
+                "tip": "Summer only; bring a towel — locals swim right off the pontoon."
               },
               {
-                "name": "Grünerløkka neighbourhood — vintage shops, murals, Oslo's best coffee"
+                "name": "Grünerløkka — vintage shops, murals & Oslo's best coffee",
+                "priority": "recommended",
+                "duration": "1.5h",
+                "cost": "Free",
+                "tip": "Mathallen food hall here is the easiest spot for varied veg/vegan lunch."
               }
+            ],
+            "meals": [
+              "Mathallen food hall, Grünerløkka",
+              "Oslo Raw (vegan brunch)",
+              "Villa Paradiso pizza",
+              "Supreme Roastworks coffee"
             ]
           }
-        ]
+        ],
+        "signatureExperiences": []
       },
       "Bergen": {
         "name": "Bergen",
@@ -316,80 +462,162 @@
         "days": [
           {
             "theme": "Bryggen UNESCO Wharf & Fløyen Summit",
+            "pace": "moderate",
+            "note": "A tight, all-walkable centre day: wharf, fish market and the funicular are within 10 minutes of each other. Bergen is famously wet — pack a rain shell and it won't slow you down.",
             "activities": [
               {
-                "name": "Bryggen Wharf — UNESCO medieval Hanseatic warehouses; explore the hidden back alleys before 10 AM (cruise ships arrive later)"
+                "name": "Bryggen Wharf — UNESCO medieval Hanseatic warehouses & hidden alleys",
+                "priority": "must-see",
+                "duration": "1–1.5h",
+                "cost": "Free",
+                "tip": "Duck into the wooden back passages before 10am, before the cruise crowds fill them."
               },
               {
-                "name": "Hanseatic Museum in Bryggen — merchant life preserved since 1704",
-                "cost": "₹1,100 pp"
+                "name": "Bergen Fish Market (Fisketorget) — shrimp sandwich or salmon cone",
+                "priority": "recommended",
+                "duration": "45min",
+                "cost": "Meal ~₹1,500–₹3,000",
+                "tip": "The indoor hall has fixed prices; the outdoor stalls are pricier — best as a lunch stop."
               },
               {
-                "name": "Bergen Fish Market (Fisketorget) — fresh shrimp sandwich or salmon cone, best lunch in Bergen",
-                "cost": "₹800–1,500"
+                "name": "Fløibanen funicular to Mt Fløyen (320m) — 360° city & fjord view",
+                "priority": "must-see",
+                "duration": "1.5h",
+                "cost": "₹1,900 return",
+                "tip": "Walk down the marked forest trail (45 min) to save the return fare and see the troll forest."
               },
               {
-                "name": "Fløibanen funicular to Mt. Fløyen (320m) — 360° city, fjord & island views",
-                "cost": "₹2,300 pp RT"
+                "name": "Bergenhus Fortress & Håkon's Hall — medieval harbour walk",
+                "priority": "optional",
+                "duration": "45min",
+                "cost": "Free grounds",
+                "tip": "Free to roam the ramparts; good golden-hour harbour photos."
               },
               {
-                "name": "Bergenhus Fortress & Håkon's Hall — free exterior, medieval harbour walk"
+                "name": "Hanseatic Museum / Bryggens Museum — merchant life since 1704",
+                "priority": "optional",
+                "duration": "1h",
+                "cost": "~₹1,600",
+                "tip": "The main Hanseatic house has had restoration closures — check hours; Bryggens Museum is the reliable alternative."
               }
             ],
             "hotels": [
               {
-                "name": "Hotel Havnekontoret (Bryggen warehouse)",
-                "budget": "₹36,000–56,000/night"
+                "name": "Citybox Bergen",
+                "budget": "₹8,000–₹13,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Marken Gjestehus",
+                "budget": "₹7,000–₹12,000/night",
+                "tier": "budget"
               },
               {
                 "name": "Thon Hotel Rosenkrantz (near Bryggen)",
-                "budget": "₹18,000–26,000/night"
+                "budget": "₹16,000–₹24,000/night",
+                "tier": "mid"
               },
               {
-                "name": "Citybox Bergen (budget)",
-                "budget": "₹8,000–12,000/night"
+                "name": "Zander K Hotel",
+                "budget": "₹15,000–₹22,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Hotel Havnekontoret (Bryggen warehouse)",
+                "budget": "₹30,000–₹52,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Opus XVI (old-town luxury)",
+                "budget": "₹28,000–₹46,000/night",
+                "tier": "premium"
               }
+            ],
+            "meals": [
+              "Bergen Fish Market shrimp/salmon",
+              "Pygmalion (veg-friendly)",
+              "Trekroneren hot dogs",
+              "Godt Brød bakery (veg/vegan)"
             ]
           },
           {
             "theme": "Hardangerfjord Day Trip & Grieg",
+            "pace": "moderate",
+            "note": "Pick ONE fjord experience today — the Mostraumen cruise (half day from the centre) is the easy option; a full Hardangerfjord trip needs a car or an organised tour and most of the day.",
             "activities": [
               {
-                "name": "Hardangerfjord or Mostraumen fjord cruise from Bergen (summer, full day)",
-                "cost": "₹8,000–12,000 pp",
-                "tip": "Book at rodnefjordcruise.no"
+                "name": "Mostraumen fjord cruise from Bergen — waterfalls & narrows (round trip)",
+                "priority": "must-see",
+                "duration": "3–3.5h",
+                "cost": "₹8,900",
+                "tip": "Departs the fish-market quay; the boat noses right under a waterfall to fill your bottle."
               },
               {
-                "name": "Troldhaugen — Edvard Grieg's lakeside villa, museum & summer concerts",
-                "cost": "₹1,200 pp",
-                "tip": "Check griegconcerts.no for live performances"
+                "name": "Troldhaugen — Edvard Grieg's lakeside villa & composer's hut",
+                "priority": "recommended",
+                "duration": "1.5h",
+                "cost": "₹1,600",
+                "tip": "Time it for a lunchtime piano recital in summer (extra ticket); 20-min tram + short walk."
               },
               {
-                "name": "Ulriken cable car — Bergen's highest point (643m), optional hike across ridge to Fløyen (2 hrs)",
-                "cost": "₹1,500 pp RT"
+                "name": "Ulriken cable car — Bergen's highest peak (643m), ridge hike to Fløyen option",
+                "priority": "optional",
+                "duration": "2h",
+                "cost": "₹3,600 return",
+                "tip": "The full Vidden ridge hike to Fløyen is 4–5h and only for clear, dry days."
               },
               {
-                "name": "KODE Art Museums — Munch, Picasso & world-class silver collection",
-                "cost": "₹1,200 pp"
+                "name": "KODE Art Museums — Munch, Dahl & world-class silverware",
+                "priority": "optional",
+                "duration": "1.5h",
+                "cost": "₹1,600",
+                "tip": "Four buildings on one ticket; good rainy-afternoon backup."
               }
+            ],
+            "meals": [
+              "Bare Vestland (local, veg options)",
+              "Lysverket fine dining",
+              "Colonialen café",
+              "Bergen Kaffebrenneri"
             ]
           },
           {
             "theme": "Old Bergen & Deeper Exploration",
+            "pace": "relaxed",
+            "note": "A slower third day for the outlying sights — do the Vøringsfossen waterfall trip only with a car (3h each way to Eidfjord); otherwise keep it local with Gamle Bergen and Fantoft.",
             "activities": [
               {
-                "name": "Gamle Bergen Museum — open-air 18th-century neighbourhood of 55 wooden houses",
-                "cost": "₹600 pp"
+                "name": "Gamle Bergen Museum — open-air 18th-century wooden neighbourhood",
+                "priority": "recommended",
+                "duration": "1.5h",
+                "cost": "~₹1,600",
+                "tip": "Costumed guides in summer; a 10-min bus north of the centre."
               },
               {
-                "name": "Fantoft Stave Church — 900-yr-old stave church rebuilt after arson, 5-min drive south"
+                "name": "Fantoft Stave Church — 900-year-old church rebuilt after arson",
+                "priority": "optional",
+                "duration": "45min",
+                "cost": "₹700",
+                "tip": "5-min walk from the Fantoft light-rail stop; small but atmospheric in the pines."
               },
               {
-                "name": "Vøringsfossen waterfall day trip to Eidfjord — one of Norway's tallest falls (182m), 3 hrs drive summer only",
-                "cost": "₹3,000 pp guided or hire car"
+                "name": "Vøringsfossen waterfall day trip to Eidfjord (182m) — car only",
+                "priority": "optional",
+                "duration": "Full day",
+                "cost": "Free (fuel/tolls extra)",
+                "tip": "One of Norway's tallest falls with a new footbridge; only worth it with a car and a clear forecast."
               }
+            ],
+            "meals": [
+              "Godt Brød bakery",
+              "Horn of Africa (veg/vegan)",
+              "Pingvinen (Norwegian home cooking)",
+              "Kaffemisjonen coffee"
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Fjords"
         ]
       },
       "Flam": {
@@ -405,56 +633,122 @@
         "days": [
           {
             "theme": "Arrival Evening & Stegastein Viewpoint",
+            "pace": "relaxed",
+            "note": "Arrival afternoon — do the short Stegastein drive/tour first while the light is good, then a quiet fjord-village evening. Everything here is within a 20-min drive of Flåm.",
             "activities": [
               {
-                "name": "Stegastein viewpoint — cantilevered platform 650m above Aurlandsfjord, 15-min drive from village. Free, open 24/7. Best at golden hour."
+                "name": "Stegastein viewpoint — cantilevered platform 650m above Aurlandsfjord",
+                "priority": "must-see",
+                "duration": "1–1.5h",
+                "cost": "Free (shuttle bus ~₹4,500 return)",
+                "tip": "15-min drive from Flåm; if you have no car, the Fjordsafari/Stegastein shuttle bus runs in summer."
               },
               {
-                "name": "Undredal village (20-min drive) — Norway's smallest village (~100 people), smoked brown goat cheese tasting, free entry"
+                "name": "Undredal village — Norway's smallest church & smoked brown goat cheese",
+                "priority": "recommended",
+                "duration": "1h",
+                "cost": "Free (cheese tasting ~₹1,500)",
+                "tip": "20-min drive; the tiny stave church seats 40 — buy the brunost straight from the farm shop."
               },
               {
-                "name": "Ægir Bryggeri brewpub — Viking-longhouse design, local craft beers & hearty Norwegian food"
+                "name": "Ægir Bryggeri brewpub — Viking-longhouse taproom",
+                "priority": "optional",
+                "duration": "1.5h",
+                "cost": "Meal ~₹3,000–₹5,000",
+                "tip": "Their tasting flight pairs with hearty local plates; book ahead in summer."
               },
               {
-                "name": "Flam waterfront walk along Aurlandsfjord at dusk"
+                "name": "Flåm waterfront walk along Aurlandsfjord at dusk",
+                "priority": "optional",
+                "duration": "45min",
+                "cost": "Free",
+                "tip": "Quietest once the day cruise-ship crowd leaves around 5pm."
               }
             ],
             "hotels": [
               {
-                "name": "Fretheim Hotel (historic, fjordside)",
-                "budget": "₹36,000–56,000/night"
+                "name": "Flåm Camping & Hostel",
+                "budget": "₹6,000–₹11,000/night",
+                "tier": "budget"
               },
               {
-                "name": "Flamsbrygga Hotel (waterfront)",
-                "budget": "₹22,000–36,000/night"
+                "name": "Heimly Fjordhotel",
+                "budget": "₹13,000–₹20,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Flåmsbrygga Hotel (waterfront)",
+                "budget": "₹22,000–₹36,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Aurland Fjordhotel",
+                "budget": "₹16,000–₹26,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Fretheim Hotel (historic, fjordside)",
+                "budget": "₹30,000–₹52,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Vatnahalsen Høyfjellshotell (Myrdal)",
+                "budget": "₹18,000–₹30,000/night",
+                "tier": "premium"
               }
+            ],
+            "meals": [
+              "Ægir Bryggeri brewpub",
+              "Flåm Bakeri (veg pastries)",
+              "Toget Café at the station",
+              "Fretheim Hotel dinner"
             ]
           },
           {
             "theme": "Flåmsbana Railway & Nærøyfjord Cruise",
+            "pace": "packed",
+            "note": "The classic Nærøyfjord-in-a-nutshell day: railway up to Myrdal, then the electric fjord cruise to Gudvangen. Pre-book both online — trains and boats sell out in summer. This is a long, transfer-heavy day.",
             "activities": [
               {
-                "name": "Flåm Railway (Flåmsbana) to Myrdal & return — world's steepest standard-gauge rail, 865m climb, Kjosfossen waterfall performance stop",
-                "cost": "₹8,800 pp RT",
-                "tip": "Book at norwaysbest.com. Sit left side heading up for best views. Summer fills 2+ months out."
+                "name": "Flåm Railway (Flåmsbana) to Myrdal & back — world's steepest standard-gauge line",
+                "priority": "must-see",
+                "duration": "2h round trip",
+                "cost": "₹8,500 (winter ~₹5,950)",
+                "tip": "Sit on the LEFT going up for the Kjosfossen waterfall stop; book at norwaysbest.com."
               },
               {
-                "name": "Nærøyfjord UNESCO electric ferry Flam → Gudvangen (2 hrs) — world's narrowest fjord, sheer 1,700m cliffs, silent electric vessel",
-                "cost": "₹5,000–6,300 pp one-way",
-                "tip": "Book combined Rail + Fjord at norwaysbest.com. One-way cruise; Bus 950 continues from Gudvangen."
+                "name": "Nærøyfjord UNESCO cruise Flåm → Gudvangen (electric ferry)",
+                "priority": "must-see",
+                "duration": "2h",
+                "cost": "₹7,900 one-way",
+                "tip": "World's narrowest fjord; the silent electric boat lets you hear the waterfalls. Dress warm on deck."
               },
               {
-                "name": "Bus 950 Gudvangen → Voss (1 hr, Skyss) — continue onward toward Alesund or stay in Voss",
-                "cost": "₹1,100 pp"
+                "name": "Bus 950 Gudvangen → Voss (Skyss) to continue onward",
+                "priority": "optional",
+                "duration": "1h",
+                "cost": "₹1,500",
+                "tip": "Connects to trains at Voss for Bergen/onward; check the Entur app for times."
               },
               {
-                "name": "Aurlandsfjellet Snow Road — drive to Aurland viewpoint on Norway's highest mountain road (summer only, free)"
+                "name": "Aurlandsfjellet 'Snow Road' scenic drive (if self-driving)",
+                "priority": "optional",
+                "duration": "1.5h",
+                "cost": "Free",
+                "tip": "Norway's highest mountain road, snow-walled even in summer — only if you have a car and clear weather."
               }
+            ],
+            "meals": [
+              "Café Bekkastova, Gudvangen",
+              "Flåm Bakeri packed lunch",
+              "Undredal cheese platter",
+              "Ægir Bryggeri"
             ]
           }
         ],
         "signatureExperiences": [
-          "Fjords"
+          "Fjords",
+          "Waterfalls"
         ]
       },
       "Gudvangen": {
@@ -469,33 +763,80 @@
         "days": [
           {
             "theme": "Viking Village & Nærøyfjord",
+            "pace": "relaxed",
+            "note": "A short, single-focus fjord-head day. Gudvangen has few beds — most travellers overnight in Voss (30-min drive) where the hotels and restaurants are.",
             "activities": [
               {
-                "name": "Njardarheimr Viking Village — living Viking settlement with costumed inhabitants, axe throwing, archery, mead tasting, and craftsman workshops",
-                "cost": "₹2,500 pp",
-                "tip": "Open May–Sept. Allow 2–3 hrs. Book at vikingvalley.no"
+                "name": "Njardarheimr Viking Village — living settlement with costumed Vikings, axe-throwing",
+                "priority": "must-see",
+                "duration": "1.5–2h",
+                "cost": "₹2,500",
+                "tip": "Guided entry; kids love the axe-throwing and archery. Under the shadow of the fjord cliffs."
               },
               {
-                "name": "Nærøyfjord arrival — UNESCO's narrowest fjord, sheer 1,700m cliffs on both sides, arrive by electric ferry from Flam"
+                "name": "Nærøyfjord fjord-head — sheer 1,700m cliffs on both sides",
+                "priority": "must-see",
+                "duration": "1h",
+                "cost": "Free",
+                "tip": "Arrive before the day cruises to see the narrowest UNESCO fjord in near silence."
               },
               {
-                "name": "Gudvangen village walk — small fjord-head settlement beneath dramatic peaks, quiet after cruise ships leave"
+                "name": "Gudvangen village walk beneath the peaks",
+                "priority": "optional",
+                "duration": "45min",
+                "cost": "Free",
+                "tip": "Tiny and quiet once the boats leave — a good stretch before driving on."
               },
               {
-                "name": "Stalheimskleiva scenic road to Voss — 13 hairpin bends down a dramatic gorge (summer only, one-way downhill)"
+                "name": "Stalheimskleiva scenic road toward Voss — 13 hairpin bends",
+                "priority": "recommended",
+                "duration": "45min",
+                "cost": "Free",
+                "tip": "Summer only, one-way downhill; pull in at Stalheim Hotel for the classic gorge viewpoint."
               }
             ],
             "hotels": [
               {
-                "name": "Gudvangen Fjordtell (fjord-head budget)",
-                "budget": "₹8,000–14,000/night"
+                "name": "Gudvangen Fjordtell (fjord-head)",
+                "budget": "₹8,000–₹14,000/night",
+                "tier": "budget"
               },
               {
-                "name": "Stay in Voss instead (30 min drive) for more options",
-                "budget": "₹10,000–16,000/night"
+                "name": "Vang Camping og Hytter (Voss)",
+                "budget": "₹5,000–₹9,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Park Hotel Vossevangen",
+                "budget": "₹14,000–₹22,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Scandic Voss",
+                "budget": "₹13,000–₹20,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Fleischer's Hotel (Voss, historic)",
+                "budget": "₹20,000–₹32,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Stalheim Hotel (gorge viewpoint)",
+                "budget": "₹18,000–₹28,000/night",
+                "tier": "premium"
               }
+            ],
+            "meals": [
+              "Gudvangen Fjordtell restaurant",
+              "Vikingvalley café (Njardarheimr)",
+              "Stalheim Hotel lunch",
+              "Park Hotel Vossevangen (Voss)"
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Fjords"
         ]
       },
       "Loen": {
@@ -511,52 +852,108 @@
         "days": [
           {
             "theme": "Loen Skylift & Lake Lovatnet",
+            "pace": "moderate",
+            "note": "Do the Skylift early for the clearest summit view, then the easy Lovatnet lake loop by car in the afternoon. Compact area — everything is within 15 minutes of Loen.",
             "activities": [
               {
-                "name": "Loen Skylift to Mt Hoven (1,011m) — 5-min cable car ride to panoramic fjord & glacier views, Via Ferrata option at summit",
-                "cost": "₹4,500 pp RT",
-                "tip": "Book at loenskylift.no. Go early morning for clearest views. Restaurant Hoven at top."
+                "name": "Loen Skylift to Mt Hoven (1,011m) — glacier & fjord panorama",
+                "priority": "must-see",
+                "duration": "1.5–2h",
+                "cost": "₹6,500 return",
+                "tip": "One of the world's steepest cable cars; go on the first departures before cloud builds on the summit."
               },
               {
-                "name": "Lake Lovatnet drive — surreal turquoise glacial lake framed by green peaks; stop at multiple viewpoints along the road"
+                "name": "Lake Lovatnet drive — turquoise glacial lake framed by peaks",
+                "priority": "must-see",
+                "duration": "1.5h",
+                "cost": "Free",
+                "tip": "Stop at Bødal and the Kjenndalen road end; the water is milky-blue from glacier silt — don't swim, it's icy."
               },
               {
-                "name": "Sande viewpoint — classic Nordfjord panorama, free roadside stop"
-              },
-              {
-                "name": "Loen village walk — tiny fjordside settlement with wooden houses and mountain backdrop"
+                "name": "Sande & Loen village viewpoints",
+                "priority": "optional",
+                "duration": "30min",
+                "cost": "Free",
+                "tip": "Free roadside Nordfjord panoramas; good for a quick photo stop."
               }
             ],
             "hotels": [
               {
-                "name": "Hotel Loenfjord (waterfront, scenic)",
-                "budget": "₹18,000–28,000/night"
+                "name": "Loen Camping (cabins)",
+                "budget": "₹5,000–₹9,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Olden Fjordhotel",
+                "budget": "₹12,000–₹18,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Hotel Loenfjord (waterfront)",
+                "budget": "₹18,000–₹28,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Yris Hotel Olden",
+                "budget": "₹14,000–₹20,000/night",
+                "tier": "mid"
               },
               {
                 "name": "Hotel Alexandra (classic, pool)",
-                "budget": "₹22,000–36,000/night"
+                "budget": "₹24,000–₹40,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Loenfjord Superior fjord suites",
+                "budget": "₹26,000–₹38,000/night",
+                "tier": "premium"
               }
+            ],
+            "meals": [
+              "Hoven Restaurant (skylift summit)",
+              "Hotel Alexandra buffet",
+              "Café on the fjord, Loen",
+              "Olden bakery"
             ]
           },
           {
             "theme": "Briksdal Glacier & Olden Valley",
+            "pace": "moderate",
+            "note": "A glacier-valley day. The Briksdal walk is a gentle 3km each way (add a troll-car ride if legs are tired). Leave by mid-afternoon if driving on to Trollstigen/Ålesund (2.5h).",
             "activities": [
               {
-                "name": "Briksdal Glacier (Briksdalsbreen) — arm of Jostedalsbreen, Europe's largest mainland glacier; 45-min walk from car park to glacier face",
-                "cost": "Free (trolley car ₹1,500 pp RT if preferred)",
-                "tip": "Wear good shoes. Glacier retreating fast — still impressive but go soon."
+                "name": "Briksdal Glacier (Briksdalsbreen) — arm of Europe's largest mainland glacier",
+                "priority": "must-see",
+                "duration": "2.5–3h",
+                "cost": "Free walk (troll-car ~₹3,500 return)",
+                "tip": "Gentle 45-min uphill walk each way; the troll-car saves the climb but you still walk the last stretch."
               },
               {
-                "name": "Olden village — charming fjord-head settlement, cruise ship port in summer, quiet in Sept"
+                "name": "Kjenndalen glacier valley — quieter alternative to Briksdal",
+                "priority": "optional",
+                "duration": "2h",
+                "cost": "Small toll road",
+                "tip": "Less crowded, equally dramatic; a flat 2h return walk to the glacier arm and waterfall."
               },
               {
-                "name": "Kjenndalen glacier valley hike — less crowded alternative to Briksdal (2 hrs RT)"
-              },
-              {
-                "name": "Drive to Trollstigen or Alesund (2.5 hrs via Rv15 + E136)"
+                "name": "Olden village — fjord-head hamlet & old wooden church",
+                "priority": "optional",
+                "duration": "45min",
+                "cost": "Free",
+                "tip": "Cruise-ship busy midday, peaceful early or late; the 1759 old church is a short detour."
               }
+            ],
+            "meals": [
+              "Oldevatn café",
+              "Yris Hotel restaurant",
+              "Briksdalsbre Fjellstove lodge",
+              "Loen bakery packed lunch"
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Mountains",
+          "Waterfalls"
         ]
       },
       "Trollstigen": {
@@ -572,31 +969,81 @@
         "days": [
           {
             "theme": "Troll Road & Viewpoints",
+            "pace": "moderate",
+            "note": "A driving/viewpoint day, best as a transit stop between Geirangerfjord and Ålesund. IMPORTANT: the Trollstigen pass is CLOSED Oct–May (and can shut in bad summer weather) — check the road status before setting out.",
             "activities": [
               {
-                "name": "Trollstigen mountain pass — drive 11 hairpin bends with 10% gradient; stop at Stigfossen waterfall (320m drop right beside the road)"
+                "name": "Trollstigen mountain pass — 11 hairpin bends, 10% gradient",
+                "priority": "must-see",
+                "duration": "1h drive",
+                "cost": "Free",
+                "tip": "Drive it uphill from Åndalsnes for the best reveal; check fjellopplevelser/vegvesen for closures."
               },
               {
-                "name": "Trollstigen Visitor Centre — award-winning cantilevered glass platform overlooking the serpentine road and valley below (free)"
+                "name": "Trollstigen Visitor Centre — cantilevered glass viewing platforms",
+                "priority": "must-see",
+                "duration": "45min",
+                "cost": "Free",
+                "tip": "The walkways over Stigfossen waterfall are the money shot; free parking fills by 11am in summer."
               },
               {
-                "name": "Trollveggen (Troll Wall) — Europe's tallest vertical rock face (1,100m); viewpoint 15-min detour on Rv63 heading toward Åndalsnes"
+                "name": "Trollveggen (Troll Wall) — Europe's tallest vertical rock face (1,100m)",
+                "priority": "recommended",
+                "duration": "30min",
+                "cost": "Free",
+                "tip": "Viewpoint 15-min drive from the pass; look for BASE jumpers on clear summer days."
               },
               {
-                "name": "Gudbrandsjuvet gorge — narrow canyon with walkways and cascading rapids, 30-min drive south on Rv63 (free)"
+                "name": "Gudbrandsjuvet gorge — walkways over a narrow canyon",
+                "priority": "optional",
+                "duration": "45min",
+                "cost": "Free",
+                "tip": "30-min drive south; short architect-designed boardwalk over churning rapids."
               }
             ],
             "hotels": [
               {
-                "name": "Grand Hotel Bellevue Åndalsnes (nearby town)",
-                "budget": "₹12,000–20,000/night"
+                "name": "Trollstigen Camping & Gjestegård",
+                "budget": "₹5,000–₹9,000/night",
+                "tier": "budget"
               },
               {
-                "name": "Drive through — best as a transit stop between Geirangerfjord and Alesund",
-                "budget": "N/A (transit)"
+                "name": "Åndalsnes Vandrerhjem (hostel)",
+                "budget": "₹6,000–₹10,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Grand Hotel Bellevue Åndalsnes",
+                "budget": "₹14,000–₹22,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Hotel Aak (climbers' lodge)",
+                "budget": "₹16,000–₹24,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Juvet Landscape Hotel (Valldal)",
+                "budget": "₹28,000–₹48,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Hotel Union Øye (historic)",
+                "budget": "₹24,000–₹40,000/night",
+                "tier": "premium"
               }
+            ],
+            "meals": [
+              "Trollstigen Café (visitor centre)",
+              "Sødahl-huset, Åndalsnes",
+              "Hotel Aak restaurant",
+              "Valldal strawberry-farm stall"
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Mountains",
+          "Waterfalls"
         ]
       },
       "Lofoten": {
@@ -613,99 +1060,203 @@
         "days": [
           {
             "theme": "Svolvær & Henningsvær – Art & Arctic Harbour",
+            "pace": "moderate",
+            "note": "Base yourself around Svolvær. A relaxed arrival day of harbours and galleries, ending with an aurora hunt (Sept–March) once it's dark. A rental car makes Lofoten hugely easier.",
             "activities": [
               {
-                "name": "Svolvær harbour walk — gateway to Lofoten, dramatic Svolværgeita peak backdrop, galleries & cafés"
+                "name": "Svolvær harbour walk — galleries under the Svolværgeita peak",
+                "priority": "recommended",
+                "duration": "1h",
+                "cost": "Free",
+                "tip": "The gateway town; grab dinner reservations early — Lofoten kitchens close by 9pm."
               },
               {
-                "name": "Magic Ice gallery — Lofoten ice sculpture exhibition inside a frozen chamber",
-                "cost": "₹1,500 pp"
+                "name": "Henningsvær — the 'Venice of Lofoten' fishing village on tiny islands",
+                "priority": "must-see",
+                "duration": "2h",
+                "cost": "Free",
+                "tip": "30-min drive; the football pitch on the rocks is world-famous — shoot it from the hillside above."
               },
               {
-                "name": "Henningsvær (30-min drive) — 'Venice of Lofoten', fishing village on tiny islands connected by bridges; famous football pitch"
+                "name": "Kaviar Factory & Henningsvær galleries — contemporary art in old fish plants",
+                "priority": "optional",
+                "duration": "1h",
+                "cost": "~₹1,500",
+                "tip": "Surprisingly world-class shows; check opening days off-season."
               },
               {
-                "name": "Henningsvær galleries & Kaviar Factory — contemporary art in former fish factory"
-              },
-              {
-                "name": "Evening aurora hunt from Svolvær beach — KP 2+ sufficient, dark from 9 PM in Sept"
+                "name": "Evening aurora hunt from a dark beach near Svolvær",
+                "priority": "must-see",
+                "duration": "1–3h",
+                "cost": "Free (self-drive)",
+                "tip": "KP 2+ is enough away from town lights; check Hello Aurora and the Yr cloud forecast (Sept–March)."
               }
             ],
             "hotels": [
               {
-                "name": "Svinøya Rorbuer Svolvær (historic, waterfront cabins)",
-                "budget": "₹14,000–26,000/night"
+                "name": "Fast Hotel Svolvær",
+                "budget": "₹9,000–₹14,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Kræmmervika Rorbuer (cabins)",
+                "budget": "₹10,000–₹16,000/night",
+                "tier": "budget"
               },
               {
                 "name": "Thon Hotel Lofoten Svolvær",
-                "budget": "₹12,000–20,000/night"
+                "budget": "₹16,000–₹24,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Scandic Svolvær",
+                "budget": "₹15,000–₹22,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Svinøya Rorbuer (historic waterfront cabins)",
+                "budget": "₹22,000–₹40,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Nyvågar Rorbuhotell (Kabelvåg)",
+                "budget": "₹20,000–₹34,000/night",
+                "tier": "premium"
               }
+            ],
+            "meals": [
+              "Børsen Spiseri (Svolvær, stockfish)",
+              "Trevarefabrikken café (Henningsvær)",
+              "Lysstøperiet café",
+              "Henningsvær Bryggehotell"
             ]
           },
           {
             "theme": "Reine, Å & Southern Lofoten Drive",
+            "pace": "packed",
+            "note": "The scenic E10 south is the highlight of Lofoten — a long but jaw-dropping drive. Budget for photo stops at every bend; distances are longer than they look on the map.",
             "activities": [
               {
-                "name": "Drive E10 south — one of the world's most scenic roads; mountains, beaches, bridges between islands"
+                "name": "Drive the E10 south — mountains, beaches & bridges between islands",
+                "priority": "must-see",
+                "duration": "Half day",
+                "cost": "Free (fuel)",
+                "tip": "One of the world's great road drives; fuel up in Leknes as stations are sparse further south."
               },
               {
-                "name": "Reine — postcard-perfect red rorbuer beneath Reinebringen peak; photograph from the bridge"
+                "name": "Reine — red rorbuer cabins beneath Reinebringen",
+                "priority": "must-see",
+                "duration": "1h",
+                "cost": "Free",
+                "tip": "Shoot from the bridge on the way in; the village is postcard-perfect in any weather."
               },
               {
-                "name": "Reinebringen hike — 1,560 stone steps to 448m with jaw-dropping panorama of Reine and islands (2 hrs RT)",
-                "tip": "Start early. Steep but well-maintained Sherpa steps."
+                "name": "Reinebringen hike — 1,560 stone steps to a 448m panorama",
+                "priority": "recommended",
+                "duration": "2.5–3h",
+                "cost": "Free",
+                "tip": "Steep sherpa-built stairs; go only in dry conditions and start early to beat crowds on the narrow top."
               },
               {
-                "name": "Å (pronounced 'Oh') — end of the road; Stockfish Museum + traditional fishing village preserved from 1800s",
-                "cost": "₹800 pp museum"
-              },
-              {
-                "name": "Hamnøy fishing village — tiny bridge-connected village, classic photo spot at sunrise/sunset"
+                "name": "Å i Lofoten — end of the road, Stockfish Museum & fishing village",
+                "priority": "optional",
+                "duration": "1.5h",
+                "cost": "~₹1,200 (museum)",
+                "tip": "Literally the road's end ('Å' = 'Oh'); the stockfish and fishing-village museums are a short combo."
               }
+            ],
+            "meals": [
+              "Anitas Sjømat (Sakrisøy fish burger)",
+              "Bringen café, Reine",
+              "Maren Anna, Sørvågen",
+              "Gadus / Å bakery"
             ]
           },
           {
             "theme": "Beaches, Viking Museum & Aurora",
+            "pace": "moderate",
+            "note": "A slower day around Leknes/Borg — white-sand Arctic beaches and the Viking longhouse, saving energy for another aurora night. Beaches are stunning but the water is freezing.",
             "activities": [
               {
-                "name": "Ramberg or Haukland Beach — white sand, turquoise Arctic water, dramatic mountain backdrop (free)"
+                "name": "Haukland & Uttakleiv beaches — white sand, turquoise Arctic water",
+                "priority": "must-see",
+                "duration": "1.5h",
+                "cost": "Free",
+                "tip": "Haukland is the swim beach (brave souls only); Uttakleiv is the aurora-reflection beach at night."
               },
               {
-                "name": "Lofotr Viking Museum at Borg — full-size reconstructed Viking chieftain's longhouse (83m), boat rides, period activities",
-                "cost": "₹2,000 pp",
-                "tip": "Allow 2–3 hrs. 15-min drive from Leknes."
+                "name": "Lofotr Viking Museum at Borg — reconstructed 83m chieftain's longhouse",
+                "priority": "recommended",
+                "duration": "1.5–2h",
+                "cost": "₹2,650",
+                "tip": "Costumed guides, mead tasting and rowing a Viking ship in summer; the best rainy-day option."
               },
               {
-                "name": "Nusfjord fishing village — UNESCO-listed, one of Norway's best-preserved fishing villages, charming harbour",
-                "cost": "₹600 pp entry"
+                "name": "Nusfjord — one of Norway's best-preserved fishing villages",
+                "priority": "optional",
+                "duration": "1h",
+                "cost": "Small entry fee",
+                "tip": "UNESCO-listed hamlet in a tight cove; quiet and cinematic outside cruise hours."
               },
               {
-                "name": "Northern Lights from Uttakleiv Beach or Haukland — iconic aurora reflections in shallow tidal water, KP 2+ in Sept"
+                "name": "Northern Lights from Uttakleiv or Haukland beach",
+                "priority": "must-see",
+                "duration": "1–3h",
+                "cost": "Free",
+                "tip": "Iconic aurora reflections in the shallow tidal pools; layer up, it's cold standing still by the sea."
               }
+            ],
+            "meals": [
+              "Himmel og Havn, Ballstad",
+              "Lofoten Mat, Leknes",
+              "Café Klippfiskkjærringa",
+              "supermarket picnic on the beach"
             ]
           },
           {
             "theme": "Whale Watching & Departure",
+            "pace": "moderate",
+            "note": "A boat-focused final day before flying to Tromsø (45-min hop from Svolvær or Leknes). Sea days are weather-dependent — keep the flight as a comfortable buffer.",
             "activities": [
               {
-                "name": "Sea eagle RIB safari from Svolvær — white-tailed eagles swoop for fish beside the boat (2–3 hrs)",
-                "cost": "₹8,000–12,000 pp"
+                "name": "Sea-eagle & Trollfjord RIB safari from Svolvær",
+                "priority": "must-see",
+                "duration": "2h",
+                "cost": "₹11,000–₹12,000",
+                "tip": "White-tailed eagles dive for fish beside the boat; the narrow Trollfjord is only reachable by water. Warm suits provided."
               },
               {
-                "name": "Trollfjorden boat trip — narrow 2km fjord with sheer 1,100m walls, only accessible by boat",
-                "cost": "₹6,000–9,000 pp"
+                "name": "Trollfjorden cruise — narrow 2km fjord with 1,100m walls (calmer boat option)",
+                "priority": "recommended",
+                "duration": "2h",
+                "cost": "~₹7,000",
+                "tip": "The gentler alternative to the RIB; better if prone to seasickness."
               },
               {
-                "name": "Kabelvåg — old trading post, Lofoten Cathedral (wooden, 1898), quiet harbour walk"
+                "name": "Kabelvåg — old trading post & wooden Lofoten Cathedral (1898)",
+                "priority": "optional",
+                "duration": "1h",
+                "cost": "Free",
+                "tip": "Quiet harbour stroll near Svolvær; easy to fit before an afternoon flight."
               },
               {
-                "name": "Flight to Tromsø from Svolvær or Leknes (45 min)",
-                "cost": "₹4,000–8,000 pp"
+                "name": "Flight to Tromsø from Svolvær or Leknes",
+                "priority": "must-see",
+                "duration": "45min",
+                "cost": "₹8,000–₹15,000",
+                "tip": "Book early; Widerøe's small planes give incredible Arctic-coast views — sit by the window."
               }
+            ],
+            "meals": [
+              "Paleo Arctic / Svolvær seafood",
+              "Kaffebrenneriet",
+              "Lofoten Brygge café",
+              "airport snack in Bodø/Tromsø"
             ]
           }
         ],
         "signatureExperiences": [
+          "Islands",
           "Northern Lights"
         ]
       },
@@ -721,59 +1272,121 @@
         "days": [
           {
             "theme": "Adventure Capital & Gondola",
+            "pace": "moderate",
+            "note": "Norway's adrenaline hub. Ride the gondola for the view, then pick ONE adventure by season (rafting/paragliding in summer, skiing in winter). Book adventure activities the day before.",
             "activities": [
               {
-                "name": "Voss Gondol cable car to 886m summit — fjord & mountain panorama (free to hike down)",
-                "cost": "₹1,500 pp RT"
+                "name": "Voss Gondol cable car to 886m — fjord & mountain panorama",
+                "priority": "must-see",
+                "duration": "1.5h",
+                "cost": "~₹5,500 return",
+                "tip": "Free to hike down; runs from the train station so it's easy without a car."
               },
               {
-                "name": "Paragliding tandem from Hangur summit (summer)",
-                "cost": "₹8,000–14,000 pp"
+                "name": "White-water rafting on the Vosso/Raundal river",
+                "priority": "recommended",
+                "duration": "3–4h",
+                "cost": "₹9,000–₹13,000",
+                "tip": "June–Sept; grade II–IV runs with all gear provided — the classic Voss summer thrill."
               },
               {
-                "name": "White-water rafting on Vosso river (June–Sept)",
-                "cost": "₹4,000–6,000 pp (2–3 hrs)"
+                "name": "Paragliding tandem from Hangur summit",
+                "priority": "optional",
+                "duration": "1–2h",
+                "cost": "₹18,000–₹25,000",
+                "tip": "Summer, weather-dependent; no experience needed with a certified pilot."
               },
               {
-                "name": "Voss ski resort — groomed runs + off-piste (Jan–March)",
-                "cost": "₹4,000–6,000 pp day pass"
-              },
-              {
-                "name": "Skydiving over Voss (Norway's skydive capital, June–Sept)",
-                "cost": "₹14,000–18,000 pp"
+                "name": "Voss ski resort — groomed runs & off-piste",
+                "priority": "optional",
+                "duration": "Half/full day",
+                "cost": "Lift pass ~₹5,500/day",
+                "tip": "Jan–March; gondola-served slopes right above town."
               }
             ],
             "hotels": [
               {
-                "name": "Fleischer's Hotel (historic, fjordside, 1889)",
-                "budget": "₹14,000–22,000/night"
+                "name": "Vang Camping og Hytter",
+                "budget": "₹5,000–₹9,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Voss Vandrarheim (hostel)",
+                "budget": "₹6,000–₹10,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Scandic Voss",
+                "budget": "₹13,000–₹20,000/night",
+                "tier": "mid"
               },
               {
                 "name": "Park Hotel Vossevangen",
-                "budget": "₹10,000–16,000/night"
+                "budget": "₹14,000–₹22,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Fleischer's Hotel (historic)",
+                "budget": "₹20,000–₹32,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Stalheim Hotel (gorge viewpoint)",
+                "budget": "₹18,000–₹28,000/night",
+                "tier": "premium"
               }
+            ],
+            "meals": [
+              "Fleischer's Hotel restaurant",
+              "Tre Brør café (veg-friendly)",
+              "Ringheim Kafé (local baking)",
+              "Park Hotel Vossevangen"
             ]
           },
           {
             "theme": "Stalheim Gorge & Nærøyfjord Viewpoints",
+            "pace": "relaxed",
+            "note": "An easy scenic-drive day linking Voss toward the Nærøyfjord. Stalheimskleiva is summer-only and one-way downhill — check it's open before committing.",
             "activities": [
               {
-                "name": "Stalheim Hotel viewpoint & Stalheimskleiva — 13% gradient, 13 hairpin bends into the gorge (summer road only, check opening dates)"
+                "name": "Stalheim Hotel viewpoint & Stalheimskleiva — 13 hairpin bends into the gorge",
+                "priority": "must-see",
+                "duration": "1h",
+                "cost": "Free",
+                "tip": "The hotel terrace has the free classic view; the old road down the gorge is summer-only, one-way."
               },
               {
-                "name": "Nærøydalen valley walk — glacier-carved valley below Stalheim, flat easy path, free"
+                "name": "Tvindefossen waterfall — 26m roadside cascade",
+                "priority": "recommended",
+                "duration": "20min",
+                "cost": "Free",
+                "tip": "15-min north of Voss on the E16; easy free stop with a short path to the base."
               },
               {
-                "name": "Tvindefossen waterfall (26m drop, roadside, free) — 15-min north of Voss on E16"
+                "name": "Nærøydalen valley walk beneath Stalheim",
+                "priority": "optional",
+                "duration": "1h",
+                "cost": "Free",
+                "tip": "Flat, easy glacier-carved valley path — good for a leg stretch with big cliff views."
               },
               {
-                "name": "Voss town church (Vangskyrkja) — 13th-century stone church, free"
-              },
-              {
-                "name": "Voss Museum of Folk Life"
+                "name": "Vangskyrkja (Voss church, 13th-century) & Folk Museum",
+                "priority": "optional",
+                "duration": "1h",
+                "cost": "Small entry",
+                "tip": "The stone church survived WWII bombing; the open-air folk museum sits on the hillside above town."
               }
+            ],
+            "meals": [
+              "Stalheim Hotel lunch",
+              "Tvinde camping kiosk",
+              "Ringheim Kafé",
+              "Tre Brør, Voss"
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Mountains"
         ]
       },
       "Alesund": {
@@ -788,60 +1401,121 @@
         "days": [
           {
             "theme": "Art Nouveau Town & Panoramic Views",
+            "pace": "relaxed",
+            "note": "A compact, walkable island town. Climb Aksla for sunset; everything else is a short stroll around the canals. An easy day after the fjord driving.",
             "activities": [
               {
-                "name": "Aksla Hill viewpoint — 418 steps, panoramic archipelago & city view (free, best at sunset)"
+                "name": "Aksla Hill viewpoint — 418 steps to an archipelago panorama",
+                "priority": "must-see",
+                "duration": "1h",
+                "cost": "Free (road/shuttle option)",
+                "tip": "Free to climb from the town park; or drive up the back road if the steps aren't for you. Best at sunset."
               },
               {
-                "name": "Art Nouveau Centre (Jugendstilsenteret) — why the city rebuilt in Jugendstil after the 1904 fire",
-                "cost": "₹1,000 pp"
+                "name": "Art Nouveau Centre (Jugendstilsenteret) — why the town rebuilt in Jugendstil after 1904",
+                "priority": "recommended",
+                "duration": "1h",
+                "cost": "₹1,500",
+                "tip": "Small, beautifully done; the preserved 1900s pharmacy interior is the highlight."
               },
               {
-                "name": "Sunnmøre Museum — Viking ships & 55-building open-air museum on the water",
-                "cost": "₹800 pp"
+                "name": "Ålesund Fish Market & canal harbour walk",
+                "priority": "recommended",
+                "duration": "45min",
+                "cost": "Meal ~₹1,500",
+                "tip": "Try fiskesuppe (creamy fish soup) at a harbour café — the town's signature dish."
               },
               {
-                "name": "Ålesund Fish Market & harbour walk — local fiskesuppe (fish soup) lunch"
-              },
-              {
-                "name": "Atlanterhavsparken aquarium — Atlantic sea life including wolf fish & seals",
-                "cost": "₹1,400 pp"
+                "name": "Atlanterhavsparken aquarium — North Atlantic sea life & seals",
+                "priority": "optional",
+                "duration": "1.5h",
+                "cost": "₹2,300",
+                "tip": "Diver feeding shows at set times; a 10-min drive west, great with kids or on a wet afternoon."
               }
             ],
             "hotels": [
               {
-                "name": "Brosundet Hotel (warehouse-style, canal views)",
-                "budget": "₹10,000–16,000/night"
+                "name": "Ålesund Vandrerhjem (hostel)",
+                "budget": "₹7,000–₹11,000/night",
+                "tier": "budget"
               },
               {
-                "name": "Quality Hotel Waterfront Alesund",
-                "budget": "₹7,000–10,000/night"
+                "name": "Quality Hotel Waterfront Ålesund",
+                "budget": "₹9,000–₹14,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Scandic Ålesund",
+                "budget": "₹13,000–₹19,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Thon Hotel Ålesund",
+                "budget": "₹12,000–₹18,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Brosundet Hotel (canal-side warehouse)",
+                "budget": "₹18,000–₹30,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Hotel 1904 (Art Nouveau)",
+                "budget": "₹16,000–₹26,000/night",
+                "tier": "premium"
               }
+            ],
+            "meals": [
+              "XL Diner (bacalao & seafood)",
+              "fiskesuppe at the fish market",
+              "Lyst café (veg-friendly)",
+              "Invit espresso bar"
             ]
           },
           {
             "theme": "Eagle Road Self-Drive Loop to Geirangerfjord",
+            "pace": "packed",
+            "note": "A long self-drive loop (car essential) — only attempt in summer with the mountain roads open. Leave early; the ferry + Eagle Road + Dalsnibba fill a full day. Skip if you already did Geiranger.",
             "activities": [
               {
-                "name": "Drive Eagle Road (Ørnesvingen) — 11 hairpin bends to viewpoint 620m above Geirangerfjord; best light before 10 AM"
+                "name": "Drive to Geiranger via the Hellesylt ferry & Eagle Road",
+                "priority": "must-see",
+                "duration": "Half day",
+                "cost": "Ferry ~₹3,300/car",
+                "tip": "Loop out via Hellesylt ferry and back over Eagle Road (or reverse); pre-book the summer ferry."
               },
               {
-                "name": "Dalsnibba mountain plateau — drive Norway's highest public road to 1,476m (summer only, ₹100 toll)",
-                "cost": "Toll ₹100 pp"
+                "name": "Dalsnibba plateau — Norway's highest road viewpoint (1,476m)",
+                "priority": "recommended",
+                "duration": "1.5h",
+                "cost": "₹3,200/car toll",
+                "tip": "Summer only; go only if clear — the whole point is the top-down fjord view."
               },
               {
-                "name": "Flydalsjuvet cliff viewpoint — classic postcard overhang shot over the fjord (free)"
+                "name": "Flydalsjuvet cliff viewpoint over the fjord",
+                "priority": "recommended",
+                "duration": "30min",
+                "cost": "Free",
+                "tip": "The postcard overhang; quick stop on the way into Geiranger village."
               },
               {
-                "name": "Geiranger village — explore waterfront; Seven Sisters & Suitor waterfalls visible from shore"
-              },
-              {
-                "name": "Geiranger → Hellesylt ferry (45 min across the fjord, then drive back to Alesund 1.5 hrs)",
-                "cost": "₹450 pp",
-                "tip": "Much faster return than retracing Eagle Road. Ferry runs summer only."
+                "name": "Geiranger village waterfront — Seven Sisters visible from shore",
+                "priority": "optional",
+                "duration": "1h",
+                "cost": "Free",
+                "tip": "Stretch your legs at the fjord head before the drive back to Ålesund (1.5h)."
               }
+            ],
+            "meals": [
+              "Brasserie Posten, Geiranger",
+              "Hellesylt bakery",
+              "Westerås Farm café",
+              "Ålesund harbour dinner on return"
             ]
           }
+        ],
+        "signatureExperiences": [
+          "Islands"
         ]
       },
       "Geirangerfjord": {
@@ -857,53 +1531,109 @@
         "days": [
           {
             "theme": "UNESCO Fjord Cruise & Viewpoints",
+            "pace": "moderate",
+            "note": "Cruise in the morning light, then loop the road viewpoints by car. A car (or organised tour) is essential for Eagle Road and Dalsnibba. Village is tiny — parking is easiest before 10am.",
             "activities": [
               {
-                "name": "Geirangerfjord sightseeing cruise — Seven Sisters (82m) & Suitor waterfalls, Friaren (Pulpit)",
-                "cost": "₹1,800–3,600 pp (1–2 hr cruise)",
-                "tip": "Full 4-hr cruise to Hellesylt and back ₹7,500 pp — book at geirangerfjord.no"
+                "name": "Geirangerfjord sightseeing cruise — Seven Sisters & Suitor waterfalls",
+                "priority": "must-see",
+                "duration": "1.5–2h",
+                "cost": "₹6,600 (electric boat)",
+                "tip": "The silent hybrid boat is worth the few extra kroner; morning light hits the falls best."
               },
               {
-                "name": "Eagle Road (Ørnesvingen) — 11-hairpin viewpoint 620m above the fjord (car essential)"
+                "name": "Eagle Road (Ørnesvingen) — 11 hairpins to a viewpoint 620m above the fjord",
+                "priority": "must-see",
+                "duration": "45min",
+                "cost": "Free",
+                "tip": "Car essential; the top hairpin's platform frames the Seven Sisters — pull fully off the road to stop."
               },
               {
-                "name": "Flydalsjuvet cliff viewpoint — classic postcard overhang (free, 5-min drive from village)"
+                "name": "Flydalsjuvet cliff viewpoint — the classic postcard overhang",
+                "priority": "recommended",
+                "duration": "30min",
+                "cost": "Free",
+                "tip": "5-min drive from the village; the lower rock ledge gives the famous shot (mind the drop)."
               },
               {
-                "name": "Dalsnibba mountain plateau drive to 1,476m — highest public road in Norway (summer only, ₹100 toll)"
-              },
-              {
-                "name": "Geiranger village waterfront walk — charming 250-person village at fjord head"
+                "name": "Dalsnibba plateau drive to 1,476m — highest road viewpoint in Norway",
+                "priority": "optional",
+                "duration": "1.5h",
+                "cost": "₹3,200/car toll",
+                "tip": "Summer only; from the Skywalk you see the whole fjord — go only if the summit is cloud-free."
               }
             ],
             "hotels": [
               {
-                "name": "Hotel Union Geiranger (iconic clifftop, fjord view)",
-                "budget": "₹28,000–56,000/night"
+                "name": "Geiranger Camping (fjordside)",
+                "budget": "₹5,000–₹9,000/night",
+                "tier": "budget"
               },
               {
                 "name": "Grande Fjord Hotel",
-                "budget": "₹14,000–22,000/night"
+                "budget": "₹14,000–₹22,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Hotel Geiranger",
+                "budget": "₹16,000–₹26,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Hotel Utsikten (hillside view)",
+                "budget": "₹22,000–₹36,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Hotel Union Geiranger (clifftop, fjord view)",
+                "budget": "₹26,000–₹50,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Grande Fjord Hotel Fjordsuite",
+                "budget": "₹28,000–₹42,000/night",
+                "tier": "premium"
               }
+            ],
+            "meals": [
+              "Brasserie Posten (fjordside)",
+              "Hotel Union restaurant",
+              "Westerås Farm café",
+              "Geiranger Sjokolade dessert"
             ]
           },
           {
             "theme": "Kayaking the Fjord & Hidden Waterfalls",
+            "pace": "packed",
+            "note": "An active second day. Choose kayaking OR the Skageflå farm hike (both are half-day and physical) rather than cramming both. Book the guided kayak ahead in summer.",
             "activities": [
               {
-                "name": "Guided fjord kayaking — paddle beneath Seven Sisters waterfall (3–4 hrs)",
-                "cost": "₹8,000–12,000 pp",
-                "tip": "Book with Geiranger Kayaks. Small groups, morning slots sunniest."
+                "name": "Guided fjord kayaking beneath the Seven Sisters",
+                "priority": "must-see",
+                "duration": "2.5–4h",
+                "cost": "₹11,600 (2.5h)",
+                "tip": "No experience needed; the guide keeps you clear of the ferries. Waterproof layers provided."
               },
               {
-                "name": "Hike to Skageflå mountain farm — abandoned farm 250m above water, viewpoint into the fjord (3 hrs RT)"
+                "name": "Hike to Skageflå mountain farm — abandoned farm 250m above the water",
+                "priority": "recommended",
+                "duration": "3–4h",
+                "cost": "Free (boat drop-off ~₹4,000)",
+                "tip": "Take the fjord taxi to the trailhead and hike back to Geiranger; steep but iconic fjord views."
               },
               {
-                "name": "Westerås Farm viewpoint — lesser-known clifftop view of full fjord, short drive from village"
-              },
-              {
-                "name": "Return to Alesund via Trollstigen (2.5 hrs) — stop at Trollstigen visitor centre platform"
+                "name": "Westerås Farm viewpoint & café — lesser-known full-fjord vista",
+                "priority": "optional",
+                "duration": "1h",
+                "cost": "Free (café extra)",
+                "tip": "Short drive + 20-min walk to the Løsta viewpoint; the farm café does waffles and soup."
               }
+            ],
+            "meals": [
+              "Westerås Farm waffles & soup",
+              "Brasserie Posten",
+              "Naustkroa (casual)",
+              "Union Hotel café"
             ]
           }
         ],
@@ -924,99 +1654,198 @@
         "days": [
           {
             "theme": "Arctic City & Cathedral",
+            "pace": "relaxed",
+            "note": "The compact 'Paris of the North' — walkable centre with a bridge to the Arctic Cathedral and a cable car for the big view. Save your energy for evening aurora tours.",
             "activities": [
               {
-                "name": "Arctic Cathedral (Ishavskatedralen) — iconic triangular A-frame glass facade (free exterior; interior ₹800 pp)"
+                "name": "Arctic Cathedral (Ishavskatedralen) — the iconic triangular glass A-frame",
+                "priority": "recommended",
+                "duration": "45min",
+                "cost": "₹750 (free exterior)",
+                "tip": "The stained-glass wall glows at midnight-sun concerts; 15-min walk over the bridge from the centre."
               },
               {
-                "name": "Fjellheisen cable car — 421m summit, panoramic fjord & city views year-round",
-                "cost": "₹1,800 pp RT"
+                "name": "Fjellheisen cable car to 421m — panoramic fjord & city view",
+                "priority": "must-see",
+                "duration": "1.5h",
+                "cost": "₹4,950 return",
+                "tip": "Ticket is valid 7 days; go up on a clear evening for the midnight sun or a low aurora."
               },
               {
-                "name": "Polaria Museum — interactive Arctic exhibits & bearded seal feeding shows",
-                "cost": "₹1,750 pp"
+                "name": "Polaria — interactive Arctic museum with bearded-seal feeding",
+                "priority": "optional",
+                "duration": "1h",
+                "cost": "₹2,150",
+                "tip": "Small but fun with kids; the panoramic aurora film is a good primer."
               },
               {
-                "name": "Tromsø Arctic-Alpine Botanical Garden — world's northernmost botanical garden, free (summer)"
-              },
-              {
-                "name": "Storgata street, Ølhallen pub (Norway's oldest) & cosy café with brunost (brown cheese)"
+                "name": "Storgata street & Ølhallen (Norway's oldest pub) — brunost & coffee",
+                "priority": "recommended",
+                "duration": "1h",
+                "cost": "Café/pub spend",
+                "tip": "Warm up with brown-cheese waffles; Ølhallen pours local Mack beer from 1877."
               }
             ],
             "hotels": [
               {
-                "name": "Clarion Hotel The Edge (harbour views)",
-                "budget": "₹16,000–26,000/night"
+                "name": "Smarthotel Tromsø",
+                "budget": "₹8,000–₹13,000/night",
+                "tier": "budget"
+              },
+              {
+                "name": "Tromsø Activities Hostel",
+                "budget": "₹6,000–₹10,000/night",
+                "tier": "budget"
               },
               {
                 "name": "Thon Hotel Polar",
-                "budget": "₹14,000–22,000/night"
+                "budget": "₹14,000–₹22,000/night",
+                "tier": "mid"
               },
               {
-                "name": "Smarthotel Tromsø (budget)",
-                "budget": "₹8,000–12,000/night"
+                "name": "Scandic Ishavshotel (harbour)",
+                "budget": "₹16,000–₹24,000/night",
+                "tier": "mid"
+              },
+              {
+                "name": "Clarion Hotel The Edge (harbour views)",
+                "budget": "₹22,000–₹38,000/night",
+                "tier": "premium"
+              },
+              {
+                "name": "Radisson Blu Hotel Tromsø",
+                "budget": "₹18,000–₹30,000/night",
+                "tier": "premium"
               }
+            ],
+            "meals": [
+              "Fiskekompaniet (seafood)",
+              "Risø Mat & Kaffebar (veg-friendly)",
+              "Bardus Bistro",
+              "brown-cheese waffles at Ølhallen"
             ]
           },
           {
             "theme": "Northern Lights Hunt",
+            "pace": "relaxed",
+            "note": "Keep the daytime light and rest for a late night — good aurora tours chase clear skies 40–80km out and run 4–6 hours. Book a small-group minibus tour for flexibility; self-drive only if confident on icy roads.",
             "activities": [
               {
-                "name": "Guided Northern Lights evening tour — minibus to dark fjord valleys 40–80 km away (4–5 hrs)",
-                "cost": "₹19,000–26,000 pp",
-                "tip": "Book with 2–3 operators (Pukka Travels, Lights Over Lapland, Northern Lights Tromso) — most offer free rebook night if no lights appear"
+                "name": "Guided Northern Lights minibus tour to dark fjord valleys",
+                "priority": "must-see",
+                "duration": "4–6h",
+                "cost": "₹16,000–₹20,000",
+                "tip": "Small-group operators chase clear skies and lend tripods/warm suits — the single best-value aurora option."
               },
               {
-                "name": "KP index 2+ is sufficient away from city lights; KP 3+ is excellent — check Hello Aurora app"
+                "name": "Check the aurora & cloud forecast (Hello Aurora + Yr + UiT space weather)",
+                "priority": "must-see",
+                "duration": "15min",
+                "cost": "Free",
+                "tip": "KP 2+ away from city lights is enough; clear sky matters more than a high KP number."
               },
               {
-                "name": "Self-drive option: rent a car, drive E8 or E6 toward Skibotn — no guide cost, full flexibility"
+                "name": "Self-drive aurora chase along E8/E6 toward Skibotn (alternative)",
+                "priority": "optional",
+                "duration": "3–5h",
+                "cost": "Car rental ~₹8,000/day",
+                "tip": "Full flexibility and no tour cost, but only with winter-tyre confidence and a checked forecast."
               },
               {
-                "name": "Camera settings: ISO 1600–3200, f/2.8, 8–20s shutter, manual focus infinity"
+                "name": "Aurora photography basics — ISO 1600–3200, f/2.8, 8–20s, focus at infinity",
+                "priority": "optional",
+                "duration": "—",
+                "cost": "Free",
+                "tip": "Bring a tripod and spare batteries (cold drains them fast); a phone in night mode works surprisingly well."
               }
+            ],
+            "meals": [
+              "Emmas Drømmekjøkken (dinner before tour)",
+              "Risø café",
+              "warm-up thermos on the tour",
+              "Bulldog Bar late bite"
             ]
           },
           {
             "theme": "Arctic Wilderness Adventures",
+            "pace": "packed",
+            "note": "A winter-only adventure day (Nov–March). Pick ONE headline activity — dog sledding, reindeer sledding or snowmobiling are each half-day and physically full. Book weeks ahead in peak season.",
             "activities": [
               {
-                "name": "Dog sledding with Husky teams — 2–3 hrs in Arctic wilderness (Nov–March)",
-                "cost": "₹32,000–36,000 pp",
-                "tip": "Arctic Adventure Tours, Tromsø Villmarkssenter — book 3–6 months ahead in peak Feb–March"
+                "name": "Dog sledding with a husky team in the Arctic wilderness",
+                "priority": "must-see",
+                "duration": "3–4h",
+                "cost": "₹27,000–₹34,000",
+                "tip": "Self-drive-your-sled tours are the thrill; includes transfer and thermal suits (Nov–March)."
               },
               {
-                "name": "Reindeer sleigh ride + Sami cultural camp, joik performance & lávvu dinner (Nov–March)",
-                "cost": "₹10,000–14,000 pp"
+                "name": "Reindeer sledding + Sami camp — joik song & lávvu dinner",
+                "priority": "recommended",
+                "duration": "3–4h",
+                "cost": "₹18,000–₹22,000",
+                "tip": "Gentler than huskies and culturally rich; the reindeer-stew lunch in the lávvu is a highlight."
               },
               {
-                "name": "Snowmobile safari across frozen tundra (Nov–March)",
-                "cost": "₹16,000–21,000 pp (2–3 hrs)"
+                "name": "Snowmobile safari across the frozen tundra",
+                "priority": "optional",
+                "duration": "3–4h",
+                "cost": "₹22,000–₹28,000",
+                "tip": "Requires a driving licence; passenger seats are cheaper. Guided only (Nov–March)."
               },
               {
-                "name": "Ice fishing on frozen Arctic lake — included in many winter safari packages"
+                "name": "Ice fishing on a frozen Arctic lake",
+                "priority": "optional",
+                "duration": "2h",
+                "cost": "Often bundled in safaris",
+                "tip": "Usually included in longer winter packages; hot drinks and a fire keep it bearable."
               }
+            ],
+            "meals": [
+              "Sami lávvu reindeer-stew lunch",
+              "Full Steam (dinner)",
+              "Kaffebønna café",
+              "Raketten Bar & Pølse (vegan sausage option)"
             ]
           },
           {
             "theme": "Whale Watching & Island Day Trip",
+            "pace": "moderate",
+            "note": "Season decides your day: whale-watching runs Oct–Jan; the Sommarøy beaches and midnight-sun cruises are the June–July version. A relaxed final Arctic day either way.",
             "activities": [
               {
-                "name": "Whale watching boat tour — orcas & humpbacks migrate Oct–Jan into fjords near Tromsø",
-                "cost": "₹9,300–14,400 pp (3–4 hrs)",
-                "tip": "Best Oct–Dec; Brim Explorer or Whale Safari operator"
+                "name": "Whale-watching boat tour — orcas & humpbacks in the fjords",
+                "priority": "must-see",
+                "duration": "3–5h",
+                "cost": "₹14,000–₹18,000",
+                "tip": "Oct–Jan only, when herring draw the whales; eco-catamarans are steadier than open RIBs."
               },
               {
-                "name": "Sommarøy island day trip (summer) — Arctic white-sand beaches & crystal-clear turquoise fjord, 1 hr drive"
+                "name": "Sommarøy island day trip — Arctic white-sand beaches (summer)",
+                "priority": "recommended",
+                "duration": "Half day",
+                "cost": "Free (drive/bus)",
+                "tip": "1h drive west; turquoise water and white sand that feels tropical until you touch it."
               },
               {
-                "name": "Tromsø University Museum — Arctic archaeology, Sami culture & aurora science exhibit",
-                "cost": "₹750 pp"
+                "name": "Tromsø University Museum — Sami culture & aurora science",
+                "priority": "optional",
+                "duration": "1h",
+                "cost": "~₹1,000",
+                "tip": "Good indoor option; strong Sami and northern-lights exhibits."
               },
               {
-                "name": "Midnight Sun boat tour (June–July) — sun never sets; fjord dinner cruise",
-                "cost": "₹6,000–9,000 pp"
+                "name": "Midnight-sun fjord cruise (June–July) — the sun that never sets",
+                "priority": "optional",
+                "duration": "2–3h",
+                "cost": "~₹8,000",
+                "tip": "Summer alternative to the aurora tour; a calm evening dinner cruise under 24h daylight."
               }
+            ],
+            "meals": [
+              "Fiskekompaniet farewell seafood",
+              "Sommarøy café",
+              "Smørtorget",
+              "Risø Mat & Kaffebar"
             ]
           }
         ],
@@ -1030,151 +1859,510 @@
         "from": "Oslo",
         "to": "Bergen",
         "method": "Bergen Line scenic train (7 hrs)",
-        "cost": "₹1,500–5,000 pp (book vy.no 90 days out)"
+        "cost": "₹1,500–5,000 pp (book vy.no 90 days out)",
+        "modes": [
+          {
+            "mode": "train",
+            "duration": "6.5–7 hrs",
+            "cost": "₹2,500–12,000 pp",
+            "note": "Bergen Line — a top scenic rail; grab minipris on vy.no ~90 days out"
+          },
+          {
+            "mode": "flight",
+            "duration": "55 min",
+            "cost": "₹3,400–7,600 pp",
+            "note": "OSL–BGO, many daily (SAS/Norwegian/Widerøe)"
+          },
+          {
+            "mode": "drive",
+            "duration": "~7 hrs (456 km)",
+            "cost": "₹5,000–7,000 fuel+tolls (per car)",
+            "note": "Via E16 through Hardanger; winter tyres Oct–Apr"
+          }
+        ],
+        "skipped": "Bus (9–13 hrs, ₹8,500–17,000 pp) is slower and pricier than the train — not worth it."
       },
       {
         "from": "Oslo",
         "to": "Flam",
         "method": "Train to Myrdal + Flåm Railway descent (5.5 hrs)",
-        "cost": "₹3,000–5,000 pp"
+        "cost": "₹3,000–5,000 pp",
+        "modes": [
+          {
+            "mode": "train",
+            "duration": "5.5 hrs",
+            "cost": "₹3,000–6,000 pp",
+            "note": "Oslo→Myrdal + Flåm Railway descent"
+          },
+          {
+            "mode": "drive",
+            "duration": "~5 hrs (357 km)",
+            "cost": "₹4,000–6,000 fuel+tolls (per car)"
+          }
+        ],
+        "skipped": "No airport at Flåm; flying routes via Bergen (2.5 hrs on), so rail is faster door-to-door."
       },
       {
         "from": "Flam",
         "to": "Gudvangen",
         "method": "Nærøyfjord electric ferry (2 hrs, UNESCO fjord)",
-        "cost": "₹5,000–6,300 pp one-way"
+        "cost": "₹5,000–6,300 pp one-way",
+        "modes": [
+          {
+            "mode": "ferry",
+            "duration": "2 hrs",
+            "cost": "₹5,000–6,300 pp",
+            "note": "Nærøyfjord UNESCO cruise — the highlight of this leg"
+          },
+          {
+            "mode": "drive",
+            "duration": "~30 min",
+            "cost": "₹300 fuel (per car)",
+            "note": "Via tunnels — fast but skips the fjord entirely"
+          }
+        ]
       },
       {
         "from": "Gudvangen",
         "to": "Bergen",
         "method": "Bus to Voss (1 hr) + train to Bergen (1.5 hrs)",
-        "cost": "₹2,100–2,500 pp"
+        "cost": "₹2,100–2,500 pp",
+        "modes": [
+          {
+            "mode": "bus",
+            "duration": "2.5 hrs total",
+            "cost": "₹2,100–2,500 pp",
+            "note": "Bus to Voss + Bergen Line train"
+          },
+          {
+            "mode": "drive",
+            "duration": "~2.5 hrs (150 km)",
+            "cost": "₹1,500–2,500 fuel+tolls (per car)"
+          }
+        ]
       },
       {
         "from": "Gudvangen",
         "to": "Voss",
         "method": "Bus 950 via Stalheimskleiva gorge (1 hr)",
-        "cost": "₹1,100 pp"
+        "cost": "₹1,100 pp",
+        "modes": [
+          {
+            "mode": "bus",
+            "duration": "1 hr",
+            "cost": "₹1,100 pp",
+            "note": "Bus 950 via Stalheimskleiva gorge"
+          },
+          {
+            "mode": "drive",
+            "duration": "~1 hr",
+            "cost": "₹700 fuel (per car)"
+          }
+        ]
       },
       {
         "from": "Bergen",
         "to": "Flam",
         "method": "Train to Myrdal + Flåm Railway descent (3 hrs)",
-        "cost": "₹2,000–3,500 pp"
+        "cost": "₹2,000–3,500 pp",
+        "modes": [
+          {
+            "mode": "train",
+            "duration": "3 hrs",
+            "cost": "₹2,000–3,500 pp",
+            "note": "Bergen→Myrdal + Flåmsbana"
+          },
+          {
+            "mode": "drive",
+            "duration": "~2.5–3 hrs (165 km)",
+            "cost": "₹1,500–2,500 fuel+tolls (per car)"
+          }
+        ]
       },
       {
         "from": "Bergen",
         "to": "Voss",
         "method": "Train direct Bergen Line (1.5 hrs)",
-        "cost": "₹1,000–1,500 pp"
+        "cost": "₹1,000–1,500 pp",
+        "modes": [
+          {
+            "mode": "train",
+            "duration": "1.25–1.5 hrs",
+            "cost": "₹1,000–1,500 pp",
+            "note": "Bergen Line direct"
+          },
+          {
+            "mode": "bus",
+            "duration": "~1.75 hrs",
+            "cost": "₹700–1,000 pp"
+          },
+          {
+            "mode": "drive",
+            "duration": "~1.5 hrs (100 km)",
+            "cost": "₹900 fuel (per car)"
+          }
+        ]
       },
       {
         "from": "Bergen",
         "to": "Loen",
         "method": "Drive via E39 + Rv15 (4 hrs) or bus with change",
-        "cost": "₹2,000–3,000 pp (bus) or ₹1,500 fuel"
+        "cost": "₹2,000–3,000 pp (bus) or ₹1,500 fuel",
+        "modes": [
+          {
+            "mode": "drive",
+            "duration": "4–4.5 hrs (380 km)",
+            "cost": "₹4,000–5,000 fuel+tolls+ferry (per car)",
+            "note": "Scenic E39 fjord-ferry route"
+          },
+          {
+            "mode": "bus",
+            "duration": "5–6 hrs (with change)",
+            "cost": "₹2,000–3,000 pp"
+          }
+        ],
+        "skipped": "No train or direct flight on this fjord-coast leg."
       },
       {
         "from": "Bergen",
         "to": "Alesund",
-        "method": "Express bus Nor-Way (4 hrs) or flight (45 min)",
-        "cost": "₹2,000–6,000 pp"
+        "method": "Flight (45 min) or scenic coastal drive (~7 hrs, 2 fjord ferries)",
+        "cost": "₹3,000–6,000 pp (flight)",
+        "modes": [
+          {
+            "mode": "flight",
+            "duration": "45 min",
+            "cost": "₹3,000–6,000 pp",
+            "note": "BGO–AES, several daily — the practical choice"
+          },
+          {
+            "mode": "drive",
+            "duration": "~7 hrs (380 km)",
+            "cost": "₹5,000–7,000 fuel+tolls+ferries (per car)",
+            "note": "Via E39 with two fjord-ferry crossings"
+          },
+          {
+            "mode": "bus",
+            "duration": "9–10 hrs",
+            "cost": "₹1,500–2,500 pp",
+            "note": "Kystbussen/NOR-WAY with ferry legs — cheap but very long"
+          }
+        ],
+        "skipped": "Hurtigruten coastal ship is scenic but overnight and costly — not a practical transfer."
       },
       {
         "from": "Loen",
         "to": "Trollstigen",
         "method": "Drive via Rv15 + E136 (2.5 hrs)",
-        "cost": "₹1,000 fuel"
+        "cost": "₹1,000 fuel",
+        "modes": [
+          {
+            "mode": "drive",
+            "duration": "2.5 hrs (150 km)",
+            "cost": "₹1,000–1,500 fuel+tolls (per car)",
+            "note": "Self-drive mountain leg; Trollstigen open ~mid-May–Oct"
+          }
+        ],
+        "skipped": "No public transit on this mountain pass — self-drive only."
       },
       {
         "from": "Loen",
         "to": "Alesund",
         "method": "Drive via Rv15 + E39 (2.5 hrs)",
-        "cost": "₹1,000 fuel"
+        "cost": "₹1,000 fuel",
+        "modes": [
+          {
+            "mode": "drive",
+            "duration": "2.5 hrs (180 km)",
+            "cost": "₹1,200–1,800 fuel+ferry (per car)"
+          },
+          {
+            "mode": "bus",
+            "duration": "3.5–4 hrs (with change)",
+            "cost": "₹1,000–1,800 pp"
+          }
+        ]
       },
       {
         "from": "Trollstigen",
         "to": "Geirangerfjord",
         "method": "Drive Rv63 via Ørnesvingen Eagle Road (1.5 hrs)",
-        "cost": "₹500 toll"
+        "cost": "₹500 toll",
+        "modes": [
+          {
+            "mode": "drive",
+            "duration": "1.5 hrs (50 km)",
+            "cost": "₹500 toll (per car)",
+            "note": "Ørnesvingen Eagle Road (Rv63), summer only"
+          }
+        ]
       },
       {
         "from": "Trollstigen",
         "to": "Alesund",
         "method": "Drive via Åndalsnes + E136 (1.5 hrs)",
-        "cost": "₹800 fuel"
+        "cost": "₹800 fuel",
+        "modes": [
+          {
+            "mode": "drive",
+            "duration": "1.5 hrs (100 km)",
+            "cost": "₹800 fuel (per car)"
+          }
+        ]
       },
       {
         "from": "Geirangerfjord",
         "to": "Alesund",
         "method": "Ferry Geiranger→Hellesylt + drive (2.5 hrs)",
-        "cost": "₹1,000–1,500 pp"
+        "cost": "₹1,000–1,500 pp",
+        "modes": [
+          {
+            "mode": "ferry",
+            "duration": "2.5 hrs total",
+            "cost": "₹1,000–1,500 pp",
+            "note": "Geiranger→Hellesylt scenic ferry + road"
+          },
+          {
+            "mode": "drive",
+            "duration": "~2.5 hrs (via Eidsdal ferry)",
+            "cost": "₹1,200–1,800 fuel+ferry (per car)"
+          }
+        ]
       },
       {
         "from": "Alesund",
         "to": "Geirangerfjord",
         "method": "Drive via Eagle Road (90 min, summer only)",
-        "cost": "₹500 car toll"
+        "cost": "₹500 car toll",
+        "modes": [
+          {
+            "mode": "drive",
+            "duration": "90 min",
+            "cost": "₹500 toll (per car)",
+            "note": "Eagle Road, summer only"
+          },
+          {
+            "mode": "ferry",
+            "duration": "~2.5 hrs",
+            "cost": "₹1,000–1,500 pp",
+            "note": "Via Hellesylt ferry (year-round alternative)"
+          }
+        ]
       },
       {
         "from": "Alesund",
         "to": "Lofoten",
         "method": "Flight via Bodø or Tromsø (3–5 hrs with change)",
-        "cost": "₹6,000–12,000 pp"
+        "cost": "₹6,000–12,000 pp",
+        "modes": [
+          {
+            "mode": "flight",
+            "duration": "3–5 hrs (with change)",
+            "cost": "₹6,000–12,000 pp",
+            "note": "Via Bodø or Tromsø/Oslo hub"
+          }
+        ],
+        "skipped": "No direct flight, rail, or practical road/ferry — every route connects through a hub."
       },
       {
         "from": "Alesund",
         "to": "Tromso",
         "method": "Flight direct (1 hr, Vigra Airport)",
-        "cost": "₹5,000–10,000 pp"
+        "cost": "₹5,000–10,000 pp",
+        "modes": [
+          {
+            "mode": "flight",
+            "duration": "1 hr direct",
+            "cost": "₹5,000–10,000 pp",
+            "note": "AES–TOS limited/seasonal; else connect via OSL"
+          }
+        ],
+        "skipped": "1,000+ km north — flying is the only practical option."
       },
       {
         "from": "Lofoten",
         "to": "Tromso",
         "method": "Flight Svolvær/Leknes to Tromsø (45 min)",
-        "cost": "₹4,000–8,000 pp"
+        "cost": "₹4,000–8,000 pp",
+        "modes": [
+          {
+            "mode": "flight",
+            "duration": "45 min",
+            "cost": "₹4,000–8,000 pp",
+            "note": "Svolvær/Leknes→Tromsø"
+          },
+          {
+            "mode": "ferry",
+            "duration": "8–10 hrs",
+            "cost": "₹2,000–3,500 pp",
+            "note": "Express boat/Hurtigruten + road — scenic but long"
+          }
+        ]
       },
       {
         "from": "Tromso",
         "to": "Lofoten",
         "method": "Flight to Svolvær or Leknes (45 min)",
-        "cost": "₹4,000–8,000 pp"
+        "cost": "₹4,000–8,000 pp",
+        "modes": [
+          {
+            "mode": "flight",
+            "duration": "45 min",
+            "cost": "₹4,000–8,000 pp",
+            "note": "Tromsø→Svolvær/Leknes"
+          },
+          {
+            "mode": "ferry",
+            "duration": "8–10 hrs",
+            "cost": "₹2,000–3,500 pp",
+            "note": "Scenic slow coastal option"
+          }
+        ]
       },
       {
         "from": "Tromso",
         "to": "Oslo",
         "method": "Flight direct (2 hrs)",
-        "cost": "₹5,000–9,000 pp"
+        "cost": "₹5,000–9,000 pp",
+        "modes": [
+          {
+            "mode": "flight",
+            "duration": "2 hrs direct",
+            "cost": "₹5,000–18,000 pp",
+            "note": "Book early — northern fares spike in winter"
+          }
+        ],
+        "skipped": "1,700 km — no viable land option (rail reaches only Bodø, +25 hrs)."
       },
       {
         "from": "Oslo",
         "to": "Tromso",
         "method": "Flight direct (2 hrs)",
-        "cost": "₹6,000–10,000 pp"
+        "cost": "₹6,000–10,000 pp",
+        "modes": [
+          {
+            "mode": "flight",
+            "duration": "2 hrs direct",
+            "cost": "₹5,000–18,000 pp",
+            "note": "Book early — northern fares spike in winter"
+          }
+        ],
+        "skipped": "1,700 km — no viable land option (rail reaches only Bodø, +25 hrs)."
       },
       {
         "from": "Oslo",
         "to": "Lofoten",
         "method": "Flight to Leknes via Bodø (4 hrs with change)",
-        "cost": "₹6,000–14,000 pp"
+        "cost": "₹6,000–14,000 pp",
+        "modes": [
+          {
+            "mode": "flight",
+            "duration": "~4 hrs (with change)",
+            "cost": "₹6,000–14,000 pp",
+            "note": "Via Bodø to Leknes/Svolvær"
+          },
+          {
+            "mode": "train",
+            "duration": "22–27 hrs (train+ferry)",
+            "cost": "₹4,000–7,000 pp",
+            "note": "Nordland Railway to Bodø + car ferry — only for the journey itself"
+          }
+        ]
       },
       {
         "from": "Flam",
         "to": "Voss",
         "method": "Ferry Nærøyfjord to Gudvangen + Bus 950 to Voss",
-        "cost": "₹6,100–7,400 pp combined"
+        "cost": "₹6,100–7,400 pp combined",
+        "modes": [
+          {
+            "mode": "ferry",
+            "duration": "3.5 hrs (combined)",
+            "cost": "₹6,100–7,400 pp",
+            "note": "Nærøyfjord cruise + Bus 950 — scenic combo"
+          },
+          {
+            "mode": "train",
+            "duration": "~1.25 hrs",
+            "cost": "₹1,500–2,500 pp",
+            "note": "Flåmsbana to Myrdal + Bergen Line — fast, skips the fjord"
+          },
+          {
+            "mode": "drive",
+            "duration": "~1.5 hrs (90 km)",
+            "cost": "₹700 fuel (per car)"
+          }
+        ]
       },
       {
         "from": "Voss",
         "to": "Alesund",
         "method": "Bus or drive via E16 + Rv13 (~3.5 hrs)",
-        "cost": "₹1,000–2,000 pp"
+        "cost": "₹1,000–2,000 pp",
+        "modes": [
+          {
+            "mode": "bus",
+            "duration": "~3.5 hrs",
+            "cost": "₹1,000–2,000 pp",
+            "note": "Via E16 + Rv13"
+          },
+          {
+            "mode": "drive",
+            "duration": "~3.5 hrs (250 km)",
+            "cost": "₹2,000–3,000 fuel+tolls+ferry (per car)"
+          }
+        ]
       },
       {
         "from": "Geirangerfjord",
         "to": "Tromso",
         "method": "Flight via Ålesund or Oslo (5–7 hrs total)",
-        "cost": "₹10,000–16,000 pp"
+        "cost": "₹10,000–16,000 pp",
+        "modes": [
+          {
+            "mode": "flight",
+            "duration": "5–7 hrs total",
+            "cost": "₹10,000–16,000 pp",
+            "note": "Drive/bus to Ålesund + fly via Oslo"
+          }
+        ],
+        "skipped": "Remote fjord to the Arctic — must connect through Ålesund/Oslo by air."
+      },
+      {
+        "from": "Loen",
+        "to": "Geirangerfjord",
+        "method": "Scenic drive via Rv15 + Rv63 Geiranger road (2.5–3 hrs)",
+        "cost": "₹1,200–₹1,800 fuel+tolls (per car)",
+        "modes": [
+          {
+            "mode": "drive",
+            "duration": "2.5–3 hrs (150 km)",
+            "cost": "₹1,200–₹1,800 fuel+tolls (per car)",
+            "note": "Via Stryn & Rv15 to Grotli, then the hairpin Rv63 down Ørnesvingen; or via the Hellesylt–Geiranger ferry"
+          },
+          {
+            "mode": "bus",
+            "duration": "3.5–4 hrs (with change)",
+            "cost": "₹1,200–₹2,000 pp",
+            "note": "Summer-season only, changing at Stryn/Hellesylt"
+          }
+        ],
+        "skipped": "No train or flight; the mountain roads are self-drive and open only ~May–Oct."
+      },
+      {
+        "from": "Geirangerfjord",
+        "to": "Lofoten",
+        "method": "Ferry/drive to Ålesund airport + flight via Bodø/Tromsø (6–9 hrs total)",
+        "cost": "₹8,000–₹16,000 pp",
+        "modes": [
+          {
+            "mode": "flight",
+            "duration": "6–9 hrs total (with transfer)",
+            "cost": "₹8,000–₹16,000 pp",
+            "note": "First reach Ålesund (Vigra) airport — ~3 hrs by Hellesylt ferry + road — then fly to Leknes/Svolvær via Bodø, Tromsø or Oslo"
+          }
+        ],
+        "skipped": "No direct road or rail to the Arctic; the only practical way north is to fly once you reach Ålesund airport."
       }
     ],
     "extras": [
@@ -1242,5 +2430,17 @@
         "Northern Lights Lofoten Norway aurora"
       ]
     }
+  },
+  "pricesAsOf": "2026-07",
+  "diet": {
+    "vegetarian": "Easy in the cities: every Rema 1000, Kiwi and Coop stocks produce, breads, brown cheese and ready salads, and Oslo, Bergen and Tromsø have dedicated veg cafés. Fjord and fishing villages lean fish/meat, so self-cater from supermarkets or check menus ahead. Look for the green 'Nøkkelhullet' healthy label and clearly marked 'vegetar' dishes.",
+    "vegan": "Strong in Oslo (Nordvegan, Dirty V, Oslo Raw) and growing in Bergen and Tromsø; look for the 'vegansk' label. Oat milk (havremelk) is standard in cafés and bakeries mark vegan buns clearly. Use the HappyCow and Vegan Norway apps to find options in smaller towns.",
+    "phrases": [
+      "Jeg er vegetarianer / veganer — I'm vegetarian / vegan",
+      "Uten kjøtt og fisk, takk — without meat and fish, please",
+      "Har dere veganske retter? — do you have vegan dishes?",
+      "Uten melk og egg — without milk and eggs",
+      "Er dette vegansk? — is this vegan?"
+    ]
   }
 }
