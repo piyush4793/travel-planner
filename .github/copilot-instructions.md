@@ -8,8 +8,8 @@ Vite 5 + React 18 + TypeScript + Tailwind CSS + MapLibre GL. Personal travel pla
 
 ```bash
 npx tsc --noEmit        # fastest type-check loop
-npm test                # Vitest suite (1159 tests)
-npm run test:coverage   # coverage report (must stay ≥ 90% total statements/lines)
+npm test                # Vitest suite (1335 tests)
+npm run test:coverage   # coverage report (must stay ≥ 92% total statements/lines)
 npm run build           # tsc && vite build
 npm run validate        # tsc + tests(+coverage) + knip + build
 ```
@@ -17,10 +17,10 @@ npm run validate        # tsc + tests(+coverage) + knip + build
 Run `npx tsc --noEmit` and `npm run build` before and after every change set. Use `npm test` whenever behavior changes or when documentation references current suite counts. `npm run validate` is the full confidence pass.
 Before committing, ensure adequate test coverage for the behavior you changed (add or update TCs so regressions are caught).
 
-**Coverage gate (hard):** the pre-commit hook and `npm run validate` run `vitest run --coverage`, which enforces a **global floor of 90% statements/lines** (set in `vite.config.ts` `coverage.thresholds`). A commit is blocked if total coverage drops below 90%. Per-directory thresholds also apply (`src/utils/**` 60/50/60, `src/core/utils/**` 80/70/80, etc.). Raise the floor when coverage rises; never lower it to force a commit through.
+**Coverage gate (hard):** the pre-commit hook and `npm run validate` run `vitest run --coverage`, which enforces a **global floor of 92% statements/lines, 87% branches, 88% functions** (set in `vite.config.ts` `coverage.thresholds`). A commit is blocked if total coverage drops below those floors. Per-directory thresholds also apply (`src/utils/**` 60/50/60, `src/core/utils/**` 80/70/80, etc.). Raise the floor when coverage rises; never lower it to force a commit through.
 
 Current testing priority:
-- Total statement coverage is 90.01% (1159 tests). Plan/itinerary surfaces and the `ai` folder (`ChatModal` import/link/finalize flows, `SettingsModal` backup/restore/CSV flows) are now covered; the Trips view covers sort/filter plus saved-trip open/favorite/delete flows; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; `importParser` (incl. `fetchChatLink`), `useChatSession`, `core/storage`, and `App.tsx` orchestration handlers are covered; the platform-backup stack (`core/platform/*`, `core/adapters/backup/*`, `StorageLocationCard`) is covered via a reusable fake File System helper (`src/test/support/fakeFileSystem.ts`); remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` (need a real WebGL context).
+- Total statement coverage is 92.95% (1335 tests). Plan/itinerary surfaces and the `ai` folder (`ChatModal` import/link/finalize flows, `SettingsModal` backup/restore/CSV flows) are now covered; the Trips view covers sort/filter plus saved-trip open/favorite/delete flows; the cinematic pure engine (`cinematic/engine.ts`) is unit-tested; `importParser` (incl. `fetchChatLink`), `useChatSession`, `core/storage`, and `App.tsx` orchestration handlers are covered; the platform-backup stack (`core/platform/*`, `core/adapters/backup/*`, `StorageLocationCard`) is covered via a reusable fake File System helper (`src/test/support/fakeFileSystem.ts`); remaining gaps are the maplibre-heavy `ItineraryCinematic` React shell / `MapView` / `HoverCard` (need a real WebGL context).
 - Reuse `src/test/testUtils.ts` helpers for localStorage seeding, route setup, and deterministic timers in timing-sensitive UI tests.
 - Prefer `fireEvent` over `userEvent.tab()` for focus-trap/timing-sensitive assertions (jsdom focus timing is flaky).
 - `src/components/**` thresholds remain intentionally low in `vite.config.ts`; tighten them now that broad integration coverage exists.

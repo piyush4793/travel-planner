@@ -56,10 +56,13 @@ export default defineConfig({
         "src/data/**",
       ],
       thresholds: {
-        // Global floor — total statement/line coverage must stay at or above 90%.
+        // Global floor — total coverage must stay at or above these.
         // Enforced on every commit via the pre-commit hook and `npm run validate`.
-        statements: 90,
-        lines: 90,
+        // Raise these as coverage rises; never lower them to force a commit through.
+        statements: 92,
+        lines: 92,
+        branches: 87,
+        functions: 88,
         "src/core/utils/**": {
           statements: 80,
           branches: 70,
