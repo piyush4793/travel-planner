@@ -4,6 +4,7 @@ import { useTripPlanner } from "@/hooks/useTripPlanner.ts";
 import type { LoadedUnit } from "@/core/trip/destinationSource.ts";
 import type { Country } from "@/core/types.ts";
 import type { TripSegment } from "@/core/utils/tripPlans.ts";
+import type { CountryRule } from "@/core/data/itineraryRules.ts";
 
 function unit(name: string, cities: string[]): LoadedUnit {
   const country: Country = {
@@ -18,8 +19,20 @@ function unit(name: string, cities: string[]): LoadedUnit {
   return { country, rule: null };
 }
 
-const primarySegment: TripSegment = {
-  name: "Primary",
+// A minimal two-city rule whose plan visits BOTH cities by name, so the derived
+// `autoSelectedCities` is non-empty (the generic rule-less path yields an empty
+// auto set and can't exercise the materialize-from-auto toggle path).
+const day = (theme: string) => ({ theme, activities: [{ name: "See things" }] });
+const MULTI_CITY_RULE: CountryRule = {
+  cityOrder: ["Alpha", "Beta"],
+  cities: {
+    Alpha: { name: "Alpha", minDays: 1, recDays: 2, maxDays: 3, days: [day("Alpha 1"), day("Alpha 2")] },
+    Beta: { name: "Beta", minDays: 1, recDays: 2, maxDays: 3, days: [day("Beta 1"), day("Beta 2")] },
+  },
+  connections: [],
+};
+
+const primarySegment: TripSegment = {  name: "Primary",
   plan: {
     duration: "3 days",
     costPerPerson: "₹1L – ₹2L",
@@ -61,6 +74,39 @@ describe("useTripPlanner", () => {
     expect(result.current.unitPlans[0].selectedCities).toEqual(["Bergen"]);
     act(() => result.current.unitPlans[0].clearCities());
     expect(result.current.unitPlans[0].selectedCities).toEqual([]);
+  });
+
+  // Regression: deselecting an auto-visited city on a secondary stop must remove
+  // ONLY that city, not collapse the stop to just that one (which looked like it
+  // "deselected some other city"). The toggle must materialize from the auto set
+  // before applying, mirroring usePlanBuilder.
+  it("deselecting one auto-picked city on a stop keeps the rest selected", () => {
+    const ruledUnit: LoadedUnit = {
+      country: {
+        name: "Ruleland",
+        lat: 0,
+        lng: 0,
+        bestMonths: ["March"],
+        budget: "₹1L–₹2L",
+        experiences: ["Food"],
+        cities: [
+          { name: "Alpha", lat: 0, lng: 0, notes: "x" },
+          { name: "Beta", lat: 1, lng: 1, notes: "x" },
+        ],
+      },
+      rule: MULTI_CITY_RULE,
+    };
+    const { result } = renderHook(() => useTripPlanner([ruledUnit], [], "couple"));
+
+    const auto = result.current.unitPlans[0].autoSelectedCities;
+    // The rule visits both cities, so the auto set is what the picker shows checked.
+    expect(auto).toEqual(expect.arrayContaining(["Alpha", "Beta"]));
+
+    const drop = auto[0];
+    act(() => result.current.unitPlans[0].toggleCity(drop));
+    expect(result.current.unitPlans[0].selectedCities).toEqual(auto.filter((c) => c !== drop));
+    expect(result.current.unitPlans[0].selectedCities).not.toContain(drop);
+    expect(result.current.unitPlans[0].selectedCities.length).toBe(auto.length - 1);
   });
 
   it("composes the primary segment ahead of every unit into one honest plan", () => {

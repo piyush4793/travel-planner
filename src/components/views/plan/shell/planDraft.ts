@@ -19,6 +19,12 @@ export type PlanDraft = {
   pinned: boolean;
   /** Trip scope the draft was built in, so a refresh resumes the right source. */
   scope: TripScope;
+  /**
+   * Per-secondary-stop edits (keyed by country name) so a multi-country route's
+   * additional stops resume their hand-picked cities + tuned length on refresh,
+   * not just the primary. Only diverged stops are stored; auto stops re-seed.
+   */
+  stops?: Record<string, { cities: string[]; days: number; experiences: string[] }>;
 };
 
 /** Pre-multi-country persisted shape (single `country` string). */
@@ -41,6 +47,7 @@ export function loadPlanDraft(): PlanDraft | null {
     pinned: raw.pinned ?? false,
     // Drafts saved before scopes existed are international.
     scope: raw.scope === "domestic" ? "domestic" : "international",
+    stops: raw.stops ?? {},
   };
 }
 

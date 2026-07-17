@@ -170,10 +170,15 @@ export function useTripPlanner(
     if (seedReady) appliedSeedNonce.current = seed!.nonce;
   }, [units, recommendedByName, seed]);
 
-  const toggleCity = useCallback((unitName: string, city: string) => {
+  // Auto → explicit: when nothing is hand-picked yet, materialize from the
+  // auto-picked set (what the user sees checked) BEFORE applying this toggle —
+  // otherwise deselecting an auto-visited city would collapse the stop to just
+  // that one city, appearing to "deselect" every other visited city. Mirrors
+  // usePlanBuilder.toggleCity so a stop curates identically at any route position.
+  const toggleCity = useCallback((unitName: string, city: string, autoCities: string[]) => {
     setState((prev) => {
       const cur = prev[unitName] ?? { selectedCities: [], customDays: 7, pinned: false, experiences: null };
-      const base = cur.selectedCities;
+      const base = cur.selectedCities.length > 0 ? cur.selectedCities : autoCities;
       const selectedCities = base.includes(city) ? base.filter((c) => c !== city) : [...base, city];
       return { ...prev, [unitName]: { ...cur, selectedCities, pinned: true } };
     });
@@ -258,7 +263,7 @@ export function useTripPlanner(
         experiences,
         experienceOptions,
         plan,
-        toggleCity: (city: string) => toggleCity(country.name, city),
+        toggleCity: (city: string) => toggleCity(country.name, city, autoSelectedCities),
         clearCities: () => clearCities(country.name),
         setDays: (days: number) => setDays(country.name, days),
         resetDays: () => resetDays(country.name),

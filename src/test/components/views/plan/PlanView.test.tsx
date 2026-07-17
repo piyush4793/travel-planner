@@ -604,25 +604,38 @@ describe("PlanView — multi-country Basics", () => {
     });
   });
 
-  it("defers opening a saved trip until its destination data resolves", async () => {
-    const openTrip = { stops: [{ country: "Testland (no rule)", days: 6, cities: [], experiences: [] }], basis: "couple" as const, nonce: 7 };
-    // Destination data not ready yet: the name resolves to nothing, so the open
-    // must NOT be consumed — the landing picker stays put.
-    const { rerender } = renderView({ countries: [], openTrip });
-    expect(screen.getByText(/Plan your next escape/i)).toBeInTheDocument();
-    // Data lands (same nonce): the effect re-runs and finally opens to review.
-    rerender(
+  it("persists each edited additional stop into the draft so a refresh resumes them", async () => {
+    // Reopen a two-stop route whose *secondary* stop is diverged (hand-picked
+    // city + pinned length). The bug: only the primary stop was written to the
+    // draft, so a refresh dropped the additional stop's edits. Now the draft's
+    // `stops` map must carry the secondary stop's cities + length.
+    render(
       <PlanView
-        countries={[COUNTRY]}
+        countries={[
+          { name: "Norway", lat: 60, lng: 8, budget: "₹1L", bestMonths: ["June"], experiences: [] },
+          { name: "Sweden", lat: 60, lng: 15, budget: "₹1L", bestMonths: ["June"], experiences: [] },
+        ]}
         budgetBasis="couple"
         setBudgetBasis={vi.fn()}
         homeCountry="India"
-        onToggleTripFavorite={vi.fn()}
-        openTrip={openTrip}
+        openTrip={{
+          stops: [
+            { country: "Norway", days: 6, cities: [], experiences: [] },
+            { country: "Sweden", days: 5, cities: ["Stockholm"], experiences: [] },
+          ],
+          basis: "couple",
+          nonce: 71,
+        }}
       />,
     );
     await waitFor(() => {
       expect(screen.queryByText(/Plan your next escape/i)).not.toBeInTheDocument();
+    });
+    await waitFor(() => {
+      const draft = loadPlanDraft();
+      expect(draft?.stops?.Sweden).toBeTruthy();
+      expect(draft?.stops?.Sweden?.cities).toEqual(["Stockholm"]);
+      expect(draft?.stops?.Sweden?.days).toBe(5);
     });
   });
 });

@@ -19,6 +19,23 @@ describe("planDraft", () => {
       days: 12,
       pinned: true,
       scope: "international",
+      stops: {},
+    });
+  });
+
+  it("round-trips per-secondary-stop edits", () => {
+    savePlanDraft({
+      countries: ["Norway", "Denmark"],
+      step: 2,
+      cities: ["Oslo"],
+      experiences: [],
+      days: 7,
+      pinned: true,
+      scope: "international",
+      stops: { Denmark: { cities: ["Copenhagen"], days: 4, experiences: ["Food"] } },
+    });
+    expect(loadPlanDraft()?.stops).toEqual({
+      Denmark: { cities: ["Copenhagen"], days: 4, experiences: ["Food"] },
     });
   });
 

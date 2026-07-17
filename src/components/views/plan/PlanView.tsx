@@ -32,7 +32,7 @@ import { hasDomesticScope } from "../../../core/trip/domesticScope";
 import { unitFlag } from "../../../core/trip/unitFlag";
 import { useTripExperiences } from "../../../hooks/useTripExperiences";
 import { useTripRules } from "../../../hooks/useTripRules";
-import { useTripPlanner } from "../../../hooks/useTripPlanner";
+import { useTripPlanner, type TripPlannerSeed } from "../../../hooks/useTripPlanner";
 import { usePlanCinematic } from "./usePlanCinematic";
 import type { AiPlanRequest, AiPlanStop } from "../../../core/utils/ai/llmPrompts";
 
@@ -184,22 +184,20 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
   const { displayCountry, ruleLoading, customDays, daysPinned, plan } = builder;
 
   // Persist the funnel so a refresh resumes it; clear once the user backs out.
+  // (The save effect lives below, after the multi-country planner is built, so it
+  // can also persist each additional stop's edits — see `secondaryStops`.)
   const { selectedCities: selCities, selectedExperiences: selExp } = builder;
-  useEffect(() => {
-    if (selection.length === 0) {
-      clearPlanDraft();
-      return;
-    }
-    savePlanDraft({
-      countries: selection.map((c) => c.name),
-      step: stepIndex,
-      cities: selCities,
-      experiences: selExp,
-      days: customDays,
-      pinned: daysPinned,
-      scope,
-    });
-  }, [selection, stepIndex, selCities, selExp, customDays, daysPinned, scope]);
+
+  // A refresh-resume seed for the additional stops, built once from the draft so
+  // a multi-country route's per-stop edits (hand-picked cities + tuned length)
+  // survive a reload — not just the primary. Reuses the same restore path saved
+  // trips use. The sentinel nonce never collides with reopen's `Date.now()`, and
+  // a live "reopen" seed always wins over this stale-draft one.
+  const draftTripSeed = useRef<TripPlannerSeed | null>(
+    draft0 && draft0.stops && Object.keys(draft0.stops).length > 0
+      ? { nonce: -1, byCountry: draft0.stops }
+      : null,
+  ).current;
 
   // Active country on the Places step — lifted here so the header's country
   // switcher and the Places body stay in lock-step (single source of truth).
@@ -243,7 +241,43 @@ export default function PlanView({ countries, savedTrips, budgetBasis, setBudget
   // primary + additional stops yields one honest trip plan for the Places summary.
   const secondaryNames = useMemo(() => selection.slice(1).map((c) => c.name), [selection]);
   const { units: secondaryUnits } = useTripRules(secondaryNames, source);
-  const tripPlanner = useTripPlanner(secondaryUnits, builder.selectedExperiences, budgetBasis, restore.tripSeed);
+  const tripPlanner = useTripPlanner(
+    secondaryUnits,
+    builder.selectedExperiences,
+    budgetBasis,
+    restore.tripSeed ?? draftTripSeed,
+  );
+
+  // Persist the funnel (primary + each edited additional stop) so a refresh
+  // resumes the whole route where the user left off; clear once they back out.
+  // Only diverged stops (hand-picked cities or a pinned length) are stored, so an
+  // untouched auto stop still re-seeds naturally on resume.
+  const secondaryStops = useMemo(() => {
+    const stops: Record<string, { cities: string[]; days: number; experiences: string[] }> = {};
+    for (const up of tripPlanner.unitPlans) {
+      if (up.daysPinned || up.selectedCities.length > 0) {
+        stops[up.name] = { cities: up.selectedCities, days: up.customDays, experiences: up.experiences };
+      }
+    }
+    return stops;
+  }, [tripPlanner.unitPlans]);
+
+  useEffect(() => {
+    if (selection.length === 0) {
+      clearPlanDraft();
+      return;
+    }
+    savePlanDraft({
+      countries: selection.map((c) => c.name),
+      step: stepIndex,
+      cities: selCities,
+      experiences: selExp,
+      days: customDays,
+      pinned: daysPinned,
+      scope,
+      stops: secondaryStops,
+    });
+  }, [selection, stepIndex, selCities, selExp, customDays, daysPinned, scope, secondaryStops]);
 
   const placesUnits = useMemo<PlacesUnit[]>(() => {
     if (!displayCountry) return [];
